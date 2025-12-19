@@ -94,72 +94,72 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 ### Create a semantic model by using the web modeling experience
 
-1. In the source workspace, click on New item, and then in the New item pane, click on the Semantic model tile.
+1. In the source workspace, select **New item**. On the **New item** pane, select the **Semantic model** tile.
 
-2. On the Add data to start building a report page, click on Get Data, and then choose Azure SQL database to connect to the data source via the SQL Analytics Endpoint.
+2. On the **Add data to start building a report** page, select **Get Data**. Then select **Azure SQL database** to connect to the data source via the SQL analytics endpoint.
 
    > [!NOTE]
-   > Don't use the OneLake catalog tile because the Web modeling experience creates a Direct Lake model when connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint.
+   > Don't use the OneLake catalog tile, because the web modeling experience creates a Direct Lake model when you're connecting to a data source in the OneLake catalog. Direct Lake isn't yet supported against data sources in an inbound restricted workspace. All SQL Server connectivity options, such as an Azure SQL database, are fully supported and work as expected when you're connecting to the SQL analytics endpoint.
 
-3. In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
+3. In the **Server** box, enter the *workspaceFQDN* value by using the format for warehouse connection strings: `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com`. That is, add `z{xy}` to the regular warehouse connection string under the SQL connection string. The GUIDs in the FQDN correspond to the tenant GUID in Base32 and the workspace GUID in Base32, respectively.
 
-4. Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
+4. Optionally, in the **Database** box, enter the GUID of the SQL analytics endpoint to which you want to connect.
 
-5. Under Connection credentials, apply the following configuration settings:
+5. Under **Connection credentials**, apply the following configuration settings:
 
     | Input control | Value |
-    | ------------- | ----- |
-    | Connection listbox | Create a new connection |
-    | Connection name | Accept the default or provide a meaningful name. |
-    | Data gateway | If already installed, select an OPDGW for the data connection. This step can also be performed later (Step 4 below). |
-    | Authentication kind | Choose Organizational account and click on Sign in to provide the credentials to access the data source. |
+    | -------------- | ------- |
+    | **Connection** | In the list, select **Create a new connection**. |
+    | **Connection name** | Accept the default or provide a meaningful name. |
+    | **Data gateway** | If a data gateway is already installed, select an on-premises data gateway for the data connection. You can also perform this step [later in this article](#step-4-enable-a-gateway-connection-in-the-semantic-model-settings). |
+    | **Authentication kind** | Select **Organizational account**, and then select **Sign in** to provide the credentials to access the data source. |
 
-6. Accept the remaining default settings and click on Next.
+6. Accept the remaining default settings, and then select **Next**.
 
-7. On the Choose data page, select the tables you want to include in the semantic model and then click on Create a report.
+7. On the **Choose data** page, select the tables that you want to include in the semantic model, and then select **Create a report**.
 
-8. In the Create new report dialog box, verify that the source workspace is selected, provide a meaningful semantic model name, and then click on Create.
+8. In the **Create new report** dialog, verify that the source workspace is selected. Provide a meaningful semantic model name, and then select **Create**.
 
-9. In the Some Steps didn't Complete dialog box, click on Open Model View. Note that the semantic model cannot yet connect to the SQL Analytics Endpoint in the inbound restricted target workspace. You complete the connection configuration in Step 4 below.
+9. In the **Some Steps didn't complete** dialog, select **Open Model View**. Note that the semantic model can't yet connect to the SQL analytics endpoint in the inbound restricted target workspace. You complete the connection configuration [later in this article](#step-4-enable-a-gateway-connection-in-the-semantic-model-settings).
 
 ### Create a semantic model by using Power BI Desktop
 
-1. In Power BI Desktop, installed on a machine with private network access to the target workspace, make sure you are logged in with your user account.
+1. In Power BI Desktop, installed on a machine with private network access to the target workspace, make sure you're signed in with your user account.
 
-2. On the Home ribbon, click on Get data, click on More, and choose Azure SQL database.
+2. On the **Home** ribbon, select **Get data** > **More** > **Azure SQL database**.
 
    > [!NOTE]
-   > Do not use OneLake catalog because Power BI Desktop cannot yet connect to OneLake catalog data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint (SQL AE).
+   > Don't use the OneLake catalog, because Power BI Desktop can't yet connect to OneLake catalog data sources in an inbound restricted workspace. All SQL Server connectivity options, such as an Azure SQL database, are fully supported and work as expected when you're connecting to the SQL analytics endpoint.
 
-3. In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
+3. In the **Server** box, enter the *workspaceFQDN* value by using the format for warehouse connection strings: `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com`. That is, add `z{xy}` to the regular warehouse connection string under the SQL connection string. The GUIDs in the FQDN correspond to the tenant GUID in Base32 and the workspace GUID in Base32, respectively.
 
-4. Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
+4. Optionally, in the **Database** box, enter the GUID of the SQL analytics endpoint to which you want to connect.
 
-5. Under Data Connectivity mode, choose Import or DirectQuery according to your requirements, then click OK.
+5. Under **Data Connectivity mode**, choose **Import** or **DirectQuery** according to your requirements. Then select **OK**.
 
-6. If you're prompted, select Microsoft account in the authentication dialog and then click Sign in to provide the credentials to access the data source.
+6. If you're prompted, select **Microsoft account** in the authentication dialog. Then select **Sign in** to provide the credentials to access the data source.
 
-7. In the Navigator dialog box, select the tables you want to include in the semantic model and then click Load.
+7. In the **Navigator** dialog, select the tables that you want to include in the semantic model. Then select **Load**.
 
-8. Add a visual to the report canvas and then, on the Home ribbon, click on Publish.
+8. Add a visual to the report canvas. Then, on the **Home** ribbon, select **Publish**.
 
-9. Save your changes to a Power BI Desktop file on the local machine and then in the Publish to Power BI dialog, select the source workspace. Alternatively, you can import the Power BI Desktop file to the source workspace in the Power BI portal.
+9. Save your changes to a Power BI Desktop file on the local machine. In the **Publish to Power BI** dialog, select the source workspace. Alternatively, you can import the Power BI Desktop file to the source workspace in the Power BI portal.
 
 ### Create a semantic model by deploying a semantic model definition
 
-1. In the open workspace, create a semantic model using a definition with the same table schema as in the restricted lakehouse. Use the following API:
+1. In the open workspace, create a semantic model by using a definition with the same table schema as in the restricted lakehouse. Use the following API:
 
    ```http
    POST https://{workspaceFQDN}/v1/workspaces/{workspaceID}/semanticModels
    ```
 
-   where `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`
+   In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-1. Before executing the semantic model creation, edit the data source to reference the restricted lakehouse's connection string and lakehouse ID. Convert the file (for example, `definition/tables/customers.tmdl`) from the semantic model definition from Base64 to JSON and copy the output.
+1. Before you finish creating the semantic model, edit the data source to reference the restricted lakehouse's connection string and lakehouse ID. Convert the file (for example, `definition/tables/customers.tmdl`) from the semantic model definition from Base64 to JSON, and copy the output.
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/convert-json-copy.png" alt-text="Screenshot of converting from Base64 to JSON." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/convert-json-copy.png":::
 
-1. Update the source with the restricted lakehouse's connection string and database ID. Then convert the JSON back to Base64 and use it in your semantic model creation request.
+1. Update the source with the restricted lakehouse's connection string and database ID. Then convert the JSON back to Base64 and use it in your request for semantic model creation.
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/convert-back.png" alt-text="Screenshot of converting JSON back to Base64." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/convert-back.png":::
 
@@ -169,45 +169,47 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
    GET https://{workspaceFQDN}/v1/workspaces/{workspaceID}/lakehouses
    ```
 
-   where `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`
+   In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
 ## Step 4: Enable a gateway connection in the semantic model settings
 
-To enable the semantic model to connect to the lakehouse in the restricted workspace, you need to set up a virtual network gateway and bind it to the semantic model.
+To enable the semantic model to connect to the lakehouse in the restricted workspace, you need to set up a virtual network gateway and bind it to the semantic model:
 
-1. In the Power BI semantic model settings, turn on the toggle under **Gateway Connections**.
+1. In the Power BI settings for your Power BI semantic model, turn on the toggle under **Gateway connections**.
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connections.png" alt-text="Screenshot of enabling gateway connections." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connections.png" :::
 
-1. In the Fabric portal settings, go to **Manage Connections and Gateways**. Create a virtual network gateway using the **Virtual Network** and **Subnet** created in the resource group you're using.
+1. In the Fabric portal settings, go to **Manage Connections and Gateways**. Create a virtual network gateway by using the **Virtual Network** and **Subnet** values created in the resource group that you're using.
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/create-gateway.png" alt-text="Screenshot of creating a virtual network gateway." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/create-gateway.png":::
 
-   > [!NOTE]
-   > For the **Subnet**, make sure the **Microsoft.PowerPlatform/vnetaccesslinks** delegation is attached: In the **Virtual Network** settings, select the subnet, and under **Subnet Delegation**, choose **Microsoft.PowerPlatform/vnetaccesslinks**.
+   For the **Subnet** value, make sure that the **Microsoft.PowerPlatform/vnetaccesslinks** delegation is attached:
 
-1. Use the API to retrieve the Gateway ID for the installed gateway instance:  
+   1. In the **Virtual Network** settings, select the subnet.
+   1. Under **Subnet Delegation**, select **Microsoft.PowerPlatform/vnetaccesslinks**.
+
+1. Use the API to retrieve the gateway ID for the installed gateway instance:  
 
    `https://api.fabric.microsoft.com/v1/gateways`
 
-1. In Power BI, create the virtual network gateway SQL Server connection. Use the lakehouse server name and lakehouse ID as the database, authenticate using OAuth2, and copy the resulting Connection ID.
+1. In Power BI, create the SQL Server connection for the virtual network gateway. Use the lakehouse server name and lakehouse ID as the database, authenticate by using OAuth2, and copy the resulting connection ID.
 
-   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connection-settings.png" alt-text="Screenshot of settings connection name." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connection-settings.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connection-settings.png" alt-text="Screenshot of setting a connection name." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connection-settings.png":::
 
 1. Use the Bind Gateway API to bind the semantic model to the gateway ID and connection ID:
 
    `https://{WorkspaceID w/o (-)}.zxy.w.api.fabric.microsoft.com/{WorkspaceID}/datasets/{Semantic Model ID}/Default.BindToGateway`
 
-   where `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`
+   In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-1. Verify the gateway binding: In the semantic model settings, refresh the page. The virtual network gateway should now be shown as the active gateway.
+1. Verify the gateway binding. In the semantic model settings, refresh the page. Confirm that the virtual network gateway now appears as the active gateway.
 
-   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/verify-gateway-binding.png" alt-text="Screenshot of verify gateway binding." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/verify-gateway-binding.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/verify-gateway-binding.png" alt-text="Screenshot of a virtual network gateway appearing as an active gateway." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/verify-gateway-binding.png":::
 
 1. Refresh the dataset.
 
-   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/refresh-dataset.png" alt-text="Screenshot of refresh dataset." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/refresh-dataset.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/refresh-dataset.png" alt-text="Screenshot of a refreshed dataset." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/refresh-dataset.png":::
 
-1. Build a report using the semantic model. The report should now be able to access the lakehouse data in the restricted workspace through the virtual network gateway.
+1. Build a report by using the semantic model. The report should now be able to access the lakehouse data in the restricted workspace through the virtual network gateway.
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/run-report.png" alt-text="Screenshot of building a report." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/run-report.png":::

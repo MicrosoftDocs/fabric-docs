@@ -99,7 +99,7 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 2. On the **Add data to start building a report** page, select **Get Data**. Then select **Azure SQL database** to connect to the data source via the SQL analytics endpoint.
 
    > [!NOTE]
-   > Don't use the OneLake catalog tile, because the web modeling experience creates a Direct Lake model when you're connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace. All SQL Server connectivity options, such as an Azure SQL database, are fully supported and work as expected when you're connecting to the SQL analytics endpoint.
+   > Don't use the OneLake catalog tile, because the web modeling experience creates a Direct Lake model when you're connecting to a data source in the OneLake catalog. Direct Lake isn't yet supported against data sources in an inbound restricted workspace. All SQL Server connectivity options, such as an Azure SQL database, are fully supported and work as expected when you're connecting to the SQL analytics endpoint.
 
 3. In the **Server** box, enter the *workspaceFQDN* value by using the format for warehouse connection strings: `https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com`. That is, add `z{xy}` to the regular warehouse connection string under the SQL connection string. The GUIDs in the FQDN correspond to the tenant GUID in Base32 and the workspace GUID in Base32, respectively.
 
@@ -120,7 +120,7 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 8. In the **Create new report** dialog, verify that the source workspace is selected. Provide a meaningful semantic model name, and then select **Create**.
 
-9. In the **Some Steps didn't Complete** dialog, select **Open Model View**. Note that the semantic model can't yet connect to the SQL analytics endpoint in the inbound restricted target workspace. You complete the connection configuration [later in this article](#step-4-enable-a-gateway-connection-in-the-semantic-model-settings).
+9. In the **Some Steps didn't complete** dialog, select **Open Model View**. Note that the semantic model can't yet connect to the SQL analytics endpoint in the inbound restricted target workspace. You complete the connection configuration [later in this article](#step-4-enable-a-gateway-connection-in-the-semantic-model-settings).
 
 ### Create a semantic model by using Power BI Desktop
 
@@ -155,7 +155,7 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
    In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-1. Before you finish creating the semantic model, edit the data source to reference the restricted lakehouse's connection string and ID. Convert the `definition/tables/customers.tmdl` file from the semantic model definition from Base64 to JSON, and copy the output.
+1. Before you finish creating the semantic model, edit the data source to reference the restricted lakehouse's connection string and lakehouse ID. Convert the `definition/tables/customers.tmdl` file from the semantic model definition from Base64 to JSON, and copy the output.
 
    :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/convert-json-copy.png" alt-text="Screenshot of converting from Base64 to JSON." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/convert-json-copy.png":::
 
@@ -185,7 +185,7 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
    `https://api.fabric.microsoft.com/v1/gateways`
 
-1. In Power BI, create the OPDG SQL Server connection. Use the lakehouse's server name and ID as the database, authenticate by using OAuth2, and copy the resulting connection ID.
+1. In Power BI, create the SQL Server connection for the OPDG. Use the lakehouse server name and lakehouse ID as the database, authenticate by using OAuth2, and copy the resulting connection ID.
 
    :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/settings-connection-name.png" alt-text="Screenshot of setting a connection name." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/settings-connection-name.png":::
 
@@ -195,7 +195,7 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
     :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/bind-semantic-model.png" alt-text="Screenshot of binding a semantic model." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/bind-semantic-model.png":::
 
-1. Verify the gateway binding. In the semantic model settings, refresh the page. Confirm that the OPDG appears as the active gateway.
+1. Verify the gateway binding. In the semantic model settings, refresh the page. Confirm that the OPDG now appears as the active gateway.
 
     :::image type="content" source="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png" alt-text="Screenshot of an on-premises data gateway appearing as an active gateway." lightbox="media/security-workspace-private-links-example-on-premises-data-gateway/verify-gateway-binding.png":::
 
