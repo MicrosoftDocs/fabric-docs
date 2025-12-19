@@ -58,10 +58,9 @@ Currently, when you create a dbt job, it uses **dtbjob runtime v1.0** by default
 
 ## Limitations
 
-- **Full project runs**: Currently, preview supports only full-project runs (no partial build caching).
+- **No build caching**: Currently, preview only supports compiling and executing a project fresh from the source. dbt artifacts produced from previous runs are not available for recompilation.
 - **Incremental models**: Make sure you have proper primary keys and unique constraints for incremental builds.
 - **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters).
-
 
 ## Related content
 
