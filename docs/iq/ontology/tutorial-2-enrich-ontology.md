@@ -42,6 +42,9 @@ Follow these steps to create the *Freezer* entity type and add properties to it.
     | `minSafeTempC` | Double | Static |
     | `StoreId` | String | Static |
 
+    >[!NOTE]
+    >Property names must be unique across all entity types.
+
     Here's what it looks like before saving:
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-properties-2.png" alt-text="Screenshot of the properties for the Freezer entity type.":::
