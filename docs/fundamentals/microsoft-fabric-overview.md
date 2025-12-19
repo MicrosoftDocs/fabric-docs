@@ -1,9 +1,9 @@
 ---
 title: What is Microsoft Fabric
 description: Microsoft Fabric is an all-in-one analytics solution that covers everything from data movement to data science, real-time analytics, and business intelligence.
-ms.reviewer: sngun
-ms.author: gesaur
-author: gsaurer
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: gsaurer
 ms.topic: overview
 ms.custom:
 - build 2024

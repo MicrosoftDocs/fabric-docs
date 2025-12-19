@@ -234,6 +234,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/spark-connector-copy-activity.md",
+        "redirect_url": "/fabric/data-factory/spark-connector-overview",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/metrics-app-storage-page.md",
         "redirect_url": "/fabric/enterprise/metrics-app-storage-page",
         "redirect_document_id": false
