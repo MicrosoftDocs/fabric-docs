@@ -4,7 +4,7 @@ description: Create an ontology (preview) item with data from a semantic model o
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 12/17/2025
+ms.date: 12/19/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
@@ -139,8 +139,8 @@ Select each of the relationship types and update its details to match the follow
 
 | Old name | New name | Source data table | Source entity type | Target entity type | 
 | --- | --- | --- | --- | --- |
-| *factsales_has_dimproducts* | *soldIn* | Tutorial workspace > *OntologyDataLH* > *factsales* <br><br>This is the table in the source data that can link *Products* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a product and a sale event by ID. | *Products* <br>For **Source column**, select `ProductId`. <br><br>This setting specifies the column in the relationship source data table (*factsales >* `ProductId`) whose values match the key property defined on the *Products* entity (*dimproducts >* `ProductId`). In the tutorial data, the column name is the same in both tables. | *SaleEvent* <br>For **Source column**, select `SaleId`. <br><br>This setting specifies the column in the relationship source data table  whose values match the key property defined on the *SaleId* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column. |
-| *factsales_has_dimstore* | *has* | Tutorial workspace > *OntologyDataLH* > *factsales* <br><br>This is the table in the source data that can link *Store* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a sale event by ID. | *Store*  <br>For **Source column**, select `StoreId`. <br><br>This setting specifies the column in the relationship source data table (*factsales >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >*  `StoreId`). In the tutorial data, the column name is the same in both tables. | *SaleEvent* <br>For **Source column**, select `SaleId`. <br><br>This setting specifies the column in the relationship source data table  whose values match the key property defined on the *SaleId* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column. |
+| *factsales_has_dimproducts* | *soldIn* | Tutorial workspace > *OntologyDataLH* > *factsales* <br><br>This is the table in the source data that can link *Products* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a product and a sale event by ID. | *Products* <br>For **Source column**, select `ProductId`. <br><br>This setting specifies the column in the relationship source data table (*factsales >* `ProductId`) whose values match the key property defined on the *Products* entity (*dimproducts >* `ProductId`). In the tutorial data, the column name is the same in both tables. | *SaleEvent* <br>For **Source column**, select `SaleId`. <br><br>This setting specifies the column in the relationship source data table  whose values match the key property defined on the *SaleEvent* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column. |
+| *factsales_has_dimstore* | *has* | Tutorial workspace > *OntologyDataLH* > *factsales* <br><br>This is the table in the source data that can link *Store* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a sale event by ID. | *Store*  <br>For **Source column**, select `StoreId`. <br><br>This setting specifies the column in the relationship source data table (*factsales >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >*  `StoreId`). In the tutorial data, the column name is the same in both tables. | *SaleEvent* <br>For **Source column**, select `SaleId`. <br><br>This setting specifies the column in the relationship source data table  whose values match the key property defined on the *SaleEvent* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column. |
 
 Here's an example of what an updated relationship type looks like.
 
@@ -260,7 +260,7 @@ Next, create relationship types between the entity types to represent contextual
 1. The **Relationship configuration** pane opens, where you can configure additional information. Enter the following details (some fields become visible based on other selections) and select **Create**.
     1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *factsales* table. This is the table in the source data that can link *Store* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a sale event by ID.
     1. **Source entity type > Source column**: Select `StoreId`. This setting specifies the column in the relationship source data table (*factsales >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same in both tables.
-    1. **Target entity type > Source column**: Select `SaleId`. This setting specifies the column in the relationship source data table  whose values match the key property defined on the *SaleId* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column.
+    1. **Target entity type > Source column**: Select `SaleId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *SaleEvent* entity. In this case, the relationship data source and the entity data source both use the *factsales* table, so you're selecting the same column.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration." lightbox="media/tutorial-1-create-ontology/onelake/relationship-type-3.png":::
 
@@ -270,9 +270,9 @@ Now the first relationship is created, and bound to data in your source table. C
 
 Follow the same steps that you used for the first relationship type to create the relationship type described in the following table.
 
-| Relationship type name  | Source entity type | Target entity type | Table |
+| Relationship type name  | Source data table | Source entity type | Target entity type | 
 | --- | --- | --- | --- |
-| *soldIn* | *Products* <br>For **Source column**, select `ProductId`. | *SaleEvent*<br>For **Source column**, select `SaleId`. | *factsales*|
+| *soldIn* | Tutorial workspace > *OntologyDataLH > factsales*| *Products* <br>For **Source column**, select `ProductId`. | *SaleEvent*<br>For **Source column**, select `SaleId`. | 
 
 When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the canvas.
 
