@@ -37,8 +37,8 @@ This section describes support in ontology (preview) for different semantic mode
 | Generating entity type definitions | Supported | Supported | Supported |
 | Generating property definitions | Supported | Supported | Supported |
 | Generating relationship definitions | Supported | Supported | Supported |
-| Generating entity type bindings to data sources | Not supported | Supported | Not Supported |
-| Generating relationship type bindings to data sources | Not supported | Supported only if primary key is identified (the primary key is used as the entity type key for the ontology) | Not Supported |
+| Generating entity type bindings to data sources | Not supported | Supported; backing lakehouse must be in a workspace with **inbound public access enabled** | Not Supported |
+| Generating relationship type bindings to data sources | Not supported | Supported; primary key must be identified (the primary key is used as the entity type key for the ontology) | Not Supported |
 | Querying data using bindings to data sources | Not supported | Supported (without measures and calculated columns) | Not Supported |
 
 ## Other semantic model limitations
