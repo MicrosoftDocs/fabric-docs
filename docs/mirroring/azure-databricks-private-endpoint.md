@@ -4,7 +4,7 @@ description: Learn how to connect to mirrored databases behind a private endpoin
 author: kgremban
 ms.author: kgremban
 ms.reviewer: whhender, preshah
-ms.date: 12/17/2025
+ms.date: 12/19/2025
 ms.topic: how-to
 ---
 
@@ -19,23 +19,14 @@ You can also connect to your ADLS storage accounts that are behind a private end
 ## Prerequisites
 
 * Microsoft Fabric capacity
-* To complete the steps in the [Create a Databrics connection](#create-a-databricks-connection) section, you must be either a user or an admin of the Azure Databricks workspace.
+* An Azure Databricks workspace deployed in a virtual network. Follow the instructions in [Deploy Azure Databricks in your Azure virtual netowrk (VNet injection)](/azure/databricks/security/network/classic/vnet-inject).
+* Private connectivity for your workspace. Follow the instructions in [Configure private connectivity for an existing workspace](/azure/databricks/security/network/front-end/front-end-private-connect#-configure-private-connectivity-for-an-existing-workspace).
 
 ## Limitations
 
-* Only newly created mirrored Azure Databricks catalog items support this feature.
-* A virtual network data gateway can be associated with only one Azure Databricks workspace.
 * Managed virtual network Azure Databricks workspaces aren't supported. Only virtual network injected workspaces are supported.
 * Accessing Azure Databricks workspaces through an on-premises data gateway isn't supported. Only virtual network data gateway is supported.
 * Connection creation using the virtual network data gateway is supported only through the Manage Connections experience and not within the connection creation flow of the mirrored Azure Databricks catalog item.
-
-## Configure an Azure Databricks workspace
-
-Create a Databricks workspace and configure it to use a private endpoint.
-
-1. Create a Databricks workspace deployed in a virtual network. Follow the instructions in [Deploy Azure Databricks in your Azure virtual netowrk (VNet injection)](/azure/databricks/security/network/classic/vnet-inject).
-
-2. Configure private connectivity for your workspace. Follow the instructions in [Configure private connectivity for an existing workspace](/azure/databricks/security/network/front-end/front-end-private-connect#-configure-private-connectivity-for-an-existing-workspace).
 
 ## Create a virtual network data gateway
 
@@ -47,11 +38,9 @@ Create a virtual network data gateway to enable the connection between your Fabr
 
    * Create the virtual network data gateway in the same region as your Azure Databricks workspace.
 
-   * Use the same capacity to create the virtual network data gateway as your Fabric workspace.
+   * Ensure that the private endpoint to the Azure Databricks workspace is reachable by the virtual network data gateway. One way is to deploy the virtual network data gateway in the same virtual network where the private endpoint was created.
 
-   * Deploy the virtual network data gateway in the same virtual network where the private endpoint was created.
-
-## Create a Databricks connection
+## Create an Azure Databricks connection
 
 Create a connection that uses the virtual network data gateway to provide access to your Databricks workspace.
 
@@ -75,8 +64,8 @@ Create a connection that uses the virtual network data gateway to provide access
 
 ## Create a mirrored Azure Databricks catalog item
 
-Create a mirrored Azure Databricks catalog item that can access the private Databricks workspace through the virtual network data gateway.
+Create a mirrored Azure Databricks catalog item that can access the private Azure Databricks workspace through the virtual network data gateway.
 
 1. Create a mirrored Azure Databricks catalog item. Follow the instructions in [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](./azure-databricks-tutorial.md).
 
-   When you select a connection for the catalog item, choose the Databricks connection that you created in the previous section.
+   When you select a connection for the catalog item, choose the Azure Databricks connection that you created in the previous section.
