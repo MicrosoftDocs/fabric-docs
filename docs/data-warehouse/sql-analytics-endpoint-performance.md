@@ -42,6 +42,40 @@ You can also programmatically force a refresh of the automatic metadata scanning
 - Not all Delta features are understood by the automatic sync process. For more information on the functionality supported by each engine in Fabric, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
 - If there is an extremely large volume of tables changes during the Extract Transform and Load (ETL) processing, an expected delay could occur until all the changes are processed.
 
+## Optimizing Lakehouse tables for the SQL Endpoint
+
+When the SQL Endpoint reads tables stored in a Lakehouse, query performance is heavily influenced by the physical layout of the underlying Delta files. A large number of small Parquet files significantly increases scan overhead and negatively affects query performance. To ensure predictable and efficient performance, we recommend maintaining table storage so that each data file contains 2 million rows, which provides a balanced level of parallelism without fragmenting the dataset into excessively small slices. 
+
+In addition to row count guidance, file size is equally important. The SQL Endpoint performs best when Delta files are large enough to minimize file handling overhead but not so large that they limit parallel scan efficiency. For most workloads, keeping individual Parquet files close to 400 MB strikes the right balance. To achieve this, use the following steps: 
+- Set maxRecordsPerFile to 2,000,000 before data changes occurr
+- Perform your data changes (data ingestion, updates, deletes)
+- Set maxFileSize to 400MB
+- Run optimize.
+
+The script below provides a template for these steps, and should be executed on a Lakehouse: 
+
+```python 
+from delta.tables import DeltaTable
+
+# 1. CONFIGURE LIMITS
+
+# Cap files to 2M rows during writes. This should be done before data ingestion occurs. 
+spark.conf.set("spark.sql.files.maxRecordsPerFile", 2000000)
+
+# 2. INGEST DATA
+# Here, you ingest data into your table 
+
+# 3. CAP FILE SIZE (~400 MB)
+spark.conf.set("spark.databricks.delta.optimize.maxFileSize", 400 * 1024 * 1024)
+
+# 4. RUN OPTIMIZE (bin-packing)
+spark.sql("""
+    OPTIMIZE myTable
+""")
+```
+
+To maintain healthy file sizes, users should periodically run Delta optimization operations such as OPTIMIZE, especially for tables that receive frequent incremental writes, updates and deletes. These maintenance operations compact small files into appropriately sized ones, helping ensure the SQL Endpoint can process queries efficiently.
+
 ## Partition size considerations
 
 The choice of partition column for a delta table in a lakehouse also affects the time it takes to sync changes to [!INCLUDE [fabric-se](includes/fabric-se.md)]. The number and size of partitions of the partition column are important for performance:
