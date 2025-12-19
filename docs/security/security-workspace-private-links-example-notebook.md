@@ -33,9 +33,9 @@ This article also refers to the workspace's fully qualified domain name (FQDN). 
 
 `https://{workspaceID}.z{xy}.w.api.fabric.microsoft.com`
 
-In the FQDN, `{workspaceID}` is the workspace ID without dashes, and `{xy}` is the first two letters of the workspace object ID. For more information, see [Connecting to workspaces](./security-workspace-level-private-links-overview.md#connecting-to-workspaces).
+In the FQDN format, `{workspaceID}` is the workspace ID without dashes, and `{xy}` is the first two letters of the workspace object ID. For more information, see [Connecting to workspaces](./security-workspace-level-private-links-overview.md#connecting-to-workspaces).
 
-You can find a workspace ID by opening the workspace page in the Fabric portal and noting the ID after `groups/` in the URL. You can also find a workspace FQDN using **List workspace** or **Get workspace** in the API.
+You can find a workspace ID by opening the workspace page in the Fabric portal and noting the ID after `groups/` in the URL. You can also find a workspace FQDN by using the List Workspace or Get Workspace API.
 
 ## Step 2: Create a managed private endpoint
 

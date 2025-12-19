@@ -35,7 +35,7 @@ Multi-workspace APIs fall into the following two categories. Each serves specifi
   * Support secure usage from workspace private link, tenant private link, and public network configurations.
   * Return metadata only for the workspaces that are reachable based on the network context of the request.
 
-These APIs are designed to support metadata aggregation at scale and are categorized based on how they handle access control and network security. The following table summarizes how different types of APIs in a multi-workspace environment return metadata based on the type of network connection.
+These APIs support metadata aggregation at scale and are categorized based on how they handle access control and network security. The following table summarizes how different types of APIs in a multi-workspace environment return metadata based on the type of network connection.
 
 | Multi-workspace API type | Inbound network connection | Returned metadata |
 | -------- | -------------------------- | ----------------- |
@@ -47,7 +47,7 @@ These APIs are designed to support metadata aggregation at scale and are categor
 
 Assume that a user has access to five Fabric workspaces:
 
-* Workspace 1 and Workspace 2 are secured with workspace private endpoints WS PE 1 and WS PE 2, respectively.
+* Workspace 1 and Workspace 2 are secured with workspace private endpoints WSPE 1 and WSPE 2, respectively.
 * Workspaces 3, 4, and 5 are accessible over a public network or tenant private link.
 
 :::image type="content" source="media/security-fabric-multi-workspace-api-overview/fabric-multi-workspace-scenarios.png" alt-text="Diagram that shows multi-workspace scenarios." lightbox="./media/security-fabric-multi-workspace-api-overview/fabric-multi-workspace-scenarios.png" border="false":::
@@ -64,10 +64,10 @@ This scenario illustrates how unfiltered aggregation APIs behave consistently ac
 
 ## Data in scope and usage
 
-* **Permissions, ownership, and creator information**: Metadata that includes metadata fields that identify who owns or manages the item, who created or last modified it, and what level of access different principals have. Examples include `Artifact.CurrentPrincipalPermissions`, `Artifact.OwnerOrContact`, `Workspace.PrincipalPermissions`, and `Workspace.OwnerOrContact`.
-* **Access and modification details**: Metadata that captures when and by whom an item or workspace was created, last accessed, or modified. It includes metadata like `Artifact.CreateAccessModifyTime`, `Artifact.CreateAccessModifyUser`, `Workspace.CreateAccessModifyTime`, and related fields under `JobSchedule` and `InformationProtection`.
+* **Permissions, ownership, and creator information**: Metadata that includes fields that identify who owns or manages the item, who created or last modified it, and what level of access different principals have. Examples include `Artifact.CurrentPrincipalPermissions`, `Artifact.OwnerOrContact`, `Workspace.PrincipalPermissions`, and `Workspace.OwnerOrContact`.
+* **Access and modification details**: Metadata that captures when and by whom an item or workspace was created, last accessed, or modified. Examples include `Artifact.CreateAccessModifyTime`, `Artifact.CreateAccessModifyUser`, `Workspace.CreateAccessModifyTime`, and related fields under `JobSchedule` and `InformationProtection`.
 * **Identifiers, types, and descriptive attributes**: Metadata that covers unique identifiers, display names, artifact types, connection information, and URLs for locating or classifying items. Fields might include `Artifact.Id`, `Artifact.TypeOrSubtype`, `Artifact.NameOrDisplayName`, `Artifact.UrlOrConnectionString`, `Workspace.TypeOrSubtype`, and `Workspace.NameOrDisplayName`.
-* **Data classification, labeling, and tags**: Metadata that includes metadata used for governance and compliance purposes, such as information protection labels, classification states, content tags, and security restrictions. Examples include `Artifact.ContentTag`, `Artifact.InformationProtection.StateOrStatus`, `Artifact.InformationProtection.Restrictions`, and `Tenant.MipLabel`.
+* **Data classification, labeling, and tags**: Metadata that includes fields used for governance and compliance purposes, such as information protection labels, classification states, content tags, and security restrictions. Examples include `Artifact.ContentTag`, `Artifact.InformationProtection.StateOrStatus`, `Artifact.InformationProtection.Restrictions`, and `Tenant.MipLabel`.
 * **Organizational and platform-level attributes**: Metadata that reflects where the item resides within the broader platform or tenant structure, including domain, capacity, region, and platform metadata. Fields might include `Tenant.Domain`, `Tenant.Capacity`, `Workspace.StorageInfo`, and `Workspace.SecuritySettings`.
 * **Relationships and hierarchies**: Metadata that indicates how an item or workspace relates to other objects (parent/child relationships, subartifacts, job lineage, and grouped entities). It might include fields such as `Artifact.RelationToArtifactParentChild`, `Artifact.SubArtifact`, `Workspace.RelationToWorkspaceParentChild`, `Workspace.Subfolder`, and `Tenant.Group`.
 

@@ -49,7 +49,7 @@ This article also uses the placeholder *workspaceFQDN*, which refers to the full
 
 In the FQDN formats, `{workspaceID}` is the workspace ID without dashes, and `{xy}` is the first two letters of the workspace object ID. For more information, see [Connecting to workspaces](./security-workspace-level-private-links-overview.md#connecting-to-workspaces).
 
-You can find a workspace ID by opening the workspace page in the Fabric portal and noting the ID after `groups/` in the URL. You can also find a workspace FQDN by using **List workspace** or **Get workspace** in the API.
+You can find a workspace ID by opening the workspace page in the Fabric portal and noting the ID after `groups/` in the URL. You can also find a workspace FQDN by using the List Workspace or Get Workspace API.
 
 ## Step 2: Create a lakehouse in the target (restricted) workspace
 
@@ -179,14 +179,14 @@ To enable the semantic model to connect to the lakehouse in the restricted works
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connections.png" alt-text="Screenshot of enabling gateway connections." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/gateway-connections.png" :::
 
-1. In the Fabric portal settings, go to **Manage Connections and Gateways**. Create a virtual network gateway by using the **Virtual Network** and **Subnet** values created in the resource group that you're using.
+1. In the Fabric portal settings, go to **Manage Connections and Gateways**. Create a virtual network gateway by using the **Virtual network** and **Subnet** values created in the resource group that you're using.
 
    :::image type="content" source="media/security-workspace-private-links-example-power-bi-virtual-network/create-gateway.png" alt-text="Screenshot of creating a virtual network gateway." lightbox="media/security-workspace-private-links-example-power-bi-virtual-network/create-gateway.png":::
 
    For the **Subnet** value, make sure that the **Microsoft.PowerPlatform/vnetaccesslinks** delegation is attached:
 
-   1. In the **Virtual Network** settings, select the subnet.
-   1. Under **Subnet Delegation**, select **Microsoft.PowerPlatform/vnetaccesslinks**.
+   1. In the **Virtual network** settings, select the subnet.
+   1. Under **Subnet delegation**, select **Microsoft.PowerPlatform/vnetaccesslinks**.
 
 1. Use the API to retrieve the gateway ID for the installed gateway instance:  
 

@@ -149,7 +149,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 
 1. Trigger the pipeline by using the API. For example, use Bruno.
 
-   Here's the format for the API endpoint for the pipeline run:
+   Here's the format of the API endpoint for the pipeline run:
 
    ```
    https://{openWsIdWithoutDashes}.zxy.w.api.fabric.microsoft.com/v1/workspaces/{openWsId}/items/{pipelineId}/jobs/instances?jobType=Pipeline`
@@ -163,7 +163,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
 
 ## Step 8: Verify table creation
 
-1. Open Azure Storage Explorer in the restricted workspace's lakehouse.
+1. Open Storage Explorer in the restricted workspace's lakehouse.
 
 1. Confirm that the new table was created.
 
