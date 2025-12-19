@@ -98,29 +98,21 @@
     - name: Bring your Azure Data Factory to Fabric
       href: migrate-pipelines-azure-data-factory-item.md 
     - name: Migrate pipelines with PowerShell
-      items:
-      - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md  
-      - name: Bring your Azure Data Factory to Fabric
-        href: migrate-pipelines-azure-data-factory-item.md 
-      - name: Planning your migration from Azure Data Factory to Fabric
-        href: migrate-planning-azure-data-factory.md
-      - name: Migrate pipelines with PowerShell
-        items: 
-        - name: Pipeline migration with PowerShell overview
-          href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
-        - name: Tutorial PowerShell pipeline migration
-          href: migrate-pipelines-powershell-upgrade-module-tutorial.md
-        - name: Build your resolutions file
-          href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
-        - name: Find your Fabric workspace ID
-          href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
-      - name: Fabric dataflows for mapping data flow users
-        href: guide-to-dataflows-for-mapping-data-flow-users.md
-      - name: How to ingest data from Azure Data Factory to Fabric
-        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      items: 
+      - name: Pipeline migration with PowerShell overview
+        href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+      - name: Tutorial PowerShell pipeline migration
+        href: migrate-pipelines-powershell-upgrade-module-tutorial.md
+      - name: Build your resolutions file
+        href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
+      - name: Find your Fabric workspace ID
+        href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
+    - name: How to ingest data from Azure Data Factory to Fabric
+      href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
     - name: Dataflows
-      items:    
+      items:
+      - name: Fabric dataflows for mapping data flow users
+        href: guide-to-dataflows-for-mapping-data-flow-users.md    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
         href: dataflow-gen2-migrate-from-dataflow-gen1.md
       - name: Migrate to Dataflow Gen2 scenarios
@@ -703,9 +695,6 @@
             items: 
               - name: Spark - Overview
                 href: spark-connector-overview.md
-              - name: Configure in a pipeline Copy activity
-                href: spark-connector-copy-activity.md
-
           - name: SQL database
             items: 
               - name: SQL database - Overview

@@ -1,8 +1,8 @@
 ---
 title: Use Fabric Home to Find, Personalize, and Manage Content
 description: Learn how to quickly find content, search, filter, multitask with tabs, personalize settings, and get help in Fabric—boost productivity and get started now.
-author: julcsc
-ms.author: juliacawthra
+author: SnehaGunda
+ms.author: sngun
 ms.topic: overview
 ms.date: 11/07/2025
 ai-usage: ai-assisted
