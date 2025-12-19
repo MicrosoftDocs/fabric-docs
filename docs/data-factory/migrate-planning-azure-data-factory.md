@@ -30,25 +30,21 @@ Fabric offers many new features, including:
 
 For a detailed comparison, see [the Azure Data Factory and Fabric Data Factory comparison guide](compare-fabric-data-factory-and-azure-data-factory.md).
 
-## Considerations before migrating
+## Before you migrate: Critical differences
 
-Migrating from Azure Data Factory (ADF) to Fabric Data Factory involves several key considerations. Here’s what to keep in mind:
-
-- **Complex pipelines and custom connectors**: These may require manual adjustments to work in the new environment.
-- **Integration runtimes**: Legacy runtimes might need refactoring to align with Fabric’s architecture.
-- **Dataflow differences**: ADF Mapping Data Flows use Spark-based transformations, while Fabric Dataflow Gen2 operates differently and may need rework.
-- **Security and networking**: Review managed identity, private endpoints, and gateway configurations. Re-test these settings and update permissions as needed.
-- **Testing and validation**: Ensure migrated pipelines produce accurate outputs, meet SLAs, and comply with requirements. Use robust test harnesses for objective comparisons.
-
-To address these challenges, follow these best practices:
-
-1. Conduct a thorough asset inventory. Identify duplicates, unused items, and dependencies.
-1. Use the [migration assessment tool](/azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration) and review [connector parity](connector-parity.md) and [activity parity](activity-parity.md) to identify and map feature gaps early.
-1. Consider using automated scripts and partner tools for bulk migration.
-1. Maintain detailed documentation and rollback plans.
-1. Engage stakeholders throughout the process.
-1. Run incremental migrations to minimize risk.
-1. Use AI-powered validation scripts to speed up issue resolution.
+| **Category** | **Azure Data Factory** | **Fabric Data Factory** | **Migration Impact** |
+|--------------|------------------------|-------------------------|----------------------|
+| **Dynamic properties** | All Linked Service properties can be dynamic using parameters (essential for MDD patterns) | Connections don't support dynamic properties | Blocks MDD-based solutions that rely on parameterized connections |
+| **Key Vault** | Full integration with all auth types | Limited integration via [Fabric Key Vault Reference](azure-key-vault-reference-overview.md), User Auth only | No Service Principal or Managed Identity support |
+| **Identity** | Managed Identity | [Fabric Workspace Identity](../security/workspace-identity.md) | Different identity model |
+| **Datasets** | Separate, reusable dataset objects | No datasets—properties defined inline within activities | Rearchitecting needed for reusable patterns |
+| **Global Parameters** | Global Parameters | [Fabric Variable Library](variable-library.md) | Different implementation patterns |
+| **Pipeline execution** | Execute Pipeline activity | [Invoke Pipeline activity](invoke-pipeline-activity.md) with FabricDataPipeline connection type | Activity name and connection requirements change |
+| **HDInsight activities** | 5 separate activities (Hive, Pig, MapReduce, Spark, Streaming) | Single [HDInsight activity](azure-hdinsight-activity.md) | Consolidation into one activity |
+| **Custom code** | Custom Activity | [Azure Batch activity](azure-batch-activity.md) | Activity name changes |
+| **Scheduling** | 1 trigger for many pipelines; many triggers per pipeline; centralized management | 1 schedule per pipeline; many schedules per pipeline; no schedule reuse or central hub | Requires per-pipeline schedule management |
+| **Data transformation** | Mapping Data Flows (Spark-based) | [Dataflow Gen2](dataflows-gen2-overview.md) (Power Query engine) with [fast copy](dataflows-gen2-fast-copy.md) and [multiple destinations](dataflow-gen2-data-destinations-and-managed-settings.md) | Different transformation engine and capabilities |
+| **On-premises access** | SHIR: 8 nodes max, local credential storage, task-level load balancing | [OPDG](how-to-access-on-premises-data.md): 10 nodes max, centralized credential storage, query-level load balancing | Different capabilities and limits |
 
 ## Migration paths
 
