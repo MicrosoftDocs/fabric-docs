@@ -60,10 +60,12 @@ This section contains step-by-step instructions for adding and managing entity t
 
 1. In the properties tab, select **Add properties**.
 
-    >[!NOTE]
-    >Properties can be created on entity types without binding data to them, and you can bind either static or time series data to them afterwards. This section shows that process. Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).
+    Properties can be created on entity types without binding data to them, and you can bind either static or time series data to them afterwards. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
 
 1. Add a name, data type, and property type to each property added. Select **Save** to view the saved properties in the properties tab.
+
+    >[!NOTE]
+    >Property names must be unique across all entity types.
 
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring property details.":::
 

@@ -47,6 +47,22 @@ Select an existing notebook from the **Notebook** dropdown, and optionally speci
 
 :::image type="content" source="media/notebook-activity/notebook-connection-workspace-parameters.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to choose a notebook, and where to add parameters.":::
 
+#### Using Fabric Workspace Identity (WI) in the Notebook activity
+
+1. **Create the Workspace Identity**
+You must enable WI in your workspace (this may take a moment to load). Create a Workspace Identity in your Fabric workspace. 
+Check out the docs on [Workspace Identity](../security/workspace-identity.md).
+
+1. **Enable tenant-level settings**
+In the Fabric admin portal, enable the following tenant setting:
+Service principals can call Fabric public APIs.
+This setting is required for the Workspace Identity to authenticate successfully.
+Check out the docs on [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
+
+1. **Grant workspace permissions to the Workspace Identity**
+Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios.
+Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
+
 ### Set session tag
 
 In order to minimize the amount of time it takes to execute your notebook job, you could optionally set a session tag. Setting the session tag instructs Spark to reuse any existing Spark session, minimizing the startup time. Any arbitrary string value can be used for the session tag. If no session exists, a new one would be created using the tag value.
