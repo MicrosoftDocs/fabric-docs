@@ -1,6 +1,6 @@
 ---
-title: Microsoft Fabric Multiple-Workspace APIs
-description: "This article describes what Fabric multiple-workspace APIs are and the kinds of information that they retrieve."
+title: Microsoft Fabric Multi-Workspace APIs
+description: "This article describes what Fabric multi-workspace APIs are and the kinds of information that they retrieve."
 author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
@@ -8,36 +8,36 @@ ms.topic: overview
 ms.custom:
 ms.date: 08/13/2025
 
-#customer intent: As a data platform administrator, I want to use multiple-workspace APIs to aggregate and manage metadata across multiple workspaces so that I can enable unified governance, discovery, and compliance within Microsoft Fabric.
+#customer intent: As a data platform administrator, I want to use multi-workspace APIs to aggregate and manage metadata across multiple workspaces so that I can enable unified governance, discovery, and compliance within Microsoft Fabric.
 
 ---
 
-# Microsoft Fabric multiple-workspace APIs
+# Microsoft Fabric multi-workspace APIs
 
-Microsoft Fabric supports multiple-workspace scenarios such as data hub, favorites, lineage, search, OneLake catalog, and other governance and discovery features through multiple-workspace APIs. These APIs enable users to access lightweight metadata from multiple workspaces that they can access outside the workspaces' network configurations. The APIs support unified search, organization, and navigation across the platform without exposing the underlying data content.
+Microsoft Fabric supports multi-workspace scenarios such as data hub, favorites, lineage, search, OneLake catalog, and other governance and discovery features through multi-workspace APIs. These APIs enable users to access lightweight metadata from multiple workspaces that they can access outside the workspaces' network configurations. The APIs support unified search, organization, and navigation across the platform without exposing the underlying data content.
 
-Multiple-workspace APIs aren't always exposed as standalone REST endpoints. In many cases, these APIs are invoked indirectly. For example, they might be invoked as part of a broader REST call, a background process, or a portal operation (such as loading a page in the Fabric UI). Regardless of how they're triggered, they're carefully scoped to ensure that they return only metadata that a user is authorized to access.
+Multi-workspace APIs aren't always exposed as standalone REST endpoints. In many cases, these APIs are invoked indirectly. For example, they might be invoked as part of a broader REST call, a background process, or a portal operation (such as loading a page in the Fabric UI). Regardless of how they're triggered, they're carefully scoped to ensure that they return only metadata that a user is authorized to access.
 
-## Categories of multiple-workspace APIs
+## Categories of multi-workspace APIs
 
-Multiple-workspace APIs fall into the following two categories. Each serves specific scenarios and enforces access control in distinct ways.
+Multi-workspace APIs fall into the following two categories. Each serves specific scenarios and enforces access control in distinct ways.
 
-* **Read-only, unfiltered multiple-workspace APIs**
+* **Read-only, unfiltered multi-workspace APIs**
 
   * Designed to return metadata across all accessible workspaces for the user.
   * Don't enforce network-based access restrictions.
   * Read-only by design and not supported over workspace private endpoint connections.
   * Typically used in global aggregation scenarios such as platform-wide indexing or cataloging.
 
-* **Filtered multiple-workspace APIs**
+* **Filtered multi-workspace APIs**
 
   * Enforce access control based on the network origin of the API request.
   * Support secure usage from workspace private link, tenant private link, and public network configurations.
   * Return metadata only for the workspaces that are reachable based on the network context of the request.
 
-These APIs are designed to support metadata aggregation at scale and are categorized based on how they handle access control and network security. The following table summarizes how different types of APIs in a multiple-workspace environment return metadata based on the type of network connection.
+These APIs are designed to support metadata aggregation at scale and are categorized based on how they handle access control and network security. The following table summarizes how different types of APIs in a multi-workspace environment return metadata based on the type of network connection.
 
-| Multiple-workspace API type | Inbound network connection | Returned metadata |
+| Multi-workspace API type | Inbound network connection | Returned metadata |
 | -------- | -------------------------- | ----------------- |
 | Read-only, unfiltered | Public internet, tenant private endpoint | All workspaces that the user can access |
 | Filtered | Public internet, tenant private endpoint | Workspaces not secured via workspace private endpoint |
@@ -47,10 +47,10 @@ These APIs are designed to support metadata aggregation at scale and are categor
 
 Assume that a user has access to five Fabric workspaces:
 
-* Workspace 1 and Workspace 2 are secured with workspace private endpoints WS PE 1 and WS PE 1, respectively.
+* Workspace 1 and Workspace 2 are secured with workspace private endpoints WS PE 1 and WS PE 2, respectively.
 * Workspaces 3, 4, and 5 are accessible over a public network or tenant private link.
 
-:::image type="content" source="media/security-fabric-multi-workspace-api-overview/fabric-multi-workspace-scenarios.png" alt-text="Diagram that shows multiple-workspace scenarios." lightbox="./media/security-fabric-multi-workspace-api-overview/fabric-multi-workspace-scenarios.png" border="false":::
+:::image type="content" source="media/security-fabric-multi-workspace-api-overview/fabric-multi-workspace-scenarios.png" alt-text="Diagram that shows multi-workspace scenarios." lightbox="./media/security-fabric-multi-workspace-api-overview/fabric-multi-workspace-scenarios.png" border="false":::
 
 In this example scenario, the user wants to call the Get Workspace API across various network configurations. The Get Workspace API is a read-only, unfiltered aggregation API that allows users to retrieve metadata about all workspaces that they can access. The behavior of this API can change (or remain consistent) across network configurations in Microsoft Fabric.
 

@@ -61,7 +61,7 @@ The following diagram illustrates how the connection is established through an O
 
 :::image type="content" source="./media/security-cross-workspace-communication/on-premises-data-gateway.png" alt-text="Diagram that illustrates a connection through an on-premises data gateway." lightbox="media/security-cross-workspace-communication/on-premises-data-gateway.png" border="false":::  
 
-For an example of how to set up cross-workspace communication by using an on-premises data gateway, see [Access inbound restricted lakehouse data from Power BI by using an OPDG gateway](./security-workspace-private-links-example-on-premises-data-gateway.md).
+For an example of how to set up cross-workspace communication by using an on-premises data gateway, see [Access inbound restricted lakehouse data from Power BI by using an on-premises data gateway](./security-workspace-private-links-example-on-premises-data-gateway.md).
 
 ## Related content
 

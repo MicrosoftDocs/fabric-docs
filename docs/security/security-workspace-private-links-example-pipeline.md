@@ -99,7 +99,7 @@ Create a notebook that reads from the table and writes to a new table. To do so,
    df.write.mode("overwrite").saveAsTable("Lakehouse_Open.customersnew")
    ```
 
-   :::image type="content" source="media/security-workspace-private-links-example-pipeline/run-script.png" alt-text="Screenshot that shows showing running the script for creating a new table." lightbox="media/security-workspace-private-links-example-pipeline/run-script.png":::
+   :::image type="content" source="media/security-workspace-private-links-example-pipeline/run-script.png" alt-text="Screenshot that shows running the script for creating a new table." lightbox="media/security-workspace-private-links-example-pipeline/run-script.png":::
 
 1. Save the notebook.
 
