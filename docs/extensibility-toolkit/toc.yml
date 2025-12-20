@@ -26,6 +26,8 @@ items:
     href: sample-onelake-explorer.md
   - name: Package Installer Sample
     href: sample-package-installer.md
+  - name: Fabric CLI Sample
+    href: sample-fabric-cli.md
 
 - name: Tutorials
   items:
