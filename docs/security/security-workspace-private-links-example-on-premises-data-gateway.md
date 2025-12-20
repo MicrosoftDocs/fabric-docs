@@ -124,11 +124,11 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 9.	In the Some Steps didn’t Complete dialog box, click on Open Model View. Note that the semantic model cannot yet connect to the SQL Analytics Endpoint in the inbound restricted target workspace. You complete the connection configuration in Step 4 below.
 
-### Option 3b: Using the Web modeling experience
+### Option 3b: Using Power BI Desktop
 
-1.	In the source workspace, click on New item, and then in the New item pane, click on the Semantic model tile.
+1.	In Power BI Desktop, installed on a machine with private network access to the target workspace, make sure you are logged in with your user account.
 
-2.	On the Add data to start building a report page, click on Get Data, and then choose Azure SQL database to connect to the data source via the SQL Analytics Endpoint.
+2.	On the Home ribbon, click on Get data, click on More, and choose Azure SQL database.
 
    > [!NOTE]
    > Do not use OneLake catalog because Power BI Desktop cannot yet connect to OneLake catalog data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint (SQL AE).
