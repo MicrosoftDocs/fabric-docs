@@ -13,18 +13,28 @@ ai-usage: ai-generated
 
 ![Screenshot of Fabric CLI Item showing interactive terminal interface with command history.](./media/sample-fabric-cli/fabric-cli-overview.png)
 
-The Fabric CLI Item sample demonstrates how to build a Fabric workload item that provides an interactive terminal interface for executing Fabric CLI commands. It enables developers and data engineers to interact with Fabric resources directly from the browser through Spark Livy sessions, with full command history and real-time output.
+![Screenshot of Fabric CLI Item showing script management and new UI design.](./media/sample-fabric-cli/fabric-cli-overview-script.png)
+
+The Fabric CLI Item provides an interactive terminal interface for executing Fabric CLI commands and Python scripts through Spark Livy sessions within Microsoft Fabric. It enables developers and data engineers to interact with Fabric resources directly from the browser with full command history and script management capabilities.
 
 ## Overview
 
-The Fabric CLI Item showcases advanced capabilities of the Fabric Extensibility Toolkit:
 
-* **Interactive Terminal Interface**: Provides a browser-based terminal experience for executing Fabric CLI commands.
-* **Spark Livy Integration**: Executes commands through Spark Livy sessions within Microsoft Fabric.
-* **Command History**: Maintains a complete history of executed commands for easy recall and reuse.
-* **Real-Time Output**: Displays command output in real time as commands execute.
-* **Session Management**: Manages Spark Livy session lifecycle, including creation, execution, and cleanup.
-* **Resource Interaction**: Enables direct interaction with Fabric resources such as workspaces, lakehouses, and data pipelines.
+The Fabric CLI Item enables users to:
+
+* **Execute Fabric CLI commands** through an integrated terminal interface
+* **Create and manage Python scripts** with parameter support
+* **Run scripts as batch jobs** with Spark configuration
+* **Manage Spark sessions** with automatic reuse and validation
+* **Select lakehouse and environment** for command execution context
+* **Track command history** with arrow key navigation
+
+**Advanced Features** (optional):
+
+* **Switch execution modes** to run native Python code or shell commands
+* **Execute Python directly** in Spark sessions for data processing
+* **Run shell commands** with subprocess support
+* **Parameterized scripts** with type-safe parameter injection
 
 ## Reference
 
