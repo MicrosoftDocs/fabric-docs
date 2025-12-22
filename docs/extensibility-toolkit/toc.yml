@@ -26,6 +26,8 @@ items:
     href: sample-onelake-explorer.md
   - name: Package Installer Sample
     href: sample-package-installer.md
+  - name: Cloud Shell Sample
+    href: sample-cloud-shell.md
 
 - name: Tutorials
   items:
