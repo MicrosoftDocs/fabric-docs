@@ -14,7 +14,7 @@ ms.date: 12/20/2025
 
 ![Screenshot of Cloud Shell Item showing script management and new UI design.](./media/sample-cloud-shell/cloud-shell-script.png)
 
-The Cloud Shell Item provides an interactive terminal interface for executing Cloud Shell commands, including full support for the [Fabric CLI](https://microsoft.github.io/fabric-cli), and Python scripts through Spark Livy sessions within Microsoft Fabric. This integration enables developers and data engineers to easily execute Fabric CLI commands for managing and automating Fabric resources directly from the browser, with full command history and script management capabilities.
+The Cloud Shell Item provides an interactive terminal interface for executing Cloud Shell commands, including full support for the [Fabric CLI](https://microsoft.github.io/fabric-cli), and Python scripts through Spark Livy sessions within Microsoft Fabric. This integration lets you run Fabric CLI commands in your browser to manage and automate Fabric resources, with command history and script management.
 
 ## Overview
 
