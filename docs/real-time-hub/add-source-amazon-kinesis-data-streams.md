@@ -24,7 +24,7 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 
 1. On the **Add data** page, type in the search bar and select **Amazon Kinesis Data Streams**.
 
-   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/add-data-amazon-kinesis.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
+   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/add-data-amazon.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 1. On the **Connect** screen, to create a connection, select **New connection**.
 
     :::image type="content" source="./media/add-source-amazon-kinesis-data-streams/new-connection.png" alt-text="Screenshot that shows the Connect page with the New connection highlighted.":::
