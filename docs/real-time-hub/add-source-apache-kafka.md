@@ -6,7 +6,7 @@ ms.author: anboisve
 ms.topic: how-to
 ms.custom:
   - references_regions
-ms.date: 07/22/2025
+ms.date: 12/22/2025
 # Customer intent: I want to learn how to add an Apache Kafka topic as a source in Fabric Real-Time hub.
 ---
 
