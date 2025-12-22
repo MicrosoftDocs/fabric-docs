@@ -5,14 +5,11 @@ ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial
-ms.date: 1/13/2025
+ms.date: 12/22/2025
 ms.custom: dataflows
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2
-
-> [!IMPORTANT]
-> This is a pattern to incrementally amass data with Dataflow Gen2. This isn't the same as incremental refresh. Incremental refresh is a feature that's currently in development. This feature is one of the top voted ideas on our ideas website. You can vote for this feature [on the Fabric Ideas site](https://ideas.fabric.microsoft.com/ideas/idea/?ideaid=4814b098-efff-ed11-a81c-6045bdb98602).
 
 This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
 
