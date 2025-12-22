@@ -24,9 +24,9 @@ This article describes how to add Apache Kafka as an event source in Fabric Real
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Add Apache Kafka as a source
-On the **Data sources** page, select **Apache Kafka**.
+On the **Add data** page, type in the search bar and select **Apache Kafka**.
 
-:::image type="content" border="true" source="media/add-source-apache-kafka/select-apache-kafka.png" alt-text="A screenshot of selecting Apache Kafka.":::
+:::image type="content" border="true" source="media/add-source-apache-kafka/apache.png" alt-text="A screenshot of selecting Apache Kafka.":::
 
 ## Configure Apache Kafka connector
 
