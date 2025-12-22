@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 10/28/2025
+ms.date: 12/22/2025
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -52,11 +52,12 @@ The following table outlines the supported expressions:
 |FROM||
 |WHERE| Only deterministic inbuilt functions are supported.|
 |INNER JOIN || 
+|WITH| Common table expressions are supported|
 |UNION ALL|| 
 |Data quality constraints| Only deterministic inbuilt functions are supported in constraints.|
 
 > [!Note]
-> For the better incremental refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh automatically fall back to a full refresh strategy.
+> For the better optimal refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh automatically fall back to a full refresh strategy.
 
 ### Key points for optimal refresh
 
