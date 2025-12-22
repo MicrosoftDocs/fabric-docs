@@ -54,7 +54,7 @@ SELECT
     c.region,
     o.orderDate,
     o.orderAmount
-FROM customers c INNER JOIN orders o
+FROM bronze.customers c INNER JOIN bronze.orders o
 ON c.customerID = o.customerID
 ```
 
