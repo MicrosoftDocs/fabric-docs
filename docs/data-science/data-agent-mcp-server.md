@@ -14,7 +14,7 @@ ms.collection: ce-skilling-ai-copilot
 #customer intent: As an Analyst, I want to consume a Fabric data agent as MCP server in VS Code.
 ---
 
-# Consume Fabric data agent as a Model Context Protocol server in Visual Studio Code
+# Consume Fabric data agent as a model context protocol server in Visual Studio Code
 
 The Model Context Protocol (MCP) server is an emerging standard in the AI landscape that allows AI systems to discover and interact with external tools in a structured way. It plays a critical role in enabling AI models to access and use external knowledge and capabilities. By using MCP servers, AI systems can extend beyond their own data and reasoning. MCP servers provide a way to expose tools and services to AI systems in a consistent, discoverable manner. They help organizations integrate their knowledge into AI workflows.
 
