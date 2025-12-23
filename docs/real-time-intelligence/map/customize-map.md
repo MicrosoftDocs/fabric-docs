@@ -7,7 +7,7 @@ ms.author: sipa
 ms.topic: how-to
 ms.custom:
 ms.date: 09/15/2025
-ms.search.form: Customize a map
+ms.search.form: Customize the map
 ---
 
 # Customize a map (preview)

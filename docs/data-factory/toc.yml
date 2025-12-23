@@ -69,8 +69,6 @@
         href: decision-guide-data-integration.md
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
-      - name: Decide - Data transformation strategy
-        href: decision-guide-data-transformation.md
       - name: Decide - Copy activity, Copy job, dataflow, or Spark?
         href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
@@ -89,34 +87,32 @@
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
+    - name: Pipeline assessment tool
+      href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
     - name: Connector capability comparison
       href: connector-parity.md
+    - name: Migration planning
+      href: migrate-planning-azure-data-factory.md
     - name: Migration best practices
       href: migration-best-practices.md
-    - name: Pipelines
-      items:
-      - name: Migrate from Azure Data Factory to Data Factory in Microsoft Fabric
-        href: migrate-from-azure-data-factory.md  
-      - name: Bring your Azure Data Factory to Fabric
-        href: migrate-pipelines-azure-data-factory-item.md 
-      - name: Planning your migration from Azure Data Factory to Fabric
-        href: migrate-planning-azure-data-factory.md
-      - name: Migrate pipelines with PowerShell
-        items: 
-        - name: Pipeline migration with PowerShell overview
-          href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
-        - name: Tutorial PowerShell pipeline migration
-          href: migrate-pipelines-powershell-upgrade-module-tutorial.md
-        - name: Build your resolutions file
-          href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
-        - name: Find your Fabric workspace ID
-          href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
-      - name: Fabric dataflows for mapping data flow users
-        href: guide-to-dataflows-for-mapping-data-flow-users.md
-      - name: How to ingest data from Azure Data Factory to Fabric
-        href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+    - name: Bring your Azure Data Factory to Fabric
+      href: migrate-pipelines-azure-data-factory-item.md 
+    - name: Migrate pipelines with PowerShell
+      items: 
+      - name: Pipeline migration with PowerShell overview
+        href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+      - name: Tutorial PowerShell pipeline migration
+        href: migrate-pipelines-powershell-upgrade-module-tutorial.md
+      - name: Build your resolutions file
+        href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
+      - name: Find your Fabric workspace ID
+        href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
+    - name: How to ingest data from Azure Data Factory to Fabric
+      href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
     - name: Dataflows
-      items:    
+      items:
+      - name: Fabric dataflows for mapping data flow users
+        href: guide-to-dataflows-for-mapping-data-flow-users.md    
       - name: Migrate from Dataflow Gen1 to Dataflow Gen2
         href: dataflow-gen2-migrate-from-dataflow-gen1.md
       - name: Migrate to Dataflow Gen2 scenarios
@@ -699,9 +695,6 @@
             items: 
               - name: Spark - Overview
                 href: spark-connector-overview.md
-              - name: Configure in a pipeline Copy activity
-                href: spark-connector-copy-activity.md
-
           - name: SQL database
             items: 
               - name: SQL database - Overview
@@ -975,6 +968,8 @@
             href: dataflows-gen2-monitor.md
           - name: Performance and troubleshooting
             items:
+              - name: Decide - Dataflow strategy
+                href: decision-guide-data-transformation.md
               - name: Dataflow Gen2 performance and scalability
                 href: dataflow-gen2-performance-best-practices.md  
               - name: Dataflows that use gateways
@@ -1012,7 +1007,15 @@
                   - name: Variable references in Dataflow
                     href: dataflow-gen2-variable-references.md
       - name: dbt job
-        href: dbt-job-overview.md  
+        items:
+        - name: What is dbt job?
+          href: dbt-job-overview.md
+        - name: Step-by-step dbt job tutorial
+          href: dbt-job-sample-tutorial.md
+        - name: Create a dbt job
+          href: dbt-job-how-to.md
+        - name: Configure a dbt job
+          href: dbt-job-configure.md
   - name: Orchestrate your pipelines
     items:
       - name: What is a pipeline?
@@ -1130,6 +1133,8 @@
         items:
           - name: Browse pipeline runs in the Monitoring Hub
             href: monitoring-hub-pipeline-runs.md
+          - name: Workspace monitoring
+            href: workspace-monitoring.md
       - name: Parameterization
         items: 
           - name: Parameter usage

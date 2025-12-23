@@ -1,12 +1,12 @@
 ---
 title: Runtime 1.3 in Fabric
 description: Learn about Apache Spark-based runtime 1.3 in Fabric, including the unique features, capabilities, and best practices.
-ms.reviewer: sngun
+ms.reviewer: arali
 ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.custom:
-ms.date: 06/10/2025
+ms.date: 12/11/2025
 no-loc: [Copilot]
 # customer intent: As a Microsoft Fabric user I want to learn about Apache Spark-based runtime 1.3 in Fabric.
 ---
@@ -42,7 +42,7 @@ Use the following instructions to integrate runtime 1.3 into your workspace and 
 
 You can now start working with the newest improvements and functionalities introduced in Fabric runtime 1.3 (Spark 3.5 and Delta Lake 3.2).
 
-### Learn about Apache Spark 3.5
+## Learn about Apache Spark 3.5
 
 [Apache Spark 3.5.0](https://spark.apache.org/releases/spark-release-3-5-0.html) is the sixth version in the 3.x series. This version is a product of extensive collaboration within the open-source community, addressing more than 1,300 issues as recorded in Jira.
 
@@ -53,25 +53,25 @@ Other new capabilities also include Python user-defined table functions, the sim
 
 You can check the full list and detailed changes here: [Spark Release 3.5.0](https://spark.apache.org/releases/spark-release-3-5-0.html).
 
-### Learn about Delta Spark
+## Learn about Delta Spark
 
 Delta Lake 3.2 marks a collective commitment to making Delta Lake interoperable across formats, easier to work with, and more performant. Delta Spark 3.2 is built on top of [Apache Spark™ 3.5](https://spark.apache.org/releases/spark-release-3-5-0.html). The Delta Spark maven artifact is renamed from **delta-core** to **delta-spark**.
 
 You can check the full list and detailed changes here: [https://docs.delta.io/index.html](https://docs.delta.io/index.html).
 
-### Components and Libraries
+## Components and Libraries
 
 For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime/tree/main/Fabric/Runtime%201.3%20(Spark%203.5)).
 
 > [!NOTE]
-> EventHubConnector is deprecated in Fabric Runtime 1.3 (Spark 3.5) and will be removed from future Fabric Runtime versions. Customers are encouraged to use Kafa Spark Connector instead as Event Hubs is Kafka compatible already. You can find more information about using Kafa Spark Connector with Event Hubs here: [Event Hubs Kafka Spark Tutorial](/azure/event-hubs/event-hubs-kafka-spark-tutorial)
+> EventHubConnector is deprecated in Fabric Runtime 1.3 (Spark 3.5) and will be removed from future Fabric Runtime versions. Customers are encouraged to use Kafka Spark Connector instead as Event Hubs is Kafka compatible already. You can find more information about using Kafka Spark Connector with Event Hubs here: [Event Hubs Kafka Spark Tutorial](/azure/event-hubs/event-hubs-kafka-spark-tutorial)
 
-### Related content
+## Related content
 
 - Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
-- [Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html)
-- [SQL, Datasets, and DataFrame migration guides](https://spark.apache.org/docs/latest/sql-migration-guide.html)
-- [Structured Streaming migration guide](https://spark.apache.org/docs/latest/ss-migration-guide.html)
-- [MLlib (Machine Learning) migration guide](https://spark.apache.org/docs/latest/ml-migration-guide.html)
-- [PySpark (Python on Spark) migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
-- [SparkR (R on Spark) migration guide](https://spark.apache.org/docs/latest/sparkr-migration-guide.html)
+- [Spark Core migration guide](https://archive.apache.org/dist/spark/docs/3.5.0/core-migration-guide.html)
+- [SQL, Datasets, and DataFrame migration guides](https://archive.apache.org/dist/spark/docs/3.5.0/sql-migration-guide.html)
+- [Structured Streaming migration guide](https://archive.apache.org/dist/spark/docs/3.5.0/ss-migration-guide.html)
+- [MLlib (Machine Learning) migration guide](https://archive.apache.org/dist/spark/docs/3.5.0/ml-migration-guide.html)
+- [PySpark (Python on Spark) migration guide](https://archive.apache.org/dist/spark/docs/3.5.0/api/python/migration_guide/pyspark_upgrade.html)
+- [SparkR (R on Spark) migration guide](https://archive.apache.org/dist/spark/docs/3.5.0/sparkr-migration-guide.html)

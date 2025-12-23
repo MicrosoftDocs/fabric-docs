@@ -7,7 +7,7 @@ ms.author: limingchen
 ms.topic: concept-article
 ms.custom:
 ms.date: 12/05/2025
-ms.search.form: Map
+ms.search.form: Share map 
 ---
 
 # Sharing Microsoft Fabric Maps (preview)

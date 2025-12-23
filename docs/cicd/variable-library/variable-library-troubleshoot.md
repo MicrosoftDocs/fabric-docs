@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.service: fabric
 ms.topic: troubleshooting-problem-resolution
-ms.date: 11/21/2025
+ms.date: 12/15/2025
 
 #customer intent: As a developer, I want to learn how to troubleshoot variable libraries so that I can manage my content lifecycle.
 

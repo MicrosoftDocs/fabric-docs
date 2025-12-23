@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 12/04/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -20,7 +20,7 @@ This Dataverse connector is supported in Data Factory for [!INCLUDE [product-nam
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
 | **Pipeline**<br>- [Copy activity](connector-dataverse-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
-| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Merge|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Upsert|None<br> On-premises<br> Virtual network |Organizational account<br> Service principal<br> Workspace identity |
 
 
 ## Related content

@@ -7,7 +7,7 @@ ms.reviewer: Pierre, NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 02/21/2025
+ms.date: 12/15/2025
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
 #customer intent: As developer, I want to learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can simplify continuous integration and continuous delivery (CI/CD) of my content.
 ---
