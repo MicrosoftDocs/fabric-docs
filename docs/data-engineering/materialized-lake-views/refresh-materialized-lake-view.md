@@ -57,7 +57,7 @@ The following table outlines the supported expressions:
 |Data quality constraints| Only deterministic inbuilt functions are supported in constraints.|
 
 > [!Note]
-> For the better optimal refresh experience, use supported clauses as much as possible. If a query uses unsupported patterns, the refresh automatically fall back to a full refresh strategy.
+> For best results, design your queries using only supported clauses. Any use of unsupported patterns trigger an automatic fallback to a full refresh strategy .
 
 ### Key points for optimal refresh
 
