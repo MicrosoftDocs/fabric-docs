@@ -26,7 +26,8 @@ After you create the MLV, select **Manage materialized lake views** to navigate 
 The lineage or MLV flow is defined per the code written by the user in the notebook. It's created after the MLV end-to-end flow is created.
 
 > [!Important]
-> All shortcuts are treated as source entities in the lineage view
+> All shortcuts are treated as source entities in the lineage view.
+> All tables or Materialized lake views under a shortcut schema are treated as source entities in the lineage view.
 
 :::image type="content" source="./media/view-lineage/job-graph.png" alt-text="Screenshot showing a job graph in lineage." border="true" lightbox="./media/view-lineage/job-graph.png":::
 
