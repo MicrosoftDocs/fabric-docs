@@ -115,6 +115,8 @@ items:
           href: consume-data-agent-python.md
         - name: Consume a data agent from Microsoft 365 Copilot (preview)
           href: data-agent-microsoft-365-copilot.md  
+        - name: Consume a data agent as Model Context Protocol Server (preview)
+          href: data-agent-mcp-server.md       
     - name: Source Control, CI/CD, and ALM for Fabric data agent
       href: data-agent-source-control.md 
     - name: Fabric data agent end-to-end tutorial
