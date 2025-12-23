@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
-ms.date: 12/08/2025
+ms.date: 12/23/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to transform data in a KQL database in Real-Time Intelligence.
