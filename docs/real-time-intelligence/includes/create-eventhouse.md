@@ -18,7 +18,7 @@ ms.date: 12/03/2025
 
 1. Select the Eventhouse item.
 
-1. Enter *Tutorial* as the eventhouse name and click **Create**. The Eventhouse and a KQL database is created simultaneously with the same name.
+1. Enter *Tutorial* as the eventhouse name and click **Create**. The Eventhouse and a KQL database are created simultaneously with the same name.
 
    :::image type="content" source="../media/tutorial/event-house-new-tutorial.png" alt-text="Screenshot of the Eventhouse interface displaying the Eventhouse name dialogue and the Create button highlighted.":::
 

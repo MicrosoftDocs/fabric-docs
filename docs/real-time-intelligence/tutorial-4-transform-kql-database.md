@@ -13,7 +13,7 @@ ms.search.form: Get started
 # Real-Time Intelligence tutorial part 4: Transform data in a KQL database
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md).
+> This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 3: Set an alert on your eventstream](tutorial-3-set-alert.md).
 
 In this part of the tutorial, you use an update policy to transform data in a KQL Database. Update policies are automation mechanisms triggered when new data is written to a table. They eliminate the need for special orchestration by running a query to transform the ingested data and save the result to a destination table. Multiple update policies can be defined on a single table, allowing for different transformations and saving data to multiple tables simultaneously. The target tables can have a different schema, retention policy, and other policies from the source table.
 
