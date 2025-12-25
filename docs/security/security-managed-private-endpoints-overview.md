@@ -37,37 +37,22 @@ For more information about supported data sources for managed private endpoints 
 
 ## Limitations and considerations
 
-* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include:
-  
-    | Region         |
-    |----------------|
-    | Singapore |
-    | Israel Central |
-    | Switzerland West | 
-    | Italy North    |
-    | West India     |
-    | Mexico Central |
-    | Qatar Central  |
-    | Spain Central  |
-    | Brazil South  |
 
-* **Capacity Region Compatibility**: Creating managed private endpoints in unsupported capacity regions results in errors. These unsupported regions include: 
-  
-    | Region         |
-    |----------------|
-    | West Central US |
-    | Switzerland West |
-    | Italy North    |
-    | Qatar Central  |
-    | West India     |
-    | France South   |
-    | Germany North  |
-    | Japan West     |
-    | Korea South    |
-    | South Africa West |
-    | UAE Central    |
-    | Brazil South   |
-    | Singapore |
+### Regional availability considerations
+
+Managed private endpoints in Microsoft Fabric are supported in **all regions where Fabric Data Engineering workloads are available**.
+
+Please refer to the regional avilability documentation for the list of supported regions
+- [Fabric region availability](./admin/region-availability.md)
+
+### Important notes
+
+- Managed private endpoints require **Fabric Data Engineering (Spark-based) workload support** in both:
+  - The tenant home region
+  - The capacity region where the workspace is assigned
+- If a region supports Fabric Data Engineering, managed private endpoints are expected to be available in that region.
+- If Fabric Data Engineering is not available in a given region, creation of managed private endpoints in that region will be blocked.
+
 
 * **Limitations for specific workloads**:
 
