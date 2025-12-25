@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Query
 description: Run KQL queries on contextualized digital twin builder (preview) data and visualize it in a Real-Time Dashboard.
 author: baanders
 ms.author: baanders
-ms.date: 04/28/2025
+ms.date: 12/12/2025
 ms.topic: tutorial
 ---
 
@@ -15,7 +15,7 @@ Now that your digital twin builder (preview) data is projected to an eventhouse,
 
 ## Query the data using KQL
 
-Begin in your *Tutorial_queryset* from the previous part of the tutorial. 
+Begin where the previous part of the tutorial left off, in the *Tutorial_queryset* tab for your *Tutorial* KQL database. 
 
 Using the **+** above the query pane, create the following new queries. (For more information about creating KQL queries, see [Query data in a KQL queryset](../kusto-query-set.md).)
 
@@ -149,14 +149,22 @@ Start by creating an empty Real-Time Dashboard in your Fabric workspace.
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](../includes/create-real-time-dashboard.md)]
 
+6. Dashboard options can't be accessed until the dashboard is connected to some data source. Add an initial data source by selecting the **Tutorial** KQL database where it's visible on the canvas.
+
+    :::image type="content" source="media/tutorial-rti/real-time-dashboard-source.png" alt-text="Screenshot of adding a KQL database source." lightbox="media/tutorial-rti/real-time-dashboard-source.png":::
+
+    The database opens with the option to enter a query for a new tile. Since you import tiles in the next step, there's no need to create a tile now. Select **Discard changes** to return to the dashboard that's now functional with a data source connection.
+
+    :::image type="content" source="media/tutorial-rti/real-time-dashboard-source-2.png" alt-text="Screenshot of discarding tile edits." lightbox="media/tutorial-rti/real-time-dashboard-source-2.png":::
+
 ### Upload template and connect data source
 
 Next, use a template file to populate your dashboard with tiles based on your KQL queries from earlier.
 
 1. Download the *DTB+RTI_dashboard.json* dashboard template from the sample folder in GitHub: [digital-twin-builder/bus-scenario](https://aka.ms/dtb-samples-bus).
-1. In your Real-Time Dashboard, select the **Manage** tab and **Replace with file**.
+1. In your Real-Time Dashboard, switch to the **Manage** tab. Select **Replace with file** from the menu ribbon.
 1. Open the dashboard template file that you downloaded. Continue through the **migration warnings** that flag the template's placeholder values for the database and workspace ID.
-1. The template file populates the dashboard with multiple tiles, although the tiles can't get data because there's no connected data source yet.
+1. The template file populates the dashboard with multiple tiles, although the tiles can't get data until you reconnect your data source.
 
     :::image type="content" source="media/tutorial-rti/real-time-dashboard-errors.png" alt-text="Screenshot of the Real-Time Dashboard with errors.":::
 
@@ -164,14 +172,14 @@ Next, use a template file to populate your dashboard with tiles based on your KQ
 
     :::image type="content" source="media/tutorial-rti/real-time-dashboard-manage-data-sources.png" alt-text="Screenshot of managing data sources in the Real-Time Dashboard.":::
 
-1. Under **Database**, select the dropdown arrow and **Eventhouse / KQL Database**. Select the *Tutorial* KQL database and select **Connect**. Select **Apply**, and close the **Data sources** pane.
+1. Under **Database**, select the dropdown arrow and **KQL Database**. Select the *Tutorial* KQL database and select **Connect**. Leave the other default settings, select **Apply**, and close the **Data sources** pane.
 
 After a few seconds, the visuals populate with data from your database.
 
 >[!TIP]
 >The dashboard keeps the current time in UTC, so the time range selector might not match your local time. If you don't see data in the tiles, expand the time range. 
 
-Take some time to explore the dashboard. You can use the **Edit** and **Explore data** icons on each tile to view the underlying queries, experiment with changing the time range filters and other tile options, and try adding your own new queries and tiles.
+Explore the dashboard. You can use the **Edit** and **Explore data** icons on each tile to view the underlying queries, experiment with changing the time range filters and other tile options, and try adding your own new queries and tiles.
 
 :::image type="content" source="media/tutorial-rti/real-time-dashboard-explore.png" alt-text="Screenshot of exploration options in the Real-Time Dashboard." lightbox="media/tutorial-rti/real-time-dashboard-explore.png":::
 

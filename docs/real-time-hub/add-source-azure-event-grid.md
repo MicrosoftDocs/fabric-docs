@@ -37,6 +37,8 @@ You can get events from an Azure Event Grid namespace into Real-Time hub in one 
 
     Now, move on to the [Configure and connect to an Event Grid namespace](#configure-and-connect-to-the-event-grid-namespace) section. Skip the selection of subscription and namespace as they're already selected for you.
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 5. On the **Data sources** page, search for **Azure Event Grid namespace**, and then select **Connect** on the **Azure Event Grid Namespace** tile. 

@@ -14,7 +14,10 @@ The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is
 
 ## Prerequisites
 
-To install the metrics app, you need to be a capacity admin.
+To install the metrics app, you need:
+
+- To be a capacity admin
+- A Power BI license (Pro, Premium Per User, or a Power BI individual trial) to access and use the app
 
 ## Install the app
 
@@ -61,9 +64,6 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 ## Run the app for the first time
 
 To complete the installation, configure the Microsoft Fabric Capacity Metrics app by running it for the first time.
-
-   > [!NOTE]
-   > 
 
 1. In Microsoft Fabric, in the Power BI experience, select **Apps**. If you're running the app just after installing it, you'll be redirected to the **Apps** pane, and you can skip to step 2. Otherwise, to see the **Apps** pane, change the experience selector from the bottom left to Power BI instead of Fabric.
 1. Select the **Microsoft Fabric Capacity Metrics** app.

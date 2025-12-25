@@ -2,12 +2,10 @@
 title: GQL Expressions, Predicates, and Functions
 description: Complete reference for GQL expressions, predicates, and built-in functions in graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 10/09/2025
+ms.date: 11/18/2025
 author: eric-urban
 ms.author: eur
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ---
 
 # GQL expressions, predicates, and functions
@@ -22,9 +20,10 @@ Literals are simple expressions that directly evaluate to the stated value. Lite
 
 **Example:**
 
+<!-- GQL Literals: Checked 2025-11-13 -->
 ```gql
 1
-1.0
+1.0d
 TRUE
 "Hello, graph!"
 [ 1, 2, 3 ]
@@ -64,6 +63,7 @@ For specific comparison behavior, see the documentation for each value type in [
 
 **Example:**
 
+<!-- GQL Query: Checked 2025-11-13 -->
 ```gql
 MATCH (p:Person)
 FILTER WHERE p.birthday <= 20050915
@@ -87,6 +87,7 @@ Combine conditions with logical operators:
 
 **Example:**
 
+<!-- GQL Query: Checked 2025-11-13 -->
 ```gql
 MATCH (p:Person)
 FILTER WHERE p.birthday <= 20050915 AND p.firstName = 'John'
@@ -95,17 +96,25 @@ RETURN p.firstName || ' ' || p.lastName AS fullName
 
 ## Property existence predicates
 
-Nonexisting properties always evaluate to `NULL`. Hence, to check if properties exist, you can use:
+To check if properties exist, you can use:
 
+<!-- GQL Predicate: Checked 2025-11-13 -->
 ```gql
 p.locationIP IS NOT NULL
 p.browserUsed IS NULL
 ```
 
+> [!NOTE]
+> Attempting to access a known non-existing property results in a syntax error.
+> Access to a potentially non-existing property evaluates to `null`.
+> The determination of whether a property is known or potentially non-existing
+> is made based on the type of the accessed node or edge.
+ 
 ## List membership predicates
 
 Test if values are in lists:
 
+<!-- GQL Predicate: Checked 2025-11-13 -->
 ```gql
 p.firstName IN ['Alice', 'Bob', 'Charlie']
 p.gender NOT IN ['male', 'female']
@@ -115,6 +124,7 @@ p.gender NOT IN ['male', 'female']
 
 Match strings using pattern matching:
 
+<!-- GQL Predicate: Checked 2025-11-13 -->
 ```gql
 p.firstName CONTAINS 'John'
 p.browserUsed STARTS WITH 'Chrome'

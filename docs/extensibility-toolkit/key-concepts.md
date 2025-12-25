@@ -3,9 +3,9 @@ title: Key concepts and Features
 description: Learn about the key concepts and features of the Extensibility Toolkit
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Key concepts and features
@@ -50,7 +50,7 @@ By focusing on configuration, metadata, and references, you ensure your item's s
 
 Every item comes with its own Onelake item folder where developers can store structured as well as unstructured data. Similar to a [Lakehouse](../data-engineering/tutorial-build-lakehouse.md) the item has a Table folder where data can be stored in Delta or Iceberg format and a Files folder where unstructured data can be stored.
 
-Use the [How to store data in Item](./how-to-store-data-in-item.md) to understand how it can be implemented.
+Use the [How to store data in Item](./how-to-store-data-in-onelake.md) to understand how it can be implemented.
 
 ## Shortcut data
 
@@ -64,14 +64,23 @@ Users can create, update, and delete items with content using the standard [Fabr
 
 ## CI/CD support
 
-CI/CD support for all items is one of the highest asks from customers. With this feature all items, participate in CICD out of the box, without the need to implement any specific logic or operations. This means you can automate deployment, testing, and updates for your workloads using standard Azure pipelines and tools. The item format and APIs are designed to be fully compatible with CI/CD processes, ensuring a consistent and reliable experience across environments. For more information on integrating with CI/CD, see the [Fabric CICD documentation](../cicd/cicd-overview.md).
+> [!NOTE]
+> CI/CD support for the Extensibility Toolkit is currently under development. The features described below are planned capabilities and may change before release.
+
+CI/CD support for all items is one of the highest asks from customers. With this feature all items, participate in CICD out of the box, without the need to implement any specific logic or operations. This means you can automate deployment, testing, and updates for your workloads using standard Azure Pipelines and tools. The item format and APIs are designed to be fully compatible with CI/CD processes, ensuring a consistent and reliable experience across environments. For more information on integrating with CI/CD, see the [Fabric CICD documentation](../cicd/cicd-overview.md).
 
 ## Item CRUD notification API
+
+> [!NOTE]
+> CRUD notification API support for the Extensibility Toolkit is currently under development. The features described below are planned capabilities and may change before release.
 
 There are cases where your workload needs to participate in the Item CRUD events. As items are created on the platform directly via the [UX](#standard-item-creation-experience), [Public APIs](#crud-item-api-support) or [CI/CD](#cicd-support) workload owners aren't in control when a new item is created over those entrypoints. By default items store their [state](#storing-item-definition-state-in-fabric) in Fabric and don't need to get informed about the change of their item. Nevertheless there are some cases where workloads have a need to participate in the CRUD flow. This is mainly the case if Infrastructure for items needs to be provisioned or configured (for example, Databases). For these scenarios, we allow partners to implement a Crud notification API which Fabric calls on every event. In this scenario, Workload developer need to make sure that their API is reachable as otherwise Fabric operations fail.
 
 
 ## Fabric scheduler
+
+> [!NOTE]
+> Fabric scheduler support for the Extensibility Toolkit is currently under development. The features described below are planned capabilities and may change before release.
 
 Fabric supports Job scheduling for workloads. This feature allows developers to build workloads that get notified even if the user isn't in front of the UX and act based on the Job that should be executed (for example, copy data in Onelake). Partners need to implement an API and configure their workload to participate in this functionality.
 
@@ -87,15 +96,6 @@ Use the [How to relax the iFrame](./how-to-relax-iframe.md) to understand how it
 
 ## Feature limitations
 
-### Publishing
-
-In Preview partners can only preview their workload with selected audience. Organizational scenarios have no publishing limitations.
-
->[!NOTE]
->This will change when the [Definition validation](./manifest-overview.md) will become available. 
-
 ### Private link
 
 All workloads are blocked for consumption and development if Private Link is enabled on tenant or workspace level.
-
-

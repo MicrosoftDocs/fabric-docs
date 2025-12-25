@@ -3,9 +3,9 @@ title: Extensibility Toolkit Architecture
 description: Learn more about the Architecture of the Extensibility Toolkit.
 author: gsaurer
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: article
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Extensibility Toolkit architecture
@@ -50,7 +50,7 @@ Workloads typically contribute one or more item types. Items created by your wor
 
 ## Next steps
 
-To develop locally and publish your workload, see [Publish your workload](publish-workload-flow.md). For manifest schema and local development guidance, see [Manifest overview](manifest-overview.md), [DevServer](devserver.md), and [DevGateway](devgateway.md). For API endpoints, scopes, and identity guidance, see the [Fabric Public REST APIs](/rest/api/fabric/articles/).
+To develop locally and publish your workload, see [Publish your workload](publishing-overview.md). For manifest schema and local development guidance, see [Manifest overview](manifest-overview.md), [DevServer](tools-register-local-web-server.md), and [DevGateway](tools-register-local-workload.md). For API endpoints, scopes, and identity guidance, see the [Fabric Public REST APIs](/rest/api/fabric/articles/).
 
 ## Related content
 

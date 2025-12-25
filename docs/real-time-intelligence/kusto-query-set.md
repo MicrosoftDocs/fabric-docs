@@ -7,6 +7,7 @@ ms.author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.date: 05/19/2025
+ms.subservice: rti-kql-query
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset

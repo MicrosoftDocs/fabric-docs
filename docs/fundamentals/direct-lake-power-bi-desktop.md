@@ -60,7 +60,7 @@ Now you're live editing the semantic model.
 :::image type="content" source="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png" alt-text="Screenshot of Power BI Desktop when editing a semantic model with tables in Direct Lake storage mode later." lightbox="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png":::
 
 > [!NOTE]
-> Semantic models with Direct Lake or import table storage modes are supported. **Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
+> Semantic models with Direct Lake and import table storage modes are supported. **Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
 
 Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 
@@ -169,6 +169,7 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
 * You can change the data category to *barcode*, but reports linked to the semantic model can't filter by barcodes.
 * You can't live edit externally shared semantic models.
+* You can use live edit on import tables only if they're part of a composite model, including Direct Lake on OneLake tables
 * Review the current [known issues and limitations of Direct Lake](direct-lake-overview.md#considerations-and-limitations).
 
 ## Related content

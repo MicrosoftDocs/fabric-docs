@@ -104,6 +104,14 @@ Power BI depends on certain endpoints to support integration with OneDrive for B
 | --- | --- | --- |
 | **Required:** OneDrive and SharePoint integration | See the documentation for  [SharePoint Online and OneDrive for Business URLs](/office365/enterprise/urls-and-ip-address-ranges##sharepoint-online-and-onedrive-for-business) | N/A |
 
+## Paginated Report Exporting
+
+Exporting of Paginated reports in Power BI requires access to Azure Blob Storage. You must be able to connect to the endpoint and linked sites in the following table.
+
+| Purpose | Destination | Port |
+| --- | --- | --- |
+| **Required:** Azure Blob Storage | *.blob.core.windows.net | TCP 443 | 
+
 ## Related external sites
 
 Power BI links to other related sites. These sites host documentation, support, new feature requests, and more. Access to these sites doesn't affect the functionality of Power BI, so adding them to allowlists is optional.

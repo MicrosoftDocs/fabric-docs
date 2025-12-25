@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/07/2024
+ms.date: 12/15/2025
 ms.search.form: Deployment pipelines UI
 #customer intent: As a developer, I want to learn about the new user interface for deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---

@@ -5,6 +5,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
+ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 #customer intent: I want to learn how to get data from Apache Spark using the Kusto connector for Spark.
 ---

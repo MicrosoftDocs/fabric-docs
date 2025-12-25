@@ -12,7 +12,15 @@ ms.search.form: delta lake v-order optimization
 
 # Delta Lake table optimization and V-Order
 
-The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to [!INCLUDE [product-name](../includes/product-name.md)], assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
+The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to Microsoft Fabric, assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
+
+> [!IMPORTANT]
+> The `OPTIMIZE` commands in this article are **Spark SQL commands** and must be executed in Spark environments such as:
+> - [Fabric notebooks](../data-engineering/how-to-use-notebook.md) with Spark runtime
+> - [Spark job definitions](../data-engineering/spark-job-definition.md)
+> - Lakehouse via the **Maintenance** option in the Explorer
+> 
+> These commands are **NOT supported** in the [SQL Analytics Endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Warehouse SQL query editor](../data-warehouse/sql-query-editor.md), which only support T-SQL commands. For table maintenance through the SQL Analytics Endpoint, use the Lakehouse **Maintenance** UI options or run the commands in a Fabric notebook.
 
 ## What is V-Order?
 
@@ -28,7 +36,7 @@ V-Order is applied at the parquet file level. Delta tables and its features, suc
 
 ## Controlling V-Order writes
 
-V-Order is used to optimize parquet file layout for faster query performance, especially in read-heavy scenarios. In [!INCLUDE [product-name](../includes/product-name.md)], **V-Order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
+V-Order is used to optimize parquet file layout for faster query performance, especially in read-heavy scenarios. In Microsoft Fabric, **V-Order is _disabled by default_ for all newly created workspaces** to optimize performance for write-heavy data engineering workloads.
 
 V-Order behavior in Apache Spark is controlled through the following configurations:
 
@@ -273,6 +281,15 @@ OPTIMIZE <table|fileOrFolderPath> WHERE <predicate> [ZORDER  BY (col_name1, col_
 When ZORDER and VORDER are used together, Apache Spark performs bin-compaction, ZORDER, VORDER sequentially.
 
 The following commands bin-compact and rewrite all affected files using the TBLPROPERTIES setting. If TBLPROPERTIES is set true to V-Order, all affected files are written as V-Order. If TBLPROPERTIES is unset or set to false, it inherits the session setting. To remove V-Order from the table, set the session configuration to false.
+
+> [!NOTE]
+> When using these commands in Fabric notebooks, ensure there's a space between `%%sql` and the `OPTIMIZE` command. The correct syntax is:
+> ```sql
+> %%sql 
+> OPTIMIZE table_name;
+> ```
+> 
+> **Not:** `%%sqlOPTIMIZE table_name;` (this will cause a syntax error)
 
 ```sql
 %%sql 

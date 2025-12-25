@@ -67,7 +67,7 @@ Here are the supported action types:
 
 - **Email** - An email is sent to the specified recipients. 
 - **Teams** - A Teams message is sent to specified recipients, group chat, or channel. 
-- **Fabric item** - Executes the selected Fabric pipeline, Fabric notebook, Fabric Spark Job Definition.
+- **Fabric item** - Executes the selected Fabric pipeline, Fabric notebook, Fabric Spark Job Definition, Fabric function.
 
 - **Custom action** - Activates a Power Automate flow. 
 

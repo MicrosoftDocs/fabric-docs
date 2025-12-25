@@ -72,6 +72,7 @@ See our [data movement decision guide](decision-guide-data-movement.md) to help 
 
 - [Pipeline activities](activity-overview.md#data-transformation-activities) - Fabric notebook, HDInsight activity, Spark job definition, stored procedure, SQL scripts, and more. These activities let you run custom code or scripts to transform your data.
 - [Dataflow Gen 2](dataflows-gen2-overview.md) - Transform your data using a low-code interface with over 300 transformations. You can perform joins, aggregations, data cleansing, custom transformations, and much more.
+- [dbt job](dbt-job-overview.md) - dbt job in Microsoft Fabric enables SQL-based data transformations directly in Fabric. They provide a simple, no-code setup to build, test, and deploy dbt models on top of your Fabric data warehouse.
 
 **Orchestrate**: Data Factory lets you create pipelines that can run multiple data movements, transformations, and other activities in a single workflow.
 
@@ -98,7 +99,7 @@ Data Factory in Microsoft Fabric is the next generation of Azure Data Factory, b
 
 [See our comparison guide](compare-fabric-data-factory-and-azure-data-factory.md) for the key differences between these two services, so you can make the right choice for your enterprise.
 
-When you're ready to migrate, follow our [migration guide.](migrate-from-azure-data-factory.md)
+When you're ready to migrate, follow our [migration guide.](migrate-planning-azure-data-factory.md)
 
 ## Related content
 

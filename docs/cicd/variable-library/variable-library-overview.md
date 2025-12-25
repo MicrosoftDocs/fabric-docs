@@ -6,7 +6,7 @@ ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: overview
-ms.date: 01/22/2025
+ms.date: 12/15/2025
 ms.search.form: Variable library overview
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.
 ---
@@ -74,9 +74,10 @@ The following items support the variable library:
 
 - [Pipeline ](../../data-factory/variable-library-integration-with-data-pipelines.md)
 - [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
-- Notebook , through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
+- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 - [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)
 - [Copy job](../../data-factory/cicd-copy-job.md)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md#get-variables-from-fabric-variable-libraries)
 
 ## Considerations and limitations
 

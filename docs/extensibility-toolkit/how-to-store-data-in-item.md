@@ -1,14 +1,14 @@
 ---
-title: HowTo - Store Data in OneLake
-description: Learn how to Store date in your item within Fabric.
+title: Store data in an item
+description: Learn how to Store date in an item in your item within Microsoft Fabric.
 author: gsaurer
 ms.author: billmath
 ms.topic: how-to
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
-# Store data in OneLake
+# How to store data in an item
 
 Every Fabric item has access to OneLake storage, which provides a secure, scalable way to store files associated with your item. This guide explains how to upload files to your Fabric item using the `FabricPlatformAPIClient` and the underlying `OneLakeClient`.
 

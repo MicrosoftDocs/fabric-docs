@@ -96,7 +96,7 @@ Here are some transformations that your ETL process could perform.
 
 ### Load data
 
-You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md#data-ingestion-options).
+You can load tables in a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)] by using the following [data ingestion options](ingest-data.md).
 
 - **[COPY INTO (T-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true):** This option is useful when the source data comprise Parquet or CSV files stored in an external Azure storage account, like [ADLS Gen2](/azure/storage/blobs/data-lake-storage-introduction) or [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction).
 - **Pipelines:** In addition to orchestrating the ETL process, pipelines can include activities that run T-SQL statements, perform lookups, or copy data from a data source to a destination.
@@ -147,7 +147,7 @@ Consider the process of the `Product` dimension table.
 
 ### Surrogate keys
 
-We recommend that each dimension table has a [surrogate key](dimensional-modeling-dimension-tables.md#surrogate-key), which should use the smallest possible integer data type. In SQL Server-based environments that's typically done by creating an identity column, however this feature isn't supported in Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Instead, you'll need to use a [workaround technique](generate-unique-identifiers.md) that generates unique identifiers.
+We recommend that each dimension table has a [surrogate key](dimensional-modeling-dimension-tables.md#surrogate-key), which should use the smallest possible integer data type. In SQL Server-based environments that's typically done by creating an `IDENTITY` column, and in Fabric Data Warehouse, `IDENTITY` columns are available with some limitations. For more information, see [IDENTITY columns](identity.md) and [Use IDENTITY columns to create surrogate keys in Fabric Data Warehouse](tutorial-identity.md).
 
 > [!IMPORTANT]
 > When a dimension table includes automatically generated surrogate keys, you should never perform a truncate and full reload of it. That's because it would invalidate the data loaded into fact tables that use the dimension. Also, if the dimension table supports [SCD type 2](dimensional-modeling-dimension-tables.md#scd-type-2) changes, it might not be possible to regenerate the historical versions.

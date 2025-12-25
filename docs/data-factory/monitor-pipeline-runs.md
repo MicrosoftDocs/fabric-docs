@@ -39,7 +39,7 @@ This guide walks you through ways to check in on your pipeline runs, or monitor 
 
    :::image type="content" source="media/monitor-pipeline-runs/full-activity-load.png" alt-text="Screenshot of all activity run details loaded.":::
    
-7. Use the **Filter** to filter by activity status or **Column Options** to edit the columns viewed in the monitoring view.
+6. Use the **Filter** to filter by activity status or **Column Options** to edit the columns viewed in the monitoring view.
 
    :::image type="content" source="media/monitor-pipeline-runs/filter-options.png" alt-text="Screenshot of activity run filter options.":::
 
@@ -59,7 +59,9 @@ This guide walks you through ways to check in on your pipeline runs, or monitor 
 
 9. You can select **Update pipeline** to make changes to your pipeline from this screen. This selection takes you back to the pipeline canvas.
 
-10. You can also **Rerun** your pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
+10. You can also **Rerun** your pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.
+
+   :::image type="content" source="media/monitor-pipeline-runs/monitoring-hub-rerun-pipeline.png" alt-text="Screenshot showing rerun failed activity.":::
 
 11. To view performance details, select an activity from the list of **Activity Runs**. Performance details pop up.
 
@@ -80,6 +82,29 @@ The length of the bar relates to the duration of the pipeline. You can select th
 :::image type="content" lightbox="media/monitor-pipeline-runs/gantt-view-displayed.png" source="media/monitor-pipeline-runs/gantt-view-displayed.png" alt-text="Screenshot of Gantt view showing different bar lengths.":::
 
 :::image type="content" source="media/monitor-pipeline-runs/gantt-view-bar-details.png" alt-text="Screenshot of pipeline run details from Gantt view.":::
+
+## Workspace monitoring for pipelines
+
+Workspace Monitoring provides log-level visibility for all items in a workspace, including pipelines.
+
+1. To enable Workspace Monitoring, go to **Workspace Settings** in your Fabric Workspace and select **Monitoring**.
+   
+1. Add a Monitoring Eventhouse and turning on **Log workspace activity**. Fabric creates a KQL database inside the Eventhouse within your workspace for storing logs. 
+   
+   :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-settings.png" alt-text="Screenshot of how to toggle on workspace monitoring.":::
+
+1. Navigate to the KQL database created. You can find this in the **Monitoring database** link within the Monitoring settings or find the database within your workspace.
+
+   :::image type="content" source="media/monitor-pipeline-runs/monitoring-kql-database.png" alt-text="Screenshot of items generated from workspace monitoring.":::
+
+1. Within the KQL database, the **ItemJobEventLogs** table captures pipeline-level events that occur in your workspace (we call this L1 monitoring). Logs include pipeline name, run status, timestamps, and system diagnostics.
+
+   :::image type="content" source="media/monitor-pipeline-runs/workspace-monitoring-item-job-event-logs.png" alt-text="Screenshot of pipeline workspace monitoring table." lightbox="media\monitor-pipeline-runs\workspace-monitoring-item-job-event-logs.png":::
+
+Use KQL queries in the Monitoring Eventhouse to analyze:
+- Success/failure trends
+- Performance metrics
+- Error details for troubleshooting
 
 ## Related content
 

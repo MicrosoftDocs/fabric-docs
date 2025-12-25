@@ -5,13 +5,13 @@ ms.author: eur
 ms.reviewer: luisbosquez
 author: eric-urban
 ms.topic: overview
-ms.date: 03/31/2025
-ms.search.form: Add new data connections to user data functions items
+ms.date: 11/10/2025
+ms.search.form: Add new fabric item connections to user data functions items
 ---
 
-# Connect to data sources from your Fabric User data functions item
+# Connect to Fabric items from your Fabric User data functions item
 
-Fabric User data functions provides native data source connections by using the Manage connections feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials.
+Fabric User data functions provide connections to supported fabric data sources and items by using the **Manage connections** feature in the Fabric portal. This feature allows you to connect to your Fabric data sources without having to create connection strings or manage access credentials. For fabric items that aren't a data source you can securely connect to those items within a function.
 
 In this article, you learn how to:
 
@@ -19,14 +19,15 @@ In this article, you learn how to:
 - Use your new connection in your function code.
 - Modify or delete your data connection.
 
-## Supported data source connections in Fabric User data functions
+## Supported items in Fabric User data functions
 
-The following data sources are currently supported for Fabric User data functions:
+The following items are currently supported for Fabric User data functions:
 
 - [Fabric SQL databases](../../database/sql/overview.md) for read/write operations
 - [Fabric warehouses](../../data-warehouse/create-warehouse.md) for read/write operations
 - [Fabric lakehouses](../lakehouse-overview.md) for read/write operations for Lakehouse files and for read-only operations for the SQL Endpoint.
 - [Fabric mirrored databases](../../mirroring/overview.md) for read-only operations
+- [Fabric Variable library](../../cicd/variable-library/variable-library-overview.md) to define configuration settings as variables. [Learn more](./python-programming-model.md).
 
 ## Create a new data connection for your user data functions item
 
@@ -58,9 +59,9 @@ Once created, the new connection to the data source you selected is shown in the
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-4.png" alt-text="Screenshot of the connections side pane with a new data source connection created." lightbox="..\media\user-data-functions-manage-connections\manage-connections-4.png":::
 
 ### 3. Use your connection alias in your function code
-Once you're back in the portal editor, you need to add the alias of the connection you created in the `Manage Connections` tab to your code. This alias is automatically created based on the name of the Fabric item you are connecting to.
+Once you're back in the portal editor, you need to add the alias of the connection you created in the `Manage Connections` tab to your code. This alias is automatically created based on the name of the Fabric item you're connecting to.
 
-In this case we will use a code sample called "Read data from a table in SQL Database". You can find this sample by clicking on the Edit tab, then clicking on the "Insert sample" button and navigating to "SQL Database".
+In this case we'll use a code sample called "Read data from a table in SQL Database". You can find this sample by clicking on the Edit tab, then clicking on the "Insert sample" button and navigating to "SQL Database".
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-5-1.png" alt-text="Screenshot of Insert Sample data catalog with a list of data sources." lightbox="..\media\user-data-functions-manage-connections\manage-connections-5-1.png":::
 
@@ -95,7 +96,7 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
 ```
 
 > [!NOTE]
-> While this sample connects to a SQL Database, it does not need a schema or data in your database to run.
+> While this sample connects to a SQL Database, it doesn't need a schema or data in your database to run.
 
 To use the data connection you created, modify the following line in this sample: `@udf.connection(argName="sqlDB",alias="<alias for sql database>")` by replacing the value of the `alias` with the one you obtained from the `Manage Connections` menu. The following code shows this example with the value `ContosoSalesDat`:
 
@@ -106,17 +107,61 @@ def read_from_sql_db(sqlDB: fn.FabricSqlConnection)-> list:
     [...]
 ```
 
-After modifying the code, you can test your changes by using the [Test capability](./test-user-data-functions.md) in Develop mode. Once you are ready, you can publish your function using the Publish button in the toolbar. This operation may take a few minutes.
+After modifying the code, you can test your changes by using the [Test capability](./test-user-data-functions.md) in Develop mode. Once you're ready, you can publish your function using the Publish button in the toolbar. This operation might take a few minutes.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-6-1.png" alt-text="Screenshot of the 'Publish' button." lightbox="..\media\user-data-functions-manage-connections\manage-connections-6-1.png":::
 
-Once the publishing is completed, you can run your function by hovering on its name in the Functions Explorer list, and clicking on the "Run" button in the side panel. The bottom panel "Output" will show the outcome of running the function.
+Once the publishing is completed, you can run your function by hovering on its name in the Functions Explorer list, and clicking on the "Run" button in the side panel. The bottom panel "Output" shows the outcome of running the function.
 
 :::image type="content" source="..\media\user-data-functions-manage-connections\manage-connections-7.png" alt-text="Screenshot of the side panel used to Run a function." lightbox="..\media\user-data-functions-manage-connections\manage-connections-7.png":::
 
 And that's all you need to connect to a data source from your Fabric User Data Functions. 
 
-## Next steps
+## Get variables from Fabric variable libraries
+
+A [Fabric Variable Library](../../cicd/variable-library/tutorial-variable-library.md) in Microsoft Fabric is a centralized repository for managing variables that can be used across different items within a workspace. It allows developers to customize and share item configurations efficiently. Follow these steps to use Variable Libraries in your functions:
+
+1. Add a connection to a variable library using **Manage connections** and get the **alias** for the variable library item.
+1. Add a connection decorator for the variable library item. For example, `@udf.connection(argName="varLib", alias="<My Variable Library Alias>")` and replace alias to the newly added connection for the variable library item.
+1. In the function definition, include an argument with type `fn.FabricVariablesClient`. This client provides methods you need to work with variables library item. 
+1. Use `getVariables()` method to get all the variables from the variable library.
+1. To read the values of the variables use, either `["variable-name"]` or `.get("variable-name")`.
+
+**Example**
+In this example we simulate a configuration scenario for a production and a development environment. This function sets a storage path depending on the selected environment using a value retrieved from the Variable Library. The Variable Library contains a variable called `ENV` where users can set a value of `dev` or `prod`.
+
+```python
+@udf.connection(argName="varLib", alias="<My Variable Library Alias>")
+@udf.function()
+def get_storage_path(dataset: str, varLib: fn.FabricVariablesClient) -> str:
+    """
+    Description: Determine storage path for a dataset based on environment configuration from Variable Library.
+    
+    Args:
+        dataset_name (str): Name of the dataset to store.
+        varLib (fn.FabricVariablesClient): Fabric Variable Library connection.
+    
+    Returns:
+        str: Full storage path for the dataset.
+    """
+    # Retrieve variables from Variable Library
+    variables = varLib.getVariables()
+    
+    # Get environment and base paths
+    env = variables.get("ENV")    
+    dev_path = variables.get("DEV_FILE_PATH")
+    prod_path = variables.get("PROD_FILE_PATH")
+    
+    # Apply environment-specific logic
+    if env.lower() == "dev":
+        return f"{dev_path}{dataset}/"
+    elif env.lower() == "prod":
+        return f"{prod_path}{dataset}/"
+    else:
+        return f"incorrect settings define for ENV variable"
+```
+
+## Related content
 
 - [Create a Fabric User data functions item](./create-user-data-functions-portal.md) from within Fabric or [use the Visual Studio Code extension](./create-user-data-functions-vs-code.md)
 - [Learn about the User data functions programming model](./python-programming-model.md)

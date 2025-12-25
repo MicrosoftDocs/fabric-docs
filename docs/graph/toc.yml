@@ -43,3 +43,11 @@ items:
           href: gql-reference-status-codes.md
         - name: GQL reserved words reference
           href: gql-reference-reserved-terms.md
+  - name: Example graph datasets
+    href: sample-datasets.md
+  - name: REST API Reference
+    items:
+      - name: Graph Background Jobs REST API
+        href: /rest/api/fabric/graphmodel/background-jobs
+      - name: Graph Items REST API
+        href: /rest/api/fabric/graphmodel/items

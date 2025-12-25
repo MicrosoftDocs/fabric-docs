@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Proje
 description: Generate an Eventhouse projection from digital twin builder (preview) ontology using Fabric notebooks.
 author: baanders
 ms.author: baanders
-ms.date: 04/28/2025
+ms.date: 12/12/2025
 ms.topic: tutorial
 ---
 
@@ -83,7 +83,7 @@ Next, install the Python package that the notebook needs to work with digital tw
 
     :::image type="content" source="media/tutorial-rti/notebook-run-1.png" alt-text="Screenshot of running the first code block.":::
 
-1. After less than a minute, the package is installed and the notebook confirms the successful run status with a checkmark underneath the code.
+1. When the package is installed, the notebook confirms the successful run status with a checkmark underneath the code. This might take about one minute.
 
 ## Run Eventhouse projection code
 
@@ -93,7 +93,7 @@ Next, run the rest of the notebook code to generate the Eventhouse projection sc
 
     :::image type="content" source="media/tutorial-rti/notebook-run-2.png" alt-text="Screenshot of running the second code block.":::
 
-1. Scroll down to the next code block and run it. This code block completes the following operations:
+1. Scroll down to the next code block and run it. This third code block completes the following operations:
     1. Connects to your **workspace** and your **digital twin builder ontology**
     1. Sets up a **Spark reader** to pull data from the digital twin builder database
     1. **Generates a script** that pushes your digital twin builder data into Eventhouse
@@ -115,7 +115,7 @@ Now the projection functions are created in Eventhouse, one for each property ty
 
 Verify that the functions were created successfully in your KQL database.
 
-1. Go to your *Tutorial* KQL database and refresh the view.
+1. Go to your *Tutorial* KQL database and **refresh** the view.
 1. Expand **Functions** in the Explorer pane to see a list of functions created by the notebook (the *extractBusData* function is also there from when you created it in [Tutorial part 2: Get and process streaming data](tutorial-rti-2-get-streaming-data.md)).
 
     :::image type="content" source="media/tutorial-rti/kql-functions.png" alt-text="Screenshot of the functions in the KQL database.":::
