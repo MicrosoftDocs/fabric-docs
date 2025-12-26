@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/16/2023
+ms.date: 12/23/2025
 ---
 
 # Tutorial Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
@@ -29,7 +29,6 @@ In this tutorial, you use the Apache Spark to:
 > * Write data into a Fabric lakehouse delta table.
 
 
-
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
@@ -43,7 +42,6 @@ In this tutorial, you use the Apache Spark to:
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb -->
-
 
 ## Bank churn data
 
@@ -60,7 +58,7 @@ The dataset contains churn status of 10,000 customers. It also includes attribut
 * Credit card status (whether a customer has a credit card or not)
 * Active member status (whether an active bank's customer or not)
 
-The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank. 
+The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank.
 
 The event that defines the customer's churn is the closing of the customer's bank account. The column `exited` in the dataset refers to customer's abandonment. There isn't much context available about these attributes so you have to proceed without having background information about the dataset. The aim is to understand how these attributes contribute to the `exited` status.
 
