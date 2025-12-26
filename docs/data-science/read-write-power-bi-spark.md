@@ -1,18 +1,21 @@
----
+﻿---
 title: Read data from semantic models and write data that semantic models can consume using Spark
 description: Learn how to read from semantic models and write data that can be used in semantic models using Spark.
-ms.author: mopeakande
-author: msakande
+ms.author: jburchel
+author: jonburchel
 ms.reviewer: marcozo
 reviewer: eisber
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: 
+ms.date: 03/22/2025
 ms.search.form: Read write powerbi
 ---
 
-# Read from semantic models and write data consumable by Power BI using Spark
+# Read from semantic models and write data consumable by Power BI using Spark (DEPRECATED)
+
+> [!IMPORTANT]
+> The Spark native connector for Semantic Link is in deprecation mode as of October 2025 and will be fully retired by **October 2028**. No major versions of the Spark native connector will be released after **October 1, 2025**. The connector is only compatible with Spark runtime versions up to 3.5 and does not support Spark runtime version 4.0 or later.
+> To ensure continued support and access to new features, please migrate to the [Semantic Link Python SDK](/python/api/semantic-link/overview-semantic-link).
 
 In this article, you can learn how to read data and metadata and evaluate measures in semantic models using the semantic link Spark native connector in Microsoft Fabric.
 You will also learn how to write data that semantic models can consume.
@@ -21,7 +24,12 @@ You will also learn how to write data that semantic models can consume.
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+
+    - From the left pane, select __Workloads__.
+    - Select __Data Science__.
+
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
+- **Spark runtime compatibility:** The Spark native connector is supported only on Spark runtimes up to version 3.5. It is not supported on Spark runtime 4.0 or later. For new development, use the [Semantic Link Python SDK](/python/api/semantic-link/overview-semantic-link).
 - [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 - Download the _Customer Profitability Sample.pbix_ semantic model from the [datasets folder](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets) of the fabric-samples repository, and save the semantic model locally.
@@ -30,14 +38,14 @@ You will also learn how to write data that semantic models can consume.
 
 In this article, we use the _Customer Profitability Sample.pbix_ semantic model. This semantic model references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
 
-1. Open your [workspace](../get-started/workspaces.md) in Fabric Data Science.
-1. Select **Upload > Browse** and select the _Customer Profitability Sample.pbix_ semantic model.
+1. From the left pane, select __Workspaces__ and then select the name of your [workspace](../fundamentals/workspaces.md) to open it.
+1. Select __Import__ > __Report or Paginated Report__ > __From this computer__ and select the _Customer Profitability Sample.pbix_ semantic model.
 
-:::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
+:::image type="content" source="media/read-write-power-bi-spark/upload-power-bi-data-to-workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi-spark/upload-power-bi-data-to-workspace.png":::
 
 Once the upload is done, your workspace has three new artifacts: a Power BI report, a dashboard, and a semantic model named _Customer Profitability Sample_. You use this semantic model for the steps in this article.
 
-:::image type="content" source="media/read-write-power-bi/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi/uploaded-artifacts-in-workspace.png":::
+:::image type="content" source="media/read-write-power-bi-spark/uploaded-artifacts-in-workspace.png" alt-text="Screenshot showing the items from the Power BI file uploaded into the workspace." lightbox="media/read-write-power-bi-spark/uploaded-artifacts-in-workspace.png":::
 
 ## Read and write data, using Spark in Python, R, SQL, and Scala
 
@@ -48,6 +56,9 @@ By default, the workspace used to access semantic models is:
 
 Microsoft Fabric exposes all tables from all semantic models in the workspace as Spark tables.
 All Spark SQL commands can be executed in Python, R, and Scala. The semantic link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+
+> [!NOTE]
+> The Spark native connector has compatibility and support limitations. See the [Important note](#read-from-semantic-models-and-write-data-consumable-by-power-bi-using-spark-deprecated) at the top of this article for retirement timeline and support boundaries.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
@@ -107,9 +118,10 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
 ## Read-access limitations
 
 The read access APIs have the following limitations:
-
+- **Spark runtime version:** The Spark native connector is unsupported on Spark runtime 4.0 or later. Behavior on unsupported runtimes is not guaranteed.
+- Queries running longer than 10s in Analysis Service are not supported (Indication inside Spark: "java.net.SocketTimeoutException: PowerBI service comm failed ")
 - Power BI table access using Spark SQL is subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
-- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/latest/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
+- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/latest/api/sql/index.html#in) expression and requires at least two elements. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
 - Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support the following expressions:
   - [ISNULL](https://spark.apache.org/docs/latest/api/sql/index.html#isnull)
   - [IS_NOT_NULL](https://spark.apache.org/docs/latest/api/sql/index.html#isnotnull)
@@ -117,6 +129,15 @@ The read access APIs have the following limitations:
   - [ENDS_WITH](https://spark.apache.org/docs/latest/api/sql/index.html#endswith)
   - [CONTAINS](https://spark.apache.org/docs/latest/api/sql/index.html#contains).
 - The Spark session must be restarted to make new semantic models accessible in Spark SQL.
+
+## Migration guidance
+
+As the Spark native connector for Semantic Link approaches retirement, we recommend planning your migration to the [Semantic Link Python SDK](/python/api/semantic-link/overview-semantic-link). The Python SDK provides continued support, new features, and compatibility with future Spark runtime versions.
+
+To prepare for migration:
+- Review your current usage of the Spark native connector across your Fabric tenants.
+- Consult the [Semantic Link Python SDK documentation](/python/api/semantic-link/overview-semantic-link) for migration guidance and updated APIs.
+- If you have questions or need migration assistance, contact the support team at synapsemlpm@microsoft.com.
 
 ## Related content
 

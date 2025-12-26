@@ -2,12 +2,10 @@
 title: Lookup activity
 description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
@@ -21,7 +19,7 @@ Lookup activity reads and returns the content of a configuration file or table. 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
 - A workspace is created.
 
 ## Add a lookup activity to a pipeline with UI

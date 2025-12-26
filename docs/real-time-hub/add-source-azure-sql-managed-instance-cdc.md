@@ -5,8 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 07/21/2025
 ---
 
 # Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub
@@ -56,6 +55,8 @@ You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC int
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
 
+## Data sources page
+
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **Azure SQL MI DB (CDC)** tile. 
@@ -84,7 +85,8 @@ You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC int
 ## View data stream details
 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure SQL MI DB CDC as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
-2. You should see the stream on the **All data streams** and **My data streams** pages. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
 
 ## Related content
 To learn about consuming data streams, see the following articles:

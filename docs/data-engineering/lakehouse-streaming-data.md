@@ -1,13 +1,11 @@
 ---
 title: Streaming data into lakehouse
 description: Learn how to use Spark structured streaming and retry policy to set up streaming jobs to get data into lakehouse.
-ms.reviewer: snehagunda
-ms.author: tvilutis
-author: tedvilutis
-ms.topic: conceptual
+ms.reviewer: tvilutis
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Spark Structured Streaming
 ---
@@ -130,7 +128,7 @@ Another option to optimize writes to Delta Lake is using Optimized Write. Optimi
 The following code is an example of the use of Optimized Write. Note that *partitionBy()* is still used.  
 
 ```python
-spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", true) 
+spark.conf.set("spark.databricks.delta.optimizeWrite.enabled", true) 
  
 rawData = df \ 
  .withColumn("bodyAsString", f.col("body").cast("string")) \  

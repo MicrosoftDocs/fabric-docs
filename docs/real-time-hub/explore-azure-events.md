@@ -5,16 +5,15 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 12/11/2025
 ---
 
-# Explore Azure events in Fabric Real-Time hub (preview)
+# Explore Azure events in Fabric Real-Time hub
 
 
 This article describes columns on the **Azure events** page and actions available for each event. 
 
-:::image type="content" source="./media/explore-azure-events/azure-events-page.png" alt-text="Screenshot that shows the Real-Time hub Azure events page." lightbox="./media/explore-azure-events/azure-events-page.png":::
+:::image type="content" source="./media/explore-azure-events/azure-events.png" alt-text="Screenshot that shows the Real-Time hub Azure events page." lightbox="./media/explore-azure-events/azure-events.png":::
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 

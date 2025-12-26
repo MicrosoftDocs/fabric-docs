@@ -1,16 +1,14 @@
 ---
 title: Assign a workspace to a deployment pipeline
 description: Learn how to assign and unassign a workspace to a deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: leebenjamin
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
-    - build-2023
-    - ignite-2023
-ms.date: 01/12/2025
+ms.date: 12/15/2025
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.
 ---
@@ -67,6 +65,19 @@ To assign a workspace to a deployment pipeline stage, follow these steps:
     :::image type="content" source="media/assign-pipeline/assign-button.png" alt-text="A screenshot showing the assign workspace button in a deployment pipelines empty stage.":::
 
 ---
+
+## Remove a workspace in a deployment pipeline
+If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](intro-to-deployment-pipelines.md), the 
+deletion fails.  
+
+  :::image type="content" source="media/assign-pipeline/remove-1.png" alt-text="Screenshot of error attempting to remove a workspace assigned to a deployment pipeline." lightbox="media/assign-pipeline/remove-1.png":::
+
+To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
+
+If you do not have permissions to [unassign](#unassign-a-workspace-from-a-deployment-pipeline-stage) the workspace, you will need to conact someone with administratibe rights on the deployment pipeline to perform the unassignment.
+
+>[!IMPORTANT]
+>If the only person with access to the deployment pipeline has left the organization, then a tenant global administrator will need to use an API to release the workspace. See [How to delete a pipeline that doesn't have an owner](../troubleshoot-cicd.md#how-can-i-delete-a-pipeline-that-doesnt-have-an-owner-an-orphaned-pipeline). 
 
 ## Unassign a workspace from a deployment pipeline stage
 

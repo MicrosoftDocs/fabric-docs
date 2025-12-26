@@ -1,16 +1,18 @@
 ---
 title: Runtime 1.2 in Fabric
 description: Gain a deep understanding of the Apache Spark-based Runtime 1.2 available in Fabric. Understand its unique features, capabilities, and best practices.
-ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
-  - ignite-2023
-ms.date: 10/14/2024
+ms.date: 12/11/2025
 ---
 
-# Fabric Runtime 1.2 (GA)
+# Fabric Runtime 1.2 (EOSA)
+
+> [!WARNING]
+> End of Support for Microsoft Fabric Runtime 1.2 has been announced. Microsoft Fabric Runtime 1.2 will be deprecated and disabled 31, March 2026. We strongly recommend [upgrading your Fabric workspace](/fabric/data-engineering/runtime) and environments to use [Runtime 1.3 (Apache Spark 3.5 and Delta Lake 3.2)](/fabric/data-engineering/runtime-1-3). 
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 
@@ -27,7 +29,7 @@ The major components of Runtime 1.2 include:
 > [!TIP]
 > Always use the most recent, GA runtime version for your production workload, which currently is [Runtime 1.3](./runtime-1-3.md).
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
+:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version." lightbox="media/workspace-admin-settings/runtime-version-1-2.png":::
 
 Microsoft Fabric Runtime 1.2 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries. Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.2, providing bug fixes, performance enhancements, and security patches. *Staying up to date ensures optimal performance and reliability for your data processing tasks.*
 
@@ -42,9 +44,9 @@ Read the full version of the release notes for a specific Apache Spark version b
 
 #### Concurrent Writes Support in Spark
 
-Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using an SQL INSERT INTO query. This error can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
+Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using a SQL INSERT INTO query. This error can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
 
-To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/3.4.0/configuration.html#:~:text=spark.sql.sources.partitionOverwriteMode).
+To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/latest/configuration.html#runtime-sql-configuration).
 
 #### Smart reads, which skip files from failed jobs
 
@@ -64,18 +66,18 @@ Here are the visible changes:
 
 ## Migration guide from Runtime 1.1 to Runtime 1.2
 
-When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html).
+When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, review [the official migration guide](https://archive.apache.org/dist/spark/docs/3.4.0/migration-guide.html).
 
 ## New features and improvements of Delta Lake 2.4
-[Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) data processing on top of existing data lakes.
+[Delta Lake](https://delta.io/) is an [open source project](https://github.com/delta-io/delta) that enables building a lakehouse architecture on top of data lakes. Delta Lake provides [ACID transactions](https://docs.delta.io/concurrency-control.html), scalable metadata handling, and unifies [streaming](https://docs.delta.io/delta-streaming.html) and [batch](https://docs.delta.io/delta-batch.html) data processing on top of existing data lakes.
 
 Specifically, Delta Lake offers:
-*   [ACID transactions](https://docs.delta.io/2.4.0/concurrency-control.html) on Spark: Serializable isolation levels ensure that readers never see inconsistent data.
+*   [ACID transactions](https://docs.delta.io/concurrency-control.html) on Spark: Serializable isolation levels ensure that readers never see inconsistent data.
 *   Scalable metadata handling: Uses Spark distributed processing power to handle all the metadata for petabyte-scale tables with billions of files at ease.
-*   [Streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) unification: A table in Delta Lake is a batch table and a streaming source and sink. Streaming data ingest, batch historic backfill, interactive queries all just work out of the box.
+*   [Streaming](https://docs.delta.io/delta-streaming.html) and [batch](https://docs.delta.io/delta-batch.html) unification: A table in Delta Lake is a batch table and a streaming source and sink. Streaming data ingest, batch historic backfill, interactive queries all just work out of the box.
 *   Schema enforcement: Automatically handles schema variations to prevent insertion of bad records during ingestion.
-*   [Time travel](https://docs.delta.io/2.4.0/delta-batch.html#-deltatimetravel): Data versioning enables rollbacks, full historical audit trails, and reproducible machine learning experiments.
-*   [Upserts](https://docs.delta.io/2.4.0/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/2.4.0/delta-update.html#-delta-delete): Supports merge, update, and delete operations to enable complex use cases like change-data-capture, slowly changing dimension (SCD) operations, streaming upserts, and so on.
+*   [Time travel](https://docs.delta.io/delta-batch.html#-deltatimetravel): Data versioning enables rollbacks, full historical audit trails, and reproducible machine learning experiments.
+*   [Upserts](https://docs.delta.io/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/delta-update.html#-delta-delete): Supports merge, update, and delete operations to enable complex use cases like change-data-capture, slowly changing dimension (SCD) operations, streaming upserts, and so on.
 
 Read the full version of the release notes for [Delta Lake 2.4](https://github.com/delta-io/delta/releases/tag/v2.4.0).
 

@@ -1,14 +1,12 @@
 ---
 title: Migrate Spark libraries
 description: Learn about migrating Spark libraries from Azure Synapse Spark to Fabric, including migration prerequisites and options.
-ms.reviewer: snehagunda
-ms.author: aimurg
-author: murggu
+ms.reviewer: aimurg
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -20,7 +18,7 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create an [Environment](create-and-use-environment.md) in your workspace. 
 
 ## Option 1: Adding Spark libraries to custom environment
@@ -37,7 +35,7 @@ You can move Spark pool libraries to an environment as follows:
     * From **Custom Libraries,** you can install libraries by using .jar/.whl/.tar.gz files.
 1.	Click on **Save** and **Publish** changes.
 
-:::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries.":::
+:::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries." lightbox="media/migrate-synapse/migrate-spark-libraries.png":::
 
 Learn more on adding Spark libraries to an [Environment](environment-manage-library.md).
 

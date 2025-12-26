@@ -1,13 +1,11 @@
 ---
 title: Fabric Notebook known limitation
 description: Learn about known limitations of fabric notebook.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.search.form: Develop and run notebooks
 ms.date: 08/29/2024
 ---

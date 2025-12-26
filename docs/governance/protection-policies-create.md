@@ -1,21 +1,21 @@
 ---
-title: "Create and manage protection policies for Fabric (preview)"
+title: "Create and manage protection policies for Fabric"
 description: "This article describes how to create, edit, or delete a Microsoft Purview protection policy for Microsoft Fabric."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.service: fabric
 ms.topic: how-to #Don't change
-ms.date: 11/21/2024
+ms.date: 12/03/2025
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 
 
 ---
 
-# Create and manage protection policies for Fabric (preview)
+# Create and manage protection policies for Fabric
 
 This article describes how to create, edit, and delete Microsoft Purview protection policies for Microsoft Fabric. Its target audience is security and compliance admins who need to create protection policies for Fabric.
 
-For an overview of how protection policies for Fabric work, see [Protection policies in Fabric (preview)](./protection-policies-overview.md).
+For an overview of how protection policies for Fabric work, see [Protection policies in Fabric](./protection-policies-overview.md).
 
 ## Prerequisites
 
@@ -56,21 +56,20 @@ To create a protection policy, the following requirements must be met:
 
     :::image type="content" source="./media/protection-policies-create/choose-data-sources.png" alt-text="Screenshot of choose data source page in protection policy configuration.":::
 
-1. On the **Define access control settings** page, select the access controls you'd like to apply to items labeled with the sensitivity label you selected in step 4.
+1. On the **Define access control settings** page, specify which users and groups should retain their access to items labeled with the sensitivity label you selected in step 4.
 
-    You have two options:
+    1. Select the **Allow users to retain full control** checkbox if you want certain users and groups to keep their existing permissions on labeled items. When enabled, this setting allows users with full control of labeled items to retain full control.
 
-    * **Allow users to retain read access** - Any users or groups added under this control setting will retain read permissions to resources with the selected sensitivity label if they already have it. Any other permissions they have on the item will be removed.
-    * **Allow users to retain full control** - Any users or groups added under this control setting will retain full control of the labeled item if they already have it, or any other permissions they might have.
+    1. Select **Add users and groups** to choose specific users and groups who should retain their access to protected items. 
 
-    You can select either one option or both options. For each control, select **Add users and groups** to specify which users and/or groups the control should apply to.
+    1. Repeat the previous step to add all users and groups that need continued access to the protected items.
 
     > [!NOTE]
     > Service principals can't be added to protection policies directly via the Microsoft Purview portal. To enable service principals to access items protected by a protection policy, first add them to an Azure security group, and then add this group to the protection policy.
 
     :::image type="content" source="./media/protection-policies-create/define-access-control.png" alt-text="Screenshot of define access controls page in protection policy configuration.":::
 
-    The policy will block access to items labeled with the associated sensitivity label for all users not specified in one of the above controls.
+    The policy will block access to items labeled with the associated sensitivity label for all users not specified in one of the above control.
 
     When done, select **Next**.
 
@@ -82,9 +81,9 @@ To create a protection policy, the following requirements must be met:
   
     :::image type="content" source="./media/protection-policies-create/review-policy-settings.png" alt-text="Screenshot of review and finish page in protection policy configuration.":::
 
-1. You'll be informed that your new protection policy has been created and that it can take up to 30 minutes for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
+1. You'll be informed that your new protection policy has been created. It can take up to 24 hours for the new policy to start detecting and protecting items labeled with the sensitivity label you chose.
 
-    :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice.":::
+<!-- TODO: NEED NEW SCREENSHOT OR NOTE ABOUT 24 HRS IN UI :::image type="content" source="./media/protection-policies-create/policy-created-notice.png" alt-text="Screenshot showing the policy created notice."::: --> 
 
 Your new policy now appears in the list of protection policies. Select it to confirm that all the details are correct.
 
@@ -106,5 +105,5 @@ To edit or delete a protection policy:
 
 ## Related content
 
-* [Protection policies in Fabric (preview)](./protection-policies-overview.md)
+* [Protection policies in Fabric](./protection-policies-overview.md)
 * [Authoring and publishing protection policies (preview)](/purview/how-to-create-protection-policy)

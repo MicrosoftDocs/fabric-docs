@@ -6,8 +6,6 @@ ms.author: mahi
 author: matt1883
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Synapse Analytics so that I can efficiently read and write data into Fabric using Azure Synapse Spark pool.
 ---

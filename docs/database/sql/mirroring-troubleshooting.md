@@ -7,13 +7,12 @@ ms.reviewer: nzagorac
 ms.date: 10/15/2024
 ms.topic: troubleshooting
 ms.custom:
-  - ignite-2024
 ---
-# Troubleshoot mirroring from Fabric SQL database (preview)
+# Troubleshoot mirroring from Fabric SQL database
 
 This article covers troubleshooting steps for the automatically configured mirroring for Fabric SQL database.
 
-For troubleshooting for mirroring Azure SQL Database, see [Troubleshoot Fabric mirrored databases from Azure SQL Database (preview)](../mirrored-database/azure-sql-database-troubleshoot.md).
+For troubleshooting for mirroring Azure SQL Database, see [Troubleshoot Fabric mirrored databases from Azure SQL Database](../../mirroring/azure-sql-database-troubleshoot.md).
 
 ## Certain tables are not mirrored
 
@@ -56,6 +55,6 @@ Fabric SQL database automatically mirrors its transactional data to OneLake. If 
 
 ## Related content
 
-- [Limitations and behaviors for Fabric SQL database mirroring (preview)](mirroring-limitations.md)
-- [Mirroring Fabric SQL database (preview)](mirroring-overview.md)
+- [Limitations and behaviors for Fabric SQL database mirroring](mirroring-limitations.md)
+- [Mirroring Fabric SQL database](mirroring-overview.md)
 - [Monitor Fabric mirrored Fabric SQL database replication](mirroring-monitor.md)

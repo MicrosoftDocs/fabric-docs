@@ -1,15 +1,13 @@
 ---
 title: Create deployment rules for Fabric's ALM
 description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 10/27/2024
+ms.date: 12/15/2025
 ms.search.form: Deployment rules
 #customer intent: As a developer, I want to learn how to create deployment rules in Fabric's Application lifecycle management (ALM) tool so that I can simplify deploying content between stages in my deployment pipeline.
 ---
@@ -18,7 +16,7 @@ ms.search.form: Deployment rules
 
 When you're working in a deployment pipeline, different stages might have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
+When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, you can define a rule for semantic model in a production stage to point to a production database instead of one in the test stage. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production inherits the value as defined in the deployment rule. This rule always applies as long as it's unchanged and valid.
 
 > [!NOTE]
 > The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
@@ -27,10 +25,11 @@ You can configure data source rules, parameter rules, and default lakehouse rule
 
 |Item |Data source rule  |Parameter rule  |Default lakehouse rule |Details  |
 |---------|:-------:|:---------:|:--------:|------|
-|**Dataflow**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific dataflow. |
+|**Dataflow gen1**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific dataflow gen1. |
 |**Semantic model**          |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific semantic model.         |
 |**Datamart**         |✅ |✅ |❌ |Use to determine the values of the data sources or parameters for a specific datamart.         |
 |**Paginated report** |✅ |❌ |❌ |Defined for the data sources of each paginated report. Use to determine the data sources of the paginated report. |
+|**Mirrored database** |✅ |❌ |❌ |Defined for the data sources of each mirrored database. |
 |**Notebook** |❌ |❌ |✅ |Use to determine the default lakehouse for a specific notebook. |
 
 >[!NOTE]
@@ -46,11 +45,11 @@ To create a deployment rule, follow the steps in this section. After you create 
 
     :::image type="content" source="media/create-rules/deployment-settings-screenshot-new.png" alt-text="A screenshot of the deployment rules button, located in the deployment stage menu.":::
 
-1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
+1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows gen1, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
-    :::image type="content" source="media/create-rules/deployment-rules-new.png" alt-text="A screenshot of the deployment rules pane in the new UI, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules-new.png" alt-text="A screenshot of the deployment rules pane in the new UI, showing that you can set rules for dataflows gen1, datasets, datamarts, and paginated reports.":::
 
-1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
+1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow gen1, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
 
 1. Select the type of rule you want to create, expand the list, and then select **Add rule**. There are two types of rules you can create:
 
@@ -67,7 +66,7 @@ To create a deployment rule, follow the steps in this section. After you create 
         >[!NOTE]
         >
         >* *Data source rules* will be grayed out if you're not the owner of the item you're creating a rule for, or if your item doesn't contain any data sources.
-        >* For *dataflows*, *semantic models* and *paginated reports*, the data source list is taken from the source pipeline stage.
+        >* For *dataflows gen1*, *semantic models* and *paginated reports*, the data source list is taken from the source pipeline stage.
         >* You can’t use the same data source in more than one rule.
 
     * **Parameter rules**
@@ -82,11 +81,11 @@ To create a deployment rule, follow the steps in this section. After you create 
 
     :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
-1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
+1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows gen1, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
-    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
+    :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows gen1, datasets, datamarts, and paginated reports.":::
 
-1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
+1. Select the item you want to create a rule for. The types of rules you can create for that item are displayed. So, for example, if you're creating a rule for a dataflow gen1, you can create a data source rule or a parameter rule. If you're creating a rule for a notebook, you can create a default lakehouse rule.
 
 1. Select the type of rule you want to create, expand the list, and then select **Add rule**. There are two types of rules you can create:
 
@@ -103,7 +102,7 @@ To create a deployment rule, follow the steps in this section. After you create 
         >[!NOTE]
         >
         >* *Data source rules* will be grayed out if you're not the owner of the item you're creating a rule for, or if your item doesn't contain any data sources.
-        >* For *dataflows*, *semantic models* and *paginated reports*, the data source list is taken from the source pipeline stage.
+        >* For *dataflows gen1*, *semantic models* and *paginated reports*, the data source list is taken from the source pipeline stage.
         >* You can’t use the same data source in more than one rule.
 
     * **Parameter rules**
@@ -114,7 +113,7 @@ To create a deployment rule, follow the steps in this section. After you create 
 
 ---
 
-## Supported data sources for dataflow and semantic model rules
+## Supported data sources for dataflow gen1 and semantic model rules
 
 Data source rules can be defined for the following data sources:
 
@@ -151,12 +150,12 @@ This section lists the limitations for the deployment rules.
 
 * The following scenarios aren't supported:
 
-  * Data source rules for dataflows that have other dataflows as sources.
-  * Data source rules for common data model (CDM) folders in a dataflow.
-  * Data source rules for semantic models that use dataflows as their source.
+  * Data source rules for dataflows gen1 that have other dataflows as sources.
+  * Data source rules for common data model (CDM) folders in a dataflow gen1.
+  * Data source rules for semantic models that use dataflows gen1 as their source.
   * Creating data source rules on a semantic model that uses Native query and DirectQuery together.
   * Parameter rules aren't supported for paginated reports.
-  * Adding data source rules for semantic models and dataflows on data sources which are parametrized.
+  * Adding data source rules for semantic models and dataflows gen1 on data sources which are parametrized.
 
 ## Related content
 

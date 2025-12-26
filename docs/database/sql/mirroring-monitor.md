@@ -6,8 +6,7 @@ ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 11/06/2024
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: SQL database replication to OneLake
 ---
 # Monitor Fabric mirrored Fabric SQL database replication
 
@@ -33,4 +32,4 @@ The **NotSupported** replication status in the **Replication monitor** page cont
 
 ## Related content
 
-- [Troubleshoot mirroring from Fabric SQL database (preview)](mirroring-troubleshooting.md)
+- [Troubleshoot mirroring from Fabric SQL database](mirroring-troubleshooting.md)

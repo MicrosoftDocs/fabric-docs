@@ -9,7 +9,7 @@ ms.date: 11/13/2024
 ms.search.form: Source and Destination
 ---
 
-# Add Fabric OneLake events to an eventstream (preview)
+# Add Fabric OneLake events to an eventstream 
 
 This article shows you how to add Fabric OneLake event source to an eventstream.
 
@@ -46,8 +46,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to Fabric OneLake events
 
 [!INCLUDE [fabric-onelake-source-connector](includes/fabric-onelake-source-connector.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
 

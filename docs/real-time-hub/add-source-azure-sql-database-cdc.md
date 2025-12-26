@@ -4,23 +4,24 @@ description: This article describes how to add an Azure SQL Database Change Data
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.custom: sfi-image-nochange
+ms.date: 07/21/2025
 ---
 
 # Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub
 
-This article describes how to get events from Azure SQL Database Change Data Capture (CDC) into Fabric Real-Time hub. The Azure SQL Database CDC source connector allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data.
+This article describes how to get events from Azure SQL Database Change Data Capture (CDC) into Fabric Real-Time hub. 
 
+The Azure SQL Database CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+[!INCLUDE [new-sources-regions-unsupported](../real-time-intelligence/event-streams/includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
-- Membership in the **sysadmin** fixed server role for the SQL Server, and **db_owner** role on the database.
-- CDC enabled on your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
+- Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 
 >[!NOTE]
 >- Mirroring shouldn't be enabled in your database.
@@ -32,6 +33,8 @@ You can get events from an Azure SQL Database CDC into Real-Time hub in one of t
 
 - [Using the **Data sources** page](#data-sources-page)
 - [Using the **Microsoft sources** page](#microsoft-sources-page)
+
+## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
@@ -96,11 +99,8 @@ You can get events from an Azure SQL Database CDC into Real-Time hub in one of t
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure SQL Database CDC as a source. To close the wizard, select **Finish** at the bottom of the page.
 
     :::image type="content" source="./media/add-source-azure-sql-database-cdc/review-create-success.png" alt-text="Screenshot that shows the Review + connect page after successful creation of the source." lightbox="./media/add-source-azure-sql-database-cdc/review-create-success.png":::
-1. In Real-Time hub, select **All data streams**. To see the new data stream, refresh the **All data streams** page.  
-
-    :::image type="content" source="./media/add-source-azure-sql-database-cdc/verify-data-stream.png" alt-text="Screenshot that shows the Real-Time hub All data streams page with the stream you just created." lightbox="./media/add-source-azure-sql-database-cdc/verify-data-stream.png":::
-
-    For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+1. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+    
 
 ## Related content
 

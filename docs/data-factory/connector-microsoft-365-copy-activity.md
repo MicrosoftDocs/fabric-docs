@@ -5,23 +5,23 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Microsoft 365 in a copy activity
 
-Microsoft Fabric Data pipelines integrate with [Microsoft Graph Data Connect](https://developer.microsoft.com/graph/data-connect), allowing you to bring the rich organizational data in your Microsoft 365 tenant into Fabric and Azure in a scalable way and build analytics applications and extract insights based on these valuable data assets. Integration with Privileged Access Management provides secured access control for the valuable curated data in Microsoft 365. Please refer to [this link](/graph/data-connect-concept-overview) for an overview of Microsoft Graph data connect.
+Microsoft Fabric pipelines integrate with [Microsoft Graph Data Connect](https://developer.microsoft.com/graph/data-connect), allowing you to bring the rich organizational data in your Microsoft 365 tenant into Fabric and Azure in a scalable way and build analytics applications and extract insights based on these valuable data assets. Integration with Privileged Access Management provides secured access control for the valuable curated data in Microsoft 365. Please refer to [this link](/graph/data-connect-concept-overview) for an overview of Microsoft Graph data connect.
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2. The supported data format is Avro, Delimited text, JSON, ORC and Parquet format.
+This article outlines how to use the copy activity in a pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2. The supported data format is Avro, Delimited text, JSON, ORC and Parquet format.
 
 ## Prerequisites
 
 To copy data from Microsoft 365, you need to complete the following prerequisite steps:
 
-- Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
+- Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/graph/data-connect-quickstart).
 - Create and configure a Microsoft Entra web application in Microsoft Entra ID. For instructions, go to [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal).
 - Make note of the following values, which you use to define the connection for Microsoft 365:
 Tenant ID. For instructions, go to [Get tenant ID](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
@@ -50,11 +50,8 @@ For the **General** tab configuration, go to [General](activity-overview.md#gene
 
 The following properties are supported for Microsoft 365 under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-microsoft-365/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-microsoft-365/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select a **Microsoft 365** connection from the connection list. If no connection exists, then create a new Microsoft 365 connection by selecting **New**.
 - **Table**: Name of the table to extract from **Microsoft 365**. You can preview the sample data by selecting **Preview sample data**.
 
@@ -94,7 +91,6 @@ The following tables contain more information about the copy activity in Microso
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Table**|Name of the table to extract from **Microsoft 365**.|\<table>|Yes|table|
 |**Scope**|When the user group isn't specified, you can use a predicate expression that's applied on the entire tenant to filter the specific rows to extract from Microsoft 365. The predicate format should match the query format of Microsoft Graph APIs, for example `https://graph.microsoft.com/v1.0/users?$filter=Department eq 'Finance'`.|\<your scope>|Yes|scope|

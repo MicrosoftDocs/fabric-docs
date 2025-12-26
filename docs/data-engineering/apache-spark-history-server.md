@@ -1,14 +1,14 @@
 ---
 title: Debug apps with the extended Apache Spark history server
 description: Use the extended Apache Spark history server to debug and diagnose Apache Spark applications in Fabric.
-author: jejiang
-ms.author: jejiang
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 09/11/2024
 ms.custom:
-  - template-howto
-  - build-2023
-  - ignite-2023
+- template-howto
+- sfi-image-nochange
 ms.search.form: Spark history server to debug apps
 ---
 
@@ -28,7 +28,7 @@ When an Apache Spark job is triggered, the button to open **Spark web UI** is in
 
 ### Open the Spark web UI from Apache Spark application detail page
 
-The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitoring hub** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
+The Spark web UI can also be opened through the Apache Spark application detail page. Select **Monitor** on the left side of the page, and then select an Apache Spark application. The detail page of the application appears.
 
 :::image type="content" source="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png" alt-text="Screenshot showing open the Spark web UI from Apache Spark application detail page." lightbox="media\apache-spark-history-server\spark-web-ui-from-application-detail-page.png":::
 
@@ -134,7 +134,7 @@ Send feedback with issues by selecting **Provide us feedback**.
 
 ### Stage number limit
 
-For performance consideration, by default the graph is only available when the Spark application has less than 500 stages. If there are too many stages, it will fail with an error like this:
+For performance consideration, by default the graph is only available when the Spark application has fewer than 500 stages. If there are too many stages, it will fail with an error like this:
 
 `` The number of stages in this application exceeds limit (500), graph page is disabled in this case.``
 
@@ -181,6 +181,23 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 This feature has been deprecated in Fabric now. If you still want to use this as a workaround, please access the page by explicitly adding "/executorusage" behind path "/diagnostic" in the URL, like this:
 
    :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing how to modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
+
+## Spark Executor Rolling Logs: Easier Access for Large and Long Jobs
+
+As Spark applications continue to grow in scale and duration, efficient log management and analysis have become increasingly critical. To address these evolving needs, we’ve introduced enhancements to the Spark History Server (for completed applications) and Spark UI (for running applications), enabling executor rolling logs for Spark 3.4 and above.
+
+With this enhancement, when an executor log exceeds 16MB or the Spark job runs for more than one hour, the system automatically splits logs into hourly segments. This makes it easier to navigate, view, and download logs without dealing with extremely large files.
+
+You can now:
+- View logs by hour to quickly pinpoint specific execution windows
+- Access the latest active logs while the job is still running.
+- Download individual hourly logs or all logs together as needed
+
+This feature empowers users to locate and analyze logs from a particular timepoint with ease, while avoiding the hassle of downloading or opening a massive single log file.
+
+Below is an example of the Executor Rolling Logs view:
+
+:::image type="content" source="media\apache-spark-history-server\spark-executor-rolling-logs.png" alt-text="Screenshot showing spark executor rolling logs." lightbox="media\apache-spark-history-server\spark-executor-rolling-logs.png":::
 
 ## Related content
 

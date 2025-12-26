@@ -6,17 +6,14 @@ ms.author: xujiang1
 author: WenyangShi
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
-ms.date: 12/27/2024
+ms.date: 1/20/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my Power Automate and Logic Apps using Fabric event streams.
 ---
 
 # Stream events to Eventstream using Logic Apps and Power Automate 
 
-In this tutorial, you learn how to stream real-time events from  **Logic Apps** or **Power Automate** to Real-Time Intelligence using a custom endpoint source in Microsoft Fabric Eventstream. While the flows for Logic Apps and Power Automate are configured differently, they serve the same purpose: to periodically send the simulated flight data containing columns such as `ScanUtcTime` and `FlightInfo`. The difference in flow is because **Logic Apps** supports executing JavaScript, but **Power Automate** doesn't.  
+In this tutorial, you learn how to stream real-time events from  **Logic Apps** or **Power Automate** to Real-Time Intelligence using a custom endpoint source in Microsoft Fabric Eventstream. While the flows for Logic Apps and Power Automate are configured differently, they serve the same purpose: to periodically send the simulated flight data containing columns such as `ScanUtcTime` and `FlightInfo`. The difference in flow is because **Logic Apps** supports executing JavaScript, but **Power Automate** doesn't.
 
 The flow in Logic App (with stateful workflow) and Power Automate are:
 
@@ -28,7 +25,7 @@ The flow in Logic App (with stateful workflow) and Power Automate are:
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/power-automate.png" alt-text="Screenshot showing Power Automate flow." lightbox="media/stream-events-from-power-automate-and-logic-app/power-automate.png":::
 
-Although the flows in **Logic Apps** and **Power Automate** are different, they achieve the same result—sending flight data to Real-Time Intelligence.
+Although the flows in **Logic Apps** and **Power Automate** are different, they achieve the same result—sending flight data to Real-Time Intelligence. **Choose the approach that best suits your requirements.**
 
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/preview-data.png" alt-text="Screenshot showing flight data in eventstream." lightbox="media/stream-events-from-power-automate-and-logic-app/preview-data.png" :::
@@ -48,33 +45,15 @@ In this tutorial, you learn how to:
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a workspace with Contributor or higher permissions where your eventstream is located.
-- An account on **Power Automate**.
-- A **Logic Apps** workflow ready to connect to your eventstream.
+- Access to a workspace with Contributor or higher permissions where your eventstream is located.
+- For **Logic Apps**, an Azure account with a valid subscription to create logic apps. If you don't have one, [sign up for a free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
+- For **Power Automate**, an active **Power Automate** account.
 
-## Create an eventstream and add a Custom endpoint source in Microsoft Fabric
 
-1. Change your Fabric experience to **Real-Time Intelligence**.
+## Create an eventstream 
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-    :::image type="content" source="media/create-manage-an-eventstream/switch-to-real-time-intelligence-workload.png" alt-text="Screenshot showing the switcher to switch to the Real-Time intelligence workload.":::
-
-1. Follow one of these steps to start creating an eventstream:
-
-   - On the **Real-Time Intelligence** homepage, in the **Recommended items to create** section, select the **Eventstream** tile:
-
-       :::image type="content" source="media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the eventstream tile on the homepage.":::
-
-   - Select **My workspace** on the left navigation bar. On the **My Workspace** page, select **New item** and then **Eventstream**:
-
-       :::image type="content" source="media/create-manage-an-eventstream/eventstream-creation-workspace.png" alt-text="Screenshot showing where to find the eventstream option in the New menu on the Workspace page." lightbox="media/create-manage-an-eventstream/eventstream-creation-workspace.png":::
-
-1. Enter a **name** for the new eventstream, and then select **Create**. 
-
-    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/create-event-stream-dialog-box.png" alt-text="Screenshot showing the New eventstream dialog box." lightbox="media/stream-events-from-power-automate-and-logic-app/create-event-stream-dialog-box.png" :::
-
-1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
-
-   :::image type="content" source="media/create-manage-an-eventstream-enhanced/editor.png" alt-text="Screenshot showing the editor." lightbox="media/create-manage-an-eventstream-enhanced/editor.png" :::
+## Add a Custom endpoint source
 
 1. To add a custom endpoint source, on the get-started page, select **Use custom endpoint**.
 
@@ -90,15 +69,21 @@ Before you start, you must complete the following prerequisites:
 
 ## Stream events from Logic Apps to your eventstream using the custom endpoint
 
-1. Create a Logic App and workflow resource in [Azure portal](https://portal.azure.com/). When creating the workflow, select the **Stateful** state type.
+In this section, you'll learn how to design a workflow that periodically generates simulated flight data on a recurring schedule. The workflow will use JavaScript code in the 'Execute JavaScript' action to construct a flight information message with randomized values for each field. Once the message is constructed, it will be sent to the eventstream's endpoint using the Event Hub protocol.
+
+1. Create a Logic App using the **Standard** plan instead of the Consumption plan to simplify configuration, as the 'Execute JavaScript' action in the Consumption plan requires an additional integration account.
+
+   :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\create-logic-app.png" alt-text="Screenshot that shows create logic app with standard plan.":::
+
+1. Create a workflow. When creating the workflow, select the **Stateful** state type as the 'Recurrence' trigger (needed for this tutorial) is not available in the stateless trigger list.
 
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\state-type.png" alt-text="Screenshot that shows create workflow with stateful state type.":::
 
-1. Open the newly created workflow, select **Add a trigger**, and then select **Recurrence**.
+1. Open the newly created workflow, select **Add a trigger**, and then select **Recurrence**. 
    
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\add-recurrence.png" alt-text="Screenshot that shows how to add a recurrence in workflow.":::
 
-1. Configure **Recurrence** for periodical running.
+1. Configure **Recurrence** for periodical running. This will peroridically trigger this whole flow based on the interval you set.
 
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\long-running.png" alt-text="Screenshot that shows how to set recurrence for long running.":::
 
@@ -115,16 +100,18 @@ Before you start, you must complete the following prerequisites:
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\send-event.png" alt-text="Screenshot that shows how to add an event hub.":::
 
 1. Create new connection, enter the **Connection name**.
-1. Enter the **Connection string** which can copy from Eventstream Custom endpoint.
+1. Enter the **Connection string** which can copy from Eventstream Custom endpoint, and select **Create new** to get the connection created.
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/connection-string.png" alt-text="Screenshot showing how to get connection string." lightbox="media/stream-events-from-power-automate-and-logic-app/connection-string.png" :::
    
-1. Select **Create new**, and then enter the **Event Hubs name** which can copy from Eventstream Custom endpoint.
+1. After the new connection created and returned to event hub Parameters configuration, select **Enter custom value** from the dropdown menu of the **Event Hub Name** and enter the event hub name which can copy from Eventstream Custom endpoint.
 
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/event-hub-name.png" alt-text="Screenshot showing how to get Event Hubs name." lightbox="media/stream-events-from-power-automate-and-logic-app/event-hub-name.png" :::
 
 1. Select **Content** for the **Advanced parameters** and configure the **Content** as the **Output** .
    
+   :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/configure-event-hub-content.png" alt-text="Screenshot showing configure event hub content." lightbox="media/stream-events-from-power-automate-and-logic-app/configure-event-hub-content.png" :::
+
    :::image type="content" source="media/stream-events-from-power-automate-and-logic-app/output.png" alt-text="Screenshot showing configure event hub as output." lightbox="media/stream-events-from-power-automate-and-logic-app/output.png" :::
 
 1. Select **Save** to save the workflow.

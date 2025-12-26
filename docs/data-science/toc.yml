@@ -26,23 +26,103 @@ items:
 - name: Copilot for Data Science
   items:
   - name: Copilot for Data Science
-    href: ../get-started/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Overview of Chat-magics in Notebooks
-    href: ../get-started/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use the Copilot chat panel
-    href: ../get-started//copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-- name: AI skill
+    href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: AI functions
   items: 
-    - name: What is the AI skill?
-      href: concept-ai-skill.md
-    - name: How to create an AI skill
-      href: how-to-create-ai-skill.md
-    - name: AI skill scenario
-      href: ai-skill-scenario.md
-    - name: AI skill tenant switch
-      href: ai-skill-tenant-switch.md
-    - name: AI skill sharing
-      href: ai-skill-sharing.md
+  - name: Transform and enrich data with AI functions
+    href: ./ai-functions/overview.md
+  - name: pandas
+    items: 
+    - name: ai.analyze_sentiment
+      href: ./ai-functions/pandas/analyze-sentiment.md
+    - name: ai.classify
+      href: ./ai-functions/pandas/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pandas/embed.md
+    - name: ai.extract
+      href: ./ai-functions/pandas/extract.md
+    - name: ai.fix_grammar
+      href: ./ai-functions/pandas/fix-grammar.md      
+    - name: ai.generate_response
+      href: ./ai-functions/pandas/generate-response.md
+    - name: ai.similarity
+      href: ./ai-functions/pandas/similarity.md
+    - name: ai.summarize
+      href: ./ai-functions/pandas/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/pandas/translate.md
+    - name: Custom configurations
+      href: ./ai-functions/pandas/configuration.md
+  - name: PySpark
+    items: 
+    - name: ai.analyze_sentiment
+      href: ./ai-functions/pyspark/analyze-sentiment.md
+    - name: ai.classify
+      href: ./ai-functions/pyspark/classify.md
+    - name: ai.embed
+      href: ./ai-functions/pyspark/embed.md
+    - name: ai.extract
+      href: ./ai-functions/pyspark/extract.md
+    - name: ai.fix_grammar
+      href: ./ai-functions/pyspark/fix-grammar.md      
+    - name: ai.generate_response
+      href: ./ai-functions/pyspark/generate-response.md
+    - name: ai.similarity
+      href: ./ai-functions/pyspark/similarity.md
+    - name: ai.summarize
+      href: ./ai-functions/pyspark/summarize.md
+    - name: ai.translate
+      href: ./ai-functions/pyspark/translate.md
+    - name: Custom configurations
+      href: ./ai-functions/pyspark/configuration.md
+- name: Fabric data agent
+  items: 
+    - name: What is the Fabric data agent?
+      href: concept-data-agent.md
+    - name: Fabric data agent tenant settings
+      href: data-agent-tenant-settings.md      
+    - name: How to create a Fabric data agent
+      href: how-to-create-data-agent.md
+    - name: Fabric data agent SDK
+      href: fabric-data-agent-sdk.md
+    - name: Evaluate a Fabric data agent
+      href: evaluate-data-agent.md
+    - name: Configure your Fabric data agent
+      items:
+        - name: Data agent configurations
+          href: data-agent-configurations.md
+        - name: Example queries
+          href: data-agent-example-queries.md
+        - name: Best practices for configuring data agents 
+          href: data-agent-configuration-best-practices.md
+        - name: Add Power BI semantic model as data source
+          href: data-agent-semantic-model.md
+        - name: How to configure a data agent
+          href: develop-iterative-process-data-agent.md
+    - name: How to consume a Fabric data agent
+      items:
+        - name: Consume a data agent from Azure AI foundry (preview)
+          href: data-agent-foundry.md
+        - name: Consume a data agent from Copilot in Power BI (preview)
+          href: data-agent-copilot-powerbi.md
+        - name: Consume a data agent from Microsoft Copilot Studio (preview)
+          href: data-agent-microsoft-copilot-studio.md         
+        - name: Consume a data agent using Python SDK (preview)
+          href: consume-data-agent-python.md
+        - name: Consume a data agent from Microsoft 365 Copilot (preview)
+          href: data-agent-microsoft-365-copilot.md  
+        - name: Consume a data agent as Model Context Protocol Server (preview)
+          href: data-agent-mcp-server.md       
+    - name: Source Control, CI/CD, and ALM for Fabric data agent
+      href: data-agent-source-control.md 
+    - name: Fabric data agent end-to-end tutorial
+      href: data-agent-end-to-end-tutorial.md        
+    - name: Fabric data agent sharing
+      href: data-agent-sharing.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -65,6 +145,8 @@ items:
     href: ../data-engineering/notebook-source-control-deployment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use Notebook public APIs
     href: ../data-engineering/notebook-public-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Notebook troubleshooting guide
+    href: fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -83,8 +165,12 @@ items:
       href: use-ai-samples.md
     - name: Book recommendation
       href: retail-recommend-model.md
+    - name: Building Retrieval Augmented Generation
+      href: quickstart-building-retrieval-augmented-generation.md
     - name: Customer churn prediction
       href: customer-churn.md
+    - name: Evaluate RAG performance
+      href: tutorial-evaluate-rag-performance.md
     - name: Fraud detection
       href: fraud-detection.md
     - name: Machine failure prediction
@@ -115,8 +201,12 @@ items:
   items:
   - name: Read and write data with Pandas
     href: read-write-pandas.md
+  - name: Transform and enrich data seamlessly with AI functions
+    href: ./ai-functions/overview.md
   - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Use AI in Data Wrangler
+    href: data-wrangler-ai.md
   - name: Explore and transform Spark data with Data Wrangler
     href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI
@@ -151,6 +241,8 @@ items:
   items: 
    - name: AutoML overview
      href: automated-ml-fabric.md
+   - name: AutoML concepts
+     href: automated-machine-learning-fabric.md
    - name: How-to guides
      items:
      - name: Use AutoML (interface)
@@ -167,12 +259,18 @@ items:
     href: machine-learning-experiment.md
   - name: Machine learning model
     href: machine-learning-model.md
+  - name: Machine learning tracking upgrade
+    href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
+  - name: Git and deployment pipelines 
+    href: machine-learning-artifacts-git-deployment-pipelines.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+    - name: Serve real-time predictions with ML model endpoints
+      href: model-endpoints.md
 - name: Secure and manage ML items
   items:
     - name: Disaster recovery for ML items
@@ -311,6 +409,10 @@ items:
       href: tutorial-relationships-detection.md
     - name: Validate data with Great Expectations (GX)
       href: tutorial-great-expectations.md
+    - name: Classification of Natural Language Text with Generative AI
+      href: tutorial-text-classification.md
+  - name: Service principal support
+    href: semantic-link-service-principal-support.md
   - name: Power BI connectivity
     href: semantic-link-power-bi.md
   - name: Semantic propagation

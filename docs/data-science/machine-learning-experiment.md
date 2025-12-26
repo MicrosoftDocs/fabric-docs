@@ -1,15 +1,13 @@
----
+﻿---
 title: Machine learning experiment
 description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
-ms.author: lagayhar 
-author: lgayhardt
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: sfi-image-nochange
+ms.date: 01/14/2025
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
@@ -17,30 +15,39 @@ ms.search.form: Create New Experiment, Run Comparison
 
 A machine learning *experiment* is the primary unit of organization and control for all related machine learning runs. A *run* corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
-
-
 Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. Experiments also let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools.
 
 In this article, you learn more about how data scientists can interact with and use machine learning experiments to organize their development process and to track multiple runs.
 
+
 ## Prerequisites
 
-- A Power BI Premium subscription. If you don't have one, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
+- A Power BI Premium subscription. If you don't have one, see [What is Power BI Premium?](/fabric/enterprise/powerbi/service-premium-what-is)
 - A Power BI Workspace with assigned premium capacity.
 
 ## Create an experiment
 
-You can create a machine learning experiment directly from the Data science home page in the Power BI user interface (UI) or by writing code that uses the MLflow API.
+You can create a machine learning experiment directly from the fabric user interface (UI) or by writing code that uses the MLflow API.
 
 ### Create an experiment using the UI
 
 To create a machine learning experiment from the UI:
 
-1. Create a new data science workspace or select an existing one.
-1. Select **Experiment** from the "New" section.
-1. Provide an experiment name and select **Create**. This action creates an empty experiment within your workspace.
+1. Create a new workspace or select an existing one.
+1. In the upper left of your workspace, select **New item**. Under **Analyze and train data**, select **Experiment** .
+    
+    :::image type="content" source="media/machine-learning-experiment/new-item.png" alt-text="Screenshot showing where to select Experiment in your workspace." lightbox="media/machine-learning-experiment/new-item.png":::
+OR
 
-   :::image type="content" source="media/machine-learning-experiment/new-menu-experiment-option.png" alt-text="Screenshot showing where to select Experiment in the New menu." lightbox="media/machine-learning-experiment/new-menu-experiment-option.png":::
+1. Select **Create**, which can be found in **...** from the vertical menu.
+
+    :::image type="content" source="media/machine-learning-experiment/create.png" alt-text="Screenshot of create button." lightbox="media/machine-learning-experiment/create.png":::
+
+1. Under **Data Science**, select **Experiment**.
+    
+    :::image type="content" source="media/machine-learning-experiment/create-2.png" alt-text="Screenshot showing where to select Experiment after selecting create." lightbox="media/machine-learning-experiment/create-2.png":::
+
+1. Provide an experiment name and select **Create**. This action creates an empty experiment within your workspace.
 
 After creating the experiment, you can start adding runs to track run metrics and parameters.
 
@@ -63,9 +70,15 @@ mlflow.set_experiment("<EXPERIMENT_NAME>")
 
 A machine learning experiment contains a collection of runs for simplified tracking and comparison. Within an experiment, a data scientist can navigate across various runs and explore the underlying parameters and metrics. Data scientists can also compare runs within a machine learning experiment to identify which subset of parameters yield a desired model performance.
 
-### Track runs
+To view the runs for an experiment, select **Run list** from the experiment's view.
 
-A machine learning run corresponds to a single execution of model code.
+:::image type="content" source="media/machine-learning-experiment/view-recent-runs.png" alt-text="Screenshot of machine learning recent runs." lightbox="media/machine-learning-experiment/view-recent-runs.png":::
+
+From the run list, you can navigate to the details of a specific run by selecting the run name.
+
+### Track run details
+
+A machine learning run corresponds to a single execution of model code. You can track the following information for each run:
 
 :::image type="content" source="media/machine-learning-experiment/ml-run-detail-screen.png" alt-text="Screenshot of machine learning run detail page." lightbox="media/machine-learning-experiment/ml-run-detail-screen.png":::
 
@@ -80,11 +93,17 @@ Each run includes the following information:
 - **Output files**: Output files in any format. For example, you can record images, environment, models, and data files.
 - **Tags**: Metadata as key-value pairs to runs.
 
-### View recent runs
+:::image type="content" source="media/machine-learning-experiment/ml-run-detail-screen.png" alt-text="Screenshot of machine learning run detail page." lightbox="media/machine-learning-experiment/ml-run-detail-screen.png":::
 
-You can also view recent runs for an experiment directly from the workspace list view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
+### View the run list
 
-:::image type="content" source="media/machine-learning-experiment/view-recent-runs.png" alt-text="Screenshot of machine learning recent runs and Spark application view." lightbox="media/machine-learning-experiment/view-recent-runs.png":::
+You can view all the runs in an experiment in the **Run list** view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
+
+### View the run list
+
+You can view all the runs in an experiment in the **Run list** view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
+
+:::image type="content" source="media/machine-learning-experiment/view-recent-runs.png" alt-text="Screenshot of machine learning recent runs." lightbox="media/machine-learning-experiment/view-recent-runs.png":::
 
 ## Compare and filter runs
 
@@ -204,17 +223,17 @@ Once a run yields the desired result, you can save the run as a model for enhanc
 
 ## Monitor ML Experiments (preview)
 
-ML experiments are integrated directly into the Monitoring Hub. This functionality is designed to provide more insight into your Spark applications and the ML experiments they generate, making it easier to manage and debug these processes.
+ML experiments are integrated directly into Monitor. This functionality is designed to provide more insight into your Spark applications and the ML experiments they generate, making it easier to manage and debug these processes.
 
-### Track runs from the monitoring hub
+### Track runs from monitor
 
-Users can track experiment runs directly from the Monitoring Hub, providing a unified view of all their activities. This integration includes filtering options, enabling users to focus on experiments or runs created within the last 30 days or other specified periods.
+Users can track experiment runs directly from monitor, providing a unified view of all their activities. This integration includes filtering options, enabling users to focus on experiments or runs created within the last 30 days or other specified periods.
 
-:::image type="content" source="media/machine-learning-experiment/monitor-hub-list-runs.png" alt-text="Screenshot showing where view runs in the monitoring hub." lightbox="media/machine-learning-experiment/monitor-hub-list-runs.png":::
+:::image type="content" source="media/machine-learning-experiment/monitor-list-runs.png" alt-text="Screenshot showing where view runs in the monitor tab." lightbox="media/machine-learning-experiment/monitor-list-runs.png":::
 
 ### Track related ML Experiment runs from your Spark application
 
-ML Experiment are integrated directly into the Monitoring Hub, where you can select a specific Spark application and access Item Snapshots. Here, you’ll find a list of all the experiments and runs generated by that application.
+ML Experiment are integrated directly into Monitor, where you can select a specific Spark application and access Item Snapshots. Here, you'll find a list of all the experiments and runs generated by that application.
 
 ## Related content
 

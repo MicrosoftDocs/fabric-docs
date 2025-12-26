@@ -1,14 +1,12 @@
 ---
 title: Manage and execute Fabric notebooks with public APIs
 description: Learn about the Fabric notebook public APIs, including how to create and get a notebook with definition, and run a notebook on demand.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
-ms.topic: conceptual
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 01/28/2025
 ms.search.form: Notebook REST API ci cd
 ---
 
@@ -18,9 +16,6 @@ ms.search.form: Notebook REST API ci cd
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available notebook REST APIs and their usage.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
-
-> [!NOTE]
-> [Service principal authentication](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is available for Notebook CRUD API. It's not supported for run notebook API for now.
 
 With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
@@ -47,6 +42,9 @@ The following **Job scheduler** actions are available for notebooks:
 |Get Item Job Instance| Get notebook run status.|
 
 For more information, see [Job Scheduler](/rest/api/fabric/core/job-scheduler).
+
+> [!NOTE]
+> Service principal authentication is available for Notebook CRUD API and Job scheduler API, meaning you can use service principal to do the CRUD operations and trigger/cancel notebook runs, and get the run status. You need to add the service principal to the workspace with the appropriate role.
 
 ## Notebook REST API usage examples
 
@@ -197,7 +195,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
 Status code: 202
 
 ```http
-Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187-f10824047715/items/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b
+Location: https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/items/bbbbcccc-1111-dddd-2222-eeee3333ffff/jobs/instances/ccccdddd-2222-eeee-3333-ffff4444aaaa
 Retry-After: 60
 ```
 

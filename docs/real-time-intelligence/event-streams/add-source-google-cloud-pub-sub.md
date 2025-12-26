@@ -6,7 +6,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/22/2024
 ms.search.form: Source and Destination
 ---
@@ -16,8 +15,6 @@ ms.search.form: Source and Destination
 This article shows you how to add a Google Cloud Pub/Sub source to an eventstream. 
 
 Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events. You can add Google Pub/Sub as a source to your eventstream to capture, transform, and route real-time events to various destinations in Fabric.
-
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 

@@ -5,11 +5,10 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 12/11/2025
 ---
 
-# Explore Azure blob storage events in Fabric Real-Time hub (preview)
+# Explore Azure blob storage events in Fabric Real-Time hub
 
 This article shows how to explore Azure blob storage events in Fabric Real-Time hub. Azure blob storage events allow you to receive notifications when certain actions occur on your blobs. For example, you can receive a notification when a new blob is created, or an existing blob is modified. These events can be used to set alert on other actions or workflows, such as updating a database or sending a notification. This article provides the properties and schema for Azure blob storage events.  
 
@@ -20,7 +19,7 @@ This article shows how to explore Azure blob storage events in Fabric Real-Time 
 1. In **Real-Time hub**, select **Azure events** on the left navigation menu.
 1. Select **Azure blob storage events** in the list.
 
-    :::image type="content" source="./media/explore-azure-blob-storage-events/select-from-list.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Azure events page." :::
+    :::image type="content" source="./media/explore-azure-blob-storage-events/azure-events.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Azure events page." :::
 1. You should see the Azure blob storage events detail page.
 
     :::image type="content" source="./media/explore-azure-blob-storage-events/detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page." lightbox="./media/explore-azure-blob-storage-events/detail-page.png":::
@@ -103,6 +102,8 @@ The `data` object has the following properties:
 | `identity` | string | A string value representing the identity associated with the event. For Secure File Transfer Protocol (SFTP), the value is the local user name. | `localuser` | 
 | `storageDiagnostics` | object | Diagnostic data occasionally included by the Azure Storage service. When present, event consumers should ignore it. | `{{Storage diagnostic object}}` |
 
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 

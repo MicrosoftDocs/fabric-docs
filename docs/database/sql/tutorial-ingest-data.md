@@ -1,21 +1,22 @@
 ---
-title: SQL database tutorial - Ingest sample data and create objects and data using T-SQL and pipelines
+title: SQL Database Tutorial - Ingest Sample Data and Create Objects and Data Using T-SQL and Pipelines
 description: In this third tutorial step, learn how to ingest sample data and create extra objects and data.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 01/02/2025
+ms.date: 02/20/2025
+ms.update-cycle: 180-days
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+- ce-skilling-ai-copilot
+ms.custom: sfi-image-nochange
 ---
 
 # Ingest sample data and create objects and data
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-You can input data into the SQL database in Fabric using Transact-SQL (T-SQL) statements, and you can also import data into your database using other Microsoft Fabric components, such as the Dataflow Gen2 feature or data pipelines. For development, you can connect with any tool that supports the Tabular Data Stream (TDS) protocol, such as Visual Studio Code or SQL Server Management Studio.
+You can input data into the SQL database in Fabric using Transact-SQL (T-SQL) statements, and you can also import data into your database using other Microsoft Fabric components, such as the Dataflow Gen2 feature or pipelines. For development, you can connect with any tool that supports the Tabular Data Stream (TDS) protocol, such as Visual Studio Code or SQL Server Management Studio.
 
 To begin this section, you can use the SalesLT sample data provided as a starting point.
 
@@ -110,7 +111,7 @@ The following steps use a T-SQL script to create a schema, table, and data for t
 
 ## Insert data using a Microsoft Fabric Pipeline
 
-Another way you can import data into and export data out of your SQL database in Fabric is to use a Microsoft Fabric Data Pipeline. Data pipelines offer an alternative to using commands, instead using a graphical user interface. A data pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
+Another way you can import data into and export data out of your SQL database in Fabric is to use a Microsoft Fabric Pipeline. Pipelines offer an alternative to using commands, instead using a graphical user interface. A pipeline is a logical grouping of activities that together perform a data ingestion task. Pipelines allow you to manage extract, transform, and load (ETL) activities instead of managing each one individually.
 
 Microsoft Fabric Pipelines can contain a Dataflow. [Dataflow Gen2](../../data-factory/create-first-dataflow-gen2.md) uses a Power Query interface that allows you to perform transformations and other operations on the data. You'll use this interface to bring in data from the *Northwind Traders* company, which Contoso partners with. They're currently using the same suppliers, so you'll import their data and show the names of these suppliers using a view that you'll create in another step in this tutorial.
 
@@ -153,6 +154,6 @@ The data is now ingested into your database. You can now create a query that com
 
 ## Related content
 
-- [Set up your SQL database connection in Data Factory (Preview)](../../data-factory/connector-sql-database.md)
-- [SQL database connector overview (Preview)](../../data-factory/connector-sql-database-overview.md)
-- [Configure SQL database in a copy activity (Preview)](../../data-factory/connector-sql-database-copy-activity.md)
+- [Set up your SQL database connection in Data Factory](../../data-factory/connector-sql-database.md)
+- [SQL database connector overview](../../data-factory/connector-sql-database-overview.md)
+- [Configure SQL database in a copy activity](../../data-factory/connector-sql-database-copy-activity.md)

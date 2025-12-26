@@ -1,32 +1,32 @@
 ---
-title: Run a Fabric data pipeline and notebook using Apache Airflow DAG.
-description: Learn to run Microsoft Fabric data pipelines and notebooks using Apache Airflow DAG.
-ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
+title: Run a Fabric item using Apache Airflow DAG.
+description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
+ms.reviewer: noelleli
+ms.author: noelleli
+author: n0elleli
 ms.topic: tutorial
-ms.date: 12/18/2024
+ms.date: 10/13/2025
+ms.custom: airflows, sfi-image-nochange
 ---
 
-# Tutorial: Run a Fabric data pipeline and notebook using Apache Airflow DAGs
+# Tutorial: Run a Fabric item using Apache Airflow DAGs
 
 > [!NOTE]
 > Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
 
-In this tutorial, you build a directed acyclic graph to run a Microsoft Fabric item such as data pipelines and notebooks.
+In this tutorial, you build a directed acyclic graph (DAG) to run a Microsoft Fabric item including: 
+  - Notebooks
+  - Spark job definitions
+  - Pipelines
+  - Semantic Models
+  - User data functions
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Enable Apache Airflow Job in your Tenant.
-
   > [!NOTE]
-  > Since Apache Airflow job is in preview, you need to enable it through your tenant admin. If you already see Apache Airflow Job, your tenant admin may have already enabled it. Additionally, make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability-public-preview).
-
-  1. Go to Admin Portal -> Tenant Settings -> Under Microsoft Fabric -> Expand 'Users can create and use Apache Airflow Job (preview)' section.
-  2. Select Apply.
-     :::image type="content" source="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" lightbox="media/apache-airflow-jobs/enable-apache-airflow-job-tenant.png" alt-text="Screenshot to enable Apache Airflow in tenant.":::
+  > Make sure Apache Airflow job is available in the capacity region you are using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability).
 
 - [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
 
@@ -43,8 +43,7 @@ To get started, you must complete the following prerequisites:
 
    For more information, Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
 
-- Add your Service principal as a "Contributor" in your Microsoft Fabric workspace.
-:::image type="content" source="media/apache-airflow-jobs/manage-access.png" lightbox="media/apache-airflow-jobs/manage-access.png" alt-text="Screenshot to add service principal as a contributor.":::
+- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the pipeline and notebook.
 
 - Enable the Triggers in data workflows to allow the usage of deferrable operators.
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
@@ -74,8 +73,8 @@ Before proceeding with the steps in this article, Save the following values from
 The first step in the authorization code flow is for the user to authorize the app to act on their behalf. By sending the 'GET' request to '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests. Replace the placeholders with your values and paste the following URL in your browser. 
 
 The plugin requires the following scopes for authentication:
--  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all artifacts of '\<itemtype\>' that the user has access to.
--  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all artifacts of type '\<itemType\>' that the user has access to.
+-  **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all items of '\<itemtype\>' that the user has access to.
+-  **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all items of type '\<itemType\>' that the user has access to.
 -  **offline_access**: Standard OIDC scope requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
 ```http
 // Line breaks for legibility only
@@ -87,7 +86,7 @@ client_id={client_id}
 &response_type=code
 &redirect_uri={redirect_uri}
 &response_mode=query
-&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access 
+&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Read.All%20offline_access 
 &state=12345
 &code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
 &code_challenge_method=S256
@@ -152,9 +151,29 @@ Content-type: application/json
 
 ## Set up Apache Airflow connection
 
-Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs.
+Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs. You can set up your connections in 2 ways. 
 
-1. Navigate to "View Airflow connections" to add a new Apace Airflow connection.
+### Fabric Apache airflow job UI
+1. On the **Home** bar, click **Add connection**.
+
+   :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection.png" alt-text="Screenshot to add an Apache Airflow connection.":::
+  
+2. A pop-up will open to help you set up your Apache airflow Fabric connection. Follow the instructions and add the following details:
+
+   - <strong>Connection ID:</strong> Name of the Connection ID.
+   - <strong>Description:</strong> Description of the connection
+   - <strong>Endpoint:</strong> Your Fabric API endpoint. Ex. "https://api.fabric.microsoft.com"
+   - <strong>Tenant ID:</strong> Your Tenant ID
+   - <strong>Client ID:</strong> Your application client ID assigned to your app.
+   - <strong>Client secret:</strong> Your app registration client secret.
+
+   :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" alt-text="Screenshot to add Apache Airflow connection through the pop-up.":::
+
+3. Click **Create** once you have filled everything out. 
+
+### Apache airflow UI
+
+1. Navigate to "View Airflow connections" to add a new Apache Airflow connection.
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 2. Add a new connection and fill the following details:
@@ -168,12 +187,12 @@ Apache Airflow connection is used to store the credentials required to authentic
       - **clientSecret**: (Optional, only required for web apps) The client secret of the app registration.
       - **scopes**: (Required) Space separated string of scopes required for the app to access the Microsoft Fabric APIs.
 
-      Copy the following json object format, update the values and paste it in the Extra field.
+      Copy the following json object format, update the values, remove the comment and paste it in the Extra field.
       ```json
       {
          "tenantId": "{tenant}",
-         "scopes": "https://api.fabric.microsoft.com/Notebook.Execute.All https://api.fabric.microsoft.com/Notebook.Read.All offline_access",
-         "clientSecret": "{client-secret}", // (Optional) NOTE: Only required for web apps
+         "scopes": "https://api.fabric.microsoft.com/Item.Execute.All https://api.fabric.microsoft.com/Item.Read.All offline_access",
+         "clientSecret": "{client-secret}" // (Optional) NOTE: Only required for web apps.
       }
       ```
        
@@ -183,37 +202,72 @@ Apache Airflow connection is used to store the credentials required to authentic
 
 ## Create a DAG to trigger Microsoft Fabric item run
 
+On your Apache airflow job canvas, there are 3 tiles. Select **Run Fabric artifact**. This will open a new pop-up. 
+
+:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric artifacts."::: 
+
+:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" alt-text="Screenshot of pop-up to select a Fabric artifact to run."::: 
+
+1. Select your Fabric Connection using the drop-down list. If you haven't created a connection, click **+** to add a new Fabric connection.
+
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-connection.png" lightbox="media/apache-airflow-jobs/set-fabric-connection.png" alt-text="Screenshot of pop-up to select a Fabric artifact to run with connection drop-down highlighted."::: 
+
+2. Then, select your workspace using the drop-down list.
+
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-workspace.png" lightbox="media/apache-airflow-jobs/set-fabric-workspace.png" alt-text="Screenshot to select your workspace in the DAG set-up pop-up."::: 
+
+3. Choose which artifact type you want to run. You can choose from:
+  - Notebook
+  - Spark job definition
+  - Pipeline
+  - Semantic Model
+  - User data function
+
+    :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact-type.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact-type.png" alt-text="Screenshot to select your artifact type in the DAG set-up pop-up."::: 
+
+4. Then, select the artifact that you want to run.
+
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact.png" alt-text="Screenshot to select the artifact you want to run in the DAG set-up pop-up.":::
+
+5. Name your DAG and then configure your max timeout time and whether you want to enable **Deferrable execution**. 
+   
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-dag-name.png" lightbox="media/apache-airflow-jobs/set-fabric-dag-name.png" alt-text="Screenshot to name the DAG you want to run in the DAG set-up pop-up."::: 
+
+6. Click **Create**. This will open a new DAG in the editor for you to review and edit. Then, you can save your changes and run the DAG.
+
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-provider-dag.png" lightbox="media/apache-airflow-jobs/set-fabric-provider-dag.png" alt-text="Screenshot to create the DAG you want to run Fabric providers using the pop-up."::: 
+
 Create a new DAG file in the 'dags' folder in Fabric managed storage with the following code. Replace the following placeholders:
 - `fabric_conn_id`: The connection ID you created in the previous step.
 - `workspace_id`: The workspace ID where the item is located.
 - `item_id`: The item ID of the item you want to run. For example, a Notebook ID or a Pipeline ID.
-- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook" and for pipeline use "Pipeline".
+- `job_type`: The type of item you want to run. For example, for notebook use "RunNotebook", for Spark Job Definitions use "sparkjob" and for pipelines use "Pipeline". This is case sensitive.
 - `wait_for_termination`: If set to True, the operator waits for the item run to complete before proceeding to the next task.
 - `deferrable`: If set to True, the operator can free up resources while waiting for the item run to complete.
 
 ```python
- from airflow import DAG
- from datetime import datetime
- from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
+from airflow import DAG
+from datetime import datetime
+from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemOperator
 
- with DAG(
-     dag_id="Run_Fabric_Item",
-     schedule_interval="@daily",
-     start_date=datetime(2023, 8, 7),
-     catchup=False,
- ) as dag:
+with DAG(
+  dag_id="Run_Fabric_Item",
+  schedule_interval="@daily",
+  start_date=datetime(2023, 8, 7),
+  catchup=False,
+) as dag:
 
-      run_fabric_item = FabricRunItemOperator(
-         task_id="run_fabric_item",
-         fabric_conn_id="fabric_conn",
-         workspace_id="<workspace_id>",
-         item_id="<item_id>",
-         job_type="<job_type>",
-         wait_for_termination=True,
-         deferrable=True,
-     )
+  run_fabric_item = FabricRunItemOperator(
+    task_id="run_fabric_item",
+    fabric_conn_id="fabric_conn",
+    workspace_id="<workspace_id>",
+    item_id="<item_id>",
+    job_type="<job_type>",
+    wait_for_termination=True,
+    deferrable=True,
+  )
 
-     run_fabric_item
+  run_fabric_item
 ```
 
 ## Create a plugin file for the custom operator

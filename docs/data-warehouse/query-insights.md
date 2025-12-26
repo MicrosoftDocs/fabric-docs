@@ -1,18 +1,15 @@
 ---
-title: Query insights
-description: Query insights makes past query execution data and aggregated insights built on top of this data available to you via simple views.
+title: Query Insights
+description: Query Insights makes past query execution data and aggregated insights built on top of this data available to you via simple views.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: mariyaali
-ms.date: 11/20/2024
+ms.date: 11/18/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2023
-  - ignite-2024
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 
-# Query insights in Fabric data warehousing
+# Query Insights in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -20,8 +17,9 @@ In [!INCLUDE [product-name](../includes/product-name.md)], the query insights fe
 
 The query insights feature provides a central location for historic query data and actionable insights for 30 days, helping you to make informed decisions to enhance the performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. When a SQL query runs in [!INCLUDE [product-name](../includes/product-name.md)], the query insights feature collect and consolidates its execution data, providing you with valuable information. You can view complete query text for Admin, Member, and Contributor roles.
 
-- **Historical Query Data:** The query insights feature stores historical data about query executions, enabling you to track performance changes over time. System queries aren't stored in query insights.
-- **Aggregated Insights:** The query insights feature aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape. For more information, see [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights)
+- **Historical Query Data:** Query Insights stores historical data about query executions, enabling you to track performance changes over time. System queries aren't stored in query insights.
+- **Aggregated Insights:** Query Insights aggregates query execution data into insights that are more actionable, such as identifying long-running queries or most active users. These aggregations are based on the query shape. For more information, see [How are similar queries aggregated to generate insights?](#how-are-similar-queries-aggregated-to-generate-insights)
+- **Warehouse Insights:** To understand the overall health of your warehouse, use the `sql_pool_insights` view. This view provides pool-level metrics and pressure indicators, helping you monitor resource allocation and diagnose performance issues across pools.
 
 ## Before you begin
 
@@ -31,7 +29,7 @@ You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data
 
 The query insights feature addresses several questions and concerns related to query performance and database optimization, including:
 
-**Query Performance Analysis**
+**Query performance analysis**
 
 - What is the historical performance of our queries?
 - Are there any long-running queries that need attention?
@@ -39,31 +37,43 @@ The query insights feature addresses several questions and concerns related to q
 - Was cache utilized for my queries?
 - Which queries are consuming the most CPU?
 
-**Query Optimization and Tuning**
+**Query optimization and tuning**
 
 - Which queries are frequently run, and can their performance be improved?
-- Can we identify queries that have failed or been canceled?
+- Can we identify queries that failed or were canceled?
 - Can we track changes in query performance over time?
 - Are there any queries that consistently perform poorly?
 
-**User Activity Monitoring**
+**User activity monitoring**
 
 - Who submitted a particular query?
 - Who are the most active users or the users with the most long-running queries?
 
-There are three system views to provide answers to these questions:
+**SQL pool and resource monitoring**
 
-- [queryinsights.exec_requests_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
+- Was my SQL pool under pressure during query execution?
+- How often has the pool experienced pressure in the last 24 hours?
+- Have there been any recent changes to workspace capacity or pool configuration?
+- Which pools are consuming the highest percentage of resources?
+- Can I correlate pressure events with slow-running queries?
+- How can I identify trends in pool pressure over time?
+
+The following system views provide answers to these questions:
+
+- [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
   - Returns information about each completed SQL request/query.
  
-- [queryinsights.exec_sessions_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
-  - Returns information about frequently run queries.
+- [queryinsights.exec_sessions_history](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
+  - Returns information about completed sessions.
 
-- [queryinsights.long_running_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.long_running_queries](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
   - Returns the information about queries by query execution time.
 
-- [queryinsights.frequently_run_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.frequently_run_queries](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
   - Returns information about frequently run queries.
+ 
+- [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true)
+  - Returns information about warehouse resource allocation, configuration changes, and pressure.
 
 ## Where can you see query insights?
 
@@ -75,7 +85,7 @@ After your query completes execution, you see its execution data in the `queryin
 
 ## How are similar queries aggregated to generate insights?
 
-Queries are considered the same by the Query Insights if the queries have the same shape, even if the predicates may be different.
+Queries are considered the same by the Query Insights if the queries have the same shape, even if the predicates might be different.
 
 You can utilize the `query hash` column in the views to analyze similar queries and drill down to each execution.
 
@@ -121,7 +131,9 @@ You can determine if the large data scanning during query execution is slowing d
 Furthermore, you can assess the use of cache by examining the sum of `data_scanned_memory_mb` and `data_scanned_disk_mb`, and comparing it to the `data_scanned_remote_storage_mb` for past executions.
 
 > [!NOTE]
-> The data scanned values might not account the data moved during the intermediate stages of query execution. In some cases, the size of the data moved and CPU required to process may be larger than the data scanned value indicates. 
+> The data scanned values might not account the data moved during the intermediate stages of query execution. In some cases, the size of the data moved and CPU required to process can be larger than the data scanned value indicates.
+>
+> Data scanned values appear as `0` for `COPY INTO` statements.
 
 ```sql
 SELECT distributed_statement_id, query_hash, data_scanned_remote_storage_mb, data_scanned_memory_mb, data_scanned_disk_mb, label, command
@@ -149,10 +161,16 @@ WHERE last_run_command LIKE '%<some_label>%'
 ORDER BY median_total_elapsed_time_ms DESC;
 ```
 
+## Query insights views
+
+- [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.exec_sessions_history](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.long_running_queries](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.frequently_run_queries](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
+- [queryinsights.sql_pool_insights](/sql/relational-databases/system-views/queryinsights-sql-pool-insights-transact-sql?view=fabric&preserve-view=true)
+
 ## Related content
 
 - [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
-- [queryinsights.exec_requests_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true)
-- [queryinsights.exec_sessions_history (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-exec-sessions-history-transact-sql?view=fabric&preserve-view=true)
-- [queryinsights.long_running_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-long-running-queries-transact-sql?view=fabric&preserve-view=true)
-- [queryinsights.frequently_run_queries (Transact-SQL)](/sql/relational-databases/system-views/queryinsights-frequently-run-queries-transact-sql?view=fabric&preserve-view=true)
+- [Use query labels in Fabric Data Warehouse](query-label.md)
+- [Data clustering in Fabric Data Warehouse](data-clustering.md)

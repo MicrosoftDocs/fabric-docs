@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: quickstart  #Don't change
 ms.custom:
-ms.date: 12/31/2024
+ms.date: 04/09/2025
 # Customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
@@ -50,7 +50,7 @@ You need consent to use Azure Storage. In this step you check whether Azure Stor
 
 Follow these steps to run the sample workload.
 
-1. Navigate to the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository, select **Code** and then select **Download ZIP**.
+1. Navigate to the [Sample Project Directory](https://go.microsoft.com/fwlink/?linkid=2272254) repository, select **Code**, and then select **Download ZIP**.
 
 2. Extract the contents of the zip file to a local directory on your machine. A new folder called **Microsoft-Fabric-workload-development-sample-main** is created.
 
@@ -60,13 +60,13 @@ Follow these steps to get your tenant ID.
 
 1. Log into Fabric with the user you want to use to create the workload.
 2. Select the **Help & Support** (the question mark **?**) and then select **About**.
-3. From the **Tenant URL**, copy the string of numbers and letters after `https://app.powerbi.com/home?ctid=`. This is your tenant ID.
+3. From the **Tenant URL**, copy the string of numbers and letters after `https://app.powerbi.com/home?ctid=`. This string your tenant ID.
 
     For example, if your tenant URL is `https://app.powerbi.com/home?ctid=bbbbcccc-1111-dddd-2222-eeee3333ffff`, your tenant ID is `bbbbcccc-1111-dddd-2222-eeee3333ffff`.
 
 ## Step 4: Create a Microsoft Entra ID application
 
-Use the provided script to create an Azure Entra ID application.
+Use the provided script to create a Microsoft Entra ID application.
 
 1. Open **PowerShell**.
 
@@ -110,13 +110,13 @@ Open **PowerShell** and do the following:
 
    Once the frontend runs successfully, you see a message that includes **successfully** in PowerShell, and your web browser will open with the `http://localhost:60006/` URL. To check that frontend is running successfully, in your browser, navigate to `http://localhost:60006/manifests`.
 
-## Step 7: Open Visual Studio 2022
+## Step 7: Open Visual Studio
 
-The rest of the steps in this quickstart are performed in Visual Studio 2022. Use this step to open your solution in Visual Studio 2022. Once your solution is open, you can keep Visual Studio open while you complete the remaining steps.
+The rest of the steps in this quickstart are performed in Visual Studio. Use this step to open your solution in Visual Studio. Once your solution is open, you can keep Visual Studio open while you complete the remaining steps.
 
 1. Navigate to the *Microsoft-Fabric-workload-development-sample-main* folder and navigate to the **Backend** folder.
 
-2. In *Visual Studio 2022*, open the file **Fabric_Extension_BE_Boilerplate.sln**.
+2. In *Visual Studio*, open the file **Fabric_Extension_BE_Boilerplate.sln**.
 
 ## Step 8: Update the backend files
 
@@ -169,17 +169,26 @@ The rest of the steps in this quickstart are performed in Visual Studio 2022. Us
 
 ## Step 12: Run the DevGateway file
 
+>[!NOTE]
+>If you're not using Windows, you need to run the DevGateway in a Docker container as described in [DevGateway Container](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/tools/DevGatewayContainer/README.md).
+
 1. Open **PowerShell** and navigate to the **DevGateway** folder.
 
 2. In PowerShell, run the command: `.\Microsoft.Fabric.Workload.DevGateway.exe`. When the output shows the message *info: DevGateway started*. the workload is running successfully.
+
+    If you saved the `workload-dev-mode.json` file from [step 10](#step-10-copy-to-your-local-drive) to a specific folder, run the command with the `DevMode:LocalConfigFilePath` parameter.
+
+    ```powershell
+    .\Microsoft.Fabric.Workload.DevGateway.exe -DevMode:LocalConfigFilePath <path_to_config_json_path>
+    ```
 
 ## Step 13: Open the sample workload in Fabric
 
 > [!TIP]
 > To open the sample workload in Fabric, you need to have three PowerShell windows open and running:
-> * **Frontend** - A Powershell with the command `npm start` running, as described in [Step 6](#step-6-run-the-frontend).
-> * **Boilerplate** - A Powershell running the boilerplate, as described in [Step 11](#step-11-run-the-boilerplate).
-> * **DevGateway** - A Powershell running `DevGateway.exe`, as described in [Step 12](#step-12-run-the-devgateway-file).
+> * **Frontend** - A PowerShell with the command `npm start` running, as described in [Step 6](#step-6-run-the-frontend).
+> * **Boilerplate** - A PowerShell running the boilerplate, as described in [Step 11](#step-11-run-the-boilerplate).
+> * **DevGateway** - A PowerShell running `DevGateway.exe`, as described in [Step 12](#step-12-run-the-devgateway-file).
 
 1. Open Microsoft Fabric.
 

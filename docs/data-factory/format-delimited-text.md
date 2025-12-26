@@ -1,19 +1,17 @@
 ---
-title: How to configure delimited text format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure delimited text format in the data pipeline of Data Factory in Microsoft Fabric.
+title: How to configure delimited text format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure delimited text format in the pipeline of Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2024
+ms.date: 11/25/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # Delimited text format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This article outlines how to configure delimited text format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+This article outlines how to configure delimited text format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -39,9 +37,9 @@ Delimited text format is supported for the following activities and connectors a
 |  | [GetMetadata activity](get-metadata-activity.md) |
 |  | [Delete activity](delete-data-activity.md) | 
 
-## Delimited text format in copy activity
+## Delimited text format in a copy activity
 
-To configure delimited text format, choose your connection in the source or destination of data pipeline copy activity, and then select **DelimitedText** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure delimited text format, choose your connection in the source or destination of a pipeline copy activity, and then select **DelimitedText** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 
@@ -49,7 +47,7 @@ To configure delimited text format, choose your connection in the source or dest
 
 After selecting **Settings** in **File format** section, following properties are shown up in the pop-up **File format settings** dialog box.
 
-:::image type="content" source="./media/format-delimited-text/file-format-settings.png" alt-text="Screenshot showing source file format settings.":::
+:::image type="content" source="./media/format-delimited-text/file-format-settings-source.png" alt-text="Screenshot showing source file format settings.":::
 
 - **Compression type**: The compression codec used to read delimited text files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
@@ -83,6 +81,7 @@ You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, 
 - **First row as header**: Specifies whether to treat/make the first row as a header line with names of columns. Allowed values are selected and unselected (default). When first row as header is unselected, note UI data preview and lookup activity output auto generate column names as Prop_{n} (starting from 0), copy activity requires [explicit mapping](/azure/data-factory/copy-activity-schema-and-type-mapping#explicit-mapping) from source to destination and locates columns by ordinal (starting from 1).
 
 - **Null value**: Specifies the string representation of null value. The default value is empty string.
+- **Multiline rows**: Specifies whether the source file contains rows that span multiple lines. Multiline values must be in quotes. By default, it is `true`. Setting this to `false` enables optimal performance by allowing concurrent multi-threaded reads. For more information, go to [Performance optimization for copying delimited text files](#performance-optimization-for-copying-delimited-text-files).
 
 Under **Advanced** settings in **Source** tab, other delimited text format related properties are exposed.
 
@@ -90,7 +89,7 @@ Under **Advanced** settings in **Source** tab, other delimited text format relat
 
 After selecting **Settings** in **File format** section, following properties are shown up in the pop-up **File format settings** dialog box.
 
-:::image type="content" source="./media/format-delimited-text/file-format-settings.png" alt-text="Screenshot showing destination file format settings.":::
+:::image type="content" source="./media/format-delimited-text/file-format-settings-destination.png" alt-text="Screenshot showing destination file format settings.":::
 
 - **Compression type**: The compression codec used to write delimited text files.
 You can choose from **None**, **bzip2**, **gzip**, **deflate**, **ZipDeflate**, **TarGzip** or **tar** type in the drop-down list.
@@ -124,6 +123,18 @@ Under **Advanced** settings in **Destination** tab, further delimited text forma
 
 - **File name prefix**: Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, file name prefix will be auto generated. This property does not apply when source is file based store or partition option enabled data store.
 
+## Performance optimization for copying delimited text files
+
+The service optimizes performance automatically when copying delimited text files, particularly large files. However, performance improvements do not apply under these conditions:
+
+- Data consistency verification is enabled.
+- IBM encoding is used.
+- Multiline rows is enabled.
+- A compression type is specified.
+- A custom line break is defined.
+- Binary copy is enabled.
+
+Modify the above settings to achieve optimal performance.
 
 ## Table summary
 
@@ -145,6 +156,7 @@ The following properties are supported in the copy activity **Source** section w
 |**Quote character**|The single character to quote column values if it contains column delimiter. When **Quote character** is defined as empty string, it means there is no quote char and column value is not quoted, and escape character is used to escape the column delimiter and itself. |< your selected quote character > <br> **double quotes** `"` (by default) |No| quoteChar|
 |**First row as header**|Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns.| Selected or unselected |No| firstRowAsHeader: <br> true or false (default)|
 |**Null value**|Specifies the string representation of null value. The default value is empty string.|< the string representation of null value > <br> empty string (by default) |No| nullValue|
+|**Multiline rows**| Specifies whether the source file contains rows that span multiple lines. | Selected (by default) or unselected |No| multiline: <br> true (default) or false  |
 
 ### Delimited text as destination
 

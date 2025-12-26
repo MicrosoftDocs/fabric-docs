@@ -2,12 +2,10 @@
 title: Expressions and functions
 description: This article provides information about expressions and functions that you can use in creating pipeline entities for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: jburchel
-author: jonburchel
+ms.author: whhender
+author: whhender
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
@@ -103,8 +101,9 @@ These system variables can be referenced anywhere in the pipeline.
 
 | Variable Name | Description |
 | --- | --- |
-| @pipeline().DataFactory |Name of the data  or Synapse workspace the pipeline run is running in |
-| @pipeline().Pipeline |Name of the pipeline |
+| @pipeline().DataFactory |ID of the workspace the pipeline run is running within |
+| @pipeline().Pipeline |ID of the pipeline |
+| @pipeline().PipelineName |Name of the pipeline |
 | @pipeline().RunId |ID of the specific pipeline run |
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |

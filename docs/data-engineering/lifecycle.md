@@ -1,13 +1,12 @@
 ---
 title: Apache Spark runtime lifecycle in Fabric
 description: Lifecycle for Apache Spark runtime in Fabric
-ms.reviewer: snehagunda
-ms.author: eskot
-author: ekote
+ms.reviewer: sngun
+ms.author: arali
+author: ms-arali
 ms.topic: overview
 ms.custom:
-  - ignite-2024
-ms.date: 11/11/2024
+ms.date: 11/11/2025
 ---
 
 # Lifecycle of Apache Spark runtimes in Fabric
@@ -25,25 +24,21 @@ With a commitment to excellence, we approach new preview runtime releases carefu
 
 The following table lists the runtime name, and release dates for supported Azure Synapse runtime releases.
 
-| Runtime name                                               | Release stage | End of Support date |
+| Runtime name                                              | Release stage | End of Support date |
 |-----------------------------------------------------------|---------------|---------------------|
+| [Runtime 2.0 based on Apache Spark 4.0](./runtime-2-0.md) | Experimental  | Not Applicable      |
 | [Runtime 1.3 based on Apache Spark 3.5](./runtime-1-3.md) | GA            | September 30, 2026  |
-| [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) | GA            | March 31, 2026      |
-| [Runtime 1.1 based on Apache Spark 3.3](./runtime-1-1.md) | EOSA          | March 31, 2025      |
+| [Runtime 1.2 based on Apache Spark 3.4](./runtime-1-2.md) | EOSA          | March 31, 2026      |
 
 
 :::image type="content" source="media\runtime\lifecycle-runtimes.png" alt-text="Diagram showing lifecycle of a runtime in Fabric." lightbox="media\runtime\lifecycle-runtimes.png":::
-
-> [!div class="nextstepaction"]
-> [Watch the Fabric Espresso Video from Product Engineering Group about Lifecycle of Apache Spark Runtimes in Fabric](https://youtu.be/1nlqp5Dv6ko?si=gsVeQVKzTTS15X8R)
-
 
 The diagram outlines the lifecycle of a runtime version from its experimental public preview to its deprecation and removal.
 
 | Stage                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Typical Lifecycle                        |
 |---------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| Experimental public preview                             | The Experimental public preview phase marks the initial release of a new runtime version. During this phase, users are urged to experiment with the latest versions of Apache Spark and Delta Lake and provide feedback, despite the presence of documented limitations. The Microsoft Azure Preview terms apply. See [Preview Terms Of Use](../get-started/preview.md).                                                                                                                                                                                                                                                                                                                                                                                            | 2-3 months*                               |
-| Public preview                                          | After further improvements are made and limitations are minimalized, the runtime progresses to the preview stage. The Microsoft Azure Preview terms apply. See [Preview Terms Of Use](../get-started/preview.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 3 months*                                 |
+| Experimental public preview                             | The Experimental public preview phase marks the initial release of a new runtime version. During this phase, users are urged to experiment with the latest versions of Apache Spark and Delta Lake and provide feedback, despite the presence of documented limitations. The Microsoft Azure Preview terms apply. See [Preview Terms Of Use](../fundamentals/preview.md).                                                                                                                                                                                                                                                                                                                                                                                            | 2-3 months*                               |
+| Public preview                                          | After further improvements are made and limitations are minimalized, the runtime progresses to the preview stage. The Microsoft Azure Preview terms apply. See [Preview Terms Of Use](../fundamentals/preview.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | 3 months*                                 |
 | General Availability (GA)                               | Once a runtime version meets the General Availability (GA) criteria, it's released to the public and is suitable for production workloads. To reach this stage, the runtime must meet strict requirements in terms of performance, integration with the platform, reliability assessments, and its ability to meet users' needs.                                                                                                                                                                                                                                                                                                                                                                                                   | 24 months                                |
 | Long Term Support (LTS)                                 | Following the General Availability (GA) release, a runtime may transition into the Long-Term Support (LTS) stage, depending on the specific requirements of the Spark version. This LTS stage may be announced, detailing the expected support duration for customers, which is generally an additional year of full support.                                                                                                                                                                                                                                                                                                                                                                                                      | 12 months*                                |
 | End of support date announced                           | When a runtime reaches its end of support, it will not receive any further updates or support. Typically, a six-month notice is given before the deprecation of the runtime. This end-of-support date is documented by updating a specific table with the end-of-life date, which marks the discontinuation of support.                                                                                                                                                                                                                                                                                                                                                                                                            | 6 months before deprecation day          |
@@ -57,12 +52,12 @@ _* The expected duration of runtime in each stage. These timelines are provided 
 ## Versioning
 
 Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The
-runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
+runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the  Runtime 2 aligns with Spark 4.0. It's essential to note that between the current runtimes, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
 
 ## Related content
 
-- Read
-  about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
+- [Apache Spark Runtimes in Fabric - Overview, Versioning, and Multiple Runtimes Support](./runtime.md)
+- [Runtime 2.0 (Spark 4.0, Java 21, Python 3.12, Delta Lake 4.0)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
-- [Runtime 1.1 (Spark 3.3, Java 8, Python 3.10, Delta Lake 2.2)](./runtime-1-1.md)
+

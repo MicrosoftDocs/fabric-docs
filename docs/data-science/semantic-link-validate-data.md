@@ -1,13 +1,12 @@
 ---
 title: Validate functional dependencies in data with semantic link
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: romanbat
 reviewer: RomanBat
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
 ms.date: 11/19/2024
 ms.search.form: semantic link
 ---
@@ -37,7 +36,8 @@ For Spark 3.4 and above, Semantic link is available in the default runtime when 
 
 ```python
 %pip install -U semantic-link
-``` 
+```
+
 
 ## Find functional dependencies in data
 

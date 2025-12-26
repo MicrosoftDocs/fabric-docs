@@ -1,21 +1,19 @@
 ---
-title: "Data warehouse tutorial: Ingest data into a Warehouse"
+title: "Data Warehouse Tutorial: Ingest Data into a Warehouse"
 description: "In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: scbradl
-ms.date: 12/29/2024
+ms.reviewer: procha
+ms.date: 12/18/2025
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: sfi-image-nochange
 ---
 
 # Tutorial: Ingest data into a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables.
+In this tutorial, learn how to ingest sample data into a Warehouse using a **Copy job**.
 
 > [!NOTE]
 > This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
@@ -31,81 +29,47 @@ In this task, learn how to ingest data into the warehouse to create tables.
 
 1. In the workspace landing pane, select **+ New Item** to display the full list of available item types.
 
-1. From the list, in the **Get data** section, select the **Data pipeline** item type.
+1. From the list, in the **Get data** section, select the **Copy job** item type.
 
-1. In the **New pipeline** window, in the **Name** box, enter `Load Customer Data`.
+1. In the **New copy job** window, in the **Name** box, enter `Load Customer Data`.
 
-   :::image type="content" source="media/tutorial-ingest-data/create-new-pipeline.png" alt-text="Screenshot of the New pipeline dialog, highlighting the entered name." border="false":::
+1. Select **Create**. Provisioning is complete when the **Copy job** page opens.
 
-1. To provision the pipeline, select **Create**. Provisioning is complete when the **Build a data pipeline** landing page appears.
+1. On the first page of the **Copy job** window, you can pick from various data sources, or select from one of the provided samples to get started. For this tutorial, select **Sample data** from the menu bar on this page. For this tutorial, we use the **NYC Taxi - Green** sample. Select this option to navigate to the next page
 
-1. On the data pipeline landing page, select **Pipeline activity**.
+   :::image type="content" source="media/tutorial-ingest-data/sample-data-page.png" alt-text="Screenshot of the Sample data tab and the NYC Taxi - Green sample data selected.":::
 
-   :::image type="content" source="media/tutorial-ingest-data/select-pipeline-activity.png" alt-text="Screenshot of the Build a data pipeline landing page, highlighting the Pipeline activity option." lightbox="media/tutorial-ingest-data/select-pipeline-activity.png" border="false":::
+   The data preview of the sample data loads. 
 
-1. In the menu, from inside the **Move and transform** section, select **Copy data**.
+1. In the **Choose data** page, you can preview the selected dataset. After you review the data, select **Next**.
 
-   :::image type="content" source="media/tutorial-ingest-data/select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data." border="false":::
+1. The **Choose data destination** page allows you to configure the type of item. In the **OneLake catalog**, select your `Wide World Importers` warehouse created in the previous tutorial step, and select **Next**.
 
-1. On the pipeline design canvas, select the **Copy data** activity.
+1. The **Choose copy job mode** page allows you to configure how you want the data to be copied: a full copy, or incremental copies that perform only subsequent copies when the source data changes. For this example, pick **Full copy** and select **Next**. 
 
-   :::image type="content" source="media/tutorial-ingest-data/copy-data-activity.png" alt-text="Screenshot of the Copy data located on the design canvas." border="false":::
+1. The last step to configure the destination is to provide a name to the destination table and configure the column mappings. You can load the data to a new table or to an existing one, provide a schema and table names, change column names, remove columns, or change their mappings. 
 
-1. To set up the activity, on the **General** page, in the **Name** box, replace the default text with `CD Load dimension_customer`.
+   For this example, change the schema to `dbo` and the table to `NYC_taxi`.
 
-   :::image type="content" source="media/tutorial-ingest-data/general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name." border="false":::
+   :::image type="content" source="media/tutorial-ingest-data/copy-job-map-to-destination.png" alt-text="Screenshot of the Map to destination page of the Copy job window. The destination is dbo.NYC_taxi." lightbox="media/tutorial-ingest-data/copy-job-map-to-destination.png":::
 
-1. On the **Source** page, in the **Connection** dropdown, select **More** in order to reveal all of the data sources you can choose from, including data sources in [OneLake catalog](../governance/onelake-catalog.md).
+   Select **Next**.
 
-1. Select **+ New** to create a new data source.
+1. On the **Review + save** page, review the **Source** and **Destination**. 
 
-1. Search for, and then select, **Azure Blobs**.
+   Keep the **Start data transfer immediately** checkbox checked, this will start the copy job as soon as it's ready to run.
 
-1. On the **Connect data source** page, in the **Account name or URL** box, enter `https://fabrictutorialdata.blob.core.windows.net/sampledata/`.
+   Select **Save + Run**.
 
-1. Notice that the **Connection name** dropdown is automatically populated and that the authentication kind is set to **Anonymous**.
+1. The Copy job will be created and the Fabric portal will open the new **Load Customer Data** object design canvas when ready.
 
-   :::image type="content" source="media/tutorial-ingest-data/new-connection-settings.png" alt-text="Screenshot of the Connect to data source window showing all settings done." border="false":::
+   :::image type="content" source="media/tutorial-ingest-data/copy-job-running.png" alt-text="Screenshot from the Fabric portal showing the new Load Customer Data Copy job design canvas, and the Running notification.":::
 
-1. Select **Connect**.
+1. Use the **Results** tab to monitor the execution of the Copy job. 
 
-1. On the **Source** page, to access the Parquet files in the data source, complete the following settings:
-
-   1. In the **File path** boxes, enter:
-
-       1. **File path - Container:** `sampledata`
-
-       1. **File path - Directory:** `WideWorldImportersDW/tables`
-
-       1. **File path - File name:** `dimension_customer.parquet`
-
-   1. In the **File format** dropdown, select **Parquet**.
-
-1. To preview the data and test that there are no errors, select **Preview data**.
-
-   :::image type="content" source="media/tutorial-ingest-data/source-page-settings.png" alt-text="Screenshot of the Source page, highlighting the changes made in the previous steps, and the Preview data function." lightbox="media/tutorial-ingest-data/source-page-settings.png" border="false":::
-
-1. On the **Destination** page, in the **Connection** dropdown, select the `Wide World Importers` warehouse.
-
-1. For **Table option**, select the **Auto create table** option.
-
-1. In the first **Table** box, enter `dbo`.
-
-1. In the second box, enter `dimension_customer`.
-
-   :::image type="content" source="media/tutorial-ingest-data/destination-page-settings.png" alt-text="Screenshot of the Destination page, highlighting where the changes made in the previous steps." lightbox="media/tutorial-ingest-data/destination-page-settings.png" border="false":::
-
-1. On the **Home** ribbon, select **Run**.
-
-1. In the **Save and run?** dialog, select **Save and run** to have the pipeline load the `dimension_customer` table.
-
-   :::image type="content" source="media/tutorial-ingest-data/save-run-dialog.png" alt-text="Screenshot of the Save and run dialog, highlighting the Save and run button." border="false":::
-
-1. To monitor the progress of the copy activity, review the pipeline run activities in the **Output** page (wait for it to complete with a **Succeeded** status).
-
-   :::image type="content" source="media/tutorial-ingest-data/monitor-output-page.png" alt-text="Screenshot of the Output page, highlighting the Succeeded status." lightbox="media/tutorial-ingest-data/monitor-output-page.png" border="false":::
+1. When complete, the **Copy job** will deliver a **Succeeded** notification and status. You'll now see your new `NYC_taxi` table in your warehouse.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create tables with T-SQL in a Warehouse](tutorial-create-tables.md)
+> [Tutorial: Create tables with T-SQL in a warehouse](tutorial-create-tables.md)

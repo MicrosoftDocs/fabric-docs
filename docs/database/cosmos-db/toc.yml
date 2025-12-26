@@ -1,0 +1,109 @@
+### YamlMime:TOC
+items:
+  - name: Overview
+    href: overview.md
+  - name: FAQ
+    displayName: Frequently asked questions
+    href: faq.yml
+  - name: Get started
+    expanded: true
+    items:
+      - name: Create a database
+        href: quickstart-portal.md
+      - name: Sample data
+        href: sample-data.md
+      - name: Query cross-database
+        href: how-to-query-cross-database.md
+  - name: Integrate with Fabric services
+    items:
+      - name: Mirror to OneLake
+        href: mirror-onelake.md
+      - name: Query mirrored data
+        href: tutorial-mirroring.md
+      - name: Access data from a lakehouse
+        href: how-to-access-data-lakehouse.md
+      - name: Create Power BI reports
+        href: how-to-create-reports.md
+      - name: Spark Notebooks
+        href: how-to-use-spark-notebooks.md
+      - name: Python Notebooks
+        href: how-to-use-python-notebooks.md
+      - name: User data functions
+        href: how-to-user-data-functions.md
+  - name: Samples
+    items:
+      - name: Cosmos DB getting started
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
+      - name: Vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search
+      - name: Spark Cosmos getting started and Reverse ETL
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-scala
+      - name: Fraud detection with vectors
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/fraud-detection
+      - name: Correlation analysis with Power BI visuals
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/price-reviews-powerbi
+      - name: Correlation analysis with Spark Notebooks
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/price-reviews-spark
+      - name: Container management with Python SDK
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/management
+      - name: Advanced vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
+      - name: Disaster Recovery for Cosmos artifacts
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/disaster-recovery
+  - name: Build AI applications
+    items:
+      - name: Index vector data
+        href: index-vector-data.md
+      - name: Full text indexing and search
+        href: full-text-indexing.md
+      - name: Hybrid search
+        href: hybrid-search.md
+  - name: Deploy and monitor
+    items:
+      - name: Implement continuous integration and deployment
+        displayName: CI, CD
+        href: how-to-continuous-integration-deployment.md
+      - name: Monitor activity and performance
+        href: how-to-monitor.md
+      - name: Billing and usage reporting
+        href: billing-usage.md
+  - name: Design secure solutions
+    items:
+      - name: Security best practices
+        href: security.md
+      - name: Authorization
+        href: authorization.md
+      - name: Authenticate from Azure services
+        href: how-to-authenticate.md
+      - name: Authenticate from Fabric Notebooks
+        href: how-to-authenticate-notebooks.md
+  - name: Manage resources
+    items:
+      - name: Configure container
+        href: how-to-configure-container.md
+      - name: Indexing
+        href: indexing.md
+      - name: Indexing policies
+        href: indexing-policies.md
+      - name: Customize indexing policy
+        href: how-to-customize-indexing-policy.md
+      - name: Indexing policy samples
+        href: sample-indexing-policies.md
+      - name: Time to live (TTL)
+        href: time-to-live.md
+      - name: Configure time to live (TTL)
+        href: how-to-configure-time-to-live.md
+      - name: Request units
+        href: request-units.md
+      - name: Autoscale throughput
+        href: autoscale-throughput.md
+  - name: Write queries
+    href: query/toc.yml
+  - name: Troubleshoot
+    items:
+      - name: Limitations
+        href: limitations.md
+      - name: Mirroring limitations
+        href: mirroring-limitations.md
+      - name: Cosmos DB v2 connector limitations
+        href: cosmos-db-v2-connector-limitations.md

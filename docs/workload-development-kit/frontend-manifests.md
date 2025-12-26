@@ -15,7 +15,7 @@ This document provides a detailed guide to the structure and configuration of th
 
 Frontend manifests consist of two main components:
 
-- **Product Manifest**: Define the workload identity and branding.
+- **Product Manifest**: Defines the workload identity and branding.
 - **Item Manifest**: Details configuration for individual items within the workload, including user interaction elements.
 
 ## Product Manifest
@@ -56,6 +56,12 @@ Configurations for creating new items in the product, specifying options for use
     - **onClick** (object): Action triggered when the card is clicked.
     - **availableIn** (array): Locations where the card is available.
     - **itemType** (string): Type of item linked to the created card.
+    - **createItemDialogConfig** (object): Create item dialog configuration.
+      - **onCreationFailure** (object): Action triggered when item creation failed.
+      - **onCreationSuccess** (object): Action triggered when item creation succeeded.
+
+> [!NOTE]
+> `createItemDialogConfig` usage requires to add `onCreationFailure` and `onCreationSuccess` action handlers in `index.worker.ts`. Example can be found in [our sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/023e346e4d2353a7f755d50affc70b40b99a0b82/Frontend/src/index.worker.ts#L46C14-L62C24).
 
 ### Workspace Settings and Product Details
 
@@ -69,6 +75,31 @@ Configurations for creating new items in the product, specifying options for use
     - **mediaType** (integer): Media type of the image.
     - **source** (string): Path to the image.
   - **slideMedia** (array): List of media files used in product details page slides.
+    - **Limit**: No more than **10** items are allowed in the `slideMedia` array.
+    - **Each item** (object):
+      - **mediaType** (integer): Media type of the slide. Use `0` for images and `1` for videos.
+      - **source** (string): Path to the image or video source.
+      - **Note**: For videos: Provide a URL to the video. Supported formats are:
+        - `https://youtube.com/embed/<id>` or `https://www.youtube.com/embed/<id>`
+          - Example: `https://www.youtube.com/embed/UNgpBOCvwa8?si=KwsR879MaVZd5CJi
+        - `https://player.vimeo.com/video/<number>`
+          - Note: Do **not** include `www.` in the vimeo URL.
+
+
+#### Example of `slideMedia` Configuration:
+
+```json
+"slideMedia": [
+  {
+    "mediaType": 1,
+    "source": "https://youtube.com/embed/UNgpBOCvwa8?si=KwsR879MaVZd5CJi"
+  },
+  {
+    "mediaType": 0,
+    "source": "assets/images/SlideImage1.png"
+  }
+]
+```
 
 ## Item Manifest
 
@@ -121,20 +152,51 @@ Configurations options for item settings.
 
 - **itemSettings** (object): Extra settings for the item.
   - **schedule** (object): Contains scheduling information.
-    - **itemJobType** (string): Job type to be scheduled from fabric shared UI.
+    - **itemJobType** (string): Job type to be scheduled from Fabric shared UI.
     - **refreshType** (string): Specifies the item’s refresh capability. Possible values include `"None"`, `"Refresh"`, and `"Run"`.
   - **recentRun** (object): Configuration for recent job runs.
-    - **useRecentRunsComponent** (boolean): Whether to use fabric shared recent runs component.
+    - **useRecentRunsComponent** (boolean): Whether to use Fabric shared recent runs component.
+  - **getItemSettings** (object): Configuration for custom item settings.
+    - **action** (string): Name of the corresponding action that will return the list of custom item settings.
 
 ### Item Task Flow Categories
 
-Defines your item categories for integrating with Fabric [Task Flow Framework.](../get-started/task-flow-overview.md).
+Defines your item categories for integrating with the Fabric [Task Flow Framework](../fundamentals/task-flow-overview.md).
 
-- **itemJobTypes** (array): Specifies the categories assigned to an item within the task flow framework. Each item can have up to two categories. Supported categories are `"getData"`, `"storeData"`, `"prepareData"`, `"analyzeAndTrainData"`, `"trackData"`, `"visualizeData"`, `"develop"`, `"generalTask"`, and `"others"`.
-If no category is specified, "others" is used as the default.
+- **itemJobTypes** (array): Specifies the categories assigned to an item within the task flow framework. Each item can have up to two categories. Supported categories are:
+  - `"getData"`
+  - `"storeData"`
+  - `"prepareData"`
+  - `"analyzeAndTrainData"`
+  - `"trackData"`
+  - `"visualizeData"`
+  - `"develop"`
+  - `"generalTask"`
+  - `"others"`
 
+If no category is specified, `"others"` is used as the default.
+
+### Item OneLake Catalog Categories
+
+Defines categories in which your item is shown in OneLake catalog.
+
+- **oneLakeCatalogCategory** (array): Specifies the categories in which the item is shown in OneLake catalog. Each item can have up to two categories. Supported categories are:
+  - `"Data"`
+  - `"Insight"`
+  - `"Process"`
+  - `"Solution"`
+  - `"Configuration"`
+  - `"Other"`
+
+If no category is specified, the item won't be shown in OneLake catalog.
+
+### Create item dialog configuration
+
+Defines create item dialog configuration, which is used to show the dialog from the workload hub on item type click.
+
+- **createItemDialogConfig** (object): Create item dialog configuration.
+  - **onCreationFailure** (object): Action triggered when item creation failed.
+  - **onCreationSuccess** (object): Action triggered when item creation succeeded.
 
 > [!NOTE]
-> When developing and testing new attributes added to the manifest, ensure you have synced the latest [validation scripts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Frontend/validation) and [tools](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/tree/main/Frontend/tools) from our sample repository.
->
-> This step is only necessary for local development and is not required for cloud mode.
+> `createItemDialogConfig` usage requires to add `onCreationFailure` and `onCreationSuccess` action handlers in `index.worker.ts`. Example can be found in [our sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/023e346e4d2353a7f755d50affc70b40b99a0b82/Frontend/src/index.worker.ts#L46C14-L62C24).

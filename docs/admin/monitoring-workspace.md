@@ -1,12 +1,10 @@
 ---
 title: What is the admin monitoring workspace?
 description: Understand the Microsoft Fabric monitoring workspace and the reports it holds.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/17/2024
 ---
 
@@ -56,6 +54,8 @@ You can use the reports in the admin monitoring workspace for getting insights a
 
 ## Considerations and limitations
 
+* Private links aren't supported.
+
 * Only users whose admin roles are assigned directly can set up the admin monitoring workspace. If the workspace creator's admin role is assigned through a group, data refreshes in the workspace fail.
 
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Workspace users, including admins, aren't able to edit or view properties of items such as semantic models and reports in the workspace.
@@ -65,6 +65,8 @@ You can use the reports in the admin monitoring workspace for getting insights a
 * [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) aren't supported.
 
 * Once access is provided to the admin monitoring workspace or its underlying content, access can't be removed without reinitializing the workspace. However, sharing links can be modified as with a typical workspace.
+
+* Semantic models in the admin monitoring workspace are read-only and can't be used with Fabric data agents.
 
 ### Refreshes
 

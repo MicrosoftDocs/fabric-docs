@@ -1,17 +1,18 @@
 ---
 title: Use the Copilot for Data Science and Data Engineering chat panel (preview)
 description: Interact with the chat panel in Copilot for Data Science and Data Engineering.
-author: rrikhy
-ms.author: rarikhy
+author: eric-urban
+ms.author: eur
+ms.reviewer: sngun
 ms.topic: how-to
 ms:custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 01/16/2024
+ms.date: 06/10/2025
+ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks.
 ---
+
 # Use the Copilot for Data Science and Data Engineering chat panel (preview)
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
@@ -22,33 +23,37 @@ Copilot for Data Science and Data Engineering notebooks is an AI assistant that 
 
 ## Azure OpenAI enablement
 
-- Azure OpenAI must be enabled within Fabric at the tenant level.
+Azure OpenAI must be enabled within Fabric at the tenant level.
 
 > [!NOTE]
-> If your workspace is provisioned in a region without GPU capacity, and your data is not enabled to flow cross-geo, Copilot will not function properly and you will see errors.
+> If your workspace is provisioned in a region without GPU capacity, and your data isn't enabled to flow cross-geo, Copilot won't function properly and you'll see errors.
 
-## Successful execution of Chat-Magics installation cell
+### Successful execution of Chat-magics installation cell
 
-1. To use the Copilot pane, The installation cell for chat-magics must successfully execute within your Spark session.
+Follow this procedure:
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-cell-executed-successfully.png" alt-text="Screenshot showing executed notebook cell.":::
+1. To use the Copilot pane, the installation cell for Chat-magics must successfully execute within your Spark session.
+
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-cell-executed-successfully.png" alt-text="Screenshot showing executed notebook cell." lightbox="media/copilot-notebooks-chat-pane/copilot-cell-executed-successfully.png":::
 
     >[!IMPORTANT]
-    > If your Spark session terminates, the context for chat-magics will also terminate, also wiping the context for the Copilot pane.
+    > If your Spark session terminates, the context for Chat-magics will also terminate, also wiping the context for the Copilot pane.
 
-1. Verify that all these conditions are met before proceeding with the Copilot Chat Pane.
+1. Verify that all these conditions are met before proceeding with the Copilot chat pane.
 
-## Open Copilot chat panel inside the notebook
+### Open Copilot chat panel inside the notebook
 
-1. Select the Copilot button on the notebook ribbon
+Follow this procedure:
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="Screenshot showing Copilot ribbon.":::
+1. Select the Copilot button on the notebook ribbon.
 
-1. To open Copilot, select the **Copilot** button at the top of the Notebook.
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="Screenshot showing the Copilot button on the ribbon." lightbox="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png":::
+
+1. To open Copilot, select the **Copilot** button at the top of the notebook.
 1. The Copilot chat panel opens on the right side of your notebook.
-1. A panel opens, to provide overview information and helpful links.
+1. A panel opens to provide overview information and helpful links.
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-helpful-links.png" alt-text="Screenshot showing Copilot helpful links pane.":::
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-helpful-links.png" alt-text="Screenshot showing Copilot helpful links pane." lightbox="media/copilot-notebooks-chat-pane/copilot-helpful-links.png":::
 
 ### Key capabilities
 
@@ -62,7 +67,7 @@ Copilot for Data Science and Data Engineering notebooks is an AI assistant that 
 - **Inaccuracies**: Potential for inaccuracies exists. Review AI-generated content carefully.
 - **Data storage**: Customer data is temporarily stored, to identify harmful use of AI.
 
-## Getting started with Copilot chat in notebooks
+### Getting started with Copilot chat in notebooks
 
 1. Copilot for Data Science and Data Engineering offers helpful starter prompts to get started. For example, "Load data from my lakehouse into a dataframe", or "Generate insights from data".
 
@@ -71,16 +76,14 @@ Copilot for Data Science and Data Engineering notebooks is an AI assistant that 
 1. Each of these selections outputs chat text in the text panel. As the user, you must fill out the specific details of the data you'd like to use.
 1. You can then input any type of request you have in the chat box.
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
-
-## Regular usage of the Copilot chat panel
+### Regular usage of the Copilot chat panel
 
 - The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
 - You can "copy" or "insert" code from the chat panel. At the top of each code block, two buttons allow input of items directly into the notebook.
-- To clear your conversation, select the :::image type="content" source="media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot showing the Copilot clean up prompt."::: icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
-- Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the chat magics library.
+- To clear your conversation, select the :::image type="content" source="media/copilot-notebooks-chat-pane/broom-icon.png" alt-text="Screenshot showing the Copilot clean up prompt." lightbox="media/copilot-notebooks-chat-pane/broom-icon.png"::: icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
+- Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the Chat-magics library.
 - Transparency: Read our Transparency Note for details on data and algorithm use.
 
-## Related content
+### Related content
 
-- [How to use Chat-magics](./copilot-notebooks-chat-magics.md)
+[How to use Chat-magics](./copilot-notebooks-chat-magics.md)

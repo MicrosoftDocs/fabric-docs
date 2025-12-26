@@ -6,8 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 10/30/2024
+ms.date: 4/08/2025
 ms.search.form: cicd
 ---
 
@@ -62,7 +61,7 @@ If you make changes to your Eventstream item in the git repository, you see an *
 
 1. In the workspace view, select Create deployment pipeline. You can also create a pipeline from the deployment pipelines entry point in Fabric (at the bottom of the workspace list).
     :::image type="content" source="./media/eventstream-cicd/create-pipeline.png" alt-text="Screenshot that shows where to create a pipeline." lightbox="./media/eventstream-cicd/create-pipeline.png":::
-2. You can define how many stages it should have and what they should be called. The number of stages are permanent and can't be changed after the pipeline is created.
+2. You can define how many stages it should have and what they should be called. The number of stages is permanent and can't be changed after the pipeline is created.
 3. Give a name to your pipeline. The default pipeline has three stages named **Development**, **Test**, and **Production**. You can rename the stages and have anywhere between 2-10 stages in a pipeline. Then select **Create and continue**.
     :::image type="content" source="./media/eventstream-cicd/name-pipeline.png" alt-text="Screenshot that shows name a pipeline and stage." lightbox="./media/eventstream-cicd/name-pipeline.png":::
 4. After creating a pipeline, you can assign a workspace to each stage.
@@ -73,6 +72,36 @@ If you make changes to your Eventstream item in the git repository, you see an *
 You can review the deployment history to see the last time content was deployed to each stage. Deployment history is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between deployments.
 
 To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
+
+## CI/CD Support for Eventstream Components
+
+Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public APIs. This section outlines the compatibility of various Eventstream components with different CI/CD features. Understanding these support levels is essential for maintaining and deploying Eventstream items across workspaces.
+
+### Support level definitions
+
+* **Fully Supported**: Configuration is fully preserved during deployment.
+* **Partially Supported**: The resource supports CI/CD, but **advanced settings** (e.g., Azure SQL DB (CDC) column exclude list) are not supported and will revert to defaults after deployment.
+* **Not Supported**: The component does not support CI/CD through Git integration and Deployment pipelines.
+
+### Component Support Matrix
+
+| Category | Fully Supported | Partially Supported | Not Supported |
+| :--- | :--- | :--- | :--- |
+| **Sources** | Standard GA sources (e.g., Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Azure Service Bus (Preview)<br>Cribl (Preview)<br>HTTP (Preview)<br>MongoDB CDC (Preview) |
+| **Destinations** | All Destinations | - | - |
+| **Operators** |  Filter<br> Manage fields<br>Aggregate<br>Join<br>Group by<br>Union<br>Expand | SQL Code (Custom code) | - |
+| **Features** | General capabilities (e.g., multiple-schema inferencing) | - | Pause/Resume State |
+
+> [!IMPORTANT]
+> After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
+
+> [!WARNING]
+> When importing an **Azure Event Grid namespace** source, ensure you have **Member** or higher permissions in the target Fabric workspace. If not, request Contributor permissions for the Event Grid service principal before proceeding.
+
+## Limitation
+
+* **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment may not work as expected.
+* If an Eventstream includes an Eventhouse destination using **Direct Ingestion** mode, you’ll need to manually reconfigure the connection after importing or deploying it to a new workspace.
 
 ## Related content
 

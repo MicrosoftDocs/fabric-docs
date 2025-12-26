@@ -12,7 +12,17 @@ items:
   - name: Standards compliance
     href: standards-compliance.md
 - name: OneLake catalog
-  href: onelake-catalog.md
+  items:
+  - name: OneLake catalog overview
+    href: onelake-catalog-overview.md
+  - name: Find and explore data
+    href: onelake-catalog-explore.md
+  - name: View item details
+    href: onelake-catalog-item-details.md
+  - name: Govern your data
+    href: onelake-catalog-govern.md
+  - name: Secure your data
+    href: secure-your-data.md
 - name: Microsoft Purview
   items:
   - name: Microsoft Purview and Fabric
@@ -22,10 +32,8 @@ items:
         href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
       - name: Connect cross-tenant
         href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
-  - name: Microsoft Purview Hub - Admins
+  - name: Microsoft Purview hub
     href: use-microsoft-purview-hub.md
-  - name: Microsoft Purview Hub - Data owners
-    href: use-microsoft-purview-hub-data-owners.md
   - name: Information protection
     items:
     - name: Information protection in Microsoft Fabric
@@ -35,7 +43,7 @@ items:
       - name: Protected sensitivity labels
         href: protected-sensitivity-labels.md
       - name: Default label policy
-        href: service-security-sensitivity-label-default-label-policy.md
+        href: sensitivity-label-default-label-policy.md
       - name: Domain-level default sensitivity labels
         href: domain-default-sensitivity-label.md
       - name: Mandatory label policy
@@ -58,6 +66,8 @@ items:
       href: protection-policies-overview.md
     - name: Create and manage protection policies
       href: protection-policies-create.md
+    - name: Troubleshoot access restrictions
+      href: troubleshoot-restricted-access.md
   - name: Data loss prevention policies
     items:
     - name: Get started with Data loss prevention policies for Fabric and Power BI
@@ -68,6 +78,8 @@ items:
       href: data-loss-prevention-respond.md
     - name: Monitor DLP policy violations
       href: data-loss-prevention-monitor.md
+    - name: Troubleshoot access restrictions
+      href: troubleshoot-restricted-access.md
 - name: Endorsement
   items:
   - name: Overview

@@ -1,11 +1,11 @@
 ---
 title: Monitor a paused capacity
 description: Learn how to monitor a Microsoft Fabric paused capacity using the Microsoft Fabric Capacity Metrics app.
-author: KesemSharabi
-ms.author: kesharab
+author: JulCsc
+ms.author: juliacawthra
 ms.topic: how-to
 ms.custom:
-ms.date: 09/11/2024
+ms.date: 06/19/2025
 ---
 
 # Monitor a paused capacity
@@ -16,17 +16,17 @@ To monitor [paused capacities](pause-resume.md), use the latest version of the [
 
 The [system events](metrics-app-compute-page.md#system-events) table lists all the paused capacity events. Use this table to see when your capacity was paused and when it was reactivated. In the *State* column, a paused capacity is listed as *Suspended*, and a resumed capacity is listed as *Active*. Use the *Time* column to calculate the amount of time your capacity was active or paused.
 
-## Why is my capacity spiking?
+## Why is there a spike in the utilization chart when I pause my capacity?
 
-To allow your capacity to perform at the highest level, its usage is [smoothed](throttling.md#balance-between-performance-and-reliability) over time. When you pause your capacity, the remaining cumulative overages and smoothed operations are executed. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual.
+To provide optimal performance, your capacity [smooths](throttling.md) usage over future timepoints. When you pause your capacity, the accumulated smoothed usage and any overages are converted to utilization and billed to you. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual. If you have paused the capacity and are not able to view non-pause usage due to the scale of the pause, switch to the logarithmic view for better visibility.
 
-The spike provides an indication that your capacity was paused. You can hover over the spike to view and see the state of the capacity in the tooltip.
+When you hover over the spike, a tooltip shows the state of the capacity.
 
 :::image type="content" source="media/monitor-paused-capacity/suspended-capacity.png" alt-text="Screenshot showing a card that lists a suspended capacity in the utilization tab in the Microsoft Fabric capacity metrics app.":::
 
 ## View carryforward operations
 
-You can find out what's the percentage of [carryforward](throttling.md#carryforward-capacity-usage-reduction) operations that your capacity had when it was paused.
+You can find the percentage of [carryforward](throttling.md) operations that your capacity had when it was paused.
 
 1. Locate the paused capacity timepoint by reviewing the spike in the utilization visual.
 

@@ -1,15 +1,14 @@
 ---
 title: Resolve dependency errors with Git integration
 description: Learn how to resolve dependency errors when using Fabric's git integration tools, including identifying unsupported items, and removing dependencies.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.reviewer: Dan Weinstein
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
-  - ignite-2023
-ms.date: 12/10/2024
+ms.date: 12/15/2025
 # customer intent: As a developer, I want to know how to resolve dependency errors when using Fabric's git integration tools.
 ---
 

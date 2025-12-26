@@ -6,20 +6,18 @@ ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Ingesting data into SQL database
 ---
 # Create a table in SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-There are many ways to create a table in Fabric SQL database. The primary choices in Fabric include using the SQL editor to create a table, creating a table on load using Fabric Data Flows, or Fabric Data pipelines. For this walkthrough, we use the Fabric portal's query editor for Fabric SQL database.
+There are many ways to create a table in Fabric SQL database. The primary choices in Fabric include using the SQL editor to create a table, creating a table on load using Fabric Data Flows, or Fabric Pipelines. For this walkthrough, we use the Fabric portal's query editor for Fabric SQL database.
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 
 ## Creating a table with T-SQL queries

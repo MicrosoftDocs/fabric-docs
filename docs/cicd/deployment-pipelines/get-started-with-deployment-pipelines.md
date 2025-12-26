@@ -1,16 +1,14 @@
 ---
 title: Get started using deployment pipelines, the Fabric Application lifecycle management (ALM) tool
 description: Learn how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
-author: mberdugo
-ms.author: monaberdugo
+author: billmath
+ms.author: billmath
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - intro-get-started
-  - build-2023
-  - ignite-2023
-ms.date: 11/14/2024
+ms.date: 12/15/2025
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 # customer intent: As a developer, I want to know how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool, so that I can manage my content more efficiently.
 ---
@@ -34,7 +32,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 
 * You have a [Microsoft Fabric subscription](../../enterprise/licenses.md)
 
-* You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
+* You're an admin of a Fabric [workspace](../../fundamentals/create-workspaces.md)
 
 >[!NOTE]
 > You can also see the deployment pipelines button if you previously created a pipeline or if a pipeline was shared with you.
@@ -55,9 +53,9 @@ To create a pipeline from anywhere in Fabric:
 
 1. Select **Create pipeline**, or **+ New pipeline**.
 
-### [Create a pipeline from a workspace in Power BI](#tab/from-workspace)
+### [Create a pipeline from a workspace](#tab/from-workspace)
 
-From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../get-started/create-workspaces.md).
+From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../fundamentals/create-workspaces.md).
 
 From the workspace, select **Create deployment pipeline**.
 

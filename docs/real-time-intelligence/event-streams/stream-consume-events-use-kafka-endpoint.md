@@ -5,8 +5,7 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
+ms.custom: sfi-image-nochange, sfi-ropc-blocked
 ms.date: 10/30/2024
 ms.search.form: Eventstreams Tutorials
 ---

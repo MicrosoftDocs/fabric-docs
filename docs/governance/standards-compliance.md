@@ -1,8 +1,8 @@
 ---
 title: "Standards compliance in Microsoft Fabric"
 description: "This article describes Microsoft Fabric's adherence to compliance standards."
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: kadejo
 ms.service: fabric
 ms.topic: concept-article #Don't change

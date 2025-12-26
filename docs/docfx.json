@@ -73,12 +73,22 @@
                 "data-science/**/*.yml": "data-science",
                 "data-warehouse/**/*.md": "data-warehouse",
                 "data-warehouse/**/*.yml": "data-warehouse",
-                "enterprise/**/*.md": "enterprise",
-                "enterprise/**/*.yml": "enterprise",
+                "database/cosmos-db/**/*.yml": "database-cosmos-db",
+                "database/cosmos-db/**/*.md": "database-cosmos-db",
+                "database/sql/**/*.yml": "database-sql",
+                "database/sql/**/*.md": "database-sql",                  
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
+                "fundamentals/**/*.yml": "get-started",
+                "fundamentals/**/*.md": "get-started",
                 "governance/**/*.md": "governance",
                 "governance/**/*.yml": "governance",
+                "graph/**/*.md": "graph",
+                "graph/**/*.yml": "graph",
+                "iq/**/*.md": "iq",
+                "iq/**/*.yml": "iq",
+                "iq/ontology/**/*.md": "iq-ontology",
+                "iq/ontology/**/*.yml": "iq-ontology",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
@@ -89,12 +99,20 @@
                 "real-time-intelligence/event-streams/**/*.yml": "rti-eventstream",
                 "real-time-intelligence/data-activator/**/*.md": "rti-activator",
                 "real-time-intelligence/data-activator/**/*.yml": "rti-activator",
+                "real-time-intelligence/digital-twin-builder/**/*.yml": "rti-digital-twin-builder",
+                "real-time-intelligence/digital-twin-builder/**/*.md": "rti-digital-twin-builder",
+                "real-time-intelligence/schema-sets/**/*.yml": "rti-schema-set",
+                "real-time-intelligence/schema-sets/**/*.md": "rti-schema-set",
+                "real-time-intelligence/map/**/*.yml": "rti-map",
+                "real-time-intelligence/map/**/*.md": "rti-map",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security",
                 "workload-development-kit/**/*.md": "workload-development-kit",
                 "workload-development-kit/**/*.yml": "workload-development-kit",
                 "database/**/*.md": "database",
-                "database/**/*.yml": "database"
+                "database/**/*.yml": "database",
+                "mirroring/**/*.md": "mirroring",
+                "mirroring/**/*.yml": "mirroring"
             },
             "feedback_product_url": {
                 "admin/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=023c0612-44be-ed11-83ff-00224827e905",
@@ -115,6 +133,8 @@
                 "enterprise/**/*.yml": "https://ideas.fabric.microsoft.com/",
                 "get-started/**/*.md": "https://ideas.fabric.microsoft.com/",
                 "get-started/**/*.yml": "https://ideas.fabric.microsoft.com/",
+                "fundamentals/**/*.md": "https://ideas.fabric.microsoft.com/",
+                "fundamentals/**/*.yml": "https://ideas.fabric.microsoft.com/",
                 "governance/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=62ac7a81-45f9-ed11-8849-000d3a4ef41d",
                 "governance/**/*.yml": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=62ac7a81-45f9-ed11-8849-000d3a4ef41d",
                 "onelake/**/*.md": "https://ideas.fabric.microsoft.com/?forum=bbb1936d-44f9-ed11-8849-000d3a4ef41d&category=a81db3f3-43be-ed11-83ff-00224827e905",
@@ -145,6 +165,8 @@
                 "enterprise/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "get-started/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "get-started/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "fundamentals/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "fundamentals/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "governance/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "governance/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
                 "onelake/**/*.md": "https://community.fabric.microsoft.com/powerbi",
@@ -157,7 +179,10 @@
                 "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
             },
             "search.app": {
-                "get-started/**/*.md": [ 
+                "get-started/**/*.md": [
+                    "fabric-powerbi-docs"
+                ],
+                "fundamentals/**/*.md": [
                     "fabric-powerbi-docs"
                 ],
                 "admin/**/*.md": [
@@ -187,15 +212,27 @@
                 "databases/**/*.md": [
                     "ppac-fabric-databases"
                 ]
+            },
+            "zone_pivot_group_filename": {
+                "database/cosmos-db/**/*.md": "database/cosmos-db/zone-pivot-groups.json",
+                "database/cosmos-db/**/*.yml": "database/cosmos-db/zone-pivot-groups.json"
+            },
+            "appliesto": {
+                "database/cosmos-db/**/*.md": [
+                    "✅ Cosmos DB in Microsoft Fabric"
+                ],
+                "database/cosmos-db/**/*.yml": [
+                    "✅ Cosmos DB in Microsoft Fabric"
+                ]
             }
         },
         "template": [],
         "dest": "fabric-docs",
         "rules": {
             "sensitive-language-sl": {
-                          "exclude": [
-                              "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
-                          ]
+                "exclude": [
+                    "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
+                ]
             }
         }
     }

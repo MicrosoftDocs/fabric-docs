@@ -1,13 +1,11 @@
 ---
 title: Workspace administration settings in Microsoft Fabric
 description: Learn about the workspace administration settings for Data Engineering and Science experiences in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
-ms.topic: conceptual
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/15/2023
 ---
 
@@ -17,7 +15,7 @@ ms.date: 11/15/2023
 
 When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Apache Spark session start experience for users to get started and run your Apache Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Apache Spark pool and size the nodes based on their performance needs.
 
-To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../get-started/roles-workspaces.md).
+To make changes to the Apache Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 
 To manage the Spark settings for the pool associated with your workspace:
 
@@ -27,7 +25,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 2. You see the **Spark Compute** option in your left-hand menu:
 
-   :::image type="content" source="media/workspace-admin-settings/workspace-settings.gif" alt-text="Gif showing different sections of the Apache Spark compute in workspace settings.":::
+   :::image type="content" source="media/workspace-admin-settings/workspace-settings.gif" alt-text="Gif showing different sections of the Apache Spark compute in workspace settings." lightbox="media/workspace-admin-settings/workspace-settings.gif":::
 
    > [!NOTE]
    > If you change the default pool from Starter Pool to a Custom Spark pool you may see longer session start (~3 minutes).
@@ -58,7 +56,7 @@ Learn more about [Apache Spark compute for Fabric](spark-compute.md).
 
 * **Customize compute configuration for items**: As a workspace admin, you can allow users to adjust compute configurations (session level properties which include Driver/Executor Core, Driver/Executor Memory) for individual items such as notebooks, Spark job definitions using Environment.
 
-:::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
+:::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items." lightbox="media/workspace-admin-settings/customize-compute-items.png":::
 
 If the setting is turned off by the workspace admin, the Default pool and its compute configurations are used for all environments in the workspace.
 
@@ -88,7 +86,7 @@ Jobs settings allow admins to control the job admission logic for all the Spark 
 
 By default all workspaces are enabled with Optimistic Job Admission. Learn more about [Job admission for Spark in Microsoft Fabric](job-admission-management.md).
 
-You can enable the **Reserve maximum cores for active Spark jobs** to turn of Optimistic job admission based approach and reserve max cores for their Spark jobs. 
+You can enable the **Reserve maximum cores for active Spark jobs** to turn off Optimistic job admission based approach and reserve max cores for their Spark jobs. 
 
 You can also set the **Spark session timeout** to customize the session expiry for all the notebook interactive sessions. 
 > [!NOTE]

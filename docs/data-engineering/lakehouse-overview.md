@@ -1,33 +1,27 @@
 ---
 title: What is a lakehouse?
 description: A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by Apache Spark and SQL for big data processing.
-ms.reviewer: snehagunda
-ms.author: avinandac
-author: avinandaMS
+ms.reviewer: avinandac
+ms.author: eur
+author: eric-urban
 ms.topic: overview
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
-ms.date: 11/15/2023
+ms.date: 07/20/2025
 ms.search.form: Lakehouse Overview
 ---
 
 # What is a lakehouse in Microsoft Fabric?
 
-Microsoft Fabric Lakehouse is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location. It's a flexible and scalable solution that allows organizations to handle large volumes of data using various tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics.
+Microsoft Fabric Lakehouse is a data repository for storing, managing, and analyzing structured and unstructured data in a single location. It's a flexible and scalable solution that allows organizations to handle large volumes of data using various tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics. A lakehouse combines the scalability of a data lake with the performance and structure of a data warehouse, providing a unified platform for data storage, management, and analytics.
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Visual representation of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
 ## Lakehouse SQL analytics endpoint
 
-The Lakehouse creates a serving layer by automatically generating a SQL analytics endpoint and a default semantic model during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
-
-It's important to note that the [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) is a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
+When you create a Lakehouse in Microsoft Fabric, a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) is automatically generated. This endpoint provides a read-only, relational interface over your Delta tables, allowing users to explore and query data using T-SQL. While it offers a familiar SQL experience, it doesn't support the full T-SQL capabilities of a traditional transactional data warehouse. The endpoint also includes a default semantic model, making it easier to use the Lakehouse data in Power BI for reporting and visualization. Together, this setup enables a streamlined experience from data ingestion to analysis and reporting.
 
 > [!NOTE]
-> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can not be queried using the SQL analytics endpoint. If you don't see your table, you will need convert it to Delta format.
+> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can't be queried using the SQL analytics endpoint. If you don't see your table, you need to convert it to Delta format.
 
 ## Automatic table discovery and registration
 
@@ -39,7 +33,7 @@ A data engineer can interact with the lakehouse and the data within the lakehous
 
 - **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
 
-- **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
+- **Notebooks**: Data engineers can use the notebook to write code to read, transform, and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
 
 - **Pipelines**: Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
 
@@ -63,11 +57,11 @@ The multitasking experience provides a browser tab design that allows you to ope
 
 ## Accessible lakehouse design
 
-Accessibility has always been a top priority to ensure that Lakehouse is inclusive and user-friendly for everyone. Here are the key initiatives we have implemented so far to support accessibility:
+Accessibility has always been a top priority to ensure that Lakehouse is inclusive and user-friendly for everyone. Here are the key initiatives we implemented so far to support accessibility:
 
 - **Screen reader compatibility:** You can work seamlessly with popular screen readers, enabling visually impaired users to navigate and interact with our platform effectively.
 
-- **Text reflow** Responsive design that adapts to different screen sizes and orientations. Text and content reflow dynamically, making it easier for users to view and interact with our application on a variety of devices.
+- **Text reflow** Responsive design that adapts to different screen sizes and orientations. Text and content reflow dynamically, making it easier for users to view and interact with our application on various devices.
 
 - **Keyboard navigation:** Improved keyboard navigation to allow users to move through the lakehouse without relying on a mouse, enhancing the experience for those with motor disabilities.
 

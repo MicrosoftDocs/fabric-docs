@@ -5,7 +5,6 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ---
 
@@ -46,6 +45,8 @@ The SQL Server on VM DB (CDC) source connector for Fabric eventstreams allows 
 ## Get events from SQL Server on VM DB (CDC)
 
 You can get events from an SQL Server on VM DB (CDC) into Real-Time hub using the [**Data sources**](#data-sources-page) page.
+
+## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 

@@ -5,19 +5,19 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 03/18/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Oracle Cloud Storage in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Oracle Cloud Storage.
+This article outlines how to use the copy activity in a pipeline to copy data from Oracle Cloud Storage.
 
 ## Prerequisites
 
-To copy data from Oracle Cloud Storage, see [Object Storage Amazon S3 Compatibility API](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/s3compatibleapi.htm) for the prerequisites and required permission.
+To copy data from Oracle Cloud Storage, see [Object Storage Amazon S3 Compatibility API](https://docs.oracle.com/iaas/Content/Object/Tasks/s3compatibleapi.htm) for the prerequisites and required permission.
 
 ## Supported format
 
@@ -49,11 +49,8 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for Oracle Cloud Storage on the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-oracle-cloud-storage/oracle-cloud-storage-source.png" alt-text="Screenshot that shows the Source tab and the list of properties.":::
-
 The following properties are *required*:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an **Oracle Cloud Storage** connection from the connection list. If no connection exists, create a new Oracle Cloud Storage connection by selecting **New**.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
@@ -128,7 +125,6 @@ The following table contains more information about the copy activity in Oracle 
 
 |**Name** |**Description** |**Value**|**Required** |**JSON script property** |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Oracle Cloud Storage connection> |Yes|connection|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |/ |
 |*For **File path*** |||||

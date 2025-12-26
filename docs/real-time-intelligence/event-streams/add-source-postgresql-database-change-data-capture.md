@@ -5,9 +5,8 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.custom: sfi-image-nochange
+ms.date: 05/23/2025
 ms.search.form: Source and Destination
 ---
 
@@ -22,8 +21,6 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 - **Google Cloud SQL for PostgreSQL**
 
 Once the PostgreSQL Database CDC source is added to the eventstream, it captures row-level changes to the specified tables. These changes can then be processed in real-time and sent to different destinations for further analysis.
-
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
@@ -56,7 +53,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
 
 1. Confirm that your Azure Database for PostgreSQL Flexible Server instance allows public network traffic.
 
-2. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL DB to fetch CDC, ensure the user is the **table owner**.
+1. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL DB to fetch CDC, ensure the user is the **table owner**.
 
    ```sql
    ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;
@@ -72,8 +69,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to PostgreSQL Database CDC
 
 [!INCLUDE [postgresql-database-cdc-connector](./includes/postgresql-database-cdc-source-connector.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
 

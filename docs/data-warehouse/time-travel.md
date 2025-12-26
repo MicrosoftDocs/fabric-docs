@@ -1,13 +1,11 @@
 ---
-title: Time travel in Warehouse within Microsoft Fabric
-description: Learn how to Query data as it existed in the past with time travel in Warehouse in Microsoft Fabric.
+title: Time Travel
+description: Learn how to Query data as it existed in the past with time travel in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ajagadish
-ms.custom:
-  - build-2024
+ms.date: 10/13/2025
 ms.topic: conceptual
-ms.date: 07/18/2024
 ---
 # Query data as it existed in the past
 
@@ -22,6 +20,7 @@ Warehouse in Microsoft Fabric offers the capability to query historical data as 
 - Time travel allows organizations to audit data changes over time, often required for compliance purposes.
 - Time travel helps to reproduce the results from machine learning models.
 - Time travel can query tables as they existed at a specific point in time across multiple warehouses in the same workspace.
+- Time travel can hints can be used with session-scoped temp tables, which are unaffected by `TIMESTAMP` syntax.
 
 ## What is time travel?
 
@@ -97,6 +96,7 @@ Considerations for the [OPTION FOR TIMESTAMP AS OF query hint](/sql/t-sql/querie
 - The `FOR TIMESTAMP AS OF` query hint cannot be used to create the views as of any prior point in time within the retention period. It can be used to query views as of past point in time, within the retention period.
 - The `FOR TIMESTAMP AS OF` query hint can be used only once within a `SELECT` statement.
 - The `FOR TIMESTAMP AS OF` query hint can be defined within the `SELECT` statement in a stored procedure.
+- The `FOR TIMESTAMP AS OF` query hint doesn't affect session-scoped temp tables, like `#temp_table`.
 
 ## Permissions to time travel
 
@@ -110,7 +110,8 @@ Any user who has **Admin**, **Member**, **Contributor**, or **Viewer** [workspac
 
 - `FOR TIMESTAMP AS OF` values in the `OPTION` clause must be deterministic. For an example of parameterization, see [Time travel in a stored procedure](how-to-query-using-time-travel.md#time-travel-in-a-stored-procedure).
 - Time travel is not supported for the SQL analytics endpoint of the Lakehouse.
-- The `OPTION FOR TIMESTAMP AS OF` syntax can only be used in queries that begin with `SELECT` statement. Queries such as `INSERT INTO SELECT` and `CREATE TABLE AS SELECT` cannot be used along with the `OPTION FOR TIMESTAMP AS OF`. Consider instead the ability to [Clone a warehouse table](clone-table.md) at a point in time.
+- The `OPTION FOR TIMESTAMP AS OF` syntax can only be used in queries that begin with `SELECT` statement. 
+
 - View definitions cannot contain the `OPTION FOR TIMESTAMP AS OF` syntax. The view can be queried with the `SELECT .. FROM <view> ... OPTION FOR TIMESTAMP AS OF` syntax. However, you cannot query past data from tables in a view from before the view was created.
 - `FOR TIMESTAMP AS OF` syntax for time travel is not currently supported in Power BI Desktop Direct query mode or the **Explore this data** option.
 

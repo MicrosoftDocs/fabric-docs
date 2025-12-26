@@ -1,0 +1,42 @@
+---
+title: Secure Your Cosmos DB Database
+description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric from the perspective of data security.
+author: markjbrown
+ms.author: mjbrown
+ms.topic: best-practice
+ms.date: 11/12/2025
+ms.custom: [security-horizontal-2025, horz-security]
+ms.search.form: Cosmos DB database security
+ai-usage: ai-generated
+---
+
+# Secure your Cosmos DB in Microsoft Fabric database
+
+Cosmos DB in Microsoft Fabric is an AI-optimized NoSQL database automatically configured for typical development needs with a simplified management experience. Fabric provides built-in security, access control, and monitoring for Cosmos DB in Fabric. While Fabric provides built-in security features to protect your data, it's essential to follow best practices to further enhance the security of your account, data, and networking configurations.
+
+This article provides guidance on how to best secure your Cosmos DB in Fabric deployment.
+
+## Identity management
+
+- **Use managed identities to access your account from other Azure services**: Managed identities eliminate the need to manage credentials by providing an automatically managed identity in Microsoft Entra ID. Use managed identities to securely access Cosmos DB from other Azure services without embedding credentials in your code. While Cosmos DB in Fabric supports multiple types of identity types (service principals), managed identities are the preferred choice as they don't require your solution to handle credentials directly. For more information, see [authenticate from Azure host services](how-to-authenticate.md).
+
+- **Use Entra authentication to query, create, and access items within a container while developing solutions**: Access items within Cosmos DB containers using your human identity and Microsoft Entra authentication. Enforce least privilege access for querying, creating, and other operations. This control helps secure your data operations. For more information, see [connect securely from your development environment](how-to-authenticate.md).
+
+- **Separate the Azure identities used for data and control plane access**: Use distinct Azure identities for control plane and data plane operations to reduce the risk of privilege escalation and ensure better access control. This separation enhances security by limiting the scope of each identity. For more information, see [configure authorization](authorization.md).
+
+## User permissions
+
+- **Configure least-permissive Fabric workspace access**: User permissions are enforced based on the current level of workspace access. If a user is removed from the Fabric workspace, they also automatically lose access to the associated Cosmos DB database and underlying data. For more information, see [Fabric permission model](../../security/permission-model.md).
+
+## Execution context and identity considerations
+
+- **Understand notebook execution identity**: When working with notebooks in Fabric workspaces, be aware that Fabric artifacts always execute with the identity of the user who created them, regardless of who executes. This means that data access permissions and audit trails will reflect the notebook creator's identity, not the executor's identity. Plan your notebook creation and sharing strategy accordingly to ensure appropriate access controls.
+
+- **Plan for workspace identity limitations**: Currently, Fabric does not support `run-as` functionality with Workspace Identity. Operations execute with the identity of the user that created them rather than a shared workspace identity. Consider this when designing multi-user scenarios and ensure that the appropriate users create artifacts that will be shared within the workspace.
+
+## Related content
+
+- [Learn about Cosmos DB in Microsoft Fabric](overview.md)
+- [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
+- [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+

@@ -4,9 +4,8 @@ description: This article describes how to get events from Google Cloud Pub/Sub 
 author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.custom: sfi-image-nochange
+ms.date: 07/22/2025
 ---
 
 # Get events from Google Cloud Pub/Sub into Real-Time hub
@@ -55,6 +54,7 @@ Get the following information from Google Cloud:
         > [!NOTE]
         > The JSON file can be downloaded only once.
 
+## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
@@ -85,7 +85,8 @@ Get the following information from Google Cloud:
 ## View data stream details
 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Google Cloud Pub/Sub as a source. To close the wizard, select **Close** or **X*** in the top-right corner of the page.
-1. In Real-Time hub, select **My data streams**. To see the new data stream, refresh the page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+2. You should see the stream in the **Recent streaming data** section of the **Real-Time hub** home page. For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
+
 
 ## Related content
 

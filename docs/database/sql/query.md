@@ -7,19 +7,17 @@ ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ---
 # Query your SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-You can query Fabric SQL database just like any other SQL Server database, using [SQL Server Management Studio](connect.md#connect-with-sql-server-management-studio-manually) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true). Fabric SQL database also includes a lightweight, browser-based query editor that we use here.
+You can query Fabric SQL database just like any other SQL Server database, using [SQL Server Management Studio](connect.md#connect-with-sql-server-management-studio-manually) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true). Fabric SQL database also includes a lightweight, browser-based query editor that we use here.
 
 ## Prerequisites
 
-- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../get-started/fabric-trial.md).
-- Make sure that you [Enable SQL database in Fabric using Admin Portal tenant settings](enable.md).
-- [Create a new workspace](../../get-started/workspaces.md) or use an existing Fabric workspace.
+- You need an existing Fabric capacity. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
+- [Create a new workspace](../../fundamentals/workspaces.md) or use an existing Fabric workspace.
 - [Create a new SQL database](create.md) or use an existing SQL database.
 
 ## Get a quick look at the data

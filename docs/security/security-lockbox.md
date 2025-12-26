@@ -1,13 +1,10 @@
 ---
 title: Lockbox for Microsoft Fabric
 description: Customer Lockbox for Microsoft Fabric is a service that allows customers to control how Microsoft engineers access their data.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - build-2024
+ms.custom: sfi-image-nochange
 ms.date: 01/07/2024
 ---
 
@@ -119,7 +116,7 @@ Access to data varies according to the Microsoft Fabric experience your request 
     * Event logs
     * Executor logs
  
-* **Data Factory** - The Data Factory engineer will have access to data pipeline definitions linked to your request, if permission is granted.
+* **Data Factory** - The Data Factory engineer will have access to pipeline definitions linked to your request, if permission is granted.
 
 ## Related content
 

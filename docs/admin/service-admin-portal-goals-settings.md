@@ -1,13 +1,12 @@
 ---
 title: Metrics admin settings
 description: Learn how to configure Metrics admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/04/2024
 LocalizationGroup: Administration

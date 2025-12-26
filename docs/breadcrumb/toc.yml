@@ -21,6 +21,12 @@ items:
   - name: Data Warehouse
     tocHref: /fabric/data-warehouse/
     topicHref: /fabric/data-warehouse/index
+  - name: IQ
+    tocHref: /fabric/iq/
+    topicHref: /fabric/iq/index
+  - name: Mirroring
+    tocHref: /fabric/mirroring/
+    topicHref: /fabric/mirroring/index
   - name: OneLake
     tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index
@@ -36,6 +42,9 @@ items:
   - name: Get started
     tocHref: /fabric/get-started/
     topicHref: /fabric/get-started/index
+  - name: Fundamentals
+    tocHref: /fabric/fundamentals/
+    topicHref: /fabric/fundamentals/index
 - name: Microsoft Fabric
   tocHref: /azure/
   topicHref: /fabric/index
@@ -49,3 +58,13 @@ items:
   - name: Microsoft Fabric Security
     tocHref: /azure/reliability
     topicHref: /fabric/security/index
+- name: Microsoft Fabric
+  tocHref: /sql/
+  topicHref: /fabric/index
+  items:
+  - name: Database
+    tocHref: /fabric/database/
+    topicHref: /fabric/database/index
+  - name: Data Warehouse
+    tocHref: /fabric/data-warehouse/
+    topicHref: /fabric/data-warehouse/index

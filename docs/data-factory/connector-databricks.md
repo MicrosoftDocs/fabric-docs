@@ -4,11 +4,10 @@ description: This article provides information about how to create a Databricks 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/19/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Set up your Databricks connection
@@ -36,6 +35,6 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support the Databricks connector in data pipelines.
+Data Factory in Microsoft Fabric doesn't currently support the Databricks connector in pipelines.

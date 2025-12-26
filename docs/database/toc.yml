@@ -1,53 +1,47 @@
 items:
 - name: Fabric Databases documentation
   href: index.yml
-- name: SQL database in Fabric 
-  expanded: true
+- name: SQL database in Fabric
   items:
   - name: Overview
     href: sql/overview.md
   - name: Frequently asked questions
     href: sql/faq.yml
-  - name: Feature comparison
-    href: sql/feature-comparison-sql-database-fabric.md
-  - name: "Decision guide: Which SQL database?"
-    href: sql/decision-guide.md
   - name: "Decision guide: Choose a data store"
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data integration strategy"
+    href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: "Decision guide: Choose a data movement strategy"
+    href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: Copilot
     items:
-    - name: FAQ
-      displayName: Frequently asked questions for Copilot in SQL database
-      href: ./sql/copilot-faq.yml
-    - name: Copilot in SQL database 
-      href: sql/copilot.md
+    - name: What is Copilot in Fabric SQL database? 
+      href: sql/copilot-sql-database.md
     - name: Chat pane
-      href: ./sql/copilot-chat-pane.md
+      href: sql/copilot-chat-pane.md
     - name: Code completion
       href: sql/copilot-code-completion.md
     - name: Quick actions
       href: sql/copilot-quick-actions.md
+    - name: FAQ
+      href: sql/copilot-faq.yml
   - name: Get started
     items: 
-    - name: Connect to your SQL database
-      href: sql/connect.md
-    - name: 1. Enable SQL database in Fabric
-      href: sql/enable.md
-    - name: 2. Create a SQL database
+    - name: 1. Create a SQL database
       href: sql/create.md
-    - name: 3. Load AdventureWorks sample Data
+    - name: 2. Load AdventureWorks sample Data
       href: sql/load-adventureworks-sample-data.md
-    - name: 4. Create a table
+    - name: 3. Create a table
       href: sql/create-table.md
-    - name: 5. Query the database
+    - name: 4. Query the database
       href: sql/query.md
-    - name: 6. Query the SQL analytics endpoint
+    - name: 5. Query the SQL analytics endpoint
       href: sql/query-sql-analytics-endpoint.md
-    - name: 7. Create GraphQL API in your database
+    - name: 6. Create GraphQL API in your database
       href: sql/graphql-api.md
-    - name: 8. Create reports
+    - name: 7. Create reports
       href: sql/create-reports.md
-    - name: 9. Share data
+    - name: 8. Share data
       href: sql/share-data.md
   - name: Tutorial
     items: 
@@ -71,14 +65,38 @@ items:
       href: sql/tutorial-create-application.md
     - name: 9. Clean up resources
       href: sql/tutorial-clean-up.md
+  - name: AI
+    items:
+    - name: Intelligent applications and AI
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+    - name: Intelligent applications and AI FAQ
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+    - name: Vectors and embeddings
+      href: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+    - name: Vectors and embeddings FAQ
+      href: /sql/sql-server/ai/vectors-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
   - name: Data recovery
     items:
     - name: Backups
       href: sql/backup.md
     - name: Restore
       href: sql/restore.md
+  - name: Deploy
+    items: 
+    - name: Options to create a SQL database
+      href: sql/create-options.md
+    - name: Deploy via REST API
+      href: sql/deploy-rest-api.md
+    - name: Deploy via Fabric CLI
+      href: sql/deploy-cli.md
   - name: Develop
     items:
+    - name: Connect to your SQL database
+      href: sql/connect.md
+    - name: Connect with Python
+      href: sql/connect-python.md
+    - name: Jupyter Notebooks
+      href: sql/connect-jupyter-notebook.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control
@@ -87,11 +105,23 @@ items:
       href: sql/deployment-pipelines.md
     - name: SqlPackage
       href: sql/sqlpackage.md
-    - name: Deploy via REST API
-      href: sql/deploy-rest-api.md
+    - name: Connect App Service
+      href: sql/tutorial-service-connector.md
+    - name: Connect .NET Aspire application 
+      href: sql/connect-your-dotnet-aspire-application-to-fabric-sql-database.md
+  - name: Integrate with Fabric services
+    items: 
+    - name: Data virtualization
+      href: sql/data-virtualization.md
+    - name: Fabric User data functions
+      href: ../data-engineering/user-data-functions/connect-to-data-sources.md
+    - name: SQL analytics endpoint
+      href: sql/sql-analytics-endpoint.md
+    - name: Translytical task flows
+      href: /power-bi/create-reports/translytical-task-flow-overview
   - name: Load data into a SQL database
     items:
-    - name: Load data with data pipelines
+    - name: Load data with pipelines
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md
@@ -100,7 +130,7 @@ items:
     - name: Mirroring to OneLake Overview
       displayName: Mirroring to OneLake
       href: sql/mirroring-overview.md
-    - name: Limitations
+    - name: Mirroring limitations
       displayName: Limitations of Mirroring SQL database to OneLake
       href: sql/mirroring-limitations.md
     - name: Monitor
@@ -113,7 +143,7 @@ items:
       displayName: Troubleshoot Fabric SQL database mirroring
       href: sql/mirroring-troubleshooting.md
     - name: Secure and share
-      displayName: Secure and share mirroring for SQL database data
+      displayName: Secure and share mirroring Copilot in Fabric in SQL database data
       href: sql/mirroring-secure.md
   - name: Monitor
     items:
@@ -121,32 +151,46 @@ items:
       href: ./sql/monitor.md
     - name: Performance Dashboard
       href: sql/performance-dashboard.md
-    - name: Capacity usage reporting
+    - name: Capacity usage reporting and billing
       href: ./sql/usage-reporting.md
   - name: Secure
     items:
     - name: Overview 
       href: sql/security-overview.md
+    - name: Auditing for SQL database
+      href: sql/auditing.md
     - name: Authentication in SQL database
       href: sql/authentication.md
-    - name: Access control in SQL database
+    - name: Access control
       href: sql/authorization.md
     - name: Share your SQL database and manage item permissions
       href: sql/share-sql-manage-permission.md
     - name: Configure granular access control for a SQL database
       href: sql/configure-sql-access-controls.md     
     - name: Protect sensitive data with Microsoft Purview protection policies
-      href: sql/protect-databases-with-protection-policies.md  
+      href: sql/protect-databases-with-protection-policies.md 
+    - name: Encryption-at-rest with customer-managed keys
+      href: sql/encryption.md  
   - name: Troubleshoot
     items: 
     - name: Limitations
       href: sql/limitations.md
+    - name: Start/stop mirroring with REST API
+      href: sql/start-stop-mirroring-api.md
   - name: Reference
     items: 
     - name: T-SQL Reference for Fabric
-      href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+      href: /sql/t-sql/language-reference?view=fabric-sqldb&preserve-view=true
+  - name: Resources
+    items: 
+    - name: SQL database in Fabric Community
+      href: https://community.fabric.microsoft.com/t5/SQL-database/bd-p/db_general_discussion
+    - name: What's new in SQL database in Fabric?
+      href: ../fundamentals/whats-new.md#sql-database-in-microsoft-fabric
+- name: Cosmos DB in Fabric
+  href: cosmos-db/toc.yml
 - name: Resources
-  items: 
+  items:
   - name: Contribute to Fabric docs
     href: /contribute/
   - name: Help
@@ -157,8 +201,6 @@ items:
       href: https://feedback.azure.com/    
   - name: Ideas
     href: https://ideas.fabric.microsoft.com/
-  - name: Community
-    href: https://community.fabric.microsoft.com/
   - name: Service updates
     href: https://azure.microsoft.com/updates/    
   - name: Azure Status

@@ -1,32 +1,29 @@
 ---
 title: PostgreSQL database connector overview
 description: This article provides an overview of the supported capabilities of the PostgreSQL database connector.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 01/24/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # PostgreSQL database connector overview
 
 The PostgreSQL database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
+| **Pipeline**<br>- [Copy activity](connector-postgresql-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/-) <br>- Full load<br>- Incremental load|None<br> On-premises<br> Virtual network |Basic |
 
-For information on how to connect to a PostgreSQL database in Dataflow Gen2, go to [Set up your PostgreSQL database connection](connector-postgresql.md).
+## Related content
 
-## Support in Data pipeline
+For information on how to connect to a PostgreSQL database, go to [Set up your PostgreSQL database connection](connector-postgresql.md).
 
-The PostgreSQL database connector supports the following capabilities in Data pipeline:
-
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/-)** | None | Basic |
-| **Lookup activity** | None | Basic |
-
-To learn more about the copy activity configuration for PostgreSQL database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-postgresql-copy-activity.md).
+To learn more about the copy activity configuration for PostgreSQL database in a pipeline, go to [Configure in a pipeline copy activity](connector-postgresql-copy-activity.md).

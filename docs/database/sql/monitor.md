@@ -4,10 +4,9 @@ description: Learn what tools to use to analyze database performance, utilizatio
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amar.patil # Microsoft alias
-ms.date: 11/01/2024
+ms.date: 01/22/2025
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
+ms.search.form: Performance monitoring in SQL database
 ---
 # Monitor SQL database in Microsoft Fabric
 
@@ -22,13 +21,16 @@ The [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md) pro
 
 For more information on monitoring capacity usage, see [Billing and utilization reporting for SQL database in Microsoft Fabric](usage-reporting.md).
 
+> [!TIP]
+> In this blog post, learn how [the capacity metrics app can be used for monitoring usage and consumption of SQL databases in Fabric](https://blog.fabric.microsoft.com/blog/efficiently-monitor-sql-database-usage-and-consumption-in-microsoft-fabric-using-capacity-metrics-app?ft=All).
+
 ## Performance Dashboard
 
 Users are provided a one-stop view of the performance status of the database. The Performance Dashboard and offers varying levels of metrics visibility and time ranges, including query-level analysis and identification. For more information, see [Performance Dashboard for SQL database in Microsoft Fabric](performance-dashboard.md).
 
 ## Query DMVs with T-SQL
 
-You can also [use the SQL query editor](query-editor.md), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), or other tools to query the same internal dynamic management views (DMVs) as used by Azure SQL Database. For T-SQL query examples and applicable DMVs, see:
+You can also [use the SQL query editor](query-editor.md), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), or other tools to query the same internal dynamic management views (DMVs) as used by Azure SQL Database. For T-SQL query examples and applicable DMVs, see:
 
 - [Monitor performance using dynamic management views](/azure/azure-sql/database/monitoring-with-dmvs?view=fabricsql&preserve-view=true)
 - [Troubleshoot memory issues](/azure/azure-sql/database/troubleshoot-memory-errors-issues?view=fabricsql&preserve-view=true)

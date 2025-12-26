@@ -4,21 +4,23 @@ description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 01/23/2024
-ms.custom:
+ms.date: 11/11/2025
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Amazon S3 Compatible in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Amazon S3 Compatible.
+This article outlines how to use the copy activity in a pipeline to copy data from Amazon S3 Compatible.
 
 
 ## Required permissions
 
 To copy data from Amazon S3 Compatible, make sure you've been granted the following permissions for Amazon S3 Compatible object operations: `s3:GetObject` and `s3:GetObjectVersion`.
+
+To copy data to Amazon S3 Compatible, make sure you've been granted the `s3:PutObject` permission for Amazon S3 Compatible object operations.
 
 In addition, `s3:ListAllMyBuckets` and `s3:ListBucket`/`s3:GetBucketLocation` permissions are required for operations like testing connection and browsing from root.
 
@@ -55,11 +57,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Amazon S3 Compatible under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-s3-compatible/source.png" alt-text="Screenshot showing source tab and the list of properties." :::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Amazon S3 Compatible connection from the connection list. If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
 - **Connection type**: Select **Amazon S3 Compatible** for your connection type.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration for each setting is:
@@ -126,11 +125,8 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Amazon S3 Compatible under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-s3-compatible/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Amazon S3 Compatible connection from the connection list. If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
 - **Connection type**: Select **Amazon S3 Compatible** for your connection type.
 - **File path**: The data can be copied to the given bucket or the given bucket and folder path specified.
@@ -162,7 +158,6 @@ The following tables contain more information about the copy activity in Amazon 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the source data store.|\<your Amazon S3 Compatible connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3 Compatible**|Yes|/|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |/ |
@@ -194,7 +189,6 @@ The following tables contain more information about the copy activity in Amazon 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-| **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the destination data store.|\<your Amazon S3 Compatible connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3 Compatible**|Yes|/|
 | **File path** | The folder/file path to the destination file. | <folder/file path>| Yes |/ |

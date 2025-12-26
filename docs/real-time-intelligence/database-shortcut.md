@@ -2,14 +2,13 @@
 title: Create a database shortcut
 description: Learn how to create a database shortcut to data in another KQL Database or in Azure Data Explorer in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-  - ignite-2024
+ms.custom: sfi-image-nochange
 ms.date: 11/19/2024
 ms.search.form: KQL Database
+ms.subservice: rti-eventhouse
 #Customer intent: To create a database shortcut in Real-Time Intelligence.
 ---
 # Create a database shortcut
@@ -41,13 +40,19 @@ A data consumer can create a database shortcut in Real-Time Intelligence from an
 * **Cost**: The cost of cold cache can be dramatically lower than of hot cache.
 * **Performance**: Data in hot cache is queried faster, particularly for range queries that scan large amounts of data.
 
+> [!IMPORTANT]
+> The database shortcut setup requires a profound level of trust between the involved parties i.e. leader database and the database shortcut (follower).
+The database shortcut can be established even if the leader cluster is behind a virtual network (VNet) or has public access disabled.
+Ensure that the security posture of this setup is thoroughly reviewed and deemed acceptable before proceeding.
+
+
 Select the desired tab that corresponds with the way you'd like to create a shortcut. 
 
 ### [Use a cluster URI](#tab/workspace)
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 * An [eventhouse](create-eventhouse.md)
 
@@ -87,7 +92,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 
 > [!IMPORTANT]
@@ -100,7 +105,7 @@ A data consumer who wants to create a database shortcut using invitation tokens 
 
 To create an invitation token, the data provider can use the following steps:
 
-1. Browse to the [Azure portal](https://ms.portal.azure.com).
+1. Browse to the [Azure portal](https://portal.azure.com).
 1. Browse to the Azure Data Explorer database you wish to use as source.
 1. Select **Share**.
 
@@ -132,9 +137,7 @@ Use the link to open Real-Time Intelligence showing the **New database shortcut*
 
 1. Select **Create**.
 
----
-
-Once the shortcut is created, you're taken to the [database details](create-database.md#database-details) view of the new database shortcut.
+Once the shortcut is created, you're taken to the [database details](manage-monitor-database.md#database-details) view of the new database shortcut.
 
 :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Intelligence." lightbox="media/database-shortcut/new-database-shortcut.png":::
 

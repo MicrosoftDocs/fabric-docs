@@ -1,19 +1,17 @@
 ---
 title: "Lakehouse end-to-end scenario: overview and architecture"
 description: This article provides an overview of the lakehouse, including its architecture, the components involved in its implementation, and the semantic model.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
 ms.topic: tutorial
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 08/21/2024
 ---
 
 # Lakehouse end-to-end scenario: overview and architecture
 
-Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
+Microsoft Fabric is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence. It offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. For more information, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
 
 This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different experiences and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
@@ -27,7 +25,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). If you don't have a Power BI license, [sign up for a Power BI free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
+1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../fundamentals/fabric-trial.md). If you don't have a Power BI license, [sign up for a Fabric free license](https://app.fabric.microsoft.com/?pbi_source=learn-data-engineering-tutorial-lakehouse-introduction) and then you can start the Fabric trial.
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
@@ -43,7 +41,7 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
 The following image shows the lakehouse end-to-end architecture. The components involved are described in the following list.
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric.":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\lakehouse-end-to-end-architecture.png" alt-text="Diagram of the end-to-end architecture of a lakehouse in Microsoft Fabric." lightbox="media/tutorial-lakehouse-introduction/lakehouse-end-to-end-architecture.png":::
 
 * **Data sources**: Fabric makes it quick and easy to connect to Azure Data Services, as well as other cloud-based platforms and on-premises data sources, for streamlined data ingestion.
 
@@ -65,7 +63,7 @@ In general, data is brought from transactional systems or line-of-business appli
 
 While the WWI dimensional model contains numerous [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md), for this tutorial, we use the *Sale* fact table and its correlated dimensions. The following example illustrates the WWI data model:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model.":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\model-sale-fact-table.png" alt-text="Diagram of the Sale Fact table and related dimensions for this tutorial's data model." lightbox="media/tutorial-lakehouse-introduction/model-sale-fact-table.png":::
 
 ## Data and transformation flow
 
@@ -73,13 +71,13 @@ As described earlier, we're using the sample data from [Wide World Importers (WW
 
 The following image shows the source, destination and data transformation:
 
-:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric.":::
+:::image type="content" source="media\tutorial-lakehouse-introduction\data-transformation-flow.png" alt-text="Diagram of how data flows and transforms in Microsoft Fabric." lightbox="media/tutorial-lakehouse-introduction/data-transformation-flow.png":::
 
 * **Data Source**: The source data is in Parquet file format and in an unpartitioned structure. It's stored in a folder for each table. In this tutorial, we set up a pipeline to ingest the complete historical or onetime data to the lakehouse.
 
   In this tutorial, we use the *Sale* fact table, which has one parent folder with historical data for 11 months (with one subfolder for each month) and another folder containing incremental data for three months (one subfolder for each month). During the initial data ingestion, 11 months of data are ingested into the lakehouse table. However, when the incremental data arrives, it includes updated data for Oct and Nov, and new data for Dec. Oct and Nov data is merged with the existing data and the new Dec data is written into lakehouse table as shown in the following image:
 
-  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse.":::
+  :::image type="content" source="media\tutorial-lakehouse-introduction\incremental-data-load.png" alt-text="Diagram showing how changed data can be incrementally merged into initially ingested data in a lakehouse." lightbox="media/tutorial-lakehouse-introduction/incremental-data-load.png":::
 
 * **Lakehouse**: In this tutorial, you create a lakehouse, ingest data into the files section of the lakehouse, and then create delta lake tables in the Tables section of the lakehouse.
 

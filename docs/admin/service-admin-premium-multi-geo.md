@@ -1,14 +1,12 @@
 ---
 title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
-  - ignite-2023
-  - ignite-2024
 ms.topic: how-to
-ms.date: 12/06/2024
+ms.date: 09/19/2025
 LocalizationGroup: Premium
 ---
 
@@ -54,7 +52,9 @@ Follow these steps to change the default capacity region when you're creating a 
 
 # [Trial](#tab/trial)
 
-Trial capacities are created in your home region and don't support Multi-Geo.
+Trial capacities are available in multiple geos. Your home region is used as the default region.
+
+For information about selecting a region for your trial capacity, refer to step 4 in [Start a new trial capacity from the Account manager](../fundamentals/fabric-trial.md#method-1-start-a-new-trial-capacity-from-the-account-manager).
 
 # [Fabric Capacity](#tab/fabric-capacity)
 
@@ -70,7 +70,9 @@ Trial capacities are created in your home region and don't support Multi-Geo.
 
 Follow the steps below to move workspaces from one capacity to another in the same region. During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.
 
-1. Open the [workspace settings](../get-started/workspaces.md#workspace-settings).
+When you're performing a migration, don't delete or pause either the source or destination workspace capacities. Deleting or pausing a capacity during migration, can result in missing items. If you deleted or paused your capacity before the migration is finished and you have missing items in the migrated workspace, try migrating the workspace again.
+
+1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
 2. From the side bar, select **License info**.
 
@@ -125,13 +127,17 @@ Large-storage format semantic models shouldn't be moved from the region where th
   
 * Detailed semantic model metadata lives in the home tenant.
 
-* The [dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) feature isn't supported on Multi-Geo.
+* To use [dataflows gen1](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) on Multi-Geo you must configure dataflow storage to use [Azure Data Lake Storage (ADLS) Gen2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration).
 
 * It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
 
 * Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
+* Multi-Geo doesn't support Power BI Q&A Settings as detailed semantic model metadata lives in the home tenant. 
+
 * Workspaces with non-Power BI Fabric items can't be moved between regions. You must delete all the non-Power BI Fabric items before moving a workspace to a different region. Once the workspace is moved, it can take up to 30 minutes before non-Power BI items can be created.
+
+For more details, see [Moving data around](portal-workspaces.md#moving-data-around).
 
 ## Related content
 

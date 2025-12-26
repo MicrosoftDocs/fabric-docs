@@ -1,5 +1,18 @@
 {
     "redirections": [
+      { "source_path_from_root": "/docs/data-factory/providing-user-documentation.md",
+        "redirect_url": "https://aka.ms/DataFactoryConnectorCertification",
+        "redirect_document_id": false
+      },
+      { "source_path_from_root": "/docs/data-factory/connector-certification.md",
+        "redirect_url": "https://aka.ms/DataFactoryConnectorCertification",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/dataflow-gen2-deployment-pipelines.md",
+        "redirect_url": "/fabric/data-factory/dataflow-gen2-cicd-alm-solution-architecture",
+        "redirect_document_id": true
+      },
       {
         "source_path_from_root": "/docs/data-factory/connector-troubleshoot-postgresql.md",
         "redirect_url": "/fabric/data-factory/connector-troubleshoot-azure-database-for-postgresql",
@@ -21,6 +34,26 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-vnet-gateway.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pricing-scenario-dataflows-gen2-load-6-gb-csv-to-lakehouse-table-fastcopy.md",
+        "redirect_url": "/fabric/data-factory/pricing-dataflows-gen2",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-resource-limits.md",
         "redirect_url": "/fabric/data-factory/data-factory-limitations",
         "redirect_document_id": false
@@ -31,8 +64,38 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/data-in-staging-artifacts.md",
+        "redirect_url": "copy-data-items.md",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pipeline-storage-event-triggers.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/scope-activity.md",
+        "redirect_url": "/fabric/data-factory/activity-overview#control-flow-activities",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/migrate-from-azure-data-factory.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
         "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pipeline-rest-api.md",
+        "redirect_url": "/fabric/data-factory/pipeline-rest-api-capabilities",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/git-integration-deployment-pipelines.md",
+        "redirect_url": "/fabric/data-factory/cicd-pipelines",
         "redirect_document_id": false
       },
       {
@@ -53,6 +116,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/schedule-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pipeline-runs",
         "redirect_document_id": false
       },
       {
@@ -101,6 +169,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/cost-estimation-from-azure-data-factory-to-fabric-pipeline.md",
+        "redirect_url": "/fabric/data-factory/pricing-overview",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
         "redirect_document_id": false
@@ -123,6 +196,11 @@
       {
         "source_path_from_root": "/docs/data-factory/known-issue-template.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/activity-parity.md",
+        "redirect_url": "/fabric/data-factory/compare-fabric-data-factory-and-azure-data-factory#activity-comparison",
         "redirect_document_id": false
       },
       {
@@ -153,6 +231,11 @@
       {
         "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/spark-connector-copy-activity.md",
+        "redirect_url": "/fabric/data-factory/spark-connector-overview",
         "redirect_document_id": false
       },
       {
@@ -266,6 +349,16 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory.md",
+        "redirect_url": "/azure/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory.md",
+        "redirect_url": "/azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory",
+        "redirect_document_id": false
+      }, 
+      {
         "source_path_from_root": "/docs/data-factory/certification-submission.md",
         "redirect_url": "/fabric/data-factory/connector-certification",
         "redirect_document_id": false
@@ -274,6 +367,46 @@
         "source_path_from_root": "/docs/data-factory/data-factory-known-issues.md",
         "redirect_url": "/fabric/get-started/fabric-known-issues",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/upgrade-paths.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-managed-instance-copy-activity.md",
+        "redirect_url": "/fabric/data-factory/connector-azure-sql-managed-instance-copy-activity",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-managed-instance-overview.md",
+        "redirect_url": "/fabric/data-factory/connector-azure-sql-managed-instance-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/dataflow-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/pipeline-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/copy-job-support.md",
+        "redirect_url": "/fabric/data-factory/connector-overview",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/fundamentals/copilot-fabric-data-factory.md",
+        "redirect_url": "/fabric/data-factory/copilot-fabric-data-factory",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/data-type-mapping.md",
+        "redirect_url": "/fabric/data-factory/data-type-conversion-copy-activity",
+        "redirect_document_id": true
       }
     ]
 }

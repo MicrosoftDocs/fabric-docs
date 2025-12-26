@@ -1,14 +1,12 @@
 ---
 title: Apache Spark compute for Data Engineering and Data Science
 description: Learn about the starter pools, custom Apache Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
-ms.topic: conceptual
+ms.reviewer: saravi
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 12/30/2024
+ms.date: 07/03/2025
 ---
 # What is Apache Spark compute in Microsoft Fabric?
 
@@ -22,17 +20,45 @@ Microsoft Fabric Data Engineering and Data Science experiences operate on a full
 
 Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 
-:::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration.":::
+:::image type="content" source="media/spark-compute/starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration." lightbox="media/spark-compute/starter-pool-configuration.png":::
 
-Starter pools have Apache Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
+Starter pools have Apache Spark clusters with sessions that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
-:::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools.":::
+:::image type="content" source="media/spark-compute/starter-pool.png" alt-text="Diagram showing the high-level design of starter pools." lightbox="media/spark-compute/starter-pool.png":::
 
-Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Apache Spark properties or libraries from your workspace or capacity settings, Spark takes longer to get the nodes for you. When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
+When you use a Starter Pool **without any extra library dependencies or custom Spark properties**, your session typically starts in **5 to 10 seconds**. This fast startup is possible because the cluster is already running and doesn't require  provisioning time.
+
+> [!NOTE]
+> Starter pools are only supported for Medium Node sizes, and selecting any other node sizes, or customizing compute configurations will result in on-demand session start experience which could take from 2 - 5 minutes
+
+However, there are several scenarios where your session might take longer to start:
+
+1. **You have custom libraries or Spark properties**  
+   If you've configured libraries or custom settings in your environment, Spark has to personalize the session once it's created. This process can add around **30 seconds to 5 minutes** to your startup time, depending on the number and size of your library dependencies.
+
+2. **Starter Pools in your region are fully used**  
+   In rare cases, a region's Starter Pools might be temporarily exhausted due to high traffic. When that happens, Fabric spins up a **new cluster** to accommodate your request, which takes about **2 to 5 minutes**. Once the new cluster is available, your session starts. If you also have custom libraries to install, you need to add the additional **30 seconds to 5 minutes** required for personalization.
+
+3. **Advanced networking or security features (Private Links or Managed VNets)**  
+   When your workspace has networking features such as **Tenant Private Links** or **Managed VNets**, Starter Pools aren't supported. In this situation, Fabric must create a cluster on demand, which adds **2 to 5 minutes** to your session start time. If you also have library dependencies, that personalization step can again add another **30 seconds to 5 minutes**.
+
+Here are a few example scenarios to illustrate potential start times:
+
+| Scenario                                           | Typical Startup Time                                     |
+|----------------------------------------------------|----------------------------------------------------------|
+| **Default settings, no libraries**                 | 5 – 10 seconds                                           |
+| **Default settings + library dependencies**        | 5 – 10 seconds + 30 seconds – 5 min (for library setup)           |
+| **High traffic in region, no libraries**           | 2 – 5 minutes                                            |
+| **High traffic + library dependencies**            | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
+| **Network security (Private Links/VNet), no libraries**  | 2 – 5 minutes                                            |
+| **Network security + library dependencies**        | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
+
+
+When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
 
 :::image type="content" source="media/spark-compute/starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of starter pools." lightbox="media/spark-compute/starter-pool-billing-states-high-level.png":::
 
-For example, if you submit a notebook job to a starter pool, you're billed only for the time period where the notebook session is active. The billed time doesn't include the idle time or the time taken to personalize the session with the Spark context.
+For example, if you submit a notebook job to a starter pool, you're billed only for the time period where the notebook session is active. The billed time doesn't include the idle time or the time taken to personalize the session with the Spark context. To learn more, see how to [configurestarter pools in Fabric](configure-starter-pools.md).
 
 ## Spark pools
 
@@ -57,7 +83,7 @@ Spark pools are billed like starter pools; you don't pay for the custom Spark po
 
 For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context.
 
-Possible custom pool configurations for F64 based on the previous example:
+Possible custom pool configurations for F64 based on the previous example. Smaller node sizes have capacity spread across more nodes, so the max number of nodes are higher. Whereas larger nodes are resource-rich, so fewer nodes are needed:
 
 | Fabric capacity SKU | Capacity units | Max Spark VCores with Burst Factor | Node size | Max number of nodes |
 |--|--|--|--|--|
@@ -67,14 +93,15 @@ Possible custom pool configurations for F64 based on the previous example:
 | F64 | 64 | 384 | X-Large | 12 |
 | F64 | 64 | 384 | XX-Large | 6 |
 
-
-
 > [!NOTE]
-> To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric](create-custom-spark-pools.md)
+> To create custom pools, you need **admin** permissions for the workspace. And the Microsoft Fabric capacity admin must grant permissions to allow workspace admins to size their custom Spark pools. To learn more, see [Get started with custom Spark pools in Fabric.](create-custom-spark-pools.md)
 
 ## Nodes
 
 An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Apache Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Apache Spark Executor service.
+
+> [!NOTE]
+> In Fabric, the ratio of nodes to executors is always 1:1. When you set up a pool, one node is dedicated to the driver, and the remaining nodes are used for the executors. The only exception is in a single-node configuration, where the resources for both the driver and the executor are halved.
 
 ## Node sizes
 

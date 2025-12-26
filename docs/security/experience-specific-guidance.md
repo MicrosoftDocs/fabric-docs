@@ -1,15 +1,12 @@
 ---
 title: Microsoft Fabric disaster recovery experience specific guidance
 description: See experience-specific guidance for recovering from a regional disaster.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
+ms.reviewer: danzhang
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
-  - build-2024
-ms.date: 11/07/2024
+ms.date: 12/02/2025
 ---
 
 # Experience-specific disaster recovery guidance
@@ -18,7 +15,7 @@ This document provides experience-specific guidance for recovering your Fabric d
 
 ## Sample scenario
 
-A number of the guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
+Many guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
 
 Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B.
 
@@ -36,6 +33,7 @@ Here's the general recovery plan:
 
 1. Follow the dedicated instructions for each component to restore items to their full function.
 
+This recovery plan assumes that the tenant home region remains operational. If the tenant home region experiences an outage, the steps outlined in this document are contingent on its recovery, which must be first initiated and completed by Microsoft.
 
 ## Experience-specific recovery plans
 
@@ -57,7 +55,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 
 1. Create a new notebook in the workspace C2.W2.
 
-1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
+1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the following code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
     mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
@@ -89,24 +87,24 @@ Customers can recreate lakehouses by using a custom Scala script.
     mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
-1. Once you run the script, the tables will appear in the new lakehouse.
+1. Once you run the script, the tables appear in the new lakehouse.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
-To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer.  Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
+To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer. Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1](#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
 
 > [!NOTE]
-> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
+> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (for example, CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
 
 ### Notebook
 
-Notebooks from the primary region remain unavailable to customers and the code in notebooks won't be replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
+Notebooks from the primary region remain unavailable to customers and the code in notebooks aren't replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
 
 #### Approach 1: User-managed redundancy with Git integration (in public preview)
 
 The best way to make this easy and quick is to use Fabric Git integration, then synchronize your notebook with your ADO repo. After the service fails over to another region, you can use the repo to rebuild the notebook in the new workspace you created.  
 
-1. Setup Git integration and select **Connect and sync** with ADO repo.
+1. Configure Git Integration for your workspace and select **Connect and sync** with ADO repo.
 
     :::image type="content" source="./media/experience-specific-guidance/notebook-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync notebook with ADO repo.":::
 
@@ -120,7 +118,7 @@ The best way to make this easy and quick is to use Fabric Git integration, then 
 
         :::image type="content" source="./media/experience-specific-guidance/notebook-reconnect-to-ado-repo.png" alt-text="Screenshot showing notebook reconnected to ADO repo.":::
 
-    1. Select the Source control button. Then select the relevant branch of the repo. Then select **Update all**. The original notebook will appear.
+    1. Select the Source control button. Then select the relevant branch of the repo. Then select **Update all**. The original notebook appears.
 
         :::image type="content" source="./media/experience-specific-guidance/notebook-source-control-update-all.png" alt-text="Screenshot showing how to update all notebooks on a branch.":::
 
@@ -162,13 +160,13 @@ If you don't take the Git integration approach, you can save the latest version 
 
 ### Spark Job Definition
 
-Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Note that historical runs of the SJD won't be recovered.
+Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Historical runs of the SJD won't be recovered.
 
 You can recover the SJD items by copying the code from the original region by using Azure Storage Explorer and manually reconnecting Lakehouse references after the disaster.
 
 1. Create a new SJD item (for example, SJD1) in the new workspace C2.W2, with the same settings and configurations as the original SJD item (for example, language, environment, etc.).
 
-1. Use Azure Storage Explorer to copy Libs, Mains and Snapshots from the original SJD item to the new SJD item.
+1. Use Azure Storage Explorer to copy Libs, Mains, and Snapshots from the original SJD item to the new SJD item.
 
     :::image type="content" source="./media/experience-specific-guidance/sjd-copy-from-original-sdj-to-new-sjd.png" alt-text="Screenshot showing how to copy from the original spark job definition to the new spark job definition.":::
 
@@ -242,7 +240,7 @@ Mirrored databases from the primary region remain unavailable to customers and t
 
 ## Data Factory
 
-Data Factory items from the primary region remain unavailable to customers and the settings and configuration in data pipelines or dataflow gen2 items won't be replicated to the secondary region. To recover these items in the event of a regional failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
+Data Factory items from the primary region remain unavailable to customers and the settings and configuration in pipelines or dataflow gen2 items won't be replicated to the secondary region. To recover these items in the event of a regional failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
 
 ### Dataflows Gen2
 
@@ -266,9 +264,51 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 1. The template is then imported into your new Dataflow Gen2 item.
 
-### Data Pipelines
+Dataflows Save As feature is not supported in the event of disaster recovery.
 
-Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
+### Pipelines
+
+Customers can't access pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical pipelines in multiple workspaces across different regions.
+
+### Copy Job
+
+CopyJob users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, after a regional disaster, a user's CopyJobs remain available.
+
+#### User-managed redundancy with Git integration (in public preview)
+
+The best way to make this process easy and quick is to use Fabric Git integration, then synchronize your CopyJob with your ADO repo. After the service fails over to another region, you can use the repository to rebuild the CopyJob in the new workspace you created.
+
+1. Configure your workspace's Git Integration and select **connect and sync** with ADO repo.
+
+    :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing how to connect and sync Workspace with ADO repo.":::
+
+    The following image shows the synced CopyJob.
+
+    :::image type="content" source="./media/experience-specific-guidance/copyjob-synced-copyjob.png" alt-text="Screenshot showing CopyJob synced with ADO repo.":::
+
+1. Recover the CopyJob from the ADO repo.
+
+    1. In the newly created workspace, connect and sync to your Azure ADO repo again. All Fabric items in this repository are automatically downloaded to your new Workspace.
+
+        :::image type="content" source="./media/experience-specific-guidance/copyjob-connect-sync-ado-repo.png" alt-text="Screenshot showing Workspace reconnected to ADO repo.":::
+
+    1. If the original CopyJob uses a Lakehouse, users can refer to the [Lakehouse section](#lakehouse) to recover the Lakehouse and then connect the newly recovered CopyJob to the newly recovered Lakehouse.
+
+For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
+
+### Apache Airflow Job
+
+Apache Airflow Job in Fabric users must undertake proactive measures to protect against a regional disaster. 
+
+We recommend managing redundancy with Fabric Git integration. First, synchronize your Airflow Job with your ADO repo. If the service fails over to another region, you can use the repository to rebuild the Airflow Job in the new workspace you created. 
+
+Here are the steps to achieve this:
+
+1. Configure your workspace's Git Integration and select "connect and sync" with the ADO repo.
+
+1. After that, you will see your Airflow job has been synced to your ADO repo.
+
+1. If you need to recover the Airflow job from the ADO repo, create a new workspace, connect, and sync to your Azure ADO repo again. All Fabric items, including Airflow, in this repository will be automatically downloaded to your new workspace.
 
 ## Real-Time Intelligence
 
@@ -307,6 +347,47 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 1. Connect these new items to the identical data sources.
 
 1. Add identical destinations for each eventstream in different regions.
+
+## Transactional database
+
+This guide describes the recovery procedures for the transactional database experience. 
+
+### SQL database
+
+To protect against a regional failure, users of SQL databases can take proactive measures to periodically export their data and use the exported data to recreate the database in a new workspace when needed.
+
+This can be achieved by using the [SqlPackage](../database/sql/sqlpackage.md) CLI tool that provides database portability and facilitates database deployments.
+
+1. Use the SqlPackage tool to export the database to a `.bacpac` file.  See [Export a database with SqlPackage](../database/sql/sqlpackage.md#export-a-database-with-sqlpackage) for more details.
+1. Store the `.bacpac` file in a secure location that is in a different region than the database.  Examples include storing the `.bacpac` file in a Lakehouse that is in a different region, using a geo-redundant Azure Storage Account, or using another secure storage medium that is in a different region.
+3. If the SQL database and region are unavailable, you can use the `.bacpac` file with SqlPackage to recreate the database in a workspace in a new region – Workspace C2.W2 in Region B as described in the scenario above.  Follow the steps detailed in [Import a database with SqlPackage](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage) to recreate the database with your `.bacpac` file.
+
+The recreated database is an independent database from the original database and reflects the state of the data at the time of the export operation.
+
+#### Failback considerations
+
+The recreated database is an independent database.  Data added to the recreated database would not be reflected in the original database.  If you plan to failback to the original database when the home region becomes available, you will need to consider manually reconciling data from the recreated database to the original database.
+
+## Platform
+
+Platform refers to the underlying shared services and architecture that apply to all workloads. This section walks you through the recovery procedures for shared experiences. It covers variable libraries.
+
+### Variable library
+Microsoft Fabric Variable libraries enable developers to customize and share item configurations within a workspace, streamlining content lifecycle management. From a disaster recovery standpoint, variable library users must proactively protect against a regional disaster. This can be done through Fabric Git integration, which ensures that after a regional disaster, a user's Variable library remains available.  To recover a variable library, we recommend the following:
+
+ - Use Fabric Git integration to synchronize your Variable library with your ADO repo. In case of disaster, you can use the repository to rebuild the Variable library in the new workspace you created. Use the following steps:
+
+     1. Connect your workspace to Git repo as described in [here](../cicd/git-integration/git-get-started.md#connect-a-workspace-to-a-git-repo).
+     2. Make sure to keep the WS and the repo synched with [Commit](../cicd/git-integration/git-get-started.md#commit-changes-to-git) and [Update](../cicd/git-integration/git-get-started.md#update-workspace-from-git).
+     3. Recovery - In case of disaster, use the repository to rebuild the Variable library in a new workspace:
+
+ - In the newly created workspace, connect and sync to your Azure ADO repo again.
+ - All Fabric items in this repository are automatically downloaded to your new Workspace.
+ - After syncing your items from Git, open your Variable Libraries in the new workspace and manually select the desired [active value set](../cicd/variable-library/get-started-variable-libraries.md#add-a-value-set).
+
+### Customer-managed keys for Fabric workspaces
+
+You can use customer-managed keys (CMK) stored in Azure Key Vault to add an additional layer of encryption on top of Microsoft-managed keys for data at rest. In the event that Fabric becomes inaccessible or inoperable in a region, its components will fail over to a backup instance. During failover, the CMK feature supports read-only operations. As long as the Azure Key Vault service remains healthy and permissions to the vault are intact, Fabric will continue to connect to your key and allow you to read data normally. This means the following operations aren't supported during failover: enabling and disabling the workspace CMK setting and updating the key. 
 
 ## Related information
 

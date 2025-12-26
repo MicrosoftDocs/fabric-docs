@@ -1,48 +1,44 @@
 ---
 title: Create a lakehouse in Microsoft Fabric
 description: Learn how to create a lakehouse from the Data Engineering homepage, the Workspace view, or the Create page.
-ms.reviewer: snehagunda
-ms.author: avinandac
-author: avinandaMS
+ms.reviewer: avinandac
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.date: 05/13/2024
 ms.search.form: Create lakehouse
 ---
 
 # Create a lakehouse in Microsoft Fabric
 
-In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
+In this tutorial, you learn different ways to create a Lakehouse in Microsoft Fabric.
 
-## Create a lakehouse
+## Prerequisites
 
-The lakehouse creation process is quick and simple; there are several ways to get started.
+To create a lakehouse, you need access to a [Fabric enabled workspace](../admin/fabric-switch.md). Fabric admins can enable trial or paid capacity for a tenant or users. If Fabric isn't enabled, you won't see the lakehouse card.
 
 ### Ways to create a lakehouse
 
-There are a few ways you can get started with the creation process:
+The lakehouse creation process is quick and simple; there are several ways to get started.
 
 1. **Data Engineering** homepage
 
    - You can easily create a lakehouse through the **Lakehouse** card under the **New** section in the homepage.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse card." lightbox="media\create-lakehouse\lakehouse-card.png":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse item under Data Engineering." lightbox="media\create-lakehouse\lakehouse-card.png":::
 
 1. **Workspace** view
 
    - You can also create a lakehouse through the workspace view in **Data Engineering** by using the **New** dropdown menu.
 
-   :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu.":::
+   :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media/create-lakehouse/new-lakehouse-menu.png":::
 
 1. **Create** page
 
    - An entry point to create a lakehouse is available in the **Create** page under **Data Engineering**.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create page.":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create page." lightbox="media/create-lakehouse/lakehouse-create-hub.png":::
 
 ### Creating a lakehouse from the Data Engineering homepage
 

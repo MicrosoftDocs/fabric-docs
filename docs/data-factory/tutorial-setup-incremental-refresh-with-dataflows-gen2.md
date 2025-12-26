@@ -1,19 +1,15 @@
 ---
 title: Pattern to incrementally amass data with Dataflow Gen2
 description: This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
-ms.reviewer: jburchel
+ms.reviewer: whhender
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial
-ms.custom:
-  - ignite-2023
-ms.date: 12/18/2024
+ms.date: 12/22/2025
+ms.custom: dataflows
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2
-
-> [!IMPORTANT]
-> This is a pattern to incrementally amass data with Dataflow Gen2. This isn't the same as incremental refresh. Incremental refresh is a feature that's currently in development. This feature is one of the top voted ideas on our ideas website. You can vote for this feature [on the Fabric Ideas site](https://ideas.fabric.microsoft.com/ideas/idea/?ideaid=4814b098-efff-ed11-a81c-6045bdb98602).
 
 This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
 
@@ -27,7 +23,7 @@ The high-level steps in this tutorial are as follows:
 
 ## Prerequisites
 
-You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md). Also, the tutorial assumes you're using the diagram view in Dataflow Gen2. To check if you're using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
+You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../fundamentals/create-workspaces.md). Also, the tutorial assumes you're using the diagram view in Dataflow Gen2. To check if you're using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
 
 ## Create a dataflow to load data from an OData source into a lakehouse
 
@@ -39,7 +35,7 @@ In this section, you create a dataflow to load data from an OData source into a 
 
 1. Create a new Dataflow Gen2 in your workspace.
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the create dataflow dropdown.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-dataflow-gen2.png" alt-text="Screenshot showing the create dataflow dropdown." lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-dataflow-gen2.png":::
 
 1. Add a new source to the dataflow. Select the OData source and enter the following URL: `https://services.OData.org/V4/Northwind/Northwind.svc`
 
@@ -167,7 +163,7 @@ Notebooks support multiple languages, but this tutorial uses PySpark. Pyspark is
 
 1. Create a new notebook in your workspace.
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-notebook.png" alt-text="Screenshot showing the new notebook dialog.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-notebook.png" alt-text="Screenshot showing the new notebook dialog." lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/new-notebook.png":::
 
 1. Add the following PySpark code to your notebook:
 

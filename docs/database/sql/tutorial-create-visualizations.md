@@ -1,14 +1,14 @@
 ---
-title: SQL database tutorial - Create and share visualizations
+title: SQL Database Tutorial - Create and Share Visualizations
 description: In this sixth tutorial step, learn how to create and share visualizations.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 10/24/2024
+ms.date: 02/20/2025
+ms.update-cycle: 180-days
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+  - ce-skilling-ai-copilot
 ---
 
 # Create and share visualizations
@@ -34,7 +34,7 @@ In this tutorial, learn how to use multiple tools to analyze data stored in your
 
 1. For the database name, select all the characters between the characters **Initial Catalog=** and **;MultipleActiveResultSets**.
 
-You can now use these SQL strings in your connection area for tools such as Power BI or SQL Server Management Studio. For [Visual Studio Code with the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), you can paste the entire connection string in the first text box where you make a database connection, so you don't have to select only the server and database names.
+You can now use these SQL strings in your connection area for tools such as Power BI or SQL Server Management Studio. For [Visual Studio Code with the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), you can paste the entire connection string in the first text box where you make a database connection, so you don't have to select only the server and database names.
 
 ## Power BI visualization creation
 

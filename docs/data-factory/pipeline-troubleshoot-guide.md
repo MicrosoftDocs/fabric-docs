@@ -5,6 +5,7 @@ author: nabhishek
 ms.topic: troubleshooting
 ms.date: 12/18/2024
 ms.author: abnarain
+ms.custom: pipelines
 ---
 
 # Troubleshoot pipelines for Data Factory in Microsoft Fabric
@@ -602,5 +603,5 @@ For more troubleshooting help, try these resources:
 - [Data Factory feature requests](/answers/topics/azure-data-factory.html)
 - [Stack Overflow forum for Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
 - [Twitter information about Data Factory](https://twitter.com/hashtag/DataFactory)
-- [Azure videos](https://azure.microsoft.com/resources/videos/index/)
+- [Azure videos](https://azure.microsoft.com/resources/videos)
 - [Microsoft Q&A question page](/answers/topics/azure-data-factory.html)

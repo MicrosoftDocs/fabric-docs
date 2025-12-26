@@ -7,7 +7,6 @@ ms.reviewer: bwoody
 ms.date: 10/24/2024
 ms.topic: tutorial
 ms.custom:
-  - ignite-2024
 ---
 # Perform data analysis using Microsoft Fabric Notebooks
 
@@ -62,6 +61,9 @@ In our sample tutorial, your organization has asked that you set up a Notebook f
     :::image type="content" source="media/tutorial-perform-data-analysis/markdown-preview.png" alt-text="Screenshot the preview of markdown formatted plain text in a Notebook." lightbox="media/tutorial-perform-data-analysis/markdown-preview.png":::
 
 1. Select the **Save As** icon in the ribbon. Enter the text `products_by_suppliers_notebook`. Ensure you set the location to your tutorial Workspace. Select the **Save** button to save the notebook.
+
+> [!TIP]
+> You can also [connect your applications to a SQL database in Fabric with the Microsoft Python Driver](connect-python.md).
 
 ## Next step
 

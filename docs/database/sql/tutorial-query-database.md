@@ -1,14 +1,15 @@
 ---
-title: SQL database tutorial - Query the database and review Copilot features
+title: SQL Database Tutorial - Query the Database and Review Copilot Features
 description: In this tutorial step, learn how to query the database and review Copilot features.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: bwoody
-ms.date: 10/28/2024
+ms.date: 02/20/2025
+ms.update-cycle: 180-days
 ms.topic: tutorial
-ms.custom:
-  - ignite-2024
-ms.collection: ce-skilling-ai-copilot
+ms.collection:
+- ce-skilling-ai-copilot
+ms.custom: sfi-image-nochange
 ---
 # Query the database and review Copilot features
 
@@ -76,7 +77,7 @@ With Copilot for SQL database, you can start writing T-SQL in the SQL query edit
 The query editor panel includes Copilot for SQL database.
 
 > [!NOTE]
-> Copilot for SQL database does not use the data in tables to generate T-SQL suggestions, on the names of database objects such as table and view names, column names, primary key, and foreign key metadata to generate T-SQL code.
+> Copilot for SQL database does not use the data in tables to generate T-SQL suggestions, only the names of database objects such as table and view names, column names, primary key, and foreign key metadata to generate T-SQL code.
 
 You also have access to various **Quick actions**. In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice, then select one of the quick action buttons to perform the selected action on your query.
 
@@ -90,7 +91,7 @@ Copilot can fix errors in your code as error messages arise. Error scenarios can
 
 There's also a chat pane where you can ask questions to Copilot through natural language. Copilot responds with a generated SQL query or natural language based on the question asked.
 
-There are other Copilot features you can experiment with, such as Natural Language to SQL and Document-based Q&A. Copilot also helps find documentation related to your request. For more information, see [Copilot for SQL database in Microsoft Fabric (preview)](copilot.md).
+There are other Copilot features you can experiment with, such as Natural Language to SQL and Document-based Q&A. Copilot also helps find documentation related to your request. For more information, see [Copilot for SQL database in Microsoft Fabric](copilot.md).
 
 ## Performance monitoring in SQL database in Fabric
 
@@ -121,7 +122,7 @@ This process enables the database to dynamically adapt to your workload by findi
 
 In addition, automatic tuning continuously monitors the performance of the database after implementing any changes to ensure that it improves performance of your workload. Any action that didn't improve performance is automatically reverted. This verification process is a key feature that ensures any change made by automatic tuning doesn't decrease the overall performance of your workload.
 
-[Automatic indexing](/sql/relational-databases/automatic-tuning/automatic-tuning?view=fabric&preserve-view=true) in Azure SQL Database and Fabric SQL database is part of this tuning and automates index management, enhancing query performance and data retrieval speed. It adapts by identifying and testing potential indexes based on column usage. The feature improves overall database performance and optimizes resources by removing unused indexes.
+[Automatic indexing](/sql/relational-databases/automatic-tuning/automatic-tuning?view=fabric-sqldb&preserve-view=true) in Azure SQL Database and Fabric SQL database is part of this tuning and automates index management, enhancing query performance and data retrieval speed. It adapts by identifying and testing potential indexes based on column usage. The feature improves overall database performance and optimizes resources by removing unused indexes.
 
 In the Fabric portal, the **Automatic Index** tab shows a history and status of automatically created indexes:
 
@@ -175,7 +176,7 @@ You'll now grant access to another account in your organization and then control
 
    You also have GRANT, DENY, and other Data Control Language (DCL) operations for a finer-grained security model for your SQL database in Fabric data.
 
-For more information about sharing, see [Share your SQL database and manage permissions](share-sql-manage-permission.md) and [Share items in Microsoft Fabric](../../get-started/share-items.md).
+For more information about sharing, see [Share your SQL database and manage permissions](share-sql-manage-permission.md) and [Share items in Microsoft Fabric](../../fundamentals/share-items.md).
 
 ## Next step
 

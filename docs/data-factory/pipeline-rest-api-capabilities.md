@@ -1,30 +1,25 @@
 ---
-title: REST API capabilities for Fabric Data Factory (Preview)
+title: REST API capabilities for Fabric Data Factory
 description: This article describes the available REST APIs for pipelines in Microsoft Fabric Data Factory.
 author: conxu-ms
 ms.author: conxu
 ms.topic: conceptual
-ms.custom:
-  - ignite-2024
-ms.date: 10/24/2024
+ms.custom: pipelines
+ms.date: 08/28/2025
 ---
 
-# REST API capabilities for data pipelines in Fabric Data Factory (Preview)
+# REST API capabilities for pipelines in Fabric Data Factory
 
-Fabric Data Factory provides a robust set of APIs that enable users to automate and manage their data pipelines efficiently. These APIs allow for seamless integration with various data sources and services, enabling users to create, update, and monitor their data workflows programmatically. The APIs support a wide range of operations, including pipeline CRUD (Create, Read, Update, and Delete), scheduling, and monitoring. This makes it easier for users to manage their data integration processes.
+Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them — so you can keep your data flowing smoothly without the hassle.
 
-## Mounting APIs
-
-The Mounting Public APIs are now available. These APIs allow you to seamlessly integrate and access various public data sources within your data pipelines.
-
-## API use cases for data pipelines
+## API use cases for pipelines
 
 The APIs for pipelines in Fabric Data Factory can be used in various scenarios:
 
-- **Automated deployment**: Automate the deployment of data pipelines across different environments (development, testing, production) using CI/CD practices.
-- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of data pipelines and receive notifications if failures or performance issues occur.
-- **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified data pipeline for processing and analysis.
-- **Error handling**: Implement custom error handling and retry mechanisms to ensure data pipelines run smoothly and recover from failures.
+- **Automated deployment**: Automate the deployment of pipelines across different environments (development, testing, production) using CI/CD practices.
+- **Monitoring and alerts**: Set up automated monitoring and alerting systems to track the status of pipelines and receive notifications if failures or performance issues occur.
+- **Data integration**: Integrate data from multiple sources, such as databases, data lakes, and cloud services, into a unified pipeline for processing and analysis.
+- **Error handling**: Implement custom error handling and retry mechanisms to ensure pipelines run smoothly and recover from failures.
 
 ## Understanding APIs
 
@@ -37,7 +32,7 @@ To effectively use the APIs for pipelines in Fabric Data Factory, it's essential
 
 ### CRUD support
 
-CRUD stands for Create, Read, Update, and Delete, which are the four basic operations that can be performed on data. In Fabric Data Factory, the CRUD operations are supported through the Fabric API for Data Factory, which is currently in preview. These APIs allow users to manage their pipelines programmatically. Here are some key points about CRUD support:
+CRUD stands for Create, Read, Update, and Delete, which are the four basic operations that can be performed on data. In Fabric Data Factory, the CRUD operations are supported through the Fabric API for Data Factory. These APIs allow users to manage their pipelines programmatically. Here are some key points about CRUD support:
 
 - **Create**: Create new pipelines using the API. This involves defining the pipeline structure, specifying data sources, transformations, and destinations.
 - **Read**: Retrieve information about existing pipelines. This includes details about their configuration, status, and execution history.
@@ -46,7 +41,7 @@ CRUD stands for Create, Read, Update, and Delete, which are the four basic opera
 
 The primary online reference documentation for Microsoft Fabric REST APIs can be found in the [Microsoft Fabric REST API documentation](/rest/api/fabric/articles/).
 
-## Get started with REST APIs for data pipelines
+## Get started with REST APIs for pipelines
 
 The following examples show how to to create, update, and manage pipelines using the Fabric Data Factory APIs.
 
@@ -54,13 +49,16 @@ The following examples show how to to create, update, and manage pipelines using
 
 Before you use the other REST APIs, you need to have the bearer token.
 
+>[!IMPORTANT]
+>In the following examples, ensure the word 'Bearer ' (with a space) precedes the access token itself. When using an API client and selecting 'Bearer Token' as the authentication type, 'Bearer ' is automatically inserted for you, and only requires the access token to be provided.
+
 ### Option 1: Using MSAL.Net
 
 Refer to the [Get Token section of the Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart#get-token) as an example of how to obtain the MSAL authorization token.
 
 Use MSAL.Net to acquire a Microsoft Entra ID token for Fabric service with the following scopes: _Workspace.ReadWrite.All_, _Item.ReadWrite.All_. For more information about token acquisition with MSAL.Net to, see [Token Acquisition - Microsoft Authentication Library for .NET](/entra/msal/dotnet/acquiring-tokens/overview).
 
-Copy the _Application ID_ (also called the _ClientId_)  you copied earlier and use it for _ClientId_ variable in the following examples.
+Copy the token from the _AccessToken_ property and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
 ### Option 2: Using the Fabric portal
 
@@ -70,7 +68,7 @@ Sign in to the Fabric portal for the Tenant you want to test on, and press F12 t
 powerBIAccessToken
 ```
 
-Copy the token and use it for the _ClientId_ variable in the following examples.
+Copy the token and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
 ## Create a pipeline
 
@@ -84,7 +82,7 @@ Create a pipeline in a specified workspace.
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -95,7 +93,7 @@ Create a pipeline in a specified workspace.
 {
   "displayName": "My pipeline",
   "description": "My pipeline description",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -103,7 +101,7 @@ Create a pipeline in a specified workspace.
 
 ```rest
 {
-    "id": "<artifactId>",
+    "id": "<itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -123,7 +121,7 @@ Create a pipeline with a base64 definition in a specified workspace.
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -135,7 +133,7 @@ Create a pipeline with a base64 definition in a specified workspace.
   "displayName": " My pipeline",
   "description": "My pipeline description",
 
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": { 
     "parts": [ 
       { 
@@ -152,53 +150,11 @@ Create a pipeline with a base64 definition in a specified workspace.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
     "workspaceId": "<Your workspaceId>"
-}
-```
-
-## Create a Mounted Data Factory
-
-Create a Mounted Data Factory using mounting APIs.
-
-**Sample request**:
-
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/items```
-
-**Payload value**:
-
-```{"DataFactoryResourceId":"/subscriptions/<Your ADF subscription Id>/resourceGroups/<Your ADF resource group name>/providers/Microsoft.DataFactory/factories/<Your ADF name>"}```
-
-**Payload**:
-
-```rest
-{ 
-  "displayName": "pipeline_mdf", 
-  "type": " MountedDataFactory ", 
-  "definition": { 
-    "parts": [ 
-      { 
-        "path": "mountedDataFactory-content.json", 
-        "payload": <Your Base64 encoded payload value from above>, 
-        "payloadType": "InlineBase64" 
-      } 
-    ] 
-  } 
-}
-```
-
-**Sample response**:
-
-```rest
-{
-    "id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", 
-    "type": "MountedDataFactory", 
-    "displayName": "pipeline_mdf", 
-    "description": "", 
-    "workspaceId": "<Your workspaceId>”
 }
 ```
 
@@ -214,7 +170,7 @@ Returns properties of specified pipeline.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -222,7 +178,7 @@ Returns properties of specified pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline",
     "description": "My pipeline description",
@@ -242,7 +198,7 @@ Returns the pipeline item definition.
 
 ```rest
 {
-  "Authorization": "<Your bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -273,13 +229,13 @@ Updates the properties of the pipeline.
 
 **Sample request**:
 
-**URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}``` 
+**URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}```
 
 **Headers**:
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -290,7 +246,7 @@ Updates the properties of the pipeline.
 {
   "displayName": "My pipeline updated",
   "description": "My pipeline description updated",
-  "type": "pipeline"
+  "type": "DataPipeline"
 }
 ```
 
@@ -298,7 +254,7 @@ Updates the properties of the pipeline.
 
 ```rest
 {
-    "id": "<Your artifactId>",
+    "id": "<Your itemId>",
     "type": "pipeline",
     "displayName": "My pipeline updated",
     "description": "My pipeline description updated",
@@ -318,7 +274,7 @@ Updates the pipeline item definition.
 
 ```rest
 {
-  "Authorization": "<bearer-token>",
+  "Authorization": "Bearer <access-token>",
   "Content-Type": "application/json"
 }
 ```
@@ -328,7 +284,7 @@ Updates the pipeline item definition.
 ```rest
 {
   "displayName": " My pipeline ",
-  "type": "pipeline",
+  "type": "DataPipeline",
   "definition": {
     "parts": [ 
       { 
@@ -359,7 +315,7 @@ Deletes the specified pipeline.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -375,13 +331,13 @@ Runs on-demand pipeline job instance.
 
 **Sample request**:
 
-**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Refresh```
+**URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemId}/jobs/instances?jobType=Pipeline```
 
 **Headers**:
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -415,7 +371,7 @@ Gets singular pipeline’s job instance.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -425,7 +381,7 @@ Gets singular pipeline’s job instance.
 {
   "id": "<id>",
   "itemId": "<itemId>",
-  "jobType": "Refresh",
+  "jobType": "Pipeline",
   "invokeType": "Manual",
   "status": "Completed",
   "rootActivityId": "<rootActivityId>",
@@ -434,6 +390,68 @@ Gets singular pipeline’s job instance.
   "failureReason": null
 }
 ```
+
+## Schedule a pipeline
+
+You can also create schedules programatically with the API. Scheduler API supports the following operations:  
+
+- Cancel Pipeline Job Instance  
+- Create Pipeline Schedule  
+- Delete Pipeline Schedule  
+- Get Pipeline Instance  
+- Get Pipeline Schedule  
+- List Pipeline Job Instances  
+- List Pipeline Schedules  
+- Run On Demand Pipeline Job  
+- Update Pipeline Schedule  
+
+For example, you can set up a pipeline that runs every 10 minutes between May 27 and May 31, 2025, in Central Standard Time, and is currently enabled:
+
+```rest
+POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/items/<pipelineId>/jobs/<jobType>/schedules 
+
+{ 
+  "enabled": true, 
+  "configuration": { 
+    "startDateTime": "2025-05-27T00:00:00", 
+    "endDateTime": "2025-05-31T23:59:00", 
+    "localTimeZoneId": " Central Standard Time", 
+    "type": "Cron", 
+    "interval": 10 
+  } 
+} 
+```
+
+|Name|In|Required|Type|Description|Example|
+|---|---|---|---|---|---|
+|pipelineID|Path|True|String(guid)|The pipeline id|aaaa0000-bb11-2222-33cc-444444dddddd|
+|jobType|Path|True|String|The job type|DefaultJob|
+|workspaceId|Path|True|String|The workspace ID|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
+
+**Response:**
+
+Status code: 201
+
+```json
+{ 
+  "id": " eeeeeeee-4444-5555-6666-ffffffffffff", 
+  "enabled": true, 
+  "createdDateTime": "2025-05-27T05:35:20.5366667", 
+  "configuration": { 
+    "startDateTime": "2025-05-27T00:00:00", 
+    "endDateTime": "2025-05-31T23:59:00", 
+    "localTimeZoneId": "Central Standard Time", 
+    "type": "Cron", 
+    "interval": 10 
+  }, 
+  "owner": { 
+    "id": " aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e", 
+    "type": "User" 
+  } 
+} 
+```
+
+For more information on the available operations and their use, see [the Job Scheduler API documentation](/rest/api/fabric/core/job-scheduler).
 
 ## Cancel pipeline job instance
 
@@ -447,7 +465,7 @@ Cancel a pipeline’s job instance.
 
 ```rest
 {
-  "Authorization": "<bearer-token>"
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -456,18 +474,87 @@ Cancel a pipeline’s job instance.
 ***Location**: ```https://api.fabric.microsoft.com/v1/workspaces/<worksapceId>/items/<itemId>/jobs/instances/<jobInstanceId>```
 **Retry-after**: ```60```
 
+## Query activity runs
+
+Example:
+
+```POST https://api.fabric.microsoft.com/v1/workspaces/<your WS Id>/datapipelines/pipelineruns/<job id>/queryactivityruns```
+
+Body:
+
+```json
+{
+  "filters":[],
+  "orderBy":[{"orderBy":"ActivityRunStart","order":"DESC"}],
+  "lastUpdatedAfter":"2024-05-22T14:02:04.1423888Z",
+  "lastUpdatedBefore":"2024-05-24T13:21:27.738Z"
+}
+```
+
+> [!NOTE]
+> "job id" is the same ID created and used in the Job Scheduler Public APIs
+
+Response 200:
+
+```json
+[
+    {
+        "pipelineName": "ca91f97e-5bdd-4fe1-b39a-1f134f26a701",
+        "pipelineRunId": "bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f",
+        "activityName": "Wait1",
+        "activityType": "Wait",
+        "activityRunId": "cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a",
+        "linkedServiceName": "",
+        "status": "Succeeded",
+        "activityRunStart": "2024-05-23T13:43:03.6397566Z",
+        "activityRunEnd": "2024-05-23T13:43:31.3906179Z",
+        "durationInMs": 27750,
+        "input": {
+            "waitTimeInSeconds": 27
+        },
+        "output": {},
+        "error": {
+            "errorCode": "",
+            "message": "",
+            "failureType": "",
+            "target": "Wait1",
+            "details": ""
+        },
+        "retryAttempt": null,
+        "iterationHash": "",
+        "userProperties": {},
+        "recoveryStatus": "None",
+        "integrationRuntimeNames": null,
+        "executionDetails": null,
+        "id": "/SUBSCRIPTIONS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/RESOURCEGROUPS/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/PROVIDERS/MICROSOFT.TRIDENT/WORKSPACES/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/pipelineruns/bbbb1b1b-cc2c-dd3d-ee4e-ffffff5f5f5f/activityruns/cccc2c2c-dd3d-ee4e-ff5f-aaaaaa6a6a6a"
+    }
+]
+```
+
+## Service Principal Name (SPN) Support
+
+Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support:
+
+- **Authentication**: SPNs are used to authenticate applications or services when accessing data sources. This ensures that only authorized entities can access the data.
+- **Configuration**: To use SPNs, you need to create a service principal in Azure and grant it the necessary permissions to access the data source. For example, if you're using a data lake, the service principal needs storage blob data reader access.
+- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal.
+- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities.
+
+For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md).
+
 ## Current limitations
 
-- Platform Limitation: Service Principal authentication isn't supported at the moment.
 - JOB Limitation: Run APIs are invokable, but the actual run never succeeds (just like run/refresh from UI).
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 - Creating an item: use either creationPayload or definition, but don't use both at the same time.
 
 ## Related content
 
+Refer to the following content for more information on REST APIs for pipelines in Fabric Data Factory:
+
 ### Documentation
 
-- [Fabric data pipeline public REST API](pipeline-rest-api.md)
+- [Fabric pipeline public REST API](pipeline-rest-api-capabilities.md)
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
 

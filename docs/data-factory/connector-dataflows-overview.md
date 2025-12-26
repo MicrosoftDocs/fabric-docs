@@ -1,25 +1,25 @@
 ---
-title: Dataflows (Power Platform) connector overview
-description: This article provides an overview of the supported capabilities of the Dataflows connector.
-author: DougKlopfenstein
-ms.author: dougklo
+title: Dataflow (Power Platform) connector overview
+description: This article provides an overview of the supported capabilities of the Dataflow connector.
+author: whhender
+ms.author: whhender
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
-# Dataflows (Power Platform) connector overview
+# Dataflow (Power Platform) connector overview
 
-The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The dataflow connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
+## Supported capabilities
 
-## Support in Dataflow Gen2
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Organizational account |
 
-For information on how to connect to Dataflows data in Dataflow Gen2, go to [Set up your Dataflows (Power Platform) connection](connector-dataflows.md).
+## Related content
 
-## Support in data pipelines
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Dataflows (Power Platform) in data pipelines.
+For information on how to connect to dataflows, go to [Set up your dataflow connection](connector-dataflows.md).

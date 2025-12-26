@@ -4,7 +4,7 @@ description: Learn how to use the monitoring hub in the Microsoft Fabric Workloa
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
-ms.custom:
+ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
 ---
 
@@ -24,13 +24,13 @@ The following table provides an overview of the supported `JobScheduler` definit
 
 | Property | Description | Possible values |
 | --- | --- | --- |
-| `OnDemandJobDeduplicateOptions` |Sets the deduplication option for on-demand item jobs. | - `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure that there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
-| `ScheduledJobDeduplicateOptions` | Sets the deduplication option for on-demand item jobs. |- `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
+| `OnDemandJobDeduplicateOptions` |Sets the deduplication option for on-demand item jobs. | - `None`: Don't deduplicate the job. <br> - `PerItem`: Ensure that there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
+| `ScheduledJobDeduplicateOptions` | Sets the deduplication option for on-demand item jobs. |- `None`: Don't deduplicate the job. <br> - `PerItem`: Ensure there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
 | `ItemJobTypes`| A list of job types with the specified properties. | - `Name`: The name of the job type, which is fully customizable by the independent software vendor (ISV).
 
 ### Implement job workload APIs
 
-To integrate with jobs, a workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/src/Contracts/FabricAPI/Workload/swagger.json).
+To integrate with jobs, a workload must implement the Jobs APIs as defined in the [Swagger specification](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Contracts/FabricAPI/Workload/swagger.json).
 
 Three Fabric APIs are related to jobs:
 

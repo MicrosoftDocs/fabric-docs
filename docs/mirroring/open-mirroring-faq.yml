@@ -1,0 +1,54 @@
+### YamlMime:FAQ
+metadata:
+  title: "Frequently Asked Questions for Open Mirroring in Microsoft Fabric"
+  description: This article answers frequently asked questions about open mirrored databases in Microsoft Fabric.
+  author: whhender
+  ms.author: whhender
+  ms.reviewer: tinglee, sbahadur, maraki-ketema
+  ms.date: 06/04/2025
+  ms.service: fabric
+  ms.subservice: data-warehouse
+  ms.topic: faq
+title: "Frequently asked questions for open mirroring in Microsoft Fabric"
+summary: |
+  This article answers frequently asked questions about open mirroring in Microsoft Fabric.
+
+sections:
+  - name: Features and capabilities
+    questions:
+    - question: |
+        How long does the initial replication take?
+      answer: 
+        It depends on the size of the data and the data provider or application that you use to write data into open mirroring.
+    - question: |
+        How long does it take to replicate data once it is in the landing zone?
+      answer: 
+        Near real-time latency.
+    - question: |
+        How do I manage connections?
+      answer: 
+        There's no connection to manage in open mirroring.
+    - question: |
+        Can Power BI reports on mirrored data use direct lake mode?
+      answer: 
+        Yes, since tables are all v-ordered delta tables.
+    - question: |
+        What are the replication statuses?
+      answer: 
+        See [Monitor Fabric Mirror replication](monitor.md).
+    - question: | 
+        What are the supported data file formats?
+      answer: 
+        You can upload parquet or delimited text data files, including CSV files. For more information, see [Supported file formats](open-mirroring-landing-zone-format.md#data-file-and-format-in-the-landing-zone).
+  - name: Cost management
+    questions:
+    - question: |
+        What are the costs associated with Mirroring?
+      answer: 
+        See [Open mirroring cost considerations](open-mirroring.md#open-mirroring-cost-considerations).  
+
+additionalContent: |
+
+  ## Related content
+
+  - [Open mirroring landing zone requirements and format](open-mirroring-landing-zone-format.md)

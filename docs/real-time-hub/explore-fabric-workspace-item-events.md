@@ -5,23 +5,23 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 12/11/2025
 ---
 
-# Explore Fabric workspace item events in Fabric Real-Time hub (preview)
+# Explore Fabric workspace item events in Fabric Real-Time hub
 
-
-Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a data pipeline or sending an email notification using Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
+Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a pipeline or sending an email notification using Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+
+[!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
 
 ## View Fabric workspace item events detail page
 
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Fabric workspace item events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/workspace-events.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
 1. You should see the detail view for Fabric workspace item events.
 
     :::image type="content" source="./media/explore-fabric-workspace-item-events/detail-page.png" alt-text="Screenshot that shows the detail page for Fabric workspace item events." lightbox="./media/explore-fabric-workspace-item-events/detail-page.png":::
@@ -64,8 +64,7 @@ This section shows the artifacts using Fabric workspace item events. Here are th
 | Microsoft.Fabric.ItemUpdateFailed | This event is activated when an update operation on resource fails. For example, an event produced when a dataflow failed during the update. |
 | Microsoft.Fabric.ItemDeleteSucceeded | This event is activated when a delete operation on resource succeeds. For example, an event produced when a dataflow is deleted successfully. |
 | Microsoft.Fabric.ItemDeleteFailed | This event is activated when a delete operation on resource fails. For example, an event produced when a dataflow failed during deletion. |
-| Microsoft.Fabric.ItemReadSucceeded | This event is activated when a read operation on resource succeeds. For example, an event produced when an artifact is read successfully. |
-| Microsoft.Fabric.ItemReadFailed | This event is activated when a read operation on resource fails. For example, an event produced when an artifact failed during the read. |
+
 
 ### Schemas
 An event has the following top-level data:
@@ -95,6 +94,9 @@ The `data` object has the following properties:
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
 [!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
+
+## Subscribe permission
+For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
 
 ## Related content
 

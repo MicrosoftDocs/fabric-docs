@@ -1,33 +1,28 @@
 ---
-title: Better together - the lakehouse and warehouse
+title: Better Together - the Lakehouse and Warehouse
 description: Learn more about scenarios for the lakehouse and data warehousing workloads in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo
-ms.date: 12/19/2024
+ms.date: 06/26/2025
 ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2024
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md).
+This article explains the data warehousing workload with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing. For a decision guide on choosing to develop warehouse data, see [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
 
 ## What is a Lakehouse SQL analytics endpoint?
 
-In Fabric, when you create a warehouse, a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. 
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
-
-- The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every Lakehouse and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
+- The [!INCLUDE [fabric-se](includes/fabric-se.md)] exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
-- The [default Power BI semantic model](semantic-models.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
+- Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
 
-There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
+There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. A SQL analytics endpoint is automatically created for every lakehouse, database, or mirrored database. A SQL analytics endpoint acts as a lightweight data warehousing capability for their parent items, complimenting the warehouse's lakehouse architecture. This allows Spark or Fabric mirroring to control data in a folder structure in the lakehouse that the SQL analytics endpoint can view.
 
 > [!NOTE]
 > Behind the scenes, the [!INCLUDE [fabric-se](includes/fabric-se.md)] is using the same engine as the [Warehouse](data-warehousing.md#fabric-data-warehouse) to serve high performance, low latency SQL queries.
@@ -127,6 +122,8 @@ Use the following steps to enable cross-workspace data analytics:
 1. Switch to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and find the SQL table that has a name that matches the shortcut name. This SQL table references the folder in another workspace.
 1. Query the SQL table that references data in another workspace. The table can be used as any other table in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. You can join the tables that reference data in different workspaces.
 
+For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+
 > [!NOTE]
 > If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
 
@@ -138,13 +135,13 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 
 ## Related content
 
-- [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
-- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../get-started/decision-guide-lakehouse-warehouse.md)
-- [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
-- [Default Power BI semantic models](semantic-models.md)
-- [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)
-- [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
-- [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
-- [Connectivity](connectivity.md)
+- [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md)
+- [Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
+- [Bring your data to OneLake with Lakehouse](../onelake/create-lakehouse-onelake.md)
+- [Power BI semantic models in Microsoft Fabric](semantic-models.md)
+- [Options to get data into the Fabric Lakehouse](../data-engineering/load-data-lakehouse.md)
+- [How to copy data using copy activity](../data-factory/copy-data-activity.md)
+- [Move data from Azure SQL DB into Lakehouse via copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
+- [Connectivity to data warehousing in Microsoft Fabric](connectivity.md)
 - [[!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
-- [Query the Warehouse](query-warehouse.md)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

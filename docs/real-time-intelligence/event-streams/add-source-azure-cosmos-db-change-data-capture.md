@@ -6,7 +6,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -17,12 +16,7 @@ This article shows you how to add an Azure Cosmos DB (**Azure Cosmos DB for NoSQ
 
 The Azure Cosmos DB Change Data Capture (CDC) source connector for Microsoft Fabric event streams lets you capture a snapshot of the current data in an Azure Cosmos DB database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 [!INCLUDE [azure-cosmos-db-cdc-source-prerequisites-connection-details](./includes/azure-cosmos-db-cdc-source-prerequisites-connection-details.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
-
 
 ## Add Azure Cosmos DB (CDC) as a source
 

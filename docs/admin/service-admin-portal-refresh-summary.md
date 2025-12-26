@@ -1,13 +1,12 @@
 ---
 title: View refresh summary
 description: Learn how to view your capacity's refresh history and investigate refresh errors.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 
 ms.custom:
   - admin-portal
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration

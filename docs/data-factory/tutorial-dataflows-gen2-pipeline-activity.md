@@ -3,28 +3,26 @@ title: Use a dataflow in a pipeline
 description: This article describes how to use a dataflow in a pipeline.
 author: luitwieler
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 12/18/2024   
 ms.author: jeluitwi
+ms.custom:
+    - dataflows
+    - pipelines
 ---
 
 # Use a dataflow in a pipeline
 
-In this tutorial, you build a data pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
+In this tutorial, you build a pipeline to move OData from a Northwind source to a lakehouse destination and send an email notification when the pipeline is completed.
 
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:
 
-- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../get-started/create-workspaces.md) that isn't the default My Workspace.
+- Make sure you have a [[!INCLUDE [product-name](../includes/product-name.md)] enabled Workspace](../fundamentals/create-workspaces.md) that isn't the default My Workspace.
 
 ## Create a Lakehouse
 
 To start, you first need to create a lakehouse. A lakehouse is a data lake that is optimized for analytics. In this tutorial, you create a lakehouse that's used as a destination for the dataflow.
-
-1. Switch to the **Data Engineering** experience.
 
 1. Go to your Fabric enabled workspace.
 
@@ -32,7 +30,7 @@ To start, you first need to create a lakehouse. A lakehouse is a data lake that 
 
 1. Select **Lakehouse** in the create menu.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-lakehouse.png" alt-text="Screenshot of the create menu with Create Lakehouse emphasized.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-lakehouse.png" alt-text="Screenshot of the create menu with Create Lakehouse emphasized." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/create-lakehouse.png":::
 
 1. Enter a **Name** for the lakehouse.
 1. Select **Create**.
@@ -43,15 +41,13 @@ Now you've created a lakehouse and you can now set up the dataflow.
 
 A dataflow is a reusable data transformation that can be used in a pipeline. In this tutorial, you create a dataflow that gets data from an OData source and writes the data to a lakehouse destination.  
 
-1. Switch to the **Data Factory** experience.
-
 1. Go to your Fabric enabled workspace.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/go-to-workspace.png" alt-text="Screenshot of the Fabric enabled workspace.":::
 
 1. Select **Dataflow Gen2** in the create menu.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png" alt-text="Screenshot of the Dataflow Gen2 selection under the new menu." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/create-dataflow-gen2.png":::
 
 1. Ingest the data from the OData source.
 
@@ -98,17 +94,17 @@ To ingest the data to the lakehouse destination:
     > [!IMPORTANT]
     > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
 
-Now that you've ingested the data to the lakehouse destination, you can set up your data pipeline.
+Now that you've ingested the data to the lakehouse destination, you can set up your pipeline.
 
-## Create a data pipeline
+## Create a pipeline
 
-A data pipeline is a workflow that can be used to automate data processing. In this tutorial, you create a data pipeline that runs the Dataflow Gen2 that you created in the previous procedure.
+A pipeline is a workflow that can be used to automate data processing. In this tutorial, you create a pipeline that runs the Dataflow Gen2 that you created in the previous procedure.
 
-1. Navigate back to the workspace overview page and select **Data Pipelines** in the create menu.
+1. Navigate back to the workspace overview page and select **Pipelines** in the create menu.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-pipeline.png" alt-text="Screenshot of the Data Pipeline selection.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/create-pipeline.png" alt-text="Screenshot of the pipeline selection.":::
 
-1. Provide a **Name** for the data pipeline.
+1. Provide a **Name** for the pipeline.
 1. Select the **Dataflow** activity.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/dataflow-pipeline-activity.png" alt-text="Screenshot of the dataflow activity emphasized.":::
@@ -130,12 +126,12 @@ A data pipeline is a workflow that can be used to automate data processing. In t
 
        :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/settings-email-activity.png" alt-text="Screenshot showing the Office 365 Outlook activity settings." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/settings-email-activity.png":::
 
-## Run and schedule the data pipeline
+## Run and schedule the pipeline
 
-In this section, you run and schedule the data pipeline. This schedule allows you to run the data pipeline on a schedule.
+In this section, you run and schedule the pipeline. This schedule allows you to run the pipeline on a schedule.
 
 1. Go to your workspace.
-1. Open the dropdown menu of the data pipeline that you created in the previous procedure, and then select **Schedule**.
+1. Open the dropdown menu of the pipeline that you created in the previous procedure, and then select **Schedule**.
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/schedule-dropdown.png" alt-text="Screenshot of the pipeline menu with schedule emphasized.":::
 
@@ -143,7 +139,7 @@ In this section, you run and schedule the data pipeline. This schedule allows yo
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/setting-schedule.png" alt-text="Screenshot of scheduled run set to On." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/setting-schedule.png":::
 
-1. Provide the schedule you want to use to run the data pipeline.
+1. Provide the schedule you want to use to run the pipeline.
 
     1. Repeat, for example, every **Day** or every **Minute**.
     1. When selected Daily, you can also select the **Time**.
@@ -153,7 +149,7 @@ In this section, you run and schedule the data pipeline. This schedule allows yo
 
 1. Select **Apply** to apply the changes.
 
-You've now created a data pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the data pipeline by going to the **Monitor Hub**. You can also check the status of the data pipeline by going to **Data Pipeline** and selecting the **Run history** tab in the dropdown menu.
+You've now created a pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the pipeline by going to the **Monitor Hub**. You can also check the status of the pipeline by going to **Pipeline** and selecting the **Run history** tab in the dropdown menu.
 
 ## Related content
 
@@ -162,7 +158,7 @@ This sample shows you how to use a dataflow in a pipeline with Data Factory in M
 > [!div class="checklist"]
 > - Create a dataflow.
 > - Create a pipeline invoking your dataflow.
-> - Run and schedule your data pipeline.
+> - Run and schedule your pipeline.
 
 Next, advance to learn more about monitoring your pipeline runs.
 

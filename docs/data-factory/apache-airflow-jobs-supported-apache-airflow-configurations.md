@@ -5,8 +5,7 @@ author: nabhishek
 ms.author: abnarain
 ms.reviewer: abnarain
 ms.topic: conceptual
-ms.custom:
-  - build-2024
+ms.custom: airflows
 ms.date: 04/24/2024
 ---
 

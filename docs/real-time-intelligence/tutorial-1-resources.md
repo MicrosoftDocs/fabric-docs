@@ -1,38 +1,30 @@
 ---
 title: Real-Time Intelligence tutorial part 1- Set up Eventhouse
-description: Learn how to create a KQL database and enable data availability in Microsoft Fabric.
+description: Learn how to create a KQL database and enable data availability in Microsoft Fabric with this step-by-step tutorial. Start setting up Eventhouse today.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: tutorial
 ms.custom:
-  - build-2024
-  - ignite-2023
-  - ignite-2024
-ms.date: 12/02/2024
+ms.date: 10/21/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 # customer intent: I want to learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ---
-# Real-Time Intelligence tutorial part 1: Set up Eventhouse
+# Real-time intelligence tutorial part 1: Set up Eventhouse
 
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Intelligence tutorial](tutorial-introduction.md).
+> This tutorial is part of a series. For the previous section, see [Introduction to the real-time intelligence tutorial](tutorial-introduction.md).
 
-In this part of the tutorial, you set up the environment. Specifically, you create an [eventhouse](eventhouse.md), which automatically creates a child KQL database.
+In this part of the tutorial, you set up the environment. Specifically, you create an [eventhouse](eventhouse.md) that automatically creates a child KQL database.
 
 ## Create an eventhouse
 
-1. Browse to the workspace in which you want to create your tutorial resources. You must create all resources in the same workspace.
-1. Select **+ New item**.
-1. In the **Filter by item type** search box, enter **Eventhouse**.
-1. Select the Eventhouse item.
-1. Enter *Tutorial* as the eventhouse name. A KQL database is created simultaneously with the same name.
-1. Select **Create**. When provisioning is complete, the eventhouse **System overview** page is shown.
+[!INCLUDE [Real-Time Intelligence create-eventhouse](includes/create-eventhouse.md)]
 
 ## Related content
 
-For more information about tasks performed in this tutorial, see:
+For more information about tasks in this tutorial, see:
 
 * [Create a database](create-database.md)
 

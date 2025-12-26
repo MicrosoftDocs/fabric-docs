@@ -2,11 +2,11 @@
 title: Multivariate anomaly detection overview
 description: Learn about multivariate anomaly detection in Real-Time Intelligence.
 ms.reviewer: adieldar
-author: shsagir
-ms.author: shsagir
-ms.topic: conceptual
+author: spelluru
+ms.author: spelluru
+ms.topic: concept-article
+ms.subservice: rti-anomaly-detector
 ms.custom:
-  - ignite-2024
 ms.date: 11/19/2024
 ---
 

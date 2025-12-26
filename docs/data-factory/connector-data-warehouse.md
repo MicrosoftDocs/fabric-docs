@@ -1,15 +1,13 @@
 ---
 title: Set up your Data Warehouse connection
 description: This article provides information about how to create a Data Warehouse connection in Microsoft Fabric.
-author: DougKlopfenstein
-ms.author: dougklo
+author: whhender
+ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/19/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
+  - connectors
 ---
 
 # Set up your Data Warehouse connection
@@ -33,3 +31,24 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 - To connect to the Warehouse connector from Power Query, go to [Connect to a Warehouse from Power Query Online](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+
+## Set up your connection in a pipeline
+
+1. Go to Get Data page and navigate to OneLake catalog through the following ways:
+
+   - In copy assistant, go to **OneLake catalog** section.
+   - In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake catalog** section.
+
+1. Select an existing Data Warehouse.
+
+    :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-in-onelake.png" alt-text="Screenshot of selecting Data Warehouse in OneLake section.":::
+
+1. In **Connect to data source** pane, select an existing connection within your tenant or create a new one.
+
+    :::image type="content" source="media/connector-data-warehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
+
+1. Select **Connect** to connect to your Data Warehouse.
+
+> [!NOTE]
+> - To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
+> - If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).

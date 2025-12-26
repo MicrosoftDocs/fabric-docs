@@ -6,8 +6,6 @@ ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 09/27/2023
 #customer intent: As a user of OneLake, I want to learn how to integrate it with Azure Storage Explorer so that I can easily connect to, browse, manage, and download existing data.
 ---

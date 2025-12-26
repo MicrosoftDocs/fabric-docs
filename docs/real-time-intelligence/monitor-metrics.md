@@ -1,11 +1,10 @@
 ---
 title: Metrics
 description: View and analyze the metrics of ingestions, materialized views, and continuous exports of an Eventhouse KQL database within Real-Time Intelligence.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: reference
 ms.custom:
-  - ignite-2024
 ms.date: 11/06/2024
 ---
 
@@ -100,6 +99,6 @@ You can find sample queries in the [fabric-samples](https://github.com/microsoft
 
 ## Related content
 
-* [Enable monitoring in your workspace](../get-started/enable-workspace-monitoring.md)
+* [Enable monitoring in your workspace](../fundamentals/enable-workspace-monitoring.md)
 
 * [Eventhouse monitoring](monitor-eventhouse.md)

@@ -1,13 +1,11 @@
 ---
 title: Intelligent cache in Microsoft Fabric
 description: Learn about the intelligent cache feature in Fabric, including when to use it and how to enable and disable it in a session.
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
-ms.topic: conceptual
+ms.reviewer: arali
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

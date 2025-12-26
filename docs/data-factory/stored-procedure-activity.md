@@ -1,19 +1,26 @@
 ---
 title: How to use the Stored procedure activity
 description: Learn how to use Stored procedure activity to execute a SQL stored procedure with Microsoft Fabric.
-ms.reviewer: jonburchel
+ms.reviewer: whhender
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: pipelines
 ms.date: 12/18/2024
 ---
 
 # How to use Stored procedure activity
 
 In this article, you learn how to add a new Stored procedure activity to a pipeline, add a new connection, and configure the activity to run.
+
+You can use the Stored Procedure Activity to invoke a stored procedure in one of the following data stores:
+- [Fabric SQL database](/fabric/data-factory/connector-sql-database-overview)
+- [Fabric Data Warehouse](/fabric/data-factory/connector-data-warehouse-overview)
+- [Azure SQL Database](/fabric/data-factory/connector-azure-sql-database-overview)
+- [Azure SQL Managed Instance](/fabric/data-factory/connector-azure-sql-managed-instance-overview)
+- [Azure Synapse Analytics](/fabric/data-factory/connector-azure-synapse-analytics-overview)
+- [Amazon RDS](/fabric/data-factory/connector-amazon-rds-for-sql-server-overview)
+- [SQL Server Database](/fabric/data-factory/connector-sql-server-database-overview)
 
 ## Prerequisites
 
@@ -22,9 +29,9 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. Create an account for free.
 - A workspace is created.
 
-## Step 1: Add a new Stored procedure activity in Pipeline canvas
+## Step 1: Add a new Stored procedure activity in the pipeline canvas
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 1. Select the **Stored procedure** activity.
 
    :::image type="content" source="media/stored-procedure-activity/add-stored-procedure-activity.png" alt-text="Screenshot showing where to select the Stored procedure activity." lightbox="media/stored-procedure-activity/add-stored-procedure-activity.png":::

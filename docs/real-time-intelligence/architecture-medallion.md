@@ -1,8 +1,8 @@
 ---
 title: Implement medallion architecture in Real-Time Intelligence
 description: Understand the medallion architecture and learn how to implement it in Real-Time Intelligence for optimal data structuring and storage.
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.reviewer: bwatts
 ms.topic: concept-article
 ms.date: 12/12/2024
@@ -94,6 +94,6 @@ The medallion architecture in Real-Time Intelligence provides several benefits, 
 
 ## Related content
 
-- [Microsoft Fabric decision guide: choose a data store](../get-started/decision-guide-data-store.md)
+- [Microsoft Fabric decision guide: choose a data store](../fundamentals/decision-guide-data-store.md)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).

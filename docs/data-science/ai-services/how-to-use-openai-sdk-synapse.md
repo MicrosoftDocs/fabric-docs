@@ -1,36 +1,27 @@
----
+﻿---
 title: Use Azure OpenAI with Python SDK
-description: How to use prebuilt Azure openai in Fabric with Python library
-ms.author: larryfr
-author: Blackmist
+description: How to use prebuilt Azure OpenAI in Fabric with Python library
+ms.author: lagayhar
+author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/15/2023
-ms.search.form:
+ms.custom: 
+ms.date: 05/07/2025
+ms.update-cycle: 180-days
+ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
 ---
 # Use Azure OpenAI in Fabric with Python SDK and Synapse ML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) and using SynapseML.
+This article shows how to use Azure OpenAI in Fabric, with [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) and with SynapseML.
+
 
 ## Prerequisites
 
-# [Python SDK <1.0.0](#tab/python0)
-
-[OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it.
-
-
-``` Python
-%pip install openai==0.28.1
-```
-
-# [Python SDK >=1.0.0](#tab/python1)
+# [OpenAI Python SDK](#tab/python1)
 
 [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) isn't installed in default runtime, you need to first install it. 
 Change the environment to Runtime version 1.3 or higher.
@@ -51,81 +42,42 @@ from synapse.ml.services.openai import *
 
 ## Chat
 
-# [Python SDK <1.0.0](#tab/python0)
+# [OpenAI Python SDK](#tab/python1)
 
-ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the OpenAI libraries. GPT-4.1 and GPT-4.1-mini are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
 
-``` Python
-import openai
-
-response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Knock knock."},
-        {"role": "assistant", "content": "Who's there?"},
-        {"role": "user", "content": "Orange."},
-    ],
-    temperature=0,
-)
-
-print(f"{response.choices[0].message.role}: {response.choices[0].message.content}")
-```
-
-### Output
-
-``` json
-    assistant: Orange who?
-```
-We can also stream the response
-
-``` Python
-response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo-0125', # deployment_id could be one of {gpt-35-turbo-0125 or gpt-4-32k}
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Knock knock."},
-        {"role": "assistant", "content": "Who's there?"},
-        {"role": "user", "content": "Orange."},
-    ],
-    temperature=0,
-    stream=True
-)
-
-for chunk in response:
-    delta = chunk.choices[0].delta
-
-    if "role" in delta.keys():
-        print(delta.role + ": ", end="", flush=True)
-    if "content" in delta.keys():
-        print(delta.content, end="", flush=True)
-```
-
-### Output
-
-``` json 
-    assistant: Orange who?
-```
-
-# [Python SDK >=1.0.0](#tab/python1)
-
-ChatGPT and GPT-4 are language models optimized for conversational interfaces. The example presented here showcases simple chat completion operations and isn't intended to serve as a tutorial.
+> [!NOTE]
+> Different versions of the OpenAI Python SDK may have different method names and parameters. Please refer to the [official documentation](https://platform.openai.com/docs/api-reference?lang=python) for the version you are using.
 
 
 ```Python
 import openai
 
-response = openai.chat.completions.create(
-    model='gpt-4-32k', # model could be one of {gpt-35-turbo-16k, gpt-4 or gpt-4-32k}
+response = openai.ChatCompletion.create(
+    deployment_id="gpt-4.1",
     messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Knock knock."},
-        {"role": "assistant", "content": "Who's there?"},
-        {"role": "user", "content": "Orange."},
-    ],
-    temperature=0,
-)
+        
+{
+  "role": "user",
+  "content": """Analyze the following text and return a JSON array of issue insights.
 
+Each item must include:
+- issue_brief (1 sentence)
+- scenario
+- severity (high | medium | low)
+- verbatim_quotes (list)
+- recommended_fix
+
+Text:
+We booked the hotel room in advance for our family trip. The check-in the great however the room service was slow and pool was closed
+
+Return JSON only.
+"""
+}
+
+    ],
+
+)
 print(f"{response.choices[0].message.role}: {response.choices[0].message.content}")
 ```
 
@@ -133,17 +85,37 @@ print(f"{response.choices[0].message.role}: {response.choices[0].message.content
 ### Output
 
 ``` json
-    assistant: Orange who?
+
+assistant: [
+  {
+    "issue_brief": "Room service was slow during the stay.",
+    "scenario": "Guests experienced delays in receiving room service after check-in.",
+    "severity": "medium",
+    "verbatim_quotes": [
+      "the room service was slow"
+    ],
+    "recommended_fix": "Improve staffing or training for room service to ensure timely delivery of services."
+  },
+  {
+    "issue_brief": "The hotel pool was unavailable during the stay.",
+    "scenario": "Guests were unable to use the pool because it was closed.",
+    "severity": "medium",
+    "verbatim_quotes": [
+      "pool was closed"
+    ],
+    "recommended_fix": "Notify guests in advance about facility closures and provide alternative amenities or compensation if possible."
+  }
+]
 ```
 
 # [SynapseML](#tab/synapseml)
 
-ChatGPT and GPT-4 models are language models that are optimized for conversational interfaces.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the OpenAI libraries. GPT-4.1 and GPT-4.1-mini models are language models that are optimized for conversational interfaces.
 
 `deployment_name` could be one of:
 
--   `gpt-35-turbo-0125`
--   `gpt-4-32k`
+-   `gpt-4.1`
+-   `gpt-4.1-mini`
 
 ``` python
 from synapse.ml.services.openai import OpenAIChatCompletion
@@ -177,7 +149,7 @@ chat_df = spark.createDataFrame(
 
 chat_completion = (
     OpenAIChatCompletion()
-    .setDeploymentName("gpt-35-turbo-0125") # deploymentName could be one of {gpt-35-turbo-0125 or gpt-4-32k}
+    .setDeploymentName("gpt-4.1") # deploymentName could be one of {gpt-4.1 or gpt-4.1-mini}
     .setMessagesCol("messages")
     .setErrorCol("error")
     .setOutputCol("chat_completions")
@@ -194,52 +166,48 @@ display(
 
 ## Embeddings
 
-# [Python SDK <1.0.0](#tab/python0)
+# [OpenAI Python SDK](#tab/python1)
 
-An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
+Create a new cell in your Fabric notebook to use this code, separate from the cell described in the previous step to install the openai libraries. An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
 
 The example demonstrated here showcases how to obtain embeddings and isn't intended as a tutorial.
 
 ``` Python
-deployment_id = "text-embedding-ada-002" # set deployment_name as text-embedding-ada-002
-embeddings = openai.Embedding.create(deployment_id=deployment_id,
-                                     input="The food was delicious and the waiter...")
-                                
-print(embeddings)
+response = openai.embeddings.create(
+         input="The food was delicious and the waiter...",
+         model="text-embedding-ada-002"  # Or another embedding model
+     )
+
+print(response)
 ```
 
 ### Output
 
 ```
-    {
-      "object": "list",
-      "data": [
-        {
-          "object": "embedding",
-          "index": 0,
-          "embedding": [
-            0.002306425478309393,
-            -0.009327292442321777,
-            0.015797346830368042,
-            ...
-            0.014552861452102661,
-            0.010463837534189224,
-            -0.015327490866184235,
-            -0.01937841810286045,
-            -0.0028842221945524216
-          ]
-        }
-      ],
-      "model": "ada",
-      "usage": {
-        "prompt_tokens": 8,
-        "total_tokens": 8
-      }
-    }
+    CreateEmbeddingResponse(
+        data=[
+            Embedding(
+                embedding=[
+                    0.0022756962571293116,
+                    -0.009305915795266628,
+                    0.01574261300265789,
+                    ...
+                    -0.015387134626507759,
+                    -0.019424352794885635,
+                    -0.0028009789530187845
+                ],
+                index=0,
+                object='embedding'
+        )
+        ],
+        model='text-embedding-ada-002',
+        object='list',
+        usage=Usage(
+            prompt_tokens=8,
+            total_tokens=8
+        )
+    )
 ```
-# [Python SDK >=1.0.0](#tab/python1)
-
-openai.Embedding is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
 
 # [SynapseML](#tab/synapseml)
 

@@ -6,7 +6,6 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -17,17 +16,12 @@ This article shows you how to add an Azure SQL Managed Instance Change Data Capt
 
 The Azure SQL Managed Instance CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
-
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL Managed Instance database. 
 - Your Azure SQL Managed Instance must enable public endpoint and not be behind a firewall or secured in a virtual network. 
 - CDC enabled in your Azure SQL Managed Instance by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
-
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 
 ## Enable public endpoint in your Azure SQL managed instance 

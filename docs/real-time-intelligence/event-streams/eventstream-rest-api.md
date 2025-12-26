@@ -6,8 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 12/16/2024
+ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
 
@@ -47,7 +46,7 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 
 **Option 1: Get token using MSAL.NET**
 
-If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
+If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
 **Option 2: Get token using the Fabric Portal**
 
@@ -59,6 +58,9 @@ powerBIAccessToken
 
 Copy the token and paste it into your application.
 
+> [!NOTE] 
+> If the eventstream you create includes any sources that use a cloud connection, make sure the identity you use to get the token has [permission to access that cloud connection](../../data-factory/data-source-management.md#add-users-to-a-data-source), whether it is a service principal or a user.
+
 ### Step 2: Prepare for an Eventstream body in JSON
 
 Create a JSON payload that will be converted to base64 in the API request. The Eventstream item definition follows a graph-like structure and consists of the following components:
@@ -66,11 +68,64 @@ Create a JSON payload that will be converted to base64 in the API request. The E
 | **Field** | **Description** |
 | --------  | ---------------- |
 | [Sources](#sources) | Data sources that can be ingested into Eventstream for processing. Supported data sources include Azure streaming sources, third-party streaming sources, database CDC (change data capture), Azure Blob Storage events, and Fabric system events. |
-| [Destinations](#destinations) | Endpoints within Fabric where processed data can be routed to, including Lakehouse, Eventhouse, Reflex, and others. |
+| [Destinations](#destinations) | Endpoints within Fabric where processed data can be routed to, including Lakehouse, Eventhouse, Activator, and others. |
 | [Operators](#operators) | Event processors that handle real-time data streams, such as Filter, Aggregate, Group By, and Join. |
 | [Streams](#streams) | Data streams available for subscription and analysis in the Real-time Hub. There are two types of streams: default streams and derived streams. |
 
 Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-streams/blob/main/API%20Templates/eventstream-definition.json) to help define your Eventstream body.
+
+You can refer to [this Swagger document](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions) for details on each API property, and it also guides you in defining an Eventstream API payload.
+
+#### Eventhouse Direct Ingestion Mode
+
+When using **Eventhouse direct ingestion mode** as a destination in your Eventstream API payload, follow these guidelines:
+
+**1. Specify Required Properties**
+
+Ensure the following properties are correctly set in your JSON body:
+
+- **`connectionName`** – The name of the Eventhouse connection.
+- **`mappingRuleName`** – The ingestion mapping rule for the target table.
+
+To find the correct `connectionName`:
+1. Navigate to your **Eventhouse KQL database** in Fabric.
+2. Select **Data streams**.
+3. Copy the desired `connectionName`.
+
+For `mappingRuleName`, you can find detailed instructions on creating ingestion mappings on [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+
+**2. Configure Service Principal Permissions**
+
+If you authenticate using a **service principal**, it must have:
+- **Database viewer** permissions.
+- **Table ingestor** permissions.
+
+You can grant these permissions in two ways:
+
+  ##### [Using Eventhouse UI](#tab/using-eventhouse-ui)
+
+  Grant these permissions using the following KQL commands in the UI:
+
+  ```kql
+  .add database ['yourDatabase'] viewers (@'aadapp=<clientid>;<tenantid>')
+  .add table yourTable ingestors (@'aadapp=<id>;<directoryid>')
+  ```
+  Replace `clientid` and `tenantid` with your service principal values.
+
+  These commands will grant the service principal the necessary data-plane permissions, allowing Eventhouse to create the connection and pull data from Eventstream. For more information, see [Security roles overview](https://kusto.azurewebsites.net/docs/kusto/management/security-roles.html#security-roles-overview)
+
+  :::image type="content" source="media/eventstream-rest-api/grant-permission-via-ui.png" alt-text="A screenshot of granting Database and Table permission via Kusto UI." lightbox="media/eventstream-rest-api/grant-permission-via-ui.png":::
+
+  ##### [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
+
+  If you prefer to manage permissions by calling the REST API, you can run the same Kusto commands by using the REST API.  
+  Refer to the following documentation for details:
+
+  - [Kusto REST API overview](/kusto/api/rest)
+  - [Manage database security roles](/kusto/management/manage-database-security-roles)
+  - [Manage table security roles](/kusto/management/manage-table-security-roles) 
+
+  ---
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 
@@ -179,7 +234,7 @@ For more details about defining an Eventstream item, check out [Eventstream item
       }
     }
   ],
-  "compatibilityLevel": "1.0"
+  "compatibilityLevel": "1.1"
 }
 ```
 
@@ -201,7 +256,7 @@ Here’s an example of a payload with the Base64-encoded string:
   "parts": [
    {
     "path": "eventstream.json",
-    "payload": "ewogICJzb3VyY2VzIjogWwogICAgewogICAgICAibmFtZSI6ICJTcWxTZXJ2ZXJPblZtRGJDZGMiLAogICAgICAidHlwZSI6ICJTUUxTZXJ2ZXJPblZNREJDREMiLAogICAgICAicHJvcGVydGllcyI6CiAgICAgIHsKICAgICAgICAiZGF0YUNvbm5lY3Rpb25JZCI6ICJhYWFhYWFhYS0wMDAwLTExMTEtMjIyMi1iYmJiYmJiYmJiYmIiLAogICAgICAgICJ0YWJsZU5hbWUiOiAiIgogICAgICB9CiAgICB9CiAgXSwKICAiZGVzdGluYXRpb25zIjogWwogICAgewogICAgICAibmFtZSI6ICJMYWtlaG91c2UiLAogICAgICAidHlwZSI6ICJMYWtlaG91c2UiLAogICAgICAicHJvcGVydGllcyI6CiAgICAgIHsKICAgICAgICAid29ya3NwYWNlSWQiOiAiYmJiYjExMTEtY2MyMi0zMzMzLTQ0ZGQtNTU1NTU1ZWVlZWVlIiwKICAgICAgICAiaXRlbUlkIjogImNjY2MyMjIyLWRkMzMtNDQ0NC01NWVlLTY2NjY2NmZmZmZmZiIsCiAgICAgICAgInNjaGVtYSI6ICIiLAogICAgICAgICJkZWx0YVRhYmxlIjogIm5ld1RhYmxlIiwKICAgICAgICAibWluaW11bVJvd3MiOiAxMDAwMDAsCiAgICAgICAgIm1heGltdW1EdXJhdGlvbkluU2Vjb25kcyI6IDEyMCwKICAgICAgICAiaW5wdXRTZXJpYWxpemF0aW9uIjoKICAgICAgICB7CiAgICAgICAgICAidHlwZSI6ICJKc29uIiwKICAgICAgICAgICJwcm9wZXJ0aWVzIjoKICAgICAgICAgIHsKICAgICAgICAgICAgImVuY29kaW5nIjogIlVURjgiCiAgICAgICAgICB9CiAgICAgICAgfQogICAgICB9LAogICAgICAiaW5wdXROb2RlcyI6IFt7Im5hbWUiOiAiZGVyaXZlZFN0cmVhbSJ9XQogICAgfQogIF0sCiAgInN0cmVhbXMiOiBbCiAgICB7CiAgICAgICJuYW1lIjogIm15RXZlbnRzdHJlYW0tc3RyZWFtIiwKICAgICAgInR5cGUiOiAiRGVmYXVsdFN0cmVhbSIsCiAgICAgICJwcm9wZXJ0aWVzIjoKICAgICAge30sCiAgICAgICJpbnB1dE5vZGVzIjogW3sibmFtZSI6ICJTcWxTZXJ2ZXJPblZtRGJDZGMifV0KICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogImRlcml2ZWRTdHJlYW0iLAogICAgICAidHlwZSI6ICJEZXJpdmVkU3RyZWFtIiwKICAgICAgInByb3BlcnRpZXMiOgogICAgICB7CiAgICAgICAgImlucHV0U2VyaWFsaXphdGlvbiI6CiAgICAgICAgewogICAgICAgICAgInR5cGUiOiAiSnNvbiIsCiAgICAgICAgICAicHJvcGVydGllcyI6CiAgICAgICAgICB7CiAgICAgICAgICAgICJlbmNvZGluZyI6ICJVVEY4IgogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfSwKICAgICAgImlucHV0Tm9kZXMiOiBbeyJuYW1lIjogIkdyb3VwQnkifV0KICAgIH0KICBdLAogICJvcGVyYXRvcnMiOiBbCiAgICB7CiAgICAgICJuYW1lIjogIkdyb3VwQnkiLAogICAgICAidHlwZSI6ICJHcm91cEJ5IiwKICAgICAgImlucHV0Tm9kZXMiOiBbeyJuYW1lIjogIm15RXZlbnRzdHJlYW0tc3RyZWFtIn1dLAogICAgICAicHJvcGVydGllcyI6CiAgICAgIHsKICAgICAgICAiYWdncmVnYXRpb25zIjogWwogICAgICAgICAgewogICAgICAgICAgICAiYWdncmVnYXRlRnVuY3Rpb24iOiAiQXZlcmFnZSIsCiAgICAgICAgICAgICJjb2x1bW4iOgogICAgICAgICAgICB7CiAgICAgICAgICAgICAgImV4cHJlc3Npb25UeXBlIjogIkNvbHVtblJlZmVyZW5jZSIsCiAgICAgICAgICAgICAgIm5vZGUiOiBudWxsLAogICAgICAgICAgICAgICJjb2x1bW5OYW1lIjogInBheWxvYWQiLAogICAgICAgICAgICAgICJjb2x1bW5QYXRoU2VnbWVudHMiOiBbeyJmaWVsZCI6ICJ0c19tcyJ9XQogICAgICAgICAgICB9LAogICAgICAgICAgICAiYWxpYXMiOiAiQVZHX3RzX21zIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImdyb3VwQnkiOiBbXSwKICAgICAgICAid2luZG93IjoKICAgICAgICB7CiAgICAgICAgICAidHlwZSI6ICJUdW1ibGluZyIsCiAgICAgICAgICAicHJvcGVydGllcyI6CiAgICAgICAgICB7CiAgICAgICAgICAgICJkdXJhdGlvbiI6CiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAidmFsdWUiOiA1LAogICAgICAgICAgICAgICJ1bml0IjogIk1pbnV0ZSIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgIm9mZnNldCI6CiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAidmFsdWUiOiAxLAogICAgICAgICAgICAgICJ1bml0IjogIk1pbnV0ZSIKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfQogICAgfQogIF0sCiAgImNvbXBhdGliaWxpdHlMZXZlbCI6ICIxLjAiCn0",
+    "payload": "ewogICJzb3VyY2VzIjogWwogICAgewogICAgICAibmFtZSI6ICJTcWxTZXJ2ZXJPblZtRGJDZGMiLAogICAgICAidHlwZSI6ICJTUUxTZXJ2ZXJPblZNREJDREMiLAogICAgICAicHJvcGVydGllcyI6CiAgICAgIHsKICAgICAgICAiZGF0YUNvbm5lY3Rpb25JZCI6ICJhYWFhYWFhYS0wMDAwLTExMTEtMjIyMi1iYmJiYmJiYmJiYmIiLAogICAgICAgICJ0YWJsZU5hbWUiOiAiIgogICAgICB9CiAgICB9CiAgXSwKICAiZGVzdGluYXRpb25zIjogWwogICAgewogICAgICAibmFtZSI6ICJMYWtlaG91c2UiLAogICAgICAidHlwZSI6ICJMYWtlaG91c2UiLAogICAgICAicHJvcGVydGllcyI6CiAgICAgIHsKICAgICAgICAid29ya3NwYWNlSWQiOiAiYmJiYjExMTEtY2MyMi0zMzMzLTQ0ZGQtNTU1NTU1ZWVlZWVlIiwKICAgICAgICAiaXRlbUlkIjogImNjY2MyMjIyLWRkMzMtNDQ0NC01NWVlLTY2NjY2NmZmZmZmZiIsCiAgICAgICAgInNjaGVtYSI6ICIiLAogICAgICAgICJkZWx0YVRhYmxlIjogIm5ld1RhYmxlIiwKICAgICAgICAibWluaW11bVJvd3MiOiAxMDAwMDAsCiAgICAgICAgIm1heGltdW1EdXJhdGlvbkluU2Vjb25kcyI6IDEyMCwKICAgICAgICAiaW5wdXRTZXJpYWxpemF0aW9uIjoKICAgICAgICB7CiAgICAgICAgICAidHlwZSI6ICJKc29uIiwKICAgICAgICAgICJwcm9wZXJ0aWVzIjoKICAgICAgICAgIHsKICAgICAgICAgICAgImVuY29kaW5nIjogIlVURjgiCiAgICAgICAgICB9CiAgICAgICAgfQogICAgICB9LAogICAgICAiaW5wdXROb2RlcyI6IFt7Im5hbWUiOiAiZGVyaXZlZFN0cmVhbSJ9XQogICAgfQogIF0sCiAgInN0cmVhbXMiOiBbCiAgICB7CiAgICAgICJuYW1lIjogIm15RXZlbnRzdHJlYW0tc3RyZWFtIiwKICAgICAgInR5cGUiOiAiRGVmYXVsdFN0cmVhbSIsCiAgICAgICJwcm9wZXJ0aWVzIjoKICAgICAge30sCiAgICAgICJpbnB1dE5vZGVzIjogW3sibmFtZSI6ICJTcWxTZXJ2ZXJPblZtRGJDZGMifV0KICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogImRlcml2ZWRTdHJlYW0iLAogICAgICAidHlwZSI6ICJEZXJpdmVkU3RyZWFtIiwKICAgICAgInByb3BlcnRpZXMiOgogICAgICB7CiAgICAgICAgImlucHV0U2VyaWFsaXphdGlvbiI6CiAgICAgICAgewogICAgICAgICAgInR5cGUiOiAiSnNvbiIsCiAgICAgICAgICAicHJvcGVydGllcyI6CiAgICAgICAgICB7CiAgICAgICAgICAgICJlbmNvZGluZyI6ICJVVEY4IgogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfSwKICAgICAgImlucHV0Tm9kZXMiOiBbeyJuYW1lIjogIkdyb3VwQnkifV0KICAgIH0KICBdLAogICJvcGVyYXRvcnMiOiBbCiAgICB7CiAgICAgICJuYW1lIjogIkdyb3VwQnkiLAogICAgICAidHlwZSI6ICJHcm91cEJ5IiwKICAgICAgImlucHV0Tm9kZXMiOiBbeyJuYW1lIjogIm15RXZlbnRzdHJlYW0tc3RyZWFtIn1dLAogICAgICAicHJvcGVydGllcyI6CiAgICAgIHsKICAgICAgICAiYWdncmVnYXRpb25zIjogWwogICAgICAgICAgewogICAgICAgICAgICAiYWdncmVnYXRlRnVuY3Rpb24iOiAiQXZlcmFnZSIsCiAgICAgICAgICAgICJjb2x1bW4iOgogICAgICAgICAgICB7CiAgICAgICAgICAgICAgImV4cHJlc3Npb25UeXBlIjogIkNvbHVtblJlZmVyZW5jZSIsCiAgICAgICAgICAgICAgIm5vZGUiOiBudWxsLAogICAgICAgICAgICAgICJjb2x1bW5OYW1lIjogInBheWxvYWQiLAogICAgICAgICAgICAgICJjb2x1bW5QYXRoU2VnbWVudHMiOiBbeyJmaWVsZCI6ICJ0c19tcyJ9XQogICAgICAgICAgICB9LAogICAgICAgICAgICAiYWxpYXMiOiAiQVZHX3RzX21zIgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImdyb3VwQnkiOiBbXSwKICAgICAgICAid2luZG93IjoKICAgICAgICB7CiAgICAgICAgICAidHlwZSI6ICJUdW1ibGluZyIsCiAgICAgICAgICAicHJvcGVydGllcyI6CiAgICAgICAgICB7CiAgICAgICAgICAgICJkdXJhdGlvbiI6CiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAidmFsdWUiOiA1LAogICAgICAgICAgICAgICJ1bml0IjogIk1pbnV0ZSIKICAgICAgICAgICAgfSwKICAgICAgICAgICAgIm9mZnNldCI6CiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAidmFsdWUiOiAxLAogICAgICAgICAgICAgICJ1bml0IjogIk1pbnV0ZSIKICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH0KICAgICAgfQogICAgfQogIF0sCiAgImNvbXBhdGliaWxpdHlMZXZlbCI6ICIxLjEiCn0=",
     "payloadType": "InlineBase64"
    },
    {
@@ -241,7 +296,7 @@ To define an Eventstream source in the API body, make sure each field and proper
 |-----------|----------|------------------|------------------|-------------------------|
 | `id`      | String (UUID)  | The unique identifier of the source, generated by the system.   | Optional in **CREATE**, required in **UPDATE** | UUID format    |
 | `name`       | String         | A unique name for the source, used to identify it within Eventstream.  | Required  | Any valid string  |
-| `type`       | String (enum)  | Specifies the type of source. Must match one of the predefined values.    | Required   | `AmazonKinesis`, `AmazonMSKKafka`, `ApacheKafka`, `AzureCosmosDBCDC`, `AzureEventHub`, `AzureIoTHub`, `AzureSQLDBCDC`, `AzureSQLMIDBCDC`, `ConfluentCloud`, `CustomEndpoint`, `GooglePubSub`, `MySQLCDC`, `PostgreSQLCDC`, `SampleData`, `FabricWorkspaceItemEvents`, `FabricJobEvents`, `FabricOneLakeEvents` |
+| `type` | String (enum) | Specifies the type of source. Must match one of the predefined values. | Required | `AmazonKinesis`, `AmazonMSKKafka`, `ApacheKafka`, `AzureCosmosDBCDC`,`AzureBlobStorageEvents`, `AzureEventHub`, `AzureIoTHub`, `AzureSQLDBCDC`, `AzureSQLMIDBCDC`, `ConfluentCloud`, `CustomEndpoint`, `FabricCapacityUtilizationEvents`, `GooglePubSub`, `MySQLCDC`, `PostgreSQLCDC`, `SampleData`, `FabricWorkspaceItemEvents`, `FabricJobEvents`, `FabricOneLakeEvents` |
 | `properties` | Object         | Other settings specific to the selected source type. | Required                            | Example for `AzureEventHub` type: `dataConnectionId`,`consumerGroupName`,`inputSerialization`   |
 
 ---
@@ -281,9 +336,11 @@ To define an Eventstream destination in the API body, make sure each field and p
 |-----------|----------|------------------|------------------|-------------------------|
 | `id`      | String (UUID)  | The unique identifier of the destination, generated by the system.   | Optional in **CREATE**, required in **UPDATE** | UUID format    |
 | `name`       | String         | A unique name for the destination, used to identify it within Eventstream.  | Required  | Any valid string  |
-| `type`       | String (enum)  | Specifies the type of destination. Must match one of the predefined values.    | Required   | `"CustomEndpoint"`, `"Eventhouse"`, `"Lakehouse"` |
+| `type` | String (enum) | Specifies the type of destination. Must match one of the predefined values. | Required | `"Activator"`, `"CustomEndpoint"`, `"Eventhouse"`, `"Lakehouse"` |
 | `properties` | Object         | Other settings specific to the selected destination type. | Required    | Example for `Eventhouse` type: `"dataIngestionMode"`, `"workspaceId"`, `"itemId"`, `"databaseName"`  |
 | `inputNodes` | Array         | A reference to the input nodes for the destination, such as your Eventstream name or an operator name. | Required     | Example: `eventstream-1`   |
+
+Again, if you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
 
 ---
 

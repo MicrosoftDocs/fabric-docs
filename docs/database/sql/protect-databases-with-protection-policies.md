@@ -6,6 +6,7 @@ ms.author: jaszymas
 ms.reviewer: wiassaf
 ms.date: 11/20/2024
 ms.topic: conceptual
+ms.custom: sfi-image-nochange
 ---
 # Protect sensitive data in SQL database with Microsoft Purview protection policies
 
@@ -78,6 +79,6 @@ The **Allow users to retain read access** access control in the policy allows th
 
 - [Use Microsoft Purview to govern Microsoft Fabric](../../governance/microsoft-purview-fabric.md)
 - [Information protection in Microsoft Fabric](../../governance/information-protection.md)
-- [Protection policies in Microsoft Fabric (preview)](../../governance/protection-policies-overview.md)
-- [Create and manage protection policies for Fabric (preview)](../../governance/protection-policies-create.md)
+- [Protection policies in Microsoft Fabric](../../governance/protection-policies-overview.md)
+- [Create and manage protection policies for Fabric](../../governance/protection-policies-create.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)

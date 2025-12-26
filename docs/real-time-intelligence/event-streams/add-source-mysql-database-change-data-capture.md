@@ -5,8 +5,7 @@ ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -25,8 +24,6 @@ This article shows you how to add a MySQL Change Data Capture source to an event
 This guide uses **Azure Database for MySQL CDC** as an example.
 
 Once the MySQL Database CDC source is added to the eventstream, it captures row-level changes to the specified tables. These changes can then be processed in real-time and sent to different destinations for further analysis.
-
-[!INCLUDE [new-sources-regions-unsupported](./includes/new-sources-regions-unsupported.md)]
 
 ## Prerequisites
 
@@ -97,8 +94,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to MySQL DB (CDC) 
 
 [!INCLUDE [mysql-database-cdc-connector](./includes/mysql-database-cdc-source-connector.md)]
-
-[!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 
 ## View updated eventstream
 1. You see the MySQL DB (CDC) source added to your eventstream in **Edit mode**.

@@ -4,30 +4,24 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 01/23/2024
+ms.date: 12/04/2025
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Amazon S3 Compatible connector overview
 
 This Amazon S3 Compatible connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Amazon S3 Compatible connectors in Dataflow Gen2.
+| Supported capabilities| Gateway | Authentication|
+|---------| --------| --------|
+| **Pipeline**<br>- [Copy activity](connector-amazon-s3-compatible-copy-activity.md) (source/destination) <br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  |None<br> On-premises<br> Virtual network |Access Key |
+| **Copy job** (source/-) <br>- Full load<br>- Incremental load |None<br> On-premises<br> Virtual network |Access Key |
 
-## Support in Data pipeline
+## Related content
 
-The Amazon S3 Compatible connector supports the following capabilities in Data pipeline:
+To learn more about the copy activity configuration for Amazon S3 Compatible in pipelines, go to [Configure in a pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).
 
-| Supported capabilities | Gateway | Authentication |
-| --- | --- | ---|
-| **Copy activity (source/destination)** | None <br> On-premises | Access Key |
-| **Lookup activity** | None <br> On-premises | Access Key |
-| **GetMetadata activity** | None <br> On-premises | Access Key |
-| **Delete activity** | None <br> On-premises | Access Key |
-
-To learn more about the copy activity configuration for Amazon S3 Compatible in Data pipeline, go to [Configure in a data pipeline copy activity](connector-amazon-s3-compatible-copy-activity.md).

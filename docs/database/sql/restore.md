@@ -3,11 +3,11 @@ title: "Restore a database from a backup"
 description: Learn how to restore a database from a backup to a point-in-time in SQL database in Microsoft Fabric
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: strrodic
-ms.date: 11/07/2024
+ms.reviewer: strrodic, dinethi
+ms.date: 07/12/2025
 ms.topic: how-to
-ms.custom:
-  - ignite-2024
+ms.search.form: Backup and Restore
+ms.custom: sfi-image-nochange
 ---
 # Restore from a backup in SQL database in Microsoft Fabric
 
@@ -15,13 +15,9 @@ ms.custom:
 
 This article provides steps to restore any database from a backup in SQL database in Microsoft Fabric.
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Point-in-time restore
 
 [Automated database backups](backup.md) help protect your databases from user and application errors, accidental database deletion, and prolonged outages. This is a built-in capability that SQL database in Fabric provides to protect your data from unwanted modifications. Point-in-time restore (PITR) is a capability to recover database into a specific point in time within the retention period. With a database restore, you create a new SQL database in the same Workspace, from backups.
-
-In the current preview, there's no cost or consumption of CPU resources associated with restoring a database.
 
 ### Restore time
 
@@ -34,6 +30,12 @@ Several factors affect the time to restore a database through automated database
 
 For a large or very active database, the restore might take several hours. When there are many concurrent restore requests in the targeted region, the recovery time for individual databases can increase.
 
+### Cost
+
+Currently, there's no cost or consumption of CPU resources associated with restoring a database.
+
+Initiating a point-in-time restore can bring the database from a paused state to online state and could incur consumption units.
+
 ### Permissions
 
 To restore a database using a point-in-time restore capability, you must have one of the following roles on your Fabric Workspace:
@@ -42,14 +44,14 @@ To restore a database using a point-in-time restore capability, you must have on
 - Contributor
 - Member
 
-For more information, see [Microsoft Fabric roles](../../get-started/roles-workspaces.md).
+For more information, see [Microsoft Fabric roles](../../fundamentals/roles-workspaces.md).
 
 ### How to restore a SQL database in Microsoft Fabric
 
 You can restore any database to an earlier point in time within its retention period. By performing this operation, you're actually creating a new SQL database in Fabric. When the restore is complete, Fabric creates a new database in the same workspace as the original database.
 
 > [!NOTE]
-> You cannot overwrite an existing database with a restore.
+> You can't overwrite an existing database with a restore.
 
 The core use case of point-in-time restore is to recover from human accident by restoring a SQL database to an earlier point in time. You can treat the restored database as a replacement for the original database, or use it as a data source to update the original database.
 
@@ -58,18 +60,12 @@ The core use case of point-in-time restore is to recover from human accident by 
    :::image type="content" source="media/restore/restore-database.png" alt-text="Screenshot from the Fabric portal of the items in a workspace. The context menu for a database is expanded and the Restore database dialogue option is highlighted." lightbox="media/restore/restore-database.png":::
 
 1. The **Restore database** popup opens. Provide a name of a new database that will be created from the backups of the source/original database. 
-1. Choose a point-in-time. You can see the earliest restore point available, the latest restore point, or any point in time between.
-
-   > [!NOTE]
-   > Times are listed in your local time zone, not in UTC. The time dropdown list is also editable – you can select time by your choice.
+1. Choose a point-in-time. You can see the earliest restore point available, the latest restore point, or any point in time between. Times are listed in your local time zone, not in UTC. The time dropdown list is also editable – you can select time by your choice.
 
 1. Select **Create**.
-1. The database restore progress starts in the background. Notifications appear in top right corner, and you'll also be able to see the notification about database restore being in progress in the notification center.
+1. The database restore progress starts in the background. You'll also be able to see notifications about database restore being in progress in the notification center. When the restore operation is finished, you can open the new database.
 
    :::image type="content" source="media/restore/restore-database-notifications-progress.png" alt-text="Screenshot of the Notifications tab of the Fabric portal, showing database restore progress.":::
-
-   > [!NOTE]
-   > You cannot open the new database until the restore operation is finished.
 
 ## View SQL database restore points in Microsoft Fabric
 
@@ -84,12 +80,12 @@ You can restore a database into any point in time between these two restore poin
 
 ## Limitations
 
-Current limitations in restore for SQL database:
+Current limitations when restoring a SQL database in Microsoft Fabric:
 
 - Retention of backups is seven days for a live database.
-- Restoring backups from dropped databases is not currently possible after the retention period of seven days.
-- Cross-workspace restore is not supported.
-- Cross-region restore is not supported.
+- Restoring backups from dropped databases isn't currently possible after the retention period of seven days.
+- Cross-workspace restore isn't supported.
+- Cross-region restore isn't supported.
 - If you delete the database during the restore, the restore operation is canceled. You can't recover the data from deleted database.
 
 ## Related content

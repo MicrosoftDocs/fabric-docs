@@ -5,8 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-  - ignite-2024
-ms.date: 11/18/2024
+ms.date: 07/16/2025
 ---
 
 # Get events from sample data sources into Real-Time hub
@@ -18,6 +17,8 @@ This article describes how to get events from sample data sources into Real-Time
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+
+## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 

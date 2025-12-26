@@ -9,10 +9,9 @@ metadata:
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: governance
   ms.custom:
-    - ignite-2024
   ms.topic: landing-page # Required
-  author: paulinbar
-  ms.author: painbar
+  author: msmimart
+  ms.author: mimart
   ms.date: 02/11/2024
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -30,7 +29,7 @@ landingContent:
       - linkListType: how-to-guide
         links:             
           - text: Manage access
-            url:  ../get-started/roles-workspaces.md
+            url:  ../fundamentals/roles-workspaces.md
           - text: Audit
             url:  ../admin/track-user-activities.md  
       - linkListType: deploy
@@ -72,7 +71,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Discover
-            url: ../get-started/onelake-data-hub.md
+            url: ../governance/onelake-catalog-overview.md
           - text: Track lineage 
             url:  lineage.md   
           - text: Analyze impact 

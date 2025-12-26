@@ -1,11 +1,10 @@
 ---
 title: Configure Power BI Premium capacity notifications
 description: Learn how you can configure email notifications for your Power BI Premium capacities in the admin portal.
-author: KesemSharabi
-ms.author: kesharab
+author: msmimart
+ms.author: mimart
 ms.reviewer: ''
 ms.custom:
-  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Premium

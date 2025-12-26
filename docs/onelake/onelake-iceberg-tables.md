@@ -1,23 +1,65 @@
 ---
-title: Create shortcuts to Iceberg tables
-description: Learn how to create table shortcuts that point to Iceberg tables in storage. Learn how OneLake automatically and virtually converts Iceberg tables to the Delta Lake format for use across all Fabric workloads.
+title: Use Iceberg tables with OneLake
+description: Discover how to leverage table format virtualization in OneLake to seamlessly read Delta Lake tables as Iceberg or create shortcuts to Iceberg tables in storage. Explore how OneLake automatically virtualizes Iceberg tables into the Delta Lake format for use across Fabric workloads, and Delta Lake tables into the Iceberg format for compatibility with Iceberg readers.
 ms.reviewer: mahi
 ms.author: mahi
 author: matt1883
 ms.topic: how-to
-ms.date: 11/13/2024
-#customer intent: As a OneLake user, I want to learn how to create a table shortcut to an Iceberg table to consume that table across Fabric workloads.
+ms.date: 7/1/2025
+#customer intent: As a OneLake user, I want to learn how to use table format virtualization to read Iceberg tables across Fabric workloads, or read Fabric (Delta Lake) tables using Apache Iceberg readers.
 ---
 
 # Use Iceberg tables with OneLake
 
-In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables, enabling their use across the wide variety of Fabric workloads. This functionality is made possible through a feature called **metadata virtualization**, which allows Iceberg tables to be interpreted as Delta Lake tables from the shortcut's perspective. When you create a shortcut to an Iceberg table folder, OneLake automatically generates the corresponding Delta Lake metadata (the Delta log) for that table, making the Delta Lake metadata accessible through the shortcut.
+In Microsoft OneLake, you can seamlessly work with tables in both Delta Lake and Apache Iceberg formats. 
+
+This flexibility is enabled through **metadata virtualization**, a feature that allows Iceberg tables to be interpreted as Delta Lake tables, and vice versa. You can directly write Iceberg tables or create shortcuts to them, making these tables accessible across various Fabric workloads. Similarly, Fabric tables written in the Delta Lake format can be read using Iceberg readers.
+
+When you write or create a shortcut to an Iceberg table folder, OneLake automatically generates virtual Delta Lake metadata (Delta log) for the table, enabling its use with Fabric workloads. Conversely, Delta Lake tables now include virtual Iceberg metadata, allowing compatibility with Iceberg readers.
+
+:::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Diagram showing table virtualization from Iceberg to Delta Lake.":::
+
+While this article includes guidance for using Iceberg tables with Snowflake, this feature is intended to work with any Iceberg tables with Parquet-formatted data files in storage.
+
+## Virtualize Delta Lake tables as Iceberg
+
+To set up the automatic conversion and virtualization of tables from Delta Lake format to Iceberg format, follow these steps.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-:::image type="content" source="media\onelake-iceberg-table-shortcut\iceberg-shortcut-diagram.png" alt-text="Diagram illustrating Delta Lake metadata virtualization.":::
+1.  Enable automatic table virtualization of Delta Lake tables to the Iceberg format by turning on the delegated OneLake setting named **Enable Delta Lake to Apache Iceberg table format virtualization** in your workspace settings.
 
-While this article includes guidance for writing Iceberg tables from Snowflake to OneLake, this feature is intended to work with any Iceberg tables with Parquet data files.
+    > [!NOTE]
+    > This setting controls a feature that is currently in preview. This setting will be removed in a future update when the feature is enabled for all users and is no longer in preview.
+
+1.	Make sure your Delta Lake table, or a shortcut to it, is located in the `Tables` section of your data item. The data item may be a lakehouse or another Fabric data item.
+
+    > [!TIP]
+    > If your lakehouse is schema-enabled, then your table directory will be located directly within a schema such as `dbo`. If your lakehouse is not schema-enabled, then your table directory will be directly within the `Tables` directory.
+
+1.	Confirm that your Delta Lake table has converted successfully to the  virtual Iceberg format. You can do this by examining the directory behind the table.
+
+    To view the directory if your table is in a lakehouse, you can right-click the table in the Fabric UI and select **View files**.
+
+    If your table is in another data item type, such as a warehouse, a database, or a mirrored database, you will need to use a client like Azure Storage Explorer or OneLake File Explorer, rather than the Fabric UI, to view the files behind the table.
+
+1.  You should see a directory named `metadata` inside the table folder, and it should contain multiple files, including the conversion log file. Open the conversion log file to see more info about the Delta Lake to Iceberg conversion, including the timestamp of the most recent conversion and any error details.
+
+1.  If the conversion log file shows that the table was successfully converted, read the Iceberg table using your service, app, or library of choice.
+
+    Depending on what Iceberg reader you use, you will need to know either the the path to the table directory or to the most recent `.metadata.json` file shown in the `metadata` directory.
+
+    You can see the HTTP path to the latest metadata file of your table by opening the **Properties** view for the `*.metadata.json` file with the highest version number. Take note of this path.
+
+    The path to your data item's `Tables` folder may look like this:
+
+    ```
+    https://onelake.dfs.fabric.microsoft.com/83896315-c5ba-4777-8d1c-e4ab3a7016bc/a95f62fa-2826-49f8-b561-a163ba537828/Tables/
+    ```
+
+    Within that folder, the relative path to the latest metadata file may look like `dbo/MyTable/metadata/321.metadata.json`.
+
+    To read your virtual Iceberg table using Snowflake, [follow the steps in this guide](./onelake-iceberg-snowflake.md#read-a-virtual-iceberg-table-from-onelake-using-snowflake-on-azure).
 
 ## Create a table shortcut to an Iceberg table
 
@@ -36,100 +78,20 @@ If you already have an Iceberg table in a storage location supported by [OneLake
     
     Your Iceberg table folder needs to contain a `metadata` folder, which itself contains at least one file ending in `.metadata.json`.
 
-1.	In your Fabric lakehouse, create a new shortcut in the Tables area of a *non-schema-enabled* lakehouse.
+1.	In your Fabric lakehouse, create a new table shortcut in the Tables area of a lakehouse. 
 
-    > [!NOTE]
-    > If you see schemas such as `dbo` under the Tables folder of your lakehouse, then the lakehouse is schema-enabled and isn't yet compatible with this feature.
-
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="Screenshot showing shortcut creation menu item under Tables.":::
+    > [!TIP]
+    > If you see schemas such as dbo under the Tables folder of your lakehouse, then the lakehouse is schema-enabled. In this case, right-click on the schema and create a table shortcut under the schema.
+    
+    :::image type="content" source="media\onelake-iceberg-table-shortcut\new-shortcut.png" alt-text="Screenshot showing new shortcut action.":::
 
 1.	For the target path of your shortcut, select the Iceberg table folder. The Iceberg table folder contains the `metadata` and `data` folders.
 
 1.	Once your shortcut is created, you should automatically see this table reflected as a Delta Lake table in your lakehouse, ready for you to use throughout Fabric.
 
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-placement.png" alt-text="Screenshot showing successful Iceberg table shortcut creation.":::
+    :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-placement.png" alt-text="Screenshot showing created shortcut.":::
 
     If your new Iceberg table shortcut doesn't appear as a usable table, check the [Troubleshooting](#troubleshooting) section.
-
-## Write an Iceberg table to OneLake using Snowflake
-
-If you use Snowflake on Azure, you can write Iceberg tables to OneLake by following these steps:
-
-1.	Make sure your Fabric capacity is in the same Azure location as your Snowflake instance.
-
-    Identify the location of the Fabric capacity associated with your Fabric lakehouse. Open the settings of the Fabric workspace that contains your lakehouse.
-
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\capacity-region.png" alt-text="Screenshot showing Fabric capacity region.":::
-
-    In the bottom-left corner of your Snowflake on Azure account interface, check the Azure region of the Snowflake account.
-
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\snowflake-region.png" alt-text="Screenshot showing Snowflake account region.":::
-
-    If these regions are different, you need to use a different Fabric capacity in the same region as your Snowflake account.
-
-1.	Open the menu for the Files area of your lakehouse, select Properties, and copy the URL (the HTTPS path) of that folder.
-
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\files-properties.png" alt-text="Screenshot showing Properties menu item.":::
-
-1.  Identify your Fabric tenant ID. Select your user profile in the top-right corner of the Fabric UI, and hover over the info bubble next to your **Tenant Name**. Copy the **Tenant ID**.
-
-    :::image type="content" source="media\onelake-iceberg-table-shortcut\tenant-id.png" alt-text="Screenshot showing tenant ID.":::
-
-1.	In Snowflake, set up your `EXTERNAL VOLUME` using the path to the Files folder in your lakehouse. [More info on setting up Snowflake external volumes can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-configure-external-volume)
-
-    > [!NOTE]
-    > Snowflake requires the URL scheme to be `azure://`, so be sure to change `https://` to `azure://`.
-
-    ```sql
-    CREATE OR REPLACE EXTERNAL VOLUME onelake_exvol
-    STORAGE_LOCATIONS =
-    (
-        (
-            NAME = 'onelake_exvol'
-            STORAGE_PROVIDER = 'AZURE'
-            STORAGE_BASE_URL = 'azure://<path_to_Files>/icebergtables'
-            AZURE_TENANT_ID = '<Tenant_ID>'
-        )
-    );
-    ```
-
-    In this sample, any tables created using this external volume are stored in the Fabric lakehouse, within the `Files/icebergtables` folder.
-
-1.	Now that your external volume is created, run the following command to retrieve the consent URL and name of the application that Snowflake uses to write to OneLake. This application is used by any other external volume in your Snowflake account.
-    
-    ```sql
-    DESC EXTERNAL VOLUME onelake_exvol;
-    ```
-
-    The output of this command returns the `AZURE_CONSENT_URL` and `AZURE_MULTI_TENANT_APP_NAME` properties. Take note of both values. The Azure multitenant app name looks like `<name>_<number>`, but you only need to capture the `<name>` portion.
-
-1.	Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
-
-1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the **Contributor** role.
-
-1.	Back in Snowflake, use your new external volume to create an Iceberg table.
-    
-    ```sql
-    CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
-        InventoryId int,
-        ItemName STRING
-    )
-    EXTERNAL_VOLUME = 'onelake_exvol'
-    CATALOG = 'SNOWFLAKE'
-    BASE_LOCATION = 'Inventory/';
-    ```
-
-    With this statement, a new Iceberg table folder named Inventory is created within the folder path defined in the external volume.
-
-1.  Add some data to your Iceberg table.
-
-    ```sql
-    INSERT INTO MYDATABASE.PUBLIC.Inventory
-    VALUES
-    (123456,'Amatriciana');
-    ```
-    
-1.	Finally, in the Tables area of the same lakehouse, [you can create a OneLake shortcut to your Iceberg table](#create-a-table-shortcut-to-an-iceberg-table). Through that shortcut, your Iceberg table appears as a Delta Lake table for consumption across Fabric workloads.
 
 ## Troubleshooting
 
@@ -143,8 +105,8 @@ Open your Iceberg folder in your preferred storage explorer tool, and check the 
 ../
 |-- MyIcebergTable123/
     |-- data/
-        |-- snow_A5WYPKGO_2o_APgwTeNOAxg_0_1_002.parquet
-        |-- snow_A5WYPKGO_2o_AAIBON_h9Rc_0_1_003.parquet
+        |-- A5WYPKGO_2o_APgwTeNOAxg_0_1_002.parquet
+        |-- A5WYPKGO_2o_AAIBON_h9Rc_0_1_003.parquet
     |-- metadata/
         |-- 00000-1bdf7d4c-dc90-488e-9dd9-2e44de30a465.metadata.json
         |-- 00001-08bf3227-b5d2-40e2-a8c7-2934ea97e6da.metadata.json
@@ -199,6 +161,18 @@ If you don't see a conversion log file, then the conversion wasn't attempted. He
 
     :::image type="content" source="media\onelake-iceberg-table-shortcut\shortcut-target.png" alt-text="Screenshot showing the contents of a shortcut target path during shortcut creation.":::
 
+### "Fabric capacity region cannot be validated" error message in Snowflake 
+
+If you are using Snowflake to write a new Iceberg table to OneLake, you might see the following error message:
+
+> Fabric capacity region cannot be validated. Reason: 'Invalid access token. This may be due to authentication and scoping. Please verify delegated scopes.'
+
+If you see this error, have your Fabric tenant admin double-check that you've enabled both tenant settings mentioned in the [Write an Iceberg table to OneLake using Snowflake](./onelake-iceberg-snowflake.md#write-an-iceberg-table-to-onelake-using-snowflake-on-azure) section:
+
+1.  In the upper-right corner of the Fabric UI, open **Settings**, and select **Admin portal**.
+1.  Under **Tenant settings**, in the **Developer settings** section, enable the setting labeled [**Service principals can use Fabric APIs**](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis).
+1.  In the same area, in the **OneLake settings** section, enable the setting labeled [**Users can access data stored in OneLake with apps external to Fabric**](../admin/service-admin-portal-onelake.md#users-can-access-data-stored-in-onelake-with-apps-external-to-fabric).
+
 ## Limitations and considerations
 
 Keep in mind the following temporary limitations when you use this feature: 
@@ -220,7 +194,7 @@ Keep in mind the following temporary limitations when you use this feature:
   | `timestamptz` | `timestamp` | In Snowflake, to use this type, specify `timestamp_ltz` as the column type during Iceberg table creation. [More info on Iceberg data types supported in Snowflake can be found here.](https://docs.snowflake.com/en/user-guide/tables-iceberg-data-types) |
   | `string` | `string` | |
   | `binary` | `binary` | |
-
+  | `time` | N/A | Not supported |
     
 * **Type width issue**
     
@@ -249,23 +223,11 @@ Keep in mind the following temporary limitations when you use this feature:
 
     If you need to move your Iceberg table to another location to use this feature, use the tool that originally wrote the Iceberg table to write a new Iceberg table in the desired location.
 
-* **Iceberg tables must be deeper than root level**
-    
-    The Iceberg table folder in storage must be located in a directory deeper than bucket or container level. Iceberg tables stored directly in the root directory of a bucket or container may not be virtualized to the Delta Lake format.
-
-    We're working on an improvement to remove this requirement.
-   
-    **Workaround:**
-    
-    Ensure that any Iceberg tables are stored in a directory deeper than the root directory of a bucket or container.
-
 * **Iceberg table folders must contain only one set of metadata files**
 
-    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This behavior is in support of the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
+    If you drop and recreate an Iceberg table in Snowflake, the metadata files aren't cleaned up. This behavior is by design, in support of the `UNDROP` feature in Snowflake. However, because your shortcut points directly to a folder and that folder now has multiple sets of metadata files within it, we can't convert the table until you remove the old table’s metadata files.
 
-    Currently, conversion is attempted in this scenario, which can result in old table contents and schema information being shown in the virtualized Delta Lake table.
-
-    We're working on a fix in which conversion fails if more than one set of metadata files are found in the Iceberg table’s metadata folder.
+    Conversion will fail if more than one set of metadata files are found in the Iceberg table's metadata folder.
 
     **Workaround:**
 
@@ -282,16 +244,6 @@ Keep in mind the following temporary limitations when you use this feature:
     **Workaround:**
 
     After making the schema change to your Iceberg table, add a row of data or make any other change to the data. After that change, you should be able to refresh and see the latest view of your table in Fabric.
-
-* **Schema-enabled workspaces not yet supported**
-
-    If you create an Iceberg shortcut in a schema-enabled lakehouse, conversion doesn't occur for that shortcut.
-    
-    We're working on an improvement to remove this limitation.
-
-    **Workaround:**
-
-    Use a non-schema-enabled lakehouse with this feature. You can configure this setting during lakehouse creation.
 
 * **Region availability limitation**
 
@@ -310,12 +262,6 @@ Keep in mind the following temporary limitations when you use this feature:
 
     We're working on an improvement to remove this limitation.
 
-* **Table size limitation**
-
-    We have a temporary limitation on the size of the Iceberg table supported by this feature. The maximum supported number of Parquet data files is about 5,000 data files, or roughly 1 billion rows, whichever limit is encountered first.
-
-    We're working on an improvement to remove this limitation.
-
 * **OneLake shortcuts must be same-region**
 
     We have a temporary limitation on the use of this feature with shortcuts that point to OneLake locations:  the target location of the shortcut must be in the same region as the shortcut itself.
@@ -324,28 +270,19 @@ Keep in mind the following temporary limitations when you use this feature:
 
     **Workaround:**
 
-    If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region. 
+    If you have a OneLake shortcut to an Iceberg table in another lakehouse, be sure that the other lakehouse is associated with a capacity in the same region.
 
- * **Tenant switch allowing external access**
-    
-    We have a temporary limitation that requires the ["Users can access data stored in OneLake with apps external to Fabric"](../admin/tenant-settings-index.md#onelake-settings) tenant setting to be enabled.
+ * **Certain Iceberg partition transform types are not supported**
 
-    If this tenant setting is disabled, virtualization of Iceberg tables to Delta Lake format will not succeed.
+    Currently, the [Iceberg partition types](https://iceberg.apache.org/spec/#partition-transforms) ``bucket[N]``, ``truncate[W]``, and ``void`` are not supported.
 
-    **Workaround:**
+    If the Iceberg table being converted contains these partition transform types, virtualization to the Delta Lake format will not succeed.
 
-    Have your Fabric tenant administrator enable the ["Users can access data stored in OneLake with apps external to Fabric"](../admin/tenant-settings-index.md#onelake-settings) tenant setting, if possible.
-
- * **Iceberg tables must be copy-on-write (not merge-on-read)**
-    
-    Currently, Iceberg tables must be *copy-on-write*. This means that they cannot contain delete files or be *merge-on-read*.
-    
-    Snowflake currently produces *copy-on-write* Iceberg tables, but other Iceberg writers may follow a different approach.
-
-    We are working on support for *merge-on-read* Iceberg tables.
+    We're working on an improvement to remove this limitation.
 
 
 ## Related content
 
+- [Use Snowflake to write or read Iceberg tables in OneLake](./onelake-iceberg-snowflake.md).
 - Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
 - Learn more about [OneLake shortcuts](./onelake-shortcuts.md).

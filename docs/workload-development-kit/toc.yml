@@ -27,8 +27,8 @@ items:
     href: authentication-guidelines.md      
   - name: Backend authentication
     href: back-end-authentication.md
-  - name: Set up authentication
-    href: authentication-tutorial.md        
+  - name: Set up an enterprise application
+    href: create-entra-id-app.md        
   - name: Authentication JavaScript API
     href: authentication-javascript-api.md      
 - name: Tutorials
@@ -65,6 +65,12 @@ items:
     href: multitasking.md
   - name: Localize your workload
     href: localization.md
+  - name: Add customized item settings
+    href: add-item-custom-settings.md
+  - name: Deploy to Azure
+    href: deploy-to-azure.md
+  - name: Setup Workload Backend using Swagger
+    href: back-end-set-up.md
 - name: Publish
   items:
   - name: Publishing requirements

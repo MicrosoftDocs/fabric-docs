@@ -5,15 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Azure SQL Database in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure SQL Database.
 
 ## Supported configuration
 
@@ -33,11 +33,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure SQL Database under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-database/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-azure-sql-database/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure SQL Database connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Database connection by selecting **New**.
 - **Connection type**: Select **Azure SQL Database**.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
@@ -90,7 +87,6 @@ The following properties are supported for Azure SQL Database under the **Destin
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure SQL Database connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Database connection by selecting **New**.
 - **Connection type**: Select **Azure SQL Database**.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
@@ -190,7 +186,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-azure-sql-database-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
+:::image type="content" source="./media/connector-azure-sql-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
 
 ## Table summary
 
@@ -200,7 +196,6 @@ The following tables contain more information about the copy activity in Azure S
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table** | Your source data table. |\<name of your destination table>|Yes |schema <br> table|
@@ -214,7 +209,6 @@ The following tables contain more information about the copy activity in Azure S
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|

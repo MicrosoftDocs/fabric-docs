@@ -2,13 +2,11 @@
 title: Create OneLake shortcuts in a KQL database
 description: Learn how to create a OneLake shortcut in a KQL database to query data from internal and external sources.
 ms.reviewer: tzgitlin
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
+ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 ---
 
@@ -23,56 +21,36 @@ In addition to creating shortcuts from a KQL database, shortcuts can also be cre
 > [!NOTE]
 > To accelerate queries over OneLake shortcuts, see [Accelerate queries over OneLake shortcuts](query-acceleration.md).
 
-Select the tab that corresponds to the shortcut you'd like to create:
+## Prerequisites
 
-## [OneLake shortcut](#tab/onelake-shortcut)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [KQL database](create-database.md) with editing permissions
+* A [Lakehouse](../data-engineering/create-lakehouse.md)
 
-[!INCLUDE [onelake-shortcut-prerequisites](includes/onelake-shortcut-prerequisites.md)]
+To access the data in your KQL database in other [!INCLUDE [product-name](../includes/product-name.md)] experiences, see [One logical copy](one-logical-copy.md).
 
-> [!NOTE]
-> The following flow shows how to create a shortcut that points to data in a Lakehouse in Fabric. Similarly, you can create shortcuts that point to Data Warehouses or other KQL databases. 
-
-[!INCLUDE [one-lake-shortcut](includes/one-lake-shortcut.md)]
-
-> [!NOTE]
-> To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**. For more information, see [Accelerate queries over OneLake shortcuts](query-acceleration.md). 
-
-:::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
-
-5. Select **Create**.
-
-> [!NOTE]
-> You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create additional shortcuts.
-
-## [Azure Data Lake Storage Gen2](#tab/adlsgen2)
-
-[!INCLUDE [adlsgen2-prerequisites](includes/adlsgen2-prerequisites.md)]
+## Create shortcut
 
 1. Browse to an existing KQL database.
-1. Select **New** > **OneLake shortcut**.
 
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+1. Select **+** > **New** > **OneLake shortcut**.
 
-[!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
+    :::image type="content" source="./media/onelake-shortcuts/new-shortcut.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
 
-## [Amazon S3](#tab/amazon-s3)
+## Select a source
 
-[!INCLUDE [amazons3-prerequisites](includes/amazons3-prerequisites.md)]
+OneLake supports shortcuts to both internal OneLake resources (like KQL databases, lakehouses, and warehouses) and external resources (like Azure Data Lake Storage, Amazon S3, or Google Cloud Storage). For a list of all supported shortcut types and links to their specific configuration instructions, see [OneLake shortcuts > Types of shortcuts](../onelake/onelake-shortcuts.md#types-of-shortcuts).
 
-1. Browse to an existing KQL database.
-1. Select **New** > **OneLake shortcut**.
+Shortcuts in KQL databases support [query acceleration](./query-acceleration-overview.md). To enable query acceleration on a new shortcut, toggle the **Accelerate** button to **On**.
 
-    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/home-tab.png" alt-text="Screenshot of the Home tab showing the dropdown of the New button. The option titled OneLake shortcut is highlighted.":::
+:::image type="content" source="media/onelake-shortcuts/accelerate.png" alt-text="Screenshot of the New shortcut window showing the shortcut details. The Accelerate toggle is highlighted."  lightbox="media/onelake-shortcuts/accelerate.png":::
 
-[!INCLUDE [amazon-s3-shortcut](../includes/amazon-s3-shortcut.md)]
+> [!NOTE]
+> You can only connect to one subfolder or table per shortcut. To connect to more data, create additional shortcuts.
 
----
+After you create a shortcut, the database refreshes automatically. The shortcut appears under **Shortcuts** in the **Explorer** pane. You can now query this data.
 
-The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Explorer** pane.
-
-:::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the Explorer pane showing the new shortcut.":::
-
-The OneLake shortcut has been created. You can now query this data.
+:::image type="content" source="media/onelake-shortcuts/data-tree.png" alt-text="Screenshot of the Explorer pane showing the new shortcut.":::
 
 ## Query data
 
@@ -82,7 +60,7 @@ To query data from the OneLake shortcut, use the [`external_table()` function](/
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
 1. Select **Run** or press **Shift + Enter** to run a selected query.
 
-:::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of an example query."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png":::
+:::image type="content" source="media/onelake-shortcuts/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of an example query."  lightbox="media/onelake-shortcuts/query-shortcut.png":::
 
 ## Data types mapping
 

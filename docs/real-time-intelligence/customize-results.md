@@ -2,14 +2,12 @@
 title: Customize results in the KQL Queryset results grid
 description: Learn how to customize results in the KQL Queryset results grid in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: shsagir
-ms.author: shsagir
+author: spelluru
+ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
 ms.date: 11/19/2024
+ms.subservice: rti-kql-query
 ms.search.form: KQL Queryset
 ---
 # Customize results in the KQL Queryset results grid
@@ -18,7 +16,7 @@ Use the results grid in the KQL Queryset to customize results and perform furthe
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL Database](create-database.md) with editing permissions and data
 * A [KQL Queryset](kusto-query-set.md)
 

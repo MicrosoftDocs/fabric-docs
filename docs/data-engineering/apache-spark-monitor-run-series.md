@@ -1,11 +1,12 @@
 ---
 title: Monitor Apache Spark run series
 description: The Spark run series categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs.
-author: jejiang
-ms.author: jejiang
+author: eric-urban
+ms.author: eur
+ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/21/2024
-ms.custom: template-howto, build-2024
+ms.custom: template-howto, sfi-image-nochange
 ms.search.form: Monitor run series
 ---
 

@@ -1,83 +1,98 @@
 ---
-title: Get data from Eventstream
+title: Get Data from Eventstream
 description: Learn how to get data from an eventstream in a KQL database in Real-Time Intelligence.
 ms.reviewer: aksdi
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
-ms.date: 11/19/2024
+ms.custom: sfi-image-nochange
+ms.subservice: rti-eventhouse
+ms.date: 12/17/2025
 ms.search.form: Get data in a KQL Database
 ---
 
 # Get data from Eventstream
 
-In this article, you learn how to get data from an existing eventstream into either a new or existing table.
+In this article, you learn how to get data from an existing eventstream into a new or existing table.
+
+You can ingest data from default or derived streams. A derived stream is created by adding a series of stream operations to the eventstream, such as **Filter** or **Manage Fields**. For more information, see [Eventstream concepts](event-streams/create-default-derived-streams.md#concepts).
 
 To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).
 
+> [!WARNING]
+>
+> * Ingestion from an eventstream using a [private link](/azure/private-link/private-link-overview) isn't supported.
+> * Data preview from an eventstream with large sample events (10 MB or larger) isn't supported in the Get Data wizard. Use small sample events (about 1 MB each) to configure the data connection.
+
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions
-* An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A [KQL database](create-database.md) with editing permissions.
+* An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source.
 
-## Source
+## Step 1: Source
 
-To get data from an eventstream, you need to select the eventstream as your data source. You can select an existing eventstream in the following ways:
+To get data from an eventstream, select the eventstream as your data source. Select an eventstream in the following ways:
 
-On the lower ribbon of your KQL database, either:
+On the ribbon of the KQL database, either:
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Eventstream** > **Existing Eventstream**.
+* From the **Get Data** option on the ribbon, select the **Eventstream** tile.
 
-* Select **Get Data** and then in the **Get data** window, select **Eventstream**.
+* From the **Get Data** dropdown menu, select **Eventstream** > **Existing Eventstream**.
 
-* From the **Get Data** drop down menu, under **Continuous**, select **Real-Time data hub** > **Existing Eventstream**.
+* From the **Get Data** dropdown menu, select **Real-Time data hub**, and select an eventstream from the list.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+## Step 2: Configure
 
-## Configure
-
-1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
+1. Select a target table. To ingest data into a new table, select **+ New table** and enter a table name.
 
     > [!NOTE]
-    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
-1. Under **Configure the data source**, fill out the settings using the information in the following table:
+    > Table names can be up to 1,024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-    :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-eventstream/configure-tab.png":::
+1. Under **Configure the data source**, complete the settings using the information in the following table:
+
+    * When you select **Eventstream** as your source, specify the **Workspace**, **Eventstream**, and default or derived **Stream**.
+
+    > [!IMPORTANT]
+    > The feature to get data from derived streams is in [preview](../fundamentals/preview.md).
+
+    :::image type="content" source="media/get-data-eventstream/configure-tab.png" alt-text="Screenshot of the configure tab with a new table entered and one eventstream selected." lightbox="media/get-data-eventstream/configure-tab.png":::
+
+    * When you select **Real-Time hub** as your source, you choose a default or derived stream from the list, and the **Workspace**, **Eventstream**, and **Stream** are automatically populated and don't require configuration.
+
+    :::image type="content" source="media/get-data-eventstream/configure-tab-derived-eventstream.png" alt-text="Screenshot of configure tab with new table entered and read-only configure data source settings." lightbox="media/get-data-eventstream/configure-tab-derived-eventstream.png":::
 
     |**Setting** | **Description**|
     |----|----|
-    | Workspace| Your eventstream workspace location. Select a workspace from the dropdown.|
-    | Eventstream Name| The name of your eventstream. Select an eventstream from the dropdown.|
-    | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
+    | Workspace | Your eventstream workspace location. Select a workspace from the dropdown.|
+    | Eventstream | The name of your eventstream. Select an eventstream from the dropdown.|
+    | Stream | The name of the default or derived stream. Select a stream from the dropdown.<br/>* For default streams, the stream name format is *Eventstream-stream*.<br/>* For derived streams, the name was defined when the stream was created.|
     | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
-    | **Advanced filters**| |
-    | Compression| Data compression of the events, as coming from the event hub. Options are None (default), or Gzip compression.|
-    | Event system properties| If there are multiple records per event message, the system properties are added to the first one. For more information, see [Event system properties](get-data-event-hub.md#event-system-properties).|
-    | Event retrieval start date| The data connection retrieves existing events created since the Event retrieval start date. It can only retrieve events retained by the event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created.|
+    | Data connection name | The name used to reference and manage your data connection in your workspace. The data connection name is automatically populated, and you can edit the name to simplify managing the data connection in the workspace. The name can contain only alphanumeric, dash, and dot characters, and be up to 40 characters long.|
 
-1. Select **Next**
+1. Select **Next** to continue.
+
+---
 
 [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
-## Inspect
+## Step 3: Inspect
 
-The **Inspect** tab opens with a preview of the data.
+The **Inspect** tab shows a preview of the data.
 
-To complete the ingestion process, select **Finish**.
+Select **Finish** to complete the ingestion process.
 
 :::image type="content" source="media/get-data-eventstream/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-eventstream/inspect-data.png":::
 
-Optionally:
+Optional:
 
-* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
-* Change the automatically inferred data format by selecting the desired format from the dropdown. Data is read from the event hub in form of [EventData](/dotnet/api/microsoft.servicebus.messaging.eventdata?context=/fabric/context/context) objects. Supported formats are CSV, JSON, PSV, SCsv, SOHsv TSV, TXT, and TSVE.
-* [Edit columns](#edit-columns).
-* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+* Use the file type dropdown to explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+
+* Use the **Table_mapping** dropdown to define a new mapping.
+
+* Select **</>** to open the command viewer to view and copy the automatic commands generated from your inputs. You can also open the commands in a queryset.
+
+* Select the pencil icon to [Edit columns](#edit-columns).
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
@@ -85,15 +100,23 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
+### Advanced options based on data type
 
-## Summary
+**Tabular (CSV, TSV, and PSV)**:
 
-In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary. Select **Close** to close the window.
+* If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing mapping**. Tabular data doesn't always include the column names used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
 
-:::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-eventstream/summary.png":::
+**JSON**:
+
+* Select **Nested levels** to determine the column division of JSON data, from 1 to 100.
+
+## Step 4: Summary
+
+In the **Summary** window, all the steps are marked as completed when data ingestion finishes successfully. Select a card to explore the data, delete the ingested data, or create a dashboard with key metrics. Select **Close** to close the window.
+
+:::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of the summary page showing successful data ingestion." lightbox="media/get-data-eventstream/summary.png":::
 
 ## Related content
 
-* To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
+* To manage your database, see [Manage data](data-management.md).
+* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md).

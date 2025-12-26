@@ -1,0 +1,10 @@
+# YamlMime:ZonePivotGroups
+groups:
+- id: create-ontology-scenario
+  title: Create ontology scenario selector
+  prompt: "Choose a scenario for creating your ontology:"
+  pivots:
+  - id: semantic-model
+    title: Generate from semantic model
+  - id: onelake
+    title: Build directly from OneLake

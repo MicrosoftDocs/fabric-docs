@@ -9,8 +9,8 @@ metadata:
   ms.service: fabric
   ms.subservice: admin
   ms.topic: landing-page
-  author: KesemSharabi
-  ms.author: kesharab
+  author: msmimart
+  ms.author: mimart
   ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -49,7 +49,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: About tenant settings
-            url: tenant-settings-index.md
+            url: tenant-settings-index.md      
       - linkListType: how-to-guide
         links:
           - text: Set up git integration
@@ -63,7 +63,7 @@ landingContent:
           - text: Enable content certification
             url: service-admin-setup-certification.md
           - text: Enable service principal authentication
-            url: metadata-scanning-enable-read-only-apis.md
+            url: enable-service-principal-admin-apis.md
           - text: Configure Multi-Geo support
             url: service-admin-premium-multi-geo.md
 

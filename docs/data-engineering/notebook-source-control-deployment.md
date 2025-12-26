@@ -1,13 +1,11 @@
 ---
 title: Notebook source control and deployment
 description: Learn about Fabric notebook source control and deployment pipelines, and Git integration with notebooks.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
-ms.topic: conceptual
+ms.reviewer: jingzh
+ms.author: eur
+author: eric-urban
+ms.topic: article
 ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 08/22/2024
 ms.search.form: Notebook git deployment pipelines alm ci cd
 ---

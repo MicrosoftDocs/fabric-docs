@@ -5,8 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: abnarain
 ms.topic: how-to
-ms.custom:
-  - build-2024
+ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024
 ---
 
@@ -19,7 +18,7 @@ Apache Airflow offers various backends for securely storing sensitive informatio
 
 ## Prerequisites
 
-- **Azure subscription**: If you don't have an Azure subscription, create a [free Azure account](https://azure.microsoft.com/free/) before you begin.
+- **Azure subscription**: If you don't have an Azure subscription, create a [free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) before you begin.
 - **Azure Key Vault**: You can follow [this tutorial to create a new Key Vault instance](/azure/key-vault/general/quick-create-portal) if you don't have one.
 - **Service principal**: You can [create a new service principal](/azure/active-directory/develop/howto-create-service-principal-portal) or use an existing one and grant it permission to access your Key Vault instance. For example, you can grant the **key-vault-contributor role** to the service principal name (SPN) for your Key Vault instance so that the SPN can manage it. You also need to get the service principal's **Client ID** and **Client Secret** (API Key) to add them as environment variables, as described later in this article.
 
@@ -38,8 +37,8 @@ Assign your SPN the following roles in your Key Vault instance from the [built-i
 
 - **Configuration overrides**: Add the following settings for the **Airflow configuration overrides** in integration runtime properties:
 
-  - **AIRFLOW**SECRETS**BACKEND**: `airflow.providers.microsoft.azure.secrets.key_vault.AzureKeyVaultBackend`
-  - **AIRFLOW**SECRETS**BACKEND_KWARGS**: `{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": **\<your keyvault uri\>**}`
+  - **AIRFLOW__SECRETS__BACKEND**: `airflow.providers.microsoft.azure.secrets.key_vault.AzureKeyVaultBackend`
+  - **AIRFLOW__SECRETS__BACKEND_KWARGS**: `{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": **\<your keyvault uri\>**}`
 
   :::image type="content" source="media/apache-airflow-jobs/enable-azure-key-vault-configurations.png" alt-text="Screenshot that shows the configuration of the Airflow configuration overrides setting in the Airflow environment setup." lightbox="media/apache-airflow-jobs/enable-azure-key-vault-configurations.png":::
 

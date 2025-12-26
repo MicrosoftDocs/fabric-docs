@@ -1,26 +1,24 @@
 ---
 title: View browse item's recent runs
 description: In Fabric, use Apache Spark to run notebooks, Spark job definitions, jobs, and other types of applications. Learn how to view recent runs.
-ms.reviewer: snehagunda
-ms.author: jejiang
-author: jejiang
+ms.reviewer: jejiang
+ms.author: eur
+author: eric-urban
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: sfi-image-nochange
 ms.date: 05/23/2023
 ms.search.form: Browse artifacts recent runs
 ---
 
 # Browse item's recent runs
 
-With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, Apache Spark job definitions, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
+With Microsoft Fabric, you can use Apache Spark to run notebooks, Apache Spark job definitions, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
 
 ## View the recent runs pane
 
 We can open **Recent runs** pane with the following steps:
 
-1. Open the [!INCLUDE [product-name](../includes/product-name.md)] homepage and select a workspace where you want to run the job.
+1. Open the Microsoft Fabric homepage and select a workspace where you want to run the job.
 
 2. Selecting **Spark job definition** \ **notebook item context** \ **pipeline item context** menu shows the recent run option.
 
@@ -38,7 +36,7 @@ We can open **Recent runs** pane with the following steps:
 
 We can open **Recent runs** pane within a notebook by following steps:
 
-1. Open the [!INCLUDE [product-name](../includes/product-name.md)] homepage and select a workspace where you want to run the job.
+1. Open the Microsoft Fabric homepage and select a workspace where you want to run the job.
 
 2. Open a notebook in this workspace.
 

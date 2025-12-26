@@ -2,13 +2,11 @@
 title: Enable Python plugin in Real-Time Intelligence
 description: Learn how to enable the Python plugin in your KQL database.
 ms.reviewer: adieldar
-ms.author: shsagir
-author: shsagir
+ms.author: spelluru
+author: spelluru
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2024
+ms.subservice: rti-eventhouse
 ms.date: 12/25/2024
 ms.search.form: product-kusto
 ---
@@ -19,7 +17,7 @@ The Python plugin runs a user-defined function (UDF) using a Python script. The 
 
 ## Prerequisite
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 
 ## Enable the plugin

@@ -5,15 +5,15 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 07/24/2024
-ms.custom:
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Azure AI Search in copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data to Azure AI Search.
+This article outlines how to use the copy activity in a pipeline to copy data to Azure AI Search.
 
 ## Supported configuration
 

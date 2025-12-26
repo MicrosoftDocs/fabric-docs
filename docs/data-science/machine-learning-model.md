@@ -1,15 +1,13 @@
----
+﻿---
 title: Machine learning model
-description: Learn how to create machine learning models, manage versions within a model, track models, and apply a model.
-ms.author: lagayhar 
-author: lgayhardt
+description: Learn how to create, track, and manage machine learning models in Microsoft Fabric. Compare model versions, apply tags, and deploy models for scoring and inferencing.
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.topic: concept-article
+ms.custom: 
+ms.date: 01/14/2025
 ms.search.form: Create New Model, Model Comparison
 ---
 
@@ -17,9 +15,13 @@ ms.search.form: Create New Model, Model Comparison
 
 A machine learning model is a file trained to recognize certain types of patterns. You train a model over a set of data, and you provide it with an algorithm that uses to reason over and learn from that data set. After you train the model, you can use it to reason over data that it never saw before, and make predictions about that data.
 
+In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent a model iteration. 
 
-
-In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent a model iteration. In this article, you learn how to interact with ML models to track and compare model versions.
+**In this article, you learn how to:**
+- Create machine learning models in Microsoft Fabric
+- Manage and track model versions
+- Compare model performance across versions
+- Apply models for scoring and inferencing
 
 ## Create a machine learning model
 
@@ -27,16 +29,23 @@ In MLflow, machine learning models include a standard packaging format. This for
 
 You can directly create a machine learning model from the Fabric UI. The MLflow API can also directly create the model.
 
-To create a machine learning model from the UI, you can:
+To create a machine learning model from the UI:
 
-1. Create a new data science workspace, or select an existing data science workspace.
-1. From the **+ New** dropdown, select **Model** to create an empty model in your data science workspace.
+1. Select an existing data science workspace, or [create a new workspace](../fundamentals/create-workspaces.md). 
+1. Create a new item through the workspace or by using the Create button:
+    1. Workspace:
+        1. Select your workspace.
+        1. Select **New item**.
+        1. Select **ML Model** under *Analyze and train data*.
+          :::image type="content" source="media/machine-learning-model/new-item.png" alt-text="Screenshot of the New item menu with ML Model option highlighted under Analyze and train data section." lightbox="media/machine-learning-experiment/new-item.png":::
+    1. Create button:
+        1. Select **Create**, which can be found in **...** from the vertical menu.
+          :::image type="content" source="media/machine-learning-model/create.png" alt-text="Screenshot of the Create button located in the vertical menu navigation." lightbox="media/machine-learning-experiment/create.png":::
+        1. Select **ML Model** under *Data Science*.
+          :::image type="content" source="media/machine-learning-model/create-2.png" alt-text="Screenshot of the Create menu displaying ML Model option under Data Science section." lightbox="media/machine-learning-experiment/create-2.png":::
+1. After model creation, you can start adding model versions to track run metrics and parameters. Register or save experiment runs to an existing model.
 
-   :::image type="content" source="media/machine-learning-model/new-drop-down-menu.png" alt-text="Screenshot showing the New drop-down menu." lightbox="media/machine-learning-model/new-drop-down-menu.png":::
-
-3. After model creation, you can start adding model versions to track run metrics and parameters. Register or save experiment runs to an existing model.
-
-You can also create a machine learning experiment directly from your authoring experience with the `mlflow.register_model()` API. If a registered machine learning model with the given name doesn't exist, the API creates it automatically.
+You can also create a machine learning model directly from your authoring experience with the `mlflow.register_model()` API. If a registered machine learning model with the given name doesn't exist, the API creates it automatically.
 
 ```python
 import mlflow
@@ -56,7 +65,7 @@ A machine learning model contains a collection of model versions for simplified 
 
 A machine learning model version represents an individual model that is registered for tracking.
 
-:::image type="content" source="media/machine-learning-model/ml-model-version-tracking.png" alt-text="Screenshot showing the details screen of a model." lightbox="media/machine-learning-model/ml-model-version-tracking.png":::
+:::image type="content" source="media/machine-learning-model/ml-model-version-tracking.png" alt-text="Screenshot of machine learning model version details page showing metrics, parameters, and tracking information." lightbox="media/machine-learning-model/ml-model-version-tracking.png":::
 
 Each model version includes the following information:
 
@@ -118,7 +127,7 @@ print(f"Model Version: {model_version.version}")
 
 After applying the tags, you can view them directly on the model version details page. Additionally, tags can be added, updated, or removed from this page at any time.
 
-:::image type="content" source="media/machine-learning-model/model-version-tagging.png" alt-text="Screenshot showing tags applied to a run in the details page." lightbox="media/machine-learning-model/model-version-tagging.png":::
+:::image type="content" source="media/machine-learning-model/model-version-tagging.png" alt-text="Screenshot of model version details page displaying custom tags like project name and team information." lightbox="media/machine-learning-model/model-version-tagging.png":::
 
 ### Compare and filter machine learning models
 
@@ -128,7 +137,7 @@ To compare and evaluate the quality of machine learning model versions, you can 
 
 You can visually compare runs within an existing model. Visual comparison allows easy navigation between, and sorts across, multiple versions.
 
-:::image type="content" source="media/machine-learning-model/visual-compare-model-runs.png" alt-text="Screenshot showing a list of runs for comparison." lightbox="media/machine-learning-model/visual-compare-model-runs.png":::
+:::image type="content" source="media/machine-learning-model/visual-compare-model-runs.png" alt-text="Screenshot of model comparison view showing multiple machine learning model versions with metrics and parameters." lightbox="media/machine-learning-model/visual-compare-model-runs.png":::
 
 To compare runs, you can:
 
@@ -151,9 +160,15 @@ for rm in client.list_registered_models():
 
 ## Apply machine learning models
 
-Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. For more information about [!INCLUDE [product-name](../includes/product-name.md)] model scoring, see the next section.
+Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. 
 
+**Next steps:**
+- [Learn about batch scoring in Fabric](model-scoring-predict.md)
+- [Deploy models for real-time scoring](model-endpoints.md)
+- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
 
 ## Related content
 
-- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Track experiments with MLflow in Fabric](machine-learning-experiment.md)
+- [MLflow Experiment APIs reference](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+
