@@ -6,7 +6,7 @@ ms.author: lagayhar
 author: lgayhardt
 ms.topic: tutorial
 ms.custom: 
-ms.date: 04/25/2025
+ms.date: 12/23/2025
 reviewer: s-polly
 ---
 
@@ -14,9 +14,9 @@ reviewer: s-polly
 
 This tutorial shows how to import the registered LightGBMClassifier model that you built in [part 3](./tutorial-data-science-train-models.md). That tutorial used the Microsoft Fabric MLflow model registry to train the model, and then perform batch predictions on a test dataset loaded from a lakehouse.
 
-With Microsoft Fabric, you can operationalize machine learning models with the scalable **PREDICT** function. That function supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook, or from the item page of a given model. For more information about the PREDICT function, visit [this](https://aka.ms/fabric-predict) resource.
+Microsoft Fabric allows you to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook or from a given model's item page. To learn more, see [PREDICT](model-scoring-predict.md).  
 
-To generate batch predictions on the test dataset, use version 1 of the trained LightGBM model. That version showed the best performance among all trained machine learning models. You load the test dataset into a spark DataFrame, and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of these techniques:
+To generate batch predictions on the test dataset, you'll use version 1 of the trained LightGBM model that demonstrated the best performance among all trained machine learning models. You'll load the test dataset into a spark DataFrame and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of following three ways:
 
 > [!div class="checklist"]
 >
@@ -33,6 +33,10 @@ This is part 4 of a five part tutorial series. To complete this tutorial, first 
 * [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 * [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
 * [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+
+```python
+%pip install scikit-learn==1.6.1
+```
 
 ## Follow along in notebook
 
@@ -121,7 +125,7 @@ features = df_test.columns
 display(df_test.withColumn("predictions", my_udf(*[col(f) for f in features])))
 ```
 
-You can also generate PREDICT code from the item page of a model. For more information about the PREDICT function, visit [this](https://aka.ms/fabric/predict-from-model-item) resource.
+You can also generate PREDICT code from the item page of a model. For more information about the PREDICT function, see [Machine learning model scoring with PREDICT](model-scoring-predict.md) resource.
 
 ## Write model prediction results to the lakehouse
 
@@ -129,7 +133,7 @@ After you generate batch predictions, write the model prediction results back to
 
 ```python
 # Save predictions to lakehouse to be used for generating a Power BI report
-table_name = "customer_churn_test_predictions"
+table_name = "df_test_with_predictions_v1"
 predictions.write.format('delta').mode("overwrite").save(f"Tables/{table_name}")
 print(f"Spark DataFrame saved to delta table: {table_name}")
 ```
