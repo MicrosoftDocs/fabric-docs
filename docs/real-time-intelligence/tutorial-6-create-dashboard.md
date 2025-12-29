@@ -122,7 +122,7 @@ You can set up [Activator](data-activator/activator-introduction.md) alerts on y
     | **When** | *BikepointID* |
     | **Condition** | *Is greater than* |
     | **Value** | *30* |
-    | **Occurence** | *Every time the condition is met* |
+    | **Occurrence** | *Every time the condition is met* |
     | **Action** |
     | **Select action** | *Message to individuals* |
     | **To** | *Your Teams user name* |

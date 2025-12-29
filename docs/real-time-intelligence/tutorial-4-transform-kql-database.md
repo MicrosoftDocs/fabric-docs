@@ -39,7 +39,7 @@ In this step, you move the raw data table into a Bronze folder to organize the d
 
     You see a new folder named **Bronze** containing a table called **RawData** under the **Tables** node in the object tree.
 
-    :::image type="content" source="media/tutorial/tutorial-bronze-folder.png" alt-text="Screenshot of the Bronze subfolder containg the RawData table.":::
+    :::image type="content" source="media/tutorial/tutorial-bronze-folder.png" alt-text="Screenshot of the Bronze subfolder containing the RawData table.":::
 
 ## Create a target table
 
@@ -55,7 +55,7 @@ In this step, you create a target table that is used to store the data transform
 
    You see a new folder named **Silver** containing a table called **TransformedData** under the **Tables** node in the object tree.
 
-   :::image type="content" source="media/tutorial/tutorial-silver-folder.png" alt-text="Screenshot of the Silver subfolder containg the TransformedData table.":::
+   :::image type="content" source="media/tutorial/tutorial-silver-folder.png" alt-text="Screenshot of the Silver subfolder containing the TransformedData table.":::
 
 ## Create a function with transformation logic
 
@@ -80,7 +80,7 @@ In this step, you create a stored function that holds the transformation logic t
 
    You see the function **TransformRawData** under the **Functions** node in the object tree.
 
-   :::image type="content" source="media/tutorial/tutorial-function.png" alt-text="Screenshot of the Functions folder containg the TransformedData function.":::
+   :::image type="content" source="media/tutorial/tutorial-function.png" alt-text="Screenshot of the Functions folder containing the TransformedData function.":::
 
 ## Apply an update policy
 
