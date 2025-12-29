@@ -108,6 +108,8 @@ To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain
 
 This query returns a KQL equivalent of the T-SQL query you enter. The KQL query appears in the output pane. Try copying and pasting the output, and then run the query. This query might not be written in optimized KQL.
 
+:::image type="content" source="media/tutorial/tutorial-explain-sql.png" alt-text="Screenshot of the SQL to KQL conversion.":::
+
 ## Use Copilot to generate a KQL query
 
 If you're new to writing KQL, you can ask a question in natural language and Copilot generates the KQL query for you.
