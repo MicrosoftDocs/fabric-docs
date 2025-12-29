@@ -8,7 +8,7 @@ reviewer: ruixinxu
 ms.topic: overview
 ms.custom: 
   - references_regions
-ms.date: 11/29/2024
+ms.date: 12/23/2025
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
