@@ -59,7 +59,7 @@ In this step, you create a materialized view, which returns an up-to-date result
     | render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)
     ```
 
-    :::image type="content" source="media/tutorial/tutorial-materialized-view.png" alt-text="Screenshot of the materialized view visualized as a colum chart." lightbox="media/tutorial/tutorial-materialized-viewt.png":::
+    :::image type="content" source="media/tutorial/tutorial-materialized-view.png" alt-text="Screenshot of the materialized view visualized as a column chart." lightbox="media/tutorial/tutorial-materialized-viewt.png":::
 
 You use this query in a later step to create a real-time dashboard.
 
