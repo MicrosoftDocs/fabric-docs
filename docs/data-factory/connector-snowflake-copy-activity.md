@@ -95,10 +95,14 @@ When your destination data store or format isn't natively compatible with the Sn
 
 - **Built-in staging copy**
 
-  To use built-in staging, go to **Settings** tab and select **Workspace**. Then  follow the steps before copying data:
+  To use built-in staging, go to **Settings** tab and select **Workspace**.
 
-  1. [Create a cloud storage integration in Snowflake](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). During setup, you must allowlist one of the following OneLake URLs: `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>/<Pipeline Object ID>/Staging` or `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>`.
-  2. Grant at least **Contributor** permission to the Snowflake service principal.
+  - When you specify **Storage integration** in the source, you need to complete the following steps before copying data:
+
+    1. [Create a cloud storage integration in Snowflake](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). During setup, you must allowlist one of the following OneLake URLs: `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>/<Pipeline Object ID>/Staging` or `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>`.
+    2. Grant at least **Contributor** permission to the Snowflake service principal.
+
+  - When you don't specify **Storage integration** in the source, you can use auto-created staging storage within Fabric.
 
 - **External staging copy**
 
@@ -181,10 +185,14 @@ When your source data store or format isn't natively compatible with the Snowfla
 
 - **Built-in staging copy**
 
-  To use built-in staging, go to **Settings** tab and select **Workspace**. Then  follow the steps before copying data:
+  To use built-in staging, go to **Settings** tab and select **Workspace**.
 
-  1. [Create a cloud storage integration in Snowflake](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). During setup, you must allowlist one of the following OneLake URLs: `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>/<Pipeline Object ID>/Staging` or `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>`.
-  2. Grant at least **Contributor** permission to the Snowflake service principal.
+  - When you specify **Storage integration** in the destination, you need to complete the following steps before copying data:
+
+    1. [Create a cloud storage integration in Snowflake](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration). During setup, you must allowlist one of the following OneLake URLs: `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>/<Pipeline Object ID>/Staging` or `azure://msit-onelake.blob.fabric.microsoft.com/<Workspace Object ID>`.
+    2. Grant at least **Contributor** permission to the Snowflake service principal.
+    
+  - When you don't specify **Storage integration** in the destination, you can use auto-created staging storage within Fabric.
 
 - **External staging copy**
 
