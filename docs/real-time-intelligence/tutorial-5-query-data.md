@@ -80,6 +80,19 @@ The query editor supports the use of T-SQL.
 
 This query returns the top 10 bike stations with the most bikes, sorted in descending order.
 
+| BikepointID | Timestamp | No_Bikes |
+|--|--|--|
+| 193 | 2025-12-29 13:40:58.760 | 39 |
+| 602 | 2025-12-29 13:40:53.009 | 34 |
+| 229 | 2025-12-29 13:40:56.510 | 32 |
+| 738 | 2025-12-29 13:40:56.510 | 32 |
+| 313 | 2025-12-29 13:40:53.009 | 30 |
+| 706 | 2025-12-29 13:40:58.760 | 27 |
+| 460 | 2025-12-29 13:40:53.009 | 27 |
+| 522 | 2025-12-29 13:40:53.009 | 26 |
+| 357 | 2025-12-29 13:40:53.009 | 25 |
+| 166 | 2025-12-29 13:40:58.760 | 24 |
+
 ## Convert a SQL query to KQL
 
 To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain` before the query. The output shows the KQL version of the query, which you can copy and run in the KQL query editor.
