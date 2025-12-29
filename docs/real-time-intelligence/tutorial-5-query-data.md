@@ -78,20 +78,20 @@ The query editor supports the use of T-SQL.
     ORDER BY No_Bikes DESC
     ```
 
-This query returns the top 10 bike stations with the most bikes, sorted in descending order.
+    This query returns the top 10 bike stations with the most bikes, sorted in descending order.
 
-| BikepointID | Timestamp | No_Bikes |
-|--|--|--|
-| 193 | 2025-12-29 13:40:58.760 | 39 |
-| 602 | 2025-12-29 13:40:53.009 | 34 |
-| 229 | 2025-12-29 13:40:56.510 | 32 |
-| 738 | 2025-12-29 13:40:56.510 | 32 |
-| 313 | 2025-12-29 13:40:53.009 | 30 |
-| 706 | 2025-12-29 13:40:58.760 | 27 |
-| 460 | 2025-12-29 13:40:53.009 | 27 |
-| 522 | 2025-12-29 13:40:53.009 | 26 |
-| 357 | 2025-12-29 13:40:53.009 | 25 |
-| 166 | 2025-12-29 13:40:58.760 | 24 |
+    | BikepointID | Timestamp | No_Bikes |
+    |--|--|--|
+    | 193 | 2025-12-29 13:40:58.760 | 39 |
+    | 602 | 2025-12-29 13:40:53.009 | 34 |
+    | 229 | 2025-12-29 13:40:56.510 | 32 |
+    | 738 | 2025-12-29 13:40:56.510 | 32 |
+    | 313 | 2025-12-29 13:40:53.009 | 30 |
+    | 706 | 2025-12-29 13:40:58.760 | 27 |
+    | 460 | 2025-12-29 13:40:53.009 | 27 |
+    | 522 | 2025-12-29 13:40:53.009 | 26 |
+    | 357 | 2025-12-29 13:40:53.009 | 25 |
+    | 166 | 2025-12-29 13:40:58.760 | 24 |
 
 ## Convert a SQL query to KQL
 
@@ -106,9 +106,9 @@ To get the equivalent KQL for a T-SQL SELECT statement, add the keyword `explain
     ORDER BY No_Bikes DESC
     ```
 
-This query returns a KQL equivalent of the T-SQL query you enter. The KQL query appears in the output pane. Try copying and pasting the output, and then run the query. This query might not be written in optimized KQL.
+    This query returns a KQL equivalent of the T-SQL query you enter. The KQL query appears in the output pane. Try copying and pasting the output, and then run the query. This query might not be written in optimized KQL.
 
-:::image type="content" source="media/tutorial/tutorial-explain-sql.png" alt-text="Screenshot of the SQL to KQL conversion.":::
+    :::image type="content" source="media/tutorial/tutorial-explain-sql.png" alt-text="Screenshot of the SQL to KQL conversion.":::
 
 ## Use Copilot to generate a KQL query
 
