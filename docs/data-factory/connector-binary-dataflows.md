@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Binary format conn
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/29/2025
 ms.custom:
   - template-how-to
   - connectors
