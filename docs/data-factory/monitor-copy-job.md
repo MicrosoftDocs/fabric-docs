@@ -41,6 +41,11 @@ You can also see a list of the items being copied in the job, with the following
 - Run start
 - Run stop
 - Throughput
+- Load type
+- Lower bound
+- Upper bound
+- Row counts for iserts, updates, and deletions
+- Watermark values
 
 :::image type="content" source="media/copy-job/monitor-copy-job-panel.png" lightbox="media/copy-job/monitor-copy-job-panel.png" alt-text="Screenshot showing the monitoring area of the Copy job panel.":::
 
