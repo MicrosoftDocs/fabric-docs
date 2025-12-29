@@ -46,7 +46,8 @@ Shortcuts in KQL databases support [query acceleration](./query-acceleration-ove
 :::image type="content" source="media/onelake-shortcuts/accelerate.png" alt-text="Screenshot of the New shortcut window showing the shortcut details. The Accelerate toggle is highlighted."  lightbox="media/onelake-shortcuts/accelerate.png":::
 
 > [!NOTE]
-> You can only connect to one subfolder or table per shortcut. To connect to more data, create additional shortcuts.
+> 1. You can only connect to one subfolder or table per shortcut. To connect to more data, create additional shortcuts.
+> 2. You can't create a shortcut over a table that has an asterisk (`*`) in **any** column name. Rename the column(s) before creating the shortcut.
 
 After you create a shortcut, the database refreshes automatically. The shortcut appears under **Shortcuts** in the **Explorer** pane. You can now query this data.
 
