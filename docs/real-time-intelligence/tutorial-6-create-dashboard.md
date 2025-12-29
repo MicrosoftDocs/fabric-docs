@@ -154,7 +154,7 @@ Share the database first, and then share the dashboard.
 
 1. Open the **TutorialDashboard**, and select the **Share** button.
 
-   :::image type="content" source="media/tutorial/tutorial-dashboard-share.png" alt-text="Screenshot of the Tutorial database share configuration screen." lightbox="media/tutorial/tutorial-dashboard-share.png":::
+   :::image type="content" source="media/tutorial/tutorial-dashboard-share.png" alt-text="Screenshot of the Tutorial dashboard share configuration screen." lightbox="media/tutorial/tutorial-dashboard-share.png":::
 
 1. Authorize the same user or group you shared the database with, set the permission level, add a message if desired, and select **Send**.
 
