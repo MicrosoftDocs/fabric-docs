@@ -10,7 +10,7 @@ ms.subservice: dataflows
 
 # Excel Advanced Data Destination
 
-When saving data as Excel in a SharePoint Output Destination, you define the structure and content of your Excel workbook using a navigation table. This table serves as a blueprint that specifies worksheets, charts, data, and their relationships.
+When you are working on a file based destination in Dataflow Gen2, you have the option to save your data in various formats, including Excel. Excel files can be created with simple tabular data, but you can also create complex workbooks with multiple sheets, charts, and customized formatting by using navigation tables. These navigation tables define the structure and content of the Excel document programmatically and provide a powerful way to generate dynamic Excel files.
 
 This article explains how to construct these navigation tables to generate Excel documents programmatically from your Dataflow.
 
