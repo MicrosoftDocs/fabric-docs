@@ -4,7 +4,7 @@ description: This article provides information about how to create a Data Wareho
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 12/29/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -24,13 +24,15 @@ The Data Warehouse connector supports the following authentication types for cop
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a Data Warehouse. The following links provide the specific Power Query connector information you need to connect to a Data Warehouse in Dataflow Gen2:
+You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Warehouse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites) before connecting to the Warehouse connector.
-- To connect to the Warehouse connector from Power Query, go to [Connect to a Warehouse from Power Query Online](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Set up Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites).
+1. [Connect to a Warehouse (from Power Query online)](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+### More information
+
+- [Warehouse connector capabilities](/power-query/connectors/warehouse#capabilities)
 
 ## Set up your connection in a pipeline
 

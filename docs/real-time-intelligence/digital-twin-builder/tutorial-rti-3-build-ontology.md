@@ -66,8 +66,12 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
     :::image type="content" source="media/tutorial-rti/bus-map-properties-non-time-1.png" alt-text="Screenshot of the unmapped display name and adding an entity type property.":::
 
     Map the following entity type properties:
-    - Select **TripId** from the dropdown menu in the left column, and edit the box across from it in the right column to read *TripId_static*. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
-    - Select **StopCode** from the dropdown menu in the left column, and edit the box across from it in the right column to read *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
+    - Select **TripId** from the dropdown menu in the left column. **Edit the box across from it in the right column so that its property name is _TripId_static_**. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
+
+        >[!IMPORTANT]
+        > Make sure to edit the property name as described, to avoid conflicts later while mapping time series data to the *TripId* property.
+
+    - Select **StopCode** from the dropdown menu in the left column. Edit the box across from it in the right column so that its property name is *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
    
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
