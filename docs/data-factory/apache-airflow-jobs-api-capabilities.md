@@ -348,11 +348,26 @@ Deletes the specified Apache Airflow Job.
 
 ## File Management APIs
 
+> [!NOTE]
+> Include `?preview=true` as a query parameter in requests to all file management endpoints. Omit only if/when otherwise documented.
+
+> [!IMPORTANT]
+> File management APIs require the same bearer token and scopes as other job APIs (`Workspace.ReadWrite.All`, `Item.ReadWrite.All`). Only users or applications with edit permissions on the Apache Airflow Job can create, update, or delete files.
+
 ### Get Apache Airflow Job File
 
 Returns job file from Apache Airflow by path.
 
 **Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
+
+**Example: Retrieve and save file to disk using curl**
+
+```bash
+curl -X GET \
+  -H "Authorization: Bearer <access-token>" \
+  "https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/apacheairflowjobs/<apacheAirflowJobId>/files/<filePath>?preview=true" \
+  -o <local-filename>
+```
 
 **Sample Results**:
 
@@ -360,11 +375,19 @@ Returns job file from Apache Airflow by path.
 200 OK
 ```
 
+**Behavior notes:**
+- If the file is a Python DAG, the response body contains the UTF-8 encoded text of the file.
+- If the specified `filePath` does not exist, a `404 Not Found` is returned.
+
 ### Create/Update Apache Airflow Job File
 
 Creates or updates an Apache Airflow Job file.
 
 **Request URI**: ```PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
+
+**Behavior notes:**
+- Intermediate folders in the specified path are created automatically if they do not exist (if supported by the service); otherwise, a `400 Bad Request` is returned for invalid paths.
+- Existing files at the specified path are overwritten by default.
 
 **Request Payload**:
 
@@ -384,6 +407,11 @@ Deletes the specified Apache Airflow Job file.
 
 **Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
 
+**Behavior notes:**
+- Returns `200 OK` on successful deletion.
+- Returns `404 Not Found` if the specified `filePath` does not exist.
+- Returns `409 Conflict` if the path refers to a non-empty folder (if folders are supported).
+
 **Sample Results**:
 
 ```rest
@@ -392,23 +420,44 @@ Deletes the specified Apache Airflow Job file.
 
 ### List Apache Airflow Job Files
 
-Lists the files the specified Apache Airflow Job file.
+Lists the files for the specified Apache Airflow Job.
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath=”my_folder”&continuationToken={token}?preview=true```
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath="my_folder"&continuationToken={token}?preview=true```
 
-Note that rootPath and continutationToken are optional.
+Both `rootPath` and `continuationToken` are optional. Use `continuationToken` to paginate subsequent results.
 
-**Sample Results**:
+**Response schema:**
 
-```rest
+```json
 {
-"files": [
-{ filePath:string, sizeInBytes: int },
+  "files": [
+    {
+      "filePath": "string", // relative path to the file (URL-encoded in subsequent requests)
+      "sizeInBytes": integer
+    }
+  ],
+  "continuationToken": "string", // token for fetching the next page, if any
+  "continuationUri": "string" // full URI for the next page, if any
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "files": [
+    {
+      "filePath": "dags/my_dag.py",
+      "sizeInBytes": 1234
+    }
   ],
  "continuationToken": "LDEsMTAwMDAwLDA%3D "
 "continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?continuationToken='LDEsMTAwMDAwLDA%3D'"
 }  
 ```
+
+> [!NOTE]
+> `filePath` values must be URL-encoded when used in subsequent requests.
 
 ## Service Principal Name (SPN) Support
 
