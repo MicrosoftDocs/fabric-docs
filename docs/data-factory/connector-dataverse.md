@@ -30,7 +30,7 @@ You can connect Dataflow Gen2 to Dataverse in Microsoft Fabric using Power Query
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 1. [Set up Dataverse prerequisites](/power-query/connectors/dataverse#prerequisites).
 1. [Find your Dataverse environment URL](/power-query/connectors/dataverse#finding-your-dataverse-environment-url).
-1. [Connect to Dataverse](/power-query/connectors/dataverse#connect-to-dataverse-from-power-query-online).
+1. [Connect to Dataverse (from Power Query online)](/power-query/connectors/dataverse#connect-to-dataverse-from-power-query-online).
 
 ### More information
 

@@ -28,7 +28,7 @@ You can connect Dataflow Gen2 to Azure Table Storage in Microsoft Fabric using P
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 1. [Copy your account key for Azure Table Storage](/power-query/connectors/azure-table-storage#copy-your-account-key-for-azure-table-storage).
-1. [Connect to Azure Table Storage](/power-query/connectors/azure-table-storage#connect-to-azure-table-storage-from-power-query-online).
+1. [Connect to Azure Table Storage (from Power Query online)](/power-query/connectors/azure-table-storage#connect-to-azure-table-storage-from-power-query-online).
 
 ## More information
 

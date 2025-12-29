@@ -29,7 +29,7 @@ You can connect Dataflow Gen2 to dataflows (Power Platform) in Microsoft Fabric 
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 1. [Set up dataflow prerequisites](/power-query/connectors/dataflows#prerequisites).
-1. [Get data from dataflows](/power-query/connectors/dataflows#get-data-from-dataflows-in-power-query-online).
+1. [Get data from dataflows (from Power Query online)](/power-query/connectors/dataflows#get-data-from-dataflows-in-power-query-online).
 
 ### More information
 

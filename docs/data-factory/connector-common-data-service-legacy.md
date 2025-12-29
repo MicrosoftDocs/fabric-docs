@@ -29,7 +29,7 @@ You can connect Dataflow Gen2 to Common Data Service (Legacy) in Microsoft Fabri
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 1. [Set up Common Data Service (Legacy) prerequisites](/power-query/connectors/common-data-service-legacy#prerequisites).
 1. [Find your Common Data Service (Legacy) URL](/power-query/connectors/common-data-service-legacy#finding-your-common-data-service-legacy-environment-url).
-1. [Connect to Common Data Service (Legacy)](/power-query/connectors/common-data-service-legacy#connect-to-common-data-service-legacy-from-power-query-online).
+1. [Connect to Common Data Service (Legacy) from Power Query online](/power-query/connectors/common-data-service-legacy#connect-to-common-data-service-legacy-from-power-query-online).
 
 ### More information
 

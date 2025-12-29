@@ -20,7 +20,7 @@ You can connect Dataflow Gen2 to an Excel workbook in Microsoft Fabric using Pow
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
 1. [Set up Excel prerequisites](/power-query/connectors/excel#prerequisites).
-1. [Connect to an Excel workbook](/power-query/connectors/excel#connect-to-an-excel-workbook-from-power-query-online).
+1. [Connect to an Excel workbook (from Power Query online)](/power-query/connectors/excel#connect-to-an-excel-workbook-from-power-query-online).
 
 ### More information
 

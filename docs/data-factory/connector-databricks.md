@@ -31,7 +31,7 @@ You can connect Dataflow Gen2 to Databricks in Microsoft Fabric using Power Quer
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 1. [Set up Databricks prerequisites](/power-query/connectors/databricks#prerequisites).
-1. [Connect to Databricks](/power-query/connectors/databricks#connect-to-databricks-data-from-power-query-online).
+1. [Connect to Databricks (from Power Query online)](/power-query/connectors/databricks#connect-to-databricks-data-from-power-query-online).
 
 ### More information
 

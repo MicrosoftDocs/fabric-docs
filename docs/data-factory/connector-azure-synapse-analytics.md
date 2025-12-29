@@ -32,9 +32,9 @@ You can connect Dataflow Gen2 to Azure Synapse Analytics in Microsoft Fabric usi
 
 1. Check that the capabilities you need are supported on the [Azure Synapse Analytics connector page](/power-query/connectors/azure-sql-data-warehouse#prerequisites).
 
-1. [Connect to Azure Synapse Analytics](/power-query/connectors/azure-sql-data-warehouse#connect-to-azure-synapse-analytics-sql-dw-from-power-query-online).
+1. [Connect to Azure Synapse Analytics (from Power Query online)](/power-query/connectors/azure-sql-data-warehouse#connect-to-azure-synapse-analytics-sql-dw-from-power-query-online).
 
 ## More information
 
-- [Connect using advanced options](/power-query/connectors/azure-sql-data-warehouse#connect-using-advanced-options)\
+- [Connect using advanced options](/power-query/connectors/azure-sql-data-warehouse#connect-using-advanced-options)
 - [Troubleshooting](/power-query/connectors/azure-sql-data-warehouse#troubleshooting)

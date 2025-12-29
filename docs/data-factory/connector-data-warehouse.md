@@ -28,7 +28,7 @@ You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Powe
 
 1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 1. [Set up Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites).
-1. [Connect to a Warehouse](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
+1. [Connect to a Warehouse (from Power Query online)](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
 
 ### More information
 
