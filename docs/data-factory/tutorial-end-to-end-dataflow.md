@@ -5,7 +5,7 @@ ms.author: whhender
 ms.reviewer: xupzhou
 author: whhender
 ms.topic: tutorial
-ms.date: 05/20/2025
+ms.date: 12/30/2025
 ms.custom: dataflows
 ---
 
@@ -13,7 +13,7 @@ ms.custom: dataflows
 
 This module takes about 25 minutes to complete. You create a dataflow, apply transformations, and move the raw data from the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table into a [gold](/azure/databricks/lakehouse/medallion#gold) data layer table. 
 
-With the raw data loaded into your bronze Lakehouse table from the last module, you can now enrich it. You will combine it with another table that contains discounts for each vendor and their trips during a particular day. Then, this final gold Lakehouse table is then loaded and ready for consumption.
+With the raw data loaded into your bronze Lakehouse table from the last module, you can now enrich it. You'll combine it with another table that contains discounts for each vendor and their trips during a particular day. Then, this final gold Lakehouse table is then loaded and ready for consumption.
 
 The high-level steps in the dataflow are:
 
@@ -46,7 +46,7 @@ The high-level steps in the dataflow are:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/lakehouse-settings-inline.png" alt-text="Screenshot showing the configuration of the data source settings for your new Lakehouse with your current signed in user, and the Next button selected." lightbox="media/tutorial-end-to-end-dataflow/lakehouse-settings.png":::
 
-1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module, and select the **Tutorial_Lakehouse** data table. Then select **Create**.
+1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module. It might be under the **My workspace** folder. Select the **Bronze** data table. Then select **Create**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table-inline.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1." lightbox="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table.png":::
 
@@ -68,12 +68,14 @@ The high-level steps in the dataflow are:
 
 1. _(Optional)_ On the **Choose columns** dialog, deselect some columns listed here, then select **OK**.
 
-   - lpepDropoffDatetime
-   - puLocationId
-   - doLocationId
-   - pickupLatitude
-   - dropoffLongitude
-   - rateCodeID
+   - vendorID
+   - lpepPickupDatetime
+   - passengerCount
+   - tripDistance
+   - picukupLongitude
+   - dropoffLatitude
+   - storeAndFwdFlag
+   - totalAmount
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-dialog.png" alt-text="Screenshot showing the Choose columns dialog with the identified columns deselected.":::
 
@@ -85,6 +87,8 @@ The high-level steps in the dataflow are:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-values.png" alt-text="Screenshot showing the values filter with only 'Y' selected.":::
 
+1. Wait until the data is filtered.
+
 1. Select the **IpepPickupDatetime** column sort and filter dropdown menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters-inline.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown." lightbox="media/tutorial-end-to-end-dataflow/date-filters.png":::
@@ -92,6 +96,8 @@ The high-level steps in the dataflow are:
 1. In the **Filter rows** dialog, select dates between January 1, 2015, and January 31, 2015, then select **OK**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-dates-between.png" alt-text="Screenshot showing the selection of the dates in January 2015.":::
+
+1. Wait until the data is filtered.
 
 ## Connect to a CSV file containing discount data
 
@@ -135,7 +141,7 @@ With the data from the trips in place, we want to load the data that contains th
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/set-date-data-type.png" alt-text="Screenshot showing the selection of the Date data type for the Date column.":::
 
-1. Select the **Discount** column and then select the **Transform** tab on the menu. Select **Number column**, and then select **Standard** numeric transformations from the submenu, and choose **Divide**.
+1. Select the **Discount** column and then select the **Transform** tab on the menu. Under the **Number column** section select **Standard** numeric transformations from the submenu, and choose **Divide**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-column-values-inline.png" alt-text="Screenshot showing the selection of the Divide option to transform data in the Discount column." lightbox="media/tutorial-end-to-end-dataflow/divide-column-values.png":::
 
@@ -151,11 +157,11 @@ The next step is to combine both tables into a single table that has the discoun
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/toggle-diagram-view-inline.png" alt-text="Screenshot showing the Diagram view toggle button with both queries created in this tutorial displayed." lightbox="media/tutorial-end-to-end-dataflow/toggle-diagram-view.png":::
 
-1. Select your original data query (In our example, its called Bronze), and on the **Home** tab, Select the **Combine** menu and choose **Merge queries**, then **Merge queries as new**.
+1. Select your original data query (In our example, its called Bronze), and on the **Home** tab, in the **Combine** menu choose **Merge queries**, then **Merge queries as new**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-queries-as-new-inline.png" alt-text="Screenshot showing the Merge queries as new selection for the nyc_taxi query." lightbox="media/tutorial-end-to-end-dataflow/merge-queries-as-new.png":::
 
-1. On the **Merge** dialog, select a **Left outer** merge, then select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
+1. On the **Merge** dialog, select a **Left outer** merge, then select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop-down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog-inline.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed." lightbox="media/tutorial-end-to-end-dataflow/merge-dialog.png":::
 
@@ -191,7 +197,7 @@ The next step is to combine both tables into a single table that has the discoun
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/custom-column-configuration.png" alt-text="Screenshot showing the Custom column configuration screen with the New column name, Data type, and Custom column formula highlighted.":::
 
-1. Select the newly create **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
+1. Select the newly created **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column-inline.png" alt-text="Screenshot showing the Round... option on the Transform tab of the editor window." lightbox="media/tutorial-end-to-end-dataflow/round-column.png":::
 
@@ -225,7 +231,7 @@ With the output query now fully prepared and with data ready to output, we can d
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-destination-settings-dialog.png" alt-text="Screenshot showing the Choose destination settings dialog with the Save settings button highlighted.":::
 
-1. In the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table under **Data destination**, and then select **Save***.
+1. In the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table under **Data destination**, and then select **Save & run**.
 
     > [!IMPORTANT]
     > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
