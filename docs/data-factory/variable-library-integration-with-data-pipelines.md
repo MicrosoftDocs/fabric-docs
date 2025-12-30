@@ -11,7 +11,7 @@ ms.date: 10/16/2025
 
 # Variable library integration with pipelines
 
-The [Variable library](../cicd/variable-library/variable-library-overview.md) is a new item type in Microsoft Fabric. By using the variable library, you can define and manage variables at the workspace level. You can use these variables across various workspace items, such as pipelines, notebooks, Shortcut for lakehouse, and more. It provides a unified and centralized way to manage configurations, reducing the need for hardcoded values and simplifying your CI/CD processes. It's easier to manage configurations across different environments.
+The [Variable library](../cicd/variable-library/variable-library-overview.md) is a new item type in Microsoft Fabric. By using the variable library, you can define and manage variables at the workspace level. You can use these variables across various workspace items, such as pipelines, notebooks, shortcut for lakehouse, and more. It provides a unified and centralized way to manage configurations, reducing the need for hardcoded values and simplifying your CI/CD processes. It's easier to manage configurations across different environments.
 
 ## How to use Variable library with pipelines
 
