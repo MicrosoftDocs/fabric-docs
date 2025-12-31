@@ -1,5 +1,5 @@
   items:
-  - name: Data factory documentation
+  - name: Fabric data factory documentation
     href: index.yml
   - name: Overview
     items: 
@@ -1088,8 +1088,6 @@
             href: azure-databricks-activity.md
           - name: Azure Machine Learning activity
             href: azure-machine-learning-activity.md
-          - name: Deactivate an activity
-            href: deactivate-activity.md
           - name: Fail activity
             href: fail-activity.md
           - name: Filter activity
@@ -1130,6 +1128,10 @@
         href: pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
+      - name: Deactivate an activity
+        href: deactivate-activity.md
       - name: Copilot pipeline expression builder (Preview)
         href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates

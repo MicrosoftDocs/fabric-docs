@@ -21,7 +21,7 @@ The Microsoft Access connector is supported in Data Factory for [!INCLUDE [produ
 | **Copy job** (source/destination) | On-premises (version 3000.278.5 or above) | Anonymous <br>Basic |
 
 > [!NOTE]
-> To use Microsoft Access connector in date pipelines, please install [Microsoft Access ODBC driver](https://www.microsoft.com/download/details.aspx?id=54920) on the computer running on-premises data gateway. The recommended driver version is 16.00.5378.1000 or above.
+> To use Microsoft Access connector in date pipelines, install [Microsoft 365 Access Runtime](https://support.microsoft.com/office/download-and-install-microsoft-365-access-runtime-185c5a32-8ba9-491e-ac76-91cbe3ea09c9) on the computer running on-premises data gateway.
 
 ## Related content
 
