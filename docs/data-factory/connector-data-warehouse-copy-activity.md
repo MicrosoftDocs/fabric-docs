@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/26/2025
+ms.date: 12/26/2025
 ms.custom: 
   - pipelines
   - template-how-to
@@ -98,8 +98,12 @@ The COPY statement is the primary way to ingest data into Warehouse tables. Data
 
     |**Supported source data store type** |**Supported format** |**Supported source authentication type**|
     |:---|:---|:---|
-    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Shared access signature authentication|
-    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br> Shared access signature authentication |
+    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Organizational account<br>Shared access signature authentication|
+    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br>Organizational account<br>Shared access signature authentication |
+
+  > [!NOTE]
+  > - When you use organizational account authentication for your storage linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#organizational-account-authentication) respectively.
+  > - If your Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
 
 1. The following Format settings can be set:<br>
    1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
@@ -119,11 +123,20 @@ If your source data store and format isn't originally supported by a COPY comman
 
 #### Staged copy
 
-When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. 
+When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-settings-tab). 
 
-To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage.
+To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage. These storage options support multiple authentication types. The following table summarizes the supported options:
 
-Please note that you need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
+| External staging storage       | Supported authentication types          |
+|--------------------------------|------------------------------------------|
+| **Azure Blob Storage**         | Anonymous<br>Account key<br>Organizational account<br>Shared Access Signature (SAS) |
+| **Azure Data Lake Storage Gen2** | Account key<br>Organizational account<br>Shared Access Signature (SAS) |
+
+  > [!NOTE]
+  > - When you use organizational account authentication for your staging linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#organizational-account-authentication) respectively.
+  > - If your staged Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
+  > - You need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
+
 
 ### Mapping
 
