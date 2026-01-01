@@ -24,7 +24,7 @@ Fluentd is an open-source data collector you can use to unify log collection and
 - Ruby installed on your machine.
 - A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 - A KQL database with ingestion permissions.
-- 
+
 ## How to get started with Fluentd and an Eventhouse table
 
 1. **Install Fluentd** by using RubyGems:
@@ -113,4 +113,4 @@ Fluentd is an open-source data collector you can use to unify log collection and
 
 ## Related content
 
-- [Query data in a KQL queryset](kusto-query-set?tabs=kql-database)
+- [Query data in a KQL queryset](kusto-query-set.md?tabs=kql-database)
