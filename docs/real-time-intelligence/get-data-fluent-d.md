@@ -10,7 +10,9 @@ ms.date: 01/01/2026
 
 # Get data from Fluentd
 
-Log ingestion is the process of collecting, transforming, and preparing log data from applications, servers, containers, and cloud services so you can store, analyze, and monitor it. Logs capture information such as errors, warnings, usage patterns, and system performance. Reliable log ingestion ensures that operational and security data is available in near real-time for troubleshooting and insights.
+Log ingestion is the process of collecting, transforming, and preparing log data from applications, servers, containers, and cloud services so you can store, analyze, and monitor it. 
+Logs capture information such as errors, warnings, usage patterns, and system performance. Reliable log ingestion ensures that operational and security data is available in near real-time for troubleshooting and insights.
+
 This article explains how to send logs from Fluentd to an Eventhouse table, including installation, configuration, and validation steps.
 
 ## Overview
