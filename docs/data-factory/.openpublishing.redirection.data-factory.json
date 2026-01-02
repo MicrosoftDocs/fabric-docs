@@ -295,7 +295,7 @@
       },
       {
         "source_path_from_root": "/docs/data-factory/azure-key-vault-reference-overview.md",
-        "redirect_url": "/fabric/data-factory/azure-key-vault-reference-configure.",
+        "redirect_url": "/fabric/data-factory/azure-key-vault-reference-configure",
         "redirect_document_id": false
       },
       {
