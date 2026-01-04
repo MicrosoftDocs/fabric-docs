@@ -143,7 +143,7 @@ The Azure Data Lake Storage Gen2 connector supports the following authentication
 
 :::image type="content" source="media/connector-azure-data-lake-storage-gen2/key-authentication.png" alt-text="Screenshot showing that key authentication method for Azure Data Lake Storage Gen2.":::
 
-### <a name="oAuth2-authentication"></a> Organizational account authentication
+### <a name="oauth2-authentication"></a> Organizational account authentication
 
 :::image type="content" source="media/connector-azure-data-lake-storage-gen2/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method for Azure Data Lake Storage Gen2.":::
 

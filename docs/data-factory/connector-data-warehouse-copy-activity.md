@@ -102,7 +102,7 @@ The COPY statement is the primary way to ingest data into Warehouse tables. Data
     |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br>Organizational account<br>Shared access signature authentication |
 
   > [!NOTE]
-  > - When you use organizational account authentication for your storage linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#organizational-account-authentication) respectively.
+  > - When you use organizational account authentication for your storage linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
   > - If your Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
 
 1. The following Format settings can be set:<br>
@@ -133,7 +133,7 @@ To use staged copy, go to **Settings** tab and select **Enable staging**. You ca
 | **Azure Data Lake Storage Gen2** | Account key<br>Organizational account<br>Shared Access Signature (SAS) |
 
   > [!NOTE]
-  > - When you use organizational account authentication for your staging linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#organizational-account-authentication) respectively.
+  > - When you use organizational account authentication for your staging linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
   > - If your staged Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
   > - You need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
 
