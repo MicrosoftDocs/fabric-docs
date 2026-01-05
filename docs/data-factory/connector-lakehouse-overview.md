@@ -20,7 +20,7 @@ The Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/destination)                                                 | None<br> On-premises<br> Virtual network | Organizational account |
 | **Pipeline** <br>- [Copy activity](connector-lakehouse-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Delete activity  | None<br> On-premises<br> Virtual network | Organizational account |
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load (only supported for Lakehouse Files) <br>- Append<br>- Override | None<br> On-premises<br> Virtual network | Organizational account |
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load <br>- CDC (only supported for Lakehouse Tables)<br>- Append<br>- Override <br>- Upsert (only supported for Lakehouse Tables) <br>- CDC Merge (only supported for Lakehouse Tables) | None<br> On-premises<br> Virtual network | Organizational account |
 
 ## Related content
 

@@ -19,7 +19,7 @@ The Salesforce Service Cloud connector is supported in Data Factory for [!INCLUD
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Pipeline**<br>- [Copy activity](connector-salesforce-service-cloud-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Organizational account |
-| **Copy job** (source/destination) <br>- Full load<br>- Append<br>- Merge |None<br> On-premises<br> Virtual network |Organizational account |
+| **Copy job** (source/destination) <br>- Full load<br>- Append<br>- Upsert |None<br> On-premises<br> Virtual network |Organizational account |
 
 ## Related content
 
