@@ -100,10 +100,10 @@ The COPY statement is the primary way to ingest data into Warehouse tables. Data
     |:---|:---|:---|
     |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Organizational account<br>Shared access signature authentication|
     |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br>Organizational account<br>Shared access signature authentication |
-
-  > [!NOTE]
-  > - When you use organizational account authentication for your storage linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
-  > - If your Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, you should use your workspace identity to bypass the firewall. Learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
+    
+      >[!NOTE]
+      >- When you use organizational account authentication for your storage linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
+      >- If your Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, you should use your workspace identity to bypass the firewall. Learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
 
 1. The following Format settings can be set:<br>
    1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
