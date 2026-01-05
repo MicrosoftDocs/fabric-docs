@@ -110,7 +110,7 @@ The supported text formats for direct ingestion are:
 
 | Format | File extension | Description |
 |--------|----------------|-------------|
-| PSV | `.psv` | A text file with pipe-separated values (|). |
+| PSV | `.psv` | A text file with pipe-separated values (\|). |
 | RAW | `.raw` | A text file whose entire contents is a single string value. |
 | SCsv | `.scsv` | A text file with semicolon-separated values (;). |
 | SOHsv | `.sohsv` | A text file with SOH-separated values. (SOH is ASCII codepoint 1; this format is used by Hive on HDInsight.) |
