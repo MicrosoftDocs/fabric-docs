@@ -26,11 +26,12 @@ Before using the preview experience, make sure you have the following prerequisi
 
 ## Key concepts
 
-The preview experience uses the following ontology (preview) concepts.
+The preview experience uses the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item.
-* *Entity instance:* A specific occurrence of an entity type, representing a real-world object with its own unique values for the defined properties. For example, if *Vehicle* is an entity type, then a particular car with its own VIN, make, and model is an entity instance.
-* [Graph in Microsoft Fabric](../../graph/overview.md): A Fabric item that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. Graph in Microsoft Fabric is integrated into ontology's preview experience.
+* *Entity type*
+* *Entity instance*
+* *Preview experience*
+* [Graph in Microsoft Fabric](../../graph/overview.md)
 
 ## How-to steps
 

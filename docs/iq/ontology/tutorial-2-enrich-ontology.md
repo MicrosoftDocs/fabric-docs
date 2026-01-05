@@ -25,9 +25,6 @@ Finally, you create a new relationship type to represent the connection between 
 
 Follow these steps to create the *Freezer* entity type and add properties to it. The properties aren't bound to data yet.
 
->[!NOTE]
->Properties can be created on entity types without binding data to them, and you can bind either static or time series data to them afterwards. This section shows that process. Alternatively, you can bind data to properties while they're being created in a single data binding operation (shown in the next section with time series data).
-
 1. Select **Add entity type** from the top ribbon. Enter *Freezer* for the name of your entity type and select **Add Entity Type**.
 1. In the **Entity type configuration** pane, go to the **Properties** tab. Select **Add properties**.
 
@@ -76,10 +73,7 @@ Now the *Freezer* entity has static data bound to it.
 
 ## Bind time series data to additional properties
 
-Next, add time series data on the *Freezer* entity, by creating new properties and binding time series data to them in a single data binding operation. 
-
->[!NOTE]
->Both static and time series data can be bound to properties while they're being created. This section shows that process. Alternatively, you can create properties on entity types without binding data to them, and bind data to them afterwards (shown in the previous section with static data). 
+Next, add time series data on the *Freezer* entity, by creating new properties and binding time series data to them in a single data binding operation.
 
 1. In the **Entity type configuration** pane's **Bindings** tab, select **Add data to entity type**.
 
