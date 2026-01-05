@@ -362,7 +362,7 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
 
-* OneLake security does not work with Azure Data Share because that feature is deprecated. For more information, see [Azure Data Share](https://learn.microsoft.com/azure/data-share/overview).
+* OneLake security does not work with Azure Data Share or Purview Data Share. For more information, see [Azure Data Share](/azure/data-share/overview).
 
 * The following table provides the limitations of OneLake data access roles.
 
