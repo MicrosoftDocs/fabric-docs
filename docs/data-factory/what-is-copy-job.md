@@ -143,8 +143,8 @@ With Copy job, you can move your data between cloud data stores or from on-premi
 
 See our [supported connectors](copy-job-supported-connectors.md) page for the full list of supported sources and destinations:
 
-- [General copy](#general-copy)
-- [Change data capture (CDC) replication (Preview)](#cdc-replication-preview)
+- [General copy](copy-job-supported-connectors.md#general-copy)
+- [Change data capture (CDC) replication (Preview)](copy-job-supported-connectors.md#cdc-replication-preview)
 
 Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas/label-name/data%20factory%20%7C%20copy%20job) and join the conversation on the [Fabric Community](https://community.fabric.microsoft.com/t5/Copy-job/bd-p/db_copyjob).
 
