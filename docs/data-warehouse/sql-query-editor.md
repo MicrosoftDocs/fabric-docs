@@ -150,7 +150,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 | **Function** | **Windows Shortcut** | **macOS Shortcut** | 
 |---------------|----------------------|------------------|
-| **Query editor actions** |||||
+| **Query editor actions** |||
 | Run all SQL statements in active query tab | Ctrl + Enter / Shift + Enter | Command + Enter / Shift + Enter |
 | Close current tab | Ctrl + Shift + F4 |
 | Cancel running SQL script | Alt+Break |
@@ -167,9 +167,9 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 | Move cursor up | Up Arrow | Up Arrow |
 | Move cursor down | Down Arrow | Down Arrow |
 | Select All | Ctrl + A |
-| Explain query (Copilot) | Ctrl + Alt + E | Command + Option + E | Works consistently |
+| Explain query (Copilot) | Ctrl + Alt + E | Command + Option + E |
 | Fix query (Copilot) | Ctrl + Alt + F | Command + Option + F | 
-| **Ribbon actions** |||||
+| **Ribbon actions** |||
 | Refresh metadata | Ctrl + Shift + R | Command + Shift + R | 
 | Open settings | Ctrl + Shift + X | Command + Shift + X | 
 | Copy SQL connection string | Ctrl + Shift + C | Command + Shift + C | 
@@ -177,10 +177,10 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 | Open Copilot chat pane | Ctrl + Shift + I | Command + Shift + I | 
 | New semantic model | Ctrl + Shift + M | Command + Shift + M | 
 | New visual query | Ctrl + Shift + J | Command + Shift + J | 
-| **Explorer actions** |||||
+| **Explorer actions** |||
 | Expand explorer pane | Alt + B | Option + B | 
 | Collapse explorer pane | Alt + B | Option + B |
-| **Query results actions** |||||
+| **Query results actions** |||
 | Expand results | Ctrl + R | Command + R | 
 | Collapse results | Ctrl + R | Command + R | 
 
