@@ -28,6 +28,10 @@ Copy job supports the following functionalities:
 
 [!INCLUDE [copy-job-cdc-replication-connectors](includes/copy-job-cdc-replication-connectors.md)]
 
+## Automatic table creation and truncate on destination
+
+[!INCLUDE [copy-job-auto-table-creation-and-truncate-connectors](includes/copy-job-auto-table-creation-and-truncate-connectors.md)]
+
 ## Related content
 
 - [How to create a Copy job](create-copy-job.md)
