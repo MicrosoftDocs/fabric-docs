@@ -131,7 +131,7 @@ Here's an example of what the bindings look like.
 
 Finally, verify the relationship types between entity types. Relationship types represent how entity types are related to each other in a business context. The relationship types that were imported from the semantic model are defined, but not fully configured and bound to data. 
 
-Select the *SaleEvent* entity type to display it and its relationship types on the canvas. 
+Select the *SaleEvent* entity type to display it and its relationship types on the configuration canvas. 
 
 :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png" alt-text="Screenshot of the sale event entity type and its relationships." lightbox="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png":::
 
@@ -188,12 +188,12 @@ First create entity types, which represent types of objects in a business. This 
 
 ### Add first entity type (Store)
 
-1. From the top ribbon or the center of the canvas, select **Add entity type**.
+1. From the top ribbon or the center of the configuration canvas, select **Add entity type**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/add-entity-type.png" alt-text="Screenshot of adding entity type.":::
 
 1. Enter *Store* for the name of your entity type and select **Add Entity Type**.
-1. The *Store* entity type is added to the canvas, and the **Entity type configuration** pane is visible.
+1. The *Store* entity type is added to the configuration canvas, and the **Entity type configuration** pane is visible.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
 
@@ -274,7 +274,7 @@ Follow the same steps that you used for the first relationship type to create th
 | --- | --- | --- | --- |
 | *soldIn* | Tutorial workspace > *OntologyDataLH > factsales*| *Products* <br>For **Source column**, select `ProductId`. | *SaleEvent*<br>For **Source column**, select `SaleId`. | 
 
-When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the canvas.
+When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the configuration canvas.
 
 :::image type="content" source="media/tutorial-1-create-ontology/onelake/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/onelake/all-relationship-types.png":::
 
