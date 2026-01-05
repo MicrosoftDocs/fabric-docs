@@ -4,7 +4,7 @@ description: This article provides information about how to set up an Azure Data
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 12/26/2025
 ms.custom:
 - template-how-to
 - connectors
@@ -98,7 +98,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 1. Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The Azure Data Lake Storage Gen2 connector supports the following authentication types:
 
    - [Key](connector-azure-data-lake-storage-gen2.md#key-authentication)
-   - [OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
+   - [Organizational account](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
    - [Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
    - [Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
    - [Workspace Identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
@@ -132,7 +132,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 The Azure Data Lake Storage Gen2 connector supports the following authentication types:
 
 - [Key](connector-azure-data-lake-storage-gen2.md#key-authentication)
-- [OAuth2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
+- [Organizational account](connector-azure-data-lake-storage-gen2.md#oauth2-authentication)
 - [Shared Access Signature](connector-azure-data-lake-storage-gen2.md#shared-access-signature-authentication)
 - [Service Principal](connector-azure-data-lake-storage-gen2.md#service-principal-authentication)
 - [Workspace Identity](connector-azure-data-lake-storage-gen2.md#workspace-identity-authentication)
@@ -143,11 +143,16 @@ The Azure Data Lake Storage Gen2 connector supports the following authentication
 
 :::image type="content" source="media/connector-azure-data-lake-storage-gen2/key-authentication.png" alt-text="Screenshot showing that key authentication method for Azure Data Lake Storage Gen2.":::
 
-### OAuth2 authentication
+### <a name="oauth2-authentication"></a> Organizational account authentication
 
 :::image type="content" source="media/connector-azure-data-lake-storage-gen2/oauth2-authentication.png" alt-text="Screenshot showing that OAuth2 authentication method for Azure Data Lake Storage Gen2.":::
 
 Open **Edit credentials**. The sign-in interface opens. Enter your account and password to sign in to your account. After signing in, you'll come back to the **New connection** page.
+
+Grant the organizational account proper permission. For examples of how permission works in Azure Data Lake Storage Gen2, go to [Access control lists on files and directories](/azure/storage/blobs/data-lake-storage-access-control#access-control-lists-on-files-and-directories).
+
+   - **As source**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Read** permission for the files to copy. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Reader** role.
+   - **As destination**, in Storage Explorer, grant at least **Execute** permission for all upstream folders and the file system, along with **Write** permission for the destination folder. Alternatively, in Access control (IAM), grant at least the **Storage Blob Data Contributor** role.
 
 ### Shared access signature authentication
 
