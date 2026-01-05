@@ -28,8 +28,9 @@ Before using the preview experience, make sure you have the following prerequisi
 
 The preview experience uses the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity instance*
 * *Entity type*
+* *Entity instance*
+* *Preview experience*
 * [Graph in Microsoft Fabric](../../graph/overview.md)
 
 ## How-to steps

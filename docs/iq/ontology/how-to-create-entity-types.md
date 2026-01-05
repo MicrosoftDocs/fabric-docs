@@ -28,11 +28,11 @@ Before creating entity types, make sure you have the following prerequisites:
 
 Entity types use the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Data binding*
-* *Entity instance*
 * *Entity type*
 * *Entity type key*
+* *Entity instance*
 * *Property*
+* *Data binding*
 
 ## How-to steps
 
@@ -42,7 +42,7 @@ This section contains step-by-step instructions for adding and managing entity t
 
 ### Create an entity type
 
-1. Select **Add entity type** from the top ribbon or the center of the canvas.
+1. Select **Add entity type** from the top ribbon or the center of the configuration canvas.
 
     :::image type="content" source="media/how-to-create-entity-types/add-entity-type.png" alt-text="Screenshot of adding entity type.":::
 
@@ -51,7 +51,7 @@ This section contains step-by-step instructions for adding and managing entity t
     >[!NOTE]
     >Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
-1. Your entity type is added to the canvas, and the **Entity type configuration** pane is visible.
+1. Your entity type is added to the configuration canvas, and the **Entity type configuration** pane is visible.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
 

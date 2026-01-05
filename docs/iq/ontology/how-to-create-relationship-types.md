@@ -34,8 +34,8 @@ Before adding relationship types to your ontology, make sure you have the follow
 Relationship types use the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
 * *Entity type*
-* *Relationship instance*
 * *Relationship type*
+* *Relationship instance*
 
 ## How-to steps
 
@@ -82,8 +82,8 @@ Follow these steps to create a relationship type and bind data to it:
 
 You can edit or delete relationship types in the **Relationship configuration** pane.
 
-* To **edit** a relationship type, select it in the canvas and edit any of the fields in the **Relationship configuration** pane.
+* To **edit** a relationship type, select it in the configuration canvas and edit any of the fields in the **Relationship configuration** pane.
 
-* To **delete** a relationship type, select it in the canvas and select the **Delete relationship type** button in the **Relationship configuration** pane.
+* To **delete** a relationship type, select it in the configuration canvas and select the **Delete relationship type** button in the **Relationship configuration** pane.
 
     :::image type="content" source="media/how-to-create-relationship-types/delete-relationship.png" alt-text="Screenshot of editing relationship details in the relationship configuration." lightbox="media/how-to-create-relationship-types/delete-relationship.png":::

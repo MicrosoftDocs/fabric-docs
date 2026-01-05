@@ -16,9 +16,9 @@ Data binding in ontology (preview) connects the schema of entity types, relation
 
 With data binding, you can:
 
-* Seamlessly integrate data into a semantic layer without copying data.
-* Enrich entity types with up-to-date, contextually relevant information from batch and real-time sources.
-* Provide a semantic backbone for AI agents and automation, supporting reasoning, decision-making, and actions across the enterprise.
+* Seamlessly integrate data into a semantic layer without copying source data
+* Enrich entity types with up-to-date, contextually relevant information from batch and real-time sources
+* Provide a semantic backbone for AI agents and automation, supporting reasoning, decision-making, and actions across the enterprise
 
 ## Prerequisites
 
@@ -37,9 +37,9 @@ Before binding data to your ontology, make sure you have the following prerequis
 
 Data binding uses the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity instance*
 * *Entity type*
 * *Entity type key*
+* *Entity instance*
 * *Property*
 
 ## How-to steps
