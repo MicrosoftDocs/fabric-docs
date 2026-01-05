@@ -76,6 +76,12 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
 
+## Limitations
+
+The following limitations apply to SharePoint shortcuts:
+
+* OneLake doesn't support shortcuts to personal SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites.
+
 ## Related content
 
 * [Create a OneLake shortcut](create-onelake-shortcut.md)
