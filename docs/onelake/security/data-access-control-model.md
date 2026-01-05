@@ -364,6 +364,8 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
 
+* OneLake security does not work with Azure Data share because that feature is deprecated. For more information, see [Azure Data Share](https://learn.microsoft.com/azure/data-share/overview).
+
 * The following table provides the limitations of OneLake data access roles.
 
   | Scenario | Limit |
