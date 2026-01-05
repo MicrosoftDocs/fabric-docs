@@ -145,13 +145,14 @@ When a query is still running and you close the query editor tab, you can decide
 
 ## Keyboard shortcuts
 
-Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The table in this article lists all the shortcuts available in SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal:
+Keyboard shortcuts provide a quick way to navigate and allow users to work more efficiently in SQL query editor. The following table lists all the shortcuts available in Windows and macOS, in the Edge browser, for the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal:
 
-| **Function** | **Shortcut** |
-|---|---|
-| New SQL query | Ctrl + Q |
+
+| **Function** | **Windows Shortcut** | **macOS Shortcut** | 
+|---------------|----------------------|------------------|
+| **Query editor actions** |||||
+| Run all SQL statements in active query tab | Ctrl + Enter / Shift + Enter | Command + Enter / Shift + Enter |
 | Close current tab | Ctrl + Shift + F4 |
-| Run SQL script | Ctrl + Enter, Shift +Enter |
 | Cancel running SQL script | Alt+Break |
 | Search string | Ctrl + F |
 | Replace string | Ctrl + H |
@@ -163,9 +164,25 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 | Indent decrease | Shift + Tab |
 | Comment | Ctrl + K, Ctrl + C |
 | Uncomment | Ctrl + K, Ctrl + U |
-| Move cursor up | ↑ |
-| Move cursor down | ↓ |
+| Move cursor up | Up Arrow | Up Arrow |
+| Move cursor down | Down Arrow | Down Arrow |
 | Select All | Ctrl + A |
+| Explain query (Copilot) | Ctrl + Alt + E | Command + Option + E | Works consistently |
+| Fix query (Copilot) | Ctrl + Alt + F | Command + Option + F | 
+| **Ribbon actions** |||||
+| Refresh metadata | Ctrl + Shift + R | Command + Shift + R | 
+| Open settings | Ctrl + Shift + X | Command + Shift + X | 
+| Copy SQL connection string | Ctrl + Shift + C | Command + Shift + C | 
+| Open query activity | Ctrl + Shift + A | Command + Shift + A | 
+| Open Copilot chat pane | Ctrl + Shift + I | Command + Shift + I | 
+| New semantic model | Ctrl + Shift + M | Command + Shift + M | 
+| New visual query | Ctrl + Shift + J | Command + Shift + J | 
+| **Explorer actions** |||||
+| Expand explorer pane | Alt + B | Option + B | 
+| Collapse explorer pane | Alt + B | Option + B |
+| **Query results actions** |||||
+| Expand results | Ctrl + R | Command + R | 
+| Collapse results | Ctrl + R | Command + R | 
 
 ## Limitations
 
@@ -199,7 +216,6 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - [Manage objects in your data warehouse](manage-objects.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
-
 - [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
 
 ## Next step
