@@ -31,15 +31,11 @@ Before adding relationship types to your ontology, make sure you have the follow
 
 ## Key concepts
 
-Relationship types use the following ontology (preview) concepts.
+Relationship types use the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item.
-* *Relationship type:* A definition that specifies how two entity types are connected (such as *located_at* or *monitored_by*). 
-
-    >[!TIP]
-    > You can define a relationship type without [binding data](how-to-bind-data.md) to it. If you don't bind data, the relationship type isn't visualized in the [preview experience](how-to-use-preview-experience.md).
-
-* *Relationship instance:* A specific occurrence of a relationship type between two entity instances.
+* *Entity type*
+* *Relationship instance*
+* *Relationship type*
 
 ## How-to steps
 
