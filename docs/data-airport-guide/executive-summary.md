@@ -2,8 +2,8 @@
 ---
 title: Microsoft Fabric as a Data Airport
 description: Technical guide using the airport analogy to explain Microsoft Fabric and support DP-700 certification.
-author: María Natalia Ponce
-ms.author: GitQ9Hub
+author: GitQ9Hub
+ms.author: MaraNataliaPonce-4284
 ms.date: 2026-01-05
 ms.topic: conceptual
 ---
