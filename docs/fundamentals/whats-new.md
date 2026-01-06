@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 12/19/2025
+ms.date: 01/06/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -220,6 +220,7 @@ News and feature announcements about the Microsoft Fabric platform experience.
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|January 2026|**Explore Fabric Security insights in the OneLake catalog – Govern tab**|[Fabric security insights in the OneLake catalog Govern tab](https://blog.fabric.microsoft.com/blog/explore-your-fabric-security-insights-in-the-onelake-catalog-govern-tab?ft=All) move the security and governance reports from the Microsoft Purview Hub into the new Admin Report on the OneLake catalog Govern tab so you can see sensitivity label and data loss prevention coverage alongside your data catalog.|
 | December 2025 | **Understanding Operations Agent Billing (Preview)** | Understand how [Operations agents (preview) billing will be activated soon](https://blog.fabric.microsoft.com/blog/understanding-operations-agent-capacity-consumption-usage-reporting-and-billing). For more information, see [Operations agent capacity and billing](../real-time-intelligence/operations-agent-billing.md) and [Copilot in Fabric consumption](../fundamentals/copilot-fabric-consumption.md). |
 |November 2025|**Govern in OneLake Catalog for Fabric admins (Preview)**|[OneLake catalog governance for Fabric admins (Preview)](https://blog.fabric.microsoft.com/blog/onelake-catalog-govern-for-fabric-admins) provides admin insights, recommended actions, and reports in the Govern tab to improve governance across capacities, domains, and items. For more information, see [OneLake catalog](../governance/onelake-catalog-overview.md) and [Governance in OneLake catalog](../governance/onelake-catalog-govern.md).|
 |November 2025|**Geospatial Intelligence with Esri's ArcGIS Maps Workload (Preview)**|[Esri's ArcGIS Maps Workload (Preview)](https://blog.fabric.microsoft.com/blog/unlocking-geospatial-intelligence-in-microsoft-fabric-with-esris-arcgis-maps-workload-preview?ft=All) can visualize, analyze, and share geospatial insights with OneLake integration, Spark‑based processing, Power BI embedding, and smart mapping features. To get started, see [Microsoft Fabric Workload Hub](https://powerbi.com/workloadhub/my?experience=power-bi). |
