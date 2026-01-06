@@ -6,7 +6,7 @@ ms.author: mimart
 
 ms.topic: conceptual
 ms.custom:
-ms.date: 11/20/2025
+ms.date: 01/06/2026
 LocalizationGroup: Data from files
 ---
 
