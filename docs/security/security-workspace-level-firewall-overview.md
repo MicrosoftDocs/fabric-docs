@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
-ms.date: 12/10/2025
+ms.date: 01/06/2026
 
 #customer intent: As a workspace admin, I want to lean about using workspace-level IP firewall rules on my workspace to restrict the IP addresses than can access my Fabric workspace.
 
@@ -70,9 +70,14 @@ You can use workspace-level IP firewall rules to control access to the following
 
 ### Considerations and limitations
 
-- The workspace-level IP firewall rules feature is supported for all Fabric capacity types including Trial capacity.  
-- The limit of IP firewall rules for workspace is 256.  
-- Public IPs of VM on Vnet with Private endpoints (Tenant or Workspace) cannot be added as IP firewall rules 
+- The workspace-level IP firewall rules feature is supported for all Fabric capacity types, including Trial capacity.
+- Only public internet IP addresses are allowed in IP network rules. IP address ranges reserved for private networks (as defined in RFC 1918) aren't supported. Private networks include addresses that start with 10, 172.16 to 172.31, and 192.168.
+- You can configure up to 256 IP firewall rules per workspace.
+- Public IP addresses from VMs on virtual networks with private endpoints (tenant or workspace level) can't be added as IP firewall rules.
+- Duplicate rule names aren't allowed, and spaces aren't allowed in IP addresses.
+- To enable traffic from an on-premises network, identify the internet-facing IP addresses that your network uses. Contact your network administrator for assistance.
+- If you're using Azure ExpressRoute from your premises, identify the NAT IP addresses used for Microsoft peering. Either the service provider or the customer provides the NAT IP addresses.
+- If the workspace becomes inaccessible due to incorrect or missing allowed public IP addresses, use the API to update IP firewall rules.
 
 ## Next steps
 
