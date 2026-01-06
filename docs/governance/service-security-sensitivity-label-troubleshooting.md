@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: conceptual
 ms.custom:
-ms.date: 05/18/2025
+ms.date: 01/06/2026
 LocalizationGroup: Data from files
 ---
 
@@ -181,6 +181,14 @@ Downstream inheritance never overwrites labels that were applied manually.
 Downstream inheritance never overwrites a label with a less restrictive label.
 
 Sensitivity labels inherited from data sources are automatically propagated downstream only when [fully automated downstream inheritance mode](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance) is enabled.
+
+### Sensitivity labels are applied to new reports even though "Automatically apply sensitivity labels to downstream content" is disabled
+
+When you create a new Power BI report based on a semantic model that has a sensitivity label, the report automatically inherits the label from the semantic model, even if the **Automatically apply sensitivity labels to downstream content** tenant setting is disabled.
+
+This behavior is by design. Sensitivity label inheritance upon item creation is a separate feature from downstream inheritance. When you create a new report based on a labeled parent item, the parent's label is automatically applied to the new report to prevent the creation of unlabeled reports, which could expose data.
+
+The **Automatically apply sensitivity labels to downstream content** setting controls whether labels are propagated to *existing* downstream items when you change the label on a parent item. It doesn't affect label inheritance when you create *new* items.
 
 ## Sensitivity label inheritance from data sources
 
