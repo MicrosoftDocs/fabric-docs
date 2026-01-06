@@ -294,6 +294,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/azure-key-vault-reference-overview.md",
+        "redirect_url": "/fabric/data-factory/azure-key-vault-reference-configure",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/data-workflows-hello-world.md",
         "redirect_url": "/fabric/data-factory/apache-airflow-jobs-hello-world",
         "redirect_document_id": false
