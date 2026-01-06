@@ -1023,6 +1023,7 @@ This section summarizes archived improvements and features for [Real-Time Intell
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|July 2025|**From Signals to Insights: Building a Real-Time Streaming Data Platform with Fabric Eventstream**|Learn how [Contoso uses MQTT sensors, public weather feeds, and Fabric Real-Time Intelligence to monitor smart buildings](https://blog.fabric.microsoft.com/blog/from-signals-to-insights-building-a-real-time-streaming-data-platform-with-fabric-eventstream?ft=All).|
 |July 2025|**Ingest Logs using Logstash into Real-Time Intelligence**|Logstash is an open-source data processing tool that enables the collection, transformation, and forwarding of data from a wide variety of sources. Learn how to [Ingest Logs using Logstash into Real-Time Intelligence](https://blog.fabric.microsoft.com/blog/ingest-logs-using-logstash-into-real-time-intelligence?ft=All).|
 |July 2025|**ML model scoring in Fabric Eventhouse via update policy (preview)**|Learn how to accomplish [ML model scoring](https://blog.fabric.microsoft.com/blog/ml-model-scoring-in-fabric-eventhouse-via-update-policy?ft=All) using Eventstream, Eventhouse, OneLake, Spark notebooks, KQL querysets, and update policies.|
 |May 2025|**Efficient JSON loading to Eventhouse**|In this blog, review options to design [efficient JSON loading to Eventhouse](https://blog.fabric.microsoft.com/blog/efficient-json-loading-to-eventhouse-in-fabric-real-time-intelligence?ft=All).|
