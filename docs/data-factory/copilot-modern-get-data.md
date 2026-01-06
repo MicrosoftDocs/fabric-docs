@@ -6,6 +6,7 @@ ms.author: xupzhou
 ms.topic: conceptual
 ms.date: 09/15/2025
 ms.custom: dataflows
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Unblocking Copilot in Get Data for Modern data ingestion and transformation (Preview)
