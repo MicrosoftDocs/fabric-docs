@@ -14,7 +14,7 @@ Fabric Eventstream supports multiple data formats for input event payloads. This
 
 - **Natively supported formats (JSON, CSV, Avro)**: Fully supported by Eventstream for ingestion, transformation, and routing. You can route events in these formats to all destinations.
 - **Direct ingestion text formats**: Additional plain text formats (for example, `PSV`, `TSV`) that Eventstream can ingest directly into Eventhouse or forward to custom endpoints. Eventstream doesn't parse these formats, so no transformations are supported. These formats aren't supported for Lakehouse or Activator destinations.
-- **Pass-through formats**: Any other format can be passed through unparsed to a custom endpoint. You can't route these formats to Eventhouse, Lakehouse, or Activator.
+- **Pass-through formats**: Any other format can be passed through unparsed from source to a custom endpoint destination. You can ingest these formats into Eventstream with connector, but can't route these formats to Eventhouse, Lakehouse, or Activator.
 
 ## Natively supported formats: JSON, CSV, Avro 
 Eventstream natively supports JSON, CSV, and Avro event payloads. The Eventstream operator can parse these formats, enabling transformations and full processing. You can deliver events in these formats to **all destinations** – Eventhouse, Activator, Lakehouse, and custom endpoints – without restrictions. 
