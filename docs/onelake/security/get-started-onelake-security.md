@@ -45,7 +45,7 @@ To ensure a smooth opt-in experience, all users with read permission to data in 
 
 Use OneLake security roles to manage OneLake read access to any tables or folders in an item. Access to tables can be further restricted using row and/or column level security. Any security set applies to access from all engines in Fabric. For more information, see the [data access control model.](../security/data-access-control-model.md)
 
-For specific item types, ReadWrite access can also be configured. This gives users the ability to edit data in a lakehouse on only the specified tables or folders.
+For specific item types, ReadWrite access can also be configured. This permission gives users the ability to edit data in a lakehouse on specified tables or folders without giving them access to create or manage Fabric items. ReadWrite access enables users to perform write operations through Spark notebooks, the OneLake file explorer, or OneLake APIs. Write operations through the Lakehouse UX for viewers is not supported.
 
 ## Create a role
 

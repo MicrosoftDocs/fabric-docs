@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: conceptual
-ms.date: 09/02/2025
+ms.date: 11/05/2025
 ms.custom: licensing support, intro-overview
 LocalizationGroup: Premium
 ai-usage: ai-assisted
@@ -89,12 +89,6 @@ Semantic model operations such as queries are subject to individual memory limit
 - **Loading the semantic model**: The first action is loading the semantic model into the memory.
 - **Refreshing the semantic model**: The second action is refreshing the semantic model after it's loaded into the memory. The refresh operation causes the memory used by the semantic model to more than double, because in addition to the memory used by the refresh operation, the original copy of data remains available for active queries while another copy is being processed by the refresh. Once the refresh transaction commits, the memory footprint is reduced.
 - **Interacting with the report**: The third action is caused by the user's interaction with the report. During the semantic model refresh, report interactions execute DAX queries. Each DAX query consumes a certain amount of temporary memory required to produce the results. Each query can consume a different amount of memory. The memory used to query the semantic model is added to the memory needed to load the semantic model, and refresh it.
-
-#### Handling low memory situations
-
-Load balancing across semantic models is managed automatically by the system. In some cases, the capacity might temporarily run low on memory during high-demand periods. When this occurs, you might encounter memory-related errors. The system typically recovers quickly as resources become available. If you receive a memory error, wait a moment and retry your operation.
-
-If memory errors occur frequently or persist, your capacity might require additional resources. In such cases, contact Microsoft Support to investigate capacity sizing and optimization options for your workload.
 
 ## Refreshes
 

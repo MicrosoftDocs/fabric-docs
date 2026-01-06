@@ -269,7 +269,11 @@ Column level security also follows a more strict behavior in SQL Endpoint by ope
 
 ## ReadWrite permission
 
-The ReadWrite permission gives read-only users the ability to perform write operations to specific items. ReadWrite permission is only applicable for Viewers or users with the Read permission on an item. Assigning ReadWrite access to an Admin, Member, or Contributor has no effect as those roles already have that permission implicitly. The ReadWrite permission operates in the following ways:
+The ReadWrite permission gives read-only users the ability to perform write operations to specific items. ReadWrite permission is only applicable for Viewers or users with the Read permission on an item. Assigning ReadWrite access to an Admin, Member, or Contributor has no effect as those roles already have that permission implicitly.
+
+ReadWrite access enables users to perform write operations through Spark notebooks, the OneLake file explorer, or OneLake APIs. Write operations through the Lakehouse UX for viewers is not supported.
+
+The ReadWrite permission operates in the following ways:
 
 - The ReadWrite permission includes all privileges granted by the Read permission.
 - Users with ReadWrite permissions on an object can perform write operations on that object, inclusive. That is, any operations can also be performed on the object itself.
@@ -354,13 +358,15 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
 * To query data from a Spark notebook using Spark SQL, the user must have at least Viewer access in the workspace they're querying.
 
+* Mixed-mode queries are not supported. Single queries that access both OneLake security enabled and non-OneLake security enabled data will fail with query errors.
+
 * Spark notebooks require that the environment be 3.5 or higher and using Fabric runtime 1.3.
 
 * OneLake security doesn't work with [private link protection](../../security/security-private-links-overview.md).
 
 * The [external data sharing preview](../../governance/external-data-sharing-overview.md) feature isn't compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares might stop working.
 
-* Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
+* OneLake security does not work with Azure Data Share or Purview Data Share. For more information, see [Azure Data Share](/azure/data-share/overview).
 
 * The following table provides the limitations of OneLake data access roles.
 

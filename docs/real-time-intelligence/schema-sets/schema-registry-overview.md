@@ -1,6 +1,5 @@
 ---
 title: Schema Registry in Fabric Real-Time Intelligence
-ms.subservice: rti-hub
 ms.service: fabric
 description: Learn about Schema Registry, a centralized repository in Fabric Real-Time Intelligence, designed to validate and organize schemas for event-driven architectures.
 #customer intent: As a data engineer, I want to understand what Schema Registry is, so that I can evaluate if it will help me manage data consistency in my real-time workflows.

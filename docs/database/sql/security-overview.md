@@ -68,10 +68,6 @@ For more information about customer-managed keys for a SQL database in Microsoft
 
 SQL auditing for SQL database can track database events and write them to an audit log in your OneLake. For more information, see [Auditing](auditing.md).
 
-## Limitations
-
-- Encryption using customer-managed keys are currently not supported in SQL database in Microsoft Fabric.
-
 ## Related content
 
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)

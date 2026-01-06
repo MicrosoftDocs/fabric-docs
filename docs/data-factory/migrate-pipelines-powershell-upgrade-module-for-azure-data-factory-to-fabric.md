@@ -44,6 +44,7 @@ Alongside the [currently supported datasets and linked services](#currently-supp
 - If an Activity isn’t [available in Fabric](compare-fabric-data-factory-and-azure-data-factory.md), the Fabric Upgrader can’t upgrade it.
 - Global configuration and parameters aren’t supported.
 - `pipeline().Pipeline` isn’t currently supported.
+- Using dynamic expression for the **Url** property in Web/Webhook isn't supported.
 
 ### Currently supported datasets and linked services
 

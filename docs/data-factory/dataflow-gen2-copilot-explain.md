@@ -7,6 +7,7 @@ ms.reviewer: whhender
 ms.topic: conceptual
 ms.date: 08/16/2025
 ms.custom: dataflows
+ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot explainer skill in Dataflow Gen2
 

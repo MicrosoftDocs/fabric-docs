@@ -1,6 +1,5 @@
 ---
 title: Create and Manage Event Schemas in Fabric Schema Sets
-ms.subservice: rti-hub
 ms.service: fabric
 ms.reviewer: spelluru
 description: Learn how to create, update, and manage event schemas in Fabric Schema Sets for seamless data organization and efficient schema management.

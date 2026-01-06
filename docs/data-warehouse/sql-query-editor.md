@@ -3,8 +3,8 @@ title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: prlangad, jacindaeng
-ms.date: 09/24/2025
+ms.reviewer: prlangad, jacindaeng, pradeepsrikakolapu
+ms.date: 01/05/2026
 ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: how-to
@@ -40,7 +40,7 @@ As you work on your SQL query, the queries are automatically saved every few sec
 
 ## Multitask between tabs for data preview, querying, and modeling
 
-The data preview, querying, and modeling experience opens up as individual tabs that you can multitask between in the editor. If you are writing a query, you can switch between seeing a preview of the data and viewing the relationships between tables that you're writing the query for. To view or close all tabs, select the icon on the right of all tabs.
+The data preview, querying, and modeling experience opens up as individual tabs that you can multitask between in the editor. If you're writing a query, you can switch between seeing a preview of the data and viewing the relationships between tables that you're writing the query for. To view or close all tabs, select the icon on the right of all tabs.
 
 :::image type="content" source="media/sql-query-editor/multitask-tabs.png" alt-text="Screenshot showing where to show the tabs for data preview, querying, and modeling." lightbox="media/sql-query-editor/multitask-tabs.png":::
 
@@ -77,14 +77,14 @@ The **Open in Excel** button opens the corresponding T-SQL Query to Excel and ex
 Follow these steps to work with the Excel file locally:
 
 1. After you select the **Continue** button, locate the downloaded Excel file in your Windows File Explorer, for example, in the **Downloads** folder of your browser.
-1. To see the data, select the **Enable Editing** button in the **Protected View** ribbon followed by the **Enable Content** button in the **Security Warning** ribbon. Once both are enabled, you are presented with the following dialog to approve running the query listed.
+1. To see the data, select the **Enable Editing** button in the **Protected View** ribbon followed by the **Enable Content** button in the **Security Warning** ribbon. Once both are enabled, you're presented with the following dialog to approve running the query listed.
    :::image type="content" source="media/sql-query-editor/native-database-query.png" alt-text="Screenshot from Microsoft Excel showing the Native Database Query dialog." lightbox="media/sql-query-editor/native-database-query.png":::
 
 1. Select **Run**.
 1. Authenticate your account with the Microsoft account option. Select **Connect**.
    :::image type="content" source="media/sql-query-editor/sql-server-database-authentication.png" alt-text="Screenshot from Microsoft Excel showing the SQL Server database dialog." lightbox="media/sql-query-editor/sql-server-database-authentication.png":::
 
-Once you have successfully signed in, you'll see the data presented in the spreadsheet.
+Once you have successfully signed in, you see the data presented in the spreadsheet.
 
 #### Explore this data (preview)
 
@@ -132,6 +132,16 @@ GROUP BY
 ORDER BY
    TotalProfit DESC;
 ```
+
+## Manage running queries when closing the query editor
+
+When a query is still running and you close the query editor tab, you can decide whether the query should continue running in the background or be canceled. 
+
+- **Yes, keep running the query**: The query continues to execute in the background, with a toast notification indicating it's running. When the query finishes, a notification will alert you so you can return to the query to view the results.
+
+- **No, cancel the query**: The query is terminated immediately. This is useful to free up resources or stop queries you no longer need.
+
+- **Remember my preference and don't show again**: Saves your choice locally in your browser cookies.
 
 ## Keyboard shortcuts
 
@@ -189,6 +199,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - [Manage objects in your data warehouse](manage-objects.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
+
 - [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
 
 ## Next step

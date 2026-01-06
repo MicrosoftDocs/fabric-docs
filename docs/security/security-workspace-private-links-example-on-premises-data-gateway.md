@@ -20,8 +20,10 @@ An on-premises data gateway (OPDG) can be used to establish cross-workspace comm
 
 In this diagram, the open workspace (Workspace 1) contains Power BI reports and a semantic model that is bound to an OPDG. The OPDG enables the connection to the lakehouse in the inbound restricted workspace. This setup allows Power BI reports and semantic models in Workspace 1 to securely access the lakehouse in Workspace 2 without exposing it to public access.
 
-This article explains how to connect an open workspace to data in a restricted workspace using an OPDG for Power BI semantic models.
+This article explains how to connect an open workspace to data in a restricted workspace using an OPDG for Power BI semantic models. It also explains how to create semantic models in import and DirectQuery mode against a lakehouse in an inbound restricted workspace.
 
+> [!NOTE]
+> Semantic models in Direct Lake mode are not yet supported against data sources in inbound restricted workspaces.
 
 ## Step 1: Create the workspaces
 
@@ -36,7 +38,7 @@ To create the workspaces, follow these steps:
 1. In the tenant settings, [enable workspace-level inbound access protection](security-workspace-enable-inbound-access-protection.md).
 1. For the target workspace, [set up workspace-level private links](security-workspace-level-private-links-set-up.md).
 
-> [!NOTE]
+> [!IMPORTANT]
 > This article refers to the *workspaceFQDN*, which is the fully qualified domain name (FQDN) of the workspace. The format is:
 >
 >`https://{workspaceID}.z{xy}.w.api.fabric.microsoft.com`
@@ -82,7 +84,70 @@ Create a lakehouse in the target workspace and upload a Delta Table to it by fol
 
 ## Step 3: Create a semantic model in the open workspace
 
-Now that you have a lakehouse in the restricted workspace, you can create a semantic model in the open workspace that references this lakehouse.    
+Now that you have a lakehouse in the restricted workspace, you can create a semantic model in the open workspace that references this lakehouse. You can use:
+
+-	Web modeling experience in the Power BI portal.
+
+-	Power BI Desktop.
+
+-	REST APIs to deploy a model definition with the same table schema as in the restricted lakehouse.
+
+- XMLA-based tools to deploy a semantic model programmatically (see [Semantic model connectivity with the XMLA endpoint](/fabric/enterprise/powerbi/service-premium-connect-tools)).
+
+### Option 3a: Using the Web modeling experience
+
+1.	In the source workspace, click on New item, and then in the New item pane, click on the Semantic model tile.
+
+2.	On the Add data to start building a report page, click on Get Data, and then choose Azure SQL database to connect to the data source via the SQL Analytics Endpoint.
+
+   > [!NOTE]
+   > Do not use the OneLake catalog tile because the Web modeling experience creates a Direct Lake model when connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint (SQL AE).
+
+3. In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
+
+4.	Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
+   
+5.	Under Connection credentials, apply the following configuration settings:
+
+| Input control        | Value                                                                                                  |
+|----------------------|--------------------------------------------------------------------------------------------------------|
+| Connection listbox   | Create a new connection                                                                               |
+| Connection name      | Accept the default or provide a meaningful name.                                                      |
+| Data gateway         | If already installed, select an OPDGW for the data connection. This step can also be performed later (Step 4 below). |
+| Authentication kind  | Choose Organizational account and click on Sign in to provide the credentials to access the data source. |
+
+6.	Accept the remaining default settings and click on Next.
+
+7.	On the Choose data page, select the tables you want to include in the semantic model and then click on Create a report.
+
+8.	In the Create new report dialog box, verify that the source workspace is selected, provide a meaningful semantic model name, and then click on Create.
+
+9.	In the Some Steps didn’t Complete dialog box, click on Open Model View. Note that the semantic model cannot yet connect to the SQL Analytics Endpoint in the inbound restricted target workspace. You complete the connection configuration in Step 4 below.
+
+### Option 3b: Using Power BI Desktop
+
+1.	In Power BI Desktop, installed on a machine with private network access to the target workspace, make sure you are logged in with your user account.
+
+2.	On the Home ribbon, click on Get data, click on More, and choose Azure SQL database.
+
+   > [!NOTE]
+   > Do not use OneLake catalog because Power BI Desktop cannot yet connect to OneLake catalog data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint (SQL AE).
+
+3.	In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
+
+4.	Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
+
+5.	Under Data Connectivity mode, choose Import or DirectQuery according to your requirements, then click OK.
+
+6.	If prompted, select Microsoft account in the authentication dialog and then click Sign in to provide the credentials to access the data source.
+
+7.	In the Navigator dialog box, select the tables you want to include in the semantic model and then click Load.
+
+8.	Add a visual to the report canvas and then, on the Home ribbon, click on Publish.
+
+9.	Save your changes to a Power BI Desktop file on the local machine and then in the Publish to Power BI dialog, select the source workspace. Alternatively, you can import the Power BI Desktop file to the source workspace in the Power BI portal.
+
+### Option 3c: Deploying a semantic model definition
 
 1. In the open workspace, create a semantic model using a definition with the same table schema as in the restricted lakehouse. Use the following API:
 

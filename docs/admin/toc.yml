@@ -78,6 +78,8 @@ items:
     href: portal-workspaces.md  
   - name: Workspace tenant settings
     href: portal-workspace.md
+  - name: Capacity reassignment restrictions
+    href: portal-workspace-capacity-reassignment.md
 - name: Feature set up
   items:
   - name: Enable item certification

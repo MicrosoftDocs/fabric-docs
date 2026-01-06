@@ -1,10 +1,10 @@
 ---
 title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.reviewer: jmaldonado
-ms.date: 10/23/2025
+ms.date: 12/03/2025
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
@@ -19,15 +19,16 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - [!INCLUDE [fabric-mirroreddb-supported-regions](./includes/fabric-mirroreddb-supported-regions.md)]
 
 - Mirroring is only available for these Azure Cosmos DB account types listed here.
+
   | Azure Cosmos DB account type | Available |
-  | --- | --- |
+  |---|---|
   | **API for NoSQL** | Yes |
   | **API for MongoDB (RU-based)** | No |
-  | **API for MongoDB (vCore-based)** | No |
   | **API for Apache Gremlin** | No |
   | **API for Table** | No |
   | **API for Apache Cassandra (RU-based)** | No |
   | **Managed Instance for Apache Cassandra** | No |
+  | **DocumentDB (vCore-based)** | No |
 
 ## Account and database limitations
 

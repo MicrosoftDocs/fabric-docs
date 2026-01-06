@@ -7,13 +7,13 @@ author: SnehaGunda
 ms.topic: conceptual
 ms.custom:
 ms.search.form: product-trident
-ms.date: 06/10/2025
+ms.date: 12/16/2025
 # customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ---
 
 # Microsoft Fabric terminology
 
-Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, Fabric Data Science, Real-Time Intelligence, Data Factory, and Power BI.
+Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, IQ, Real-Time Intelligence, and Power BI.
 
 ## General terms
 
@@ -73,9 +73,15 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Fabric Data Warehouse:** The Fabric Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Fabric Data Warehouse](../data-warehouse/data-warehousing.md#fabric-data-warehouse).
 
+## IQ
+
+- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md).
+
 ## Real-Time Intelligence
 
 - **Activator:** Activator is a no-code, low-code tool that allows you to create alerts, triggers, and actions on your data. Activator is used to create alerts on your data streams. For more information, see [Activator](../real-time-intelligence/data-activator/activator-introduction.md).
+
+- **Digital twin builder:** Digital twin builder (preview) is an item that creates digital representations of real-world environments to optimize physical operations using data. For more information, see [What is digital twin builder (preview)?](../real-time-intelligence/digital-twin-builder/overview.md).
 
 - **Eventhouse:** Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They're designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. A single workspace can hold multiple Eventhouses, an eventhouse can hold multiple KQL databases, and each database can hold multiple tables. For more information, see [Eventhouse overview](../real-time-intelligence/eventhouse.md).
 

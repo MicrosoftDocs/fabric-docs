@@ -21,10 +21,7 @@ Access to Purview hub requires the [Fabric administrator role](../admin/roles.md
 
 ## Access the hub
 
-To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub**.
-
-:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
-
+To access the hub, navigate to the 'Admin monitoring' workspace (available to tenant admins only). In it you can open the Purview Hub report.
 If this is the first time insights are being generated, it might take some time for them to appear.
 
 ## Get insights about the Microsoft Fabric data in your tenant
