@@ -95,6 +95,8 @@ Here's an example of what entity type properties look like.
 
 ### Add SaleEvent key
 
+Each entity type has an entity type key that represents a unique identifier for each record of ingested data. String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
+
 The *SaleEvent* entity type doesn't have a key that was imported from the source data, so you need to add it manually.
 
 1. Open the *SaleEvent* entity type.
@@ -103,10 +105,6 @@ The *SaleEvent* entity type doesn't have a key that was imported from the source
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/add-key.png" alt-text="Screenshot of adding entity type key.":::
 
 1. Select `SaleId`.
-
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
-
 1. When the key is saved, it looks like this:
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-key.png" alt-text="Screenshot of the sale event key.":::
@@ -221,9 +219,6 @@ First create entity types, which represent types of objects in a business. This 
 1. Select **StoreId** as the key property and select **Save**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-2.png" alt-text="Screenshot of selecting the entity type key.":::
-
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
 
 Now the *Store* entity type is ready. Continue to the next section to create the remaining entity types.
 
