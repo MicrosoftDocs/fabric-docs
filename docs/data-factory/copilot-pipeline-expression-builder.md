@@ -7,6 +7,7 @@ ms.reviewer: whhender
 ms.date: 11/04/2025
 ai-usage: ai-assisted
 ms.topic: concept-article
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Build pipeline expressions with Copilot (Preview)

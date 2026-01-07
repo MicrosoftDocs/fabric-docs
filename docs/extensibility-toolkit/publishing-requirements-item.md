@@ -4,7 +4,7 @@ description: Learn about the guidelines and requirements for publishing Microsof
 author: gsaurer
 ms.author: billmath
 ms.topic: article
-ms.date: 11/03/2025
+ms.date: 12/15/2025
 ---
 
 # Microsoft Fabric Item Publishing Requirements
@@ -22,13 +22,18 @@ General requirements for item naming, icons, and basic metadata
 
 ### 1.1 - Item has a clear name
 
-Item must have a clear, descriptive display name that helps users understand its purpose and type. You can't use generic names (for example, AI, Agent,.. ) without any prefix or suffix indicating the specialty, your company, or product.
+Item must have a clear, descriptive display name that helps users understand its purpose and type. You can't use generic names (for example, AI, Agent,.. ) without any pre or suffix indicating the specialty, your company, or product.
 
 **Stage Requirements:**
 
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Item Manifest](./manifest-item.md)
+- [How to Create Item](./how-to-create-item.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -42,7 +47,14 @@ Item must provide a clear, recognizable icon that visually represents the item t
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabricvisualskit](https://aka.ms/fabricvisualskit)
+**References:**
+- [Item Manifest](./manifest-item.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+
+**Guidelines:**
+
+**UX:**
 
 Filetype icons are comprised of a container and an interior Fluent system icon. There are 3 generic shapes: vertical, horizontal, and square. Some interior icons work better in specific shapes, so explore which shape is best.
 
@@ -72,7 +84,11 @@ Item must provide a distinct active state icon to indicate when the item is sele
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabricvisualskit](https://aka.ms/fabricvisualskit)
+**References:**
+- [Item Manifest](./manifest-item.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -86,6 +102,10 @@ Item must display a clear title in the create menu that matches the item's displ
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Manifest](./manifest-item.md)
+- [How to Create Item](./how-to-create-item.md)
+
 ---
 
 ### 1.4 - Item has a clear subtitle in create menu
@@ -98,7 +118,9 @@ Item must provide a concise, informative subtitle in the create menu that descri
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabricvisualskit](https://aka.ms/fabricvisualskit)
+**References:**
+- [Item Manifest](./manifest-item.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -111,6 +133,11 @@ Item must support favoriting functionality in the 'new' menu to allow users to q
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [How to Create Item](./how-to-create-item.md)
+- [Item Manifest](./manifest-item.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -130,7 +157,11 @@ Item creation flow must follow Fabric design guidelines providing a consistent, 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabricvisualskit](https://aka.ms/fabricvisualskit)
+**References:**
+- [How to Create Item](./how-to-create-item.md)
+- [Item Manifest](./manifest-item.md)
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -144,6 +175,12 @@ Item must be available for creation through the Fabric Creation Hub for centrali
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [How to Create Item](./how-to-create-item.md)
+- [Item Manifest](./manifest-item.md)
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+
 ---
 
 ### 2.3 - Item can be created in the Workspace menu
@@ -155,6 +192,12 @@ Item must be available for creation through the workspace '+New' menu for contex
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [How to Create Item](./how-to-create-item.md)
+- [Item Manifest](./manifest-item.md)
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -168,6 +211,12 @@ Item creation must use Fabric's default naming experience (createItemDialogConfi
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [How to Create Item](./how-to-create-item.md)
+- [Item Manifest](./manifest-item.md)
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+
 ---
 
 ### 2.5 - Item is persisted in the Workspace
@@ -180,6 +229,10 @@ Created items must be immediately persisted and visible in the workspace after c
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [How to store item definition](./how-to-store-item-definition.md)
+
 ---
 
 ### 2.6 - Item is in the multitasking menu and supports the behavior
@@ -191,6 +244,11 @@ Items must appear in the multitasking menu and support switching between multipl
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Item Manifest](./manifest-item.md)
+- [Fabric UX System](https://aka.ms/fabricux)
 
 ---
 
@@ -222,7 +280,15 @@ Item editor must implement with one ribbon interface for consistent user experie
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabrictemplates](https://aka.ms/fabrictemplates)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Fabric Templates](https://aka.ms/fabrictemplates)
+
+**Guidelines:**
+
+**UX:**
 
 Item editor must implement with one ribbon interface for consistent user experience across Fabric. This ribbon should include all actions and controls necessary for item editing and it must be sticky on top above the canvas. The ribbon tabs can't be used to switch the view.
 
@@ -238,7 +304,15 @@ Item Editor ribbon actions must use the fabric button component in subtle state.
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-button--docs](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-button--docs)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
+
+**Guidelines:**
+
+**UX:**
 
 Item Editor ribbon actions must use the fabric button component in subtle state. Any other component should be max height 32 px.
 
@@ -254,8 +328,15 @@ Ribbon tooltips must follow Fabric guidelines for content, timing, and placement
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-tooltip--docs](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/?path=/docs/fabricweb_pre-release-tooltip--docs)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
+
+**UX:**
 
 ---
 
@@ -269,10 +350,17 @@ Item Editor ribbon must include Home tab as the primary editor page. It also mus
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabricuikit](https://aka.ms/fabricuikit)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-Item Editor ribbon must include Home tab as the primary editor page. It also must be called "home" and be the first tab in the ribbon. This is the first palace users will land when opening the item editor.
+**UX:**
+
+Item Editor ribbon must include Home tab as the primary editor page, it's also must called "home" and be the first tab in the ribbon. this is the first palace users will land when oppening the item editor.
 
 ---
 
@@ -286,10 +374,17 @@ Item editor should provide either explicit save functionality or AutoSave to pre
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
-**Reference:** [https://www.figma.com/community/file/836835755999342788/microsoft-fluent-system-iconography](https://www.figma.com/community/file/836835755999342788/microsoft-fluent-system-iconography)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-Item editor should implement either a save button or autosave functionality for user data protection. Button is icon only.
+**UX:**
+
+Item editor should implement either a save button or AutoSave functionality for user data protection. button is icon only.
 
 ---
 
@@ -303,8 +398,15 @@ Ribbon colors must follow Fabric style guidelines using approved color tokens an
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/iframe?viewMode=docs&id=foundations-design-iconography--docs&globals=#color](https://fabricux-c6c9fchnggh3d5dn.b02.azurefd.net/iframe?viewMode=docs&id=foundations-design-iconography--docs&globals=#color)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
+
+**UX:**
 
 ---
 
@@ -318,7 +420,9 @@ Ribbon typography must use Fabric-approved fonts, sizes, and weights for consist
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**Guidelines:**
 
+**UX:**
 
 ---
 
@@ -332,7 +436,15 @@ Ribbon elevation (shadow/depth) must follow Fabric guidelines to maintain proper
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
+
+**UX:**
 
 ---
 
@@ -346,8 +458,15 @@ Ribbon border radius must follow Fabric guidelines for consistent rounded corner
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
-**Reference:** [https://aka.ms/fabrictemplates](https://aka.ms/fabrictemplates)
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
+
+**UX:**
 
 ---
 
@@ -361,9 +480,15 @@ Ribbon spacing and layout must use Fabric-approved padding, margins, and grid sy
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 Ribbon spacing and layout must use Fabric-approved padding, margins, and grid systems for visual consistency. Ribbon spacing and layouts of the buttons: if placing buttons next to each other than use 0px spacing. When adding border line between buttons use 4px spacing on the left and right sides. If placing different components e.g. dropdown use 4px spacing between them.
 
@@ -385,9 +510,15 @@ Canvas border styling must follow Fabric guidelines for color, width, and border
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 Canvas border styling must follow Fabric guidelines for color, width, and border radius. Canvas must implement proper border styling according to Fabric design standards.
 
@@ -403,9 +534,16 @@ Canvas colors should follow Fabric style guidelines using semantic color tokens 
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
+- [Fabric Templates](https://aka.ms/fabrictemplates)
 
+**Guidelines:**
 
-
+**UX:**
 
 Canvas colors should follow Fabric style guidelines using semantic color tokens and theme support. Canvas colors must follow Fabric design system color guidelines for consistency.
 
@@ -421,9 +559,15 @@ If Empty state exists (recommended), it should follow Fabric guidelines providin
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 If Empty state exists (recommended), it should follow Fabric guidelines providing helpful messaging and clear actions for users. Canvas must properly implement empty states to guide users when no content exists.
 
@@ -439,11 +583,17 @@ If left drawer panel exists it should follow Fabric guidelines for width, animat
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
+**UX:**
 
-
-Canvas may implement a left drawer for additional navigation or tools.
+If left drawer panel exists it should follow Fabric guidelines for width, animation, and content organization. The canvas may implement a left drawer for additional navigation or tools.
 
 ---
 
@@ -457,11 +607,17 @@ If bottom drawer panel exists it should follow Fabric guidelines for height, ani
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
+**UX:**
 
-
-If bottom drawer panel exists it should follow Fabric guidelines for height, animation, and content organization. Canvas may implement a bottom drawer for additional functionality.
+If bottom drawer panel exists it should follow Fabric guidelines for height, animation, and content organization. The canvas may implement a bottom drawer for additional functionality.
 
 ---
 
@@ -475,11 +631,17 @@ Tab components should follow Fabric guidelines for styling, interaction, and act
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
+**UX:**
 
-
-Tab components should follow Fabric guidelines for styling, interaction, and active state indication. Canvas may implement tabs for organizing content within the editor.
+Tab components should follow Fabric guidelines for styling, interaction, and active state indication. The canvas may implement tabs for organizing content within the editor.
 
 ---
 
@@ -493,17 +655,23 @@ If Switch/toggle controls exist they should follow Fabric guidelines for size, c
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
+**UX:**
 
-
-If Switch/toggle controls exist they should follow Fabric guidelines for size, color, and interaction behavior. Canvas may implement switch controls for toggling functionality.
+If Switch/toggle controls exist they should follow Fabric guidelines for size, color, and interaction behavior. The canvas may implement switch controls for toggling functionality.
 
 ---
 
-### 4.8 - Canvas control - follows style guide
+### 4.8 - Canvas Center control - follows style guide
 
-Right drawer panel should follow Fabric guidelines for width, animation, and content organization
+Center drawer panel should follow Fabric guidelines for width, animation, and content organization
 
 **Stage Requirements:**
 
@@ -511,9 +679,15 @@ Right drawer panel should follow Fabric guidelines for width, animation, and con
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -533,9 +707,15 @@ If multi level navigation between canvas levels (L1 to L2) is used it must follo
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -555,9 +735,15 @@ If popup dialogs are used  they must follow Fabric style guidelines for modal be
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -571,9 +757,15 @@ Dialog border radius must follow Fabric guidelines for consistent rounded corner
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -587,9 +779,15 @@ Dialog colors must follow Fabric guidelines using semantic color tokens for back
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -603,9 +801,15 @@ Dialog typography must use Fabric-approved fonts, sizes, and hierarchy for heade
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -619,9 +823,15 @@ Dialog elevation must follow Fabric guidelines to ensure proper visual layering 
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -635,9 +845,15 @@ Dialog spacing and layout must use Fabric-approved padding, margins, and content
 |---------|---------------------|
 | ✅ Required | ✅ Required |
 
+**References:**
+- [Item Concept](./concept-item-overview.md)
+- [Fabric UX System](https://aka.ms/fabricux)
+- [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
+- [Documentation](https://aka.ms/fabricuikit)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -657,6 +873,10 @@ Item should optionally integrate with Fabric Monitoring Hub to expose job execut
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [Define Item Jobs](./how-to-define-jobs.md)
+- [Item Concept](./concept-item-overview.md)
+
 ---
 
 ### 7.2 - Actions in Workspace need to work
@@ -668,6 +888,9 @@ If Actions in the workspace are used, all item actions (rename, delete, share, e
 | Preview | General Availability |
 |---------|---------------------|
 | ✅ Required | ✅ Required |
+
+**References:**
+- [Item Manifest](./manifest-item.md)
 
 ---
 
@@ -681,9 +904,13 @@ Item should provide a sample or trial experience to help user explore features b
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [How to add a trial experience](./how-to-add-trial-experience.md)
+- [Fabric Templates](https://aka.ms/fabrictemplates)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -697,9 +924,13 @@ Item should provide a sample or trial experience to help users explore features 
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [How to monetize the workload](./how-to-monetize-workload.md)
+- [Fabric Templates](https://aka.ms/fabrictemplates)
 
+**Guidelines:**
 
-
+**UX:**
 
 ---
 
@@ -713,6 +944,10 @@ Item should define job types in the manifest to enable job tracking and monitori
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [How to add Jobs to be done](./how-to-add-jobs-to-be-done.md)
+- [Item Manifest](./manifest-item.md)
+
 ---
 
 ### 7.6 - Item Settings are used
@@ -725,6 +960,11 @@ Item should implement settings panel for user configuration following Fabric pat
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
 
+**References:**
+- [Item Manifest](./manifest-item.md)
+- [How to Add Custom Settings](./how-to-add-custom-settings.md)
+- [Item Concept](./concept-item-overview.md)
+
 ---
 
 ### 7.7 - Custom Item Actions
@@ -736,6 +976,9 @@ Item should define custom actions for the item in the workspace. All Actions nee
 | Preview | General Availability |
 |---------|---------------------|
 | ⚠️ Optional | ⚠️ Optional |
+
+**References:**
+- [Item Manifest](./manifest-item.md)
 
 ---
 

@@ -3,7 +3,7 @@ title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Build
 description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationship types.
 author: baanders
 ms.author: baanders
-ms.date: 11/10/2025
+ms.date: 12/12/2025
 ms.topic: tutorial
 ---
 
@@ -53,7 +53,7 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
 1. For the **Property type**, leave the default selection of **Non-timeseries properties**. 
 1. Under **Unique Id**, select the edit icon (shaped like a pencil) to choose a unique ID out of one or more columns from your source data. Digital twin builder uses this field to uniquely identify each row of ingested data.
 
-    Select *TripId* as the unique ID column.
+    Select *TripId* as the unique ID column and select **Ok**.
 
     :::image type="content" source="media/tutorial-rti/bus-unique-id.png" alt-text="Screenshot of the bus unique ID.":::
 
@@ -66,8 +66,12 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
     :::image type="content" source="media/tutorial-rti/bus-map-properties-non-time-1.png" alt-text="Screenshot of the unmapped display name and adding an entity type property.":::
 
     Map the following entity type properties:
-    - Select **TripId** from the dropdown menu in the left column, and edit the box across from it in the right column to read *TripId_static*. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
-    - Select **StopCode** from the dropdown menu in the left column, and edit the box across from it in the right column to read *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
+    - Select **TripId** from the dropdown menu in the left column. **Edit the box across from it in the right column so that its property name is _TripId_static_**. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
+
+        >[!IMPORTANT]
+        > Make sure to edit the property name as described, to avoid conflicts later while mapping time series data to the *TripId* property.
+
+    - Select **StopCode** from the dropdown menu in the left column. Edit the box across from it in the right column so that its property name is *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
    
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
@@ -148,7 +152,7 @@ Next, map some non-timeseries data to the Stop entity type. The stop data doesn'
 1. For the **Unique Id**, select *Stop_Code*.
 1. For **Mapped properties**, map **Stop_Name** from the source data to the *DisplayName* property on the right side.
 
-    Then, add the following new properties to the mapping. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
+    Then, use the **Add entity property** button to add the following new properties to the mapping. When you select these property names from the source columns on the left side, leave the default matching names that populate on the right side.
     - **Stop_Code**
     - **Road_Name**
     - **Borough**
@@ -207,6 +211,9 @@ As a final step, confirm that all your data mappings ran successfully. Each mapp
     :::image type="content" source="media/tutorial-rti/manage-operations-2.png" alt-text="Screenshot of four completed operations.":::
 
 1. If any of the operations failed, check the box next to its name and select **Run** to rerun it.
+
+>[!TIP]
+> For further troubleshooting of failed mapping operations, see [Troubleshooting digital twin builder (preview)](resources-troubleshooting.md#troubleshoot-operation-failures).
 
 Wait for all mappings to complete before you move on to the next part of the tutorial. In the next part, you project the ontology that you mapped to an eventhouse, to support further data analysis and visualization.
 

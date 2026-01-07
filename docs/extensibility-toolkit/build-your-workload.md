@@ -5,7 +5,7 @@ author: gsaurer
 ms.author: billmath
 ms.topic: article
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Build your workload
@@ -41,7 +41,7 @@ To get started quickly, pick one of the following options:
 
 1. Open the [Starter-Kit Repository](https://aka.ms/fabric-extensibility-starter-kit).
 2. Use GitHub Codespaces to create a new codespace for your fork or branch.
-3. Start the [DevServer](./devserver.md) and [DevGateway](./devgateway.md) per the instructions in the repository.
+3. Start the [DevServer](./tools-register-local-web-server.md) and [DevGateway](./tools-register-local-workload.md) per the instructions in the repository.
 4. Make sure Fabric development mode is enabled
 5. Open your Fabric and navigate to the workload hub where you can now see the Hello World Item.
 
@@ -50,7 +50,7 @@ To get started quickly, pick one of the following options:
 1. Open the [Starter-Kit Repository](https://aka.ms/fabric-extensibility-starter-kit).
 2. Fork the repository and clone it to your machine.
 3. Install dependencies and
-4. Start the [DevServer](./devserver.md) and [DevGateway](./devgateway.md) per the instructions in the repository.
+4. Start the [DevServer](./tools-register-local-web-server.md) and [DevGateway](./tools-register-local-workload.md) per the instructions in the repository.
 5. Make sure Fabric development mode is enabled
 6. Open your Fabric and navigate to the workload hub where you can now see the Hello World Item.
 
@@ -60,5 +60,5 @@ To get started quickly, pick one of the following options:
 - Learn the [architecture](architecture.md) and how the host, your app, and Fabric services interact
 - Follow the [implementation guide](implementation-guide.md) to build your own workload
 - Read the [Manifest Overview](manifest-overview.md) for schema and best practices
-- Develop with the [DevGateway](devgateway.md)
+- Develop with the [DevGateway](tools-register-local-workload.md)
 - [Publish your workload](publish-workload-flow.md) when you’re ready to share it broadly

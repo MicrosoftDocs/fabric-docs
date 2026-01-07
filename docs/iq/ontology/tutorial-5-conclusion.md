@@ -4,13 +4,13 @@ description: Finish the tutorial and clean up resources.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/29/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 ---
 
 # Ontology (preview) tutorial part 5: Conclude and clean up resources
 
-In this tutorial, you created and explored an ontology (preview) item for the Lakeshore Retail ice cream business. You generated entity types (like *Store*, *Product*, and *SaleEvent*), bound static data from lakehouse tables and time series data (like freezer temperature) from Eventhouse, and explored the data through entity instances, relationship graphs, and natural-language queries. 
+In this tutorial, you created and explored an ontology (preview) item for the Lakeshore Retail ice cream business. You generated entity types (like *Store*, *Products*, and *SaleEvent*), bound static data from lakehouse tables and time series data (like freezer temperature) from Eventhouse, and explored the data through entity instances, relationship graphs, and natural-language queries. 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 

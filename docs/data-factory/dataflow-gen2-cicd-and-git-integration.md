@@ -115,7 +115,7 @@ When you refresh a dataflow, there is an option (`Run On Demand Execute` in the 
 In some cases, the backend automatically republishes dataflows during refreshes to ensure compatibility with updates.
 
 Previously if publishing fails, the refresh runs using the last successfully published version of the dataflow. With just-in-time publishing, the refresh will fail if:
-- The dataflow was last saved after January  1, 2026, and
+- The dataflow was last saved after February 1, 2026, and
 - The publish fails (even if there was a successful publish in the past).
 
 This prevents scenarios where customers unknowingly run outdated versions of a dataflow. It ensures that what is shown in the editor matches what is executed.

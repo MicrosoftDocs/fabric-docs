@@ -1,6 +1,16 @@
 {
     "redirections": [
         {
+            "source_path_from_root": "/docs/extensibility-toolkit/devserver.md",
+            "redirect_url": "/fabric/extensibility-toolkit/tools-register-local-web-server",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/extensibility-toolkit/devgateway.md",
+            "redirect_url": "/fabric/extensibility-toolkit/tools-register-local-workload",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/docs/cicd/deployment-pipelines/manage-workspace-content.md",
             "redirect_url": "/fabric/cicd/deployment-pipelines/understand-the-deployment-process",
             "redirect_document_id": false

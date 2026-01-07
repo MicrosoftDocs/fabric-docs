@@ -116,7 +116,7 @@ Using the client advisor AI accelerator tool, you can build custom copilot with 
 
 ### Agentic applications for unified data foundation
 
-Accelerate intelligent decision-making at scale with secure, agentic AI built on a unified data foundation in Microsoft Fabric. This solution integrates Azure AI Foundry agents and Semantic Kernel to power intelligent workflows that support natural language querying, governed data access, and AI-driven automation—enhancing agility and innovation. To learn more, [explore the solution on GitHub](https://github.com/microsoft/agentic-applications-for-unified-data-foundation-solution-accelerator)
+Accelerate intelligent decision-making at scale with secure, agentic AI built on a unified data foundation in Microsoft Fabric. This solution integrates Microsoft Foundry agents and Semantic Kernel to power intelligent workflows that support natural language querying, governed data access, and AI-driven automation—enhancing agility and innovation. To learn more, [explore the solution on GitHub](https://github.com/microsoft/agentic-applications-for-unified-data-foundation-solution-accelerator)
 
 ### Unified data foundation with Fabric
 

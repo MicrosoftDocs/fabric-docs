@@ -4,7 +4,7 @@ description: Preview the ontology by observing its entity instances and relation
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 11/21/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 ---
 
@@ -24,7 +24,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
     It might take a few minutes for the ontology overview to load the first time.
 
-1. Look for the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
+1. Scroll down to the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/entity-instances.png" alt-text="Screenshot of the entity instances." lightbox="media/tutorial-3-preview-ontology/entity-instances.png":::
 
@@ -49,7 +49,7 @@ The preview experience also contains a **Relationship graph**, which you use to 
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
 
-1. In the graph, observe the details of the relationships to the *SaleEvent* entity type from *Store* and *Product*.
+1. In the graph, observe the details of the relationships to the *SaleEvent* entity type from *Store* and *Products*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
 

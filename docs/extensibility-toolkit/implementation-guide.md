@@ -5,7 +5,7 @@ author: gsaurer
 ms.author: billmath
 ms.topic: article
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Implementation guide
@@ -109,5 +109,5 @@ The Extensibility framework is designed for rapid development.
 
 - [Architecture](architecture.md)
 - [Workload manifest](manifest-workload.md)
-- [DevGateway](devgateway.md)
+- [DevGateway](tools-register-local-workload.md)
 - [Publish your workload](publish-workload-flow.md)

@@ -1,10 +1,10 @@
 ---
 title: "Limits and Quotas in Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: This article includes a list of limitations and quotas for Microsoft Fabric mirrored databases from Azure Cosmos DB.
-author: seesharprun
-ms.author: sidandrews
+author: markjbrown
+ms.author: mjbrown
 ms.reviewer: jmaldonado
-ms.date: 10/23/2025
+ms.date: 12/03/2025
 ms.topic: limits-and-quotas
 ms.custom:
   - references_regions
@@ -19,15 +19,16 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 - [!INCLUDE [fabric-mirroreddb-supported-regions](./includes/fabric-mirroreddb-supported-regions.md)]
 
 - Mirroring is only available for these Azure Cosmos DB account types listed here.
+
   | Azure Cosmos DB account type | Available |
-  | --- | --- |
+  |---|---|
   | **API for NoSQL** | Yes |
   | **API for MongoDB (RU-based)** | No |
-  | **API for MongoDB (vCore-based)** | No |
   | **API for Apache Gremlin** | No |
   | **API for Table** | No |
   | **API for Apache Cassandra (RU-based)** | No |
   | **Managed Instance for Apache Cassandra** | No |
+  | **DocumentDB (vCore-based)** | No |
 
 ## Account and database limitations
 
@@ -64,11 +65,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - You can directly share the mirrored database in Fabric.
 
-- The source Azure Cosmos DB account must enable **public network access** for **all networks**.
-
-- Private endpoints aren't supported for Azure Cosmos DB accounts.
-
-- Network isolation using techniques and features like IP addresses or service endpoints aren't supported for Azure Cosmos DB accounts.
+- Azure Cosmos DB accounts with virtual networks or private endpoints are supported using the Network ACL Bypass feature. This allows your Fabric workspace to access the Cosmos DB account without requiring a data gateway. For more information, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
 
 - Data in OneLake doesn't support private endpoints, customer managed keys, or double encryption.
 

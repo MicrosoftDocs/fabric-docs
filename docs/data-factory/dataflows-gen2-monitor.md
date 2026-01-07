@@ -78,6 +78,14 @@ This screen gives you more clarity in what happened during the activity. For exa
 
 To investigate what happened, you can drill down into an activity or table. The following screen provides you with general information about the refresh and errors. If you're drilling into an activity, you're presented with how much data got processed and sent to your output destination. Some connectors report on the number of rows and some report on the number of bytes. The statistics are shown in the **Activity statistics** section.
 
+## Workspace status
+
+Within the workspace, you can also get an overview of the status of all dataflows in your workspace. this is accessible via the **Status** column in the workspace view. This column provides you with the status of the last refresh of your dataflow as well as the last time changes were saved and validated. If either of these actions failed, you'll see a red exclamation mark. You can hover over the icon to get more details about the failure.
+
+:::image type="content" source="./media/dataflows-gen2-monitor/workspace-status.png" alt-text="Screenshot of the workspace view, showing the status column." lightbox="./media/dataflows-gen2-monitor/workspace-status.png":::
+
+When the refresh failed, you can go into the refresh history to investigate what went wrong. When the save or validate action failed, you can open the dataflow in the dataflow editor to investigate what went wrong and run a validation from there.
+
 ## Monitoring hub
 
 The monitoring hub is available using the side menu. You can access it by selecting the **Monitoring hub** button.

@@ -14,6 +14,9 @@ ms.reviewer: splantikow
 
 The GQL language supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
 
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
+
 **Key concepts:**
 
 - **Value types** can be _nullable_ or _material_ (non-nullable), depending on whether they include or exclude the null value.
@@ -55,11 +58,9 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 
 When you compare any value with null, the result is always `UNKNOWN`. Null handling follows three-valued logic principles. However, the `ORDER BY` statement treats `NULL` as the smallest value when sorting, providing predictable ordering behavior.
 
-### Test if values are distinct
+## Distinctness vs. equality
 
 Certain statements don't test for equality but rather for distinctness. Understanding the difference is important for operations like `DISTINCT` and `GROUP BY`.
-
-### Distinctness vs. equality
 
 Distinctness testing follows the same rules as equality with one crucial exception: `NULL` isn't distinct from `NULL`. Distinctness differs from equality tests involving `NULL`, which always result in `UNKNOWN`.
 
@@ -207,7 +208,6 @@ The system compares all numbers by their numeric value.
 | Scientific notation             | 1.23456e2     | 123.456    |
 | Scientific notation (uppercase) | 1.23456E2     | 123.456    |
 | Floating-point with suffix      | 123.456f      | 123.456    |
-| Floating-point with suffix      | 123.456f      | 123.456    |
 | Double precision with suffix    | 123.456d      | 123.456    |
 
 **Additional numeric considerations:**
@@ -280,24 +280,25 @@ When working with graph types, you can define abstract node types that serve as 
 
 ```gql
 -- Abstract base type (cannot be instantiated)
-NODE TYPE Person ABSTRACT (
-  id INT64,
-  name STRING,
-  birth_date ZONED DATETIME
-)
+ABSTRACT
+(:Person => {
+  id :: INT64,
+  name :: STRING,
+  birth_date :: ZONED DATETIME
+}),
 
 -- Concrete types that inherit from abstract base
-NODE TYPE Employee : Person (
-  employee_id STRING,
-  department STRING,
-  hire_date ZONED DATETIME
-)
+(:Employee => Person {
+  employee_id :: STRING,
+  department :: STRING,
+  hire_date :: ZONED DATETIME
+})
 
-NODE TYPE Customer : Person (
-  customer_id STRING,
-  membership_level STRING,
-  registration_date ZONED DATETIME
-)
+(:Customer => :Person {
+  customer_id :: STRING,
+  membership_level :: STRING,
+  registration_date :: ZONED DATETIME
+})
 ```
 
 **Polymorphic queries with abstract types:**
@@ -307,18 +308,16 @@ Abstract types enable powerful querying patterns where you can match against the
 ```gql
 -- Find all Person instances (both Employee and Customer)
 MATCH (p:Person)
-RETURN p.name, p.birth_date, labels(p)
-
--- Use type-specific filtering
-MATCH (p:Person)
-WHERE p:Employee AND p.department = 'Engineering'
-RETURN p.name, p.employee_id
+RETURN p.name, p.birthday, labels(p) AS label_names
 
 -- Mixed type patterns
 MATCH (e:Employee)-[:knows]-(c:Customer)
 WHERE e.department = 'Sales' AND c.membership_level = 'Premium'
 RETURN e.name AS sales_person, c.name AS customer
 ```
+
+> [!NOTE]
+> The preceding queries assume the graph type sketched out above and do not use the social network example data set.
 
 This approach provides type safety while enabling flexible, inheritance-based data modeling in your graph schemas.
 
@@ -430,7 +429,6 @@ Use square brackets with zero-based indexing to access list elements:
 ```gql
 list_var[0]  -- first element
 list_var[1]  -- second element
-list_var[-1] -- last element (if supported)
 ```
 
 **Common list operations:**
@@ -440,10 +438,7 @@ list_var[-1] -- last element (if supported)
 WHERE 'Engineering' IN employee.departments
 
 -- List concatenation
-RETURN [1, 2] + [3, 4]  -- [1, 2, 3, 4]
-
--- List slicing (if supported)
-list_var[1:3]  -- elements from index 1 to 2
+RETURN [1, 2] || [3, 4]  -- [1, 2, 3, 4]
 
 -- List size
 size(list_var)
@@ -476,7 +471,9 @@ A path consists of:
 
 **How comparison works:**
 
-Paths are compared by comparing their constituent nodes and edges in sequence.
+Paths are compared by comparing lists of reference values to all of their constituent nodes and edges, in the sequence in which they occur along the path.
+
+See the comparison rules for [list values](#list-values) and [reference values](#reference-value-types) for further details.
 
 **Type syntax:**
 

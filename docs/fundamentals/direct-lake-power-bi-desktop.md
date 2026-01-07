@@ -169,6 +169,7 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
 * You can change the data category to *barcode*, but reports linked to the semantic model can't filter by barcodes.
 * You can't live edit externally shared semantic models.
+* You can use live edit on import tables only if they're part of a composite model, including Direct Lake on OneLake tables
 * Review the current [known issues and limitations of Direct Lake](direct-lake-overview.md#considerations-and-limitations).
 
 ## Related content

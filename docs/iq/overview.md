@@ -23,14 +23,14 @@ IQ (preview) enables the following benefits:
 * **Faster onboarding:** New dashboards or AI experiences don't need to rediscover business meaning, as business concepts only need to be declared once.
 * **Governance and trust:** Clear semantics reduce duplication and semantic drift, while constraints improve data quality.
 * **Cross domain reasoning:** Graph links let you traverse relationships (like *Order > Shipment > Temperature Sensor > Cold Chain Breach*) to explain outcomes.
-* **AI readiness:** Ontologies provide structured grounding for copilots and agents, so answers reflect your enterprise language.
+* **AI readiness and decision-ready actions:** Ontologies provide structured grounding for copilots and agents, so answers reflect your enterprise language. Because business rules and constraints live in the ontology, agents can move beyond answers to safe, auditable actions.
 
 ## Where IQ (preview) fits in Fabric
 
 Here's how IQ (preview) implements key Fabric capabilities:
 
 * **Ingest and store:** Builds on data from lakehouse tables, eventhouse streams, and existing semantic models.
-* **Model and represent semantics:** The ontology (preview) item offers modeling capabilities by defining entity types, properties on entity types, and relationship types. It binds these features to data sources, and automatically builds a navigable graph.
+* **Model and represent semantics:** The ontology (preview) item offers modeling capabilities by defining entity types, properties on entity types, and relationship types. Optionally bootstrap an ontology structure from existing data sources and models, or create your own. Then, bind ontology features to data sources, and explore them in a navigable graph that is built automatically.
 * **Analyze and visualize:** The ontology (preview) item integrates with Graph in Microsoft Fabric to provide a visual graph and query experience based on your business concepts. You can also build Power BI models grounded in your ontology, or use the ontology to inform power domain aware agents.
 * **Operate and govern:** You can version, validate, and govern your ontology definitions. You can also monitor ontology health through Fabric monitoring tools.
 
@@ -61,8 +61,9 @@ This section describes how items work together or relate to one another.
 
 * **Ontology (preview) and semantic model:** Define enterprise concepts (like *Customer*, *Shipment*, and *Breach*) one time, and generate or align Power BI models so that KPIs remain consistent across reports.
 * **Ontology (preview) and Graph in Microsoft Fabric:** Ontology declares which things connect and why. Graph in Microsoft Fabric stores and computes traversals (like "Find shipments exposed to risky routes and related breaches").
-* **Ontology (preview) and digital twin builder:** Ontology provides reusable types (like *Asset*, *Sensor*, and *Thresholds*). Digital twin builder instantiates specific twins and runs scenarios using those types.
+* **Ontology (preview) and data agent:** Ontology grounds agents in shared business semantics and rules so they can retrieve relevant context, reason across domains, and recommend or trigger governed actions.
 * **All items:** Ontology defines the language for your business. Digital twin builder makes it operational for assets. Graph in Microsoft Fabric powers dependency/impact analysis, and semantic models present trusted KPIs.
+<!--* **Ontology (preview) and digital twin builder:** Ontology provides reusable types (like *Asset*, *Sensor*, and *Thresholds*). Digital twin builder instantiates specific twins and runs scenarios using those types.-->
 
 ## Next steps
 

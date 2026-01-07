@@ -2,10 +2,10 @@
 title: Authentication JavaScript API reference
 description: Comprehensive reference for JavaScript authentication APIs in the Fabric Extensibility Toolkit.
 author: gsaurer
-ms.author: gesaur
+ms.author: billmath
 ms.topic: reference
 ms.custom:
-ms.date: 11/19/2025
+ms.date: 12/15/2025
 ---
 
 # Authentication JavaScript API reference

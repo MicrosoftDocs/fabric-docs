@@ -23,4 +23,4 @@ ms.date: 08/07/2025
     >[!TIP]
     >Digital twin builder names can include numbers, letters, and underscores (no spaces or dashes).
 
-1. Wait for your digital twin builder item to be created. Once your digital twin builder item is ready, it opens to the semantic canvas.
+1. Wait for your digital twin builder item to be created. When your digital twin builder item is ready, it opens to the semantic canvas.

@@ -101,7 +101,8 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 2.	On the Add data to start building a report page, click on Get Data, and then choose Azure SQL database to connect to the data source via the SQL Analytics Endpoint.
 
    > [!NOTE]
-   > Do not use the OneLake catalog tile because the Web modeling experience creates a Direct Lake model when connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace.
+   > Do not use the OneLake catalog tile because the Web modeling experience creates a Direct Lake model when connecting to a data source in the OneLake catalog. Direct Lake is not yet supported against data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint (SQL AE).
+
 3. In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
 
 4.	Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
@@ -123,14 +124,15 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 9.	In the Some Steps didn’t Complete dialog box, click on Open Model View. Note that the semantic model cannot yet connect to the SQL Analytics Endpoint in the inbound restricted target workspace. You complete the connection configuration in Step 4 below.
 
-### Option 3b: Using the Web modeling experience
+### Option 3b: Using Power BI Desktop
 
-1.	In the source workspace, click on New item, and then in the New item pane, click on the Semantic model tile.
+1.	In Power BI Desktop, installed on a machine with private network access to the target workspace, make sure you are logged in with your user account.
 
-2.	On the Add data to start building a report page, click on Get Data, and then choose Azure SQL database to connect to the data source via the SQL Analytics Endpoint.
+2.	On the Home ribbon, click on Get data, click on More, and choose Azure SQL database.
 
    > [!NOTE]
-   > Do not use OneLake catalog because Power BI Desktop cannot yet connect to OneLake catalog data sources in an inbound restricted workspace.
+   > Do not use OneLake catalog because Power BI Desktop cannot yet connect to OneLake catalog data sources in an inbound restricted workspace. All SQL Server connectivity options, such as Azure SQL database, are fully supported and work as expected when connecting to the SQL Analytics Endpoint (SQL AE).
+
 3.	In the Server textbox, enter the workspaceFQDN using the format for warehouse connection strings, https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com that is, add z{xy} to the regular warehouse connection string found under SQL connection string. The GUIDs in the FQDN correspond to Tenant GUID in Base32 and Workspace GUID in Base32 respectively.
 
 4.	Optionally, in the Database textbox, enter the Guid of the SQL Analytics Endpoint to which you want to connect.
