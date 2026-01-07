@@ -74,8 +74,6 @@ This section outlines important considerations and limitations when using worksp
 
 * Workspace outbound access protection isn't supported for existing workspaces that already contain a semantic model in a lakehouse.
 
-* Outbound access protection isn't supported for schema enabled lakehouses.
-
 * In workspaces with outbound access protection enabled, querying data warehouse file paths from notebooks using the `dbo` schema isn't supported, because access to schema-based paths isn't supported. To query the warehouse from notebooks, use the T-SQL option instead.
 
 * The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
