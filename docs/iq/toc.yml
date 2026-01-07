@@ -1,7 +1,7 @@
 items:
-- name: IQ documentation
+- name: Fabric IQ documentation
   href: index.yml
-- name: What is IQ?
+- name: What is Fabric IQ?
   href: overview.md
 - name: Ontology
   items:
