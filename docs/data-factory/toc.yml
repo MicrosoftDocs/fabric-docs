@@ -91,6 +91,8 @@
       href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
     - name: Connector capability comparison
       href: connector-parity.md
+    - name: Migrate global parameters to variable libraries
+      href: convert-global-parameters-to-variable-libraries.md
     - name: Migration planning
       href: migrate-planning-azure-data-factory.md
     - name: Migration best practices
