@@ -23,7 +23,7 @@ Fluentd is an open-source data collector you can use to unify log collection and
 
 ## Prerequisites
 
-- Ruby installed on on the node where logs have to be ingested. To install fluentd dependencies using gem package manager, see the [Ruby installation instructions](https://github.com/Azure/azure-kusto-fluentd/?tab=readme-ov-file#requirements).
+- Ruby installed on the node where logs have to be ingested. To install fluentd dependencies using gem package manager, see the [Ruby installation instructions](https://github.com/Azure/azure-kusto-fluentd/?tab=readme-ov-file#requirements).
 - A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 - A KQL database with ingestion permissions.
 
