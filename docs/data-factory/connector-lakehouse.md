@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 01/07/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -34,20 +34,30 @@ In some cases, the Power Query connector article might include advanced options,
 
 ## Set up your connection in a pipeline
 
-1. Go to Get Data page and navigate to OneLake catalog through the following ways:
+You can set up a Lakehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. The sections below describe how to configure the connection through each option.
 
-   - In copy assistant, go to **OneLake catalog** section.
-   - In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake catalog** section.
+- In **Get Data** page:
 
-1. Select an existing Lakehouse.
+    1. Go to **Get Data** page and navigate to **OneLake catalog** through the following ways:
+    
+       - In copy assistant, go to **OneLake catalog** section.
+       - In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake catalog** section.
+    
+    1. Select an existing Lakehouse.
+    
+        :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" alt-text="Screenshot of selecting Lakehouse in OneLake section.":::
+    
+    1. Select **Connect** to connect to your Lakehouse.
+    
+    You can also select an Lakehouse connection created in this page by choosing **none** in the pipeline connection drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Lakehouse connection you need.
+    
+- In **Manage connections and gateways** page:
 
-    :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" lightbox="media/connector-sql-database/select-sql-database-in-onelake.png" alt-text="Screenshot of selecting Lakehouse in OneLake section.":::
-
-1. In **Connect to data source** pane, select an existing connection within your tenant or create a new one.
-
-    :::image type="content" source="media/connector-lakehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
-
-1. Select **Connect** to connect to your Lakehouse.
+    1. On this page, select **+ New**, choose Lakehouse as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
+    
+        :::image type="content" source="media/connector-lakehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
+    
+    1. After the connection is created, go the pipeline and select it in the connection drop‑down list.
 
 > [!NOTE]
 > - To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
