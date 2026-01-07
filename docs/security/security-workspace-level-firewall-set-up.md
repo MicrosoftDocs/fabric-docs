@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
-ms.date: 12/10/2025
+ms.date: 01/07/2026
 
 #customer intent: As a workspace admin, I want to configure workspace-level IP firewall rules on my workspace to restrict the IP addresses than can access my Fabric workspace.
 
@@ -62,8 +62,51 @@ After you save the configuration, only connections from the specified IP address
 
 ### [API](#tab/api-1)
 
-Configure workspace IP firewall rules programmatically using the Fabric REST API.
+With the tenant-level setting **Configure workspace-level IP firewall rules** enabled, you can retrieve and set workspace IP firewall rules programmatically using the Fabric REST API.
 
+1. Using the public Fabric API endpoint (api.fabric.microsoft.com), call the **Get IP rules** API to retrieve configured IP rules on a workspace.
+
+   **Request:**
+   ```
+   GET https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/networking/communicationpolicy/inbound/firewall
+   ```
+
+1. Call the **Set IP rules** API to configure IP rules for a workspace.
+
+   **Request:**
+   ```
+   PUT https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/networking/communicationpolicy/inbound/firewall
+   ```
+
+   **Request Body:**
+   ```json
+   {
+     "rules": [
+       {
+         "displayName": "corpip",
+         "value": "xxx.xxx.xxx.xx"
+       }
+     ]
+   }
+   ```
+
+1. Call the **Workspaces - Set Network Communication Policy** API to set the workspace public access rule.
+
+   **Request:**
+   ```
+   PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceID}/networking/communicationPolicy
+   ```
+
+   **Request Body:**
+   ```json
+   {
+     "inbound": {
+       "publicAccessRules": {
+         "defaultAction": "Deny"
+       }
+     }
+   }
+   ```
 ---
 
 ## How IP firewall rules interact with other network security settings
