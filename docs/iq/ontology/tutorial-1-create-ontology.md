@@ -95,6 +95,8 @@ Here's an example of what entity type properties look like.
 
 ### Add SaleEvent key
 
+Each entity type has an entity type key that represents a unique identifier for each record of ingested data. String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
+
 The *SaleEvent* entity type doesn't have a key that was imported from the source data, so you need to add it manually.
 
 1. Open the *SaleEvent* entity type.

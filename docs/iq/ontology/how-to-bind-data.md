@@ -83,9 +83,13 @@ First, bind static data. Static data bindings must be created before time series
     
     :::image type="content" source="media/how-to-bind-data/tab-properties.png" alt-text="Screenshot of the entity type properties tab.":::
 
-1. Next, set the **Key**. The entity type key value represents a unique identifier for each record of ingested data. Select one or more columns from the source data that can be used to uniquely identify a record. This process must be done once for each entity type.
+1. Next, set the **Key**. The entity type key value represents a unique identifier for each record of ingested data.
+
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
 
     :::image type="content" source="media/how-to-bind-data/entity-type-key.png" alt-text="Screenshot of adding an entity type key.":::
+
+    This process is done once for each entity type.
 
 1. Optionally, select a property modeled on your entity type to use as the **Instance display name**. This step provides a friendly name for entity instances in downstream experiences.
 
