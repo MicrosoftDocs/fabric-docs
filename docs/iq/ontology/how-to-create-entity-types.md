@@ -66,12 +66,13 @@ This section contains step-by-step instructions for adding and managing entity t
 
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring property details.":::
 
-1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. Select one or more columns from the source data that can be used to uniquely identify a record. This process must be done once for each entity type.
+1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. 
 
-    >[!IMPORTANT]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
+
+    This process is done once for each entity type.
 
 1. Optionally, select a property to use as the **Instance display name** for all your instances in downstream experiences.
 
