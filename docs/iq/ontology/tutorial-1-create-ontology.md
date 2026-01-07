@@ -71,7 +71,7 @@ Follow these steps to rename each entity type to a friendlier name.
     | --- | --- |
     | *factsales* | *SaleEvent* |
     | *dimstore* | *Store* |
-    | *dimproducts* | *Products* |
+    | *dimproducts* | *Products* <br><br>Note: Make sure to use the plural form *Products*, to avoid conflict with the [GQL reserved word](../../graph/gql-reference-reserved-terms.md#p) `PRODUCT`. |
 
 When you're done renaming all the entity types, they look like this (they might be listed in a different order).
 
@@ -228,7 +228,7 @@ Follow the same steps that you used for the *Store* entity type to create the en
 
 | Entity type name | Source table in *OntologyDataLH* | Entity type key |
 | --- | --- | --- |
-| *Products* | *dimproducts* | `ProductId` |
+| *Products* <br><br>Note: Make sure to use the plural form *Products*, to avoid conflict with the [GQL reserved word](../../graph/gql-reference-reserved-terms.md#p) `PRODUCT`. | *dimproducts* | `ProductId` |
 | *SaleEvent* | *factsales* | `SaleId` |
 
 When you're done, you see these entity types listed in the **Entity Types** pane. 
