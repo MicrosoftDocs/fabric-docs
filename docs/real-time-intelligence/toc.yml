@@ -575,7 +575,7 @@ items:
       - name: Fluent Bit
         href: get-data-fluent.md
       - name: Fluentd
-        href: get-data-fluent-d.md
+        href: get-data-fluentd.md
       - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
       - name: NLog sink

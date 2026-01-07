@@ -160,7 +160,7 @@ Fluentd is an open-source agent that collects logs. It enables filtering, modifi
 * **Ingestion type supported:** Batching
 * **Use cases:** Logs
 * **Repository:** [fluentd](https://github.com/fluent/fluentd)
-* **Documentation:** [Get data with Fluentd](get-data-fluent-d.md)
+* **Documentation:** [Get data with Fluentd](get-data-fluentd.md)
 
 ## Logstash
 

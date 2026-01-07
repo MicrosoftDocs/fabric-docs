@@ -5,7 +5,7 @@ ms.reviewer: ramacg
 ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: article
-ms.date: 01/01/2026
+ms.date: 01/07/2026
 ---
 
 # Get data from Fluentd
@@ -23,7 +23,7 @@ Fluentd is an open-source data collector you can use to unify log collection and
 
 ## Prerequisites
 
-- Ruby installed on your machine.
+- Ruby installed on on the node where logs have to be ingested. To install fluentd dependencies using gem package manager, see the [Ruby installation instructions](https://github.com/Azure/azure-kusto-fluentd/?tab=readme-ov-file#requirements).
 - A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 - A KQL database with ingestion permissions.
 
@@ -82,6 +82,8 @@ Fluentd is an open-source data collector you can use to unify log collection and
     </match>
     ```
 
+For more configuration and authentication details, see the [Fluentd Kusto plugin documentation](https://github.com/Azure/azure-kusto-fluentd/?tab=readme-ov-file#workload-identity-authentication).
+
 1. **Prepare an Eventhouse table for ingestion**:
     1. Browse your query environment.
     1. Select the database where you'd like to create the target table.
@@ -113,6 +115,9 @@ Fluentd is an open-source data collector you can use to unify log collection and
     | take 10
     ```
 
+1. **Ingestion mapping**: Use the pre-defined ingestion mappings in Kusto to transform data the default 3-column format into your desired schema. For more information, see [Ingestion mappings support](https://github.com/Azure/azure-kusto-fluentd/?tab=readme-ov-file#ingestion-mapping-support).
+
 ## Related content
 
+- [Data connectors overview](event-house-connectors.md)
 - [Query data in a KQL queryset](kusto-query-set.md?tabs=kql-database)
