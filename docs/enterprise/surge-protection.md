@@ -11,13 +11,19 @@ ms.date: 11/18/2025
 
 # Surge protection
 
-Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs when set at a capacity level. It also allows you to prioritize certain workspaces over others to prioritize their performance. Ultimately, it is a tool that allows capacity admins to proactively throttle certain activities to leave more room for other activities to run. You configure surge protection for each capacity, and also at workspace level. Surge protection helps prevent throttling and rejections but isn't a substitute for capacity optimization, scaling up, and scaling out. When the capacity reaches its compute limit, it experiences interactive delays, interactive rejections, or all rejections even when surge protection is enabled.  
+Surge protection allows capacity administrators to proactively throttle certain activities, ensuring sufficient resources remain available for other workloads to run efficiently.
+ 
+Capacity level surge protection allows admins to engage background rejection sooner than it would, helping prevent capacities from entering deep throttling states. Workspace-level surge protection extends these capabilities by enabling the following:
+
+* Set a maximum capacity unit (CU) spend per workspace within a rolling 24-hour window
+* Exclude specific capacities from both capacity and workspace-level surge protection
+* Manually block a workspace as needed
 
 ## Prerequisites
 
 You need to be an admin on the capacity.
 
-## Surge protection thresholds (Capacity-level)
+## Capacity-level surge protection thresholds
 
 Capacity-level surge protection enables admins to trigger background rejection earlier, preventing capacities from entering deep throttling states that require longer recovery times.  Capacity admins set a _background operations rejection threshold_ and a _background operations recovery threshold_ when they enable surge protection.
 
@@ -80,8 +86,8 @@ When surge protection is active, background requests are rejected. In the Fabric
 
 ## Considerations and limitations
 
-- When surge protection is active, background jobs are rejected. This means there's still broad impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a specific range of usage. However, while surge protection is enabled, background operations might be rejected, and this can impact performance. To fully protect critical solutions, we recommend isolating them in a designated capacity.
-- Surge protection doesn't guarantee that interactive requests aren't delayed or rejected. As a capacity admin, you need to use the Microsoft Fabric Capacity Metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
+- When capacity-level surge protection is active, background jobs are rejected. This means there's still broad impact across your capacity even when surge protection is enabled. By using surge protection, you're tuning your capacity to stay within a specific range of usage. However, while surge protection is enabled, background operations might be rejected, and this can impact performance. To fully protect critical solutions, we recommend isolating them in a designated capacity.
+- Capacity-level surge protection doesn't guarantee that interactive requests aren't delayed or rejected. As a capacity admin, you need to use the Microsoft Fabric Capacity Metrics app to review data in the throttling charts and then adjust the surge protection background rejection threshold as needed.
 - Some requests initiated from Fabric UI are billed as background operations or depend on background operations to complete. These requests are rejected when surge protection is active.
 - Surge protection doesn't stop in progress jobs.
 - _Background rejection threshold_ isn't an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage.
@@ -91,6 +97,8 @@ When surge protection is active, background requests are rejected. In the Fabric
 ## Workspace-Level surge protection
 
 Surge protection helps limit overuse of your capacity by limiting the amount of compute consumed by background jobs. Workspace-level surge protection extends this capability further by allowing you to limit or exclude specific workspaces from these limits or manually block specific workspaces.
+
+Workspace level surge protection allows you to impose compute consumption limits on workspaces within your capacity to leave more headroom for other mission critical workspaces. It ensures individual workspaces do not monopolise compute resources for your entire capacity.
 
 ### Key capabilities
 
@@ -124,7 +132,7 @@ Use the following steps to enable workspace-level surge protection:
 
   - **Available:** Default state, subject to surge protection rules. If a workspace is marked as *Available*, it is in its *default* state. It operates normally and is subject to background surge protection rules. Workspace consumption rules can put it in a blocked state if it exceeds limits. You can manually put it to available state to unblock it immediately.
   
-  - **Mission Critical:** Exempt from workspace consumption limits. If a workspace is marked as *Mission Critical*, it is exempt from the workspace consumption rules. This state lets you ensure high-priority workspaces keep running while still blocking lower-priority ones when they exceed capacity.  This does not prevent throttling if capacity resources are exceeded - instead it overrides capacity-level surge protection for this specific workspace giving it higher priority.
+  - **Mission Critical:** Exempt from workspace consumption limits. If a workspace is marked as *Mission Critical*, it is exempt from the workspace consumption rules. This state lets you ensure high-priority workspaces keep running while still blocking lower-priority ones when they exceed capacity.  This does not prevent throttling if capacity resources are exceeded - instead it overrides capacity and workspace level surge protection for this specific workspace giving it higher priority.
   
   - **Blocked:** All interactive and background operations are rejected. If a workspace is marked as **Blocked**, all the interactive and background operations will be rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules
 
