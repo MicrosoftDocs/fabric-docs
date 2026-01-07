@@ -120,6 +120,8 @@ Next to the data binding name, select **...** to open its options. From there, y
 Limitations of data binding:
 
 * Lakehouses with OneLake security enabled are not supported as data sources for bindings. If a lakehouse has OneLake security enabled, you won't be able to use it as a data source in ontology.
+* Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. 
+* Changing the lakehouse table name after mappings are created may result in problems accessing data in the preview experience.
 * Each entity type supports one **static** data binding. This means you can't combine static data from multiple sources for a single entity type. 
     * Static data sources must be OneLake-backed sources.
     * Entity types **do** support bindings from multiple **time series** sources. Time series data can be bound from both eventhouse and lakehouse sources.
