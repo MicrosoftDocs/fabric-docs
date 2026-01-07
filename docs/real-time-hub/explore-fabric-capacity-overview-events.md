@@ -93,7 +93,7 @@ The `data` object has the following properties for Summary events:
 > [!NOTE]
 > **For capacityUnitUtilisationBreakdown, the possible workload values are:**
 >
-> | Workload          | ArtifactKind                | Description                                                                                                      |
+> | Workload          | Workload name                | Description                                                                                                      |
 > |--------------------|----------------------------|------------------------------------------------------------------------------------------------------------------|
 > | AD                | Anomaly Detector           | Anomaly detection by running queries supporting both interactive and background utilization types for real-time and scheduled analysis. |
 > | AI                | AI (Copilot/AI features)   | Evaluates AI functions on dataflows and datasets as background operations to deliver intelligent and contextual insights. |
