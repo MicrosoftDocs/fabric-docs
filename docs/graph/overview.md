@@ -50,8 +50,6 @@ Graph in Microsoft Fabric enables you to:
 
 - Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
 
-- Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain.
-
 - Benefit from job function-based experiences:  
     - Data engineers can model and create graphs.  
     - Analysts can run low/no-code queries and curate view sets.  
@@ -62,7 +60,7 @@ Graph in Microsoft Fabric enables you to:
 
 ## Integration with Microsoft Fabric
 
-Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Power BI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
+Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Fabric UI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
 
 You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. So, insights are accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md).
 
@@ -134,9 +132,8 @@ Graph is currently available in the following regions:
 - West US 2
 - West US 3
 
-If you would like to be notified when the service has been added to your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
-
 ## Related content
 
+- [Sign up for preview of natural language querying of Graph](https://forms.office.com/r/97QkVDBeuM)
 - [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
 - [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
