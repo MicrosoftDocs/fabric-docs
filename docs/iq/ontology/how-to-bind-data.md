@@ -125,3 +125,7 @@ Limitations of data binding:
 * Each entity type supports one **static** data binding. This means you can't combine static data from multiple sources for a single entity type. 
     * Static data sources must be OneLake-backed sources.
     * Entity types **do** support bindings from multiple **time series** sources. Time series data can be bound from both eventhouse and lakehouse sources.
+
+### Troubleshooting
+
+For troubleshooting tips related to data binding, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-data-binding).

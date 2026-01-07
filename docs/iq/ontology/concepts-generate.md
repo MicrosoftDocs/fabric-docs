@@ -49,6 +49,10 @@ This section describes support in ontology (preview) for different semantic mode
     * `Decimal` is different from the floating-point `Double` type, which is supported. `Decimal` is a fixed-precision numeric type that is most commonly used for representing monetary values.
 * Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location.
 
+### Troubleshooting
+
+For troubleshooting tips related to semantic model ontology generation, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-ontology-generated-from-a-semantic-model).
+
 ## Next steps
 
 See an example of this process in the [Ontology (preview) tutorial part 1: Create an ontology](tutorial-1-create-ontology.md?pivots=semantic-model).
