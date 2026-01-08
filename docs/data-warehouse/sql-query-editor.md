@@ -152,23 +152,23 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 |---------------|----------------------|------------------|
 | **Query editor actions** |||
 | Run all SQL statements in active query tab | Ctrl + Enter / Shift + Enter | Command + Enter / Shift + Enter |
-| Close current tab | Ctrl + Shift + F4 |
-| Cancel running SQL script | Alt+Break |
-| Search string | Ctrl + F |
-| Replace string | Ctrl + H |
-| Undo | Ctrl + Z |
-| Redo | Ctrl + Y |
-| Go one word left | Ctrl + Left arrow key |
-| Go one word right | Ctrl + Right arrow key |
-| Indent increase | Tab |
-| Indent decrease | Shift + Tab |
-| Comment | Ctrl + K, Ctrl + C |
-| Uncomment | Ctrl + K, Ctrl + U |
+| Close current tab | Ctrl + Shift + F4 | Command + Shift + F4 |
+| Cancel running SQL script | Ctrl + . | Command + . |
+| Search string | Ctrl + F | Command + F |
+| Replace string | Ctrl + H | Command + Option + F |
+| Undo | Ctrl + Z | Command + Z |
+| Redo | Ctrl + Y | Command + Shift + Z |
+| Go one word left | Ctrl + Left arrow key | Command + Left arrow key |
+| Go one word right | Ctrl + Right arrow key | Command + Right arrow key |
+| Indent increase | Tab | Tab |
+| Indent decrease | Shift + Tab | Shift + Tab |
+| Comment | Ctrl + K, Ctrl + C | Command + K, Command + C |
+| Uncomment | Ctrl + K, Ctrl + U | Command + K, Command + U |
 | Move cursor up | Up Arrow | Up Arrow |
 | Move cursor down | Down Arrow | Down Arrow |
-| Select All | Ctrl + A |
+| Select All | Ctrl + A | Command + A |
 | Explain query (Copilot) | Ctrl + Alt + E | Command + Option + E |
-| Fix query (Copilot) | Ctrl + Alt + F | Command + Option + F | 
+| Fix query (Copilot) | Ctrl + Alt + F | Command + Option + X | 
 | **Ribbon actions** |||
 | Refresh metadata | Ctrl + Shift + R | Command + Shift + R | 
 | Open settings | Ctrl + Shift + X | Command + Shift + X | 
@@ -176,10 +176,11 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 | Open query activity | Ctrl + Shift + A | Command + Shift + A | 
 | Open Copilot chat pane | Ctrl + Shift + I | Command + Shift + I | 
 | New semantic model | Ctrl + Shift + M | Command + Shift + M | 
-| New visual query | Ctrl + Shift + J | Command + Shift + J | 
+| New SQL Query | Ctrl + J | Command + J |
+| New visual query | Ctrl + Shift + J | Command + Shift + J |
 | **Explorer actions** |||
-| Expand explorer pane | Alt + B | Option + B | 
-| Collapse explorer pane | Alt + B | Option + B |
+| Expand explorer pane | Ctrl + B | Command + B | 
+| Collapse explorer pane | Ctrl + B | Command + B |
 | **Query results actions** |||
 | Expand results | Ctrl + R | Command + R | 
 | Collapse results | Ctrl + R | Command + R | 
