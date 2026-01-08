@@ -1,6 +1,6 @@
 ---
-title: Include file the copy job supported connectors table for general copy
-description: Include file copy job supported connectors table for general copy
+title: Include file the copy job supported connectors table for copy job sources and destinations
+description: Include file copy job supported connectors table for copy job sources and destinations
 author: whhender
 ms.author: whhender
 ms.reviewer: yexu

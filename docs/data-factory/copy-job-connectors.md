@@ -23,7 +23,7 @@ Copy job supports the following functionalities:
 
 ## Copy job sources and destinations
 
-[!INCLUDE [copy-job-general-copy-connectors](includes/copy-job-general-copy-connectors.md)]
+[!INCLUDE [copy-job-source-and-destination-connectors](includes/copy-job-source-and-destination-connectors.md)]
 
 ## CDC Replication (Preview)
 
