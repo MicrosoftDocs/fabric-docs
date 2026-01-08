@@ -109,10 +109,6 @@ With the tenant-level setting **Configure workspace-level IP firewall rules** en
    ```
 ---
 
-## How IP firewall rules interact with other network security settings
-
-When configuring workspace IP firewall rules, it's important to understand how they interact with other network security settings in Fabric.
-
 ## Related content
 
 - [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md)
