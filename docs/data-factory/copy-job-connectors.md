@@ -23,13 +23,31 @@ Copy job supports the following functionalities:
 
 ## Copy job sources and destinations
 
+The following table shows which connectors are supported as sources and destinations in Copy job, and whether they support different read and write modes.
+
+- **Read - Full load**: Read the entire data from the source.
+- **Read - Incremental load (watermark based)**: Read only the changed data from the source using a watermark column.
+- **Write - Append**: Add new data to the destination without affecting existing data.
+- **Write - Override**: Replace existing data in the destination with new data.
+- **Write - Merge**: Combine new data with existing data in the destination based on a specified key.
+
+For more information about each of these modes, see [the copy job overview](what-is-copy-job.md).
+
 [!INCLUDE [copy-job-source-and-destination-connectors](includes/copy-job-source-and-destination-connectors.md)]
 
 ## CDC Replication (Preview)
 
+Change data capture (CDC) in Copy job enables automated replication of changed data (including inserted, updated, and deleted records) from a source to a destination. This table outlines the connectors that support CDC replication in Copy job, including their capabilities for reading and writing CDC data.
+
+For more information about using CDC replication in Copy job, see [Change data capture in Copy job](cdc-copy-job.md).
+
 [!INCLUDE [copy-job-cdc-replication-connectors](includes/copy-job-cdc-replication-connectors.md)]
 
 ## Automatic table creation and truncate on destination
+
+Copy job can automatically create tables in the destination if they don’t already exist.You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates. This table outlines the connectors that support automatic table creation and truncate on destination in Copy job.
+
+For more information about these features, see [the copy job overview](what-is-copy-job.md).
 
 [!INCLUDE [copy-job-auto-table-creation-and-truncate-connectors](includes/copy-job-auto-table-creation-and-truncate-connectors.md)]
 

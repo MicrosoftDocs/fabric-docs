@@ -12,9 +12,10 @@ ai-usage: ai-assisted
 
 # What is Copy job in Data Factory for Microsoft Fabric?
 
-Copy Job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations — no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios — all through an intuitive, easy-to-use experience. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution. 
+Copy Job is the go-to solution in Microsoft Fabric Data Factory for simplified data movement from many sources to many destinations — no pipelines required. With native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication, Copy job offers the flexibility to handle a wide range of data movement scenarios — all through an intuitive, easy-to-use experience. Whether you’re new to data integration or just want a faster way to get your data where it needs to go, Copy job offers a flexible and user-friendly solution.
 
 ## Advantages 
+
 Some advantages of the Copy job over other data movement methods include:
 
 - **Easy to use**: Set up and monitor data copying with a simple, guided experience — no technical expertise needed.
@@ -70,8 +71,6 @@ In some cases, when you edit a copy job — for example, updating the incrementa
 
 ### Automatic table creation and truncate on destination
 
-[!INCLUDE [copy-job-auto-table-creation-and-truncate-connectors](includes/copy-job-auto-table-creation-and-truncate-connectors.md)]
-
 Copy job can automatically create tables in the destination if they don’t already exist. If the destination tables are already available, you can simply select them as your target. With flexible column mapping options, you can easily define how to map schemas from the source tables to the destination tables.
 
 You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates.
@@ -83,6 +82,8 @@ By default, Copy job does not delete any data in destination. When you enable th
 - If customers later reset incremental copy to full copy, enabling this option will again clear the destination before loading.
 
 This approach ensures that your destination remains clean, fully synchronized, and free of duplicates, providing a reliable foundation for their data ingestion solution.
+
+[!INCLUDE [copy-job-auto-table-creation-and-truncate-connectors](includes/copy-job-auto-table-creation-and-truncate-connectors.md)]
 
 ### Run options (Run, Schedule, Event Trigger)
 
