@@ -43,6 +43,7 @@ This section describes support in ontology (preview) for different semantic mode
 
 ## Other semantic model limitations
 
+* Generating an ontology from a semantic model isn't supported in the default Fabric workspace **My workspace**. Make sure the semantic model is in a different workspace.
 * Ontology does not support creating data bindings when the semantic model table is in **Direct Lake mode** and the backing lakehouse is in a workspace with **inbound public access disabled**. The ontology item is created successfully but that entity type has no data bindings.
 * Fabric Graph does not currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. 
     * `Decimal` is different from the floating-point `Double` type, which is supported. `Decimal` is a fixed-precision numeric type that is most commonly used for representing monetary values.

@@ -8,6 +8,7 @@ ms.topic: conceptual
 ms.date: 11/17/2025
 ms.custom: dataflows
 ai-usage: ai-assisted
+ms.collection: ce-skilling-ai-copilot
 ---
 
 # Fabric AI Prompt in Dataflow Gen2 (Preview)

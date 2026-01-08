@@ -26,16 +26,13 @@ Before creating entity types, make sure you have the following prerequisites:
 
 ## Key concepts
 
-Entity types use the following ontology (preview) concepts.
+Entity types use the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item.
-* *Entity instance:* A specific occurrence of an entity type, representing a real-world object with its own unique values for the defined properties. For example, if *Vehicle* is an entity type, then a particular car with its own VIN, make, and model is an entity instance.
-* *Property:* An attribute of an entity, like *ID*, *temperature* or *location*. Properties can be created manually or from data through data binding.
-    * Properties can be bound to static or time series data. Static data doesn't change over time, and represents fixed characteristics about the entity type (like *ID*). Time series data contains attributes whose values vary over time (like *temperature* and *location*).
-* *Entity type key:* A unique identifier for each instance of an entity type within your ontology. This value is created from static data bound to one or more properties on your entity type.
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
-* *Data binding:* The process that connects the schema of entity types, relationship types, and properties to concrete data sources that drive enterprise operations and analytics.
+* *Entity type*
+* *Entity type key*
+* *Entity instance*
+* *Property*
+* *Data binding*
 
 ## How-to steps
 
@@ -45,7 +42,7 @@ This section contains step-by-step instructions for adding and managing entity t
 
 ### Create an entity type
 
-1. Select **Add entity type** from the top ribbon or the center of the canvas.
+1. Select **Add entity type** from the top ribbon or the center of the configuration canvas.
 
     :::image type="content" source="media/how-to-create-entity-types/add-entity-type.png" alt-text="Screenshot of adding entity type.":::
 
@@ -54,7 +51,7 @@ This section contains step-by-step instructions for adding and managing entity t
     >[!NOTE]
     >Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
-1. Your entity type is added to the canvas, and the **Entity type configuration** pane is visible.
+1. Your entity type is added to the configuration canvas, and the **Entity type configuration** pane is visible.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
 
@@ -69,12 +66,13 @@ This section contains step-by-step instructions for adding and managing entity t
 
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring property details.":::
 
-1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. Select one or more columns from the source data that can be used to uniquely identify a record. This process must be done once for each entity type.
+1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. 
 
-    >[!IMPORTANT]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
+
+    This process is done once for each entity type.
 
 1. Optionally, select a property to use as the **Instance display name** for all your instances in downstream experiences.
 
