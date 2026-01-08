@@ -7,7 +7,7 @@ author: kgremban
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.custom:
-ms.date: 12/31/2024
+ms.date: 01/08/2026
 #customer intent: As a data engineer, I want to learn how to use OneLake shortcuts so that I can unify data sources and have OneLake manage the permissions.
 ---
 
@@ -27,7 +27,7 @@ Shortcuts appear as folders in OneLake and any workload or service that has acce
 
 You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases.
 
-You can use the Fabric portal to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
+You can use the Fabric portal to create shortcuts interactively, and you can use the [REST API](/rest/api/fabric/core/onelake-shortcuts) to create shortcuts programmatically.
 
 ### Lakehouse
 
@@ -118,10 +118,10 @@ For instructions to create an internal shortcut, see [Create an internal OneLake
 
 The shortcut can point to a folder location within the same item, across items within the same workspace, or even across items in different workspaces. When you create a shortcut across items, the item types don't need to match. For example, you can create a shortcut in a lakehouse that points to data in a data warehouse.
 
-When a user accesses data through a shortcut to another OneLake location, OneLake uses the identity of the calling user to authorize access to the data in the target path of the shortcut. This user must have permissions in the target location to read the data.
+When a user accesses data from another OneLake location through a shortcut, OneLake uses the identity of the calling user to authorize access to the data. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When users access shortcuts through **Power BI semantic models using DirectLake over SQL** or **T-SQL engines in Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. The calling item's owner's identity is passed instead, delegating access to the calling user. To resolve this limitation, use **Power BI semantic models in DirectLake over OneLake mode** or **T-SQL in User's identity mode**.
+> When users access shortcuts through Power BI semantic models using **DirectLake over SQL** or T-SQL engines in **Delegated identity mode**, the calling user's identity isn't passed through to the shortcut target. Instead, the calling item's owner's identity is passed, which delegates access to the calling user. To resolve this limitation, use Power BI semantic models in **DirectLake over OneLake** mode or T-SQL in **User identity mode**.
 
 ### External OneLake shortcuts
 
@@ -138,7 +138,7 @@ For detailed instructions to create a specific shortcut type, select an article 
 
 ## Caching
 
-Shortcut caching can reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace. Subsequent read requests are served from cache rather than the remote storage provider. The retention period for cached files can be set from 1-28 days. Each time the file is accessed, the retention period is reset. If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will then be stored in cache. If a file hasn’t been accessed for more than the selected retention period, it's purged from the cache. Individual files greater than 1 GB in size aren't cached.
+Shortcut caching can reduce egress costs associated with cross-cloud data access. As OneLake reads files through an external shortcut, the service stores the files in a cache for the Fabric workspace. OneLake responds to subsequent read requests from the cache rather than the remote storage provider. You can set the retention period for cached files between 1-28 days. Each time you access the file, the retention period is reset. If the remote storage provide has a more recent version of the file than the cache's version, then OneLake serves the request from the remote storage provider and updates the file in the cache. If you don't access a file within the selected retention period, it's purged from the cache. Individual files greater than 1 GB in size aren't cached.
 
 > [!NOTE]
 > Shortcut caching currently supports Google Cloud Storage (GCS), S3, S3 compatible, and on-premises data gateway shortcuts.
@@ -153,13 +153,15 @@ You can clear the cache at any time. From the same settings page, select the **R
 
 ADLS and S3 shortcuts delegate authorization by using cloud connections. When you create a new ADLS or S3 shortcut, you either create a new connection or select an existing connection for the data source. Setting a connection for a shortcut is a bind operation. Only users with permission on the connection can perform the bind operation. If you don't have permission on the connection, you can't create new shortcuts using that connection.
 
+For more information about viewing and updating cloud connections, see [Manage connections for shortcuts](./manage-shortcut-connections.md).
+
 ## Shortcut security
 
 Shortcuts require certain permissions to manage and use. [OneLake shortcut security](./onelake-shortcut-security.md) explains the permissions you need to create shortcuts and access data through them.
 
 ## How do shortcuts handle deletions?
 
-Shortcuts don't support cascading deletes. When you delete a shortcut, you only delete the shortcut object. The data in the shortcut target stays unchanged. However, if you delete a file or folder within a shortcut, and you have permissions in the shortcut target to perform the delete operation, the files or folders are deleted in the target.
+Shortcuts don't support cascading deletes. When you delete a shortcut, you only delete the shortcut object. The data in the shortcut target stays unchanged. However, if you delete a file or folder within a shortcut, and you have permissions in the shortcut target to perform the delete operation, you also delete the file or folder in the target.
 
 For example, consider a lakehouse with the following path in it: `MyLakehouse\Files\MyShortcut\Foo\Bar`. **MyShortcut** is a shortcut that points to an ADLS Gen2 account that contains the *Foo\Bar* directories.
 
@@ -190,4 +192,4 @@ When you create shortcuts between multiple Fabric items within a workspace, you 
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
-- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
+- [Use OneLake shortcuts REST APIs](/rest/api/fabric/core/onelake-shortcuts)
