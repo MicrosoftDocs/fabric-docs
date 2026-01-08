@@ -30,8 +30,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 |Full refresh |A full refresh involves assessing the entire dataset of dependent sources whenever any modification is made to the source.|
 
 > [!Important]
-> For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition. For more information, see, [how to enable change data feed property](#how-to-enable-change-data-feed-property).
-
+> For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition. For more information, see, [how to enable change data feed property](#how-to-enable-change-data-feed-(cdf)-property).
 
 ### Benefits of optimal refresh 
 
