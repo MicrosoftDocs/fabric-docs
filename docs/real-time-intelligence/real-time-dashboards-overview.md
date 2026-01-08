@@ -6,7 +6,7 @@ ms.author: v-hzargari
 author: hzargari-ms
 ms.topic: overview
 ms.custom:
-ms.date: 12/07/2025
+ms.date: 01/08/2026
 ms.search.form: Overview
 ---
 
@@ -35,22 +35,18 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
 * **Git integration:** Sync dashboards with [GitHub or Azure DevOps](git-real-time-dashboard.md) for version control and collaborative development.
 * **Permission separation:** Share dashboards securely without exposing the underlying data, enabling [safe collaboration](dashboard-permissions.md).
 
-### Why it matters
-
-* **Speed:** Decisions are based on the most current data, reducing latency between insight and action.
-* **Accuracy:** Eliminates reliance on static reports, ensuring operational precision.
-* **Scalability:** Handles high-velocity telemetry and transactional data streams efficiently.
-
 ## Getting started
 
 ### Supported data sources
 
-Real-Time Dashboard can connect to various data sources, including:
+Real-Time Dashboard seamlessly integrates with a variety of data sources, enabling you to monitor and visualize real-time data from multiple platforms. Supported data sources include:
 
-* [Eventhouse](dashboard-real-time-create.md#add-data-source)
-* [Azure Data Explorer](dashboard-real-time-create.md#add-data-source)
-* [Azure Monitor - Application Insights](dashboard-real-time-create.md#add-data-source)
-* [Azure Monitor - Log Analytics](dashboard-real-time-create.md#add-data-source)
+* **[Eventhouse](dashboard-real-time-create.md#add-data-source):** A high-performance event streaming platform designed for ingesting and processing real-time data streams efficiently.
+* **[Azure Data Explorer](dashboard-real-time-create.md#add-data-source):** A powerful analytics service optimized for querying and analyzing large volumes of log and telemetry data in real time.
+* **[Azure Monitor - Application Insights](dashboard-real-time-create.md#add-data-source):** A comprehensive tool for monitoring live application performance, identifying bottlenecks, and diagnosing issues.
+* **[Azure Monitor - Log Analytics](dashboard-real-time-create.md#add-data-source):** A scalable service for querying and analyzing log data from diverse Azure resources, providing actionable insights.
+
+By connecting to these data sources, Real-Time Dashboard ensures you can harness the full potential of your streaming data to drive timely and informed decisions.
 
 ### How do I create a Real-Time Dashboard?
 

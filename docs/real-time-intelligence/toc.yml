@@ -692,6 +692,8 @@ items:
     href: add-query-visualization.md
 - name: Real-Time Dashboard
   items:
+  - name: Real-Time Dashboard overview
+    href: real-time-dashboards-overview.md
   - name: Create a Real-Time Dashboard
     href: dashboard-real-time-create.md
   - name: Generate Real-Time Dashboard Using Copilot
