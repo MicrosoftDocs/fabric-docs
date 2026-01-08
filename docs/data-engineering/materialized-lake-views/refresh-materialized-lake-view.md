@@ -32,6 +32,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 > [!Important]
 > For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition.
 
+
 ### Benefits of optimal refresh 
 
 * Lower Cost: Less compute and storage are used, especially when data changes are minimal and No refresh bypasses the data refresh when no delta commit change is detected.
@@ -66,6 +67,39 @@ The following table outlines the supported expressions:
 * If you define data quality constraints in materialized lake view definition, incremental refresh respect and enforce those constraints during updates.
 * No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
 * In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
+
+### How to enable change data feed preoperty 
+
+For optimal refresh, it is required to enable changed delta feed (CDF) property for all dependent sources. You can set the property during creation or use `ALTER TABLE` statement. 
+
+The following example demonstrate how to enable it during creation. 
+
+```sql
+CREATE OR REPLACE MATERIALIZED LAKE VIEW silver.customer_orders
+TBLPROPERTIES (delta.enableChangeDataFeed=true)
+AS
+SELECT 
+    c.customerID,
+    c.customerName,
+    c.region,
+    o.orderDate,
+    o.orderAmount
+FROM bronze.customers c INNER JOIN bronze.orders o
+ON c.customerID = o.customerID
+```
+
+Or you can `ALTER TABLE` statement on the source table
+
+```sql
+  ALTER TABLE <table-name> SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+```
+
+Example:
+
+```sql
+  ALTER TABLE bronze.customers SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+  ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+```
 
 ### How to enable optimal refresh mode 
 
