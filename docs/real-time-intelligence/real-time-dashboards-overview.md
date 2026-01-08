@@ -68,4 +68,3 @@ After understanding the basics of Real-Time Dashboard and setting up your first 
 
 * [Explore data in Real-Time Dashboard](dashboard-explore-data.md)
 * [Set alert for Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)
- 
