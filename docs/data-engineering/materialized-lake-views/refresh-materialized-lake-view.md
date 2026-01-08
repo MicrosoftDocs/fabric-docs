@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 12/22/2025
+ms.date: 01/08/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -30,7 +30,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 |Full refresh |A full refresh involves assessing the entire dataset of dependent sources whenever any modification is made to the source.|
 
 > [!Important]
-> For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition.
+> For incremental refresh to take effect, it is required to set delta change data feed(CDF) property to `delta.enableChangeDataFeed=true` for all dependent sources referenced in the materialized lake views definition. For more information, see, [how to enable change data feed property](#how-to-enable-change-data-feed-property).
 
 ### Benefits of optimal refresh 
 
@@ -62,10 +62,43 @@ The following table outlines the supported expressions:
 ### Key points for optimal refresh
 
 * To optimize outcome, use supported expressions in your queries so that incremental refresh strategy can be applied.
-* Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric will perform a full refresh.
+* Incremental refresh is supported for append-only data. If the data includes deletions or updates, Fabric performs a full refresh.
 * If you define data quality constraints in materialized lake view definition, incremental refresh respect and enforce those constraints during updates.
 * No additional charges apply specifically for using optimal refresh. You are billed based on compute usage during refresh operations.
 * In cases such as small source datasets, Fabric might choose full over incremental refresh given the performance yield.
+
+### How to enable change data feed property 
+
+For optimal refresh, it is necessary to enable change data feed (CDF) property on all dependent sources. 
+
+The following example demonstrate how to enable using `CREATE` statement. 
+
+```sql
+CREATE OR REPLACE MATERIALIZED LAKE VIEW silver.customer_orders
+TBLPROPERTIES (delta.enableChangeDataFeed=true)
+AS
+SELECT 
+    c.customerID,
+    c.customerName,
+    c.region,
+    o.orderDate,
+    o.orderAmount
+FROM bronze.customers c INNER JOIN bronze.orders o
+ON c.customerID = o.customerID
+```
+
+Or you can use `ALTER TABLE` statement on the source tables.
+
+```sql
+  ALTER TABLE <table-name> SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+```
+
+Example:
+
+```sql
+  ALTER TABLE bronze.customers SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+  ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+```
 
 ### How to enable optimal refresh mode 
 
@@ -95,19 +128,6 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 > - If your workspace name contains spaces, enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
 > - Refreshing a materialized lake view that uses non-delta tables as its source initiates a full refresh.
 
-### Determine the refresh policy 
-
-To determine the refresh policy under optimal refresh mode, you can query the sys_dq_metrics table:
-
-```sql
-SELECT 
-    MLVName,
-    refreshPolicy 
-FROM  
-    dbo.sys_dq_metrics 
-WHERE
-    MLVName = '<materialized_lake_view_name>' 
-```
 
 ## Related articles
 
