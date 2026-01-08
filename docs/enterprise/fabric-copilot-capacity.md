@@ -5,6 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.topic: concept-article
 ms.date: 03/20/2025
+ms.collection: ce-skilling-ai-copilot
 
 # Customer intent: As an admin I want to learn how to enable a Fabric Copilot capacity so that I can bill all Copilot usage to a single capacity.
 ---

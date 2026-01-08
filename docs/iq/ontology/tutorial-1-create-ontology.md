@@ -71,7 +71,7 @@ Follow these steps to rename each entity type to a friendlier name.
     | --- | --- |
     | *factsales* | *SaleEvent* |
     | *dimstore* | *Store* |
-    | *dimproducts* | *Products* |
+    | *dimproducts* | *Products* <br><br>Note: Make sure to use the plural form *Products*, to avoid conflict with the [GQL reserved word](../../graph/gql-reference-reserved-terms.md#p) `PRODUCT`. |
 
 When you're done renaming all the entity types, they look like this (they might be listed in a different order).
 
@@ -95,6 +95,8 @@ Here's an example of what entity type properties look like.
 
 ### Add SaleEvent key
 
+Each entity type has an entity type key that represents a unique identifier for each record of ingested data. String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
+
 The *SaleEvent* entity type doesn't have a key that was imported from the source data, so you need to add it manually.
 
 1. Open the *SaleEvent* entity type.
@@ -103,10 +105,6 @@ The *SaleEvent* entity type doesn't have a key that was imported from the source
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/add-key.png" alt-text="Screenshot of adding entity type key.":::
 
 1. Select `SaleId`.
-
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
-
 1. When the key is saved, it looks like this:
 
     :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-key.png" alt-text="Screenshot of the sale event key.":::
@@ -131,7 +129,7 @@ Here's an example of what the bindings look like.
 
 Finally, verify the relationship types between entity types. Relationship types represent how entity types are related to each other in a business context. The relationship types that were imported from the semantic model are defined, but not fully configured and bound to data. 
 
-Select the *SaleEvent* entity type to display it and its relationship types on the canvas. 
+Select the *SaleEvent* entity type to display it and its relationship types on the configuration canvas. 
 
 :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png" alt-text="Screenshot of the sale event entity type and its relationships." lightbox="media/tutorial-1-create-ontology/semantic-model/sale-event-relationships.png":::
 
@@ -188,12 +186,12 @@ First create entity types, which represent types of objects in a business. This 
 
 ### Add first entity type (Store)
 
-1. From the top ribbon or the center of the canvas, select **Add entity type**.
+1. From the top ribbon or the center of the configuration canvas, select **Add entity type**.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/add-entity-type.png" alt-text="Screenshot of adding entity type.":::
 
 1. Enter *Store* for the name of your entity type and select **Add Entity Type**.
-1. The *Store* entity type is added to the canvas, and the **Entity type configuration** pane is visible.
+1. The *Store* entity type is added to the configuration canvas, and the **Entity type configuration** pane is visible.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
 
@@ -222,9 +220,6 @@ First create entity types, which represent types of objects in a business. This 
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/entity-type-key-2.png" alt-text="Screenshot of selecting the entity type key.":::
 
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
-
 Now the *Store* entity type is ready. Continue to the next section to create the remaining entity types.
 
 ### Add other entity types (Products, SaleEvent)
@@ -233,7 +228,7 @@ Follow the same steps that you used for the *Store* entity type to create the en
 
 | Entity type name | Source table in *OntologyDataLH* | Entity type key |
 | --- | --- | --- |
-| *Products* | *dimproducts* | `ProductId` |
+| *Products* <br><br>Note: Make sure to use the plural form *Products*, to avoid conflict with the [GQL reserved word](../../graph/gql-reference-reserved-terms.md#p) `PRODUCT`. | *dimproducts* | `ProductId` |
 | *SaleEvent* | *factsales* | `SaleId` |
 
 When you're done, you see these entity types listed in the **Entity Types** pane. 
@@ -274,7 +269,7 @@ Follow the same steps that you used for the first relationship type to create th
 | --- | --- | --- | --- |
 | *soldIn* | Tutorial workspace > *OntologyDataLH > factsales*| *Products* <br>For **Source column**, select `ProductId`. | *SaleEvent*<br>For **Source column**, select `SaleId`. | 
 
-When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the canvas.
+When you're done, you have two relationships targeting the *SaleEvent* entity type. To see the relationships, select the **SaleEvent** entity type from the **Entity Types** pane. You see its relationships on the configuration canvas.
 
 :::image type="content" source="media/tutorial-1-create-ontology/onelake/all-relationship-types.png" alt-text="Screenshot of the scenario relationship types." lightbox="media/tutorial-1-create-ontology/onelake/all-relationship-types.png":::
 
