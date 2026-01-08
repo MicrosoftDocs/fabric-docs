@@ -30,7 +30,7 @@ Optimal refresh is engineered to improve data management efficiency, speed, and 
 |Full refresh |A full refresh involves assessing the entire dataset of dependent sources whenever any modification is made to the source.|
 
 > [!Important]
-> For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition.
+> For incremental refresh to take effect, it is required to set delta CDF property to `delta.enableChangeDataFeed=true` for the sources referenced in the materialized lake views definition. For more information see, [how to enable change data feed preoperty](#how-to-enable-change-data-feed-preoperty).
 
 
 ### Benefits of optimal refresh 
@@ -70,9 +70,9 @@ The following table outlines the supported expressions:
 
 ### How to enable change data feed preoperty 
 
-For optimal refresh, it is required to enable changed delta feed (CDF) property for all dependent sources. You can set the property during creation or use `ALTER TABLE` statement. 
+For optimal refresh, it is necessary to enable changed delta feed (CDF) property on all dependent sources. 
 
-The following example demonstrate how to enable it during creation. 
+The following example demonstrate how to enable using `CREATE` statement. 
 
 ```sql
 CREATE OR REPLACE MATERIALIZED LAKE VIEW silver.customer_orders
@@ -88,7 +88,7 @@ FROM bronze.customers c INNER JOIN bronze.orders o
 ON c.customerID = o.customerID
 ```
 
-Or you can `ALTER TABLE` statement on the source table
+Or you can use `ALTER TABLE` statement on the source tables.
 
 ```sql
   ALTER TABLE <table-name> SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
