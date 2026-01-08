@@ -72,6 +72,8 @@ items:
     href: event-streams/overview.md
   - name: Eventstreams capacity consumption
     href: event-streams/monitor-capacity-consumption.md
+  - name: Supported data formats
+    href: event-streams/data-formats.md
   - name: Create eventstreams
     items:
     - name: Create an eventstream
@@ -574,6 +576,8 @@ items:
         href: get-data-cribl-stream.md
       - name: Fluent Bit
         href: get-data-fluent.md
+      - name: Fluentd
+        href: get-data-fluentd.md
       - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
       - name: NLog sink
@@ -767,6 +771,10 @@ items:
       href: data-activator/activator-trigger-fabric-items.md
     - name: Use custom actions to trigger Power Automate flows
       href: data-activator/activator-trigger-power-automate-flows.md
+  - name: How-to guides
+    items:
+    - name: Combine multiple streams
+      href: data-activator/combine-multiple-streams.md
   - name: Troubleshoot errors
     href: data-activator/activator-troubleshooting.md
 - name: Digital Twin Builder
@@ -889,7 +897,9 @@ items:
     - name: Operations agents  
       items:
       - name: Getting started with operations agents
-        href: operations-agent.md 
+        href: operations-agent.md
+      - name: Operations agents billing
+        href: operations-agent-billing.md 
       - name: Operations agents limitations
         href: operations-agent-limitations.md
       - name: Operations agent transparency note

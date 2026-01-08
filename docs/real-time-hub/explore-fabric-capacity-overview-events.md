@@ -63,7 +63,7 @@ An event has the following top-level data:
 The `data` object has the following properties for Summary events:
 
 > [!NOTE]
-> The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, whether or not any CU is consumed. Once a capacity is paused, it doesn't emit summary data.
+> The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, unless all line items for that window (CU, Interactive Delay Throttling percentage etc) are 0. Also, if a capacity is paused, it doesn't emit summary data.
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
@@ -93,7 +93,7 @@ The `data` object has the following properties for Summary events:
 > [!NOTE]
 > **For capacityUnitUtilisationBreakdown, the possible workload values are:**
 >
-> | Workload          | ArtifactKind                | Description                                                                                                      |
+> | Workload          | Workload name                | Description                                                                                                      |
 > |--------------------|----------------------------|------------------------------------------------------------------------------------------------------------------|
 > | AD                | Anomaly Detector           | Anomaly detection by running queries supporting both interactive and background utilization types for real-time and scheduled analysis. |
 > | AI                | AI (Copilot/AI features)   | Evaluates AI functions on dataflows and datasets as background operations to deliver intelligent and contextual insights. |

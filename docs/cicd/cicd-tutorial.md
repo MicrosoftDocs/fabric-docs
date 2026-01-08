@@ -9,7 +9,7 @@ ms.topic: tutorial
 ms.service: fabric
 ms.subservice: cicd
 ms.custom: sfi-image-nochange
-ms.date: 07/10/2024
+ms.date: 12/15/2025
 #customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.
 ---
 

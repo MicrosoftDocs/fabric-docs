@@ -31,15 +31,11 @@ Before adding relationship types to your ontology, make sure you have the follow
 
 ## Key concepts
 
-Relationship types use the following ontology (preview) concepts.
+Relationship types use the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item.
-* *Relationship type:* A definition that specifies how two entity types are connected (such as *located_at* or *monitored_by*). 
-
-    >[!TIP]
-    > You can define a relationship type without [binding data](how-to-bind-data.md) to it. If you don't bind data, the relationship type isn't visualized in the [preview experience](how-to-use-preview-experience.md).
-
-* *Relationship instance:* A specific occurrence of a relationship type between two entity instances.
+* *Entity type*
+* *Relationship type*
+* *Relationship instance*
 
 ## How-to steps
 
@@ -86,11 +82,8 @@ Follow these steps to create a relationship type and bind data to it:
 
 You can edit or delete relationship types in the **Relationship configuration** pane.
 
-* To **edit** a relationship type, select it in the canvas and edit any of the fields in the **Relationship configuration** pane.
+* To **edit** a relationship type, select it in the configuration canvas and edit any of the fields in the **Relationship configuration** pane.
 
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1619), it's currently not recommended to change the source or target entity type on a relationship that has already been bound to data. If you need to change the source or target entity type on a relationship that's connected to a data source, delete the relationship and recreate it with the right entity types.
-
-* To **delete** a relationship type, select it in the canvas and select the **Delete relationship type** button in the **Relationship configuration** pane.
+* To **delete** a relationship type, select it in the configuration canvas and select the **Delete relationship type** button in the **Relationship configuration** pane.
 
     :::image type="content" source="media/how-to-create-relationship-types/delete-relationship.png" alt-text="Screenshot of editing relationship details in the relationship configuration." lightbox="media/how-to-create-relationship-types/delete-relationship.png":::

@@ -16,9 +16,9 @@ Data binding in ontology (preview) connects the schema of entity types, relation
 
 With data binding, you can:
 
-* Seamlessly integrate data into a semantic layer without copying data.
-* Enrich entity types with up-to-date, contextually relevant information from batch and real-time sources.
-* Provide a semantic backbone for AI agents and automation, supporting reasoning, decision-making, and actions across the enterprise.
+* Seamlessly integrate data into a semantic layer without copying source data
+* Enrich entity types with up-to-date, contextually relevant information from batch and real-time sources
+* Provide a semantic backbone for AI agents and automation, supporting reasoning, decision-making, and actions across the enterprise
 
 ## Prerequisites
 
@@ -35,16 +35,12 @@ Before binding data to your ontology, make sure you have the following prerequis
 
 ## Key concepts
 
-Data binding uses the following ontology (preview) concepts.
+Data binding uses the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item.
-* *Entity instance:* A specific occurrence of an entity type, representing a real-world object with its own unique values for the defined properties. For example, if *Vehicle* is an entity type, then a particular car with its own VIN, make, and model is an entity instance.
-* *Property:* An attribute of an entity, like *ID*, *temperature* or *location*. Properties can be created manually or from data through data binding.
-    * Properties can be bound to static or time series data. Static data doesn't change over time, and represents fixed characteristics about the entity type (like *ID*). Time series data contains attributes whose values vary over time (like *temperature* and *location*).
-* *Entity type key:* A unique identifier for each instance of an entity type within your ontology. This value is created from static data bound to one or more properties modeled on your entity type.
-
-    >[!NOTE]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+* *Entity type*
+* *Entity type key*
+* *Entity instance*
+* *Property*
 
 ## How-to steps
 
@@ -71,7 +67,7 @@ First, bind static data. Static data bindings must be created before time series
 1. Under **Bind your properties**, select the source columns from the source table that you want to model on your entity type. Then, enter a name for each property that shows on the entity type (it can be the same as the source column name, or something different).
 
     >[!NOTE] 
-    >Custom column names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
+    >Custom property names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character. Property names must be unique across all entity types.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-3.png" alt-text="Screenshot of the property screen in data binding." lightbox="media/how-to-bind-data/bind-data-3.png":::
 
@@ -87,12 +83,13 @@ First, bind static data. Static data bindings must be created before time series
     
     :::image type="content" source="media/how-to-bind-data/tab-properties.png" alt-text="Screenshot of the entity type properties tab.":::
 
-1. Next, set the **Key**. The entity type key value represents a unique identifier for each record of ingested data. Select one or more columns from the source data that can be used to uniquely identify a record. This process must be done once for each entity type.
+1. Next, set the **Key**. The entity type key value represents a unique identifier for each record of ingested data.
+
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
 
     :::image type="content" source="media/how-to-bind-data/entity-type-key.png" alt-text="Screenshot of adding an entity type key.":::
 
-    >[!IMPORTANT]
-    >Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.
+    This process is done once for each entity type.
 
 1. Optionally, select a property modeled on your entity type to use as the **Instance display name**. This step provides a friendly name for entity instances in downstream experiences.
 
