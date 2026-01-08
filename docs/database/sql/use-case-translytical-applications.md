@@ -3,7 +3,7 @@ title: Use SQL database as the Source Data Engine for Translytical Applications
 description: Learn how to use SQL database in translytical applications, which combine transactional data and aggregate data, for a single pane of business intelligence.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: pamela, imotiwala
+ms.reviewer: pamela, imotiwala, antho
 ms.date: 01/07/2026
 ms.topic: solution-overview
 ---
@@ -41,3 +41,4 @@ Translytical task flows work by using [user data functions in Fabric](../../data
 
 - [Use SQL database in reverse ETL](use-case-reverse-etl.md)
 - [Use SQL database as an operational data store](use-case-operational-data-store.md)
+- [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true)

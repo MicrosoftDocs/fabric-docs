@@ -3,7 +3,7 @@ title: Use SQL database as an Operational Data Store in Microsoft Fabric
 description: This article outlines how to implement an operational data store (ODS) using SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: pamela, imotiwala
+ms.reviewer: pamela, imotiwala, antho
 ms.date: 01/07/2026
 ms.topic: solution-overview
 ---
@@ -69,3 +69,4 @@ By using SQL database in Microsoft Fabric, you can create end-to-end workflows f
 
 - [Use SQL database in reverse ETL](use-case-reverse-etl.md)
 - [Use SQL database as the source for translytical applications](use-case-translytical-applications.md)
+- [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true)
