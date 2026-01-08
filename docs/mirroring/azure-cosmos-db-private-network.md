@@ -4,7 +4,7 @@ description: Learn how to configure Azure Cosmos DB accounts with private networ
 author: jilmal
 ms.author: jmaldonado
 ms.reviewer: mbrown
-ms.date: 12/16/2025
+ms.date: 01/08/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -20,6 +20,7 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
 
 - An existing Azure Cosmos DB for NoSQL account using virtual network or private endpoint connectivity.
 - An existing Fabric capacity.
+- PowerShell with Azure PowerShell modules (`Az.Accounts`, `Az.CosmosDB`, `Az.Network`) installed.
 - The Azure Cosmos DB for NoSQL account must be configured for Fabric mirroring including:
     1. Continuous Backup with 7 or 30 day retention.
     1. Entra ID authentication enabled with...
@@ -30,7 +31,6 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
   1. Navigate to **Workspace settings** → **License info**
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
-- PowerShell with Azure PowerShell modules (`Az.Accounts`, `Az.CosmosDB`, `Az.Network`) installed.
 - The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 
 ## Overview of network configuration options
