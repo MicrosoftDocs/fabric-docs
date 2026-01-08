@@ -311,7 +311,7 @@ Enable Application Insights for monitoring:
 - **Permission denied**: Ensure your account has Contributor role on the resource group
 
 > [!NOTE]
-> **Error: Frontend Uri is not in the tenant domains list**: This error means your workload's custom domain is not registered in your Entra ID tenant's list of accepted domains. To resolve, add your custom domain to Entra ID. For more information, see the [general publishing requirements](./tutorial-publish-workload.md#custom-domain-requirements).
+> **Error: Frontend Uri is not in the tenant domains list**: This error means your workload's custom domain is not registered in your Entra ID tenant's list of accepted domains. To resolve, add your custom domain to Entra ID. For more information, see [Custom Domain Verification](./publishing-requirements-general.md#custom-domain-verification) in the general publishing requirements.
 
 #### Runtime issues
 
