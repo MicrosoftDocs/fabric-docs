@@ -1,5 +1,5 @@
 ---
-title: What is IQ (preview)?
+title: What is Fabric IQ (preview)?
 description: Learn about the IQ (preview) workload in Microsoft Fabric.
 author: baanders
 ms.author: baanders
@@ -9,7 +9,7 @@ ms.topic: overview
 ms.service: fabric
 ---
 
-# What is IQ (preview)?
+# What is Fabric IQ (preview)?
 
 IQ (preview) is a workload for unifying data sitting across OneLake (including [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [semantic models](../data-warehouse/semantic-models.md)) and organizing it according to the language of your business. The data is then exposed to analytics, AI agents, and applications with consistent semantic meaning and context.
 

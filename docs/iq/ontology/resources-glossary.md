@@ -17,7 +17,7 @@ This article defines key ontology (preview) terminology. The terms are organized
 | Term | Definition |
 | --- | --- | 
 | *Entity type* | An abstract representation of a business object (like *Vehicle* or *Sensor*). It defines a logical model of an item. |
-| *Entity type key* | A unique identifier for each instance of an entity type within your ontology. This value is created from static data bound to one or more properties modeled on your entity type. <br><br>*NOTE: Due to a [known issue](https://support.fabric.microsoft.com/known-issues/?product=IQ&issueId=1615), only strings or integers should be currently used as entity type keys.* |
+| *Entity type key* | A unique identifier for each instance of an entity type within your ontology. This value is created from static data bound to one or more properties modeled on your entity type. Only string and integer properties can be used as keys. |
 | *Entity instance* | A specific occurrence of an entity type, representing a real-world object with its own unique values for the defined properties. For example, if *Vehicle* is an entity type, then a particular car with its own VIN, make, and model is an entity instance. |
 | *Relationship type* | A definition that specifies how two entity types are connected (such as *located_at* or *monitored_by*). <br><br>You can define a relationship type without [binding data](how-to-bind-data.md) to it. If you don't bind data, the relationship type isn't visualized in the [preview experience](how-to-use-preview-experience.md). |
 | *Relationship instance* | A specific occurrence of a relationship type between two entity instances. |
