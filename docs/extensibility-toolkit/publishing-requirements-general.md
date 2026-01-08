@@ -75,6 +75,9 @@ Frontend and backend URLs must be subdomains of the `resourceId` value:
 
 ### Manifest Configuration
 
+
+Endpoint values in your manifest are typically set using placeholders such as `{{FRONTEND_URL}}`, which are replaced with values from your `.env` file during the build process. Update the `.env` file to set the correct URLs for your deployment environment.
+
 Configure the workload endpoints in your manifest:
 
 ```xml
@@ -111,16 +114,14 @@ Configure CSP headers to ensure compatibility with Fabric:
 
 ### Configuration
 
-**Backend Configuration** (if applicable):
-- **PublisherTenantId**: The tenant ID of the publisher
-- **ClientId**: Your Microsoft Entra application ID  
-- **ClientSecret**: The client secret from Microsoft Entra ID
-- **Audience**: The application ID URI
-
 **Frontend Configuration**:
 - **WORKLOAD_NAME**: Your workload identifier
-- **WORKLOAD_BE_URL**: Backend URL for API calls (if applicable)
-- **CLIENT_ID**: Microsoft Entra application ID
+- **WORKLOAD_VERSION**: The version of your workload
+- **FRONTEND_URL**: The frontend URL for your workload (typically set as `{{FRONTEND_URL}}` in the manifest and replaced from the .env file)
+- **FRONTEND_APPID**: The frontend application ID (typically set as `{{FRONTEND_APPID}}` in the manifest and replaced from the .env file)
+
+**Backend Configuration** (if applicable):
+Backend configurations are currently not supported.
 
 ## Security Requirements
 
