@@ -3,8 +3,8 @@ title: GQL Query HTTP API reference
 description: Refer to the complete HTTP API reference for querying graph data in Microsoft Fabric using GQL (Graph Query Language).
 ms.topic: reference
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Query HTTP API reference
 ---

@@ -3,8 +3,8 @@ title: GQL Quick Reference
 description: Quick reference for GQL syntax, statements, patterns, and expressions supported by graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Quick Reference
 ---

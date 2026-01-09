@@ -3,8 +3,8 @@ title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Get Started with Graph in Microsoft Fabric
 ---

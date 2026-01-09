@@ -3,8 +3,8 @@ title: GQL Language Guide
 description: Complete guide to GQL language support for graph in Microsoft Fabric
 ms.topic: reference
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Language Guide
 ---
