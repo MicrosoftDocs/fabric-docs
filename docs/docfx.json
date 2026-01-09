@@ -73,6 +73,8 @@
                 "data-science/**/*.yml": "data-science",
                 "data-warehouse/**/*.md": "data-warehouse",
                 "data-warehouse/**/*.yml": "data-warehouse",
+                "database/*.md": "database",
+                "database/*.yml": "database",
                 "database/cosmos-db/**/*.yml": "database-cosmos-db",
                 "database/cosmos-db/**/*.md": "database-cosmos-db",
                 "database/sql/**/*.yml": "database-sql",
@@ -109,8 +111,6 @@
                 "security/**/*.yml": "security",
                 "workload-development-kit/**/*.md": "workload-development-kit",
                 "workload-development-kit/**/*.yml": "workload-development-kit",
-                "database/**/*.md": "database",
-                "database/**/*.yml": "database",
                 "mirroring/**/*.md": "mirroring",
                 "mirroring/**/*.yml": "mirroring"
             },
