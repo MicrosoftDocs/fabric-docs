@@ -94,7 +94,7 @@ We encourage you to apply operations agents in your innovative solutions or appl
 
 ### Technical limitations, operational factors, and ranges
 
-- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft on both user prompts and LLM outputs, AI services are fallible and probabilistic. This limitation makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency Note for Azure OpenAI Service](https://learn.microsoft.com/azure/ai-foundry/responsible-ai/openai/transparency-note), which includes references to the LLMs behind operations agents.  
+- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft on both user prompts and LLM outputs, AI services are fallible and probabilistic. This limitation makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency Note for Azure OpenAI Service](/azure/ai-foundry/responsible-ai/openai/transparency-note), which includes references to the LLMs behind operations agents.  
 
 - You can give operations agents a wide range of instructions and goals, but the inherent probabilistic nature of the LLMs used to generate their behavior models means that you might not be able to fully align them with your requirements. The description of the agent’s behavior model is also generated using AI, so it might not be 100% accurate. 
 
@@ -108,7 +108,7 @@ We encourage you to apply operations agents in your innovative solutions or appl
 
 - The agent configuration UX provides controls to start or stop the agent, which you can use to quickly interrupt or shut down the agent at any time. This action stops the monitoring of any new data and any new actions that the agent might recommend or take. Actions that the agent invoked in other systems (for example, starting a Power Automate flow or Fabric pipeline or notebook) might not stop immediately. The agent launches these actions as independent processes that you need to manage in those other product experiences. 
 
-Messages between the agent and user are delivered via Teams. When you send messages to the agent, the Azure Bot Service processes the messages. The use of [Azure AI Bot Service](https://learn.microsoft.com/microsoftteams/platform/bots/build-a-bot) has a technical limitation that each bot can only have a single global endpoint. For Teams first-party bots, requests are sent to the global endpoint and then rerouted to a regional endpoint near the user. Operations agents use an endpoint located in the EU, which means your user data can be moved outside of your geographical region for processing. 
+Messages between the agent and user are delivered via Teams. When you send messages to the agent, the Azure Bot Service processes the messages. The use of [Azure AI Bot Service](/microsoftteams/platform/bots/build-a-bot) has a technical limitation that each bot can only have a single global endpoint. For Teams first-party bots, requests are sent to the global endpoint and then rerouted to a regional endpoint near the user. Operations agents use an endpoint located in the EU, which means your user data can be moved outside of your geographical region for processing. 
 
 ## System performance
 
@@ -149,7 +149,7 @@ Highly responsive agents can lead to excessive notifications or overuse of autom
 * [Operations agent overview](../real-time-intelligence/operations-agent.md)
 * [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai)
 * [Microsoft responsible AI resources](https://www.microsoft.com/ai/tools-practices)
-* [Microsoft Azure learning courses on responsible AI](https://learn.microsoft.com/ai/?tabs=developer)
+* [Microsoft Azure learning courses on responsible AI](/ai/?tabs=developer)
 
 ## Contact us
 
