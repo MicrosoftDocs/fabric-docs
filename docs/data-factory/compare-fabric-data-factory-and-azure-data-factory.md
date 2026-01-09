@@ -21,10 +21,6 @@ This guide helps you understand the key differences between these two services, 
 
 Ready to explore your migration options? Check out our [migration guide](migrate-planning-azure-data-factory.md).
 
-## Critical architectural differences
-
-[!INCLUDE [migration-critical-differences](includes/migration-critical-differences.md)]
-
 ## Compare features side by side
 
 Here's how the core features stack up between Azure Data Factory and Fabric Data Factory. We've highlighted what's changed, what's new, and what stays the same.
