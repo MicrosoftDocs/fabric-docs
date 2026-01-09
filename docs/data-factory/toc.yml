@@ -1173,6 +1173,8 @@
             href: connector-troubleshoot-azure-blob-storage.md
           - name: Azure Cosmos DB
             href: connector-troubleshoot-azure-cosmos-db.md
+          - name: Data Warehouse
+            href: connector-troubleshoot-data-warehouse.md
           - name: DB2
             href: connector-troubleshoot-db2.md
           - name: Azure Data Explorer
@@ -1189,6 +1191,8 @@
             href: connector-troubleshoot-azure-table-storage.md
           - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
             href: connector-troubleshoot-dynamics-dataverse.md
+          - name: Lakehouse
+            href: connector-troubleshoot-lakehouse.md
           - name: MongoDB
             href: connector-troubleshoot-mongodb.md
           - name: Oracle
