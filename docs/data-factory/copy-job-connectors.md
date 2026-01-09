@@ -33,7 +33,7 @@ The following table shows which connectors are supported as sources and destinat
 
 For more information about each of these modes, see [the copy job overview](what-is-copy-job.md).
 
-[!INCLUDE [copy-job-source-and-destination-connectors](includes/copy-job-source-and-destination-connectors.md)]
+[!INCLUDE [copy-job-source-destination-connectors](includes/copy-job-source-destination-connectors.md)]
 
 ## CDC Replication (Preview)
 
@@ -49,7 +49,7 @@ Copy job can automatically create tables in the destination if they don’t alre
 
 For more information about these features, see [the copy job overview](what-is-copy-job.md).
 
-[!INCLUDE [copy-job-auto-table-creation-and-truncate-connectors](includes/copy-job-auto-table-creation-and-truncate-connectors.md)]
+[!INCLUDE [copy-job-auto-table-creation-truncate-connectors](includes/copy-job-auto-table-creation-truncate-connectors.md)]
 
 ## Related content
 

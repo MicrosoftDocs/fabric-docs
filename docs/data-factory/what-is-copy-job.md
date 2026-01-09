@@ -83,7 +83,7 @@ By default, Copy job does not delete any data in destination. When you enable th
 
 This approach ensures that your destination remains clean, fully synchronized, and free of duplicates, providing a reliable foundation for their data ingestion solution.
 
-[!INCLUDE [copy-job-auto-table-creation-and-truncate-connectors](includes/copy-job-auto-table-creation-and-truncate-connectors.md)]
+[!INCLUDE [copy-job-auto-table-creation-truncate-connectors](includes/copy-job-auto-table-creation-truncate-connectors.md)]
 
 ### Run options (Run, Schedule, Event Trigger)
 
@@ -127,10 +127,10 @@ You can get the details in [**pricing Copy job**](pricing-copy-job.md).
 
 With Copy job, you can move your data between cloud data stores or from on-premises sources that are behind a firewall or inside a virtual network using a gateway.
 
-See our [supported connectors](copy-job-supported-connectors.md) page for the full list of supported sources and destinations:
+See our [supported connectors](copy-job-connectors.md) page for the full list of supported sources and destinations:
 
-- [General copy](copy-job-supported-connectors.md#general-copy)
-- [Change data capture (CDC) replication (Preview)](copy-job-supported-connectors.md#cdc-replication-preview)
+- [Sources and destinations](copy-job-connectors.md#copy-job-sources-and-destinations)
+- [Change data capture (CDC) replication (Preview)](copy-job-connectors.md#cdc-replication-preview)
 
 Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas/label-name/data%20factory%20%7C%20copy%20job) and join the conversation on the [Fabric Community](https://community.fabric.microsoft.com/t5/Copy-job/bd-p/db_copyjob).
 
