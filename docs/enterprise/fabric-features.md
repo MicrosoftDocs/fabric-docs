@@ -29,6 +29,8 @@ The following table lists Fabric features according to SKU type. The table lists
 | [Spark Autoscale Billing](/fabric/data-engineering/autoscale-billing-for-spark-overview)              | &#x2705;      | &#x274C;     |
 | [Trusted workspace access](../security/security-trusted-workspace-access.md)                          | &#x2705;      | &#x274C;     |
 | View Power BI items with a Microsoft Fabric free license<sup>1</sup>                                  | F64 or higher | &#x2705;     |
+| Workspace-level private links                                                                         | &#x2705;      | &#x274C;     |
+| Customer-managed keys for workspaces                                                                  | &#x2705;      | &#x274C;     |
 
 <sup>1</sup> Supported in a Fabric [trial capacity](../fundamentals/fabric-trial.md).
 
