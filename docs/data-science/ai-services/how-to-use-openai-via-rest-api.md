@@ -6,7 +6,7 @@ author: lgayhardt
 ms.reviewer: ruxu
 reviewer: ruixinxu
 ms.topic: how-to
-ms.date: 12/09/2025
+ms.date: 12/23/2025
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -90,8 +90,8 @@ Q: Does Azure OpenAI support customer managed keys?
 Yes, **Azure OpenAI Service** supports **customer managed keys (CMK)** for encrypting your data at rest. This allows organizations to control and manage their own encryption keys using **Azure Key Vault**. By integrating with Azure Key Vault, you can bring your own keys (BYOK) to have full control over the encryption of data stored and processed by Azure OpenAI.
 
 **Reference:**
-- [Azure OpenAI encryption documentation - Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/security#encryption)
-- [Azure OpenAI Security - Microsoft Learn](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/security)
+- [Azure OpenAI encryption documentation - Microsoft Learn](/azure/ai-services/openai/concepts/security#encryption)
+- [Azure OpenAI Security - Microsoft Learn](/azure/ai-services/openai/concepts/security)
 
 **Key features:**
 - Data at rest is encrypted by default with a service-managed key.

@@ -92,7 +92,12 @@ Fabric provides several tools to help you monitor and validate your dbt jobs:
 
 - **Run Summary**: Shows the total models run, runtime, and success status.
 - **Error Logs**: Provide stack traces and query payloads for troubleshooting.
+
+    :::image type="content" source="media/dbt-job/error-logs.png" alt-text="Screenshot of the error logs available for troubleshooting.":::
+
 - **Download Logs**: Export detailed logs or payloads for offline analysis.
+
+    :::image type="content" source="media/dbt-job/download-logs.png" alt-text="Screenshot of the drop-down button to download logs for offline analysis.":::
 
 ## Best practices
 

@@ -4,7 +4,7 @@ description: Enrich the ontology by creating a new entity and binding time serie
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 12/03/2025
+ms.date: 12/19/2025
 ms.topic: tutorial
 ---
 
@@ -25,9 +25,6 @@ Finally, you create a new relationship type to represent the connection between 
 
 Follow these steps to create the *Freezer* entity type and add properties to it. The properties aren't bound to data yet.
 
->[!NOTE]
->Properties can be created on entity types without binding data to them, and you can bind either static or time series data to them afterwards. This section shows that process. Alternatively, you can bind data to properties while they're being created in a single data binding operation (shown in the next section with time series data).
-
 1. Select **Add entity type** from the top ribbon. Enter *Freezer* for the name of your entity type and select **Add Entity Type**.
 1. In the **Entity type configuration** pane, go to the **Properties** tab. Select **Add properties**.
 
@@ -41,6 +38,9 @@ Follow these steps to create the *Freezer* entity type and add properties to it.
     | `Model` | String | Static |
     | `minSafeTempC` | Double | Static |
     | `StoreId` | String | Static |
+
+    >[!NOTE]
+    >Property names must be unique across all entity types.
 
     Here's what it looks like before saving:
 
@@ -73,10 +73,7 @@ Now the *Freezer* entity has static data bound to it.
 
 ## Bind time series data to additional properties
 
-Next, add time series data on the *Freezer* entity, by creating new properties and binding time series data to them in a single data binding operation. 
-
->[!NOTE]
->Both static and time series data can be bound to properties while they're being created. This section shows that process. Alternatively, you can create properties on entity types without binding data to them, and bind data to them afterwards (shown in the previous section with static data). 
+Next, add time series data on the *Freezer* entity, by creating new properties and binding time series data to them in a single data binding operation.
 
 1. In the **Entity type configuration** pane's **Bindings** tab, select **Add data to entity type**.
 
@@ -110,9 +107,9 @@ Finally, create a new relationship type to represent the connection between a st
     1. **Source entity type**: *Store*
     1. **Target entity type**: *Freezer*
 1. The **Relationship configuration** pane opens, where you can configure additional information. Enter the following details (some fields become visible based on other selections) and select **Create**.
-    1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *freezer* table.
-    1. **Source entity type > Source column**: Select `StoreId` to match the entity type key property.
-    1. **Target entity type > Source column**: Select `FreezerId` to match the entity type key property.
+    1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *freezer* table. This is the table in the source data that can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
+    1. **Source entity type > Source column**: Select `StoreId`. This setting specifies the column in the relationship source data table (*freezer >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same in both tables.
+    1. **Target entity type > Source column**: Select `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column.
 
     Here's what the relationship configuration looks like:
 

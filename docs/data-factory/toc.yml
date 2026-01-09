@@ -1,5 +1,5 @@
   items:
-  - name: Data factory documentation
+  - name: Fabric data factory documentation
     href: index.yml
   - name: Overview
     items: 
@@ -91,6 +91,8 @@
       href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
     - name: Connector capability comparison
       href: connector-parity.md
+    - name: Migrate global parameters to variable libraries
+      href: convert-global-parameters-to-variable-libraries.md
     - name: Migration planning
       href: migrate-planning-azure-data-factory.md
     - name: Migration best practices
@@ -125,11 +127,7 @@
         href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Connect to your data
     items:
-      - name: Azure Key Vault Reference
-        href: azure-key-vault-reference-overview.md
-      - name: Configure AKV references
-        href: azure-key-vault-reference-configure.md
-      - name: Data source management
+      - name: Manage data sources
         href: data-source-management.md
       - name: Connectors
         href: connector-overview.md
@@ -733,6 +731,10 @@
                 href: connector-web-overview.md
               - name: Set up your connection
                 href: connector-web.md
+      - name: Store credentials securely
+        items:
+          - name: Connect Fabric to Azure Key Vault
+            href: azure-key-vault-reference-configure.md
       - name: Connect on-premises from the cloud
         items:
           - name: Access on-premises data
@@ -847,20 +849,12 @@
     items:
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
+      - name: Data type mapping
+        href: data-type-mapping-data-movement.md
       - name: Copy job
         items: 
           - name: What is the Copy job in Data Factory?
             href: what-is-copy-job.md
-          - name: Copy job activity
-            href: copy-job-activity.md
-          - name: Change data capture (CDC) in Copy job
-            href: cdc-copy-job.md
-          - name: CI/CD for Copy job
-            href: cicd-copy-job.md
-          - name: REST API Capabilities
-            href: copy-job-rest-api-capabilities.md
-          - name: Copy job with virtual network data gateway
-            href: copy-job-with-virtual-network-data-gateway.md
           - name: Copy job tutorials
             items: 
               - name: How to create a Copy job
@@ -869,15 +863,19 @@
                 href: monitor-copy-job.md
               - name: Change data capture from SAP via SAP Datasphere Outbound 
                 href: copy-job-tutorial-sap-datasphere.md
+          - name: Run copy job from a pipeline
+            href: copy-job-activity.md
+          - name: Change data capture (CDC) in Copy job
+            href: cdc-copy-job.md
+          - name: Copy job with virtual network data gateway
+            href: copy-job-with-virtual-network-data-gateway.md
+          - name: CI/CD for Copy job
+            href: cicd-copy-job.md
+          - name: REST API Capabilities
+            href: copy-job-rest-api-capabilities.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
-          - name: Copy activity performance and scalability guide
-            href: copy-activity-performance-and-scalability-guide.md
-          - name: Monitor Copy activity
-            href: monitor-copy-activity.md
-          - name: Data type conversion in Copy activity
-            href: data-type-conversion-copy-activity.md
           - name: Copy activity tutorials
             items: 
               - name: Copy from Azure Blob Storage to Lakehouse
@@ -902,14 +900,18 @@
                 href: tutorial-move-data-from-oracle-to-lakehouse-pipeline.md
               - name: Copy data across workspaces
                 href: tutorial-copy-data-across-workspaces.md
+          - name: Copy activity performance and scalability guide
+            href: copy-activity-performance-and-scalability-guide.md
+          - name: Monitor Copy activity
+            href: monitor-copy-activity.md
+          - name: Data type conversion in Copy activity
+            href: data-type-conversion-copy-activity.md
       - name: Mirroring
         items:
           - name: Mirroring overview
             href: /fabric/mirroring/overview?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
           - name: Mirroring documentation
             href: /fabric/mirroring/
-      - name: Data type mapping
-        href: data-type-mapping-data-movement.md
   - name: Transform data
     items: 
       - name: Data transformation pipeline activities
@@ -1016,11 +1018,17 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
-  - name: Orchestrate your pipelines
+  - name: Create, manage, & schedule pipelines
     items:
       - name: What is a pipeline?
         href: pipeline-overview.md
-      - name: Pipeline activity overview
+      - name: Get started with pipelines
+        href: pipeline-landing-page.md
+      - name: Create your first pipeline
+        href: create-first-pipeline-with-sample-data.md
+      - name: Get data for pipelines
+        href: modern-get-data-experience-pipeline.md
+      - name: Activities in pipelines
         href: activity-overview.md 
       - name: Apache Airflow Job
         items: 
@@ -1080,8 +1088,6 @@
             href: azure-databricks-activity.md
           - name: Azure Machine Learning activity
             href: azure-machine-learning-activity.md
-          - name: Deactivate an activity
-            href: deactivate-activity.md
           - name: Fail activity
             href: fail-activity.md
           - name: Filter activity
@@ -1120,10 +1126,12 @@
             href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
-      - name: Pipeline run alerts
-        href: create-alerts-for-pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
+      - name: Deactivate an activity
+        href: deactivate-activity.md
       - name: Copilot pipeline expression builder (Preview)
         href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
@@ -1133,6 +1141,8 @@
         items:
           - name: Browse pipeline runs in the Monitoring Hub
             href: monitoring-hub-pipeline-runs.md
+          - name: Pipeline run alerts
+            href: create-alerts-for-pipeline-runs.md
           - name: Workspace monitoring
             href: workspace-monitoring.md
       - name: Parameterization
@@ -1149,10 +1159,6 @@
             href: script-activity-email-output.md
           - name: Use AI to turn sketches into pipelines
             href: image-to-pipeline-with-ai.md
-      - name: Get data for pipelines
-        href: modern-get-data-experience-pipeline.md
-      - name: Fabric pipeline landing page
-        href: pipeline-landing-page.md
       - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
   - name: FAQ and Troubleshooting
@@ -1169,6 +1175,8 @@
             href: connector-troubleshoot-azure-blob-storage.md
           - name: Azure Cosmos DB
             href: connector-troubleshoot-azure-cosmos-db.md
+          - name: Data Warehouse
+            href: connector-troubleshoot-data-warehouse.md
           - name: DB2
             href: connector-troubleshoot-db2.md
           - name: Azure Data Explorer
@@ -1185,6 +1193,8 @@
             href: connector-troubleshoot-azure-table-storage.md
           - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
             href: connector-troubleshoot-dynamics-dataverse.md
+          - name: Lakehouse
+            href: connector-troubleshoot-lakehouse.md
           - name: MongoDB
             href: connector-troubleshoot-mongodb.md
           - name: Oracle
