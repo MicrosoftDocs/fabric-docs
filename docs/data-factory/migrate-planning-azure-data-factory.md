@@ -30,21 +30,9 @@ Fabric offers many new features, including:
 
 For a detailed comparison, see [the Azure Data Factory and Fabric Data Factory comparison guide](compare-fabric-data-factory-and-azure-data-factory.md).
 
-## Before you migrate: Critical differences
+## Critical architectural differences
 
-| **Category** | **Azure Data Factory** | **Fabric Data Factory** | **Migration Impact** |
-|--------------|------------------------|-------------------------|----------------------|
-| **Dynamic properties** | All Linked Service properties can be dynamic using parameters (essential for MDD patterns) | Connections don't support dynamic properties | Blocks MDD-based solutions that rely on parameterized connections |
-| **Key Vault** | Full integration with all auth types | Limited integration via [Fabric Key Vault Reference](azure-key-vault-reference-overview.md), User Auth only | No Service Principal or Managed Identity support |
-| **Identity** | Managed Identity | [Fabric Workspace Identity](../security/workspace-identity.md) | Different identity model |
-| **Datasets** | Separate, reusable dataset objects | No datasets—properties defined inline within activities | Rearchitecting needed for reusable patterns |
-| **Global Parameters** | Global Parameters | [Fabric Variable Library](/fabric/cicd/variable-library/get-started-variable-libraries) | Different implementation patterns, and currently different data types, though we have created [a migration guide](convert-global-parameters-to-variable-libraries.md) |
-| **Pipeline execution** | Execute Pipeline activity | [Invoke Pipeline activity](invoke-pipeline-activity.md) with FabricDataPipeline connection type | Activity name and connection requirements change |
-| **HDInsight activities** | 5 separate activities (Hive, Pig, MapReduce, Spark, Streaming) | Single [HDInsight activity](azure-hdinsight-activity.md) | Consolidation into one activity |
-| **Custom code** | Custom Activity | [Azure Batch activity](azure-batch-activity.md) | Activity name changes |
-| **Scheduling** | 1 trigger for many pipelines; many triggers per pipeline; centralized management | 1 schedule per pipeline; many schedules per pipeline; no schedule reuse or central hub | Requires per-pipeline schedule management |
-| **Data transformation** | Mapping Data Flows (Spark-based) | [Dataflow Gen2](dataflows-gen2-overview.md) (Power Query engine) with [fast copy](dataflows-gen2-fast-copy.md) and [multiple destinations](dataflow-gen2-data-destinations-and-managed-settings.md) | Different transformation engine and capabilities |
-| **On-premises access** | SHIR: 8 nodes max, local credential storage, task-level load balancing | [OPDG](how-to-access-on-premises-data.md): 10 nodes max, centralized credential storage, query-level load balancing | Different capabilities and limits |
+[!INCLUDE [migration-critical-differences](includes/migration-critical-differences.md)]
 
 ## Migration paths
 
