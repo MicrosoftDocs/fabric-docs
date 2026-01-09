@@ -38,7 +38,7 @@ For a detailed comparison, see [the Azure Data Factory and Fabric Data Factory c
 | **Key Vault** | Full integration with all auth types | Limited integration via [Fabric Key Vault Reference](azure-key-vault-reference-overview.md), User Auth only | No Service Principal or Managed Identity support |
 | **Identity** | Managed Identity | [Fabric Workspace Identity](../security/workspace-identity.md) | Different identity model |
 | **Datasets** | Separate, reusable dataset objects | No datasets—properties defined inline within activities | Rearchitecting needed for reusable patterns |
-| **Global Parameters** | Global Parameters | [Fabric Variable Library](variable-library.md) | Different implementation patterns |
+| **Global Parameters** | Global Parameters | [Fabric Variable Library](variable-library.md) | Different implementation patterns, though we have created [a migration guide](convert-global-parameters-to-variable-libraries.md) |
 | **Pipeline execution** | Execute Pipeline activity | [Invoke Pipeline activity](invoke-pipeline-activity.md) with FabricDataPipeline connection type | Activity name and connection requirements change |
 | **HDInsight activities** | 5 separate activities (Hive, Pig, MapReduce, Spark, Streaming) | Single [HDInsight activity](azure-hdinsight-activity.md) | Consolidation into one activity |
 | **Custom code** | Custom Activity | [Azure Batch activity](azure-batch-activity.md) | Activity name changes |

@@ -19,7 +19,7 @@ Before you migrate from Azure Data Factory to Fabric Data Factory, consider thes
 **Architecture and design pattern changes:**
 
 - **No datasets**: Datasets don't exist in Fabric. You define data source properties inline within individual activities instead of as separate, reusable objects.
-- **Global Parameters to Variable Library**: Azure Data Factory Global Parameters become the [Fabric Variable Library](variable-library.md), which provides similar functionality but with different implementation patterns.
+- **Global Parameters to Variable Library**: Azure Data Factory Global Parameters become the [Fabric Variable Library](variable-library.md), which provides similar functionality but with different implementation patterns. You can follow our [global parameters to variable library migration guide](convert-global-parameters-to-variable-libraries.md) for conversion.
 
 **Activity and orchestration changes:**
 
