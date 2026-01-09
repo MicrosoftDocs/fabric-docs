@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 #customer intent: As an Analyst, I want to consume a Fabric data agent from Copilot in Power BI.
 ---
 
-# Consume a Fabric Data Agent from Copilot in Power BI (preview)
+# Consume a Fabric data agent from Copilot in Power BI (preview)
 
 Copilot in Power BI lets you ask natural language questions while viewing reports and get answers from items you can access across Fabric. Use Copilot from the Copilot pane; this feature does not add a visual to the report canvas. Copilot helps you stay focused on insight extraction without switching between Fabric items.
 
@@ -28,7 +28,7 @@ Copilot in Power BI lets you ask natural language questions while viewing report
 
 You can consume a Fabric data agent directly within Copilot in Power BI in two ways:
 
-## Use Copilot search to find and invoke a Fabric Data Agent
+## Use Copilot search to find and invoke a Fabric data agent
 
 When you ask a question in Copilot in Power BI, it
 
@@ -47,7 +47,7 @@ The following screenshot shows data that a Copilot in Power BI query might retur
 
 :::image type="content" source="./media/data-agent-copilot-powerbi/user-item-selection.png" alt-text="Screenshot showing data that a Copilot in Power BI query might return." lightbox="./media/data-agent-copilot-powerbi/user-item-selection.png":::
 
-## Directly add a Fabric Data Agent
+## Directly add a Fabric data agent
 
 If you already know which data agent to use, manually add that data agent to the Copilot session. Select **Add items for better results**, and then select **Data agents**. The OneLake catalog opens and lists all data agents you have permissions to access. Copilot uses the selected data agent for relevant follow-up questions, as shown in the following screenshot:
 
@@ -60,9 +60,9 @@ After you select an item, that selected item is attached to your question. Then,
 Copilot might not return a useful answer to a question outside the scope of the data agent you added. When you change topics, tell Copilot so it can perform a new search across these resources: Power BI semantic models, Power BI reports, and Fabric data agents.
 
 
-## Interaction flow with a Fabric Data Agent
+## Interaction flow with a Fabric data agent
 
-When you select a Fabric Data Agent, Copilot in Power BI proceeds with these steps to retrieve an answer:
+When you select a Fabric data agent, Copilot in Power BI proceeds with these steps to retrieve an answer:
 
 1. Rephrase the question: Copilot in Power BI might rephrase a question to fit the context or improve clarity, based on the conversation.
 1. Send the query: Copilot in Power BI sends the question to the selected Fabric data agent.
