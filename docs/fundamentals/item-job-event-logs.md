@@ -5,7 +5,7 @@ description: Monitor job results for Fabric items with Item Job Event Logs. Anal
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: liul
-ms.date: 11/12/2025
+ms.date: 01/09/2026
 ms.topic: concept-article
 ---
 
@@ -32,8 +32,7 @@ The following table lists the supported Fabric item types and their correspondin
 | DBTItem | DBTItem |
 | DigitalOperationsOperationalInsight | UpdateLibrariesJob |
 | MLExperiment | MLExperimentRun |
-| GraphIndex | Load |
-| Algorithm | Refresh |
+| GraphIndex | Algorithm, Load, Refresh |
 | DigitalTwinBuilder | UpdateLibrariesJob |
 | DigitalTwinBuilderFlow | ExecuteOperations |
 | Databricks | SyncJob |
