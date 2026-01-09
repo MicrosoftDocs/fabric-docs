@@ -48,6 +48,8 @@ The primary online reference documentation for Microsoft Fabric REST APIs can be
 In addition to CRUD APIs, there are a series of additional operational APIs offered for Apache Airflow Jobs:
 
 - **File Management APIs**
+- **Pool Management APIs**
+- **Workspace Settings APIs**
 
 ## Get started with REST APIs for Apache Airflow Jobs
 
@@ -412,12 +414,12 @@ Note that rootPath and continutationToken are optional.
 
 ## Service Principal Name (SPN) Support
 
-Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support:
+Service Principal Name (SPN) is supported for Apache Airflow Jobs in Fabric Data Factory.
 
-- **Authentication**: SPNs are used to authenticate applications or services when accessing data sources. This ensures that only authorized entities can access the data.
-- **Configuration**: To use SPNs, you need to create a service principal in Azure and grant it the necessary permissions to access the data source. For example, if you're using a data lake, the service principal needs storage blob data reader access.
-- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal.
-- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities.
+- **Authentication**: Airflow uses a service principal to authenticate outbound API calls (for example, to Azure services or other secured endpoints). This allows DAGs to run unattended while ensuring only approved identities can access downstream resources.
+- **Configuration**: To use an SPN with Airflow, create a service principal in Azure Active Directory and grant it the required permissions for the target service. For example, if your Airflow DAG reads from or writes to Azure Data Lake Storage, the service principal must be assigned the appropriate storage roles (such as Storage Blob Data Reader or Contributor).
+- **Connection**: When configuring Airflow connections in Fabric Data Factory, you can reference a service principal by providing its tenant ID, client ID, and client secret. These credentials are then used by Airflow operators and hooks when making authenticated API calls.
+- **Security**: Using SPNs avoids embedding user credentials directly in DAG code or configuration files. It also simplifies credential rotation, access auditing, and access revocation without requiring changes to Airflow DAG logic.
 
 For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md).
 
