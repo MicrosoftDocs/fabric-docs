@@ -13,6 +13,14 @@ items:
     href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: "Decision guide: Choose a data movement strategy"
     href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: Best use cases
+    items: 
+    - name: Reverse ETL
+      href: sql/use-case-reverse-etl.md
+    - name: Operational data store
+      href: sql/use-case-operational-data-store.md
+    - name: Translytical applications
+      href: sql/use-case-translytical-applications.md
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
