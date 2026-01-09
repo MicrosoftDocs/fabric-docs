@@ -76,9 +76,10 @@ When you set up the connection, provide the Fabric data agent `workspace-id` and
 
 https://fabric.microsoft.com/groups/<**workspace_id**>/aiskills/<**artifact-id**>, and select the **Is Secret** checkbox
 
-If Foundry is configured with a customer managed key, Foundry Managed Identity should be given permissions to access the secrets to the configured Key Vault to create connection. Below are the required Key Vault permissions:
-- If you're using Azure RBAC, assign Key Vault Crypto User role to the managed identity.
-- If you're using Vault Access Policies, grant key-specific permissions to the managed identity, such as Get, List, Decrypt, Encrypt, unwrap key and wrap key.
+> [!NOTE]
+> If Foundry is configured with a customer managed key, Foundry Managed Identity should be given permissions to access the secrets to the configured Key Vault to create connection. Below are the required Key Vault permissions:
+>- If you're using [Azure RBAC](https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide?tabs=azure-cli#azure-built-in-roles-for-key-vault-data-plane-operations), assign Key Vault Crypto User role to the managed identity.
+>- If you're using [Vault Access Policies](https://learn.microsoft.com/en-us/azure/key-vault/general/assign-access-policy?tabs=azure-portal), grant key-specific permissions to the managed identity, such as Get, List, Decrypt, Encrypt, unwrap key and wrap key.
 
 
 Finally, assign a name to your connection, and choose whether to make it available to all projects in Azure AI Foundry or to restrict it to the current project.
