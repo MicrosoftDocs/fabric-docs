@@ -97,7 +97,7 @@ The following scenarios illustrate how workspace IP firewall rules can be combin
 - **Scenario 6: Workspace-only access:** Workspace-level private links with restricted inbound access and blocked public access. Limits access by disabling tenant private links and restricting workspace inbound connections. Only workspace private link can access resources.
 
 The following table summarizes the access behavior based on different combinations of network settings and access points, including tenant-level private links (tenant PL), workspace-level private links (workspace PL), private link virtual machines, the Fabric API endpoint (api.fabric.microsoft.com), and the public internet.
-
+<!--
 ### Table 1: Access behavior based on network settings and access points
 
 | Setting or access point | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Scenario 6 |
@@ -108,6 +108,20 @@ The following table summarizes the access behavior based on different combinatio
 | **Workspace setting - Workspace Inbound Access** | Allowed | Restricted | Allowed | Restricted | Allowed | Restricted |
 | **Fabric portal access** | Allowed from a tenant PL VM | Allowed from a tenant PL VM | Allowed from the public internet, tenant PL VM, and workspace PL VM | Allowed from the public internet, tenant PL VM, and workspace PL VM | Allowed from the public Internet and workspace PL VM | Allowed from the public internet and workspace PL VM |
 
+TEST
+-->
+### Table 1: Access to the Fabric portal based on network settings
+
+| Scenario | Tenant and workspace settings | Can I access the Fabric portal? |
+|----------|-------------------------------|-----------------------|
+| **1: Most restricted** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Enabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Tenant PL VM |
+| **2: Highly restricted** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Enabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | Yes, from: <br>- Tenant PL VM |
+| **3: Broad access** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Disabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Public internet <br> - Tenant PL VM  <br> - Workspace PL VM |
+| **4: Balanced access** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Disabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | Yes, from: <br>- Public internet <br> - Tenant PL VM  <br> - Workspace PL VM |
+| **5: Simplified access** | Tenant Private Link = **Disabled** <br> (Tenant) Block Public Access = **N/A** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Public internet <br> - Workspace PL VM |
+| **6: Workspace-only access** | Tenant Private Link = **Disabled** <br> (Tenant) Block Public Access = **N/A** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | Yes, from: <br>- Public internet <br> - Workspace PL VM |
+
+<!--
 ### Table 1: Access behavior based on network settings and access points
 
 |  | Setting or access point | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Scenario 6 |
@@ -123,18 +137,54 @@ The following table summarizes the access behavior based on different combinatio
 || **via tenant PL VM?**    | Yes | Yes | Yes | Yes | No  | No  |  
 || **via workspace PL VM?** | No  | No  | Yes | Yes | Yes | Yes |    
 
-### Table 2: Workspace IP firewall rule configuration and access behavior per scenario
+### Table 2: Configuring IP firewall rules based on network settings
 
-|| Access point | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Scenario 6 |
+|| Access point             | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Scenario 6 |
 |--|--|--|--|--|--|--|--|
 | **Configure IP firewall rules in Fabric portal**|  |  |  |  |  |  |  |
-|| **via public internet?** | Yes | No | Yes | No | Yes | No |  
-|| **via tenant PL VM?**    | Yes | No | Yes | No | No  | No |  
-|| **via workspace PL VM?** | Yes | No | No  | No | No  | No |    
+|| **via public internet?** | Yes        | No         | Yes        | No         | Yes        | No |  
+|| **via tenant PL VM?**    | Yes        | No         | Yes        | No         | No         | No |  
+|| **via workspace PL VM?** | Yes        | No         | No         | No         | No         | No |    
 | **Configure IP firewall rules using API**|  |  |  |  |  |  |  |
-|| **via public internet?** | No  | Yes; use the tenant FQDN or Fabric API endpoint  | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the Fabric API endpoint | Yes; use the Fabric API endpoint |  
+|| **via public internet?** | No         | Yes; use the tenant FQDN or Fabric API endpoint  | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the Fabric API endpoint | Yes; use the Fabric API endpoint |  
 || **via tenant PL VM?**    | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the tenant FQDN or Fabric API endpoint | Yes; use the tenant FQDN or Fabric API endpoint | No | No  |  
-|| **via workspace PL VM?** | No  | Yes; use the tenant FQDN or Fabric API endpoint  | No | No | No | No |    
+|| **via workspace PL VM?** | No  | Yes; use the tenant FQDN or Fabric API endpoint  | No | No | No | No |   
+
+-->
+
+### Table 2: Configuring IP firewall rules in various network scenarios
+
+| Scenario | Tenant and workspace settings | Can I use the Fabric portal to configure IP firewall rules? | Can I use the Fabric API to configure IP firewall rules? |
+|--|--|--|--|
+| **1: Most restricted** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Enabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Public internet <br> - Tenant PL VM  <br> - Workspace PL VM | Yes, using the tenant FQDN or Fabric API endpoint from: <br>- Tenant PL VM  |
+| **2: Highly restricted** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Enabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | No | Yes, using the tenant FQDN or Fabric API endpoint from: <br>- Public internet <br> - Tenant PL VM  <br> - Workspace PL VM |
+| **3: Broad access** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Disabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Public internet <br> - Tenant PL VM  | Yes, using the tenant FQDN or Fabric API endpoint from: <br>- Public internet <br> - Tenant PL VM |
+| **4: Balanced access** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Disabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | No | Yes, using the tenant FQDN or Fabric API endpoint from: <br>- Public internet <br> - Tenant PL VM |
+| **5: Simplified access** | Tenant Private Link = **Disabled** <br> (Tenant) Block Public Access = **N/A** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Public internet  | Yes, using the tenant FQDN or Fabric API endpoint from: <br>- Public internet |
+| **6: Workspace-only access** | Tenant Private Link = **Disabled** <br> (Tenant) Block Public Access = **N/A** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | No | Yes, using the tenant FQDN or Fabric API endpoint from: <br>- Public internet |
+
+### Table 3: Access behavior with IP firewall rules configured
+
+After you configure IP firewall rules, access to the workspace and its items is restricted to:
+- Connections from IP addresses in your allow list
+- Connections through workspace private links
+
+This restriction applies whether you're using the Fabric portal or the Fabric API.
+
+| Scenario | Tenant and workspace settings | Can I access the Fabric portal? | Can I access the Fabric API? |
+|--|--|--|--|
+| **1: Most restricted** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Enabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | No | Yes, from: <br>- Workspace PL VM using the workspace PL FQDN <br>- Allowed IP using the Fabric API endpoint |
+| **2: Highly restricted** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Enabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | No | Yes, from: <br>- Workspace PL VM using the workspace PL FQDN <br>- Allowed IP using the Fabric API endpoint |
+| **3: Broad access** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Disabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Workspace PL VM <br> - Public internet  | Yes, from: <br>- Workspace PL VM using the workspace PL FQDN <br>- Allowed IP using the Fabric API endpoint |
+| **4: Balanced access** | Tenant Private Link = **Enabled** <br> (Tenant) Block Public Access = **Disabled** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | Yes, from: <br>- Workspace PL VM <br> - Public internet | Yes, from: <br>- Workspace PL VM using the workspace PL FQDN <br>- Allowed IP using the Fabric API endpoint |
+| **5: Simplified access** | Tenant Private Link = **Disabled** <br> (Tenant) Block Public Access = **N/A** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Allowed** | Yes, from: <br>- Workspace PL VM <br> - Public internet  | Yes, from: <br>- Workspace PL VM using the workspace PL FQDN <br>- Allowed IP using the Fabric API endpoint |
+| **6: Workspace-only access** | Tenant Private Link = **Disabled** <br> (Tenant) Block Public Access = **N/A** <br> Workspace Private Link = **Enabled** <br> Workspace Inbound Access = **Restricted** | Yes, from: <br>- Workspace PL VM <br> - Public internet | Yes, from: <br>- Workspace PL VM using the workspace PL FQDN <br>- Allowed IP using the Fabric API endpoint  |
+
+<!--
+### Table 3: Access behavior with IP firewall rules configured
+
+|| Access point             | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Scenario 6 |
+|--|--|--|--|--|--|--|--|
 | **Fabric portal access with IP firewall rules set** <sup>1</sup>|  |  |  |  |  |  |  |
 || **via allowed IP?**      | No | No | Yes | Yes | Yes | Yes |
 || **via tenant PL VM?**    | No | No | No  | No  | No  | No  |
@@ -146,7 +196,7 @@ The following table summarizes the access behavior based on different combinatio
 
 <sup>1</sup> When IP firewall rules are set, workspace access and item operations using the Fabric portal are allowed only from the IPs specified in the IP firewall rules or through workspace private links. 
 <sup>2</sup> When IP firewall rules are set, workspace access and item operations using the Fabric API are allowed only from the IPs specified in the IP firewall rules or through workspace private links.
-
+-->
 ## Next steps
 
 - To learn how to set up workspace IP firewall rules, see [Set up workspace IP firewall rules](security-workspace-level-firewall-set-up.md).
