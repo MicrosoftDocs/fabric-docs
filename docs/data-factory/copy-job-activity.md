@@ -37,7 +37,7 @@ Here's how to set up your Copy job activity.
 
    :::image type="content" source="media/copy-job-activity/copy-job-activity-setup.png" alt-text="Screenshot of pipeline canvas with the activities window open and the Copy job activity selected.":::
 
-1. Go to the activity’s **Settings** tab, configure the connection used to access the workspace that contains your Copy job. Under **connection**, select Browse all to go to Get data page, and select Copy job to creat a connection.
+1. Go to the activity’s **Settings** tab, configure the connection used to access the workspace that contains your Copy job. Under **Connection**, select Browse all to go to Get data page, and select Copy job to creat a connection.
 
    :::image type="content" source="media/copy-job-activity/copy-job-activity-connection.png" alt-text="Screenshot of select Copy job activity connection.":::
 
