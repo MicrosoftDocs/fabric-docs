@@ -167,6 +167,4 @@ To refresh the graph, follow these steps:
 
 ## Troubleshooting
 
-Here are troubleshooting tips for using the preview experience:
-
-* To access the preview experience for an ontology, you must have access to the lakehouse that contains the source data for the ontology's [data bindings](how-to-bind-data.md). If you open the preview experience without access to the lakehouse, you see a `403 Forbidden` HTTP response. To resolve this issue, contact your administrator to obtain access to the lakehouse.
+For troubleshooting tips related to the preview experience, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-preview-experience).
