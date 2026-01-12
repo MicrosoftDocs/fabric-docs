@@ -44,6 +44,12 @@ The Microsoft Fabric Capacity Metrics app provides various features and function
 - **Monitor paused capacity**: Track when a capacity was paused or resumed, and understand why utilization spikes may appear during pauses. Includes guidance on interpreting `carryforward` operations. To learn more, see [Monitor a paused capacity](monitor-paused-capacity.md).
 - **Calculations**: Understand how the app computes key metrics like CU usage, throttling, and autoscale impact. Useful for interpreting visuals and validating internal reporting. To learn more, see [Metrics app calculations](metrics-app-calculations.md).
 
+## Data Latency
+ 
+Data in the Capacity Metrics app is subject to processing and refresh latency. In general, usage data becomes available within **10–15 minutes** after the activity occurs. For example, at **5:15 PM (local time)**, charts such as the utilization chart may display data up to approximately **5:00 PM**.
+ 
+Some dimensions, including **capacities**, **workspaces**, and **items**, are refreshed as part of a scheduled **midnight (local time)** semantic model refresh. As a result, changes such as creating a new capacity, workspace, or item, or moving a workspace between capacities, will be reflected in the app starting after the next refresh.
+
 ## Share the Fabric Capacity Metrics report
 
 When you install the Microsoft Fabric Capacity Metrics app, it creates a workspace in your Microsoft Fabric tenant. To share the report, you must be a capacity admin.
