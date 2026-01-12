@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/10/2025
 LocalizationGroup: Enterprise
 ---
