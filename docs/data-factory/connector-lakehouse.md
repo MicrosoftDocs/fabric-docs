@@ -60,6 +60,7 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
 
     >[!NOTE]
+    >If you create the connection through **Manage connections and gateways** page:
     >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
     >- If you choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. For more information about the permission, see this [article](../data-engineering/workspace-roles-lakehouse.md).
     
