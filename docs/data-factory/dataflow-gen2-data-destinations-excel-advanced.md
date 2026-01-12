@@ -3,7 +3,7 @@ title: Creating Excel documents with navigation tables
 description: Learn how to create Excel documents programmatically using Power Query navigation tables
 author: jorgegom
 ms.topic: concept-article
-ms.date: 12/01/2025
+ms.date: 01/12/2026
 ms.author: jorgegom
 ms.subservice: dataflows
 ---
