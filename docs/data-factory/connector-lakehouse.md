@@ -41,7 +41,7 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     1. Go to **Get Data** page and navigate to **OneLake catalog** through the following ways:
     
        - In copy assistant, go to **OneLake catalog** section.
-       - In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake catalog** section.
+       - In a pipeline, select Browse all under **Connection**, and go to **OneLake catalog** section.
     
     1. Select an existing Lakehouse.
     
@@ -49,7 +49,7 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     
     1. Select **Connect** to connect to your Lakehouse.
     
-    You can also select an Lakehouse connection created in this page by choosing **none** in the pipeline connection drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Lakehouse connection you need.
+    You can also select a Lakehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Lakehouse you need.
     
 - In **Manage connections and gateways** page:
 
@@ -57,12 +57,12 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     
         :::image type="content" source="media/connector-lakehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
     
-    1. After the connection is created, go the pipeline and select it in the connection drop‑down list.
+    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
 
-> [!NOTE]
-> - To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
-> - If you choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. For more information about the permission, see this [article](../data-engineering/workspace-roles-lakehouse.md).
-
+    >[!NOTE]
+    >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
+    >- If you choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. For more information about the permission, see this [article](../data-engineering/workspace-roles-lakehouse.md).
+    
 ## Related content
 
 * [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)
