@@ -62,10 +62,10 @@ An event has the following top-level data:
 
 The `data` object has the following properties for Summary events:
 
+#### Summary Events Schema
+
 > [!NOTE]
 > The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, unless all line items for that window (CU, Interactive Delay Throttling percentage etc) are 0. Also, if a capacity is paused, it doesn't emit summary data.
-
-#### Summary Events Schema
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
@@ -121,14 +121,14 @@ The `data` object has the following properties for Summary events:
 
 The `data` object has the following properties for State events:
 
+#### State Events Schema
+
 > [!NOTE]
 > The state table summarizes key changes relating to the capacity’s state. This summary includes the capacity being created, becoming overloaded (throttling) or being paused. Other changes to the capacity like scaling up/ scaling down or renaming the capacity aren't considered as state changes (you can find this information in the summary table).
 >
 > State events only emit on a change in status. For example, if your capacity has a status of "NotOverloaded," it doesn't report again until that status changes, such as when the capacity is paused or becomes overloaded. This behavior might mean there are many days or weeks between state events emitting. It also means the states table can remain blank depending on when you start collecting data. For an active capacity, you can consider a blank states table to be equivalent to "NotOverloaded."
 >
 > ManuallyResumed is treated as "NotOverloaded," so when a capacity restarts, it doesn't send another event until it becomes overloaded or you pause it
-
-#### State Events Schema
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
@@ -180,9 +180,8 @@ The `data` object has the following properties for State events:
     ```
     ['_summaryTable']
     | extend capacityUnitMsBudget = baseCapacityUnits * 1000 * 30
-    | extend UtilizationPct = todecimal(capacityUnitMs)/ capacityUnitMsBudget *100
-    | project windowStartTime, UtilizationPct
-    | where UtilizationPct < 500
+    | extend UtilizationPct = todecimal(capacityUnitMs)/ capacityUnitMsBudget * 100
+    | project windowStartTime, UtilizationPct | where UtilizationPct < 500
     | render timechart
     ```
 
