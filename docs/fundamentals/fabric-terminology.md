@@ -4,7 +4,7 @@ description: Learn the definitions of terms used in Microsoft Fabric, including 
 ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
-ms.topic: conceptual
+ms.topic: glossary
 ms.custom:
 ms.search.form: product-trident
 ms.date: 12/16/2025
