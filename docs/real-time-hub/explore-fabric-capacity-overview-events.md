@@ -65,6 +65,8 @@ The `data` object has the following properties for Summary events:
 > [!NOTE]
 > The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, unless all line items for that window (CU, Interactive Delay Throttling percentage etc) are 0. Also, if a capacity is paused, it doesn't emit summary data.
 
+#### Summary Events Schema
+
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
 | `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. You can find the identifiers (IDs) of the capacities you have access to in the Power BI Service settings pane under **Governance and administration** -> **Admin portal**- **Capacity settings**. When you select a capacity, the ID appears in the browser URL. You can also check the "workspace settings" > "License info" to see which capacity is assigned to a workspace. | `00000000-0000-0000-0000-000000000000`  |
@@ -125,6 +127,8 @@ The `data` object has the following properties for State events:
 > State events only emit on a change in status. For example, if your capacity has a status of "NotOverloaded," it doesn't report again until that status changes, such as when the capacity is paused or becomes overloaded. This behavior might mean there are many days or weeks between state events emitting. It also means the states table can remain blank depending on when you start collecting data. For an active capacity, you can consider a blank states table to be equivalent to "NotOverloaded."
 >
 > ManuallyResumed is treated as "NotOverloaded," so when a capacity restarts, it doesn't send another event until it becomes overloaded or you pause it
+
+#### State Events Schema
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
