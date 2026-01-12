@@ -50,8 +50,16 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Bytes per object for pipeline objects | 200 KB | 200 KB |
 | Bytes per payload for each activity run | 896 KB | 896 KB |
 | Intelligent throughput optimization per copy activity run | Auto | 256 |
-| Concurrent intelligent throughput optimization per workspace | 400 | 400 |
+| Concurrent intelligent throughput optimization per workspace (the throughput is shared with Copy job) | 400 | 400 |
 | Meta Data Entity Size limit in a factory | 2 GB | 2 GB |
+
+## Copy job resource limits
+The following table describes the limitations for Copy job in Data Factory in Microsoft Fabric.
+
+| Copy job resource | Default limit | Maximum limit |
+|---|---|---|
+| Intelligent throughput optimization per table/object | Auto | 256 |
+| Concurrent intelligent throughput optimization per workspace (the throughput is shared with pipeline) | 400 | 400 |
 
 ## Data Factory Dataflow Gen2 limitations
 
