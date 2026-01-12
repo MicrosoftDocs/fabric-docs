@@ -20,16 +20,18 @@ This article summarizes the methods available to ingest data directly into an [E
 The following is a list of data ingestion sources:
 
 * [Local file](get-data-local-file.md)
-* [Azure storage](get-data-azure-storage.md)
-* [Amazon S3](get-data-amazon-s3.md)
-* [Azure Event Hubs](get-data-event-hub.md)
-* [Eventstream](get-data-eventstream.md)
 * [OneLake](get-data-onelake.md)
-* [Real-Time hub (preview)](get-data-real-time-hub.md)
-* [Data Factory copy](../data-factory/connector-kql-database-copy-activity.md)
-* [Dataflows](../data-factory/connector-azure-data-explorer.md)
+* [Eventstream](get-data-eventstream.md)
+* [Azure storage](get-data-azure-storage.md)
+* [Azure Event Hubs](get-data-event-hub.md)
+* [Amazon S3](get-data-amazon-s3.md)
+* [Data Factory pipeline copy](../data-factory/connector-kql-database-copy-activity.md)
+* [Data Factory dataflows](../data-factory/connector-azure-data-explorer.md)
+
+Or select from a wide range of data sources and connectors, and bring data into and Eventstream and subsequently into your Eventhouse without leaving the get data workflow. In this case, select the [Connect more data sources](get-data-more-sources.md) option
 
 ## Related content
 
 * [Overview of connectors for data ingestion](event-house-connectors.md)
 * [Data formats supported by Real-Time Intelligence](ingestion-supported-formats.md)
+* [Sample Gallery](sample-gallery.md)
