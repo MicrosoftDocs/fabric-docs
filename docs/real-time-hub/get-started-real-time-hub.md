@@ -6,7 +6,7 @@ author: mystina
 ms.author: majia
 ms.topic: quickstart
 ms.custom: null
-ms.date: 11/23/2025
+ms.date: 01/12/2026
 ---
 
 # Get started with Fabric Real-Time hub
@@ -128,12 +128,12 @@ It allows for easy connectivity to external data streams including Kafka connect
 
 There are two ways you can get to the **Data sources** page:
 
-- By selecting **+ Add data** on the **Real-Time hub** page.
+- By selecting **Add data** button on the **Streaming Data** page.
 
-    :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Connect to data source button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
-- By selecting **+ Data sources** under **Connect to** category on the left navigation menu.
+    :::image type="content" source="media/get-started-real-time-hub/streaming-data-add-data.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/streaming-data-add-data.png":::
+- By selecting **Add data** on the left navigation menu.
 
-    :::image type="content" source="media/get-started-real-time-hub/connect-to-data-sources-page.png" alt-text="Screenshot that shows the Data sources page under Connect to category." lightbox="./media/get-started-real-time-hub/connect-to-data-sources-page.png":::
+    :::image type="content" source="media/get-started-real-time-hub/add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/add-data.png":::
 
 Then, follow the prompts to complete the flow. Here's a full list of built-in sources.
 
