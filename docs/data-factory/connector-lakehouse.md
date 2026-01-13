@@ -43,11 +43,9 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
        - In copy assistant, go to **OneLake catalog** section.
        - In a pipeline, select Browse all under **Connection**, and go to **OneLake catalog** section.
     
-    1. Select an existing Lakehouse.
+    1. Select an existing Lakehouse to connect to it.
     
         :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" alt-text="Screenshot of selecting Lakehouse in OneLake section.":::
-    
-    1. Select **Connect** to connect to your Lakehouse.
     
     You can also select a Lakehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Lakehouse you need.
     
