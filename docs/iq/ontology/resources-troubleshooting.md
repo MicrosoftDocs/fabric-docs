@@ -16,7 +16,7 @@ This article contains troubleshooting suggestions for ontology (preview).
 
 ## Troubleshoot ontology item creation
 
-The table below describes common issues when creating a new ontology (preview) item.
+The following table describes common issues when creating a new ontology (preview) item.
 
 | Issue | Recommendation |
 |---|---|
@@ -24,28 +24,28 @@ The table below describes common issues when creating a new ontology (preview) i
 
 ### Troubleshoot ontology generated from a semantic model
 
-The table below describes common issues when generating a new ontology (preview) item [from a semantic model](concepts-generate.md).
+The following table describes common issues when generating a new ontology (preview) item [from a semantic model](concepts-generate.md).
 
 | Issue | Recommendation |
 |---|---|
 | The ontology item fails to generate | Make sure you've enabled all [required tenant settings](overview-tenant-settings.md) for generating an ontology from a semantic model, including **XMLA endpoints**. <br><br>Make sure the semantic model is in a different workspace than **My workspace** (ontology generation isn't supported in **My workspace**). |
 | The ontology item is created but there are no entity types | Make sure your semantic model is published, the tables in the semantic model are visible (not hidden), and relationships are defined. |
 | The ontology item is created but entity types have no data bindings | Ontology data binding is [not supported](concepts-generate.md#support-for-semantic-model-modes) for source semantic models in **Import mode**, or semantic models in **Direct Lake mode** while the backing lakehouse is in a workspace with **inbound public access disabled**. Try changing these settings and regenerating the ontology. |
-| Queries return null values for `Decimal` properties | Fabric Graph does not currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data will allow the data to show up in queries. |
+| Queries return null values for `Decimal` properties | Fabric Graph doesn't currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data allows the data to show up in queries. |
 | General troubleshooting | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
 
 ## Troubleshoot data binding
 
-The table below describes common issues when binding data to an ontology (preview) item.
+The following table describes common issues when binding data to an ontology (preview) item.
 
 | Issue | Recommendation |
 |---|---|
-| Lakehouse not available as data source when creating a binding | Check to make sure **OneLake security** is not enabled on your lakehouse. Lakehouses with OneLake security enabled are not supported as data sources for bindings. |
+| Lakehouse not available as data source when creating a binding | Check to make sure **OneLake security** isn't enabled on your lakehouse. Lakehouses with OneLake security enabled aren't supported as data sources for bindings. |
 | Issue with keys while binding relationship types | If you don't see any keys for an entity type, make sure your source and target entity types have keys defined. | 
 
 ## Troubleshoot preview experience
 
-The table below describes common issues when using the preview experience of an ontology (preview) item.
+The following table describes common issues when using the preview experience of an ontology (preview) item.
 
 | Issue | Recommendation |
 |---|---|
@@ -55,11 +55,11 @@ The table below describes common issues when using the preview experience of an 
 
 ## Troubleshoot ontology as data agent source
 
-The table below describes common issues when using ontology (preview) as a source for [Fabric data agent (preview)](../../data-science/concept-data-agent.md)
+The following table describes common issues when using ontology (preview) as a source for [Fabric data agent (preview)](../../data-science/concept-data-agent.md).
 
 | Issue | Recommendation |
 |---|---|
 | Can't find the data agent item type, or the data agent can't be created | Make sure you've enabled all [required tenant settings](overview-tenant-settings.md) for using ontology and data agent, including **Data agent item types (preview)**. |
-| First queries fail | If you experience failures with the first few queries run after the data agent is created, try waiting a few minutes to give the agent more time to initialize. Then, run the queries again. |
-| Query results don't aggregate correctly | There is a known issue affecting aggregation in queries. To enable better aggregation, add the instruction `Support group by in GQL` to the agent's instructions as described in [Provide agent instructions](tutorial-4-create-data-agent.md#provide-agent-instructions). |
+| First queries fail | If you experience failures with the first few queries after the data agent is created, try waiting a few minutes to give the agent more time to initialize. Then, run the queries again. |
+| Query results don't aggregate correctly | There's a known issue affecting aggregation in queries. To enable better aggregation, add the instruction `Support group by in GQL` to the agent's instructions as described in [Provide agent instructions](tutorial-4-create-data-agent.md#provide-agent-instructions). |
 | Query results are vague or generic | Make sure that the agent includes the ontology as a knowledge source. Also, make sure that entity and relationship names are meaningful and documented in the ontology. |
