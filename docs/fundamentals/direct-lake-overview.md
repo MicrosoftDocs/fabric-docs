@@ -4,7 +4,7 @@ description: "Learn about Direct Lake storage mode in Microsoft Fabric and when 
 author: JulCsc
 ms.author: juliacawthra
 ms.date: 09/22/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: fabric-cat
 ---
 

@@ -3,7 +3,7 @@ title: Fabric operations
 description: Understand the Microsoft Fabric operations.
 author: JulCsc
 ms.author: juliacawthra
-ms.topic: article
+ms.topic: reference
 ms.custom:
 ms.date: 11/26/2025
 ms.update-cycle: 180-days
