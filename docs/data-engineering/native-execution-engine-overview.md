@@ -4,7 +4,7 @@ description: How to enable and use the native execution engine to execute Apache
 ms.reviewer: sngun
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 10/01/2025
 ---

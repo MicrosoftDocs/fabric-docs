@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: jovanpop
 ms.date: 11/06/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Data types in Fabric Data Warehouse
