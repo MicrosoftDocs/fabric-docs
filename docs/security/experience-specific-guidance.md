@@ -78,8 +78,8 @@ Customers can recreate lakehouses by using a custom Scala script.
     val filesToDelete = notebookutils.fs.ls(s"$source/_delta_log")
         .filter{sf => sf.isFile && sf.modifyTime > timestamp}
      
-    for(fileToDelte <- filesToDelete) {
-        val destFileToDelete = s"$destination/_delta_log/${fileToDelte.name}"
+    for(fileToDelete <- filesToDelete) {
+        val destFileToDelete = s"$destination/_delta_log/${fileToDelete.name}"
         println(s"Deleting file $destFileToDelete")
         notebookutils.fs.rm(destFileToDelete, false)
     }
