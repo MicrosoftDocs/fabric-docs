@@ -4,7 +4,7 @@ description: Learn about sharing Spark sessions using high concurrency mode in M
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 10/20/2023
 ---
