@@ -70,7 +70,7 @@ Each time the table is refreshed, the recent 100 jobs are loaded in order, accor
 * **Status** - Select the type of status you want the table to display. When no status is selected, item activities for all statuses are displayed.
 
     >[!NOTE]
-    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitor hub might show a simplified version of an item's status. The exact status of an item, can be found in the [details panel](#view-details).
+    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitor hub might show a simplified version of an item's status. The exact status of an item can be found in the [details panel](#view-details).
 
 * **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
 
