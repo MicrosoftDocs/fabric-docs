@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: chweb, salilkanade, pvenkat
 ms.date: 12/05/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted
 ---
