@@ -4,7 +4,7 @@ description: Learn about workspaces, which are collections of items such as lake
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw, mesrivas,liud
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.

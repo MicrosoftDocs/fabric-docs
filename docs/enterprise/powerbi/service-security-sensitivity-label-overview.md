@@ -7,7 +7,7 @@ ms.author: juliacawthra
 manager: kfollis
 ms.service: powerbi
 ms.subservice: powerbi-eim
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/25/2025
 LocalizationGroup: Data from files
 ---

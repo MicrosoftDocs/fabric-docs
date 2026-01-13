@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: lukaszp
 ms.service: fabric
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/03/2025
 ---
 

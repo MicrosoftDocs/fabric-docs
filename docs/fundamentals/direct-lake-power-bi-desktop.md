@@ -6,7 +6,7 @@ ms.author: zoedouglas
 ms.date: 08/01/2025
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: how-to
 LocalizationGroup: Admin
 ---
 # Direct Lake in Power BI Desktop
