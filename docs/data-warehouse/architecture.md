@@ -69,7 +69,7 @@ The query execution engine excels at filtering and aggregating billions of rows,
 
 ## Metadata and transaction management
 
-The warehouse engine uses metadata to describes table schema, file organization, version history, and transactional states. This metadata allows the warehouse engine to efficiently manage and query data. Fabric Data Warehouse offers a robust and comprehensive metadata and transaction management architecture, extending an OLTP transaction manager to orchestrate highly-concurrent metadata operations and ensure ACID compliance.
+The warehouse engine uses metadata to describe table schema, file organization, version history, and transactional states. This metadata allows the warehouse engine to efficiently manage and query data. Fabric Data Warehouse offers a robust and comprehensive metadata and transaction management architecture, extending an OLTP transaction manager to orchestrate highly concurrent metadata operations and ensure ACID compliance.
 
 :::image type="content" source="media/architecture/metadata-transaction-management.png" alt-text="Diagram of metadata and transaction management in Fabric Data Warehouse.":::
 
