@@ -3,6 +3,8 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
+- name: Architecture
+  href: architecture.md
 - name: Get started with Warehouse
   expanded: true
   items:
