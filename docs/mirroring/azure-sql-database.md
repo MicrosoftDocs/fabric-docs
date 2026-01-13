@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala
 ms.date: 07/03/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

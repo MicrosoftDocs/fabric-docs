@@ -4,7 +4,7 @@ description: See experience-specific guidance for recovering from a regional dis
 author: msmimart
 ms.author: mimart
 ms.reviewer: danzhang
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
 ms.date: 12/02/2025
 ---

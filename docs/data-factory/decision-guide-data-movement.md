@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: whhender
 ms.date: 08/12/2025
-ms.topic: article
+ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
