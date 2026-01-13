@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure SQL Managed Inst
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 04/29/2024
+ms.date: 01/13/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -153,6 +153,48 @@ For example, the type for *ID* column in source is int, and you can change it to
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Azure SQL Managed Instance
+
+When copying data from or to Azure SQL Managed Instance, the following mappings are used from Azure SQL Managed Instance data types to interim data types used by the service internally.
+
+| Azure SQL Managed Instance data type | Interim service data type |
+|:--- |:--- |
+| bigint |Int64 |
+| binary |Byte[] |
+| bit |Boolean |
+| char |String, Char[] |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
+| Datetimeoffset |DateTimeOffset |
+| Decimal |Decimal |
+| FILESTREAM attribute (varbinary(max)) |Byte[] |
+| Float |Double |
+| image |Byte[] |
+| int |Int32 |
+| money |Decimal |
+| nchar |String, Char[] |
+| ntext |String, Char[] |
+| numeric |Decimal |
+| nvarchar |String, Char[] |
+| real |Single |
+| rowversion |Byte[] |
+| smalldatetime |DateTime |
+| smallint |Int16 |
+| smallmoney |Decimal |
+| sql_variant |Object |
+| text |String, Char[] |
+| time |TimeSpan |
+| timestamp |Byte[] |
+| tinyint |Int16 |
+| uniqueidentifier |Guid |
+| varbinary |Byte[] |
+| varchar |String, Char[] |
+| xml |String |
+
+>[!NOTE]
+> For data types that map to the Decimal interim type, currently Copy activity supports precision up to 28. If you have data that requires precision larger than 28, consider converting to a string in a SQL query.
 
 ## Parallel copy from Azure SQL Managed Instance
 
