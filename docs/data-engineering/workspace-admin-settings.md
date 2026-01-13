@@ -4,7 +4,7 @@ description: Learn about the workspace administration settings for Data Engineer
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.date: 11/15/2023
 ---

@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala, maprycem, cynotebo
 ms.date: 09/05/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ---
 # Monitor Fabric mirrored database replication
