@@ -4,7 +4,7 @@ description: Learn how to configure a mirrored database from SQL Server in Micro
 author: whhender
 ms.author: whhender
 ms.reviewer: ajayj, rajpo, twright, wiassaf
-ms.date: 11/05/2025
+ms.date: 01/12/2026
 ms.topic: tutorial
 ms.custom:
 ---
@@ -23,7 +23,6 @@ ms.custom:
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
-- To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
 - An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
@@ -41,14 +40,16 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 ## [SQL Server 2025](#tab/sql2025)
 
-Starting in SQL Server 2025, the permissions required for the Fabric login are:
+1. To mirror data from SQL Server 2025, you need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of SQL Server is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
 
-- The following permissions in the user database:
-     - SELECT
-     - ALTER ANY EXTERNAL MIRROR
-     - VIEW DATABASE PERFORMANCE STATE
-     - VIEW DATABASE SECURITY STATE
+    Starting in SQL Server 2025, the permissions required for the Fabric login are:
 
+    - The following permissions in the user database:
+         - SELECT
+         - ALTER ANY EXTERNAL MIRROR
+         - VIEW DATABASE PERFORMANCE STATE
+         - VIEW DATABASE SECURITY STATE
+    
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
@@ -95,12 +96,12 @@ Starting in SQL Server 2025, the permissions required for the Fabric login are:
 
 ## [SQL Server 2016-2022](#tab/sql201622)
 
-For SQL Server versions 2016-2022, an admin needs membership in the sysadmin server role to initially set up CDC. Any future CDC maintenance will require membership in the sysadmin server role.
-
-Once CDC is set up, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
+For SQL Server versions 2016-2022, an admin must be a member of the `sysadmin` server role to set up CDC. The `sysadmin` server role is also required for any future CDC maintenance. Mirroring uses CDC if it's already enabled for the database and tables to mirror. The following steps create the `fabric_login` login and add it to the sysadmin server role to configure CDC. If CDC already exists, you don't need to temporarily add the `fabric_login` principal to the `sysadmin` server role. Once CDC is set up, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
 
 1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
-1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
+1. Connect to the `master` database. In this step, you'll create a server login and assign the appropriate permissions.
+
+   If CDC is already enabled for the database and tables to mirror, the `fabric_login` does not need to be a member of the sysadmin server role. If CDC is not already enabled, the `fabric_login` needs to be a member of the sysadmin server role to configure CDC.
 
    > [!IMPORTANT] 
    > For SQL Server instances in an Always On availability group, the login must be created in all SQL Server instances. Repeat the following steps on each replica instance. The `fabric_login` principal must have the same SID in each replica instance.
@@ -126,6 +127,7 @@ Once CDC is set up, enabling Mirroring only requires CONNECT at the server level
    GRANT CONNECT SQL TO [fabric_login];
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [bob@contoso.com];
    ```
+
 1. Membership in the db_owner database role of the source database for mirroring is required to manage CDC.
 
     Connect to the user database your plan to mirror to Microsoft Fabric. Create a database user connected to the login and grant the minimum privileges necessary.
@@ -143,10 +145,10 @@ Once CDC is set up, enabling Mirroring only requires CONNECT at the server level
     ```sql
     --Run in the user database
     CREATE USER [bob@contoso.com] FOR LOGIN [bob@contoso.com];
-    GRANT CONNECT, SELECT TO [fabric_user];
+    GRANT CONNECT, SELECT TO [bob@contoso.com];
     ```
 
-1. Once CDC is enabled, you can remove `fabric_login` from the sysadmin server role.
+1. Once CDC is enabled, you can remove `fabric_login` from the sysadmin server role. 
 
    - For a SQL Authenticated login:
 
