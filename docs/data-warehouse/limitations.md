@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: joanpo, ajagadish, anphil, fresantos
 ms.date: 11/19/2025
-ms.topic: conceptual
+ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations of Fabric Data Warehouse
