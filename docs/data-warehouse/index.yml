@@ -13,7 +13,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/05/2025
+  ms.date: 01/12/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -28,6 +28,8 @@ landingContent:
             url: data-warehousing.md
           - text: Better together - the lakehouse and warehouse
             url: get-started-lakehouse-sql-analytics-endpoint.md
+          - text: Architecture
+            url: architecture.md
 
   # Card 
   - title: Get started with Data Warehouse
