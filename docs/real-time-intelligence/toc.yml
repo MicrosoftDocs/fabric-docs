@@ -230,267 +230,267 @@ items:
           - name: Built-in Functions
             items:
               - name: Built-in Functions Overview
-                href: /stream-analytics-query/built-in-functions-azure-stream-analytics
+                href: /stream-analytics-query/built-in-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Aggregate Functions
                 items:
                   - name: Aggregate Functions Overview
-                    href: /stream-analytics-query/aggregate-functions-azure-stream-analytics
+                    href: /stream-analytics-query/aggregate-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: AVG
-                    href: /stream-analytics-query/avg-azure-stream-analytics
+                    href: /stream-analytics-query/avg-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: COUNT
-                    href: /stream-analytics-query/count-azure-stream-analytics
+                    href: /stream-analytics-query/count-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Collect
-                    href: /stream-analytics-query/collect-azure-stream-analytics
+                    href: /stream-analytics-query/collect-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CollectTOP
-                    href: /stream-analytics-query/collecttop-azure-stream-analytics
+                    href: /stream-analytics-query/collecttop-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: MAX
-                    href: /stream-analytics-query/max-azure-stream-analytics
+                    href: /stream-analytics-query/max-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: MIN
-                    href: /stream-analytics-query/min-azure-stream-analytics
+                    href: /stream-analytics-query/min-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Percentile_Cont
-                    href: /stream-analytics-query/percentile-cont-azure-stream-analytics
+                    href: /stream-analytics-query/percentile-cont-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Percentile_Disc
-                    href: /stream-analytics-query/percentile-disc-azure-stream-analytics
+                    href: /stream-analytics-query/percentile-disc-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: STDEV
-                    href: /stream-analytics-query/stdev-azure-stream-analytics
+                    href: /stream-analytics-query/stdev-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: STDEVP
-                    href: /stream-analytics-query/stdevp-azure-stream-analytics
+                    href: /stream-analytics-query/stdevp-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: SUM
-                    href: /stream-analytics-query/sum-azure-stream-analytics
+                    href: /stream-analytics-query/sum-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: TopOne
-                    href: /stream-analytics-query/topone-azure-stream-analytics
+                    href: /stream-analytics-query/topone-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: VAR
-                    href: /stream-analytics-query/var-azure-stream-analytics
+                    href: /stream-analytics-query/var-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: VARP
-                    href: /stream-analytics-query/varp-azure-stream-analytics
+                    href: /stream-analytics-query/varp-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Analytic Functions
                 items:
                   - name: Analytic Functions Overview
-                    href: /stream-analytics-query/analytic-functions-azure-stream-analytics
+                    href: /stream-analytics-query/analytic-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: AnomalyDetection_SpikeAndDip
-                    href: /stream-analytics-query/anomalydetection-spikeanddip-azure-stream-analytics
+                    href: /stream-analytics-query/anomalydetection-spikeanddip-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: AnomalyDetection_ChangePoint
-                    href: /stream-analytics-query/anomalydetection-changepoint-azure-stream-analytics
+                    href: /stream-analytics-query/anomalydetection-changepoint-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: ISFIRST
-                    href: /stream-analytics-query/isfirst-azure-stream-analytics
+                    href: /stream-analytics-query/isfirst-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LAG
-                    href: /stream-analytics-query/lag-azure-stream-analytics
+                    href: /stream-analytics-query/lag-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LAST
-                    href: /stream-analytics-query/last-azure-stream-analytics
+                    href: /stream-analytics-query/last-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Array Functions
                 items:
                   - name: Array Functions Overview
-                    href: /stream-analytics-query/array-functions-stream-analytics
+                    href: /stream-analytics-query/array-functions-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetArrayLength
-                    href: /stream-analytics-query/getarraylength-azure-stream-analytics
+                    href: /stream-analytics-query/getarraylength-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetArrayElement
-                    href: /stream-analytics-query/getarrayelement-azure-stream-analytics
+                    href: /stream-analytics-query/getarrayelement-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetArrayElements
-                    href: /stream-analytics-query/getarrayelements-azure-stream-analytics
+                    href: /stream-analytics-query/getarrayelements-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Bitwise Operators
                 items:
                   - name: Bitwise Operators Overview
-                    href: /stream-analytics-query/bitwise-operators-azure-stream-analytics
+                    href: /stream-analytics-query/bitwise-operators-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Bitwise AND
-                    href: /stream-analytics-query/bitwise-and-azure-stream-analytics
+                    href: /stream-analytics-query/bitwise-and-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Bitwise OR
-                    href: /stream-analytics-query/bitwise-or-azure-stream-analytics
+                    href: /stream-analytics-query/bitwise-or-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Bitwise XOR
-                    href: /stream-analytics-query/bitwise-xor-azure-stream-analytics
+                    href: /stream-analytics-query/bitwise-xor-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Bitwise NOT
-                    href: /stream-analytics-query/bitwise-not-azure-stream-analytics
+                    href: /stream-analytics-query/bitwise-not-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Conversion Functions
                 items:
                   - name: Conversion Functions Overview
-                    href: /stream-analytics-query/conversion-functions-azure-stream-analytics
+                    href: /stream-analytics-query/conversion-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CAST
-                    href: /stream-analytics-query/cast-azure-stream-analytics
+                    href: /stream-analytics-query/cast-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetType
-                    href: /stream-analytics-query/gettype-azure-stream-analytics
+                    href: /stream-analytics-query/gettype-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: TRY_CAST
-                    href: /stream-analytics-query/try-cast-azure-stream-analytics
+                    href: /stream-analytics-query/try-cast-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Date and Time Functions
                 items:
                   - name: Date and Time Functions Overview
-                    href: /stream-analytics-query/date-and-time-functions-azure-stream-analytics
+                    href: /stream-analytics-query/date-and-time-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: DATEADD
-                    href: /stream-analytics-query/dateadd-azure-stream-analytics
+                    href: /stream-analytics-query/dateadd-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: DATEDIFF
-                    href: /stream-analytics-query/datediff-azure-stream-analytics
+                    href: /stream-analytics-query/datediff-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: DATENAME
-                    href: /stream-analytics-query/datename-azure-stream-analytics
+                    href: /stream-analytics-query/datename-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: DATEPART
-                    href: /stream-analytics-query/datepart-azure-stream-analytics
+                    href: /stream-analytics-query/datepart-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: DATETIMEFROMPARTS
-                    href: /stream-analytics-query/datetimefromparts-azure-stream-analytics
+                    href: /stream-analytics-query/datetimefromparts-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: DAY
-                    href: /stream-analytics-query/day-azure-stream-analytics
+                    href: /stream-analytics-query/day-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: MONTH
-                    href: /stream-analytics-query/month-azure-stream-analytics
+                    href: /stream-analytics-query/month-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: YEAR
-                    href: /stream-analytics-query/year-azure-stream-analytics
+                    href: /stream-analytics-query/year-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: GeoSpatial Functions
                 items:
                   - name: GeoSpatial Functions Overview
-                    href: /stream-analytics-query/geospatial-functions
+                    href: /stream-analytics-query/geospatial-functions?context=/fabric/context/context-rti&pivots=fabric
                   - name: CreateLineString
-                    href: /stream-analytics-query/createlinestring
+                    href: /stream-analytics-query/createlinestring?context=/fabric/context/context-rti&pivots=fabric
                   - name: CreatePoint
-                    href: /stream-analytics-query/createpoint
+                    href: /stream-analytics-query/createpoint?context=/fabric/context/context-rti&pivots=fabric
                   - name: CreatePolygon
-                    href: /stream-analytics-query/createpolygon
+                    href: /stream-analytics-query/createpolygon?context=/fabric/context/context-rti&pivots=fabric
                   - name: ST_DISTANCE
-                    href: /stream-analytics-query/st-distance
+                    href: /stream-analytics-query/st-distance?context=/fabric/context/context-rti&pivots=fabric
                   - name: ST_OVERLAPS
-                    href: /stream-analytics-query/st-overlaps
+                    href: /stream-analytics-query/st-overlaps?context=/fabric/context/context-rti&pivots=fabric
                   - name: ST_INTERSECTS
-                    href: /stream-analytics-query/st-intersects
+                    href: /stream-analytics-query/st-intersects?context=/fabric/context/context-rti&pivots=fabric
                   - name: ST_WITHIN
-                    href: /stream-analytics-query/st-within
+                    href: /stream-analytics-query/st-within?context=/fabric/context/context-rti&pivots=fabric
               - name: Input Metadata Functions
                 items:
                   - name: Input Metadata Functions Overview
-                    href: /stream-analytics-query/input-metadata-functions
+                    href: /stream-analytics-query/input-metadata-functions?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetMetadataPropertyValue
-                    href: /stream-analytics-query/getmetadatapropertyvalue
+                    href: /stream-analytics-query/getmetadatapropertyvalue?context=/fabric/context/context-rti&pivots=fabric
               - name: Mathematical Functions
                 items:
                   - name: Mathematical Functions Overview
-                    href: /stream-analytics-query/mathematical-functions-azure-stream-analytics
+                    href: /stream-analytics-query/mathematical-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: ABS
-                    href: /stream-analytics-query/abs-azure-stream-analytics
+                    href: /stream-analytics-query/abs-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CEILING
-                    href: /stream-analytics-query/ceiling-azure-stream-analytics
+                    href: /stream-analytics-query/ceiling-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: EXP
-                    href: /stream-analytics-query/exp-azure-stream-analytics
+                    href: /stream-analytics-query/exp-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: FLOOR
-                    href: /stream-analytics-query/floor-azure-stream-analytics
+                    href: /stream-analytics-query/floor-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: POWER
-                    href: /stream-analytics-query/power-azure-stream-analytics
+                    href: /stream-analytics-query/power-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: ROUND
-                    href: /stream-analytics-query/round-azure-stream-analytics
+                    href: /stream-analytics-query/round-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: SIGN
-                    href: /stream-analytics-query/sign-azure-stream-analytics
+                    href: /stream-analytics-query/sign-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: SQUARE
-                    href: /stream-analytics-query/square-azure-stream-analytics
+                    href: /stream-analytics-query/square-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: SQRT
-                    href: /stream-analytics-query/sqrt-azure-stream-analytics
+                    href: /stream-analytics-query/sqrt-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Record Functions
                 items:
                   - name: Record Functions Overview
-                    href: /stream-analytics-query/record-functions-azure-stream-analytics
+                    href: /stream-analytics-query/record-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetRecordProperties
-                    href: /stream-analytics-query/getrecordproperties-azure-stream-analytics
+                    href: /stream-analytics-query/getrecordproperties-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: GetRecordPropertyValue
-                    href: /stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics
+                    href: /stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: String Functions
                 items:
                   - name: String Functions Overview
-                    href: /stream-analytics-query/string-functions-azure-stream-analytics
+                    href: /stream-analytics-query/string-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CHARINDEX
-                    href: /stream-analytics-query/charindex-azure-stream-analytics
+                    href: /stream-analytics-query/charindex-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CONCAT
-                    href: /stream-analytics-query/concat-azure-stream-analytics
+                    href: /stream-analytics-query/concat-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: CONCAT_WS
-                    href: /stream-analytics-query/concat-ws-azure-stream-analytics
+                    href: /stream-analytics-query/concat-ws-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LEFT
-                    href: /stream-analytics-query/left-azure-stream-analytics
+                    href: /stream-analytics-query/left-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LEN
-                    href: /stream-analytics-query/len-azure-stream-analytics
+                    href: /stream-analytics-query/len-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LOWER
-                    href: /stream-analytics-query/lower-azure-stream-analytics
+                    href: /stream-analytics-query/lower-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: LTRIM
-                    href: /stream-analytics-query/ltrim-azure-stream-analytics
+                    href: /stream-analytics-query/ltrim-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: NCHAR
-                    href: /stream-analytics-query/nchar-azure-stream-analytics
+                    href: /stream-analytics-query/nchar-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: PATINDEX
-                    href: /stream-analytics-query/patindex-azure-stream-analytics
+                    href: /stream-analytics-query/patindex-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: REGEXMATCH
-                    href: /stream-analytics-query/regexmatch-azure-stream-analytics
+                    href: /stream-analytics-query/regexmatch-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: REPLACE
-                    href: /stream-analytics-query/replace-azure-stream-analytics
+                    href: /stream-analytics-query/replace-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: REPLICATE
-                    href: /stream-analytics-query/replicate-azure-stream-analytics
+                    href: /stream-analytics-query/replicate-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: REVERSE
-                    href: /stream-analytics-query/reverse-azure-stream-analytics
+                    href: /stream-analytics-query/reverse-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: RIGHT
-                    href: /stream-analytics-query/right-azure-stream-analytics
+                    href: /stream-analytics-query/right-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: RTRIM
-                    href: /stream-analytics-query/rtrim-azure-stream-analytics
+                    href: /stream-analytics-query/rtrim-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: SPACE
-                    href: /stream-analytics-query/space-azure-stream-analytics
+                    href: /stream-analytics-query/space-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: STUFF
-                    href: /stream-analytics-query/stuff-azure-stream-analytics
+                    href: /stream-analytics-query/stuff-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: SUBSTRING
-                    href: /stream-analytics-query/substring-azure-stream-analytics
+                    href: /stream-analytics-query/substring-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: TRANSLATE
-                    href: /stream-analytics-query/translate-azure-stream-analytics
+                    href: /stream-analytics-query/translate-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: TRIM
-                    href: /stream-analytics-query/trim-azure-stream-analytics
+                    href: /stream-analytics-query/trim-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: UNICODE
-                    href: /stream-analytics-query/unicode-azure-stream-analytics
+                    href: /stream-analytics-query/unicode-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: UPPER
-                    href: /stream-analytics-query/upper-azure-stream-analytics
+                    href: /stream-analytics-query/upper-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Windowing Functions
                 items:
                   - name: Windowing Functions Overview
-                    href: /stream-analytics-query/windowing-azure-stream-analytics
+                    href: /stream-analytics-query/windowing-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Hopping Window
-                    href: /stream-analytics-query/hopping-window-azure-stream-analytics
+                    href: /stream-analytics-query/hopping-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Session Window
-                    href: /stream-analytics-query/session-window-azure-stream-analytics
+                    href: /stream-analytics-query/session-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Sliding Window
-                    href: /stream-analytics-query/sliding-window-azure-stream-analytics
+                    href: /stream-analytics-query/sliding-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Snapshot Window
-                    href: /stream-analytics-query/snapshot-window-azure-stream-analytics
+                    href: /stream-analytics-query/snapshot-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Tumbling Window
-                    href: /stream-analytics-query/tumbling-window-azure-stream-analytics
+                    href: /stream-analytics-query/tumbling-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
                   - name: Aggregate Windowing functions
-                    href: /stream-analytics-query/windows-azure-stream-analytics
+                    href: /stream-analytics-query/windows-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
           - name: Data Types
             items:
               - name: Data Types Overview
-                href: /stream-analytics-query/data-types-azure-stream-analytics
+                href: /stream-analytics-query/data-types-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Parsing JSON and AVRO data
-                href: /azure/stream-analytics/stream-analytics-parsing-json
+                href: /azure/stream-analytics/stream-analytics-parsing-json?context=/fabric/context/context-rti&pivots=fabric
               - name: Parsing Protobuf
-                href: /azure/stream-analytics/stream-analytics-parsing-protobuf
+                href: /azure/stream-analytics/stream-analytics-parsing-protobuf?context=/fabric/context/context-rti&pivots=fabric
           - name: Query Language Elements
             items:
               - name: Query Language Elements Overview
-                href: /stream-analytics-query/query-language-elements-azure-stream-analytics
+                href: /stream-analytics-query/query-language-elements-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: APPLY
-                href: /stream-analytics-query/apply-azure-stream-analytics
+                href: /stream-analytics-query/apply-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: CASE
-                href: /stream-analytics-query/case-azure-stream-analytics
+                href: /stream-analytics-query/case-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: COALESCE
-                href: /stream-analytics-query/coalesce-azure-stream-analytics
+                href: /stream-analytics-query/coalesce-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: CREATE TABLE
-                href: /stream-analytics-query/create-table-stream-analytics
+                href: /stream-analytics-query/create-table-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: FROM
-                href: /stream-analytics-query/from-azure-stream-analytics
+                href: /stream-analytics-query/from-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: GROUP BY
-                href: /stream-analytics-query/group-by-azure-stream-analytics
+                href: /stream-analytics-query/group-by-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: HAVING
-                href: /stream-analytics-query/having-azure-stream-analytics
+                href: /stream-analytics-query/having-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: INTO
-                href: /stream-analytics-query/into-azure-stream-analytics
+                href: /stream-analytics-query/into-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: JOIN
-                href: /stream-analytics-query/join-azure-stream-analytics
+                href: /stream-analytics-query/join-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: MATCH_RECOGNIZE
-                href: /stream-analytics-query/match-recognize-stream-analytics
+                href: /stream-analytics-query/match-recognize-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: NULLIF
-                href: /stream-analytics-query/nullif-azure-stream-analytics
+                href: /stream-analytics-query/nullif-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: Reference Data JOIN
-                href: /stream-analytics-query/reference-data-join-azure-stream-analytics
+                href: /stream-analytics-query/reference-data-join-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: SELECT
-                href: /stream-analytics-query/select-azure-stream-analytics
+                href: /stream-analytics-query/select-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: UNION
-                href: /stream-analytics-query/union-azure-stream-analytics
+                href: /stream-analytics-query/union-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: WHERE
-                href: /stream-analytics-query/where-azure-stream-analytics
+                href: /stream-analytics-query/where-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: WITH
-                href: /stream-analytics-query/with-azure-stream-analytics
+                href: /stream-analytics-query/with-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
   - name: Event Schema Set
     items:
       - name: Schema Registry in Real-Time hub
