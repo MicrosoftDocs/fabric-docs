@@ -62,7 +62,7 @@ Please refer to the regional avilability documentation for the list of supported
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 
-* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
+* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts and Azure Blob Storage accounts using managed private endpoints.
 
 * Creating a managed private endpoint with a fully qualified domain name (FQDN) via Private Link Service is not supported.
 * After you request to delete a managed private endpoint, wait at least 15 minutes before trying to create a new private endpoint to the same resource again. 
