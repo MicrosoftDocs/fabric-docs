@@ -1,5 +1,5 @@
 ---
-title: SQL database tutorial - Create a Microsoft Fabric workspace
+title: SQL database in Fabric tutorial - Create a workspace
 description: Learn how to create a Fabric workspace, which you'll work in for the rest of the tutorial.
 author: WilliamDAssafMSFT
 ms.author: wiassaf

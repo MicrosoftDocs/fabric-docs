@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 
-title: Database documentation in Microsoft Fabric  # < 60 chars
+title: Database documentation  # < 60 chars
 summary: Learn more about the Databases workload in Microsoft Fabric # < 160 chars
 
 metadata:
-  title: Databases in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
+  title: Databases # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Learn about the Databases workload in Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.custom:
