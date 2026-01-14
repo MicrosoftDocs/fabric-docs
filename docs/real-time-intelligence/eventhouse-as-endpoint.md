@@ -1,5 +1,5 @@
 ---
-title: Eventhouse Endpoint for Lakehouse and Data Warehouse
+title: Eventhouse Endpoint for Lakehouse and Data Warehouse (preview)
 description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables with enhanced performance and flexibility in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
