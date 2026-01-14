@@ -39,6 +39,12 @@ The expected identifier that must be passed to either of these two functions mus
 $(/**/LibraryName/VariableName)
 ```
 
+If the variable library is in any folder, the full path must be used. So if the variable **MyVariable** were in variable library **My Library** located in folder **Variable Libraries**, the format would be:
+
+```
+$(/**/Variable Libraries/My Library/MyVariable)
+```
+
 The following examples for both functions in the scenario where you have a variable library named **My Library** and a variable of the type string named **My Variable**:
 
 ```M code
@@ -100,7 +106,7 @@ The following list outlines important constraints and behaviors to keep in mind 
 
 - **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run don't halt or impact its run.
 
-- **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor.
+- **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor. This includes running the dataflow through the `Save & Run` button in the Power Query editor UI.
 
 - **Using a default value**: When using a default value through the function *Variable.ValueOrDefault*, make sure that the data type of the default value matches the data type of the referenced variable.
 
