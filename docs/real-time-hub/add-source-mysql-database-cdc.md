@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/21/2025
+ms.date: 01/14/2026
 ---
 
 # Add MySQL Database CDC as source in Real-Time hub
@@ -37,34 +37,17 @@ You must enable binary logging for MySQL replication. The binary logs record tra
     
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/server-parameters.png" alt-text="Screenshot that shows the Server parameters page for the Azure MySQL database." lightbox="./media/add-source-azure-mysql-database-cdc/server-parameters.png":::
 
-## Get events from Azure MySQL Database (CDC)
-You can get events from an Azure MySQL Database CDC into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
 
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **MySQL DB (CDC)** tile. 
+5. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **MySQL DB (CDC)** tile. 
 
     :::image type="content" source="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png" alt-text="Screenshot that shows the selection of MySQL DB (CDC) on the Data sources page." lightbox="./media/add-source-azure-mysql-database-cdc/select-mysql-db-cdc.png":::
 
     Use instructions from the [Add Azure MySQL Database CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section.
 
-## Microsoft sources page
-
-1. In Real-Time hub, select **Microsoft sources**.
-1. In the **Source** drop-down list, select **Azure MySQL DB (CDC)**.
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure MySQL Database account.
-1. For **Resource group**, select a **resource group** that has the database.
-1. For **Region**, select a location where your database is located.
-1. Now, move the mouse over the name of the Azure MySQL DB CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
-
-    :::image type="content" source="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure MySQL CDC and the connect button." lightbox="./media/add-source-azure-mysql-database-cdc/microsoft-sources-connect-button.png":::
-
-    To configure connection information, use steps from the [Add Azure MySQL DB CDC as a source](#add-azure-mysql-database-cdc-as-a-source) section. 
 
 ## Add Azure MySQL Database CDC as a source
 
