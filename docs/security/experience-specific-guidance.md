@@ -17,7 +17,7 @@ This document provides experience-specific guidance for recovering your Fabric d
 
 Many guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
 
-Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B.
+Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data is replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B.
 
 The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
 
@@ -352,9 +352,10 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 Map items from the primary region remain unavailable to customers and the Map items aren't replicated to the secondary region.
 
-To recover the map item in the case of a disaster, one should have had Fabric Git integration([Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops)), and [synchronized](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops#connect-and-sync) their Map with their Git repo.
-During the recovery, after the new region/capacity in Fabric is setup, you can use the repo to rebuild the Map in the new workspace you created. Since the new workspace would be empty, [Git sync](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops#connect-and-sync) would get the contents from the repo into the empty workspace. This will bring the Map item back to life.
-Note : If the original Map item has a lakehouse or KQL query set configured, users can refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) & [KQL Queryset section](./experience-specific-guidance.md#kql-databasequeryset) to recover them first. Once those are taken care, connect the newly recovered lakehouse & querysets to the newly recovered Map item.
+If you want to recover a Aap item when a disaster happens, setup Fabric Git integration([Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops)), and [synchronize](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops#connect-and-sync) your Map item with your Git repo.
+
+During the recovery, after the new region/capacity in Fabric is setup, you can use the repo to rebuild the Map item in the new workspace you created. Since the new workspace would be empty, [Git sync](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops#connect-and-sync) would get the contents from the repo into the empty workspace. This step brings the Map item back to life.
+Note: If the original Map item has a lakehouse or KQL queryset configured, users can refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) & [KQL queryset section](./experience-specific-guidance.md#kql-databasequeryset) to recover them first. Once those dependencies are taken care, connect the newly recovered lakehouse & querysets to the newly recovered Map item.
 
 ## Transactional database
 
