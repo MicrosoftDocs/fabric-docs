@@ -241,7 +241,7 @@ Next, create relationship types between the entity types to represent contextual
 
 ### Store has SaleEvent
 
-1. Select **Add relationship type** from the menu ribbon.
+1. Select **Add relationship** from the menu ribbon.
 
     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-1.png" alt-text="Screenshot of adding a relationship type.":::
 

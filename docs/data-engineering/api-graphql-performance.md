@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.date: 05/16/2025
-ms.topic: article
+ms.topic: best-practice
 ms.custom:
 ms.search.form: Fabric API for GraphQL Performance Best Practices  # This value shouldn't change. If so, contact engineering.
 ---

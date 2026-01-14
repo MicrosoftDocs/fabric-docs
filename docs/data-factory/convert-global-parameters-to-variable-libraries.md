@@ -22,17 +22,19 @@ This guide walks you through the process:
 
 ## Understand the Fabric variable library
 
-The Fabric variable library stores workspace-level values that you can reference across pipelines and activities. It supports types like string, number, and boolean, plus secure values for secrets. You can version variable libraries and deploy them across environments with deployment pipelines. 
+The Fabric variable library stores workspace-level values that you can reference across pipelines and activities. It supports types like string, number, and boolean, plus secure values for secrets. You can version variable libraries and deploy them across environments with deployment pipelines.
 
 Unlike ADF global parameters, Fabric variables offer tighter security, easier reuse, and better governance controls. You can apply them across all Fabric items. For more information, see [Get started with variable libraries](/fabric/cicd/variable-library/get-started-variable-libraries).
 
 ## Migrate ADF global parameters to Fabric variable library
 
-Follow these steps to migrate your parameters:
-
 1. **Export your ADF global parameters.**
-    1. In [Azure Data Factory Studio](https://adf.azure.com/), go to **Manage** > **Global Parameters**. Record each parameter's name, type, and value. 
+    1. In [Azure Data Factory Studio](https://adf.azure.com/), go to **Manage** > **Global Parameters**. Record each parameter's name, type, and value.
     1. For large migrations, go to **Manage** > **ARM template** and export ARM templates to extract parameters programmatically. You can find them in the template folder under the **factory** folder, in the file that ends in `ParametersForFactory`
+
+1. **Compare available types.**
+
+   Review your ADF global parameter types (string, int, bool, etc.) and compare them with [Fabric variable library types](/fabric/cicd/variable-library/get-started-variable-libraries#variable-types). Make note of any type differences that may require adjustments during migration.
 
 1. **Create a variable library in Fabric.**
     1. In your Fabric workspace, select **+ New Item** and then search for and select **Variable library**.

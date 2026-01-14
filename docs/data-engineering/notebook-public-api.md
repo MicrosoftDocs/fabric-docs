@@ -4,7 +4,7 @@ description: Learn about the Fabric notebook public APIs, including how to creat
 ms.reviewer: jingzh
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.date: 01/28/2025
 ms.search.form: Notebook REST API ci cd

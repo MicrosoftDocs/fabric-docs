@@ -7,7 +7,7 @@ ms.reviewer: anphil, maprycem, amasingh
 ms.date: 06/24/2025
 ms.service: fabric
 ms.subservice: data-warehouse
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # SQL analytics endpoint performance considerations

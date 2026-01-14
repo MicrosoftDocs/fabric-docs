@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.reviewer: raan
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 01/14/2026
 ---
 
 # Stream Azure diagnostic logs and metrics data into Microsoft Fabric

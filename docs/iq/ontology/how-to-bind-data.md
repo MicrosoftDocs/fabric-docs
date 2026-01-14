@@ -50,7 +50,7 @@ This section contains step-by-step instructions for adding and managing data bin
 
 ### Add static data
 
-First, bind static data. Static data bindings must be created before time series data bindings.
+First, bind static data. Create static data bindings before creating time series data bindings.
 
 1. Select the entity to which you want to bind data in the **Entity Types** pane. This selection opens the **Entity type configuration** pane for the entity type. In the **Bindings** tab, select **Add data to entity type**.
 
@@ -121,6 +121,13 @@ Next to the data binding name, select **...** to open its options. From there, y
 Data binding has the following limitations:
 
 * You can't use lakehouses with OneLake security enabled as data sources for bindings. If a lakehouse has OneLake security enabled, you can't use it as a data source in ontology.
+* Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. 
+* Changing the lakehouse table name after mappings are created may result in problems accessing data in the preview experience.
+* The ontology graph does not support delta tables with column mapping enabled. Column mapping can be enabled manually, or is enabled automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables.
 * Each entity type supports one **static** data binding. You can't combine static data from multiple sources for a single entity type. 
     * You must use OneLake-backed sources for static data.
     * Entity types **do** support bindings from multiple **time series** sources. You can bind time series data from both eventhouse and lakehouse sources.
+
+### Troubleshooting
+
+For troubleshooting tips related to data binding, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-data-binding).
