@@ -348,6 +348,14 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 1. Add identical destinations for each eventstream in different regions.
 
+### Map
+
+Map items from the primary region remain unavailable to customers and the Map items aren't replicated to the secondary region.
+
+To recover the map item in the case of a disaster, one should have had Fabric Git integration([Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/intro-to-git-integration?tabs=azure-devops)), and [synchronized](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops#connect-and-sync) their Map with their Git repo.
+During the recovery, after the new region/capacity in Fabric is setup, you can use the repo to rebuild the Map in the new workspace you created. Since the new workspace would be empty, [Git sync](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/git-integration-process?tabs=Azure%2Cazure-devops#connect-and-sync) would get the contents from the repo into the empty workspace. This will bring the Map item back to life.
+Note : If the original Map item has a lakehouse or KQL query set configured, users can refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) & [KQL Queryset section](./experience-specific-guidance.md#kql-databasequeryset) to recover them first. Once those are taken care, connect the newly recovered lakehouse & querysets to the newly recovered Map item.
+
 ## Transactional database
 
 This guide describes the recovery procedures for the transactional database experience. 
