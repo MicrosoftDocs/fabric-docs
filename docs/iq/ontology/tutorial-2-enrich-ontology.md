@@ -81,11 +81,10 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 
 1. Configure a time series data binding.
     1. For **Binding type**, leave the default selection of **Timeseries**. For **Source data timestamp column**, select `timestamp`.
-    1. Under **Bind your properties > Static**, remove both properties that populate automatically to avoid duplicating the static properties already on the entity. 
+    1. Under **Bind your properties > Static**, two columns populate that match static properties already defined on the entity.
 
-        :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png" alt-text="Screenshot of removing the default static properties." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png":::
+        :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png" alt-text="Screenshot of the default static properties." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png":::
 
-        Then, select **+ Add static property > Add static property**. Select `freezerId` as the **Source column** and select `FreezerId` (beginning with a capital letter) from the dropdown menu in the **Property name** column. This step ensures that the `freezerId` column in the *FreezerTelemetry* table is bound to the same `FreezerId` property that is already defined on the *Freezer* entity type from the static data source.
     1. Under **Bind your properties > Timeseries**, the time series columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Leave the default selections.
     1. Select **Save**.
 
@@ -101,7 +100,7 @@ Finally, create a new relationship type to represent the connection between a st
 
 ### Create Store operates Freezer
 
-1. Select **Add relationship type** from the menu ribbon.
+1. Select **Add relationship** from the menu ribbon.
 1. Enter the following relationship type details and select **Add relationship type**.
     1. **Relationship type name**: *operates*
     1. **Source entity type**: *Store*

@@ -51,7 +51,7 @@ For example, say you want to define a relationship between the entity types *Tru
 
 Follow these steps to create a relationship type and bind data to it:
 
-1. Start by selecting **Add relationship type** in the menu ribbon. Or, highlight an entity type in the **Entity Types** pane and select **...**, then **Add relationship type**.
+1. Start by selecting **Add relationship** in the menu ribbon. Or, highlight an entity type in the **Entity Types** pane and select **...**, then **Add relationship**.
 
     :::image type="content" source="media/how-to-create-relationship-types/add-relationship-1.png" alt-text="Screenshot of the Add relationship button in the ribbon.":::
 
