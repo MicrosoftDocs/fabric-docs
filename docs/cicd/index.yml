@@ -50,8 +50,8 @@ landingContent:
             url: git-integration/git-integration-process.md
           - text: The deployment pipelines process
             url: deployment-pipelines/understand-the-deployment-process.md
-          - text: Variable library variable types
-            url: variable-library/variable-types.md
+          - text: Variable libraries
+            url: variable-library/variable-library-overview.md
       - linkListType: reference
         links:
           - text: Frequently asked questions about the Fabric lifecycle management tools

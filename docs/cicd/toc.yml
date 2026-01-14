@@ -74,8 +74,13 @@ items:
     href: variable-library/get-started-variable-libraries.md
   - name: Concepts
     items:
-    - name: Variable names and types
+    - name: Value-sets
+      href: variable-library/value-sets.md
+    - name: Variables Types
       href: variable-library/variable-types.md
+      items:
+      - name: Item references
+        href: variable-library/item-reference-variable-type.md
     - name: Permissions
       href: variable-library/variable-library-permissions.md
     - name: "CI/CD and Variable libraries"
