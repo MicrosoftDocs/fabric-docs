@@ -30,7 +30,7 @@ After you enable the endpoint, it tracks the source data and optimizes it for Ev
 
 ## Performance and consumption
 
-On initialization, the endpoint is both creating tables and caching data. Within 10 seconds the endpoint is fully synced. During synch, endpoint query performance slows, but as more data is cached, query performance improves.
+On initialization, the endpoint is both creating tables and caching data. Within 10 seconds the endpoint is fully synced. During synch, endpoint query performance slows, but as more data is cached, query performance improves. It is possible to update the cache policy.
 
 The eventhouse endpoint uses a limited portion of the available capacity, which could affect the overall preparation time. While the data is available for queries within seconds, the Query runtime may take longer.
 
@@ -67,24 +67,43 @@ Enable the Eventhouse endpoint from your Fabric workspace, your OneLake catalog,
 
     :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
 
-The Eventhouse endpoint has these characteristics:
-
-* The Eventhouse is named **Eventhouse Endpoint** and is read-only.
-* The KQL database is named **<Lakehouse/Warehouse_Name>_EventhouseEndpoint**.
-* The embedded KQL queryset is named **<Lakehouse/Warehouse_Name>_EventhouseEndpoint_queryset**.
-* Shortcuts reference OneLake tables.
-  * Query each shortcut directly by using the table function.
-  * If the source has multiple schemas, the schema name shows in each shortcut name. For example, if the schemas are `sales` and `marketing` and each has a table named `customers`, the shortcuts are `sales_customers` and `marketing_customers`.
-
 The workspace and OneLake catalog show the endpoint and KQL database as child items of the Lakehouse.
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-structure.png" alt-text="Screenshot of the Eventhouse endpoint and KQL database as child items of the Lakehouse in the OneLake catalog.":::
 
-## Query and visualize data
+## Query, monitor, and visualize data
 
-From the Eventhouse endpoint, run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
+The Eventhouse endpoint has these characteristics:
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
+* You can toggle between the Eventhouse, Database, Endpoint, and Queryset pages by using the top bar navigation.
+
+* **Queryset**: When you create the endpoint, it opens an embedded KQL queryset named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint_queryset**. From this queryset you can [Query data in a KQL queryset](kusto-query-set.md) or use [Copilot for writing queries](copilot-writing-queries.md).
+
+  :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png" alt-text="Screenshot of the KQL queryset with a get table schema query." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-query.png":::
+
+* **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#view-system-overview) including a link to the source lakehouse or warehouse.
+
+* **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**.  As the **Eventhouse Endpoint** is read-only, create database and add table capabilities are disabled. run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
+
+* **Shortcuts**: reference OneLake tables that you can query directly using the table function or using natural language via Copilot.  If the source has multiple schemas, the schema name shows in each shortcut name. For example, if the schemas are `sales` and `marketing` and each has a table named `customers`, the shortcuts are `sales_customers` and `marketing_customers`.
+
+## Update the table data policy
+
+Update the cache period for a specific table to optimize query performance. This is measured in days, and by default is set to 30 days but can be set to a minumum of 1 day and a maximum of 36500 days (approximately 100 years).
+
+1. Browse to your **Shortcuts** and select the table.
+
+1. From the more options menu **...**, or from the top banner, select **Data policies**.
+
+  :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-data-policies.png" alt-text="Screenshot of the eventhouse with the Data policies option highleted.":::
+
+1. In the table data policy section, set the **Caching period (days)**.
+
+  :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-cache-period.png" alt-text="Screenshot of caching policy pane with default value.":::
+
+1. The new cache period applies immediately, and is reflected in the Shortcut details pane.
+
+  :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-shortcut-details.png" alt-text="Screenshot of shortut details page with the caching policy highlighted.":::
 
 ## Share the Eventhouse endpoint
 
@@ -114,6 +133,12 @@ If you delete the Eventhouse endpoint, re-enable it at any time. The new endpoin
 
 :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Screenshot of a message stating that the endpoint is being deleted and to wait a few seconds.":::
 
+## Reset the Eventhouse endpoint
+
+Using the reset button you can delete the endpoint and re-start the connection.
+
+:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-reset.png" alt-text="Screenshot of the reset button under the top navigation bar, when Endpoint is selected.":::
+
 ## Sync statuses
 
 The Eventhouse endpoint syncs source tables and schema changes within seconds. The sync status appears in the System Overview, databases page, and each table shortcut. Here's an example of a sync status:
@@ -139,7 +164,6 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 ## Considerations and limitations
 
 * You can't enable the Eventhouse endpoint from within an open Lakehouse.
-* The **System overview** page of the Eventhouse endpoint doesn't show any statistics.
 * Updates to the Eventhouse endpoint cache policy aren't supported.
 * Changes to the source table schema aren't reflected at the Eventhouse endpoint.
 
