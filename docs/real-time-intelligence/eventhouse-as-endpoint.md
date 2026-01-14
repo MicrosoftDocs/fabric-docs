@@ -30,7 +30,7 @@ After you enable the endpoint, it tracks the source data and optimizes it for Ev
 
 ## Performance and consumption
 
-On initialization, the endpoint both creates tables and caches data. Within 10 seconds, the endpoint is fully synced. During sync, endpoint query performance slows, but as more data is cached, query performance improves. You can [update the cache policy](#update-the-table-data-policy).
+On initialization, the endpoint both creates tables and caches data. Within 10 seconds, the endpoint is fully synced. During sync, endpoint query performance slows, but as more data is cached, query performance improves. You can [update the cache policy](#update-the-data-policy).
 
 The eventhouse endpoint uses a limited portion of the available capacity, which could affect the overall preparation time. While the data is available for queries within seconds, the Query runtime might take longer.
 
