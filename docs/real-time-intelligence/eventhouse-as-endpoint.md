@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 10/30/2025
+ms.date: 01/14/2026
 ---
 
 # Enable Eventhouse endpoint for lakehouse and data warehouse
