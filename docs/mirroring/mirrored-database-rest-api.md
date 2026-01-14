@@ -5,7 +5,7 @@ author: xuyangit1
 ms.author: xuyan
 ms.reviewer: whhender
 ms.date: 11/27/2025
-ms.topic: conceptual
+ms.topic: reference
 ms.custom: sfi-ropc-nochange
 ---
 
