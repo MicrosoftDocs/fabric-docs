@@ -3,8 +3,8 @@ title: Graph Overview
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.custom: references_regions
 ms.search.form: Graph Overview
@@ -32,7 +32,7 @@ Traditional relational and tabular data formats make it difficult—if not impos
 
 Graph in Microsoft Fabric provides an efficient way to model, visualize, and query these relationships, helping you understand the interconnectedness of your data and drive better insights.
 
-- Business user: Visually explores relationships, runs NL (natural language) queries, and gains insights effortlessly.
+- Business user: Visually explores relationships, [runs NL (natural language) queries](https://forms.office.com/r/97QkVDBeuM), and gains insights effortlessly.
 - Data engineer: Defines graph models, unifies data in OneLake with low and no-code tools.
 - Data scientist: Uses graph algorithms and ML (machine learning) in Fabric's data science environment.
 - Developer: Builds AI agents and real-time apps using graph-powered contextual insights.
@@ -49,11 +49,11 @@ Graph in Microsoft Fabric enables you to:
     > Graph fully supports schema evolution through OneLake. This means you can add, remove, or reorder columns in your source tables without breaking graph ingestion or requiring a full reload. All schema changes are automatically handled during graph load and reflected in production, giving you flexibility to adapt your data model as business needs evolve. This capability ensures that graph solutions remain resilient and up to date even as underlying datasets change.
 
 - Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
-
+<!-- - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain. -->
 - Benefit from job function-based experiences:  
     - Data engineers can model and create graphs.  
     - Analysts can run low/no-code queries and curate view sets.  
-    - Business users can explore visually or use natural language to interact with the data.  
+    - Business users can explore visually or [use natural language](https://forms.office.com/r/97QkVDBeuM) to interact with the data.  
     <!-- - Developers and data scientists can integrate graph analytics in notebooks and applications. -->
 
 - Operate within Fabric: Automatically shut down when not in use and monitor usage in the capacity metrics app—all governed by Fabric OneLake security, compliance, and permission model.

@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.date: 06/05/2025
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.search.form: Integrating APIM with API for GraphQL # This value shouldn't change. If so, contact engineering.
 ---
@@ -13,14 +13,14 @@ ms.search.form: Integrating APIM with API for GraphQL # This value shouldn't cha
 # Integrate Azure API Management (APIM) with Fabric API for GraphQL
 
 
-Integrating Azure API Management (APIM) with Microsoft Fabric’s API for GraphQL can significantly enhance your API’s capabilities by providing robust scalability and security features such as identity management, rate limiting, and caching. We will guide you through the process of setting up and configuring these features.
+Integrating Azure API Management (APIM) with Microsoft Fabric’s API for GraphQL can significantly enhance your API’s capabilities by providing robust scalability and security features such as identity management, rate limiting, and caching. This article guides you through the process of setting up and configuring these features.
 
 
 ## Add a Fabric GraphQL API to Azure API Management
 
-For this section, we assume that you have a GraphQL API in Fabric and APIM instance already up and running. If not, you can follow the [instructions](/azure/api-management/get-started-create-service-instance) on [how to create a GraphQL API in Fabric](get-started-api-graphql.md) or you can click on **Start with sample SQL database** in the API for GraphQL portal to start from a new API.
+For this section, we assume that you have a GraphQL API in Fabric and APIM instance already up and running. If not, you can follow the [instructions](/azure/api-management/get-started-create-service-instance) on [how to create a GraphQL API in Fabric](get-started-api-graphql.md) or you can select on **Start with sample SQL database** in the API for GraphQL portal to start from a new API.
 
-To get started retrieve your API endpoint from the Fabric portal by going in your GraphQL item and clicking on the **Copy endpoint** button in the ribbon. You will also need to save your GraphQL schema to a file, which you can accomplish by clicking on the **Export schema** button and saving it to a file in your local device:
+To get started retrieve your API endpoint from the Fabric portal by going in your GraphQL item and selecting on the **Copy endpoint** button in the ribbon. You also need to save your GraphQL schema to a file, which you can accomplish by selecting on the **Export schema** button and saving it to a file in your local device:
 
 :::image type="content" source="media/api-graphql-apim/api-graphql-apim-ribbon.png" alt-text="Screenshot of API for GraphQL ribbon." lightbox="media/api-graphql-apim/api-graphql-apim-ribbon.png":::
 
@@ -38,9 +38,9 @@ Now we have a managed identity credential we can use for authentication, we need
 
 :::image type="content" source="media/api-graphql-apim/api-graphql-apim-permissions.png" alt-text="Screenshot of workspace permissions." lightbox="media/api-graphql-apim/api-graphql-apim-permissions.png":::
 
-If you prefer to enable access directly to the Fabric items such as the API itself and the data sources attached to the API such as a LakeHouse or SQL database, you need to grant the appropriate permissions for the managed identity on each item, especially in case they were attached to the API using Single Sign-On (SSO) authentication. You can find more information in the [permissions summary](get-started-api-graphql.md#permissions-summary).
+If you prefer to enable access directly to the Fabric items such as the API itself and the data sources attached to the API such as a lakehouse or SQL database, you need to grant the appropriate permissions for the managed identity on each item, especially in case they were attached to the API using Single Sign-On (SSO) authentication. You can find more information in the [permissions summary](get-started-api-graphql.md#permissions-summary).
 
-Once you have granted your credential permissions to your workspace, Fabric GraphQL API and/or data sources attached to it, you will need to indicate to APIM that you want to leverage that credential to perform authentication. Back to the APIM console, go to **Security** > **Managed identities** and add the same user assigned managed identity you’re using to access the Fabric GraphQL API.
+Once you grant your credential permissions to your workspace, Fabric GraphQL API and/or data sources attached to it, you need to indicate to APIM that you want to leverage that credential to perform authentication. Back to the APIM console, go to **Security** > **Managed identities** and add the same user assigned managed identity you’re using to access the Fabric GraphQL API.
 
 Next go to the “API Policies” tab in the GraphQL API you created earlier, then edit the inbound processing policy by adding the following entries below `<inbound><base/>`:
 ```xml
@@ -114,7 +114,7 @@ You can confirm the requests are getting cached by [tracing a GraphQL API query 
 
 :::image type="content" source="media/api-graphql-apim/api-graphql-apim-cache.png" alt-text="Screenshot of cache hit in the APIM portal." lightbox="media/api-graphql-apim/api-graphql-apim-cache.png":::
 
-For advanced caching scenarios, please refer to the [APIM documentation](/azure/api-management/api-management-howto-cache) on caching.
+For advanced caching scenarios, refer to the [APIM documentation](/azure/api-management/api-management-howto-cache) on caching.
 
 ## Rate limiting
 

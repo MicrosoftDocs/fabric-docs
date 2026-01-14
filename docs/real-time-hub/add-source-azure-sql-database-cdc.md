@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/21/2025
+ms.date: 01/14/2026
 ---
 
 # Add Azure SQL Database Change Data Capture (CDC) as source in Real-Time hub
@@ -27,13 +27,6 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 >- Mirroring shouldn't be enabled in your database.
 >- Multiple tables CDC isn't supported.
 
-## Get events from an Azure SQL Database CDC
-
-You can get events from an Azure SQL Database CDC into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
-
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
@@ -43,17 +36,6 @@ You can get events from an Azure SQL Database CDC into Real-Time hub in one of t
     :::image type="content" source="./media/add-source-azure-sql-database-cdc/select-azure-sql-database-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL Database (CDC) as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-database-cdc/select-azure-sql-database-cdc.png":::
     
     Use instructions from the [Connect to an Azure SQL Database CDC source](#connect-to-an-azure-sql-database-cdc-source) section.
-
-## Microsoft sources page
-
-1. In Real-Time hub, select **Microsoft sources** on the left navigation menu.  You can use the search box to the type your resource name or use filters (Source, Subscription, Resource group, Region) to search for your resource. 
-1. In the **Source** drop-down list, select **Azure SQL DB (CDC)**.
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your SQL database.
-1. For **Resource group**, select a **resource group** that has your SQL database.
-1. For **Region**, select a location where your SQL database is located.
-1. Now, move the mouse over the name of the SQL database that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
-
-    :::image type="content" source="./media/add-source-azure-sql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show SQL databases and the connect button for an Azure SQL database.":::
 
 
 ## Connect to an Azure SQL Database CDC source

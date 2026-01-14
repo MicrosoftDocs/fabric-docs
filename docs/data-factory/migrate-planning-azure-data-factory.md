@@ -30,32 +30,16 @@ Fabric offers many new features, including:
 
 For a detailed comparison, see [the Azure Data Factory and Fabric Data Factory comparison guide](compare-fabric-data-factory-and-azure-data-factory.md).
 
-## Considerations before migrating
+## Critical architectural differences
 
-Migrating from Azure Data Factory (ADF) to Fabric Data Factory involves several key considerations. Here’s what to keep in mind:
-
-- **Complex pipelines and custom connectors**: These may require manual adjustments to work in the new environment.
-- **Integration runtimes**: Legacy runtimes might need refactoring to align with Fabric’s architecture.
-- **Dataflow differences**: ADF Mapping Data Flows use Spark-based transformations, while Fabric Dataflow Gen2 operates differently and may need rework.
-- **Security and networking**: Review managed identity, private endpoints, and gateway configurations. Re-test these settings and update permissions as needed.
-- **Testing and validation**: Ensure migrated pipelines produce accurate outputs, meet SLAs, and comply with requirements. Use robust test harnesses for objective comparisons.
-
-To address these challenges, follow these best practices:
-
-1. Conduct a thorough asset inventory. Identify duplicates, unused items, and dependencies.
-1. Use the [migration assessment tool](/azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration) and review [connector parity](connector-parity.md) and [activity parity](activity-parity.md) to identify and map feature gaps early.
-1. Consider using automated scripts and partner tools for bulk migration.
-1. Maintain detailed documentation and rollback plans.
-1. Engage stakeholders throughout the process.
-1. Run incremental migrations to minimize risk.
-1. Use AI-powered validation scripts to speed up issue resolution.
+[!INCLUDE [migration-critical-differences](includes/migration-critical-differences.md)]
 
 ## Migration paths
 
 Migration paths depend on your ADF assets and their feature parity. Options include:
 
 - [Azure Data Factory items in Fabric for continuity.](#azure-data-factory-items-in-your-fabric-workspace) - A live view of your existing Azure Data Factory instance within Fabric, enabling gradual migration and testing. This is also a good first step before using conversion tools or replatforming.
-- [Use the powershell conversion tool to migrate pipelines with high parity.](#use-the-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
+- [Use the PowerShell conversion tool to migrate pipelines with high parity.](#use-the-powershell-upgrade-tool) - Automate the migration of pipelines, activities, and parameters at scale. Ideal for standard patterns like Copy, Lookup, and Stored Procedure.
 - [Manual migration for complex environments](#manual-migration) - Rebuild pipelines in Fabric to leverage new features and optimize performance. This is necessary for pipelines with low parity or custom logic, but it’s also an opportunity to modernize your architecture.
 
 ## Azure Data Factory items in your Fabric workspace
@@ -75,14 +59,15 @@ For a detailed tutorial with examples, see [the PowerShell migration tutorial](m
 
 Manual migration is necessary for complex pipelines with low parity, but it's also a chance to modernize your architecture and adopt Fabric’s integrated features. This path requires more upfront planning and development but can yield long-term benefits in maintainability, performance, and cost.
 
-To migrate effectively, consider these steps:
+To migrate effectively, follow these steps:
 
 1. **Assess and inventory**: Catalog all ADF assets, including pipelines, datasets, linked services, and integration runtimes. Identify dependencies and usage patterns.
 1. **Identify duplicates and unused items**: Clean up unused or redundant items in ADF to streamline the migration and your data integration environment.
 1. **Identify gaps**: Use the [migration assessment tool](/azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration) and review [connector parity](connector-parity.md) and [activity parity](activity-parity.md) to identify gaps between your ADF pipelines and Fabric pipelines, and plan for alternatives.
 1. **Review new features**: Use our [data movement decision guide](decision-guide-data-movement.md) and [data integration decision guide](decision-guide-data-integration.md) to decide which Fabric tools will work best for your needs.
 1. **Plan**: Review the [migration best practices](migration-best-practices.md) for considerations for each of your items, and guidelines for making the most of Fabric's improved capabilities.
-1. **ADF transition**: Consider [adding an Azure Data Factory itemin Microsoft Fabric](#azure-data-factory-items-in-your-fabric-workspace) as a first step in migration, allowing for gradual transition in a single platform.
+1. **If you use global parameters in ADF, plan to migrate them to Fabric variable libraries.** See [Convert ADF Global Parameters to Fabric Variable Libraries](convert-global-parameters-to-variable-libraries.md) for detailed steps.
+1. **ADF transition**: Consider [adding an Azure Data Factory item in Microsoft Fabric](#azure-data-factory-items-in-your-fabric-workspace) as a first step in migration, allowing for gradual transition in a single platform.
 1. **Prioritize**: Rank your pipelines based on business impact, complexity, and ease of migration.
 1. **Automate where you can**: For all low-complexity pipelines, consider using the [PowerShell upgrade tool](#use-the-powershell-upgrade-tool) to automate some migration.
 1. **Consider tooling**: Use these tools to make recreation easier:
@@ -110,6 +95,7 @@ Moving from ADF to Fabric can involve different strategies depending on your use
 Modernize your ETL environment by moving pipelines and data flows to Fabric. Plan for these elements:
 
 - Recreate Linked Services as Connections
+- Recreate global parameters as variable libraries
 - Define dataset properties inline in pipeline activities
 - Replace SHIRs (self-hosted integration runtimes) with OPDGs (on-premises data gateways) and VNet IRs with Virtual Network Data Gateways
 - Rebuild unsupported ADF activities using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
