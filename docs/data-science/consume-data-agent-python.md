@@ -5,7 +5,7 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: amjafari 
 reviewer: amjafari 
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/8/2025
 ---
 
