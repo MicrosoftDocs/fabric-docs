@@ -53,10 +53,10 @@ items:
       href: ontology/resources-frequently-asked-questions.md
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
+- name: Graph in Microsoft Fabric
+  href: ../graph/toc.yml
 - name: Fabric data agent
   href: ../data-science/concept-data-agent.md
-- name: Graph in Microsoft Fabric
-  href: ../graph/overview.md
 - name: Operations agent
   href: ../real-time-intelligence/operations-agent.md
 - name: Power BI semantic model
