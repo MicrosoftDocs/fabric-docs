@@ -4,7 +4,7 @@ description: Learn more about the architecture of Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
-ms.date: 01/09/2026
+ms.date: 01/14/2026
 ms.topic: conceptual
 ---
 
@@ -49,7 +49,7 @@ The unified query optimizer continuously learns from past query executions as wo
 
 In Fabric Data Warehouse, the distributed query processing engine allocates computing resources to tasks in query plans. The distributed query processing engine can schedule tasks across compute nodes so each node runs part of a query plan, enabling parallel execution for faster performance. Complex reports on large datasets can benefit from distributed query processing.
 
-:::image type="content" source="media/architecture/distributed-query-processing-engine.png" alt-text="Diagram of the distributed query processing engine, described in this section.":::
+:::image type="content" source="media/architecture/distributed-query-processing.png" alt-text="Diagram of the distributed query processing engine, described in this section.":::
 
 To further optimize resources, the distributed query processing engine separates compute resources into two pools: for `SELECT` queries and for data ingestion tasks (`NON-SELECT` queries). Each workload receives dedicated resources as needed. This means, for example, that your nightly ETL jobs won't delay morning dashboards.
 
