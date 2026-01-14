@@ -45,7 +45,7 @@ For examples of how to set up cross-workspace communication by using managed pri
 
 ## Data gateway
 
-You can use a virtual network data gateway or an on-premises data gateway (OPDG) to establish cross-workspace communication with a workspace that has a policy that restricts inbound public access. With either option, you need to create private endpoint on the virtual network that holds the data gateway. This private endpoint should point to the Private Link service for the target workspace.
+You can use a virtual network data gateway or an on-premises data gateway (OPDG) to establish cross-workspace communication with a workspace that has a policy that restricts inbound public access. With either option, you need to create a private endpoint on the virtual network that holds the data gateway. This private endpoint should point to the Private Link service for the target workspace.
 
 ### Virtual network data gateway
 
