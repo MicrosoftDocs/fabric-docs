@@ -34,18 +34,16 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. Under **External sources**, select **Azure Data Lake Storage Gen2**.
 
-   :::image type="content" source="media/create-adls-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Azure Data Lake Storage Gen2 is highlighted." lightbox="media/create-adls-shortcut/new-shortcut-expanded.png":::
-
-1. Enter the **Connection settings** according to the following table:
+1. Enter the **Connection settings** and **Connection credentials** for the storage account.
 
    :::image type="content" source="media/create-adls-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/create-adls-shortcut/shortcut-details.png":::
 
-   |Field | Description| Value|
-   |-----|-----| -----|
-   | **URL**| The connection string for your delta container. | `https://`*StorageAccountName*`.dfs.core.windows.net`|
-   |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If no connections exist, create a new connection.| *Create new connection*. |
-   |**Connection name** | The Azure Data Lake Storage Gen2 connection name.| A name for your connection.|
-   |**Authentication kind**| The authorization model. The supported models are: Organizational account, Account key, Shared Access Signature (SAS), Service principal, and Workspace Identity. For more information, see [Authorization](#authorization). | Dependent on the authorization model. Once you select an authentication kind, fill in the required credentials.|
+   | Field | Description |
+   |-----|-----|
+   | **URL**| The DFS endpoint for your storage account. <br><br> `https://<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net`|
+   |**Connection** | Select an existing connection for the specified storage location from the drop-down menu. Or if no connections exist, select **Create new connection**. |
+   |**Connection name** | A name for your Azure Data Lake Storage Gen2 connection.|
+   |**Authentication kind**| Select your preferred authorization model from the drop-down menu: Organizational account, Account key, Shared Access Signature (SAS), Service principal, or Workspace Identity. For more information, see [Authorization](#authorization). <br><br> Once you select an authentication kind, fill in the required credentials.|
 
 1. Select **Next**.
 
@@ -87,6 +85,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 - **Service principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
 - **Workspace identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor, or Storage Blob Data Owner role on the storage account; or Delegator role on the storage account plus file or directory access granted within the storage account.
 - **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, and Execute.
+- **Account key** - the storage account access key. Account keys grant full access to the storage account, so use this option with caution and protect your keys appropriately.
 
 Microsoft Entra ID delegated authorization types (organizational account, service principal, or workspace identity) require the **Generate a user delegation key** action at the storage account level. This action is included as part of the Storage Blob Data Reader, Storage Blob Data Contributor, Storage Blob Data Owner, and Delegator roles. If you don't want to give a user reader, contributor, or owner permissions for the whole storage account, assign them the Delegator role instead. Then, define detailed data access rights using [Access control lists (ACLs) in Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-access-control).
 
