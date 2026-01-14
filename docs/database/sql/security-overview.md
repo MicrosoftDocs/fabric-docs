@@ -1,5 +1,5 @@
 ---
-title: "Security in SQL database in Microsoft Fabric"
+title: "Security in SQL database"
 description: Learn about security in SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,7 @@ ms.date: 10/23/2025
 ms.topic: conceptual
 ms.search.form: SQL database security
 ---
-# Security in SQL database in Microsoft Fabric
+# Security
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 

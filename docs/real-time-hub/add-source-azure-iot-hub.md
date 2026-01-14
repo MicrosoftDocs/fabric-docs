@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/21/2025
+ms.date: 01/14/2026
 ---
 
 # Add Azure IoT Hub as source in Real-Time hub
@@ -20,13 +20,6 @@ This article describes how to get events from an Azure IoT hub into Real-Time hu
 - [Create an Azure IoT hub](/azure/iot-hub/iot-hub-create-through-portal) if you don't have one. 
 - You need to have appropriate permission to get IoT hub's access keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
-## Get events from an Azure IoT hub
-
-You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
-
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
@@ -36,17 +29,6 @@ You can get events from an Azure IoT hub into Real-Time hub in one of the ways:
     :::image type="content" source="./media/add-source-azure-iot-hub/select-azure-iot-hub.png" alt-text="Screenshot that shows the selection of Azure IoT Hub as the source type in the Data sources page." lightbox="./media/add-source-azure-iot-hub/select-azure-iot-hub.png":::
     
     Now, follow instructions from the [Connect to an Azure iot hub](#connect-to-an-azure-iot-hub) section.
-
-## Microsoft sources page
-
-1. In Real-Time hub, select **Microsoft sources**. You can use the search box to the type your resource name or use filters (Source, Subscription, Resource group, Region) to search for your resource. 
-1. In the **Source** drop-down list, select **Azure IoT Hub**.
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your IoT hub.
-1. For **Resource group**, select a **resource group** that has your IoT hub.
-1. For **Region**, select a location where your IoT hub is located.
-1. Now, move the mouse over the name of the IoT hub that you want to connect to Real-Time hub in the list of IoT hubs, and select the **Connect** button, or select **... (ellipsis)**, and then select **Connect data source**.
-
-    :::image type="content" source="./media/add-source-azure-iot-hub/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show IoT hubs and the connect button for an IoT hub.":::
 
 ## Connect to an Azure iot hub
 

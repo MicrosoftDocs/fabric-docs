@@ -1,5 +1,5 @@
 ---
-title: Microsoft Copilot in Microsoft Fabric in the SQL Database Workload Overview
+title: Microsoft Copilot in the SQL Database Workload Overview
 description: "Learn more about the Microsoft Copilot in Microsoft Fabric in the SQL database workload, an AI assistant designed to streamline your database tasks."
 author: markingmyname
 ms.author: maghan
@@ -12,7 +12,7 @@ ms.update-cycle: 180-days
 ms.devlang: copilot-prompt
 ---
 
-# What is Copilot in Fabric in the SQL database workload?
+# What is Copilot in the SQL database in Fabric workload?
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
