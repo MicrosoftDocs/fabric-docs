@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Frequently asked questions for SQL database in Microsoft Fabric"
+  title: "Frequently asked questions for SQL database"
   description: This article answers frequently asked questions about SQL database in Microsoft Fabric.
   author: WilliamDAssafMSFT
   ms.author: wiassaf
@@ -9,7 +9,7 @@ metadata:
   ms.custom:
   ms.date: 09/18/2025
   ms.search.form: SQL database Overview
-title: "Frequently asked questions for SQL database in Microsoft Fabric"
+title: "Frequently asked questions for SQL database in Fabric"
 summary: |
   **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 

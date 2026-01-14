@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: sngun
 ms.date: 03/04/2025
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.search.form: Fabric API GraphQL Limitations # This article's title shouldn't change. If so, contact engineering.
 ---

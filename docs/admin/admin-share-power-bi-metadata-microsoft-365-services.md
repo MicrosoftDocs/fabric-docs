@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: 'jadelynray'
 
 ms.custom:
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/05/2025
 LocalizationGroup: Admin
 Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.

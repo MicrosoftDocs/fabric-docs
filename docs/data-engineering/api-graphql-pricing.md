@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.date: 05/16/2025
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.search.form: Fabric API for GraphQL pricing  # This article's title shouldn't change. If so, contact engineering.
 ---
