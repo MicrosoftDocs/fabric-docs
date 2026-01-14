@@ -27,13 +27,6 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 >- Mirroring shouldn't be enabled in your database.
 >- Multiple tables CDC isn't supported.
 
-## Get events from an Azure SQL Database CDC
-
-You can get events from an Azure SQL Database CDC into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
-
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]

@@ -49,12 +49,6 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
     After the query executes successfully, you enabled CDC in your Azure SQL managed instance.
 
-## Get events from Azure SQL Managed Instance (CDC)
-You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
-
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
