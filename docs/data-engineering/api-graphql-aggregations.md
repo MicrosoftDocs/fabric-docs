@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.date: 05/16/2025
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.search.form: Aggregations in API for GraphQL # This value shouldn't change. If so, contact engineering.
 ---

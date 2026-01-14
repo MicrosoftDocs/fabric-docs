@@ -4,7 +4,7 @@ description: This article provides an overview of the pricing model for Data Fac
 ms.reviewer: whhender
 ms.author: whhender
 author: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: configuration
 ms.date: 12/18/2024
 ---
