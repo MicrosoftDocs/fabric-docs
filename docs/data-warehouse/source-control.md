@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, pvenkat
 ms.date: 07/16/2025
-ms.topic: concept-article
+ms.topic: how-to
 ---
 
 # Source control (preview)
