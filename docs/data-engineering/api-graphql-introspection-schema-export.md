@@ -4,7 +4,7 @@ description: Learn about GraphQL introspection and how to export your GraphQL sc
 ms.reviewer: edlima
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.search.form: GraphQL Introspection and Schema Export
 ms.date: 04/18/2025

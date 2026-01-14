@@ -5,7 +5,7 @@ author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.date: 06/05/2025
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.search.form: Integrating APIM with API for GraphQL # This value shouldn't change. If so, contact engineering.
 ---

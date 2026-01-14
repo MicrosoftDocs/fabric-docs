@@ -5,7 +5,7 @@ description: Learn about the Fabric API for GraphQL editor, including where to f
 ms.reviewer: sngun
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom: null
 ms.search.form: GraphQL query editor
 ms.date: 08/21/2025
