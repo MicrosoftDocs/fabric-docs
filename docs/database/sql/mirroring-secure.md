@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 02/10/2025
-ms.topic: how-to
+ms.topic: concept-article
 ms.custom:
 ---
 

@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: srsaluru
 ms.date: 11/17/2025
-ms.topic: how-to
+ms.topic: concept-article
 ms.search.form: SQL database security
 ---
 
