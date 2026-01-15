@@ -71,6 +71,10 @@ If you use the global endpoint ('https://onelake.dfs.fabric.microsoft.com`) to q
 
 OneLake regional endpoints all follow the same format: `https://<region>-onelake.dfs.fabric.microsoft.com`. For example, a workspace attached to a capacity in the West US region would be accessible through the regional endpoint `https://westus-onelake.dfs.fabric.microsoft.com`.
 
+## Additional OneLake endpoints
+
+OneLake also supports a general FQDN ('https://api.onelake.fabric.microsoft.com'), along with a regional ('https://<region>-api.onelake.fabric.microsoft.com') and workspace ('https://<wsid>.z<xy>.onelake.fabric.microsoft.com') version.  These FQDNs function identically to the blob and DFS variants, but may be incompatible with some Azure Storage tooling which rely on the blob and DFS variants to use the correct Azure Storage APIs.
+
 ## Common issues
 
 If a tool or package compatible with ADLS isn't working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (`dfs.fabric.microsoft.com`) than ADLS (`dfs.core.windows.net`), some tools don't recognize the OneLake endpoint and block it. Some tools allow you to use custom endpoints (such as PowerShell). Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint. If you find a URL validation issue or have any other issues connecting to OneLake, [let us know](https://ideas.fabric.microsoft.com/).
