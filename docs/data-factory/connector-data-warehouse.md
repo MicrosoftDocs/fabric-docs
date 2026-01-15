@@ -59,7 +59,7 @@ You can set up a Data Warehouse connection in the **Get Data** page or in the **
     
     1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
 
-        :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
+        :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-connection.png" alt-text="Screenshot of selecting a Data Warehouse connection in pipelines.":::
 
     >[!NOTE]
     >If you create the connection through **Manage connections and gateways** page:
