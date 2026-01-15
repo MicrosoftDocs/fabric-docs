@@ -167,7 +167,7 @@ items:
       href: service-admin-portal-insights.md
     - name: Datamart settings
       href: service-admin-portal-datamart.md
-    - name: Data model settings
+    - name: Semantic model settings
       href: service-admin-portal-data-model.md
     - name: Quick measure suggestions settings
       href: service-admin-portal-quick-measure-suggestions-settings.md
