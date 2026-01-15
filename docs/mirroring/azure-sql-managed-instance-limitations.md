@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
 ms.date: 06/03/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - references_regions
 ---

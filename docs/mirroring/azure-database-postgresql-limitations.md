@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: scoriani
 ms.date: 11/17/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - references_regions
 ---

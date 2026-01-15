@@ -4,7 +4,7 @@ description: Learn how sensitivity labels can be propagated to downstream conten
 author: msmimart
 ms.author: mimart
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 01/06/2026
 LocalizationGroup: Data from files
