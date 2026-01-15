@@ -10,14 +10,14 @@ ms.topic: tutorial
 
 # Ontology (preview) tutorial part 2: Enrich the ontology with additional data
 
-In this tutorial step, enrich your ontology further by adding a new *Freezer* entity type. This entity type adds more domain context and introduces properties for time series data, which reflects live operational information. 
+In this tutorial step, you enrich your ontology by adding a new *Freezer* entity type. This entity type adds more domain context and introduces properties for time series data, which reflects live operational information. 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 First, you create the new entity type and define properties without binding them to specific data. Then, you bind the static data to those properties in a separate step. Later, you add time series data to the entity type by creating new properties and binding time series data to them in a single data binding operation.
 
 >[!NOTE]
->For both static and time series data, you have the option to create properties without binding data and bind data afterwards, or to create properties and bind data to them in a single step. This article demonstrates both approaches.
+>For both static and time series data, you can create properties without binding data and bind data later, or create properties and bind data to them in a single step. This article demonstrates both approaches.
 
 Finally, you create a new relationship type to represent the connection between a store and its freezers.
 
@@ -63,7 +63,7 @@ Next, bind static data to the properties you created on the *Freezer* entity typ
 1. For your data source, select the *OntologyDataLH* lakehouse and the *freezer* table. Select **Next**.
 
 1. Configure a static data binding for the properties.
-    1. For **Binding type**, leave the default selection of **Static**.
+    1. For **Binding type**, use the default selection of **Static**.
     1. Under **Bind your properties**, the properties you created populate automatically with links to matching columns from the *freezer* table.
     1. Select **Save**.
 
@@ -80,17 +80,17 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 1. For your data source, select the *TelemetryDataEH* eventhouse and the *FreezerTelemetry* table. Select **Next**.
 
 1. Configure a time series data binding.
-    1. For **Binding type**, leave the default selection of **Timeseries**. For **Source data timestamp column**, select `timestamp`.
-    1. Under **Bind your properties > Static**, two columns populate that match static properties already defined on the entity.
+    1. For **Binding type**, keep the default selection of **Timeseries**. For **Source data timestamp column**, select `timestamp`.
+    1. Under **Bind your properties > Static**, two columns populate that match static properties already defined on the entity. Keep them as they are.
 
         :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png" alt-text="Screenshot of the default static properties." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png":::
 
-    1. Under **Bind your properties > Timeseries**, the time series columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Leave the default selections.
+    1. Under **Bind your properties > Timeseries**, the time series columns from the *FreezerTelemetry* table populate automatically with matching property names for the *Freezer* entity type. Keep the default selections.
     1. Select **Save**.
 
     :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-b.png" alt-text="Screenshot of time series data for Freezer." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-b.png":::
 
-Now the *Freezer* entity has two data bindings, one with static data from the *freezer* lakehouse table and one with streaming data from the *FreezerTelemetry* eventhouse table.
+Now the *Freezer* entity has two data bindings: one with static data from the *freezer* lakehouse table and one with streaming data from the *FreezerTelemetry* eventhouse table.
 
 :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-4.png" alt-text="Screenshot of both data bindings for Freezer." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-4.png":::
 
@@ -106,13 +106,13 @@ Finally, create a new relationship type to represent the connection between a st
     1. **Source entity type**: *Store*
     1. **Target entity type**: *Freezer*
 1. The **Relationship configuration** pane opens, where you can configure additional information. Enter the following details (some fields become visible based on other selections) and select **Create**.
-    1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *freezer* table. This is the table in the source data that can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
+    1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
     1. **Source entity type > Source column**: Select `StoreId`. This setting specifies the column in the relationship source data table (*freezer >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same in both tables.
     1. **Target entity type > Source column**: Select `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column.
 
     Here's what the relationship configuration looks like:
 
-  :::image type="content" source="media/tutorial-2-enrich-ontology/relationship.png" alt-text="Screenshot of the Store operates Freezer relationship type.":::
+    :::image type="content" source="media/tutorial-2-enrich-ontology/relationship.png" alt-text="Screenshot of the Store operates Freezer relationship type.":::
 
 ## Next steps
 

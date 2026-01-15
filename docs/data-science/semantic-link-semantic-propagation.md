@@ -5,7 +5,7 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: ruxu
 reviewer: ruixinxu
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/15/2025
 ms.search.form: semantic link
 ---
