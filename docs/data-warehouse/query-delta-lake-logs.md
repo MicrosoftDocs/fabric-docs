@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: kecona
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
 ---

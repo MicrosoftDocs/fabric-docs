@@ -14,7 +14,7 @@ Data binding in ontology (preview) connects the schema of entity types, relation
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-With data binding, you can:
+By using data binding, you can:
 
 * Seamlessly integrate data into a semantic layer without copying source data
 * Enrich entity types with up-to-date, contextually relevant information from batch and real-time sources
@@ -27,10 +27,10 @@ Before binding data to your ontology, make sure you have the following prerequis
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
     * **Ontology item (preview)** enabled on your tenant.
 * An ontology (preview) item with [entity types](how-to-create-entity-types.md) created.
-* Data that is prepared according to these guidelines:
+* Data that you prepared according to these guidelines:
     * The data is in Microsoft Fabric, in [OneLake](../../onelake/onelake-overview.md) or an [eventhouse](../../real-time-intelligence/eventhouse.md).
     * The data is organized, and has gone through any necessary ETL required by your business.
-    * time series data is in *columnar* format. In a columnar format, time series data is structured so that each row represents a timestamped observation for an entity, and columns represent the property values (like temperature or pressure).
+    * Time series data is in *columnar* format. In a columnar format, time series data is structured so that each row represents a timestamped observation for an entity, and columns represent the property values (like temperature or pressure).
     * The data contains all required information for it to be modeled. For more information, see [Core concept: Data binding](overview.md#data-binding).
 
 ## Key concepts
@@ -50,34 +50,34 @@ This section contains step-by-step instructions for adding and managing data bin
 
 ### Add static data
 
-First, bind static data. Static data bindings must be created before time series data bindings.
+First, bind static data. Create static data bindings before creating time series data bindings.
 
-1. Select the entity to which you want to bind data in the **Entity Types** pane. This opens the **Entity type configuration** pane for the entity type. In the **Bindings** tab, select **Add data to entity type**.
+1. Select the entity to which you want to bind data in the **Entity Types** pane. This selection opens the **Entity type configuration** pane for the entity type. In the **Bindings** tab, select **Add data to entity type**.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-1.png" alt-text="Screenshot of the data binding tab in the entity type configuration.":::
 
 1. The data source selection appears. Select a OneLake data source that contains the data to be bound to the entity. Select **Connect**.
 
-    When the data source is loaded, choose a specific table from the data source to be used as the data binding source table. Select **Next**.
+    When the data source loads, choose a specific table from the data source to use as the data binding source table. Select **Next**.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-2.png" alt-text="Screenshot of the source selection screen for lakehouse or eventhouse.":::
 
-1. For the **Binding type**, select **Static**. Only one type can be selected per data binding. An example of static data is a table with descriptive attributes about stores, like the store ID value, square footage, and location. 
+1. For the **Binding type**, select **Static**. Select only one type per data binding. An example of static data is a table with descriptive attributes about stores, like the store ID value, square footage, and location. 
 
-1. Under **Bind your properties**, select the source columns from the source table that you want to model on your entity type. Then, enter a name for each property that shows on the entity type (it can be the same as the source column name, or something different).
+1. Under **Bind your properties**, select the source columns from the source table that you want to model on your entity type. Then, enter a name for each property that shows on the entity type. The name can be the same as the source column name or something different.
 
     >[!NOTE] 
     >Custom property names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character. Property names must be unique across all entity types.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-3.png" alt-text="Screenshot of the property screen in data binding." lightbox="media/how-to-bind-data/bind-data-3.png":::
 
-    If you've already [created properties](how-to-create-entity-types.md#create-an-entity-type) on your entity type, you can select their names in the **Property name** column to map data to them. When you select an existing property name, the **Source column** options are grouped into two sections: Available and Unavailable. Available columns are columns in your source table that match the declared data type of the property you're trying to match. Unavailable columns are ones that don't match the type, so they can't be bound to that property.
+    If you already [created properties](how-to-create-entity-types.md#create-an-entity-type) on your entity type, you can select their names in the **Property name** column to map data to them. When you select an existing property name, the **Source column** options are grouped into two sections: Available and Unavailable. Available columns are columns in your source table that match the declared data type of the property you're trying to match. Unavailable columns are ones that don't match the type, so they can't be bound to that property.
 
     :::image type="content" source="media/how-to-bind-data/bind-data-3-availability.png" alt-text="Screenshot of available and unavailable properties during data binding.":::
 
 1. Select **Save** to save your static data binding.
 
-1. You see a summary of your data binding(s) in the **Bindings** tab, and a summary of properties (including properties added during data binding) in the **Properties** tab.
+1. You see a summary of your data bindings in the **Bindings** tab, and a summary of properties (including properties added during data binding) in the **Properties** tab.
 
     :::image type="content" source="media/how-to-bind-data/tab-bindings.png" alt-text="Screenshot of the data bindings tab.":::  
     
@@ -85,7 +85,7 @@ First, bind static data. Static data bindings must be created before time series
 
 1. Next, set the **Key**. The entity type key value represents a unique identifier for each record of ingested data.
 
-    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select uniquely identify a record.
 
     :::image type="content" source="media/how-to-bind-data/entity-type-key.png" alt-text="Screenshot of adding an entity type key.":::
 
@@ -96,7 +96,7 @@ First, bind static data. Static data bindings must be created before time series
 ### Add time series data
 
 >[!IMPORTANT]
-> Before you bind time series data to an entity type, make sure your static data binding is complete. There must be at least one property on the entity type with static data bound to it that can be used as the key to contextualize your time series data. This static data must exactly match a column in your time series data.
+> Before you bind time series data to an entity type, make sure your static data binding is complete. The entity type must have at least one property with static data bound to it that you can use as the key to contextualize your time series data. This static data must exactly match a column in your time series data.
 
 1. Follow the steps described earlier for [static data](#add-static-data) to start adding data to the entity type and select your data source. You can select a source from OneLake or Eventhouse.
 1. For the **Binding type**, select **Timeseries**. Select the **Source data timestamp column** that contains the timestamp values.
@@ -118,15 +118,15 @@ Next to the data binding name, select **...** to open its options. From there, y
 
 ## Limitations
 
-Limitations of data binding:
+Data binding has the following limitations:
 
-* Lakehouses with OneLake security enabled are not supported as data sources for bindings. If a lakehouse has OneLake security enabled, you won't be able to use it as a data source in ontology.
+* You can't use lakehouses with OneLake security enabled as data sources for bindings. If a lakehouse has OneLake security enabled, you can't use it as a data source in ontology.
 * Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. 
 * Changing the lakehouse table name after mappings are created may result in problems accessing data in the preview experience.
 * The ontology graph does not support delta tables with column mapping enabled. Column mapping can be enabled manually, or is enabled automatically on lakehouse tables where column names have certain special characters, including `,`, `;`, `{}`, `()`, `\n`, `\t`, `=`, and space. It also happens automatically on the delta tables that store data for import mode semantic model tables.
-* Each entity type supports one **static** data binding. This means you can't combine static data from multiple sources for a single entity type. 
-    * Static data sources must be OneLake-backed sources.
-    * Entity types **do** support bindings from multiple **time series** sources. Time series data can be bound from both eventhouse and lakehouse sources.
+* Each entity type supports one **static** data binding. You can't combine static data from multiple sources for a single entity type. 
+    * You must use OneLake-backed sources for static data.
+    * Entity types **do** support bindings from multiple **time series** sources. You can bind time series data from both eventhouse and lakehouse sources.
 
 ### Troubleshooting
 
