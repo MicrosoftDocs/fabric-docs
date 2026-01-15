@@ -1,10 +1,10 @@
 ---
 title: Performance Guidelines
-description: This article contains a list of performance guidelines for the warehouse item in Microsoft Fabric.
+description: Get performance guidelines for Microsoft Fabric Data Warehouse to optimize queries, ingestion, table design, statistics, caching, and more.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul, procha, fipopovi, twcyril
-ms.date: 11/03/2025
+ms.date: 01/14/2026
 ms.topic: best-practice
 ms.custom:
 ---
@@ -12,143 +12,9 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This article contains best practices for data ingestion, table management, data preparation, statistics, and querying in warehouses and SQL analytics endpoints. Performance tuning and optimization can present unique challenges, but they also offer valuable opportunities to maximize the capabilities of your data solutions. 
+This article contains best practices for data ingestion, table management, data preparation, statistics, and querying in warehouses and SQL analytics endpoints. Performance tuning and optimization can present unique challenges, but they also offer valuable opportunities to maximize the capabilities of your data solutions.
 
 To monitor performance on your warehouse, see [Monitor Fabric Data warehouse](monitoring-overview.md).
-
-## Data type optimization
-
-Choosing the right data types is essential for performance and storage efficiency in your warehouse. The following guidelines help ensure your schema design supports fast queries, efficient storage, and maintainability. 
-
-For more information on data types supported by Fabric Data Warehouse, see [Data types in Fabric Data Warehouse](data-types.md).
-
-> [!TIP]
-> If you're using external tools to generate tables or queries, such as with a code-first deployment methodology, carefully review the column data types. Character data type lengths and queries should follow these best practices.
-
-### Match data types to data semantics
-
-To ensure both clarity and performance, it's important to align each column's data type with the actual nature and behavior of the data it stores.
-
-- Use **date**, **time**, or **datetime2(n)** for temporal values instead of storing them as strings.
-- Use integer types for numeric values, unless formatting (for example, leading zeroes) is required.
-- Use character types (**char**, **varchar**) when preserving formatting is essential (for example, numbers that can begin with zero, product codes, numbers with dashes).
-
-### Use integer types for whole numbers
-
-When storing values such as identifiers, counters, or other whole numbers, prefer integer types (**smallint**, **int**, **bigint**) over **decimal**/**numeric**. Integer types require less storage than data types that allow for digits to the right of the decimal point. As a result, they allow faster arithmetic and comparison operations and improve indexing and query performance.
-
-Be aware of the value ranges for each integer data type supported by Fabric Data Warehouse. For more information, [int, bigint, smallint (Transact-SQL)](/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql?view=fabric&preserve-view=true).
-
-### Consider the use of decimal and numeric precision and scale
-
-If you must use **decimal**/**numeric**, when creating the column choose the smallest [precision and scale](/sql/t-sql/data-types/precision-scale-and-length-transact-sql?view=fabric&preserve-view=true) that can accommodate your data. Over-provisioning precision increases storage requirements and can degrade performance as data grows. 
-
-- Anticipate your warehouse's expected growth and needs. For example, if you plan to store no more than four digits to the right of the decimal point, use **decimal(9,4)** or **decimal(19,4)** for most efficient storage. 
-- Always specify precision and scale when creating a **decimal**/**numeric** column. When created in a table defined as just `decimal`, without specifying `(p,s)` for [precision and scale](/sql/t-sql/data-types/precision-scale-and-length-transact-sql?view=fabric&preserve-view=true), a **decimal**/**numeric** column is created as `decimal(18,0)`. A [decimal](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true#p-precision) with a precision of 18 consumes 9 bytes of storage per row. A scale of `0` doesn't store data to the right of the decimal point. For many business whole numbers, **smallint**, **int**, **bigint** are much more efficient than `decimal(18,0)`. For example, any nine-digit whole number can be stored as an **integer** data type for 4 bytes of storage per row.
-
-For complete information, see [decimal and numeric (Transact-SQL)](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true).
-
-### Consider when to use varchar over char
-
-Use **varchar(n)** instead of **char(n)** for string columns, unless fixed-length padding is explicitly required. A **varchar** column stores only the actual string length per row, plus a small overhead, and reduces wasted space, which improves I/O efficiency.
-
-- Use **varchar(n)** for values like names, addresses, and descriptions, as they have widely variable values. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
-- Use **char(n)** when you know the string will be a fixed length each time. For example, storing the string `000000000` as a **char(9)** makes sense if the string is always exactly 9 numeric characters that can start with a zero.
-- The length `n` in the column data type declaration is the storage bytes. For multibyte encoding character sets such as UTF-8, the encoding for Fabric Data Warehouse, Latin characters and numbers take 1 byte of storage. However, there are Unicode characters that require more than 1 byte, such as Japanese characters that require 3 bytes to store, so the number of Unicode characters actually stored can be less than the data type length `n`. For more information, see [char and varchar Arguments](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true#char---n--).
-
-### Avoid nullable columns when possible
-
-Define columns as `NOT NULL` when the data model allows. By default, a column in a table allows `NULL` values. Nullable columns have the following characteristics:
-
-- They add metadata overhead.
-- Can reduce the effectiveness of query optimizations and statistics.
-- Can impact performance in large-scale analytical queries. 
-
-## Data ingestion and preparation into a warehouse 
-
-### COPY INTO
-
-The [T-SQL COPY INTO command](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) is the recommended way for ingesting data from Azure Data Lake Storage into Fabric Data Warehouse. For more information and examples, see [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md).
-
-Consider the following recommendations for best performance:
-
-- **File size:** Ensure that each file you're ingesting is ideally between 100 MB and 1 GB for maximized throughput. This helps to optimize the ingestion process and improve performance. 
-- **Number of files:** To maximize parallelism and query performance, aim to generate a high number of files. Prioritize creating as many files as possible while maintaining a minimum file size of 100 MB.
-- **Parallel loading:** Utilize multiple `COPY INTO` statements running in parallel to load data into different tables. This approach can significantly reduce ETL/ELT window due to parallelism.
-- **Capacity size**: For larger data volumes, consider scaling out to larger Fabric Capacity to get the additional compute resources needed to accommodate additional number of parallel processing and larger data volumes.
-
-Fabric Data Warehouse also supports `BULK INSERT` statement that is a synonym for `COPY INTO`. The same recommendation applies to `BULK INSERT` statement.
-
-### CTAS or INSERT
-
-Use [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) or `INSERT` combined with `SELECT FROM` Lakehouse table/shortcut commands. These methods could be more performant and efficient than using pipelines, allowing for faster and more reliable data transfers. For more information and examples, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md).
-
-The concept of increasing the number of parallelism and scaling to larger Fabric Capacity also applies to CTAS/INSERT operations to increase throughput.
-
-### Read data from Azure Data Lake Storage or Blob Storage with OPENROWSET
-
-The [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric&preserve-view=true) function enables you to read CSV or Parquet files from Azure Data Lake or Azure Blob storage, without ingesting it to Warehouse. For more information and examples, see [Browse file content using OPENROWSET function](browse-file-content-with-openrowset.md).
-
-When reading data using the OPENROWSET function, consider the following recommendations for best performance:
-
-- **Parquet:** Try to use Parquet instead of CSV, or convert CSV to Parquet, if you're frequently querying the files. Parquet is a columnar format. Because data is compressed, its file sizes are smaller than CSV files that contain the same data. Fabric Data Warehouse skips the columns and rows that aren't needed in a query if you're reading Parquet files.
-- **File size:** Ensure that each file you're ingesting is ideally between 100 MB and 1 GB for maximized throughput. This helps to optimize the ingestion process and improve performance. It's better to have equally sized files.
-- **Number of files:** To maximize parallelism and query performance, aim to generate a high number of files. Prioritize creating as many files as possible while maintaining a minimum file size of 100 MB.
-- **Partition:** Partition your data by storing partitions into different folders or file names if your workload filters them by partition columns.
-- **Estimation:** Try to set `ROWS_PER_BATCH` to match the number of rows in the underlying files if you feel that you aren't getting the expected performance.
-- **Capacity size:** For larger data volumes, consider scaling out to larger SKU to get more compute resources needed to accommodate extra number of parallel processing and larger data volumes.
-
-### Avoid trickle inserts, updates, and deletes  
-
-To ensure efficient file layout and optimal query performance in Fabric Data Warehouse, avoid using many small `INSERT`, `UPDATE`, and `DELETE` transactions. These row-level changes generate a new Parquet file for each operation, resulting in a large number of small files and fragmented row groups. This fragmentation leads to:
-
-- Increased query latency due to inefficient file scanning.
-- Higher storage and compute costs.
-- Greater reliance on background compaction processes.
-
-Recommended approaches:
-
-- Batch transactions that write into Fabric Data Warehouse. 
-   - For example, instead of many small `INSERT` statements, pre-stage data together, and insert data in one `INSERT` statement.
-- Use [COPY INTO](#copy-into) for bulk inserts and perform updates and deletes in batches whenever possible.
-- Maintain a minimum imported file size of 100 MB to ensure efficient row group formation.
-- For more guidance and best practices on data ingestion, see [Best practices to ingest data into a warehouse](ingest-data.md#best-practices).
-
-### Data compaction
-
-In Fabric Data Warehouse, data compaction is a background optimization process in Fabric Data Warehouse that merges small, inefficient Parquet files into fewer, larger files. Often these files are created by frequent trickle `INSERT`, `UPDATE`, or `DELETE` operations. Data compaction reduces file fragmentation, improves row group efficiency, and enhances overall query performance.
-
-Although the Fabric Data Warehouse engine automatically resolves fragmentation over time through data compaction, performance might degrade until the process completes. Data compaction runs automatically without user intervention for Fabric Data Warehouse. 
-
-Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) after significant data changes to maintain optimal storage layout.
-
-#### Data compaction preemption
-
-Fabric Data Warehouse intelligently and actively avoids write-write conflicts between background compaction tasks and user operations. Starting in October 2025, data compaction preemption is enabled. 
-
-Compaction checks for shared locks held by user queries. If data compaction detects a lock before it begins, it waits and will try again later. If data compaction starts and detects a lock before it commits, compaction aborts to avoid a write conflict with the user query.
-
-Write-write conflicts with the Fabric Data Warehouse background data compaction service are still possible. It is possible to create a write-write conflict with data compaction, for example, if an application uses an explicit transaction and performs non-conflicting work (like `INSERT`) before a conflicting operation (`UPDATE`, `DELETE`, `MERGE`). Data compaction can commit successfully, causing the explicit transaction later to fail due to a conflict. For more information on write-write or update conflicts, see [Transactions in Warehouse tables in Microsoft Fabric](transactions.md#schema-locks).
-
-## V-Order in Fabric Data Warehouse
-
-[V-Order](../data-engineering/delta-optimization-and-v-order.md) is a write time optimization to the parquet file format that enables fast reads in the Microsoft Fabric. V-Order in Fabric Data Warehouse improves query performance by applying sorting and compression to table files. 
-
-By default, V-Order is enabled on all warehouses to ensure that read operations, especially analytical queries, are as fast and efficient as possible.
-
-However, V-Order introduces a small ingestion overhead, noticeable in write-heavy workloads. For this reason, disabling V-Order should be considered only for warehouses that are strictly write-intensive and not used for frequent querying. It's important to note that once V-Order is disabled on a warehouse, it can't be re-enabled.
-
-Before deciding to disable V-Order, users should thoroughly test their workload performance to ensure the trade-off is justified. A common pattern is to use a staging warehouse with V-Order disabled for high-throughput ingestion, data transformation, and ingest the underlying data into a V-Order enabled Data Warehouse for better read performance. For more information, see [Disable V-Order on Warehouse in Microsoft Fabric](disable-v-order.md). 
-
-## Clone tables instead of copying tables
-
-[Table clones in Fabric Data Warehouse](clone-table.md) provide a fast and efficient way to create tables without copying data. With a zero-copy cloning approach, only the table's metadata is duplicated, while the underlying data files are referenced directly from the OneLake. This allows users to create consistent, reliable table copies almost instantly, without the overhead of full data duplication. 
-
-Zero-copy clones are ideal for scenarios such as development, testing, and backup, offering a high-performance, storage-efficient solution that helps reduce infrastructure costs.
-
-- Cloned tables also copy all key [security features](security.md) from the source, including Row-Level Security (RLS), Column-Level Security (CLS), and Dynamic Data Masking (DDM), without the need for reapplying policies after cloning. 
-- Clones can be created as of a specific point in time within the data retention period, supporting [time-travel capabilities](time-travel.md). 
-- Cloned tables exist independently of their source, changes made to the source don't affect the clone, and changes to the clone don't impact the source. Either the source or the clone can be dropped independently.
 
 ## Query performance
 
@@ -174,7 +40,9 @@ Cold starts typically occur when:
 - If data is accessed for the first time, query execution is delayed until the necessary [statistics](statistics.md) are automatically generated.
 - Fabric Data Warehouse automatically pauses nodes after some period of inactivity to reduce cost, and adds nodes as part of autoscaling. Resuming or creating nodes typically takes less than one second.
 
-These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to come available. For more information, see [Caching in Fabric data warehousing](caching.md).
+These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to come available. 
+
+In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric data warehousing](caching.md).
 
 You can detect cold start effects caused by fetching data from remote storage into memory by querying the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view. Check the `data_scanned_remote_storage_mb` column: 
 
@@ -183,6 +51,12 @@ You can detect cold start effects caused by fetching data from remote storage in
 
 > [!IMPORTANT]
 > Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
+
+#### Result set caching (preview)
+
+Distinct from in-memory and disk caching, result set caching is a built-in optimization for warehouses and Lakehouse SQL analytics endpoints in Fabric that reduces query read latency. It stores the final result of eligible `SELECT` statements so subsequent cache hits can skip compilation and data processing, returning results faster.
+
+During the current preview, result set caching is off by default for all items. For more information on enabling, see [Result set caching (preview)](result-set-caching.md).
 
 ### Queries on tables with string columns  
 
@@ -300,6 +174,142 @@ For example: if a query targets only 10% of a table's data, clustering ensures t
 - For complete information on data clustering, see [Data clustering in Fabric Data Warehouse](data-clustering.md).
 - For a tutorial of data clustering and how to measure its positive effect on performance, see [Use data clustering in Fabric Data Warehouse](tutorial-data-clustering.md).
 
+
+## Data type optimization
+
+Choosing the right data types is essential for performance and storage efficiency in your warehouse. The following guidelines help ensure your schema design supports fast queries, efficient storage, and maintainability. 
+
+For more information on data types supported by Fabric Data Warehouse, see [Data types in Fabric Data Warehouse](data-types.md).
+
+> [!TIP]
+> If you're using external tools to generate tables or queries, such as with a code-first deployment methodology, carefully review the column data types. Character data type lengths and queries should follow these best practices.
+
+### Match data types to data semantics
+
+To ensure both clarity and performance, it's important to align each column's data type with the actual nature and behavior of the data it stores.
+
+- Use **date**, **time**, or **datetime2(n)** for temporal values instead of storing them as strings.
+- Use integer types for numeric values, unless formatting (for example, leading zeroes) is required.
+- Use character types (**char**, **varchar**) when preserving formatting is essential (for example, numbers that can begin with zero, product codes, numbers with dashes).
+
+### Use integer types for whole numbers
+
+When storing values such as identifiers, counters, or other whole numbers, prefer integer types (**smallint**, **int**, **bigint**) over **decimal**/**numeric**. Integer types require less storage than data types that allow for digits to the right of the decimal point. As a result, they allow faster arithmetic and comparison operations and improve indexing and query performance.
+
+Be aware of the value ranges for each integer data type supported by Fabric Data Warehouse. For more information, [int, bigint, smallint (Transact-SQL)](/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql?view=fabric&preserve-view=true).
+
+### Consider the use of decimal and numeric precision and scale
+
+If you must use **decimal**/**numeric**, when creating the column choose the smallest [precision and scale](/sql/t-sql/data-types/precision-scale-and-length-transact-sql?view=fabric&preserve-view=true) that can accommodate your data. Over-provisioning precision increases storage requirements and can degrade performance as data grows. 
+
+- Anticipate your warehouse's expected growth and needs. For example, if you plan to store no more than four digits to the right of the decimal point, use **decimal(9,4)** or **decimal(19,4)** for most efficient storage. 
+- Always specify precision and scale when creating a **decimal**/**numeric** column. When created in a table defined as just `decimal`, without specifying `(p,s)` for [precision and scale](/sql/t-sql/data-types/precision-scale-and-length-transact-sql?view=fabric&preserve-view=true), a **decimal**/**numeric** column is created as `decimal(18,0)`. A [decimal](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true#p-precision) with a precision of 18 consumes 9 bytes of storage per row. A scale of `0` doesn't store data to the right of the decimal point. For many business whole numbers, **smallint**, **int**, **bigint** are much more efficient than `decimal(18,0)`. For example, any nine-digit whole number can be stored as an **integer** data type for 4 bytes of storage per row.
+
+For complete information, see [decimal and numeric (Transact-SQL)](/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=fabric&preserve-view=true).
+
+### Consider when to use varchar over char
+
+Use **varchar(n)** instead of **char(n)** for string columns, unless fixed-length padding is explicitly required. A **varchar** column stores only the actual string length per row, plus a small overhead, and reduces wasted space, which improves I/O efficiency.
+
+- Use **varchar(n)** for values like names, addresses, and descriptions, as they have widely variable values. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
+- Use **char(n)** when you know the string will be a fixed length each time. For example, storing the string `000000000` as a **char(9)** makes sense if the string is always exactly 9 numeric characters that can start with a zero.
+- The length `n` in the column data type declaration is the storage bytes. For multibyte encoding character sets such as UTF-8, the encoding for Fabric Data Warehouse, Latin characters and numbers take 1 byte of storage. However, there are Unicode characters that require more than 1 byte, such as Japanese characters that require 3 bytes to store, so the number of Unicode characters actually stored can be less than the data type length `n`. For more information, see [char and varchar Arguments](/sql/t-sql/data-types/char-and-varchar-transact-sql?view=fabric&preserve-view=true#char---n--).
+
+### Avoid nullable columns when possible
+
+Define columns as `NOT NULL` when the data model allows. By default, a column in a table allows `NULL` values. Nullable columns have the following characteristics:
+
+- They add metadata overhead.
+- Can reduce the effectiveness of query optimizations and statistics.
+- Can impact performance in large-scale analytical queries. 
+
+## Data ingestion and preparation into a warehouse 
+
+### COPY INTO
+
+The [T-SQL COPY INTO command](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) is the recommended way for ingesting data from Azure Data Lake Storage into Fabric Data Warehouse. For more information and examples, see [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md).
+
+Consider the following recommendations for best performance:
+
+- **File size:** Ensure that each file you're ingesting is ideally between 100 MB and 1 GB for maximized throughput. This helps to optimize the ingestion process and improve performance. 
+- **Number of files:** To maximize parallelism and query performance, aim to generate a high number of files. Prioritize creating as many files as possible while maintaining a minimum file size of 100 MB.
+- **Parallel loading:** Utilize multiple `COPY INTO` statements running in parallel to load data into different tables. This approach can significantly reduce ETL/ELT window due to parallelism.
+- **Capacity size**: For larger data volumes, consider scaling out to larger Fabric Capacity to get the additional compute resources needed to accommodate additional number of parallel processing and larger data volumes.
+
+Fabric Data Warehouse also supports `BULK INSERT` statement that is a synonym for `COPY INTO`. The same recommendation applies to `BULK INSERT` statement.
+
+### CTAS or INSERT
+
+Use [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) or `INSERT` combined with `SELECT FROM` Lakehouse table/shortcut commands. These methods could be more performant and efficient than using pipelines, allowing for faster and more reliable data transfers. For more information and examples, see [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md).
+
+The concept of increasing the number of parallelism and scaling to larger Fabric Capacity also applies to CTAS/INSERT operations to increase throughput.
+
+### Read data from Azure Data Lake Storage or Blob Storage with OPENROWSET
+
+The [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric&preserve-view=true) function enables you to read CSV or Parquet files from Azure Data Lake or Azure Blob storage, without ingesting it to Warehouse. For more information and examples, see [Browse file content using OPENROWSET function](browse-file-content-with-openrowset.md).
+
+When reading data using the OPENROWSET function, consider the following recommendations for best performance:
+
+- **Parquet:** Try to use Parquet instead of CSV, or convert CSV to Parquet, if you're frequently querying the files. Parquet is a columnar format. Because data is compressed, its file sizes are smaller than CSV files that contain the same data. Fabric Data Warehouse skips the columns and rows that aren't needed in a query if you're reading Parquet files.
+- **File size:** Ensure that each file you're ingesting is ideally between 100 MB and 1 GB for maximized throughput. This helps to optimize the ingestion process and improve performance. It's better to have equally sized files.
+- **Number of files:** To maximize parallelism and query performance, aim to generate a high number of files. Prioritize creating as many files as possible while maintaining a minimum file size of 100 MB.
+- **Partition:** Partition your data by storing partitions into different folders or file names if your workload filters them by partition columns.
+- **Estimation:** Try to set `ROWS_PER_BATCH` to match the number of rows in the underlying files if you feel that you aren't getting the expected performance.
+- **Capacity size:** For larger data volumes, consider scaling out to larger SKU to get more compute resources needed to accommodate extra number of parallel processing and larger data volumes.
+
+### Avoid trickle inserts, updates, and deletes  
+
+To ensure efficient file layout and optimal query performance in Fabric Data Warehouse, avoid using many small `INSERT`, `UPDATE`, and `DELETE` transactions. These row-level changes generate a new Parquet file for each operation, resulting in a large number of small files and fragmented row groups. This fragmentation leads to:
+
+- Increased query latency due to inefficient file scanning.
+- Higher storage and compute costs.
+- Greater reliance on background compaction processes.
+
+Recommended approaches:
+
+- Batch transactions that write into Fabric Data Warehouse. 
+   - For example, instead of many small `INSERT` statements, pre-stage data together, and insert data in one `INSERT` statement.
+- Use [COPY INTO](#copy-into) for bulk inserts and perform updates and deletes in batches whenever possible.
+- Maintain a minimum imported file size of 100 MB to ensure efficient row group formation.
+- For more guidance and best practices on data ingestion, see [Best practices to ingest data into a warehouse](ingest-data.md#best-practices).
+
+### Data compaction
+
+In Fabric Data Warehouse, data compaction is a background optimization process that merges small, inefficient Parquet files into fewer, larger files. Often these files are created by frequent trickle `INSERT`, `UPDATE`, or `DELETE` operations. Data compaction reduces file fragmentation, improves row group efficiency, and enhances overall query performance.
+
+Although the Fabric Data Warehouse engine automatically resolves fragmentation over time through data compaction, performance might degrade until the process completes. Data compaction runs automatically without user intervention for Fabric Data Warehouse. 
+
+Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) after significant data changes to maintain optimal storage layout.
+
+#### Data compaction preemption
+
+Fabric Data Warehouse intelligently and actively avoids write-write conflicts between background compaction tasks and user operations. Starting in October 2025, data compaction preemption is enabled. 
+
+Compaction checks for shared locks held by user queries. If data compaction detects a lock before it begins, it waits and will try again later. If data compaction starts and detects a lock before it commits, compaction aborts to avoid a write conflict with the user query.
+
+Write-write conflicts with the Fabric Data Warehouse background data compaction service are still possible. It is possible to create a write-write conflict with data compaction, for example, if an application uses an explicit transaction and performs non-conflicting work (like `INSERT`) before a conflicting operation (`UPDATE`, `DELETE`, `MERGE`). Data compaction can commit successfully, causing the explicit transaction later to fail due to a conflict. For more information on write-write or update conflicts, see [Transactions in Warehouse tables in Microsoft Fabric](transactions.md#schema-locks).
+
+## V-Order in Fabric Data Warehouse
+
+[V-Order](../data-engineering/delta-optimization-and-v-order.md) is a write time optimization to the parquet file format that enables fast reads in Microsoft Fabric. V-Order in Fabric Data Warehouse improves query performance by applying sorting and compression to table files. 
+
+By default, V-Order is enabled on all warehouses to ensure that read operations, especially analytical queries, are as fast and efficient as possible.
+
+However, V-Order introduces a small ingestion overhead, noticeable in write-heavy workloads. For this reason, disabling V-Order should be considered only for warehouses that are strictly write-intensive and not used for frequent querying. It's important to note that once V-Order is disabled on a warehouse, it can't be re-enabled.
+
+Before deciding to disable V-Order, users should thoroughly test their workload performance to ensure the trade-off is justified. A common pattern is to use a staging warehouse with V-Order disabled for high-throughput ingestion, data transformation, and ingest the underlying data into a V-Order enabled Data Warehouse for better read performance. For more information, see [Disable V-Order on Warehouse in Microsoft Fabric](disable-v-order.md). 
+
+## Clone tables instead of copying tables
+
+[Table clones in Fabric Data Warehouse](clone-table.md) provide a fast and efficient way to create tables without copying data. With a zero-copy cloning approach, only the table's metadata is duplicated, while the underlying data files are referenced directly from the OneLake. This allows users to create consistent, reliable table copies almost instantly, without the overhead of full data duplication. 
+
+Zero-copy clones are ideal for scenarios such as development, testing, and backup, offering a high-performance, storage-efficient solution that helps reduce infrastructure costs.
+
+- Cloned tables also copy all key [security features](security.md) from the source, including Row-Level Security (RLS), Column-Level Security (CLS), and Dynamic Data Masking (DDM), without the need for reapplying policies after cloning. 
+- Clones can be created as of a specific point in time within the data retention period, supporting [time-travel capabilities](time-travel.md). 
+- Cloned tables exist independently of their source, changes made to the source don't affect the clone, and changes to the clone don't impact the source. Either the source or the clone can be dropped independently.
+
+
 ## Query metadata views
 
 - Query Execution History (30 days)
@@ -321,6 +331,8 @@ For more information on query lifecycle DMVs, see [Monitor connections, sessions
 
 ## Related content
     
-- [T-SQL surface area](tsql-surface-area.md)
 - [Monitor Fabric Data warehouse](monitoring-overview.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
+- [Query insights](query-insights.md)
+- [Statistics in Fabric Data Warehouse](statistics.md)
+- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
