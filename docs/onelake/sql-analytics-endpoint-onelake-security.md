@@ -108,6 +108,9 @@ This synchronization ensures that OneLake security definitions stay authoritativ
 
 OneLake security is enforced at the source of truth, so security sync disables ownership chaining for tables and views involving shortcuts. This ensures that source system permissions are always evaluated and honored, even for queries from another database.
 
+>[!IMPORTANT]
+>If OneLake Security is enabled, multi-region shortcuts are not supported. Ensure all shortcuts reside in the same region; otherwise, queries that try to access those shortcuts will fail.
+
 As a result:
 
 * Users must have valid access on **both** the shortcut **source** (current Lakehouse or SQL analytics endpoint) **and** the **destination** where the data physically resides.
@@ -231,7 +234,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * User changes on the OLS_ roles are not supported, and can cause unexpected behaviors.
  
-* Mail enabled security groups and distribution lists are not supported.
+* Distribution lists are not supported as groups.
   
 * The owner of the lakehouse must be a member of the admin, member, or contributor workspace roles; otherwise, security isn't applied to the SQL analytics endpoint.
 
