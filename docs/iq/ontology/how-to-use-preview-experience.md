@@ -10,7 +10,7 @@ ms.topic: how-to
 
 # Preview experience
 
-The *preview experience* in ontology (preview) allows you to view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view.
+The *preview experience* in ontology (preview) lets you view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -59,7 +59,7 @@ In the preview experience, you see an overview for the entity type that lets you
 
 ### View and create tiles
 
-Tiles are automatically visible in the preview experience and display data about your entity types, including entity instance details and relationship graphs.
+The preview experience automatically shows tiles that display data about your entity types, including entity instance details and relationship graphs.
 
 To create more tiles, follow these steps.
 
@@ -76,19 +76,19 @@ To create more tiles, follow these steps.
     :::image type="content" source="media/how-to-use-preview-experience/add-tile-3.png" alt-text="Screenshot of configuring a static property tile.":::
 
     >[!NOTE]
-    > All tiles created at the entity level propagate down to the entity instance level.
+    > All tiles you create at the entity level also appear at the entity instance level.
 
 1. Back on the overview page, use the time range selector to configure the time range for the data displayed in the tiles.
 
     :::image type="content" source="media/how-to-use-preview-experience/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-use-preview-experience/change-date-range.png":::
 
-You can also edit or delete existing tiles by selecting **...** in the top right corner of a tile.
+To edit or delete existing tiles, select **...** in the upper right corner of a tile.
 
 :::image type="content" source="media/how-to-use-preview-experience/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-use-preview-experience/edit-delete.png":::
 
 ### Use graph view
 
-Follow these steps to view your entities in a graph view using [Graph in Microsoft Fabric](../../graph/overview.md).
+Follow these steps to view your entities in a graph view provided by [Graph in Microsoft Fabric](../../graph/overview.md).
 
 1. Select **Expand** from a graph tile in the preview experience.
 
@@ -106,7 +106,7 @@ In the full graph view, use the **Query builder** ribbon to craft custom queries
 
 :::image type="content" source="media/how-to-use-preview-experience/query-builder.png" alt-text="Screenshot of the query builder." lightbox="media/how-to-use-preview-experience/query-builder.png":::
 
-The default query shows the current entities and all relationships that are one hop away. Selecting **Run query** runs the default query, and you see the results in a pane underneath the relationship type graph.
+The default query shows the current entities and all relationships that are one hop away. Select **Run query** to run the default query. You see the results in a pane underneath the relationship type graph.
 
 :::image type="content" source="media/how-to-use-preview-experience/query-default.png" alt-text="Screenshot of the default query results." lightbox="media/how-to-use-preview-experience/query-default.png":::
 
@@ -130,7 +130,7 @@ To open the instance view, start in the overview page for the entity type, and s
 
 :::image type="content" source="media/how-to-use-preview-experience/instance-view-1.png" alt-text="Screenshot of selecting an instance from the overview page.":::
 
-The instance view displays any tiles configured at the entity type level, and any specific properties bound to this instance.
+The instance view displays any tiles you configured at the entity type level, and any specific properties bound to this instance.
 
 :::image type="content" source="media/how-to-use-preview-experience/instance-view-2.png" alt-text="Screenshot of the instance view." lightbox="media/how-to-use-preview-experience/instance-view-2.png":::
 
@@ -142,12 +142,12 @@ You can also **Expand** the graph view, where you can run a query specific to th
 
 This section describes how and when your bound data stays up to date.
 
-In ontology (preview), downstream experiences automatically refresh whenever you make changes to your ontology schema. This means that whenever you add, edit, or remove any element like properties, types, or relationships, the system will re-ingest all currently bound data to ensure your downstream experiences reflect the latest schema adjustments. 
+In ontology (preview), downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments. 
 
-However, this automatic refresh only applies to changes made within the schema itself. If there are changes to the external data source that feeds your graph (for example, if new records are added, updated, or deleted in the upstream system), the graph doesn't know about these changes unless it is explicitly informed. In this case, your graph might display stale data until a new ingestion is triggered. You can enforce an update by manually refreshing the graph.
+However, this automatic refresh only applies to changes made within the schema itself. If there are changes to the external data source that feeds your graph (for example, if new records are added, updated, or deleted in the upstream system), the graph doesn't know about these changes unless you explicitly inform it. In this case, your graph might display stale data until a new ingestion is triggered. You can enforce an update by manually refreshing the graph.
 
 >[!IMPORTANT]
-> We recommend batching updates for refresh instead of refreshing the graph after every individual change, as the graph does a full refresh each time. **This has cost implications for the [Graph in Microsoft Fabric](../../graph/overview.md) item.** 
+> We recommend batching updates for refresh instead of refreshing the graph after every individual change, as the graph does a full refresh each time. **This approach has cost implications for the [Graph in Microsoft Fabric](../../graph/overview.md) item.** 
 
 To refresh the graph, follow these steps:
 

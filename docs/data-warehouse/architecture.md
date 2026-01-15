@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
 ms.date: 01/14/2026
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Architecture

@@ -10,13 +10,13 @@ ms.topic: tutorial
 
 # Ontology (preview) tutorial part 4: Create data agent
 
-Ontology (preview) integrates with [Fabric data agent (preview)](../../data-science/concept-data-agent.md), allowing you to ask questions in natural language and get answers grounded in the ontology's definitions and bindings. 
+Ontology (preview) integrates with [Fabric data agent (preview)](../../data-science/concept-data-agent.md) to let you ask questions in natural language, and get answers grounded in the ontology's definitions and bindings.   
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Create data agent with ontology (preview) source
 
-Follow these steps to create a new data agent that is connected to your ontology (preview) item.
+Follow these steps to create a new data agent that connects to your ontology (preview) item.
 
 1. Go to your Fabric workspace and create a new data agent (preview) item named *RetailOntologyAgent*. For detailed instructions, see [Create a Fabric data agent (preview)](../../data-science/how-to-create-data-agent.md#create-a-new-fabric-data-agent).
 
@@ -55,12 +55,12 @@ Notice that the responses reference entity types (*Store*, *Products*, *Freezer*
 :::image type="content" source="media/tutorial-4-create-data-agent/query-result.png" alt-text="Screenshot of the result of a query." lightbox="media/tutorial-4-create-data-agent/query-result.png":::
 
 >[!TIP]
-> If you experience errors saying there's no data while running the example queries, try waiting a few minutes to give the agent more time to initialize, then running the queries again.
+> If you see errors that say there's no data while running the example queries, wait a few minutes to give the agent more time to initialize. Then, run the queries again.
 
 Continue exploring the data agent by trying out some prompts of your own.
 
 ## Next steps
 
-In this step, you explored your ontology with natural language queries and answered business level questions.
+In this step, you explored your ontology by using natural language queries and answered business-level questions.
 
 Next, continue to the [tutorial conclusion](tutorial-5-conclusion.md).
