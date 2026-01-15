@@ -4,7 +4,7 @@ description: This documentation provides an in-depth comparison of connector ava
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 12/19/2025
+ms.date: 01/14/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -119,7 +119,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [Hive](connector-hive-llap-overview.md) | ✓/- | Anonymous | | N | | |
 | | | UsernameAndPassword | | | | |
 | | | WindowsAzureHDInsightService | | | | |
-| [Impala](connector-impala-overview.md) | ✓/- | Anonymous | | ✓/- | | |
+| [Impala](connector-impala-overview.md) | ✓/- | Anonymous | | N | | |
 | | | UsernameAndPassword | | | | |
 | [Informix](connector-informix-for-pipeline-overview.md) | ✓/✓ | Anonymous | | ✓/✓ | Anonymous | |
 | | | Basic | | | Basic | |
@@ -208,10 +208,16 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------|-------------------------------|---------------------------|---------------------|
 | [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
+|  | | Office 365 | | | | |
+|  | | User-assigned managed identity | | | Workspace identity      | |
+|  | | | |  | Organizational account      | |
 | Dynamics 365       | ✓/✓                | Microsoft Entra service principal | | N                      |                          | |
-| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | | N                      |                          | |
+| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | | ✓/-                      | Service principal                         | |
+| | | | | | Workspace identity | |
 | [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
-| Google AdWords     | ✓/-                | UserAuthentication    | | N                      |                          | |
+| | | Office 365 | | | | |
+| | | User-assigned managed identity| | | Workspace identity | |
+| Google Ads     | ✓/-                | UserAuthentication    | | N                      |                          | |
 | HubSpot            | ✓/-                | Access token          | | N                      |                          | |
 | Jira               | ✓/-                | Basic                 | | N                      |                          | |
 | [Microsoft 365](connector-microsoft-365-overview.md)      | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
