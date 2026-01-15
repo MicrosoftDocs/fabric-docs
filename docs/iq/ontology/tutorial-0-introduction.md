@@ -28,7 +28,6 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 * Required settings for ontology (preview) and data agent must be enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
     * *Enable Ontology item (preview)*
     * *User can create Graph (preview)*
-    * *Allow XMLA endpoints and Analyze in Excel with on-premises semantic models* <!--Only required for semantic model pivot-->
     * *Users can create and share Data agent item types (preview)*
     * *Users can use Copilot and other features powered by Azure OpenAI*
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*
