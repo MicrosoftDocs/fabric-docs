@@ -4,7 +4,7 @@ description: Learn how to build Power BI reports on top of semantic models with 
 ms.reviewer: snehagunda
 ms.author: zoedouglas
 author: DataZoeMS
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 10/01/2025
 ms.search.form: Direct Lake Power BI Reporting
