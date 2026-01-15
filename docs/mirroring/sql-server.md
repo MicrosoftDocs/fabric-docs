@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: ajayj, rajpo, twright, wiassaf
 ms.date: 11/05/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
@@ -16,8 +16,6 @@ no-loc: [Copilot]
 [Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing SQL Server estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SQL Server databases directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 For a tutorial, see [Tutorial: Configure Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-tutorial.md).
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Why use Mirroring in Fabric?
 
@@ -59,7 +57,7 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 ## Mirroring SQL Server behind firewall
 
-Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
+Set up an [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) or [virtual network data gateway](/data-integration/vnet/overview) to mirror the data. The data gateway facilitates secure connections to your source databases through a private endpoint or from a trusted private network. Learn more from [the mirrored SQL Server tutorial](../mirroring/sql-server-tutorial.md) and [How to: Secure data Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-security.md).
 
 ## Active transactions, workloads, and replicator engine behaviors
 

@@ -49,7 +49,7 @@ To find the SQL connection string for the **SQL analytics endpoint** of your Fab
 
 ## Open in button to connect
 
-You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
 
 :::image type="content" source="media/connect/open-in-sql-tools.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code." lightbox="media/connect/open-in-sql-tools.png":::
 
@@ -80,7 +80,7 @@ You can also use the [Fabric browse experience in the MSSQL extension for VS Cod
 
 ## Connect with sqlcmd
 
-You can connect to your SQL database in Fabric with [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility?view=fabric&preserve-view=true), just like any other SQL Database Engine product. [Use Microsoft Entra ID authentication](/sql/tools/sqlcmd/sqlcmd-authentication?view=fabric&preserve-view=true) with the `G` option. The Microsoft Entra authentication (`-G`) requires at least version 13.1.
+You can connect to your SQL database in Fabric with [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility?view=fabric-sqldb&preserve-view=true), just like any other SQL Database Engine product. [Use Microsoft Entra ID authentication](/sql/tools/sqlcmd/sqlcmd-authentication?view=fabric-sqldb&preserve-view=true) with the `G` option. The Microsoft Entra authentication (`-G`) requires at least version 13.1.
 
 In the following example, replace `<server name>` with the long string of unique text that represents your SQL database in Fabric.
 
@@ -90,7 +90,7 @@ sqlcmd -S <your_server>.database.fabric.microsoft.com;1433 -G -d <your_database>
 
 ## Connect with bcp utility
 
-You can connect to your SQL database in Fabric with the [bcp utility](/sql/tools/bcp-utility?view=fabric&preserve-view=true), just like any other SQL Database Engine product. Use Microsoft Entra ID authentication with the `-G` option.
+You can connect to your SQL database in Fabric with the [bcp utility](/sql/tools/bcp-utility?view=fabric-sqldb&preserve-view=true), just like any other SQL Database Engine product. Use Microsoft Entra ID authentication with the `-G` option.
 
 In the following example, replace `<server name>` with the long string of unique text that represents your SQL database in Fabric.
 

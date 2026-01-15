@@ -2,12 +2,10 @@
 title: GQL Quick Reference
 description: Quick reference for GQL syntax, statements, patterns, and expressions supported by graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 10/28/2025
-author: eric-urban
-ms.author: eur
+ms.date: 11/18/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ms.search.form: GQL Quick Reference
 ---
 
@@ -15,7 +13,11 @@ ms.search.form: GQL Quick Reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+This article is a quick reference of GQL (Graph Query Language) syntax for graph in Microsoft Fabric. 
+For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
 
 ## Query structure
 
@@ -25,6 +27,8 @@ GQL queries use a sequence of statements that define what data to get from the g
 A GQL query usually starts by specifying the graph pattern to match, then uses optional statements for variable creation, filtering, sorting, pagination, and result output.
 
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 MATCH (n:Person)-[:knows]->(m:Person) 
 LET fullName = n.firstName || ' ' || n.lastName 
@@ -62,10 +66,15 @@ Find graph patterns in your data.
 **Syntax:**
 ```gql
 MATCH <graph pattern> [ WHERE <predicate> ]
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
-MATCH (n:Person)-[:knows]-(m:Person) WHERE n.birthday > 20000101
+MATCH (n:Person)-[:knows]-(m:Person) WHERE n.birthday > 2000
+RETURN *
 ```
 
 For more information about the `MATCH` statement, see the [Graph patterns](gql-graph-patterns.md).
@@ -75,12 +84,19 @@ For more information about the `MATCH` statement, see the [Graph patterns](gql-g
 Create variables using expressions.
 
 **Syntax:**
+
 ```gql
 LET <variable> = <expression>, <variable> = <expression>, ...
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)
 LET fullName = n.firstName || ' ' || n.lastName
+RETURN fullName
 ```
 
 For more information about the `LET` statement, see the [GQL language guide](gql-language-guide.md#let-statement).
@@ -90,12 +106,19 @@ For more information about the `LET` statement, see the [GQL language guide](gql
 Keep rows that match conditions.
 
 **Syntax:**
+
 ```gql
 FILTER [ WHERE ] <predicate>
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)-[:knows]->(m:Person)
 FILTER WHERE n.birthday > m.birthday
+RETURN *
 ```
 
 For more information about the `FILTER` statement, see the [GQL language guide](gql-language-guide.md#filter-statement).
@@ -107,11 +130,21 @@ Sort the results.
 **Syntax:**
 ```gql
 ORDER BY <expression> [ ASC | DESC ], ...
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)
+RETURN *
 ORDER BY n.lastName ASC, n.firstName ASC
 ```
+
+> [!IMPORTANT]
+> The requested order of rows is only guaranteed to hold immediately after a preceding `ORDER BY` statement.
+> Any following statements (if present) are not guaranteed to preserve any such order.
 
 For more information about the `ORDER BY` statement, see the [GQL language guide](gql-language-guide.md#order-by-statement).
 
@@ -120,13 +153,21 @@ For more information about the `ORDER BY` statement, see the [GQL language guide
 Skip rows and limit the number of results.
 
 **Syntax:**
+
 ```gql
 OFFSET <offset> [ LIMIT <limit> ]
 LIMIT <limit>
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)
+ORDER BY n.birthday
 OFFSET 10 LIMIT 20
+RETURN n.firstName || ' ' || n.lastName AS name, n.birthday
 ```
 
 For more information about the `OFFSET` and `LIMIT` statements, see the [GQL language guide](gql-language-guide.md#offset-and-limit-statements).
@@ -136,12 +177,17 @@ For more information about the `OFFSET` and `LIMIT` statements, see the [GQL lan
 Output the final results.
 
 **Syntax:**
+
 ```gql
 RETURN [ DISTINCT ] <expression> [ AS <alias> ], ...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
-RETURN n.firstName, m.lastName
+MATCH (n:Person)
+RETURN n.firstName, n.lastName
 ```
 
 For more information about the `RETURN` statement, see the [GQL language guide](gql-language-guide.md#return-basic-result-projection).
@@ -172,9 +218,10 @@ Edge patterns specify relationships between nodes, including direction and edge 
 ```gql
 <-[e]-             -- Incoming edge
 -[e]->             -- Outgoing edge
--[e]-              -- Undirected edge
--[:knows]->        -- Edge with type
--[e:knows|likes]-> -- Multiple edge types
+-[e]-              -- Any edge
+-[e:knows]->       -- Edge with label ("relationship type")
+-[e:knows|likes]-> -- Edges with different labels
+-[:knows]->        -- :knows edge, don't bind variable
 ```
 
 For more information about edge patterns, see the [Graph patterns](gql-graph-patterns.md).
@@ -253,11 +300,14 @@ PATH             -- Path values
 
 Learn more about collection types in the [GQL values and value types](gql-values-and-value-types.md).
 
-### Nullable types
+### Material and nullable types
+
+Every value type either is nullable (includes the null value) or material (excludes it).
+By default, types are nullable unless explicitly specified as `NOT NULL`.
 
 ```gql
-STRING NOT NULL  -- Nonnullable string
-INT64            -- Nullable int (default)
+STRING NOT NULL  -- Material (Non-nullable) string type
+INT64            -- Nullable (default) integer type
 ```
 
 <!--
@@ -273,7 +323,7 @@ Graph types define the structure of nodes, edges, and constraints in the graph.
     name :: STRING 
 })
 
-(:University => :Organisation)   -- Inheritance
+(:University => :Organization)   -- Inheritance
 ABSTRACT (:Message => { ... })   -- Abstract type
 ```
 
@@ -441,34 +491,40 @@ Learn more about generic functions in the [GQL expressions and functions](gql-ex
 
 ### Find connections
 
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Friends of friends  
-MATCH (me:Person {firstName: 'Alice'})-[:knows]->{2}(fof:Person)
+MATCH (me:Person {firstName: 'Annemarie'})-[:knows]->{2}(fof:Person)
 WHERE fof <> me
 RETURN DISTINCT fof.firstName
 ```
 
 ### Aggregation
 
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Count by group
 MATCH (p:Person)-[:isLocatedIn]->(c:City)
-RETURN c.name, count(*) AS population
+RETURN c.name AS name, count(*) AS population
+GROUP BY name
 ORDER BY population DESC
 ```
 
 ### Top k
 
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Top 10
 MATCH (p:Person)-[:hasCreator]-(m:Post)
-RETURN p.firstName, count(m) AS posts
+RETURN p.firstName AS name, count(m) AS posts
+GROUP BY name
 ORDER BY posts DESC
 LIMIT 10
 ```
 
 ### Filtering and conditions
 
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Complex conditions
 MATCH (p:Person)-[:isLocatedIn]->(c:City)
@@ -480,11 +536,12 @@ RETURN p.firstName, p.birthday
 
 ### Path traversal
 
+<!-- GQL Query: Broken 2025-11-19 Cant return paths -->
 ```gql
 -- Variable length paths
-MATCH path = (start:Person {firstName: 'Alice'})-[:knows]->{1,3}(end:Person)
-WHERE end.firstName = 'Bob'
-RETURN path
+MATCH p = TRAIL (src:Person {firstName: 'Annemarie'})-[:knows]->{1,3}(dst:Person)
+WHERE dst.firstName = 'Alexander'
+RETURN p
 ```
 
 ## Related content

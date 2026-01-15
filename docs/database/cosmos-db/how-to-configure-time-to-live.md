@@ -1,19 +1,17 @@
 ---
-title: Configure Time To Live in Cosmos DB Database (Preview)
-description: Configure a time-to-live (TTL) value that automatically purges items from a Cosmos DB in Microsoft Fabric database during the preview.
-author: seesharprun
-ms.author: sidandrews
+title: Configure Time To Live in Cosmos DB Database
+description: Configure a time-to-live (TTL) value that automatically purges items from a Cosmos DB in Microsoft Fabric database.
+author: markjbrown
+ms.author: mjbrown
 ms.topic: how-to
-ms.date: 07/29/2025
+ms.date: 10/30/2025
 ai-usage: ai-assisted
 zone_pivot_groups: dev-lang-core
 ---
 
-# Configure time to live (TTL) in Cosmos DB in Microsoft Fabric (preview)
+# Configure time to live (TTL) in Cosmos DB in Microsoft Fabric
 
-[!INCLUDE[Feature preview note](../../includes/feature-preview-note.md)]
-
-The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period. In this guide, you modify the TTL value at the container and item level using the Fabric portal or an Azure SDK.
+The time-to-live (TTL) feature in Cosmos DB helps you manage your data's lifecycle by automatically deleting items after a specified period, **in seconds**. In this guide, you modify the TTL value at the container and item level using the Fabric portal or an Azure SDK.
 
 ## Prerequisites
 
@@ -81,7 +79,11 @@ database = client.get_database_client("<database-name>")
 container = database.get_container_client("<container-name>")
 
 # Set the container-level TTL to 7 days
-database.replace_container(container, partition_key=PartitionKey(path='/<partition-key-path>'), default_ttl=60 * 60 * 24 * 7)
+await database.replace_container(
+  container, 
+  partition_key=PartitionKey(path='/<partition-key-path>'), 
+  default_ttl=60 * 60 * 24 * 7
+)
 ```
 
 :::zone-end
@@ -139,7 +141,7 @@ item = {
     "ttl": 60 * 60 * 24
 }
 
-container.upsert_item(item)
+await container.upsert_item(item)
 ```
 
 :::zone-end

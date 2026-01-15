@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: pankar
 ms.service: fabric
 ms.topic: how-to
-ms.date: 11/18/2025
+ms.date: 1/15/2026
 ---
 
 # Surge protection

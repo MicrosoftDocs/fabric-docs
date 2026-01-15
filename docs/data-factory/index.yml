@@ -40,15 +40,33 @@ landingContent:
         links:
           - text: Data Factory training
             url: /training/browse/?terms=data%20factory%20fabric
+  - title: Migrate to Data Factory in Fabric
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Plan your migration
+            url: migrate-planning-azure-data-factory.md
+          - text: Migrate pipelines with the PowerShell upgrade tool
+            url: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+          - text: Bring your Azure Data Factory into Fabric
+            url: migrate-pipelines-azure-data-factory-item.md
+      - linkListType: overview
+        links:
+          - text: Compare Azure Data Factory to Fabric Data Factory
+            url: compare-fabric-data-factory-and-azure-data-factory.md
+          - text: Connector continuity
+            url: connector-parity.md
+          - text: Migration best practices
+            url: migration-best-practices.md
   # Card
   - title: Connect to your data
     linkLists:
       - linkListType: get-started
         links:
-        - text: Dataflow Gen2 connectors
-          url: dataflow-support.md
         - text: Pipeline connectors
           url: pipeline-support.md
+        - text: Dataflow Gen2 connectors
+          url: dataflow-support.md
 
   # Card
   - title: Connect on-premises from the cloud
@@ -79,24 +97,24 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first pipeline
-            url: create-first-pipeline-with-sample-data.md
-          - text: Move and transform data
-            url: transform-data.md
+          - text: Create your first copy job
+            url: quickstart-copy-job.md
       - linkListType: how-to-guide
         links:
-          - text: Pipeline runs
-            url: pipeline-runs.md
+          - text: Choose a data movement strategy
+            url: decision-guide-data-movement.md
+          - text: Copy job
+            url: what-is-copy-job.md
+          - text: Change data capture
+            url: cdc-copy-job.md
           - text: Copy activity in pipelines
             url: copy-data-activity.md
-          - text: Copy job
-            url: copy-job.md
       - linkListType: tutorial
         links:
-          - text: Create an end-to-end data integration scenario
-            url: tutorial-end-to-end-introduction.md
           - text: Move data with copy assistant
             url: tutorial-move-data-lakehouse-copy-assistant.md
+          - text: Create an end-to-end data integration scenario
+            url: tutorial-end-to-end-introduction.md
 
   # Card 
   - title: Manage your pipelines

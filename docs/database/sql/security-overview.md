@@ -1,14 +1,14 @@
 ---
-title: "Security in SQL database in Microsoft Fabric"
+title: "Security in SQL database"
 description: Learn about security in SQL database in Microsoft Fabric.
-author: jaszymas
-ms.author: jaszymas
-ms.reviewer: wiassaf
-ms.date: 01/16/2025
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: pivanho, jaszymas
+ms.date: 10/23/2025
 ms.topic: conceptual
 ms.search.form: SQL database security
 ---
-# Security in SQL database in Microsoft Fabric
+# Security
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -27,7 +27,7 @@ For more information about authentication, see [Authentication in SQL database i
 You can configure access for your SQL database via two sets of controls:
 
 - [Fabric access controls](authorization.md#fabric-access-controls) - workspace roles and item permissions. They provide the easiest way to manage access for your databases users.  
-- [Native SQL access controls](authorization.md#sql-access-controls), such SQL permissions or database-level roles. They allow granular access control. You can configure database-level roles with the [Manage SQL security UI](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal) in Microsoft Fabric portal. You can configure ot SQL native controls with Transact-SQL.
+- [Native SQL access controls](authorization.md#sql-access-controls), such SQL permissions or database-level roles. They allow granular access control. You can configure database-level roles with the [Manage SQL security UI](configure-sql-access-controls.md#manage-sql-database-level-roles-from-fabric-portal) in Microsoft Fabric portal. You can configure to SQL native controls with Transact-SQL.
 
 For more information about access control, see [Authorization in SQL database in Microsoft Fabric](authorization.md)
 
@@ -39,7 +39,7 @@ For more information about data governance capabilities of Microsoft Purview for
 
 - [Use Microsoft Purview to govern Microsoft Fabric](../../governance/microsoft-purview-fabric.md)
 - [Information protection in Microsoft Fabric](../../governance/information-protection.md)
-- [Protection policies in Microsoft Fabric (preview)](../../governance/protection-policies-overview.md)
+- [Protection policies in Microsoft Fabric](../../governance/protection-policies-overview.md)
 - [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md)
 
 ## Network security
@@ -50,13 +50,23 @@ For more information about private links, see: [Set up and use private links](..
 
 ## Encryption
 
-All database connections use Transport Layer Security (TLS) 1.2 to protect your data in transit.
+Every interaction with Fabric is encrypted by default and authenticated using Microsoft Entra ID. For more information, see [Security in Microsoft Fabric](../../security/security-overview.md).
 
-All your data is encrypted at rest by using Microsoft-managed keys.
+### Transport Layer Security
 
-## Limitations
+All SQL database connections use Transport Layer Security (TLS) 1.2 to protect your data in transit.
 
-- Auditing and encryption using customer-managed keys are currently not supported in SQL database in Microsoft Fabric.
+### Encryption at rest
+
+Microsoft Fabric encrypts all data at rest using Microsoft-managed keys. All database data is stored in remote Azure Storage accounts. To comply with encryption at rest requirements using Microsoft-managed keys, each Azure Storage account used by the SQL database is configured with [service-side encryption](/azure/storage/common/storage-service-encryption#about-azure-storage-service-side-encryption) enabled. 
+
+With [customer-managed keys for Fabric workspaces](../../security/workspace-customer-managed-keys.md), you can use your Azure Key Vault keys to add another layer of protection to the data in your Microsoft Fabric workspaces - including all data in SQL database in Microsoft Fabric. A customer-managed key provides greater flexibility, allowing you to manage its rotation, control access, and usage auditing. It also helps organizations meet data governance needs and comply with data protection and encryption standards.
+
+For more information about customer-managed keys for a SQL database in Microsoft Fabric, see [Customer-managed keys in SQL database in Microsoft Fabric](encryption.md).
+
+## Auditing 
+
+SQL auditing for SQL database can track database events and write them to an audit log in your OneLake. For more information, see [Auditing](auditing.md).
 
 ## Related content
 

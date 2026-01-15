@@ -2,12 +2,10 @@
 title: GQL Schema Example - Social Network
 description: Complete schema definition for the social network domain used throughout GQL documentation examples for graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 10/10/2025
-author: eric-urban
-ms.author: eur
+ms.date: 11/18/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ---
 
 # GQL schema example: Social network
@@ -21,6 +19,7 @@ This article provides the complete technical specification for the social networ
 > the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by 
 > the [GDC (Graph Data Council)](https://ldbcouncil.org/).
 > See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
+> See [social network example graph dataset](sample-datasets.md) for how to obtain a copy of the derived dataset.
 
 <!-- Image source in graphviz dot format
 //// CREATE GRAPH ldbc_snb {
@@ -102,7 +101,7 @@ digraph LDBC_SNB_Schema {
 
 
     //// ABSTRACT
-    //// (:Organisation => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+    //// (:Organization => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
 
     Organization [
       fillcolor=lightgreen, 
@@ -111,8 +110,8 @@ digraph LDBC_SNB_Schema {
               />url :: STRING<br align="left"/>}>]
 
 
-    //// (:University => :Organisation),
-    //// (:Company => :Organisation),
+    //// (:University => :Organization),
+    //// (:Company => :Organization),
 
     University [fillcolor=lightgreen, label=<{<b>(:University =&gt; :Organization)</b>|<b>...</b>}>];
     Company [fillcolor=lightgreen, label=<{<b>(:Company =&gt; :Organization)</b>|<b>...</b>}>];
@@ -306,7 +305,7 @@ For a more detailed introduction to the entities of this domain, see [GQL langua
 
 This graph type showcases advanced GQL capabilities:
 
-- **Node type inheritance** using abstract base types (`Message`, `Organisation`, `Place`)
+- **Node type inheritance** using abstract base types (`Message`, `Organization`, `Place`)
 - **Multiple inheritance patterns** with shared property definitions
 - **Edge type families** where the same relationship label connects different node type combinations
 - **Comprehensive constraint system** ensuring data integrity through key constraints
@@ -345,13 +344,13 @@ FOR (n:Place) REQUIRE (n.id) IS KEY,
 (:Country)-[:isPartOf]->(:Continent),
 
 ABSTRACT
-(:Organisation => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+(:Organization => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
 
-(:University => :Organisation),
-(:Company => :Organisation),
+(:University => :Organization),
+(:Company => :Organization),
 
-CONSTRAINT organisation_pk
-FOR (n:Organisation) REQUIRE (n.id) IS KEY,
+CONSTRAINT organization_pk
+FOR (n:Organization) REQUIRE (n.id) IS KEY,
 
 (:University)-[:isLocatedIn]->(:City),
 (:Company)-[:isLocatedIn]->(:Country),
@@ -434,7 +433,7 @@ The schema defines three inheritance hierarchies:
 - `Place` (abstract) → `City`, `Country`, `Continent`
 
 **Organizational hierarchy:**
-- `Organisation` (abstract) → `University`, `Company`
+- `Organization` (abstract) → `University`, `Company`
 
 **Content hierarchy:**
 - `Message` (abstract) → `Post`, `Comment`
@@ -456,12 +455,13 @@ Several edge labels form type families connecting different node combinations:
 - People live in cities: `(:Person)-[:isLocatedIn]->(:City)`
 - Universities located in cities: `(:University)-[:isLocatedIn]->(:City)`
 - Companies located in countries/regions: `(:Company)-[:isLocatedIn]->(:Country)`
-- Posts/comments located in countries/regions: `(:Post|Comment)-[:isLocatedIn]->(:Country)`
+- Posts located in countries/regions: `(:Post)-[:isLocatedIn]->(:Country)`
+- Comments located in countries/regions: `(:Comment)-[:isLocatedIn]->(:Country)`
 
 ### Key constraints
 
 Every node type has a corresponding key constraint ensuring unique identification by `id` property:
-- `tag_class_pk`, `tag_pk`, `place_pk`, `organisation_pk`, `person_pk`, `forum_pk`, `message_pk`
+- `tag_class_pk`, `tag_pk`, `place_pk`, `organization_pk`, `person_pk`, `forum_pk`, `message_pk`
 
 ## Related content
 

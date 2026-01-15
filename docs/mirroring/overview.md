@@ -4,7 +4,7 @@ description: Learn about mirrored databases in Microsoft Fabric.
 author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
-ms.date: 09/05/2025
+ms.date: 01/02/2026
 ms.topic: overview
 ms.custom:
 ms.search.form: Fabric Mirroring
@@ -20,6 +20,8 @@ With the most up-to-date data in a queryable format in OneLake, you can now use 
 Mirroring in Fabric allows users to enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs. Built for openness and collaboration between Microsoft, and technology solutions that can read the open-source Delta Lake table format, Mirroring is a low-cost and low-latency turnkey solution that allows you to create a replica of your data in OneLake which can be used for all your analytical needs.
 
 The Delta tables can then be used everywhere Fabric, allowing users to accelerate their journey into Fabric.
+
+Mirroring is enabled by creating a secure connection to your operational data source. You choose whether to replicate an entire database or individual tables and Mirroring will automatically keep your data in sync. Once set up, data will continuously replicate into OneLake for analytics consumption.
 
 ## Why use Mirroring in Fabric?
 
@@ -39,6 +41,14 @@ Mirroring in Fabric provides an easy experience to speed the time-to-value for i
 - Near real time replication of data and metadata into a SaaS data-lake, with built-in analytics built-in for BI and AI
 
 The Microsoft Fabric platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level. To learn more about Microsoft Fabric, see [What is Microsoft Fabric?](../fundamentals/microsoft-fabric-overview.md)
+
+The following are core tenets of Mirroring:
+
+- Enabling Mirroring in Fabric is simple and intuitive, without having the need to create complex ETL pipelines, allocate other compute resources, and manage data movement.
+
+- Mirroring in Fabric is a fully managed service, so you don't have to worry about hosting, maintaining, or managing replication of the mirrored connection.
+
+## Mirroring objects
 
 Mirroring creates these items in your Fabric workspace:
 
@@ -61,27 +71,39 @@ Currently, the following external databases are available:
 
 | Platform | Near real-time replication | Type of mirroring | End-to-end tutorial |
 |:--|:--|:--|
-| [Microsoft Fabric mirrored databases from Azure Cosmos DB (preview)](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
-| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server (preview)](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md) |
+| [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL flexible server](azure-database-postgresql-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Database](azure-sql-database.md) | Yes | Database mirroring | [Tutorial: Azure SQL Database](azure-sql-database-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Oracle (preview)](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SAP (preview)](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SQL Server (preview)](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SQL Server](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
 | [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
-| [Microsoft Fabric mirrored databases from Fabric SQL database](../database/sql/overview.md) (preview) | Yes | Database mirroring | [Automatically configured](../database/sql/mirroring-overview.md) |
+| [Microsoft Fabric mirrored databases from Fabric SQL database](../database/sql/overview.md) | Yes | Database mirroring | [Automatically configured](../database/sql/mirroring-overview.md) |
 
-## How does the near real time replication of database mirroring work?
+## Near real time replication
 
-Mirroring is enabled by creating a secure connection to your operational data source. You choose whether to replicate an entire database or individual tables and Mirroring will automatically keep your data in sync. Once set up, data will continuously replicate into the OneLake for analytics consumption.
+Near real time can depend on a variety of factors, including:
 
-The following are core tenets of Mirroring:
+ - Location/region of source 
+ - Location/region of destination
+ - Volume of changes
+ - Frequency of changes
+ - Network bandwidth and latency from source
+ - Compute resources allocated to the on-premises data gateway
 
-- Enabling Mirroring in Fabric is simple and intuitive, without having the need to create complex ETL pipelines, allocate other compute resources, and manage data movement.
+## How does database mirroring work?
 
-- Mirroring in Fabric is a fully managed service, so you don't have to worry about hosting, maintaining, or managing replication of the mirrored connection.
+Delta files arrive incrementally in Fabric from the data source. The method of identifying the incrementally changed data varies in each data source. In SQL Server 2025, for example, the SQL Database Engine scans the source database's transaction log at a high frequency. SQL Server publishes changes for each table to corresponding files in the Fabric landing zone.
+
+Inside Fabric, a replicator engine is always running and scanning for newly published files at a high frequency. Fabric immediately merges incoming changes into the target delta table. Changes can be published as fast as every 15 seconds.
+
+Backoff logic to detect low activity avoids excessive overhead on data source engines outside of Fabric and lowers latency by responding to the frequency of incoming data changes.
+
+:::image type="content" source="media/overview/fabric-mirror-overview.svg" alt-text="Diagram of how Fabric Database Mirroring works.":::
 
 ## How does metadata mirroring work?
 
@@ -153,7 +175,7 @@ For mirrored databases created from the Fabric portal after mid-June 2025, the d
 
 ## SQL database in Fabric
 
-You can also directly create and manage a [SQL database in Microsoft Fabric (Preview)](../database/sql/overview.md) inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../database/sql/source-control.md).
+You can also directly create and manage a [SQL database in Microsoft Fabric](../database/sql/overview.md) inside the Fabric portal. Based on [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview?view=azuresqldb-current&preserve-view=true), SQL database in Fabric is automatically mirrored for analytics purposes and allows you to easily create your operational database in Fabric. SQL database is the home in Fabric for OLTP workloads, and can integrate with Fabric's [source control integration](../database/sql/source-control.md).
 
 ## Related content
 

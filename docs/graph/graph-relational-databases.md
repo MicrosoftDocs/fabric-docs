@@ -2,12 +2,10 @@
 title:  Compare Graph and Relational Databases
 description: Compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics.
 ms.topic: concept-article
-ms.date: 10/09/2025
-author: eric-urban
-ms.author: eur
+ms.date: 11/18/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ---
 
 #  Compare graph and relational databases
@@ -32,12 +30,15 @@ A [**graph database**](graph-database.md) stores and queries data as a network o
 **Example:**
 
 GQL:
+
 ```gql
 MATCH (p:Person)-[:friendsWith]->(friend)-[:purchased]->(o:Order)
 WHERE p.name = 'Alice';
 RETURN o
 ```
+
 SQL (equivalent):
+
 ```sql
 SELECT o.*
 FROM Person AS p

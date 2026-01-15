@@ -13,8 +13,10 @@ items:
     href: get-started-real-time-hub.md
 - name: Tutorials
   items:
-  - name: Build event-driven pipelines 
+  - name: Build event-driven pipelines with Azure and Fabric Events 
     href: tutorial-build-event-driven-data-pipelines.md
+  - name: Monitor Fabric Capacity health with Capacity Overview Events 
+    href: tutorial-monitor-capacity-threshold.md
 - name: Create data streams
   items:
   - name: Supported sources
@@ -49,6 +51,8 @@ items:
     href: add-source-azure-sql-managed-instance-cdc.md
   - name: Confluent Cloud Kafka
     href: add-source-confluent-kafka.md
+  - name: Fabric Capacity overview events
+    href: create-streams-fabric-capacity-overview-events.md
   - name: Fabric Job events
     href: create-streams-fabric-job-events.md
   - name: Fabric OneLake events
@@ -81,6 +85,8 @@ items:
     href: endorse-data-streams.md
   - name: Explore all data streams
     href: explore-all-data-streams.md
+  - name: Explore table data with Copilot
+    href: explore-data-tables-copilot.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
   - name: Explore Azure events
@@ -95,6 +101,8 @@ items:
       href: explore-fabric-events.md
     - name: Explore anomaly detection events
       href: explore-anomaly-detection.md
+    - name: Explore Fabric capacity overview events
+      href: explore-fabric-capacity-overview-events.md      
     - name: Explore Fabric workspace item events
       href: explore-fabric-workspace-item-events.md
     - name: Explore Fabric OneLake events
@@ -115,6 +123,8 @@ items:
     items:
     - name: Set alerts on anomaly detection events
       href: set-alerts-anomaly-detection.md
+    - name: Set alerts on Fabric capacity overview events
+      href: set-alerts-fabric-capacity-overview-events.md  
     - name: Set alerts on Fabric workspace item events
       href: set-alerts-fabric-workspace-item-events.md
     - name: Set alerts on Fabric OneLake item events

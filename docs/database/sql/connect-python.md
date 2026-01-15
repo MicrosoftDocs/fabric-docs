@@ -1,10 +1,10 @@
 ---
 title: "Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server"
-description: This quickstart describes connect to your SQL database in Fabric using mssql-python (preview) and generating a streamlit report in Python.
+description: This quickstart describes connect to your SQL database in Fabric using mssql-python and generating a streamlit report in Python.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, drskwier
-ms.date: 11/04/2025
+ms.date: 12/29/2025
 ms.topic: quickstart-sdk
 ms.custom:
   - sfi-ropc-nochange
@@ -12,9 +12,9 @@ ms.custom:
 
 # Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server
 
-In this quickstart, you use [`Streamlit`](https://streamlit.io/) to quickly create a report, allowing you to quickly gather user feedback to ensure you're on the right track. You use the `mssql-python (preview)` driver for Python to connect to your **SQL database in Fabric** and read the data loaded into your report.
+In this quickstart, you use [`Streamlit`](https://streamlit.io/) to quickly create a report, allowing you to quickly gather user feedback to ensure you're on the right track. You use the `mssql-python` driver for Python to connect to your **SQL database in Fabric** and read the data loaded into your report.
 
-The `mssql-python (preview)` driver doesn't require any external dependencies on Windows machines. The driver installs everything that it needs with a single `pip` install, allowing you to use the latest version of the driver for new scripts without breaking other scripts that you don't have time to upgrade and test.
+The `mssql-python` driver doesn't require any external dependencies on Windows machines. The driver installs everything that it needs with a single `pip` install, allowing you to use the latest version of the driver for new scripts without breaking other scripts that you don't have time to upgrade and test.
 
 [mssql-python documentation](https://github.com/microsoft/mssql-python/wiki) | [mssql-python source code](https://github.com/microsoft/mssql-python/wiki) | [Package (PyPi)](https://pypi.org/project/mssql-python/) | [UV](https://docs.astral.sh/uv/)
 
@@ -24,7 +24,7 @@ The `mssql-python (preview)` driver doesn't require any external dependencies on
 
 - Python 3
 
-  - If you don't already have Python, install the **Python runtime** and **Python Package Index (PyPI) package manager** from [python.org](https://www.python.org/downloads/).
+  - If you don't already have Python, install the **Python runtime** and **pip package manager** from [python.org](https://www.python.org/downloads/).
 
   - Prefer to not use your own environment? Open as a devcontainer using [GitHub Codespaces](https://github.com/features/codespaces).
 

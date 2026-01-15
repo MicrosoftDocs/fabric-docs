@@ -1,5 +1,5 @@
 ---
-title: "Protect sensitive data in SQL database in Microsoft Fabric with Microsoft Purview protection policies"
+title: "Protect sensitive data in SQL database in Fabric with Microsoft Purview protection policies"
 description: Learn about how Microsoft Purview protection policies work together with workspace roles/permissiosn and SQL native access control in SQL database in Microsoft Fabric.
 author: jaszymas
 ms.author: jaszymas
@@ -79,6 +79,6 @@ The **Allow users to retain read access** access control in the policy allows th
 
 - [Use Microsoft Purview to govern Microsoft Fabric](../../governance/microsoft-purview-fabric.md)
 - [Information protection in Microsoft Fabric](../../governance/information-protection.md)
-- [Protection policies in Microsoft Fabric (preview)](../../governance/protection-policies-overview.md)
-- [Create and manage protection policies for Fabric (preview)](../../governance/protection-policies-create.md)
+- [Protection policies in Microsoft Fabric](../../governance/protection-policies-overview.md)
+- [Create and manage protection policies for Fabric](../../governance/protection-policies-create.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)

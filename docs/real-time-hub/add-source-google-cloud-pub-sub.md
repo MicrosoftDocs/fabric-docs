@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/22/2025
+ms.date: 01/14/2026
 ---
 
 # Get events from Google Cloud Pub/Sub into Real-Time hub
@@ -54,6 +54,7 @@ Get the following information from Google Cloud:
         > [!NOTE]
         > The JSON file can be downloaded only once.
 
+## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 

@@ -1,14 +1,14 @@
 ---
-title: Build Event-Driven Pipelines in Microsoft Fabric
+title: Build Event-Driven Pipelines with OneLake events and Azure Blob Storage events
 description: Build real-time, event-driven pipelines in Microsoft Fabric using Azure and Fabric events to process data instantly from OneLake or Azure Blob Storage. Learn how to automate workflows.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: george-guirguis
-ms.date: 08/13/2025
+ms.date: 12/18/2025
 ms.topic: tutorial
 ---
 
-# Build event-driven pipelines in Microsoft Fabric using Azure and Fabric events
+# Build event-driven Pipelines with OneLake events and Azure Blob Storage events
 
 Today’s organizations demand real-time responsiveness from their analytics platforms. When data processing relies on scheduled job runs, insights and actions are delayed, and decisions are based on stale data. Whether your data lands in Azure Blob Storage or Fabric OneLake, it should be processed the moment it arrives to ensure timely decisions and continuous data freshness. Fabric events and Azure events make that possible by enabling event-driven data workflows that react in real-time to new data, without manual triggers or schedules.  
  
@@ -99,7 +99,7 @@ Next, configure a pipeline to ingest, transform, and deliver the data in your La
 1. In Real-Time hub, select **Fabric Events**.     
 1.  Hover over OneLake events to, and select **Set Alert** button (or) select **... (ellipsis)**, and then select **Set alert** to start configuring your alert. 
 
-    :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/fabric-onelake-events-set-alert-menu.png" alt-text="Screenshot of the Real-Time hub with Set alert menu option selected for OneLake events." lightbox="media/tutorial-build-event-driven-data-pipelines/fabric-onelake-events-set-alert-menu.png" :::    
+    :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/set-alerts.png" alt-text="Screenshot of the Real-Time hub with Set alert menu option selected for OneLake events." lightbox="media/tutorial-build-event-driven-data-pipelines/set-alerts.png" :::    
 1. In the **Set alert** window, for **Source**, choose **Select events**. 
 
     :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/select-events.png" alt-text="Screenshot of the Set alert window." lightbox="media/tutorial-build-event-driven-data-pipelines/select-events.png" :::     
@@ -159,4 +159,12 @@ Beyond the use case we explored, here are more scenarios where you can use **One
 - Get alerted when critical datasets are modified through **Activator’s Teams and E-mail notifications.** 
 
 ## Related content
-[Azure and Fabric events](fabric-events-overview.md)
+- [Azure and Fabric events Overview](fabric-events-overview.md)
+OneLake Events:
+- [Explore Fabric Onelake events](explore-fabric-onelake-events.md)
+- [Set alerts on Onelake events](set-alerts-fabric-onelake-events.md)
+- [Get Onelake events](create-streams-fabric-onelake-events.md)
+Azure Blob Storage events:
+- [Explore Azure Blob Storage events](explore-azure-blob-storage-events.md)
+- [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
+- [Get Azure Blob Storage events](get-azure-blob-storage-events.md)

@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide to upgrade Power BI Dat
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 07/16/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ---
 # Upgrade a Power BI Datamart to a Warehouse
@@ -15,10 +15,10 @@ This guide helps you migrate an existing Power BI datamart to Fabric Data Wareho
 
 Fabric Data Warehouse is more scalable, more secure, more enterprise-ready, and provides expanded T-SQL support compared to [Power BI Datamarts](/power-bi/transform-model/datamarts/datamarts-overview), which remain a preview feature. Fabric Data Warehouse is built on next generation analytics technology and evolved from Azure Synapse Analytics and SQL Server. 
 
-Beginning June 1, 2025, creating a new Power BI datamart will redirect to creating a new Fabric Warehouse.
+Since June 1, 2025, creating a new Power BI datamart redirects to creating a new Fabric Warehouse.
 
 > [!IMPORTANT]
-> Beginning November 1, 2025, Power BI datamarts will not be supported and datamarts will be cleaned up from workspaces. To avoid losing your data and breaking reports built on top of datamarts, migrate your datamart to warehouse. To upgrade existing datamarts to Fabric Data Warehouse, follow the steps in this guide.
+> Since November 1, 2025, Power BI datamarts are no longer supported, and datamarts are not accessible from workspaces. To avoid losing your data and breaking reports built on top of datamarts, migrate your datamart to warehouse. **To upgrade existing datamarts to Fabric Data Warehouse, follow the steps in this guide.**
 
 ## Prerequisites
 

@@ -3,7 +3,7 @@ title: About tenant settings
 description: Learn how to enable and disable Fabric tenant settings.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
 ms.date: 08/22/2025
 ---

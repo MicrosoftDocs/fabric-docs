@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 01/07/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -12,11 +12,11 @@ ms.custom:
 
 # Set up your Lakehouse connection
 
-You can connect to a Lakehouse data lake in Dataflow Gen2 using the Lakehouse connector provided by Data Factory in Microsoft Fabric.
+You can connect to a Lakehouse data lake in Dataflow Gen2 and a pipeline using the Lakehouse connector provided by Data Factory in Microsoft Fabric.
 
 ## Supported authentication types
 
-The Azure Blob Storage connector supports the following authentication types for copy and Dataflow Gen2 respectively.
+The Lakehouse connector supports the following authentication types for copy and Dataflow Gen2 respectively.
 
 | Authentication type | Copy | Dataflow Gen2 |
 | --- | :---: | :---: |
@@ -32,6 +32,36 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
+## Set up your connection in a pipeline
+
+You can set up a Lakehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. The sections below describe how to configure the connection through each option.
+
+- In **Get Data** page:
+
+    1. Go to **Get Data** page and navigate to **OneLake catalog** through the following ways:
+    
+       - In copy assistant, go to **OneLake catalog** section.
+       - In a pipeline, select Browse all under **Connection**, and go to **OneLake catalog** section.
+    
+    1. Select an existing Lakehouse to connect to it.
+    
+        :::image type="content" source="media/connector-lakehouse/select-lakehouse-in-onelake.png" alt-text="Screenshot of selecting Lakehouse in OneLake section.":::
+    
+    You can also select a Lakehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Lakehouse you need.
+    
+- In **Manage connections and gateways** page:
+
+    1. On this page, select **+ New**, choose Lakehouse as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
+    
+        :::image type="content" source="media/connector-lakehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
+    
+    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
+
+    >[!NOTE]
+    >If you create the connection through **Manage connections and gateways** page:
+    >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
+    >- If you choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. For more information about the permission, see this [article](../data-engineering/workspace-roles-lakehouse.md).
+    
 ## Related content
 
 * [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)

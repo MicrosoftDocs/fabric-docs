@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.topic: include
 ms.custom: 
-ms.date: 12/20/2023
+ms.date: 12/15/2025
 ---
 
 To integrate Git with your Microsoft Fabric workspace, you need to set up the following prerequisites for both Fabric and Git.
@@ -29,7 +29,7 @@ Git integration is currently supported for Azure DevOps and GitHub. To use Git i
 
 ### [Azure DevOps](#tab/azure-devops)
 
-- An Active **Azure DevOps account** registered to the same user and tenant that is using the Fabric workspace (cross-tenant support is currently in preview). <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>.
+- An Active **Azure DevOps account** registered to same Fabric user (supported even if Azure DevOps organization reside in a different tenant than Fabric tenant). <a href="https://azure.microsoft.com/products/devops/" target="_blank">Create a free account</a>.
 - Access to an existing repository.
 
 ### [GitHub](#tab/github)

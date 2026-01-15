@@ -4,7 +4,7 @@ description: This article provides information about how to create an Azure Blob
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 10/30/2025
+ms.date: 12/26/2025
 ms.custom:
 - template-how-to
 - connectors
@@ -116,6 +116,11 @@ For more information about shared access signatures, go to [Shared access signat
 Select **Sign in**, which displays the sign in interface. Enter your account and password to sign in your organizational account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="./media/connector-azure-blob-storage/authentication-organizational-account.png" alt-text="Screenshot showing organizational account authentication.":::
+
+Grant the organizational account proper permission in Azure Blob Storage. For more information on the roles, go to [Assign an Azure role for access to blob data](/azure/storage/blobs/assign-azure-role-data-access).
+
+   * **As source**, in **Access control (IAM)**, grant at least the **Storage Blob Data Reader** role.
+   * **As destination**, in **Access control (IAM)**, grant at least the **Storage Blob Data Contributor** role.
 
 #### Service principal authentication
 

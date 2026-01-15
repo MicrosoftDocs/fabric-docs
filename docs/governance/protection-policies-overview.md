@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: concept-article #Don't change
-ms.date: 10/30/2025
+ms.date: 12/03/2025
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 
 
@@ -19,15 +19,9 @@ The target audience for this article is security and compliance admins, Fabric a
 
 ## How do protection policies for Fabric work?
 
-Each protection policy for Fabric is associated with a sensitivity label. The policy controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item, while blocking access for everyone else. The policy can:
+Each protection policy for Fabric is associated with a sensitivity label. The policy controls access to an item that has the associated label by allowing users and groups specified in the policy to retain permissions they have on the item, while blocking access for everyone else. 
 
-* Allow specified users and groups to retain *read* permission on labeled items if they have it. Any other permissions they have on the item will be removed.
-
-    and/or
-
-* Allow specified users and groups to retain *full control* on the labeled item if they have it, or to retain whatever permissions they do have.
-
-As mentioned, the policy blocks access to the item for all users and groups that aren't specified in the policy.
+The policy can allow specified users and groups to retain full control on the labeled item if they currently have it. All other users and groups are blocked from accessing the item.
 
 > [!NOTE]
 > A protection policy doesn't apply to a label issuer. That is, the user that last applied a label associated with a protection policy to an item won't be denied access to that item, even if they aren't specified in the policy. For example, if a protection policy is associated with label A, and a user applies label A to an item, that user will be able to access the item even if they're not specified in the policy.
@@ -40,10 +34,7 @@ To view an item's permissions in the Fabric admin portal, open the **OneLake cat
 
 ## Use cases
 
-The following are examples of where protection policies could be useful: 
-
-* An organization wants only users within the organization to be able to access items labeled as "Confidential".
-* An organization wants only users in the finance department to be able to edit data items labeled as "Financial data", while allowing other users in the organization to be able to read those items.
+Protection policies are useful in scenarios where organizations need to restrict access to sensitive items. For example, an organization might want to ensure that only specific internal users can access items labeled as "Confidential," while blocking access for everyone else.
 
 ## Who creates protection policies for Fabric?
 

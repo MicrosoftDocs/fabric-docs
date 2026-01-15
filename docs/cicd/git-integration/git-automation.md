@@ -7,7 +7,7 @@ ms.reviewer: Pierre, NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 02/21/2025
+ms.date: 12/15/2025
 ms.search.form: Git integration automation, Git integration APIs, Azure DevOps integration, GitHub integration
 #customer intent: As developer, I want to learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, so that I can simplify continuous integration and continuous delivery (CI/CD) of my content.
 ---
@@ -356,7 +356,7 @@ In order to [connect](/rest/api/fabric/core/git/connect) to a Git repository or 
 
 ### Create a new connection that stores your Git credentials
 
-#### [Azure DevOps (preview)](#tab/ADO)
+#### [Azure DevOps](#tab/ADO)
 
 The following code snippet shows a sample request body to create a connection that stores your Azure DevOps credentials. The full example can be found in the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/main/features-samples/git-integration/GitIntegration-StoreGitProviderCredentials.ps1).
 

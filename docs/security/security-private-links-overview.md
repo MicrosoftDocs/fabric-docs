@@ -4,7 +4,7 @@ description: Learn about the Azure private link feature to provide secure access
 author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 08/21/2025
 ---
@@ -67,7 +67,7 @@ Direct calls using OneLake regional endpoints don't work via private link to Fab
 
 ### Warehouse and Lakehouse SQL analytics endpoint
 
-Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, SQL Server Management Studio, Azure Data Studio) to connect to Warehouse via private link.
+Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or the [MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code)) to connect to Warehouse via private link.
 
 Visual query in Warehouse doesn't work when the **Block Public Internet Access** tenant setting is enabled.
 
@@ -161,9 +161,9 @@ To enable these capabilities in Desktop, admins can configure [service tags](/az
 
 ### Mirrored database
 
-Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server) (using SQL Server 2025 CTP 2.0 or higher version). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started. 
+Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring), [Azure Cosmos DB mirroring](/fabric/mirroring/azure-cosmos-db), [Azure SQL Managed Instance mirroring](/fabric/mirroring/azure-sql-managed-instance) and [SQL Server 2025 mirroring](/fabric/mirroring/sql-server). For other types of database mirroring, if the **Block public Internet access** tenant setting is **enabled**, active mirrored databases enter a paused state, and mirroring can't be started.
 
-For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link. 
+For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link.
 
 ## Other considerations and limitations
 

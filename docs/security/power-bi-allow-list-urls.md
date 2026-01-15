@@ -4,7 +4,7 @@ description: Learn about URL endpoints and ports with their associated linked si
 author: msmimart
 ms.author: mimart
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 01/08/2025
 ms.custom: ''
 ---
@@ -103,6 +103,14 @@ Power BI depends on certain endpoints to support integration with OneDrive for B
 | Purpose | Destination | Port |
 | --- | --- | --- |
 | **Required:** OneDrive and SharePoint integration | See the documentation for  [SharePoint Online and OneDrive for Business URLs](/office365/enterprise/urls-and-ip-address-ranges##sharepoint-online-and-onedrive-for-business) | N/A |
+
+## Paginated Report Exporting
+
+Exporting of Paginated reports in Power BI requires access to Azure Blob Storage. You must be able to connect to the endpoint and linked sites in the following table.
+
+| Purpose | Destination | Port |
+| --- | --- | --- |
+| **Required:** Azure Blob Storage | *.blob.core.windows.net | TCP 443 | 
 
 ## Related external sites
 

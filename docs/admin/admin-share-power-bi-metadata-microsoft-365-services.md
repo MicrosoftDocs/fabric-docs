@@ -6,8 +6,8 @@ ms.author: mimart
 ms.reviewer: 'jadelynray'
 
 ms.custom:
-ms.topic: conceptual
-ms.date: 06/12/2025
+ms.topic: concept-article
+ms.date: 12/05/2025
 LocalizationGroup: Admin
 Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 ---
@@ -42,14 +42,14 @@ For more information about data storage for Microsoft 365, see [Where your Micro
 
 ## How to turn sharing with Microsoft 365 services on and off
 
-Sharing metadata with Microsoft 365 services is controlled by the **Users can see Microsoft Fabric metadata in Microsoft 365** tenant setting. The setting is **Enabled** by default. To turn off the feature, or to turn it on again after it's been turned off, go to **Admin portal** > **Tenant settings** > **Users can see Microsoft Fabric metadata in Microsoft 365** and set the toggle as appropriate. Once the setting is enabled or disabled, it may take up to 24 hours for you to see changes.
+Sharing metadata with Microsoft 365 services is controlled by the **Share Fabric data with your Microsoft 365 services** tenant setting. The setting is **Enabled** by default. To turn off the feature, or to turn it on again after it's been turned off, go to **Admin portal** > **Tenant settings** > **Share Fabric data with your Microsoft 365 services** and set the toggle as appropriate. Once the setting is enabled or disabled, it may take up to 24 hours for you to see changes.
 
 By default, Fabric data is available only in the region where the Fabric tenant is located. To allow Fabric to share metadata across regions, set the second toggle switch to **Enabled**. When you enable the second toggle, you acknowledge that Fabric data may flow outside the geographic region it's stored in.
 
 > [!NOTE]
 > The second toggle is visible only when the main sharing toggle is enabled.
 
-![Screenshot of users can see Microsoft Fabric metadata in Microsoft 365 tenant setting.](media/admin-share-power-bi-metadata-microsoft-366.png)
+![Screenshot of Share Fabric data with your Microsoft 365 services tenant setting.](media/admin-share-power-bi-metadata-microsoft-366.png)
 
 
 

@@ -2,12 +2,10 @@
 title: List of GQL reserved words
 description: Complete list GQL language reserved words for graph in Microsoft Fabric
 ms.topic: reference
-ms.date: 10/10/2025
-author: eric-urban
-ms.author: eur
+ms.date: 11/18/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ---
 
 # GQL reserved words reference

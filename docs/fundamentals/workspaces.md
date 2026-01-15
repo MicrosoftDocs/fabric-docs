@@ -4,11 +4,11 @@ description: Learn about workspaces, which are collections of items such as lake
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw, mesrivas,liud
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 02/26/2025
+ms.date: 11/18/2025
 
 ---
 
@@ -174,6 +174,7 @@ See the following table if you have trouble signing in.
 |---|---|---|
 |`browser_storage_unsupported`| Your browser is blocking access to storage, which is required for signing in.| - Check your browser’s privacy settings.<br>- Make sure cookies and local storage (like `sessionStorage` or `localStorage`) are allowed.<br>- Try disabling any extensions that might block storage access. |
 |`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allowlist of your proxy or firewall. This helps your network keep the necessary login information in place when trying to connect to the service. |
+| `popup_window_blocked` | Error opening popup window. The browser blocked popups or the environment doesn't support popups. | Allow popups for the site, then retry sign in. | 
 
 ## Considerations and limitations
 

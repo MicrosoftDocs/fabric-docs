@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop, twinklecyril
 ms.date: 09/08/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Fabric Data Warehouse
@@ -45,7 +45,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `BULK LOAD`
 - `CREATE USER`
 - `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
-- IDENTITY Columns
 - Manually created multi-column stats
 - Materialized views
 - `PREDICT`

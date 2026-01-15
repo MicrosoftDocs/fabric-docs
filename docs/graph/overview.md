@@ -2,12 +2,10 @@
 title: Graph Overview
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: concept-article
-ms.date: 10/28/2025
-author: eric-urban
-ms.author: eur
+ms.date: 11/18/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: wangwilliam
-ms.service: fabric
-ms.subservice: graph
 ms.custom: references_regions
 ms.search.form: Graph Overview
 ---
@@ -34,7 +32,7 @@ Traditional relational and tabular data formats make it difficult—if not impos
 
 Graph in Microsoft Fabric provides an efficient way to model, visualize, and query these relationships, helping you understand the interconnectedness of your data and drive better insights.
 
-- Business user: Visually explores relationships, runs NL (natural language) queries, and gains insights effortlessly.
+- Business user: Visually explores relationships, [runs NL (natural language) queries](https://forms.office.com/r/97QkVDBeuM), and gains insights effortlessly.
 - Data engineer: Defines graph models, unifies data in OneLake with low and no-code tools.
 - Data scientist: Uses graph algorithms and ML (machine learning) in Fabric's data science environment.
 - Developer: Builds AI agents and real-time apps using graph-powered contextual insights.
@@ -47,21 +45,22 @@ Graph in Microsoft Fabric enables you to:
 
 - Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data.
 
+    > [!TIP]
+    > Graph fully supports schema evolution through OneLake. This means you can add, remove, or reorder columns in your source tables without breaking graph ingestion or requiring a full reload. All schema changes are automatically handled during graph load and reflected in production, giving you flexibility to adapt your data model as business needs evolve. This capability ensures that graph solutions remain resilient and up to date even as underlying datasets change.
+
 - Query using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information Technology - Database Languages - GQL](https://www.iso.org/standard/76120.html).
-
-- Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain.
-
+<!-- - Enrich your graph with scores and communities for downstream BI (business intelligence) and AI (artificial intelligence) workflows. Run built-in graph algorithms such as shortest path, page rank, weakly connected components (WCC), and Louvain. -->
 - Benefit from job function-based experiences:  
     - Data engineers can model and create graphs.  
     - Analysts can run low/no-code queries and curate view sets.  
-    - Business users can explore visually or use natural language to interact with the data.  
+    - Business users can explore visually or [use natural language](https://forms.office.com/r/97QkVDBeuM) to interact with the data.  
     <!-- - Developers and data scientists can integrate graph analytics in notebooks and applications. -->
 
 - Operate within Fabric: Automatically shut down when not in use and monitor usage in the capacity metrics app—all governed by Fabric OneLake security, compliance, and permission model.
 
 ## Integration with Microsoft Fabric
 
-Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Power BI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
+Graph in Microsoft Fabric is deeply integrated with the Microsoft Fabric platform, including OneLake for unified data storage and Fabric UI for visualization. It integrates seamlessly with Microsoft Fabric's governance, security, and operational features.
 
 You can incorporate graph analytics into your existing workflows, eliminating the need for data duplication and specialized skills. So, insights are accessible to a broader audience compared to traditional standalone [graph databases](graph-database.md).
 
@@ -76,32 +75,8 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 | Operations & cost | Graph workloads run on pooled Fabric capacity units (CUs) with automatic scale-down and centralized metrics, which helps optimize resource usage and cost. | Standalone graph databases require separate clusters or licenses, custom scaling and monitoring, and often incur idle capacity charges, increasing operational complexity and cost. |
 | Governance & security | Microsoft Fabric provides native OneLake governance, lineage tracking, and workspace role-based access control (RBAC), and integrates with Fabric compliance standards for security and auditing. | Standalone graph databases have separate security and governance models that must be configured and audited independently, which can increase risk and administrative burden. |
 
-## Workspace roles
-
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models and QuerySet items.
-
-### Graph Model
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-
-### Graph QuerySet
-
-| Capability                             | Admin | Member | Contributor | Viewer |
-|----------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
-| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
-| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
-| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
-
 > [!NOTE]
-> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
-> Only read, write, and reshare permissions are supported for QuerySet item.
+> * Join the new Fabric user panel to share feedback and help shape Fabric and Power BI. Participate in surveys and 1:1 sessions with the product team. Learn more and sign up at [Fabric user panel](../fundamentals/feedback.md#fabric-user-panel).
 
 ## Pricing and capacity units
 
@@ -157,9 +132,8 @@ Graph is currently available in the following regions:
 - West US 2
 - West US 3
 
-If you would like to be notified when the service has been added to your region, fill out this [form](https://forms.office.com/r/zkFLe8M8gP).
-
 ## Related content
 
+- [Sign up for preview of natural language querying of Graph](https://forms.office.com/r/97QkVDBeuM)
 - [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
 - [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)

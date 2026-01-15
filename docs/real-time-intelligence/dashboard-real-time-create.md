@@ -6,6 +6,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.date: 10/05/2025
+ms.subservice: rti-dashboard
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Create a Real-Time Dashboard
@@ -42,6 +43,10 @@ There are several ways to create a new Real-Time dashboard, select the tab that 
 ## [Manual](#tab/create-manual)
 
 [!INCLUDE [Real-Time Intelligence create-real-time-dashboard](includes/create-real-time-dashboard.md)]
+
+6. Complete dashboard setup by adding a data source to the dashboard. After the dashboard is connected to a data source, you can access all dashboard options like adding new tiles.
+
+    :::image type="content" source="media/real-time-dashboard/dashboard-new-with-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled.":::
 
 ## [Copilot](#tab/create-copilot)
 

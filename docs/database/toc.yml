@@ -13,6 +13,14 @@ items:
     href: ../data-factory/decision-guide-data-integration.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
   - name: "Decision guide: Choose a data movement strategy"
     href: ../data-factory/decision-guide-data-movement.md?toc=/fabric/database/toc.json&bc=/fabric/database/toc.json
+  - name: Best use cases
+    items: 
+    - name: Reverse ETL
+      href: sql/use-case-reverse-etl.md
+    - name: Operational data store
+      href: sql/use-case-operational-data-store.md
+    - name: Translytical applications
+      href: sql/use-case-translytical-applications.md
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
@@ -68,13 +76,13 @@ items:
   - name: AI
     items:
     - name: Intelligent applications and AI
-      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
     - name: Intelligent applications and AI FAQ
-      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
     - name: Vectors and embeddings
-      href: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
     - name: Vectors and embeddings FAQ
-      href: /sql/sql-server/ai/vectors-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric&preserve-view=true
+      href: /sql/sql-server/ai/vectors-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
   - name: Data recovery
     items:
     - name: Backups
@@ -111,6 +119,8 @@ items:
       href: sql/connect-your-dotnet-aspire-application-to-fabric-sql-database.md
   - name: Integrate with Fabric services
     items: 
+    - name: Data virtualization
+      href: sql/data-virtualization.md
     - name: Fabric User data functions
       href: ../data-engineering/user-data-functions/connect-to-data-sources.md
     - name: SQL analytics endpoint
@@ -155,16 +165,20 @@ items:
     items:
     - name: Overview 
       href: sql/security-overview.md
+    - name: Auditing for SQL database
+      href: sql/auditing.md
     - name: Authentication in SQL database
       href: sql/authentication.md
-    - name: Access control in SQL database
+    - name: Access control
       href: sql/authorization.md
     - name: Share your SQL database and manage item permissions
       href: sql/share-sql-manage-permission.md
     - name: Configure granular access control for a SQL database
       href: sql/configure-sql-access-controls.md     
     - name: Protect sensitive data with Microsoft Purview protection policies
-      href: sql/protect-databases-with-protection-policies.md  
+      href: sql/protect-databases-with-protection-policies.md 
+    - name: Encryption-at-rest with customer-managed keys
+      href: sql/encryption.md  
   - name: Troubleshoot
     items: 
     - name: Limitations
@@ -174,7 +188,7 @@ items:
   - name: Reference
     items: 
     - name: T-SQL Reference for Fabric
-      href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+      href: /sql/t-sql/language-reference?view=fabric-sqldb&preserve-view=true
   - name: Resources
     items: 
     - name: SQL database in Fabric Community
@@ -195,6 +209,8 @@ items:
       href: https://feedback.azure.com/    
   - name: Ideas
     href: https://ideas.fabric.microsoft.com/
+  - name: Community
+    href: https://community.fabric.microsoft.com/
   - name: Service updates
     href: https://azure.microsoft.com/updates/    
   - name: Azure Status

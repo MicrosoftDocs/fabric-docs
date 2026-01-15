@@ -21,7 +21,6 @@ In this tutorial, learn how to clone a table with T-SQL. Specifically, you learn
 > 1. [Create a workspace](tutorial-create-workspace.md)
 > 1. [Create a Warehouse](tutorial-create-warehouse.md)
 > 1. [Ingest data into a Warehouse](tutorial-ingest-data.md)
-> 1. [Create tables with T-SQL in a Warehouse](tutorial-create-tables.md)
 
 A cloned table provides several benefits:
 

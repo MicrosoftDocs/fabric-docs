@@ -14,16 +14,42 @@ items:
         href: sample-data.md
       - name: Query cross-database
         href: how-to-query-cross-database.md
-  - name: Integrate with other services
+  - name: Integrate with Fabric services
     items:
       - name: Mirror to OneLake
         href: mirror-onelake.md
       - name: Query mirrored data
         href: tutorial-mirroring.md
-      - name: Create Power BI reports
-        href: how-to-create-reports.md
       - name: Access data from a lakehouse
         href: how-to-access-data-lakehouse.md
+      - name: Create Power BI reports
+        href: how-to-create-reports.md
+      - name: Spark Notebooks
+        href: how-to-use-spark-notebooks.md
+      - name: Python Notebooks
+        href: how-to-use-python-notebooks.md
+      - name: User data functions
+        href: how-to-user-data-functions.md
+  - name: Samples
+    items:
+      - name: Cosmos DB getting started
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
+      - name: Vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search
+      - name: Spark Cosmos getting started and Reverse ETL
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-scala
+      - name: Fraud detection with vectors
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/fraud-detection
+      - name: Correlation analysis with Power BI visuals
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/price-reviews-powerbi
+      - name: Correlation analysis with Spark Notebooks
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/price-reviews-spark
+      - name: Container management with Python SDK
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/management
+      - name: Advanced vector search
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
+      - name: Disaster Recovery for Cosmos artifacts
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/disaster-recovery
   - name: Build AI applications
     items:
       - name: Index vector data
@@ -47,8 +73,10 @@ items:
         href: security.md
       - name: Authorization
         href: authorization.md
-      - name: Authenticate with Microsoft Entra ID
+      - name: Authenticate from Azure services
         href: how-to-authenticate.md
+      - name: Authenticate from Fabric Notebooks
+        href: how-to-authenticate-notebooks.md
   - name: Manage resources
     items:
       - name: Configure container
@@ -77,3 +105,5 @@ items:
         href: limitations.md
       - name: Mirroring limitations
         href: mirroring-limitations.md
+      - name: Cosmos DB v2 connector limitations
+        href: cosmos-db-v2-connector-limitations.md

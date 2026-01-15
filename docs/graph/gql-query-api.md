@@ -2,12 +2,10 @@
 title: GQL Query HTTP API reference
 description: Refer to the complete HTTP API reference for querying graph data in Microsoft Fabric using GQL (Graph Query Language).
 ms.topic: reference
-ms.date: 10/28/2025
-author: eric-urban
-ms.author: eur
+ms.date: 11/18/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
-ms.service: fabric
-ms.subservice: graph
 ms.search.form: GQL Query HTTP API reference
 ---
 
@@ -16,6 +14,9 @@ ms.search.form: GQL Query HTTP API reference
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Run GQL queries against property graphs in Microsoft Fabric using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
+
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
 
 ## Overview
 
@@ -98,11 +99,11 @@ You can use more parameters to further narrow down query results:
 
 ### Request headers
 
-| Header | Value | Required |
-|---|---|---:|
-| `Content-Type` | `application/json` | Yes |
-| `Accept` | `application/json` | Yes |
-| `Authorization` | `Bearer <token>` | Yes |
+| Header          | Value              | Required |
+|-----------------|--------------------|---------:|
+| `Content-Type`  | `application/json` | Yes      |
+| `Accept`        | `application/json` | Yes      |
+| `Authorization` | `Bearer <token>`   | Yes      |
 
 ## Request format
 
@@ -118,9 +119,9 @@ All requests use HTTP POST with a JSON payload.
 
 ### Request fields
 
-| Field | Type | Required | Description |
-|---|---|---:|---|
-| `query` | string | Yes | The GQL query to execute |
+| Field   | Type   | Required | Description              |
+|---------|--------|---------:|--------------------------|
+| `query` | string | Yes      | The GQL query to execute |
 
 ## Response format
 
@@ -151,12 +152,12 @@ All responses for successful requests use HTTP 200 status with JSON payload cont
 
 Every response includes a status object with execution information:
 
-| Field | Type | Description |
-|---|---|---|
-| `code` | string | six-character status code (000000 = success) |
-| `description` | string | Human-readable status message |
-| `diagnostics` | object | Detailed diagnostic records |
-| `cause` | object | Optional underlying cause status object |
+| Field         | Type   | Description                                  |
+|---------------|--------|----------------------------------------------|
+| `code`        | string | six-character status code (000000 = success) |
+| `description` | string | Human-readable status message                |
+| `diagnostics` | object | Detailed diagnostic records                  |
+| `cause`       | object | Optional underlying cause status object      |
 
 #### Status codes
 
@@ -254,19 +255,19 @@ The JSON format of GQL values follows a discriminated union pattern.
 
 ### Primitive types
 
-| GQL Type | Example | Description |
-|---|---|---|
-| `BOOL` | `{"gqlType": "BOOL", "value": true}` | Native JSON boolean |
-| `STRING` | `{"gqlType": "STRING", "value": "Hello"}` | UTF-8 string |
+| GQL Type | Example                                   | Description         |
+|----------|-------------------------------------------|---------------------|
+| `BOOL`   | `{"gqlType": "BOOL", "value": true}`      | Native JSON boolean |
+| `STRING` | `{"gqlType": "STRING", "value": "Hello"}` | UTF-8 string        |
 
 ### Numeric types
 
 #### Integer types
 
-| GQL Type | Range | JSON Serialization | Example |
-|---|---|---|---|
-| `INT64` | -2⁶³ to 2⁶³-1 | Number or string* | `{"gqlType": "INT64", "value": -9237}` |
-| `UINT64` | 0 to 2⁶⁴-1 | Number or string* | `{"gqlType": "UINT64", "value": 18467}` |
+| GQL Type | Range         | JSON Serialization | Example                                 |
+|----------|---------------|--------------------|-----------------------------------------|
+| `INT64`  | -2⁶³ to 2⁶³-1 | Number or string*  | `{"gqlType": "INT64", "value": -9237}`  |
+| `UINT64` | 0 to 2⁶⁴-1    | Number or string*  | `{"gqlType": "UINT64", "value": 18467}` |
 
 Large integers outside JavaScript's safe range (-9,007,199,254,740,991 to 9,007,199,254,740,991) are serialized as strings:
 
@@ -294,16 +295,16 @@ Floating-point values support IEEE 754 special values:
 
 Supported temporal types use ISO 8601 string formats:
 
-| GQL Type | Format | Example |
-|---|---|---|
+| GQL Type         | Format                             | Example                                                               |
+|------------------|------------------------------------|-----------------------------------------------------------------------|
 | `ZONED DATETIME` | YYYY-MM-DDTHH:MM:SS[.ffffff]±HH:MM | `{"gqlType": "ZONED DATETIME", "value": "2023-12-25T14:30:00+02:00"}` |
 
 ### Graph element reference types
 
-| GQL Type | Description | Example |
-|---|---|---|
-| `NODE` | Graph node reference | `{"gqlType": "NODE", "value": "node-123"}` |
-| `EDGE` | Graph edge reference | `{"gqlType": "EDGE", "value": "edge_abc#def"}` |
+| GQL Type | Description          | Example                                        |
+|----------|----------------------|------------------------------------------------|
+| `NODE`   | Graph node reference | `{"gqlType": "NODE", "value": "node-123"}`     |
+| `EDGE`   | Graph edge reference | `{"gqlType": "EDGE", "value": "edge_abc#def"}` |
 
 ### Complex types
 
@@ -409,12 +410,13 @@ To determine success, check the status code:
 
 Run a query using the `az rest` command to avoid having to obtain bearer tokens manually, like so:
 
+<!-- GQL Query: Checked 2025-11-20 -->
 ```bash
 az rest --method post --url "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true" \
 --headers "Content-Type=application/json" "Accept=application/json" \
 --resource "https://api.fabric.microsoft.com" \
 --body '{ 
-  "query": "MATCH (n:Person) WHERE n.age > 42 RETURN n.name, n.age ORDER BY n.age" 
+  "query": "MATCH (n:Person) WHERE n.birthday > 19800101 RETURN n.firstName, n.lastName, n.birthday ORDER BY n.birthday LIMIT 100" 
 }'
 ```
 
@@ -433,13 +435,14 @@ export ACCESS_TOKEN="your-access-token-here"
 
 Run a query like so:
 
+<!-- GQL Query: Checked 2025-11-20 -->
 ```bash
 curl -X POST "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -d '{
-    "query": "MATCH (n:Person) WHERE n.age > 42 RETURN n.name, n.age ORDER BY n.age"
+    "query": "MATCH (n:Person) WHERE n.birthday > 19800101 RETURN n.firstName, n.lastName, n.birthday ORDER BY n.birthday LIMIT 100" 
   }'
 ```
 
