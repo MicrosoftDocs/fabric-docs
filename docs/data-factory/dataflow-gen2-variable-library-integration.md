@@ -106,7 +106,7 @@ The following list outlines important constraints and behaviors to keep in mind 
 
 - **Runtime behavior**: Variables values are retrieved at the start of a run operation and persisted throughout the operation. Changes that happen to a library during a Dataflow run don't halt or impact its run.
 
-- **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor. This includes running the dataflow through the `Save & Run` button in the Power Query editor UI.
+- **Power Query editor support**: No current support to resolve or evaluate variables within the Power Query editor.
 
 - **Using a default value**: When using a default value through the function *Variable.ValueOrDefault*, make sure that the data type of the default value matches the data type of the referenced variable.
 
