@@ -120,7 +120,7 @@ Now that you have a lakehouse in the restricted workspace, you can create a sema
 
 8. In the **Create new report** dialog, verify that the source workspace is selected. Provide a meaningful semantic model name, and then select **Create**.
 
-9. In the **Some Steps didn't complete** dialog, select **Open Model View**. Note that the semantic model can't yet connect to the SQL analytics endpoint in the inbound restricted target workspace. You complete the connection configuration [later in this article](#step-4-enable-a-gateway-connection-in-the-semantic-model-settings).
+9. In the **Some steps didn't complete** dialog, select **Open Model View**. Note that the semantic model can't yet connect to the SQL analytics endpoint in the inbound restricted target workspace. You complete the connection configuration [later in this article](#step-4-enable-a-gateway-connection-in-the-semantic-model-settings).
 
 ### Create a semantic model by using Power BI Desktop
 
