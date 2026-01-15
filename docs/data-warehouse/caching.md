@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fipopovi, emtehran
 ms.date: 06/11/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # In-memory and disk caching

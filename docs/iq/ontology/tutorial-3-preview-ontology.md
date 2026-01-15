@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 # Ontology (preview) tutorial part 3: Preview the ontology
 
-In this tutorial step, explore your ontology with the preview experience. Inspect entity instances that instantiate your entity types with data, and explore graph-shaped context across sales and device streaming data.
+In this tutorial step, explore your ontology by using the preview experience. Inspect entity instances that instantiate your entity types with data, and explore graph-shaped context across sales and device streaming data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -94,7 +94,7 @@ Next, craft this query: *Show all stores that have made a sale with a revenue gr
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue.":::
 
-1. Select **Run query** and verify that the instance graph shows two stores that meet the filter for their connected sale events. You can also select the nodes in the graph to get details of the specific sale events
+1. Select **Run query** and verify that the instance graph shows two stores that meet the filter for their connected sale events. You can also select the nodes in the graph to get details of the specific sale events.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/sale-event-stores.png" alt-text="Screenshot of the stores that meet the filter for their connected sale events." lightbox="media/tutorial-3-preview-ontology/sale-event-stores.png":::
 
@@ -102,6 +102,6 @@ This process allows you to inspect the paths that connect operational issues (li
 
 ## Next steps
 
-In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further with natural language queries. 
+In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further by using natural language queries. 
 
 Continue to [Create data agent](tutorial-4-create-data-agent.md).
