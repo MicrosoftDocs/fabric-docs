@@ -50,7 +50,33 @@ Workspace admins can apply more specific inbound security controls when the tena
 
 These layers can work independently or together, depending on organizational needs.
 
-## Planning considerations
+## How network security settings interact
+
+Tenant and workspace inbound protection settings can be layered to achieve different network boundaries. When configuring workspaces, it's important to understand how network security settings interact in Fabric. The following scenarios illustrate how network security features can be combined to create tailored access controls.
+
+- **Scenario 1: Most restricted:** Blocks public internet access and requires private links at the tenant and workspace levels for all connections. Only trusted IP endpoints can access resources.
+- **Scenario 2: Highly restricted:** Reduces attack surface even more, ensuring only highly controlled connections are permitted. Restricts inbound access to the workspace, blocks public internet access, and requires private links.  
+- **Scenario 3: Broad access:** Provides accessibility while maintaining private link options. Connections from trusted IPs and public internet are allowed.
+- **Scenario 4: Balanced access:** Balances security and access by restricting workspace inbound connections but allowing public internet access. Connections from trusted IPs and restricted public internet access are allowed.
+- **Scenario 5: Simplified access:** Workspace-level private links with restricted inbound access. Simplifies access by disabling tenant private links and allowing public internet connections. Only workspace private link and trusted IPs can access resources.
+- **Scenario 6: Workspace-only access:** Workspace-level private links with restricted inbound access and blocked public access. Limits access by disabling tenant private links and restricting workspace inbound connections. Only workspace private link can access resources.
+
+The following table illustrates how network settings are configured for each of these scenarios and the affect on access to the Fabric portal.
+
+### Table 1: Access to the Fabric portal based on network settings
+
+| Scenario | Tenant private link | Tenant: Public internet | Workspace: Allow public access and private link | Workspace private link only | Can I access the Fabric portal? |  
+|--|--|--|--|--|--|
+| 1 | Yes | Blocked | Yes | - | Only via the tenant private link; the tenant PL VM can access the workspace over the public internet | 
+| 2 | Yes | Blocked | - | Yes | Only via the tenant private link; the tenant PL VM can access the workspace over the public internet | 
+| 3 | Yes | Allowed | Yes | - | Yes, via public internet, tenant private link, or workspace private link | 
+| 4 | Yes | Allowed | - | Yes | Yes, via public internet, tenant private link, or workspace private link |
+| 5 | No | Allowed | Yes | - | Yes, via public internet or workspace private link | 
+| 6 | No | Allowed | - | Yes | Yes, via public internet or workspace private link | 
+
+## Planning considerations for inbound protection
+
+When planning inbound protection for your Fabric environment, consider the following:
 
 - You must be a Fabric administrator to enable tenant-level inbound rules. 
 - Workspace-level features depend on tenant settings.
