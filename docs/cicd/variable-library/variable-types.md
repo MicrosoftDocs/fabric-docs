@@ -20,7 +20,7 @@ A variable library in Microsoft Fabric is a specialized item that centralizes th
 Variables within a variable library can be a basic or advanced types, and each variable is uniquely identified by its name within the library item.
 
 - **Basic** variable types in the Variable Library include simple, data types such as Boolean, DateTime (in ISO 8601 UTC format), Guid, Integer, Number, and String. These are straightforward values that can be directly assigned and used across different stages and environments. 
-- **Advanced** variable types are designed for more sophisticated use cases, such as referencing internal Fabric items or external connections. These include "item reference" types.
+- **Advanced** variable types are designed for more sophisticated use cases, such as referencing internal Fabric items or external connections. These include "item reference" types which store workspace and item IDs to point to specific Fabric items.
 
 ## Supported types in variable libraries
 

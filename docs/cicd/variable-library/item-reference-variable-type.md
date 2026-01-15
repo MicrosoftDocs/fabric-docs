@@ -78,7 +78,7 @@ Currently, you can only reference fabric items and semantic models. Other Power 
 Using Item Reference variables involves two layers of permissions:
 
 - **Create/Edit** - Although any workspace contributor can modify variable values, an Item reference variable only permits users to set as value items for which they have read permissions. This applies to any value, the default active value set or other value-sets. Be aware that during when saving a Variable Library item, a permission check is performed on the active values of item reference variables for the user who's saving the item, even if those values remain unchanged.
-- **Using item ref variable** - When creating/updating a reference to a variable in a consumer item, users cannot set a reference to an item reference variable unless they have at least **READ** permission for the item in the active value-set.
+- **Use an item ref variable** - When creating/updating a reference to a variable in a consumer item, users cannot set a reference to an item reference variable unless they have at least **READ** permission for the item in the active value-set.
 
 #### Permission validation
 Permission validation is triggered in the following use-cases:
@@ -110,14 +110,8 @@ The Variable Library enables CI/CD for Fabric content across environments (Dev, 
 - Deploying to a new stage, these references still point to the original workspace unless manually updated.
 - Use Multiple Value-Sets for each stage and activate the correct set manually or via API scripts.
 
-**Deployment Pipeline Interaction**
-As the configuration of 'Active value-set' is not part of Variable library definition file (schema), it won't be deployed during deployment, meaning:
-- During first Deployment of a Variable library item - regradless of the active value-set in the source stage, the active one in the target stage will be the default value-set and it can be changed only after the deployment. 
-- On re-deployments, there will be no change to the active value-set of the target stage. It can be changed only through the UI or Update API.
+For more information, see [value-sets in variable libraries](value-sets.md).
 
-**Import/Export (Git)**
-
-- Exported libraries contain static IDs.
 
 
 
