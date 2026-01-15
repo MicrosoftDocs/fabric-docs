@@ -20,17 +20,17 @@ Yes, you can bind data from Fabric Eventstream to ontology (preview) by landing 
 
 ## Does ontology (preview) support ontology management like versioning?
 
-No, versioning is not currently available.
+No, versioning isn't currently available.
 
 ## Does ontology (preview) support importing from industry-specific database templates from Azure Synapse?
 
-No, import from industry-specific templates is not currently available. 
+No, import from industry-specific templates isn't currently available. 
 
 ## What's the difference between ontology (preview) and Graph in Microsoft Fabric?
 
-While ontology (preview) integrates with [Graph in Microsoft Fabric (preview)](../../graph/overview.md), they are different items with different purposes.
+While ontology (preview) integrates with [Graph in Microsoft Fabric (preview)](../../graph/overview.md), they are distinct items that serve different purposes.
 
-Ontology is about creating a semantic layer for your enterprise vocabulary that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and rules and constraints, and binds them to real data so that downstream tools share the same language. [Graph in Microsoft Fabric (preview)](../../graph/overview.md) is a graph solution that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms.
+Ontology provides a semantic layer for your enterprise vocabulary that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, rules, and constraints, and binds them to real data so that downstream tools share the same language. [Graph in Microsoft Fabric (preview)](../../graph/overview.md) is a graph solution that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms.
 
 Ontology (preview) works together with Graph today. Ontology declares which things connect and why, and you can use Graph to view your entity instances to learn more about the instantiated ontology and see patterns in the [ontology preview experience](how-to-use-preview-experience.md).
 
