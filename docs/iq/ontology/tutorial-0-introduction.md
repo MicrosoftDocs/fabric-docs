@@ -66,7 +66,7 @@ It contains the following sample CSV files. The data contains static entity deta
 
 ## Prepare the lakehouse 
 
-First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace (make sure the checkbox for **Lakehouse schemas (Public Preview)** is not enabled).
+First, create a new lakehouse called *OntologyDataLH* in your Fabric workspace.
 
 Then, upload four sample CSV files to your lakehouse, and load each one to a new delta table. These files contain entity details about business objects in the Lakeshore Retail scenario.
 * *DimStore.csv*
