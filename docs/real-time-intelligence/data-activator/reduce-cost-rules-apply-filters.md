@@ -24,28 +24,7 @@ In this example, you track the stock price of a company you're investing in. The
 
 ## Set up Eventstream with sample data
 
-Stock market data is a high-volume eventstream sending around 2,000 events every minute. Since you're charged for ingestion into Activator, reducing the eventstream volume helps your Activator rule consume fewer Fabric capacity units.
-
-The sample stock market data simulates real-time data from three different companies. Each event contains the following fields:
-
-- **symbol** – a company code
-- **bidPrice** – current stock price of the company
-
-1. Create a new Eventstream and select **Use sample data** on the welcome screen.
-
-   :::image type="content" source="media/reduce-cost-rules-apply-filters/use-sample-data-selection.png" alt-text="Screenshot showing the Eventstream welcome screen with the Use sample data option." lightbox="media/reduce-cost-rules-apply-filters/use-sample-data-selection.png":::
-
-1. Select **Stock market (high data rate)** and select **Add**.
-
-   :::image type="content" source="media/reduce-cost-rules-apply-filters/add-stock-market-sample-data.png" alt-text="Screenshot showing the sample data selection dialog with Stock market high data rate option." lightbox="media/reduce-cost-rules-apply-filters/add-stock-market-sample-data.png":::
-
-1. [Set Activator as the eventstream destination](../event-streams/add-destination-activator.md), then select **Publish**.
-
-   :::image type="content" source="media/reduce-cost-rules-apply-filters/event-stream-activator-destination.png" alt-text="Screenshot showing the Eventstream with Activator configured as the destination." lightbox="media/reduce-cost-rules-apply-filters/event-stream-activator-destination.png":::
-
-1. Open the Activator item. After a few minutes, you see events ingested into Activator at a rate of 2,000 events per minute.
-
-   :::image type="content" source="media/reduce-cost-rules-apply-filters/activator-event-ingestion-rate.png" alt-text="Screenshot showing Activator with events being ingested at 2000 events per minute." lightbox="media/reduce-cost-rules-apply-filters/activator-event-ingestion-rate.png":::
+[!INCLUDE [Create eventstream with sample stock market data](includes/create-event-stream-sample-stock-market-data.md)]
 
 ## Reduce event volume with filters
 
