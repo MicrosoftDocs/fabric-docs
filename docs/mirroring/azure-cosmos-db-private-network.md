@@ -4,7 +4,7 @@ description: Learn how to configure Azure Cosmos DB accounts with private networ
 author: jilmal
 ms.author: jmaldonado
 ms.reviewer: mbrown
-ms.date: 01/08/2026
+ms.date: 01/16/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -31,7 +31,7 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
   1. Navigate to **Workspace settings** → **License info**
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
-- The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
+- The user configuring private networks for Cosmos DB Mirroring should be an Azure subscription owner or have Contributor permissions on the Cosmos DB account and RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 
 ## Overview of network configuration options
 
@@ -69,7 +69,7 @@ For a streamlined setup experience, use the provided PowerShell script that auto
     Set-AzContext -Subscription "<subscriptionId>"
     ```
 
-2. Run the private network configuration script to set up mirroring
+1. Run the private network configuration script to set up mirroring
 
     ```powershell
     .\ps-account-setup-cosmos-pe-mirroring.ps1
@@ -86,7 +86,7 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 
 1. When prompted, create your mirrored database in Fabric while the account is temporarily accessible.
 
-1. After mirroring is created, the script restores your original network security settings (for private endpoints) or maintains the configured virtual network with added IP rules.
+1. After mirroring is created, return to the script and press `Y` to have it restore your original network security settings including disabling public access for private endpoints or restores your original IP firewall rules for Virtual Network.
 
 ## Manual configuration
 
@@ -151,6 +151,9 @@ To learn more about applying custom RBAC polices, refer to [Grant data plane rol
 
 Configure network access to allow Fabric services to connect to your Cosmos DB account.
 
+> [IMPORTANT!]
+> Manual configuration using Azure Service IP Ranges requires downloading and applying over 1200 IP addresses for PowerQueryOnline from the [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519) file. We recommend using the PowerShell script above to handle the Cosmos network configuration, or use Network Security Perimeter with Service Tags (see below).
+
 > [!IMPORTANT]
 > **For private endpoint users only:** Before adding IP addresses, you must temporarily enable public network access:
 > 
@@ -168,20 +171,24 @@ Configure network access to allow Fabric services to connect to your Cosmos DB a
 
 Choose one of the following methods to allow Fabric service access:
 
-**Option A: Manual IP Address Configuration (Recommended)**
-
-We recommend manually adding all IPv4 address ranges from the Azure service tags as it doesn't rely on preview features.
+**Option A: Manual IP Address Configuration**
 
 :::image type="content" source="./media/azure-cosmos-db-private-network/public-access-enabled-with-internet-protocols.png" alt-text="Screenshot showing public network access with IP addresses added to firewall." lightbox="./media/azure-cosmos-db-private-network/public-access-enabled-with-internet-protocols-full.png":::
 
 > [!NOTE]
-> Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the firewall fails. To learn more, visit [Azure Firewall known issues and limitations](/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
+> Azure firewall does not currently support IPv6. If you add an IPv6 address to a rule, the update fails. To learn more, visit [Azure Firewall known issues and limitations](/azure/firewall/firewall-known-issues#azure-firewall-premium-known-issues).
 
 1. Download the latest Azure Service Tags JSON file from [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519).
 
-1. Extract IP address ranges for the following services in your Fabric capacity region:
+1. Extract IPv4 address ranges for DataFactory for your Fabric capacity region:
     - `DataFactory.<region>` - For example, `DataFactory.WestUS3`
-    - `PowerQueryOnline.<region>` - For example, `PowerQueryOnline.WestUS3`
+
+1. Extract the **ALL** IPv4 address ranges for PowerQueryOnline
+    - `PowerQueryOnline.<region>` For example, `PowerQueryOnline.WestUS3`, `PowerQueryOnline.EastUS`, etc.
+    - Also include `PowerQueryOnline` with no region appended in the name.
+
+    > [IMPORTANT!]
+    > This will result in over 1200 IP addresses. You can choose to remove duplicates which will result in approximately 400+ IPv4 addresses that manually need to be added to the Cosmos DB IP Firewall rules. The PowerShell script above can handle this automatically or use Network Security Perimeter with Service Tags (see below).
 
 1. In the Azure portal, navigate to your Azure Cosmos DB account.
 
@@ -203,7 +210,7 @@ Use Network Security Perimeter (NSP) to allow access using service tags, which a
 :::image type="content" source="./media/azure-cosmos-db-private-network/network-security-perimeter-inbound-access-rule.png" alt-text="Screenshot showing Network Security Perimeter configured with service tags." lightbox="./media/azure-cosmos-db-private-network/network-security-perimeter-inbound-access-rule-full.png":::
 
 > [!NOTE]
-> Network Security Perimeter is currently in preview for Cosmos DB. Some customers may prefer to use the manual IP address method due to preview limitations. For more information about Network Security Perimeter support for Azure Cosmos DB, see [Network Security Perimeter concepts](/azure/private-link/network-security-perimeter-concepts#onboarded-private-link-resources).
+> Network Security Perimeter is currently in preview for Cosmos DB and Fabric. For more information about Network Security Perimeter support for Azure Cosmos DB, see [Network Security Perimeter concepts](/azure/private-link/network-security-perimeter-concepts#onboarded-private-link-resources).
 
 1. In the Azure portal, navigate to your Azure Cosmos DB account.
 
@@ -243,7 +250,7 @@ Enable the Fabric Network ACL Bypass capability on your Cosmos DB account:
 Authorize your Fabric workspace to bypass network ACLs:
 
 > [!TIP]
-> Use a shared workspace instead of My workspace. Workspace IDs are more readily available in shared workspaces.
+> Use a shared workspace instead of *My workspace*. Workspace IDs are more readily available in shared workspaces.
 
 1. Get your Fabric workspace ID from the Fabric portal:
     - Navigate to your workspace in [Fabric portal](https://app.fabric.microsoft.com/)
@@ -264,6 +271,7 @@ Authorize your Fabric workspace to bypass network ACLs:
     - Hover over the information icon next to your tenant name
 
 1. Run the following PowerShell command:
+
     ```powershell
     Update-AzCosmosDBAccount `
     -ResourceGroupName <CosmosDbResourceGroupName> `
@@ -362,6 +370,7 @@ After configuring your mirrored database, verify that the connection is working 
 
 When using virtual networks or private endpoints with Azure Cosmos DB mirroring, be aware of these limitations:
 
+- The target Fabric workspace region must be the same as the source Azure Cosmos DB Account region.
 - The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 - Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 - When using Microsoft Entra ID authentication, ensure that the required RBAC permissions are configured. For more information, see [security limitations](azure-cosmos-db-limitations.md#security-limitations).
@@ -371,7 +380,6 @@ When using virtual networks or private endpoints with Azure Cosmos DB mirroring,
 - For private endpoint configurations, you must temporarily enable public access during the initial mirror setup. After mirroring is established, you can disable public access.
 - For virtual network configurations, the endpoint rules must remain in place along with the added IP addresses.
 - Configuring your public network access can take 5-15 minutes to complete.
-- The target Fabric workspace region must be the same as the source Azure Cosmos DB Account region.
 
 ## Troubleshooting
 
@@ -383,7 +391,7 @@ If you experience issues connecting to your Azure Cosmos DB account:
     $account = Get-AzCosmosDBAccount -ResourceGroupName <resourceGroup> -Name <accountName>
     $account.Capabilities.Name
     ```
-    
+
     Confirm that `EnableFabricNetworkAclBypass` appears in the output. If there's no output, Network ACL Bypass capability has not been enabled.
 
 1. **Check workspace bypass configuration:**
@@ -396,18 +404,18 @@ If you experience issues connecting to your Azure Cosmos DB account:
     Verify that the resource exists and has the correct tenant ID and workspace ID. If there's no output, Fabric workspace bypass has not been configured.
 
 1. **Verify IP addresses are correct:**
-    
+
     - Download the latest Azure Service Tags JSON file
-    - Confirm you added all IPv4 ranges for DataFactory and PowerQueryOnline services in your region
+    - Confirm you added all IPv4 ranges for DataFactory for your region and **ALL** PowerQueryOnline services
     - Check that no IP addresses were entered incorrectly
 
 1. **Review Azure Cosmos DB firewall settings:**
-    
+
     - For virtual networks, ensure the endpoint rules are still in place
     - For private endpoints, only disable public access after mirror setup completes
 
 1. **Check connection credentials:**
-    
+
     - Account keys are not supported for mirroring with private networks. Ensure you are using Microsoft Entra ID authentication and verify the required permissions are assigned
 
 1. **Check Fabric and Azure regions**
@@ -415,7 +423,7 @@ If you experience issues connecting to your Azure Cosmos DB account:
     - Verify both your Fabric workspace region and Azure Cosmos DB Account region are the same.
 
 1. **Review monitoring logs:**
-    
+
     - Check the mirroring replication status for any error messages
 
 For more troubleshooting guidance, see [Troubleshooting: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-troubleshooting.yml).
