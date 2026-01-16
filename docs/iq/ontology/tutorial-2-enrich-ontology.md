@@ -81,7 +81,7 @@ Next, add time series data on the *Freezer* entity, by creating new properties a
 
 1. Configure a time series data binding.
     1. For **Binding type**, keep the default selection of **Timeseries**. For **Source data timestamp column**, select `timestamp`.
-    1. Under **Bind your properties > Static**, two columns populate that match static properties already defined on the entity. Keep them as they are.
+    1. Under **Bind your properties > Static**, two source data columns populate that match static properties already defined on the entity. Keep them as they are.
 
         :::image type="content" source="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png" alt-text="Screenshot of the default static properties." lightbox="media/tutorial-2-enrich-ontology/freezer-binding-3-a.png":::
 

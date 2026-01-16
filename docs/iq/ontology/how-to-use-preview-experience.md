@@ -138,7 +138,7 @@ You can also **Expand** the graph view, where you can run a query specific to th
 
 :::image type="content" source="media/how-to-use-preview-experience/instance-view-3.png" alt-text="Screenshot of the instance graph query." lightbox="media/how-to-use-preview-experience/instance-view-3.png":::
 
-## Refresh your downstream experiences in ontology (preview)
+## Refresh the graph model
 
 This section describes how and when your bound data stays up to date.
 
