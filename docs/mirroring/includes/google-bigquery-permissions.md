@@ -30,7 +30,7 @@ The **BigQueryAdmin** and **StorageAdmin** roles should include these permission
 The user needs to have at least one role assigned that allows access to the BigQuery instance.
 Check the networking requirements to access your BigQuery data source. If you're using Mirroring for Google BigQuery for On-Premises Data Gateway (OPDG), you must have OPDG version 3000.286.6 or greater to enable successful Mirroring.
 
-To manually establish buckets (and forgo needing to grant all bucket permissions), you can:
+To manually establish buckets (and forgo needing to grant the **storage.buckets.create** permission), you can:
 
 1. Navigate to **Cloud Storage** within your Google Console and select buckets.
 1. Select **Create** and name the bucket in this format (case sensitive): \<projectid\>_fabric_staging_bucket
