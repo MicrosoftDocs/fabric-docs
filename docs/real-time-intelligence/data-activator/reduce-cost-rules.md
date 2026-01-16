@@ -24,16 +24,16 @@ This article shows you how to reduce the cost of Activator rules on streaming da
 
 In this example, you track the stock price of several companies. The goal is to receive automatic alerts when the stock price of any company increases by more than 2%, enabling you to take action such as selling or buying stock.
 
-Stock market data is a high-volume eventstream sending around 2,000 events every minute. Since you're charged for ingestion into Activator, reducing eventstream volume helps your Activator rules consume fewer Fabric capacity units. When you don't need to react to each individual event, you can lower costs by applying summarization within Eventstream.
+Stock market data is a high-volume eventstream sending around 2,000 events every minute. Since you're charged for ingestion into Activator, reducing eventstream volume helps your Activator rules consume fewer Fabric capacity units. When you don't need to react to each individual event, you can lower costs by applying summarization within an eventstream.
 
-## Set up Eventstream with sample data
+## Set up an eventstream with sample data
 
-First, create an Eventstream with sample stock market data that simulates real-time data from three different companies. Each event contains the following fields:
+First, create an eventstream with sample stock market data that simulates real-time data from three different companies. Each event contains the following fields:
 
 - **symbol** – a company code
 - **bidPrice** – current stock price of the company
 
-1. Create a new Eventstream and select **Use sample data** on the welcome screen.
+1. Create a new eventstream and select **Use sample data** on the welcome screen.
 
    :::image type="content" source="media/reduce-cost-rules/use-sample-data-option.png" alt-text="Screenshot of Eventstream welcome screen with Connect data sources, Use sample data, and Use custom endpoint options." lightbox="media/reduce-cost-rules/use-sample-data-option.png":::
 
@@ -41,7 +41,7 @@ First, create an Eventstream with sample stock market data that simulates real-t
 
    :::image type="content" source="media/reduce-cost-rules/sample-data-stock-market-selection.png" alt-text="Screenshot of sample data source creation with StockMarket selected and Stock Market (high data-rate) option highlighted." lightbox="media/reduce-cost-rules/sample-data-stock-market-selection.png":::
 
-1. Add an Activator destination to the Eventstream, then select **Publish**.
+1. Add an Activator destination to the eventstream, then select **Publish**.
 
    :::image type="content" source="media/reduce-cost-rules/activator-destination-added.png" alt-text="Screenshot of Eventstream editor with StockMarket source, Activator destination selected, and data preview panel visible." lightbox="media/reduce-cost-rules/activator-destination-added.png":::
 
@@ -53,9 +53,9 @@ First, create an Eventstream with sample stock market data that simulates real-t
 
 Instead of processing each individual event, you can reduce the data volume by applying one-minute summarizations. This approach emits one event per company every minute, containing the maximum stock price recorded during that interval.
 
-To implement this summarization, use a **Group by** transformation node in Eventstream. For more information about window types, see [Windowing - Stream Analytics Query](/stream-analytics-query/windowing-azure-stream-analytics).
+To implement this summarization, use a **Group by** transformation node in an eventstream. For more information about window types, see [Windowing - Stream Analytics Query](/stream-analytics-query/windowing-azure-stream-analytics).
 
-1. Go to Eventstream edit mode and add a **Group by** node between the Eventstream source and Activator destination nodes.
+1. Go to edit mode and add a **Group by** node between the eventstream source and Activator destination nodes.
 
    :::image type="content" source="media/reduce-cost-rules/add-group-by-node.png" alt-text="Screenshot of Eventstream workflow showing StockMarket source, StockMarket stream, and Activator nodes with the Group by insert node option highlighted." lightbox="media/reduce-cost-rules/add-group-by-node.png":::
 
@@ -67,9 +67,9 @@ To implement this summarization, use a **Group by** transformation node in Event
 
 1. Specify the **symbol** field in **Group aggregation by** and choose **60 seconds** as the time window. Select **Save**, then **Publish**.
 
-   :::image type="content" source="media/reduce-cost-rules/groupby-tumbling-window-setup.png" alt-text="Screenshot of Group by settings with symbol field selected, 60 second tumbling window, and Save button highlighted." lightbox="media/reduce-cost-rules/groupby-tumbling-window-setup.png":::
+   :::image type="content" source="media/reduce-cost-rules/groupby-tumbling-window.png" alt-text="Screenshot of Group by settings with symbol field selected, 60 second tumbling window, and Save button highlighted." lightbox="media/reduce-cost-rules/groupby-tumbling-window.png":::
 
-1. Go to the Activator item connected to the Eventstream. The events volume decreased from 2,000 events per minute to three events per minute (one per company).
+1. Go to the Activator item connected to the eventstream. The events volume decreased from 2,000 events per minute to three events per minute (one per company).
 
    :::image type="content" source="media/reduce-cost-rules/stock-market-stream-events.png" alt-text="Screenshot of Activator analytics panel with event volume graph, showing sharp decrease to three events per minute." lightbox="media/reduce-cost-rules/stock-market-stream-events.png":::
 
@@ -77,7 +77,7 @@ To implement this summarization, use a **Group by** transformation node in Event
 
 Now that you reduced the data volume, create a rule to alert you when stock prices change significantly.
 
-1. Go to the Activator item connected to the Eventstream and select **New object**.
+1. Go to the Activator item connected to the eventstream and select **New object**.
 
    :::image type="content" source="media/reduce-cost-rules/new-object-button-activator.png" alt-text="Screenshot of Activator Events page with StockMarket-stream selected and the New object button highlighted." lightbox="media/reduce-cost-rules/new-object-button-activator.png":::
 
@@ -100,5 +100,4 @@ Now that you reduced the data volume, create a rule to alert you when stock pric
 ## Related content
 
 - [What is Activator?](./activator-introduction.md)
-- [Create Eventstream destinations](../../real-time-intelligence/event-streams/add-destination-eventstream.md)
 - [Activator tutorial using sample data](./activator-tutorial.md)
