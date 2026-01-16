@@ -11,7 +11,7 @@ ms.subservice: rti-activator
 ms.date: 01/16/2026
 ---
 
-# Reduce cost of Activator rules on streaming data
+# Reduce cost of Activator rules on streaming data by applying summarizations
 
 This article shows you how to reduce the cost of Activator rules on streaming data by reducing the volume of data ingested into Activator from Eventstream. By applying summarization techniques, you can lower Fabric capacity unit consumption while still maintaining effective alerting capabilities.
 
