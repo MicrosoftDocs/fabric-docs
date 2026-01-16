@@ -67,7 +67,7 @@ To implement this summarization, use a **Group by** transformation node in an ev
 
 1. Specify the **symbol** field in **Group aggregation by** and choose **60 seconds** as the time window. Select **Save**, then **Publish**.
 
-   :::image type="content" source="media/reduce-cost-rules/groupby-tumbling-window.png" alt-text="Screenshot of Group by settings with symbol field selected, 60 second tumbling window, and Save button highlighted." lightbox="media/reduce-cost-rules/groupby-tumbling-window.png":::
+   :::image type="content" source="media/reduce-cost-rules/group-by-tumbling-window.png" alt-text="Screenshot of Group by settings with symbol field selected, 60 second tumbling window, and Save button highlighted." lightbox="media/reduce-cost-rules/group-by-tumbling-window.png":::
 
 1. Go to the Activator item connected to the eventstream. The events volume decreased from 2,000 events per minute to three events per minute (one per company).
 
