@@ -11,7 +11,9 @@ ms.search.form: Ontology Overview
 
 # What is ontology (preview)?
 
-The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) is for digitally representing the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and rules and constraints. It then binds the entity type definitions to real data, allowing downstream tools to share the same language. Ontology works well in situations where you need cross-domain consistency, governance, or AI/agent grounding, and you want to reason across processes.
+The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and constraints. It then binds the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
+
+Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -28,11 +30,11 @@ You can also think of an ontology like a business context layer, containing:
 
 ## Core concepts: Defining an ontology
 
-An ontology is made up of [entity types](#entity-type), [entity instances](#entity-instance), [properties](#property), and [relationships](#relationship). Read about each of these core concepts in this section.
+An ontology consists of [entity types](#entity-type), [entity instances](#entity-instance), [properties](#property), and [relationships](#relationship). This section describes each of these core concepts.
 
 ### Entity type
 
-An *entity type* is the reusable blueprint of a real world concept (like *Shipment*, *Product*, or *Sensor*). It standardizes the name, description, identifiers, properties, and constraints for that item, so that every team in your business means the same thing when they use a term like "shipment." By elevating the concept above any single table, entity types eliminate conflicting column level definitions across sources. They provide a single point to attach properties, relationships, and labels that downstream tools can use to improve semantics across tables and models.
+An *entity type* is the reusable logical model of a real world concept (like *Shipment*, *Product*, or *Sensor*). It standardizes the name, description, identifiers, properties, and constraints for that item, so that every team in your business means the same thing when they use a term like "shipment." By elevating the concept above any single table, entity types eliminate conflicting column level definitions across sources. They provide a single point to attach properties, relationships, and labels that downstream tools can use to improve semantics across tables and models.
 
 ### Entity instance
 
@@ -40,7 +42,7 @@ An *entity instance* is a concrete occurrence of an entity type, populated from 
 
 ### Property
 
-A *property* is a named fact about an entity, with a declared data type. It can contain bindings to source data and semantic annotations (like *identifier* or metadata attributes). Properties improve semantics by enforcing consistent types, units, and naming, and by enabling rules and quality checks at the concept level.
+A *property* is a named fact about an entity, with a declared data type. It can contain bindings to source data and semantic annotations (like an *identifier* or metadata attributes). Properties improve semantics by enforcing consistent types, units, and naming, and by enabling rules and quality checks at the concept level.
 
 ### Relationship
 
@@ -48,18 +50,20 @@ A *relationship* is a typed, directional link between entity types or instances.
 
 ## Core concepts: Your data in the ontology
 
-After you define an ontology, you can [bind it to your data](how-to-bind-data.md) in order to visualize and query the data through the lens of your ontology. Read about each core data concept in the following sections.
+After you define an ontology, you can [bind it to your data](how-to-bind-data.md) to visualize and query the data through the lens of your ontology. Read about each core data concept in the following sections.
 
 ### Data binding
 
 *Binding* connects your ontology's definitions (including entity types, properties, and relationships) to concrete data living in OneLake, including lakehouse tables, eventhouse streams, and semantic models. A binding describes data types, identity keys, how columns map to properties, and how keys map to relationships across multiple data sources. By enabling schema evolution rules, data quality checks (based on things like nullability, ranges, and uniqueness), and provenance at the concept layer, bindings turn raw rows and events into governed business objects. Binding improves semantics by ensuring every instance carries consistent meaning, types, constraints, and lineage, regardless of source.
 
+[!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
+
 ### Ontology graph
 
 >[!IMPORTANT]
->Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so the Graph setting must be enabled for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+>Ontology's graph feature relies on [Graph in Microsoft Fabric](../../graph/overview.md), so you must enable the Graph setting for your tenant. For more information, see [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 
-The *ontology graph* is the navigable instance graph built from your bindings and relationship definitions. It's visible from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context isn't buried in join logic, but instead is explicit, queryable, and governed.
+The *ontology graph* is a navigable instance graph built from your bindings and relationship definitions. You can see it from the [ontology preview experience](how-to-use-preview-experience.md). In the graph, nodes are entity instances, and edges are links (either asserted or derived) with metadata attributes. Each node or edge keeps data source lineage and follows a scheduled data refresh. Graphs enable visual exploration of business context, execution of graph algorithms (like paths, centrality, and communities), and rule‑driven inferences. Graphs improve semantics by making relationships first‑class, so context isn't buried in join logic, but instead is explicit, queryable, and governed.
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
@@ -69,4 +73,7 @@ The *ontology graph* is the navigable instance graph built from your bindings an
 
 ## Next steps
 
-Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+* Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
+* Get started with the [Ontology (preview) tutorial](tutorial-0-introduction.md).
+* Skip ahead to instructions for [generating an ontology from a semantic model](tutorial-1-create-ontology.md?pivots=semantic-model#generating-an-ontology-from-a-semantic-model).
+

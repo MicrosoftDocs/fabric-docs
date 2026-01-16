@@ -4,19 +4,19 @@ description: Create a data agent that queries the ontology (preview) in natural 
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 12/11/2025
 ms.topic: tutorial
 ---
 
 # Ontology (preview) tutorial part 4: Create data agent
 
-Ontology (preview) integrates with [Fabric data agent (preview)](../../data-science/concept-data-agent.md), allowing you to ask questions in natural language and get answers grounded in the ontology's definitions and bindings. 
+Ontology (preview) integrates with [Fabric data agent (preview)](../../data-science/concept-data-agent.md) to let you ask questions in natural language, and get answers grounded in the ontology's definitions and bindings.   
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Create data agent with ontology (preview) source
 
-Follow these steps to create a new data agent that is connected to your ontology (preview) item.
+Follow these steps to create a new data agent that connects to your ontology (preview) item.
 
 1. Go to your Fabric workspace and create a new data agent (preview) item named *RetailOntologyAgent*. For detailed instructions, see [Create a Fabric data agent (preview)](../../data-science/how-to-create-data-agent.md#create-a-new-fabric-data-agent).
 
@@ -29,26 +29,38 @@ When the agent is ready, it opens.
 
 :::image type="content" source="media/tutorial-4-create-data-agent/data-agent.png" alt-text="Screenshot of the Retail Ontology Agent." lightbox="media/tutorial-4-create-data-agent/data-agent.png":::
 
+## Provide agent instructions
+
+>[!NOTE]
+>This step is added in response to a known issue affecting aggregation in queries.
+
+Next, add a custom instruction to the agent.
+
+1. Select **Agent instructions** from the menu ribbon.
+1. At the bottom of the input box, add `Support group by in GQL`. This instruction enables better aggregation across ontology data.
+
+    :::image type="content" source="media/tutorial-4-create-data-agent/agent-instructions.png" alt-text="Screenshot of the agent instructions." lightbox="media/tutorial-4-create-data-agent/agent-instructions.png":::
+1. The instruction is applied automatically. Optionally, close the **Agent instructions** tab.
+
 ## Query agent with natural language
 
 Next, explore your ontology with natural language questions. 
 
-Start with these example prompts:
-* *For each store, show any timestamps where a freezer operated by that store had a temperature higher than -18 degrees C, and the total units sold that day.*
-* *List the top three products by revenue in Paris stores.*
-* *Do stores with higher freezer temperatures correlate with lower daily sales? Explain the evidence.*
+Start by entering these example prompts:
+* *For each store, show any freezers operated by that store that ever had a humidity lower than 46 percent.*
+* *What is the top product by revenue across all stores?*
 
-Notice that the responses reference entity types (*Store*, *SaleEvent*, *Product*, *Freezer*) and their relationships, not just raw tables.
+Notice that the responses reference entity types (*Store*, *Products*, *Freezer*) and their relationships, not just raw tables.
 
 :::image type="content" source="media/tutorial-4-create-data-agent/query-result.png" alt-text="Screenshot of the result of a query." lightbox="media/tutorial-4-create-data-agent/query-result.png":::
 
-Continue exploring the data agent by trying out some prompts of your own.
-
 >[!TIP]
->When you're using data agent with ontology, if the agent's answers are too generic, make sure that the agent includes the ontology as a knowledge source. Also, make sure that entity and relationship names are meaningful and documented in the ontology.
+> If you see errors that say there's no data while running the example queries, wait a few minutes to give the agent more time to initialize. Then, run the queries again.
+
+Continue exploring the data agent by trying out some prompts of your own.
 
 ## Next steps
 
-In this step, you explored your ontology with natural language queries and answered business level questions.
+In this step, you explored your ontology by using natural language queries and answered business-level questions.
 
 Next, continue to the [tutorial conclusion](tutorial-5-conclusion.md).

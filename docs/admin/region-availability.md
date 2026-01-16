@@ -38,10 +38,12 @@ This table lists regions where all Fabric workloads are available.
 | Mexico Central <sup>6</sup>           | Poland Central               |             |                    | Japan East                    |
 | North Central US                      | Spain Central <sup>6</sup>   |             |                    | Japan West <sup>4, 6</sup>    |
 | South Central US <sup>2, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                 |
-| West US                               | Switzerland North            |             |                    | New Zealand North <sup>6</sup>|
-| West US 2                             | Switzerland West             |             |                    | Southeast Asia                |
-| West US 3                             | UK South                     |             |                    | South India                   |
-|                                       | UK West <sup>1</sup>         |             |                    |                               |
+| West US                               | Switzerland North            |             |                    | Malaysia West                 |
+| West US 2                             | Switzerland West             |             |                    | New Zealand North <sup>6</sup>|
+| West US 3                             | UK South                     |             |                    | Southeast Asia                |
+|                                       | UK West <sup>1</sup>         |             |                    | South India                   |
+|                                       |                              |             |                    | Taiwan North                  |
+|                                       |                              |             |                    | Taiwan Northwest              |
 
 
   <sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
@@ -59,9 +61,8 @@ This table lists regions where the only available Fabric workload is Power BI.
 |:--------------|:--------------|:---------------|:------------------|:-----------------|
 | Chile Central | Austria East  | Qatar Central  | South Africa West | India West       |
 |               | France South  | UAE Central    |                   | Korea South      |
-|               | Germany North |                |                   | Taiwan North     |
-|               | Norway West   |                |                   | Taiwan Northwest |
-|               |               |                |                   | Malaysia West    |
+|               | Germany North |                |                   |                  |
+|               | Norway West   |                |                   |                  |
 
 ** Copilot is not supported for regions listed in this section. 
 

@@ -4,13 +4,13 @@ description: Preview the ontology by observing its entity instances and relation
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/18/2025
+ms.date: 12/03/2025
 ms.topic: tutorial
 ---
 
 # Ontology (preview) tutorial part 3: Preview the ontology
 
-In this tutorial step, explore your ontology with the preview experience. Inspect entity instances that instantiate your entity types with data, and explore graph-shaped context across sales and device streaming data.
+In this tutorial step, explore your ontology by using the preview experience. Inspect entity instances that instantiate your entity types with data, and explore graph-shaped context across sales and device streaming data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -22,9 +22,9 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
     :::image type="content" source="media/tutorial-3-preview-ontology/open-preview.png" alt-text="Screenshot of opening the preview experience.":::
 
-    It may take a few minutes for the ontology overview to load the first time.
+    It might take a few minutes for the ontology overview to load the first time.
 
-1. Look for the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
+1. Scroll down to the **Entity instances** section. Verify that it shows entity instances, with unit counts and revenue populated from the *factsales* lakehouse table.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/entity-instances.png" alt-text="Screenshot of the entity instances." lightbox="media/tutorial-3-preview-ontology/entity-instances.png":::
 
@@ -35,7 +35,7 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
 1. Update the time range from the default of *Last 30 minutes* to a custom date range that begins on *Fri Aug 01 2025 at 12:00 AM*, ends on *Mon Aug 04 2025 at 12:00 AM*, and has a **Time granularity** of *1 minute*.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png" alt-text="Screenshot of the time selector." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time-crop.png":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png" alt-text="Screenshot of the time selector." lightbox="media/tutorial-3-preview-ontology/freezer-telemetry-edit-time.png":::
 
 1. Observe the time series data that's visible from different *Freezer* entity instances.
 
@@ -45,11 +45,11 @@ When you bound data to your entity types in previous tutorial steps, ontology au
 
 The preview experience also contains a **Relationship graph**, which you use to visualize your ontology in a graph of nodes and edges.
 
-1. Start with the *SaleEvent* entity type selected in the preview experience. In the **Relationship graph** tile, select **Expand**.
+1. Use the tabs across the top of the preview experience to reopen the *SaleEvent* entity type. In the **Relationship graph** tile, select **Expand**.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph.png" alt-text="Screenshot of expanding the relationship graph.":::
 
-1. In the graph, observe the details of the three relationships to the *SaleEvent* entity type from *CalendarDate*, *Store*, and *Product*.
+1. In the graph, observe the details of the relationships to the *SaleEvent* entity type from *Store* and *Products*.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-graph-expanded.png" alt-text="Screenshot of data in the expanded relationship graph." lightbox="media/tutorial-3-preview-ontology/relationship-graph-expanded.png":::
 
@@ -59,7 +59,7 @@ The preview experience also contains a **Relationship graph**, which you use to 
     :::image type="content" source="media/tutorial-3-preview-ontology/relationship-default-query.png" alt-text="Screenshot of the Store relationship graph and instances." lightbox="media/tutorial-3-preview-ontology/relationship-default-query.png":::
 
 >[!TIP]
->If the graph looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `StoreId`, `ProductId`, and `Date`.
+>If the graph looks sparse, check the entity type keys in the data bindings and verify that they match the keys defined in [Create entity types and data bindings](tutorial-1-create-ontology.md#create-entity-types-and-data-bindings). For example, the key for the *SaleEvent* entity type is `SaleId`.
 
 ## Query graph instances
 
@@ -82,7 +82,7 @@ First, craft this query: *Show all freezers that are operated in the Paris store
 
 1. Select **Clear query** to clear the query results, and use the **Remove filter** options to remove the store filter.
 
-    :::image type="content" source="media/tutorial-3-preview-ontology/clear-query.png" alt-text="Screenshot of clearing the query and filter.":::
+    :::image type="content" source="media/tutorial-3-preview-ontology/clear-query.png" alt-text="Screenshot of clearing the query and filter." lightbox="media/tutorial-3-preview-ontology/clear-query.png":::
 
 Next, craft this query: *Show all stores that have made a sale with a revenue greater than 150.*
 1. Select **Add a node** and add a node for *SaleEvent*.
@@ -94,7 +94,7 @@ Next, craft this query: *Show all stores that have made a sale with a revenue gr
 
     :::image type="content" source="media/tutorial-3-preview-ontology/add-filter-sale.png" alt-text="Screenshot of filtering by sale revenue.":::
 
-1. Select **Run query** and verify that the instance graph shows two stores that meet the filter for their connected sale events. You can also select the nodes in the graph to get details of the specific sale events
+1. Select **Run query** and verify that the instance graph shows two stores that meet the filter for their connected sale events. You can also select the nodes in the graph to get details of the specific sale events.
 
     :::image type="content" source="media/tutorial-3-preview-ontology/sale-event-stores.png" alt-text="Screenshot of the stores that meet the filter for their connected sale events." lightbox="media/tutorial-3-preview-ontology/sale-event-stores.png":::
 
@@ -102,6 +102,6 @@ This process allows you to inspect the paths that connect operational issues (li
 
 ## Next steps
 
-In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further with natural language queries. 
+In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further by using natural language queries. 
 
 Continue to [Create data agent](tutorial-4-create-data-agent.md).

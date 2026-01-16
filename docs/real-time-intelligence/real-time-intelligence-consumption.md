@@ -7,7 +7,7 @@ author: spelluru
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 11/19/2024
+ms.date: 01/08/2026
 ms.search.form: Eventhouse,KQL Database, Overview
 ---
 # Eventhouse and KQL Database consumption
@@ -25,7 +25,17 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 
 Based on the Capacity Stock Keeping Unit (SKU) that was purchased in Fabric, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
 
-Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times. The amount of capacity that used by a KQL database is based on the **Eventhouse UpTime** operation.
+Capacity is a dedicated set of resources that's available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times. The amount of capacity that used by a KQL database is based on the **Eventhouse UpTime** operation.
+
+## Throttling
+
+When capacity limits are reached, the eventhouse applies throttling to protect system stability. There are three levels of throttling: 
+
+- **Proactive** – queries are throttled, but data ingestion continues normally. 
+- **Reactive** – both ingestion and queries are paused, but no data is lost. 
+- **Extreme reactive** – ingestion and queries are paused, data is held for a period, but data may be lost after a certain period. 
+
+When an eventhouse enters proactive, capacity is reduced to maintain availability for an extended period for modest actions (proactive and reactive), maintaining eventhouse availability with reduced performance.
 
 ## Eventhouse UpTime
 

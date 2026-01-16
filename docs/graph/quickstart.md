@@ -3,8 +3,8 @@ title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Get Started with Graph in Microsoft Fabric
 ---
@@ -14,6 +14,9 @@ ms.search.form: Get Started with Graph in Microsoft Fabric
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 In this quickstart, you learn how to create a graph model in Microsoft Fabric.
+
+> [!IMPORTANT]
+> This article exclusively uses the [AdventureWorks example graph dataset](sample-datasets.md).
 
 ## Prerequisites
 
@@ -208,12 +211,14 @@ We can also query the graph using the GQL graph query language.
 
 Follow these steps to switch to code editor and start querying your graph using GQL:
 
+<!-- GQL Query: Checked 2025-11-18 -->
 1. Select **Modes** > **Code editor** from your graph's home page.
 1. Enter a GQL query into the input field, such as ``MATCH (n:`Order`) RETURN count(n) AS num_orders``.
 1. Select **Run query** to execute the query.
 
 You can also run more complex queries, such as queries that combine matching graph patterns, filtering, aggregation, sorting, and top-k limiting:
 
+<!-- GQL Query: Checked 2025-11-20 -->
 ```gql
 MATCH (v:Vendor)-[:produces]->(p:`Product`)->(sc:`ProductSubcategory`)->(c:`ProductCategory`), 
       (o:`Order`)-[:`contains`]->(p)

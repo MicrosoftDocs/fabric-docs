@@ -1,13 +1,13 @@
 ---
 title: Fabric trial capacity
 description: Understand how the Fabric trial capacity works. This includes starting a trial, ending a trial, and sharing a trial.
-author: julcsc
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: alpowers, mibruhje
-ms.author: juliacawthra
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 11/20/2025
+ms.date: 01/09/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -178,7 +178,7 @@ If you're the Capacity administrator or Tenant administrator, you might be eligi
 You can also downgrade from 64 capacity units to 4 capacity units using these same steps.
 
 > [!NOTE]
-> Changing the trial capacity doesn't change the length of the trial. The number of remaining days doesn't reset or become extended.
+> Eligibility to increase trial capacity may vary. If you do not see the option, please contact your Microsoft sales representative or contact [Azure sales team](https://azure.microsoft.com/contact/?msockid=02d2195e72356be10cc60cb5738d6afb) for assistance. Changing the trial capacity doesn't change the length of the trial. The number of remaining days doesn't reset or become extended.
 
 <a id="end-a-fabric-trial"></a>
 ## End a Fabric trial capacity
@@ -321,6 +321,10 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+
+#### How many SQL databases can I create in a Fabric trial capacity?
+
+Currently, you can create up to three SQL databases in a Fabric trial capacity.
 
 ## Related content
 

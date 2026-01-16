@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: salilkanade, pvenkat
 ms.date: 07/15/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
 ---
 # Create reports on semantic models in Microsoft Fabric

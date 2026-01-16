@@ -1,6 +1,6 @@
 ---
-title: "Secure mirrored data in Microsoft Fabric database"
-description: Learn about how to secure mirrored data in Fabric SQL database.
+title: "Secure mirrored data in SQL Database"
+description: Learn about how to secure mirrored data in SQL database in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.custom:
 ---
 
-# How to: Secure mirrored data in Microsoft Fabric SQL database
+# How to: Secure mirrored data in SQL database in Fabric
 
 This guide helps you establish data security for the mirrored data of your Fabric SQL database.
 

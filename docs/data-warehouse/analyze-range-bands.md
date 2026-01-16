@@ -1,15 +1,15 @@
 ---
-title: "Analyze Microsoft Fabric Warehouse Data with Range Bands"
-description: "Learn how to analyze Microsoft Fabric Warehouse data with range bands."
+title: "Analyze Data with Range Bands"
+description: "Learn how to analyze data with range bands in Microsoft Fabric Data Warehouse."
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
   - fabric-cat
 ---
 
-# Analyze Microsoft Fabric Warehouse data with range bands
+# Analyze data with range bands
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 

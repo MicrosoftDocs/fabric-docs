@@ -4,13 +4,13 @@ description: Learn about the preview experience in ontology (preview).
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 10/30/2025
+ms.date: 12/02/2025
 ms.topic: how-to
 ---
 
 # Preview experience
 
-The *preview experience* in ontology (preview) allows you to view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view.
+The *preview experience* in ontology (preview) lets you view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -26,11 +26,12 @@ Before using the preview experience, make sure you have the following prerequisi
 
 ## Key concepts
 
-The preview experience uses the following ontology (preview) concepts.
+The preview experience uses the following ontology (preview) concepts. For definitions of these terms, see the [Ontology (preview) glossary](resources-glossary.md).
 
-* *Entity type:* An abstract representation of a business object (like *Vehicle* or *Sensor*). It's the blueprint that defines this type of item.
-* *Entity instance:* A specific occurrence of an entity type, representing a real-world object with its own unique values for the defined properties. For example, if *Vehicle* is an entity type, then a particular car with its own VIN, make, and model is an entity instance.
-* [Graph in Microsoft Fabric](../../graph/overview.md): A Fabric item that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. Graph in Microsoft Fabric is integrated into ontology's preview experience.
+* *Entity type*
+* *Entity instance*
+* *Preview experience*
+* [Graph in Microsoft Fabric](../../graph/overview.md)
 
 ## How-to steps
 
@@ -58,7 +59,7 @@ In the preview experience, you see an overview for the entity type that lets you
 
 ### View and create tiles
 
-Tiles are automatically visible in the preview experience and display data about your entity types, including entity instance details and relationship graphs.
+The preview experience automatically shows tiles that display data about your entity types, including entity instance details and relationship graphs.
 
 To create more tiles, follow these steps.
 
@@ -66,22 +67,28 @@ To create more tiles, follow these steps.
 
     :::image type="content" source="media/how-to-use-preview-experience/add-tile-1.png" alt-text="Screenshot of adding a tile.":::
 
-1. Select the type of tile you want to create: a **Timeseries** chart for streaming data, or **Fabric Graph** for a relationship graph. Only one graph tile is allowed per dashboard.
+1. Select the type of tile you want to create: a **Timeseries** line chart for streaming data, a **Static property** bar chart for static data, or **Fabric graph** for a relationship graph (only one graph tile is allowed per dashboard).
 
-1. In the tile configuration options, configure the fields for the X and Y axis, and the property you want to display.
+1. Complete the configuration for your chosen tile type.
 
     :::image type="content" source="media/how-to-use-preview-experience/add-tile-2.png" alt-text="Screenshot of configuring a time series tile.":::
 
-    >[!NOTE]
-    > All tiles created at the entity level propagate down to the entity instance level.
+    :::image type="content" source="media/how-to-use-preview-experience/add-tile-3.png" alt-text="Screenshot of configuring a static property tile.":::
 
-1. Use the time range selector to configure the time range for the data displayed in the tiles.
+    >[!NOTE]
+    > All tiles you create at the entity level also appear at the entity instance level.
+
+1. Back on the overview page, use the time range selector to configure the time range for the data displayed in the tiles.
 
     :::image type="content" source="media/how-to-use-preview-experience/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-use-preview-experience/change-date-range.png":::
 
+To edit or delete existing tiles, select **...** in the upper right corner of a tile.
+
+:::image type="content" source="media/how-to-use-preview-experience/edit-delete.png" alt-text="Screenshot of edit and delete options for a tile." lightbox="media/how-to-use-preview-experience/edit-delete.png":::
+
 ### Use graph view
 
-Follow these steps to view your entities in a graph view using [Graph in Microsoft Fabric](../../graph/overview.md).
+Follow these steps to view your entities in a graph view provided by [Graph in Microsoft Fabric](../../graph/overview.md).
 
 1. Select **Expand** from a graph tile in the preview experience.
 
@@ -99,7 +106,7 @@ In the full graph view, use the **Query builder** ribbon to craft custom queries
 
 :::image type="content" source="media/how-to-use-preview-experience/query-builder.png" alt-text="Screenshot of the query builder." lightbox="media/how-to-use-preview-experience/query-builder.png":::
 
-The default query shows the current entities and all relationships that are one hop away. Selecting **Run query** runs the default query, and you see the results in a pane underneath the relationship type graph.
+The default query shows the current entities and all relationships that are one hop away. Select **Run query** to run the default query. You see the results in a pane underneath the relationship type graph.
 
 :::image type="content" source="media/how-to-use-preview-experience/query-default.png" alt-text="Screenshot of the default query results." lightbox="media/how-to-use-preview-experience/query-default.png":::
 
@@ -123,7 +130,7 @@ To open the instance view, start in the overview page for the entity type, and s
 
 :::image type="content" source="media/how-to-use-preview-experience/instance-view-1.png" alt-text="Screenshot of selecting an instance from the overview page.":::
 
-The instance view displays any tiles configured at the entity type level, and any specific properties bound to this instance.
+The instance view displays any tiles you configured at the entity type level, and any specific properties bound to this instance.
 
 :::image type="content" source="media/how-to-use-preview-experience/instance-view-2.png" alt-text="Screenshot of the instance view." lightbox="media/how-to-use-preview-experience/instance-view-2.png":::
 
@@ -135,12 +142,12 @@ You can also **Expand** the graph view, where you can run a query specific to th
 
 This section describes how and when your bound data stays up to date.
 
-In ontology (preview), downstream experiences automatically refresh whenever you make changes to your ontology schema. This means that whenever you add, edit, or remove any element like properties, types, or relationships, the system will re-ingest all currently bound data to ensure your downstream experiences reflect the latest schema adjustments. 
+In ontology (preview), downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments. 
 
-However, this automatic refresh only applies to changes made within the schema itself. If there are changes to the external data source that feeds your graph (for example, if new records are added, updated, or deleted in the upstream system), the graph doesn't know about these changes unless it is explicitly informed. In this case, your graph might display stale data until a new ingestion is triggered. You can enforce an update by manually refreshing the graph.
+However, this automatic refresh only applies to changes made within the schema itself. If there are changes to the external data source that feeds your graph (for example, if new records are added, updated, or deleted in the upstream system), the graph doesn't know about these changes unless you explicitly inform it. In this case, your graph might display stale data until a new ingestion is triggered. You can enforce an update by manually refreshing the graph.
 
 >[!IMPORTANT]
-> We recommend batching updates for refresh instead of refreshing the graph after every individual change, as the graph does a full refresh each time. **This has cost implications for the [Graph in Microsoft Fabric](../../graph/overview.md) item.** 
+> We recommend batching updates for refresh instead of refreshing the graph after every individual change, as the graph does a full refresh each time. **This approach has cost implications for the [Graph in Microsoft Fabric](../../graph/overview.md) item.** 
 
 To refresh the graph, follow these steps:
 
@@ -160,6 +167,4 @@ To refresh the graph, follow these steps:
 
 ## Troubleshooting
 
-Here are troubleshooting tips for using the preview experience:
-
-* To access the preview experience for an ontology, you must have access to the lakehouse that contains the source data for the ontology's [data bindings](how-to-bind-data.md). If you open the preview experience without access to the lakehouse, you see a `403 Forbidden` HTTP response. To resolve this issue, contact your administrator to obtain access to the lakehouse.
+For troubleshooting tips related to the preview experience, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-preview-experience).

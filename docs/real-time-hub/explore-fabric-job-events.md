@@ -4,12 +4,12 @@ description: This article shows how to explore Job events in Fabric Real-Time hu
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 11/12/2024
+ms.date: 12/11/2025
 ---
 
 # Explore Job events in Fabric Real-Time hub
 
-Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
+Real-Time hub allows you to discover and subscribe to changes produced when Fabric runs a job. For example, you can react to changes when running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events.
 
 Job events allow you to monitor job results in time and set up alerts using Activator alerting capabilities. For example, when the scheduler triggers a new job, or a job fails, you can receive an email alert. This way, even if you aren't in front of the computer, you can still get the information you care about. 
 
@@ -20,7 +20,7 @@ Job events allow you to monitor job results in time and set up alerts using Acti
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Job events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-job-events/select-from-list.png" alt-text="Screenshot that shows the selection of Job events on the Fabric events page." lightbox="./media/explore-fabric-job-events/select-from-list.png":::
+    :::image type="content" source="./media/explore-fabric-job-events/job-events.png" alt-text="Screenshot that shows the selection of Job events on the Fabric events page." lightbox="./media/explore-fabric-job-events/job-events.png":::
 1. You should see the detail view for Job events.
 
     :::image type="content" source="./media/explore-fabric-job-events/detail-page.png" alt-text="Screenshot that shows the detail page for Job events." lightbox="./media/explore-fabric-job-events/detail-page.png":::
@@ -60,12 +60,12 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
 
 ### Supported item types
+
 | Item type |
 | --------------- | 
 | Pipeline |
 | Notebook |
 | Lakehouse |
-| Warehouse |
 | Sql Analytics Endpoint |
 | Spark Job Definition |
 | CopyJob |
@@ -77,7 +77,11 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Digital Twin Builder |
 | Digital Twin Builder Flow |
 | Databricks |
-| Sustainability Data Manager |
+| KQL Database |
+| Snowflake database |
+| Anomaly detector |
+| User data functions |
+| Azure maps |
 
 ### Schemas
 An event has the following top-level data:

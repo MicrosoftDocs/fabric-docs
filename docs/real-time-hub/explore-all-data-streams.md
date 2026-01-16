@@ -5,14 +5,14 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Explore All data streams in Fabric Real-Time hub
 
 When you navigate to Real-Time hub in Fabric, you can view all data streams in the **Recent streaming data** section of the hub page. Data streams include Fabric eventstreams and Kusto Query Language (KQL) tables.
 
-:::image type="content" source="media/explore-all-data-streams/hub-all-data-streams-menu.png" alt-text="Screenshot of the Real-Time hub All data streams page." lightbox="./media/explore-all-data-streams/hub-all-data-streams-menu.png":::
+:::image type="content" source="media/explore-all-data-streams/all-streams.png" alt-text="Screenshot of the Real-Time hub All data streams page." lightbox="./media/explore-all-data-streams/all-streams.png":::
 
 The following sections describe columns, filters, actions, and other options for the table. 
 
@@ -58,17 +58,17 @@ Here are the actions available on streams from eventstreams from the **All data 
 | Open eventstream | Open parent eventstream of the stream. After you open the eventstream, you can optionally add transformations to [transform the data](../real-time-intelligence/event-streams/route-events-based-on-content.md#supported-operations) and [add destinations](../real-time-intelligence/event-streams/add-manage-eventstream-destinations.md) to send the output data to a supported destination. |
 | Endorse | Endorse parent eventstream of the stream. For more information, see [Endorse data streams](endorse-data-streams.md). |
 
-:::image type="content" source="./media/get-started-real-time-hub/data-streams-actions.png" alt-text="Screenshot that shows the actions available on a stream." lightbox="./media/get-started-real-time-hub/data-streams-actions.png":::
+:::image type="content" source="./media/get-started-real-time-hub/actions.png" alt-text="Screenshot that shows the actions available on a stream." lightbox="./media/get-started-real-time-hub/actions.png":::
 
 Here are the actions available on a KQL table from the **All data streams** page.
 
 | Action | Description |
 | ------ | ----------- |
-| Explore data | Explore data in the KQL table. |
+| Explore data | Explore the KQL table data in a Real-Time dashboard, using Copilot. For more information, see [Explore All data streams in Fabric Real-Time hub](explore-data-tables-copilot.md)|
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
-| Detect anomalies (Preview) | Detect anomalies in data stored in the KQL table. Follow steps from [How to set up anomaly detection](../real-time-intelligence/anomaly-detection.md#how-to-set-up-anomaly-detection).|
-| Create real-time dashboard (Preview) |[Create a Real-Time Dashboard with Copilot](/fabric/fundamentals/copilot-generate-dashboard) based on data in the KQL table. |
+| Detect anomalies (preview) | Detect anomalies in data stored in the KQL table. Follow steps from [How to set up anomaly detection](../real-time-intelligence/anomaly-detection.md#how-to-set-up-anomaly-detection).|
+| Create real-time dashboard (preview) |[Create a Real-Time Dashboard with Copilot](/fabric/fundamentals/copilot-generate-dashboard) based on data in the KQL table. |
 
 :::image type="content" source="./media/get-started-real-time-hub/kql-table-actions.png" alt-text="Screenshot that shows the actions available on a KQL table stream." lightbox="./media/get-started-real-time-hub/kql-table-actions.png":::
 

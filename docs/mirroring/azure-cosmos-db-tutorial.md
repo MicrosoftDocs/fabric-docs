@@ -34,7 +34,7 @@ First, ensure that the source Azure Cosmos DB account is correctly configured to
 
 1. Ensure that continuous backup is enabled. If not enabled, follow the guide at [migrate an existing Azure Cosmos DB account to continuous backup](/azure/cosmos-db/migrate-continuous-backup) to enable continuous backup. This feature might not be available in some scenarios. For more information, see [database and account limitations](azure-cosmos-db-limitations.md#account-and-database-limitations).
 
-1. Ensure that the networking options are set to **public network access** for **all networks**. If not, follow the guide at [configure network access to an Azure Cosmos DB account](/azure/cosmos-db/how-to-configure-firewall#configure-ip-policy).
+1. If your Azure Cosmos DB account uses virtual networks or private endpoints, you need to configure Network ACL Bypass to allow your Fabric workspace to access the account. For more information, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md). If your account is configured for public network access for all networks, you can skip to the next section.
 
 ## Create a mirrored database
 

@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
-ms.date: 12/10/2024
+ms.date: 12/15/2025
 # customer intent: As a developer, I want to know how to resolve dependency errors when using Fabric's git integration tools.
 ---
 

@@ -1,5 +1,10 @@
 {
-  "redirections": [   
+  "redirections": [    
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/map/share-map.md",
+      "redirect_url": "/docs/real-time-intelligence/map/share-map-direct.md",
+      "redirect_document_id": false
+    },        
     {
       "source_path_from_root": "/docs/real-time-intelligence/event-streams/whats-new.md",
       "redirect_url": "/fabric/fundamentals/whats-new#real-time-intelligence-in-microsoft-fabric",

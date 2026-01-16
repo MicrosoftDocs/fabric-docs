@@ -5,10 +5,10 @@ author: gsaurer
 ms.author: billmath
 ms.topic: how-to
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
-# Define item creation
+# How-To: Define item creation
 
 The item creation is standardized through a dedicated Fabric control that guides users through the process. This control allows users to select the workspace where the item is created, assign Sensitivity labels, and configure other relevant settings. By using this standardized experience, you no longer need to handle the complexities of item creation yourself or worry about future changes to the process. Additionally, this approach enables item creation directly from your workload page, providing a seamless and integrated user experience.
 

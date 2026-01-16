@@ -4,7 +4,7 @@ description: Compare Azure Data Factory and Fabric Data Factory features to choo
 author: kromerm
 ms.author: makromer
 ms.topic: concept-article
-ms.date: 09/29/2025
+ms.date: 12/19/2025
 ms.custom:
   - template-concept
   - build-2023
@@ -19,9 +19,7 @@ ai-usage: ai-assisted
 
 This guide helps you understand the key differences between these two services, so you can make the right choice for your enterprise. We'll walk you through what's new, what's different, and what advantages Fabric brings to the table.
 
-Fabric Data Factory is the next generation of Azure Data Factory, designed to simplify and enhance data integration workflows. This section introduces the key features and benefits of Fabric Data Factory.
-
-Ready to explore your migration options? Check out our [migration guide](migrate-from-azure-data-factory.md).
+Ready to explore your migration options? Check out our [migration guide](migrate-planning-azure-data-factory.md).
 
 ## Compare features side by side
 
@@ -228,7 +226,7 @@ Need to create a similar pipeline? The **Save as** feature lets you duplicate an
 
 For more information, see the following resources:
 
-- [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-from-azure-data-factory.md)
+- [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-planning-azure-data-factory.md)
 - [Get the full overview of Data Factory in Microsoft Fabric](data-factory-overview.md)
 - [Migration best practices](migration-best-practices.md)
 - [Build your first data integration in Fabric](transform-data.md)

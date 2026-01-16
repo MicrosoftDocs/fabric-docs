@@ -1,10 +1,10 @@
 ---
 title: "Limitations in Mirrored Databases From Azure SQL Managed Instance"
 description: A detailed list of limitations for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
-ms.date: 06/03/2025
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj, whhender
+ms.date: 01/15/2026
 ms.topic: conceptual
 ms.custom:
   - references_regions
@@ -26,7 +26,8 @@ The feature availability also depends on Fabric regions. For a complete list of 
 
 ## Database level limitations
 
-- Mirroring on Azure SQL Managed Instance is only available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date**. **SQL Server 2022** version of SQL Managed Instance doesn't support mirroring.
+- Mirroring on Azure SQL Managed Instance is only available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date**.
+   - SQL managed instances with the **SQL Server 2022** update policy can use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
 - Geo Disaster Recovery setup isn't supported by Mirroring.
 - Fabric Mirroring for Azure SQL Managed Instance is only supported on a **writable primary** database.
 - An Azure SQL Managed Instance database can't be mirrored if the database has: enabled Change Data Capture **(CDC), Transactional Replication**, or the database is already mirrored in another Fabric workspace.
@@ -57,14 +58,12 @@ The feature availability also depends on Fabric regions. For a complete list of 
 
 ## Table level
 
-- A table cannot be mirrored if the primary key is one of the data types: **sql_variant**, **timestamp**/**rowversion, datetime2(7)**, **datetimeoffset(7)**, **time(7)**, where `7` is seven digits of precision.
+- Tables with primary key or a clustered index (when a primary key does not exist) on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7)**, or **time(7)**.
 
 - Delta lake supports only six digits of precision.
   - Columns of SQL type **datetime2**, with precision of 7 fractional second digits, do not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss happens if columns of this type are mirrored and seventh decimal second digit will be trimmed.
   - The **datetimeoffset(7)** data type does not have a corresponding data type with same precision in Delta files in Fabric OneLake. A precision loss (loss of time zone and seventh time decimal) occurs if columns of this type are mirrored.   
 - Clustered columnstore indexes aren't currently supported.
-- Tables with clustered index on unsupported types cannot be mirrored - **computed columns**, **user-defined types**, **geometry**, **geography**, **hierarchy ID**, **SQL variant**, **timestamp**, **datetime2(7)**, **datetimeoffset(7**) or **time(7).**
-
 - If one or more columns in the table is of type Large Binary Object (LOB) with a **size > 1 MB**, the column data is **truncated** to size of 1 MB in Fabric OneLake. [Configure the max text repl size](/sql/database-engine/configure-windows/configure-the-max-text-repl-size-server-configuration-option) server configuration option to allow more than 65,536 bytes if you want to allow large inserts.
 - Source tables that have any of the following features in use can't be mirrored:
   - Temporal history tables and ledger history tables  
