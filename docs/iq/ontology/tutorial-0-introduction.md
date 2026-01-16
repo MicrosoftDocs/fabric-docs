@@ -74,8 +74,8 @@ Then, upload four sample CSV files to your lakehouse and load each one to a new 
 * *FactSales.csv*
 * *Freezer.csv*
 
-    >[!NOTE]
-    > Don't upload *FreezerTelemetry.csv* to the lakehouse. You upload this file to Eventhouse in a later step.
+>[!NOTE]
+> Don't upload *FreezerTelemetry.csv* to the lakehouse. You upload this file to Eventhouse in a later step.
 
 For detailed instructions on loading files to lakehouse tables, see the first three sections of [CSV file upload to Delta table for Power BI reporting](../../data-engineering/get-started-csv-upload.md).
 
