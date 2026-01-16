@@ -48,11 +48,12 @@ The matrix includes the following fields:
 
 ## Navigate to TimePoint Summary page
 
-Choose a specific workspace from the blocked details table to navigate to **TimePoint Summary** page and then select the **TimePoint summary explore** button.
+Choose a specific workspace from the blocked details table and then select the **TimePoint summary explore** button.
 
 > [!NOTE]
 > The rows seen in the blocked details table are states of a workspace. There can be multiple rows for the same workspace over the last 14 days due to state changes. 
-> If a workspace is blocked but has no activity on it, drilling through to the TimePoint Summary page will now show any information.
+>
+> If a workspace is blocked but has no activity on it, drilling through to the TimePoint Summary page will not show any information.
 
 ## Related content
 
