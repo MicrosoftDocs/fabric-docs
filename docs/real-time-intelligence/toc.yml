@@ -778,6 +778,8 @@ items:
             href: data-activator/combine-multiple-streams.md
           - name: Monitor eventstream for stopped events
             href: data-activator/alert-stop-events.md
+          - name: Reduce cost of rules on streaming data
+            href: data-activator/reduce-cost-rules.md
       - name: Troubleshoot errors
         href: data-activator/activator-troubleshooting.md
   - name: Digital Twin Builder
