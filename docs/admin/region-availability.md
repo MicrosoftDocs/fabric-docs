@@ -16,8 +16,6 @@ This article lists the region availability of the Microsoft Fabric [F SKUs](../e
 
 For details about purchasing a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
-For details about where to find the AI and Copilot experiences in Fabric, see [Available regions](../fundamentals/copilot-fabric-overview.md#available-regions) in the Copilot in Fabric overview article.
-
 ## Home region
 
 Your [home region](find-fabric-home-region.md) is associated with your tenant. If your home region doesn't reside in the following regions, you won't be able to access all the Fabric functionalities. In such cases, to access all the Fabric features, you can create a capacity in a region where Fabric is available. For more information, see [Multi-Geo support for Fabric](service-admin-premium-multi-geo.md).
@@ -70,5 +68,4 @@ This table lists regions where the only available Fabric workload is Power BI.
 ## Related content
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
-* [Copilot in Fabric available regions](../fundamentals/copilot-fabric-overview.md#available-regions)
 * [Find your Fabric home region](./find-fabric-home-region.md)
