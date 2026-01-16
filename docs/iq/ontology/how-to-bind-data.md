@@ -25,12 +25,12 @@ By using data binding, you can:
 Before binding data to your ontology, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-    * **Ontology item (preview)** enabled on your tenant.
+* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item-preview).
 * An ontology (preview) item with [entity types](how-to-create-entity-types.md) created.
 * Data that you prepared according to these guidelines:
     * The data is in Microsoft Fabric, in [OneLake](../../onelake/onelake-overview.md) or an [eventhouse](../../real-time-intelligence/eventhouse.md).
     * The data is organized, and has gone through any necessary ETL required by your business.
-    * Time series data is in *columnar* format. In a columnar format, time series data is structured so that each row represents a timestamped observation for an entity, and columns represent the property values (like temperature or pressure).
+    * Time series data is in *columnar* format, meaning it's represented in a table with a row for each timestamped observation. Columns contain time stamps and property values (like temperature or pressure).
     * The data contains all required information for it to be modeled. For more information, see [Core concept: Data binding](overview.md#data-binding).
 
 ## Key concepts
