@@ -23,7 +23,7 @@ Defining relationships in your ontology enables these key benefits:
 Before adding relationship types to your ontology, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-    * **Ontology item (preview)** enabled on your tenant.
+* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item-preview).
 * An ontology (preview) item with [entity types](how-to-create-entity-types.md) created.
 * Relationship source data that meets these guidelines:
     * The data is in [OneLake](../../onelake/onelake-overview.md).

@@ -73,11 +73,13 @@ Then, upload four sample CSV files to your lakehouse and load each one to a new 
 * *DimProducts.csv*
 * *FactSales.csv*
 * *Freezer.csv*
-* (**NOT** *FreezerTelemetry.csv*. You upload this file to Eventhouse in a later step.)
+
+>[!NOTE]
+> Don't upload *FreezerTelemetry.csv* to the lakehouse. You upload this file to Eventhouse in a later step.
 
 For detailed instructions on loading files to lakehouse tables, see the first three sections of [CSV file upload to Delta table for Power BI reporting](../../data-engineering/get-started-csv-upload.md).
 
-The lakehouse looks like this when you're done:
+The default table names reflect the file names in all lowercase. The lakehouse looks like this when you're done:
 
 :::image type="content" source="media/tutorial-0-introduction/lakehouse-tables.png" alt-text="Screenshot of the tables in the lakehouse.":::
 
@@ -97,7 +99,9 @@ This section prepares you to generate an ontology from a semantic model. If you'
         * *dimproducts*
         * *dimstore*
         * *factsales*
-        * (**NOT** *freezer*. You create this entity manually in a later step.)
+
+        >[!NOTE]
+        > Don't select the *freezer* table. You create this entity manually in a later step.
 
     Select **Confirm**.
 
