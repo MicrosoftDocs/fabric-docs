@@ -4,7 +4,7 @@ description: Learn how to use dbt job in Microsoft Fabric to transform your data
 ms.reviewer: whhender
 ms.author: akurnala
 author: abhinayakurnala1
-ms.date: 12/02/2025
+ms.date: 01/16/2026
 ms.topic: overview
 ms.custom:
    - dbt
@@ -58,10 +58,10 @@ Currently, when you create a dbt job, it uses **dtbjob runtime v1.0** by default
 
 ## Limitations
 
-- **Full project runs**: Currently, preview supports only full-project runs (no partial build caching).
+- **No build caching**: Currently, preview only supports compiling and executing a project fresh from the source. dbt artifacts produced from previous runs aren't available for recompilation.
 - **Incremental models**: Make sure you have proper primary keys and unique constraints for incremental builds.
 - **Adapter constraints**: Some partner adapters aren't yet supported in Fabric. See [the current supported adapters](#supported-adapters).
-
+- The output currently has a 1-MB size limit. When a run exceeds this threshold, the job fails with the following error: `{"errorCode":"2001","message":"The length of execution output is over limit (around 1M currently).","failureType":"UserError","target":"DbtItem","details":[]}`
 
 ## Related content
 

@@ -1,6 +1,11 @@
 {
   "redirections": [    
     {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/reduce-cost-rules.md",
+      "redirect_url": "/docs/real-time-intelligence/data-activator/reduce-cost-rules-apply-summarizations",
+      "redirect_document_id": false
+    },   
+    {
       "source_path_from_root": "/docs/real-time-intelligence/map/share-map.md",
       "redirect_url": "/docs/real-time-intelligence/map/share-map-direct.md",
       "redirect_document_id": false

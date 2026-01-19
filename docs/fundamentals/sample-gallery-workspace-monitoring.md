@@ -1,9 +1,9 @@
 ---
 title: Visualize Your Workspace Monitoring in a Real-Time Dashboard or Power BI Report Using Sample Templates
 description: Learn how to load your monitoring data into Real-Time Dashboards and Power BI reports created in the sample end-to-end solution.
-ms.reviewer: guregini
-ms.author: v-hzargari
-author: hzargari-ms
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: guregini, v-hzargari
 ms.topic: how-to
 ms.date: 09/15/2025
 ---

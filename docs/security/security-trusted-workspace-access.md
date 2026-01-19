@@ -3,7 +3,7 @@ title: Trusted workspace access in Microsoft Fabric
 description: Learn how to configure and use trusted workspace access to securely access your Azure Data Lake Gen2 storage accounts from Microsoft Fabric.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 08/12/2025
 ---

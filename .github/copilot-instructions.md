@@ -54,4 +54,20 @@ Below are instructions specific to this repository. These may be updated by repo
 
 <!--- Add additional repository level instructions below. Do NOT update this line or above. --->
 
+### Fabric Terminology Guidelines
+
+When writing about Microsoft Fabric services, follow these terminology standards:
+
+#### Correct Terminology
+
+- ✅ Use "Eventhouse in Fabric" or "Eventhouse" (NOT "Fabric Eventhouse")
+- ✅ Use "Lakehouse in Fabric" or "Lakehouse" (NOT "Fabric Lakehouse")
+- ✅ Use "Database in Fabric" or "Database" (NOT "Fabric Database")
+- ✅ Use "data gateway" or "on-premises data gateway" (NOT "Fabric data gateway")
+
+**Note**: Marketing terms like "Fabric Eventhouse" are acceptable in blogs but prohibited in docs.
+
+**Usage**: Use shorter forms (e.g., "Eventhouse") when Fabric context is clear; use full forms (e.g., "Eventhouse in Fabric") when introducing concepts.
+
+
 

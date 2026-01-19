@@ -3,7 +3,7 @@ title: On-premises and virtual network data gateway considerations for data dest
 description: Learn about considerations and limitations when using a data gateway with data destinations in Dataflow Gen2.
 author: luitwieler
 ms.author: jeluitwi
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: dataflows, sfi-image-nochange
 ms.date: 08/26/2025
 ai-usage: ai-assisted

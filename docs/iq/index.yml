@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
 title: IQ (preview) documentation in Microsoft Fabric
-summary:  IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
+summary:  Fabric IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
 
 metadata:
-  title: IQ (preview) documentation
-  description: Learn about IQ (preview).
+  title: Fabric IQ (preview) documentation
+  description: Learn about Fabric IQ (preview).
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.topic: landing-page
   ms.collection: collection
@@ -16,11 +16,11 @@ metadata:
 
 landingContent:
   # Card
-  - title: About IQ (preview)
+  - title: About Fabric IQ (preview)
     linkLists:
       - linkListType: overview
         links:
-          - text: What is IQ (preview)?
+          - text: What is Fabric IQ (preview)?
             url: overview.md
           - text: What is ontology (preview)?
             url: ontology/overview.md

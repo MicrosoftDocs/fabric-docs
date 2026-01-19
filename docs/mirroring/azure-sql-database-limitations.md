@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala, sbahadur, drskwier, ajayj, atodalbagi
 ms.date: 11/25/2025
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
   - references_regions
 ---

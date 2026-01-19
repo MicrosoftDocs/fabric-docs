@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: chweb, fresantos
 ms.date: 10/15/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 

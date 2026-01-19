@@ -12,7 +12,7 @@ ms.custom:
   - ai-gen-title
   - ai-seo-date:08/07/2025
   - ai-gen-description
-ms.date: 08/07/2025
+ms.date: 12/18/2025
 ms.search.form: Schema Registry
 ---
 
@@ -28,7 +28,7 @@ In this article, you lean how to register or add a schema in Fabric Real-Time hu
 
 On the left navigation bar, select **Event schema registry**. On the **Event schema registry** page, you see all the schemas that are registered using Fabric Real-Time hub or Fabric schema sets user interface (UI). To learn how to add schema using schema sets, see [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
 
-:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/schema-registry-page.png" alt-text="Screenshot of the Schema Registry page in Fabric Real-Time hub." lightbox="./media/create-manage-event-schemas-real-time-hub/schema-registry-page.png":::
+:::image type="content" source="./media/create-manage-event-schemas-real-time-hub/event-schemas.png" alt-text="Screenshot of the Schema Registry page in Fabric Real-Time hub." lightbox="./media/create-manage-event-schemas-real-time-hub/event-schemas.png":::
 
 ### Columns
 
