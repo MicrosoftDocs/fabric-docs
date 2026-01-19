@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/11/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Data clustering in Fabric Data Warehouse

@@ -2,7 +2,8 @@
 title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
 author: msmimart
-ms.author: danzhang
+ms.author: mimart
+ms.reviewer: karthikeyana
 ms.topic: concept-article
 ms.custom: references_regions, sfi-image-nochange
 ms.date: 05/12/2025
@@ -31,7 +32,7 @@ For more information about supported data sources for managed private endpoints 
 
 ## Supported item types
 
-* Fabric Spark workloads: This includes notebooks, lakehouses, and Spark job definitions. For more information, see [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
+* Fabric Data Engineering workloads: This includes notebooks (Spark and Python runtimes), lakehouses, and Spark job definitions. For more information, see [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
 
 * Eventstream: For more information, see [Connect to Azure resources securely using managed private endpoints (Preview)](../real-time-intelligence/event-streams/set-up-private-endpoint.md).
 
@@ -64,7 +65,7 @@ Please refer to the regional avilability documentation for the list of supported
 
 * **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts and Azure Blob Storage accounts using managed private endpoints.
 
-* Creating a managed private endpoint with a fully qualified domain name (FQDN) via Private Link Service is not supported.
+* Creating a managed private endpoint with a fully qualified domain name (FQDN) via Private Link Service is not supported using the UX and is only supported using the REST API. 
 * After you request to delete a managed private endpoint, wait at least 15 minutes before trying to create a new private endpoint to the same resource again. 
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.

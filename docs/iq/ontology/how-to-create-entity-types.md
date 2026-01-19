@@ -10,7 +10,7 @@ ms.topic: how-to
 
 # Entity type creation
 
-*Entity types* represent real-world concepts such as *Truck*, *Sensor*, or *Customer*. They define standard names, descriptions, identifiers, and properties to ensure consistency across data sources and tools. By modeling your domain with entity types, you eliminate inconsistent column-level definitions and create a shared semantic layer that powers downstream experiences like analytics and AI agents. Entity types can be created manually or imported from existing business logic that lies in [semantic models](../../data-warehouse/semantic-models.md).
+*Entity types* represent real-world concepts such as *Truck*, *Sensor*, or *Customer*. They define standard names, descriptions, identifiers, and properties to ensure consistency across data sources and tools. By modeling your domain with entity types, you eliminate inconsistent column-level definitions and create a shared semantic layer that powers downstream experiences like analytics and AI agents. You can create entity types manually or import them from existing business logic in [semantic models](../../data-warehouse/semantic-models.md).
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -19,9 +19,9 @@ ms.topic: how-to
 Before creating entity types, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-    * **Ontology item (preview)** enabled on your tenant.
+* **Ontology item (preview)** [enabled on your Fabric tenant](overview-tenant-settings.md#ontology-item-preview).
 * An ontology (preview) item.
-* Understanding of [core ontology concepts](overview.md#core-concepts-defining-an-ontology)
+* Understanding of [core ontology concepts](overview.md#core-concepts-defining-an-ontology).
 * Understanding of the data binding process from [Data binding](how-to-bind-data.md).
 
 ## Key concepts
@@ -36,7 +36,7 @@ Entity types use the following ontology (preview) concepts. For definitions of t
 
 ## How-to steps
 
-This section contains step-by-step instructions for adding and managing entity types.
+This section provides step-by-step instructions for adding and managing entity types.
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
@@ -51,24 +51,24 @@ This section contains step-by-step instructions for adding and managing entity t
     >[!NOTE]
     >Entity type names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character.
 
-1. Your entity type is added to the configuration canvas, and the **Entity type configuration** pane is visible.
+1. The configuration canvas displays your new entity type, and the **Entity type configuration** pane appears.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-configuration.png" alt-text="Screenshot of the Entity type configuration pane.":::
 
 1. In the properties tab, select **Add properties**.
 
-    Properties can be created on entity types without binding data to them, and you can bind either static or time series data to them afterwards. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
+    You can create properties on entity types without binding data to them. Later, you can bind either static or time series data to these properties. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
 
-1. Add a name, data type, and property type to each property added. Select **Save** to view the saved properties in the properties tab.
+1. Add a name, data type, and property type for each property. Select **Save** to view the saved properties in the properties tab.
 
     >[!NOTE]
-    >Property names must be unique across all entity types.
+    >Property names can only be duplicated across entities for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property.
 
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring property details.":::
 
 1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. 
 
-    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select are used to uniquely identify a record.
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select uniquely identify a record.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
 
@@ -78,7 +78,7 @@ This section contains step-by-step instructions for adding and managing entity t
 
 1. [Bind data](how-to-bind-data.md) to the entity type to make it operational.
 
-### Edit or delete entity type
+### Edit or delete an entity type
 
 To delete an entity type, hover over the entity type name in the **Entity types** pane and select **...** to open its options menu. Select **Delete entity type**.
 
@@ -88,7 +88,7 @@ You can edit and delete the name, key, or display name for an entity at any time
 
 :::image type="content" source="media/how-to-create-entity-types/edit-entity-type.png" alt-text="Screenshot of editing entity type details.":::
 
-You can also add, edit or delete properties of an entity type at any time. Deleting a property deletes it from all associated configurations that it's part of, including keys and [relationship type configurations](how-to-create-relationship-types.md).
+You can also add, edit, or delete properties of an entity type at any time. Deleting a property removes it from the entity everywhere it's configured, including entity type key and [relationship type configurations](how-to-create-relationship-types.md).
 
 To add a new property, 
 1. Select an entity type to open the **Entity type configuration** pane.

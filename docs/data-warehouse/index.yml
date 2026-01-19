@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Data warehousing documentation in Microsoft Fabric  # < 60 chars
+title: Fabric Data Warehouse documentation # < 60 chars
 summary: Learn more about Fabric Data Warehouse # < 160 chars
 
 metadata:
   title: Fabric Data Warehouse # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data warehousing in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  description: Fabric Data Warehouse landing page  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-warehouse
   ms.custom:
@@ -13,14 +13,14 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/12/2026
+  ms.date: 01/14/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: Data warehousing
+  - title: Fabric Data Warehouse
     linkLists:
       - linkListType: overview
         links:
