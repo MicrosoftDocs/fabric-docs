@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 01/14/2026
+ms.date: 01/19/2026
 ---
 
 # Enable Eventhouse endpoint for lakehouse and data warehouse (preview)
@@ -89,7 +89,7 @@ The Eventhouse endpoint has these characteristics:
 
 ## Update the data policy
 
-Update the cache period for a specific shortcut table to optimize query performance. The cache period is measured in days. By default, it's set to 30 days but you can set it to a minimum of one day and a maximum of 36,500 days (approximately 100 years).
+Update the cache period for a specific shortcut table to optimize query performance. The cache period is measured in days. By default, it's set to 30 days but you can set it to a minimum of one day and a maximum of 36,500 days (approximately 100 years). The availability of data in hot cache increases query performance but also storage costs.
 
 1. Browse to your **Shortcuts** and select the table.
 
