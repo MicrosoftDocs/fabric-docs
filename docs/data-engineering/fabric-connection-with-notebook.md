@@ -46,7 +46,7 @@ Inside a notebook, you can create a Fabric Connection by selecting the **"Add co
 
 This opens the **"Add connection"** pane where you can select the data source type. Provide the connection details and choose the authentication method.
 
-For the connection created within a notebook, the state of **"Allow Code-First Artifacts like Notebooksto access this connection(Preview)"** toggle is enabled by default. After the connection is created, it's automatically bound to the current notebook and appears in the **"Current Notebook"** node in the **"Connections"** pane.
+For the connection created within a notebook, the state of **"Allow Code-First Artifacts like Notebooks to access this connection(Preview)"** toggle is enabled by default. After the connection is created, it's automatically bound to the current notebook and appears in the **"Current Notebook"** node in the **"Connections"** pane.
 
 :::image type="content" source="media\fabric-connection-notebook\current-notebook-connection.png" alt-text="Screenshot of current notebook connection. "lightbox="media\fabric-connection-notebook\current-notebook-connection.png":::
 
@@ -63,10 +63,6 @@ For the connection under the **"Global Permissions"** node, you need to explicit
 :::image type="content" source="media\fabric-connection-notebook\bind-connection.png" alt-text="Screenshot of binding connection to current notebook. "lightbox="media\fabric-connection-notebook\bind-connection.png":::
 
 After you bind the connection to the current notebook, it appears in the **"Current Notebook"** node in the **"Connections"** pane.
-
-
-> [!IMPORTANT]
-> For the connection created from the Data Source Management page, if its data source isn't listed inside the **Add Connection** dialog in the notebook, you can’t see the connection in the **Global Permissions** node. This restriction will be removed in a future update.
 
 
 ### Connection status
