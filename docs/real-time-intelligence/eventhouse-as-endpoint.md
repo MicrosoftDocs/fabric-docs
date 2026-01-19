@@ -95,7 +95,7 @@ Update the cache period for a specific shortcut table to optimize query performa
 
 1. From the more options menu **...**, or from the top banner, select **Data policies**.
 
-    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-data-policies.png" alt-text="Screenshot of the eventhouse with the Data policies option highleted.":::
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-data-policies.png" alt-text="Screenshot of the eventhouse with the Data policies option highlighted.":::
 
 1. In the table data policy section, set the **Caching period (days)**.
 
