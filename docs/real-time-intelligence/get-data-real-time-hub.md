@@ -1,45 +1,42 @@
 ---
-title: Get data from Real-Time hub (preview)
+title: Get data from Real-Time hub 
 description: Learn how to get data from Real-Time hub in a KQL database in Real-time Intelligence.
 ms.reviewer: aksdi
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 02/27/2025
+ms.date: 01/19/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from Real-Time hub (preview)
+# Get data from other data sources in the Real-Time Hub
 
-In this article, you learn how to get events from Real-Time hub into either a new or existing table.
+In this article, you learn how to get events from a wide range of data sources and connectors in the Real-Time Hub into either a new or existing table. You can do this directly from the Get data experience in your KQL database in Real-Time Intelligence.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
-> [!NOTE]
-> Currently Real-Time hub only supports eventstreams as a source.
-> Real-Time hub is currently in preview.
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
-* An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source
 
 ## Step 1: Source
 
-To get data from Real-Time hub, you need to select a Real-time stream from Real-time data hub as your data source. You can select Real-Time hub in the following ways:
+Select *more (RTH) data sources* as your data source:
 
-On the lower ribbon of your KQL database, either:
+1. In the Microsoft Fabric portal, navigate to your KQL database.
 
-* From the **Get Data** dropdown menu, then under **Continuous**, select **Real-Time hub (preview)**.
+1. Select **Get Data** and then select **Connect more data sources**.
 
-* Select **Get Data** and then in the **Get data** window, select a stream from the Real-Time hub section.
+   :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources.png" alt-text="Screenshot of the get data menu with the Connect more data sources option highlighted.":::
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+1. In the Connect data source window you see all the data sources available in Real-Time Hub. You can search for a source, or filter by category. In this example, select the sample scenario **Bicycle rentals**.
 
-* Select a data stream from the Real-Time hub stream list.
+   :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of the Connect data source window with the Bicycle rentals sample scenario highlighted." lightbox="media/get-data-real-time-hub/select-data-source.png":::
+
+
 
 ## Step 2: Configure
 

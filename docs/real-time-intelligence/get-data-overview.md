@@ -6,18 +6,18 @@ ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 01/08/2026
+ms.date: 01/19/2026
 # customer intent: As a customer, I want to learn about the different sources I can use to get data into an Eventhouse in Real-Time Intelligence.
 ---
 # Get data overview
 
-This article summarizes the methods available to ingest data directly into an [Eventhouse](eventhouse.md) using the Get data experience.
+This article summarizes the methods available to ingest data directly into an [Eventhouse](eventhouse.md) by using the Get data experience.
 
 :::image type="content" source="media/get-data-overview/get-data-types.png" alt-text="Screenshot of the available data types in the get data experience in Eventhouses in Real-Time Intelligence.":::
 
 ## Data sources
 
-The following is a list of data ingestion sources:
+The following list shows data ingestion sources:
 
 * [Local file](get-data-local-file.md)
 * [OneLake](get-data-onelake.md)
@@ -28,7 +28,7 @@ The following is a list of data ingestion sources:
 * [Data Factory pipeline copy](../data-factory/connector-kql-database-copy-activity.md)
 * [Data Factory dataflows](../data-factory/connector-azure-data-explorer.md)
 
-Or select from a wide range of data sources and connectors, and bring data into and Eventstream and subsequently into your Eventhouse without leaving the get data workflow. In this case, select the [Connect more data sources](get-data-more-sources.md) option
+Or get data from a wide range of data sources and connectors in the Real-Time Hub. Bring data into an Eventstream and later into your Eventhouse without leaving the get data workflow. In this case, select the [Connect more data sources](get-data-real-time-hub.md) option.
 
 ## Related content
 
