@@ -10,7 +10,6 @@ ms.date: 01/20/2026
 ms.search.form: Eventstreams Tutorials
 ---
 
-
 # Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
 
 In this tutorial, you learn how to use SAP Datasphere Replication Flow to replicate the data from SAP Datasphere to the Kafka endpoint which is in the Eventstream’s source custom endpoint. Once the data arrives in Eventstream, it can be used for alerting, reporting, or routed to various destinations in Fabric further processing or analysis.
