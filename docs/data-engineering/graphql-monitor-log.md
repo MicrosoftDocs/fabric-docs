@@ -64,7 +64,7 @@ Now that you have workspace monitoring enabled [per the prerequisites](#prerequi
 1. Enable the desired options by toggling the switches one at a time to the **On** position.
 
 > [!NOTE]
-> Metrics and logging incurs extra costs. Access API requests details from [API request activity page](#api-request-activity). 
+> Metrics and logging incur extra costs. Access API requests details from [API request activity page](#api-request-activity). 
 
 ## API request activity
 
