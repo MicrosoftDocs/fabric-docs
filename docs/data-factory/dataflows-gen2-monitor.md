@@ -27,7 +27,7 @@ When you open your dataflow refresh history, you first notice a list of all your
 
 :::image type="content" source="./media/dataflows-gen2-monitor/refresh-history.png" alt-text="Screenshot of the refresh history screen." lightbox="./media/dataflows-gen2-monitor/refresh-history.png":::
 
-We show you up to 50 refresh histories or up to 6 months back (which ever comes first) and store up to 250 refresh histories or 6 months back in the onelake. You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow. 
+We show you up to 50 refresh histories or up to 6 months back (which ever comes first) and store up to 250 refresh histories or 6 months back in the onelake. You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow.
 
 ### Download a CSV file of the refresh
 
@@ -38,6 +38,18 @@ Some times you might need to get a CSV file of your refresh. To get this file, t
 1. Download the CSV.
 
    :::image type="content" source="./media/dataflows-gen2-monitor/download-csv.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download as CSV selection." lightbox="./media/dataflows-gen2-monitor/download-csv.png":::
+
+### Download detailed logs of the refresh
+
+In some cases, you might want to get more detailed logs of your refresh. To get these logs, take the following steps:
+
+1. Open the recent runs of the dataflow.
+1. Select the run you want to get detailed logs from.
+1. On the bottom left of the details screen, select the **Download detailed logs** button.
+
+    :::image type="content" source="./media/dataflows-gen2-monitor/download-detailed-logs.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download detailed logs selection." lightbox="./media/dataflows-gen2-monitor/download-detailed-logs.png":::
+
+In this zipped file, you find multiple log files that provide you with more detailed information about the refresh. These logs are especially useful when you need to troubleshoot issues with your dataflow refresh or when you are in contact with Microsoft support.
 
 ### Reviewing your dataflow refresh from the UI
 
