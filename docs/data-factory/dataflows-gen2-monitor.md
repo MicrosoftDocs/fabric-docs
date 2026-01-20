@@ -49,7 +49,7 @@ In some cases, you might want to get more detailed logs of your refresh. To get 
 
     :::image type="content" source="./media/dataflows-gen2-monitor/download-detailed-logs.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download detailed logs selection." lightbox="./media/dataflows-gen2-monitor/download-detailed-logs.png":::
 
-In this zipped file, you find multiple log files that provide you with more detailed information about the refresh. These logs are especially useful when you need to troubleshoot issues with your dataflow refresh or when you are in contact with Microsoft support.
+In this zipped file, you find multiple log files from the mashup engine that provide you with more detailed information about the refresh. These logs are especially useful when you need to troubleshoot issues with your dataflow refresh or when you are in contact with Microsoft support. You can download these logs a few minutes after the refresh is completed and up to 28 days after the refresh. Downloading the detailed logs is not yet supported for dataflows that are refreshed using an onpremises data gateway, but is supported for dataflows that use cloud or vnet gateways.
 
 ### Reviewing your dataflow refresh from the UI
 
