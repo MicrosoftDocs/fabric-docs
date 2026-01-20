@@ -29,7 +29,7 @@ After you initiate a Copy job, you can immediately track its progress and metric
 
 You can also see a list of the items being copied in the job, with the following individual table metrics reported for each item:
 
-- **Source and destination names**: The the source system and the target system involved in the data movement.
+- **Source and destination names**: The source system and the target system involved in the data movement.
 - **Status**: The current state or final outcome of the run (for example, succeeded, failed, or in progress).
 - **Rows read**: The total number of rows read from the source during the run.
 - **Rows written**: The total number of rows written to the destination during the run.
