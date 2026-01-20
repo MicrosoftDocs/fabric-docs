@@ -141,7 +141,10 @@ The summary is created based on the item’s metadata and structure. Users with 
 
 After a summary is generated, you can generate another version, copy the text for use elsewhere, or provide feedback on the quality.  
 ![User's image](media/onelake-catalog-explore/image1.png)
-![User's image](media/onelake-catalog-explore/image3.png)
+
+:::image type="content" source="media/onelake-catalog-explore/semantic-model-auto-summary-button.png" alt-text="Screenshot of OneLake catalog Explorer with AI summary button and Copilot summary icon highlighted for a semantic model." lightbox="media/onelake-catalog-explore/semantic-model-auto-summary-button.png":::
+
+:::image type="content" source="media/onelake-catalog-explore/semantic-model-auto-summary-example.png" alt-text="Screenshot of OneLake Explorer with an example of an AI summary panel expanded." lightbox="media/onelake-catalog-explore/semantic-model-auto-summary-example.png":::
 
 ## View item details
 When you select an item from the items list, its detailed information appears in a dedicated pane alongside your current view. This in-context view allows you to quickly browse through item metadata, lineage, and permissions without losing your place in the item list, making it easy to compare and find the most suitable items. For a comprehensive understanding of how item details are presented and the various ways you can access them, refer to [View item details](./onelake-catalog-item-details.md).
