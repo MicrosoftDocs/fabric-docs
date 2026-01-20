@@ -137,7 +137,7 @@ You can open the item for editing or viewing (depending on the item type) from b
 
 The Auto-Summary for semantic models uses AI to generate a high-level summary that helps you quickly understand an item’s purpose and main characteristics without opening the item or reviewing its full metadata. It makes it easier to understand unfamiliar items and compare them directly in the OneLake catalog explorer.
 
-The summary is created based on the item’s metadata and structure. Users with the appropriate copilot capacity and the right permissions can generate the summary from the quick actions in the main explore tab or directly from the semantic model’s item details page. Each time you return to the Catalog, a new summary can be generated so that you always see the most up to date version.
+The summary is created based on the item’s metadata and structure. Users with the appropriate Copilot capacity and permissions can generate the summary from the quick actions in the main explore tab or directly from the semantic model’s item details page. Each time you return to the catalog, a new summary can be generated so you always see the most up-to-date version.
 
 After a summary is generated, you can generate another version, copy the text for use elsewhere, or provide feedback on the quality.  
 ![User's image](media/onelake-catalog-explore/image1.png)
