@@ -4,7 +4,7 @@ description: Learn about the option to generate an ontology (preview) from a Pow
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
-ms.date: 01/20/2025
+ms.date: 01/20/2026
 ms.topic: concept-article
 ---
 

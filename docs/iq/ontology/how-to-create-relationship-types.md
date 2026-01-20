@@ -10,8 +10,8 @@ ms.topic: how-to
 
 # Relationship types in ontology (preview)
 
-Relationships allow organizations to model, manage, and govern semantic connections between business entities. Clearly defined relationships help organizations turn complex connections into actionable insights and decisions, by enabling these benefits:
-* Semantic clarity: By explicitly defining relationships (such as *owns*, *located at*, *supplies*, or *monitored by*), organizations can understand not just what entities exist, but how they interact.
+Relationships allow organizations to model, manage, and govern semantic connections between business entities. Clearly defined relationships help organizations turn complex connections into actionable insights and decisions with the following benefits:
+* Semantic clarity: Explicitly defined relationships (such as *owns*, *located at*, *supplies*, or *monitored by*) allow organizations to represent not only what entities exist, but how they interact.
 * Analytics: Ontologies that are enriched with relationships offer contextualized insights.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]

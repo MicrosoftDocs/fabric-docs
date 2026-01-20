@@ -72,7 +72,7 @@ To create more tiles, follow these steps.
     :::image type="content" source="media/how-to-use-preview-experience/add-tile-3.png" alt-text="Screenshot of configuring a static property tile.":::
 
 1. Back on the overview page, verify that your new tile is visible.
-1. use the time range selector to configure the time range for the data displayed in the tiles.
+1. Use the time range selector to configure the time range for the data displayed in the tiles.
 
     :::image type="content" source="media/how-to-use-preview-experience/change-date-range.png" alt-text="Screenshot of configuring the time range." lightbox="media/how-to-use-preview-experience/change-date-range.png":::
 
