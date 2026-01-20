@@ -35,7 +35,7 @@ items:
     href: add-source-azure-data-explorer-database.md
   - name: Azure Data Explorer shortcut
     href: add-source-azure-data-explorer.md
-  - name: Azure diagnostic logs and metrics
+  - name: Azure Monitor diagnostic logs and metrics
     href: add-source-azure-diagnostic-logs-metrics.md
   - name: Azure Event Grid
     href: add-source-azure-event-grid.md
