@@ -19,7 +19,7 @@ items:
   - name: Review Fabric preview information
     href: preview.md
   
-- name: Data lifecycle
+- name: Fabric data lifecycle
   items:
     - name: Get data
       href: get-data.md
@@ -27,11 +27,11 @@ items:
       href: prepare-data.md
     - name: Store data
       href: store-data.md
-    - name: Track and visualize
+    - name: Track and visualize data
       href: track-and-visualize-data.md
     - name: Analyze and train data
       href: analyze-and-train.md
-    - name: External integration
+    - name: External systemsintegration
       href: external-integration.md
 
 - name: Navigate and find content

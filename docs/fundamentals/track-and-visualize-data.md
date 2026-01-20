@@ -1,4 +1,15 @@
-## Track and visualize
+---
+title: Track and Visualize Data in Microsoft Fabric
+description: Discover how Microsoft Fabric integrates Power BI, Real-Time Intelligence, and Fabric IQ to transform data into actionable insights through analytics and visualization.
+#customer intent: As a business analyst, I want to create Power BI reports using semantic models so that I can provide structured and governed insights to my team.
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: fabragaMS
+ms.date: 01/20/2026
+ms.topic: concept-article
+---
+
+# Track and visualize
 
 One of the final steps in the data lifecycle is making sense of the data through analytics, visualization and data-drvien alerts. In Microsoft Fabric, this is primarily handled by the integration between Power BI, Real-Time Intelligence and Fabric IQ workloads. 
 

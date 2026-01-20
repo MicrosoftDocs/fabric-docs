@@ -9,7 +9,7 @@ ms.date: 01/19/2026
 ms.topic: concept-article
 ---
 
-## Get data
+# Get data
 
 A converged platform must ingest data from many disparate sources, and Microsoft Fabric provides multiple options to do so through connectors, APIs, and configuration-based tools.
 

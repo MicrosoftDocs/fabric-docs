@@ -1,3 +1,14 @@
+---
+title: Integrate Microsoft Fabric With External Systems
+description: Learn how Microsoft Fabric integrates with external systems to enable seamless data flow, real-time automation, and actionable insights across your organization.
+#customer intent: As a data analyst, I want to integrate Microsoft Fabric with Power Automate so that I can automate workflows triggered by real-time data conditions.
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: fabragaMS
+ms.date: 01/20/2026
+ms.topic: concept-article
+---
+
 ## External integration
 
 While Fabric is an all-in-one platform, it recognizes the importance of integrating with external systems, both for bringing data in and for pushing data/insights out. In this section, we consider how Fabric connects to the outside world and how others can consume Fabric-hosted data.

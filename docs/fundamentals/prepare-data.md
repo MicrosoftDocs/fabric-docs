@@ -1,5 +1,15 @@
+---
+title: Prepare and Transform Data in Microsoft Fabric
+description: Prepare and transform data effortlessly in Microsoft Fabric using low-code tools like Dataflow Gen2 or code-first options like Notebooks and User Data Functions.
+#customer intent: As a data analyst, I want to use Dataflow Gen2 to clean and transform raw data so that I can prepare it for analysis in a Lakehouse or Warehouse.
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: fabragaMS
+ms.date: 01/20/2026
+ms.topic: concept-article
+---
 
-## Prepare data
+# Prepare data
 
 Once data is in Fabric, either landed natively in OneLake or accessible via Shortcuts, the next step is to refine and transform it to make it useful for analysis. Microsoft Fabric provides both low-code and code-first approaches to data preparation, catering to a spectrum of users from business-friendly data wranglers to advanced data engineers.
 

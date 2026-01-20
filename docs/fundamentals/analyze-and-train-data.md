@@ -1,4 +1,15 @@
-## Analyze and train data
+---
+title: Analyze and Train Data in Microsoft Fabric
+description: Discover how Microsoft Fabric empowers data scientists with tools for ML model training, big data analysis, and AI workflows—all in one unified platform.
+#customer intent: As a data scientist, I want to use Fabric’s Data Science workload to train and track machine learning models so that I can operationalize them efficiently within a unified platform.
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: fabragaMS
+ms.date: 01/20/2026
+ms.topic: concept-article
+---
+
+# Analyze and train data
 
 Beyond traditional analytics and reporting, Microsoft Fabric also includes capabilities for advanced analytics, such as machine learning (ML), AI model training, and big data analysis. The Data Science workload in Fabric is specifically geared towards those tasks, providing an environment where data scientists and analysts can build, train, and operationalize ML models using the same unified data platform. Fabric IQ data agents, operations agents and the Power BI Copilot offer a way to interact with data and insights using natural language and act on conditions and patterns found.
 

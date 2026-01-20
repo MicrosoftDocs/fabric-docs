@@ -1,4 +1,15 @@
-## Store data
+---
+title: Microsoft Fabric Data Storage Options Explained
+description: Discover how Microsoft Fabric's OneLake unifies all your data storage needs with a single, multi-cloud, multi-region data lake. Learn how it simplifies analytics.
+#customer intent: As a data engineer, I want to understand how to store and organize data in OneLake so that I can manage all my analytics data in a unified platform.
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: fabragaMS
+ms.date: 01/20/2026
+ms.topic: concept-article
+---
+
+# Store data
 
 In Microsoft Fabric, all data - irrespective of its source or how it was prepared - ultimately lands in a unified storage foundation called [OneLake](https://learn.microsoft.com/fabric/onelake/onelake-overview). It is automatically available in Fabric (no separate provisioning needed) and is built on Azure Data Lake Storage Gen2 under the hood. The key idea is one data lake for all analytics: each Fabric tenant gets one OneLake, and within it, you organize data by workspaces and items rather than by disparate storage accounts. OneLake is multi-cloud and multi-region - it abstracts those details so users just see a consistent file system-like hierarchy.
 
