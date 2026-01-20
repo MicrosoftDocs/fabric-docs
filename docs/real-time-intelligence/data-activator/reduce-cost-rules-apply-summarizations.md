@@ -1,5 +1,5 @@
 ---
-title: Reduce Activator Rule Costs on Streaming Data
+title: Reduce Activator Rule Costs on Streaming Data with Summarizations
 description: Learn how to reduce the cost of Activator rules on streaming data by applying summarization techniques to minimize data ingestion from Eventstream.
 #customer intent: As a data engineer, I want to learn how to reduce the cost of Activator rules on streaming data so that I can optimize resource usage and save on expenses.
 author: spelluru
