@@ -33,8 +33,8 @@ We show you up to 50 refresh histories or up to 6 months back (which ever comes 
 
 Some times you might need to get a CSV file of your refresh. To get this file, take the following steps:
 
-1. Open the refresh history of the dataflow.
-1. Select the run you want to get a CSV file from.
+1. Open the recent runs of the dataflow.
+1. Select the run(s) you want to get a CSV file from.
 1. Download the CSV.
 
    :::image type="content" source="./media/dataflows-gen2-monitor/download-csv.png" alt-text="Screenshot emphasizing the particular refresh you want to download, and the download as CSV selection." lightbox="./media/dataflows-gen2-monitor/download-csv.png":::
