@@ -136,6 +136,8 @@ You can now verify the end-to-end flow via Eventstream    to confirm whether dat
 
 ## Related content
 
+This tutorial showed you how to use Replication Flows to transfer data from SAP Datasphere to your eventstream via Eventstream’s source custom endpoint. Once the data reaches eventstream, you can process it and route it to different destinations for analysis, alerts, and reports. Below are some helpful resources for further reference:
+
 - [Microsoft Fabric Eventstreams Overview](./overview.md)  
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md) 
 - [Process Event Data with the Event Processing Editor](./process-events-using-event-processor-editor.md)  
