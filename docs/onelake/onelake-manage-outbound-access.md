@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: concept-article
 ms.custom:
-ms.date: 12/01/2025
+ms.date: 01/20/2026
 #customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
 ---
 
@@ -55,7 +55,7 @@ Syntax
 azcopy copy "https://source.blob.core.windows.net/myContainer/sales.csv" "https://onelake.dfs.fabric.microsoft.com/WorkspaceA/LakehouseA.Lakehouse/Files/sales.csv" --trusted-microsoft-suffixes "fabric.microsoft.com"
 ```
 
-However, in the following scenario, Workspace A is now the source of the copy operation, with the external Azure Data Lake Storage (ADLS) account as the destination. In this scenario, **outbound access protection does not block this call**, as only inbound calls are made to Workspace A. To restrict these types of operations, see [Protect inbound traffic](/fabric/security/protect-inbound-traffic).
+However, in the following scenario, Workspace A is now the source of the copy operation, with the external Azure Storage account as the destination. In this scenario, **outbound access protection does not block this call**, as only inbound calls are made to Workspace A. To restrict these types of operations, see [Protect inbound traffic](/fabric/security/protect-inbound-traffic).
 
 Syntax
 ```azcopy
@@ -72,8 +72,7 @@ For example, creating a data connection rule from Workspace A to Workspace B let
 
 You can create and use shortcuts to external locations even when outbound access protection is enabled by [creating a data connection rule](../security/workspace-outbound-access-protection-allow-list-connector.md) via the appropriate connector for your shortcut target. When you allowlist the target location, you can create shortcuts and read data via shortcuts from that location, even when outbound access protection is enabled.
 
-## Limitations
-You can't currently use AzCopy to load data from an external ADLS account when outbound access protection is enabled, even if you add a data connection rule for that storage account.
+You can also copy data from an external Azure Storage account when outbound access protection is enabled by creating a data connection rule for that storage account. Remember that OneLake makes an outbound request to an Azure Storage account when it is the source of a copy operation.  Azure Storage supports both Blob and DFS endpoints, so be sure to use the right connector for your endpoint. If you allowlisted using the Azure Data Lake Storage connector, be sure to use the `.dfs` endpoint in your AzCopy command, and the `.blob` endpoint if you allowlisted via the Azure Blob Storage connector. 
 
 ## Related Content  
   
