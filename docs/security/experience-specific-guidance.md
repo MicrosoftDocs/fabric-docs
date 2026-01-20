@@ -352,9 +352,9 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 Map items from the primary region remain unavailable to customers and the Map items aren't replicated to the secondary region.
 
-If you want to recover a Map item when a disaster happens, setup Fabric Git integration([Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](..\cicd\git-integration\intro-to-git-integration.md)), and [synchronize](..\cicd\git-integration\git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Map item with your Git repo.
+If you want to recover a Map item when a disaster happens, set up Fabric Git integration([Overview of Fabric Git integration - Microsoft Fabric | Microsoft Learn](..\cicd\git-integration\intro-to-git-integration.md)), and [synchronize](..\cicd\git-integration\git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Map item with your Git repo.
 
-During the recovery, after the new region/capacity in Fabric is setup, you can use the repo to rebuild the Map item in the new workspace you created. Since the new workspace would be empty, [Git sync](..\cicd\git-integration\git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) would get the contents from the repo into the empty workspace. This step brings the Map item back to life.
+During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Map item in the new workspace you created. Since the new workspace would be empty, [Git sync](..\cicd\git-integration\git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) would get the contents from the repo into the empty workspace. This step brings the Map item back to life.
 Note: If the original Map item has a lakehouse or KQL queryset configured, users can refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) & [KQL queryset section](./experience-specific-guidance.md#kql-databasequeryset) to recover them first. Once those dependencies are taken care, connect the newly recovered lakehouse & querysets to the newly recovered Map item.
 
 ## Transactional database
