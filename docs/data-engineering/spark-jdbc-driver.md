@@ -107,9 +107,9 @@ jdbc:fabricspark://<hostname>[:<port>][;<parameter1>=<value1>;<parameter2>=<valu
 
 ### Example Connection Strings
 
-#### Basic Connection (Interactive Authentication)
+#### Basic Connection (Interactive Browser Based Authentication)
 ```
-jdbc:fabricspark://api.fabric.microsoft.com;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=2
+jdbc:fabricspark://api.fabric.microsoft.com;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=1
 ```
 
 #### With Spark Resource Configuration
