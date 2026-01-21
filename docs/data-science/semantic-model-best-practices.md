@@ -27,7 +27,7 @@ The Data Agent uses a layered architecture where user questions flow through an 
 
 1. **Data Source Selection:** The system evaluates the question against available sources using schema information and AI instructions you provide.
 
-1. **Query Generation:** For semantic models, the DAX generation tool generates DAX queries based on schema, metadata (synonyms, min and max values of numerical columns, report visual metadata, and more), context configured in [Prep Data for AI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai), and the conversation history.
+1. **Query Generation:** For semantic models, the DAX generation tool generates DAX queries based on schema, metadata (synonyms, min and max values of numerical columns, report visual metadata, and more), context configured in [Prep Data for AI](/power-bi/create-reports/copilot-prepare-data-ai), and the conversation history.
 
 1. **Response Formatting:** The agent formats results into human-readable responses with tables, summaries, or insights based on the agent instructions.
 
@@ -35,7 +35,7 @@ The Data Agent uses a layered architecture where user questions flow through an 
 
 ## Prep for AI: Make semantic model AI ready
 
-Power BI's [Prep for AI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai) feature provides three configuration components that directly impact how Fabric Data Agent interprets your semantic model. You can access these components in both Power BI Desktop and the Power BI service. Power BI Copilot also uses Prep for AI configurations, so investing time in setting these up benefits both Copilot and Data Agent responses.
+Power BI's [Prep for AI](/power-bi/create-reports/copilot-prepare-data-ai) feature provides three configuration components that directly impact how Fabric Data Agent interprets your semantic model. You can access these components in both Power BI Desktop and the Power BI service. Power BI Copilot also uses Prep for AI configurations, so investing time in setting these up benefits both Copilot and Data Agent responses.
 
 > [!IMPORTANT]
 > When querying semantic models, the DAX generation tool used by Data Agent relies solely on the semantic model's metadata and Prep for AI configurations. The DAX generation tool ignores any instructions you add at the Data Agent level for DAX query generation. Proper Prep for AI configuration is essential for accurate results.
@@ -44,7 +44,7 @@ Power BI's [Prep for AI](https://learn.microsoft.com/en-us/power-bi/create-repor
 
 AI data schemas let you define a focused subset of your model for AI prioritization. While Data Agent also has its own table selection when adding a semantic model as a data source, configure your schema in Prep for AI first. The DAX generation tool uses this schema for creating DAX queries.
 
-You can configure this schema in Power BI Desktop or the Power BI service by selecting **Prep data for AI** from the Home ribbon. Then, navigate to the **Simplify data schema** tab. From there, select which tables, columns, and measures the AI should use when generating responses. For detailed setup instructions, see [Set an AI data schema](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai-data-schema#set-an-ai-data-schema).
+You can configure this schema in Power BI Desktop or the Power BI service by selecting **Prep data for AI** from the Home ribbon. Then, navigate to the **Simplify data schema** tab. From there, select which tables, columns, and measures the AI should use when generating responses. For detailed setup instructions, see [Set an AI data schema](/power-bi/create-reports/copilot-prepare-data-ai-data-schema#set-an-ai-data-schema).
 
 ![Prep data for AI interface showing the Simplify the data schema panel where users select tables, columns, and measures for AI prioritization.](media/semantic-model-best-practices/ai-data-schema-config.png)
 
@@ -68,7 +68,7 @@ The DAX generation tool relies on your model's metadata to interpret questions. 
 
 ### Verified answers
 
-Verified answers are user-approved visual responses that specific questions trigger. They provide consistent, reliable responses to common or complex questions that might otherwise be misinterpreted. Because you store verified answers at the semantic model level (not the report level), they work across any Data Agent that uses the same model. For more information, see [Prepare Your Data for AI – Verified answers](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai-verified-answers).
+Verified answers are user-approved visual responses that specific questions trigger. They provide consistent, reliable responses to common or complex questions that might otherwise be misinterpreted. Because you store verified answers at the semantic model level (not the report level), they work across any Data Agent that uses the same model. For more information, see [Prepare Your Data for AI – Verified answers](/power-bi/create-reports/copilot-prepare-data-ai-verified-answers).
 
 When you use verified answers with Data Agent, the system doesn't return the Power BI visual itself. Instead, it uses the user questions and the visual's properties (columns, measures, filters) to influence DAX query generation. This approach means verified answers improve response accuracy by guiding the DAX generation tool toward the correct query structure. When a user asks a question to the Data Agent, the system first checks for an exact or semantically similar match to your prompt defined in the verified answer before generating a new response.
 
@@ -91,7 +91,7 @@ When you use verified answers with Data Agent, the system doesn't return the Pow
 
 AI instructions in Prep for AI provide context, business logic, and guidance directly on the semantic model. They help clarify terminology, guide analysis approaches, and provide critical business and semantic context the AI wouldn't otherwise understand.
 
-You can configure these instructions in Power BI Desktop or the Power BI service by selecting **Prep data for AI** from the Home ribbon, and then navigating to the **Add AI instructions** tab. For detailed setup instructions, see [AI Instructions documentation](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai-instructions).
+You can configure these instructions in Power BI Desktop or the Power BI service by selecting **Prep data for AI** from the Home ribbon, and then navigating to the **Add AI instructions** tab. For detailed setup instructions, see [AI Instructions documentation](/power-bi/create-reports/copilot-prepare-data-ai-instructions).
 
 ![AI Instructions panel showing a text field with example business terminology, time period definitions, and analysis defaults for the semantic model.](media/semantic-model-best-practices/ai-instructions-config.png)
 
@@ -119,9 +119,9 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 1. **Optimize the Semantic Model:** Start by optimizing your semantic model for performance. Poor Data Agent performance often comes from a poorly designed semantic model, inefficient DAX measures, or a mix of the two. When a user asks a question, the Data Agent generates a DAX query and runs it against your model. A well-optimized model uses fewer resources and achieves faster query execution. In a conversational interface, users expect quick responses, so slow performance directly impacts user experience and adoption.
 
-   Additionally, a bloated model with unnecessary columns, tables, and measures creates more noise for the DAX generation tool to parse, which can reduce response accuracy. By optimizing your model early, you also prevent performance problems as your data grows and the model becomes more complex. You can learn more in [Optimize a model for performance in Power BI](https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/) course.
+   Additionally, a bloated model with unnecessary columns, tables, and measures creates more noise for the DAX generation tool to parse, which can reduce response accuracy. By optimizing your model early, you also prevent performance problems as your data grows and the model becomes more complex. You can learn more in [Optimize a model for performance in Power BI](/training/modules/optimize-model-power-bi/) course.
 
-   Use [Best Practice Analyzer and Semantic Model Memory Analyzer](https://learn.microsoft.com/en-us/power-bi/transform-model/service-notebooks) in a Fabric notebook to identify problems such as incorrect data types, unnecessary columns, high cardinality columns, and inefficient DAX patterns. Add descriptions to tables, columns, and measures to help the LLM understand the purpose of each object included in the AI data schema.
+   Use [Best Practice Analyzer and Semantic Model Memory Analyzer](/power-bi/transform-model/service-notebooks) in a Fabric notebook to identify problems such as incorrect data types, unnecessary columns, high cardinality columns, and inefficient DAX patterns. Add descriptions to tables, columns, and measures to help the LLM understand the purpose of each object included in the AI data schema.
 
    ![Semantic model context menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted.](media/semantic-model-best-practices/bpa-memory-analyzer.png)
 
@@ -139,7 +139,7 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
    ![Data Agent interface showing a user question, natural language response with steps, and the generated DAX query code.](media/semantic-model-best-practices/dax-query-inspection.png)
 
-1. **Configure Data Agent Instructions:** Add instructions at the Data Agent level only for guidance that applies across all data sources configured in the agent. This guidance includes general response formatting preferences, cross-source routing rules, common abbreviations, and tone. Don't add semantic model specific instructions here as they're not passed to the DAX generation tool. For guidance on configuring agent instructions, refer to [configuration guidelines](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-configurations#data-agent-instructions).
+1. **Configure Data Agent Instructions:** Add instructions at the Data Agent level only for guidance that applies across all data sources configured in the agent. This guidance includes general response formatting preferences, cross-source routing rules, common abbreviations, and tone. Don't add semantic model specific instructions here as they're not passed to the DAX generation tool. For guidance on configuring agent instructions, refer to [configuration guidelines](data-agent-configurations.md#data-agent-instructions).
 
 1. **Validate & Iterate:** LLMs can produce incorrect results without proper context. Continuously iterate on your configuration and validate responses to build trust in your Data Agent. To evaluate responses programmatically, you can use the Fabric Data Agent Python SDK to run automated evaluations against ground truth question-answer pairs and analyze accuracy metrics. Note that the SDK is for evaluation only in this case and can't modify semantic model's Prep for AI configurations. For details, see [Evaluate your data agent](https://learn.microsoft.com/fabric/data-science/evaluate-data-agent). Additionally, involve stakeholders and end users in the evaluation process. Their feedback ensures that responses align with real-world expectations and usability, helping you identify gaps that automated checks might miss.
 
@@ -177,8 +177,8 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 - [Fabric Data Agent concepts documentation](https://learn.microsoft.com/fabric/data-science/concept-data-agent)
 - [Fabric-toolbox with checklist and notebooks](https://github.com/microsoft/fabric-toolbox/tree/main/samples/data_agent_checklist_notebooks)
-- [Adding semantic model as a data source to data agent](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-semantic-model)
-- [Prepare your data for AI in Power BI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai)
+- [Adding semantic model as a data source to data agent](data-agent-semantic-model.md)
+- [Prepare your data for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai)
 - [Optimize your semantic model for Copilot](https://learn.microsoft.com/power-bi/create-reports/copilot-evaluate-data)
-- [Optimize A Model For Performance In Power BI - Training](https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/)
-- [FAQ for Prep for AI](https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-prepare-data-ai-faq)
+- [Optimize A Model For Performance In Power BI - Training](/training/modules/optimize-model-power-bi/)
+- [FAQ for Prep for AI](/power-bi/create-reports/copilot-prepare-data-ai-faq)
