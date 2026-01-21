@@ -15,7 +15,7 @@ ms.date: 04/16/2024
 A library is a collection of prewritten code that developers can import to provide functionality. By using libraries, you can save time and effort by not having to write code from scratch to do common tasks. Instead, import the library and use its functions and classes to achieve the desired functionality. Microsoft Fabric provides multiple mechanisms to help you manage and use libraries.
 
 - **Built-in libraries**: Each Fabric Spark runtime provides a rich set of popular preinstalled libraries. You can find the full built-in library list in [Fabric Spark Runtime](runtime.md).
-- **Public libraries**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
+- **Public libraries**: Public libraries are sourced from repositories such as PyPI, Conda, and Maven, which are currently supported.
 - **Custom libraries**: Custom libraries refer to code that you or your organization build. Fabric supports them in the *.whl*, *.jar*, and *.tar.gz* formats. Fabric supports *.tar.gz* only for the R language. For Python custom libraries, use the *.whl* format.
 
 ## Summary of library management best practices
@@ -44,7 +44,7 @@ It's highly recommended for pipeline scenarios with its stability.
 
 ### Scenario 3: Inline installation in interactive run
 
-If you are using the notebooks to write code interactively, using [inline installation](#inline-installation) to add extra new PyPI/conda libraries or validate your custom libraries for one-time use is the best practice. Inline commands in Fabric allow you to have the library effective in the current notebook Spark session. It allows the quick installation but the installed library doesn't persist across different sessions.
+If you are using the notebooks to write code interactively, using [inline installation](#inline-installation) to add extra new PyPI/Conda libraries or validate your custom libraries for one-time use is the best practice. Inline commands in Fabric allow you to have the library effective in the current notebook Spark session. It allows the quick installation but the installed library doesn't persist across different sessions.
 
 Since `%pip install` generating different dependency trees from time to time, which might lead to library conflicts, inline commands are turned off by default in the pipeline runs and NOT recommended to be used in your pipelines.
 
@@ -56,6 +56,7 @@ Since `%pip install` generating different dependency trees from time to time, wh
 | **Python Custom (.whl)** | Supported | Supported |
 | **R Public (CRAN)** | Not supported | Supported |
 | **R custom (.tar.gz)** | Supported as custom library| Supported |
+| **Scala/Java Public (Maven)** | Not supported | Supported |
 | **Jar** | Supported as custom library | Supported |
 
 <a id="in-line-installation"></a>
@@ -170,7 +171,22 @@ To install an R feed library:
 
 ### Manage Jar libraries through inline installation
 
-The *.jar* files are support at notebook sessions with following command.
+#### Manage Maven Jar libraries through inline installation
+
+You can install Maven libraries with the following command:
+
+```Scala
+%%configure -f
+{
+    "conf": {
+        "spark.jars.packages": "io.delta:delta-sharing-spark_2.12:3.2.1"
+    }
+}        
+```
+
+### Manage custom Jar libraries through inline installation
+
+The *.jar* files are supported in notebook sessions with the following command.
 
 ```Scala
 %%configure -f
