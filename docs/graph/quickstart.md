@@ -40,15 +40,6 @@ To get started with graph in Microsoft Fabric, you need the following prerequisi
 
 ## Create a graph model
 
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models.
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-
 To create a graph model in Microsoft Fabric, follow these steps:
 
 1. Go to your [Microsoft Fabric workspace](https://fabric.microsoft.com/).

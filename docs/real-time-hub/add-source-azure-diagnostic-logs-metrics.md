@@ -1,7 +1,7 @@
 ---
-title: Stream Azure Monitor Logs to Microsoft Fabric
-description: Learn how to stream Azure Monitor diagnostic logs and metrics into Microsoft Fabric for seamless data integration and analysis. Start now!
-#customer intent: As an IT admin, I want to learn how to stream Azure Monitor diagnostic logs into Microsoft Fabric so that I can centralize and analyze monitoring data effectively.
+title: Stream Azure diagnostic Logs to Microsoft Fabric
+description: Learn how to stream Azure diagnostic logs and metrics into Microsoft Fabric for seamless data integration and analysis. Start now!
+#customer intent: As an IT admin, I want to learn how to stream Azure diagnostic logs into Microsoft Fabric so that I can centralize and analyze monitoring data effectively.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: raan
@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 01/14/2026
 ---
 
-# Stream Azure Monitor diagnostic logs and metrics data into Microsoft Fabric
+# Stream Azure diagnostic logs and metrics data into Microsoft Fabric
 This article describes how to pull diagnostic logs and metrics data from your Azure resources and stream into Microsoft Fabric. 
 
 ## Prerequisites

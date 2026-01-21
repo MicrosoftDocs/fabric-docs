@@ -11,6 +11,8 @@ items:
         href: graph-relational-databases.md
       - name: Labeled property graph
         href: graph-data-models.md
+      - name: Security overview
+        href: security-overview.md
   - name: Get started
     items:
       - name: Quickstart guide for Graph in Microsoft Fabric
