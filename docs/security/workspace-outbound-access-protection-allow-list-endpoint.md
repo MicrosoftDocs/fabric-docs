@@ -5,24 +5,24 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 11/26/2025
+ms.date: 12/01/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace and create an allow list using managed private endpoints so that I can control and secure how my workspace resources connect to external networks.
 
 ---
 # Create an allow list using managed private endpoints
 
-When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. You can then permit access to external data sources or other workspaces by configuring [managed private endpoints](security-managed-private-endpoints-overview.md):
+When outbound access protection is enabled for a workspace, all outbound connections are blocked by default. For Data Engineering and OneLake workloads, you can then permit access to external data sources or other workspaces by configuring [managed private endpoints](security-managed-private-endpoints-overview.md):
 
 - For connections to external data sources, use managed private endpoints.
 - For connections to other workspaces, use managed private endpoints together with the Private Link service.
 
-This article explains how to create managed private endpoints for both of these scenarios.
+This article explains how to create managed private endpoints for both of these scenarios. Managed private endpoints apply to Data Engineering and OneLake workloads. For Data Factory, use [data connection rules](./workspace-outbound-access-protection-allow-list-connector.md) to allow outbound access.
 
 > [!NOTE]
 > Before creating managed private endpoints, make sure you have completed the steps to [enable outbound access protection](./workspace-outbound-access-protection-set-up.md) for your workspace.
 
-## Allow outbound access to an external source
+## Allow outbound access to an external source 
 
 To enable outbound access to external data sources that support managed private endpoints, create a managed private endpoint in your workspace with outbound access protection enabled. The diagram below illustrates Workspace 1, which has outbound access protection turned on, connecting securely to an external data source through a managed private endpoint.
 
