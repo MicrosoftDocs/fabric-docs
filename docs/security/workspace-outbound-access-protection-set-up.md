@@ -15,7 +15,7 @@ ms.date: 12/01/2025
 
 Workspace outbound access protection in Microsoft Fabric lets admins secure the outbound data connections from items in their workspaces to external resources. Admins can block all outbound connections, and then allow only approved connections to external resources through secure links between Fabric and virtual networks. [Learn more](./workspace-outbound-access-protection-overview.md).
 
-TThis article explains how to configure outbound access protection for your Fabric workspaces to block all outbound connections by default. After completing the steps in this article, you can enable outbound access through managed private endpoints or data connection rules.
+This article explains how to configure outbound access protection for your Fabric workspaces to block all outbound connections by default. After completing the steps in this article, you can enable outbound access through managed private endpoints or data connection rules.
 
 ## Prerequisites
 
