@@ -56,8 +56,8 @@ The following summarizes the diff logic and what and what isn't displayed.
 ### What Is Displayed
 Granular Compare displays:
 
-- Only modified items (as in Deployment Pipeline)
-- All modified textual files, including .platform and .schedule
+- Only modified items
+- All modified textual files
 - Indicators for binary file changes
 - Partial‑update warnings
 
@@ -84,37 +84,37 @@ Granular compare does not display:
 
 1. At the top of your workspace, select **Source control**.
 2. On the right, select **Review changes**.
-  :::image type="content" source="media/granular-compare/granular-2.png" alt-text="Screenshot of review changes." lightbox="media/granular-compare/granular-2.png":::
+ :::image type="content" source="media/granular-compare/granular-2.png" alt-text="Screenshot of review changes." lightbox="media/granular-compare/granular-2.png":::
 
 3. On the left, select the item to review.
 4. This will bring up the diff screen, review the changes.
 5. At the top, you can choose the following:
-    - Mark as reviewed
-    - Text wrapping
-    - Expand all rows
+  - Mark as reviewed
+  - Text wrapping
+  - Expand all rows
 
-  :::image type="content" source="media/granular-compare/granular-3.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/granular-3.png":::
+ :::image type="content" source="media/granular-compare/granular-3.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/granular-3.png":::
 6. Once you have reviewed it, under **Source control** the item will have a checkbox and you should see a **Reviewed By** information with the reviewer and date.
-  :::image type="content" source="media/granular-compare/granular-4.png" alt-text="Screenshot of the reviewed items." lightbox="media/granular-compare/granular-4.png":::
+ :::image type="content" source="media/granular-compare/granular-4.png" alt-text="Screenshot of the reviewed items." lightbox="media/granular-compare/granular-4.png":::
 
 ## Example - Deployment pipeline Diff compare
 
 1. From your deployment pipeline, select the stage you want to review.
 2. On the bottom pane, select **Review changes**.
-  :::image type="content" source="media/granular-compare/granular-6.png" alt-text="Screenshot of deployment pipeline review changes." lightbox="media/granular-compare/granular-6.png":::
+ :::image type="content" source="media/granular-compare/granular-6.png" alt-text="Screenshot of deployment pipeline review changes." lightbox="media/granular-compare/granular-6.png":::
 
 3. Select the item to review.
 4. This will bring up the diff screen, review the changes.
 5. At the top, you can choose the following:
-    - Mark as reviewed
-    - Text wrapping
-    - Expand all rows
-  :::image type="content" source="media/granular-compare/granular-7.png" alt-text="Screenshot of deployment pipeline diff screen." lightbox="media/granular-compare/granular-7.png":::
+  - Mark as reviewed
+  - Text wrapping
+  - Expand all rows
+ :::image type="content" source="media/granular-compare/granular-7.png" alt-text="Screenshot of deployment pipeline diff screen." lightbox="media/granular-compare/granular-7.png":::
 
 6. Once you have reviewed it, the item will have a checkbox and you should see a **Reviewed By** information with the reviewer and date.
-  :::image type="content" source="media/granular-compare/granular-8.png" alt-text="Screenshot of the deployment pipeline reviewed items." lightbox="media/granular-compare/granular-8.png":::
+ :::image type="content" source="media/granular-compare/granular-8.png" alt-text="Screenshot of the deployment pipeline reviewed items." lightbox="media/granular-compare/granular-8.png":::
 
-  ## Related content
+ ## Related content
 * [Git integration - get started](git-get-started.md)
 * [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
 * [Git best practices](../best-practices-cicd.md)
