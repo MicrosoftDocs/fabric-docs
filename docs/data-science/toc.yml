@@ -396,7 +396,7 @@ items:
     - name: What is semantic link?
       href: semantic-link-overview.md
     - name: Semantic model best practices
-      href: semantic-link-best-practices.md
+      href: semantic-model-best-practices.md
   - name: Tutorials
     items:
     - name: Clean data with functional dependencies
