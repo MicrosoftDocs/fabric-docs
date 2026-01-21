@@ -49,7 +49,7 @@ Other limitations for generating ontology from a semantic model are organized by
 
 ### Semantic model service limitations
 
-Semantic models used for ontology generation are subject to general limitations of semantic models in the Power BI service. Limitations include (but aren't limited to) [semantic model size considerations](../../enterprise/powerbi/service-premium-large-models.md) and [XMLA endpoint limitations](../../enterprise/powerbi/service-premium-connect-tools.md#unsupported-semantic-models).
+Semantic models used for ontology generation are subject to general limitations of semantic models in the Power BI service. Some examples of relevant limitations are [semantic model size considerations](../../enterprise/powerbi/service-premium-large-models.md) and [XMLA endpoint limitations](../../enterprise/powerbi/service-premium-connect-tools.md#unsupported-semantic-models).
 
 ### Lakehouse tables
 
