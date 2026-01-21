@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 01/19/2026
+ms.date: 01/21/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Get data in a KQL Database
 ---
@@ -53,7 +53,7 @@ Configure the connection settings. Connecting to the RTH data source generates b
 
     :::image type="content" source="media/get-data-real-time-hub/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/configure-tab.png":::
 
-1. Select **Next**
+1. Select **Next**.
 
 1. In the **Review and connect** pane, review your settings and select **Connect**.
 
@@ -67,27 +67,33 @@ Configure the connection settings. Connecting to the RTH data source generates b
      >
      > Optionally, you can select **Open Eventstream** and go to the created eventstream to define the destination table and complete the ingestion process from there.
 
-1. In the Destination table window, select **New table** and enter a name for the new destination table.
+1. In the *Pick a destination table* window, select **New table** and enter a name for the new table.
 
     :::image type="content" source="media/get-data-real-time-hub/destination-table.png" alt-text="Screenshot of destination tab with new table selected and table name entered." lightbox="media/get-data-real-time-hub/destination-table.png":::
 
-1. Define a data connection name, and decide whether to process events before ingestion in Eventstream.
+1. The **Data connection name** is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.
 
-    |**Setting** | **Description**|
-    | Data connection name | The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
-    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)].|
+1. Decide whether to process events before ingestion in Eventstream. This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)].
 
-In progress......
+1. Select **Next** to continue to the **Inspect** tab.
 
 ## Step 3: Inspect
 
-The **Inspect** tab opens with a preview of the data.
+The **Inspect** tab shows a preview of the data.
 
-To complete the ingestion process, select **Finish**.
+Select **Finish** to complete the ingestion process.
 
-:::image type="content" source="media/get-data-real-time-hub/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data.png":::
+:::image type="content" source="media/get-data-eventstream/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-eventstream/inspect-data.png":::
 
-[!INCLUDE [get-data-inspect-formats](includes/get-data-inspect-formats.md)]
+Optional:
+
+* Use the file type dropdown to explore [Advanced options based on data type](#advanced-options-based-on-data-type).
+
+* Use the **Table_mapping** dropdown to define a new mapping.
+
+* Select **</>** to open the command viewer to view and copy the automatic commands generated from your inputs. You can also open the commands in a queryset.
+
+* Select the pencil icon to [Edit columns](#edit-columns).
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
@@ -95,26 +101,20 @@ To complete the ingestion process, select **Finish**.
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
-[!INCLUDE [get-data-process-event-advanced-options-data-type](includes/get-data-process-event-advanced-options-data-type.md)]
+### Advanced options based on data type
+
+**Tabular (CSV, TSV, and PSV)**: If you're ingesting tabular formats in an *existing table*, you can select **Table_mapping** > **Use existing mapping**. Tabular data doesn't always include the column names used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
+
+**JSON**: Select **Nested levels** to determine the column division of JSON data, from 1 to 100.
 
 ## Step 4: Summary
 
-In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary. Select **Close** to close the window.
+In the **Summary** window, all the steps are marked as completed when data ingestion finishes successfully. Select a card to explore the data, delete the ingested data, or create a dashboard with key metrics. Select **Close** to close the window.
 
-:::image type="content" source="media/get-data-real-time-hub/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-real-time-hub/summary.png":::
+:::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of the summary page showing successful data ingestion." lightbox="media/get-data-eventstream/summary.png":::
 
 ## Related content
 
 * To manage your database, see [Manage data](data-management.md)
 * To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
 * To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream)
-
-
-
-[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
-
- 
-    | **Advanced filters**| |
-    | Compression| Data compression of the events, as coming from the hub. Options are None (default), or Gzip compression.|
-    | Event system properties| If there are multiple records per event message, the system properties are added to the first one. For more information, see [Event system properties](get-data-event-hub.md#event-system-properties).|
-    | Event retrieval start date| The data connection retrieves existing events created since the Event retrieval start date. It can only retrieve events retained by the hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created.|
