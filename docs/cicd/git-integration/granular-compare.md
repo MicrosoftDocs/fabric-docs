@@ -11,9 +11,9 @@ ms.custom:
 ms.date: 01/20/2026
 ---
 
-# Granular Compare in Microsoft Fabric 
+# Granular compare in Microsoft Fabric 
 
-Granular Compare is a feature of Microsoft Fabric Git integration that lets users review the exact changes that will occur during Git operations—commit, undo, or update—before applying them.
+Granular Compare is a feature of Microsoft Fabric Git integration that lets users review the exact changes that occur during Git operations—commit, undo, or update—before applying them.
 
 Instead of only showing which items will be affected, Granular Compare displays a side‑by‑side or inline diff of every modified file within each workspace item. This gives developers clarity, confidence, and control over the changes moving between the Fabric workspace and the connected Git branch. The experience is consistent with the Deployment Pipeline Change Review model and reuses the same comparison component for familiarity and predictability.
 
@@ -29,7 +29,7 @@ It highlights additions, deletions, and modifications at the file level inside a
 Granular Compare enables users to:
 
 - View a precise, file‑level diff for all modified items participating in a Git operation.
-- Understand how Git commit, update, or undo actions will affect the workspace.
+- Understand how Git commit, update, or undo actions affect the workspace.
 - Compare only modified items (not new, deleted, or unchanged ones).
 - Inspect changes triggered by non‑content modifications, such as sub‑folder moves.
 - See warnings for items using partial update, to understand why an item may behave differently.
@@ -87,14 +87,14 @@ Granular compare does not display:
  :::image type="content" source="media/granular-compare/granular-2.png" alt-text="Screenshot of review changes." lightbox="media/granular-compare/granular-2.png":::
 
 3. On the left, select the item to review.
-4. This will bring up the diff screen, review the changes.
+4. On the diff screen, review the changes.
 5. At the top, you can choose the following:
   - Mark as reviewed
   - Text wrapping
   - Expand all rows
 
  :::image type="content" source="media/granular-compare/granular-3.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/granular-3.png":::
-6. Once you have reviewed it, under **Source control** the item will have a checkbox and you should see a **Reviewed By** information with the reviewer and date.
+6. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
  :::image type="content" source="media/granular-compare/granular-4.png" alt-text="Screenshot of the reviewed items." lightbox="media/granular-compare/granular-4.png":::
 
 ## Example - Deployment pipeline Diff compare
@@ -104,14 +104,14 @@ Granular compare does not display:
  :::image type="content" source="media/granular-compare/granular-6.png" alt-text="Screenshot of deployment pipeline review changes." lightbox="media/granular-compare/granular-6.png":::
 
 3. Select the item to review.
-4. This will bring up the diff screen, review the changes.
+4. On the diff screen, review the changes.
 5. At the top, you can choose the following:
   - Mark as reviewed
   - Text wrapping
   - Expand all rows
  :::image type="content" source="media/granular-compare/granular-7.png" alt-text="Screenshot of deployment pipeline diff screen." lightbox="media/granular-compare/granular-7.png":::
 
-6. Once you have reviewed it, the item will have a checkbox and you should see a **Reviewed By** information with the reviewer and date.
+6. Once you have reviewed it, the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
  :::image type="content" source="media/granular-compare/granular-8.png" alt-text="Screenshot of the deployment pipeline reviewed items." lightbox="media/granular-compare/granular-8.png":::
 
  ## Related content
