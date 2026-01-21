@@ -4,9 +4,9 @@ description: Learn how to expose stored procedures data via GraphQL in Fabric
 author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
-ms.date: 06/5/2025
-ms.topic: article
-ms.custom:
+ms.topic: how-to
+ms.date: 01/21/2026
+ms.custom: freshness-kr
 ms.search.form: 
 ---
 
@@ -14,112 +14,136 @@ ms.search.form:
 
 Microsoft Fabric API for GraphQL makes it easy to query and mutate data from a Fabric SQL database and other Fabric data sources such as Data Warehouse and Lakehouse, with strongly typed schemas and a rich query language allowing developers to create an intuitive API without writing custom server code. You can use stored procedures to encapsulate and reuse complex business logic, including input validation and data transformation.
 
-In this example we learn how to use a stored procedure to register new products, with server-side logic for validation, formatting, and ID generation, all exposed through a GraphQL mutation in Fabric.
+## Who uses stored procedures with GraphQL
 
-## Get started
+Stored procedures in GraphQL are valuable for:
+- **Data engineers** implementing data validation, transformation, and processing workflows in Fabric SQL databases
+- **Backend developers** exposing complex business logic from Fabric warehouses through modern GraphQL APIs
+- **Application architects** designing secure, performant APIs that encapsulate business rules within the Fabric platform
+- **Database developers** modernizing existing Fabric SQL database stored procedures with GraphQL interfaces
 
-We get started by creating an SQL database in Fabric:
+Use stored procedures when you need server-side logic for data validation, complex calculations, or multi-step database operations.
 
-1.  In your Fabric workspace, select **New Item** then **SQL database (preview).**
-2.  Give your database a name, then select **Sample data** to quickly create all the required tables and data in your database.
+This article demonstrates how to expose a stored procedure through a GraphQL mutation in Fabric. The example implements a product registration workflow with server-side validation, data transformation, and ID generation—all encapsulated in a stored procedure and accessible through GraphQL.
+
+## Prerequisites
+
+Before you begin, you need a Fabric SQL database with sample data:
+
+1. In your Fabric workspace, select **New Item** > **SQL database (preview)**
+1. Give your database a name
+1. Select **Sample data** to create the required tables and data
+
+This creates the AdventureWorks sample database, which includes the `SalesLT.Product` table used in this example.
 
 ## Scenario: register a new product
 
-Suppose you want to create a new product with:
+This example creates a stored procedure for registering new products with built-in business logic:
 
-*   Validation of pricing logic (for example,. ListPrice > StandardCost)
-*   Transformation (for example,. capitalize the first letter of product name, trim  then uppercase product number)
-*   ProductID generation (by incrementing the latest ProductID)
+- **Validation**: Ensures ListPrice is greater than StandardCost
+- **Data transformation**: Capitalizes the product name and normalizes the product number
+- **ID generation**: Automatically assigns the next available ProductID
 
-### Step 1: Create the Stored Procedure
+By encapsulating this logic in a stored procedure, you ensure consistent data quality regardless of which client application submits the data.
 
-Here’s a T-SQL stored procedure that encapsulates all the business logic we need. In your SQL database, click on **New Query** and use the following statement:
+### Step 1: Create the stored procedure
 
-```sql
-CREATE PROCEDURE SalesLT.RegisterProduct
-  @Name nvarchar(50),
-  @ProductNumber nvarchar(25),
-  @StandardCost money,
-  @ListPrice money,
-  @SellStartDate datetime
-AS
-BEGIN
-  SET NOCOUNT ON;
-  SET IDENTITY\_INSERT SalesLT.Product ON;
+Create a T-SQL stored procedure that implements the product registration logic:
 
-  -- Validate pricing logic
-  IF @ListPrice <= @StandardCost
-    THROW 50005, 'ListPrice must be greater than StandardCost.', 1;
+1. In your SQL database, select **New Query**
+1. Execute the following statement:
 
--- Transform product name: capitalize first letter only
-  DECLARE @CleanName nvarchar(50);
-  SET @CleanName = UPPER(LEFT(LTRIM(RTRIM(@Name)), 1)) + LOWER(SUBSTRING(LTRIM(RTRIM(@Name)), 2, 49));
+    ```sql
+    CREATE PROCEDURE SalesLT.RegisterProduct
+      @Name nvarchar(50),
+      @ProductNumber nvarchar(25),
+      @StandardCost money,
+      @ListPrice money,
+      @SellStartDate datetime
+    AS
+    BEGIN
+      SET NOCOUNT ON;
+      SET IDENTITY\_INSERT SalesLT.Product ON;
+    
+      -- Validate pricing logic
+      IF @ListPrice <= @StandardCost
+        THROW 50005, 'ListPrice must be greater than StandardCost.', 1;
+    
+    -- Transform product name: capitalize first letter only
+      DECLARE @CleanName nvarchar(50);
+      SET @CleanName = UPPER(LEFT(LTRIM(RTRIM(@Name)), 1)) + LOWER(SUBSTRING(LTRIM(RTRIM(@Name)), 2, 49));
+    
+      -- Trim and uppercase product number
+      DECLARE @CleanProductNumber nvarchar(25);
+      SET @CleanProductNumber = UPPER(LTRIM(RTRIM(@ProductNumber)));
+    
+      -- Generate ProductID by incrementing the latest existing ID
+      DECLARE @ProductID int;
+      SELECT @ProductID = ISNULL(MAX(ProductID), 0) + 1 FROM SalesLT.Product;
+    
+      INSERT INTO SalesLT.Product (
+        ProductID,
+        Name,
+        ProductNumber,
+        StandardCost,
+        ListPrice,
+        SellStartDate
+      )
+      OUTPUT 
+        inserted.ProductID,
+        inserted.Name,
+        inserted.ProductNumber,
+        inserted.StandardCost,
+        inserted.ListPrice,
+        inserted.SellStartDate
+      VALUES (
+        @ProductID,
+        @CleanName,
+        @CleanProductNumber,
+        @StandardCost,
+        @ListPrice,
+        @SellStartDate
+      );
+    END;
+    ```
 
-  -- Trim and uppercase product number
-  DECLARE @CleanProductNumber nvarchar(25);
-  SET @CleanProductNumber = UPPER(LTRIM(RTRIM(@ProductNumber)));
+1. Select **Run** to create the stored procedure
 
-  -- Generate ProductID by incrementing the latest existing ID
-  DECLARE @ProductID int;
-  SELECT @ProductID = ISNULL(MAX(ProductID), 0) + 1 FROM SalesLT.Product;
+1. After creation, you'll see **RegisterProduct** under **Stored Procedures** in the **SalesLT** schema. Test the procedure to verify it works correctly:
 
-  INSERT INTO SalesLT.Product (
-    ProductID,
-    Name,
-    ProductNumber,
-    StandardCost,
-    ListPrice,
-    SellStartDate
-  )
-  OUTPUT 
-    inserted.ProductID,
-    inserted.Name,
-    inserted.ProductNumber,
-    inserted.StandardCost,
-    inserted.ListPrice,
-    inserted.SellStartDate
-  VALUES (
-    @ProductID,
-    @CleanName,
-    @CleanProductNumber,
-    @StandardCost,
-    @ListPrice,
-    @SellStartDate
-  );
-END;
-```
-
-Click **Run** to test the execution. You notice a new stored procedure **RegisterProduct** under the **Stored Procedures** folder in the **SalesLT** database. Use the following query to test the procedure logic:
-
-```sql
-DECLARE @RC int
-DECLARE @Name nvarchar(50)
-DECLARE @ProductNumber nvarchar(25)
-DECLARE @StandardCost money
-DECLARE @ListPrice money
-DECLARE @SellStartDate datetime
-
--- TODO: Set parameter values here.
-Set @Name = 'test product'       
-Set @ProductNumber = 'tst-0012'
-Set @StandardCost = '10.00'
-Set @ListPrice = '9.00'
-Set @SellStartDate = '2025-05-01T00:00:00Z'
-
-EXECUTE @RC = \[SalesLT\].\[RegisterProduct\] 
-   @Name
-  ,@ProductNumber
-  ,@StandardCost
-  ,@ListPrice
-  ,@SellStartDate
-GO
-```
+    ```sql
+    DECLARE @RC int
+    DECLARE @Name nvarchar(50)
+    DECLARE @ProductNumber nvarchar(25)
+    DECLARE @StandardCost money
+    DECLARE @ListPrice money
+    DECLARE @SellStartDate datetime
+    
+    -- TODO: Set parameter values here.
+    Set @Name = 'test product'       
+    Set @ProductNumber = 'tst-0012'
+    Set @StandardCost = '10.00'
+    Set @ListPrice = '9.00'
+    Set @SellStartDate = '2025-05-01T00:00:00Z'
+    
+    EXECUTE @RC = \[SalesLT\].\[RegisterProduct\] 
+       @Name
+      ,@ProductNumber
+      ,@StandardCost
+      ,@ListPrice
+      ,@SellStartDate
+    GO
+    ```
 
 ### Step 2: Create a GraphQL API
 
-Creating an API from your SQL table is fast, easy, and straightforward. You just need to click the **New API for GraphQL** button in the SQL database ribbon and give your API a name.
+Now create a GraphQL API that exposes both the tables and the stored procedure:
 
-Next select the **SalesLT** tables in your database and the stored procedure we just created, then click **Load**:
+1. In the SQL database ribbon, select **New API for GraphQL**
+1. Give your API a name
+1. In the **Get data** screen, select the **SalesLT** schema
+1. Select the tables you want to expose and the **RegisterProduct** stored procedure
+1. Select **Load**
 
 :::image type="content" source="media/api-graphql-stored-procedures/api-graphql-stored-procedures.png" alt-text="Get data screen to select tables and procedures in API for GraphQL." lightbox="media/api-graphql-stored-procedures/api-graphql-stored-procedures.png":::
 
@@ -127,36 +151,50 @@ The GraphQL API, schema, and all resolvers are automatically generated in second
 
 ### Step 3: Call the procedure from GraphQL
 
-Once the API is ready, the stored procedure becomes available as a mutation in the Fabric GraphQL schema. Go to the query editor and execute the following mutation:
+Fabric automatically generates a GraphQL mutation for the stored procedure. The mutation name follows the pattern `execute{ProcedureName}`, so the RegisterProduct procedure becomes `executeRegisterProduct`.
 
-```graphql
-mutation {
-   executeRegisterProduct (
-    Name: " graphQL swag ",
-    ProductNumber: "gql-swag-001",
-    StandardCost: 10.0,
-    ListPrice: 15.0,
-    SellStartDate: "2025-05-01T00:00:00Z"
-  ) {
-ProductID
-    Name
-    ProductNumber
-    StandardCost
-    ListPrice
-    SellStartDate
-   }
-}
-```
+To test the mutation:
+
+1. Open the API in the query editor
+1. Execute the following mutation:
+
+    ```graphql
+    mutation {
+       executeRegisterProduct (
+        Name: " graphQL swag ",
+        ProductNumber: "gql-swag-001",
+        StandardCost: 10.0,
+        ListPrice: 15.0,
+        SellStartDate: "2025-05-01T00:00:00Z"
+      ) {
+    ProductID
+        Name
+        ProductNumber
+        StandardCost
+        ListPrice
+        SellStartDate
+       }
+    }
+    ```
 
 :::image type="content" source="media/api-graphql-stored-procedures/api-graphql-stored-procedures-mutation.png" alt-text="Mutation in the GraphQL API portal displaying the results." lightbox="media/api-graphql-stored-procedures/api-graphql-stored-procedures-mutation.png":::
 
-**Tips**
+Notice how the stored procedure's business logic automatically processes the input:
+- **"graphQL swag"** becomes **"Graphql swag"** (capitalized)
+- **"gql-swag-001"** becomes **"GQL-SWAG-001"** (uppercased)
+- **ProductID** is automatically generated as the next sequential number
 
-*   Fabric GraphQL automatically generates mutation fields for stored procedures that return a result set defined in the output of the procedure.
-*   Business logic lives inside the procedure, not the client.
-*   Use deterministic ID generation only if you don’t rely on identity columns.
+## Best practices
 
-Exposing stored procedures via Fabric APIs gives you the power to define robust, consistent rules in SQL for your data, and access it cleanly via GraphQL.
+When using stored procedures with API for GraphQL:
+
+- **Return result sets**: Fabric automatically generates mutations for stored procedures that use `OUTPUT` or return result sets. The returned columns become the GraphQL mutation's return type.
+- **Encapsulate business logic**: Keep validation, transformation, and complex calculations in the stored procedure rather than in client code. This ensures consistency across all applications.
+- **Handle errors gracefully**: Use `THROW` statements to return meaningful error messages that can be surfaced through the GraphQL API.
+- **Consider ID generation**: Only use custom ID generation logic (like incrementing MAX) if you're not using identity columns. For production scenarios, identity columns are usually more reliable.
+- **Document parameters**: Use clear parameter names that translate well to GraphQL field names.
+
+By exposing stored procedures through Fabric API for GraphQL, you combine the power of SQL's procedural logic with GraphQL's flexible query interface, creating robust and maintainable data access patterns.
 
 ## Related content
 
