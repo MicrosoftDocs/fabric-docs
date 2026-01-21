@@ -14,6 +14,8 @@ A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logic
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
+## Process overview
+
 When your data is in a semantic model, you can generate an ontology directly from that semantic model.  
 
 Ontology generation automatically performs the following actions:
