@@ -6,7 +6,7 @@ ms.author: zoedouglas
 ms.date: 08/01/2025
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: how-to
 LocalizationGroup: Admin
 ---
 # Direct Lake in Power BI Desktop
@@ -48,7 +48,7 @@ The tables are added to your semantic model and you can continue live editing.
 
 :::image type="content" source="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-add.png" alt-text="Screenshot of Power BI Desktop when adding tables in Direct Lake storage mode." lightbox="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-add.png":::
 
-## Live edit a semantic model with Direct Lake or import tables
+## Live edit a semantic model with Direct Lake
 
 To edit a semantic model with Direct Lake tables later, take the following steps.
 
@@ -60,7 +60,9 @@ Now you're live editing the semantic model.
 :::image type="content" source="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png" alt-text="Screenshot of Power BI Desktop when editing a semantic model with tables in Direct Lake storage mode later." lightbox="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png":::
 
 > [!NOTE]
-> Semantic models with Direct Lake and import table storage modes are supported. **Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
+> Semantic models with Direct Lake tables are supported. Import tables must be part of a Direct Lake composite model.
+>
+>**Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
 
 Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 

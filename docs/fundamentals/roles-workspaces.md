@@ -4,8 +4,8 @@ description: Learn about the different roles you can assign to workspace users t
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: yicw, mesrivas
-ms.topic: conceptual
-ms.date: 01/08/2026
+ms.topic: concept-article
+ms.date: 01/20/2026
 ms.custom:
 ---
 
