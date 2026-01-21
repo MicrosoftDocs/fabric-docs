@@ -22,7 +22,9 @@ ms.custom: include file
 | &nbsp; |[Azure SQL Managed Instance](../connector-azure-sql-managed-instance-overview.md) |
 | &nbsp; |[Azure Synapse Analytics](../connector-azure-synapse-analytics-overview.md) |
 | &nbsp; |[Azure Table Storage](../connector-azure-table-storage-overview.md) |
-| **Database** |[Amazon Redshift](../connector-amazon-redshift-overview.md) |
+| **Database** |[Amazon RDS for Oracle](../connector-amazon-rds-for-oracle-overview.md) |
+| &nbsp; |[Amazon RDS for SQL Server](../connector-amazon-rds-for-sql-server-overview.md) |
+| &nbsp; |[Amazon Redshift](../connector-amazon-redshift-overview.md) |
 | &nbsp; |[IBM Db2 database](../connector-ibm-db2-database-overview.md) |
 | &nbsp; |[Google BigQuery](../connector-google-bigquery-overview.md) |
 | &nbsp; |[Greenplum for Pipeline](../connector-greenplum-for-pipeline-overview.md) |
@@ -31,7 +33,6 @@ ms.custom: include file
 | &nbsp; |[Microsoft Access](../connector-microsoft-access-overview.md) |
 | &nbsp; |[MySQL database](../connector-mysql-database-overview.md) |
 | &nbsp; |[Oracle database](../connector-oracle-database-overview.md) |
-| &nbsp; |[Amazon RDS for Oracle](../connector-amazon-rds-for-oracle-overview.md) |
 | &nbsp; |[PostgreSQL database](../connector-postgresql-overview.md) |
 | &nbsp; |[Presto](../connector-presto-overview.md) |
 | &nbsp; |[SAP BW Open Hub Application Server](../connector-sap-bw-open-hub-application-server-overview.md) |
@@ -40,22 +41,21 @@ ms.custom: include file
 | &nbsp; |[SAP Table Application Server](../connector-sap-table-application-server-overview.md) |
 | &nbsp; |[SAP Table Message Server](../connector-sap-table-message-server-overview.md) |
 | &nbsp; |[Snowflake](../connector-snowflake-overview.md) |
-| &nbsp; |[Amazon RDS for SQL Server](../connector-amazon-rds-for-sql-server-overview.md) |
 | &nbsp; |[SQL Server database](../connector-sql-server-database-overview.md) |
 | &nbsp; |[Teradata database](../connector-teradata-database-overview.md) |
 | &nbsp; |[Vertica](../connector-vertica-overview.md) |
 | **File** |[Amazon S3](../connector-amazon-s3-overview.md) |
 | &nbsp; |[Amazon S3 Compatible](../connector-amazon-s3-compatible-overview.md) |
-| &nbsp; |[Folder](connector-folder-overview.md) |
+| &nbsp; |[Folder](../connector-folder-overview.md) |
 | &nbsp; |[FTP](../connector-ftp-overview.md) |
 | &nbsp; |[Google Cloud Storage](../connector-google-cloud-storage-overview.md) |
 | &nbsp; |[Hdfs for Pipeline](../connector-hdfs-for-pipeline-overview.md) |
 | &nbsp; |[Oracle Cloud Storage](../connector-oracle-cloud-storage-overview.md) |
 | &nbsp; |[SFTP](../connector-sftp-overview.md) |
-| **Generic** |[HTTP](../connector-http-overview.md)|
+| **Generic protocol** |[HTTP](../connector-http-overview.md)|
 | &nbsp; |[OData](../connector-odata-overview.md) |
 | &nbsp; |[ODBC](../connector-odbc-overview.md) |
-| **Microsoft Fabric & data warehouse connectors** |[Lakehouse](../connector-lakehouse-overview.md) |
+| **Microsoft Fabric** |[Lakehouse](../connector-lakehouse-overview.md) |
 | &nbsp; |[Data Warehouse](../connector-data-warehouse-overview.md) |
 | &nbsp; |[KQL Database](../connector-kql-database-overview.md) |
 | **NoSQL** |[Cassandra](../connector-cassandra-overview.md) |
