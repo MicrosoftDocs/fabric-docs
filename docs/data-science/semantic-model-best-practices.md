@@ -123,7 +123,7 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
    Use [Best Practice Analyzer and Semantic Model Memory Analyzer](/power-bi/transform-model/service-notebooks) in a Fabric notebook to identify problems such as incorrect data types, unnecessary columns, high cardinality columns, and inefficient DAX patterns. Add descriptions to tables, columns, and measures to help the LLM understand the purpose of each object included in the AI data schema.
 
-   :::image type="content" source="media/semantic-model-best-practices/bpa-memory-analyzer.png" alt-text="Semantic model context menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted." lightbox="media/semantic-model-best-practices/memory-analyzer.png":::
+   :::image type="content" source="media/semantic-model-best-practices/memory-analyzer.png" alt-text="Semantic model context menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted." lightbox="media/semantic-model-best-practices/memory-analyzer.png":::
 
 1. **Define Prep for AI > AI Data Schema:** Based on the scope of your Data Agent, configure the AI data schema in Prep for AI by selecting only the tables, columns, and measures relevant to the questions your agent should answer.
 
