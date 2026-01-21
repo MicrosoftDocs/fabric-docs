@@ -1,6 +1,6 @@
 ---
 title: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
-description: Learn how to replicate data from SAP Datasphere to a Microsoft Fabric Eventstream using a Kafka custom endpoint and SAP Replication Flows.
+description: Learn how to replicate data from SAP Datasphere to a Microsoft Fabric Eventstream using a Kafka custom endpoint and SAP Replication Flow.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -21,8 +21,8 @@ In this tutorial, you will:
 > - Create an eventstream and add a custom endpoint source
 > - Get the Kafka endpoint information from a custom endpoint source
 > - Create the Kafka connection in SAP Datasphere
-> - Set up the Replication Flows with the Kafka connection in SAP Datasphere
-> - Deploy and activate the replication flows to replicate the data to Eventstream
+> - Set up the Replication Flow with the Kafka connection in SAP Datasphere
+> - Deploy and activate the replication flow to replicate the data to Eventstream
 
 ## Prerequisites
 
@@ -78,7 +78,7 @@ To get the Kafka topic endpoint information from an eventstream, add a custom en
 
 ## Create Kafka connection in SAP Datasphere
 
-To define the Replication Flows in SAP Datasphere, a Kafka connection needs to be created first with the Kafka endpoint information that is from Eventstream’s custom endpoint source.
+To define the Replication Flow in SAP Datasphere, a Kafka connection needs to be created first with the Kafka endpoint information that is from Eventstream’s custom endpoint source.
 
 1. In the connection management tab of an SAP Datasphere space, select **Apache Kafka** connection type in the connection creation wizard:
 
@@ -86,10 +86,10 @@ To define the Replication Flows in SAP Datasphere, a Kafka connection needs to b
 
 1. Configure the connection properties in the second step of the wizard with the Kafka information from Eventstream’s custom endpoint source:
 
-    - **Kafka Brokers**: it's the **bootstrap server** in Eventstream’s source custom endpoint: {YOUR.BOOTSTRAP.SERVER}.
+    - **Kafka Brokers**: it's the **bootstrap server** in Eventstream’s source custom endpoint.
     - **Authentication Type**: select “User Name And Password.”
     - **Kafka SASL User Name**: use constant value **“$ConnectionString”**.
-    - **Kafka SASL Password**: can be either the **Connection string-primary key** value or the **Connection string-secondary key** value in Eventstream’s source custom endpoint: {YOUR.CONNECTION.STRING}.
+    - **Kafka SASL Password**: can be either the **Connection string-primary key** value or the **Connection string-secondary key** value in Eventstream’s source custom endpoint.
     - **Replication Flows**: “Enable”.
 
     Select **Save** to get this new Kafka connection created after filling in all needed information.
@@ -98,7 +98,7 @@ To define the Replication Flows in SAP Datasphere, a Kafka connection needs to b
 
 ## Create Replication Flow with Kafka connection as target
 
-Replication Flows allows you to replicate the data from the sources in SAP to a target. Kafka connection is one of the supported targets for Replication Flows. For more information regarding the Replication Flows, see [Creating a Replication Flow | SAP Help Portal](https://help.sap.com/docs/SAP_DATASPHERE/c8a54ee704e94e15926551293243fd1d/25e2bd7a70d44ac5b05e844f9e913471.html).
+Replication Flow allows you to replicate the data from the sources in SAP to a target. Kafka connection is one of the supported targets for Replication Flow. For more information regarding the Replication Flow, see [Creating a Replication Flow | SAP Help Portal](https://help.sap.com/docs/SAP_DATASPHERE/c8a54ee704e94e15926551293243fd1d/25e2bd7a70d44ac5b05e844f9e913471.html).
 
 Following the steps below to create a Replication Flow with Kafka connection target.
 
@@ -135,7 +135,7 @@ You can now verify the end-to-end flow via Eventstream    to confirm whether dat
 
 ## Related content
 
-This tutorial showed you how to use Replication Flows to transfer data from SAP Datasphere to your eventstream via Eventstream’s source custom endpoint. Once the data reaches eventstream, you can process it and route it to different destinations for analysis, alerts, and reports. Below are some helpful resources for further reference:
+This tutorial showed you how to use Replication Flow to transfer data from SAP Datasphere to your eventstream via Eventstream’s source custom endpoint. Once the data reaches eventstream, you can process it and route it to different destinations for analysis, alerts, and reports. Below are some helpful resources for further reference:
 
 - [Microsoft Fabric Eventstreams Overview](./overview.md)  
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md) 
