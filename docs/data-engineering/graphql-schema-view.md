@@ -5,7 +5,6 @@ ms.reviewer: edlima
 ms.author: eur
 author: eric-urban
 ms.topic: concept-article
-ms.search.form: GrpahQL schema view
 ms.custom: freshness-kr
 ms.search.form: GraphQL schema view
 ms.date: 01/21/2026
