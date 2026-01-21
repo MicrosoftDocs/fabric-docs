@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amapatil # Microsoft alias
 ms.date: 10/08/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL database Billing and Utilization, Databases Billing and Utilization
 ---
 # Billing and utilization reporting for SQL database in Microsoft Fabric

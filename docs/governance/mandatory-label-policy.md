@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.subservice: governance
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 12/02/2025
 LocalizationGroup: Data from files

@@ -3,7 +3,7 @@ title: Secure your data movement with Copy Job and Virtual Network Data Gateway
 description: This article provides a secure and high-performance way to move data between private networks and Fabric without exposing data to the public internet.
 ms.author: lle
 author: lrtoyou1223
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 09/01/2025
 ---
 
