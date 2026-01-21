@@ -136,7 +136,7 @@ After you test your function with the connection, you can publish and run it. Fo
 
 ## Modify or delete a connection
 
-You can modify or delete existing connections from the **Manage connections** pane. However, be aware of the affect on your functions before making changes.
+You can modify or delete existing connections from the **Manage connections** pane. However, be aware of the effect on your functions before making changes.
 
 ### Modify a connection alias
 
@@ -152,7 +152,7 @@ To modify the alias of an existing connection:
 1. Select **Update** to save your changes.
 
 > [!IMPORTANT]
-> When you change a connection's alias, any functions using the old alias fails at runtime. You must update all function code that references the old alias to use the new alias name. To connect to a different data source, create a new connection instead of modifying an existing one.
+> When you change a connection's alias, any function using the old alias fails at runtime. You must update all function code that references the old alias to use the new alias name. To connect to a different data source, create a new connection instead of modifying an existing one.
 
 ### Delete a connection
 
