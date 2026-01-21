@@ -4,7 +4,7 @@ description: Learn about Delta Lake table format interoperability in Microsoft F
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 4/25/2025
 ms.search.form: delta lake interoperability
@@ -36,7 +36,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Fabric Spark Runtime 1.1|Name: Yes<br/>ID: Yes|No|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
 |Dataflows Gen2|Name: Yes<br/>ID: No|Yes|Yes|No|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2<br/>|
 Pipelines|Name: No<br/>ID: No|No|Yes|No|Read: Yes<br/>Write: Yes, overwrite only|Yes, read only|No|Reader: 1<br/>Writer: 2|
-Power BI direct lake semantic models|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
+Power BI direct lake semantic models|Name: Yes<br/>ID: Yes|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
 Export Power BI semantic models into OneLake|Name: Yes<br/>ID: No|N/A (not applicable)|Yes|No|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 2<br/>Writer: 5<br/>Column Mappings (name)|
 KQL databases|Name: Yes<br/>ID: No|Yes|No|No<sup>*</sup>|Read: Yes<br/>Write: Yes|No|No|Reader: 1<br/>Writer: 1|
 Eventstreams|Name: No<br/>ID: No|No|No|No|Read: N/A (not applicable)<br/>Write: Yes|No|No|Reader: 1<br/>Writer: 2|

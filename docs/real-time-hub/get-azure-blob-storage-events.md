@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/22/2025
 ---
 
 # Get Azure Blob Storage events into Real-Time hub
@@ -51,7 +51,7 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 
 4. On the **Data sources** page, select **Azure events** category at the top, and then select **Connect** on the **Azure Blob Storage events** tile. 
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png" alt-text="Screenshot that shows the selection of Azure Blob Storage events as the source type in the Data sources page." lightbox="./media/get-azure-blob-storage-events/select-azure-blob-storage-events.png":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/azure-blob-events.png" alt-text="Screenshot that shows the selection of Azure Blob Storage events as the source type in the Data sources page." lightbox="./media/get-azure-blob-storage-events/azure-blob-events.png":::
 
     Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
@@ -60,7 +60,7 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 1. In Real-Time hub, select **Azure events** on the left navigation menu.
 1. Move the mouse over **Azure Blob Storage**, and select the **+** (plus) link, or select **... (ellipsis)** and then select **Create Eventstream**.
 
-    :::image type="content" source="./media/get-azure-blob-storage-events/fabric-events-menu.png" alt-text="Screenshot that shows the Real-Time hub Azure events page.":::
+    :::image type="content" source="./media/get-azure-blob-storage-events/azure-events-create.png" alt-text="Screenshot that shows the Real-Time hub Azure events page.":::
     
     Now, use instructions from the [Configure and create an eventstream](#configure-and-create-an-eventstream) section.
 
@@ -82,7 +82,7 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 ## View stream from the Real-Time hub page
 Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
-:::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
+:::image type="content" source="./media/get-azure-blob-storage-events/azure-blob-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/get-azure-blob-storage-events/azure-blob-stream.png":::
 
 For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 

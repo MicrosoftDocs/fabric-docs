@@ -41,7 +41,7 @@ The following profiles are currently supported in Microsoft Fabric:
 
 | **Resource Profile**     | **Configs** |
 |--------------------------|-------------|
-| `writeHeavy`             | `{"spark.sql.parquet.vorder.default": "false", "spark.databricks.delta.optimizeWrite.enabled": "false", "spark.databricks.delta.optimizeWrite.binSize": "128", "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true", "spark.databricks.delta.stats.collect": "false"}` |
+| `writeHeavy`             | `{"spark.sql.parquet.vorder.default": "false", "spark.databricks.delta.optimizeWrite.enabled": "null", "spark.databricks.delta.optimizeWrite.binSize": "128", "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true"}` |
 | `readHeavyForPBI`        | `{"spark.sql.parquet.vorder.default": "true", "spark.databricks.delta.optimizeWrite.enabled": "true", "spark.databricks.delta.optimizeWrite.binSize": "1g"}` |
 | `readHeavyForSpark`      | `{"spark.databricks.delta.optimizeWrite.enabled": "true", "spark.databricks.delta.optimizeWrite.partitioned.enabled": "true", "spark.databricks.delta.optimizeWrite.binSize": "128"}` |
 | `custom` (e.g., `fastIngestProfile`) | Fully user-defined settings. Example: `{"spark.sql.shuffle.partitions": "800", "spark.sql.adaptive.enabled": "true", "spark.serializer": "org.apache.spark.serializer.KryoSerializer"}` |

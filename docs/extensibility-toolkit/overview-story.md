@@ -3,9 +3,9 @@ title: Extensibility Toolkit overview
 description: Basic overview of the Extensibility Toolkit and its functionality.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: overview
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Extensibility Toolkit overview

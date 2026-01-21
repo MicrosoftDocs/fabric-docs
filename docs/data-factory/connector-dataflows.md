@@ -4,7 +4,7 @@ description: This article provides information about how to create a dataflow co
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/29/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -25,13 +25,17 @@ The dataflow connector supports the following authentication types for copy and 
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to dataflow data. The following links provide the specific Power Query connector information you need to connect to dataflow data in Dataflow Gen2:
+You can connect Dataflow Gen2 to dataflows (Power Platform) in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the dataflow connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [dataflow prerequisites](/power-query/connectors/dataflows#prerequisites) before connecting to the dataflow connector.
-- To connect to the dataflow connector from Power Query, go to [Get data from dataflows in Power Query Online](/power-query/connectors/dataflows#get-data-from-dataflows-in-power-query-online).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Set up dataflow prerequisites](/power-query/connectors/dataflows#prerequisites).
+1. [Get data from dataflows (from Power Query online)](/power-query/connectors/dataflows#get-data-from-dataflows-in-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+### More information
+
+- [Dataflows connector capabilities](/power-query/connectors/dataflows#capabilities-supported)
+- [Dataflows connector known issues and limitations](/power-query/connectors/dataflows#known-issues-and-limitations)
+- [Dataflows connector frequently asked questions](/power-query/connectors/dataflows#frequently-asked-questions)
 
 ## Set up your connection in a pipeline
 

@@ -103,6 +103,12 @@ When migrating, validate the following:
 
 For migration scenarios, see [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md).
 
+## Global parameters in Azure Data Factory
+
+Fabric uses workspace-level **Variable Libraries** to define constants Fabric items. When migrating to Microsoft Fabric Data Factory, these you’ll need to convert your Azure Data Factory global parameters to variable libraries.
+
+For full conversion guidance, see [Convert ADF Global Parameters to Fabric Variable Libraries](convert-global-parameters-to-variable-libraries.md).
+
 ## Azure Marketplace partner offerings
 
 Trusted migration partners, like **Bitwise Global**, provide tools to help with your migration. These tools can:

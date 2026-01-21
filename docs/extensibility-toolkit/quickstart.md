@@ -3,9 +3,9 @@ title: Use the Starter-Kit to get up and running
 description: How you can get started fast with the Starter-Kit repository.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: quickstart
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Use the Starter-Kit to get up and running

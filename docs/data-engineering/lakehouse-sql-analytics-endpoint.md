@@ -4,7 +4,7 @@ description: Learn about the SQL analytics endpoint and how to run SQL queries d
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 11/10/2025
 ms.search.form: Lakehouse SQL Analytics Endpoint

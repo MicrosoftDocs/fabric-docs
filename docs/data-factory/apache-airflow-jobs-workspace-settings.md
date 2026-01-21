@@ -4,7 +4,7 @@ description: This article enumerates the Apache Airflow job environment run-time
 author: nabhishek
 ms.author: abnarain
 ms.reviewer: abnarain
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/22/2025
 ms.custom: airflows
 ---

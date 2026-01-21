@@ -46,7 +46,7 @@ To work with Fabric APIs, you first need to get a Microsoft Entra token for Fabr
 
 **Option 1: Get token using MSAL.NET**
 
-If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD (AAD) token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
+If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
 **Option 2: Get token using the Fabric Portal**
 
@@ -57,6 +57,9 @@ powerBIAccessToken
 ```
 
 Copy the token and paste it into your application.
+
+> [!NOTE] 
+> If the eventstream you create includes any sources that use a cloud connection, make sure the identity you use to get the token has [permission to access that cloud connection](../../data-factory/data-source-management.md#add-users-to-a-data-source), whether it is a service principal or a user.
 
 ### Step 2: Prepare for an Eventstream body in JSON
 
@@ -73,7 +76,56 @@ Use the [API templates in GitHub](https://github.com/microsoft/fabric-event-stre
 
 You can refer to [this Swagger document](/rest/api/fabric/eventstream/topology/get-eventstream-topology?tabs=HTTP#definitions) for details on each API property, and it also guides you in defining an Eventstream API payload.
 
-If you're using **Eventhouse direct ingestion mode** destination, ensure that the `connectionName` and `mappingRuleName` property is correctly specified. To find the correct `connectionName`, navigate to your Eventhouse KQL database, select **Data streams**, and copy the desired `connectionName`. For detailed instructions on creating ingestion mappings, see [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+#### Eventhouse Direct Ingestion Mode
+
+When using **Eventhouse direct ingestion mode** as a destination in your Eventstream API payload, follow these guidelines:
+
+**1. Specify Required Properties**
+
+Ensure the following properties are correctly set in your JSON body:
+
+- **`connectionName`** – The name of the Eventhouse connection.
+- **`mappingRuleName`** – The ingestion mapping rule for the target table.
+
+To find the correct `connectionName`:
+1. Navigate to your **Eventhouse KQL database** in Fabric.
+2. Select **Data streams**.
+3. Copy the desired `connectionName`.
+
+For `mappingRuleName`, you can find detailed instructions on creating ingestion mappings on [Mapping with ingestionMappingReference](/kusto/management/mappings?#mapping-with-ingestionmappingreference).
+
+**2. Configure Service Principal Permissions**
+
+If you authenticate using a **service principal**, it must have:
+- **Database viewer** permissions.
+- **Table ingestor** permissions.
+
+You can grant these permissions in two ways:
+
+  ##### [Using Eventhouse UI](#tab/using-eventhouse-ui)
+
+  Grant these permissions using the following KQL commands in the UI:
+
+  ```kql
+  .add database ['yourDatabase'] viewers (@'aadapp=<clientid>;<tenantid>')
+  .add table yourTable ingestors (@'aadapp=<id>;<directoryid>')
+  ```
+  Replace `clientid` and `tenantid` with your service principal values.
+
+  These commands will grant the service principal the necessary data-plane permissions, allowing Eventhouse to create the connection and pull data from Eventstream. For more information, see [Security roles overview](https://kusto.azurewebsites.net/docs/kusto/management/security-roles.html#security-roles-overview)
+
+  :::image type="content" source="media/eventstream-rest-api/grant-permission-via-ui.png" alt-text="A screenshot of granting Database and Table permission via Kusto UI." lightbox="media/eventstream-rest-api/grant-permission-via-ui.png":::
+
+  ##### [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
+
+  If you prefer to manage permissions by calling the REST API, you can run the same Kusto commands by using the REST API.  
+  Refer to the following documentation for details:
+
+  - [Kusto REST API overview](/kusto/api/rest)
+  - [Manage database security roles](/kusto/management/manage-database-security-roles)
+  - [Manage table security roles](/kusto/management/manage-table-security-roles) 
+
+  ---
 
 For more details about defining an Eventstream item, check out [Eventstream item definition](#eventstream-item-definition) section.
 

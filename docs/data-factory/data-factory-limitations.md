@@ -33,11 +33,11 @@ The following table describes the resource limitations for pipelines in Data Fac
 
 | Pipeline Resource | Default limit | Maximum limit |
 |---|---|---|
-| Total number of pipelines within a workspace | 5,000 | 5,000 |
-| Concurrent pipeline runs per workspace that's shared among all pipelines in workspace  | 10,000 | 10,000 |
-| Concurrent external activities like stored procedure, Web, Web Hook, and others per workspace | 100 | 100 |
-| Concurrent pipeline activities execution for Lookup, GetMetadata, and Delete per workspace | 100 | 100 |
-| Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on per workspace | 50 | 50 |
+| Total number of pipelines within a [workspace](/fabric/fundamentals/workspaces) | 5,000 | 5,000 |
+| Concurrent pipeline runs per [workspace](/fabric/fundamentals/workspaces) that's shared among all pipelines in [workspace](/fabric/fundamentals/workspaces)  | 10,000 | 10,000 |
+| Concurrent external activities like stored procedure, Web, Web Hook, and others per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
+| Concurrent pipeline activities execution for Lookup, GetMetadata, and Delete per [workspace](/fabric/fundamentals/workspaces) | 100 | 100 |
+| Concurrent authoring operations, including test connection, browse folder list and table list, preview data, and so on per [workspace](/fabric/fundamentals/workspaces) | 50 | 50 |
 | Maximum activities per pipeline, which includes inner activities for containers | 120 | 120 |
 | Maximum parameters per pipeline | 50 | 50 |
 |Maximum schedules per pipeline|20|20|
@@ -50,8 +50,16 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Bytes per object for pipeline objects | 200 KB | 200 KB |
 | Bytes per payload for each activity run | 896 KB | 896 KB |
 | Intelligent throughput optimization per copy activity run | Auto | 256 |
-| Concurrent intelligent throughput optimization per workspace | 400 | 400 |
+| Concurrent intelligent throughput optimization per [workspace](/fabric/fundamentals/workspaces) (the throughput is shared with Copy job) | 400 | 400 |
 | Meta Data Entity Size limit in a factory | 2 GB | 2 GB |
+
+## Copy job resource limits
+The following table describes the limitations for Copy job in Data Factory in Microsoft Fabric.
+
+| Copy job resource | Default limit | Maximum limit |
+|---|---|---|
+| Intelligent throughput optimization per table/object | Auto | 256 |
+| Concurrent intelligent throughput optimization per [workspace](/fabric/fundamentals/workspaces) (the throughput is shared with pipeline) | 400 | 400 |
 
 ## Data Factory Dataflow Gen2 limitations
 
@@ -64,11 +72,11 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 - When you use OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes fail because the gateway can't support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
 - The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
 - Currently, column nullability is defaulting to allow nulls in all columns in the destination.
-- After you save/publish your dataflow gen2 we require the validation/publish process to finish within 10 minutes per query. If you exceed this 10 minute limit try to simplify your queries or split your queries in dataflow gen2. 
+- After you save/publish your dataflow gen2 we require the validation/publish process to finish within 10 minutes per query. If you exceed this 10-minute limit try to simplify your queries or split your queries in dataflow gen2. 
 - You can't connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflow Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints.
 - Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest. Use a native user in the tenant to connect to the data sources and destinations.
 - Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission isn't sufficient and isn't supported for consuming data from the dataflow.
-- When you do not access staging items with your dataflow for more than 90 days, you need to re-authendicate to ensure the dataflow is able to access the staging items. You can do this by creating a new dataflow gen2 within the same workspace. 
+- When you don't access staging items with your dataflow for more than 90 days, you need to re-authendicate to ensure the dataflow is able to access the staging items. You can do this by creating a new dataflow gen2 within the same workspace. 
 
 The following table indicates the supported data types in specific storage locations.
 

@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 10/14/2025
+ms.date: 12/14/2025
 ms.search.form: Data Activator Eventstream Onramp
 ---
 
@@ -20,7 +20,7 @@ This article describes how to set alerts on streams in Real-Time hub.
 
 1. In the **Recent streaming data** section at the bottom, select a data stream whose parent is an eventstream.
 
-    :::image type="content" source="./media/set-alerts-data-streams/select-data-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected." lightbox="./media/set-alerts-data-streams/select-data-stream.png":::
+    :::image type="content" source="./media/set-alerts-data-streams/event-stream.png" alt-text="Screenshot that shows Real-Time hub with a data stream selected." lightbox="./media/set-alerts-data-streams/event-stream.png":::
 1. On the stream detail page, select **Set alert**. 
 
     :::image type="content" source="./media/set-alerts-data-streams/set-alert-button.png" alt-text="Screenshot that shows the selection of the Set alert button on the data stream detail page." lightbox="./media/set-alerts-data-streams/set-alert-button.png":::

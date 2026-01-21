@@ -98,8 +98,6 @@ The high-level steps in module 1 are:
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the pipeline Output tab." lightbox="media/tutorial-end-to-end-pipeline/run-details-button.png":::
 
-1. Expand the **Duration breakdown** section to see the duration of each stage of the Copy activity. After reviewing the copy details, select **Close**.
-
 ## Next step
 
 Once the copy has completed, it can take around half an hour, continue to the next section to create your dataflow.

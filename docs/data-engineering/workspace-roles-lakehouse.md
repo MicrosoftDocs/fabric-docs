@@ -4,7 +4,7 @@ description: Learn how workspace roles and permissions work in your Microsoft Fa
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 09/22/2025
 ms.search.form: Lakehouse Workspace roles Permissions

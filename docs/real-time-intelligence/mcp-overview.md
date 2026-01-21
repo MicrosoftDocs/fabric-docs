@@ -7,6 +7,7 @@ ms.author: spelluru
 ms.topic: overview 
 ms.date: 09/14/2025
 ms.search.form: MCP, RTI, AI
+ms.collection: ce-skilling-ai-copilot
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
 ---

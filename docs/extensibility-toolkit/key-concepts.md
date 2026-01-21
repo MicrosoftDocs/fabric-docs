@@ -3,9 +3,9 @@ title: Key concepts and Features
 description: Learn about the key concepts and features of the Extensibility Toolkit
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Key concepts and features

@@ -4,9 +4,9 @@ description: Learn how sensitivity labels can be propagated to downstream conten
 author: msmimart
 ms.author: mimart
 
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
-ms.date: 11/30/2024
+ms.date: 01/06/2026
 LocalizationGroup: Data from files
 ---
 
@@ -24,6 +24,19 @@ Downstream inheritance is illustrated using [lineage view](/power-bi/collaborate
 >
 >* Downstream inheritance never overwrites labels that were applied manually.
 >* Downstream inheritance never overwrites a label with a less restrictive label.
+
+## Downstream inheritance vs. inheritance upon creation
+
+It's important to understand the difference between downstream inheritance and inheritance upon item creation:
+
+* **Downstream inheritance** applies labels to *existing* downstream items when you change a label on a parent item (semantic model or report). This feature is what this article describes.
+* **Inheritance upon creation** automatically applies a label to a *new* item when you create it based on a labeled parent item. This happens regardless of the downstream inheritance settings.
+
+For example, when you create a new report based on a labeled semantic model, the report automatically inherits the semantic model's label to prevent creating unlabeled artifacts that could expose data. This inheritance upon creation occurs even if the **Automatically apply sensitivity labels to downstream content** tenant setting is disabled.
+
+The **Automatically apply sensitivity labels to downstream content** setting only controls whether labels propagate to existing downstream items when you change a parent item's label. It doesn't affect label inheritance when you create new items.
+
+For more information about inheritance upon creation, see [Sensitivity label inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content).
 
 ## Downstream inheritance modes
 

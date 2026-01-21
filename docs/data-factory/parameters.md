@@ -4,7 +4,7 @@ description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: whhender
 author: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 12/18/2024
 ai-usage: ai-assisted

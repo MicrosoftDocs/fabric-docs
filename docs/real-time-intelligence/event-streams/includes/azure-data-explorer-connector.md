@@ -5,7 +5,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: include
 ms.custom:
-ms.date: 03/21/2025
+ms.date: 12/22/2025
 ---
 
 1. On the **Configure connection settings** page, select **New connection**.

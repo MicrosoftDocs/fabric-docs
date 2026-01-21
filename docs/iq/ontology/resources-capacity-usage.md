@@ -30,12 +30,9 @@ The following table defines how many capacity units (CU) are consumed when an on
 
 ## Monitor usage
 
-The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. The Fabric Capacity Metric app shows operations for ontology (preview).
+The [Microsoft Fabric Capacity Metrics](../../enterprise/metrics-app.md) app provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity. The Microsoft Fabric Capacity Metric app shows operations for ontology (preview).
 
 The Microsoft Fabric Capacity Metrics app must be installed by a capacity admin. Once the app is installed, anyone in the organization can be granted permissions to view the app. For more information about the app, see [Install the Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app).
-
->[!IMPORTANT]
-> Billing for ontology (preview) is not currently in effect, except where otherwise noted for associated underlying Fabric items that are being used. The information provided in this article is for informational purposes and is subject to change.
 
 ## Manage usage
 
