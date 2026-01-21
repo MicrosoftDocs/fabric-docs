@@ -1,5 +1,5 @@
 ---
-title: Granular compare in Microsoft Fabric
+title: Granular Compare in Microsoft Fabric
 description: Understand what granular compare is and how to use it.
 author: billmath
 ms.author: billmath
@@ -11,13 +11,12 @@ ms.custom:
 ms.date: 01/20/2026
 ---
 
-# Granular Compare in Microsoft Fabric Git Integration
+# Granular Compare in Microsoft Fabric 
 
 Granular Compare is a feature of Microsoft Fabric Git integration that lets users review the exact changes that will occur during Git operations—commit, undo, or update—before applying them.
 
 Instead of only showing which items will be affected, Granular Compare displays a side‑by‑side or inline diff of every modified file within each workspace item. This gives developers clarity, confidence, and control over the changes moving between the Fabric workspace and the connected Git branch. The experience is consistent with the Deployment Pipeline Change Review model and reuses the same comparison component for familiarity and predictability.
 
-## What Granular Compare Is
 Granular Compare is an interactive diff viewer that surfaces every textual change detected between:
 
 - Workspace version of an item
@@ -26,7 +25,7 @@ Granular Compare is an interactive diff viewer that surfaces every textual chang
 
 It highlights additions, deletions, and modifications at the file level inside any supported item type (notebooks, dataflows, semantic models, .platform files, schedules, etc.).
 
-### Key Capabilities
+## Key Capabilities
 Granular Compare enables users to:
 
 - View a precise, file‑level diff for all modified items participating in a Git operation.
@@ -39,16 +38,15 @@ Granular Compare enables users to:
 - Work across large workspaces where items may contain many files.
 
 ## How it works
+The following sections provide an overview of how granular compare works.
 
 ### Entry Points
 Granular Compare can be opened from multiple locations. The following table summarizes the various entry points. 
 
 |Entry Point|Description|
 |-----|-----|
-|Source Control → Changes tab|●Shows diffs where the workspace has changes relative to Git</br>●
-Workspace side is highlighted (“green side”)|
-|Source Control → Updates tab|●Shows diffs where Git has new changes relative to workspace
-</br>●Git branch side is highlighted (“green side”)|
+|Source Control → Changes tab|●Shows diffs where the workspace has changes relative to Git</br>●Workspace side is highlighted (“green side”)|
+|Source Control → Updates tab|●Shows diffs where Git has new changes relative to workspace</br>●Git branch side is highlighted (“green side”)|
 |Conflict Dialog|●Shows only conflicted items</br>●Comparisons depend on scenario (e.g., workspace vs. latest Git)|
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
@@ -71,7 +69,7 @@ It uses three icons to represent the change status:
 |New|Represents a new item in the source workspace that is not yet in the target workspace|
 |Missing|Item is missing from the source workspace|
 
-  image type="content" source="media/granular-compare/granular-5.png" alt-text="Screenshot of the diff icons." lightbox="media/granular-compare/granular-5.png"
+image type="content" source="media/granular-compare/granular-5.png" alt-text="Screenshot of the diff icons." lightbox="media/granular-compare/granular-5.png"
 
 ### What Is Not Displayed
 Granular compare does not display:
