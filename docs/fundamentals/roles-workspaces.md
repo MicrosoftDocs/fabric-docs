@@ -27,7 +27,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 |--|--|--|--|--|
 | Update and delete the workspace. | &#x2705; |  |  |  |
 | Add or remove people, including other admins. | &#x2705; |  |  |  |
-| Add members or others with lower permissions. | &#x2705; | |  |  |
+| Add members or others with lower permissions. | &#x2705; | &#x2705; |  |  |
 | Allow others to reshare items.<sup>1</sup> | &#x2705; | &#x2705; |  |  |
 | Create or modify database items. | &#x2705; | &#x2705; | &#x2705; |  |
 | Create or modify database mirroring items. | &#x2705; | &#x2705; | &#x2705; |  |
