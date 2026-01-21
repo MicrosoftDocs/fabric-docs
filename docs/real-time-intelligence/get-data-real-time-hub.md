@@ -28,7 +28,11 @@ Select *more (RTH) data sources* as your data source:
 
 1. Select **Get Data** and then select **Connect more data sources**.
 
-   :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources.png" alt-text="Screenshot of the get data menu with the Connect more data sources option highlighted.":::
+    You can do this from either the **Get Data** button in the top menu bar, or from the get data dropdown menu in the top menu bar, or from the database more actions menu. 
+
+   :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources-tile.png" alt-text="Screenshot of the get data tiles with the Connect more data sources option highlighted.":::
+
+    :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources.png" alt-text="Screenshot of the get data menu with the Connect more data sources option highlighted.":::
 
 1. In the Select a data source window you see all the data sources available in Real-Time Hub. You can search for a source, or filter by category. In this example, select the sample scenario **Bicycle rentals**.
 
@@ -59,10 +63,9 @@ Configure the connection settings. Connecting to the RTH data source generates b
 
     When the connection is successful, select **Finish**.
 
-     > [!NOTE]
+     > [!TIP]
      >
-     > * By selecting finish you continue to use the Get data workflow to define the destination table.
-     > * Alternatively, you can stop here, select **Open Eventstream** and go to the created eventstream to define the destination table and complete the ingestion process from there.
+     > Optionally, you can select **Open Eventstream** and go to the created eventstream to define the destination table and complete the ingestion process from there.
 
 1. In the Destination table window, select **New table** and enter a name for the new destination table.
 

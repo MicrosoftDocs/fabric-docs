@@ -92,7 +92,7 @@ Set the source to get data.
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Azure storage**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-azure-storage/get-data-azure-storage-tile.png" alt-text="Screenshot of the get data tiles with the Azure stoage option highlighted.":::
 
 ## Configure
 
