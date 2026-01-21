@@ -132,12 +132,11 @@ The Microsoft JDBC Driver for Microsoft Fabric Data Engineering supports multipl
 
 | AuthFlow | Authentication Method | Use Case |
 |----------|----------------------|----------|
-| **0** | Azure CLI Credential | Development using Azure CLI |
-| **1** | Client Credentials (Service Principal) | Automated/service-to-service authentication |
-| **2** | Interactive Browser | Interactive user authentication (default) |
-| **3** | SPN  | Service Principal authentication |
-| **4** | Certificate-Based | Certificate-based service principal authentication |
-| **5** | Access Token | Pre-acquired access token |
+| **1** | Interactive Browser | Interactive user authentication using OAuth 2.0|
+| **2** | Azure CLI | Development using Azure CLI |
+| **3** | Client Secret Credentials (Service Principal) | Automated/service-to-service authentication |
+| **4** | Client Certificate Credential | Certificate-based service principal authentication |
+| **5** | Access Token | Pre-acquired bearer access token |
 
 ### Interactive Browser Authentication
 
@@ -283,7 +282,7 @@ These parameters must be present in every connection string:
 |-----------|------|-------------|---------|
 | `FabricWorkspaceID` | UUID | Microsoft Fabric workspace identifier | `<workspace-id>` |
 | `FabricLakehouseID` | UUID | Microsoft Fabric lakehouse identifier | `<lakehouse-id>` |
-| `AuthFlow` | Integer | Authentication flow type (0-5) | `2` |
+| `AuthFlow` | Integer | Authentication flow type (1-5) | `2` |
 
 ### Optional Parameters
 
