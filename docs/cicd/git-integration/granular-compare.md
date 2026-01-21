@@ -84,7 +84,7 @@ Granular compare does not display:
 
 1. At the top of your workspace, select **Source control**.
 2. On the right, select **Review changes**.
-  image type="content" source="media/granular-compare/granular-2.png" alt-text="Screenshot of review changes." lightbox="media/granular-compare/granular-2.png"
+  :::image type="content" source="media/granular-compare/granular-2.png" alt-text="Screenshot of review changes." lightbox="media/granular-compare/granular-2.png":::
 
 3. On the left, select the item to review.
 4. This will bring up the diff screen, review the changes.
@@ -93,8 +93,8 @@ Granular compare does not display:
     - Text wrapping
     - Expand all rows
 
-  image type="content" source="media/granular-compare/granular-3.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/granular-3.png"
+  :::image type="content" source="media/granular-compare/granular-3.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/granular-3.png":::
 6. Once you have reviewed it, under **Source control** the item will have a checkbox and you should see a **Reviewed By** information with the reviewer and date.
-  image type="content" source="media/granular-compare/granular-4.png" alt-text="Screenshot of the reviewed items." lightbox="media/granular-compare/granular-4.png"
+  :::image type="content" source="media/granular-compare/granular-4.png" alt-text="Screenshot of the reviewed items." lightbox="media/granular-compare/granular-4.png":::
 
 ## Example - Deployment pipeline Diff compare
