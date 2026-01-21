@@ -4,7 +4,7 @@ description: This article provides details of the pricing model of Dataflow Gen2
 ms.reviewer: whhender
 ms.author: whhender
 author: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/18/2024
 ms.custom: 
     - dataflows
