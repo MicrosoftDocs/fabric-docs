@@ -113,6 +113,8 @@ In the **Summary** window, all the steps are marked as completed when data inges
 
 :::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of the summary page showing successful data ingestion." lightbox="media/get-data-eventstream/summary.png":::
 
+When you close the window, you return to the KQL database overview page. The new table appears in the **Tables** list in the left pane. The new eventstream appears in the **Data streams** list.
+
 ## Related content
 
 * To manage your database, see [Manage data](data-management.md)
