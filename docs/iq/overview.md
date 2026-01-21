@@ -59,10 +59,10 @@ This section contains guidance for choosing the right tools for your scenario fr
 
 This section describes how items work together or relate to one another.
 
-* **Ontology (preview) and semantic model:** Define enterprise concepts (like *Customer*, *Shipment*, and *Breach*) one time, and generate or align Power BI models so that KPIs remain consistent across reports.
-* **Ontology (preview) and Graph in Microsoft Fabric:** Ontology declares which things connect and why. Graph in Microsoft Fabric stores and computes traversals (like "Find shipments exposed to risky routes and related breaches").
-* **Ontology (preview) and data agent:** Ontology grounds agents in shared business semantics and rules so they can retrieve relevant context, reason across domains, and recommend or trigger governed actions.
-* **All items:** Ontology defines the language for your business. Digital twin builder makes it operational for assets. Graph in Microsoft Fabric powers dependency/impact analysis, and semantic models present trusted KPIs.
+* **Ontology (preview) and semantic model:** Define enterprise concepts, like *Customer*, *Shipment*, and *Breach*, only once. Generate or align Power BI models so that KPIs stay consistent across reports.
+* **Ontology (preview) and Graph in Microsoft Fabric:** Ontology declares which things connect and why. Graph in Microsoft Fabric stores and computes traversals, like "Find shipments exposed to risky routes and related breaches."
+* **Ontology (preview) and data agent:** Ontology grounds agents in shared business semantics and rules. As a result, agents can retrieve relevant context, reason across domains, and recommend or trigger governed actions.
+* **All items:** Ontology defines the language for your business. Digital twin builder makes it operational for assets. Graph in Microsoft Fabric powers dependency and impact analysis. Semantic models present trusted KPIs.
 <!--* **Ontology (preview) and digital twin builder:** Ontology provides reusable types (like *Asset*, *Sensor*, and *Thresholds*). Digital twin builder instantiates specific twins and runs scenarios using those types.-->
 
 ## Next steps

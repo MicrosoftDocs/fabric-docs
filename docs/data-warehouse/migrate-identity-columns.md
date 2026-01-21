@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Migrate to IDENTITY columns in Fabric Data Warehouse

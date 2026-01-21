@@ -39,6 +39,7 @@ OneLake security enables users to define data access roles for the following Fab
 | ---- | --- | --- |
 | Lakehouse | Public Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Public Preview | Read |
+| Mirrored Databases | Public Preview | Read |
 
 ## OneLake security and workspace permissions
 
