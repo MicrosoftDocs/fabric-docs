@@ -69,7 +69,8 @@ It uses three icons to represent the change status:
 |New|Represents a new item in the source workspace that is not yet in the target workspace|
 |Missing|Item is missing from the source workspace|
 
-image type="content" source="media/granular-compare/granular-5.png" alt-text="Screenshot of the diff icons." lightbox="media/granular-compare/granular-5.png"
+:::image type="content" source="media/granular-compare/granular-5.png" alt-text="Screenshot of the diff icons." lightbox="media/granular-compare/granular-5.png":::
+
 
 ### What Is Not Displayed
 Granular compare does not display:
