@@ -146,7 +146,7 @@ Best for: **Development and interactive applications**
 String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
              "FabricWorkspaceID=<workspace-id>;" +
              "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=2;" +  // Interactive browser authentication
+             "AuthFlow=1;" +  
              "AuthTenantID=<tenant-id>;" +  // Optional
              "LogLevel=INFO";
 
@@ -154,7 +154,7 @@ Connection conn = DriverManager.getConnection(url);
 ```
 
 **Parameters:**
-- `AuthFlow=2`: Specifies interactive browser authentication
+- `AuthFlow=1`: Specifies interactive browser authentication
 - `AuthTenantID` (optional): Azure tenant ID
 - `AuthClientID` (optional): Application (client) ID
 
@@ -163,7 +163,7 @@ Connection conn = DriverManager.getConnection(url);
 - Credentials are cached for subsequent connections until it's expired
 - Suitable for single-user applications
 
-### Client Credentials Authentication
+### Client Credentials or Service Principal Authentication
 
 Best for: **Automated services and background jobs**
 
@@ -171,7 +171,7 @@ Best for: **Automated services and background jobs**
 String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
              "FabricWorkspaceID=<workspace-id>;" +
              "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=1;" +  // Client credentials authentication
+             "AuthFlow=3;" +  
              "AuthClientID=<client-id>;" +
              "AuthClientSecret=<client-secret>;" +
              "AuthTenantID=<tenant-id>;" +
@@ -181,7 +181,7 @@ Connection conn = DriverManager.getConnection(url);
 ```
 
 **Required Parameters:**
-- `AuthFlow=1`: Specifies client credentials authentication
+- `AuthFlow=3`: Specifies client credentials authentication
 - `AuthClientID`: Application (client) ID from Microsoft Entra ID
 - `AuthClientSecret`: Client secret from Microsoft Entra ID
 - `AuthTenantID`: Azure tenant ID
@@ -199,7 +199,7 @@ Best for: **Enterprise applications requiring certificate-based authentication**
 String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
              "FabricWorkspaceID=<workspace-id>;" +
              "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=4;" +  // Certificate-based authentication
+             "AuthFlow=4;" +  
              "AuthClientID=<client-id>;" +
              "AuthCertificatePath=/path/to/certificate.pfx;" +
              "AuthCertificatePassword=<certificate-password>;" +
@@ -215,27 +215,6 @@ Connection conn = DriverManager.getConnection(url);
 - `AuthCertificatePath`: Path to PFX/PKCS12 certificate file
 - `AuthCertificatePassword`: Certificate password
 - `AuthTenantID`: Azure tenant ID
-
-### Service Principal Authentication
-
-Best for: **Headless environments and remote sessions**
-
-```java
-String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
-             "FabricWorkspaceID=<workspace-id>;" +
-             "FabricLakehouseID=<lakehouse-id>;" +
-             "AuthFlow=3;" +  // Device code authentication
-             "AuthClientID=<client-id>;" +
-             "AuthTenantID=<tenant-id>;" +
-             "LogLevel=INFO";
-
-Connection conn = DriverManager.getConnection(url);
-```
-
-**Behavior:**
-- Displays a device code and URL in the console
-- User visits the URL and enters the code
-- Authentication completes after user verification
 
 ### Access Token Authentication
 
