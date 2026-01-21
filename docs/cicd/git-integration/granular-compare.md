@@ -113,3 +113,8 @@ Granular compare does not display:
 
 6. Once you have reviewed it, the item will have a checkbox and you should see a **Reviewed By** information with the reviewer and date.
   :::image type="content" source="media/granular-compare/granular-8.png" alt-text="Screenshot of the deployment pipeline reviewed items." lightbox="media/granular-compare/granular-8.png":::
+
+  ## Related content
+* [Git integration - get started](git-get-started.md)
+* [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Git best practices](../best-practices-cicd.md)
