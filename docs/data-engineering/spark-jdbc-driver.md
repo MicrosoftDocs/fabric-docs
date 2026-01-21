@@ -67,7 +67,7 @@ public class QuickStartExample {
         String url = "jdbc:fabricspark://api.fabric.microsoft.com;" +
                      "FabricWorkspaceID=<workspace-id>;" +
                      "FabricLakehouseID=<lakehouse-id>;" +
-                     "AuthFlow=2;" +  // Interactive browser authentication
+                     "AuthFlow=2;" +  // Azure CLI based authentication
                      "LogLevel=INFO";
         
         try (Connection conn = DriverManager.getConnection(url)) {
