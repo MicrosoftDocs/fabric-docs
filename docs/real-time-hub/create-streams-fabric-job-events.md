@@ -4,7 +4,7 @@ description: This article describes how to get Job events as a Fabric eventstrea
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 07/22/2025
+ms.date: 01/14/2026
 # Customer intent: I want to know how to create eventstreams for Job events in Fabric Real-Time hub. 
 ---
 
@@ -45,7 +45,7 @@ You can create streams for Job events in Real-Time hub using one of the ways:
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, select **Job events** category at the top, and then select **Connect** on the **Job events** tile. You can also use the search bar to search for Job events. 
+5. On the **Data sources** page, select **Job events** category at the top, and then select **Connect** on the **Job events** tile. You can also use the search bar to search for Job events. 
 
     :::image type="content" source="./media/create-streams-fabric-Job-events/select-job-events.png" alt-text="Screenshot that shows the Get events page with Job events selected." lightbox="./media/create-streams-fabric-job-events/select-job-events.png":::
 

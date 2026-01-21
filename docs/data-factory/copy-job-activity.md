@@ -4,7 +4,7 @@ description: Set up and configure the Copy Job activity in Data Factory pipeline
 author: whhender
 ms.author: whhender
 ms.reviewer: whhender
-ms.date: 11/06/2025
+ms.date: 12/31/2025
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -37,8 +37,19 @@ Here's how to set up your Copy job activity.
 
    :::image type="content" source="media/copy-job-activity/copy-job-activity-setup.png" alt-text="Screenshot of pipeline canvas with the activities window open and the Copy job activity selected.":::
 
-1. Set up the connection to sign in to your workspace that has the Copy job you want to use in the pipeline.
+1. Go to the activity’s **Settings** tab, configure the connection used to access the workspace that contains your Copy job. Under **Connection**, select Browse all to go to Get data page, and select Copy job to creat a connection.
 
+   :::image type="content" source="media/copy-job-activity/copy-job-activity-connection.png" alt-text="Screenshot of select Copy job activity connection.":::
+
+    :::image type="content" source="media/copy-job-activity/copy-job-connection.png" alt-text="Screenshot of select Copy job connection.":::
+
+   In Connect data source page, specify the connection name and choose your preferred data gateway and authentication kind. You can choose one of the following authentication methods:
+	- **Organizational account** – Sign in with your organizational account.
+	- **Service principal** – Specify your Tenant ID, Service principal client ID, and Service principal Key. 
+   - **Workspace identity** – Use the workspace’s managed identity for authentication. For more information, see [Workspace identity](../security/workspace-identity.md).
+
+   :::image type="content" source="media/copy-job-activity/connect-to-copy-job.png" alt-text="Screenshot of connect to Copy job.":::
+   
 1. Select the workspace and Copy job item to orchestrate in your pipeline. If you don't have a Copy job item, create one by selecting the **+ New** button in the Copy job settings within the activity.
 
    :::image type="content" source="media/copy-job-activity/copy-job-settings-panel.png" alt-text="Screenshot of pipeline settings showing Copy Job item selected and '+ New' button visible for creating a new Copy Job item.":::

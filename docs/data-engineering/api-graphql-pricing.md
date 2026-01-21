@@ -4,9 +4,9 @@ description: This article contains information about billing
 author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
-ms.date: 05/16/2025
-ms.topic: article
-ms.custom:
+ms.date: 01/21/2026
+ms.topic: concept-article
+ms.custom: freshness-kr
 ms.search.form: Fabric API for GraphQL pricing  # This article's title shouldn't change. If so, contact engineering.
 ---
 
@@ -14,11 +14,25 @@ ms.search.form: Fabric API for GraphQL pricing  # This article's title shouldn't
 
 The usage for each API operation consisting of the time executing a GraphQL request/response is reported in Capacity Units (CUs) in seconds at the rate of 10 CUs per hour. You can find more information in the following sections.
 
+## Who needs pricing information
+
+Understanding GraphQL API pricing is important for:
+- **Fabric capacity administrators** planning capacity requirements and managing costs for GraphQL workloads
+- **Fabric workspace admins** monitoring and optimizing API consumption to stay within capacity budgets
+- **Application architects** designing cost-effective solutions that optimize Fabric API usage patterns
+- **Finance and procurement teams** budgeting for Fabric capacity based on GraphQL API consumption
+
+Use this pricing information when planning GraphQL API implementations or optimizing existing applications for cost efficiency.
+
 ## Consumption rate
 
-A GraphQL resolver is executed when a client application sends an API request, or a query is executed in the [API editor](api-graphql-editor.md). Resolvers are GraphQL components that provide the business logic to "resolve" fields in the API and perform operations with data residing in the data sources. Fabric automatically generates resolvers whenever you attach a new Fabric data source or select new objects to be exposed from an existing data source.
+API for GraphQL usage is measured based on resolver execution time. Resolvers are the GraphQL components that retrieve and process data from your data sources—Fabric automatically generates these resolvers when you attach data sources or select objects to expose through your API.
 
-Resolver executions triggered by requests to API for GraphQL consume Fabric Capacity Units. The following table defines how many capacity units (CU) are consumed when API for GraphQL is used:
+**How consumption works:**
+
+When a client application sends a GraphQL query or mutation (or when you execute a query in the [API editor](api-graphql-editor.md)), the resolvers execute to fetch and return the requested data. The total execution time for all resolvers in a request determines the capacity units consumed.
+
+The following table defines the consumption rate for API for GraphQL operations:
 
 | **Operation in Metrics App**    | **Description** | **Operation Unit of Measure** | **Consumption rate** |
 | -------- | ------- | ------- | ------- |
@@ -32,11 +46,18 @@ The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) dis
 
 ## Capacity utilization type
 
-Fabric API for GraphQL requests is classified as "interactive job" as they're on-demand requests and operations that can be triggered by application clients or user interactions with the UI.
+API for GraphQL requests are classified as **interactive jobs** because they're on-demand operations triggered by client applications or user interactions with the UI. This classification affects how Fabric manages capacity utilization and applies throttling policies.
 
-Fabric is designed to provide lightning-fast performance by allowing operations to access more CU (Capacity Units) resources than are allocated to capacity. Fabric smooths or averages the CU usage of an "interactive job" over a minimum of 5 minutes, "background job" over a 24-hour period. According to the [Fabric throttling policy](../enterprise/throttling.md), the first phase of throttling begins when a capacity consumed all its available CU resources for the next 10 minutes.
+**How Fabric smooths capacity usage:**
 
-A complex GraphQL query returning nested data from multiple data sources might take longer to execute thus consuming more CU seconds. Alternatively, a simpler query processed in less time consumes fewer CU seconds.
+Fabric smooths (averages) the capacity unit usage for interactive jobs over a minimum of 5 minutes. This approach allows operations to burst and use more resources temporarily while maintaining overall capacity limits. According to the [Fabric throttling policy](../enterprise/throttling.md), throttling begins when a capacity unit consumed all available resources for the next 10 minutes.
+
+**Query complexity impact:**
+
+- **Complex queries**: Queries that return nested data from multiple data sources or perform extensive data processing take longer to execute, consuming more CU seconds
+- **Simple queries**: Straightforward queries that return focused datasets execute faster, consuming fewer CU seconds
+
+To optimize costs, design your GraphQL queries to request only the data you need and consider the complexity of nested relationships.
 
 ## Related content
 

@@ -3,7 +3,7 @@ title: Overview of Fabric deployment pipelines new user interface
 description: An introduction to the new user interface for deployment pipelines in the Fabric (ALM) tool
 author: billmath
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 12/15/2025
 ms.search.form: Deployment pipelines UI

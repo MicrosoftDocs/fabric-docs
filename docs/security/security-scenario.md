@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: vparasuraman, amasingh
 ms.date: 12/12/2024
-ms.topic: article
+ms.topic: concept-article
 ms.custom: fabric-cat, security-guidance
 ---
 

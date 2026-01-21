@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: dodruker; jonp
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/17/2025
 ms.custom: gcc
 LocalizationGroup: Get started

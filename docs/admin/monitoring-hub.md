@@ -4,7 +4,7 @@ description: Understand the Microsoft Fabric monitor hub and the information it 
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 11/04/2024
+ms.date: 01/12/2026
 ---
 
 # Use the Monitor hub
@@ -13,19 +13,27 @@ The Microsoft Fabric *Monitor* hub enables users to monitor Microsoft Fabric act
 
 The monitor hub displays activities for these Fabric items:
 
-* Pipelines
+* Copy Job
+* Dataflow Gen2
+* Dataflow Gen2 CI/CD
+* Datamart
+* DBT Job
+* Digital Twin Builder Flow
+* Experiment
+* Graph model
+* Lakehouse
+* Map
+* Notebook
+* Pipeline
+* Semantic model
+* Snowflake database
+* Spark job definition
+* User data function
 
-* Dataflows
-
-* Datamarts
-
-* Lakehouses
-
-* Notebooks
-
-* Semantic models
-
-* Spark job definitions
+> [!NOTE]
+> For Spark Notebook jobs with jobType "NotebookInteractiveRun," all terminated notebooks display as "Stopped" in the Monitor hub. This is a temporary UI-only change and has the following limitations:
+> * The "Stopped" status can't be filtered.
+> * Status may be inconsistent between the Monitor hub table, the Public Job Status API, and job events.
 
 ## View the monitor hub display
 
@@ -62,7 +70,7 @@ Each time the table is refreshed, the recent 100 jobs are loaded in order, accor
 * **Status** - Select the type of status you want the table to display. When no status is selected, item activities for all statuses are displayed.
 
     >[!NOTE]
-    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitor hub might show a simplified version of an item's status. The exact status of an item, can be found in the [details panel](#view-details).
+    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitor hub might show a simplified version of an item's status. The exact status of an item can be found in the [details panel](#view-details).
 
 * **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
 

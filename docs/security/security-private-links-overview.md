@@ -4,7 +4,7 @@ description: Learn about the Azure private link feature to provide secure access
 author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 08/21/2025
 ---
