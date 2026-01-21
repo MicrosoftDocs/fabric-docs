@@ -119,11 +119,11 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 1. **Optimize the Semantic Model:** Start by optimizing your semantic model for performance. Poor Data Agent performance often comes from a poorly designed semantic model, inefficient DAX measures, or a mix of the two. When a user asks a question, the Data Agent generates a DAX query and runs it against your model. A well-optimized model uses fewer resources and achieves faster query execution. In a conversational interface, users expect quick responses, so slow performance directly impacts user experience and adoption.
 
-   Additionally, a bloated model with unnecessary columns, tables, and measures creates more noise for the DAX generation tool to parse, which can reduce response accuracy. By optimizing your model early, you also prevent performance problems as your data grows and the model becomes more complex. You can learn more in [Optimize a model for performance in Power BI](/training/modules/optimize-model-power-bi/) course.
+   Additionally, a bloated model with unnecessary columns, tables, and measures creates more noise for the DAX generation tool to parse, which can reduce response accuracy. By optimizing your model early, you also prevent performance problems as your data grows and the model becomes more complex. You can learn more in the [Optimize a model for performance in Power BI](/training/modules/optimize-model-power-bi/) course.
 
    Use [Best Practice Analyzer and Semantic Model Memory Analyzer](/power-bi/transform-model/service-notebooks) in a Fabric notebook to identify problems such as incorrect data types, unnecessary columns, high cardinality columns, and inefficient DAX patterns. Add descriptions to tables, columns, and measures to help the LLM understand the purpose of each object included in the AI data schema.
 
-   :::image type="content" source="media/semantic-model-best-practices/bpa-memory-analyzer.png" alt-text="Semantic model context menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted." lightbox="media/semantic-model-best-practices/bpa-memory-analyzer.png":::
+   :::image type="content" source="media/semantic-model-best-practices/bpa-memory-analyzer.png" alt-text="Semantic model context menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted." lightbox="media/semantic-model-best-practices/memory-analyzer.png":::
 
 1. **Define Prep for AI > AI Data Schema:** Based on the scope of your Data Agent, configure the AI data schema in Prep for AI by selecting only the tables, columns, and measures relevant to the questions your agent should answer.
 
@@ -141,9 +141,9 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 1. **Configure Data Agent Instructions:** Add instructions at the Data Agent level only for guidance that applies across all data sources configured in the agent. This guidance includes general response formatting preferences, cross-source routing rules, common abbreviations, and tone. Don't add semantic model specific instructions here as they're not passed to the DAX generation tool. For guidance on configuring agent instructions, refer to [configuration guidelines](data-agent-configurations.md#data-agent-instructions).
 
-1. **Validate & Iterate:** LLMs can produce incorrect results without proper context. Continuously iterate on your configuration and validate responses to build trust in your Data Agent. To evaluate responses programmatically, you can use the Fabric Data Agent Python SDK to run automated evaluations against ground truth question-answer pairs and analyze accuracy metrics. Note that the SDK is for evaluation only in this case and can't modify semantic model's Prep for AI configurations. For details, see [Evaluate your data agent](https://learn.microsoft.com/fabric/data-science/evaluate-data-agent). Additionally, involve stakeholders and end users in the evaluation process. Their feedback ensures that responses align with real-world expectations and usability, helping you identify gaps that automated checks might miss.
+1. **Validate & Iterate:** LLMs can produce incorrect results without proper context. Continuously iterate on your configuration and validate responses to build trust in your Data Agent. To evaluate responses programmatically, you can use the Fabric Data Agent Python SDK to run automated evaluations against ground truth question-answer pairs and analyze accuracy metrics. Note that the SDK is for evaluation only in this case and can't modify semantic model's Prep for AI configurations. For details, see [Evaluate your data agent](evaluate-data-agent.md). Additionally, involve stakeholders and end users in the evaluation process. Their feedback ensures that responses align with real-world expectations and usability, helping you identify gaps that automated checks might miss.
 
-1. **Implement Source Control and Deployment Pipelines:** Use Git integration and deployment pipelines to manage your Data Agent configurations across development, test, and production workspaces. This practice ensures configuration changes are tested and validated before being promoted to production where end users access them. For details, see [Source Control, CI/CD, and ALM for Fabric data agent](https://learn.microsoft.com/fabric/data-science/data-agent-source-control-deployment).
+1. **Implement Source Control and Deployment Pipelines:** Use Git integration and deployment pipelines to manage your Data Agent configurations across development, test, and production workspaces. This practice ensures configuration changes are tested and validated before being promoted to production where end users access them. For details, see [Source Control, CI/CD, and ALM for Fabric data agent](data-agent-source-control-deployment.md).
 
 > [!TIP]
 > You can use resources in [fabric-toolbox repository](https://github.com/microsoft/fabric-toolbox/tree/main/samples/data_agent_checklist_notebooks) as a reference to help you through this workflow. This repository contains:
@@ -163,9 +163,9 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 - **Non-descriptive naming:** Object names like TR_AMT, F_SLS, or DIM_GEO_01 provide no context for the DAX generation tool. Use clear, business-friendly names such as Total Revenue, Sales, or Customer Geography. If you can't rename objects, ensure descriptions and synonyms provide the necessary context for the AI to understand their purpose.
 
-- **Relying on implicit measures:** Implicit measures can lead to unpredictable results. Create explicit DAX measures for calculations you want users to query, and set the correct default summarization (Sum, Average, None, etc.) on numeric columns to prevent unintended aggregations.
+- **Relying on implicit measures:** Implicit measures can lead to unpredictable results. Create explicit DAX measures for calculations you want users to query, and set the correct default summarization (Sum, Average, None, and so on) on numeric columns to prevent unintended aggregations.
 
-- **Ambiguous date fields:** Multiple date columns (Order Date, Ship Date, Due Date, Calendar Quarter/FY Quarter, etc.) without clear guidance confuse the AI. Use Verified Answers and AI instructions in Prep for AI to specify which date field to use by default or for specific question types.
+- **Ambiguous date fields:** Multiple date columns (Order Date, Ship Date, Due Date, Calendar Quarter/FY Quarter, and so on) without clear guidance confuse the AI. Use Verified Answers and AI instructions in Prep for AI to specify which date field to use by default or for specific question types.
 
 - **Conflicting instructions:** AI instructions that contradict Verified Answer configurations create unpredictable behavior.
 
@@ -175,10 +175,10 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 ## Additional resources
 
-- [Fabric Data Agent concepts documentation](https://learn.microsoft.com/fabric/data-science/concept-data-agent)
+- [Fabric Data Agent concepts documentation](concept-data-agent.md)
 - [Fabric-toolbox with checklist and notebooks](https://github.com/microsoft/fabric-toolbox/tree/main/samples/data_agent_checklist_notebooks)
 - [Adding semantic model as a data source to data agent](data-agent-semantic-model.md)
 - [Prepare your data for AI in Power BI](/power-bi/create-reports/copilot-prepare-data-ai)
-- [Optimize your semantic model for Copilot](https://learn.microsoft.com/power-bi/create-reports/copilot-evaluate-data)
+- [Optimize your semantic model for Copilot](/power-bi/create-reports/copilot-evaluate-data)
 - [Optimize A Model For Performance In Power BI - Training](/training/modules/optimize-model-power-bi/)
 - [FAQ for Prep for AI](/power-bi/create-reports/copilot-prepare-data-ai-faq)
