@@ -41,9 +41,13 @@ This section describes feature support in ontology (preview) for different seman
 | Generating relationship type bindings to data sources | Not supported | Supported ONLY when primary key is identified (the primary key is used as the entity type key for the ontology) | Not Supported |
 | Querying data using bindings to data sources | Not supported | Supported (without measures and calculated columns) | Not Supported |
 
-## Other semantic model limitations
+## Other limitations
 
 Other limitations for generating ontology from a semantic model are organized by category below.
+
+### Semantic model service limitations
+
+Semantic models used for ontology generation are subject to general limitations of semantic models in the Power BI service. Limitations include (but aren't limited to) [semantic model size considerations](../../enterprise/powerbi/service-premium-large-models.md) and [XMLA endpoint limitations](../../enterprise/powerbi/service-premium-connect-tools.md#unsupported-semantic-models).
 
 ### Lakehouse tables
 
