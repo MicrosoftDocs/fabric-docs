@@ -6,7 +6,7 @@ ms.author: juliacawthra
 manager: kfollis
 ms.service: powerbi
 ms.subservice: powerbi-eim
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 07/03/2021
 LocalizationGroup: Data from files
 ---
