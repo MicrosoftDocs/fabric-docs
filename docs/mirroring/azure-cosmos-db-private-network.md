@@ -4,7 +4,7 @@ description: Learn how to configure Azure Cosmos DB accounts with private networ
 author: jilmal
 ms.author: jmaldonado
 ms.reviewer: mbrown
-ms.date: 01/16/2026
+ms.date: 01/21/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -31,7 +31,7 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
   1. Navigate to **Workspace settings** → **License info**
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
-- The user configuring private networks for Cosmos DB Mirroring should be an Azure subscription owner or have Contributor permissions on the Cosmos DB account and RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
+- The user configuring private networks for Cosmos DB Mirroring should either be an Azure subscription owner or have Contributor permissions on the Cosmos DB account with RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 
 ## Overview of network configuration options
 
@@ -86,7 +86,7 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 
 1. When prompted, create your mirrored database in Fabric while the account is temporarily accessible.
 
-1. After mirroring is created, return to the script and press `Y` to have it restore your original network security settings including disabling public access for private endpoints or restores your original IP firewall rules for Virtual Network.
+1. After mirroring is created, return to the script and press `Y` to have it restore your original network security settings including disabling public access for private endpoints or restoring your original IP firewall rules for Virtual Network.
 
 ## Manual configuration
 
@@ -183,7 +183,7 @@ Choose one of the following methods to allow Fabric service access:
 1. Extract IPv4 address ranges for DataFactory for your Fabric capacity region:
     - `DataFactory.<region>` - For example, `DataFactory.WestUS3`
 
-1. Extract the **ALL** IPv4 address ranges for PowerQueryOnline
+1. Extract **ALL** IPv4 address ranges for PowerQueryOnline
     - `PowerQueryOnline.<region>` For example, `PowerQueryOnline.WestUS3`, `PowerQueryOnline.EastUS`, etc.
     - Also include `PowerQueryOnline` with no region appended in the name.
 
