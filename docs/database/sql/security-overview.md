@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: pivanho, jaszymas
 ms.date: 10/23/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL database security
 ---
 # Security
