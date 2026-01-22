@@ -45,7 +45,7 @@ For more information about using CDC replication in Copy job, see [Change data c
 
 ## Automatic table creation and truncate on destination
 
-Copy job can automatically create tables in the destination if they don’t already exist.You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates. This table outlines the connectors that support automatic table creation and truncate on destination in Copy job.
+Copy job can automatically create tables in the destination if they don’t already exist. You can also optionally truncate destination data before the full load, ensuring their source and destination are fully synchronized without duplicates. This table outlines the connectors that support automatic table creation and truncate on destination in Copy job.
 
 For more information about these features, see [the copy job overview](what-is-copy-job.md).
 
