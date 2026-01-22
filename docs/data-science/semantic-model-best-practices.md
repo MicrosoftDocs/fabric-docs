@@ -175,7 +175,7 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 ## Tools
 
-To follow these guidelines, you can use the below tools from the [fabric-toolbox Github repository](https://github.com/microsoft/fabric-toolbox/tree/main/samples/data_agent_checklist_notebooks):
+To follow these guidelines, you can use the below tools from the [fabric-toolbox GitHub repository](https://github.com/microsoft/fabric-toolbox/tree/main/samples/data_agent_checklist_notebooks):
 - [Checklist with recommendations](https://github.com/microsoft/fabric-toolbox/blob/main/samples/data_agent_checklist_notebooks/Semantic%20Model%20Data%20Agent%20Checklist.md). These are guidelines and not all items in the checklist may be applicable for your scenario.
 - [Notebook with collection of utilities](https://github.com/microsoft/fabric-toolbox/blob/main/samples/data_agent_checklist_notebooks/Data%20Agent%20Utilities.ipynb) in one place.
 - Power BI [MCP Server](/power-bi/developer/mcp/) to accelerate development and testing in VS Code
