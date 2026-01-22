@@ -176,7 +176,7 @@ This section lists the report's considerations and limitations.
 
 * The report reflects your tenant's audit activity on a rolling 30 day basis, along with the latest snapshot of your tenant's inventory.
 
-* Deleted inventory (including workspaces with extended retention) don't appear in the report after 28 days post deletion. They can be seen in the admin portal until they're permanently deleted.
+* Deleted inventory (including workspaces with extended retention) doesn't appear in the report after 28 days post deletion. They can be seen in the admin portal until they're permanently deleted.
 
 * Items created and deleted within a 24 hour period could have incomplete information.
   
