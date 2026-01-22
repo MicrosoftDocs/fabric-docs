@@ -27,7 +27,7 @@ The data agent uses a layered architecture where user questions flow through an 
 
 1. **Data Source Selection:** The system evaluates the question against available sources using schema information and AI instructions you provide.
 
-1. **Query Generation:** For semantic models, the DAX generation tool generates DAX queries based on schema, metadata (synonyms, min and max values of numerical columns, report visual metadata, and more), context configured in [Prep Data for AI](/power-bi/create-reports/copilot-prepare-data-ai), and the conversation history.
+1. **Query Generation:** For semantic models, the DAX generation tool generates DAX queries based on schema, metadata (synonyms, min and max values of numerical columns, report visual metadata, and more), context configured in [Prep data for AI](/power-bi/create-reports/copilot-prepare-data-ai), and the conversation history.
 
 1. **Response Formatting:** The agent formats results into human-readable responses with tables, summaries, or insights based on the agent instructions.
 
