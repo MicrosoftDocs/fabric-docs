@@ -31,7 +31,7 @@ The data agent uses a layered architecture where user questions flow through an 
 
 1. **Response Formatting:** The agent formats results into human-readable responses with tables, summaries, or insights based on the agent instructions.
 
-:::image type="content" source="media/semantic-model-best-practices/query-processing-flow.png" alt-text="Query processing flow showing inputs to DAX Generation: query, report visual metadata, AI instructions, verified answers, and AI data schema.":::
+:::image type="content" source="media/semantic-model-best-practices/query-processing-flow.png" lightbox="media/semantic-model-best-practices/query-processing-flow.png" alt-text="Query processing flow showing inputs to DAX Generation: query, report visual metadata, AI instructions, verified answers, and AI data schema.":::
 
 ## Prep for AI: Make semantic model AI ready
 
@@ -46,7 +46,7 @@ AI data schemas let you define a focused subset of your model for AI prioritizat
 
 You can configure this schema in Power BI Desktop or the Power BI service by selecting **Prep data for AI** from the Home ribbon. Then, navigate to the **Simplify data schema** tab. From there, select which tables, columns, and measures the AI should use when generating responses. For detailed setup instructions, see [Set an AI data schema](/power-bi/create-reports/copilot-prepare-data-ai-data-schema#set-an-ai-data-schema).
 
-:::image type="content" source="media/semantic-model-best-practices/ai-data-schema-config.png" alt-text="Prep data for AI interface showing the Simplify the data schema panel where users select tables, columns, and measures for AI prioritization." lightbox="media/semantic-model-best-practices/ai-data-schema-config.png":::
+:::image type="content" source="media/semantic-model-best-practices/ai-data-schema-config.png" alt-text="Screenshot of Prep data for AI showing the Simplify the data schema panel with tables and columns selected for AI analysis." lightbox="media/semantic-model-best-practices/ai-data-schema-config.png":::
 
 When you add the semantic model to data agent, select the same tables you defined in Prep for AI to ensure consistent behavior. First, define the scope of your data agent (the types of questions it should answer). Then, select only the relevant objects. This approach reduces ambiguity, improves accuracy, and reduces response latency.
 
@@ -72,7 +72,7 @@ Verified answers are user-approved visual responses that specific questions trig
 
 When you use verified answers with data agent, the system doesn't return the Power BI visual itself. Instead, it uses the user questions and the visual's properties (columns, measures, filters) to influence DAX query generation. This approach means verified answers improve response accuracy by guiding the DAX generation tool toward the correct query structure. When a user asks a question to the data agent, the system first checks for an exact or semantically similar match to your prompt defined in the verified answer before generating a new response.
 
-:::image type="content" source="media/semantic-model-best-practices/verified-answers-config.png" alt-text="Verified answers configuration panel showing trigger phrases on the left, a linked visual chart in the center, and filter options on the right." lightbox="media/semantic-model-best-practices/verified-answers-config.png":::
+:::image type="content" source="media/semantic-model-best-practices/verified-answers-config.png" alt-text="Screenshot of Verified answers setup in Power BI, showing trigger phrases, a visual chart, and filter options for Island Name and Trip Purpose." lightbox="media/semantic-model-best-practices/verified-answers-config.png":::
 
 #### Example: Handling regional terminology
 
@@ -93,7 +93,7 @@ AI instructions in Prep for AI provide context, business logic, and guidance dir
 
 You can configure these instructions in Power BI Desktop or the Power BI service by selecting **Prep data for AI** from the Home ribbon, and then navigating to the **Add AI instructions** tab. For detailed setup instructions, see [AI Instructions documentation](/power-bi/create-reports/copilot-prepare-data-ai-instructions).
 
-:::image type="content" source="media/semantic-model-best-practices/ai-instructions-config.png" alt-text="AI Instructions panel showing a text field with example business terminology, time period definitions, and analysis defaults for the semantic model." lightbox="media/semantic-model-best-practices/ai-instructions-config.png":::
+:::image type="content" source="media/semantic-model-best-practices/ai-instructions-config.png" alt-text="Screenshot of Power BI Prep data for AI panel with Add AI instructions tab open, showing a text box for entering business terminology and analysis defaults." lightbox="media/semantic-model-best-practices/ai-instructions-config.png":::
 
 AI instructions are unstructured guidance that the LLM interprets, but there's no guarantee it follows them exactly. Clear, specific instructions are more effective than complex or conflicting ones.
 
@@ -123,7 +123,7 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
    Use [Best Practice Analyzer and Semantic Model Memory Analyzer](/power-bi/transform-model/service-notebooks) in a Fabric notebook to identify problems such as incorrect data types, unnecessary columns, high cardinality columns, and inefficient DAX patterns. Add descriptions to tables, columns, and measures to help the LLM understand the purpose of each object included in the AI data schema.
 
-   :::image type="content" source="media/semantic-model-best-practices/memory-analyzer.png" alt-text="Semantic model context menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted." lightbox="media/semantic-model-best-practices/memory-analyzer.png":::
+   :::image type="content" source="media/semantic-model-best-practices/memory-analyzer.png" alt-text="Screenshot of Power BI semantic model menu with Best practice analyzer, Memory analyzer, and Community notebooks options highlighted." lightbox="media/semantic-model-best-practices/memory-analyzer.png":::
 
 1. **Define Prep for AI > AI Data Schema:** Based on the scope of your data agent, configure the AI data schema in Prep for AI by selecting only the tables, columns, and measures relevant to the questions your agent should answer.
 
@@ -137,7 +137,7 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 
 1. **Verify and test DAX:** Response accuracy depends on the generated DAX query. When testing your data agent, review the DAX query in each response to verify it's valid and correctly answers the question. If the results are incorrect, analyze the DAX to identify which configurations (semantic model, AI data schema, verified answers, or AI instructions) need adjustment.
 
-   :::image type="content" source="media/semantic-model-best-practices/dax-query-inspection.png" alt-text="data agent interface showing a user question, natural language response with steps, and the generated DAX query code." lightbox="media/semantic-model-best-practices/dax-query-inspection.png":::
+   :::image type="content" source="media/semantic-model-best-practices/dax-query-inspection.png" alt-text="Screenshot of a data agent interface showing a user query, AI-generated sales response, step tracker, and DAX query code panel." lightbox="media/semantic-model-best-practices/dax-query-inspection.png":::
 
 1. **Configure data agent Instructions:** Add instructions at the data agent level only for guidance that applies across all data sources configured in the agent. This guidance includes general response formatting preferences, cross-source routing rules, common abbreviations, and tone. Don't add semantic model specific instructions here as they're not passed to the DAX generation tool. For guidance on configuring agent instructions, refer to [configuration guidelines](data-agent-configurations.md#data-agent-instructions).
 
@@ -172,6 +172,14 @@ In addition to Prep for AI, the DAX query generation tool also uses metadata fro
 - **Skipping schema refinement:** Large models with many similarly named fields need focused AI data schemas.
 
 - **Overly complex instructions:** Keep instructions focused and specific. The AI interprets but doesn't guarantee following complex, conflicting guidance. Complex instructions can also add to latency.
+
+## Tools
+
+To follow these guidelines, you can use the below tools from the [fabric-toolbox Github repository](https://github.com/microsoft/fabric-toolbox/tree/main/samples/data_agent_checklist_notebooks):
+- [Checklist with recommendations](https://github.com/microsoft/fabric-toolbox/blob/main/samples/data_agent_checklist_notebooks/Semantic%20Model%20Data%20Agent%20Checklist.md). These are guidelines and not all items in the checklist may be applicable for your scenario.
+- [Notebook with collection of utilities](https://github.com/microsoft/fabric-toolbox/blob/main/samples/data_agent_checklist_notebooks/Data%20Agent%20Utilities.ipynb) in one place.
+- Power BI [MCP Server](/power-bi/developer/mcp/) to accelerate development and testing in VS Code
+- [Semantic link labs](https://github.com/microsoft/semantic-link-labs) library to programmatically update the semantic model in Fabric notebook.
 
 ## Additional resources
 
