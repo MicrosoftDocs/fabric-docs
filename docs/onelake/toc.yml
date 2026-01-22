@@ -119,14 +119,16 @@ items:
       href: ./security/data-access-control-model.md
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
-    - name: Table and folder security
-      href: ./security/table-folder-security.md
-    - name: Column-level security
-      href: ./security/column-level-security.md
-    - name: Row-level security
-      href: ./security/row-level-security.md
     - name: SQL analytics endpoint security
       href: sql-analytics-endpoint-onelake-security.md
+    - name: Granular data access control
+      items:
+      - name: Table and folder security
+        href: ./security/table-folder-security.md
+      - name: Column-level security
+        href: ./security/column-level-security.md
+      - name: Row-level security
+        href: ./security/row-level-security.md
   - name: Authorize with a shared access signature (SAS)
     items:
     - name: OneLake SAS overview
