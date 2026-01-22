@@ -15,8 +15,8 @@ Surge protection allows capacity administrators to proactively throttle certain 
  
 Capacity level surge protection allows admins to engage background rejection sooner than the standard system limits, helping prevent capacities from entering deep throttling states. Workspace-level surge protection extends these capabilities by enabling the following:
 
-* Set a maximum capacity unit (CU) spend per workspace, expressed as a percentage, within a rolling 24-hour window.
-* Exclude specific workspaces from both capacity and workspace-level surge protection.
+* Set a maximum capacity unit (CU) spend per workspace, expressed as a percentage, within a rolling 24-hour window. This limit applies to all workspaces unless excluded by tagging them as *Mission Critical*.
+* Exclude specific workspaces from workspace-level surge protection.
 * Manually block a workspace.
 
 ## Prerequisites
@@ -27,11 +27,11 @@ You need to be an admin on the capacity.
 
 Capacity-level surge protection enables admins to trigger background rejection earlier, preventing capacities from entering deep throttling states that require longer recovery times.  Capacity admins set a _background operations rejection threshold_ and a _background operations recovery threshold_ when they enable surge protection.
 
-- The **Background operations rejection threshold** determines when surge protection becomes active. The threshold applies to the _24-hour background percentage_ for the capacity. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
-- The **Background operations recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_. The capacity starts to accept new background operations.
+- The **Background operations rejection threshold** determines when surge protection becomes active. The threshold is compared to the capacity’s 24‑hour background percentage, representing the smoothed average committed utilization projected over the next 24 hours. When the threshold is reached or exceeded, surge protection becomes active. When surge protection is active, the capacity rejects new background operations. When surge protection isn't enabled, the _24-hour background percentage_ is allowed to reach 100% before the capacity rejects new background operations.
+- The **Background operations recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_ you set. At this point, the capacity starts to accept new background operations.
 
 > [!NOTE]
-> Capacity admins can see the 24-hour background percent on the Microsoft Fabric Capacity Metrics app **Compute** page under _Throttling_ on the **Background rejection** chart.  
+> Capacity admins can see the 24-hour background percent on the Microsoft Fabric Capacity Metrics app **Compute** page under _Throttling_ on the **Background rejection** chart. It's also available in Real-time Hub capacity events.  
 
 ## Enable surge protection for a capacity
 
@@ -92,14 +92,14 @@ When capacity-level surge protection is active, background requests are rejected
 - Capacity-level surge protection doesn't stop in progress jobs.
 - _Background rejection threshold_ isn't an upper limit on _24-hours background percentage_. This is because in progress jobs continue to run and report additional usage.
 - If you pause a capacity when it is in an overloaded state, the **System events** table in the Microsoft Fabric Capacity Metrics app may show an **Active NotOverloaded** event after the **Suspended** event. The capacity is still paused. The NotOverloaded event is generated due to a timing issue during the pause action.
-- Capacity-level surge protection doesn't block operations that are billed with Autoscale billing for Spark.
+- Capacity-level surge protection doesn't block operations that are billed with Autoscale.
 - Certain operations, including OneLake activities, remain unaffected by capacity-level surge protection.
 
 ## Workspace-level surge protection
 
 Workspace-level surge protection lets you set compute consumption limits for individual workspaces within your capacity, ensuring no single workspace monopolizes resources and leaving headroom for higher-priority workloads.
 
-It allows you to set automatic detection rules to limit CU usage per workspace. It also allows you to manually block problematic workspaces or exempt mission-critical ones from surge protection.
+It allows you to set automatic detection rules to limit CU usage per workspace. It also allows you to manually block problematic workspaces or exempt mission-critical ones from workspace-level surge protection.
 
 ### Key capabilities
 
@@ -131,7 +131,7 @@ Use the following steps to enable workspace-level surge protection:
 
   - **Available:** Default state, subject to surge protection rules. If a workspace is marked as *Available*, it is in its *default* state. It operates normally and is subject to background surge protection rules.
   
-  - **Mission Critical:** Exempt from workspace consumption limits. This does not prevent throttling if capacity resources are exceeded - instead it overrides capacity and workspace level surge protection for this specific workspace.
+  - **Mission Critical:** Exempt from workspace consumption limits. This does not prevent throttling if capacity resources are exceeded - instead it overrides workspace level surge protection for this specific workspace.
   
   - **Blocked:** All interactive and background operations are rejected. Workspaces can be blocked manually by capacity admins or automatically by detection rules
 
@@ -162,9 +162,11 @@ The following table summarizes the functionality of each workspace state:
   - Mark the workspace as mission critical, or
   - Wait for the block to expire naturally.
 
-- If a workspace is blocked by automatic detection rules, increasing the detection limits or deleting the rule will not unblock a previously blocked workspace. To unblock, navigate to the capacity admin page and manually set the workspace to **Available**.
+- If a workspace is blocked by automatic detection rules, increasing the detection limits or deleting the rule will not unblock a previously blocked workspace. To unblock, navigate to the capacity admin page and manually set the workspace to **Available** once the limit is changed.
 
 - Mission critical status does not override capacity-level surge protection.
+ 
+- Workspace-level rules always evaluate compute usage over a rolling 24-hour window. The window doesn’t reset after a block ends. Once a block period (for example, 4 hours) completes, the rule continues to be evaluated on the rolling 24-hour basis and can be blocked again immediately.
 
 ## Related content
 
