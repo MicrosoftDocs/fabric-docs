@@ -25,7 +25,10 @@ Before setting up a connection, ensure you have:
 
 Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Select a data store to see what it can do and how to set it up.
 
-| Connector | Dataflow Gen2 (source/destination) | Pipeline (copy activity source/destination) | Copy job (source/destination) |
+>[!TIP]
+> For more detailed copy job feature availability, see [supported features by connector for Copy job](copy-job-connectors.md).
+
+| Connector | [Dataflow Gen2](dataflows-gen2-overview.md) (source/destination) | [Pipeline](pipeline-overview.md) (copy activity source/destination) | [Copy job](what-is-copy-job.md) (source/destination) |
 |:--|:-:|:-:|:-:|
 | [Access](connector-access-database-overview.md) | ✓/− |  |  |
 | Acterys: Model Automation & Planning (Beta) | ✓/− |  |  |
