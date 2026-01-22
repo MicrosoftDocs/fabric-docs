@@ -3,7 +3,7 @@ title: API capabilities for Fabric Data Factory's Apache Airflow Job
 description: This article describes the available APIs for Apache Airflow Job in Microsoft Fabric Data Factory.
 author: conxu-ms
 ms.author: conxu
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: airflows
 ms.date: 08/28/2025
 ---

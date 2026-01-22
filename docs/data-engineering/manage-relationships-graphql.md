@@ -5,7 +5,7 @@ description: Learn how to manage relationships in Fabric API for GraphQL, includ
 ms.reviewer: sngun
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom: freshness-kr
 ms.search.form: GraphQL manage relationships
 ms.date: 01/21/2026

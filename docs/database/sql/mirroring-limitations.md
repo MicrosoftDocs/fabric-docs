@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 11/10/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ---
 # Limitations for Fabric SQL database mirroring

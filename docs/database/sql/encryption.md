@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: pivanho
 ms.date: 11/17/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL database security
 ms.custom: references_regions
 ---

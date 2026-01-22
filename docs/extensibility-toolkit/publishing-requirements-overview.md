@@ -3,7 +3,7 @@ title: Publishing Requirements for Microsoft Fabric Workloads
 description: Comprehensive guide to all publishing requirements, validation tools, and processes for Microsoft Fabric workloads and items.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 12/15/2025
 ---
