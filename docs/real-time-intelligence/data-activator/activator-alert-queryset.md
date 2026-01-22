@@ -2,8 +2,6 @@
 title: Create Activator Alerts from KQL Query Results
 description: Learn how to create a Fabric Activator alert from the results of a Kusto Query Language (KQL) query in a KQL Queryset in Real-Time Intelligence.
 #customer intent: As a data analyst, I want to create Activator alerts from a KQL Queryset so that I can receive notifications when specific conditions are met in query results.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: guregini
 ms.topic: how-to
 ms.date: 12/07/2025

@@ -2,9 +2,6 @@
 title: Monitor Eventstream for Stopped Events in Activator
 description: Learn how to monitor eventstreams and create alerts for stopped events using Activator. Set up efficient, cost-effective monitoring with summarized data.
 #customer intent: As a data engineer, I want to create a rule to monitor eventstream activity so that I can receive alerts when data stops flowing.
-author: spelluru
-ms.author: spelluru
-ms.reviewer: spelluru
 ms.date: 01/12/2026
 ms.topic: how-to
 ---
