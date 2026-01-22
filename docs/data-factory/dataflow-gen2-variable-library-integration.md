@@ -4,7 +4,7 @@ description: Overview on how to use Fabric variable libraries inside of a Datafl
 author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/20/2025
 ms.custom: dataflows
 ---

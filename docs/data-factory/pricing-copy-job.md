@@ -4,7 +4,7 @@ description: This article provides details of the pricing model of copy job for 
 ms.reviewer: whhender
 ms.author: yexu
 author: dearandyxu
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: copyjob
 ms.date: 06/24/2025
 ---

@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj, whhender
 ms.date: 01/15/2026
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - references_regions
 ---

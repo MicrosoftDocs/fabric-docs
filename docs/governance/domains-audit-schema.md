@@ -3,7 +3,7 @@ title: Audit schema for domains in Fabric
 description: Learn how changes to domains are recorded and logged so that you can track them in the unified audit log or Fabric activity log.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 03/20/2024
 ---
