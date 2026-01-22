@@ -107,18 +107,16 @@ items:
     href: ./table-apis/delta-table-apis-overview.md
   - name: Getting started with OneLake table APIs for Delta
     href: ./table-apis/delta-table-apis-get-started.md
-- name: Secure and manage data access
+- name: Secure data
   items:
-  - name: OneLake security overview
+  - name: Overview
     href: ./security/get-started-security.md
-  - name: Data access control model
-    href: ./security/data-access-control-model.md
-  - name: Best practices for OneLake security
-    href: ./security/best-practices-secure-data-in-onelake.md
   - name: Configure data access
     items:
-    - name: Get started with OneLake security
+    - name: OneLake security overview
       href: ./security/get-started-onelake-security.md
+    - name: Data access control model
+      href: ./security/data-access-control-model.md
     - name: Create and manage roles
       href: ./security/create-manage-roles.md
     - name: Table and folder security
@@ -127,14 +125,14 @@ items:
       href: ./security/column-level-security.md
     - name: Row-level security
       href: ./security/row-level-security.md
+    - name: SQL analytics endpoint security
+      href: sql-analytics-endpoint-onelake-security.md
   - name: Authorize with a shared access signature (SAS)
     items:
     - name: OneLake SAS overview
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
-  - name: Encrypt data with customer-managed keys
-    href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
   - name: Network security
     items:
     - name: Manage inbound access
@@ -147,6 +145,10 @@ items:
       href: onelake-diagnostics-overview.md
     - name: Plan for disaster recovery and data protection
       href: onelake-disaster-recovery.md
+  - name: Encrypt data with customer-managed keys
+    href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Best practices
+    href: ./security/best-practices-secure-data-in-onelake.md
 - name: OneLake file explorer for Windows
   items:
   - name: OneLake file explorer overview
@@ -177,7 +179,3 @@ items:
     href: /rest/api/fabric/core/onelake-shortcuts
   - name: OneLake data access roles REST API
     href: /rest/api/fabric/core/onelake-data-access-security
-- name: SQL analytics endpoint
-  items:
-    - name: SQL analytics endpoint onelake security
-      href: sql-analytics-endpoint-onelake-security.md

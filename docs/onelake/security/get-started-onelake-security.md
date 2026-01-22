@@ -37,8 +37,9 @@ The preview feature can't be turned off once enabled.
 
 1. Navigate to a lakehouse and select **Manage OneLake security (preview)**.
 1. Review the confirmation dialog. The data access roles preview isn't compatible with the External data sharing preview. If you're ok with the change, select **Continue**.
+1. Once you enable OneLake security, you can [Create and manage OneLake security roles](./create-manage-roles.md) to secure data access to your OneLake items.
 
-To ensure a smooth opt-in experience, all users with read permission to data in the item continue to have read access through a default data access role called **DefaultReader**. With [virtualized role memberships](#assign-virtual-members), all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
+To ensure a smooth opt-in experience, all users with read permission to data in the item continue to have read access through a default data access role called **DefaultReader**. With [virtualized role memberships](./create-manage-roles.md#assign-virtual-members), all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, delete the DefaultReader role or remove the ReadAll permission from the accessing users.  
 
 > [!IMPORTANT]
 > Make sure that any users that are included in a data access role are removed from the DefaultReader role. Otherwise they maintain full access to the data.
@@ -46,6 +47,5 @@ To ensure a smooth opt-in experience, all users with read permission to data in 
 
 ## Related content
 
-* [Fabric Security overview](../../security/security-overview.md)
-* [Fabric and OneLake security overview](./get-started-security.md)
-* [Data access control model](../security/data-access-control-model.md)
+* [Create and manage OneLake security roles](./create-manage-roles.md)
+* [OneLake security data access control model](./data-access-control-model.md)

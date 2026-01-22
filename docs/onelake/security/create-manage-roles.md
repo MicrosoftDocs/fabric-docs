@@ -6,11 +6,11 @@ ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom:
-ms.date: 01/12/2026
+ms.date: 01/16/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 
-# Create and manage roles with OneLake security (preview)
+# Create and manage OneLake security roles (preview)
 
 OneLake security roles let you control who can access specific tables and folders in your Fabric data items. This article walks through how to create, edit, and delete security roles, and how to assign members to those roles. For an overview of OneLake security concepts and permissions, see [OneLake security overview](get-started-security.md).
 
@@ -25,7 +25,8 @@ Role creation and membership assignment take effect as soon as the role is saved
 
 ## Prerequisites
 
-While in preview OneLake security is disabled by default. To enable OneLake security for a specific Fabric item, follow the instructions in [Get started with OneLake security](get-started-onelake-security.md).
+* Fabric Write or Reshare permissions (generally included for Admin or Member workspace users)
+* While in preview OneLake security is disabled by default and needs to be enabled on a per-item basis. For more information, see [Get started with OneLake security](get-started-onelake-security.md).
 
 ## Create a role
 
@@ -57,7 +58,7 @@ Use the following steps to create a OneLake security role.
    1. Select **Browse Lakehouse** or the equivalent for the item that you're working with.
 
       :::image type="content" source="./media/get-started-data-access-roles/browse-lakehouse.png" alt-text="Screenshot that shows the 'browse lakehouse' option to select data.":::
-   
+
    1. Expand the **Tables** and **Files** directories to view data in your lakehouse. 
    1. Check the boxes next to the tables and files that you want the role to apply to.
    1. Select **Add data** to add the selected items to your role.
@@ -113,19 +114,19 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Select the Members in role tab to view the members of the role.
 
-   The **Members** column shows the profile picture and name of the member. 
+   The **Members** column shows the profile picture and name of the member.
 
-   The **Type** column indicates whether the member is a User or Group. 
+   The **Type** column indicates whether the member is a User or Group.
 
-   The **Added using** column denotes whether a user was added via their Email as a member of the role, or included as part of a lakehouse permissions group. For more information about adding users using item permissions, see [Assign virtual members](#assign-virtual-members). 
+   The **Added using** column denotes whether a user was added via their Email as a member of the role, or included as part of a lakehouse permissions group. For more information about adding users using item permissions, see [Assign virtual members](#assign-virtual-members).
 
 1. To edit the members of the role, select **Add members**.
 
-1. To add members manually, enter a name or email in the **Add members to your role** textbox. Select the correct name from the suggested list. Then, select the check icon to confirm your selection, or select the **X** icon to clear the selection. 
+1. To add members manually, enter a name or email in the **Add members to your role** textbox. Select the correct name from the suggested list. Then, select the check icon to confirm your selection, or select the **X** icon to clear the selection.
 
 1. To remove users from the role, select more options (**...**) next to their name and select **Remove from role**.
 
-Making any changes to role membership updates the role immediately. A notification notes the success or failure of any changes. 
+Making any changes to role membership updates the role immediately. A notification notes the success or failure of any changes.
 
 ## Delete a role
 
@@ -159,23 +160,22 @@ The permissions that can be used for virtual members are:
 * Execute
 * ReadAll
 
-To assign users with permission groups, use the following steps: 
+To assign users with permission groups, use the following steps:
 
-1. Select the name of the role you want to assign members to. 
+1. Select the name of the role you want to assign members to.
 
 1. On the role details page, select the **Members in role** tab.
 
 1. Select **Add members**.
 
-1. Select **Advanced configuration**. 
+1. Select **Advanced configuration**.
 
    :::image type="content" source="./media/get-started-data-access-roles/members-advanced-configuration.png" alt-text="Screenshot that shows selecting 'advanced configuration' to add members using permission groups.":::
 
-1. In the **Permission groups** box, select the checkbox next to each permission that you want to include users for. 
+1. In the **Permission groups** box, select the checkbox next to each permission that you want to include users for.
 
-   Each permission group shows a count of how many users are included in that group. 
+   Each permission group shows a count of how many users are included in that group.
 
-   Selecting multiple permission groups includes users with all of the selected required permissions. 
+   Selecting multiple permission groups includes users with all of the selected required permissions.
 
-1. Select **Add** to include the groups and save the role.                
-
+1. Select **Add** to include the groups and save the role.

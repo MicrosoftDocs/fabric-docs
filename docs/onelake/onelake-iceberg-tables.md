@@ -284,5 +284,4 @@ Keep in mind the following temporary limitations when you use this feature:
 ## Related content
 
 - [Use Snowflake to write or read Iceberg tables in OneLake](./onelake-iceberg-snowflake.md).
-- Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
 - Learn more about [OneLake shortcuts](./onelake-shortcuts.md).

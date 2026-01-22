@@ -1,9 +1,9 @@
 ---
 title: "OneLake Security for SQL analytics endpoints (Preview)"
-description: Learn how Microsoft Fabric's OneLake Security enhances data access control with centralized governance or granular SQL-based permissions.
-author: SnehaGunda
-ms.author: sngun
-ms.reviewer: sngun
+description: Learn how Microsoft Fabric's OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
+author: kgremban
+ms.author: kgremban
+ms.reviewer: aamerril
 ms.date: 09/05/2025
 ms.topic: concept-article
 ---
@@ -99,7 +99,7 @@ This synchronization ensures that OneLake security definitions stay authoritativ
 | **RLS policy references a deleted or renamed column** | Error: *Row-level security policy references a column that no longer exists.*Database enters error state until policy is fixed. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected roles, or restore the missing column. | The update will need to be made in the lakehouse where the role was created. |
 | **CLS policy references a deleted or renamed column** | Error: *Column-level security policy references a column that no longer exists.*Database enters error state until policy is fixed. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected roles, or restore the missing column. | The update will need to be made in the lakehouse where the role was created. |
 | **RLS/CLS policy references a deleted or renamed table** | Error: *Security policy references a table that no longer exists.* | No error surfaced; query fails silently if table is missing. | Update or remove one or more affected roles, or restore the missing table. | The update will need to be made in the lakehouse where the role was created. |
-| **DDM (Dynamic Data Masking) policy references a deleted or renamed column** | DDM not supported from OneLake Security, must be implemented through SQL. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected DDM rules, or restore the missing column. | Update the DDM policy in the SQL Analytics Endpoint. |
+| **DDM (Dynamic Data Masking) policy references a deleted or renamed column** | DDM not supported from OneLake security, must be implemented through SQL. | Error: *Invalid column name \<column name\>* | Update or remove one or more affected DDM rules, or restore the missing column. | Update the DDM policy in the SQL Analytics Endpoint. |
 | **System error (unexpected failure)** | Error: *An unexpected system error occurred. Try again or contact support.* | Error: *An internal error has occurred while applying table changes to SQL.* | Retry operation; if issue persists, contact Microsoft Support. | N/A |
 | **User doesn't have permission on the artifact** | Error: *User doesn't have permission on the artifact* | Error: *User doesn't have permission on the artifact* | Provide user with objectID {objectID} permission to the artifact. | The object ID must be an exact match between the OneLake security role member and the Fabric item permissions. If a group is added to the role membership, then that same group must be given the Fabric Read permission. Adding a member from that group to the item does not count as a direct match. |
 | **User principal is not supported.** | Error: *User principal is not supported.* | Error: *User principal is not supported.* | Please remove user {username} from role DefaultReader | This error occurs if the user is no longer a valid Entra ID, such as if the user has left your organization or been deleted. Remove them from the role to resolve this error. |
@@ -180,7 +180,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 ## Limitations
 
-* **Applies only to readers**: OneLake Security governs users accessing data as *Viewers*. Users in other workspace roles (Admin Member, or Contributor) bypass OneLake Security and retain full access.
+* **Applies only to readers**: OneLake security governs users accessing data as *Viewers*. Users in other workspace roles (Admin, Member, or Contributor) bypass OneLake security and retain full access.
 
 * **SQL objects do not inherit ownership**: Shortcuts are surfaced in SQL analytics endpoint as tables. When accessing these tables, directly or through views, stored procedures, and other derived SQL objects don't carry object-level ownership; all
   permissions are checked at runtime to prevent the security bypass.
@@ -195,7 +195,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * **Most-permissive access prevails**: When users belong to multiple groups or roles, the most permissive effective permission is honored *Example*: If a user has both DENY through one role and GRANT through another, the GRANT takes precedence.
 
-* **Delegated mode limitations**: In Delegated mode, metadata sync on shortcut tables can fail if the source item has OneLake Security policies that don't grant full table access to the item owner.
+* **Delegated mode limitations**: In Delegated mode, metadata sync on shortcut tables can fail if the source item has OneLake security policies that don't grant full table access to the item owner.
 
 * **DENY behavior**: When multiple roles apply to a single shortcut table, the intersection of permissions follows SQL Server semantics: DENY overrides GRANT. This can produce unexpected access results.
 
@@ -209,7 +209,7 @@ The access mode determines how data access is authenticated and enforced when qu
 
     * Some expressions for RLS filtering aren't supported in OneLake and it might allow unauthorized data access.
   
-    * Dropping the column used on the filter expression invalidates the RLS and Metadata Sync will be stale until the RLS is fixed on OneLake Security Panel.
+    * Dropping the column used on the filter expression invalidates the RLS and Metadata Sync will be stale until the RLS is fixed on OneLake security panel.
 
     * For Public Preview, we only support single expression tables. Dynamic RLS and Multi-Table RLS aren't supported at the moment.
 
@@ -217,13 +217,13 @@ The access mode determines how data access is authenticated and enforced when qu
 
     * CLS works by maintaining an allowlist of columns. If an allowed column is removed or renamed, the CLS policy becomes invalid.
 
-    * When CLS is invalid, metadata sync is blocked until the CLS rule is fixed in the OneLake Security panel.
+    * When CLS is invalid, metadata sync is blocked until the CLS rule is fixed in the OneLake security panel.
 
   * Metadata or permission sync failure
 
     * If there are changes to the table, like renaming a column, security isn't replicated on the new object, and you receive UI errors showing that the column doesn't exist.
 
-* **Table renames do not preserve security policies**: If OneLake Security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies won't be migrated automatically. This can result in unintended data exposure until policies are reapplied.
+* **Table renames do not preserve security policies**: If OneLake security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies won't be migrated automatically. This can result in unintended data exposure until policies are reapplied.
 
 * OneLake security roles can't have names longer than 124 characters; otherwise, security sync can't synchronize the roles.
  
