@@ -100,7 +100,7 @@
                 "real-time-intelligence/digital-twin-builder/**/*.md": "baanders",
                 "real-time-intelligence/digital-twin-builder/**/*.yml": "baanders",
                 "real-time-intelligence/data-activator/**/*.md": "lorihollasch",
-                "real-time-intelligence/data-activator/**/*.yml": "lorihollasch ",
+                "real-time-intelligence/data-activator/**/*.yml": "lorihollasch",
                 "security/**/*.md": "msmimart",
                 "security/**/*.yml": "msmimart",
                 "workload-development-kit/**/*.md": "billmath",
