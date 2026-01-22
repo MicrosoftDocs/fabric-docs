@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 01/21/2026
 
 #customer intent: As a Fabric administrator, I want to enable and manage inbound access protection for my organization's workspaces to ensure secure network connections and control access at the tenant level.
 

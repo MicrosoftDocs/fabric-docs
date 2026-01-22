@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2026
+ms.date: 01/21/2026
 
 #customer intent: As a Fabric admin, I want a unified overview of all inbound protection features across both tenant and workspace scopes, helping me decide which controls to use and how they interact.
 
@@ -59,13 +59,13 @@ Tenant admins can restrict public access only when tenant-level private links ar
 ### Table 1: Access to the Fabric portal based on network settings
 
 | Tenant-level public access setting | Access from | Can I access the Fabric portal? | Can I access Fabric REST APIs? |
-|--|--|--|--|
+|:--:|:--:|:--:|:--:|
 | Allowed | Public internet | Yes | Yes, using api.fabric.microsoft.com |
 | Allowed | Network with tenant private link | Yes | Yes, using the tenant-specific FQDN |
 | Allowed | Network with workspace private link | Yes | Yes, using the workspace-specific FQDN |
 | Allowed | Allowed IP | Yes | Yes, using api.fabric.microsoft.com |
-| Restricted | Public Internet | No | No |
-| Restricted | Network with tenant private link | Yes | Yes, using Tenant-specific FQDN or api.fabric.microsoft.com endpoint, and only if the client allows outbound public access |
+| Restricted | Public internet | No | No |
+| Restricted | Network with tenant private link | Yes | Yes, using tenant-specific FQDN or api.fabric.microsoft.com endpoint, and only if the client allows outbound public access |
 | Restricted | Network with workspace private link | No | Yes, using the workspace-specific FQDN |
 | Restricted | Allowed public IP at workspace-level | No | Yes, using api.fabric.microsoft.com |
 | Restricted | Network with both tenant private link and workspace private link | Yes | Yes, using api.fabric.microsoft.com |
