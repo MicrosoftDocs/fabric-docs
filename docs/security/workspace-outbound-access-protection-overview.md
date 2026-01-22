@@ -84,8 +84,6 @@ This section outlines important considerations and limitations when using worksp
 
 * If outbound access protection is enabled on a workspace, workspace admins can't add unsupported artifacts. Outbound access protection must be disabled first, and then workspace admins can add unsupported artifacts.
 
-* If the workspace is part of Deployment Pipelines, workspace admins can't enable outbound access protection because Deployment Pipelines are unsupported. Similarly, if outbound access protection is enabled, the workspace can't be added to Deployment Pipelines.
-
 ### General limitations
 
 * Workspace outbound access protection isn't supported for existing workspaces that already contain a semantic model in a lakehouse.
