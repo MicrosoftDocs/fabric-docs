@@ -94,7 +94,7 @@ To define the Replication Flow in SAP Datasphere, a Kafka connection needs to be
 
     Select **Save** to get this new Kafka connection created after filling in all needed information.
 
-    :::image type="content" source="media/replicate-data-with-replication-flow/connection-properties.png" alt-text="Screenshot of showing connection properties of Apache kafka" lightbox="media/replicate-data-with-replication-flow/connection-properties.png":::
+    :::image type="content" source="media/replicate-data-with-replication-flow/connection-properties.png" alt-text="Screenshot of showing connection properties of Apache kafka." lightbox="media/replicate-data-with-replication-flow/connection-properties.png":::
 
 ## Create Replication Flow with Kafka connection as target
 
