@@ -4,7 +4,7 @@ description: Learn how to connect to mirrored databases behind a private endpoin
 author: kgremban
 ms.author: kgremban
 ms.reviewer: whhender, preshah
-ms.date: 12/19/2025
+ms.date: 01/22/2026
 ms.topic: how-to
 ---
 
@@ -12,7 +12,7 @@ ms.topic: how-to
 
 The mirrored Azure Databricks catalog item can connect to Azure Databricks workspaces behind a private endpoint. You can connect securely to such workspaces through a virtual network (VNet) data gateway, ensuring seamless and compliant access over private network paths.
 
-The virtual network data gateway securely routes traffic between the mirrored Azure Databricks catalog item and the Azure Databricks workspace through a private endpoint within the your virtual network, leveraging Azure backbone connectivity. This ensures all communication remains isolated within private IP spaces, avoiding public network exposure. For more information, see [What is a virtual network (VNet) data gateway?](/data-integration/vnet/overview)
+The virtual network data gateway securely routes traffic between the mirrored Azure Databricks catalog item and the Azure Databricks workspace through a private endpoint within your virtual network, leveraging Azure backbone connectivity. This architecture ensures that all communication remains isolated within private IP spaces, avoiding public network exposure. For more information, see [What is a virtual network (VNet) data gateway?](/data-integration/vnet/overview)
 
 You can also connect to your ADLS storage accounts that are behind a private endpoint. For more information, see [Enable network security access for your Azure Data Lake Storage Gen2 account](azure-databricks-tutorial.md#enable-network-security-access-for-your-azure-data-lake-storage-gen2-account).
 
@@ -20,7 +20,7 @@ You can also connect to your ADLS storage accounts that are behind a private end
 
 * Microsoft Fabric capacity
 * An Azure Databricks workspace deployed in a virtual network. Follow the instructions in [Deploy Azure Databricks in your Azure virtual netowrk (VNet injection)](/azure/databricks/security/network/classic/vnet-inject).
-* Private connectivity for your workspace. Follow the instructions in [Configure private connectivity for an existing workspace](/azure/databricks/security/network/front-end/front-end-private-connect#-configure-private-connectivity-for-an-existing-workspace).
+* Private connectivity for your Databricks workspace. Follow the instructions in [Configure private connectivity for an existing workspace](/azure/databricks/security/network/front-end/front-end-private-connect#-configure-private-connectivity-for-an-existing-workspace).
 
 ## Limitations
 
@@ -32,13 +32,11 @@ You can also connect to your ADLS storage accounts that are behind a private end
 
 Create a virtual network data gateway to enable the connection between your Fabric workspace and your private Azure Databricks workspace.
 
-1. Create a virtual network data gateway. Follow the instructions in [Create virtual network data gateways](/data-integration/vnet/create-data-gateways).
-
-   Create the data gateway with the following required configurations:
+1. Create a virtual network data gateway. Follow the instructions in [Create virtual network data gateways](/data-integration/vnet/create-data-gateways). Create the data gateway with the following required configurations:
 
    * Create the virtual network data gateway in the same region as your Azure Databricks workspace.
 
-   * Ensure that the private endpoint to the Azure Databricks workspace is reachable by the virtual network data gateway. One way is to deploy the virtual network data gateway in the same virtual network where the private endpoint was created.
+   * Ensure that the virtual network data gateway can reach the private endpoint to the Azure Databricks workspace. One way to achieve this reachability is to deploy the virtual network data gateway in the same virtual network where you created the private endpoint.
 
 ## Create an Azure Databricks connection
 
