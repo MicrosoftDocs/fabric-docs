@@ -54,7 +54,7 @@ You can configure workspace IP firewall rules using either the Fabric portal or 
 
 1. Enter a **Rule name**, choose the **Type** of IP address (**Single IP**, **IP range**, or **CIDR**), and enter the address in the **Address** box. Repeat this step to add multiple rules as needed.
 
-   :::image type="content" source="media/security-workspace-level-firewall-set-up/add-ip-address-rule.png" alt-text="Screenshot showing the Add IP address rule dialog." lightbox="media/security-workspace-level-firewall-set-up/add-ip-address-rule.png":::
+   :::image type="content" source="media/security-workspace-level-firewall-set-up/rule-name-list.png" alt-text="Screenshot showing the Add IP address rule dialog." lightbox="media/security-workspace-level-firewall-set-up/rule-name-list.png":::
 
 1. Select **Apply**.
 

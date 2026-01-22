@@ -94,7 +94,7 @@ The following table illustrates how various combinations of security configurati
 
 For each scenario in this table, the user wants to access the IP firewall settings for the workspace either through the Fabric portal or the Fabric API (GET and SET operations).
 
-| Scenario | Tenant private link | Tenant: Public internet | Workspace: Allow private link and public access | Workspace: Allow private link but block public access | Portal access? | API access? |
+| Scenario | Tenant private link | Tenant public internet | Workspace private link and public access allowed | Workspace private link (public access blocked) | Portal access to workspace IP firewall settings? | API access to workspace IP firewall settings? |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | 1 | Yes | Blocked | Yes | - | Yes, from the network with tenant private link only | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
 | 2 | Yes | Blocked | Yes | - | Yes, using network with tenant private link | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
@@ -118,10 +118,9 @@ The following table shows how IP firewall rules affect workspace access when req
 For each scenario in this table:
 
 - The workspace has IP firewall rules configured with an allow list of public IP addresses. (Workspace private links could also be in use, but aren't relevant to the scenarios shown.)
-- The user wants to access the workspace and workspace items.
-- The user makes access attempts from an allowed IP address listed in the workspace's firewall rules.
+- The user attempts to access the workspace and its items from an allowed IP address in the workspace's firewall rules.
 
-| Tenant-level inbound configuration | Access from | Portal access? | API access? |
+| Tenant-level inbound configuration | Access from | Portal access to workspace and items? | API access to workspace and items? |
 |---|:--:|:--:|:--:|
 | Tenant Private Link: Enabled<br>Tenant Block Public Access: Enabled | Allowed IP | No | Yes, using api.fabric.microsoft.com |
 | Tenant Private Link: Enabled<br>Tenant Block Public Access: Enabled | Allowed IP | No | Yes, using api.fabric.microsoft.com |
