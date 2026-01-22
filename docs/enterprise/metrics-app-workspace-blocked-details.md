@@ -14,7 +14,7 @@ ms.date: 08/05/2025
 
 The **Workspace Blocked Details** page in the Microsoft Fabric Capacity Metrics app provides a detailed analysis of the workspaces blocked in a capacity due to Workspace level surge protection over the last 14 days. This page allows you to visualize the number of users and operations affected due to blocked state of the workspaces.
 
-You can navigate to this page only by drilling through from the [health](metrics-app-health-page.md) page. You can drill through from any data point selection to the [TimePoint Summary](metrics-app-timepoint-summary-page) page for further details on rejected background requests and operations due to surge protection.
+You can navigate to this page only by drilling through from the [health](metrics-app-health-page.md) page. You can drill through from any data point selection to the [TimePoint Summary](metrics-app-timepoint-summary-page.md) page for further details on rejected background requests and operations due to surge protection.
 
 ## Cards
 
