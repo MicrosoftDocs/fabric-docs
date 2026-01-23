@@ -21,7 +21,7 @@ The *preview experience* in ontology (preview) lets you view and explore your in
 Before using the preview experience, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-    * **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
+* **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
 * An ontology (preview) item with [data binding](how-to-bind-data.md) completed.
 
 ## Key concepts
