@@ -38,19 +38,22 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
     To open rules from the ontology overview, select **...** next to an entity type name to open its options menu. Hover over **Add and view rule**, then select **View rules**.
 
-    :::image type="content" source="media/how-to-use-rules/view-rules-ontology.png" alt-text="Screenshot of View rules from the ontology page.":::
+    :::image type="content" source="media/how-to-use-rules/view-rules-ontology.png" alt-text="Screenshot of View rules from the ontology page." lightbox="media/how-to-use-rules/view-rules-ontology.png":::
 
     To open rules from the preview experience, select **Add and view rules > View rules** from the menu ribbon.
 
-    :::image type="content" source="media/how-to-use-rules/view-rules-preview.png" alt-text="Screenshot of View rules from the preview page.":::
+    :::image type="content" source="media/how-to-use-rules/view-rules-preview.png" alt-text="Screenshot of View rules from the preview page." lightbox="media/how-to-use-rules/view-rules-preview.png":::
 
 1. The **Rules** panel opens, showing all the rules associated with an entity type. 
 
-    :::image type="content" source="media/how-to-use-rules/rules-panel.png" alt-text="Screenshot of Rules panel.":::
+    :::image type="content" source="media/how-to-use-rules/rules-panel.png" alt-text="Screenshot of Rules panel." lightbox="media/how-to-use-rules/rules-panel.png":::
 
-1. By default, ontology rules are saved to a new Fabric Activator item. If you want, you can change the name of the new Fabric Activator item, or choose an existing Activator item to use instead.
+1. By default, ontology rules are saved to a new Fabric Activator item. If you want to make changes, select **Edit** from the **Rules** panel. From there, you can change the name of the new Fabric Activator item or choose an existing Fabric Activator item to use instead.
 
-    :::image type="content" source="media/how-to-use-rules/edit-activator.png" alt-text="Screenshot of selecting the Activator item.":::
+    :::image type="content" source="media/how-to-use-rules/edit-activator.png" alt-text="Screenshot of selecting the Fabric Activator item.":::
+
+    >[!NOTE]
+    >We recommend saving all rules for an ontology to the same workspace and Fabric Activator item.
 
 1. In the main **Rules** panel, create a new rule with the **Add rule** button.
 
@@ -58,10 +61,7 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
 1. Configure the rule, including conditions, actions, and save location. For more information about these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
 
-    :::image type="content" source="media/how-to-use-rules/rule-configuration.png" alt-text="Screenshot of configuring the rule.":::
-
-    >[!NOTE]
-    >e recommend saving all rules for a particular use case/ontology to the same workspace and item.
+    :::image type="content" source="media/how-to-use-rules/rule-configuration.png" alt-text="Screenshot of configuring the rule." lightbox="media/how-to-use-rules/rule-configuration.png":::
 
     When you're finished configuring, select **Create**.
 
