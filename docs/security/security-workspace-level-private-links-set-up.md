@@ -188,11 +188,14 @@ You can optionally deny public access to the workspace. When the workspace is se
 1. In the Fabric portal, select the workspace you want to configure.
 1. Select **Workspace settings**.
 1. Select **Inbound networking**.
-1. Under **Workspace connection settings**, select **Allow connections only from workspace level private links**.
+1. Under **Workspace connection settings**, select **Allow connections from selected networks and workspace level private links**.
 
    :::image type="content" source="media/security-workspace-level-private-links-set-up/workspace-connection-settings.png" alt-text="Screenshot showing the Workspace connection settings with the radio button selected for the option Allow connections only from workspace level private links." lightbox="media/security-workspace-level-private-links-set-up/workspace-connection-settings.png":::
 
-1. Select **Apply**.
+1. Select **Apply**. Public internet access is now blocked, and only connections through workspace-level private links can access the workspace. 
+
+> [!NOTE]
+> To grant specific public IP addresses access to the workspace, create an allow list by editing the **Address configurations**. For more information, see [Set up and manage workspace IP firewall rules](./security-workspace-level-firewall-set-up.md).
 
 ### [API](#tab/api)
 

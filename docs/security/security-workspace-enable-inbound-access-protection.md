@@ -28,15 +28,17 @@ If the tenant admin chooses to enable these settings, workspace admins can confi
 
 ## Enable workspace inbound access protection on your tenant
 
-1. Open the admin portal and go to the tenant settings.
+1. Open the admin portal by selecting the **Settings** gear, then **Admin portal**.
 
-1. Find and expand the tenant settings you want to enable:
+1. In **Tenant settings**, use the **Filter by keyword** search box to find the **Advanced networking** settings.
 
-   * **Configure workspace-level inbound network rules** tenant setting.
-   * **Configure workspace-level IP firewall** tenant setting.
-
-1. Switch the toggle to **Enabled**.
+1. Expand the section **Configure workspace-level inbound network rules**. To allow workspace admins to restrict inbound public access to their workspaces, switch the toggle to **Enabled**. Then select **Apply**.
 
    :::image type="content" source="./media/security-workspace-enable-inbound-access-protection/enable-toggle-inbound-network-rules.png" alt-text="Screenshot showing the toggle enabled for inbound network rules." :::
 
-1. Select **Apply**. It could take up to 15 minutes to take effect. 
+1. Expand the section **Configure workspace IP firewall rules**. To enable workspace admins to configure IP firewall rules for their workspaces, switch the toggle to **Enabled**. Then select **Apply**.
+
+   :::image type="content" source="./media/security-workspace-enable-inbound-access-protection/enable-toggle-ip-firewall.png" alt-text="Screenshot showing the toggle enabled for IP firewall." :::
+
+> [!NOTE]
+> Changes can take up to 15 minutes to take effect.

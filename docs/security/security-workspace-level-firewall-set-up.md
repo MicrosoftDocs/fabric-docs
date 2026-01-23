@@ -22,9 +22,11 @@ This article describes how to set up and manage workspace IP firewall rules in F
 
 Before you configure workspace IP firewall rules, ensure the following requirements are met:
 
-* **Tenant setting enabled**: A Fabric administrator must enable the **Configure workspace-level IP firewall** tenant setting. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
+* **Tenant setting enabled**: A Fabric administrator must enable the **Configure workspace IP firewall rules** tenant setting. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 
 * **Workspace admin role**: You must be a workspace admin to configure IP firewall rules.
+
+* **Workspace license assignment**: The workspace must be assigned to either a Fabric capacity or trial capacity. You can check assignment by going to the workspace settings and selecting **License info**.
 
 * **Resource provider registration**: If this is the first time setting up workspace-level network features in your tenant, re-register the **Microsoft.Fabric** resource provider in Azure for subscriptions containing the workspace resources. In the Azure portal, go to **Subscriptions** > **Settings** > **Resource providers**, select **Microsoft.Fabric**, and then select **Re-register**.
 
@@ -34,7 +36,7 @@ You can configure workspace IP firewall rules using either the Fabric portal or 
 
 ### [Fabric portal](#tab/fabric-portal-1)
 
-1. Select the workspace where you want to configure IP firewall rules, or [create a workspace in Fabric](/fabric/fundamentals/create-workspaces). Make sure the workspace is assigned to either a Fabric capacity or trial capacity. You can check assignment by going to the workspace settings and selecting **License info**. 
+1. Select the workspace where you want to configure IP firewall rules, or [create a workspace in Fabric](/fabric/fundamentals/create-workspaces). 
 
 1. Select **Workspace settings**. 
 
