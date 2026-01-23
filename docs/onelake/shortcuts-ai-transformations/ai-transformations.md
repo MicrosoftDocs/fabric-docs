@@ -13,7 +13,7 @@ ms.topic:    how-to # Add the ms.topic value
 ms.date:     07/16/2025
 ---
 
-# Shortcut Transformations (AI-powered)
+# Shortcut transformations (AI-powered)
 
 > [!IMPORTANT]
 > AI transforms for OneLake shortcuts are currently **Public Preview**. Features and behavior may change before general availability.
