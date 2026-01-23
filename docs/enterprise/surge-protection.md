@@ -31,7 +31,7 @@ Capacity-level surge protection enables admins to trigger background rejection e
 - The **Background operations recovery threshold** determines when surge protection stops being active. Surge protection stops being active when the _24-hour background percentage_ drops below the _background recovery threshold_ you set. At this point, the capacity starts to accept new background operations.
 
 > [!NOTE]
-> Capacity admins can see the 24-hour background percent on the Microsoft Fabric Capacity Metrics app **Compute** page under _Throttling_ on the **Background rejection** chart. It's also available in Real-time Hub capacity events.  
+> Capacity admins can see the 24-hour background percent on the Microsoft Fabric Capacity Metrics app **Compute** page under _Throttling_ on the **Background rejection** chart. It's also available in [Real-time Hub capacity events](../real-time-hub/explore-fabric-capacity-overview-events.md).  
 
 ## Enable surge protection for a capacity
 
@@ -143,6 +143,10 @@ The following table summarizes the functionality of each workspace state:
 | **Mission critical** | High‑priority workspace exempt from capacity‑level surge protection rules. *Note: Overall capacity‑level throttling still applies once CU limits are reached.* | No | No | Important workloads that must continue running even during spikes. |
 | **Blocked** | Workspace is manually or automatically blocked; all operations are rejected. | N/A | N/A | Workspaces that exceeded CU limits or were manually paused by an admin. |
 
+## Notifications
+
+Workspace-level surge protection lets you enable banner notifications that appear at the top of the workspace when it’s blocked. To configure this setting, navigate to your **Admin portal**, open **Capacity settings**. Under the **Notification** section, turn on **Display a banner to all users of the workspace**.
+
 ### Considerations and limitations for workspace-level surge protection
 - Workspace-level surge protection currently doesn’t apply to the following items:
   - Dataflows Gen1
@@ -152,11 +156,9 @@ The following table summarizes the functionality of each workspace state:
   - Activator (new Activators can’t be created but existing ones may continue to work)
   - Dataflow Gen 2 editing (refreshes will be blocked)
 
-- If a capacity is scaled up or down your workspace limits remain set based on the previous SKU size (e.g. 5% of an F32). If you wish to change the limit based on the new size (e.g. 5% of an F64) you must recreate the rule
-
 - Autoscale compute is excluded from workspace limit calculations.
   
-- Checks are made against the limit every 15 minutes, so workspace limits should be considered soft limits.
+- Checks are made against the limit every 5 minutes, so workspace limits should be considered soft limits.
 
 - If a workspace is blocked by your workspace limit rules and you wish to unblock it, use one of the following options:
   - Mark the workspace as mission critical, or
