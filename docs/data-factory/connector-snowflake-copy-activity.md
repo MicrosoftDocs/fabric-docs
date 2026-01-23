@@ -4,7 +4,7 @@ description: This article explains how to copy data using Snowflake.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/11/2025
+ms.date: 01/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -183,6 +183,28 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Snowflake
+
+When copying data from Snowflake, the following mappings are used from Snowflake data types to interim data types used by the service internally.
+
+| Snowflake data type | Interim service data type |
+|--------------------|---------------------------------------------|
+| NUMBER (p,0)       | Decimal                                     |
+| NUMBER (p,s where s>0) | Decimal                                 |
+| FLOAT              | Double                                      |
+| VARCHAR            | String                                      |
+| CHAR               | String                                      |
+| BINARY             | Byte[]                                      |
+| BOOLEAN            | Boolean                                     |
+| DATE               | DateTime                                    |
+| TIME               | TimeSpan                                    |
+| TIMESTAMP_LTZ      | DateTimeOffset                              |
+| TIMESTAMP_NTZ      | DateTimeOffset                              |
+| TIMESTAMP_TZ       | DateTimeOffset                              |
+| VARIANT            | String                                      |
+| OBJECT             | String                                      |
+| ARRAY              | String                                      |
 
 ## Table summary
 
