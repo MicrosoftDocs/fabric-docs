@@ -121,7 +121,7 @@ Use the following steps to enable workspace-level surge protection:
    - **Rejection Threshold**: CU limit that a single workspace can consume. It is represented as a percentage of the total CU available to the capacity. For example, an F2 SKU provides 2CU seconds per second, meaning 48CU hours per day. A 5% rejection limit would be equal to 2.4CU hours per day.
    - **Block**: When CU consumption by a single workspace reaches the rejection threshold, that workspace is placed in a **Blocked** state and rejects new operation requests. You can block the workspace indefinitely or for a specified period (in hours).
 
-   :::image type="content" source="media\surge-protection\surge-protection-settings.png" alt-text="Screenshot of surge protection setting panel" lightbox="media\surge-protection\surge-protection-settings.png":::
+   :::image type="content" source="media\surge-protection\surge-protection-settings.png" alt-text="Screenshot of surge protection setting panel." lightbox="media\surge-protection\surge-protection-settings.png":::
 
 ### Manual workspace controls
 
@@ -164,7 +164,7 @@ The following table summarizes the functionality of each workspace state:
 
 - If a workspace is blocked by automatic detection rules, increasing the detection limits or deleting the rule will not unblock a previously blocked workspace. To unblock, navigate to the capacity admin page and manually set the workspace to **Available** once the limit is changed.
 
-- Mission critical status does not override capacity-level surge protection.
+- Mission-critical status does not override capacity-level surge protection.
  
 - Workspace-level rules always evaluate compute usage over a rolling 24-hour window. The window doesn’t reset after a block ends. Once a block period (for example, 4 hours) completes, the rule continues to be evaluated on the rolling 24-hour basis and can be blocked again immediately.
 
