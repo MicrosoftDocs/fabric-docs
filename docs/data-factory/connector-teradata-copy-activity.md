@@ -4,7 +4,7 @@ description: This article explains how to copy data using Teradata.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/12/2025
+ms.date: 01/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -132,6 +132,52 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Teradata
+
+When copying data from Teradata, the following mappings are used from Teradata data types to interim data types used by the service internally.
+
+| Teradata data type | Interim service data type |
+|:--- |:--- |
+| BigInt | Int64 |
+| Blob | Byte[] |
+| Byte | Byte[] |
+| ByteInt | Int16 |
+| Char | String |
+| Clob | String |
+| Date | Date |
+| Decimal | Decimal   |
+| Double | Double |
+| Graphic | String |
+| Integer | Int32 |
+| Interval Day  | TimeSpan |
+| Interval Day To Hour | TimeSpan |
+| Interval Day To Minute | TimeSpan |
+| Interval Day To Second | TimeSpan |
+| Interval Hour | TimeSpan |
+| Interval Hour To Minute | TimeSpan |
+| Interval Hour To Second | TimeSpan |
+| Interval Minute | TimeSpan |
+| Interval Minute To Second | TimeSpan |
+| Interval Month | String |
+| Interval Second | TimeSpan |
+| Interval Year | String |
+| Interval Year To Month | String |
+| Number | Double |
+| Period (Date) | String |
+| Period (Time) | String |
+| Period (Time With Time Zone) | String |
+| Period (Timestamp) | String |
+| Period (Timestamp With Time Zone) | String |
+| SmallInt | Int16 |
+| Time | Time |
+| Time With Time Zone | String   |
+| Timestamp | DateTime |
+| Timestamp With Time Zone | DateTimeOffset |
+| VarByte | Byte[] |
+| VarChar | String |
+| VarGraphic | String |
+| Xml | String |
 
 ## Parallel copy from Teradata
 
