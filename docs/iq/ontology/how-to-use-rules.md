@@ -20,7 +20,7 @@ Rules transform ontologies from static information models to dynamic, operationa
 
 Before defining rules, make sure you have the following prerequisites:
 
-* A [Fabric workspace](../../fundamentals/create-workspaces) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
+* A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * **Ontology item (preview)** enabled on your tenant.
 * An ontology (preview) item with [data binding](how-to-bind-data.md) completed for at least one time series property.
 
@@ -30,7 +30,7 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
 * *Entity type*
 * *Rule*
-* [Fabric Activator?](../../real-time-intelligence/data-activator/activator-introduction.md)
+* *[Fabric Activator](../../real-time-intelligence/data-activator/activator-introduction.md)*
 
 ## Create a rule
 
@@ -48,13 +48,13 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
     :::image type="content" source="media/how-to-use-rules/rules-panel.png" alt-text="Screenshot of Rules panel.":::
 
-1. By default, ontology rules are saved to a new Fabric Activator item. If you want to change that, select **Edit** to choose an existing Activator item, or change the name of the new one.
+1. By default, ontology rules are saved to a new Fabric Activator item. If you want, you can change the name of the new Fabric Activator item, or choose an existing Activator item to use instead.
 
-    :::image type="content" source="media/how-to-use-rules/edit-activator.png" alt-text="Screenshot of the Activator configuration.":::
+    :::image type="content" source="media/how-to-use-rules/edit-activator.png" alt-text="Screenshot of selecting the Activator item.":::
 
 1. In the main **Rules** panel, create a new rule with the **Add rule** button.
 
-    :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of the Activator configuration.":::
+    :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of adding the rule.":::
 
 1. Configure the rule, including conditions, actions, and save location. For more information about these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
 

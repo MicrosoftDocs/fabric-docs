@@ -31,7 +31,7 @@ The preview experience uses the following ontology (preview) concepts. For defin
 * *Entity type*
 * *Entity instance*
 * *Preview experience*
-* [Graph in Microsoft Fabric](../../graph/overview.md)
+* *[Graph in Microsoft Fabric](../../graph/overview.md)*
 
 ## Access preview experience
 
