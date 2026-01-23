@@ -1,8 +1,6 @@
 ---
 title: Assign data to objects in Activator
 description: Learn how to assign data to objects in Activator and improve your data management capabilities.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Activator Object Creation

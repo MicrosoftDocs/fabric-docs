@@ -1,8 +1,6 @@
 ---
 title: Overview of Activator rules
 description: Learn about Fabric Activator rules. Learn what they are and how to create them on events, properties, and objects. Use rules to get notifications about your data and to automate workflows.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Rule Creation
