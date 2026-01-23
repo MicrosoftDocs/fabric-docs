@@ -1,8 +1,6 @@
 ---
 title: Detection conditions in Activator
 description: Understand how detection settings in Activator rules operate and learn how to configure them effectively.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 11/25/2024
