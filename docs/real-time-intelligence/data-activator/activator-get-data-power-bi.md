@@ -1,8 +1,6 @@
 ---
 title: Create Power BI alerts and refine them in Fabric Activator  
 description: Discover how to create Power BI alerts, refine them in Fabric Activator, and enhance your workflows with advanced data analysis capabilities.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.custom: FY25Q1-Linter
 ms.date: 11/16/2025

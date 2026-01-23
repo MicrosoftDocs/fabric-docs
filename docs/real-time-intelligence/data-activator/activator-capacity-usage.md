@@ -1,10 +1,7 @@
 ---
 title: Activator capacity consumption, usage reporting, and billing
 description: 'Activator is part of Microsoft Fabric Real-Time Intelligence and billing is based on the consumption of various resources. This article reviews the types of consumption activities and impact on billing. '
-author: galir
-ms.author: spelluru
 ms.service: fabric
-ms.reviewer: galir
 ms.topic: concept-article
 ms.date: 11/12/2024
 ms.subservice: rti-activator
