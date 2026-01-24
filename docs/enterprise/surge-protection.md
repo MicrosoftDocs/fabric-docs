@@ -127,6 +127,8 @@ Use the following steps to enable workspace-level surge protection:
 
 - In the **Admin Portal**, under **Capacity settings**, select **Fabric Capacity**.
 - In the **workspaces** table at the bottom, click the gear icon in the **Actions** column to access workspace settings.
+  :::image type="content" source="media\surge-protection\workspace-actions.png" alt-text="Screenshot of surge protection setting panel." lightbox="media\surge-protection\workspace-actions.png":::
+  
 - Workspaces can be in one of the following 3 states:
 
   - **Available:** Default state, subject to surge protection rules. If a workspace is marked as *Available*, it is in its *default* state. It operates normally and is subject to background surge protection rules.
