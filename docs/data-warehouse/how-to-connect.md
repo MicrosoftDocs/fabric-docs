@@ -23,6 +23,7 @@ To get started, you need access to a [[!INCLUDE [fabric-se](includes/fabric-se.m
 1. Open the **Settings** of your warehouse or SQL analytics endpoint.
 1. In the **Settings** window, select the **SQL endpoint** page.
 1. Copy the **SQL connection string** and use it to connect externally to the item from Power BI desktop, applications, or client tools.
+1. Always provide the warehouse name as the **Initial Catalog** or **Database name** when you connect.
 
    :::image type="content" source="media/how-to-connect/connection-string.png" alt-text="Screenshot from the Fabric portal of the Settings window, SQL endpoint page.":::
 
@@ -34,9 +35,11 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media/connectivity/object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu.":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Your server name looks something like `<unique identifier>.datawarehouse.fabric.microsoft.com`. Select **Connect** and proceed with the appropriate credentials for authentication.
 
    :::image type="content" source="media/connectivity/connect-server-window.png" alt-text="Screenshot showing the Connect to server window.":::
+
+1. Provide the warehouse name you intend to connect to. The valid warehouse name does not include the `<unique identifier>.datawarehouse.fabric.microsoft.com` needed for the **Server name**. If your warehouse name is `NYC Taxi`, your **Initial Catalog** is `NYC Taxi`.
 
 1. Once the connection is established, Object Explorer displays the connected warehouse from the workspace and its respective tables and views, all of which are ready to be queried.
 
