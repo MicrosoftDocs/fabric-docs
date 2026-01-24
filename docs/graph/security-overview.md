@@ -1,4 +1,4 @@
-d---
+---
 title: Security overview
 description: Learn about security in Graph in Microsoft Fabric, including workspace roles and permissions.
 ms.topic: concept-article
