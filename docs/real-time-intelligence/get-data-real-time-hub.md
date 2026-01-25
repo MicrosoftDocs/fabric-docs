@@ -55,7 +55,7 @@ On the lower ribbon of your KQL database, either:
     | Workspace| Your eventstream workspace location. Your workspace name is automatically filled. |
     | Eventstream Name| The name of your eventstream. Your eventstream name is automatically filled.|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
-    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in eventstream](get-data-eventstream.md#process-event-before-ingestion-in-eventstream).|
+    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in eventstream](get-data-eventstream.md#preingest).|
 
 1. Select **Next**
 
