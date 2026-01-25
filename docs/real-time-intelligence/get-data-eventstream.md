@@ -73,7 +73,7 @@ On the ribbon of the KQL database, either:
 
 ---
 
-<a name="preingest"></a>[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
+[!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)]
 
 ## Step 3: Inspect
 
