@@ -6,76 +6,58 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 01/21/2026
+ms.date: 01/25/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Get data in a KQL Database
 ---
 
-# Get data from other data sources in the Real-Time Hub
+# Get data from Real-Time hub
 
-In this article, you learn how to get events, from a wide range of data sources and connectors in the Real-Time Hub, into either a new or existing table. You can do this directly from the Get data experience in your KQL database in Real-Time Intelligence, without having to leave the workflow or set up an Eventstream first.
+In this article, you learn how to get events from Real-Time hub into either a new or existing table.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+> [!NOTE]
+> Currently Real-Time hub only supports eventstreams as a source.
+> Real-Time hub is currently in preview.
 
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
+* An [eventstream](event-streams/create-manage-an-eventstream.md) with a data source
 
 ## Step 1: Source
 
-Select *more (RTH) data sources* as your data source:
+To get data from Real-Time hub, you need to select a Real-time stream as your data source. You can select Real-Time hub in the following ways:
 
-1. In the Microsoft Fabric portal, navigate to your KQL database.
+On the lower ribbon of your KQL database, either:
 
-1. Select **Get Data** and then select **Connect more data sources**.
+* Select **Get Data** and then select a stream from the **Real-Time hub** section.
 
-    You can do this from either the **Get Data** button in the top menu bar, or from the get data dropdown menu in the top menu bar, or from the database more actions menu. 
+    :::image type="content" source="media/get-data-real-time-hub/get-data-real-time-hub-filter.png" alt-text="The get data window open with the Real-Time hub filter highlighted.":::
 
-   :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources-tile.png" alt-text="Screenshot of the get data tiles with the Connect more data sources option highlighted.":::
-
-    :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources.png" alt-text="Screenshot of the get data menu with the Connect more data sources option highlighted.":::
-
-1. In the Select a data source window you see all the data sources available in Real-Time Hub. You can search for a source, or filter by category. In this example, select the sample scenario **Bicycle rentals**.
-
-   :::image type="content" source="media/get-data-real-time-hub/select-data-source.png" alt-text="Screenshot of the Connect data source window with the Bicycle rentals sample scenario highlighted." lightbox="media/get-data-real-time-hub/select-data-source.png":::
+* From the **Get Data** dropdown menu, select **Select more data sources**, * Select **Get Data** and then select a stream from the **Real-Time hub** section.
 
 ## Step 2: Configure
 
-Configure the connection settings. Connecting to the RTH data source generates both a stream and an eventstream.
+1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
-1. Define the data **Source name**.
+    > [!NOTE]
+    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-1. In the Stream details pane, fill out the eventstream settings or use the default values.
+1. Under **Configure the data source**, fill out the settings using the information in the following table. Some setting information automatically fills from your eventstream.
+
+    :::image type="content" source="media/get-data-real-time-hub/get-data-rth-destination.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/get-data-rth-destination.png":::
 
     |**Setting** | **Description**|
     |----|----|
-    | Workspace | Your eventstream workspace location. This can be the same or different worskpace as the database. |
-    | Eventstream Name | The name of your eventstream. |
+    | Workspace| Your eventstream workspace location. Your workspace name is automatically filled. |
+    | Eventstream Name| The name of your eventstream. Your eventstream name is automatically filled.|
+    | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
+    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in eventstream](get-data-eventstream.md#process-event-before-ingestion-in-eventstream).|
 
-    :::image type="content" source="media/get-data-real-time-hub/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/configure-tab.png":::
-
-1. Select **Next**.
-
-1. In the **Review and connect** pane, review your settings and select **Connect**.
-
-    The status of the create tasks is shown. When each task is complete, a green check mark appears in the status column.
-
-    :::image type="content" source="media/get-data-real-time-hub/get-data-review-connect-finish.png" alt-text="Screenshot of Review and connect tab with successful task status and the Finish button highlighted" lightbox="media/get-data-real-time-hub/get-data-review-connect-finish.png":::
-
-    When the connection is successful, select **Finish**.
-
-     > [!TIP]
-     >
-     > Optionally, you can select **Open Eventstream** and go to the created eventstream to define the destination table and complete the ingestion process from there.
-
-1. In the *Pick a destination table* window, select **New table** and enter a name for the new table.
-
-    :::image type="content" source="media/get-data-real-time-hub/destination-table.png" alt-text="Screenshot of destination tab with new table selected and table name entered." lightbox="media/get-data-real-time-hub/destination-table.png":::
-
-1. The **Data connection name** is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.
-
-1. Decide whether to process events before ingestion in Eventstream. This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)].
-
-1. Select **Next** to continue to the **Inspect** tab.
+1. Select **Next**
 
 ## Step 3: Inspect
 
@@ -83,7 +65,7 @@ The **Inspect** tab shows a preview of the data.
 
 Select **Finish** to complete the ingestion process.
 
-:::image type="content" source="media/get-data-eventstream/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-eventstream/inspect-data.png":::
+:::image type="content" source="media/get-data-real-time-hub/inspect-data-rth.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data-rth.png":::
 
 Optional:
 
@@ -97,7 +79,7 @@ Optional:
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
-:::image type="content" source="media/get-data-eventstream/edit-columns.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-eventstream/edit-columns.png":::
+:::image type="content" source="media/get-data-real-time-hub/edit-columns-rth.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-real-time-hub/edit-columns-rth.png":::
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
@@ -109,11 +91,9 @@ Optional:
 
 ## Step 4: Summary
 
-In the **Summary** window, all the steps are marked as completed when data ingestion finishes successfully. Select a card to explore the data, delete the ingested data, or create a dashboard with key metrics. Select **Close** to close the window.
+In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary. Select **Close** to close the window.
 
-:::image type="content" source="media/get-data-eventstream/summary.png" alt-text="Screenshot of the summary page showing successful data ingestion." lightbox="media/get-data-eventstream/summary.png":::
-
-When you close the window, you return to the KQL database overview page. The new table appears in the **Tables** list in the left pane. The new eventstream appears in the **Data streams** list.
+:::image type="content" source="media/get-data-real-time-hub/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-real-time-hub/summary.png":::
 
 ## Related content
 

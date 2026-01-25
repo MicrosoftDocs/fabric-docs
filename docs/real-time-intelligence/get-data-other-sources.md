@@ -75,7 +75,7 @@ Configure the connection settings. Connecting to the data source generates both 
 
 1. Decide whether to process events before ingestion in Eventstream.
 
-    This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [!INCLUDE [get-data-process-event-preingestion-eventstream](includes/get-data-process-event-preingestion-eventstream.md)].
+    This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in eventstream](get-data-eventstream.md#process-event-before-ingestion-in-eventstream).
 
 1. Select **Next** to continue to the **Inspect** tab.
 
