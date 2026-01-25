@@ -66,7 +66,7 @@ On the ribbon of the KQL database, either:
     | Workspace | Your eventstream workspace location. Select a workspace from the dropdown.|
     | Eventstream | The name of your eventstream. Select an eventstream from the dropdown.|
     | Stream | The name of the default or derived stream. Select a stream from the dropdown.<br/>* For default streams, the stream name format is *Eventstream-stream*.<br/>* For derived streams, the name was defined when the stream was created.|
-    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
+    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#preingest).|
     | Data connection name | The name used to reference and manage your data connection in your workspace. The data connection name is automatically populated, and you can edit the name to simplify managing the data connection in the workspace. The name can contain only alphanumeric, dash, and dot characters, and be up to 40 characters long.|
 
 1. Select **Next** to continue.

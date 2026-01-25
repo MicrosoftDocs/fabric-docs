@@ -29,7 +29,7 @@ The following list shows data ingestion sources:
 * [Data Factory pipeline copy](../data-factory/connector-kql-database-copy-activity.md)
 * [Data Factory dataflows](../data-factory/connector-azure-data-explorer.md)
 
-Or get data from a wide range of data sources and connectors in the Real-Time Hub. Bring data into an Eventstream and later into your Eventhouse without leaving the get data workflow. In this case, select the [Connect more data sources](docs\real-time-intelligence\get-data-other-sources.md) option.
+Or get data from a wide range of data sources and connectors in the Real-Time Hub. Bring data into an Eventstream and later into your Eventhouse without leaving the get data workflow. In this case, select the [Connect more data sources](get-data-other-sources.md) option.
 
 ## Related content
 
