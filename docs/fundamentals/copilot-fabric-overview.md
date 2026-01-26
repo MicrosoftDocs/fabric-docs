@@ -4,7 +4,7 @@ description: Learn about Copilot in Fabric and Power BI, which brings a new way 
 author: denglishbi
 ms.author: daengli
 ms.reviewer: guptamaya, maghan
-ms.date: 10/23/2025
+ms.date: 01/25/2026
 ms.update-cycle: 180-days
 ms.service: fabric
 ms.topic: overview
@@ -122,6 +122,10 @@ Accelerate intelligent decision-making at scale with secure, agentic AI built on
 ### Unified data foundation with Fabric
 
 Build a unified data foundation in Microsoft Fabric using the Modern Analytics, AI, and Governance (MAAG) framework to deliver scalable insights. This accelerator connects Fabric, OneLake, Purview, and Azure Databricks through a [medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md), with sample domain models and prebuilt Power BI dashboards. With flexible deployment options and built-in governance, it helps you unify and analyze data across domains efficiently. To learn more, [explore the solution on GitHub](https://github.com/microsoft/unified-data-foundation-with-fabric-solution-accelerator)
+
+### Real-Time Intelligence for operations
+
+Use Microsoft Fabric’s real‑time intelligence on a unified data foundation to analyze live and historical telemetry, detect anomalies, and monitor operations through interactive dashboards. The solution includes automated email alerts and an AI‑powered data agent for natural‑language insights. To learn more, [explore the solution on GitHub](https://github.com/microsoft/real-time-intelligence-operations-solution-accelerator).
 
 ## How do I use Copilot responsibly?
 
