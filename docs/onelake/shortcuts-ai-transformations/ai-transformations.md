@@ -26,7 +26,7 @@ Modern data lakes are brimming with raw, unstructured text, product reviews, sup
 |---|---|
 | **Accelerate time-to-insight** | Go from raw text to a queryable Delta table in minutes, no ETL required. |
 | **Lower maintenance** | The transformation engine watches the source folder on a 2-minute schedule, so outputs stay up to date automatically. |
-| **Enterprise-grade security** | PII detection helps you comply with GDPR, HIPAA, and other regulations by redacting sensitive data before it lands in analytics. |
+| **Enterprise-grade security** | PII detection helps you redact sensitive data before it lands in analytics. |
 | **Consistent, repeatable results** | Built-in AI models provide standardized sentiment scores, entity tags, and translations, eliminating manual data-prep drift. |
 
 OneLake Shortcut Transformations in **Microsoft Fabric** include a set of built-in, AI-powered transforms that you can apply directly to `.txt` files referenced through shortcuts, without writing code or building pipelines. The engine automatically keeps the output **Delta table** in sync, so your data is query-ready for **Power BI**, notebooks, pipelines, and other Fabric experiences.
