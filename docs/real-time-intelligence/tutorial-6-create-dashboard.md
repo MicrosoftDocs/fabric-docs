@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 12/29/2025
+ms.date: 01/26/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
