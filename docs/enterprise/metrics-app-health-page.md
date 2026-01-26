@@ -1,11 +1,9 @@
 ---
 title: Understand the metrics app health page (preview)
 description: Learn how to read the Microsoft Fabric Capacity metrics app's health page.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: how-to
+ms.topic: concept-article
 ms.custom:
-ms.date: 08/05/2025
+ms.date: 01/26/2026
 ---
 
 # Understand the metrics app Health page (preview)
