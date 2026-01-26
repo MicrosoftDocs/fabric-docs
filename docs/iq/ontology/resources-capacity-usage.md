@@ -42,7 +42,9 @@ Now, say the user triggers a second operation 15 minutes later. The total time c
 
 ### Ontology Logic and Operations​
 
-This measures ontology operations including visualizations, ontology exploration, and querying and analyzing with query endpoints. Usage is measured in minutes of CPU uptime.
+Ontology Logic and Operations usage is incurred when ontology compute is actively executing operations such as querying graph when modelling with data bindings, graph traversal, entity type overview tiles querying data, refresh of graph, or exploration through API, SQL. Usage is measured only during active compute execution, and is billed in minutes of CPU uptime with a minimum of 15 mins.
+
+For example, a customer runs ontology exploration and querying workloads with the following pattern of 15 mins per hour and use does this for 8 hours a day. It is 15min/hour x 8 hous * 0.666667  CU/min = 1.33 CU hours per day
 
 *While ontology (preview) billing isn't in effect, users are billed according to their [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.*
 
