@@ -57,7 +57,7 @@ After you set a name and select create, you will be taken to your Spark job defi
 
 ### Configure connection authentication
 
-In the **Settings** tab, under **Connection**, select the desired Fabric connection for authentication. You can choose either a Service Principal (SPN) or Workspace Identity (WI) connection. The selected connection determines how the Notebook or Spark job is authenticated during pipeline runs. If no connection exists, create one by selecting **Browse all** and then **Spark Job Definition** under **New sources**.
+In the **Settings** tab, under **Connection**, select the desired Fabric connection for authentication. If no connection exists, create one by selecting **Browse all** and then **Spark Job Definition** under **New sources**.
 
 ### Advanced settings
 
@@ -77,6 +77,7 @@ Current limitations in the Spark Job Definition activity for Fabric Data Factory
 
 - Although we support monitoring the activity via the output tab, you aren't able to monitor the Spark Job Definition at a more granular level yet. For example, links to the monitoring page, status, duration, and previous Spark Job Definition runs aren't available directly in the Data Factory. However, you can see more granular details in the [Spark Job Definition monitoring page](../data-engineering/monitor-spark-job-definitions.md).
 - Detailed run-level monitoring is available in the Spark Job Definition monitoring page. The authentication method (SPN or WI) used for the run does **not** affect monitoring behavior.
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix for this is currently being worked on.
 
 ## Save and run or schedule the pipeline
 
