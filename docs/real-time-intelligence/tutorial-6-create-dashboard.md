@@ -70,7 +70,7 @@ The process uses AI to generate a Real-Time Dashboard from the streaming data in
 
 Copilot automatically generates the Copilot Insights page and Profile page, both with multiple tiles. The Insights page provides a quick overview of the data, while the Profile page offers detailed information about the data structure and statistics.
 
-::::image type="content" source="media/tutorial/tutorial-dashboard-copilot-insights.png" alt-text="Screenshot of the AI-generated dashboard with multiple tiles." lightbox="media/tutorial/tutorial-dashboard-copilot-insights.png"::::
+:::image type="content" source="media/tutorial/tutorial-dashboard-copilot-insights.png" alt-text="Screenshot of the AI-generated dashboard with multiple tiles." lightbox="media/tutorial/tutorial-dashboard-copilot-insights.png":::
 
 ## Add a new tile by using a query
 
