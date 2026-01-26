@@ -48,7 +48,7 @@ Configure the connection settings. Connecting to the data source generates both 
 
     |**Setting** | **Description**|
     |----|----|
-    | Workspace | Your eventstream workspace location. This can be the same or different worskpace as the database. |
+    | Workspace | Your eventstream workspace location. This can be the same or different workspace as the database. |
     | Eventstream Name | The name of your eventstream. |
 
     :::image type="content" source="media/get-data-real-time-hub/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/configure-tab.png":::

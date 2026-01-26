@@ -29,7 +29,7 @@ On the lower ribbon of your KQL database, either:
 
 * Select **Get Data** and then select a stream from the **Real-Time hub** section.
 
-    :::image type="content" source="media/get-data-real-time-hub/get-data-real-time-hub-filter.png" alt-text="The get data window open with the Real-Time hub filter highlighted." lightbox="media/get-data-real-time-hub/get-data-real-time-hub-filter.png":::
+    :::image type="content" source="media/get-data-real-time-hub/get-data-real-time-hub-filter.png" alt-text="Screenshot of the get data window open with the Real-Time hub filter highlighted." lightbox="media/get-data-real-time-hub/get-data-real-time-hub-filter.png":::
 
 * From the **Get Data** dropdown menu, select **Select more data sources**, * Select **Get Data** and then select a stream from the **Real-Time hub** section.
 
