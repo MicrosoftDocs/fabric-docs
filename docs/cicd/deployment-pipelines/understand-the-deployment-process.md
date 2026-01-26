@@ -6,7 +6,7 @@ ms.author: billmath
 ms.reviewer: Lee
 ms.service: fabric
 ms.subservice: cicd
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 12/15/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations

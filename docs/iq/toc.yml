@@ -1,64 +1,63 @@
 items:
-- name: IQ documentation
+- name: Fabric IQ documentation
   href: index.yml
-- name: Overview
-  expanded: true
+- name: What is Fabric IQ?
+  href: overview.md
+- name: Ontology
   items:
-  - name: What is IQ?
-    href: overview.md
-  - name: Ontology
+  - name: Overview
     items:
-    - name: Overview
-      items:
-      - name: What is ontology?
-        href: ontology/overview.md
-      - name: Required tenant settings
-        href: ontology/overview-tenant-settings.md
-    - name: Ontology tutorial
-      items:
-      - name: 0- Introduction and environment setup
-        href: ontology/tutorial-0-introduction.md
-      - name: 1- Create an ontology
-        href: ontology/tutorial-1-create-ontology.md
-      - name: 2- Enrich the ontology
-        href: ontology/tutorial-2-enrich-ontology.md
-      - name: 3- Preview the ontology
-        href: ontology/tutorial-3-preview-ontology.md
-      - name: 4- Create data agent
-        href: ontology/tutorial-4-create-data-agent.md
-      - name: 5- Conclude and clean up resources
-        href: ontology/tutorial-5-conclusion.md
-    - name: Concepts
-      items:
-      - name: Generating an ontology from semantic model
-        href: ontology/concepts-generate.md
-    - name: How-tos
-      items:
-      - name: Create entity types
-        href: ontology/how-to-create-entity-types.md
-      - name: Bind data
-        href: ontology/how-to-bind-data.md
-      - name: Add relationship types
-        href: ontology/how-to-create-relationship-types.md
-      - name: Use preview experience
-        href: ontology/how-to-use-preview-experience.md
-    - name: Resources
-      items:
-      - name: Troubleshooting
-        href: ontology/resources-troubleshooting.md
-      - name: Billing and capacity usage
-        href: ontology/resources-capacity-usage.md
-      - name: Ontology REST API
-        href: /rest/api/fabric/ontology/items
-      - name: Ontology FAQ
-        href: ontology/resources-frequently-asked-questions.md
-      - name: CI/CD in Fabric
-        href: ../cicd/cicd-overview.md
-  - name: Fabric data agent
-    href: ../data-science/concept-data-agent.md
-  - name: Graph in Microsoft Fabric
-    href: ../graph/overview.md
-  - name: Operations agent
-    href: ../real-time-intelligence/operations-agent.md
-  - name: Power BI semantic model
-    href: ../data-warehouse/semantic-models.md
+    - name: What is ontology?
+      href: ontology/overview.md
+    - name: Required tenant settings
+      href: ontology/overview-tenant-settings.md
+  - name: Ontology tutorial
+    items:
+    - name: 0- Introduction and environment setup
+      href: ontology/tutorial-0-introduction.md
+    - name: 1- Create an ontology
+      href: ontology/tutorial-1-create-ontology.md
+    - name: 2- Enrich the ontology
+      href: ontology/tutorial-2-enrich-ontology.md
+    - name: 3- Preview the ontology
+      href: ontology/tutorial-3-preview-ontology.md
+    - name: 4- Create data agent
+      href: ontology/tutorial-4-create-data-agent.md
+    - name: 5- Conclude and clean up resources
+      href: ontology/tutorial-5-conclusion.md
+  - name: Concepts
+    items:
+    - name: Generating an ontology from semantic model
+      href: ontology/concepts-generate.md
+  - name: How-tos
+    items:
+    - name: Create entity types
+      href: ontology/how-to-create-entity-types.md
+    - name: Bind data
+      href: ontology/how-to-bind-data.md
+    - name: Add relationship types
+      href: ontology/how-to-create-relationship-types.md
+    - name: Use preview experience
+      href: ontology/how-to-use-preview-experience.md
+  - name: Resources
+    items:
+    - name: Troubleshooting
+      href: ontology/resources-troubleshooting.md
+    - name: Billing and capacity usage
+      href: ontology/resources-capacity-usage.md
+    - name: Glossary
+      href: ontology/resources-glossary.md
+    - name: Ontology REST API
+      href: /rest/api/fabric/ontology/items
+    - name: Ontology FAQ
+      href: ontology/resources-frequently-asked-questions.md
+    - name: CI/CD in Fabric
+      href: ../cicd/cicd-overview.md
+- name: Graph in Microsoft Fabric
+  href: ../graph/toc.yml
+- name: Fabric data agent
+  href: ../data-science/concept-data-agent.md
+- name: Operations agent
+  href: ../real-time-intelligence/operations-agent.md
+- name: Power BI semantic model
+  href: ../data-warehouse/semantic-models.md

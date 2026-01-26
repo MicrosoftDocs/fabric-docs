@@ -4,7 +4,7 @@ description: Overview of Dataflow Gen2 solution architectures for CI/CD and ALM 
 ms.reviewer: whhender
 ms.author: miescobar
 author: ptyx507x
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/2/2025
 ms.custom: dataflows
 ai-usage: ai-assisted

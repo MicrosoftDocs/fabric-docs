@@ -6,7 +6,7 @@ ms.author: zoedouglas
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/1/2025
 LocalizationGroup: Admin
 ---

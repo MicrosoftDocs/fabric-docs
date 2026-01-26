@@ -3,7 +3,7 @@ title: Operation list
 description: This article provides a list of all the operations available in Fabric.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 05/22/2025
 ---
 # Operation list

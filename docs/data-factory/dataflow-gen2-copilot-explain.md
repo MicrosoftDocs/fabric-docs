@@ -4,9 +4,10 @@ description: Overview of the Copilot explainer skill in Dataflow Gen2 and its di
 author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/16/2025
 ms.custom: dataflows
+ms.collection: ce-skilling-ai-copilot
 ---
 # Copilot explainer skill in Dataflow Gen2
 

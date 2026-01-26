@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: emtehran, fipopovi
 ms.date: 09/15/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Result set caching (preview)

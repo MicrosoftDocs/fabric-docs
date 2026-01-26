@@ -24,7 +24,7 @@ This article describes how to get events from sample data sources into Real-Time
 
 ## Add sample data as a source
 
-1. On the **Data sources** page, select **Sample scenarios** from categories at the top.
+1. On the **Data sources** page, select **Samples** from categories at the top.
 1. Select **Connect** on a sample scenario tile (for example, Bicycle rentals) on the page.
 
     :::image type="content" source="./media/add-source-sample-data/select-sample-data.png" alt-text="Screenshot that shows the selection of Sample data as the source type in the Connect to data source page." lightbox="./media/add-source-sample-data/select-sample-data.png":::

@@ -5,7 +5,7 @@ author: shaween18
 ms.author: sbahadur
 ms.reviewer: whhender
 ms.date: 08/22/2025
-ms.topic: conceptual
+ms.topic: limits-and-quotas
 ms.custom: references_regions
 ai-usage: ai-assisted
 ---

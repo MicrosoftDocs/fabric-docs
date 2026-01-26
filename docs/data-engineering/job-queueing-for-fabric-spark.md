@@ -4,7 +4,7 @@ description: Learn about background job queueing for notebooks, Apache Spark job
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom: sfi-image-blocked
 ms.date: 04/10/2024
 ---

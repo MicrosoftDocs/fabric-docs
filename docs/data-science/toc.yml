@@ -95,6 +95,8 @@ items:
       items:
         - name: Data agent configurations
           href: data-agent-configurations.md
+        - name: Semantic model best practices
+          href: semantic-model-best-practices.md
         - name: Example queries
           href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
@@ -103,6 +105,8 @@ items:
           href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
+        - name: Connect to an AI Foundry Search Index
+          href: data-agent-ai-search-index.md
     - name: How to consume a Fabric data agent
       items:
         - name: Consume a data agent from Azure AI foundry (preview)

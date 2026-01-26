@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: hudequei
 ms.date: 10/22/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.update-cycle: 180-days
 ---
 # Data virtualization (preview)

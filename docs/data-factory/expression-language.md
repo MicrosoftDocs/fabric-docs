@@ -4,7 +4,7 @@ description: This article provides information about expressions and functions t
 ms.reviewer: xupzhou
 ms.author: whhender
 author: whhender
-ms.topic: conceptual
+ms.topic: reference
 ms.custom: pipelines
 ms.date: 12/18/2024
 ---

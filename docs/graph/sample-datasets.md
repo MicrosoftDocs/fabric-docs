@@ -2,9 +2,9 @@
 title: Example Graph Datasets
 description: Information about example graph datasets used in the documentation for Graph in Microsoft Fabric
 ms.topic: reference
-ms.date: 11/20/2025
-author: eric-urban
-ms.author: eur
+ms.date: 01/12/2026
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Example Graph Datasets
 ---
@@ -18,6 +18,6 @@ The GQL queries given by most documentation articles for Graph in Microsoft Fabr
 
 * The *AdventureWorks example graph* is explained and used in the [quickstart tutorial](quickstart.md).
 
-The required datasets for these graphs are published in the [Graph in Microsoft Fabric samples repository](https://github.com/microsoft/fabric-samples/docs-samples/graph).
+The required datasets for these graphs are published in the [Graph in Microsoft Fabric samples repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/graph).
 
-See the [README file](https://github.com/microsoft/fabric-samples/docs-samples/graph/README.md) for further instructions on how to obtain and load these datasets.
+See the [README file](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/graph/README.md) for further instructions on how to obtain and load these datasets.

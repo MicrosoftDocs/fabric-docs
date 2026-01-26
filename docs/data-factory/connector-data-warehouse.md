@@ -4,7 +4,7 @@ description: This article provides information about how to create a Data Wareho
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 12/29/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -24,31 +24,44 @@ The Data Warehouse connector supports the following authentication types for cop
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a Data Warehouse. The following links provide the specific Power Query connector information you need to connect to a Data Warehouse in Dataflow Gen2:
+You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Warehouse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites) before connecting to the Warehouse connector.
-- To connect to the Warehouse connector from Power Query, go to [Connect to a Warehouse from Power Query Online](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Set up Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites).
+1. [Connect to a Warehouse (from Power Query online)](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+### More information
+
+- [Warehouse connector capabilities](/power-query/connectors/warehouse#capabilities)
 
 ## Set up your connection in a pipeline
 
-1. Go to Get Data page and navigate to OneLake catalog through the following ways:
+You can set up a Data Warehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. The sections below describe how to configure the connection through each option.
 
-   - In copy assistant, go to **OneLake catalog** section.
-   - In a pipeline, browse to all connection page through the connection drop-down list and go to **OneLake catalog** section.
+- In **Get Data** page:
 
-1. Select an existing Data Warehouse.
+    1. Go to **Get Data** page and navigate to **OneLake catalog** through the following ways:
+    
+       - In copy assistant, go to **OneLake catalog** section.
+       - In a pipeline, select Browse all under **Connection**, and go to **OneLake catalog** section.
+    
+    1. Select an existing Data Warehouse to connect to it.
 
-    :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-in-onelake.png" alt-text="Screenshot of selecting Data Warehouse in OneLake section.":::
+        :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-in-onelake.png" alt-text="Screenshot of selecting Data Warehouse in OneLake section.":::
+    
+    You can also select a Data Warehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Data Warehouse you need.
 
-1. In **Connect to data source** pane, select an existing connection within your tenant or create a new one.
+- In **Manage connections and gateways** page:
 
-    :::image type="content" source="media/connector-data-warehouse/connect-to-data-source.png" alt-text="Screenshot of the pane to connect to data source.":::
+    1. On this page, select **+ New**, choose Warehouse as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
+    
+        :::image type="content" source="media/connector-data-warehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
+    
+    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
 
-1. Select **Connect** to connect to your Data Warehouse.
+        :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-connection.png" alt-text="Screenshot of selecting a Data Warehouse connection in pipelines.":::
 
-> [!NOTE]
-> - To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
-> - If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).
+    >[!NOTE]
+    >If you create the connection through **Manage connections and gateways** page:
+    >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
+    >- If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).

@@ -6,6 +6,7 @@ ms.author: mahi
 ms.reviewer: mahi
 ms.topic: how-to
 ms.date: 11/17/2025
+ms.search.form: Create new Snowflake database item
 #customer intent: As a data engineer, I want to connect Snowflake to OneLake and have my Iceberg tables written to OneLake by default.
 ---
 

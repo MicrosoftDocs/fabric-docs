@@ -4,7 +4,7 @@ description: This article lists the end-to-end tutorials in Microsoft Fabric. Th
 ms.reviewer: sngun
 ms.author: sngun
 author: SnehaGunda
-ms.topic: conceptual
+ms.topic: overview
 ms.custom:
 ms.search.form: product-trident
 ms.date: 11/25/2024

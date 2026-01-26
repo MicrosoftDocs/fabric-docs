@@ -107,12 +107,20 @@ items:
                 href: workspace-outbound-access-protection-set-up.md
               - name: Create an allow list using managed private endpoints
                 href: workspace-outbound-access-protection-allow-list-endpoint.md
+              - name: Create an allow list using data connection rules
+                href: workspace-outbound-access-protection-allow-list-connector.md
           - name: Scenarios by Fabric workload
             items:
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
+              - name: Data Factory (preview)
+                href: workspace-outbound-access-protection-data-factory.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
+              - name: Mirrored databases (preview)
+                href: workspace-outbound-access-protection-mirrored-databases.md
+              - name: OneLake (preview)
+                href: workspace-outbound-access-protection-onelake.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

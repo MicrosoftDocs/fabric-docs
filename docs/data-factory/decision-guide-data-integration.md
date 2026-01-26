@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: whhender
 ms.date: 08/08/2025
-ms.topic: article
+ms.topic: product-comparison
 ai-usage: ai-assisted
 ---
 

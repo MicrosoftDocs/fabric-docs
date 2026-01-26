@@ -4,7 +4,7 @@ description: This article provides information about how to create a Dataverse c
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 09/25/2024
+ms.date: 12/29/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -25,10 +25,16 @@ The Dataverse connector supports the following authentication types for copy and
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Dataverse. The following links provide the specific Power Query connector information you need to connect to Dataverse in Dataflow Gen2:
+You can connect Dataflow Gen2 to Dataverse in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Dataverse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Dataverse prerequisites](/power-query/connectors/dataverse#prerequisites) before connecting to the Dataverse connector.
-- To connect to the Dataverse connector from Power Query, go to [Connect to Dataverse from Power Query Online](/power-query/connectors/dataverse#connect-to-dataverse-from-power-query-online).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Set up Dataverse prerequisites](/power-query/connectors/dataverse#prerequisites).
+1. [Find your Dataverse environment URL](/power-query/connectors/dataverse#finding-your-dataverse-environment-url).
+1. [Connect to Dataverse (from Power Query online)](/power-query/connectors/dataverse#connect-to-dataverse-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+### More information
+
+- [Dataverse connector capabilities](/power-query/connectors/dataverse#capabilities-supported)
+- [Dataverse connector advanced options](/power-query/connectors/dataverse#connect-using-advanced-options)
+- [Dataverse connector limitations](/power-query/connectors/dataverse#limitations-and-issues)
+- [When to use the Common Data Service (Legacy connector)](/power-query/connectors/dataverse#when-to-use-the-common-data-service-legacy-connector)
