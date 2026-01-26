@@ -1,8 +1,6 @@
 ---
 title: What is Fabric Activator?
 description: Learn about Microsoft Fabric Activator, a no-code event detection engine that automatically triggers actions when patterns are detected in real-time data streams.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Introduction

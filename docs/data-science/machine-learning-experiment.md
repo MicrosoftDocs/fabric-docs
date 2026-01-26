@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
 ms.search.form: Create New Experiment, Run Comparison

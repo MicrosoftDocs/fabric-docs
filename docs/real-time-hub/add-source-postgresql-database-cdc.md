@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
 - references_regions
 - sfi-image-nochange
-ms.date: 07/21/2025
+ms.date: 01/18/2026
 ---
 
 # Add PostgreSQL Database CDC as source in Real-Time hub
@@ -61,33 +61,15 @@ To enable CDC in your Azure Database for PostgreSQL, follow these steps based on
 
 ## Get events from an Azure Database for PostgreSQL CDC 
 
-You can get events from an Azure Database for PostgreSQL CDC into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
-
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure DB for PostgreSQL (CDC)** tile. 
+5. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure DB for PostgreSQL (CDC)** tile. 
 
     :::image type="content" source="./media/add-source-postgresql-database-cdc/select-postgresql-cdc.png" alt-text="Screenshot that shows the selection of Azure Database (DB) for PostgreSQL (CDC) as the source type in the Data sources page." lightbox="./media/add-source-postgresql-database-cdc/select-postgresql-cdc.png":::
 
-    Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. 
-
-## Microsoft sources page
-
-1. In Real-Time hub, select **Microsoft sources**.
-1. In the **Source** drop-down list, select **PostgreSQL (CDC)**. 
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your PostgreSQL Database account. 
-1. For **Resource group**, select a **resource group** that has the database.
-1. For **Region**, select a location where your database is located.
-1. Now, move the mouse over the name of the PostgreSQL Database CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button.
-
-    :::image type="content" source="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png" alt-text="Screenshot that shows the Microsoft sources page with filters to show Azure PostgreSQL CDC and the connect button." lightbox="./media/add-source-postgresql-database-cdc/microsoft-sources-connect-button.png":::
-
-    To configure connection information, use steps from the [Add Azure Database for PostgreSQL CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section. 
+    Use instructions from the [Add PostgreSQL Database CDC as a source](#add-azure-database-for-postgresql-cdc-as-a-source) section.
 
 ## Add Azure Database for PostgreSQL CDC as a source
 

@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 09/09/2019
 LocalizationGroup: Administration
 ---

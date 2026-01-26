@@ -1,8 +1,9 @@
 ---
 title: Connect on-premises data sources to Microsoft Fabric using managed private endpoints
 description: Learn how to securely connect on-premises or custom-hosted data sources to Microsoft Fabric using managed private endpoints and private link services.
-author: saravi
-ms.author: saravi
+author: msmimart
+ms.author: mimart
+ms.reviewer: saravi
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
 ms.date: 10/07/2025

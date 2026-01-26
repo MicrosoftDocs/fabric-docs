@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: cynotebo, jacindaeng
 ms.date: 06/26/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Workspace roles in Fabric Data Warehouse
