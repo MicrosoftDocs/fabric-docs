@@ -51,9 +51,9 @@ Here you can configure your connection, workspace, and Spark job definition. If 
 
 After you set a name and select create, you will be taken to your Spark job definition to set your configurations. 
 
-:::image type="content" source="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" alt-text="Screenshot showing a pop up to name and create a new Spark job defintion.":::
+:::image type="content" source="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" lightbox="media/spark-job-definition-activity/set-new-name-spark-job-from-activity.png" alt-text="Screenshot showing a pop up to name and create a new Spark job definition.":::
 
-:::image type="content" source="media/spark-job-definition-activity/configure-spark-job-definition.png" lightbox="media/spark-job-definition-activity/configure-spark-job-definition.png" alt-text="Screenshot showing a new Fabric Spark job defintion item.":::
+:::image type="content" source="media/spark-job-definition-activity/configure-spark-job-definition.png" lightbox="media/spark-job-definition-activity/configure-spark-job-definition.png" alt-text="Screenshot showing a new Fabric Spark job definition item.":::
 
 ### Configure connection authentication
 
