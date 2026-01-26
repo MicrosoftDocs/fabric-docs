@@ -4,7 +4,7 @@ description: Learn about default data destination configurations and settings in
 author: luitwieler
 ms.author: jeluitwi
 ms.reviewer: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 02/26/2025
 ms.custom: dataflows
 ---

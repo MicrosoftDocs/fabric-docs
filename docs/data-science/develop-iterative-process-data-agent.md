@@ -5,7 +5,7 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
+ms.topic: best-practice
 ms.date: 06/12/2025
 ---
 

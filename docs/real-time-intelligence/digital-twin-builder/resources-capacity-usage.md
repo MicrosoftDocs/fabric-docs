@@ -4,7 +4,7 @@ description: This article contains information about how digital twin builder (p
 author: baanders
 ms.author: baanders
 ms.date: 06/06/2025
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # Capacity consumption for digital twin builder (preview)

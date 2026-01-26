@@ -3,7 +3,7 @@ title: Fabric Extensibility toolkit validation guidelines and requirements for w
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: concept-article
 ms.date: 12/15/2025
 ---
 

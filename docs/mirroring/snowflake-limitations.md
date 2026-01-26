@@ -5,7 +5,7 @@ author: whhender
 ms.author: whhender
 ms.reviewer: imotiwala, sbahadur
 ms.date: 04/24/2025
-ms.topic: conceptual
+ms.topic: limits-and-quotas
 ---
 
 # Limitations in Microsoft Fabric mirrored databases from Snowflake
