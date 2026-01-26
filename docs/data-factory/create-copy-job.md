@@ -33,7 +33,7 @@ Follow these steps to set up a Copy job that moves data from a database:
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source.png" lightbox="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
 
-1. Select the **tables** and **columns** to copy. Use the search box to identify specific tables and columns you want to copy.
+1. Select the **tables** and **columns** to copy, or use a database query to copy subsets of your data. Use the search box to identify full tables and columns you want to copy, or select **+ New query** under Queries to write a custom query.
 
    :::image type="content" source="media/copy-job/select-tables-columns.png" lightbox="media/copy-job/select-tables-columns.png" alt-text="Screenshot showing where to select tables and columns for the Copy job.":::
 
@@ -91,12 +91,10 @@ Follow these steps to set up a Copy job that moves data from file storage:
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source1.png" lightbox="media/copy-job/enter-credentials-data-source1.png" alt-text="Screenshot showing where to enter credentials for storage store.":::
 
-1. Select the **folder** or **files** to copy. You can choose to copy an entire folder with all its files, or a single file.
+1. Select the **folders** or **files** to copy. You can use the search box to find specific files or folders.
 
     >[!TIP]
     >**Schema agnostic (binary copy)** copies files to another data store without parsing the schema. This can significantly improve copy performance.
-
-   :::image type="content" source="media/copy-job/select-folder.png" lightbox="media/copy-job/select-folder.png" alt-text="Screenshot showing where to select folder for the Copy job.":::
 
 1. Select your destination store. In this example, we chose **Lakehouse**.
 
