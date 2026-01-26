@@ -7,7 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom:
 ms.subservice: rti-eventhouse
-ms.date: 03/02/2025
+ms.date: 01/21/2026
 ms.search.form: Get data in a KQL Database
 ---
 
@@ -28,7 +28,8 @@ In this article, you learn how to get data from a local file into either a new o
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Local file**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-file/get-data-file-tile.png" alt-text="Screenshot of the get data tiles with the Local file option highlighted.":::
+    
 
 ## Configure
 
