@@ -30,7 +30,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Amazon S3**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-amazon-s3/get-data-as3-tile.png" alt-text="Screenshot of the get data tiles with the Amazon S3 option highlighted.":::
 
 ## Configure
 
