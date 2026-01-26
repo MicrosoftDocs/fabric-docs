@@ -58,7 +58,7 @@ The process uses AI to generate a Real-Time Dashboard from the streaming data in
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-create-dashboard.png" alt-text="Screenshot of the Create Real-Time Dashboard (Copilot) option." lightbox="media/tutorial/tutorial-dashboard-create-dashboard.png":::
 
-1. A dialog box appears to show the AI-generation stages, and a link to review the [general preview terms](https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms). Select **Get started** to proceed.
+1. A dialog box appears to show the AI-generation stages, and a link to review the [general preview terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms). Select **Get started** to proceed.
 
     :::image type="content" source="media/tutorial/tutorial-dashboard-get-started.png" alt-text="Screenshot of the Generate a real-time dashboard with the get started button highlighted." lightbox="media/tutorial/tutorial-dashboard-get-started.png":::
 
