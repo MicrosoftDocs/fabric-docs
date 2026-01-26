@@ -54,7 +54,7 @@ In addition to CRUD APIs, there are a series of additional operational APIs offe
 
 ## Get started with REST APIs for Apache Airflow Jobs
 
-The following documentations outlines how to create, update, and manage Apache Airflow Jobs and operational use cases using the Fabric Data Factory APIs.
+The following documentation outlines how to create, update, and manage Apache Airflow Jobs and operational use cases using the Fabric Data Factory APIs.
 
 ## Obtain an authorization token
 
