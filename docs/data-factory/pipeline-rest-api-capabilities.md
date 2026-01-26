@@ -10,7 +10,7 @@ ms.date: 08/28/2025
 
 # REST API capabilities for pipelines in Fabric Data Factory
 
-Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them — so you can keep your data flowing smoothly without the hassle.
+Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your pipelines. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing pipelines to scheduling and tracking them, so you can keep your data flowing smoothly without the hassle.
 
 ## API use cases for pipelines
 
@@ -424,7 +424,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/items/<pipelin
 
 |Name|In|Required|Type|Description|Example|
 |---|---|---|---|---|---|
-|pipelineID|Path|True|String(guid)|The pipeline id|aaaa0000-bb11-2222-33cc-444444dddddd|
+|pipelineID|Path|True|String(guid)|The pipeline ID|aaaa0000-bb11-2222-33cc-444444dddddd|
 |jobType|Path|True|String|The job type|DefaultJob|
 |workspaceId|Path|True|String|The workspace ID|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|
 
