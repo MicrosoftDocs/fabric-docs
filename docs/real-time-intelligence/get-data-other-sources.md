@@ -30,9 +30,9 @@ Select *more data sources* as your data source:
 
     You can do this from either the **Get Data** button in the top menu bar, or from the get data dropdown menu in the top menu bar, or from the database more actions menu.
 
-   :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources-tile.png" alt-text="Screenshot of the get data tiles with the Connect more data sources option highlighted.":::
+   :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources-tile.png" alt-text="Screenshot of the get data tiles with the Connect more data sources option highlighted." lightbox="media/get-data-real-time-hub/get-data-other-sources-tile.png":::
 
-    :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources.png" alt-text="Screenshot of the get data menu with the Connect more data sources option highlighted.":::
+    :::image type="content" source="media/get-data-real-time-hub/get-data-other-sources.png" alt-text="Screenshot of the get data menu with the Connect more data sources option highlighted." lightbox="media/get-data-real-time-hub/get-data-other-sources.png":::
 
 1. In the *Select a data source* window you see all the data sources available in Real-Time Hub. You can search for a source, or filter by category. In this example, select the sample scenario **Bicycle rentals**.
 
@@ -59,7 +59,7 @@ Configure the connection settings. Connecting to the data source generates both 
 
     The status of the create tasks is shown. When each task is complete, a green check mark appears in the status column.
 
-    :::image type="content" source="media/get-data-real-time-hub/get-data-review-connect-finish.png" alt-text="Screenshot of Review and connect tab with successful task status and the Finish button highlighted" lightbox="media/get-data-real-time-hub/get-data-review-connect-finish.png":::
+    :::image type="content" source="media/get-data-real-time-hub/get-data-review-connect-finish.png" alt-text="Screenshot of Review and connect tab with successful task status and the Finish button highlighted." lightbox="media/get-data-real-time-hub/get-data-review-connect-finish.png":::
 
     When the connection is successful, select **Finish**.
 

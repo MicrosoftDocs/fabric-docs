@@ -15,12 +15,6 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get events from Real-Time hub into either a new or existing table.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
-> [!NOTE]
-> Currently Real-Time hub only supports eventstreams as a source.
-> Real-Time hub is currently in preview.
-
 ## Prerequisites
 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
@@ -35,7 +29,7 @@ On the lower ribbon of your KQL database, either:
 
 * Select **Get Data** and then select a stream from the **Real-Time hub** section.
 
-    :::image type="content" source="media/get-data-real-time-hub/get-data-real-time-hub-filter.png" alt-text="The get data window open with the Real-Time hub filter highlighted.":::
+    :::image type="content" source="media/get-data-real-time-hub/get-data-real-time-hub-filter.png" alt-text="The get data window open with the Real-Time hub filter highlighted." lightbox="media/get-data-real-time-hub/get-data-real-time-hub-filter.png":::
 
 * From the **Get Data** dropdown menu, select **Select more data sources**, * Select **Get Data** and then select a stream from the **Real-Time hub** section.
 
@@ -48,7 +42,7 @@ On the lower ribbon of your KQL database, either:
 
 1. Under **Configure the data source**, fill out the settings using the information in the following table. Some setting information automatically fills from your eventstream.
 
-    :::image type="content" source="media/get-data-real-time-hub/get-data-rth-destination.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/get-data-rth-destination.png":::
+    :::image type="content" source="media/get-data-real-time-hub/get-data-real-time-hub-destination.png" alt-text="Screenshot of configure tab with new table entered and one sample data file selected." lightbox="media/get-data-real-time-hub/get-data-real-time-hub-destination.png":::
 
     |**Setting** | **Description**|
     |----|----|
@@ -65,7 +59,7 @@ The **Inspect** tab shows a preview of the data.
 
 Select **Finish** to complete the ingestion process.
 
-:::image type="content" source="media/get-data-real-time-hub/inspect-data-rth.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data-rth.png":::
+:::image type="content" source="media/get-data-real-time-hub/inspect-data-real-time-hub.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-real-time-hub/inspect-data-real-time-hub.png":::
 
 Optional:
 
@@ -79,7 +73,7 @@ Optional:
 
 [!INCLUDE [get-data-edit-columns](includes/get-data-edit-columns.md)]
 
-:::image type="content" source="media/get-data-real-time-hub/edit-columns-rth.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-real-time-hub/edit-columns-rth.png":::
+:::image type="content" source="media/get-data-real-time-hub/edit-columns-real-time-hub.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-real-time-hub/edit-columns-real-time-hub.png":::
 
 [!INCLUDE [mapping-transformations](includes/mapping-transformations.md)]
 
