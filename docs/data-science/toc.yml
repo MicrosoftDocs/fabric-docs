@@ -95,6 +95,8 @@ items:
       items:
         - name: Data agent configurations
           href: data-agent-configurations.md
+        - name: Semantic model best practices
+          href: semantic-model-best-practices.md
         - name: Example queries
           href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
