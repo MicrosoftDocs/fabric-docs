@@ -50,7 +50,7 @@ items:
     - name: Ontology REST API
       href: /rest/api/fabric/ontology/items
     - name: Ontology FAQ
-      href: ontology/resources-frequently-asked-questions.md
+      href: ontology/resources-frequently-asked-questions.yml
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
 - name: Graph in Microsoft Fabric
