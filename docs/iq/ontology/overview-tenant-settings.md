@@ -34,15 +34,6 @@ If you don't enable this setting, you get errors when accessing a newly created 
 
 :::image type="content" source="media/overview-tenant-settings/graph-error.png" alt-text="Screenshot of the error from missing graph permissions.":::
 
-## XMLA endpoints
-
-This setting is optional, but required if you want to generate an ontology (preview) from a semantic model:
-* *Allow XMLA endpoints and Analyze in Excel with on-premises semantic models*
-
-:::image type="content" source="media/overview-tenant-settings/prerequisite-xmla.png" alt-text="Screenshot of enabling XMLA in the admin portal.":::
-
-If you don't enable this setting, the ontology generation fails.
-
 ## Data agent item types (preview)
 
 This setting is optional, but required if you want to use ontology (preview) with a Fabric data agent:
