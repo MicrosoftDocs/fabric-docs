@@ -61,7 +61,7 @@ df["response"] = df.ai.generate_response(
 |--- |---|
 | `prompt` <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) that contains prompt instructions to apply to input text values for custom responses. |
 | `is_prompt_template` <br> Optional | A [Boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific row values from each column name that appears in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
-| `response_format` <br> Optional | A None, [dictionary](https://docs.python.org/3/library/stdtypes.html#dict), [string](https://docs.python.org/3/library/stdtypes.html#str), or class based on [Pydantic's BaseModel](https://docs.pydantic.dev/latest/concepts/models/) that specifies the expected structure of the model's response. See [Response Format Options](#response-format-options) for details on all available formats. |
+| `response_format` <br> Optional | `None`, a [dictionary](https://docs.python.org/3/library/stdtypes.html#dict), a [string](https://docs.python.org/3/library/stdtypes.html#str), or a class based on [Pydantic's BaseModel](https://docs.pydantic.dev/latest/concepts/models/) that specifies the expected structure of the model's response. See [Response Format Options](#response-format-options) for details on all available formats. |
 
 ## Returns
 
