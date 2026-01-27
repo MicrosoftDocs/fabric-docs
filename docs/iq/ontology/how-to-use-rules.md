@@ -16,6 +16,10 @@ The *rules* feature of ontology (preview) lets you automate and manage event-dri
 
 Rules transform ontologies from static information models to dynamic, operational frameworks. These frameworks are capable of automatically initiating business processes through alerts and automated actions, all within a seamless and context-aware environment. This feature helps you unlock automation capabilities without needing to switch between tools or write custom code, to streamline workflows and enhance efficiency.
 
+>[!NOTE]
+> Rules in ontology (preview) rely on Fabric Activator and are subject to Fabric Activator costs. For more information about Fabric Activator pricing, see [Understand Activator capacity consumption, usage reporting, and billing](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
+
+
 ## Prerequisites
 
 Before defining rules, make sure you have the following prerequisites:

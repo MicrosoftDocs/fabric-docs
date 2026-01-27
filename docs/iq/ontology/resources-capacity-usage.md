@@ -49,6 +49,7 @@ Consider the following factors that could potentially affect cost:
 * **Model uptime:** Charges for the time your ontology model is running. This factor is dependent on the number of definitions, model complexity, size, and usage time.
 * **Ontology logic and operations:** Charges for running queries and associated compute. Operations like indexing, refresh rates, and idle time can affect CU usage.
 * **AI reasoning and query:** Charges for advanced reasoning and natural language queries powered by AI, based on the number of tokens used.
+* **Associated Fabric items:** Charges from associated Fabric items that are being used through ontology, like [Fabric Activator](../../real-time-intelligence/data-activator/activator-capacity-usage.md).
 
 ### Subject to changes in Microsoft Fabric workload consumption rate
 
