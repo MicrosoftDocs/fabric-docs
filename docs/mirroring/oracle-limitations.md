@@ -79,7 +79,7 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-We also support mirroring tables that have a partitioning - if your table is partitioned in your source table, then we can mirroring those tables over.
+We also support mirroring tables that have a partitioning - if your source table(s) is partitioned, then we can mirroring those tables over.
 
 Tables that do not have a Primary Key (PK) are supported - if you have an unique index in your table(s), then we can support mirroring those tables. If your table does not have a Primary Key (PK) or an unique index, we will not be able to support mirroring those tables over.
 
