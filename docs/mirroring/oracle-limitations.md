@@ -33,9 +33,10 @@ Here's what you can expect for database scale:
 
 We support these Oracle Server environments:
 
-* Oracle versions 11 and above with LogMiner enabled
+* Oracle versions 10 and above with LogMiner enabled
 * Oracle on-premises (VM, Azure VM)
 * Oracle Cloud Infrastructure (OCI)
+* Oracle Database@Azure
 * Oracle Exadata
 
 >[!NOTE]
@@ -78,7 +79,9 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-Currently, tables that do not have a Primary Key (PK) are not supported.
+We also support mirroring tables that have a partitioning - if your table is partitioned in your source table, then we can mirroring those tables over.
+
+Tables that do not have a Primary Key (PK) are supported - if you have an unique index in your table(s), then we can support mirroring those tables. If your table does not have a Primary Key (PK) or an unique index, we will not be able to support mirroring those tables over.
 
 We cannot support table names that have a length greater than or equal to 30.
 
@@ -129,6 +132,8 @@ If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissio
 Currently, we only support connecting to Oracle using an On-Premises Data Gateway (OPDG). You need to install and configure the gateway on a machine that can connect to your Oracle server.
 
 For machine requirements and setup instructions to install and register your gateway, see the [On-premises Data Gateway installation guide](/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway).
+>[!NOTE]
+>* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-monthly-updates).
 
 ## Related Content
 
