@@ -63,7 +63,7 @@ Before you set up Oracle mirroring, you need:
 * [Required user permissions](oracle-limitations.md#required-permissions)
 
 >[!NOTE]
->* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-monthly-updates).
+>* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
 
 For complete setup instructions and requirements, see:
 
