@@ -23,6 +23,7 @@ You need:
 * An Oracle server that's one of these types, version 11 or above with LogMiner enabled:
   * Oracle on-premises (VM, Azure VM, etc.)
   * Oracle OCI
+  * Oracle Database@Azure
   * Exadata
   * Note: Oracle Autonomous Database isn't supported in this preview
 
