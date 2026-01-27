@@ -47,14 +47,6 @@ After updating a graph model, the queryset's underlying queryable graph isn't im
 
 Currently, there's no UI option to manually refresh a queryset's connection to an updated model. After saving your model changes, create a new queryset to see the updated nodes and edges.
 
-## Getting "Failed to load graph model" error in queryset view
-
-This error typically means the queryable graph isn't ready yet. This situation is different from having no model defined.
-
-- Wait a moment and refresh the page.
-- Verify that your graph model is saved and processed.
-- Check that your graph model contains at least one node and edge definition.
-
 ## FAQ
 
 ### Can I create a node from a column in an existing table?
