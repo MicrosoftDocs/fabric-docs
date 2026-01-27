@@ -45,7 +45,7 @@ If you encounter binding errors or corrupted querysets:
 
 After updating a graph model, the queryset's underlying queryable graph isn't immediately updated. A new snapshot must be generated before changes appear in the queryset. Save your model and wait for the queryable graph to be ready before creating or refreshing a queryset.
 
-Currently, there's no UI option to manually refresh a queryset's connection to an updated model. After saving your model changes, create a new queryset to see the updated nodes and edges. The team is working on improving the messaging and adding versioning UI to make this process clearer.
+Currently, there's no UI option to manually refresh a queryset's connection to an updated model. After saving your model changes, create a new queryset to see the updated nodes and edges.
 
 ## Getting "Failed to load graph model" error in queryset view
 
