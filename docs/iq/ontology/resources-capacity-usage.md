@@ -42,7 +42,7 @@ Now, say the user triggers a second operation 15 minutes later. The total time c
 
 ### Ontology Logic and Operations​
 
-Ontology Logic and Operations usage is incurred when ontology is actively executing compute operations. Examples of operations that contribute to this meter are querying the graph while creating data bindings, traversing the graph, querying data through the entity type overview tiles, refreshing the graph, or exploring the graph through use of the ontology API or SQL. Usage is measured only during active compute execution, and is billed in minutes of CPU uptime with a minimum of 15 mins.
+Ontology Logic and Operations usage is incurred when ontology is actively executing compute operations. Examples of operations that contribute to this meter are changing the properties on an entity that's undergone data binding, traversing the graph, querying data through the entity type overview tiles, refreshing the graph, or exploring the graph through use of the ontology API or SQL. Usage is measured only during active compute execution, and is billed in minutes of CPU uptime with a minimum of 15 mins.
 
 For example, a customer runs ontology exploration and querying workloads with the following pattern of 15 mins per hour and use does this for 8 hours a day. It is 15min/hour x 8 hous * 0.666667  CU/min = 1.33 CU hours per day
 
