@@ -1,10 +1,10 @@
 items:
-- name: Lifecycle management documentation
+- name: Application lifecycle management documentation
   href: index.yml
-- name: What is lifecycle management? 
+- name: What is application lifecycle management? 
   href: cicd-overview.md
 
-- name: "Tutorial: End to end lifecycle management"
+- name: "Tutorial: End to end application lifecycle management"
   href: cicd-tutorial.md
 - name: "CI/CD workflow options in Fabric"
   href: manage-deployment.md
