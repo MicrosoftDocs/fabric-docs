@@ -13,7 +13,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 08/01/2025
+  ms.date: 01/27/2026
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -46,7 +46,7 @@ highlightedContent:
     # Card
     - title: Fabric roadmap
       itemType: whats-new
-      url: https://blog.fabric.microsoft.com/blog
+      url: https://aka.ms/fabricrm
     # Card
     - title: Fabric capacity and license types
       itemType: concept
@@ -58,17 +58,10 @@ productDirectory:
   summary: Learn about Microsoft Fabric, evaluate its features, the experiences it offers, analyze your data and run reports. # Optional but good for SEO. Remove if not applicable.
   items:
     # Card
-    - title: Get started with Fabric
-      # imageSrc should be square in ratio with no white space
-      imageSrc: ./media/fabric-icon.png
-      summary: Start learning about Microsoft Fabric, its capabilities, and how to use them.
-      url: fundamentals/microsoft-fabric-overview.md
-    # Card
-    - title: What's new in Microsoft Fabric?
-      # imageSrc should be square in ratio with no white space
-      imageSrc: ./media/fabric-icon.png
-      summary: Stay up-to-date with the latest features and updates in Microsoft Fabric.
-      url: fundamentals/whats-new.md
+    - title: Copilot in Fabric
+      imageSrc: ./media/copilot-icon.svg
+      summary: Leverage AI-powered assistance to enhance your data analysis and decision-making processes.
+      url: fundamentals/copilot-fabric-overview.md
     # Card
     - title: Power BI
       # imageSrc should be square in ratio with no white space
@@ -116,10 +109,11 @@ productDirectory:
       summary: Analyze data in a secure SQL warehouse for greater scale and performance in an open data format.
       url: data-warehouse/index.yml
     # Card
-    - title: Copilot in Fabric
-      imageSrc: ./media/copilot-icon.svg
-      summary: Leverage AI-powered assistance to enhance your data analysis and decision-making processes.
-      url: fundamentals/copilot-fabric-overview.md
+    - title: Application lifecycle management
+      # imageSrc should be square in ratio with no white space
+      imageSrc: ./media/fabric-icon.png
+      summary: Start learning about Microsoft Fabric, its capabilities, and how to use them.
+      url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
 
 # conceptualContent section (optional)
 conceptualContent:
