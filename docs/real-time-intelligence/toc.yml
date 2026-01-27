@@ -547,6 +547,8 @@ items:
             href: get-data-eventstream.md
           - name: Get data from Real-Time hub
             href: get-data-real-time-hub.md
+          - name: Get data from other sources
+            href: get-data-other-sources.md
           - name: Configure KQL Database in a pipeline
             href: ../data-factory/connector-kql-database-copy-activity.md
           - name: Connect to KQL Database in dataflows

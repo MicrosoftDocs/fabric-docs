@@ -48,6 +48,12 @@ The following OneLake types are supported:
 - TimestampNtzType
 - TimestampType
 
+### Data sources
+
+- OneLake parquet and CSV files are the only data sources currently supported.
+- Power BI semantic model support is under development.
+- Lakehouse with schema enabled isn't supported.
+
 ### Edge creation
 
 During graph modeling, give different graph edge types different names.
