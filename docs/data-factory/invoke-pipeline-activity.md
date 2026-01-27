@@ -69,22 +69,6 @@ Select the **Settings** tab and configure your activity.
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings-fabric.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline activity workspace and connection selection.":::
 
-#### Using Fabric Workspace Identity (WI) in Invoke pipelines
-
-1. **Create the Workspace Identity**
-Create a Workspace Identity in your Fabric workspace.
-Check out the docs on [Workspace Identity](../security/workspace-identity.md).
-
-1. **Enable tenant-level settings**
-In the Fabric admin portal, enable the following tenant setting:
-Service principals can call Fabric public APIs.
-This setting is required for the Workspace Identity to authenticate successfully.
-Check out the docs on [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
-
-1. **Grant workspace permissions to the Workspace Identity**
-Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios.
-Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
-
 #### Invoke pipelines from ADF and Synapse
 
 - Type: Choose the source of your pipeline (Fabric, Azure Data Factory, Synapse)
@@ -98,6 +82,9 @@ Check out the docs on [Give users access to workspaces](../fundamentals/give-acc
 Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+
+## Known issues
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 
