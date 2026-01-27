@@ -51,7 +51,9 @@ Currently, there's no UI option to manually refresh a queryset's connection to a
 
 ### Can I create a node from a column in an existing table?
 
-Yes. If you have denormalized data (for example, a category column within a larger table), you can create a separate node type from any column in your table. When you use this approach, the same table acts as the edge mapping source for this node type. The product team is actively working on improvements for more complex modeling scenarios.
+Yes, you can create a separate node type from any column in your table. For each of these node types, you should delete properties that you won't need in queries or analysis, because excessive properties make your graph harder to maintain and use.
+
+You may also use that same table as the edge mapping table for edges types connected to these node types.
 
 ### How do I change which property appears as the node label?
 
