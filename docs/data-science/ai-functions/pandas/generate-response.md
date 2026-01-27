@@ -67,7 +67,7 @@ df["response"] = df.ai.generate_response(
 
 The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that contains custom text responses to the prompt for each input text row.
 
-## Response Format Options
+## Response format options
 
 The `response_format` parameter accepts different formats to control how the LLM structures its responses. This parameter corresponds to OpenAI's [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs) feature. The following options are available:
 
@@ -79,7 +79,8 @@ The `response_format` parameter accepts different formats to control how the LLM
 | `{"type": "json_schema", ...}` | Returns a JSON dictionary that conforms to your custom [JSON Schema](https://json-schema.org/). Provides precise control over response structure. |
 | Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the openai package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
 
-Note: The `json_schema` and Pydantic `BaseModel` options are functionally equivalent. The Pydantic BaseModel approach provides better developer experience with Python's type system and validation, while being automatically converted to the verbose JSON schema under the hood.
+> [!NOTE]
+> The `json_schema` and Pydantic `BaseModel` options are functionally equivalent. The Pydantic BaseModel approach provides better developer experience with Python's type system and validation, while being automatically converted to the verbose JSON schema under the hood.
 
 ## Examples
 
