@@ -80,5 +80,4 @@ By default, nodes display their ID as the label. To change the display label:
 ## Related content
 
 - [What is Graph in Microsoft Fabric?](overview.md)
-- [Create a graph model](create-graph-model.md)
-- [Query a graph](query-graph.md)
+- [Quickstart guide for Graph in Microsoft Fabric](quickstart.md)
