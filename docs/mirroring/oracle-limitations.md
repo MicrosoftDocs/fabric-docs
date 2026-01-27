@@ -79,11 +79,11 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-We also support mirroring tables that have a partitioning - if your source table(s) is partitioned, then we can mirroring those tables over.
+We also support mirroring tables that have a partitioning - if your source tables are partitioned, then we can mirror those tables over.
 
-Tables that do not have a Primary Key (PK) are supported - if you have an unique index in your table(s), then we can support mirroring those tables. If your table does not have a Primary Key (PK) or an unique index, we will not be able to support mirroring those tables over.
+Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables doesn't have a Primary Key (PK) or a unique index, we won't support mirroring those tables over.
 
-We cannot support table names that have a length greater than or equal to 30.
+We can't support table names that have a length greater than or equal to 30.
 
 ## Required Permissions
 
