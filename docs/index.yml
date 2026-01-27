@@ -113,7 +113,7 @@ productDirectory:
       # imageSrc should be square in ratio with no white space
       imageSrc: ./media/fabric-icon.png
       summary: Start learning about Microsoft Fabric, its capabilities, and how to use them.
-      url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+      url: cicd/cicd-overview.md
 
 # conceptualContent section (optional)
 conceptualContent:
