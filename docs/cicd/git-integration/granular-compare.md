@@ -40,7 +40,7 @@ Granular Compare enables users to:
 The following is a list of limitations for the granular compare feature.
 
 - Files that are over 1 MB, like binary files, don't show content.
-- System files and system level changes currently don't display content.  See [System files, system level changes and granular compare](#system-files-system-level-changes-and-granular-compare) for more information.
+- System files and system level changes currently don't display content.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
 - In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 
 ## How it works
@@ -57,7 +57,7 @@ Granular Compare can be opened from multiple locations. The following table summ
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
 
-## System files, system level changes and granular compare
+## System files and system level changes
 System files and system level changes are included in Git export/import because Microsoft Fabric must track them for correctness, lineage, and reproducibility. However, their internal contents are not rendered in the compare viewer.
 
 System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list. But their content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. 
