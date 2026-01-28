@@ -11,7 +11,7 @@ ms.custom:
 ms.date: 01/20/2026
 ---
 
-# Granular compare in Microsoft Fabric 
+# Compare code changes in Git Integration (Public Preview)
 
 Granular Compare is a feature of Microsoft Fabric Git integration that lets users review the exact changes that occur during Git operations—commit, undo, or update—before applying them.
 
@@ -32,10 +32,16 @@ Granular Compare enables users to:
 - Understand how Git commit, update, or undo actions affect the workspace.
 - Compare only modified items (not new, deleted, or unchanged ones).
 - Inspect changes triggered by non‑content modifications, such as sub‑folder moves.
-- See warnings for items using partial update, to understand why an item may behave differently.
 - Navigate across all changed files within an item—collapsed by default unless opened via single‑item view.
 - Identify binary items that changed (without showing their contents).
 - Work across large workspaces where items may contain many files.
+
+## Limitations
+The following is a list of limitations for the granular compare feature.
+
+- Files that are over 1 MB, like binary files, don't show content.
+- System file operations currently don't display content.  See [System files and granular compare](#system-files-and-granular-compare) for more information.
+- In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 
 ## How it works
 The following sections provide an overview of how granular compare works.
@@ -50,69 +56,73 @@ Granular Compare can be opened from multiple locations. The following table summ
 |Conflict Dialog|●Shows only conflicted items</br>●Comparisons depend on scenario (e.g., workspace vs. latest Git)|
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
-## Understand the Diff Logic
-The following summarizes the diff logic and what and what isn't displayed.
 
-### What Is Displayed
-Granular Compare displays:
+## System files and granular compare
+System files are included in Git export/import because Microsoft Fabric must track them for correctness, lineage, and reproducibility.
+However, their internal contents are not rendered in the compare viewer.
 
-- Only modified items
-- All modified textual files
-- Indicators for binary file changes
-- Partial‑update warnings
-
-It uses three icons to represent the change status:
-
-|Entry Point|Description|
-|-----|-----|
-|Diff|What is in the source workspace differs from what is in the target workspace|
-|New|Represents a new item in the source workspace that is not yet in the target workspace|
-|Missing|Item is missing from the source workspace|
-
-:::image type="content" source="media/granular-compare/granular-5.png" alt-text="Screenshot of the diff icons." lightbox="media/granular-compare/granular-5.png":::
+System files participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list. But their content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. See [Example - Sytem file 1.0 changes](#example---sytem-file-10-changes.) for an example.
 
 
-### What Is Not Displayed
-Granular compare does not display:
+## Example - Review changes to a specific item
+The following steps show how to review changes for a specific item.
 
-- No file‑level commit actions 
-- No filtering to text‑only files 
-- Items that explicitly opt out 
+1. At the top of your workspace, select **Source control**.
+2. On the right, under **changes**, select the item you want to review.
+3. Select the **Review changes** box next to the item.
+ :::image type="content" source="media/granular-compare/compare-1.png" alt-text="Screenshot of item review changes." lightbox="media/granular-compare/compare-1.png":::
+
+4. On the diff screen, review the changes.
+ :::image type="content" source="media/granular-compare/compare-2.png" alt-text="Screenshot of the item diff screen." lightbox="media/granular-compare/compare-2.png":::
+
+5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
 
-## Example - Diff between workspace and Git
+## Example - Review changes to all items
+The following steps show how to review changes for all items.
 
 1. At the top of your workspace, select **Source control**.
 2. On the right, select **Review changes**.
- :::image type="content" source="media/granular-compare/granular-2.png" alt-text="Screenshot of review changes." lightbox="media/granular-compare/granular-2.png":::
+ :::image type="content" source="media/granular-compare/compare-3.png" alt-text="Screenshot of review all changes." lightbox="media/granular-compare/compare-3.png":::
 
-3. On the left, select the item to review.
-4. On the diff screen, review the changes.
-5. At the top, you can choose the following:
-  - Mark as reviewed
-  - Text wrapping
-  - Expand all rows
+3. On the diff screen, review the changes.
+ :::image type="content" source="media/granular-compare/compare-4.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/compare-4.png":::
 
- :::image type="content" source="media/granular-compare/granular-3.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/granular-3.png":::
-6. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
- :::image type="content" source="media/granular-compare/granular-4.png" alt-text="Screenshot of the reviewed items." lightbox="media/granular-compare/granular-4.png":::
+4. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
-## Example - Deployment pipeline Diff compare
+## Example - Review updates
+The following steps show how to review updates for items.
 
-1. From your deployment pipeline, select the stage you want to review.
-2. On the bottom pane, select **Review changes**.
- :::image type="content" source="media/granular-compare/granular-6.png" alt-text="Screenshot of deployment pipeline review changes." lightbox="media/granular-compare/granular-6.png":::
+1. At the top of your workspace, select **Source control**.
+2. On the right, under **updates**, select the item you want to review.
+3. Select the **Review changes** box next to the item.
+ :::image type="content" source="media/granular-compare/compare-5.png" alt-text="Screenshot of item review upsates." lightbox="media/granular-compare/compare-5.png":::
 
-3. Select the item to review.
-4. On the diff screen, review the changes.
-5. At the top, you can choose the following:
-  - Mark as reviewed
-  - Text wrapping
-  - Expand all rows
- :::image type="content" source="media/granular-compare/granular-7.png" alt-text="Screenshot of deployment pipeline diff screen." lightbox="media/granular-compare/granular-7.png":::
+4. On the diff screen, review the updates.
+ :::image type="content" source="media/granular-compare/compare-6.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/compare-6.png":::
 
-6. Once you have reviewed it, the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
- :::image type="content" source="media/granular-compare/granular-8.png" alt-text="Screenshot of the deployment pipeline reviewed items." lightbox="media/granular-compare/granular-8.png":::
+5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
+
+## Example - Sytem file 1.0 changes
+The following steps show how to review changes to system files. Remember that system files content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. In this example, the **report**. item is renamed to **quarterly report**.
+
+1. At the top of your workspace, select **Source control**.
+2. On the right, under **changes**, select the item you want to review.
+3. Select the **Review changes** box next to the item.
+ :::image type="content" source="media/granular-compare/compare-7.png" alt-text="Screenshot of report changes." lightbox="media/granular-compare/compare-7.png":::
+
+4. On the diff screen, note that there are no visible changes.
+ :::image type="content" source="media/granular-compare/compare-8.png" alt-text="Screenshot of report changes." lightbox="media/granular-compare/compare-8.png":::
+
+ 5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
+
+
+## Example - Items in conflict
+If a conflict is detected between items, the granular compare feature will be disabled until this conflict is resolved.
+ :::image type="content" source="media/granular-compare/compare-9.png" alt-text="Screenshot of conflict." lightbox="media/granular-compare/compare-9.png":::
+
+## automaticaly generated system file behavior'
+
 
  ## Related content
 * [Git integration - get started](git-get-started.md)
