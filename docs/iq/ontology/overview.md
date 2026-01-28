@@ -11,7 +11,7 @@ ms.search.form: Ontology Overview
 
 # What is ontology (preview)?
 
-The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines entity types, relationships, properties, and constraints. It then binds the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
+The *ontology (preview)* item (part of the [IQ (preview) workload](../overview.md)) digitally represents the enterprise vocabulary and semantic layer that unifies meaning across domains and OneLake sources. It defines enterprise concepts as *entity types* (like *Customer*), *properties* (like a Customer's *name* and *email*), and *relationships* (like *Customer places Order*), while clarifying the constraints of these terms. After defining your ontology, bind the entity type definitions to real data, so downstream tools can share the same language. Both humans and AI agents can use this language for cross-domain reasoning and decision-ready actions.
 
 Ontology works well in situations where you need cross-domain consistency, governance, or AI agent grounding, and you want to reason across processes.
 
@@ -24,7 +24,7 @@ An *ontology* is a shared, machine-understandable vocabulary of your business. I
 You can also think of an ontology like a business context layer, containing:
 
 * A catalog of concepts (like *Product*, *Order*, *Plant*, *Sensor*, *Route*), defined once and reused everywhere
-* Bindings that connect those concepts to actual data sources in OneLake
+* Data bindings, or connections that link those concepts to your actual data sources in OneLake
 * A graph representation that links related concepts for richer navigation, lineage, and reasoning
 * A query surface that lets you ask questions about concepts (not just tables), supporting federated queries across sources
 
@@ -38,7 +38,7 @@ An *entity type* is the reusable logical model of a real world concept (like *Sh
 
 ### Entity instance
 
-An *entity instance* is a concrete occurrence of an entity type, populated from data bindings (like a semantic row). Entity instances keep track of which source created them and when they were true, and can participate in relationships. Entity instances transform raw rows into governed, typed business objects that tools and agents can reason over consistently.
+An *entity instance* is a concrete occurrence of an entity type, populated from data bindings (like a semantic row). Entity instances keep track of which source created them and when they were true, and can participate in relationships. Entity instances turn your raw data into standardized business objects that all your tools and AI agents can understand in the same way.
 
 ### Property
 
@@ -46,7 +46,7 @@ A *property* is a named fact about an entity, with a declared data type. It can 
 
 ### Relationship
 
-A *relationship* is a typed, directional link between entity types or instances. Relationships can have attributes (like *distance*, *confidence*, or *effectiveAt*) and cardinality rules. Relationships make context explicit and reusable for how things connect, enabling traversal, dependency analysis, rule based inference, and clearer answers to business questions without custom join logic.
+A *relationship* is a typed, directional link between entity types or instances. Relationships can have attributes (like *distance*, *confidence*, or *effectiveAt*) and cardinality rules defining how many items can be related (for example, one *Customer* having many *Orders*). Relationships make context explicit and reusable for how things connect, enabling traversal, dependency analysis, rule based inference, and clearer answers to business questions without custom join logic.
 
 ## Core concepts: Your data in the ontology
 
@@ -54,7 +54,7 @@ After you define an ontology, you can [bind it to your data](how-to-bind-data.md
 
 ### Data binding
 
-*Binding* connects your ontology's definitions (including entity types, properties, and relationships) to concrete data living in OneLake, including lakehouse tables, eventhouse streams, and semantic models. A data binding describes data types, identity keys, how columns map to properties, and how keys map to relationships across multiple data sources. By enabling schema evolution rules, data quality checks (based on things like nullability, ranges, and uniqueness), and provenance at the concept layer, bindings turn raw rows and events into governed business objects. Binding improves semantics by ensuring every instance regardless of source carries consistent meaning, types, constraints, and lineage.
+*Data binding* connects your ontology's definitions (including entity types, properties, and relationships) to concrete data living in OneLake, including lakehouse tables, eventhouse streams, and Power BI semantic models. A data binding describes data types, identity keys, how columns map to properties, and how keys map to relationships across multiple data sources. By enabling schema evolution rules, data quality checks (based on things like nullability, ranges, and uniqueness), and provenance at the concept layer, bindings turn raw rows and events into governed business objects. Data binding ensures your data has consistent meaning, follows the same rules, and tracks where it came from across different data sources.
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
@@ -69,7 +69,7 @@ The *ontology graph* is a queryable instance graph built from your data bindings
 
 ### Querying your ontology
 
-*Ontology querying* lets you ask business-level questions over bound data sources through ontology terminology. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer pushes predicates down to the native engines where possible (GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an NL2Ontology query layer that converts natural language into a detailed federated query plan, executes the plan, and returns the relevant results. By querying concepts rather than physical schemas, ontology's federated queries improve semantics. They ensure that filters, joins, units, and validity windows align with the definitions that are published in your ontology.
+*Ontology querying* lets you ask business-level questions over bound data sources through ontology terminology. Queries start with entity types and allow filtering by properties, traversing relationships, aggregating by time, and other constraints. The ontology layer automatically sends your queries to the most efficient system to get results quickly (such as GQL for Graph in Microsoft Fabric and KQL for Eventhouse). It also includes an Natural Language to Ontology (NL2Ontology) query layer, which converts your natural language questions into structured queries and returns relevant results. This enables you to ask questions using business terms, instead of needing to know the details of how your data is stored in different systems. NL2Ontology queries ensure that filters, joins, units, and validity windows align with the definitions that are published in your ontology.
 
 ## Next steps
 
