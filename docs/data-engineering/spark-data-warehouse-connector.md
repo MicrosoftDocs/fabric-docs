@@ -156,6 +156,28 @@ df.write.mode("overwrite").synapsesql("<warehouse/lakehouse name>.<schema name>.
 > [!NOTE]
 > The connector supports writing to a Fabric DW table only as the SQL analytics endpoint of a Lakehouse is read-only.
 
+### Parallelizing Reads for Improved Performance
+This connector supports parallelized reads to improve query performance when loading large tables. Similar to [spark.read.jdbc](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html), you can enable parallelism by specifying a partition column and its value range. Spark will then split the read operation into multiple partitions that are processed concurrently.
+
+The following code shows how to enable parallel reads using a Spark notebook:
+
+```python
+import com.microsoft.spark.fabric.tds.implicits.read.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.tds.implicits.write.FabricSparkTDSImplicits._
+import com.microsoft.spark.fabric.Constants
+import org.apache.spark.sql.SaveMode 
+
+val df = spark.read.option("partitionColumn", <SomeColumn>)
+
+        .option("lowerBound",  <ColumnValuesLowerLimit>)
+
+        .option("upperBound", <ColumnValuesUpperLimit>)
+
+        .option("numPartitions", <NumberOfPartitionsDesired>).synapsesql(<Table>)
+```
+
+
+
 ## Troubleshoot
 
 Upon completion, the read response snippet appears in the cell's output. Failure in the current cell also cancels subsequent cell executions of the notebook. Detailed error information is available in the Spark application logs.
