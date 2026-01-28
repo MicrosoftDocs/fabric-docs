@@ -4,7 +4,7 @@ description: Learn about the SQL analytics endpoint and how to run SQL queries d
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/14/2025
 ---
 # What is the SQL analytics endpoint for a SQL database in Fabric?

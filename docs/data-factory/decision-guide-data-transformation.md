@@ -5,7 +5,7 @@ author: KrishnakumarRukmangathan
 ms.author: krirukm
 ms.reviewer: whhender
 ms.date: 11/18/2025
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ---
 

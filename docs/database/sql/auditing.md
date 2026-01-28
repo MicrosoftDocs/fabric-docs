@@ -5,15 +5,17 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: srsaluru
 ms.date: 11/17/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL database security
 ---
 
-# Auditing
+# Auditing (preview)
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 Auditing for SQL databases in Fabric is a critical security and compliance feature that enables organizations to track and log database activities. Auditing supports compliance, threat detection, and forensic investigations by helping to answer questions like who accessed what data, when, and how.
+
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## What is SQL auditing?
 

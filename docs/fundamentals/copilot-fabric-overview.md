@@ -15,6 +15,7 @@ ms.custom:
   - copilot-learning-hub
   - fabric-cat
 no-loc: [Copilot]
+ai-usage: ai-assisted
 ---
 
 # What is Copilot in Fabric?
@@ -77,9 +78,9 @@ Copilot for SQL database in Microsoft Fabric is an AI assistant designed to stre
 
 ### Copilot in Fabric in the Power BI workload
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the article for a report or by prompting Copilot for Power BI on a particular article. You can use Copilot for Power BI to generate a summary for the report page that you created, and generate synonyms for better Q&A capabilities.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the article for a report or by prompting Copilot for Power BI on a particular article. You can use Copilot for Power BI to generate a summary for the report page that you created, and generate synonyms for better Q&A capabilities. For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
 
-For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
+Copilot is also available for Power BI apps, where it's scoped to the curated content within an app. App-scoped Copilot helps users search reports, ask questions, and get summaries based on the app's content. For more information, see [Overview of Copilot for Power BI apps (preview)](/power-bi/create-reports/copilot-apps-overview).
 
 ### Copilot in Fabric in the Real-Time Intelligence workload
 

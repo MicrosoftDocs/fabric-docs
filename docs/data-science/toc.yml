@@ -103,6 +103,8 @@ items:
           href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
+        - name: Connect to an AI Foundry Search Index
+          href: data-agent-ai-search-index.md
     - name: How to consume a Fabric data agent
       items:
         - name: Consume a data agent from Azure AI foundry (preview)

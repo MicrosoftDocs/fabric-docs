@@ -16,7 +16,7 @@ ai-usage: ai-assisted
 
 Microsoft Fabric is an analytics platform that supports end‑to‑end data workflows, including data ingestion, transformation, real‑time stream processing, analytics, and reporting. It provides integrated experiences such as Data Engineering, Data Factory, Data Science, Real‑Time Intelligence, Data Warehouse, and Databases, which operate over a shared compute and storage model.
 
-Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
+Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. In tandem with OneLake, the OneLake Catalog provides a centralized experience for discovering, exploring, and governing data and analytics artifacts across the tenant. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
 
 > [!NOTE]
 > * The [Fabric Analyst in a Day (FAIAD)](https://aka.ms/LearnFAIAD) workshop is free, hands-on training for analysts working with Power BI and Fabric. Get hands-on experience analyzing data and building reports using Fabric. The workshop covers key concepts like working with lakehouses, creating reports, and analyzing data in the Fabric environment.
@@ -52,7 +52,7 @@ Beneath these workloads is the Fabric platform layer, which provides shared serv
 
 * **Copilot** provides AI assistance embedded directly within Fabric workloads to help with authoring, exploration, and routine development tasks, while respecting tenant, data, and permission boundaries.
 
-* **Governance** represents centralized administration and data governance, including permissions, sensitivity labels, and auditing. These controls are applied automatically and inherited across Fabric items. Governance is powered by Purview, which is built into Fabric. This seamless integration lets creators focus on producing their best work without managing the underlying infrastructure.
+* **Governance** represents centralized administration and data governance, including permissions, sensitivity labels, and auditing. These controls are applied automatically and inherited across Fabric items. Governance is powered by Purview, which is built into Fabric. Microsoft Fabric centralizes governance and discovery capabilities within the OneLake Catalog, which serves as a unified hub to find, explore, secure and use the Fabric items you need, and govern the data you own. You can assess governance state, receive recommended actions, and improve data trust and compliance across workspaces and domains. To learn more, see [What is the OneLake Catalog?](../governance/onelake-catalog-overview.md).
 
 This SaaS foundation enables end‑to‑end analytics scenarios such as ingesting data with Data Factory, processing it with engineering or real‑time workloads, and visualizing it in Power BI without manually integrating separate services or managing underlying infrastructure. Fabric centralizes data discovery, administration, and governance, with Microsoft Purview built in to enforce consistent security and compliance across the platform.
 
