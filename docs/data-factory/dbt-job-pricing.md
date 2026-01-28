@@ -2,7 +2,7 @@
 title: dbt Job Pricing in Microsoft Fabric
 description: Discover the pricing model for dbt jobs in Microsoft Fabric, including CU consumption rates, cost estimation, and workload monitoring tools.
 ms.reviewer: akurnala
-ms.date: 01/20/2026
+ms.date: 01/28/2026
 ms.topic: article
 ---
 
@@ -10,7 +10,7 @@ ms.topic: article
 
 The [dbt job in Microsoft Fabric](dbt-job-overview.md) enables analytics engineers and data analysts to author, operationalize, and schedule SQL-based dbt workflows natively within the Fabric environment.
 
-:::image type="content" source="media/dbt-job-pricing/dbt-job-overview.png" alt-text="Representation of the DBT job runtime, showing the stages of the runtime before the job is executed on the connected data sources.":::
+:::image type="content" source="media/dbt-job-pricing/dbt-job-overview.png" alt-text="Representation of the dbt job runtime, showing the stages of the runtime before the job is executed on the connected data sources.":::
 
 When you run a dbt job in Microsoft Fabric, [Fabric Capacity Units (CUs)](/fabric/enterprise/licenses#capacity) are consumed based on the execution of dbt transformations. The dbt job CUs billed are for compilation, execution, and orchestration of dbt SQL in data stores.
 
