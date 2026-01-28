@@ -46,12 +46,12 @@ Here are a few example scenarios to illustrate potential start times:
 
 | Scenario                                           | Typical Startup Time                                     |
 |----------------------------------------------------|----------------------------------------------------------|
-| **Default settings, no libraries**                 | 5 – 10 seconds                                           |
-| **Default settings + library dependencies**        | 5 – 10 seconds + 30 seconds – 5 min (for library setup)           |
-| **High traffic in region, no libraries**           | 2 – 5 minutes                                            |
-| **High traffic + library dependencies**            | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
-| **Network security (Private Links/VNet), no libraries**  | 2 – 5 minutes                                            |
-| **Network security + library dependencies**        | 2 – 5 minutes + 30 seconds – 5 min (for libraries)                |
+| **Default settings, no libraries**                 | 5 ~ 10 seconds                                           |
+| **Default settings + library dependencies**        | 5 ~ 10 seconds + 30 seconds ~ 5 min (for library setup)           |
+| **High traffic in region, no libraries**           | 2 ~ 5 minutes                                            |
+| **High traffic + library dependencies**            | 2 ~ 5 minutes + 30 seconds ~ 5 min (for libraries)                |
+| **Network security (Private Links/VNet), no libraries**  | 2 ~ 5 minutes                                            |
+| **Network security + library dependencies**        | 2 ~ 5 minutes + 30 seconds ~ 5 min (for libraries)                |
 
 
 When it comes to billing and capacity consumption, you're charged for the capacity consumption when you start executing your notebook or Apache Spark job definition. You aren't charged for the time the clusters are idle in the pool.
