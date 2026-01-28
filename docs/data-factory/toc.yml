@@ -1020,6 +1020,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: dbt job pricing
+          href: dbt-job-pricing.md
   - name: Create, manage, & schedule pipelines
     items:
       - name: What is a pipeline?
