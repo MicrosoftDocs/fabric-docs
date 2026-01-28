@@ -15,11 +15,11 @@ Example queries (also called “few-shot examples”) give the Data Agent concre
 
 ## Provide example queries
 
-When providing example queries, you must include both a natural language question and its corresponding query answer. Each question should be unique to give the Data Agent a diverse set of reference points. Every example query is validated against the schema of the selected data source—queries that don't pass validation aren't sent to the agent. To ensure your examples are actually used, it’s essential to confirm they pass this validation step.
+When providing example queries, you must include both a natural language question and its corresponding query answer. Each question should be unique to give the Data Agent a diverse set of reference points. Every example query is validated against the schema of the selected data source—queries that don't pass validation aren't sent to the agent. To ensure your examples are used, it’s essential to confirm they pass this validation step.
 
 :::image type="content" source="media/how-to-create-data-agent/data-agent-adding-examples-sql.png" alt-text="Screenshot of adding example queries to the data agent." lightbox="media/how-to-create-data-agent/data-agent-adding-examples-sql.png":::
 
-The table below shows which data sources currently support example queries in the Data Agent. These examples help guide the agent’s query generation process by providing patterns and context.
+The table shows which data sources currently support example queries in the Data Agent. These examples help guide the agent’s query generation process by providing patterns and context.
 
 | Data Source Type            | Supports Example Queries? |
 |-----------------------------|---------------------------|
@@ -29,22 +29,22 @@ The table below shows which data sources currently support example queries in th
 | Semantic Models             | ❌ No                    |
 | Ontology                    | ❌ No                    |
 
-You can also use the **run steps** view to debug which example queries were actually retrieved and applied to a user’s question. This is especially useful for confirming that the right examples are being used and for diagnosing why certain results are being generated. If the wrong examples appear, try refining your questions or adding clearer, more targeted examples.  
+You can also use the **run steps** view to debug which example queries were retrieved and applied to a user’s question. This view is especially useful for confirming that the right examples are being used and for diagnosing why certain results are being generated. If the wrong examples appear, try refining your questions or adding clearer, more targeted examples.  
 
 :::image type="content" source="media/how-to-evaluate-data-agent/example-queries-run-steps.png" alt-text="Screenshot of the referenced example queries in the run steps." lightbox="media/how-to-evaluate-data-agent/example-queries-run-steps.png":::
 
 ### Best practices for writing example queries  
 
-When creating example queries for the Data Agent, following best practices ensures they provide clear, reliable guidance during query generation. Well-crafted examples help the agent understand how natural language questions translate into SQL/KQL logic, highlight complex joins or calculations, and improve the accuracy of its results. Use the guidelines below to make your examples more effective and representative of real user scenarios.  
+When creating example queries for the Data Agent, following best practices ensures they provide clear, reliable guidance during query generation. Well-crafted examples help the agent understand how natural language questions translate into SQL/KQL logic, highlight complex joins or calculations, and improve the accuracy of its results. Use the guidelines to make your examples more effective and representative of real user scenarios.  
 
 | # | Best Practice | Why It Matters |
 |---|---------------|---------------|
 | 1 | **Ensure questions clearly map to the query** | The Data Agent uses these examples to learn the pattern between the question and the resulting SQL/KQL. Ambiguity reduces accuracy. |
-| 2 | **Include comments in the query to guide the agent** | Comments (e.g., `-- substitute customer_id here`) help the agent understand where to substitute values or apply important logic. |
+| 2 | **Include comments in the query to guide the agent** | Comments ( `-- substitute customer_id here`) help the agent understand where to substitute values or apply important logic. |
 | 3 | **Highlight join logic or complex patterns** | Use example queries to show how to handle multi-table joins, aggregations, or other advanced logic that’s hard to describe in plain instructions. |
 | 4 | **Avoid overlap or contradictions** | Each example should be distinct and non-conflicting to give the agent a clean signal of how to behave. |
 | 5 | **Use run steps to debug which examples are passed** | Run steps let you see which examples were retrieved for a given user question — if the wrong ones show up, adjust your questions or add more specific examples. |
-| 6 | **Reflect real user behavior** | Add example queries that represent the kinds of questions your users will actually ask to maximize relevance and accuracy. |
+| 6 | **Reflect real user behavior** | Add example queries that represent the kinds of questions your users ask to maximize relevance and accuracy. |
 
 ## Validate example queries
 
@@ -95,7 +95,7 @@ print(f"Success rate: {result.success_rate:.2f}% ({result.success_count}/{result
 
 After running the validator, you’ll receive a clear breakdown of which examples **passed** and which **failed**. This feedback makes it easy to identify strengths and weaknesses in your few-shot examples.  
 
-- **Success Cases:** Examples where the SQL matched the expected answers. These are strong references you can model future examples after.  
+- **Success Cases:** Examples where the SQL matched the expected answers. These examples are strong references you can model future examples after.  
 - **Failure Cases:** Examples where the SQL didn’t match the expected answer, or where the question/query pair may be unclear or invalid. These cases should be reviewed and refined.  
 
 ```python
@@ -155,7 +155,7 @@ else:
     print("No conflict details to display.")
 ```
 
-The following example shows the conflict detection output, highlighting conflicting few-shot examples, their associated questions and SQL, and the confidence level of each detected conflict.
+The following example shows the conflict detection output, their associated questions and SQL, and the confidence level of each detected conflict.
 
 :::image type="content" source="media/how-to-evaluate-data-agent/evaluation-conflict-detection.png" alt-text="Screenshot of conflict detection." lightbox="media/how-to-evaluate-data-agent/evaluation-conflict-detection.png":::
 
@@ -174,9 +174,9 @@ When you run the validator on your example queries, it generates three key score
   *Example – Needs Improvement:* A question asks for **count**, but the SQL returns **SUM(revenue)** or filters a different period.  
 
 - **Mapping**  
-  Checks whether **all literals in the natural language question appear in the SQL query**. Every number, date, or category mentioned in the question should be explicitly represented in the SQL. This doesn’t judge column names, only the literal values.  
+  Checks whether **all literals in the natural language question appear in the SQL query**. Every number, date, or category mentioned in the question should be explicitly represented in the SQL.
   *Example – Good:* “Orders over 100 in March 2025 for ‘West’” → SQL includes `> 100`, `2025-03`, and `'West'`.  
-  *Example – Needs Improvement:* SQL is missing one of those literals (e.g., no month filter).  
+  *Example – Needs Improvement:* SQL is missing one of those literals (for example, no month filter).  
 
 An example is considered **high quality** only if **all three scores**—Clarity, Relatedness, and Mapping—are positive. Use these scores to refine your example queries: rewrite unclear questions, align SQL more closely with the question intent, and ensure every literal in the question appears in the SQL query. This iterative process helps the Data Agent learn from better patterns and produce more accurate results.  
 
