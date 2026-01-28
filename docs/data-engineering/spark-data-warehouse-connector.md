@@ -35,7 +35,7 @@ To connect to the SQL engine, users need at least Read permission (similar to CO
 
 ### Use a method signature
 
-The following command shows the `synapsesql` method signature for the read request. The three-part `tableName` argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
+The following command shows the `synapsesql` method signature for the Read request. The three-part `tableName` argument is required for accessing tables or views from a warehouse and the SQL analytics endpoint of a lakehouse. Update the argument with the following names, based on your scenario:
 
 * Part 1: Name of the warehouse or lakehouse.
 * Part 2: Name of the schema.
@@ -139,7 +139,7 @@ This connector employs a two-phase write process to a Fabric DW table. Initially
 Following save modes are supported when writing source data of a dataframe to a destination table in warehouse:
 
 * ErrorIfExists (default save mode): If destination table exists, then the write is aborted with an exception returned to the callee. Else, a new table is created with data.
-* Ignore: If the destination table exists, then the write will ignore the write request without returning an error. Else, a new table is created with data.
+* Ignore: If the destination table exists, then the write ignores the write request without returning an error. Else, a new table is created with data.
 * Overwrite: If the destination table exists, then existing data in the destination is replaced with data. Else, a new table is created with data.
 * Append: If the destination table exists, then the new data is appended to it. Else, a new table is created with data.
 
@@ -191,7 +191,7 @@ Currently, the connector:
 * With `Private Link` enabled at tenant level write operation is not supported and with `Private Link` enabled at workspace level, both read and write operations are not supported. 
 * Fabric DW now supports `Time Travel` however this connector doesn't work for a query with time travel syntax. 
 * Retains the usage signature like the one shipped with Apache Spark for Azure Synapse Analytics for consistency. However, it's not backward compatible to connect and work with a dedicated SQL pool in Azure Synapse Analytics.
-* Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In case of a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
+* Column names with special characters will be handled by adding escape character before the query, based on 3 part table/view name, is submitted. In a custom or passthrough-query based read, users are required to escape column names that would contain special characters.
 
 ## Related content
 
