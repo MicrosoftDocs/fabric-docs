@@ -20,7 +20,6 @@ This section contains key performance indicators (KPIs) that provide overview of
 
 - **Capacity name**: Name of Capacity.
 - **Blocked workspaces**: Number of workspaces that the surge protection blocked under this capacity in the last 14 days.
-- **Affected users**: Number of users performing operations on blocked workspaces in the last 14 days.
 - **Affected requests**: Number of operations that the surge protection rejected.
 
 ## Blocked details
@@ -50,6 +49,8 @@ Select a specific workspace from the blocked details table. Then, select the **T
 > The rows you see in the blocked details table represent states of a workspace. State changes can create multiple rows for the same workspace over the last 14 days.
 >
 > If a workspace is blocked but has no activity on it, the `TimePoint` Summary page doesn't show any information.
+>
+> Drilling through from Workspace blocked details to TimePoint Detail page doesn't filter data.
 
 ## Related content
 
