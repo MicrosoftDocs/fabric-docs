@@ -7,12 +7,13 @@ author: aamerril
 ms.topic: concept-article
 ms.custom:
 ms.date: 09/05/2025
+ai-usage: ai-assisted
 #customer intent: As a security engineer, I want to learn best practices for securing my data in OneLake, including least privilege access, workload permissions, and user permissions, so that I can effectively protect my data and reduce security risks.
 ---
 
 # Best practices for OneLake security
 
-In this article, we'll look at best practices around securing data in OneLake. For more information on how to implement security for specific use cases, see the how-to guides.
+In this article, we'll look at best practices around securing data in OneLake, including architecture guidance.
 
 ## Least privilege
 
@@ -22,24 +23,36 @@ Least privilege access is a fundamental security principle in computer science t
 
 - Use [OneLake security](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
 
-## Secure by use case
+- To write data to OneLake, there are two options: workspace roles or [OneLake security ReadWrite permission.](../security/data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles will be able to write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables.
 
-Different users need the ability to perform different actions in Fabric in order to do their jobs. Some common use cases are identified in this section along with the necessary permissions setup in Fabric and OneLake.
+- If users need to manage access to data, such as sharing an item or configuring OneLake security roles, then Admin or Member workspace roles are required.
 
-**Manage workspace access**
-The admin or member workspace roles are required. These roles can also manage OneLake security roles on an item.
+- A user needs SubscribeOneLakeEvents to be able to subscribe to events from a Fabric item. Admin, Member, and Contributor roles have this permission by default. You can add this permission for a user with Viewer role.
 
-**Create new items in Fabric**
-Either Admin, Member, or Contributor roles can create or delete new items.
+## Recommended architecture
 
-**Write data to OneLake**
-Either Admin, Member, or Contributor roles can write data to OneLake through Spark or through uploads. They can also write data to a warehouse. Users with only read access on a warehouse can be given permissions to write data through [SQL permissions.](../../data-warehouse/sql-granular-permissions.md)
+### Primary pattern
 
-**Read data from OneLake**
-A user needs to be a workspace Viewer, or have the Read permission and the ReadAll permission to read data from OneLake. For lakehouses with the OneLake security (preview) feature enabled, access to data is controlled by the user's OneLake security role permissions.
+This pattern is the recommended baseline architecture for implementing OneLake security at scale. Some scenarios might require alternative approaches due to current network security constraints. This pattern aligns with the long-term direction of OneLake security as those limitations are addressed.
 
-**Subscribe to OneLake events**
-A user needs SubscribeOneLakeEvents to be able to subscribe to events from a Fabric item. Admin, Member, and Contributor roles have this permission by default. You can add this permission for a user with Viewer role.
+The core principle is to centralize data ownership and security enforcement in a primary workspace. Manage and secure your data at the source, then share it to downstream workspaces by using OneLake shortcuts. This approach ensures OneLake security policies are consistently enforced, regardless of where users consume the data.
+
+#### Base pattern (public preview)
+
+:::image type="content" source="./media/best-practices-secure-data-in-onelake/base-pattern.png" alt-text="Diagram of the base pattern showing a core Workspace A that has security set. Users are then consuming that data through shortcuts in Workspaces B and C.":::
+
+- Create the primary workspace (workspace A):
+
+  - Create a primary workspace (workspace A) that contains the lakehouse and any other source data items.
+  - Enable OneLake security on the lakehouse and define the required object-level and fine-grained (RLS/CLS) policies.
+  - Grant users **Viewer** access to the workspace, and add users to the defined OneLake security roles.
+  - Configure all SQL analytics endpoints in workspace A to run in user's identity mode so OneLake security policies are evaluated per user.
+
+- Create downstream workspaces:
+
+  - Create downstream workspaces to support data consumption, additional workloads, or domain-specific use cases.
+  - In downstream lakehouses, create shortcuts that point back to data in workspace A. OneLake security policies defined at the source are enforced automatically so users can only access data they're authorized to see.
+  - Confirm SQL analytics endpoints in downstream workspaces are configured to use user's identity mode. During the public preview, create downstream workspaces and lakehouses by using the same owner as workspace A to get the most consistent experience. This setup gives the data owner the ability to enforce user's identity mode.
 
 ## Related content
 
