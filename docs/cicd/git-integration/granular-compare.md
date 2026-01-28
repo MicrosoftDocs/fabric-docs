@@ -43,10 +43,7 @@ The following is a list of limitations for the granular compare feature.
 - System files and system level changes currently don't display content.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
 - In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 
-## How it works
-The following sections provide an overview of how granular compare works.
-
-### Entry Points
+## Entry Points
 Granular Compare can be opened from multiple locations. The following table summarizes the various entry points. 
 
 |Entry Point|Description|
