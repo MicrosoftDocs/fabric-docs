@@ -40,7 +40,7 @@ Granular Compare enables users to:
 The following is a list of limitations for the granular compare feature.
 
 - Files that are over 1 MB, like binary files, don't show content.
-- System file operations currently don't display content.  See [System files and granular compare](#system-files-and-granular-compare) for more information.
+- System files and system level changes currently don't display content.  See [System files, system level changes and granular compare](#system-files-system-level-changes-and-granular-compare) for more information.
 - In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 
 ## How it works
@@ -108,7 +108,7 @@ The following steps show how to review updates for items.
  :::image type="content" source="media/granular-compare/compare-5.png" alt-text="Screenshot of item review upsates." lightbox="media/granular-compare/compare-5.png":::
 
 4. On the diff screen, review the updates.
- :::image type="content" source="media/granular-compare/compare-6.png" alt-text="Screenshot of the item diff screen." lightbox="media/granular-compare/compare-6.png":::
+ :::image type="content" source="media/granular-compare/compare-6.png" alt-text="Screenshot of the review changes." lightbox="media/granular-compare/compare-6.png":::
 
 5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
@@ -130,7 +130,7 @@ The following steps show how to review changes to system files. Remember that sy
 If a conflict is detected between items, the granular compare feature will be disabled until this conflict is resolved.
  :::image type="content" source="media/granular-compare/compare-9.png" alt-text="Screenshot of conflict." lightbox="media/granular-compare/compare-9.png":::
 
-## automaticaly generated system file behavior'
+
 
 
  ## Related content
