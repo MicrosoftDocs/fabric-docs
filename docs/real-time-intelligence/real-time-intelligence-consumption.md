@@ -44,9 +44,9 @@ Surge protection now includes workspace-level controls that provide more granula
 
 ### Key enhancements
 
-**Per-workspace CU % limits**: You can define a compute unit (CU) consumption threshold that applies to all workspaces, as a percentage of overall capacity utilization. These thresholds are set over a rolling 24-hour period.
+**Per-workspace CU % limits**: You can define a compute unit (CU) consumption threshold for individual workspaces, as a percentage of overall capacity utilization. These thresholds are set over a rolling 24-hour period.
 
-**Automatic blocking**: When a workspace exceeds its threshold, it can be automatically placed in a blocked state, rejecting new operations until usage drops or the block expires.
+**Automatic blocking**: When a workspace exceeds its threshold, it's automatically placed in a blocked state. The workspace rejects new operations until its usage drops below the threshold or until you manually remove the block.
 
 **Mission critical mode**: You can designate high-priority workspaces as mission critical, which exempts them from surge protection rules and effectively prioritizes them over other workspaces. This mode can also be used to remove an active blocked state.
 
