@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Create an ontology"
-description: Create an ontology (preview) item with data from a semantic model or OneLake.
+title: "Tutorial part 1: Create an ontology"
+description: Create an ontology (preview) item with data from a semantic model or OneLake. Part 1 of the ontology (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
@@ -12,7 +12,7 @@ zone_pivot_groups: create-ontology-scenario
 
 # Ontology (preview) tutorial part 1: Create an ontology
 
-In this step of the tutorial, you generate a new ontology that represents the Lakeshore Retail scenario.
+In this step of the tutorial, you generate a new ontology (preview) item that represents the Lakeshore Retail scenario.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -21,7 +21,7 @@ In this step of the tutorial, you generate a new ontology that represents the La
 ::: zone pivot="semantic-model"
 ## Generating an ontology from a semantic model
 
-A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of an analytical domain, like a business. They hold information about your data and the relationships among that data. You can create semantic models from lakehouse tables. Then, when your data is represented in a semantic model, you can generate an ontology directly from that semantic model. For general information about generating an ontology from a semantic model, see [Generating an ontology (preview) from a semantic model](concepts-generate.md).
+A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of a domain, like a business. Semantic models hold information about your data and the relationships among that data. You can create semantic models from lakehouse tables. When your data is represented in a semantic model, you can generate an ontology directly from that semantic model. For more information, see [Generating an ontology (preview) from a semantic model](concepts-generate.md).
 
 In this tutorial step, you generate an ontology from the sample semantic model that you set up in the [previous step](tutorial-0-introduction.md?pivots=semantic-model#prepare-the-power-bi-semantic-model). Then, you verify and complete the ontology.
 
@@ -182,7 +182,7 @@ Next, create entity types, data bindings, and relationships based on data from y
 
 ## Create entity types and data bindings
 
-First, create entity types. Entity types represent types of objects in a business. This step has three entity types: *Store*, *Products*, and *SaleEvent*. After you create the entity types, create their properties by binding source data columns in the *OntologyDataLH* lakehouse tables.
+First, create entity types. Entity types represent types of objects in a business. This step has three entity types: *Store*, *Products*, and *SaleEvent*. After you create the entity types, create their properties by binding source data columns from the *OntologyDataLH* lakehouse tables.
 
 ### Add first entity type (Store)
 

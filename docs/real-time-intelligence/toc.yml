@@ -847,7 +847,7 @@ items:
           - name: Capacity usage
             href: digital-twin-builder/resources-capacity-usage.md
           - name: FAQ
-            href: digital-twin-builder/resources-faq.md
+            href: digital-twin-builder/resources-faq.yml
           - name: Digital twin builder REST API
             href: /rest/api/fabric/digitaltwinbuilder/items
           - name: Digital twin builder flow REST API

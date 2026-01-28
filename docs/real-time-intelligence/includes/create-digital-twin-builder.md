@@ -5,13 +5,13 @@ description: Include file for creating a digital twin builder instance to suppor
 author: baanders
 ms.author: baanders
 ms.topic: include
-ms.date: 08/07/2025
+ms.date: 01/27/2026
 ---
 
 ## Create new digital twin builder item in Fabric
 
 >[!NOTE]
-> Recall from the tutorial prerequisites that digital twin builder (preview) must be enabled on your Fabric tenant.
+> Recall from the tutorial prerequisites that *Digital Twin Builder (preview)* must be enabled in your Fabric [tenant settings](../../admin/tenant-settings-index.md).
 
 1. Go to your Fabric workspace. 
 1. Select **New item**.
