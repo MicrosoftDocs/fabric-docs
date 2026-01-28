@@ -9,6 +9,7 @@ ms.subservice: rti-eventhouse
 ms.custom:
 ms.date: 01/08/2026
 ms.search.form: Eventhouse,KQL Database, Overview
+ai-usage: ai-assisted
 ---
 # Eventhouse and KQL Database consumption
 
@@ -36,6 +37,18 @@ When capacity limits are reached, the eventhouse applies throttling to protect s
 - **Extreme reactive** – ingestion and queries are paused, data is held for a period, but data may be lost after a certain period. 
 
 When an eventhouse enters proactive, capacity is reduced to maintain availability for an extended period for modest actions (proactive and reactive), maintaining eventhouse availability with reduced performance.
+
+## Workspace-level surge protection
+
+Surge protection now includes workspace-level controls that provide more granular management of compute usage across your organization. This update helps you better control capacity utilization and prioritize critical workloads.
+
+### Key enhancements
+
+**Per-workspace CU % limits**: You can define a compute unit (CU) consumption threshold that applies to all workspaces, as a percentage of overall capacity utilization. These thresholds are set over a rolling 24-hour period.
+
+**Automatic blocking**: When a workspace exceeds its threshold, it can be automatically placed in a blocked state, rejecting new operations until usage drops or the block expires.
+
+**Mission critical mode**: You can designate high-priority workspaces as mission critical, which exempts them from surge protection rules and effectively prioritizes them over other workspaces. This mode can also be used to remove an active blocked state.
 
 ## Eventhouse UpTime
 
