@@ -4,7 +4,7 @@ description: Learn more about result set caching, a performance optimization for
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: emtehran, fipopovi
-ms.date: 09/15/2025
+ms.date: 01/27/2026
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
