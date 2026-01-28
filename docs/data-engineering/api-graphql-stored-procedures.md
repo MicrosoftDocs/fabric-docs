@@ -4,8 +4,8 @@ description: Learn how to expose stored procedures data via GraphQL in Fabric
 author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
+ms.topic: how-to
 ms.date: 01/21/2026
-ms.topic: article
 ms.custom: freshness-kr
 ms.search.form: 
 ---

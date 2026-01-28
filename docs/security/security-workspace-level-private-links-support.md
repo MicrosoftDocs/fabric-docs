@@ -216,9 +216,9 @@ Manage pipelines, copy jobs, and mounted data factories in workspaces enabled wi
 
 The following scenarios are unsupported:
 
-* Copy to warehouse isn't supported.
+* Workspace staging is not supported for Fabric Data Warehouse, Snowflake, or Teradata connectors in Copy activity and Copy job. Use external staging as an alternative.
 * Copy to Eventhouse isn't supported.
-* OneLake staging isn't currently supported.
+
 
 ### Eventstream support
 

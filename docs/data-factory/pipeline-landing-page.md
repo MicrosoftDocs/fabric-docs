@@ -4,7 +4,7 @@ description: Learn how to explore data solutions efficiently using the pipeline 
 ms.reviewer: whhender
 ms.author: xupzhou
 author: PennyZhou-MSFT
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/21/2024
 ms.custom: pipelines
 ---

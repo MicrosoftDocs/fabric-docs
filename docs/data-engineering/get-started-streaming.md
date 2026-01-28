@@ -4,7 +4,7 @@ description: Learn how to use an Apache Spark job definition to stream data into
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.date: 07/20/2025
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint

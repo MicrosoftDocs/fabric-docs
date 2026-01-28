@@ -4,7 +4,7 @@ description: This article provides details of the pricing model of Apache Airflo
 ms.reviewer: whhender
 ms.author: abnarain
 author: nabhishek
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/17/2025
 ms.custom: airflows
 ---

@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.service: powerbi
 ms.subservice: pbi-transform-model
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/02/2023
 LocalizationGroup: Admin
 ---

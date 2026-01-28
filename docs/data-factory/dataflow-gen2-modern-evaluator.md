@@ -4,7 +4,7 @@ description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluato
 author: ptyx507x
 ms.author: miescobar
 ms.reviewer: whhender
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/15/2025
 ms.custom: dataflows
 ---

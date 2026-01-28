@@ -4,7 +4,7 @@ description: This article provides details of the pricing model of pipelines for
 ms.reviewer: whhender
 ms.author: whhender
 author: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 11/29/2024
 ---

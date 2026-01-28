@@ -4,7 +4,7 @@ description: Learn about the intelligent cache feature in Fabric, including when
 ms.reviewer: arali
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 11/15/2023
 ---

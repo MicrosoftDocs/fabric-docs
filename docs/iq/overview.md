@@ -1,6 +1,6 @@
 ---
 title: What is Fabric IQ (preview)?
-description: Learn about the IQ (preview) workload in Microsoft Fabric.
+description: Learn about the purpose and item components of the IQ (preview) workload in Microsoft Fabric.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders

@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Introduction and environment setup"
-description: Get started with ontology (preview) with this tutorial featuring a sample retail scenario.
+title: "Tutorial part 0: Introduction and environment setup"
+description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
@@ -13,7 +13,7 @@ ms.search.form: Ontology Tutorial
 
 # Ontology (preview) tutorial part 0: Introduction and environment setup
 
-This tutorial shows how to create your first ontology (preview) in Microsoft Fabric, either by generating it from an existing **Power BI semantic model** or by **building it from your OneLake data**. Then, you enrich the ontology with live operational data and explore it with both graph preview and natural-language (NL) queries through Fabric data agent.  
+This tutorial shows how to create your first ontology (preview) in Microsoft Fabric, either by generating it from an existing **Power BI semantic model** or by **building it from your OneLake data**. Then, enrich the ontology with live operational data, and explore it with both graph preview and natural-language (NL) queries through Fabric data agent.  
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -28,7 +28,6 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 * Required settings for ontology (preview) and data agent must be enabled on your tenant. A [Fabric administrator](../../admin/roles.md) should enable the following settings in the [tenant settings](../../admin/tenant-settings-index.md) page of the [admin portal](../../admin/admin-center.md):
     * *Enable Ontology item (preview)*
     * *User can create Graph (preview)*
-    * *Allow XMLA endpoints and Analyze in Excel with on-premises semantic models* <!--Only required for semantic model pivot-->
     * *Users can create and share Data agent item types (preview)*
     * *Users can use Copilot and other features powered by Azure OpenAI*
     * *Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance*

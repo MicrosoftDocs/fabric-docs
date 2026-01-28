@@ -4,7 +4,7 @@ description: Learn how to use the job scheduler in Microsoft Fabric to automate 
 ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/27/2025
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.

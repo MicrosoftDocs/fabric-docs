@@ -11,10 +11,18 @@ items:
         href: graph-relational-databases.md
       - name: Labeled property graph
         href: graph-data-models.md
+      - name: Security
+        href: security-overview.md
+      - name: Monitor Graph in Microsoft Fabric
+        href: monitoring-overview.md
   - name: Get started
     items:
       - name: Quickstart guide for Graph in Microsoft Fabric
         href: quickstart.md
+  - name: Troubleshoot
+    items:
+      - name: Troubleshooting Graph in Microsoft Fabric
+        href: troubleshooting-and-faq.md
       - name: Limitations in Graph in Microsoft Fabric
         href: limitations.md
   - name: Graph Query Language (GQL)

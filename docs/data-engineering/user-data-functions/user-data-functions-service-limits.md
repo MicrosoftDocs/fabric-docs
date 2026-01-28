@@ -4,7 +4,8 @@ description: Overview of service properties and limitations
 ms.author: luisbosquez
 author: luisbosquez
 ms.topic: overview
-ms.date: 03/31/2025
+ms.custom: freshness-kr
+ms.date: 01/21/2026
 ms.search.form: Service limits
 ---
 
@@ -35,16 +36,6 @@ The following are current limitations for Fabric User Data Functions:
 
 - **Regional limitations for Test feature in Develop mode**: The test functionality in Develop mode is not available in the following Fabric regions: Brazil South, Israel Central, and Mexico Central. You can still test your functions by publishing them and running them, or by using the [VS Code extension](./create-user-data-functions-vs-code.md) to test them locally.
 
-- **Reserved Python keywords in Fabric User Data Functions**: In addition to reserved keywords from the Python language, Fabric User Data Functions also uses the following keywords: `req`, `context`, and `reqInvocationId`. Reserved keywords can't be used as parameter names or function names.
-
-- **Parameters with default values or optional values are unsupported**: At this moment, all function parameters are required when invoking invocation. Similarly, providing default values in the function argument definition is currently not supported. For example, the function below throws a syntax error:
-    ```python
-        # The default value for the argument called 'name' is not supported and treated like a syntax error.
-        @udf.function()
-        def goodbye_fabric(name: str = "N/A") -> str:
-            return f"Goodbye, {name}."
-    ```
-
 - **Service principal support**: Accessing Fabric items or data sources using a Service Principal is not currently supported. For example, you cannot use Fabric User Data Functions as a managed identity or workspace identity.
 
 ## Service limits
@@ -59,7 +50,7 @@ The following list details the service limits for User Data Functions items.
 | Private library max size | 28.6 MB | The maximum size of a `.whl` file uploaded to the Library Management experience as a private library. | 
 | Test in portal timeout | 15 minutes | The amount of time the test session is active for until a new request is processed. The session is extended by 15 minutes when a new request is received within the timeout period. |
 | Python version (Run capability) | 3.11 | The Python version used for published functions in Run only mode. | 
-| Python version (Test capability) | 3.12 | The Python version used for the [test capability](./test-user-data-functions.md#use-develop-mode-to-test-your-changes-in-the-fabric-portal) in Develop mode. |
+| Python version (Test capability) | 3.12 | The Python version used for the [test capability](./test-user-data-functions.md#test-your-functions-in-develop-mode) in Develop mode. |
 
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VS Code extension](./create-user-data-functions-vs-code.md).

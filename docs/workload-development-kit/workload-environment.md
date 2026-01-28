@@ -3,7 +3,7 @@ title: Microsoft Fabric workload environment
 description: Learn about the Microsoft Fabric workload environment and how it's configured on your local machine and on the cloud.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 05/21/2024
 ---

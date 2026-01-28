@@ -4,7 +4,7 @@ description: Learn about API for GraphQL support for multiple data sources, and 
 ms.reviewer: sngun
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom: freshness-kr
 ms.search.form: GraphQL multiple data sources
 ms.date: 01/21/2026

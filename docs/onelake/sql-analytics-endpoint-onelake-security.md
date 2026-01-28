@@ -160,6 +160,9 @@ The access mode determines how data access is authenticated and enforced when qu
 
 ## Considerations when switching between modes
 
+>[!IMPORTANT]
+>Switching between User Identity and Delegated modes (in either direction) currently removes inline metadata objects, including TVFs and Scalar-Valued Functions. This behavior affects metadata definitions only; underlying data in OneLake is not impacted.
+
 **Switching to user identity mode**
 
 * SQL RLS, CLS, and table-level permissions are ignored.

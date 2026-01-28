@@ -4,7 +4,7 @@ description: Learn about the capacity administration settings for the data engin
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 05/23/2023
 ---

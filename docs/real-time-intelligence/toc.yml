@@ -213,6 +213,8 @@ items:
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
+            href: event-streams/replicate-data-with-replication-flow.md
           - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
             href: event-streams/stream-oracle-data-to-eventstream.md
           - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
@@ -545,6 +547,8 @@ items:
             href: get-data-eventstream.md
           - name: Get data from Real-Time hub
             href: get-data-real-time-hub.md
+          - name: Get data from other sources
+            href: get-data-other-sources.md
           - name: Configure KQL Database in a pipeline
             href: ../data-factory/connector-kql-database-copy-activity.md
           - name: Connect to KQL Database in dataflows
@@ -843,7 +847,7 @@ items:
           - name: Capacity usage
             href: digital-twin-builder/resources-capacity-usage.md
           - name: FAQ
-            href: digital-twin-builder/resources-faq.md
+            href: digital-twin-builder/resources-faq.yml
           - name: Digital twin builder REST API
             href: /rest/api/fabric/digitaltwinbuilder/items
           - name: Digital twin builder flow REST API

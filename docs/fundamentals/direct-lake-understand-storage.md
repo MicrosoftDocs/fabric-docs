@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: phseamar, Kay.Unkroth
 ms.date: 06/03/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: fabric-cat
 ---
 

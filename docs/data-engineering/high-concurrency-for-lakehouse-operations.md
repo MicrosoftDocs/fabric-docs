@@ -4,7 +4,7 @@ description: Learn how High Concurrency (HC) mode optimizes Spark session utiliz
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 12/04/2025
 ---

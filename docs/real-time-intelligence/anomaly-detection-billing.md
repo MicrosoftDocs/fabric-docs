@@ -4,7 +4,7 @@ description: Learn about capacity usage and billing for Anomaly Detector in Real
 ms.reviewer: tessarhurr
 ms.author: v-hzargari
 author: hzargari-ms
-ms.topic: article
+ms.topic: concept-article
 ms.custom: 
 ms.date: 12/10/2025
 ms.search.form: Anomaly detector billing

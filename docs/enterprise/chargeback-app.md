@@ -4,7 +4,7 @@ description: Learn how to use the Microsoft Fabric Chargeback app.
 author: kishanpujara-ms
 ms.author: kishanpujara
 ms.reviewer: juliacawthra
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 07/02/2025
 ---
 

@@ -6,7 +6,7 @@ ms.author: wiassaf
 ms.reviewer: twcyril
 ms.date: 11/10/2025
 ms.service: fabric
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Warehouse snapshot overview
 ---
 # Warehouse snapshots

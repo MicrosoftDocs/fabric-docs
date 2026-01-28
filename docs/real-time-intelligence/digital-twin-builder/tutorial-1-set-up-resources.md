@@ -1,6 +1,6 @@
 ---
-title: 'Digital twin builder (preview) tutorial: Set up resources'
-description: Prepare your environment for the tutorial scenario and create a digital twin builder item.
+title: 'Digital twin builder (preview) tutorial part 1: Set up resources'
+description: Prepare your environment for the tutorial scenario and create a digital twin builder item. Part 1 of the digital twin builder (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
@@ -45,7 +45,7 @@ You now have sample data available in your *GettingStartedRawData* lakehouse. Yo
 <!--## Create new digital twin builder item in Fabric (title in include)-->
 [!INCLUDE [Create digital twin builder](../includes/create-digital-twin-builder.md)]
 
-In the semantic canvas, you define a domain ontology in the next tutorial section.
+In the next tutorial step, use the semantic canvas to define a domain ontology.
 
 ## Next step
 

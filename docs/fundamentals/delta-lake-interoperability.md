@@ -4,7 +4,7 @@ description: Learn about Delta Lake table format interoperability in Microsoft F
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 4/25/2025
 ms.search.form: delta lake interoperability

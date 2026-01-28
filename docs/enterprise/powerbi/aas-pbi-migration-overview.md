@@ -5,7 +5,7 @@ author: JulCsc
 ms.author: juliacawthra
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/12/2023
 LocalizationGroup: Premium
 ms.custom: engagement-fy23

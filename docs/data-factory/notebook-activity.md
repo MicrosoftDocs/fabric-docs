@@ -38,34 +38,11 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab.
 
-Under **Connection**, select the authentication method for the notebook run and provide the required credentials or identity configuration based on your selection:
-
-- **Service Principal (SPN)** – Recommended for production scenarios to ensure secure, automated execution without relying on user credentials.
-- **Workspace Identity (WI)** – Ideal for managed environments where centralized identity governance is required.
+Under **Connection**, select the authentication method for the notebook run and provide the required credentials.
 
 Select an existing notebook from the **Notebook** dropdown, and optionally specify any parameters to pass to the notebook.
 
 :::image type="content" source="media/notebook-activity/notebook-connection-workspace-parameters.png" alt-text="Screenshot showing the Notebook settings tab highlighting the tab, where to choose a notebook, and where to add parameters.":::
-
-#### Using Fabric Workspace Identity (WI) in the Notebook activity
-
-1. **Create the Workspace Identity**
-
-   You must enable WI in your workspace (this may take a moment to load). Create a Workspace Identity in your Fabric workspace. Note that the WI should be created in the same workspace as your Pipeline.
-   
-   Check out the docs on [Workspace Identity](../security/workspace-identity.md).
-
-1. **Enable tenant-level settings**
-
-   Enable the following tenant setting (it's disabled by default): _Service principals can call Fabric public APIs._
-
-   You can enable this setting in the [Fabric admin portal](/fabric/admin/admin-center#how-to-get-to-the-admin-portal). For more information about this setting, see [the enable service principal authentication for admin APIs article](../admin/enable-service-principal-admin-apis.md).
-
-1. **Grant workspace permissions to the Workspace Identity**
-
-   Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios. If your Notebook is not in the same workspace as your Pipeline, you'll need to assign the WI you created in your Pipeline's workspace at least Contributor access to your Notebook's workspace.
-
-   Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ### Set session tag
 
@@ -85,7 +62,7 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 :::image type="content" source="media/notebook-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
 ## Known issues
-- The WI option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

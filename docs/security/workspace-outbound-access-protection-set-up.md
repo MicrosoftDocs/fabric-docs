@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: how-to
-ms.date: 11/10/2025
+ms.date: 12/01/2025
 
 #customer intent: As a data platform administrator, I want to set up outbound access protection for my workspace so that I can control and secure how my workspace resources connect to external networks.
 
@@ -79,3 +79,4 @@ After outbound public access is blocked, you can create an allow list of approve
 ## Next steps
 
 - [Create an allow list with managed private endpoints](./workspace-outbound-access-protection-allow-list-endpoint.md)
+- [Create an allow list with data connection rules](./workspace-outbound-access-protection-allow-list-connector.md)

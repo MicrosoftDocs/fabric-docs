@@ -40,15 +40,6 @@ To get started with graph in Microsoft Fabric, you need the following prerequisi
 
 ## Create a graph model
 
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models.
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-
 To create a graph model in Microsoft Fabric, follow these steps:
 
 1. Go to your [Microsoft Fabric workspace](https://fabric.microsoft.com/).
@@ -161,33 +152,6 @@ To load the graph, select **Save**. Selecting **Save** verifies the graph model,
 > You currently need to reload the graph (by selecting **Save**) whenever the model or the underlying data is changed.
 
 ## Query the graph
-
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following workspace role permissions apply depending on whether you run queries via the Graph Model or QuerySet item.
-
-### Workspace role permissions for Graph Model
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-| Create or modify graph queries       | ✔     | ✔      | ✔           | ✖      |
-| Create or modify graph QuerySet item | ✔     | ✔      | ✔           | ✖      |
-
-### Workspace role permissions for Graph QuerySet
-
-| Capability                             | Admin | Member | Contributor | Viewer |
-|----------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
-| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
-| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
-| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
-
-> [!NOTE]
-> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
-> Only read, write, and reshare permissions are supported for QuerySet item.
 
 ### Using the query builder
 

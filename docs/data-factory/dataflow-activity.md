@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: miescobar
 author: ptyx507x
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 1/27/2026
 ms.custom:
    - pipelines
    - dataflows
@@ -68,6 +68,19 @@ Inside the Dataflow parameters section you're able to enter the name of the para
 After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+
+## Troubleshooting tips
+
+>[!CAUTION]
+>Error information showcased in the Dataflow activity could be incomplete or partial. Do not solely rely on the information shown in the Dataflow activity for troubleshooting scenarios.
+
+>[!TIP]
+>Detailed information about a run of a Dataflow can be found in the *Recent runs* dialog available inside the Dataflow Gen2 (CI/CD) and through the workspace explorer.
+
+When troubleshooting a Dataflow run, it is highly encouraged to start inside the [Dataflow Gen2 (CI/CD) recent runs](dataflows-gen2-monitor.md) where you are able to download the detailed logs of a particular run.
+If your Dataflow used an On-Premises Data Gateway, you can also explore the detailed gateway logs found within the machine where your gateway is installed.
+
+You can also request support through the [Fabric Community Forum](https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory) or by [raising a dedicated support case](https://support.fabric.microsoft.com/) where one of our engineers will be able to assist.
 
 ## Related content
 

@@ -115,7 +115,7 @@ For more information, see [Copilot for Dataflow Gen2](copilot-fabric-data-factor
 
 ## What do you need to use dataflows?
 
-Dataflow Gen2 requires a Fabric capacity or a Fabric trial capacity. To understand how licensing works for dataflows, check out [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
+Dataflow Gen2 requires a Fabric capacity, a Fabric trial capacity, or a Power BI Premium capacity. To understand how licensing works for dataflows, check out [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
 ## Moving from Dataflow Gen1 to Gen2
 

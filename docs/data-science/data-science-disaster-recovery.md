@@ -5,7 +5,7 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.author: scottpolly
 author: s-polly
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: 
 ms.date: 04/10/2025
 ---

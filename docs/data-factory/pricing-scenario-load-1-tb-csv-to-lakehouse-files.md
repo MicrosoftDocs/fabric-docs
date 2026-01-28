@@ -4,7 +4,7 @@ description: This article provides an example pricing scenario for loading 1 TB 
 ms.reviewer: whhender
 ms.author: whhender
 author: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: configuration
 ms.date: 11/15/2023
 ---
