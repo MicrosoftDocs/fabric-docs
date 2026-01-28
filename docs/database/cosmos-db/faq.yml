@@ -74,6 +74,9 @@ sections:
           - Apache Spark SDK
           
           Use these SDKs along with the Azure Identity library for Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Fabric](how-to-authenticate.md).
+
+          > [!NOTE] Cosmos DB in Fabric only supports *Gateway* connection mode.  Some SDKs (for example, .NET and Java) don’t default to Gateway, so you must explicitly configure the client to use Gateway before connecting.
+
       - question: |
           Can I use connection strings or primary keys to connect to Cosmos DB in Fabric?
         answer: |
