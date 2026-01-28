@@ -57,11 +57,20 @@ Granular Compare can be opened from multiple locations. The following table summ
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
 
-## System files and granular compare
-System files are included in Git export/import because Microsoft Fabric must track them for correctness, lineage, and reproducibility.
-However, their internal contents are not rendered in the compare viewer.
+## System files, system level changes and granular compare
+System files and system level changes are included in Git export/import because Microsoft Fabric must track them for correctness, lineage, and reproducibility. However, their internal contents are not rendered in the compare viewer.
 
-System files participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list. But their content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. See [Example - Sytem file 1.0 changes](#example---sytem-file-10-changes.) for an example.
+System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list. But their content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. 
+
+System files are repesented  by a "/" in the list of changes or updates. The following screenshot shows an update to the git integration schema. An update to the git schema would be considered a system level change.
+
+ :::image type="content" source="media/granular-compare/compare-10.png" alt-text="Screenshot of the schema update screen." lightbox="media/granular-compare/compare-10.png":::
+
+You may see additions and deletions but in reality nothing changes, only the change in report.json is changing.
+
+ :::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
+
+For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-10-changes.) for an additional example.
 
 
 ## Example - Review changes to a specific item
