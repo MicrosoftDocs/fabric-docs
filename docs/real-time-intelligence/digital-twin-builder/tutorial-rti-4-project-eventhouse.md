@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Project data to Eventhouse'
+title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 4: Project data to Eventhouse'
 description: Generate an Eventhouse projection from digital twin builder (preview) ontology using Fabric notebooks.
 author: baanders
 ms.author: baanders
@@ -9,13 +9,13 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial part 4: Project data to Eventhouse
 
-In this section of the tutorial, you project your digital twin builder (preview) ontology into Eventhouse using [Fabric notebooks](../../data-engineering/how-to-use-notebook.md). This step makes it possible to run KQL queries on your digital twin builder data for further analysis in Real-Time Intelligence.
+In this step of the tutorial, project your digital twin builder (preview) ontology into Eventhouse using [Fabric notebooks](../../data-engineering/how-to-use-notebook.md). This step makes it possible to run KQL queries on your digital twin builder data for further analysis in Real-Time Intelligence.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-During this tutorial section, you create shortcuts to bring your digital twin builder data from the lakehouse where it's stored into your *Tutorial* KQL database in Eventhouse. Then, you run a notebook code sample that generates a script to project organized views of your digital twin builder data in Eventhouse. The script creates user-defined functions in Eventhouse, one for each combination of entity type and property type in your digital twin builder ontology. Later, you can use these functions in KQL queries to access your organized digital twin builder ontology data from Eventhouse.
+First, create shortcuts to bring your digital twin builder data from the lakehouse where it's stored into your *Tutorial* KQL database in Eventhouse. Then, you run a notebook code sample that generates a script to project organized views of your digital twin builder data in Eventhouse. The script creates user-defined functions in Eventhouse, one for each combination of entity type and property type in your digital twin builder ontology. Later, you can use these functions in KQL queries to access your organized digital twin builder ontology data from Eventhouse.
 
-## Prepare eventhouse KQL database
+## Prepare KQL database in Eventhouse
 
 Start by preparing your eventhouse and KQL database to access digital twin builder (preview) data. 
 
@@ -130,7 +130,7 @@ Verify that the functions were created successfully in your KQL database.
 
 1. Optionally, save the query tab as *Explore functions* so you can identify it later.
 
-Now you can write other KQL queries using these user-defined functions to access data from your digital twin builder (preview) ontology. In the next tutorial section, you use these functions to write KQL queries that extract insights from your data, and display the results in a Real-Time Dashboard.
+Now you can write other KQL queries using these user-defined functions to access data from your digital twin builder (preview) ontology. In the next tutorial step, use these functions to write KQL queries that extract insights from your data, and display the results in a Real-Time Dashboard.
 
 ## Next step
 

@@ -1,6 +1,6 @@
 ---
 title: What is digital twin builder (preview)?
-description: Overview of the digital twin builder (preview) item, including its value and major features.
+description: Overview of the digital twin builder (preview) item, including its purpose and major features.
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
@@ -9,16 +9,18 @@ ms.topic: overview
 
 # What is digital twin builder (preview)?
 
-Digital twin builder (preview) is an item within the [Real-Time Intelligence](../overview.md) workload in [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md). It creates digital representations of real-world environments to optimize physical operations using data.
+Digital twin builder (preview) is an item in the [Real-Time Intelligence](../overview.md) workload in [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md). It creates digital representations of real-world environments to optimize physical operations using data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Digital twin builder equips users with low code/no code experiences to build and model their business concepts, such as assets and processes, through an ontology. It allows data mapping from various source systems to the ontology, and defines system or site-wide semantic relationships. The item also includes out-of-the-box exploration experiences to explore your modeled data. Ontologies can be connected to [Real-Time Dashboards](../dashboard-real-time-create.md) or [Power BI](/power-bi/fundamentals/power-bi-overview), enabling the creation of customized views and dashboards for customers, clients, and different internal audiences. The low code/no code experience for building and analyzing the ontology makes digital twin builder accessible to operational decision-makers for improving operations at scale, all within Microsoft Fabric's all-in-one data analytics platform.
+Digital twin builder equips users with low code/no code experiences to model their business concepts, such as assets and processes, through an ontology. It allows data mapping from various source systems to the ontology, and defines system-wide or site-wide semantic relationships. The item also includes out-of-the-box exploration experiences to explore your modeled data. Ontologies can be connected to [Real-Time Dashboards](../dashboard-real-time-create.md) or [Power BI](/power-bi/fundamentals/power-bi-overview), enabling you to create customized views and dashboards for customers, clients, and internal audiences. The low code/no code experience makes digital twin builder accessible to operational decision-makers for improving operations at scale, as part of Microsoft Fabric's all-in-one data analytics platform.
 
 >[!NOTE]
 >Digital twin builder (preview) in Fabric is different from the [Azure Digital Twins](/azure/digital-twins/) service.
 
 ## Digital twin builder in Fabric
+
+This section provides more detail about digital twin builder (preview)'s position in Microsoft Fabric.
 
 Microsoft Fabric brings together Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, and Power BI experiences on a shared software as a service (SaaS) foundation. It delivers enterprise-class security and scalability and includes OneLake—a common tenant-wide store that is integrated with all Fabric analytic experiences. The following diagram shows these elements of Fabric and where the digital twin builder (preview) item fits in.
 
