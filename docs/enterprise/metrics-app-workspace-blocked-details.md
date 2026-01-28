@@ -34,9 +34,9 @@ The matrix includes the following fields:
 | **Workspace Id** | ID of the blocked workspace |
 | **Workspace name** | Name of the blocked workspace |
 | **Blocked date** | Timestamp when workspace went into blocked state. |
-| **Blocked end** | Timestamp when workspace went into non blocked state. |
+| **Blocked end** | Timestamp when workspace went into unblocked state. If a workspace isn't unblocked yet, the Blocked end field shows the current timestamp. |
 | **Blocked duration (hours)** | Number of hours the workspace was blocked. If the duration between blocked date and blocked end is less than an hour, this column shows `0`. |
-| **Affected users** | Number of users affected for this workspace. |
+| **Affected users** | Number of distinct users who have used this workspace in the last 14 days. It considers users, service principals in the calculation. It also considers system users like 'Power BI Services'. |
 | **Interactive rejected operations** | Number of interactive operations that the system rejected during the blocked state of the workspace. |
 | **Background rejected operations** | Number of background operations that the system rejected during the blocked state of the workspace. |
 | **Timepoint** | Binned blocked date timestamp |

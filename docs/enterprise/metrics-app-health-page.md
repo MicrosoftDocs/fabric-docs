@@ -82,11 +82,15 @@ The matrix includes the following fields:
 | **P95 background rejection**  | The 95th percentile value of the Background rejection. A higher value indicates a longer background rejections duration.|
 | **Usage variance**            | A larger value for this field indicates a capacity having wide variance in the amount of utilization, whereas low variance is indicative of a steady state utilization rate.|
 | **Optional columns**          | Count of operations having these statuses: Rejected, Failure, Canceled, Successful, Invalid, InProgress|
-| **Blocked workspaces**         | The number of blocked workspaces due to Workspace level Surge Protection. |
+| **Blocked workspaces**         | The number of blocked workspaces due to Workspace level Surge Protection within the time period (last 24 hours or 1 hour). |
 
 
 > [!NOTE]
 > For health status calculations, the actual values of interactive delay, interactive rejection, and background rejection are used, rather than their P95 (95th percentile) values.
+>
+> If a workspace is blocked but hasn't been blocked in the last 24 hours or last 1 hour, the blocked workspaces count doesn't count it on the Health page.
+>
+> Drilling through from Workspace blocked details to TimePoint Detail page doesn't filter data.
 
 ## Navigate to Compute, Storage or Workspace blocked detail pages
 
