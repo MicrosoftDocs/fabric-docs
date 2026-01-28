@@ -20,7 +20,7 @@ ai-usage: ai-assisted
 You need:
 
 * A Microsoft Fabric workspace with [Trial](../fundamentals/fabric-trial.md) or Premium Fabric capacity
-* An Oracle server that's one of these types, version 11 or above with LogMiner enabled:
+* An Oracle server that's one of these types, version 10 or above with LogMiner enabled:
   * Oracle on-premises (VM, Azure VM, etc.)
   * Oracle OCI
   * Oracle Database@Azure
