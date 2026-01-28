@@ -70,7 +70,7 @@ You may see additions and deletions but in reality nothing changes, only the cha
 
  :::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
 
-For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-10-changes.) for an additional example.
+For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-10-changes) for an additional example.
 
 
 ## Example - Review changes to a specific item
@@ -108,7 +108,7 @@ The following steps show how to review updates for items.
  :::image type="content" source="media/granular-compare/compare-5.png" alt-text="Screenshot of item review upsates." lightbox="media/granular-compare/compare-5.png":::
 
 4. On the diff screen, review the updates.
- :::image type="content" source="media/granular-compare/compare-6.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/compare-6.png":::
+ :::image type="content" source="media/granular-compare/compare-6.png" alt-text="Screenshot of the item diff screen." lightbox="media/granular-compare/compare-6.png":::
 
 5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
@@ -121,7 +121,7 @@ The following steps show how to review changes to system files. Remember that sy
  :::image type="content" source="media/granular-compare/compare-7.png" alt-text="Screenshot of report changes." lightbox="media/granular-compare/compare-7.png":::
 
 4. On the diff screen, note that there are no visible changes.
- :::image type="content" source="media/granular-compare/compare-8.png" alt-text="Screenshot of report changes." lightbox="media/granular-compare/compare-8.png":::
+ :::image type="content" source="media/granular-compare/compare-8.png" alt-text="Screenshot of report diffs." lightbox="media/granular-compare/compare-8.png":::
 
  5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
