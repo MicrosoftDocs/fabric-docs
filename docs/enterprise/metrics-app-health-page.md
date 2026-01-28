@@ -89,8 +89,6 @@ The matrix includes the following fields:
 > For health status calculations, the actual values of interactive delay, interactive rejection, and background rejection are used, rather than their P95 (95th percentile) values.
 >
 > If a workspace is blocked but hasn't been blocked in the last 24 hours or last 1 hour, the blocked workspaces count doesn't count it on the Health page.
->
-> Drilling through from Workspace blocked details to TimePoint Detail page doesn't filter data.
 
 ## Navigate to Compute, Storage or Workspace blocked detail pages
 

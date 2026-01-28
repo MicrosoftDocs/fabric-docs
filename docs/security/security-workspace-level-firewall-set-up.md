@@ -12,7 +12,7 @@ ms.date: 01/27/2026
 
 ---
 
-# Set up workspace IP firewall rules
+# Set up workspace IP firewall rules (Preview)
 
 Microsoft Fabric offers two options to restrict inbound access to a workspace. Workspace Private Link secures connectivity by routing traffic through Azure Private Link and private endpoints, ensuring all workspace access occurs over Microsoft's private network instead of the public internet. Workspace IP firewall rules provide an alternative by allowing access only from approved public IP addresses, offering a straightforward way to limit inbound connections when a workspace is exposed through public endpoints.
 
