@@ -1,18 +1,18 @@
 ---
-title: Create roles with OneLake security 
+title: Create roles 
 description: Learn how to create and manage roles with OneLake security (preview) to control access to items within OneLake.
 ms.reviewer: aamerril
 ms.author: kgremban
 author: kgremban
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2026
+ms.date: 01/29/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 
 # Create and manage OneLake security roles (preview)
 
-OneLake security roles let you control who can access specific tables and folders in your Fabric data items. This article walks through how to create, edit, and delete security roles, and how to assign members to those roles. For an overview of OneLake security concepts and permissions, see [OneLake security overview](get-started-security.md).
+By using OneLake security roles, you can control who can access specific tables and folders in your Fabric data items. This article shows you how to create, edit, and delete security roles, and how to assign members to those roles. For an overview of OneLake security concepts and permissions, see [OneLake security overview](get-started-security.md).
 
 The following data items support OneLake security:
 
@@ -21,7 +21,7 @@ The following data items support OneLake security:
 | Lakehouse | Preview | Read, ReadWrite |
 | Azure Databricks Mirrored Catalog | Preview | Read |
 
-Role creation and membership assignment take effect as soon as the role is saved, so make sure you want to grant access before adding someone to a role.
+Role creation and membership assignment take effect as soon as you save the role, so make sure you want to grant access before adding someone to a role.
 
 ## Prerequisites
 
@@ -38,43 +38,30 @@ Use the following steps to create a OneLake security role.
 
 1. On the **OneLake security (preview)** pane, select **New**.
 
-1. Provide a name for the new role that meets the following guidelines:
+1. Provide the following information for the new role:
 
-   * The role name can only contain alphanumeric characters.
-   * The role name must start with a letter.
-   * Names are case insensitive and must be unique.
-   * The maximum name length is 128 characters.
+   | Parameter | Value |
+   | --------- | ----- |
+   | **Role name** | Provide a name that meets the following guidelines:<br><br>* The role name only contains alphanumeric characters.<br>* The role name starts with a letter.<br>* Names are case insensitive and must be unique.<br>* The maximum name length is 128 characters. |
+   | **Type of role** | Select **Grant**. |
+   | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is selected at a minimum, and you can optionally add **ReadWrite**. |
+   | **Add data to your role** | If you want this role to apply to all of the tables and files in this lakehouse, select the **All data** toggle. This selection also provides access to any folders that are added in the future.<br><br>If you want this role to apply only to a selected group of tables and folders, select the **Selected data** toggle. Then, use the following steps to define the approved data for this role. |
+   | **Add members to your role** | Manually enter the names or email addresses of the users that you want to include in the role. Or, select **Advanced configuration** and follow the steps in [Assign virtual members](#assign-virtual-members) |
 
-1. Select **Grant** as the type of role.
-
-1. Choose the permissions you want to grant. **Read** is selected at a minimum, and you can optionally choose **ReadWrite**.
-
-1. If you want this role to apply to all of the tables and files in this lakehouse, select the **All data** toggle.
-
-    This selection also provides access to any folders that are added in the future.
-
-1. If you want this role to apply only to a selected group of tables and folders, select the **Selected data** toggle. Then, use the following steps to define the approved data for this role.
+1. If you chose to add **Selected data** to your role, configure that selection:
 
    1. Select **Browse Lakehouse** or the equivalent for the item that you're working with.
 
-      :::image type="content" source="./media/get-started-data-access-roles/browse-lakehouse.png" alt-text="Screenshot that shows the 'browse lakehouse' option to select data.":::
+      :::image type="content" source="./create-manage-roles/browse-lakehouse.png" alt-text="Screenshot that highlights the 'Browse Lakehouse' option to select data.":::
 
-   1. Expand the **Tables** and **Files** directories to view data in your lakehouse. 
+   1. Expand the **Tables** and **Files** directories to view data in your lakehouse.
    1. Check the boxes next to the tables and files that you want the role to apply to.
    1. Select **Add data** to add the selected items to your role.
 
-1. Use the **Add members to your role** textbox to manually enter the names or email addresses of users that you want to include in the role. Or, select **Advanced configuration** and follow the guidance in [Assign virtual members](#assign-virtual-members).
-
-   To add members manually:
-
-   1. Enter the name or email address of a user.
-   1. Select the correct name from the suggested list.
-   1. Select the check icon to confirm your selection, or the **X** icon to clear the selection.
-
 1. Review the **Preview role** summaries.
 
-   1. To edit the data preview, select **Browse Lakehouse** and update the selected tables and folders.
-   1. To remove a user from the members preview, select more options (**...**) next to their name, then **Remove from role**.
+   1. To edit the **Data preview**, select **Browse Lakehouse** and update the selected tables and folders.
+   1. To remove a user from the **Members preview**, select more options (**...**) next to their name, then **Remove from role**.
 
 1. Select **Create role** and wait for the notification that the role was successfully published.
 
@@ -86,7 +73,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Select **Manage OneLake security (preview)** from the item menu.
 
-1. On the **OneLake security (preview)** pane, select the role that you want to edit.
+1. On the **OneLake security** pane, select the role that you want to edit.
 
    This action opens the role details page, which includes two tabs: **Data in role** and **Members in role**.
 
@@ -94,17 +81,19 @@ Use the following steps to edit an existing OneLake security role.
 
    This tab shows all of the data that the members of the role can access.
 
-   The role name tells you which role you are looking at. To edit the role name, select the **Edit** dropdown in the upper right corner, select **Update role name**, enter a new name, and then confirm with the check mark. You can discard your changes by selecting the **X**.
+   :::image type="content" source="./media/create-manage-roles/data-in-role.png" alt-text="Screenshot that shows the details visible in the 'Data in role' tab.":::
 
-   The **Permissions** item at the top, tells you what permissions the role currently grants. To change the role permissions, select the **Edit** dropdown in the upper right corner, select **Edit role permissions**, edit the selected permissions with the dropdown, and then confirm with the  check mark. You can discard your changes by selecting the **X**.
+      The role name tells you which role you are looking at. To edit the role name, select the **Edit** dropdown. Select **Update role name**, enter a new name, and then confirm by selecting the check mark. You can discard your changes by selecting the **X**.
+
+      The **Permissions** item tells you what permissions the role grants. To change the role permissions, select the **Edit** dropdown. Select **Edit role permissions**, edit the selected permissions by using the dropdown, and then confirm by selecting the check mark. You can discard your changes by selecting the **X**.
 
    The **Data** column shows the name of the tables or folders that are part of the role access. You can expand and collapse schemas to view the items underneath. Hover over an entry to view the full path of the table or folder. Hover over the **...** to see options to configure **Row-level security** or **Column-level security**. The [row level security](./row-level-security.md) and [column level security](./column-level-security.md) guides provide more information on how that works.
 
-   The **Type** column tells you the type of item that was selected. The values are either: **Schema**, **Table**, or **Folder**.
+   The **Type** column tells you the type of item that you selected. The values are either: **Schema**, **Table**, or **Folder**.
 
    The **Data access** column indicates whether any row or column level restrictions are applied to the item. An icon with a lock and horizontal lines indicates row level security is applied, while an icon with a lock and vertical lines indicates column level security is applied.
 
-1. To edit the data included in the role, select **Add data**.
+1. To edit the data included in the role, select **Edit data**.
 
    This action opens the table and folder selection dialog.
 
@@ -112,13 +101,13 @@ Use the following steps to edit an existing OneLake security role.
 
 1. Select **Add data** to confirm your selections.
 
-1. Select the Members in role tab to view the members of the role.
+1. Select the **Members in role** tab to view the members of the role.
 
    The **Members** column shows the profile picture and name of the member.
 
    The **Type** column indicates whether the member is a User or Group.
 
-   The **Added using** column denotes whether a user was added via their Email as a member of the role, or included as part of a lakehouse permissions group. For more information about adding users using item permissions, see [Assign virtual members](#assign-virtual-members).
+   The **Added using** column denotes whether a user was added via their email address as a member of the role, or included as part of a lakehouse permissions group. For more information about adding users by using item permissions, see [Assign virtual members](#assign-virtual-members).
 
 1. To edit the members of the role, select **Add members**.
 
@@ -126,7 +115,7 @@ Use the following steps to edit an existing OneLake security role.
 
 1. To remove users from the role, select more options (**...**) next to their name and select **Remove from role**.
 
-Making any changes to role membership updates the role immediately. A notification notes the success or failure of any changes.
+If you make any changes to role membership, the role updates immediately. A notification shows the success or failure of any changes.
 
 ## Delete a role
 
@@ -136,23 +125,23 @@ Use the following steps to delete a OneLake data access role.
 
 1. Select **Manage OneLake security (preview)** from the Lakehouse menu.
 
-1. On the **OneLake security (preview)** pane, check the box next to the roles you want to delete.
+1. On the **OneLake security** pane, check the box next to the roles you want to delete.
 
 1. Select **Delete** and wait for the notification that the roles are successfully deleted.
 
 ## Assign a member or group
 
-OneLake security role supports two methods of adding users to a role. The main method is by adding users or groups directly to a role using the **Add people or groups** box on the **Assign role** page. The second is by creating virtual memberships with permission groups using the **Advanced configuration** control.
+OneLake security role supports two methods of adding users to a role. The main method is by adding users or groups directly to a role using the **Add people or groups** box on the **Assign role** page. The second method is by creating virtual memberships with permission groups using the **Advanced configuration** control.
 
-Adding users directly to a role adds the users as explicit members of the role. These users show up with their name and picture shown in the **Members** list.  
+When you add users directly to a role, you make them explicit members of the role. These users appear with their name and picture in the **Members** list.  
 
-The virtual members allow for the membership of the role to be dynamically adjusted based on the [Fabric item permissions](../../security/permission-model.md#item-permissions) of the users. By selecting **Advanced configuration** and selecting a permission, you add any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you chose **ReadAll, Write** then any user of the Fabric workspace that has ReadAll *and* Write permissions to the item would be included as a member of the role. You can see which users are being added by a permission group by looking at the **Added using** column in the **Members in role** tab. These members can't be manually removed directly. To remove a member that was added through a permission group, remove the permission group from the role.
+By using virtual members, the membership of the role is dynamically adjusted based on the [Fabric item permissions](../../security/permission-model.md#item-permissions) of the users. By selecting **Advanced configuration** and selecting a permission, you add any user in the Fabric workspace who has all of the selected permissions as an implicit member of the role. For example, if you choose **ReadAll, Write**, any user of the Fabric workspace that has ReadAll *and* Write permissions to the item is included as a member of the role. You can see which users are included in a permission group by looking at the **Added using** column in the **Members in role** tab. You can't manually remove these members directly. To remove a member that you added through a permission group, remove the permission group from the role.
 
 Regardless of which membership type you use, OneLake security roles support adding individual users, Microsoft Entra groups, and security principals.  
 
 ### Assign virtual members
 
-The permissions that can be used for virtual members are:
+You can use the following permissions to identify virtual members:
 
 * Read
 * Write
@@ -160,7 +149,7 @@ The permissions that can be used for virtual members are:
 * Execute
 * ReadAll
 
-To assign users with permission groups, use the following steps:
+To assign users to permission groups, use the following steps:
 
 1. Select the name of the role you want to assign members to.
 
@@ -172,7 +161,7 @@ To assign users with permission groups, use the following steps:
 
    :::image type="content" source="./media/get-started-data-access-roles/members-advanced-configuration.png" alt-text="Screenshot that shows selecting 'advanced configuration' to add members using permission groups.":::
 
-1. In the **Permission groups** box, select the checkbox next to each permission that you want to include users for.
+1. In the **Permission groups** box, select the check box next to each permission that you want to include users for.
 
    Each permission group shows a count of how many users are included in that group.
 
