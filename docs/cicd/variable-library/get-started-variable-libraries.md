@@ -44,6 +44,20 @@ To mitigate these risks, follow these key practices:
 
 For more information, see [Variable library permissions](./variable-library-permissions.md).
 
+## Naming conventions
+
+### Variable library name
+
+The name of a variable library item itself must follow these conventions:
+
+- Isn't empty
+- Doesn't have leading or trailing spaces
+- Starts with a letter
+- Can include letters, numbers, underscores, hyphens, and spaces
+- Doesn't exceed 256 characters in length
+
+The variable library name is *not* case sensitive.
+
 ## Create a variable library item
 
 You can create a variable library item from the Fabric home page or from inside your workspace:
@@ -56,7 +70,7 @@ You can create a variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-variable-libraries/create-from-home.png" alt-text="Screenshot of the Fabric interface that shows the location of variable libraries in the data factory section." lightbox="./media/get-started-variable-libraries/create-from-home.png":::
 
-1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
+1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](#naming-conventions).
 
 ### [Workspace](#tab/workspace)
 
@@ -65,7 +79,7 @@ You can create a variable library item from the Fabric home page or from inside 
 
    :::image type="content" source="./media/get-started-variable-libraries/create-from-workspace.png" alt-text="Screenshot of the Fabric interface for creating a variable library item from an existing workspace." lightbox="./media/get-started-variable-libraries/create-from-workspace.png":::
 
-1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](./variable-types.md#variable-library-name).
+1. Name the new variable library and then select **Create**. Make sure that the name conforms to the required [naming conventions](#naming-conventions).
 
 ---
 
@@ -84,8 +98,8 @@ You can manage the variables in the variable library from the top menu bar.
 To add a new variable to the library:
 
 1. Select **+ New variable**.
-1. Enter a name. Make sure that it follows the [naming conventions](./variable-types.md#variable-name).
-1. In the dropdown list, select a type. [See a list of supported variable types](./variable-types.md#variable-types).
+1. Enter a name. Make sure that it follows the [naming conventions](variable-types.md#naming-conventions).
+1. In the dropdown list, select a type. [See a list of supported variable types](variable-types.md#supported-types-in-variable-libraries).
 1. Enter a default value.
 1. Add a note that explains what the variable is for or how to use it (optional).
 1. Select **Save**.
@@ -105,7 +119,7 @@ To add another value set that you can use in a different stage:
 
 1. Select **Add value set**.
 
-1. Name the value set. Make sure that it follows the [naming conventions](./variable-types.md#variable-types). Give it a description (optional) of up to 2,048 characters.
+1. Name the value set. Make sure that it follows the [naming conventions](value-sets.md#naming-conventions-for-value-sets). Give it a description (optional) of up to 2,048 characters.
 
 1. If you want to use this value to be the currently active value set in this workspace, select **Set as active**.
 
