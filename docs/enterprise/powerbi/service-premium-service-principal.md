@@ -48,7 +48,7 @@ To restrict service principal access to specific tenant settings, you can allow 
 Before you can start using service principals in Power BI, an admin must enable service principal access in the Power BI Admin portal.
 
 1. Go to the Power BI Admin portal and then select **Tenant settings**.
-1. Scroll to **Developer settings** and then expand **Allow service principals to use Power BI APIs**.
+1. Scroll to **Developer settings** and then expand **Service principals can call Fabric public APIs**.
 1. Select **Enabled**.
 1. To apply permissions to a security group, select **Specific security groups (Recommended)**.
 1. Enter the group name.
