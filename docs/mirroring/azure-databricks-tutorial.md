@@ -18,7 +18,6 @@ ms.topic: tutorial
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
 - You must have the `EXTERNAL USE SCHEMA` privilege on the schema in Unity Catalog that contains the tables that will be accessed from Fabric. 
 - You need to use Fabric's permissions model to set access controls for catalogs, schemas, and tables in Fabric.
-- Azure Databricks workspaces can't be behind a private endpoint.
 
 ## Create a mirrored database from Azure Databricks
 
