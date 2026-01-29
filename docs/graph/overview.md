@@ -84,7 +84,7 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 
 Graph in Microsoft Fabric uses the same capacity units (CUs) as other workloads in Microsoft Fabric. You don't need to purchase a separate graph-specific license or SKU. All graph operations, including data ingestion, querying, and running algorithms, consume your organization's reserved or pay-as-you-go Fabric capacity.
 
-CU consumption is measured in minutes of CPU uptime. For graph storage, a minimum of 64 GB is provisioned. You can monitor your graph workload's resource consumption and performance in the Fabric Capacity Metrics app.
+CU consumption is measured in minutes of CPU uptime. For graph storage, a minimum of 100 GB is provisioned. You can monitor your graph workload's resource consumption and performance in the Fabric Capacity Metrics app.
 
 | Fabric operation name    | Azure billing meter     | Unit of measure  | Fabric CU consumption rate |
 |--------------------------|-------------------------|------------------|----------------------------|
