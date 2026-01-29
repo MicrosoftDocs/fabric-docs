@@ -23,7 +23,7 @@ When mirroring tables without primary keys, you can only perform insert-only cha
 
 If you're changing most the data in a large table, it's more efficient to stop and restart Mirroring. Inserting or updating billions of records can take a long time.
 
-Mirrored data typically reflects changes with a [10–15 minute delay due to BigQuery’s Change History (CDC) capabilities](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes).
+Mirrored data typically reflects changes with a [10–15 minute delay due to BigQuery’s Change History capabilities](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes).
 If no changes are detected, the replication engine enters a backoff mode, increasing polling intervals up to 1 hour.
 
 ## Supported region limitations
