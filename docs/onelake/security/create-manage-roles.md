@@ -52,7 +52,7 @@ Use the following steps to create a OneLake security role.
 
    1. Select **Browse Lakehouse** or the equivalent for the item that you're working with.
 
-      :::image type="content" source="./create-manage-roles/browse-lakehouse.png" alt-text="Screenshot that highlights the 'Browse Lakehouse' option to select data.":::
+      :::image type="content" source="./media/create-manage-roles/browse-lakehouse.png" alt-text="Screenshot that highlights the 'Browse Lakehouse' option to select data.":::
 
    1. Expand the **Tables** and **Files** directories to view data in your lakehouse.
    1. Check the boxes next to the tables and files that you want the role to apply to.
