@@ -33,14 +33,13 @@ Granular Compare enables users to:
 - Compare only modified items (not new, deleted, or unchanged ones).
 - Inspect changes triggered by non‑content modifications, such as sub‑folder moves.
 - Navigate across all changed files within an item—collapsed by default unless opened via single‑item view.
-- Identify binary items that changed (without showing their contents).
 - Work across large workspaces where items may contain many files.
 
 ## Limitations
 The following is a list of limitations for the granular compare feature.
 
 - Files that are over 1 MB, like binary files, don't show content.
-- System files and system level changes currently don't display content.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
+- System files and system level changes currently show content, but sometimes these changes don't reflect actual changes being made to the item.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
 - In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 
 ## Entry Points
