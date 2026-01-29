@@ -3,7 +3,7 @@ title: CTA
 description: An article
 author: JulCsc
 ms.author: juliacawthra
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/26/2025
 ---
 

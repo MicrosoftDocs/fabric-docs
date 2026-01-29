@@ -5,7 +5,7 @@ author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
 ms.date: 05/28/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
 ---

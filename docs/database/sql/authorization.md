@@ -5,7 +5,7 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: wiassaf
 ms.date: 10/11/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 # Authorization in SQL database in Microsoft Fabric
 

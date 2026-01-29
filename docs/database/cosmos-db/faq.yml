@@ -105,7 +105,7 @@ sections:
 
           Transactions can be executed using transactional batch operations in the SDKs.
 
-          For more information, see [Cosmos DB transactions](/azure/cosmos-db/nosql/transactional-batch).
+          For more information, see [Cosmos DB transactions](/azure/cosmos-db/transactional-batch).
       - question: |
           How does Cosmos DB in Fabric handle concurrency?
         answer: |

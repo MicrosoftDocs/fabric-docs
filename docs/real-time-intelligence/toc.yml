@@ -1,942 +1,953 @@
 items:
-- name: Real-Time Intelligence documentation
-  href: index.yml
-- name: Overview
-  expanded: true
-  items:
-  - name: What is Real-Time Intelligence?
-    href: overview.md
-  - name: Compare with Azure solutions
-    href: real-time-intelligence-compare.md
-  - name: Implement medallion architecture
-    href: architecture-medallion.md
-  - name: End to end sample
-    href: sample-end-to-end.md
-- name: Tutorials
-  items:
-  - name: End to end tutorial
-    items:
-    - name: End to end tutorial - Introduction
-      href: tutorial-introduction.md
-    - name: 1- Set up Eventhouse
-      href: tutorial-1-resources.md
-    - name: 2- Get data in the Real-Time hub
-      href: tutorial-2-get-real-time-events.md
-    - name: 3- Set an alert on an eventstream
-      href: tutorial-3-set-alert.md
-    - name: 4- Transform data in your KQL database
-      href: tutorial-4-transform-kql-database.md
-    - name: 5- Query streaming data using KQL
-      href: tutorial-5-query-data.md
-    - name: 6- Create a Real-Time dashboard
-      href: tutorial-6-create-dashboard.md
-    - name: 7- Detect anomalies on an Eventhouse table
-      href: tutorial-7-create-anomaly-detection.md
-    - name: 8- Create a map using geospatial data
-      href: tutorial-8-create-map.md
-    - name: 9- Clean up resources
-      href: tutorial-9-clean-up-resources.md
-  - name: Digital twin builder tutorial
-    items: 
-      - name: Digital twin builder tutorial - Introduction
-        href: digital-twin-builder/tutorial-rti-0-introduction.md
-      - name: 1- Upload contextual data
-        href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
-      - name: 2- Get and process streaming data
-        href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
-      - name: 3- Build the ontology
-        href: digital-twin-builder/tutorial-rti-3-build-ontology.md
-      - name: 4- Project to Eventhouse
-        href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
-      - name: 5- Query and visualize data
-        href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
-      - name: 6- Clean up resources
-        href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
-- name: User flows
-  items:
-  - name: "Discover and respond to events"
-    href: user-flow-1.md
-  - name: "Get and transform events from streaming sources"
-    href: user-flow-2.md
-  - name: "Discover streaming sources from Microsoft"
-    href: user-flow-3.md
-  - name: "Explore your data visually in Real-Time Dashboards"
-    href: user-flow-4.md
-  - name: "Set alerts based on Fabric events"
-    href: user-flow-5.md
-  - name: Set Alert on Real Time Dashboard or KQL Queryset
-    href: user-flow-6.md
-- name: Eventstream
-  items:
-  - name: Eventstream Overview
-    href: event-streams/overview.md
-  - name: Eventstreams capacity consumption
-    href: event-streams/monitor-capacity-consumption.md
-  - name: Supported data formats
-    href: event-streams/data-formats.md
-  - name: Create eventstreams
-    items:
-    - name: Create an eventstream
-      href: event-streams/create-manage-an-eventstream.md
-    - name: Create default and derived streams
-      href: event-streams/create-default-derived-streams.md
-    - name: Create eventstreams for discrete events
-      href: event-streams/create-eventstreams-discrete-events.md
-    - name: Edit and publish eventstreams
-      href: event-streams/edit-publish.md
-    - name: Route events based on content
-      href: event-streams/route-events-based-on-content.md
-  - name: Add source connectors to eventstreams
-    items:
-    - name: Add and manage an event source
-      href: event-streams/add-manage-eventstream-sources.md
-    - name: Azure Data Explorer 
-      href: event-streams/add-source-azure-data-explorer-database.md
-    - name: Azure Event Hubs
-      href: event-streams/add-source-azure-event-hubs.md
-    - name: Azure Event Grid
-      href: event-streams/add-source-azure-event-grid.md
-    - name: Azure Service Bus
-      href: event-streams/add-source-azure-service-bus.md
-    - name: Azure IoT Hub
-      href: event-streams/add-source-azure-iot-hub.md
-    - name: Custom endpoint
-      href: event-streams/add-source-custom-app.md
-    - name: Sample data
-      href: event-streams/add-source-sample-data.md
-    - name: Real-time weather
-      href: event-streams/add-source-real-time-weather.md       
-    - name: Azure SQL Database CDC
-      href: event-streams/add-source-azure-sql-database-change-data-capture.md
-    - name: PostgreSQL Database CDC
-      href: event-streams/add-source-postgresql-database-change-data-capture.md
-    - name: MongoDB CDC
-      href: event-streams/add-source-mongodb-change-data-capture.md
-    - name: MySQL Database CDC
-      href: event-streams/add-source-mysql-database-change-data-capture.md
-    - name: Azure Cosmos DB CDC
-      href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-    - name: SQL Server on VM DB CDC
-      href: event-streams/add-source-sql-server-change-data-capture.md
-    - name: Azure SQL Managed Instance CDC
-      href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
-    - name: Google Cloud Pub/Sub
-      href: event-streams/add-source-google-cloud-pub-sub.md
-    - name: Amazon Kinesis Data Streams
-      href: event-streams/add-source-amazon-kinesis-data-streams.md
-    - name: Confluent Cloud for Apache Kafka
-      href: event-streams/add-source-confluent-kafka.md
-    - name: Apache Kafka
-      href: event-streams/add-source-apache-kafka.md
-    - name: Amazon Managed Streaming for Apache Kafka
-      href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
-    - name: Fabric Workspace Item events
-      href: event-streams/add-source-fabric-workspace.md
-    - name: Fabric OneLake events
-      href: event-streams/add-source-fabric-onelake.md
-    - name: Fabric Job events
-      href: event-streams/add-source-fabric-job.md
-    - name: Fabric capacity overview events
-      href: event-streams/add-source-fabric-capacity-overview-events.md
-    - name: Azure Blob Storage events
-      href: event-streams/add-source-azure-blob-storage.md
-    - name: HTTP
-      href: event-streams/add-source-http.md      
-    - name: MQTT
-      href: event-streams/add-source-mqtt.md
-    - name: Cribl
-      href: event-streams/add-source-cribl.md      
-    - name: Solace PubSub+
-      href: event-streams/add-source-solace-pub-sub.md
-  - name: Add destination connectors to eventstreams
-    items:
-    - name: Add and manage a destination
-      href: event-streams/add-manage-eventstream-destinations.md
-    - name: Derived stream
-      href: event-streams/add-destination-derived-stream.md
-    - name: Eventhouse
-      href: event-streams/add-destination-kql-database.md
-    - name: Lakehouse
-      href: event-streams/add-destination-lakehouse.md
-    - name: Activator
-      href: event-streams/add-destination-activator.md
-    - name: Custom endpoint
-      href: event-streams/add-destination-custom-app.md
-  - name: Process events
-    items:
-    - name: Process events using event processor
-      href: event-streams/process-events-using-event-processor-editor.md
-    - name: Multiple-schema inferencing
-      href: event-streams/process-events-with-multiple-schemas.md
-    - name: Process events using SQL code editor
-      href: event-streams/process-events-using-sql-code-editor.md
-  - name: Preview data
-    href: event-streams/preview-data.md
-  - name: Manage eventstreams
-    items:
-    - name: Manage an eventstream
-      href: event-streams/manage-eventstream.md
-    - name: Configure settings
-      href: event-streams/configure-settings.md
-    - name: Pause and resume data streams
-      href: event-streams/pause-resume-data-streams.md
-  - name: Monitor status and performance of eventstreams
-    href: event-streams/monitor.md
-  - name: Integrate with other Fabric items
-    href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
-  - name: Develop
-    items:
-    - name: CI/CD
-      href: event-streams/eventstream-cicd.md
-    - name: REST API
-      items:
-      - name: Overview
-        href: event-streams/eventstream-rest-api.md
-      - name: Create Eventstream Definition
-        href: event-streams/api-create-with-definition.md
-      - name: Get Eventstream Definition
-        href: event-streams/api-get-eventstream-definition.md
-      - name: Update Eventstream Definition
-        href: event-streams/api-update-eventstream-definition.md
-  - name: Security 
-    items:
-    - name: Secure outbound via managed private endpoints
-      href: event-streams/set-up-private-endpoint.md
-    - name: Secure inbound via tenant and workspace private links
-      href: event-streams/set-up-tenant-workspace-private-links.md
-    - name: Authenticate an application using Entra ID
-      href: event-streams/custom-endpoint-entra-id-auth.md
-    - name: Authenticate with a managed identity
-      href: event-streams/connect-using-managed-identity.md
-    - name: Connect to streaming sources in private network 
-      href: event-streams/connect-connecots-in-virtual-network-on-premises.md
-  - name: Tutorials
-    items:
-    - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
-      href: event-streams/stream-consume-events-use-kafka-endpoint.md
-    - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
-      href: event-streams/stream-oracle-data-to-eventstream.md
-    - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
-      href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
-    - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
-      href: event-streams/stream-real-time-events-from-custom-app-to-kusto.md
-    - name: Stream events to Eventstream using Logic Apps and Power Automate
-      href: event-streams/stream-events-from-power-automate.md
-    - name: Build a Power BI report by streaming data from Azure IoT Hub
-      href: event-streams/build-report-from-iot-hub.md
-    - name: Explore and transform bike-sharing data for KQL database integration
-      href: event-streams/transform-sample-data-and-route-to-kql.md
-  - name: Eventstream Query Language Reference
-    items:
-    - name: Built-in Functions
-      items:
-        - name: Built-in Functions Overview
-          href: /stream-analytics-query/built-in-functions-azure-stream-analytics
-        - name: Aggregate Functions
-          items:
-            - name: Aggregate Functions Overview
-              href: /stream-analytics-query/aggregate-functions-azure-stream-analytics
-            - name: AVG
-              href: /stream-analytics-query/avg-azure-stream-analytics
-            - name: COUNT
-              href: /stream-analytics-query/count-azure-stream-analytics
-            - name: Collect
-              href: /stream-analytics-query/collect-azure-stream-analytics
-            - name: CollectTOP
-              href: /stream-analytics-query/collecttop-azure-stream-analytics
-            - name: MAX
-              href: /stream-analytics-query/max-azure-stream-analytics
-            - name: MIN
-              href: /stream-analytics-query/min-azure-stream-analytics
-            - name: Percentile_Cont
-              href: /stream-analytics-query/percentile-cont-azure-stream-analytics
-            - name: Percentile_Disc
-              href: /stream-analytics-query/percentile-disc-azure-stream-analytics
-            - name: STDEV
-              href: /stream-analytics-query/stdev-azure-stream-analytics
-            - name: STDEVP
-              href: /stream-analytics-query/stdevp-azure-stream-analytics
-            - name: SUM
-              href: /stream-analytics-query/sum-azure-stream-analytics
-            - name: TopOne
-              href: /stream-analytics-query/topone-azure-stream-analytics
-            - name: VAR
-              href: /stream-analytics-query/var-azure-stream-analytics
-            - name: VARP
-              href: /stream-analytics-query/varp-azure-stream-analytics
-        - name: Analytic Functions
-          items:
-            - name: Analytic Functions Overview
-              href: /stream-analytics-query/analytic-functions-azure-stream-analytics
-            - name: AnomalyDetection_SpikeAndDip
-              href: /stream-analytics-query/anomalydetection-spikeanddip-azure-stream-analytics
-            - name: AnomalyDetection_ChangePoint
-              href: /stream-analytics-query/anomalydetection-changepoint-azure-stream-analytics
-            - name: ISFIRST
-              href: /stream-analytics-query/isfirst-azure-stream-analytics
-            - name: LAG
-              href: /stream-analytics-query/lag-azure-stream-analytics
-            - name: LAST
-              href: /stream-analytics-query/last-azure-stream-analytics
-        - name: Array Functions
-          items:
-            - name: Array Functions Overview
-              href: /stream-analytics-query/array-functions-stream-analytics
-            - name: GetArrayLength
-              href: /stream-analytics-query/getarraylength-azure-stream-analytics
-            - name: GetArrayElement
-              href: /stream-analytics-query/getarrayelement-azure-stream-analytics
-            - name: GetArrayElements
-              href: /stream-analytics-query/getarrayelements-azure-stream-analytics
-        - name: Bitwise Operators
-          items:
-            - name: Bitwise Operators Overview
-              href: /stream-analytics-query/bitwise-operators-azure-stream-analytics
-            - name: Bitwise AND
-              href: /stream-analytics-query/bitwise-and-azure-stream-analytics
-            - name: Bitwise OR
-              href: /stream-analytics-query/bitwise-or-azure-stream-analytics
-            - name: Bitwise XOR
-              href: /stream-analytics-query/bitwise-xor-azure-stream-analytics
-            - name: Bitwise NOT
-              href: /stream-analytics-query/bitwise-not-azure-stream-analytics
-        - name: Conversion Functions
-          items:
-            - name: Conversion Functions Overview
-              href: /stream-analytics-query/conversion-functions-azure-stream-analytics
-            - name: CAST
-              href: /stream-analytics-query/cast-azure-stream-analytics
-            - name: GetType
-              href: /stream-analytics-query/gettype-azure-stream-analytics
-            - name: TRY_CAST
-              href: /stream-analytics-query/try-cast-azure-stream-analytics
-        - name: Date and Time Functions
-          items:
-            - name: Date and Time Functions Overview
-              href: /stream-analytics-query/date-and-time-functions-azure-stream-analytics
-            - name: DATEADD
-              href: /stream-analytics-query/dateadd-azure-stream-analytics
-            - name: DATEDIFF
-              href: /stream-analytics-query/datediff-azure-stream-analytics
-            - name: DATENAME
-              href: /stream-analytics-query/datename-azure-stream-analytics
-            - name: DATEPART
-              href: /stream-analytics-query/datepart-azure-stream-analytics
-            - name: DATETIMEFROMPARTS
-              href: /stream-analytics-query/datetimefromparts-azure-stream-analytics
-            - name: DAY
-              href: /stream-analytics-query/day-azure-stream-analytics
-            - name: MONTH
-              href: /stream-analytics-query/month-azure-stream-analytics
-            - name: YEAR
-              href: /stream-analytics-query/year-azure-stream-analytics
-        - name: GeoSpatial Functions
-          items:
-            - name: GeoSpatial Functions Overview
-              href: /stream-analytics-query/geospatial-functions
-            - name: CreateLineString
-              href: /stream-analytics-query/createlinestring
-            - name: CreatePoint
-              href: /stream-analytics-query/createpoint
-            - name: CreatePolygon
-              href: /stream-analytics-query/createpolygon
-            - name: ST_DISTANCE
-              href: /stream-analytics-query/st-distance
-            - name: ST_OVERLAPS
-              href: /stream-analytics-query/st-overlaps
-            - name: ST_INTERSECTS
-              href: /stream-analytics-query/st-intersects
-            - name: ST_WITHIN
-              href: /stream-analytics-query/st-within
-        - name: Input Metadata Functions
-          items:
-            - name: Input Metadata Functions Overview
-              href: /stream-analytics-query/input-metadata-functions
-            - name: GetMetadataPropertyValue
-              href: /stream-analytics-query/getmetadatapropertyvalue
-        - name: Mathematical Functions
-          items:
-            - name: Mathematical Functions Overview
-              href: /stream-analytics-query/mathematical-functions-azure-stream-analytics
-            - name: ABS
-              href: /stream-analytics-query/abs-azure-stream-analytics
-            - name: CEILING
-              href: /stream-analytics-query/ceiling-azure-stream-analytics
-            - name: EXP
-              href: /stream-analytics-query/exp-azure-stream-analytics
-            - name: FLOOR
-              href: /stream-analytics-query/floor-azure-stream-analytics
-            - name: POWER
-              href: /stream-analytics-query/power-azure-stream-analytics
-            - name: ROUND
-              href: /stream-analytics-query/round-azure-stream-analytics
-            - name: SIGN
-              href: /stream-analytics-query/sign-azure-stream-analytics
-            - name: SQUARE
-              href: /stream-analytics-query/square-azure-stream-analytics
-            - name: SQRT
-              href: /stream-analytics-query/sqrt-azure-stream-analytics
-        - name: Record Functions
-          items:
-            - name: Record Functions Overview
-              href: /stream-analytics-query/record-functions-azure-stream-analytics
-            - name: GetRecordProperties
-              href: /stream-analytics-query/getrecordproperties-azure-stream-analytics
-            - name: GetRecordPropertyValue
-              href: /stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics
-        - name: String Functions
-          items:
-            - name: String Functions Overview
-              href: /stream-analytics-query/string-functions-azure-stream-analytics
-            - name: CHARINDEX
-              href: /stream-analytics-query/charindex-azure-stream-analytics
-            - name: CONCAT
-              href: /stream-analytics-query/concat-azure-stream-analytics
-            - name: CONCAT_WS
-              href: /stream-analytics-query/concat-ws-azure-stream-analytics
-            - name: LEFT
-              href: /stream-analytics-query/left-azure-stream-analytics
-            - name: LEN
-              href: /stream-analytics-query/len-azure-stream-analytics
-            - name: LOWER
-              href: /stream-analytics-query/lower-azure-stream-analytics
-            - name: LTRIM
-              href: /stream-analytics-query/ltrim-azure-stream-analytics
-            - name: NCHAR
-              href: /stream-analytics-query/nchar-azure-stream-analytics
-            - name: PATINDEX
-              href: /stream-analytics-query/patindex-azure-stream-analytics
-            - name: REGEXMATCH
-              href: /stream-analytics-query/regexmatch-azure-stream-analytics
-            - name: REPLACE
-              href: /stream-analytics-query/replace-azure-stream-analytics
-            - name: REPLICATE
-              href: /stream-analytics-query/replicate-azure-stream-analytics
-            - name: REVERSE
-              href: /stream-analytics-query/reverse-azure-stream-analytics
-            - name: RIGHT
-              href: /stream-analytics-query/right-azure-stream-analytics
-            - name: RTRIM
-              href: /stream-analytics-query/rtrim-azure-stream-analytics
-            - name: SPACE
-              href: /stream-analytics-query/space-azure-stream-analytics
-            - name: STUFF
-              href: /stream-analytics-query/stuff-azure-stream-analytics
-            - name: SUBSTRING
-              href: /stream-analytics-query/substring-azure-stream-analytics
-            - name: TRANSLATE
-              href: /stream-analytics-query/translate-azure-stream-analytics
-            - name: TRIM
-              href: /stream-analytics-query/trim-azure-stream-analytics
-            - name: UNICODE
-              href: /stream-analytics-query/unicode-azure-stream-analytics
-            - name: UPPER
-              href: /stream-analytics-query/upper-azure-stream-analytics
-        - name: Windowing Functions
-          items:
-            - name: Windowing Functions Overview
-              href: /stream-analytics-query/windowing-azure-stream-analytics
-            - name: Hopping Window
-              href: /stream-analytics-query/hopping-window-azure-stream-analytics
-            - name: Session Window
-              href: /stream-analytics-query/session-window-azure-stream-analytics
-            - name: Sliding Window
-              href: /stream-analytics-query/sliding-window-azure-stream-analytics
-            - name: Snapshot Window
-              href: /stream-analytics-query/snapshot-window-azure-stream-analytics
-            - name: Tumbling Window
-              href: /stream-analytics-query/tumbling-window-azure-stream-analytics
-            - name: Aggregate Windowing functions
-              href: /stream-analytics-query/windows-azure-stream-analytics
-    - name: Data Types
-      items:
-        - name: Data Types Overview
-          href: /stream-analytics-query/data-types-azure-stream-analytics
-        - name: Parsing JSON and AVRO data
-          href: /azure/stream-analytics/stream-analytics-parsing-json
-        - name: Parsing Protobuf
-          href: /azure/stream-analytics/stream-analytics-parsing-protobuf
-    - name: Query Language Elements
-      items:
-        - name: Query Language Elements Overview
-          href: /stream-analytics-query/query-language-elements-azure-stream-analytics
-        - name: APPLY
-          href: /stream-analytics-query/apply-azure-stream-analytics
-        - name: CASE
-          href: /stream-analytics-query/case-azure-stream-analytics
-        - name: COALESCE
-          href: /stream-analytics-query/coalesce-azure-stream-analytics
-        - name: CREATE TABLE
-          href: /stream-analytics-query/create-table-stream-analytics
-        - name: FROM
-          href: /stream-analytics-query/from-azure-stream-analytics
-        - name: GROUP BY
-          href: /stream-analytics-query/group-by-azure-stream-analytics
-        - name: HAVING
-          href: /stream-analytics-query/having-azure-stream-analytics
-        - name: INTO
-          href: /stream-analytics-query/into-azure-stream-analytics
-        - name: JOIN
-          href: /stream-analytics-query/join-azure-stream-analytics
-        - name: MATCH_RECOGNIZE
-          href: /stream-analytics-query/match-recognize-stream-analytics
-        - name: NULLIF
-          href: /stream-analytics-query/nullif-azure-stream-analytics
-        - name: Reference Data JOIN
-          href: /stream-analytics-query/reference-data-join-azure-stream-analytics
-        - name: SELECT
-          href: /stream-analytics-query/select-azure-stream-analytics
-        - name: UNION
-          href: /stream-analytics-query/union-azure-stream-analytics
-        - name: WHERE
-          href: /stream-analytics-query/where-azure-stream-analytics
-        - name: WITH
-          href: /stream-analytics-query/with-azure-stream-analytics
-- name: Event Schema Set
-  items:
-  - name: Schema Registry in Real-Time hub
-    href: schema-sets/schema-registry-overview.md
-  - name: Create and manage event schema sets
-    href: schema-sets/create-manage-event-schema-sets.md
-  - name: Create and manage schemas in schema sets
-    href: schema-sets/create-manage-event-schemas.md
-  - name: Create and manage schemas in Real-Time hub
-    href: schema-sets/create-manage-event-schemas-real-time-hub.md
-  - name: Use schemas in eventstreams
-    href: schema-sets/use-event-schemas.md
-  - name: Known limitations
-    href: schema-sets/schema-registry-limitations.md      
-- name: Eventhouse
-  items:
-  - name: Eventhouse overview
-    href: eventhouse.md
-  - name: Create an eventhouse
-    href: create-eventhouse.md
-  - name: Deploy an eventhouse using APIs
-    href: eventhouse-deploy-with-fabric-api.md
-  - name: Manage and monitor an eventhouse
-    href: manage-monitor-eventhouse.md
-  - name: Query cold data with hot windows
-    href: query-cold-data-hot-windows.md
-  - name: Vector database
-    items:
-    - name: Eventhouse as a vector database overview
-      href: vector-database.md
-    - name: "Tutorial: Use an Eventhouse as a vector database"
-      href: vector-database-eventhouse.md
-  - name: Get data in an Eventhouse
-    items:
-    - name: Get data overview
-      href: get-data-overview.md
-    - name: Data formats
-      href: ingestion-supported-formats.md
-    - name: Schema optimization best practices
-      href: schema-best-practice.md
-    - name: Get data from local file
-      href: get-data-local-file.md
-    - name: Get data from Azure storage
-      href: get-data-azure-storage.md
-    - name: Get data from Amazon S3
-      href: get-data-amazon-s3.md
-    - name: Get data from Azure Event Hubs
-      href: get-data-event-hub.md
-    - name: Get data from OneLake
-      href: get-data-onelake.md
-    - name: Get data from Eventstream
-      href: get-data-eventstream.md
-    - name: Get data from Real-Time hub
-      href: get-data-real-time-hub.md
-    - name: Configure KQL Database in a pipeline
-      href: ../data-factory/connector-kql-database-copy-activity.md
-    - name: Connect to KQL Database in dataflows
-      href: ../data-factory/connector-kusto-dataflows.md
-    - name: Eventhouse data connectors
-      items:
-      - name: Eventhouse data connectors overview
-        href: event-house-connectors.md
-      - name: Apache Flink
-        href: get-data-flink.md
-      - name: Apache Kafka
-        href: get-data-kafka.md
-      - name: Apache Log4J 2
-        href: get-data-log4j2.md
-      - name: Apache Spark
-        href: get-data-spark.md
-      - name: Azure Synapse workspace
-        href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
-      - name: Azure Data Factory
-        href: /azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rti&pivots=fabric
-      - name: Azure Event Hubs
-        href: /azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rti&pivots=fabric
-      - name: Azure Functions
-        href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rti&pivots=fabric
-      - name: Azure Stream Analytics
-        href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric
-      - name: Cribl Stream
-        href: get-data-cribl-stream.md
-      - name: Fluent Bit
-        href: get-data-fluent.md
-      - name: Fluentd
-        href: get-data-fluentd.md
-      - name: Logstash
-        href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
-      - name: NLog sink
-        href: get-data-nlog-sink.md
-      - name: OpenTelemetry
-        href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric
-      - name: Microsoft Power Automate
-        href: /azure/data-explorer/flow?context=/fabric/context/context-rti&pivots=fabric
-      - name: Serilog sink
-        href: get-data-serilog.md
-      - name: Splunk
-        href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rti&pivots=fabric
-      - name: Splunk Universal Forwarder
-        href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
-      - name: Telegraf
-        href: get-data-telegraf.md
-  - name: KQL Database
-    items:
-    - name: Create a KQL database
-      href: create-database.md
-    - name: Access an existing KQL database
-      displayName: copy URI, copy query URI, copy ingestion URI
-      href: access-database-copy-uri.md
-    - name: Manage and monitor a KQL database    
-      href: manage-monitor-database.md
-    - name: Create a database shortcut
-      href: database-shortcut.md
-    - name: Create an empty table
-      href: create-empty-table.md
-    - name: Edit table schema
-      href: edit-table-schema.md
-    - name: Manage and monitor tables    
-      href: manage-monitor-table.md  
-    - name: Notebooks
-      items:
-      - name: Use Fabric notebooks with data from a KQL database
-        href: notebooks.md
-      - name: Use a notebook with Apache Spark to query a KQL database
-        href: spark-connector.md
-      - name: Use a notebook with Kqlmagic to query a KQL database
-        href: notebook-kql-magic.md
-    - name: Data management
-      items:
-      - name: Data management overview
-        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
-        href: data-management.md
-      - name: Entity diagram view in KQL database
-        href: database-entity-diagram.md
-      - name: Change data policies
-        href: data-policies.md
-      - name: Create a table update policy
-        href: table-update-policy.md
-      - name: Create materialized views
-        href: materialized-view.md
-      - name: Create stored functions
-        href: create-functions.md
-      - name: Enable Python plugin
-        href: python-plugin.md
-    - name: Management commands
-      href: kusto-tocs/management/toc.yml
-    - name: API
-      href: kusto-tocs/api/toc.yml
-    - name: OneLake
-      items:
-      - name: Eventhouse OneLake availability
-        href: event-house-onelake-availability.md
-      - name: Create OneLake shortcuts in a KQL database
-        href: onelake-shortcuts.md
-      - name: Query acceleration over OneLake shortcuts
-        items: 
-        - name: Accelerate queries over OneLake shortcuts - overview
-          href: query-acceleration-overview.md
-        - name: Accelerate queries over OneLake shortcuts
-          href: query-acceleration.md
-      - name: Eventhouse endpoint for Lakehouse and Warehouse
-        href: eventhouse-as-endpoint.md
-      - name: External tools
-        items: 
-        - name: Query Fabric OneLake Delta tables from Snowflake
-          href: query-onelake-from-snowflake.md
-  - name: Resource consumption
-    displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: real-time-intelligence-consumption.md
-  - name: Understand Eventhouse compute usage
-    href: eventhouse-compute-observability.md
-  - name: Eventhouse Cost per GB Ingested
-    href: pricing-cost-drivers.md
-- name: KQL Queryset
-  items:
-  - name: Copilot for Writing KQL Queries
-    href: copilot-writing-queries.md
-  - name: Create a KQL queryset
-    href: create-query-set.md
-  - name: Query data in a KQL queryset
-    href: kusto-query-set.md
-  - name: Share queries
-    href: kusto-share-queries.md
-  - name: Access the data profile of a table
-    href: data-profile.md
-  - name: Customize results in the KQL Queryset results grid
-    href: customize-results.md
-  - name: Keyboard shortcuts
-    href: keyboard-shortcuts.md
-  - name: Use example queries
-    href: query-table.md
-  - name: Sample gallery
-    displayName: Query sample data
-    href: sample-gallery.md
-  - name: Create alerts from a KQL Queryset
-    href: data-activator/activator-alert-queryset.md
-  - name: Add query visualization to a dashboard
-    href: add-query-visualization.md
-- name: Real-Time Dashboard
-  items:
-  - name: Real-Time Dashboard overview
-    href: real-time-dashboards-overview.md
-  - name: Create a Real-Time Dashboard
-    href: dashboard-real-time-create.md
-  - name: Generate Real-Time Dashboard Using Copilot
-    href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric      
-  - name: Real-Time Dashboard permissions
-    href: dashboard-permissions.md
-  - name: Explore data in Real-Time Dashboard Using Copilot
-    href: dashboard-explore-data.md
-  - name: Customize Real-Time Dashboard visuals
-    href: dashboard-visuals-customize.md
-  - name: Apply conditional formatting in Real-Time Dashboards
-    href: dashboard-conditional-formatting.md
-  - name: Use parameters in Real-Time Dashboards
-    href: dashboard-parameters.md
-  - name: Real-Time Dashboard-specific visuals
-    href: dashboard-visuals.md
-  - name: Create alerts from a Real-Time Dashboard
-    displayName: trigger, activator, reflex
-    href: ./data-activator/activator-get-data-real-time-dashboard.md
-  - name: Visualize data in Power BI
-    items:
-    - name: Visualize data in a Power BI report
-      href: create-powerbi-report.md
-    - name: Connect KQL Database in Power BI Desktop
-      href: power-bi-data-connector.md
-- name: Activator
-  items:
-  - name: What is Activator?
-    href: data-activator/activator-introduction.md
-  - name: Tutorials
-    items: 
-    - name: Create and activate an Activator rule
-      href: data-activator/activator-tutorial.md
-  - name: Concepts
-    items:
-    - name: Activator rules
-      href: data-activator/activator-rules-overview.md
-    - name: Detection conditions for Activator
-      href: data-activator/activator-detection-conditions.md
-    - name: Activator rule latency
-      href: data-activator/activator-latency.md
-    - name: Activator limitations
-      href: data-activator/activator-limitations.md
-    - name: Activator capacity usage
-      href: data-activator/activator-capacity-usage.md
-      displayName: capacity, usage, consumption, billing
-    - name: Activator throttling
-      href: data-activator/activator-throttling-effects.md
-    - name: Activator query frequency
-      href: data-activator/activator-query-frequency.md      
-      displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
-  - name: Create alerts
-    items:
-    - name: Create alerts from a Real-Time Dashboard
-      href: data-activator/activator-get-data-real-time-dashboard.md
-    - name: Create alerts from a KQL Queryset
-      href: data-activator/activator-alert-queryset.md
-    - name: Set alerts on eventstreams in Real-Time hub
-      href: ../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on workspace item events
-      href: ../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on OneLake events
-      href: ../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on Job events
-      href: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Set alerts on Azure Blob Storage events
-      href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Create alerts on Power BI reports
-      href: data-activator/activator-get-data-power-bi.md
-    - name: Get data from eventstreams
-      href: event-streams/add-destination-activator.md
-    - name: Create rules and activations
-      href: data-activator/activator-create-activators.md
-    - name: Assign data to Activator objects
-      href: data-activator/activator-assign-data-objects.md
-    - name: Trigger Fabric items
-      href: data-activator/activator-trigger-fabric-items.md
-    - name: Use custom actions to trigger Power Automate flows
-      href: data-activator/activator-trigger-power-automate-flows.md
-  - name: How-to guides
-    items:
-    - name: Combine multiple streams
-      href: data-activator/combine-multiple-streams.md
-  - name: Troubleshoot errors
-    href: data-activator/activator-troubleshooting.md
-- name: Digital Twin Builder
-  items:
-  - name: Get started with digital twin builder
-    items:
-    - name: What is digital twin builder?
-      href: digital-twin-builder/overview.md
-    - name: Digital twin builder tutorial
-      items:
-      - name: Tutorial introduction
-        href: digital-twin-builder/tutorial-0-introduction.md
-      - name: 1- Set up resources
-        href: digital-twin-builder/tutorial-1-set-up-resources.md
-      - name: 2- Add entity types and map data
-        href: digital-twin-builder/tutorial-2-add-entities-map-data.md
-      - name: 3- Define relationship types
-        href: digital-twin-builder/tutorial-3-define-relationships.md
-      - name: 4- Explore your ontology
-        href: digital-twin-builder/tutorial-4-explore-ontology.md
-      - name: 5- Create a Power BI report
-        href: digital-twin-builder/tutorial-5-power-bi-report.md
-      - name: 6- Clean up resources
-        href: digital-twin-builder/tutorial-6-clean-up-resources.md
-    - name: Role-based access control
-      href: digital-twin-builder/overview-rbac.md
-  - name: Concepts
-    items:
-    - name: Using the semantic canvas
-      href: digital-twin-builder/concept-semantic-canvas.md
-    - name: Modeling
-      href: digital-twin-builder/concept-modeling.md
-    - name: Mapping data to entity types
-      href: digital-twin-builder/concept-mapping.md
-    - name: Flows
-      href: digital-twin-builder/concept-flows.md
-    - name: Integrating with Fabric tools
-      href: digital-twin-builder/concept-integrating-fabric.md
-    - name: Integrating with machine learning
-      href: digital-twin-builder/concept-integrating-machine-learning.md
-  - name: Build and explore models
-    items:
-    - name: Manage entity types and mappings
-      href: digital-twin-builder/model-manage-mappings.md
-    - name: Perform contextualization
-      href: digital-twin-builder/model-perform-contextualization.md
-    - name: Search and visualize
-      href: digital-twin-builder/explore-search-visualize.md
-    - name: Connect to a Real-Time Dashboard
-      href: digital-twin-builder/explore-connect-dashboard.md
-  - name: Digital twin builder resources
-    items:
-    - name: Glossary
-      href: digital-twin-builder/resources-glossary.md
-    - name: Troubleshooting
-      href: digital-twin-builder/resources-troubleshooting.md
-    - name: Capacity usage
-      href: digital-twin-builder/resources-capacity-usage.md
-    - name: FAQ
-      href: digital-twin-builder/resources-faq.md
-    - name: Digital twin builder REST API
-      href: /rest/api/fabric/digitaltwinbuilder/items
-    - name: Digital twin builder flow REST API
-      href: /rest/api/fabric/digitaltwinbuilderflow/items
-- name: Anomaly Detector
-  items:
-  - name: Anomaly detection using Real-Time Intelligence
-    items:
-    - name: Set up anomaly detection
-      href: anomaly-detection.md
-    - name: Anomaly detection models
-      href: anomaly-detection-models.md
-    - name: Troubleshoot anomaly detection
-      href: troubleshoot-anomaly-detection.md
-    - name: Anomaly detector billing and capacity
-      href: anomaly-detection-billing.md
-  - name: Univariate anomaly detection using KQL
-    href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
-  - name: Multivariate anomaly detection using Spark
-    items:
-    - name: Multivariate anomaly detection overview
-      href: multivariate-anomaly-overview.md
-    - name: Multivariate anomaly detection tutorial
-      href: multivariate-anomaly-detection.md
-- name: Map
-  items:
-  - name: Create a map
-    href: map/create-map.md
-  - name: Customize a map
-    href: map/customize-map.md
-  - name: Map sharing
-    items:
-    - name: Sharing maps
-      href: map/sharing-maps.md
-    - name: Share maps directly
-      href: map/share-map-direct.md
-    - name: Share maps with org apps
-      href: map/share-map-org-apps.md
-  - name: Create a tileset
-    href: map/spatial-job-create-tile-sets.md
-  - name: Manage Map permissions
-    href: map/manage-map-permissions.md
-- name: Monitor
-  items:
-    - name: Eventhouse monitoring
-      href: monitor-eventhouse.md
-    - name: Metrics
-      href: monitor-metrics.md
-    - name: Command logs
-      href: monitor-logs-command.md
-    - name: Data operation logs
-      href: monitor-logs-data-operation.md
-    - name: Ingestion results logs
-      href: monitor-logs-ingestion-results.md
-    - name: Query logs
-      href: monitor-logs-query.md
-- name: Build AI agents
-  displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
-  items:
-    - name: Operations agents  
-      items:
-      - name: Getting started with operations agents
-        href: operations-agent.md
-      - name: Operations agents billing
-        href: operations-agent-billing.md 
-      - name: Operations agents limitations
-        href: operations-agent-limitations.md
-      - name: Operations agent transparency note
-        href: operations-agent-transparency-note.md
-    - name: Fabric RTI MCP Server (preview)
-      href: mcp-overview.md 
-    - name: Use MCP with Eventhouse
-      href: mcp-eventhouse.md
-- name: Git integration and deployment pipelines
-  items:
+  - name: Real-Time Intelligence documentation
+    href: index.yml
   - name: Overview
-    href: git-deployment-pipelines.md
-  - name: Git integration of Real-Time intelligence items
     items:
-    - name: Eventstream 
-      href: git-eventstream.md
-    - name: Eventhouse and KQL database
-      href: git-eventhouse-kql-database.md
-    - name: KQL querysets
-      href: git-kql-queryset.md
-    - name: Real-Time Dashboard 
-      href: git-real-time-dashboard.md
-    - name: Activator
-      href: git-activator.md
-  displayName: alm, application lifecycle management, cicd, devops
-- name: Migrate
-  items:
-  - name: Migrate from Azure Data Explorer
-    href: migrate-azure-data-explorer.md
-  - name: Migrate from Azure Synapse Data Explorer
-    href: migrate-synapse-data-explorer.md
-    items: 
-    - name: Validate migration using REST API endpoints
-      href: migrate-api-validate-synapse-data-explorer.md
-    - name: Migrate to Eventhouse
-      href: migrate-api-to-eventhouse.md
-- name: KQL reference
-  href: kusto-tocs/query/toc.yml
+      - name: What is Real-Time Intelligence?
+        href: overview.md
+      - name: Compare with Azure solutions
+        href: real-time-intelligence-compare.md
+      - name: Implement medallion architecture
+        href: architecture-medallion.md
+      - name: End to end sample
+        href: sample-end-to-end.md
+  - name: Tutorials
+    items:
+      - name: End to end tutorial
+        items:
+          - name: End to end tutorial - Introduction
+            href: tutorial-introduction.md
+          - name: 1- Set up Eventhouse
+            href: tutorial-1-resources.md
+          - name: 2- Get data in the Real-Time hub
+            href: tutorial-2-get-real-time-events.md
+          - name: 3- Set an alert on an eventstream
+            href: tutorial-3-set-alert.md
+          - name: 4- Transform data in your KQL database
+            href: tutorial-4-transform-kql-database.md
+          - name: 5- Query streaming data using KQL
+            href: tutorial-5-query-data.md
+          - name: 6- Create a Real-Time dashboard
+            href: tutorial-6-create-dashboard.md
+          - name: 7- Detect anomalies on an Eventhouse table
+            href: tutorial-7-create-anomaly-detection.md
+          - name: 8- Create a map using geospatial data
+            href: tutorial-8-create-map.md
+          - name: 9- Clean up resources
+            href: tutorial-9-clean-up-resources.md
+      - name: Digital twin builder tutorial
+        items:
+          - name: Digital twin builder tutorial - Introduction
+            href: digital-twin-builder/tutorial-rti-0-introduction.md
+          - name: 1- Upload contextual data
+            href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
+          - name: 2- Get and process streaming data
+            href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
+          - name: 3- Build the ontology
+            href: digital-twin-builder/tutorial-rti-3-build-ontology.md
+          - name: 4- Project to Eventhouse
+            href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
+          - name: 5- Query and visualize data
+            href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
+          - name: 6- Clean up resources
+            href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
+  - name: User flows
+    items:
+      - name: Discover and respond to events
+        href: user-flow-1.md
+      - name: Get and transform events from streaming sources
+        href: user-flow-2.md
+      - name: Discover streaming sources from Microsoft
+        href: user-flow-3.md
+      - name: Explore your data visually in Real-Time Dashboards
+        href: user-flow-4.md
+      - name: Set alerts based on Fabric events
+        href: user-flow-5.md
+      - name: Set Alert on Real Time Dashboard or KQL Queryset
+        href: user-flow-6.md
+  - name: Eventstream
+    items:
+      - name: Eventstream Overview
+        href: event-streams/overview.md
+      - name: Eventstreams capacity consumption
+        href: event-streams/monitor-capacity-consumption.md
+      - name: Supported data formats
+        href: event-streams/data-formats.md
+      - name: Create eventstreams
+        items:
+          - name: Create an eventstream
+            href: event-streams/create-manage-an-eventstream.md
+          - name: Create default and derived streams
+            href: event-streams/create-default-derived-streams.md
+          - name: Create eventstreams for discrete events
+            href: event-streams/create-eventstreams-discrete-events.md
+          - name: Edit and publish eventstreams
+            href: event-streams/edit-publish.md
+          - name: Route events based on content
+            href: event-streams/route-events-based-on-content.md
+      - name: Add source connectors to eventstreams
+        items:
+          - name: Add and manage an event source
+            href: event-streams/add-manage-eventstream-sources.md
+          - name: Azure Data Explorer
+            href: event-streams/add-source-azure-data-explorer-database.md
+          - name: Azure Event Hubs
+            href: event-streams/add-source-azure-event-hubs.md
+          - name: Azure Event Grid
+            href: event-streams/add-source-azure-event-grid.md
+          - name: Azure Service Bus
+            href: event-streams/add-source-azure-service-bus.md
+          - name: Azure IoT Hub
+            href: event-streams/add-source-azure-iot-hub.md
+          - name: Custom endpoint
+            href: event-streams/add-source-custom-app.md
+          - name: Sample data
+            href: event-streams/add-source-sample-data.md
+          - name: Real-time weather
+            href: event-streams/add-source-real-time-weather.md
+          - name: Azure SQL Database CDC
+            href: event-streams/add-source-azure-sql-database-change-data-capture.md
+          - name: PostgreSQL Database CDC
+            href: event-streams/add-source-postgresql-database-change-data-capture.md
+          - name: MongoDB CDC
+            href: event-streams/add-source-mongodb-change-data-capture.md
+          - name: MySQL Database CDC
+            href: event-streams/add-source-mysql-database-change-data-capture.md
+          - name: Azure Cosmos DB CDC
+            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+          - name: SQL Server on VM DB CDC
+            href: event-streams/add-source-sql-server-change-data-capture.md
+          - name: Azure SQL Managed Instance CDC
+            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: Google Cloud Pub/Sub
+            href: event-streams/add-source-google-cloud-pub-sub.md
+          - name: Amazon Kinesis Data Streams
+            href: event-streams/add-source-amazon-kinesis-data-streams.md
+          - name: Confluent Cloud for Apache Kafka
+            href: event-streams/add-source-confluent-kafka.md
+          - name: Apache Kafka
+            href: event-streams/add-source-apache-kafka.md
+          - name: Amazon Managed Streaming for Apache Kafka
+            href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
+          - name: Fabric Workspace Item events
+            href: event-streams/add-source-fabric-workspace.md
+          - name: Fabric OneLake events
+            href: event-streams/add-source-fabric-onelake.md
+          - name: Fabric Job events
+            href: event-streams/add-source-fabric-job.md
+          - name: Fabric capacity overview events
+            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Azure Blob Storage events
+            href: event-streams/add-source-azure-blob-storage.md
+          - name: HTTP
+            href: event-streams/add-source-http.md
+          - name: MQTT
+            href: event-streams/add-source-mqtt.md
+          - name: Cribl
+            href: event-streams/add-source-cribl.md
+          - name: Solace PubSub+
+            href: event-streams/add-source-solace-pub-sub.md
+      - name: Add destination connectors to eventstreams
+        items:
+          - name: Add and manage a destination
+            href: event-streams/add-manage-eventstream-destinations.md
+          - name: Derived stream
+            href: event-streams/add-destination-derived-stream.md
+          - name: Eventhouse
+            href: event-streams/add-destination-kql-database.md
+          - name: Lakehouse
+            href: event-streams/add-destination-lakehouse.md
+          - name: Activator
+            href: event-streams/add-destination-activator.md
+          - name: Custom endpoint
+            href: event-streams/add-destination-custom-app.md
+      - name: Process events
+        items:
+          - name: Process events using event processor
+            href: event-streams/process-events-using-event-processor-editor.md
+          - name: Multiple-schema inferencing
+            href: event-streams/process-events-with-multiple-schemas.md
+          - name: Process events using SQL code editor
+            href: event-streams/process-events-using-sql-code-editor.md
+      - name: Preview data
+        href: event-streams/preview-data.md
+      - name: Manage eventstreams
+        items:
+          - name: Manage an eventstream
+            href: event-streams/manage-eventstream.md
+          - name: Configure settings
+            href: event-streams/configure-settings.md
+          - name: Pause and resume data streams
+            href: event-streams/pause-resume-data-streams.md
+      - name: Monitor status and performance of eventstreams
+        href: event-streams/monitor.md
+      - name: Integrate with other Fabric items
+        href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
+      - name: Develop
+        items:
+          - name: CI/CD
+            href: event-streams/eventstream-cicd.md
+          - name: REST API
+            items:
+              - name: Overview
+                href: event-streams/eventstream-rest-api.md
+              - name: Create Eventstream Definition
+                href: event-streams/api-create-with-definition.md
+              - name: Get Eventstream Definition
+                href: event-streams/api-get-eventstream-definition.md
+              - name: Update Eventstream Definition
+                href: event-streams/api-update-eventstream-definition.md
+      - name: Security
+        items:
+          - name: Secure outbound via managed private endpoints
+            href: event-streams/set-up-private-endpoint.md
+          - name: Secure inbound via tenant and workspace private links
+            href: event-streams/set-up-tenant-workspace-private-links.md
+          - name: Authenticate an application using Entra ID
+            href: event-streams/custom-endpoint-entra-id-auth.md
+          - name: Authenticate with a managed identity
+            href: event-streams/connect-using-managed-identity.md
+          - name: Connect to streaming sources in private network
+            href: event-streams/connect-connecots-in-virtual-network-on-premises.md
+      - name: Tutorials
+        items:
+          - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
+            href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
+            href: event-streams/replicate-data-with-replication-flow.md
+          - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
+            href: event-streams/stream-oracle-data-to-eventstream.md
+          - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
+            href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
+          - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
+            href: event-streams/stream-real-time-events-from-custom-app-to-kusto.md
+          - name: Stream events to Eventstream using Logic Apps and Power Automate
+            href: event-streams/stream-events-from-power-automate.md
+          - name: Build a Power BI report by streaming data from Azure IoT Hub
+            href: event-streams/build-report-from-iot-hub.md
+          - name: Explore and transform bike-sharing data for KQL database integration
+            href: event-streams/transform-sample-data-and-route-to-kql.md
+      - name: Eventstream Query Language Reference
+        items:
+          - name: Built-in Functions
+            items:
+              - name: Built-in Functions Overview
+                href: /stream-analytics-query/built-in-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Aggregate Functions
+                items:
+                  - name: Aggregate Functions Overview
+                    href: /stream-analytics-query/aggregate-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: AVG
+                    href: /stream-analytics-query/avg-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: COUNT
+                    href: /stream-analytics-query/count-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Collect
+                    href: /stream-analytics-query/collect-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CollectTOP
+                    href: /stream-analytics-query/collecttop-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: MAX
+                    href: /stream-analytics-query/max-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: MIN
+                    href: /stream-analytics-query/min-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Percentile_Cont
+                    href: /stream-analytics-query/percentile-cont-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Percentile_Disc
+                    href: /stream-analytics-query/percentile-disc-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: STDEV
+                    href: /stream-analytics-query/stdev-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: STDEVP
+                    href: /stream-analytics-query/stdevp-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: SUM
+                    href: /stream-analytics-query/sum-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: TopOne
+                    href: /stream-analytics-query/topone-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: VAR
+                    href: /stream-analytics-query/var-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: VARP
+                    href: /stream-analytics-query/varp-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Analytic Functions
+                items:
+                  - name: Analytic Functions Overview
+                    href: /stream-analytics-query/analytic-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: AnomalyDetection_SpikeAndDip
+                    href: /stream-analytics-query/anomalydetection-spikeanddip-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: AnomalyDetection_ChangePoint
+                    href: /stream-analytics-query/anomalydetection-changepoint-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ISFIRST
+                    href: /stream-analytics-query/isfirst-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: LAG
+                    href: /stream-analytics-query/lag-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: LAST
+                    href: /stream-analytics-query/last-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Array Functions
+                items:
+                  - name: Array Functions Overview
+                    href: /stream-analytics-query/array-functions-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetArrayLength
+                    href: /stream-analytics-query/getarraylength-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetArrayElement
+                    href: /stream-analytics-query/getarrayelement-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetArrayElements
+                    href: /stream-analytics-query/getarrayelements-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Bitwise Operators
+                items:
+                  - name: Bitwise Operators Overview
+                    href: /stream-analytics-query/bitwise-operators-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Bitwise AND
+                    href: /stream-analytics-query/bitwise-and-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Bitwise OR
+                    href: /stream-analytics-query/bitwise-or-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Bitwise XOR
+                    href: /stream-analytics-query/bitwise-xor-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Bitwise NOT
+                    href: /stream-analytics-query/bitwise-not-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Conversion Functions
+                items:
+                  - name: Conversion Functions Overview
+                    href: /stream-analytics-query/conversion-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CAST
+                    href: /stream-analytics-query/cast-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetType
+                    href: /stream-analytics-query/gettype-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: TRY_CAST
+                    href: /stream-analytics-query/try-cast-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Date and Time Functions
+                items:
+                  - name: Date and Time Functions Overview
+                    href: /stream-analytics-query/date-and-time-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: DATEADD
+                    href: /stream-analytics-query/dateadd-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: DATEDIFF
+                    href: /stream-analytics-query/datediff-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: DATENAME
+                    href: /stream-analytics-query/datename-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: DATEPART
+                    href: /stream-analytics-query/datepart-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: DATETIMEFROMPARTS
+                    href: /stream-analytics-query/datetimefromparts-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: DAY
+                    href: /stream-analytics-query/day-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: MONTH
+                    href: /stream-analytics-query/month-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: YEAR
+                    href: /stream-analytics-query/year-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: GeoSpatial Functions
+                items:
+                  - name: GeoSpatial Functions Overview
+                    href: /stream-analytics-query/geospatial-functions?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CreateLineString
+                    href: /stream-analytics-query/createlinestring?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CreatePoint
+                    href: /stream-analytics-query/createpoint?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CreatePolygon
+                    href: /stream-analytics-query/createpolygon?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ST_DISTANCE
+                    href: /stream-analytics-query/st-distance?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ST_OVERLAPS
+                    href: /stream-analytics-query/st-overlaps?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ST_INTERSECTS
+                    href: /stream-analytics-query/st-intersects?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ST_WITHIN
+                    href: /stream-analytics-query/st-within?context=/fabric/context/context-rti&pivots=fabric
+              - name: Input Metadata Functions
+                items:
+                  - name: Input Metadata Functions Overview
+                    href: /stream-analytics-query/input-metadata-functions?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetMetadataPropertyValue
+                    href: /stream-analytics-query/getmetadatapropertyvalue?context=/fabric/context/context-rti&pivots=fabric
+              - name: Mathematical Functions
+                items:
+                  - name: Mathematical Functions Overview
+                    href: /stream-analytics-query/mathematical-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ABS
+                    href: /stream-analytics-query/abs-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CEILING
+                    href: /stream-analytics-query/ceiling-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: EXP
+                    href: /stream-analytics-query/exp-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: FLOOR
+                    href: /stream-analytics-query/floor-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: POWER
+                    href: /stream-analytics-query/power-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: ROUND
+                    href: /stream-analytics-query/round-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: SIGN
+                    href: /stream-analytics-query/sign-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: SQUARE
+                    href: /stream-analytics-query/square-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: SQRT
+                    href: /stream-analytics-query/sqrt-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Record Functions
+                items:
+                  - name: Record Functions Overview
+                    href: /stream-analytics-query/record-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetRecordProperties
+                    href: /stream-analytics-query/getrecordproperties-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: GetRecordPropertyValue
+                    href: /stream-analytics-query/getrecordpropertyvalue-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: String Functions
+                items:
+                  - name: String Functions Overview
+                    href: /stream-analytics-query/string-functions-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CHARINDEX
+                    href: /stream-analytics-query/charindex-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CONCAT
+                    href: /stream-analytics-query/concat-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: CONCAT_WS
+                    href: /stream-analytics-query/concat-ws-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: LEFT
+                    href: /stream-analytics-query/left-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: LEN
+                    href: /stream-analytics-query/len-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: LOWER
+                    href: /stream-analytics-query/lower-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: LTRIM
+                    href: /stream-analytics-query/ltrim-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: NCHAR
+                    href: /stream-analytics-query/nchar-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: PATINDEX
+                    href: /stream-analytics-query/patindex-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: REGEXMATCH
+                    href: /stream-analytics-query/regexmatch-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: REPLACE
+                    href: /stream-analytics-query/replace-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: REPLICATE
+                    href: /stream-analytics-query/replicate-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: REVERSE
+                    href: /stream-analytics-query/reverse-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: RIGHT
+                    href: /stream-analytics-query/right-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: RTRIM
+                    href: /stream-analytics-query/rtrim-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: SPACE
+                    href: /stream-analytics-query/space-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: STUFF
+                    href: /stream-analytics-query/stuff-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: SUBSTRING
+                    href: /stream-analytics-query/substring-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: TRANSLATE
+                    href: /stream-analytics-query/translate-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: TRIM
+                    href: /stream-analytics-query/trim-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: UNICODE
+                    href: /stream-analytics-query/unicode-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: UPPER
+                    href: /stream-analytics-query/upper-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Windowing Functions
+                items:
+                  - name: Windowing Functions Overview
+                    href: /stream-analytics-query/windowing-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Hopping Window
+                    href: /stream-analytics-query/hopping-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Session Window
+                    href: /stream-analytics-query/session-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Sliding Window
+                    href: /stream-analytics-query/sliding-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Snapshot Window
+                    href: /stream-analytics-query/snapshot-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Tumbling Window
+                    href: /stream-analytics-query/tumbling-window-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+                  - name: Aggregate Windowing functions
+                    href: /stream-analytics-query/windows-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+          - name: Data Types
+            items:
+              - name: Data Types Overview
+                href: /stream-analytics-query/data-types-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Parsing JSON and AVRO data
+                href: /azure/stream-analytics/stream-analytics-parsing-json?context=/fabric/context/context-rti&pivots=fabric
+              - name: Parsing Protobuf
+                href: /azure/stream-analytics/stream-analytics-parsing-protobuf?context=/fabric/context/context-rti&pivots=fabric
+          - name: Query Language Elements
+            items:
+              - name: Query Language Elements Overview
+                href: /stream-analytics-query/query-language-elements-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: APPLY
+                href: /stream-analytics-query/apply-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: CASE
+                href: /stream-analytics-query/case-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: COALESCE
+                href: /stream-analytics-query/coalesce-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: CREATE TABLE
+                href: /stream-analytics-query/create-table-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: FROM
+                href: /stream-analytics-query/from-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: GROUP BY
+                href: /stream-analytics-query/group-by-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: HAVING
+                href: /stream-analytics-query/having-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: INTO
+                href: /stream-analytics-query/into-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: JOIN
+                href: /stream-analytics-query/join-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: MATCH_RECOGNIZE
+                href: /stream-analytics-query/match-recognize-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: NULLIF
+                href: /stream-analytics-query/nullif-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Reference Data JOIN
+                href: /stream-analytics-query/reference-data-join-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: SELECT
+                href: /stream-analytics-query/select-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: UNION
+                href: /stream-analytics-query/union-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: WHERE
+                href: /stream-analytics-query/where-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: WITH
+                href: /stream-analytics-query/with-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+  - name: Event Schema Set
+    items:
+      - name: Schema Registry in Real-Time hub
+        href: schema-sets/schema-registry-overview.md
+      - name: Create and manage event schema sets
+        href: schema-sets/create-manage-event-schema-sets.md
+      - name: Create and manage schemas in schema sets
+        href: schema-sets/create-manage-event-schemas.md
+      - name: Create and manage schemas in Real-Time hub
+        href: schema-sets/create-manage-event-schemas-real-time-hub.md
+      - name: Use schemas in eventstreams
+        href: schema-sets/use-event-schemas.md
+      - name: Known limitations
+        href: schema-sets/schema-registry-limitations.md
+  - name: Eventhouse
+    items:
+      - name: Eventhouse overview
+        href: eventhouse.md
+      - name: Create an eventhouse
+        href: create-eventhouse.md
+      - name: Deploy an eventhouse using APIs
+        href: eventhouse-deploy-with-fabric-api.md
+      - name: Manage and monitor an eventhouse
+        href: manage-monitor-eventhouse.md
+      - name: Query cold data with hot windows
+        href: query-cold-data-hot-windows.md
+      - name: Vector database
+        items:
+          - name: Eventhouse as a vector database overview
+            href: vector-database.md
+          - name: "Tutorial: Use an Eventhouse as a vector database"
+            href: vector-database-eventhouse.md
+      - name: Get data in an Eventhouse
+        items:
+          - name: Get data overview
+            href: get-data-overview.md
+          - name: Data formats
+            href: ingestion-supported-formats.md
+          - name: Schema optimization best practices
+            href: schema-best-practice.md
+          - name: Get data from local file
+            href: get-data-local-file.md
+          - name: Get data from Azure storage
+            href: get-data-azure-storage.md
+          - name: Get data from Amazon S3
+            href: get-data-amazon-s3.md
+          - name: Get data from Azure Event Hubs
+            href: get-data-event-hub.md
+          - name: Get data from OneLake
+            href: get-data-onelake.md
+          - name: Get data from Eventstream
+            href: get-data-eventstream.md
+          - name: Get data from Real-Time hub
+            href: get-data-real-time-hub.md
+          - name: Get data from other sources
+            href: get-data-other-sources.md
+          - name: Configure KQL Database in a pipeline
+            href: ../data-factory/connector-kql-database-copy-activity.md
+          - name: Connect to KQL Database in dataflows
+            href: ../data-factory/connector-kusto-dataflows.md
+          - name: Eventhouse data connectors
+            items:
+              - name: Eventhouse data connectors overview
+                href: event-house-connectors.md
+              - name: Apache Flink
+                href: get-data-flink.md
+              - name: Apache Kafka
+                href: get-data-kafka.md
+              - name: Apache Log4J 2
+                href: get-data-log4j2.md
+              - name: Apache Spark
+                href: get-data-spark.md
+              - name: Azure Synapse workspace
+                href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
+              - name: Azure Data Factory
+                href: /azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rti&pivots=fabric
+              - name: Azure Event Hubs
+                href: /azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rti&pivots=fabric
+              - name: Azure Functions
+                href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rti&pivots=fabric
+              - name: Azure Stream Analytics
+                href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rti&pivots=fabric
+              - name: Cribl Stream
+                href: get-data-cribl-stream.md
+              - name: Fluent Bit
+                href: get-data-fluent.md
+              - name: Fluentd
+                href: get-data-fluentd.md
+              - name: Logstash
+                href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rti&pivots=fabric
+              - name: NLog sink
+                href: get-data-nlog-sink.md
+              - name: OpenTelemetry
+                href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rti&pivots=fabric
+              - name: Microsoft Power Automate
+                href: /azure/data-explorer/flow?context=/fabric/context/context-rti&pivots=fabric
+              - name: Serilog sink
+                href: get-data-serilog.md
+              - name: Splunk
+                href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rti&pivots=fabric
+              - name: Splunk Universal Forwarder
+                href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
+              - name: Telegraf
+                href: get-data-telegraf.md
+      - name: KQL Database
+        items:
+          - name: Create a KQL database
+            href: create-database.md
+          - name: Access an existing KQL database
+            href: access-database-copy-uri.md
+            displayName: copy URI, copy query URI, copy ingestion URI
+          - name: Manage and monitor a KQL database
+            href: manage-monitor-database.md
+          - name: Create a database shortcut
+            href: database-shortcut.md
+          - name: Create an empty table
+            href: create-empty-table.md
+          - name: Edit table schema
+            href: edit-table-schema.md
+          - name: Manage and monitor tables
+            href: manage-monitor-table.md
+          - name: Notebooks
+            items:
+              - name: Use Fabric notebooks with data from a KQL database
+                href: notebooks.md
+              - name: Use a notebook with Apache Spark to query a KQL database
+                href: spark-connector.md
+              - name: Use a notebook with Kqlmagic to query a KQL database
+                href: notebook-kql-magic.md
+          - name: Data management
+            items:
+              - name: Data management overview
+                href: data-management.md
+                displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin
+              - name: Entity diagram view in KQL database
+                href: database-entity-diagram.md
+              - name: Change data policies
+                href: data-policies.md
+              - name: Create a table update policy
+                href: table-update-policy.md
+              - name: Create materialized views
+                href: materialized-view.md
+              - name: Create stored functions
+                href: create-functions.md
+              - name: Enable Python plugin
+                href: python-plugin.md
+          - name: Management commands
+            href: kusto-tocs/management/toc.yml
+          - name: API
+            href: kusto-tocs/api/toc.yml
+          - name: OneLake
+            items:
+              - name: Eventhouse OneLake availability
+                href: event-house-onelake-availability.md
+              - name: Create OneLake shortcuts in a KQL database
+                href: onelake-shortcuts.md
+              - name: Query acceleration over OneLake shortcuts
+                items:
+                  - name: Accelerate queries over OneLake shortcuts - overview
+                    href: query-acceleration-overview.md
+                  - name: Accelerate queries over OneLake shortcuts
+                    href: query-acceleration.md
+              - name: Eventhouse endpoint for Lakehouse and Warehouse
+                href: eventhouse-as-endpoint.md
+              - name: External tools
+                items:
+                  - name: Query Fabric OneLake Delta tables from Snowflake
+                    href: query-onelake-from-snowflake.md
+      - name: Resource consumption
+        href: real-time-intelligence-consumption.md
+        displayName: consumption, CU, metrics app, monitor, billing, usage
+      - name: Understand Eventhouse compute usage
+        href: eventhouse-compute-observability.md
+      - name: Eventhouse Cost per GB Ingested
+        href: pricing-cost-drivers.md
+  - name: KQL Queryset
+    items:
+      - name: Copilot for Writing KQL Queries
+        href: copilot-writing-queries.md
+      - name: Create a KQL queryset
+        href: create-query-set.md
+      - name: Query data in a KQL queryset
+        href: kusto-query-set.md
+      - name: Share queries
+        href: kusto-share-queries.md
+      - name: Access the data profile of a table
+        href: data-profile.md
+      - name: Customize results in the KQL Queryset results grid
+        href: customize-results.md
+      - name: Keyboard shortcuts
+        href: keyboard-shortcuts.md
+      - name: Use example queries
+        href: query-table.md
+      - name: Sample gallery
+        href: sample-gallery.md
+        displayName: Query sample data
+      - name: Create alerts from a KQL Queryset
+        href: data-activator/activator-alert-queryset.md
+      - name: Add query visualization to a dashboard
+        href: add-query-visualization.md
+  - name: Real-Time Dashboard
+    items:
+      - name: Real-Time Dashboard overview
+        href: real-time-dashboards-overview.md
+      - name: Create a Real-Time Dashboard
+        href: dashboard-real-time-create.md
+      - name: Generate Real-Time Dashboard Using Copilot
+        href: copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
+      - name: Real-Time Dashboard permissions
+        href: dashboard-permissions.md
+      - name: Explore data in Real-Time Dashboard Using Copilot
+        href: dashboard-explore-data.md
+      - name: Customize Real-Time Dashboard visuals
+        href: dashboard-visuals-customize.md
+      - name: Apply conditional formatting in Real-Time Dashboards
+        href: dashboard-conditional-formatting.md
+      - name: Use parameters in Real-Time Dashboards
+        href: dashboard-parameters.md
+      - name: Real-Time Dashboard-specific visuals
+        href: dashboard-visuals.md
+      - name: Create alerts from a Real-Time Dashboard
+        href: ./data-activator/activator-get-data-real-time-dashboard.md
+        displayName: trigger, activator, reflex
+      - name: Visualize data in Power BI
+        items:
+          - name: Visualize data in a Power BI report
+            href: create-powerbi-report.md
+          - name: Connect KQL Database in Power BI Desktop
+            href: power-bi-data-connector.md
+  - name: Activator
+    items:
+      - name: What is Activator?
+        href: data-activator/activator-introduction.md
+      - name: Tutorials
+        items:
+          - name: Create and activate an Activator rule
+            href: data-activator/activator-tutorial.md
+      - name: Concepts
+        items:
+          - name: Activator rules
+            href: data-activator/activator-rules-overview.md
+          - name: Detection conditions for Activator
+            href: data-activator/activator-detection-conditions.md
+          - name: Activator rule latency
+            href: data-activator/activator-latency.md
+          - name: Activator limitations
+            href: data-activator/activator-limitations.md
+          - name: Activator capacity usage
+            href: data-activator/activator-capacity-usage.md
+            displayName: capacity, usage, consumption, billing
+          - name: Activator throttling
+            href: data-activator/activator-throttling-effects.md
+          - name: Activator query frequency
+            href: data-activator/activator-query-frequency.md
+            displayName: capacity, throttling, activator, fabric, usage, consumption, rti, real-time intelligence
+      - name: Create alerts
+        items:
+          - name: Create alerts from a Real-Time Dashboard
+            href: data-activator/activator-get-data-real-time-dashboard.md
+          - name: Create alerts from a KQL Queryset
+            href: data-activator/activator-alert-queryset.md
+          - name: Set alerts on eventstreams in Real-Time hub
+            href: ../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on workspace item events
+            href: ../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on OneLake events
+            href: ../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on Job events
+            href: ../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Set alerts on Azure Blob Storage events
+            href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+          - name: Create alerts on Power BI reports
+            href: data-activator/activator-get-data-power-bi.md
+          - name: Get data from eventstreams
+            href: event-streams/add-destination-activator.md
+          - name: Create rules and activations
+            href: data-activator/activator-create-activators.md
+          - name: Assign data to Activator objects
+            href: data-activator/activator-assign-data-objects.md
+          - name: Trigger Fabric items
+            href: data-activator/activator-trigger-fabric-items.md
+          - name: Use custom actions to trigger Power Automate flows
+            href: data-activator/activator-trigger-power-automate-flows.md
+      - name: How-to guides
+        items:
+          - name: Combine multiple streams
+            href: data-activator/combine-multiple-streams.md
+          - name: Monitor eventstream for stopped events
+            href: data-activator/alert-stop-events.md
+          - name: Reduce cost of rules on streaming data
+            items:
+            - name: Apply summarizations
+              href: data-activator/reduce-cost-rules-apply-summarizations.md
+            - name: Apply filters
+              href: data-activator/reduce-cost-rules-apply-filters.md
+      - name: Troubleshoot errors
+        href: data-activator/activator-troubleshooting.md
+  - name: Digital Twin Builder
+    items:
+      - name: Get started with digital twin builder
+        items:
+          - name: What is digital twin builder?
+            href: digital-twin-builder/overview.md
+          - name: Digital twin builder tutorial
+            items:
+              - name: Tutorial introduction
+                href: digital-twin-builder/tutorial-0-introduction.md
+              - name: 1- Set up resources
+                href: digital-twin-builder/tutorial-1-set-up-resources.md
+              - name: 2- Add entity types and map data
+                href: digital-twin-builder/tutorial-2-add-entities-map-data.md
+              - name: 3- Define relationship types
+                href: digital-twin-builder/tutorial-3-define-relationships.md
+              - name: 4- Explore your ontology
+                href: digital-twin-builder/tutorial-4-explore-ontology.md
+              - name: 5- Create a Power BI report
+                href: digital-twin-builder/tutorial-5-power-bi-report.md
+              - name: 6- Clean up resources
+                href: digital-twin-builder/tutorial-6-clean-up-resources.md
+          - name: Role-based access control
+            href: digital-twin-builder/overview-rbac.md
+      - name: Concepts
+        items:
+          - name: Using the semantic canvas
+            href: digital-twin-builder/concept-semantic-canvas.md
+          - name: Modeling
+            href: digital-twin-builder/concept-modeling.md
+          - name: Mapping data to entity types
+            href: digital-twin-builder/concept-mapping.md
+          - name: Flows
+            href: digital-twin-builder/concept-flows.md
+          - name: Integrating with Fabric tools
+            href: digital-twin-builder/concept-integrating-fabric.md
+          - name: Integrating with machine learning
+            href: digital-twin-builder/concept-integrating-machine-learning.md
+      - name: Build and explore models
+        items:
+          - name: Manage entity types and mappings
+            href: digital-twin-builder/model-manage-mappings.md
+          - name: Perform contextualization
+            href: digital-twin-builder/model-perform-contextualization.md
+          - name: Search and visualize
+            href: digital-twin-builder/explore-search-visualize.md
+          - name: Connect to a Real-Time Dashboard
+            href: digital-twin-builder/explore-connect-dashboard.md
+      - name: Digital twin builder resources
+        items:
+          - name: Glossary
+            href: digital-twin-builder/resources-glossary.md
+          - name: Troubleshooting
+            href: digital-twin-builder/resources-troubleshooting.md
+          - name: Capacity usage
+            href: digital-twin-builder/resources-capacity-usage.md
+          - name: FAQ
+            href: digital-twin-builder/resources-faq.yml
+          - name: Digital twin builder REST API
+            href: /rest/api/fabric/digitaltwinbuilder/items
+          - name: Digital twin builder flow REST API
+            href: /rest/api/fabric/digitaltwinbuilderflow/items
+  - name: Anomaly Detector
+    items:
+      - name: Anomaly detection using Real-Time Intelligence
+        items:
+          - name: Set up anomaly detection
+            href: anomaly-detection.md
+          - name: Anomaly detection models
+            href: anomaly-detection-models.md
+          - name: Troubleshoot anomaly detection
+            href: troubleshoot-anomaly-detection.md
+          - name: Anomaly detector billing and capacity
+            href: anomaly-detection-billing.md
+      - name: Univariate anomaly detection using KQL
+        href: /kusto/query/anomaly-detection?view=microsoft-fabric&preserve-view=true
+      - name: Multivariate anomaly detection using Spark
+        items:
+          - name: Multivariate anomaly detection overview
+            href: multivariate-anomaly-overview.md
+          - name: Multivariate anomaly detection tutorial
+            href: multivariate-anomaly-detection.md
+  - name: Map
+    items:
+      - name: Create a map
+        href: map/create-map.md
+      - name: Customize a map
+        href: map/customize-map.md
+      - name: Map sharing
+        items:
+          - name: Sharing maps
+            href: map/sharing-maps.md
+          - name: Share maps directly
+            href: map/share-map-direct.md
+          - name: Share maps with org apps
+            href: map/share-map-org-apps.md
+      - name: Create a tileset
+        href: map/spatial-job-create-tile-sets.md
+      - name: Manage Map permissions
+        href: map/manage-map-permissions.md
+  - name: Monitor
+    items:
+      - name: Eventhouse monitoring
+        href: monitor-eventhouse.md
+      - name: Metrics
+        href: monitor-metrics.md
+      - name: Command logs
+        href: monitor-logs-command.md
+      - name: Data operation logs
+        href: monitor-logs-data-operation.md
+      - name: Ingestion results logs
+        href: monitor-logs-ingestion-results.md
+      - name: Query logs
+        href: monitor-logs-query.md
+  - name: Build AI agents
+    displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
+    items:
+      - name: Operations agents
+        items:
+          - name: Getting started with operations agents
+            href: operations-agent.md
+          - name: Operations agents billing
+            href: operations-agent-billing.md
+          - name: Operations agents limitations
+            href: operations-agent-limitations.md
+          - name: Operations agent transparency note
+            href: operations-agent-transparency-note.md
+      - name: Fabric RTI MCP Server (preview)
+        href: mcp-overview.md
+      - name: Use MCP with Eventhouse
+        href: mcp-eventhouse.md
+  - name: Git integration and deployment pipelines
+    displayName: alm, application lifecycle management, cicd, devops
+    items:
+      - name: Overview
+        href: git-deployment-pipelines.md
+      - name: Git integration of Real-Time intelligence items
+        items:
+          - name: Eventstream
+            href: git-eventstream.md
+          - name: Eventhouse and KQL database
+            href: git-eventhouse-kql-database.md
+          - name: KQL querysets
+            href: git-kql-queryset.md
+          - name: Real-Time Dashboard
+            href: git-real-time-dashboard.md
+          - name: Activator
+            href: git-activator.md
+  - name: Migrate
+    items:
+      - name: Migrate from Azure Data Explorer
+        href: migrate-azure-data-explorer.md
+      - name: Migrate from Azure Synapse Data Explorer
+        href: migrate-synapse-data-explorer.md
+        items:
+          - name: Validate migration using REST API endpoints
+            href: migrate-api-validate-synapse-data-explorer.md
+          - name: Migrate to Eventhouse
+            href: migrate-api-to-eventhouse.md
+  - name: KQL reference
+    href: kusto-tocs/query/toc.yml

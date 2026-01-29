@@ -2,9 +2,9 @@
 title: Get Started with Graph in Microsoft Fabric
 description: Learn how to get started with graph in Microsoft Fabric, including key concepts, setup instructions, and first steps.
 ms.topic: quickstart
-ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+ms.date: 01/20/2026
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Get Started with Graph in Microsoft Fabric
 ---
@@ -16,7 +16,7 @@ ms.search.form: Get Started with Graph in Microsoft Fabric
 In this quickstart, you learn how to create a graph model in Microsoft Fabric.
 
 > [!IMPORTANT]
-> This article exclusively uses the [AdventureWorks example graph dataset](sample-datasets.md).
+> This article exclusively uses the [AdventureWorks example graph dataset](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph).
 
 ## Prerequisites
 
@@ -28,26 +28,17 @@ To get started with graph in Microsoft Fabric, you need the following prerequisi
   
     :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
   
-- A lakehouse in OneLake with data that you want to analyze. This quickstart uses Adventure Works data as an example. Your data and results might differ. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
+- A lakehouse in OneLake with data that you want to analyze. This quickstart uses Adventure Works data as an example. Your data and results might differ. If you don't have a lakehouse, create one by following these steps, ensuring you deselect the lakehouse schema option: [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
 
     > [!IMPORTANT]
-    > You can't use a lakehouse that has [lakehouse schema (preview) enabled](/fabric/data-engineering/lakehouse-schemas).
+    > You can't currently use a lakehouse that has [lakehouse schema (preview) enabled](/fabric/data-engineering/lakehouse-schemas).
 
-- You are a member of a workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](/fabric/admin/portal-workspaces).
+- You're a member of a workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](/fabric/admin/portal-workspaces).
 
     > [!IMPORTANT]
     > Access management of the graph is restricted to the workspace that hosts it. The graph isn't accessible to users outside of the workspace. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 
 ## Create a graph model
-
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models.
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
 
 To create a graph model in Microsoft Fabric, follow these steps:
 
@@ -69,7 +60,7 @@ In graph view, you should see **Save**, **Add node**, and **Add edge**, and **Ge
 To create a graph in Microsoft Fabric, follow these steps:
 
 1. In your graph model, select **Get data**.
-1. From the OneLake catalog, select data from Fabric to use in your graph. 
+1. From the OneLake catalog, select data from Fabric to use in your graph.
 
    :::image type="content" source="./media/quickstart/graph-data-select.png" alt-text="Screenshot showing the data selection menu in OneLake." lightbox="./media/quickstart/graph-data-select.png":::
 
@@ -112,7 +103,7 @@ In this section, we create nodes for each entity in the Adventure Works data mod
 To add the nodes to your graph, follow these steps:
 
 1. In your graph model, select **Add node** to add a new node to your graph.
-1. In the **Add node to graph** dialog, enter a **Label** name and select the appropriate **Mapping table** and **Mapping column**. 
+1. In the **Add node to graph** dialog, enter a **Label** name and select the appropriate **Mapping table** and **Mapping column**.
 
     :::image type="content" source="./media/quickstart/node-add-customer.png" alt-text="Screenshot showing the add node to graph dialog." lightbox="./media/quickstart/node-add-customer.png":::
 
@@ -140,7 +131,7 @@ In this section, we create edges to define the relationships between the nodes i
 To add the edges to your graph, follow these steps:
 
 1. Select **Add edge** to create a relationship between nodes.
-1. In the **Add edge** dialog, select the mapping table, source and target nodes, and define the relationship. 
+1. In the **Add edge** dialog, select the mapping table, source and target nodes, and define the relationship.
 
     :::image type="content" source="./media/quickstart/edge-add-sells.png" alt-text="Screenshot showing the add edge dialog." lightbox="./media/quickstart/edge-add-sells.png":::
 
@@ -151,43 +142,16 @@ To add the edges to your graph, follow these steps:
 
     :::image type="content" source="./media/quickstart/edge-add-completed.png" alt-text="Screenshot showing all of the edges added to the graph." lightbox="./media/quickstart/edge-add-completed.png":::
 
-By this point, you created all the nodes and edges for your graph. This is the basic structure of your graph model.
+By this point, you created all the nodes and edges for your graph. These nodes and edges are the basic structure of your graph model.
 
 ## Load the graph
 
-To load the graph, select **Save**. This will verify the graph model, load data from OneLake, construct the graph, and ready it for querying.
+To load the graph, select **Save**. Selecting **Save** verifies the graph model, load data from OneLake, construct the graph, and ready it for querying.
 
 > [!IMPORTANT]
 > You currently need to reload the graph (by selecting **Save**) whenever the model or the underlying data is changed.
 
 ## Query the graph
-
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items. The following workspace role permissions apply depending on whether you run queries via the Graph Model or QuerySet item.
-
-### Workspace role permissions for Graph Model
-
-| Capability                           | Admin | Member | Contributor | Viewer |
-|--------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph model         | ✔     | ✔      | ✔           | ✖      |
-| Delete graph model                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of graph model | ✔     | ✔      | ✔           | ✔      |
-| Share graph model                    | ✔     | ✔      | ✖           | ✖      |
-| Create or modify graph queries       | ✔     | ✔      | ✔           | ✖      |
-| Create or modify graph QuerySet item | ✔     | ✔      | ✔           | ✖      |
-
-### Workspace role permissions for Graph QuerySet
-
-| Capability                             | Admin | Member | Contributor | Viewer |
-|----------------------------------------|-------|--------|-------------|--------|
-| Create or modify graph QuerySet item   | ✔     | ✔      | ✔           | ✖      |
-| Delete QuerySet item                   | ✔     | ✔      | ✔           | ✖      |
-| View and read content of QuerySet item | ✔     | ✔      | ✔           | ✔      |
-| Connect to graph instance              | ✔     | ✔      | ✔           | ✖      |
-| Share QuerySet                         | ✔     | ✔      | ✖           | ✖      |
-
-> [!NOTE]
-> All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
-> Only read, write, and reshare permissions are supported for QuerySet item.
 
 ### Using the query builder
 
@@ -207,7 +171,7 @@ Follow these steps to switch to query builder and start querying your graph inte
 
 ### Using the code editor
 
-We can also query the graph using the GQL graph query language.
+We can also query the graph using the Graphics Query language (GQL).
 
 Follow these steps to switch to code editor and start querying your graph using GQL:
 
@@ -230,7 +194,7 @@ ORDER BY num_orders DESC
 LIMIT 5
 ```
 
-For further information about GQL language support, please consult the [GQL language guide](gql-language-guide.md).
+For further information about GQL language support, consult the [GQL language guide](gql-language-guide.md).
 
 ## Related content
 

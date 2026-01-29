@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 
-title: Microsoft Fabric lifecycle management documentation # < 60 chars
+title: Microsoft Fabric application lifecycle management documentation # < 60 chars
 summary: Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements. # < 160 chars
 
 metadata:
@@ -20,7 +20,7 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Lifecycle management
+  - title: About Application lifecycle management
     linkLists:
       - linkListType: overview
         links:
@@ -50,8 +50,8 @@ landingContent:
             url: git-integration/git-integration-process.md
           - text: The deployment pipelines process
             url: deployment-pipelines/understand-the-deployment-process.md
-          - text: Variable library variable types
-            url: variable-library/variable-types.md
+          - text: Variable libraries
+            url: variable-library/variable-library-overview.md
       - linkListType: reference
         links:
           - text: Frequently asked questions about the Fabric lifecycle management tools
@@ -88,7 +88,7 @@ landingContent:
             url: cicd-tutorial.md
 
   # Card
-  - title: Automate lifecycle management workflows using APIs
+  - title: Automate application lifecycle management workflows using APIs
     linkLists:
       - linkListType: how-to-guide
         links:

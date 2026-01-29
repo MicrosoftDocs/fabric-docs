@@ -3,7 +3,7 @@ title: Metadata scanning overview
 description: Learn how metadata scanning can help you govern your organizations Fabric data.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 06/10/2025
 ---

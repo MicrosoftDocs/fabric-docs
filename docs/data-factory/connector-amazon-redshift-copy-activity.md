@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon Redshift.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 01/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -62,6 +62,26 @@ For **Mapping** tab configuration, see [Configure your mappings under mapping ta
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Amazon Redshift
+
+When copying data from Amazon Redshift, the following mappings are used from Amazon Redshift data types to interim data types used by the service internally.
+
+| Amazon Redshift data type | Interim service data type |
+|:--- |:--- |
+| BIGINT |Int64 |
+| BOOLEAN |Boolean |
+| CHAR |String |
+| DATE |DateTime |
+| DECIMAL  (Precision <= 28) |Decimal |
+| DECIMAL (Precision > 28) |String |
+| DOUBLE PRECISION |Double |
+| INTEGER |Int32 |
+| REAL |Single |
+| SMALLINT |Int16 |
+| TEXT |String |
+| TIMESTAMP |DateTime |
+| VARCHAR |String |
 
 ## Table summary
 

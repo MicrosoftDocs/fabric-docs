@@ -1,8 +1,8 @@
 ---
 ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
-ms.reviewer: eur
+author: lorihollasch
+ms.author: loriwhip
+ms.reviewer: loriwhip
 ms.topic: include
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: 'Digital twin builder (preview) tutorial: Explore your ontology'
-description: Search and explore the ontology from digital twin builder (preview) tutorial.
+title: 'Digital twin builder (preview) tutorial part 4: Explore your ontology'
+description: Search and explore the ontology from digital twin builder (preview) tutorial. Part 4 of the digital twin builder (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.date: 07/01/2025
@@ -9,11 +9,11 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) tutorial part 4: Explore your ontology
 
-Now that you have an ontology with entity types and relationship types, you explore it in this tutorial section.
+Now that you have an ontology with entity types and relationship types, explore its data in this tutorial step.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Use the Explore mode
+## Access the Explore mode
 
 Select **Explore entity instances** from the menu ribbon to switch to the **Explore** mode. The view for this mode contains a search bar in the top right corner for entity type and keyword searches, and an **Advanced query** experience.
 

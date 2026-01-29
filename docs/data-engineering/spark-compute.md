@@ -4,7 +4,7 @@ description: Learn about the starter pools, custom Apache Spark pools, and pool 
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 07/03/2025
 ---

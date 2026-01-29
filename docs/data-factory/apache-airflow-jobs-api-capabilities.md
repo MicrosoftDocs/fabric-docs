@@ -3,9 +3,9 @@ title: API capabilities for Fabric Data Factory's Apache Airflow Job
 description: This article describes the available APIs for Apache Airflow Job in Microsoft Fabric Data Factory.
 author: conxu-ms
 ms.author: conxu
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: airflows
-ms.date: 08/28/2025
+ms.date: 01/22/2026
 ---
 
 # REST API capabilities for Apache Airflow Jobs in Fabric Data Factory
@@ -47,11 +47,14 @@ The primary online reference documentation for Microsoft Fabric REST APIs can be
 
 In addition to CRUD APIs, there are a series of additional operational APIs offered for Apache Airflow Jobs:
 
-- **File Management APIs**
+- [File Management APIs](#file-management-apis)
+- [Item Management APIs](#item-management-apis)
+- [Pool Management APIs](#pool-management-apis)
+- [Workspace Settings APIs](#workspace-settings-apis)
 
 ## Get started with REST APIs for Apache Airflow Jobs
 
-The following documentations outlines how to create, update, and manage Apache Airflow Jobs and operational use cases using the Fabric Data Factory APIs.
+The following documentation outlines how to create, update, and manage Apache Airflow Jobs and operational use cases using the Fabric Data Factory APIs.
 
 ## Obtain an authorization token
 
@@ -78,7 +81,9 @@ powerBIAccessToken
 
 Copy the token and replace the _&lt;access-token&gt;_ placeholder in the following examples with the token.
 
-## Create an Apache Airflow Job
+## Item management APIs
+
+### Create an Apache Airflow Job
 
 Create an Apache Airflow Job in a specified workspace.
 
@@ -117,7 +122,7 @@ Create an Apache Airflow Job in a specified workspace.
 }
 ```
 
-## Create an Apache Airflow Job with definition
+### Create an Apache Airflow Job with definition
 
 Create an Apache Airflow Job with a public definition in a specified workspace.
 For additional details on creating an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/create-apache-airflow-job).
@@ -172,7 +177,7 @@ For additional details on creating an Apache Airflow Job with definition, please
 }
 ```
 
-## Get Apache Airflow Job
+### Get Apache Airflow Job
 
 Returns properties of specified Apache Airflow Job.
 
@@ -200,7 +205,7 @@ Returns properties of specified Apache Airflow Job.
 }
 ```
 
-## Get Apache Airflow Job with definition
+### Get Apache Airflow Job with definition
 
 Returns the Apache Airflow Job item definition.
 For additional details on getting an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/get-apache-airflow-job-definition).
@@ -238,7 +243,7 @@ For additional details on getting an Apache Airflow Job with definition, please 
 }
 ```
 
-## Update Apache Airflow Job
+### Update Apache Airflow Job
 
 Updates the properties of the Apache Airflow Job.
 
@@ -277,7 +282,7 @@ Updates the properties of the Apache Airflow Job.
 }
 ```
 
-## Update Apache Airflow Job with definition
+### Update Apache Airflow Job with definition
 
 Updates the Apache Airflow Job item definition.
 For additional details on updating an Apache Airflow Job with definition, please review - [Microsoft Fabric REST API](/rest/api/fabric/apacheairflowjob/items/update-apache-airflow-job-definition).
@@ -324,7 +329,7 @@ For additional details on updating an Apache Airflow Job with definition, please
 200 OK
 ```
 
-## Delete Apache Airflow Job
+### Delete Apache Airflow Job
 
 Deletes the specified Apache Airflow Job.
 
@@ -348,11 +353,26 @@ Deletes the specified Apache Airflow Job.
 
 ## File Management APIs
 
+> [!NOTE]
+> Include `?preview=true` as a query parameter in requests to all file management endpoints. Omit only if/when otherwise documented.
+
+> [!IMPORTANT]
+> File management APIs require the same bearer token and scopes as other job APIs (`Workspace.ReadWrite.All`, `Item.ReadWrite.All`). Only users or applications with edit permissions on the Apache Airflow Job can create, update, or delete files.
+
 ### Get Apache Airflow Job File
 
 Returns job file from Apache Airflow by path.
 
 **Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
+
+**Example: Retrieve and save file to disk using curl**
+
+```bash
+curl -X GET \
+  -H "Authorization: Bearer <access-token>" \
+  "https://api.fabric.microsoft.com/v1/workspaces/<workspaceId>/apacheairflowjobs/<apacheAirflowJobId>/files/<filePath>?preview=true" \
+  -o <local-filename>
+```
 
 **Sample Results**:
 
@@ -360,11 +380,19 @@ Returns job file from Apache Airflow by path.
 200 OK
 ```
 
+**Behavior notes:**
+- If the file is a Python DAG, the response body contains the UTF-8 encoded text of the file.
+- If the specified `filePath` does not exist, a `404 Not Found` is returned.
+
 ### Create/Update Apache Airflow Job File
 
 Creates or updates an Apache Airflow Job file.
 
 **Request URI**: ```PUT https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
+
+**Behavior notes:**
+- Intermediate folders in the specified path are created automatically if they do not exist (if supported by the service); otherwise, a `400 Bad Request` is returned for invalid paths.
+- Existing files at the specified path are overwritten by default.
 
 **Request Payload**:
 
@@ -384,6 +412,11 @@ Deletes the specified Apache Airflow Job file.
 
 **Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files/{filePath}?preview=true```
 
+**Behavior notes:**
+- Returns `200 OK` on successful deletion.
+- Returns `404 Not Found` if the specified `filePath` does not exist.
+- Returns `409 Conflict` if the path refers to a non-empty folder (if folders are supported).
+
 **Sample Results**:
 
 ```rest
@@ -392,32 +425,175 @@ Deletes the specified Apache Airflow Job file.
 
 ### List Apache Airflow Job Files
 
-Lists the files the specified Apache Airflow Job file.
+Lists the files for the specified Apache Airflow Job.
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath=”my_folder”&continuationToken={token}?preview=true```
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?rootPath="my_folder"&continuationToken={token}?preview=true```
 
-Note that rootPath and continutationToken are optional.
+Both `rootPath` and `continuationToken` are optional. Use `continuationToken` to paginate subsequent results.
 
-**Sample Results**:
+**Response schema:**
 
-```rest
+```json
 {
-"files": [
-{ filePath:string, sizeInBytes: int },
+  "files": [
+    {
+      "filePath": "string", // relative path to the file (URL-encoded in subsequent requests)
+      "sizeInBytes": integer
+    }
+  ],
+  "continuationToken": "string", // token for fetching the next page, if any
+  "continuationUri": "string" // full URI for the next page, if any
+}
+```
+
+**Sample response:**
+
+```json
+{
+  "files": [
+    {
+      "filePath": "dags/my_dag.py",
+      "sizeInBytes": 1234
+    }
   ],
  "continuationToken": "LDEsMTAwMDAwLDA%3D "
 "continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?continuationToken='LDEsMTAwMDAwLDA%3D'"
 }  
 ```
+## Pool Management APIs
+
+### Create Airflow Pool Template
+
+Creates an Apache Airflow pool template.
+
+**Request URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates?beta={beta}```
+
+**Sample Results**:
+
+```rest
+{
+  "id": "12345678-1234-1234-1234-123456789012",
+  "name": "MyAirflowPool",
+  "nodeSize": "Small",
+  "shutdownPolicy": "OneHourInactivity",
+  "computeScalability": {
+    "minNodeCount": 5,
+    "maxNodeCount": 8
+  },
+  "apacheAirflowJobVersion": "1.0.0"
+}
+```
+
+### Delete Airflow Pool Template
+Deletes an Apache Airflow pool template.
+
+Note that deleting the default pool template will reset the workspace back to the starter pool.
+
+**Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates/{poolTemplateId}?beta={beta}```
+
+**Sample Results**:
+
+```rest
+200 OK 
+```
+
+### Get Airflow Pool Template
+Get an Apache Airflow pool template.
+
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates/{poolTemplateId}?beta={beta}```
+
+**Sample Results**:
+
+```rest
+{
+  "id": "12345678-1234-1234-1234-123456789012",
+  "name": "MyAirflowPool",
+  "nodeSize": "Small",
+  "shutdownPolicy": "OneHourInactivity",
+  "computeScalability": {
+    "minNodeCount": 5,
+    "maxNodeCount": 8
+  },
+  "apacheAirflowJobVersion": "1.0.0"
+}
+```
+
+### List Airflow Pool Template
+Lists Apache Airflow pool templates. This API supports pagination.
+
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates?beta={beta}```
+
+**Sample Results**:
+
+```rest
+{
+  "value": [
+    {
+      "id": "12345678-1234-1234-1234-123456789012",
+      "name": "MyAirflowPool",
+      "nodeSize": "Small",
+      "shutdownPolicy": "OneHourInactivity",
+      "computeScalability": {
+        "minNodeCount": 5,
+        "maxNodeCount": 8
+      },
+      "apacheAirflowJobVersion": "1.0.0"
+    },
+    {
+      "id": "87654321-4321-4321-4321-210987654321",
+      "name": "LargeAirflowPool",
+      "nodeSize": "Large",
+      "shutdownPolicy": "AlwaysOn",
+      "computeScalability": {
+        "minNodeCount": 5,
+        "maxNodeCount": 10
+      },
+      "apacheAirflowJobVersion": "1.0.0"
+    }
+  ]
+}
+```
+
+## Workspace Settings APIs
+
+### Get Airflow Workspace Settings
+
+Get Apache Airflow workspace settings.
+
+**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/settings?beta={beta}```
+
+**Sample Results**:
+
+```rest
+{
+  "defaultPoolTemplateId": "12345678-1234-1234-1234-123456789012"
+}
+```
+### Update Airflow Workspace Settings
+
+Updates Apache Airflow workspace settings.
+
+**Request URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/settings?beta={beta}```
+
+**Sample Results**:
+
+```rest
+{
+  "defaultPoolTemplateId": "12345678-1234-1234-1234-123456789012"
+}
+```
+
+> [!NOTE]
+> `filePath` values must be URL-encoded when used in subsequent requests.
 
 ## Service Principal Name (SPN) Support
 
-Service Principal Name (SPN) is a security identity feature used by applications or services to access specific resources. In Fabric Data Factory, SPN support is crucial for enabling secure and automated access to data sources. Here are some key points about SPN support:
+Service Principal Name (SPN) is supported for Apache Airflow Jobs in Fabric Data Factory.
 
-- **Authentication**: SPNs are used to authenticate applications or services when accessing data sources. This ensures that only authorized entities can access the data.
-- **Configuration**: To use SPNs, you need to create a service principal in Azure and grant it the necessary permissions to access the data source. For example, if you're using a data lake, the service principal needs storage blob data reader access.
-- **Connection**: When setting up a data connection in Fabric Data Factory, you can choose to authenticate using a service principal. This involves providing the tenant ID, client ID, and client secret of the service principal.
-- **Security**: Using SPNs enhances security by avoiding the use of hardcoded credentials in your dataflows. It also allows for better management of access permissions and auditing of access activities.
+- **Authentication**: Airflow uses a service principal to authenticate outbound API calls (for example, to Azure services or other secured endpoints). This allows DAGs to run unattended while ensuring only approved identities can access downstream resources.
+- **Configuration**: To use an SPN with Airflow, create a service principal in Azure Active Directory and grant it the required permissions for the target service. For example, if your Airflow DAG reads from or writes to Azure Data Lake Storage, the service principal must be assigned the appropriate storage roles (such as Storage Blob Data Reader or Contributor).
+- **Connection**: When configuring Airflow connections in Fabric Data Factory, you can reference a service principal by providing its tenant ID, client ID, and client secret. These credentials are then used by Airflow operators and hooks when making authenticated API calls.
+- **Security**: Using SPNs avoids embedding user credentials directly in DAG code or configuration files. It also simplifies credential rotation, access auditing, and access revocation without requiring changes to Airflow DAG logic.
 
 For more detailed information on how to set up and use SPNs in Fabric Data Factory, refer to [SPN support in Data Factory](service-principals.md).
 

@@ -66,7 +66,6 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Pipeline |
 | Notebook |
 | Lakehouse |
-| Warehouse |
 | Sql Analytics Endpoint |
 | Spark Job Definition |
 | CopyJob |
@@ -78,7 +77,6 @@ This section shows the artifacts using Job events. Here are the columns and thei
 | Digital Twin Builder |
 | Digital Twin Builder Flow |
 | Databricks |
-| Sustainability Data Manager |
 | KQL Database |
 | Snowflake database |
 | Anomaly detector |
