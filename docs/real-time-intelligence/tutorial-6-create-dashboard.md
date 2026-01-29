@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: tutorial
 ms.custom:
-ms.date: 01/26/2026
+ms.date: 12/29/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a Real-Time Dashboard in Real-Time Intelligence.
@@ -46,6 +46,7 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-new-tile.png" alt-text="Screenshot of TutorialDashboard showing one new tile. " lightbox="media/tutorial/tutorial-dashboard-new-tile.png":::
 
+<!-- ## Using Copilot. Content drafted, but not published as per Michal's request. Leaving here for future. 
 ## Generate a real-time dashboard using Copilot (preview)
 
 The process uses AI to generate a Real-Time Dashboard from the streaming data in your table. You can then customize the dashboard by adding or modifying tiles as needed.
@@ -71,6 +72,8 @@ The process uses AI to generate a Real-Time Dashboard from the streaming data in
 Copilot automatically generates the Copilot Insights page and Profile page, both with multiple tiles. The Insights page provides a quick overview of the data, while the Profile page offers detailed information about the data structure and statistics.
 
 :::image type="content" source="media/tutorial/tutorial-dashboard-copilot-insights.png" alt-text="Screenshot of the AI-generated dashboard with multiple tiles." lightbox="media/tutorial/tutorial-dashboard-copilot-insights.png":::
+
+--> 
 
 ## Add a new tile by using a query
 
