@@ -13,7 +13,7 @@ ms.topic: how-to
 This guide helps you establish data security in your mirrored BigQuery in Microsoft Fabric.
 
 > [!IMPORTANT]
-> We support Mirroring for Google BigQuery with On-Premises Data Gateways (OPDG). OPDG 3000.286.6 or greater is supported.
+> We support Mirroring for Google BigQuery with On-Premises Data Gateways (OPDG). OPDG 3000.286.6 or greater is supported. VNET is also supported.
 
 ## Security considerations
 
