@@ -2,23 +2,24 @@
 title: Description and prerequisites for MQTT source
 description: The include file provides description, a note, and prerequisites for using a Message Queueing Transport Telemetry (MQTT) source in an eventstream or in Real-Time hub. 
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.author: zhenxilin
+author: alexlzx
 ms.topic: include
 ms.custom:
-ms.date: 08/26/2025
+ms.date: 01/26/2026
 ---
 
+Message Queuing Telemetry Transport (MQTT) is a lightweight publish-subscribe messaging protocol designed for constrained environments and widely used for Internet of Things (IoT) scenarios. The MQTT Connector for Fabric Eventstream allows you to connect to any MQTT broker and ingest messages directly into Eventstream, enabling real-time transformation and routing to various destinations within Fabric for analytics and insights.
 
-MQTT is a publish-subscribe messaging transport protocol that was designed for constrained environments. It's the go-to communication standard for IoT scenarios due to efficiency, scalability, and reliability. Microsoft Fabric event streams allow you to connect to an MQTT broker, where messages in MQTT broker to be ingested into Fabric eventstream, and routed to various destinations within Fabric. 
+## Prerequisites
 
-## Prerequisites  
-Before you start, you must complete the following prerequisites: 
+Before you start, you must complete the following prerequisites:
 
-- Access to the Fabric premium workspace with Contributor or higher permissions.  
-- Gather Username and password to connect to the MQTT broker.  
-- Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network. 
+- A workspace with **Fabric capacity** or **Trial** license mode.
+- Access to the workspace with **Contributor** or higher workspace roles.
+- Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network.
 
-To learn how to configure this setup and stream your MQTT data through **Azure Event Grid**, see [Add Azure Event Grid Namespace as a source to an eventstream](../add-source-azure-event-grid.md). 
+Depending on your scenario, you can also use one of the following approaches to stream MQTT data to Eventstream:
 
-To learn how to stream MQTT data from **Azure IoT Operations** by configuring a data flow endpoint that targets an eventstream custom endpoint, see [Configure data flow endpoints for Microsoft Fabric Real-Time Intelligence](/azure/iot-operations/connect-to-cloud/howto-configure-fabric-real-time-intelligence).
+- **Azure Event Grid**: Send MQTT data to Azure Event Grid and set up an **Azure Event Grid** connector in Eventstream. For more information, see [Add Azure Event Grid Namespace as a source to an eventstream](../add-source-azure-event-grid.md).
+- **Azure IoT Operations**: Configure a data flow endpoint that connects to an Eventstream **Custom Endpoint**. For more information, see [Configure data flow endpoints for Microsoft Fabric Real-Time Intelligence](/azure/iot-operations/connect-to-cloud/howto-configure-fabric-real-time-intelligence).
