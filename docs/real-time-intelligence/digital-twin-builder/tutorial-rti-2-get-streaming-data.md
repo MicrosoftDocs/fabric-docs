@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Get and process streaming data'
+title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial  part 2: Get and process streaming data'
 description: Prepare your environment for the tutorial scenario by processing the real-time streaming data sample and getting it into a lakehouse.
 author: baanders
 ms.author: baanders
@@ -15,7 +15,7 @@ In this part of the tutorial, you set up another type of sample data: a real-tim
 
 [!INCLUDE [Real-Time Intelligence create-eventhouse](../includes/create-eventhouse.md)]
 
-## Create the eventstream
+## Create an eventstream
 
 In this section, you create an eventstream to send sample bus streaming data to the eventhouse.
 
@@ -39,7 +39,7 @@ Follow these steps to create the eventstream and add *Buses* sample data as the 
 
     When the new eventstream is ready, it opens in the authoring canvas.
 
-### Transform data
+### Transform the data
 
 In this section, you add one transformation to the incoming sample data. This step casts the string fields `ScheduleTime` and `Timestamp` to DateTime type, and renames `Timestamp` to `ArrivalTime` for clarity. Timestamp fields need to be in DateTime format for digital twin builder (preview) to use them as time series data.
 
@@ -158,7 +158,7 @@ To run the transformation queries, follow these steps.
 
     :::image type="content" source="media/tutorial-rti/prep-bus-data-processed.png" alt-text="Screenshot of the bus_data_processed table with data." lightbox="media/tutorial-rti/prep-bus-data-processed.png":::
 
-## Create lakehouse shortcut
+## Create a lakehouse shortcut
 
 Finally, create a shortcut that exposes the processed bus data in the *TutorialLH* lakehouse, which holds sample data for digital twin builder (preview). This step is necessary because digital twin builder requires its data source to be a lakehouse.
 
