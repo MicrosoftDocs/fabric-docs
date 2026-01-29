@@ -111,7 +111,7 @@ The following steps show how to review updates for items.
 5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
 ## Example - Sytem file changes
-The following steps show how to review changes to system files. Remember that system files content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. In this example, the **report**. item is renamed to **quarterly report**.
+The following steps show how to review changes to system files. In this example, the **report** item is renamed to **quarterly report**.
 
 1. At the top of your workspace, select **Source control**.
 2. On the right, under **changes**, select the item you want to review.
