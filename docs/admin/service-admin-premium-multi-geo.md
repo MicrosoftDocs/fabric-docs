@@ -101,6 +101,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
 * When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region. The following tenant metadata remains in the home region:
+
     * Push datasets
     * Dashboard/report metadata: tile names, tile queries, and any other data
     * Service buses for gateway queries or scheduled refresh jobs
