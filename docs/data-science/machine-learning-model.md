@@ -150,11 +150,12 @@ To compare runs, you can:
 
 Data scientists can also use MLflow to search among multiple models saved within the workspace. Visit the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html) to explore other MLflow APIs for model interaction.
 
-```Python
+```python
 from pprint import pprint
+from mlflow import MlflowClient
 
 client = MlflowClient()
-for rm in client.list_registered_models():
+for rm in client.search_registered_models():
     pprint(dict(rm), indent=4)
 ```
 
