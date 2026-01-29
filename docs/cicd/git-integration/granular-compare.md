@@ -54,17 +54,19 @@ Granular Compare can be opened from multiple locations. The following table summ
 
 
 ## System files and system level changes
-System files and system level changes are included in Git export/import because Microsoft Fabric must track them for correctness, lineage, and reproducibility. However, their internal contents are not rendered in the compare viewer.
-
-System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list. But their content is currently not diff‑renderable and because of this, the diff component can’t currently render meaningful before/after views. 
+System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list.
 
 System files are repesented  by a "/" in the list of changes or updates. The following screenshot shows an update to the git integration schema. An update to the git schema would be considered a system level change.
 
  :::image type="content" source="media/granular-compare/compare-10.png" alt-text="Screenshot of the schema update screen." lightbox="media/granular-compare/compare-10.png":::
 
-You may see additions and deletions but in reality nothing changes, only the change in report.json is changing.
+You may see additions and deletions but in reality nothing changes, only the change in report.json is changing. This is an extreme edge case where the system file schema versions are different.
 
  :::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
+
+In a normal use case, the changes in the system files are just like any other change.
+
+ :::image type="content" source="media/granular-compare/compare-12.png" alt-text="Screenshot of system file displayname change." lightbox="media/granular-compare/compare-12.png":::
 
 For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-changes) for an additional example.
 
