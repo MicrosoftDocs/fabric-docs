@@ -58,7 +58,7 @@ List view is divided into the task flow and the items list.
 :::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and its controls." lightbox="./media/workspaces/workspace-list-view.png":::
 
 1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](../fundamentals/task-flow-overview.md).
-1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks.
+1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks. In the list view, there are several columns which show the key information of items. For example, the **Status** column shows long-term, non-permanent state of items by using diffirent kinds of indicators, such as trial expiring, [dataflow refresh status](../data-factory/dataflows-gen2-monitor.md#workspace-status) etc.
 1. **Resize bar**: You can resize the task flow and items list by dragging the resize bar up or down.
 1. **Show/Hide task flow**: If you don't want to see the task flow, you can hide it using the hide/show arrows at the side of the separator bar.
 

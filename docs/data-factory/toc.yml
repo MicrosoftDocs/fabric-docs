@@ -855,6 +855,8 @@
         items: 
           - name: What is the Copy job in Data Factory?
             href: what-is-copy-job.md
+          - name: Copy job connectors
+            href: copy-job-connectors.md
           - name: Copy job tutorials
             items: 
               - name: How to create a Copy job
@@ -1018,6 +1020,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: dbt job pricing
+          href: dbt-job-pricing.md
   - name: Create, manage, & schedule pipelines
     items:
       - name: What is a pipeline?

@@ -4,7 +4,7 @@ description: Learn how to create shortcuts to ADLS accounts in your lakehouse, a
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.date: 11/11/2024
 ms.search.form: Get Started Lakehouse Shortcuts Data Science

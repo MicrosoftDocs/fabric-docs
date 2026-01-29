@@ -65,3 +65,10 @@ Keep these points in mind when you debug pipelines:
 - The system records all pipeline runs, including those with inactive activities.
 - You must save the pipeline for activity state changes to take effect.
 - Remember to reactivate all required activities before you schedule the pipeline for production use.
+
+## Debugging via Git Branches
+
+If you are coming to Fabric Data Factory from Azure Data Factory (ADF), you are likely familiar with the ADF approach of running a pipeline test via "debug mode". In Fabric, we simplified this workflow such that choosing between debug and live run is no longer required. If you wish to work completely isolated from your main or primary workspace or Git branch, then use the Fabric workspace Git branching technique. With this technique, you can create a "dev workspace" with your own Git branch to fully test without effecting any other developers. These 2 links provide the details on how to attach your own dev branches to workspaces:
+
+- [Fabric Git](/fabric/cicd/git-integration/git-get-started)
+- [Git branches](/fabric/cicd/git-integration/manage-branches)

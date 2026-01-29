@@ -9,7 +9,7 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) in Real-Time Intelligence tutorial: Introduction
 
-Digital twin builder (preview) is a new item within the [Real-Time Intelligence](../overview.md) workload in [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md). It creates digital representations of real-world environments to optimize physical operations using data.
+Digital twin builder (preview) is an item in the [Real-Time Intelligence](../overview.md) workload in [Microsoft Fabric](../../fundamentals/microsoft-fabric-overview.md). It creates digital representations of real-world environments to optimize physical operations using data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -18,13 +18,13 @@ In this tutorial, you learn how to set up a digital twin builder item and use it
 <!--## Prerequisites (title in include)-->
 [!INCLUDE [Prerequisites for digital twin builder](../includes/digital-twin-builder-prerequisites.md)]
 
-## Scenario
+## Tutorial scenario
 
 The sample scenario used in this tutorial is a set of bus data, containing information about bus movements and locations. By using digital twin builder (preview) to contextualize and model the data, you can analyze and estimate bus behavior.
 
 This analysis includes estimating whether a bus will be late at the next stop, while also using borough-level location data to analyze delay patterns. The analysis can be used to estimate delays at individual stops and identify geographic trends, like which stops and boroughs experience more frequent delays.
 
-## Data summary
+## Tutorial data summary
 
 In this tutorial, you combine data from two data sources: real-time bus movement and timing details (fact data), and precise geographic and contextual bus stop data (dimensional data). Contextualizing the bus data in digital twin builder (preview) enables dynamic analysis and operational insights. Incorporating static bus stop data establishes a foundation for localized analysis and identifying delay patterns. Additionally, the borough ownership and locality data from the stop data enables understanding of broader geographical trends and overall transit efficiency.
 

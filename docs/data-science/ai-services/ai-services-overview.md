@@ -85,11 +85,11 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 
 ### Consumption rate for OpenAI language models
 
-| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Output (Per 1,000 Tokens)** | **Retirement Date** |
-|---|---|---|---|---|---|
-| gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42 CU seconds |  336 CU seconds | TBD |
-| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.20 CU seconds | 268.80 CU seconds | TBD |
-| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.44 CU seconds | 53.76 CU seconds | TBD |
+| **Model** | **Deployment Name** | **Context Window (Tokens)** | **Input (Per 1,000 Tokens)** | **Cached Input (Per 1,000 Tokens)**  | **Output (Per 1,000 Tokens)** | **Retirement Date** |
+|---|---|---|---|---|---|---|
+| gpt-5-2025-08-07 | `gpt-5` | 400,000<br> Max output: 128,000 |  42.02 CU seconds | 4.20 CU seconds | 336.13 CU seconds | TBD |
+| gpt-4.1-2025-04-14 | `gpt-4.1` | 128,000<br>Max output: 32,768 | 67.23 CU seconds | 16.81 CU seconds | 268.91 CU seconds | TBD |
+| gpt-4.1-mini-2025-04-14 | `gpt-4.1-mini` | 128,000<br>Max output: 32,768 | 13.45 CU seconds | 3.36 CU seconds | 53.78 CU seconds | TBD |
 
 ### Consumption rate for OpenAI embedding models
 

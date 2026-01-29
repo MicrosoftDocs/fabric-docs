@@ -1,6 +1,7 @@
 ---
-title: Stream Azure Diagnostics to Fabric
-description: This article describes how to stream Azure diagnostic logs and metrics into Microsoft Fabric. 
+title: Stream Azure diagnostic Logs to Microsoft Fabric
+description: Learn how to stream Azure diagnostic logs and metrics into Microsoft Fabric for seamless data integration and analysis. Start now!
+#customer intent: As an IT admin, I want to learn how to stream Azure diagnostic logs into Microsoft Fabric so that I can centralize and analyze monitoring data effectively.
 author: spelluru
 ms.author: spelluru
 ms.reviewer: raan
@@ -41,7 +42,7 @@ This article describes how to pull diagnostic logs and metrics data from your Az
     1. In the right pane, you can use the pencil button to change the name of the eventstream that's being created. 
     1. Select **Next** at the bottom of the page. 
 1. This step is optional. On the **Add destination** page, do these actions: 
-    1. Select a **Fabric workspace** that has the target KQL database where you want to store the diagnostic information for the selected resource. 
+    1. Select a **Fabric workspace** that has the target Kusto Query Language (KQL) database where you want to store the diagnostic information for the selected resource. 
     1. Select the **eventhouse** in the workspace. 
     1. Select the **KQL database** in the eventhouse.
     1. Select an existing **table** or create a new table in the KQL database. 
