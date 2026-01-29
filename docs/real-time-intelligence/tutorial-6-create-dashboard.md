@@ -46,7 +46,34 @@ In this part of the tutorial, you learn how to create a Real-Time Dashboard in R
 
    :::image type="content" source="media/tutorial/tutorial-dashboard-new-tile.png" alt-text="Screenshot of TutorialDashboard showing one new tile. " lightbox="media/tutorial/tutorial-dashboard-new-tile.png":::
 
-<!-- ## Add a new tile using Copilot --> 
+<!-- ## Using Copilot. Content drafted, but not published as per Michal's request. Leaving here for future. 
+## Generate a real-time dashboard using Copilot (preview)
+
+The process uses AI to generate a Real-Time Dashboard from the streaming data in your table. You can then customize the dashboard by adding or modifying tiles as needed.
+
+1. Open the Real-Time hub by selecting **Real-Time** from the left main menu. 
+
+    You see the RawData and TransformedData tables that you created in previous tutorial steps, in the list of recent streaming data.
+
+1. Select the *TransformedData* table's more actions **...** menu, and select **Create Real-Time Dashboard (Copilot)**.
+
+   :::image type="content" source="media/tutorial/tutorial-dashboard-create-dashboard.png" alt-text="Screenshot of the Create Real-Time Dashboard (Copilot) option." lightbox="media/tutorial/tutorial-dashboard-create-dashboard.png":::
+
+1. A dialog box appears to show the AI-generation stages, and a link to review the [general preview terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms). Select **Get started** to proceed.
+
+    :::image type="content" source="media/tutorial/tutorial-dashboard-get-started.png" alt-text="Screenshot of the Generate a real-time dashboard with the get started button highlighted." lightbox="media/tutorial/tutorial-dashboard-get-started.png":::
+
+    Watch the progression indicator as the AI generates the dashboard. This process may take a few moments. You can stop the process by selecting the **Stop dashboard generation** button.
+
+1. You're prompted to name your new dashboard, and select the Workspace location. Enter *TutorialDashboardAI* and select **Create**.
+
+    :::image type="content" source="media/tutorial/tutorial-dashboard-name-dashboard.png" alt-text="Screenshot of the Name your dashboard dialog with TutorialDashboardAI entered." lightbox="media/tutorial/tutorial-dashboard-name-dashboard.png":::
+
+Copilot automatically generates the Copilot Insights page and Profile page, both with multiple tiles. The Insights page provides a quick overview of the data, while the Profile page offers detailed information about the data structure and statistics.
+
+:::image type="content" source="media/tutorial/tutorial-dashboard-copilot-insights.png" alt-text="Screenshot of the AI-generated dashboard with multiple tiles." lightbox="media/tutorial/tutorial-dashboard-copilot-insights.png":::
+
+--> 
 
 ## Add a new tile by using a query
 
