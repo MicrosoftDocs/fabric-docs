@@ -13,21 +13,21 @@ ai-usage: ai-assisted
 
 # Best practices for OneLake security
 
-In this article, we'll look at best practices around securing data in OneLake, including architecture guidance.
+This article describes best practices around securing data in OneLake, including architecture guidance.
 
 ## Least privilege
 
-Least privilege access is a fundamental security principle in computer science that advocates for restricting users' permissions and access rights to only those permissions necessary to perform their tasks. For OneLake, this means assigning permissions at the appropriate level to ensure that users aren't over-provisioned and reduce risk.
+Least privilege access is a fundamental security principle in computer science that advocates for restricting users' permissions and access rights to only those permissions necessary to perform their tasks. For OneLake, least privilege access means assigning permissions at the appropriate level to reduce risk and ensure that users aren't over-provisioned.
 
-- If users only need access to a single lakehouse or data item, use the share feature to grant them access to only that item. Assigning a user to a workspace role should only be used if that user needs to see ALL items in that workspace.
+- If users only need access to a single lakehouse or data item, use the **Share** feature to grant them access to only that item. Only assign a user to a workspace role if that user needs to see *all* items in that workspace.
 
-- Use [OneLake security](../security/get-started-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
+- Use [OneLake security](./get-started-onelake-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
 
-- To write data to OneLake, there are two options: workspace roles or [OneLake security ReadWrite permission.](../security/data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles will be able to write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables.
+- To write data to OneLake, there are two options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables.
 
 - If users need to manage access to data, such as sharing an item or configuring OneLake security roles, then Admin or Member workspace roles are required.
 
-- A user needs SubscribeOneLakeEvents to be able to subscribe to events from a Fabric item. Admin, Member, and Contributor roles have this permission by default. You can add this permission for a user with Viewer role.
+- Users need the SubscribeOneLakeEvents permission to subscribe to events from a Fabric item. Admin, Member, and Contributor roles have this permission by default. You can add this permission for a user with Viewer role.
 
 ## Recommended architecture
 
@@ -56,6 +56,6 @@ The core principle is to centralize data ownership and security enforcement in a
 
 ## Related content
 
-- [Fabric Security overview](../../security/security-overview.md)
-- [Fabric and OneLake security overview](./fabric-onelake-security.md)
-- [Data Access Control Model](../security/data-access-control-model.md)
+- [Fabric security overview](../../security/security-overview.md)
+- [OneLake security overview](./get-started-onelake-security.md)
+- [Data access control model](./data-access-control-model.md)
