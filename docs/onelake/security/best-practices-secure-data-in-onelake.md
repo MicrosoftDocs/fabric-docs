@@ -1,5 +1,5 @@
 ---
-title: Best practices for OneLake security
+title: Security best practices
 description: Best practices for securing your data in OneLake including least privilege access, workload permissions, and user permissions.
 ms.reviewer: eloldag
 ms.author: aamerril
