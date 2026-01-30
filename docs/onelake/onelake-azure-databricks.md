@@ -12,20 +12,20 @@ ms.date: 01/30/2026
 
 # Integrate OneLake with Azure Databricks
 
-This scenario shows how to connect to OneLake via Azure Databricks serverless compute
+This article shows how to connect to OneLake through Azure Databricks serverless compute.
 
 ## Prerequisites
 
-Before you connect, you must have:
+Before you connect, make sure you have:
 
 - A Fabric workspace and lakehouse.
 - A premium Azure Databricks workspace.
-- A service principal with a minimum of **Contributor** workspace role assignment.
+- A service principal with at least the **Contributor** workspace role assignment.
 - Database secrets or Azure Key Vault (AKV) to store and retrieve secrets. This example uses Databricks secrets.
-- 
-## Connect to OneLake using Databricks serverless compute
 
-[Databricks serverless compute](/azure/databricks/compute/serverless/) allows you to run workloads without provisioning a cluster. As per Databricks serverless documentation, to automate the configuration of Spark on serverless compute, Databricks serverless doesn't allow configuring [Spark properties](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs) outside supported properties that are listed [here](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs).
+## Connect to OneLake by using Databricks serverless compute
+
+By using [Databricks serverless compute](/azure/databricks/compute/serverless/), you can run workloads without provisioning a cluster. According to the Databricks serverless documentation, to automate the configuration of Spark on serverless compute, Databricks serverless only allows configuring a subset of [supported Spark properties](/azure/databricks/spark/conf#configure-spark-properties-for-serverless-notebooks-and-jobs).
 
 > [!NOTE]
 > This limitation isn't unique to Azure Databricks. Databricks serverless implementations on [Amazon Web Services (AWS)](https://docs.databricks.com/aws/release-notes/serverless#supported-spark-configuration-parameters) and [Google Cloud](https://docs.databricks.com/gcp/release-notes/serverless#supported-spark-configuration-parameters) exhibit the same behavior.
@@ -34,7 +34,7 @@ If you attempt to modify or set an unsupported Spark configuration in a notebook
 
 :::image type="content" source="media\onelake-azure-databricks\unsupported-config-error.png" alt-text="Screenshot showing error message if a user attempts to modify unsupported Spark config in serverless compute.":::
 
-OneLake supports inbound connectivity from Databricks serverless compute. You can connect to OneLake (from Databricks serverless compute) provided you have appropriate access and there's a network path between Databricks serverless compute and OneLake. With Databricks serverless, you must ensure that your code doesn't modify any unsupported Spark properties.  
+OneLake supports inbound connectivity from Databricks serverless compute. You can connect to OneLake from Databricks serverless compute if you have appropriate access and there's a network path between Databricks serverless compute and OneLake. With Databricks serverless, make sure your code doesn't modify any unsupported Spark properties.  
 
 ## Author your notebook
 
@@ -42,11 +42,11 @@ OneLake supports inbound connectivity from Databricks serverless compute. You ca
 
    :::image type="content" source="media\onelake-azure-databricks\connect-to-serverless.png" alt-text="Screenshot showing how to connect Databricks notebook with serverless compute.":::
 
-1. Import Python modules - in this sample, you're using three modules:
+1. Import Python modules - in this sample, use three modules:
 
-   -  **msal** is Microsoft Authentication Library (MSAL) and it is designed to help developers integrate Microsoft identity platform authentication into their applications.
-   - **requests** module is used to make HTTP requests using Python.
-   - **delta lake** is used to read and write Delta Lake tables using Python.
+   -  **msal** is Microsoft Authentication Library (MSAL) and it's designed to help developers integrate Microsoft identity platform authentication into their applications.
+   - **requests** module is used to make HTTP requests by using Python.
+   - **delta lake** is used to read and write Delta Lake tables by using Python.
      
    ```python
    from msal import ConfidentialClientApplication
@@ -100,7 +100,7 @@ OneLake supports inbound connectivity from Databricks serverless compute. You ca
    > [!NOTE]
    > The service principal has **Contributor** workspace role assignment and you can use it to write data back to OneLake.
 
-This completes the setup and you can now read data from OneLake using Databricks a notebook attached to serverless compute.
+After you complete the preceding steps, you can read data from OneLake by using Databricks a notebook attached to serverless compute.
 
 ## Related content
 
