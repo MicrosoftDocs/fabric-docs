@@ -105,7 +105,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | User-assigned managed identity   | |                       |                            | |
 |                    |                     |                                 | |                       | Organizational account      | |
 | [Fabric KQL Database](connector-kql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
-
+| [SQL database](connector-sql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
 
 ## Database connectors
 
