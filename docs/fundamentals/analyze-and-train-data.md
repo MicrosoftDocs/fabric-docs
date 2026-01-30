@@ -15,7 +15,7 @@ Beyond traditional analytics and reporting, Microsoft Fabric also includes capab
 
 ### AI Agents
 
-:::image type="content" source="./media/Analyze-AIAgents.png" alt-text="Screenshot of AI Agents architecture diagram.":::
+:::image type="content" source="./media/analyze-and-train-data/Analyze-AIAgents.png" alt-text="Screenshot of AI Agents architecture diagram.":::
 
 #### Data gent
 
@@ -36,7 +36,7 @@ Data Agents and Operations Agents in Microsoft Fabric IQ serve distinct roles: D
 
 ### Data science workflows
 
-:::image type="content" source="./media/Analyze-DataScience.png" alt-text="Screenshot of Data Science workflows diagram.":::
+:::image type="content" source="./media/analyze-and-train-data/Analyze-DataScience.png" alt-text="Screenshot of Data Science workflows diagram.":::
 
 [Fabric's Data Science experience](/fabric/data-science/data-science-overview) covers the entire ML lifecycle, from data exploration and preparation to model experimentation, tracking, deployment, and consumption. All the tools needed (like notebooks, Apache Spark, MLflow tracking, AutoML, etc.) are built-in, allowing data scientists to develop and operationalize ML models alongside data engineers and analysts in one place.
 
