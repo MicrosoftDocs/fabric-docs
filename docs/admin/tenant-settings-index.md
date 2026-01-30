@@ -7,7 +7,7 @@ ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
-ms.date: 01/29/2026
+ms.date: 01/30/2026
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -198,6 +198,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Service principals can call Fabric public APIs](./service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis)|This setting allows service principals with the appropriate  [roles and item permissions](https://go.microsoft.com/fwlink/?linkid=2301209) to call Fabric public APIs. To allow service principals to create workspaces, connections, and deployment pipelines turn on the setting titled  "Service principals can create workspaces, connections, and deployment pipelines".  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301309)|
 |[Allow service principals to create and use profiles](/power-bi/developer/embedded/embed-multi-tenancy)|Allow service principals in your organization to create and use profiles.|
 |[Block ResourceKey Authentication](service-admin-portal-developer.md#block-resourcekey-authentication)|For extra security, block using resource key based authentication. This means users not allowed to use streaming semantic models API using resource key.|
+|Define maximum number of Fabric identities in a tenant|Allow admins to specify the maximum number of Fabric identities that can be created in a tenant. If this setting is disabled, up to 10000 Fabric identities can be created in a tenant.  [Learn more](https://go.microsoft.com/fwlink/?linkid=2339322).|
 
 ## [Admin API settings](service-admin-portal-admin-api-settings.md)
 
