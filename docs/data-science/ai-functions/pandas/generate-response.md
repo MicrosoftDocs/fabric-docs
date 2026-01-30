@@ -24,7 +24,7 @@ The `ai.generate_response` function uses generative AI to generate custom text r
 
 The `ai.generate_response` function can extend the [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) class and the [pandas Series](https://pandas.pydata.org/docs/reference/api/pandas.Series.html) class.
 
-To generate custom text responses row by row, you can either call this function on a pandas series or an entire pandas DataFrame.
+You may either call this function on a pandas series or an entire pandas DataFrame.
 
 If calling the function on an entire pandas DataFrame, your prompt can be a literal string, and the function considers all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
 
@@ -39,13 +39,18 @@ The function returns a pandas Series that contains custom text responses for eac
 # [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
-df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on all column values")
+df["response"] = df.ai.generate_response(
+    prompt="Instructions for a custom response based on all column values",
+)
 ```
 
 # [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
-df["response"] = df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True)
+df["response"] = df.ai.generate_response(
+    prompt="Instructions for a custom response based on specific {column1} and {column2} values",
+    is_prompt_template=True,
+)
 ```
 
 ---
@@ -56,15 +61,30 @@ df["response"] = df.ai.generate_response(prompt="Instructions for a custom respo
 |--- |---|
 | `prompt` <br> Required | A [string](https://docs.python.org/3/library/stdtypes.html#str) that contains prompt instructions to apply to input text values for custom responses. |
 | `is_prompt_template` <br> Optional | A [Boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific row values from each column name that appears in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
-| `response_format` <br> Optional | A [dictionary](https://docs.python.org/3/library/stdtypes.html#dict) that specifies the expected structure of the model’s response. The `type` field can be set to "text" for free-form text, "json_object" to ensure the output is a valid JSON object, or a custom JSON Schema to enforce a specific response structure. If this parameter isn't provided, the response is returned as plain text. |
+| `response_format` <br> Optional | `None`, a [dictionary](https://docs.python.org/3/library/stdtypes.html#dict), a [string](https://docs.python.org/3/library/stdtypes.html#str), or a class based on [Pydantic's BaseModel](https://docs.pydantic.dev/latest/concepts/models/) that specifies the expected structure of the model's response. See [Response Format Options](#response-format-options) for details on all available formats. |
 
 ## Returns
 
 The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that contains custom text responses to the prompt for each input text row.
 
-## Example
+## Response format options
 
-# [Generate responses with a simple prompt](#tab/simple-prompt)
+The `response_format` parameter accepts different formats to control how the LLM structures its responses. This parameter corresponds to OpenAI's [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs) feature. The following options are available:
+
+| Format | Description |
+|--------|-------------|
+| `None` (default) | Let the LLM decide response format based on the instructions and input data, which can vary per row. Responses can be plain text or JSON dict with varying fields. |
+| `"text"` or `{"type": "text"}` | Forces plain text responses for all rows. |
+| `"json_object"` or `{"type": "json_object"}` | Returns a JSON dictionary in text form where the LLM decides the fields. Requires the word "json" in your prompt. |
+| `{"type": "json_schema", ...}` | Returns a JSON dictionary that conforms to your custom [JSON Schema](https://json-schema.org/). Provides precise control over response structure. |
+| Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the openai package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
+
+> [!NOTE]
+> The `json_schema` and Pydantic `BaseModel` options are functionally equivalent. The Pydantic BaseModel approach provides better developer experience with Python's type system and validation, while being automatically converted to the verbose JSON schema under the hood.
+
+## Examples
+
+### [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -83,7 +103,7 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with columns 'product' and 'response'. The 'response' column contains a punchy subject line for the product." lightbox="../../media/ai-functions/generate-response-simple-example-output.png":::
 
-# [Generate responses with a template prompt](#tab/template-prompt)
+### [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
 # This code uses AI. Always review output for mistakes.
@@ -104,7 +124,7 @@ This example code cell provides the following output:
 
 ---
 
-### Response format example
+### Response Format example
 
 The following example shows how to use the `response_format` parameter to specify different response formats, including plain text, a JSON object, and a custom JSON schema.
 
@@ -120,13 +140,13 @@ df = pd.DataFrame([
 # response_format : text
 df["card_text"] = df.ai.generate_response(
     "Create a player card with the player's details and a motivational quote", 
-    response_format={"type": "text"}
+    response_format={"type": "text"},
 )
 
 # response_format : json object
 df["card_json_object"] = df.ai.generate_response(
     "Create a player card with the player's details and a motivational quote in JSON", 
-    response_format={"type": "json_object"} # Requires "json" in the prompt
+    response_format={"type": "json_object"},  # Requires word "json" in the prompt
 )
 
 # response_format : specified json schema
@@ -153,6 +173,25 @@ df["card_json_schema"] = df.ai.generate_response(
             },
         },
     },
+)
+
+# Pydantic is a dependency of the openai package, so it's available when openai is installed.
+# Pydantic may also be installed via `%pip install pydantic` if not already present.
+from pydantic import BaseModel, Field
+
+class PlayerCardSchema(BaseModel):
+    name: str
+    age: int
+    sport: str
+    position: str
+    hometown: str
+    stats: str = Field(description="Key performance metrics or achievements")
+    motivational_quote: str
+
+# response_format : pydantic BaseModel
+df["card_pydantic"] = df.ai.generate_response(
+    "Create a player card with the player's details and a motivational quote",
+    response_format=PlayerCardSchema,
 )
 
 display(df)
