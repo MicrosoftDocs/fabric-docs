@@ -17,7 +17,7 @@ OneLake's design of "one copy of data" means that once data is stored in OneLake
 
 ### Lakehouse
 
-:::image type="content" source="./media/Store-Lakehouse.png" alt-text="Screenshot of OneLake Lakehouse architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-Lakehouse.png" alt-text="Screenshot of OneLake Lakehouse architecture diagram.":::
 
 In Fabric, a [Lakehouse](/fabric/data-engineering/lakehouse-overview) is a core storage-centric artifact which leverages OneLake to store data in both file form and table form. A lakehouse can be thought of as a curated data lake folder that also provides a SQL interface. Under the covers, a lakehouse stores data in Delta Parquet files in OneLake. You can have [folders of raw data (like CSVs or images) and managed Delta tables for structured data](/fabric/data-engineering/navigate-lakehouse-explorer).
 
@@ -25,7 +25,7 @@ Lakehouse is a convenient way to organize a collection of data and expose it for
 
 ### Warehouse
 
-:::image type="content" source="./media/Store-Warehouse.png" alt-text="Screenshot of OneLake Warehouse architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-Warehouse.png" alt-text="Screenshot of OneLake Warehouse architecture diagram.":::
 
 A [Warehouse in Fabric](/fabric/data-warehouse/data-warehousing) provides a traditional SQL data warehouse experience (with tables, SQL views, stored procedures, etc.) but on Fabric's unified storage. When you create a Warehouse in Fabric, behind the scenes it also stores its data in OneLake in Delta format (the warehouse is essentially a organized set of Delta tables with an ANSI SQL interface on top). The difference is that the Warehouse comes with dedicated compute and fine-tuned performance for complex SQL queries and BI-style workloads. It supports features like indexing, stored procedures, and robust ACID transactions on tables.
 
@@ -37,13 +37,13 @@ In Microsoft Fabric, [Warehouses and Lakehouses serve distinct but complementary
 
 ### Mirrored databases
 
-:::image type="content" source="./media/Store-MirroredDB.png" alt-text="Screenshot of OneLake Mirrored Database architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-MirroredDB.png" alt-text="Screenshot of OneLake Mirrored Database architecture diagram.":::
 
 A mirrored database in Microsoft Fabric is a continuously replicated, analytics-ready copy of an external operational database, such as Azure SQL Database, SQL Server, Cosmos DB, or Snowflake. It's stored in OneLake using the open Delta Lake format and it enables near real-time synchronization of source data into Fabric without requiring traditional ETL pipelines. Once mirrored, the [data becomes immediately queryable](/fabric/mirroring/explore) via SQL endpoints and usable across Fabric workloads like Power BI, Spark notebooks, and pipelines. This allows you to perform analytics on live operational data while maintaining source system integrity, supporting hybrid transactional/analytical processing (HTAP) scenarios.
 
 ### Eventhouse
 
-:::image type="content" source="./media/Store-EventHouse.png" alt-text="Screenshot of OneLake Eventhouse architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-EventHouse.png" alt-text="Screenshot of OneLake Eventhouse architecture diagram.":::
 
 An [Eventhouse](/fabric/real-time-intelligence/eventhouse) in Microsoft Fabric is a scalable, real-time analytics environment designed to ingest, store, and analyze large volumes of event-based data. It serves as the foundational engine for Real-Time Intelligence workloads, enabling organizations to process structured, semi-structured, and unstructured data streams efficiently.
 
@@ -51,7 +51,7 @@ Functionally, an Eventhouse hosts one or more KQL databases (based on the Kusto 
 
 ### SQL Database
 
-:::image type="content" source="./media/Store-SQLDatabase.png" alt-text="Screenshot of OneLake SQL Database architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-SQLDatabase.png" alt-text="Screenshot of OneLake SQL Database architecture diagram.":::
 
 In Microsoft Fabric, [SQL Databases](/fabric/database/sql/overview) are a core component designed to support transactional and operational analytics workloads within a unified data platform. They offer a fully managed relational database experience with full support for T-SQL, including data definition (DDL), manipulation (DML), and querying (DQL) capabilities. Users can rely on the familiar SQL constructs such as stored procedures, views, and functions to build robust applications and analytical solutions.
 
@@ -61,7 +61,7 @@ SQL Databases in Fabric are deeply integrated with other Fabric experiences, all
 
 ### Cosmos DB
 
-:::image type="content" source="./media/Store-CosmosDB.png" alt-text="Screenshot of OneLake Cosmos DB architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-CosmosDB.png" alt-text="Screenshot of OneLake Cosmos DB architecture diagram.":::
 
 [Cosmos DB in Microsoft Fabric](/fabric/database/cosmos-db/overview) is a fully managed, distributed NoSQL database that supports operational workloads with flexible data models and global scalability. Unlike relational stores, Cosmos DB is designed for high-throughput scenarios involving semi-structured JSON data, making it ideal for applications such as IoT telemetry, mobile backends, and real-time retail systems. In Fabric, [Cosmos DB is automatically mirrored into OneLake](/fabric/database/cosmos-db/mirror-onelake), where its data is stored in Delta format which enables analytics without impacting the performance of the operational system. This mirroring process is continuous and near real-time, requiring no manual setup or configuration. Once mirrored, the data becomes accessible through a [SQL analytics endpoint](/fabric/database/cosmos-db/tutorial-mirroring), which allows users to query the data using T-SQL, build views, and integrate with other Fabric experiences like Power BI, notebooks, and pipelines.
 
@@ -69,7 +69,7 @@ The SQL analytics endpoint provides a read-only interface to the mirrored data, 
 
 ### Semantic Model
 
-:::image type="content" source="./media/Store-SemanticModel.png" alt-text="Screenshot of OneLake Semantic Model architecture diagram.":::
+:::image type="content" source="./media/store-data/Store-SemanticModel.png" alt-text="Screenshot of OneLake Semantic Model architecture diagram.":::
 
 [Semantic models](/fabric/data-warehouse/semantic-models) provide the structured, curated layer that defines business logic, measures, hierarchies, relationships, and metadata on top of raw data in Microsoft Fabric. They make data interpretable and reusable across the platform for analytics experiences. 
 
@@ -87,4 +87,4 @@ Semantic models also enable conversational AI, semantic search, enterprise repor
 
 Microsoft Fabric provides several data store options, each optimized for specific workloads and query patterns. The Lakehouse is best suited for big data and data engineering scenarios, offering open table formats like Delta and Iceberg and supporting Spark and SQL engines. The Warehouse is designed for structured, relational analytics with high-performance SQL capabilities, ideal for BI and reporting. KQL Database (Eventhouse) is tailored for real-time analytics on telemetry and log data using Kusto Query Language. SQL Database supports transactional workloads and operational analytics, while Cosmos DB is optimized for globally distributed, multi-model applications with low-latency access. [Choosing the right store](/fabric/fundamentals/decision-guide-data-store) depends on factors like data structure, latency requirements, query complexity, and integration needs.
 
-:::image type="content" source="./media/decision-guide-store.svg" alt-text="Screenshot of decision guide for choosing the right data store.":::
+:::image type="content" source="./media/store-data/decision-guide-store.svg" alt-text="Screenshot of decision guide for choosing the right data store.":::
