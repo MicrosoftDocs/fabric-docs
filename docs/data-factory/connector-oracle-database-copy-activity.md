@@ -4,7 +4,7 @@ description: This article explains how to copy data using Oracle database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/14/2025
+ms.date: 01/30/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -124,9 +124,59 @@ Under **Advanced**, you can specify the following fields:
 
 For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
+#### Edit destination data types
+
+For the **Mapping** tab configuration, if you apply Oracle as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle](#data-type-mapping-for-oracle).
+
+For example, the type for *VAL1* column in source is number and you can change it to BINARY_DOUBLE type when mapping to the destination column. 
+
+:::image type="content" source="media/connector-oracle-database/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
 ### Settings
 
 For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Oracle
+
+When you copy data from and to Oracle, the following interim data type mappings are used within the service.
+
+| Oracle data type | Interim data type |
+|:--- |:--- |
+| BFILE | Byte[] |
+| BINARY_FLOAT | Single |
+| BINARY_DOUBLE | Double |
+| BLOB | Byte[] |
+| CHAR | String |
+| CLOB | String |
+| DATE | DateTime |
+| FLOAT (P < 16) | Double |
+| FLOAT (P >= 16) | Decimal |
+| INTERVAL YEAR TO MONTH | Int64 |
+| INTERVAL DAY TO SECOND | TimeSpan |
+| LONG | String |
+| LONG RAW | Byte[] |
+| NCHAR | String |
+| NCLOB | String |
+| NUMBER (p,s) | Int16, Int32, Int64, Single, Double, Decimal |
+| NUMBER without precision and scale | Decimal (256,130) |
+| NVARCHAR2 | String |
+| RAW | Byte[] |
+| TIMESTAMP | DateTime |
+| TIMESTAMP WITH LOCAL TIME ZONE | DateTime |
+| TIMESTAMP WITH TIME ZONE | DateTimeOffset |
+| VARCHAR2 | String |
+| XMLTYPE | String |
+
+NUMBER(p,s) is mapped to the appropriate interim data type depending on the precision (p) and scale (s):
+
+| Interim service data type | Condition                                                                                                    |
+|:--------------------------|:----------------------------------------------------------------------------------------------------------------|
+| Int16                    | scale <= 0 AND (precision - scale) < 5                                                                         |
+| Int32                    | scale <= 0 AND 5 <= (precision - scale) < 10                                                                   |
+| Int64                    | scale <= 0 AND 10 <= (precision - scale) < 19                                                                  |
+| Single                   | precision < 8 AND ((scale <= 0 AND (precision - scale) <= 38) OR (scale &gt; 0 AND scale <= 44))                  |
+| Decimal                  | precision &gt;= 16 
+| Double                   | If none of the above conditions are met.                                                                       |
 
 ## Parallel copy from Oracle database
 
@@ -148,7 +198,7 @@ You are suggested to enable parallel copy with data partitioning especially when
 
 ## Table summary
 
-The following tables contain more information about the copy activity in Oracle database.
+When copying data from Oracle, the following mappings are used from Oracle data types to interim data types used by the service internally.
 
 ### Source information
 
