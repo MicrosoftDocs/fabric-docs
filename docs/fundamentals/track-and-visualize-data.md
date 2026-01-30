@@ -15,7 +15,7 @@ One of the final steps in the data lifecycle is making sense of the data through
 
 ### Power BI reports and translytical taskflows
 
-:::image type="content" source="./media/track-and-visualize-data/Track-PowerBI-Translytical.png" alt-text="Screenshot of Power BI translytical taskflows diagram.":::
+:::image type="content" source="./media/track-and-visualize-data/track-powerbi-translytical.png" alt-text="Screenshot of Power BI translytical taskflows diagram.":::
 
 [Power BI reports](/power-bi/consumer/end-user-reports) use Semantic Models in OneLake as their analytical backbone, enabling advanced analytics through a structured, reusable, and governed layer of business logic. Power BI reports provide data exploration and visualisation experiences for business users.
 
@@ -25,7 +25,7 @@ From a collaboration standpoint, Power BI reports can be distributed and embedde
 
 ### Real-time insights and action
 
-:::image type="content" source="./media/track-and-visualize-data/Track-RTI.png" alt-text="Screenshot of Real-Time Intelligence architecture diagram.":::
+:::image type="content" source="./media/track-and-visualize-data/track-rti.png" alt-text="Screenshot of Real-Time Intelligence architecture diagram.":::
 
 The Real-Time Intelligence workload in Microsoft Fabric enables organizations to ingest, process, analyze, and act on streaming data with minimal latency. It combines capability from the following services:
 

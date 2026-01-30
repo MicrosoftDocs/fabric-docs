@@ -15,17 +15,17 @@ While Fabric is an all-in-one platform, it recognizes the importance of integrat
 
 ### Actions
 
-:::image type="content" source="./media/external-integration/Integration-Actions.png" alt-text="Screenshot of integration actions diagram.":::
+:::image type="content" source="./media/external-integration/integration-actions.png" alt-text="Screenshot of integration actions diagram.":::
 
 [Data Activator](/fabric/real-time-intelligence/data-activator/activator-introduction) provides real-time automation by monitoring data streams and triggering actions when defined conditions occur. Activator integrates with:
-* **[Power Automate](/fabric/data-activator/connect-power-automate)** to execute workflows such as sending notifications, updating records, or initiating business processes. This integration allows users to create triggers in Fabric and link them to Power Automate flows for downstream actions (e.g., alerting when a KPI threshold is crossed).
+* **[Power Automate](/fabric/real-time-intelligence/data-activator/activator-trigger-power-automate-flows)** to execute workflows such as sending notifications, updating records, or initiating business processes. This integration allows users to create triggers in Fabric and link them to Power Automate flows for downstream actions (e.g., alerting when a KPI threshold is crossed).
 * Teams to post adaptive cards or messages to channels when real-time conditions are met.
 * Outlook to send automated emails to stakeholders for alerts or approvals.
 * **[Fabric items](/fabric/real-time-intelligence/data-activator/activator-trigger-fabric-items)** to initiate actions such as refreshing a Power BI dataset or initiating a pipeline run. These capabilities enable end-to-end automation across analytics and collaboration tools, ensuring insights from streaming data lead to immediate, actionable outcomes without manual intervention.
 
 ### Collaboration
 
-:::image type="content" source="./media/external-integration/Integration-Collaboration.png" alt-text="Screenshot of integration collaboration diagram.":::
+:::image type="content" source="./media/external-integration/integration-collaboration.png" alt-text="Screenshot of integration collaboration diagram.":::
 
 Microsoft Fabric is designed to work within the Microsoft 365 ecosystem, enabling collaborative analytics and data-driven workflows across familiar productivity tools:
 
@@ -41,7 +41,7 @@ Together, these integrations enable end-to-end collaboration: from analyzing dat
 
 ### Agentic AI
 
-:::image type="content" source="./media/external-integration/Integration-AgenticAI.png" alt-text="Screenshot of agentic AI integration diagram.":::
+:::image type="content" source="./media/external-integration/integration-agenticai.png" alt-text="Screenshot of agentic AI integration diagram.":::
 
 Microsoft Fabric is evolving beyond analytics into an intelligence platform that powers Agentic AI workflows. At the core is Fabric IQ, a semantic layer that unifies business meaning across data sources, enabling AI agents to reason with context rather than raw tables. This foundation integrates with three key components to deliver end-to-end agentic capabilities:
 
@@ -53,7 +53,7 @@ Microsoft Fabric is evolving beyond analytics into an intelligence platform that
 
 ### Developers
 
-:::image type="content" source="./media/external-integration/Integration-Developer.png" alt-text="Screenshot of developer integration diagram.":::
+:::image type="content" source="./media/external-integration/integration-developer.png" alt-text="Screenshot of developer integration diagram.":::
 
 Microsoft Fabric is designed not only for data analysts but also for developers who prefer a code-first approach. By leveraging Visual Studio Code, developers can create, manage, and automate Fabric artifacts while integrating with modern DevOps practices. This enables teams to build scalable data solutions and AI workflows using familiar tools and processes.
 
@@ -65,7 +65,7 @@ Microsoft Fabric is designed not only for data analysts but also for developers 
 
 ### Unified data estate
 
-:::image type="content" source="./media/external-integration/Integration-UnifiedDataEstate.png" alt-text="Screenshot of unified data estate integration diagram.":::
+:::image type="content" source="./media/external-integration/integration-unifieddataestate.png" alt-text="Screenshot of unified data estate integration diagram.":::
 
 #### OneLake interoperability
 
@@ -96,7 +96,7 @@ Microsoft Fabric's OneLake and Snowflake integration delivers a zero-copy archit
 
 ## Platform
 
-:::image type="content" source="./media/external-integration/Platform.png" alt-text="Screenshot of platform architecture diagram.":::
+:::image type="content" source="./media/external-integration/platform.png" alt-text="Screenshot of platform architecture diagram.":::
 
 ### Azure
 
