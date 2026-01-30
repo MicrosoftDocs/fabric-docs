@@ -262,7 +262,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 
 | Setting name | Description |
 |------|-------|
-|Create and use Scorecards|Users in the organization can create and use Scorecards. [Learn More](/power-bi/create-reports/service-goals-introduction)|
+|Create and use Scorecards|Users in the organization can create and use Scorecards. [Learn More](/power-bi/create-reports/service-goals-introduction) |
 
 ## [User experience experiments](service-admin-portal-user-experience-experiments.md)
 
