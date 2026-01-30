@@ -67,15 +67,15 @@ Eventstream can natively interpret all these JSON formats. You can transform the
 ### Avro 
 
 Avro is a binary serialization format. Fabric Eventstream supports Avro event payloads in several forms: 
-- Avro Object Container File (OCF) payloads which are self-describing and include the writer schema in the file header.
-    - The Avro schema is embedded in the OCF header (avro.schema)
+- Avro Object Container File (OCF) payloads, which are self-describing and include the writer schema in the file header.
+    - The Avro schema is embedded in the OCF header (avro.schema).
     - Event records are encoded using standard Avro binary encoding, an [AVRO](https://avro.apache.org/docs/current/) format that supports [logical types](https://avro.apache.org/docs/++version++/specification/_print/).
-    - Block-level compression is supported (null, deflate)
+    - Block-level compression is supported (null, deflate).
     - The reader implementation of the apacheavro format is based on the official [Apache Avro library](https://github.com/apache/avro).
 - Binary Avro with Confluent Schema Registry: binary Avro payloads that reference schemas stored in Confluent Schema Registry.
-    - Event payloads are encoded using standard Avro binary encoding
-    - Each event includes a schema identifier
-    - The schema is resolved at runtime from Confluent Schema Registry
+    - Event payloads are encoded using standard Avro binary encoding.
+    - Each event includes a schema identifier.
+    - The schema is resolved at runtime from Confluent Schema Registry.
 - Other Avro formats (pass-through only) to custom endpoint.
 
 The following table summarizes the Avro format support across different destinations:
@@ -83,7 +83,7 @@ The following table summarizes the Avro format support across different destinat
 | Format | Support transformation | Direct ingestion for Eventhouse | Push Eventhouse, Lakehouse, and Activator | Custom endpoint |
 |-------------------------------|------------------------|-------------------------------|---------------------------------------|-----------------|
 | Avro OCF | Yes | Yes | Yes | Yes |
-| Avro with schema in Confluent schema registry | Yes | Yes | Yes | Yes |
+| Avro with schema in Confluent Schema Registry | Yes | Yes | Yes | Yes |
 | Other format of Avro | No | No | No | Yes |
 
 ### CSV 
