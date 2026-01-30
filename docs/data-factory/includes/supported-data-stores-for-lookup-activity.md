@@ -58,9 +58,10 @@ ms.custom: include file
 | **Microsoft Fabric** |[Lakehouse](../connector-lakehouse-overview.md) |
 | &nbsp; |[Data Warehouse](../connector-data-warehouse-overview.md) |
 | &nbsp; |[KQL Database](../connector-kql-database-overview.md) |
+| &nbsp; |[SQL database](../connector-sql-database-overview.md) |
 | **NoSQL** |[Cassandra](../connector-cassandra-overview.md) |
 | **Services and apps** |[Dataverse](../connector-dataverse-overview.md) |
-| &nbsp; |[Dynamics 365](../connector-dynamics-crm-overview.md) |
+| &nbsp; | Dynamics 365 |
 | &nbsp; |[Dynamics AX](../connector-dynamics-ax-overview.md) |
 | &nbsp; |[Dynamics CRM](../connector-dynamics-crm-overview.md) |
 | &nbsp; |[Salesforce objects](../connector-salesforce-objects-overview.md) |
