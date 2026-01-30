@@ -13,11 +13,6 @@ ms.custom: references_regions
 
 This article lists current limitations with mirrored Azure Databricks in Microsoft Fabric.
 
-## Network
-
-- Azure Databricks workspaces shouldn't be behind a private endpoint.
-- Azure Databricks IP Access lists aren't supported.
-
 ## Supported Spark Versions
 
 Fabric Runtime Version needs to be at least Spark 3.4 Delta 2.4. Verify in Workspace Settings, Data Engineering/Science, Spark Settings, Environment Tab.
