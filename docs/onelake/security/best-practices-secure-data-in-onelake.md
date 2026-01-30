@@ -23,7 +23,7 @@ Least privilege access is a fundamental security principle in computer science t
 
 - Use [OneLake security](./get-started-onelake-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
 
-- To write data to OneLake, there are two options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables.
+- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilizied through the various methods of writing data in OneLake such as pipelines, notebooks, etc.
 
 - If users need to manage access to data, such as sharing an item or configuring OneLake security roles, then Admin or Member workspace roles are required.
 
@@ -37,13 +37,11 @@ This pattern is the recommended baseline architecture for implementing OneLake s
 
 The core principle is to centralize data ownership and security enforcement in a primary workspace. Manage and secure your data at the source, then share it to downstream workspaces by using OneLake shortcuts. This approach ensures OneLake security policies are consistently enforced, regardless of where users consume the data.
 
-#### Base pattern (public preview)
-
 :::image type="content" source="./media/best-practices-secure-data-in-onelake/base-pattern.png" alt-text="Diagram of the base pattern showing a core Workspace A that has security set. Users are then consuming that data through shortcuts in Workspaces B and C.":::
 
 - Create the primary workspace (workspace A):
 
-  - Create a primary workspace (workspace A) that contains the lakehouse and any other source data items.
+  - Create a primary workspace (workspace A) that contains the lakehouse or mirrored database and any other source data items.
   - Enable OneLake security on the lakehouse and define the required object-level and fine-grained (RLS/CLS) policies.
   - Grant users **Viewer** access to the workspace, and add users to the defined OneLake security roles.
   - Configure all SQL analytics endpoints in workspace A to run in user's identity mode so OneLake security policies are evaluated per user.
@@ -52,7 +50,7 @@ The core principle is to centralize data ownership and security enforcement in a
 
   - Create downstream workspaces to support data consumption, additional workloads, or domain-specific use cases.
   - In downstream lakehouses, create shortcuts that point back to data in workspace A. OneLake security policies defined at the source are enforced automatically so users can only access data they're authorized to see.
-  - Confirm SQL analytics endpoints in downstream workspaces are configured to use user's identity mode. During the public preview, create downstream workspaces and lakehouses by using the same owner as workspace A to get the most consistent experience. This setup gives the data owner the ability to enforce user's identity mode.
+  - Confirm SQL analytics endpoints in downstream workspaces are configured to use user's identity mode. It is recommend to also create downstream workspaces and lakehouses using the same owner as workspace A to get the most consistent experience. This setup gives the data owner the ability to enforce user's identity mode.
 
 ## Related content
 
