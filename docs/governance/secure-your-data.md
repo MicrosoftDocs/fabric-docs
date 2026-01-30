@@ -1,9 +1,9 @@
 ---
 title: Secure your data
 description: Get started with securing your data in Fabric through the secure tab in the OneLake catalog.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+author: msmimart
+ms.author: mimart
+ms.reviewer: eloldag, aamerril
 ms.topic: concept-article
 ms.custom:
 ms.date: 09/05/2025
@@ -12,49 +12,60 @@ ms.date: 09/05/2025
 
 # Secure your Fabric data
 
-OneLake catalog's secure tab helps you view, monitor, and configure security roles across workspaces and items in Microsoft Fabric. It centralizes in one place:
+Use the OneLake catalog's **Secure** tab to view, monitor, and configure security roles across workspaces and items in Microsoft Fabric. It centralizes in one place:
 
 - A view of workspace roles and permissions, for auditing access to workspaces and data.
 
 - A view of OneLake security roles across workspaces and item types. Admins can create, edit, or delete OneLake security roles from a single location.
 
-The secure tab shows you the items that are relevant to you, including which workspaces you have access to. Admin and Member roles are required in a workspace to see data for that workspace. Contributors or Viewers in a workspace will only see information about their own access.
+The **Secure** tab shows you the items that are relevant to you, including which workspaces you have access to. Admin and Member roles are required in a workspace to see data for that workspace. Contributors or Viewers in a workspace only see information about their own access.
 
 ## View users
 
-The view users page allows you to see all users with access to selected workspaces, including a summary of their assigned roles.
+On the **View users** page, you can see all of the users with access to selected workspaces, including a summary of their assigned roles.
 
 1. To get started, choose the workspaces from the **Workspaces** control on the left.
-2. Each row represents a unique user, group, or application and shows a count of the roles they have in the selected workspaces.
-3. Use the **All user by** filter at the top to limit your selection to specific types of user, workspace roles, or workspaces.
-4. The **search** control can be used to find a specific user or group and verify their permissions.
+1. Each row represents a unique user, group, or application and shows a count of the roles they have in the selected workspaces.
+1. Use the **All users by** filter at the top to limit your selection to specific types of user, workspace roles, or workspaces.
+1. Use the **search** control to find a specific user or group and verify their permissions.
 
 ## View security roles
 
-The view security roles page gives a view of all the OneLake security roles across the selected workspaces. Each item with OneLake security roles in those workspaces will be shown in the list. You can view existing roles, edit roles, delete roles, or create new ones from this page.
+On the **View security roles** page, you can see all of the OneLake security roles across the selected workspaces. Each item that has a OneLake security role in those workspaces appears in the list. You can view existing roles, edit roles, delete roles, or create new ones from this page.
 
 ### View and edit an existing role
 
-1. Open the **View security roles** page in the OneLake catalog.
-2. Choose the workspaces from the **Workspaces** control on the left.
-3. Each row represents a single OneLake security role that is inside a Fabric item. You can view the item name, the **Role name**, **Role type** (only OneLake security roles are supported today), the **Permission** granted by the role, the workspace where the item lives under **Location**, and the owner of the item in **Data owner**.
-4. Select a role, to open the OneLake security role management experience.
-5. You can view the data and role members from this experience. The role data and membership can also be edited here as well. For more details on viewing and editing a OneLake security role, see the information on [editing a OneLake security role](../onelake/security/get-started-onelake-security.md#edit-a-role)
+1. Open **View security roles** in the OneLake catalog.
+
+1. Choose the workspaces from the **Workspaces** control on the left.
+
+1. Each row represents a single OneLake security role that's inside a Fabric item. You can view the following details for a role:
+
+   - **Item** name
+   - **Role name**
+   - **Role type** - only OneLake security roles are supported
+   - **Permission** - the permission granted by the role
+   - **Location** - the workspace where the item lives
+   - **Data owner** - the owner of the item
+
+1. Select a role to open the OneLake security role management experience.
+
+1. You can view and edit the **Data in role** and **Members in role** in the role details page. For more information about viewing and editing a OneLake security role, see [Create and manage OneLake security roles](../onelake/security/create-manage-roles.md).
 
 ### Delete a role
 
-1. Open the **View security roles** page in the OneLake catalog.
-2. Choose the workspaces from the **Workspaces** control on the left.
-3. Select a role, to open the OneLake security role management experience.
-4. In the control bar at the top, select **Delete**.
-5. You will be prompted to confirm the deletion. Select **Delete** to confirm the deletion, or **Cancel** to return back to the previous screen.
+1. Open **View security roles** in the OneLake catalog.
+1. Choose the workspaces from the **Workspaces** control on the left.
+1. Select a role to open the OneLake security role management experience.
+1. In the control bar at the top, select **Delete**.
+1. Select **Delete** to confirm the deletion, or **Cancel** to return to the previous screen.
 
 ### Create a new role
 
-1. Open the **View security roles** page in the OneLake catalog.
-2. Choose the workspaces from the **Workspaces** control on the left.
-3. Select a role, to open the OneLake security role management experience.
-4. The control bar at the top, you can create a new role with **+ New role** or you can **Duplicate** an existing role. The role will be created in the item where the currently selected role lives. To change to a different item, select a OneLake security role for that item.
+1. Open **View security roles** in the OneLake catalog.
+1. Choose the workspaces from the **Workspaces** control on the left.
+1. Select a role to open the OneLake security role management experience.
+1. Use the control bar at the top to create a new role with **New role** or **Duplicate** an existing role. The role is created in the item where the currently selected role lives. To change to a different item, select a OneLake security role for that item.
 
 ## Related content
 

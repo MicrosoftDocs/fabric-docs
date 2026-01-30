@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/22/2025
 ---
 
 # Get Azure Blob Storage events into Real-Time hub
@@ -82,7 +82,7 @@ You can create streams for Azure Blob Storage events in Real-Time hub using one 
 ## View stream from the Real-Time hub page
 Select **Real-Time hub** on the left navigation menu, and confirm that you see the stream you created. Refresh the page if you don't see it. 
 
-:::image type="content" source="./media/get-azure-blob-storage-events/verify-data-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/get-azure-blob-storage-events/verify-data-stream.png":::
+:::image type="content" source="./media/get-azure-blob-storage-events/azure-blob-stream.png" alt-text="Screenshot that shows the All data streams page with the generated stream." lightbox="./media/get-azure-blob-storage-events/azure-blob-stream.png":::
 
 For detailed steps, see [View details of data streams in Fabric Real-Time hub](view-data-stream-details.md).
 

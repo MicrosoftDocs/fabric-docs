@@ -5,14 +5,12 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 01/14/2026
 ---
 
 # Add Confluent Cloud Kafka as source in Real-Time hub
 
 This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub.
-
-
 
 ## Prerequisites
 

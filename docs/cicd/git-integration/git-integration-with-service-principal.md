@@ -9,9 +9,9 @@ ms.date: 12/15/2025
 #customer intent: As a developer, I want to learn how to integrate Git with a service principal in Microsoft Fabric, so that I can automate CI/CD workflows.
 ---
 
-# Azure DevOps - Git Integration with service principal
+# Manual git integration with a service principal in Azure DevOps
 
-This article provides a step-by-step guide on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps. This integration allows the Fabric user to perform git operation using a service principal. To automate Git Integration by using APIs with a service principal see [Automate Git integration by using APIs](git-automation.md)
+This article provides manual steps on how to set up a service principal for integrating Microsoft Fabric with Azure DevOps using user identity. To learn how Azure DevOps service principal integration is working, check out our document - [Automate git integration with a service principal in Azure DevOps](automate-git-integration-with-service-principal.md).
 
 ## Prerequisites
 
@@ -152,6 +152,7 @@ When you need to update your service principal details, for example, update serv
 ## Related content
 
 - [Automate Git integration by using APIs](git-automation.md)
+- [Automate git integration with a service principal in Azure DevOps](automate-git-integration-with-service-principal.md).
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)
 - [Git integration best practices](../best-practices-cicd.md)

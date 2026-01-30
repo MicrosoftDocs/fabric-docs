@@ -38,10 +38,7 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab.
 
-Under **Connection**, select the authentication method for the notebook run and provide the required credentials or identity configuration based on your selection:
-
-- **Service Principal (SPN)** – Recommended for production scenarios to ensure secure, automated execution without relying on user credentials.
-- **Workspace Identity (WI)** – Ideal for managed environments where centralized identity governance is required.
+Under **Connection**, select the authentication method for the notebook run and provide the required credentials.
 
 Select an existing notebook from the **Notebook** dropdown, and optionally specify any parameters to pass to the notebook.
 
@@ -63,6 +60,9 @@ In order to minimize the amount of time it takes to execute your notebook job, y
 Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/notebook-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+
+## Known issues
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

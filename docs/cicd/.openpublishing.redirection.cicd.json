@@ -19,6 +19,9 @@
             "source_path_from_root": "/docs/cicd/deployment-pipelines/manage-deployment-pipelines.md",
             "redirect_url": "/fabric/cicd/manage-deployment",
             "redirect_document_id": false
-        }       
+
+            
+        }
+       
     ]
 }

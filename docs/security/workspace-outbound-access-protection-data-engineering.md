@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 11/26/2025
+ms.date: 12/01/2025
 
 #customer intent: As a data engineer, I want to control and secure outbound network access from my Fabric workspace so that I can prevent unauthorized data exfiltration and comply with organizational security policies.
 
@@ -23,7 +23,7 @@ When outbound access protection is enabled, all outbound connections from the wo
 
 ## Configuring outbound access protection for data engineering
 
-To configure outbound access protection for data engineering:
+You can only create an allow list using managed private endpoints; data connection rules aren't supported for data engineering workloads. To configure outbound access protection for data engineering:
 
 1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
 
@@ -263,7 +263,34 @@ Periodic monitoring and updates are required to keep the mirror in sync. The fol
    %pip install pytest --index-url https://<storage-account-name>.z5.web.core.windows.net/simple
 ```
 
-## Considerations and limitations
+
+## Lakehouse schemas and outbound access protection
+
+Lakehouses that use schemas are fully supported when accessed from items within the same workspace, including when outbound access protection is enabled.
+
+In **cross-workspace access scenarios**, behavior differs depending on how the Lakehouse is accessed when **outbound access protection** is enabled on the consuming workspace.
+
+### Supported scenarios
+
+- Producer and consumer items are in the **same workspace**
+- The Lakehouse uses schemas
+- Access is performed using Spark DataFrame–based APIs
+
+In these scenarios, Lakehouse schema operations function as expected.
+
+### Cross-workspace behavior with outbound access protection enabled
+
+When outbound access protection is enabled on a workspace and a **schema-enabled Lakehouse is accessed from a different workspace**, the following behavior applies:
+
+- ✅ Access using **Spark DataFrame APIs** (for example, reading tables into DataFrames) continues to work
+- ❌ Access using **Spark SQL** statements may fail.
+
+> For example, `spark.read.table()` succeeds, while `SELECT * FROM table` may fail in cross-workspace scenarios when outbound access protection is enabled.
+
+
+### Understanding the behavior of file paths
+
+When working with data in your Lakehouse using a Fabric notebook, you can reference files in two primary ways:
 
 * If your workspace has outbound access protection enabled, it uses managed virtual networks (VNETs) for Spark. In this case, Starter pools are disabled, and you should expect Spark sessions to take 3 to 5 minutes to start.
 

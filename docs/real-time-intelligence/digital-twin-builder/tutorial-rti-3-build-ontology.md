@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Build the ontology'
+title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 3: Build the ontology'
 description: Build an ontology in digital twin builder (preview) by creating entity types, mapping data, and creating relationship types.
 author: baanders
 ms.author: baanders
@@ -66,8 +66,12 @@ Next, map some non-timeseries data to the Bus entity type. These fields are stat
     :::image type="content" source="media/tutorial-rti/bus-map-properties-non-time-1.png" alt-text="Screenshot of the unmapped display name and adding an entity type property.":::
 
     Map the following entity type properties:
-    - Select **TripId** from the dropdown menu in the left column, and edit the box across from it in the right column to read *TripId_static*. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
-    - Select **StopCode** from the dropdown menu in the left column, and edit the box across from it in the right column to read *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
+    - Select **TripId** from the dropdown menu in the left column. **Edit the box across from it in the right column so that its property name is _TripId_static_**. This action creates a property on the bus entity type named *TripId_static*, which gets its value from the **TripId** property in the source data.
+
+        >[!IMPORTANT]
+        > Make sure to edit the property name as described, to avoid conflicts later while mapping time series data to the *TripId* property.
+
+    - Select **StopCode** from the dropdown menu in the left column. Edit the box across from it in the right column so that its property name is *StopCode_static*. This action creates a property on the bus entity type named *StopCode_static*, which gets its value from the **StopCode** property in the source data.
    
     Check the box to acknowledge that properties can't be renamed or removed, and select **Apply**.
 
@@ -209,7 +213,7 @@ As a final step, confirm that all your data mappings ran successfully. Each mapp
 1. If any of the operations failed, check the box next to its name and select **Run** to rerun it.
 
 >[!TIP]
-> For further troubleshooting of failed mapping operations, review the job logs in Monitor hub as described in [Troubleshooting digital twin builder (preview)](resources-troubleshooting.md#get-logs-using-monitor-hub).
+> For further troubleshooting of failed mapping operations, see [Troubleshooting digital twin builder (preview)](resources-troubleshooting.md#troubleshoot-operation-failures).
 
 Wait for all mappings to complete before you move on to the next part of the tutorial. In the next part, you project the ontology that you mapped to an eventhouse, to support further data analysis and visualization.
 

@@ -3,42 +3,51 @@ title: Feature usage and adoption report
 description: Learn how to use the Microsoft feature usage and adoption report.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 03/06/2025
+ms.date: 12/17/2025
 ---
 
 # Feature usage and adoption report (preview)
 
-The feature usage and adoption report is aimed at admins who want to understand how Fabric features are utilized across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action when needed.
+The Feature Usage and Adoption Report is aimed at admins who want to understand how Fabric features are utilized across the organization. As an admin, the report insights can help you govern your Fabric tenant and take action when needed.
 
 You can access the report from the [Admin monitoring](monitoring-workspace.md) workspace. To access the workspace, you must be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
 
 You can also have an admin share the report or semantic model directly with you. With build permissions to the semantic model, users can design a custom report that relies on the same underlying data.
 
 ## Navigation
+The report is designed for admins to analyze Fabric activity in various ways. You can filter activity data across all pages using the date range slicer to focus on a specific time period within the last 30 days. Additionally, the filter pane lets you refine your analysis based on capacity, user, item-related information, and other activity characteristics.
 
-The report is designed for admins to analyze Fabric activity in various ways. Use the date range slicer to filter activity data across all pages for a specific range of time over the last 30 days.
+The following image shows an example layout. Your view is different based on activity in your tenant.
 
-Additionally, use the filter pane to filter activity data based on the desired analysis. Filters are available across different characteristics of activity, including capacity, user, and item-related info.
-    
+:::image type="content" source="media/feature-usage-adoption/feature-usage-adoption-report.png" alt-text="Screenshot showing the elements of the Feature Usage and Adoption report in Fabric." lightbox="media/feature-usage-adoption/feature-usage-adoption-report.png":::
+
+The report consists of these main sections:
+
+1. **Pages** - Navigate between report pages using this section. You can also use the tabs in the upper right of the report to move between report pages and details pages.
+1. **Filters** - Specify date ranges and apply filters to analyze Fabric activity based on different characteristics.
+1. **Report data and visuals** - Analyze Fabric activity across your organization. Right-click visual elements and select **Drill through** to navigate to details pages for deeper insights.
+
+For detailed information and examples of how to use each report page, see the following sections.
+   
 ## Report pages
 
 The report is composed of five pages:
 
-* **Activity Overview** - Provides a high-level overview of Fabric activity across the organization
+* **Overview** - Provides a high-level overview of Fabric activity across the organization. This page is one of the main entry points to the report.
 
-* **Analysis** - Visualizes activity across different activity dimensions
+* **Analysis** - Visualizes activity across different activity dimensions.
 
-* **Activity Details** - Shows detailed information on specific activity scenarios
+* **Activity Details** - Display this page by drilling through from the Overview or Analysis pages. It shows detailed information on specific activity scenarios.
 
-* **Inventory** - Lists all Fabric items in your tenant
+* **Inventory** - Lists all Fabric items in your tenant.
  
-* **Item Details page** - Shows detailed information on specific inventory usage scenarios
+* **Item Details page** - Display this page by drilling through from the Inventory page. It shows detailed information on specific inventory usage scenarios.
 
-### Activity Overview page
+### Overview page
 
-The Activity Overview page helps you identify:
+The Overview page helps you identify:
 
 * Daily activities and user trends
 
@@ -48,7 +57,7 @@ The Activity Overview page helps you identify:
 
 #### Example
 
-In a large retail organization, you might use the [Activity Overview](#activity-overview-page) page to check which capacities were most utilized in a given month. Using the date range slicer to filter to the month of December, you notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why this is happening, you then go to the [Analysis](#analysis-page) page.
+In a large retail organization, you might use the [Overview](#overview-page) page to check which capacities were most utilized in a given month. You use the date range slicer to filter to the month of December. You notice the *Sales and Marketing* capacity had nearly 1,000 activities while other capacities had under 200. To understand why, you then go to the [Analysis](#analysis-page) page.
 
 ### Analysis page
 
@@ -60,7 +69,7 @@ On the Analysis page, you can view:
 
 #### Example
 
-Continuing the example from the [Activity Overview](#activity-overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
+Continuing the example from the [Overview](#overview-page) page, you use the Analysis page to investigate why the *Sales and Marketing* capacity had more activity in December than all other capacities. The decomposition tree reveals the most popular activity on the *Sales and Marketing* capacity was *ViewReport*, which signifies the viewing of a Power BI report. You then drill through to the [Activity Details](#activity-details-page) page to identify which reports were most frequently viewed that month on the *Sales and Marketing* capacity.
 
 To drill through to the [Activity Details](#activity-details-page) page:
 
@@ -72,7 +81,7 @@ To drill through to the [Activity Details](#activity-details-page) page:
 
 ### Activity Details page
 
-The Activity Details page shows detailed information on specific activity scenarios. Users can access this page by drilling through from the [Activity Overview](#activity-overview-page) or [Analysis](#analysis-page) pages to display the following activity details:
+The Activity Details page shows detailed information on specific activity scenarios. Users can access this page by drilling through from the [Overview](#overview-page) or [Analysis](#analysis-page) pages to display the following activity details:
 
 * **Creation time** - The time the activity was registered
 
@@ -91,8 +100,7 @@ The Activity Details page shows detailed information on specific activity scenar
 * **Total of activities** - The number of times the activity took place
 
 #### Example
-
-From the [Analysis](#analysis-page) page, you drill through on frequently conducted *ViewReport* actions on the *Sales and Marketing* capacity in December. Using info from the Activity Details page, you discover that a new report titled "Unclosed Deals" was heavily viewed, prompting further investigation to understand the report's impact on your organization's sales strategy.
+From the [Analysis](#analysis-page) page, you drill through on frequently conducted *ViewReport* actions on the *Sales and Marketing* capacity in December. Using info from the Activity Details page, you discover that a new report titled "Unclosed Deals" was heavily viewed, prompting further investigation to understand the report's relevance to your organization's sales strategy.
 
 ### Inventory page
 
@@ -102,7 +110,7 @@ The Inventory page displays all items in your Fabric tenant and how they're util
 
 * **Workspace name** - The name of the workspace where the items are located
 
-* **Activity status** - Indicates whether the item has been recently utilized
+* **Activity status** - Indicates whether the item was recently utilized
     * *Active* - At least one audit log activity was generated related to the item over the last 30 days
     * *Inactive* - No audit log activity was generated related to the item over the last 30 days
 
@@ -145,7 +153,7 @@ Measure calculations consider filter context, so measure values change as you ap
 | Measure name    | Description |
 | -------- | ------- |
 | Active capacities  | The number of capacities with audit activity.   |
-| Active users | The number of users who have generated audit activity.     |
+| Active users | The number of users who generated audit activity.     |
 | Active workspaces    | The number of workspaces with audit activity.    |
 | Activities  | The number of audit activities generated.    |
 | Items | The count of items displayed.    |
@@ -158,19 +166,19 @@ This section lists the report's considerations and limitations.
 
 ### Display
 
-* Condensing the zoom slider on a date trend visual to a single day displays a misleading time range, as activities are aggregated by day and not by time.
+* Condensing the zoom slider on a date trend visual to a single day displays a misleading time range, as activities aggregate by day and not by time.
 
 * Using the *next level in the hierarchy* option on the *Most active Capacities* visual doesn't update the dynamic visual title.
 
-* Items with the same name, or items deleted and recreated with the same name, might reflect as one item in certain visuals. To count the total number of unique items, use item IDs or the *Total items* measure.
+* Items with the same name, or items deleted and recreated with the same name, might reflect as one item in certain visuals. To count the total number of unique items, use item identifiers or the *Total items* measure.
 
-* *Info Not Available* represents data that isn't available, which can happen when an audit event doesn't have complete information, or when that information isn't applicable for the event.
+* *Info Not Available* represents data that isn't available. Data might not be available when an audit event doesn't have complete information, or when that information isn't applicable for the event.
 
-* The report retains information for 28 days, including the activities and metadata of deleted capacities, workspaces, and other items.
+* The report reflects your tenant's audit activity on a rolling 30 day basis, along with the latest snapshot of your tenant's inventory.
 
-* Deleted workspaces with extended retention don't appear in the report after 28 days. They can be seen in the admin portal until they're permanently deleted.
+* Deleted inventory (including workspaces with extended retention) doesn't appear in the report after 28 days post deletion. They can be seen in the admin portal until they're permanently deleted.
 
-* Items created and deleted within a 24 hour period may have incomplete information.
+* Items created and deleted within a 24 hour period could have incomplete information.
   
 ### Pro and Premium Per User (PPU)
 

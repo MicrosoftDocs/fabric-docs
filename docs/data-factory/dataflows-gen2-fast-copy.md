@@ -2,7 +2,7 @@
 title: Fast copy in Dataflow Gen2
 description: Learn about the fast copy feature in Dataflow Gen2 in Data Factory for Microsoft Fabric.
 author: dearandyxu
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/15/2025
 ms.author: yexu
 ms.custom: dataflows, sfi-image-nochange

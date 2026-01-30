@@ -1,10 +1,10 @@
 items:
-- name: Lifecycle management documentation
+- name: Application lifecycle management documentation
   href: index.yml
-- name: What is lifecycle management? 
+- name: What is application lifecycle management? 
   href: cicd-overview.md
 
-- name: "Tutorial: End to end lifecycle management"
+- name: "Tutorial: End to end application lifecycle management"
   href: cicd-tutorial.md
 - name: "CI/CD workflow options in Fabric"
   href: manage-deployment.md
@@ -34,8 +34,12 @@ items:
     items:
     - name: Automate Git integration using REST APIs
       href: git-integration/git-automation.md
-    - name: Git integration with a service principal in Azure DevOps
+    - name: Automate git integration with a service principal in Azure DevOps
+      href: git-integration/automate-git-integration-with-service-principal.md
+    - name: Manual git integration with a service principal in Azure DevOps
       href: git-integration/git-integration-with-service-principal.md
+  - name: GitHub data residency support
+    href: github-data-residency-support.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
@@ -70,8 +74,13 @@ items:
     href: variable-library/get-started-variable-libraries.md
   - name: Concepts
     items:
-    - name: Variable names and types
+    - name: Value-sets
+      href: variable-library/value-sets.md
+    - name: Variables Types
       href: variable-library/variable-types.md
+      items:
+      - name: Item references
+        href: variable-library/item-reference-variable-type.md
     - name: Permissions
       href: variable-library/variable-library-permissions.md
     - name: "CI/CD and Variable libraries"

@@ -29,26 +29,6 @@
             "source_path_from_root": "/docs/security/workspace-outbound-access-protection-scenarios.md",
             "redirect_url": "/fabric/security/workspace-outbound-access-protection-onelake",
             "redirect_document_id": false
-        },
-        {
-            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-data-factory.md",
-            "redirect_url": "/fabric/security/workspace-outbound-access-protection-overview",
-            "redirect_document_id": false
-        },
-        {
-            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-allow-list-connector.md",
-            "redirect_url": "/fabric/security/workspace-outbound-access-protection-overview",
-            "redirect_document_id": false
-        },
-        {
-            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-mirrored-databases.md",
-            "redirect_url": "/fabric/security/workspace-outbound-access-protection-overview",
-            "redirect_document_id": false
-        },
-        {
-            "source_path_from_root": "/docs/security/workspace-outbound-access-protection-onelake.md",
-            "redirect_url": "/fabric/security/workspace-outbound-access-protection-overview",
-            "redirect_document_id": false
         }
         ]
 }

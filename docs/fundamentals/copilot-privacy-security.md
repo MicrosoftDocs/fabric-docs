@@ -6,7 +6,7 @@ ms.author: sngun
 ms.reviewer: guptamaya, maghan
 ms.date: 06/25/2025
 ms.update-cycle: 180-days
-ms.topic: conceptual
+ms.topic: concept-article
 ms.collection:
   - ce-skilling-ai-copilot
 ms.custom:

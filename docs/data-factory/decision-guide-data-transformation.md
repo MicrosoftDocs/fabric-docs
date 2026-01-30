@@ -1,15 +1,15 @@
 ---
-title: "Microsoft Fabric Decision Guide: Choose a data transformation strategy"
+title: "Microsoft Fabric Decision Guide: Choose a dataflow strategy"
 description: "Identify the best strategy for your Microsoft Fabric data transformation."
 author: KrishnakumarRukmangathan
 ms.author: krirukm
 ms.reviewer: whhender
 ms.date: 11/18/2025
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ---
 
-# Microsoft Fabric decision guide: Choose a data transformation strategy
+# Microsoft Fabric decision guide: Choose a dataflow strategy
 
 Microsoft Fabric Dataflows Gen2 offers multiple ways to ingest, transform, and load data efficiently. These methods help you balance **performance**, **scalability**, and **cost**.
 

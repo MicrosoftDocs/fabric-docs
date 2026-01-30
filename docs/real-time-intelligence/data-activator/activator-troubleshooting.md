@@ -1,8 +1,6 @@
 ---
 title: Troubleshooting errors in Activator
 description: Learn the meaning of errors in Activator, how to fix them, and troubleshoot common issues in this comprehensive troubleshooting guide
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 07/17/2025

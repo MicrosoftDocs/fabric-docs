@@ -59,6 +59,7 @@ To set up the Office 365 Outlook activity:
 ## Known limitations
 
 - The Outlook activity will be inactive when using CI/CD.
+- The Outlook activity does not support WI or SPN.
 
 ## Related content
 

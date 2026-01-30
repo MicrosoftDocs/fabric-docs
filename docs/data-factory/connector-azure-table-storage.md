@@ -4,7 +4,7 @@ description: This article provides information about how to create an Azure Tabl
 author: whhender
 ms.author: whhender
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 12/29/2025
 ms.custom:
   - template-how-to
   - connectors
@@ -12,7 +12,7 @@ ms.custom:
 
 # Set up your Azure Table Storage connection
 
-This article outlines the steps to create an Azure Table Storage connection.
+This article outlines the steps to create an Azure Table Storage connection in Microsoft Fabric.
 
 ## Supported authentication types
 
@@ -24,10 +24,12 @@ The Azure Table Storage connector supports the following authentication types fo
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Table Storage. The following links provide the specific Power Query connector information you need to connect to Azure Table Storage in Dataflow Gen2:
+You can connect Dataflow Gen2 to Azure Table Storage in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Azure Table Storage connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- To learn where to get a copy of your account key, go to [Copy your account key for Azure Table Storage](/power-query/connectors/azure-table-storage#copy-your-account-key-for-azure-table-storage).
-- To connect to the Azure Table Storage connector from Power Query, go to [Connect to Azure Table Storage from Power Query Online](/power-query/connectors/azure-table-storage#connect-to-azure-table-storage-from-power-query-online).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Copy your account key for Azure Table Storage](/power-query/connectors/azure-table-storage#copy-your-account-key-for-azure-table-storage).
+1. [Connect to Azure Table Storage (from Power Query online)](/power-query/connectors/azure-table-storage#connect-to-azure-table-storage-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+## More information
+
+- [Azure table storage connector limitations](/power-query/connectors/azure-table-storage#limitations)

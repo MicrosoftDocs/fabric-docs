@@ -91,4 +91,4 @@ No problem—just select Unmount to undo the change instantly.
 
 ## Related content
 
-[Migration considerations from ADF to Data Factory in Fabric](migrate-from-azure-data-factory.md)
+[Migration considerations from ADF to Data Factory in Fabric](migrate-planning-azure-data-factory.md)

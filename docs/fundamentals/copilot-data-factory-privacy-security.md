@@ -5,7 +5,7 @@ author: snehagunda
 ms.author: sngun
 ms.reviewer: 'guptamaya'
 ms.custom:
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 06/02/2024
 ms.update-cycle: 180-days
 no-loc: [Copilot]
