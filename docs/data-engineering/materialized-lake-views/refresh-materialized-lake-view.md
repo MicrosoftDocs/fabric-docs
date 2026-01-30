@@ -128,6 +128,19 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 > - If your workspace name contains spaces, enclose it in backticks: `` `My Workspace`.lakehouse.schema.view_name ``
 > - Refreshing a materialized lake view that uses non-delta tables as its source initiates a full refresh.
 
+### Determine the refresh policy 
+
+To determine the refresh policy under optimal refresh mode, you can query the sys_dq_metrics table:
+
+```sql
+SELECT 
+    MLVName,
+    RefreshPolicy 
+FROM  
+    dbo.sys_dq_metrics 
+WHERE
+    MLVName = '<materialized_lake_view_name>' 
+```
 
 ## Related articles
 
