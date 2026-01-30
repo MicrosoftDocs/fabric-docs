@@ -160,5 +160,4 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 
 ## Related content
 
-- Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
 - [What's new in the latest OneLake file explorer?](onelake-file-explorer-release-notes.md)
