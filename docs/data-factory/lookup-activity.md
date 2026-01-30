@@ -6,7 +6,7 @@ ms.author: whhender
 author: whhender
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 12/18/2024
+ms.date: 01/20/2026
 ---
 
 # Use the Lookup activity to look up data from a data source
@@ -56,7 +56,9 @@ The example in the previous image shows a blob storage connection, but each conn
 > [!NOTE]
 > When you use query or stored procedure to look up data, make sure to return one and exact one result set. Otherwise, Lookup activity fails.
 
-Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be used.
+The following data sources are supported for Lookup activity.
+
+[!INCLUDE [data-factory-v2-supported-data-stores](includes/supported-data-stores-for-lookup-activity.md)]
 
 ## Save and run or schedule the pipeline
 

@@ -36,6 +36,7 @@ Customer-managed keys are currently supported for the following Fabric items:
   * Pipeline
   * Dataflow
   * Industry solutions
+  * Mirrored Database
   * SQL Database (preview)
 
 This feature can't be enabled for a workspace that contains unsupported items. When customer-managed key encryption for a Fabric workspace is enabled, only supported items can be created in that workspace. To use unsupported items, create them in a different workspace that does not have this feature enabled. 
