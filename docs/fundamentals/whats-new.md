@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sngun
-ms.date: 01/06/2026
+ms.date: 01/29/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -140,6 +140,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**Warehouse source control (Preview)**|Using [Source control with Warehouse (preview)](../data-warehouse/source-control.md), you can manage development and deployment of versioned warehouse objects. You can use [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/). For more information on warehouse source control, see [CI/CD with Warehouses in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/ci-cd-with-warehouses-in-microsoft-fabric/).|
 |**Warehouse SQL Audit Logs**|[SQL Audit Logs](../data-warehouse/sql-audit-logs.md) in Fabric Data Warehouse provide a comprehensive and immutable record of all database activities, capturing critical details such as the event timestamp, the user or process that triggered the action, and the executed T-SQL statements. For more information, see [Introducing SQL Audit Logs for Fabric Data Warehouse](https://blog.fabric.microsoft.com/blog/introducing-sql-audit-logs-for-fabric-datawarehouse?ft=All).|
 |**Workspace-level workload assignment (Preview)**|[Workspace admins can now add additional workloads directly to their workspaces](https://blog.fabric.microsoft.com/blog/new-in-microsoft-fabric-empowering-workspace-admins-with-direct-workload-assignment?ft=All), eliminating the need for tenant or capacity-level setup. In the [Workloads Hub](https://app.fabric.microsoft.com/workloadhub), admins can [add workloads directly to a workspace](../workload-development-kit/more-workloads-add.md).|
+| **Workspace IP firewall rules (Preview)** | [Workspace IP firewall rules](https://blog.fabric.microsoft.com/en-us/blog/introducing-workspace-level-ip-firewall-rules-in-microsoft-fabric-preview?ft=All) let workspace admins define an allow list of public IP addresses or IP ranges that can access a Fabric workspace, helping limit inbound access to approved network locations. For more information, see [Protect workspaces by using IP firewall rules](/fabric/security/security-workspace-level-firewall-overview).
 |**Workspace monitoring (Preview)**|[Workspace monitoring](workspace-monitoring-overview.md) is a Microsoft Fabric database that collects data from a range of Fabric items in your workspace, and lets users access and analyze logs and metrics. For more about this feature, see [Announcing preview of workspace monitoring](https://blog.fabric.microsoft.com/blog/announcing-public-preview-of-workspace-monitoring?ft=All).|
 
 ## Generally available features
