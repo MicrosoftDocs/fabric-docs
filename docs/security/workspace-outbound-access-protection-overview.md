@@ -153,7 +153,7 @@ The following table summarizes the level of granularity supported by different c
 
 ## Tenant admin API for workspace network policies
 
-Fabric administrators can monitor and audit the network communication policies configured across workspaces in their tenant using the **Workspaces - List Networking Communication Policies** admin API. This API provides visibility into which workspaces have inbound or outbound access protection enabled and what specific policies are configured. The caller must be a Fabric administrator or authenticate using a service principal, and the API requires the `Tenant.Read.All` or `Tenant.ReadWrite.All` permissions.
+Fabric administrators can monitor and audit the network communication policies configured across workspaces in their tenant using the **Workspaces - List Networking Communication Policies** admin API. This API provides visibility into which workspaces have inbound or outbound access protection enabled and what specific policies are configured. The caller must be a Fabric administrator or authenticate using a service principal, and the API requires the `Tenant.Read.All` or `Tenant.ReadWrite.All` permissions. For detailed API documentation including request format, response schema, and examples, see [Workspaces - List Networking Communication Policies](/rest/api/fabric/admin/workspaces/list-networking-communication-policies).
 
 ### Key capabilities
 
@@ -175,8 +175,6 @@ For each workspace with access protection enabled, the API returns:
   * Connection rules with allowed endpoints or workspaces
   * Gateway rules with allowed gateways
   * Git access rules
-
-For detailed API documentation including request format, response schema, and examples, see [Workspaces - List Networking Communication Policies](/rest/api/fabric/admin/workspaces/list-networking-communication-policies).
 
 ## Next steps
 
