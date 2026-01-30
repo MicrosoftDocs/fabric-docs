@@ -164,17 +164,20 @@ The following example shows the conflict detection output, their associated ques
 When you run the validator on your example queries, it generates three key scores for each example: **Clarity**, **Relatedness**, and **Mapping**. These scores are derived from how well your natural language questions and SQL queries align with best practices.  
 
 - **Clarity**  
-  Measures whether the natural language question is **clear and unambiguous**. Questions should be specific, include necessary metrics, timeframes, and filters, and avoid vague or multi-intent phrasing.  
+  Measures whether the natural language question is **clear and unambiguous**. Questions should be specific, include necessary metrics, timeframes, and filters, and avoid vague or multi-intent phrasing.
+
   *Example – Good:* “Total revenue by region for 2024.”  
   *Example – Needs Improvement:* “Show performance.”  
 
 - **Relatedness**  
-  Evaluates how closely the SQL query matches the **intent of the natural language question**. The SQL should return the correct metric, apply the proper filters, and match the requested granularity.  
+  Evaluates how closely the SQL query matches the **intent of the natural language question**. The SQL should return the correct metric, apply the proper filters, and match the requested granularity.
+
   *Example – Good:* A question asks for **count of customers in March 2025** → SQL counts customers with `WHERE month='2025-03'`.  
   *Example – Needs Improvement:* A question asks for **count**, but the SQL returns **SUM(revenue)** or filters a different period.  
 
 - **Mapping**  
   Checks whether **all literals in the natural language question appear in the SQL query**. Every number, date, or category mentioned in the question should be explicitly represented in the SQL.
+
   *Example – Good:* “Orders over 100 in March 2025 for ‘West’” → SQL includes `> 100`, `2025-03`, and `'West'`.  
   *Example – Needs Improvement:* SQL is missing one of those literals (for example, no month filter).  
 
