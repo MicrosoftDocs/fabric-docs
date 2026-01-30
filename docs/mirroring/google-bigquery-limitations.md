@@ -13,7 +13,7 @@ ms.topic: concept-article
 This guide helps you learn more about the existing limitations in your mirrored BigQuery in Microsoft Fabric.
 
 > [!IMPORTANT]
-> We currently support Mirroring for Google BigQuery for on-premises Data Gateway (OPDG). Utilize version 3000.286.6 or greater
+> We currently support Mirroring for Google BigQuery for on-premises Data Gateway (OPDG). Utilize version 3000.286.6 or greater. VNET is also now supported.
 
 ## Database level limitations
 
@@ -23,7 +23,7 @@ When mirroring tables without primary keys, you can only perform insert-only cha
 
 If you're changing most the data in a large table, it's more efficient to stop and restart Mirroring. Inserting or updating billions of records can take a long time.
 
-Mirrored data typically reflects changes with a [10–15 minute delay due to BigQuery’s Change Data Capture (CDC) architecture](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes).
+Mirrored data typically reflects changes with a [10–15 minute delay due to BigQuery’s Change History capabilities](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes).
 If no changes are detected, the replication engine enters a backoff mode, increasing polling intervals up to 1 hour.
 
 ## Supported region limitations
@@ -41,14 +41,14 @@ We understand that some customers are hesitant to enable edit permissions for Mi
 
 ## Reseed Limitations 
 
-The CHANGES function, which enables change tracking in BigQuery tables using Google’s CDC technology, is subject to several important reseeding limitations that users should consider when implementing Mirroring solutions:  
+The CHANGES function, which enables change tracking in BigQuery tables using Google’s CDC change history technology, is subject to several important reseeding limitations that users should consider when implementing Mirroring solutions:  
 
 - Time Travel Limitation: The CHANGES function only returns data within the table’s configured time travel window. For standard tables, this is typically seven days but may be shorter if configured differently. Any changes outside this window are inaccessible.  
 - Timestamp Limitation: The change history time window for CHANGES TVF exceeds the maximum allowed time. The maximum allowed range between `start_timestamp` and `end_timestamp` is one day. This restricts batch processing of longer historical windows, and multiple queries may be required for broader coverage.  
 -Change History Limitation: The CHANGES function requires that change history tracking be enabled for the table prior to use. If it isn't enabled, delta changes can't be queried.  
 - Multi-statement Limitation: The CHANGES function can't be used inside multi-statement transactions. It also can't query tables that had multi-statement transactions committed in the requested time window.  
 
-To learn more, please reference [Google's BigQuery Changes Limitation Documentation](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes). 
+To learn more, please reference [Google's BigQuery Change History Limitation Documentation](https://cloud.google.com/bigquery/docs/reference/standard-sql/time-series-functions#changes). 
 
 
 ## Related content

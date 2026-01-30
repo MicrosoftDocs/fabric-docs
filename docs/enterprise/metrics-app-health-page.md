@@ -1,11 +1,9 @@
 ---
 title: Understand the metrics app health page (preview)
 description: Learn how to read the Microsoft Fabric Capacity metrics app's health page.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: how-to
+ms.topic: concept-article
 ms.custom:
-ms.date: 08/05/2025
+ms.date: 01/26/2026
 ---
 
 # Understand the metrics app Health page (preview)
@@ -84,21 +82,25 @@ The matrix includes the following fields:
 | **P95 background rejection**  | The 95th percentile value of the Background rejection. A higher value indicates a longer background rejections duration.|
 | **Usage variance**            | A larger value for this field indicates a capacity having wide variance in the amount of utilization, whereas low variance is indicative of a steady state utilization rate.|
 | **Optional columns**          | Count of operations having these statuses: Rejected, Failure, Canceled, Successful, Invalid, InProgress|
+| **Blocked workspaces**         | The number of blocked workspaces due to Workspace level Surge Protection within the time period (last 24 hours or 1 hour). |
+
 
 > [!NOTE]
 > For health status calculations, the actual values of interactive delay, interactive rejection, and background rejection are used, rather than their P95 (95th percentile) values.
+>
+> If a workspace is blocked but hasn't been blocked in the last 24 hours or last 1 hour, the blocked workspaces count doesn't count it on the Health page.
 
-## Navigate to Compute or Storage pages
+## Navigate to Compute, Storage or Workspace blocked detail pages
 
-Choose a specific capacity from the capacity breakdown table to navigate to **Compute** and **Storage** pages. This selection allows for a detailed examination and understanding of the compute and storage resources usage of the capacity. 
+Choose a specific capacity from the capacity breakdown table to navigate to **Compute**, **Storage** or **Workspace blocked details** pages. This selection allows for a detailed examination and understanding of the compute, storage resources usage of the capacity and details for blocked workspaces and affected users or requests.
 
 There are two ways to navigate to these pages: drilling through and direct navigation.
 
 - Drill through from the **Health** page:
-  - **Option 1**: Right-click a capacity row and choose **Drill through > Compute** or **Storage**.
+  - **Option 1**: Right-click a capacity row and choose **Drill through > Compute**, **Storage** or **Workspace blocked details**.
   - **Option 2**: Select a capacity from the **Capacity Breakdown** visual, then select the **Explore** button.
   
-  In both cases, the selected capacity is automatically passed as a filter.
+  In all cases, the selected capacity is automatically passed as a filter.
 
 - Direct navigation: Use the **Navigation** pane at the top of the page to go to the **Compute** or **Storage** page. Once there, manually select a capacity using the **Capacity name** slicer.
 

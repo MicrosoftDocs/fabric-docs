@@ -1,6 +1,6 @@
 ---
-title: Microsoft Fabric Variable Library Variable Types
-description: Understand how to use variable libraries and what variable types are allowed.
+title: Microsoft Fabric Variable Library variable types
+description: Understand how to use variable librarie's variables and what variable types are allowed.
 author: billmath
 ms.author: billmath
 ms.reviewer: Lee
@@ -8,36 +8,47 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 12/15/2025
+ms.date: 08/15/2024
 ms.search.form: Introduction to variable libraries, variable library types, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and which variable types exist, so that I can manage my content lifecycle.
 ---
 
-# Variable names and types 
+# Variable types in variable libraries
 
-A variable library item in Microsoft Fabric contains a list of variables and their default values. It can also contain other value sets that hold alternative values.
+A variable library in Microsoft Fabric is a specialized item that centralizes the definition and management of variables, enabling scalable and automated configuration across workspaces and items. 
 
+Variables within a variable library can be a basic or advanced types, and each variable is uniquely identified by its name within the library item.
+
+- **Basic** variable types in the Variable Library include simple, data types such as Boolean, DateTime (in ISO 8601 UTC format), Guid, Integer, Number, and String. These are straightforward values that can be directly assigned and used across different stages and environments. 
+- **Advanced** variable types are designed for more sophisticated use cases, such as referencing internal Fabric items or external connections. These include "item reference" types which store workspace and item IDs to point to specific Fabric items.
+
+## Supported types in variable libraries
+
+Variables within a variable library have the following supported variable types
+
+|TypeType|Category|Description|
+|-----|-----|-----|
+|Boolean|Basic|Represents true/false values.|
+|Integer|Basic|Whole numbers without decimals.|
+|Number|Basic|Numeric values, including decimals.|
+|String|Basic|Text values or sequences of characters.|
+|DateTime|Basic|Date and time represented as the ISO 8601 standard *yyyy-MM-ddTHH:mm:ss.xxxZ*, where:</br></li> *yyyy-MM-dd* is the four-digit year, followed by the two-digit month and two-digit day.</br></li>*T* separates the date and the time. </br></li>*HH:mm:ss.xxx* is the two-digit hour in 24-hour format, followed by the two-digit minute, two-digit second, and three-digit millisecond.</br></li>*Z* indicates that the time is in Coordinated Universal Time (UTC).|
+|Guid|Basic|Globally unique identifier used for distinct object identification.|
+|[Item reference](item-reference-variable-type.md)|Advanced|Used within the Fabric Variable Library to hold a reference to an existing Fabric item—such as a lakehouse, notebook, or data pipeline, by storing its workspace ID and item ID.|
+
+
+### Variable properties
 Each variable in the variable library has the following properties:
 
-- Name
-- Note (optional), up to 2,048 characters
-- Type
-- Default value set
-- Alternative value sets (optional)
+|Property|Description|
+|-----|-----|
+|Name|The unique identifier for the variable. Used to reference the variable in scripts or workflows.|
+|Note (optional)|A descriptive comment or annotation about the variable. Can include context, usage notes, or special instructions. Maximum length: 2,048 characters.|
+|Type|Defines the data type of the variable (e.g., string, integer, boolean, array). Determines how the value is interpreted and validated.|
+|Default value set|The initial value assigned to the variable when no other value is provided. Ensures consistent behavior in workflows. The default value set cannot be renamed.|
+|[Alternative value sets (optional)](value-sets.md)|Additional predefined sets of values that can be applied under specific conditions or scenarios. Useful for environment-specific configurations or fallback options.|
 
 ## Naming conventions
-
-### Variable library name
-
-The name of variable library item itself must follow these conventions:
-
-- Isn't empty
-- Doesn't have leading or trailing spaces
-- Starts with a letter
-- Can include letters, numbers, underscores, hyphens, and spaces
-- Doesn't exceed 256 characters in length
-
-The variable library name is *not* case sensitive.
 
 ### Variable name
 
@@ -51,36 +62,9 @@ The name of a variable inside the variable library must follow these conventions
 
 The variable name is *not* case sensitive.
 
-### Value set name
-
-Value set names have the same restrictions as [variable names](#variable-name).
-
-## Variable types
-
-Before you can add a value to a variable, you must define the variable type.
-The variables in the variable library can be any of the following types:
-
-- **String**: Any character. Can be `null` or empty.
-- **Boolean**: `True` or `False`.
-- **DateTime**: Date and time represented as the ISO 8601 standard *yyyy-MM-ddTHH:mm:ss.xxxZ*, where:
-  - *yyyy-MM-dd* is the four-digit year, followed by the two-digit month and two-digit day.
-  - *T* separates the date and the time.
-  - *HH:mm:ss.xxx* is the two-digit hour in 24-hour format, followed by the two-digit minute, two-digit second, and three-digit millisecond.
-  - *Z* indicates that the time is in Coordinated Universal Time (UTC).
-  
-  An example is `2025-01-14T16:15:20.123Z`.
-- **Number**: Any number.
-- **GUID**: A globally unique identifier.
-- **Integer**: A whole number that can be positive, negative, or zero.
 
 After a variable has a defined value, if you try to change its type, a consent dialog appears. The dialog alerts you that all the variable values will be reset and that this change could be a breaking change on the consumer item side.
 
-## Alternative value sets
-
-When you create a new value set in a variable library, the new values are set as pointers to the default values. You can change them to be a fixed value.
-
-If you change the value of a variable in the alternative value set, the alternative value is saved in the JSON file for value sets. You can change the order in which the value sets appear, or change the value of a variable in the alternative value set, in this JSON file in Git.
-
 ## Considerations and limitations
 
-[!INCLUDE [limitations](../includes/variable-library-limitations.md)]
+[!INCLUDE [limitations](../includes/variables-limitations.md)]
