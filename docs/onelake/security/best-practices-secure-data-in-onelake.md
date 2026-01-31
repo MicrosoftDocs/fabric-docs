@@ -23,7 +23,7 @@ Least privilege access is a fundamental security principle in computer science t
 
 - Use [OneLake security](./get-started-onelake-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
 
-- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilizied through the various methods of writing data in OneLake such as pipelines, notebooks, etc.
+- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilized through the various methods of writing data in OneLake such as pipelines, notebooks, etc.
 
 - If users need to manage access to data, such as sharing an item or configuring OneLake security roles, then Admin or Member workspace roles are required.
 
@@ -50,7 +50,7 @@ The core principle is to centralize data ownership and security enforcement in a
 
   - Create downstream workspaces to support data consumption, additional workloads, or domain-specific use cases.
   - In downstream lakehouses, create shortcuts that point back to data in workspace A. OneLake security policies defined at the source are enforced automatically so users can only access data they're authorized to see.
-  - Confirm SQL analytics endpoints in downstream workspaces are configured to use user's identity mode. It is recommend to also create downstream workspaces and lakehouses using the same owner as workspace A to get the most consistent experience. This setup gives the data owner the ability to enforce user's identity mode.
+  - Confirm SQL analytics endpoints in downstream workspaces are configured to use user's identity mode. It is recommended that you also create downstream workspaces and lakehouses using the same owner as workspace A to get the most consistent experience. This setup gives the data owner the ability to enforce user's identity mode.
 
 ## Related content
 
