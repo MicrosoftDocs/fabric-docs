@@ -111,7 +111,7 @@ The following properties are supported for Oracle database under the **Destinati
 The following properties are **required**:
 
 - **Connection:** Select an Oracle database connection from the connection list. If the connection doesn't exist, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
-- **Table**: Select the table in your database from the drop-down list,or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data. You can also [edit the destination data type under Mapping tab](#edit-destination-data-types). 
+- **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data. You can also [edit the destination data type under Mapping tab](#edit-destination-data-types). 
 
 Under **Advanced**, you can specify the following fields:
 
