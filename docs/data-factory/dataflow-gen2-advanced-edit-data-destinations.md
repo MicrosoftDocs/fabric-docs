@@ -77,8 +77,8 @@ When you open the advanced editor for a destination query, you see M code that f
 ```powerquery-m
 let
     Pattern = Lakehouse.Contents([HierarchicalNavigation = null, CreateNavigationProperties = false, EnableFolding = false]),
-    Navigation_1 = Pattern{[workspaceId = "30a58fdb-80ff-49ef-a048-3f904c6cccf7"]}[Data],
-    Navigation_2 = Navigation_1{[lakehouseId = "8c9b9b62-d990-45e3-b0eb-7845998f6377"]}[Data],
+    Navigation_1 = Pattern{[workspaceId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"]}[Data],
+    Navigation_2 = Navigation_1{[lakehouseId = "yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy"]}[Data],
     TableNavigation = Navigation_2{[Id = "Table", ItemKind = "Table"]}?[Data]?
 in
     TableNavigation
