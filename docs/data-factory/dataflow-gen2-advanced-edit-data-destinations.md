@@ -31,7 +31,7 @@ By default, the advanced edit feature for data destination queries is disabled. 
 
 1. Open your dataflow in the Power Query editor.
 
-1. Select **Options** from the **Home** tab in the ribbon.
+1. Select **Options** :::image type="icon" source="media/dataflow-gen2-advanced-edit-data-destinations/options-icon.png"::: from the **Home** tab in the ribbon.
 
 1. In the **Options** dialog, scroll down to the **Data destinations** section.
 
