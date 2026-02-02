@@ -945,6 +945,8 @@
             items:
               - name: Dataflow default destination
                 href: default-destination.md
+              - name: Data destinations validation rules
+                href: dataflow-gen2-data-destinations-validation-rules.md
           - name: Authoring tools
             items:
               - name: AI Functions in Dataflow Gen2 (Preview)
