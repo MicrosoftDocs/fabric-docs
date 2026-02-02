@@ -14,13 +14,6 @@ ai-usage: ai-assisted
 
 Dataflow Gen2 in Fabric Data Factory supports various data destinations for storing transformed data. Just like with data sources, data destinations have specific validation rules to ensure data integrity and that during refresh operations, data is written correctly. This article outlines the validation rules for data destinations supported by Dataflow Gen2.
 
-## Prerequisites
-
-Before working with data destination validation rules, you should be familiar with:
-
-- [What is Dataflow Gen2?](dataflows-gen2-overview.md)
-- [Dataflow Gen2 data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md)
-
 ## How validation works
 
 When you configure a data destination for a query in Dataflow Gen2, the system performs validation checks to ensure that:
