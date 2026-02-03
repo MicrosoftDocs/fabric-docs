@@ -173,7 +173,7 @@ To enable the Modern Evaluator:
 
 :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
 
-The Modern Evaluator supports connectors including Azure Blob Storage, Azure Data Lake Storage Gen2, Lakehouse, Warehouse, OData, Power Platform Dataflows, SharePoint Online List, SharePoint folder, and Web. If your dataflow uses connectors not in this list, those queries continue to run with the standard engine.
+The Modern Evaluator supports a growing list of connectors. For the full list of supported connectors, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md#supported-connectors). If your dataflow uses connectors not in the supported list, those queries continue to run with the standard engine.
 
 > [!NOTE]
 > The Modern Evaluator is currently in preview. While it brings performance improvements, you should monitor your dataflows after enabling it. If you encounter any issues, you can disable the option to fall back to the standard evaluation engine.
