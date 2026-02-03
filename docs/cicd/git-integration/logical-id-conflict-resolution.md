@@ -18,7 +18,7 @@ This article explains what logical IDs are, why conflicts happen, and how to res
 
 ## What is a Logical ID?
 When your Fabric workspace is connected to a Git branch, every item in the workspace is associated with the logical IDs defined in that branch.
-Those IDs represent the "identity" of each item across systems. A logical ID is an automatically generated, cross‑workspace identifier that connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. 
+Those IDs represent the "identity" of each item across Microsoft Fabric workspaces. A logical ID is an automatically generated, cross‑workspace identifier that connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. 
 
 To learn more about logical IDs and how Fabric represents items in source control, see the
 [Git integration source code format documentation](source-code-format.md).
