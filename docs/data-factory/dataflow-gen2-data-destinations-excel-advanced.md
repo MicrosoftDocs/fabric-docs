@@ -5,7 +5,7 @@ author: jorgegom
 ms.topic: concept-article
 ms.date: 01/12/2026
 ms.author: jorgegom
-ms.subservice: dataflows
+ms.custom: dataflows
 ---
 
 # Excel Advanced Data Destination
