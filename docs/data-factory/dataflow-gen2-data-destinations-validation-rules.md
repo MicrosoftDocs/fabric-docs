@@ -35,19 +35,19 @@ Validation of data destinations happens at several points in the dataflow lifecy
 | **Publishing** | Full validation runs when you publish your dataflow. Any validation errors prevent the publish from completing. |
 | **Refresh** | Validation runs at the start of each refresh to ensure the destination is still valid and accessible. |
 
-## Validation rules for data destinations
+## Authoring validation rules for data destinations
 
-The following table lists the validation rules that apply to data destinations in Dataflow Gen2. These rules help ensure that data is written correctly and consistently during refresh operations.
+The following table lists the authoring validation rules that apply to data destinations in Dataflow Gen2. These rules help ensure that data destinations are configured correctly.
 
 | Validation rule | Description |
 |---|---|
 | **DestinationQueryNotFound** | The destination query couldn't be found. This error occurs when the internal query that contains the navigation steps to your destination is missing or has been removed. |
-| **DestinationTransformQueryNotFound** | The destination transform query couldn't be found. This error indicates that the query containing the transformation logic for the destination is missing. |
+| **DestinationTransformQueryNotFound** | The destination transform query couldn't be found. This error occurs when a destination transform query is expected (as defined in the destination settings) but can't be located. Note that table destinations don't have a transform query. |
 | **DestinationQueryChallenge** | The destination query encountered a challenge during validation. This typically indicates an authentication or authorization issue when connecting to the destination. |
 | **DestinationQueryException** | The destination query encountered an exception during validation. This error indicates an unexpected error occurred while validating the destination query. |
-| **DestinationQueryHasUnsupportedScript** | The destination query contains an unsupported script. This error can occur when the destination script returns an invalid type (not table, binary, or null), or when the data source resolution fails due to multiple or zero data sources referenced in the destination query, or an invalid resource kind. |
-| **MultipleDestinationQueries** | Multiple destination queries were found when only one is expected. Each query in a dataflow can have only one data destination configured. |
-| **UnknownError** | An unknown error occurred during validation. This error isn't displayed in the UI and results in a silent failure. |
+| **DestinationQueryHasUnsupportedScript** | The destination query contains an unsupported script. This error can occur when the destination script returns an invalid type (not table, binary, or null), or when the data source resolution fails due to multiple or zero data sources referenced in the destination query, or an invalid resource kind. A known limitation is using multiple resource kinds in a single destination query, such as a Warehouse destination query that includes a step filtering with a parameter whose values come from a Lakehouse. |
+| **MultipleDestinationQueries** | Multiple destination queries were found when only one is expected. This validation exists because the internal contract supports an array of destinations, but the standard authoring experience only allows configuring a single destination per query. This error might occur when editing dataflow definitions directly through CI/CD. |
+| **UnknownError** | An unknown error occurred during validation, typically caused by network issues or service errors. This error isn't displayed in the UI and results in a silent failure. |
 
 ## Troubleshooting validation errors
 
@@ -86,13 +86,14 @@ This error can occur for several reasons. To resolve:
 
 1. **Invalid return type**: Ensure your destination query returns a table, binary, or null value. Functions, lists, and other types aren't supported as destinations.
 1. **Zero data sources**: Ensure your destination query has a valid data source reference.
+1. **Multiple resource kinds**: Avoid mixing different resource kinds in a single destination query. For example, don't use a Warehouse destination query that filters using a parameter whose values come from a Lakehouse. Instead, use resources of the same kind or restructure your dataflow.
 
 ### MultipleDestinationQueries
 
-Each query can have only one data destination. To resolve:
+This error occurs when a query has multiple destination configurations, which can happen when editing dataflow definitions directly through CI/CD. The standard authoring experience only allows one destination per query. To resolve:
 
-1. Review your dataflow to identify any queries with multiple destinations configured.
-1. Remove duplicate destination configurations.
+1. Review the dataflow definition to identify queries with multiple destinations configured.
+1. Remove duplicate destination configurations from the definition.
 1. If you need to load data to multiple destinations, create separate queries for each destination.
 
 ### UnknownError
