@@ -4,7 +4,7 @@ description: Learn about limitations for Azure Databricks mirroring in Microsoft
 author: whhender
 ms.author: whhender
 ms.reviewer: sheppardshep, whhender, preshah
-ms.date: 07/29/2025
+ms.date: 12/19/2025
 ms.topic: overview
 ms.custom: references_regions
 ---
@@ -13,11 +13,6 @@ ms.custom: references_regions
 
 This article lists current limitations with mirrored Azure Databricks in Microsoft Fabric.
 
-## Network
-
-- Azure Databricks workspaces shouldn't be behind a private endpoint.
-- Azure Databricks IP Access lists aren't supported.
-
 ## Supported Spark Versions
 
 Fabric Runtime Version needs to be at least Spark 3.4 Delta 2.4. Verify in Workspace Settings, Data Engineering/Science, Spark Settings, Environment Tab.
@@ -25,9 +20,7 @@ Fabric Runtime Version needs to be at least Spark 3.4 Delta 2.4. Verify in Works
 ## Limitations
 
 - Mirrored Azure Databricks item doesn't support renaming schema, table, or both when added to the inclusion or exclusion list.
-- Azure Databricks workspaces shouldn't be behind a private endpoint.
 - Azure Data Lake Storage Gen 2 account that is utilized by your Azure Databricks workspace must also be accessible to Fabric.
-- Azure Mirrored Databricks Catalog does not support Manage Catalog functionality if OneLake security is enabled on that item. This functionality is coming in November, 2025.
 
 The following table types are not supported:
 
@@ -53,6 +46,7 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - East US
     - East US2
     - North Central US
+    - South Central US
     - West US
     - West US 2
     - West US 3
@@ -67,9 +61,15 @@ Here's a list of regions that support mirroring for Azure Databricks Catalog:
     - Australia Southeast
     - Central India
     - South India
+    - Indonesia Central
     - Japan East
     - Japan West
     - Korea Central
+    - Malaysia West
+    - New Zealand North
+    - Singapore
+    - Taiwan North
+    - Taiwan Northwest
    :::column-end:::
    :::column span="":::
    **Europe, Middle East, and Africa**:

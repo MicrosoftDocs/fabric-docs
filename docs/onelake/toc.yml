@@ -107,44 +107,50 @@ items:
     href: ./table-apis/delta-table-apis-overview.md
   - name: Getting started with OneLake table APIs for Delta
     href: ./table-apis/delta-table-apis-get-started.md
-- name: Secure and manage data access
+- name: Secure data
   items:
-  - name: OneLake security overview
+  - name: Overview
     href: ./security/get-started-security.md
-  - name: Get started with securing data in OneLake
+  - name: Configure data access
     items:
-    - name: Get started with OneLake security
+    - name: OneLake security overview
       href: ./security/get-started-onelake-security.md
-    - name: Best practices
-      href: ./security/best-practices-secure-data-in-onelake.md
-  - name: OneLake data access control model
-    href: ./security/data-access-control-model.md
-  - name: OneLake security features
+    - name: Data access control model
+      href: ./security/data-access-control-model.md
+    - name: Create and manage roles
+      href: ./security/create-manage-roles.md
+    - name: SQL analytics endpoint security
+      href: sql-analytics-endpoint-onelake-security.md
+    - name: Granular data access control
+      items:
+      - name: Table and folder security
+        href: ./security/table-folder-security.md
+      - name: Column-level security
+        href: ./security/column-level-security.md
+      - name: Row-level security
+        href: ./security/row-level-security.md
+  - name: Authorize with a shared access signature (SAS)
     items:
-    - name: Table and folder security
-      href: ./security/table-folder-security.md
-    - name: Column-level security
-      href: ./security/column-level-security.md
-    - name: Row-level security
-      href: ./security/row-level-security.md
-  - name: How to encrypt data in OneLake?
-    href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json    
-  - name: Authorize with a OneLake shared access signature (SAS)
-    items:
-    - name: What is OneLake SAS?
+    - name: OneLake SAS overview
       href: onelake-shared-access-signature-overview.md
     - name: Create a OneLake SAS
       href: how-to-create-a-onelake-shared-access-signature.md
-  - name: OneLake diagnostics
-    href: onelake-diagnostics-overview.md
   - name: Network security
     items:
-    - name: Manage inbound access to OneLake
+    - name: Manage inbound access
       href: onelake-manage-inbound-access.md
-    - name: Manage outbound access from OneLake
+    - name: Manage outbound access
       href: onelake-manage-outbound-access.md
-  - name: Plan for disaster recovery and data protection
-    href: onelake-disaster-recovery.md
+  - name: Monitor and recover
+    items:
+    - name: OneLake diagnostics
+      href: onelake-diagnostics-overview.md
+    - name: Plan for disaster recovery and data protection
+      href: onelake-disaster-recovery.md
+  - name: Encrypt data with customer-managed keys
+    href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
+  - name: Best practices
+    href: ./security/best-practices-secure-data-in-onelake.md
 - name: OneLake file explorer for Windows
   items:
   - name: OneLake file explorer overview
@@ -175,7 +181,3 @@ items:
     href: /rest/api/fabric/core/onelake-shortcuts
   - name: OneLake data access roles REST API
     href: /rest/api/fabric/core/onelake-data-access-security
-- name: SQL analytics endpoint
-  items:
-    - name: SQL analytics endpoint onelake security
-      href: sql-analytics-endpoint-onelake-security.md

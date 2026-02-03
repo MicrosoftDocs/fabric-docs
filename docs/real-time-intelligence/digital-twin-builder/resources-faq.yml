@@ -1,0 +1,19 @@
+### YamlMime:FAQ
+metadata:
+  title: "Digital twin builder (preview) frequently asked questions"
+  description: "This article contains answers to commonly asked questions about digital twin builder (preview)."
+  author: baanders
+  ms.author: baanders
+  ms.topic: faq
+  ms.date: 01/27/2026
+
+title: "Digital twin builder (preview) frequently asked questions"
+summary: "This article contains answers to commonly asked questions about digital twin builder (preview)."
+
+sections:
+  - name: Questions
+    questions:
+        - question: "How can I use my data from Azure Data Lake Storage in digital twin builder?"
+          answer: To make your [Azure Data Lake Storage Gen2](/azure/storage/blobs/data-lake-storage-introduction) data available in digital twin builder (preview), you can create a [shortcut](../../onelake/create-adls-shortcut.md) for your data from Azure Data Lake Storage into a Fabric lakehouse. The digital twin builder mapping process can access that lakehouse.
+        - question: "Does digital twin builder support Eventstream?"
+          answer: Not through direct ingestion. Instead, store the data from [Fabric Eventstream](../event-streams/overview.md?tabs=enhancedcapabilities) in a lakehouse or eventhouse to use it in digital twin builder (preview).

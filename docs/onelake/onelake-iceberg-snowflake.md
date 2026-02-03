@@ -17,9 +17,7 @@ Follow this guide to use Snowflake on Azure to:
 * write Iceberg tables directly to OneLake
 * read virtual Iceberg tables converted from the Delta Lake format
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
-Before getting started, follow the pre-requisite steps shown below.
+Before getting started, follow the prerequisite steps in this article.
 
 ## Prerequisite
 
@@ -77,7 +75,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
     The output of this command returns the `AZURE_CONSENT_URL` and `AZURE_MULTI_TENANT_APP_NAME` properties. Take note of both values. The Azure multitenant app name looks like `<name>_<number>`, but you only need to capture the `<name>` portion.
 
-1.	Open the consent URL from the previous step in a new browser tab, if you haven't done this previously. If you would like to proceed, consent to the required application permissions, if prompted. You may be redirected to the main Snowflake website.
+1.	Open the consent URL from the previous step in a new browser tab, if you did not previously complete this step. If you would like to proceed, consent to the required application permissions, if prompted. You may be redirected to the main Snowflake website.
 
 1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the **Contributor** role.
 
@@ -93,7 +91,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
     BASE_LOCATION = 'Inventory/';
     ```
 
-    After running this statement, a new Iceberg table folder named Inventory has been created within the folder path defined in the external volume.
+    This statement creates a new Iceberg table folder named Inventory within the folder path defined in the external volume.
 
 1.  Add some data to your Iceberg table.
 
@@ -109,7 +107,7 @@ If you use Snowflake on Azure, you can write Iceberg tables to OneLake by follow
 
 To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake table in Fabric, follow these steps.
 
-1.  Follow [the guide to confirm your Delta Lake table has converted successfully to Iceberg](./onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg), and take note of the path to the data item containing your table, as well as your table's most recent `*.metadata.json` file.
+1.  Follow [the guide to confirm your Delta Lake table converted successfully to Iceberg](./onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg), and take note of the path to the data item containing your table, as well as your table's most recent `*.metadata.json` file.
 
 1.  Identify your Fabric tenant ID. Select your user profile in the top-right corner of the Fabric UI, and hover over the info bubble next to your **Tenant Name**. Copy the **Tenant ID**.
 
@@ -144,14 +142,14 @@ To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake 
 
     The output of this command returns the `AZURE_CONSENT_URL` and `AZURE_MULTI_TENANT_APP_NAME` properties. Take note of both values. The Azure multitenant app name looks like `<name>_<number>`, but you only need to capture the `<name>` portion.
 
-1.	Open the consent URL from the previous step in a new browser tab, if you haven't done this previously. If you would like to proceed, consent to the required application permissions, if prompted. You may be redirected to the main Snowflake website.
+1.	Open the consent URL from the previous step in a new browser tab, if you did not previously complete this step. If you would like to proceed, consent to the required application permissions, if prompted. You may be redirected to the main Snowflake website.
 
 1.	Back in Fabric, open your workspace and select **Manage access**, then **Add people or groups**. Grant the application used by your Snowflake external volume the permissions needed to read data from data items in your workspace.
 
     > [!TIP]
     > You may instead choose to grant permissions at the data item level, if you wish. [Learn more about OneLake data access.](./security/get-started-security.md#workspace-permissions)
 
-1.	Create the `CATALOG INTEGRATION` object in Snowflake, if you haven't done this previously. This is required by Snowflake to reference existing Iceberg tables in storage.
+1.	Create the `CATALOG INTEGRATION` object in Snowflake, if you did not previously complete this step. This step is required by Snowflake to reference existing Iceberg tables in storage.
 
     ```sql
     CREATE CATALOG INTEGRATION onelake_catalog_integration
@@ -172,7 +170,7 @@ To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake 
     > [!NOTE]
     > Replace `<TABLE_NAME>` with your table name, and `<metadata_file_path>` with your Iceberg table's metadata file path, such as `dbo/MyTable/metadata/321.metadata.json`.
 
-    After running this statement, you now have a reference to your virtualized Iceberg table that you can now query using Snowflake.
+    After you run this statement, you now have a reference to your virtualized Iceberg table that you can now query using Snowflake.
 
 1.  Query your virtualized Iceberg table by running the following statement.
 

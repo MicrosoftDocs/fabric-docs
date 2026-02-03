@@ -1,6 +1,6 @@
 ---
-title: 'Digital twin builder (preview) tutorial: Create a Power BI report'
-description: Build Power BI visuals with the data from digital twin builder (preview) tutorial.
+title: 'Digital twin builder (preview) tutorial part 5: Create a Power BI report'
+description: Build Power BI visuals with the data from digital twin builder (preview) tutorial. Part 5 of the digital twin builder (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
@@ -9,15 +9,15 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) tutorial part 5: Create a Power BI report with digital twin builder data
 
-This section of the tutorial is for creating a Power BI report using the [Power BI desktop app](/power-bi/fundamentals/desktop-what-is-desktop) to visualize features of your digital twin builder (preview) ontology.
+In this step of the tutorial, create a Power BI report using the [Power BI desktop app](/power-bi/fundamentals/desktop-what-is-desktop) to visualize features of your digital twin builder (preview) ontology.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 You can create Power BI reports and dashboards with your digital twin builder ontology data by accessing the SQL endpoint of the lakehouse associated with your digital twin builder (preview) item. The SQL endpoint contains the [domain layer](../digital-twin-builder/concept-modeling.md) of data, which exposes a set of views that directly reflect the logical structure and relationship types defined in the domain ontology. You can use that domain layer as a data source for Power BI, which allows you to select entity types and entity type properties for use in reports.
 
-In this tutorial section, you import digital twin builder domain layer data from the SQL endpoint to a new report in Power BI Desktop. Then you create a report with two pages: one with time series data visuals for the *Condenser* entity instances, and one that showcases relationship instances between *MaintenanceRequest* entity instances and their associated *Distiller* and *Technician* entity instances.
+In this tutorial step, import digital twin builder domain layer data from the SQL endpoint to a new report in Power BI Desktop. Then, create a report with two pages: one with time series data visuals for the *Condenser* entity instances, and one that showcases relationship instances between *MaintenanceRequest* entity instances and their associated *Distiller* and *Technician* entity instances.
 
-## Create report and import data
+## Create Power BI report and import data
 
 In this section, access your digital twin builder (preview) data through the domain layer in SQL, and import it into a new Power BI report.
 
@@ -89,7 +89,7 @@ Remember that digital twin builder (preview) creates a unique ID for each entity
 
     :::image type="content" source="media/tutorial/power-bi-id-3.png" alt-text="Screenshot of the report view.":::
 
-## Create Page 1: Condenser time series data
+## Create page 1: Condenser time series data
 
 The report defaults to **Page 1** in the tabs across the bottom. In this section, you fill Page 1 with visuals for the *Condenser* time series data.
 
@@ -153,7 +153,7 @@ Finally, add a time series visualization.
 
 Now, you have a basic report with which you can interact and explore time series data for the *Condenser* entity instances. You can verify it works by selecting a condenser from the dropdown menu, and changing the date and time values. Experiment with different selections in the **DisplayName** and **Timestamp** slicers and observe how the time series visual changes.
 
-## Create Page 2: Maintenance requests, related to distiller and technician data
+## Create page 2: Maintenance requests, related to distiller and technician data
 
 In this section, you add a page to the report for visuals illustrating *MaintenanceRequest* entity instances and their relationships.
 

@@ -17,8 +17,6 @@ For overall OneLake table API guidance and prerequisite guidance, see the [OneLa
 
 For detailed API documentation, see the [Getting started guide](./iceberg-table-apis-get-started.md#client-quickstart-examples). 
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Iceberg table API endpoint
 
 The OneLake table API endpoint is:

@@ -3,8 +3,8 @@ title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo, jovanpop, twinklecyril
-ms.date: 09/08/2025
+ms.reviewer: cynotebo, jovanpop, twinklecyril, emtehran
+ms.date: 01/27/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -30,7 +30,7 @@ For SQL database in Fabric, see [Limitations in SQL database (preview)](../datab
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
 - A subset of query and join hints are supported. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
 - Session-scoped distributed #temp tables are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-- `MERGE` syntax is supported as a preview feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
+- `MERGE` syntax is supported and is a generally available feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
 
 ### Limitations
 

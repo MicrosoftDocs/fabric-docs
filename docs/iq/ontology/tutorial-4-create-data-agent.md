@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Create data agent"
-description: Create a data agent that queries the ontology (preview) in natural language.
+title: "Tutorial part 4: Create data agent"
+description: Create a data agent that queries the ontology (preview) in natural language. Part 4 of the ontology (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
@@ -32,7 +32,7 @@ When the agent is ready, it opens.
 ## Provide agent instructions
 
 >[!NOTE]
->This step is added in response to a known issue affecting aggregation in queries.
+>This step addresses a known issue affecting aggregation in queries.
 
 Next, add a custom instruction to the agent.
 

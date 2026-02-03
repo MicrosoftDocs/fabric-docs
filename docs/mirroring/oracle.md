@@ -20,9 +20,10 @@ ai-usage: ai-assisted
 
 We support these Oracle Server environments:
 
-* Oracle versions 11 and above with LogMiner enabled
+* Oracle versions 10 and above with LogMiner enabled
 * Oracle on-premises (VM, Azure VM)
 * Oracle Cloud Infrastructure (OCI)
+* Oracle Database@Azure
 * Oracle Exadata
 
 >[!NOTE]
@@ -60,6 +61,9 @@ Before you set up Oracle mirroring, you need:
 * [Supplemental logging](oracle-tutorial.md#set-up-oracle-permissions-and-enable-supplemental-logging) configured
 * [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway) installed and set up
 * [Required user permissions](oracle-limitations.md#required-permissions)
+
+>[!NOTE]
+>* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
 
 For complete setup instructions and requirements, see:
 

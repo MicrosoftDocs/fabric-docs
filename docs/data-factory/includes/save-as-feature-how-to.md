@@ -17,6 +17,4 @@ ms.date: 08/19/2025
 
    The new Dataflow Gen2 (CI/CD) is opened, enabling you to review and make any changes.
 
-   You're required to reconnect to data sources, which can be done by selecting the **Configure connection** button within the `Credentials are required` error message.
-
 1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.

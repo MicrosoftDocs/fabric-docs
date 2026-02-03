@@ -339,6 +339,8 @@ items:
     href: notebook-limitation.md
   - name: Query Mirrored Databases in Spark Notebook
     href: query-mirrored-database-spark-notebooks.md
+  - name: Query Eventstream from Spark Notebook 
+    href: notebook-with-event-stream.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

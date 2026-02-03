@@ -54,5 +54,5 @@ When the cache reaches its capacity threshold and fresh data is being read for t
 
 ## Related content
 
-- [Result set caching (preview)](result-set-caching.md)
+- [Result set caching](result-set-caching.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)

@@ -100,6 +100,9 @@ items:
     - name: Tutorial
       displayName: Mirroring Azure Databricks tutorial
       href: azure-databricks-tutorial.md
+    - name: Private endpoint
+      displayName: Mirroring Azure Databricks with private endpoint
+      href: azure-databricks-private-endpoint.md
     - name: Secure data
       displayName: Mirroring Azure Databricks security
       href: azure-databricks-security.md

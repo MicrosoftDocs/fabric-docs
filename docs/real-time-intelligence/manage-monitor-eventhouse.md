@@ -7,7 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 05/11/2025
+ms.date: 01/26/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -47,6 +47,7 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, enable minimum consumption, add databases, add plugins, and collapse or expand the details area.
 
 ### Enable always-on
+
 > [!NOTE]
 > Enabling [always-on](manage-monitor-eventhouse.md#enable-always-on) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
 Always-on prevents your eventhouse from suspending the service due to inactivity. For highly time-sensitive systems, it prevents the latency of re-activating the eventhouse.
@@ -117,13 +118,43 @@ The system overview page provides a snapshot of the current state of the eventho
 
         In the case where 78 queries and 173 ingest operations run at the same time and total 183 compute minutes, if they all finish within a 5-minute period, the actual compute units used is still only 5 minutes.
 
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.     
+        :::image type="content" source="media/eventhouse/eventhouse-activity.png" alt-text="Screenshot of the Activity in minutes tile.":::
+
+        This provides full visibility into how the compute minutes are calculated.    
+        :::image type="content" source="media/eventhouse/eventhouse-activity-kql.png" alt-text="Screenshot of the Activity in minutes KQL query.":::    
+
     * **Ingestion**: Shows the number of ingested rows and the number of databases that the data was ingested to. The information can help you understand the amount of data that is ingested into the eventhouse over time.
+
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.     
+        :::image type="content" source="media/eventhouse/eventhouse-ingestion.png" alt-text="Screenshot of the Ingestion details tile.":::
+
+        This provides full visibility into how the number of ingested rows and the number of databases are calculated.    
+        :::image type="content" source="media/eventhouse/eventhouse-ingestion-kql.png" alt-text="Screenshot of the Ingestion details KQL query.":::    
 
     * **Top 10 queried databases**: Highlights the most active databases in the eventhouse, including the number of queries, errors, duration per database, and cache misses. The information can assist you in obtaining a comprehensive overview of which databases are utilizing compute units.
 
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.     
+        :::image type="content" source="media/eventhouse/eventhouse-queries.png" alt-text="Screenshot of the Top 10 queried databases tile.":::
+
+        This provides full visibility into the top 10 queried databases and their metrics.    
+        :::image type="content" source="media/eventhouse/eventhouse-queries-kql.png" alt-text="Screenshot of the Top 10 queried databases KQL query.":::    
+
     * **Top 10 ingested databases**: Highlights the number of ingested rows and ingestion errors for the databases with the most ingested rows. Currently only partial ingestion errors are reported.
 
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.     
+        :::image type="content" source="media/eventhouse/eventhouse-ingested-databases.png" alt-text="Screenshot of the Top 10 ingested databases tile":::
+
+        This provides full visibility into top 10 ingested databases and their metrics.    
+        :::image type="content" source="media/eventhouse/eventhouse-ingested-databases-kql.png" alt-text="Screenshot of the Top 10 ingested databases KQL query.":::    
+
     * **Activity in minutes - top 5 users**: Shows the total compute minutes of the most active users. The information can help you understand the efficiency with which users are utilizing compute units.
+
+        The tile also allows users to open the underlying KQL query by selecting **Open query** in the ellipsis menu.     
+        :::image type="content" source="media/eventhouse/eventhouse-users.png" alt-text="Screenshot of the Activity in minutes - Top 5 users tile.":::
+
+        This provides full visibility into the top 5 users and their compute minutes.    
+        :::image type="content" source="media/eventhouse/eventhouse-users-kql.png" alt-text="Screenshot of the Activity in minutes - Top 5 users KQL query.":::    
 
     * **What's new - Last 7 days**: Highlights database owners and recent eventhouse events, such as the following operations:
 

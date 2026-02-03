@@ -130,7 +130,7 @@ There are two ways you can get to the **Data sources** page:
 
 - By selecting **Add data** button on the **Streaming Data** page.
 
-    :::image type="content" source="media/get-started-real-time-hub/streaming-data-add-data.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/streaming-data-add-data.png":::
+    :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 - By selecting **Add data** on the left navigation menu.
 
     :::image type="content" source="media/get-started-real-time-hub/add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/add-data.png":::
