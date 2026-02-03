@@ -110,6 +110,8 @@ While the standard UI supports basic parameterization for table names, advanced 
 
 Keep these considerations in mind when using advanced edit:
 
+- **UI support disabled**: After you modify a destination query using advanced edit, the standard UI for changing that destination no longer works. You must continue to use the advanced editor for any further modifications to that destination.
+
 - **Validation**: Changes you make in the advanced editor are subject to [validation rules](dataflow-gen2-data-destinations-validation-rules.md). Invalid modifications cause validation errors during publish or refresh.
 
 - **Return type**: The destination query must return a valid type (table, binary, or null). Returning other types like functions or lists causes a `DestinationQueryHasUnsupportedScript` error.
