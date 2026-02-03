@@ -14,6 +14,28 @@ When you are working on a file based destination in Dataflow Gen2, you have the 
 
 This article explains how to construct these navigation tables to generate Excel documents programmatically from your Dataflow.
 
+## Prerequisites
+
+Before you can use the Excel Advanced destination, you need to set up your Dataflow Gen2 with the correct configuration:
+
+1. **Create a navigation table query** - In your Dataflow Gen2, create a query that outputs a navigation table as described in this article. The query should return a table with the required columns (`PartType`, `Data`, and optionally `Sheet`, `Name`, and `Properties`).
+
+1. **Add a data destination** - Select your navigation table query and add a data destination by selecting **Add data destination** from the query's context menu or the ribbon.
+
+1. **Choose a file-based destination** - Select a file-based destination such as:
+   - SharePoint
+   - Lakehouse Files
+   - Azure Data Lake Storage Gen2
+   - Azure Blob Storage
+
+1. **Set the file format to Excel** - In the destination configuration, set **File format** to **Excel**.
+
+1. **Select Advanced format** - In the **Format** dropdown, select **Advanced**. This option tells the connector to interpret your query output as a navigation table that defines the Excel document structure.
+
+   :::image type="content" source="media/dataflow-gen2-data-destinations-excel-advanced/excel-advanced-destination-settings.png" alt-text="Screenshot showing the data destination dialog with Excel file format and Advanced format selected.":::
+
+Once configured, when the dataflow runs, the system reads your navigation table and generates the corresponding Excel file with the structure you defined.
+
 ## Overview
 
 Excel documents in Power Query are represented as navigation tables—standard M tables with specific columns that describe the document structure. Each row in the navigation table represents a part of the Excel document, such as a worksheet containing data or a chart visualizing that data.
