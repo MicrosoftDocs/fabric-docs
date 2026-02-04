@@ -257,6 +257,8 @@ items:
         items: 
           - name: Collect Logs & Metrics with Azure Log Analytics
             href: azure-fabric-diagnostic-emitters-log-analytics.md
+          - name: Collect Logs & Metrics with Log Ingestion API
+            href: data-collector-api-to-log-ingestion-api.md
           - name: Collect Logs & Metrics with Azure Storage Account
             href: azure-fabric-diagnostic-emitters-azure-storage.md
           - name: Collect Logs & Metrics with Azure Event Hubs
