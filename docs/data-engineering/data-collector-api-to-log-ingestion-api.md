@@ -74,7 +74,7 @@ Fill in:
 ### Step 5. Prepare Service Principal for Authentication
 
 - Register an app in **Microsoft Entra ID**.
-   :::image type="content" source="media\data-collector-api-to-log-ingestion-api\tenantid-clientid.png" alt-text="Screenshot showing tenantId and clientId." lightbox="media\data-collector-api-to-log-ingestion-api\tenantid-clientid.png":::
+   :::image type="content" source="media\data-collector-api-to-log-ingestion-api\tenant-client.png" alt-text="Screenshot showing tenantId and clientId." lightbox="media\data-collector-api-to-log-ingestion-api\tenant-client.png":::
 
 - Record: **TenantId**, **ClientId**, **ClientSecret(optional)**. 
 - Grant the app **Monitoring Metrics Publisher** role on every table's DCE resource.
@@ -114,7 +114,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 
 #### Option 2: Configure with Service Principal with Certificate
 
-When using certificate-based authentication, ensure that your Service Principal is created, for more details, see [Create a service principal containing a certificate using Azure CLI](..cli/azure/azure-cli-sp-tutorial-3) 
+When using certificate-based authentication, ensure that your Service Principal is created, for more details, see [Create a service principal containing a certificate using Azure CLI](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-3?view=azure-cli-latest) 
 
    1. Create a Fabric Environment Artifact in Fabric.
    2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select Add **from .yml** in the ribbon to download the [sample yaml file](), which already containing the required properties.
