@@ -168,15 +168,12 @@ To enable the Modern Evaluator:
 1. Open your dataflow in the Power Query editor.
 1. Select **Options** from the menu.
 1. Navigate to the **Scale** tab.
-1. Turn on the **Modern query evaluation engine (Preview)** option.
+1. Turn on the **Modern query evaluation engine** option.
 1. Save and run your dataflow.
 
 :::image type="content" source="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png" alt-text="Screenshot of the options dialog displaying the modern query evaluator setting." lightbox="media/dataflow-gen2-modern-evaluator/modern-evaluator-option.png":::
 
-The Modern Evaluator supports a growing list of connectors. For the full list of supported connectors, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md#supported-connectors). If your dataflow uses connectors not in the supported list, those queries continue to run with the standard engine.
-
-> [!NOTE]
-> The Modern Evaluator is currently in preview. While it brings performance improvements, you should monitor your dataflows after enabling it. If you encounter any issues, you can disable the option to fall back to the standard evaluation engine.
+The Modern Evaluator supports a growing list of connectors. For the full list of supported connectors and current feature status, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md#supported-connectors). If your dataflow uses connectors not in the supported list, those queries continue to run with the standard engine.
 
 To learn more about the Modern Evaluator, see [Modern Evaluator for Dataflow Gen2 with CI/CD](dataflow-gen2-modern-evaluator.md).
 
