@@ -210,6 +210,7 @@ get(name: String, workspaceId: String = ""): Artifact -> Get a Notebook by name 
 update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact -> Update a Artifact by name.
 delete(name: String, workspaceId: String = ""): Boolean -> Delete a Notebook by name.
 list(workspaceId: String = "", maxResults: Int = 1000): Array[Artifact] -> List all Notebooks in the workspace.
+getDefinition(name: String, workspaceId: String = "", format: String = ""): String -> Get the definition of a Notebook.
 updateDefinition(name: String, content: String = "", defaultLakehouse: String = "", defaultLakehouseWorkspace: String = "", workspaceId: String = "") -> Update the definition of a Notebook.
 
 Use notebookutils.notebook.help("methodName") for more info about a method.
@@ -413,10 +414,14 @@ with open("/path/to/notebook.ipynb", "r") as f:
 artifact = notebookutils.notebook.create("artifact_name", "description", "content", "default_lakehouse_name", "default_lakehouse_workspace_id", "optional_workspace_id")
 ```
 
-#### Getting content of a Notebook
+#### Getting content or definition of a Notebook
 
 ```python
 artifact = notebookutils.notebook.get("artifact_name", "optional_workspace_id")
+```
+
+```python
+definition = notebookutils.notebook.getDefinition("artifact_name", "optional_workspace_id")
 ```
 
 #### Updating a Notebook
