@@ -421,7 +421,7 @@ artifact = notebookutils.notebook.get("artifact_name", "optional_workspace_id")
 ```
 
 ```python
-definition = notebookutils.notebook.getDefinition("artifact_name", "optional_workspace_id")
+definition = notebookutils.notebook.getDefinition("artifact_name", "optional_workspace_id", "ipynb")
 ```
 
 #### Updating a Notebook
