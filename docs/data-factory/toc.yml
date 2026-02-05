@@ -945,6 +945,8 @@
             items:
               - name: Dataflow default destination
                 href: default-destination.md
+              - name: Excel advanced data destination
+                href: dataflow-gen2-data-destinations-excel-advanced.md
           - name: Authoring tools
             items:
               - name: AI Functions in Dataflow Gen2 (Preview)
