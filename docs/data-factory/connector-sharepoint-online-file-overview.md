@@ -1,5 +1,5 @@
 ---
-title: SharePoint Online File connector overview
+title: SharePoint Online File (Preview) connector overview
 description: This article provides an overview of the supported capabilities of the SharePoint Online File connector.
 author: jianleishen
 ms.author: jianleishen
