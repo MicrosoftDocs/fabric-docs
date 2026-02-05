@@ -1,5 +1,5 @@
 ---
-title: Rules (with Fabric Activator)
+title: Add rules (with Fabric Activator)
 description: Learn about using Fabric Activator rules in ontology (preview).
 author: baanders
 ms.author: baanders
