@@ -10,7 +10,10 @@ ms.custom: dataflows
 ai-usage: ai-assisted
 ---
 
-# Advanced edit for data destination queries in Dataflow Gen2
+# Advanced edit for data destination queries in Dataflow Gen2 (Preview)
+
+> [!NOTE]
+> Advanced edit for data destination queries is currently in preview.
 
 When you configure a data destination in Dataflow Gen2, the system automatically creates internal queries that handle the navigation and loading logic for your destination. In most cases, you don't need to interact with these queries directly. However, for advanced scenarios where you need more control over the destination behavior, you can enable advanced editing to modify the destination queries directly using Power Query M code.
 
