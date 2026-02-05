@@ -5,7 +5,7 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/9/2025
 ---
 

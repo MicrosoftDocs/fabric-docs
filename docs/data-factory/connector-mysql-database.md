@@ -1,8 +1,6 @@
 ---
 title: Set up your MySQL database connection
 description: This article provides information about how to create a MySQL database connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 03/27/2024
 ms.custom:

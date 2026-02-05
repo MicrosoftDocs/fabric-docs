@@ -1,11 +1,9 @@
 ---
 title: Use public parameters in Dataflow Gen2 (Preview)
 description: Dataflow Gen2 within Fabric offers the capability to define parameters that can be accessible and override during execution through. The article covers how to apply this new mode, its prerequisites, and limitations.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: concept-article
-ms.date: 10/20/2025
+ms.date: 1/28/2026
 ms.custom: dataflows
 ---
 
@@ -97,6 +95,6 @@ The following is a list of all considerations and limitations when using the pub
 * **Incremental refresh**: Not compatible with public parameters mode.
 * **Logic Modification**: Public parameters allow users with access to override values, potentially changing the dataflow output.
 * **Monitoring Hub**: The Monitoring Hub doesn't show parameter values used during execution.
-* **Staging behavior**: Only the latest run is stored in the Staging Lakehouse. Use defined destinations to retain data.
+* **Staging behavior**: Only the latest run is stored in the Dataflow Staging Lakehouse and retuned by the Dataflow Connector. Consider using  a data destination to retain data for each run.
 * **Duplicate Requests**: If the same parameter values are submitted multiple times, only the first request is accepted until it completes.
 * **Schema Mapping**: Parameters can't modify destination schema mappings. All mappings follow the authored configuration. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).

@@ -1,9 +1,7 @@
 ---
 title: WebHook activity
 description: The webhook activity for Data Factory pipelines in Microsoft Fabric controls the execution of pipelines through custom code.
-author: nabhishek
-ms.author: abnarain
-ms.reviewer: whhender
+ms.reviewer: abnarain
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024

@@ -1,9 +1,7 @@
 ---
 title: "Microsoft Fabric Decision Guide: Choose a dataflow strategy"
 description: "Identify the best strategy for your Microsoft Fabric data transformation."
-author: KrishnakumarRukmangathan
-ms.author: krirukm
-ms.reviewer: whhender
+ms.reviewer: krirukm
 ms.date: 11/18/2025
 ms.topic: concept-article
 ms.custom:

@@ -7,7 +7,7 @@ author: SnehaGunda
 ms.topic: glossary
 ms.custom:
 ms.search.form: product-trident
-ms.date: 01/08/2026
+ms.date: 02/04/2026
 # customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ---
 
@@ -19,11 +19,11 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
 
-- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Fabric Data Warehouse, Fabric Data Engineering, Fabric Data Science, Real-Time Intelligence, Data Factory, and Power BI.
-
-- **Item:** An item is a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
+- **Item:** An item is a set of capabilities within a workload. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering workload includes the lakehouse, notebook, and Spark job definition items.
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
+
+- **Workload/experience:** A collection of capabilities targeted to a specific functionality. The Fabric workloads include Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, Databases, Industry Solutions, Real-Time Intelligence, Fabric IQ, and Power BI. Fabric workloads are sometimes referred to as *Fabric experiences*.
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 

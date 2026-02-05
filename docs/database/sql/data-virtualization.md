@@ -27,7 +27,6 @@ Fabric SQL Database supports the following data virtualization capabilities:
 - [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?view=fabric-sqldb&preserve-view=true)
 - [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?view=fabric-sqldb&preserve-view=true)
 - [OPENROWSET (BULK)](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true)
-- [SELECT INTO .. FROM OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric-sqldb&preserve-view=true)
 - Metadata functions: [filename()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filename-function), [filepath()](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true#filepath-function), [sp_describe_first_result_set()](/sql/relational-databases/system-stored-procedures/sp-describe-first-result-set-transact-sql?view=fabric-sqldb&preserve-view=true)
 
 ## Authentication

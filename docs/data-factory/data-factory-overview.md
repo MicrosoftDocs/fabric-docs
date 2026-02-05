@@ -1,8 +1,6 @@
 ---
 title: What is Data Factory
 description: Overview of Data Factory services and capabilities in Microsoft Fabric.
-ms.author: whhender
-author: whhender
 ms.reviewer: makromer
 ms.topic: overview
 ms.custom: configuration, sfi-image-nochange

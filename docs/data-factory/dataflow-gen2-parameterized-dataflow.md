@@ -1,9 +1,7 @@
 ---
 title: Parameterized Dataflow Gen2
 description: Learn how to parameterize sources, logic, and destinations in Dataflow Gen2 using public parameters mode for dynamic, reusable dataflows in Microsoft Fabric.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: tutorial
 ms.date: 09/29/2025
 ms.custom: dataflows

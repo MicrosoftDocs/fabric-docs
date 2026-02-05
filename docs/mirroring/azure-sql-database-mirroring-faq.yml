@@ -2,8 +2,6 @@
 metadata:
    title: Frequently Asked Questions for Mirroring Azure SQL Database in Microsoft Fabric
    description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
-   author: whhender
-   ms.author: whhender
    ms.reviewer: imotiwala, jingwang, atodalbagi
    ms.date: 11/25/2025
    ms.service: fabric

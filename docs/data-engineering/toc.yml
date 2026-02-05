@@ -333,10 +333,14 @@ items:
     href: fabric-notebook-selection-guide.md
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
+  - name: Fabric Connection with Notebook
+    href: fabric-connection-with-notebook.md  
   - name: Fabric Notebook known limitation
     href: notebook-limitation.md
   - name: Query Mirrored Databases in Spark Notebook
     href: query-mirrored-database-spark-notebooks.md
+  - name: Query Eventstream from Spark Notebook 
+    href: notebook-with-event-stream.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

@@ -1,10 +1,9 @@
 ---
 title: Connector Capability Comparison Between Azure Data Factory and Data Factory in Fabric
 description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
-author: lrtoyou1223
-ms.author: lle
+ms.reviewer: lle
 ms.topic: how-to
-ms.date: 01/14/2026
+ms.date: 01/28/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -104,8 +103,8 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                    |                     | System-assigned managed identity | |                       |                            | |
 |                    |                     | User-assigned managed identity   | |                       |                            | |
 |                    |                     |                                 | |                       | Organizational account      | |
-| [Fabric KQL Database](connector-kql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
-
+| [Microsoft Fabric KQL Database](connector-kql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
+| [Microsoft Fabric SQL database](connector-sql-database-overview.md) | N | | | ✓/✓ | Organizational account | |
 
 ## Database connectors
 
@@ -140,10 +139,9 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | | ✓/− | Basic | |
 | | | Secure Network Communications (SNC) | | | | |
 | [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support treatDecimalAsString | ✓/✓ | | treatDecimalAsString is not supported|
-| | | KeyPair |Support UseUtcTimestamps | | | UseUtcTimestamps is not supported|
+| | | KeyPair |Support UseUtcTimestamps | | KeyPair | UseUtcTimestamps is not supported|
 | | | | | | Snowflake | |
 | | | | | | Microsoft Account | |
-| | | | | | Organizational account | |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) | ✓/- | SQL | | ✓/- | Basic | |
 | | | Windows | | | | |
 | [SQL Server](connector-sql-server-database-overview.md) | ✓/✓ | SQL | | ✓/✓ | Basic | |
@@ -200,6 +198,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Cassandra](connector-cassandra-overview.md) | ✓/- | Anonymous | | ✓/- | Anonymous | |
+| | | Basic | | | Basic | |
 | [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String| ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String|
 | [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String |
 
@@ -211,13 +210,16 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  | | Office 365 | | | | |
 |  | | User-assigned managed identity | | | Workspace identity      | |
 |  | | | |  | Organizational account      | |
-| Dynamics 365       | ✓/✓                | Microsoft Entra service principal | | N                      |                          | |
+| Dynamics 365       | ✓/✓                | Service principal | | ✓/✓                      | Service principal                         | |
+| | | Office 365 | | | | |
+| | | User-assigned managed identity | | | Workspace identity      | |
 | [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | | ✓/-                      | Service principal                         | |
 | | | | | | Workspace identity | |
 | [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity| | | Workspace identity | |
-| Google Ads     | ✓/-                | UserAuthentication    | | N                      |                          | |
+| Google Ads     | ✓/-                | User authentication    | | N                      |                          | |
+| | | Service authentication | | | | |
 | HubSpot            | ✓/-                | Access token          | | N                      |                          | |
 | Jira               | ✓/-                | Basic                 | | N                      |                          | |
 | [Microsoft 365](connector-microsoft-365-overview.md)      | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
@@ -227,7 +229,10 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | SAP Cloud for Customer (C4C) | ✓/✓         | Basic                 | | N                      |                          | |
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
 | [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
+| | | OAuth2 | | | | |
 | [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
+| | | | | | Organizational account | |
+| | | | | | Workspace identity | |
 | Shopify            | ✓/-                | Access token          | | N                      |                          | |
 | Square             | ✓/-                | Access token          | | N                      |                          | |
 | Web Table          | ✓/-                | Anonymous             | | N                      |                          | |
@@ -239,9 +244,23 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Destination** | **Fabric Authentication** |
 |--------------------|---------------------|------------------------|------------------------|--------------------------|
 | [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
+| | | Basic | | Basic |
+| | | Digeset | | |
+| | | Windows | | |
+| | | Client certificate | | |
 | [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
+| | | Basic authentication | | Basic |
+| | | Windows authentication | | |
+| | | Service principal with Key | | |
+| | | Service principal with Cert | | |
 | [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
+| | | Basic | | Basic |
 | [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
+| | | Basic | | Basic |
+| | | Service principal | | Service principal |
+| | | OAuth 2.0 Client Credential | | Organizational account |
+| | | System-assigned managed identity | | |
+| | | User-assigned managed identity | | |
 
 ## Conclusion
 

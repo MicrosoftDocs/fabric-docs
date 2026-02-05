@@ -1,5 +1,5 @@
 ---
-title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial: Upload contextual data'
+title: 'Digital twin builder (preview) in Real-Time Intelligence tutorial part 1: Upload contextual data'
 description: Prepare your environment for the tutorial scenario by uploading the static, contextual sample data to a lakehouse.
 author: baanders
 ms.author: baanders

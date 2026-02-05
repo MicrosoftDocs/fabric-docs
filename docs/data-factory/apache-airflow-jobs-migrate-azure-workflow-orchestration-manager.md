@@ -2,8 +2,6 @@
 title: Migrate to Apache Airflow Job in Microsoft Fabric
 description: Learn to migrate from Azure workflow orchestration manager to Apache Airflow Job in Microsoft Fabric.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
 ms.topic: how-to
 ms.date: 07/26/2024
 ms.custom: airflows

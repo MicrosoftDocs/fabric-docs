@@ -1,10 +1,9 @@
 ---
 title: Configure Azure Cosmos DB for MongoDB in a copy activity
 description: This article explains how to copy data using Azure Cosmos DB for MongoDB.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 08/20/2025
+ms.date: 02/03/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -44,7 +43,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Filter**: Specifies selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}).
+- **Filter**: Specifies selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}). For more information about querying Azure Cosmos DB for MongoDB, see [these query tutorials](/azure/cosmos-db/mongodb/tutorial-query).
 - **Cursor methods**: Select **+ New** to specify the way that the underlying query is executed. The ways to execute query are:
     - **project**: Specifies the fields to return in the documents for projection. To return all fields in the matching documents, omit this parameter.
     - **sort**: Specifies the order in which the query returns matching documents. Go to [cursor.sort()](https://www.mongodb.com/docs/manual/reference/method/cursor.sort/#cursor.sort) for more information.

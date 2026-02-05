@@ -1,9 +1,7 @@
 ---
 title: Pipeline Overview
 description: Learn about pipelines in Microsoft Fabric Data Factory, including activities, triggers, control flow, and how to use them for data processing workflows.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
+ms.reviewer: makromer
 ms.topic: concept-article
 ms.custom: fabric-data-factory
 ms.date: 08/01/2025

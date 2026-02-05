@@ -2,8 +2,6 @@
 title: Hello world tutorial for Apache Airflow Job
 description: Learn to get started with the Apache Airflow Job and run a Hello World dag.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
 ms.topic: tutorial
 ms.custom: airflows
 ms.date: 11/20/2025

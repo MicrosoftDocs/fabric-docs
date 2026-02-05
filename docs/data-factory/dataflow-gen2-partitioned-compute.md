@@ -1,11 +1,9 @@
 ---
 title: Use partitioned compute in Dataflow Gen2 (Preview)
 description: Overview on how to use partitioned compute for parallel processing in Dataflow Gen2 with CI/CD.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 01/28/2026
 ms.custom: dataflows
 ---
 
@@ -73,6 +71,8 @@ You can use the [Table.PartitionKey](/powerquery-m/table-partitionkey) function 
 - For scenarios where your data source doesn't support folding the transformations for your files, it's recommended that you choose partitioned compute over fast copy.
 
 - For best performance, use this method to load data directly to staging as your destination or to a Fabric Warehouse.
+
+- Only the latest partition run is stored in the Dataflow Staging Lakehouse and retuned by the Dataflow Connector.  Consider using  a data destination to retain data for each separate partitioned.
 
 - Use the *Sample transform file* from the **Combine files** experience to introduce transformations that should happen in every file.
 

@@ -1,8 +1,6 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn how to configure a mirrored database from Azure SQL Managed Instance in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: lazartimotic, jingwang, nzagorac
 ms.date: 12/04/2025
 ms.topic: tutorial

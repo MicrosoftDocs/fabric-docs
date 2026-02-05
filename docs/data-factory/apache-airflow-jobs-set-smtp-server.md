@@ -1,9 +1,7 @@
 ---
 title: Set up SMTP server in data workflows
 description: This tutorial helps to set up smtp server in Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024

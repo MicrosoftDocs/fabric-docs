@@ -68,6 +68,8 @@ You can create and explore workspace monitoring using Power BI reports and Real-
 
 * User data operation logs aren't available even though the table is available in the monitoring database.
 
+* If any table listed above is missing from the monitoring Eventhouse, it might be because the Eventhouse was created before the table became available. To resolve this issue, go to the **Monitoring** tab in the workspace settings pane, turn off the **Log workspace activity** setting, and then turn it on again.
+
 * Workspace monitoring is billed based on the capacity consumed by the monitoring items. For more details, see [Eventhouse and KQL Database consumption](../real-time-intelligence/real-time-intelligence-consumption.md) and [Microsoft Fabric event streams capacity consumption](../real-time-intelligence/event-streams/monitor-capacity-consumption.md).
 
 * [Throttling](../enterprise/throttling.md)

@@ -1,9 +1,7 @@
 ---
 title: Switch activity
 description: Learn how to add a switch activity to a pipeline and use it to evaluate a set of activities corresponding to a case that matches the condition evaluation.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023

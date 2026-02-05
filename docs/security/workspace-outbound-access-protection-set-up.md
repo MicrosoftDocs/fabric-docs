@@ -72,6 +72,9 @@ In the request body, set `outbound` to `Deny`. Also specify the `inbound` value 
 }
 ```
 
+> [!TIP]
+> Fabric administrators can use the [List Networking Communication Policies](/rest/api/fabric/admin/workspaces/list-networking-communication-policies) admin API to retrieve and audit the network policies configured across all workspaces in the tenant.
+
 ---
 
 After outbound public access is blocked, you can create an allow list of approved connections to external resources using either data connection rules or managed private endpoints.

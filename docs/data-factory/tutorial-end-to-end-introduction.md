@@ -1,9 +1,7 @@
 ---
 title: Data Factory end-to-end tutorial introduction and architecture
 description: This article introduces an end-to-end data integration tutorial that provides an hour long step-by-step guide to help you complete a full data integration scenario with Data Factory in Microsoft Fabric.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: overview
 ms.date: 05/05/2025
 ms.search.form: product-data-factory

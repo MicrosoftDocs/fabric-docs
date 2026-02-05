@@ -1,8 +1,6 @@
 ---
 title: Apache Airflow Job workspace settings
 description: This article enumerates the Apache Airflow job environment run-time configurations.
-author: nabhishek
-ms.author: abnarain
 ms.reviewer: abnarain
 ms.topic: how-to
 ms.date: 08/22/2025

@@ -1,8 +1,6 @@
 ---
 title: Set up your Palantir Foundry connection
 description: This article provides information about how to create a Palantir Foundry connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:

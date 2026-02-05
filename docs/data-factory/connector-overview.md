@@ -1,9 +1,7 @@
 ---
 title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: overview
 ms.date: 12/02/2025
 ms.search.form: product-data-factory
@@ -96,6 +94,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Dremio Software | ✓/− |  |  |
 | Dynamics 365 Business Central | ✓/− |  |  |
 | Dynamics 365 Customer Insights (Beta) | ✓/− |  |  |
+| Dynamics 365 | | ✓/✓ | ✓/✓ |
 | [Dynamics AX](connector-dynamics-ax-overview.md) |  | ✓/− | ✓/− |
 | [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |✓/✓  |
 | Dynatrace Grail DQL (Beta) | ✓/− |  |  |

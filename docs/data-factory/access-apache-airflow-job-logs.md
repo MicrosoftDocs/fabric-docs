@@ -1,9 +1,7 @@
 ---
 title: Access Apache Airflow Job Logs
 description: This article explains how to access Apache Airflow Job logs through Apache Airflow Job UI.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.date: 10/10/2024
 ms.custom: airflows

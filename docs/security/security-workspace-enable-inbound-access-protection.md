@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
 ms.custom:
-ms.date: 08/13/2025
+ms.date: 01/27/2026
 
 #customer intent: As a Fabric administrator, I want to enable and manage inbound access protection for my organization's workspaces to ensure secure network connections and control access at the tenant level.
 
@@ -18,7 +18,9 @@ Workspace inbound access protection is a network security feature that ensures t
 
 The **Configure workspace-level inbound network rules** tenant setting in the Fabric admin center allows tenant admins to enable or disable the ability for workspace admins to restrict inbound public access to their workspaces. This setting is disabled by default, meaning workspace admins can't restrict inbound public access to their workspaces. However, if permitted in Azure, workspace admins can still set up workspace-level private links in Azure.
 
-If the tenant admin chooses to enable this setting, workspace admins can configure restricted inbound public access for their workspaces. 
+The **Configure workspace-level IP firewall** tenant setting allows tenant admins to enable or disable the ability for workspace admins to configure IP firewall rules for their workspaces. This feature restricts inbound access to Fabric workspaces by allowing only specified IP addresses. Workspace admins can permit access for known IPs (such as users, machines, or VPNs), and all other IPs are blocked. 
+
+If the tenant admin chooses to enable these settings, workspace admins can configure these features for their workspaces. 
 
 ## Prerequisites
 
@@ -26,26 +28,17 @@ If the tenant admin chooses to enable this setting, workspace admins can configu
 
 ## Enable workspace inbound access protection on your tenant
 
-1. Open the admin portal and go to the tenant settings.
+1. Open the admin portal by selecting the **Settings** gear, then **Admin portal**.
 
-1. Find and expand the **Configure workspace-level inbound network rules** tenant setting.
+1. In **Tenant settings**, use the **Filter by keyword** search box to find the **Advanced networking** settings.
 
-1. Switch the toggle to **Enabled**.
+1. Expand the section **Configure workspace-level inbound network rules**. To allow workspace admins to restrict inbound public access to their workspaces, switch the toggle to **Enabled**. Then select **Apply**.
 
    :::image type="content" source="./media/security-workspace-enable-inbound-access-protection/enable-toggle-inbound-network-rules.png" alt-text="Screenshot showing the toggle enabled for inbound network rules." :::
 
-1. Select **Apply**. It could take up to 15 minutes to take effect. 
+1. Expand the section **Configure workspace IP firewall rules**. To enable workspace admins to configure IP firewall rules for their workspaces, switch the toggle to **Enabled**. Then select **Apply**.
 
-## Restrict inbound public access to a workspace
-
-Once the tenant setting is enabled, workspace admins can restrict inbound public access for individual workspaces:
-
-1. In the Fabric portal, navigate to your workspace.
-2. Select **Settings** from the workspace menu.
-3. Go to the **Network** tab.
-4. Under **Inbound access protection**, switch the toggle to **Restrict public access**.
-5. Review the warning and confirm your selection.
-6. Select **Save** to apply the changes.
+   :::image type="content" source="./media/security-workspace-enable-inbound-access-protection/enable-toggle-ip-firewall.png" alt-text="Screenshot showing the toggle enabled for IP firewall." :::
 
 > [!NOTE]
-> After restricting public access, only approved private endpoints or networks can connect to the workspace. Public internet access is blocked unless explicitly allowed.
+> Changes can take up to 15 minutes to take effect.

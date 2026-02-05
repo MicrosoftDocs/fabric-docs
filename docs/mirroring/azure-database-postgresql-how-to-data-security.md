@@ -1,8 +1,6 @@
 ---
 title: "Secure Data in Microsoft Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
 description: Learn about how to secure data in mirrored databases from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: scoriani
 ms.date: 03/31/2025
 ms.topic: how-to

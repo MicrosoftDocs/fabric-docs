@@ -116,7 +116,7 @@ When using __deployment pipelines__ with Lakehouse, OneLake Shortcuts metadata i
 
 * Shortcuts definitions are synced across stages in the deployment pipelines.
 * Shortcuts with external targets (ADLS Gen2, S3, etc.) are the same across all stages after deployment.
-* Shortcuts with internal targets (OneLake Shortcuts) in the same workspace are automatically remapped across stages. Shortcuts that target Data Warehouse and Semantic Models are not remapped during deployment. Tables, Folders and Files are not created in the target workspace. In order for the Shortcut to be valid, those references need to be created in the target workspace after deployment.
+* Shortcuts with internal targets (OneLake Shortcuts) in the same workspace are automatically remapped across stages. Tables, Folders and Files are not created in the target workspace. In order for the Shortcut to be valid, those references need to be created in the target workspace after deployment.
 * On the scenario that the same Shortcut needs to target different locations on different stages. For example, in Development point to a specific Folder in Amazon S3, and in Production a different folder in ADLS Gen2. The recommended approach is to use variables in the Shortcut definition. To learn more about variable library and how to effectively use it in Microsoft Fabric, read the [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md) article. Another option is; after the deployment, manually update the OneLake Shortcut definition in Lakehouse or directly using OneLake APIs.
 
 > [!IMPORTANT]

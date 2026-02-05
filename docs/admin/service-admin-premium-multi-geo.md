@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: ''
 ms.custom:
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 01/29/2026
 LocalizationGroup: Premium
 ---
 
@@ -100,13 +100,8 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
-* When you're using Multi-Geo, the following items are stored in the region that isn't your home region:
-    * SQL databases
-    * Models (*.ABF* files) for import and DirectQuery semantic models
-    * Query cache
-    * R images
+* When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region, yet some tenant metadata remains in the home region, including the following:
 
-    These items remain in the home region of the tenant:
     * Push datasets
     * Dashboard/report metadata: tile names, tile queries, and any other data
     * Service buses for gateway queries or scheduled refresh jobs

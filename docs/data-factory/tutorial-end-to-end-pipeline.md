@@ -1,9 +1,7 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
 description: In this tutorial, you create a pipeline to copy data as part of an end-to-end guide to complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: tutorial
 ms.date: 11/18/2025
 ms.custom: pipelines, sfi-image-nochange

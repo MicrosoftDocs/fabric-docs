@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Preview the ontology"
-description: Preview the ontology by observing its entity instances and relationship graphs.
+title: "Tutorial part 3: Preview the ontology"
+description: Preview the ontology by observing its entity instances and relationship graphs. Part 3 of the ontology (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
@@ -10,7 +10,7 @@ ms.topic: tutorial
 
 # Ontology (preview) tutorial part 3: Preview the ontology
 
-In this tutorial step, explore your ontology by using the preview experience. Inspect entity instances that instantiate your entity types with data, and explore graph-shaped context across sales and device streaming data.
+In this tutorial step, explore your ontology by using the preview experience included in ontology (preview). Inspect entity instances that instantiate your entity types with data, and explore relationship graphs that provide context across sales and device streaming data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 

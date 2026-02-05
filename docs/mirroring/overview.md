@@ -1,8 +1,6 @@
 ---
 title: "Mirroring"
 description: Learn about mirrored databases in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: imotiwala, chweb, maprycem, cynotebo, tinglee, sbahadur
 ms.date: 01/02/2026
 ms.topic: overview

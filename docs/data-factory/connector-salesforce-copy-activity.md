@@ -1,8 +1,7 @@
 ---
 title: Configure Salesforce in a copy activity
 description: This article explains how to copy data using Salesforce.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/20/2025
 ms.custom: 

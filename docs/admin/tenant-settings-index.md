@@ -7,7 +7,7 @@ ms.topic: reference
 ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
-ms.date: 01/14/2025
+ms.date: 01/30/2026
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -30,11 +30,11 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Product Feedback](../fundamentals/feedback.md)|This setting allows Microsoft to prompt users for feedback through in-product surveys within Microsoft Fabric and Power BI. Microsoft will use this feedback to help improve product features and services. User participation is voluntary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272840)|
 |[Users can create and share Data agent item types (preview)](/fabric/data-science/concept-data-agent)|Users can create natural language data question and answer (Q&amp;A) experiences using generative AI and then save them as Data agent items. Data agent items can be shared with others in the organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2276218)|
 |[Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric](./service-admin-portal-microsoft-fabric-tenant-settings.md#users-can-be-informed-of-upcoming-conferences-featuring-microsoft-fabric-when-they-are-logged-in-to-fabric)|Attending conferences can help your data teams learn in-depth about how to best use the Fabric platform for your business needs and build professional relationships with community members, Microsoft engineering and product teams, and the Fabric Customer Advisory Team (CAT). These conferences may be organized and hosted by third parties.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2306100)|
-|ML models can serve real-time predictions from API endpoints (preview)|With this setting on, users can get real-time predictions from model and version endpoints. Even with real-time endpoints turned off, batch predictions can still be generated.  [Learn More](https://aka.ms/MLModelEndpointsLearnMore)|
+|ML models can serve real-time predictions from API endpoints (preview)|With this setting on, users can create real-time predictions from model and version endpoints. Even with real-time endpoints turned off, batch predictions can still be generated.  [Learn More](https://aka.ms/MLModelEndpointsLearnMore)|
 |Detect anomalies in Real-Time Intelligence (Preview)|This setting allows users to use statistical detection algorithms to detect anomalies in real-time data.  [Learn More](https://aka.ms/AD_docs)|
 |Users can create dbt job items (preview)|Users can import, author and execute dbt (data build tool) projects directly within Fabric. This allows users to access a powerful transformation engine that connects seamlessly with SQL-based workflows without having to setup a CLI environment. [Learn More](https://aka.ms/dbtjob_docs)|
 |Users can create Maps (preview)|Users can build map items to analyze live geospatial data with interactive, real-time visualizations, helping uncover location-based insights.|
-|Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity\x{2019}s geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity\x{2019}s geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
+|Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity's geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity's geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
 |All Power BI users can see "Set alert" button to create Fabric Activator alerts|When enabled, all Power BI users will see the "Set alert" button in reports. However, only users with permission to create Fabric items can actually set up Fabric Activator alerts, which send real-time notifications based on predefined data conditions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2331953)|
 |Enable Snowflake database item (preview)|Turn on this setting to allow users to create the Snowflake database item in Fabric, to serve as a default storage location for Iceberg tables written by Snowflake.  [Learn More](https://aka.ms/sdbfabricdoc)|
 
@@ -198,6 +198,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Service principals can call Fabric public APIs](./service-admin-portal-developer.md#service-principals-can-call-fabric-public-apis)|This setting allows service principals with the appropriate  [roles and item permissions](https://go.microsoft.com/fwlink/?linkid=2301209) to call Fabric public APIs. To allow service principals to create workspaces, connections, and deployment pipelines turn on the setting titled  "Service principals can create workspaces, connections, and deployment pipelines".  [Learn More](https://go.microsoft.com/fwlink/?linkid=2301309)|
 |[Allow service principals to create and use profiles](/power-bi/developer/embedded/embed-multi-tenancy)|Allow service principals in your organization to create and use profiles.|
 |[Block ResourceKey Authentication](service-admin-portal-developer.md#block-resourcekey-authentication)|For extra security, block using resource key based authentication. This means users not allowed to use streaming semantic models API using resource key.|
+|[Define maximum number of Fabric identities in a tenant](service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant)|Enables admins to specify the maximum number of Fabric identities that can be created in a tenant.|
 
 ## [Admin API settings](service-admin-portal-admin-api-settings.md)
 
@@ -249,6 +250,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Block Public Internet Access](/power-bi/enterprise/service-security-private-links)|For extra security, block access to your Fabric tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. [Learn More](https://aka.ms/PrivateLinksLearnMore) [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
 |Configure workspace-level inbound network rules|With this setting on, workspace admins can configure inbound private link access protection in workspace settings. When a workspace is configured to restrict inbound network access, existing tenant-level private links can no longer connect to these workspaces. Turning off this setting reverts all workspaces to their previous configuration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2272575)|
 |Configure workspace-level outbound network rules|With this setting on, workspace admins can configure outbound access protection in workspace settings. Turning off this tenant setting also turns off outbound access protection in all the workspaces in the tenant.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2310620)|
+|Configure workspace IP firewall rules (preview)|With this setting enabled, workspace admins can configure IP firewall rules in Workspace settings. Turning on this setting when tenant blocks public access will still allow workspace admins to allow access from specific IP rules. [Learn More](https://go.microsoft.com/fwlink/?linkid=2223103)|
 
 ## Encryption
 
@@ -256,11 +258,11 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |Apply customer-managed keys|With this setting turned on, users can configure workspace level encryption using customer-managed keys to protect their data. When turned off, the default is to use Microsoft managed keys.   [Learn More](https://go.microsoft.com/fwlink/?linkid=2308801)|
 
-## [Metrics settings](service-admin-portal-goals-settings.md)
+## Scorecards settings
 
 | Setting name | Description |
 |------|-------|
-|[Create and use Metrics](/power-bi/create-reports/service-goals-introduction)|Users in the organization can create and use Metrics|
+|Create and use Scorecards|Users in the organization can create and use Scorecards. [Learn More](/power-bi/create-reports/service-goals-introduction) |
 
 ## [User experience experiments](service-admin-portal-user-experience-experiments.md)
 

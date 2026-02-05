@@ -1,8 +1,6 @@
 ---
 title: Convert Azure Data Factory Global Parameters to Fabric Variable Libraries
 description: Learn how to migrate Azure Data Factory Global Parameters to Microsoft Fabric Variable Libraries. Follow this step-by-step guide to ensure a smooth transition.
-author: whhender
-ms.author: whhender
 ms.reviewer: makromer
 ms.date: 01/07/2026
 ms.topic: how-to

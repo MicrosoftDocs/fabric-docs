@@ -1,8 +1,6 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases from Azure Database for PostgreSQL Flexible Server"
 description: Learn how to configure a mirrored database from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: scoriani, maghan
 ms.date: 11/17/2025
 ms.topic: tutorial

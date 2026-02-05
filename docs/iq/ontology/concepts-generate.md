@@ -1,6 +1,6 @@
 ---
 title: "Generating an ontology (preview) from a semantic model"
-description: Learn about the option to generate an ontology (preview) from a Power BI semantic model.
+description: Learn about generating an ontology (preview) item from a Power BI semantic model.
 author: baanders
 ms.author: baanders
 ms.reviewer: baanders
@@ -10,23 +10,21 @@ ms.topic: concept-article
 
 # Generating an ontology (preview) from a semantic model
 
-A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of an analytical domain, like a business. Semantic models hold information about your data and the relationships among that data. You can create them from lakehouse tables.
+A [semantic model](../../data-warehouse/semantic-models.md) in Fabric is a logical description of a domain, like a business. Semantic models hold information about your data and the relationships among that data. You can create them from lakehouse tables. When your data is in a semantic model, you can generate an ontology directly from that semantic model. 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-## Process overview
+## Process overview 
 
-When your data is in a semantic model, you can generate an ontology directly from that semantic model.  
-
-Ontology generation automatically performs the following actions:
-* Creates a new **ontology (preview) item** in your Fabric workspace, with a name of your choosing.
-* Creates an **entity type** in the ontology for each table in your semantic model.
-* Creates **static properties** on each entity type based on the columns in your tables, and **binds data** to them based on data rows.
-* Creates **relationship types** between entity types that follow relationships defined in the semantic model.
+Ontology generation automatically creates the following artifacts:
+* A new **ontology (preview) item** in your Fabric workspace, with a name that you choose.
+* **Entity types** in the ontology that match the tables in your semantic model.
+* **Static properties** on each entity type based on the columns in your tables, and **data bindings** that link your data rows to these properties.
+* **Relationship types** between entity types that follow relationships defined in the semantic model.
 
 After generating an ontology, complete these actions manually:
-* Bind **time series data** to entity types. (Properties for time series data aren't created automatically.)
-* Review **entity type keys** and add them if missing, especially for multi-key scenarios.
+* Bind **time series data** to entity types. Properties for time series data aren't created automatically.
+* Review **entity type keys** and add any that are missing, especially for multi-key scenarios.
 * Bind **relationship types** to data.
 * Review the entire ontology to make sure entity types, their properties and data bindings, and relationships are complete.
 

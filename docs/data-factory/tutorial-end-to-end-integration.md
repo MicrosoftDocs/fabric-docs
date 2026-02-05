@@ -1,9 +1,7 @@
 ---
 title: Module 3 - Automate and send notifications with Data Factory
 description: This module covers the integration and orchestration of tasks with your pipeline. It's part 3 of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 01/06/2026

@@ -1,9 +1,7 @@
 ---
 title: Functions activity
 description: Learn how to add a functions activity to a pipeline and use it to run Fabric user data functions or Azure Functions.
-ms.reviewer: shaween18
-ms.author: abnarain
-author: ssindhub
+ms.reviewer: shaween18, abnarain
 ms.topic: how-to
 ms.custom: 
   - pipelines

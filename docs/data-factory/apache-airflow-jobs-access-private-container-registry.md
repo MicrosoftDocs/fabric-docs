@@ -1,9 +1,7 @@
 ---
 title: Add a Kubernetes secret to pull an image from a private container registry
 description: This article explains how to add a Kubernetes secret to pull container image from a private container registry.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024

@@ -4,7 +4,7 @@ description: Learn how to configure Azure Cosmos DB accounts with private networ
 author: jilmal
 ms.author: jmaldonado
 ms.reviewer: mbrown
-ms.date: 01/21/2026
+ms.date: 01/26/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
@@ -40,7 +40,7 @@ Azure Cosmos DB supports two primary network security configurations for mirrori
 - **Virtual network**: Restrict access to your Azure Cosmos DB account to specific virtual network subnets. With this configuration, you maintain "Selected networks" access and add the necessary Azure service IP addresses.
 - **Private endpoint**: Provide a private IP address from your virtual network to your Azure Cosmos DB account, keeping all traffic on the Microsoft backbone network. This requires temporarily enabling public access to specific Azure services during mirroring setup.
 
-Both configurations use the **Network ACL Bypass** feature to allow Fabric to access your Cosmos DB account by authorizing specific Fabric workspace IDs.
+Both configurations use the **Network ACL** feature to allow Fabric to access your Cosmos DB account as a trusted workspace authorizing specific Fabric workspace IDs.
 
 ## Quick start: Automated configuration with PowerShell
 
@@ -51,8 +51,8 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 
 1. **Configures RBAC permissions** - Creates a custom role with required read permissions for Fabric mirroring and assigns it to your Fabric workspace identity. Also applies the Built-in Data Contributor if not already configured.
 1. **Sets up IP firewall rules** - Enables public access and adds region specific IP Firewall rules for DataFactory and PowerQueryOnline to allow these services to initialize mirroring. *(Public access is disabled after mirroring successfully configured)*
-1. **Enables Network ACL Bypass capability** - Activates the `EnableFabricNetworkAclBypass` feature on your Cosmos DB account.
-1. **Configures workspace bypass** - Authorizes your Fabric workspace ID to bypass network restrictions.
+1. **Enables Network ACL capability** - Activates the `EnableFabricNetworkAclBypass` feature on your Cosmos DB account to allow a Fabric workspace to authenticate as a trusted resource.
+1. **Configures trusted workspace** - Authorizes your Fabric workspace ID.
 1. **Disables public access** - For private endpoint configurations only. If public access was enabled previously, it leaves it enabled.
 
 ### Run the automated script
@@ -231,9 +231,9 @@ Use Network Security Perimeter (NSP) to allow access using service tags, which a
 > [!NOTE]
 > This save operation can take 5-15 minutes to complete.
 
-### Step 3: Enable Network ACL Bypass capability
+### Step 3: Enable Network ACL capability
 
-Enable the Fabric Network ACL Bypass capability on your Cosmos DB account:
+Enable the Fabric Network ACL capability on your Cosmos DB account:
 
 1. Open PowerShell.
 
@@ -245,9 +245,9 @@ Enable the Fabric Network ACL Bypass capability on your Cosmos DB account:
     $cosmos | Set-AzResource -UsePatchSemantics -Force
     ```
 
-### Step 4: Configure workspace bypass
+### Step 4: Configure the trusted Fabric workspace
 
-Authorize your Fabric workspace to bypass network ACLs:
+Authorize your Fabric workspace as a trusted resource:
 
 > [!TIP]
 > Use a shared workspace instead of *My workspace*. Workspace IDs are more readily available in shared workspaces.
@@ -286,7 +286,7 @@ Create your mirrored database in Fabric:
 
 1. Navigate to the [Fabric portal](https://app.fabric.microsoft.com/).
 
-1. Open the workspace you configured for bypass access.
+1. Open the workspace you configured for trusted access.
 
 1. In the navigation menu, select **Create**.
 
@@ -352,7 +352,7 @@ After successfully creating the mirror and verifying replication, disable public
 > [!NOTE]
 > This operation can take 5-15 minutes to complete.
 
-After disabling public access, verify that mirroring continues to work. The Network ACL Bypass allows Fabric to access your account through the authorized workspace even with public access disabled.
+After disabling public access, verify that mirroring continues to work. The Network ACL allows your Fabric workspace to access your account through the authorized workspace even with public access disabled.
 
 ## Verify the mirroring connection
 
@@ -374,8 +374,8 @@ When using virtual networks or private endpoints with Azure Cosmos DB mirroring,
 - The user configuring private networks for Cosmos DB Mirroring must be an Azure subscription owner. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
 - Private network support for Cosmos DB mirroring is only available for OAuth-based authentication.
 - When using Microsoft Entra ID authentication, ensure that the required RBAC permissions are configured. For more information, see [security limitations](azure-cosmos-db-limitations.md#security-limitations).
-- The `EnableFabricNetworkAclBypass` capability must be enabled on your Cosmos DB account before configuring Network ACL Bypass.
-- Network ACL Bypass configuration is workspace-specific. Each workspace that needs to access the Cosmos DB account must be authorized separately.
+- The `EnableFabricNetworkAclBypass` capability must be enabled on your Cosmos DB account before configuring the Network ACL.
+- Network ACL configuration is workspace-specific. Each workspace that needs to access the Cosmos DB account must be authorized separately.
 - You must add all IPv4 addresses for the DataFactory and PowerQueryOnline service tags in your region. Partial IP lists may cause connection failures.
 - For private endpoint configurations, you must temporarily enable public access during the initial mirror setup. After mirroring is established, you can disable public access.
 - For virtual network configurations, the endpoint rules must remain in place along with the added IP addresses.
@@ -385,23 +385,23 @@ When using virtual networks or private endpoints with Azure Cosmos DB mirroring,
 
 If you experience issues connecting to your Azure Cosmos DB account:
 
-1. **Verify Network ACL Bypass capability is enabled:**
+1. **Verify Network ACL capability is enabled:**
 
     ```powershell
     $account = Get-AzCosmosDBAccount -ResourceGroupName <resourceGroup> -Name <accountName>
     $account.Capabilities.Name
     ```
 
-    Confirm that `EnableFabricNetworkAclBypass` appears in the output. If there's no output, Network ACL Bypass capability has not been enabled.
+    Confirm that `EnableFabricNetworkAclBypass` appears in the output. If there's no output, the Network ACL capability has not been enabled.
 
-1. **Check workspace bypass configuration:**
+1. **Check trusted workspace configuration:**
 
     ```powershell
     $account = Get-AzCosmosDBAccount -ResourceGroupName <resourceGroup> -Name <accountName>
     $account.NetworkAclBypassResourceIds
     ```
 
-    Verify that the resource exists and has the correct tenant ID and workspace ID. If there's no output, Fabric workspace bypass has not been configured.
+    Verify that the resource exists and has the correct tenant ID and workspace ID. If there's no output, Fabric workspace has not been configured.
 
 1. **Verify IP addresses are correct:**
 

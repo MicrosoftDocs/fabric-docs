@@ -2,9 +2,7 @@
 title: Migration Best Practices for Azure Data Factory to Fabric Data Factory
 description: Discover best practices for ADF-to-Fabric migrations, including inventorying assets, assessing feature parity, and choosing the right migration path.
 #customer intent: As an Azure Data Factory customer I want to explore best practices for migrating to Fabric Data Factory, so I can improve my data integration strategy and ensure a smooth and efficient transition.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.date: 09/22/2025
 ms.topic: concept-article
 ai-usage: ai-assisted
