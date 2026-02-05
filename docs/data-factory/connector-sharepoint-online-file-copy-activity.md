@@ -45,7 +45,7 @@ If you use service principal authentication to connect to SharePoint, you need t
       - **Redirect URL**: `https://www.contoso.com`
       - **Permission Request XML**:
 
-        - For source：
+        - For source:
 
             ```xml
             <AppPermissionRequests AllowAppOnlyPolicy="true">
@@ -55,7 +55,7 @@ If you use service principal authentication to connect to SharePoint, you need t
 
           :::image type="content" source="./media/connector-sharepoint-online-file/request-xml.png" lightbox="./media/connector-sharepoint-online-list/request-xml.png" alt-text="Screenshot that shows request XML.":::
 
-        - For destination：
+        - For destination:
 
             ```xml
             <AppPermissionRequests AllowAppOnlyPolicy="true">
@@ -185,8 +185,11 @@ The following properties are supported for SharePoint Online File under the **De
 The following properties are **required**:
 
 - **Connection**: Select a SharePoint Online File connection from the connection list. If no connection exists, then create a new SharePoint Online File connection.
+
 - **Connection type**: Select **SharePoint Online File (Preview)**.
+
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
+
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format).
  
 Under **Advanced**, you can specify the following fields:
@@ -230,7 +233,7 @@ The following tables contain more information about the copy activity in SharePo
 | **Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.| true/false|No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| \<datetime\> | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. |true/false | No | enablePartitionDiscovery |
-| **Partition root path** | When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns. | < your partition root path > | No | partitionRootPath |
+| **Partition root path** | When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns. | \<your partition root path\> | No | partitionRootPath |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<integer\>  |No |maxConcurrentConnections|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
