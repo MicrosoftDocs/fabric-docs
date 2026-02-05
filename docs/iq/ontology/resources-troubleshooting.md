@@ -34,9 +34,9 @@ The following table describes common issues when generating a new ontology (prev
 | Queries return null values for `Decimal` properties | Fabric Graph doesn't currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data allows the data to show up in queries. |
 | General troubleshooting | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
 
-## Troubleshoot ontology access
+## Troubleshoot capacity usage
 
-The following table describes common issues when accessing the main view of an ontology (preview) item.
+The following table describes common capacity issues with an ontology (preview) item.
 
 | Issue | Recommendation |
 |---|---|

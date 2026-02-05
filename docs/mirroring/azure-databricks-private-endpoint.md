@@ -4,7 +4,7 @@ description: Learn how to connect a mirrored Azure Databricks catalog item in Mi
 author: kgremban
 ms.author: kgremban
 ms.reviewer: preshah
-ms.date: 01/28/2026
+ms.date: 02/04/2026
 ms.topic: how-to
 ---
 
@@ -22,10 +22,10 @@ You can also connect to your ADLS storage accounts that are behind a private end
 * An Azure Databricks workspace deployed in a virtual network. Follow the instructions in [Deploy Azure Databricks in your Azure virtual network (VNet injection)](/azure/databricks/security/network/classic/vnet-inject).
 * Private connectivity for your Databricks workspace. Follow the instructions in [Configure private connectivity for an existing workspace](/azure/databricks/security/network/front-end/front-end-private-connect#-configure-private-connectivity-for-an-existing-workspace).
 
-## Limitations
+## Limitations and known issues
 
 * You can't access Azure Databricks workspaces through an on-premises data gateway. Only virtual network data gateway is supported.
-* You can create connections using the virtual network data gateway only through the Manage Connections experience. You can't create connections within the connection creation flow of the mirrored Azure Databricks catalog item.
+* You have to use the **Manage connections** experience to create a connection that uses a virtual network data gateway. You can't create supported connections as part of the mirrored Azure Databricks catalog item creation flow.
 
 ## Create a virtual network data gateway
 
@@ -65,7 +65,13 @@ Create a connection that uses the virtual network data gateway to provide access
 
 Now that you have the Azure Databricks connection configured, your mirrored Azure Databricks catalog items can access your private Azure Databricks workspace through the virtual network data gateway.
 
-Follow the instructions in [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](./azure-databricks-tutorial.md). When you select a connection for the catalog item, choose the Azure Databricks connection that you created in the previous section.
+1. Follow the instructions in [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](./azure-databricks-tutorial.md). 
+1. When you select a connection for the catalog item, choose the Azure Databricks connection that you created in the previous section.
+
+   >[!IMPORTANT]
+   >There is a known issue that you can't select a virtual network data gateway if you try to create a new connection as part of the steps to create a mirrored Azure Databricks catalog item. You must use the steps in the previous section to create a connection ahead of time, then select the existing connection for your mirrored Azure Databricks catalog item.
+
+   :::image type="content" source="./media/azure-databricks-private-endpoint/existing-connection.png" alt-text="Screenshot that shows selecting an existing connection when creating a mirrored Azure Databricks catalog item.":::
 
 ## Related content
 

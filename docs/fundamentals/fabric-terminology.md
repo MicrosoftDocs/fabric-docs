@@ -23,7 +23,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
 
-- **Workload/experience:** A collection of capabilities targeted to a specific functionality. The Fabric workloads include Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, Databases, Industry Solutions, Real-Time Intelligence, IQ, and Power BI. Fabric workloads are sometimes referred to as *Fabric experiences*.
+- **Workload/experience:** A collection of capabilities targeted to a specific functionality. The Fabric workloads include Fabric Data Engineering, Data Factory, Fabric Data Science, Fabric Data Warehouse, Databases, Industry Solutions, Real-Time Intelligence, Fabric IQ, and Power BI. Fabric workloads are sometimes referred to as *Fabric experiences*.
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
