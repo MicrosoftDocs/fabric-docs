@@ -8,7 +8,10 @@ ms.author: jorgegom
 ms.custom: dataflows
 ---
 
-# Excel Advanced Data Destination
+# Excel Advanced Data Destination (Preview)
+
+> [!NOTE]
+> Excel format for file-based destinations is currently in preview.
 
 When you are working on a file based destination in Dataflow Gen2, you have the option to save your data in various formats, including Excel. Excel files can be created with simple tabular data, but you can also create complex workbooks with multiple sheets, charts, and customized formatting by using navigation tables. These navigation tables define the structure and content of the Excel document programmatically and provide a powerful way to generate dynamic Excel files.
 

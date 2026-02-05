@@ -65,7 +65,10 @@ When you select **Delimited text** as the file format, configure these settings:
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the delimited text format selected.":::
 
-### Excel format
+### Excel format (Preview)
+
+> [!NOTE]
+> Excel format for file-based destinations is currently in preview.
 
 When you select **Excel** as the file format, you have three format options: **Single sheet**, **Multi sheet**, and **Advanced**.
 
