@@ -46,8 +46,8 @@ You can define a materialized lake view using a decorator `@fmlv.materialized_la
 | **partition_cols** | Parameter for creating partitions based on the specified column(s).  |
 | **replace** | Parameter to indicate whether to replace the existing view definition. Defaults to False.|
 | **table_properties** | A list of key-value pairs that for defining the properties of materialized lake view. | 
-| **function definition** | Required. A function to define the logic which returns a Spark dataframe object.         |  
-| **check** | Optional. Function to define the data quality constraints. For more details, refer to data quality page.     |  
+| **function definition** | Required. A function to define the logic, which returns a Spark dataframe object.         |  
+| **check** | Optional. Function to define the data quality constraints.    |  
 
 ## Examples
 
@@ -86,20 +86,20 @@ You can define a materialized lake view using a decorator `@fmlv.materialized_la
 ## Execution semantics for PySpark materialized lake views
 
 > [!IMPORTANT]
-> 1. PySpark materialized lake view refresh requires notebook unlike Spark SQL. During the refresh, Fabric automatically determine the notebook associated with the PySpark MLV and execute the cells in the notebook required to refresh.
+> 1. PySpark materialized lake view refresh requires notebook unlike Spark SQL. During the refresh, Fabric automatically determines the notebook associated with the PySpark MLV and execute the cells in the notebook required to refresh.
 
 
 ### Best practices for defining PySpark based materialized lake views
 
 * All cells required for the materialized lake view definition must be included within the same notebook, and all cells upon which the materialized lake view definition depends must be positioned above the cell containing the `@fmlv` decorator definition.
 * Only one instance of the `@fmlv` view decorator and its associated function should be present per notebook cell. Multiple materialized lake views can be created within the same notebook by defining them in separate cells.   
-* Do not delete the notebook where the PySpark materialized lake view is defined, as this will cause scheduled refresh failures. Fabric validates all cells related to the materialized lake view and disregards unrelated cells within the notebook. 
+* Do not delete the notebook where the PySpark materialized lake view is defined, as scheduled refresh fails without the notebook. Fabric validates all cells related to the materialized lake view and disregards unrelated cells within the notebook. 
 * Multiple notebooks may be utilized to create separate materialized lake views. 
-* To update the existing materialized lake view definition, you can modify the function definition and execute the command with `replace=True` in the notebook. This will replace the existing view with the new definition while keeping the same name.
-* Any changes made to the `@fmlv` decorator definition require the notebook to be re-executed. The changes will be consumed during the next scheduled refresh. If changes are not executed once then the next refresh will pick the latest code in the notebook and may lead to execution errors during refresh expect if the changes are limited to logical changes within the function definition.
+* To update the existing materialized lake view definition, you can modify the function definition and execute the command with `replace=True` in the notebook which replaces the existing view with the new definition while keeping the same name.
+* Any changes made to the `@fmlv` decorator definition require the notebook to be re-executed. The changes are consumed during the next scheduled refresh. If changes are not executed once then the next refresh will pick the latest code in the notebook and may lead to execution errors during refresh expect if the changes are limited to logical changes within the function definition.
 * Defining multiple materialized lake views within the same cell can lead to execution errors during refresh. Each materialized lake view should be defined in its own cell to ensure proper execution and refresh behavior.
 * Avoid defining materialized lake views in the same notebook as other non-MLV related code, as this can lead to confusion and potential execution errors during refresh. Keeping MLV definitions separate from other code ensures clarity and proper execution.
-* Avoid using variables to pass parameter values in the `@fmlv` decorator, as this is not supported. All parameters must be provided explicity in the decorator definition to ensure proper execution and refresh behavior.
+* Avoid using variables to pass parameter values in the `@fmlv` decorator, as it is not supported. All parameters must be provided explicitly in the decorator definition to ensure proper execution and refresh behavior.
 
 
 Consider the following example of defining materialized lake view in a notebook-
