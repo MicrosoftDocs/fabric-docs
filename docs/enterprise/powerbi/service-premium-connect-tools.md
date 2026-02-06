@@ -7,7 +7,7 @@ ms.reviewer: kayu
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to
-ms.date: 07/01/2025
+ms.date: 02/05/2026
 ms.custom: ''
 LocalizationGroup: Premium
 ---
@@ -99,12 +99,25 @@ Workspaces assigned to a capacity have a connection string in URL format. For ex
 
 Applications connecting to the workspace use the URL as if it were an Analysis Services server name. For example:
 
-`powerbi://api.powerbi.com/v1.0/contoso.com/Sales Workspace`.
+`powerbi://api.powerbi.com/v1.0/contoso.com/Sales%20Workspace`.
 
 > [!NOTE]
-> Connecting to a [**My Workspace**](/power-bi/consumer/end-user-workspaces#types-of-workspaces) by using the XMLA endpoint is currently not supported.
+> Workspace names must be URI encoded (or URI escaped) as defined in RFC 3986, which requires any reserved characters to be percent encoded. For example, `Sales%20Workspace` is the URI-encoded version of the workspace name `Sales Workspace`.
 
-#### B2B and guest users
+### Connecting to a personal workspace
+
+Users can connect to semantic models in a personal workspace (My Workspace) by using the XMLA endpoint if the personal workspace is assigned to a Premium Per User (PPU), Premium, or Fabric capacity. Users must have Build permission on the semantic model within the target workspace, particularly when connecting to a semantic model in another user's personal workspace.
+
+XMLA-based clients can connect to a personal workspace with the following requirements:
+
+- Analysis Services Client Libraries version 17.0.40.18 or higher.
+- Connection string in v2 format, referencing the owner of the target personal workspace by UPN or object ID:
+  - `powerbi://api.powerbi.com/v2.0/[tenantId]/home/myworkspace/[URI_encoded_UPN]`
+  - `powerbi://api.powerbi.com/v2.0/[tenantId]/home/myworkspace/[UserObjectId]`
+
+For SQL Server Management Studio (SSMS), use the February 2026 release or later when connecting to a personal workspace.
+
+### B2B and guest users
 
 When users access a workspace in their home tenant, the tenant name section in the URL can be replaced by `myorg`. For example:
 
@@ -155,7 +168,6 @@ The following semantic models aren't accessible by using the XMLA endpoint. Thes
 - Semantic models based on a live connection to an Azure Analysis Services or SQL Server Analysis Services model.
 - Semantic models based on a live connection to a Power BI semantic model in another workspace. To learn more, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
 - Semantic models with Push data by using the REST API.
-- Semantic models in My Workspace.
 - Excel workbook semantic models.
 
 ### Server/workspace alias
