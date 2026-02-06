@@ -1,9 +1,7 @@
 ---
 title: Apache Airflow compute in Fabric
 description: Learn about Apache Airflow pools in Microsoft Fabric, including node sizes, autoscaling, and how to pick the right capacity SKU for your needs.
-author: Mirabile-S
-ms.author: seanmirabile
-ms.reviewer: whhender
+ms.reviewer: seanmirabile
 ms.date: 10/17/2025
 ms.topic: concept-article
 ai-usage: ai-assisted

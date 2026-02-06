@@ -5,7 +5,7 @@ ms.topic: concept-article
 author: eric-urban
 ms.author: eur
 ms.reviewer: abhishjain
-ms.date: 10/07/2025
+ms.date: 12/22/2025
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -18,7 +18,7 @@ In this article, you learn about the Spark SQL syntax for activities related to 
 You can define a materialized lake view from any table or from another materialized lake view within a lakehouse. The following code outlines the syntax for declaring a materialized lake view by using Spark SQL:
 
 ```sql
-CREATE MATERIALIZED LAKE VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MLV_Identifier 
+CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS][workspace.lakehouse.schema].MLV_Identifier 
 [( 
     CONSTRAINT constraint_name1 CHECK (condition expression1)[ON MISMATCH DROP | FAIL],  
     CONSTRAINT constraint_name2 CHECK (condition expression2)[ON MISMATCH DROP | FAIL] 
@@ -43,6 +43,20 @@ AS select_statement
 | `AS select_statement` | Query to populate the data in the materialized lake view by using a `SELECT` statement.|
 
 ### Examples
+
+The following example illustrates the definition of a materialized lake view using replace syntax:
+
+```sql
+CREATE OR REPLACE MATERIALIZED LAKE VIEW silver.customer_orders AS
+SELECT 
+    c.customerID,
+    c.customerName,
+    c.region,
+    o.orderDate,
+    o.orderAmount
+FROM bronze.customers c INNER JOIN bronze.orders o
+ON c.customerID = o.customerID
+```
 
 The following example illustrates the definition of a materialized lake view named `customers_enriched` by joining a `customers` table with an `orders` table:
 

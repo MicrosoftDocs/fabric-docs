@@ -163,12 +163,12 @@ items:
       href: runtime.md
     - name: Runtime lifecycle
       href: lifecycle.md
+    - name: Runtime 2.0 (Spark 4.0)
+      href: runtime-2-0.md
     - name: Runtime 1.3 (Spark 3.5)
       href: runtime-1-3.md
     - name: Runtime 1.2 (Spark 3.4)
       href: runtime-1-2.md
-    - name: Runtime 1.1 (Spark 3.3)
-      href: runtime-1-1.md
   - name: Native Execution Engine
     href: native-execution-engine-overview.md
   - name: Spark job definition (SJD)
@@ -179,8 +179,10 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
-    - name: Spark job definition API tutorial
+    - name: Spark job definition API v1
       href: spark-job-definition-api.md
+    - name: Spark job definition API v2
+      href: spark-job-definition-api-v2.md
     - name: SJD Git integration
       href: spark-job-definition-source-control.md
     - name: SJD deployment pipeline integration
@@ -284,6 +286,8 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: High Concurrency Mode for Lakehouse Table Load and Preview Operations
+      href: high-concurrency-for-lakehouse-operations.md
     - name: Table compaction
       href: table-compaction.md
     - name: Lakehouse table maintenance
@@ -329,10 +333,14 @@ items:
     href: fabric-notebook-selection-guide.md
   - name: T-SQL magic command in Python Notebook
     href: tsql-magic-command-notebook.md
+  - name: Fabric Connection with Notebook
+    href: fabric-connection-with-notebook.md  
   - name: Fabric Notebook known limitation
     href: notebook-limitation.md
   - name: Query Mirrored Databases in Spark Notebook
     href: query-mirrored-database-spark-notebooks.md
+  - name: Query Eventstream from Spark Notebook 
+    href: notebook-with-event-stream.md
 - name: Environments
   items:
   - name: Create, configure and use an environment
@@ -457,30 +465,42 @@ items:
   items:
    - name: Overview
      href: ./user-data-functions/user-data-functions-overview.md
-   - name: Create a User data functions item
-     href: ./user-data-functions/create-user-data-functions-portal.md
-   - name: Use the functions portal editor
-     href: ./user-data-functions/user-data-functions-portal-editor.md
-   - name: Test your User data functions
-     href: ./user-data-functions/test-user-data-functions.md
-   - name: Connect to data sources
-     href: ./user-data-functions/connect-to-data-sources.md
-   - name: Integration with Fabric pipelines
-     href: ./user-data-functions/create-functions-activity-data-pipelines.md
-   - name: Integration with Fabric notebooks
-     href: ./notebook-utilities.md#user-data-function-udf-utilities
-   - name: Manage public and private libraries
-     href: ./user-data-functions/how-to-manage-libraries.md
-   - name: Service details and limitations
-     href: ./user-data-functions/user-data-functions-service-limits.md
-   - name: Source control and deployment pipelines
-     href: ./user-data-functions/git-and-deployment-pipelines.md
-   - name: Python programming model
-     href: ./user-data-functions/python-programming-model.md
-   - name: Invoke functions using Python
-     href: ./user-data-functions/tutorial-invoke-from-python-app.md
-   - name: View logs
-     href: ./user-data-functions/view-function-logs.md
+   - name: Get started
+     items:
+      - name: Create a User data functions item
+        href: ./user-data-functions/create-user-data-functions-portal.md
+      - name: Develop with VS Code
+        href: ./user-data-functions/create-user-data-functions-vs-code.md
+   - name: Develop
+     items:
+      - name: Use the functions portal editor
+        href: ./user-data-functions/user-data-functions-portal-editor.md
+      - name: Python programming model
+        href: ./user-data-functions/python-programming-model.md
+      - name: Test your User data functions
+        href: ./user-data-functions/test-user-data-functions.md
+      - name: View logs
+        href: ./user-data-functions/view-function-logs.md
+   - name: Connect and integrate
+     items:
+      - name: Connect to data sources
+        href: ./user-data-functions/connect-to-data-sources.md
+      - name: Generate invocation code
+        href: ./user-data-functions/generate-invocation-code.md
+      - name: Integration with Fabric pipelines
+        href: ./user-data-functions/create-functions-activity-data-pipelines.md
+      - name: Integration with Fabric notebooks
+        href: ./notebook-utilities.md#user-data-function-udf-utilities
+      - name: Invoke functions using Python
+        href: ./user-data-functions/tutorial-invoke-from-python-app.md
+   - name: Manage
+     items:
+      - name: Manage public and private libraries
+        href: ./user-data-functions/how-to-manage-libraries.md
+      - name: Source control and deployment pipelines
+        href: ./user-data-functions/git-and-deployment-pipelines.md
+      - name: Service details and limitations
+        href: ./user-data-functions/user-data-functions-service-limits.md
 - name: Materialized lake views (preview)
   items:
   - name: Overview

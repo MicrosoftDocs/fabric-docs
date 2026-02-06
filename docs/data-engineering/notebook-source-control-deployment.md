@@ -4,7 +4,7 @@ description: Learn about Fabric notebook source control and deployment pipelines
 ms.reviewer: jingzh
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.date: 08/22/2024
 ms.search.form: Notebook git deployment pipelines alm ci cd
@@ -19,7 +19,7 @@ This article explains how Git integration and deployment pipelines work for note
 Fabric notebooks offer Git integration for source control with Azure DevOps. With Git integration, you can back up and version your notebook, revert to previous stages as needed, collaborate or work alone using Git branches, and manage your notebook content lifecycle entirely within Fabric.
 
 > [!NOTE]
-> Start from October 2024, Notebook git integration supports persisting the mapping relationship of the attached Environment when syncing to new workspace, which means when you commit the notebook and attached environment together to git repo, and sync it to another workspace, the newly generated notebook and environment will be bound together. This upgrade will have impact to existing Notebooks and dependent Environments that are versioned in git, the **Physical id** of attached environment in notebook metadata content will be replaced with an **Logical id**, the change will get reflected on the diff view.
+> Start from October 2024, Notebook git integration supports persisting the mapping relationship of the attached Environment when syncing to new workspace, which means when you commit the notebook and attached environment together to git repo, and sync it to another workspace, the newly generated notebook and environment are bound together. This upgrade has impact to existing Notebooks and dependent Environments that are versioned in git, the **Physical id** of attached environment in notebook metadata content is replaced with a **Logical id**, and the change gets reflected on the diff view.
 
 ### Set up a connection
 
@@ -37,7 +37,7 @@ The following image is an example of the file structure of each notebook item in
 
 :::image type="content" source="media\notebook-source-control-deployment\notebook-repo-view.png" alt-text="Screenshot of notebook Git repo file structure." lightbox="media\notebook-source-control-deployment\notebook-repo-view.png":::
 
-When you commit the notebook item to the Git repo, the notebook code is converted to a source code format, instead of a standard .ipynb file. For example, a PySpark notebook converts to a notebook-content.py file. This approach allows for easier code reviews using built-in diff features.
+When you commit the notebook item to the Git repo, the notebook code is converted to a source code format, instead of a standard `.ipynb` file. For example, a PySpark notebook converts to a notebook-content.py file. This approach allows for easier code reviews using built-in diff features.
 
 In the item content source file, metadata (including the default lakehouse and attached environment), markdown cells, and code cells are preserved and distinguished. This approach supports a precise recovery when you sync back to a Fabric workspace.
 
@@ -48,7 +48,7 @@ Notebook cell output isn't included when syncing to Git.
 > [!NOTE]
 >
 > - Currently, files in **Notebook resources** aren't committed to the repo. Committing these files is supported in an upcoming release.
-> - We recommend you to manage the notebooks and their dependent environment in the same workspace, and use git to version control both notebook and [environment](./environment-git-and-deployment-pipeline.md) items, Fabric Git system will handle the mapping relationship when syncing the notebook and attached environment to new workspaces.
+> - We recommend you to manage the notebooks and their dependent environment in the same workspace, and use git to version control both notebook and [environment](./environment-git-and-deployment-pipeline.md) items. The Fabric Git system handles the mapping relationship when syncing the notebook and attached environment to new workspaces.
 > - The default lakehouse ID persists in the notebook when you sync from the repo to a Fabric workspace. If you commit a notebook with the default lakehouse, you must refer a newly created lakehouse item manually. For more information, see [Lakehouse Git integration](lakehouse-git-deployment-pipelines.md).
 
 ## Notebook in deployment pipelines
@@ -57,7 +57,7 @@ You can also use Deployment pipeline to deploy your notebook code across differe
 
 > [!NOTE]
 > 
-> - You are using the new design of deployment pipeline now, the old UI can be accessed by turning off 'New Deployment pipeline'.
+> - You're using the new design of deployment pipeline now. The old UI can be accessed by turning off 'New Deployment pipeline'.
 > - Start from October, Fabric notebook supports auto-binding feature that will bind the default lakehouse and attached environment within the same workspace when deploying to next stage. The change will have impacts to existing notebooks in deployment pipeline.
 >   - The default lakehouse and attached environment (when all dependent items are in the same workspace) will be replaced by newly generated items in target workspace, the notebook metadata change will be highlighted in the diff view in next round of deployment.
 >   - You can set deployment rules for default lakehouse to override the auto-binded lakehouse.

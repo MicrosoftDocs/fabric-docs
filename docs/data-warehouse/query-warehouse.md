@@ -1,16 +1,20 @@
 ---
-title: Query the SQL Analytics Endpoint or Warehouse
-description: Learn more about options to write TSQL queries on the SQL analytics endpoint or Warehouse in Microsoft Fabric.
+title: Query the Warehouse or SQL analytics endpoint
+description: Learn more about options to write T-SQL queries on a warehouse or SQL analytics endpoint in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: prlangad, kecona
-ms.date: 04/06/2025
+ms.reviewer: prlangad
+ms.date: 01/06/2026
 ms.topic: how-to
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
-# Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
+# Query the warehouse or SQL analytics endpoint
 
 **Applies to:** [!INCLUDE [fabric-se-dw-mirroreddb](includes/applies-to-version/fabric-se-dw-mirroreddb.md)]
+
+In this article, learn how to query a warehouse or a SQL analytics endpoint in Microsoft Fabric. 
+
+## Prerequisites
 
 To get started with this tutorial, check the following prerequisites:
 

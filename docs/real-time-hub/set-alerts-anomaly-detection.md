@@ -7,7 +7,7 @@ ms.reviewer: tessahurr
 ms.topic: how-to
 ms.custom:
 ms.date: 10/14/2025
-ms.search.form: Set Alerts, Anomaly Detection Alerts, Anomaly Detection Set Alerts
+ms.search.form: Anomaly Detection Set Alerts On Anomaly Detection Events
 ---
 
 # Set alerts on anomaly detection events in Real-Time hub (Preview)

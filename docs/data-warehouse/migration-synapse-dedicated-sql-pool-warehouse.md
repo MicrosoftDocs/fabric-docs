@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - fabric-cat
 ---

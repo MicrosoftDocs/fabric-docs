@@ -1,9 +1,7 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
 description: In this tutorial, you create a pipeline to copy data as part of an end-to-end guide to complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: tutorial
 ms.date: 11/18/2025
 ms.custom: pipelines, sfi-image-nochange
@@ -97,8 +95,6 @@ The high-level steps in module 1 are:
 1. You can monitor the run and check the results on the **Output** tab below the pipeline canvas. Select name of the pipeline to view the run details.
 
    :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the pipeline Output tab." lightbox="media/tutorial-end-to-end-pipeline/run-details-button.png":::
-
-1. Expand the **Duration breakdown** section to see the duration of each stage of the Copy activity. After reviewing the copy details, select **Close**.
 
 ## Next step
 

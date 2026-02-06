@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 10/16/2025
+ms.date: 12/11/2025
 ---
 
 # View details of data streams in Fabric Real-Time hub
@@ -15,7 +15,7 @@ On the Real-Time hub page, you see all data streams at the bottom of the page in
 
 On the hub page, in the **Recent streaming section**, select the stream from the table whose parent is an eventstream.
 
-:::image type="content" source="./media/view-data-stream-details/select-data-stream.png" alt-text="Screenshot that shows the hub page with a data stream selected." lightbox="./media/view-data-stream-details/select-data-stream.png":::
+:::image type="content" source="./media/view-data-stream-details/real-time-event-stream.png" alt-text="Screenshot that shows the hub page with a data stream selected." lightbox="./media/view-data-stream-details/real-time-event-stream.png":::
 
 You should see the **Stream detail** page: 
 
@@ -102,7 +102,7 @@ On the top of the KQL table details page, you can take the following actions on 
 
 | Action | Description |
 | ------ | ----------- |
-| Explore data | Explore data in the KQL table. |
+| Explore data | Explore the KQL table data in a Real-Time dashboard, using Copilot. For more information, see [Explore All data streams in Fabric Real-Time hub](explore-data-tables-copilot.md)|
 | Open KQL Database | Open parent KQL Database of the KQL table. |
 | Endorse | Endorse parent KQL Database of the KQL table. For more information, see [Endorse data streams](endorse-data-streams.md). |
 | Detect anomalies (Preview) | Detect anomalies in data stored in the KQL table. Follow steps from [How to set up anomaly detection](../real-time-intelligence/anomaly-detection.md#how-to-set-up-anomaly-detection).|
@@ -124,3 +124,4 @@ This section shows two relationships of the table: Upstream, Parent.
 - [Preview data streams](preview-data-streams.md)
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)
+- [Explore KQL table data with Copilot](explore-data-tables-copilot.md)

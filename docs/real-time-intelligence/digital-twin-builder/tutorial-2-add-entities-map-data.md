@@ -1,6 +1,6 @@
 ---
-title: 'Digital twin builder (preview) tutorial: Add entity types and map data'
-description: Define entity types in digital twin builder (preview) and map data to entity instances.
+title: 'Digital twin builder (preview) tutorial part 2: Add entity types and map data'
+description: Define entity types in digital twin builder (preview) and map data to entity instances. Part 2 of the digital twin builder (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
@@ -9,7 +9,9 @@ ms.topic: tutorial
 
 # Digital twin builder (preview) tutorial part 2: Add entity types and map data
 
+An entity type is a category that defines a concept within an ontology, like *Equipment* or *Process*. It serves as a blueprint for individual entity instances of that type, and specifies common characteristics shared across all entity instances within that category.
 
+In this tutorial step, create the following tutorial entity types: *Distiller*, *Condenser*, *Reboiler*, *Process*, *Technician*, and *MaintenanceRequest*. Then, map data to them from your source tables in OneLake. 
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 

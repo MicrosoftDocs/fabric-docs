@@ -4,7 +4,7 @@ description: This article describes how to add a Solace PubSub+ queue or topic a
 author: spelluru
 ms.author: spelluru
 ms.topic: how-to
-ms.date: 07/22/2025
+ms.date: 01/18/2026
 ---
 
 # Add a Solace PubSub+ queue or topic as source in Real-Time hub (Preview)

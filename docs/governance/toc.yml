@@ -66,6 +66,8 @@ items:
       href: protection-policies-overview.md
     - name: Create and manage protection policies
       href: protection-policies-create.md
+    - name: Troubleshoot access restrictions
+      href: troubleshoot-restricted-access.md
   - name: Data loss prevention policies
     items:
     - name: Get started with Data loss prevention policies for Fabric and Power BI
@@ -76,6 +78,8 @@ items:
       href: data-loss-prevention-respond.md
     - name: Monitor DLP policy violations
       href: data-loss-prevention-monitor.md
+    - name: Troubleshoot access restrictions
+      href: troubleshoot-restricted-access.md
 - name: Endorsement
   items:
   - name: Overview

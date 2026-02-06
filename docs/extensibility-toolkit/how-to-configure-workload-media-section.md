@@ -5,7 +5,7 @@ author: gsaurer
 ms.author: billmath
 ms.topic: how-to
 ms.custom:
-ms.date: 11/20/2025
+ms.date: 12/15/2025
 ---
 
 # Configure at a glance section for the workload hub

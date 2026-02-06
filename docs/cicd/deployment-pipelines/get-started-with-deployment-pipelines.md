@@ -8,7 +8,7 @@ ms.subservice: cicd
 ms.topic: how-to
 ms.custom:
   - intro-get-started
-ms.date: 11/14/2024
+ms.date: 12/15/2025
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 # customer intent: As a developer, I want to know how to use deployment pipelines, the Fabric Application lifecycle management (ALM) tool, so that I can manage my content more efficiently.
 ---

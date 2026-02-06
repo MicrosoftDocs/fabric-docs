@@ -4,7 +4,7 @@ description: Learn how to configure and run high concurrency mode to reuse sessi
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 07/03/2025
 ---

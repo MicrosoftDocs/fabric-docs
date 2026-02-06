@@ -5,10 +5,10 @@ author: billmath
 ms.author: billmath
 ms.topic: include
 ms.custom: 
-ms.date: 03/16/2025
+ms.date: 12/15/2025
 ---
 
-### Size limitations
+### Limitations for variables
 
 * There can be *up to 1,000 variables* and *up to 1,000 value sets*, as long as you meet both of these requirements:
 

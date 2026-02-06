@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: frnuson, kadejo, jaszymas
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
 - fabric-cat
 - sfi-image-nochange

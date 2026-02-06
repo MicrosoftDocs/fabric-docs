@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2024
+ms.date: 01/18/2026
 ---
 
 # Add SQL Server on VM DB (CDC) as source in Real-Time hub
@@ -44,13 +44,13 @@ The SQL Server on VM DB (CDC) source connector for Fabric eventstreams allows 
 
 ## Get events from SQL Server on VM DB (CDC)
 
-You can get events from an SQL Server on VM DB (CDC) into Real-Time hub using the [**Data sources**](#data-sources-page) page.
+You can get events from a SQL Server on VM DB (CDC) into Real-Time hub using the [**Data sources**](#data-sources-page) page.
 
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-4. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **Azure SQL MI DB (CDC)** tile. 
+5. On the **Data sources** page, select **Database CDC** category at the top, and then select **Connect** on the **Azure SQL MI DB (CDC)** tile. 
 
     :::image type="content" source="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" alt-text="Screenshot that shows the selection of SQL Server on VM DB (CDC) as the source type in the Data sources page." lightbox="./media/add-source-sql-server-on-vm-db-cdc/select-sql-server-on-vm-db-cdc.png" :::
    

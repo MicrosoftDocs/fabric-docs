@@ -64,9 +64,7 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
 
-1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**.
-
-   For more information, see [AI-powered transforms](./shortcuts-ai-transformations/ai-transformations.md).
+1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI powered transforms are available for .txt files. For more information, see [AI-powered transforms](./shortcuts-ai-transformations/ai-transformations.md).
 
 1. On the review page, verify your selections. Here you can see each shortcut to be created. In the **Actions** column, you can select the pencil icon to edit the shortcut name. You can select the trash can icon to delete the shortcut.
 
@@ -75,6 +73,20 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 1. The lakehouse automatically refreshes. The shortcut or shortcuts appear in the **Explorer** pane.
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
+
+## Best practices
+
+- HTTP 429 errors when accessing OneDrive or SharePoint shortcuts are due to SharePoint throttling. SharePoint enforces service throttling to protect reliability; review the [official throttling guidance](/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) to understand applicable limits and behaviors. Use the following best practices to minimize throttling:
+
+  - Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits. 
+  
+  - Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root. 
+  
+## Limitations
+
+The following limitations apply to SharePoint shortcuts:
+
+* OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
 ## Related content
 

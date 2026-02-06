@@ -2,8 +2,6 @@
 title: Office 365 Outlook activity
 description: Learn how to add an Office 365 Outlook activity to a pipeline and use it to send a Teams message.
 ms.reviewer: xupxhou
-ms.author: whhender
-author: whhender
 ms.topic: how-to
 ms.date: 08/25/2025
 ms.custom: pipelines
@@ -59,6 +57,7 @@ To set up the Office 365 Outlook activity:
 ## Known limitations
 
 - The Outlook activity will be inactive when using CI/CD.
+- The Outlook activity does not support WI or SPN.
 
 ## Related content
 

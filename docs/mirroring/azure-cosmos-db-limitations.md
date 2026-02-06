@@ -65,11 +65,7 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - You can directly share the mirrored database in Fabric.
 
-- The source Azure Cosmos DB account must enable **public network access** for **all networks**.
-
-- Private endpoints aren't supported for Azure Cosmos DB accounts.
-
-- Network isolation using techniques and features like IP addresses or service endpoints aren't supported for Azure Cosmos DB accounts.
+- Azure Cosmos DB accounts with virtual networks or private endpoints are supported using the Network ACL Bypass feature. This allows your Fabric workspace to access the Cosmos DB account without requiring a data gateway. For more information, see [Configure private networks for Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-private-network.md).
 
 - Data in OneLake doesn't support private endpoints, customer managed keys, or double encryption.
 

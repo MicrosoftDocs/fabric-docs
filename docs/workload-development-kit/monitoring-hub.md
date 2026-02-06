@@ -24,8 +24,8 @@ The following table provides an overview of the supported `JobScheduler` definit
 
 | Property | Description | Possible values |
 | --- | --- | --- |
-| `OnDemandJobDeduplicateOptions` |Sets the deduplication option for on-demand item jobs. | - `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure that there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
-| `ScheduledJobDeduplicateOptions` | Sets the deduplication option for on-demand item jobs. |- `None`: Don't deduplicate the job. <br> - `PerArtifact`: Ensure there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
+| `OnDemandJobDeduplicateOptions` |Sets the deduplication option for on-demand item jobs. | - `None`: Don't deduplicate the job. <br> - `PerItem`: Ensure that there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
+| `ScheduledJobDeduplicateOptions` | Sets the deduplication option for on-demand item jobs. |- `None`: Don't deduplicate the job. <br> - `PerItem`: Ensure there's only one active job run for the same item and job type. <br> - `PerUser`: Ensure that there's only one active job run for the same user and item.
 | `ItemJobTypes`| A list of job types with the specified properties. | - `Name`: The name of the job type, which is fully customizable by the independent software vendor (ISV).
 
 ### Implement job workload APIs

@@ -73,18 +73,30 @@ You can review the deployment history to see the last time content was deployed 
 
 To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
 
-## CI/CD Support Status in Eventstream
+## CI/CD Support for Eventstream Components
 
-Eventstream generally supports CI/CD through Git integration and Deployment pipelines. However, the level of support varies across different components (such as sources, destinations, and operators) as well as capabilities (such as schema sets). 
+Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public APIs. This section outlines the compatibility of various Eventstream components with different CI/CD features. Understanding these support levels is essential for maintaining and deploying Eventstream items across workspaces.
 
-| Fully supported | Partially supported | Not supported |
-|--------------|-----------------|---------------|
-| Most sources and all destinations<br>All standard operators (except custom code)<br>Most capabilities (e.g., multiple-schema inferencing) | Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC)<br> | MongoDB CDC (preview)<br>SQL code editor (custom operator)<br>Pause/resume state |
+### Support level definitions
 
-> [!NOTE]
-> **Partially supported** means the resource supports CI/CD, but advanced settings configuration is currently not supported and will revert to defaults after deployment.
->
+* **Fully Supported**: Configuration is fully preserved during deployment.
+* **Partially Supported**: The resource supports CI/CD, but **advanced settings** (e.g., Azure SQL DB (CDC) column exclude list) are not supported and will revert to defaults after deployment.
+* **Not Supported**: The component does not support CI/CD through Git integration and Deployment pipelines.
+
+### Component Support Matrix
+
+| Category | Fully Supported | Partially Supported | Not Supported |
+| :--- | :--- | :--- | :--- |
+| **Sources** | Standard GA sources (e.g., Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Azure Service Bus (Preview)<br>Cribl (Preview)<br>HTTP (Preview)<br>MongoDB CDC (Preview) |
+| **Destinations** | All Destinations | - | - |
+| **Operators** |  Filter<br> Manage fields<br>Aggregate<br>Join<br>Group by<br>Union<br>Expand | SQL Code (Custom code) | - |
+| **Features** | General capabilities (e.g., multiple-schema inferencing) | - | Pause/Resume State |
+
+> [!IMPORTANT]
 > After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
+
+> [!WARNING]
+> When importing an **Azure Event Grid namespace** source, ensure you have **Member** or higher permissions in the target Fabric workspace. If not, request Contributor permissions for the Event Grid service principal before proceeding.
 
 ## Limitation
 

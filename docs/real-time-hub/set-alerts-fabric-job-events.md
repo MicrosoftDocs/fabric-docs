@@ -4,7 +4,7 @@ description: This article describes how to set alerts on Job events in Real-Time
 author: robece
 ms.author: robece
 ms.topic: how-to
-ms.date: 10/14/2025
+ms.date: 12/14/2025
 ---
 
 # Set alerts on Job events in Real-Time hub
@@ -30,10 +30,10 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 1. In Real-Time hub, select **Fabric events**.
 1. Move the mouse over **Job events**, and do one of the following steps:
-    - Select the **Alert** button.
+    - Select the **Set alert** button.
     - Select **ellipsis (...)**, and select **Set alert**.
 
-        :::image type="content" source="./media/set-alerts-fabric-job-events/list-page.png" alt-text="Screenshot that shows the Fabric events list page." lightbox="./media/set-alerts-fabric-job-events/list-page.png":::
+        :::image type="content" source="./media/set-alerts-fabric-job-events/fabric-jobs.png" alt-text="Screenshot that shows the Fabric events list page." lightbox="./media/set-alerts-fabric-job-events/fabric-jobs.png":::
     
 
 ### Using the event detail page

@@ -3,8 +3,8 @@ title: Query with the SQL Query Editor
 description: Learn how to use the SQL database query editor in the Fabric portal.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: yoleichen
-ms.date: 11/05/2025
+ms.reviewer: yoleichen, pradeepsrikakolapu
+ms.date: 01/05/2026
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
@@ -100,6 +100,16 @@ The SQL query editor is powered by [Copilot for SQL database](copilot.md). It's 
 For more information, visit [Features of Copilot for SQL database in Microsoft Fabric](copilot.md#features-of-copilot-for-sql-database-in-fabric).
 
 Before your business can start using Copilot for SQL database, you need to [enable Copilot](../../fundamentals/copilot-enable-fabric.md).
+
+## Manage running queries when closing the query editor
+
+When a query is still running and you close the query editor tab, you can decide whether the query should continue running in the background or be canceled. 
+
+- **Yes, keep running the query**: The query continues to execute in the background, with a toast notification indicating it's running. When the query finishes, a notification will alert you so you can return to the query to view the results.
+
+- **No, cancel the query**: The query is terminated immediately. This is useful to free up resources or stop queries you no longer need.
+
+- **Remember my preference and don't show again**: Saves your choice locally in your browser cookies.
 
 ## Keyboard shortcuts
 

@@ -2,8 +2,6 @@
 title: Orchestrate Azure Data Factory Pipeline with Apache Airflow Job
 description: Learn to run data factory pipeline in Apache Airflow Job.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
 ms.topic: tutorial
 ms.custom: 
     - pipelines

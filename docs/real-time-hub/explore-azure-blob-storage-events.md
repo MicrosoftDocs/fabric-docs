@@ -5,7 +5,7 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Explore Azure blob storage events in Fabric Real-Time hub
@@ -19,7 +19,7 @@ This article shows how to explore Azure blob storage events in Fabric Real-Time 
 1. In **Real-Time hub**, select **Azure events** on the left navigation menu.
 1. Select **Azure blob storage events** in the list.
 
-    :::image type="content" source="./media/explore-azure-blob-storage-events/select-from-list.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Azure events page." :::
+    :::image type="content" source="./media/explore-azure-blob-storage-events/azure-events.png" alt-text="Screenshot that shows the selection of Azure blob storage events in the Azure events page." :::
 1. You should see the Azure blob storage events detail page.
 
     :::image type="content" source="./media/explore-azure-blob-storage-events/detail-page.png" alt-text="Screenshot that shows the Azure blob storage events detail page." lightbox="./media/explore-azure-blob-storage-events/detail-page.png":::

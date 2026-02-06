@@ -4,7 +4,7 @@ description: "Learn about how to develop Direct Lake semantic models."
 author: JulCsc
 ms.author: juliacawthra
 ms.date: 04/23/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: fabric-cat
 ---
 

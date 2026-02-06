@@ -4,7 +4,7 @@ description: What is cross-tenant access for providers?
 author: meenalsri
 ms.author: mesrivas
 ms.reviewer: juliacawthra, prlangad, wiassaf
-ms.topic: article
+ms.topic: concept-article
 ms.date: 07/21/2025
 ---
 

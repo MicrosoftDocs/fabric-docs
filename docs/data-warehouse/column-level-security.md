@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: dhsundar
 ms.date: 08/21/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 # Column-level security in Fabric data warehousing
 

@@ -1,10 +1,10 @@
 ---
-title: Writing queries for Copilot in Fabric in the Real-time intelligence workload
+title: What is Copilot for writing queries in KQL Queryset
 description: "Learn how to use Copilot to write queries in KQL Queryset."
 author: spelluru
 ms.author: spelluru
 ms.reviewer: mibar, maghan
-ms.date: 08/21/2025
+ms.date: 12/22/2025
 ms.topic: how-to
 ms.subservice: rti-kql-query
 ms.collection:
@@ -13,9 +13,9 @@ ms.update-cycle: 180-days
 no-loc: [Copilot]
 ---
 
-# Writing queries with Copilot in Fabric in the Real-time intelligence workload
+# What is Copilot for writing queries in KQL Queryset?
 
-You can use Copilot to translate your natural language questions into Kusto Query Language (KQL) queries. Simply describe what you want to analyze or find in plain language, and Copilot generates the corresponding KQL query for you. This feature makes it easier for anyone—regardless of their familiarity with KQL—to explore and analyze data efficiently.
+Copilot helps you transform your natural language questions into Kusto Query Language (KQL) queries effortlessly. Describe your data analysis or extraction needs in plain language, and Copilot generates the corresponding KQL query for you. This functionality empowers users of all skill levels, even those unfamiliar with KQL, to explore and analyze data with ease and efficiency.
 
 For billing information about Copilot, see [Announcing Copilot in Fabric pricing](https://blog.fabric.microsoft.com/blog/announcing-fabric-copilot-pricing-2/).
 
@@ -26,9 +26,9 @@ For billing information about Copilot, see [Announcing Copilot in Fabric pricing
 
 [!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
-## Capabilities of Copilot for writing queries in KQL
+## How Copilot for writing queries in KQL works
 
-Copilot lets you effortlessly translate natural language queries into Kusto Query Language (KQL). The copilot acts as a bridge between everyday language and KQL's technical intricacies, and in doing so removes adoption barriers for data analysts and citizen data scientists. By harnessing OpenAI's advanced language understanding, this feature allows you to submit business questions in a familiar, natural language format, which are then converted into KQL queries. Copilot accelerates productivity by simplifying the query creation process with a user-friendly and efficient approach to data analysis.
+Copilot, powered by OpenAI's advanced language capabilities, simplifies the process of creating Kusto Query Language (KQL) queries by translating natural language questions into KQL. This feature eliminates the complexity of learning KQL, making it accessible to both experienced data analysts and citizen data scientists. This streamlines data analysis and boosts productivity by making query creation intuitive and straightforward.
 
 Copilot supports **conversational interactions** which allows you to clarify, adapt, and extend your queries dynamically, all while maintaining the context of your previous inputs. You can refine queries and ask follow-up questions without starting over:
 
@@ -36,9 +36,9 @@ Copilot supports **conversational interactions** which allows you to clarify, ad
 
 - Seamless follow-up questions: If the generated KQL is correct but you want to explore the data more deeply, you can ask follow-up questions related to the same task. You can expand the scope of your query, add filters, or explore related data points by building on previous dialogue.
 
-## Using Copilot for writing queries in KQL
+## How to use Copilot for writing queries in KQL
 
-You can access Copilot in two ways:
+You can access Copilot in Fabric in two ways:
 
 - **Through a KQL queryset:**
   Go to a new or existing [KQL queryset](../real-time-intelligence/kusto-query-set.md) and use the Copilot feature to generate queries from natural language prompts.
@@ -46,11 +46,9 @@ You can access Copilot in two ways:
 - **Through the Edit tile in Real-Time Dashboards:**
   When editing a tile in a [Real-Time dashboard](../real-time-intelligence/dashboard-real-time-create.md), use Copilot to help create or refine KQL queries directly within the dashboard editing experience.
 
-Follow the steps below to use Copilot in either context:
+Follow the steps to use Copilot in **either** context:
 
-1. In the Copilot pane, enter your business question in natural language.
-
-1. Press **Enter**.
+1. In the Copilot pane, enter your question in natural language and press **Enter**.
 
     After a few seconds, Copilot generates a KQL query based on your input. You can copy the query to the clipboard, **Insert** it to the query editor, or **Replace** the query in context with it. To run the query in the query editor, you must have write access to the KQL queryset.
 
@@ -60,7 +58,7 @@ Follow the steps below to use Copilot in either context:
 
    > [!NOTE]
    > - Copilot doesn't generate control commands.
-   > - Copilot doesn't automatically run the generated KQL query. Users are advised to run the queries at their own discretion.
+   > - Copilot doesn't automatically run the generated KQL query. Run the queries at your own discretion.
 
 You can continue to ask follow-up questions or further refine your query. To start a new chat, select the speech bubble on the top right of the Copilot pane (1).
 
@@ -68,7 +66,7 @@ Hover over a previous question (2) and select the **pencil** icon to copy it to 
 
 :::image type="content" source="media/copilot-writing-queries/edit-question.png" alt-text="Screenshot showing how to copy or edit a previous question.":::
 
-## Improve the accuracy of Copilot for writing KQL queries
+## Best practices for using Copilot to write KQL queries
 
 Here are some tips that can help improve the accuracy of the KQL queries generated by Copilot:
 
@@ -84,21 +82,35 @@ Here are some tips that can help improve the accuracy of the KQL queries generat
 
 ## Adding Private Shots
 
-The Copilot augments the user prompt with the most relevant examples (<NL, KQL> pairs, also known as shots) from a Public Shots database. This database is curated and managed by the RTI team. It's mainly based on KQL documentation and available for the Copilot's users out of the box. However, it's a generic database, and doesn't contain any domain specific knowledge of the current KQL DB. To further boost the Copilot's ability to correctly generate complex KQL queries for your scenarios, you can create a Private Shots database. This will enable you to add advanced KQL queries for your team's specific scenarios, using advanced KQL operators (e.g. [graph semantics](/kusto/query/graph-semantics-overview), [time series analysis](/kusto/query/time-series-analysis), [anomaly detection](/kusto/query/series-decompose-anomalies-function), etc.) and [Stored Function](/kusto/query/schema-entities/stored-functions) defined in your KQL DB. Currently Private Shots are automatically published from both querysets and real time dashboards. Saving these artifacts triggers publishing the contained KQL queries in the Private Shots database.
+Copilot enhances the user's prompt by leveraging the most relevant examples (referred to as <NL, KQL> pairs or "shots") from a Public Shots database. This database, curated and maintained by the Real-Time Intelligence team, is derived from KQL documentation and is readily available to all Copilot users. While the Public Shots database provides a solid foundation, it is generic and lacks domain-specific knowledge of your current KQL database.
+
+To further improve Copilot's ability to generate accurate and complex KQL queries tailored to your specific scenarios, you can create a Private Shots database. This approach allows you to include advanced KQL queries that address your team's unique requirements, such as those utilizing advanced KQL operators (e.g., [graph semantics](/kusto/query/graph-semantics-overview), [time series analysis](/kusto/query/time-series-analysis), [anomaly detection](/kusto/query/series-decompose-anomalies-function)) or [Stored Functions](/kusto/query/schema-entities/stored-functions) defined in your KQL database.
+
+Currently, Private Shots are automatically published from both querysets and real-time dashboards. When you save these artifacts, the KQL queries they contain are published to the Private Shots database, enhancing Copilot's ability to generate queries that align with your specific data and use cases.
 
 
    > [!NOTE]
-   > - It takes few minutes from saving these artifacts until they are published and ready to be retrieved by the Copilot to augment the user's prompt.
-   > - Only the KQL is mandatory. The respective NL description is automatically generated by the LLM. Still you are welcome to add a short description of the KQL by a preceding comment (that must be attached to the KQL).
-   > - KQL queries are checked for valid syntax; only valid ones are added to the Private Shots db.
-   > - For specific user, the Copilot uses only Private Shots that are visible to that user. I.e., if that user has no permission to view specific dashboard or queryset the Copilot won't use shots from those artifacts.
-   > - KQL queries that were generated by the Copilot and copied to the queryset using the Copilot's "Copy to Editor" button starts by a comment line "// This KQL query was generated by AI:" and are not published into the Private Shots db. If you want to include them just delete that comment (but leave the following comment which is the user's prompt, as it's helpful for generating the NL description).
+  > - After saving the Private Shots artifacts, it can take a few minutes for them to be published and available for Copilot to use.
+   > - Only the KQL is mandatory. The LLM generated the respective NL description. Still you're welcome to add a short description of the KQL by a preceding comment (that must be attached to the KQL).
+   > - KQL queries are checked for valid syntax; only valid ones are added to the Private Shots database.
+  > - Copilot uses only Private Shots that are accessible to the user. If you lack permission to view a specific dashboard or queryset, Copilot doesn't utilize shots from those artifacts.
+  > - KQL queries generated by Copilot and inserted into the queryset using the "Copy to Editor" button include a comment line: `// This KQL query was generated by AI:`. These queries aren't published to the Private Shots database. To include them, remove this comment while retaining the subsequent comment containing the user's prompt, as it aids in generating the natural language description.
 
-### Limitations and considerations
+## Responsible AI and use of Copilot
 
-- Copilot might suggest potentially inaccurate or misleading suggested KQL queries due to:
-  - Complex and long user input.
-  - User input that directs to database entities that aren't KQL Database tables or materialized views (for example KQL function.)
+To view Microsoft's guidelines on responsible AI use, see [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
+
+Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/en/ai/principles-and-approach/) and [Responsible AI Standard](https://www.microsoft.com/ai/responsible-ai). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
+
+## Limitations
+
+Here are the current limitations of Copilot in Fabric:
+
+- Copilot can't change existing KQL queries in the KQL query editor. For example, if you ask Copilot chat pane to edit a specific part of an existing query, it doesn't work. However, Copilot understands previous inputs in the chat pane, so users can iterate queries that Copilot generated before insertion.
+- Copilot might produce inaccurate results when the intent is to evaluate data. Copilot only has access to the database schema; it doesn't have access to any of the data.
+- Copilot responses can include inaccurate or low-quality content, so review outputs before using them in your work.
+- People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
+- The Copilot in Fabric in KQL database chat pane isn't currently available if Private Link is enabled and Public Access is disabled in the tenant setting.
 
 ## Related content
 

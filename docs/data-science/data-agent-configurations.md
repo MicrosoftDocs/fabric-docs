@@ -5,8 +5,8 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
-ms.date: 06/12/2025
+ms.topic: concept-article
+ms.date: 12/2/2025
 ---
 
 # Configure your data agent
@@ -71,6 +71,15 @@ Use the following template as a starting point:
 ```
 
 :::image type="content" source="media/how-to-create-data-agent/configuration-data-source-instructions.png" alt-text="Screenshot of adding data source level instructions to the data agent" lightbox="media/how-to-create-data-agent/configuration-data-source-instructions.png":::
+
+## Data source description
+
+Data Source descriptions allow creators to provide high-level context about each data source so the Data Agent can intelligently route questions. A description should summarize what the data source contains, the types of questions it can answer, and any business-specific nuances that help distinguish it from other sources. The agent uses this information during its reasoning process to determine which source is the most relevant to a user’s query.
+
+:::image type="content" source="media/how-to-create-data-agent/configuration-data-source-description.png" alt-text="Screenshot of adding data source descriptions to the data agent." lightbox="media/how-to-create-data-agent/configuration-data-source-description.png":::
+
+> [!NOTE]
+> The Data Agent also considers metadata such as the description, schema, and example queries to determine which data source to use when answering a particular question.
 
 ## Data source example queries
 

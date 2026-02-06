@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: vparasuraman, amasingh
 ms.date: 12/12/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: fabric-cat, security-guidance
 ---
 
@@ -90,7 +90,7 @@ You also have some data sources that are in Azure SQL Database. You need to conn
 
 If you're developing or migrating your data ingestion framework in Spark, then you can connect to data sources in Azure securely and privately from Fabric [notebooks](../data-engineering/how-to-use-notebook.md) and jobs with the help of [managed private endpoints](security-managed-private-endpoints-overview.md). Managed private endpoints can be created in your Fabric workspaces to connect to data sources in Azure that have blocked public internet access. They support private endpoints, such as Azure SQL Database and Azure Storage. Managed private endpoints are provisioned and managed in a [managed VNet](security-managed-vnets-fabric-overview.md) that's dedicated to a Fabric workspace. Unlike your typical [Azure Virtual Networks](/azure/virtual-network/virtual-networks-overview), managed VNets and managed private endpoints won't be found in the Azure portal. That's because they're fully managed by Fabric, and you find them in your workspace settings.
 
-Because you already have a lot of data stored in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) accounts, you now only need to connect Fabric workloads, such as Spark and Power BI, to it. Also, thanks to OneLake [ADLS shortcuts](../onelake/onelake-shortcuts.md#adls-shortcuts), you can easily connect to your existing data from any Fabric experience, such as data integration pipelines, data engineering notebooks, and Power BI reports.
+Because you already have a lot of data stored in [Azure Data Lake Storage (ADLS) Gen2](/azure/storage/blobs/data-lake-storage-introduction) accounts, you now only need to connect Fabric workloads, such as Spark and Power BI, to it. Also, thanks to OneLake [ADLS shortcuts](../onelake/create-adls-shortcut.md), you can easily connect to your existing data from any Fabric experience, such as data integration pipelines, data engineering notebooks, and Power BI reports.
 
 Fabric workspaces that have a [workspace identity](workspace-identity.md) can securely access ADLS Gen2 storage accounts, even when you've disabled the public network. That's made possible by [trusted workspace access](security-trusted-workspace-access.md). It allows Fabric to securely connect to the storage accounts by using a Microsoft backbone network. That means communication doesn't use the public internet, which allows you to disable public network access to the storage account but still allow certain Fabric workspaces to connect to them.
 

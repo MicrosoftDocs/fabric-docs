@@ -2,8 +2,7 @@
 title: CI/CD for Apache Airflow in Data Factory in Microsoft Fabric 
 #customer intent: As a developer, I want to set up CI/CD for Apache Airflow Jobs in Data Factory so that I can automate integration, testing, and deployment.
 description: This article describes how to set up continuous integration and delivery (CI/CD) for Apache Airflow in Data Factory for Microsoft Fabric.
-author: conxu
-ms.author: conxu
+ms.reviewer: conxu
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.custom: airflows

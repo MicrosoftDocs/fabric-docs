@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 07/02/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Smoothing and throttling in Fabric Data Warehouse

@@ -6,15 +6,13 @@ ms.author: lagayhar
 author: lgayhardt
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 07/11/2025
+ms.date: 12/26/2025
 reviewer: jonburchel
 ---
 
 # Tutorial Part 3: Train and register a machine learning model
 
 In this tutorial, you'll learn to train multiple machine learning models to select the best one in order to predict which bank customers are likely to leave.
-
-
 
 In this tutorial, you'll:
 
@@ -24,7 +22,6 @@ In this tutorial, you'll:
 > * Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperaparameters, and evaluation metrics.
 > * Register the trained machine learning model.
 > * Assess the performances of the trained machine learning models on the validation dataset.
-
 
 [MLflow](https://mlflow.org/docs/latest/index.html) is an open source platform for managing the machine learning lifecycle with features like Tracking, Models, and Model Registry. MLflow is natively integrated with the Fabric Data Science experience.
 
@@ -59,8 +56,16 @@ You'll access SMOTE using the `imblearn` library. Install it now using the in-li
 %pip install imblearn
 ```
 
+```python
+%pip install scikit-learn==1.6.1
+```
+
+```python
+%pip install "mlflow==2.12.2"
+```
+
 > [!IMPORTANT]
-> Run this install     each time you restart the notebook.
+> Run this install each time you restart the notebook.
 
 When you install a library in a notebook, it's only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again.
 
@@ -85,13 +90,12 @@ This section demonstrates how to generate an experiment, specify the machine lea
 ```python
 import mlflow
 # Setup experiment name
-EXPERIMENT_NAME = "bank-churn-experiment"  # MLflow experiment name
+EXPERIMENT_NAME = "bank-churn-experiment-SBM"  # MLflow experiment name
 ```
 
 Extending the MLflow autologging capabilities, autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to your workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in your workspace. 
 
 All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
-
 
 ### Set experiment and autologging specifications
 
@@ -103,7 +107,6 @@ mlflow.autolog(exclusive=False)
 ## Import scikit-learn and LightGBM
 
 With your data in place, you can now define the machine learning models. You'll apply Random Forest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
-
 
 ```python
 # Import the required libraries for model training
@@ -148,7 +151,6 @@ The data exploration in part 2 showed that out of the 10,000 data points corresp
 >
 > Note that SMOTE should only be applied to the training dataset. You must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the machine learning model will perform on the original data, which is representing the situation in production.
 
-
 ```python
 from collections import Counter
 from imblearn.over_sampling import SMOTE
@@ -165,7 +167,6 @@ new_train = pd.concat([X_res, y_res], axis=1)
 ### Model training
 
 * Train the model using Random Forest with maximum depth of 4 and 4 features
-
 
 ```python
 mlflow.sklearn.autolog(registered_model_name='rfc1_sm') # Register the trained model with autologging
@@ -184,7 +185,6 @@ with mlflow.start_run(run_name="rfc1_sm") as run:
 
 * Train the model using Random Forest with maximum depth of 8 and 6 features
 
-
 ```python
 mlflow.sklearn.autolog(registered_model_name='rfc2_sm') # Register the trained model with autologging
 rfc2_sm = RandomForestClassifier(max_depth=8, max_features=6, min_samples_split=3, random_state=1) # Pass hyperparameters
@@ -201,7 +201,6 @@ with mlflow.start_run(run_name="rfc2_sm") as run:
 ```
 
 * Train the model using LightGBM
-
 
 ```python
 # lgbm_model

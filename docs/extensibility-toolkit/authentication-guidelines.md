@@ -4,7 +4,7 @@ description: This article provides guidelines and best practices for implementin
 author: gsaurer
 ms.author: billmath
 ms.topic: how-to
-ms.date: 11/18/2025
+ms.date: 12/15/2025
 ---
 
 # Authentication guidelines for Microsoft Fabric Extensibility Toolkit

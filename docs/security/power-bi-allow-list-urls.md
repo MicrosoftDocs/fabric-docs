@@ -4,7 +4,7 @@ description: Learn about URL endpoints and ports with their associated linked si
 author: msmimart
 ms.author: mimart
 ms.reviewer: ''
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 01/08/2025
 ms.custom: ''
 ---

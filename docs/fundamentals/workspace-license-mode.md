@@ -1,9 +1,9 @@
 ---
 title: Reassign a workspace to a different capacity
 description: This article explains the meanings of the workspace license modes and how to reassign the workspace to a different capacity.
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: liud
-author: JulCsc
-ms.author: juliacawthra
 ms.topic: overview
 ms.date: 09/18/2025
 #customer intent: As workspace admin, I want to understand what the workspace license mode options are and how to reassign the workspace to a different capacity.

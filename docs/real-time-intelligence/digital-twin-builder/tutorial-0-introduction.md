@@ -1,6 +1,6 @@
 ---
 title: Digital twin builder (preview) tutorial introduction
-description: Get started with digital twin builder (preview) with this tutorial covering major actions and features.
+description: Get started with digital twin builder (preview) by setting up resources for the tutorial. Part 0 of the digital twin builder (preview) tutorial.
 author: baanders
 ms.author: baanders
 ms.date: 05/01/2025
@@ -20,7 +20,7 @@ This tutorial walks you through building a scenario ontology in digital twin bui
 
 * The latest Power BI desktop app on your machine (step 5 of the tutorial requires use of the desktop app, **not** the Power BI service in Fabric). You can get it here: [Download Power BI](https://www.microsoft.com/power-platform/products/power-bi/downloads?msockid=2612a5667524602e3f9bb50b74976110). 
 
-## Understand the Contoso, Ltd. energy scenario
+## Tutorial scenario
 
 This tutorial features the fictional energy company Contoso, Ltd.
 
@@ -48,7 +48,7 @@ This tutorial deals with a subset of the distillation process outlined in the pr
 
 :::image type="content" source="media/tutorial/contoso-ontology.png" alt-text="Flow diagram of Contoso, Ltd. as an ontology." lightbox="media/tutorial/contoso-ontology.png":::
 
-## Data sources
+## Tutorial data summary
 
 Contoso, Ltd. wants to model and standardize distillation processes across their sites. To model their process on digital twin builder, they start by representing 10 sites, where each site is an instance of the *Process* entity type. 
 
@@ -77,7 +77,7 @@ These measurements help monitor and control the distillation process, ensuring e
 
 In this tutorial, you build the digital twin builder (preview) solution for Contoso, Ltd.
 
-Specifically, you learn how to:
+Specifically, the steps of the tutorial teach you how to:
 
 > [!div class="checklist"]
 >

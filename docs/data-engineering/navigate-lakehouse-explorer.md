@@ -4,7 +4,7 @@ description: The lakehouse explorer consists of the object explorer, main view, 
 ms.reviewer: avinandac
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 04/12/2023
 ms.search.form: Lakehouse Explorer

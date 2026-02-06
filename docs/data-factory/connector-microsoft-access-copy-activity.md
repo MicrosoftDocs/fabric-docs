@@ -1,8 +1,7 @@
 ---
 title: Configure Microsoft Access in a copy activity
 description: This article explains how to copy data using Microsoft Access.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 08/25/2025
 ms.custom: 

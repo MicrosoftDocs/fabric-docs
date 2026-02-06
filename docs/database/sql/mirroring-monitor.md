@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 11/06/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL database replication to OneLake
 ---
 # Monitor Fabric mirrored Fabric SQL database replication

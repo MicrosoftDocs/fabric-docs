@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Warehouse table using Transact-S
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha, jovanpop
-ms.date: 07/31/2025
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -107,8 +107,8 @@ Instead of reading data from the Warehouse `bing_covid19_data` table, you can al
 CREATE TABLE dbo.bing_covid19_data_2022
 AS
 SELECT *
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data;
-WHERE DATEPART(YEAR, updated) = '2022'
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR, updated) = '2022';
 ```
 
 You can also create a new table by transforming data from an external CSV file:
@@ -230,6 +230,10 @@ ON cases.iso3 = reference.countrycode;
 ```
 
 To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query).
+
+## Audit and monitor T-SQL ingestion
+
+Both `CTAS` and `INSERT ... SELECT` operations executed via T-SQL appear in the [warehouse query history/activity](query-activity.md), and can be monitored alongside other warehouse operations.
 
 ## Data ingestion options
 

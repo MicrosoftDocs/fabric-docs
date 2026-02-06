@@ -4,7 +4,7 @@ description: Build real-time, event-driven pipelines in Microsoft Fabric using A
 author: spelluru
 ms.author: spelluru
 ms.reviewer: george-guirguis
-ms.date: 08/13/2025
+ms.date: 12/18/2025
 ms.topic: tutorial
 ---
 
@@ -99,7 +99,7 @@ Next, configure a pipeline to ingest, transform, and deliver the data in your La
 1. In Real-Time hub, select **Fabric Events**.     
 1.  Hover over OneLake events to, and select **Set Alert** button (or) select **... (ellipsis)**, and then select **Set alert** to start configuring your alert. 
 
-    :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/fabric-onelake-events-set-alert-menu.png" alt-text="Screenshot of the Real-Time hub with Set alert menu option selected for OneLake events." lightbox="media/tutorial-build-event-driven-data-pipelines/fabric-onelake-events-set-alert-menu.png" :::    
+    :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/set-alerts.png" alt-text="Screenshot of the Real-Time hub with Set alert menu option selected for OneLake events." lightbox="media/tutorial-build-event-driven-data-pipelines/set-alerts.png" :::    
 1. In the **Set alert** window, for **Source**, choose **Select events**. 
 
     :::image type="content" source="media/tutorial-build-event-driven-data-pipelines/select-events.png" alt-text="Screenshot of the Set alert window." lightbox="media/tutorial-build-event-driven-data-pipelines/select-events.png" :::     

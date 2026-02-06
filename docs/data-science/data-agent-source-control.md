@@ -5,7 +5,7 @@ ms.author: amjafari
 author: amjafari
 ms.reviewer: amjafari
 reviewer: amjafari
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/8/2025
 ---
 

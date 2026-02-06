@@ -1,9 +1,7 @@
 ---
 title: Azure Databricks activity
 description: Learn how to add an Azure Databricks activity to a pipeline and use it to connect to an Azure Databricks job and successfully run it.
-ms.reviewer: abnarain
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: abnarain, noelleli
 ms.topic: how-to
 ms.date: 09/03/2025
 ms.custom: pipelines

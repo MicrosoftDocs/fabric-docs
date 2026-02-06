@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
-ms.date: 06/06/2024
+ms.date: 12/15/2025
 ms.custom: 
 # customer intent: As a developer, I want to know what happens to my Git connection when my license expires or changes so that I can plan accordingly.
 ---

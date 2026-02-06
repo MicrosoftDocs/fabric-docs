@@ -36,10 +36,20 @@ items:
         href: /samples/azurecosmosdb/cosmos-fabric-samples/python-crud-fundamentals
       - name: Vector search
         href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search
+      - name: Spark Cosmos getting started and Reverse ETL
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-scala
+      - name: Fraud detection with vectors
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/fraud-detection
+      - name: Correlation analysis with Power BI visuals
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/price-reviews-powerbi
+      - name: Correlation analysis with Spark Notebooks
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/price-reviews-spark
+      - name: Container management with Python SDK
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/management
       - name: Advanced vector search
         href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
-      - name: Spark analytics with Power BI queries
-        href: /samples/azurecosmosdb/cosmos-fabric-samples/spark-analytics-powerbi
+      - name: Disaster Recovery for Cosmos artifacts
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/disaster-recovery
   - name: Build AI applications
     items:
       - name: Index vector data

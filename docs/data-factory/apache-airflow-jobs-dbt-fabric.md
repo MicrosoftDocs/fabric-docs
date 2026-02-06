@@ -1,9 +1,7 @@
 ---
 title: Transform data using dbt
 description: This tutorial guides you through orchestrating dbt jobs using Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows
 ms.date: 09/08/2025

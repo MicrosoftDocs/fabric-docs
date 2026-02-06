@@ -1,10 +1,8 @@
 ---
 title: Pricing for pipelines
 description: This article provides details of the pricing model of pipelines for Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
-ms.topic: conceptual
+ms.reviewer: makromer
+ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 11/29/2024
 ---

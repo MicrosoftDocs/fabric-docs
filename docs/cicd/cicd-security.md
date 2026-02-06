@@ -8,7 +8,7 @@ ms.custom:
 ms.topic: concept-article
 ms.service: fabric
 ms.subservice: cicd
-ms.date: 10/09/2025
+ms.date: 12/15/2025
 ---
 
 # Network security for continuous integration/continuous deployment

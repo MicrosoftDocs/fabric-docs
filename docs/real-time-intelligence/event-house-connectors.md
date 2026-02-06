@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 07/31/2024
+ms.date: 01/01/2026
 # CustomerIntent: As a data ingestor, I want to know what data connectors and tools are available, so that I can choose the right one for my use case.
 ---
 # Data connectors overview
@@ -28,6 +28,7 @@ The following table summarizes the available data connectors, tools, and integra
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion**  | :heavy_check_mark:  | First party   | Event processing   |
 | [Cribl Stream](#cribl-stream) | **Ingestion** | :heavy_check_mark: | First party | Telemetry, Logs, Metrics, Machine data |
 | [Fluent Bit](#fluent-bit)  | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluent-bit) | Logs, Metrics, Traces  |
+| [Fluentd](#fluentd)  | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/fluent/fluentd) | Logs  |
 | [Logstash](#logstash)   | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/)  | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark:  | [Open source](https://github.com/Azure/azure-kusto-nlog-sink)   | Telemetry, Logs, Metrics|
 | [Open Telemetry](#opentelemetry)| **Ingestion**  | :heavy_check_mark:  | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs   |
@@ -150,6 +151,16 @@ Fluent Bit is an open-source agent that collects logs, metrics, and traces from 
 * **Use cases:** Logs, Metrics, Traces
 * **Repository:** [fluent-bit Kusto Output Plugin](https://github.com/fluent/fluent-bit/tree/master/plugins/out_azure_kusto)
 * **Documentation:** [Get data with Fluent Bit](get-data-fluent.md)
+
+## Fluentd
+
+Fluentd is an open-source agent that collects logs. It enables filtering, modification, and aggregation of event data, ensuring efficient and reliable data processing for monitoring and insights.
+
+* **Functionality:** Ingestion
+* **Ingestion type supported:** Batching
+* **Use cases:** Logs
+* **Repository:** [fluentd](https://github.com/fluent/fluentd)
+* **Documentation:** [Get data with Fluentd](get-data-fluentd.md)
 
 ## Logstash
 

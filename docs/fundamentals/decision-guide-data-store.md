@@ -20,8 +20,8 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | Ideal use case | Microsoft Fabric workload |  Data available in [OneLake](../onelake/onelake-overview.md) in open table format by default |
 |:--|:--|:--|
 | Streaming event data, high granularity (in time, space, detail – JSON/Text) activity data for interactive analytics | [Eventhouse](../real-time-intelligence/eventhouse.md) | Yes | 
- | AI, NoSQL, and vector search | [Cosmos DB in Fabric](../database/cosmos-db/overview.md) (Preview)| Yes | 
-| Operational transactional database, OLTP database | [SQL database in Fabric](../database/sql/overview.md) (Preview) | Yes | 
+ | AI, NoSQL, and vector search | [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | Yes | 
+| Operational transactional database, OLTP database | [SQL database in Fabric](../database/sql/overview.md) | Yes | 
  | Enterprise data warehouse, SQL-based BI, OLAP, [full SQL transaction support](../data-warehouse/transactions.md) | [Data Warehouse](../data-warehouse/data-warehousing.md)| Yes | 
 | Big data and machine learning, un/semi/structured data, [data engineering](../data-engineering/data-engineering-overview.md) | [Lakehouse](../data-engineering/lakehouse-overview.md) | Yes |
 
@@ -30,8 +30,8 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | Microsoft Fabric workload | Primary developer personas | Primary skillsets, tooling | Primary languages |
 |:--|:--|:--|:--|
 | [Eventhouse](../real-time-intelligence/eventhouse.md)  | App developer, Data scientist, Data engineer | No code, KQL, SQL | [KQL (Kusto query language)](../real-time-intelligence/kusto-query-set.md), T-SQL | 
-| [Cosmos DB in Fabric](../database/cosmos-db/overview.md) (Preview) | AI developer, App developer | NoSQL concepts, REST APIs, similar to Azure Cosmos DB | REST API integration via JavaScript/TypeScript, Python, C#, Java, and others |
-| [SQL database in Fabric](../database/sql/overview.md) (Preview) | AI developer, App developer, Database developer, Database admin | Database administration and development, similar to Azure SQL Database, SSMS, VS Code, and SQL Server-compatible query tools | T-SQL |
+| [Cosmos DB in Fabric](../database/cosmos-db/overview.md) | AI developer, App developer | NoSQL concepts, REST APIs, similar to Azure Cosmos DB | REST API integration via JavaScript/TypeScript, Python, C#, Java, and others |
+| [SQL database in Fabric](../database/sql/overview.md) | AI developer, App developer, Database developer, Database admin | Database administration and development, similar to Azure SQL Database, SSMS, VS Code, and SQL Server-compatible query tools | T-SQL |
 | [Fabric Data Warehouse](../data-warehouse/data-warehousing.md) | Data warehouse developer, Data architect, Data engineer, Database developer | Data warehousing concepts, [star schema database design](../data-warehouse/dimensional-modeling-overview.md), SSMS, VS Code, and SQL Server-compatible query tools | T-SQL, No code |
 | [Lakehouse](../data-engineering/lakehouse-overview.md) | Data engineer, Data scientist | PySpark, Delta Lake, notebooks | Spark (Scala, PySpark, Spark SQL, R) |
 

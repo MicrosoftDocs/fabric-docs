@@ -2,8 +2,6 @@
 title: Synchronize code from an existing Git repository
 description: Learn how to synchronize your Apache Airflow Job code from an existing Git repository.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: nabhishek
 ms.topic: quickstart
 ms.custom: airflows
 ms.date: 11/17/2025

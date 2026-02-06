@@ -77,7 +77,7 @@ With Copilot for SQL database, you can start writing T-SQL in the SQL query edit
 The query editor panel includes Copilot for SQL database.
 
 > [!NOTE]
-> Copilot for SQL database does not use the data in tables to generate T-SQL suggestions, on the names of database objects such as table and view names, column names, primary key, and foreign key metadata to generate T-SQL code.
+> Copilot for SQL database does not use the data in tables to generate T-SQL suggestions, only the names of database objects such as table and view names, column names, primary key, and foreign key metadata to generate T-SQL code.
 
 You also have access to various **Quick actions**. In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice, then select one of the quick action buttons to perform the selected action on your query.
 

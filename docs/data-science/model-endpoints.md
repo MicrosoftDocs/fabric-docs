@@ -28,7 +28,6 @@ You can activate, configure, and query model endpoints with a [public-facing RES
 
 - Endpoints are currently available for a limited set of ML model flavors, including Keras, LightGBM, Sklearn, and XGBoost.
 - Endpoints currently **aren't** available for models with tensor-based schemas or no schemas.
-- Endpoints currently **aren't** available for models with dependencies on private or internal packages.
 
 ## Get started with model endpoints
 

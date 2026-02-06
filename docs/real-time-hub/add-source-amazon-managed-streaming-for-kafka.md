@@ -5,16 +5,13 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/22/2025
 ---
 
 # Add Amazon Managed Streaming for Apache Kafka (MSK) as source in Real-Time hub
 This article describes how to add Amazon Streaming for Apache Kafka (MSK) as an event source in Fabric Real-Time hub. 
 
 Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, scaling, and management. By integrating Amazon MSK Kafka as a source within your eventstream, you can seamlessly bring the real-time events from your MSK Kafka and process it before routing them to multiple destinations within Fabric.  
-
-
-
 
 ## Prerequisites 
 

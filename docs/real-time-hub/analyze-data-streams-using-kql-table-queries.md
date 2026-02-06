@@ -5,13 +5,13 @@ author: mystina
 ms.author: majia
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/14/2025
 ---
 
 # Analyze data streams in Real-Time hub
 There are two types of data streams in Real-Time hub: **Stream** and **Table**. This article shows how to analyze streams and tables in Real-Time hub.
 
-:::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/stream-types.png" alt-text="Screenshot that shows the types of streams available in Real-Time hub." lightbox="./media/analyze-data-streams-using-kql-table-queries/stream-types.png":::
+:::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/filter-data-streams.png" alt-text="Screenshot that shows the types of streams available in Real-Time hub." lightbox="./media/analyze-data-streams-using-kql-table-queries/filter-data-streams.png":::
 
 ## Analyze streams
 To analyze a stream whose parent is an eventstream, do the following steps:
@@ -59,7 +59,7 @@ You can open the KQL database that's associated with a table by using one of the
 
 - In the **Recent streaming data** section of the Real-Time hub page, move the mouse over a data stream of table type, and select the **Open** link, or select **... (ellipsis)**, and then select **Open KQL Database**. 
 
-    :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-list.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table." :::   
+    :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-database.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table." :::   
 - In the **Recent streaming data** section of the Real-Time hub page, select a KQL table to see a table detail page. On this page, you can select **Open KQL Database** link on the ribbon. 
 
     :::image type="content" source="./media/analyze-data-streams-using-kql-table-queries/open-kql-database-detail.png" alt-text="Screenshot that shows the Open KQL Database links for a stream of type Table from the detail view." :::   

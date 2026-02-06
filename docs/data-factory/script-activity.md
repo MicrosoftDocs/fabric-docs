@@ -1,9 +1,7 @@
 ---
 title: How to use Script activity
 description: Learn how to use Script activity.
-ms.reviewer: whhender
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 12/18/2024

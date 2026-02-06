@@ -1,9 +1,7 @@
 ---
 title: Azure Machine Learning activity
 description: Learn how to add an Azure Batch activity to a pipeline and use it to connect to an Azure Machine Learning instance and run a command.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: nabhishek
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023

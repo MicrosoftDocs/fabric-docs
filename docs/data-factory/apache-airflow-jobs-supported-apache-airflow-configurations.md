@@ -1,10 +1,8 @@
 ---
 title: Supported Apache Airflow configurations
 description: This article enumerates the Apache Airflow configurations supported by the Apache Airflow Job.
-author: nabhishek
-ms.author: abnarain
 ms.reviewer: abnarain
-ms.topic: conceptual
+ms.topic: reference
 ms.custom: airflows
 ms.date: 04/24/2024
 ---

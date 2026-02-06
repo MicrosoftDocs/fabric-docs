@@ -34,9 +34,6 @@ Whether you're troubleshooting performance issues or conducting custom diagnosti
 
 - Spark event log copy: Export event logs to OneLake or Azure Data Storage.
 
-## Known limitation
-
-Currently the library doesn't support handling large event logs, such as strings over 20 MB or deeply nested structures.
 
 ## Sample Notebook
 
@@ -89,7 +86,7 @@ Apply the same logic to other components such as jobs, stages, or executors.
 If you've already run an analysis and saved the output, reload it without repeating the process:
 
 ```scala
-import com.microsoft.jobInsight.diagnostic.SparkDiagnostic 
+import com.microsoft.jobinsight.diagnostic.SparkDiagnostic 
 val jobInsight = SparkDiagnostic.loadJobInsight( 
     $stateStorePath 
 ) 
@@ -105,7 +102,7 @@ val executors = jobInsight.executors
 Copy Spark event logs to an ABFSS location (like OneLake or Azure Data Lake Storage (ADLS) Gen2) with this API: 
 
 ```scala
-import com.microsoft.jobInsight.diagnostic.LogUtils 
+import com.microsoft.jobinsight.diagnostic.LogUtils 
 val contentLength = LogUtils.copyEventLog( 
     $workspaceId, 
     $artifactId, 

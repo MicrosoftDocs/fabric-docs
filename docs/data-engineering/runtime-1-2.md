@@ -1,12 +1,12 @@
 ---
 title: Runtime 1.2 in Fabric
 description: Gain a deep understanding of the Apache Spark-based Runtime 1.2 available in Fabric. Understand its unique features, capabilities, and best practices.
-ms.reviewer: sngun
+ms.reviewer: arali
 ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.custom:
-ms.date: 10/14/2024
+ms.date: 12/11/2025
 ---
 
 # Fabric Runtime 1.2 (EOSA)
@@ -44,7 +44,7 @@ Read the full version of the release notes for a specific Apache Spark version b
 
 #### Concurrent Writes Support in Spark
 
-Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using an SQL INSERT INTO query. This error can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
+Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using a SQL INSERT INTO query. This error can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
 
 To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/latest/configuration.html#runtime-sql-configuration).
 

@@ -39,7 +39,7 @@ This section shows how Fabric administrators create a set of tenant-level tags. 
     
 1.  Select **+ New tag**. If no tags are defined yet, select **Add your first tags**.
    
-1.  In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. Tag names can contain letters, numbers, spaces (not at the beginning), and special characters (must also contain letters and/or numbers).
+1. In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. Tag names can be up to 40 characters long and can contain letters, numbers, spaces (not at the beginning), and special characters (must also contain letters and/or numbers).
 
     :::image type="content" source="./media/tags-define/create-tags.png" alt-text="Screenshot showing how to create two new tags.":::
 
@@ -118,3 +118,4 @@ For more information, see [Metadata scanning overview](./metadata-scanning-overv
 * [Tags overview](tags-overview.md)
 * [Apply tags to items](tags-apply.md)
 * [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)
+

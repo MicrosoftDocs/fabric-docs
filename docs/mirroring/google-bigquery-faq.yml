@@ -2,8 +2,6 @@
 metadata:
   title: "Frequently asked questions for Google BigQuery mirroring in Fabric"
   description: This article answers frequently asked questions about mirroring Google BigQuery in Microsoft Fabric. 
-  author: whhender
-  ms.author: whhender
   ms.reviewer: misaacs
   ms.service: fabric
   ms.subservice: data-warehouse
@@ -86,7 +84,8 @@ sections:
     - question: |
         How are egress fees handled?
       answer: 
-       See BigQuery and your cloud documentation for egress fee information.    
+       See BigQuery and your cloud documentation for egress fee information.  
+
   - name: Performance
     questions:
     - question: |  
@@ -101,6 +100,7 @@ sections:
         Will the Power BI reports use direct lake mode?
       answer: 
         Yes, tables are all v-ordered delta tables.
+
   - name: Troubleshoot mirroring Google BigQuery in Microsoft Fabric
     questions:
       - question: |
@@ -110,7 +110,7 @@ sections:
       - question: |
           Can mirroring for Google BigQuery be accessed through the Power BI Gateway or behind a firewall? 
         answer: 
-          Currently, access through the Power BI Gateway or behind a firewall is unsupported.
+          Currently, access through OPDG and VNET are supported.
       - question: |
           What does stopping/starting the mirroring do?
         answer: 

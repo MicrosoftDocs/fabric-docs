@@ -4,7 +4,7 @@ description: Learn how to share a lakehouse and manage permissions, including ho
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.custom:
 ms.date: 04/19/2024
 ms.search.form: Lakehouse Sharing Permissions

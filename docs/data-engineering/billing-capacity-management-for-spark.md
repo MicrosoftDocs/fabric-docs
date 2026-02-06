@@ -4,7 +4,7 @@ description: Learn about the billing, capacity utilization, and utilization repo
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 11/11/2024
 ---

@@ -1,8 +1,7 @@
 ---
 title: Configure Azure Synapse Analytics in a copy activity
 description: This article explains how to copy data using Azure Synapse Analytics.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 02/27/2024
 ms.custom: 

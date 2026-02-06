@@ -1,8 +1,7 @@
 ---
 title: Azure Synapse Analytics connector overview
 description: This article explains the overview of using Azure Synapse Analytics.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 07/09/2025
 ms.custom:
@@ -20,7 +19,7 @@ The Azure Synapse Analytics connector is supported in Data Factory for [!INCLUDE
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
 | **Dataflow Gen2** (source/-)                                                           | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal |
 | **Pipeline** <br>- [Copy activity](connector-azure-synapse-analytics-copy-activity.md) (source/destination)<br>- Lookup activity<br>- Get Metadata activity<br>- Script activity<br>- Stored procedure activity | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal <br>Workspace identity|
-| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append<br>- Merge | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal <br>Workspace identity|
+| **Copy job** (source/destination) <br>- Full load<br>- Incremental load<br>- Append<br>- Upsert | None<br> On-premises<br> Virtual network | Basic<br> Organizational account<br> Service principal <br>Workspace identity|
 
 ## Related content
 

@@ -4,7 +4,7 @@ description: Learn about giving feedback about Microsoft Fabric to Microsoft.
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 08/04/2025
+ms.date: 12/12/2025
 ---
 
 # Learn about Microsoft Fabric feedback
@@ -87,4 +87,4 @@ Here are the most common items collected or calculated.
 
 We understand that when you use our cloud services, you're entrusting us with one of your most valuable assets: your data. We make sure the feedback we receive is stored and handled under Microsoft governance rules, and that it can only be accessed for approved uses. We don't use your email, chat, files, or other personal content to target ads to you. When we collect data, we use it to make your experiences better. 
 
-To learn more about how we protect the privacy and confidentiality of your data, and how we ensure that it will be used only in a way that is consistent with your expectations, review our privacy principles at the [Microsoft Trust Center](https://www.microsoft.com/trust-center/privacy).
+To learn more about how we protect the privacy and confidentiality of your data, and how we ensure that it will be used only in a way that is consistent with your expectations, review our privacy principles at the  [Microsoft Trust Center](https://www.microsoft.com/trust-center/privacy).

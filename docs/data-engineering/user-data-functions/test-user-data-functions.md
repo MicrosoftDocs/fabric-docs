@@ -5,84 +5,135 @@ ms.author: eur
 ms.reviewer: luisbosquez
 author: eric-urban
 ms.topic: overview
-ms.date: 07/31/2025
+ms.custom: freshness-kr
+ms.date: 01/21/2026
 ms.search.form: Test your User Data Functions
 ---
 
 # Test your User Data Functions in the Fabric portal
 
-Fabric User data functions provide capabilities to test and validate your code changes in the Fabric portal or by using the [VS Code extension](./create-user-data-functions-vs-code.md). These features are helpful to ensure that your functions can run successfully without the need to publish them. 
+The Fabric portal provides features to test and validate your User Data Functions code changes before publishing. You can test unpublished code in Develop mode or validate published functions in Run only mode. For local testing, you can use the [VS Code extension](./create-user-data-functions-vs-code.md).
 
-In this article, you will learn how to:
-- Use the Develop and View/Run only modes in the portal editor.
-- Use the Test capabilities in Develop mode to test your functions.
+Testing helps you:
+- Validate that your functions run successfully without errors
+- Verify that your functions return expected results with different inputs
+- Debug issues quickly by viewing logs and error messages
+- Iterate faster on code changes in Develop mode without publishing after every edit
+- Confirm that published functions work correctly in Run only mode
 
 >[!NOTE]
-> Some users may not have access to the Test capability in Develop mode depending on the region of their Fabric tenant. Please review the [regional limitations](#regional-limitations-for-test-capability-in-develop-mode) note in this article. 
+> Some users might not have access to the Test capability in Develop mode depending on the region of their Fabric tenant. Review the [regional limitations](#regional-limitations-for-test-capability-in-develop-mode) note in this article. 
 
-## What is Develop mode and View/Run only mode?
+## Prerequisites
 
-Fabric User Data Functions provides two modes to interact with your functions in the Fabric portal: **Develop mode** and **Run/View only mode**. You can find the mode switcher in the upper right corner of your User Data Functions page.
+Before you can test your functions, you need:
+- A User Data Functions item in your Fabric workspace
+- **Write permissions** to access Develop mode and use the Test capability
+- Functions defined in your code (published or unpublished)
+
+## Understand Develop mode and Run only mode
+
+Fabric User Data Functions provides two modes that determine what you can test:
+
+- **Develop mode** - Test both published and unpublished functions. This mode allows you to validate code changes before publishing them.
+- **Run only mode** - Run only published functions. This mode shows you what other users with Execute permissions can run.
+
+You can switch between modes using the mode switcher in the upper right corner of your User Data Functions page. For more information about the portal interface, see [Use the portal editor](./user-data-functions-portal-editor.md).
 
    :::image type="content" source="..\media\user-data-functions-test\switch-develop-mode.gif" alt-text="Screenshot showing how to switch modes in the Fabric portal." lightbox="..\media\user-data-functions-test\switch-develop-mode.gif":::
 
-### Develop mode
+## Test your functions in Develop mode
 
-**Develop mode** allows users with Write permissions to edit, test, and publish their code. In this mode, users can see their modified code including any new, unpublished functions they wrote.
+To test a function in Develop mode:
 
-   :::image type="content" source="..\media\user-data-functions-test\user-data-functions-develop-mode.png" alt-text="Screenshot showing the components of Develop mode in the Fabric portal." lightbox="..\media\user-data-functions-test\user-data-functions-develop-mode.png":::
-
-The following are the components of Develop mode:
-1. **Mode switcher:** This control allows you to switch to Develop mode from Run only mode. 
-1. **Functions list:** This list contains new functions along with any previously published function. The dot next to the function name indicates that a function is new and that it's not published yet.
-1. **Code editor:** In Develop mode, the code editor is enabled and the user can make changes to the code. 
-1. **Test session indicator:** This indicator shows if the test session is active. The test session is created after running a test and it has a timeout after 15 minutes of inactivity.
-
-### Run or View only mode
-
-In **Run only mode** users with Execute permissions can view and run the published functions. This experience creates a separate view between the published version of the code the version that is under development in Develop mode.
-
-   :::image type="content" source="..\media\user-data-functions-test\user-data-functions-run-only-mode.png" alt-text="Screenshot showing the components of Run only mode in the Fabric portal." lightbox="..\media\user-data-functions-test\user-data-functions-run-only-mode.png":::
-
-The following are the components of Run only mode:
-1. **Mode switcher:** This control allows you to switch to Run only mode from Develop mode. 
-1. **Functions list:** In Run only mode, the functions list contains only published functions. 
-1. **Code editor:** In Run only mode, the code editor is read-only and can't be modified in this mode. 
-1. **Code changes indicator:** This message bar indicates if there are unpublished changes in Develop mode. To see those changes, the user needs to switch to Develop mode by clicking on the button in the bar or using the Mode switcher. 
-
-Users that only have View permissions can see the **View only mode**. In this mode, users have access to a read-only version of the code and its metadata. 
-
->[!NOTE]
-> Only users with View permissions can see the code in View only mode.
-
-## Use Develop mode to test your changes in the Fabric portal
-
-You can test your code changes in real-time by using the Test capability in Develop mode. You can access it by hovering over the function you'd like to test and clicking on the Test icon.
+1. Switch to **Develop** mode using the mode switcher in the upper right corner.
+1. Hover over the function you want to test in the functions list.
+1. Select the **Test** icon to open the Test panel.
 
    :::image type="content" source="..\media\user-data-functions-test\test-your-function.gif" alt-text="Screenshot showing how to test a new function." lightbox="..\media\user-data-functions-test\test-your-function.gif":::
 
 >[!NOTE]
-> The test session might take a few seconds to start. Once it starts you can run tests immediately, even after making code changes.
+> The test session might take a few seconds to start. Once the session is active, you can run tests immediately, even after making code changes.
 
-This step opens the Test panel, which includes the following components: 
-1. **Test session indicator:** This indicator turns green when the test session is active. The session starts when a test is run for the first time and times out after 15 minutes of inactivity. 
-1. **Function selector:** This drop-down allows you to select any function in your code to test. This list includes published and unpublished functions.
-1. **Test button:** This button allows you to test the function. If the selected function requires parameters, you need to provide them before testing the function.
-1. **Test output:** This panel contains the output that results from testing the function. This panel shows either the return value of the function or an object with the state and error output of the function.
-1. **Logs output:** This panel contains the logs generated in the code, including the statements added to the `logging` object.
+### Understand the Test panel
+
+When you select the Test icon, the Test panel opens as a dialog where you configure and run your tests. The panel provides everything you need to test your functions and review results:
 
    :::image type="content" source="..\media\user-data-functions-test\user-data-functions-test-panel.png" alt-text="Screenshot showing the different parts of the Test panel." lightbox="..\media\user-data-functions-test\user-data-functions-test-panel.png":::
 
+- **Function selector** - Choose which function to test from the drop-down menu. The list includes both published and unpublished functions.
+- **Parameters** - Provide input values for functions that require parameters.
+- **Test output** - View the return value of your function or error details if the function fails.
+- **Logs output** - View logs generated by your code, including statements added to the `logging` object. For more information about viewing and analyzing logs, see [View function logs](./view-function-logs.md).
+
+To run the test, provide any required parameters and select the **Test** button. The test session indicator in the status bar shows when your test session is active. The session remains active for 15 minutes of inactivity, allowing you to test multiple times without waiting for the session to restart.
+
+## Test published functions in Run only mode
+
+To test published functions as other users would run them:
+
+1. [Publish your functions](./user-data-functions-portal-editor.md#home-toolbar) if you haven't already.
+1. Switch to **Run only** mode using the mode switcher.
+1. Hover over a function in the functions list.
+1. Select the **Run** icon to open the Run panel.
+1. Provide any required parameters in the Run panel.
+1. Select **Run** to execute the function.
+
+The Run panel provides the same elements as the Test panel: function selector, parameters, output, and logs. This mode is useful for verifying that published functions work correctly for users with Execute permissions.
+
+## Best practices for testing
+
+Follow these practices to test your functions effectively:
+
+- **Test early and often** - Test functions as you develop them rather than waiting until all code is complete.
+- **Test with different inputs** - Validate your functions with various parameter values, including edge cases.
+- **Review logs carefully** - Use the logs output to understand function behavior and identify issues.
+- **Test before publishing** - Always test in Develop mode before publishing to ensure functions work as expected.
+- **Use Run only mode for validation** - After publishing, use Run only mode to verify that published functions work correctly.
+
+## Troubleshooting testing issues
+
+If you encounter issues while testing your functions, consider these common solutions:
+
+**Test session not starting**
+- Wait a few seconds for the test session to initialize
+- Check your network connection and ensure you can access Fabric services
+- Verify that your region supports the Test capability (see [regional limitations](#regional-limitations-for-test-capability-in-develop-mode))
+
+**Function fails with connection errors**
+- Verify that all required [data connections](./connect-to-data-sources.md) are configured correctly
+- Ensure you have permissions to access the connected data sources
+- Check that connection credentials are valid and not expired
+
+**Function fails with import or module errors**
+- Confirm that all required [libraries are installed](./how-to-manage-libraries.md)
+- Wait for library installation to complete before testing
+- Check the [service limits](./user-data-functions-service-limits.md) for library size restrictions
+
+**Test times out**
+- Review the [execution timeout limit](./user-data-functions-service-limits.md#service-limits) (240 seconds)
+- Optimize your function code to reduce execution time
+- Check logs to identify which operations are taking longest
+
+**Return value too large error**
+- Review the [response size limit](./user-data-functions-service-limits.md#service-limits) (30 MB)
+- Reduce the amount of data returned by your function
+- Consider pagination or filtering results
+
+For more information about diagnosing issues, see [View function logs](./view-function-logs.md).
+
 ## Regional limitations for Test capability in Develop mode
 
-The Test capability is not available in all Fabric regions yet. If your Tenant region is not supported yet, you may see the following message in the Functions portal. You can view the supported regions in the [Service details and limitations](./user-data-functions-service-limits.md#limitations) article.
+The Test capability isn't available in all Fabric regions yet. If your Tenant region isn't supported, you see a message in the Functions portal. You can view the supported regions in the [Service details and limitations](./user-data-functions-service-limits.md#limitations) article.
 
    :::image type="content" source="..\media\user-data-functions-test\user-data-functions-test-region-unavailable.png" alt-text="Screenshot showing the region unavailable banner." lightbox="..\media\user-data-functions-test\user-data-functions-test-region-unavailable.png":::
 
-If you see this informational message, you can still publish your functions and use the Run capability to test them as you did before. Learn more about [how to manage your Fabric capacity](../../admin/capacity-settings.md#create-a-new-capacity) if you prefer to create a new capacity in a supported region.
+If the Test capability is unavailable in your region, you can still publish your functions and use the Run capability to validate them. Alternatively, you can [create a new capacity](../../admin/capacity-settings.md#create-a-new-capacity) in a supported region.
 
-## Next steps
+## Related content
 
-- Learn more about the [service limitations](./user-data-functions-service-limits.md).
-- [Create a Fabric User data functions item](./create-user-data-functions-portal.md) from within Fabric or [use the Visual Studio Code extension](./create-user-data-functions-vs-code.md)
-- [Learn about the User data functions programming model](./python-programming-model.md)
+- [Use the portal editor](./user-data-functions-portal-editor.md) - Learn about the portal interface, Develop mode, and publishing
+- [View function logs](./view-function-logs.md) - Analyze logs and troubleshoot function execution issues
+- [Python programming model](./python-programming-model.md) - Understand how to write function code
+- [Service details and limitations](./user-data-functions-service-limits.md) - Review service limits and regional availability
+- [Create user data functions with VS Code](./create-user-data-functions-vs-code.md) - Learn about local testing options

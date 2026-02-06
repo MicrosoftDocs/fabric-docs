@@ -3,7 +3,7 @@ title: Service tags
 description: Learn how to use service tags in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 02/25/2024
 ---

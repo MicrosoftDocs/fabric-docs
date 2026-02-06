@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: ''
 ms.service: fabric
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/14/2025
 ---
 

@@ -5,7 +5,7 @@ author: gsaurer
 ms.author: billmath
 ms.topic: tutorial
 ms.custom:
-ms.date: 11/18/2025
+ms.date: 12/15/2025
 ---
 
 # Create a new Fabric Item

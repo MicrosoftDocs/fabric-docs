@@ -1,8 +1,6 @@
 ---
 title: Oracle database connector overview
 description: This article provides an overview of the supported capabilities of the Oracle database connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 07/09/2025
 ms.custom:

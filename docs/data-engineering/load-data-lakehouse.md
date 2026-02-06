@@ -4,7 +4,7 @@ description: Learn how to load data into a lakehouse via a file upload, Apache S
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 08/22/2024
 ms.search.form: Lakehouse Get Data

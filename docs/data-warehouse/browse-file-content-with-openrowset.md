@@ -96,8 +96,8 @@ select *
 from OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.csv',
                 FORMAT='CSV',
                 HEADER_ROW=True,
-                ROW_TERMINATOR='\n',
-                FIELD_TERMINATOR=','
+                ROWTERMINATOR='\n',
+                FIELDTERMINATOR=','
 ) AS data
 ```
 

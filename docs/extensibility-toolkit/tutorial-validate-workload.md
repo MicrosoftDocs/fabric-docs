@@ -5,7 +5,7 @@ author: gsaurer
 ms.author: billmath
 ms.topic: how-to
 ms.custom:
-ms.date: 11/18/2025
+ms.date: 12/15/2025
 ---
 
 # How to validate your workload for publishing
@@ -37,6 +37,8 @@ Before using the validation tool, ensure you have:
 The Fabric Extensibility Toolkit Validator is available through GitHub:
 
 🔗 **Repository**: <https://github.com/microsoft/fabric-extensibility-toolkit-validator>
+
+For detailed installation and usage instructions, see [Microsoft Fabric Extensibility Toolkit Validator](tools-workload-validator.md).
 
 Visit the repository to:
 

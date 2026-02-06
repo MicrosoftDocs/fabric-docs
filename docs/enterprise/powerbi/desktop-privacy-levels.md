@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 03/15/2024
 LocalizationGroup: Connect to data
 ---

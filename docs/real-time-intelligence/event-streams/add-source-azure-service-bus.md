@@ -44,6 +44,9 @@ On the **Select a data source** page, search for **Azure Service Bus**. On the *
 
     :::image type="content" source="./media/add-source-azure-service-bus/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
+## Limitation
+* The Azure Service Bus source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.
+
 ## Related content
 
 - For a list of all supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).

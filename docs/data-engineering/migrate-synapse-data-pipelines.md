@@ -4,7 +4,7 @@ description: Learn about your different options for migrating data and pipelines
 ms.reviewer: aimurg
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
   - fabric-cat
 ms.date: 11/11/2024

@@ -7,7 +7,7 @@ author: billmath
 ms.topic: overview
 ms.custom:
 ms.search.form:
-ms.date: 04/29/2025
+ms.date: 12/15/2025
 #customer intent: As an ISV, I want to learn about the different pathways to integrate with Microsoft Fabric so that I can leverage the platform's capabilities to build and deploy my solutions.
 ---
 

@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: sergeig, vparasuraman, amasingh
 ms.date: 11/21/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: fabric-cat
 ---
 

@@ -28,8 +28,6 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 1. [Create a workspace](tutorial-create-workspace.md).
 1. [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](tutorial-create-warehouse.md).
 1. [Ingest data](tutorial-ingest-data.md) from the source to the data warehouse dimensional model with a pipeline.
-1. [Create tables with T-SQL](tutorial-create-tables.md) in your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-1. [Load data with T-SQL](tutorial-load-data.md) with the [SQL query editor in the Fabric portal](sql-query-editor.md).
 1. [Clone a table with T-SQL](tutorial-clone-table.md) with the SQL query editor.
 1. [Transform data with a stored procedure](tutorial-transform-data.md) to create aggregated datasets.
 1. [Time travel with T-SQL](tutorial-time-travel.md) to see data as it appeared at a point in time.

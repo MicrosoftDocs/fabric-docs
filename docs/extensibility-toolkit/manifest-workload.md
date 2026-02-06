@@ -3,9 +3,9 @@ title: Workload Manifest
 description: Learn more about the Workload Manifest and the usage.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
 # Workload manifest in Extensibility Toolkit

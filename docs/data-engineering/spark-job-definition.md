@@ -6,7 +6,7 @@ ms.author: eur
 author: eric-urban
 ms.topic: overview
 ms.custom:
-ms.date: 10/20/2023
+ms.date: 10/31/2025
 ms.search.form: spark_job_definition
 ---
 
@@ -16,9 +16,11 @@ An Apache Spark job definition is a Microsoft Fabric code item that allows you t
 
 To run a Spark job definition, you must have at least one lakehouse associated with it. This default lakehouse context serves as the default file system for Spark runtime. For any Spark code using a relative path to read/write data, the data is served from the default lakehouse.
 
-> [!TIP]
+> [!IMPORTANT]
 > To run a Spark job definition item, you must have a main definition file and default lakehouse context. If you don't have a lakehouse, create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
-## Related content
+## Next steps
 
-- [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md)
+> [!div class="nextstepaction"]
+> [Create an Apache Spark job definition in Microsoft Fabric.](create-spark-job-definition.md)
+

@@ -1,5 +1,5 @@
 ---
-title: What Is Data Warehousing in Microsoft Fabric?
+title: What Is Fabric Data Warehouse?
 description: Learn more about data warehousing workloads in Fabric Data Warehouse.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,7 @@ ms.date: 09/09/2025
 ms.topic: overview
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
-# What is data warehousing in Microsoft Fabric?
+# What is Fabric Data Warehouse?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

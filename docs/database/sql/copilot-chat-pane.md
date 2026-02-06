@@ -1,5 +1,5 @@
 ---
-title: How to Use the Microsoft Copilot Chat Pane in Microsoft Fabric in the SQL Database Workload
+title: How to Use the Microsoft Copilot Chat Pane in the SQL Database Workload
 description: Learn more about the Microsoft Copilot chat pane in Microsoft Fabric in the SQL database workload.
 author: markingmyname
 ms.author: maghan
@@ -11,7 +11,7 @@ ms.collection:
 ms.update-cycle: 180-days
 ---
 
-# How to use the Copilot chat pane in the Fabric SQL database workload
+# How to use the Copilot chat pane in the SQL database workload
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 

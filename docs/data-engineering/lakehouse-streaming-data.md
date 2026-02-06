@@ -4,7 +4,7 @@ description: Learn how to use Spark structured streaming and retry policy to set
 ms.reviewer: tvilutis
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Spark Structured Streaming

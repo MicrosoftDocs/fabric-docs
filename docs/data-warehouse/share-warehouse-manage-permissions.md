@@ -22,7 +22,7 @@ Sharing is a convenient way to provide users read access to your data for downst
 
 After identifying the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] item you would like to share with another user in your Fabric workspace, select the quick action in the row to **Share**.
 
-The following animated gif reviews the steps to select a warehouse to share, select the permissions to assign, and then finally **Grant** the permissions to another user.
+Select a warehouse to share, select the permissions to assign, and **Grant** the permissions to another user.
 
 ## Share a warehouse
 

@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
-ms.topic: conceptual
+ms.topic: how-to
 ---
 
 # Migrate to IDENTITY columns in Fabric Data Warehouse
@@ -13,6 +13,8 @@ ms.topic: conceptual
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 You can migrate tables to Fabric Data Warehouse with surrogate key columns after adapting to the differences in the `IDENTITY` implementation in Fabric Data Warehouse. This article outlines a robust migration strategy to help you bridge this gap and successfully move your schema and data into Fabric Data Warehouse.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Migrating databases to Fabric Data Warehouse presents unique challenges for organizations that rely on existing surrogate columns, such as `IDENTITY` or `SEQUENCE` functions in the SQL Database Engine:
 

@@ -287,17 +287,9 @@ This creates `release\ManifestPackage.1.0.0.nupkg` containing your workload mani
 
 ### Update manifest for Azure deployment
 
-Ensure your `Product.json` manifest references your Azure-deployed application:
+Before building your manifest package for Azure deployment, ensure that the values in your `.env` file (such as `FRONTEND_URL`, `FRONTEND_APPID`, and any other required variables) are set correctly for your Azure environment. These values will be substituted into your `WorkloadManifest.xml` during the build process.
 
-```json
-{
-    "name": "Product",
-    "displayName": "Your_Workload_Name",
-    "frontend": {
-        "path": "https://your-workload.azurewebsites.net"
-    }
-}
-```
+For a full list of required environment variables and guidance on setting them, see the [General publishing requirements](./publishing-requirements-general.md).
 
 ## Monitoring and troubleshooting
 
@@ -317,6 +309,9 @@ Enable Application Insights for monitoring:
 - **Authentication errors**: Verify Azure CLI login with `az account show`
 - **Resource not found**: Confirm Web App name and resource group are correct
 - **Permission denied**: Ensure your account has Contributor role on the resource group
+
+> [!NOTE]
+> **Error: Frontend Uri is not in the tenant domains list**: This error means your workload's custom domain is not registered in your Entra ID tenant's list of accepted domains. To resolve, add your custom domain to Entra ID. For more information, see [Custom Domain Verification](./publishing-requirements-general.md#custom-domain-verification) in the general publishing requirements.
 
 #### Runtime issues
 

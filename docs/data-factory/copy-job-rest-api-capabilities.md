@@ -1,8 +1,7 @@
 ---
 title: REST API Capabilities for Copy job in Fabric Data Factory
 description: This article describes the REST API Capabilities for Copy job in Fabric Data Factory.
-author: KrishnakumarRukmangathan
-ms.author: krirukm
+ms.reviewer: krirukm
 ms.topic: how-to
 ms.date: 06/23/2025
 ms.search.form: copy-job

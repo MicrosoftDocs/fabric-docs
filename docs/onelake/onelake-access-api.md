@@ -67,9 +67,13 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
 
 ## Data residency
 
-If you use the global endpoint ('https://onelake.dfs.fabric.microsoft.com`) to query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the correct regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
+If you use the global endpoint (`https://onelake.dfs.fabric.microsoft.com`) to query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the correct regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
 
 OneLake regional endpoints all follow the same format: `https://<region>-onelake.dfs.fabric.microsoft.com`. For example, a workspace attached to a capacity in the West US region would be accessible through the regional endpoint `https://westus-onelake.dfs.fabric.microsoft.com`.
+
+## Additional OneLake endpoints
+
+OneLake also supports a general FQDN (`https://api.onelake.fabric.microsoft.com`), along with a regional (`https://<region>-api.onelake.fabric.microsoft.com`) and workspace (`https://<wsid>.z<xy>.onelake.fabric.microsoft.com`) version.  These FQDNs function identically to the blob and DFS variants, but may be incompatible with some Azure Storage tooling which rely on the blob and DFS variants to use the correct Azure Storage APIs.
 
 ## Common issues
 

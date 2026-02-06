@@ -4,7 +4,7 @@ description: Learn how to submit and run Spark session jobs in Fabric using the 
 ms.reviewer: avinandac
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: how-to
 ms.search.form: Get started with the Livy API for Data Engineering
 ms.date: 11/05/2025
 ---

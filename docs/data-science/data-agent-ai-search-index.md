@@ -5,8 +5,8 @@ ms.author: jburchel
 author: jonburchel
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
-ms.date: 10/31/2025
+ms.topic: how-to
+ms.date: 12/9/2025
 ---
 
 # Connect Data Agents to your Azure Search Index in Azure AI Foundry
@@ -56,7 +56,7 @@ To connect your Data Agent to an Azure AI Search index, first ensure your search
 
    :::image type="content" source="media/byo-ai-search-index/connect-ai-search-resource-url.png" alt-text="Screenshot of the Data Agent resource URL input." lightbox="media/byo-ai-search-index/connect-ai-search-resource-url.png":::
 
-3. Ask a question such as **“Tell me more about the Uptown Chic hotel”** to query your index.
+3. Ask a question such as **"Tell me more about the Uptown Chic hotel"** to query your index.
 
     :::image type="content" source="media/byo-ai-search-index/agent-response-ai-search.png" alt-text="Screenshot of the Data Agent response." lightbox="media/byo-ai-search-index/agent-response-ai-search.png":::
 

@@ -3,8 +3,8 @@ title: "Connect Your Application to a SQL Database in Fabric"
 description: Learn how to quickly connect a .NET Aspire application to the AdventureWorks sample database in your SQL database.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: antho, drskwier
-ms.date: 08/27/2025
+ms.reviewer: antho, drskwier, dlevy
+ms.date: 01/15/2026
 ms.topic: quickstart
 ---
 # Quickstart: Connect your .NET Aspire application to a SQL database
@@ -18,7 +18,7 @@ SQL database in Fabric lets you quickly connect your applications. In this artic
 ## Prerequisites
 
 - [Load AdventureWorks sample data in your SQL database](load-adventureworks-sample-data.md).
-- Complete the [Quickstart: Build your first .NET Aspire solution](/dotnet/aspire/get-started/build-your-first-aspire-app?pivots=vscode).
+- Complete the [Quickstart: Build your first .NET Aspire solution](https://aspire.dev/get-started/deploy-first-app/?lang=csharp).
    - Use [Visual Studio Code](https://code.visualstudio.com/) with the [C# Dev Kit: Extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit).
    - Use **AspireSample** for the solution name.
    - Make sure your Aspire Templates are version 9.3.0 or higher. If you need to upgrade, it won't disrupt current development. You can use the following command to upgrade:
@@ -29,7 +29,7 @@ SQL database in Fabric lets you quickly connect your applications. In this artic
 
 ## Add a new page to display the AdventureWorks product details
 
-[Quickstart: Build your first .NET Aspire solution](/dotnet/aspire/get-started/build-your-first-aspire-app?pivots=vscode) creates a new .NET Aspire solution with an API and a web front end. The solution includes the following projects:
+[Quickstart: Build your first .NET Aspire solution](https://aspire.dev/get-started/deploy-first-app/?lang=csharp) creates a new .NET Aspire solution with an API and a web front end. The solution includes the following projects:
 
 - `AspireSample.ApiService`: A web API project that shows weather forecasts.
 - `AspireSample.AppHost`: An orchestrator project that connects and configures the different projects and services of your app. Set the orchestrator as the startup project.
@@ -509,8 +509,7 @@ The sample app is ready to test.
 
 Keep going!
 
-- Add pagination using the example from [.NET Aspire Shop sample](/samples/dotnet/aspire-samples/aspire-shop/).
-- Implement data updates using the example from [Tutorial: Connect a .NET Aspire microservice to an existing database](/dotnet/aspire/database/connect-to-existing-database?pivots=sql-server-ef).
+- Implement data updates using the example from [Tutorial: Connect a .NET Aspire microservice to an existing database](https://aspire.dev/integrations/databases/sql-server/).
 - Deploy your application to Azure App Service, Azure Container Apps, Azure Functions, or Azure Kubernetes Service (AKS) using [Service Connector](/azure/service-connector/how-to-integrate-fabric-sql).
 
 ## Related content

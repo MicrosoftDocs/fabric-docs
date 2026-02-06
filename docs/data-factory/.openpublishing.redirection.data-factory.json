@@ -79,6 +79,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/migrate-from-azure-data-factory.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
         "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
         "redirect_document_id": false
@@ -229,6 +234,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/spark-connector-copy-activity.md",
+        "redirect_url": "/fabric/data-factory/spark-connector-overview",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/metrics-app-storage-page.md",
         "redirect_url": "/fabric/enterprise/metrics-app-storage-page",
         "redirect_document_id": false
@@ -281,6 +291,11 @@
       {
         "source_path_from_root": "/docs/data-factory/data-workflows-enable-azure-key-vault.md",
         "redirect_url": "/fabric/data-factory/apache-airflow-jobs-enable-azure-key-vault",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/azure-key-vault-reference-overview.md",
+        "redirect_url": "/fabric/data-factory/azure-key-vault-reference-configure",
         "redirect_document_id": false
       },
       {

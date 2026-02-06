@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: fresantos
 ms.date: 10/15/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Data Encryption in Fabric Data Warehouse

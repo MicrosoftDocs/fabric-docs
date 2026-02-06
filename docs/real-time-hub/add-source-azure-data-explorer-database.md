@@ -5,7 +5,7 @@ author: spelluru
 ms.author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 07/21/2025
+ms.date: 12/22/2025
 ---
 
 # Get events from Azure Data Explorer database table into Fabric Real-Time hub
@@ -21,7 +21,7 @@ You can get events from an Azure Data Explorer table into Real-Time hub using th
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-5. On the **Data sources** page, select **Microsoft sources** category at the top, and then select **Connect** on the **Azure Data Explorer DB** tile. 
+5. On the **Add data** page, select the **Microsoft** category at the top, and then select **Connect** on the **Azure Data Explorer DB** tile. 
 
     :::image type="content" source="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png" alt-text="Screenshot that shows the selection of Azure Data Explorer database as the source type in the Data sources page." lightbox="./media/add-source-azure-data-explorer-database/select-azure-data-explorer-database.png":::
 

@@ -1,8 +1,6 @@
 ---
 title: "Explore Data in Your Mirrored Database With Notebooks"
 description: Learn how to access your mirrored database from Lakehouse and Spark queries in Notebooks.
-author: whhender
-ms.author: whhender
 ms.reviewer: imotiwala, chweb, anithaa
 ms.date: 11/19/2024
 ms.topic: how-to
@@ -16,14 +14,7 @@ Notebooks are a powerful code item for you to develop Apache Spark jobs and mach
 
 ## Prerequisites
 
-- Complete the tutorial to create a mirrored database from your source database.
-    - [Tutorial: Configure Microsoft Fabric mirrored database for Azure Cosmos DB](../mirroring/azure-cosmos-db-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Databricks](../mirroring/azure-databricks-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Database](../mirroring/azure-sql-database-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Azure SQL Managed Instance](../mirroring/azure-sql-managed-instance-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from Snowflake](../mirroring/snowflake-tutorial.md)
-    - [Tutorial: Configure Microsoft Fabric mirrored databases from SQL Server](../mirroring/sql-server-tutorial.md)
-    - [Tutorial: Create an open mirrored database](../mirroring/open-mirroring-tutorial.md)
+- Complete the [tutorial](overview.md#types-of-mirroring) to create a mirrored database from your source database.
 
 ## Create a shortcut
 

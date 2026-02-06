@@ -2,9 +2,9 @@
 title: GQL Quick Reference
 description: Quick reference for GQL syntax, statements, patterns, and expressions supported by graph in Microsoft Fabric.
 ms.topic: reference
-ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+ms.date: 02/03/2025
+author: lorihollasch
+ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Quick Reference
 ---
@@ -13,16 +13,21 @@ ms.search.form: GQL Quick Reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article is a quick reference for GQL (Graph Query Language) syntax in graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+This article is a quick reference for GQL (Graph Query Language) syntax for graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+
+> [!NOTE]
+> This article primarily uses the [social network example graph dataset](sample-datasets.md). It also provides a few examples that use the Adventure Works dataset from the [Graph tutorial](tutorial-introduction.md).
 
 ## Query structure
 
 GQL queries use a sequence of statements that define what data to get from the graph, how to process it, and how to show the results. Each statement has a specific purpose, and together they create a linear pipeline that matches data from the graph and transforms it step by step.
 
 **Typical query flow:**  
-A GQL query usually starts by specifying the graph pattern to match, then uses optional statements for variable creation, filtering, sorting, pagination, and result output.
+A GQL query usually starts by specifying the graph pattern to match. Then, it uses optional statements for variable creation, filtering, sorting, pagination, and result output.
 
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 MATCH (n:Person)-[:knows]->(m:Person) 
 LET fullName = n.firstName || ' ' || n.lastName 
@@ -36,8 +41,8 @@ RETURN fullName, m.firstName
 **Statement order:**  
 
 > [!IMPORTANT]
-> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
-> See the article on [current limitations](limitations.md). 
+> Graph in Microsoft Fabric doesn't yet support arbitrary statement composition.
+> See the article on [current limitations](limitations.md).
 
 Statements generally can appear in any order within a query:
 
@@ -58,58 +63,89 @@ Each statement builds on the previous one, so you incrementally refine and shape
 Find graph patterns in your data.
 
 **Syntax:**
+
 ```gql
 MATCH <graph pattern> [ WHERE <predicate> ]
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
-MATCH (n:Person)-[:knows]-(m:Person) WHERE n.birthday > 20000101
+MATCH (n:Person)-[:knows]-(m:Person) WHERE n.birthday > 2000
+RETURN *
 ```
 
 For more information about the `MATCH` statement, see the [Graph patterns](gql-graph-patterns.md).
 
 ### LET  
 
-Create variables using expressions.
+Create variables by using expressions.
 
 **Syntax:**
+
 ```gql
 LET <variable> = <expression>, <variable> = <expression>, ...
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)
 LET fullName = n.firstName || ' ' || n.lastName
+RETURN fullName
 ```
 
 For more information about the `LET` statement, see the [GQL language guide](gql-language-guide.md#let-statement).
 
 ### FILTER
 
-Keep rows that match conditions.
+Keeps rows that match conditions.
 
 **Syntax:**
+
 ```gql
 FILTER [ WHERE ] <predicate>
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)-[:knows]->(m:Person)
 FILTER WHERE n.birthday > m.birthday
+RETURN *
 ```
 
 For more information about the `FILTER` statement, see the [GQL language guide](gql-language-guide.md#filter-statement).
 
 ### ORDER BY
 
-Sort the results.
+Sorts the results.
 
 **Syntax:**
+
 ```gql
 ORDER BY <expression> [ ASC | DESC ], ...
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)
+RETURN *
 ORDER BY n.lastName ASC, n.firstName ASC
 ```
+
+> [!IMPORTANT]
+> The requested order of rows is only guaranteed to hold immediately after a preceding `ORDER BY` statement.
+> Any following statements (if present) aren't guaranteed to preserve any such order.
 
 For more information about the `ORDER BY` statement, see the [GQL language guide](gql-language-guide.md#order-by-statement).
 
@@ -118,13 +154,21 @@ For more information about the `ORDER BY` statement, see the [GQL language guide
 Skip rows and limit the number of results.
 
 **Syntax:**
+
 ```gql
 OFFSET <offset> [ LIMIT <limit> ]
 LIMIT <limit>
+...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
+MATCH (n:Person)
+ORDER BY n.birthday
 OFFSET 10 LIMIT 20
+RETURN n.firstName || ' ' || n.lastName AS name, n.birthday
 ```
 
 For more information about the `OFFSET` and `LIMIT` statements, see the [GQL language guide](gql-language-guide.md#offset-and-limit-statements).
@@ -134,12 +178,17 @@ For more information about the `OFFSET` and `LIMIT` statements, see the [GQL lan
 Output the final results.
 
 **Syntax:**
+
 ```gql
 RETURN [ DISTINCT ] <expression> [ AS <alias> ], ...
 ```
+
 **Example:**
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
-RETURN n.firstName, m.lastName
+MATCH (n:Person)
+RETURN n.firstName, n.lastName
 ```
 
 For more information about the `RETURN` statement, see the [GQL language guide](gql-language-guide.md#return-basic-result-projection).
@@ -170,16 +219,17 @@ Edge patterns specify relationships between nodes, including direction and edge 
 ```gql
 <-[e]-             -- Incoming edge
 -[e]->             -- Outgoing edge
--[e]-              -- Undirected edge
--[:knows]->        -- Edge with type
--[e:knows|likes]-> -- Multiple edge types
+-[e]-              -- Any edge
+-[e:knows]->       -- Edge with label ("relationship type")
+-[e:knows|likes]-> -- Edges with different labels
+-[:knows]->        -- :knows edge, don't bind variable
 ```
 
 For more information about edge patterns, see the [Graph patterns](gql-graph-patterns.md).
 
 ### Label expressions
 
-Label expressions let you match nodes with specific label combinations using logical operators.
+Label expressions let you match nodes with specific label combinations by using logical operators.
 
 ```gql
 :Person&Company                  -- Both Person AND Company labels
@@ -203,7 +253,7 @@ For more information about path patterns, see the [Graph patterns](gql-graph-pat
 
 ### Multiple patterns
 
-Multiple patterns let you match complex, nonlinear graph structures in a single query.
+You can use multiple patterns to match complex, nonlinear graph structures in a single query.
 
 ```gql
 (a)->(b), (a)->(c)               -- Multiple edges from same node
@@ -226,18 +276,18 @@ BOOL             -- TRUE, FALSE, UNKNOWN
 ZONED DATETIME   -- ZONED_DATETIME('2023-01-15T10:30:00Z')
 ```
 
-Learn more about basic types in the [GQL values and value types](gql-values-and-value-types.md).
+For more information about basic types, see [GQL values and value types](gql-values-and-value-types.md).
 
 ### Reference value types
 
-Reference value types are nodes and edges used as values in queries.
+Reference value types are nodes and edges that you use as values in queries.
 
 ```gql
 NODE             -- Node reference values
 EDGE             -- Edge reference values
 ```
 
-Learn more about reference value types in the [GQL values and value types](gql-values-and-value-types.md).
+For more information about reference value types, see [GQL values and value types](gql-values-and-value-types.md).
 
 ### Collection types
 
@@ -249,13 +299,16 @@ LIST<STRING>     -- ['a', 'b', 'c']
 PATH             -- Path values
 ```
 
-Learn more about collection types in the [GQL values and value types](gql-values-and-value-types.md).
+For more information about collection types, see [GQL values and value types](gql-values-and-value-types.md).
 
-### Nullable types
+### Material and nullable types
+
+Every value type is either nullable (includes the null value) or material (excludes it).
+By default, types are nullable unless you explicitly specify `NOT NULL`.
 
 ```gql
-STRING NOT NULL  -- Nonnullable string
-INT64            -- Nullable int (default)
+STRING NOT NULL  -- Material (Non-nullable) string type
+INT64            -- Nullable (default) integer type
 ```
 
 <!--
@@ -271,7 +324,7 @@ Graph types define the structure of nodes, edges, and constraints in the graph.
     name :: STRING 
 })
 
-(:University => :Organisation)   -- Inheritance
+(:University => :Organization)   -- Inheritance
 ABSTRACT (:Message => { ... })   -- Abstract type
 ```
 
@@ -401,7 +454,7 @@ size(list)                       -- List length
 trim(list, n)                    -- Trim a list to be at most size `n`
 ```
 
-Learn more about list functions in the [GQL expressions and functions](gql-expressions.md).
+For more information about list functions, see [GQL expressions and functions](gql-expressions.md).
 
 ### Graph functions
 
@@ -413,7 +466,7 @@ nodes(path)                      -- Get path nodes
 edges(path)                      -- Get path edges
 ```
 
-Learn more about graph functions in the [GQL expressions and functions](gql-expressions.md).
+For more information about graph functions, see [GQL expressions and functions](gql-expressions.md).
 
 ### Temporal functions
 
@@ -423,7 +476,7 @@ Temporal functions let you work with date and time values.
 zoned_datetime()               -- Get the current timestamp
 ```
 
-Learn more about temporal functions in the [GQL expressions and functions](gql-expressions.md).
+For more information about temporal functions, see [GQL expressions and functions](gql-expressions.md).
 
 ### Generic functions
 
@@ -433,40 +486,74 @@ Generic functions let you work with data in common ways.
 coalesce(expr1, expr2, ...)    -- Get the first non-null value
 ```
 
-Learn more about generic functions in the [GQL expressions and functions](gql-expressions.md).
+For more information about generic functions, see [GQL expressions and functions](gql-expressions.md).
 
 ## Common patterns
 
-### Find connections
+This section shows some common GQL query patterns that you can use.
+
+### Social network examples
+
+These examples use the [social network example graph dataset](sample-datasets.md).
+
+#### Find all nodes of a type
 
 ```gql
+-- Get all nodes with a specific label
+MATCH (p:Person) RETURN p
+```
+
+#### Find nodes with specific properties
+
+```gql
+-- Filter nodes by property value
+MATCH (p:Person) FILTER p.firstName = 'Annemarie' RETURN p
+```
+
+#### Find connections
+
+<!-- GQL Query: Checked 2025-11-19 -->
+```gql
 -- Friends of friends  
-MATCH (me:Person {firstName: 'Alice'})-[:knows]->{2}(fof:Person)
+MATCH (me:Person {firstName: 'Annemarie'})-[:knows]->{2}(fof:Person)
 WHERE fof <> me
 RETURN DISTINCT fof.firstName
 ```
 
-### Aggregation
+#### Traverse relationships
 
+```gql
+-- Multi-hop traversal through different edge types
+MATCH (p:Person)-[:knows]->(f:Person)-[:isLocatedIn]->(c:City)
+RETURN p.firstName, f.firstName, c.name
+```
+
+#### Aggregation
+
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Count by group
 MATCH (p:Person)-[:isLocatedIn]->(c:City)
-RETURN c.name, count(*) AS population
+RETURN c.name AS name, count(*) AS population
+GROUP BY name
 ORDER BY population DESC
 ```
 
-### Top k
+#### Top k
 
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Top 10
 MATCH (p:Person)-[:hasCreator]-(m:Post)
-RETURN p.firstName, count(m) AS posts
+RETURN p.firstName AS name, count(m) AS posts
+GROUP BY name
 ORDER BY posts DESC
 LIMIT 10
 ```
 
-### Filtering and conditions
+#### Filtering and conditions
 
+<!-- GQL Query: Checked 2025-11-19 -->
 ```gql
 -- Complex conditions
 MATCH (p:Person)-[:isLocatedIn]->(c:City)
@@ -476,13 +563,50 @@ WHERE p.birthday >= 19800101 AND p.birthday <= 20000101
 RETURN p.firstName, p.birthday
 ```
 
-### Path traversal
+#### Path traversal
 
+<!-- GQL Query: Broken 2025-11-19 Cant return paths -->
 ```gql
 -- Variable length paths
-MATCH path = (start:Person {firstName: 'Alice'})-[:knows]->{1,3}(end:Person)
-WHERE end.firstName = 'Bob'
-RETURN path
+MATCH p = TRAIL (src:Person {firstName: 'Annemarie'})-[:knows]->{1,3}(dst:Person)
+WHERE dst.firstName = 'Alexander'
+RETURN p
+```
+
+### Adventure Works examples
+
+These examples use the Adventure Works dataset from the [Graph tutorial](tutorial-introduction.md).
+
+#### Find all customers
+
+```gql
+-- Get all customer nodes
+MATCH (c:Customer) RETURN c
+```
+
+#### Find products by name
+
+```gql
+-- Filter products by name
+MATCH (p:Product) FILTER p.productName = 'Mountain Bike' RETURN p
+```
+
+#### Traverse customer orders
+
+```gql
+-- Multi-hop traversal: customers to orders to products
+MATCH (c:Customer)-[:purchases]->(o:Order)-[:contains]->(p:Product)
+RETURN c, o, p
+```
+
+#### Count orders by employee
+
+```gql
+-- Count orders by employee
+MATCH (e:Employee)-[:sells]->(o:Order)
+RETURN e.employeeName, count(o) AS total_orders
+GROUP BY e.employeeName
+ORDER BY total_orders DESC
 ```
 
 ## Related content

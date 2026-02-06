@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/21/2025
+ms.date: 01/14/2026
 ---
 
 # Add Azure SQL Managed Instance (MI) database (DB) CDC as source in Real-Time hub
@@ -49,12 +49,6 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
     After the query executes successfully, you enabled CDC in your Azure SQL managed instance.
 
-## Get events from Azure SQL Managed Instance (CDC)
-You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC into Real-Time hub in one of the ways:
-
-- [Using the **Data sources** page](#data-sources-page)
-- [Using the **Microsoft sources** page](#microsoft-sources-page)
-
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
@@ -64,19 +58,6 @@ You can get events from an Azure SQL Managed Instance (MI) Database (DB) CDC int
     :::image type="content" source="./media/add-source-azure-sql-managed-instance-cdc/select-azure-sql-managed-instance-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL Managed Instance CDC as the source type in the Data sources page." lightbox="./media/add-source-azure-sql-managed-instance-cdc/select-azure-sql-managed-instance-cdc.png":::
     
     Use instructions from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. 
-
-## Microsoft sources page
-
-1. In Real-Time hub, select **Microsoft sources** on the left navigation menu.
-1. In the **Source** drop-down list, select **Azure SQL MI DB (CDC)**. 
-1. For **Subscription**, select an **Azure subscription** that has the resource group with your Azure SQL Managed Instance database.
-1. For **Resource group**, select a **resource group** that has the database.
-1. For **Region**, select a location where your database is located. 
-1. Now, move the mouse over the name of the Azure SQL Managed Instance DB CDC source that you want to connect to Real-Time hub in the list of databases, and select the **Connect** button, or select **... (ellipsis)**, and then select the **Connect** button. 
-
-    :::image type="content" source="./media/add-source-azure-sql-managed-instance-cdc/microsoft-sources-page.png" alt-text="Screenshot that shows the Microsoft Sources page." lightbox="./media/add-source-azure-sql-managed-instance-cdc/microsoft-sources-page.png":::     
-
-    To configure connection information, use steps from the [Add Azure SQL Managed Instance CDC as a source](#add-azure-sql-managed-instance-cdc-as-a-source) section. 
 
 ## Add Azure SQL Managed Instance CDC as a source
 

@@ -7,7 +7,7 @@ ms.reviewer: NimrodShalit
 ms.service: fabric
 ms.subservice: cicd
 ms.topic: how-to
-ms.date: 12/12/2024
+ms.date: 12/15/2025
 ms.custom:
 #customer intent: As a developer, I want to know how to update my workspace manually when there's an internal inconsistency.
 ---

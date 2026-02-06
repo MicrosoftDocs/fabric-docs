@@ -285,25 +285,27 @@ Here's an example of running notebooks with topological structure using `noteboo
 DAG = {
     "activities": [
         {
-            "name": "NotebookSimple", # activity name, must be unique
-            "path": "NotebookSimple", # notebook path
+            "name": "Process_1", # activity name, must be unique
+            "path": "NotebookSimple", # notebook item name
             "timeoutPerCellInSeconds": 90, # max timeout for each cell, default to 90 seconds
             "args": {"p1": "changed value", "p2": 100}, # notebook parameters
+            "workspace":"WorkspaceName" # both name and id are supported
         },
         {
-            "name": "NotebookSimple2",
+            "name": "Process_2",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 2", "p2": 200}
+            "args": {"p1": "changed value 2", "p2": 200},
+            "workspace":"id" # both name and id are supported
         },
         {
-            "name": "NotebookSimple2.2",
+            "name": "Process_1.1",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
             "args": {"p1": "changed value 3", "p2": 300},
             "retry": 1,
             "retryIntervalInSeconds": 10,
-            "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
+            "dependencies": ["Process_1"] # list of activity names that this activity depends on
         }
     ],
     "timeoutInSeconds": 43200, # max timeout for the entire DAG, default to 12 hours
@@ -915,9 +917,6 @@ notebookutils.session.restartPython()
 
 ## Variable library utilities
 
-> [!NOTE]
-> "Variable Library utilities" in Notebooks is in Preview.
-
 Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
 
 Run the following commands for an overview of the available methods:
@@ -1012,8 +1011,6 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 - When using runtime version above 1.2 and run ``` notebookutils.help() ```, the listed **fabricClient**, **PBIClient** APIs are not supported for now, will be available in the further. Additionally, the **Credentials** API isn't supported in Scala notebooks for now.
 
 - The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
-
-- Currently SPN is not supported for variable library utilities.
 
 ## Related content
 

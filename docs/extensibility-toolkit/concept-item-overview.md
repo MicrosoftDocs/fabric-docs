@@ -5,7 +5,7 @@ author: gsaurer
 ms.author: billmath
 ms.topic: overview
 ms.custom:
-ms.date: 11/19/2025
+ms.date: 12/15/2025
 ---
 
 # Fabric Item Overview

@@ -112,7 +112,9 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 * Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
 
-* You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience.
+* You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience for a cloud connection.
+
+* Workspace-Identity-based authentication is currently not supported for gateway connections. 
 
 * If you reuse connections configured with the workspace identity authentication method in Fabric items other than OneLake shortcuts, pipelines, semantic models, or Dataflows Gen2, or in other workspaces, they might not work.
 

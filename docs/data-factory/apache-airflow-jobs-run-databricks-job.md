@@ -2,8 +2,6 @@
 title: Orchestrate Azure Databricks job with Apache Airflow Job
 description: Learn to run Azure Databricks job with Apache Airflow Job.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
 ms.topic: tutorial
 ms.custom: airflows
 ms.date: 04/15/2023

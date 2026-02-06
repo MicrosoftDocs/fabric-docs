@@ -1,8 +1,7 @@
 ---
 title: Configure Amazon S3 Compatible in a copy activity
 description: This article explains how to copy data using Amazon S3 Compatible.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/11/2025
 ms.custom: 

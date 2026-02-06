@@ -5,7 +5,7 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 07/22/2025
+ms.date: 01/14/2026
 ---
 
 # Get events from Google Cloud Pub/Sub into Real-Time hub

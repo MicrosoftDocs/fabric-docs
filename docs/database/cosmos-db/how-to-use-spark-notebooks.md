@@ -1,5 +1,5 @@
 ---
-title: Use Cosmos DB in Spark notebook in Microsoft Fabric
+title: Use Cosmos DB in Spark notebook 
 description: Learn how to use the Cosmos DB Spark Connector to work with a Spark notebook in Microsoft Fabric.
 author: garyhope
 ms.author: garyhope

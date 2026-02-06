@@ -1,10 +1,9 @@
 ---
 title: Configure MariaDB in copy activity
 description: This article explains how to copy data using MariaDB.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 09/29/2024
+ms.date: 01/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -59,6 +58,54 @@ For **Mapping** tab configuration, see [Configure your mappings under mapping ta
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for MariaDB
+
+When copying data from MariaDB, the following mappings are used from MariaDB data types to interim data types used by the service internally.
+
+| MariaDB data type | Interim service data type |
+|-------------------|---------------------------|
+| BIGINT | Int64 |
+| BIGINT UNSIGNED | UInt64 |
+| BIT(1) | UInt64 |
+| BIT(M), M>1 | UInt64 |
+| BLOB | Byte[] |
+| BOOL | Boolean <br/>(If TreatTinyAsBoolean=false, it is mapped as SByte. TreatTinyAsBoolean is true by default) |
+| CHAR | String |
+| DATE | Datetime |
+| DATETIME | Datetime |
+| DECIMAL | Decimal |
+| DOUBLE | Double |
+| DOUBLE PRECISION | Double |
+| ENUM | String |
+| FLOAT | Single |
+| INT | Int32 |
+| INT UNSIGNED | Int64 |
+| INTEGER | Int32 |
+| INTEGER UNSIGNED | UInt32 |
+| JSON | String |
+| LONG VARBINARY | Byte[] |
+| LONG VARCHAR | String |
+| LONGBLOB | Byte[] |
+| LONGTEXT | String |
+| MEDIUMBLOB | Byte[] |
+| MEDIUMINT | Int32 |
+| MEDIUMINT UNSIGNED | UInt32 |
+| MEDIUMTEXT | String |
+| NUMERIC | Decimal |
+| REAL | Double |
+| SET | String |
+| SMALLINT | Int16 |
+| SMALLINT UNSIGNED | UInt16 |
+| TEXT | String |
+| TIME | TimeSpan |
+| TIMESTAMP | Datetime |
+| TINYBLOB | Byte[] |
+| TINYINT | SByte |
+| TINYINT unsigned | Int16 |
+| TINYTEXT | String |
+| VARCHAR | String |
+| YEAR | Int |
 
 ## Table summary
 

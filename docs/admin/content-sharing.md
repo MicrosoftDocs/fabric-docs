@@ -3,7 +3,7 @@ title: Content sharing report
 description: Learn how to use the Microsoft content sharing report.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - build-2023
   - ignite-2023

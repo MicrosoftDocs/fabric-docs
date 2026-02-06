@@ -85,6 +85,8 @@ items:
     href: endorse-data-streams.md
   - name: Explore all data streams
     href: explore-all-data-streams.md
+  - name: Explore table data with Copilot
+    href: explore-data-tables-copilot.md
   - name: Explore Microsoft sources
     href: explore-microsoft-sources.md
   - name: Explore Azure events

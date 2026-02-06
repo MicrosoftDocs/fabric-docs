@@ -1,11 +1,9 @@
 ---
 title: Pricing for Dataflow Gen2
 description: This article provides details of the pricing model of Dataflow Gen2 for Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 12/18/2024
+ms.reviewer: susabat
 ms.custom: 
     - dataflows
 ---

@@ -5,14 +5,12 @@ author: ahartoon
 ms.author: anboisve
 ms.topic: how-to
 ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/22/2025
 ---
 
 # Add Amazon Kinesis Data Streams as source in Real-Time hub
 
 This article describes how to add Amazon Kinesis Data Streams as an event source in Fabric Real-Time hub.
-
-
 
 ## Prerequisites
 
@@ -24,12 +22,12 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 
 ## Add Amazon Kinesis Data Streams as a source
 
-1. On the **Data sources** page, select **Kinesis Data Streams**.
+1. On the **Add data** page, type in the search bar and select **Amazon Kinesis Data Streams**.
 
-   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
+   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/add-data-amazon.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 1. On the **Connect** screen, to create a connection, select **New connection**.
 
-    :::image type="content" source="./media/add-source-amazon-kinesis-data-streams/new-connection-link.png" alt-text="Screenshot that shows the Connect page with the New connection highlighted.":::
+    :::image type="content" source="./media/add-source-amazon-kinesis-data-streams/new-connection.png" alt-text="Screenshot that shows the Connect page with the New connection highlighted.":::
 1. In the **Connection settings** section, for **Data Stream name**, enter the data stream name from Amazon Kinesis.
 
     :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/data-stream-name.png" alt-text="A screenshot of the Amazon Kinesis data stream screen.":::
@@ -45,7 +43,7 @@ This article describes how to add Amazon Kinesis Data Streams as an event source
 1. Now, on the **Connect** page, for **Source name**, enter a source name for this new eventstream source.
 1. Scroll down, and under **Configure Amazon Kinesis data source**, enter a **Region** for the data source. You can find the Amazon region code such as **us-west-2** from the Kinesis **Data stream summary**.
 
-   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/source-name-region.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
+   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/configure-stream.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
 1. In the **Stream details** section of the right pane, do these steps:
     1. Select the **workspace** where you want to save the connection.
     1. Enter a **name for the eventstream** to be created for you.

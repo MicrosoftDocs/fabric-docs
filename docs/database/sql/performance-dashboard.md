@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: amapatil, subasak, lancewright
 ms.date: 09/02/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - sfi-image-nochange
 ms.search.form: Performance monitoring in SQL database

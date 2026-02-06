@@ -14,4 +14,4 @@ ms.date: 11/18/2024
     :::image type="content" source="./media/launch-get-events-experience/switch-to-fabric-workload.png" alt-text="Screenshot that shows how to switch to the Fabric workload.":::    
 1. Select **Real-Time** on the left navigation bar.
 
-    :::image type="content" source="./media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./media/launch-get-events-experience/select-real-time-hub.png":::
+    :::image type="content" source="./media/launch-get-events-experience/real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./media/launch-get-events-experience/real-time-hub.png":::

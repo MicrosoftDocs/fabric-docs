@@ -19,6 +19,11 @@
         "source_path_from_root": "/docs/data-engineering/author-notebook-format-code.md",
         "redirect_url": "/fabric/data-engineering/how-to-use-notebook",
         "redirect_document_id": false
+       },
+       {
+        "source_path_from_root": "/docs/data-engineering/runtime-1-1.md",
+        "redirect_url": "/fabric/data-engineering/runtime",
+        "redirect_document_id": false
        }
     ]
 }

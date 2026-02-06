@@ -4,7 +4,7 @@ description: This article gives an overview of task flows and task flow terminol
 ms.reviewer: liud
 author: SnehaGunda
 ms.author: sngun
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 05/06/2025
 
 #customer intent: As a data analytics solutions architect, or as a data engineer, I want to learn about task flows and how they can help facilitate the completion of a complex data analytics solution. 

@@ -4,7 +4,7 @@ description: "Learn about Direct Lake storage mode in Microsoft Fabric and when 
 author: JulCsc
 ms.author: juliacawthra
 ms.date: 09/22/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: fabric-cat
 ---
 
@@ -260,7 +260,7 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 |In the Fabric portal, the *Direct Lake* tab in the refresh history lists Direct Lake-related refresh failures. Successful refresh (framing) operations aren't typically listed unless the refresh status changes, such as from no previous run or refresh failure to refresh success or refresh success with warning.     |Yes |Yes|
 |Your Fabric SKU determines the maximum available memory per Direct Lake semantic model for the capacity. When the limit is exceeded, queries to the semantic model might be slower due to excessive paging in and out of the model data.     |Yes |Yes|
 |Creating a Direct Lake semantic model in a workspace that is in a different region of the data source workspace isn't supported. For example, if the Lakehouse is in West Central US, then you can only create semantic models from this Lakehouse in the same region. A workaround is to create a Lakehouse in the other region's workspace and shortcut to the tables before creating the semantic model. To find what region you are in, see [find your Fabric home region](/fabric/admin/find-fabric-home-region).     |Yes |Yes|
-|Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).     |Yes |Not supported|
+|Embedding reports requires a [V2 embed token](/power-bi/developer/embedded/generate-embed-token).     |Yes |Yes|
 |Service principal profiles for authentication.     |Not supported |Not supported|
 |Power BI Direct Lake semantic models can be created and queried by Service Principals and Viewer role membership with Service Principals is supported, but the default Direct Lake semantic models on lakehouse/warehouse don't support this scenario.     |Yes         |Yes         |
 |Shortcuts in a lakehouse can be used as data sources for semantic model tables.     |Not supported during public preview         |Supported         |

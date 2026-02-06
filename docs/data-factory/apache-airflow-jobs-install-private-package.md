@@ -1,9 +1,7 @@
 ---
 title: Install a Private Package as a requirement in Apache Airflow Job
 description: This tutorial shows how to install private package as a requirement in Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows
 ms.date: 06/30/2025

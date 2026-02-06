@@ -1,9 +1,7 @@
 ---
 title: Invoke pipeline activity
 description: Learn how to add an Invoke pipeline activity to a pipeline and use it to run another pipeline.
-ms.reviewer: whhender
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 08/28/2025
@@ -82,6 +80,9 @@ Select the **Settings** tab and configure your activity.
 Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+
+## Known issues
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

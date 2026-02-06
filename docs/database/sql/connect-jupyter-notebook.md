@@ -4,7 +4,7 @@ description: This quickstart describes connect to your SQL database in Fabric fr
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: antho, drskwier
-ms.date: 11/18/2025
+ms.date: 12/29/2025
 ms.topic: quickstart-sdk
 ms.custom:
   - sfi-ropc-nochange
@@ -24,7 +24,7 @@ The `mssql-python` driver doesn't require any external dependencies on Windows m
 
 - Python 3
 
-  - If you don't already have Python, install the **Python runtime** and **Python Package Index (PyPI) package manager** from [python.org](https://www.python.org/downloads/).
+  - If you don't already have Python, install the **Python runtime** and **pip package manager** from [python.org](https://www.python.org/downloads/).
 
   - Prefer to not use your own environment? Open as a devcontainer using [GitHub Codespaces](https://github.com/features/codespaces).
 

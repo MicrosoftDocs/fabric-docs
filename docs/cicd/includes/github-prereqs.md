@@ -5,7 +5,7 @@ author: billmath
 ms.author: billmath
 ms.topic: include
 ms.custom: 
-ms.date: 12/20/2023
+ms.date: 12/15/2025
 ---
 
 To integrate Git with your Microsoft Fabric workspace, you need to set up the following prerequisites for both Fabric and Git.

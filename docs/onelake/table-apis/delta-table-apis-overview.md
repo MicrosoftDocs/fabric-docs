@@ -17,8 +17,6 @@ For overall OneLake table API guidance and prerequisite guidance, see the [OneLa
 
 For detailed API documentation, see the [Getting started guide](./delta-table-apis-get-started.md#example-requests-and-responses). 
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Delta table API endpoint
 
 The OneLake table API endpoint is:
@@ -43,7 +41,7 @@ The following Delta API operations are currently supported at this endpoint. Det
 
     This operation accepts the workspace ID and data item ID (or their equivalent friendly names if they don’t contain any special characters). 
     
-    This operation returns the list of schemas within a data item. If the data item does not support schemas, a fixed schema named `dbo` is returned.
+    This operation returns the list of schemas within a data item. If the data item doesn't support schemas, a fixed schema named `dbo` is returned.
 
 - **List tables**
 
@@ -77,13 +75,13 @@ The use of the OneLake table APIs for Delta is subject to the following limitati
 
     Depending on the type of data item you use, such as non-schema-enabled Fabric lakehouses, there may not be schemas within the Tables directory. In such cases, for compatibility with API clients, the OneLake table APIs provide a default, fixed `dbo` schema (or namespace) to contain all tables within a data item.
 
-- **Additional query string parameters required if your schema name or table name contains dots**
+- **Other query string parameters required if your schema name or table name contains dots**
 
-    If your schema or table name contains dots (.) and is included in the URL, you must also provide additional query parameters. For example, when the schema name includes dots, include the catalog_name as an additional query parameter in the API call to check whether the schema exists.
+    If your schema or table name contains dots (.) and is included in the URL, you must also provide other query parameters. For example, when the schema name includes dots, include the catalog_name as a query parameter in the API call to check whether the schema exists.
 
 - **Metadata write operations, other operations**
 
-    Only the operations listed in [Delta table API operations](#delta-table-api-operations) are supported today. Operations that handle metadata write operations are not yet supported by the OneLake table Delta API endpoint. 
+    Only the operations listed in [Delta table API operations](#delta-table-api-operations) are supported today. Operations that handle metadata write operations aren't yet supported by the OneLake table Delta API endpoint. 
 
 ## Related content
 
