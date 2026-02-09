@@ -10,8 +10,7 @@ ai-usage: ai-assisted
 
 # Synchronize code from an existing Git repository
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 Data Workflows is a capability within Microsoft Fabric that helps you build and manage pipelines. Powered by the Apache Airflow runtime, Data Workflows provides a cloud-based platform for developing, scheduling, and monitoring Python-based data workflows as Directed Acyclic Graphs (DAGs). You can use Apache Airflow in a Software-as-a-Service (SaaS) model for pipeline development and management.
 

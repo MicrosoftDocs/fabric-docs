@@ -15,8 +15,7 @@ You can use a Filter activity in a pipeline to apply a filter expression to an i
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a Filter activity to a pipeline with UI
 
@@ -55,9 +54,9 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ## Save and run or schedule the pipeline
 
-After adding any additional necessary activities using the output array of the Filter activity, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+After adding any additional necessary activities using the output array of the Filter activity, you can save and run or schedule the pipeline.
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

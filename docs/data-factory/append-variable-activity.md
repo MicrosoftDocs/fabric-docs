@@ -15,8 +15,7 @@ Use the **Append Variable** activity to add a value to an existing array variabl
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add an Append Variable activity to a pipeline with UI
 
@@ -47,9 +46,9 @@ Select the **Settings** tab, then use the **Name** dropdown to select your previ
 
 ## Save and run or schedule the pipeline
 
-Although **Append Variable** is typically used with other activities, it can be run directly as is. To run the example pipeline here, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+Although **Append Variable** is typically used with other activities, it can be run directly as is.
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

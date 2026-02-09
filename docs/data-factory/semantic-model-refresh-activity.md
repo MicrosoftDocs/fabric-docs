@@ -78,9 +78,9 @@ You can make your semantic model refresh faster by picking only the tables and t
 
 ## Save and run or schedule the pipeline
 
-You can run the Semantic model refresh activity on its own or as part of a larger pipeline. Once you've set up all the activities you need, go to the **Home** tab at the top of the pipeline editor and click the save button to save your pipeline. Select **Run** to start it right away, or **Schedule** to set it to run later. You can also check the run history or adjust other settings here.
+You can run the Semantic model refresh activity on its own or as part of a larger pipeline. Once you've set up any other activities you need, you can save and run or schedule the pipeline.
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

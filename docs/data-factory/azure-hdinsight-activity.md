@@ -23,8 +23,7 @@ This article provides a step-by-step walkthrough that describes how to create an
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add an Azure HDInsight (HDI) activity to a pipeline with UI
 
@@ -114,9 +113,7 @@ If you choose _Streaming_ for **Type**, the activity invokes a Streaming program
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the Home tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/azure-hdinsight-activity/save-run-schedule.png" alt-text="Screenshot showing the Home tab of the pipeline editor, highlighting the Save, Run, and Schedule buttons.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

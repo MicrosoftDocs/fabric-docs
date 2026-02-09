@@ -19,8 +19,7 @@ This section describes how to use a ForEach activity in a pipeline.
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ### Creating the activity
 

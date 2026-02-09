@@ -12,6 +12,7 @@ ms.date: 12/18/2024
 In this article, you learn how to add a new SQL Script activity, add a new connection, and configure script content. The Script activity can be used to execute both query and nonquery SQL scripts against data stores that support Data Manipulation Language (DML) and Data Definition Language (DDL).
 
 You can use the Script activity to invoke a SQL script in one of the following data stores:
+
 - [Fabric SQL database](/fabric/data-factory/connector-sql-database-overview)
 - [Fabric Data Warehouse](/fabric/data-factory/connector-data-warehouse-overview)
 - [Azure Database for PostgreSQL](/fabric/data-factory/connector-azure-database-for-postgresql-overview)
@@ -67,9 +68,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/azure-databricks-activity/databricks-activity-save-and-run.png" alt-text="Screenshot showing how to save and run the pipeline.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 
