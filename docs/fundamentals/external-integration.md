@@ -41,7 +41,7 @@ Together, these integrations enable end-to-end collaboration: from analyzing dat
 
 ### Agentic AI
 
-:::image type="content" source="./media/external-integration/integration-agenticai.png" alt-text="Screenshot of agentic AI integration diagram.":::
+:::image type="content" source="./media/external-integration/agentic-integration.png" alt-text="Screenshot of agentic AI integration diagram.":::
 
 Microsoft Fabric is evolving beyond analytics into an intelligence platform that powers Agentic AI workflows. At the core is Fabric IQ, a semantic layer that unifies business meaning across data sources, enabling AI agents to reason with context rather than raw tables. This foundation integrates with three key components to deliver end-to-end agentic capabilities:
 
@@ -65,7 +65,7 @@ Microsoft Fabric is designed not only for data analysts but also for developers 
 
 ### Unified data estate
 
-:::image type="content" source="./media/external-integration/integration-unifieddataestate.png" alt-text="Screenshot of unified data estate integration diagram.":::
+:::image type="content" source="./media/external-integration/integration-unified-data-estate.png" alt-text="Screenshot of unified data estate integration diagram.":::
 
 #### OneLake interoperability
 
