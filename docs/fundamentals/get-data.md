@@ -17,7 +17,7 @@ A converged platform must ingest data from many disparate sources, and Microsoft
 
 Microsoft Fabric's Real-Time Intelligence, Eventstreams and Eventhouses serve complementary roles for handling streaming data. Eventstreams are the ingestion and processing pipelines for real-time events, while Eventhouses are the storage and query engines (built on Azure Data Explorer's Kusto technology) for analyzing those events at scale. In practice, you often use an Eventstream to capture and route data into an Eventhouse, but they can be used independently depending on your needs.
 
-:::image type="content" source="./media/Realtime-Eventstream.png" alt-text="Screenshot of real-time datasets flowing to Eventstream or Eventhouse.":::
+:::image type="content" source="./media/get-data/realtime-eventstream.png" alt-text="Screenshot of real-time datasets flowing to Eventstream or Eventhouse.":::
 
 #### Eventstream
 
@@ -45,7 +45,7 @@ Fabric's Data Factory experience is the hub for traditional ETL/ELT pipelines an
 
 #### Pipeline
 
-:::image type="content" source="./media/Batch-Pipeline.png" alt-text="Screenshot of batch datasets flowing through a pipeline.":::
+:::image type="content" source="./media/get-data/batch-pipeline.png" alt-text="Screenshot of batch datasets flowing through a pipeline.":::
 
 You can build [Pipelines](/fabric/data-factory/pipeline-overview) that use these connectors to copy or transfer data into Fabric's OneLake or its analytical stores. This pattern has support for unstructured datasets(images, video, audio, etc.), semi-structured datasets (JSON, CSV, XML) or structured datasets from supported relational database systems.
 
@@ -55,13 +55,13 @@ The execution of a Pipeline can be started [on-demand](/fabric/data-factory/pipe
 
 #### Copy job
 
-:::image type="content" source="./media/Batch-CopyJob.png" alt-text="Screenshot of batch datasets using a copy job.":::
+:::image type="content" source="./media/get-data/batch-copyjob.png" alt-text="Screenshot of batch datasets using a copy job.":::
 
 The [Copy Job](/fabric/data-factory/what-is-copy-job) provides native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication. With a Copy job you can use a simple interface to move data from a data source to OneLake without the need to build pipelines, while still giving you access to many advanced options. It supports many sources and destinations, and provides more control than Mirroring but less complexity than managing pipelines with Copy activity.
 
 ### Data replication
 
-:::image type="content" source="./media/DataReplication-Mirroring.png" alt-text="Screenshot of database mirroring data replication architecture.":::
+:::image type="content" source="./media/get-data/datareplication-mirroring.png" alt-text="Screenshot of database mirroring data replication architecture.":::
 
 [Fabric Mirroring](/fabric/mirroring/overview) enables near real-time replication of external systems into Fabric through automated configuration. With Mirroring, you establish a connection to an external system (for example, an Azure SQL Database, a SQL Server, Oracle, SAP, or even Snowflake) and Fabric will continuously replicate data (or just metadata) into OneLake. There are three different types of Mirroring:
 
@@ -77,7 +77,7 @@ Mirroring removes the need to manually engineer incremental load pipelines. From
 
 ### External storage
 
-:::image type="content" source="./media/ExternalStorage-Shortcut.png" alt-text="Screenshot of external storage shortcuts architecture.":::
+:::image type="content" source="./media/get-data/externalstorage-shortcut.png" alt-text="Screenshot of external storage shortcuts architecture.":::
 
 Fabric offers [Shortcuts](/fabric/onelake/onelake-shortcuts) for data virtualization. A Shortcut in OneLake is essentially a pointer or symbolic link to data that lives in an external storage system (for example, an Azure Data Lake Gen2 container, an Amazon S3 bucket, or a SharePoint library). Instead of physically copying the data, OneLake Shortcuts allow Fabric to virtually include external files as part of OneLake. For instance, if you have a large data lake on AWS S3, you can create a shortcut in Fabric that references those S3 folders; Fabric will then treat that external data as if it were in OneLake, enabling you to query or even join it with local data - all without an initial bulk migration. This "no-copy ingestion" addresses scenarios where data residency or duplication is a concern, and it enables Fabric's architecture of one logical data lake.
 
@@ -89,4 +89,4 @@ Combined with Data Mirroring, Shortcuts provide flexible data access patterns: y
 
 Microsoft Fabric gives you several ways to bring data into Fabric based on what you need. You can use Eventstreams for real-time data, Mirroring, Copy activities in Pipelines, Copy job, or Shortcuts. Each option offers a different level of control and complexity, so you can pick what fits your scenario best. Check out the [Microsoft Fabric decision guide: Choose a data movement strategy](/fabric/data-factory/decision-guide-data-movement) for further details that can help you choose the best strategy for your needs.
 
-:::image type="content" source="./media/decision-guide-data-movement.svg" alt-text="Screenshot of decision guide for choosing a data movement strategy.":::
+:::image type="content" source="./media/get-data/decision-guide-data-movement.svg" alt-text="Screenshot of decision guide for choosing a data movement strategy.":::

@@ -30,7 +30,7 @@ items:
     - name: Track and visualize data
       href: track-and-visualize-data.md
     - name: Analyze and train data
-      href: analyze-and-train.md
+      href: analyze-and-train-data.md
     - name: External systemsintegration
       href: external-integration.md
 
