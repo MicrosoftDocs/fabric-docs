@@ -5,68 +5,132 @@ ms.author: eur
 ms.reviewer: sumuth
 author: eric-urban
 ms.topic: quickstart
-ms.date: 03/31/2025
+ms.custom: freshness-kr
+ms.date: 01/21/2026
 ms.search.form: Fabric User data functions
 ---
 
-# User data functions invocation logs
+# View User Data Functions logs
 
-When invoking a User data function, it is important to check the logs to view the invocation status or to debug your functionality. You can view the logs related to the most recent function invocations from the Functions portal. In this view, you can see up to 50 entries for a given function in your User Data Functions item. In this article, we walk you through how to use this feature to gather more information about each invocation of a function and use it to troubleshoot any issues.
+Logs help you understand how your User Data Functions are executing and diagnose issues when functions don't behave as expected. You can view logs in two ways:
 
-## Limitations
+- **During testing** - View real-time logs in the Test panel when testing functions in Develop mode
+- **After invocation** - View historical logs for published functions that have been invoked
 
-There are some limitations to keep in mind when using user data functions invocation logs:
+This article explains how to view and use logs to monitor function execution and troubleshoot issues.
 
-- The invocation logs can take few minutes to appear. If you don't see the recent logs, try to refresh the page after a few minutes.
-- The daily ingestion limit is 250 MB. The ingestion limit is reset the next day and you should see logs being tracked.
-- The logs are sampled while preserving a statistically correct analysis of application data. Sampling is done by User data functions to reduce the volume of logs ingested. If you notice any logs that are partially missing, it might be because of sampling.
-- The visible logs are of these supported types: information, error, warning, and trace.
+## View logs during testing
 
-## View the function invocation logs
+When you test functions, you can see logs in real time as your function executes:
 
-In **Run only mode**, hover over the name of the function in the Functions explorer and select the ellipses icon (...), then select **View historical log** to view the logs.
+- **Test panel in Develop mode** - View logs when testing unpublished or published functions
+- **Run panel in Run only mode** - View logs when running published functions
 
-:::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png":::
+Both panels display log output immediately, allowing you to see execution details and debug issues as they occur. For more information about testing functions, see [Test your User Data Functions](./test-user-data-functions.md).
 
-## View all invocation logs
+## View historical logs for invoked functions
 
-You can see all the invocations listed in the logs view. Select the link under **Date (UTC)** to view more details for the invocation that occurred at that time.
+After your published functions have been invoked, you can view historical logs to analyze past executions.
+
+To access historical logs:
+
+1. Switch to **Run only mode** using the mode switcher.
+1. Hover over the function name in the functions list.
+1. Select the ellipses icon (...), then select **View historical log**.
+
+    :::image type="content" source="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png" alt-text="Screenshot showing how to view historical logs for a function." lightbox="..\media\user-data-functions-view-logs\select-view-historical-logs-1.png":::
+
+### Understand the historical logs view
+
+The historical logs view shows recent invocations for the selected function. You can see up to 50 entries, and logs are retained for 30 days. Select the date link in the **Date (UTC)** column to view detailed logs for a specific invocation.
 
 :::image type="content" source="..\media\user-data-functions-view-logs\view-all-invocations-logs.png" alt-text="Screenshot showing how to view all the invocations for the functions ordered by date." lightbox="..\media\user-data-functions-view-logs\view-all-invocations-logs.png":::
 
-The **All historical logs** pane contains the following information.
+The **All historical logs** pane contains the following information per invocation:
 
 - **Date (UTC)**. The timestamp showing the start of the function invocation. Select the link to review all the logs for that invocation. It displays the details of the invocation with all messages logged by the user or service.
 - **Status**. Indicates whether the invocation succeeded or failed.
 - **Duration(ms)**. The duration of the function execution in milliseconds.
 - **Invocation ID**. The ID of that specific function invocation. The Invocation ID is returned as part of an HTTP header. If there are any issues, users can reference this Invocation ID in a support request to retrieve more information about the invocation.
 
-## View the log details of individual function invocations
+### View detailed logs for a specific invocation
 
-When you select a timestamp link in the Date (UTC) column, the **Invocation details** pane opens to display details on the selected invocation. All the logs added in your function code can be viewed and track here. Any errors or exceptions are also shown here. Each log line contains the timestamp, log message, and associated type (Information, Warning, Debug, etc.).
+After you've opened the historical logs view (as described in the previous section), you can drill down into individual invocations. When you select a timestamp link in the **Date (UTC)** column, the **Invocation details** pane opens to display all logs for that invocation. You can view:
+
+- All logs added in your function code using the `logging` module
+- System-generated logs about function execution
+- Any errors or exceptions that occurred
+
+Each log entry includes the timestamp, log message, and log level (Information, Warning, Error, Critical).
 
 :::image type="content" source="..\media\user-data-functions-view-logs\view-detailed-log-for-an-invocation.png" alt-text="Screenshot showing how to detailed logs for a given function invocation." lightbox="..\media\user-data-functions-view-logs\view-detailed-log-for-an-invocation.png":::
 
-## Generate your own logs during invocation
+## Add logging to your functions
 
-Use the following code to write a log into our logging system.
+You can add custom log statements to your functions using Python's standard `logging` module. Logs help you track function behavior, monitor data processing, and diagnose issues. 
 
-> [!Note]
-> Be sure to import the logging module.
+### Import the logging module
+
+First, import the `logging` module in your function code:
+
 ```python
 import logging
 ```
 
-Call the logging function by using the following alert levels, info, warning, error and critical.
+> [!NOTE]
+> The `logging` module is imported by default when you create a new User Data Functions item in the Fabric portal or using the VS Code extension.
+
+### Use appropriate log levels
+
+Python provides different log levels for different situations. Use the appropriate level to make your logs more meaningful:
 
 ```python
-logging.info('This is a INFO message')
-logging.warning('This is a WARNING message')
-logging.error('This is an ERROR message')
-logging.critical('This is a CRITICAL message')
+# INFO - Track normal function execution and key steps
+logging.info('Processing started for customer ID: 12345')
+logging.info('Successfully retrieved 150 records from database')
+
+# WARNING - Log potentially problematic situations that don't prevent execution
+logging.warning('API response time exceeded 2 seconds')
+logging.warning('Using cached data because fresh data is unavailable')
+
+# ERROR - Log errors that affect functionality but don't crash the function
+logging.error('Failed to connect to external API: Connection timeout')
+logging.error('Invalid data format in row 42')
+
+# CRITICAL - Log severe errors that may cause function failure
+logging.critical('Database connection lost')
+logging.critical('Required configuration parameter missing')
 ```
 
-## Next steps
+### Best practices for logging
 
-- [Learn about the User data functions programming model](./python-programming-model.md)
-- [Tutorial: Invoke user data functions from a Python application](./tutorial-invoke-from-python-app.md)
+Follow these practices to make your logs more effective:
+
+- **Log meaningful information** - Include relevant details like IDs, counts, or parameter values that help diagnose issues
+- **Use appropriate log levels** - Don't log everything as INFO or ERROR; use the right level for the situation
+- **Log at key points** - Add logs at the start of functions, before and after external calls, and when processing data
+- **Avoid logging sensitive data** - Don't log passwords, tokens, personal information, or other sensitive data
+- **Keep messages concise** - Write clear, brief log messages that are easy to scan
+- **Be mindful of volume** - Excessive logging can impact performance and reach the daily ingestion limit
+
+For more information about writing function code, see the [Python programming model](./python-programming-model.md).
+
+## Limitations and log retention
+
+Keep the following limitations in mind when working with logs:
+
+- **Log retention** - Historical invocation logs are retained for 30 days by default
+- **Visible entries** - The historical logs view shows up to 50 entries per function
+- **Log availability** - Invocation logs can take a few minutes to appear; refresh the page if you don't see recent logs
+- **Daily ingestion limit** - 250 MB per day; the limit resets daily
+- **Sampling** - Logs may be sampled to reduce volume while preserving statistically correct analysis
+- **Supported log types** - Information, Error, Warning, and Trace
+
+For complete service limits information, see [Service details and limitations](./user-data-functions-service-limits.md).
+
+## Related content
+
+- [Test your User Data Functions](./test-user-data-functions.md) - Learn how to test functions and view real-time logs in the Test panel
+- [Python programming model](./python-programming-model.md) - Understand how to write function code and use the logging module
+- [Service details and limitations](./user-data-functions-service-limits.md) - Review log retention and service limits
+- [Tutorial: Invoke user data functions from a Python application](./tutorial-invoke-from-python-app.md) - Learn how to invoke functions and use invocation IDs

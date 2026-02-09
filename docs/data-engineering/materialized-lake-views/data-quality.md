@@ -4,7 +4,7 @@ description: Learn about data quality in materialized lake view in a lakehouse i
 author: eric-urban
 ms.author: eur
 ms.reviewer: abhishjain
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/19/2025
 #customer intent: As a data engineer, I want to implement data quality in materialized lake views in a lakehouse so that I can ensure the integrity and reliability of my data.
 ---

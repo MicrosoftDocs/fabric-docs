@@ -1,8 +1,7 @@
 ---
 title: Configure Azure Databricks in a copy activity
 description: This article explains how to copy data using Azure Databricks.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 05/21/2025
 ms.custom: 

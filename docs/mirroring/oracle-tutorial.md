@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Set up Oracle database mirroring in Microsoft Fabric (Preview)"
 description: Learn how to mirror your Oracle database in Microsoft Fabric for near real-time data replication.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
+ms.reviewer: sbahadur
 ms.date: 08/22/2025
 ms.topic: tutorial
 ai-usage: ai-assisted
@@ -20,9 +18,10 @@ ai-usage: ai-assisted
 You need:
 
 * A Microsoft Fabric workspace with [Trial](../fundamentals/fabric-trial.md) or Premium Fabric capacity
-* An Oracle server that's one of these types, version 11 or above with LogMiner enabled:
+* An Oracle server that's one of these types, version 10 or above with LogMiner enabled:
   * Oracle on-premises (VM, Azure VM, etc.)
   * Oracle OCI
+  * Oracle Database@Azure
   * Exadata
   * Note: Oracle Autonomous Database isn't supported in this preview
 

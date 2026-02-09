@@ -23,6 +23,8 @@ The `ai.generate_response` function uses generative AI to generate custom text r
 
 The `ai.generate_response` function is available for [Spark DataFrames](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html). You must specify the name of an existing input column as a parameter. You must also specify a string-based prompt, and a Boolean that indicates whether that prompt should be treated as a format string.
 
+Your prompt can be a literal string, and the function considers all columns of the DataFrame while generating responses. Your prompt can also be a format string, where the function considers only those column values that appear between curly braces in the prompt.
+
 The function returns a new DataFrame, with custom responses for each input text row stored in an output column.
 
 > [!TIP]
@@ -34,13 +36,19 @@ The function returns a new DataFrame, with custom responses for each input text 
 # [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
-df.ai.generate_response(prompt="Instructions for a custom response based on all column values", output_col="response")
+df_response = df.ai.generate_response(
+    prompt="Instructions for a custom response based on all column values", output_col="response",
+)
 ```
 
 # [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
-df.ai.generate_response(prompt="Instructions for a custom response based on specific {column1} and {column2} values", is_prompt_template=True, output_col="response")
+df_response = df.ai.generate_response(
+    prompt="Instructions for a custom response based on specific {column1} and {column2} values",
+    is_prompt_template=True,
+    output_col="response",
+)
 ```
 
 ---
@@ -53,18 +61,33 @@ df.ai.generate_response(prompt="Instructions for a custom response based on spec
 | `is_prompt_template` <br> Optional | A [Boolean](https://docs.python.org/3/library/stdtypes.html#boolean-type-bool) that indicates whether the prompt is a format string or a literal string. If this parameter is set to `True`, then the function considers only the specific row values from each column that appears in the format string. In this case, those column names must appear between curly braces, and other columns are ignored. If this parameter is set to its default value of `False`, then the function considers all column values as context for each input row. |
 | `output_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store custom responses for each row of input text. If you don't set this parameter, a default name generates for the output column. |
 | `error_col` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) that contains the name of a new column to store any OpenAI errors that result from processing each row of input text. If you don't set this parameter, a default name generates for the error column. If there are no errors for a row of input, the value in this column is `null`. |
-| `response_format` <br> Optional | A [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html) or [dictionary](https://docs.python.org/3/library/stdtypes.html#dict) that specifies the expected structure of the model’s response. The string values can be set to "text" for free-form text, or "json_object" to ensure the output is a valid JSON object. Otherwise, the `type` field  can be set to "json_schema" with a custom JSON Schema to enforce a specific response structure. If this parameter isn't provided, the response is returned as plain text. |
+| `response_format` <br> Optional | `None`, a [string](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.types.StringType.html), a [dictionary](https://docs.python.org/3/library/stdtypes.html#dict), or a class based on [Pydantic's BaseModel](https://docs.pydantic.dev/latest/concepts/models/) that specifies the expected structure of the model's response. See [Response Format Options](#response-format-options) for details on all available formats. |
 
 ## Returns
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) that includes a new column that contains custom text responses to the prompt for each input text row.
 
-## Example
+## Response format options
 
-# [Generate responses with a simple prompt](#tab/simple-prompt)
+The `response_format` parameter accepts different formats to control how the LLM structures its responses. This parameter corresponds to OpenAI's [Structured Outputs](https://platform.openai.com/docs/guides/structured-outputs) feature. The following options are available:
+
+| Format | Description |
+|--------|-------------|
+| `None` (default) | Let the LLM decide response format based on the instructions and input data, which can vary per row. Responses can be plain text or JSON dict with varying fields. |
+| `"text"` or `{"type": "text"}` | Forces plain text responses for all rows. |
+| `"json_object"` or `{"type": "json_object"}` | Returns a JSON dictionary in text form where the LLM decides the fields. Requires the word "json" in your prompt. |
+| `{"type": "json_schema", ...}` | Returns a JSON dictionary that conforms to your custom [JSON Schema](https://json-schema.org/). Provides precise control over response structure. |
+| Class based on [Pydantic's `BaseModel`](https://docs.pydantic.dev/latest/concepts/models/) | Returns a JSON string that conforms to your Pydantic model definition. Pydantic is a dependency of the openai package. Under the hood, the Pydantic BaseModel is automatically converted to a JSON schema and functions equivalently to the `json_schema` option. |
+
+> [!NOTE]
+> The `json_schema` and Pydantic `BaseModel` options are functionally equivalent. The Pydantic BaseModel approach provides better developer experience with Python's type system and validation, while being automatically converted to the verbose JSON schema under the hood.
+
+## Examples
+
+### [Generate responses with a simple prompt](#tab/simple-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("Scarves",),
@@ -72,18 +95,20 @@ df = spark.createDataFrame([
         ("Ski goggles",)
     ], ["product"])
 
-responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale.", output_col="response")
-display(responses)
+df_response = df.ai.generate_response(
+    prompt="Write a short, punchy email subject line for a winter sale.", output_col="response",
+)
+display(df_response)
 ```
 
 This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/generate-response-simple-example-output.png" alt-text="Screenshot showing a data frame with columns 'product' and 'response'. The 'response' column contains a punchy subject line for the product." lightbox="../../media/ai-functions/generate-response-simple-example-output.png":::
 
-# [Generate responses with a template prompt](#tab/template-prompt)
+### [Generate responses with a template prompt](#tab/template-prompt)
 
 ```python
-# This code uses AI. Always review output for mistakes. 
+# This code uses AI. Always review output for mistakes.
 
 df = spark.createDataFrame([
         ("001", "Scarves", "Boots", "2021"),
@@ -91,8 +116,12 @@ df = spark.createDataFrame([
         ("003", "Ski goggles", "Helmets", "2015")
     ], ["id", "product", "product_rec", "yr_introduced"])
 
-responses = df.ai.generate_response(prompt="Write a short, punchy email subject line for a winter sale on the {product}.", is_prompt_template=True, output_col="response")
-display(responses)
+df_response = df.ai.generate_response(
+    prompt="Write a short, punchy email subject line for a winter sale on the {product}.",
+    is_prompt_template=True,
+    output_col="response",
+)
+display(df_response)
 ```
 
 This example code cell provides the following output:
@@ -101,7 +130,7 @@ This example code cell provides the following output:
 
 ---
 
-### Response format example
+### Response Format example
 
 The following example shows how to use the `response_format` parameter to specify different response formats, including plain text, a JSON object, and a custom JSON schema.
 
@@ -115,22 +144,25 @@ df = spark.createDataFrame([
     ], ["bio"])
 
 # response_format : text
-df = df.ai.generate_response(
+df_card_text = df.ai.generate_response(
         prompt="Create a player card with the player's details and a motivational quote",
+        output_col="card_text",
         response_format="text",
-        output_col="card_text"
 )
+display(df_card_text)
 
 # response_format : json object
-df = df.ai.generate_response(
+df_card_json_object = df.ai.generate_response(
         prompt="Create a player card with the player's details and a motivational quote in JSON",
+        output_col="card_json_object",
         response_format="json_object", # Requires "json" in the prompt
-        output_col="card_json_object"
 )
+display(df_card_json_object)
 
 # response_format : specified json schema
-df = df.ai.generate_response(
+df_card_json_schema = df.ai.generate_response(
         prompt="Create a player card with the player's details and a motivational quote",
+        output_col="card_json_schema",
         response_format={
            "type": "json_schema",
             "json_schema": {
@@ -152,10 +184,29 @@ df = df.ai.generate_response(
                 },
             }
         },
-        output_col="card_json_schema"
 )
+display(df_card_json_schema)
 
-display(df)
+# Pydantic is a dependency of the openai package, so it's available when openai is installed.
+# Pydantic may also be installed via `%pip install pydantic` if not already present.
+from pydantic import BaseModel, Field
+
+class PlayerCardSchema(BaseModel):
+    name: str
+    age: int
+    sport: str
+    position: str
+    hometown: str
+    stats: str = Field(description="Key performance metrics or achievements")
+    motivational_quote: str
+
+# response_format : pydantic BaseModel
+df_card_pydantic = df.ai.generate_response(
+    prompt="Create a player card with the player's details and a motivational quote",
+    output_col="card_pydantic",
+    response_format=PlayerCardSchema,
+)
+display(df_card_pydantic)
 ```
 
 This example code cell provides the following output:

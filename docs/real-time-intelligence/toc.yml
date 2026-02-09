@@ -157,6 +157,8 @@ items:
             href: event-streams/add-destination-kql-database.md
           - name: Lakehouse
             href: event-streams/add-destination-lakehouse.md
+          - name: Spark Notebook
+            href: event-streams/add-destination-spark-notebook.md            
           - name: Activator
             href: event-streams/add-destination-activator.md
           - name: Custom endpoint
@@ -213,6 +215,8 @@ items:
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
+            href: event-streams/replicate-data-with-replication-flow.md
           - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
             href: event-streams/stream-oracle-data-to-eventstream.md
           - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
@@ -223,6 +227,8 @@ items:
             href: event-streams/stream-events-from-power-automate.md
           - name: Build a Power BI report by streaming data from Azure IoT Hub
             href: event-streams/build-report-from-iot-hub.md
+          - name: Explore Sample streaming Stock Market data using Eventstream and Spark Structured Streaming 
+            href: event-streams/explore-sample-stock-market-data-with-spark.md               
           - name: Explore and transform bike-sharing data for KQL database integration
             href: event-streams/transform-sample-data-and-route-to-kql.md
       - name: Eventstream Query Language Reference
@@ -545,6 +551,8 @@ items:
             href: get-data-eventstream.md
           - name: Get data from Real-Time hub
             href: get-data-real-time-hub.md
+          - name: Get data from other sources
+            href: get-data-other-sources.md
           - name: Configure KQL Database in a pipeline
             href: ../data-factory/connector-kql-database-copy-activity.md
           - name: Connect to KQL Database in dataflows
@@ -843,7 +851,7 @@ items:
           - name: Capacity usage
             href: digital-twin-builder/resources-capacity-usage.md
           - name: FAQ
-            href: digital-twin-builder/resources-faq.md
+            href: digital-twin-builder/resources-faq.yml
           - name: Digital twin builder REST API
             href: /rest/api/fabric/digitaltwinbuilder/items
           - name: Digital twin builder flow REST API
@@ -870,6 +878,10 @@ items:
             href: multivariate-anomaly-detection.md
   - name: Map
     items:
+      - name: Tutorials
+        items:
+          - name: Build real-time work order routing
+            href: map/tutorial-real-time-work-order-routing-application.md
       - name: Create a map
         href: map/create-map.md
       - name: Customize a map

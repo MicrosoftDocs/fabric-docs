@@ -1,8 +1,6 @@
 ---
 title: Latency and accuracy considerations in Activator rules
 description: An overview of Activator latency considerations and performance when building Activator rules.
-author: spelluru
-ms.author: spelluru
 ms.topic: overview
 ms.custom: 
 ms.search.form: product-reflex

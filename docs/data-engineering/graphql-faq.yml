@@ -5,8 +5,8 @@ metadata:
   author: snehagunda
   ms.author: sngun
   ms.topic: faq
-  ms.custom:
-  ms.date: 05/21/2023
+  ms.custom: freshness-kr
+  ms.date: 01/21/2026
 title: Fabric API for GraphQL frequently asked questions
 summary: |
   Find answers to commonly asked Fabric API for GraphQL questions.
@@ -15,19 +15,59 @@ sections:
   - name: Microsoft Fabric API for GraphQL FAQ
     questions:
       - question: What is GraphQL?
-        answer: GraphQL is a query language for APIs that lets apps request exactly the data they need. It uses a strong type system to clearly describe available data, reduces over-fetching by allowing precise requests, makes API updates easier without breaking existing code, and enables the use of a broad set of developer tools. It's a more efficient way for applications to communicate with servers and databases.
+        answer: |
+          GraphQL is a query language for APIs that lets apps request exactly the data they need. Key benefits include:
+          
+          - **Strong type system** - Clearly describes available data
+          - **Precise data fetching** - Reduces over-fetching by allowing specific requests
+          - **Backward compatibility** - Makes API updates easier without breaking existing code
+          - **Rich tooling** - Enables use of a broad set of developer tools
+          
+          It's a more efficient way for applications to communicate with servers and databases.
 
       - question: What is Microsoft Fabric API for GraphQL?
-        answer: Microsoft Fabric API for GraphQL is a managed service that enables you to create a GraphQL API in seconds to access data from your data sources such as Microsoft Fabric Data Warehouses, Microsoft Fabric Lakehouses, Microsoft Fabric Mirrored Databases, Microsoft Fabric SQL Databases, and Azure SQL Databases. It provides a unified API layer for querying and mutating data from these supported data sources.
+        answer: |
+          Microsoft Fabric API for GraphQL is a managed service that enables you to create a GraphQL API in seconds.
+          
+          **Supported data sources:**
+          - Microsoft Fabric Data Warehouses
+          - Microsoft Fabric Lakehouses
+          - Microsoft Fabric Mirrored Databases
+          - Microsoft Fabric SQL Databases
+          - Azure SQL Databases
+          
+          It provides a unified API layer for querying and mutating data from these supported data sources.
 
       - question: What GraphQL operations are supported in Fabric API for GraphQL?
-        answer: Only GraphQL queries (read) and mutations (write) are supported currently. Data sources exposed via SQL Analytics Endpoints are read-only thus only supporting Queries. In the case of Data Warehouses, a primary key needs to be defined for Mutations to be automatically generated.
+        answer: Only GraphQL queries (read) and mutations (write) are supported currently. Data sources exposed via SQL Analytics Endpoints are read-only thus only supporting Queries. For Data Warehouses, a primary key needs to be defined for mutations to be automatically generated.
 
       - question: How can I view and edit resolvers in Fabric API for GraphQL?
-        answer: Resolvers are GraphQL components that provide the business logic to resolve fields in the API and perform operations with data residing in the data sources. Fabric automatically generates resolvers whenever you attach a new data source or select new objects to be exposed from an existing data source. Currently, it's not possible to customize resolvers. For customized business logic in API for GraphQL, you can create a [stored procedure](api-graphql-stored-procedures.md) in the data source and expose it in the GraphQL API.
+        answer: |
+          Resolvers are GraphQL components that provide the business logic to resolve fields in the API and perform operations with data residing in the data sources.
+          
+          **Automatic generation:** Fabric automatically generates resolvers whenever you attach a new data source or select new objects to be exposed from an existing data source.
+          
+          **Customization:** Currently, it's not possible to customize resolvers directly. For customized business logic in API for GraphQL, you can create a [stored procedure](api-graphql-stored-procedures.md) in the data source and expose it in the GraphQL API.
 
       - question: Does the API for GraphQL client application require access to the data source in order to perform queries or mutations?
-        answer: API for GraphQL requires applications to use Microsoft Entra ID for authentication. Your client application must be registered and configured adequately to execute API calls against Fabric. The app registered in Microsoft Entra requires *GraphQLApi.Execute.All* permissions for the Power BI service. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app). In addition to Microsoft Entra, if the API is configured to use single sign-on (SSO), the authenticated user or service principal in the app calling the GraphQL API [requires access](get-started-api-graphql.md#permissions-summary) to both the GraphQL API and the data source. More specifically *Run Queries and Mutations* permission in the GraphQL API and read or write access required in the data source of choice accordingly. Another option is to have the user or service principal as a workspace member with a *contributor role* where both the API and data source items are located, which gives the required access to both items from a single place. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md). Alternatively, if the API is configured to use saved credentials, the authenticated user or service principal just needs to have access to the API (Select *Run Queries and Mutations* option when adding direct access permissions to the API). You can find an end-to-end example with sample code for both user principals and [service principals](api-graphql-service-principal.md) at [Connect Applications](connect-apps-api-graphql.md).
+        answer: |
+          **Microsoft Entra ID authentication:** API for GraphQL requires applications to use Microsoft Entra ID for authentication. Your client application must be registered and configured to execute API calls against Fabric.
+          
+          **Required permissions:**
+          - The app registered in Microsoft Entra requires *GraphQLApi.Execute.All* permissions for the Power BI service. For more information, see [Create a Microsoft Entra app in Azure](/rest/api/fabric/articles/get-started/create-entra-app).
+          
+          **Single sign-on (SSO) configuration:**
+          If the API is configured to use SSO, the authenticated user or service principal [requires access](connect-apps-api-graphql.md#authentication-and-permissions-summary) to both:
+          - The GraphQL API (*Run Queries and Mutations* permission)
+          - The data source (read or write access as needed)
+          
+          **Workspace-level access option:**
+          Alternatively, assign the user or service principal as a workspace member with a *contributor role* where both the API and data source items are located. This gives the required access to both items from a single place. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
+          
+          **Saved credentials configuration:**
+          If the API is configured to use saved credentials, the authenticated user or service principal only needs access to the API (select *Run Queries and Mutations* option when adding direct access permissions to the API).
+          
+          **Examples:** You can find an end-to-end example with sample code for both user principals and [service principals](api-graphql-service-principal.md) at [Connect Applications](connect-apps-api-graphql.md).
 
       - question: How do I open a support ticket for API for GraphQL?
         answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, visit our [Fabric Support site](https://support.fabric.microsoft.com/support/) and choose the **Data Engineering** option.
@@ -36,7 +76,18 @@ sections:
         answer: API for GraphQL doesn't support Private Link at this time.
 
       - question: Why does my request perform poorly the first time I issue it, then perform well on subsequent requests?
-        answer: There are two main reasons for this behavior. First, the first request might take longer if a data source needs to be warmed up if it's cold. Even if the data source isn't cold, data retrieval might not be as efficient the first time GraphQL issues a query, if the data source doesn't have the necessary data loaded in memory. The second reason is that the first request to an API for GraphQL endpoint might take longer because the system needs to load your schema and configuration to be ready to accept requests. This is a one-time cost, and subsequent requests are faster because the system is already warmed up and ready to serve your requests. You can find more information in the [performance best practices](api-graphql-performance.md).
+        answer: |
+          There are two main reasons for this "cold start" behavior:
+          
+          **Data source warm-up:**
+          - The first request might take longer if a data source needs to be warmed up from a cold state
+          - Even if the data source isn't cold, data retrieval might not be as efficient the first time GraphQL issues a query if the data source doesn't have the necessary data loaded in memory
+          
+          **API endpoint initialization:**
+          - The first request to an API for GraphQL endpoint might take longer because the system needs to load your schema and configuration
+          - Subsequent requests are faster because the system is already warmed up and ready to serve your requests
+          
+          You can find more information in the [performance best practices](api-graphql-performance.md).
 
       - question: How can I provide feedback or suggestions for API for GraphQL?
         answer: We welcome your feedback and suggestions! You can provide feedback through [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/ct-p/fbc_ideas). Our team actively monitors the feedback and suggestions submitted through this platform. You can also reach out to us via [Microsoft Fabric Support](https://support.fabric.microsoft.com/support/) for any specific queries or concerns.

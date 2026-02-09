@@ -23,8 +23,18 @@ items:
     href: white-paper-landing-page.md                                            
 - name: Network security
   items: 
-    - name: Inbound
+    - name: Service tags
+      href: security-service-tags.md
+    - name: Microsoft Entra Conditional Access
+      href: security-conditional-access.md
+    - name: Add Fabric URLs to your allowlist
+      href: fabric-allow-list-urls.md
+    - name: Add Power BI URLs to your allowlist
+      href: power-bi-allow-list-urls.md
+    - name: Inbound protection
       items: 
+        - name: About inbound access protection
+          href: security-inbound-overview.md
         - name: Tenant-level protection
           items: 
             - name: Protect inbound traffic to Fabric tenants
@@ -41,7 +51,7 @@ items:
                   href: security-private-links-use.md
         - name: Workspace-level protection
           items: 
-            - name: Manage admin access to inbound protection settings
+            - name: Manage admin access to workspace inbound settings
               href: security-workspace-enable-inbound-access-protection.md
             - name: Workspace-level private links
               items: 
@@ -73,19 +83,13 @@ items:
                     href: security-workspace-private-links-example-power-bi-virtual-network.md
             - name: Multi-workspace communication
               href: security-fabric-multi-workspace-api-overview.md
-        - name: Add Fabric URLs to your allowlist
-          href: fabric-allow-list-urls.md
-        - name: Add Power BI URLs to your allowlist
-          href: power-bi-allow-list-urls.md
-    - name: Service tags
-      href: security-service-tags.md
-    - name: Microsoft Entra Conditional Access
-      href: security-conditional-access.md
-    - name: Add Fabric URLs to your allowlist
-      href: fabric-allow-list-urls.md
-    - name: Add Power BI URLs to your allowlist
-      href: power-bi-allow-list-urls.md
-    - name: Outbound
+            - name: Workspace IP firewall
+              items:
+                - name: About workspace IP firewall
+                  href: security-workspace-level-firewall-overview.md
+                - name: Set up and use workspace IP firewall
+                  href: security-workspace-level-firewall-set-up.md
+    - name: Outbound protection
       items:
       - name: Overview of managed VNets
         href: security-managed-vnets-fabric-overview.md
@@ -107,12 +111,20 @@ items:
                 href: workspace-outbound-access-protection-set-up.md
               - name: Create an allow list using managed private endpoints
                 href: workspace-outbound-access-protection-allow-list-endpoint.md
+              - name: Create an allow list using data connection rules
+                href: workspace-outbound-access-protection-allow-list-connector.md
           - name: Scenarios by Fabric workload
             items:
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
+              - name: Data Factory (preview)
+                href: workspace-outbound-access-protection-data-factory.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
+              - name: Mirrored databases (preview)
+                href: workspace-outbound-access-protection-mirrored-databases.md
+              - name: OneLake (preview)
+                href: workspace-outbound-access-protection-onelake.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

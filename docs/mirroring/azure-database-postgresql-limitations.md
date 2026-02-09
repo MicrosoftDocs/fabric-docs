@@ -1,11 +1,9 @@
 ---
 title: "Limitations of Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
 description: A detailed list of limitations for mirrored databases from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: scoriani
 ms.date: 11/17/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
   - references_regions
 ---

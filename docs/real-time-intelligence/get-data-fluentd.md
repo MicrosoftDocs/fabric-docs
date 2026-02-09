@@ -4,7 +4,7 @@ description: Learn how to get data from Fluentd into an Eventhouse table.
 ms.reviewer: ramacg
 ms.author: v-hzargari
 author: hzargari-ms
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/07/2026
 ---
 

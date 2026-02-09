@@ -47,10 +47,10 @@ items:
       href: ontology/resources-capacity-usage.md
     - name: Glossary
       href: ontology/resources-glossary.md
+    - name: FAQ
+      href: ontology/resources-frequently-asked-questions.yml
     - name: Ontology REST API
       href: /rest/api/fabric/ontology/items
-    - name: Ontology FAQ
-      href: ontology/resources-frequently-asked-questions.md
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
 - name: Graph in Microsoft Fabric

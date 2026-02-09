@@ -24,7 +24,7 @@ This article provides solutions for common errors and problems that you might en
 
 **Cause**: The name of the variable library isn't valid.
 
-**Solution**: Rename the variable library according to [naming conventions](./variable-types.md#variable-library-name).
+**Solution**: Rename the variable library according to [naming conventions](variable-library-overview.md#naming-conventions).
 
 ### I can't save my variable library
 
@@ -40,7 +40,7 @@ This article provides solutions for common errors and problems that you might en
 **Solution**: Depending on the cause, you can try the following solutions:
 
 - Review the errors on the validation pane and fix them so that no required value is missing or mismatched with the variable type.
-- Ensure that all variables and value sets are named according to the [naming conventions](./variable-types.md#variable-library-name).
+- Ensure that all variables and value sets are named according to the [variables naming convention](variable-types.md#naming-conventions) and the [value sets naming convention](value-sets.md#naming-conventions-for-value-sets).
 - Reduce the size of the variable library item to less than 1 MB by removing unused variables or by splitting the variable list into several variable libraries.
 
 ## Deployment pipeline failure

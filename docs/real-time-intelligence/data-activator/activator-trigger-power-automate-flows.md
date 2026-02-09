@@ -1,8 +1,6 @@
 ---
 title: Use custom actions to trigger Power Automate flows
 description: Understand how to use custom actions to trigger Power Automate flows with Activator and achieve seamless integration between systems.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter, sfi-image-nochange
 ms.search.form: Data Activator Custom Actions

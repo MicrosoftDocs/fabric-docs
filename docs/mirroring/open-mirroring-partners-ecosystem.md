@@ -1,11 +1,9 @@
 ---
 title: "Open Mirroring Partner Ecosystem"
 description: Learn about the open mirrored databases partner ecosystem in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: tinglee, sbahadur, ulrichchrist, maraki-ketema
 ms.date: 12/10/2025
-ms.topic: article
+ms.topic: partner-tools
 ms.search.form: Fabric Mirroring
 ai-usage: ai-assisted
 no-loc: [Copilot]

@@ -1,8 +1,7 @@
 ---
 title: Change data capture (CDC) in Copy Job
 description: This article guides you through how to use CDC in copy job.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 05/15/2025
 ms.search.form: copy-job-tutorials
@@ -31,32 +30,13 @@ Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Fa
 
 ## Supported connectors
 
-Currently, CDC in Copy job supports the following source and destination data stores. We're adding more and please stay tuned.
+Currently, CDC in Copy job supports the following source and destination data stores:
 
-Supported source store:
-   - Azure SQL DB
-   - On-premises SQL Server
-   - Azure SQL Managed Instance
-   - Fabric Lakehouse table
-   - SAP Datasphere Outbound for ADLS Gen2
-   - SAP Datasphere Outbound for AWS S3
-   - SAP Datasphere Outbound for Google Cloud Storage
-   - Snowflake
-   - Google BigQuery
+[!INCLUDE [copy-job-cdc-replication-connectors](includes/copy-job-cdc-replication-connectors.md)]
 
-Supported destination store:
-   - Azure SQL DB
-   - On-premises SQL Server
-   - Azure SQL Managed Instance
-   - SQL Database in Fabric
-   - Snowflake
-   - Fabric Lakehouse table
+For SAP Datasphere Outbound, please go to [Change Data Capture from SAP via SAP Datasphere Outbound in Copy job](copy-job-tutorial-sap-datasphere.md) to learn more details.
 
-
-For SAP Datasphere Outbound, please go to [Change Data Capture from SAP via SAP Datasphere Outbound in Copy job](copy-job-tutorial-sap-datasphere.md) to learn more details. 
-
-
-## How to get started:
+## How to get started
 
 Complete the following steps to create a new Copy job to ingest data from Azure SQL DB via CDC to another Azure SQL DB:
 
@@ -70,14 +50,14 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
    > - We suggest you enable CDC for all the tables mentioned above.
    > - Be sure supports_net_changes is enabled.
    > - All of the columns in the source table must be identified as captured columns as default.
-   
+
    Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
- 
+
 1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
 
    :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
- 
-1. Choose the data stores to copy data from. In this example, choose **Azure SQL DB**. 
+
+1. Choose the data stores to copy data from. In this example, choose **Azure SQL DB**.
 
    :::image type="content" source="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose a data source for the Copy job.":::
 

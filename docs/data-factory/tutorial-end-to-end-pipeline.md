@@ -1,9 +1,7 @@
 ---
 title: Module 1 - Create a pipeline with Data Factory
 description: In this tutorial, you create a pipeline to copy data as part of an end-to-end guide to complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: tutorial
 ms.date: 11/18/2025
 ms.custom: pipelines, sfi-image-nochange
@@ -16,8 +14,8 @@ This module takes about 10 minutes to complete. You'll ingest raw data from the 
 The high-level steps in module 1 are:
 
 1. [Create a pipeline.](#create-a-pipeline)
-1. [Create Copy Activity in the pipeline to load sample data into a data Lakehouse.](#create-a-copy-activity-in-the-pipeline-to-load-sample-data-to-a-data-lakehouse)
-1. [Run and view the results of the the copy activity](#run-and-view-the-results-of-your-copy-activity)
+1. [Create a copy job activity in the pipeline to load sample data into a data Lakehouse.](#create-a-copy-job-activity-in-the-pipeline-to-load-sample-data-to-a-data-lakehouse)
+1. [Run and view the results of the copy job](#run-and-view-the-results-of-your-copy-job)
 
 ## Prerequisites
 
@@ -37,11 +35,11 @@ The high-level steps in module 1 are:
 
 1. Provide a pipeline name. Then select **Create**.
 
-## Create a Copy activity in the pipeline to load sample data to a data Lakehouse
+## Create a copy job activity in the pipeline to load sample data to a data Lakehouse
 
 1. Select **Copy data assistant** to open the copy assistant tool.
 
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/open-copy-assistant.png" alt-text="Screenshot showing the selection of the Copy data activity from the new pipeline start page." lightbox="media/tutorial-end-to-end-pipeline/open-copy-assistant.png":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/open-copy-assistant.png" alt-text="Screenshot showing the selection of the copy data assistant from the new pipeline start page." lightbox="media/tutorial-end-to-end-pipeline/open-copy-assistant.png":::
 
 1. On the **Choose data source** page, select **Sample data** from the options at the top of the dialog, and then select **NYC Taxi - Green**.
 
@@ -85,7 +83,7 @@ The high-level steps in module 1 are:
 
 1. At the top of the pipeline editor, select **Save** to save the pipeline.
 
-## Run and view the results of your Copy activity
+## Run and view the results of your copy job
 
 1. At the top of the pipeline editor, select **Run** to run the pipeline and copy the data.
 

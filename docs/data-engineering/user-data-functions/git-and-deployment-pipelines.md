@@ -5,13 +5,14 @@ ms.author: eur
 ms.reviewer: sumuth
 author: eric-urban
 ms.topic: how-to
-ms.date: 03/31/2025
+ms.custom: freshness-kr
+ms.date: 01/21/2026
 ms.search.form: Use Git and deployment pipelines in user data functions
 ---
 
 # User data functions source control and deployment
 
-This article explains how Git integration and deployment pipelines work for user data functions in Microsoft Fabric. Fabric User data functions offer Git integration for source control with Azure DevOps repositories. With Git integration, you can version control your user data functions item, collaborate using Git branches, and manage your user data functions content lifecycle entirely within Fabric.
+This article explains how Git integration and deployment pipelines work for user data functions in Microsoft Fabric. With Git integration, you can keep your Fabric workspace in sync with a repository branch, enabling you to version control your user data functions, collaborate using branches and pull requests, and work with your code in your preferred Git tooling, such as Azure DevOps.
 
 Learn more about the process of integrating Git with your Microsoft Fabric workspace in [Basic concepts in Git integration](../../cicd/git-integration/git-integration-process.md).
 
@@ -25,7 +26,7 @@ After you successfully commit the user data functions items to the Git repo, you
 
 ## User data functions representation in Git
 
-The following image shows an example of the file structure of each user data functions item in the repo:
+The following image shows an example of the file structure of each user data functions item in the repo. 
 
 :::image type="content" source="..\media\user-data-functions-git-deployment\udf-folder-structure.png" alt-text="Screenshot showing folder structure for a user data functions item in the repository." lightbox="..\media\user-data-functions-git-deployment\udf-folder-structure.png":::
 
@@ -52,14 +53,16 @@ The folder structure includes the following elements:
 
     :::image type="content" source="..\media\user-data-functions-git-deployment\functions-json-file.png" alt-text="Screenshot showing function.json file in resources folder for a user data functions item." lightbox="..\media\user-data-functions-git-deployment\functions-json-file.png":::
 
+For more information about Git integration, including details about the folder structure and system files, see [Git integration source code format](../../cicd/git-integration/source-code-format.md).
+
 ## User data functions in deployment pipelines
 
-You can also use deployment pipelines to deploy your user data functions code across different environments, such as development, test, and production. This feature can enable you to streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight, low-code operations.
+You can use deployment pipelines to deploy your user data functions across different environments, such as development, test, and production. Deployment pipelines help you streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight, low-code operations.
 
 > [!NOTE]
 > All connections and libraries are added to new user data functions items created in other environments.
 
-Use the following steps to complete your notebook deployment using the deployment pipeline.
+To deploy your user data functions using a deployment pipeline:
 
 1. Create a new deployment pipeline or open an existing deployment pipeline. See [Get started with deployment pipelines](../../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md) for more information.
 

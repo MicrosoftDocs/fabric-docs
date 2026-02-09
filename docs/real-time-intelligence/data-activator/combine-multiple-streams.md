@@ -2,8 +2,6 @@
 title: Combine Multiple eventstreams in Activator Rule
 description: Learn how to combine multiple eventstreams in Activator rules to monitor machine health and automate actions based on abnormal conditions.
 #customer intent: As a data engineer, I want to combine multiple eventstreams in Activator so that I can monitor machine health effectively.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: janettseng
 ms.subservice: rti-activator
 ms.date: 12/15/2025

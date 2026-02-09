@@ -2,8 +2,6 @@
 metadata:
   title: "Frequently asked questions for Mirroring Azure Database for PostgreSQL flexible server in Microsoft Fabric"
   description: This article answers frequently asked questions about Mirroring Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-  author: whhender
-  ms.author: whhender
   ms.reviewer: scoriani
   ms.service: fabric
   ms.subservice: data-warehouse

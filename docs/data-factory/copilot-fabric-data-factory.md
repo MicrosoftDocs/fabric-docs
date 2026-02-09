@@ -1,8 +1,6 @@
 ---
 title: Microsoft Copilot in Fabric in the Data Factory Workload Overview
 description: Learn how Microsoft Copilot in Fabric
-author: whhender
-ms.author: whhender
 ms.reviewer: maghan, sngun
 ms.date: 09/02/2025
 ms.service: fabric

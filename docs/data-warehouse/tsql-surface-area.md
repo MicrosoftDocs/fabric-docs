@@ -3,8 +3,8 @@ title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: cynotebo, jovanpop, twinklecyril
-ms.date: 09/08/2025
+ms.reviewer: cynotebo, jovanpop, twinklecyril, emtehran, prlangad
+ms.date: 02/04/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -21,16 +21,18 @@ For SQL database in Fabric, see [Limitations in SQL database (preview)](../datab
 
 ## T-SQL surface area
 
-- Creating, altering, and dropping tables, and insert, update, and delete are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
-- You can create your own T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
-- For more about CREATE/DROP TABLE support, see [Tables](tables.md).
+Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions, permissions, and security roles. 
+
+- For more about CREATE/DROP TABLE support in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Tables](tables.md).
+- For more about supported data types in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Data types](data-types.md).
+- You can also create T-SQL views, functions, and procedures on top of the tables that reference your Delta Lake data in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+   - Creating, altering, and dropping tables, and insert, update, and delete are only supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not in the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Fabric Warehouse and SQL analytics endpoint both support *standard*, *sequential*, and *nested* CTEs. While CTEs are generally available in Microsoft Fabric, nested CTEs are currently a preview feature. For more information, see [Nested Common Table Expression (CTE) in Fabric data warehousing (Transact-SQL)](/sql/t-sql/queries/nested-common-table-expression?view=fabric&preserve-view=true).
-- For more about data types, see [Data types](data-types.md).
-- [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?view=fabric&preserve-view=true) is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+- [TRUNCATE TABLE](/sql/t-sql/statements/truncate-table-transact-sql?view=fabric&preserve-view=true) is supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
-- A subset of query and join hints are supported. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
+- A subset of query and join hints are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
 - Session-scoped distributed #temp tables are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-- `MERGE` syntax is supported as a preview feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
+- `MERGE` syntax is supported and is a generally available feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
 
 ### Limitations
 
@@ -55,6 +57,7 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - `SET ROWCOUNT`
 - `SET TRANSACTION ISOLATION LEVEL`
 - `sp_showspaceused`
+- Synonyms
 - Triggers
 
 ## Related content

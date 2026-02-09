@@ -55,7 +55,7 @@
     items:
       - name: Bring Azure Data Factory to Fabric
         href: tutorial-bring-azure-data-factory-to-fabric.md
-      - name: End-to-end Data Factory tutorial
+      - name: Get started in Data Factory tutorial
         items: 
           - name: Introduction
             href: tutorial-end-to-end-introduction.md
@@ -65,21 +65,21 @@
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
-      - name: Decide - Data integration strategy
-        href: decision-guide-data-integration.md
-      - name: Decide - Data movement strategy
-        href: decision-guide-data-movement.md
-      - name: Decide - Copy activity, Copy job, dataflow, or Spark?
-        href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
+      - name: Decision guides
+        items:
+          - name: Decide - Data integration strategy
+            href: decision-guide-data-integration.md
+          - name: Decide - Data movement strategy
+            href: decision-guide-data-movement.md
+          - name: Decide - Copy activity, Copy job, dataflow, or Spark?
+            href: ../fundamentals/decision-guide-pipeline-dataflow-spark.md 
       - name: Create a Copy job
         href: quickstart-copy-job.md
       - name: Create a pipeline
         href: create-first-pipeline-with-sample-data.md
       - name: Create a dataflow
         href: create-first-dataflow-gen2.md
-      - name: Create an Apache Airflow Job
-        href: create-apache-airflow-jobs.md
-      - name: Monitoring activity in Data Factory
+      - name: Monitor activity in Data Factory
         href: monitor-data-factory.md
       - name: Operationalize Data Factory
         href: transform-data.md
@@ -855,6 +855,8 @@
         items: 
           - name: What is the Copy job in Data Factory?
             href: what-is-copy-job.md
+          - name: Copy job connectors
+            href: copy-job-connectors.md
           - name: Copy job tutorials
             items: 
               - name: How to create a Copy job
@@ -1018,6 +1020,8 @@
           href: dbt-job-how-to.md
         - name: Configure a dbt job
           href: dbt-job-configure.md
+        - name: dbt job pricing
+          href: dbt-job-pricing.md
   - name: Create, manage, & schedule pipelines
     items:
       - name: What is a pipeline?
@@ -1036,6 +1040,22 @@
             href: apache-airflow-jobs-concepts.md
           - name: Apache Airflow compute
             href: apache-airflow-compute.md
+          - name: Tutorials
+            items: 
+              - name: Airflow Hello World
+                href: create-apache-airflow-jobs.md
+              - name: Run Fabric pipelines and notebooks
+                href: apache-airflow-jobs-run-fabric-item-job.md
+              - name: Use AI to build DAGs from an image
+                href: apache-airflow-job-build-dags-using-azure-openai.md
+              - name: Run ADF pipeline
+                href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
+              - name: Run Azure Databricks job
+                href: apache-airflow-jobs-run-databricks-job.md
+              - name: Refresh Power BI Semantic Model
+                href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
+              - name: Transform data using dbt
+                href: apache-airflow-jobs-dbt-fabric.md
           - name: How-to
             items: 
               - name: Synchronize your code from an existing Git repo
@@ -1060,22 +1080,6 @@
                 href: access-apache-airflow-job-logs.md
               - name: CI/CD for Apache Airflow Jobs
                 href: cicd-apache-airflow-jobs.md
-          - name: Tutorials
-            items: 
-              - name: Hello World
-                href: apache-airflow-jobs-hello-world.md
-              - name: Run Fabric pipelines and notebooks
-                href: apache-airflow-jobs-run-fabric-item-job.md
-              - name: Use AI to build DAGs from an image
-                href: apache-airflow-job-build-dags-using-azure-openai.md
-              - name: Run ADF pipeline
-                href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
-              - name: Run Azure Databricks job
-                href: apache-airflow-jobs-run-databricks-job.md
-              - name: Refresh Power BI Semantic Model
-                href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
-              - name: Transform data using dbt
-                href: apache-airflow-jobs-dbt-fabric.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Control flow activities

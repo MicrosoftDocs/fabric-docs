@@ -1,11 +1,9 @@
 ---
 title: "Mirroring Oracle limitations in Microsoft Fabric"
 description: Learn about the limitations when mirroring Oracle databases in Microsoft Fabric.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
+ms.reviewer: sbahadur
 ms.date: 08/22/2025
-ms.topic: conceptual
+ms.topic: limits-and-quotas
 ms.custom: references_regions
 ai-usage: ai-assisted
 ---
@@ -33,9 +31,10 @@ Here's what you can expect for database scale:
 
 We support these Oracle Server environments:
 
-* Oracle versions 11 and above with LogMiner enabled
+* Oracle versions 10 and above with LogMiner enabled
 * Oracle on-premises (VM, Azure VM)
 * Oracle Cloud Infrastructure (OCI)
+* Oracle Database@Azure
 * Oracle Exadata
 
 >[!NOTE]
@@ -78,9 +77,11 @@ For schema (DDL) changes, we currently support:
 > [!NOTE]
 > Column data type updates aren't supported
 
-Currently, tables that do not have a Primary Key (PK) are not supported.
+We also support mirroring tables that have a partitioning - if your source tables are partitioned, then we can mirror those tables over.
 
-We cannot support table names that have a length greater than or equal to 30.
+Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables doesn't have a Primary Key (PK) or a unique index, we won't support mirroring those tables over.
+
+We can't support table names that have a length greater than or equal to 30.
 
 ## Required Permissions
 
@@ -129,6 +130,8 @@ If your Oracle user doesn't have direct ALTER DATABASE and ALTER TABLE permissio
 Currently, we only support connecting to Oracle using an On-Premises Data Gateway (OPDG). You need to install and configure the gateway on a machine that can connect to your Oracle server.
 
 For machine requirements and setup instructions to install and register your gateway, see the [On-premises Data Gateway installation guide](/data-integration/gateway/service-gateway-install#download-and-install-a-standard-gateway).
+>[!NOTE]
+>* To ensure that you have the latest performance enhancements and updates, make sure that you have the upgraded to the latest version of the [On-Premises Data Gateway](oracle-tutorial.md#install-the-on-premises-data-gateway). To review recent updates, refer to the [Currently supported monthly updates](/data-integration/gateway/service-gateway-monthly-updates).
 
 ## Related Content
 

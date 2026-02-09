@@ -1,8 +1,6 @@
 ---
 title: What is Fabric Activator?
 description: Learn about Microsoft Fabric Activator, a no-code event detection engine that automatically triggers actions when patterns are detected in real-time data streams.
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: Data Activator Introduction
@@ -28,11 +26,11 @@ It fits into a reactive, event-driven architecture where data flows continuously
 
 - **Events and objects**
 
-    Events are individual records (for example, a telemetry signal or a file drop) received via eventstream. These events are grouped into objects based on a shared identifier (for example, `bikepoint_id`, `device_id`). Rules are then evaluated per object, allowing fine-grained detection (for example, per sensor or per asset).
+    Events are individual records (for example, a telemetry signal or a file drop) received via eventstream. These events are grouped into objects based on a shared identifier (for example, all events from the same device are grouped together using `device_id`, or all bike station events are grouped by `bikepoint_id`). Rules are then evaluated per object, allowing fine-grained detection (for example, per sensor or per asset).
 
 - **Rules and conditions** 
 
-    Each activator includes one or more rules, which are evaluated continuously. These rules can be simple comparisons (`value < threshold`) or stateful expressions like `BECOMES`, `DECREASES`, `INCREASES`, `EXIT RANGE`, or absence of data (heartbeat). Activator ensures state tracking per object, which enables complex pattern detection over time.
+    Each activator includes one or more rules, which are evaluated continuously. These rules can be simple comparisons (`value < threshold`) or conditions that track changes over time like `BECOMES`, `DECREASES`, `INCREASES`, `EXIT RANGE`, or absence of data (heartbeat). Activator ensures state tracking per object, which enables complex pattern detection over time.
 
 - **Actions** 
 
@@ -60,18 +58,18 @@ Activator instances are deployed per workspace and bound to specific data source
 
 | Component | Interaction with Activator |
 | --------- | -------------------- |
-| Eventstream    | Supplies federated data to Activator via low-latency stream ingestion. |
-| Activator      | Can generate events (for example, enriched entities or inferred labels) that trigger another activator. |
+| Eventstream    | Sends real-time data to Activator so it can monitor for patterns and conditions. |
+| Activator      | Can create new events (for example, enriched data or categorized data) that trigger another activator. |
 | Pipeline       | Target of Activator’s rule triggers, which automates downstream processing |
 | Power BI       | Consumes the result of triggered pipelines or notebooks for real-time visualizations |
-| Power Automate | Allows event-driven ops via templated or custom actions |
+| Power Automate | Automates tasks using pre-built or custom workflows when events occur |
 | Fabric events  | Supplies events that are happening within Fabric like refreshing of a semantic model or failing of a pipeline​ |
 | Notebooks      | Notebook execution can be triggered by an Activator |
 | Spark Job Definition| Spark job execution can be triggered by an Activator|
 | User Data Function| Function execution can be triggered by an Activator|
 
 ### Activator as an orchestrator
-Effective use of Activator in enterprise-grade real-time architectures requires intentional orchestration across Microsoft Fabric components and performance tuning for event volume, object cardinality, and rule complexity. This section explores how to orchestrate Activator with other services and how to optimize detection logic and runtime behavior to support low-latency, cost-efficient automation at scale.
+To use Activator effectively in large-scale systems, you need to coordinate how it works with other Fabric components. You should also optimize settings based on how much data you're processing, how many objects you're tracking, and how complex your rules are. This section explores how to orchestrate Activator with other services and how to optimize detection logic and runtime behavior to support low-latency (fast), cost-efficient automation at scale.
 
 Activator plays a central role in event-driven pipelines by evaluating data at the point of arrival and triggering actions downstream. Typical **orchestration patterns** include:
 
@@ -84,7 +82,7 @@ Activator plays a central role in event-driven pipelines by evaluating data at t
 
 
 ## Core concepts
-Microsoft Fabric Activator operates as a high-performance, state-aware rules engine designed for low-latency evaluation of streaming events. At its core, Activator processes real-time events emitted via eventstream, evaluates rule conditions per logical object, and initiates downstream actions in response to state transitions. For an overview of Fabric Activator, see [Introduction to Fabric Activator](activator-introduction.md).
+Fabric Activator continuously monitors your data and quickly detects when conditions you've defined are met, even as data changes over time. At its core, Activator processes real-time events emitted via eventstream, evaluates rule conditions per logical object, and initiates actions in response to state transitions. For an overview of Fabric Activator, see [Introduction to Fabric Activator](activator-introduction.md).
 
 The following concepts are used to build and trigger automated actions and responses in Fabric Activator. 
 
@@ -128,7 +126,7 @@ Stateful evaluation relies on:
 - **Temporal sequencing**: Evaluates time-based conditions like absence of events (heartbeat detection)
 - **State transitions**: Rules only fire on entry into a new state, preventing repeated firings in unchanged conditions
 
-Each rule condition is compiled into an execution graph that is evaluated continuously, in-memory, and near-instantly. The system is optimized for subsecond decisioning latency after event arrival.
+Rules are evaluated continuously and respond within milliseconds. The system is optimized for subsecond response time after event arrival.
 
 #### Actions 
 When a rule’s conditions are met and an action is initiated, then the rule is said to be activated. The supported targets for actions include: 
@@ -141,7 +139,7 @@ When a rule’s conditions are met and an action is initiated, then the rule is 
 - Teams notifications (using template-based messaging)
 - Email notifications
 
-Activator emits a trigger message with the current object state and rule metadata, and actions are nonblocking, that is, and Activator doesn't wait for completions of actions to enable scalable asynchronous flows.
+When a rule is triggered, Activator sends information about what happened and continues monitoring without waiting for the action to complete. This approach enables scalable workflows that can process many events simultaneously.
 
 ### Properties
 Properties are specific fields or attributes of a business object that you want to monitor. These can be physical or conceptual characteristics, such as:

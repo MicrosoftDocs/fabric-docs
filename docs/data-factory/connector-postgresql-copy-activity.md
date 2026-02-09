@@ -1,10 +1,9 @@
 ---
 title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/19/2023
+ms.date: 01/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -65,6 +64,62 @@ For **Mapping** tab configuration, see [Configure your mappings under mapping ta
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for PostgreSQL
+
+When copying data from PostgreSQL, the following mappings are used from PostgreSQL data types to interim data types used by the service internally.
+
+| PostgreSQL data type | Interim service data type |
+|:--- |:--- |
+|SmallInt|Int16|
+|Integer|Int32|
+|BigInt|Int64|
+|Decimal (Precision <= 28)|Decimal|
+|Decimal (Precision > 28)|Unsupported |
+|Numeric|Decimal|
+|Real|Single|
+|Double|Double|
+|SmallSerial|Int16|
+|Serial|Int32|
+|BigSerial|Int64|
+|Money|Decimal|
+|Char|String|
+|Varchar|String|
+|Text|String|
+|Bytea|Byte[]|
+|Timestamp|DateTime|
+|Timestamp with time zone|DateTime|
+|Date|DateTime|
+|Time|TimeSpan|
+|Time with time zone|DateTimeOffset|
+|Interval|TimeSpan|
+|Boolean|Boolean|
+|Point|String|
+|Line|String|
+|Iseg|String|
+|Box|String|
+|Path|String|
+|Polygon|String|
+|Circle|String|
+|Cidr|String|
+|Inet|String|
+|Macaddr|String|
+|Macaddr8|String|
+|Tsvector|String|
+|Tsquery|String|
+|UUID|Guid|
+|Json|String|
+|Jsonb|String|
+|Array|String|
+|Bit|Byte[]|
+|Bit varying|Byte[]|
+|XML|String|
+|IntArray|String|
+|TextArray|String|
+|NumericArray|String|
+|DateArray|String|
+|Range|String|
+|Bpchar|String|
 
 ## Table summary
 

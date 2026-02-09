@@ -13,7 +13,7 @@ ms.date: 11/12/2025
 ai-usage:    ai-assisted
 ---
 
-# Shortcuts file transformations
+# Shortcut Transformations (File)
 
 Shortcut transformations convert raw files (CSV, Parquet, and JSON) into **Delta tables** that stay _always in sync_ with the source data. The transformation is executed by **Fabric Spark compute**, which copies the data referenced by a OneLake shortcut into a managed Delta table so you don't have to build and orchestrate traditional extract, transform, load (ETL) pipelines yourself. With automatic schema handling, deep flattening capabilities, and support for multiple compression formats, shortcut transformations eliminate the complexity of building and maintaining ETL pipelines.
 

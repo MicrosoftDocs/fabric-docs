@@ -1,10 +1,8 @@
 ---
 title: Pricing for pipelines
 description: This article provides details of the pricing model of pipelines for Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
-ms.topic: conceptual
+ms.reviewer: makromer
+ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 11/29/2024
 ---
@@ -12,7 +10,6 @@ ms.date: 11/29/2024
 # Pipelines pricing for Data Factory in Microsoft Fabric
 
 Pipelines enable you to apply rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise data movement and ingestion needs. These capabilities require different computing service engines that have distinct consumption rates.
-
 
 :::image type="content" source="media/pricing-overview/pipelines-pricing-diagram.png" alt-text="Diagram showing the pipeline pricing model for Data Factory in Microsoft Fabric.":::
 

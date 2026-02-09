@@ -2,8 +2,6 @@
 title: Migration critical differences
 description: Differences to consider before migrating from Azure Data Factory to Fabric Data Factory that customers commonly encounter.
 ms.reviewer: seanmirabile
-ms.author: whhender
-author: whhender
 ms.topic: include
 ms.date: 01/09/2026
 ---

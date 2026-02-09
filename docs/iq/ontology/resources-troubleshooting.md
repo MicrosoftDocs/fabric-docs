@@ -28,11 +28,19 @@ The following table describes common issues when generating a new ontology (prev
 
 | Issue | Recommendation |
 |---|---|
-| The ontology item fails to generate | Make sure you've enabled all [required tenant settings](overview-tenant-settings.md) for generating an ontology from a semantic model, including **XMLA endpoints**. <br><br>Make sure the semantic model is in a different workspace than **My workspace** (ontology generation isn't supported in **My workspace**). |
+| The ontology item fails to generate | Make sure you've enabled all [required tenant settings](overview-tenant-settings.md) for generating an ontology from a semantic model. <br><br>Make sure the semantic model is in a different workspace than **My workspace** (ontology generation isn't supported in **My workspace**). |
 | The ontology item is created but there are no entity types | Make sure your semantic model is published, the tables in the semantic model are visible (not hidden), and relationships are defined. |
 | The ontology item is created but entity types have no data bindings | Ontology data binding is [not supported](concepts-generate.md#support-for-semantic-model-modes) for source semantic models in **Import mode**, or semantic models in **Direct Lake mode** while the backing lakehouse is in a workspace with **inbound public access disabled**. Try changing these settings and regenerating the ontology. |
 | Queries return null values for `Decimal` properties | Fabric Graph doesn't currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data allows the data to show up in queries. |
 | General troubleshooting | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
+
+## Troubleshoot capacity usage
+
+The following table describes common capacity issues with an ontology (preview) item.
+
+| Issue | Recommendation |
+|---|---|
+| The canvas and entity type list are unable to load and you see a message that *Your organization's Fabric compute capacity has exceeded its limits*. | Refreshes of ontology (preview)'s underlying [Graph in Microsoft Fabric](../../graph/overview.md) child item contribute to your capacity usage. If you have set a Graph refresh schedule and capacity usage becomes too high, you can reduce or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-use-preview-experience.md#refresh-the-graph-model). |
 
 ## Troubleshoot data binding
 

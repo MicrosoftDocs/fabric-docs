@@ -1,10 +1,8 @@
 ---
 title: "Tutorial: Copy job with SAP Datasphere Outbound (Preview)"
 description: Learn how to configure Copy job for SAP Datasphere Outbound.
-author: dearandyxu
-ms.author: yexu
-ms.reviewer: 
-ms.date: 11/21/2025
+ms.reviewer: jingwang
+ms.date: 01/28/2026
 ms.topic: tutorial
 ---
 
@@ -16,11 +14,11 @@ Using SAP Datasphere Outbound to obtain change data from SAP is a two-step proce
 
 1. Extract data with SAP Datasphere:
 
-    Use SAP Datasphere to extract both the initial snapshot and subsequent changed records from the SAP source system. The extracted data is then landed in an Azure Data Lake Storage Gen2 container, which serves as a staging area.
+    Use SAP Datasphere to extract both the initial snapshot and subsequent changed records from the SAP source system. The extracted data is then landed in an Azure Data Lake Storage Gen2, Amazone S3 or Google Cloud Storage, which serves as a staging area.
 
 2. Move data with Copy job:
 
-    Use Copy Job to connect to a staging container in ADLS Gen2 and replicate data—including inserts, updates, and deletions—to any supported destination.
+    Use Copy Job to connect to a staging container in your cloud storage and replicate data—including inserts, updates, and deletions—to any supported destination.
 
 This solution supports all types of SAP sources offered by SAP Datasphere, including SAP S/4HANA, SAP ECC, SAP BW/4HANA, SAP BW, and SAP Datasphere itself.
 
@@ -35,17 +33,17 @@ You need:
 
 ## Set up SAP Datasphere
 
-This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2 container. You'll use this later to configure the Copy job in Fabric.
+This section covers the setup steps you need to replicate data from your SAP source into an Azure Data Lake Storage (ADLS) Gen2, Amazon S3 or Google Cloud Storage. You'll use this later to configure the Copy job in Fabric.
 
 ### Set up connections in SAP Datasphere
 
-Before you can replicate data from your SAP source into ADLS Gen2, you need to create connections to both source and target in SAP Datasphere.
+Before you can replicate data from your SAP source into cloud storage, you need to create connections to both source and target in SAP Datasphere.
 
 1. Go to SAP Datasphere, and select the **Connection** tool. You might need to select the Space where you want to create the connection.
 
 1. Create the connection to your source SAP system. Select **+** -> **Create Connection**, choose the SAP source from which you want to replicate the data, and configure the connection details. As an example, you can [create connection to SAP S/4HANA on-premises](https://help.sap.com/docs/SAP_DATASPHERE/be5967d099974c69b77f4549425ca4c0/a49a1e3cc50f4af89711d8306bdd8f26.html?version=LATEST).
 
-1. Create the connection to your ADLS Gen2 target. Select **Create Connection** and choose Azure Data Lake Storage Gen2. Enter the storage account name, the container name (under root path), your preferred authentication type, and the credential. Make sure the connection user/principal has enough privileges to create files and folders in ADLS Gen2. Learn more from [Microsoft Azure Data Lake Store Gen2 Connections](https://help.sap.com/docs/SAP_DATASPHERE/be5967d099974c69b77f4549425ca4c0/cd06b3c5ab5147c0905e3fa8abd13eb1.html?version=LATEST).
+1. Create the connection to your target ADLS Gen2, Amazon S3 or Google Cloud Storage. Select **Create Connection** and choose the proper type. For example, for ADLS Gen2, enter the storage account name, the container name (under root path), your preferred authentication type, and the credential. Make sure the connection user/principal has enough privileges to create files and folders in ADLS Gen2. Learn more from [Microsoft Azure Data Lake Store Gen2 Connections](https://help.sap.com/docs/SAP_DATASPHERE/be5967d099974c69b77f4549425ca4c0/cd06b3c5ab5147c0905e3fa8abd13eb1.html?version=LATEST).
 
 1. Before you continue, validate your connections by selecting your connection and choosing the **Validate** option in the top menu.
 
@@ -53,7 +51,7 @@ Before you can replicate data from your SAP source into ADLS Gen2, you need to c
 
 ### Set up a Datasphere replication flow
 
-Create a replication flow to replicate data from your SAP source into ADLS Gen2. For more information on this configuration, see the SAP help on [creating a replication flow](https://help.sap.com/docs/SAP_DATASPHERE/c8a54ee704e94e15926551293243fd1d/25e2bd7a70d44ac5b05e844f9e913471.html?version=LATEST).
+Create a replication flow to replicate data from your SAP source into cloud storage. For more information on this configuration, see the SAP help on [creating a replication flow](https://help.sap.com/docs/SAP_DATASPHERE/c8a54ee704e94e15926551293243fd1d/25e2bd7a70d44ac5b05e844f9e913471.html?version=LATEST).
 
 1. Launch the **Data Builder** in SAP Datasphere.
 
@@ -69,7 +67,7 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
     :::image type="content" source="media/copy-job/sap-datasphere-select-source-objects.png" alt-text="Screenshot of selecting the source objects in replication flow." lightbox="media/copy-job/sap-datasphere-select-source-objects.png":::
 
-1. Configure the target ADLS Gen2. Select the target connection and container. Check that the target settings are correct: **Group Delta** is set to **None** and **File Type** is set to **Parquet**.
+1. Configure the target cloud storage. Select the target connection and container. Check that the target settings are correct: **Group Delta** is set to **None** and **File Type** is set to **Parquet**.
 
     :::image type="content" source="media/copy-job/sap-datasphere-target-settings.png" alt-text="Screenshot of ADLS Gen2 target settings." lightbox="media/copy-job/sap-datasphere-target-settings.png":::
 
@@ -81,7 +79,7 @@ Create a replication flow to replicate data from your SAP source into ADLS Gen2.
 
 1. Deploy and run the replication to replicate the data.
 
-1. Go to your ADLS Gen2 container and validate the data is replicated.
+1. Go to your storage container and validate the data is replicated.
 
 ## Create a Copy job
 
@@ -89,7 +87,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
 
 1. In your workspace, select **New item** and find **Copy job**.
 
-1. Select the SAP Datasphere Outbound connection and provide the URL to your ADLS Gen2 account.
+1. Select the SAP Datasphereo outbound for ADLS Gen2, Amazon S3 or Google Cloud Storage, and set up the connection details.
 
     :::image type="content" source="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png" alt-text="Screenshot of browsing the lakehouse and selecting the path." lightbox="media/copy-job/copy-job-sap-datasphere-adls-gen2-connections.png":::
 
@@ -107,7 +105,7 @@ This section explains how to create a Copy job to replicate data from SAP via SA
   - Ensure you configure the target storage settings propertly: set **Group Delta** to **None** and set **File Type** to **Parquet**.
   - Currently, SAP mirroring supports replication flow load type as **Initial and Delta**.
 
-- Once the Copy job is configured, you can monitor the current state of replication from ADLS Gen2 to supported destinations. If you observe a delay in the appearance of mirrored data, also check the SAP Datasphere replication flow status and if the data is replicated into the storage.
+- Once the Copy job is configured, you can monitor the current state of replication from cloud storage to supported destinations. If you observe a delay in the appearance of mirrored data, also check the SAP Datasphere replication flow status and if the data is replicated into the storage.
 
 
 ## Related content

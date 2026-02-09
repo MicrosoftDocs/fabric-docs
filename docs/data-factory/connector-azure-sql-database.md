@@ -1,8 +1,7 @@
 ---
 title: Set up your Azure SQL Database connection
 description: This article provides information about how to set up an Azure SQL Database connection.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 10/31/2025
 ms.custom:

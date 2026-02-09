@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: xiaoyul
 ms.date: 10/14/2025
-ms.topic: conceptual
+ms.topic: troubleshooting-general
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Troubleshoot the Warehouse

@@ -21,14 +21,12 @@ For example, a variable library can contain variables that hold values for:
 * A lakehouse reference to be the source in a *copy data* activity. Each value is used in a different pipeline, based on the release stage of the pipeline.
 * A lakehouse reference to be configured as a notebook default lakehouse. Each value is used in a different pipeline, based on the release stage of the notebook.
 
-Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
-
-The experience of a variable library differs based on the variable type, but all variable libraries allow you to define and manage variables that other items can use.
-
 A Fabric variable library:
 
 * Is compatible with continuous integration and continuous delivery (CI/CD) processes. This compatibility allows [integration with Git](../git-integration/intro-to-git-integration.md#supported-items) and deployment through [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md#supported-items).
 * Supports automation via Fabric public APIs.
+- Value resolution in the consumer item isn't necessarily tied to its deployment. Rather, each consumer item resolves the value based on its own context.
+- The experience of a variable library differs based on the variable type, but all variable libraries allow you to define and manage variables that other items can use.
 
 ## Benefits
 
@@ -48,25 +46,14 @@ Variable libraries provide a centralized way to manage configurations across the
 
 ## Variable library structure
 
-Variable libraries contain one or more variables. Each variable has a name, type, and default value. You can also add a note to each variable to describe its purpose or how to use it.
+The Variable Library in Fabric is a structured system designed to manage configuration parameters across workspaces and deployment stages. At its core are user-defined [variables](variable-types.md), which can be basic types (like string, integer, boolean) or complex types such as [item references](item-reference-variable-type.md). These variables are grouped within a Variable Library item and can be referenced by consumer items within the same workspace. 
+
+To support dynamic configuration, each variable can have multiple [value-sets](value-sets.md) or alternative sets of values tailored for different environments (e.g., dev, test, prod). One value-set is designated as "active" per workspace, determining which values are used during runtime. 
+
+Users can create, edit, and manage variables and value-sets through the Fabric UI or APIs, with built-in validation and permission checks. The system supports CI/CD workflows, allowing variables to be managed as code, integrated with Git, and deployed via pipelines. This structure ensures scalable, automated, and governed configuration management across complex data systems.
 
 :::image type="content" source="./media/variable-library-overview/define-values.png" alt-text="Screenshot of a variable library with several variables and their core components.":::
 
-### Default value
-
-The default value is the value that's used unless you specifically define a different value.  
-
-All variables must have a default value. If the variable type is *string*, the default value can be `null`.
-
-### Alternative value sets
-
-Value sets define the values of each variable in the variable library. A variable library typically contains multiple value sets. The active (or effective) value set contains the value that the consumer item receives for that workspace.
-
-In each workspace, you select a value set to be active. The active value set of a workspace doesn't change during a deployment or update from Git.
-
-:::image type="content" source="./media/variable-library-overview/alternative-values.png" alt-text="Screenshot of a variable library with several alternative value sets.":::
-
-When you create an alternative value set, the new value set is created with pointers to the default value for each variable. You can then change the value for each variable in the new value set.
 
 ## Supported items
 
@@ -77,7 +64,19 @@ The following items support the variable library:
 - Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities) and [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command)
 - [Dataflow Gen 2](../../data-factory/dataflow-gen2-variable-library-integration.md)
 - [Copy job](../../data-factory/cicd-copy-job.md)
-- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md#get-variables-from-fabric-variable-libraries)
+- [User data functions](../../data-engineering/user-data-functions/python-programming-model.md#get-variables-from-fabric-variable-libraries)
+
+## Naming conventions
+The name of variable library item itself must follow these conventions:
+
+- Isn't empty
+- Doesn't have leading or trailing spaces
+- Starts with a letter
+- Can include letters, numbers, underscores, hyphens, and spaces
+- Doesn't exceed 256 characters in length
+
+The variable library name is *not* case sensitive.
+
 
 ## Considerations and limitations
 

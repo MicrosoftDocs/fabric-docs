@@ -1,8 +1,7 @@
 ---
 title: Set up your Oracle database connection
 description: This article provides information about how to create an Oracle database connection in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/14/2025
 ms.custom:

@@ -5,7 +5,7 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom: 
 ms.date: 01/10/2025
 #customer intent: As a data analyst, I want to use the Microsoft Fabric lineage view to understand and manage machine learning models and experiments.

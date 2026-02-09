@@ -1,10 +1,8 @@
 ---
 title: Fabric AI Prompt in Dataflow Gen2 (Preview)
 description: Feature documentation for the Fabric AI Functions integration inside of Dataflow Gen2
-ms.reviewer: whhender
-ms.author: miescobar
-author: ptyx507x
-ms.topic: conceptual
+ms.reviewer: miescobar
+ms.topic: concept-article
 ms.date: 11/17/2025
 ms.custom: dataflows
 ai-usage: ai-assisted

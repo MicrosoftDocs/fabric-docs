@@ -1,7 +1,7 @@
 ---
 title: Manage Fabric materialized lake views with public APIs
 description: Learn about public APIs for Fabric materialized lake views.
-ms.topic: article
+ms.topic: reference
 author: rkottackal
 ms.author: rkottackal
 ms.reviewer: nijelsf

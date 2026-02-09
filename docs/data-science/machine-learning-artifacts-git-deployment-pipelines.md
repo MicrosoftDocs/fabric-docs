@@ -5,7 +5,7 @@ ms.reviewer:
 reviewer: 
 ms.author: ruxu
 author: ruixinxu
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 8/27/2025
 ms.search.form: ml model, ml experiment, Git deployment pipelines alm ci cd

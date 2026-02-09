@@ -9,8 +9,7 @@ metadata:
   ms.subservice: data-factory
   ms.custom: configuration
   ms.topic: landing-page # Required
-  author: whhender #Required; your GitHub user alias, with correct capitalization.
-  ms.author: whhender #Required; microsoft alias of author; optional team alias.
+  ms.reviewer: whhender #Required; microsoft alias of author; optional team alias.
   ms.date: 6/02/2025 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 

@@ -1,9 +1,7 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases to Mirror SAP via SAP Datasphere (Preview)"
 description: Learn how to mirror SAP systems via SAP Datasphere. Set up connections, replicate data, and integrate with Fabric for data management.
-author: linda33wj
-ms.author: jingwang
-ms.reviewer: whhender
+ms.reviewer: jingwang
 ms.date: 11/03/2025
 ms.topic: tutorial
 ---

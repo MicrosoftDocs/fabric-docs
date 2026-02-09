@@ -4,7 +4,7 @@ description: Learn about job admission and management for notebooks, Apache Spar
 ms.reviewer: saravi
 ms.author: eur
 author: eric-urban
-ms.topic: article
+ms.topic: concept-article
 ms.date: 05/09/2024
 ---
 # Job admission in Apache Spark for Microsoft Fabric

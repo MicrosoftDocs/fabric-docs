@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview #Don't change
-ms.date: 11/26/2025
+ms.date: 12/01/2025
 
 #customer intent: As a data engineer, I want to control and secure outbound network access from my Fabric workspace so that I can prevent unauthorized data exfiltration and comply with organizational security policies.
 
@@ -23,7 +23,7 @@ When outbound access protection is enabled, all outbound connections from the wo
 
 ## Configuring outbound access protection for data engineering
 
-To configure outbound access protection for data engineering:
+You can only create an allow list using managed private endpoints; data connection rules aren't supported for data engineering workloads. To configure outbound access protection for data engineering:
 
 1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
 

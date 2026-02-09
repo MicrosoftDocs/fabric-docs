@@ -1,10 +1,9 @@
 ---
 title: How to configure Amazon RDS for SQL Server in copy activity
 description: This article explains how to copy data using Amazon RDS for SQL Server.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 01/22/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -86,6 +85,50 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Amazon RDS for SQL Server
+
+When copying data from Amazon RDS for SQL Server, the following mappings are used from Amazon RDS for SQL Server data types to interim data types used by the service internally.
+
+| Amazon RDS for SQL Server data type | Interim service data type |
+| ------ | ------ |
+| bigint | Int64 |
+| binary | Byte[] |
+| bit | Boolean |
+| char | String, Char[] |
+| date | DateTime |
+| Datetime | DateTime |
+| datetime2 | DateTime |
+| Datetimeoffset | DateTimeOffset |
+| Decimal | Decimal |
+| FILESTREAM attribute (varbinary(max)) | Byte[] |
+| Float | Double |
+| image | Byte[] |
+| int | Int32 |
+| money | Decimal |
+| nchar | String, Char[] |
+| ntext | String, Char[] |
+| numeric | Decimal |
+| nvarchar | String, Char[] |
+| real | Single |
+| rowversion | Byte[] |
+| smalldatetime | DateTime |
+| smallint | Int16 |
+| smallmoney | Decimal |
+| sql_variant | Object |
+| text | String, Char[] |
+| time | TimeSpan |
+| timestamp | Byte[] |
+| tinyint | Int16 |
+| uniqueidentifier | Guid |
+| varbinary | Byte[] |
+| varchar | String, Char[] |
+| xml | String |
+
+>[!NOTE]
+> For data types that map to the Decimal interim type, currently Copy activity supports precision up to 28. If you have data that requires precision larger than 28, consider converting to a string in a SQL query.  
+>
+> When copying data from Amazon RDS for SQL Server using Fabric Data Factory, the bit data type is mapped to the Boolean interim data type. If you have data that need to be kept as the bit data type, use queries with [T-SQL CAST or CONVERT](/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15&preserve-view=true).
 
 ## Parallel copy from SQL database
 

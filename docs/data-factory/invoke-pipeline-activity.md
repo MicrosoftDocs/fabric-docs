@@ -1,9 +1,7 @@
 ---
 title: Invoke pipeline activity
 description: Learn how to add an Invoke pipeline activity to a pipeline and use it to run another pipeline.
-ms.reviewer: whhender
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 08/28/2025
@@ -17,8 +15,7 @@ The Fabric **Invoke pipeline activity** can execute another [!INCLUDE [product-n
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 > [!NOTE]
 > There are currently two Invoke pipeline activities. The Invoke pipeline (Legacy) only supports Fabric pipelines in the same workspace as your parent pipeline. You can also only monitor the parent pipeline and can't invoke ADF (Azure Data Factory) or Synapse pipelines using the legacy activity. Using the new Invoke pipeline activity allows you to invoke pipelines across Fabric workspaces, from ADF or Synapse, and monitor child pipelines.
@@ -69,22 +66,6 @@ Select the **Settings** tab and configure your activity.
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings-fabric.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline activity workspace and connection selection.":::
 
-#### Using Fabric Workspace Identity (WI) in Invoke pipelines
-
-1. **Create the Workspace Identity**
-Create a Workspace Identity in your Fabric workspace.
-Check out the docs on [Workspace Identity](../security/workspace-identity.md).
-
-1. **Enable tenant-level settings**
-In the Fabric admin portal, enable the following tenant setting:
-Service principals can call Fabric public APIs.
-This setting is required for the Workspace Identity to authenticate successfully.
-Check out the docs on [Enable service principal authentication for admin APIs](../admin/enable-service-principal-admin-apis.md).
-
-1. **Grant workspace permissions to the Workspace Identity**
-Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios.
-Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
-
 #### Invoke pipelines from ADF and Synapse
 
 - Type: Choose the source of your pipeline (Fabric, Azure Data Factory, Synapse)
@@ -95,9 +76,11 @@ Check out the docs on [Give users access to workspaces](../fundamentals/give-acc
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+## Known issues
+
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

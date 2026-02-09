@@ -1,20 +1,17 @@
 ---
 title: Apache Airflow Job workspace settings
 description: This article enumerates the Apache Airflow job environment run-time configurations.
-author: nabhishek
-ms.author: abnarain
 ms.reviewer: abnarain
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/22/2025
 ms.custom: airflows
 ---
 
 # Apache Airflow Job workspace settings
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/). At this current time, private networks and Vnet are not supported with Fabric Airflow jobs. This feature is under development and will be updated soon.
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)] At this current time, private networks, and virtual network aren't supported with Fabric Airflow jobs. This feature is under development and will be updated soon.
 
-You can configure and manage the runtime settings of Apache Airflow in Apache Airflow Job and the default Apache Airflow runtime for the workspace. Apache Airflow job offers the two types of the environment settings, that is, Starter pool and Custom pool. You can use the starter pool which is configured by default or create custom pools for your workspace. If the setting for customizing compute configurations for items is disabled, the starter pool is used for all environments within the workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
+You can configure and manage the runtime settings of Apache Airflow in Apache Airflow Job and the default Apache Airflow runtime for the workspace. Apache Airflow job offers the two types of the environment settings, that is, Starter pool and Custom pool. You can use the starter pool that's configured by default or create custom pools for your workspace. If the setting for customizing compute configurations for items is disabled, the starter pool is used for all environments within the workspace. Starter pools offer an instant Apache Airflow runtime, which is automatically deprovisioned when not in use. On the other hand, custom pools provide more flexibility and offer an always-on Apache Airflow runtime. This article outlines each setting and suggests ideal scenarios for their respective usage.
 
 ## Starter Pool and Custom Pool
 
@@ -31,7 +28,7 @@ The following table contains the list the properties of both the pools.
 ## Configure Custom Pool
 
 1. Go to your workspace settings.
-2. In the 'Data Factory' section, click on 'Data Workflow Settings.'
+2. In the 'Data Factory' section, select 'Data Workflow Settings.'
 3. You find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled 'Default Data Workflow Setting' and select 'New Pool.'
 
    :::image type="content" source="media/apache-airflow-jobs/data-workflow-runtime-settings.png" lightbox="media/apache-airflow-jobs/data-workflow-runtime-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
@@ -45,7 +42,7 @@ The following table contains the list the properties of both the pools.
 
    :::image type="content" source="media/apache-airflow-jobs/new-custom-pool.png" lightbox="media/apache-airflow-jobs/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
 
-5. Click on 'Create' to finalize your configuration.
+5. Select **Create** to finalize your configuration.
 
 ## Related content
 

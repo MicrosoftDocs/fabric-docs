@@ -3,7 +3,7 @@ title: Localize Your Workload
 description: Learn how you can localize your workload and support various languages in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: conceptual
+ms.topic: concept-article
 ms.custom:
 ms.date: 08/14/2024
 ---

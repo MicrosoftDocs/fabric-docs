@@ -3,7 +3,7 @@ title: DevServer for Microsoft Fabric
 description: This article describes what the DevServer does during local development—hosting your frontend (loaded in an iFrame) and exposing local endpoints Microsoft Fabric uses to read your manifests.
 author: gsaurer
 ms.author: billmath
-ms.topic: article
+ms.topic: concept-article
 ms.custom:
 ms.date: 12/15/2025
 ---
