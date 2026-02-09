@@ -1,6 +1,5 @@
 items:
   - name: Graph in Microsoft Fabric documentation
-    href: index.yml
   - name: Overview
     items:
       - name: What is Graph in Microsoft Fabric?

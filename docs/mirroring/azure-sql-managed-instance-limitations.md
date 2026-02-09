@@ -18,12 +18,6 @@ For troubleshooting, see:
 - [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
 - [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance ](../mirroring/azure-sql-managed-instance-troubleshoot.md)
 
-## Feature availability
-
-You can configure Azure SQL Managed Instance for mirroring if it is deployed to any Azure region, **except** for these regions currently: East US 2; West US 2; Central US; West US. 
-
-The feature availability also depends on Fabric regions. For a complete list of Fabric region support, see [Fabric regions that support Mirroring](#supported-regions).
-
 ## Database level limitations
 
 - Mirroring on Azure SQL Managed Instance is available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date** or **SQL Server 2025**.
