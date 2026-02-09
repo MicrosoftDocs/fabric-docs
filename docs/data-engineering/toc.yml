@@ -553,3 +553,7 @@ items:
         href: spark-best-practices-development-monitoring.md
       - name: Spark Basics
         href: spark-best-practices-basics.md
+- name: Troubleshooting Guide
+  items:
+  - name: Troubleshooting overview
+    href: troubleshooting-overview.md
