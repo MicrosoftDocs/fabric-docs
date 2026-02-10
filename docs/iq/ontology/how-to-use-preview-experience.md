@@ -10,7 +10,9 @@ ms.topic: how-to
 
 # Preview experience in ontology (preview)
 
-The *preview experience* in ontology (preview) lets you view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view.
+The *preview experience* in ontology (preview) lets you view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view. 
+
+When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../../graph/overview.md) child item is also created and is responsible for storing and displaying data in the ontology preview experience.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -136,7 +138,7 @@ You can also **Expand** the graph view, where you can run a query specific to th
 
 This section describes how and when your bound data stays up to date in your ontology (preview) item.
 
-In ontology (preview), downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments. 
+Downstream experiences automatically refresh whenever you make changes to your ontology schema. This feature ensures that whenever you add, edit, or remove any element like properties, types, or relationships, the system re-ingests all currently bound data to keep your downstream experiences in sync with the latest schema adjustments. 
 
 However, this automatic refresh only applies to changes made within the schema itself. If there are changes to the external data source that feeds your graph (for example, if new records are added, updated, or deleted in the upstream system), the graph doesn't know about these changes unless you explicitly inform it. In this case, your graph might display stale data until a new ingestion is triggered. You can enforce an update by manually refreshing the graph.
 
@@ -156,6 +158,9 @@ To refresh the graph, follow these steps:
 1. In the **Schedule** view, select **Refresh now**.
 
     :::image type="content" source="media/how-to-use-preview-experience/refresh-graph-3.png" alt-text="Screenshot of the Refresh now button in the graph model scheduling options.":::
+
+    >![TIP]
+    >You can also use this panel to manage a recurring refresh schedule for the graph model, to keep your ontology (preview) data up to date automatically on a specified cadence.
 
 1. Verify that when you return to the ontology item, the data shown reflects your changes.
 

@@ -3,8 +3,8 @@ title: "Limitations in Mirrored Databases From Azure SQL Managed Instance"
 description: A detailed list of limitations for mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj, whhender
-ms.date: 01/15/2026
+ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
+ms.date: 02/09/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -18,19 +18,13 @@ For troubleshooting, see:
 - [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
 - [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance ](../mirroring/azure-sql-managed-instance-troubleshoot.md)
 
-## Feature availability
-
-You can configure Azure SQL Managed Instance for mirroring if it is deployed to any Azure region, **except** for these regions currently: East US 2; West US 2; Central US; West US. 
-
-The feature availability also depends on Fabric regions. For a complete list of Fabric region support, see [Fabric regions that support Mirroring](#supported-regions).
-
 ## Database level limitations
 
-- Mirroring on Azure SQL Managed Instance is only available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date**.
+- Mirroring on Azure SQL Managed Instance is available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date** or **SQL Server 2025**.
    - SQL managed instances with the **SQL Server 2022** update policy can use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
 - Geo Disaster Recovery setup isn't supported by Mirroring.
 - Fabric Mirroring for Azure SQL Managed Instance is only supported on a **writable primary** database.
-- An Azure SQL Managed Instance database can't be mirrored if the database has: enabled Change Data Capture **(CDC), Transactional Replication**, or the database is already mirrored in another Fabric workspace.
+- An Azure SQL Managed Instance database can't be mirrored if the database has: enabled Change Data Capture (CDC), transactional replication, or the database is already mirrored in another Fabric workspace.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
   - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list aren't mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.

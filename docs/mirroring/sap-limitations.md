@@ -1,9 +1,7 @@
 ---
 title: "Limitations in Microsoft Fabric mirrored databases from SAP"
 description: Learn about the limitations in mirrored databases from SAP in Microsoft Fabric.
-author: linda33wj
-ms.author: jingwang
-ms.reviewer: whhender
+ms.reviewer: jingwang
 ms.date: 11/03/2025
 ms.topic: concept-article
 ---

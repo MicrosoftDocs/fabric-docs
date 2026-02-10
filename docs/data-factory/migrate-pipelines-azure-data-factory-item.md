@@ -1,9 +1,7 @@
 ---
 title: How to Use Azure Data Factory item (Mount) in Microsoft Fabric
 description: The Azure Data Factory item in Microsoft Fabric allows you to bring in your ADF items to Fabric instantly.
-author: ssindhub
-ms.author: ssrinivasara
-ms.reviewer: whhender
+ms.reviewer: ssrinivasara
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 07/01/2025

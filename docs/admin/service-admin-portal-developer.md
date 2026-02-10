@@ -74,7 +74,7 @@ This setting applies to the entire organization. You can't apply it only to a se
 
 ## Define maximum number of Fabric identities in a tenant
 
-Allow admins to specify the maximum number of Fabric identities that can be created in a Fabric tenant. If this setting is disabled, up to 10,000 Fabric identities can be created in a tenant. If you enable this setting, you can set a custom limit of how many Fabric identities can be created in your Fabric tenant, up to the 10,000 limit. You can also manage this value programmatically by using the [Update Tenant Setting REST API](/rest/api/fabric/admin/tenants/update-tenant-setting).
+This setting specifies the maximum number of Fabric identities that can be created in a Fabric tenant. If this setting is disabled, a default value of 10,000 Fabric identities can be created in a tenant. If you enable this setting, you can set a custom limit of how many Fabric identities can be created in your Fabric tenant. You can also manage this value programmatically by using the [Update Tenant Setting REST API](/rest/api/fabric/admin/tenants/update-tenant-setting).
 
 The maximum number of Fabric identities defined and created for a Fabric tenant can't exceed the maximum number of resources allowed in a Microsoft Entra tenant. Fabric doesn't validate that your custom limit falls within your Microsoft Entra ID resource quota. Before setting a custom limit, check your tenant's [Microsoft Entra service limits](/entra/identity/users/directory-service-limits-restrictions). To increase your resource limit in your Microsoft Entra tenant, contact Microsoft support.
 

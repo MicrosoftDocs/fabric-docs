@@ -1,8 +1,6 @@
 ---
 title: "Open Mirroring"
 description: Learn about open mirrored databases in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: tinglee, sbahadur, maraki-ketema
 ms.date: 07/02/2025
 ms.topic: concept-article

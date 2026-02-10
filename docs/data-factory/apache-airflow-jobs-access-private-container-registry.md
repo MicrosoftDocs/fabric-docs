@@ -1,9 +1,7 @@
 ---
 title: Add a Kubernetes secret to pull an image from a private container registry
 description: This article explains how to add a Kubernetes secret to pull container image from a private container registry.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024
@@ -11,8 +9,7 @@ ms.date: 03/25/2024
 
 # Add a Kubernetes secret in Apache Airflow job
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 A Kubernetes secret is an object designed to securely store sensitive information, such as passwords, tokens, or keys. By utilizing secrets, you avoid embedding confidential data directly in your application code.
 

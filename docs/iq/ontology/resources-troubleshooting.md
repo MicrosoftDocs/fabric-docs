@@ -34,6 +34,14 @@ The following table describes common issues when generating a new ontology (prev
 | Queries return null values for `Decimal` properties | Fabric Graph doesn't currently support the `Decimal` type. As a result, if you generate an ontology from a semantic model with tables that include `Decimal` type columns, you see null values returned for those properties on all queries. `Double` type is supported, however, so recreating the property as a `Double` type in ontology and binding it to the source data allows the data to show up in queries. |
 | General troubleshooting | Make sure the ontology operation you're trying to complete is [supported for your semantic model mode](concepts-generate.md#support-for-semantic-model-modes). |
 
+## Troubleshoot capacity usage
+
+The following table describes common capacity issues with an ontology (preview) item.
+
+| Issue | Recommendation |
+|---|---|
+| The canvas and entity type list are unable to load and you see a message that *Your organization's Fabric compute capacity has exceeded its limits*. | Refreshes of ontology (preview)'s underlying [Graph in Microsoft Fabric](../../graph/overview.md) child item contribute to your capacity usage. If you have set a Graph refresh schedule and capacity usage becomes too high, you can reduce or disable the Graph item schedule in your workspace. For more information, see [Refresh the graph model](how-to-use-preview-experience.md#refresh-the-graph-model). |
+
 ## Troubleshoot data binding
 
 The following table describes common issues when binding data to an ontology (preview) item.

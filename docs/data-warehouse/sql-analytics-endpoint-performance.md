@@ -54,7 +54,7 @@ In addition to row count guidance, file size is equally important. The SQL analy
 
 1. Set `maxRecordsPerFile` to 2,000,000 before data changes occurs.
 1. Perform your data changes (data ingestion, updates, deletes).
-1. Set `maxFileSize` to 400 MB.
+1. Set `maxFileSize` to 4 GB.
 1. Run `OPTIMIZE`. For details on using `OPTIMIZE`, refer to [Table maintenance operations](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations).
 
 The following script provides a template for these steps, and should be executed on a lakehouse: 
@@ -70,8 +70,8 @@ spark.conf.set("spark.sql.files.maxRecordsPerFile", 2000000)
 # 2. INGEST DATA
 # Here, you ingest data into your table 
 
-# 3. CAP FILE SIZE (~400 MB)
-spark.conf.set("spark.databricks.delta.optimize.maxFileSize", 400 * 1024 * 1024)
+# 3. CAP FILE SIZE (~4GB)
+spark.conf.set("spark.databricks.delta.optimize.maxFileSize", 400 * 1024 * 1024 * 1024)
 
 # 4. RUN OPTIMIZE (bin-packing)
 spark.sql("""

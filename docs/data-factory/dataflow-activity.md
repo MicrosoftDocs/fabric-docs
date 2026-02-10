@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: miescobar
 author: ptyx507x
 ms.topic: how-to
-ms.date: 1/27/2026
+ms.date: 2/4/2026
 ms.custom:
    - pipelines
    - dataflows
@@ -19,8 +19,7 @@ The Dataflow activity in Data Factory for Microsoft Fabric allows you to run a D
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a Dataflow activity to a pipeline
 
@@ -65,9 +64,14 @@ Inside the Dataflow parameters section you're able to enter the name of the para
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+>[!NOTE]
+>To successfully run a Dataflow Gen2 (CI/CD), users must have:
+> - Member (or higher) access to the workspace, and
+> - Access to all connections used by the dataflow  
+>
+>Not meeting these two requirements could result in run failures. 
 
 ## Troubleshooting tips
 

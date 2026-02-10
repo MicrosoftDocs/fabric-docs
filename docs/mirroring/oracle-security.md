@@ -1,9 +1,7 @@
 ---
 title: "Secure Data in Microsoft Fabric Mirrored Databases From Oracle"
 description: Learn about how to secure data in mirrored databases From Oracle in Microsoft Fabric.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
+ms.reviewer: sbahadur
 ms.date: 08/22/2025
 ms.topic: how-to
 ms.custom:

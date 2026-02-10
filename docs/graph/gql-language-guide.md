@@ -2,7 +2,7 @@
 title: GQL Language Guide
 description: Complete guide to GQL language support for graph in Microsoft Fabric
 ms.topic: reference
-ms.date: 11/18/2025
+ms.date: 02/09/2026
 author: lorihollasch
 ms.author: loriwhip
 ms.reviewer: splantikow
@@ -13,11 +13,10 @@ ms.search.form: GQL Language Guide
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-The GQL Graph Query Language is the ISO-standardized query language for graph databases. 
-It helps you query and work with graph data efficiently. 
+The GQL Graph Query Language is the ISO-standardized query language for graph databases. It helps you query and work with graph data efficiently.
 
-GQL is developed by the same ISO working group that standardizes SQL, ensuring consistency and rigor. 
-If you’re familiar with SQL, you’ll find many similarities in GQL (expressions, predicates, types) - making it easier to get started. 
+The same ISO working group that standardizes SQL develops GQL, so it maintains consistency and rigor. If you're familiar with SQL, you'll find many similarities in GQL, such as expressions, predicates, and types. These similarities make it easier to get started with GQL.
+
 This guide serves both newcomers learning GQL fundamentals and experienced users seeking advanced techniques and comprehensive reference information.
 
 > [!NOTE]
@@ -25,34 +24,34 @@ This guide serves both newcomers learning GQL fundamentals and experienced users
 
 ## Prerequisites
 
-Before diving into GQL, you should be familiar with these concepts:
+Before diving into GQL, be familiar with these concepts:
 
-- **Basic understanding of databases** - Experience with any database system (such as relational (SQL), NoSQL, or graph) is helpful
-- **Graph concepts** - Understanding of nodes, edges, and relationships in connected data
-- **Query fundamentals** - Knowledge of basic query concepts like filtering, sorting, and aggregation
+- **Basic understanding of databases** - Experience with any database system such as relational (SQL), NoSQL, or graph is helpful.
+- **Graph concepts** - Understanding of nodes, edges, and relationships in connected data.
+- **Query fundamentals** - Knowledge of basic query concepts like filtering, sorting, and aggregation.
 
 **Recommended background:**
-- Experience with SQL or openCypher languages makes learning GQL syntax easier (they are GQL's roots)
-- Familiarity with data modeling helps with graph schema design
-- Understanding of your specific use case for graph data
 
-**What you'll need:**
-- Access to Microsoft Fabric with graph capabilities
-- Sample data or willingness to work with our social network examples
-- Basic text editor for writing queries
+- Experience with SQL or openCypher languages makes learning GQL syntax easier (they're GQL's roots).
+- Familiarity with data modeling helps with graph schema design.
+- Understanding of your specific use case for graph data.
+
+**What you need:**
+
+- Access to Microsoft Fabric with graph capabilities.
+- Sample data or willingness to work with our social network examples.
+- Basic text editor for writing queries.
 
 > [!TIP]
 > If you're new to graph databases, start with the [graph data models overview](graph-data-models.md) before continuing with this guide.
 
 ## What makes GQL special
 
-GQL is designed specifically for graph data. This makes it natural and intuitive to work with connected information. 
+GQL is designed specifically for graph data. This design makes it natural and intuitive to work with connected information.
 
-Unlike SQL, which relies on table joins to express relationships, GQL uses visual graph patterns, which directly mirror how entities are connected, 
-making queries easier to read and reason about. 
+Unlike SQL, which relies on table joins to express relationships, GQL uses visual graph patterns. These patterns directly mirror how entities are connected, making queries easier to read and easier to reason about.
 
-Let’s say you want to find people and their friends (people who know each other) who were both born before 1999. 
-Here’s how GQL expresses that using a visual graph pattern: 
+Suppose you want to find people and their friends (people who know each other) who were both born before 1999. Here's how GQL expresses that condition using a visual graph pattern:
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -63,20 +62,20 @@ RETURN person.firstName || ' ' || person.lastName AS person_name,
        friend.firstName || ' ' || friend.lastName AS friend_name
 ```
 
-This query finds friends (people who know each other) who were both born before 1999. The pattern `(person:Person)-[:knows]-(friend:Person)` visually shows the relationship structure you're looking for—much like drawing a diagram of your data.
+This query finds friends (people who know each other) who were both born before 1999. The pattern `(person:Person)-[:knows]-(friend:Person)` visually shows the relationship structure you're looking for - much like drawing a diagram of your data.
 
 ## GQL fundamentals
 
 Before diving into queries, understand these core concepts that form the foundation of GQL:
 
-- **Graphs** store your data as nodes (entities) and edges (relationships), each with labels and properties
-- **Graph types** act like schemas, defining what nodes and edges can exist in your graph
-- **Constraints** are additional rules and restrictions imposed by graph types on graphs to enforce data integrity
-- **Queries** use statements like `MATCH`, `FILTER`, and `RETURN` to process data and show results
-- **Patterns** describe the graph structures you want to find using intuitive visual syntax
-- **Expressions** perform calculations and comparisons on your data, similar to SQL expressions
-- **Predicates** are boolean value expressions that are used to filter results within queries 
-- **Value types** define what kinds of values you can process and store
+- **Graphs** store your data as nodes (entities) and edges (relationships), each with labels and properties.
+- **Graph types** act like schemas, defining what nodes and edges can exist in your graph.
+- **Constraints** are additional rules and restrictions that graph types impose on graphs to enforce data integrity.
+- **Queries** use statements like `MATCH`, `FILTER`, and `RETURN` to process data and show results.
+- **Patterns** describe the graph structures you want to find using intuitive visual syntax.
+- **Expressions** perform calculations and comparisons on your data, similar to SQL expressions.
+- **Predicates** are boolean value expressions that filter results within queries.
+- **Value types** define what kinds of values you can process and store.
 
 ## Understanding graph data
 
@@ -86,21 +85,22 @@ To work effectively with GQL, you need to understand how graph data is structure
 
 In GQL, you work with labeled property graphs. A graph consists of two types of elements:
 
-**Nodes** typically represent the entities (the "nouns") in your system—things like people, organizations, posts, or products. They're independent objects that exist in your domain. Nodes are sometimes also called vertices.
+- **Nodes** typically represent the entities (the "nouns") in your system—things like people, organizations, posts, or products. They're independent objects that exist in your domain. Nodes are sometimes also called vertices.
 
-**Edges** represent relationships between entities (the "verbs")—how your entities connect and interact. 
+- **Edges** represent relationships between entities (the "verbs") - how your entities connect and interact.
+
 For example, people know each other (`:knows`), organizations that operate in specific regions (`:operates`), or customers who purchased products (`:purchased`).  
 Edges are sometimes also called relationships.
 
 Every graph element has these characteristics:
 
 - An **internal ID** that uniquely identifies it
-- **One or more labels**—descriptive names like `Person` or `knows`. In Microsoft Fabric, graph edges always have exactly one label.
-- **Properties**—name-value pairs that store data about the element (such as `firstName: "Alice"` or `birthday: "19730108"`).
+- **One or more labels** - descriptive names like `Person` or `knows`. In Microsoft Fabric, graph edges always have exactly one label.
+- **Properties** - name-value pairs that store data about the element (such as `firstName: "Alice"` or `birthday: "19730108"`).
 
 ### How graphs are structured
 
-Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters—a `Person` who `follows` another `Person` creates a directed relationship.
+Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters - a `Person` who `follows` another `Person` creates a directed relationship.
 
 > [!NOTE]
 > Graph in Microsoft Fabric currently doesn't support undirected edges.
@@ -109,7 +109,7 @@ Property graphs as supported in Microsoft Fabric are always well-formed, meaning
 
 ### Graph models and graph types
 
-The structure of a graph in Microsoft Fabric is described by its **graph model**, which acts like a database schema for your application domain. Graph models define:
+The **graph model** describes the structure of a graph in Microsoft Fabric. It acts like a database schema for your application domain. Graph models define:
 
 - Which nodes and edges can exist
 - What labels and properties they can have
@@ -117,17 +117,17 @@ The structure of a graph in Microsoft Fabric is described by its **graph model**
 
 Graph models also ensure data integrity through constraints, especially **node key constraints** that specify which properties uniquely identify each node.
 
-> [!NOTE] 
-> Graph models can be specified using GQL standard syntax, in which case they're called [graph types](gql-graph-types.md).
+> [!NOTE]
+> You can specify graph models by using GQL standard syntax. In this case, they're called [graph types](gql-graph-types.md).
 
 ## A practical example: social network
 
-Throughout this documentation, we use a social network example to illustrate GQL concepts. Understanding this domain helps you follow the examples and apply similar patterns to your own data.
+Throughout this documentation, a social network example illustrates GQL concepts. Understanding this domain helps you follow the examples and apply similar patterns to your own data.
 
 :::image type="content" source="./media/gql/schema-example.png" alt-text="Diagram showing the social network schema." lightbox="./media/gql/schema-example.png":::
 
-> [!NOTE] 
-> The social network is example is derived from the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by the [GDC (Graph Data Council)](https://ldbcouncil.org/).
+> [!NOTE]
+> The social network example is derived from the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by the [GDC (Graph Data Council)](https://ldbcouncil.org/).
 > See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
 
 ### The social network entities
@@ -137,15 +137,18 @@ Our social network includes these main kinds of nodes, representing entities of 
 **People** have personal information like names, birthdays, and genders. They live in cities and form social connections.
 
 **Places** form a geographic hierarchy:
+
 - **Cities** like "New York" or "London"  
 - **Countries/regions** like "United States" or "United Kingdom"
 - **Continents** like "North America" or "Europe"
 
 **Organizations** where people spend time:
+
 - **Universities** where people study
 - **Companies** where people work
 
 **Content and discussions:**
+
 - **Forums** with titles that contain posts
 - **Posts** with content, language, and optional images
 - **Comments** that reply to posts or other comments
@@ -154,13 +157,14 @@ Our social network includes these main kinds of nodes, representing entities of 
 ### How everything connects
 
 The connections between entities make the network interesting:
-- People know each other (friendships, `:knows`)
-- People work at companies (`:workAt`) or study at universities (`:studyAt`)
-- People create posts and comments (`:hasCreator`)
-- People like posts and comments (`:likes`)
-- Posts, Forums, Comments can have tags (`:hasTag`)
-- People have interests in specific tags (`:hasInterest`)
-- Forums contain posts (`:containerOf`) and have members (`:hasMember`) and moderators (`:hasModerator`)
+
+- People know each other (friendships, `:knows`).
+- People work at companies (`:workAt`) or study at universities (`:studyAt`).
+- People create posts and comments (`:hasCreator`).
+- People like posts and comments (`:likes`).
+- Posts, forums, and comments can have tags (`:hasTag`).
+- People have interests in specific tags (`:hasInterest`).
+- Forums contain posts (`:containerOf`) and have members (`:hasMember`) and moderators (`:hasModerator`).
 
 Graph edges represent domain relationships. This rich network creates many opportunities for interesting queries and analysis.
 
@@ -173,7 +177,7 @@ Now that you understand graph basics, let's see how to query graph data using GQ
 
 ### Start simple: find all people
 
-Let's begin with the most basic query possible, find the names (first name, last name) of all the people (`:Person`s) in the graph.
+Begin with the most basic query possible. Find the names (first name, last name) of all the people (`:Person`s) in the graph.
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -183,12 +187,12 @@ RETURN p.firstName, p.lastName
 
 This query is executed as follows:
 
-1. **`MATCH`** finds all nodes labeled `Person`
-2. **`RETURN`** shows their first and last names
+1. **`MATCH`** finds all nodes labeled `Person`.
+1. **`RETURN`** shows their first and last names.
 
 ### Add filtering: find specific people
 
-Now let's find people with specific characteristics, in this case, everyone named Alice and show their names and birthdays. 
+Now find people with specific characteristics. In this case, find everyone named Alice and show their names and birthdays.
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -199,9 +203,9 @@ RETURN p.firstName, p.lastName, p.birthday
 
 This query is executed as follows:
 
-1. **`MATCH`** finds all nodes (p) labeled Person 
-2. **`FILTER`** nodes (p) whose first name is Alice 
-3. **`RETURN`** shows their first, last name and birthday 
+1. **`MATCH`** finds all nodes (p) labeled Person.
+2. **`FILTER`** nodes (p) whose first name is Alice.
+3. **`RETURN`** shows their first, last name and birthday.
 
 ### Basic query structure
 
@@ -220,44 +224,41 @@ RETURN count(*) AS same_age_friends
 This query is executed as follows:
 
 1. **`MATCH`** finds all pairs of `Person` nodes that know each other
-2. **`FILTER`** keeps only the pairs where both people have the same birthday
-3. **`RETURN`** counts how many such friend pairs exist
+1. **`FILTER`** keeps only the pairs where both people have the same birthday
+1. **`RETURN`** counts how many such friend pairs exist
 
 > [!TIP]
-> Filtering can also be performed directly as part of a pattern by appending a `WHERE` clause.
-> For example, `MATCH (n:Person WHERE n.age > 23)` will only match `Person` nodes whose `age` property is greater than 23.
+> You can also perform filtering directly as part of a pattern by appending a `WHERE` clause. For example, `MATCH (n:Person WHERE n.age > 23)` only matches `Person` nodes whose `age` property is greater than 23.
 
-> [!NOTE]
-> GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
+GQL supports C-style `//` line comments, SQL-style `--` line comments, and C-style `/* */` block comments.
 
 ### Common statements
 
-* [**`MATCH`**](#match-statement): Identifies the graph pattern to search for—this is where you define the structure of the data you're interested in. 
-* [**`LET`**](#let-statement): Assigns new variables or computed values based on matched data—adds derived columns to the result. 
-* [**`FILTER`**](#filter-statement): Narrows down the results by applying conditions—removes rows that don’t meet the criteria. 
-* [**`ORDER BY`**](#order-by-statement): Sorts the filtered data—helps organize the output based on one or more fields. 
-* [**`OFFSET`**](#offset-and-limit-statements) and [**`LIMIT`**](#offset-and-limit-statements): Restrict the number of rows returned—useful for pagination or top-k queries. 
-* [**`RETURN`**](#return-basic-result-projection): Specifies the final output—defines what data should be included in the result set and performs aggregation.
+- [**`MATCH`**](#match-statement): Identifies the graph pattern to search for—this is where you define the structure of the data you're interested in.
+- [**`LET`**](#let-statement): Assigns new variables or computed values based on matched data—adds derived columns to the result.
+- [**`FILTER`**](#filter-statement): Narrows down the results by applying conditions—removes rows that don’t meet the criteria.
+- [**`ORDER BY`**](#order-by-statement): Sorts the filtered data—helps organize the output based on one or more fields.
+- [**`OFFSET`**](#offset-and-limit-statements) and [**`LIMIT`**](#offset-and-limit-statements): Restrict the number of rows returned—useful for pagination or top-k queries.
+- [**`RETURN`**](#return-basic-result-projection): Specifies the final output—defines what data should be included in the result set and performs aggregation.
 
 ### How statements work together
 
-GQL statements form a pipeline, where each statement processes the output of the previous one. 
-This sequential execution makes queries easy to read and debug because the execution order matches the reading order.
+GQL statements form a pipeline, where each statement processes the output of the previous one. This sequential execution makes queries easy to read and debug because the execution order matches the reading order.
 
 Key points:
 
-* Statements effectively execute sequentially.
-* Each statement transforms data and passes it to the next.
-* This creates a clear, predictable data flow that simplifies complex queries.
+- Statements effectively execute sequentially.
+- Each statement transforms data and passes it to the next.
+- This creates a clear, predictable data flow that simplifies complex queries.
 
 > [!IMPORTANT]
 > Internally, execution of statements can be re-ordered and individual statements can be executed in parallel
 > by Microsoft Fabric to maximize performance.
 > However, this will not impact correctness of results.  
 
-**Example**
+#### Example of statement composition
 
-The following GQL query finds the first 10 people working at companies with "Air" in their name, sorts them by full name, and returns their full name along with the name of their companies. 
+The following GQL query finds the first 10 people working at companies with "Air" in their name, sorts them by full name, and returns their full name along with the name of their companies.
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -273,39 +274,42 @@ RETURN fullName, c.name AS companyName            -- Input: top 10 rows table
 
 This query is executed as follows:
 
-1. **`MATCH`** finds people who work at companies with "Air" in their name
-2. **`LET`** creates full names by combining first and family names 
-3. **`FILTER`** keeps only Contoso employees 
-4. **`ORDER BY`** sorts by full name 
-5. **`LIMIT`** takes the first 10 results 
-6. **`RETURN`** returns names and company locations 
+1. **`MATCH`** finds people who work at companies with "Air" in their name.
+2. **`LET`** creates full names by combining first and family names.
+3. **`FILTER`** keeps only Contoso employees.
+4. **`ORDER BY`** sorts by full name.
+5. **`LIMIT`** takes the first 10 results.
+6. **`RETURN`** returns names and company locations.
 
 ### Variables connect your data
 
-Variables (like `p`, `c`, and `fullName` in the previous examples) carry data between statements. When you reuse a variable name, GQL automatically ensures it refers to the same data, creating powerful join conditions. Variables are sometimes also called binding variables.
+Variables, such as `p`, `c`, and `fullName` in the previous examples, carry data between statements. When you reuse a variable name, GQL automatically ensures it refers to the same data, creating powerful join conditions. Variables are sometimes also called binding variables.
 
-Variables can be categorized in different ways:
+You can categorize variables in different ways:
 
 **By binding source:**
+
 - **Pattern variables** - bound by matching [graph patterns](gql-graph-patterns.md)  
 - **Regular variables** - bound by other language constructs
 
 **Pattern variable types:**
+
 - **Element variables** - bind to graph element reference values
   - **Node variables** - bind to individual nodes
   - **Edge variables** - bind to individual edges
 - **Path variables** - bind to path values representing matched paths
 
 **By reference degree:**
+
 - **Singleton variables** - bind to individual element reference values from patterns
-- **Group variables** - bind to lists of element reference values from variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques)) 
+- **Group variables** - bind to lists of element reference values from variable-length patterns (see [Advanced Aggregation Techniques](#advanced-aggregation-techniques))
 
 ## Execution outcomes and results
 
 When you run a query, you get back an *execution outcome* that consists of:
 
 - **An (optional) result table** with the data from your `RETURN` statement.
-- **Status information** showing whether the query succeeded or not.
+- **Status information** that shows whether the query succeeded or not.
 
 ### Result tables
 
@@ -321,11 +325,9 @@ and the actual rows themselves.
 
 ### Status information
 
-Various noteworthy conditions (such as errors or warnings) are detected during the execution of the query. 
-Each such condition is recorded by a status object in the status information of the execution outcome.
+Various noteworthy conditions (such as errors or warnings) are detected during the execution of the query. Each such condition is recorded by a status object in the status information of the execution outcome.
 
-The status information consists of a primary status object and a (possibly empty) list of additional status objects.
-The primary status object is always present and indicates whether query execution was successful or failed.
+The status information consists of a primary status object and a (possibly empty) list of additional status objects. The primary status object is always present and indicates whether query execution was successful or failed.
 
 Every status object includes a 5-digit status code (called GQLSTATUS) that identifies the recorded condition
 as well as a message that describes it.
@@ -340,17 +342,14 @@ as well as a message that describes it.
 
 Other status codes indicate further errors or warnings that were detected during query execution.
 
+> [!IMPORTANT]
+> In application code, always rely on status codes to test for certain conditions.
+> Status codes are guaranteed to be stable and their general meaning will not change in the future. Do not test for the contents of messages, as the concrete message reported for a status code can change in the future depending on the query or even between executions of the same query.
+
+Additionally, status objects can contain an underlying cause status object and a diagnostic record with further information characterizing the recorded condition.
+
 > [!div class="nextstepaction"]
 > [View complete GQLSTATUS codes reference](gql-reference-status-codes.md)
-
-> [!IMPORTANT] 
-> In application code, always rely on status codes to test for certain conditions.
-> Status codes are guaranteed to be stable and their general meaning will not change in the future.
-> Do not test for the contents of messages, as the concrete message reported for a status code can change 
-> in the future depending on the query or even between executions of the same query.
-
-Additionally, status objects can contain an underlying cause status object and a diagnostic record
-with further information characterizing the recorded condition.
 
 ## Essential concepts and statements
 
@@ -398,7 +397,7 @@ WHERE p.birthday > 19950101 AND f.birthday > 19950101
 ```
 
 > [!NOTE]
-> Graph models with multiple element labels are not yet supported (known issue).
+> Graph models with multiple element labels aren't yet supported (known issue).
 
 Label expressions let you match different kinds of nodes in a single pattern, making your queries more flexible.
 
@@ -413,7 +412,7 @@ Label expressions let you match different kinds of nodes in a single pattern, ma
 The reuse of variable `c` ensures both people work at the **same** company, creating an automatic join constraint. This pattern is a key pattern for expressing "same entity" relationships.
 
 > [!IMPORTANT]
-> **Critical insight**: Variable reuse in patterns creates structural constraints. This technique is how you express complex graph relationships like "friends who work at the same company" or "people in the same city."
+> **Critical insight**: Variable reuse in patterns creates structural constraints. Use this technique to express complex graph relationships like "friends who work at the same company" or "people in the same city."
 
 **Pattern-level filtering with WHERE:**
 
@@ -505,7 +504,7 @@ GQL provides specific statement types that work together to process your graph d
 MATCH <graph pattern>, <graph pattern>, ... [ WHERE <predicate> ]
 ```
 
-The `MATCH` statement takes input data and finds graph patterns, joining input variables with pattern variables and outputting all matched combinations.
+The `MATCH` statement takes input data and finds graph patterns. It joins input variables with pattern variables and outputs all matched combinations.
 
 **Input and output variables:**
 
@@ -516,7 +515,7 @@ The `MATCH` statement takes input data and finds graph patterns, joining input v
 MATCH (p:Person)-[:workAt]->(c:Company)
 ```
 
-**Statement-level filtering with WHERE:**
+**Statement-level filtering by using WHERE:**
 
 <!-- GQL Statement: Checked 2025-11-17 -->
 ```gql
@@ -524,9 +523,9 @@ MATCH (p:Person)-[:workAt]->(c:Company)
 MATCH (p:Person)-[:workAt]->(c:Company) WHERE p.lastName = c.name
 ```
 
-All matches can be post-filtered using `WHERE`, avoiding a separate `FILTER` statement.
+You can post-filter all matches by using `WHERE`. This approach avoids a separate `FILTER` statement.
 
-**Joining with input variables:**
+**Joining by using input variables:**
 
 When `MATCH` isn't the first statement, it joins input data with pattern matches:
 
@@ -539,15 +538,14 @@ MATCH (p:Person)-[r:workAt]->(targetCompany)
 ```
 
 > [!IMPORTANT]
-> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
-> See the article on [current limitations](limitations.md). 
+> Graph in Microsoft Fabric doesn't yet support arbitrary statement composition. See the article on [current limitations](limitations.md).
 
 **Key joining behaviors:**
 
 How `MATCH` handles data joining:
 
-- **Variable equality**: Input variables join with pattern variables using equality matching
-- **Inner join**: Input rows without pattern matches are discarded (no left/right joins)
+- **Variable equality**: Input variables join with pattern variables by using equality matching
+- **Inner join**: Input rows without pattern matches are discarded (no left or right joins)
 - **Filtering order**: Statement-level `WHERE` filters after pattern matching completes
 - **Pattern connectivity**: Multiple patterns must share at least one variable for proper joining
 - **Performance**: Shared variables create efficient join constraints
@@ -683,7 +681,7 @@ Understanding how `ORDER BY` works:
 <!-- GQL Query: Checked 2025-11-17 -->
 > [!CAUTION]
 > The sort order established by `ORDER BY` is only visible to the *immediately* following statement.
-> Hence, `ORDER BY` followed by `RETURN *` does NOT produce an ordered result. 
+> Hence, `ORDER BY` followed by `RETURN *` does NOT produce an ordered result.
 >
 > Compare:
 >
@@ -709,7 +707,7 @@ Understanding how `ORDER BY` works:
 > /* final result _IS_ guaranteed to be ordered here              */
 > ```
 >
-> This has immediate consequences for "Top-k" queries:
+> This difference has immediate consequences for "Top-k" queries:
 > `LIMIT` must always follow the `ORDER BY` statement that established
 > the intended sort order.
 
@@ -781,7 +779,7 @@ ORDER BY birth_year ASC
 LIMIT 10
 ```
 
-**Duplicate handling with DISTINCT:**
+**Duplicate handling by using DISTINCT:**
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -845,13 +843,13 @@ LIMIT 10
 ```
 
 > [!NOTE]
-> For advanced aggregation techniques including horizontal aggregation over variable-length patterns, see [Advanced Aggregation Techniques](#advanced-aggregation-techniques).
+> For advanced aggregation techniques, including horizontal aggregation over variable-length patterns, see [Advanced Aggregation Techniques](#advanced-aggregation-techniques).
 
 ### Data types: working with values
 
 GQL supports rich data types for storing and manipulating different kinds of information in your graph.
 
-**Basic value types:**
+#### Basic value types
 
 - **Numbers**: `INT64`, `UINT64`, `DOUBLE` for calculations and measurements
 - **Text**: `STRING` for names, descriptions, and textual data
@@ -861,11 +859,11 @@ GQL supports rich data types for storing and manipulating different kinds of inf
 - **Graph elements**: `NODE` and `EDGE` for referencing graph data
 
 > [!IMPORTANT]
-> Certain value types are not supported as the types of property values.
-> In particular, all values involving graph element reference values cannot be used as property values
+> You can't use certain value types as the types of property values.
+> In particular, you can't use any values involving graph element reference values as property values
 > (such as lists of nodes or paths).
 
-**Example literals:**
+#### Example literals
 
 ```gql
 42                                     -- Integer literal
@@ -875,7 +873,7 @@ ZONED_DATETIME('2024-01-15T10:30:00Z') -- DateTime with timezone literakl
 [1, 2, 3]                              -- Literal list of integers
 ```
 
-**Critical null handling patterns:**
+#### Critical null handling patterns
 
 ```gql
 -- Equality predicates with NULL always returns UNKNOWN
@@ -890,7 +888,7 @@ p.nickname IS NOT NULL                -- Evaluates to TRUE if nickname has a val
 coalesce(p.nickname, p.firstName, '???')  -- Evaluates to first non-null value
 ```
 
-**Three-valued logic implications:**
+#### Three-valued logic implications
 
 ```gql
 -- In FILTER statements, only TRUE values pass through
@@ -911,9 +909,9 @@ FILTER p.birthday < 19980101 OR p.birthday IS NULL -- Includes null birthdays
 
 ### Expressions: transforming and analyzing data
 
-Expressions let you calculate, compare, and transform data within your queries. They're similar to expressions in SQL but have extra features for the handling of graph data.
+Expressions let you calculate, compare, and transform data within your queries. They're similar to expressions in SQL but have extra features for handling graph data.
 
-**Common expression types:**
+#### Common expression types
 
 ```gql
 p.birthday < 19980101   -- Birth year comparison  
@@ -923,7 +921,7 @@ p.firstName IN ['Alice', 'Bob']                -- List membership
 coalesce(p.firstName, p.lastName)              -- Null handling
 ```
 
-**Complex predicate composition:**
+#### Complex predicate composition
 
 ```gql
 -- Combine conditions with proper precedence
@@ -934,7 +932,7 @@ FILTER (p.birthday > 19560101 AND p.birthday < 20061231)
 FILTER p.gender = 'female' AND (p.firstName STARTS WITH 'A' OR p.id > 1000)
 ```
 
-**String pattern matching:**
+#### String pattern matching
 
 ```gql
 -- Pattern matching with different operators
@@ -946,7 +944,7 @@ p.lastName ENDS WITH 'son'           -- Suffix matching
 upper(p.firstName) = 'ALICE'         -- Convert to uppercase for comparison
 ```
 
-**Built-in functions by category:**
+#### Built-in functions by category
 
 GQL provides these function categories for different data processing needs:
 
@@ -955,22 +953,21 @@ GQL provides these function categories for different data processing needs:
 - **Graph functions**: `nodes()`, `edges()`, `labels()` for analyzing graph structures
 - **General functions**: `coalesce()` for handling null values gracefully
 
-**Operator precedence for complex expressions:**
+#### Operator precedence for complex expressions
 
 1. Property access (`.`)
-2. Multiplication/Division (`*`, `/`)  
-3. Addition/Subtraction (`+`, `-`)
-4. Comparison (`=`, `<>`, `<`, `>`, `<=`, `>=`)
-5. Logical negation (`NOT`)
-6. Logical conjunction (`AND`)
-7. Logical disjunction (`OR`)
+1. Multiplication and division (`*`, `/`)  
+1. Addition and subtraction (`+`, `-`)
+1. Comparison (`=`, `<>`, `<`, `>`, `<=`, `>=`)
+1. Logical negation (`NOT`)
+1. Logical conjunction (`AND`)
+1. Logical disjunction (`OR`)
 
-In above list, an operator with lower number "binds tighter" than an operator with a higher number.
-Example: `NOT n.prop OR m.prop` is `(NOT n.prop) OR m.prop` but not `NOT (n.prop OR m.prop) 
+In the preceding list, an operator with a lower number "binds tighter" than an operator with a higher number.
+For example, `NOT n.prop OR m.prop` is `(NOT n.prop) OR m.prop` but not `NOT (n.prop OR m.prop).`
 
 > [!TIP]
-> Use parentheses to make precedence explicit. Complex expressions are easier to read and debug 
-> when grouping is clear.
+> Use parentheses to make precedence explicit. Complex expressions are easier to read and debug when grouping is clear.
 
 > [!div class="nextstepaction"]
 > [Learn comprehensive expression syntax and all built-in functions](gql-expressions.md)
@@ -982,12 +979,11 @@ This section covers sophisticated patterns and techniques for building complex, 
 ### Complex multi-statement composition
 
 > [!IMPORTANT]
-> Graph in Microsoft Fabric does not yet support arbitrary statement composition.
-> See the article on [current limitations](limitations.md). 
+> Graph in Microsoft Fabric doesn't yet support arbitrary statement composition. See the article on [current limitations](limitations.md).
 
 Understanding how to compose complex queries efficiently is crucial for advanced graph querying.
 
-**Multi-step pattern progression:**
+#### Multi-step pattern progression
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -1004,7 +1000,7 @@ ORDER BY avgBirthday DESC
 
 This query progressively builds complexity: find companies, their employees, employee locations, filter companies with employees born before 1985, calculate average birthday, and summarize and sort results.
 
-**Use of horizontal aggregation:**
+#### Use of horizontal aggregation
 
 <!-- GQL Query: Broken 2025-11-17 Lack of support for nested aggregates -->
 ```gql
@@ -1017,13 +1013,13 @@ ORDER BY minDistance DESC
 ```
 
 > [!NOTE]
-> This query is not yet supported (known issue).
+> This query isn't yet supported (known issue).
 
 ### Variable scope and advanced flow control
 
 Variables connect data across query statements and enable complex graph traversals. Understanding advanced scope rules helps you write sophisticated multi-statement queries.
 
-**Variable binding and scoping patterns:**
+#### Variable binding and scoping patterns
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -1034,7 +1030,7 @@ FILTER fullName CONTAINS 'Smith'                    -- Filter for fullNames with
 RETURN p.id, fullName                               -- Only return p.id and fullName (p is dropped from scope) 
 ```
 
-**Variable reuse for joins across statements:**
+#### Variable reuse for joins across statements
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -1045,7 +1041,7 @@ MATCH (p)-[:knows]->(friend:Person)             -- Same p: their social connecti
 RETURN *
 ```
 
-**Critical scoping rules and limitations:**
+#### Critical scoping rules and limitations
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -1072,7 +1068,7 @@ LET greeting = 'Hello, ' || name     -- Works: name now available
 RETURN *
 ```
 
-**Variable visibility in complex queries:**
+#### Variable visibility in complex queries
 
 <!-- GQL Query: Checked 2025-11-17 -->
 ```gql
@@ -1085,9 +1081,9 @@ RETURN p.firstName AS manager, e.firstName AS friend, gender
 ```
 
 > [!CAUTION]
-> Variables in the same statement can't reference each other (except in graph patterns). Use separate statements for dependent variable creation.
+> Variables in the same statement can't reference each other, except in graph patterns. Use separate statements for dependent variable creation.
 
-### Advanced Aggregation Techniques
+### Advanced aggregation techniques
 
 GQL supports two distinct types of aggregation for analyzing data across groups and collections: vertical aggregation with `GROUP BY` and horizontal aggregation over variable-length patterns.
 
@@ -1122,12 +1118,13 @@ RETURN p.firstName || ' ' || p.lastName AS person_name,
 ```
 
 > [!NOTE]
-> This query is not yet supported (known issue).
+> This query isn't yet supported (known issue).
 
-**Key differences:**
-- **Vertical aggregation** summarizes across rows - or - groups rows and summarizes across rows in each group
-- **Horizontal aggregation** summarizes elements within individual edge collections
-- Group list variables only come from variable-length edge patterns
+Key differences between vertical and horizontal aggregation are:
+
+- **Vertical aggregation** summarizes across rows or groups rows and summarizes across rows in each group.
+- **Horizontal aggregation** summarizes elements within individual edge collections.
+- Group list variables only come from variable-length edge patterns.
 
 #### Variable-length edge binding contexts
 
@@ -1155,11 +1152,14 @@ RETURN size(e) AS num_edges,                    -- Number of edges in path
 ```
 
 > [!NOTE]
-> This query is not yet supported (known issue).
+> This query isn't yet supported (known issue).
 
 #### Combining vertical and horizontal aggregation
 
 You can combine both aggregation types in sophisticated analysis patterns:
+
+> [!NOTE]
+> This query isn't yet supported (known issue).
 
 <!-- GQL Query: Broken 2025-11-17 Nested aggregation -->
 ```gql
@@ -1174,9 +1174,6 @@ RETURN c1.name AS city1,
        avg(avg(e.creationDate)) AS avg_connection_age -- Horizontal then vertical: connection ages
 GROUP BY city1, city2
 ```
-
-> [!NOTE]
-> This query is not yet supported (known issue).
 
 > [!TIP]
 > Horizontal aggregation always takes precedence over vertical aggregation. To convert a group list into a regular list, use `collect_list(edges)`.
@@ -1220,12 +1217,12 @@ See the [GQL status codes reference](gql-reference-status-codes.md) for the comp
 
 ### Reserved words
 
-GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. 
-See the [GQL reserved words reference](gql-reference-reserved-terms.md) for the complete list.
+GQL reserves certain keywords that you can't use as identifiers like variables, property names, or label names. See the [GQL reserved words reference](gql-reference-reserved-terms.md) for the complete list.
 
 If you need to use reserved words as identifiers, escape them with backticks: `` `match` ``, `` `return` ``.
 
 To avoid escaping reserved words, use this naming convention:
+
 - For single-word identifiers, append an underscore: `:Product_`
 - For multi-word identifiers, use camelCase or PascalCase: `:MyEntity`, `:hasAttribute`, `textColor`
 
@@ -1236,12 +1233,14 @@ Now that you understand GQL fundamentals, here's your recommended learning path:
 ### Continue building your GQL skills
 
 **For beginners:**
+
 - **Try the quickstart** - Follow our [hands-on tutorial](quickstart.md) for practical experience
 - **Practice basic queries** - Try the examples from this guide with your own data
 - **Learn graph patterns** - Master the [comprehensive pattern syntax](gql-graph-patterns.md)
 - **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
 
 **For experienced users:**
+
 - **Advanced expressions** - Master [GQL expressions and functions](gql-expressions.md)
 - **Schema design** - Learn [GQL graph types](gql-graph-types.md) and constraints
 - **Explore data types** - Understand [GQL values and value types](gql-values-and-value-types.md)
@@ -1249,6 +1248,7 @@ Now that you understand GQL fundamentals, here's your recommended learning path:
 ### Reference materials
 
 Keep these references handy for quick lookups:
+
 - **[GQL quick reference](gql-reference-abridged.md)** - Syntax quick reference
 - **[GQL status codes](gql-reference-status-codes.md)** - Complete error code reference  
 - **[GQL reserved words](gql-reference-reserved-terms.md)** - Complete list of reserved keywords
@@ -1256,6 +1256,7 @@ Keep these references handy for quick lookups:
 ### Explore Microsoft Fabric
 
 **Learn the platform:**
+
 - **[Graph data models](graph-data-models.md)** - Understanding graph concepts and modeling
 - **[Graph vs relational databases](graph-relational-databases.md)** - Choose the right approach
 - **[Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)** - Get hands-on experience
@@ -1263,7 +1264,7 @@ Keep these references handy for quick lookups:
 
 ### Get involved
 
-- **Share feedback** - Help improve our documentation and tools
+- **Share feedback** - Help improve the documentation and tools
 - **Join the community** - Connect with other graph database practitioners
 - **Stay updated** - Follow Microsoft Fabric announcements for new features
 
@@ -1273,19 +1274,22 @@ Keep these references handy for quick lookups:
 ## Related content
 
 **Further details on key topics:**
-- [Social network schema example](gql-schema-example.md) - Complete working example of graph schema
-- [GQL graph patterns](gql-graph-patterns.md) - Comprehensive pattern syntax and advanced matching techniques
-- [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions
-- [GQL graph types](gql-graph-types.md) - Graph types and constraints
-- [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling
+
+- [Social network schema example](gql-schema-example.md) - Complete working example of graph schema.
+- [GQL graph patterns](gql-graph-patterns.md) - Comprehensive pattern syntax and advanced matching techniques.
+- [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions.
+- [GQL graph types](gql-graph-types.md) - Graph types and constraints.
+- [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling.
 
 **Quick references:**
-- [GQL abridged reference](gql-reference-abridged.md) - Syntax quick reference
-- [GQL status codes](gql-reference-status-codes.md) - Complete error code reference  
-- [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords
+
+- [GQL abridged reference](gql-reference-abridged.md) - Syntax quick reference.
+- [GQL status codes](gql-reference-status-codes.md) - Complete error code reference.  
+- [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords.
 
 **Graph in Microsoft Fabric:**
-- [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling
-- [Graph and relational databases](graph-relational-databases.md) - Differences and when to use each
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+
+- [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling.
+- [Graph and relational databases](graph-relational-databases.md) - Differences and when to use each.
+- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial).
+- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials).

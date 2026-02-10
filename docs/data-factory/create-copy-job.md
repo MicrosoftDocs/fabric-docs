@@ -1,8 +1,7 @@
 ---
 title: How to create a Copy job in Data Factory
 description: This article guides you through how to create a copy job, execute it, and view the results.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 06/19/2025
 ms.search.form: copy-job-tutorials

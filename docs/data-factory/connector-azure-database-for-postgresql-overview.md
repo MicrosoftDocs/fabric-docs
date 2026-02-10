@@ -1,8 +1,7 @@
 ---
 title: Azure Database for PostgreSQL connector overview
 description: This article provides the overview of connecting to and using Azure Database for PostgreSQL data in Data Factory.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 05/08/2025
 ms.custom:

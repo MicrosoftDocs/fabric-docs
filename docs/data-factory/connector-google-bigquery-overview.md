@@ -1,8 +1,6 @@
 ---
 title: Google BigQuery connector overview
 description: This article provides an overview of the supported capabilities of the Google BigQuery connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 11/20/2025
 ms.custom:

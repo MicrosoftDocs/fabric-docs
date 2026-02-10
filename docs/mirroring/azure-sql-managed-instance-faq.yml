@@ -2,8 +2,6 @@
 metadata:
   title: "Frequently Asked Questions for Mirroring Azure SQL Managed Instance"
   description: This article answers frequently asked questions about Mirroring Azure SQL Database in Microsoft Fabric.
-  author: whhender
-  ms.author: whhender
   ms.reviewer: lazartimotic, jingwang, nzagorac 
   ms.service: fabric
   ms.subservice: data-warehouse

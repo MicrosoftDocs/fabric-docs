@@ -25,13 +25,6 @@ While this article includes guidance for using Iceberg tables with Snowflake, th
 
 To set up the automatic conversion and virtualization of tables from Delta Lake format to Iceberg format, follow these steps.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
-1.  Enable automatic table virtualization of Delta Lake tables to the Iceberg format by turning on the delegated OneLake setting named **Enable Delta Lake to Apache Iceberg table format virtualization** in your workspace settings.
-
-    > [!NOTE]
-    > This setting controls a feature that is currently in preview. This setting will be removed in a future update when the feature is enabled for all users and is no longer in preview.
-
 1.	Make sure your Delta Lake table, or a shortcut to it, is located in the `Tables` section of your data item. The data item may be a lakehouse or another Fabric data item.
 
     > [!TIP]
