@@ -1,8 +1,7 @@
 ---
 title: Configure Azure Data Lake Storage Gen2 in a copy activity
 description: This article explains how to copy data using Azure Data Lake Storage Gen2.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/16/2024
 ms.custom: 

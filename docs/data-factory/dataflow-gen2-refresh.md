@@ -5,7 +5,7 @@ author: Luitwieler
 ms.author: jeluitwi
 ms.service: fabric
 ms.topic: concept-article #Required; leave this attribute/value as-is.
-ms.date: 12/18/2024
+ms.date: 2/4/2026
 ms.custom: dataflows
 ---
 
@@ -22,6 +22,7 @@ A dataflow refresh can be triggered in one of two ways, either on-demand or by s
 Here are the prerequisites for refreshing a dataflow:
 
 - [Quickstart: Quickstart: Create your first dataflow to get and transform data](create-first-dataflow-gen2.md)
+- User who triggers the refresh must have member (or higher) access to the workspace, and access to all connections used by the dataflow  
 
 ## On-demand refresh
 

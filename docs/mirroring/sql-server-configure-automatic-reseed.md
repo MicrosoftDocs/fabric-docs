@@ -1,8 +1,6 @@
 ---
 title: "Configure automatic reseed for Fabric Mirrored Databases from SQL Server"
 description: Configure automatic reseed for Fabric mirrored databases from SQL Server.
-author: whhender
-ms.author: whhender
 ms.reviewer: ajayj, anagha-todalbagi, wiassaf
 ms.date: 10/15/2025
 ms.topic: troubleshooting

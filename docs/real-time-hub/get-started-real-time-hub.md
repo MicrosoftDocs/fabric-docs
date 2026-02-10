@@ -6,12 +6,12 @@ author: mystina
 ms.author: majia
 ms.topic: quickstart
 ms.custom: null
-ms.date: 01/12/2026
+ms.date: 02/03/2026
 ---
 
 # Get started with Fabric Real-Time hub
 
-Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
+Real-Time hub is the central place to discover and manage all streaming data across your organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manage it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
 
 This article provides guidance on getting started with Fabric Real-Time hub.
 
@@ -124,7 +124,7 @@ Here are the actions available on a KQL table from the **All data streams** page
 
 You can connect to data from both inside and outside of Fabric in a mere few steps within Fabric Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the Add data experience allows you to connect to a wide range of event sources directly from Real-Time hub.
 
-It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching the Change Data Capture (CDC) streams. Connectivity to notification sources and discrete events is also included, which enables access to notification events from Azure and other clouds solutions including Amazon Web Services and Google Cloud Platform.  
+It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching Change Data Capture (CDC) streams, which track and stream changes made to your databases in real time. Connectivity to notification sources and discrete events is also included, which enables access to notification events from Azure and other cloud solutions including Amazon Web Services and Google Cloud Platform.  
 
 There are two ways you can get to the **Data sources** page:
 

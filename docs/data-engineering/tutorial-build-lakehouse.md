@@ -8,13 +8,18 @@ ms.topic: tutorial
 ms.custom:
 - FY25Q1-Linter
 - sfi-image-nochange
-ms.date: 10/31/2025
+ms.date: 02/07/2026
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 
 # Lakehouse tutorial: Create a lakehouse, ingest sample data, and build a report
 
-In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports. Here's a checklist of the steps you complete:
+In this tutorial, you build a lakehouse, ingest sample data into the Delta table, apply transformation where required, and then create reports.
+
+> [!TIP]
+> This tutorial is part of a series. After you complete this tutorial, continue to [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md) to build a complete enterprise lakehouse using Data Factory pipelines, Spark notebooks, and advanced reporting techniques.
+
+Here's a checklist of the steps you complete in this tutorial:
 
 > [!div class="checklist"]
 > * [Create a lakehouse in Microsoft Fabric](#create-a-lakehouse)
@@ -28,7 +33,7 @@ If you don't have Microsoft Fabric, sign up for a free [trial capacity](../funda
 ## Prerequisites
 
 * Before you create a lakehouse, you must [create a Fabric workspace](tutorial-lakehouse-get-started.md).
-* Before you ingest a CSV file, you must have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try).
+* Before you ingest a CSV file, you must have OneDrive configured. If you don't have OneDrive configured, sign up for the Microsoft 365 free trial: [Free Trial - Try Microsoft 365 for a month](https://www.microsoft.com/microsoft-365/try). For setup instructions, see [Set up OneDrive](https://support.microsoft.com/en-us/office/setup-onedrive-for-microsoft-365-for-business-937e3ac8-b396-4a70-a561-6eaa479a4720).
 
 ### Why do I need OneDrive for this tutorial?
 
@@ -64,68 +69,63 @@ In this section, you ingest sample customer data into the lakehouse.
 
 1. Download the *dimension_customer.csv* file from the [Fabric samples repo](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/dimension_customer.csv).
 
-1. In the **Home** tab, under **Get data in your lakehouse**, you see options to load data into the lakehouse. Select **New Dataflow Gen2**.
+1. Select your Lakehouse and go to the **Home** tab.
+
+1. Select **Get data** > **New Dataflow Gen2** to create a new dataflow. You use this dataflow to ingest the sample data into the lakehouse. Alternatively, under **Get data in your lakehouse**, you can select the **New Dataflow Gen2** tile.
 
    :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse." lightbox="media\tutorial-build-lakehouse\load-data-lakehouse-option.png":::
 
-1. In the **Create a dataflow** pane, enter **Customer Dimension Data** in the **Name** field and select **Next**.
+1. In the **New Dataflow Gen2** pane, enter **Customer Dimension Data** in the **Name** field and select **Next**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\create-dataflow-name.png" alt-text="Screenshot of the Create a dataflow pane, showing where to enter the dataflow name." lightbox="media\tutorial-build-lakehouse\create-dataflow-name.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\create-dataflow-name.png" alt-text="Screenshot of the New Dataflow Gen2 pane, showing where to enter the dataflow name." lightbox="media\tutorial-build-lakehouse\create-dataflow-name.png":::
 
-1. On the new dataflow screen, select **Import from a Text/CSV file**.
+1. On the dataflow **Home** tab, select the **Import from a Text/CSV file** tile.
 
-1. On the **Connect to data source** screen, select the **Upload file** radio button. Drag and drop the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
+1. On the **Connect to data source** screen, select the **Upload file** radio button. 
+1. Browse or drag and drop the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file." lightbox="media\tutorial-build-lakehouse\connection-settings-upload.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select the file to upload." lightbox="media\tutorial-build-lakehouse\connection-settings-upload.png":::
 
-1. From the **Preview file data** page, preview the data and select **Create** to proceed and return back to the dataflow canvas.
+1. On the **Preview file data** page you can preview the data. Then select **Create** to proceed and return back to the dataflow canvas.
 
 ## Transform and load data into the lakehouse
 
 In this section, you transform the data based on your business requirements and load it into the lakehouse.
 
-1. In the **Query settings** pane, update the **Name** field to **dimension_customer**.
-
-   > [!NOTE]
-   > Fabric adds a space and number at the end of the table name by default. Table names must be lowercase and must not contain spaces. Rename it appropriately and remove any spaces from the table name.
+1. In the **Query settings** pane, make sure the **Name** field is set to **dimension_customer**. This name is used as the table name in the lakehouse, so it must be lowercase and must not contain spaces.
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
-1. In this tutorial, you associated the customer data with a lakehouse. If you create a dataflow from the lakehouse, the uploaded data is automatically linked to the default lakehouse. If you're creating the dataflow separately, you can optionally associate it with a lakehouse by following these steps:
+1. Because you created the dataflow from the lakehouse, the data destination is automatically set to your lakehouse. You can verify this by checking the **Data destination** in the query settings pane.
 
-   1. From the menu items, select **Add data destination** and select **Lakehouse**. From the **Connect to data destination** screen, sign in to your account if necessary and select **Next**.
-
-   1. Navigate to the **wwilakehouse** in your workspace.
-
-   1. If the **dimension_customer** table doesn't exist, select the **New table** setting and enter the table name **dimension_customer**. If the table already exists, select the **Existing table** setting and choose **dimension_customer** from the list of tables in the object explorer. Select **Next**.
-
-      :::image type="content" source="media\tutorial-build-lakehouse\choose-destination-table.png" alt-text="Screenshot showing how to choose the destination table." lightbox="media\tutorial-build-lakehouse\choose-destination-table.png":::
-
-   1. On the **Choose destination settings** pane, select **Replace** as **Update method**. Select **Save settings** to return to the dataflow canvas.
+   > [!TIP]
+   > If you create a dataflow from the workspace instead of from a lakehouse, you need to manually add a data destination. For more information, see [Dataflow Gen2 default destination](../data-factory/default-destination.md) and [Data destinations and managed settings](../data-factory/dataflow-gen2-data-destinations-and-managed-settings.md).
 
 1. From the dataflow canvas, you can easily transform the data based on your business requirements. For simplicity, we aren't making any changes in this tutorial. To proceed, select **Save and Run** in the tool bar.
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-publish.png" alt-text="Screenshot of the Query setting pane that contains the Publish button." lightbox="media\tutorial-build-lakehouse\query-settings-publish.png":::
 
-1. Return to your workspace and hover over the **Customer Dimension Data** dataflow, select the **...** menu, and then select **Refresh now**. This option runs the data flow and moves data from the source file to lakehouse table. While it's in progress, you see a spinning circle next to the dataflow's name.
+   Wait for the dataflow to finish running. While it's in progress, you see a spinning status indicator.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot showing where to find the Refresh now icon." lightbox="media\tutorial-build-lakehouse\dataflow-refresh-now.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataflow-running.png" alt-text="Screenshot showing the dataflow running status." lightbox="media\tutorial-build-lakehouse\dataflow-running.png":::
 
-1. Once the dataflow is refreshed, select your lakehouse in the top menu bar to view the **dimension_customer** Delta table.
+1. After the dataflow run completes successfully, select your lakehouse in the top menu bar to open it.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\open-lakehouse.png" alt-text="Screenshot of navigation panel from which the lakehouse is opened." lightbox="media\tutorial-build-lakehouse\open-lakehouse.png":::
+1. In the lakehouse explorer, find the **dbo** schema under **Tables**, select the **...** (ellipsis) menu next to it, and then select **Refresh**. This runs the dataflow and loads the data from the source file into the lakehouse table.
 
-1. Select the table to preview its data. You can also use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the **Lakehouse** dropdown menu at the top right of the screen.
+   :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot of the lakehouse explorer, showing where to select the Refresh option." lightbox="media\tutorial-build-lakehouse\dataflow-refresh-now.png":::
+
+1. Once the refresh is complete, expand the **dbo** schema to view the **dimension_customer** Delta table. Select the table to preview its data. 
+
+1. You can use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the dropdown menu at the top right of the screen.
 
    :::image type="content" source="media\tutorial-build-lakehouse\lakehouse-delta-table.png" alt-text="Screenshot of the Delta table, showing where to select SQL analytics endpoint." lightbox="media\tutorial-build-lakehouse\lakehouse-delta-table.png":::
 
-1. Select the **dimension_customer** table to preview its data or select **New SQL query** to write your SQL statements.
+1. Select the **dimension_customer** table to preview its data. To write SQL statements, select **New SQL Query** from the menu or select the **New SQL Query** tile.
 
    :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png" alt-text="Screenshot of the SQL analytics endpoint screen, showing where to select New SQL query." lightbox="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png":::
 
-1. The following sample query aggregates the row count based on the *BuyingGroup* column of the *dimension_customer* table. SQL query files are saved automatically for future reference, and you can rename or delete these files based on your need.
-
-   To run the script, select the **Run** icon at the top of the script file.
+1. Enter the following sample query that aggregates the row count based on the *BuyingGroup* column of the *dimension_customer* table. 
 
    ```sql
    SELECT BuyingGroup, Count(*) AS Total
@@ -133,23 +133,45 @@ In this section, you transform the data based on your business requirements and 
    GROUP BY BuyingGroup
    ```
 
+    > [!NOTE]
+    > SQL query files are saved automatically for future reference, and you can rename or delete these files based on your need.
+
+1. To run the script, select the **Run** icon at the top of the script file. 
+
+   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-sql-run-result.png" alt-text="Screenshot showing the Run icon and the query results." lightbox="media\tutorial-build-lakehouse\warehouse-mode-sql-run-result.png":::
+
+
 ## Add tables to the semantic model
 
 In this section, you add the tables to the semantic model so that you can use them to create reports.
 
-1. Open your lakehouse and switch to the **SQL analytics endpoint** view, select **New semantic model**, name the semantic model, assign a workspace, and select the tables that you want to add to the semantic model. In this case, select the **dimension_customer** table.
+1. Open your lakehouse and switch to the **SQL analytics endpoint** view.
+
+1. Select **New semantic model**.
+
+1. In the **New semantic model** pane, enter a name for the semantic model, assign a workspace, and select the tables that you want to add. In this case, select the **dimension_customer** table.
 
    :::image type="content" source="media\tutorial-build-lakehouse\select-semantic-model-tables.png" alt-text="Screenshot where you can select the tables to add to the semantic model." lightbox="media\tutorial-build-lakehouse\select-semantic-model-tables.png":::
 
+1. Select **Confirm** to create the semantic model. 
+
+   > [!WARNING]
+   > If you receive an error message stating "We couldn't add or remove tables" due to your organization's Fabric compute capacity exceeding its limits, wait a few minutes and try again. For more information, see [Fabric capacity documentation](../enterprise/scale-capacity.md).
+
+1. The semantic model is created in Direct Lake storage mode, which means it reads data directly from the Delta tables in OneLake for fast query performance without needing to import the data. After creation, you can edit the semantic model to add relationships, measures, and more.
+
+   > [!TIP]
+   > To learn more about Direct Lake and its benefits, see [Direct Lake overview](../fundamentals/direct-lake-overview.md).
+
 ## Build a report
 
-In this section, you build a report from the ingested data.
+In this section, you build a report from the semantic model you created.
 
-1. Select the semantic model in your workspace, select the dropdown **Explore this data**, and then select **Auto-create a report**. In the next tutorial, we create a report from scratch.
+1. In your workspace, find the semantic model you created, select the **...** (ellipsis) menu, and then select **Auto-create report**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model in the workspace overview page, showing where to create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
 
-1. The table is a dimension and there are no measures in it. Power BI creates a measure for the row count, aggregates it across different columns, and creates different charts as shown in the following image.
+1. The table is a dimension and there are no measures in it. Power BI creates a measure for the row count, aggregates it across different columns, and creates different charts as shown in the following screenshot.
 
    :::image type="content" source="media\tutorial-build-lakehouse\quick-summary-report.png" alt-text="Screenshot of a Quick summary page displaying four different bar charts." lightbox="media\tutorial-build-lakehouse\quick-summary-report.png":::
 

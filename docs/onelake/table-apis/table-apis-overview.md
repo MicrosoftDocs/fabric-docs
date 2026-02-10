@@ -13,8 +13,6 @@ ms.topic: overview
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint can be used with clients and libraries that are compatible with [the Iceberg REST Catalog (IRC) API open standard](https://iceberg.apache.org/rest-catalog-spec/) or the [Unity Catalog API open standard.](https://github.com/unitycatalog/unitycatalog/tree/main/api). 
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)] 
-
 ## Prerequisites
 
 Using these APIs is straightforward once you identify a few pieces of information and select your preferred Microsoft Entra ID authentication flow.
@@ -51,9 +49,6 @@ To use these APIs, you first need to gather the following pieces of information:
 ## Iceberg REST Catalog (IRC) API operations on OneLake
 
 Learn [how to get started with the OneLake table API endpoint to interact with Iceberg tables in OneLake](./iceberg-table-apis-overview.md). Initially, read-only metadata table operations are supported, and we plan to add more operations soon.
-
-> [!NOTE]
-> Before using the Iceberg APIs, be sure you have Delta Lake to Iceberg metadata conversion enabled for your tenant or workspace. Review the [instructions to learn how to enable automatic Delta Lake to Iceberg table format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
 
 ## Delta Lake REST API operations on OneLake
 

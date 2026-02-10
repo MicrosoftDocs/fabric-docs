@@ -1,8 +1,7 @@
 ---
-title: Set up your SharePoint connection
-description: This article provides information about how to create a SharePoint connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+title: Set up your SharePoint Online List connection
+description: This article provides information about how to create a SharePoint Online List connection in Microsoft Fabric.
+ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 02/10/2026
 ms.custom:

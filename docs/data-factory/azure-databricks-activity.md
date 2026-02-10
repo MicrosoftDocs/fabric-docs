@@ -1,9 +1,7 @@
 ---
 title: Azure Databricks activity
 description: Learn how to add an Azure Databricks activity to a pipeline and use it to connect to an Azure Databricks job and successfully run it.
-ms.reviewer: abnarain
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: abnarain, noelleli
 ms.topic: how-to
 ms.date: 09/03/2025
 ms.custom: pipelines
@@ -24,8 +22,7 @@ This article provides a step-by-step walkthrough that describes how to create an
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Configuring an Azure Databricks activity
 
@@ -120,9 +117,7 @@ Sometimes, you may need to return values from a notebook to the service for cont
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/azure-databricks-activity/databricks-activity-save-and-run.png" alt-text="Screenshot showing how to save and run the pipeline.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

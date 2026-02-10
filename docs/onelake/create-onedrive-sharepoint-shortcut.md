@@ -52,8 +52,8 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
    |**Site URL**| The root URL of your SharePoint account.<br><br>To retrieve your URL, sign in to OneDrive. Select the settings gear icon, then **OneDrive settings** > **More settings**. Copy the **OneDrive web URL** from the more settings page and remove anything after `_onmicrosoft_com`. For example, `https://mytenant-my.sharepoint.com/personal/user01_mytenant_onmicrosoft_com`. |
    |**Connection** | The default value, **Create new connection**. |
    |**Connection name** | A name for your connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
-   |**Authentication kind**| The supported authentication type for this shortcut is **Organizational account**. |
-
+   |**Authentication kind**| The supported authentication includes Organizational account, [Workspace Identity](/fabric/security/workspace-identity), and [Service Principal](/entra/identity-platform/app-objects-and-service-principals).|
+  
 1. Select **Next**.
 
 1. Browse to the target location for the shortcut.
@@ -81,14 +81,24 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
   - Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits. 
   
   - Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root. 
-  
+    
+  - Use **Workspace Identity (WI)** authentication instead of **Organizational Account** authentication to reduce throttling.
+    
+- You can use Service Principal based authentication to connect to SharePoint or OneDrive across different tenants.
+
 ## Limitations
 
 The following limitations apply to SharePoint shortcuts:
 
 * OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
+* Based on Azure ACL [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs"https://learn.microsoft.com/en-us/sharepoint/dev/solution-guidance/security-apponly-azureacs"), Service Principal authentication will not work for SharePoint tenants created after Nov 1st, 2024. 
+
+* SharePoint and OneDrive Shortcuts are supported only at folder level and not at file level.
+
 ## Related content
 
 * [Create a OneLake shortcut](create-onelake-shortcut.md)
+
 * [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
+

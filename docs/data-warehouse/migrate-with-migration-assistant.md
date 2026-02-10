@@ -4,7 +4,7 @@ description: This tutorial provides a step-by-step guide for the Migration Assis
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: anphil, pvenkat, prlangad, chweb
-ms.date: 09/30/2025
+ms.date: 02/06/2026
 ms.topic: how-to
 ms.search.form: Migration Assistant
 ---
@@ -43,7 +43,7 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 
 1. In the **Migrate to Fabric** source menu, under **Migrate to a warehouse**, select the **Analytical T-SQL warehouse or database** tile.
 
-   :::image type="content" source="media/migrate-with-migration-assistant/dacpac-tile.png" alt-text="Screenshot from the Fabric portal of the Analytical T-SQL warehouse or database tile..":::
+   :::image type="content" source="media/migrate-with-migration-assistant/dacpac-tile.png" alt-text="Screenshot from the Fabric portal of the Analytical T-SQL warehouse or database tile.":::
 
 1. On the **Overview**, review the information and select **Next**.
 
@@ -77,7 +77,24 @@ The AI-assisted migration features of the Migration Assistant to fix migration i
 1. Open the metadata migration summary in full screen view for better readability. Apply filters to view specific object types.
 
    :::image type="content" source="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png" alt-text="Screenshot of the full screen view of the Migration Assistant's metadata migration summary of migrated objects." lightbox="media/migrate-with-migration-assistant/show-migrated-objects-full-screen.png":::
+   
+1. Optionally, select the **Export** menu to download a migration summary as an Excel file or a CSV. 
 
+   - The downloaded Excel file is a fully structured workbook with two worksheets: **Migrated Objects** and **Objects To Fix**. It is MIP-compliant and aligned with your organization's sensitivity labels.
+   - The CSV is lightweight and tool-friendly.
+
+   :::image type="content" source="media/migrate-with-migration-assistant/export-download.png" alt-text="Screenshot from the Fabric portal showing the Export and Download As options.":::
+   
+   Each exported file provides a structured, comprehensive view of your migration results, including:
+   
+   |Field name|Description|Sample values|
+   | :-------- | :-------- | :------------ |
+   |**Object name**|Name of SQL object| |
+   |**Object type**|SQL object types| Table, view, stored procedure, function |
+   |**State**|Translation state | Adjusted: Fabric Data Warehouse compatible updates are applied<br><br>Not adjusted: No change in the original script|
+   |**Details**|List of adjustments applied or error messages||
+   |**Type of error**|Type of translation error| Translation message, Translation error, Translation apply error |
+   
 ### Fix problems using Migration Assistant
 
 Some database object metadata might fail to migrate. Commonly, this is because the Migration Assistant couldn't translate the T-SQL metadata into those that are supported in a Fabric warehouse or the translated code failed to apply to T-SQL. 

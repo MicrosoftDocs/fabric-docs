@@ -13,8 +13,6 @@ ms.topic: how-to
 
 OneLake offers a REST API endpoint for interacting with tables in Microsoft Fabric. This endpoint supports read-only metadata operations for Delta tables in Fabric. These operations are compatible with [Unity Catalog API open standard.](https://github.com/unitycatalog/unitycatalog/tree/main/api)
 
-[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Example requests and responses
 
 These example requests and responses illustrate the use of the Delta API operations currently supported at the OneLake table API endpoint. 

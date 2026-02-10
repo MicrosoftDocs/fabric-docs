@@ -6,7 +6,7 @@ ms.author: juliacawthra
 ms.reviewer: pankar
 ms.service: fabric
 ms.topic: how-to
-ms.date: 1/15/2026
+ms.date: 02/02/2026
 ---
 
 # Surge protection
@@ -159,7 +159,7 @@ Workspace-level surge protection lets you enable banner notifications that appea
   - Activator (new Activators can’t be created but existing ones may continue to work)
   - Dataflow Gen 2 editing (refreshes will be blocked)
 
-- Autoscale compute is excluded from workspace limit calculations.
+- Autoscale compute is excluded from workspace limit calculations for Spark jobs.
   
 - Checks are made against the limit every 5 minutes, so workspace limits should be considered soft limits.
 

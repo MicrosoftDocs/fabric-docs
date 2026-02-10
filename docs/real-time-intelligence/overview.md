@@ -7,7 +7,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: overview
 ms.custom:
-ms.date: 09/25/2025
+ms.date: 02/03/2026
 ms.subservice: rti-core
 ms.search.form: Overview
 ---
@@ -16,15 +16,14 @@ ms.search.form: Overview
 
 Real-Time Intelligence is a powerful service that empowers everyone in
 your organization to extract insights and visualize their data in
-motion. It offers an end-to-end solution for event-driven scenarios,
-streaming data, and data logs. Whether dealing with gigabytes or
+motion. It offers an end-to-end solution for scenarios where you need to respond to events as they happen, process continuously flowing data, or analyze logs. Whether dealing with gigabytes or
 petabytes, all organizational data in motion converges in the Real-Time
 Hub. It seamlessly connects time-based data from various sources using
 no-code connectors, enabling immediate visual insights, geospatial
 analysis, and trigger-based reactions that are all part of an
 organization-wide data catalog.
 
-Once you seamlessly connect any stream of data, the entire SaaS solution
+Once you seamlessly connect any stream of data, the entire cloud-based solution
 becomes accessible. Real-Time Intelligence handles data ingestion,
 transformation, storage, modeling, analytics, visualization, tracking, AI, and
 real-time actions. Your data remains protected, governed, and integrated
@@ -61,13 +60,11 @@ support of business and engineering processes.
 
 :::image type="content" source="media/overview/overview-schematic.png" alt-text="Diagram of the architecture of Real-Time Intelligence in Microsoft Fabric." lightbox="media/overview/overview-schematic.png" border="none":::
 
--   The Real-Time hub serves as a centralized catalog within your organization. It facilitates easy access, addition, exploration, and data sharing. By expanding the range of data sources, it enables broader insights and visual clarity across various domains. Importantly, this hub ensures that data isn't only available but also accessible to all, promoting quick decision-making, and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
+-   The Real-Time hub serves as a centralized catalog within your organization. It makes it easy to find, add, explore, and share streaming data. By connecting to many different data sources, you can get insights across your entire organization. Importantly, this hub ensures that data isn't only available but also accessible to all, promoting quick decision-making, and informed action. The sharing of streaming data from diverse sources unlocks the potential to build comprehensive business intelligence across your organization.
 
 - Once you select a stream from your organization or connected to
 outside or internal sources, you can use the data consumption tools
-in Real-Time Intelligence to explore your data. The data consumption
-tools use visual data exploration process and drill down on data
-insights. You can access data that's new to you and easily
+in Real-Time Intelligence to explore your data. These tools let you explore your data visually and dig deeper into specific details. You can access data that's new to you and easily
 understand the data structure, patterns, anomalies, forecasting
 quantities, and data rates. Accordingly, you can act or make smart decision based on the data. Real-Time dashboards come equipped with out-of-the-box
 interactions that simplify the process of understanding data, making
@@ -89,9 +86,9 @@ Real-Time hub events is a catalog of data in motion, and contains:
     Fabric, which you have access to.
 
 -   **Microsoft sources:** Easily discover streaming sources that you
-    have and quickly configure ingestion of those sources into Fabric,
-    for example: Azure Event Hubs, Azure IoT Hub, Azure SQL DB Change
-    Data Capture (CDC), Azure Cosmos DB CDC, PostgreSQL DB CDC.
+    have and quickly configure ingestion of those sources into Fabric.
+    Change Data Capture (CDC) sources track and stream changes made to your databases in real time,
+    for example: Azure Event Hubs, Azure IoT Hub, Azure SQL DB CDC, Azure Cosmos DB CDC, PostgreSQL DB CDC.
 
 -   **Fabric events**: Event-driven capabilities support real-time notifications and data processing. You can monitor and react to events including Fabric Workspace Item events and Azure Blob Storage events. These events can be used to trigger other actions or workflows, such as invoking a pipeline or sending a notification via email. You can also send these events to other destinations via eventstreams. 
 
@@ -100,9 +97,7 @@ available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Eventstreams are the Fabric platform way to capture, transform, and
-route high volumes of real-time events to various destinations with a
-no-code experience. Eventstreams support multiple data sources and data
+Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations—all without writing code. Eventstreams support multiple data sources and data
 destinations, including a wide range of connectors to external sources,
 for example: Apache Kafka clusters, database change data capture feeds,
 AWS streaming sources (Kinesis), and Google (GCP Pub/Sub).
@@ -119,7 +114,7 @@ aggregations that can be shared to consumers in Real-Time hub.
 
 ### Store and analyze data
 
-Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. This data is automatically indexed and partitioned based on ingestion time, giving you incredibly fast and complex analytic querying capabilities on high-granularity data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
+Eventhouses are the ideal analytics engine to process data in motion. They're tailored to time-based, streaming events with structured, semi structured, and unstructured data. Your data is automatically organized based on when it arrived, so you can run fast, detailed queries even on large amounts of data. Data stored in eventhouses can be made available in OneLake for consumption by other Fabric experiences.
 
 The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code

@@ -1,9 +1,7 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From Google BigQuery (Preview)"
 description: Learn about the mirrored databases from Google BigQuery in Microsoft Fabric.
-author: MichaelaIsaacs
-ms.author: Misaacs
-ms.reviewer: whhender
+ms.reviewer: misaacs
 ms.date: 09/09/2025
 ms.topic: concept-article
 ms.custom:

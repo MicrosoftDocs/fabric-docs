@@ -1,9 +1,7 @@
 ---
 title: Troubleshoot the Parquet format connector
 description: Learn how to troubleshoot issues with the Parquet format connector in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.date: 10/23/2024
 ms.custom: connectors

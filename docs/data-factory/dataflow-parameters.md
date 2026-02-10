@@ -1,9 +1,7 @@
 ---
 title: Use public parameters in Dataflow Gen2 (Preview)
 description: Dataflow Gen2 within Fabric offers the capability to define parameters that can be accessible and override during execution through. The article covers how to apply this new mode, its prerequisites, and limitations.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: concept-article
 ms.date: 1/28/2026
 ms.custom: dataflows

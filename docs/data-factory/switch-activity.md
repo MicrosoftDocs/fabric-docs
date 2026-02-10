@@ -1,9 +1,7 @@
 ---
 title: Switch activity
 description: Learn how to add a switch activity to a pipeline and use it to evaluate a set of activities corresponding to a case that matches the condition evaluation.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023
@@ -17,8 +15,7 @@ The switch activity in Microsoft Fabric provides the same functionality that a s
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a switch activity to a pipeline with UI
 
@@ -57,9 +54,7 @@ Notice the pipeline and case in the top left corner of the activities editor for
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

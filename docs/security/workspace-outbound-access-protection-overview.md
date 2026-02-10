@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.service: fabric
 ms.topic: overview
-ms.date: 01/30/2026
+ms.date: 02/09/2026
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -93,6 +93,8 @@ This section outlines important considerations and limitations when using worksp
 * The Fabric portal UI doesn't currently support enabling both inbound protection (workspace-level private links) and outbound access protection at the same time for a workspace. To configure both settings together, use the [Workspaces - Set Network Communication Policy API](/rest/api/fabric/core/workspaces/set-network-communication-policy?tabs=HTTP), which allows full management of inbound and outbound protection policies.
 
 * Workspace outbound access protection isn't currently compatible with [OneLake Diagnostics](/fabric/onelake/onelake-diagnostics-overview). If you require OneLake diagnostics and outbound access protection to work together, you must select a lakehouse in the same workspace.
+
+* Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
 
 ### Data connection rules
 

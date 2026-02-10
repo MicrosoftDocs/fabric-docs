@@ -1,9 +1,7 @@
 ---
 title: Use Fabric variable libraries in Dataflow Gen2 (Preview)
 description: Overview on how to use Fabric variable libraries inside of a Dataflow Gen2 with CI/CD.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: concept-article
 ms.date: 10/20/2025
 ms.custom: dataflows
