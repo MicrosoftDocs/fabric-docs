@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Permission and Capacity Errors in Data Engineering
 description: Troubleshoot common permission and capacity issues in Data Engineering in Microsoft Fabric.
-author: val-olson
+author: ValOlson
 ms.author: vallariolson
 ms.reviewer: ' '
 ms.date: 02/09/2026
@@ -47,7 +47,7 @@ Ensure you have the appropriate workspace role and data access permissions:
 
 **Important**: ReadData and ReadAll serve different purposes. For users who need both SQL and Spark access, grant both permissions.
 
-See [workspace permission model](https://learn.microsoft.com/en-us/fabric/security/permission-model) and [share warehouse and manage permissions](https://learn.microsoft.com/en-us/fabric/data-warehouse/share-warehouse-manage-permissions) for more details.
+See [workspace permission model](https://learn.microsoft.com/fabric/security/permission-model) and [share warehouse and manage permissions](https://learn.microsoft.com/fabric/data-warehouse/share-warehouse-manage-permissions) for more details.
 
 **Fix 2: Assign Storage-Level Azure Roles**
 
@@ -64,7 +64,7 @@ For Delta tables using Azure Data Lake Storage (ADLS) or OneLake:
 print(mssparkutils.credentials.getToken("storage"))
 ```
 
-See [lakehouse sharing documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-sharing) for permission layers.
+See [lakehouse sharing documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-sharing) for permission layers.
 
 **Fix 3: Validate Authentication and Configure Shortcuts**
 
@@ -90,7 +90,7 @@ except Exception as e:
     print(f"Token error: {e}")
 ```
 
-See [OneLake shortcuts](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts) and [troubleshoot lakehouse connector](https://learn.microsoft.com/en-us/fabric/data-factory/connector-troubleshoot-lakehouse) for more information.
+See [OneLake shortcuts](https://learn.microsoft.com/fabric/onelake/onelake-shortcuts) and [troubleshoot lakehouse connector](https://learn.microsoft.com/fabric/data-factory/connector-troubleshoot-lakehouse) for more information.
 
 ## Capacity and Rate Limiting Errors
 
@@ -116,20 +116,20 @@ Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) or
 
 **Fix 1: Monitor and Identify High-Consumption Workloads**
 
-Use the [Fabric Capacity Metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/capacity-planning-troubleshoot-consumption) to identify which workspaces, users, or jobs are consuming the most Compute Units:
+Use the [Fabric Capacity Metrics app](https://learn.microsoft.com/fabric/enterprise/capacity-planning-troubleshoot-consumption) to identify which workspaces, users, or jobs are consuming the most Compute Units:
 1. Navigate to Admin Portal and access the Capacity Metrics app
 2. Review real-time utilization, throttling events, and overages
 3. Check the Compute page, Timepoint page, and Throttling tab to identify resource issues
 4. Identify specific operations causing the capacity overload
 
-Understanding [how Fabric capacity throttling works](https://learn.microsoft.com/en-us/fabric/enterprise/throttling) is essential. Fabric uses "bursting" and "smoothing" to handle temporary spikes, but sustained overloads trigger throttling.
+Understanding [how Fabric capacity throttling works](https://learn.microsoft.com/fabric/enterprise/throttling) is essential. Fabric uses "bursting" and "smoothing" to handle temporary spikes, but sustained overloads trigger throttling.
 
 **Fix 2: Reduce Concurrent Operations and Optimize Workloads**
 
 For Spark operations (Notebooks, Spark job definitions):
 - Stagger job execution times to avoid peak loads
 - Stop long-running or stalled notebooks and Spark sessions
-- Manage [Spark job concurrency limits](https://learn.microsoft.com/en-us/fabric/data-engineering/spark-job-concurrency-and-queueing)
+- Manage [Spark job concurrency limits](https://learn.microsoft.com/fabric/data-engineering/spark-job-concurrency-and-queueing)
 - Restart your Fabric capacity from the Admin Portal (Capacity Settings > Fabric Capacity > Restart) to clear orphaned sessions. Wait approximately 10 minutes before retrying operations
 
 For API operations:
@@ -142,7 +142,7 @@ For API operations:
 
 If throttling occurs frequently despite optimization, upgrade to a higher capacity SKU (e.g., from F2 to F8 or F16) to increase your available Compute Units and rate limits. Higher SKUs allow more concurrent jobs and higher API throughput.
 
-Use the [capacity planning and troubleshooting guide](https://learn.microsoft.com/en-us/fabric/enterprise/capacity-planning-troubleshoot-errors) to evaluate your needs and determine the appropriate SKU.
+Use the [capacity planning and troubleshooting guide](https://learn.microsoft.com/fabric/enterprise/capacity-planning-troubleshoot-errors) to evaluate your needs and determine the appropriate SKU.
 
 ### Error: Capacity Not Active at Refresh
 
@@ -223,7 +223,7 @@ For timeout and transient errors:
 - Configure appropriate retry intervals and maximum retry counts
 - For Copy activities: Enable fault tolerance settings to skip bad rows
 
-See [data pipeline monitoring](https://learn.microsoft.com/en-us/fabric/data-factory/monitor-pipeline-runs) and [troubleshoot data pipelines](https://learn.microsoft.com/en-us/fabric/data-factory/pipeline-troubleshoot-guide) for more information.
+See [data pipeline monitoring](https://learn.microsoft.com/fabric/data-factory/monitor-pipeline-runs) and [troubleshoot data pipelines](https://learn.microsoft.com/fabric/data-factory/pipeline-troubleshoot-guide) for more information.
 
 ## Related content
 

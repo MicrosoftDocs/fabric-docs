@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Lakehouse Errors in Data Engineering
 description: Troubleshoot common Lakehouse issues in Data Engineering in Microsoft Fabric.
-author: val-olson
+author: ValOlson
 ms.author: vallariolson
 ms.reviewer: ' '
 ms.date: 02/09/2026
@@ -33,7 +33,7 @@ This error occurs when there is a schema incompatibility between your source dat
 
 **Fix 1: Identify and Cast Mismatched Data Types**
 
-Compare your source and target schemas to identify the type mismatch. Understanding [how Delta Lake tables manage schemas in Fabric lakehouses](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-schemas) is critical.
+Compare your source and target schemas to identify the type mismatch. Understanding [how Delta Lake tables manage schemas in Fabric lakehouses](https://learn.microsoft.com/fabric/data-engineering/lakehouse-schemas) is critical.
 
 First, inspect both schemas:
 ```python
@@ -55,11 +55,11 @@ source_df = source_df.withColumn("field_name", col("field_name").cast("timestamp
 source_df.write.format("delta").mode("append").saveAsTable("your_table")
 ```
 
-The [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables) explains how Delta enforces strict schema consistency.
+The [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables) explains how Delta enforces strict schema consistency.
 
 **Fix 2: Use Explicit Schema Definitions**
 
-Define an explicit schema for your source data before writing to prevent type mismatches. This ensures [Delta Lake table format interoperability](https://learn.microsoft.com/en-us/fabric/fundamentals/delta-lake-interoperability):
+Define an explicit schema for your source data before writing to prevent type mismatches. This ensures [Delta Lake table format interoperability](https://learn.microsoft.com/fabric/fundamentals/delta-lake-interoperability):
 
 ```python
 from pyspark.sql.types import StructType, StructField, TimestampType, StringType, IntegerType
@@ -96,7 +96,7 @@ target_table.alias("target").merge(
 ).whenMatchedUpdateAll().whenNotMatchedInsertAll().execute()
 ```
 
-Review the [Lakehouse schemas documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-schemas) for more details on schema enforcement during merge operations.
+Review the [Lakehouse schemas documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-schemas) for more details on schema enforcement during merge operations.
 
 ### Error: Failed to Deserialize the Latest Schema for a Delta Table
 
@@ -118,7 +118,7 @@ Delta Lake cannot parse or deserialize the schema information stored in the tran
 
 **Fix 1: Inspect and Repair Transaction Log**
 
-Check the Delta transaction log for corruption using the [Lakehouse and Delta Tables guide](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables):
+Check the Delta transaction log for corruption using the [Lakehouse and Delta Tables guide](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables):
 
 ```python
 # Check Delta table history for issues
@@ -151,7 +151,7 @@ df_with_schema.write.format("delta").mode("overwrite").saveAsTable("your_table_n
 
 **Fix 2: Define Explicit Schema to Prevent Issues**
 
-Prevent schema deserialization errors by always defining explicit schemas using the [Work with Delta Lake Tables training](https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/):
+Prevent schema deserialization errors by always defining explicit schemas using the [Work with Delta Lake Tables training](https://learn.microsoft.com/training/modules/work-delta-lake-tables-fabric/):
 
 ```python
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, TimestampType
@@ -291,7 +291,7 @@ for col_name in source_df.columns:
         source_df = source_df.withColumnRenamed(col_name, new_name)
 ```
 
-For more information on schema management, see [Lakehouse schemas documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-schemas).
+For more information on schema management, see [Lakehouse schemas documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-schemas).
 
 ## Delta Table Metadata and Transaction Log Errors
 
@@ -316,7 +316,7 @@ The Delta table's `_delta_log` directory is missing, empty, or corrupted. Delta 
 
 **Fix 1: Validate Delta Table Structure and Recreate if Needed**
 
-Check if the `_delta_log` directory exists using the [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables):
+Check if the `_delta_log` directory exists using the [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables):
 
 ```python
 # Check for _delta_log directory
@@ -338,7 +338,7 @@ df.write.format("delta").mode("overwrite").saveAsTable("your_table_name")
 
 **Fix 2: Convert Existing Parquet Data to Delta Table**
 
-If you have existing Parquet data that needs to be converted to Delta format, use the CONVERT TO DELTA command as explained in the [Work with Delta Lake Tables training module](https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/):
+If you have existing Parquet data that needs to be converted to Delta format, use the CONVERT TO DELTA command as explained in the [Work with Delta Lake Tables training module](https://learn.microsoft.com/training/modules/work-delta-lake-tables-fabric/):
 
 ```sql
 -- Convert existing Parquet files to Delta table
@@ -379,7 +379,7 @@ Delta Lake cannot locate or read the metadata required to access the table. The 
 
 **Fix 1: Verify Delta Table Structure and Path**
 
-Check that the table location contains proper Delta metadata using the [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables):
+Check that the table location contains proper Delta metadata using the [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables):
 
 ```python
 # Verify _delta_log exists
@@ -403,7 +403,7 @@ If `_delta_log` is missing, the directory is not a Delta table and needs to be c
 
 **Fix 2: Recreate or Convert to Delta Table**
 
-If metadata is missing or corrupted, recreate the Delta table using the [Work with Delta Lake Tables training module](https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/):
+If metadata is missing or corrupted, recreate the Delta table using the [Work with Delta Lake Tables training module](https://learn.microsoft.com/training/modules/work-delta-lake-tables-fabric/):
 
 ```python
 # If Parquet files exist, read and recreate as Delta
@@ -452,7 +452,7 @@ The Delta table has accumulated too many transaction log files without creating 
 
 **Fix 1: Manually Trigger Checkpoint Creation**
 
-Force a checkpoint creation using Spark commands. The [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables) explains checkpoint management:
+Force a checkpoint creation using Spark commands. The [Lakehouse and Delta Tables documentation](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables) explains checkpoint management:
 
 ```python
 # Method 1: Using Delta Lake API
@@ -473,7 +473,7 @@ DeltaLog.forTable(spark, "Tables/your_table_name").checkpoint()
 
 **Fix 2: Perform Table Optimization and Maintenance**
 
-Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake table optimization guide](https://learn.microsoft.com/en-us/fabric/data-engineering/delta-optimization-and-v-order):
+Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake table optimization guide](https://learn.microsoft.com/fabric/data-engineering/delta-optimization-and-v-order):
 
 ```sql
 -- Optimize table (compacts files and can trigger checkpoints)
@@ -511,7 +511,7 @@ The specified Delta table cannot be found in the lakehouse metadata catalog. Eve
 
 **Fix 1: Verify Table Exists and Check Table Name Case**
 
-Use the [Lakehouse and Delta Tables](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables) interface to verify the table exists. In a Spark notebook, list all available tables:
+Use the [Lakehouse and Delta Tables](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables) interface to verify the table exists. In a Spark notebook, list all available tables:
 
 ```python
 # List all tables in the current lakehouse
@@ -525,7 +525,7 @@ Delta table names are **case-sensitive**. If you created a table as `CustomerDat
 
 **Fix 2: Create or Re-register the Delta Table**
 
-If the table doesn't exist, you need to create it. If Delta files exist in storage but aren't registered, re-create the table reference. The [Work with Delta Lake Tables training module](https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/) provides comprehensive guidance:
+If the table doesn't exist, you need to create it. If Delta files exist in storage but aren't registered, re-create the table reference. The [Work with Delta Lake Tables training module](https://learn.microsoft.com/training/modules/work-delta-lake-tables-fabric/) provides comprehensive guidance:
 
 ```python
 # Create new Delta table from DataFrame
@@ -553,7 +553,7 @@ print(spark.conf.get("spark.sql.catalog.default"))
 spark.sql("SHOW DATABASES").show()
 ```
 
-The [Delta Lake table format interoperability documentation](https://learn.microsoft.com/en-us/fabric/fundamentals/delta-lake-interoperability) explains how to properly reference tables across different lakehouses and external Delta tables. If accessing a table from a different lakehouse, use the fully qualified name: `lakehouse_name.table_name`.
+The [Delta Lake table format interoperability documentation](https://learn.microsoft.com/fabric/fundamentals/delta-lake-interoperability) explains how to properly reference tables across different lakehouses and external Delta tables. If accessing a table from a different lakehouse, use the fully qualified name: `lakehouse_name.table_name`.
 
 ## File and Path Errors
 
@@ -620,7 +620,7 @@ The system cannot locate the specified Lakehouse artifact in the workspace, ofte
 1. Double-check workspace and lakehouse IDs in your API calls or abfss paths
 2. Use the correct pattern: `abfss://workspaceid@onelake.dfs.fabric.microsoft.com/lakehouseid/Tables/`
 3. Ensure there are no typos in workspace or lakehouse GUIDs
-4. For programmatic listing examples and patterns, see [Lakehouse management API](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-api)
+4. For programmatic listing examples and patterns, see [Lakehouse management API](https://learn.microsoft.com/fabric/data-engineering/lakehouse-api)
 
 **Fix 3: Sync SQL Analytics Endpoint**
 
@@ -648,14 +648,14 @@ Microsoft Fabric cannot locate CSV files in the expected location during data in
 
 **Fix 1: Verify File Location in Lakehouse Explorer**
 
-Ensure your CSV files are uploaded to the correct location using the [Lakehouse explorer](https://learn.microsoft.com/en-us/fabric/data-engineering/navigate-lakehouse-explorer). CSV files should be placed in the **Files** section of your lakehouse, not the Tables section. The Tables area contains managed Delta tables, while the Files area is for raw data files.
+Ensure your CSV files are uploaded to the correct location using the [Lakehouse explorer](https://learn.microsoft.com/fabric/data-engineering/navigate-lakehouse-explorer). CSV files should be placed in the **Files** section of your lakehouse, not the Tables section. The Tables area contains managed Delta tables, while the Files area is for raw data files.
 
 Navigate to your lakehouse and check:
 - Files are under `/Files/` directory (e.g., `/Files/data/yourfile.csv`)
 - Files don't appear in the "Unidentified Area" (which means they're not registered in the metastore)
 - Upload completed successfully and files are visible in the lakehouse explorer
 
-Follow the [lakehouse tutorial](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-build-lakehouse) for proper file organization and upload procedures.
+Follow the [lakehouse tutorial](https://learn.microsoft.com/fabric/data-engineering/tutorial-build-lakehouse) for proper file organization and upload procedures.
 
 **Fix 2: Use Correct File Path in Spark Operations**
 
@@ -673,7 +673,7 @@ df = spark.read.csv(
 df = spark.read.csv("/lakehouse/default/Files/data/yourfile.csv", header=True)
 ```
 
-Understanding [how to access files in Fabric lakehouse using notebooks](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-notebook-explore) ensures you reference the correct storage paths for your data operations.
+Understanding [how to access files in Fabric lakehouse using notebooks](https://learn.microsoft.com/fabric/data-engineering/lakehouse-notebook-explore) ensures you reference the correct storage paths for your data operations.
 
 ## File Upload Errors
 
@@ -721,7 +721,7 @@ This method bypasses UI limitations and works even when the Explorer UI is restr
 3. Disable browser extensions, especially ad blockers and VPN-related plugins
 4. Switch networks (e.g., mobile hotspot instead of office VPN) to rule out firewall/proxy issues
 
-For additional guidance, see [Troubleshoot the Lakehouse connector](https://learn.microsoft.com/en-us/fabric/data-factory/connector-troubleshoot-lakehouse).
+For additional guidance, see [Troubleshoot the Lakehouse connector](https://learn.microsoft.com/fabric/data-factory/connector-troubleshoot-lakehouse).
 
 ## Lakehouse Operation and Data Copy Errors
 
@@ -747,8 +747,8 @@ Data copy operations in pipelines, notebooks, or data flows failed due to connec
 
 1. Test connectivity to the source and destination endpoints from your network
 2. Check organizational firewall rules and ensure required URLs and ports are allowed
-3. Verify that [Microsoft Fabric networking requirements](https://learn.microsoft.com/en-us/fabric/security/security-overview) are met
-4. For on-premises data sources, ensure the [data gateway](https://learn.microsoft.com/en-us/data-integration/gateway/service-gateway-onprem) is installed and running
+3. Verify that [Microsoft Fabric networking requirements](https://learn.microsoft.com/fabric/security/security-overview) are met
+4. For on-premises data sources, ensure the [data gateway](https://learn.microsoft.com/data-integration/gateway/service-gateway-onprem) is installed and running
 5. Test with a small data copy operation first to isolate network vs. data volume issues
 6. Ensure SSL/TLS certificates are valid and not expired
 7. Verify HTTPS endpoints are using supported TLS versions (TLS 1.2 or higher)
@@ -762,7 +762,7 @@ For authentication and private endpoint issues:
 4. Verify service principal credentials or managed identity permissions are valid
 5. Navigate to Workspace Settings > Network security and ensure proper private endpoint configuration
 6. Verify that virtual network rules allow traffic from pipeline runtime environments
-7. Check [managed virtual network](https://learn.microsoft.com/en-us/fabric/security/security-managed-vnets-fabric-overview) settings in the data integration runtime
+7. Check [managed virtual network](https://learn.microsoft.com/fabric/security/security-managed-vnets-fabric-overview) settings in the data integration runtime
 
 **Fix 3: Test and Isolate Connection Issues**
 
@@ -799,7 +799,7 @@ The Microsoft Fabric service encountered an unexpected internal error while proc
 
 1. Wait a few minutes and retry the operation (many 500 errors are transient)
 2. Check [Azure Service Health](https://portal.azure.com/#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) for known issues affecting Microsoft Fabric
-3. Review [Microsoft Fabric service announcements](https://learn.microsoft.com/en-us/fabric/release-plan/) for recent changes or known issues
+3. Review [Microsoft Fabric service announcements](https://learn.microsoft.com/fabric/release-plan/) for recent changes or known issues
 4. Implement retry logic with exponential backoff in automated processes
 
 **Fix 2: Simplify the Operation**
@@ -858,12 +858,12 @@ If the Materialized Lake View has complex dependencies:
 
 **Fix 3: Check Workspace and Capacity Status**
 
-1. Use the [Fabric Capacity Metrics app](https://learn.microsoft.com/en-us/fabric/enterprise/capacity-planning-troubleshoot-consumption) to verify the capacity is not throttled or overloaded
+1. Use the [Fabric Capacity Metrics app](https://learn.microsoft.com/fabric/enterprise/capacity-planning-troubleshoot-consumption) to verify the capacity is not throttled or overloaded
 2. Check if other workspace operations are working correctly to isolate the issue
 3. Verify the workspace is assigned to an active Fabric capacity (Workspace Settings > License Info)
 4. If capacity is overloaded, wait until utilization decreases or scale up the capacity
 
-For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/governance/lineage).
+For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft Fabric](https://learn.microsoft.com/fabric/governance/lineage).
 
 ## Power BI Integration Errors
 
@@ -915,7 +915,8 @@ For Direct Lake mode:
 - [General troubleshooting](general-troubleshooting.md)
 - [What is a lakehouse?](lakehouse-overview.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
-- [Delta Lake in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-and-delta-tables)
-- [Fabric Capacity Planning and Troubleshooting](https://learn.microsoft.com/en-us/fabric/enterprise/capacity-planning-troubleshoot-errors)
-- [Work with Delta Lake Tables Training Module](https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/)
-- [Lakehouse Tutorial](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-build-lakehouse)
+- [Delta Lake in Microsoft Fabric](https://learn.microsoft.com/fabric/data-engineering/lakehouse-and-delta-tables)
+- [Fabric Capacity Planning and Troubleshooting](https://learn.microsoft.com/fabric/enterprise/capacity-planning-troubleshoot-errors)
+- [Work with Delta Lake Tables Training Module](https://learn.microsoft.com/training/modules/work-delta-lake-tables-fabric/)
+- [Lakehouse Tutorial](https://learn.microsoft.com/fabric/data-engineering/tutorial-build-lakehouse)
+- [Notebook troubleshooting][notebookTroubleshootingGuide]
