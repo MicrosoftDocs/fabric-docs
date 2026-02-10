@@ -25,7 +25,7 @@ From a collaboration standpoint, you can distribute and embed Power BI reports a
 
 ### Real-time insights and actions
 
-:::image type="content" source="./media/track-visualize-data/track-rti.png" alt-text="Screenshot of Real-Time Intelligence architecture diagram.":::
+:::image type="content" source="./media/track-visualize-data/track-real-time-intelligence.png" alt-text="Screenshot of Real-Time Intelligence architecture diagram.":::
 
 The Real-Time Intelligence workload in Microsoft Fabric enables organizations to ingest, process, analyze, and act on streaming data with minimal latency. It combines capabilities from the following services:
 

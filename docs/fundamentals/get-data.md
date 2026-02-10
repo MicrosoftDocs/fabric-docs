@@ -17,7 +17,7 @@ A converged platform must ingest data from many disparate sources, and Microsoft
 
 Microsoft Fabric's Real-Time Intelligence, Eventstreams, and Eventhouses serve complementary roles for handling streaming data. Eventstreams are the ingestion and processing pipelines for real-time events, while Eventhouses are the storage and query engines (built on Azure Data Explorer's Kusto technology) for analyzing those events at scale. In practice, you often use an Eventstream to capture and route data into an Eventhouse, but you can use them independently depending on your needs.
 
-:::image type="content" source="./media/get-data/realtime-eventstream.png" alt-text="Screenshot of real-time datasets flowing to Eventstream or Eventhouse.":::
+:::image type="content" source="./media/get-data/real-time-eventstream.png" alt-text="Screenshot of real-time datasets flowing to Eventstream or Eventhouse.":::
 
 #### Ingest and route events with Eventstream
 

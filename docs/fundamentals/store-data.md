@@ -37,7 +37,7 @@ In Microsoft Fabric, [Warehouses and Lakehouses serve distinct but complementary
 
 ### Mirrored databases for near real-time replication
 
-:::image type="content" source="./media/store-data/store-mirroreddb.png" alt-text="Screenshot of OneLake Mirrored Database architecture diagram.":::
+:::image type="content" source="./media/store-data/store-mirrored-database.png" alt-text="Screenshot of OneLake Mirrored Database architecture diagram.":::
 
 A mirrored database in Microsoft Fabric is a continuously replicated, analytics-ready copy of an external operational database, such as Azure SQL Database, SQL Server, Cosmos DB, or Snowflake. It's stored in OneLake using the open Delta Lake format and it enables near real-time synchronization of source data into Fabric without requiring traditional ETL pipelines. Once mirrored, the [data becomes immediately queryable](../mirroring/explore.md) via SQL endpoints and usable across Fabric workloads like Power BI, Spark notebooks, and pipelines. This architecture allows you to perform analytics on live operational data while maintaining source system integrity, supporting hybrid transactional/analytical processing (HTAP) scenarios.
 
@@ -47,11 +47,11 @@ A mirrored database in Microsoft Fabric is a continuously replicated, analytics-
 
 An [Eventhouse](../real-time-intelligence/eventhouse.md) in Microsoft Fabric is a scalable, real-time analytics environment designed to ingest, store, and analyze large volumes of event-based data. It serves as the foundational engine for Real-Time Intelligence workloads, enabling organizations to process structured, semi-structured, and unstructured data streams efficiently.
 
-Functionally, an Eventhouse hosts one or more KQL databases (based on the Kusto engine), which are optimized for time-series and telemetry data. These databases automatically index and partition data by ingestion time, allowing fast querying and exploration using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric). Eventhouses are ideal for scenarios like IoT telemetry, security logs, compliance records, and financial transactions - where timely insights and scalable performance are critical.
+Functionally, an Eventhouse hosts one or more KQL databases (based on the Kusto engine), which are optimized for time-series and telemetry data. These databases automatically index and partition data by ingestion time, allowing fast querying and exploration using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric&preserve-view=true). Eventhouses are ideal for scenarios like IoT telemetry, security logs, compliance records, and financial transactions - where timely insights and scalable performance are critical.
 
 ### SQL database for transactional workloads
 
-:::image type="content" source="./media/store-data/store-sqldatabase.png" alt-text="Screenshot of OneLake SQL Database architecture diagram.":::
+:::image type="content" source="./media/store-data/store-sql-database.png" alt-text="Screenshot of OneLake SQL Database architecture diagram.":::
 
 In Microsoft Fabric, [SQL Databases](../database/sql/overview.md) are a core component designed to support transactional and operational analytics workloads within a unified data platform. They offer a fully managed relational database experience with full support for T-SQL, including data definition (DDL), manipulation (DML), and querying (DQL) capabilities. Users can rely on the familiar SQL constructs such as stored procedures, views, and functions to build robust applications and analytical solutions.
 
@@ -61,7 +61,7 @@ SQL Databases in Fabric are deeply integrated with other Fabric experiences, all
 
 ### Cosmos DB for distributed NoSQL workloads
 
-:::image type="content" source="./media/store-data/store-cosmosdb.png" alt-text="Screenshot of OneLake Cosmos DB architecture diagram.":::
+:::image type="content" source="./media/store-data/store-cosmos-database.png" alt-text="Screenshot of OneLake Cosmos DB architecture diagram.":::
 
 [Cosmos DB in Microsoft Fabric](../database/cosmos-db/overview.md) is a fully managed, distributed NoSQL database that supports operational workloads with flexible data models and global scalability. Unlike relational stores, Cosmos DB is designed for high-throughput scenarios involving semi-structured JSON data, making it ideal for applications such as IoT telemetry, mobile backends, and real-time retail systems. In Fabric, [Cosmos DB is automatically mirrored into OneLake](../database/cosmos-db/mirror-onelake.md), where its data is stored in Delta format which enables analytics without impacting the performance of the operational system. This mirroring process is continuous and near real-time, requiring no manual setup or configuration. Once mirrored, the data becomes accessible through a [SQL analytics endpoint](../database/cosmos-db/tutorial-mirroring.md), which allows users to query the data using T-SQL, build views, and integrate with other Fabric experiences like Power BI, notebooks, and pipelines.
 
@@ -69,7 +69,7 @@ The SQL analytics endpoint provides a read-only interface to the mirrored data, 
 
 ### Semantic model for business logic and reporting
 
-:::image type="content" source="./media/store-data/store-semanticmodel.png" alt-text="Screenshot of OneLake Semantic Model architecture diagram.":::
+:::image type="content" source="./media/store-data/store-semantic-model.png" alt-text="Screenshot of OneLake Semantic Model architecture diagram.":::
 
 [Semantic models](../data-warehouse/semantic-models.md) provide the structured, curated layer that defines business logic, measures, hierarchies, relationships, and metadata on top of raw data in Microsoft Fabric. They make data interpretable and reusable across the platform for analytics experiences. 
 
@@ -81,7 +81,7 @@ Semantic models in Fabric are tightly integrated with the platform's capacity mo
 
 * **Direct Lake mode**: [Direct Lake mode](direct-lake-overview.md) allows Power BI to query Delta tables stored in OneLake directly, combining the performance benefits of Import with the freshness of DirectQuery. It avoids data duplication and leverages the lake-native architecture for scalable, near real-time analytics. Direct Lake is recommended for large-scale analytics on Fabric-managed data.
 
-Semantic models also enable conversational AI, semantic search, enterprise reporting, and cross-domain reasoning by bringing together advanced features like Fabric Data Agents, Power BI Copilot, Ontologies, and Power BI reports. Business users can also [access semantic models via Excel](/collaborate-share/service-connect-excel-power-bi-datasets) where they can have more freedom to explore data and insights in a Pivot-table interface that uses live data from the semantic model.
+Semantic models also enable conversational AI, semantic search, enterprise reporting, and cross-domain reasoning by bringing together advanced features like Fabric Data Agents, Power BI Copilot, Ontologies, and Power BI reports. Business users can also [access semantic models via Excel(/power-bi/collaborate-share/service-connect-excel-power-bi-datasets) where they can have more freedom to explore data and insights in a Pivot-table interface that uses live data from the semantic model.
 
 ### Decision guide: Choose the right data store
 
