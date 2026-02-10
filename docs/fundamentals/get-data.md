@@ -17,7 +17,7 @@ A converged platform must ingest data from many disparate sources, and Microsoft
 
 Microsoft Fabric's Real-Time Intelligence, Eventstreams, and Eventhouses serve complementary roles for handling streaming data. Eventstreams are the ingestion and processing pipelines for real-time events, while Eventhouses are the storage and query engines (built on Azure Data Explorer's Kusto technology) for analyzing those events at scale. In practice, you often use an Eventstream to capture and route data into an Eventhouse, but you can use them independently depending on your needs.
 
-:::image type="content" source="./media/get-data/real-time-eventstream.png" alt-text="Screenshot of real-time datasets flowing to Eventstream or Eventhouse.":::
+:::image type="content" source="./media/get-data/real-time-event-stream.png" alt-text="Screenshot of real-time datasets flowing to Eventstream or Eventhouse.":::
 
 #### Ingest and route events with Eventstream
 
@@ -90,3 +90,12 @@ Combined with Data Mirroring, Shortcuts provide flexible data access patterns: y
 Microsoft Fabric provides several ways to bring data into Fabric based on your needs. You can use Eventstreams for real-time data, Mirroring, Copy activities in Pipelines, Copy job, or Shortcuts. Each option offers a different level of control and complexity, so you can pick what fits your scenario best. For more information, see the [Microsoft Fabric decision guide: Choose a data movement strategy](/fabric/data-factory/decision-guide-data-movement).
 
 :::image type="content" source="./media/get-data/decision-guide-data-movement.svg" alt-text="Screenshot of decision guide for choosing a data movement strategy.":::
+
+## Related content
+
+- [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
+- [Store data in Microsoft Fabric](store-data.md)
+- [Prepare and transform data](prepare-data.md)
+- [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
+- [Track and visualize data](track-visualize-data.md)
+- [External integration and platform connectivity](external-integration.md)
