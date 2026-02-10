@@ -21,6 +21,8 @@ items:
   
 - name: Fabric data lifecycle
   items:
+    - name: Overview
+      href: data-lifecycle.md
     - name: Get data
       href: get-data.md
     - name: Prepare data
