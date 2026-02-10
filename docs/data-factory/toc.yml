@@ -677,6 +677,8 @@
             items: 
               - name: SharePoint Online File - Overview
                 href: connector-sharepoint-online-file-overview.md
+              - name: Set up your connection
+                href: connector-sharepoint-online-list.md
               - name: Configure in a pipeline Copy activity
                 href: connector-sharepoint-online-file-copy-activity.md
           - name: SharePoint online list

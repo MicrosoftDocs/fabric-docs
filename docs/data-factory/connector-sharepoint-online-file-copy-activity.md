@@ -253,3 +253,4 @@ The following tables contain more information about the copy activity in SharePo
 ## Related content
 
 - [SharePoint Online File connector overview](connector-sharepoint-online-file-overview.md)
+- [Set up your SharePoint Online File connection](connector-sharepoint-online-list.md).

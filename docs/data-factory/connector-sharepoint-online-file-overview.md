@@ -23,4 +23,6 @@ This SharePoint Online File connector is supported in Data Factory for [!INCLUDE
 
 ## Related content
 
+To learn about how to connect to SharePoint Online File, go to [Set up your SharePoint Online File connection](connector-sharepoint-online-list.md).
+
 To learn about the copy activity configuration for SharePoint Online File in a pipeline, go to [Configure SharePoint Online File in a copy activity](connector-sharepoint-online-file-copy-activity.md).
