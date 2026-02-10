@@ -59,3 +59,12 @@ ML Model deployment options include batch scoring directly within Fabric by usin
 [Copilot for Power BI](/power-bi/create-reports/copilot-introduction) uses generative AI to help business users and report creators work more efficiently by enabling natural‑language interactions with their data. It supports tasks like ad‑hoc analysis, finding insights, generating DAX expressions, and creating visuals on the fly. 
 
 The [standalone Copilot experience in Power BI](/power-bi/create-reports/copilot-chat-with-data-standalone) provides a full‑screen, cross‑item conversational interface that helps users explore and analyze data by answering questions across any report, semantic model, or Fabric data agent they have access to, rather than being limited to the report currently open. It identifies the most relevant data source automatically, asks clarifying questions when needed, and can immediately deliver insights once it selects the right report or model. For best results, authors [must prepare data for AI](/power-bi/create-reports/copilot-prepare-data-ai) and approve semantic models for Copilot to ensure accuracy; otherwise, users might encounter warning messages or get limited answers.
+
+## Related content
+
+- [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
+- [Get data into Microsoft Fabric](get-data.md)
+- [Store data in Microsoft Fabric](store-data.md)
+- [Prepare and transform data](prepare-data.md)
+- [Track and visualize data](track-visualize-data.md)
+- [External integration and platform connectivity](external-integration.md)
