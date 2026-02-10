@@ -20,8 +20,8 @@ Over time, organizations accumulate a considerable number of SSIS packages that 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](https://learn.microsoft.com/fabric/get-started/fabric-trial).
-- A [workspace](https://learn.microsoft.com/fabric/get-started/create-workspaces) is created.
+- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+- A [workspace](../get-started/create-workspaces.md) is created.
 - Your SSIS packages (*.dtsx* files) are ready. If you also use package configuration files (*.dtsConfig*), have those available as well.
 
 ## Step 1 – Move SSIS packages to OneLake
@@ -33,7 +33,7 @@ Before you can invoke a package, it must be stored in OneLake. You can upload pa
 | **OneLake file explorer** | Drag and drop your *.dtsx* (and optional *.dtsConfig*) files directly into a Lakehouse **Files** section through the OneLake file explorer on your desktop. |
 | **Fabric portal** | Navigate to a Lakehouse in the Fabric portal, select **Upload** > **Upload files**, and choose the package files from your local machine. |
 
-    :::image type="content" source="media/invoke-ssis-package-activity/upload-packages-onelake.png" alt-text="Screenshot showing SSIS packages uploaded to OneLake.":::
+:::image type="content" source="media/invoke-ssis-package-activity/upload-packages-onelake.png" alt-text="Screenshot showing SSIS packages uploaded to OneLake.":::
 
 ## Step 2 – Add an Invoke SSIS Package activity to a pipeline
 
@@ -43,7 +43,7 @@ Before you can invoke a package, it must be stored in OneLake. You can upload pa
 
     :::image type="content" source="media/invoke-ssis-package-activity/add-invoke-ssis-activity.png" alt-text="Screenshot showing the Invoke SSIS Package activity on the pipeline canvas.":::
 
-Refer to the [General settings](https://learn.microsoft.com/fabric/data-factory/activity-overview#general-settings) guidance to configure the **General** tab (name, description, timeout, retry, and retry interval).
+Refer to the [General settings](activity-overview.md#general-settings) guidance to configure the **General** tab (name, description, timeout, retry, and retry interval).
 
 ## Step 3 – Configure package settings
 
@@ -55,7 +55,7 @@ Select the **Settings** tab and configure the following options:
 | **Configuration path** *(optional)* | Select **Browse** to pick a package configuration file (*.dtsConfig*) from OneLake, if your package uses one. |
 | **Enable logging** | When selected, the activity writes package-execution logs to OneLake. After the run completes, you can find the logging path in the activity output. |
 
-    :::image type="content" source="media/invoke-ssis-package-activity/settings-tab.png" alt-text="Screenshot showing the Settings tab of the Invoke SSIS Package activity.":::
+:::image type="content" source="media/invoke-ssis-package-activity/settings-tab.png" alt-text="Screenshot showing the Settings tab of the Invoke SSIS Package activity.":::
 
 ## Step 4 – Set runtime values (Connection Managers / Property Overrides)
 
@@ -76,7 +76,7 @@ Use this tab to override any package property by entering its property path and 
 > [!NOTE]
 > You can add dynamic content by using expressions, pipeline parameters, or system variables when assigning override values.
 
-    :::image type="content" source="media/invoke-ssis-package-activity/connection-managers-tab.png" alt-text="Screenshot showing the Connection Managers tab with runtime overrides."
+:::image type="content" source="media/invoke-ssis-package-activity/connection-managers-tab.png" alt-text="Screenshot showing the Connection Managers tab with runtime overrides.":::
 
 ## Step 5 – Save and run or schedule the pipeline
 
@@ -114,7 +114,7 @@ Billing for the Invoke SSIS Package activity is based on SQL Server Integration 
 > Each workspace is allocated 4 vCores for SSIS runtime execution. During preview, this allocation is fixed and cannot be modified.
 
 > [!NOTE]
-> In addition to the SSIS uptime meter, pipeline orchestration runs and OneLake storage/transactions are charged under their respective meters. For details, see [Data Factory pricing for Microsoft Fabric](https://learn.microsoft.com/fabric/data-factory/pricing-overview) and [OneLake consumption](https://learn.microsoft.com/fabric/onelake/onelake-consumption).
+> In addition to the SSIS uptime meter, pipeline orchestration runs and OneLake storage/transactions are charged under their respective meters. For details, see [Data Factory pricing for Microsoft Fabric](pricing-overview.md) and [OneLake consumption](../onelake/onelake-consumption.md).
 
 ## Limitations
 
@@ -127,6 +127,6 @@ During the preview, the following limitations apply:
 
 ## Related content
 
-- [Activity overview](https://learn.microsoft.com/fabric/data-factory/activity-overview)
-- [Create your first pipeline](https://learn.microsoft.com/fabric/data-factory/create-first-pipeline-with-sample-data)
-- [How to monitor pipeline runs](https://learn.microsoft.com/fabric/data-factory/monitor-pipeline-runs)
+- [Activity overview](activity-overview.md)
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)
