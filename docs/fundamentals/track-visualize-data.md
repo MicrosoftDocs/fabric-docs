@@ -73,3 +73,12 @@ Beyond business entities and relationships, ontologies can also define actionabl
 #### Graph model
 
 [Graph models](/fabric/graph/graph-database) in Microsoft provide a native graph engine that transforms ontology-defined entities and relationships into a connected network. By using this network, you can enable multi-hop reasoning, impact analysis, and advanced algorithms like shortest path and community detection. This integration allows AI agents and analytics tools to query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can interrogate Graph models by using the [GraphQL queries](/fabric/graph/gql-language-guide) via [Fabric APIs](/fabric/graph/gql-query-api).
+
+## Related content
+
+- [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
+- [Get data into Microsoft Fabric](get-data.md)
+- [Store data in Microsoft Fabric](store-data.md)
+- [Prepare and transform data](prepare-data.md)
+- [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
+- [External integration and platform connectivity](external-integration.md)
