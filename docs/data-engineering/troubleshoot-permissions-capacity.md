@@ -312,6 +312,7 @@ See [data pipeline monitoring](../data-factory/monitor-pipeline-runs.md) and [tr
 
 ## Related content
 
-- [Lakehouse troubleshooting](lakehouse.md)
+- [Lakehouse troubleshooting](troubleshoot-lakehouse.md)
+- [Notebook troubleshooting][notebookTroubleshootingGuide]
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
 - [Spark advisor introduction](spark-advisor-introduction.md)

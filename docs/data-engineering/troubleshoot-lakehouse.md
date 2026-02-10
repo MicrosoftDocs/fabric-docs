@@ -852,8 +852,7 @@ The Microsoft Fabric service encountered an unexpected internal error while proc
 
 1. Wait a few minutes and retry the operation (many 500 errors are transient)
 2. Check [Azure Service Health](https://portal.azure.com/#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues) for known issues affecting Microsoft Fabric
-3. Review [Microsoft Fabric service announcements](../release-plan/) for recent changes or known issues
-4. Implement retry logic with exponential backoff in automated processes
+3. Implement retry logic with exponential backoff in automated processes
 
 **Fix 2: Simplify the Operation**
 
@@ -1021,12 +1020,9 @@ For service principal authentication:
 5. Set appropriate token expiration and refresh policies for long-running operations
 
 ## Related content
-
-- [General troubleshooting](general-troubleshooting.md)
 - [What is a lakehouse?](lakehouse-overview.md)
 - [Lakehouse table maintenance](lakehouse-table-maintenance.md)
 - [Delta Lake in Microsoft Fabric](lakehouse-and-delta-tables.md)
 - [Fabric Capacity Planning and Troubleshooting](../enterprise/capacity-planning-troubleshoot-errors.md)
 - [Work with Delta Lake Tables Training Module](/training/modules/work-delta-lake-tables-fabric/)
 - [Lakehouse Tutorial](tutorial-build-lakehouse.md)
-- [Notebook troubleshooting][notebookTroubleshootingGuide]
