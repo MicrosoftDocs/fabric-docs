@@ -20,3 +20,12 @@ Once in OneLake, you can further transform and analyze the data by using either 
 Natural language support comes in the form of Power BI Copilot, Data Agents, and Operations Agent where they can reason over your enterprise data in OneLake and produce answers based on the data assets users have access to. You can integrate Data Agents into Microsoft 365 Copilot, Microsoft Foundry, and Copilot Studio so users can get insights from OneLake in their flow of work in different applications.
 
 :::image type="content" source="./media/data-lifecycle/fabric-data-lifecycle.png" alt-text="Screenshot showing the end-to-end data lifecycle in Microsoft Fabric.":::
+
+## Related content
+
+- [Get data into Microsoft Fabric](get-data.md)
+- [Store data in Microsoft Fabric](store-data.md)
+- [Prepare and transform data](prepare-data.md)
+- [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
+- [Track and visualize data](track-visualize-data.md)
+- [External integration and platform connectivity](external-integration.md)
