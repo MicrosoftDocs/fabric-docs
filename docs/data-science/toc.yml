@@ -101,8 +101,6 @@ items:
           href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
-        - name: Add Power BI semantic model as data source
-          href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
         - name: Connect to an AI Foundry Search Index

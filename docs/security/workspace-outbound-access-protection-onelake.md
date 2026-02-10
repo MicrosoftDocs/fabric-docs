@@ -11,15 +11,15 @@ ms.topic: how-to
 
 # Workspace outbound access protection for OneLake (preview)
 
-Workspace outbound access protection helps safeguard your data by controlling outbound connections from OneLake items in your workspace to external data sources. When this feature is enabled, [Onelake items](#supported-onelake-item-types) are restricted from making outbound connections unless access is explicitly granted through approved managed private endpoints. 
+Workspace outbound access protection helps safeguard your data by controlling outbound connections from OneLake items in your workspace to external data sources. When this feature is enabled, [Onelake items](#supported-onelake-item-types) are restricted from making outbound connections unless access is explicitly granted. 
 
 ## Understanding outbound access protection with OneLake
 
-When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints.
+When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints or data connection rules.
 
 ## Configuring outbound access protection for OneLake
 
-To configure outbound access protection for OneLake, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up managed private endpoints or use the connector-based allowlist to allow outbound access to other workspaces or external resources as needed.
+To configure outbound access protection for OneLake, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can set up a managed private endpoint or use a data connection rule to allow outbound access to other workspaces or external resources as needed.
 
 ## Supported OneLake item types
 
@@ -34,13 +34,13 @@ The following sections explain how outbound access protection affects shortcuts 
 
 When outbound access protection is enabled on a workspace, lakehouses in the workspace can only have shortcuts to lakehouses in another workspace if a cross-workspace managed private endpoint is set up between the workspaces.
 
-| Source | Destination | Is a managed private endpoint set up? | Shortcut status |
+| Source | Destination | Is the destination allowlisted? | Shortcut status |
 |:-|:-|:-|:-|
 | Lakehouse (Workspace A) | Lakehouse (Workspace B) | Yes, via managed private endpoint or connector allowlist. | Pass |
 | Lakehouse (Workspace A) | Lakehouse (Workspace B) | No | Failed |
-| Lakehouse (Workspace A) | External Azure Data Lake Storage (ADLS) G2/other data source | Doesn’t matter | Failed (external shortcuts aren't supported) |
+| Lakehouse (Workspace A) | External Azure Data Lake Storage (ADLS) G2/other data source | Yes | Permitted |
 
-If your shortcut links directly to another shortcut or contains another shortcut, outbound restrictions are evaluated sequentially at each shortcut. For example, suppose a shortcut in Workspace A points to a shortcut in Workspace B, which points to a shortcut in Workspace C. You must have a managed private endpoint from Workspace A to Workspace B and Workspace B to Workspace C for the entire shortcut chain to resolve. A managed private endpoint from Workspace A to Workspace C isn't required. 
+If your shortcut links directly to another shortcut or contains another shortcut, outbound restrictions are evaluated sequentially at each shortcut. For example, suppose a shortcut in Workspace A points to a shortcut in Workspace B, which points to a shortcut in Workspace C. You must approve the connection from Workspace A to Workspace B and Workspace B to Workspace C for the entire shortcut chain to resolve. Approving outbound requests from Workspace A to Workspace C isn't required. 
 
 ## Copying data within OneLake
 

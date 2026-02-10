@@ -10,7 +10,7 @@ ms.date: 01/20/2026
 #customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
 ---
 
-# Limit outbound requests with outbound access protection
+# Limit outbound requests with outbound access protection (preview)
 
 Outbound access protection protects data by limiting OneLake's outbound requests made through shortcuts and copy operations. 
 
