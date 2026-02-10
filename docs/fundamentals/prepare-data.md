@@ -34,3 +34,12 @@ This environment is ideal for data engineers and data scientists who need to per
 Notebooks in Fabric are deeply integrated; they can directly [connect to Lakehouses](/fabric/data-engineering/lakehouse-notebook-explore) and Warehouses and read/write data without extra credentials or setup, since everything is within the Fabric workspace security context. Additionally, [notebooks can be scheduled and orchestrated as part of Data Factory pipelines](/fabric/data-factory/notebook-activity), bridging the gap between code-centric and workflow-centric data preparation.
 
 [Fabric User Data Functions (UDFs)](/fabric/data-engineering/user-data-functions/user-data-functions-overview) allow developers to embed custom Python logic directly within the platform, enabling advanced workflows and reusable business rules across pipelines, notebooks, and activator rules. With support for PyPI libraries, UDFs can interact with [Fabric data sources](/fabric/data-engineering/user-data-functions/connect-to-data-sources) and expose REST endpoints for external integration, making them ideal for encapsulating complex operations and promoting modular, scalable solutions within enterprise environments. User Data Functions can be invoked from [Notebooks](/fabric/data-engineering/notebook-utilities#user-data-function-udf-utilities), [Pipelines](/fabric/data-engineering/user-data-functions/create-functions-activity-data-pipelines), [Activator rules](/fabric/real-time-intelligence/data-activator/activator-rules-overview), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
+
+## Related content
+
+- [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
+- [Get data into Microsoft Fabric](get-data.md)
+- [Store data in Microsoft Fabric](store-data.md)
+- [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
+- [Track and visualize data](track-visualize-data.md)
+- [External integration and platform connectivity](external-integration.md)
