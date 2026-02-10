@@ -88,3 +88,12 @@ Semantic models also enable conversational AI, semantic search, enterprise repor
 Microsoft Fabric provides several data store options, each optimized for specific workloads and query patterns. The Lakehouse is best suited for big data and data engineering scenarios, offering open table formats like Delta and Iceberg and supporting Spark and SQL engines. The Warehouse is designed for structured, relational analytics with high-performance SQL capabilities, ideal for BI and reporting. KQL Database (Eventhouse) is tailored for real-time analytics on telemetry and log data using Kusto Query Language. SQL Database supports transactional workloads and operational analytics, while Cosmos DB is optimized for globally distributed, multi-model applications with low-latency access. [Choosing the right store](decision-guide-data-store.md) depends on factors like data structure, latency requirements, query complexity, and integration needs.
 
 :::image type="content" source="./media/store-data/decision-guide-store.svg" alt-text="Screenshot of decision guide for choosing the right data store.":::
+
+## Related content
+
+- [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
+- [Get data into Microsoft Fabric](get-data.md)
+- [Prepare and transform data](prepare-data.md)
+- [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
+- [Track and visualize data](track-visualize-data.md)
+- [External integration and platform connectivity](external-integration.md)
