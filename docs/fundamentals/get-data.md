@@ -89,8 +89,6 @@ Combined with Data Mirroring, Shortcuts provide flexible data access patterns: y
 
 Microsoft Fabric provides several ways to bring data into Fabric based on your needs. You can use Eventstreams for real-time data, Mirroring, Copy activities in Pipelines, Copy job, or Shortcuts. Each option offers a different level of control and complexity, so you can pick what fits your scenario best. For more information, see the [Microsoft Fabric decision guide: Choose a data movement strategy](/fabric/data-factory/decision-guide-data-movement).
 
-:::image type="content" source="./media/get-data/decision-guide-data-movement.svg" alt-text="Screenshot of decision guide for choosing a data movement strategy.":::
-
 ## Related content
 
 - [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
