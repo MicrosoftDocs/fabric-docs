@@ -939,7 +939,9 @@
           - name: Stored Procedure activity
             href: stored-procedure-activity.md
           - name: SQL script activity
-            href: script-activity.md      
+            href: script-activity.md
+          - name: Invoke SSIS package activity
+            href: invoke-ssis-package-activity.md
       - name: Dataflows
         items:
           - name: What are dataflows?

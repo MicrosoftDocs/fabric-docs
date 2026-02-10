@@ -86,7 +86,7 @@ After you finish configuring the Invoke SSIS Package activity (and any other act
 2. Select **Save** to save your pipeline.
 3. Select **Run** to execute the pipeline immediately, or select **Schedule** to set up a recurring schedule.
 
-<!-- :::image type="content" source="media/invoke-ssis-package-activity/save-run-schedule.png" alt-text="Screenshot showing the Home tab with Save, Run, and Schedule buttons highlighted."::: -->
+:::image type="content" source="media/invoke-ssis-package-activity/save-run-schedule.png" alt-text="Screenshot showing the Home tab with Save, Run, and Schedule buttons highlighted.":::
 
 ## Step 6 – Monitor package execution
 
@@ -95,7 +95,7 @@ After you trigger a run, monitor its progress in the pipeline **Output** tab or 
 - The **Status** column shows whether the activity succeeded, failed, or is in progress.
 - If **Enable logging** was selected in the Settings tab, the activity output includes the **logging path** on OneLake where detailed package-execution logs are stored.
 
-<!-- :::image type="content" source="media/invoke-ssis-package-activity/monitor-execution.png" alt-text="Screenshot showing the monitoring view with the Invoke SSIS Package activity status and logging path."::: -->
+:::image type="content" source="media/invoke-ssis-package-activity/monitor-execution.png" alt-text="Screenshot showing the monitoring view with the Invoke SSIS Package activity status and logging path.":::
 
 To view logs, navigate to the logging path in OneLake and review the log files for detailed execution information and error messages.
 
