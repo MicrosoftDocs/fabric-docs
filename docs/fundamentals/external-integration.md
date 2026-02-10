@@ -1,5 +1,5 @@
 ---
-title: Integrate Microsoft Fabric With External Systems
+title: Integrate Microsoft Fabric with external systems
 description: Learn how Microsoft Fabric integrates with external systems to enable seamless data flow, real-time automation, and actionable insights across your organization.
 #customer intent: As a data analyst, I want to integrate Microsoft Fabric with Power Automate so that I can automate workflows triggered by real-time data conditions.
 author: SnehaGunda
@@ -9,11 +9,11 @@ ms.date: 01/20/2026
 ms.topic: concept-article
 ---
 
-## External integration
+# External integration and platform connectivity
 
 While Fabric is an all-in-one platform, it recognizes the importance of integrating with external systems, both for bringing data in and for pushing data/insights out. In this section, we consider how Fabric connects to the outside world and how others can consume Fabric-hosted data.
 
-### Actions
+### Automate actions with Data Activator
 
 :::image type="content" source="./media/external-integration/integration-actions.png" alt-text="Screenshot of integration actions diagram.":::
 
@@ -23,7 +23,7 @@ While Fabric is an all-in-one platform, it recognizes the importance of integrat
 * Outlook to send automated emails to stakeholders for alerts or approvals.
 * **[Fabric items](/fabric/real-time-intelligence/data-activator/activator-trigger-fabric-items)** to initiate actions such as refreshing a Power BI dataset or initiating a pipeline run. These capabilities enable end-to-end automation across analytics and collaboration tools, ensuring insights from streaming data lead to immediate, actionable outcomes without manual intervention.
 
-### Collaboration
+### Collaborate across Microsoft 365
 
 :::image type="content" source="./media/external-integration/integration-collaboration.png" alt-text="Screenshot of integration collaboration diagram.":::
 
@@ -39,7 +39,7 @@ Microsoft Fabric is designed to work within the Microsoft 365 ecosystem, enablin
 
 Together, these integrations enable end-to-end collaboration: from analyzing data in Fabric, discussing insights in Teams, refining models in Excel, presenting in PowerPoint, and sharing securely via SharePoint and OneDrive—all within the Microsoft 365 ecosystem.
 
-### Agentic AI
+### Agentic AI integration
 
 :::image type="content" source="./media/external-integration/agentic-integration.png" alt-text="Screenshot of agentic AI integration diagram.":::
 
@@ -51,7 +51,7 @@ Microsoft Fabric is evolving beyond analytics into an intelligence platform that
 
 * Microsoft 365 Copilot: Provides the user interface and orchestration layer, embedding these capabilities into everyday tools like Teams and Outlook. It routes user queries to the right agents, merges outputs, and applies Work IQ (user context) for personalized, compliant responses while respecting enterprise security and governance. M365 Copilot can [consume Fabric Data Agents](/fabric/data-science/data-agent-microsoft-365-copilot) as part of their Agentic AI workflow
 
-### Developers
+### Developer tools and APIs
 
 :::image type="content" source="./media/external-integration/integration-developer.png" alt-text="Screenshot of developer integration diagram.":::
 
@@ -81,20 +81,20 @@ Microsoft Fabric is designed not only for data analysts but also for developers 
 
 By embracing these open file formats and APIs, OneLake ensures that data stored in OneLake can be read and written by multiple compute engines without conversion, making it a true interoperable data foundation.
 
-#### Azure Databricks
+#### Azure Databricks integration
 
 Microsoft Fabric's OneLake and Azure Databricks integration provides a foundation for unified analytics and AI. This integration combines OneLake's governed, open data estate with Databricks' data engineering and machine learning capabilities. The bi-directional integration between OneLake and Azure Databricks comes in the form of:
 * [Azure Databricks Catalog Mirroring](/fabric/mirroring/azure-databricks): allows Unity Catalog from Databricks to be mirrored into OneLake. This means tables managed in Databricks can appear as shortcuts in OneLake, enabling Fabric workloads (Power BI, Data Agents, Ontologies, Notebooks) to access Databricks data without duplication.
 * [Databricks Reading from OneLake](/fabric/onelake/onelake-azure-databricks): Databricks can read and write data stored in OneLake using Delta Lake compatibility. Since OneLake supports open formats (Delta, Parquet), Databricks can mount OneLake storage or access it via ADLS Gen2 APIs with no need for ETL or data duplication.
 
-#### Snowflake
+#### Snowflake integration
 
 Microsoft Fabric's OneLake and Snowflake integration delivers a zero-copy architecture, enabling organizations to unify analytics and AI without duplicating data. This approach is built on open standards and shortcut technology, ensuring interoperability while maintaining governance and performance.
 
 * [OneLake Shortcuts to Snowflake Iceberg tables](/fabric/onelake/onelake-iceberg-tables): Fabric introduces shortcuts that reference Snowflake tables directly in OneLake. This means data remains in Snowflake but appears as part of the OneLake logical data estate. This way Fabric workloads (Power BI, Dataflows, AI agents) can query Snowflake data alongside native OneLake data without ETL or replication. Governance and security policies remain intact across both platforms.
 * [Snowflake Access to OneLake](https://www.snowflake.com/en/developers/guides/getting-started-with-iceberg-in-onelake/): Snowflake can query OneLake data using external tables. Since OneLake supports Delta Lake and Parquet, Snowflake reads these formats natively, enabling high-performance queries on OneLake data from Snowflake compute.
 
-## Platform
+## Platform architecture
 
 :::image type="content" source="./media/external-integration/platform.png" alt-text="Screenshot of platform architecture diagram.":::
 

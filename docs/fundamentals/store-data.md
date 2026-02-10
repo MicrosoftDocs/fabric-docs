@@ -1,5 +1,5 @@
 ---
-title: Microsoft Fabric Data Storage Options Explained
+title: Data storage options in Microsoft Fabric
 description: Discover how Microsoft Fabric's OneLake unifies all your data storage needs with a single, multi-cloud, multi-region data lake. Learn how it simplifies analytics.
 #customer intent: As a data engineer, I want to understand how to store and organize data in OneLake so that I can manage all my analytics data in a unified platform.
 author: SnehaGunda
@@ -9,13 +9,13 @@ ms.date: 01/20/2026
 ms.topic: concept-article
 ---
 
-# Store data
+# Store data in Microsoft Fabric
 
-In Microsoft Fabric, all data - irrespective of its source or how it was prepared - ultimately lands in a unified storage foundation called [OneLake](/fabric/onelake/onelake-overview). It is automatically available in Fabric (no separate provisioning needed) and is built on Azure Data Lake Storage Gen2 under the hood. The key idea is one data lake for all analytics: each Fabric tenant gets one OneLake, and within it, you organize data by workspaces and items rather than by disparate storage accounts. OneLake is multi-cloud and multi-region - it abstracts those details so users just see a consistent file system-like hierarchy.
+In Microsoft Fabric, all data - irrespective of its source or how it was prepared - ultimately lands in a unified storage foundation called [OneLake](/fabric/onelake/onelake-overview). It's automatically available in Fabric (no separate provisioning needed) and is built on Azure Data Lake Storage Gen2 under the hood. The key idea is one data lake for all analytics: each Fabric tenant gets one OneLake, and within it, you organize data by workspaces and items rather than by disparate storage accounts. OneLake is multicloud and multiregion - it abstracts those details so users just see a consistent file system-like hierarchy.
 
 OneLake's design of "one copy of data" means that once data is stored in OneLake, it doesn't need to be duplicated for different engines. Everything is saved in an open format (Delta Parquet), enabling a single source to power multiple analytical perspectives.
 
-### Lakehouse
+### Lakehouse for flexible data storage
 
 :::image type="content" source="./media/store-data/store-lakehouse.png" alt-text="Screenshot of OneLake Lakehouse architecture diagram.":::
 
@@ -23,33 +23,33 @@ In Fabric, a [Lakehouse](/fabric/data-engineering/lakehouse-overview) is a core 
 
 Lakehouse is a convenient way to organize a collection of data and expose it for analysis. Fabric automatically creates a [SQL endpoint](/fabric/data-engineering/lakehouse-sql-analytics-endpoint) for each lakehouse, so that users (or tools like Power BI) can query the Delta tables via T-SQL queries as if it were a relational database. The lakehouse thus combines the best of a data lake (flexibility, support for big data and unstructured data) with some benefits of a warehouse (the ability to query tables directly, a metastore for schema).
 
-### Warehouse
+### Warehouse for structured analytics
 
 :::image type="content" source="./media/store-data/store-warehouse.png" alt-text="Screenshot of OneLake Warehouse architecture diagram.":::
 
-A [Warehouse in Fabric](/fabric/data-warehouse/data-warehousing) provides a traditional SQL data warehouse experience (with tables, SQL views, stored procedures, etc.) but on Fabric's unified storage. When you create a Warehouse in Fabric, behind the scenes it also stores its data in OneLake in Delta format (the warehouse is essentially a organized set of Delta tables with an ANSI SQL interface on top). The difference is that the Warehouse comes with dedicated compute and fine-tuned performance for complex SQL queries and BI-style workloads. It supports features like indexing, stored procedures, and robust ACID transactions on tables.
+A [Warehouse in Fabric](/fabric/data-warehouse/data-warehousing) provides a traditional SQL data warehouse experience (with tables, SQL views, stored procedures, and more) but on Fabric's unified storage. When you create a Warehouse in Fabric, it also stores its data in OneLake in Delta format (the warehouse is essentially an organized set of Delta tables with an ANSI SQL interface on top). The difference is that the Warehouse comes with dedicated compute and fine-tuned performance for complex SQL queries and BI-style workloads. It supports features like indexing, stored procedures, and robust ACID transactions on tables.
 
-An important aspect of Fabric's Warehouse is that [it shares the underlying OneLake with the Lakehouse](/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint). That means you could even create a shortcut or integration between a Lakehouse and a Warehouse if needed (though usually one would keep them separate for different use cases). The Warehouse is ideal for structured, relational star-schema data that needs to be sliced and diced with SQL. It's also fully integrated: you can [use Fabric pipelines to load data into the Warehouse](/fabric/data-warehouse/ingest-data-pipelines), and Power BI can use [Direct Lake](/fabric/fundamentals/direct-lake-overview) or direct query to get data without import.
+An important aspect of Fabric's Warehouse is that [it shares the underlying OneLake with the Lakehouse](/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint). That means you can even create a shortcut or integration between a Lakehouse and a Warehouse if needed (though usually one would keep them separate for different use cases). The Warehouse is ideal for structured, relational star-schema data that you need to slice and dice with SQL. It's also fully integrated: you can [use Fabric pipelines to load data into the Warehouse](/fabric/data-warehouse/ingest-data-pipelines), and Power BI can use [Direct Lake](/fabric/fundamentals/direct-lake-overview) or direct query to get data without import.
 
 #### Decision guide: Lakehouse vs Warehouse
 
 In Microsoft Fabric, [Warehouses and Lakehouses serve distinct but complementary roles](/fabric/fundamentals/decision-guide-lakehouse-warehouse). Warehouses are optimized for structured, enterprise-scale data warehousing with full T-SQL support, ACID transactions, and strong schema enforcement - ideal for BI and reporting. Lakehouses offer flexible, scalable storage for both structured and unstructured data, supporting Spark-based data engineering and read-only SQL analytics via automatic endpoints. Choose Warehouses for governed, high-performance SQL workloads and Lakehouses for big data processing, exploratory analytics, and scenarios involving varied data formats or external lake integration. Many organizations benefit from using both together: Lakehouses for ingestion and transformation, Warehouses for refined analytics and reporting.
 
-### Mirrored databases
+### Mirrored databases for near real-time replication
 
 :::image type="content" source="./media/store-data/store-mirroreddb.png" alt-text="Screenshot of OneLake Mirrored Database architecture diagram.":::
 
-A mirrored database in Microsoft Fabric is a continuously replicated, analytics-ready copy of an external operational database, such as Azure SQL Database, SQL Server, Cosmos DB, or Snowflake. It's stored in OneLake using the open Delta Lake format and it enables near real-time synchronization of source data into Fabric without requiring traditional ETL pipelines. Once mirrored, the [data becomes immediately queryable](/fabric/mirroring/explore) via SQL endpoints and usable across Fabric workloads like Power BI, Spark notebooks, and pipelines. This allows you to perform analytics on live operational data while maintaining source system integrity, supporting hybrid transactional/analytical processing (HTAP) scenarios.
+A mirrored database in Microsoft Fabric is a continuously replicated, analytics-ready copy of an external operational database, such as Azure SQL Database, SQL Server, Cosmos DB, or Snowflake. It's stored in OneLake using the open Delta Lake format and it enables near real-time synchronization of source data into Fabric without requiring traditional ETL pipelines. Once mirrored, the [data becomes immediately queryable](/fabric/mirroring/explore) via SQL endpoints and usable across Fabric workloads like Power BI, Spark notebooks, and pipelines. This architecture allows you to perform analytics on live operational data while maintaining source system integrity, supporting hybrid transactional/analytical processing (HTAP) scenarios.
 
-### Eventhouse
+### Eventhouse for real-time event analytics
 
 :::image type="content" source="./media/store-data/store-eventhouse.png" alt-text="Screenshot of OneLake Eventhouse architecture diagram.":::
 
 An [Eventhouse](/fabric/real-time-intelligence/eventhouse) in Microsoft Fabric is a scalable, real-time analytics environment designed to ingest, store, and analyze large volumes of event-based data. It serves as the foundational engine for Real-Time Intelligence workloads, enabling organizations to process structured, semi-structured, and unstructured data streams efficiently.
 
-Functionally, an Eventhouse hosts one or more KQL databases (based on the Kusto engine), which are optimized for time-series and telemetry data. These databases automatically index and partition data by ingestion time, allowing fast querying and exploration using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric). Eventhouses are ideal for scenarios like IoT telemetry, security logs, compliance records, and financial transactions—where timely insights and scalable performance are critical.
+Functionally, an Eventhouse hosts one or more KQL databases (based on the Kusto engine), which are optimized for time-series and telemetry data. These databases automatically index and partition data by ingestion time, allowing fast querying and exploration using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric). Eventhouses are ideal for scenarios like IoT telemetry, security logs, compliance records, and financial transactions - where timely insights and scalable performance are critical.
 
-### SQL Database
+### SQL database for transactional workloads
 
 :::image type="content" source="./media/store-data/store-sqldatabase.png" alt-text="Screenshot of OneLake SQL Database architecture diagram.":::
 
@@ -59,31 +59,31 @@ SQL Databases employ an automatic [mirroring service](/fabric/database/sql/mirro
 
 SQL Databases in Fabric are deeply integrated with other Fabric experiences, allowing interaction with Power BI, [notebooks](/fabric/database/sql/connect-jupyter-notebook), [user data functions](/fabric/data-engineering/user-data-functions/connect-to-data-sources), [pipelines](/fabric/database/sql/load-data-pipelines), and [external tools via the TDS protocol](/fabric/database/sql/connect). This integration enables users to build end-to-end solutions: from data ingestion and transformation to [visualization](/fabric/database/sql/data-virtualization) and reporting without leaving the Fabric environment. The platform automatically handles indexing and performance optimization, removing the need for manual tuning and infrastructure management.
 
-### Cosmos DB
+### Cosmos DB for distributed NoSQL workloads
 
 :::image type="content" source="./media/store-data/store-cosmosdb.png" alt-text="Screenshot of OneLake Cosmos DB architecture diagram.":::
 
 [Cosmos DB in Microsoft Fabric](/fabric/database/cosmos-db/overview) is a fully managed, distributed NoSQL database that supports operational workloads with flexible data models and global scalability. Unlike relational stores, Cosmos DB is designed for high-throughput scenarios involving semi-structured JSON data, making it ideal for applications such as IoT telemetry, mobile backends, and real-time retail systems. In Fabric, [Cosmos DB is automatically mirrored into OneLake](/fabric/database/cosmos-db/mirror-onelake), where its data is stored in Delta format which enables analytics without impacting the performance of the operational system. This mirroring process is continuous and near real-time, requiring no manual setup or configuration. Once mirrored, the data becomes accessible through a [SQL analytics endpoint](/fabric/database/cosmos-db/tutorial-mirroring), which allows users to query the data using T-SQL, build views, and integrate with other Fabric experiences like Power BI, notebooks, and pipelines.
 
-The SQL analytics endpoint provides a read-only interface to the mirrored data, ensuring that analytical queries do not interfere with transactional operations. This architecture supports hybrid transactional and analytical processing (HTAP), allowing organizations to unify operational and analytical workloads within a single platform. Cosmos DB's ability to handle schema-less data and scale globally supports scenarios requiring analysis of real-time, high-volume, and geographically distributed data.
+The SQL analytics endpoint provides a read-only interface to the mirrored data, ensuring that analytical queries don't interfere with transactional operations. This architecture supports hybrid transactional and analytical processing (HTAP), allowing organizations to unify operational and analytical workloads within a single platform. Cosmos DB's ability to handle schema-less data and scale globally supports scenarios that require analysis of real-time, high-volume, and geographically distributed data.
 
-### Semantic Model
+### Semantic model for business logic and reporting
 
 :::image type="content" source="./media/store-data/store-semanticmodel.png" alt-text="Screenshot of OneLake Semantic Model architecture diagram.":::
 
 [Semantic models](/fabric/data-warehouse/semantic-models) provide the structured, curated layer that defines business logic, measures, hierarchies, relationships, and metadata on top of raw data in Microsoft Fabric. They make data interpretable and reusable across the platform for analytics experiences. 
 
-Semantic Models in Fabric are tightly integrated with the platform's capacity model and workspace structure. Semantic models support three query modes: Import, DirectQuery, and Direct Lake. Each one of those offering different trade-offs between performance, freshness, and scalability:
+Semantic models in Fabric are tightly integrated with the platform's capacity model and workspace structure. Semantic models support three query modes: Import, DirectQuery, and Direct Lake. Each one of those modes offers different trade-offs between performance, freshness, and scalability:
 
-* **Import mode**: In [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode), data is copied from the source into the Semantic Model during scheduled or manual refreshes. This mode offers the fastest query performance because Power BI operates on in-memory data, but it introduces latency between source updates and report visibility. It's ideal for high-performance dashboards where real-time data isn't critical.
+* **Import mode**: In [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode), the system copies data from the source into the semantic model during scheduled or manual refreshes. This mode offers the fastest query performance because Power BI operates on in-memory data, but it introduces latency between source updates and report visibility. It's ideal for high-performance dashboards where real-time data isn't critical.
 
-* **DirectQuery mode**: In [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode), queries are sent live to the source database at runtime, without storing data in the Semantic Model. This ensures up-to-date results but can lead to slower performance depending on the source system's responsiveness. It's suitable for scenarios where data freshness is more important than speed, such as operational reporting.
+* **DirectQuery mode**: In [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode), the system sends queries live to the source database at runtime, without storing data in the semantic model. This approach ensures up-to-date results but can lead to slower performance depending on the source system's responsiveness. It's suitable for scenarios where data freshness is more important than speed, such as operational reporting.
 
 * **Direct Lake mode**: [Direct Lake mode](/fabric/fundamentals/direct-lake-overview) allows Power BI to query Delta tables stored in OneLake directly, combining the performance benefits of Import with the freshness of DirectQuery. It avoids data duplication and leverages the lake-native architecture for scalable, near real-time analytics. Direct Lake is recommended for large-scale analytics on Fabric-managed data.
 
-Semantic models also enable conversational AI, semantic search, enterprise reporting, and cross-domain reasoning by bringing together advanced features like Fabric Data Agents, Power BI Copilot, Ontologies, and Power BI reports. Business users can also [access Semantic models via Excel](/collaborate-share/service-connect-excel-power-bi-datasets) where they can have more freedom to explore data and insights in a Pivot-table interface that uses live data from the semantic model.
+Semantic models also enable conversational AI, semantic search, enterprise reporting, and cross-domain reasoning by bringing together advanced features like Fabric Data Agents, Power BI Copilot, Ontologies, and Power BI reports. Business users can also [access semantic models via Excel](/collaborate-share/service-connect-excel-power-bi-datasets) where they can have more freedom to explore data and insights in a Pivot-table interface that uses live data from the semantic model.
 
-### Decision guide: choose the right data store
+### Decision guide: Choose the right data store
 
 Microsoft Fabric provides several data store options, each optimized for specific workloads and query patterns. The Lakehouse is best suited for big data and data engineering scenarios, offering open table formats like Delta and Iceberg and supporting Spark and SQL engines. The Warehouse is designed for structured, relational analytics with high-performance SQL capabilities, ideal for BI and reporting. KQL Database (Eventhouse) is tailored for real-time analytics on telemetry and log data using Kusto Query Language. SQL Database supports transactional workloads and operational analytics, while Cosmos DB is optimized for globally distributed, multi-model applications with low-latency access. [Choosing the right store](/fabric/fundamentals/decision-guide-data-store) depends on factors like data structure, latency requirements, query complexity, and integration needs.
 
