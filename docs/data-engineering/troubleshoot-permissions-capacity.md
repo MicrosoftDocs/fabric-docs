@@ -12,6 +12,19 @@ ms.topic: troubleshooting
 
 This article provides guidance for troubleshooting common permission and capacity issues you might encounter when working with Data Engineering workloads in Microsoft Fabric.
 
+## Error messages and resolution categories
+
+This table lists common Data Engineering error messages and links to relevant troubleshooting sections.
+
+| Error | Categories and resolution |
+|-------|---------------------------|
+| 403 Forbidden / Access Denied / Authentication Failed | [Permission and Authorization Errors](#permission-and-authorization-errors) |
+| User is not authorizedd | [Permission and Authorization Errors](#permission-and-authorization-errors) |
+| Spark job can't be run because you exceeded a spark compute limit / HTTP 430 | [Capacity Exceeded - Spark Job Can't Be Run](#error-capacity-exceeded---spark-job-cant-be-run) | 
+| API Rate Limit Exceeded / HTTP 429 | [API Rate Limit Exceeded](#error-api-rate-limit-exceeded) |
+| Capacity Not Active at Lakehouse Refresh | [Capacity Not Active at Refresh](#error-capacity-not-active-at-refresh) |
+| Pipeline run failed / Activity execution failed | [Data Pipeline Activity Failed](#error-data-pipeline-activity-failed) |
+
 ## Permission and Authorization Errors
 
 ### Error: User Is Not Authorized
@@ -94,53 +107,127 @@ See [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [troubleshoot lakeh
 
 ## Capacity and Rate Limiting Errors
 
-### Error: Spark Job Can't Be Run / API Rate Limit Exceeded
+### Error: Capacity Exceeded - Spark Job Can't Be Run
 
 **Error Messages:**
-- Too Many Requests For Capacity / Spark job can't be run because you exceeded a spark compute or API rate limit / HTTP 429 / HTTP 430
-- Api Rate Limit Exceeded / ListTables API Rate Limit Exceeded for Artifact
+- HTTP 430 Too many requests for capacity
+- Spark job can't be run because you exceeded a spark compute limit
+- Capacity limit exceeded
 
 #### What Happened
 
-Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) or API request limits, causing the service to throttle or reject operations. This affects Spark jobs, notebooks, Spark job definitions, data pipelines, and API calls to Lakehouses.
+Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) for Spark workloads, causing the service to throttle or reject Spark job execution. This affects Spark jobs, notebooks, Spark job definitions, and data pipelines using Spark activities.
 
 **Common Causes:**
-- Running too many concurrent Spark jobs, notebooks, or API requests
-- Insufficient capacity SKU for your workload demands
+- Running too many concurrent Spark jobs or notebooks
+- Insufficient capacity SKU for your Spark workload demands
 - Orphaned or stalled Spark sessions consuming resources in the background
 - Large or inefficient ETL operations consuming excessive compute resources
 
 #### How to Fix the Error
 
-**Fix 1: Monitor and Identify High-Consumption Workloads**
+**Fix 1: Monitor and Identify High-Consumption Spark Workloads**
 
 Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to identify which workspaces, users, or jobs are consuming the most Compute Units:
 1. Navigate to Admin Portal and access the Capacity Metrics app
 2. Review real-time utilization, throttling events, and overages
 3. Check the Compute page, Timepoint page, and Throttling tab to identify resource issues
-4. Identify specific operations causing the capacity overload
+4. Identify specific Spark operations causing the capacity overload
 
 Understanding [how Fabric capacity throttling works](../enterprise/throttling.md) is essential. Fabric uses "bursting" and "smoothing" to handle temporary spikes, but sustained overloads trigger throttling.
 
-**Fix 2: Reduce Concurrent Operations and Optimize Workloads**
+**Fix 2: Reduce Concurrent Spark Operations and Optimize Workloads**
 
 For Spark operations (Notebooks, Spark job definitions):
 - Stagger job execution times to avoid peak loads
 - Stop long-running or stalled notebooks and Spark sessions
 - Manage [Spark job concurrency limits](spark-job-concurrency-and-queueing.md)
 - Restart your Fabric capacity from the Admin Portal (Capacity Settings > Fabric Capacity > Restart) to clear orphaned sessions. Wait approximately 10 minutes before retrying operations
+- Optimize Spark jobs to use resources more efficiently
 
-For API operations:
-- Spread API requests over time rather than making many requests in a short period
-- Avoid repeated ListTables operations in loops or parallel calls
-- Implement retry logic with exponential backoff
-- Reduce the number of concurrent operations accessing the same Lakehouse
+**Fix 3: Enable Autoscale for Spark Workloads**
 
-**Fix 3: Scale Up Your Capacity**
+Configure autoscale to automatically adjust Spark compute resources based on workload demand, which helps handle capacity spikes without manual intervention:
 
-If throttling occurs frequently despite optimization, upgrade to a higher capacity SKU (e.g., from F2 to F8 or F16) to increase your available Compute Units and rate limits. Higher SKUs allow more concurrent jobs and higher API throughput.
+1. Navigate to Workspace Settings > Data Engineering/Science section
+2. Enable **Spark Autoscale** for the workspace
+3. Configure autoscale settings:
+   - Set minimum and maximum executor nodes
+   - Define scale-up and scale-down policies
+   - Set appropriate timeouts for scaling operations
+4. Monitor autoscale behavior using the Capacity Metrics app to ensure proper configuration
+
+Autoscale dynamically allocates additional compute resources during peak loads and releases them when demand decreases, optimizing both performance and cost. This is particularly effective for workloads with variable or unpredictable resource demands.
+
+See [configure autoscale for Spark](configure-autoscale-billing.md) and [autoscale billing overview](autoscale-billing-for-spark-overview.md) for more details.
+
+**Fix 4: Scale Up Your Capacity**
+
+If throttling occurs frequently despite optimization and autoscale, upgrade to a higher capacity SKU (e.g., from F2 to F8 or F16) to increase your available Compute Units. Higher SKUs allow more concurrent Spark jobs and higher throughput.
 
 Use the [capacity planning and troubleshooting guide](../enterprise/capacity-planning-troubleshoot-errors.md) to evaluate your needs and determine the appropriate SKU.
+
+### Error: API Rate Limit Exceeded
+
+**Error Messages:**
+- HTTP 429 Too Many Requests
+- API Rate Limit Exceeded
+- Request rate limit exceeded
+
+#### What Happened
+
+Your application or workload has exceeded the allowed number of API requests to Microsoft Fabric services (such as Lakehouse APIs) within a specific time window. The service is throttling requests to protect system stability.
+
+**Common Causes:**
+- Making too many API calls in a short time period
+- Repeated ListTables, GetTable, or metadata operations in loops
+- Multiple concurrent processes or applications accessing the same Lakehouse
+- Missing or insufficient retry logic with backoff strategies
+
+#### How to Fix the Error
+
+**Fix 1: Implement Request Throttling and Retry Logic**
+
+Add exponential backoff retry logic to handle HTTP 429 responses gracefully:
+- Implement retry logic with exponential backoff (wait 1s, 2s, 4s, 8s between retries)
+- Respect the `Retry-After` header in HTTP 429 responses when provided
+- Set maximum retry attempts to avoid infinite loops
+- Add jitter to retry delays to prevent synchronized retry storms
+
+```python
+import time
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+# Configure retry strategy
+retry_strategy = Retry(
+    total=5,
+    backoff_factor=2,
+    status_forcelist=[429, 500, 502, 503, 504],
+    allowed_methods=["GET", "POST"]
+)
+adapter = HTTPAdapter(max_retries=retry_strategy)
+session = requests.Session()
+session.mount("https://", adapter)
+```
+
+**Fix 2: Reduce API Request Frequency**
+
+Optimize your code to minimize API calls:
+- Avoid repeated API calls in tight loops or parallel operations
+- Cache API responses when data doesn't change frequently
+- Batch operations where possible instead of individual requests
+- Reduce the number of concurrent operations accessing the same Lakehouse
+- Spread API requests over time rather than making many requests simultaneously
+
+**Fix 3: Review Application Design and Access Patterns**
+
+For persistent rate limiting issues:
+- Profile your application to identify API call hotspots
+- Consider alternative approaches (e.g., querying data through Spark instead of repeated API calls)
+- Distribute workload across multiple Lakehouses if appropriate
+- If legitimate high-volume API access is required, contact Microsoft Support to discuss your scenario
 
 ### Error: Capacity Not Active at Refresh
 

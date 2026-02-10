@@ -12,6 +12,24 @@ ms.topic: troubleshooting
 
 This article provides guidance for troubleshooting common issues you might encounter when working with Lakehouse in Fabric.
 
+## Error messages and resolution categories
+
+This table lists common Lakehouse error messages and links to relevant troubleshooting sections.
+
+| Error | Categories and resolution |
+|-------|---------------------------|
+| Schema Errors for a Delta Table | [Delta Table Schema Errors](#delta-table-schema-errors) |
+| Table Name already exists | [Table or View Already Exists](#error-table-or-view-already-exists) |
+| Invalid column name(s) in file | [Invalid Column Names](#error-invalid-column-names) |
+| Delta Table Metadata and Log Errors | [Delta Table Metadata and Transaction Log Errors](#delta-table-metadata-and-transaction-log-errors) |
+| Table Was Not Found in Lakehouse | [Table Not Found Errors](#table-not-found-errors) |
+| Path not found / Artifact not found | [File and Path Errors](#file-and-path-errors) |
+| Error Sending Request: Failed to Fetch During File Upload | [File Upload Errors](#file-upload-errors) |
+| Lakehouse Data Copy Operation failed | [Lakehouse Operation and Data Copy Errors](#lakehouse-operation-and-data-copy-errors) |
+| Internal server error / Job execution fails with 500 | [Internal Server and Processing Errors](#internal-server-and-processing-errors) |
+| An error occurred while processing your request | [Materialized Lake Views Errors](#materialized-lake-views-errors) |
+| Power BI Entity Not Found / Not Autorized at Lakehouse Refresh | [Power BI Integration Errors](#power-bi-integration-errors) |
+
 ## Delta Table Schema Errors
 
 ### Error: [DELTA_FAILED_TO_MERGE_FIELDS] Failed to Merge Fields
@@ -172,21 +190,22 @@ Avoid schema drift by using consistent schemas across all write operations and e
 
 ## Error: Naming Conflicts
 
-### Error: Table and Column Name Errors
+### Error: Table or View Already Exists
 
 **Error Messages:**
 - Table Name already exists
-- Invalid column name(s) in file / Invalid column name
+- Materialized view already exists
+- Cannot create table, name already in use
 
 #### What Happened
 
-Operations failed because a table, column, schema, or materialized view name already exists, or the schema being applied conflicts with existing definitions. This often occurs during table creation, copy operations, or materialized view updates when names or schema elements are duplicated.
+The table, materialized view, or schema you're attempting to create already exists in the Lakehouse. Delta Lake prevents duplicate object names within the same namespace to avoid data conflicts and ambiguity.
 
 **Common Causes:**
 - Attempting to create a table or view with a name that already exists in the same workspace
-- Duplicate column names within the same table schema definition
-- Invalid column names that don't meet naming requirements (must contain UTF-8 encoded Unicode word characters, maximum 128 characters, no spaces allowed)
+- Rerunning CREATE TABLE statements without checking for existence
 - Schema merge conflicts when appending data with incompatible structures
+- Notebook or pipeline reruns creating tables that already exist
 
 #### How to Fix the Error
 
@@ -223,36 +242,41 @@ CREATE OR REPLACE MATERIALIZED VIEW your_view_name AS
 SELECT * FROM source_table;
 ```
 
-**Fix 2: Remove Duplicate Column Names**
+**Fix 2: Use Conditional Creation Logic**
 
-Inspect your schema definition and source data for duplicate columns:
+Implement existence checks before table creation in notebooks or pipelines:
 
 ```python
-# Check for duplicate column names in DataFrame
-columns = source_df.columns
-duplicates = [col for col in columns if columns.count(col) > 1]
-if duplicates:
-    print(f"Duplicate columns found: {set(duplicates)}")
-
-# Remove or rename duplicate columns
-from pyspark.sql.functions import col
-
-# Option 1: Select distinct column names (keeps first occurrence)
-distinct_columns = []
-seen = set()
-for c in source_df.columns:
-    if c not in seen:
-        distinct_columns.append(c)
-        seen.add(c)
-source_df = source_df.select(*distinct_columns)
-
-# Option 2: Rename duplicates with suffix
-for i, column in enumerate(source_df.columns):
-    if source_df.columns.count(column) > 1:
-        source_df = source_df.withColumnRenamed(column, f"{column}_{i}")
+# Check and create only if not exists
+if "your_table_name" not in [row.tableName for row in spark.sql("SHOW TABLES").collect()]:
+    df.write.format("delta").mode("overwrite").saveAsTable("your_lakehouse.your_table_name")
+else:
+    print("Table exists, appending data instead")
+    df.write.format("delta").mode("append").saveAsTable("your_lakehouse.your_table_name")
 ```
 
-**Fix 3: Validate and Correct Invalid Column Names**
+For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md).
+
+### Error: Invalid Column Names
+
+**Error Messages:**
+- Invalid column name(s) in file / Invalid column name
+- Column name contains invalid characters
+- Column name exceeds maximum length
+
+#### What Happened
+
+Column names in your source data or schema definition don't meet Delta Lake naming requirements. Delta tables require column names to use specific character sets and length constraints.
+
+**Common Causes:**
+- Column names containing spaces or special characters
+- Column names exceeding 128 characters
+- Duplicate column names within the same table schema definition
+- Non-UTF-8 characters in column names
+
+#### How to Fix the Error
+
+**Fix 1: Validate and Correct Invalid Column Names**
 
 Column names must meet specific requirements: UTF-8 encoded Unicode word characters only, maximum 128 characters long, and no space characters allowed. Valid characters include letters (any case), nonspacing marks, punctuation connectors like underscore (_), and decimal digits.
 
@@ -289,6 +313,35 @@ for col_name in source_df.columns:
         new_name = clean_column_name(col_name)
         print(f"Renaming '{col_name}' to '{new_name}': {message}")
         source_df = source_df.withColumnRenamed(col_name, new_name)
+```
+
+**Fix 2: Remove Duplicate Column Names**
+
+Inspect your schema definition and source data for duplicate columns:
+
+```python
+# Check for duplicate column names in DataFrame
+columns = source_df.columns
+duplicates = [col for col in columns if columns.count(col) > 1]
+if duplicates:
+    print(f"Duplicate columns found: {set(duplicates)}")
+
+# Remove or rename duplicate columns
+from pyspark.sql.functions import col
+
+# Option 1: Select distinct column names (keeps first occurrence)
+distinct_columns = []
+seen = set()
+for c in source_df.columns:
+    if c not in seen:
+        distinct_columns.append(c)
+        seen.add(c)
+source_df = source_df.select(*distinct_columns)
+
+# Option 2: Rename duplicates with suffix
+for i, column in enumerate(source_df.columns):
+    if source_df.columns.count(column) > 1:
+        source_df = source_df.withColumnRenamed(column, f"{column}_{i}")
 ```
 
 For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md).
@@ -867,21 +920,75 @@ For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft F
 
 ## Power BI Integration Errors
 
-### Error: Power BI Entity Not Found / Power BI Not Authorized at Lakehouse Refresh
+### Error: Power BI Entity Not Found at Lakehouse Refresh
 
 **Error Messages:**
 - Power BI Entity Not Found at Lakehouse Refresh
-- Power BI Not Authorized at Lakehouse Refresh
+- Entity does not exist in Lakehouse
+- Table or dataset not found
 
 #### What Happened
 
-Power BI cannot access the Lakehouse entity (table or dataset) during a refresh operation, either because the entity doesn't exist, has been moved, or the user lacks the required permissions.
+Power BI cannot locate the Lakehouse entity (table or dataset) during a refresh operation. The referenced entity may have been renamed, deleted, or moved since the Power BI connection was originally configured.
+
+**Common Causes:**
+- The entity (table/dataset) has been renamed, deleted, or moved since the Power BI connection was configured
+- Incorrect table or dataset name in the Power BI connection string
+- Lakehouse has been deleted or moved to a different workspace
+- Table was dropped and recreated with a different schema or ID
+- Connection is pointing to the wrong Lakehouse or workspace
+
+#### How to Fix the Error
+
+**Fix 1: Verify Entity Existence and Connections**
+
+1. In the Fabric portal, confirm the expected tables/datasets exist and are accessible in the target workspace
+2. Ensure the workspace and lakehouse connections are correct
+3. Verify that no tables have been renamed or deleted since the initial configuration
+4. Check that the connection string or data source path points to the correct Lakehouse
+5. Re-establish connections if the Lakehouse has been moved or renamed
+
+**Fix 2: Update Power BI Data Source Settings**
+
+For Power BI Desktop:
+1. Open the PBIX file
+2. Go to File > Options and settings > Data source settings
+3. Verify the Lakehouse path and table names are correct
+4. Edit the connection to point to the correct entity
+5. Refresh the data source to test the connection
+
+For Power BI Service:
+1. Navigate to the dataset settings in Power BI Service
+2. Expand the Data source credentials section
+3. Update the connection string with the correct Lakehouse and table names
+4. Test the connection before attempting a full refresh
+
+**Fix 3: Sync Direct Lake Semantic Models**
+
+For Direct Lake mode:
+1. Navigate to SQL Analytics Endpoint > Default semantic model settings
+2. Enable "Sync the default model"
+3. If "Keep Direct Lake data up to date" is disabled, data will only update on manual or scheduled refresh
+4. Manually trigger a sync to refresh the semantic model metadata
+5. Verify table and schema changes in the Lakehouse are reflected in the semantic model
+
+### Error: Power BI Not Authorized at Lakehouse Refresh
+
+**Error Messages:**
+- Power BI Not Authorized at Lakehouse Refresh
+- Access denied during refresh
+- Unauthorized to access Lakehouse data
+
+#### What Happened
+
+Power BI cannot access the Lakehouse entity during a refresh operation due to insufficient permissions. The user or service principal performing the refresh lacks the necessary access rights to read data from the Lakehouse.
 
 **Common Causes:**
 - Users lack explicit access to the Lakehouse or individual tables despite being workspace admins
-- The entity (table/dataset) has been renamed, deleted, or moved since the Power BI connection was configured
-- Direct Lake mode semantic model needs explicit synchronization or has outdated credentials
+- Direct Lake mode semantic model has outdated or missing credentials
 - Data source credentials are expired or incorrect in Power BI Desktop
+- Service principal lacks proper permissions to access the Lakehouse
+- Workspace role is insufficient (need Contributor or higher for data access)
 
 #### How to Fix the Error
 
@@ -893,22 +1000,25 @@ Power BI cannot access the Lakehouse entity (table or dataset) during a refresh 
 4. Edit or refresh credentials and test the connection
 5. Verify the account being used has the necessary permissions on the Lakehouse
 
-**Fix 2: Verify Entity Existence and Connections**
+**Fix 2: Grant Lakehouse Access Permissions**
 
-1. In the Fabric portal, confirm the expected tables/datasets exist and are accessible in the target workspace
-2. Ensure the workspace and lakehouse connections are correct
-3. Verify that no tables have been renamed or deleted since the initial configuration
-4. Check that the connection string or data source path points to the correct Lakehouse
-5. Re-establish connections if the Lakehouse has been moved or renamed
+Ensure the user or service principal has appropriate permissions:
+1. Navigate to the Lakehouse > Manage permissions
+2. Add the user or service principal with at least **Read** permission
+3. For SQL queries: Grant "Read all data using SQL" (**ReadData** permission)
+4. For Spark access: Grant "Read all data using Apache Spark" (**ReadAll** permission)
+5. Verify workspace role is **Contributor**, **Member**, or **Admin** (not just Viewer)
 
-**Fix 3: Sync Direct Lake Semantic Models**
+See [lakehouse sharing documentation](lakehouse-sharing.md) for permission details.
 
-For Direct Lake mode:
-1. Navigate to SQL Analytics Endpoint > Default semantic model settings
-2. Enable "Sync the default model"
-3. If "Keep Direct Lake data up to date" is disabled, data will only update on manual or scheduled refresh
-4. Manually trigger a sync to refresh the semantic model metadata
-5. Verify table and schema changes in the Lakehouse are reflected in the semantic model
+**Fix 3: Update Service Principal Credentials**
+
+For service principal authentication:
+1. Verify the service principal is enabled in Fabric Admin Portal (Tenant settings)
+2. Ensure the service principal is added to the workspace with Contributor role or higher
+3. Update credentials in Power BI data source settings with the correct tenant ID, client ID, and secret
+4. Test the connection to verify authentication succeeds
+5. Set appropriate token expiration and refresh policies for long-running operations
 
 ## Related content
 
