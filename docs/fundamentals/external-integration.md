@@ -125,3 +125,12 @@ Microsoft Fabric integrates natively with Azure DevOps and GitHub to enable vers
 ### Microsoft Purview
 
 [Microsoft Fabric integrates deeply with Microsoft Purview](/fabric/governance/microsoft-purview-fabric) to provide unified data governance, cataloging, and compliance across the Fabric data estate. Purview can register Fabric workspaces and OneLake as data sources in its Data Map, enabling [automated metadata scanning](/fabric/governance/metadata-scanning-overview), lineage tracking, and classification of Fabric artifacts such as Lakehouses, Warehouses, and Dataflows. This integration allows organizations to apply consistent governance policies, like [sensitivity labels](/fabric/governance/information-protection) and access controls—across both Azure and Fabric environments. Through [Purview's Unified Catalog](/purview/unified-catalog), Fabric datasets become discoverable alongside other enterprise data assets, supporting data quality checks, profiling, and compliance audits. Authentication for Purview scans uses Entra ID service principals, and administrators must enable Fabric tenant settings to allow read-only API access for Purview. Once configured, Purview can continuously monitor Fabric for schema changes, lineage updates, and data quality metrics, ensuring that analytics workflows in Fabric adhere to enterprise governance standards. This synergy helps enterprises maintain end-to-end visibility and compliance across hybrid data landscapes without duplicating governance efforts.
+
+## Related content
+
+- [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
+- [Get data into Microsoft Fabric](get-data.md)
+- [Store data in Microsoft Fabric](store-data.md)
+- [Prepare and transform data](prepare-data.md)
+- [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
+- [Track and visualize data](track-visualize-data.md)
