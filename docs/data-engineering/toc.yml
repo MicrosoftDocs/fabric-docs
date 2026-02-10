@@ -555,5 +555,7 @@ items:
         href: spark-best-practices-basics.md
 - name: Troubleshooting Guide
   items:
-  - name: Troubleshooting overview
-    href: troubleshooting-overview.md
+  - name: Permissions and capacity errors.md
+    href: troubleshoot-permissions-capacity.md
+  - name: Lakehouse errors.md
+    href: troubleshoot-lakehouse.md
