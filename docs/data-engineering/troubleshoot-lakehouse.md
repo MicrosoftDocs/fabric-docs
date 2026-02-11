@@ -69,7 +69,7 @@ from pyspark.sql.functions import col
 # Cast the column to match target type (e.g., timestamp)
 source_df = source_df.withColumn("field_name", col("field_name").cast("timestamp"))
 
-# Then write to the table
+# Then write to table, use merge instead of append to avoid duplicates (if you have a key)
 source_df.write.format("delta").mode("append").saveAsTable("your_table")
 ```
 
@@ -80,7 +80,7 @@ The [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md) ex
 Define an explicit schema for your source data before writing to prevent type mismatches. This ensures [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md):
 
 ```python
-from pyspark.sql.types import StructType, StructField, TimestampType, StringType, IntegerType
+from pyspark.sql.types import StructType, StructField, TimestampType, IntegerType
 
 # Define schema matching your target table exactly
 schema = StructType([
@@ -90,23 +90,27 @@ schema = StructType([
 ])
 
 # Apply schema when reading source data
-source_df = spark.read.schema(schema).format("csv").load("your_source_path")
+source_df = spark.read.schema(schema).format("csv").load("Files/your_source")
 ```
 
 This preventive approach is especially useful when ingesting data from external sources with inconsistent or unknown types.
 
 **Fix 3: Fix Schema Mismatches in MERGE Operations**
 
-When performing upsert operations with MERGE statements, ensure both source and target have matching field types. For example:
+When performing upsert operations with MERGE statements, ensure both source and target have matching field types. This operation writes to the target table, so you need at least Contributor role on the Lakehouse.
 
 ```python
 from delta.tables import DeltaTable
 from pyspark.sql.functions import col
 
-# Cast all mismatched columns in source before merge
+# Read source data (replace with your actual source)
+source_df = spark.read.format("csv").option("header", "true").load("Files/your_source")
+
+# Cast mismatched columns to match target table schema
 source_df = source_df.withColumn("field_name", col("field_name").cast("timestamp"))
 
-# Perform merge with aligned schemas
+# Connect to existing Delta table and perform merge
+# This updates matching rows and inserts new rows
 target_table = DeltaTable.forName(spark, "your_table")
 target_table.alias("target").merge(
     source_df.alias("source"),
@@ -139,11 +143,13 @@ Delta Lake cannot parse or deserialize the schema information stored in the tran
 Check the Delta transaction log for corruption using the [Lakehouse and Delta Tables guide](lakehouse-and-delta-tables.md):
 
 ```python
+from notebookutils import mssparkutils
+
 # Check Delta table history for issues
 spark.sql("DESCRIBE HISTORY your_table_name").show()
 
 # Examine the transaction log files
-display(dbutils.fs.ls("Tables/your_table_name/_delta_log/"))
+display(mssparkutils.fs.ls("Tables/your_table_name/_delta_log/"))
 
 # Try to read the latest checkpoint
 spark.read.parquet("Tables/your_table_name/_delta_log/*.checkpoint.parquet").show()
@@ -182,7 +188,7 @@ schema = StructType([
 ])
 
 # Use schema when creating table
-df = spark.read.schema(schema).format("csv").load("Files/data.csv")
+df = spark.read.schema(schema).option("header", "true").format("csv").load("Files/data.csv")
 df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("your_table_name")
 ```
 
@@ -209,9 +215,9 @@ The table, materialized view, or schema you're attempting to create already exis
 
 #### How to Fix the Error
 
-**Fix 1: Check for Existing Tables and Use DROP/REPLACE**
+**Fix 1: Check for Existing Tables and Use CREATE OR REPLACE**
 
-Before creating tables or materialized views, verify they don't already exist:
+Before creating tables or materialized views, verify they don't already exist. This operation requires Contributor role or higher since it modifies data:
 
 ```python
 # Check if table exists
@@ -219,11 +225,9 @@ existing_tables = spark.sql("SHOW TABLES IN your_lakehouse").collect()
 table_names = [row.tableName for row in existing_tables]
 
 if "your_table_name" in table_names:
-    print("Table already exists")
-    # Option 1: Drop and recreate
-    spark.sql("DROP TABLE IF EXISTS your_lakehouse.your_table_name")
-    
-# Option 2: Use CREATE OR REPLACE
+    print("Table already exists - replacing it")
+
+# CREATE OR REPLACE handles both cases (table exists or not)
 spark.sql("""
     CREATE OR REPLACE TABLE your_lakehouse.your_table_name (
         id INT,
@@ -232,22 +236,21 @@ spark.sql("""
 """)
 ```
 
-For materialized views:
-```sql
--- Drop existing view before recreating
-DROP MATERIALIZED VIEW IF EXISTS your_view_name;
+For materialized views, use `CREATE OR REPLACE` which handles both cases (view exists or not):
 
--- Or use CREATE OR REPLACE
+```sql
+-- CREATE OR REPLACE handles both cases (view exists or not)
 CREATE OR REPLACE MATERIALIZED VIEW your_view_name AS
 SELECT * FROM source_table;
 ```
 
 **Fix 2: Use Conditional Creation Logic**
 
-Implement existence checks before table creation in notebooks or pipelines:
+Implement existence checks before table creation in notebooks or pipelines. This operation requires Contributor role or higher:
 
 ```python
-# Check and create only if not exists
+# Assumes df is already defined with your source data
+# Check and create only if table doesn't exist
 if "your_table_name" not in [row.tableName for row in spark.sql("SHOW TABLES").collect()]:
     df.write.format("delta").mode("overwrite").saveAsTable("your_lakehouse.your_table_name")
 else:
@@ -306,7 +309,7 @@ def clean_column_name(col_name):
     cleaned = cleaned[:128]
     return cleaned
 
-# Apply to DataFrame
+# Apply to DataFrame (source_df must be defined before running this code)
 for col_name in source_df.columns:
     is_valid, message = is_valid_column_name(col_name)
     if not is_valid:
@@ -372,11 +375,13 @@ The Delta table's `_delta_log` directory is missing, empty, or corrupted. Delta 
 Check if the `_delta_log` directory exists using the [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md):
 
 ```python
+from notebookutils import mssparkutils
+
 # Check for _delta_log directory
-display(dbutils.fs.ls("Tables/your_table_name/"))
+display(mssparkutils.fs.ls("Tables/your_table_name/"))
 
 # Verify _delta_log exists and contains files
-display(dbutils.fs.ls("Tables/your_table_name/_delta_log/"))
+display(mssparkutils.fs.ls("Tables/your_table_name/_delta_log/"))
 ```
 
 If the `_delta_log` directory is missing or empty, the directory is not a valid Delta table. You need to recreate it:
@@ -398,12 +403,10 @@ If you have existing Parquet data that needs to be converted to Delta format, us
 CONVERT TO DELTA parquet.`Tables/your_table_name`
 ```
 
-Or use the Fabric Tablebuilder API for proper initialization:
+Or use PySpark to write a proper Delta table with transaction log. This operation requires Contributor role or higher:
 
 ```python
-# Use Fabric's Tablebuilder for proper Delta creation
-from notebookutils import mssparkutils
-
+# Assumes df is already defined with your Parquet data (e.g., spark.read.parquet(...))
 # Create table with proper schema and Delta log
 table_path = "Tables/your_table_name"
 df.write.format("delta").mode("overwrite").save(table_path)
@@ -435,9 +438,11 @@ Delta Lake cannot locate or read the metadata required to access the table. The 
 Check that the table location contains proper Delta metadata using the [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md):
 
 ```python
+from notebookutils import mssparkutils
+
 # Verify _delta_log exists
 try:
-    log_files = dbutils.fs.ls("Tables/your_table_name/_delta_log/")
+    log_files = mssparkutils.fs.ls("Tables/your_table_name/_delta_log/")
     print(f"Found {len(log_files)} log files")
     display(log_files)
 except Exception as e:
@@ -456,26 +461,42 @@ If `_delta_log` is missing, the directory is not a Delta table and needs to be c
 
 **Fix 2: Recreate or Convert to Delta Table**
 
-If metadata is missing or corrupted, recreate the Delta table using the [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/):
+If metadata is missing or corrupted, recreate the Delta table using the [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/). Choose one of the following approaches (not both). These operations require Contributor role or higher.
+
+Option 1: Read Parquet and recreate as Delta table**
+
+This approach reads the data files and writes a new Delta table, which may reorder or compact the underlying files:
 
 ```python
-# If Parquet files exist, read and recreate as Delta
+# Read existing Parquet files and recreate as Delta
 df = spark.read.parquet("Tables/your_table_name/")
-
-# Recreate with proper Delta format
 df.write.format("delta").mode("overwrite").saveAsTable("your_table_name")
-
-# Or use CONVERT TO DELTA for existing Parquet data
-spark.sql("CONVERT TO DELTA parquet.`Tables/your_table_name`")
 
 # Verify metadata was created
 spark.sql("DESCRIBE DETAIL your_table_name").show()
 ```
 
-For tables registered in the metastore but with missing metadata files, drop and recreate the table registration:
+Option 2: Convert in-place using CONVERT TO DELTA**
+
+This approach preserves existing Parquet files and adds Delta transaction log metadata:
 
 ```sql
--- Drop broken table registration
+-- Convert existing Parquet files to Delta table (preserves original files)
+CONVERT TO DELTA parquet.`Tables/your_table_name`
+```
+
+For tables registered in the metastore but with missing metadata files, drop and recreate the table registration. This operation requires Contributor role or higher.
+
+```sql
+-- Check if table is EXTERNAL or MANAGED before dropping
+-- Look for 'Type' in the output - must be 'EXTERNAL'
+DESCRIBE EXTENDED your_table_name;
+```
+
+If the table is external, you can safely drop and re-register it:
+
+```sql
+-- Only run this if DESCRIBE EXTENDED shows Type = EXTERNAL
 DROP TABLE IF EXISTS your_table_name;
 
 -- Re-register with correct path
@@ -503,43 +524,37 @@ The Delta table has accumulated too many transaction log files without creating 
 
 #### How to Fix the Error
 
-**Fix 1: Manually Trigger Checkpoint Creation**
+**Fix 1: Run OPTIMIZE to Trigger Checkpointing**
 
-Force a checkpoint creation using Spark commands. The [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md) explains checkpoint management:
-
-```python
-# Method 1: Using Delta Lake API
-from delta.tables import DeltaTable
-
-deltaTable = DeltaTable.forPath(spark, "Tables/your_table_name")
-deltaTable.checkpoint()
-
-# Method 2: Force checkpoint by querying history
-spark.sql("DESCRIBE HISTORY your_table_name").show(1)
-```
-
-In Scala notebooks:
-```scala
-import org.apache.spark.sql.delta.DeltaLog
-DeltaLog.forTable(spark, "Tables/your_table_name").checkpoint()
-```
-
-**Fix 2: Perform Table Optimization and Maintenance**
-
-Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake table optimization guide](delta-optimization-and-v-order.md):
+The recommended way to address checkpoint issues is to run `OPTIMIZE`, which compacts small files and triggers a checkpoint. This operation requires Contributor role or higher. The [Lakehouse and Delta Tables documentation](lakehouse-and-delta-tables.md) explains checkpoint management:
 
 ```sql
--- Optimize table (compacts files and can trigger checkpoints)
+-- OPTIMIZE compacts files and triggers checkpoint creation
 OPTIMIZE your_table_name;
 
 -- For tables with many small files
 OPTIMIZE your_table_name ZORDER BY (commonly_filtered_column);
 
--- Run VACUUM to clean up old files (be careful with retention period)
-VACUUM your_table_name RETAIN 168 HOURS;  -- 7 days retention
+-- Run VACUUM to permanantly deletes old files (minimum default retention period)
+VACUUM your_table_name RETAIN 168 HOURS;   
 ```
 
-Microsoft Fabric automatically checkpoints Delta tables every 10 transactions, but manual intervention may be needed if automated checkpointing failed or external tools were used.
+You can also verify the current checkpoint status by examining the transaction log:
+
+```python
+from notebookutils import mssparkutils
+
+# List checkpoint files in the _delta_log directory
+# Checkpoint files have names like 00000000000000000010.checkpoint.parquet
+log_files = mssparkutils.fs.ls("Tables/your_table_name/_delta_log/")
+checkpoint_files = [f for f in log_files if 'checkpoint' in f.name]
+print(f"Found {len(checkpoint_files)} checkpoint files")
+display(checkpoint_files)
+```
+
+**Fix 2: Perform Table Maintenance**
+
+Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake table optimization guide](delta-optimization-and-v-order.md).
 
 ## Table Not Found Errors
 
@@ -578,18 +593,22 @@ Delta table names are **case-sensitive**. If you created a table as `CustomerDat
 
 **Fix 2: Create or Re-register the Delta Table**
 
-If the table doesn't exist, you need to create it. If Delta files exist in storage but aren't registered, re-create the table reference. The [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/) provides comprehensive guidance:
+If the table doesn't exist, you need to create it. If Delta files exist in storage but aren't registered, re-create the table reference. These operations require Contributor role or higher. The [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/) provides comprehensive guidance.
+
+**Option A: Create a new managed table from a DataFrame**
 
 ```python
-# Create new Delta table from DataFrame
+# Assumes df is already defined with your source data
 df.write.format("delta").mode("overwrite").saveAsTable("your_table_name")
+```
 
-# Or create table from existing Delta files
-spark.sql("""
-    CREATE TABLE your_table_name
-    USING DELTA
-    LOCATION 'abfss://path/to/delta/table'
-""")
+**Option B: Register existing Delta files as an external table**
+
+```sql
+-- Creates a table reference pointing to existing Delta files (doesn't copy data)
+CREATE TABLE your_table_name
+USING DELTA
+LOCATION 'abfss://path/to/delta/table'
 ```
 
 If you suspect the table exists but isn't showing up, try refreshing your lakehouse view or restarting your Spark session to clear any caching issues.
@@ -723,7 +742,7 @@ df = spark.read.csv(
 )
 
 # Or use relative path if lakehouse is attached to notebook
-df = spark.read.csv("/lakehouse/default/Files/data/yourfile.csv", header=True)
+df = spark.read.csv("/lakehouse/default/Files/data/yourfile.csv", header=True, inferSchema=True)
 ```
 
 Understanding [how to access files in Fabric lakehouse using notebooks](lakehouse-notebook-explore.md) ensures you reference the correct storage paths for your data operations.
@@ -755,14 +774,17 @@ The browser or application cannot complete the file upload request to the Lakeho
 
 **Fix 2: Use Spark Notebook Workaround**
 
-If UI upload doesn't work due to permission or policy restrictions, use a Fabric Notebook with Spark code to upload directly to the Lakehouse:
+If UI upload doesn't work due to permission or policy restrictions, use a Fabric Notebook with Spark code to write files directly to the Lakehouse. This operation requires Contributor role or higher:
 
 ```python
-# Use mssparkutils to write files programmatically
+from notebookutils import mssparkutils
+
+# Write string content directly to a file in the Lakehouse
+file_content = "col1,col2,col3\nvalue1,value2,value3"
 mssparkutils.fs.put("Files/data/yourfile.csv", file_content, overwrite=True)
 
-# Or copy files from local to lakehouse
-mssparkutils.fs.cp("file:/local/path/yourfile.csv", "Files/data/yourfile.csv")
+# Or copy files between Lakehouse locations
+mssparkutils.fs.cp("Files/source/data.csv", "Files/destination/data.csv")
 ```
 
 This method bypasses UI limitations and works even when the Explorer UI is restricted.
