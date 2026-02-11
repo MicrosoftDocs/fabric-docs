@@ -23,7 +23,8 @@ Microsoft 365 provides a comprehensive set of productivity tools that help organ
 > This feature is in [preview](../fundamentals/preview.md).
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
-- Microsoft 365 Copilot license and a user license for each individual using Fabric data agent in Microsoft 365 Copilot. 
+- Microsoft 365 Copilot license or Office 365 commercial subscription
+- User licenses for each individual using Fabric data agent in Microsoft 365 Copilot. 
 - Both the Fabric data agent and Microsoft 365 Copilot must be on the same tenant and must sign in to both with the same account.
 
 

@@ -873,6 +873,10 @@
                 href: monitor-copy-job.md
               - name: Change data capture from SAP via SAP Datasphere Outbound 
                 href: copy-job-tutorial-sap-datasphere.md
+              - name: Change data capture from Snowflake
+                href: cdc-copy-job-snowflake.md
+              - name: Change data capture from Google BigQuery
+                href: cdc-copy-job-bigquery.md
           - name: Run copy job from a pipeline
             href: copy-job-activity.md
           - name: Change data capture (CDC) in Copy job

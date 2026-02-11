@@ -105,9 +105,9 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     * **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Spark job, or notebook when the condition is met, follow these steps:
-        1. For **Select action**, select **Run Pipeline**,  **Run Spark job**, **Run Notebook**, or **Run Function (preview)**.
-        1. On Select Fabric item to run, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
+        To configure the alert to launch a Fabric pipeline, Dataflow (preview), Spark job, or notebook when the condition is met, follow these steps:
+        1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section
+        1. On Select Fabric item to run, select the Fabric item from the list.
         1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
         You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
             :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
@@ -207,9 +207,9 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
         :::image type="content" source="media/activator-alert-queryset/action-teams.png" alt-text="Screenshot of the Send Microsoft Teams notification section in the Add Rule side pane.":::
 
     * **Run Fabric activities**:
-        To configure the alert to launch a Fabric pipeline, Spark job, or notebook when the condition is met, follow these steps:
-        1. For **Select action**, select **Run Pipeline**,  **Run Spark job**, **Run Notebook**, or **Run Function (preview)**.
-        1. On Select Fabric item to run, select the Fabric item (pipeline, notebook, Spark job, or function) from the list.
+        To configure the alert to launch a Fabric pipeline, Dataflow (preview), Spark job, or notebook when the condition is met, follow these steps:
+        1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section
+        1. On Select Fabric item to run, select the Fabric item from the list.
         1. Select Add parameter and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter.
         You can pass parameters from the alert data by typing `@` or by selecting the button next to the text box. For example, `@BikepointID`.
             :::image type="content" source="media/activator-alert-queryset/fabric-activities.png" alt-text="Screenshot of the Run Fabric activities section in the Add Rule side pane.":::
