@@ -20,8 +20,9 @@ For help with common problems, see [Troubleshooting Graph in Microsoft Fabric](t
 
 ### Data sources
 
-- Graph currently doesn't support Lakehouse with schema enabled.
-- OneLake parquet files are the only data sources currently supported.
+- Lakehouse with schema enabled is not supported.
+- OneLake parquet and CSV files are the only data sources currently supported.
+- OneLake Security support is under development; data sources with OneLake Security enabled are not supported at the moment.
 - Power BI semantic model support is under development.
 
 ### Data types
