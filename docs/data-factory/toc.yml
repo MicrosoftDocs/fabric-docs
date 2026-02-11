@@ -1128,6 +1128,8 @@
             href: invoke-pipeline-activity.md
           - name: KQL activity
             href: kql-activity.md
+          - name: Lakehouse maintenance activity
+            href: lakehouse-maintenance-activity.md
           - name: Lookup activity
             href: lookup-activity.md
           - name: Office 365 Outlook activity
