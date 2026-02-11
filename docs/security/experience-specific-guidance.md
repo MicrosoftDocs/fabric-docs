@@ -314,6 +314,17 @@ Here are the steps to achieve this:
 
 This guide walks you through the recovery procedures for the Real-Time Intelligence experience. It covers KQL databases/querysets and eventstreams.
 
+### Graph Database/Queryset
+
+Graph Model and Graph Queryset items from the primary region remain unavailable to customers and these items aren't replicated to the secondary region.
+
+If you want to recover a Graph Model or Graph Queryset item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Graph Model and Graph Queryset items with your Git repo.
+
+During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Graph Model and Graph Queryset items in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step brings the Graph Model and Graph Queryset items back to life.
+
+> [!NOTE]
+> If the original Graph Model item has a lakehouse configured for data loading, refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) to recover it first. After the lakehouse is recovered, connect the newly recovered lakehouse to the newly recovered Graph Model item.
+
 ### KQL Database/Queryset
 
 KQL database/queryset users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, data in your KQL databases querysets remains safe and accessible.
