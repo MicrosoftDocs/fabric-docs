@@ -1,8 +1,6 @@
 ---
 title: Migrate to Dataflow Gen2 (CI/CD) using Save As
 description: This article describes the procedure for migrating Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) to Dataflow Gen2 (CI/CD) in Data Factory.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 01/28/2026
 ms.custom:

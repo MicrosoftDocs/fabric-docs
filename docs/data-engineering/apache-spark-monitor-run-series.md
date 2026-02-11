@@ -72,6 +72,10 @@ If the bar is marked red, an exception has been detected for that run instance. 
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
 
+> [!NOTE]
+>
+> A minimum runtime threshold of **five minutes** is applied for anomaly detection. Spark applications that run for **less than five minutes** are **not included** in anomaly analysis.
+
 ## Related content
 
 - [Run Series Analysis Overview](run-series-analyisis-overview.md)

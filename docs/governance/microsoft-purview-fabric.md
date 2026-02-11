@@ -6,7 +6,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: overview
 ms.custom:
-ms.date: 06/10/2025
+ms.date: 02/09/2026
 ---
 
 # Use Microsoft Purview to govern Microsoft Fabric
@@ -37,8 +37,8 @@ For more information, you can follow these links:
 Microsoft Purview works with Microsoft Fabric so users can discover and manage Microsoft Fabric items in Microsoft Purview applications. The integration currently allows you to take advantage of these applications:
 
 - **Microsoft Purview Unified Catalog** - automatically view metadata about your Microsoft Fabric items in the Microsoft Purview Unified Catalog with [live view in Microsoft Purview.](/purview/live-view) Or, connect your data catalog to Microsoft Fabric in [the same tenant](/purview/register-scan-fabric-tenant) or [across tenants](/purview/register-scan-fabric-tenant-cross-tenant).
-- **Microsoft Purview Information Protection** - allows you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Sensitivity labels can be set on all Fabric items. Data remains protected when it's exported via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit. For more information, see [Information Protection in Microsoft Fabric](information-protection.md).
-- **Microsoft Purview Data Loss Prevention (DLP)** - DLP policies are currently supported in Fabric for Power BI semantic models only. DLP policies detect upload of sensitive data into semantic models. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for semantic model owners and alerts for security admins. DLP policies can also be configured to allow data owners to override them. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
+- **Microsoft Purview Information Protection** - allows you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Sensitivity labels can be set on all Fabric items. Data remains protected when it's exported via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit. For more information, see [Information Protection in Microsoft Fabric](information-protection.md). Moreover, you can control access to items in Fabric using sensitivity labels with protection policies. Learn more about [Protection Policies in Fabric](protection-policies-overview.md)
+- **Microsoft Purview Data Loss Prevention (DLP)** - DLP policies support structured data in Fabric, such as lakehouses, warehouses, various databases and semantic mondels. DLP policies detect upload of sensitive data into OneLake. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for Fabric users and alerts for security admins. DLP policies can also be configured to allow workspace admins to override them. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 - **Microsoft Purview Audit** - all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [track user activities in Power BI](../admin/service-admin-portal-audit-usage.md).
 
 Microsoft Purview and Microsoft Fabric will continue to work more closely together. Soon you'll be able to use more solutions to monitor and manage Microsoft Fabric as well.
@@ -48,6 +48,9 @@ Microsoft Purview and Microsoft Fabric will continue to work more closely togeth
 The Microsoft Purview Hub allows you to see insights about your Fabric data inside Fabric itself! It also acts as a gateway between Fabric and Microsoft Purview so you can govern the rest of your data estate as well.
 
 [You can follow this link to the Microsoft Purview Hub documentation.](use-microsoft-purview-hub.md)
+
+> [!NOTE]
+> Purview Hub insights are permanently moving to the **Govern** tab in the OneLake catalog. For more information, see [Govern Fabric data](onelake-catalog-govern.md)
 
 ## Learn more
 

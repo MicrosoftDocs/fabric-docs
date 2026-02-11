@@ -1,8 +1,7 @@
 ---
 title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
-author: kromerm
-ms.author: makromer
+ms.reviewer: makromer
 ms.topic: concept-article
 ms.date: 12/19/2025
 ms.custom:

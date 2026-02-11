@@ -1,8 +1,6 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirroring from SQL Server"
 description: Learn how to configure a mirrored database from SQL Server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: ajayj, rajpo, twright, wiassaf
 ms.date: 01/12/2026
 ms.topic: tutorial

@@ -1,15 +1,12 @@
 ---
 title: "Quickstart: Create a Copy job in Data Factory"
 description: "Copy data in Data Factory without creating a Fabric pipeline."
-author: KrishnakumarRukmangathan
-ms.author: krirukm
-ms.reviewer: whhender
+ms.reviewer: krirukm
 ms.topic: quickstart  #Don't change
 ms.date: 04/29/2025
 ms.custom: copy-job
 
 #customer intent: As a Data Factory user I want to quickly try the Copy job functionality so that I can evaluate it for my own environment and start learning the tool.
-
 ---
 
 # Quickstart: Create a Copy job

@@ -1,8 +1,6 @@
 ---
 title: How to Get Started with Microsoft Copilot in Fabric in the Data Factory Workload
 description: Learn how to get started with Microsoft Copilot in Fabric in the Data Factory workload to use natural language for creating data integration solutions.
-author: whhender
-ms.author: whhender
 ms.reviewer: maghan, sngun
 ms.date: 09/02/2025
 ms.service: fabric

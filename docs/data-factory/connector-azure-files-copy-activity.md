@@ -1,8 +1,7 @@
 ---
 title: Configure Azure Files in a copy activity
 description: This article explains how to copy data using Azure Files.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 04/09/2024
 ms.custom: 

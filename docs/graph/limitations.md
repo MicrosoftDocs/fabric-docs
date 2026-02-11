@@ -20,9 +20,10 @@ For help with common problems, see [Troubleshooting Graph in Microsoft Fabric](t
 
 ### Data sources
 
-- Graph currently doesn't support Lakehouse with schema enabled.
-- OneLake parquet files are the only data sources currently supported.
-- Power BI semantic model support is under development.
+- OneLake parquet and CSV files are the only data sources currently supported.
+- Support for Power BI semantic models as data sources is under development.
+- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview) is under development.
+- Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
 
 ### Data types
 
@@ -47,12 +48,6 @@ The following OneLake types are supported:
 - DateType
 - TimestampNtzType
 - TimestampType
-
-### Data sources
-
-- OneLake parquet and CSV files are the only data sources currently supported.
-- Power BI semantic model support is under development.
-- Lakehouse with schema enabled isn't supported.
 
 ### Edge creation
 

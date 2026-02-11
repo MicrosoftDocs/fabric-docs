@@ -84,9 +84,9 @@ Copilot is also available for Power BI apps, where it's scoped to the curated co
 
 ### Copilot in Fabric in the Real-Time Intelligence workload
 
-Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists.
+Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. Copilot lets you [create and refine KQL queries](../real-time-intelligence/copilot-writing-queries.md) directly in Real-Time Dashboard tiles using natural language.
 
-For more information, see [Copilot for Writing KQL Queries](../fundamentals/copilot-for-writing-queries.md).
+For more information, see [Copilot for Writing KQL Queries](../real-time-intelligence/copilot-writing-queries.md).
 
 ### Where to find the AI and Copilot experiences in Fabric
 
@@ -102,8 +102,8 @@ The following table provides an overview of the various AI and Copilot experienc
 | **Copilot for SQL database** | SQL queries in SQL database | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md). |
 | **Copilot for Power BI** | Semantic models in Power BI Desktop or Power BI service | - [Suggest linguistic model synonyms](/power-bi/natural-language/q-and-a-copilot-enhancements).<br />- [Suggest measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br />- [Write and explain DAX queries](/dax/dax-copilot).<br />- [Ask questions about your data (preview)](/power-bi/create-reports/copilot-ask-data-question). |
 | | Reports (Power BI Desktop, service, or mobile app) | - Power BI home (announced).<br />- [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).<br />- [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).<br />- [Summarize data in a narrative visual](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).<br />- [Explain a report page or visual](/power-bi/create-reports/copilot-pane-summarize-content). |
-| **Copilot for Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](copilot-for-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](copilot-for-writing-queries.md). |
-| | Real-time dashboards | - [Generate a real-time dashboard](../fundamentals/copilot-generate-dashboard.md). |
+| **Copilot for Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](../real-time-intelligence/copilot-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](../real-time-intelligence/copilot-writing-queries.md). |
+| | Real-time dashboards | - [Generate a real-time dashboard](../real-time-intelligence/copilot-generate-dashboard.md).<br />- [Author queries with Copilot (preview)](../real-time-intelligence/copilot-writing-queries.md). |
 > [!NOTE]  
 > Copilot's capabilities are evolving over time. More items and Copilot experiences will likely become available in the future.
 >  

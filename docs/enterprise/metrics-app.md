@@ -12,15 +12,12 @@ ms.date: 01/14/2026
 
 Fabric resides on a capacity, which is a pool of resources allocated to your platform. Each capacity has its own number of [Capacity Units (CUs)](licenses.md). You use CUs to measure the compute power available for your capacity.
 
-The Microsoft Fabric Capacity Metrics app provides monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale.
+The Microsoft Fabric Capacity Metrics app provides monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on autoscale. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale).
 
 The app is updated often with new features and functionalities. It provides the most in-depth information into how your capacities are performing.
 
 > [!NOTE]
->
-> - Autoscale is available for Fabric F SKUs and Power BI Premium P SKUs. For more information about autoscale, see [Autoscale your Fabric capacity](/power-bi/enterprise/service-premium-auto-scale). Autoscale for Power BI Embedded A SKUs is deprecated and no longer available for most customers.
->
-> - The Microsoft Fabric Capacity Metrics app supports both EM/A and P SKUs.
+> The Microsoft Fabric Capacity Metrics app supports both EM/A and P SKUs.
 
 ## Install the app
 

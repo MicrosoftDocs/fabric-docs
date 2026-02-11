@@ -2,9 +2,7 @@
 title: Migration Planning for Azure Data Factory to Fabric Data Factory
 description: Plan your ADF-to-Fabric migrations with steps to evaluate the correct tools and execute your migration.
 #customer intent: As an Azure Data Factory customer I want to choose the right migration path to Fabric Data Factory, so I can quickly and easily migrate all my items.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.date: 10/06/2025
 ms.topic: concept-article
 ai-usage: ai-assisted

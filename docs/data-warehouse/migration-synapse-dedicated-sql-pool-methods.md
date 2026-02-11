@@ -4,7 +4,7 @@ description: This article details the methods of migration of data warehousing i
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 04/06/2025
+ms.date: 02/04/2026
 ms.topic: concept-article
 ms.custom:
   - fabric-cat
@@ -12,7 +12,7 @@ ms.custom:
 
 # Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse
 
-**Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
+**Applies to**: [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
 This article details the methods of migration of data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Warehouse.  
 
@@ -245,7 +245,7 @@ For the data migration, you'll then use either COPY INTO or Data Factory to inge
 
 The Microsoft Fabric CAT team has provided a set of PowerShell scripts to handle the extraction, creation, and deployment of schema (DDL) and database code (DML) via a SQL Database Project. For a walkthrough of using the SQL Database project with our helpful PowerShell scripts, see [microsoft/fabric-migration on GitHub.com](https://github.com/microsoft/fabric-migration/tree/main/data-warehouse#deploy_and_create_migration_scripts_from_sourceps1---deploy-as-sql-package). 
 
-For more information on SQL Database Projects, see [Getting started with the SQL Database Projects extension](/azure-data-studio/extensions/sql-database-project-extension-getting-started?view=fabric&preserve-view=true) and [Build and Publish a project](/azure-data-studio/extensions/sql-database-project-extension-build?view=fabric&preserve-view=true).
+For more information on SQL Database Projects, see [Get started with the SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/getting-started-sql-database-projects-extension?view=fabric&preserve-view=true) and [Build a database project from the command line](/sql/tools/visual-studio-code-extensions/sql-database-projects/build-database-project-from-command-line?view=fabric&preserve-view=true).
 
 ## Migration of data with CETAS
 

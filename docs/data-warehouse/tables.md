@@ -1,5 +1,5 @@
 ---
-title: Tables
+title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -15,8 +15,6 @@ ms.search.form: Warehouse design and development # This article's title should n
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
-
-- In [!INCLUDE [fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data.
 
 ## Determine table category
 
@@ -77,7 +75,7 @@ CREATE SCHEMA wwi;
 
 ## Collation
 
-Fabric warehouses are configured based on the workspace's collation setting, which by default are the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
+Fabric warehouses are configured based on the workspace's collation setting, which by default is the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
 
 Supported warehouse collations are:
 

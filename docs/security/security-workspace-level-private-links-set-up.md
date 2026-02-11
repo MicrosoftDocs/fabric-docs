@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
 ms.custom:
-ms.date: 01/27/2026
+ms.date: 02/04/2026
 
 #customer intent: As a workspace admin, I want to configure workspace-level Private Link on my workspace to prevent access to the workspace from the public internet.
 
@@ -28,25 +28,9 @@ This article provides instructions for setting up workspace-level private links 
 * You must be a workspace admin to configure the workspace communication policy.
 * If this is the first time setting up workspace-level private links in your tenant, re-register the **Microsoft.Fabric** resource provider in Azure for subscriptions containing the workspace private link resource and private endpoint. In the Azure portal, go to **Subscriptions** > **Settings** > **Resource providers**, select **Microsoft.Fabric**, and then select **Re-register**.
 
+## Step 1. Create a workspace in Fabric
 
-## Step 1. Restrict inbound public access to the workspace
-
-Workspace admins can restrict inbound public access for their workspaces:
-
-1. In the Fabric portal, navigate to your workspace.
-
-1. Select **Settings** from the workspace menu.
-
-1. Go to the **Network** tab.
-
-1. Under **Inbound access protection**, switch the toggle to **Restrict public access**.
-
-1. Review the warning and confirm your selection.
-
-1. Select **Save** to apply the changes.
-
-> [!NOTE]
-> After restricting public access, only approved private endpoints or networks can connect to the workspace. Public internet access is blocked unless explicitly allowed.
+[Create a workspace in Fabric](/fabric/fundamentals/create-workspaces). Make sure the workspace is assigned to a Fabric capacity. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
 
 ## Step 2. Create the private link service in Azure
 

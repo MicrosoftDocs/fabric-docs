@@ -6,12 +6,12 @@ author: FarazGIS
 ms.author: fsiddiqui
 ms.topic: tutorial
 ms.custom:
-ms.date: 01/30/2026
+ms.date: 02/04/2026
 
 #customer intent: I want to learn how to create a real-time work order routing app with Microsoft Fabric Maps.
 ---
 
-# Tutorial: Build a real-time work order routing app with Microsoft Fabric Maps (preview)
+# Tutorial: Build real-time work order routing with Fabric Maps (preview)
 
 Microsoft Fabric Maps provides geospatial visualization and analysis to deliver actionable insights from real-time and historical spatial data.
 
@@ -68,8 +68,8 @@ WorkorderID,Latitude,Longitude
 101,48.23519063,16.37364699
 102,48.19785896,16.38669028
 103,48.18125837,16.37068261
-107,48.15151126222885,16.417665902348066
-108,48.20290349765506,16.324921217672966
+107,48.15151126,16.41766590
+108,48.20290349,16.32492121
 104,48.23400591,16.4563533
 105,48.18145603,16.40506946
 106,48.16366378,16.36001083

@@ -1,8 +1,6 @@
 ---
 title: Set up your SAP BW Application Server connection
 description: This article provides information about how to create an SAP BW Application Server connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 12/18/2024
 ms.custom:

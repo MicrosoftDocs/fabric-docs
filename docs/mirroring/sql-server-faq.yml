@@ -2,8 +2,6 @@
 metadata:
    title: Frequently Asked Questions for Mirroring SQL Server in Microsoft Fabric
    description: This article answers frequently asked questions about Mirroring SQL Server in Microsoft Fabric.
-   author: whhender
-   ms.author: whhender
    ms.reviewer: ajayj
    ms.date: 05/19/2025
    ms.service: fabric

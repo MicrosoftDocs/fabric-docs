@@ -1,9 +1,7 @@
 ---
 title: Apache Airflow compute in Fabric
 description: Learn about Apache Airflow pools in Microsoft Fabric, including node sizes, autoscaling, and how to pick the right capacity SKU for your needs.
-author: Mirabile-S
-ms.author: seanmirabile
-ms.reviewer: whhender
+ms.reviewer: seanmirabile
 ms.date: 10/17/2025
 ms.topic: concept-article
 ai-usage: ai-assisted
@@ -111,7 +109,7 @@ When you plan your Apache Airflow pool setup, keep these best practices and cost
 
 ## Related content
 
-- [Get started with Apache Airflow jobs](apache-airflow-jobs-hello-world.md)
+- [Get started with Apache Airflow jobs](create-apache-airflow-jobs.md)
 - [Apache Airflow Job workspace settings - Microsoft Fabric | Microsoft Learn](apache-airflow-jobs-workspace-settings.md)
 - [Pricing for Apache Airflow jobs](pricing-apache-airflow-job.md)
 - [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric)

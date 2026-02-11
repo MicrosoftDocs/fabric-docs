@@ -1,8 +1,7 @@
 ---
 title: Vertica connector overview
 description: This article explains the overview of using Vertica.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/06/2024
 ms.custom:

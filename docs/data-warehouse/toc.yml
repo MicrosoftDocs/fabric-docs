@@ -96,7 +96,6 @@ items:
     href: develop-warehouse-project.md
   - name: Source control with Warehouse
     href: source-control.md
-
 - name: Develop
   items:
   - name: Query labels
@@ -265,10 +264,6 @@ items:
         href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
-- name: Continuous integration and deployment
-  items:
-  - name: Overview
-    href: development-deployment.md
 - name: Warehouse capacity
   items:
   - name: Burstable capacity

@@ -880,7 +880,7 @@ items:
     items:
       - name: Tutorials
         items:
-          - name: Build a real-time work order routing app
+          - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
       - name: Create a map
         href: map/create-map.md

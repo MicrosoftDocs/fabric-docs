@@ -2,8 +2,6 @@
 metadata:
   title: "Frequently asked questions for Google BigQuery mirroring in Fabric"
   description: This article answers frequently asked questions about mirroring Google BigQuery in Microsoft Fabric. 
-  author: whhender
-  ms.author: whhender
   ms.reviewer: misaacs
   ms.service: fabric
   ms.subservice: data-warehouse

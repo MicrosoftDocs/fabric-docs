@@ -149,7 +149,7 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on trusted workspace access will stop working.
 
-* A maximum of 10,000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created. You can also set a custom limit of how many workspace identities can be created in your tenant up to the 10,000 limit. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).
+* A default of 10,000 workspace identities can be created in a tenant. You can also specify your own maximum in the tenant settings, which becomes the upper limit for Fabric identity creation across your tenant. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).
 
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 

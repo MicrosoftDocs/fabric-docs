@@ -6,12 +6,12 @@ ms.author: eur
 author: eric-urban
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 08/29/2025
+ms.date: 02/11/2026
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
-In this tutorial, you ingest more dimensional and [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md) from the Wide World Importers (WWI) into the lakehouse.
+In this tutorial, you ingest more dimensional and [fact tables](../data-warehouse/dimensional-modeling-fact-tables.md) from the Wide World Importers (WWI) into the lakehouse. Pipelines enable you to ingest data at scale with the option to schedule data workflows.
 
 ## Prerequisites
 
@@ -19,25 +19,29 @@ In this tutorial, you ingest more dimensional and [fact tables](../data-warehous
 
 ## Ingest data
 
-In this section, you use the **Copy data activity** of the Data Factory pipeline to ingest sample data from an Azure storage account to the **Files** section of the lakehouse you created earlier.
+In this section, you use the **Copy data activity** of the Data Factory pipeline to ingest sample data from an Azure storage account to the **Files** section of the [lakehouse you created in the previous tutorial](tutorial-build-lakehouse.md).
 
-1. Select **Workspaces** in the left navigation pane, and then select your new workspace from the **Workspaces** menu. The items view of your workspace appears.
+1. In the workspace you created in the previous tutorial, select **New item**.
 
-1. From the **New item** option in the workspace ribbon, select **Pipeline**.
+1. Search for **Pipeline** in the search bar and select the **Pipeline** tile.
 
 1. In the **New pipeline** dialog box, specify the name as **IngestDataFromSourceToLakehouse** and select **Create**.
 
-1. From your newly created pipeline, select **Pipeline activity** to add an activity to the pipeline and select **Copy data**. This action adds copy data activity to the pipeline canvas.
+1. From your new pipeline's **Home** tab, select **Pipeline activity** > **Copy data**. 
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Pipeline activity and Copy data." lightbox="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png":::
 
-1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas (you might need to expand the pane upwards by dragging the top edge). From the **General** tab in the properties pane, type **Data Copy to Lakehouse** in the **Name** field. Leave remaining properties to their default values.
+1. Select the new **Copy data** activity from the canvas. Activity properties appear in a pane below the canvas, organized across tabs including **General**, **Source**, **Destination**, **Mapping**, and **Settings**. You might need to expand the pane upwards by dragging the top edge.
+
+1. On the **General** tab, enter **Data Copy to Lakehouse** in the **Name** field. Leave the other fields with their default values.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png" alt-text="Screenshot showing where to add the copy activity name on the General tab." lightbox="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png":::
 
-1. From the **Source** tab of the selected copy data activity, open the **Connection** field and select **Browse all**. Choose data source window pops up, search and select **Azure blobs**. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it.
+1. On the **Source** tab, select the **Connection** dropdown and then select **Browse all**.
 
-1. Enter the following details in the **Connection settings** window,  and select **Connect** to create the connection to the data source.
+1. In the **Choose a data source to get started** page, search for and select **Azure blobs**. 
+
+1. Enter the following details in the **Connect data source** page. Then select **Connect** to create the connection to the data source. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it.
 
    | Property | Value |
    |--|--|
@@ -48,7 +52,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png" alt-text="Screenshot showing where to select blob storage connection." lightbox="media\tutorial-lakehouse-data-ingestion\data-store-source-blob.png":::
 
-1. Once the new connection is created, return to the **Source** tab of the copy data activity, and the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
+1. On the **Source** tab, the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
 
    | Property | Value |
    |--|--|
@@ -60,7 +64,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\blob-storage-connection-settings.png" alt-text="Screenshot showing the Blob Storage connection settings." lightbox="media\tutorial-lakehouse-data-ingestion\blob-storage-connection-settings.png":::
 
-1. From the **Destination** tab of the selected copy data activity, specify the following properties:
+1. On the **Destination** tab, specify the following properties:
 
    | Property | Value |
    |--|--|
@@ -77,58 +81,76 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run the pipeline." lightbox="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png":::
 
+   > [!TIP]
+   > Select **View Run details** to see more information about the run.
+
 1. After the copy activity is successful, open your lakehouse (wwilakehouse) to view the data. Refresh the **Files** section to see the ingested data. A new folder **wwi-raw-data** appears in the files section, and data from Azure Blob tables is copied there.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-data-lakehouse.png" alt-text="Screenshot showing blob data copied into destination lakehouse." lightbox="media\tutorial-lakehouse-data-ingestion\validate-data-lakehouse.png":::
 
 
-<!-- Don't delete this section, it shows HTTP connection to load data, used as an alternative incase the blob link is not accessible.
+To load incremental data into a lakehouse, see [Incrementally load data from a data warehouse to a lakehouse](../data-factory/tutorial-incremental-copy-data-warehouse-lakehouse.md).
 
-1. Next, set up an HTTP connection to import the sample World Wide Importers data into the Lakehouse. From the list of **New sources**, select **View more**, search for **Http** and select it.
+<!-- 
+## Alternative data ingestion using HTTP connection
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-http-connection.png" alt-text="Screenshot showing where to select the HTTP source." lightbox="media\tutorial-lakehouse-data-ingestion\select-http-connection.png":::
+This section shows how to use an HTTP connection to load data, as an alternative if the Azure Blob storage link is not accessible.
 
-1. In the **Connect to data source** window, enter the details from the table below and select **Next**.
+NOTE: This section is commented out because the HTTP URL (https://assetsprod.microsoft.com/en-us/wwi-sample-dataset.zip) is currently broken and returns an HTML page instead of the zip file. Do not uncomment until a working URL is available.
+
+This approach requires two copy activities because HTTP sources don't support decompressing zip files directly during copy. HTTP only allows sequential reading (streaming bytes from start to finish), but decompressing a zip file requires random access to jump around within the file. The first activity downloads the zip file to the lakehouse, and the second activity extracts its contents.
+
+### Create the first copy activity (download the zip file)
+
+1. On the **Source** tab, select the **Connection** dropdown and then select **Browse all**.
+
+1. In the **Choose a data source to get started** page, search for and select **HTTP**.
+
+1. In the **Connect data source** page, enter the following details and select **Connect**.
 
    | Property | Value |
    |---|---|
    | URL | `https://assetsprod.microsoft.com/en-us/wwi-sample-dataset.zip` |
-   |Connection | Create a new connection |
-   | Connection name | wwisampledata |
-   | Data gateway | None|
+   | Connection | Create a new connection |
+   | Connection name | wwisaborce |
+   | Data gateway | None |
    | Authentication kind | Anonymous |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-http-connection.png" alt-text="Screenshot showing the parameters to configure the Http connection." lightbox="media\tutorial-lakehouse-data-ingestion\configure-http-connection.png":::
+1. On the **Source** tab, leave the **File format** set to **Binary**. Don't configure compression settings for this activity.
 
-1. In the next step, enable the **Binary copy** and choose **ZipDeflate (.zip)** as the **Compression type** since the source is a .zip file. Keep the other fields at their default values and select **Next**.
+1. On the **Destination** tab, select the **Connection** dropdown and then select your lakehouse. Select the **Files** radio button for the **Root folder**. In the **File path** field, enter **wwi-staging** as the directory name and **wwi-sample-dataset.zip** as the file name. Leave the file format set to **Binary**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\select-compression-type.png" alt-text="Screenshot showing how to choose a compression type." lightbox="media\tutorial-lakehouse-data-ingestion\select-compression-type.png":::
+1. On the **General** tab, rename the activity to **Download zip file**.
 
-1. In the **Connect to data destination** window, specify the **Root folder** as **Files** and select **Next**. This will write the data to the *Files* section of the lakehouse.
+### Create the second copy activity (extract the zip file)
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\configure-destination-connection.png" alt-text="Screenshot showing the destination connection settings of the lakehouse." lightbox="media\tutorial-lakehouse-data-ingestion\configure-destination-connection.png":::
+1. From the **Home** tab, select **Pipeline activity** > **Copy data** to add a second copy activity to the canvas.
 
-1. Select **Next**, the destination file format is automatically set to **Binary**. Next select **Save+Run**. You can schedule pipelines to refresh data periodically. In this tutorial, we only run the pipeline once. The data copy process takes approximately 10-15 minutes to complete.
+1. Select the new copy activity. On the **General** tab, rename the activity to **Extract zip file**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\copy-activity-summary.png" alt-text="Screenshot showing the copy activity summary." lightbox="media\tutorial-lakehouse-data-ingestion\copy-activity-summary.png":::
+1. On the **Source** tab, select the **Connection** dropdown and then select your lakehouse. Select the **Files** radio button for the **Root folder**. In the **File path** field, enter **wwi-staging** as the directory name and **wwi-sample-dataset.zip** as the file name.
 
-1. You can monitor the pipeline execution and activity in the **Output** tab. You can also view detailed data transfer information by selecting the glasses icon next to the pipeline name, which appears when you hover over the name.
+1. On the **Source** tab, select **Binary** from the **File format** dropdown, then select the **Settings** button next to the dropdown.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-status.png" alt-text="Screenshot showing the status of the copy pipeline activity." lightbox="media\tutorial-lakehouse-data-ingestion\pipeline-status.png":::
+1. In the **File format settings** dialog, select the **Compression type** dropdown and choose **ZipDeflate (.zip)**. Then select **OK**.
 
-1. After the successful execution of the pipeline, go to your lakehouse (**wwilakehouse**) and open the explorer to see the imported data.
+1. On the **Destination** tab, select the **Connection** dropdown and then select your lakehouse. Select the **Files** radio button for the **Root folder**. In the **File path** field, enter **wwi-raw-data** as the directory name. Leave the file format set to **Binary**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing how to navigate to the lakehouse." lightbox="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png":::
+### Connect and run the activities
 
-1. Verify that the folder **WideWorldImportersDW** is present in the **Explorer** view and contains data for all tables.
+1. On the canvas, drag the **On success** connector (green checkmark) from the first activity (**Download zip file**) to the second activity (**Extract zip file**). This ensures the second activity runs only after the first completes successfully.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-files.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer." lightbox="media\tutorial-lakehouse-data-ingestion\validate-destination-files.png":::
+1. Select **Run** from the **Home** tab to run the pipeline. If you have unsaved changes, you're prompted to save and run.
 
-1. The data is created under the **Files** section of the lakehouse explorer. A new folder with GUID contains all the needed data. Rename the GUID to **wwi-raw-data**
+   > [!TIP]
+   > Select **View Run details** to see more information about the run.
 
-To load incremental data into a lakehouse, see [Incrementally load data from a data warehouse to a lakehouse](../data-factory/tutorial-incremental-copy-data-warehouse-lakehouse.md).
+1. You can monitor the pipeline execution and activity in the **Output** tab. The data copy process takes approximately 10-15 minutes to complete.
 
+
+1. After the successful execution of the pipeline, go to your lakehouse and open the explorer to see the imported data. Verify that the folder **wwi-raw-data** is present in the **Files** section and contains data for all tables.
 -->
+
 
 ## Next step
 

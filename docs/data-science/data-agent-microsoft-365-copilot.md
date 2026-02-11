@@ -16,14 +16,15 @@ ai-usage: ai-assisted
 ---
 
 # Consume Fabric Data Agent in Microsoft 365 Copilot
-'''
+
 Microsoft 365 provides a comprehensive set of productivity tools that help organizations collaborate, communicate, and make data-driven decisions. With Teams at the center of communication and collaboration, users can access their organization's knowledge and insights in one unified workspace. Therefore, Microsoft 365 isn't just a suite of applications, but a platform that connects people to the information they need to act confidently.
 
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md).
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
-- Microsoft 365 Copilot license and a user license for each individual using Fabric data agent in Microsoft 365 Copilot. 
+- Microsoft 365 Copilot license or Office 365 commercial subscription
+- User licenses for each individual using Fabric data agent in Microsoft 365 Copilot. 
 - Both the Fabric data agent and Microsoft 365 Copilot must be on the same tenant and must sign in to both with the same account.
 
 

@@ -1,8 +1,7 @@
 ---
 title: Set up your SQL database connection (Preview)
 description: This article provides information about how to create an SQL database connection in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 12/09/2024
 ms.custom:

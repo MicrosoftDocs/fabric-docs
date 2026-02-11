@@ -1,9 +1,7 @@
 ---
 title: Build Pipeline Expressions with Copilot
 description: Discover how to generate and explain pipeline expressions using Copilot's intuitive chat interface. Boost productivity and simplify complex workflows.
-author: conxu-ms
-ms.author: conxu
-ms.reviewer: whhender
+ms.reviewer: conxu
 ms.date: 11/04/2025
 ai-usage: ai-assisted
 ms.topic: concept-article

@@ -2,7 +2,7 @@
 title: What is a graph database?
 description: Learn about the benefits of using a graph database.
 ms.topic: concept-article
-ms.date: 01/12/2026
+ms.date: 02/09/2026
 author: lorihollasch
 ms.author: loriwhip
 ms.reviewer: wangwilliam
@@ -27,7 +27,7 @@ The most commonly used type of graph database implements the [labeled property g
 
 ## How querying relationships works
 
-Graph queries retrieve connected information by traversing from a starting node to its neighbors, then to their neighbors, and so on. The effort a traversal performs is tied to the number of edges it touches (the local neighborhood), not the total size of the dataset. This makes questions about paths, connections, and patterns—such as *friends of friends*, shortest paths, or multi-hop dependencies—natural and efficient to express.
+Graph queries retrieve connected information by traversing from a starting node to its neighbors, then to their neighbors, and so on. The effort a traversal performs is tied to the number of edges it touches (the local neighborhood), not the total size of the dataset. This characteristic makes questions about paths, connections, and patterns—such as *friends of friends*, shortest paths, or multi-hop dependencies—natural and efficient to express.
 
 Graph databases use pattern-based query languages, such as the increasingly adopted **Graph Query Language (GQL)**, to describe these traversals concisely. GQL is being standardized by the same international working group that oversees SQL (ISO/IEC 39075), aligning graph querying with established database standards.
 
@@ -64,9 +64,9 @@ In these scenarios, questions are less about single records and more about how m
 
 Choose a graph database when:
 
-- Your primary questions involve paths, neighborhoods, and patterns in connected data
-- The number of hops is variable or not known in advance
-- You need to combine and navigate relationships across disparate datasets
+- Your primary questions involve paths, neighborhoods, and patterns in connected data.
+- The number of hops is variable or not known in advance.
+- You need to combine and navigate relationships across disparate datasets.
 
 If you regularly ask these kinds of questions, a graph model is a natural fit.
 
