@@ -955,6 +955,10 @@
             items:
               - name: Dataflow default destination
                 href: default-destination.md
+              - name: Data destinations validation rules
+                href: dataflow-gen2-data-destinations-validation-rules.md
+              - name: Advanced edit for data destination queries
+                href: dataflow-gen2-advanced-edit-data-destinations.md
               - name: Excel advanced data destination
                 href: dataflow-gen2-data-destinations-excel-advanced.md
           - name: Authoring tools

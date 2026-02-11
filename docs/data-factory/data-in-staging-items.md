@@ -25,6 +25,19 @@ Removing data from the staging items can be forced by one of the following actio
 - Delete the dataflow (directly removes the data).
 - Delete the workspace (directly deletes the StagingLakehouse and StagingWarehouse).
 
+## Cost implications of staging
+
+The staging Lakehouse and staging Warehouse store intermediate data as part of your dataflow processing. The storage consumed by these staging items is billed as part of your OneLake storage. This means that the data stored in the staging items counts toward your overall OneLake storage consumption and associated costs.
+
+To manage storage costs effectively:
+
+- **Monitor staging storage usage**: Be aware that staging data accumulates with each dataflow refresh until it's garbage collected or explicitly removed.
+- **Disable staging when not needed**: If your transformations fold to the source system, you might not need staging enabled. Disabling staging reduces storage consumption.
+- **Clean up unused dataflows**: Deleting dataflows that are no longer needed immediately removes their associated staging data.
+- **Consider refresh frequency**: Frequent refreshes with staging enabled can lead to higher storage consumption. Balance performance benefits against storage costs.
+
+For more information about OneLake storage pricing, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
 ## Related content
 
 - [Differences between Dataflow Gen1 and Gen2](dataflows-gen2-overview.md)
