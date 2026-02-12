@@ -7,7 +7,7 @@ author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.subservice: rti-eventhouse
-ms.date: 01/26/2026
+ms.date: 02/12/2026
 ms.search.form: Eventhouse
 #customer intent: As a user, I want to learn how to manage and monitor an eventhouse so that I can effectively utilize Real-Time Intelligence.
 ---
@@ -44,28 +44,7 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 
 ## Eventhouse ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, enable minimum consumption, add databases, add plugins, and collapse or expand the details area.
-
-### Enable always-on
-
-> [!NOTE]
-> Enabling [always-on](manage-monitor-eventhouse.md#enable-always-on) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
-Always-on prevents your eventhouse from suspending the service due to inactivity. For highly time-sensitive systems, it prevents the latency of re-activating the eventhouse.
-
-1. From the ribbon, select **Always-On**
-2. In the **Always-On** pane, select the option to **Enable** the feature
-
-#### Enable minimum consumption
-In addition to **Always-On** you can optionally set the Minimum consumption. This sets a minimum available capacity unit (CU) size for an eventhouse. After you enable **Always-On**, you have the option to enable **Minimum consumption**
-
-1. In the **Always-On** pane, select **Minimum consumption**
-1. In the **Minimum consumption** pane, select the size corresponding to the [minimum available CU](eventhouse.md#minimum-consumption) size you want to apply to this eventhouse, and then select **Done**.
-
-    The following table maps the size to the minimum [capacity units](../admin/capacity-settings.md) allotted to the eventhouse:
-
-    [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
-
-    :::image type="content" source="media/eventhouse/minimum-capacity.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Intelligence Eventhouse.":::
+The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](event-house-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
 
 ## Explorer pane
 
@@ -81,7 +60,7 @@ In the details area, you can copy the following eventhouse URI values:
 |--|--|
 | Query URI | URI that can be used to [add database shortcuts](database-shortcut.md) or by [connectors](event-house-connectors.md) and APIs to run queries or management commands. |
 | Ingestion URI | URI that is for use by connectors and APIs to ingest data. |
-| [Always-on](#enable-always-on) | Minimum available capacity unit (CU) size for your eventhouse.|
+[Always-on](#enable-capacity-planner)
 
 ## View system overview
 
