@@ -414,11 +414,13 @@ with open("/path/to/notebook.ipynb", "r") as f:
 artifact = notebookutils.notebook.create("artifact_name", "description", "content", "default_lakehouse_name", "default_lakehouse_workspace_id", "optional_workspace_id")
 ```
 
-#### Getting content or definition of a Notebook
+#### Getting content of a Notebook
 
 ```python
 artifact = notebookutils.notebook.get("artifact_name", "optional_workspace_id")
 ```
+
+#### Getting definition of a Notebook
 
 ```python
 definition = notebookutils.notebook.getDefinition("artifact_name", "optional_workspace_id", "ipynb")
