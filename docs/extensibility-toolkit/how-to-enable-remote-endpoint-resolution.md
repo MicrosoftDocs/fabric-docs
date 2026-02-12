@@ -79,67 +79,74 @@ Your Endpoint Resolution Service must implement the required contract to respond
 
 Example resolution service implementation:
 
-```csharp
-[FunctionName("ResolveEndpoint")]
-public async Task<IActionResult> Run(
-    [HttpTrigger(AuthorizationLevel.Function, "post", Route = "resolve")] HttpRequest req,
-    ILogger log)
-{
-    // Parse the resolution request from Fabric
-    var request = await ParseResolutionRequest(req);
-    
-    // Validate authentication
-    if (!await ValidateRequest(request))
-    {
-        return new UnauthorizedResult();
-    }
-    
-    // Determine the appropriate endpoint based on configuration
-    var endpoint = await ResolveEndpoint(
-        request.WorkloadId,
-        request.Environment,
-        request.RequestType // Job execution or lifecycle notification
-    );
-    
-    log.LogInformation($"Resolved endpoint: {endpoint}");
-    
-    return new OkObjectResult(new
-    {
-        EndpointUrl = endpoint,
-        TimeToLive = 3600 // Cache duration in seconds
-    });
+```javascript
+const express = require('express');
+const { authenticateControlPlaneCall } = require('./authentication');
+
+const router = express.Router();
+
+/**
+ * POST /resolve-endpoint
+ * Resolve endpoint based on context
+ * Uses relaxed authentication: app token required, but subject token and tenant ID header optional
+ */
+router.post('/resolve-endpoint', async (req, res) => {
+  // Apply relaxed authentication (subject token not required for resolution)
+  const authResult = await authenticateControlPlaneCall(req, res, {
+    requireSubjectToken: false,
+    requireTenantIdHeader: false
+  });
+  if (!authResult) return; // Auth failed, response already sent
+
+  // Parse resolution request from Fabric
+  const { workloadId, environment, requestType } = req.body;
+  
+  // Determine the appropriate endpoint based on configuration
+  const endpoint = await resolveEndpoint(workloadId, environment, requestType);
+  
+  console.log(`Resolved endpoint: ${endpoint}`);
+  
+  const response = {
+    url: endpoint,
+    ttlInMinutes: 60 // Cache for 60 minutes
+  };
+  
+  res.status(200).json(response);
+});
+
+async function resolveEndpoint(workloadId, environment, requestType) {
+  // Implement your resolution logic here
+  // This could query a database, configuration store, etc.
+  
+  if (environment === 'Production') {
+    return 'https://prod-backend.azurewebsites.net/api';
+  } else if (environment === 'Test') {
+    return 'https://test-backend.azurewebsites.net/api';
+  } else {
+    return 'https://dev-backend.azurewebsites.net/api';
+  }
 }
 
-private async Task<string> ResolveEndpoint(
-    string workloadId,
-    string environment,
-    string requestType)
-{
-    // Implement your resolution logic here
-    // This could query a database, configuration store, etc.
-    
-    if (environment == "Production")
-    {
-        return "https://prod-backend.azurewebsites.net/api";
-    }
-    else if (environment == "Test")
-    {
-        return "https://test-backend.azurewebsites.net/api";
-    }
-    else
-    {
-        return "https://dev-backend.azurewebsites.net/api";
-    }
-}
+module.exports = router;
 ```
 
 ## Resolution caching
 
-Fabric caches resolved endpoints to reduce the load on your resolution service. You can control the cache duration by returning a `TimeToLive` value in your resolution response:
+Fabric caches resolved endpoints to reduce the load on your resolution service. You can control the cache duration by returning a `ttlInMinutes` value in your resolution response:
 
-- Short TTL (minutes) - Use for frequently changing endpoints
-- Long TTL (hours) - Use for stable environments
-- No TTL - Resolve on every request (not recommended for production)
+```javascript
+const response = {
+  url: 'https://prod-backend.azurewebsites.net/api',
+  ttlInMinutes: 60 // Cache for 60 minutes
+};
+```
+
+Recommended TTL values:
+
+- **Short TTL (5-15 minutes)** - Use for frequently changing endpoints or active deployments
+- **Medium TTL (30-60 minutes)** - Use for stable environments with occasional updates
+- **Long TTL (120+ minutes)** - Use for production environments that rarely change
+- **No TTL or 0** - Resolve on every request (not recommended for production)
 
 ## Best practices
 
@@ -171,19 +178,15 @@ Fabric caches resolved endpoints to reduce the load on your resolution service. 
 
 Use the Endpoint Resolution Service to switch between blue and green deployments:
 
-```csharp
-private async Task<string> ResolveEndpoint(string workloadId)
-{
-    var activeDeployment = await GetActiveDeployment(workloadId);
-    
-    if (activeDeployment == "Blue")
-    {
-        return "https://blue-backend.azurewebsites.net/api";
-    }
-    else
-    {
-        return "https://green-backend.azurewebsites.net/api";
-    }
+```javascript
+async function resolveEndpoint(workloadId) {
+  const activeDeployment = await getActiveDeployment(workloadId);
+  
+  if (activeDeployment === 'Blue') {
+    return 'https://blue-backend.azurewebsites.net/api';
+  } else {
+    return 'https://green-backend.azurewebsites.net/api';
+  }
 }
 ```
 
@@ -191,16 +194,18 @@ private async Task<string> ResolveEndpoint(string workloadId)
 
 Route requests to region-specific endpoints:
 
-```csharp
-private async Task<string> ResolveEndpoint(string workloadId, string region)
-{
-    return region switch
-    {
-        "WestUS" => "https://westus-backend.azurewebsites.net/api",
-        "EastUS" => "https://eastus-backend.azurewebsites.net/api",
-        "WestEurope" => "https://westeu-backend.azurewebsites.net/api",
-        _ => "https://global-backend.azurewebsites.net/api"
-    };
+```javascript
+async function resolveEndpoint(workloadId, region) {
+  switch (region) {
+    case 'WestUS':
+      return 'https://westus-backend.azurewebsites.net/api';
+    case 'EastUS':
+      return 'https://eastus-backend.azurewebsites.net/api';
+    case 'WestEurope':
+      return 'https://westeu-backend.azurewebsites.net/api';
+    default:
+      return 'https://global-backend.azurewebsites.net/api';
+  }
 }
 ```
 
@@ -208,16 +213,17 @@ private async Task<string> ResolveEndpoint(string workloadId, string region)
 
 Route based on environment:
 
-```csharp
-private async Task<string> ResolveEndpoint(string environment)
-{
-    return environment switch
-    {
-        "Production" => "https://prod-backend.azurewebsites.net/api",
-        "Staging" => "https://staging-backend.azurewebsites.net/api",
-        "Test" => "https://test-backend.azurewebsites.net/api",
-        _ => "https://dev-backend.azurewebsites.net/api"
-    };
+```javascript
+async function resolveEndpoint(environment) {
+  if (environment === 'Production') {
+    return 'https://prod-backend.azurewebsites.net/api';
+  } else if (environment === 'Staging') {
+    return 'https://staging-backend.azurewebsites.net/api';
+  } else if (environment === 'Test') {
+    return 'https://test-backend.azurewebsites.net/api';
+  } else {
+    return 'https://dev-backend.azurewebsites.net/api';
+  }
 }
 ```
 

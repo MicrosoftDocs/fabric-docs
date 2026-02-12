@@ -433,6 +433,7 @@ const FABRIC_SCOPE = 'https://analysis.windows.net/powerbi/api/.default';
  * @param {string} tenantId - User's tenant ID
  * @param {string} scope - Target resource scope
  * @returns {Promise<string>} Access token for the requested scope
+ * @throws {Error} Throws consent-related errors (AADSTS65001, AADSTS65005) that should be propagated to UX
  */
 async function getTokenForScope(userToken, tenantId, scope) {
   const clientId = process.env.BACKEND_APPID;
@@ -789,21 +790,150 @@ requiredEnvVars.forEach(varName => {
 });
 ```
 
-### Error Handling
+### Error Handling and Consent Propagation
+
+When token exchange fails due to missing consent or scopes, your backend should propagate these errors to the frontend UX to prompt the user for consent. Common consent-related errors include:
+
+- **AADSTS65001** - User or admin hasn't consented to use the application
+- **AADSTS65005** - The application requires specific scopes that haven't been consented
 
 ```javascript
-// Handle consent required errors
+/**
+ * Handle token exchange with consent error propagation
+ * Consent errors should be returned to the frontend to trigger consent flow
+ */
+async function handleTokenExchangeWithConsent(req, res) {
+  const { subjectToken, tenantId } = req.authContext;
+  const clientId = process.env.BACKEND_APPID;
+  
+  try {
+    const token = await getTokenForScope(subjectToken, tenantId, ONELAKE_SCOPE);
+    // Use token for OneLake operations...
+    
+  } catch (error) {
+    // Check for consent-related errors
+    if (error.message.includes('AADSTS65001') || error.message.includes('AADSTS65005')) {
+      // Extract scope from error if available
+      const requiredScope = extractScopeFromError(error.message) || 'https://storage.azure.com/.default';
+      
+      // Build consent URL for the frontend to redirect the user
+      const consentUrl = buildConsentUrl({
+        clientId: clientId,
+        tenantId: tenantId,
+        scope: requiredScope,
+        redirectUri: process.env.FRONTEND_URL || 'https://your-frontend.azurewebsites.net'
+      });
+      
+      // Return consent required response
+      return res.status(403).json({
+        error: 'ConsentRequired',
+        errorCode: error.message.includes('AADSTS65001') ? 'AADSTS65001' : 'AADSTS65005',
+        message: 'User consent is required to access this resource',
+        consentUrl: consentUrl,
+        requiredScope: requiredScope
+      });
+    }
+    
+    // Other errors should be handled normally
+    throw error;
+  }
+}
+
+/**
+ * Build consent URL for user authorization
+ * @param {object} options - Consent URL options
+ * @returns {string} Formatted consent URL
+ */
+function buildConsentUrl(options) {
+  const { clientId, tenantId, scope, redirectUri } = options;
+  
+  const params = new URLSearchParams({
+    client_id: clientId,
+    response_type: 'code',
+    redirect_uri: redirectUri,
+    response_mode: 'query',
+    scope: scope,
+    state: 'consent_required' // Your frontend can use this to handle the redirect
+  });
+  
+  return `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/authorize?${params.toString()}`;
+}
+
+/**
+ * Extract scope from error message
+ */
+function extractScopeFromError(errorMessage) {
+  // Azure AD error messages often include the missing scope
+  const scopeMatch = errorMessage.match(/scope[s]?[:\s]+([^\s,]+)/);
+  return scopeMatch ? scopeMatch[1] : null;
+}
+```
+
+### Frontend Consent Handling
+
+When your frontend receives a `ConsentRequired` error, it should redirect the user to the consent URL:
+
+```javascript
+// Frontend code to handle consent errors
+async function callBackendApi(endpoint, data) {
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    
+    if (response.status === 403) {
+      const error = await response.json();
+      
+      if (error.error === 'ConsentRequired' && error.consentUrl) {
+        // Redirect user to consent page
+        window.location.href = error.consentUrl;
+        return;
+      }
+    }
+    
+    return await response.json();
+    
+  } catch (error) {
+    console.error('API call failed:', error);
+    throw error;
+  }
+}
+```
+
+> [!NOTE]
+> The [Fabric workload development sample](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample) includes complete examples of consent error handling and propagation to the frontend UX. See the sample's authentication middleware and frontend error handling for production-ready implementations.
+
+### Additional Error Scenarios
+
+```javascript
+// Handle various token exchange errors
 try {
-  const token = await getTokenForScope(userToken, tenantId, scope);
+  const token = await getTokenForScope(subjectToken, tenantId, scope);
 } catch (error) {
-  if (error.message.includes('AADSTS65001')) {
-    // User consent required
-    return res.status(403).json({
-      error: 'ConsentRequired',
-      message: 'User must consent to access this resource',
-      consentUrl: `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/authorize?...`
+  const errorMessage = error.message;
+  
+  if (errorMessage.includes('AADSTS65001') || errorMessage.includes('AADSTS65005')) {
+    // Consent required - propagate to frontend
+    return propagateConsentError(res, error, tenantId);
+    
+  } else if (errorMessage.includes('AADSTS50013')) {
+    // Invalid assertion - token may be expired
+    return res.status(401).json({
+      error: 'InvalidToken',
+      message: 'The provided token is invalid or expired'
+    });
+    
+  } else if (errorMessage.includes('AADSTS700016')) {
+    // Application not found in tenant
+    return res.status(400).json({
+      error: 'ApplicationNotFound',
+      message: 'Application is not configured in this tenant'
     });
   }
+  
+  // Unknown error
   throw error;
 }
 ```
