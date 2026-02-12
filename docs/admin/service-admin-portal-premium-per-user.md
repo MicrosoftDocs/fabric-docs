@@ -1,6 +1,6 @@
 ---
-title: Manage Premium Per User
-description: Learn how to manage and understand how to use Power BI Premium Per User settings in the admin portal.
+title: Manage Power BI Premium Per-User (PPU)
+description: Learn how to manage and understand how to use Power BI Premium Per-User settings in the admin portal.
 author: msmimart
 ms.author: mimart
 ms.reviewer: ''
@@ -12,15 +12,15 @@ ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
-# Manage Premium Per User
+# Manage Power BI Premium Per-User (PPU)
 
-[Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) is a way to license Premium features on a per user basis. After the first user is assigned a PPU license, associated features can be turned on in any workspace. Admins can manage the auto refresh and semantic model workload settings that are shown to users and their default values. For example, access to the XMLA endpoint can be turned off, set to read only, or set to read and write.
+[Power BI Premium Per-User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) is a way to license Power BI Premium features on a per user basis. After the first user is assigned a Power BI Premium Per-User (PPU) license, associated features can be turned on in any workspace. Admins can manage the auto refresh and semantic model workload settings that are shown to users and their default values. For example, access to the XMLA endpoint can be turned off, set to read only, or set to read and write.
 
 ## PPU settings
 
-You can configure the following PPU settings in the admin portal on the **Premium Per User** tab. To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
+You can configure the following PPU settings in the admin portal on the **Power BI Premium Per-User (PPU)** tab. To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
 
-   :::image type="content" source="media/service-admin-portal-premium-per-user/premium-per-user-options.png" alt-text="Screenshot of the Premium per user settings.":::
+   :::image type="content" source="media/service-admin-portal-premium-per-user/premium-per-user-options.png" alt-text="Screenshot of the Power BI Premium Per-User (PPU) settings.":::
 
 ### Auto refresh
 
@@ -39,5 +39,5 @@ Use the following settings to override the *automatic refresh* settings in indiv
 ## Related content
 
 - [What is the admin portal?](admin-center.md)
-- [Power BI Premium Per User FAQ](/power-bi/enterprise/service-premium-per-user-faq)
+- [Power BI Premium Per-User (PPU) FAQ](/power-bi/enterprise/service-premium-per-user-faq)
 - [Automatic page refresh in Power BI](/power-bi/create-reports/desktop-automatic-page-refresh)

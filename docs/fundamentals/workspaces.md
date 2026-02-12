@@ -8,7 +8,7 @@ ms.topic: concept-article
 ms.custom:
 ms.search.form: product-trident, Manage your workspace
 #customer intent: As a report creator, I need to know about workspaces so that I can create collections of artifacts that are related.
-ms.date: 11/18/2025
+ms.date: 01/30/2026
 
 ---
 
@@ -97,11 +97,13 @@ You can configure SharePoint in workspace settings by typing in the name of the 
 
 :::image type="content" source="media/workspaces/add-onedrive-info.png" alt-text="Screenshot of adding SharePoint info.":::
 
-### License mode
+### Workspace type
 
-By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
+By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including *My Workspaces* can be assigned to any capacity in your organization. You can configure it while creating a workspace or modify it after creation in the workspace settings.
 
-:::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
+Workspace types are organized into two categories, **Power BI workspace types** and **Fabric workspace types**. To learn more, see [licenses](../enterprise/licenses.md#workspace-types) article.
+
+:::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of workspace type in workspace settings.":::
 
 ### Azure connections configuration
 

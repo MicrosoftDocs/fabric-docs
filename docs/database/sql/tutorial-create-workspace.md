@@ -32,7 +32,7 @@ You need an existing Fabric capacity. If you don't have one, [start a Fabric tri
    - **Name**: Enter **(*your username or other unique characters*) Supply Chain Analytics Tutorial**.
    - **Description**: Optionally, enter a description for the workspace.
 1. Expand the **Advanced** section.
-1. Choose **Fabric capacity** or **Trial** in the **License mode** section, or choose a premium capacity you have access to.
+1. Choose **Fabric** or **Fabric Trial** in the **Workspace type** section, or choose a premium capacity you have access to.
 1. Select **Apply**. The workspace is created and opened.  
 
 ## Next step

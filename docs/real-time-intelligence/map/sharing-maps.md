@@ -14,6 +14,9 @@ ms.search.form: Share map
 
 Microsoft Fabric Maps can be shared either directly with individuals or groups, or by packaging them into Fabric org apps for broader, governed distribution. Direct sharing provides flexible access and editing capabilities, while org apps offer a curated, read-only experience with streamlined permission management. This article provides the information you need to select the sharing method that best fits your audience, collaboration needs, and governance requirements.
 
+> [!IMPORTANT]
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+
 ## Direct sharing
 
 - **How it works**:

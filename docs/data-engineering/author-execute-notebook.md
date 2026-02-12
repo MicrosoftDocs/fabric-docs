@@ -38,6 +38,7 @@ We provide rich operations to develop notebooks:
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
 - [Find and replace](#find-and-replace)
+- [Full‑size mode on a cell](#fullsize-mode-on-a-cell)
 
 ### Add a cell
 
@@ -200,6 +201,12 @@ The markdown folding option allows you to hide cells under a markdown cell that 
 The find and replace option can help you match and locate the keywords or expression within your notebook content. You can also easily replace the target string with a new string.
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
+
+### Full‑size mode on a cell
+
+Full‑size mode lets you fully focus on writing and editing code within a single cell - perfect for long or complex logic. You can toggle this mode by clicking the expand cell button in the cell toolbar to expand the cell, and exit by clicking return to default size.
+
+:::image type="content" border="true" source="media/author-execute-notebook/full-size-mode-on-a-cell.gif" alt-text="Animated GIF of full‑size mode on a cell." lightbox="media/author-execute-notebook/full-size-mode-on-a-cell.gif":::
 
 ## Copilot inline code completion (preview)
 

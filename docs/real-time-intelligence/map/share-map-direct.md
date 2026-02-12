@@ -22,7 +22,7 @@ Sharing a map through [direct access](#direct-access) automatically enforces per
 ------------------------------------------------------------------------------------>
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Accessing shared maps
 

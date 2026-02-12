@@ -21,7 +21,7 @@ In this article, you learn about the event sources that you can add to an events
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.
+- Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - Prerequisites specific to each source that are documented in the following source-specific articles.
 
 ## Supported sources

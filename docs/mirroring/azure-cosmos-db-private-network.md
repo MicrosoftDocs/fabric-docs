@@ -28,7 +28,7 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
     1. Custom Mirroring RBAC Policy - See [assign-mirroring-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1)
 - The Cosmos DB account and Fabric workspace must be in the same Azure region. To verify your Fabric workspace region:
   1. Open your Fabric workspace
-  1. Navigate to **Workspace settings** → **License info**
+  1. Navigate to **Workspace settings** → **Workspace type**
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
 - The user configuring private networks for Cosmos DB Mirroring should either be an Azure subscription owner or have Contributor permissions on the Cosmos DB account with RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).

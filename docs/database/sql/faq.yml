@@ -131,7 +131,7 @@ sections:
       - question: | 
           What region is my SQL database located in?
         answer: |
-          The SQL database is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. 
+          The SQL database is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. 
 
       - question: |
           Where is SQL database in Fabric available?

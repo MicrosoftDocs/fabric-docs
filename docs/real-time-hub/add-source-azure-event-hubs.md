@@ -16,7 +16,7 @@ This article describes how to get events from an Azure event hub into Real-Time 
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions. 
 - [Create an Azure Event Hubs namespace and an event hub](/azure/event-hubs/event-hubs-create) if you don't have one.
 - You need to have appropriate permission to get access keys for the event hub. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 

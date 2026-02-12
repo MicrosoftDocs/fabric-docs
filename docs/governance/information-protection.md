@@ -21,7 +21,7 @@ This article describes Fabric and Power BI's information protection [capabilitie
    > [!NOTE]
    > If your organization uses Azure Information Protection sensitivity labels, they need to be migrated to the Microsoft Purview Information Protection unified labeling platform in order for them to be used in Fabric. [Learn more about migrating sensitivity labels](/azure/information-protection/configure-policy-migrate-labels).
 
-* To be able to apply labels to Power BI items, a user must have a Power BI Pro or Premium Per User (PPU) license in addition to the licenses needed for Microsoft Purview Information Protection.
+* To be able to apply labels to Power BI items, a user must have a Power BI Pro or Power BI Premium Per-User (PPU) license in addition to the licenses needed for Microsoft Purview Information Protection.
 
 * Office apps have their own [licensing requirements for viewing and applying sensitivity labels](/microsoft-365/compliance/get-started-with-sensitivity-labels#subscription-and-licensing-requirements-for-sensitivity-labels).
 

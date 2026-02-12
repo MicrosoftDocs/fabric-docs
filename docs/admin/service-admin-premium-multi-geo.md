@@ -20,7 +20,7 @@ Multi-Geo is a Microsoft Fabric feature that helps multinational customers addre
 
 * Power BI Embedded supports Multi-Geo.
 
-* Power BI Premium Per User (PPU) isn't supported for Multi-Geo.
+* Power BI Premium Per-User (PPU) isn't supported for Multi-Geo.
 
 ## Enable and configure
 
@@ -74,7 +74,7 @@ When you're performing a migration, don't delete or pause either the source or d
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
-2. From the side bar, select **License info**.
+2. From the side bar, select **Workspace type**.
 
 3. From the **License capacity** dropdown menu, select the capacity you want to move the workspace to.
 

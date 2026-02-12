@@ -22,7 +22,7 @@ This tutorial demonstrates how customer locations are mapped, live work orders a
 Fabric Maps runs within [Fabric Real‑Time Intelligence](/fabric/real-time-intelligence/overview), ingesting streaming telemetry using Eventstream and Eventhouse for real‑time monitoring. Work order completions and operational outcomes are stored in OneLake, where they can be used for route optimization and analytics that are displayed on the map.
 
 > [!IMPORTANT]
-> Fabric Maps is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 In this tutorial, you will:
 

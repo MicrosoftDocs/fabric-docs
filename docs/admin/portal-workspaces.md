@@ -26,7 +26,7 @@ The following table describes the columns of the list of workspaces.
 | **Type** | The type of workspace. There are two types of workspaces:<br>:::image type="icon" border="false" source="./media/portal-workspaces/app-workspace-icon.png"::: **Workspace** (also known as "app workspace")<br>:::image type="icon" border="false" source="./media/portal-workspaces/personal-workspace-icon.png"::: **Personal Group** ("My workspaces")|
 | **State** | The state lets you know if the workspace is available for use. There are five states, **Active**, **Orphaned**, **Deleted**, **Removing**, and **Not found**. For more information, see [Workspace states](#workspace-states). |
 | **Capacity name** | Name given to the workspace's capacity. |
-| **Capacity SKU Tier** | The type of license used for the workspace's capacity. Capacity SKU Tiers include **Premium** and **Premium Per User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Premium](/power-bi/enterprise/service-admin-premium-manage). |
+| **Capacity SKU Tier** | The type of workspace type used for the workspace's capacity. Capacity SKU Tiers include **Power BI Premium** and **Power BI Premium Per-User (PPU)**. For more information about capacity tiers, see [Configure and manage capacities in Power BI Premium](/power-bi/enterprise/service-admin-premium-manage). |
 | **Upgrade status** | The upgrade status lets you know if the workspace is eligible for a Microsoft Fabric upgrade. |
 
 The table columns on the **Workspaces** tab correspond to the properties returned by the [admin Rest API](/rest/api/power-bi/admin) for workspaces. Personal workspaces are of type **PersonalGroup** and all other workspaces are of type **Workspace**. For more information, see [Workspaces](../fundamentals/workspaces.md).
@@ -122,7 +122,7 @@ You're asked to confirm the permanent deletion. After you confirm, the workspace
 
 ## Reassign a workspace to a different capacity
 
-Workspaces and the data they contain reside on capacities. You can move the workspace to a different capacity via the workspace license mode.
+Workspaces and the data they contain reside on capacities. You can move the workspace to a different capacity via the workspace type.
 
 1. Go to **Admin portal** > **Workspaces**.
 
@@ -130,12 +130,12 @@ Workspaces and the data they contain reside on capacities. You can move the work
 
     :::image type="content" source="./media/portal-workspaces/reassign-workspace-option.png" alt-text="Screenshot showing the Reassign workspace option.":::
 
-1. On the Reassign workspace side pane that appears, select the desired license mode, and choose a capacity, if asked.
+1. On the Reassign workspace side pane that appears, select the desired workspace type, and choose a capacity, if asked.
 
-    :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace license modes pane.":::
+    :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace types pane.":::
 
     > [!NOTE]
-    > * The types of items in the workspace can affect your ability to change license modes or move the workspace to a capacity in a different region.
+    > * The types of items in the workspace can affect your ability to change workspace types or move the workspace to a capacity in a different region.
     > * Moving a workspace to a different capacity might start successfully but finish with errors, which could affect some or all items in the workspace. For details, see [Capacity reassignment restrictions and common issues](portal-workspace-capacity-reassignment.md).
 
 ## Govern My workspaces
@@ -171,7 +171,7 @@ For details, see [Designate a default capacity for My workspaces](/power-bi/ente
 
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
-Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace is assigned to Premium capacity, the owner of the workspace can still move it back to Pro license mode. Moving a workspace from Premium license mode to Pro license mode might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different license mode by turning on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. See [Workspace settings](./portal-workspace.md) for detail.
+Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace is assigned to Power BI Premium capacity, the owner of the workspace can still move it back to Power BI Pro workspace type. Moving a workspace from Power BI Premium workspace type to Power BI Pro workspace type might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different workspace type by turning on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. See [Workspace settings](./portal-workspace.md) for detail.
 
 ### Restore a deleted My workspace as an app workspace
 

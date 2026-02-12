@@ -9,6 +9,7 @@ ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
 ms.custom:
 ms.date: 12/15/2025
+ai-usage: ai-assisted
 ---
 # Copilot-assisted real-time data exploration (preview)
 
@@ -54,6 +55,28 @@ Use Copilot to explore data in the context of the entire dashboard or of a speci
     In the Copilot pane, you see your query and the response to your query including a preview of the new data. You can also toggle between the **Visual**, **Table**, and **Query** tabs to see different representations of the data inside the Copilot pane.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot dialog with a question typed and the query results. The question, tabs, and expand buttons are highlighted.":::
+
+## Use Copilot in tile editing to author KQL
+
+When you open a tile in Edit mode, Copilot can help you author or modify the tile's KQL query directly in the editing pane. This capability is separate from the dashboard exploration feature and provides a powerful way to create and refine tile queries without manually writing KQL.
+
+To use Copilot in tile editing:
+
+1. Open a Real-Time Dashboard and switch to **Editing** mode.
+1. Select the **Edit tile** pencil icon on the tile you want to modify.
+1. In the tile editing pane, select the **Copilot** icon.
+1. Enter a natural language prompt describing what you want to visualize or how you want to modify the query. For example:
+   * "Show the top 10 customers by sales in the last 7 days"
+   * "Add a filter for region equals 'West'"
+   * "Group the results by product category"
+
+Copilot provides the following options:
+
+* **Generate:** Create a new KQL query from your natural language prompt.
+* **Replace:** Generate a new query that replaces the tile's existing query entirely.
+* **Refine:** Modify the current query by adding filters, changing time windows, adjusting groupings, or making other refinements.
+
+After Copilot generates the query, review it in the Query tab. You can run the query to preview the results, make manual edits if needed, and then apply the changes to update the tile.
 
 ## Continue data exploration
 

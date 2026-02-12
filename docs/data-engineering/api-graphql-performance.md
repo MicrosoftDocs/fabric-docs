@@ -43,7 +43,7 @@ To find your Fabric tenant's region:
 Your API for GraphQL runs within a specific capacity. To find the capacity region:
 
 1. Open the workspace hosting your API for GraphQL
-1. Go to **Workspace settings** > **License info**
+1. Go to **Workspace settings** > **Workspace type**
 1. Find the region under **License capacity**
 
    :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace." lightbox="media/api-graphql-performance/capacity-region.png":::

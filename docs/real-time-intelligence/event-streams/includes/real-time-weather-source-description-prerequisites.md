@@ -15,7 +15,7 @@ Weather data is powered by the Azure Maps Weather service. The cost of using Azu
 
 ## Prerequisites
 
-- A workspace with **Fabric capacity** or **Trial** license mode.
+- A workspace with **Fabric** capacity or **Fabric Trial** workspace type.
 - Access to the workspace with **Contributor** or higher workspace roles.
 - If you don't have an eventstream, follow the guide to [create an eventstream](../create-manage-an-eventstream.md).
 

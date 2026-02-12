@@ -36,8 +36,6 @@ items:
     href: create-workspaces.md
   - name: Assign workspace roles
     href: roles-workspaces.md
-  - name: Reassign a workspace to a different capacity
-    href: workspace-license-mode.md
   - name: Create items in workspaces
     href: create-items-in-workspaces.md
   - name: Create folders in workspaces

@@ -15,7 +15,7 @@ ms.search.form: Create a map
 Map (preview) is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 
@@ -133,6 +133,9 @@ A Cloud Optimized GeoTIFF (COG) is a standard GeoTIFF file (.tiff) designed for 
     :::image type="content" source="media/create-map/cog-file-example.png" lightbox="media/create-map/cog-file-example.png" alt-text="Screenshot of a map with a Cloud Optimized GeoTIFF (COG) file overlaying it.":::
 
 There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
+
+> [!TIP]
+> For scenarios that require custom basemaps or organization‑specific imagery, see [Bring your own imagery into Fabric Maps](https://blog.fabric.microsoft.com/en-US/blog/maps-in-microsoft-fabric-bring-your-own-imagery-into-real-time-intelligence/).
 
 ### Connect to Eventhouse/KQL databases
 
