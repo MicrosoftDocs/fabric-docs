@@ -34,7 +34,7 @@ Eventstreams are transient conduits—they don't permanently store data. Instead
 
 ### Ingest data directly into Eventhouse
 
-The [Eventhouse](../real-time-intelligence/eventhouse/overview.md) can ingest data directly from various sources without requiring you to build an Eventstream or Data Factory pipeline.
+The [Eventhouse](../real-time-intelligence/eventhouse.md) can ingest data directly from various sources without requiring you to build an Eventstream or Data Factory pipeline.
 
 Fabric provides an integrated **Get Data** wizard on the Eventhouse that supports connecting to sources like [local files](../real-time-intelligence/get-data-local-file.md), [Azure Storage](../real-time-intelligence/get-data-azure-storage.md), [Amazon S3](../real-time-intelligence/get-data-amazon-s3.md), [Azure Event Hubs](../real-time-intelligence/get-data-event-hub.md), [OneLake](../real-time-intelligence/get-data-onelake.md), and more. You can feed data into a KQL database table in real time or batch with just a few configuration steps, all within the Eventhouse UI.
 

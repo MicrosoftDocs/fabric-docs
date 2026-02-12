@@ -50,7 +50,7 @@ Real-time dashboards differ from regular Power BI reports primarily in their abi
 
 ### Anomaly detection
 
-The [anomaly detector](../real-time-intelligence/anomaly-detection.md) automatically identifies unusual patterns or outliers in streaming or time-series data. It works by analyzing data ingested into Eventhouse (KQL databases) and [applying statistical models or machine learning techniques](../real-time-intelligence/anomaly-detection-models) to detect deviations from expected behavior. These anomalies could represent system failures, fraud, performance degradation, or other critical events that require attention.
+The [anomaly detector](../real-time-intelligence/anomaly-detection.md) automatically identifies unusual patterns or outliers in streaming or time-series data. It works by analyzing data ingested into Eventhouse (KQL databases) and [applying statistical models or machine learning techniques](../real-time-intelligence/anomaly-detection-models.md) to detect deviations from expected behavior. These anomalies could represent system failures, fraud, performance degradation, or other critical events that require attention.
 
 Unlike static threshold-based alerts, the anomaly detector adapts to the data's historical trends and seasonality, making it more effective at identifying subtle or context-sensitive issues. You can configure it to monitor specific metrics, such as CPU usage, transaction volume, or sensor readings, and flag anomalies in real time.
 

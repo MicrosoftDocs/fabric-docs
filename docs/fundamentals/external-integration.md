@@ -58,11 +58,11 @@ Microsoft Fabric is evolving beyond analytics into an intelligence platform that
 
 Microsoft Fabric supports both data analysts and developers who prefer a code-first approach. With Visual Studio Code, developers can create, manage, and automate Fabric artifacts while integrating with modern DevOps practices. This approach enables teams to build scalable data solutions and AI workflows by using familiar tools and processes.
 
-* Create and manage Fabric artifacts in VS Code: Use [Fabric extensions](../data-engineering/set-up-fabric-vs-code-extension) and [CLI tools](/rest/api../articles..-command-line-interface) within VS Code to create and manage Fabric artifacts such as lakehouses, user data functions, and notebooks.
+* Create and manage Fabric artifacts in VS Code: Use [Fabric extensions](../data-engineering/set-up-fabric-vs-code-extension.md) and [CLI tools](../rest/api/fabric/articles/fabric-command-line-interface.md) within VS Code to create and manage Fabric artifacts such as lakehouses, user data functions, and notebooks.
 
 * Connect to Fabric data sources
-  * SQL endpoints: [Fabric lakehouses and warehouses expose T-SQL endpoints](../data-warehouse/how-to-connect) that let developers query data by using standard SQL syntax from VS Code or any SQL client.
-  * GraphQL APIs: Fabric provides [GraphQL APIs for programmatic access to data and metadata](../data-engineering/connect-apps-api-graphql), which enables developers to build custom apps or services that interact with Fabric datasets without relying on UI tools.
+  * SQL endpoints: [Fabric lakehouses and warehouses expose T-SQL endpoints](../data-warehouse/how-to-connect.md) that let developers query data by using standard SQL syntax from VS Code or any SQL client.
+  * GraphQL APIs: Fabric provides [GraphQL APIs for programmatic access to data and metadata](../data-engineering/connect-apps-api-graphql.md), which enables developers to build custom apps or services that interact with Fabric datasets without relying on UI tools.
 
 ### Unified data estate
 
@@ -70,11 +70,11 @@ Microsoft Fabric supports both data analysts and developers who prefer a code-fi
 
 #### OneLake interoperability
 
-[OneLake is a unified data lake](../onelake/onelake-overview) that prioritizes openness and interoperability. Instead of locking data into proprietary formats, OneLake uses widely adopted open standards to ensure flexibility, portability, and compatibility across ecosystems. This approach is critical for enterprises that need to integrate diverse tools and avoid vendor lock-in. OneLake achieves interoperability through two key strategies:
+[OneLake is a unified data lake](../onelake/onelake-overview.md) that prioritizes openness and interoperability. Instead of locking data into proprietary formats, OneLake uses widely adopted open standards to ensure flexibility, portability, and compatibility across ecosystems. This approach is critical for enterprises that need to integrate diverse tools and avoid vendor lock-in. OneLake achieves interoperability through two key strategies:
 
 * **Support for Delta Lake and Iceberg file formats**
-  * [Delta Lake](../fundamentals/delta-lake-interoperability): OneLake natively supports Delta Lake, which enables ACID transactions, schema enforcement, and time travel on large-scale datasets. This support makes OneLake compatible with engines like Azure Databricks, Apache Spark, and other lakehouse architectures.
-  * [Apache Iceberg](../onelake/onelake-iceberg-tables): Iceberg support provides advanced table management features such as partitioning, schema evolution, and versioning. This support ensures that OneLake can integrate with modern analytics tools and big data frameworks that rely on Iceberg for scalable table operations.
+  * [Delta Lake](../fundamentals/delta-lake-interoperability.md): OneLake natively supports Delta Lake, which enables ACID transactions, schema enforcement, and time travel on large-scale datasets. This support makes OneLake compatible with engines like Azure Databricks, Apache Spark, and other lakehouse architectures.
+  * [Apache Iceberg](../onelake/onelake-iceberg-tables.md): Iceberg support provides advanced table management features such as partitioning, schema evolution, and versioning. This support ensures that OneLake can integrate with modern analytics tools and big data frameworks that rely on Iceberg for scalable table operations.
 
 * **Universal data access through APIs**
   * Table APIs: OneLake exposes [Table APIs](../onelake/table-apis/table-apis-overview.md) that let developers and applications interact with tables programmatically regardless of the file format used to store them. These APIs enable listing, querying, and managing tables in OneLake, and support integration with custom applications and automation workflows.
@@ -85,8 +85,8 @@ By using these open file formats and APIs, OneLake ensures that data stored in O
 #### Azure Databricks integration
 
 The OneLake and Azure Databricks integration provides a foundation for unified analytics and AI. This integration combines OneLake's governed, open data estate with Databricks' data engineering and machine learning capabilities. The bi-directional integration between OneLake and Azure Databricks takes the following forms:
-* [Azure Databricks Catalog Mirroring](../mirroring/azure-databricks): Mirrors Unity Catalog from Databricks into OneLake. Tables managed in Databricks can appear as shortcuts in OneLake, which enables Fabric workloads (Power BI, Data Agents, Ontologies, Notebooks) to access Databricks data without duplication.
-* [Databricks reading from OneLake](../onelake/onelake-azure-databricks): Databricks can read and write data stored in OneLake through Delta Lake compatibility. Because OneLake supports open formats (Delta, Parquet), Databricks can mount OneLake storage or access it through ADLS Gen2 APIs with no need for ETL or data duplication.
+* [Azure Databricks Catalog Mirroring](../mirroring/azure-databricks.md): Mirrors Unity Catalog from Databricks into OneLake. Tables managed in Databricks can appear as shortcuts in OneLake, which enables Fabric workloads (Power BI, Data Agents, Ontologies, Notebooks) to access Databricks data without duplication.
+* [Databricks reading from OneLake](../onelake/onelake-azure-databricks.md): Databricks can read and write data stored in OneLake through Delta Lake compatibility. Because OneLake supports open formats (Delta, Parquet), Databricks can mount OneLake storage or access it through ADLS Gen2 APIs with no need for ETL or data duplication.
 
 #### Snowflake integration
 
@@ -105,7 +105,7 @@ Microsoft Fabric is built as a Software-as-a-Service (SaaS) platform on Azure's 
 
 #### Azure billing
 
-[Microsoft Fabric capacities](../enterprise/licenses.md#capacity) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal you have the ability to [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. You can Billing for Fabric is thus handled through your Azure subscription's billing system. All Fabric usage charges (for compute, storage, etc.) accrue under your subscription and appear in Azure Cost Management alongside other Azure services.
+[Microsoft Fabric capacities](../enterprise/licenses.md#capacity.md) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal you have the ability to [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. You can Billing for Fabric is thus handled through your Azure subscription's billing system. All Fabric usage charges (for compute, storage, etc.) accrue under your subscription and appear in Azure Cost Management alongside other Azure services.
 
 #### Networking
 
