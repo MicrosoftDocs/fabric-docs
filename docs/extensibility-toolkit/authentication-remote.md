@@ -38,6 +38,14 @@ This format includes two distinct tokens:
 - **`subjectToken`** - A delegated token representing the user on whose behalf the operation is being performed
 - **`appToken`** - An app-only token from the Fabric application, proving the request originated from Fabric
 
+> [!IMPORTANT]
+> The `subjectToken` is not always present. It may be missing in scenarios such as:
+> - **Service principal operations** - When a service principal interacts with Fabric public APIs without user context
+> - **System operations** - Operations like item deletion where no user is directly involved
+> - **Automated workflows** - CI/CD pipelines or scheduled operations that run without user interaction
+>
+> Your remote endpoint must be designed to handle both cases: requests with user context (subjectToken present) and requests without user context (subjectToken absent).
+
 ### Why Dual Tokens?
 
 The dual-token approach provides three key benefits:
@@ -95,8 +103,15 @@ if (!tokens || !tokens.appToken) {
 }
 
 // Now you have access to:
-// - tokens.subjectToken (user-delegated token)
-// - tokens.appToken (Fabric app token)
+// - tokens.subjectToken (user-delegated token, may be null)
+// - tokens.appToken (Fabric app token, always present)
+
+// Check if user context is available
+if (tokens.subjectToken) {
+  console.log('Request has user context');
+} else {
+  console.log('Request is app-only (no user context)');
+}
 ```
 
 ## Token Validation
@@ -246,11 +261,15 @@ Implement middleware to authenticate incoming requests from Fabric.
 ```javascript
 /**
  * Authentication middleware that validates control plane calls from Fabric
+ * Handles both user-delegated (with subjectToken) and app-only (without subjectToken) scenarios
  * @param {object} req - Express request object
  * @param {object} res - Express response object
+ * @param {object} options - Authentication options
+ * @param {boolean} options.requireSubjectToken - Whether subject token is required (default: false)
  * @returns {Promise<boolean>} True if authenticated successfully
  */
-async function authenticateControlPlaneCall(req, res) {
+async function authenticateControlPlaneCall(req, res, options = {}) {
+  const { requireSubjectToken = false } = options;
   try {
     // Extract and parse authorization header
     const authHeader = req.headers['authorization'];
@@ -305,6 +324,11 @@ async function authenticateControlPlaneCall(req, res) {
       if (subjectAppId !== appTokenAppId) {
         return res.status(401).json({ error: 'Token appid mismatch' });
       }
+    } else if (requireSubjectToken) {
+      // If subject token is required but missing, reject the request
+      return res.status(401).json({ 
+        error: 'Subject token required for this operation' 
+      });
     }
 
     // Store authentication context in request
@@ -312,6 +336,7 @@ async function authenticateControlPlaneCall(req, res) {
       subjectToken: tokens.subjectToken,
       appToken: tokens.appToken,
       tenantId: tenantId,
+      hasSubjectContext: !!tokens.subjectToken,
       appTokenClaims: appTokenClaims,
       subjectTokenClaims: subjectTokenClaims,
       userId: subjectTokenClaims?.oid || subjectTokenClaims?.sub,
@@ -332,18 +357,59 @@ async function authenticateControlPlaneCall(req, res) {
 
 ```javascript
 app.post('/api/jobs/execute', async (req, res) => {
-  // Authenticate the request
+  // Authenticate the request (subjectToken is optional)
   const authenticated = await authenticateControlPlaneCall(req, res);
   if (!authenticated) {
     return; // Response already sent by middleware
   }
 
   // Access authentication context
-  const { userId, userName, tenantId, subjectToken } = req.authContext;
+  const { hasSubjectContext, userId, userName, tenantId, subjectToken } = req.authContext;
   
-  console.log(`Executing job for user: ${userName} (${userId})`);
+  if (hasSubjectContext) {
+    console.log(`Executing job for user: ${userName} (${userId})`);
+  } else {
+    console.log('Executing job in app-only context (no user)');
+  }
   
   // Execute job logic...
+});
+
+// Example: Require user context for specific operations
+app.post('/api/lifecycle/create', async (req, res) => {
+  // For create operations, we might require user context
+  const authenticated = await authenticateControlPlaneCall(req, res, {
+    requireSubjectToken: true
+  });
+  if (!authenticated) {
+    return; // Response already sent by middleware
+  }
+
+  // User context is guaranteed to be present here
+  const { userId, userName } = req.authContext;
+  console.log(`Creating item for user: ${userName}`);
+  
+  // Handle creation...
+});
+
+// Example: Allow app-only context for delete operations
+app.post('/api/lifecycle/delete', async (req, res) => {
+  // Delete operations might not have user context
+  const authenticated = await authenticateControlPlaneCall(req, res, {
+    requireSubjectToken: false // Default, but shown for clarity
+  });
+  if (!authenticated) {
+    return;
+  }
+
+  const { hasSubjectContext, userName } = req.authContext;
+  if (hasSubjectContext) {
+    console.log(`Deleting item for user: ${userName}`);
+  } else {
+    console.log('Deleting item (system operation)');
+  }
+  
+  // Handle deletion...
 });
 ```
 
@@ -461,16 +527,24 @@ async function handleJobExecution(req, res) {
   const authenticated = await authenticateControlPlaneCall(req, res);
   if (!authenticated) return;
 
-  const { subjectToken, tenantId } = req.authContext;
+  const { hasSubjectContext, subjectToken, tenantId } = req.authContext;
 
   try {
-    // Get OneLake token to access item data
-    const oneLakeToken = await getOneLakeToken(subjectToken, tenantId);
-    
-    // Use OneLake token to read/write data
-    const data = await readFromOneLake(oneLakeToken, workspaceId, itemId);
-    
-    // Process data...
+    // Only exchange token if user context is available
+    if (hasSubjectContext) {
+      // Get OneLake token to access item data on behalf of the user
+      const oneLakeToken = await getOneLakeToken(subjectToken, tenantId);
+      
+      // Use OneLake token to read/write data
+      const data = await readFromOneLake(oneLakeToken, workspaceId, itemId);
+      
+      // Process data...
+    } else {
+      // Handle app-only scenario
+      // You may need to use different authentication or skip user-specific operations
+      console.log('Processing job without user context');
+      // Use workspace or item-level access instead
+    }
     
     res.status(200).json({ status: 'completed' });
   } catch (error) {
@@ -681,11 +755,20 @@ For more information about handling long-running OBO processes, see [Long-runnin
 
 ### Token Validation
 
-- Always validate both tokens in SubjectAndAppToken format
+- Always validate the appToken in SubjectAndAppToken format
+- Validate the subjectToken only if present
 - Verify token signatures against Azure AD keys
 - Check token expiration and not-before times
 - Validate issuer, audience, and tenant claims
 - Verify required claims (scp, idtyp, etc.)
+
+### Handling Missing User Context
+
+- Design your remote endpoint to handle both user-delegated and app-only scenarios
+- Check `hasSubjectContext` in authContext before accessing user-specific properties
+- For operations requiring user context, set `requireSubjectToken: true` in middleware options
+- For delete operations or system operations, allow missing subjectToken
+- Document which operations support app-only context and which require user context
 
 ### Environment Configuration
 
@@ -754,6 +837,6 @@ try {
 - [Enable Remote Endpoints](how-to-enable-remote-endpoint.md)
 - [Enable Remote Jobs](how-to-enable-remote-jobs.md)
 - [Enable Item Lifecycle Notifications](how-to-enable-remote-item-lifecycle.md)
-- [Use Endpoint Resolution Service](how-to-use-endpoint-resolution-service.md)
+- [Use Endpoint Resolution Service](how-to-enable-remote-endpoint-resolution.md)
 - [Long-running OBO processes](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes)
 - [Fabric Workload Development Sample](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample)

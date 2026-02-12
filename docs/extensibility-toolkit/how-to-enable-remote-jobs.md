@@ -6,38 +6,38 @@ ms.author: billmath
 ms.topic: how-to
 ms.custom:
 ms.date: 12/15/2025
+ai-usage: ai-assisted
 ---
 
 # Define Jobs for Your Workload
 
-> [!NOTE]
-> Job scheduling functionality for the Extensibility Toolkit is currently under development. The features described below are planned capabilities and may change before release. This guide provides an overview of the upcoming job configuration options.
-
-Jobs in Microsoft Fabric enable workloads to execute background processing tasks, scheduled operations, and automated workflows. When available, the Extensibility Toolkit will support comprehensive job scheduling capabilities that allow your workload to participate in Fabric's unified job management system.
+Jobs in Microsoft Fabric are long-running operations that execute background processing tasks, scheduled operations, and automated workflows. Fabric provides a [job scheduler](/rest/api/fabric/core/job-scheduler) to manage job execution and a [monitoring hub](/fabric/admin/monitoring-hub) where users can view the status and history of their jobs.
 
 ## What are Fabric Jobs?
 
-Fabric jobs are background processes that can be triggered on-demand or scheduled to run at specific intervals. Jobs enable your workload to:
+Jobs are background processes that can be triggered on-demand or scheduled to run at specific intervals. Jobs play an important role when:
 
+- **Items need to run code on a regular basis** - Scheduled data refresh, periodic maintenance, or automated report generation
+- **The user is not in front of the UI** - Background processing, overnight operations, or long-running data transformations
 - **Process data asynchronously** - Handle large data operations without blocking the user interface
-- **Automate workflows** - Execute routine tasks like data refresh, cleanup, or synchronization
-- **Scale operations** - Leverage Fabric's compute resources for intensive processing
-- **Integrate with monitoring** - Participate in Fabric's unified monitoring and alerting system
+- **Scale operations** - Leverage compute resources for intensive processing tasks
 
-## Job Types and Configuration
+Jobs integrate with Fabric's unified [monitoring hub](/fabric/admin/monitoring-hub), allowing users to track job execution status, view history, and troubleshoot issues across all their Fabric items.
 
-When job support becomes available, you'll define jobs in your item manifest using the `<JobScheduler>` configuration section.
+## Defining Jobs in the Item Manifest
+
+Custom items define their jobs in the item manifest using the `<JobScheduler>` configuration section. Jobs defined in the manifest appear in Fabric's [job scheduler](/rest/api/fabric/core/job-scheduler) and [monitoring hub](/fabric/admin/monitoring-hub), but the job execution logic runs outside of Fabric.
 
 ### Job Scheduler Structure
 
-The job scheduler configuration includes several key elements:
+Here's an example of job configuration in the item manifest:
 
 ```xml
 <JobScheduler>
     <OnDemandJobDeduplicateOptions>PerItem</OnDemandJobDeduplicateOptions>
     <ScheduledJobDeduplicateOptions>PerItem</ScheduledJobDeduplicateOptions>
     <ItemJobTypes>
-        <ItemJobType Name="YourWorkload.YourItem.JobTypeName" />
+        <ItemJobType Name="{{WORKLOAD_NAME}}.HelloWorld.RunJob" />
     </ItemJobTypes>
 </JobScheduler>
 ```
@@ -66,9 +66,15 @@ Each job type represents a specific operation your workload can perform:
 
 Job names must follow the pattern: `{WorkloadName}.{ItemType}.{JobOperation}`
 
-- **WorkloadName**: Your workload identifier (e.g., "MyWorkload")
-- **ItemType**: The item type that owns the job (e.g., "DataProcessor")  
-- **JobOperation**: Descriptive name for the operation (e.g., "RefreshData")
+- **WorkloadName**: Your workload identifier (for example, "MyWorkload")
+- **ItemType**: The item type that owns the job (for example, "DataProcessor")  
+- **JobOperation**: Descriptive name for the operation (for example, "RefreshData")
+
+## Implementing Job Execution
+
+Jobs defined in custom items can't run directly within Fabric. Instead, you need to implement a remote endpoint that Fabric calls when a job is triggered. This gives you full control over where and how your job logic executes.
+
+For detailed information about implementing and configuring remote endpoints, see [How-To: Enable remote endpoints for custom items](how-to-enable-remote-endpoint.md).
 
 ## Example Job Configuration
 
@@ -96,7 +102,7 @@ Here's an example of how a data processing workload might configure jobs:
 
 ## Job Implementation Patterns
 
-When job support is available, you'll implement job logic in your workload backend:
+Jobs are triggered by Fabric and execute at your remote endpoint. Consider these common patterns:
 
 ### On-Demand Jobs
 
@@ -114,22 +120,14 @@ Run automatically based on time intervals:
 - Periodic maintenance tasks
 - Automated report generation
 
-### Event-Driven Jobs
-
-Triggered by specific conditions or external events:
-
-- Data arrival notifications
-- Threshold-based processing
-- Integration with external systems
-
 ## Job Monitoring and Management
 
-Jobs will integrate with Fabric's monitoring infrastructure:
+Jobs integrate with Fabric's [monitoring hub](/fabric/admin/monitoring-hub) infrastructure:
 
-- **Execution tracking** - Monitor job status, duration, and resource usage
-- **Error handling** - Automatic retry policies and failure notifications
-- **Performance metrics** - Track job performance and optimize execution
-- **Audit logging** - Complete audit trail of job executions
+- **Execution tracking** - Monitor job status, duration, and resource usage in the monitoring hub
+- **Error handling** - Implement retry policies and failure notifications in your remote endpoint
+- **Performance metrics** - Track job performance through the monitoring hub
+- **Audit logging** - Complete audit trail of job executions available in Fabric
 
 ## Best Practices for Job Design
 
@@ -141,17 +139,20 @@ When designing jobs for your workload:
 - Design for fault tolerance and restart capability
 
 ### Resource Management
-- Consider memory and compute requirements
+- Choose appropriate compute resources for your remote endpoint
+- Consider memory and compute requirements for job execution
 - Implement proper cleanup of temporary resources
-- Use appropriate deduplication settings
+- Use appropriate deduplication settings to prevent concurrent execution issues
 
 ### Error Handling
-- Implement robust error handling and logging
+- Implement robust error handling and logging in your remote endpoint
 - Design for graceful degradation on failures
-- Provide meaningful error messages for monitoring
+- Provide meaningful error messages that appear in the monitoring hub
+- Implement retry logic for transient failures
 
 ### Security
-- Ensure proper authentication and authorization
+- Ensure proper authentication and authorization for your remote endpoint
+- Secure communication between Fabric and your endpoint
 - Follow least-privilege principles for job execution
 - Validate all input data and parameters
 
@@ -164,23 +165,124 @@ Jobs can leverage OneLake for data operations:
 - Use shortcuts for external data access
 - Maintain data lineage and governance
 
-## Preparing for Job Support
+## Integrate with the Monitoring Hub
 
-While job functionality is under development, you can prepare by:
+When jobs are configured for your items, they automatically appear in Fabric's [monitoring hub](/fabric/admin/monitoring-hub). To provide the best user experience, you can integrate additional features that allow users to monitor, manage, and interact with jobs.
 
-- **Designing your job architecture** - Plan what background operations your workload needs
-- **Identifying job types** - Determine on-demand vs. scheduled operations
-- **Planning data flows** - Design how jobs will interact with OneLake and external systems
-- **Considering monitoring** - Plan what metrics and logging you'll need
+### Enable Your Item in the Monitoring Hub Filter Pane
+
+To make your item type available in the monitoring hub's filter pane, add the `supportedInMonitoringHub` property to your item's frontend manifest:
+
+```json
+{
+  "supportedInMonitoringHub": true
+}
+```
+
+This allows users to filter jobs by your custom item type in the monitoring hub.
+
+### Integrate with Job Quick Actions
+
+The monitoring hub provides quick action buttons for each job, allowing users to perform operations like cancel, retry, and view details directly from the monitoring hub interface.
+
+:::image type="content" source="media/how-to-enable-remote-jobs/monitoring-hub-quick-actions.png" alt-text="Screenshot showing jobs quick actions buttons in the monitoring hub.":::
+
+Configure which actions are available for your jobs by adding the `itemJobActionConfig` property to the item frontend manifest:
+
+```json
+"itemJobActionConfig": {
+    "registeredActions": {
+        "detail": {
+            "extensionName": "YourWorkload.ExtensionName",
+            "action": "item.job.detail"
+        },
+        "cancel": {
+            "extensionName": "YourWorkload.ExtensionName",
+            "action": "item.job.cancel"
+        },
+        "retry": {
+            "extensionName": "YourWorkload.ExtensionName",
+            "action": "item.job.retry"
+        }
+    }
+}
+```
+
+When a user selects an action button, Fabric calls the registered action in your extension. For example, when a user selects the Cancel icon, Fabric calls the `item.job.cancel` action, which your extension must implement.
+
+Your action handler receives the job-related context and must respond with the operation result to notify the user.
+
+### Job Details Pane
+
+When you register the detail action, Fabric displays job information in a side panel when users select the details button.
+
+:::image type="content" source="media/how-to-enable-remote-jobs/monitoring-hub-job-details-pane.png" alt-text="Screenshot showing the job details pane in the monitoring hub.":::
+
+Your detail action must return data in a specific format for Fabric to display it correctly. Currently, Fabric supports key/value pairs as plain text or hyperlinks.
+
+Example response format:
+
+```typescript
+{
+  details: [
+    { key: "Job ID", value: "12345" },
+    { key: "Start Time", value: "2025-01-15 10:30:00" },
+    { key: "Status", value: "Completed" },
+    { 
+      key: "Logs", 
+      value: "https://your-logs-url.com",
+      isLink: true 
+    }
+  ]
+}
+```
+
+### Recent Runs
+
+In addition to the monitoring hub, Fabric provides a Recent Runs view specifically for individual items. Users can access this view through:
+
+- Context menu > **Recent runs**
+- Using the `workloadClient.itemRecentRuns.open()` API
+
+:::image type="content" source="media/how-to-enable-remote-jobs/monitoring-hub-recent-runs.png" alt-text="Screenshot of the recent runs option in the options menu.":::
+
+#### Enable Recent Runs
+
+**Step 1: Add recentruns context menu item**
+
+To show the **Recent runs** button in the item context menu, add a new entry to the `contextMenuItems` property in the item frontend manifest:
+
+```json
+{
+    "name": "recentruns"
+}
+```
+
+**Step 2: Add item recentRun settings**
+
+Add a new `recentRun` entry to the item settings property in the frontend manifest:
+
+```json
+"recentRun": {
+    "useRecentRunsComponent": true
+}
+```
+
+This enables the shared Fabric Recent Runs UI component for your item.
+
+### Jobs Integration Example
+
+For a complete example of job action implementation, see the [Fabric Workload Development Sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). Look for:
+
+- **Backend implementation**: `JobsControllerImpl.cs` - Shows how to implement the job APIs
+- **Frontend action handlers**: `index.worker.ts` - Search for actions beginning with `item.job` to see how to handle cancel, retry, and detail actions
 
 ## Related Content
 
+- [Authenticate Remote Endpoints](authentication-remote.md)
+- [Enable Remote Endpoints for Custom Items](how-to-enable-remote-endpoint.md)
+- [Job Scheduler API](/rest/api/fabric/core/job-scheduler)
+- [Monitoring Hub](/fabric/admin/monitoring-hub)
 - [Store Data in OneLake](how-to-store-data-in-onelake.md)
 - [Access Fabric APIs](how-to-access-fabric-apis.md)
 - [Manifest Overview](manifest-overview.md)
-- [Key Concepts and Features](key-concepts.md)
-
----
-
-> [!NOTE]
-> This guide describes planned functionality for the Extensibility Toolkit. Job scheduling capabilities are currently under development and will be available in a future release. Check the documentation for updates on availability and implementation details.

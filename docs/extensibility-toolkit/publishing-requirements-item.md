@@ -874,7 +874,7 @@ Item should optionally integrate with Fabric Monitoring Hub to expose job execut
 | ⚠️ Optional | ⚠️ Optional |
 
 **References:**
-- [Define Item Jobs](./how-to-define-jobs.md)
+- [Define Item Jobs](./how-to-enable-remote-jobs.md)
 - [Item Concept](./concept-item-overview.md)
 
 ---
