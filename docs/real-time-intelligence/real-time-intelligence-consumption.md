@@ -7,7 +7,7 @@ author: spelluru
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 01/08/2026
+ms.date: 02/12/2026
 ms.search.form: Eventhouse,KQL Database, Overview
 ---
 # Eventhouse and KQL Database consumption
@@ -72,7 +72,6 @@ Here are some insights you can take from the example:
 > [!NOTE]
 > To better understand your Eventhouse compute size, see [Understand Eventhouse compute usage](eventhouse-compute-observability.md).
 
-
 ## Storage billing
 
 Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
@@ -80,7 +79,7 @@ Storage is billed separately from your Fabric or Power BI Premium Capacity units
 * **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rti&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
 > [!NOTE]
-> Enabling [always-on](manage-monitor-eventhouse.md#enable-always-on) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime.
+> Enabling the [Capacity Planner](event-house-smart-capacity-control.md) means that you aren't charged for *OneLake Cache Storage*. When minimum capacity is set, the eventhouse is always active resulting in 100% Eventhouse UpTime. You can then use the capacity planner scheduler to set minimum capacity values for specific times, without needing to worry about cache storage costs as it's included in the capacity charges. For more information, see [Schedule smart Eventhouse capacity control](event-house-smart-capacity-control.md).
 
 * **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-policies.md#data-retention-policy), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
