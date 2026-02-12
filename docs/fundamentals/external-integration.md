@@ -58,7 +58,7 @@ Microsoft Fabric is evolving beyond analytics into an intelligence platform that
 
 Microsoft Fabric supports both data analysts and developers who prefer a code-first approach. With Visual Studio Code, developers can create, manage, and automate Fabric artifacts while integrating with modern DevOps practices. This approach enables teams to build scalable data solutions and AI workflows by using familiar tools and processes.
 
-* Create and manage Fabric artifacts in VS Code: Use [Fabric extensions](../data-engineering/set-up-fabric-vs-code-extension.md) and [CLI tools](../rest/api/fabric/articles/fabric-command-line-interface.md) within VS Code to create and manage Fabric artifacts such as lakehouses, user data functions, and notebooks.
+* Create and manage Fabric artifacts in VS Code: Use [Fabric extensions](../data-engineering/set-up-fabric-vs-code-extension.md) and [CLI tools](../rest/api/fabric/articles/fabric-command-line-interface) within VS Code to create and manage Fabric artifacts such as lakehouses, user data functions, and notebooks.
 
 * Connect to Fabric data sources
   * SQL endpoints: [Fabric lakehouses and warehouses expose T-SQL endpoints](../data-warehouse/how-to-connect.md) that let developers query data by using standard SQL syntax from VS Code or any SQL client.
@@ -105,7 +105,7 @@ Microsoft Fabric is built as a Software-as-a-Service (SaaS) platform on Azure's 
 
 #### Azure billing
 
-[Microsoft Fabric capacities](../enterprise/licenses.md#capacity.md) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal you have the ability to [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. You can Billing for Fabric is thus handled through your Azure subscription's billing system. All Fabric usage charges (for compute, storage, etc.) accrue under your subscription and appear in Azure Cost Management alongside other Azure services.
+[Microsoft Fabric capacities](../enterprise/licenses.md#capacity) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal you have the ability to [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. You can Billing for Fabric is thus handled through your Azure subscription's billing system. All Fabric usage charges (for compute, storage, etc.) accrue under your subscription and appear in Azure Cost Management alongside other Azure services.
 
 #### Networking
 
