@@ -34,6 +34,12 @@ This table lists common Data Engineering error messages and links to relevant tr
 - User is not authorized. User requires at least 'ReadAll' permission on the artifact
 - User is Not Authorized to Access the Files in Storage Path for the Delta Table
 
+#### Scenario
+
+This issue typically occurs when you are attempting to access or query data in a Lakehouse or run a Spark notebook without the required permissions. Common actions that lead to this error include:
+- Opening a Lakehouse in Fabric and attempting to query tables using SQL or Spark
+- Running a notebook or Spark job definition that reads from or writes to a Lakehouse
+
 #### What Happened
 
 Your user account or service principal lacks the necessary permissions to access data engineering artifacts (Lakehouses, Notebooks, Spark job definitions, Pipelines), underlying storage, shortcuts, or perform specific operations. Access can be denied at multiple levels: workspace permissions, artifact permissions, storage-level permissions, or authentication failures with the catalog service.
@@ -114,6 +120,12 @@ See [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [troubleshoot lakeh
 - Spark job can't be run because you exceeded a spark compute limit
 - Capacity limit exceeded
 
+#### Scenario
+
+This issue typically occurs when you are running multiple Spark workloads simultaneously or executing resource-intensive data processing jobs. Common actions that lead to this error include:
+- Starting a Spark notebook or Spark job definition when multiple other Spark sessions are already running in the workspace
+- Executing large-scale ETL operations that consume significant Compute Units
+
 #### What Happened
 
 Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) for Spark workloads, causing the service to throttle or reject Spark job execution. This affects Spark jobs, notebooks, Spark job definitions, and data pipelines using Spark activities.
@@ -173,6 +185,12 @@ Use the [capacity planning and troubleshooting guide](../enterprise/capacity-pla
 - HTTP 429 Too Many Requests
 - API Rate Limit Exceeded
 - Request rate limit exceeded
+
+#### Scenario
+
+This issue typically occurs when you are making frequent API calls to Fabric services programmatically or running automated scripts. Common actions that lead to this error include:
+- Running a script that repeatedly calls Lakehouse metadata APIs (such as ListTables or GetTable) in a loop
+- Executing multiple concurrent processes that access the same Lakehouse artifacts simultaneously
 
 #### What Happened
 
@@ -235,6 +253,12 @@ For persistent rate limiting issues:
 - Capacity Not Active at Lakehouse Refresh
 - Capacity Not Active
 
+#### Scenario
+
+This issue typically occurs when you are attempting to perform data engineering operations in a workspace that is not properly connected to an active Fabric capacity. Common actions that lead to this error include:
+- Triggering a scheduled Lakehouse refresh when the workspace's capacity assignment has been removed
+- Attempting to run a notebook or pipeline after the workspace has been moved from a Fabric capacity to a trial or free tier
+
 #### What Happened
 
 The workspace is not connected to an active Fabric capacity, or the capacity is experiencing issues that prevent data engineering operations from executing.
@@ -270,6 +294,12 @@ The workspace is not connected to an active Fabric capacity, or the capacity is 
 - Activity execution failed
 - Copy activity failed with error
 - Notebook activity execution timeout
+
+#### Scenario
+
+This issue typically occurs when you are running a data pipeline with activities that depend on external resources or have configuration issues. Common actions that lead to this error include:
+- Running a pipeline with a Copy Data activity that attempts to read from or write to a Lakehouse without proper permissions
+- Executing a pipeline with a Notebook activity that times out due to long-running Spark operations
 
 #### What Happened
 
