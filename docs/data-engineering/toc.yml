@@ -288,16 +288,18 @@ items:
       href: load-to-tables.md
     - name: High Concurrency Mode for Lakehouse Table Load and Preview Operations
       href: high-concurrency-for-lakehouse-operations.md
-    - name: Table compaction
-      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
-    - name: Delta optimization and V-Order
-      href: delta-optimization-and-v-order.md
-    - name: Tune file size
-      href: tune-file-size.md
-    - name: Automated Statistics for Delta Tables
-      href: automated-table-statistics.md	
+    - name: Delta tables performance
+      items: 
+        - name: Delta optimization and V-Order
+          href: delta-optimization-and-v-order.md
+        - name: Table compaction
+          href: table-compaction.md
+        - name: Tune file size
+          href: tune-file-size.md
+        - name: Automated Statistics for Delta Tables
+          href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
       href: driver-mode-snapshot.md
 - name: Notebooks

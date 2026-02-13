@@ -1,11 +1,11 @@
 ---
-title: "Implement medallion lakehouse architecture in Fabric"
+title: "Implement Medallion Lakehouse Architecture in Fabric"
 description: Understand medallion lakehouse architecture in Microsoft Fabric and learn how to implement a lakehouse.
 author: kgremban
 ms.author: kgremban
 ms.reviewer: wiassaf, arali
+ms.date: 02/12/2026
 ms.topic: concept-article
-ms.date: 04/21/2025
 ms.custom:
   - fabric-cat
 ai-usage: ai-assisted
@@ -35,12 +35,12 @@ This article introduces medallion lake architecture and describes how you can im
 The goal of medallion architecture is to incrementally improve the structure and quality of data. Think of medallion architecture as a three-stage cleaning and organizing process for your data. Each layer makes your data more reliable and easier to use.
 
 1. **Bronze (Raw)**: Store everything exactly as it arrives. No changes are allowed.
-2. **Silver (Enriched)**: Fix errors, standardize formats, and remove duplicates.
-3. **Gold (Curated)**: Organize for reports and dashboards.
+1. **Silver (Enriched)**: Fix errors, standardize formats, and remove duplicates.
+1. **Gold (Curated)**: Organize for reports and dashboards.
 
 Keep each layer separated in its own lakehouse or data warehouse in OneLake, with data moving between the layers as it's transformed and refined.
 
-:::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of OneLake medallion architecture that shows data sources, prepare and transform with three layers, and analysis with SQL and Power BI." border="false":::
+:::image type="content" source="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png" alt-text="Diagram of OneLake medallion architecture that shows data sources, prepare and transform with three layers, and analysis with SQL and Power BI." lightbox="media/onelake-medallion-lakehouse-architecture/onelake-medallion-lakehouse-architecture-example.png":::
 
 In a typical medallion architecture implementation in Fabric, the bronze layer stores the data in the same format as the data source. When the data source is a relational database, Delta tables are a good choice. The silver and gold layers should contain Delta tables.
 
@@ -148,7 +148,7 @@ This section describes other guidance related to implementing a medallion lakeho
 
 Generally, a big data platform performs better when it has a few large files rather than many small files. Performance degradation occurs when the compute engine has many metadata and file operations to manage. For better query performance, we recommend that you aim for data files that are approximately 1 GB in size.
 
-Delta Lake has a feature called _predictive optimization_. Predictive optimization automates maintenance operations for Delta tables. When this feature is enabled, Delta Lake identifies tables that would benefit from maintenance operations and then optimizes their storage. While this feature should form part of your operational excellence and your data preparation work, Fabric can optimize data files during data write, too. For more information, see [Predictive optimization for Delta Lake](/azure/databricks/optimizations/predictive-optimization).
+Different layers of the medallion architecture have different requirements for file size based on which consumption engine will be used. In the bronze layer, you can have smaller files because of the raw nature of the data, as long you focus data modification and preparation with Spark. In the silver and gold layers, you should optimize for larger file sizes and larger row groups to improve query performance for consumption engines. To learn more about optimizing file sizes for different layers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
 
 #### Historical retention
 
@@ -156,20 +156,25 @@ By default, Delta Lake maintains a history of all changes made, so the size of h
 
 You can remove older historical data from a Delta table by using the [VACUUM command](/azure/databricks/sql/language-manual/delta-vacuum). However, by default you can't delete historical data within the last seven days. That restriction maintains the consistency in data. Configure the default number of days with the table property `delta.deletedFileRetentionDuration = "interval <interval>"`. That property determines the period of time that a file must be deleted before it can be considered a candidate for a vacuum operation.
 
-#### Table partitions
+#### Table partitions and clustering
 
-When you store data in each layer, we recommended that you use a partitioned folder structure wherever applicable. This technique improves data manageability and query performance. Generally, partitioned data in a folder structure results in faster search for specific data entries because of partition pruning/elimination.
+When you store data in each layer, we recommended that you use a partitioned folder structure wherever applicable. This technique improves data manageability and query performance. Generally, partitioned data in a folder structure results in faster search for specific data entries because of partition pruning/elimination. Partitioning is usually a good strategy for high-frequency ingestion in Bronze layer, as it aligns with multiple ingestion tools. Yet, for Silver and Gold layers, we recommend that you use Liquid Clustering instead of partitioning to optimize query performance. To learn more about optimizing for different layers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
 
 Typically, you append data to your target table as new data arrives. However, in some cases you might merge data because you need to update existing data at the same time. In that case, you can perform an _upsert_ operation by using the [MERGE command](/azure/databricks/delta/merge). When your target table is partitioned, be sure to use a partition filter to speed up the operation. That way, the engine can eliminate partitions that don't require updating.
 
 #### Data access
 
-You should plan and control who needs access to specific data in the lakehouse. You should also understand the various transaction patterns they're going to use while accessing this data. You can then define the right table partitioning scheme, and data collocation with Delta Lake [Z-order indexes](/azure/databricks/delta/data-skipping).
+You should plan and control who needs access to specific data in the lakehouse. You should also understand the various transaction patterns they're going to use while accessing this data for each layer.
+
+> [!TIP]
+> Each medallion layer has different optimization requirements. For comprehensive guidance on table maintenance strategies for bronze, silver, and gold layers, including when to enable V-Order and optimal file sizes, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md#medallion-architecture-recommendations).
 
 ## Related content
 
 For more information about implementing medallion lakehouse architecture, see the following resources.
 
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
 - [Tutorial: Lakehouse end-to-end scenario](../data-engineering/tutorial-lakehouse-introduction.md)
 - [Tutorial: Implement medallion architecture with materialized lake views](../data-engineering/materialized-lake-views/tutorial.md)
 - [Lakehouse and Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md)

@@ -16,6 +16,8 @@ Sharing a map through direct access grants permissions on the map item only. It 
 
 Sharing a map through [direct access](#direct-access) automatically enforces permission checks for both the map and its underlying data sources. This ensures secure, role-based access without requiring full workspace-level permissions.
 
+For more information about sharing maps in Fabric Maps, see [Sharing Microsoft Fabric Maps](sharing-maps.md).
+
 <!------------------------------------------------------------------------------------
 > [!NOTE]
 > To share a Microsoft Fabric map using Fabric Org Apps, see [How to share a map using Org Apps](share-map-org-apps.md)

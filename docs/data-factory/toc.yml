@@ -967,6 +967,8 @@
                 href: dataflow-gen2-data-destinations-excel-advanced.md
           - name: Authoring tools
             items:
+              - name: Machine learning model in Dataflow Gen2
+                href: dataflow-gen2-machine-learning-model-endpoints.md
               - name: AI Functions in Dataflow Gen2 (Preview)
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 

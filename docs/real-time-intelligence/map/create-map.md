@@ -76,7 +76,7 @@ Currently Map supports the following data types:
 * [Cloud Optimized GeoTIFF (COG)](#add-data-to-a-map---cloud-optimized-geotiff-cog) format with a **.tiff** or **.tif** file extension.
 
 > [!NOTE]
-> GeoJSON files larger than **20MB** must be converted into a tileset in order to be used by Microsoft Fabric Map. For more information on how to convert a GeoJSON file into tileset, see **[Create a tileset](spatial-job-create-tile-sets.md)**.
+> GeoJSON files larger than **20MB** must be converted into a tileset in order to be used by Microsoft Fabric Map. For more information on how to convert a GeoJSON file into tileset, see **[Create a tileset](create-tile-sets.md)**.
 
 #### Add data to a map - GeoJSON
 

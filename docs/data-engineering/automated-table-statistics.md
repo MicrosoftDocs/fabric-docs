@@ -8,7 +8,7 @@ author: eric-urban
 ms.topic: how-to
 ms.custom:
 ms.date: 05/01/2025
-
+ai-usage: ai-assisted
 ---
 
 # Configure and manage Automated Table Statistics in Fabric Spark
@@ -26,6 +26,9 @@ Automated Table Statistics in Microsoft Fabric help Spark optimize query executi
 By default, these **extended statistics** are collected for the first 32 columns (including nested columns) of every Delta table created in Fabric. The collected data helps Spark’s cost-based optimizer (CBO) improve query planning for joins, filters, aggregations, and partition pruning.
 
 As a result, workloads can see greater performance improvements and reduced compute resource usage — all without requiring manual `ANALYZE TABLE` runs or complex configuration.
+
+> [!TIP]
+> Statistics work in conjunction with other table maintenance operations. For comprehensive cross-workload guidance on table optimization strategies, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 ## Key Benefits
 
@@ -167,8 +170,12 @@ It’s important to understand the current limitations of Fabric’s automated s
 - Column ordering or configuration changes require full rewrite to refresh stats
 
 ## Related content
+
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Table compaction](table-compaction.md)
+- [Lakehouse table maintenance](lakehouse-table-maintenance.md)
+- [Configure resource profiles based on your workload requirements](configure-resource-profile-configurations.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
-- [Learn about Delta OptimizedWrite and VOrder](delta-optimization-and-v-order.md)
-- [Learn how to configure Resource Profiles based on your workload requirements](configure-resource-profile-configurations.md)
 
 

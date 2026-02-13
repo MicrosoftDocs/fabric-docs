@@ -17,6 +17,8 @@ Sharing geospatial insights across an organization is now easier and more secure
 > [!IMPORTANT]
 > The preview for org apps is off by default for tenants. To enable the preview, you must be a Microsoft Fabric administrator. For more information, see [Prerequisites for creating org app items](/power-bi/consumer/org-app-items/org-app-items#prerequisites-for-creating-org-app-items)
 
+For more information about sharing maps in Fabric Maps, see [Sharing Microsoft Fabric Maps](sharing-maps.md).
+
 ## Share a map
 
 1. **Create a Fabric org app**

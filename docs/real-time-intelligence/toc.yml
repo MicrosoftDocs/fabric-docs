@@ -911,22 +911,30 @@ items:
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
-      - name: Create a map
-        href: map/create-map.md
-      - name: Customize a map
-        href: map/customize-map.md
-      - name: Map sharing
+      - name: Concepts
         items:
+          - name: Tilesets in Fabric Maps
+            href: map/about-tile-sets.md
           - name: Sharing maps
             href: map/sharing-maps.md
-          - name: Share maps directly
-            href: map/share-map-direct.md
-          - name: Share maps with org apps
-            href: map/share-map-org-apps.md
-      - name: Create a tileset
-        href: map/spatial-job-create-tile-sets.md
-      - name: Manage Map permissions
-        href: map/manage-map-permissions.md
+          - name: Permissions in Fabric Maps
+            href: map/about-map-permissions.md
+      - name: How-to guides
+        items:
+        - name: Create a map
+          href: map/create-map.md
+        - name: Customize a map
+          href: map/customize-map.md
+        - name: Create a tileset
+          href: map/create-tile-sets.md
+        - name: Map sharing
+          items:
+            - name: Share maps directly
+              href: map/share-map-direct.md
+            - name: Share maps with org apps
+              href: map/share-map-org-apps.md
+        - name: Manage Map permissions
+          href: map/manage-map-permissions.md
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:

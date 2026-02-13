@@ -8,11 +8,15 @@ ms.topic: how-to
 ms.custom:
 ms.date: 07/22/2025
 ms.search.form: delta lake v-order optimization
+ai-usage: ai-assisted
 ---
 
 # Delta Lake table optimization and V-Order
 
 The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to Microsoft Fabric, assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on when to apply V-Order based on consumption scenarios, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 > [!IMPORTANT]
 > The `OPTIMIZE` commands in this article are **Spark SQL commands** and must be executed in Spark environments such as:
@@ -302,6 +306,10 @@ OPTIMIZE <table|fileOrFolderPath> WHERE predicate [ZORDER BY (col_name1, col_nam
 
 ## Related content
 
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Table compaction](table-compaction.md)
+- [Tune file size](tune-file-size.md)
+- [Lakehouse table maintenance](lakehouse-table-maintenance.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Lakehouse and Delta Lake](lakehouse-and-delta-tables.md)
 - [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)

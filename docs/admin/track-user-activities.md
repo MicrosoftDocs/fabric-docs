@@ -4,7 +4,7 @@ description: Learn how to track user activities in Microsoft Fabric using the au
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 02/04/2025
+ms.date: 02/12/2026
 ---
 
 # Track user activities in Microsoft Fabric
@@ -17,7 +17,7 @@ You must be assigned the Audit Logs role in Exchange Online to access the audit 
 
 ## Access
 
-To access the audit logs, go to [Microsoft Purview portal](https://compliance.microsoft.com/auditlogsearch).
+To access the audit logs, go to the [Microsoft Purview portal](https://purview.microsoft.com/audit/).
 
 ### Search the audit logs
 

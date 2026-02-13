@@ -5,8 +5,8 @@ ms.reviewer: arali
 ms.author: eur
 author: eric-urban
 ms.topic: tutorial
-ms.custom:
-ms.date: 08/29/2025
+ms.date: 02/13/2026
+ai-usage: ai-assisted
 ---
 
 # Lakehouse tutorial: Prepare and transform data in the lakehouse
@@ -15,55 +15,69 @@ In this tutorial, you use notebooks with [Spark runtime](./runtime.md) to transf
 
 ## Prerequisites
 
-If you don't have a lakehouse that contains data, you must:
+Before you begin, you must complete the previous tutorials in this series:
 
-- [Create a lakehouse](tutorial-build-lakehouse.md), and
-- [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md).
+1. [Create a lakehouse](tutorial-build-lakehouse.md)
+1. [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md)
 
 ## Prepare data
 
-From the previous tutorial steps, we have raw data ingested from the source to the **Files** section of the lakehouse. Now you can transform that data and prepare it for creating Delta tables.
+From the previous tutorial steps, you have raw data ingested from the source to the **Files** section of the lakehouse. Now you can transform that data and prepare it for creating Delta tables.
 
 1. Download the notebooks from the [Lakehouse Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Lakehouse%20Tutorial%20Source%20Code) folder.
 
-1. Open your workspace, select **Import** > **Notebook** > **From this computer**.
+1. In your browser, go to your Fabric workspace in the [Fabric portal](https://app.fabric.microsoft.com/).
 
-1. Select **Import notebook** from the **New** section at the top of the landing page.
+1. Select **Import** > **Notebook** > **From this computer**.
+
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\import-notebook.png" alt-text="Screenshot showing the import notebook option in the Fabric portal." lightbox="media\tutorial-lakehouse-data-preparation\import-notebook.png":::
 
 1. Select **Upload** from the **Import status** pane that opens on the right side of the screen.
 
-1. Select all the notebooks that you downloaded in first step of this section.
+1. Select all the notebooks that you downloaded in the first step of this section.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button." lightbox="media/tutorial-lakehouse-data-preparation/select-notebooks-open.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button." lightbox="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png":::
 
 1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
-1. After the import is successful, go to items view of the workspace and see the newly imported notebooks. Select **wwilakehouse** lakehouse to open it.
+1. After the import is successful, go to the items view of the workspace to verify the newly imported notebooks.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png" alt-text="Screenshot showing the list of imported notebooks and where to select the lakehouse." lightbox="media/tutorial-lakehouse-data-preparation/imported-notebooks-lakehouse.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png" alt-text="Screenshot showing the list of imported notebooks and where to select the lakehouse." lightbox="media\tutorial-lakehouse-data-preparation\imported-notebooks-lakehouse.png":::
 
-1. Once the **wwilakehouse** lakehouse is opened, select **Open notebook** > **Existing notebook** from the top navigation menu.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png" alt-text="Screenshot showing the list of successfully imported notebooks." lightbox="media/tutorial-lakehouse-data-preparation/existing-notebook-ribbon.png":::
+## Create Delta tables
 
-1. From the list of existing notebooks, select the **01 - Create Delta Tables** notebook and select **Open**.
+In this section, you open the **01 - Create Delta Tables** notebook and run through each cell to create Delta tables from the raw data.
 
-1. In the open notebook in the lakehouse **Explorer**, you see the notebook is already linked to your opened lakehouse.
+1. Select the **wwilakehouse** lakehouse to open it, so that the notebook you open next is linked to it.
 
-   > [!NOTE]
-   > Fabric provides the [V-order](delta-optimization-and-v-order.md) capability to write optimized Delta lake files. V-order often improves compression by three to four times, and up to 10 times, performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
-   >
-   > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimize-write) capability, the Apache Spark engine reduces the number of files written and aims to increase individual file size of the written data.
+1. From the top navigation menu, select **Open notebook** > **Existing notebook**.
 
-1. Before you write data as Delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**V-order** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook.
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png" alt-text="Screenshot showing the list of successfully imported notebooks." lightbox="media\tutorial-lakehouse-data-preparation\existing-notebook-ribbon.png":::
 
-   To start the notebook and execute all the cells in sequence, select **Run all** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
+1. Select the **01 - Create Delta Tables** notebook and select **Open**. The notebook is already linked to your opened lakehouse, as shown in the lakehouse **Explorer**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon." lightbox="media/tutorial-lakehouse-data-preparation/spark-session-run-execution.png":::
+    > [!NOTE]
+    > In the following steps, you run each cell in the notebook sequentially. To execute a cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while the cell is selected. Alternatively, you can select **Run all** on the top ribbon (under **Home**) to execute all cells in sequence.
 
-   When running a cell, you didn't have to specify the underlying Spark pool or cluster details because Fabric provides them through Live Pool. Every Fabric workspace comes with a default Spark pool, called Live Pool. This means when you create notebooks, you don't have to worry about specifying any Spark configurations or cluster details. When you execute the first notebook command, the live pool is up and running in a few seconds. And the Spark session is established and it starts executing the code. Subsequent code execution is almost instantaneous in this notebook while the Spark session is active.
+1. **Cell 1 - Spark session configuration.** This cell enables two Fabric features that optimize how data is written and read in subsequent cells. [V-order](delta-optimization-and-v-order.md) optimizes the parquet file layout for faster reads and better compression. [Optimize write](delta-optimization-and-v-order.md#what-is-optimize-write) reduces the number of files written and increases individual file size.
 
-1. Next, you read raw data from the **Files** section of the lakehouse, and add more columns for different date parts as part of the transformation. Finally, you use partition By Spark API to partition the data before writing it as Delta table format based on the newly created data part columns (**Year** and **Quarter**).
+   Run this cell.
+
+    ```python
+    spark.conf.set("spark.sql.parquet.vorder.enabled", "true")
+    spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
+    spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
+    ```
+    
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon." lightbox="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png":::
+
+   > [!TIP]
+   > You don't need to specify any Spark pool or cluster details. Fabric provides a default Spark pool called Live Pool for every workspace. When you execute the first cell, the live pool starts in a few seconds and establishes the Spark session. Subsequent cells run almost instantaneously while the session is active.
+
+1. **Cell 2 - Fact - Sale.** This cell reads raw parquet data from the `wwi-raw-data` folder, which was ingested into the lakehouse in the previous tutorial. It adds date part columns (**Year**, **Quarter**, and **Month**), then writes the data as a Delta table partitioned by **Year** and **Quarter**. Partitioning organizes the data into subdirectories, which improves query performance when filtering by these columns.
+
+   Run this cell.
 
    ```python
    from pyspark.sql.functions import col, year, month, quarter
@@ -78,7 +92,9 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/" + table_name)
    ```
 
-1. After the fact tables load, you can move on to loading data for the rest of the dimensions. The following cell creates a function to read raw data from the **Files** section of the lakehouse for each of the table names passed as a parameter. Next, it creates a list of dimension tables. Finally, it loops through the list of tables and creates a Delta table for each table name that's read from the input parameter. Note that the script drops the column named `Photo` in this example because the column isn't used.
+1. **Cell 3 - Dimensions.** This cell loads the dimension tables that provide descriptive context for the fact table, such as cities, customers, and dates. It defines a function that reads raw parquet data from the `wwi-raw-data` folder for a given table name, drops the unused `Photo` column, and writes each table as a Delta table. It then loops through five dimension tables (`dimension_city`, `dimension_customer`, `dimension_date`, `dimension_employee`, and `dimension_stock_item`) and creates a Delta table for each one.
+
+   Run this cell.
 
    ```python
    from pyspark.sql.types import *
@@ -99,29 +115,38 @@ From the previous tutorial steps, we have raw data ingested from the source to t
        loadFullDataFromSource(table)
    ```
 
-1. To validate the created tables, right-click and select refresh on the **wwilakehouse** lakehouse. The tables appear.
+1. To validate the created tables, right-click the **wwilakehouse** lakehouse in the explorer and then select **Refresh**. The tables appear.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png" alt-text="Screenshot showing where to find your created tables in the Lakehouse explorer." lightbox="media/tutorial-lakehouse-data-preparation/tutorial-lakehouse-explorer-tables.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png" alt-text="Screenshot showing where to find your created tables in the Lakehouse explorer." lightbox="media\tutorial-lakehouse-data-preparation\tutorial-lakehouse-explorer-tables.png":::
 
-1. Go the items view of the workspace again and select the **wwilakehouse** lakehouse to open it.
+## Transform data for business aggregates
 
-1. Now, open the second notebook. In the lakehouse view, select **Open notebook** > **Existing notebook** from the ribbon.
+In this section, you open the **02 - Data Transformation - Business Aggregates** notebook and run through each cell to create aggregate tables from the Delta tables you created in the previous section.
 
-1. From the list of existing notebooks, select the **02 - Data Transformation - Business** notebook to open it.
+1. Select the **wwilakehouse** lakehouse to open it again, so that the notebook you open next is linked to it.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="Screenshot of the Open existing notebook menu, showing where to select your notebook." lightbox="media/tutorial-lakehouse-data-preparation/existing-second-notebook.png":::
+1. From the top navigation menu, select **Open notebook** > **Existing notebook**. Select the **02 - Data Transformation - Business Aggregates** notebook and select **Open**.
 
-1. In the open notebook in the lakehouse **Explorer**, you see the notebook is already linked to your opened lakehouse.
+   This notebook uses two different coding approaches to create two aggregate tables. You run all the cells—each approach creates a different table:
 
-1. An organization might have data engineers working with Scala/Python and other data engineers working with SQL (Spark SQL or T-SQL), all working on the same copy of the data. Fabric makes it possible for these different groups, with varied experience and preference, to work and collaborate. The two different approaches transform and generate business aggregates. You can pick the one suitable for you or mix and match these approaches based on your preference without compromising on the performance:
+   - **Approach #1** uses PySpark to create the `aggregate_sale_by_date_city` table. This approach is preferable if you have a Python or PySpark background.
+   - **Approach #2** uses Spark SQL to create the `aggregate_sale_by_date_employee` table. This approach is preferable if you have a SQL background.
 
-   - **Approach #1** - Use PySpark to join and aggregates data for generating business aggregates. This approach is preferable to someone with a programming (Python or PySpark) background.
+   In the following steps, you run each cell in the notebook sequentially, just as you did in the previous section.
 
-   - **Approach #2** - Use Spark SQL to join and aggregates data for generating business aggregates. This approach is preferable to someone with SQL background, transitioning to Spark.
+1. **Cell 1 - Spark session configuration.** As in the previous notebook, this cell enables V-order and Optimize Write for the Spark session.
 
-1. **Approach #1 (sale_by_date_city)** - Use PySpark to join and aggregate data for generating business aggregates. With the following code, you create three different Spark dataframes, each referencing an existing Delta table. Then you join these tables using the dataframes, do group by to generate aggregation, rename a few of the columns, and finally write it as a Delta table in the **Tables** section of the lakehouse to persist with the data.
+   Run this cell.
 
-   In this cell, you create three different Spark dataframes, each referencing an existing Delta table.
+   ```python
+   spark.conf.set("spark.sql.parquet.vorder.enabled", "true")
+   spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
+   spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
+   ```
+
+1. **Cell 2 - Approach #1 - sale_by_date_city.** This cell loads the `fact_sale`, `dimension_date`, and `dimension_city` Delta tables into PySpark dataframes, preparing the data for joining and aggregation in the next cell.
+
+   Run this cell.
 
    ```python
    df_fact_sale = spark.read.table("wwilakehouse.fact_sale") 
@@ -129,27 +154,37 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    df_dimension_city = spark.read.table("wwilakehouse.dimension_city")
    ```
 
-   Add the following code to the same cell to join these tables using the dataframes created earlier. Group by to generate aggregation, rename a few of the columns, and finally write it as a Delta table in the **Tables** section of the lakehouse.
-  
+   If you enabled [lakehouse schemas](lakehouse-schemas.md) on your lakehouse, replace the cell contents with the following code and run it:
+
    ```python
-   sale_by_date_city = df_fact_sale.alias("sale") \
-   .join(df_dimension_date.alias("date"), df_fact_sale.InvoiceDateKey == df_dimension_date.Date, "inner") \
-   .join(df_dimension_city.alias("city"), df_fact_sale.CityKey == df_dimension_city.CityKey, "inner") \
-   .select("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory", "sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")\
-   .groupBy("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory")\
-   .sum("sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")\
-   .withColumnRenamed("sum(TotalExcludingTax)", "SumOfTotalExcludingTax")\
-   .withColumnRenamed("sum(TaxAmount)", "SumOfTaxAmount")\
-   .withColumnRenamed("sum(TotalIncludingTax)", "SumOfTotalIncludingTax")\
-   .withColumnRenamed("sum(Profit)", "SumOfProfit")\
-   .orderBy("date.Date", "city.StateProvince", "city.City")
-   
-   sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/aggregate_sale_by_date_city")
+   df_fact_sale = spark.read.format("delta").load("Tables/fact_sale")
+   df_dimension_date = spark.read.format("delta").load("Tables/dimension_date")
+   df_dimension_city = spark.read.format("delta").load("Tables/dimension_city")
    ```
 
-1. **Approach #2 (sale_by_date_employee)** - Use Spark SQL to join and aggregate data for generating business aggregates. With the following code, you create a temporary Spark view by joining three tables, do group by to generate aggregation, and rename a few of the columns. Finally, you read from the temporary Spark view and finally write it as a Delta table in the **Tables** section of the lakehouse to persist with the data.
+1. **Cell 3.** This cell joins the three dataframes on their key columns, selects date, city, and sales fields, then groups and sums sales totals and profit by date and city. It writes the result as the `aggregate_sale_by_date_city` Delta table, which summarizes sales performance by geography.
 
-   In this cell, you create a temporary Spark view by joining three tables, do group by to generate aggregation, and rename a few of the columns.
+   Run this cell.
+
+    ```python
+    sale_by_date_city = df_fact_sale.alias("sale") \
+    .join(df_dimension_date.alias("date"), df_fact_sale.InvoiceDateKey == df_dimension_date.Date, "inner") \
+    .join(df_dimension_city.alias("city"), df_fact_sale.CityKey == df_dimension_city.CityKey, "inner") \
+    .select("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory", "sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")\
+    .groupBy("date.Date", "date.CalendarMonthLabel", "date.Day", "date.ShortMonth", "date.CalendarYear", "city.City", "city.StateProvince", "city.SalesTerritory")\
+    .sum("sale.TotalExcludingTax", "sale.TaxAmount", "sale.TotalIncludingTax", "sale.Profit")\
+    .withColumnRenamed("sum(TotalExcludingTax)", "SumOfTotalExcludingTax")\
+    .withColumnRenamed("sum(TaxAmount)", "SumOfTaxAmount")\
+    .withColumnRenamed("sum(TotalIncludingTax)", "SumOfTotalIncludingTax")\
+    .withColumnRenamed("sum(Profit)", "SumOfProfit")\
+    .orderBy("date.Date", "city.StateProvince", "city.City")
+    
+    sale_by_date_city.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/aggregate_sale_by_date_city")
+   ```
+
+1. **Cell 4 - Approach #2 - sale_by_date_employee.** This cell uses Spark SQL to create a temporary view called `sale_by_date_employee`. The query joins `fact_sale`, `dimension_date`, and `dimension_employee`, groups by date and employee columns, and calculates aggregated sales totals and profit, summarizing sales performance by employee.
+
+   Run this cell.
 
    ```python
    %%sql
@@ -170,20 +205,42 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    ORDER BY DD.Date ASC, DE.PreferredName ASC, DE.Employee ASC
    ```
 
-   In this cell, you read from the temporary Spark view created in the previous cell and finally write it as a Delta table in the **Tables** section of the lakehouse.
+   If you enabled [lakehouse schemas](lakehouse-schemas.md), replace the cell contents with the following Spark SQL code and run it:
+
+   ```python
+   %%sql
+   CREATE OR REPLACE TEMPORARY VIEW sale_by_date_employee
+   AS
+   SELECT
+          DD.Date, DD.CalendarMonthLabel
+    , DD.Day, DD.ShortMonth Month, CalendarYear Year
+         ,DE.PreferredName, DE.Employee
+         ,SUM(FS.TotalExcludingTax) SumOfTotalExcludingTax
+         ,SUM(FS.TaxAmount) SumOfTaxAmount
+         ,SUM(FS.TotalIncludingTax) SumOfTotalIncludingTax
+         ,SUM(Profit) SumOfProfit 
+   FROM delta.`Tables/fact_sale` FS
+   INNER JOIN delta.`Tables/dimension_date` DD ON FS.InvoiceDateKey = DD.Date
+   INNER JOIN delta.`Tables/dimension_employee` DE ON FS.SalespersonKey = DE.EmployeeKey
+   GROUP BY DD.Date, DD.CalendarMonthLabel, DD.Day, DD.ShortMonth, DD.CalendarYear, DE.PreferredName, DE.Employee
+   ORDER BY DD.Date ASC, DE.PreferredName ASC, DE.Employee ASC
+   ```
+
+1. **Cell 5.** This cell reads from the `sale_by_date_employee` temporary view created in the previous cell and writes the results as the `aggregate_sale_by_date_employee` Delta table.
+
+   Run this cell.
 
    ```python
    sale_by_date_employee = spark.sql("SELECT * FROM sale_by_date_employee")
    sale_by_date_employee.write.mode("overwrite").format("delta").option("overwriteSchema", "true").save("Tables/aggregate_sale_by_date_employee")
    ```
 
-1. To validate the created tables, right-click and select **Refresh** on the **wwilakehouse** lakehouse. The aggregate tables appear.
+1. To validate the created tables, right-click the **wwilakehouse** lakehouse in the explorer and then select **Refresh**. The aggregate tables appear.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear." lightbox="media/tutorial-lakehouse-data-preparation/validate-tables.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\validate-tables.png" alt-text="Screenshot of the Lakehouse explorer showing where the new tables appear." lightbox="media\tutorial-lakehouse-data-preparation\validate-tables.png":::
 
-The two approaches produce a similar outcome. To minimize the need for you to learn a new technology or compromise on performance, choose the approach that best suits your background and preference.
-
-You might notice that you're writing data as Delta lake files. The automatic table discovery and registration feature of Fabric picks up and registers them in the metastore. You don't need to explicitly call `CREATE TABLE` statements to create tables to use with SQL.
+> [!NOTE]
+> The data in this tutorial is written as Delta lake files. The automatic table discovery and registration feature of Fabric picks up and registers them in the metastore. You don't need to explicitly call `CREATE TABLE` statements to create tables to use with SQL.
 
 ## Next step
 

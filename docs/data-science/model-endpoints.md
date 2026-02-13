@@ -22,12 +22,15 @@ You can activate, configure, and query model endpoints with a [public-facing RES
 
 ## Prerequisites
 
-- To serve real-time predictions, your administrator needs to enable [the tenant switch for ML model endpoints](../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) in the Fabric admin portal.
+- Machine learning model endpoints are enabled by default in your tenant. If your administrator wants to disable this feature, they can turn off [the tenant switch for ML model endpoints](../admin/service-admin-portal-microsoft-fabric-tenant-settings.md) in the Fabric admin portal.
 
 ## Limitations
 
 - Endpoints are currently available for a limited set of ML model flavors, including Keras, LightGBM, Sklearn, and XGBoost.
 - Endpoints currently **aren't** available for models with tensor-based schemas or no schemas.
+
+> [!NOTE]
+> As of January 2026, machine learning endpoints now support AutoML trained models. This previous limitation has been removed.
 
 ## Get started with model endpoints
 
@@ -140,6 +143,7 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 ## Related content
 
 - Manage and query endpoints programmatically with the [ML model endpoint REST API](https://aka.ms/fabric/model-endpoint-api).
+- Call model endpoints from [Dataflow Gen2](../data-factory/dataflow-gen2-machine-learning-model-endpoints.md) for real-time data enrichment.
 - Generate batch predictions with the [`PREDICT` function](./model-scoring-predict.md) in Fabric notebooks.
 - Learn more about [model training and experimentation](./model-training-overview.md) in Fabric.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

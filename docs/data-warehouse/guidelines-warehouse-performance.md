@@ -7,12 +7,16 @@ ms.reviewer: xiaoyul, procha, fipopovi, twcyril
 ms.date: 01/14/2026
 ms.topic: best-practice
 ms.custom:
+ai-usage: ai-assisted
 ---
 # Performance guidelines in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article contains best practices for data ingestion, table management, data preparation, statistics, and querying in warehouses and SQL analytics endpoints. Performance tuning and optimization can present unique challenges, but they also offer valuable opportunities to maximize the capabilities of your data solutions.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on Delta table optimization strategies, including recommendations for tables written by Spark or mirroring that are consumed by Fabric Data Warehouse, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 To monitor performance on your warehouse, see [Monitor Fabric Data warehouse](monitoring-overview.md).
 
@@ -105,7 +109,7 @@ Fabric Data Warehouse uses snapshot isolation exclusively. Attempts to change th
 
 Queries with large data size in intermediate query execution or in final query result could experience more query performance issue. To reduce the returned data set size, consider following strategies:
 
-- Partition large tables in Lakehouse.
+- Partition or cluster (Liquid Clustering) large tables in Lakehouse.
 - Limit the number of columns returned. `SELECT *` can be costly.
 - Limit the number of rows returned. Perform as much data filtering in the warehouse as possible, not in client applications.
    - Try to filter before joining to reduce the dataset early in query execution. 
@@ -332,7 +336,11 @@ For more information on the `queryinsights` views, see [Query insights in Fabric
 For more information on query lifecycle DMVs, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
 
 ## Related content
-    
+
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
+- [Table compaction](../data-engineering/table-compaction.md)
+- [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md)
 - [Monitor Fabric Data warehouse](monitoring-overview.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Query insights](query-insights.md)
