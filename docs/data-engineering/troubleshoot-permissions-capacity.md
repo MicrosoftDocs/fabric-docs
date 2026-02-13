@@ -36,19 +36,19 @@ This table lists common Data Engineering error messages and links to relevant tr
 
 #### Scenario
 
-This issue typically occurs when you are attempting to access or query data in a Lakehouse or run a Spark notebook without the required permissions. Common actions that lead to this error include:
-- Opening a Lakehouse in Fabric and attempting to query tables using SQL or Spark
-- Running a notebook or Spark job definition that reads from or writes to a Lakehouse
+**Scenario:**
+
+This issue typically occurs when you are attempting to access or query data in a Lakehouse or run a Spark notebook without the required permissions.
+
+**Common Causes:**
+- Opening a Lakehouse in Fabric and attempting to query tables using SQL or Spark without sufficient workspace role (need Contributor or higher for most operations)
+- Running a notebook or Spark job definition that reads from or writes to a Lakehouse without artifact-level permissions (Read, ReadData, or ReadAll)
+- Missing Azure Storage "Storage Blob Data Contributor" or "Storage Blob Data Reader" role assignment for Delta tables using ADLS or OneLake
+- Access token expired, invalid, or missing required scopes during authentication
 
 #### What Happened
 
 Your user account or service principal lacks the necessary permissions to access data engineering artifacts (Lakehouses, Notebooks, Spark job definitions, Pipelines), underlying storage, shortcuts, or perform specific operations. Access can be denied at multiple levels: workspace permissions, artifact permissions, storage-level permissions, or authentication failures with the catalog service.
-
-**Common Causes:**
-- Insufficient Microsoft Fabric workspace role (need Contributor or higher for most operations)
-- Missing artifact-level permissions (Read, ReadData, or ReadAll) required for connections
-- Missing Azure Storage "Storage Blob Data Contributor" or "Storage Blob Data Reader" role assignment
-- Access token expired, invalid, or missing required scopes
 
 #### How to Fix the Error
 
@@ -122,19 +122,19 @@ See [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [troubleshoot lakeh
 
 #### Scenario
 
-This issue typically occurs when you are running multiple Spark workloads simultaneously or executing resource-intensive data processing jobs. Common actions that lead to this error include:
-- Starting a Spark notebook or Spark job definition when multiple other Spark sessions are already running in the workspace
-- Executing large-scale ETL operations that consume significant Compute Units
+**Scenario:**
+
+This issue typically occurs when you are running multiple Spark workloads simultaneously or executing resource-intensive data processing jobs.
+
+**Common Causes:**
+- Starting a Spark notebook or Spark job definition when multiple other Spark sessions are already running in the workspace, exceeding concurrent job limits
+- Executing large-scale ETL operations that consume significant Compute Units beyond the capacity SKU allocation
+- Orphaned or stalled Spark sessions consuming resources in the background
+- Insufficient capacity SKU for your Spark workload demands
 
 #### What Happened
 
 Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) for Spark workloads, causing the service to throttle or reject Spark job execution. This affects Spark jobs, notebooks, Spark job definitions, and data pipelines using Spark activities.
-
-**Common Causes:**
-- Running too many concurrent Spark jobs or notebooks
-- Insufficient capacity SKU for your Spark workload demands
-- Orphaned or stalled Spark sessions consuming resources in the background
-- Large or inefficient ETL operations consuming excessive compute resources
 
 #### How to Fix the Error
 
@@ -188,19 +188,18 @@ Use the [capacity planning and troubleshooting guide](../enterprise/capacity-pla
 
 #### Scenario
 
-This issue typically occurs when you are making frequent API calls to Fabric services programmatically or running automated scripts. Common actions that lead to this error include:
-- Running a script that repeatedly calls Lakehouse metadata APIs (such as ListTables or GetTable) in a loop
+**Scenario:**
+
+This issue typically occurs when you are making frequent API calls to Fabric services programmatically or running automated scripts.
+
+**Common Causes:**
+- Running a script that repeatedly calls Lakehouse metadata APIs (such as ListTables or GetTable) in a loop without throttling
 - Executing multiple concurrent processes that access the same Lakehouse artifacts simultaneously
+- Making too many API calls in a short time period without implementing retry logic with backoff strategies
 
 #### What Happened
 
 Your application or workload has exceeded the allowed number of API requests to Microsoft Fabric services (such as Lakehouse APIs) within a specific time window. The service is throttling requests to protect system stability.
-
-**Common Causes:**
-- Making too many API calls in a short time period
-- Repeated ListTables, GetTable, or metadata operations in loops
-- Multiple concurrent processes or applications accessing the same Lakehouse
-- Missing or insufficient retry logic with backoff strategies
 
 #### How to Fix the Error
 
@@ -255,19 +254,18 @@ For persistent rate limiting issues:
 
 #### Scenario
 
-This issue typically occurs when you are attempting to perform data engineering operations in a workspace that is not properly connected to an active Fabric capacity. Common actions that lead to this error include:
-- Triggering a scheduled Lakehouse refresh when the workspace's capacity assignment has been removed
+**Scenario:**
+
+This issue typically occurs when you are attempting to perform data engineering operations in a workspace that is not properly connected to an active Fabric capacity.
+
+**Common Causes:**
+- Triggering a scheduled Lakehouse refresh when the workspace's capacity assignment has been removed or the capacity is overloaded or throttled
 - Attempting to run a notebook or pipeline after the workspace has been moved from a Fabric capacity to a trial or free tier
+- Capacity has been paused or suspended by an administrator
 
 #### What Happened
 
 The workspace is not connected to an active Fabric capacity, or the capacity is experiencing issues that prevent data engineering operations from executing.
-
-**Common Causes:**
-- Workspace is no longer linked to an active Fabric capacity
-- Capacity is overloaded or throttled, rejecting operations until utilization drops
-- Misconfiguration or licensing limitations (trial or free SKU)
-- Capacity has been paused or suspended
 
 #### How to Fix the Error
 
@@ -297,19 +295,19 @@ The workspace is not connected to an active Fabric capacity, or the capacity is 
 
 #### Scenario
 
-This issue typically occurs when you are running a data pipeline with activities that depend on external resources or have configuration issues. Common actions that lead to this error include:
-- Running a pipeline with a Copy Data activity that attempts to read from or write to a Lakehouse without proper permissions
-- Executing a pipeline with a Notebook activity that times out due to long-running Spark operations
+**Scenario:**
+
+This issue typically occurs when you are running a data pipeline with activities that depend on external resources or have configuration issues.
+
+**Common Causes:**
+- Running a pipeline with a Copy Data activity that attempts to read from or write to a Lakehouse without proper permissions or when source/destination connectivity fails
+- Executing a pipeline with a Notebook activity that times out due to long-running Spark operations or capacity throttling
+- Timeout errors for long-running notebook or dataflow activities without appropriate timeout settings
+- Capacity resource exhaustion during pipeline execution
 
 #### What Happened
 
 A Data Pipeline activity (Copy Data, Notebook, Dataflow, Stored Procedure, etc.) failed during execution. This interrupts orchestrated workflows and can prevent downstream activities from running.
-
-**Common Causes:**
-- Source or destination connectivity issues (Lakehouse, external data sources)
-- Insufficient permissions for the pipeline to access artifacts or storage
-- Timeout errors for long-running notebook or dataflow activities
-- Capacity throttling or resource exhaustion during pipeline execution
 
 #### How to Fix the Error
 

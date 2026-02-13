@@ -42,19 +42,19 @@ This table lists common Lakehouse error messages and links to relevant troublesh
 
 #### Scenario
 
-This issue typically occurs when you are appending new data to an existing Delta table or performing a MERGE operation. Common actions that lead to this error include:
-- Writing a DataFrame to a Delta table using `.mode("append")` when the source data has different data types than the target table
+**Scenario:**
+
+This issue typically occurs when you are appending new data to an existing Delta table or performing a MERGE operation.
+
+**Common Causes:**
+- Writing a DataFrame to a Delta table using `.mode("append")` when the source data has different data types than the target table (e.g., StringType vs. TimestampType)
 - Loading CSV files into a Delta table where string columns don't match the expected timestamp or numeric types
+- Nullability conflicts where one field allows nulls and the other doesn't
+- Schema changes in source data without proper evolution enabled
 
 #### What Happened
 
 This error occurs when there is a schema incompatibility between your source data and the target Delta Lake table. Even though both fields have the same name, Delta Lake cannot merge them because they have different properties such as data types, nullability, or precision.
-
-**Common Causes:**
-- Data type mismatch (e.g., StringType vs. TimestampType, IntegerType vs. BigIntegerType)
-- Nullability conflicts (one field allows nulls, the other doesn't)
-- Precision or scale differences in numeric/decimal types
-- Schema changes in source data without proper evolution enabled
 
 #### How to Fix the Error
 
@@ -141,20 +141,19 @@ Review the [Lakehouse schemas documentation](lakehouse-schemas.md) for more deta
 
 #### Scenario
 
-This issue typically occurs when you are attempting to read from or query a Delta table that has corrupted metadata. Common actions that lead to this error include:
-- Opening a notebook and trying to query a Delta table after an interrupted write operation
+**Scenario:**
+
+This issue typically occurs when you are attempting to read from or query a Delta table that has corrupted metadata.
+
+**Common Causes:**
+- Opening a notebook and trying to query a Delta table after an interrupted write operation left incomplete schema metadata
 - Attempting to read a Delta table where the `_delta_log` directory was manually modified or contains corrupted JSON files
+- Corrupted transaction log files in `_delta_log` directory
+- Incompatible Delta Lake versions wrote to the table
 
 #### What Happened
 
 Delta Lake cannot parse or deserialize the schema information stored in the transaction log. The schema metadata may be corrupted, malformed, or contain unsupported data types, preventing Delta from understanding the table structure.
-
-**Common Causes:**
-- Corrupted transaction log files in `_delta_log` directory
-- Schema definition contains invalid or unsupported data types
-- Interrupted write operation left incomplete schema metadata
-- Incompatible Delta Lake versions wrote to the table
-- Manual edits to Delta log files caused corruption
 
 #### How to Fix the Error
 
@@ -233,19 +232,19 @@ Avoid schema drift by using consistent schemas across all write operations and e
 
 #### Scenario
 
-This issue typically occurs when you are running notebooks or pipelines that create tables without checking for existing objects. Common actions that lead to this error include:
-- Running a notebook cell with `CREATE TABLE` statement multiple times without dropping the table first
+**Scenario:**
+
+This issue typically occurs when you are running notebooks or pipelines that create tables without checking for existing objects.
+
+**Common Causes:**
+- Running a notebook cell with `CREATE TABLE` statement multiple times without dropping the table first or rerunning CREATE TABLE statements without checking for existence
 - Rerunning a data pipeline that includes table creation steps after a previous successful execution
+- Schema merge conflicts when appending data with incompatible structures
+- Notebook or pipeline reruns creating tables that already exist
 
 #### What Happened
 
 The table, materialized view, or schema you're attempting to create already exists in the Lakehouse. Delta Lake prevents duplicate object names within the same namespace to avoid data conflicts and ambiguity.
-
-**Common Causes:**
-- Attempting to create a table or view with a name that already exists in the same workspace
-- Rerunning CREATE TABLE statements without checking for existence
-- Schema merge conflicts when appending data with incompatible structures
-- Notebook or pipeline reruns creating tables that already exist
 
 #### How to Fix the Error
 
@@ -304,19 +303,19 @@ For more information on schema management, see [Lakehouse schemas documentation]
 
 #### Scenario
 
-This issue typically occurs when you are loading data from external sources with non-standard column naming conventions. Common actions that lead to this error include:
+**Scenario:**
+
+This issue typically occurs when you are loading data from external sources with non-standard column naming conventions.
+
+**Common Causes:**
 - Importing CSV or Excel files with column headers that contain spaces or special characters like `#` or `@`
-- Reading data from source systems that use very long or non-UTF-8 column names
+- Reading data from source systems that use very long column names exceeding 128 characters
+- Duplicate column names within the same table schema definition
+- Non-UTF-8 characters in column names
 
 #### What Happened
 
 Column names in your source data or schema definition don't meet Delta Lake naming requirements. Delta tables require column names to use specific character sets and length constraints.
-
-**Common Causes:**
-- Column names containing spaces or special characters
-- Column names exceeding 128 characters
-- Duplicate column names within the same table schema definition
-- Non-UTF-8 characters in column names
 
 #### How to Fix the Error
 
@@ -400,20 +399,19 @@ For more information on schema management, see [Lakehouse schemas documentation]
 
 #### Scenario
 
-This issue typically occurs when you are attempting to read a directory as a Delta table that was not properly initialized. Common actions that lead to this error include:
+**Scenario:**
+
+This issue typically occurs when you are attempting to read a directory as a Delta table that was not properly initialized.
+
+**Common Causes:**
 - Trying to query a folder containing Parquet files that were copied directly without Delta table conversion
 - Accessing a table location where the `_delta_log` directory was accidentally deleted or never created
+- Interrupted write operation that didn't complete Delta table initialization
+- Attempting to read a Parquet directory as a Delta table without proper conversion
 
 #### What Happened
 
 The Delta table's `_delta_log` directory is missing, empty, or corrupted. Delta Lake relies on transaction logs to maintain ACID properties, track all changes, and manage table metadata. Without valid transaction log entries, the table cannot function properly.
-
-**Common Causes:**
-- Table directory exists but was not initialized as a Delta table
-- `_delta_log` folder was deleted or is missing
-- Interrupted write operation that didn't complete Delta table initialization
-- Attempting to read a Parquet directory as a Delta table without proper conversion
-- Files copied manually without Delta metadata
 
 #### How to Fix the Error
 
@@ -470,20 +468,19 @@ df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").sav
 
 #### Scenario
 
-This issue typically occurs when you are querying a Delta table where the metadata has been corrupted or is inaccessible. Common actions that lead to this error include:
-- Running a Spark query against a table where the `_delta_log` directory is missing or has permission issues
+**Scenario:**
+
+This issue typically occurs when you are querying a Delta table where the metadata has been corrupted or is inaccessible.
+
+**Common Causes:**
+- Running a Spark query against a table where the `_delta_log` directory is missing or has permission issues preventing access
 - Attempting to access a table that was dropped from the metastore but storage files were not cleaned up
+- Table path is incorrect or points to a non-Delta directory
+- Metadata corruption or incomplete table initialization
 
 #### What Happened
 
 Delta Lake cannot locate or read the metadata required to access the table. The metadata includes information stored in the `_delta_log` directory that describes the table structure, partitions, and transaction history.
-
-**Common Causes:**
-- `_delta_log` directory missing or deleted from the table location
-- Table path is incorrect or points to a non-Delta directory
-- Metadata corruption or incomplete table initialization
-- Permissions issue preventing access to `_delta_log` files
-- Table was dropped from metastore but files remain in storage
 
 #### How to Fix the Error
 
@@ -576,20 +573,19 @@ LOCATION 'Tables/your_table_name';
 
 #### Scenario
 
-This issue typically occurs when you are working with Delta tables that have accumulated many transaction log files without consolidation. Common actions that lead to this error include:
-- Querying a Delta table that has had many small incremental writes without triggering checkpoint creation
+**Scenario:**
+
+This issue typically occurs when you are working with Delta tables that have accumulated many transaction log files without consolidation.
+
+**Common Causes:**
+- Querying a Delta table that has had many small incremental writes without triggering checkpoint creation (more than 10 transactions since last checkpoint)
 - Running performance monitoring tools that detect missing checkpoint files affecting read performance
+- External tools writing to table without triggering checkpoints
+- Failed checkpoint operation during previous write
 
 #### What Happened
 
 The Delta table has accumulated too many transaction log files without creating a checkpoint. Checkpoints are consolidated Parquet files that summarize the transaction history, improving read performance. When checkpoints are missing or infrequent, query performance degrades.
-
-**Common Causes:**
-- Checkpoint file missing or deleted from `_delta_log` directory
-- Table has more than 10 transactions since last checkpoint (default threshold)
-- External tools writing to table without triggering checkpoints
-- Failed checkpoint operation during previous write
-- Very active table with frequent small writes
 
 #### How to Fix the Error
 
@@ -645,19 +641,19 @@ Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake t
 
 #### Scenario
 
-This issue typically occurs when you are querying or referencing a table that doesn't exist in the lakehouse metadata catalog. Common actions that lead to this error include:
-- Running a SQL query or Spark command that references a table name with incorrect casing or spelling
+**Scenario:**
+
+This issue typically occurs when you are querying or referencing a table that doesn't exist in the lakehouse metadata catalog.
+
+**Common Causes:**
+- Running a SQL query or Spark command that references a table name with incorrect casing or spelling (Delta is case-sensitive)
 - Attempting to read a table that was deleted or never created in the first place
+- Connected to wrong lakehouse workspace
+- Catalog synchronization delay or metadata corruption
 
 #### What Happened
 
 The specified Delta table cannot be found in the lakehouse metadata catalog. Even though the underlying files may exist in storage, the table is not registered or recognized by the lakehouse, making it inaccessible for queries and operations.
-
-**Common Causes:**
-- Table was never created, deleted, moved in storage without updating metadata, or registration failed
-- Case sensitivity issue in table name (Delta is case-sensitive)
-- Connected to wrong lakehouse workspace
-- Catalog synchronization delay or metadata corruption
 
 #### How to Fix the Error
 
@@ -716,19 +712,19 @@ The [Delta Lake table format interoperability documentation](../fundamentals/del
 
 #### Scenario
 
-This issue typically occurs when you are accessing a lakehouse or table using an incorrect or outdated path reference. Common actions that lead to this error include:
-- Running a notebook that references a table path using ABFSS format with typos in workspace or lakehouse IDs
+**Scenario:**
+
+This issue typically occurs when you are accessing a lakehouse or table using an incorrect or outdated path reference.
+
+**Common Causes:**
+- Running a notebook that references a table path using ABFSS format with typos in workspace or lakehouse IDs, or malformed ABFSS paths
 - Attempting to read data from a lakehouse that has been renamed or deleted since the connection was configured
+- The Delta table path is invalid, unavailable, or permissions are insufficient
+- Notebook not attached to the correct Lakehouse
 
 #### What Happened
 
 This error appears when trying to access a Lakehouse path or Delta table that the system cannot find during operations such as loading table schema, refreshing path, or listing tables. This typically occurs due to incorrect path formatting, missing permissions, or the table/path no longer existing at the specified location.
-
-**Common Causes:**
-- The Delta table path is invalid, unavailable, or permissions are insufficient
-- Incorrect workspace/lakehouse context or malformed ABFSS paths with typos in workspace or lakehouse IDs
-- The lakehouse or table has been deleted, renamed, or moved since the connection was configured
-- Notebook not attached to the correct Lakehouse
 
 #### How to Fix the Error
 
@@ -756,19 +752,19 @@ abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>/Tables/
 
 #### Scenario
 
-This issue typically occurs when you are attempting to list tables in a lakehouse with naming or configuration issues. Common actions that lead to this error include:
-- Calling the List Tables API for a lakehouse that has spaces or special characters in its name
+**Scenario:**
+
+This issue typically occurs when you are attempting to list tables in a lakehouse with naming or configuration issues.
+
+**Common Causes:**
+- Calling the List Tables API for a lakehouse that has spaces or special characters in its name (especially problematic with schema-enabled lakehouses)
 - Running Spark code that tries to access a lakehouse artifact using an incorrect workspace or lakehouse identifier
+- Incorrect API paths or malformed workspace/lakehouse IDs in API calls or abfss paths
+- The artifact may have been deleted, renamed, or moved
 
 #### What Happened
 
 The system cannot locate the specified Lakehouse artifact in the workspace, often due to naming issues, incorrect paths, or synchronization problems.
-
-**Common Causes:**
-- Workspace or lakehouse name contains invalid characters (spaces or special symbols), especially problematic with schema-enabled lakehouses
-- Incorrect API paths or malformed workspace/lakehouse IDs in API calls or abfss paths
-- The artifact may have been deleted, renamed, or moved
-- SQL endpoint not synchronized with lakehouse storage changes
 
 #### How to Fix the Error
 
@@ -799,19 +795,19 @@ The system cannot locate the specified Lakehouse artifact in the workspace, ofte
 
 #### Scenario
 
-This issue typically occurs when you are loading CSV files into a lakehouse using the UI or notebook code. Common actions that lead to this error include:
-- Uploading files to a lakehouse and attempting to load them into a Delta table when the files are in the wrong folder location
+**Scenario:**
+
+This issue typically occurs when you are loading CSV files into a lakehouse using the UI or notebook code.
+
+**Common Causes:**
+- Uploading files to a lakehouse and attempting to load them into a Delta table when the files are in the wrong folder location (e.g., Tables folder instead of Files folder)
 - Running Spark code to read CSV files using an incorrect path that doesn't match where files were uploaded
+- OneDrive not configured for staging file uploads in the Fabric environment
+- File upload didn't complete successfully or files appear in "Unidentified Area" of lakehouse
 
 #### What Happened
 
 Microsoft Fabric cannot locate CSV files in the expected location during data ingestion or Delta table creation operations. This error typically happens during file upload processes, notebook operations, or when attempting to load data from the lakehouse Files section.
-
-**Common Causes:**
-- CSV file uploaded to incorrect location in the lakehouse (e.g., Tables folder instead of Files folder)
-- OneDrive not configured for staging file uploads in the Fabric environment
-- Incorrect file path reference in notebooks or Spark operations
-- File upload didn't complete successfully or files appear in "Unidentified Area" of lakehouse
 
 #### How to Fix the Error
 
@@ -853,18 +849,19 @@ Understanding [how to access files in Fabric lakehouse using notebooks](lakehous
 
 #### Scenario
 
-This issue typically occurs when you are using the lakehouse UI to upload files from your local machine or OneDrive. Common actions that lead to this error include:
+**Scenario:**
+
+This issue typically occurs when you are using the lakehouse UI to upload files from your local machine or OneDrive.
+
+**Common Causes:**
 - Attempting to upload files through the lakehouse explorer interface without Contributor or Owner permissions
 - Uploading large files while browser extensions (ad blockers or VPNs) interfere with the upload request
+- Browser/network issues including cache problems or firewall/proxy blocking API calls
+- File size or storage quota limits exceeded
 
 #### What Happened
 
 The browser or application cannot complete the file upload request to the Lakehouse, often due to permission restrictions, network issues, or UI limitations.
-
-**Common Causes:**
-- Insufficient permissions - user needs Contributor or Owner access on the Lakehouse
-- Browser/network issues including cache problems, extensions (ad blockers/VPN), or firewall/proxy blocking API calls
-- File size or storage quota limits exceeded
 
 #### How to Fix the Error
 
@@ -911,19 +908,19 @@ For additional guidance, see [Troubleshoot the Lakehouse connector](../data-fact
 
 #### Scenario
 
-This issue typically occurs when you are running data pipelines or copy activities that transfer data to or from a lakehouse. Common actions that lead to this error include:
-- Executing a Copy Data activity in a pipeline that connects to external data sources through a firewall or private endpoint
+**Scenario:**
+
+This issue typically occurs when you are running data pipelines or copy activities that transfer data to or from a lakehouse.
+
+**Common Causes:**
+- Executing a Copy Data activity in a pipeline that connects to external data sources through a firewall or private endpoint with network connectivity issues blocking communication
 - Running a long-running data copy operation where authentication tokens expire before completion
+- Network isolation or private endpoint configuration preventing access to source or destination
+- Transient network errors, timeouts, or insufficient bandwidth during large data transfers
 
 #### What Happened
 
 Data copy operations in pipelines, notebooks, or data flows failed due to connectivity issues, authentication problems, or network security restrictions preventing access to source or destination endpoints.
-
-**Common Causes:**
-- Network connectivity issues, firewall rules, or SSL/TLS certificate validation failures blocking communication
-- Network isolation or private endpoint configuration preventing access to source or destination
-- Authentication token expiration or insufficient permissions during long-running copy operations
-- Transient network errors, timeouts, or insufficient bandwidth during large data transfers
 
 #### How to Fix the Error
 
@@ -967,21 +964,19 @@ For authentication and private endpoint issues:
 
 #### Scenario
 
-This issue typically occurs when you are performing operations that encounter unexpected service-side failures. Common actions that lead to this error include:
-- Running a Spark job or notebook that triggers backend processing issues in the Fabric service
-- Executing queries against a lakehouse with corrupted metadata that causes internal processing failures
+**Scenario:**
+
+This issue typically occurs when you are performing operations that encounter unexpected service-side failures.
+
+**Common Causes:**
+- Running a Spark job or notebook that triggers backend processing issues in the Fabric service due to resource exhaustion
+- Executing queries against a lakehouse with corrupted metadata that causes processing failures
+- Temporary service outages or degraded performance affecting backend systems
+- Bugs or issues in the Fabric service platform
 
 #### What Happened
 
 The Microsoft Fabric service encountered an unexpected internal error while processing your request, job, or operation. These errors typically indicate a problem on the service side rather than a configuration issue.
-
-**Common Causes:**
-- Temporary service outages or degraded performance affecting backend systems
-- Resource exhaustion on backend services processing your request
-- Corruption in metadata or catalog entries causing processing failures
-- Bugs or issues in the Fabric service platform
-- Conflicts or race conditions in concurrent operations
-- Edge cases not properly handled by the service
 
 #### How to Fix the Error
 
@@ -1017,20 +1012,19 @@ If the error persists:
 
 #### Scenario
 
-This issue typically occurs when you are working with Materialized Lake Views (MLVs) in a Fabric Lakehouse and attempt to inspect their lineage. Common actions that lead to this error include:
-- Opening a Fabric workspace and navigating to a Lakehouse, then selecting Materialized lake views and attempting to view lineage information
-- Clicking on the lineage view for a recently created or modified Materialized Lake View
+**Scenario:**
+
+This issue typically occurs when you are working with Materialized Lake Views (MLVs) in a Fabric Lakehouse and attempt to inspect their lineage.
+
+**Common Causes:**
+- Opening a Fabric workspace and navigating to a Lakehouse, then selecting Materialized lake views and attempting to view lineage information when workspace or capacity is experiencing high load or throttling
+- Clicking on the lineage view for a recently created or modified Materialized Lake View where lineage metadata is still being computed
+- Complex lineage graph with too many dependencies causing processing delays
+- Permissions issue preventing access to lineage metadata
 
 #### What Happened
 
 This error occurs when attempting to retrieve or view the lineage information for Materialized Lake Views in Microsoft Fabric. The lineage feature tracks data dependencies and flow between artifacts, but the system cannot process the request to display this information.
-
-**Common Causes:**
-- Workspace or capacity experiencing high load or throttling
-- Complex lineage graph with too many dependencies causing processing delays
-- Permissions issue preventing access to lineage metadata
-- Recently created or modified Materialized Lake View with lineage metadata still being computed
-- Cache or synchronization issue between the lineage service and lakehouse metadata
 
 #### How to Fix the Error
 
@@ -1071,20 +1065,19 @@ For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft F
 
 #### Scenario
 
-This issue typically occurs when you are refreshing a Power BI semantic model connected to a lakehouse. Common actions that lead to this error include:
-- Triggering a scheduled refresh for a Power BI dataset after the underlying lakehouse table has been renamed or deleted
+**Scenario:**
+
+This issue typically occurs when you are refreshing a Power BI semantic model connected to a lakehouse.
+
+**Common Causes:**
+- Triggering a scheduled refresh for a Power BI dataset after the underlying lakehouse table has been renamed or deleted since the Power BI connection was configured
 - Opening a Power BI report that references lakehouse entities that no longer exist in the workspace
+- Incorrect table or dataset name in the Power BI connection string
+- Table was dropped and recreated with a different schema or ID
 
 #### What Happened
 
 Power BI cannot locate the Lakehouse entity (table or dataset) during a refresh operation. The referenced entity may have been renamed, deleted, or moved since the Power BI connection was originally configured.
-
-**Common Causes:**
-- The entity (table/dataset) has been renamed, deleted, or moved since the Power BI connection was configured
-- Incorrect table or dataset name in the Power BI connection string
-- Lakehouse has been deleted or moved to a different workspace
-- Table was dropped and recreated with a different schema or ID
-- Connection is pointing to the wrong Lakehouse or workspace
 
 #### How to Fix the Error
 
@@ -1129,20 +1122,19 @@ For Direct Lake mode:
 
 #### Scenario
 
-This issue typically occurs when you are refreshing Power BI reports or datasets connected to lakehouse data. Common actions that lead to this error include:
+**Scenario:**
+
+This issue typically occurs when you are refreshing Power BI reports or datasets connected to lakehouse data.
+
+**Common Causes:**
 - Triggering a Power BI dataset refresh using Direct Lake mode when credentials are outdated or missing
-- Attempting to refresh a semantic model where the service principal or user account lacks Read permissions on the lakehouse
+- Attempting to refresh a semantic model where the service principal or user account lacks Read permissions on the lakehouse despite being workspace admins
+- Data source credentials are expired or incorrect in Power BI Desktop
+- Workspace role is insufficient (need Contributor or higher for data access)
 
 #### What Happened
 
 Power BI cannot access the Lakehouse entity during a refresh operation due to insufficient permissions. The user or service principal performing the refresh lacks the necessary access rights to read data from the Lakehouse.
-
-**Common Causes:**
-- Users lack explicit access to the Lakehouse or individual tables despite being workspace admins
-- Direct Lake mode semantic model has outdated or missing credentials
-- Data source credentials are expired or incorrect in Power BI Desktop
-- Service principal lacks proper permissions to access the Lakehouse
-- Workspace role is insufficient (need Contributor or higher for data access)
 
 #### How to Fix the Error
 
