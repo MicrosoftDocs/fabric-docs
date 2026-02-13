@@ -3,7 +3,7 @@ title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fa
 description: This article explains how to copy data using Data Warehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 02/13/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -184,8 +184,8 @@ The following tables contain more information about a copy activity in Data Ware
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
 |**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
-|**Write behavior**| Specify how to write data to the destination. | • Insert <br>• Upsert | Yes | writeBehavior:<br>• Insert <br>• Upsert |
-|**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | <your key columns> | Yes | keyColumns |
+|**Write behavior**| Specify how to write data to the destination. | • Insert (default) <br>• Upsert | Yes | writeBehavior:<br>• Insert <br>• Upsert |
+|**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | \<your key columns> <br>(the default is destination schema) | No | upsertSettings: keys|
 |**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
 |**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
