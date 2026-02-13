@@ -29,24 +29,13 @@ If a disaster makes the primary region unrecoverable, OneLake might initiate a r
 
 For a comprehensive understanding of the end-to-end experience, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
-## Soft deletion for OneLake files
+## Soft delete for OneLake files
 
-In OneLake, soft deletion prevents accidental file loss by retaining deleted files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data.
+OneLake automatically protects your data with soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions or user errors.
 
-You can restore files and folders by using Azure Blob Storage REST APIs, Azure Storage SDKs, and the Azure PowerShell Az.Storage module. Learn how to list and restore files by using [these PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).
-
-### Restore soft-deleted files via Azure Storage Explorer
-
-You can restore deleted Lakehouse files by using Azure Storage Explorer. First, [connect to your workspace from Storage Explorer](onelake-azure-storage-explorer.md). You can connect using the workspace GUID or friendly name in the OneLake path to restore data.
-
-After you connect to your workspace, follow these steps to restore soft-deleted data:
-
-1. Select the dropdown button next to the path bar, and then select **Active and soft deleted blobs** instead of the default **Active blobs**.
-
-1. Go to the folder that contains the soft-deleted file.
-
-1. Right-click the file, and then select **Undelete**.
+For step-by-step instructions on how to list and restore soft-deleted files, see [Recover deleted files in OneLake](soft-delete.md).
 
 ## Related content
 
+- [Recover deleted files in OneLake](soft-delete.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)

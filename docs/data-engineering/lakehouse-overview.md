@@ -74,3 +74,4 @@ Accessibility has always been a top priority to ensure that Lakehouse is inclusi
 In this overview, you get a basic understanding of a lakehouse. Advance to the next article to learn how to create and use your own lakehouse:
 
 - To start using lakehouses, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
+- To recover accidentally deleted lakehouse files, see [Recover deleted files in OneLake](../onelake/soft-delete.md).
