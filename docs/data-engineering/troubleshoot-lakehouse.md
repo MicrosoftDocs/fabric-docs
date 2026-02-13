@@ -12,10 +12,12 @@ ms.topic: troubleshooting
 
 This article provides guidance for troubleshooting common issues you might encounter when working with Lakehouse in Fabric.
 
->Note:
+>[!NOTE]
 > Code examples in this article use placeholder names like `your_table_name`, `your_lakehouse`, and `commonly_filtered_column`. Replace these placeholders with your actual table, lakehouse, and column names before running the code.
 
 ## Error messages and resolution categories
+
+Use this reference table to quickly identify common Lakehouse error messages and navigate to their troubleshooting solutions.
 
 This table lists common Lakehouse error messages and links to relevant troubleshooting sections.
 
@@ -35,18 +37,22 @@ This table lists common Lakehouse error messages and links to relevant troublesh
 
 ## Delta Table Schema Errors
 
+This section addresses schema compatibility issues and type mismatches when working with Delta tables in Lakehouse.
+
 ### Error: [DELTA_FAILED_TO_MERGE_FIELDS] Failed to Merge Fields
+
+This error occurs when there's a schema incompatibility between source data and the target Delta table.
 
 **Error Messages:**
 - [DELTA_FAILED_TO_MERGE_FIELDS] Failed to merge fields 'field 1' and 'field 2' / Invalid Table
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are appending new data to an existing Delta table or performing a MERGE operation.
 
-**Common Causes:**
+#### Common Causes
+
+The following are the most frequent reasons for schema merge failures:
 - Writing a DataFrame to a Delta table using `.mode("append")` when the source data has different data types than the target table (e.g., StringType vs. TimestampType)
 - Loading CSV files into a Delta table where string columns don't match the expected timestamp or numeric types
 - Nullability conflicts where one field allows nulls and the other doesn't
@@ -57,6 +63,8 @@ This issue typically occurs when you are appending new data to an existing Delta
 This error occurs when there is a schema incompatibility between your source data and the target Delta Lake table. Even though both fields have the same name, Delta Lake cannot merge them because they have different properties such as data types, nullability, or precision.
 
 #### How to Fix the Error
+
+Apply these solutions to resolve schema incompatibilities and successfully write data to your Delta table.
 
 **Fix 1: Identify and Cast Mismatched Data Types**
 
@@ -134,18 +142,25 @@ target_table.alias("target").merge(
 
 Review the [Lakehouse schemas documentation](lakehouse-schemas.md) for more details on schema enforcement during merge operations.
 
+**Fix 4: Prevent Future Schema Issues with Proper Table Configuration**
+
+Configure tables with optimization properties to maintain consistent file layouts and reduce schema-related issues. See [table maintenance and optimization](../fundamentals/table-maintenance-optimization.md) for comprehensive guidance on configuring optimize-write, auto-compaction, and layer-specific optimization strategies.
+
+
 ### Error: Failed to Deserialize the Latest Schema for a Delta Table
+
+This error occurs when Delta Lake cannot parse or understand the schema information stored in the transaction log.
 
 **Error Messages:**
 - Failed to Deserialize the Latest Schema for a Delta Table because it is in an invalid/malformed form / Invalid Schema For Delta Table
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are attempting to read from or query a Delta table that has corrupted metadata.
 
-**Common Causes:**
+#### Common Causes
+
+The following are the most common reasons for schema deserialization failures:
 - Opening a notebook and trying to query a Delta table after an interrupted write operation left incomplete schema metadata
 - Attempting to read a Delta table where the `_delta_log` directory was manually modified or contains corrupted JSON files
 - Corrupted transaction log files in `_delta_log` directory
@@ -156,6 +171,8 @@ This issue typically occurs when you are attempting to read from or query a Delt
 Delta Lake cannot parse or deserialize the schema information stored in the transaction log. The schema metadata may be corrupted, malformed, or contain unsupported data types, preventing Delta from understanding the table structure.
 
 #### How to Fix the Error
+
+Follow these approaches to recover from corrupted schema metadata and restore table access.
 
 **Fix 1: Inspect and Repair Transaction Log**
 
@@ -221,9 +238,48 @@ df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").sav
 
 Avoid schema drift by using consistent schemas across all write operations and enabling schema validation.
 
+**Fix 3: Enable Table Maintenance to Prevent Corruption**
+
+Proper table maintenance reduces the risk of metadata corruption by ensuring consistent file layouts and reducing transaction log complexity:
+
+```python
+# Configure table properties for better reliability
+spark.sql("""
+    ALTER TABLE your_table_name 
+    SET TBLPROPERTIES (
+        'delta.autoOptimize.optimizeWrite' = 'true',
+        'delta.autoOptimize.autoCompact' = 'true'
+    )
+""")
+```
+
+**Recommended approach**: Use table properties instead of session configurations to ensure all writers follow consistent practices:
+
+```python
+# Recommended: Table-level properties persist across all sessions
+spark.sql("""
+    CREATE TABLE your_table_name (
+        id INT,
+        name STRING,
+        created_at TIMESTAMP
+    )
+    TBLPROPERTIES (
+        'delta.autoOptimize.optimizeWrite' = 'true',
+        'delta.autoOptimize.autoCompact' = 'true'
+    )
+""")
+```
+
+This approach prevents inconsistent write patterns that can lead to schema deserialization issues. See [table maintenance and optimization](../fundamentals/table-maintenance-optimization.md) for comprehensive guidance.
+
+
 ## Error: Naming Conflicts
 
+This section helps you resolve issues related to duplicate object names in your Lakehouse.
+
 ### Error: Table or View Already Exists
+
+This error occurs when you attempt to create a table or view with a name that's already in use.
 
 **Error Messages:**
 - Table Name already exists
@@ -232,11 +288,11 @@ Avoid schema drift by using consistent schemas across all write operations and e
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are running notebooks or pipelines that create tables without checking for existing objects.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations commonly lead to naming conflicts:
 - Running a notebook cell with `CREATE TABLE` statement multiple times without dropping the table first or rerunning CREATE TABLE statements without checking for existence
 - Rerunning a data pipeline that includes table creation steps after a previous successful execution
 - Schema merge conflicts when appending data with incompatible structures
@@ -247,6 +303,8 @@ This issue typically occurs when you are running notebooks or pipelines that cre
 The table, materialized view, or schema you're attempting to create already exists in the Lakehouse. Delta Lake prevents duplicate object names within the same namespace to avoid data conflicts and ambiguity.
 
 #### How to Fix the Error
+
+Use these methods to resolve naming conflicts and safely create or manage tables.
 
 **Fix 1: Check for Existing Tables and Use CREATE OR REPLACE**
 
@@ -292,9 +350,12 @@ else:
     df.write.format("delta").mode("append").option("mergeSchema", "true").saveAsTable("your_table_name")
 ```
 
-For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md).
+For more information on schema management, see [Lakehouse schemas documentation](lakehouse-schemas.md). To configure table properties for optimal maintenance and performance, see [configuration best practices](../fundamentals/table-maintenance-optimization.md#configuration-best-practices).
+
 
 ### Error: Invalid Column Names
+
+This error occurs when column names don't meet Delta Lake's naming requirements.
 
 **Error Messages:**
 - Invalid column name(s) in file / Invalid column name
@@ -303,11 +364,11 @@ For more information on schema management, see [Lakehouse schemas documentation]
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are loading data from external sources with non-standard column naming conventions.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations commonly produce invalid column names:
 - Importing CSV or Excel files with column headers that contain spaces or special characters like `#` or `@`
 - Reading data from source systems that use very long column names exceeding 128 characters
 - Duplicate column names within the same table schema definition
@@ -318,6 +379,8 @@ This issue typically occurs when you are loading data from external sources with
 Column names in your source data or schema definition don't meet Delta Lake naming requirements. Delta tables require column names to use specific character sets and length constraints.
 
 #### How to Fix the Error
+
+Apply these techniques to rename columns and ensure they meet Delta Lake requirements.
 
 **Fix 1: Validate and Correct Invalid Column Names**
 
@@ -391,7 +454,11 @@ For more information on schema management, see [Lakehouse schemas documentation]
 
 ## Delta Table Metadata and Transaction Log Errors
 
+This section addresses issues with Delta table transaction logs and metadata integrity.
+
 ### Error: No Delta Transaction Log Entries Were Found for Table
+
+This error indicates that the Delta table's transaction log is missing or empty.
 
 **Error Messages:**
 - No Log Entries for Delta Table found
@@ -399,11 +466,11 @@ For more information on schema management, see [Lakehouse schemas documentation]
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are attempting to read a directory as a Delta table that was not properly initialized.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations commonly result in missing transaction logs:
 - Trying to query a folder containing Parquet files that were copied directly without Delta table conversion
 - Accessing a table location where the `_delta_log` directory was accidentally deleted or never created
 - Interrupted write operation that didn't complete Delta table initialization
@@ -414,6 +481,8 @@ This issue typically occurs when you are attempting to read a directory as a Del
 The Delta table's `_delta_log` directory is missing, empty, or corrupted. Delta Lake relies on transaction logs to maintain ACID properties, track all changes, and manage table metadata. Without valid transaction log entries, the table cannot function properly.
 
 #### How to Fix the Error
+
+Use these methods to restore or recreate the Delta table's transaction log.
 
 **Fix 1: Validate Delta Table Structure and Recreate if Needed**
 
@@ -463,16 +532,18 @@ df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").sav
 
 ### Error: The Metadata for the Delta Table Could Not Be Found
 
+This error occurs when Delta Lake cannot locate or access the table's metadata in the transaction log.
+
 **Error Messages:**
 - Missing Metadata For Delta Table Version
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are querying a Delta table where the metadata has been corrupted or is inaccessible.
 
-**Common Causes:**
+#### Common Causes
+
+The following are common reasons for missing Delta table metadata:
 - Running a Spark query against a table where the `_delta_log` directory is missing or has permission issues preventing access
 - Attempting to access a table that was dropped from the metastore but storage files were not cleaned up
 - Table path is incorrect or points to a non-Delta directory
@@ -483,6 +554,8 @@ This issue typically occurs when you are querying a Delta table where the metada
 Delta Lake cannot locate or read the metadata required to access the table. The metadata includes information stored in the `_delta_log` directory that describes the table structure, partitions, and transaction history.
 
 #### How to Fix the Error
+
+Follow these steps to verify table structure and restore missing metadata.
 
 **Fix 1: Verify Delta Table Structure and Path**
 
@@ -567,17 +640,19 @@ LOCATION 'Tables/your_table_name';
 
 ### Error: Delta Table Is Not Checkpointed / Infrequently Checkpointed
 
+This error indicates that the Delta table's checkpoint mechanism needs attention to maintain query performance.
+
 **Error Messages:**
 - Delta Table Is Not Checkpointed
 - Delta Table Is Infrequently Checkpointed
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are working with Delta tables that have accumulated many transaction log files without consolidation.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations lead to checkpoint issues:
 - Querying a Delta table that has had many small incremental writes without triggering checkpoint creation (more than 10 transactions since last checkpoint)
 - Running performance monitoring tools that detect missing checkpoint files affecting read performance
 - External tools writing to table without triggering checkpoints
@@ -588,6 +663,8 @@ This issue typically occurs when you are working with Delta tables that have acc
 The Delta table has accumulated too many transaction log files without creating a checkpoint. Checkpoints are consolidated Parquet files that summarize the transaction history, improving read performance. When checkpoints are missing or infrequent, query performance degrades.
 
 #### How to Fix the Error
+
+Use these maintenance operations to create checkpoints and improve table performance.
 
 **Fix 1: Run OPTIMIZE to Trigger Checkpointing**
 
@@ -628,11 +705,44 @@ display(checkpoint_files)
 
 **Fix 2: Perform Table Maintenance**
 
-Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake table optimization guide](delta-optimization-and-v-order.md).
+Regular table maintenance helps prevent checkpoint issues. Configure automatic maintenance based on your table's role in the data architecture:
+
+```python
+# Enable auto-compaction at table level for automatic maintenance
+spark.sql("""
+    ALTER TABLE your_table_name 
+    SET TBLPROPERTIES (
+        'delta.autoOptimize.autoCompact' = 'true',
+        'delta.autoOptimize.optimizeWrite' = 'true'
+    )
+""")
+```
+
+**Maintenance Strategy by Layer:**
+
+- **Bronze layer (ingestion)**: Auto-compaction optional; prioritize write speed
+- **Silver layer (curated)**: Enable auto-compaction; schedule OPTIMIZE aggressively
+- **Gold layer (serving)**: Enable auto-compaction and optimize-write; run OPTIMIZE frequently
+
+For streaming or frequent small writes, combine auto-compaction with scheduled OPTIMIZE jobs:
+
+```sql
+-- Schedule this to run periodically (daily or weekly)
+OPTIMIZE your_table_name;
+
+-- For SQL analytics endpoint or Power BI consumption, use VORDER
+OPTIMIZE your_table_name VORDER;
+```
+
+See [table maintenance and optimization](../fundamentals/table-maintenance-optimization.md) for detailed guidance on medallion architecture optimization strategies.
 
 ## Table Not Found Errors
 
+This section helps you resolve issues when tables cannot be located in your Lakehouse.
+
 ### Error: Table Was Not Found in Lakehouse
+
+This error occurs when you reference a table that doesn't exist or cannot be found in the metadata catalog.
 
 **Error Messages:**
 - Table Was Not Found in Lakehouse
@@ -641,11 +751,11 @@ Regular table maintenance helps prevent checkpoint issues. Use the [Delta Lake t
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are querying or referencing a table that doesn't exist in the lakehouse metadata catalog.
 
-**Common Causes:**
+#### Common Causes
+
+The following are common reasons for table not found errors:
 - Running a SQL query or Spark command that references a table name with incorrect casing or spelling (Delta is case-sensitive)
 - Attempting to read a table that was deleted or never created in the first place
 - Connected to wrong lakehouse workspace
@@ -656,6 +766,8 @@ This issue typically occurs when you are querying or referencing a table that do
 The specified Delta table cannot be found in the lakehouse metadata catalog. Even though the underlying files may exist in storage, the table is not registered or recognized by the lakehouse, making it inaccessible for queries and operations.
 
 #### How to Fix the Error
+
+Use these methods to locate the table and ensure proper registration in the metadata catalog.
 
 **Fix 1: Verify Table Exists and Check Table Name Case**
 
@@ -683,7 +795,7 @@ If the table doesn't exist, you need to create it. If Delta files exist in stora
 df.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable("your_table_name")
 ```
 
-> [!NOTE]
+>[!NOTE]
 > Fabric Lakehouse only supports managed tables. External tables with `CREATE TABLE ... LOCATION` aren't supported. To access Delta tables in other storage locations, use Shortcuts instead.
 
 If you suspect the table exists but isn't showing up, try refreshing your lakehouse view or restarting your Spark session to clear any caching issues.
@@ -704,7 +816,11 @@ The [Delta Lake table format interoperability documentation](../fundamentals/del
 
 ## File and Path Errors
 
+This section addresses issues related to file paths, missing files, and storage location problems in Lakehouse.
+
 ### Error: Path Not Found During Table Operations
+
+This error occurs when the system cannot locate the specified Lakehouse path or Delta table.
 
 **Error Messages:**
 - The path `<NAME>` for targeted Delta table was not found. Please check that the targeted table is valid.
@@ -712,11 +828,11 @@ The [Delta Lake table format interoperability documentation](../fundamentals/del
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are accessing a lakehouse or table using an incorrect or outdated path reference.
 
-**Common Causes:**
+#### Common Causes
+
+The following are common reasons for path not found errors:
 - Running a notebook that references a table path using ABFSS format with typos in workspace or lakehouse IDs, or malformed ABFSS paths
 - Attempting to read data from a lakehouse that has been renamed or deleted since the connection was configured
 - The Delta table path is invalid, unavailable, or permissions are insufficient
@@ -727,6 +843,8 @@ This issue typically occurs when you are accessing a lakehouse or table using an
 This error appears when trying to access a Lakehouse path or Delta table that the system cannot find during operations such as loading table schema, refreshing path, or listing tables. This typically occurs due to incorrect path formatting, missing permissions, or the table/path no longer existing at the specified location.
 
 #### How to Fix the Error
+
+Follow these steps to verify and correct path references in your Lakehouse operations.
 
 **Fix 1: Verify Path Formatting**
 
@@ -747,16 +865,18 @@ abfss://<workspace_id>@onelake.dfs.fabric.microsoft.com/<lakehouse_id>/Tables/
 
 ### Error: Artifact Is Not Found in Workspace During List Tables
 
+This error occurs when the system cannot locate a Lakehouse artifact, often due to naming or path issues.
+
 **Error Messages:**
 - Artifact is Not Found in Workspace During List Tables
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are attempting to list tables in a lakehouse with naming or configuration issues.
 
-**Common Causes:**
+#### Common Causes
+
+The following are common causes of artifact not found errors:
 - Calling the List Tables API for a lakehouse that has spaces or special characters in its name (especially problematic with schema-enabled lakehouses)
 - Running Spark code that tries to access a lakehouse artifact using an incorrect workspace or lakehouse identifier
 - Incorrect API paths or malformed workspace/lakehouse IDs in API calls or abfss paths
@@ -767,6 +887,8 @@ This issue typically occurs when you are attempting to list tables in a lakehous
 The system cannot locate the specified Lakehouse artifact in the workspace, often due to naming issues, incorrect paths, or synchronization problems.
 
 #### How to Fix the Error
+
+Use these methods to resolve artifact location issues and restore access to your Lakehouse tables.
 
 **Fix 1: Remove Invalid Characters from Names**
 
@@ -790,16 +912,18 @@ The system cannot locate the specified Lakehouse artifact in the workspace, ofte
 
 ### Error: No CSV File Found in Folder
 
+This error occurs when Fabric cannot locate CSV files at the expected path during data loading operations.
+
 **Error Messages:**
 - No Data File Found / No CSV File Found in Folder
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are loading CSV files into a lakehouse using the UI or notebook code.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations commonly cause CSV file not found errors:
 - Uploading files to a lakehouse and attempting to load them into a Delta table when the files are in the wrong folder location (e.g., Tables folder instead of Files folder)
 - Running Spark code to read CSV files using an incorrect path that doesn't match where files were uploaded
 - OneDrive not configured for staging file uploads in the Fabric environment
@@ -810,6 +934,8 @@ This issue typically occurs when you are loading CSV files into a lakehouse usin
 Microsoft Fabric cannot locate CSV files in the expected location during data ingestion or Delta table creation operations. This error typically happens during file upload processes, notebook operations, or when attempting to load data from the lakehouse Files section.
 
 #### How to Fix the Error
+
+Follow these steps to ensure files are in the correct location and accessible to your Lakehouse operations.
 
 **Fix 1: Verify File Location in Lakehouse Explorer**
 
@@ -842,18 +968,22 @@ Understanding [how to access files in Fabric lakehouse using notebooks](lakehous
 
 ## File Upload Errors
 
+This section addresses issues that occur when uploading files to a Lakehouse through the UI or programmatically.
+
 ### Error: Error Sending Request - Failed to Fetch During File Upload
+
+This error occurs when the browser or application cannot complete the file upload request to the Lakehouse.
 
 **Error Messages:**
 - Error Sending Request: Failed to Fetch During File Upload
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are using the lakehouse UI to upload files from your local machine or OneDrive.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations commonly prevent file uploads:
 - Attempting to upload files through the lakehouse explorer interface without Contributor or Owner permissions
 - Uploading large files while browser extensions (ad blockers or VPNs) interfere with the upload request
 - Browser/network issues including cache problems or firewall/proxy blocking API calls
@@ -864,6 +994,8 @@ This issue typically occurs when you are using the lakehouse UI to upload files 
 The browser or application cannot complete the file upload request to the Lakehouse, often due to permission restrictions, network issues, or UI limitations.
 
 #### How to Fix the Error
+
+Try these solutions to successfully upload files to your Lakehouse.
 
 **Fix 1: Verify and Update Permissions**
 
@@ -900,7 +1032,11 @@ For additional guidance, see [Troubleshoot the Lakehouse connector](../data-fact
 
 ## Lakehouse Operation and Data Copy Errors
 
+This section helps you resolve failures in data copy operations and pipeline activities involving Lakehouse.
+
 ### Error: Lakehouse Data Copy Operation Failed
+
+This error indicates that a data copy operation failed due to connectivity, authentication, or network issues.
 
 **Error Messages:**
 - Lakehouse Data Copy Operation failed
@@ -908,11 +1044,11 @@ For additional guidance, see [Troubleshoot the Lakehouse connector](../data-fact
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are running data pipelines or copy activities that transfer data to or from a lakehouse.
 
-**Common Causes:**
+#### Common Causes
+
+The following network and authentication issues commonly cause copy operation failures:
 - Executing a Copy Data activity in a pipeline that connects to external data sources through a firewall or private endpoint with network connectivity issues blocking communication
 - Running a long-running data copy operation where authentication tokens expire before completion
 - Network isolation or private endpoint configuration preventing access to source or destination
@@ -923,6 +1059,8 @@ This issue typically occurs when you are running data pipelines or copy activiti
 Data copy operations in pipelines, notebooks, or data flows failed due to connectivity issues, authentication problems, or network security restrictions preventing access to source or destination endpoints.
 
 #### How to Fix the Error
+
+Apply these troubleshooting steps to identify and resolve network connectivity and authentication issues.
 
 **Fix 1: Verify Network Connectivity and Firewall Rules**
 
@@ -955,7 +1093,11 @@ For authentication and private endpoint issues:
 
 ## Internal Server and Processing Errors
 
+This section addresses unexpected service-side failures and internal errors in Microsoft Fabric.
+
 ### Error: Internal Server Error (500) / Job Execution Failures
+
+This error indicates that the Fabric service encountered an unexpected internal error while processing your request.
 
 **Error Messages:**
 - Job execution fails with 500 internal server errors
@@ -964,11 +1106,11 @@ For authentication and private endpoint issues:
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are performing operations that encounter unexpected service-side failures.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations can trigger internal server errors:
 - Running a Spark job or notebook that triggers backend processing issues in the Fabric service due to resource exhaustion
 - Executing queries against a lakehouse with corrupted metadata that causes processing failures
 - Temporary service outages or degraded performance affecting backend systems
@@ -979,6 +1121,8 @@ This issue typically occurs when you are performing operations that encounter un
 The Microsoft Fabric service encountered an unexpected internal error while processing your request, job, or operation. These errors typically indicate a problem on the service side rather than a configuration issue.
 
 #### How to Fix the Error
+
+Since these errors are typically service-side issues, try these recovery steps.
 
 **Fix 1: Retry and Check Service Health**
 
@@ -994,6 +1138,7 @@ If the error persists:
 3. Test with a minimal subset of data to isolate the issue
 4. Avoid concurrent operations on the same resources
 5. Disable complex features (e.g., complex transformations) temporarily to identify the trigger
+6. Check table health and file fragmentation using OPTIMIZE DRY RUN to identify potential issues (see [identify table health](../fundamentals/table-maintenance-optimization.md#identify-table-health))
 
 **Fix 3: Clear Cache and Restart Sessions**
 
@@ -1005,18 +1150,22 @@ If the error persists:
 
 ## Materialized Lake Views Errors
 
+This section addresses errors specific to creating and managing materialized views in Lakehouse.
+
 ### Error: An Error Occurred While Processing Your Request
+
+This error occurs during materialized view operations when the system encounters processing or configuration issues.
 
 **Error Messages:**
 - An error occurred while processing your request
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are working with Materialized Lake Views (MLVs) in a Fabric Lakehouse and attempt to inspect their lineage.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations can cause errors when viewing materialized view lineage:
 - Opening a Fabric workspace and navigating to a Lakehouse, then selecting Materialized lake views and attempting to view lineage information when workspace or capacity is experiencing high load or throttling
 - Clicking on the lineage view for a recently created or modified Materialized Lake View where lineage metadata is still being computed
 - Complex lineage graph with too many dependencies causing processing delays
@@ -1027,6 +1176,8 @@ This issue typically occurs when you are working with Materialized Lake Views (M
 This error occurs when attempting to retrieve or view the lineage information for Materialized Lake Views in Microsoft Fabric. The lineage feature tracks data dependencies and flow between artifacts, but the system cannot process the request to display this information.
 
 #### How to Fix the Error
+
+Use these troubleshooting steps to resolve lineage viewing issues for materialized views.
 
 **Fix 1: Verify Permissions and Access**
 
@@ -1056,7 +1207,11 @@ For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft F
 
 ## Power BI Integration Errors
 
+This section addresses errors that occur when integrating Power BI with Lakehouse data sources.
+
 ### Error: Power BI Entity Not Found at Lakehouse Refresh
+
+This error occurs when Power BI cannot locate the referenced Lakehouse entity during a refresh operation.
 
 **Error Messages:**
 - Power BI Entity Not Found at Lakehouse Refresh
@@ -1065,11 +1220,11 @@ For more information on lineage in Microsoft Fabric, see [Lineage in Microsoft F
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are refreshing a Power BI semantic model connected to a lakehouse.
 
-**Common Causes:**
+#### Common Causes
+
+The following situations commonly cause entity not found errors:
 - Triggering a scheduled refresh for a Power BI dataset after the underlying lakehouse table has been renamed or deleted since the Power BI connection was configured
 - Opening a Power BI report that references lakehouse entities that no longer exist in the workspace
 - Incorrect table or dataset name in the Power BI connection string
@@ -1080,6 +1235,8 @@ This issue typically occurs when you are refreshing a Power BI semantic model co
 Power BI cannot locate the Lakehouse entity (table or dataset) during a refresh operation. The referenced entity may have been renamed, deleted, or moved since the Power BI connection was originally configured.
 
 #### How to Fix the Error
+
+Follow these steps to restore the connection between Power BI and your Lakehouse entities.
 
 **Fix 1: Verify Entity Existence and Connections**
 
@@ -1115,6 +1272,8 @@ For Direct Lake mode:
 
 ### Error: Power BI Not Authorized at Lakehouse Refresh
 
+This error indicates that Power BI lacks the necessary permissions to access Lakehouse data during refresh.
+
 **Error Messages:**
 - Power BI Not Authorized at Lakehouse Refresh
 - Access denied during refresh
@@ -1122,11 +1281,11 @@ For Direct Lake mode:
 
 #### Scenario
 
-**Scenario:**
-
 This issue typically occurs when you are refreshing Power BI reports or datasets connected to lakehouse data.
 
-**Common Causes:**
+#### Common Causes
+
+The following permission issues commonly prevent Power BI refresh:
 - Triggering a Power BI dataset refresh using Direct Lake mode when credentials are outdated or missing
 - Attempting to refresh a semantic model where the service principal or user account lacks Read permissions on the lakehouse despite being workspace admins
 - Data source credentials are expired or incorrect in Power BI Desktop
@@ -1137,6 +1296,8 @@ This issue typically occurs when you are refreshing Power BI reports or datasets
 Power BI cannot access the Lakehouse entity during a refresh operation due to insufficient permissions. The user or service principal performing the refresh lacks the necessary access rights to read data from the Lakehouse.
 
 #### How to Fix the Error
+
+Apply these permission fixes to enable Power BI to access your Lakehouse data during refresh.
 
 **Fix 1: Check Dataset and Data Source Permissions**
 
