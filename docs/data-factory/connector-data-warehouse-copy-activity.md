@@ -3,7 +3,7 @@ title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fa
 description: This article explains how to copy data using Data Warehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 12/26/2025
+ms.date: 02/10/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -76,7 +76,13 @@ The following properties are supported for Data Warehouse as **Destination** in 
 The following properties are **required**:
 
 - **Connection**: Select a **Data Warehouse** from the data store list.
+- **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **None** or **Auto create table**.
 - **Table**: Choose an existing table from the table list or specify a table name as destination.
+- **Write behavior**: Specify how to write data to the destination.
+
+  - **Insert**: Append all data into destination table.
+  - **Upsert**: Update the destination table’s values when Key columns match, and insert a new row when no row matches in the destination. Upsert is not supported for cross‑machine execution.
+    - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Warehouse Table. Key columns must have unique values in the source data when *Skip incompatible rows* is disabled. All the key columns should exist in both destination table and source data (or be provided through column mapping).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -84,7 +90,6 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
 
-- **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **None** or **Auto create table**.
 - **Pre-copy script**: Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
@@ -177,9 +182,11 @@ The following tables contain more information about a copy activity in Data Ware
 |:---|:---|:---|:---|:---|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
-|**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
-|**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
 |**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
+|**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
+|**Write behavior**| Specify how to write data to the destination. | • Insert <br>• Upsert | Yes | writeBehavior:<br>• Insert <br>• Upsert |
+|**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | <your key columns> | Yes | keyColumns |
+|**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
 |**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
