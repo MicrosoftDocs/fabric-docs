@@ -560,4 +560,4 @@ items:
   - name: Lakehouse errors
     href: troubleshoot-lakehouse.md
   - name: Notebook errors
-    href: ../data-science/notebooks/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
+    href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
