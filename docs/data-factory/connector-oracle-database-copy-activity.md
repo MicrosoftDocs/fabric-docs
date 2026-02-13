@@ -111,7 +111,7 @@ The following properties are supported for Oracle database under the **Destinati
 The following properties are **required**:
 
 - **Connection:** Select an Oracle database connection from the connection list. If the connection doesn't exist, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
-- **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data. You can also [edit the destination data type under Mapping tab](#edit-destination-data-types). 
+- **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -136,11 +136,11 @@ For example, the type for *VAL1* column in source is number and you can change i
 
 For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-## Data type mapping for Oracle
+## Data type mapping for Oracle database
 
-When you copy data from and to Oracle, the following interim data type mappings are used within the service. To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
+When you copy data from Oracle database, the following mappings are used from Oracle database to interim data types used by the service internally.
 
-| Oracle data type | Interim data type |
+| Oracle databse data type | Interim data type |
 |:--- |:--- |
 | BFILE | Byte[] |
 | BINARY_FLOAT | Single |
@@ -177,6 +177,55 @@ NUMBER(p,s) is mapped to the appropriate interim data type depending on the prec
 | Single                   | precision < 8 AND ((scale <= 0 AND (precision - scale) <= 38) OR (scale &gt; 0 AND scale <= 44))                  |
 | Decimal                  | precision &gt;= 16 
 | Double                   | If none of the above conditions are met.                                                                       |
+When you copy data to Oracle database, the following mappings are used from interim data types used by the service internally to Oracle database data types.
+
+
+
+To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
+
+### Default data type mapping for Oracle auto-created table
+
+The following table describes the default mappings from interim data types used internally by the service to Oracle database data types when the destination table is created automatically.
+
+| Interim data type | Oracle database data type |
+|------------------|---------------------------|
+| String           | VARCHAR2(4000)            |
+| Byte             | NUMBER(3,0)               |
+| SByte            | NUMBER(3,0)               |
+| Decimal          | NUMBER(38,9)              |
+| Int16            | NUMBER(5,0)               |
+| UInt16           | NUMBER(5,0)               |
+| Int32            | NUMBER(10,0)              |
+| UInt32           | NUMBER(10,0)              |
+| Int64            | NUMBER(19,0)              |
+| UInt64           | NUMBER(20,0)              |
+| Single           | BINARY_FLOAT              |
+| Double           | BINARY_DOUBLE             |
+| Boolean          | NUMBER(1,0)               |
+| DateTime         | TIMESTAMP(7)              |
+| DateTimeOffset   | TIMESTAMP(7) WITH TIME ZONE |
+| Timespan         | INTERVAL DAY(8) TO SECOND(7) |
+| Byte[]           | BLOB                      |
+| GUID             | CHAR(36)                  |
+
+When both the source and destination are Oracle, the destination table is automatically created using the source column’s Oracle data types if those data types are included in the following list：
+
+- BINARY_FLOAT
+- BINARY_DOUBLE
+- BLOB
+- BOOLEAN
+- CHAR
+- CLOB
+- JSON
+- NCHAR
+- NVARCHAR2
+- VARCHAR2
+- DATE
+- INTERVAL YEAR TO MONTH
+- INTERVAL DAY TO SECOND
+- NUMBER(p, s)
+- TIMESTAMP
+- TIMESTAMP WITH LOCAL TIME ZONE
 
 ## Parallel copy from Oracle database
 
@@ -198,7 +247,7 @@ You are suggested to enable parallel copy with data partitioning especially when
 
 ## Table summary
 
-When copying data from Oracle, the following mappings are used from Oracle data types to interim data types used by the service internally.
+The following table contains more information about the copy activity in Oracle database.
 
 ### Source information
 
