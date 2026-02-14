@@ -40,12 +40,6 @@ With outbound access protection enabled, Fabric warehouses restrict ingestion pi
 
 For SQL analytics endpoints, outbound access protection ensures that all queries and data retrieval operations are limited to resources within the current workspace. You can only use data import commands with data inside your workspace, unless you use the [updated COPY INTO feature](https://blog.fabric.microsoft.com/blog/announcing-public-preview-onelake-as-a-source-for-copy-into-and-openrowset) that enables you to ingest data directly from OneLake as a source. 
 
-## Considerations and limitations
-
-- All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled. Currently, exceptions can’t be configured through managed private endpoints. 
-- Data import commands (such as COPY INTO, OPENROWSET, Bulk Insert) are restricted to sources within the current workspace, except when using the [COPY INTO](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true) feature to ingest data directly from OneLake as a source.
-- For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
-
 ## Related content
 
 * [Workspace outbound access protection overview](workspace-outbound-access-protection-overview.md)    
