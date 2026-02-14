@@ -19,6 +19,9 @@ Sharing geospatial insights across an organization is now easier and more secure
 
 For more information about sharing maps in Fabric Maps, see [Sharing Microsoft Fabric Maps](sharing-maps.md).
 
+> [!IMPORTANT]
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+
 ## Share a map
 
 1. **Create a Fabric org app**

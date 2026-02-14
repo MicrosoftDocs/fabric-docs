@@ -254,6 +254,8 @@ The concept of increasing the number of parallelism and scaling to larger Fabric
 
 The [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric&preserve-view=true) function enables you to read CSV or Parquet files from Azure Data Lake or Azure Blob storage, without ingesting it to Warehouse. For more information and examples, see [Browse file content using OPENROWSET function](browse-file-content-with-openrowset.md).
 
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md).
+
 When reading data using the OPENROWSET function, consider the following recommendations for best performance:
 
 - **Parquet:** Try to use Parquet instead of CSV, or convert CSV to Parquet, if you're frequently querying the files. Parquet is a columnar format. Because data is compressed, its file sizes are smaller than CSV files that contain the same data. Fabric Data Warehouse skips the columns and rows that aren't needed in a query if you're reading Parquet files.

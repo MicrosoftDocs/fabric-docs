@@ -96,15 +96,15 @@ SELECT [name], [DATA_LAKE_LOG_PUBLISHING_DESC] FROM sys.databases
   - spaces
   - tabs
   - carriage returns
-  - [
-  - ,
-  - ;
-  - {
-  - }
-  - (
-  - )
-  - =
-  - ]
+  - `[`
+  - `,`
+  - `;`
+  - `{`
+  - `}`
+  - `(`
+  - `)`
+  - `=`
+  - `]`
 
 ## Related content
 

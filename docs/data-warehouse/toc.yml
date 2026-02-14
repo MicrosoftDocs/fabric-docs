@@ -143,7 +143,8 @@ items:
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
   - name: Use dbt with data warehouse
-    href: tutorial-setup-dbt.md          
+    href: tutorial-setup-dbt.md   
+
 - name: Create models and build Power BI reports
   items:
   - name: Semantic models
@@ -158,18 +159,30 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Entra ID authentication
+    href: entra-id-authentication.md
   - name: Service principals
     href: service-principals.md
     displayName: SPN
-  - name: Encryption
-    displayName: CMK encryption
-    href: encryption.md
-  - name: Entra ID authentication
-    href: entra-id-authentication.md
   - name: SQL Audit Logs
     href: sql-audit-logs.md
   - name: Workspace roles
     href: workspace-roles.md
+  - name: How to
+    items:
+    - name: Share your data
+      href: share-warehouse-manage-permissions.md    
+    - name: Manage SQL granular permissions
+      href: sql-granular-permissions.md
+    - name: Configure SQL Audit Logs
+      href: configure-sql-audit-logs.md 
+    - name: Query Delta Lake logs
+      href: query-delta-lake-logs.md
+- name: Encryption and data protection
+  items:
+  - name: Encryption
+    displayName: CMK encryption
+    href: encryption.md
   - name: Column-level security
     href: column-level-security.md
   - name: Row-level security
@@ -178,19 +191,13 @@ items:
     href: dynamic-data-masking.md
   - name: How to
     items: 
-    - name: Share your data
-      href: share-warehouse-manage-permissions.md    
-    - name: Manage SQL granular permissions
-      href: sql-granular-permissions.md
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
       href: tutorial-row-level-security.md
     - name: Implement dynamic data masking
       href: howto-dynamic-data-masking.md
-    - name: Configure SQL Audit Logs
-      href: configure-sql-audit-logs.md
-- name: Query the warehouse
+- name: Query tools 
   items:
   - name: Query using Visual Query editor
     href: visual-query-editor.md
@@ -198,16 +205,26 @@ items:
     href: sql-query-editor.md    
   - name: View data in the Data preview
     href: data-preview.md
-  - name: Query Delta Lake logs
-    href: query-delta-lake-logs.md
-  - name: Query data as it existed in the past
-    href: time-travel.md
-    displayName: Time travel
-  - name: Query using time travel
-    href: how-to-query-using-time-travel.md
-    displayName: Query using time travel
   - name: Query data with a T-SQL notebook
     href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+- name: Query external data
+  items:
+  - name: Query delimited files
+    href: query-delimited-files.md
+  - name: Query external data lake files
+    href: query-external-data-lake-files.md
+  - name: Query JSON files
+    href: query-json-files.md
+  - name: Query Parquet files
+    href: query-parquet-files.md
+- name: Time travel
+  items:
+  - name: Query data as it existed in the past
+    href: time-travel.md
+  - name: "How to: Query using time travel"
+    href: how-to-query-using-time-travel.md
+    displayName: Query using time travel
+
 - name: Data recovery
   items:
   - name: Restore in-place

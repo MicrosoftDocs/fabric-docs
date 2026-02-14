@@ -913,6 +913,8 @@ items:
             href: map/tutorial-real-time-work-order-routing-application.md
       - name: Concepts
         items:
+          - name: Map items
+            href: map/about-maps.md
           - name: Tilesets in Fabric Maps
             href: map/about-tile-sets.md
           - name: Sharing maps

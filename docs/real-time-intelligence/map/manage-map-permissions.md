@@ -1,6 +1,7 @@
 ---
 title: Manage Map permissions in Microsoft Fabric
 description: Learn how to grant, modify, and revoke access to map items in Microsoft Fabric Maps.
+ms.reviewer: smunk
 author: deniseatmicrosoft
 ms.author: limingchen
 ms.date: 02/16/2025
@@ -15,7 +16,7 @@ ms.search.form: Map permissions
 This article describes how to grant, modify, and revoke access to individual map items in Fabric Maps. It focuses on map‑level permissions only. For a conceptual overview of how workspace roles, map permissions, and data permissions interact, see [Permissions in Fabric Maps](about-map-permissions.md).
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Prerequisites
 

@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: ''
 ms.topic: reference
-ms.date: 01/08/2025
+ms.date: 02/13/2026
 ms.custom: ''
 ---
 
@@ -48,6 +48,7 @@ For the general use of Power BI, you must be able to connect to the endpoints an
 | **Required:** Content Delivery Network (CDN) | content.powerapps.com | TCP 443 |
 | **Required:** Datamart SQL | One of the following:<li> *.datamart.fabric.microsoft.com</li><li> *.datamart.pbidedicated.windows.net</li><li> *.pbidedicated.windows.net</li> | 1433 |
 | **Required:** Fabric DW SQL| One of the following: <li> *.datawarehouse.fabric.microsoft.com</li><li> *.datawarehouse.pbidedicated.windows.net </li><li> *.pbidedicated.windows.net</li> | 1433 |
+| **Required:** Fabric SQL database | *.database.fabric.microsoft.com <br> (Can use service tag: SQL) | TCP 1433 |
 | **Required:** Microsoft 365 integration | See the documentation for [Microsoft 365 Common and Office Online URLs](/office365/enterprise/urls-and-ip-address-ranges#microsoft-365-common-and-office-online) | N/A |
 | **Required:** Portal | *.powerbi.com | TCP 443 |
 | **Required:** Power Query Online | *.powerquery.microsoft.com | TCP 443 |
@@ -55,6 +56,8 @@ For the general use of Power BI, you must be able to connect to the endpoints an
 | **Required:** Service telemetry | dc.services.visualstudio.com | TCP 443 |
 | **Optional:** Informational messages | arc.msn.com | TCP 443 |
 | **Optional:** NPS surveys | nps.onyx.azure.net | TCP 443 |
+
+For SQL database in Fabric, if your environment uses redirect connection policy, also allow TCP ports 11000-11999 for *.database.fabric.microsoft.com.
 
 ## Administration
 
