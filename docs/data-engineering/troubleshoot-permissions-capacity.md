@@ -32,7 +32,7 @@ This section helps you diagnose and resolve authentication and authorization iss
 
 ### Error: Authentication Failed
 
-This error indicates that your account lacks the necessary permissions to access or modify Data Engineering resources.
+This kind of error indicates that your account lacks the necessary permissions to access or modify Data Engineering resources.
 
 **Error Messages:**
 - 403 Forbidden / Access Denied / Authentication Failed with Access token validation failed / Unauthorized To Access Table Files
