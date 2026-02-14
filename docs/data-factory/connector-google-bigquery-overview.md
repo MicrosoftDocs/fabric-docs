@@ -17,8 +17,8 @@ The Google BigQuery connector is supported in Data Factory for [!INCLUDE [produc
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Service Account Login<br>  Organizational account |
-| **Pipeline**<br>- [Copy activity](connector-google-bigquery-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Service Account Login |
-| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Service Account Login |
+| **Pipeline**<br>- [Copy activity](connector-google-bigquery-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Service Account Login |
+| **Copy job** (source/destination) <br>- Full load |None<br> On-premises<br> Virtual network |Service Account Login |
 
 ## Related content
 
