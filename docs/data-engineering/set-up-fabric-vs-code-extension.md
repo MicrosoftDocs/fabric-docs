@@ -32,6 +32,9 @@ The supported features are:
 - Clone Git enabled workspaces.
 - Support for version control for your items.
 - Open Fabric SQL Databases in [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
+- Explore and edit item definitions in VS Code for Fabric items
+- Fabric MCP support
+- Manage folders and items within folders
 
 ### Sign in
 
