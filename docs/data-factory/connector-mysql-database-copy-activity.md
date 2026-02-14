@@ -3,7 +3,7 @@ title: Configure MySQL in a copy activity
 description: This article explains how to copy data using MySQL.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 01/22/2026
+ms.date: 02/14/2026
 ms.custom: 
   - pipelines
   - template-how-to
@@ -12,7 +12,7 @@ ms.custom:
 
 # Configure MySQL in a copy activity
 
-This article outlines how to use the copy activity in a pipeline to copy data from MySQL.
+This article outlines how to use the copy activity in a pipeline to copy data from and to MySQL.
 
 This connector supports MySQL version 5.5, 5.6, 5.7, 8.0, 8.1 and 8.2.
 
@@ -50,6 +50,26 @@ The following properties are **required**:
 Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
+
+## Destination
+
+The following properties are supported for MySQL under the Destination tab of a copy activity.
+
+The following properties are **required**:
+
+- **Connection**: Select a MySQL connection from the connection list. If no connection exists, then create a new MySQL connection.
+
+- **Table**: Select the name of the table in the MySQL database.
+
+Under **Advanced**, you can specify the following fields:
+
+- **Pre-copy script**: Specify a SQL query for the copy activity to execute before writing data into MySQL in each run. You can use this property to clean up the preloaded data.
+
+- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:30:00` (30 minutes).
+
+- **Write batch size**: Specify the number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). New batches will be created if the current one reaches the write batch size. The default value is `10000`.
+
+- **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.The allowed value is integer.
 
 ### Mapping
 
@@ -115,11 +135,23 @@ The following tables contain more information about the copy activity in MySQL.
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |Your connection to the source data store.|\<your MySQL connection> |Yes|connection|
+|**Connection** |Your connection to the source data store.|< your MySQL connection > |Yes|connection|
 |**Use query** |The way to read data from MySQL. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |/|
 | **Table** | Name of the table in the MySQL database. | < table name > | No | tableName |
 | **Query** | Use the custom SQL query to read data. For example: `SELECT * FROM MyTable`. | < SQL queries > | No | query |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
+
+### Destination information
+
+| Name | Description | Value | Required | JSON script property |
+|---|---|---|---|---|
+| **Connection** | Your connection to the destination data store. | < your MySQL connection > | Yes | connection |
+| **Table** | Name of the table in the MySQL database. | < table name > | Yes | tableName |
+| **Pre-copy script** | A SQL query for the copy activity to execute before writing data into MySQL in each run. You can use this property to clean up the preloaded data. | < your pre-copy script > | No | preCopyScript |
+| **Write behavior** | Defines the write behavior. | insert (default)| No | writeBehavior |
+| **Write batch size** | The number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). | < integer ><br>`10000` (default)| No | writeBatchSize |
+| **Write batch timeout** | The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. | < timespan ><br>`00:30:00` (default) | No | writeBatchTimeout |
+| **Max concurrent connections** | The upper limit of concurrent connections established to the data store during the activity run. The allowed value is integer. | < integer > | No | maxConcurrentConnections |
 
 ## Related content
 
