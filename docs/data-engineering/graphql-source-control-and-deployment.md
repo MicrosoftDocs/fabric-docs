@@ -1,15 +1,15 @@
 ---
-title: Source control and deployment pipelines in API for GraphQL (preview)
+title: Source control and deployment pipelines in API for GraphQL
 description: Learn how Git integration and deployment pipelines work with API for GraphQL. 
 author: eric-urban
 ms.author: eur
 ms.reviewer: edlima
 ms.topic: how-to
 ms.custom: freshness-kr
-ms.date: 01/21/2026
+ms.date: 03/1/2026
 ---
 
-# Source control and deployment pipelines in API for GraphQL (preview)
+# Source control and deployment pipelines in API for GraphQL
 
 Learn how Git integration and deployment pipelines work with API for GraphQL in Microsoft Fabric. This article helps you to understand how to set up a connection to your repository, manage your API for GraphQL, and deploy them across different environments.
 
