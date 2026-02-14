@@ -106,7 +106,7 @@ The following tables contain more information about the copy activity in Google 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Connection** |Your connection to the source data store.|\<your Google BigQuery connection> |Yes|connection|
+|**Connection** |Your connection to the source data store.|< your Google BigQuery connection > |Yes|connection|
 |**Connection type** | Your connection type. Select **Google BigQuery**.|**Google BigQuery**|Yes |/|
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **GoogleSQL** to read data using SQL queries.|• **Table** <br>• **GoogleSQL** |Yes |/|
 | *For **Table*** |  |  |  |  |
@@ -121,7 +121,7 @@ The following tables contain more information about the copy activity in Google 
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|
-| **Connection** | Your connection to the destination data store. | <your connection> | Yes | connection |
+| **Connection** | Your connection to the destination data store. | < your Google BigQuery connection > | Yes | connection |
 | **dataset name** | Name of the Google BigQuery dataset. |< your dataset name >  | Yes | dataset |
 | **table name** | 	Name of the table. | < your table name > | Yes |table |
 | **Pre-copy script** | A GoogleSQL for copy activity to execute before writing data into destination table in each run. You can use this to clean up the pre-loaded data. | < GoogleSQL query > | No | preCopyScript |
