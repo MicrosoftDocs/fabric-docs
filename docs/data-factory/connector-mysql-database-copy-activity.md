@@ -22,6 +22,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -51,7 +52,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-## Destination
+### Destination
 
 The following properties are supported for MySQL under the Destination tab of a copy activity.
 
