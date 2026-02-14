@@ -89,5 +89,5 @@ Authorizer UDFs work together with RBAC features:
 
 ## Next steps
 
-[Connect to an application](../data-engineering/connect-apps-api-graphql.md)
-[Develop in VS Code](../data-engineering/api-graphql-develop-vs-code)
+- [Connect to an application](../data-engineering/connect-apps-api-graphql.md)
+- [Develop in VS Code](../data-engineering/api-graphql-develop-vs-code)
