@@ -52,7 +52,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-### Destination
+### Destination (Preview)
 
 The following properties are supported for MySQL under the Destination tab of a copy activity.
 
@@ -68,7 +68,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:30:00` (30 minutes).
 
-- **Write batch size**: Specify the number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). New batches will be created if the current one reaches the write batch size. The default value is `10000`.
+- **Write batch size**: Specify the number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). A new batche will be created when the current batch reaches the write batch size. The default value is `10000`.
 
 - **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.The allowed value is integer.
 
@@ -142,7 +142,7 @@ The following tables contain more information about the copy activity in MySQL.
 | **Query** | Use the custom SQL query to read data. For example: `SELECT * FROM MyTable`. | < SQL queries > | No | query |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-### Destination information
+### Destination information (Preview)
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|
