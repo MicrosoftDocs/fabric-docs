@@ -16,9 +16,7 @@ This article provides guidance for troubleshooting common permission and capacit
 
 Use this reference table to quickly identify common Data Engineering error messages and navigate to their troubleshooting solutions.
 
-This table lists common Data Engineering error messages and links to relevant troubleshooting sections.
-
-| Error | Categories and resolution |
+| Errors | Resolution category|
 |-------|---------------------------|
 | 403 Forbidden / Access Denied / Authentication Failed | [Permission and Authorization Errors](#permission-and-authorization-errors) |
 | Spark job can't be run because you exceeded a spark compute limit / HTTP 430 | [Capacity Exceeded - Spark Job Can't Be Run](#error-capacity-exceeded---spark-job-cant-be-run) | 

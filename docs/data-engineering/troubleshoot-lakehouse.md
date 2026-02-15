@@ -3,7 +3,7 @@ title: Troubleshoot Lakehouse Errors in Data Engineering
 description: Troubleshoot common Lakehouse issues in Data Engineering in Microsoft Fabric.
 author: ValOlson
 ms.author: vallariolson
-ms.reviewer: ' '
+ms.reviewer: eur
 ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---
@@ -19,9 +19,7 @@ This article provides guidance for troubleshooting common issues you might encou
 
 Use this reference table to quickly identify common Lakehouse error messages and navigate to their troubleshooting solutions.
 
-This table lists common Lakehouse error messages and links to relevant troubleshooting sections.
-
-| Error | Categories and resolution |
+| Errors | Resolution category |
 |-------|---------------------------|
 | Schema Errors for a Delta Table | [Delta Table Schema Errors](#delta-table-schema-errors) |
 | Table Name already exists | [Table or View Already Exists](#error-table-or-view-already-exists) |
