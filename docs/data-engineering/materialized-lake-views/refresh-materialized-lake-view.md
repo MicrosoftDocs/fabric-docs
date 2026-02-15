@@ -16,7 +16,7 @@ Each time a scheduled refresh runs for your materialized lake views, Fabric dete
 This article explains how optimal refresh works, what each strategy does, and how to switch to full refresh mode when needed.
 
 > [!NOTE]
-> Optimal refresh is not available in the following scenarios:
+> Optimal refresh is not supported in the following scenarios:
 > - **PySpark definitions**: Materialized lake views must be defined with Spark SQL. PySpark is not currently supported.
 > - **Non-Delta source tables**: Materialized lake views that use non-Delta tables as a source always perform a full refresh. Incremental and no-refresh strategies require Delta table sources.
 
