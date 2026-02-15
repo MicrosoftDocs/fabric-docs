@@ -37,7 +37,7 @@ The following table describes the refresh strategies that optimal refresh can se
 |Full refresh | Recomputes the entire materialized lake view from the full source dataset. This strategy is used when unsupported expressions are detected, when changes can't be processed incrementally, or when the source dataset is small enough that a full recompute is faster than incremental processing.|
 
 > [!IMPORTANT]
-> For incremental refresh to take effect, you must set delta change data feed (CDF) property to `delta.enableChangeDataFeed=true` for all dependent sources referenced in the materialized lake views definition. For more information, see, [how to enable change data feed property](#how-to-enable-change-data-feed-property).
+> Incremental refresh requires the delta change data feed (CDF) property (`delta.enableChangeDataFeed=true`) on all source tables referenced in the materialized lake view definition. Without CDF enabled, optimal refresh can only choose between no refresh and full refresh. For more information, see [Enable incremental refresh](#enable-incremental-refresh).
 
 ## Set up optimal refresh
 

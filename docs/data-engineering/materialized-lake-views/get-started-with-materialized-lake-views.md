@@ -142,7 +142,7 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
 
 Now that you have a scheduled lineage refresh, Fabric automatically keeps your materialized lake views up to date as source data changes. When new rows are inserted into the `bronze.orders` or `bronze.products` tables, the next scheduled run detects the changes, refreshes the `silver.cleaned_order_data` view first (because the gold view depends on it), and then refreshes `gold.product_sales_summary` with the updated totals. You don't need to manage refresh order or write orchestration logic — Fabric handles it based on the lineage graph.
 
-To learn more about refresh behavior and how Fabric determines the optimal strategy (incremental, full, or skip), see [Refresh materialized lake views](./refresh-materialized-lake-view.md). For a complete end-to-end walkthrough that demonstrates these concepts with a larger dataset, see [Tutorial: Implement medallion architecture with materialized lake views](./tutorial.md).
+To learn more about refresh behavior and how Fabric determines the optimal strategy (incremental, full, or skip), see [Optimal refresh for materialized lake views in a lakehouse](./refresh-materialized-lake-view.md). For a complete end-to-end walkthrough that demonstrates these concepts with a larger dataset, see [Tutorial: Implement medallion architecture with materialized lake views](./tutorial.md).
 
 ## Related content
 
