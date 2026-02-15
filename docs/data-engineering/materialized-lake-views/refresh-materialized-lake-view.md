@@ -11,20 +11,20 @@ ms.date: 02/15/2026
 
 # Optimal refresh for materialized lake views in a lakehouse
 
-Each time a scheduled refresh runs for your materialized lake views, Fabric determines the best strategy to use — no refresh, incremental, or full — based on what changed in the source data. This behavior is called *optimal refresh*, and it helps you keep your materialized lake views up to date while minimizing compute costs and refresh time.
+Each time a scheduled refresh runs for your materialized lake views, Fabric determines the best strategy to use—no refresh, incremental, or full—based on what changed in the source data. This behavior is called *optimal refresh*, and it helps you keep your materialized lake views up to date while minimizing compute costs and refresh time.
 
 This article explains how optimal refresh works, what each strategy does, and how to switch to full refresh mode when needed.
 
 > [!NOTE]
-> Optimal refresh is not supported in the following scenarios:
-> - **PySpark definitions**: Materialized lake views must be defined with Spark SQL. PySpark is not currently supported.
+> Optimal refresh isn't supported in the following scenarios:
+> - **PySpark definitions**: Materialized lake views must be defined with Spark SQL. PySpark isn't currently supported.
 > - **Non-Delta source tables**: Materialized lake views that use non-Delta tables as a source always perform a full refresh. Incremental and no-refresh strategies require Delta table sources.
 
 ## Benefits of optimal refresh
 
 By analyzing delta commits on source tables, optimal refresh can make smart decisions about how to process your data. Where possible, this can result in:
 
-- **Lower cost**: Less compute and storage are used when Fabric detects that source data hasn't changed and skips the refresh entirely. No extra fees apply for optimal refresh — you're billed based on compute usage during refresh operations.
+- **Lower cost**: Less compute and storage are used when Fabric detects that source data didn't change and skips the refresh entirely. No extra fees apply for optimal refresh—you're billed based on compute usage during refresh operations.
 - **Improved efficiency**: Faster refresh cycles when only changed data needs to be processed, helping you deliver fresher insights.
 - **Time savings**: Reduced refresh duration when incremental processing is applied instead of recomputing the full dataset.
 
@@ -63,7 +63,7 @@ Without CDF enabled, optimal refresh can only choose between no refresh and full
 Incremental refresh is supported for append-only data. If the source data includes deletions or updates, Fabric performs a full refresh.
 
 > [!NOTE]
-> Enabling CDF on your source tables has no measurable storage or performance impact for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
+> Enabling CDF on your source tables has no measurable storage or performance affect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
 
 You can enable CDF at creation time by including `TBLPROPERTIES` in the `CREATE` statement:
 
@@ -99,11 +99,11 @@ ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
 
 ## SQL constructs supported by incremental refresh
 
-Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes constructs not in this table — such as `LEFT JOIN` or non-deterministic functions — Fabric still refreshes your data, but falls back to a full refresh instead.
+Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes constructs not in this table—such as `LEFT JOIN` or nondeterministic functions—Fabric still refreshes your data, but falls back to a full refresh instead.
 
 |SQL Construct |  Remark|
 |--------------| -------|
-|SELECT | Deterministic built-in functions only. Non-deterministic and window functions cause a fallback to full refresh.|
+|SELECT | Deterministic built-in functions only. Nondeterministic and window functions cause a fallback to full refresh.|
 |FROM| |
 |WHERE| Deterministic built-in functions only.|
 |INNER JOIN | |
@@ -116,7 +116,7 @@ Incremental refresh works when your materialized lake view definition uses only 
 
 ## Full refresh
 
-Optimal refresh automatically falls back to full refresh when needed, so you don't normally need to force it. However, there are cases where you might want to trigger a full refresh manually — for example, to troubleshoot unexpected results or to reprocess data after a correction.
+Optimal refresh automatically falls back to full refresh when needed, so you don't normally need to force it. However, there are cases where you might want to trigger a full refresh manually—for example, to troubleshoot unexpected results or to reprocess data after a correction.
 
 ### Run a one-time full refresh with SQL
 
@@ -131,7 +131,7 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 
 ### Turn off optimal refresh
 
-If you want every scheduled run to perform a full refresh, you can turn off the optimal refresh toggle. This disables both the no-refresh and incremental strategies — every run recomputes the full dataset, even if no source data changed.
+If you want every scheduled run to perform a full refresh, you can turn off the optimal refresh toggle. This disables both the no-refresh and incremental strategies—every run recomputes the full dataset, even if no source data changed.
 
 1. Go to your lakehouse and select **Manage materialized lake views (preview)**.
 1. In the lineage view, turn off the **Optimal refresh** toggle.

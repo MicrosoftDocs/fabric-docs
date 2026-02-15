@@ -11,7 +11,10 @@ ms.date: 02/15/2026
 
 # Spark SQL reference for materialized lake views
 
-This article provides the Spark SQL syntax for creating, listing, renaming, and deleting materialized lake views in Microsoft Fabric. To create your first materialized lake view, see [Get started with materialized lake views](./get-started-with-materialized-lake-views.md).
+This article provides the Spark SQL syntax for creating, listing, renaming, and deleting materialized lake views in Microsoft Fabric. 
+
+> [!TIP]
+> To create your first materialized lake view, see [Get started with materialized lake views](./get-started-with-materialized-lake-views.md).
 
 ## Create a materialized lake view
 
@@ -154,7 +157,7 @@ The following limitations apply to the Spark SQL statements for materialized lak
 
 * **Schema names** — All-uppercase schema names (for example, `MYSCHEMA`) aren't supported. Use mixed case or lowercase.
 * **No data manipulation language (DML) statements** — You can't run `INSERT`, `UPDATE`, or `DELETE` statements against a materialized lake view. Data is populated only by the `SELECT` query in the definition.
-* **No time-travel queries** — The `SELECT` query in a materialized lake view definition can't use Delta Lake [time travel](../delta-lake-table-optimization.md) syntax (for example, `VERSION AS OF` or `TIMESTAMP AS OF`).
+* **No time-travel queries** — The `SELECT` query in a materialized lake view definition can't use Delta Lake [time travel](/azure/databricks/delta/history#time-travel) syntax (for example, `VERSION AS OF` or `TIMESTAMP AS OF`).
 * **No user-defined functions** — User-defined functions (UDFs) aren't supported in the `SELECT` query that defines a materialized lake view.
 * **No temporary views as sources** — The `SELECT` query can reference tables and other materialized lake views, but not temporary views.
 * **Session-level Spark properties** — Spark configuration properties set at the session level (for example, `spark.conf.set(...)`) aren't applied during a scheduled refresh. Set properties at the lakehouse or workspace level instead.
