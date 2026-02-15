@@ -8,13 +8,13 @@ ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---
 
-# General troubleshooting for Data Engineering in Microsoft Fabric
+# General troubleshooting for Microsoft Fabric Data Engineering 
 
-This article provides guidance for troubleshooting common permission and capacity issues you might encounter when working with Data Engineering workloads in Microsoft Fabric.
+This article provides guidance for troubleshooting common errors such as permission and capacity issues you might encounter when working with Data Engineering workloads in Microsoft Fabric.
 
 ## Error messages and resolution categories
 
-Use this reference table to quickly identify common Data Engineering error messages and navigate to their troubleshooting solutions.
+Use this reference table to quickly identify common permission and capacity error messages and navigate to their troubleshooting solutions.
 
 | Errors | Resolution category|
 |-------|---------------------------|
@@ -54,7 +54,7 @@ Your user account or service principal lacks the necessary permissions to access
 
 #### How to Fix the Error
 
-Follow these solutions to resolve the error
+Follow one or more of these solutions to resolve the error.
 
 **Fix 1: Verify and Assign Workspace and Artifact Permissions**
 
@@ -68,7 +68,8 @@ Ensure you have the appropriate workspace role and data access permissions:
 6. For Power BI connections: Grant at least "Read" permission for metadata access
 7. Log out and log back in for permissions to take effect
 
-**Important**: ReadData and ReadAll serve different purposes. For users who need both SQL and Spark access, grant both permissions.
+> [!IMPORTANT]
+>ReadData and ReadAll serve different purposes. For users who need both SQL and Spark access, grant both permissions.
 
 See [workspace permission model](../security/permission-model.md) and [share warehouse and manage permissions](../data-warehouse/share-warehouse-manage-permissions.md) for more details.
 
@@ -145,7 +146,7 @@ Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) fo
 
 #### How to Fix the Error
 
-Use these strategies to reduce capacity consumption and prevent throttling of your Spark workloads.
+Use one or more of these strategies to reduce capacity consumption and prevent throttling of your Spark workloads.
 
 **Fix 1: Monitor and Identify High-Consumption Spark Workloads**
 
@@ -213,7 +214,7 @@ Your application or workload has exceeded the allowed number of API requests to 
 
 #### How to Fix the Error
 
-Implement these solutions to handle rate limiting gracefully and reduce your API request frequency.
+Implement any of the following solutions to handle rate limiting gracefully and reduce API request frequency.
 
 **Fix 1: Implement Request Throttling and Retry Logic**
 
@@ -283,7 +284,7 @@ The workspace is not connected to an active Fabric capacity, or the capacity is 
 
 #### How to Fix the Error
 
-Follow these steps to verify and restore your workspace's connection to an active Fabric capacity.
+Use one or more of the following fixes to verify and restore your workspace’s connection to an active Fabric capacity.
 
 **Fix 1: Confirm Capacity Status and Assignment**
 
@@ -331,7 +332,7 @@ A Data Pipeline activity (Copy Data, Notebook, Dataflow, Stored Procedure, etc.)
 
 #### How to Fix the Error
 
-Use these troubleshooting steps to identify and resolve pipeline activity failures.
+Use one or more of these troubleshooting steps to identify and resolve pipeline activity failures.
 
 **Fix 1: Review Pipeline Run Details and Activity Errors**
 

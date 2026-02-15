@@ -8,16 +8,16 @@ ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---
 
-# Troubleshoot Lakehouse issues in Microsoft Fabric
+# Troubleshoot Lakehouse issues for Microsoft Fabric Data Engineering
 
-This article provides guidance for troubleshooting common issues you might encounter when working with Lakehouse in Fabric.
+This article provides guidance for troubleshooting common issues you might encounter when working with Lakehouse in Microsoft Fabric.
 
 >[!NOTE]
 > Code examples in this article use placeholder names like `your_table_name`, `your_lakehouse`, and `commonly_filtered_column`. Replace these placeholders with your actual table, lakehouse, and column names before running the code.
 
 ## Error messages and resolution categories
 
-Use this reference table to quickly identify common Lakehouse error messages and navigate to their troubleshooting solutions.
+Use this reference table to quickly identify common Microsoft Fabric Lakehouse error messages and navigate to their troubleshooting solutions.
 
 | Errors | Resolution category |
 |-------|---------------------------|
@@ -62,7 +62,7 @@ This error occurs when there is a schema incompatibility between your source dat
 
 #### How to Fix the Error
 
-Apply these solutions to resolve schema incompatibilities and successfully write data to your Delta table.
+Apply one or more of these solutions to resolve schema incompatibilities and successfully write data to your Delta table.
 
 **Fix 1: Identify and Cast Mismatched Data Types**
 
@@ -170,7 +170,7 @@ Delta Lake cannot parse or deserialize the schema information stored in the tran
 
 #### How to Fix the Error
 
-Follow these approaches to recover from corrupted schema metadata and restore table access.
+Follow one or more of these approaches to recover from corrupted schema metadata and restore table access.
 
 **Fix 1: Inspect and Repair Transaction Log**
 
@@ -302,7 +302,7 @@ The table, materialized view, or schema you're attempting to create already exis
 
 #### How to Fix the Error
 
-Use these methods to resolve naming conflicts and safely create or manage tables.
+Use one or more of these methods to resolve naming conflicts and safely create or manage tables.
 
 **Fix 1: Check for Existing Tables and Use CREATE OR REPLACE**
 
@@ -378,7 +378,7 @@ Column names in your source data or schema definition don't meet Delta Lake nami
 
 #### How to Fix the Error
 
-Apply these techniques to rename columns and ensure they meet Delta Lake requirements.
+Apply one or more of these techniques to rename columns and ensure they meet Delta Lake requirements.
 
 **Fix 1: Validate and Correct Invalid Column Names**
 
@@ -480,7 +480,7 @@ The Delta table's `_delta_log` directory is missing, empty, or corrupted. Delta 
 
 #### How to Fix the Error
 
-Use these methods to restore or recreate the Delta table's transaction log.
+Use one or more of these methods to restore or recreate the Delta table's transaction log.
 
 **Fix 1: Validate Delta Table Structure and Recreate if Needed**
 
@@ -553,7 +553,7 @@ Delta Lake cannot locate or read the metadata required to access the table. The 
 
 #### How to Fix the Error
 
-Follow these steps to verify table structure and restore missing metadata.
+Follow one or more of these steps to verify table structure and restore missing metadata.
 
 **Fix 1: Verify Delta Table Structure and Path**
 
@@ -662,7 +662,7 @@ The Delta table has accumulated too many transaction log files without creating 
 
 #### How to Fix the Error
 
-Use these maintenance operations to create checkpoints and improve table performance.
+Use one or more of these maintenance operations to create checkpoints and improve table performance.
 
 **Fix 1: Run OPTIMIZE to Trigger Checkpointing**
 
@@ -765,7 +765,7 @@ The specified Delta table cannot be found in the lakehouse metadata catalog. Eve
 
 #### How to Fix the Error
 
-Use these methods to locate the table and ensure proper registration in the metadata catalog.
+Use one or more of these methods to locate the table and ensure proper registration in the metadata catalog.
 
 **Fix 1: Verify Table Exists and Check Table Name Case**
 
@@ -842,7 +842,7 @@ This error appears when trying to access a Lakehouse path or Delta table that th
 
 #### How to Fix the Error
 
-Follow these steps to verify and correct path references in your Lakehouse operations.
+Follow one or more of these steps to verify and correct path references in your Lakehouse operations.
 
 **Fix 1: Verify Path Formatting**
 
@@ -886,7 +886,7 @@ The system cannot locate the specified Lakehouse artifact in the workspace, ofte
 
 #### How to Fix the Error
 
-Use these methods to resolve artifact location issues and restore access to your Lakehouse tables.
+Use one or more of these methods to resolve artifact location issues and restore access to your Lakehouse tables.
 
 **Fix 1: Remove Invalid Characters from Names**
 
@@ -933,7 +933,7 @@ Microsoft Fabric cannot locate CSV files in the expected location during data in
 
 #### How to Fix the Error
 
-Follow these steps to ensure files are in the correct location and accessible to your Lakehouse operations.
+Follow one or more of these steps to ensure files are in the correct location and accessible to your Lakehouse operations.
 
 **Fix 1: Verify File Location in Lakehouse Explorer**
 
@@ -993,7 +993,7 @@ The browser or application cannot complete the file upload request to the Lakeho
 
 #### How to Fix the Error
 
-Try these solutions to successfully upload files to your Lakehouse.
+Try one or more of these solutions to successfully upload files to your Lakehouse.
 
 **Fix 1: Verify and Update Permissions**
 
@@ -1058,7 +1058,7 @@ Data copy operations in pipelines, notebooks, or data flows failed due to connec
 
 #### How to Fix the Error
 
-Apply these troubleshooting steps to identify and resolve network connectivity and authentication issues.
+Apply one or more of these troubleshooting steps to identify and resolve network connectivity and authentication issues.
 
 **Fix 1: Verify Network Connectivity and Firewall Rules**
 
@@ -1120,7 +1120,7 @@ The Microsoft Fabric service encountered an unexpected internal error while proc
 
 #### How to Fix the Error
 
-Since these errors are typically service-side issues, try these recovery steps.
+Since these errors are typically service-side issues, try one or more of these recovery steps.
 
 **Fix 1: Retry and Check Service Health**
 
@@ -1175,7 +1175,7 @@ This error occurs when attempting to retrieve or view the lineage information fo
 
 #### How to Fix the Error
 
-Use these troubleshooting steps to resolve lineage viewing issues for materialized views.
+Use one or more of these troubleshooting steps to resolve lineage viewing issues for materialized views.
 
 **Fix 1: Verify Permissions and Access**
 
@@ -1234,7 +1234,7 @@ Power BI cannot locate the Lakehouse entity (table or dataset) during a refresh 
 
 #### How to Fix the Error
 
-Follow these steps to restore the connection between Power BI and your Lakehouse entities.
+Follow one or more of these steps to restore the connection between Power BI and your Lakehouse entities.
 
 **Fix 1: Verify Entity Existence and Connections**
 
@@ -1295,7 +1295,7 @@ Power BI cannot access the Lakehouse entity during a refresh operation due to in
 
 #### How to Fix the Error
 
-Apply these permission fixes to enable Power BI to access your Lakehouse data during refresh.
+Apply one or more of these permission fixes to enable Power BI to access your Lakehouse data during refresh.
 
 **Fix 1: Check Dataset and Data Source Permissions**
 
