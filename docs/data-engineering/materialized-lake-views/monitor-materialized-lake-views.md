@@ -65,5 +65,5 @@ If you need more information about MLV runs and the MLV statistics, access Apach
 
 ## Related articles
 
-* [Create materialized lake views in a lakehouse](./create-materialized-lake-view.md)
+* [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)
 * [Manage materialized lake views lineage](./view-lineage.md)

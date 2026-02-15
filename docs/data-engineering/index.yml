@@ -208,5 +208,5 @@ landingContent:
             url: materialized-lake-views/get-started-with-materialized-lake-views.md
           - text: Implement Medallion architecture with materialized lake views
             url: materialized-lake-views/tutorial.md
-          - text: Manage materialized lake views
+          - text: Spark SQL reference for materialized lake views
             url: materialized-lake-views/create-materialized-lake-view.md

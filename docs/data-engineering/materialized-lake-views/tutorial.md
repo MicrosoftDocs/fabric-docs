@@ -115,4 +115,4 @@ The high-level steps are as follows:
 
 * [Microsoft Fabric materialized lake views overview](overview-materialized-lake-view.md)
 * [Microsoft Fabric materialized lake views tutorial](tutorial.md)
-* [Create materialized lake views](./create-materialized-lake-view.md)
+* [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)

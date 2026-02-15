@@ -511,7 +511,7 @@ items:
     items:  
     - name: Quick start guide
       href: ./materialized-lake-views/get-started-with-materialized-lake-views.md
-    - name: Create materialized lake views
+    - name: Spark SQL reference
       href: ./materialized-lake-views/create-materialized-lake-view.md
     - name: Optimal refresh for materialized lake views
       href: ./materialized-lake-views/refresh-materialized-lake-view.md

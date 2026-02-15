@@ -11,7 +11,7 @@ ms.date: 12/22/2025
 
 # Spark SQL reference for materialized lake views
 
-In this article, you learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
+This article provides the Spark SQL syntax for creating, listing, updating, and dropping materialized lake views in Microsoft Fabric.
 
 ## Create a materialized lake view
 
