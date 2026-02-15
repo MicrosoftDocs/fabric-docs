@@ -724,11 +724,12 @@ spark.sql("""
 
 For streaming or frequent small writes, combine auto-compaction with scheduled OPTIMIZE jobs:
 
-```sql
+```
+%%sql
 -- Schedule this to run periodically (daily or weekly)
 OPTIMIZE your_table_name;
 
--- For SQL analytics endpoint or Power BI consumption, use VORDER
+-- If you want V-Order (good for Power BI / SQL read scenarios)
 OPTIMIZE your_table_name VORDER;
 ```
 
@@ -786,7 +787,7 @@ Delta table names are **case-sensitive**. If you created a table as `CustomerDat
 
 If the table doesn't exist, you need to create it. If Delta files exist in storage but aren't registered, re-create the table reference. These operations require Contributor role or higher. The [Work with Delta Lake Tables training module](/training/modules/work-delta-lake-tables-fabric/) provides comprehensive guidance.
 
-**Option A: Create a new managed table from a DataFrame**
+**Create a new managed table from a DataFrame**
 
 ```python
 # Assumes df is already defined with your source data
@@ -804,7 +805,7 @@ Ensure you're connected to the correct lakehouse and workspace. If you have mult
 
 ```python
 # For notebooks with attached lakehouse, verify the default lakehouse
-print(spark.conf.get("spark.sql.catalog.default"))
+print(spark.catalog.currentDatabase())
 
 # List all databases/schemas available
 spark.sql("SHOW DATABASES").show()
@@ -1006,15 +1007,18 @@ Try one or more of these solutions to successfully upload files to your Lakehous
 
 If UI upload doesn't work due to permission or policy restrictions, use a Fabric Notebook with Spark code to write files directly to the Lakehouse. This operation requires Contributor role or higher:
 
+> [!CAUTION]
+> Setting `overwrite=True` permanently replaces any existing file at the target path without confirmation. Verify the file path and confirm you don't need the existing data before running this command.
+
 ```python
 from notebookutils import mssparkutils
 
-# Write string content directly to a file in the Lakehouse
+# Write string content directly to a file in the Lakehouse, overwriting if it exists
 file_content = "col1,col2,col3\nvalue1,value2,value3"
 mssparkutils.fs.put("Files/data/yourfile.csv", file_content, overwrite=True)
 
-# Or copy files between Lakehouse locations
-mssparkutils.fs.cp("Files/source/data.csv", "Files/destination/data.csv")
+# Or copy files between Lakehouse locations (recurse=True handles both files and directories)
+mssparkutils.fs.cp("Files/source/data.csv", "Files/destination/data.csv", recurse=True)
 ```
 
 This method bypasses UI limitations and works even when the Explorer UI is restricted.
