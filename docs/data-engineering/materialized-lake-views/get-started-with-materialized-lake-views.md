@@ -67,7 +67,16 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/source-tables-created.png" alt-text="Screenshot that shows source tables created in a lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/source-tables-created.png":::
 
-1. Create materialized lake views from the source tables. Enter the following SQL command into the new cell and run it:
+1. Enable change data feed (CDF) on the source tables so that [optimal refresh can use incremental processing](./refresh-materialized-lake-view.md). Copy the following SQL command into the new cell and run it:
+
+   ```sql
+   ALTER TABLE bronze.products SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+   ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
+   ```
+
+   Select **+ Code** to add another new cell.
+
+1. Create materialized lake views from the source tables. Copy the following SQL command into the new cell and run it:
 
    ```sql
    CREATE SCHEMA IF NOT EXISTS SILVER;
