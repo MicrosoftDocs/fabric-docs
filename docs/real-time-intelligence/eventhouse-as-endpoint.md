@@ -1,5 +1,5 @@
 ---
-title: Eventhouse Endpoint for Lakehouse and Data Warehouse (preview)
+title: Eventhouse Endpoint for Lakehouse and Data Warehouse
 description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables with enhanced performance and flexibility in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.author: spelluru
@@ -9,11 +9,9 @@ ms.topic: how-to
 ms.date: 02/15/2026
 ---
 
-# Enable Eventhouse endpoint for lakehouse and data warehouse (preview)
+# Enable Eventhouse endpoint for lakehouse and data warehouse
 
 The Eventhouse endpoint is a powerful capability in Microsoft Fabric that lets you query tables with exceptional speed and ease. Use the Eventhouse endpoint to query lakehouse or warehouse data, discover real-time insights across your data estate, and streamline the analysis of structured, semi-structured, and unstructured data.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Benefits
 
@@ -107,7 +105,7 @@ Update the cache period for a specific shortcut table to optimize query performa
 
 ## Share the Eventhouse endpoint
 
-To share the endpoint, you need to configure share settings for both the endpoint and the source data. 
+To share the endpoint, you need to configure share settings for both the endpoint and the source data.
 
 1. Configure permissions to [share data in the Lakehouse](../data-engineering/lakehouse-sharing.md) or [share data in the Data Warehouse](../data-warehouse/share-warehouse-manage-permissions.md).
 
