@@ -2,8 +2,6 @@
 title: Microsoft Fabric API for GraphQL Introspection and Schema Export
 description: Learn about GraphQL introspection and how to export your GraphQL schema for use with other GraphQL tools.
 ms.reviewer: edlima
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: freshness-kr
 ms.search.form: GraphQL Introspection and Schema Export

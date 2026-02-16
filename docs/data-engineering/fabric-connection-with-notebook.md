@@ -2,10 +2,7 @@
 title: Fabric Connection with Notebook
 description: Learn about how you can use a Fabric Connection to access external data sources directly in notebooks.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 9/19/2025
 ms.search.form: Fabric Connection 
 ---

@@ -4,7 +4,6 @@ description: Learn about the mirrored databases from Azure Database for PostgreS
 ms.reviewer: scoriani
 ms.date: 07/15/2025
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

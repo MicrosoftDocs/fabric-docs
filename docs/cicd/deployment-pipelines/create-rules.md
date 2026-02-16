@@ -1,12 +1,7 @@
 ---
 title: Create deployment rules for Fabric's ALM
 description: Learn how to create rules to simplify deploying content with Fabric's Application lifecycle management (ALM) tool.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ms.search.form: Deployment rules
 #customer intent: As a developer, I want to learn how to create deployment rules in Fabric's Application lifecycle management (ALM) tool so that I can simplify deploying content between stages in my deployment pipeline.

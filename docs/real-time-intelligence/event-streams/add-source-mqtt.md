@@ -1,9 +1,7 @@
 ---
 title: Add MQTT source to an eventstream
 description: Learn how to add a Message Queuing Telemetry Transport (MQTT) source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 01/26/2026
 ms.search.form: Source and Destination
@@ -52,3 +50,5 @@ Connect to an MQTT source from **Real-Time hub** and create a data stream. This 
 
 ## Related content
 For a list of all supported sources, see [Add and manage an event source](add-manage-eventstream-sources.md).
+
+

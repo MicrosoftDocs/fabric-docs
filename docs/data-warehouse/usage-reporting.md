@@ -1,8 +1,6 @@
 ---
 title: Data Warehouse Billing and Utilization Reporting
 description: Learn more about utilization reporting for the data warehouse, including capacity and compute usage reporting.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: concept-article

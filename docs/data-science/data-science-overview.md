@@ -2,14 +2,10 @@
 title: Explore Data Science in Microsoft Fabric
 description: Learn how to build end-to-end data science workflows in Microsoft Fabric, from data cleaning to predictive insights. Explore tutorials and resources now.
 #customer intent: As a data scientist, I want to understand the data science capabilities in Microsoft Fabric so that I can build end-to-end workflows.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: negust
 ms.topic: overview
-ms.custom: 
 ms.date: 12/03/2025
 ms.search.form: Data Science Overview
-reviewer: s-polly
 ---
 
 # What is Data Science in Microsoft Fabric?

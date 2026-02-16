@@ -1,14 +1,10 @@
-﻿---
+---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: None
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: lagayhar, sgilley
 ms.topic: how-to
-ms.custom: 
 ms.date: 06/30/2025
 ms.search.form: R Language
-reviewer: sdgilley
 ---
 
 # Use SparkR
@@ -292,3 +288,4 @@ summary(model)
 - [Create R visualization](./r-visualization.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
+

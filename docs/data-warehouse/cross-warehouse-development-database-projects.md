@@ -1,8 +1,6 @@
 ---
 title: Develop and Deploy Cross-Warehouse Dependencies
 description: Learn how to develop and deploy cross-warehouse dependencies in Fabric Data Warehouse using SQL database projects in Visual Studio Code.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, randolphwest
 ms.date: 12/01/2025
 ms.topic: how-to

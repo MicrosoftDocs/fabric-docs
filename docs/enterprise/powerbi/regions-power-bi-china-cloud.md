@@ -1,13 +1,12 @@
 ﻿---
 title: Power BI operated by 21Vianet in China
 description: Provides information about the Power BI service operated by 21Vianet in China, including feature parity details
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: concept-article 
 ms.date: 04/02/2024
-ms.custom: 
 ---
 
 # Power BI - operated by 21Vianet in China

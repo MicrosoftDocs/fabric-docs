@@ -1,14 +1,8 @@
 ﻿---
 title: Fabric data agent creation (preview)
-titleSuffix: Learn how to create a Fabric data agent
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: amjafari
-reviewer: amjafari
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: concept-article #Don't change; maybe should change to "conceptual".
+ms.topic: concept-article
 ms.date: 01/06/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

@@ -4,7 +4,6 @@ description: Include file for roles and rules in Power BI Desktop. This include 
 author: billmath
 ms.author: billmath
 ms.topic: include
-ms.custom: 
 ms.date: 10/22/2025
 ---
 

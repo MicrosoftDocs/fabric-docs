@@ -2,8 +2,6 @@
 title: Lakehouse tutorial - Create a workspace
 description: Learn how to create a workspace that you can use to create other items required by this end-to-end tutorial.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: tutorial
 ms.date: 02/14/2026
 ---

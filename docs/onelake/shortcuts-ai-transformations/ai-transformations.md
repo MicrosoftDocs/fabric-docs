@@ -1,16 +1,9 @@
 ---
-# Required metadata
-# For more information, see https://learn.microsoft.com/help/platform/learn-editor-add-metadata
-# For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/help/platform/metadata-taxonomies
-
-title:       OneLake shortcuts AI transformations # Add a title for the browser tab
+title: OneLake shortcuts AI transformations
 description: AI transformations in OneLake shortcuts# Add a meaningful description for search results
-author:      miquelladeboer # GitHub alias
-ms.author:   mideboer # Microsoft alias
-# ms.service:  Shortcuts 
-# ms.prod:   # To use ms.prod, uncomment it and delete ms.service
-ms.topic:    how-to # Add the ms.topic value
-ms.date:     07/16/2025
+ms.reviewer: mideboer
+ms.topic: how-to
+ms.date: 07/16/2025
 ---
 
 # Shortcut transformations (AI-powered)
@@ -62,4 +55,5 @@ Customer feedback stored in a data lake may contain sensitive details (names, em
 ## Regional availability
 
 AI-powered transforms are currently available in these regions: [Azure AI Language regional support](/azure/ai-services/language-service/concepts/regional-support)
+
 

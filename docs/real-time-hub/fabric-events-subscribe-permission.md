@@ -1,10 +1,8 @@
 ---
 title: Subscribe permission for Azure and Fabric events
 description: This article describes what permissions are required for subscribing to Fabric events.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: concept-article
-ms.custom:
 ms.date: 03/03/2025
 ---
 
@@ -52,3 +50,4 @@ For more information, see the following articles:
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md).</br>
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).</br>
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
+

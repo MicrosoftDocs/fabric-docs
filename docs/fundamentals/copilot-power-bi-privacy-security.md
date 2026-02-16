@@ -3,8 +3,7 @@ title: "Privacy, security, and responsible use for Copilot in Power BI"
 description: Learn about privacy, security, and responsible use for Copilot for Power BI in Microsoft Fabric.
 author: snehagunda
 ms.author: sngun
-ms.reviewer: 'guptamaya'
-ms.custom:
+ms.reviewer: guptamaya
 ms.topic: concept-article
 ms.date: 08/21/2025
 ms.update-cycle: 180-days

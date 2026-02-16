@@ -1,8 +1,6 @@
 ---
 title: Better Together - the Lakehouse and Warehouse
 description: Learn more about scenarios for the lakehouse and data warehousing workloads in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: cynotebo
 ms.date: 06/26/2025
 ms.topic: concept-article

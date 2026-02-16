@@ -1,11 +1,8 @@
 ---
 title: Use the Copilot for Data Science and Data Engineering chat panel (preview)
 description: Interact with the chat panel in Copilot for Data Science and Data Engineering.
-author: eric-urban
-ms.author: eur
-ms.reviewer: sngun
 ms.topic: how-to
-ms:custom:
+ms.reviewer: sngun
 ms.date: 06/10/2025
 ms.update-cycle: 180-days
 no-loc: [Copilot]
@@ -87,3 +84,4 @@ Follow this procedure:
 ### Related content
 
 [How to use Chat-magics](./copilot-notebooks-chat-magics.md)
+

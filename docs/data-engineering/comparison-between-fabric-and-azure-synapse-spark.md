@@ -2,8 +2,6 @@
 title: "Compare Fabric and Azure Synapse Spark: Key Differences"
 description: Compare Azure Synapse Spark and Fabric Spark across pools, configurations, libraries, notebooks, and Spark job definitions. Find out which platform fits your analytics needs.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom:
   - fabric-cat

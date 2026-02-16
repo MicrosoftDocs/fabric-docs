@@ -1,11 +1,8 @@
 ---
 title: Manage outbound access from OneLake with outbound access protection
 description: Outbound access protection in Fabric protects data by limiting outbound requests. 
-ms.reviewer: eloldag
-ms.author: mabasile
-author: mabasile-MSFT
+ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/20/2026
 #customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
 ---

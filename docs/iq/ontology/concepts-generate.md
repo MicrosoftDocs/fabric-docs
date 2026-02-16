@@ -1,9 +1,6 @@
 ---
 title: "Generating an ontology (preview) from a semantic model"
 description: Learn about generating an ontology (preview) item from a Power BI semantic model.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 01/20/2026
 ms.topic: concept-article
 ---
@@ -69,3 +66,4 @@ For troubleshooting tips related to semantic model ontology generation, see [Tro
 ## Next steps
 
 For an example of this process, see [Ontology (preview) tutorial part 1: Create an ontology](tutorial-1-create-ontology.md?pivots=semantic-model).
+

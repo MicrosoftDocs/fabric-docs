@@ -1,9 +1,6 @@
 ---
 title: Use preview experience
 description: Learn about the preview experience in ontology (preview).
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/02/2025
 ms.topic: how-to
 ---
@@ -167,3 +164,5 @@ To refresh the graph, follow these steps:
 ## Troubleshooting
 
 For troubleshooting tips related to the preview experience in ontology (preview), see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-preview-experience).
+
+

@@ -1,8 +1,7 @@
 ---
 title: Explore Fabric capacity overview events in Fabric Real-Time hub
 description: This article shows how to explore Fabric capacity overview events in Fabric Real-Time hub.
-author: george-guirguis
-ms.author: geguirgu
+ms.reviewer: geguirgu
 ms.topic: how-to
 ms.date: 11/17/2025
 ms.custom: references_regions

@@ -1,9 +1,6 @@
 ---
 title: "Power BI Reports for Data Quality"
 description: Learn about data quality reports and alerts in materialized lake views within lakehouse in Microsoft Fabric
-author: eric-urban
-ms.author: eur
-ms.reviewer: sngun
 ms.topic: how-to
 ms.date: 09/12/2025
 # customer-intent: As a data engineer, I want to view data quality metrics in Power BI reports and set up alerts on them so that I can monitor data quality trends and receive notifications for significant changes.
@@ -93,3 +90,4 @@ You can set up alerts on the data quality report in the Fabric MLV using the **D
 
 * [Materialized lake views overview](./overview-materialized-lake-view.md)
 * [Monitor materialized lake views](./monitor-materialized-lake-views.md)
+

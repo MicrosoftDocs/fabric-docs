@@ -2,8 +2,6 @@
 title: Apache Spark runtime in Fabric
 description: Learn about the Apache Spark-based runtimes available in Fabric, including Fabric optimizations and support.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.date: 12/11/2025

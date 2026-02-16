@@ -2,11 +2,9 @@
 title: How to use LightGBM with SynapseML in Microsoft Fabric
 description: Build LightGBM classification, regression, and ranking models with SynapseML in Microsoft Fabric.
 ms.topic: how-to
-ms.custom:
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: JessicaXYWang
-reviewer: jessiwang
 ms.date: 07/30/2025
 ---
 

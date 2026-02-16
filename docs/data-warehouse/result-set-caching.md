@@ -1,8 +1,6 @@
 ---
 title: Result Set Caching
 description: Learn more about result set caching, a performance optimization for the Fabric Data Warehouse and Lakehouse SQL analytics endpoint.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: emtehran, fipopovi
 ms.date: 02/13/2026
 ms.topic: concept-article

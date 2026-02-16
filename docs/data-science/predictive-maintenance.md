@@ -1,12 +1,8 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
-ms.author: lagayhar 
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
-ms.custom:
 ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
@@ -579,3 +575,4 @@ The dashboard shows that `Tool_wear` and `Torque` create a noticeable boundary b
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

@@ -3,8 +3,6 @@ title: "Tutorial: Add edge types to your graph"
 description: Learn how to add edges to define relationships between nodes in your graph model.
 ms.topic: tutorial
 ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ---

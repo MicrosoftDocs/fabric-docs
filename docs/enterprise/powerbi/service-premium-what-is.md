@@ -1,9 +1,8 @@
 ﻿---
 title: What is Power BI Premium?
 description: Power BI Premium provides streamlined use and management of capacities for your organization.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: concept-article

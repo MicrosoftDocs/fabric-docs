@@ -1,8 +1,7 @@
 ---
 title: Use Cosmos DB in a Python Notebook in Microsoft Fabric
 description: Learn how to use Cosmos DB with a Python notebook in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 11/03/2025
 ---
@@ -178,3 +177,4 @@ First, get the endpoint for the Cosmos DB database in Fabric. This endpoint is r
 - [How to use Cosmos DB with Spark notebooks](how-to-use-spark-notebooks.md)
 - [Authenticate to Cosmos DB Database From Fabric Notebooks](how-to-authenticate-notebooks.md)
 - [Frequently Asked Questions about Cosmos DB in Microsoft Fabric](faq.yml)
+

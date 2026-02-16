@@ -1,8 +1,6 @@
 ---
 title: "Query the SQL analytics endpoint of your SQL database"
 description: Learn how to query the SQL analytics endpoint of your SQL database in Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 09/09/2025
 ms.topic: how-to

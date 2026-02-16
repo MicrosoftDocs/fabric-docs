@@ -2,8 +2,6 @@
 title: Lakehouse tutorial - clean up resources
 description: As a final step in the tutorial, clean up your resources by deleting individual items like the lakehouse or semantic model, or removing the entire workspace.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: tutorial
 ms.date: 02/14/2026
 ai-usage: ai-assisted
