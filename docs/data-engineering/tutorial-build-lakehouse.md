@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
 - FY25Q1-Linter
 - sfi-image-nochange
-ms.date: 02/07/2026
+ms.date: 02/14/2026
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 

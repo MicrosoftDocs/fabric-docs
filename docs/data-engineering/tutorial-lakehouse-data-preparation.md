@@ -5,7 +5,7 @@ ms.reviewer: arali
 ms.author: eur
 author: eric-urban
 ms.topic: tutorial
-ms.date: 02/13/2026
+ms.date: 02/14/2026
 ai-usage: ai-assisted
 ---
 
@@ -47,7 +47,10 @@ From the previous tutorial steps, you have raw data ingested from the source to 
 
 ## Create Delta tables
 
-In this section, you open the **01 - Create Delta Tables** notebook and run through each cell to create Delta tables from the raw data.
+In this section, you open the **01 - Create Delta Tables** notebook and run through each cell to create Delta tables from the raw data. The tables follow a star schema, which is a common pattern for organizing analytical data:
+
+- A **fact table** (`fact_sale`) contains the measurable events of the business — in this case, individual sales transactions with quantities, prices, and profit.
+- **Dimension tables** (`dimension_city`, `dimension_customer`, `dimension_date`, `dimension_employee`, `dimension_stock_item`) contain the descriptive attributes that give context to the facts, such as where a sale happened, who made it, and when.
 
 1. Select the **wwilakehouse** lakehouse to open it, so that the notebook you open next is linked to it.
 
@@ -245,4 +248,4 @@ In this section, you open the **02 - Data Transformation - Business Aggregates**
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Build reports using Power BI](tutorial-lakehouse-build-report.md)
+> [Create a semantic model and build a report](tutorial-lakehouse-build-report.md)
