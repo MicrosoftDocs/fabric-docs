@@ -92,6 +92,8 @@ def customer_enriched():
 > [!IMPORTANT]
 > To create the materialized lake view, you need to execute the command once in the notebook and schedule the lineage for subsequent refresh.
 
+> [!NOTE]
+> This feature is currently available in UK South, North Central US, Poland Central, UAE North, UK West, Korea Central, Indonesia Central, Japan West, Japan East, France Central, Canada East regions.
 
 ## Notebook organization and refresh behavior for PySpark materialized lake views
 
