@@ -15,7 +15,7 @@ ms.search.form: Customize the map
 The Map (preview) in Microsoft Fabric offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, apply a data color theme, and toggle the visibility of various map elements. More customization options include adding interactive controls, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Prerequisites
 

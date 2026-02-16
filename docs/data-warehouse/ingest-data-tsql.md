@@ -146,7 +146,8 @@ ORDER BY confirmed_sum DESC;
 
 :::image type="content" source="media/ingest-data-tsql/infections-by-month.png" alt-text="Screenshot of the query results showing the number of infections by month in the United States, ordered by month, in descending order. The month number 1 is shown on top." lightbox="media/ingest-data-tsql/infections-by-month.png":::
 
-For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true).
+- For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md).
+- For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true).
 
 <a id="ingesting-data-into-existing-tables-with-t-sql-queries"></a>
 

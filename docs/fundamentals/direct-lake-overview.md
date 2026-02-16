@@ -6,6 +6,7 @@ ms.author: juliacawthra
 ms.date: 09/22/2025
 ms.topic: concept-article
 ms.custom: fabric-cat
+ai-usage: ai-assisted
 ---
 
 # Direct Lake overview
@@ -22,8 +23,11 @@ Direct Lake storage mode offers the following key benefits:
 
 * Similar to Import mode, Direct Lake queries are processed by the VertiPaq engine, and thus delivers query performance comparable to Import mode without the management overhead of data refresh cycles to load the entire data volume. 
 * Uses existing Fabric investments by seamlessly integrating with large lakehouses, warehouses, and other Fabric sources with Delta tables. For example, Direct Lake is an ideal choice for the *gold* analytics layer in the medallion lakehouse architecture.
-* Maximizes Return on Investment (ROI) because analyzed data volumes can exceed the capacity’s max memory limits, since only the data that’s needed to answer a query is loaded into memory.
+* Maximizes Return on Investment (ROI) because analyzed data volumes can exceed the capacity's max memory limits, since only the data that's needed to answer a query is loaded into memory.
 * Minimizes data latencies by quickly and automatically synchronizing a semantic model with its sources, making new data available to business users without refresh schedules.
+
+> [!TIP]
+> Direct Lake performance depends on well-tuned Delta tables. For comprehensive guidance on optimizing tables for Direct Lake consumption, including V-Order and row group recommendations, see [Cross-workload table maintenance and optimization](table-maintenance-optimization.md).
 
 ## When should you use Direct Lake storage mode?
 
@@ -62,7 +66,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
  > [!NOTE]
  > Direct Lake on OneLake is currently in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with this table storage mode. Already created semantic models aren't impacted by this tenant setting.
     
-* **Direct Lake on SQL** can use the data from a single Fabric data source with delta tables. The SQL analytics endpoint is used for delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can’t load the data directly from a delta table, such as when the data source is a SQL view or when the Warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fall back behavior.
+* **Direct Lake on SQL** can use the data from a single Fabric data source with delta tables. The SQL analytics endpoint is used for delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can't load the data directly from a delta table, such as when the data source is a SQL view or when the Warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fall back behavior.
 
 
 ## Comparison of storage modes
@@ -245,7 +249,7 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 
 |Consideration / limitation  |Direct Lake on OneLake  |Direct Lake on SQL (analytics endpoint)  |
 |---------|---------|---------|
-|When the SQL analytics endpoint enforces row-level security, DAX queries are processed differently depending on the type of Direct Lake mode employed. <br><br>When Direct Lake on OneLake is employed, queries will succeed, and SQL based RLS is not applied. Direct Lake on OneLake requires the user has access to the files in OneLake, which doesn’t observe SQL based RLS. |Queries will succeed.         |Yes, unless fallback is disabled in which case queries will fail.         |
+|When the SQL analytics endpoint enforces row-level security, DAX queries are processed differently depending on the type of Direct Lake mode employed. <br><br>When Direct Lake on OneLake is employed, queries will succeed, and SQL based RLS is not applied. Direct Lake on OneLake requires the user has access to the files in OneLake, which doesn't observe SQL based RLS. |Queries will succeed.         |Yes, unless fallback is disabled in which case queries will fail.         |
 |If a table in the semantic model is based on a (non-materialized) SQL view, DAX queries are processed differently depending on the type of Direct Lake mode employed.<br><br>Direct Lake on SQL endpoints will fall back to DirectQuery in this case.<br><br>It isn't supported to create a Direct Lake on OneLake table based on a non-materialized SQL view. You can instead use a lakehouse materialized view because Delta tables are created. Alternatively, use a different storage mode such as Import or DirectLake for tables based on non-materialized SQL views. |Not applicable         |Yes, unless fallback is disabled in which case queries will fail.         |
 |Composite modeling, which means Direct Lake semantic model tables can be mixed with tables in other storage modes, such as Import, DirectQuery, or Dual (except for special cases, including [calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters)).     |Supported        |Not supported         |
 |Calculated columns and calculated tables that reference columns or tables in Direct Lake storage mode. [Calculation groups](/power-bi/transform-model/calculation-groups), [what-if parameters](/power-bi/transform-model/desktop-what-if), and [field parameters](/power-bi/create-reports/power-bi-field-parameters), which implicitly create calculated tables, and calculated tables that don't reference Direct Lake columns or tables are supported in all scenarios.     |Not supported         |Not supported         |
@@ -284,6 +288,7 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
   
 ## Related content
 
+- [Cross-workload table maintenance and optimization](table-maintenance-optimization.md)
 - [Develop Direct Lake semantic models](direct-lake-develop.md)
 - [Manage Direct Lake semantic models](direct-lake-manage.md)
 - [Understand Direct Lake query performance](direct-lake-understand-storage.md)

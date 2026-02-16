@@ -33,9 +33,7 @@ If you're a capacity admin, you can view your storage consumption in the [Fabric
 
 The workspace details table includes two columns: **Current storage** and **Billable storage**. Billable storage reflects cumulative data usage over the month. The total charge for data stored isn't taken on one day of the month, but on a pro-rated basis throughout the month. You can estimate the monthly price as the billable storage (GB) multiplied by the price per GB per month.
 
-For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends.
-
-[OneLake soft delete](/fabric/onelake/onelake-disaster-recovery#soft-delete-for-onelake-files) protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. Soft-deleted data is billed at the same rate as active data.
+For example, storing 1 TB of data on day 1, adds to 33 GB daily billable storage. On day one it's 1 TB / 30 days = 33 GB and every day adds 33 GB until the month ends. [OneLake soft delete](soft-delete.md) protects individual files from accidental deletion by retaining files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data.
 
 :::image type="content" source="media\onelake-capacity-consumption\storage.png" alt-text="Diagram shows billable and current storage difference." lightbox="media\onelake-capacity-consumption\storage.png":::
 

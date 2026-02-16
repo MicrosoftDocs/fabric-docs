@@ -46,7 +46,7 @@ By default, the admin monitoring workspace is a Pro-licensed workspace. To take 
    
 4. Select the **Actions** button, then select **Reassign workspace**.
    
-5. Select the desired **license mode**, then click **Save**.
+5. Select the desired **Workspace type**, then click **Save**.
 
 ## Reports and semantic models
 

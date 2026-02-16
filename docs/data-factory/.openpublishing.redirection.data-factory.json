@@ -359,6 +359,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/apache-airflow-jobs-hello-world.md",
+        "redirect_url": "/fabric/data-factory/create-apache-airflow-jobs",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory.md",
         "redirect_url": "/azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory",
         "redirect_document_id": false

@@ -299,11 +299,11 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 - **Copilot**: Copilot for Data Science and Data Engineering notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. You can use the Copilot chat panel and Char-magics in notebook, and the AI provides responses or code to copy into your notebook.
 
-## Public preview known limitations
+## Known limitations
 
 - Live pool experience is not guaranteed for every python notebook run. The session start time may take up to 3 minutes if the notebook run does not hit the live pool. As Python notebook usage grows, our intelligent pooling methods gradually increase the live pool allocation to meet the demand.
 
-- Environment integration is not available on Python notebook by public preview.
+- Environment integration is not available on Python notebook.
 
 - Set session timeout is not available for now.
 

@@ -5,7 +5,7 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom:
-ms.date: 11/15/2023
+ms.date: 02/11/2026
 #customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can help ensure the safety and availability of my data.
 ---
 
@@ -23,30 +23,19 @@ This article provides guidance on how to further protect your data from rare reg
 
 ## Disaster recovery
 
-You can enable or disable business continuity and disaster recovery (BCDR) for a specific capacity through the capacity admin portal. If your capacity has BCDR activated, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region.
+You can enable or disable disaster recovery (DR) for a specific capacity through the [capacity admin portal](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting). If your capacity has DR enabled, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region.
 
-If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
+If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
 
 For a comprehensive understanding of the end-to-end experience, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
-## Soft deletion for OneLake files
+## Soft delete for OneLake files
 
-In OneLake, soft deletion prevents accidental file loss by retaining deleted files for seven days before permanent removal. Soft-deleted data is billed at the same rate as active data.
+OneLake automatically protects your data with soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions or user errors.
 
-You can restore files and folders by using Azure Blob Storage REST APIs, Azure Storage SDKs, and the Azure PowerShell Az.Storage module. Learn how to list and restore files by using [these PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).
-
-### Restore soft-deleted files via Azure Storage Explorer
-
-You can restore deleted Lakehouse files by using Azure Storage Explorer. First, [connect to your workspace from Storage Explorer](onelake-azure-storage-explorer.md). You can connect using the workspace GUID or friendly name in the OneLake path to restore data.
-
-After you connect to your workspace, follow these steps to restore soft-deleted data:
-
-1. Select the dropdown button next to the path bar, and then select **Active and soft deleted blobs** instead of the default **Active blobs**.
-
-1. Go to the folder that contains the soft-deleted file.
-
-1. Right-click the file, and then select **Undelete**.
+For step-by-step instructions on how to list and restore soft-deleted files, see [Recover deleted files in OneLake](soft-delete.md).
 
 ## Related content
 
+- [Recover deleted files in OneLake](soft-delete.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)

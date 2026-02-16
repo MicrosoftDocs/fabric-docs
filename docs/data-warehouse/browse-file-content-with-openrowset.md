@@ -20,6 +20,8 @@ The OPENROWSET function allows you to read the contents of Parquet or CSV files 
 
 You can use this feature to inspect the file contents before loading them into your data warehouse table. With OPENROWSET, you can easily explore the files you ingest into your Fabric Warehouse, understand the columns you're ingesting, and determine their types. 
 
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md).
+
 Once you understand your data, you can create the tables that will be used to store the ingested file content. 
 
 ## Browse Parquet files using the OPENROWSET function
@@ -166,3 +168,4 @@ After completing file exploration and creating destination tables, you can proce
 ## Related content
 
 - [OPENROWSET BULK function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric&preserve-view=true)
+- [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md)

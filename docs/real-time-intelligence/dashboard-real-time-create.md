@@ -8,6 +8,7 @@ ms.topic: how-to
 ms.date: 10/05/2025
 ms.subservice: rti-dashboard
 ms.search.form: product-kusto, Real-Time Dashboard
+ai-usage: ai-assisted
 ---
 # Create a Real-Time Dashboard
 
@@ -167,6 +168,10 @@ Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generat
 1. In the **Query** pane,
     1. Select the data source from the dropdown menu.
     1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
+    
+    > [!TIP]
+    > You can use Copilot directly from the editing pane to author KQL with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor. For more information, see [Use Copilot in the tile editing pane](#use-copilot-in-the-tile-editing-pane).
+    
     1. Select **+ Add visual** on the ribbon for the Results pane at the bottom.
 
     :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Intelligence in Microsoft Fabric.":::
@@ -209,9 +214,19 @@ Editing the underlying query of a tile is only possible in editing mode.
 
     :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
 
-1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot generates a query that you can edit as needed. For more information, see [Use Copilot for writing KQL queries](../fundamentals/copilot-for-writing-queries.md).
+1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot generates a query that you can edit as needed. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 
     :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
+
+### Use Copilot in the tile editing pane
+
+When editing a tile, Copilot can help you author or modify the KQL query using natural language. You can:
+
+* **Generate a new query:** Enter a natural language prompt describing what you want to visualize, and Copilot creates a new KQL query from scratch.
+* **Replace the current tile query:** Use Copilot to generate a new query that replaces the existing tile query entirely.
+* **Refine the existing query:** Ask Copilot to modify the current query by adding filters, changing time windows, or adjusting aggregations.
+
+After Copilot generates the query, you can review it in the Query tab, run it to preview the results, and make any manual edits before applying the changes to save the updated tile.
 
 ## Add page
 

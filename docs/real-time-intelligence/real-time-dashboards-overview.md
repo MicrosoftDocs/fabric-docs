@@ -8,6 +8,7 @@ ms.topic: overview
 ms.custom:
 ms.date: 01/08/2026
 ms.search.form: Overview
+ai-usage: ai-assisted
 ---
 
 # What is Real-Time Dashboard?
@@ -26,7 +27,7 @@ This overview explains how Real-Time Dashboard works, highlights its key feature
     * Apply [filters](dashboard-parameters.md#interact-with-your-data-using-cross-filter) or [drill down](dashboard-parameters.md#use-drillthroughs-as-dashboard-parameters) on chart elements to refine other visuals or dive deeper into the data.
 * **No-code experience:** Empower users to create dashboards and explore their underlying data through an intuitive, no-code interface. This includes:
     * Quickly build [dashboards](../fundamentals/copilot-generate-dashboard.md) with Copilot assistance.
-    * [Create KQL queries using Copilot](copilot-writing-queries.md) to retrieve and visualize data without needing deep technical expertise.
+    * [Create KQL queries using Copilot](copilot-writing-queries.md) to retrieve and visualize data without needing deep technical expertise. Copilot is available in the Real-Time Dashboard tile editing pane, where you can use natural language prompts to generate, replace, and refine tile queries.
     * Use the [Explorer Data](dashboard-explore-data.md) feature to analyze underlying data without writing queries.
 * **Proactive monitoring with alerts:** Integrated with Data Activator to enable real-time monitoring and alerting based on data changes. It allows you to:
     * Define thresholds for key metrics displayed on your Real-Time dashboard.
@@ -55,7 +56,7 @@ Create a Real-Time Dashboard to visualize and explore insights quickly with real
 1. [Manually create a dashboard:](dashboard-real-time-create.md)
     * Set up the Real-Time Dashboard step by step.
     * Manually select and configure data sources.
-    * Write Kusto Query Language (KQL) queries to retrieve and visualize data in dashboard tiles.
+    * Write Kusto Query Language (KQL) queries to retrieve and visualize data in dashboard tiles, or use Copilot directly in the tile editor to author or modify queries with natural language.
     * Design and organize the layout of your dashboard.
 
 1. Use [Copilot to automate dashboard creation:](../fundamentals/copilot-generate-dashboard.md)

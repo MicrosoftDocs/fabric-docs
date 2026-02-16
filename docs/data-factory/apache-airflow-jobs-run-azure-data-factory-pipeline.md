@@ -11,8 +11,7 @@ ms.date: 12/18/2024
 
 # Tutorial: Orchestrate an Azure Data Factory (ADF) Pipeline with Apache Airflow Job.
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 In this tutorial, you'll build an Apache Airflow DAG to orchestrate the ADF pipeline with the Apache Airflow Job.
 

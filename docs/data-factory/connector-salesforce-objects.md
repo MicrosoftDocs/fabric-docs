@@ -22,10 +22,9 @@ The Salesforce objects connector supports the following authentication types for
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Salesforce objects. The following links provide the specific Power Query connector information you need to connect to Salesforce objects in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Salesforce objects using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Salesforce objects connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Salesforce objects prerequisites](/power-query/connectors/salesforce-objects#prerequisites) before connecting to the Salesforce objects connector.
-- To connect to the Salesforce objects connector from Power Query, go to [Connect to Salesforce objects from Power Query Online](/power-query/connectors/salesforce-objects#connect-to-salesforce-objects-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Salesforce objects prerequisites](/power-query/connectors/salesforce-objects#prerequisites).
+1. Check [Salesforce objects known issues and limitations](/power-query/connectors/salesforce-objects#known-issues-and-limitations) to make sure your scenario is supported.
+1. [Connect to Salesforce Objects (from Power Query Online)](/power-query/connectors/salesforce-objects#connect-to-salesforce-objects-from-power-query-online).

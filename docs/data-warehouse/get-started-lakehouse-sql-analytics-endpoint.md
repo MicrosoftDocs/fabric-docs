@@ -133,6 +133,8 @@ Data partitioning is a well-known data access optimization technique in data lak
 
 A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
 
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md). For an example and use case for querying partitioned parquet files, see [Query partitioned data](query-parquet-files.md#query-partitioned-data-with-openrowset).
+
 ## Related content
 
 - [What is a lakehouse in Microsoft Fabric?](../data-engineering/lakehouse-overview.md)

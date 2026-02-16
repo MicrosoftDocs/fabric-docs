@@ -1,7 +1,7 @@
 ---
 title: Set Actions for Rules in Fabric Activator
 ms.reviewer: spelluru
-description: Learn how to configure actions for rules in Fabric activators. An action can send an email, Teams message, run a Fabric pipeline, notebook, Spark job, or custom function.
+description: Learn how to configure actions for rules in Fabric activators. An action can send an email, Teams message, run a Fabric pipeline, dataflow, notebook, Spark job, or custom function.
 #customer intent: As an IT admin, I want to configure email alerts for specific conditions so that I can notify relevant stakeholders automatically.
 author: spelluru
 ms.author: spelluru
@@ -50,13 +50,13 @@ To configure the alert to send a Teams message to an individual or a group chat 
 
 ### Run Fabric activities
 
-To configure the alert to launch a Fabric pipeline, notebook, or Spark job when the condition is met, follow these steps:
+To configure the alert to launch a Fabric pipeline, dataflow (preview), notebook, or Spark job when the condition is met, follow these steps:
 
-1. For **Select action**, select **Run pipeline**, **Run notebook**, **Run Spark job**, or **Run Function (preview)**.
+1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/action-fabric-item.png" alt-text="Screenshot of the Run Fabric items option.":::            
-1. On **Select Fabric item to run**, select the Fabric item (pipeline, notebook, Spark job, or function) from the list. 
-1. For the **Pipeline**, **Notebook**, and **Spark job** types, select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. 
+1. On **Select Fabric item to run**, select the Fabric item from the list. 
+1. For the **Pipeline**, **Dataflow**, **Notebook**, and **Spark job** types, select **Add parameter** and specify the name of the parameter for the Fabric item and a value for it. You can add more than one parameter. 
 
     :::image type="content" source="./media/set-details-conditions-actions-rule/fabric-item-parameters.png" alt-text="Screenshot of the Add rule pane with parameters for a Fabric item specified.":::            
 

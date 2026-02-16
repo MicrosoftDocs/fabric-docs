@@ -43,6 +43,7 @@ The entity diagram view displays the following information:
 * Tables
 * Update policies
 * External tables
+* Shortcuts
 * Materialized views
 * Functions
 * Continuous exports

@@ -23,8 +23,7 @@ This article shows you how to add a Functions activity to a pipeline and configu
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a Functions activity to a pipeline
 
@@ -116,17 +115,7 @@ Once you successfully created and configured your gateway, it appears under the 
 
 ## Save and run or schedule the pipeline
 
-After you configure the Functions activity and any other activities for your pipeline:
-
-1. Select the **Home** tab at the top of the pipeline editor.
-1. Select **Save** to save your pipeline.
-
-    :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
-
-1. Select **Run** to run the pipeline immediately, or select **Schedule** to set up a recurring schedule.
-
-After running, you can monitor the pipeline execution and view run history from the **Output** tab below the canvas.
-
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

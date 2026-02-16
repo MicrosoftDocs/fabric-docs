@@ -18,9 +18,6 @@ In lineage view, you see the lineage relationships between all the items in a wo
 
 Every workspace automatically has a lineage view.
 
-> [!NOTE]
-> Lineage in Fabric is in preview, and not all connections between items are fully supported yet. It is possible that the lineage between some items will be incorrectly shown.
-
 ## Permissions
 
 Any user with a [role in a workspace](../fundamentals/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.

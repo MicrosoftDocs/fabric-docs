@@ -20,7 +20,7 @@ This article shows you how to add a custom endpoint destination or a custom app 
 
 ## Prerequisites
 
-Before you start, make sure you have access to the workspace where your eventstream is located. The workspace must be in **Fabric capacity** or **Trial** mode.
+Before you start, make sure you have access to the workspace where your eventstream is located. The workspace must have a **Fabric** capacity or **Fabric Trial** workspace type.
 
 - **Contributor** or higher permissions are required to edit the eventstream to add a **Custom endpoint** destination.
 - If you want to use **Entra ID authentication** to connect your application, you need **Member** or higher permissions.

@@ -7,12 +7,16 @@ ms.reviewer: xiaoyul, procha, fipopovi, twcyril
 ms.date: 01/14/2026
 ms.topic: best-practice
 ms.custom:
+ai-usage: ai-assisted
 ---
 # Performance guidelines in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article contains best practices for data ingestion, table management, data preparation, statistics, and querying in warehouses and SQL analytics endpoints. Performance tuning and optimization can present unique challenges, but they also offer valuable opportunities to maximize the capabilities of your data solutions.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on Delta table optimization strategies, including recommendations for tables written by Spark or mirroring that are consumed by Fabric Data Warehouse, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 To monitor performance on your warehouse, see [Monitor Fabric Data warehouse](monitoring-overview.md).
 
@@ -52,13 +56,13 @@ You can detect cold start effects caused by fetching data from remote storage in
 > [!IMPORTANT]
 > Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
 
-<a id="result-set-caching-preview"></a>
-
+<!--
 #### Result set caching
 
 Distinct from in-memory and disk caching, result set caching is a built-in optimization for warehouses and Lakehouse SQL analytics endpoints in Fabric that reduces query read latency. It stores the final result of eligible `SELECT` statements so subsequent cache hits can skip compilation and data processing, returning results faster.
 
-During the current preview, result set caching is off by default for all items. For more information on enabling, see [Result set caching](result-set-caching.md).
+For more information, see [Result set caching](result-set-caching.md).
+-->
 
 ### Queries on tables with string columns  
 
@@ -105,7 +109,7 @@ Fabric Data Warehouse uses snapshot isolation exclusively. Attempts to change th
 
 Queries with large data size in intermediate query execution or in final query result could experience more query performance issue. To reduce the returned data set size, consider following strategies:
 
-- Partition large tables in Lakehouse.
+- Partition or cluster (Liquid Clustering) large tables in Lakehouse.
 - Limit the number of columns returned. `SELECT *` can be costly.
 - Limit the number of rows returned. Perform as much data filtering in the warehouse as possible, not in client applications.
    - Try to filter before joining to reduce the dataset early in query execution. 
@@ -250,6 +254,8 @@ The concept of increasing the number of parallelism and scaling to larger Fabric
 
 The [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric&preserve-view=true) function enables you to read CSV or Parquet files from Azure Data Lake or Azure Blob storage, without ingesting it to Warehouse. For more information and examples, see [Browse file content using OPENROWSET function](browse-file-content-with-openrowset.md).
 
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md).
+
 When reading data using the OPENROWSET function, consider the following recommendations for best performance:
 
 - **Parquet:** Try to use Parquet instead of CSV, or convert CSV to Parquet, if you're frequently querying the files. Parquet is a columnar format. Because data is compressed, its file sizes are smaller than CSV files that contain the same data. Fabric Data Warehouse skips the columns and rows that aren't needed in a query if you're reading Parquet files.
@@ -332,7 +338,11 @@ For more information on the `queryinsights` views, see [Query insights in Fabric
 For more information on query lifecycle DMVs, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
 
 ## Related content
-    
+
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
+- [Table compaction](../data-engineering/table-compaction.md)
+- [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md)
 - [Monitor Fabric Data warehouse](monitoring-overview.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Query insights](query-insights.md)

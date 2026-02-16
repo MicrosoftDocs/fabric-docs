@@ -9,8 +9,7 @@ ms.date: 03/25/2024
 
 # Add a Kubernetes secret in Apache Airflow job
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 A Kubernetes secret is an object designed to securely store sensitive information, such as passwords, tokens, or keys. By utilizing secrets, you avoid embedding confidential data directly in your application code.
 

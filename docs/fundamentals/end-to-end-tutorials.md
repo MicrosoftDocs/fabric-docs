@@ -7,7 +7,7 @@ author: SnehaGunda
 ms.topic: overview
 ms.custom:
 ms.search.form: product-trident
-ms.date: 11/25/2024
+ms.date: 02/09/2026
 ---
 
 # End-to-end tutorials in Microsoft Fabric
@@ -40,6 +40,7 @@ The following tutorials walk you through scenarios within specific Fabric experi
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 | [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing, and publication of your data and reports. |
 | [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/tutorial-0-introduction.md) | In this tutorial, you model and contextualize data from multiple sources into a digital twin builder (preview) ontology. You explore the ontology with queries, then create a Power BI dashboard to visualize the data. |
+| [Graph in Microsoft Fabric (preview)](../graph/tutorial-introduction.md) | In this tutorial, you load sample data into a lakehouse and build a graph model with nodes and edges. You then query the graph using both the visual query builder and GQL (Graph Query Language) to explore relationships and patterns in the data. |
 
 ## Related content
 

@@ -15,6 +15,13 @@ ms.search.form: Tutorial - Add edges to your graph
 
 In this tutorial step, you add edge types to your graph model. Edges define the relationships between nodes, such as "Customer purchases Order" or "Employee sells Order."
 
+> [!IMPORTANT]
+> When defining an edge type, you must use a mapping table that contains two columns such that:
+> - One column matches the **source node's key** in terms of values and data type
+> - Another column matches the **target node's key** in terms of values and data type
+> 
+> Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
+
 ## Adventure Works edge mappings
 
 In the Adventure Works data model, create edges to define the relationships between the nodes. The following table shows the edge mappings to use:

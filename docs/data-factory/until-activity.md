@@ -15,8 +15,7 @@ The Until activity provides the same functionality that a do-until looping struc
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add an Until activity to a pipeline with UI
 
@@ -57,9 +56,9 @@ In this simple example, we test the value of a pipeline variable. Select the bac
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings. This simple pipeline will execute the child activity of the Until activity exactly 1 time, changing the pipeline variable value from 0 to 1, after which the Until expression evaluates to true and terminate.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+This simple pipeline will execute the child activity of the Until activity exactly 1 time, changing the pipeline variable value from 0 to 1, after which the Until expression evaluates to true and terminate.
 
 ## Related content
 

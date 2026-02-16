@@ -9,12 +9,16 @@ ms.service: fabric
 ms.subservice: data-warehouse
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
+ai-usage: ai-assisted
 ---
 # SQL analytics endpoint performance considerations
 
 **Applies to:** [!INCLUDE [fabric-se](includes/applies-to-version/fabric-se.md)]
 
-The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the lakehouse using T-SQL language and TDS protocol. 
+The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the lakehouse using T-SQL language and TDS protocol.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on optimizing Delta tables for SQL analytics endpoint consumption, including file size and row group recommendations, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 Every lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)]. The number of SQL analytics endpoints in a workspace matches the number of [lakehouses](../data-engineering/lakehouse-overview.md) and [mirrored databases](../mirroring/overview.md) provisioned in that one workspace.
 
@@ -151,6 +155,10 @@ The complete script can be copied from the following code block:
 
 ## Related content
 
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
+- [Table compaction](../data-engineering/table-compaction.md)
+- [Tune file size](../data-engineering/tune-file-size.md)
 - [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Limitations of the SQL analytics endpoint](limitations.md#limitations-of-the-sql-analytics-endpoint)

@@ -1,13 +1,13 @@
 ---
 title: Create a OneDrive or SharePoint shortcut
 description: Learn how to create a OneLake shortcut for OneDrive or SharePoint inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag
+ms.reviewer: eloldag, shinarayanan
 ms.author: kgremban
 author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom:
-ms.date: 11/17/2025
+ms.date: 02/10/2026
 #customer intent: As a data engineer, I want to learn how to create a OneDrive or SharePoint shortcut inside a Microsoft Fabric lakehouse so that I can efficiently manage and access my data.
 ---
 
@@ -47,13 +47,13 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    * To create a **New connection**, provide the following connection settings:
 
-   |Field | Description|
-   |-----|-----|
-   |**Site URL**| The root URL of your SharePoint account.<br><br>To retrieve your URL, sign in to OneDrive. Select the settings gear icon, then **OneDrive settings** > **More settings**. Copy the **OneDrive web URL** from the more settings page and remove anything after `_onmicrosoft_com`. For example, `https://mytenant-my.sharepoint.com/personal/user01_mytenant_onmicrosoft_com`. |
-   |**Connection** | The default value, **Create new connection**. |
-   |**Connection name** | A name for your connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
-   |**Authentication kind**| The supported authentication type for this shortcut is **Organizational account**. |
-
+   | Field | Description |
+   | ----- | ----------- |
+   | **Site URL** | The root URL of your SharePoint account.<br><br>To retrieve your URL, sign in to OneDrive. Select the settings gear icon, then **OneDrive settings** > **More settings**. Copy the **OneDrive web URL** from the more settings page and remove anything after `_onmicrosoft_com`. For example, `https://mytenant-my.sharepoint.com/personal/user01_mytenant_onmicrosoft_com`. |
+   | **Connection** | The default value, **Create new connection**. |
+   | **Connection name** | A name for your connection. The service generates a suggested connection name based on the storage account name, but you can overwrite with a preferred name. |
+   | **Authentication kind** | The supported authentication types are **Organizational account**, **Workspace identity**, and **Service principal**. For more information, see [Authentication](#authentication). |
+  
 1. Select **Next**.
 
 1. Browse to the target location for the shortcut.
@@ -74,21 +74,134 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/view-shortcuts.png" alt-text="Screenshot showing the lakehouse explorer view with a list of folders that display the shortcut symbol.":::
 
+## Authentication
+
+OneDrive and SharePoint shortcuts support the following methods for authentication:
+
+* Organizational account
+* [Workspace Identity](/fabric/security/workspace-identity)
+
+  To use workspace identity authentication for OneDrive or SharePoint shortcuts, you need to grant your workspace identity access to the OneDrive or SharePoint site. Use the steps in the following section to configure this access.
+
+* [Service Principal](/entra/identity-platform/app-objects-and-service-principals)
+
+  To use service principal authentication, [register an application in Microsoft Entra ID](/entra/identity-platform/quickstart-register-app) and create a client secret. Then, grant the service principal access to your SharePoint site using Microsoft Graph. The service principal needs at least **read** permission on the SharePoint site. For more information about granting site permissions, see [Grant an app-only access token to a SharePoint site](/sharepoint/dev/solution-guidance/security-apponly-azuread#granting-access-using-sharepoint-online).
+
+### Configure workspace identity authentication
+
+The steps in this section require PowerShell. You can [Install PowerShell](/powershell/scripting/install/install-powershell) or run the PowerShell commands in [Azure Cloud Shell](/azure/cloud-shell/get-started/classic?tabs=powershell).
+
+You must be a workspace admin to be able to create a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
+
+1. Follow the steps to [Create a workspace identity](../security/workspace-identity.md#create-and-manage-a-workspace-identity).
+
+1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** and search your tenant for the workspace identity. The name should be the same as your workspace.
+
+1. Copy the application ID for the workspace identity to use later.
+
+1. Open a PowerShell command window or start a cloud shell session in the Azure portal.
+
+1. Check if the **Microsoft.Graph** PowerShell module is installed in your environment.
+
+   ```powershell
+   Get-InstalledModule Microsoft.Graph
+   ```
+
+   If not, install it.
+
+   ```powershell
+   Install-Module Microsoft.Graph -Scope AllUsers -Force
+   ```
+
+   Or update to the latest version.
+
+   ```powershell
+   Update-Module Microsoft.Graph
+   ```
+
+1. Connect to Microsoft Graph with the required permissions for this task.
+
+   ```powershell
+   Connect-MgGraph -Scopes "Sites.FullControl.All","AppRoleAssignment.ReadWrite.All","Directory.Read.All"
+   ```
+
+1. Verify the granted scopes.
+
+   ```powershell
+   Get-MgContext | Select-Object -ExpandProperty Scopes
+   ```
+
+   In the output, you should see `Sites.FullControl.All` (recommended) or `Sites.ReadWrite.All`.
+
+1. Create a variable to store the site ID for your SharePoint site. Replace the `<TENANT_NAME>` and `<SITE_NAME>` placeholders with your own values.
+
+   ```powershell
+   $site = Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/sites/<TENANT_NAME>.sharepoint.com:<SITE_NAME>:"  
+   ```
+
+1. Create variables for the permissions command. Replace the `<WORKSPACE_IDENTITY_APP_ID>` placeholder with the application ID that you retrieved from Microsoft Entra.
+
+   ```powershell
+   $ManagedIdentityClientId = "<WORKSPACE_IDENTITY_APP_ID>"
+   $Role = "read"  # read | write | owner  
+   $DisplayName = "Workspace Identity Name"  
+   ```
+
+1. Create the body for the permissions command.
+
+   ```powershell
+   $body = @{ 
+     roles = @($Role)  # read | write | owner 
+     grantedToIdentities = @( 
+       @{ 
+         application = @{ 
+           id = $ManagedIdentityClientId 
+           displayName = $DisplayName 
+         } 
+       } 
+     ) 
+   } | ConvertTo-Json -Depth 6 
+   ```
+
+1. Grant the permissions.
+
+   ```powershell
+   $siteId = $site.Id  
+   $grant = Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/v1.0/sites/$siteId/permissions" -Body $body -ContentType "application/json" -ErrorAction Stop  
+   ```
+
+1. Confirm that the permission object was created successfully.
+
+   ```powershell
+   Write-Host ("Granted: id={0} roles={1}" -f $grant.id, ($grant.roles -join ",")) -ForegroundColor Green 
+   ```
+
+Now, when you create a shortcut you can select **Workspace identity** as the **Authentication kind**.
+
 ## Best practices
 
-- HTTP 429 errors when accessing OneDrive or SharePoint shortcuts are due to SharePoint throttling. SharePoint enforces service throttling to protect reliability; review the [official throttling guidance](/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) to understand applicable limits and behaviors. Use the following best practices to minimize throttling:
+* HTTP 429 errors when accessing OneDrive or SharePoint shortcuts are due to SharePoint throttling. SharePoint enforces service throttling to protect reliability; review the [official throttling guidance](/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) to understand applicable limits and behaviors. Use the following best practices to minimize throttling:
 
-  - Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits. 
+  * Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits. 
   
-  - Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root. 
-  
+  * Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root. 
+
+  * Use **Workspace Identity (WI)** authentication instead of **Organizational Account** authentication to reduce throttling.
+
+* You can use Service Principal based authentication to connect to SharePoint or OneDrive across different tenants.
+
 ## Limitations
 
 The following limitations apply to SharePoint shortcuts:
 
 * OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
+* Based on Azure ACL [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs), Service Principal authentication will not work for SharePoint tenants created after Nov 1st, 2024.
+
+* SharePoint and OneDrive Shortcuts are supported only at folder level and not at file level.
+
 ## Related content
 
 * [Create a OneLake shortcut](create-onelake-shortcut.md)
+
 * [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

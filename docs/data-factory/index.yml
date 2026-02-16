@@ -90,6 +90,8 @@ landingContent:
             url: data-source-management.md
           - text: Save a draft of your dataflow
             url: dataflows-gen2-save-draft.md
+          - text: Enrich data with ML model during ingestion
+            url: dataflow-gen2-machine-learning-model-endpoints.md
 
   # Card 
   - title: Move data

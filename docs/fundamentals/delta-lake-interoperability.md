@@ -8,6 +8,7 @@ ms.topic: concept-article
 ms.custom:
 ms.date: 4/25/2025
 ms.search.form: delta lake interoperability
+ai-usage: ai-assisted
 ---
 
 # Delta Lake table format interoperability
@@ -47,6 +48,7 @@ Eventstreams|Name: No<br/>ID: No|No|No|No|Read: N/A (not applicable)<br/>Write: 
 >
 > * Fabric doesn't write column mappings by default, except where noted. The default Fabric experience generates tables that are compatible across the service. Delta Lake tables produced by third-party services may have incompatible table features.
 > * Some Fabric experiences don't offer table optimization and maintenance capabilities, such as bin-compaction, V-order, deletion vector merge (PURGE), and clean up of old unreferenced files (VACUUM). To keep Delta Lake tables optimal for analytics, follow the techniques in [Use table maintenance feature to manage delta tables in Fabric](../data-engineering/lakehouse-table-maintenance.md) for tables ingested using those experiences.
+> * For comprehensive cross-workload guidance on table maintenance strategies for different consumption scenarios, see [Cross-workload table maintenance and optimization](table-maintenance-optimization.md).
 
 ## Current limitations
 
@@ -66,6 +68,7 @@ The following special characters are either reserved or not compatible with at l
 
 ## Related content
 
+* [Cross-workload table maintenance and optimization](table-maintenance-optimization.md)
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.
 * [Learn about Direct Lake in Power BI and Microsoft Fabric](../fundamentals/direct-lake-overview.md).

@@ -18,8 +18,7 @@ Web Activity can be used to call a custom REST endpoint from an Azure Data Facto
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a Web activity to a pipeline with UI
 
@@ -37,7 +36,7 @@ To use a Web activity in a pipeline, complete the following steps:
    :::image type="content" source="media/web-activity/web-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Web activity.":::
 
    > [!NOTE]
-   > The web activity may simply appear as an icon on the toolbar as shown in the previous image, if the screen resolution doesn't allow its name to be fully spelled out.
+   > The web activity could appear as an icon on the toolbar as shown in the previous image, if the screen resolution doesn't allow its name to be fully spelled out.
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
@@ -53,11 +52,12 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    > [!NOTE]
    > The Connection name can be max 80 characters long.
-   
-### Using On-premises or VNET data gateway
-1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a VNET data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
 
-1. If you would like to use a VNET gateway, refer to [how to create a VNET data gateway](/data-integration/vnet/create-data-gateways).
+### Using On-premises or virtual network data gateway
+
+1. When creating your connection, you can now choose to use either an on-premises data gateway (OPDG) or a virtual network data gateway. For guidance on creating and configuring your OPDG, refer to [how to create on-premises data gateway](how-to-access-on-premises-data.md)
+
+1. If you would like to use a virtual network gateway, refer to [how to create a virtual network data gateway](/data-integration/vnet/create-data-gateways).
 
 1. Once you have successfully created and configured your gateway, it should appear under the Data Gateway dropdown in the connection dialog
 
@@ -69,9 +69,9 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ## Save and run or schedule the pipeline
 
-Typically, you use the output of the Web activity with other activities, but once configured, it can be run directly without other activities, too. If you're running it to invoke a REST API that performs some action and don't require any output from the activity, your pipeline might contain only the Web activity, too. To run the activity, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+Typically, you use the output of the Web activity with other activities, but once configured, it can be run directly without other activities, too. If you're running it to invoke a REST API that performs some action and don't require any output from the activity, your pipeline might contain only the Web activity, too.
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

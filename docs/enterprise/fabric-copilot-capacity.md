@@ -12,7 +12,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Fabric Copilot capacity
 
-Fabric Copilot capacity is a feature that enables users to charge Copilot usage from Power BI Desktop, Pro and Premium per-user workspaces to a single capacity. To bill all your Copilot consumption to one capacity, designate a capacity as a Fabric Copilot capacity for specific users.
+Fabric Copilot capacity is a feature that enables users to charge Copilot usage from Power BI Desktop, Pro and Premium per-user (PPU) workspaces to a single capacity. To bill all your Copilot consumption to one capacity, designate a capacity as a Fabric Copilot capacity for specific users.
 
 When users assigned to a Fabric Copilot capacity use Copilot and Data agents, their corresponding usage is charged to the Fabric Copilot capacity instead of the capacity that contains their content.
 
@@ -20,7 +20,7 @@ Users assigned to a Fabric Copilot capacity can use it in these scenarios:
 
 * Copilot on Power BI Desktop
 
-* Copilot in Power BI on a Pro or Premium per-user workspace, or a Fabric capacity workspace.
+* Copilot in Power BI on a Pro or Premium per-user (PPU) workspace, or a Fabric capacity workspace.
 
 * Fabric Copilot on these supported workloads, on a Fabric capacity workspace where the capacity SKU is smaller than F64.
   * Data Factory
@@ -56,7 +56,7 @@ Once a user is assigned to a Fabric Copilot capacity, no additional steps are re
 
 * The Fabric Copilot capacity has to reside on at least an F2 or P1 [SKU](licenses.md#capacity).
 
-* Users assigned to a Fabric Copilot capacity can use Copilot with Power BI on workspaces with the following license modes: _Pro_, _Trial_, _Premium per-user_, _Premium capacity_ and _Fabric capacity_. Capacities with the _Embedded_ license mode aren't supported.
+* Users assigned to a Fabric Copilot capacity can use Copilot with Power BI on workspaces with the following license modes: _Pro_, _Trial_, _Premium per-user (PPU)_, _Premium capacity_ and _Fabric capacity_. Capacities with the _Embedded_ license mode aren't supported.
 
 * Only one Fabric Copilot capacity is supported per user. If a user is assigned to multiple Copilot capacities, the newest created Copilot capacity registers the user's Copilot usage.
 

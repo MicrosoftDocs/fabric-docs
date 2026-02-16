@@ -10,6 +10,7 @@ ms.custom:
 ms.date: 02/03/2026
 ms.subservice: rti-core
 ms.search.form: Overview
+ai-usage: ai-assisted
 ---
 
 # What is Real-Time Intelligence?
@@ -97,10 +98,7 @@ available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations—all without writing code. Eventstreams support multiple data sources and data
-destinations, including a wide range of connectors to external sources,
-for example: Apache Kafka clusters, database change data capture feeds,
-AWS streaming sources (Kinesis), and Google (GCP Pub/Sub).
+Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations—all without writing code. Eventstreams support multiple data sources and data destinations, including a wide range of connectors to external sources, for example: Apache Kafka clusters, database change data capture feeds, AWS streaming sources (Kinesis), Google (GCP Pub/Sub), MQTT v3.1/v3.1.1, and the Real-Time Weather connector.
 
 ### Process data streams
 
@@ -119,7 +117,7 @@ Eventhouses are the ideal analytics engine to process data in motion. They're ta
 The indexed, partitioned data stored in eventhouses is ready for
 lightning-fast query using various code, low-code, or no-code
 options in Fabric. Data can be queried in native KQL (Kusto Query
-Language) or using T-SQL in the KQL queryset. The Kusto copilot, along
+Language) or using T-SQL in the KQL queryset. The Kusto copilot, along 
 with the no-code query exploration experience, streamlines the process
 of analyzing data for both experienced KQL users and citizen data
 scientists. KQL is a simple, yet powerful language to query structured,

@@ -24,7 +24,7 @@ The many controls in the admin portal are listed in the following table, with li
 | :---    | :---         |
 | [Tenant settings](tenant-settings-index.md) | Enable, disable, and configure Microsoft Fabric. |
 | [Users](service-admin-portal-users.md) | Manage users in the Microsoft 365 admin portal. |
-| [Premium Per User](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
+| [Power BI Premium Per-User (PPU)](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
 | [Audit logs](service-admin-portal-audit-logs.md) | Audit Microsoft Fabric activities in the Microsoft Purview portal. |
 | [Domains](/fabric/governance/domains) | Manage and organize business data using custom domains in Fabric. |
 | [Workloads](/fabric/fundamentals/fabric-home#create-items-and-explore-workloads) | Manage workloads and their settings. |

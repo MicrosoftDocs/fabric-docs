@@ -86,13 +86,13 @@ The database user created with one of the two previous methods also needs to be 
 1. Open the [Fabric portal](https://fabric.microsoft.com).
 1. Use an existing workspace, or create a new workspace.
 1. Navigate to the **Create** pane or select the **New item** button. Select the **Create** icon.
-1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL (preview)**.
+1. Scroll to the **Data Warehouse** section and then select **Mirrored Azure Database for PostgreSQL**.
 
 ## Connect to your Azure Database for PostgreSQL flexible server
 
 The following steps guide you through the process of creating the connection to your Azure Database for PostgreSQL flexible server:
 
-1. Under **New sources**, select **Azure Database for PostgreSQL (preview)**. Or, select an existing Azure Database for PostgreSQL flexible server connection from the OneLake hub.
+1. Under **New sources**, select **Azure Database for PostgreSQL**. Or, select an existing Azure Database for PostgreSQL flexible server connection from the OneLake hub.
 1. If you selected **New connection**, enter the connection details to the Azure Database for PostgreSQL flexible server.
    - **Server**: You can find the **Server name** by navigating to the Azure Database for PostgreSQL flexible server **Overview** page in the Azure portal. For example, `<server-name>.postgres.database.azure.com`.
    - **Database**: Enter the name of your Azure Database for PostgreSQL flexible server.

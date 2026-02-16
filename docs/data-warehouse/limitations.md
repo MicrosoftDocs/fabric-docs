@@ -68,6 +68,7 @@ Since all tables do not support **varchar(max)** joins on these columns may not 
 
 You can confirm if a table has any **varchar(max)** column from the schema metadata using the following T-SQL query. A `max_length` value of `-1` represents **varchar(max)**:
 
+
 ```sql
 SELECT o.name, c.name, type_name(user_type_id) AS [type], max_length
 FROM sys.columns AS c
@@ -76,6 +77,8 @@ ON c.object_id = o.object_id
 WHERE max_length = -1 
 AND type_name(user_type_id) IN ('varchar', 'varbinary');
 ```
+
+- Schemas with names that are [SQL reserved keywords](/sql/t-sql/language-elements/reserved-keywords-transact-sql?view=sql-server-ver17) aren't supported in SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint. Use non‑reserved names for schemas.
 
 ## Known issues
 

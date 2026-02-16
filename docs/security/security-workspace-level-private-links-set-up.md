@@ -20,7 +20,7 @@ This article provides instructions for setting up workspace-level private links 
 
 ## Prerequisites
 
-* The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported. You can check assignment by going to the workspace settings and selecting **License info**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
+* The workspace must be assigned to a Fabric capacity (F SKUs). Other capacities, such as premium (P SKU) and trial capacities, aren't supported. You can check assignment by going to the workspace settings and selecting **Workspace type**, as described in Step 1 of [Reassign a workspace to a different capacity](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity-1).
 * A Fabric administrator must enable the tenant setting **Configure workspace-level inbound network rules**. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 * You need the workspace ID. Find it in the URL after `group`.
 * You need the tenant ID. In the Fabric portal, select the question mark in the upper right corner, then select **About Power BI**. The tenant ID is the **ctid** part of the **Tenant URL**.

@@ -101,8 +101,6 @@ items:
           href: data-agent-example-queries.md
         - name: Best practices for configuring data agents 
           href: data-agent-configuration-best-practices.md
-        - name: Add Power BI semantic model as data source
-          href: data-agent-semantic-model.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
         - name: Connect to an AI Foundry Search Index
@@ -267,14 +265,20 @@ items:
     href: mlflow-upgrade.md
   - name: Fabric autologging
     href: mlflow-autologging.md
-  - name: Git and deployment pipelines 
-    href: machine-learning-artifacts-git-deployment-pipelines.md
 - name: Model scoring
   items:
     - name: Score models with PREDICT
       href: model-scoring-predict.md
     - name: Serve real-time predictions with ML model endpoints
       href: model-endpoints.md
+- name: Operationalize with MLOps
+  items:  
+    - name: Git and deployment pipelines 
+      href: machine-learning-artifacts-git-deployment-pipelines.md
+- name: Monitor models and experiments
+  items:
+    - name: Monitor experiments and models
+      href: monitor-machine-learning-experiments-models.md
 - name: Secure and manage ML items
   items:
     - name: Disaster recovery for ML items

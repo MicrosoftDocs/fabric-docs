@@ -12,9 +12,8 @@ ms.topic: tutorial
 
 ## Prerequisites
 
-- Create or use an existing Azure SQL Managed Instance.
-  - [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql&tabs=azure-portal&preserve-view=true) for source Azure SQL Managed Instance needs to be configured to "[Always up to date](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#always-up-to-date-update-policy)" or "[SQL Server 2025](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#sql-server-2025-update-policy)".
-  - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
+- Create or use an existing Azure SQL Managed Instance. Review [limitations](azure-sql-managed-instance-limitations.md).
+- The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.

@@ -1,23 +1,26 @@
 ---
-title: Delta table maintenance in Microsoft Fabric
+title: Delta Table Maintenance in Microsoft Fabric
 description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage Delta tables and to keep them always ready for analytics.
-ms.reviewer: dacoelho
-ms.author: eur
 author: eric-urban
+ms.author: eur
+ms.reviewer: dacoelho
+ms.date: 02/12/2026
 ms.topic: how-to
-ms.custom:
-ms.date: 04/26/2024
 ms.search.form: lakehouse table maintenance delta lake tables
+ai-usage: ai-assisted
 ---
 
 # Use table maintenance feature to manage delta tables in Fabric
 
 The [Lakehouse](lakehouse-overview.md) in Microsoft Fabric provides the *Table maintenance* feature to efficiently manage delta tables and to keep them always ready for analytics. This guide describes the table maintenance feature in Lakehouse and its capabilities.
 
+> [!TIP]
+> For comprehensive cross-workload guidance on table maintenance strategies, including optimization recommendations for SQL analytics endpoint, Power BI Direct Lake, and Data Warehouse consumers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+
 Key capabilities of the lakehouse table maintenance feature:
 
-* Perform ad-hoc table maintenance using contextual right-click actions in a delta table within the Lakehouse explorer.
-* Apply bin-compaction, V-Order, and unreferenced old files cleanup.
+- Perform ad hoc table maintenance using contextual right-click actions in a delta table within the Lakehouse explorer.
+- Apply bin-compaction, V-Order, and unreferenced old files cleanup.
 
 > [!NOTE]
 > For advanced maintenance tasks, such as grouping multiple table maintenance commands, orchestrating it based on a schedule, a code-centric approach is the recommended choice. To learn more, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) article.
@@ -31,14 +34,14 @@ __Lakehouse table maintenance__ applies only to delta Lake tables. The legacy Hi
 
 The table maintenance feature offers three operations.
 
-* **Optimize**: Consolidates multiple small Parquet files into large file. Big Data processing engines, and all Fabric engines, benefit from having larger files sizes. Having files of size above 128 MB, and optimally close to 1 GB, improves compression and data distribution, across the cluster nodes. It reduces the need to scan numerous small files for efficient read operations. It's a general best practice to run optimization strategies after loading large tables.
-* **V-Order**: Applies optimized sorting, encoding, and compression to Delta parquet files to enable fast read operations across all the Fabric engines. V-Order happens during the optimize command, and is presented as an option to the command group in the user experience. To learn more about V-Order, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md).
-* **Vacuum**: Removes old files no longer referenced by a Delta table log. Files need to be older than the retention threshold, and the default file retention threshold is seven days. All the delta tables in OneLake have the same retention period. File retention period is same regardless of the Fabric compute engine you are using. This maintenance is important to optimize storage cost. 
+- **Optimize**: Consolidates multiple small Parquet files into large file. Big Data processing engines, and all Fabric engines, benefit from having larger files sizes. Having files of size above 128 MB, and optimally close to 1 GB, improves compression and data distribution, across the cluster nodes. It reduces the need to scan numerous small files for efficient read operations. It's a general best practice to run optimization strategies after loading large tables.
+- **V-Order**: Applies optimized sorting, encoding, and compression to Delta parquet files to enable fast read operations across all the Fabric engines. V-Order happens during the optimize command, and is presented as an option to the command group in the user experience. To learn more about V-Order, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md).
+- **Vacuum**: Removes old files no longer referenced by a Delta table log. Files need to be older than the retention threshold, and the default file retention threshold is seven days. All the delta tables in OneLake have the same retention period. File retention period is same regardless of the Fabric compute engine you are using. This maintenance is important to optimize storage cost. 
 
 > [!IMPORTANT]
-> Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed. Table maintenance experiences in the user interface and in the Public APIs __will fail__ by default when intervals are less than 7 days. In order to __force__ lower retention intervals for the vacuum command, configure the ```spark.databricks.delta.retentionDurationCheck.enabled``` to ```false``` in the workspace. Table Maintenance jobs will then pick-up the configuration and allow the lower rentention during the job execution.
+> Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed. Table maintenance experiences in the user interface and in the Public APIs __will fail__ by default when intervals are less than 7 days. In order to __force__ lower retention intervals for the vacuum command, configure the `spark.databricks.delta.retentionDurationCheck.enabled` to `false` in the workspace. Table Maintenance jobs will then pick up the configuration and allow the lower retention during the job execution.
 
-## Execute ad-hoc table maintenance on a Delta table using Lakehouse
+## Execute ad hoc table maintenance on a Delta table using Lakehouse
 
 How to use the feature:
 
@@ -49,7 +52,7 @@ How to use the feature:
 1. Select **Run now** to execute the table maintenance job.
 1. Track maintenance job execution by the notifications pane, or the Monitoring Hub.
 
-   :::image type="content" source="media\table-maintenance\table-maintenance.png" alt-text="Screenshot showing the load to tables dialog box with filled table name." lightbox="media\table-maintenance\table-maintenance.png":::
+   :::image type="content" source="media/table-maintenance/table-maintenance.png" alt-text="Screenshot showing the load to tables dialog box with filled table name." lightbox="media/table-maintenance/table-maintenance.png":::
 
 ## How does table maintenance work?
 
@@ -63,7 +66,10 @@ After **Run now** is selected, a Spark maintenance job is submitted for executio
 
 ## Related content
 
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Table compaction](table-compaction.md)
+- [Tune file size](tune-file-size.md)
 - [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)
 - [CSV file upload to Delta for Power BI reporting](get-started-csv-upload.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
