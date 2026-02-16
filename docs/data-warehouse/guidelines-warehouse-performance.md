@@ -56,13 +56,13 @@ You can detect cold start effects caused by fetching data from remote storage in
 > [!IMPORTANT]
 > Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
 
-<a id="result-set-caching-preview"></a>
-
+<!--
 #### Result set caching
 
 Distinct from in-memory and disk caching, result set caching is a built-in optimization for warehouses and Lakehouse SQL analytics endpoints in Fabric that reduces query read latency. It stores the final result of eligible `SELECT` statements so subsequent cache hits can skip compilation and data processing, returning results faster.
 
-During the current preview, result set caching is off by default for all items. For more information on enabling, see [Result set caching](result-set-caching.md).
+For more information, see [Result set caching](result-set-caching.md).
+-->
 
 ### Queries on tables with string columns  
 

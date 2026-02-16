@@ -66,7 +66,7 @@ landingContent:
             url: tutorial-lakehouse-data-ingestion.md
           - text: Step 4 - Transform data into delta tables
             url: tutorial-lakehouse-data-preparation.md
-          - text: Step 5 - Build a report
+          - text: Step 5 - Create a semantic model and build a report
             url: tutorial-lakehouse-build-report.md
           - text: Step 6 - Clean up resources
             url: tutorial-lakehouse-clean-up.md

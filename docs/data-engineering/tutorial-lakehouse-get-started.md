@@ -5,8 +5,7 @@ ms.reviewer: arali
 ms.author: eur
 author: eric-urban
 ms.topic: tutorial
-ms.custom:
-ms.date: 07/19/2024
+ms.date: 02/14/2026
 ---
 
 # Lakehouse tutorial: Create a Fabric workspace

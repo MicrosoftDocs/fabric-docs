@@ -4,13 +4,16 @@ description: Learn more about result set caching, a performance optimization for
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: emtehran, fipopovi
-ms.date: 01/27/2026
+ms.date: 02/13/2026
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Result set caching
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+
+> [!CAUTION]
+> You should [disable the result set caching feature](#item-level-configuration) in Fabric Data Warehouse. For more information, see the [Fabric Data Warehouse Known Issue](https://aka.ms/fabricdwrscki).
 
 Result set caching is a built-in performance optimization for Fabric Data Warehouse and Lakehouse SQL analytics endpoints that improves read latency. 
 
@@ -33,14 +36,14 @@ Result set caching is configurable at the item level, and enabled by default for
 Once enabled, it can then be disabled at the item level or for individual queries, if needed. 
 
 ### Item-level configuration
-
+<!--
 Use the [ALTER DATABASE SET](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric&preserve-view=true) T-SQL command to enable result set caching for a lakehouse or warehouse. Use the SQL analytics endpoint of a Lakehouse to connect and run T-SQL queries.
 
 ```sql
 ALTER DATABASE <Fabric_item_name>
 SET RESULT_SET_CACHING ON;
 ```
-
+-->
 The setting value can be checked in [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=fabric&preserve-view=true), for example to see the value for the current context in Fabric Warehouse or Lakehouse SQL analytics endpoint:
 
 ```sql
