@@ -45,25 +45,36 @@ Users with contributor or owner permission on the parent data source have contri
 
 ## Enable the Eventhouse endpoint
 
-Enable the Eventhouse endpoint from your Fabric workspace, your OneLake catalog, or the Lakehouse/Warehouse ribbon.
+You can enable the Eventhouse endpoint using any of these three methods:
 
-1. Select the Lakehouse or Warehouse to query:
+### Method 1: From your Fabric workspace
 
-    * From your Fabric **Workspace**, browse to the **Lakehouse** or **Warehouse**. From the more options menu **...**, select **Eventhouse endpoint**.
+1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
+1. Select the more options menu (**...**) and choose **Eventhouse endpoint**.
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace.":::
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-workspace.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Workspace.":::
 
-    * From the **OneLake catalog**, browse to the **Lakehouse** or **Warehouse**. From the more options menu **...**, select **Eventhouse endpoint**.
+### Method 2: From the OneLake catalog
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog."::: 
+1. In the **OneLake catalog**, navigate to your **Lakehouse** or **Warehouse**.
+1. Select the more options menu (**...**) and choose **Eventhouse endpoint**.
 
-    * From the **OneLake catalog**, select the **Lakehouse** or **Warehouse**. From the Lakehouse toolbar, select **Analyze Data** > **Eventhouse endpoint**.
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog.":::
 
-      :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
+### Method 3: From the Lakehouse/Warehouse ribbon
+
+1. In the **OneLake catalog**, select your **Lakehouse** or **Warehouse** to open it.
+1. From the toolbar, select **Analyze Data** > **Eventhouse endpoint**.
+
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
+
+### Complete the setup
+
+After using any of the above methods:
 
 1. The **Eventhouse Endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
 
-    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
+   :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
 
 The workspace and OneLake catalog show the endpoint and KQL database as child items of the Lakehouse.
 
@@ -125,9 +136,9 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog. Deleti
 
 1. In the confirmation dialog box, select **Delete**.
 
-If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database, but the new database doesn't retain previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous one is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
+    If you delete the Eventhouse endpoint, you can re-enable it at any time. The new endpoint creates a new Eventhouse and KQL database, but the new database doesn't retain previous queries, visualizations, or dashboards. If you try to re-enable the endpoint while the previous one is still being deleted, you see a message to wait a few seconds. After the previous endpoint is deleted, you can re-enable it.
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Screenshot of a message stating that the endpoint is being deleted and to wait a few seconds.":::
+    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-deleted.png" alt-text="Screenshot of a message stating that the endpoint is being deleted and to wait a few seconds.":::
 
 ## Reset the Eventhouse endpoint
 
@@ -144,7 +155,7 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 **Sync statuses for the Eventhouse endpoint**:
 
 | Sync status | Description |
-|--|--|
+| -- | -- |
 | synced | All OneLake shortcuts are synchronized. Source link: [link] |
 | workInProgress | Synchronization in progress. ${syncing} of ${total} OneLake shortcuts are currently syncing. Some OneLake shortcuts are warming up. Source link: {link} |
 | warmingUp | Eventhouse endpoint is warming up. More than 50 percent of some OneLake shortcuts are warming up. The system is aligning with the source engine. Source link: {link} |
@@ -152,7 +163,7 @@ The Eventhouse endpoint syncs source tables and schema changes within seconds. T
 **Sync statuses for shortcut**:
 
 | Sync status | Description |
-|--|--|
+| -- | -- |
 | synced | This shortcut is fully synchronized. Over 98 percent of the data is in sync with the source. Source link: {link} |
 | workInProgress | Synchronization is underway. Between 20 percent and 98 percent of the data is synced with the source. Source link: {link} |
 | warmingUp | Synchronization is in progress. Less than 20 percent of the data is synced with the source. Source link: {link} |
