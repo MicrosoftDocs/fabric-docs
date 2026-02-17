@@ -66,8 +66,6 @@ You can enable the Eventhouse endpoint using any of these three methods:
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
 
-### Method 4: From the Analtz
-
 ### Complete the setup
 
 After using any of the above methods:
