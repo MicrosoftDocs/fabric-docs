@@ -33,7 +33,7 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 
 ### Create the activity
 
-1. Create a new pipeline in your workspace.
+1. [Create a new pipeline](create-first-pipeline-with-sample-data.md#create-a-pipeline) in your workspace.  
 
 1. Search for **Lakehouse Maintenance** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
