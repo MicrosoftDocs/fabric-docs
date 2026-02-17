@@ -2,7 +2,7 @@
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 12/09/2025
+ms.date: 02/17/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -172,6 +172,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **Availability** | See [Fabric Reliability](/azure/reliability/reliability-fabric) |
 | **Backups** | Zone-redundant (ZRS) automatic backups with 7 days retention period (enabled by default). |
 | **Read-only replicas** | Use the read-only [SQL analytics endpoint](sql-analytics-endpoint.md) for a read-only TDS SQL connection |
+| **Number of SQL databases** | 150 per workspace | 
 
 ## Tools
 

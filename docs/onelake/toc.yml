@@ -73,6 +73,8 @@ items:
     href: onelake-access-python.md
   - name: OneLake Deep Dive ADLS and Blob APIs in Action
     href: onelake-apis-in-action.md
+  - name: Mount OneLake as a file system
+    href: mount-onelake-with-blobfuse.md
 - name: Integrate with other services
   items:
   - name: Azure Synapse Analytics
