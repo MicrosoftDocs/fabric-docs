@@ -33,11 +33,11 @@ Before using this activity, make sure that:
 1. Create a new pipeline in your workspace.  
 1. Search for **Refresh SQL Endpoint** in the pipeline **Activities** pane and select it to add it to the pipeline canvas.  
 
-    :::image type="content" source="refresh-sql-endpoint-activities.png" alt-text="Screenshot of the Refresh SQL Endpoint activity in the Activities pane.":::
+    :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-activities.png" alt-text="Screenshot of the Refresh SQL Endpoint activity in the Activities pane.":::
 
 1. Select the new **Refresh SQL Endpoint** activity on the canvas if it isn't already selected.  
 
-    :::image type="content" source="refresh-sql-endpoint-on-canvas.png" alt-text="Screenshot of the Refresh SQL Endpoint activity on the pipeline canvas.":::
+    :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-on-canvas.png" alt-text="Screenshot of the Refresh SQL Endpoint activity on the pipeline canvas.":::
 
 1. Refer to the [**General** settings](/fabric/data-factory/activity-overview#general-settings) guidance to configure the **General** settings tab.
 
@@ -48,7 +48,7 @@ Before using this activity, make sure that:
 1. Specify the **Workspace** that contains the Lakehouse.
 1. Specify the**SQL Endpoint** that contains the materialized lake view to refresh. This SQL endpoint is the Lakehouse whose SQL endpoint you want to refresh. The SQL endpoint associated with the selected Lakehouse.
 
-    :::image type="content" source="refresh-sql-endpoint-settings.png" alt-text="Screenshot of the Refresh SQL Endpoint activity settings.":::
+    :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-settings.png" alt-text="Screenshot of the Refresh SQL Endpoint activity settings.":::
 
 ## Activity behavior
 
@@ -56,11 +56,11 @@ When the activity run finishes:
 
 - If the Output pop-up shows the **Success** status, the request syncs unsynced data successfully.
 
-    :::image type="content" source="refresh-sql-endpoint-success.png" alt-text="Screenshot of a Success status in the activity Output pop-up.":::
+    :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-success.png" alt-text="Screenshot of a Success status in the activity Output pop-up.":::
 
 - A **NotRun** status in the Output pop-up means that the refresh of the SQL endpoint didn't run. That condition usually means that you didn't add new data since the last sync, so you didn't need to run it.
 
-    :::image type="content" source="refresh-sql-endpoint-not-run.png" alt-text="Screenshot of a NotRun status in the activity Output pop-up.":::
+    :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-not-run.png" alt-text="Screenshot of a NotRun status in the activity Output pop-up.":::
 
 - If the Output pop-up shows the **Failure** status, something went wrong.
 
@@ -115,7 +115,7 @@ If your scenario doesn't require strict transactional consistency at a specific 
 
 - Schedule a refresh every 15 minutes—continuously. Some refresh attempts might fail due to locking, but enough succeed to keep your SQL Endpoint relatively up to date.
 
-:::image type="content" source="refresh-sql-endpoint-schedule.png" alt-text="Screenshot of a recurring Refresh SQL Endpoint schedule configuration.":::
+:::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-schedule.png" alt-text="Screenshot of a recurring Refresh SQL Endpoint schedule configuration.":::
 
 This approach is practical and robust for many analytics workloads.
 
