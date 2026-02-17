@@ -1,34 +1,26 @@
 ---
-title: Optimize Lakehouse Tables With Maintenance Activity
+title: Optimize Lakehouse Tables With Lakehouse Maintenance Activity
 description: Learn how to use the Lakehouse Maintenance activity in Microsoft Fabric pipelines to optimize Delta tables, remove obsolete files, and improve query performance.
-ms.date: 02/11/2026
+ms.date: 02/17/2026
 ms.topic: how-to
 ---
 
-# Optimize and vacuum your lakehouse with the lakehouse maintenance activity
+# Lakehouse maintenance activity
 
-Use the Lakehouse Maintenance activity to perform routine table maintenance on a Lakehouse from a Microsoft Fabric pipeline. This activity helps keep Delta tables performant and cost‑efficient by automating maintenance operations such as Optimize and Vacuum as part of your orchestration workflows.
-
-Use the Lakehouse Maintenance activity in scheduled pipelines that prepare, clean up, or optimize data after ingestion or transformation steps.
-
-## Lakehouse Maintenance activity
-
-The Lakehouse Maintenance activity allows you to run maintenance operations on tables stored in a Fabric Lakehouse. Use it to:
+The Lakehouse Maintenance activity allows you to run maintenance operations on tables stored in a Fabric Lakehouse to prepare, clean up, or optimize data after ingestion or transformation steps. You can:
 
 - Compact small files to improve query performance
 - Remove obsolete files that are no longer needed
 - Schedule regular maintenance as part of a pipeline
 
-Use this activity alongside other pipeline activities, such as Copy, Notebook, or Dataflow activities.
+This helps keep Delta tables performant and cost‑efficient by automating maintenance operations such as Optimize and Vacuum as part of your orchestration workflows. Use this activity alongside other pipeline activities, such as Copy, Notebook, or Dataflow activities. 
 
 ## Prerequisites
 
 To use the Lakehouse Maintenance activity, you must have:
 
 - A tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
-
 - A [workspace](/fabric/fundamentals/create-workspaces) with a [Lakehouse](/fabric/data-engineering/create-lakehouse)
-
 - [Permission to access and modify the Lakehouse](/fabric/data-engineering/lakehouse-sharing#managing-permissions)
 
 ## Add a Lakehouse Maintenance activity to your pipeline by using the UI
@@ -45,11 +37,11 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 
 1. Search for **Lakehouse Maintenance** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
-    :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-activities.png" alt-text="Screenshot of the Lakehouse Maintenance activity in the pipeline Activities pane.":::
+    :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-activities.png" alt-text="Screenshot of the Lakehouse Maintenance activity in the pipeline Activities pane." lightbox="media/lakehouse-maintenance-activity/lakehouse-maintenance-activities.png":::
 
 1. Select the new **Lakehouse Maintenance** activity on the canvas if it isn't already selected.
 
-    :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-canvas.png" alt-text="Screenshot of the Lakehouse Maintenance activity selected on the pipeline canvas.":::
+    :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-canvas.png" alt-text="Screenshot of the Lakehouse Maintenance activity selected on the pipeline canvas." lightbox="media/lakehouse-maintenance-activity/lakehouse-maintenance-canvas.png":::
 
 1. Refer to the [**General** settings](/fabric/data-factory/activity-overview#general-settings) guidance to configure the **General** settings tab.
 
@@ -67,7 +59,7 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 
     The **Table name** is the table you wish to maintain. You can specify multiple tables if desired.
 
-    :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-settings.png" alt-text="Screenshot of the Lakehouse Maintenance activity settings tab.":::
+    :::image type="content" source="media/lakehouse-maintenance-activity/lakehouse-maintenance-settings.png" alt-text="Screenshot of the Lakehouse Maintenance activity settings tab." lightbox="media/lakehouse-maintenance-activity/lakehouse-maintenance-settings.png":::
 
 1. Choose the maintenance operation to perform on the selected tables.
 
@@ -88,13 +80,10 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 
 ## Lakehouse Maintenance activity behavior
 
-The Lakehouse Maintenance activity runs synchronously within the pipeline.
-
-The activity completes only after the maintenance operation finishes.
-
-If maintenance fails for a table, the activity returns a failure status.
-
-You can use pipeline success or failure conditions to control downstream activities.
+- The Lakehouse Maintenance activity runs synchronously within the pipeline.
+- The activity completes only after the maintenance operation finishes.
+- If maintenance fails for a table, the activity returns a failure status.
+- You can use pipeline success or failure conditions to control downstream activities.
 
 ## Common scenarios
 
