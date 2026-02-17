@@ -1,15 +1,11 @@
 ---
-title: Eventhouse and KQL Database consumption
+title: Eventhouse and KQL Database Consumption
 description: Learn how eventhouses and KQL databases consume capacity units in Real-Time Intelligence.
 ms.reviewer: bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-<<<<<<< HEAD
 ms.custom:
 ms.date: 02/12/2026
-=======
-ms.date: 01/08/2026
->>>>>>> 6481ed6e108db5d6cf47f605b5f357d500fa7d3e
 ms.search.form: Eventhouse,KQL Database, Overview
 ---
 # Eventhouse and KQL Database consumption
