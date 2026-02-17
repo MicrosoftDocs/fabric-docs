@@ -1,5 +1,5 @@
 ---
-title: Optimize Lakehouse Tables With Lakehouse Maintenance Activity
+title: Lakehouse Maintenance Activity
 description: Learn how to use the Lakehouse Maintenance activity in Microsoft Fabric pipelines to optimize Delta tables, remove obsolete files, and improve query performance.
 ms.date: 02/17/2026
 ms.topic: how-to
