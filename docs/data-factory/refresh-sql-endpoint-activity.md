@@ -9,11 +9,7 @@ ms.topic: how-to
 
 The Refresh SQL Endpoint activity in Microsoft Fabric pipelines lets you programmatically refresh a Lakehouse SQL endpoint as part of an orchestrated workflow. This approach ensures that downstream consumers—such as Power BI reports, notebooks, or external SQL clients—see the latest data after data preparation or maintenance steps complete.
 
-Use this activity to make SQL endpoints immediately reflect recent updates without relying on manual refreshes or ad-hoc processes.
-
-## When to use the Refresh SQL Endpoint activity
-
-Use this activity when your pipeline:
+Use this activity to make SQL endpoints immediately reflect recent updates without relying on manual refreshes or ad-hoc processes. Use this activity when your pipeline:
 
 - Updates or maintains Lakehouse data (for example, after Copy Jobs, Notebook execution, or Lakehouse maintenance activities).
 - Requires the Lakehouse SQL endpoint to reflect the latest metadata and data changes.
@@ -23,14 +19,14 @@ Use this activity when your pipeline:
 
 Before using this activity, make sure that:
 
-- A tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
-- A Fabric workspace that contains a Lakehouse.
-- A SQL endpoint exists for the Lakehouse.
-- The pipeline identity (user or service principal) has permission to refresh the SQL endpoint.
+- A tenant account with an active subscription. [Create an account for free](/fabric/fundamentals/fabric-trial).
+- A [workspace](/fabric/fundamentals/create-workspaces) with a [Lakehouse](/fabric/data-engineering/create-lakehouse)
+- A [SQL endpoint](/fabric/data-warehouse/data-warehousing#sql-analytics-endpoint-of-the-lakehouse) exists for the Lakehouse.
+- The pipeline identity (user or service principal) has [permission to refresh the SQL endpoint](/fabric/data-engineering/lakehouse-sql-analytics-endpoint#access-control-using-sql-security).
 
 ## Add a Refresh SQL Endpoint activity to your pipeline in the UI
 
-1. Create a new pipeline in your workspace.  
+1. [Create a new pipeline](create-first-pipeline-with-sample-data.md#create-a-pipeline) in your workspace.  
 1. Search for **Refresh SQL Endpoint** in the pipeline **Activities** pane and select it to add it to the pipeline canvas.  
 
     :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-activities.png" alt-text="Screenshot of the Refresh SQL Endpoint activity in the Activities pane." lightbox="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-activities.png":::
@@ -119,10 +115,14 @@ If your scenario doesn't require strict transactional consistency at a specific 
 
 This approach is practical and robust for many analytics workloads.
 
+## Save and run or schedule the pipeline
+
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
+
 ## Known issues
 
-- The Refresh SQL Endpoint activity might intermittently fail when other processes actively update the underlying Lakehouse data. For workarounds, see the section **Why is my SQL Endpoint Refresh failing when underlying data is locked?**
+- The Refresh SQL Endpoint activity might intermittently fail when other processes actively update the underlying Lakehouse data. For workarounds, see the section [Why is my SQL Endpoint Refresh failing when underlying data is locked?](#why-does-my-sql-endpoint-refresh-fail-when-underlying-data-is-locked)
 
 ## Related content
 
-- [Items - Refresh Sql Endpoint Metadata - REST API (SQLEndpoint) \| Microsoft Learn](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata?tabs=HTTP)
+- [Refresh Sql Endpoint Metadata with the REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata?tabs=HTTP)
