@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 02/15/2026
+ms.date: 02/17/2026
 ---
 
 # Enable Eventhouse endpoint for lakehouse and data warehouse
@@ -61,12 +61,14 @@ You can enable the Eventhouse endpoint using any of these three methods:
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-catalog.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the OneLake catalog.":::
 
-### Method 3: From the Lakehouse/Warehouse ribbon
+### Method 3: From the Lakehouse/Warehouse ribbon in the OneLake catalog
 
-1. In the **OneLake catalog**, select your **Lakehouse** or **Warehouse** to open it.
-1. From the toolbar, select **Analyze Data** > **Eventhouse endpoint**.
+1. In the **OneLake catalog**, select your **Lakehouse** or **Warehouse** to open the details.
+1. From the toolbar, select **Analyze Data with** > **Eventhouse endpoint**.
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
+
+### Method 4: From the Analtz
 
 ### Complete the setup
 
