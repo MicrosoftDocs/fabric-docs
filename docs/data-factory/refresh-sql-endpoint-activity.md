@@ -1,5 +1,5 @@
 ---
-title: Refresh SQL Endpoint Activity in Microsoft Fabric Pipelines
+title: Refresh SQL Endpoint Activity
 description: Learn how to use the Refresh SQL Endpoint activity in Microsoft Fabric pipelines to ensure your Lakehouse SQL endpoint reflects the latest data for downstream processes.
 ms.date: 02/17/2026
 ms.topic: how-to
