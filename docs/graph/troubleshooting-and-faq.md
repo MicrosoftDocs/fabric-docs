@@ -3,8 +3,6 @@ title: Troubleshooting Graph in Microsoft Fabric
 description: Learn about troubleshooting Graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 01/26/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ---
 

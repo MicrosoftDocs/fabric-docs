@@ -2,10 +2,7 @@
 title: Table Compaction
 description: Learn about how and why to optimize data files in Delta tables.
 ms.reviewer: milescole
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 09/15/2025
 ms.search.form: lakehouse table maintenance optimize compaction
 ai-usage: ai-assisted

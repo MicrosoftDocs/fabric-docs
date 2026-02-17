@@ -1,14 +1,9 @@
 ---
 title: CI/CD workflow options in Fabric
 description: Learn about different options for building and using deployment pipelines based on customer experiences. 
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 12/15/2025
-ms.custom:
 #customer intent: As a developer, I want to learn how to use deployment pipelines in Fabric so that I can manage my development process efficiently.
 ---
 

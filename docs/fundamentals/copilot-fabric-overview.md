@@ -1,12 +1,11 @@
 ---
 title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
-author: denglishbi
-ms.author: daengli
-ms.reviewer: guptamaya, maghan
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: daengli, guptamaya, maghan
 ms.date: 01/25/2026
 ms.update-cycle: 180-days
-ms.service: fabric
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -172,3 +171,4 @@ In order to use fully conversational agentic AI experiences, the agent needs to 
 - [Copilot for Microsoft Fabric and Power BI: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
+

@@ -1,12 +1,9 @@
 ---
 title: Customize Real-Time Dashboard visuals
 description: Learn how to customize your Real-Time Dashboard visuals.
-ms.author: spelluru
-author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.subservice: rti-dashboard
-ms.custom:
 ms.date: 11/19/2024
 ---
 

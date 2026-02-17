@@ -1,8 +1,6 @@
 ---
 title: Ingest Data into Your Warehouse Using Transact-SQL
 description: Follow steps to ingest data into a Warehouse table using Transact-SQL
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha, jovanpop
 ms.date: 12/05/2025
 ms.topic: how-to

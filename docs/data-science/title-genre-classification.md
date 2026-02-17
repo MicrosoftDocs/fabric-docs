@@ -1,14 +1,11 @@
-﻿---
+---
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: None
+ms.reviewer: lagayhar
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 04/16/2025
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
-reviewer: s-polly
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
@@ -482,3 +479,4 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

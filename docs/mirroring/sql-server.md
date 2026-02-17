@@ -1,10 +1,9 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From SQL Server"
 description: Learn about the mirrored databases From SQL Server in Microsoft Fabric.
-ms.reviewer: ajayj, rajpo, twright, wiassaf
+ms.reviewer: ajayj, rajpo, twright
 ms.date: 11/05/2025
 ms.topic: concept-article
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -94,3 +93,4 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 - [Limitations in Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-limitations.md)
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
 - [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md)
+

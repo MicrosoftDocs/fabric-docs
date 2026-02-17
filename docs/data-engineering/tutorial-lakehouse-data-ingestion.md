@@ -2,11 +2,10 @@
 title: Lakehouse tutorial - Ingest data into the lakehouse
 description: In this tutorial, you ingest more dimensions and fact tables from the Wide World Importers (WWI) into the lakehouse.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 02/11/2026
+ms.date: 02/14/2026
+ai-usage: ai-assisted
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse

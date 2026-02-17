@@ -1,8 +1,7 @@
 ---
 title: User data functions with Cosmos DB Database in Fabric
 description: How to build user data functions for Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 10/31/2025
 ---
@@ -165,3 +164,4 @@ Next we will create a new function. In this example we will modify the `hello_fa
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+

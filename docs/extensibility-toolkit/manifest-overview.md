@@ -1,10 +1,8 @@
 ---
 title: Manifest overview
 description: Describes the Manifest and its purpose.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ---
 

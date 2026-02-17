@@ -1,9 +1,9 @@
 ---
 title: Cross-Tenant Access (CTA) for Providers
 description: What is cross-tenant access for providers?
-author: meenalsri
-ms.author: mesrivas
-ms.reviewer: juliacawthra, prlangad, wiassaf
+author: dknappettmsft
+ms.author: daknappe
+ms.reviewer: mesrivas, prlangad, wiassaf
 ms.topic: concept-article
 ms.date: 07/21/2025
 ---
@@ -254,4 +254,5 @@ Permitted users from the provider tenant can call this API to get the SQL connec
  - In certain circumstances, guest principals may not be able to access cross-tenant warehouse items for several hours after the guest principal is configured for cross-tenant access.
 
  - If cross-tenant mapping exceeds a 113 character limit, authentication to the warehouse does not succeed. This is due to [Self-service password reset policies in Microsoft Entra ID](/entra/identity/authentication/concept-sspr-policy#password-policies-that-only-apply-to-cloud-user-accounts).
+
 

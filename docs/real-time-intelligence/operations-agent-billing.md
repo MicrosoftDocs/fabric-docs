@@ -1,11 +1,8 @@
 ---
 title: Operations Agent Capacity and Billing
 description: Learn about the capacity and billing of operations agents in Real-Time Intelligence.
-ms.reviewer: willthom
-author: hzargari-ms
-ms.author: v-hzargari
+ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.custom:
 ms.date: 12/10/2025
 ms.search.form: Operations Agent Billing
 ---

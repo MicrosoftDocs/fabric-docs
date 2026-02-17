@@ -1,8 +1,6 @@
 ---
 title: Secure Your Fabric Data Warehouse
 description: Learn more about securing your warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: chweb, fresantos
 ms.date: 10/15/2025
 ms.topic: concept-article

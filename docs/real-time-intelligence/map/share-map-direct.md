@@ -1,11 +1,8 @@
 ---
 title: How to share a map using Direct access and share link
 description: Learn how to share a map using Direct access and share link in Microsoft Fabric Real-Time Intelligence.
-ms.reviewer: smunk
-author: sinnypan
-ms.author: sipa
+ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Map
 ---
@@ -85,3 +82,4 @@ To learn more, please see:
 
 > [!div class="nextstepaction"]
 > [How to share a map using org apps](share-map-org-apps.md)
+

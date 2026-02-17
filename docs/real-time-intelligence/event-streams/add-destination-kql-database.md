@@ -1,9 +1,7 @@
 ---
 title: Add an Eventhouse destination to an eventstream
 description: Learn how to add an Eventhouse destination to an eventstream in Microsoft Fabric event streams.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/05/2025
@@ -149,3 +147,5 @@ With this update, you can now:
 ## Related content
 
 To learn how to add other destinations to an eventstream, see the following article: [Route events to destinations](add-manage-eventstream-destinations.md)
+
+

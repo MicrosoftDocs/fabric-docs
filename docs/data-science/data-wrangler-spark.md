@@ -4,7 +4,6 @@ description: Learn how to explore and transform Spark DataFrames with Data Wrang
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: erenorbey
-reviewer: orbey
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/29/2025

@@ -1,10 +1,7 @@
 ---
 title: Use ai.extract with PySpark
 description: Learn how to scan input text and extract information by using the ai.extract function with PySpark.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

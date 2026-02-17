@@ -2,10 +2,7 @@
 title: Get data from file
 description: Learn how to get data from a local file in a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.subservice: rti-eventhouse
 ms.date: 01/21/2026
 ms.search.form: Get data in a KQL Database

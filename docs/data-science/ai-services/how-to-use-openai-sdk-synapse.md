@@ -1,12 +1,8 @@
-﻿---
+---
 title: Use Azure OpenAI with Python SDK
 description: How to use prebuilt Azure OpenAI in Fabric with Python library
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: lagayhar, ruxu
 ms.topic: how-to
-ms.custom: 
 ms.date: 05/07/2025
 ms.update-cycle: 180-days
 ms.search.form: 
@@ -248,3 +244,4 @@ display(embedding.transform(df))
 - [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
 - [Use prebuilt Azure OpenAI in Fabric with SynapseML and Python SDK](how-to-use-openai-sdk-synapse.md)
+

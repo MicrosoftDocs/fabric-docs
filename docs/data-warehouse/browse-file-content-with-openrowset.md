@@ -1,8 +1,6 @@
 ---
 title: "Browse File Content Before Ingestion with the OPENROWSET function"
 description: Learn how to browse the contents of files and discover their schema using the OPENROWSET function before ingesting them into a Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop
 ms.date: 09/08/2025
 ms.topic: how-to

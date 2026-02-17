@@ -1,12 +1,8 @@
 ---
 title: SQL Analytics Endpoint Performance Considerations
 description: Learn more about performance considerations for the SQL analytics endpoint of a lakehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha, anphil, maprycem, amasingh
 ms.date: 01/23/2026
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ai-usage: ai-assisted

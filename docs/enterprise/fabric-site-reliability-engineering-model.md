@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric site reliability engineering (SRE) model
 description: Learn about the Microsoft Fabric site reliability engineering (SRE) model.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
 ms.date: 01/29/2025
 ---

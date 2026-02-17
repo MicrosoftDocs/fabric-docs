@@ -1,12 +1,9 @@
-﻿---
+---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: ruxu
-reviewer: ruixinxu
+ms.reviewer: lagayhar, ruxu
 ms.topic: overview
-ms.custom: 
+ms.custom:
   - references_regions
 ms.date: 12/23/2025
 ms.update-cycle: 180-days
@@ -141,3 +138,4 @@ According to [Spark compute usage reporting](../../data-engineering/billing-capa
 
 ## Related content
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
+

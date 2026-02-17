@@ -1,11 +1,8 @@
 ---
 title: How to share a map in Microsoft Fabric org apps
 description: Learn how to share a map in Microsoft Fabric org apps.
-ms.reviewer: smunk
-author: deniseatmicrosoft
-ms.author: limingchen
+ms.reviewer: smunk, limingchen
 ms.topic: how-to
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Map
 ---
@@ -55,3 +52,4 @@ For more information about sharing maps in Fabric Maps, see [Sharing Microsoft F
 
 - When sharing via org apps, always verify recipients have access to all underlying data sources. If recipients lack permissions for underlying data sources, they could encounter access errors
 - Monitor for future updates as additions and improvements to features are released.
+

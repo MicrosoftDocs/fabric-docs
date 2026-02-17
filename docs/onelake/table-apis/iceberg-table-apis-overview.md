@@ -2,8 +2,6 @@
 title: "OneLake table APIs for Iceberg"
 description: "Overview of the OneLake REST API endpoint for Apache Iceberg REST Catalog (IRC) APIs in Microsoft Fabric."
 ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
 ms.date: 10/01/2025
 ms.topic: concept-article
 #customer intent: As a OneLake user, I want to learn what the Iceberg table APIs are, what operations they support, and any current limitations or considerations, so that I can understand how to interact with my Fabric data using the Iceberg REST Catalog standard.
@@ -95,3 +93,4 @@ The use of the OneLake table APIs for Iceberg is subject to the following limita
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
 - See [detailed guidance and API details](./iceberg-table-apis-get-started.md).
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
+

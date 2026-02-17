@@ -1,8 +1,6 @@
 ---
 title: 'Quickstart Create a Cosmos DB Database'
 description: Get started quickly with Cosmos DB in Microsoft Fabric by creating a new instance in the Microsoft Fabric portal.
-author: seesharprun
-ms.author: sidandrews
 ms.topic: quickstart
 ms.date: 07/29/2025
 ms.search.form: Databases Get Started,Get Started with Cosmos DB

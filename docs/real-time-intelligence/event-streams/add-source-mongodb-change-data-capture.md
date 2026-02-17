@@ -1,9 +1,7 @@
 ---
 title: Add MongoDB CDC source to an eventstream
 description: Learn how to add MongoDB CDC source to an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/22/2025
@@ -88,3 +86,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

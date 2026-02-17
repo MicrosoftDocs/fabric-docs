@@ -1,9 +1,7 @@
 ---
 title: Configure settings for a Fabric eventstream
 description: This article describes how to configure sensitivity label, endorsement, retention, and throughput settings for an eventstream. 
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 03/18/2024
 ms.search.form: Eventstreams Overview
@@ -110,3 +108,5 @@ On the **Sensitivity label** tab of the **Settings** page, you can specify the s
 
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
+
+

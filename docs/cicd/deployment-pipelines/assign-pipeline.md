@@ -1,13 +1,8 @@
 ---
 title: Assign a workspace to a deployment pipeline
 description: Learn how to assign and unassign a workspace to a deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool.
-author: billmath
-ms.author: billmath
 ms.reviewer: leebenjamin
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ms.search.form: Deployment pipelines operations
 #customer intent: As a developer, I want to learn how to assign a workspace to a deployment pipeline so that I can manage my development process efficiently.

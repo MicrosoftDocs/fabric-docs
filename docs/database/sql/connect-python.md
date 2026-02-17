@@ -1,8 +1,6 @@
 ---
 title: "Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server"
 description: This quickstart describes connect to your SQL database in Fabric using mssql-python and generating a streamlit report in Python.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, drskwier
 ms.date: 12/29/2025
 ms.topic: quickstart-sdk
