@@ -75,6 +75,7 @@ Control activity | Description
 [Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
 [KQL activity](kql-activity.md) | Executes a KQL script against a Kusto instance.
 [Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL endpoint to reflect the latest data.
 [Set Variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
 [Teams activity](teams-activity.md) | Posts a message in a Teams channel or group chat.
