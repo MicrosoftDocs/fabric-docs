@@ -119,5 +119,4 @@ To edit an existing relationship, select any created relationship line in the di
 ## Related content
 
 - [Direct Lake overview](../fundamentals/direct-lake-overview.md)
-- [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)  
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)  

@@ -129,6 +129,58 @@ A Direct Lake model might exist in the same workspace as the source artifact or 
 
 Git integration enables developers to integrate their application lifecycle management (ALM) processes into the Fabric platform. The Git repository preserves the workspace structure, including all supported artifacts. Developers have full visibility to the metadata of all their items in the Git repository. Direct Lake model metadata lets them see that secured tables or columns exist even if they don't have access to the target data source in another workspace. For more information, see [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md)
 
+## How queries are evaluated
+
+The [reason to develop Direct Lake semantic models](../fundamentals/direct-lake-overview.md#when-should-you-use-direct-lake-storage-mode) is to achieve high performance queries over large volumes of data in OneLake. Therefore, you should strive to design a solution that maximizes the chances of in-memory querying.
+
+The following steps approximate how queries are evaluated (and whether they fail). The benefits of Direct Lake storage mode are only possible when the fifth step is achieved.
+
+1. If the query contains any table or column that's restricted by semantic model OLS, an error result is returned (report visuals fail to render).
+1. If the query contains any column that's restricted by SQL analytics endpoint CLS (or the table is denied), an error result is returned (report visuals fail to render).
+    1. If the cloud connection uses SSO (default), CLS is determined by the access level of the report consumer.
+    1. If the cloud connection uses a fixed identity, CLS is determined by the access level of the fixed identity.
+1. If the semantic model uses Direct Lake on SQL endpoints and the query contains any table in the SQL analytics endpoint that enforces RLS or a view is used, the query falls back to DirectQuery mode.
+    1. If the cloud connection uses SSO (default), RLS is determined by the access level of the report consumer.
+    1. If the cloud connection uses a fixed identity, RLS is determined by the access level of the fixed identity.
+1. If the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), it falls back to DirectQuery mode.
+1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](../fundamentals/direct-lake-overview.md#column-loading-transcoding) as and when it's required.
+
+> [!IMPORTANT]
+> Direct Lake on OneLake does not support fallback to DirectQuery mode. If any table in the SQL analytics endpoint enforces RLS or the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), an error result is returned (report visuals fail to render).
+
+## Data-access rule options
+
+You can set up data-access rules in:
+
+- The semantic model.
+- The SQL analytics endpoint (Direct Lake on SQL endpoints only).
+- In OneLake Security.
+
+### Rules in the semantic model
+
+If you must enforce data-access rules, you should do so in OneLake Security so that the rules apply across all compute engines and ensures unified access control for users. Use semantic model RLS/OLS when report consumers aren't granted permission to query the lakehouse or warehouse and the cloud connection uses a fixed identity instead of SSO. SSO would imply that end users can access the data source directly and might therefore bypass security rules in the semantic model.
+
+> [!IMPORTANT]
+> Semantic model item permissions can be [set explicitly](/power-bi/connect-data/service-datasets-manage-access-permissions) via [Power BI apps](/power-bi/consumer/end-user-apps), or [acquired implicitly](/power-bi/connect-data/service-datasets-permissions#permissions-acquired-implicitly-via-workspace-role) via workspace roles.
+>
+> Notably, semantic model data-access rules are not enforced for users who have _Write_ permission on the semantic model. Conversely, data-access rules do apply to users who are assigned to the _Viewer_ workspace role. However, users assigned to the _Admin_, _Member_, or _Contributor_ workspace role implicitly have _Write_ permission on the semantic model and so data-access rules are not enforced. For more information, see [Roles in workspaces](/power-bi/collaborate-share/service-roles-new-workspaces).
+
+### Rules at multiple layers
+
+Data-access rules can be enforced at all layers. However, this approach involves extra complexity and management overhead. In this case, it's recommended that the cloud connection uses a fixed identity instead of SSO.
+
+### Comparison of data-access rule options
+
+The following table compares data-access setup options for Direct Lake on SQL endpoints and Direct Lake on OneLake.
+
+| Apply data-access rules to | Direct Lake on SQL | Direct Lake on OneLake | Comment |
+| --- | --- | --- | --- |
+| Semantic model only | Supported | Supported | Use this option when users aren't granted item permissions to query the lakehouse or warehouse. Set up the cloud connection to use a fixed identity. High query performance can be achieved from the in-memory cache. |
+| SQL analytics endpoint only | Supported (falls back to DirectQuery) | Not applicable | Use this option when users need to access data from either the warehouse or the semantic model, and with consistent data-access rules. Ensure SSO is enabled for the cloud connection. Query performance might be slow due to DirectQuery fallback. |
+| OneLake Security only | Not applicable | Supported | Use this option for unified access control across all Fabric compute engines. OneLake Security enforces OLS and RLS consistently for all users accessing the data through any path. High query performance can be achieved from the in-memory cache. |
+| Multiple layers (semantic model and SQL endpoint) | Supported | Not applicable | This option involves extra management overhead. Set up the cloud connection to use a fixed identity. |
+| Multiple layers (semantic model and OneLake Security) | Not applicable | Supported | OneLake Security rules are applied first, then semantic model rules. Consider consolidating rules at one layer to reduce complexity. |
+
 ## Considerations and limitations
 
 Consider these Direct Lake security limitations.

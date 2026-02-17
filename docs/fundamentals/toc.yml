@@ -78,10 +78,10 @@ items:
   items:
   - name: Understand Direct Lake
     href: direct-lake-overview.md
+  - name: How Direct Lake works
+    href: direct-lake-how-it-works.md
   - name: Understand Direct Lake query performance
     href: direct-lake-understand-storage.md
-  - name: Create a lakehouse for Direct Lake
-    href: direct-lake-create-lakehouse.md
   - name: Develop Direct Lake models
     href: direct-lake-develop.md
   - name: Integrate Direct Lake security
