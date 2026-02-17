@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Synapse Analytic
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 02/27/2024
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

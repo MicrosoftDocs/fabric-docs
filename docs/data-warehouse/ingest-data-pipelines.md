@@ -1,8 +1,6 @@
 ---
 title: Ingest Data into Your Warehouse Using Pipelines
 description: Follow steps to ingest data into a Warehouse with a copy job in Data Factory pipelines in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 12/16/2025
 ms.topic: how-to

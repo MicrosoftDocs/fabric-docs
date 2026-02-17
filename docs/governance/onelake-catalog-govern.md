@@ -6,7 +6,6 @@ ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 11/12/2025
-ms.custom:
 #customer intent: As a Fabric admin, I would like to gain visibility on my organization governance state and improve it in one central place. As data owner, I want to learn about OneLake catalog's Govern tab and use its capabilities to get insights about and govern the data in Fabric that I own.
 ---
 # Govern Fabric data

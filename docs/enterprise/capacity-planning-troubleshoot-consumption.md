@@ -1,11 +1,10 @@
 ---
 title: Troubleshooting guide - Monitor and identify capacity usage
 description: Learn how to proactively identify the top Capacity Unit (CU) consuming items on a Microsoft Fabric capacity using the Microsoft Fabric Capacity Metrics app. This guide helps capacity administrators monitor and optimize capacity usage before performance issues or throttling occur.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
-ms.custom:
 ms.date: 07/03/2025
 ---
 

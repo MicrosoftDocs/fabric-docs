@@ -1,8 +1,7 @@
 ---
 title: Indexing policies in Cosmos DB Database
 description: Use custom indexing policies to fine tune the performance of Cosmos DB in Microsoft Fabric to better match your application workloads.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/30/2025
 ---
@@ -612,3 +611,4 @@ For scenarios where no property path needs to be indexed, but TTL is required, y
 
 - [Review indexing conceptually in Cosmos DB in Microsoft Fabric](indexing.md)
 - [Customize an indexing policy for a container in Cosmos DB in Microsoft Fabric](how-to-customize-indexing-policy.md)
+

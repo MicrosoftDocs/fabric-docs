@@ -1,8 +1,6 @@
 ---
 title: Include file for refreshing graph model
 description: Include file for note about refreshing the graph model in an ontology (preview) item.
-author: baanders
-ms.author: baanders
 ms.topic: include
 ms.date: 10/09/2025
 ---

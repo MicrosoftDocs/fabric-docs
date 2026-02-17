@@ -1,8 +1,7 @@
 ---
 title: Mirror OneLake in Cosmos DB Database
 description: Learn how data is automatically mirrored from Cosmos DB database in Microsoft Fabric to OneLake.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 11/03/2025
 ms.search.form: Databases replication to OneLake,Integrate Cosmos DB with other services
@@ -163,3 +162,4 @@ Observe the results of the query in the query editor:
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
 - [Review limitations of Cosmos DB in Microsoft Fabric](limitations.md)
+

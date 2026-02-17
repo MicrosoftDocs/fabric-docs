@@ -1,11 +1,8 @@
 ---
 title: Security best practices
 description: Best practices for securing your data in OneLake including least privilege access, workload permissions, and user permissions.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: eloldag, aamerril
 ms.topic: concept-article
-ms.custom:
 ms.date: 09/05/2025
 ai-usage: ai-assisted
 #customer intent: As a security engineer, I want to learn best practices for securing my data in OneLake, including least privilege access, workload permissions, and user permissions, so that I can effectively protect my data and reduce security risks.
@@ -57,3 +54,4 @@ The core principle is to centralize data ownership and security enforcement in a
 - [Fabric security overview](../../security/security-overview.md)
 - [OneLake security overview](./get-started-onelake-security.md)
 - [Data access control model](./data-access-control-model.md)
+

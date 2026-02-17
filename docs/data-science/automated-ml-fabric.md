@@ -2,11 +2,9 @@
 title: Automated ML in Fabric
 description: Overview of Automated ML in Fabric
 ms.topic: overview
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.date: 11/18/2024
-reviewer: midesa
 ms.reviewer: midesa
 ---
 

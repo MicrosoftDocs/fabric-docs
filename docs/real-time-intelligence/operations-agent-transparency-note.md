@@ -1,11 +1,8 @@
 ---
 title: Operations Agent Transparency Note
 description: Understand the transparency measures in place for operations agents in Real-Time Intelligence.
-ms.reviewer: willthom
-author: hzargari-ms
-ms.author: v-hzargari
+ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.custom:
 ms.date: 11/24/2025
 ms.search.form: Operations Agent Transparency Note
 ---

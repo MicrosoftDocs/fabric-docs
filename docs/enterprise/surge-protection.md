@@ -1,10 +1,9 @@
 ---
 title: Surge protection
 description: Surge protection helps limit overuse of your capacity by setting a limit on the total background compute consumption.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: pankar
-ms.service: fabric
 ms.topic: how-to
 ms.date: 02/02/2026
 ---

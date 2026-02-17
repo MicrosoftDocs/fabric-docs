@@ -1,8 +1,6 @@
 ---
 title: Microsoft Fabric and GitHub Enterprise Cloud with data residency support
 description: Learn Microsoft Fabric supports GitHub for data residency
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 05/11/2025

@@ -1,10 +1,7 @@
-﻿---
+---
 title: Model scoring with PREDICT
 description: Learn how to operationalize machine learning models in Fabric with a scalable function called PREDICT.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: erenorbey
-reviewer: orbey
+ms.reviewer: lagayhar, erenorbey
 ms.topic: how-to
 ms.date: 11/19/2024
 ms.search.form: Predict
@@ -239,3 +236,4 @@ df.write.format('delta').mode("overwrite").save(
 
 - [End-to-end prediction example using a fraud detection model](fraud-detection.md)
 - [How to train ML models with scikit-learn in Microsoft Fabric](train-models-scikit-learn.md)
+

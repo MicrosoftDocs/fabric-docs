@@ -1,13 +1,10 @@
 ---
 title: Configure autotune for Apache Spark
 description: Learn how autotune automatically adjusts Apache Spark configurations, minimizing workload execution time and optimizing performance.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.date: 07/18/2025
-# customer intent: As a Microsoft Fabric user I want to learn how to use autotune to automatically ajust Apache Spark configurataions.
+#customer intent: As a Microsoft Fabric user I want to learn how to use autotune to automatically ajust Apache Spark configurataions.
 ---
 
 # What is autotune for Apache Spark configurations in Fabric?
@@ -186,3 +183,4 @@ User data is exclusively used to enhance your workload's performance, with robus
 ### Related content
 
 - [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md)
+

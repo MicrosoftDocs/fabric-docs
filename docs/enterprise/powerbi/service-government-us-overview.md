@@ -1,8 +1,8 @@
 ﻿---
 title: Power BI for US Government Customers
 description: "Learn how US government customers can add Power BI to their Microsoft 365 government plan. Sign up, connect to GCC, GCC High, or DoD environments, and review feature availability."
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: dodruker; jonp
 ms.service: powerbi
 ms.subservice: powerbi-admin

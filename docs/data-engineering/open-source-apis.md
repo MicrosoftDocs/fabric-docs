@@ -1,8 +1,6 @@
 ---
 title:  Get Spark application details using Apache Spark Open-Source APIs.
 description: Learn more on how to retrieve Spark application details.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 03/31/2025

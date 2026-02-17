@@ -1,10 +1,7 @@
 ---
 title: "Source Control, CI/CD, and ALM for Fabric Data Agent (Preview)"
 description: "Learn how to use source control, CI/CD, and ALM with Microsoft Fabric data agent."
-ms.author: amjafari
-author: amjafari
 ms.reviewer: amjafari
-reviewer: amjafari
 ms.topic: concept-article
 ms.date: 08/8/2025
 ---
@@ -186,3 +183,4 @@ This approach supports both the functional requirement of enabling consumption a
 - [Get started with Git integration](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops)
 - [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
+

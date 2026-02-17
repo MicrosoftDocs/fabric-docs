@@ -13,6 +13,9 @@ ms.custom:
 
 Current limitations in the [Microsoft Fabric mirrored databases](../mirroring/overview.md) from Azure SQL Managed Instance are listed in this page. This page is subject to change.
 
+- Mirroring for SQL managed instances using the 2022 update policy uses the Change Data Capture (CDC) feature.
+- Mirroring for SQL managed instances using the 2025 or Always-up-to-date update policies uses the Fabric mirroring change feed feature.
+
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)

@@ -1,10 +1,8 @@
 ---
 title: How to create trial experience
 description: Learn how to create trial experiences for your Fabric items using ribbon actions aligned with Fabric templates patterns.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

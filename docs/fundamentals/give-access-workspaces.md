@@ -5,7 +5,6 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: 
 ms.topic: how-to
-ms.custom: 
 ms.date: 06/10/2025
 ---
 # Give users access to workspaces

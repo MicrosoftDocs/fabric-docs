@@ -1,9 +1,6 @@
 ---
 title: Upload and manage a workload
 description: Learn how to deploy and manage a workload solution in Microsoft Fabric to improve performance and user engagement.
-author: KesemSharabi
-ms.author: kesharab
-ms.service: fabric
 ms.topic: how-to
 ms.date: 05/21/2024
 
@@ -101,3 +98,4 @@ To deactivate a workload:
 ## Related content
 
 * [Quickstart: Run a workload sample](quickstart-sample.md)
+

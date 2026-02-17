@@ -959,6 +959,8 @@
                 href: default-destination.md
           - name: Authoring tools
             items:
+              - name: Machine learning model in Dataflow Gen2
+                href: dataflow-gen2-machine-learning-model-endpoints.md
               - name: AI Functions in Dataflow Gen2 (Preview)
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
@@ -1171,6 +1173,8 @@
         href: pipeline-rest-api-capabilities.md
       - name: Tutorials
         items:
+          - name: Set service principal as pipeline owner
+            href: set-pipeline-owner-tutorial.md
           - name: Run a Script activity and send output by email
             href: script-activity-email-output.md
           - name: Use AI to turn sketches into pipelines

@@ -2,8 +2,6 @@
 title: Configure Autoscale Billing for Spark in Microsoft Fabric
 description: Learn how to enable Autoscale Billing for Apache Spark workloads in Microsoft Fabric and configure maximum capacity units.
 ms.reviewer: saravi
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom:
   - fabcon-2025

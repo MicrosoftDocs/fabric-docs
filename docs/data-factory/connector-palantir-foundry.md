@@ -24,13 +24,11 @@ The Palantir Foundry connector supports the following authentication types for c
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Palantir Foundry. The following links provide the specific Power Query connector information you need to connect to Palantir Foundry in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Palantir Foundry using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Palantir Foundry connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Palantir Foundry prerequisites](/power-query/connectors/palantir-foundry-datasets#prerequisites) before connecting to the Palantir Foundry connector.
-- To connect to the Palantir Foundry connector from Power Query, go to [Connect to Palantir Foundry from Power Query Online](/power-query/connectors/palantir-foundry-datasets#connect-to-palantir-foundry-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Palantir Foundry prerequisites](/power-query/connectors/palantir-foundry-datasets#prerequisites).
+1. [Connect to Palantir Foundry (from Power Query Online)](/power-query/connectors/palantir-foundry-datasets#connect-to-palantir-foundry-from-power-query-online).
 
 ## Set up your connection in a pipeline
 

@@ -179,7 +179,7 @@ Learn more: [Admin portal](../admin/admin-center.md) • [Microsoft Purview hub 
 
 ## Manage your account, notifications, and feedback
 
-- Account manager (profile photo): View license info, trial status, organizational context
+- Account manager (profile photo): View Workspace type, trial status, organizational context
 - Notifications: Alerts, system messages, subscriptions
 - Feedback: Send product feedback to Microsoft
 - Settings: Open the settings pane

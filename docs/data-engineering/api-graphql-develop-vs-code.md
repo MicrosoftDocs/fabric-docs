@@ -1,9 +1,6 @@
 ---
 title: Develop GraphQL Applications in Visual Studio Code
 description: Learn how to develop GraphQL applications in Visual Studio Code using local development tools including autocompletion, code generation, and IntelliSense.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: freshness-kr
 ms.search.form: Develop GraphQL Applications on VS Code

@@ -1,7 +1,7 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn about the mirrored databases from Azure SQL Managed Instance in Microsoft Fabric.
-ms.reviewer: lazartimotic, jingwang, nzagorac
+ms.reviewer: lazartimotic, jingwang, nzagorac, wiassaf
 ms.date: 05/08/2025
 ms.topic: concept-article
 ms.search.form: Fabric Mirroring

@@ -2,8 +2,6 @@
 title: Migrate Hive Metastore metadata
 description: Learn about your different options for migrating Hive Metastore metadata from Azure Synapse Spark to Microsoft Fabric.
 ms.reviewer: aimurg
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom:
   - fabric-cat

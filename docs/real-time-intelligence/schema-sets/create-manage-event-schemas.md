@@ -1,11 +1,7 @@
 ---
 title: Create and Manage Event Schemas in Fabric Schema Sets
-ms.service: fabric
-ms.reviewer: spelluru
 description: Learn how to create, update, and manage event schemas in Fabric Schema Sets for seamless data organization and efficient schema management.
 #customer intent: As a user, I want to learn how to add a schema to a schema set.
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom:
   - ai-gen-docs-bap
@@ -152,3 +148,4 @@ You can see the history of creation and update of the schema in the **History** 
 ## Related content
 
 To learn how to use schemas in Fabric eventstreams, see [Use schemas in eventstreams](use-event-schemas.md).
+
