@@ -64,14 +64,14 @@ Using connection reference variables involves two layers of permissions:
 
 #### Permission validation
 Permission validation is triggered by two different use-cases:
+
 	- UI-based creation and editing of connection reference variables
 	- Non-UI updates such as (API update, import through Git or Deployment pipelines)
 
 So what this means is:
 
- - When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions (similar to all to the connection being referenced. 
- 
-- Attempting to edit an existing connection reference in the active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
+ - When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions to the connection being referenced. 
+ - Attempting to edit an existing connection reference in the active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
 		
 You can view connection reference additional details in the Variable library page (UI only) Users with access to the Variable library (WS viewer or higher) who lack permissions for the connection in the referenced connection variable, won't see their details in the UI. Instead, they'll see the connection ID accompanied by a hover message, rather than the details component.
 
