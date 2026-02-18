@@ -6,7 +6,7 @@ ms.author: mimart
 ms.topic: reference
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
-ms.date: 01/30/2026
+ms.date: 02/17/2026
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -35,7 +35,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Users can create Maps (preview)|Users can build map items to analyze live geospatial data with interactive, real-time visualizations, helping uncover location-based insights.|
 |Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity's geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity's geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
 |All Power BI users can see "Set alert" button to create Fabric Activator alerts|When enabled, all Power BI users will see the "Set alert" button in reports. However, only users with permission to create Fabric items can actually set up Fabric Activator alerts, which send real-time notifications based on predefined data conditions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2331953)|
-|Enable Snowflake database item (preview)|Turn on this setting to allow users to create the Snowflake database item in Fabric, to serve as a default storage location for Iceberg tables written by Snowflake.  [Learn More](https://aka.ms/sdbfabricdoc)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -110,6 +109,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Allow DirectQuery connections to Power BI semantic models](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-semantic-models)|DirectQuery connections allow users to make changes to existing semantic models or use them to build new ones.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2179788)|
 |[Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants)|Authorized guest users can discover semantic models shared with them in the OneLake data hub (in Power BI Desktop), and then work with these semantic models in their own Power BI tenants.|
 |[Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing)|Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own Power BI tenants.|
+|Enforce multi-factor authentication on access requests from outside the organization|Multi-factor authentication is required for people outside your organization to access content from your Fabric tenant. This setting governs access to the SQL endpoints of Fabric data warehouses. [Learn More](https://go.microsoft.com/fwlink/?linkid=2340946)|
 
 ## [Discovery settings](service-admin-portal-discovery.md)
 
@@ -308,7 +308,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Use short-lived user-delegated SAS tokens|OneLake SAS tokens enable applications to access data in OneLake through short-lived SAS tokens, based on a Microsoft Fabric user's Entra identity. These token's permissions can be further limited to provide least privileged access and cannot exceed a lifetime of one hour.   [Learn More](https://go.microsoft.com/fwlink/?linkid=2268260)|
 |Authenticate with OneLake user-delegated SAS tokens|Allow applications to authenticate using a OneLake SAS token. Fabric users can create OneLake SAS by requesting a user delegation key. The tenant setting, Use short-lived user delegated SAS tokens, must be turned on to generate user delegation keys. The lifetimes of the user delegation keys and SAS tokens cannot exceed one hour.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268260)|
 |[Users can sync data in OneLake with the OneLake File Explorer app](../onelake/onelake-file-explorer.md)|Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive. [Learn More](https://go.microsoft.com/fwlink/?linkid=2231052)|
-|[Enable Delta Lake to Apache Iceberg table format virtualization (preview)](../onelake/onelake-iceberg-tables.md)|Delta Lake tables will be virtually converted to have additional Iceberg table metadata. This allows different services/workloads to read your Delta Lake tables as Iceberg tables.<br><br>Note: This setting controls a feature that is currently in preview. This setting will be removed in a future update when the feature is no longer in preview.|
 |Include end-user identifiers in OneLake diagnostic logs|Control whether OneLake diagnostic logs capture end user identifiable information (EUII), such as email addresses and IP addresses. When enabled, these fields are recorded to support diagnostics, investigations, and usage analysis across your tenant. When disabled, these fields are redacted from new events.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2335502)|
 
 ## [Git integration](git-integration-admin-settings.md)
