@@ -1,8 +1,6 @@
 ---
 title: Statistics
 description: Learn how to use the statistics features in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: emtehran
 ms.date: 12/10/2025
 ms.topic: concept-article

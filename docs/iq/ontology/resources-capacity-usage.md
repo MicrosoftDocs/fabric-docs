@@ -1,9 +1,6 @@
 ---
 title: Billing and capacity usage
 description: Learn how ontology (preview) capacity usage is billed and reported.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 01/27/2026
 ms.topic: concept-article
 ms.search.form: Ontology Billing
@@ -86,3 +83,4 @@ Consider the following factors that could potentially affect cost:
 ### Subject to changes in Microsoft Fabric workload consumption rate
 
 Consumption rates are subject to change at any time. Microsoft provides notice of changes through email and in-product notifications. Changes are effective on the date stated in the release notes and the Microsoft Fabric blog.
+

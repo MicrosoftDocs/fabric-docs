@@ -1,10 +1,7 @@
 ---
 title: Include file for Git integration limitations
 description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
-author: billmath
-ms.author: billmath
 ms.topic: include
-ms.custom: 
 ms.date: 12/16/2025
 ---
 

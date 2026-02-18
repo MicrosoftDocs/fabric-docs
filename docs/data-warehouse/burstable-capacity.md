@@ -1,8 +1,6 @@
 ---
 title: Burstable Capacity
 description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric data warehousing.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: stevehow
 ms.date: 04/06/2025
 ms.topic: concept-article

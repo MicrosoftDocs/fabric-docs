@@ -2,8 +2,6 @@
 title: NotebookUtils (former MSSparkUtils) for Fabric
 description: Use NotebookUtils, a built-in package for Fabric Notebook, to work with file systems, modularize and chain notebooks together, manage data engineering items, and work with credentials.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
@@ -1017,3 +1015,4 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)
+

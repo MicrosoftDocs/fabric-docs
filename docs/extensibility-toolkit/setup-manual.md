@@ -1,10 +1,8 @@
 ---
 title: Manual Step by step guid to configure the development environment
 description: This article helps you to set up a development environment manually
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: tutorial
-ms.custom:
 ms.date: 12/15/2025
 ---
 

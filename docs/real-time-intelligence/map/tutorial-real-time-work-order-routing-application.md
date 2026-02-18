@@ -1,11 +1,8 @@
 ---
 title: Build a real-time work order routing app with Microsoft Fabric Maps
 description: Learn how to create a map in Real-Time Intelligence based on customer orders that creates an optimized route.
-ms.reviewer: smunk
-author: FarazGIS
-ms.author: fsiddiqui
+ms.reviewer: smunk, fsiddiqui
 ms.topic: tutorial
-ms.custom:
 ms.date: 02/04/2026
 
 #customer intent: I want to learn how to create a real-time work order routing app with Microsoft Fabric Maps.
@@ -22,7 +19,7 @@ This tutorial demonstrates how customer locations are mapped, live work orders a
 Fabric Maps runs within [Fabric Real‑Time Intelligence](/fabric/real-time-intelligence/overview), ingesting streaming telemetry using Eventstream and Eventhouse for real‑time monitoring. Work order completions and operational outcomes are stored in OneLake, where they can be used for route optimization and analytics that are displayed on the map.
 
 > [!IMPORTANT]
-> Fabric Maps is in [preview](../../fundamentals/preview.md).
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 In this tutorial, you will:
 
@@ -511,3 +508,4 @@ For more information on Fabric Maps topics covered in this tutorial:
 
 > [!div class="nextstepaction"]
 > [Data label settings](customize-map.md#data-label-settings)
+

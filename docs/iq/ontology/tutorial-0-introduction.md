@@ -1,9 +1,6 @@
 ---
 title: "Tutorial part 0: Introduction and environment setup"
 description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 02/04/2026
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
@@ -171,3 +168,4 @@ When you're done, the KQL database shows the *FreezerTelemetry* table with data:
 Now your sample scenario is set up in Fabric. Next, create an ontology (preview) item by generating it automatically from a semantic model or building it manually from the OneLake data source.
 
 Both options are available in the next step, [Create an ontology](tutorial-1-create-ontology.md).
+

@@ -24,13 +24,11 @@ The Hive LLAP connector supports the following authentication types for copy and
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Hive LLAP data. The following links provide the specific Power Query connector information you need to connect to Hive LLAP data in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Hive LLAP using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Hive LLAP connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Hive LLAP prerequisites](/power-query/connectors/hive-llap#prerequisites) before connecting to the Hive LLAP connector.
-- To connect to the Hive LLAP connector from Power Query, go to [Connect to Hive LLAP data from Power Query Online](/power-query/connectors/hive-llap#connect-to-hive-llap-data-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Hive LLAP prerequisites](/power-query/connectors/hive-llap#prerequisites).
+1. [Connect to Hive LLAP data (from Power Query Online)](/power-query/connectors/hive-llap#connect-to-hive-llap-data-from-power-query-online).
 
 ## Set up your connection in a pipeline
 

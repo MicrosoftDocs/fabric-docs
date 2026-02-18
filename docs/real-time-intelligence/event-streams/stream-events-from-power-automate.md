@@ -1,11 +1,8 @@
 ---
 title: Stream events to Eventstream using Logic Apps and Power Automate 
 description: Learn how to stream real-time events from Power Automate or Logic Apps to Eventstream using the custom endpoint.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: tutorial
-ms.custom:
 ms.date: 1/20/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my Power Automate and Logic Apps using Fabric event streams.
@@ -176,3 +173,5 @@ If you want to discover more advanced functionalities for working with Fabric ev
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
+
+

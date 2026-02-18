@@ -2,9 +2,8 @@
 title: "Sensitivity Labels in Power BI"
 titleSuffix: Microsoft Purview Information Protection
 description: "Learn how to classify and protect Power BI content using sensitivity labels. Apply labels to semantic models, reports, dashboards, and dataflows to secure data."
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: concept-article

@@ -1,8 +1,6 @@
 ---
 title: "Monitor mirrored Fabric SQL database replication"
 description: Learn about monitoring mirrored Fabric SQL database replication.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 11/06/2024
 ms.topic: concept-article

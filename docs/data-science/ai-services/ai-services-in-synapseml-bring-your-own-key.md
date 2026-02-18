@@ -1,12 +1,8 @@
-﻿---
+---
 title: AI services in SynapseML with bring your own key
 description: Learn about the capabilities of Azure AI services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
-ms.custom: 
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: jessiwang
-reviewer: JessicaXYWang
+ms.reviewer: lagayhar, jessiwang
 ms.date: 08/26/2025
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
@@ -95,3 +91,4 @@ ms.collection: ce-skilling-ai-copilot
 - [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md)
 - [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md)
 - [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md)
+

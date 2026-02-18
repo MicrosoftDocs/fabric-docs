@@ -2,10 +2,7 @@
 title: Get data from Serilog
 description: Learn how to get data from Serilog in a KQL database in Real-Time Intelligence.
 ms.reviewer: ramacg
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 ---

@@ -3,7 +3,6 @@ metadata:
   title: "Frequently asked questions for mirrored databases from Azure Databricks in Microsoft Fabric"
   description: This article answers frequently asked questions about mirrored databases from Azure Databricks in Microsoft Fabric.
   ms.reviewer: sheppardshep
-  ms.service: fabric
   ms.subservice: data-warehouse
   ms.topic: faq
   ms.date: 09/21/2024

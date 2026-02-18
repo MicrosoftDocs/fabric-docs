@@ -1,9 +1,6 @@
 ---
 title: Native execution engine for Fabric Data Engineering
 description: How to enable and use the native execution engine to execute Apache Spark jobs for faster and cheaper data processing in Microsoft Fabric.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 10/01/2025
@@ -232,3 +229,4 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 - [Apache Spark Runtimes in Fabric](./runtime.md)
 - [What is autotune for Apache Spark configurations in Fabric?](./autotune.md)
+

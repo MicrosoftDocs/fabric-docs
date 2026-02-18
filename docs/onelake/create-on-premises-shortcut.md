@@ -2,11 +2,8 @@
 title: Create shortcuts to on-premises data
 description: Learn how to install and use a Fabric on-premises data gateway to create OneLake shortcuts to on-premises or network-restricted data sources.
 ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 05/21/2024
 #customer intent: As a data analyst, I want to learn how to create shortcuts to on-premises data using a Fabric on-premises data gateway so that I can easily access and analyze data from various sources without the need for data movement or duplication.
 ---
@@ -80,3 +77,4 @@ If you encounter any connectivity issues during shortcut creation, try the follo
 * [Create an Amazon S3 shortcut](create-s3-shortcut.md)
 * [Create a Google Cloud Storage shortcut](create-gcs-shortcut.md)
 * [Create an S3 compatible shortcut](create-s3-compatible-shortcut.md)
+

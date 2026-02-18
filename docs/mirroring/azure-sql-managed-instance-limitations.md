@@ -13,16 +13,13 @@ ms.custom:
 
 Current limitations in the [Microsoft Fabric mirrored databases](../mirroring/overview.md) from Azure SQL Managed Instance are listed in this page. This page is subject to change.
 
+- Mirroring for SQL managed instances using the 2022 update policy uses the Change Data Capture (CDC) feature.
+- Mirroring for SQL managed instances using the 2025 or Always-up-to-date update policies uses the Fabric mirroring change feed feature.
+
 For troubleshooting, see:
 
 - [Troubleshoot Fabric mirrored databases](../mirroring/troubleshooting.md)
 - [Troubleshoot Fabric mirrored databases from Azure SQL Managed Instance ](../mirroring/azure-sql-managed-instance-troubleshoot.md)
-
-## Feature availability
-
-You can configure Azure SQL Managed Instance for mirroring if it is deployed to any Azure region, **except** for these regions currently: East US 2; West US 2; Central US; West US. 
-
-The feature availability also depends on Fabric regions. For a complete list of Fabric region support, see [Fabric regions that support Mirroring](#supported-regions).
 
 ## Database level limitations
 

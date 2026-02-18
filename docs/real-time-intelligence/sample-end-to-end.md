@@ -2,10 +2,7 @@
 title: End-to-end sample in real-time
 description: Use the sample gallery to create an end-to-end real-time solution that shows how to stream, analyze, and visualize real-time data in a real-world context.
 ms.reviewer: sharmaanshul
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 09/07/2025
 #customer intent: As a data analyst, I want to create an end-to-end real-time solution so that I can understand how Real-Time Intelligence components work together.
 ---

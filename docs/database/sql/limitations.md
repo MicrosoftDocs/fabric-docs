@@ -1,10 +1,8 @@
 ---
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 12/09/2025
+ms.date: 02/17/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -55,7 +53,7 @@ For connections to use this mode, clients need to:
 
 ## Availability
 
-SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
 
 Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
 
@@ -174,6 +172,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **Availability** | See [Fabric Reliability](/azure/reliability/reliability-fabric) |
 | **Backups** | Zone-redundant (ZRS) automatic backups with 7 days retention period (enabled by default). |
 | **Read-only replicas** | Use the read-only [SQL analytics endpoint](sql-analytics-endpoint.md) for a read-only TDS SQL connection |
+| **Number of SQL databases** | 150 per workspace | 
 
 ## Tools
 

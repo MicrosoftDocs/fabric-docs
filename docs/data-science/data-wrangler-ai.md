@@ -1,17 +1,11 @@
 ---
-# Required metadata
-# For more information, see https://learn.microsoft.com/help/platform/learn-editor-add-metadata
-# For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/help/platform/metadata-taxonomies
-
-title:       Use AI in Data Wrangler
+title: Use AI in Data Wrangler
 description: Learn how to use AI functions and other AI-powered features in Data Wrangler to further accelerate data preparation
-author:      s-polly
-ms.author:   scottpolly
-reviewer:    virginiaroman
+author: s-polly
+ms.author: scottpolly
 ms.reviewer: vimeland
-ms.service:  fabric
-ms.topic:    how-to
-ms.date:     09/04/2025
+ms.topic: how-to
+ms.date: 09/04/2025
 ---
 
 # How to use AI in Data Wrangler to enhance data preparation

@@ -1,8 +1,6 @@
 ---
 title: Query Using the Visual Query Editor
 description: Learn how to use the visual query editor for a no-code experience to create your queries.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng, fresantos
 ms.date: 09/08/2025
 ms.topic: how-to

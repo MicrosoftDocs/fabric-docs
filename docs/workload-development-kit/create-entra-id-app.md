@@ -1,10 +1,7 @@
 ---
 title: Set up a Microsoft Entra ID application of your Workload Development Kit solution's
 description: Learn how to set up a Microsoft Entra ID application for your workload development environment.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 02/05/2025
 
 #customer intent: As an Independent Software Vendor (ISV) or a developer, I want to learn how to set up the authorization for a customized Fabric workload.
@@ -182,3 +179,4 @@ Te `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals 
 ## Related content
 
 * Learn how to work with [authentication in workloads](./authentication-guidelines.md).
+

@@ -1,8 +1,6 @@
 ---
 title: What Is Fabric Data Warehouse?
 description: Learn more about data warehousing workloads in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: joanpo, chweb, cynotebo
 ms.date: 09/09/2025
 ms.topic: overview

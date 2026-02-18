@@ -1,13 +1,8 @@
-﻿---
+---
 title: Consume a data agent in Azure AI foundry (preview)
 description: Learn how to consume a data agent in Azure AI foundry (preview).
-ms.author: jburchel
-author: jonburchel
+ms.topic: how-to
 ms.reviewer: scottpolly
-reviewer: midesa
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: how-to #Don't change
 ms.date: 12/05/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

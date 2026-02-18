@@ -3,7 +3,6 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sngun
 ms.date: 02/09/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
@@ -498,3 +497,4 @@ This section summarizes recent improvements and features for the new [IQ (previe
 - [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 - [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured)
 - [Microsoft Fabric community](https://community.fabric.microsoft.com/)
+

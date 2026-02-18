@@ -3,8 +3,6 @@ title: "Quickstart: Create your first graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes.
 ms.topic: quickstart
 ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
 ---

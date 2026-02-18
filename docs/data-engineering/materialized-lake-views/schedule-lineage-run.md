@@ -2,11 +2,9 @@
 title: Schedule a Materialized Lake View Run
 description: Learn how to schedule a materialized lake view run
 ms.topic: how-to
-author: eric-urban
-ms.author: eur
 ms.reviewer: apsinhar
 ms.date: 06/26/2025
-# customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
+#customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
 ---
 
 # Schedule a materialized lake view run

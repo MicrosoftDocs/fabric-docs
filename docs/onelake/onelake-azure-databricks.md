@@ -2,10 +2,7 @@
 title: Integrate OneLake with Azure Databricks
 description: Learn how to connect to OneLake via Azure Databricks. After completing this tutorial, you can read and write to a lakehouse via Azure Databricks.
 ms.reviewer: eloldag, mabasile
-ms.author: kgremban
-author: kgremban
 ms.topic: how-to
-ms.custom:
 ms.date: 01/30/2026
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure Databricks so that I can read and write data to a Microsoft Fabric lakehouse from my Azure Databricks workspace.
 ---

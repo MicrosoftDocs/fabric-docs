@@ -1,8 +1,6 @@
 ---
 title: "Load data with Dataflow Gen2 into SQL database"
 description: Learn how to load data into a SQL database with Dataflow Gen2 in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/06/2024
 ms.topic: how-to

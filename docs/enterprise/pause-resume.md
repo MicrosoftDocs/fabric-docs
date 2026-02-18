@@ -1,10 +1,9 @@
 ---
 title: Pause and resume your capacity
 description: Understand how to save money by using your capacity pause and resume feature.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
-ms.custom:
 ms.date: 10/06/2024
 ---
 

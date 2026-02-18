@@ -1,10 +1,7 @@
 ---
 title: Connect Azure Search Index
 description: Connect Data Agents to your Azure Search Index in Azure AI Foundry.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: midesa
-reviewer: midesa
 ms.topic: how-to
 ms.date: 12/9/2025
 ---

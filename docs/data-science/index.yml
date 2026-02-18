@@ -6,13 +6,9 @@ summary: Learn more about the Data Science and AI experience in Microsoft Fabric
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Science documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-science
-  ms.custom:
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: jonburchel #Required; your GitHub user alias, with correct capitalization.
-  ms.author: jburchel #Required; microsoft alias of author; optional team alias.
   ms.date: 12/03/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 

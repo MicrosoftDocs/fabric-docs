@@ -1,8 +1,6 @@
 ---
 title: Microsoft JDBC Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft JDBC Driver for Microsoft Fabric Data Engineering.
-author: ms-arali
-ms.author: arali
 ms.reviewer: arali
 ms.topic: how-to
 ms.date: 12/05/2025
@@ -640,3 +638,4 @@ The driver maps Spark SQL data types to JDBC SQL types and Java types:
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)
 * [What is the Livy API for Data Engineering](./api-livy-overview.md)
+
