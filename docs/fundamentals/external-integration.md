@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # External integration and platform connectivity
 
-Although Fabric is an all-in-one platform, it integrates with external systems both for bringing data in and for pushing data and insights out. This article describes how Fabric connects to external services and how other systems can consume Fabric-hosted data.
+Although Fabric is an all-in-one platform, it integrates with external systems both for bringing data in and for pushing data and insights out. This article describes the integration points Fabric has to connect to external services and how other systems can consume Fabric-hosted data.
 
 ## Automate actions with Data Activator
 
@@ -113,7 +113,7 @@ Microsoft Fabric supports Azure Private Endpoints for private, internal-only acc
 
 Microsoft Fabric also supports [Managed Virtual Networks (Managed VNets)](../security/security-managed-vnets-fabric-overview.md) and [Managed Private Endpoints](../security/security-managed-private-endpoints-overview.md) to enhance network isolation and secure connectivity. When Private Link is enabled for a Fabric tenant or workspace, Fabric automatically provisions a Managed VNet for compute workloads such as Spark jobs, so that they run in an isolated environment rather than shared public pools. Managed Private Endpoints also let Fabric services (like Lakehouse, Warehouse, and OneLake) securely [connect to Azure resources or on-premises data sources](../security/connect-to-on-premise-sources-using-managed-private-endpoints.md) without exposing traffic to the public internet. These features use Azure's networking backbone to enforce compliance, reduce attack surface, and provide granular control over data ingress and egress within enterprise environments.
 
-### Entra ID
+### Microsoft Entra ID
 
 Fabric authenticates and manages users through Microsoft Entra ID. Every Fabric tenant is linked to an Entra ID tenant. User sign-in, single sign-on (SSO), and access control for Fabric use the same identities and groups as Azure. You can use your corporate Entra ID accounts to sign in to Fabric and use existing security features like Conditional Access Policies and Multi-Factor Authentication across Fabric. Entra ID integration also enables service principals and managed identities for Fabric inbound and outbound authentication scenarios:
 * **Inbound authentication**: Use service principals to access Fabric's admin APIs or to enable access to Fabric artifact endpoints such as SQL, OneLake, and Eventhouse.

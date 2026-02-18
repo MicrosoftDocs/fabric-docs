@@ -20,7 +20,7 @@ OneLake's "one copy of data" design means that after data is stored in OneLake, 
 
 :::image type="content" source="./media/store-data/store-lakehouse.png" alt-text="Diagram of OneLake Lakehouse architecture.":::
 
-A [Lakehouse](../data-engineering/lakehouse-overview.md) in Fabric is a core storage-centric artifact that uses OneLake to store data in both file and table form. A lakehouse is a curated data lake folder that also provides a SQL interface. It stores data in Delta Parquet files in OneLake. You can have [folders of raw data (like CSVs or images) and managed Delta tables for structured data](../data-engineering/navigate-lakehouse-explorer.md).
+A [Lakehouse](../data-engineering/lakehouse-overview.md) in Fabric is a core storage-centric item that uses OneLake to store data in both file and table form. A lakehouse is a curated data lake folder that also provides a SQL interface. It stores data in Delta Parquet files in OneLake. You can have [folders of raw data (like CSVs or images) and managed Delta tables for structured data](../data-engineering/navigate-lakehouse-explorer.md).
 
 Use a lakehouse to organize a collection of data and expose it for analysis. Fabric automatically creates a [SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) for each lakehouse, so you or tools like Power BI can query the Delta tables through T-SQL as if it were a relational database. The lakehouse combines the flexibility of a data lake (support for big data and unstructured data) with key benefits of a warehouse (the ability to query tables directly and a metastore for schema).
 

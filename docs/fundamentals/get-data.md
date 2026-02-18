@@ -34,15 +34,15 @@ Eventstreams are transient conduits—they don't permanently store data. Instead
 
 ### Ingest data directly into Eventhouse
 
-The [Eventhouse](../real-time-intelligence/eventhouse.md) can ingest data directly from various sources without requiring you to build an Eventstream or Data Factory pipeline.
+[Eventhouses](../real-time-intelligence/eventhouse.md) can ingest data directly from various sources.
 
-Fabric provides an integrated **Get Data** wizard on the Eventhouse that supports connecting to sources like [local files](../real-time-intelligence/get-data-local-file.md), [Azure Storage](../real-time-intelligence/get-data-azure-storage.md), [Amazon S3](../real-time-intelligence/get-data-amazon-s3.md), [Azure Event Hubs](../real-time-intelligence/get-data-event-hub.md), [OneLake](../real-time-intelligence/get-data-onelake.md), and more. You can feed data into a KQL database table in real time or batch with just a few configuration steps, all within the Eventhouse UI.
+Fabric provides an integrated **Get Data** wizard for Eventhouse that supports connecting to sources like [local files](../real-time-intelligence/get-data-local-file.md), [Azure Storage](../real-time-intelligence/get-data-azure-storage.md), [Amazon S3](../real-time-intelligence/get-data-amazon-s3.md), [Azure Event Hubs](../real-time-intelligence/get-data-event-hub.md), [OneLake](../real-time-intelligence/get-data-onelake.md), and more. You can feed data into a KQL database table in real time or batch with just a few configuration steps, all within the Eventhouse UI.
 
 You can also select an existing [Fabric Eventstream as a source](../real-time-intelligence/get-data-eventstream.md). If you already have an Eventstream running (for example, ingesting from IoT Hub or Kafka), select that stream and pipe its output into a KQL database table without additional wiring.
 
 ## Batch data ingestion
 
-The Data Factory experience is the hub for traditional ETL/ELT pipelines and integrates a rich library of connectors. Fabric Data Factory includes a [list of native connectors](../data-factory/connector-overview.md) to on-premises and cloud data stores (databases, SaaS applications, files, and more) that allow you to connect to virtually any source system.
+Data Factory is the hub for traditional ETL/ELT pipelines and integrates a rich library of connectors. Fabric Data Factory includes a [list of native connectors](../data-factory/connector-overview.md) to on-premises and cloud data stores (databases, SaaS applications, files, and more) that allow you to connect to virtually any source system.
 
 ### Orchestrate data movement with pipelines
 
@@ -60,11 +60,11 @@ You can run a pipeline [on-demand](../data-factory/pipeline-runs.md#on-demand-pi
 
 [Copy job](../data-factory/what-is-copy-job.md) provides native support for multiple delivery styles, including bulk copy, incremental copy, and change data capture (CDC) replication. With Copy job, you use a simple interface to move data from a source to OneLake without building pipelines, while still having access to many advanced options. It supports many sources and destinations and provides more control than Mirroring but less complexity than managing pipelines with Copy activity.
 
-## Replicate data with Fabric Mirroring
+## Replicate data with Mirroring
 
 :::image type="content" source="./media/get-data/data-replication-mirroring.png" alt-text="Diagram of database mirroring data replication architecture.":::
 
-With [Fabric Mirroring](../mirroring/overview.md), you can replicate external systems into Fabric in near real time through automated configuration. Connect to an external system (such as an Azure SQL Database, a SQL Server, Oracle, SAP, or Snowflake), and Fabric continuously replicates data (or just metadata) into OneLake. Three types of Mirroring are available:
+[Mirroring](../mirroring/overview.md) replicates external systems into Fabric in near real time through automated configuration. Connect to an external system (such as an Azure SQL Database, a SQL Server, Oracle, SAP, or Snowflake), and Fabric continuously replicates data (or just metadata) into OneLake. Three types of Mirroring are available:
 
 * **Database mirroring**: Replicates entire databases and tables, so you can bring data from various systems together into OneLake.
 * **Metadata mirroring**: Synchronizes metadata (such as catalog names, schemas, and tables) instead of physically moving the data. This approach uses shortcuts, ensuring the data remains in its source while still being accessible within Fabric.
@@ -84,7 +84,7 @@ Fabric offers [shortcuts](../onelake/onelake-shortcuts.md) for data virtualizati
 
 OneLake can detect what type of data is connected through external shortcuts and apply either [file transformations](../onelake/shortcuts-file-transformations/transformations.md) or [AI transformations](../onelake/shortcuts-ai-transformations/ai-transformations.md) without creating a pipeline or writing any code. OneLake automatically keeps the output Delta table in sync with the source. For example, you can convert .csv files into Delta tables or apply AI-powered sentiment analysis to .txt files in a folder.
 
-Combined with Data Mirroring, shortcuts provide flexible data access patterns. You can either [leave data in place (shortcut)](../onelake/onelake-overview.md#one-copy-of-data) or replicate it (Mirror) as needed. In both cases, the data becomes readily available to all Fabric analytics tools without complex ETL.
+Combined with Data Mirroring, shortcuts provide flexible data access patterns. You can either leave data in place (shortcut) or replicate it (Mirror) as needed. In both cases, the data becomes readily available to all Fabric analytics tools without complex ETL.
 
 ## Decision guide: Choose a data movement strategy
 

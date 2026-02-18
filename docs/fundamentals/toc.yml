@@ -21,13 +21,13 @@ items:
   
 - name: Fabric data lifecycle
   items:
-    - name: Overview
+    - name: Data lifecycle overview
       href: data-lifecycle.md
     - name: Get data
       href: get-data.md
     - name: Store data
       href: store-data.md
-    - name: Prepare data
+    - name: Prepare and transform data
       href: prepare-data.md
     - name: Analyze and train data
       href: analyze-train-data.md
