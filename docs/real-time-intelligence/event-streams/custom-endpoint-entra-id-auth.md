@@ -1,11 +1,8 @@
 ---
 title: Connect to Eventstream using Microsoft Entra ID Authentication
 description: Learn how to add a Custom Endpoint source or destination and connect a service principal app to Eventstream using Microsoft Entra ID authentication.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 04/08/2025
 ms.search.form: Source and Destination
 ---
@@ -131,3 +128,5 @@ After successfully running the project, you can view the incoming data in your a
 
 * [Add Custom Endpoint source](add-source-custom-app.md)
 * [Add Custom Endpoint destination](add-destination-custom-app.md)
+
+

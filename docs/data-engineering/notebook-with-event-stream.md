@@ -1,11 +1,8 @@
 ---
 title: Query Microsoft Fabric Eventstream from a notebook with Spark Structured Streaming
 description: Learn about integrating Microsoft Fabric Eventstream with notebooks using Spark Structured Streaming for real-time data processing.
-ms.reviewer: spelluru
-ms.author: qixwang
-author: qixwang
+ms.reviewer: qixwang
 ms.topic: overview
-ms.custom:
 ms.date: 01/27/2026
 ms.search.form: SparkStructuredStreaming Eventstream Notebook
 ---
@@ -91,3 +88,4 @@ To learn more about working with Eventstreams and notebooks in Microsoft Fabric,
 - [Create and manage an Eventstream](../real-time-intelligence/event-streams/create-manage-an-eventstream.md)
 - [Add a Spark Notebook destination to an eventstream](../real-time-intelligence/event-streams/add-destination-spark-notebook.md)
 - [Spark Structured Streaming guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)
+

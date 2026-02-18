@@ -1,10 +1,8 @@
 ---
 title: How to consume workloads in Microsoft Fabric
 description: Learn how to add and manage workloads at the tenant, capacity, or workspace level in Microsoft Fabric.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

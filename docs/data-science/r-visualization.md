@@ -1,14 +1,10 @@
-﻿---
+---
 title: Visualize data in R
 description: How to create R visualizations.
-ms.reviewer: None
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: lagayhar, sgilley
 ms.topic: how-to
-ms.custom: 
 ms.date: 06/30/2025
 ms.search.form: R Language
-reviewer: sdgilley
 ---
 
 # Visualize data in R
@@ -98,3 +94,4 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
 - [R library management](./r-library-management.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
+

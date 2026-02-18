@@ -1,10 +1,8 @@
 ---
 title: OneLake consumption
 description: Information on how OneLake consumes Fabric capacity units including how consumption is calculated, billed, and reported.
-ms.author: eloldag
-author: eloldag
+ms.reviewer: eloldag
 ms.topic: how-to
-ms.custom:
 ms.date: 02/11/2026
 #customer intent: As a capacity admin, I want to understand how OneLake usage is billed and reported, including consumption of storage and transactions, so that I can effectively manage and optimize my costs and resources.
 ---
@@ -120,3 +118,4 @@ Consumption rates are subject to change at any time. Microsoft will use reasonab
 ## Related content
 
 - [Disaster recovery guidance for OneLake](onelake-disaster-recovery.md)
+

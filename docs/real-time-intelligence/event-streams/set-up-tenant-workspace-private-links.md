@@ -1,9 +1,7 @@
 ---
 title: Secure inbound connections with Tenant and Workspace Private Links
 description: Learn how to set up tenant- and workspace-level private links in Fabric and stream data securely to Eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 9/15/2025
 ms.search.form: fabric's private links
@@ -100,3 +98,5 @@ Currently, when tenant or workspace level private link is enabled, you can only 
 * [Network security in Fabric](../../security/security-overview.md)
 * [Tenant-level private links](../../security/security-private-links-overview.md)
 * [Workspace-level private links](../../security/security-workspace-level-private-links-overview.md)
+
+

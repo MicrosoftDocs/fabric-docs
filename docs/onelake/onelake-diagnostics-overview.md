@@ -2,10 +2,7 @@
 title: OneLake diagnostics
 description: OneLake diagnostics makes it simple to answer "who accessed what, when, and how" across your Fabric workspaces
 ms.reviewer: tompeplow
-ms.author: kgremban
-author: kgremban
 ms.topic: overview
-ms.custom:
 ms.date: 10/03/2025
 #customer intent: As a data steward or workspace admin, I want to monitor and analyze how data is accessed across Fabric workspaces so that I can support governance, compliance, and operational insight using OneLake diagnostics.
 ---
@@ -244,3 +241,4 @@ When you configure OneLake diagnostics, the selection of the workspace honors wo
 | Operation                              | Category |
 |----------------------------------------|----------|
 | FabricWorkloadAccess                   | Read     |
+

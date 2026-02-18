@@ -1,10 +1,8 @@
 ---
 title: OneLake Disaster Recovery and Data Protection
 description: Get information on how to plan for disaster recovery and ensure OneLake data protection in Microsoft Fabric.
-ms.author: eloldag
-author: eloldag
+ms.reviewer: eloldag
 ms.topic: how-to
-ms.custom:
 ms.date: 02/11/2026
 #customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can help ensure the safety and availability of my data.
 ---
@@ -39,3 +37,4 @@ For step-by-step instructions on how to list and restore soft-deleted files, see
 
 - [Recover deleted files in OneLake](soft-delete.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)
+

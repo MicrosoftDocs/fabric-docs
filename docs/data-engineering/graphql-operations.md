@@ -1,8 +1,6 @@
 ---
 title: GraphQL operation logs
 description: View a set of GraphQL operation logs that you can query in your Fabric workspace monitoring database.
-author: eric-urban
-ms.author: eur
 ms.reviewer: edlima
 ms.topic: reference
 ms.custom: freshness-kr

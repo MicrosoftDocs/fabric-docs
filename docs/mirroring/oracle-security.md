@@ -4,7 +4,6 @@ description: Learn about how to secure data in mirrored databases From Oracle in
 ms.reviewer: sbahadur
 ms.date: 08/22/2025
 ms.topic: how-to
-ms.custom:
 ---
 
 # How to: Secure data Microsoft Fabric mirrored databases from Oracle (Preview)

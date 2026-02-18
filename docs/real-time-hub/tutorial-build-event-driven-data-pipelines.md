@@ -1,8 +1,6 @@
 ---
 title: Build Event-Driven Pipelines with OneLake events and Azure Blob Storage events
 description: Build real-time, event-driven pipelines in Microsoft Fabric using Azure and Fabric events to process data instantly from OneLake or Azure Blob Storage. Learn how to automate workflows.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: george-guirguis
 ms.date: 12/18/2025
 ms.topic: tutorial

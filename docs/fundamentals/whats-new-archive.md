@@ -3,11 +3,10 @@ title: What's new? archive
 description: An archive of new feature announcements and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: rymajidi, sngun
+ms.reviewer: rymajidi
 ms.date: 02/06/2026
 ms.update-cycle: 180-days
 ms.topic: whats-new
-ms.custom:
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
@@ -684,3 +683,4 @@ This section includes guidance and documentation updates on development process,
 - [Microsoft Fabric terminology](../fundamentals/fabric-terminology.md)
 - [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 - [What's new in Microsoft Fabric?](whats-new.md)
+

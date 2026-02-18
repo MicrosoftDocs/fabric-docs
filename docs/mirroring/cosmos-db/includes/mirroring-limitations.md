@@ -1,6 +1,5 @@
 ---
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: include
 ms.date: 12/03/2025
 ---
@@ -42,3 +41,4 @@ ms.date: 12/03/2025
 - Stopping replication disables mirroring completely.
 
 - Starting replication again reseeds all of the target warehouse tables. This operation effectively starts mirroring from scratch.
+

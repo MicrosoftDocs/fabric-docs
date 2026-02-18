@@ -1,10 +1,7 @@
 ---
 title: Azure Event Grid connector for Fabric eventstreams
 description: The include file has common content for configuring an Azure Event Grid connector for Fabric eventstreams and real-time hub.
-ms.author: spelluru
-author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 03/19/2025
 ---
 

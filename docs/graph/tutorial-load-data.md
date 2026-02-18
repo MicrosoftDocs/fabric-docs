@@ -3,8 +3,6 @@ title: "Tutorial: Load data"
 description: Learn how to load the Adventure Works sample data into a lakehouse for use with Graph in Microsoft Fabric.
 ms.topic: tutorial
 ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Load sample data
 ---

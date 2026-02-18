@@ -1,10 +1,7 @@
 ---
 title: Azure Data Explorer connector for Fabric eventstreams
 description: This include file has the common content for configuring an Azure Data Explorer connector for Fabric eventstreams and real-time hub. 
-ms.author: spelluru
-author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 12/22/2025
 ---
 

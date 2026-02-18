@@ -1,8 +1,9 @@
 ---
 title: Fabric SKU Estimator (preview) Release notes
 description: Find information about Fabric SKU Estimator limitations, known issues, help resources, and other release notes.
-author: cmaneu
-ms.author: chmaneu
+author: dknappettmsft
+ms.author: daknappe
+ms.reviewer: chmaneu
 ms.topic: release-notes
 ms.date: 05/27/2025
 ---
@@ -37,3 +38,4 @@ ms.date: 05/27/2025
 ## April 2025 v0.1.1
 
 Initial Public Preview release
+

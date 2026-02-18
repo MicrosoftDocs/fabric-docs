@@ -2,8 +2,6 @@
 title: Get Started with Materialized Lake Views in a Microsoft Fabric Lakehouse
 description: Learn how to create your first materialized lake view in a Microsoft Fabric lakehouse.
 ms.topic: quickstart
-author: eric-urban
-ms.author: eur
 ms.reviewer: abhishjain
 ms.date: 02/15/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric lakehouse so that I can optimize query performance and manage data quality.

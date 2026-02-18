@@ -1,7 +1,4 @@
 ---
-author: eric-urban
-ms.author: eur
-ms.reviewer: sairamyeturi
 ms.date: 02/15/2026
 ms.topic: include
 ms.custom: references_regions

@@ -39,7 +39,7 @@ items:
     href: tutorial-lakehouse-data-ingestion.md
   - name: 5 Prepare data
     href: tutorial-lakehouse-data-preparation.md
-  - name: 6 Build a report
+  - name: 6 Create a semantic model and build a report
     href: tutorial-lakehouse-build-report.md
   - name: 7 Clean up resources
     href: tutorial-lakehouse-clean-up.md

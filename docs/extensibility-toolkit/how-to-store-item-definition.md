@@ -1,10 +1,8 @@
 ---
 title: HowTo - Store Item Definition (State)
 description: Learn how to store your item definition in Fabric
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

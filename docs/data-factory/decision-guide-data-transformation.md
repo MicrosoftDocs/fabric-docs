@@ -4,7 +4,6 @@ description: "Identify the best strategy for your Microsoft Fabric data transfor
 ms.reviewer: krirukm
 ms.date: 11/18/2025
 ms.topic: concept-article
-ms.custom:
 ---
 
 # Microsoft Fabric decision guide: Choose a dataflow strategy

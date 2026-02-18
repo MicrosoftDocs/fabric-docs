@@ -1,8 +1,8 @@
 ---
 title: Understand the metrics app item history page (preview)
 description: Learn how to read the Microsoft Fabric Capacity metrics app's item history page.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
 ms.date: 07/21/2025
 ---

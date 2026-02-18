@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Clone a Table with T-SQL in Warehouse"
 description: "In this tutorial, learn how to clone a table with T-SQL."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl, prlangad
 ms.date: 04/06/2025
 ms.topic: tutorial

@@ -1,9 +1,7 @@
 ---
 title: "Configure Private Networks for Azure Cosmos DB Fabric Mirroring (Preview)"
 description: Learn how to configure Azure Cosmos DB accounts with private networks and private endpoints to work with Fabric mirroring.
-author: jilmal
-ms.author: jmaldonado
-ms.reviewer: mbrown
+ms.reviewer: jmaldonado, mbrown
 ms.date: 01/26/2026
 ms.topic: how-to
 ai-usage: ai-assisted
@@ -435,3 +433,4 @@ For more troubleshooting guidance, see [Troubleshooting: Microsoft Fabric mirror
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519)
 - [Configure network access to an Azure Cosmos DB account](/azure/cosmos-db/how-to-configure-firewall)
+

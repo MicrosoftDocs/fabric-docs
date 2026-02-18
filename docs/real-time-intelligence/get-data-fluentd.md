@@ -1,9 +1,7 @@
 ---
 title: Get data from Fluentd
 description: Learn how to get data from Fluentd into an Eventhouse table.
-ms.reviewer: ramacg
-ms.author: v-hzargari
-author: hzargari-ms
+ms.reviewer: ramacg, v-hzargari
 ms.topic: how-to
 ms.date: 01/07/2026
 ---
@@ -121,3 +119,4 @@ For more configuration and authentication details, see the [Fluentd Kusto plugin
 
 - [Data connectors overview](event-house-connectors.md)
 - [Query data in a KQL queryset](kusto-query-set.md?tabs=kql-database)
+

@@ -6,7 +6,6 @@ ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
 ms.date: 05/29/2025
-ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
 

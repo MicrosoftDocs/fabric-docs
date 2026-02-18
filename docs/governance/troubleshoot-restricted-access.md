@@ -3,7 +3,6 @@ title: Troubleshoot issues with restricted access
 description: Learn how to troubleshoot issues with restricted access.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.date: 12/19/2025
 ms.topic: concept-article
 ---
@@ -127,3 +126,5 @@ The workspace admin can assess how DLP policies affect different user types to d
 - [Microsoft Fabric permission model](/fabric/security/permission-model)
 - [Microsoft Purview protection policies](/fabric/governance/protection-policies-overview)
 - [Data Loss Prevention (DLP) in Microsoft Purview](/purview/dlp-powerbi-get-started)
+
+

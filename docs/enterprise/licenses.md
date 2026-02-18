@@ -1,10 +1,9 @@
 ---
 title: Understand Microsoft Fabric Licenses
 description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to plan deployment and collaboration. Learn key scenarios and choose the right option.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/30/2026
 ai-usage: ai-assisted
 ---

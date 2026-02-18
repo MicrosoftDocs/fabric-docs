@@ -1,8 +1,6 @@
 ---
 title: Write Iceberg tables from Snowflake to OneLake
 description: Guidance to set up connectivity between Snowflake and OneLake using the new Snowflake database item in Fabric, enabling Iceberg tables to be written to OneLake and accessed from both Fabric and Snowflake.
-author: matt1883
-ms.author: mahi
 ms.reviewer: mahi
 ms.topic: how-to
 ms.date: 11/17/2025
@@ -250,3 +248,4 @@ To do this, you first need to [follow the prerequisites](#prerequisites), [creat
 1. Back in the Fabric UI, ensure that your Snowflake item reports no errors and is ready for new tables to be written in Snowflake.
 
 You can now proceed to [create your Iceberg tables in Snowflake](#create-an-iceberg-table-in-snowflake)!
+

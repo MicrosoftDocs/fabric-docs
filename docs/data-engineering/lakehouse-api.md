@@ -2,10 +2,7 @@
 title: Lakehouse management API
 description: Learn how to manage your lakehouses in Microsoft Fabric with the Fabric REST API, including how to create, update, and delete a lakehouse.
 ms.reviewer: dacoelho
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 07/18/2025
 ms.search.form: lakehouse api
 ---

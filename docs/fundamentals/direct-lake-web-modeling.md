@@ -1,9 +1,9 @@
 ---
 title: Learn about editing semantic models in Direct Lake storage mode in the web
 description: Describes using Power BI web modeling to edit semantic models in Power BI web modeling.
-author: datazoems
-ms.author: zoedouglas
-ms.reviewer: ''
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: zoedouglas
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to
@@ -68,6 +68,7 @@ Direct Lake on OneLake tables can be added to an existing semantic model with im
 
 -	[Edit data models in the Power BI service](/power-bi/transform-model/service-edit-data-models)
 -	[Composite semantic models in Power BI](/power-bi/transform-model/desktop-composite-models)
+
 
 
 

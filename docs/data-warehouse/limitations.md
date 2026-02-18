@@ -1,8 +1,6 @@
 ---
 title: Limitations of Fabric Data Warehouse
 description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: joanpo, ajagadish, anphil, fresantos
 ms.date: 11/19/2025
 ms.topic: limits-and-quotas

@@ -1,8 +1,7 @@
 ---
 title: Azure Cosmos DB CDC - prerequisites and connection details
 description: This include file has the prerequisites for adding an Azure Cosmos DB Change Data Capture (CDC) source and information on getting connection details.
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -33,3 +32,4 @@ The labels for the items you need to collect from the Azure portal are shown in 
 1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
 
    :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-prerequisites-connection-details/containers.png" alt-text="A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.":::
+

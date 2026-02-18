@@ -1,8 +1,7 @@
 ---
 title: Sample indexing policies in Cosmos DB Database
 description: Explore sample custom indexing policies that fine tune the performance of Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: sample
 ms.date: 10/30/2025
 ai-usage: ai-generated

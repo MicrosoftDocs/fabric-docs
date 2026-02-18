@@ -4,7 +4,6 @@ description: This article provides an overview of the governance and compliance 
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 09/26/2024
 ---
 

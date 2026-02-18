@@ -6,9 +6,7 @@ summary: Govern, manage, and protect all your data in Fabric.
 metadata:
   title: Microsoft Fabric governance
   description: A landing page for Microsoft Fabric governance documentation
-  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: governance
-  ms.custom:
   ms.topic: landing-page # Required
   author: msmimart
   ms.author: mimart

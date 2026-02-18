@@ -6,10 +6,9 @@ summary: Learn about Microsoft Fabric licenses, and how to monitor and control t
 metadata:
   title: Microsoft Fabric enterprise documentation
   description: Brose the Microsoft Fabric enterprise documentation.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  author: dknappettmsft
+  ms.author: daknappe
   ms.topic: landing-page
-  author: JulCsc
-  ms.author: juliacawthra
   ms.date: 07/18/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new

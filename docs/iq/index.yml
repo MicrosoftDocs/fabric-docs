@@ -6,11 +6,8 @@ summary:  Fabric IQ (preview) enables a governed, self-service knowledge graph t
 metadata:
   title: Fabric IQ (preview) documentation
   description: Learn about Fabric IQ (preview).
-  ms.service: fabric  #Required; use either service or product per approved list.
   ms.topic: landing-page
   ms.collection: collection
-  author: baanders
-  ms.author: baanders
   ms.date: 11/05/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 

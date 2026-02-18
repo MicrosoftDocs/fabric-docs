@@ -3,9 +3,7 @@ title: "Configure data loss prevention policies for Microsoft Fabric"
 description: "Learn how to configure Purview data loss prevention policies for Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 10/21/2025
 
 #customer intent: As a Purview compliance administrator, I want to learn how to configure DLP policies for Fabric so that my organization can detect leakage of sensitive data from Fabric items.

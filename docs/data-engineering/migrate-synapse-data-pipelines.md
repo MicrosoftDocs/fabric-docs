@@ -2,8 +2,6 @@
 title: Migrate data and pipelines from Azure Synapse to Fabric
 description: Learn about your different options for migrating data and pipelines from Azure Synapse Analytics to Microsoft Fabric.
 ms.reviewer: aimurg
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
 ms.custom:
   - fabric-cat

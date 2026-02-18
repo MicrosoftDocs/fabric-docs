@@ -1,8 +1,6 @@
 ---
 title: Develop Warehouse Projects in Visual Studio Code
 description: Learn how to develop warehouse projects for Fabric Data Warehouse in Visual Studio Code.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, randolphwest
 ms.date: 11/12/2025
 ms.topic: how-to
