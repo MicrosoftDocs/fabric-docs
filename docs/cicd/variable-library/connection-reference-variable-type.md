@@ -65,8 +65,8 @@ Using connection reference variables involves two layers of permissions:
 #### Permission validation
 Permission validation is triggered by two different use-cases:
 
-	- UI-based creation and editing of connection reference variables
-	- Non-UI updates such as (API update, import through Git or Deployment pipelines)
+- UI-based creation and editing of connection reference variables
+- Non-UI updates such as (API update, import through Git or Deployment pipelines)
 
 So what this means is:
 
