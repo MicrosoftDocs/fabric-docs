@@ -81,7 +81,7 @@ You can view connection reference additional details in the Variable library pag
 A Connection Reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
 
 - type: "connectionReference" (advanced type)
-- values: per value‑set, each value stores { "connectionId": "&lt;GUID/ID string&gt;" }
+- value: per value‑set, each value stores { "connectionId": "&lt;GUID/ID string&gt;" }
 - Optional descriptive metadata (display name, description)
 
 Example:
