@@ -12,11 +12,27 @@ ai-usage: ai-assisted
 
 # End-to-end data lifecycle in Microsoft Fabric
 
-Microsoft Fabric unifies data ingestion, data storage, data preparation, analytics, and data visualization functions into a single, cohesive system. The architecture diagram below illustrates different Fabric items and the role they play in each of these functions.
+Organizations typically rely on multiple disconnected services to ingest, store, transform, analyze, and visualize data. This fragmentation creates data silos, increases integration overhead, and slows time to insight. Microsoft Fabric addresses these challenges by unifying every stage of the data lifecycle into a single platform built on a shared foundation.
+
+At the center of this architecture is [OneLake](../onelake/onelake-overview.md), a single organizational data lake that stores all data in open Delta Parquet format. OneLake is provisioned automatically with every Fabric tenant. Because every Fabric workload reads from and writes to OneLake, data doesn't move between engines. A dataset ingested through a pipeline, refined in a notebook, and visualized in a Power BI report stays in one place throughout its journey.
+
+The data lifecycle consists of six stages, and Fabric provides purpose-built tools for each:
+
+- **Get data**: Bring data into OneLake from hundreds of sources in real time, on a schedule, through continuous database replication, or by referencing external storage in place.
+
+- **Store data**: Persist data in storage formats optimized for your workload, whether that's flexible big data analytics, structured SQL queries, real-time event analysis, transactional processing, or governed business reporting.
+
+- **Prepare and transform**: Clean, reshape, and enrich data using low-code visual transformations or code-first notebooks and reusable functions, without moving data out of OneLake.
+
+- **Analyze and train**: Build and operationalize machine learning models, run advanced analytics, query data programmatically, and explore insights through natural-language AI agents.
+
+- **Track and visualize**: Surface insights through interactive reports, monitor live data streams on real-time dashboards, and trigger automated actions when conditions are met.
+
+- **External integration**: Securely connect to external services for automation, collaboration, governance, developer tooling, and CI/CD.
+
+The following diagram shows how these stages connect and which Fabric items participate at each stage. Each stage is covered in depth in a dedicated article. Use the links in each section to explore the capabilities and tools available at that stage.
 
 :::image type="content" source="./media/data-lifecycle/fabric-data-lifecycle.png" alt-text="Diagram showing the end-to-end data lifecycle in Microsoft Fabric, from data ingestion through storage, preparation, analytics, and visualization." lightbox="./media/data-lifecycle/fabric-data-lifecycle.png":::
-
-Each stage of the lifecycle is covered in depth in a dedicated article. Use the links in each section to explore the capabilities and tools available at that stage.
 
 ## Get data
 
@@ -31,7 +47,7 @@ For more information, see [Get data into Microsoft Fabric](get-data.md).
 
 ## Store data
 
-Once ingested, all data lands in OneLake in open Delta Parquet format. OneLake provides a single data lake for your entire organization with no separate provisioning needed. Fabric offers several storage artifacts optimized for different workloads:
+Once ingested, all data lands in OneLake in open Delta Parquet format. OneLake provides a single data lake for your entire organization with no separate provisioning needed. Fabric offers several storage items optimized for different workloads:
 
 - **Lakehouse** for flexible big data storage that combines files and managed Delta tables with an automatic SQL endpoint.
 - **Warehouse** for structured, relational analytics with full T-SQL support, stored procedures, and ACID transactions.
@@ -43,7 +59,7 @@ For more information, see [Store data in Microsoft Fabric](store-data.md).
 
 ## Prepare and transform data
 
-Once in OneLake, you can further transform and analyze the data by using either code-first engines or low-code tools, all within Fabric with no data movement between analytics engines:
+Once in OneLake, you can further transform the data by using either code-first engines or low-code tools, all within Fabric with no data movement between engines:
 
 - **Dataflow Gen2** provides a low-code Power Query interface for data cleansing, transformation, and enrichment.
 - **Notebooks** offer a Jupyter-like environment for Python, T-SQL, and Scala-based data engineering.
@@ -90,7 +106,7 @@ For more information, see [External integration and platform connectivity](exter
 
 ## Natural language and AI support
 
-Natural language support comes in the form of Power BI Copilot, Data Agents, and Operations Agent where they can reason over your enterprise data in OneLake and produce answers based on the data assets users have access to. You can integrate Data Agents into Microsoft 365 Copilot, Microsoft Foundry, and Copilot Studio so users can get insights from OneLake in their flow of work in different applications.
+Natural language support comes in the form of Power BI Copilot, Data Agents, and Operations Agent where they can reason over your enterprise data in OneLake and produce answers based on the data items users have access to. You can integrate Data Agents into Microsoft 365 Copilot, Microsoft Foundry, and Copilot Studio so users can get insights from OneLake in their flow of work in different applications.
 
 ## Related content
 
