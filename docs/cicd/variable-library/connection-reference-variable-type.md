@@ -13,7 +13,7 @@ ms.date: 02/18/2026
 
 
 # Connection reference variable type (preview)
-A connection reference variable is a workspace variable that stores the ID of an external data connection (For example, Snowflake, Azure SQL), allowing items to reference external resources without embedding credentials or connection strings. 
+A connection reference variable is a workspace variable that stores the ID of an [external data connection (For example, Snowflake, Azure SQL)](../../data-factory/data-source-management.md), allowing items to reference external resources without embedding credentials or connection strings. 
 
 ## How to use
 A connection reference variable can be used just like other variables in a variable library.
@@ -45,11 +45,9 @@ Keep in mind the following when working with connection references:
 - Connection references don't auto-bind during deployment. Their values remain fixed across environments.
 - Supports CI/CD and automation by parameterizing external connections for different environments (dev, test, prod).
 - Enables dynamic configuration of external relationships (For example, switching data sources or credentials per environment).
-- Supports secure management of sensitive connection details without hard-coding them.
 - Values are chosen via a UI dialog, not free text, ensuring only authorized connections are selectable.
 - Only connections with at least read permissions are available for selection.
-- You can swap the active value‑set (For example, Dev → Prod) to rebind an entire workspace’s items to stage‑appropriate connections without code changes
-- Git or API actions that update the Variable Library definition or set the active value‑set are the supported mechanisms
+
 
 
 ## Supported connections
@@ -65,75 +63,21 @@ Using connection reference variables involves two layers of permissions:
 - **Accessing the Referenced Connection**: In addition to rights on the Variable Library, **you must have at least Read permission on the connection** you intend to reference.
 
 #### Permission validation
-Permission validation is triggered by two different use-case categories, each has a different validation scope: 
-
- 1. In the UI, to insert a value for a "connection reference" variable, or for editing an existing one, the user is required to do so through a dedicated dialog. Once this dialog is opened, users see only connections that they have at lease READ permission to. This way it is guaranteed that the value is a connection the user has permission to.  This applies to any value, the default active value set or other value-sets. 
-
- 2. During Update API, Import through Git, or Deployment pipelines, and saving a variable library item, a permission of the user who executes the above action is validated for all variables including connection reference variables in the variable library. The validation would be for the effective value only in the active value-set. 
+Permission validation is triggered by two different use-cases:
+	- UI-based creation and editing of connection reference variables
+	- Non-UI updates such as (API update, import through Git or Deployment pipelines)
 
 So what this means is:
 
-- When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions to the connection being referenced. 
-
+ - When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions (similar to all to the connection being referenced. 
+ 
 - Attempting to edit an existing connection reference in the active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
-		- If you don't have at least read permissions to the connection you wish to update, that connection isn't available for selection.
-		- If you don't have Contributor or above, attempting to edit the connection errors.
-
-- Attempting to change the current active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
-		- If you don't have at least read permissions to the connection referenced, you'll get an error if you attempt to change the current active value set.
-
-- View connection reference additional details in the Variable library page (UI only) Users with access to the Variable library (WS viewer or higher) who lack permissions for the connection in the referenced item variable, won't see their details in the UI. Instead, they'll see the connection ID accompanied by a hover message, rather than the details component.
+		
+You can view connection reference additional details in the Variable library page (UI only) Users with access to the Variable library (WS viewer or higher) who lack permissions for the connection in the referenced connection variable, won't see their details in the UI. Instead, they'll see the connection ID accompanied by a hover message, rather than the details component.
 
  :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
 
-
-
-## Value-Set Scenarios
-Value-sets allow you to define stage-specific configurations for connection references, supporting CI/CD best practices.
-
-### [Scenario 1: Environment-Specific Connections](#tab/scenario1)
-Suppose you have different external databases for Dev, Test, and Prod environments. You can create a connection reference variable with multiple value-sets:
-
-|Value-Set Name|Connection ID|Description|
-|-----|-----|-----|
-|Dev|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|Dev Database|
-|Test|00aa00aa-bb11-cc22-dd33-44ee44ee44ee|Test Database|
-|Prod|aaaabbbb-0000-1111-2222-aaaaaabbbbbb|Production Database|
-
-**Usage**:
-
-During deployment, activate the appropriate value-set for the target environment.
-Pipelines and APIs can switch the active value-set to update the connection used by consumer items.
-
-### [Scenario 2: Switching Cloud Providers](#tab/scenario2)
-You may need to switch between different cloud storage providers based on business requirements:
-
-|Value-Set Name|Connection ID|Provider|
-|-----|-----|-----|
-|Cloud1|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|Cloud provider number 1.|
-|Cloud2|00aa00aa-bb11-cc22-dd33-44ee44ee44ee|Cloud provider number 2.|
-|Cloud3|aaaabbbb-0000-1111-2222-aaaaaabbbbbb|Cloud provider number 3.|
-
-**Usage**:
-
-Select the value-set corresponding to the required provider.
-Consumer items (pipelines, notebooks) use the selected connection for their operations.
-
-### [Scenario 3: A/B Testing External Connections](#tab/scenario3)
-For A/B testing, you can create value-sets that point to different external endpoints:
-
-|Value-Set Name|Connection ID|Test Group|
-|-----|-----|-----|
-|Group A|aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb|Endpoint A|
-|Group B|00aa00aa-bb11-cc22-dd33-44ee44ee44ee|Endpoint B|
-
-**Usage**:
-
-Switch active value-set to test performance or reliability of different endpoints.
-
----
-
-### Representation in Git and APIs
+## Representation in Git and APIs
 A Connection Reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
 
 - type: "connectionReference" (advanced type)
@@ -143,33 +87,13 @@ A Connection Reference is an advanced variable type whose value schema stores th
 Example:
 
 ```json
-{
- "name": "AppConnections",
- "description": "Stage-aware external connections",
- "variables": [
+
   {
    "name": "PrimaryDb",
    "note": "",
    "type": "connectionReference",
-   "description": "Main transactional DB connection (stage-specific)",
-   "valueSets": [
-    {
-     "name": "Dev",
-     "values": { "connectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" }
-    },
-    {
-     "name": "Test",
-     "values": { "connectionId": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee" }
-    },
-    {
-     "name": "Prod",
-     "values": { "connectionId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb" }
-    }
-   ],
-   "defaultValueSet": "Dev"
+   "value": { "connectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb" }
   }
- ]
-
  ```
 
 
