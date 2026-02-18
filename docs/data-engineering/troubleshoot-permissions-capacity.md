@@ -22,7 +22,6 @@ Use this reference table to quickly identify common permission and capacity erro
 | Spark job can't be run because you exceeded a spark compute limit / HTTP 430 | [Capacity Exceeded - Spark Job Can't Be Run](#error-capacity-exceeded---spark-job-cant-be-run) | 
 | API Rate Limit Exceeded / HTTP 429 | [API Rate Limit Exceeded](#error-api-rate-limit-exceeded) |
 | Capacity Not Active at Lakehouse Refresh | [Capacity Not Active at Refresh](#error-capacity-not-active-at-refresh) |
-| Pipeline run failed / Activity execution failed | [Data Pipeline Activity Failed](#error-data-pipeline-activity-failed) |
 
 ## Permission and Authorization Errors
 
@@ -148,7 +147,21 @@ Your Microsoft Fabric capacity has exceeded its allocated Compute Units (CUs) fo
 
 Use one or more of these strategies to reduce capacity consumption and prevent throttling of your Spark workloads.
 
-**Fix 1: Monitor and Identify High-Consumption Spark Workloads**
+**Fix 1: Enable Autoscale Billing for Spark Workloads**
+
+Enable Autoscale Billing to offload Spark jobs from your Fabric capacity to dedicated, serverless resources with pay-as-you-go billing. With Autoscale Billing enabled, Spark jobs no longer consume Compute Units (CUs) from your Fabric capacity, eliminating capacity exceeded errors for Spark workloads:
+
+1. Navigate to the [Fabric Admin Portal](https://app.fabric.microsoft.com/admin) and select **Capacity settings** > **Fabric capacity**.
+1. Select the capacity you want to configure and scroll to the **Autoscale Billing for Fabric Spark** section.
+1. Enable the **Autoscale Billing** toggle.
+1. Use the slider to set the **Maximum Capacity Units (CU)** you want to allocate to Spark jobs. You're only billed for the compute used, up to this limit.
+1. Select **Save** to apply your settings.
+
+Autoscale Billing is purely serverless and pay-as-you-go—you set the maximum CU limits and are only charged for CUs consumed by the jobs that you run. This is particularly effective for dynamic or bursty Spark workloads that cause capacity exceeded errors under the standard capacity model.
+
+See [configure Autoscale Billing for Spark](configure-autoscale-billing.md) and [Autoscale Billing overview](autoscale-billing-for-spark-overview.md) for more details.
+
+**Fix 2: Monitor and Identify High-Consumption Spark Workloads**
 
 Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troubleshoot-consumption.md) to identify which workspaces, users, or jobs are consuming the most Compute Units:
 1. Navigate to Admin Portal and access the Capacity Metrics app
@@ -158,7 +171,7 @@ Use the [Fabric Capacity Metrics app](../enterprise/capacity-planning-troublesho
 
 Understanding [how Fabric capacity throttling works](../enterprise/throttling.md) is essential. Fabric uses "bursting" and "smoothing" to handle temporary spikes, but sustained overloads trigger throttling.
 
-**Fix 2: Reduce Concurrent Spark Operations and Optimize Workloads**
+**Fix 3: Reduce Concurrent Spark Operations and Optimize Workloads**
 
 For Spark operations (Notebooks, Spark job definitions):
 - Stagger job execution times to avoid peak loads
@@ -166,22 +179,6 @@ For Spark operations (Notebooks, Spark job definitions):
 - Manage [Spark job concurrency limits](spark-job-concurrency-and-queueing.md)
 - Restart your Fabric capacity from the Admin Portal (Capacity Settings > Fabric Capacity > Restart) to clear orphaned sessions. Wait approximately 10 minutes before retrying operations
 - Optimize Spark jobs to use resources more efficiently
-
-**Fix 3: Enable Autoscale for Spark Workloads**
-
-Configure autoscale to automatically adjust Spark compute resources based on workload demand, which helps handle capacity spikes without manual intervention:
-
-1. Navigate to Workspace Settings > Data Engineering/Science section
-2. Enable **Spark Autoscale** for the workspace
-3. Configure autoscale settings:
-   - Set minimum and maximum executor nodes
-   - Define scale-up and scale-down policies
-   - Set appropriate timeouts for scaling operations
-4. Monitor autoscale behavior using the Capacity Metrics app to ensure proper configuration
-
-Autoscale dynamically allocates additional compute resources during peak loads and releases them when demand decreases, optimizing both performance and cost. This is particularly effective for workloads with variable or unpredictable resource demands.
-
-See [configure autoscale for Spark](configure-autoscale-billing.md) and [autoscale billing overview](autoscale-billing-for-spark-overview.md) for more details.
 
 **Fix 4: Scale Up Your Capacity**
 
@@ -300,70 +297,11 @@ Use one or more of the following fixes to verify and restore your workspace’s 
 2. Confirm no organizational policies are blocking Fabric operations
 3. If the problem persists for only one workspace while others work fine, consider creating a new workspace and move content
 
-## Pipeline and Orchestration Errors
-
-This section helps you troubleshoot failures in Data Pipeline activities and orchestration workflows.
-
-### Error: Data Pipeline Activity Failed
-
-This error indicates that one or more activities in your Data Pipeline failed during execution.
-
-**Error Messages:**
-- Pipeline run failed
-- Activity execution failed
-- Copy activity failed with error
-- Notebook activity execution timeout
-
-#### Scenario
-
-This issue typically occurs when you are running a data pipeline with activities that depend on external resources or have configuration issues.
-
-#### Common Causes
-
-The following situations commonly cause pipeline activity failures:
-- Running a pipeline with a Copy Data activity that attempts to read from or write to a Lakehouse without proper permissions or when source/destination connectivity fails
-- Executing a pipeline with a Notebook activity that times out due to long-running Spark operations or capacity throttling
-- Timeout errors for long-running notebook or dataflow activities without appropriate timeout settings
-- Capacity resource exhaustion during pipeline execution
-
-#### What Happened
-
-A Data Pipeline activity (Copy Data, Notebook, Dataflow, Stored Procedure, etc.) failed during execution. This interrupts orchestrated workflows and can prevent downstream activities from running.
-
-#### How to Fix the Error
-
-Use one or more of these troubleshooting steps to identify and resolve pipeline activity failures.
-
-**Fix 1: Review Pipeline Run Details and Activity Errors**
-
-1. Navigate to the Pipeline > Monitor view or Pipeline runs history
-2. Identify the failed activity and review error messages
-3. Check the activity input/output JSON for connection details and parameters
-4. Verify source and destination artifacts are accessible and exist
-5. Review the activity configuration for typos in artifact names or paths
-
-**Fix 2: Validate Connectivity and Permissions**
-
-For connectivity and authorization issues:
-- Test source/destination connections independently (Lakehouse, SQL endpoints, external sources)
-- Identity workspace role (Contributor or higher) is used to run the pipeline
-- For Notebook activities: Verify the notebook runs successfully standalone before including in pipeline. Also check the monitor page from the underlying artifact(notebook / sjd) to see the spark log
-- For Copy activities: Confirm Read permissions on source and Write permissions on destination
-- For Lakehouse destinations: Ensure table schemas match expected data types
-
-**Fix 3: Optimize Activity Timeouts and Retry Logic**
-
-For timeout and transient errors:
-- Increase activity timeout values for long-running operations (Notebook, Dataflow activities)
-- Enable retry policies for transient failures (network issues, temporary throttling)
-- Configure appropriate retry intervals and maximum retry counts
-- For Copy activities: Enable fault tolerance settings to skip bad rows
-
-See [data pipeline monitoring](../data-factory/monitor-pipeline-runs.md) and [troubleshoot data pipelines](../data-factory/pipeline-troubleshoot-guide.md) for more information.
-
 ## Related content
 
+- [Data pipeline monitoring](../data-factory/monitor-pipeline-runs.md) 
+- [Troubleshoot data pipelines](../data-factory/pipeline-troubleshoot-guide.md) 
 - [Lakehouse troubleshooting](troubleshoot-lakehouse.md)
-- [Notebook troubleshooting][notebookTroubleshootingGuide]
+- [Notebook troubleshooting](../data-science/fabric-notebooks-troubleshooting-guide.md)
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
 - [Spark advisor introduction](spark-advisor-introduction.md)
