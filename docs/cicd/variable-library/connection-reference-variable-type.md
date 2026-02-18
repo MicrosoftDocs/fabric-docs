@@ -13,10 +13,7 @@ ms.date: 02/18/2026
 
 
 # Connection reference variable type (preview)
-
-To enhance flexibility and scalability, we're introducing complex variables alongside the existing basic variable types. These advanced variables are designed to meet key requirements such as parameterizing external and internal connections (For example, Snowflake, AWS, OneLake), managing secrets through secure methods like Azure Key Vault integration or native secured strings, and configuring item-specific settings with support for variable-to-variable references. 
-
-A connection reference variable is a workspace variable that stores the ID of an external data connection (For example, Snowflake, Azure SQL), allowing items to reference external resources without embedding credentials or connection strings. Unlike item reference variables, connection references don't auto-bind during deployment. Their values remain fixed across environments, so e
+A connection reference variable is a workspace variable that stores the ID of an external data connection (For example, Snowflake, Azure SQL), allowing items to reference external resources without embedding credentials or connection strings. 
 
 ## How to use
 A connection reference variable can be used just like other variables in a variable library.
@@ -45,20 +42,21 @@ A connection reference variable's value is a static pointer to a connection obje
 Keep in mind the following when working with connection references:
 
 - Stores a pre-defined connection identifier at the tenant level.
+- Connection references don't auto-bind during deployment. Their values remain fixed across environments.
 - Supports CI/CD and automation by parameterizing external connections for different environments (dev, test, prod).
 - Enables dynamic configuration of external relationships (For example, switching data sources or credentials per environment).
-- Supports secure management of sensitive connection details without hard-coding them in consumer items.
+- Supports secure management of sensitive connection details without hard-coding them.
 - Values are chosen via a UI dialog, not free text, ensuring only authorized connections are selectable.
-- Only connections with at least read permissions are available for selection and attempts to save changes without proper permissions fail.
+- Only connections with at least read permissions are available for selection.
 - You can swap the active value‑set (For example, Dev → Prod) to rebind an entire workspace’s items to stage‑appropriate connections without code changes
 - Git or API actions that update the Variable Library definition or set the active value‑set are the supported mechanisms
 
 
-## Supported items
-The following is a list of items that are currently supported using connection reference:
+## Supported connections
+The following is a list of connections that are currently supported using connection reference:
 
 - Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
-- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md#get-variables-from-fabric-variable-libraries)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
 
 ### Permissions Required to Create/Use Connection References
 Using connection reference variables involves two layers of permissions:
@@ -69,20 +67,25 @@ Using connection reference variables involves two layers of permissions:
 #### Permission validation
 Permission validation is triggered by two different use-case categories, each has a different validation scope: 
 
- 1. In the UI, to insert a value for a "connection reference" variable, or for editing an existing one, the user is required to do so through a dedicated dialog. Once this dialog is opened, users see only items that they have at lease READ permission to. This way it is guaranteed that the value is an item the user has permission to.  This applies to any value, the default active value set or other value-sets. 
+ 1. In the UI, to insert a value for a "connection reference" variable, or for editing an existing one, the user is required to do so through a dedicated dialog. Once this dialog is opened, users see only connections that they have at lease READ permission to. This way it is guaranteed that the value is a connection the user has permission to.  This applies to any value, the default active value set or other value-sets. 
 
- 2. During Update API, Import through Git, or Deployment pipelines, and saving a variable library item, a permission of the user who executes the above action is validated for all "connection reference" variables in the variable library. The validation would be for the effective value only in the active value-set. 
+ 2. During Update API, Import through Git, or Deployment pipelines, and saving a variable library item, a permission of the user who executes the above action is validated for all variables including connection reference variables in the variable library. The validation would be for the effective value only in the active value-set. 
 
 So what this means is:
 
-- When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions to the item or connection being referenced. 
+- When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions to the connection being referenced. 
 
-- Attempting to edit an existing connection reference in the active value set, the user performing this action, needs at least read permissions to the item or connection being referenced. 
-		- If you don't have at least read permissions to the item you wish to update, that item isn't available for selection.
-		- If you don't have Contributor or above, attempting to edit the item errors.
+- Attempting to edit an existing connection reference in the active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
+		- If you don't have at least read permissions to the connection you wish to update, that connection isn't available for selection.
+		- If you don't have Contributor or above, attempting to edit the connection errors.
 
 - Attempting to change the current active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
 		- If you don't have at least read permissions to the connection referenced, you'll get an error if you attempt to change the current active value set.
+
+- View connection reference additional details in the Variable library page (UI only) Users with access to the Variable library (WS viewer or higher) who lack permissions for the connection in the referenced item variable, won't see their details in the UI. Instead, they'll see the connection ID accompanied by a hover message, rather than the details component.
+
+ :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
+
 
 
 ## Value-Set Scenarios
