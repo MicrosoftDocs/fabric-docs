@@ -1,8 +1,6 @@
 ---
 title: Monitor Apache Spark run series
 description: The Spark run series categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/21/2024
@@ -71,6 +69,10 @@ When you select an instance of the notebook/Spark job definition activity run in
 If the bar is marked red, an exception has been detected for that run instance. You can view the following information: **Total duration**, **Expected duration**, and **Potential causes** for this instance in the Anomalies panel.
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
+
+> [!NOTE]
+>
+> A minimum runtime threshold of **five minutes** is applied for anomaly detection. Spark applications that run for **less than five minutes** are **not included** in anomaly analysis.
 
 ## Related content
 

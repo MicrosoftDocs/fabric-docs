@@ -1,8 +1,7 @@
 ---
 title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 06/13/2025
 ms.search.form: copy-job-tutorials 

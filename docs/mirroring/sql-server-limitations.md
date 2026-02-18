@@ -3,7 +3,7 @@ title: "Limitations of Fabric Mirrored Databases From SQL Server"
 description: A detailed list of limitations for mirrored databases From SQL Server in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: ajayj, rajpo, whhender
+ms.reviewer: ajayj, rajpo
 ms.date: 01/12/2026
 ms.topic: concept-article
 ms.custom:

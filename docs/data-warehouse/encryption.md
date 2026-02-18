@@ -1,8 +1,6 @@
 ---
 title: Data Encryption with Customer-Managed Keys in Fabric Data Warehouse
 description: Learn more about securing your warehouse with customer-managed keys in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fresantos
 ms.date: 10/15/2025
 ms.topic: concept-article

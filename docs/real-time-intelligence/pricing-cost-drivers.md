@@ -1,9 +1,7 @@
 ---
 title: Eventhouse cost per GB ingested 
 description: Discover how Eventhouse calculates cost per GB ingested, what drives costs, and how to optimize your cluster.
-ms.reviewer: avnera
-author: bwatts64
-ms.author: bwatts
+ms.reviewer: avnera, bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.date: 09/08/2025
@@ -111,5 +109,6 @@ Each ingestion method has different cost, latency, and functionality characteris
 >
 > - To reduce read transactions, minimize queries over cold data 
 > - Enable autoscale to dynamically match cluster size to demand.
+
 
 

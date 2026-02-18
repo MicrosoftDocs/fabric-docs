@@ -1,8 +1,7 @@
 ---
 title: Data type conversion in a copy activity
 description: Learn how to configure advanced mapping settings.
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/29/2025

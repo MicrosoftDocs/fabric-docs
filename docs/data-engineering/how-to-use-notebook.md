@@ -2,8 +2,6 @@
 title: How to use notebooks
 description: Learn how to create a new notebook, import an existing notebook, connect notebooks to lakehouses, collaborate in notebooks, and comment code cells.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
@@ -275,3 +273,4 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+

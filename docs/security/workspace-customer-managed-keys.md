@@ -4,10 +4,9 @@ description: Learn how to use workspace customer managed keys to encrypt data-at
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 10/15/2025
 
-# Customer intent: As a Microsoft Fabric workspace administrator, I want to use customer-managed keys to encrypt my workspace data at rest.
+#customer intent: As a Microsoft Fabric workspace administrator, I want to use customer-managed keys to encrypt my workspace data at rest.
 ---
 
 # Customer-managed keys for Fabric workspaces

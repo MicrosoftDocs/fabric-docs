@@ -2,11 +2,8 @@
 title: SynapseML and its use in Azure Synapse Analytics.
 description: Learn about the SynapseML library and how it simplifies the creation of massively scalable machine learning (ML) pipelines in Azure Synapse Analytics.
 ms.reviewer: jessiwang
-author: jonburchel
-ms.author: jburchel
 ms.topic: concept-article
 ms.date: 08/26/2025
-reviewer: JessicaXYWang
 ai.usage: ai-assisted
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: Create your first Microsoft Fabric dataflow
 description: Steps for creating dataflows and transforming data.
-ms.reviewer: whhender
-ms.author: jeluitwi
-author: luitwieler
+ms.reviewer: jeluitwi
 ms.topic: quickstart
 ms.date: 06/26/2025
 ms.search.form: DataflowGen2 Tutorials

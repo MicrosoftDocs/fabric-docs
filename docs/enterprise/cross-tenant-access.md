@@ -1,8 +1,8 @@
 ---
-title: CTA
-description: An article
-author: JulCsc
-ms.author: juliacawthra
+title: Set Up Cross-Tenant Access for Guest Tenants
+description: Learn how to enable cross-tenant access for Fabric data warehouses as a guest. Follow step-by-step instructions to securely access data from trusted providers.
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
 ms.date: 05/26/2025
 ---

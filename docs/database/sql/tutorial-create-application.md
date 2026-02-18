@@ -1,12 +1,9 @@
 ---
 title: SQL database tutorial - Create an application using DevOps and the GraphQL API
 description: In this eighth tutorial step, learn how to create an application using DevOps and the GraphQL API.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 03/06/2025
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Create an application using DevOps and the GraphQL API

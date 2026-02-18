@@ -1,8 +1,6 @@
 ---
 title: Access Mirrored Cosmos DB Database Data From Lakehouse
 description: Learn how to use a lakehouse and notebook in Microsoft Fabric to query mirrored Cosmos DB data with Spark and Python for advanced analytics.
-author: seesharprun
-ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/29/2025
 ---

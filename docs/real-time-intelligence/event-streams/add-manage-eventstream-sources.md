@@ -1,9 +1,7 @@
 ---
 title: Add and Manage Eventstream Sources
 description: Learn how to add and manage an event source in an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -21,7 +19,7 @@ In this article, you learn about the event sources that you can add to an events
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.
+- Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - Prerequisites specific to each source that are documented in the following source-specific articles.
 
 ## Supported sources
@@ -36,4 +34,6 @@ Fabric eventstreams with enhanced capabilities support the following sources. Ea
 
 - [Create an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
+
+
 

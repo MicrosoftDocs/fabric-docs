@@ -1,9 +1,8 @@
 ﻿---
 title: Track user activities in Power BI
 description: Learn how to use Power BI activity logs to monitor and track user activities in Power BI.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to

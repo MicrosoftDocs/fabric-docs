@@ -2,8 +2,6 @@
 title: Migrate to Apache Airflow Job in Microsoft Fabric
 description: Learn to migrate from Azure workflow orchestration manager to Apache Airflow Job in Microsoft Fabric.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
 ms.topic: how-to
 ms.date: 07/26/2024
 ms.custom: airflows
@@ -11,8 +9,7 @@ ms.custom: airflows
 
 # Migrate to Apache Airflow job in Microsoft Fabric
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 Apache Airflow job, a transformative capability within Microsoft Fabric, redefines your approach to constructing and managing pipelines. Powered by the Apache Airflow runtime, Apache Airflow jobs provides an integrated, cloud-based platform for developing, scheduling, and monitoring Python-based DAGs(Directed Acyclic Graphs). It delivers a Software-as-a-Service (SaaS) experience for pipeline development and management using Apache Airflow. This makes the Apache Airflow runtime easily accessible, enabling the creation and operation of your Airflow DAGs.
 
@@ -45,5 +42,5 @@ In this scenario, use the Git sync feature of Apache Airflow Job to seamlessly s
 ## Related content
 
 - [Quickstart: Create an Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
-- [Run Dag in Apache Airflow Job](../data-factory/apache-airflow-jobs-hello-world.md)
+- [Run Dag in Apache Airflow Job](../data-factory/create-apache-airflow-jobs.md)
 - [Apache Airflow Job workspace settings](../data-factory/apache-airflow-jobs-workspace-settings.md)

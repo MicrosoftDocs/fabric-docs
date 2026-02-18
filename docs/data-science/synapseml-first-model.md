@@ -2,11 +2,9 @@
 title: Build a model with SynapseML
 description: Get a quick introduction to building a machine learning model with SynapseML.
 ms.topic: how-to
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 09/29/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

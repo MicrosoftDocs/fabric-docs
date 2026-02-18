@@ -2,10 +2,7 @@
 title: Runtime 2.0 in Fabric
 description: Learn about Apache Spark-based runtime 2.0 in Fabric. This article explains the unique features, capabilities, and best practices of Fabric and implement your data-related solutions.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 12/11/2025
 ---
 

@@ -3,9 +3,7 @@ title: Apply tags to items in Fabric
 description: "Learn how to apply tags to items in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 05/05/2025
 
 #customer intent: As a data creator, I want to apply tags to my items so as to facilitate data management and discovery.

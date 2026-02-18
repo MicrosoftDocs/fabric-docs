@@ -2,8 +2,6 @@
 title: Create an Apache Airflow Job project in Microsoft Fabric
 description: This tutorial helps you create an Apache Airflow Job in Microsoft Fabric.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: nabhishek
 ms.topic: quickstart
 ms.custom: airflows
 ms.date: 11/20/2025

@@ -1,10 +1,7 @@
 ---
 title: Explore supported external sources for Fabric Real-Time hub  
 description: Discover the external sources you can integrate with Fabric Real-Time hub for seamless data streaming.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 11/18/2024
 ---
 

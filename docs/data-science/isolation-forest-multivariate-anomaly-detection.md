@@ -2,11 +2,9 @@
 title: Multivariate Anomaly Detection with Isolation Forest
 description: Use SynapseML on Apache Spark for multivariate anomaly detection with Isolation Forest model.
 ms.topic: overview
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 07/16/2025
 ---
 # Multivariate Anomaly Detection with Isolation Forest

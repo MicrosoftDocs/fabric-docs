@@ -1,9 +1,7 @@
 ---
 title: Transform data using dbt
 description: This tutorial guides you through orchestrating dbt jobs using Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows
 ms.date: 09/08/2025
@@ -12,8 +10,7 @@ ai-usage: ai-assisted
 
 # Transform data using dbt
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 [dbt (Data Build Tool)](https://www.getdbt.com/product/what-is-dbt) is an open-source command-line interface (CLI) that helps you transform and model data in data warehouses. It manages complex SQL code in a structured, maintainable way, so data teams can create reliable, testable transformations for their analytical pipelines.
 

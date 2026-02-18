@@ -1,8 +1,7 @@
 ---
 title: Managing libraries in environment secured by outbound access protection
 description: Learn how to add and manage libraries in Fabric when outbound network access is restricted.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.reviewer: shuaijunye
 ms.topic: how-to
 ms.date: 09/15/2025
 ms.search.form: Manage libraries when private links and OAP enabled.
@@ -176,3 +175,4 @@ And then, you can install the library from the Azure storage account by providin
 
 - [Create, configure, and use an environment in Fabric](create-and-use-environment.md)
 - [Manage Apache Spark libraries in Fabric](library-management.md)
+

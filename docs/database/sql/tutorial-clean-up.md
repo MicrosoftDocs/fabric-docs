@@ -1,12 +1,9 @@
 ---
 title: SQL database tutorial - Clean up resources
 description: In this last tutorial step, learn how to clean up resources by removing the test workspace.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 10/24/2024
 ms.topic: tutorial
-ms.custom:
 ---
 
 # Clean up resources

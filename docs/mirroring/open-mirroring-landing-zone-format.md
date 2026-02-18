@@ -1,8 +1,6 @@
 ---
 title: "Open Mirroring Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: tinglee, sbahadur, marakiketema
 ms.date: 09/09/2025
 ms.topic: reference

@@ -1,11 +1,10 @@
 ---
 title: Configure MongoDB Atlas in a copy activity
 description: This article explains how to copy data using MongoDB Atlas.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/08/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

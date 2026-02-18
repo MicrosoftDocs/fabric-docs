@@ -1,11 +1,8 @@
 ---
 title: Anomaly Detector Capacity Usage and Billing in Real-Time Intelligence
 description: Learn about capacity usage and billing for Anomaly Detector in Real-Time Intelligence.
-ms.reviewer: tessarhurr
-ms.author: v-hzargari
-author: hzargari-ms
+ms.reviewer: tessarhurr, v-hzargari
 ms.topic: concept-article
-ms.custom: 
 ms.date: 12/10/2025
 ms.search.form: Anomaly detector billing
 ---

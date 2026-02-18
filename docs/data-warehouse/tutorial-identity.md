@@ -1,8 +1,6 @@
 ---
 title: "How To: IDENTITY Columns in Fabric Data Warehouse"
 description: Learn how to use IDENTITY columns in Fabric Data Warehouse to create and manage surrogate keys efficiently.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
 ms.topic: how-to
@@ -13,6 +11,8 @@ ms.topic: how-to
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This tutorial explains how to use `IDENTITY` columns in Fabric Data Warehouse to create and manage surrogate keys efficiently.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -113,6 +113,6 @@ Observe the values assigned to the new rows:
 
 ## Related content
 
-- [Understanding IDENTITY columns in Fabric Data Warehouse](identity.md)
+- [IDENTITY columns in Fabric Data Warehouse](identity.md)
 - [Create tables in the Warehouse in Microsoft Fabric](create-table.md)
 - [Migrate IDENTITY columns to Fabric Data Warehouse](migrate-identity-columns.md)

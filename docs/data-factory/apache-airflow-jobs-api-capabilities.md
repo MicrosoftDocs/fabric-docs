@@ -1,8 +1,7 @@
 ---
 title: API capabilities for Fabric Data Factory's Apache Airflow Job
 description: This article describes the available APIs for Apache Airflow Job in Microsoft Fabric Data Factory.
-author: conxu-ms
-ms.author: conxu
+ms.reviewer: conxu
 ms.topic: concept-article
 ms.custom: airflows
 ms.date: 01/22/2026
@@ -10,8 +9,7 @@ ms.date: 01/22/2026
 
 # REST API capabilities for Apache Airflow Jobs in Fabric Data Factory
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 Fabric Data Factory offers a powerful set of APIs that make it easy to automate and manage your Apache Airflow Jobs. You can connect to different data sources and services, and build, update, or monitor your workflows with just a few lines of code. The APIs cover everything from creating and editing Apache Airflow Jobs to tracking them — so you can keep your data flowing smoothly without the hassle.
 

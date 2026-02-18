@@ -1,10 +1,7 @@
 ---
 title: Use ai.generate_response with pandas
 description: Learn how to generate custom text responses based on your own instruction by using the ai.generate_response function with pandas.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

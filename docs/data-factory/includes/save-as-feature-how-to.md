@@ -1,8 +1,6 @@
 ---
 title: Include file for the Save As feature in Dataflow Gen2
 description: Include file for the Save As feature in Dataflow Gen2
-author: whhender
-ms.author: whhender
 ms.topic: include
 ms.date: 08/19/2025
 ---

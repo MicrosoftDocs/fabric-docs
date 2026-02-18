@@ -2,8 +2,6 @@
 title: "Fabric Eventstream: Supported Data Formats"
 description: Learn how Fabric Eventstream supports JSON, CSV, Avro, and text-based formats for event ingestion, transformation, and routing to various destinations.
 #customer intent: As a data engineer, I want to understand the data formats supported by Fabric Eventstream so that I can ensure compatibility with my event payloads.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: ali
 ms.date: 01/05/2026
 ms.topic: concept-article
