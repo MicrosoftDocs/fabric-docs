@@ -5,7 +5,7 @@ ms.reviewer: orhasban
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange
-ms.date: 11/19/2024
+ms.date: 02/17/2026
 ms.search.form: Notebooks
 --- 
 # Use Fabric notebooks with data from a KQL database
