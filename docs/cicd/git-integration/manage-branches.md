@@ -28,6 +28,99 @@ To work with branches using Git integration, first connect the shared developmen
 
 Then, each developer can choose the isolated environment in which to work.
 
+## Types of branch out
+ 
+ When you start a branch‑out operation in Fabric, you choose between **automatic mode** and **selective mode**. These modes determine how items from the git branch are brought into the new (or existing) feature workspace.
+ 
+ ### Automatic Mode
+ Automatic mode represents the traditional branch‑out experience:
+ 
+ - All git branch items are copied into the branched‑out workspace with no filtering or selection.
+ - No item selection is allowed—the user can't change which items come over.
+ - All existing Git‑connected workspaces created before the Selective Branching feature automatically remain in this mode.
+ - Behavior remains consistent with today’s full branch‑out workflow, ensuring compatibility and predictability.
+ 
+ Best for:
+ - Full‑workspace development
+ - onboarding users with existing Git connections
+ - scenarios where you truly need the complete workspace content.
+ 
+ ### Selective Mode
+ Selective mode introduces the Selective Branching experience:
+ 
+ - You choose which items to include in the branched‑out workspace. 
+ - Related items must be selected — Fabric enforces dependencies, but not automatically. You can use the **select related items** button for that purpose.
+ - Ideal for reducing clutter, improving performance, and avoiding unintended changes.
+ 
+ Best for:
+ - Focused development on a small set of items
+ - accelerating branch‑out performance
+ - minimizing workspace sprawl
+ - unblocking failures caused by problematic items.
+
+
+## What is selective branching?
+Before selective branching, branching out required synchronizing all items in the git branch with the new feature workspace.
+
+Selective Branching helps you create a streamlined feature workspace by choosing only the specific items you need—rather than copying the entire workspace. This results in faster branch‑outs, fewer unnecessary items, and a safer, more focused development experience. Selective Branching gives you control over what gets copied into your new feature workspace. 
+
+## How to use selective branching
+To use selective branching, follow these steps:
+
+1. From your Microsoft Fabric workspace, select **Source control** at the top.
+2. On the right, select the **branch out** symbol.
+3. Use the drop-down and select **Branch out to workspace**.
+4. If it's a new branch, under Workspace, new enter the name of the new workspace, otherwise select an existing one.
+5. Place a check in the **Select items individually (preview)**.
+  :::image type="content" source="media/branch-out/branch-2.png" alt-text="Screenshot of select items individually." lightbox="media/branch-out/branch-2.png":::
+
+
+
+6. Click the **Branch out** button.
+7. This action brings up a dialog to **Select items for your workspace**.
+8. Select the items that you want for this workspace.
+9. Click **Create branch**.
+ :::image type="content" source="media/branch-out/branch-4.png" alt-text="Screenshot of create branch." lightbox="media/branch-out/branch-4.png":::
+
+10. When you perform selective branching, all the item’s dependencies are required. If you don't select one of the dependencies, you see the following:
+  :::image type="content" source="media/branch-out/branch-3.png" alt-text="Screenshot of dependency error." lightbox="media/branch-out/branch-3.png":::
+
+
+11. Once the branch is created, you can verify that you are in a selective branch by the icon in the bottom status bar (lower left corner). It says selective branch.
+
+:::image type="content" source="media/branch-out/branch-5.png" alt-text="Screenshot of selective branch icon." lightbox="media/branch-out/branch-5.png":::
+
+12. Once the feature workspace is set up, it contains only the items that you selected.
+13. Now you can change items, add new items, or delete existing items and then commit the changes to git. 
+
+## How to add additional items to the workspace
+Use the steps below to add additional items to your workspace.
+
+1. From your new Microsoft Fabric workspace (the one you created using selective branching), select **Source control** at the top.
+2. On the right, select the **branch out** symbol.
+3. Use the drop-down and select **Select additional items**.
+4. This action brings up a dialog to **Select items for your workspace**. 	The select items dialog shows **only** items from the git branch that weren't previously selected.
+5. Select the additional items you want to add to the feature workspace.
+6. Click **Add**. The selected items are added to the pending updates in the source control pane.
+7. Click **Update all**. This operation performs an update from git and creates the items in the workspace.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### Scenario 1 - Develop using client tools
 
 If the items you're developing are available in other tools, you can work on those items directly in the client tool. Not all items are available in every tool. Items that are only available in Fabric need to be developed in Fabric.
