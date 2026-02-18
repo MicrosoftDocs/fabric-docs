@@ -30,11 +30,13 @@ items:
         href: tutorial-model-nodes.md
       - name: 4 - Add edges to your graph
         href: tutorial-model-edges.md
-      - name: 5 - Query the graph with the query builder
+      - name: 5 - Add multiple node types using one table
+        href: tutorial-model-node-edge-from-same-table.md 
+      - name: 6 - Query the graph with the query builder
         href: tutorial-query-builder.md
-      - name: 6 - Query the graph with GQL
+      - name: 7 - Query the graph with GQL
         href: tutorial-query-code-editor.md
-      - name: 7 - Clean up tutorial resources
+      - name: 8 - Clean up tutorial resources
         href: tutorial-clean-up.md
   - name: Troubleshoot
     items:
