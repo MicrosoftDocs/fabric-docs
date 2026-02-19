@@ -239,6 +239,5 @@ No steps for SynapseML in this section.
 
 - [Use prebuilt Text Analytics in Fabric with REST API and SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
-
+- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-python-sdk.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-synapse-ml.md)

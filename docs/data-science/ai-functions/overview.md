@@ -69,7 +69,7 @@ AI functions now execute with increased default concurrency of 200, allowing for
 
 ```python
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 ```
 
 # [pandas (Python runtime)](#tab/pandas-python)
@@ -80,8 +80,7 @@ AI functions now execute with increased default concurrency of 200, allowing for
 !wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
-
+%pip install -q openai synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 ```
 
 ---
