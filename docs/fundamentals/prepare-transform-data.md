@@ -5,36 +5,40 @@ description: Prepare and transform data effortlessly in Microsoft Fabric using l
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/11/2026
+ms.date: 02/18/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
-# Prepare and transform data
+# Prepare and transform data in Microsoft Fabric
 
-After you have data in Fabric, either landed natively in OneLake or accessible through shortcuts, you can refine and transform it for analysis. Microsoft Fabric provides both low-code and code-first approaches to data preparation, supporting a range of users from business-friendly data wranglers to advanced data engineers.
+After you ingest data into Microsoft Fabric, you typically need to clean, shape, and enrich it before analysis. Whether your goal is to prepare curated tables in a lakehouse or model-ready data in a warehouse, Fabric provides both low-code and code-first transformation options.
+
+This article describes how to use Dataflow Gen2 for visual, low-code data preparation and how to use notebooks and user data functions for advanced, code-driven transformations. Choose the approach that best fits your role, skill set, and workload requirements.
 
 ## Transform data with Dataflow Gen2
 
-:::image type="content" source="./media/prepare-transform-data/prepare-dataflow.png" alt-text="Diagram of the Dataflow Gen2 data preparation interface.":::
+For low-code data preparation, use [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md). Dataflow Gen2 uses the familiar [Power Query](/power-query/power-query-what-is-power-query) experience, the same technology used in Excel and Power BI.
 
-For low-code data preparation, [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md) is the primary tool in Fabric. With Dataflows Gen2, you prepare and transform data by using the familiar [Power Query](/power-query/power-query-what-is-power-query) interface, the same technology used in Excel and Power BI. You can [apply filters, derive columns, aggregate, and merge data through a visual, step-by-step experience](/power-query/power-query-ui). In Fabric, Dataflows Gen2 can act as standalone ETL processes or be [invoked within pipelines as activities](../data-factory/tutorial-dataflows-gen2-pipeline-activity.md). For example, after you ingest raw sales data into a Lakehouse, a Dataflow can clean the data (remove duplicates, standardize fields) and then output a curated table into a "Gold" area of the Lakehouse or into a Warehouse.
+With the [Power Query interface](/power-query/power-query-ui), you can apply filters, derive columns, aggregate data, merge queries, and perform other transformations through a visual, step-by-step workflow. In Fabric, Dataflow Gen2 can run as a standalone ETL process or as an [activity within a pipeline](../data-factory/tutorial-dataflows-gen2-pipeline-activity.md).
 
-Because Dataflows are cloud-based and use Fabric's scale-out compute (the same engine behind Power Query in the cloud), they can handle large volumes of data and complex transformations without any coding. Data analysts or BI developers can shape data without engineering support. Because [Dataflows Gen2 can write their output to various destinations such as Lakehouse tables and Warehouse tables](/power-query/connectors/), the prepared data becomes part of Fabric's unified storage or warehousing layer.
+For example, after you ingest raw sales data into a Lakehouse, you can use a dataflow to remove duplicates, standardize column names, apply business rules, and write the cleaned results to curated tables in a Gold layer of the Lakehouse or into a Warehouse.
+
+Dataflow Gen2 runs in the cloud by using Fabric capacity, enabling it to scale to large datasets and complex transformations without requiring custom code. Data analysts and BI developers can prepare data independently, while still writing output to Lakehouse or Warehouse tables as part of Fabric’s unified storage foundation.
 
 ## Code-first preparation with notebooks and user data functions
 
-For code-first preparation and advanced data engineering, Fabric offers Notebooks, Spark jobs, and User Data Functions in the Data Engineering experience.
+For advanced transformation scenarios with code, use notebooks, Spark jobs, and user data functions in the Data Engineering experience.
 
-:::image type="content" source="./media/prepare-transform-data/prepare-notebook-function.png" alt-text="Diagram of notebooks and user data functions for data preparation.":::
+A [Fabric notebook](../data-engineering/how-to-use-notebook.md) provides a Jupyter-style environment in the Fabric portal. You can write code in languages such as [Python](../data-engineering/using-python-experience-on-notebook.md), [T-SQL](../data-engineering/author-tsql-notebook.md), or Scala to work with data stored in OneLake.
 
-A [Fabric Notebook](../data-engineering/how-to-use-notebook.md) provides a Jupyter-like environment in the Fabric portal where you can write code in languages such as [Python](../data-engineering/using-python-experience-on-notebook.md), [T-SQL](../data-engineering/author-tsql-notebook.md), or Scala to work with data in OneLake.
+Notebooks are well suited for complex transformations, custom algorithms, data science workflows, and integration with external libraries. For example, you can load raw JSON or Parquet files from a lakehouse into a Spark DataFrame, join them with other datasets, apply windowed aggregations, enrich the data, and save the results back as Delta tables in OneLake.
 
-This environment is ideal for data engineers and data scientists who need to perform complex transformations, use custom algorithms, or integrate with Python libraries (for example, to apply machine learning or advanced statistics). In a notebook, you can load raw JSON or Parquet files from a Lakehouse into a Spark DataFrame, perform cleansing and enrichment (such as joining with another DataFrame or running windowed aggregations), and then save the results back as a Delta table in OneLake.
+Notebooks integrate directly with lakehouses and warehouses in the same workspace. You can read and write data without additional credential configuration because operations run within the Fabric security context. You can also orchestrate and schedule notebooks by using the [notebook activity](../data-factory/notebook-activity.md) in Data Factory pipelines.
 
-Notebooks in Fabric are deeply integrated. They can directly [connect to Lakehouses](../data-engineering/lakehouse-notebook-explore.md) and Warehouses and read or write data without extra credentials or setup, because everything is within the Fabric workspace security context. You can also [schedule and orchestrate notebooks as part of Data Factory pipelines](../data-factory/notebook-activity.md), which bridges the gap between code-centric and workflow-centric data preparation.
+[Fabric user data functions](../data-engineering/user-data-functions/user-data-functions-overview.md) enable you to encapsulate reusable Python logic inside Fabric. You can use them to implement advanced business rules, call external services, or build modular transformation components. User data functions support PyPI libraries, can connect to [Fabric data sources](../data-engineering/user-data-functions/connect-to-data-sources.md), and can expose REST endpoints for external integration. These capabilities makes them suitable for enterprise scenarios that require reusable, governed transformation logic.
 
-[Fabric User Data Functions (UDFs)](../data-engineering/user-data-functions/user-data-functions-overview.md) let developers embed custom Python logic directly within the platform, enabling advanced workflows and reusable business rules across pipelines, notebooks, and Activator rules. With support for PyPI libraries, UDFs can interact with [Fabric data sources](../data-engineering/user-data-functions/connect-to-data-sources.md) and expose REST endpoints for external integration. These capabilities make them ideal for encapsulating complex operations and promoting modular, scalable solutions within enterprise environments. You can invoke User Data Functions from [Notebooks](../data-engineering/notebook-utilities.md#user-data-function-udf-utilities), [Pipelines](../data-engineering/user-data-functions/create-functions-activity-data-pipelines.md), [Activator rules](../real-time-intelligence/data-activator/activator-rules-overview.md), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
+ You can invoke User Data Functions from [Notebooks](../data-engineering/notebook-utilities.md#user-data-function-udf-utilities), [Pipelines](../data-engineering/user-data-functions/create-functions-activity-data-pipelines.md), [Activator rules](../real-time-intelligence/data-activator/activator-rules-overview.md), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
 
 ## Related content
 

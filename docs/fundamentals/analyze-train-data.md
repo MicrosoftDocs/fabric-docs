@@ -5,61 +5,78 @@ description: Discover how Microsoft Fabric empowers data scientists with tools f
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/11/2026
+ms.date: 02/18/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
 # Analyze and train data in Microsoft Fabric
 
-Beyond traditional analytics and reporting, Microsoft Fabric includes capabilities for advanced analytics, such as machine learning (ML), AI model training, and big data analysis. The Data Science workload in Fabric is designed for those tasks. It provides an environment where data scientists and analysts can build, train, and operationalize ML models by using the same unified data platform. With Fabric IQ data agents, operations agents, and Power BI Copilot, you can interact with data and insights through natural language and act on conditions and patterns found.
+Microsoft Fabric provides tools for advanced analytics, machine learning (ML), and AI model operationalization, all within a single unified platform. The Data Science workload is designed for data scientists and analysts to explore, prepare, and analyze data, build and track ML models, and operationalize AI workflows. Fabric IQ Data Agents, Operations Agents, and Copilot in Power BI enhance interaction with data through natural language, automation, and insight-driven actions.
+
+In this article, you will learn about:
+
+- AI agents for conversational analytics and operational automation  
+- Data science workflows for model training, tracking, and deployment  
+- Developer and user access options with GraphQL and Copilot
 
 ## AI agents
 
-:::image type="content" source="./media/analyze-train-data/analyze-agents.png" alt-text="Diagram of AI agents architecture.":::
+AI agents in Microsoft Fabric help teams move from passive reporting to active decision support. Data Agents make governed data easier to explore through natural-language questions, while Operations Agents monitor business conditions and trigger actions when rules are met. Together, they connect insights and automation so teams can respond faster, reduce manual effort, and make decisions with more context.
 
 ### Data agent
 
-With [Fabric data agents](../data-science/concept-data-agent.md), you can build conversational Q&A systems over enterprise data by using generative AI. Users can ask plain-English questions and receive structured, accurate, and secure answers without needing SQL, DAX, or KQL expertise. The agent uses Azure OpenAI Assistant APIs to parse questions, identify the most relevant OneLake data source (such as Lakehouse, Warehouse, Power BI semantic models, KQL databases, or ontologies), and generate validated read-only queries grounded in user permissions and responsible AI policies. You can [tailor the agent with custom instructions, examples, and domain-specific guidance](../data-science/data-agent-configurations.md) to ensure responses align with business logic and improve relevance.
+[Fabric Data Agents](../data-science/concept-data-agent.md) allow conversational Q&A over enterprise data using generative AI. Users can ask plain-English questions and get structured, secure, read-only answers without needing SQL, DAX, or KQL. Data Agents use Azure OpenAI Assistant APIs to identify relevant OneLake data sources, including Lakehouses, Warehouses, Power BI semantic models, KQL databases, and ontologies. You can [configure agents](../data-science/data-agent-configurations.md) with custom instructions, examples, and domain-specific guidanceto improve response relevance.
 
-Fabric Data Agents integrate with [Microsoft Foundry](../data-science/data-agent-foundry.md), [Copilot Studio](../data-science/data-agent-microsoft-copilot-studio.md), and [Microsoft 365 Copilot](../data-science/data-agent-microsoft-365-copilot.md) to extend their role from conversational analytics into full agentic AI workflows:
-* Foundry IQ provides a shared context layer where Data Agents contribute structured business insights alongside other agents, enabling multistep reasoning and orchestration across enterprise systems.
-* Copilot Studio lets you embed these agents as custom skills in Teams, web apps, or line-of-business applications, injecting live business context into Copilot prompts and combining Q&A with workflow automation.
-* The integration with Microsoft 365 Copilot lets these agents surface governed, ontology-driven insights directly within productivity tools like Outlook, Excel, and Teams, combining conversational analytics with workflow automation.
+Data Agents integrate with [Microsoft Foundry](../data-science/data-agent-foundry.md), [Copilot Studio](../data-science/data-agent-microsoft-copilot-studio.md), and [Microsoft 365 Copilot](../data-science/data-agent-microsoft-365-copilot.md) to extend capabilities from conversational analytics to AI workflows:
+
+- Foundry IQ provides a shared context layer where Data Agents contribute structured business insights alongside other agents, enabling multistep reasoning and orchestration across enterprise systems.
+
+- Copilot Studio lets you embed these agents as custom skills in Teams, web apps, or line-of-business applications, injecting live business context into Copilot prompts and combining Q&A with workflow automation.
+
+- The integration with Microsoft 365 Copilot lets these agents surface governed, ontology-driven insights directly within productivity tools like Outlook, Excel, and Teams, combining conversational analytics with workflow automation.
 
 ### Operations agent
 
-[Operations Agents](../real-time-intelligence/operations-agent.md) in Microsoft Fabric IQ are autonomous, ontology-driven AI components that monitor real-time data streams, interpret events in business context, and execute or recommend actions to optimize outcomes. They use the ontology to apply rules and objectives, enabling proactive decision-making rather than reactive responses. Integrated with Activator and Power Automate, Operations Agents can trigger workflows across ERP, CRM, and other systems, while Teams provides alerts and human-in-the-loop approvals for governed autonomy. Unlike Data Agents, which focus on answering questions, Operations Agents continuously act on live conditions, learning from results to improve future decisions and transform operations into adaptive, context-aware automation.
+[Operations Agents](../real-time-intelligence/operations-agent.md) are autonomous, ontology-driven AI components that monitor real-time data streams, interpret events, and execute or recommend actions. They use the ontology to apply rules and objectives, enabling proactive decision-making rather than reactive responses. They integrate with Activator and Power Automate to trigger workflows in ERP, CRM, and other systems, while Teams provides alerts and human approvals. Unlike Data Agents, which focus on answering questions, Operations Agents continuously act on live conditions, learning from results to improve future decisions and transform operations into adaptive, context-aware automation.
+
+The following diagram shows how Data Agents and Operations Agents in Fabric IQ use governed enterprise data and automation services to deliver insights and trigger actions.
+
+:::image type="content" source="./media/analyze-train-data/analyze-agents.png" alt-text="Diagram of AI agents architecture.":::
 
 ### Choose between data agents and operations agents
 
-Data Agents and Operations Agents in Microsoft Fabric IQ serve distinct roles. Data Agents provide conversational analytics by answering user questions in natural language, using ontology for semantic grounding and querying multiple sources like Lakehouses, Warehouses, and Power BI models. They integrate externally through Teams, Copilot Studio, and custom apps for insight delivery. In contrast, Operations Agents focus on autonomous decision-making. They monitor real-time data streams against ontology-based rules to trigger or recommend actions. They integrate with Power Automate (through Activator), Teams for alerts and approvals, and external operational systems like ERP or CRM. Data Agents democratize data access for insights, while Operations Agents drive proactive, governed automation for operational optimization.
+Data Agents and Operations Agents in Microsoft Fabric IQ serve distinct roles. Data Agents provide conversational analytics by answering user questions in natural language, using ontology for semantic grounding and querying multiple sources like Lakehouses, Warehouses, and Power BI models. They integrate externally through Teams, Copilot Studio, and custom apps for insight delivery. 
+
+In contrast, Operations Agents focus on autonomous decision-making. They monitor real-time data streams against ontology-based rules to trigger or recommend actions. They integrate with Power Automate (through Activator), Teams for alerts and approvals, and external operational systems like ERP or CRM. Data Agents democratize data access for insights, while Operations Agents drive proactive, governed automation for operational optimization.
 
 ## Data science workflows
 
-:::image type="content" source="./media/analyze-train-data/analyze-data-science.png" alt-text="Diagram of Data Science workflows architecture.":::
-
-[Fabric's Data Science experience](../data-science/data-science-overview.md) covers the entire ML lifecycle, from data exploration and preparation to model experimentation, tracking, deployment, and consumption. All the tools you need, like notebooks, Apache Spark, MLflow tracking, and AutoML, are built in. Data scientists can develop and operationalize ML models alongside data engineers and analysts in one place.
+[Fabric Data Science](../data-science/data-science-overview.md) covers the full ML lifecycle: data exploration, preparation, model experimentation, tracking, deployment, and consumption. Tools you need include notebooks, Apache Spark, MLflow, and AutoML, all within a unified platform. Data scientists can develop and operationalize ML models alongside data engineers and analysts in one place.
 
 ### Track experiments with MLflow
 
-[Experiments](../data-science/machine-learning-experiment.md) in Microsoft Fabric organize and track model training runs. An experiment in Fabric works like an MLflow experiment: it contains a collection of runs, where each run is one execution of model training code. Because Fabric integrates with MLflow, every run can [automatically log relevant information](../data-science/mlflow-autologging.md) such as hyperparameters, metrics, tags, code version, and output items without requiring custom logging code. MLflow tracking is natively built into Fabric's notebooks and Spark jobs, so data scientists can use MLflow APIs or Fabric's UI to create experiments and record runs.
+[Experiments](../data-science/machine-learning-experiment.md) in Microsoft Fabric organize and track model training runs. An experiment in Fabric works like an MLflow experiment: it contains a collection of runs, where each run is one execution of model training code. Because Fabric integrates with MLflow, every run can automatically [log relevant information](../data-science/mlflow-autologging.md) such as hyperparameters, metrics, tags, code version, and output items without requiring custom logging code. MLflow tracking is natively built into Fabric's notebooks and Spark jobs, so data scientists can use MLflow APIs or Fabric's UI to create experiments and record runs.
 
 ### Register and deploy ML models
 
-[ML models](../data-science/machine-learning-model.md) in Fabric are registered machine learning models. Fabric's model management uses MLflow-powered registries to store, version, and track models. After you select the best experiment run, register the model in Fabric's model registry. The registry captures metadata such as source run, hyperparameters, metrics, and environment details for reproducibility. Models are saved in a standardized MLflow format, which enables interoperability across Spark and Python environments.
+[ML models](../data-science/machine-learning-model.md) in Fabric are registered machine learning models. Fabric's model management uses MLflow-powered registries to store, version, and track models. After selecting the best experiment run, register the model in Fabric to store metadata like hyperparameters, metrics, and environment details. Models are saved in a standardized MLflow format, which enables interoperability across Spark and Python environments.
 
-ML model deployment options include batch scoring directly within Fabric by using Spark for large-scale inference and writing predictions back to OneLake for immediate Power BI consumption. [Real-time endpoints](../data-science/model-endpoints.md) also enable one-click activation of REST APIs for low-latency predictions with auto-scaling and minimal setup. These options make operationalization of ML models faster and more integrated with enterprise workflows.
+Models can be deployed for batch scoring in Spark or through [real-time endpoints](../data-science/model-endpoints.md) for low-latency predictions.
+
+The following diagram shows the end-to-end Data Science workflow in Fabric, from data preparation and experimentation to model registration and deployment.
+
+:::image type="content" source="./media/analyze-train-data/analyze-data-science.png" alt-text="Diagram of Data Science workflows architecture.":::
 
 ### Developer data access with GraphQL
 
-[API for GraphQL](../data-engineering/api-graphql-overview.md) provides a data‑access layer that developers use to query multiple Fabric data sources (Data Warehouse, SQL Database, Lakehouse, mirrored databases) through a single, flexible GraphQL endpoint. It abstracts backend complexities so applications can request exactly the data they need in one call, reducing over‑fetching and improving performance. The API supports automatic schema discovery, generated queries and mutations, relationship modeling, monitoring, and an interactive editor with IntelliSense for building and testing GraphQL operations. It makes it easier to expose specific tables, views, and fields while enabling fast, client‑driven data access across Fabric environments.
+The [API for GraphQL](../data-engineering/api-graphql-overview.md) provides a single, flexible endpoint to query multiple Fabric data sources, including Warehouses, SQL Databases, Lakehouses, and mirrored databases.  It supports schema discovery, generated queries, relationship modeling, and interactive query testing. It makes it easier to expose specific tables, views, and fields while enabling fast, client‑driven data access across Fabric environments.
 
-### Copilot for Power BI 
+### Copilot in Power BI
 
-[Copilot for Power BI](/power-bi/create-reports/copilot-introduction) uses generative AI to help business users and report creators work more efficiently by enabling natural‑language interactions with their data. It supports tasks like ad‑hoc analysis, finding insights, generating DAX expressions, and creating visuals on the fly. 
+[Copilot in Power BI](/power-bi/create-reports/copilot-introduction) enables natural-language data interaction. Users can explore data, generate insights, create visuals, and generate DAX expressions.
 
-The [standalone Copilot experience in Power BI](/power-bi/create-reports/copilot-chat-with-data-standalone) provides a full‑screen, cross‑item conversational interface that helps users explore and analyze data by answering questions across any report, semantic model, or Fabric data agent they have access to, rather than being limited to the report currently open. It identifies the most relevant data source automatically, asks clarifying questions when needed, and can immediately deliver insights once it selects the right report or model. For best results, authors [must prepare data for AI](/power-bi/create-reports/copilot-prepare-data-ai) and approve semantic models for Copilot to ensure accuracy; otherwise, users might encounter warning messages or get limited answers.
+ The [standalone Copilot experience](/power-bi/create-reports/copilot-chat-with-data-standalone) supports cross-item conversational analysis, automatically selecting the relevant data source such as any report, semantic model, or Fabric data agent they can access. It identifies the most relevant data source automatically, asks clarifying questions when needed, and can immediately deliver insights once it selects the right report or model. [Preparing data for AI](/power-bi/create-reports/copilot-prepare-data-ai) and approving semantic models improves accuracy and ensures high-quality responses.
 
 ## Related content
 
