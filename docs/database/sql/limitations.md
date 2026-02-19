@@ -1,8 +1,8 @@
 ---
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
-ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 02/17/2026
+ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier, ajayj
+ms.date: 02/18/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -30,7 +30,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 - Currently, in-memory, ledger, ledger history, and Always Encrypted tables cannot be created in SQL database in Microsoft Fabric.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The following table-level data definition language (DDL) operations aren't allowed:
-    - Switch/Split/Merge partition
+    - Switch partition
     - Partition compression
 
 ## Column level
