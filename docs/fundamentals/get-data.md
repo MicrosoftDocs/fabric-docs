@@ -5,7 +5,7 @@ description: Learn how Microsoft Fabric simplifies data ingestion with connector
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/11/2026
+ms.date: 02/18/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
