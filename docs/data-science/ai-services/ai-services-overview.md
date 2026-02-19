@@ -1,11 +1,14 @@
 ---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.reviewer: lagayhar, ruxu
+ms.author: lagayhar
+author: lgayhardt
+ms.reviewer: vimeland
+reviewer: virginiaroman
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 12/23/2025
+ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
@@ -36,7 +39,7 @@ Fabric provides two options to use Azure AI services:
 
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md), [SynapseML](how-to-use-openai-sdk-synapse.md)
+[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
 - Language Models: `gpt-5`, `gpt-4.1`, and `gpt-4.1-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
@@ -137,5 +140,8 @@ Once the shop owner validates the logic, the owner sets up the regular run and e
 According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-compute-usage-reporting), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
 
 ## Related content
-- [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
 
+- [Fabric AI Functions](../ai-functions/overview.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint
