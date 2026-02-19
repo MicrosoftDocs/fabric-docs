@@ -314,11 +314,11 @@ Here are the steps to achieve this:
 
 This guide walks you through the recovery procedures for the Real-Time Intelligence experience. It covers KQL databases/querysets and eventstreams.
 
-### Graph model/queryset
+### Graph Model/Queryset
 
-Graph model and graph queryset items from the primary region remain unavailable to customers, and these items aren't replicated to the secondary region.
+Graph Model and Graph Queryset items from the primary region remain unavailable to customers, and these items aren't replicated to the secondary region.
 
-If you want to recover a graph model or graph queryset item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your graph model and graph queryset items with your Git repo.
+If you want to recover a graph model or graph queryset item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Graph Model and Graph Queryset items with your Git repo.
 
 During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Graph Model and Graph Queryset items in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step restores the Graph Model and Graph Queryset items in the new workspace.
 
