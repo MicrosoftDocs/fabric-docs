@@ -5,28 +5,39 @@ description: Discover how Microsoft Fabric integrates Power BI, Real-Time Intell
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/11/2026
+ms.date: 02/19/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
 
 # Track and visualize data
 
-One of the final steps in the data lifecycle is making sense of the data through analytics, visualization, and data-driven alerts. In Microsoft Fabric, the integration between Power BI, Real-Time Intelligence, and Fabric IQ workloads handles this step.
+Turning raw data into actionable insights is a key step in the data lifecycle. Microsoft Fabric combines Power BI, Real-Time Intelligence, and Fabric IQ to help business analysts explore, visualize, and respond to data in near real time. Using semantic models, streaming data, and AI-enhanced analytics, you can create governed reports, dashboards, and operational alerts that drive informed decision-making.
+
+In this article, you will learn about:
+
+- Creating Power BI reports and translytical taskflows for interactive analysis  
+- Using Real-Time Intelligence to monitor and act on streaming data  
+- Applying Fabric IQ business semantics, ontologies, and graph models to unify enterprise data
 
 ## Power BI reports and translytical taskflows
 
+[Power BI reports](/power-bi/consumer/end-user-reports) use semantic models stored in OneLake as their analytical backbone. These models provide a structured, reusable, and governed layer of business logic for advanced analytics and visualization. Reports enable data exploration and interactive visualizations for business users.
+
+You can distribute and embed Power BI reports across Microsoft 365 applications:
+
+- Pin reports in [Microsoft Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams) channels or chats for collaborative analysis.  
+- Embed reports in SharePoint pages using the Power BI web part.  
+- Insert live reports into [PowerPoint](/power-bi/collaborate-share/service-power-bi-powerpoint-add-in-about) presentations.  
+- Connect to Power BI datasets from [Excel](/power-bi/collaborate-share/service-connect-excel-power-bi-datasets) to create PivotTables and charts on top of semantic models.  
+
+[Translytical taskflows](/power-bi/create-reports/translytical-task-flow-overview) provide a unified experience for transitioning between transactional and analytical operations. From within a Power BI report, you can analyze data and invoke user data functions that update records, trigger workflows, or write back to OneLake. This tight integration is useful for sales management, inventory adjustments, and customer service scenarios.
+
+The following diagram shows how Power BI reports and translytical taskflows combine analytics and action in a single, governed experience:
+
 :::image type="content" source="./media/track-visualize-data/track-powerbi-translytical.png" alt-text="Diagram of Power BI translytical taskflows architecture.":::
 
-[Power BI reports](/power-bi/consumer/end-user-reports) use semantic models in OneLake as their analytical backbone, enabling advanced analytics through a structured, reusable, and governed layer of business logic. Power BI reports provide data exploration and visualization experiences for business users.
-
-You can distribute and embed Power BI reports across Microsoft 365 applications so your team can access and interact with insights in their everyday workflows. In [Microsoft Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams), pin reports in channels or chats for collaborative analysis. In SharePoint, embed reports into pages by using the Power BI web part for contextual reporting. In [PowerPoint](/power-bi/collaborate-share/service-power-bi-powerpoint-add-in-about), insert live reports into presentations. In [Excel](/power-bi/collaborate-share/service-connect-excel-power-bi-datasets), connect to Power BI datasets to build PivotTables and charts directly on top of semantic models. These integrations preserve interactivity, security, and governance across your organization.
-
-[Translytical taskflows](/power-bi/create-reports/translytical-task-flow-overview) provide a unified experience that enables you to transition between transactional and analytical operations within Power BI reports. You can analyze data and call user data functions to take direct action from the report interface. The user data function can then update records, trigger workflows, or write back to OneLake without leaving the report. Translytical taskflows are especially valuable in scenarios like sales management, inventory adjustments, or customer service, where insights and actions need to be tightly coupled.
-
 ## Real-time insights and actions
-
-:::image type="content" source="./media/track-visualize-data/track-real-time-intelligence.png" alt-text="Diagram of Real-Time Intelligence architecture.":::
 
 The Real-Time Intelligence workload in Microsoft Fabric enables you to ingest, process, analyze, and act on streaming data with minimal latency. It combines capabilities from the following services:
 
@@ -40,7 +51,7 @@ Eventstream supports routing and schema alignment, timestamp normalization, part
 
 [Eventhouses](../real-time-intelligence/eventhouse.md) are a scalable, real-time analytics engine designed to ingest, process, and analyze large volumes of event-based data with minimal latency. They support structured, semi-structured, and unstructured data from diverse sources and automatically index and partition data by ingestion time. They use Kusto Query Language (KQL) for fast, scalable querying of time-series and event data. KQL enables advanced filtering, aggregations, joins, and anomaly detection over large volumes of streaming data, making Eventhouses ideal for operational monitoring and telemetry analysis.
 
-[Integration with Activator happens through KQL querysets](../real-time-intelligence/data-activator/activator-alert-queryset.md), which let you define reusable queries that continuously evaluate conditions on Eventhouse data. Activator can subscribe to these query outputs and apply rules based on the query results. When a KQL query detects a condition (for example, CPU usage exceeds 90% or a trend indicates failure risk), Activator triggers automated actions like sending alerts, launching Power Automate flows, or executing Fabric pipelines. This combination of KQL's analytical power with Activator's orchestration enables real-time, data-driven automation across business scenarios.
+[Integration with Activator](../real-time-intelligence/data-activator/activator-alert-queryset.md) happens through KQL querysets which, let you define reusable queries that continuously evaluate conditions on Eventhouse data. Activator can subscribe to these query outputs and apply rules based on the query results. When a KQL query detects a condition (for example, CPU usage exceeds 90% or a trend indicates failure risk), Activator triggers automated actions like sending alerts, launching Power Automate flows, or executing Fabric pipelines. This combination of KQL's analytical power with Activator's orchestration enables real-time, data-driven automation across business scenarios.
 
 ### Real-time dashboards
 
@@ -58,7 +69,11 @@ When an anomaly is detected, it can [trigger downstream actions through Activato
 
 ### Automate responses with Activator
 
-[Activator](../real-time-intelligence/data-activator/activator-introduction.md) is a no-code, low-latency event detection engine in Fabric's Real-Time Intelligence that continuously monitors streaming data (for example, from Eventstreams) for user-defined conditions. [It supports simple threshold rules and stateful pattern detection](../real-time-intelligence/data-activator/activator-rules-overview.md) (for example, when a metric BECOMES critical or DECREASES over time). When a rule is met, Activator immediately triggers the specified action, such as sending a Teams or email alert or launching an [automated Power Automate flow](../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md) to drive real-time responses. Activator can also [trigger Fabric items](../real-time-intelligence/data-activator/activator-trigger-fabric-items.md) to enable automation of the Fabric data platform. This capability enables you to automate decisions and operational tasks in near real time, bridging live data insights to instant actions and improving responsiveness.
+[Activator](../real-time-intelligence/data-activator/activator-introduction.md) is a no-code, low-latency event detection engine in Fabric's Real-Time Intelligence that continuously monitors streaming data (for example, from Eventstreams) for user-defined conditions. It supports simple threshold rules and [stateful pattern detection](../real-time-intelligence/data-activator/activator-rules-overview.md) (for example, when a metric BECOMES critical or DECREASES over time). When a rule is met, Activator immediately triggers the specified action, such as sending a Teams or email alert or launching an [automated Power Automate flow](../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md) to drive real-time responses. Activator can also [trigger Fabric items](../real-time-intelligence/data-activator/activator-trigger-fabric-items.md) to enable automation of the Fabric data platform. This capability enables you to automate decisions and operational tasks in near real time, bridging live data insights to instant actions and improving responsiveness.
+
+The following diagram shows how Real-Time Intelligence in Fabric ingests streaming data, analyzes events, and triggers actions with low latency:
+
+:::image type="content" source="./media/track-visualize-data/track-real-time-intelligence.png" alt-text="Diagram of Real-Time Intelligence architecture.":::
 
 ## Business semantics
 
@@ -68,13 +83,13 @@ The [Fabric IQ workload](../iq/overview.md) maps your enterprise data to a share
 
 [Fabric Ontology](../iq/ontology/overview.md) is a shared, machine-understandable vocabulary of your business that defines the key entities (for example, Customer, Product, or Plane), their relationships, properties, business rules, and possible actions while maintaining all terms in the language of the business. It brings together a live, connected representation of how your business operates, mapped directly to the underlying data in OneLake (structured, unstructured, and streaming datasets). This rich business context is available to both analytics tools and AI agents. They don't just see tables but also relationships like "Customers place Orders for Products," "Flights have Segments and Crews," and "Delayed shipments impact Revenue." This data-centric context is critical for any AI that's expected to make decisions or analyses about the business.
 
-When you define an ontology element (such as an entity "Flight" with properties like Status or Delay), [you map it to the actual table and fields](../iq/ontology/how-to-bind-data.md) in an Eventhouse, Lakehouse, or Warehouse that contain that information, without copying or moving the data. After the data lands in OneLake, it becomes part of the live ontology.
+When you define an ontology element (such as an entity "Flight" with properties like Status or Delay), you [map it to the table and fields](../iq/ontology/how-to-bind-data.md) in an Eventhouse, Lakehouse, or Warehouse that contain that information, without copying or moving the data. After the data lands in OneLake, it becomes part of the live ontology.
 
-Beyond business entities and relationships, ontologies can also define actionable rules, such as "If inventory < threshold, trigger replenishment." [Operations Agents](../real-time-intelligence/operations-agent.md) use these rules to trigger workflows in Activator. When an Operations Agent [invokes Activator to run a Power Automate flow](../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md), it passes parameters derived from ontology properties, such as CustomerID and OrderStatus. This approach ensures that automation flows operate with full business context, not just raw IDs.
+Beyond business entities and relationships, ontologies can also define actionable rules, such as "If inventory < threshold, trigger replenishment." [Operations Agents](../real-time-intelligence/operations-agent.md) use these rules to trigger workflows in Activator. When an Operations Agent invokes [Activator to run a Power Automate flow](../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md), it passes parameters derived from ontology properties, such as CustomerID and OrderStatus. This approach ensures that automation flows operate with full business context, not just raw IDs.
 
 ### Graph model
 
-[Graph models](../graph/graph-database.md) in Microsoft Fabric provide a native graph engine that transforms ontology-defined entities and relationships into a connected network. By using this network, you can enable multi-hop reasoning, impact analysis, and advanced algorithms like shortest path and community detection. This integration lets AI agents and analytics tools query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can interrogate graph models by using [GraphQL queries](../graph/gql-language-guide.md) through [Fabric APIs](../graph/gql-query-api.md).
+[Graph models](../graph/graph-database.md) provide a connected network of ontology-defined entities and relationships. They enable multi-hop reasoning, impact analysis, and advanced algorithms such as shortest path and community detection. This integration lets AI agents and analytics tools query complex relationships efficiently. It offers real-time insights into dependencies and cascading effects that traditional relational models struggle to handle. You can interrogate graph models by using [GraphQL queries](../graph/gql-language-guide.md) through [Fabric APIs](../graph/gql-query-api.md).
 
 ## Related content
 
