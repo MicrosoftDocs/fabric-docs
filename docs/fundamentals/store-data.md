@@ -58,7 +58,7 @@ This architecture supports hybrid transactional and analytical processing (HTAP)
 
 An [Eventhouse](../real-time-intelligence/eventhouse.md) provides a scalable real-time analytics environment designed to ingest, store, and analyze high volumes of event data. It is the foundational engine for Real-Time Intelligence workloads.
 
-An Eventhouse hosts one or more Kusto Query Language databases based on the Kusto engine. These databases automatically index and partition data by ingestion time. You query data by using [Kusto Query Language](https://learn.microsoft.com/kusto/query/?view=microsoft-fabric&preserve-view=true).
+An Eventhouse hosts one or more Kusto Query Language databases based on the Kusto engine. These databases automatically index and partition data by ingestion time. You query data by using [Kusto Query Language](/kusto/query/?view=microsoft-fabric&preserve-view=true).
 
 Eventhouse is well suited for telemetry, security logs, compliance records, and financial transactions where low-latency analytics and high-scale ingestion are required.
 
@@ -110,7 +110,7 @@ Selecting the appropriate store depends on data structure, latency requirements,
 
 * [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
 * [Get data into Microsoft Fabric](get-data.md)
-* [Prepare and transform data](prepare-data.md)
+* [Prepare and transform data](prepare-transform-data.md)
 * [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
 * [Track and visualize data](track-visualize-data.md)
 * [External integration and platform connectivity](external-integration.md)

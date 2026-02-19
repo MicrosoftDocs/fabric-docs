@@ -28,7 +28,7 @@ items:
     - name: Store data
       href: store-data.md
     - name: Prepare and transform data
-      href: prepare-data.md
+      href: prepare-transform-data.md
     - name: Analyze and train data
       href: analyze-train-data.md
     - name: Track and visualize data
