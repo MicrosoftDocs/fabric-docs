@@ -2,7 +2,7 @@
 title: Data Encryption in SQL Database in Fabric
 description: Learn about data encryption and customer-managed keys in SQL database in Microsoft Fabric.
 ms.reviewer: pivanho
-ms.date: 11/17/2025
+ms.date: 2/19/2025
 ms.topic: concept-article
 ms.search.form: SQL database security
 ms.custom: references_regions
@@ -10,8 +10,6 @@ ms.custom: references_regions
 # Data encryption in SQL database in Microsoft Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
-
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 Microsoft Fabric encrypts all data-at-rest using Microsoft-managed keys. All SQL database data is stored in remote Azure Storage accounts. To comply with encryption-at-rest requirements using Microsoft-managed keys, each Azure Storage account used by the SQL database is configured with [service-side encryption](/azure/storage/common/storage-service-encryption#about-azure-storage-service-side-encryption) enabled. 
 
@@ -75,7 +73,7 @@ When a customer-managed key is configured for a workspace in Microsoft Fabric, c
 Use the following steps to re-validate the customer-managed key:
 
 1. In your workspace, right-click on the SQL database, or the  `...` context menu. Select **Settings**.
-1. Select **Encryption (preview)**.
+1. Select **Encryption**.
 1. To attempt to revalidate the customer-managed key, select the **Revalidate customer-managed key** button. If the revalidation is successful, restoring access to your SQL database can take some time.
 
 > [!NOTE]
