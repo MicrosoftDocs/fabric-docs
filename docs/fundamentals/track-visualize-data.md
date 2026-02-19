@@ -81,6 +81,6 @@ Beyond business entities and relationships, ontologies can also define actionabl
 * [End-to-end data lifecycle in Microsoft Fabric](data-lifecycle.md)
 * [Get data into Microsoft Fabric](get-data.md)
 * [Store data in Microsoft Fabric](store-data.md)
-* [Prepare and transform data](prepare-data.md)
+* [Prepare and transform data](prepare-transform-data.md)
 * [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
 * [External integration and platform connectivity](external-integration.md)

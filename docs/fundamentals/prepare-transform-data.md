@@ -16,7 +16,7 @@ After you have data in Fabric, either landed natively in OneLake or accessible t
 
 ## Transform data with Dataflow Gen2
 
-:::image type="content" source="./media/prepare-data/prepare-dataflow.png" alt-text="Diagram of the Dataflow Gen2 data preparation interface.":::
+:::image type="content" source="./media/prepare-transform-data/prepare-dataflow.png" alt-text="Diagram of the Dataflow Gen2 data preparation interface.":::
 
 For low-code data preparation, [Dataflow Gen2](../data-factory/dataflows-gen2-overview.md) is the primary tool in Fabric. With Dataflows Gen2, you prepare and transform data by using the familiar [Power Query](/power-query/power-query-what-is-power-query) interface, the same technology used in Excel and Power BI. You can [apply filters, derive columns, aggregate, and merge data through a visual, step-by-step experience](/power-query/power-query-ui). In Fabric, Dataflows Gen2 can act as standalone ETL processes or be [invoked within pipelines as activities](../data-factory/tutorial-dataflows-gen2-pipeline-activity.md). For example, after you ingest raw sales data into a Lakehouse, a Dataflow can clean the data (remove duplicates, standardize fields) and then output a curated table into a "Gold" area of the Lakehouse or into a Warehouse.
 
@@ -26,7 +26,7 @@ Because Dataflows are cloud-based and use Fabric's scale-out compute (the same e
 
 For code-first preparation and advanced data engineering, Fabric offers Notebooks, Spark jobs, and User Data Functions in the Data Engineering experience.
 
-:::image type="content" source="./media/prepare-data/prepare-notebook-function.png" alt-text="Diagram of notebooks and user data functions for data preparation.":::
+:::image type="content" source="./media/prepare-transform-data/prepare-notebook-function.png" alt-text="Diagram of notebooks and user data functions for data preparation.":::
 
 A [Fabric Notebook](../data-engineering/how-to-use-notebook.md) provides a Jupyter-like environment in the Fabric portal where you can write code in languages such as [Python](../data-engineering/using-python-experience-on-notebook.md), [T-SQL](../data-engineering/author-tsql-notebook.md), or Scala to work with data in OneLake.
 

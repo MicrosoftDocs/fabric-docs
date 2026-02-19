@@ -43,7 +43,7 @@ Data Agents and Operations Agents in Microsoft Fabric IQ serve distinct roles. D
 
 ### Track experiments with MLflow
 
-[Experiments](../data-science/machine-learning-experiment.md) in Microsoft Fabric organize and track model training runs. An experiment in Fabric works like an MLflow experiment: it contains a collection of runs, where each run is one execution of model training code. Because Fabric integrates with MLflow, every run can [automatically log relevant information](../data-science/mlflow-autologging.md) such as hyperparameters, metrics, tags, code version, and output artifacts without requiring custom logging code. MLflow tracking is natively built into Fabric's notebooks and Spark jobs, so data scientists can use MLflow APIs or Fabric's UI to create experiments and record runs.
+[Experiments](../data-science/machine-learning-experiment.md) in Microsoft Fabric organize and track model training runs. An experiment in Fabric works like an MLflow experiment: it contains a collection of runs, where each run is one execution of model training code. Because Fabric integrates with MLflow, every run can [automatically log relevant information](../data-science/mlflow-autologging.md) such as hyperparameters, metrics, tags, code version, and output items without requiring custom logging code. MLflow tracking is natively built into Fabric's notebooks and Spark jobs, so data scientists can use MLflow APIs or Fabric's UI to create experiments and record runs.
 
 ### Register and deploy ML models
 

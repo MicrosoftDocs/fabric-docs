@@ -65,13 +65,13 @@ Once in OneLake, you can further transform the data by using either code-first e
 - **Notebooks** offer a Jupyter-like environment for Python, T-SQL, and Scala-based data engineering.
 - **User Data Functions** allow you to embed reusable custom Python logic that can be invoked from pipelines, notebooks, and Activator rules.
 
-For more information, see [Prepare and transform data](prepare-data.md).
+For more information, see [Prepare and transform data](prepare-transform-data.md).
 
-## Analyze and train data
+## Analyze data and train models
 
 Use the prepared data to train ML models and perform advanced analytics. Fabric's Data Science workload provides an environment for building, training, and operationalizing ML models:
 
-- **MLflow experiments** track model training runs with automatic logging of hyperparameters, metrics, and artifacts.
+- **MLflow experiments** track model training runs with automatic logging of hyperparameters, metrics, and items.
 - **ML models** are registered in an MLflow-powered registry for versioning, metadata tracking, and reproducibility.
 - **Data agents** and **operations agents** let you interact with data by using natural language and act on conditions and patterns found.
 - **GraphQL APIs** provide a flexible data-access layer for developers to query multiple Fabric data sources through a single endpoint.
@@ -99,7 +99,7 @@ Fabric integrates with external systems for both data ingestion and insights del
 - **Microsoft 365** integration surfaces insights in Teams, SharePoint, PowerPoint, and Excel.
 - **REST APIs** and **client libraries** provide programmatic access to Fabric resources.
 - **Microsoft Entra ID** handles authentication, conditional access, and service principal support.
-- **Git integration** with Azure DevOps and GitHub enables version control and CI/CD for Fabric artifacts.
+- **Git integration** with Azure DevOps and GitHub enables version control and CI/CD for Fabric items.
 - **Microsoft Purview** provides unified data governance, cataloging, and compliance across the Fabric data estate.
 
 For more information, see [External integration and platform connectivity](external-integration.md).
@@ -112,7 +112,7 @@ Natural language support comes in the form of Power BI Copilot, Data Agents, and
 
 - [Get data into Microsoft Fabric](get-data.md)
 - [Store data in Microsoft Fabric](store-data.md)
-- [Prepare and transform data](prepare-data.md)
+- [Prepare and transform data](prepare-transform-data.md)
 - [Analyze and train data in Microsoft Fabric](analyze-train-data.md)
 - [Track and visualize data](track-visualize-data.md)
 - [External integration and platform connectivity](external-integration.md)
