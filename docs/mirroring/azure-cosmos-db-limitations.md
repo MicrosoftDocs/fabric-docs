@@ -67,6 +67,8 @@ This article details the current limitations for Azure Cosmos DB accounts mirror
 
 - Data in OneLake doesn't support private endpoints, customer managed keys, or double encryption.
 
+- Cosmos DB mirroring artifacts do not support Outbound Access Protection within Fabric.
+
 ## Permissions limitations
 
 - If you only have viewer permissions in Fabric, you can't preview or query data in the SQL analytics endpoint.
