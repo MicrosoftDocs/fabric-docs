@@ -139,29 +139,6 @@ To cancel the tileset creation, open the **Monitor** page and select the **Cance
 > [!NOTE]
 > Users can only cancel a job when the status is **In progress**.
 
-## Schedule a manual refresh
-
-Manual scheduling lets you control exactly when a tileset is rebuilt.
-
-1. Open the Fabric map in **Edit** mode.
-2. Open **Settings**, then select **Schedule**.
-3. Select **Add schedule**.
-4. Choose a date and time for the refresh.
-
-When the schedule runs, Fabric Maps rebuilds the PMTiles using the current data in OneLake.
-
-<!-------------------------------------------------------------------------------------------------------------
-## Schedule automatic refresh based on data changes
-
-Automatic refresh uses change data detection to monitor the source data in OneLake. When changes are detected, Fabric Maps automatically triggers a new tileset build.
-
-1. Open the Fabric map in **Edit** mode.
-2. Open **Settings**, then select **Schedule**.
-3. Select **Add schedule**.
-4. Enable **Update data every time the file gets updated or refreshed**.
-
-With this option enabled, tilesets stay up to date without manual intervention.
-------------------------------------------------------------------------------------------------------------->
 ## Next steps
 
 > [!div class="nextstepaction"]

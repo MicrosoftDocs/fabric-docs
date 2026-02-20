@@ -63,17 +63,17 @@ Fabric Maps currently supports generating PMTiles from valid GeoJSON files using
 
 ### Data refresh and scheduling
 
-Fabric Maps supports scheduled data refresh for tilesets generated as PMTiles and stored in OneLake. Scheduling ensures that map visualizations stay aligned with changes in the underlying data without requiring manual regeneration.
+Fabric Maps supports scheduled data refresh for tilesets generated as PMTiles and stored in OneLake. Scheduling keeps map visualizations aligned with changes in the underlying data without requiring manual regeneration. A map item can have up to 20 associated schedules. The refresh schedule is defined during tileset creation.
 
-You can refresh tilesets in two ways:
+< [!TIP]
+< If a schedule is deleted, the tileset must be recreated to re-enable scheduling.
 
-- **Manual scheduled refresh**  
-  Run a tileset rebuild at user such as daily or weekly.
-
+<!---------------------------------------------------------------------------------------------------------------
 - **Automatic refresh based on data changes**  
   Automatically rebuild the tileset when changes are detected in the source data in OneLake.
 
 Scheduled refresh is especially useful for read-only maps shared across an organization, where keeping visualizations up to date is critical for decision-making.
+--------------------------------------------------------------------------------------------------------------->
 
 #### Understanding zoom levels in tilesets
 
