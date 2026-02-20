@@ -26,7 +26,7 @@ digraph LDBC_SNB_Schema {
     
     // Graph settings
     
-    compund=true;
+    compound=true;
     rankdir=BT;
     labelloc="b";
     nodesep=1.0;
