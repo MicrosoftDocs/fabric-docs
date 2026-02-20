@@ -124,7 +124,7 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 
     ```python
     df["embedding"] = df["text"].ai.embed(
-        conf=Conf(embedding_deployment_name="<embbedding deployment name>"),
+        conf=Conf(embedding_deployment_name="<embedding deployment name>"),
     )
     ```
 

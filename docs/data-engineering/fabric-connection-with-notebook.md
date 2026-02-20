@@ -68,7 +68,7 @@ Over time, the status of a Fabric Connection may change due to various reasons, 
 
 :::image type="content" source="media\fabric-connection-notebook\connection-check-status.png" alt-text="Screenshot of check status option. "lightbox="media\fabric-connection-notebook\connection-check-status.png":::
 
-If there are any issues with the connection, an offline icon is displayed next to the connection name. Following are some comon scenarios that may cause a connection to go offline:
+If there are any issues with the connection, an offline icon is displayed next to the connection name. Following are some common scenarios that may cause a connection to go offline:
 - **Credential Expiration**: If the credential used for the connection is expired, then the connection goes offline. You need to update the credentials to bring the connection back online.
 - **Permission Changes**: If the permission for the data source change and the connection no longer has access, then the connection goes offline. You need to restore the necessary permissions to bring the connection back online. For example, if you're using Workspace Identity Authentication or SPN, ensure that the Fabric workspace identity or SPN has the required permissions to access the data source.
 - **Network Issues**: If there are network issues preventing access to the data source, the connection goes offline. You need to resolve the network issues to bring the connection back online.

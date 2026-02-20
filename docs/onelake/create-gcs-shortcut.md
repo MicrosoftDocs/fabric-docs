@@ -91,7 +91,7 @@ GCS shortcuts use a delegated authorization model. In this model, the shortcut c
 The account must have permission to access the data within the GCS bucket. If the bucket-specific endpoint was used in the connection for the shortcut, the account must have the following permissions:
 
 - `storage.objects.get`
-- `stoage.objects.list`
+- `storage.objects.list`
 
 If the global endpoint was used in the connection for the shortcut, the account must also have the following permission:
 

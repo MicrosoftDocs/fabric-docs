@@ -94,7 +94,7 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 * **Audit**: Opens a new tab to the Microsoft Purview compliance portal, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
 
 > [!NOTE]
-> For more information about the Purview capabilites that are available for Fabric users and administrators, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
+> For more information about the Purview capabilities that are available for Fabric users and administrators, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
 
 ## Considerations and limitations
 

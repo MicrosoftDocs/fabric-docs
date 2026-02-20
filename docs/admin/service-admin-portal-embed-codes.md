@@ -20,7 +20,7 @@ To learn how to access the Fabric admin portal settings, see [What is the admin 
 
 ## Disable embed codes
 
-You can disable the *Publish to web* feature, or allow embed codes to work only in your organization. If you disable *Publish to web*, the existing embed codes aren't deleted. When you reenable *Publish to web*, the existing embed codes become active again.
+You can disable the *Publish to web* feature, or allow embed codes to work only in your organization. If you disable *Publish to web*, the existing embed codes aren't deleted. When you re-enable *Publish to web*, the existing embed codes become active again.
 
 Disabling the embed codes is described in [Publish to web](service-admin-portal-export-sharing.md#publish-to-web).
 

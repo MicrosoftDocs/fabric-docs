@@ -33,7 +33,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Spark Connectors for SQL Data Warehouse | - | - | - |
 | **Data Factory** | Default Semantic Model | ✓ | - | ✓ |
 |  | Pipeline | ✓ | ✓ | Preview |
-|  | Dataflow Gen1 | Not supported | Not supported | Not supported |
+|  | Dataflow Gen1 | - | - | - |
 |  | Dataflow Gen2 | - | ✓ | Preview |
 |  | Copy Job | ✓ | ✓ | Preview |
 |  | Mounted Azure Data Factory | ✓ | - | - |
@@ -47,7 +47,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Data Agent | ✓ | - |  |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
-|  | Warehouse with EDPE |  | Not supported | - |
+|  | Warehouse with EDPE | - | - | - |
 | **Developer Experience** | API for GraphQL | - | ✓ | - |
 |  | Deployment Pipeline |  | - | ✓ |
 |  | Git Integration | ✓ | - | ✓ |
@@ -59,15 +59,17 @@ The following table shows the support status for each Fabric item. A check mark 
 | **Industry Solutions** | Healthcare data solutions | - | ✓ | - |
 |  | Sustainability Solution | - | ✓ | - |
 |  | Retail Solution | - | ✓ | - |
-| **Mirroring** | Mirrored Azure SQL Database | Not supported | - | Preview|
-|  | Mirrored Azure SQL Managed Instance | Not supported | - | Preview |
+| **Mirroring** | Mirrored Azure SQL Database | - | - | Preview|
+|  | Mirrored Azure SQL Managed Instance | ✓ | - | Preview |
+|  | Open Mirroring | ✓ | - | - |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
 |  | Mirrored Snowflake | - | - | Preview|
-|  | Mirrored SQL Server (Windows/Linux on-premises) | ✓ | - | Preview |
+|  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | Preview |
+|  | Mirrored SQL Server 2016-2022 | - | - | - |
 |  | Mirrored Dataverse | - | - | - |
 |  | Mirrored SAP | - | - | - |
 |  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
-|  | Mirrored Azure Database for PostgreSQL | Not supported | - | Preview |
+|  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle |  | - | Preview |
 | **Native Databases** | Sql DB in Fabric |  | Preview | - |

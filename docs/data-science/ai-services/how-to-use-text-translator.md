@@ -78,7 +78,7 @@ def print_response(response):
             result = response.json()
             print(json.dumps(result, indent=2, ensure_ascii=False))
         except:
-            print(f"pasre error {response.content}")
+            print(f"parse error {response.content}")
     else:
         print(f"error message: {response.content}")
 ```
