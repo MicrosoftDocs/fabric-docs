@@ -304,18 +304,13 @@ The table, materialized view, or schema you're attempting to create already exis
 
 Use one or more of these methods to resolve naming conflicts and safely create or manage tables.
 
-**Fix 1: Check for Existing Tables and Use CREATE OR REPLACE**
+**Fix 1: Use CREATE OR REPLACE**
 
-Before creating tables or materialized views, verify they don't already exist. This operation requires Contributor role or higher since it modifies data:
+Use `CREATE OR REPLACE` to avoid naming conflicts entirely. This is the recommended pattern in Fabric because it handles both cases—whether the object exists or not—without requiring separate existence checks. This operation requires Contributor role or higher:
+
+For tables:
 
 ```python
-# Check if table exists
-existing_tables = spark.sql("SHOW TABLES IN your_lakehouse").collect()
-table_names = [row.tableName for row in existing_tables]
-
-if "your_table_name" in table_names:
-    print("Table already exists - replacing it")
-
 # CREATE OR REPLACE handles both cases (table exists or not)
 spark.sql("""
     CREATE OR REPLACE TABLE your_lakehouse.your_table_name (
@@ -325,7 +320,7 @@ spark.sql("""
 """)
 ```
 
-For materialized views, use `CREATE OR REPLACE` which handles both cases (view exists or not):
+For materialized views, `CREATE OR REPLACE` is the standard pattern. It removes the need for existence checks and prevents naming conflicts on reruns:
 
 ```sql
 -- CREATE OR REPLACE handles both cases (view exists or not)
@@ -335,7 +330,7 @@ SELECT * FROM source_table;
 
 **Fix 2: Use Conditional Creation Logic**
 
-Implement existence checks before table creation in notebooks or pipelines. This operation requires Contributor role or higher:
+If you need more control over how existing data is handled (for example, appending instead of replacing), implement existence checks before table creation. This operation requires Contributor role or higher:
 
 ```python
 # Assumes df is already defined with your source data
@@ -1170,6 +1165,7 @@ This issue typically occurs when you are working with Materialized Lake Views (M
 The following situations can cause errors when viewing materialized view lineage:
 - Opening a Fabric workspace and navigating to a Lakehouse, then selecting Materialized lake views and attempting to view lineage information when workspace or capacity is experiencing high load or throttling
 - Clicking on the lineage view for a recently created or modified Materialized Lake View where lineage metadata is still being computed
+- Creating a materialized view over source tables that are located in a different workspace than the materialized view itself
 - Complex lineage graph with too many dependencies causing processing delays
 - Permissions issue preventing access to lineage metadata
 
