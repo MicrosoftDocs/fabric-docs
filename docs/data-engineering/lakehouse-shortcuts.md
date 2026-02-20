@@ -2,10 +2,7 @@
 title: Referencing data to a Lakehouse using shortcuts
 description: Learn how to set up shortcuts in your Fabric lakehouse, which allows you to reference data from other locations without copying it.
 ms.reviewer: tvilutis
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/23/2023
 ms.search.form: Lakehouse shortcuts
 #customer intent: As a data engineer, I want to create and manage shortcuts in a Fabric lakehouse to reference data from various sources without copying it.

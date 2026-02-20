@@ -3,9 +3,8 @@ title: Authenticate with Microsoft Fabric workspace identity
 description: This article describes how to authenticate using workspace identity. 
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.subervice: security
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 08/04/2025
 
 #customer intent: As a data engineer, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.

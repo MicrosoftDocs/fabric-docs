@@ -1,9 +1,6 @@
 ---
 title: Native execution engine for Fabric Data Engineering
 description: How to enable and use the native execution engine to execute Apache Spark jobs for faster and cheaper data processing in Microsoft Fabric.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 10/01/2025
@@ -223,7 +220,7 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 - **Intermediate type mismatch for `collect_list()` / `collect_set()`**: Spark uses `BINARY` as the intermediate type for these aggregations, whereas NEE uses `ARRAY`. This mismatch might lead to compatibility issues during query planning or execution.
 
-- Managed private endpoints required for storage access: When Native Execution Engine (NEE) is enabled, and if spark jobs are trying to access a storage accont using a managed private endpoint, users must configure separate managed private endpoints for both the Blob (blob.core.windows.net) and DFS / File System (dfs.core.windows.net) endpoints, even if they point to the same storage account. A single endpoint cannot be reused for both. This is a current limitation and may require additional network configuration when enabling native execution engine in a workspace that has managed private endpoints to storage accounts.
+- Managed private endpoints required for storage access: When Native Execution Engine (NEE) is enabled, and if spark jobs are trying to access a storage account using a managed private endpoint, users must configure separate managed private endpoints for both the Blob (blob.core.windows.net) and DFS / File System (dfs.core.windows.net) endpoints, even if they point to the same storage account. A single endpoint cannot be reused for both. This is a current limitation and may require additional network configuration when enabling native execution engine in a workspace that has managed private endpoints to storage accounts.
 
 > [!div class="nextstepaction"]
 > [Watch this Fabric espresso video on native execution engine](https://youtu.be/8GJj4QlFlsw?si=r7M5VUI7NdyoR66v)
@@ -232,3 +229,4 @@ While the Native Execution Engine (NEE) in Microsoft Fabric significantly boosts
 
 - [Apache Spark Runtimes in Fabric](./runtime.md)
 - [What is autotune for Apache Spark configurations in Fabric?](./autotune.md)
+

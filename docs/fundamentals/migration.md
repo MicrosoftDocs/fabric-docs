@@ -3,7 +3,6 @@ title: Microsoft Fabric Migration Overview
 description: Overview of migration options for moving data and workloads to Fabric from various sources.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: sngun
 ms.date: 08/19/2025
 ms.topic: overview
 ms.custom:
@@ -112,3 +111,4 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 
 - [What's new in Microsoft Fabric?](whats-new.md)
 - [Migrating from Power BI capacity to Microsoft Fabric capacity](https://aka.ms/P-SKU-Blog)
+

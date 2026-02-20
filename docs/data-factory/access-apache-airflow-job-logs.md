@@ -9,8 +9,7 @@ ms.custom: airflows
 
 # Access Apache Airflow Job Logs
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 This article shows you how to access Apache Airflow job logs through the Apache Airflow Job UI. 
 

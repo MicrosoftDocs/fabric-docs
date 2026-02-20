@@ -1,8 +1,6 @@
 ---
 title: Monitor Apache Spark applications with Azure Log Analytics
 description: Learn how to enable the Fabric connector for collecting and sending the Apache Spark application metrics and logs to your Log Analytics workspace.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 08/22/2024

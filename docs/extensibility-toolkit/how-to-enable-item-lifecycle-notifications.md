@@ -1,10 +1,8 @@
 ---
 title: How to enable item lifecycle notifications
 description: Learn how to enable notifications for item lifecycle events in your Fabric workload, including CRUD operations from various sources.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

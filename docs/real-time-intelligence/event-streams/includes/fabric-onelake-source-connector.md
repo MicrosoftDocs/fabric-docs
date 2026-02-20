@@ -1,8 +1,7 @@
 ---
 title: Fabric OneLake events connector for Fabric event streams
 description: The include files has the common content for configuring Fabric OneLake events connector for Fabric event streams and Real-Time hub. 
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: include
 ms.date: 11/13/2024
 ---

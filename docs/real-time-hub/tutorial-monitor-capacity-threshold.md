@@ -1,9 +1,7 @@
 ---
 title: Monitor Fabric Capacity Health in Real Time with Capacity Overview Events
 description: Build an automated workflow that sends an Outlook email alert when your capacity approaches throttling conditions
-author: george-guirguis
-ms.author: geguirgu
-ms.reviewer: george-guirguis
+ms.reviewer: geguirgu, george-guirguis
 ms.date: 11/17/2025
 ms.topic: tutorial
 ---
@@ -68,3 +66,4 @@ Once your Activator is saved and started, it automatically listens for Capacity 
 - [Explore Fabric Capacity Overview events](explore-fabric-capacity-overview-events.md)
 - [Set alerts on Capacity Overview events](set-alerts-fabric-capacity-overview-events.md)
 - [Get Capacity Overview events ](create-streams-fabric-capacity-overview-events.md)
+

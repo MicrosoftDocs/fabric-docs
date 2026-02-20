@@ -1,7 +1,7 @@
 ---
 title: Unblocking Copilot in Get Data for Modern data ingestion and transformation (Preview)
 description: This article provides information about Copilot in Get Data for Modern data ingestion and transformation.
-ms.reviewer: xupzhou
+ms.reviewer: xupzhou, maghan, sngun
 ms.topic: how-to
 ms.date: 09/15/2025
 ms.custom: dataflows

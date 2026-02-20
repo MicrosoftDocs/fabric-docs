@@ -11,7 +11,6 @@ ms.date: 11/29/2024
 
 Pipelines enable you to apply rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise data movement and ingestion needs. These capabilities require different computing service engines that have distinct consumption rates.
 
-
 :::image type="content" source="media/pricing-overview/pipelines-pricing-diagram.png" alt-text="Diagram showing the pipeline pricing model for Data Factory in Microsoft Fabric.":::
 
 When you run a pipeline with Data Factory in Microsoft Fabric, Fabric Capacity Units are consumed for the following services:

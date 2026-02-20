@@ -1,8 +1,6 @@
 ---
 title: SQL database tutorial - Use the SQL analytics endpoint to query data
 description: In this tutorial step, learn how to use the SQL analytics endpoint to query data.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 10/25/2024
 ms.topic: tutorial

@@ -1,8 +1,6 @@
 ---
 title: "SqlPackage for SQL database "
 description: Learn how to work with SqlPackage in your SQL database with Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: drskwier, antho, sukkaur
 ms.date: 08/08/2025
 ms.topic: how-to

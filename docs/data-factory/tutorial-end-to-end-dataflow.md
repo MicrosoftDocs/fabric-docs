@@ -15,7 +15,7 @@ With the raw data loaded into your bronze Lakehouse table from the last module, 
 
 The high-level steps in the dataflow are:
 
-- [Get raw data from the Lakehouse table](#get-data-from-a-lakehouse-table) created by the Copy activity in [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md).
+- [Get raw data from the Lakehouse table](#get-data-from-a-lakehouse-table) created by the copy job in [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md).
 - [Transform the data imported from the Lakehouse table.](#transform-the-data-imported-from-the-lakehouse)
 - [Connect to a CSV file containing discounts data.](#connect-to-a-csv-file-containing-discount-data)
 - [Transform the discounts data.](#transform-the-discount-data)
@@ -46,7 +46,7 @@ The high-level steps in the dataflow are:
 
 1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module. It might be under the **My workspace** folder. Select the **Bronze** data table. Then select **Create**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table-inline.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1." lightbox="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table.png":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table-inline.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the copy job in module 1." lightbox="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table.png":::
 
 1. _(Optional)_ Once your canvas is populated with the data, you can set **column profile** information, as this is useful for data profiling. You can apply the right transformation and target the right data values based on it.
 

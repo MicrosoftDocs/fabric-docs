@@ -1,11 +1,8 @@
 ---
 title: Description and prerequisites for Azure Data Explorer connector
 description: The include file provides description, a note, and prerequisites for using an Azure Data Explorer connector.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 03/21/2025
 ---
 
@@ -18,3 +15,5 @@ Azure Data Explorer is a fully managed, high-performance platform that delivers 
 - An active Azure subscription.
 - An Azure Data Explorer cluster with at least one database deployed. Ensure that the cluster is publicly accessible and not restricted by a firewall or a virtual network.
 - The required permissions to access the Azure Data Explorer cluster.
+
+

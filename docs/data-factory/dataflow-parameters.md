@@ -10,7 +10,7 @@ ms.custom: dataflows
 # Use public parameters in Dataflow Gen2
 
 >[!TIP]
->For more information on how to leverage this capability in continous integration / continous deployment (CI/CD) scenarios, read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Parameterized Dataflow Gen2](dataflow-gen2-parameterized-dataflow.md).
+>For more information on how to leverage this capability in continuous integration / continuous deployment (CI/CD) scenarios, read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Parameterized Dataflow Gen2](dataflow-gen2-parameterized-dataflow.md).
 
 Parameters in Dataflow Gen2 allow you to dynamically control and customize dataflows, making them more flexible and reusable by enabling different inputs and scenarios without modifying the dataflow itself. It helps keep things organized by reducing the need for multiple dataflows and centralizing control within a single, parameterized dataflow.
 
@@ -95,6 +95,6 @@ The following is a list of all considerations and limitations when using the pub
 * **Incremental refresh**: Not compatible with public parameters mode.
 * **Logic Modification**: Public parameters allow users with access to override values, potentially changing the dataflow output.
 * **Monitoring Hub**: The Monitoring Hub doesn't show parameter values used during execution.
-* **Staging behavior**: Only the latest run is stored in the Dataflow Staging Lakehouse and retuned by the Dataflow Connector. Consider using  a data destination to retain data for each run.
+* **Staging behavior**: Only the latest run is stored in the Dataflow Staging Lakehouse and returned by the Dataflow Connector. Consider using  a data destination to retain data for each run.
 * **Duplicate Requests**: If the same parameter values are submitted multiple times, only the first request is accepted until it completes.
 * **Schema Mapping**: Parameters can't modify destination schema mappings. All mappings follow the authored configuration. Check out the article for more information on [data destinations and managed settings in Dataflow Gen2](dataflow-gen2-data-destinations-and-managed-settings.md).

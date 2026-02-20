@@ -27,10 +27,8 @@ The SQL Server database connector supports the following authentication types fo
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SQL Server database. The following links provide the specific Power Query connector information you need to connect to a SQL Server database in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to SQL Server database using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the SQL Server database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [SQL Server database prerequisites](/power-query/connectors/sql-server#prerequisites) before connecting to the SQL Server database connector.
-- To connect to the SQL Server database connector from Power Query, go to [Connect to SQL Servers database from Power Query Online](/power-query/connectors/sql-server#connect-to-sql-server-database-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. Check [SQL Server database limitations](/power-query/connectors/sql-server#limitations) to make sure your scenario is supported.
+1. [Connect to SQL Server database (from Power Query Online)](/power-query/connectors/sql-server#connect-to-sql-server-database-from-power-query-online).

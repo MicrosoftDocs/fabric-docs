@@ -2,8 +2,6 @@
 title: Lakehouse schemas
 description: What lakehouse schemas are and how to use it
 ms.reviewer: tvilutis
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
 ms.date: 12/10/2025
 ms.search.form: Lakehouse schemas
@@ -103,7 +101,7 @@ There are still some limitations with schema-enabled lakehouses in Spark that ar
 | Spark views | Use [Materialized Lake Views](materialized-lake-views/overview-materialized-lake-view.md). |
 | Shared lakehouse	| Create shortcuts in a lakehouse with the workspace role to shared lakehouse tables and access them through the shortcuts. |
 | External ADLS tables	| Use [OneLake Shortcuts](/rest/api/fabric/core/onelake-shortcuts). |
-| Outbound Access Protection 	| For scenarios that involve accessing lakehouses from different workspaces using Spark SQL statemets please use  nonschema lakehouses. |
+| Outbound Access Protection 	| For scenarios that involve accessing lakehouses from different workspaces using Spark SQL statements, please use nonschema lakehouses. |
 
 ## Related content
 

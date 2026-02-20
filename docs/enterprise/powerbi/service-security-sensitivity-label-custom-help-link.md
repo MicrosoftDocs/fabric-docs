@@ -1,13 +1,11 @@
 ﻿---
 title: Custom help link for sensitivity labels
 description: Learn how to create a custom help link for your sensitivity label menu.
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: how-to
-ms.custom:
 ms.date: 12/20/2022
 LocalizationGroup: Data from files
 ---

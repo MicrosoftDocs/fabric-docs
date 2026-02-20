@@ -4,7 +4,6 @@ description: Learn about what the feature switches affecting Git integration do 
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.custom:
 ms.date: 07/02/2024
 ---
 

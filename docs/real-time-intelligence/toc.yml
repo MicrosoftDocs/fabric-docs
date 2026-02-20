@@ -523,6 +523,31 @@ items:
         href: manage-monitor-eventhouse.md
       - name: Query cold data with hot windows
         href: query-cold-data-hot-windows.md
+      - name: Migrate
+        items:
+          - name: Migrate from Azure Data Explorer
+            href: migrate-azure-data-explorer.md
+          - name: Migrate from Azure Synapse Data Explorer
+            href: migrate-synapse-data-explorer.md
+            items:
+              - name: Validate migration using REST API endpoints
+                href: migrate-api-validate-synapse-data-explorer.md
+              - name: Migrate to Eventhouse
+                href: migrate-api-to-eventhouse.md
+      - name: Monitor
+        items:
+          - name: Eventhouse monitoring
+            href: monitor-eventhouse.md
+          - name: Metrics
+            href: monitor-metrics.md
+          - name: Command logs
+            href: monitor-logs-command.md
+          - name: Data operation logs
+            href: monitor-logs-data-operation.md
+          - name: Ingestion results logs
+            href: monitor-logs-ingestion-results.md
+          - name: Query logs
+            href: monitor-logs-query.md
       - name: Vector database
         items:
           - name: Eventhouse as a vector database overview
@@ -878,40 +903,40 @@ items:
             href: multivariate-anomaly-detection.md
   - name: Map
     items:
+      - name: Overview
+        items:
+          - name: What is Fabric Maps?
+            href: map/about-fabric-maps.md
       - name: Tutorials
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
-      - name: Create a map
-        href: map/create-map.md
-      - name: Customize a map
-        href: map/customize-map.md
-      - name: Map sharing
+      - name: Concepts
         items:
+          - name: Map items
+            href: map/about-maps.md
+          - name: Tilesets in Fabric Maps
+            href: map/about-tile-sets.md
           - name: Sharing maps
             href: map/sharing-maps.md
-          - name: Share maps directly
-            href: map/share-map-direct.md
-          - name: Share maps with org apps
-            href: map/share-map-org-apps.md
-      - name: Create a tileset
-        href: map/spatial-job-create-tile-sets.md
-      - name: Manage Map permissions
-        href: map/manage-map-permissions.md
-  - name: Monitor
-    items:
-      - name: Eventhouse monitoring
-        href: monitor-eventhouse.md
-      - name: Metrics
-        href: monitor-metrics.md
-      - name: Command logs
-        href: monitor-logs-command.md
-      - name: Data operation logs
-        href: monitor-logs-data-operation.md
-      - name: Ingestion results logs
-        href: monitor-logs-ingestion-results.md
-      - name: Query logs
-        href: monitor-logs-query.md
+          - name: Permissions in Fabric Maps
+            href: map/about-map-permissions.md
+      - name: How-to guides
+        items:
+        - name: Create a map
+          href: map/create-map.md
+        - name: Customize a map
+          href: map/customize-map.md
+        - name: Create a tileset
+          href: map/create-tile-sets.md
+        - name: Map sharing
+          items:
+            - name: Share maps directly
+              href: map/share-map-direct.md
+            - name: Share maps with org apps
+              href: map/share-map-org-apps.md
+        - name: Manage Map permissions
+          href: map/manage-map-permissions.md
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
@@ -946,16 +971,5 @@ items:
             href: git-real-time-dashboard.md
           - name: Activator
             href: git-activator.md
-  - name: Migrate
-    items:
-      - name: Migrate from Azure Data Explorer
-        href: migrate-azure-data-explorer.md
-      - name: Migrate from Azure Synapse Data Explorer
-        href: migrate-synapse-data-explorer.md
-        items:
-          - name: Validate migration using REST API endpoints
-            href: migrate-api-validate-synapse-data-explorer.md
-          - name: Migrate to Eventhouse
-            href: migrate-api-to-eventhouse.md
   - name: KQL reference
     href: kusto-tocs/query/toc.yml

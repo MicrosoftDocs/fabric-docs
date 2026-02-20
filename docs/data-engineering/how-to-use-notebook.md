@@ -2,8 +2,6 @@
 title: How to use notebooks
 description: Learn how to create a new notebook, import an existing notebook, connect notebooks to lakehouses, collaborate in notebooks, and comment code cells.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
@@ -251,7 +249,7 @@ Version history allows you to easily version your live notebook changes. It supp
 
    :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff." lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
 
-1. You can manage the version from the checkpoint drop-down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+1. You can manage the version from the checkpoint drop-down menu, if you want to keep a previous version, click **restore** from checkpoint and overwrite the current notebook, or use **save as copy** to clone it to a new notebook.
 
    :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint." lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
 
@@ -275,3 +273,4 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+

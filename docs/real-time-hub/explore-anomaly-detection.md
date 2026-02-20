@@ -1,9 +1,7 @@
 ---
 title: Explore Anomaly Detection Events in Fabric Real-Time Hub
 description: This article shows how to explore anomaly detection events in Fabric Real-Time hub.
-author: hzargari-ms
-ms.author: v-hzargari
-ms.reviewer: tessahurr
+ms.reviewer: v-hzargari, tessahurr
 ms.topic: how-to
 ms.date: 09/15/2025
 ms.search.form: Anomaly Detection Explore Anomaly Detection Events

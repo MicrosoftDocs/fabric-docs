@@ -1,8 +1,8 @@
 ---
 title: 'Microsoft Fabric Capacity Planning Guide: Manage Growth and Governance'
 description: Learn how to plan, scale, and govern Microsoft Fabric capacity for analytics solutions.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
 ms.date: 09/04/2025

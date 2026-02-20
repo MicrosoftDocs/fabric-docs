@@ -1,10 +1,7 @@
 ---
 title: Include file for value set limitations
 description: This file lists the limitations to consider when you work with value sets. 
-author: billmath
-ms.author: billmath
 ms.topic: include
-ms.custom: 
 ms.date: 03/16/2025
 ---
 

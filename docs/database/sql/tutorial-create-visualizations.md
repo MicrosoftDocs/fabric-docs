@@ -1,8 +1,6 @@
 ---
 title: SQL Database Tutorial - Create and Share Visualizations
 description: In this sixth tutorial step, learn how to create and share visualizations.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 02/20/2025
 ms.update-cycle: 180-days

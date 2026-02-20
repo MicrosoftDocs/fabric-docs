@@ -3,7 +3,6 @@ title: Setting the query frequency of Activator rules
 description: Explains how to alter the frequency with which Activator monitors rules created from certain data sources.
 ms.reviewer: jameshutton
 ms.topic: overview
-ms.custom: 
 ms.search.form: product-reflex
 ms.date: 7/18/2025
 ---
