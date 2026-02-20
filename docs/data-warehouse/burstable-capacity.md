@@ -46,8 +46,6 @@ The limit is a scale factor directly correlated to the Fabric capacity SKU size 
 | F512       | P4                     | 512                          | 1x - 12x               |
 | F1024      | P5                     | 1024                         | 1x - 12x               |
 | F2048      |                        | 2048                         | 1x - 12x               |
-| F4096      |                        | 4096                         | 1x - 6x                |
-| F8192      |                        | 8192                         | 1x - 3x                |
 
 Smaller SKU sizes are often used for dev/test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 
