@@ -26,7 +26,10 @@ The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, a
 - **Large Table Support**: Optimized handling for large result sets with configurable page sizes
 - **Async Prefetch**: Background data loading for improved performance
 - **Proxy Support**: HTTP proxy configuration for enterprise environments
-- **Multi-Database Lakehouse Support**: Connect to specific databases within a Lakehouse
+- **Multi-Schema Lakehouse Support**: Connect to specific schema within a Lakehouse
+
+> [!NOTE]
+> In open-source Apache Spark, database and schema are used synonymously. For example, running `SHOW SCHEMAS` or `SHOW DATABASES` in a Fabric Notebook returns the same result — a list of all schemas in the Lakehouse.
 
 ## Prerequisites
 
@@ -522,7 +525,7 @@ conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
 # List all tables
-print("Tables in database:")
+print("Tables in current default schema / database:")
 cursor.execute("SHOW TABLES")
 tables = cursor.fetchall()
 for table in tables:
@@ -534,9 +537,9 @@ cursor.execute("DESCRIBE employees")
 for col in cursor.fetchall():
     print(f"  {col}")
 
-# List databases (for multi-database Lakehouses)
-print("\nAvailable databases:")
-cursor.execute("SHOW DATABASES")
+# List schemas (for multi-schema Lakehouses)
+print("\nAvailable schemas:")
+cursor.execute("SHOW SCHEMAS")
 for db in cursor.fetchall():
     print(f"  {db}")
 

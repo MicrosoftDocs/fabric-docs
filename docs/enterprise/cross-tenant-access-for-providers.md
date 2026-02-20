@@ -1,10 +1,11 @@
 ---
-title: Cross-Tenant Access (CTA) for Providers
+title: Set Up Cross-Tenant Access for Providers
 description: What is cross-tenant access for providers?
 author: dknappettmsft
 ms.author: daknappe
 ms.reviewer: mesrivas, prlangad, wiassaf
 ms.topic: concept-article
+ROBOTS: NOINDEX
 ms.date: 02/12/2026
 ---
 
