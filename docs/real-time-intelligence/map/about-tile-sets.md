@@ -61,6 +61,20 @@ In Fabric Maps, PMTiles are stored as files in a **lakehouse** and consumed dire
 
 Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add data to the map – PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the *Create a map* article.
 
+### Data refresh and scheduling
+
+Fabric Maps supports scheduled data refresh for tilesets generated as PMTiles and stored in OneLake. Scheduling ensures that map visualizations stay aligned with changes in the underlying data without requiring manual regeneration.
+
+You can refresh tilesets in two ways:
+
+- **Manual scheduled refresh**  
+  Run a tileset rebuild at user such as daily or weekly.
+
+- **Automatic refresh based on data changes**  
+  Automatically rebuild the tileset when changes are detected in the source data in OneLake.
+
+Scheduled refresh is especially useful for read-only maps shared across an organization, where keeping visualizations up to date is critical for decision-making.
+
 #### Understanding zoom levels in tilesets
 
 Zoom levels define how much geographic detail is shown on a map at different scales. In a tileset, spatial data is organized into tiles across multiple zoom levels so that Fabric Maps can load only the data needed for the current view. Lower zoom levels display broader areas with less detail, while higher zoom levels show smaller areas with greater detail, helping balance performance and visual clarity.
