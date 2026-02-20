@@ -1,12 +1,9 @@
 ---
 title: Use parameters in Real-Time Dashboards
 description: Learn how to use parameters in Real-Time Dashboards.
-ms.author: spelluru
-author: spelluru
 ms.reviewer: gabil
 ms.topic: how-to
 ms.subservice: rti-dashboard
-ms.custom:
 ms.date: 11/19/2024
 ---
 

@@ -1,13 +1,8 @@
 ---
 title: Lifecycle Management of the Microsoft Fabric Variable library
 description: Understand how to use variable libraries in the context of lifecycle management and CI/CD.
-author: billmath
-ms.author: billmath
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ms.search.form: CICD and variable library
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to manage my content lifecycle.

@@ -1,9 +1,7 @@
 ---
 title: Add PostgreSQL Database CDC source to an eventstream
 description: Learn how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/23/2025
@@ -97,3 +95,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

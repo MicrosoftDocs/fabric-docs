@@ -3,8 +3,6 @@ title: "Tutorial: Query the graph with the query builder"
 description: Learn how to query your graph using the visual query builder in Microsoft Fabric.
 ms.topic: tutorial
 ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with the query builder
 ---

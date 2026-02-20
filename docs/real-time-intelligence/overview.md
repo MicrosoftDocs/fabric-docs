@@ -3,10 +3,7 @@ title: What Is Real-Time Intelligence in Microsoft Fabric?
 description: Discover how Real-Time Intelligence in Microsoft Fabric empowers organizations to analyze, visualize, and act on streaming data for event-driven solutions.
 #customer intent: As a data analyst, I want to understand how to use Real-Time Intelligence so that I can extract insights from streaming data.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: overview
-ms.custom:
 ms.date: 02/03/2026
 ms.subservice: rti-core
 ms.search.form: Overview

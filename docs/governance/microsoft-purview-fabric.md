@@ -5,7 +5,6 @@ ms.reviewer: viseshag
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 02/09/2026
 ---
 
@@ -50,7 +49,7 @@ The Microsoft Purview Hub allows you to see insights about your Fabric data insi
 [You can follow this link to the Microsoft Purview Hub documentation.](use-microsoft-purview-hub.md)
 
 > [!NOTE]
-> Purview Hub insights are permanently moving to the **Govern** tab in the OneLake catalog. For more information, see [Govern Fabric data](onelake-catalog-govern.md)
+> Purview Hub insights are now available in the OneLake catalog on the **Govern** tab. For more information, see [Govern Fabric data](onelake-catalog-govern.md).
 
 ## Learn more
 

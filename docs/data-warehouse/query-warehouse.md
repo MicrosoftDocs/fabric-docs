@@ -1,8 +1,6 @@
 ---
 title: Query the Warehouse or SQL analytics endpoint
 description: Learn more about options to write T-SQL queries on a warehouse or SQL analytics endpoint in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 01/06/2026
 ms.topic: how-to

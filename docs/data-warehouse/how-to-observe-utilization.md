@@ -1,8 +1,6 @@
 ---
 title: How to Observe Fabric Data Warehouse Utilization Trends
 description: Learn how to use the Fabric Capacity Metrics app to observe Microsoft Fabric Data Warehouse utilization trends.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: how-to

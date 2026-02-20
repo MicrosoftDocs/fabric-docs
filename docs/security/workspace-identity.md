@@ -4,7 +4,6 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 01/26/2026
 ---
 

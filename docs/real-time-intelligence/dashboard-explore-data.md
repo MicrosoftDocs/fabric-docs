@@ -2,12 +2,9 @@
 title: Copilot-Assisted Real-time Data Exploration
 description: Learn how to explore data with copilot in Real-Time dashboards for more insights about the information rendered in the visual.
 ms.reviewer: mibar
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
-ms.custom:
 ms.date: 12/15/2025
 ai-usage: ai-assisted
 ---

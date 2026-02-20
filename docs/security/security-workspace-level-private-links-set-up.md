@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 02/04/2026
 
 #customer intent: As a workspace admin, I want to configure workspace-level Private Link on my workspace to prevent access to the workspace from the public internet.

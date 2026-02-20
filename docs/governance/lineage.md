@@ -4,7 +4,6 @@ description: Learn how to view the lineage of Fabric items.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 11/06/2023
 ---
 

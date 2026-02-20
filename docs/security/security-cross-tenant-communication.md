@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 08/13/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely enable and configure cross-tenant communication, so I can allow data and resource access between workspaces while maintaining security controls.

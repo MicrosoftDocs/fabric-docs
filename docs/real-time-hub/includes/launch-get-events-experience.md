@@ -1,8 +1,6 @@
 ---
 title: Launch the Connect data source wizard
 description: Include file with instructions to launch the "Add source experience" in Fabric Real-Time hub.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
 ms.date: 12/11/2025
 ---

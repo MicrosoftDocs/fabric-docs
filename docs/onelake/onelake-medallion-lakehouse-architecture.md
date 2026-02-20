@@ -1,8 +1,6 @@
 ---
 title: "Implement Medallion Lakehouse Architecture in Fabric"
 description: Understand medallion lakehouse architecture in Microsoft Fabric and learn how to implement a lakehouse.
-author: kgremban
-ms.author: kgremban
 ms.reviewer: wiassaf, arali
 ms.date: 02/12/2026
 ms.topic: concept-article
@@ -182,3 +180,4 @@ For more information about implementing medallion lakehouse architecture, see th
 - [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+

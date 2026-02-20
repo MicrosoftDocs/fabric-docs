@@ -1,9 +1,8 @@
 ﻿---
 title: Learn about Microsoft OneLake Delta table integration in Power BI and Microsoft Fabric
 description: Describes using Microsoft OneLake integration to automatically write import data into Delta tables.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to

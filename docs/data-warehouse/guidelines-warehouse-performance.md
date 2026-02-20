@@ -1,12 +1,9 @@
 ---
 title: Performance Guidelines
 description: Get performance guidelines for Microsoft Fabric Data Warehouse to optimize queries, ingestion, table design, statistics, caching, and more.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul, procha, fipopovi, twcyril
 ms.date: 01/14/2026
 ms.topic: best-practice
-ms.custom:
 ai-usage: ai-assisted
 ---
 # Performance guidelines in Fabric Data Warehouse

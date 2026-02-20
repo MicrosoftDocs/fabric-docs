@@ -1,11 +1,10 @@
 ---
 title: Delta Lake table format interoperability
 description: Learn about Delta Lake table format interoperability in Microsoft Fabric.
-ms.reviewer: snehagunda
-ms.author: dacoelho
-author: DaniBunny
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.custom:
 ms.date: 4/25/2025
 ms.search.form: delta lake interoperability
 ai-usage: ai-assisted
@@ -73,3 +72,4 @@ The following special characters are either reserved or not compatible with at l
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.
 * [Learn about Direct Lake in Power BI and Microsoft Fabric](../fundamentals/direct-lake-overview.md).
 * Learn more about [querying tables from the Warehouse through its published Delta Lake Logs](../data-warehouse/query-delta-lake-logs.md).
+

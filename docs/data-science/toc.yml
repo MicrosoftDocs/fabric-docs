@@ -103,11 +103,11 @@ items:
           href: data-agent-configuration-best-practices.md
         - name: How to configure a data agent
           href: develop-iterative-process-data-agent.md
-        - name: Connect to an AI Foundry Search Index
+        - name: Connect to a Foundry Search Index
           href: data-agent-ai-search-index.md
     - name: How to consume a Fabric data agent
       items:
-        - name: Consume a data agent from Azure AI foundry (preview)
+        - name: Consume a data agent from Microsoft Foundry (preview)
           href: data-agent-foundry.md
         - name: Consume a data agent from Copilot in Power BI (preview)
           href: data-agent-copilot-powerbi.md
@@ -363,16 +363,20 @@ items:
     href: ../data-engineering/intelligent-cache.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: AI services
   items:
-  - name: Overview of AI services in Fabric
+  - name: Overview of Foundry Tools in Fabric
     href: ./ai-services/ai-services-overview.md
   - name: How-to guides
     items:
-    - name: Use prebuilt Azure openAI
+    - name: Use Fabric Azure OpenAI
       items:
+        - name: with AI Functions
+          href: ./ai-services/how-to-use-openai-ai-functions.md
+        - name: with OpenAI Python SDK
+          href: ./ai-services/how-to-use-openai-python-sdk.md
         - name: with REST API
           href: ./ai-services/how-to-use-openai-via-rest-api.md
-        - name: with SynapseML or OpenAI Python SDK
-          href: ./ai-services/how-to-use-openai-sdk-synapse.md
+        - name: with SynapseML
+          href: ./ai-services/how-to-use-openai-synapse-ml.md
     - name: Use prebuilt text analytics with REST API or SynapseML
       href: ./ai-services/how-to-use-text-analytics.md
     - name: Use prebuilt Azure AI translator with REST API or SynapseML 
@@ -441,7 +445,7 @@ items:
     items:
     - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: Azure AI services in SynapseML with bring your own key
+    - name: Foundry Tools in SynapseML with bring your own key
       href: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
   - name: Get started
     items:
@@ -455,7 +459,7 @@ items:
       href: open-ai.md
     - name: Use LightGBM with SynapseML
       href: how-to-use-lightgbm-with-synapseml.md
-    - name: Use Azure AI services with SynapseML
+    - name: Use Foundry Tools with SynapseML
       href: how-to-use-ai-services-with-synapseml.md
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
@@ -469,7 +473,7 @@ items:
       href: isolation-forest-multivariate-anomaly-detection.md 
     - name: Build a Search engine with SynapseML
       href: create-a-multilingual-search-engine-from-forms.md
-    - name: Use SynapseML and Azure AI services for multivariate anomaly detection
+    - name: Use SynapseML and Foundry Tools for multivariate anomaly detection
       href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md

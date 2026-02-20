@@ -1,14 +1,10 @@
-﻿---
+---
 title: "Tutorial: Explore and visualize data with notebooks"
 description: In this second part of the tutorial series, learn how to read data from a delta table, explore, and cleanse the data.
-ms.reviewer: amjafari
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: amjafari, lagayhar, sgilley
 ms.topic: tutorial
-ms.custom: 
 ms.date: 12/23/2025
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
-reviewer: sdgilley
 ---
 
 # Tutorial Part 2: Explore and visualize data using Microsoft Fabric notebooks
@@ -299,3 +295,4 @@ Train and register machine learning models with this data:
 
 > [!div class="nextstepaction"]
 > [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+

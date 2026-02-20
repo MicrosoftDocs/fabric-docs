@@ -1,9 +1,7 @@
 ---
 title: Integrate OneLake with Azure HDInsight
 description: Learn about Azure HDInsight integration and how to read and write data in OneLake using your Jupyter notebook in an HDInsight Apache Spark cluster.
-ms.reviewer: eloldag
-ms.author: harmeetgill
-author: gillharmeet
+ms.reviewer: eloldag, harmeetgill
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/27/2023
@@ -57,3 +55,4 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 1. Test that your data was successfully written by checking your lakehouse or by reading your newly loaded file.
 
 You can now read and write data in OneLake using your Jupyter notebook in an HDI Spark cluster.
+

@@ -1,9 +1,7 @@
 ---
 title: Dataflow Gen2 refresh
 description: Explanation of what a dataflow refresh is, including on-demand and scheduled refresh.
-author: Luitwieler
-ms.author: jeluitwi
-ms.service: fabric
+ms.reviewer: jeluitwi
 ms.topic: concept-article #Required; leave this attribute/value as-is.
 ms.date: 2/4/2026
 ms.custom: dataflows
@@ -50,7 +48,7 @@ To cancel a dataflow refresh, select **Cancel** icon found in workspace list or 
 
 :::image type="content" source="media/concept-dataflow-refresh/cancel-dataflow-refresh.png" alt-text="Screenshot showing where to configure dataflow refresh schedule in the dataflow settings page.":::
 
-Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status:
+Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancellation status:
 
 :::image type="content" source="media/concept-dataflow-refresh/canceled-dataflow-refresh-history.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
 
@@ -71,12 +69,12 @@ For dataflow refreshes, a couple of limitations are in place:
 5. Total refresh time of a single refresh of a dataflow is limited to a max of 24 hours.
 6. Per dataflow you can have a maximum of 50 staged queries, or queries with output destination, or combination of both. 
 
-### Refresh cancelation implications to output data
+### Refresh cancellation implications to output data
 
 A dataflow refresh can be stopped via cancel refresh feature or if a failure occurred during processing of the dataflow's queries. Different outcomes can be observed depending on the type of destination and when refresh was stopped. Here are the possible outcomes, for the two types of data destination for a query:
 
 - Query is loading data to staging: Data from the last successful refresh is available.
-- Query is loading data to a data destination: Data written up to the point of cancelation is available.
+- Query is loading data to a data destination: Data written up to the point of cancellation is available.
 
 Not all queries in a dataflow are processed at the same time, for example, if a dataflow contains many queries or some queries depend on others. If a refresh is canceled before evaluation of a query that loads data to a destination began, there's no change to data in that query's destination.
 

@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.custom:
 ms.date: 08/13/2025
 
 #customer intent: As a data platform administrator, I want to use multi-workspace APIs to aggregate and manage metadata across multiple workspaces so that I can enable unified governance, discovery, and compliance within Microsoft Fabric.
