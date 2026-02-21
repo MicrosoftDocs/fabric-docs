@@ -1,5 +1,5 @@
 ---
-title: Use Azure AI Translator with REST API
+title: Use Azure Translator in Foundry Tools with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
 ms.reviewer: lagayhar, ruxu
 ms.topic: how-to
@@ -9,11 +9,11 @@ ms.search.form:
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Use prebuilt Azure AI Translator in Fabric with REST API and SynapseML (preview)
+# Use prebuilt Azure Translator in Foundry Tools in Fabric with REST API and SynapseML (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure AI Translator](/azure/ai-services/translator/) is an [Azure AI services](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
+[Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Foundry Tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
 This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, in Fabric:
 
@@ -29,7 +29,7 @@ This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, i
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt AI services, which handle authentication automatically. You don't need to obtain a separate Azure AI services key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
@@ -38,7 +38,7 @@ The code samples in this article use libraries that are preinstalled in Microsof
   - `synapse.ml.core` - Core SynapseML functionality
   - `synapse.ml.fabric.service_discovery` - Fabric service discovery utilities
   - `synapse.ml.fabric.token_utils` - Authentication token utilities
-  - `synapse.ml.services` - AI services integration (includes Translate, Transliterate classes)
+  - `synapse.ml.services` - Foundry Tools integration (includes Translate, Transliterate classes)
 - **PySpark**: Available by default in Fabric Spark compute
   - `pyspark.sql.functions` - DataFrame transformation functions (`col`, `flatten`)
 - **Standard Python libraries**: Built into Python runtime
@@ -60,9 +60,9 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESTful request to AI service
+# Make a RESTful request to Foundry Tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/texttranslation/"
-print("Workload endpoint for AI service: \n" + prebuilt_AI_base_host)
+print("Workload endpoint for Foundry Tool: \n" + prebuilt_AI_base_host)
 
 service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
 print("Service URL: \n" + service_url)

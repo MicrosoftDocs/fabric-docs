@@ -105,7 +105,7 @@ print(response.data[0].embedding)
 
 ## Available models and rates
 
-For information about available models and consumption rates, see [AI Services consumption rate](ai-services-overview.md#consumption-rate).
+For information about available models and consumption rates, see [Foundry Tools consumption rate](ai-services-overview.md#consumption-rate).
 
 ## Related content
 
