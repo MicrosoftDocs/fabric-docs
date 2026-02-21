@@ -1,4 +1,4 @@
-﻿---
+---
 title: SynapseML and its use in Azure Synapse Analytics.
 description: Learn about the SynapseML library and how it simplifies the creation of massively scalable machine learning (ML) pipelines in Azure Synapse Analytics.
 ms.reviewer: vimeland
@@ -36,11 +36,11 @@ A unified API standardizes many tools, frameworks, and algorithms, and streamlin
 
 ### Use prebuilt intelligent models
 
-Many tools in SynapseML don't require a large labeled training dataset. Instead, SynapseML provides simple APIs for prebuilt intelligent services, such as Azure AI services, to quickly solve large-scale AI challenges related to both business and research. SynapseML enables developers to embed over 50 different state-of-the-art ML services directly into their systems and databases. These ready-to-use algorithms can parse a wide variety of documents, transcribe multi-speaker conversations in real time, and translate text into more than 100 languages.
+Many tools in SynapseML don't require a large labeled training dataset. Instead, SynapseML provides simple APIs for prebuilt intelligent services, such as Foundry Tools, to quickly solve large-scale AI challenges related to both business and research. SynapseML enables developers to embed over 50 different state-of-the-art ML services directly into their systems and databases. These ready-to-use algorithms can parse a wide variety of documents, transcribe multi-speaker conversations in real time, and translate text into more than 100 languages.
 
 For the simplest approach to using Azure OpenAI in Fabric, consider [AI Functions](ai-services/how-to-use-openai-ai-functions.md), which provide Pandas and PySpark DataFrame extensions with minimal code. For distributed processing with full control, see [Use Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md). For more examples of how to use pre-built AI to solve tasks quickly, see [the SynapseML "cognitive" examples](https://microsoft.github.io/SynapseML/docs/Get%20Started/Set%20up%20Cognitive%20Services/).
 
-To make SynapseML's integration with Azure AI services fast and efficient, SynapseML introduces many optimizations for service-oriented workflows. In particular, SynapseML automatically parses common throttling responses to ensure that jobs don't overwhelm backend services. Additionally, it uses exponential backoffs to handle unreliable network connections and failed responses. Finally, Spark worker machines stay busy with new asynchronous parallelism primitives. Asynchronous parallelism lets worker machines send requests while waiting for a response from the server and can yield a tenfold increase in throughput.
+To make SynapseML's integration with Foundry Tools fast and efficient, SynapseML introduces many optimizations for service-oriented workflows. In particular, SynapseML automatically parses common throttling responses to ensure that jobs don't overwhelm backend services. Additionally, it uses exponential backoffs to handle unreliable network connections and failed responses. Finally, Spark worker machines stay busy with new asynchronous parallelism primitives. Asynchronous parallelism lets worker machines send requests while waiting for a response from the server and can yield a tenfold increase in throughput.
 
 ### Broad ecosystem compatibility with ONNX
 
@@ -54,7 +54,7 @@ After building a model, it's imperative that researchers and engineers understan
 
 ## Enterprise support on Azure Synapse Analytics
 
-SynapseML is generally available on Azure Synapse Analytics with enterprise support. Build large-scale machine learning pipelines using Azure AI services, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/streamline-collaboration-and-insights-with-simplified-machine/ba-p/2924707). Use templates to quickly prototype distributed machine learning systems, like visual search engines, predictive maintenance pipelines, and document translation.
+SynapseML is generally available on Azure Synapse Analytics with enterprise support. Build large-scale machine learning pipelines using Foundry Tools, LightGBM, ONNX, and other [selected SynapseML features](https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/streamline-collaboration-and-insights-with-simplified-machine/ba-p/2924707). Use templates to quickly prototype distributed machine learning systems, like visual search engines, predictive maintenance pipelines, and document translation.
 
 ## Related content
 
@@ -63,7 +63,7 @@ SynapseML is generally available on Azure Synapse Analytics with enterprise supp
 - [AI Functions overview](ai-functions/overview.md) - Simplest approach for text transformation operations
 - [Use Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) - Distributed processing for large-scale workloads
 - [Use Azure OpenAI with Python SDK](ai-services/how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
-- [Azure AI services in SynapseML with bring-your-own-key](ai-services/ai-services-in-synapseml-bring-your-own-key.md) - Specialized AI services
+- [Foundry Tools in SynapseML with bring-your-own-key](ai-services/ai-services-in-synapseml-bring-your-own-key.md) - Specialized Foundry Tools
 
 ### SynapseML resources
 

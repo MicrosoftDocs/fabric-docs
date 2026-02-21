@@ -1,6 +1,6 @@
 ---
-title: AI services in SynapseML with bring your own key
-description: Learn about the capabilities of Azure AI services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
+title: Foundry Tools in SynapseML with bring your own key
+description: Learn about the capabilities of Foundry Tools pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
@@ -13,20 +13,20 @@ ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Azure AI services in SynapseML with bring your own key
+# Foundry Tools in SynapseML with bring your own key
 
 [SynapseML](../synapse-overview.md) is an open source library that simplifies building scalable machine learning pipelines and integrates with Azure Synapse Analytics. It handles text analytics and computer vision tasks. It supports Python, R, Scala, Java, and .NET.
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Azure AI services helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
+[Foundry Tools](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Foundry Tools helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
 
 > [!NOTE]
-> Fabric integrates with Azure AI services to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [AI services in Fabric](./ai-services-overview.md).
+> Fabric integrates with Foundry Tools to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [Foundry Tools in Fabric](./ai-services-overview.md).
 >
 > For Azure OpenAI specifically, Fabric also provides [AI Functions](how-to-use-openai-ai-functions.md) for simple DataFrame operations. For distributed processing, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 
-## Usage of Azure AI services with bring your own key
+## Usage of Foundry Tools with bring your own key
 
-The following sections document SynapseML transformers available for Azure AI services with bring-your-own-key. These are useful when you need specific Azure AI services capabilities or have your own Azure AI services subscriptions.
+The following sections document SynapseML transformers available for Foundry Tools with bring-your-own-key. These are useful when you need specific Foundry Tools capabilities or have your own Azure AI services subscriptions.
 
 > [!TIP]
 > **Consider simpler alternatives first:**
@@ -39,7 +39,7 @@ The following sections document SynapseML transformers available for Azure AI se
 
 ### Vision
 
-[Azure AI Vision](https://azure.microsoft.com/products/ai-services/ai-vision/)
+[Azure Vision in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-vision/)
 
 - Describe: provides a description of an image in human readable language ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/vision/DescribeImage.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.vision.html#module-synapse.ml.cognitive.vision.DescribeImage)).
 - Analyze (color, image type, face, adult or racy content): analyzes visual features of an image ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/vision/AnalyzeImage.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.vision.html#module-synapse.ml.cognitive.vision.AnalyzeImage)).
@@ -59,7 +59,7 @@ The following sections document SynapseML transformers available for Azure AI se
 
 ### Speech
 
-[Azure AI Speech](https://azure.microsoft.com/products/ai-services/ai-speech/)
+[Azure Speech in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-speech/)
 
 - Speech-to-text: transcribes audio streams ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/SpeechToText.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.SpeechToText))
 - Conversation Transcription: transcribes audio streams into live transcripts with identified speakers ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/ConversationTranscription.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.ConversationTranscription)).
@@ -78,7 +78,7 @@ The following sections document SynapseML transformers available for Azure AI se
 
 ### Translation
 
-[Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/)
+[Translator](https://azure.microsoft.com/products/ai-services/translator/)
 
 > [!TIP]
 > **For text translation at any scale, consider using AI Functions first:**
@@ -93,9 +93,9 @@ The following sections document SynapseML transformers available for Azure AI se
 - Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/DictionaryExamples.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.DictionaryExamples))
 - Document Translation: Translates documents across all supported languages and dialects while preserving document structure and data format. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/DocumentTranslator.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.DocumentTranslator))
 
-### Azure AI Document Intelligence
+### Azure Document Intelligence in Foundry Tools
 
-[Azure AI Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/)
+[Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/)
 
 - Analyze Layout: Extract text and layout information from a given document. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/form/AnalyzeLayout.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.form.html#module-synapse.ml.cognitive.form.AnalyzeLayout))
 - Analyze Receipts: Detects and extracts data from receipts using optical character recognition (OCR) and our receipt model. This functionality makes it easy to extract structured data from receipts such as merchant name, merchant phone number, transaction date, transaction total, and more. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/form/AnalyzeReceipts.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.form.html#module-synapse.ml.cognitive.form.AnalyzeReceipts))
@@ -124,8 +124,8 @@ The following sections document SynapseML transformers available for Azure AI se
 - [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt transformer, no subscription key needed
 - [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
 
-### SynapseML with Azure AI services
+### SynapseML with Foundry Tools
 
-- [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md) - Comprehensive guide with examples
-- [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md) - Specialized anomaly detection
+- [Use Foundry Tools with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md) - Comprehensive guide with examples
+- [Use Foundry Tools with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md) - Specialized anomaly detection
 - [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md) - Advanced search scenarios

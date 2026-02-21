@@ -43,7 +43,7 @@ You can incorporate these functions as part of data science and data engineering
 AI functions now support broader models and providers beyond the default Azure OpenAI models. You can configure AI functions to use:
 
 - Azure OpenAI models
-- Azure AI Foundry resources (including models such as Claude and LLaMA)
+- Microsoft Foundry resources (including models such as Claude and LLaMA)
 
 Model and provider selection is configurable through the AI functions configuration. For details on how to set up and configure different models and providers, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 

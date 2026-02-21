@@ -15,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 # Use Azure OpenAI in Fabric with SynapseML (preview)
 
-This article shows how to use Azure OpenAI in Fabric with [SynapseML](https://github.com/microsoft/SynapseML). SynapseML is an open-source library that enables distributed processing of large datasets with Azure AI services. For single-row or small dataset scenarios, see [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) or [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
+This article shows how to use Azure OpenAI in Fabric with [SynapseML](https://github.com/microsoft/SynapseML). SynapseML is an open-source library that enables distributed processing of large datasets with Foundry Tools. For single-row or small dataset scenarios, see [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) or [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md).
 
 ## Why use SynapseML?
 
@@ -149,7 +149,7 @@ display(embedding.transform(df))
 
 ## Available models and rates
 
-For information about available models and consumption rates, see [AI Services consumption rate](ai-services-overview.md#consumption-rate).
+For information about available models and consumption rates, see [Foundry Tools consumption rate](ai-services-overview.md#consumption-rate).
 
 ## Related content
 
