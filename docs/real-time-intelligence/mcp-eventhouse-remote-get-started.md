@@ -24,7 +24,7 @@ This capability allows Copilots and custom AI agents to securely interact with E
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-## How to get started
+## Get started
 
 - Connect to the remote Eventhouse MCP server from Visual Studio Code  
 - Use GitHub Copilot to query Eventhouse using natural language  
@@ -35,17 +35,14 @@ This capability allows Copilots and custom AI agents to securely interact with E
 Before you set up and query the MCP server, you need:
 
 - [Visual Studio Code](https://code.visualstudio.com/Download).
-
 - [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in VS Code.
-
 - An [Eventhouse](create-eventhouse.md) with a KQL database and tables or an Azure Data Explore (ADX) cluster.
   - You need read or query permissions on the Eventhouse database.
   - Note your Workspace ID and KQL Database ID for configuration.
 
 It's recommended to:
 
-- Have well-described schemas and table metadata to improve AI query quality  
-
+- Have well-described schemas and table metadata to improve AI query quality.  
 - Enable [Enable Copilot in Fabric](../fundamentals/copilot-enable-fabric.md).
 
 ## Set up the remote Eventhouse MCP server
@@ -64,7 +61,7 @@ The remote Eventhouse MCP server acts as an **HTTP-based MCP endpoint**.
   "servers": {
     "eventhouse-remote": {
       "type": "http",
-      "url": "https://api.fabric.microsoft.com/v1/mcp/workspaces/<workspace ID>/kqlDatabases/<KQL Database ID>"
+      "url": "https://api.fabric.microsoft.com/v1/mcp/workspaces/<Workspace ID>/kqlDatabases/<KQL Database ID>"
     }
   }
 }
@@ -77,9 +74,9 @@ The remote Eventhouse MCP server acts as an **HTTP-based MCP endpoint**.
 3. Select the KQL database to open its details page.
 4. Copy the KQL database ID from the URL.
 
-KQL Database URLs are in this format:
+  The KQL Database URL is in this format:
 
-* https://app.powerbi.com/groups/{workspaceId}/databases/{kqlDBId}
+  `https://app.powerbi.com/groups/[Workspace ID]/databases/[**KQL Database ID**]`
 
 ## Test your connection
 
