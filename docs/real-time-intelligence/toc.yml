@@ -950,12 +950,14 @@ items:
             href: operations-agent-limitations.md
           - name: Operations agent transparency note
             href: operations-agent-transparency-note.md
-      - name: Fabric RTI MCP Server
-        href: mcp-overview.md
-      - name: Using MCP Server with Eventhouse
-        href: mcp-eventhouse.md
-      - name: Get started with Eventhouse MCP Server
-        href: mcp-eventhouse-remote-get-started.md
+      - name: RTI MCP Server
+        items:
+          - name: Fabric RTI MCP server
+            href: mcp-overview.md
+          - name: Using MCP Server with Eventhouse
+            href: mcp-eventhouse.md
+          - name: Get started with Eventhouse MCP Server
+            href: mcp-eventhouse-remote-get-started.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:
