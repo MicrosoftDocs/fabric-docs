@@ -15,7 +15,7 @@ This article describes the domain-level default sensitivity label feature in Mic
 Domain admins can set a default sensitivity label for their domains. This label will be applied by default to items in workspaces that belong to the domain in the following instances:
 
 * When a new item is created and saved in the workspace.
-* Whan an unlabeled item that already exists in the workspace is updated and saved.
+* When an unlabeled item that already exists in the workspace is updated and saved.
 
 When an existing labeled item in the workspace is updated and saved, the existing label is either retained or overwritten according to the following logic:
 

@@ -33,7 +33,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 The simplest way to create a DataFrame is to convert a local R data.frame into a Spark DataFrame. 
 
 ```R
-# load SparkR pacakge
+# load SparkR package
 library(SparkR)
 
 # read a SparkR DataFrame from a local R data.frame
@@ -94,7 +94,7 @@ head(faithfulDF_API)
 You can also read a SparkR Dataframe on your Lakehouse using SparkSQL queries.
 
 ```R
-# Regsiter ealier df as temp view
+# Register earlier df as temp view
 createOrReplaceTempView(df, "eruptions")
 
 # Create a df using a SparkSQL query
@@ -288,4 +288,3 @@ summary(model)
 - [Create R visualization](./r-visualization.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
-

@@ -209,10 +209,10 @@ items:
     href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
 - name: Query external data
   items:
-  - name: Query delimited files
-    href: query-delimited-files.md
   - name: Query external data lake files
     href: query-external-data-lake-files.md
+  - name: Query delimited files
+    href: query-delimited-files.md
   - name: Query JSON files
     href: query-json-files.md
   - name: Query Parquet files

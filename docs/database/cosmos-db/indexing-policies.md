@@ -81,7 +81,7 @@ These paths are defined with the following additions:
 
 - the `/*` wildcard can be used to match any elements below the node
 
-A baseline indexing policy fo the example item could include these optimizations:
+A baseline indexing policy for the example item could include these optimizations:
 
 - the `headquarters`'s `employees` path is `/headquarters/employees/?`
 
@@ -611,4 +611,3 @@ For scenarios where no property path needs to be indexed, but TTL is required, y
 
 - [Review indexing conceptually in Cosmos DB in Microsoft Fabric](indexing.md)
 - [Customize an indexing policy for a container in Cosmos DB in Microsoft Fabric](how-to-customize-indexing-policy.md)
-
