@@ -141,6 +141,10 @@ items:
     href: fabric-events-subscribe-permission.md   
   - name: Microsoft Fabric events capacity consumption
     href: fabric-events-capacity-consumption.md
+- name: Publish and consume business events
+  items:
+  - name: What are business events?
+    href: business-events/business-events-overview.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub

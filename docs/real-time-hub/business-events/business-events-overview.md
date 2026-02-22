@@ -36,7 +36,7 @@ Business events provide value by enabling:
 
 The following sections dive deeper into these core benefits and the key concepts that underpin business events in Microsoft Fabric.
 
-### Real-time responsiveness
+## Real-time responsiveness
 
 Applications and teams react immediately when important events occur, reducing delays and unlocking automation. The following table shows examples of business events across different categories:
 
@@ -56,7 +56,7 @@ The following table shows examples of non-business events:
 | Application log or diagnostic events | DiskReadError, UnhandledExceptionLogged |
 | Metric or aggregated events | MemoryUsagePercent, DiskQueueLength |
 
-### Decoupled architecture
+## Decoupled architecture
 
 Business Events enable a fully **decoupled architecture** where publishers and consumers in Fabric operate independently. Publishers send events once, and any consumer can subscribe without modifying the source or introducing tight coupling.
 
@@ -67,7 +67,7 @@ In Microsoft Fabric:
 
 This model lets you add new consumers - such as analytics flows, pipelines, automations, or external integrations - without changing or coordinating with the original publisher.
 
-### Consistent modeling across the organization
+## Consistent modeling across the organization
 
 One of the core strengths of business events in Microsoft Fabric is the ability to establish a **shared, consistent event model** across the entire organization. Instead of every system defining its own version of an "OrderDelayed" or "InventoryMovement" event, which can lead to mismatched fields, incompatible formats, and complex downstream mapping, Fabric centralizes governance through the **Schema Registry** in Real-Time hub.
 
@@ -112,7 +112,7 @@ By ensuring every event adheres to the same business-aligned schema:
 
 Ultimately, the Schema Registry makes business events not just real-time, but reliable, interpretable, and maintainable across every team in the organization. 
 
-### End-to-end observability 
+## End-to-end observability 
 
 End-to-end observability ensures users can inspect business events - from what publishers send to what consumers receive. Data preview provides a direct, real-time window into the payloads moving across publishers and consumers, helping teams validate correctness, troubleshoot problems, and confirm that events follow the expected end-to-end path.
 
