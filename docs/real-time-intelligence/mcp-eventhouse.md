@@ -2,7 +2,7 @@
 title: Use the Fabric RTI Model Context Protocol (MCP) Server With Eventhouse
 description: Learn how to use Model Context Protocol (MCP) with Eventhouse to create AI agents and applications that analyze real-time data. Get started now!
 ms.topic: how-to 
-ms.date: 07/28/2025
+ms.date: 02/22/2026
 ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 ms.subservice: rti-eventhouse
@@ -28,7 +28,7 @@ For the full list of available tools and natural language query examples, see [o
 
 ## Get started
 
-Get started using the instructions documented in the [MCP for RTI server](https://github.com/microsoft/fabric-rti-mcp/) repository. The main steps are:
+Get started using the detailed instructions in [Get started with the Eventhouse remote MCP server (Preview)](mcp-eventhouse-remote-get-started.md). The main steps are:
 
 1. Prerequisites: An Eventhouse with a KQL database and tables or an Azure Data Explore (ADX) cluster.
 1. Install the MCP server.

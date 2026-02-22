@@ -952,8 +952,10 @@ items:
             href: operations-agent-transparency-note.md
       - name: Fabric RTI MCP Server (preview)
         href: mcp-overview.md
-      - name: Use MCP with Eventhouse
+      - name: Using MCP Server with Eventhouse (preview)
         href: mcp-eventhouse.md
+      - name: Get started with Eventhouse MCP Server (preview)
+        href: mcp-eventhouse-remote-get-started.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:
