@@ -1,6 +1,6 @@
 ﻿---
 title: Use AutoML (interface)
-description: Use the low-code AutoML interface in Fabric to automate the ML workflow (preview)
+description: Use the low-code AutoML interface in Fabric to automate the ML workflow
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.author: scottpolly
@@ -9,11 +9,9 @@ ms.date: 11/18/2024
 ms.reviewer: midesa
 ---
 
-# Use the low-code AutoML interface in Fabric (preview)
+# Use the low-code AutoML interface in Fabric
 
 The low-code AutoML interface in Fabric makes it easy for users to get started with machine learning by specifying their ML task and a few basic configurations. Based on these selections, the AutoML UI generates a pre-configured notebook tailored to the user's inputs. Once executed, all model metrics and iterations are automatically logged and tracked within existing ML experiments and model items, providing an organized and efficient way to manage and evaluate model performance.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

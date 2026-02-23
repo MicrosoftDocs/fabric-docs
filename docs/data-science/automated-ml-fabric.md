@@ -4,17 +4,16 @@ description: Overview of Automated ML in Fabric
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
-ms.date: 11/18/2024
+ms.date: 02/23/2026
 ms.reviewer: midesa
 ---
 
-# Automated ML in Fabric (preview)
+# Automated ML in Fabric
 
 Automated Machine Learning (AutoML) enables users to build and deploy machine learning models by automating the most time-consuming and complex parts of the model development process. Traditionally, building a machine learning model requires expertise in data science, model selection, hyperparameter tuning, and evaluation—a process that can be resource-intensive and prone to trial-and-error. AutoML simplifies this by automatically selecting the best algorithms, tuning hyperparameters, and generating optimized models based on the input data and desired outcomes.
 
 In Microsoft Fabric, AutoML becomes even more powerful by integrating seamlessly with the platform's data ecosystem, allowing users to build, train, and deploy models directly on their lakehouses. With AutoML, both technical and non-technical users can create predictive models quickly, making machine learning accessible to a broader audience. From forecasting demand to detecting anomalies and optimizing business operations, AutoML in Fabric accelerates the path from raw data to actionable insights, empowering users to leverage AI with minimal effort and maximum impact.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## How does AutoML work?
 
