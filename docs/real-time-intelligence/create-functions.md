@@ -57,7 +57,7 @@ To view or preview an existing stored function, follow these steps:
 1. In the **Explorer** pane, expand the **Functions** section. **Left-click** on the desired function to open the preview or select the three dots and **show function**.
 1. A read-only version of the function script opens in the **Explore your data** window. 
     * You can select **Preview results** to preview the function results.
-    * If there are parameters in the function, you can provide values for them and then select **Preview results** to see the output based on the provided parameter values.
+    * If the function includes parameters, you can enter values for those parameters. Then, select **Preview results** to see the output based on the parameter values you provided.
     * The preview results show up to 100 records based on the function query.
 
      :::image type="content" source="media/create-functions/view-function.png" alt-text="Screenshot of the Explore your data window showing a stored function script." lightbox="media/create-functions/view-function.png":::
@@ -66,7 +66,7 @@ To view or preview an existing stored function, follow these steps:
 
 To edit or delete an existing stored function, use the following steps:
 
-1. In the **Explorer** pane, expand the **Functions** section, and select the three dots next to the desired function.
+1. In the **Explorer** pane, expand the **Functions** section. Select the three dots next to the desired function.
 
 1. From the dropdown menu, choose either:
     * **Edit with code** to edit the function script in the **Explore your data** window.
