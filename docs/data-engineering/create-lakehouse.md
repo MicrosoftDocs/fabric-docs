@@ -1,70 +1,64 @@
 ---
 title: Create a lakehouse in Microsoft Fabric
-description: Learn how to create a lakehouse from the Data Engineering homepage, the Workspace view, or the Create page.
+description: Create a lakehouse in Microsoft Fabric to store and analyze structured and unstructured data with Spark and SQL. Also learn how to delete a lakehouse.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom:
-ms.date: 05/13/2024
+ms.date: 02/22/2026
 ms.search.form: Create lakehouse
 ---
 
 # Create a lakehouse in Microsoft Fabric
 
-In this tutorial, you learn different ways to create a Lakehouse in Microsoft Fabric.
+A lakehouse in Microsoft Fabric lets data engineers transform data with Spark notebooks and data analysts query it with T-SQL—all against the same Delta Lake storage. When you create a lakehouse, Fabric also generates a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) for T-SQL queries and a default [semantic model](/power-bi/connect-data/service-datasets-understand) for Power BI reporting.
+
+In this article, you learn how to create and delete a lakehouse.
 
 ## Prerequisites
 
-To create a lakehouse, you need access to a [Fabric enabled workspace](../admin/fabric-switch.md). Fabric admins can enable trial or paid capacity for a tenant or users. If Fabric isn't enabled, you won't see the lakehouse card.
+A Fabric workspace backed by a trial or paid capacity, with Contributor or higher [workspace permissions](../fundamentals/roles-workspaces.md). If you don't see the option to create a lakehouse, ask your Fabric admin to [assign capacity to the workspace](../admin/capacity-settings.md).
 
-### Ways to create a lakehouse
+## Create a lakehouse
 
-The lakehouse creation process is quick and simple; there are several ways to get started.
+To create a lakehouse:
 
-1. **Data Engineering** homepage
+1. Open your Fabric workspace.
+1. Select **+ New item**.
+1. Search for or select **Lakehouse**.
 
-   - You can easily create a lakehouse through the **Lakehouse** card under the **New** section in the homepage.
+    :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media/create-lakehouse/new-lakehouse-menu.png":::
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse item under Data Engineering." lightbox="media\create-lakehouse\lakehouse-card.png":::
-
-1. **Workspace** view
-
-   - You can also create a lakehouse through the workspace view in **Data Engineering** by using the **New** dropdown menu.
-
-   :::image type="content" source="media\create-lakehouse\new-lakehouse-menu.png" alt-text="Screenshot showing the Lakehouse option in the New menu." lightbox="media/create-lakehouse/new-lakehouse-menu.png":::
-
-1. **Create** page
-
-   - An entry point to create a lakehouse is available in the **Create** page under **Data Engineering**.
-
-   :::image type="content" source="media\create-lakehouse\lakehouse-create-hub.png" alt-text="Screenshot showing the Lakehouse option in the Data Engineering Create page." lightbox="media/create-lakehouse/lakehouse-create-hub.png":::
-
-### Creating a lakehouse from the Data Engineering homepage
-
-1. Browse to the **Data Engineering** homepage.
-
-1. Under the New section, locate the **Lakehouse** card and select it to get started with the creation process
-
-1. Enter a name for the lakehouse and a sensitivity label if your organization requires one, and select **Create**.
-
-1. Once the lakehouse is created, you land on the **Lakehouse Editor** page where you can get started and load data.
+1. Enter a name for the lakehouse and select the workspace where you want to create it.
+1. The **Lakehouse schemas** checkbox is selected by default. Schemas let you organize tables into logical groups (for example, `sales.orders` and `marketing.campaigns`) instead of placing all tables in a single flat list. Clear the checkbox if you don't need schema-based organization. For more information, see [What are lakehouse schemas?](lakehouse-schemas.md).
+1. Select **Create**.
 
 > [!NOTE]
-> The lakehouse will be created under the current workspace you are in.
+> If your tenant admin configured [sensitivity label policies in Microsoft Purview](/purview/create-sensitivity-labels), you also see a **Sensitivity label** option in the dialog. Use it to classify the lakehouse according to your organization's data protection requirements.
+
+The lakehouse opens in the lakehouse **Explorer** pane, where you can start [loading data](load-data-lakehouse.md).
+
+For information about how to create a lakehouse with the REST API, see [Create Lakehouse - REST API](/rest/api/fabric/lakehouse/items/create-lakehouse)
 
 ## Delete a lakehouse
 
-To delete a lakehouse, navigate to **OneLake data hub** and find your lakehouse. select the **...** next to the lakehouse name and select **Delete**. The lakehouse and its associated SQL analytics endpoint and semantic model are deleted. 
+Deleting a lakehouse removes the lakehouse item, all its data, the associated SQL analytics endpoint, and the semantic model. To delete a lakehouse:
 
-> [!NOTE]
-> - A lakehouse can't be deleted if it's referenced elsewhere, for example, in a pipeline or within a real time analytics workflow.
-> - There is no way to restore a lakehouse after it's deleted.
+1. Open the workspace that contains the lakehouse.
+1. Find the lakehouse in the item list.
+1. Select the ellipsis **...** next to the lakehouse name for more options.
+1. Select **Delete**.
+
+> [!CAUTION]
+> Deleting a lakehouse is permanent and can't be undone. The lakehouse, its data, its SQL analytics endpoint, and its semantic model are all removed. 
+
+You can't delete a lakehouse that's referenced by other items—for example, if it's used as a source in a pipeline or by a [Real-Time Intelligence workflow](../real-time-intelligence/overview.md). Remove those references before deleting the lakehouse.
+
+> [!TIP]
+> If you accidentally delete a **file inside** a lakehouse (not the lakehouse itself), you might be able to recover it within seven days by using [OneLake soft delete](../onelake/soft-delete.md).
 
 ## Related content
 
-Now that you have successfully created your Lakehouse, learn more about:
-
-- Different ways to load data in Lakehouse, see [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
-
-- Exploring your lakehouse explorer, see [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md)
+- [What is a lakehouse?](lakehouse-overview.md)
+- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
+- [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md)
+- [Create Lakehouse - REST API](/rest/api/fabric/lakehouse/items/create-lakehouse)

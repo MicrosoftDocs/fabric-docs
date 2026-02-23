@@ -1,8 +1,7 @@
 ---
 title: How to configure Avro format in the pipeline of Data Factory in Microsoft Fabric
 description: This article explains how to configure Avro format in the pipeline of Data Factory in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 06/25/2024
 ms.custom:

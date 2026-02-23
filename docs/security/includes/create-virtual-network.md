@@ -4,7 +4,6 @@ description: Include file for creating a virtual network.
 author: msmimart
 ms.author: mimart
 ms.topic: include
-ms.custom: 
 ms.date: 08/13/2025
 ---
 

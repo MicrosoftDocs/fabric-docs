@@ -1,8 +1,7 @@
 ---
 title: Azure Cosmos DB CDC - prerequisites and connection details
 description: This include file has the prerequisites for adding an Azure Cosmos DB Change Data Capture (CDC) source and information on getting connection details.
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -10,7 +9,7 @@ ms.date: 11/18/2024
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - Access to an **Azure Cosmos DB for NoSQL** account and database.
 - Your Azure Cosmos DB for NoSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
 - If you don't have an eventstream, [create an eventstream](../create-manage-an-eventstream.md). 
@@ -33,3 +32,4 @@ The labels for the items you need to collect from the Azure portal are shown in 
 1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
 
    :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-prerequisites-connection-details/containers.png" alt-text="A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.":::
+

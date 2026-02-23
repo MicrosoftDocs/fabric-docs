@@ -1,9 +1,7 @@
 ---
 title: User data functions source control and deployment
 description: Learn how to enable CI/CD for user data functions items in Fabric.
-ms.author: eur
 ms.reviewer: sumuth
-author: eric-urban
 ms.topic: how-to
 ms.custom: freshness-kr
 ms.date: 01/21/2026

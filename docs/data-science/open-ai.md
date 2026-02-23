@@ -2,11 +2,9 @@
 title: Azure OpenAI for big data
 description: Use Azure OpenAI Service to solve a large number of natural language tasks through prompting the completion API.
 ms.topic: how-to
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 06/30/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -75,7 +73,7 @@ You can also load data directly from ADLS or other databases. For more informati
 df = spark.createDataFrame(
     [
         ("Hello my name is",),
-        ("The best code is code thats",),
+        ("The best code is code that's",),
         ("SynapseML is ",),
     ]
 ).toDF("prompt")
@@ -124,7 +122,7 @@ Your output should look something like this. The completion text will be differe
 | **prompt**                       | **error**     | **text**                                                                                                                                  |
 |:----------------------------:    |:----------:    |:-------------------------------------------------------------------------------------------------------------------------------------:    |
 | Hello my name is                | null          | Makaveli I'm eighteen years old and I want to   be a rapper when I grow up I love writing and making music I'm from Los   Angeles, CA     |
-| The best code is code thats     | null          | understandable This is a subjective statement,   and there is no definitive answer.                                                       |
+| The best code is code that's    | null          | understandable This is a subjective statement,   and there is no definitive answer.                                                       |
 | SynapseML is                    | null          | A machine learning algorithm that is able to learn how to predict the future outcome of events.                                           |
 
 ## More Usage Examples
@@ -172,7 +170,7 @@ chat_df = spark.createDataFrame(
                 make_message(
                     "system", "You are an AI chatbot with red as your favorite color"
                 ),
-                make_message("user", "Whats your favorite color"),
+                make_message("user", "What's your favorite color"),
             ],
         ),
         (
@@ -302,5 +300,5 @@ display(completion.transform(qa_df))
 ## Related content
 
 - [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
-- [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)
+- [How to use SynapseML and Foundry Tools for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)

@@ -1,8 +1,6 @@
 ---
 title: Spark connector for SQL databases
 description: Learn how to use Spark Connector to connect to Azure SQL databases from Microsoft Fabric Spark Runtime
-author: eric-urban
-ms.author: eur
 ms.reviewer: arali
 ms.topic: how-to
 ms.date: 10/01/2025

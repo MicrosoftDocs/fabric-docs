@@ -1,9 +1,7 @@
 ---
 title: Load Sample data to Data Warehouse
 description: Learn how to build and schedule a new pipeline to copy sample data to a Data Warehouse.
-ms.reviewer: whhender
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 02/25/2025

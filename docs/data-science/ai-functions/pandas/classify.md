@@ -1,10 +1,7 @@
 ---
 title: Use ai.classify with pandas
 description: Learn how to categorize input text according to custom labels by using the ai.classify function with pandas.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

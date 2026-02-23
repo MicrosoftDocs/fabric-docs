@@ -1,10 +1,8 @@
-﻿---
+---
 title: Distribute Power BI Content to External Guest Users with Microsoft Entra B2B
 description: "Learn how to share Power BI content with external guest users through Microsoft Entra B2B collaboration. Configure invitations, manage licensing, and enable secure external sharing."
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
-ms.reviewer: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
@@ -233,3 +231,5 @@ To use in-place semantic model sharing, tenant admins need to enable the followi
 - For information about Microsoft Entra B2B, see [What is Microsoft Entra B2B collaboration?](/entra/external-id/what-is-b2b)
 - For information about in-place semantic model sharing, see [Power BI in-place semantic model sharing with guest users in external organizations (preview)](/power-bi/collaborate-share/service-dataset-external-org-share-about).
 - For information about government clouds, see [Power BI for US Government](service-government-us-overview.md).
+
+

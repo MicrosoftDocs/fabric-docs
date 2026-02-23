@@ -1,9 +1,6 @@
 ---
 title: Add relationship types
 description: Learn about relationship types in ontology (preview) and how to manage them.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 10/30/2025
 ms.topic: how-to
 ---
@@ -82,3 +79,4 @@ You can edit or delete relationship types that exist in your ontology (preview) 
     :::image type="content" source="media/how-to-create-relationship-types/delete-relationship.png" alt-text="Screenshot of editing relationship details in the relationship configuration." lightbox="media/how-to-create-relationship-types/delete-relationship.png":::
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
+

@@ -1,10 +1,8 @@
 ---
 title: Explore Fabric workspace item events in Fabric Real-Time hub
 description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -101,3 +99,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

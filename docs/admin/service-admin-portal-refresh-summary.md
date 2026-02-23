@@ -3,8 +3,6 @@ title: View refresh summary
 description: Learn how to view your capacity's refresh history and investigate refresh errors.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - admin-portal
 ms.topic: how-to

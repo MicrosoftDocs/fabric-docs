@@ -1,8 +1,7 @@
 ---
 title: Microsoft Fabric Eventstreams Capacity Consumption
 description: Learn how to monitor capacity consumption for Microsoft Fabric eventstreams.
-author: xujxu
-ms.author: xujiang1
+ms.reviewer: xujiang1
 ms.topic: concept-article 
 ms.date: 10/29/2024
 ms.search.form: Monitor eventstreams capacity consumption
@@ -77,3 +76,4 @@ For more information, see the following articles:
 
 - [Install the Microsoft Fabric Capacity Metrics app](/power-bi/enterprise/service-premium-install-app)
 - [What is the Microsoft Fabric Capacity Metrics app?](/power-bi/enterprise/service-premium-metrics-app)
+

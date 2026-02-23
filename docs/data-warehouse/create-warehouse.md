@@ -1,8 +1,6 @@
 ---
 title: Create a Warehouse
 description: Learn how to create a Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 09/18/2025
 ms.topic: how-to
@@ -33,7 +31,7 @@ Another option available to create your warehouse is through the **Create** butt
 
 Once initialized, you can load data into your warehouse. For more information about getting data into a warehouse, see [Ingest data into the Warehouse](ingest-data.md).
 
-Your warehouse data is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. 
+Your warehouse data is located in the region of your Fabric workspace. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. 
 
 <a id="how-to-create-a-warehouse-sample"></a>
 

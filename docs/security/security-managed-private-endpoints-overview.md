@@ -43,7 +43,7 @@ For more information about supported data sources for managed private endpoints 
 
 Managed private endpoints in Microsoft Fabric are supported in **all regions where Fabric Data Engineering workloads are available**.
 
-Please refer to the regional avilability documentation for the list of supported regions
+Please refer to the regional availability documentation for the list of supported regions.
 - [Fabric region availability](../admin/region-availability.md)
 
 ### Important notes

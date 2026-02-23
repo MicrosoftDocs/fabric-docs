@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) tutorial part 2: Add entity types and map data'
 description: Define entity types in digital twin builder (preview) and map data to entity instances. Part 2 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---

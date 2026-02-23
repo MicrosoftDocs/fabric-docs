@@ -1,6 +1,5 @@
 ---
 title: Include file for creating a new tutorial digital twin builder
-ms.reviewer: baanders
 description: Include file for creating a digital twin builder instance to support the digital twin builder (preview) tutorials in Real-Time Intelligence.
 author: baanders
 ms.author: baanders
@@ -24,3 +23,4 @@ ms.date: 01/27/2026
     >Digital twin builder names can include numbers, letters, and underscores (no spaces or dashes).
 
 1. Wait for your digital twin builder item to be created. When your digital twin builder item is ready, it opens to the semantic canvas.
+

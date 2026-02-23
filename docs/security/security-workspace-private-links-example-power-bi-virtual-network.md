@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 08/13/2025
 
 #customer intent: As a workspace admin, I want to learn how to set up and use a virtual network gateway to securely access a lakehouse from a Power BI semantic model.

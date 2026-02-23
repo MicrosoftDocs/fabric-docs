@@ -1,8 +1,7 @@
 ---
 title: Connector Capability Comparison Between Azure Data Factory and Data Factory in Fabric
 description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
-author: lrtoyou1223
-ms.author: lle
+ms.reviewer: lle
 ms.topic: how-to
 ms.date: 01/28/2026
 ms.custom:

@@ -39,7 +39,7 @@ items:
     href: tutorial-lakehouse-data-ingestion.md
   - name: 5 Prepare data
     href: tutorial-lakehouse-data-preparation.md
-  - name: 6 Build a report
+  - name: 6 Create a semantic model and build a report
     href: tutorial-lakehouse-build-report.md
   - name: 7 Clean up resources
     href: tutorial-lakehouse-clean-up.md
@@ -269,6 +269,8 @@ items:
       href: spark-sql-connector.md
     - name: JDBC driver for Fabric Data Engineering
       href: spark-jdbc-driver.md
+    - name: ODBC driver for Fabric Data Engineering
+      href: spark-odbc-driver.md    
   - name: Intelligent cache
     href: intelligent-cache.md
   - name: What is the Livy API?
@@ -288,16 +290,18 @@ items:
       href: load-to-tables.md
     - name: High Concurrency Mode for Lakehouse Table Load and Preview Operations
       href: high-concurrency-for-lakehouse-operations.md
-    - name: Table compaction
-      href: table-compaction.md
     - name: Lakehouse table maintenance
       href: lakehouse-table-maintenance.md
-    - name: Delta optimization and V-Order
-      href: delta-optimization-and-v-order.md
-    - name: Tune file size
-      href: tune-file-size.md
-    - name: Automated Statistics for Delta Tables
-      href: automated-table-statistics.md	
+    - name: Delta tables performance
+      items: 
+        - name: Delta optimization and V-Order
+          href: delta-optimization-and-v-order.md
+        - name: Table compaction
+          href: table-compaction.md
+        - name: Tune file size
+          href: tune-file-size.md
+        - name: Automated Statistics for Delta Tables
+          href: automated-table-statistics.md	
     - name: Delta Driver Mode Snapshot
       href: driver-mode-snapshot.md
 - name: Notebooks
@@ -339,6 +343,8 @@ items:
     href: notebook-limitation.md
   - name: Query Mirrored Databases in Spark Notebook
     href: query-mirrored-database-spark-notebooks.md
+  - name: Query Eventstream from Spark Notebook 
+    href: notebook-with-event-stream.md
 - name: Environments
   items:
   - name: Create, configure and use an environment

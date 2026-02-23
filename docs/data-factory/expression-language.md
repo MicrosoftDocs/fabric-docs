@@ -2,8 +2,6 @@
 title: Expressions and functions
 description: This article provides information about expressions and functions that you can use in creating pipeline entities for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: whhender
-author: whhender
 ms.topic: reference
 ms.custom: pipelines
 ms.date: 12/18/2024

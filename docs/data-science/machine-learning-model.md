@@ -4,9 +4,7 @@ description: Learn how to create, track, and manage machine learning models in M
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
 ms.topic: concept-article
-ms.custom: 
 ms.date: 01/29/2026
 ms.search.form: Create New Model, Model Comparison
 ---

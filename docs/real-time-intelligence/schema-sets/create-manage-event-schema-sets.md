@@ -1,11 +1,7 @@
 ---
 title: Create Event Schema Sets in Fabric Real-Time Intelligence
-ms.service: fabric
-ms.reviewer: spelluru
 description: Learn how to create and manage event schema sets in Microsoft Fabric Real-Time Intelligence to streamline your streaming analytics workflows.
 #customer intent: As a user, I want to learn how to create an event schema set in Real-Time Intelligence.
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom:
   - ai-gen-docs-bap
@@ -45,3 +41,5 @@ Once you have at least one schema in the schema set, you can configure settings 
 ## Next step
 
 Now, add a schema to the event schema set by following instructions from [Create and manage event schemas in schema sets](create-manage-event-schemas.md).
+
+
