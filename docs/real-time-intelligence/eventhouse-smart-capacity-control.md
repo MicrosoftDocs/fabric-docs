@@ -35,7 +35,7 @@ The capacity planner scheduler allows you to define different minimum capacity l
 * Configure a 7-day recurring schedule.
 * Split each day into 60-minute time blocks.
 * Define a minimum capacity per block, or explicitly mark it as no minimum.
-* Turn on guaranteed capacity only when needed, without disabling autoscale. The scheduler doesn't replace autoscale, it works alongside it.
+* Turn on guaranteed capacity only when needed, without disabling autoscale. The scheduler doesn't replace autoscale rather works alongside it.
     * When you define a minimum, Eventhouse guarantees a capacity floor. Autoscale can still scale above that floor during demand spikes.
     * When you don't define a minimum, Eventhouse can scale down to zero when idle. The system never forces a scale-down if capacity is already higher due to active demand.
 
@@ -43,14 +43,14 @@ The capacity planner scheduler allows you to define different minimum capacity l
 
 When you enable **Capacity Planner mode**, you don't pay for *OneLake Cache Storage*. The eventhouse is always active, so you get 100% Eventhouse UpTime without extra premium storage costs. Capacity planner mode (previously known as *Always-on*) prevents the eventhouse from suspending the service due to inactivity. For highly time-sensitive systems, it prevents the latency of reactivating the eventhouse.
 
-1. From the eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Panner mode** is enabled.
+* From the eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Panner mode** is enabled.
 
 > [!NOTE]
-> If you don't customize by schedulinig capacity values, the minimum capacity is set at a minimum value of 2 CUs (25GB + supported premium storage size).
+> If you don't customize by scheduling capacity values, the minimum capacity is set at a minimum value of 2 CUs (25 GB + supported premium storage size).
 
 ## Schedule minimum capacity
 
-In addition to the always-on *Capacity Planner mode**, you can further customize a minimum capacity schedule. This schedule sets a minimum available capacity unit (CU) size for an eventhouse per day and specific times during that day.
+In addition to the always-on **Capacity Planner mode**, you can further customize a minimum capacity schedule. This schedule sets a minimum available capacity unit (CU) size for an eventhouse per day and specific times during that day.
 
 1. From the eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Panner mode** is enabled.
 
@@ -66,7 +66,7 @@ In addition to the always-on *Capacity Planner mode**, you can further customize
 
 1. Select **Done**.
 
-:::image type="content" source="media/eventhouse/minimum-capacity-small.png" alt-text="Screenshot showing how the eventhouse capacity schduler in Real-Time Intelligence Eventhouse." lightbox="media/eventhouse/minimum-capacity.png":::
+:::image type="content" source="media/eventhouse/minimum-capacity-small.png" alt-text="Screenshot showing the eventhouse capacity planner for the Eventhouse." lightbox="media/eventhouse/minimum-capacity.png":::
 
 ### Capacity units mapping
 

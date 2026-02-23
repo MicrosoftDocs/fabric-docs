@@ -5,7 +5,7 @@ ms.reviewer: bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.custom:
-ms.date: 02/12/2026
+ms.date: 02/23/2026
 ms.search.form: Eventhouse,KQL Database, Overview
 ---
 # Eventhouse and KQL Database consumption
