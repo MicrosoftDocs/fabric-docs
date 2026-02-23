@@ -159,7 +159,7 @@ The databases overview page provides a summary of all the databases in the event
 
     :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the eventhouse details page with the tile and list view buttons surrounded by a red box." lightbox="media/eventhouse/list-tile-view.png":::
 
-1. To explore a specific database, select the name of this database from the list. For more information, see (manage-monitor-database.md).
+1. To explore a specific database, select the name of this database from the list.
 
 ## View Workspace monitoring
 
