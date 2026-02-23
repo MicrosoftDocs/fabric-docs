@@ -17,6 +17,11 @@ Microsoft Fabric supports various security features across different workloads a
 * [Customer managed keys](workspace-customer-managed-keys.md)
 * [Outbound access protection](workspace-outbound-access-protection-overview.md)
 
+Important
+The long‑term plan is that all Fabric item types will be creatable and supported in workspaces protected by Advanced Security features.
+The table below reflects the current state of support only. Over time, support for Advanced Security is expected to become a general availability (GA) criterion for all new workloads.
+If an item type is listed as unsupported, this is intentional and temporary, and reflects a specific technical, security, or readiness consideration rather than a lack of commitment to support that workload.
+
 ## Feature availability by Fabric item type
 
 The following table shows the support status for each Fabric item. A check mark (✓) indicates the item is currently supported and generally available (GA). "Preview" means support for the item type is in preview. For the most up-to-date Fabric release timelines, refer to the [Microsoft Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=administration%2Cgovernanceandsecurity).
