@@ -950,7 +950,7 @@ items:
             href: operations-agent-limitations.md
           - name: Operations agent transparency note
             href: operations-agent-transparency-note.md
-      - name: RTI MCP Server
+      - name: RTI MCP Server (preview)
         items:
           - name: Fabric RTI MCP server
             href: mcp-overview.md
