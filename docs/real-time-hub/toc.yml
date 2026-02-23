@@ -7,6 +7,8 @@ items:
     href: real-time-hub-overview.md
   - name: What are Azure and Fabric Events?
     href: fabric-events-overview.md
+  - name: What are business events?
+    href: business-events/business-events-overview.md
 - name: Get started
   items:
   - name: Get started with Real-Time hub
@@ -139,6 +141,10 @@ items:
     href: fabric-events-subscribe-permission.md   
   - name: Microsoft Fabric events capacity consumption
     href: fabric-events-capacity-consumption.md
+- name: Publish and consume business events
+  items:
+  - name: What are business events?
+    href: business-events/business-events-overview.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub

@@ -104,7 +104,7 @@ Using `List staging libraries` API as an example, which has an update in the API
 |Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library)|Add one custom library or one/multiple public library in the environment.|Support until **March 31, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
 |Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library)|Delete one staging custom library or all public libraries.|Support until **March 31, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
 
-Belows are a few examples covering the scenarios when managing staging libraries.
+Below are a few examples covering the scenarios when managing staging libraries.
 
 - Add the public libraries in your environment
 

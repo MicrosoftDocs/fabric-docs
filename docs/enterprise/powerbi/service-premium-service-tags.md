@@ -62,7 +62,7 @@ $nsg = 'nsgresourcename'
 $rule = 'allow_inbound_PowerBI'
 #set the priority - this must be higher priority (lower number) than the deny_all_inbound rule
 $priority = 400
-#specifiy the service tag to use
+#specify the service tag to use
 $servicetag = 'PowerBI'
 #specify the public endpoint port defined in step 1
 $port = 3342
@@ -151,4 +151,3 @@ Save your settings and exit. Your SQL Managed Instance is now configured to allo
 * [Enable a public endpoint in the SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure)
 * [az network nsg rule](/cli/azure/network/nsg/rule)
 * [Add a network security group rule in PowerShell](/azure/service-fabric/scripts/service-fabric-powershell-add-nsg-rule)
-

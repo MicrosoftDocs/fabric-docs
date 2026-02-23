@@ -71,7 +71,7 @@ You don't need to specify the `FORMAT` option explicitly. The `OPENROWSET` will 
 
 ## Read files in Fabric OneLake
 
-The `OPENROWSET(BULK)` function enables you to read the files stored in Fabric OneLake. If your file is stored in the Files section of a lakehouse, you can read this file using the fillowing syntax:
+The `OPENROWSET(BULK)` function enables you to read the files stored in Fabric OneLake. If your file is stored in the Files section of a lakehouse, you can read this file using the following syntax:
 
 ```sql
 SELECT TOP 10 * 

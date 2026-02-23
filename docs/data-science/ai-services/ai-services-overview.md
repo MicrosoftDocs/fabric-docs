@@ -1,42 +1,45 @@
 ---
-title: Use Azure AI services in Fabric
-description: Overview of using Azure AI services in Fabric.
-ms.reviewer: lagayhar, ruxu
+title: Use Foundry Tools in Fabric
+description: Overview of using Foundry Tools in Fabric.
+ms.author: lagayhar
+author: lgayhardt
+ms.reviewer: vimeland
+reviewer: virginiaroman
 ms.topic: overview
 ms.custom:
   - references_regions
-ms.date: 12/23/2025
+ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# AI services in Fabric (preview)
+# Foundry Tools in Fabric (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure AI services](/azure/ai-services/what-are-ai-services) help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. Formerly named **Azure Cognitive Services**, Azure AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason.
+[Foundry Tools](/azure/ai-services/what-are-ai-services) help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. Formerly named **Azure Cognitive Services**, Foundry Tools empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Foundry Tools is to help developers create applications that can see, hear, speak, understand, and even begin to reason.
 
-Fabric provides two options to use Azure AI services:
+Fabric provides two options to use Foundry Tools:
 
 - **Pre-built AI models in Fabric (preview)**
 
-    Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access AI services, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited AI services available.
+    Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Foundry Tools available.
 
-    Fabric offers [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+    Fabric offers [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**
 
-    You can provision your AI services on Azure, and bring your own key to use them from Fabric. If the prebuilt AI models don't yet support the desired AI services, you can still use BYOK (Bring your own key).
+    You can provision your Foundry Tools on Azure, and bring your own key to use them from Fabric. If the prebuilt AI models don't yet support the desired Foundry Tools, you can still use BYOK (Bring your own key).
 
-    To learn more about how to use Azure AI services with BYOK, visit [Azure AI services in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
+    To learn more about how to use Foundry Tools with BYOK, visit [Foundry Tools in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
 
 ## Prebuilt AI models in Fabric (preview)
 
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/)
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md), [SynapseML](how-to-use-openai-sdk-synapse.md)
+[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-python-sdk.md), [SynapseML](how-to-use-openai-synapse-ml.md), [AI Functions](how-to-use-openai-ai-functions.md)
 
 - Language Models: `gpt-5`, `gpt-4.1`, and `gpt-4.1-mini` are hosted. [See table for details](#consumption-rate-for-openai-language-models)
 - Text Embedding Model: `text-embedding-ada-002` is hosted. [See table for details](#consumption-rate-for-openai-embedding-models)
@@ -50,7 +53,7 @@ Fabric provides two options to use Azure AI services:
 - Named entity recognition: identifies known entities and general named entities in the input text
 - Entity linking: identifies and disambiguates the identity of entities found in text
 
-### [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) 
+### [Translator](https://azure.microsoft.com/products/ai-services/translator/) 
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 - Translate: Translates text
 - Transliterate: Converts text in one language, in one script, to another script.
@@ -59,10 +62,10 @@ Fabric provides two options to use Azure AI services:
 
 ### Available regions for Azure OpenAI Service
 
-For the list of Azure regions where prebuilt AI services in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
+For the list of Azure regions where prebuilt Foundry Tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
 
-### Available regions for Text Analytics and Azure AI Translator 
-Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+### Available regions for Text Analytics and Translator 
+Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
 To determine your Fabric home region, visit [Find your Fabric home region](../../admin/find-fabric-home-region.md).
 
 | Asia Pacific | Europe | Americas | Middle East and Africa |
@@ -113,16 +116,16 @@ To determine your Fabric home region, visit [Find your Fabric home region](../..
 |Translate | 1M Characters | 336,134.45 CU seconds|
 |Transliterate | 1M Characters | 336,134.45 CU seconds|
 
-## Changes to AI services in Fabric consumption rate
+## Changes to Foundry Tools in Fabric consumption rate
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in the Microsoft Release Notes or the Microsoft Fabric Blog. If any change to an AI service in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use, customers can use the cancellation options available for the chosen payment method.
 
 ## Monitor the Usage
 
-The workload meter associated with the task determines the charges for prebuilt AI services in Fabric. For example, if AI service usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
+The workload meter associated with the task determines the charges for prebuilt Foundry Tools in Fabric. For example, if Foundry Tool usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
 
 > [!NOTE]
-> The billing for prebuilt AI services does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
+> The billing for prebuilt Foundry Tools does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
 
 ### Example
 
@@ -137,5 +140,8 @@ Once the shop owner validates the logic, the owner sets up the regular run and e
 According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-compute-usage-reporting), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
 
 ## Related content
-- [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
 
+- [Fabric AI Functions](../ai-functions/overview.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+- [Use Azure OpenAI with REST API](how-to-use-openai-via-rest-api.md) for direct REST API calls to the LLM endpoint

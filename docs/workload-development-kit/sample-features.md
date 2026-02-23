@@ -4,7 +4,7 @@ description: Understand how the workload development kit workload sample works, 
 ms.topic: how-to
 ms.date: 12/31/2024
 
-#customer intent: As a developer, I want to understand the Fabric capablities that the workload development kit sample showcases, so that I can use them in the workloads I develop.
+#customer intent: As a developer, I want to understand the Fabric capabilities that the workload development kit sample showcases, so that I can use them in the workloads I develop.
 ---
 
 

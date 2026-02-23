@@ -21,9 +21,9 @@ This quickstart shows how to use Fabric to build RAG applications. The main step
 1. Set up Azure AI Search.
 1. Load and prepare data from the [CMU QA dataset](https://www.cs.cmu.edu/~ark/QA-data/).
 1. Chunk the data by using Spark pools for efficient processing.
-1. Create embeddings by using Fabric's built-in [Azure OpenAI services through Synapse ML](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=synapseml).
+1. Create embeddings by using Fabric's built-in [Azure OpenAI services through Synapse ML](ai-services/how-to-use-openai-synapse-ml.md).
 1. Create a vector index by using [Azure AI Search](https://aka.ms/what-is-azure-search).
-1. Generate answers from the retrieved context by using Fabric's built-in [Azure OpenAI through Python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python).
+1. Generate answers from the retrieved context by using Fabric's built-in [Azure OpenAI through Python SDK](ai-services/how-to-use-openai-python-sdk.md).
 
 ## Prerequisites
 
@@ -562,7 +562,7 @@ def get_answer(question, context):
 `*StatementMeta(, c9c5b6e5-daf4-4265-babf-3a4ab57888cb, 20, Finished, Available, Finished)*`
 
 > [!NOTE]
-> For other available deployment_ids, see the [documentation for Python SDK](/fabric/data-science/ai-services/how-to-use-openai-sdk-synapse?tabs=python).
+> For other available deployment_ids, see the [documentation for Python SDK](ai-services/how-to-use-openai-python-sdk.md).
 
 ```python
 answer = get_answer(question, retrieved_context)

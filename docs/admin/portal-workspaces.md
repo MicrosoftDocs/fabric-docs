@@ -4,8 +4,8 @@ description: Learn how to view and understand info about workspaces and manage w
 author: msmimart
 ms.author: mimart
 ms.custom: admin-portal
-ms.topic: overview
-ms.date: 12/15/2025
+ms.topic: how-to
+ms.date: 02/18/2026
 ---
 
 # Manage workspaces
@@ -132,6 +132,8 @@ Workspaces and the data they contain reside on capacities. You can move the work
 1. On the Reassign workspace side pane that appears, select the desired workspace type, and choose a capacity, if asked.
 
     :::image type="content" source="./media/portal-workspaces/license-modes.png" alt-text="Screenshot showing the Reassign workspace types pane.":::
+
+1. Select **Save** to apply the change.
 
     > [!NOTE]
     > * The types of items in the workspace can affect your ability to change workspace types or move the workspace to a capacity in a different region.
