@@ -973,3 +973,61 @@ items:
             href: git-activator.md
   - name: KQL reference
     href: kusto-tocs/query/toc.yml
+  - name: Reference architectures
+    items:
+    - name: Automative and mobile
+      items:
+      - name: Connected fleet data analytics
+        href: architectures/connected-fleet.md
+      - name: Airline - flight operations   
+        href: architectures/airline-flight-operations.md
+      - name: Fleet management
+        href: architectures/fleet-management.md
+      - name: E-mobility charging network analytics
+        href: architectures/electric-mobility.md
+    - name: Energy and resources
+      items:
+      - name: Wind farm maintenance
+        href: architectures/wind-farm-maintenance.md
+      - name: Energy grid management
+        href: architectures/energy-grid-management.md
+      - name: Energy trading management
+        href: architectures/energy-trading.md
+      - name: Carbon emissions management
+        href: architectures/carbon-emissions.md
+      - name: Smart meter insights
+        href: architectures/smart-meter-insights.md
+    - name: Industrials and manufacturing
+      items:
+      - name: Connected Factory
+        href: architectures/connected-factory.md
+      - name: Predictive maintenance
+        href: architectures/predictive-maintenance.md
+      - name: Product embedded Analytics
+        href: architectures/product-embedded-analytics.md
+      - name: Supply chain
+        href: architectures/supply-chain.md
+    - name: Retail and consumer goods
+      items:
+      - name: Grocery store operations
+        href: architectures/grocery-store-operations.md
+    - name: Healthcare and life sciences
+      items:
+      - name: Healthcare billing system
+        href: architectures/healthcare-billing-system.md
+      - name: Hospital operations
+        href: architectures/hospital-operations.md
+    - name: Financial services
+      items:
+      - name: Fraud detection
+        href: architectures/fraud-detection.md
+    - name: Telecommunications and media
+      items:
+      - name: Internet service provider analytics
+        href: architectures/internet-service-provider-analytics.md    
+      - name: Law enforcement
+        href: architectures/law-enforcement.md
+      - name: Call detail or event data records analytics
+        href: architectures/call-event-data-records-analytics.md
+      - name: Customer churn analytics
+        href: architectures/customer-churn.md        

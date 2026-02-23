@@ -1,18 +1,12 @@
 items:
-  - name: Overview
+  - name: Getting started
     items:
       - name: What is Graph in Microsoft Fabric?
         href: overview.md
-      - name: What is a graph database?
-        href: graph-database.md
-      - name: Compare graph and relational databases
-        href: graph-relational-databases.md
-      - name: Labeled property graph
-        href: graph-data-models.md
-      - name: Security
-        href: security-overview.md
-  - name: Quickstart guide for Graph in Microsoft Fabric
-    href: quickstart.md
+      - name: Quickstart guide for Graph in Microsoft Fabric
+        href: quickstart.md
+      - name: Example graph datasets
+        href: sample-datasets.md
   - name: Tutorial
     items:
       - name: Introduction
@@ -33,6 +27,18 @@ items:
         href: tutorial-query-code-editor.md
       - name: 8 - Clean up tutorial resources
         href: tutorial-clean-up.md
+  - name: Concepts
+    items:
+      - name: What is a graph database?
+        href: graph-database.md
+      - name: Labeled property graph
+        href: graph-data-models.md
+      - name: Compare graph and relational databases
+        href: graph-relational-databases.md
+      - name: Graph in Microsoft Fabric architecture
+        href: how-graph-works.md
+      - name: Security
+        href: security-overview.md
   - name: How-tos
     items:
       - name: Manage data
@@ -45,37 +51,37 @@ items:
         href: troubleshooting-and-faq.md
       - name: Limitations
         href: limitations.md
-  - name: Graph Query Language (GQL)
+  - name: Reference
     items:
-      - name: GQL manual
+      - name: Graph Query Language (GQL)
         items:
-        - name: GQL language guide
-          href: gql-language-guide.md
-        - name: 'GQL schema example: Social network'
-          href: gql-schema-example.md
-        - name: GQL graph patterns
-          href: gql-graph-patterns.md
-        - name: GQL expressions, predicates, and functions
-          href: gql-expressions.md
-        - name: GQL graph types
-          href: gql-graph-types.md
-        - name: GQL values and value types
-          href: gql-values-and-value-types.md
-      - name: GQL query API    
-        href: gql-query-api.md
-      - name: GQL reference material
+          - name: GQL manual
+            items:
+            - name: GQL language guide
+              href: gql-language-guide.md
+            - name: 'GQL schema example: Social network'
+              href: gql-schema-example.md
+            - name: GQL graph patterns
+              href: gql-graph-patterns.md
+            - name: GQL expressions, predicates, and functions
+              href: gql-expressions.md
+            - name: GQL graph types
+              href: gql-graph-types.md
+            - name: GQL values and value types
+              href: gql-values-and-value-types.md
+          - name: GQL query API    
+            href: gql-query-api.md
+          - name: GQL reference material
+            items:
+            - name: GQL quick reference
+              href: gql-reference-abridged.md
+            - name: GQL status codes reference
+              href: gql-reference-status-codes.md
+            - name: GQL reserved words reference
+              href: gql-reference-reserved-terms.md
+      - name: REST API
         items:
-        - name: GQL quick reference
-          href: gql-reference-abridged.md
-        - name: GQL status codes reference
-          href: gql-reference-status-codes.md
-        - name: GQL reserved words reference
-          href: gql-reference-reserved-terms.md
-  - name: Example graph datasets
-    href: sample-datasets.md
-  - name: REST API Reference
-    items:
-      - name: Graph Background Jobs REST API
-        href: /rest/api/fabric/graphmodel/background-jobs
-      - name: Graph Items REST API
-        href: /rest/api/fabric/graphmodel/items
+          - name: Graph Background Jobs REST API
+            href: /rest/api/fabric/graphmodel/background-jobs
+          - name: Graph Items REST API
+            href: /rest/api/fabric/graphmodel/items
