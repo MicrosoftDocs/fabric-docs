@@ -1,6 +1,6 @@
 ﻿---
 title: Visualize tuning and AutoML trials
-description: Use visualizations in Fabric AutoML and tune (preview)
+description: Use visualizations in Fabric AutoML and tune
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
@@ -8,15 +8,13 @@ ms.reviewer: midesa
 ms.date: 07/21/2025
 ---
 
-# Training visualizations (preview)
+# Training visualizations
 
 A hyperparameter trial or AutoML trial searches for the optimal parameters for a machine learning model. Each trial consists of multiple runs, where each run evaluates a specific parameter combination. Users can monitor these runs using ML experiment items in Fabric.
 
 The ```flaml.visualization``` module offers functions to plot and compare the runs in FLAML. Users can use Plotly to interact with their AutoML experiment plots. To use these functions, users need to input their optimized ```flaml.AutoML``` or ```flaml.tune.tune.ExperimentAnalysis``` object.
 
 This article teaches you how to use the ```flaml.visualization``` module to analyze and explore your AutoML trial results. You can follow the same steps for your hyperparameter trial as well.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Create an AutoML trial
 
