@@ -87,7 +87,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     | kustoQuery | The KQL query to be evaluated. | [KQL overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rti&pivots=fabric)
     | KustoUri | The query URI of your KQL database. | [Copy a KQL database URI](access-database-copy-uri.md#copy-uri)
     | database | The name of your KQL database. | [Access an existing KQL database](access-database-copy-uri.md)
-    | data | The data to be written to the table.
+    | data | The data to be written to the table. |
 
 1. Run the code cell.
 
