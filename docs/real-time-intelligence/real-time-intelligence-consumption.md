@@ -4,7 +4,7 @@ description: Learn how eventhouses and KQL databases consume capacity units in R
 ms.reviewer: bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 01/08/2026
+ms.date: 02/23/2026
 ms.search.form: Eventhouse,KQL Database, Overview
 ai-usage: ai-assisted
 ---
@@ -27,11 +27,11 @@ Capacity is a dedicated set of resources that's available at a given time to be 
 
 ## Throttling
 
-When capacity limits are reached, the eventhouse applies throttling to protect system stability. There are three levels of throttling: 
+When capacity limits are reached, the eventhouse applies throttling to protect system stability. There are three levels of throttling:
 
-- **Proactive** – queries are throttled, but data ingestion continues normally. 
-- **Reactive** – both ingestion and queries are paused, but no data is lost. 
-- **Extreme reactive** – ingestion and queries are paused, data is held for a period, but data may be lost after a certain period. 
+- **Proactive** – queries are throttled, but data ingestion continues normally.
+- **Reactive** – both ingestion and queries are paused, but no data is lost.
+- **Extreme reactive** – ingestion and queries are paused, data is held for a period, but data might be lost after a certain period.
 
 When an eventhouse enters proactive, capacity is reduced to maintain availability for an extended period for modest actions (proactive and reactive), maintaining eventhouse availability with reduced performance.
 
@@ -43,9 +43,11 @@ Surge protection now includes workspace-level controls that provide more granula
 
 **Per-workspace CU % limits**: You can define a compute unit (CU) consumption threshold for individual workspaces, as a percentage of overall capacity utilization. These thresholds are set over a rolling 24-hour period.
 
-**Automatic blocking**: When a workspace exceeds its threshold, it's automatically placed in a blocked state. The workspace rejects new operations until its usage drops below the threshold or until you manually remove the block.
+**Automatic blocking**: A workspace is placed in a blocked state automatically When the workspace exceeds its threshold. The workspace rejects new operations until its usage drops below the threshold or until you manually remove the block.
 
 **Mission critical mode**: You can designate high-priority workspaces as mission critical, which exempts them from surge protection rules and effectively prioritizes them over other workspaces. This mode can also be used to remove an active blocked state.
+
+For information on Fabric capcity-level surge protection, see [Surge protection](../enterprise/surge-protection.md).
 
 ## Eventhouse UpTime
 
@@ -82,7 +84,6 @@ Here are some insights you can take from the example:
 > [!NOTE]
 > To better understand your Eventhouse compute size, see [Understand Eventhouse compute usage](eventhouse-compute-observability.md).
 
-
 ## Storage billing
 
 Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
@@ -107,3 +108,4 @@ The following image shows a sample storage page from monitoring a KQL database i
 * [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
 * [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 * [Eventhouse compute usage](eventhouse-compute-observability.md)
+* [Surge protection](../enterprise/surge-protection.md)
