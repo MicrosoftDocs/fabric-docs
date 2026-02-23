@@ -158,7 +158,7 @@ items:
           - name: Lakehouse
             href: event-streams/add-destination-lakehouse.md
           - name: Spark Notebook
-            href: event-streams/add-destination-spark-notebook.md            
+            href: event-streams/add-destination-spark-notebook.md
           - name: Activator
             href: event-streams/add-destination-activator.md
           - name: Custom endpoint
@@ -227,8 +227,8 @@ items:
             href: event-streams/stream-events-from-power-automate.md
           - name: Build a Power BI report by streaming data from Azure IoT Hub
             href: event-streams/build-report-from-iot-hub.md
-          - name: Explore Sample streaming Stock Market data using Eventstream and Spark Structured Streaming 
-            href: event-streams/explore-sample-stock-market-data-with-spark.md               
+          - name: Explore Sample streaming Stock Market data using Eventstream and Spark Structured Streaming
+            href: event-streams/explore-sample-stock-market-data-with-spark.md
           - name: Explore and transform bike-sharing data for KQL database integration
             href: event-streams/transform-sample-data-and-route-to-kql.md
       - name: Eventstream Query Language Reference
@@ -633,6 +633,8 @@ items:
           - name: Access an existing KQL database
             href: access-database-copy-uri.md
             displayName: copy URI, copy query URI, copy ingestion URI
+          - name: Analyze data with Lakehouse/Warehouse
+            href: analyze-data-with.md
           - name: Manage and monitor a KQL database
             href: manage-monitor-database.md
           - name: Create a database shortcut
@@ -813,10 +815,10 @@ items:
             href: data-activator/alert-stop-events.md
           - name: Reduce cost of rules on streaming data
             items:
-            - name: Apply summarizations
-              href: data-activator/reduce-cost-rules-apply-summarizations.md
-            - name: Apply filters
-              href: data-activator/reduce-cost-rules-apply-filters.md
+              - name: Apply summarizations
+                href: data-activator/reduce-cost-rules-apply-summarizations.md
+              - name: Apply filters
+                href: data-activator/reduce-cost-rules-apply-filters.md
       - name: Troubleshoot errors
         href: data-activator/activator-troubleshooting.md
   - name: Digital Twin Builder
@@ -923,20 +925,20 @@ items:
             href: map/about-map-permissions.md
       - name: How-to guides
         items:
-        - name: Create a map
-          href: map/create-map.md
-        - name: Customize a map
-          href: map/customize-map.md
-        - name: Create a tileset
-          href: map/create-tile-sets.md
-        - name: Map sharing
-          items:
-            - name: Share maps directly
-              href: map/share-map-direct.md
-            - name: Share maps with org apps
-              href: map/share-map-org-apps.md
-        - name: Manage Map permissions
-          href: map/manage-map-permissions.md
+          - name: Create a map
+            href: map/create-map.md
+          - name: Customize a map
+            href: map/customize-map.md
+          - name: Create a tileset
+            href: map/create-tile-sets.md
+          - name: Map sharing
+            items:
+              - name: Share maps directly
+                href: map/share-map-direct.md
+              - name: Share maps with org apps
+                href: map/share-map-org-apps.md
+          - name: Manage Map permissions
+            href: map/manage-map-permissions.md
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:

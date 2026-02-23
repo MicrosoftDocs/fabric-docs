@@ -4,7 +4,7 @@ description: Use an eventhouse endpoint to query Lakehouse or Warehouse tables w
 ms.reviewer: tzgitlin
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 02/17/2026
+ms.date: 02/23/2026
 ---
 
 # Enable Eventhouse endpoint for lakehouse and data warehouse
@@ -65,6 +65,13 @@ You can enable the Eventhouse endpoint using any of these three methods:
 1. From the toolbar, select **Analyze Data with** > **Eventhouse endpoint**.
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png" alt-text="Screenshot of enabling the Eventhouse endpoint from the Lakehouse ribbon." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-ribbon.png":::
+
+### Method 4: From the Analyze data with option in the Lakehouse/Warehouse
+
+1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
+1. Select **Analyze data with** > **Eventhouse endpoint**.
+
+   :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL endpoint, eventhouse endpoint, and notebook options.":::
 
 ### Complete the setup
 
