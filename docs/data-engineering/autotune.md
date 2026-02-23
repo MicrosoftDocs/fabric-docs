@@ -4,7 +4,7 @@ description: Learn how autotune automatically adjusts Apache Spark configuration
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.date: 07/18/2025
-#customer intent: As a Microsoft Fabric user I want to learn how to use autotune to automatically ajust Apache Spark configurataions.
+#customer intent: As a Microsoft Fabric user I want to learn how to use autotune to automatically adjust Apache Spark configurations.
 ---
 
 # What is autotune for Apache Spark configurations in Fabric?

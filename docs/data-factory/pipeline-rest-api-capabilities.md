@@ -392,7 +392,7 @@ Gets singular pipeline’s job instance.
 
 ## Schedule a pipeline
 
-You can also create schedules programatically with the API. Scheduler API supports the following operations:  
+You can also create schedules programmatically with the API. Scheduler API supports the following operations:  
 
 - Cancel Pipeline Job Instance  
 - Create Pipeline Schedule  
@@ -543,7 +543,7 @@ For more detailed information on how to set up and use SPNs in Fabric Data Facto
 
 ## Current limitations
 
-- JOB Limitation: Run APIs are invokable, but the actual run never succeeds (just like run/refresh from UI).
+- JOB Limitation: Run APIs can be invoked, but the actual run never succeeds (just like run/refresh from UI).
 - Non-Power BI Fabric Items: The workspace must be on a support Fabric capacity.
 - Creating an item: use either creationPayload or definition, but don't use both at the same time.
 

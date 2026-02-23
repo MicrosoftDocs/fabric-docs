@@ -5,6 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: overview
 ms.date: 09/26/2024
+ai-usage: ai-assisted
 ---
 
 # Governance overview and guidance
@@ -213,3 +214,5 @@ The admin monitoring workspace provides admins with monitoring capabilities for 
 
 * [Fabric security overview](../security/security-overview.md)
 * [Fabric administration overview](../admin/admin-overview.md)
+* [Microsoft Purview permissions](/purview/purview-permissions)
+

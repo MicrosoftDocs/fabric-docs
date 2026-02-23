@@ -1,4 +1,4 @@
-﻿---
+---
 title: Build a Search Engine
 description: Build a custom search engine and question-answering system with SynapseML.
 ms.topic: overview
@@ -105,7 +105,7 @@ display(analyzed_df)
 
 ## 4 - Simplify form recognition output
 
-This code uses the [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/0.10.0/pyspark/synapse.ml.cognitive.html#module-synapse.ml.cognitive.FormOntologyTransformer), a transformer that analyzes the output of Form Recognizer transformers (for Azure AI Document Intelligence) and infers a tabular data structure. The output of AnalyzeInvoices is dynamic and varies based on the features detected in your content.
+This code uses the [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/0.10.0/pyspark/synapse.ml.cognitive.html#module-synapse.ml.cognitive.FormOntologyTransformer), a transformer that analyzes the output of Form Recognizer transformers (for Azure Document Intelligence in Foundry Tools) and infers a tabular data structure. The output of AnalyzeInvoices is dynamic and varies based on the features detected in your content.
 
 FormOntologyLearner extends the utility of the AnalyzeInvoices transformer by looking for patterns that can be used to create a tabular data structure. Organizing the output into multiple columns and rows makes for simpler downstream analysis.
 
@@ -143,7 +143,7 @@ display(itemized_df)
 
 ## 5 - Add translations
 
-This code loads [Translate](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#translation), a transformer that calls the Azure AI Translator service in Azure AI services. The original text, which is in English in the "Description" column, is machine-translated into various languages. All of the output is consolidated into "output.translations" array.
+This code loads [Translate](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#translation), a transformer that calls the Azure Translator in Foundry Tools service. The original text, which is in English in the "Description" column, is machine-translated into various languages. All of the output is consolidated into "output.translations" array.
 
 
 ```python
@@ -371,5 +371,5 @@ display(
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)
+- [How to use SynapseML and Foundry Tools for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)
