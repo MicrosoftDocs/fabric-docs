@@ -42,7 +42,7 @@ D. **Details area**: The [details area](#view-eventhouse-details) provides addit
 
 ## Eventhouse ribbon
 
-The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](event-house-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
+The Eventhouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within an Eventhouse. From here, you can refresh your main view, [schedule the capacity planner](eventhouse-smart-capacity-control.md), add databases, add plugins, and collapse or expand the details area.
 
 ## Explorer pane
 
