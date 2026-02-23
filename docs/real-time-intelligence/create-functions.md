@@ -6,7 +6,7 @@ ms.author: spelluru
 author: spelluru
 ms.topic: how-to
 ms.custom:
-ms.date: 02/09/2026
+ms.date: 02/23/2026
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
 ---
@@ -54,8 +54,11 @@ This feature enables you to create or alter an existing function by using the `.
 
 To view or preview an existing stored function, follow these steps:
 
-1. In the **Explorer** pane, expand the **Functions** section. Select the desired function or the three dots. Select **show function**.
-1. A read-only version of the function script opens in the **Explore your data** window. You can select **Preview results** to preview the function results.
+1. In the **Explorer** pane, expand the **Functions** section. **Left-click** on the desired function to open the preview or select the three dots and **show function**.
+1. A read-only version of the function script opens in the **Explore your data** window. 
+    * You can select **Preview results** to preview the function results.
+    * If there are parameters in the function, you can provide values for them and then select **Preview results** to see the output based on the provided parameter values.
+    * The preview results show up to 100 records based on the function query.
 
      :::image type="content" source="media/create-functions/view-function.png" alt-text="Screenshot of the Explore your data window showing a stored function script." lightbox="media/create-functions/view-function.png":::
 
