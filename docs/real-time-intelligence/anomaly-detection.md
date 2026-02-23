@@ -4,7 +4,7 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 12/04/2025
+ms.date: 02/23/2026
 ms.search.form: Anomaly Detection How To
 ---
 
@@ -24,7 +24,7 @@ Key capabilities include:
 ## Prerequisites
 
 - A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-- Role of **Admin**, **Contributor**, or **Member** [in the workspace](../get-started/roles-workspaces.md)
+- Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md)
 - An [Eventhouse](create-eventhouse.md) in your workspace with a KQL database
 - A Python plugin enabled on that same Eventhouse
   - To enable the plugin, navigate to your Eventhouse.
@@ -40,7 +40,15 @@ Key capabilities include:
 
 ### Start anomaly detection from an Eventhouse table
 
-You can start anomaly detection in two ways:
+You can start anomaly detection in three ways:
+
+1. From an **Eventhouse table**:
+
+    1. Go to your Eventhouse and select the table you want to analyze.
+
+    1. If you're in **Viewing** mode, toggle to **Editing** mode to enable the anomaly detection option.
+
+    1. In the upper toolbar, select **Create Anomaly Detector**.
 
 1. From the **Real-Time hub**:
 
@@ -48,7 +56,7 @@ You can start anomaly detection in two ways:
 
         :::image type="content" source="media/anomaly-detection/real-time-hub.png" alt-text="Screenshot of the Real-Time hub button in the left navigation pane.":::
 
-    1. Locate the table you want to analyze for anomalies and do **either** of the following steps:
+    1. Find the table you want to analyze for anomalies and do **either** of the following steps:
        1. Select the ⋯ (three dots) to open the table's ribbon menu, and select **Anomaly detection**.
 
           :::image type="content" source="media/anomaly-detection/detect-dropdown.png" alt-text="Screenshot of the Real-Time hub with a table selected for anomaly detection.":::
@@ -82,7 +90,7 @@ Specify which columns to analyze and how to group your data.
 
     :::image type="content" source="media/anomaly-detection/add-source.png" alt-text="Screenshot of the Anomaly detection configuration pane with Data source option highlighted.":::
 
-1. In the **Select source** pane, choose the Eventhouse and table you want to analyze, then select **Add**.
+1. In the **Select source** pane, choose the Eventhouse and table you want to analyze, and then select **Add**.
 
     :::image type="content" source="media/anomaly-detection/select-source.png" alt-text="Screenshot of the Select source pane with an Eventhouse and table selected.":::
 
@@ -108,7 +116,7 @@ Specify which columns to analyze and how to group your data.
 The system analyzes your data to find the best anomaly detection models.
 
 > [!IMPORTANT]
-> Analysis typically takes up to 4 minutes depending on your data size and can run for up to 30 minutes. You can navigate away from the page and check back in when the analysis is complete.
+> Analysis typically takes up to four minutes depending on your data size and can run for up to 30 minutes. You can go to another page and check back when the analysis is complete.
 
 During analysis, the system:
 
@@ -119,27 +127,27 @@ During analysis, the system:
 
 ### Review recommended models and anomalies
 
-Once the analysis is complete, you can review the results and explore the detected anomalies.
+After the analysis finishes, review the results and explore the detected anomalies.
 
-1. Open the anomaly detection results by selecting the notification you received or navigating back to the table and selecting **View anomaly results**.
+1. Open the anomaly detection results by selecting the notification you received or by going back to the table and selecting **View anomaly results**.
 
-2. The results page provides the following insights:
+1. The results page provides the following insights:
     - A **visualization** of your data with anomalies clearly highlighted.
     - A list of **recommended algorithms**, ranked by their effectiveness for your data.
     - **Sensitivity settings** to adjust the detection thresholds.
     - A detailed table of **detected anomalies** within the selected time range.
 
-3. Use the model selector to compare the performance of different recommended algorithms and choose the one that best fits your needs.
+1. Use the model selector to compare the performance of different recommended algorithms and choose the one that best fits your needs.
 
-4. Adjust the **sensitivity** settings to refine the anomaly detection results:
+1. Adjust the **sensitivity** settings to refine the anomaly detection results:
     - Options include Low, Medium, and High Confidence levels.
     - Experiment with these settings to balance between detecting more anomalies and reducing false positives.
 
-5. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
+1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
 
-6. **Save** the anomaly detector to preserve your configuration and revisit it later.
+1. **Save** the anomaly detector to preserve your configuration and revisit it later.
 
-7. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. You can also configure downstream actions, such as sending alerts to Activator.
+1. **Publish** the detected anomalies to the Real-Time Hub to enable continuous monitoring of incoming data. You can also configure downstream actions, such as sending alerts to Activator.
 
 By reviewing and fine-tuning the results, you can ensure that your anomaly detection setup is optimized for your specific use case.
 
@@ -147,14 +155,14 @@ By reviewing and fine-tuning the results, you can ensure that your anomaly detec
 
 Keep your anomaly detection models up to date as new data becomes available.
 
-Follow the steps to reanalyze the model with new data:
+Follow these steps to reanalyze the model with new data:
 
-1. Navigate to your anomaly detection item.
+1. Go to your anomaly detection item.
 1. In the **Edit** panel, modify any of the previously filled-out fields as needed.
-1. Select **Run analysis**. This triggers a new analysis based on your updated inputs.
+1. Select **Run analysis**. This action starts a new analysis based on your updated inputs.
 
 > [!WARNING]
-> Reanalyzing will update the model used by existing monitoring rules, which may impact downstream actions.
+> Reanalyzing updates the model used by existing monitoring rules, which might affect downstream actions.
 
 ### Explore anomaly detection events and set alerts
 
@@ -167,8 +175,8 @@ For more information, see:
 
 Be aware of these current limitations:
 
-- **Data requirements**: Sufficient historical data improves model recommendations and accuracy
-- Each anomaly detector can only support a single model configuration.
+- **Data requirements**: Sufficient historical data improves model recommendations and accuracy.
+- Each anomaly detector supports only a single model configuration.
 
 ## Running multiple operations in the anomaly detector
 
@@ -176,12 +184,12 @@ When you interact with the anomaly detector, Eventhouse runs Python queries in t
 
 - Running anomaly detection or other types of analysis.
 - Switching between recommended models.
-- Changing the time window or IDs being viewed.
+- Changing the time window or IDs you're viewing.
 - Continuously monitoring incoming data for anomalies by setting alerts.
 
-Eventhouse supports up to eight concurrent queries per Eventhouse. If this limit is exceeded, the system retries the queries, but additional queries won’t be queued and might silently fail. Error messages to provide more clarity are under development.
+Eventhouse supports up to eight concurrent queries per Eventhouse. If you exceed this limit, the system retries the queries, but it doesn't queue additional queries and they might silently fail. Error messages that provide more clarity are under development.
 
-To avoid issues:
+To avoid problems:
 
 - Allow each query to complete before starting a new one.
 - If performance seems slow or unresponsive, reduce the number of concurrent queries.
@@ -196,17 +204,17 @@ For more information, see [Enable Python plugin in Real-Time Intelligence](pytho
 
 ## Next steps
 
-Now that you have anomaly detection configured, next you can:
+After you configure anomaly detection, you can:
 
 - [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
 - [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
 - [Set up Activator for automated responses](../real-time-intelligence/data-activator/activator-introduction.md)
 - [Learn about multivariate anomaly detection](multivariate-anomaly-detection.md)
-- [Create alerts from a KQL queryset](../data-activator/data-activator-alert-queryset.md)
+- [Create alerts from a KQL queryset](data-activator/activator-alert-queryset.md)
 
 ## Related content
 
 - [KQL query reference](/kusto/query/)
 - [Real-Time Dashboard documentation](dashboard-real-time-create.md)
-- [Activator overview](../data-activator/data-activator-introduction.md)
+- [Activator overview](data-activator/activator-introduction.md)
 
