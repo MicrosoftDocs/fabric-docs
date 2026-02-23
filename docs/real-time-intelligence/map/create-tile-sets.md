@@ -11,9 +11,9 @@ ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, til
 
 Large static spatial datasets can be expensive to render directly on a map. To improve performance, Fabric Maps can convert GeoJSON files into high‑performance tilesets that enable faster rendering and smoother interaction. For background concepts, see [What is a tileset in Fabric Maps?](about-tile-sets.md).
 
-This article shows how to create a tileset as well as schedule data refresh for tilesets generated in Fabric Maps. Scheduling lets you rebuild PMTiles on a fixed schedule or automatically when the source data in OneLake changes.
+This article shows how to create a tileset as well as schedule data refresh for tilesets generated in Fabric Maps. Scheduling lets you rebuild PMTiles on a fixed schedule.
 
-You can schedule refresh for both new and existing tilesets, as long as you have access to the tileset and its underlying data source.
+You can schedule refresh when creating a new tileset, as long as you have access to its underlying data source.
 
 > [!IMPORTANT]
 > Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
