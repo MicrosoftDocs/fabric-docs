@@ -34,7 +34,7 @@ To make the dataflow dynamic, you parameterize the source table, the filter valu
 
 Before continuing, enable public parameters mode by going to the *Home* tab, selecting *Options*, and in the *Parameters* section, checking the box labeled **Enable parameters to be discovered and overridden for execution** and allow your dataflow to accept parameters during execution.
 
-![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overriden for execution" setting.](media/dataflow-gen2-parameterized-dataflow/parameters-options.png)
+![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overridden for execution" setting.](media/dataflow-gen2-parameterized-dataflow/parameters-options.png)
 
 ## Parameterize source
 

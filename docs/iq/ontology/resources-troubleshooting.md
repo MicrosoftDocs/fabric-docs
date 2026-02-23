@@ -59,6 +59,7 @@ The following table describes common issues when using the preview experience of
 | Preview experience shows no data | This error might happen because your ontology instance can't access the underlying Fabric Graph. Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. Changing the table name after mappings are created might also break the connection relied on by the preview experience. |
 | No entity instances shown | This behavior indicates an error accessing the data bindings. Confirm that the source data tables exist in OneLake with matching column names, and that your Fabric identity has data access. |
 | Graph is sparse or missing data | Check that entity type keys are defined for each entity type, and verify that the source data is properly bound to those keys. |
+| Preview page becomes unresponsive | This issue might occur when you have insufficient permissions to Fabric resources. Ensure that you have at least **Contributor** access (not just **Viewer**) in your Fabric workspace, and at least **read** access to the data source used for bindings in the ontology. |
 
 ## Troubleshoot ontology as data agent source
 

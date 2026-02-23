@@ -69,7 +69,8 @@ For troubleshooting, see:
   - Graph  
   - External tables  
 - The following table-level data definition language (DDL) operations aren't allowed on source tables when enabled for SQL Managed Instance mirroring to Microsoft Fabric.
-  - Switch/Split/Merge partition
+  - Switch partition
+    
   - Alter primary key  
 - When there's DDL change, a complete data snapshot is restarted for the changed table, and entire table data is reseeded into Fabric OneLake.
 - Currently, a table cannot be mirrored if it has the **json** <!-- or **vector** --> data type.

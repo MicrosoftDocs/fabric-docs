@@ -508,7 +508,7 @@ You can extend this template to include VM deployment and Private Link Service d
 | Windows Firewall | Ensure there there is no Windows Firewall blocking the ports where the traffic is being forwarded to | 
 | NAT VM sizing | A small VM is usually enough; monitor if high concurrent sessions are expected. |
 | High availability | For production, use multiple forwarder VMs in an availability set / zone with LB distributing. |
-| Connectivity | Ensure your have established the connectivity between the IP fowarding VM and the data source using a name or the ip address. |
+| Connectivity | Ensure you have established connectivity between the IP forwarding VM and the data source by using a name or the IP address. |
 | Security | Restrict NSGs to only required inbound (1433 to forwarder) and management ports (22) from trusted ranges. |
 
 ## Learn more
@@ -516,4 +516,3 @@ You can extend this template to include VM deployment and Private Link Service d
 * [About managed private endpoints in Fabric](./security-managed-private-endpoints-overview.md)
 * [About private links in Fabric](./security-private-links-overview.md)
 * [Overview of managed virtual networks in Fabric](./security-managed-vnets-fabric-overview.md)
-

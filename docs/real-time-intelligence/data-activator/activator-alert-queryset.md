@@ -91,7 +91,7 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
         :::image type="content" source="media/activator-alert-queryset/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
 
     * **Send Microsoft Teams notification**: Sends a Microsoft Teams message to yourself. You can customize the title and message content.
-        1. For **Select action**, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+        1. For **Select action**, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
         1. Follow one of these steps depending on your selection:
             * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
             * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.
@@ -193,7 +193,7 @@ In the **Add Rule** side pane that appears, follow these steps to define your al
         :::image type="content" source="media/activator-alert-queryset/action-email.png" alt-text="Screenshot of the Send email notification section in the Add Rule side pane.":::
 
     * **Send Microsoft Teams notification**: Sends a Microsoft Teams message to yourself. You can customize the title and message content.
-        1. For **Select action**, select **Teams** --> **Message to indviduals** or **Group chat message**, or **Channel post**.
+        1. For **Select action**, select **Teams** --> **Message to individuals** or **Group chat message**, or **Channel post**.
         1. Follow one of these steps depending on your selection:
             * If you selected the **Message to individuals** option, enter **email addresses** of receivers or use the drop-down list to select a property whose value is an email address. When the condition is met, an email is sent to specified individuals.
             * If you selected the **Group chat message** option, select a **group chat** from the drop-down list. When the condition is met, a message is posted to the group chat.

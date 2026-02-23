@@ -43,7 +43,7 @@ Before you get started with DLP for Fabric and Power BI, you should confirm your
     :::image type="content" source="./media/data-loss-prevention-configure/create-policy.png" alt-text="Screenshot of D L P create policy page.":::
 
     > [!NOTE]
-    > The **+ Create policy** option is only available if the prerequistes have been met.
+    > The **+ Create policy** option is only available if the prerequisites have been met.
 
 1. Choose the **Custom** category and then the **Custom policy** template. When done, select **Next**.
     

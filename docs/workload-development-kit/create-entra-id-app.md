@@ -160,7 +160,7 @@ To configure the [backend](extensibility-back-end.md), you need to configure a s
 
 ## Step 9: Add an idtyp optional claim
 
-Te `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals that the token that the workload gets from Fabric is an app only token.
+The `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals that the token that the workload gets from Fabric is an app only token.
 
 1. Sign into the [Microsoft Entra admin center](https://entra.microsoft.com).
 
@@ -179,4 +179,3 @@ Te `idtype` [claim](/entra/identity-platform/optional-claims-reference) signals 
 ## Related content
 
 * Learn how to work with [authentication in workloads](./authentication-guidelines.md).
-

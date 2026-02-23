@@ -177,7 +177,7 @@ After building your project, publish it to your target warehouse. Publishing cre
 1. Choose **Publish to an existing SQL server**.
 1. For **Select publish profile to load**, the first time you publish, choose **Don't use profile**.
    - You can save options for publishing your warehouse into a *publish profile*. When you're completed, you're given the option in a Visual Studio Code notification to save the publishing options you just used to a publish profile file. 
-   - You can re-use the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
+   - You can reuse the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
 1. Choose the Fabric Data Warehouse connection profile from the list.
 1. Choose the name of the target warehouse.
 1. In the **Choose action** option, you can either **Generate Script** to review the script before publishing, or publish project to a warehouse. 

@@ -95,7 +95,7 @@ The **Links** tab lets you create and manage sharing links for the map item.
 
 In the **Links** tab, you can:
 
-- reate a sharing link for the map.
+- Create a sharing link for the map.
 - Control who can use the link (for example, specific people or your organization).
 - Specify the permission level granted by the link.
 - View and delete existing sharing links.

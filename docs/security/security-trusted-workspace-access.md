@@ -128,7 +128,7 @@ The following sections show you how to use these methods.
 
 1. Start by creating a new shortcut in a Lakehouse.
 
-    :::image type="content" source="./media/security-trusted-workspace-access/create-new-shortcut-menu-item.png" alt-text="Sceenshot of create new shortcut menu item.":::
+    :::image type="content" source="./media/security-trusted-workspace-access/create-new-shortcut-menu-item.png" alt-text="Screenshot of create new shortcut menu item.":::
 
     The **New shortcut** wizard opens.
 

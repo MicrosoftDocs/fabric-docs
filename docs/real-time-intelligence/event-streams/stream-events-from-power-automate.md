@@ -84,7 +84,7 @@ In this section, you'll learn how to design a workflow that periodically generat
 
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\long-running.png" alt-text="Screenshot that shows how to set recurrence for long running.":::
 
-1. Select the **+ Add an action** and then select the **Excute JavaScript**.
+1. Select the **+ Add an action** and then select the **Execute JavaScript**.
    
    :::image type="content" border="true" source="media\stream-events-from-power-automate-and-logic-app\add-javascript.png" alt-text="Screenshot that shows how to add JavaScript.":::
 
@@ -173,5 +173,4 @@ If you want to discover more advanced functionalities for working with Fabric ev
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
-
 

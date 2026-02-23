@@ -1,9 +1,12 @@
 ---
 title: Use Azure OpenAI with REST API
 description: How to use prebuilt Azure OpenAI in Fabric with REST API
-ms.reviewer: lagayhar, ruxu
+ms.author: lagayhar
+author: lgayhardt
+ms.reviewer: vimeland
+reviewer: virginiaroman
 ms.topic: how-to
-ms.date: 12/23/2025
+ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -12,7 +15,8 @@ ms.collection: ce-skilling-ai-copilot
 # Use Azure OpenAI in Fabric with REST API (preview)
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
-This document shows examples of how to use Azure OpenAI in Fabric using REST API.
+
+This document shows examples of how to use Azure OpenAI in Fabric using REST API. For complete API reference and additional REST API examples, see [OpenAI API Reference](https://platform.openai.com/docs/api-reference/introduction).
 
 ## Initialization
 
@@ -28,9 +32,10 @@ auth_headers = {
     "Content-Type": "application/json"
 }
 ```
+
 ## Chat
 
-GPT-4.1 and GPT-4.1-mini are language models optimized for conversational interfaces. Use GPT-5 for reasoning capabilities.
+For complete API reference, see [Chat Completions API](https://platform.openai.com/docs/api-reference/chat).
 
 ```python
 import requests
@@ -99,8 +104,10 @@ Yes, **Azure OpenAI Service** supports **customer managed keys (CMK)** for encry
 You can use customer managed keys with Azure OpenAI for enhanced security and regulatory compliance.
 ==========================================================================================
 ```
+
 ## Embeddings
-An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar.
+
+An embedding is a special data representation format that machine learning models and algorithms can easily utilize. It contains information-rich semantic meaning of a text, represented by a vector of floating point numbers. The distance between two embeddings in the vector space is related to the semantic similarity between two original inputs. For example, if two texts are similar, their vector representations should also be similar. For complete API reference, see [Embeddings API](https://platform.openai.com/docs/api-reference/embeddings).
 
 To access Azure OpenAI embeddings endpoint in Fabric, you can send an API request using the following format:
 
@@ -153,8 +160,8 @@ response = requests.post(openai_url, headers=auth_headers, json=payload)
 print_embedding_result(payload["input"], response.status_code, response)
 ```
 
-
 Output:
+
 ```console
 ==========================================================================================
 | OpenAI Input    |
@@ -171,10 +178,14 @@ Output:
 
 ## Related content
 
-- [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
-- [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
-- [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
-- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+### Fabric documentation
 
+- [Use Azure OpenAI with AI Functions](how-to-use-openai-ai-functions.md) for large scale dataset transformations in Fabric for Pandas or PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) for distributed processing using Spark DataFrames with no overhead
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) for pythonic control over single API calls using OpenAI Python SDK
+
+### OpenAI API documentation
+
+- [OpenAI API Reference](https://platform.openai.com/docs/api-reference/introduction) - Complete API reference with REST API examples
+- [Chat Completions API](https://platform.openai.com/docs/api-reference/chat) - Complete API reference for chat completions
+- [Embeddings API](https://platform.openai.com/docs/api-reference/embeddings) - Complete API reference for embeddings

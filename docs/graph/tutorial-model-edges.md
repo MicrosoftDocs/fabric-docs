@@ -78,4 +78,5 @@ At this point, you defined all the node types and edge types for your graph. The
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Query the graph with the query builder](tutorial-query-builder.md)
+> [Create multiple node and edge types from one mapping table](tutorial-model-node-edge-from-same-table.md)
+

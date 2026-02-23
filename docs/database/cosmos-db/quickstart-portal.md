@@ -94,7 +94,7 @@ Finally, perform a NoSQL query to test the sample data in the **SampleData** con
         "product": "ProCore X3 Elite Workstation - Computers, Workstations",
         "currentPrice": 8486.6
       },
-      // Ommitted for brevity
+      // Omitted for brevity
     ]
     ```    
 

@@ -448,7 +448,7 @@ Microsoft Fabric allows users to operationalize machine learning models with the
 
 From our evaluation results, model 1 has the largest metrics for both Area Under the Precision-Recall Curve (AUPRC) and for Area Under the Curve Receiver Operating Characteristic (AUC-ROC). Therefore, you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to measure binary classifiers performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
+The AUC-ROC measure is widely used to measure binary classifier performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
 
 ```python
 # Load the best model
@@ -479,4 +479,3 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
-

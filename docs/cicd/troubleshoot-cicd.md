@@ -4,7 +4,7 @@ description: Troubleshoot problems with deployment pipelines, the Fabric Applica
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: sfi-image-nochange
-ms.date: 12/15/2025
+ms.date: 02/17/2026
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -110,7 +110,7 @@ To understand the considerations and limitations of various lifecycle management
 
 ### Connect folder issues
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
+#### Connect failure: I am prompted to create a new folder when connecting to a Git branch.
 
 **Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
 
@@ -192,7 +192,7 @@ For more information, see [Manually Update from Git](./git-integration/partial-u
 
 **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-Reason: Git Integration doesn't support Direct Query and proxy models at this time.
+**Cause**: Git Integration doesn't support Direct Query and proxy models at this time.
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
@@ -213,7 +213,7 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 * If you have write permission to the repository, select **Fix with direct commit**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then commit the changes.
 
-* If you don't have write permission to the repository, select *Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
+* If you don't have write permission to the repository, **select Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
 
 ### Undo issues
 
@@ -507,13 +507,11 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To apply deployment rules, you have to deploy the semantic models from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the semantic model with the configured rules. This indicates that you need to deploy that semantic model from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 
-#### Deployment rules are greyed out
+#### Deployment rules are grayed out
 
-**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
+**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are grayed out.
 
-:::image type="content" border="true" source="media/troubleshoot-cicd/rules-greyed-out.png" alt-text="A screenshot showing deployment pipelines deployment rules greyed out.":::
-
-If one of the rule options is greyed out, it could be because of the following reasons:
+If one of the rule options is grayed out, it could be because of the following reasons:
 
 * **Data source rules** - There are no data sources that a rule can be configured on.
 
@@ -532,6 +530,84 @@ If one of the rule options is greyed out, it could be because of the following r
 **Cause**: When constructing a semantic model using Power BI Desktop, the connection string can be configured. Later, the semantic model can be published and used by deployment pipelines in Power BI service. When creating the connection in Power BI Desktop, you can specify additional parameters. When specifying the parameters, the semantic model source must be the first parameter listed. If you list any other parameters before the semantic model source, you run into errors in Power BI service. In such cases, when configuring a new semantic model rule, if you point to a semantic model that wasn't configured properly in Power BI Desktop, deployment pipelines can't create the rule.
 
 **Solution**: Format the semantic model connection in Power BI Desktop so that the semantic model source appears in the first row. Then, republish the semantic model.
+
+
+
+### Retirement of semantic model support for deployment pipelines
+To improve reliability and consistency across deployment environments, Microsoft Fabric deployment pipelines is retiring support for semantic models that haven't been upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
+
+#### What change is Microsoft making to semantic model support in deployment pipelines?
+**Solution**: Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. Deployment pipelines—and Git integration—require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
+
+#### Why is this change happening?
+**Solution**: Enhanced Metadata provides a consistent, modernized model structure that enables:
+
+- More reliable deployments across environments
+- Compatibility with Git (which supports only Enhanced Metadata)
+- Improved XMLA read/write experiences
+- Future migration paths aligned with Analysis Services
+- Greater consistency across the unified Microsoft Fabric platform
+
+
+#### Who is impacted?
+**Solution**:  Any organization using Microsoft Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
+
+#### What happens if we try to deploy models that haven’t been upgraded?
+**Solution**: 
+
+- Deployment of legacy metadata models will fail.
+- PBIX files opened in the latest Power BI Desktop are automatically upgraded.
+- If a report has unapplied query changes or upgrade errors, users will see a warning and must upgrade manually.
+- Some legacy queries (especially for SQL Server, Oracle, Teradata, SAP HANA) may not convert cleanly and could generate errors like:
+- "Unable to convert an M query in table 'Dimension City' into a native source query."
+
+
+#### Are there any exceptions?
+**Solution**:  Yes. ASLC (Analysis Services Live Connection) semantic models—which use external AS servers—cannot be upgraded because they rely on non‑enhanced metadata. Deployment pipelines will continue to support ASLC models.
+
+#### How can I check whether a semantic model still uses legacy metadata?
+**Solution**: 
+
+- **Deployment failure:** If a deployment error says the semantic model wasn't upgraded, it still uses legacy metadata.
+- **Workspace check:** In the workspace, hover over Open Semantic Model in the item's menu. If it's grayed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
+ :::image type="content" source="media/troubleshoot-cicd/retire-1.png" alt-text="Screenshot of workspace check." lightbox="media/troubleshoot-cicd/retire-1.png":::
+
+#### What should my organization do to prepare?
+**Solution**: 
+
+- Upgrade all source‑stage semantic models to Enhanced Metadata before February 2026.
+- Inform helpdesk and internal support teams about the coming change.
+- Update internal documentation and workflows to reflect the new requirement.
+- Review limitations and troubleshooting steps in the Using enhanced semantic model metadata guidance.
+
+
+#### How do I convert a legacy semantic model to Enhanced Metadata?
+**Recommended method:** Republish via Power BI Desktop
+
+1. Download the model from the ALM source stage.
+2. Open it using the latest Power BI Desktop.
+3. Save the file—this triggers conversion to Enhanced Metadata.
+Republish to Power BI.
+
+**Alternative method:** Convert using XMLA read/write (SSMS)
+
+Using XMLA, update the model:
+
+1. Set `compatibilityLevel` to 1520
+2. Add `"defaultPowerBIDataSourceVersion": "powerBI_V3"` inside the "model" object
+
+
+See [Semantic model connectivity and management with the XMLA endpoint in Power BI](../enterprise/powerbi/service-premium-connect-tools.md) for details.
+
+>[!NOTE]
+> Even after a successful conversion, the Open Semantic Model option may remain grayed out. However, deployments will succeed.
+
+
+
+
+
+
+
 
 ## Troubleshooting errors
 

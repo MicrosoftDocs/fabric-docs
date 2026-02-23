@@ -269,6 +269,8 @@ items:
       href: spark-sql-connector.md
     - name: JDBC driver for Fabric Data Engineering
       href: spark-jdbc-driver.md
+    - name: ODBC driver for Fabric Data Engineering
+      href: spark-odbc-driver.md    
   - name: Intelligent cache
     href: intelligent-cache.md
   - name: What is the Livy API?

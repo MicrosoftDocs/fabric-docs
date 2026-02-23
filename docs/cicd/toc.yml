@@ -6,8 +6,14 @@ items:
 
 - name: "Tutorial: End to end application lifecycle management"
   href: cicd-tutorial.md
-- name: "CI/CD workflow options in Fabric"
-  href: manage-deployment.md
+- name: CI/CD workflow options in Fabric
+  items:
+  - name: Overview
+    href: manage-deployment.md
+  - name: Tutorial - CI/CD for Microsoft Fabric Using Azure DevOps & the fabric-cicd Python Package
+    href: tutorial-fabric-cicd-azure-devops.md
+  - name: Tutorial - Local deployment with fabric-cicd 
+    href: tutorial-fabric-cicd-local.md   
 - name: Continuous integration with Git
   items:
   - name: "Introduction to Git integration"

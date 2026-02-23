@@ -224,7 +224,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         create_livy_session = requests.post(livy_api_session_url, headers=headers, json={})
         
         # Check if the request was successful
-        if create_livy_session.status_code == 200:
+        if create_livy_session.status_code == 202:
             session_info = create_livy_session.json()
             print('Livy session creation request submitted successfully')
             print(f'Session Info: {json.dumps(session_info, indent=2)}')

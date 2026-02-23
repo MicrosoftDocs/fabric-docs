@@ -1,0 +1,9 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/graph/index.yml",
+            "redirect_url": "/fabric/graph/overview",
+            "redirect_document_id": false
+        }
+    ]
+}

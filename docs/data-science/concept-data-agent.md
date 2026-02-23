@@ -1,4 +1,4 @@
-﻿---
+---
 title: Fabric data agent creation (preview)
 description: Learn how to create a Fabric data agent that can answer questions about data.
 ms.reviewer: amjafari
@@ -69,7 +69,7 @@ While both Fabric data agents and Fabric copilots use generative AI to process a
 
 **Configuration Flexibility**: You can highly configure Fabric data agents. You can provide custom instructions and examples to tailor their behavior to specific scenarios. Fabric copilots, on the other hand, come preconfigured and don't offer this level of customization.
 
-**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Azure AI Foundry, Microsoft Teams, or other tools outside Fabric.
+**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Microsoft Foundry, Microsoft Teams, or other tools outside Fabric.
 
 ## Evaluation of the Fabric data agent
 

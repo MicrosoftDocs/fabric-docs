@@ -4,6 +4,7 @@ description: Learn how to enable cross-tenant access for Fabric data warehouses 
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: how-to
+ROBOTS: NOINDEX
 ms.date: 05/26/2025
 ---
 

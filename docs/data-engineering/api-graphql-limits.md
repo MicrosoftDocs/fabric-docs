@@ -37,6 +37,7 @@ The following table summarizes key size, pagination, and performance constraints
 | Maximum response size | 64 MB | Maximum size of API response payload | Issue multiple filtered requests to retrieve data in smaller chunks |
 | Request timeout | 100 seconds | Maximum execution time for a single request | Optimize queries or break complex operations into smaller requests |
 | Maximum query depth | 10 levels | Maximum nesting level of fields in a query | Reduce query nesting to avoid performance issues from excessive data fetching |
+| Maximum attached objects | 1000 objects | Maximum number of objects that can be attached from sources to a GraphQL item | For multiple sources, use multiple items; for single source, consider sprocs or other abstraction methods |
 
 ## Stored procedure limitations
 

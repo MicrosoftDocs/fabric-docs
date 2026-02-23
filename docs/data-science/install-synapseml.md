@@ -51,5 +51,5 @@ print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
 ## Related content
 
 - [How to use LightGBM with SynapseML](./lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](./classification-before-and-after-synapseml.md)

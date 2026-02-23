@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.subervice: security
 ms.topic: how-to
-ms.date: 08/04/2025
+ms.date: 02/20/2026
 
 #customer intent: As a data engineer, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.
 
@@ -28,7 +28,7 @@ The example below shows you the steps to enable Workspace identity authenticatio
 
 ### Step 1: Create the workspace identity
 
-You must be a workspace admin to be able to create and manage a workspace identity.
+You must be a workspace admin to be able to create and manage a workspace identity. The Workspace identity authentication option appears in connection and shortcut experiences only after a workspace identity has been created; see [Workspace identity](workspace-identity.md) for details.
 
 1. Navigate to the workspace and open the workspace settings.
 

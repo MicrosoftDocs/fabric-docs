@@ -50,7 +50,7 @@ In this simple example, we test the value of a pipeline variable. Select the bac
 
    :::image type="content" source="media/until-activity/set-variable-activity.png" alt-text="Screenshot showing the addition of the Set Variable activity to the Until activity's child activity list.":::
 
-1. Select the newly added Set Variable activity from where it appears within the Until activity's **Activities** pane on the pipeline editor canvas, and then select its **Settings** tab from the activity properties pane. For **Variable type**, select **Pipeline variable**, and then choose your previously created _TestVariable_ from the dropdown list. For this example, provide a **Value** of _1_.
+1. Select the newly added Set Variable activity from where it appears within the Until activity's **Activities** pane on the pipeline editor canvas, and then select its **Settings** tab from the activity properties pane. For **Variable type**, select **Pipeline variable**, and then choose your previously created _TestVariable_ from the dropdown list. For this example, provide a **Value** of _1_.  If you iterate over multiple activities, there's potential delay in exiting the loop because of aggregation and cleanup work performed by the pipeline.
 
    :::image type="content" source="media/until-activity/set-variable-settings.png" alt-text="Screenshot showing the settings of the Set Variable child activity of the Until activity.":::
 

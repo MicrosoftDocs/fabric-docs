@@ -91,7 +91,7 @@ Observe the results of the query in the query editor:
     "topProduct": "PulseSync Pro S7",
     "totalInventoryValue": "750008.86"
   },
-  // Ommitted for brevity
+  // Omitted for brevity
 ]
 ```
 
@@ -148,7 +148,7 @@ Observe the results of the query in the query editor:
     "priceIncrease": "50.89",
     "percentIncrease": "64.4"
   },
-  // Ommitted for brevity
+  // Omitted for brevity
 ]
 ```
 
@@ -162,4 +162,3 @@ Observe the results of the query in the query editor:
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
 - [Review limitations of Cosmos DB in Microsoft Fabric](limitations.md)
-

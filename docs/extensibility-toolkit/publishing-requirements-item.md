@@ -359,7 +359,7 @@ Item Editor ribbon must include Home tab as the primary editor page. It also mus
 
 **UX:**
 
-Item Editor ribbon must include Home tab as the primary editor page, it's also must called "home" and be the first tab in the ribbon. this is the first palace users will land when oppening the item editor.
+Item Editor ribbon must include the Home tab as the primary editor page. It must also be called "home" and be the first tab in the ribbon. This is the first place users land when opening the item editor.
 
 ---
 

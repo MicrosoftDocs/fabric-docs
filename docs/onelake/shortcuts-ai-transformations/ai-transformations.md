@@ -1,19 +1,21 @@
 ---
-title: OneLake shortcuts AI transformations
-description: AI transformations in OneLake shortcuts# Add a meaningful description for search results
+title:       Shortcut transformations (AI-powered)
+description: Use AI-powered shortcut transformations to convert unstructured text files into queryable Delta tables.
 ms.reviewer: mideboer
-ms.topic: how-to
-ms.date: 07/16/2025
+ms.topic:    how-to
+ms.date:     07/16/2025
 ---
 
-# Shortcut transformations (AI-powered)
+# Transform unstructured text files into Delta tables by using AI-powered tools
+
+Use AI-powered shortcut transformations to extract insights from unstructured text files. AI-powered transformations apply language processing to `.txt` files to summarize content, detect sentiment, translate languages, redact PII, or extract named entities.
 
 > [!IMPORTANT]
-> AI transforms for OneLake shortcuts are currently **Public Preview**. Features and behavior may change before general availability.
+> Shortcut transformations are currently in **public preview**. Features and behavior might change before general availability.
 
-Modern data lakes are brimming with raw, unstructured text, product reviews, support emails, IoT device logs, and more. Turning that text into actionable insights typically requires custom code, orchestration pipelines, and constant maintenance. **OneLake Shortcut Transformations** remove that overhead: you point to your files once, choose an AI transform, and Fabric does the rest.
+## Why use AI-powered shortcut transformations?
 
-## Why use AI-powered transforms?
+Shortcut transformations in Microsoft Fabric include a set of built-in, AI-powered transformations that you can apply directly to `.txt` files referenced through shortcuts. The engine automatically keeps the output Delta table in sync with the source files.
 
 | Benefit | What it means for you |
 |---|---|
@@ -22,38 +24,32 @@ Modern data lakes are brimming with raw, unstructured text, product reviews, sup
 | **Enterprise-grade security** | PII detection helps you redact sensitive data before it lands in analytics. |
 | **Consistent, repeatable results** | Built-in AI models provide standardized sentiment scores, entity tags, and translations, eliminating manual data-prep drift. |
 
-OneLake Shortcut Transformations in **Microsoft Fabric** include a set of built-in, AI-powered transforms that you can apply directly to `.txt` files referenced through shortcuts, without writing code or building pipelines. The engine automatically keeps the output **Delta table** in sync, so your data is query-ready for **Power BI**, notebooks, pipelines, and other Fabric experiences.
+## Supported AI transformations
 
-## Supported AI transforms
-
-| Transform | Purpose |
+| Transformation | Purpose |
 |---|---|
-| **Summarization** | Generates concise summaries from long-form text. |
-| **Translation** | Translates text between supported languages. |
-| **Sentiment analysis** | Labels text sentiment as *positive*, *negative*, or *neutral*. |
-| **PII detection** | Finds and redacts personally identifiable information (names, phone numbers, emails). |
-| **Name recognition** | Extracts named entities such as people, organizations, or locations. |
+| **Summarization** | Generate concise summaries from long-form text. |
+| **Translation** | Translate text between supported languages. |
+| **Sentiment analysis** | Label text sentiment as *positive*, *negative*, or *neutral*. |
+| **PII detection** | Find and redact personally identifiable information (names, phone numbers, emails). |
+| **Name recognition** | Extract named entities such as people, organizations, or locations. |
+
+For example, customer feedback stored in a data lake might contain sensitive details like names, emails, and phone numbers. Apply the **PII detection** transformation to scan and redact this content automatically and produce a privacy-compliant Delta table for analysis.
 
 > [!NOTE]
-> AI transforms currently support **`.txt` files only** as input.
-
-## Example — PII detection in customer feedback
-
-Customer feedback stored in a data lake may contain sensitive details (names, emails, phone numbers). Apply the **PII detection** transform to automatically scan and redact this content and produce a privacy-compliant Delta table for analysis.
+> AI transformations support **`.txt` files only** as input.
 
 ## How it works
 
 1. **Create a shortcut**  
    Reference a folder of `.txt` files in Azure Data Lake, Amazon S3, or another OneLake shortcuts source.  
-2. **Select an AI transform**  
-   Pick one of the supported transforms during shortcut creation.  
-3. **Automatic sync**  
-   The engine checks the source folder every **2 minutes**. New, modified, or deleted files are reflected in the Delta table.  
-4. **Query-ready output**  
+1. **Select an AI-powered transformation**  
+   Pick one of the supported transformations during shortcut creation.  
+1. **Automatic sync**  
+   The engine checks the source folder every two minutes. New, modified, or deleted files are reflected in the Delta table.  
+1. **Query-ready output**  
    Use the resulting table immediately in reports, notebooks, or downstream pipelines.
 
 ## Regional availability
 
 AI-powered transforms are currently available in these regions: [Azure AI Language regional support](/azure/ai-services/language-service/concepts/regional-support)
-
-

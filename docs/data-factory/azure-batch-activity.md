@@ -9,7 +9,7 @@ ms.date: 11/15/2023
 
 # Use the Azure Batch activity to run a command on an Azure Batch instance
 
-The Azure Batch activity in Data Factory for Microsoft Fabric allows you to run a command against an Azure Batch instance.
+The Azure Batch activity in Data Factory for Microsoft Fabric allows you to run a command against an Azure Batch instance. If you are migrating to Fabric Data Factory from ADF or Synapse, this activity is called Custom activity.
 
 ## Prerequisites
 

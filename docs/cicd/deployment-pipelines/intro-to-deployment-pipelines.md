@@ -31,6 +31,9 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
+>[!IMPORTANT]
+>Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. For more information see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
+
 * Data Engineering items:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#set-up-a-deployment-pipeline-for-an-environment)

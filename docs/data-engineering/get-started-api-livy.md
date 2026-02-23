@@ -15,9 +15,7 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 ## Prerequisites
 
-* Fabric Premium or Trial capacity with a LakeHouse
-
-* Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview)
+* Fabric capacity with a Lakehouse
 
 * A remote client such as Visual Studio Code with Jupyter notebook support, PySpark, and [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
@@ -29,7 +27,17 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 You can use various programming languages or GUI clients to interact with REST API endpoints. In this article, we use [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code needs to be configured with [Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks), [PySpark](https://code.visualstudio.com/docs/python/python-quick-start), and the [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
-## How to authorize the Livy API requests with an Entra SPN Token
+## How to authorize the Livy API requests
+
+To use the Livy API, you need to authenticate your requests using Microsoft Entra ID. There are two authorization methods available:
+
+* **Entra SPN Token (Service Principal)**: The application authenticates as itself using credentials such as a client secret or certificate. This method is suitable for automated processes and background services where no user interaction is required.
+
+* **Entra app token (Delegated)**: The application acts on behalf of a signed-in user. This method is suitable when you want the application to access resources with the permissions of the authenticated user.
+
+Choose the authorization method that best fits your scenario and follow the corresponding section below.
+
+### How to authorize the Livy API requests with an Entra SPN Token
 
 To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and create a secret and use that secret in your code. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Add and manage application credentials in Microsoft Entra ID](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
@@ -39,15 +47,15 @@ After creating the app registration, create a client secret.
 
 1. As you create the client secret, make sure to copy the value. You need this later in the code, and the secret can't be seen again. You'll also need the Application (client) ID and the Directory (tenant ID) in addition to the secret in your code.
 
-1. Next we need to add the client secret to our workspace.
+1. Next, add the service principal to your workspace.
 
     :::image type="content" source="media\livy-api\livy-manage-access-spn.png" alt-text="Screenshot showing Manage access options Lakehouse settings." lightbox="media\livy-api\Livy-manage-access-spn.png":::
 
-1. Search for the Entra client secret, and add that secret to the workspace, and make sure the newly added secret has Admin permissions.
+1. Search for the Entra application using the Application (client) ID or name, add it to the workspace, and make sure the service principal has Contributor permissions.
 
     :::image type="content" source="media\livy-api\entra-spn-add-people.png" alt-text="Screenshot showing adding the new SPN service principal to the workspace." lightbox="media\livy-api\Entra-spn-add-people.png":::
 
-## How to authorize the Livy API requests with an Entra app token
+### How to authorize the Livy API requests with an Entra app token
 
 To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
@@ -137,7 +145,7 @@ payload_data = {
 "file":"abfss://YourABFSPathToYourPayload.py", 
 "conf": {
     "spark.targetLakehouse": "Fabric_LakehouseID",
-    "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # remove this line to use starter pools instead of an environment, replace "EnvironmentID" with your environment ID
+    "spark.fabric.environmentDetails" : "{\"id\" : \""EnvironmentID"\"}"  # Replace "EnvironmentID" with your environment ID, or remove this line to use starter pools instead of an environment
     }
 }
 ```

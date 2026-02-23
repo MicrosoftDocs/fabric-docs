@@ -40,7 +40,7 @@ To subscribe to OneLake events in Microsoft Fabric, users need **SubscribeOneLak
 
 ### Workspace item events
 
-To subscribe to workspace item events in Microsoft Fabric, users need **Read** permission at workspace level or TenantAdmin at tenant level.
+To subscribe to workspace item events in Microsoft Fabric at workspace level, users need **Read** permission on the target workspace. To subscribe to workspace item events in Microsoft Fabric at the tenant level, users need  **"Fabric Administrator** or **Global Administrator** role on the tenant.
 
 
 ## Related content

@@ -247,7 +247,7 @@ sections:
   - name: API support
     questions:
       - question: |
-          Can I configure Azure Cosmos DB mirroring programatically?
+          Can I configure Azure Cosmos DB mirroring programmatically?
         answer: |
           Yes, support for automated mirroring configuring is available. To learn more about Microsoft Fabric Mirroring Rest APIs, visit [the documentation here](mirrored-database-rest-api.md).
       - question: |

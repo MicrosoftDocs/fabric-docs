@@ -120,6 +120,14 @@ Unsupported scenarios:
 * Eventhouse as a destination (with direct ingestion mode) is not supported.
 * Activator as a destination is not supported.
 
+### Data Activator
+
+Data Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant level Private Links. For workspace level, Data Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+
+Limitations:
+
+* Currently, Data Activator doesn't support ingestion from Eventstream with Private Links enabled.
+
 ### Eventhouse
 
 Eventhouse supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an Eventhouse.

@@ -54,3 +54,63 @@ landingContent:
             url: ontology/how-to-create-relationship-types.md
           - text: Use preview experience
             url: ontology/how-to-use-preview-experience.md
+            
+  # Card
+  - title: About Graph in Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Graph in Microsoft Fabric Overview
+            url: ../graph/overview.md
+          - text: What is a graph database?
+            url: ../graph/graph-database.md
+          - text: Labeled property graph
+            url: ../graph/graph-data-models.md
+
+  # Card
+  - title: Get started with Graph in Microsoft Fabric
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Quickstart guide for Graph in Microsoft Fabric
+            url: ../graph/quickstart.md
+          - text: Try Microsoft Fabric for free
+            url: /fabric/fundamentals/fabric-trial
+
+  # Card
+  - title: Graph tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Introduction
+            url: ../graph/tutorial-introduction.md
+          - text: 1 - Load sample data
+            url: ../graph/tutorial-load-data.md
+          - text: 2 - Create a graph
+            url: ../graph/tutorial-create-graph.md
+          - text: 3 - Add nodes to your graph
+            url: ../graph/tutorial-model-nodes.md
+          - text: 4 - Add edges to your graph
+            url: ../graph/tutorial-model-edges.md
+          - text: 5 - Add multiple node types using one table
+            url: ../graph/tutorial-model-node-edge-from-same-table.md
+          - text: 6 - Query the graph with the query builder
+            url: ../graph/tutorial-query-builder.md
+          - text: 7 - Query the graph with GQL
+            url: ../graph/tutorial-query-code-editor.md
+          - text: 8 - Clean up tutorial resources
+            url: ../graph/tutorial-clean-up.md
+
+  # Card
+  - title: Graph reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Graph Query Language (GQL) documentation
+            url: /fabric/graph/gql-reference-abridged
+          - text: GQL Query API reference
+            url: ../graph/gql-query-api.md
+          - text: Graph Items REST API reference
+            url: /rest/api/fabric/graphmodel/items
+          - text: Microsoft Fabric REST API reference
+            url: /rest/api/fabric/articles

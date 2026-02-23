@@ -371,7 +371,7 @@ def uplift_plot(uplift_df):
         label="Random Treatment",
     )
     plt.legend()
-    plt.xlabel("Porportion Targeted")
+    plt.xlabel("Proportion Targeted")
     plt.ylabel("Uplift")
     plt.grid()
 
@@ -458,7 +458,7 @@ def uplift_plot(uplift_df):
         label="Random Treatment",
     )
     plt.legend()
-    plt.xlabel("Porportion Targeted")
+    plt.xlabel("Proportion Targeted")
     plt.ylabel("Uplift")
     plt.grid()
 

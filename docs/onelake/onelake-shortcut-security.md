@@ -70,7 +70,7 @@ The following table illustrates the necessary permissions to perform shortcut op
 |---|---|---|---|---|
 | **Create** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read  |
 | **Read (GET/LIST shortcuts)** | Fabric Read *and* OneLake security Read | N/A |
-| **Update** | Fabric Read *and* OneLake security ReadWrited | OneLake security Read (on the new target) |
+| **Update** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read (on the new target) |
 | **Delete** | Fabric Read *and* OneLake security ReadWrite | N/A |
 
 ### Shortcut auth models
