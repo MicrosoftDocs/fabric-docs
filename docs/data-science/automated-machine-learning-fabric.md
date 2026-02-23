@@ -1,6 +1,6 @@
 ﻿---
-title: AutoML in Fabric concepts (preview)
-description: Use AutoML in Fabric to automate the ML workflow (preview)
+title: AutoML in Fabric concepts
+description: Use AutoML in Fabric to automate the ML workflow
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
