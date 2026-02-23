@@ -40,7 +40,6 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 ## Key features
 
-
 **Real-Time Data Access**: Retrieve data from KQL databases in seconds.
 
 **Natural Language Interfaces**: Ask questions in plain English or other languages, and the system turns them into optimized queries (NL2KQL).
@@ -59,16 +58,9 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 >
 > You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
 
-<!-- Support for more RTI components for comprehensive analytics is **coming soon**, including:
-
-* Expanded support for [Eventstream](event-streams/overview.md)
-* Richer, real-time visualization tools
-* [Activator](data-activator/activator-introduction.md) integration for proactive insights
--->
-
 ## Related content
 
-* [Use MCP with Fabric RTI Eventhouse (preview)](mcp-eventhouse.md)
+* [Get started with the Eventhouse remote MCP server (preview)](mcp-eventhouse-remote-get-started.md)
 * [Use MCP Servers with Azure Data Explorer (preview)](/azure/data-explorer/integrate-mcp-servers)
 * [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
 * [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)

@@ -13,14 +13,21 @@ ms.collection: not-ai
 
 # Get started with the Eventhouse remote MCP server (preview)
 
+Learn how to use the Model Context Protocol (MCP) with Fabric Real-Time Intelligence (RTI) Eventhouse to execute KQL queries against the KQL Databases in your Eventhouse backend. The RTI MCP integration provides a unified interface for AI agents to query, reason, and act on real-time data.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 The remote Eventhouse MCP server enables AI agents to query Eventhouse using natural language. Through the **Model Context Protocol (MCP)**, AI assistants can:
 
-- Discover Eventhouse schemas  
-- Generate KQL queries  
-- Execute queries  
+- Discover KQL database schemas and metadata dynamically. 
+- Generate KQL queries to query and analyze the data in KQL databases.
+- Use natural language queries that get translated to KQL queries. 
 - Return insights over real-time and historical data  
+- Sample data
 
 This capability allows Copilots and custom AI agents to securely interact with Eventhouse and be consumed by cloud agent platforms such as **Copilot Studio** and **Azure AI Foundry**.
+
+For the full list of available tools and natural language query examples, see [overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview) in the Fabric RTI MCP Server repository.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -110,6 +117,16 @@ Explore advanced scenarios such as:
 - Natural language–to–KQL translation.
 - Root cause analysis over time-series data.
 - Real-time anomaly detection using Eventhouse MCP tools.
+
+## Example: Analyze your data
+
+Example prompt:
+
+'I have data about user executed commands in the ProcessEvents table. Sample a few rows and classify the executed commands with a threat tolerance of low/med/high, and provide a tabular view of the overall summary.`
+
+Response:
+
+:::image type="content" source="media/mcp/mcp-eventhouse-example-small.png" alt-text="Screenshot of the VS Code Copilot agent displaying a summary of the user executed commands." lightbox="media/mcp/mcp-eventhouse-example.png":::
 
 ## Related content
 
