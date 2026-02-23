@@ -282,7 +282,7 @@ sections:
       - question: |
           What region is my Cosmos DB database located in?
         answer: |
-          Your Cosmos DB database is located in the region of your Fabric workspace. The workspace region is determined by the capacity assigned to it, which is displayed in **Workspace settings** under the **License info** page.
+          Your Cosmos DB database is located in the region of your Fabric workspace. The workspace region is determined by the capacity assigned to it, which is displayed in **Workspace settings** under the **Workspace type** page.
 
           For more information, see [Fabric regional availability](../../admin/region-availability.md).
       - question: |

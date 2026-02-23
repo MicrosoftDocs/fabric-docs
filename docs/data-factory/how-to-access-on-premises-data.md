@@ -1,8 +1,7 @@
 ---
 title: How to access on-premises data sources in Data Factory
 description: This article describes how to configure a gateway to access on-premises data sources from Data Factory for Microsoft Fabric.
-author: lrtoyou1223
-ms.author: lle
+ms.reviewer: lle
 ms.topic: how-to
 ms.custom: configuration
 ms.date: 07/02/2025

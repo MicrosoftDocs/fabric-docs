@@ -1,10 +1,9 @@
 ---
 title: include file
 description: supported connectors for Lookup Activity
-author: jianleishen
 ms.topic: include
 ms.date: 01/20/2026
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.custom: include file
 ---
 

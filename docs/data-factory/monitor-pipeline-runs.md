@@ -1,9 +1,7 @@
 ---
 title: How to monitor pipeline runs
 description: Learn how to monitor pipeline runs.
-ms.reviewer: whhender
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024

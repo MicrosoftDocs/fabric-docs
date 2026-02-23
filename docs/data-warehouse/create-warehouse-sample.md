@@ -1,8 +1,6 @@
 ---
 title: Create a Warehouse Sample
 description: Learn how to create a sample Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 04/06/2025
 ms.topic: how-to

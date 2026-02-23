@@ -1,8 +1,7 @@
 ---
 title: CI/CD for mirrored databases in Fabric
 description: This article describes how to set up continuous integration and delivery (CI/CD) for mirrored databases in Microsoft Fabric.
-author: linda33wj
-ms.author: jingwang
+ms.reviewer: jingwang
 ms.topic: how-to
 ms.date: 11/27/2025
 ---

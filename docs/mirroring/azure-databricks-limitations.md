@@ -1,9 +1,7 @@
 ---
 title: "Limitations in Microsoft Fabric Mirrored Databases From Azure Databricks"
 description: Learn about limitations for Azure Databricks mirroring in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: sheppardshep, whhender, preshah
+ms.reviewer: sheppardshep, preshah
 ms.date: 12/19/2025
 ms.topic: overview
 ms.custom: references_regions

@@ -1,137 +1,132 @@
 ---
 title: Navigate the Fabric Lakehouse explorer
-description: The lakehouse explorer consists of the object explorer, main view, and ribbon. Use it to load data into your lakehouse, and then browse and preview your data.
+description: Browse tables and files, preview data, and manage lakehouse objects in the Fabric portal.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
-ms.custom:
-ms.date: 04/12/2023
+ms.date: 02/22/2026
 ms.search.form: Lakehouse Explorer
 ---
 
 # Navigate the Fabric Lakehouse explorer
 
-The Lakehouse explorer page serves as the central hub for all your interactions within the Lakehouse environment. The explorer is built into the Fabric portal. To open the lakehouse explorer, go to the workspace that has the lakehouse. Find and select your lakehouse item, which opens the explorer where you can interact with the lakehouse data. The explorer is your gateway to seamlessly load data into your lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse explorer, the Main View, and the Ribbon.
+The Lakehouse explorer is the central page for interacting with your lakehouse in the Fabric portal. To open it, go to your workspace and select a lakehouse item. From here you can browse tables and files, preview data, load new data, and manage lakehouse objects.
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif explaining the controls within the lakehouse explorer." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+The page has two main areas: the **explorer pane** on the left for navigating tables and files, and the **main view** on the right for previewing and interacting with the selected item. A **ribbon** across the top provides quick-access actions.
 
-## Lakehouse explorer
+:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Screencast of the Lakehouse explorer showing tables, files, and the main view." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
-The Lakehouse explorer offers a unified, graphical representation of your entire lakehouse, providing users with an intuitive interface for data navigation, access, and management.
+## Tables
 
-- The **Table Section** is a user-friendly representation of the managed area within your lakehouse. This area is typically organized and governed to facilitate efficient data processing and analysis. Here, you find all your tables, whether they were automatically generated or explicitly created and registered in the metastore. 
+The **Tables** section of the explorer pane shows the managed area of your lakehouse. This area contains all your Delta tables, organized by [schema](lakehouse-schemas.md) if schemas are enabled.
 
-    From this section, you can:
-    - Browse your lakehouse schemas, tables & table details.
-    - Select a table to preview. 
-    - Access your underlying table files from the table context menu.
-    - Perform common actions on your table objects such as renaming, deleting, creating a new schema or shortcut and view your table properties. 
+From the explorer pane, you can:
 
+- Browse schemas, tables, and table details.
+- Select a table to preview in the main view.
+- Access a table's underlying files from the context menu.
+- Rename or delete tables, create schemas or shortcuts, and view table properties.
 
-- The **Unidentified Area** is a unique space within the managed area of your lakehouse. It displays any folders or files present in the managed area that lack associated tables in our metastore. 
+### Table and file views
 
-    **For example:**
-    *If a user uploads unsupported files such as images or audio files to the managed area, they won't be automatically detected or mapped to a table in our metastore. Instead, they appear in this unidentified area.*
+When you select a table, the main view shows the table data in a preview datagrid. Use the dropdown to switch between two views:
 
-    Use this section to:
-    - Identify files that don’t belong in the managed area.
-    - Transfer these files to the File section for further processing.
-    - Delete these files from your lakehouse.
+- **Table view** — Displays the table data as rows and columns. You can sort columns in ascending or descending order, filter data by substring or by selecting from a list of values, and resize columns.
+- **File view** — Displays the underlying Delta and Parquet files that back the selected table (stored under `/Tables/schema/tablename/` in OneLake). This view shows the table's internal storage, not the **Files** section in the explorer pane.
 
+:::image type="content" source="media\lakehouse-overview\lakehouse-table-file-view.png" alt-text="Screenshot of the Lakehouse explorer main view showing a table in table view with the dropdown to switch between table view and file view." lightbox="media\lakehouse-overview\lakehouse-table-file-view.png":::
 
-- The **File Section** represents the unmanaged area of your lakehouse and can be considered a "landing zone" for raw data ingested from various sources. Before this data can be used for analysis, it often requires additional processing. 
+You can switch between table view and file view without going back to the explorer pane.
 
-    From this section, you can:
-    - Browse your lakehouse directories. 
-        - the File Section displays folder-level objects exclusively in the OE. To view files, use the main view area.
-    - Select a folder to preview and browse in your Main View area to learn more about your files. 
-    - Perform common actions on your folder objects such as renaming, deleting, creating a new subfolder or shortcut and upload files and folders. 
+### Table deep links
 
-- The object explorer allows you to add **multiple lakehouses** as reference allowing you to view & manage them in a single, unified view—making it easier than ever to organize and access your data.
+You can generate a unique URL for any table so that others can open the Lakehouse explorer with that table already previewed. Select **...** next to the table and choose **Copy URL**.
 
-    With this feature, you can:
-    - Add reference lakehouses you have access to, while keeping your primary lakehouse clearly distinguished.
-    - Sort, filter, and search across all schemas, tables, and folders in all your added lakehouses. 
-    - Perform key actions such as previewing data, creating subfolders, renaming objects—directly in the explorer and more. 
-    - Copy reference lakehouse URLs to open a reference lakehouse as a primary lakehouse.
-    
-    > [!NOTE]
-    > Ribbon actions are only available for the primary lakehouse. 
+:::image type="content" source="media\lakehouse-overview\lakehouse-deep-link.png" alt-text="Screenshot showing how to copy a table deep link." lightbox="media\lakehouse-overview\lakehouse-deep-link.png":::
 
-## Main view area
+### Unidentified area
 
-The main view area of the lakehouse page is the space where most of the data interaction occurs. The view changes depending on what you select. Since the object explorer only displays a folder level hierarchy of the lake, the main view area is what you use to navigate your files, preview files & tables, and various other tasks.
+The **Unidentified** area appears under **Tables** in the explorer pane when the managed area contains folders or files that the lakehouse can't recognize as Delta tables. Common causes include:
 
-### Table preview
+- **Broken shortcuts** — If a shortcut target becomes invalid (for example, after a git sync or deployment pipeline update), the shortcut moves to the Unidentified section until the target is resolved.
+- **Non-Delta content written programmatically** — Files written to the `/Tables/` path through the OneLake API or other tools that aren't valid Delta tables appear here.
+- **Nested subfolders** — Subfolders placed under `/Tables/` that don't follow the expected Delta table structure are labeled as unidentified.
 
-Our table preview datagrid is equipped it with a suite of powerful features that elevate your data interactions to make working with your data even more seamless. Here's are some key features:
+From this section, you can delete unidentified items or move them to the **Files** section.
 
-- Sort columns in ascending or descending order with a simple click. This feature provides you with full control over your data's organization while working with large semantic models or when you need to quickly identify trends.
+## Files
 
-- Filter data by substring or by selecting from a list of available values in your table.
+The **Files** section of the explorer pane represents the unmanaged area of your lakehouse — a landing zone for raw data ingested from various sources. The explorer pane shows only folders at the top level. To see individual files, select a folder to open it in the main view.
 
-- Resize columns to tailor your data view to suit your preferences. This feature helps you prioritize essential data or expand your field of view to encompass a broader range of information.
+:::image type="content" source="media\lakehouse-overview\lakehouse-file-view.png" alt-text="Screenshot of the Lakehouse explorer showing the Files section with folders in the explorer pane and file contents in the main view." lightbox="media\lakehouse-overview\lakehouse-file-view.png":::
+
+From the explorer pane, you can:
+
+- Browse your lakehouse directories.
+- Select a folder to preview its contents in the main view.
+- Rename or delete folders, create subfolders or shortcuts, and upload files and folders.
 
 ### File preview
 
-Previewing data files in a lakehouse offers a range of benefits that enhance data quality, understanding, and overall data management efficiency. It empowers data professionals to make informed decisions, optimize resource allocation, and ensure that their analysis is based on reliable and valuable data.
+When you select a folder from **Files**, the main view shows the contents of that folder. This is separate from the file view toggle described in [Table and file views](#table-and-file-views).
 
-Preview is available for the following file types:
-  - **Image File Type:** jpg, jpeg, png, bmp, gif, svg
+You can preview the following file types directly in the main view:
 
-  - **Text File Type:** txt, js, ts, tsx, py, json, xml, css, mjs, md, html, ps1, yaml, yml, log, sql
+- **Image:** jpg, jpeg, png, bmp, gif, svg
+- **Text:** txt, js, ts, tsx, py, json, xml, css, mjs, md, html, ps1, yaml, yml, log, sql
+
+For tabular file formats like CSV, the main view also offers a table view that renders the file data as rows and columns, similar to the table preview for Delta tables.
+
+## Reference lakehouses
+
+You can add multiple lakehouses to the explorer pane as references, so you can view and manage them alongside your primary lakehouse. To add a reference lakehouse, select **Add lakehouse** in the explorer pane and choose the lakehouse you want to add.
+
+With reference lakehouses, you can:
+
+- Add any lakehouse you have access to, while keeping your primary lakehouse clearly distinguished.
+- Sort, filter, and search across all schemas, tables, and folders in all added lakehouses.
+- Preview data, create subfolders, rename objects, and perform other actions directly in the explorer.
+- Copy a reference lakehouse URL and paste it into your browser to open the Lakehouse explorer with that lakehouse as the primary.
 
 
-## Filter, sort, and search Lakehouse objects 
-The sorting, filtering, and searching capabilities make it easier to access and organize data within both the Object Explorer (OE) and the main view area. These tools simplify navigation and management of your Lakehouse data, especially when working with numerous schemas, tables, files, or folders. 
+## Filter, sort, and search
 
-Supported capabilities include: 
-- Sorting schemas, tables, files, and folders by name or creation date, allowing you to view data in your preferred order. 
-    - Available through the object’s context menu. 
-    - Sorting applies only to immediate children of the selected parent node. 
-- Filtering objects based on type, loading status, or creation date to locate specific type of data quickly. 
-    - In the Object Explorer: Filter schemas and tables. 
-    - In the main view area: Filter files and folders. 
-- Searching schemas, tables, files, or folders by name to find specific items quickly by entering a substring. 
-    - In the Object Explorer: Search for schemas and tables. 
-    - In the main view area: Search for files and folders.
+Sorting, filtering, and searching are available in both the explorer pane and the main view to help you find and organize lakehouse objects.
 
-## Download Files in Lakehouse Explorer 
-Lakehouse allows you to download files directly from the UX, empowering you to work more efficiently, reduce friction in your data workflows, and gain faster insights.
+- **Sort** schemas, tables, files, and folders by name or creation date through the object's context menu. Sorting applies to the immediate children of the selected parent node.
+- **Filter** objects by type, loading status, or creation date.
+    - In the explorer pane: filter schemas and tables.
+    - In the main view: filter files and folders.
+- **Search** for schemas, tables, files, or folders by entering a substring.
+    - In the explorer pane: search schemas and tables.
+    - In the main view: search files and folders.
 
-This feature allows you to:
-- Download files from both table files and the File section (with required permission).
-- Keep your data secure and compliant by including Microsoft Information Protection (MIP) sensitivity labels for supported files.
 
-To enable the corresponding feature:
+## Download files
 
-1. Select **Admin Portal** > **Tenant settings**.
-1. Under **OneLake settings** turn on “Users can access data stored in OneLake with apps external to Fabric.”
+You can download files directly from the Lakehouse explorer, from both table files and the **Files** section (with required permissions). Downloaded files include Microsoft Information Protection (MIP) sensitivity labels for supported formats.
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Screenshot of how to enable download switch in tenant settings." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::
+To enable file downloads:
 
-## Table Deep Links
+1. In the Fabric portal, select the **Settings** gear icon (**&#9881;**) at the top of the page.
+1. In the side pane, under **Governance and administration**, select **Admin portal**.
+1. Select **Tenant settings**.
+1. Under **OneLake settings**, turn on "Users can access data stored in OneLake with apps external to Fabric."
 
-Users can generate a unique URL for any table in the lakehouse, allowing them to preview that specific table directly. By copying and sharing this URL with others who have access, recipients can open Lakehouse Explorer with the chosen table already previewed. 
-Simply click on the “…” beside the table and choose “Copy URL.” You can use this link to open the lakehouse in Lakehouse Explorer, where you’ll see a preview of the chosen table. 
-
-:::image type="content" source="media\lakehouse-overview\lakehouse-deep-link.png" alt-text="Image showing entry for getting deep-link of table" lightbox="media\lakehouse-overview\lakehouse-deep-link.png":::
+:::image type="content" source="media\lakehouse-overview\lakehouse-download-settings.png" alt-text="Screenshot showing the download setting in tenant settings." lightbox="media\lakehouse-overview\lakehouse-download-settings.png":::
 
 ## Ribbon
 
-The lakehouse ribbon is your quick-access action bar, offering a convenient way to perform essential tasks within your lakehouse. From here, you can refresh your lakehouse, access your item settings, choose options to load data, create or open notebooks, create new custom semantic models, and much more. 
+The ribbon across the top of the Lakehouse explorer provides quick access to common actions: refresh your lakehouse, access item settings, load data, create or open notebooks, create semantic models, and more.
 
+> [!NOTE]
+> Ribbon actions apply to the primary lakehouse. They are grayed out when you select a non-primary lakehouse. Any lakehouse in the explorer pane — including a [reference lakehouse](#reference-lakehouses) — can be set as the primary lakehouse.
 
-### Access a lakehouse's SQL analytics endpoint
+### SQL analytics endpoint
 
-The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from a lakehouse by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which allows you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
-
+You can access the [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) directly from the dropdown in the top-right area of the ribbon. This opens the T-SQL editor, where you can query your Delta tables with SQL to prepare them for reporting.
 
 ## Related content
 
-We hope this guide helps you make the most of the Lakehouse explorer and its diverse functionalities. Feel free to explore, experiment, and make your data management tasks more efficient.
-
-- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
-
-
+- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
+- [What are lakehouse schemas?](lakehouse-schemas.md)
+- [Lakehouse overview](lakehouse-overview.md)

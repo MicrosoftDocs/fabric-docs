@@ -2,10 +2,7 @@
 title: Real-Time Intelligence tutorial part 8 - Create a map using geospatial data
 description: Tutorial- Learn how to create a map in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: tutorial
-ms.custom:
 ms.date: 12/09/2025
 ms.subservice: rti-core
 ms.search.form: Get started

@@ -3,7 +3,6 @@ title: Manage admin access to workspace outbound access protection settings
 description: "Learn how to enable the workspace outbound access protection feature on your tenant."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.topic: how-to
 ms.date: 12/01/2025
 

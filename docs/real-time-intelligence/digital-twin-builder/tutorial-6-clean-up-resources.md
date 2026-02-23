@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) tutorial part 6: Clean up resources'
 description: Delete resources created during the digital twin builder (preview) tutorial. Part 6 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---

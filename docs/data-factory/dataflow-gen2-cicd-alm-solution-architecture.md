@@ -1,9 +1,7 @@
 ---
 title: CI/CD and ALM solution architectures for Dataflow Gen2
 description: Overview of Dataflow Gen2 solution architectures for CI/CD and ALM that apply to Fabric deployment pipelines, including guidance on selecting the right approach based on requirements and best practices.
-ms.reviewer: whhender
-ms.author: miescobar
-author: ptyx507x
+ms.reviewer: miescobar
 ms.topic: concept-article
 ms.date: 10/2/2025
 ms.custom: dataflows

@@ -1,8 +1,6 @@
 ---
 title: Development and Monitoring
 description: Standardize Spark development with runtime selection, high concurrency sessions, variable libraries, and comprehensive monitoring strategies.
-author: eric-urban
-ms.author: eur
 ms.reviewer: anuve
 ms.topic: concept-article
 ms.custom:

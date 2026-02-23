@@ -1,8 +1,7 @@
 ---
 title: OData connector overview
 description: This article provides a brief overview of the OData connector.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/19/2025
 ms.custom:

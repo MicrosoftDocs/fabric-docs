@@ -1,9 +1,6 @@
 ---
 title: "Tutorial part 3: Preview the ontology"
 description: Preview the ontology by observing its entity instances and relationship graphs. Part 3 of the ontology (preview) tutorial.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/03/2025
 ms.topic: tutorial
 ---
@@ -105,3 +102,5 @@ This process allows you to inspect the paths that connect operational issues (li
 In this step, you previewed the instances connected to your ontology and explored the data they contain. Next, create a data agent to explore the data further by using natural language queries. 
 
 Continue to [Create data agent](tutorial-4-create-data-agent.md).
+
+

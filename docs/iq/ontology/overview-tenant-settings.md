@@ -1,9 +1,6 @@
 ---
 title: Ontology (preview) required tenant settings
 description: Enable settings on your Fabric tenant before using ontology (preview) features.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/01/2025
 ms.topic: concept-article
 ---
@@ -54,3 +51,5 @@ If you don't enable these settings, you might see the `403 Forbidden - Disallowe
 ## Next steps
 
 Now that your tenant is ready to work with ontology (preview), get started with the [Ontology (preview) tutorial](tutorial-0-introduction.md).
+
+

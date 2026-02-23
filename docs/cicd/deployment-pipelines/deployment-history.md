@@ -1,12 +1,7 @@
 ---
 title: Fabric Application lifecycle management (ALM) deployment pipelines history
 description: Learn how the history feature works in the deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ms.search.form: Deployment history
 #customer intent: As a developer, I want to learn about the deployment history feature in the Fabric service so that I can manage my development process efficiently.

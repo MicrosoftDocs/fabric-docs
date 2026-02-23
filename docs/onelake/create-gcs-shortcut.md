@@ -2,11 +2,8 @@
 title: Create a Google Cloud Storage(GCS) shortcut
 description: Learn how to create a OneLake shortcut for Google Cloud Storage (GCS) inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 03/15/2024
 #customer intent: As a data engineer, I want to learn how to create a shortcut for Google Cloud Storage (GCS) inside a Microsoft Fabric lakehouse so that I can easily access and manage my GCS data within the lakehouse environment.
 ---
@@ -94,7 +91,7 @@ GCS shortcuts use a delegated authorization model. In this model, the shortcut c
 The account must have permission to access the data within the GCS bucket. If the bucket-specific endpoint was used in the connection for the shortcut, the account must have the following permissions:
 
 - `storage.objects.get`
-- `stoage.objects.list`
+- `storage.objects.list`
 
 If the global endpoint was used in the connection for the shortcut, the account must also have the following permission:
 

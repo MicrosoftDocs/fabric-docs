@@ -1,12 +1,9 @@
 ---
 title: Publish a workload
 description: Learn how to publish your workload in the Microsoft Fabric portal so that other users can use the workload.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 09/29/2024
-# customer intent: As an independent software vendor (ISV), I want to know how to publish my workload to Microsoft Fabric.
+#customer intent: As an independent software vendor (ISV), I want to know how to publish my workload to Microsoft Fabric.
 ---
 
 # Publish a workload
@@ -37,3 +34,4 @@ After you [upload your workload](manage-workload.md) to Microsoft Fabric, you ca
 * [Set up authentication for your workload app](authentication-tutorial.md)
 
 * [Workload publishing guidelines and requirements](./publish-workload-requirements.md)
+

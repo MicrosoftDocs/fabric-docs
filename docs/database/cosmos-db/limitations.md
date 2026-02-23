@@ -1,8 +1,7 @@
 ---
 title: Cosmos DB Database Limitations
 description: Learn about the current limitations and restrictions when using Cosmos DB databases in Microsoft Fabric phase.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/29/2025
 ms.search.form: Databases Limitations
@@ -88,3 +87,4 @@ Currently Microsoft Fabric does not support `run-as` functionality with Workspac
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
+

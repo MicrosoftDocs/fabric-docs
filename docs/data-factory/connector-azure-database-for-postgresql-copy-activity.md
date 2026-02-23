@@ -1,11 +1,10 @@
 ---
 title: Configure Azure Database for PostgreSQL in a copy activity
 description: This article explains how to copy data using Azure Database for PostgreSQL.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 05/08/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

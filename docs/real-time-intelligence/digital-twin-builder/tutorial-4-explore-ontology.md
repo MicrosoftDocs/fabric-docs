@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) tutorial part 4: Explore your ontology'
 description: Search and explore the ontology from digital twin builder (preview) tutorial. Part 4 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 07/01/2025
 ms.topic: tutorial
 ---

@@ -1,8 +1,6 @@
 ---
 title: "SQL Audit Logs in Fabric Data Warehouse (Preview)"
 description: Learn more about SQL Audit Logs on Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fresantos
 ms.date: 08/04/2025
 ms.topic: concept-article

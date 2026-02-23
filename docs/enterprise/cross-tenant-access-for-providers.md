@@ -1,11 +1,12 @@
 ---
-title: Cross-Tenant Access (CTA) for Providers
+title: Set Up Cross-Tenant Access for Providers
 description: What is cross-tenant access for providers?
-author: meenalsri
-ms.author: mesrivas
-ms.reviewer: juliacawthra, prlangad, wiassaf
+author: dknappettmsft
+ms.author: daknappe
+ms.reviewer: mesrivas, prlangad, wiassaf
 ms.topic: concept-article
-ms.date: 07/21/2025
+ROBOTS: NOINDEX
+ms.date: 02/12/2026
 ---
 
 # What is cross-tenant access for providers?
@@ -13,7 +14,7 @@ ms.date: 07/21/2025
 The cross-tenant access feature allows provider tenants to share data stored in their Fabric warehouse items and SQL analytics endpoints with guest tenants. This feature is useful for organizations that need to share data with guest tenants. For example, when company A stores Fabric data for company B, company B can use cross tenant access to access their data in company A's Fabric tenant. This article is aimed at providers who want to set up cross-tenant access.
 
 > [!IMPORTANT]
-> * Cross-tenant access for Fabric Data Warehouse is in a limited preview for providers. To register as a provider of cross tenant data, fill out the [Cross-tenant access in Fabric DW Limited Preview Form](https://forms.office.com/r/ipHQwXudXk).
+> * Cross-tenant access for Fabric Data Warehouse is in a limited preview for providers. To register as a provider of cross tenant data, fill out the [Cross-tenant access in Fabric DW Limited Preview Form](https://forms.office.com/r/2AafhkikqQ).
 > * To use cross tenant access as a guest, you need to follow the steps listed in [Cross-tenant access for guests](cross-tenant-access.md) and work with a trusted provider.
 
 ## How it works
@@ -223,7 +224,24 @@ Permitted users from the provider tenant can call this API to get the SQL connec
    * Revoke Consent Cross Tenant Auth
 
  - **Govern the service principals and groups created in Microsoft Entra** (Global Admin, App admin, or other high privilege users only) - You can also review the service principals and groups created in Microsoft Entra to enable guest tenant principals to access cross tenant data. Other Azure experiences such as Sign-in logs (Service principal sign-ins) will show the service principal sign-in details corresponding to guest tenant users’ sign-in activities. Microsoft Entra Audit logs will also provide information about group creation activity performed by Fabric. The Fabric Identity applications and app-registrations created by Fabric for cross-tenant access shouldn't be modified or deleted. Providers should delete the mappings if they want to remove a FabricIdentity created for cross-tenant access.
- - **Disable access for a guest user** - You can disable cross-tenant access for a guest user that has been granted access through a group by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to true. The guest user will be unable to login to cross-tenant data warehouses within an hour, however existing sessions will be unaffected. You can reenable access for a user that was previously denied access by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to false. The guest user will be able to login to cross-tenant data warehouses within an hour.
+ - **Disable access for a guest user** - You can disable cross-tenant access for a guest user that has been granted access through a group by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to true. The guest user will be unable to login to cross-tenant data warehouses within an hour, however existing sessions will be unaffected. You can re-enable access for a user that was previously denied access by calling the `POST https://api.fabric.microsoft.com/v1/admin/crosstenantauth/mappings` API with the query parameter denyUserAccess set to false. The guest user will be able to login to cross-tenant data warehouses within an hour.
+
+## Enforce multi-factor authentication on access requests from outside the organization
+
+The **Enforce multi-factor authentication on access requests from outside the organization** tenant setting allows providers to require multi-factor authentication (MFA) for guest users that are accessing Fabric content hosted in the provider's tenant. This setting governs access to Fabric data warehouses and SQL analytics endpoints of lakehouses. When enabled, guest users who do not have MFA enabled are denied access to cross-tenant warehouse items.
+
+This setting is disabled by default and applies to the entire organization. Only Fabric administrators can enable or disable this setting.
+
+To enable MFA enforcement:
+
+1. Go to the [Admin portal](../admin/admin-center.md).
+1. Select **Tenant settings**.
+1. In the **Export and sharing settings** section, find **Enforce multi-factor authentication on access requests from outside the organization**.
+1. Enable the toggle.
+1. Select **Apply**.
+
+> [!NOTE]
+> When this setting is enabled, guests who access cross-tenant warehouse items without having MFA enabled are denied access. The guest tenant is responsible for configuring MFA policies for their users.
 
 ## Responsibilities of the guest
 
@@ -238,6 +256,8 @@ Permitted users from the provider tenant can call this API to get the SQL connec
  - The Fabric application has the the Group.Create Graph permission to ensure it can create, list, and delete any cross-tenant mappings that are created in a provider tenant. If you remove this permission, cross-tenant access will stop working.
    
  - The guest tenants' conditional access or MFA policies are enforced upon sign in by guest users.
+
+ - Provider tenants can enforce MFA for all guest access to cross-tenant warehouse items by enabling the **Enforce multi-factor authentication on access requests from outside the organization** tenant setting. This setting is disabled by default. When enabled, guests who do not have MFA enabled are denied access.
 
  - The guest tenant is responsible for creating and managing Microsoft Entra groups that are configured for cross-tenant access.
 

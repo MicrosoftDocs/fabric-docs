@@ -1,11 +1,8 @@
 ---
 title: Add a Sample Data Source to an Eventstream
 description: Learn how to add a sample data source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Source and Destination
 ---
@@ -54,4 +51,6 @@ To get a better understanding of how a Microsoft Fabric eventstream works, you c
 ## Related content
 
 - For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
+
+
 

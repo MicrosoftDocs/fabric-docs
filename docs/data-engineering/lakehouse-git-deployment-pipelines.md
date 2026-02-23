@@ -1,148 +1,123 @@
 ---
-title: Lakehouse deployment pipelines and git integration
-description: Learn about the Microsoft Fabric lakehouse deployment pipelines and git integration, including what is tracked in a git-connected workspace.
+title: Lakehouse git integration and deployment pipelines
+description: Learn what lakehouse metadata is tracked in git-connected workspaces and deployment pipelines in Microsoft Fabric.
 ms.reviewer: dacoelho
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
-ms.custom:
-ms.date: 12/17/2025
+ms.date: 02/22/2026
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 
-# Lakehouse deployment pipelines and git integration
+# Lakehouse git integration and deployment pipelines
 
-The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all development team members throughout the product's life. Lifecycle management facilitates an effective product versioning and release process by continuously delivering features and bug fixes into multiple environments. To learn more, see [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
+The [Lakehouse](lakehouse-overview.md) integrates with [lifecycle management](../cicd/cicd-overview.md) in Microsoft Fabric. You can connect a lakehouse to a git repository for version control, and deploy it across development, test, and production workspaces by using deployment pipelines. Only metadata is tracked — git and deployment operations never overwrite data in tables or files.
 
-## What is tracked in git and deployment pipelines?
+## What is tracked?
 
-The following table summarizes the Lakehouse item and subitems and their support in git-connected workspaces and deployment pipelines.
+The following table summarizes which lakehouse items and subitems are tracked in git-connected workspaces and deployment pipelines.
 
-| Item/Subitem | Git | Deployment Pipelines | Release Status | Notes |
-|---------------|-----|---------------------|----------------|-------|
+| Item / subitem | Git | Deployment pipelines | Release status | Notes |
+|---|---|---|---|---|
 | Lakehouse metadata (display name, description, logical GUID) | ✅ Tracked | ✅ Tracked | GA | Cross-workspace identifier for source control |
-| OneLake Shortcuts metadata | ✅ Tracked | ✅ Tracked | GA | Stored in shortcuts.metadata.json file |
-| External shortcuts: ADLS Gen2, S3, Dataverse, and Google Cloud Storage | ✅ Tracked | ✅ Synced across stages | GA | Same targets across all stages, unless remapped using Variable Library |
-| External shortcuts: SharePoint, Azure blob storage, OneDrive | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
-| Internal OneLake Shortcuts | ✅ Tracked | ✅ Automatically remapped across stages | GA | Requires valid targets in workspace to become usable |
-| OneLake Security Data Access Roles metadata | ✅ Tracked | ✅ Tracked | Preview | Stored in data-access-roles.json file |
+| OneLake shortcuts metadata | ✅ Tracked | ✅ Tracked | GA | Stored in `shortcuts.metadata.json` |
+| External shortcuts: ADLS Gen2, S3, Dataverse, Google Cloud Storage | ✅ Tracked | ✅ Synced across stages | GA | Definition only. Same targets across all stages unless remapped with Variable Library |
+| External shortcuts: SharePoint, Azure Blob Storage, OneDrive | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+| Internal OneLake shortcuts | ✅ Tracked | ✅ Automatically remapped across stages | GA | Definition only. Requires valid targets in workspace |
+| OneLake security data access roles (DAR) metadata | ✅ Tracked | ✅ Tracked | Preview | Stored in `data-access-roles.json` |
 | Tables (Delta and non-Delta) | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
-| Spark Views | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+| Spark views | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
 | Folders in Files section | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
 
-## Opt-In experience for object types
+## Choose which object types to track
 
-Lakehouse offers an opt-in experience that enables or disables the tracking object types in git and deployment pipelines. To enable the experience, go to Lakehouse settings and enable the desired object types to be tracked.
+You can choose which object types are tracked in git and deployment pipelines. This gives your team two benefits:
 
-This feature provides the following benefits for two reasons:
-- Provide flexibility to development teams to choose which object types are tracked in git and deployment pipelines based on their specific needs and workflows. Teams might want to orchestrate object types via external tools or scripts. Also, some object types might not be relevant for all stages in a deployment pipeline.
-- Gradually introduce new object types for tracking, allowing teams to adapt existing workflows and automations before opting in to more object types. This safeguards against potential disruptions to existing workflows and automations.
+- **Flexibility** — Choose which object types to track based on your workflows. Some teams orchestrate certain object types through external tools or scripts. Some object types might not be relevant for every deployment stage.
+- **Gradual adoption** — New object types can be introduced for tracking incrementally, so you can adapt existing workflows and automations before opting in.
+
+Open **Lakehouse settings** and enable or disable the object types you want to track.
 
 :::image type="content" source="./media/lakehouse-git-deployment-pipelines/lakehouse-settings-opt-in.png" alt-text="Screenshot of lakehouse settings opt-in experience." lightbox="./media/lakehouse-git-deployment-pipelines/lakehouse-settings-opt-in.png":::
 
-The following behaviors are applied when opting in or out of object types tracking:
+Select or clear the checkbox for each object type to control whether it's tracked:
 
-- After opting in to track an object type that wasn't tracked before and syncing changes to git, the current metadata state of that object type is serialized and stored in git. Future changes to that object type are tracked and synchronized across workspaces in deployment pipelines.
-- After opting out of tracking an object type that was tracked before, the object type metadata is no longer serialized or stored in git. Future changes to that object type won't be tracked or synchronized across workspaces in deployment pipelines. The existing metadata in git is removed.
-- New lakehouses are created with all object types opted in by default, except the ones in Preview state.
-- Existing lakehouses retain their current object types tracking state unless changed by the user.
+- **Select** — When you select an object type and sync to git, its current metadata is serialized and stored in git. Future changes are tracked and synchronized across deployment pipeline stages.
+- **Clear** — When you clear an object type, its metadata is removed from git. Future changes are no longer tracked or synchronized.
 
-The ALM tracking definitions are stored in a file named ```alm.settings.json``` under the lakehouse folder in git. Those configurations can be changed and versioned directly in the git repository by changing the ```alm.settings.json``` file, then applying those changes back to the workspace.
+Defaults for new and existing lakehouses:
 
-## Lakehouse git integration
+- New lakehouses have all general availability (GA) object types selected by default. Preview object types aren't selected by default.
+- Existing lakehouses keep their current tracking state unless you change it.
 
-The Lakehouse is an item that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contains references to tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse:
+The tracking configuration is stored in `alm.settings.json` under the lakehouse folder in git. You can edit this file directly in the git repository and apply changes back to the workspace.
 
-* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
-* [Spark Job Definitions](spark-job-definition.md)
-* [Notebooks](how-to-use-notebook.md)
-* Semantic models and Power BI
+## Git integration
 
-The SQL analytics endpoint metadata are related to a Lakehouse and managed by the git update process by default. As a principle __data is not tracked in git__, only metadata is tracked.
+When you connect a workspace to git, the lakehouse metadata is serialized to a JSON representation. The following metadata is tracked:
 
-### Git representation
+- Display name
+- Description
+- Logical GUID (an automatically generated cross-workspace identifier for source control)
+- SQL analytics endpoint metadata
+- OneLake shortcuts metadata (see [OneLake shortcuts](#onelake-shortcuts))
 
-The following lakehouse information is serialized and tracked in a git connected workspace:
-
-* Display name
-* Description
-* Logical guid
-
-> [!NOTE]
-> The tracked logical guid is an automatically generated cross-workspace identifier representing an item and its source control representation.
+Several workspace objects can reference a lakehouse, including [dataflows](../data-factory/create-first-dataflow-gen2.md), [pipelines](../data-factory/create-first-pipeline-with-sample-data.md), [Spark Job Definitions](spark-job-definition.md), [notebooks](how-to-use-notebook.md), and semantic models. These references are maintained across git operations. Renaming a lakehouse in git also renames the corresponding SQL analytics endpoint.
 
 > [!IMPORTANT]
-> Only the Lakehouse container artifact and the items referenced in the first section of this article are tracked in git in the current experience. __Tables (Delta and non-Delta) and Folders in the Files section aren't tracked and versioned in git__.
+> Tables (Delta and non-Delta) and folders in the Files section aren't tracked or versioned in git. Data in these items is always preserved during git operations.
 
-### Lakehouse artifact git and deployment pipelines integration capabilities
+## Deployment pipelines
 
-The following capabilities are available:
+The lakehouse is supported in Microsoft Fabric [deployment pipelines](../cicd/best-practices-cicd.md), which enable environment segmentation across development, test, and production workspaces.
 
-* Serialization of the Lakehouse artifact object metadata to a git JSON representation.
-* Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
-* Renaming lakehouses are tracked in git. Updating a renamed lakehouse also renames the SQL Analytics endpoint.
-* __No action is applied to tables and folders metadata__, and data of those items is always preserved.
-* __OneLake Shortcuts metadata__ is preserved in git.
+Deployment pipeline capabilities:
 
-The Lakehouse is supported in Microsoft Fabric lifecycle management deployment pipelines. It enables environment segmentation [best-practices](../cicd/best-practices-cicd.md).
+- **Default behavior** — If no dependency mapping is configured, a new empty lakehouse with the same name is created in the target workspace. Notebooks and Spark Job Definitions are remapped to reference the new lakehouse.
+- **Custom mapping** — If the lakehouse dependency is mapped to a different lakehouse (for example, the upstream lakehouse), a new empty lakehouse with the same name is still created, but notebook and Spark Job Definition references point to the mapped lakehouse instead.
+- SQL analytics endpoints and semantic models are provisioned as part of the lakehouse deployment.
+- Lakehouse name changes are synchronized across workspaces.
 
-Lakehouse deployment pipelines integration capabilities:
+## OneLake shortcuts
 
-* Deployment across dev, test, and production workspaces.
-* Lakehouse can be removed as a dependent object upon deployment. Mapping different Lakehouses within the deployment pipeline context is also supported.
-  * If nothing is specified during deployment pipeline configuration, a new empty Lakehouse object with same name is created in the target workspace. Notebook and Spark Job Definitions are remapped to reference the new Lakehouse object in the new workspace.
+OneLake shortcut definitions in both the Tables and Files sections are stored in `shortcuts.metadata.json` under the lakehouse folder in git. Addition, deletion, and updates of shortcuts are tracked automatically. You can make changes in the Fabric portal or edit the `shortcuts.metadata.json` file directly.
 
-  * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new empty Lakehouse object with same name still is created in the target workspace, __but Notebooks and Spark Job Definitions references are preserved to a different Lakehouse as requested__.
+### Shortcuts in git integration
 
-  * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
-* Updates to Lakehouse name can be synchronized across workspaces in a deployment pipeline context.
-
-### OneLake Shortcuts git and deployment pipelines integration capabilities
-
-When using __git integration__ with Lakehouse, OneLake Shortcuts metadata is tracked in git. The following capabilities are available for git integration:
-
-* Shortcuts definitions in both the Tables and Files section are stored in a file named ```shortcuts.metadata.json``` under the lakehouse folder in git.
-* The following operations are supported and tracked automatically: __addition, deletion and updates__ of Shortcuts.
-* The operations can be performed directly in the Fabric user interface or in the git repository by changing the ```shortcuts.metadata.json``` file.
-* Shortcuts with internal targets (OneLake Shortcuts) are automatically updated during git synchronization. In order for the Shortcut to be valid, those references need to be valid targets in the workspace. If the targets are invalid for Shortcuts defined in the lakehouse tables section, those Shortcuts are moved to the ```Unidentified``` section until references are resolved.
+Shortcuts with internal targets (OneLake shortcuts) are automatically updated during git sync. For the shortcut to be valid, the target must exist in the workspace. If a target is invalid for a shortcut in the lakehouse tables section, the shortcut is moved to the **Unidentified** section until the reference is resolved.
 
 > [!IMPORTANT]
-> Use caution when changing OneLake Shortcut properties directly in the ```shortcuts.metadata.json``` file. Incorrect changes to the properties, specially GUIDs, can render the OneLake Shortcut invalid when updates are applied back to the workspace.
+> Use caution when editing shortcut properties directly in `shortcuts.metadata.json`. Incorrect changes to properties, especially GUIDs, can make the shortcut invalid when updates are applied back to the workspace. A git update overrides the state of shortcuts in the workspace — all shortcuts are created, updated, or deleted based on the incoming state from git.
+
+### Shortcuts in deployment pipelines
+
+Shortcut definitions are synced across deployment pipeline stages:
+
+- Shortcuts with external targets (ADLS Gen2, S3, and others) keep the same targets across all stages after deployment.
+- Shortcuts with internal targets (OneLake shortcuts) in the same workspace are automatically remapped across stages. The target tables, folders, and files aren't created automatically — you must create them in the target workspace after deployment.
+- If a shortcut needs to point to different locations in different stages (for example, an Amazon S3 folder in development and an ADLS Gen2 folder in production), use variables in the shortcut definition. For more information, see [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md). Alternatively, update the shortcut definition manually after deployment, either in the Fabric portal or by using OneLake APIs.
 
 > [!IMPORTANT]
-> An update from git overrides the state of shortcuts in the workspace. All the Shortcuts in the workspace are created, updated or deleted based on the incoming state from git.
+> A deployment overrides the state of shortcuts in the target workspace. All shortcuts in the target lakehouse are updated or deleted based on the source lakehouse, and new shortcuts are created. Always select **Review changes** to understand the changes before deploying.
 
-When using __deployment pipelines__ with Lakehouse, OneLake Shortcuts metadata is deployed across stages in the pipeline. The following capabilities are available for deployment pipelines:
+## OneLake security data access roles
 
-* Shortcuts definitions are synced across stages in the deployment pipelines.
-* Shortcuts with external targets (ADLS Gen2, S3, etc.) are the same across all stages after deployment.
-* Shortcuts with internal targets (OneLake Shortcuts) in the same workspace are automatically remapped across stages. Shortcuts that target Data Warehouse and Semantic Models are not remapped during deployment. Tables, Folders and Files are not created in the target workspace. In order for the Shortcut to be valid, those references need to be created in the target workspace after deployment.
-* On the scenario that the same Shortcut needs to target different locations on different stages. For example, in Development point to a specific Folder in Amazon S3, and in Production a different folder in ADLS Gen2. The recommended approach is to use variables in the Shortcut definition. To learn more about variable library and how to effectively use it in Microsoft Fabric, read the [What is a Variable library? (preview)](../cicd/variable-library/variable-library-overview.md) article. Another option is; after the deployment, manually update the OneLake Shortcut definition in Lakehouse or directly using OneLake APIs.
+Data access role (DAR) definitions are stored in `data-access-roles.json` under the lakehouse folder in git. Addition, deletion, and updates of data access roles are tracked automatically. You can also edit this file directly in the repository and apply changes back to the workspace.
 
 > [!IMPORTANT]
-> A deployment overrides the state of shortcuts in the target workspace. All the Shortcuts in the target lakehouse are updated or deleted based on the state in the source lakehouse. New shortcuts are created in the target lakehouse. Always select "review changes" to understand the changes that are deployed between source and target workspaces.
+> Only users with the Admin or Member workspace role can synchronize data access role definitions to git or deployment pipelines.
 
-### OneLake Security Data Access Roles capabilities
+When the source workspace has DAR tracking and opt-in enabled, the sync behavior depends on the target workspace:
 
-* OneLake Security Data Access Roles definitions are stored in a file named ```data-access-roles.json``` under the lakehouse folder in git. Changes can be made directly in the git repository by changing the ```data-access-roles.json``` file, then applying those changes back to the workspace.
-* The following operations are supported and tracked automatically: __addition, deletion and updates__ of Data Access Roles.
-* Only users with Admin or Member roles can synchronize Security Role definitions to git.
+| Target workspace | Git integration | Deployment pipeline |
+|---|---|---|
+| New (no lakehouse) | ✅ DAR tracking enabled automatically | ✅ DAR tracking enabled automatically |
+| DAR tracking disabled | ✅ Both DAR tracking and opt-in enabled | ✅ Both DAR tracking and opt-in enabled |
+| DAR enabled, opt-in disabled | ⚠️ Prompts to enable opt-in (override or cancel) | ❌ Error <sup>1</sup> |
+| DAR + opt-in enabled | ✅ Normal sync | ✅ Normal sync |
 
-The following table describes the behavior of OneLake Security Data Access Roles during git synchronization and deployment pipeline operations based on the source and target workspace configurations:
+<sup>1</sup> When a deployment pipeline shows an error, manually enable DAR tracking and opt-in on the target workspace and reconcile the roles before retrying the deployment.
 
-| Source Workspace | Target Workspace | Git Integration | Deployment Pipeline | Description |
-|------------------|------------------|-----------------|-------------------|-------------|
-| DAR + Opt-In enabled | New target (no lakehouse) | ✅ Enable DAR tracking on target | ✅ Enable DAR tracking on target | Target workspace automatically gets DAR tracking enabled |
-| DAR + Opt-In enabled | DAR tracking disabled | ✅ Enable both DAR tracking and Opt-In on target | ✅ Enable both DAR tracking and Opt-In on target | Target workspace gets both features enabled automatically |
-| DAR + Opt-In enabled | DAR enabled, Opt-In disabled | ⚠️ Prompt user to enable Opt-In and DAR (override or cancel) | ❌ Show error | Git integration allows user choice; Deployment pipeline requires manual target configuration |
-| DAR + Opt-In enabled | DAR + Opt-In enabled | ✅ Normal sync (create/update/delete as needed) | ✅ Normal sync (create/update/delete as needed) | Standard operation with full synchronization |
-
-> [!NOTE]
-> When deployment pipeline shows an error, customers must manually enable DAR tracking on the target workspace and reconcile the roles to ensure there are no conflicts in data access roles before proceeding with deployment.
 > [!IMPORTANT]
-> Use caution when changing OneLake Security. Only users with Admin or Member roles can synchronize Security Role definitions to git or deployment pipelines.
-> [!IMPORTANT]
-> Microsoft Entra member IDs are not tracked in git due to security reasons. During git updates and deployment pipelines operations, members are preserved between workspaces only if role names match exactly. Caution is advised when renaming roles that have members assigned to them.
+> Microsoft Entra member IDs aren't tracked in git for security reasons. During git and deployment pipeline operations, members are preserved between workspaces only if role names match exactly. Use caution when renaming roles that have members assigned to them.
 
 ## Related content
 

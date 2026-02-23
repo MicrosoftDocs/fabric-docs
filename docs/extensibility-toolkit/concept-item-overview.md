@@ -1,10 +1,8 @@
 ---
 title: Fabric Item Overview
 description: Learn how Fabric extensions are built using the item structure with standardized editors and components.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: overview
-ms.custom:
 ms.date: 12/15/2025
 ---
 
