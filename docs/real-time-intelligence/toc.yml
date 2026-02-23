@@ -526,7 +526,7 @@ items:
           - name: Resource consumption
             href: real-time-intelligence-consumption.md
           - name: Smart capacity control
-            href: event-house-smart-capacity-control.md
+            href: eventhouse-smart-capacity-control.md
             displayName: consumption, CU, metrics app, monitor, billing, usage
           - name: Understand Eventhouse compute usage
             href: eventhouse-compute-observability.md
