@@ -5,7 +5,6 @@ ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 02/23/2026
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
@@ -18,8 +17,8 @@ Functions are reusable queries or query parts. Real-Time Intelligence supports t
 * Built-in functions, which are hard-coded functions that you can't modify.
 * User-defined functions, which are divided into two types:
 
-  * Stored functions: user-defined functions that you store and manage as database schema entities, such as tables. For more information on how to create and manage stored functions, see [Stored functions management overview](/azure/data-explorer/kusto/management/functions?context=/fabric/context/context).
-  * Query-defined functions: user-defined functions that you define and use within the scope of a single query. You define these functions through a `let` statement. For more information on how to create query-defined functions, see [Create a user defined function](/azure/data-explorer/kusto/query/letstatement?context=/fabric/context/context).
+  * **Stored functions:** user-defined functions that you store and manage as database schema entities, such as tables. For more information on how to create and manage stored functions, see [Stored functions management overview](/azure/data-explorer/kusto/management/functions?context=/fabric/context/context).
+  * **Query-defined functions:** user-defined functions that you define and use within the scope of a single query. You define these functions through a `let` statement. For more information on how to create query-defined functions, see [Create a user defined function](/azure/data-explorer/kusto/query/letstatement?context=/fabric/context/context).
 
 In this article, you learn how to create or alter an existing stored function by using the `.create-or-alter` `function`.
 
