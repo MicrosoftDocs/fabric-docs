@@ -3,9 +3,8 @@ title: Workspace outbound access protection overview
 description: "This article describes workspace outbound access protection in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.topic: overview
-ms.date: 12/01/2025
+ms.date: 02/09/2026
 
 #customer intent: As a Fabric administrator, I want to control and secure outbound connections from workspace artifacts so that I can protect organizational data and ensure compliance with security policies.
 
@@ -94,6 +93,8 @@ This section outlines important considerations and limitations when using worksp
 
 * Workspace outbound access protection isn't currently compatible with [OneLake Diagnostics](/fabric/onelake/onelake-diagnostics-overview). If you require OneLake diagnostics and outbound access protection to work together, you must select a lakehouse in the same workspace.
 
+* Workspace outbound access protection isn't currently compatible with [Fabric external data sharing](/fabric/governance/external-data-sharing-overview). Cross-tenant allow lists aren't supported with workspace outbound access protection. 
+
 ### Data connection rules
 
 #### Fabric portal limitation with private links
@@ -150,6 +151,31 @@ The following table summarizes the level of granularity supported by different c
 | Lakehouse                       | Workspace  |
 | Warehouse                       | Workspace  |
 | Fabric SQL Database             | Workspace  |
+
+## Tenant admin API for workspace network policies
+
+Fabric administrators can monitor and audit the network communication policies configured across workspaces in their tenant using the **Workspaces - List Networking Communication Policies** admin API. This API provides visibility into which workspaces have inbound or outbound access protection enabled and what specific policies are configured. The caller must be a Fabric administrator or authenticate using a service principal, and the API requires the `Tenant.Read.All` or `Tenant.ReadWrite.All` permissions. For detailed API documentation including request format, response schema, and examples, see [Workspaces - List Networking Communication Policies](/rest/api/fabric/admin/workspaces/list-networking-communication-policies).
+
+### Key capabilities
+
+The API allows administrators to:
+
+* **View all protected workspaces**: Retrieve a list of all workspaces that have inbound or outbound access protection enabled in the tenant.
+* **Audit security configurations**: Review the specific inbound and outbound policies configured for each workspace, including default actions and exception rules.
+* **Monitor compliance**: Verify that workspace network policies align with organizational security requirements and governance standards.
+* **Support security operations**: Enable automated security audits, compliance checks, and reporting workflows.
+
+### Returned information
+
+For each workspace with access protection enabled, the API returns:
+
+* **Workspace ID**: The unique identifier of the workspace
+* **Inbound policies**: Public access rules (Allow or Deny)
+* **Outbound policies**: 
+  * Public access rules (Allow or Deny)
+  * Connection rules with allowed endpoints or workspaces
+  * Gateway rules with allowed gateways
+  * Git access rules
 
 ## Next steps
 

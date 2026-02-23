@@ -1,12 +1,10 @@
 ---
 title: Create alerts for pipeline runs
 description: Explanation of how to generate alerts for pipeline runs
-ms.reviewer: whhender
-ms.author: makromer
+ms.reviewer: makromer
 ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 12/15/2025
-author: kromerm
 ---
 
 # Concept: Create alerts for pipeline runs

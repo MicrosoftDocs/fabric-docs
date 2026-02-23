@@ -1,11 +1,10 @@
 ---
 title: A guide to Fabric Dataflows for Azure Data Factory Mapping Data Flow users
 description: Guide on common transformations from Azure Data Factory Mapping Data Flows and their equivalent transformations in Power Query inside of Fabric's dataflows.
-author: itsnotaboutthecell
 ms.topic: overview
 ms.custom: fabric-cat, intro-migration, dataflows
 ms.date: 12/18/2024
-ms.author: alpowers
+ms.reviewer: alpowers
 ms.search.form: DataflowGen2
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: Data Types in Fabric Data Warehouse
 description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop
 ms.date: 11/06/2025
 ms.topic: concept-article

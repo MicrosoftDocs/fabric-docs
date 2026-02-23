@@ -1,12 +1,7 @@
 ---
 title: Overview of Fabric Git integration
 description: An introduction to integrating Git version control with the Fabric Application lifecycle management (ALM) tool
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
-ms.custom:
 ms.topic: overview
 ms.date: 12/15/2025
 ms.search.form: Git integration supported items, Introduction to Git integration

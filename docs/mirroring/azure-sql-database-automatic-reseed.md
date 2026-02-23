@@ -3,7 +3,7 @@ title: "Automatic reseed for Fabric Mirrored Databases from Azure SQL Database"
 description: Learn more about automatic reseed for Fabric mirrored databases from Azure SQL Database.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: ajayj, anagha-todalbagi, whhender
+ms.reviewer: ajayj, anagha-todalbagi
 ms.date: 10/15/2025
 ms.topic: troubleshooting
 ms.custom:

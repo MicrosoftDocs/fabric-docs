@@ -1,9 +1,7 @@
 ---
 title: "Mirror Oracle Databases in Microsoft Fabric (Preview)"
 description: Learn how to mirror your Oracle databases in Microsoft Fabric for analytics.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
+ms.reviewer: sbahadur
 ms.date: 08/22/2025
 ms.topic: overview
 ms.search.form: Oracle overview

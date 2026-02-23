@@ -1,9 +1,7 @@
 ---
 title: "Microsoft Fabric Mirrored Databases from Azure SQL Database"
 description: Learn about the mirrored databases from Azure SQL Database in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: imotiwala
+ms.reviewer: imotiwala, wiassaf
 ms.date: 07/03/2025
 ms.topic: concept-article
 ms.search.form: Fabric Mirroring

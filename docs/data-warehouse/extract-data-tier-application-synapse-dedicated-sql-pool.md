@@ -1,8 +1,6 @@
 ---
 title: "Extract a Data-Tier Application (DAC) from an Azure Synapse Dedicated SQL Pool in Visual Studio 2022"
 description: This tutorial provides a step-by-step guide to extract a Data-tier Application (DAC) from an Azure Synapse dedicated SQL pool in Visual Studio 2022.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, prlangad
 ms.date: 06/09/2025
 ms.topic: how-to

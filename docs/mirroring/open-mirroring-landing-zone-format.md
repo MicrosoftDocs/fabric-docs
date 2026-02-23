@@ -1,8 +1,6 @@
 ---
 title: "Open Mirroring Landing Zone Requirements and Formats"
 description: Review the requirements for files in the landing for open mirroring in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: tinglee, sbahadur, marakiketema
 ms.date: 09/09/2025
 ms.topic: reference
@@ -74,6 +72,16 @@ Requirements of the `_partnerEvents.json` file:
 Open mirroring supports data intake in Parquet or delimited text formats. Files can be uncompressed or compressed with Snappy, GZIP, or ZSTD.
 
 ### Parquet requirements
+
+The parquet files needs to follow standard parquet constraints and have a valid combination of logical type and physical type as defined by [parquet logical types](https://parquet.apache.org/docs/file-format/types/logicaltypes/).
+
+For example:
+
+DATE represents days since the epoch and must be INT32.
+
+- Invalid: logical=DATE, physical=INT64
+- Valid: logical=DATE, physical=INT32
+
 
 ### Delimited text requirements
 

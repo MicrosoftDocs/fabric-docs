@@ -4,7 +4,6 @@ description: Learn about protected sensitivity labels in Fabric and Power BI and
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 02/18/2024
 ---
 # Protected sensitivity labels in Fabric and Power BI

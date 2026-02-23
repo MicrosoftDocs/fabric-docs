@@ -1,10 +1,8 @@
 ---
 title: Secure Your Fabric Data Warehouse
 description: Learn more about securing your warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: chweb, fresantos
-ms.date: 10/15/2025
+ms.reviewer: fresantos
+ms.date: 02/17/2026
 ms.topic: concept-article
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -27,6 +25,7 @@ This article provides guidance on how to best secure your warehouse in [!INCLUDE
 - [!INCLUDE [product-name](../includes/product-name.md)] item permissions enable the ability to provide a user with SQL permissions, without needing to grant those permissions within SQL.
 - [!INCLUDE [product-name](../includes/product-name.md)] workspace roles provide [!INCLUDE [product-name](../includes/product-name.md)] permissions for all warehouses within a workspace.
 - Granular user permissions can be further managed via T-SQL.
+- Users with administrator, member, or contributor [workspace role](workspace-roles.md) membership can use [service principals](service-principals.md) to manage warehouses via Fabric [REST APIs](/rest/api/fabric/warehouse/items).
 
 ### Workspace roles
 

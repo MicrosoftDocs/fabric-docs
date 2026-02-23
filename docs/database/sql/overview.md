@@ -1,8 +1,6 @@
 ---
 title: "SQL database Overview"
 description: Learn about SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur
 ms.date: 12/05/2025
 ms.topic: overview

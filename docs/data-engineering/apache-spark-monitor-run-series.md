@@ -1,8 +1,6 @@
 ---
 title: Monitor Apache Spark run series
 description: The Spark run series categorizes your Spark applications based on recurring pipeline activities, manual notebook runs, or Spark job runs.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: overview
 ms.date: 05/21/2024
@@ -66,11 +64,15 @@ When you select an instance of the notebook/Spark job definition activity run in
 
 **Focus mode** lets you expand a visual to see more details. Maybe you have a visual that is a little crowded and you want to zoom in on it. This function is a perfect use of focus mode.
 
-:::image type="content" source="media\apache-spark-monitor-run-series\focus-mode.png" alt-text="Screenshot showing the focus mode to view detials." lightbox="media\apache-spark-monitor-run-series\focus-mode.png" border="true":::
+:::image type="content" source="media\apache-spark-monitor-run-series\focus-mode.png" alt-text="Screenshot showing the focus mode to view details." lightbox="media\apache-spark-monitor-run-series\focus-mode.png" border="true":::
 
 If the bar is marked red, an exception has been detected for that run instance. You can view the following information: **Total duration**, **Expected duration**, and **Potential causes** for this instance in the Anomalies panel.
 
 :::image type="content" source="media\apache-spark-monitor-run-series\anomalies-panel.png" alt-text="Screenshot showing the anomalies panel.png." lightbox="media\apache-spark-monitor-run-series\anomalies-panel.png" border="true":::
+
+> [!NOTE]
+>
+> A minimum runtime threshold of **five minutes** is applied for anomaly detection. Spark applications that run for **less than five minutes** are **not included** in anomaly analysis.
 
 ## Related content
 

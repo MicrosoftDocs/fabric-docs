@@ -1,9 +1,7 @@
 ---
 title: Module 3 - Automate and send notifications with Data Factory
 description: This module covers the integration and orchestration of tasks with your pipeline. It's part 3 of an end-to-end data integration tutorial to complete a full data integration scenario with Data Factory in Microsoft Fabric within an hour.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 01/06/2026
@@ -87,15 +85,15 @@ Once you finish developing and testing your pipeline, you can schedule it to exe
 
 You can also add the dataflow you created in [Module 2: Create a dataflow in Data Factory](tutorial-end-to-end-dataflow.md) into the pipeline.
 
-1. Hover over the green line connecting the Copy activity and the Office 365 Email activity on your pipeline canvas, and select the **+** button to insert a new activity.
+1. Hover over the green line connecting the copy job activity and the Office 365 Email activity on your pipeline canvas, and select the **+** button to insert a new activity.
 
-   :::image type="content" source="media/tutorial-end-to-end-integration/insert-activity-button.png" alt-text="Screenshot showing the insert activity button for the connection between the Copy activity and the Office 365 Email activity on the pipeline canvas.":::
+   :::image type="content" source="media/tutorial-end-to-end-integration/insert-activity-button.png" alt-text="Screenshot showing the insert activity button for the connection between the copy job activity and the Office 365 Email activity on the pipeline canvas.":::
 
 1. Choose **Dataflow** from the menu that appears.
 
    :::image type="content" source="media/tutorial-end-to-end-integration/insert-dataflow-activity.png" alt-text="Screenshot showing the selection of Dataflow from the insert activity menu on the pipeline canvas.":::
 
-1. The newly created Dataflow activity is inserted between the Copy activity and the Office 365 Email activity, and selected automatically, showing its properties in the area below the canvas. Select the **Settings** tab on the properties area, and then select your dataflow created in [Module 2: Create a dataflow in Data Factory](tutorial-end-to-end-dataflow.md).
+1. The newly created Dataflow activity is inserted between the copy job activity and the Office 365 Email activity, and selected automatically, showing its properties in the area below the canvas. Select the **Settings** tab on the properties area, and then select your dataflow created in [Module 2: Create a dataflow in Data Factory](tutorial-end-to-end-dataflow.md).
 
    :::image type="content" source="media/tutorial-end-to-end-integration/choose-dataflow-settings.png" alt-text="Screenshot showing the Settings tab of the Dataflow activity.":::
 
@@ -104,7 +102,7 @@ You can also add the dataflow you created in [Module 2: Create a dataflow in Dat
 In our end-to-end tutorial for your first data integration pipeline using Data Factory in Microsoft Fabric, you learned how to:
 
 > [!div class="checklist"]
-> - Use a Copy activity to ingest raw data from a source store into a table in a data Lakehouse.
+> - Use a copy job activity to ingest raw data from a source store into a table in a data Lakehouse.
 > - Use a Dataflow activity to process the data and move it into a new table in the Lakehouse.
 > - Use an Office 365 Outlook activity to send an email notifying you once all the jobs are complete.
 > - Configure the pipeline to run on a scheduled basis.

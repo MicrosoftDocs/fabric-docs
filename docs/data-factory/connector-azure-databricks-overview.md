@@ -1,8 +1,6 @@
 ---
 title: Azure Databricks connector overview
 description: This article provides an overview of the supported capabilities of the Azure Databricks connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 01/19/2026
 ms.custom:

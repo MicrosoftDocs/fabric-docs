@@ -4,10 +4,8 @@ description: Learn how to create, track, and manage machine learning models in M
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
 ms.topic: concept-article
-ms.custom: 
-ms.date: 01/14/2025
+ms.date: 01/29/2026
 ms.search.form: Create New Model, Model Comparison
 ---
 
@@ -150,11 +148,12 @@ To compare runs, you can:
 
 Data scientists can also use MLflow to search among multiple models saved within the workspace. Visit the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html) to explore other MLflow APIs for model interaction.
 
-```Python
+```python
 from pprint import pprint
+from mlflow import MlflowClient
 
 client = MlflowClient()
-for rm in client.list_registered_models():
+for rm in client.search_registered_models():
     pprint(dict(rm), indent=4)
 ```
 

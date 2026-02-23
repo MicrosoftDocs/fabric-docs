@@ -1,9 +1,7 @@
 ---
 title: What is Copilot for writing queries in KQL Queryset
 description: "Learn how to use Copilot to write queries in KQL Queryset."
-author: spelluru
-ms.author: spelluru
-ms.reviewer: mibar, maghan
+ms.reviewer: mibar
 ms.date: 12/22/2025
 ms.topic: how-to
 ms.subservice: rti-kql-query
@@ -118,3 +116,4 @@ Here are the current limitations of Copilot in Fabric:
 - [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md)
 - [Copilot in Fabric](../fundamentals/copilot-fabric-overview.md)
 - [Copilot for Microsoft Fabric: FAQ](../fundamentals/copilot-faq-fabric.yml)
+

@@ -4,8 +4,7 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
-ms.date: 08/01/2025
+ms.date: 02/20/2026
 ---
 
 # Workspace identity
@@ -24,6 +23,7 @@ While Fabric workspace identities share some similarities with Azure managed ide
 ## Create and manage a workspace identity
 
 You must be a workspace admin to be able to create and manage a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
+
 1. Sign in to the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 1. Select **Workspaces**, and then select the workspace you want to create a workspace identity for.
 1. In the workspace, select the **Workspace settings** (gear) icon.
@@ -60,7 +60,7 @@ When an identity is deleted, Fabric items relying on the workspace identity for 
 
  Workspace identity currently can be used in two ways:
 
-* For authentication: See [Authenticate with workspace identity](./workspace-identity-authenticate.md)
+* For authentication: To learn how this identity surfaces as an authentication option when connecting OneLake shortcuts, pipelines, semantic models, and Dataflows Gen2 (CI/CD) to data sources, see [Authenticate with workspace identity](./workspace-identity-authenticate.md).
 
 * For trusted workspace access: Shortcuts in a workspace that has a workspace identity can be used for trusted service access. For more information, see [trusted workspace access](../security/security-trusted-workspace-access.md).
 
@@ -93,7 +93,7 @@ Fabric administrators can administer the workspace identities created in their t
 1. You can also delete a workspace identity.
    > [!NOTE]
    > Workspace identities cannot be restored after deletion. Be sure to review the consequences of deleting a workspace identity described in [Delete a workspace identity](#delete-a-workspace-identity).
-   
+
 ### Administer the workspace identity in Purview
 
 You can view the audit events generated upon the creation and deletion of workspace identity in Purview Audit Log. To access the log
@@ -127,7 +127,7 @@ To view the audit logs and sign-in logs for this identity:
 #### App registrations
 
 The application associated with the workspace identity can be seen under **App registrations** in the Azure portal. No modifications should be made there, as this will cause the workspace identity to stop working.
- 
+
 ## Advanced scenarios
 
 The following sections describe scenarios involving workspace identities that might occur.
@@ -145,8 +145,11 @@ When a workspace gets renamed, the workspace identity is also renamed to match t
 ## Considerations and limitations
 
 * A workspace identity can be created in any workspace except a My Workspace.
+
 * If a workspace with a workspace identity is migrated to a non-Fabric capacity or to a non-F SKU Fabric capacity, the identity won't be disabled or deleted, but Fabric items relying on trusted workspace access will stop working.
-* A maximum of 1,000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
+
+* A default of 10,000 workspace identities can be created in a tenant. You can also specify your own maximum in the tenant settings, which becomes the upper limit for Fabric identity creation across your tenant. For more information, see [Define maximum number of Fabric identities in a tenant](../admin/service-admin-portal-developer.md#define-maximum-number-of-fabric-identities-in-a-tenant).
+
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 
 ## Troubleshooting issues with creating a workspace identity

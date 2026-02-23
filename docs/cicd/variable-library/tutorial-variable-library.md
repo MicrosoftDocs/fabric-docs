@@ -1,11 +1,7 @@
 ---
 title: Learn How to Use Variable Libraries
 description: "Follow the steps for creating a variable library and using variable values in various stages of a deployment pipeline."
-author: billmath
-ms.author: billmath
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: tutorial
 ms.date: 12/15/2025
 ms.search.form: Variable library tutorial

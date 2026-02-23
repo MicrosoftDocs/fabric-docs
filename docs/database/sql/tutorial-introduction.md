@@ -1,8 +1,6 @@
 ---
 title: SQL database tutorial - Introduction
 description: Learn about SQL database in Fabric, with an end-to-end application scenario, sample data, and integration with other Fabric offerings.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: bwoody
 ms.date: 03/04/2025
 ms.topic: tutorial

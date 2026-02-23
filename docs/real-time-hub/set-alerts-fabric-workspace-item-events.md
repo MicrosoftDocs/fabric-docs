@@ -1,10 +1,8 @@
 ---
 title: Set alerts on Fabric workspace item events in Real-Time hub
 description: This article describes how to set alerts on Fabric workspace item events in Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/14/2025
 ---
 
@@ -94,3 +92,4 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+

@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse collation"
 description: Learn about Fabric warehouse collations, how to change the workspace warehouse default collation, and how to create a warehouse with a non-default collation.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, twcyril
 ms.date: 08/14/2025
 ms.topic: how-to

@@ -1,8 +1,6 @@
 ---
 title: How to Implement Dynamic Data Masking in Fabric Data Warehouse
 description: Learn how to implement dynamic data masking in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dhsundar
 ms.date: 10/09/2024
 ms.topic: how-to

@@ -1,9 +1,7 @@
 ---
 title: Add a lakehouse destination to an eventstream
 description: Learn how to add a lakehouse destination to an eventstream in Microsoft Fabric event streams.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/18/2025
@@ -98,4 +96,6 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [Eventhouse](add-destination-kql-database.md)
 - [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
 - [Create an eventstream](create-manage-an-eventstream.md)
+
+
 

@@ -1,10 +1,8 @@
 ---
 title: Fabric Workspace Item events connector for Fabric event streams
 description: This include files has the common content for configuring Fabric Workspace Item events connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 03/18/2025
 ---
 
@@ -23,3 +21,4 @@ ms.date: 03/18/2025
 1. On the **Review + create** screen, review settings, and select **Add** to complete the configuration for Fabric workspace item events.
 
     :::image type="content" source="./media/fabric-workspace-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/fabric-workspace-source-connector/review-connect.png":::   
+
