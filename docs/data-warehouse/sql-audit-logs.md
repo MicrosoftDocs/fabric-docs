@@ -20,6 +20,9 @@ This feature enables organizations to monitor database activities, detect potent
 - Permission changes and security configurations
 
 > [!IMPORTANT]
+> SQL Audit Logs is optimized for availability and performance of the database being audited. During periods of very high activity or high network load, the auditing feature might allow transactions to proceed without recording all of the events marked for auditing.
+
+> [!IMPORTANT]
 > By default, SQL audit logs are **OFF**. Users with **Audit queries** permissions must enable it to capture the logs.
 
 The SQL audit logs feature is currently in preview.
