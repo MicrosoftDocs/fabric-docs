@@ -2,8 +2,8 @@
 title: Data filtering in Fabric Maps
 description: Learn about data filtering in Fabric Maps.
 ms.reviewer: smunk
-author: sipa
-ms.author: sipa
+author: deniseatmicrosoft
+ms.author: limingchen
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
