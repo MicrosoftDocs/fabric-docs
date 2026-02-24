@@ -36,10 +36,10 @@ We support these Oracle Server environments:
 * Oracle Cloud Infrastructure (OCI)
 * Oracle Database@Azure
 * Oracle Exadata
+* Oracle Autonomous Database
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported.
 
 ## Mirroring prerequisites
 

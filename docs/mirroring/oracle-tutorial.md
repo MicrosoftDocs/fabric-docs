@@ -21,11 +21,9 @@ You need:
   * Oracle OCI
   * Oracle Database@Azure
   * Exadata
-   * Note: Oracle Autonomous Database isn't supported
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported.
 
 ## Set up archive of redo log files
 
