@@ -83,6 +83,14 @@ To delete a schedule, select the **Edit** icon (pencil) next to the schedule you
 
 :::image type="content" source="media/pipeline-runs/delete-schedule.png" alt-text="Screenshot showing the delete button can be found in the edit window.":::
 
+### Configure failure notifications
+
+You can configure email notifications to be sent when a **scheduled** pipeline run fails. Notifications aren’t sent for on‑demand runs.
+
+To configure failure notifications, open the pipeline, select **Schedule** in the top banner of the **Home** tab, and add users or groups under **Failure notifications**.
+
+:::image type="content" source="media/pipeline-runs/schedule-failure-notifications.png" alt-text="Failure notification settings for scheduled pipeline runs." lightbox="media/schedule-failure-notifications.png":::
+
 ## Event-based pipeline runs
 
 Event triggers let you start pipelines when specific events happen, like when files arrive or get deleted in storage. You can trigger pipelines from file events, job events, and workspace events. If you're moving from Azure Data Factory, you'll find storage events familiar.
