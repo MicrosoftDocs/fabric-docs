@@ -96,3 +96,4 @@ Here are the current limitations of Copilot in Fabric in Data Warehouse:
 - [How to: Use Copilot quick actions in Fabric in SQL database](copilot-quick-action.md)
 - [How to: Use Copilot code completion in Fabric in SQL database](copilot-code-completion.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

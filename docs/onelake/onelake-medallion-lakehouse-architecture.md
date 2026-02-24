@@ -1,8 +1,6 @@
 ---
 title: "Implement Medallion Lakehouse Architecture in Fabric"
 description: Understand medallion lakehouse architecture in Microsoft Fabric and learn how to implement a lakehouse.
-author: kgremban
-ms.author: kgremban
 ms.reviewer: wiassaf, arali
 ms.date: 02/12/2026
 ms.topic: concept-article
@@ -86,7 +84,7 @@ In the bronze layer, you store data in its original format, which might be eithe
 
 In the silver and gold layers, you typically store data in Delta tables. However, you can also store data in Parquet or CSV files. If you do that, you must explicitly create a shortcut or an external table with a location that points to the unmanaged folder that contains the Delta Lake files in Apache Spark.
 
-In Microsoft Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md#lakehouse-explorer) provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
+In Microsoft Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md) provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
 
 ### Delta Lake storage
 
@@ -182,3 +180,4 @@ For more information about implementing medallion lakehouse architecture, see th
 - [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 - Questions? Try asking the [Fabric community](https://community.fabric.microsoft.com/).
 - Suggestions? [Contribute ideas to improve Fabric](https://ideas.fabric.microsoft.com/).
+

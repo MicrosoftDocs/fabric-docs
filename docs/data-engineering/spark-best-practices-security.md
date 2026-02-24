@@ -1,8 +1,6 @@
 ---
 title: Fabric Spark Security
 description: Secure Spark workloads with managed virtual networks, outbound protection, private endpoints, and secret management.
-author: eric-urban
-ms.author: eur
 ms.reviewer: anuve
 ms.topic: concept-article
 ms.custom:

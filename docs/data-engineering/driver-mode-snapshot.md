@@ -3,10 +3,7 @@
 title: Configure Delta driver mode snapshot in Fabric Spark
 description: Learn how to configure driver mode snapshot in Fabric Spark to optimize cold query performance.
 ms.reviewer: fepessot
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 07/24/2025
 
 ---

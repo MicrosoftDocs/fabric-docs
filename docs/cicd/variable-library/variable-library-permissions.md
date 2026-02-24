@@ -1,13 +1,8 @@
 ---
 title: Microsoft Fabric Variable Library Permissions
 description: Understand who can access variable libraries and their values.
-author: billmath
-ms.author: billmath
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ms.search.form: Introduction to variable libraries, manage variable libraries, variable library permissions, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and who has permission to view and edit them.

@@ -1,8 +1,6 @@
 ---
 title: "Analyze Data with Range Bands"
 description: "Learn how to analyze data with range bands in Microsoft Fabric Data Warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.date: 04/06/2025
 ms.topic: how-to
 ms.custom:

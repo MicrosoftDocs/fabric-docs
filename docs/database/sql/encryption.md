@@ -1,8 +1,6 @@
 ---
 title: Data Encryption in SQL Database in Fabric
 description: Learn about data encryption and customer-managed keys in SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pivanho
 ms.date: 11/17/2025
 ms.topic: concept-article

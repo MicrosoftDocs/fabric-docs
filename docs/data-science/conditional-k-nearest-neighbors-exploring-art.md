@@ -2,11 +2,8 @@
 title: Conditional k-NN (K-Nearest-Neighbors) Art Exploration Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
 ms.topic: how-to
-ms.custom: 
-ms.author: scottpolly
 author: s-polly
-ms.reviewer: scottpolly
-reviewer: JessicaXYWang
+ms.author: scottpolly
 ms.date: 04/04/2025
 ---
 
@@ -256,3 +253,4 @@ result_df = test_all(small_df, medium_cknn, culture_cknn, selected_ids, root="."
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
+

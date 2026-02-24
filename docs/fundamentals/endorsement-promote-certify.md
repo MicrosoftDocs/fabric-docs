@@ -4,7 +4,6 @@ description: Learn how to promote or certify Fabric items, or designate them as 
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 07/11/2024
 ---
 

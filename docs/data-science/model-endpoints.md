@@ -1,10 +1,7 @@
-﻿---
+---
 title: Serve real-time predictions with ML model endpoints (Preview)
 description: Learn how to serve real-time predictions seamlessly from ML models with secure, scalable, and fully managed online endpoints.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: erenorbey
-reviewer: orbey
+ms.reviewer: lagayhar, erenorbey
 ms.topic: how-to
 ms.date: 07/16/2025
 ms.search.form: ML model endpoints
@@ -147,3 +144,4 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 - Generate batch predictions with the [`PREDICT` function](./model-scoring-predict.md) in Fabric notebooks.
 - Learn more about [model training and experimentation](./model-training-overview.md) in Fabric.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
+

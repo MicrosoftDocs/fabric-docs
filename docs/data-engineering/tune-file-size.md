@@ -1,12 +1,10 @@
 ---
 title: Tune File Size
 description: Learn how you can tune the size of Delta table files.
-author: eric-urban
-ms.author: eur
 ms.reviewer: milescole
 ms.date: 02/12/2026
 ms.topic: how-to
-ms.search.form: lakehouse table file size delta
+ms.search.form: lakehouse table file size delta 
 ai-usage: ai-assisted
 ---
 

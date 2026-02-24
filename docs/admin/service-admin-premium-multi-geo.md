@@ -3,8 +3,6 @@ title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-ms.custom:
 ms.topic: how-to
 ms.date: 01/29/2026
 LocalizationGroup: Premium

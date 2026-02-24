@@ -1,8 +1,6 @@
 ---
 title: Fabric API for GraphQL pricing
 description: This article contains information about billing
-author: eric-urban
-ms.author: eur
 ms.reviewer: edlima
 ms.date: 01/21/2026
 ms.topic: concept-article

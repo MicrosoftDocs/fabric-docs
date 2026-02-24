@@ -1,9 +1,9 @@
 ---
 title: What is Microsoft Fabric Chargeback app (preview)?
 description: Learn how to use the Microsoft Fabric Chargeback app.
-author: kishanpujara-ms
-ms.author: kishanpujara
-ms.reviewer: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
+ms.reviewer: kishanpujara
 ms.topic: concept-article
 ms.date: 07/02/2025
 ---
@@ -63,3 +63,4 @@ When using the Microsoft Fabric Chargeback app, be aware of the following consid
 - [Install the Microsoft Fabric Chargeback app](chargeback-app-install.md)
 - [Chargeback Azure Reservation costs](/azure/cost-management-billing/reservations/charge-back-usage)
 - [View amortized benefit costs](/azure/cost-management-billing/reservations/view-amortized-costs)
+

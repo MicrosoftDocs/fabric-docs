@@ -1,23 +1,31 @@
 ---
-title: Use AI services with SynapseML in Microsoft Fabric
-description: Enrich your data with artificial intelligence (AI) in Azure Synapse Analytics using pretrained models from Azure AI services.
+title: Use Foundry Tools with SynapseML in Microsoft Fabric
+description: Enrich your data with artificial intelligence (AI) in Azure Synapse Analytics using pretrained models from Foundry Tools.
 ms.topic: how-to
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: jessiwang
-reviewer: JessicaXYWang
-ms.date: 09/29/2025
+ms.reviewer: vimeland
+reviewer: virginiaroman
+ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ai.usage: ai-assisted
 ---
 
-# Use Azure AI services with SynapseML in Microsoft Fabric
+# Use Foundry Tools with SynapseML in Microsoft Fabric
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) help developers and organizations build responsible applications with ready to use and customizable APIs and models. In this article, you use Azure AI services to perform tasks that include: text analytics, translation, document intelligence, vision, image search, speech to text and text to speech, anomaly detection, and data extraction from web APIs.
+[Foundry Tools](https://azure.microsoft.com/products/ai-services/) help developers and organizations build responsible applications with ready to use and customizable APIs and models. In this article, you use Foundry Tools to perform tasks that include: text analytics, translation, document intelligence, vision, image search, speech to text and text to speech, anomaly detection, and data extraction from web APIs.
 
-Azure AI services help developers create applications that see, hear, speak, understand, and begin to reason. The Azure AI services catalog includes five pillars: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](/bing/search-apis/bing-image-search/overview), and [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector).
+Foundry Tools help developers create applications that see, hear, speak, understand, and begin to reason. The Foundry Tools catalog includes five pillars: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](/bing/search-apis/bing-image-search/overview), and [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector).
+
+> [!TIP]
+> For Azure OpenAI specifically, Fabric offers simpler alternatives:
+>
+> - **[AI Functions](ai-services/how-to-use-openai-ai-functions.md)**: The simplest approach using Pandas and PySpark DataFrame extensions with minimal code
+> - **[OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md)**: Distributed processing with the `OpenAIPrompt` transformer for millions of rows
+> - **[OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md)**: Fine-grained control for single API calls
+>
+> This article focuses on using SynapseML with bring-your-own-key for other Foundry Tools.
 
 ## Prerequisites
 
@@ -25,7 +33,29 @@ Azure AI services help developers create applications that see, hear, speak, und
 
 * Create a [notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. In the notebook, select **Add** to add an existing lakehouse or create a new one.
-* Get an Azure AI services key. Follow [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource). Copy the key value to use in the code samples below.
+* Get a Foundry Tools key. Follow [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource). Copy the key value to use in the code samples below.
+
+## Choosing between Fabric AI Functions and Foundry Tools
+
+Consider whether simpler alternatives meet your needs. Both Fabric AI Functions and Foundry Tools allow you the option to bring your own key (BYOK) for using your own Azure subscriptions.
+
+| Task | AI Functions | SynapseML with BYOK (This guide) |
+|------|---------------------------|-----------------------------------|
+| **Sentiment analysis** | `df.ai.analyze_sentiment()` - Simple, no keys, **PySpark = distributed** | TextSentiment with your Azure key |
+| **Translation** | `df.ai.translate()` - 100+ languages, **PySpark = distributed** | Translate with your Azure Translator key |
+| **Text classification** | `df.ai.classify()` - Custom categories, **PySpark = distributed** | Requires custom model training |
+| **Information extraction** | `df.ai.extract()` - Flexible patterns, **PySpark = distributed** | NER with predefined entity types |
+| **Text summarization** | `df.ai.summarize()` - Customizable, **PySpark = distributed** | Requires custom implementation |
+| **Custom text generation** | `df.ai.generate_response()` - **PySpark = distributed** | Use [Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) for advanced prompts |
+| **Image analysis** | Not available - use SynapseML | Vision API with your Azure key |
+| **Speech processing** | Not available - use SynapseML | Speech API with your Azure key |
+| **Document Intelligence** | `df.ai.extract()` for custom formats (**PySpark = distributed**) | Best for standard forms (receipts, invoices) |
+
+**When to use AI Functions**: Most text operations at ANY scale (thousands to millions of rows). **PySpark AI Functions are fully distributed** (powered by SynapseML), no subscription keys needed, simpler code, validated prompts reduce token costs.
+
+**When to use SynapseML with BYOK**: Vision tasks, speech processing, specialized document forms, or when you have existing Azure AI services subscriptions.
+
+**When to use Azure OpenAI with SynapseML directly**: Advanced prompt engineering requiring unrestricted control over system/user prompts beyond AI Functions' validated templates. See [Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) for the OpenAIPrompt transformer.
 
 ## Prepare your system
 
@@ -46,13 +76,13 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 ```
 
-Import the Azure AI services libraries. In the following code, replace the placeholder text `<YOUR-KEY-VALUE>` with your own keys, and set the location values for each service.
+Import the Foundry Tools libraries. In the following code, replace the placeholder text `<YOUR-KEY-VALUE>` with your own keys, and set the location values for each service.
 
 ```python
 from synapse.ml.cognitive import *
 
-# A general Azure AI services key for Text Analytics, Vision, and Document Intelligence (or use separate keys for each service).
-service_key = "<YOUR-KEY-VALUE>"  # Replace `<YOUR-KEY-VALUE>` with your Azure AI services key. See prerequisites for details.
+# A general Foundry Tools key for Text Analytics, Vision, and Document Intelligence (or use separate keys for each service).
+service_key = "<YOUR-KEY-VALUE>"  # Replace `<YOUR-KEY-VALUE>` with your Foundry Tools key. See prerequisites for details.
 service_loc = "eastus"
 
 # A Bing Search v7 subscription key.
@@ -74,7 +104,10 @@ search_key = "<YOUR-KEY-VALUE>"  # Replace `<YOUR-KEY-VALUE>` with your Azure Se
 
 The [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, use the service to analyze sentiment in input text. The service returns a score between 0.0 and 1.0: low scores indicate negative sentiment, and high scores indicate positive sentiment.
 
-This code sample returns sentiment for three sentences.
+> [!TIP]
+> For simpler sentiment analysis on DataFrames, consider using [AI Functions](ai-services/how-to-use-openai-ai-functions.md) with `df.ai.analyze_sentiment()` which provides built-in sentiment analysis with minimal code.
+
+This code sample returns sentiment for three sentences using SynapseML with bring-your-own-key.
 
 ```python
 # Create a DataFrame that's tied to its column names
@@ -110,7 +143,10 @@ display(
 
 [Text Analytics for health](/azure/ai-services/language-service/text-analytics-for-health/overview?tabs=ner) extracts and labels medical information from unstructured text like doctor's notes, discharge summaries, clinical documents, and electronic health records.
 
-This code sample analyzes text from doctor's notes and returns structured data.
+> [!TIP]
+> For medical entity extraction with custom requirements, consider using [AI Functions](ai-services/how-to-use-openai-ai-functions.md) with `df.ai.extract()` or `df.ai.generate_response()` with structured output. This allows flexible extraction patterns without requiring specialized healthcare API keys.
+
+This code sample analyzes text from doctor's notes and returns structured data using SynapseML with bring-your-own-key.
 
 ```python
 df = spark.createDataFrame(
@@ -134,9 +170,13 @@ display(healthcare.transform(df))
 ```
 
 ## Translate text to another language
-[Translator](https://azure.microsoft.com/products/ai-services/translator/) is a cloud-based machine translation service that's part of the Azure AI services family of cognitive APIs for building intelligent apps. Translator integrates easily into your apps, websites, tools, and solutions. It lets you add multilingual experiences in 90 languages and dialects, and it works on any operating system for text translation.
 
-The following code sample translates the input sentences into the target languages.
+[Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) is a cloud-based machine translation service that's part of the Foundry Tools family of cognitive APIs for building intelligent apps. Translator integrates easily into your apps, websites, tools, and solutions. It lets you add multilingual experiences in 90 languages and dialects, and it works on any operating system for text translation.
+
+> [!TIP]
+> For simpler translation on DataFrames, consider using [AI Functions](ai-services/how-to-use-openai-ai-functions.md) with `df.ai.translate()` which provides built-in translation with minimal code.
+
+The following code sample translates the input sentences into the target languages using SynapseML with bring-your-own-key.
 
 
 ```python
@@ -170,9 +210,13 @@ display(
 ```
 
 ## Extract information from a document into structured data
-[Azure AI Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/) is part of Azure AI services and lets you build automated data processing software with machine learning. Use Azure AI Document Intelligence to identify and extract text, key-value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes relationships from the original file, bounding boxes, confidence scores, and more.
 
-The following code analyzes a business card image and extracts its information as structured data.
+[Azure Document Intelligence in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/) lets you build automated data processing software with machine learning. Use Document Intelligence to identify and extract text, key-value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes relationships from the original file, bounding boxes, confidence scores, and more.
+
+> [!TIP]
+> For text extraction from documents with flexible schemas, consider using [AI Functions](ai-services/how-to-use-openai-ai-functions.md) with `df.ai.extract()` or `df.ai.generate_response()` with structured output. While Document Intelligence excels at standard forms (receipts, invoices, IDs), AI Functions can handle custom document formats without training specific models.
+
+The following code analyzes a business card image and extracts its information as structured data using SynapseML with bring-your-own-key.
 
 ```python
 from pyspark.sql.functions import col, explode
@@ -189,7 +233,7 @@ imageDf = spark.createDataFrame(
     ],
 )
 
-# Run Azure AI Document Intelligence
+# Run Document Intelligence
 analyzeBusinessCards = (
     AnalyzeBusinessCards()
     .setSubscriptionKey(service_key)
@@ -210,7 +254,7 @@ display(
 
 ## Analyze and tag images
 
-[Azure AI Vision](https://azure.microsoft.com/products/ai-services/ai-vision/) analyzes images to identify faces, objects, and natural language descriptions.
+[Azure Vision in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-vision/) analyzes images to identify faces, objects, and natural language descriptions.
 
 This code sample analyzes images and labels them with *tags*. Tags are one-word descriptions of objects, people, scenery, and actions in an image.
 
@@ -228,7 +272,7 @@ df = spark.createDataFrame(
     ],
 )
 
-# Run Azure AI Vision to analyze images and extract information.
+# Run Vision to analyze images and extract information.
 analysis = (
     AnalyzeImage()
     .setLocation(service_loc)
@@ -283,7 +327,7 @@ display(pipeline.transform(bingParameters))
 ```
 
 ## Convert speech to text
-The [Azure AI Speech](https://azure.microsoft.com/products/ai-services/ai-speech/) service converts spoken audio streams or files to text. The following code sample transcribes one audio file.
+The [Azure Speech in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-speech/) service converts spoken audio streams or files to text. The following code sample transcribes one audio file.
 
 ```python
 # Create a DataFrame with the audio URL in the 'url' column
@@ -291,7 +335,7 @@ df = spark.createDataFrame(
     [("https://mmlspark.blob.core.windows.net/datasets/Speech/audio2.wav",)], ["url"]
 )
 
-# Run Azure AI Speech to transcribe the audio
+# Run Speech to transcribe the audio
 speech_to_text = (
     SpeechToTextSDK()
     .setSubscriptionKey(service_key)
@@ -429,6 +473,14 @@ display(
 )
 ```
 ## Related content
+
+### Azure OpenAI in Fabric
+
+- [Use Azure OpenAI with AI Functions](ai-services/how-to-use-openai-ai-functions.md) - Simplest approach for DataFrame operations
+- [Use Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt
+- [Use Azure OpenAI with Python SDK](ai-services/how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+
+### SynapseML resources
 
 - [How to do the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use a k-NN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

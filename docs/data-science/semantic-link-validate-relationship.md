@@ -4,9 +4,7 @@ description: Use the Python SemPy semantic link modules to explore and validate 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: romanbat
-reviewer: RomanBat
 ms.topic: how-to
-ms.custom:
 ms.date: 09/28/2025
 ms.search.form: semantic link
 ---

@@ -4,7 +4,6 @@ description: Learn about how to secure data in mirrored databases from Azure Dat
 ms.reviewer: scoriani
 ms.date: 03/31/2025
 ms.topic: how-to
-ms.custom:
 ---
 
 # How to: Secure data Microsoft Fabric mirrored databases from Azure Database for PostgreSQL flexible server

@@ -1,10 +1,8 @@
 ---
 title: Tutorial - Supportability Best Practices
 description: Learn supportability best practices for your Fabric Extensibility Toolkit workload to ensure effective troubleshooting and customer support.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: tutorial
-ms.custom:
 ms.date: 12/15/2025
 ---
 

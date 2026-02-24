@@ -1,8 +1,6 @@
 ---
 title: Digital twin builder (preview) tutorial introduction
 description: Get started with digital twin builder (preview) by setting up resources for the tutorial. Part 0 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---

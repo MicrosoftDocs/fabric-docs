@@ -1,14 +1,11 @@
-﻿---
+---
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: None
+ms.reviewer: lagayhar
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 04/16/2025
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
-reviewer: s-polly
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
@@ -451,7 +448,7 @@ Microsoft Fabric allows users to operationalize machine learning models with the
 
 From our evaluation results, model 1 has the largest metrics for both Area Under the Precision-Recall Curve (AUPRC) and for Area Under the Curve Receiver Operating Characteristic (AUC-ROC). Therefore, you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to measure binary classifiers performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
+The AUC-ROC measure is widely used to measure binary classifier performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines both precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization. The following code snippets cover these steps:
 
 ```python
 # Load the best model

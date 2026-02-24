@@ -1,10 +1,7 @@
 ---
 title: How to localize your workload
 description: Learn how you can localize your workload using the Fabric Extensibility Toolkit and support various languages in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2025
 ---
 
@@ -276,4 +273,5 @@ Aspect | Manifest Localization | App Localization
 **Controls** | Fabric shell UI (workload hub, create experience) | Your app's iframe UI
 **Loading** | Loaded by Fabric when displaying manifest info | Loaded dynamically by i18next in iframe
 **Examples** | Workload names, item descriptions, create cards | App buttons, forms, error messages, tooltips
+
 

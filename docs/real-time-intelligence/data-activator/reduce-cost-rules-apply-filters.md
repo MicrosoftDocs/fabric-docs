@@ -3,7 +3,6 @@ title: Reduce Activator Rule Costs With Eventstream Filters
 description: Reduce costs of Activator rules by filtering event volume in Eventstream before ingestion. Learn how to optimize data processing and save resources.
 #customer intent: As a data analyst, I want to reduce the cost of processing high-volume event streams so that I can optimize resource usage in Activator.
 ms.topic: how-to
-ms.service: fabric
 ms.subservice: rti-activator
 ms.date: 01/15/2025
 ---
