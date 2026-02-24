@@ -11,7 +11,7 @@ items:
   - name: Mirrored database logs
     href: monitor-logs.md
   - name: Share and manage permissions
-    href: share-and-manage-permissions.md
+    href: share-and-manage-permissions.md 
 - name: Explore mirrored data
   items:
   - name: Explore your mirrored database
@@ -22,6 +22,8 @@ items:
   - name: Explore with notebooks
     displayName: Explore mirrored data with notebooks
     href: explore-onelake-shortcut.md
+- name: Extended capabilities
+  href: extended-capabilities.md
 - name: Mirroring Azure SQL Database
   items:
     - name: Mirrored database from Azure SQL Database
