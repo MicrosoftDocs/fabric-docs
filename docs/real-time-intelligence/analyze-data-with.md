@@ -24,7 +24,7 @@ This integration provides a consistent experience regardless of where your data 
 * A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * An [eventhouse](create-eventhouse.md) in your workspace
 * A [KQL database](create-database.md) in your eventhouse
-* Enable OneLake availability and sync to use the SQL endpoint option.
+* Enable OneLake availability and sync to use the SQL analytics endpoint.
 
 ## Analyze data by using the SQL analytics endpoint
 
