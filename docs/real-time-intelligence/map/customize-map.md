@@ -142,7 +142,7 @@ When using the zoom control to zoom in, more granular clustering visuals appear.
 
 :::image type="content" source="media/customize-map/bubble-visual-clustering-zoom-in.png" lightbox="media/customize-map/bubble-visual-clustering-zoom-in.png" alt-text="A zoomed in version of the previous example.":::
 
-#### Custom marker layer
+#### Marker layer
 
 Markers let you replace standard point bubbles with meaningful icons so point data is easier to interpret and better aligned with business context.
 
@@ -152,9 +152,9 @@ Markers are especially useful when points represent well‑known entities—such
 
 :::image type="content" source="media/customize-map/custom-markers.png" lightbox="media/customize-map/custom-markers.png" alt-text="A screenshot of a map displaying custom markers for public school locations in a suburban area. Each school is represented by a purple icon resembling a school building, with school names labeled next to the markers. The right panel lists marker customization options such as symbol, stroke color, size, rotation, opacity, and marker anchor.":::
 
-##### Create custom marker
+##### Custom markers
 
-When using custom icons, you can browse files in a Lakehouse and select supported image formats such as SVG, PNG, or JPG. Once selected, the image is applied directly as the symbol used to represent point data on the map.
+To use custom icons, browse files in a Lakehouse and select supported image formats such as **SVG**, **PNG**, or **JPG**. Once selected, the image is applied directly as the symbol used to represent point data on the map.
 
 :::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying a variety of icon options, including a create button at the bottom.":::
 
