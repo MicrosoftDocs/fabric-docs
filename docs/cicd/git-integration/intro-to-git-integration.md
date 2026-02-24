@@ -59,7 +59,7 @@ The following items currently support Git integration:
 
   * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#integrate-git-for-fabric-environments)
   * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-git-integration)
-  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#lakehouse-git-integration) *(preview)*
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#git-integration)
   * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
   * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
   * [User Data Functions](../../data-engineering/user-data-functions/user-data-functions-overview.md)

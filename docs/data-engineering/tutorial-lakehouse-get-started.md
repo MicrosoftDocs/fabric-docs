@@ -3,7 +3,7 @@ title: Lakehouse tutorial - Create a workspace
 description: Learn how to create a workspace that you can use to create other items required by this end-to-end tutorial.
 ms.reviewer: arali
 ms.topic: tutorial
-ms.date: 02/14/2026
+ms.date: 02/21/2026
 ---
 
 # Lakehouse tutorial: Create a Fabric workspace

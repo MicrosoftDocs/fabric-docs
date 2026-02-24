@@ -38,7 +38,7 @@ If you don't already have a lakehouse, create one to store the sample data:
 1. Enter a name for your lakehouse (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and then select **Create**.
 
     > [!IMPORTANT]
-    > Make sure you clear the lakehouse schema option. Graph in Microsoft Fabric doesn't currently support lakehouses that have [lakehouse schema (preview) enabled](/fabric/data-engineering/lakehouse-schemas).
+    > Make sure you clear the lakehouse schema option. Graph in Microsoft Fabric doesn't currently support lakehouses that have [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
 
 For more detailed instructions, see [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
 

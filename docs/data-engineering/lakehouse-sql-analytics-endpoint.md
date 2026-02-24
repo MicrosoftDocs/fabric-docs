@@ -3,47 +3,78 @@ title: What is the SQL analytics endpoint for a lakehouse?
 description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric lakehouse tables.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 11/10/2025
+ms.date: 02/22/2026
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---
 
 # What is the SQL analytics endpoint for a lakehouse?
 
-Microsoft Fabric provides a SQL-based experience for lakehouse Delta tables. This SQL-based experience is the SQL analytics endpoint. You can analyze data in Delta tables using T-SQL language, save functions, generate views, and apply SQL security. To access SQL analytics endpoint, you select a corresponding item in the workspace view or switch to SQL analytics endpoint mode in Lakehouse explorer.
+The SQL analytics endpoint gives you a read-only T-SQL query surface over the Delta tables in your lakehouse. Every lakehouse automatically provisions a SQL analytics endpoint when created — there's nothing extra to set up. Behind the scenes, the SQL analytics endpoint runs on the same engine as the [Fabric Data Warehouse](../data-warehouse/data-warehousing.md), so you get high-performance, low-latency SQL queries without managing infrastructure.
 
-Creating a lakehouse creates a SQL analytics endpoint, which points to the lakehouse Delta table storage. Once you create a Delta table in the lakehouse, it's available for querying using the SQL analytics endpoint. Many Fabric items, including a [warehouse](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse), [mirrored database](../mirroring/overview.md), [SQL database](../database/sql/sql-analytics-endpoint.md), and [Cosmos DB](../database/cosmos-db/overview.md) automatically provision a SQL analytics endpoint when created.
+The SQL analytics endpoint isn't unique to lakehouses. Other Fabric items — including [warehouses](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse), [mirrored databases](../mirroring/overview.md), [SQL databases](../database/sql/sql-analytics-endpoint.md), and [Azure Cosmos DB](../database/cosmos-db/overview.md) — also auto-provision a SQL analytics endpoint. The experience and [limitations](#limitations) are the same across all of them.
 
-:::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Screenshot of Lakehouse SQL analytics endpoint main screen." lightbox="media\sql-endpoint\main-screen.png":::
+:::image type="content" source="media\sql-endpoint\lakehouse-sql-analytics-endpoint.png" alt-text="Screenshot of the SQL analytics endpoint for a lakehouse showing the query editor and table list." lightbox="media\sql-endpoint\lakehouse-sql-analytics-endpoint.png":::
 
-## SQL analytics endpoint reprovisioning
+## What you can do
 
-We offer the ability to retry SQL analytics endpoint provisioning directly within a lakehouse. Therefore if your initial provisioning attempt fails, you have the option to try again without the need to create an entirely new lakehouse. This feature empowers you to self-mitigate provisioning issues in convenient way in the UI avoiding the need for complete lakehouse re-creation.
+The SQL analytics endpoint operates in read-only mode over Delta tables — you can't insert, update, or delete data through it. To modify data, switch to the lakehouse and use Apache Spark.
 
-:::image type="content" source="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png" alt-text="Screenshot of lakehouse SQL analytics endpoint re-provisioning." lightbox="media\sql-endpoint\main-screen.png":::
+Within that read-only boundary, you can:
+
+- **Query Delta tables with T-SQL** — Run SELECT statements against any Delta table in your lakehouse, including tables exposed through [shortcuts](lakehouse-shortcuts.md) to external Azure Data Lake Storage or Amazon S3.
+- **Create views, functions, and stored procedures** — Encapsulate business logic and reusable query patterns in T-SQL objects that persist in the SQL analytics endpoint.
+- **Apply row-level and object-level security** — Use [SQL granular permissions](../data-warehouse/sql-granular-permissions.md) to control which users can see which tables, columns, or rows.
+- **Build Power BI reports** — Power BI semantic models can connect to the SQL analytics endpoint through its Tabular Data Stream (TDS) endpoint, so you can build reports over your lakehouse data.
+- **Query across workspaces** — Use [OneLake shortcuts](lakehouse-shortcuts.md) to reference Delta tables in other lakehouses or warehouses, then join them in a single query. For more cross-workspace scenarios, see [Better together: the lakehouse and warehouse](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).
 
 > [!NOTE]
-> It's important to note that while this feature improves the user experience, a SQL analytics endpoint re-provisioning can still fail, just as it can during the initial creation of a lakehouse.
+> External Delta tables created with Spark code aren't visible to the SQL analytics endpoint. Use shortcuts in the Tables section to make external Delta tables visible. To learn how, see [Create a shortcut to files or tables](lakehouse-shortcuts.md#create-a-shortcut-to-files-or-tables).
 
-## SQL analytics endpoint read-only mode
+## Access the SQL analytics endpoint
 
-The SQL analytics endpoint operates in read-only mode over lakehouse Delta tables. You can only read data from Delta tables using the SQL analytics endpoint. While you can only perform read operations on Delta tables through the SQL analytics endpoint, you have the flexibility to create functions, define views, and implement SQL object-level security to manage access and structure your data effectively.
+You can open the SQL analytics endpoint in two ways:
+
+- **From the workspace** — In your workspace item list, find the SQL analytics endpoint item (it shares a name with your lakehouse) and select it.
+- **From the Lakehouse explorer** — In the top-right area of the ribbon, use the dropdown to switch to the SQL analytics endpoint view.
+
+Either way, the query editor opens where you can write and run T-SQL queries against your Delta tables.
+
+## Security
+
+SQL security rules set on the SQL analytics endpoint only apply when data is accessed through the endpoint. They don't apply when the same data is accessed through Spark or other tools.
+
+To secure your data:
+
+- Set [SQL granular permissions](../data-warehouse/sql-granular-permissions.md) on the SQL analytics endpoint to control access to specific tables, columns, or rows.
+- Set [workspace roles and permissions](workspace-roles-lakehouse.md) to control who can access the lakehouse and its data through other paths.
+
+For more about the security model, see [OneLake security for SQL analytics endpoints](../onelake/security/sql-analytics-endpoint-onelake-security.md).
+
+## Automatic metadata sync
+
+When you create or update a Delta table in your lakehouse, the SQL analytics endpoint automatically detects the change and updates its SQL metadata — table definitions, column types, and statistics. There's no import step and no manual sync required.
+
+This background process reads the Delta logs from the `/Tables` folder in OneLake and keeps the SQL schema up to date. For details on how this sync works and factors that affect sync latency, see [SQL analytics endpoint performance considerations](../data-warehouse/sql-analytics-endpoint-performance.md).
+
+## Reprovisioning
+
+If the SQL analytics endpoint fails to provision when you create a lakehouse, you can retry directly from the lakehouse UI without recreating the lakehouse.
+
+:::image type="content" source="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png" alt-text="Screenshot showing the option to retry SQL analytics endpoint provisioning in the lakehouse." lightbox="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png":::
 
 > [!NOTE]
-> External Delta tables created with Spark code aren't visible to the SQL analytics endpoint. Use shortcuts in Table space to make external Delta tables visible to the SQL analytics endpoint. To learn how to create a shortcut, see [Create a shortcut to files or tables](lakehouse-shortcuts.md#create-a-shortcut-to-files-or-tables).
+> Reprovisioning can still fail, just as the initial provisioning can. If repeated attempts fail, contact support.
 
-To modify data in lakehouse Delta tables, you have to switch to lakehouse mode and use Apache Spark.
+## Limitations
 
-## Access control using SQL security
-
-You can set object-level security for accessing data using SQL analytics endpoint. These security rules only apply for accessing data via SQL analytics endpoint, see [SQL granular permissions](../data-warehouse/sql-granular-permissions.md)
-
-To ensure data isn't accessible in other ways, you must set workspace roles and permissions, see [Workspace roles and permissions](workspace-roles-lakehouse.md).
-
-## Limitations of the SQL analytics endpoint
-
-The SQL analytics endpoint has some limitations based on its use of the Fabric Data Warehouse engine. For more information, see [Limitations of the SQL analytics endpoint](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
+The SQL analytics endpoint shares its engine with the Fabric Data Warehouse, and they share the same limitations. For the full list, see [Limitations of the SQL analytics endpoint](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
 ## Related content
 
-- [Get started with the SQL analytics endpoint of the Lakehouse in Microsoft Fabric](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
+- [Better together: the lakehouse and warehouse](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
+- [Query the SQL analytics endpoint or warehouse](../data-warehouse/query-warehouse.md)
+- [SQL analytics endpoint performance considerations](../data-warehouse/sql-analytics-endpoint-performance.md)
+- [OneLake security for SQL analytics endpoints](../onelake/security/sql-analytics-endpoint-onelake-security.md)
+- [SQL granular permissions](../data-warehouse/sql-granular-permissions.md)
 - [Workspace roles and permissions](workspace-roles-lakehouse.md)
+- [Lakehouse overview](lakehouse-overview.md)

@@ -3,7 +3,7 @@ title: Lakehouse tutorial - Create a semantic model and build a report
 description: Create a semantic model from your lakehouse data, define table relationships, and build a Power BI report.
 ms.reviewer: arali
 ms.topic: tutorial
-ms.date: 02/14/2026
+ms.date: 02/21/2026
 ai-usage: ai-assisted
 ---
 
