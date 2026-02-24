@@ -64,9 +64,9 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a script using GoogleSQL for copy activity to execute before writing data into destination table in each run. You can use this to clean up the pre-loaded data.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan. For example, `00:30:00` (30 minutes).
+- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is `00:30:00` (30 minutes).
 
-- **Write batch size**: Specify the number of rows to insert into the Google BigQuery table per batch. The allowed value is integer (number of rows). 
+- **Write batch size**: Specify the number of rows to insert into the Google BigQuery table per batch. The allowed value is integer (number of rows). The default value is `10000`.
 
 ### Mapping
 
@@ -126,8 +126,8 @@ The following tables contain more information about the copy activity in Google 
 | **table name** | 	Name of the table. | < your table name > | Yes |table |
 | **Pre-copy script** | A GoogleSQL for copy activity to execute before writing data into destination table in each run. You can use this to clean up the pre-loaded data. | < GoogleSQL query > | No | preCopyScript |
 | **Write behavior** | The write behavior for copy activity to load data into Google BigQuery.  | insert (default) | No | writeBehavior |
-| **Write batch timeout** | Wait time for the batch insert operation to complete before it times out. Allowed values are Timespan. An example is 00:30:00 (30 minutes). | < timespan > | No | writeBatchTimeout |
-| **Write batch size** | The number of rows to insert into the Google BigQuery table per batch. The allowed value is integer (number of rows).   | < integer > | No | writeBatchSize |
+| **Write batch timeout** | Wait time for the batch insert operation to complete before it times out. Allowed values are Timespan.  | < timespan ><br>`00:30:00` (default). | No | writeBatchTimeout |
+| **Write batch size** | The number of rows to insert into the Google BigQuery table per batch. The allowed value is integer (number of rows).   | < integer ><br>`10000` (default) | No | writeBatchSize |
 
 ## Related content
 
