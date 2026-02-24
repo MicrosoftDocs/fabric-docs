@@ -20,7 +20,7 @@ Multimodal input works with these existing AI functions:
 - [`ai.classify`](#classify-files-with-aiclassify)
 - [`ai.extract`](#extract-entities-from-files-with-aiextract)
 - [`ai.fix_grammar`](#fix-grammar-in-files-with-aifix_grammar)
-- [`ai.generate_response`](#generate-responses-from-files-with-aigenerate_response)
+- [`ai.generate_response`](#answer-custom-prompts-from-files-with-aigenerate_response)
 - [`ai.summarize`](#summarize-files-with-aisummarize)
 - [`ai.translate`](#translate-files-with-aitranslate)
 
