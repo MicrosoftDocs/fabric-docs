@@ -66,7 +66,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before writing data into MySQL in each run. You can use this property to clean up the preloaded data.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:00:30` (30 minutes).
+- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:00:30`.
 
 - **Write batch size**: Specify the number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). A new batche will be created when the current batch reaches the write batch size. The default value is `10000`.
 
