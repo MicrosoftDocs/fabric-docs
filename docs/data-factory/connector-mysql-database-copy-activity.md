@@ -66,11 +66,11 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before writing data into MySQL in each run. You can use this property to clean up the preloaded data.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:30:00` (30 minutes).
+- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:00:30` (30 minutes).
 
 - **Write batch size**: Specify the number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). A new batche will be created when the current batch reaches the write batch size. The default value is `10000`.
 
-- **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.The allowed value is integer.
+- **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections. The allowed value is integer.
 
 ### Mapping
 
@@ -151,7 +151,7 @@ The following tables contain more information about the copy activity in MySQL.
 | **Pre-copy script** | A SQL query for the copy activity to execute before writing data into MySQL in each run. You can use this property to clean up the preloaded data. | < your pre-copy script > | No | preCopyScript |
 | **Write behavior** | Defines the write behavior. | insert (default)| No | writeBehavior |
 | **Write batch size** | The number of rows to insert into the MySQL table per batch. The allowed value is integer (number of rows). | < integer ><br>`10000` (default)| No | writeBatchSize |
-| **Write batch timeout** | The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. | < timespan ><br>`00:30:00` (default) | No | writeBatchTimeout |
+| **Write batch timeout** | The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. | < timespan ><br>`00:00:30` (default) | No | writeBatchTimeout |
 | **Max concurrent connections** | The upper limit of concurrent connections established to the data store during the activity run. The allowed value is integer. | < integer > | No | maxConcurrentConnections |
 
 ## Related content
