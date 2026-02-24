@@ -1,10 +1,9 @@
 ---
 title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 10/09/2025
+ms.date: 02/02/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -65,7 +64,7 @@ The following properties are **required**:
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
 
   - If you select **Tables**:
-    - **Use query**: Select from **Table** or **T-SQL Query**.
+    - **Use query**: Select from **Table** or **T-SQL Query (Preview)**.
       - If you select **Table**:
         - **Table**: Choose an existing table from the table list or specify a table name as the source. Or you can select **New** to create a new table.
 
@@ -80,8 +79,8 @@ The following properties are **required**:
           - **Version**: Specify to query an older snapshot by version.
           - **Additional columns**: Add additional data columns to the store source files' relative path or static value. Expression is supported for the latter.
 
-      - If you select **T-SQL Query**:
-        - **T-SQL Query**: Specify the custom SQL query to read data through the [Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). For example: `SELECT * FROM MyTable`. Note that Lakehouse table query mode does not support workspace-level private links.
+      - If you select **T-SQL Query (Preview)**:
+        - **T-SQL Query (Preview)**: Specify the custom SQL query to read data through the [Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md). For example: `SELECT * FROM MyTable`. Note that Lakehouse table query mode does not support workspace-level private links.
 
           :::image type="content" source="./media/connector-lakehouse/use-query-t-sql-query.png" alt-text="Screenshot showing Use query - T-SQL Query." :::
 
@@ -93,11 +92,11 @@ The following properties are **required**:
 
             If you select **Dynamic range**, when using query with parallel enabled, range partition parameter(`?DfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?DfDynamicRangePartitionCondition`.
               - **Partition column name**: Specify the name of the source column in **integer** type that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column.
-                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
+                  If you use a query to retrieve the source data, hook `?DfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
             
-              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
+              - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
             
-              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
+              - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Lakehouse tables using T-SQL Query (Preview)](#parallel-copy-from-lakehouse-tables-using-t-sql-query) section.
               
             
                   :::image type="content" source="./media/connector-lakehouse/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range." lightbox="./media/connector-lakehouse/dynamic-range.png":::        
@@ -266,11 +265,11 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 | Byte array       | binary              |
 | Decimal          | decimal             |
 
-### T-SQL Query
+### T-SQL Query (Preview)
 
-When copying data from Lakehouse tables in T-SQL Query mode, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
+When copying data from Lakehouse tables in T-SQL Query (Preview) mode, the following mappings are used from Lakehouse table data types to interim data types used by the service internally.
 
-| Lakehouse table data type in T-SQL Query mode | Interim service data type |
+| Lakehouse table data type in T-SQL Query (Preview) mode | Interim service data type |
 |---------------------|------------------|
 | int                 | Int32            |
 | varchar             | String           |
@@ -284,13 +283,13 @@ When copying data from Lakehouse tables in T-SQL Query mode, the following mappi
 | date                | Date             |
 | datetime2           | DateTime         |
 
-## Parallel copy from Lakehouse tables using T-SQL Query
+## <a name="parallel-copy-from-lakehouse-tables-using-t-sql-query"></a> Parallel copy from Lakehouse tables using T-SQL Query (Preview)
 
-The Lakehouse tables connector using T-SQL Query in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
+The Lakehouse tables connector using T-SQL Query (Preview) in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
 
-When you enable partitioned copy, copy activity runs parallel queries against your Lakehouse tables using T-SQL Query source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Lakehouse tables using T-SQL Query.
+When you enable partitioned copy, copy activity runs parallel queries against your Lakehouse tables using T-SQL Query (Preview) source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Lakehouse tables using T-SQL Query (Preview).
 
-You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Lakehouse tables using T-SQL Query. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
+You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Lakehouse tables using T-SQL Query (Preview). The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
 
 | Scenario                                                     | Suggested settings                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -336,11 +335,11 @@ The following tables contain more information about a copy activity in Lakehouse
 |:---|:---|:---|:---|:---|
 |**Connection** |The section to select your connection.|< your Lakehouse connection>|Yes|workspaceId<br>itemId|
 |**Root folder** |The type of the root folder.|• **Tables**<br>• **Files** |No|rootFolder:<br>Tables or Files|
-|**Use query** |The way to read data from Lakehouse. Apply **Table** to read data from the specified table or apply **T-SQL Query** to read data using query.|• **Table** <br>• **T-SQL Query** |Yes |/|
+|**Use query** |The way to read data from Lakehouse. Apply **Table** to read data from the specified table or apply **T-SQL Query (Preview)** to read data using query.|• **Table** <br>• **T-SQL Query (Preview)** |Yes |/|
 |**Table** |The name of the table that you want to read data, or the name of the table with a schema that you want to read data when you apply Lakehouse with schemas as the connection. |\<your table name> |Yes when you select **Tables** in **Root folder** | table  |
 | **schema name** | Name of the schema. |< your schema name >  | No | schema |
 | **table name** | Name of the table. | < your table name > | No |table |
-| **T-SQL Query** | Use the custom query to read data. An example is `SELECT * FROM MyTable`. | < query > |No | sqlReaderQuery|
+| **T-SQL Query (Preview)** | Use the custom query to read data. An example is `SELECT * FROM MyTable`. | < query > |No | sqlReaderQuery|
 |**Timestamp** | The timestamp to query an older snapshot.| \<timestamp>|No |timestampAsOf |
 |**Version** |The version to query an older snapshot.| \<version>|No |versionAsOf|
 |**Query timeout (minutes)**|The timeout for query command execution, default is 120 minutes.|timespan |No |queryTimeout|

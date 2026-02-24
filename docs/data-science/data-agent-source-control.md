@@ -1,10 +1,7 @@
 ---
 title: "Source Control, CI/CD, and ALM for Fabric Data Agent (Preview)"
 description: "Learn how to use source control, CI/CD, and ALM with Microsoft Fabric data agent."
-ms.author: amjafari
-author: amjafari
 ms.reviewer: amjafari
-reviewer: amjafari
 ms.topic: concept-article
 ms.date: 08/8/2025
 ---
@@ -159,7 +156,7 @@ You can review a deployment plan before applying changes, ensuring that only int
 
 ### Publish a Fabric data agent for the deployment pipelines
 
-Publishing a Fabric data agent makes it available for use across all different consumption channels, including Copilot for Power BI, Microsoft Copilot Studio, and Azure AI Foundry Services. To assess and consume the data agent across these channels, the data agent must be published; unpublished data agents are not accessible for consumption even if they are in production workspace. In order to follow the best practices in accordance with deployment pipeline, note that: 
+Publishing a Fabric data agent makes it available for use across all different consumption channels, including Copilot for Power BI, Microsoft Copilot Studio, and Foundry Tools. To assess and consume the data agent across these channels, the data agent must be published; unpublished data agents are not accessible for consumption even if they are in production workspace. In order to follow the best practices in accordance with deployment pipeline, note that: 
 
 - Publishing from a development workspace should be limited to authorized users only who are working on data agent development and want to assess its performance across different consumption channels. Access to this workspace must be restricted so that unfinished or experimental data agents aren't exposed to broader audiences.
 - End users should access data agents that are published from the production workspace only, ensuring they interact with stable, approved versions of the data agent.
@@ -186,3 +183,4 @@ This approach supports both the functional requirement of enabling consumption a
 - [Get started with Git integration](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Basic concepts in Git integration](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops)
 - [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
+

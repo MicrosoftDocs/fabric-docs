@@ -1,11 +1,8 @@
 ---
 title: Connect to Streaming Sources in Virtual Network or On Premises with Eventstream
 description: Learn how to connect to streaming sources in virtual network or on-premises with Eventstream with workarounds
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: tutorial
-ms.custom:
 ms.date: 06/25/2025
 ms.search.form: Eventstreams Tutorials
 ---
@@ -54,3 +51,5 @@ Azure Functions is a serverless service that allows you to run small pieces of c
 ## More resources
 
 Eventstream in Real-Time Intelligence will support connectivity to streaming sources behind private networks in near future. Keep an eye on [Microsoft Fabric and Power BI release plan](https://aka.ms/fabricroadmap) for updates on this feature. In some cases, if a feature is planned to be released in the near term, waiting for the feature might make more sense than implementing a workaround and undoing the work later after the feature is released. It might also be acceptable to use a workaround to move a POC forward, but you want to deploy production after the feature is released. This approach allows us to move forward proving the power of Fabric without being slowed down by a missing feature.
+
+

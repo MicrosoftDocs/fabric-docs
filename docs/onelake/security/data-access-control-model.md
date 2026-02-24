@@ -1,9 +1,7 @@
 ---
 title: OneLake security access control model (preview)
 description: Learn the details of how OneLake secures data with role-based access control and the interaction with Fabric permissions.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: eloldag, aamerril
 ms.topic: concept-article
 ms.custom:
 - onelake-data-access-public-preview-april-2024
@@ -370,12 +368,15 @@ Where R1' and R2' are the inferred roles and R1 and R2 are the shortcut lakehous
 
   | Scenario | Limit |
   | ---- | ---- |
-  | Maximum number of OneLake security roles per Fabric Item | 250 roles per lakehouse |
+  | Maximum number of OneLake security roles per Fabric Item | 250 roles per item<sup>1</sup> |
   | Maximum number of members per OneLake security role | 500 users or user groups per role |
   | Maximum number of permissions per OneLake security role | 500 permissions per role |
+
+<sup>1</sup> You can request an increase in roles per item to 1000. To request an increase, contact (Azure Support.)[https://azure.microsoft.com/support/faq/]
 
 ## Latencies in OneLake security
 
 * Changes to role definitions take about 5 minutes to apply.
 * Changes to a user group in a OneLake security role take about an hour for OneLake to apply the role's permissions on the updated user group.
   * Some Fabric engines have their own caching layer, so might require an extra hour to update access in all systems.
+

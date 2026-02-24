@@ -3,7 +3,6 @@ title: Create an allow list using data connection rules
 description: "Learn how to create an allow list using data connection rules on Microsoft Fabric workspaces."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.topic: how-to
 ms.date: 12/01/2025
 

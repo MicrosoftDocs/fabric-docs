@@ -1,8 +1,7 @@
 ---
 title: Amazon RDS For Oracle connector overview
 description: This article provides an overview of the supported capabilities of the Amazon RDS For Oracle connector.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 08/28/2025
 ms.custom:

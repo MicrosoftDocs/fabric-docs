@@ -2,8 +2,7 @@
 title: CI/CD for pipelines in Data Factory
 #customer intent: As a developer, I want to set up CI/CD for pipelines in Data Factory so that I can automate integration, testing, and deployment.
 description: This article describes how to set up continuous integration and delivery (CI/CD) for pipelines in Data Factory for Microsoft Fabric.
-author: conxu-ms
-ms.author: conxu
+ms.reviewer: conxu
 ms.topic: how-to
 ms.date: 11/14/2025
 ms.custom: pipelines

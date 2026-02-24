@@ -1,9 +1,7 @@
 ---
 title: Add Fabric OneLake event source to an eventstream
 description: Learn how to add Fabric OneLake event source to an eventstream.
-ms.reviewer: spelluru
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
 ms.date: 11/13/2024
 ms.search.form: Source and Destination
@@ -67,3 +65,5 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Create eventstreams for discrete events](create-eventstreams-discrete-events.md)
+
+

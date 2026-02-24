@@ -1,8 +1,7 @@
 ---
 title: Spark Connector in Microsoft Fabric
 description: Learn how to use the Spark Connector in Microsoft Fabric.
-author: misaacs
-ms.author: misaacs
+ms.reviewer: misaacs
 ms.topic: how-to
 ms.date: 06/10/2024
 ms.custom:

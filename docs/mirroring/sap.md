@@ -1,9 +1,7 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From SAP (Preview)"
 description: Learn about the mirrored databases from SAP in Microsoft Fabric.
-author: linda33wj
-ms.author: jingwang
-ms.reviewer: whhender
+ms.reviewer: jingwang
 ms.date: 11/03/2025
 ms.topic: concept-article
 ms.search.form: Fabric Mirroring

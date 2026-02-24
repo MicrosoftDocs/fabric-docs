@@ -1,9 +1,7 @@
 ---
 title: Variable library integration with pipelines
 description: Learn about how to use Variable library with pipelines. 
-ms.reviewer: whhender
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: noelleli
 ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 10/16/2025

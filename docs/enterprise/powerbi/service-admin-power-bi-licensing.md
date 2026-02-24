@@ -1,9 +1,8 @@
 ---
 title: Power BI Licensing Guide for Organizations
 description: "Learn how to purchase, assign, and manage Power BI Pro and Premium Per User licenses for your organization. Includes self-service options and Microsoft 365 integration."
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to

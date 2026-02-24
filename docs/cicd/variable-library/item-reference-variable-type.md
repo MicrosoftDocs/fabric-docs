@@ -1,10 +1,6 @@
 ---
 title: Variable library item reference
 description: Learn how to use a Microsoft Fabric item reference with variable libraries.
-author: billmath
-ms.author: billmath
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: overview
 ms.date: 01/22/2025
 #customer intent: As a developer, I want to learn how to use a Fabric application lifecycle management (ALM) variable library to customize my release stages, so that I can manage my content lifecycle.

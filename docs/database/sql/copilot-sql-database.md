@@ -83,3 +83,4 @@ Here are the current limitations of Copilot in Fabric in SQL database:
 - [How to use the Copilot chat pane for Copilot in Fabric in SQL database](copilot-quick-actions.md)
 - [Frequently asked questions for Copilot in Fabric in SQL database](copilot-faq.yml)
 - [Privacy, security, and responsible AI use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+

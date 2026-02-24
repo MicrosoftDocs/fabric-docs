@@ -1,8 +1,7 @@
 ---
 title: How to configure Parquet format in the pipeline of Data Factory in Microsoft Fabric
 description: This article explains how to configure Parquet format in the pipeline of Data Factory in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 09/18/2025
 ms.custom:

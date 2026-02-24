@@ -1,11 +1,8 @@
 ---
 title: Create Eventstream item with Definition
 description: Learn how to call APIs to create an Eventstream item with definition in Fabric workspace.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
@@ -173,3 +170,5 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 ## Related content
 
 * [Create Eventstream](/rest/api/fabric/eventstream/items/create-eventstream)
+
+

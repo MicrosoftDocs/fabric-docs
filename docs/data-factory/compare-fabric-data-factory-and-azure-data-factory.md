@@ -1,8 +1,7 @@
 ---
 title: Differences between Data Factory in Fabric and Azure
 description: Compare Azure Data Factory and Fabric Data Factory features to choose the right data integration solution for your enterprise.
-author: kromerm
-ms.author: makromer
+ms.reviewer: makromer
 ms.topic: concept-article
 ms.date: 12/19/2025
 ms.custom:
@@ -72,7 +71,7 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |:---|:---|:---|
 |ADX/KQL|[Y](/azure/data-factory/connector-azure-data-explorer)|[Y](kql-activity.md)|
 |Append Variable|[Y](/azure/data-factory/control-flow-append-variable-activity)|[Y](append-variable-activity.md)|
-|Azure Batch|[Y](/azure/data-factory/transform-data-using-dotnet-custom-activity)|[Y](azure-batch-activity.md)|
+|Custom (Azure Batch in Fabric)|[Y](/azure/data-factory/transform-data-using-dotnet-custom-activity)|[Y](azure-batch-activity.md)|
 |Azure Databricks|[Notebook activity](/azure/data-factory/transform-data-databricks-notebook) &bull; [Jar activity](/azure/data-factory/transform-data-databricks-jar) &bull; [Python activity](/azure/data-factory/transform-data-databricks-python) &bull; [Job activity](/azure/data-factory/transform-data-databricks-job) |[Azure Databricks activity](azure-databricks-activity.md)|
 |Azure Machine Learning|[Y](/azure/data-factory/transform-data-machine-learning-service)|[Y](azure-machine-learning-activity.md)|
 |Azure Machine Learning Batch Execution|Deprecated|N/A|

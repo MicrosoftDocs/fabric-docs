@@ -1,9 +1,7 @@
 ---
 title: Data source management
 description: Learn how to add and remove data sources, and how to manage users.
-ms.reviewer: whhender
-ms.author: abnarain
-author: abnarain
+ms.reviewer: abnarain
 ms.topic: how-to
 ms.date: 08/21/2025
 ms.custom: connectors

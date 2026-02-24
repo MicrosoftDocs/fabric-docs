@@ -1,8 +1,6 @@
 ---
 title: Set up your Data Warehouse connection
 description: This article provides information about how to create a Data Warehouse connection in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 12/29/2025
 ms.custom:
@@ -36,7 +34,7 @@ You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Powe
 
 ## Set up your connection in a pipeline
 
-You can set up a Data Warehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. The sections below describe how to configure the connection through each option.
+You can set up a Data Warehouse connection in the **Get Data** page or in the **Manage connections and gateways** page. Connections established through **Manage connections and gateways** page are currently in preview. The sections below describe how to configure the connection through each option.
 
 - In **Get Data** page:
 
@@ -51,13 +49,13 @@ You can set up a Data Warehouse connection in the **Get Data** page or in the **
     
     You can also select a Data Warehouse by choosing **none** in the pipeline **Connection** drop‑down list. When **none** is selected, the **Item** field becomes available, and you can pick the Data Warehouse you need.
 
-- In **Manage connections and gateways** page:
+- (Preview) In **Manage connections and gateways** page:
 
     1. On this page, select **+ New**, choose Warehouse as the connection type, and enter a connection name. Then complete the organizational account authentication by selecting **Edit credentials**.
     
         :::image type="content" source="media/connector-data-warehouse/manage-connection-gateways-new-connection.png" alt-text="Screenshot creating new Lakehouse connection in Manage connection gateways.":::
     
-    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. The connection established through this method is in preview stage.
+    1. After the connection is created, go to the pipeline and select it in the connection drop‑down list. 
 
         :::image type="content" source="media/connector-data-warehouse/select-data-warehouse-connection.png" alt-text="Screenshot of selecting a Data Warehouse connection in pipelines.":::
 

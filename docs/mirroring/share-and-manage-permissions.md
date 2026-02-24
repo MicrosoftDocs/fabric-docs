@@ -1,8 +1,6 @@
 ---
 title: Share Your Mirrored Database and Manage Permissions
 description: Learn how to share a Fabric mirrored database and manage permissions.
-author: whhender
-ms.author: whhender
 ms.reviewer: jingwang, mesrivas 
 ms.date: 04/06/2025
 ms.topic: how-to
