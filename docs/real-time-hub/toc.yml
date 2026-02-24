@@ -19,7 +19,7 @@ items:
     href: tutorial-build-event-driven-data-pipelines.md
   - name: Monitor Fabric Capacity health with Capacity Overview Events 
     href: tutorial-monitor-capacity-threshold.md
-  - name: Publish and React to Business Events Using Notebook and Activator
+  - name: Publish and react to business events using Notebook and Activator
     href: business-events/tutorial-business-events-notebook-user-data-function-activator.md
 - name: Create data streams
   items:
@@ -149,7 +149,7 @@ items:
     href: business-events/business-events-overview.md
   - name: Tutorials
     items:
-    - name: Publish and React to Business Events Using Notebook and Activator
+    - name: Publish and react to business events using Notebook and Activator
       href: business-events/tutorial-business-events-notebook-user-data-function-activator.md
 - name: Register and use schemas
   items:

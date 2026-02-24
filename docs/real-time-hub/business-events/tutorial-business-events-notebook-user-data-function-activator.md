@@ -1,6 +1,6 @@
 ---
 title: Publish and React to Business Events Using Notebook and Activator
-description: Learn how to publish business events using notebooks, and react to them using User Data Functions through Activator.
+description: Learn how to publish business events using notebooks, and react to them using User Data Function through Activator.
 #customer intent: As a data engineer, I want to create and publish a business event in Microsoft Fabric so that I can automate event-driven workflows.
 ms.date: 02/22/2026
 ms.topic: tutorial
@@ -39,7 +39,7 @@ By the end, you have an end-to-end setup that detects important business conditi
     
     1. Select **Add row** in the middle plane. 
     
-        :::image type="content" source="./media/tutorial-business-events-notebook-user-data-function-activator/add-row-button.png" alt-text="Screenshot that shows the selection of the Add row button." lightbox="./media/tutorial-business-events-notebook-user-data-function-activator/add-rown-button.png":::    
+        :::image type="content" source="./media/tutorial-business-events-notebook-user-data-function-activator/add-row-button.png" alt-text="Screenshot that shows the selection of the Add row button." lightbox="./media/tutorial-business-events-notebook-user-data-function-activator/add-row-button.png":::    
 
     1. Select **string** for **event type**, and enter `MachineID` for the **name**. 
 
@@ -174,11 +174,11 @@ By the end, you have an end-to-end setup that detects important business conditi
 
 1. Visualize the event in the preview table.
 
-## Configure custom business logic with a User Data Function
+## Configure custom business logic with a user data function
 
-1. Go to your workspace and create a new User Data Function named `ProcessVibrationCritical`.
+1. Go to your workspace and create a new user data function named `ProcessVibrationCritical`.
 
-    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/create-user-data-function.png" alt-text="Screenshot of creating a new User Data Function in the workspace." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/create-user-data-function.png":::
+    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/create-user-data-function.png" alt-text="Screenshot of creating a new user data function in the workspace." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/create-user-data-function.png":::
 
 1. Create a new Function.
 
@@ -243,7 +243,7 @@ By the end, you have an end-to-end setup that detects important business conditi
 
 1. Select **Publish** on the toolbar to publish the function and make it available for use in the Activator rule.
 
-     :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png" alt-text="Screenshot of the Publish button for the User Data Function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png":::
+     :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png" alt-text="Screenshot of the Publish button for the user data function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/publish-user-data-function-button.png":::
 
 ## Create an Activator trigger to consume events
 
@@ -265,7 +265,7 @@ By the end, you have an end-to-end setup that detects important business conditi
     
         :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/run-function-preview-button.png" alt-text="Screenshot of selecting Run Function as the action." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/run-function-preview-button.png":::
 
-    1. Select the Fabric item you want to run, and then select **Add** to continue (for example, the `ProcessVibrationCritical` User Data Function).
+    1. Select the Fabric item you want to run, and then select **Add** to continue (for example, the `ProcessVibrationCritical` user data function).
 
          :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/select-fabric-item-to-run.png" alt-text="Screenshot of selecting the Fabric item to run." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/select-fabric-item-to-run.png":::
 
@@ -347,7 +347,7 @@ In the Spark notebook, run the cell to publish a new `VibrationCriticalDetected`
 
 ### View logs for the user data function
 
-1. In the workspace, open the `ProcessVibrationCritical` User Data Function you created.
+1. In the workspace, open the `ProcessVibrationCritical` user data function you created.
 
 1. Switch to Run only mode using the mode switcher.
 
@@ -359,8 +359,8 @@ In the Spark notebook, run the cell to publish a new `VibrationCriticalDetected`
 
 1. You see table with the historical runs of the function. Select the most recent run to view the logs for that run.
 
-    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/function-run-history.png" alt-text="Screenshot of the historical runs for the User Data Function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/function-run-history.png":::
+    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/function-run-history.png" alt-text="Screenshot of the historical runs for the user data function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/function-run-history.png":::
 
 1. Confirm that the logs show the event payload in the JSON format as you defined in the function logic, which indicates that the function was triggered by the business event and processed the event data correctly.
 
-    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/function-run-logs.png" alt-text="Screenshot of the logs for a specific run of the User Data Function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/function-run-logs.png":::
+    :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/function-run-logs.png" alt-text="Screenshot of the logs for a specific run of the user data function." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/function-run-logs.png":::
