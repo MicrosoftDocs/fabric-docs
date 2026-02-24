@@ -17,7 +17,7 @@ When you enable the Eventhouse Endpoint, an Eventhouse and a KQL database are au
 From Lakehouse or Warehouse, you can:
 
 - Open Eventhouse directly from the source data experience, without navigating to a separate workload.
-- Analyze data using SQL Endpoint.
+- Analyze data using SQL analytics endpoint.
 - Analyze data using notebooks, including both new and existing notebooks.
 
 This integration makes Eventhouse a natural extension of the data source, rather than a separate system you need to set up and manage. For more information about the Eventhouse Endpoint, see [Enable Eventhouse endpoint for lakehouse and warehouse](../real-time-intelligence/eventhouse-as-endpoint.md).
