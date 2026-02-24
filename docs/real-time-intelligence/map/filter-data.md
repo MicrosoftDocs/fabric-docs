@@ -1,6 +1,6 @@
 ---
-title: Data filtering in Fabric Maps
-description: Learn about data filtering in Fabric Maps.
+title: Filter data in a map layer
+description: Learn how to filter data in Fabric Maps.
 ms.reviewer: smunk
 author: deniseatmicrosoft
 ms.author: limingchen
