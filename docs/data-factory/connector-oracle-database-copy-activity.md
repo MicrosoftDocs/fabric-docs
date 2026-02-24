@@ -177,9 +177,20 @@ NUMBER(p,s) is mapped to the appropriate interim data type depending on the prec
 | Single                   | precision < 8 AND ((scale <= 0 AND (precision - scale) <= 38) OR (scale &gt; 0 AND scale <= 44))                  |
 | Decimal                  | precision &gt;= 16 
 | Double                   | If none of the above conditions are met.                                                                       |
+
 When you copy data to Oracle database, the following mappings are used from interim data types used by the service internally to Oracle database data types.
 
-
+| Interim data type | Oracle database data type |
+|:---|:---|
+| Single | BINARY_FLOAT |
+| Double | BINARY_DOUBLE |
+| Byte[] | BLOB |
+| String | CHAR, VARCHAR2, NCHAR, NVARCHAR2, CLOB |
+| TimeSpan | INTERVAL DAY TO SECOND |
+| Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal | NUMBER (p,s), NUMBER |
+| DateTime | TIMESTAMP, TIMESTAMP WITH LOCAL TIME ZONE, DATE |
+| DateTimeOffset | TIMESTAMP WITH TIME ZONE |
+| Boolean | NUMBER (p,s), BOOLEAN |
 
 To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
 
