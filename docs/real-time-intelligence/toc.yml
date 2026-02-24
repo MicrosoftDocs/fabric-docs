@@ -917,6 +917,8 @@ items:
             href: map/about-maps.md
           - name: Tilesets in Fabric Maps
             href: map/about-tile-sets.md
+          - name: Data filtering in Fabric Maps
+            href: map/about-data-filtering.md
           - name: Sharing maps
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
@@ -929,6 +931,8 @@ items:
           href: map/customize-map.md
         - name: Create a tileset
           href: map/create-tile-sets.md
+        - name: Filter data
+          href: map/filter-data.md
         - name: Map sharing
           items:
             - name: Share maps directly
