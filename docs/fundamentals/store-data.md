@@ -1,11 +1,11 @@
 ---
 title: Data storage options in Microsoft Fabric
-description: Discover how Microsoft Fabric's OneLake unifies all your data storage needs with a single, multi-cloud, multi-region data lake. Learn how it simplifies analytics.
+description: Discover how Microsoft Fabric's OneLake unifies all your data storage needs with a single, multicloud, multi-region data lake. Learn how it simplifies analytics.
 #customer intent: As a data engineer, I want to understand how to store and organize data in OneLake so that I can manage all my analytics data in a unified platform.
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/18/2026
+ms.date: 02/24/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -44,7 +44,7 @@ Warehouses and Lakehouses serve distinct but complementary roles.
 
 - Lakehouses offer flexible, scalable storage for both structured and unstructured data, supporting Spark-based data engineering and read-only SQL analytics through automatic endpoints.
 
-Many organizations benefit from using both together: Lakehouses for ingestion and transformation, and Warehouses for refined analytics and reporting. To learn more , see [the decision guide](decision-guide-lakehouse-warehouse.md).
+Many organizations benefit from using both together: Lakehouses for ingestion and transformation, and Warehouses for refined analytics and reporting. To learn more, see [the decision guide](decision-guide-lakehouse-warehouse.md).
 
 ## Mirrored databases for near real-time replication
 
@@ -68,7 +68,7 @@ Eventhouse is well suited for telemetry, security logs, compliance records, and 
 
 SQL databases use an automatic [mirroring service](../database/sql/mirroring-overview.md) to replicate transactional tables into OneLake for analytics. When you create a SQL database, Fabric starts a replication engine that captures insert, update, and delete operations through the SQL engine change feed and writes those changes into OneLake as Delta Parquet files. Replication occurs in near real time and starts automatically. All supported tables are mirrored by default. This behavior ensures that the OneLake copy remains synchronized with the operational database.
 
-SQL databases integrate with with other Fabric experiences such as Power BI, [notebooks](../database/sql/connect-jupyter-notebook.md), [user data functions](../data-engineering/user-data-functions/connect-to-data-sources.md), [pipelines](../database/sql/load-data-pipelines.md), and [external tools through the TDS protocol](../database/sql/connect.md). This integration enables you to build end-to-end solutions, from data ingestion and transformation to [visualization](../database/sql/data-virtualization.md) and reporting, without leaving the Fabric environment. The platform automatically handles indexing and performance optimization, so you don't need to manually tune or manage infrastructure.
+SQL databases integrate with other Fabric experiences such as Power BI, [notebooks](../database/sql/connect-jupyter-notebook.md), [user data functions](../data-engineering/user-data-functions/connect-to-data-sources.md), [pipelines](../database/sql/load-data-pipelines.md), and [external tools through the TDS protocol](../database/sql/connect.md). This integration enables you to build end-to-end solutions, from data ingestion and transformation to [visualization](../database/sql/data-virtualization.md) and reporting, without leaving the Fabric environment. The platform automatically handles indexing and performance optimization, so you don't need to manually tune or manage infrastructure.
 
 ## Cosmos DB for distributed NoSQL workloads
 
@@ -84,7 +84,7 @@ The SQL analytics endpoint provides a read-only interface to the mirrored data, 
 
 [Semantic models](../data-warehouse/semantic-models.md) provide the structured, curated layer that defines business logic, measures, hierarchies, relationships, and metadata on top of raw data in Microsoft Fabric. They make data interpretable and reusable across the platform for analytics experiences.
 
-Semantic models in Fabric are tightly integrated with the platform's capacity model and workspace structure. Semantic models support three query modes: Import, DirectQuery, and Direct Lake. Each mode offers different trade-offs between performance, freshness, and scalability. Semantic models support three query modes:
+Semantic models in Fabric are tightly integrated with the platform's capacity model and workspace structure. Semantic models support three query modes: Import, DirectQuery, and Direct Lake. Each mode offers different trade-offs between performance, freshness, and scalability:
 
 - **[Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode)** copies data from the source into the semantic model during scheduled or manual refreshes. This mode offers the fastest query performance because Power BI operates on in-memory data, but it introduces latency between source updates and report visibility. Import mode is ideal for high-performance dashboards where real-time data isn't critical.
 
@@ -98,7 +98,7 @@ Semantic models also enable conversational AI, semantic search, enterprise repor
 
 Microsoft Fabric provides multiple data store options, each optimized for specific workloads:
 
-- **Lakehouse** for large-scale data engineering and open-format storage like Delta and Iceberg and supporting Spark and SQL engines.
+- **Lakehouse** for large-scale data engineering and open-format storage like Delta and Iceberg, with support for Spark and SQL engines.
 - **Warehouse** for structured, relational analytics with high-performance SQL capabilities and enterprise reporting.
 - **Eventhouse** for real-time telemetry and log analytics by using Kusto Query Language.
 - **SQL database** for transactional workloads and operational analytics.

@@ -5,7 +5,7 @@ description: Prepare and transform data effortlessly in Microsoft Fabric using l
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/18/2026
+ms.date: 02/24/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -36,9 +36,9 @@ Notebooks are well suited for complex transformations, custom algorithms, data s
 
 Notebooks integrate directly with lakehouses and warehouses in the same workspace. You can read and write data without additional credential configuration because operations run within the Fabric security context. You can also orchestrate and schedule notebooks by using the [notebook activity](../data-factory/notebook-activity.md) in Data Factory pipelines.
 
-[Fabric user data functions](../data-engineering/user-data-functions/user-data-functions-overview.md) enable you to encapsulate reusable Python logic inside Fabric. You can use them to implement advanced business rules, call external services, or build modular transformation components. User data functions support PyPI libraries, can connect to [Fabric data sources](../data-engineering/user-data-functions/connect-to-data-sources.md), and can expose REST endpoints for external integration. These capabilities makes them suitable for enterprise scenarios that require reusable, governed transformation logic.
+[Fabric user data functions](../data-engineering/user-data-functions/user-data-functions-overview.md) enable you to encapsulate reusable Python logic in Fabric. You can use them to implement advanced business rules, call external services, or build modular transformation components. User data functions support PyPI libraries, can connect to [Fabric data sources](../data-engineering/user-data-functions/connect-to-data-sources.md), and can expose REST endpoints for external integration. These capabilities make them suitable for enterprise scenarios that require reusable, governed transformation logic.
 
- You can invoke User Data Functions from [Notebooks](../data-engineering/notebook-utilities.md#user-data-function-udf-utilities), [Pipelines](../data-engineering/user-data-functions/create-functions-activity-data-pipelines.md), [Activator rules](../real-time-intelligence/data-activator/activator-rules-overview.md), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
+You can invoke User Data Functions from [Notebooks](../data-engineering/notebook-utilities.md#user-data-function-udf-utilities), [Pipelines](../data-engineering/user-data-functions/create-functions-activity-data-pipelines.md), [Activator rules](../real-time-intelligence/data-activator/activator-rules-overview.md), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
 
 ## Related content
 

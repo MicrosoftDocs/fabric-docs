@@ -5,7 +5,7 @@ description: Learn how Microsoft Fabric integrates with external systems to enab
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: fabragaMS
-ms.date: 02/21/2026
+ms.date: 02/24/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
 ---
@@ -21,7 +21,7 @@ This article describes how to:
 - Integrate with AI agents and orchestration tools  
 - Access Fabric programmatically through developer tools and APIs  
 - Interoperate with open data formats and external platforms  
-- Fabric connectivity to core Azure services for security, networking, and governance  
+- Connect Fabric to core Azure services for security, networking, and governance  
 
 ## Automate actions with Data Activator
 
@@ -53,9 +53,9 @@ These integrations enable analytics to flow naturally into collaboration, review
 
 Fabric supports agent-based AI scenarios through a shared semantic foundation. This foundation integrates with three key components to deliver end-to-end agentic capabilities:
 
-- **Microsoft Foundry** hosts fine-tuned models and knowledge retrieval systems. It supports integration through open standards like the Model Context Protocol (MCP). It can use [Fabric Data Agents](/azure/ai-foundry/agents/how-to/tools/fabric) as part of an Agentic AI workflow.
+- **Microsoft Foundry** hosts fine-tuned models and knowledge retrieval systems. It supports integration through open standards like the Model Context Protocol (MCP). It can use [Fabric Data Agents](/azure/ai-foundry/agents/how-to/tools/fabric) as part of an agentic AI workflow.
 - **Copilot Studio** enables you to design conversational agents and automate processes that invoke [Fabric Data Agents](/microsoft-copilot-studio/add-agent-fabric-data-agent) for governed insights.
-- **Microsoft 365 Copilot** surfaces these capabilities in tools such as Teams and Outlook, routing queries to appropriate agents while respecting enterprise security controls. Microsoft 365 Copilot can [consume Fabric Data Agents](../data-science/data-agent-microsoft-365-copilot.md) as part of an Agentic AI workflow.
+- **Microsoft 365 Copilot** surfaces these capabilities in tools such as Teams and Outlook, routing queries to appropriate agents while respecting enterprise security controls. Microsoft 365 Copilot can [consume Fabric Data Agents](../data-science/data-agent-microsoft-365-copilot.md) as part of an agentic AI workflow.
 
 Together, these services extend Fabric from analytics into contextual AI automation. The following diagram maps how Fabric IQ, Foundry, Copilot Studio, and Microsoft 365 Copilot work together.
 
@@ -99,7 +99,7 @@ By using these open file formats and APIs, OneLake ensures that data stored in O
 
 #### Azure Databricks integration
 
-The OneLake and Azure Databricks integration provides a foundation for unified analytics and AI. This integration combines OneLake's governed, open data estate with Databricks' data engineering and machine learning capabilities. The bi-directional integration between OneLake and Azure Databricks takes the following forms:
+The OneLake and Azure Databricks integration provides a foundation for unified analytics and AI. This integration combines OneLake's governed, open data estate with Databricks' data engineering and machine learning capabilities. The bidirectional integration between OneLake and Azure Databricks takes the following forms:
 
 - **[Catalog mirroring](../mirroring/azure-databricks.md)**: Mirrors Unity Catalog tables into OneLake as shortcuts, enabling Fabric workloads to access Databricks-managed data.
 
@@ -116,11 +116,11 @@ The OneLake and Snowflake integration delivers a zero-copy architecture that let
 
 ### Azure
 
-Microsoft Fabric is built as a Software-as-a-Service (SaaS) platform on Azure's infrastructure, meaning it relies on core Azure services for identity, networking, security, monitoring, and more. In practice, a Fabric tenant and its capacities are first-class Azure resources under your Azure subscription. This allows Fabric to integrate with Azure's billing system, use Azure's monitoring and logging capabilities, enforce security through Azure identity and networking features, and interoperate with Azure data services.
+Microsoft Fabric is built as a software as a service (SaaS) platform on Azure's infrastructure, meaning it relies on core Azure services for identity, networking, security, monitoring, and more. In practice, a Fabric tenant and its capacities are first-class Azure resources under your Azure subscription. This allows Fabric to integrate with Azure's billing system, use Azure's monitoring and logging capabilities, enforce security through Azure identity and networking features, and interoperate with Azure data services.
 
 #### Azure billing
 
-[Microsoft Fabric capacities](../enterprise/licenses.md#capacity) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal you have the ability to [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. You can Billing for Fabric is thus handled through your Azure subscription's billing system. All Fabric usage charges (for compute, storage, etc.) accrue under your subscription and appear in Azure Cost Management alongside other Azure services.
+[Microsoft Fabric capacities](../enterprise/licenses.md#capacity) represent the provisioned compute tiers for Fabric and are managed as Azure resources within your subscription. When you enable Fabric, an [Azure Fabric capacity resource is created](../enterprise/buy-subscription.md), representing the Fabric tenant's analytics capacity. In the Azure portal, you can [pause and resume your capacity](../enterprise/pause-resume.md) and [scale it up and down](../enterprise/scale-capacity.md) as needed. Billing for Fabric is handled through your Azure subscription's billing system. All Fabric usage charges (for compute and storage) accrue under your subscription and appear in Microsoft Cost Management alongside other Azure services.
 
 #### Networking
 
@@ -130,7 +130,7 @@ Microsoft Fabric also supports [Managed Virtual Networks (Managed VNets)](../sec
 
 ### Microsoft Entra ID
 
-Fabric authenticates and manages users through Microsoft Entra ID. Every Fabric tenant is linked to an Entra ID tenant. User sign-in, single sign-on (SSO), and access control for Fabric use the same identities and groups as Azure. You can use your corporate Entra ID accounts to sign in to Fabric and use existing security features like Conditional Access Policies and Multi-Factor Authentication across Fabric. Entra ID integration also enables service principals and managed identities for Fabric inbound and outbound authentication scenarios:
+Fabric authenticates and manages users through Microsoft Entra ID. Every Fabric tenant is linked to an Entra ID tenant. User sign-in, single sign-on (SSO), and access control for Fabric use the same identities and groups as Azure. You can use your corporate Entra ID accounts to sign in to Fabric and use existing security features like conditional access policies and multi-factor authentication across Fabric. Entra ID integration also enables service principals and managed identities for Fabric inbound and outbound authentication scenarios:
 * **Inbound authentication**: Use service principals to access Fabric's admin APIs or to enable access to Fabric item endpoints such as SQL, OneLake, and Eventhouse.
 * **Outbound authentication**: Use the [Workspace identity](../security/workspace-identity.md) or other service principals when [setting up connections to Azure data sources](../security/workspace-identity-authenticate.md).
 

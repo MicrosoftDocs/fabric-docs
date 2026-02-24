@@ -106,7 +106,7 @@ For more information, see [External integration and platform connectivity](exter
 
 ## Natural language and AI support
 
-Natural language support comes in the form of Power BI Copilot, Data Agents, and Operations Agent where they can reason over your enterprise data in OneLake and produce answers based on the data items users have access to. You can integrate Data Agents into Microsoft 365 Copilot, Microsoft Foundry, and Copilot Studio so users can get insights from OneLake in their flow of work in different applications.
+Natural language support comes in the form of Power BI Copilot, Data Agents, and Operations Agents, which can reason over enterprise data in OneLake and produce answers based on the data items that users can access. You can integrate Data Agents into Microsoft 365 Copilot, Microsoft Foundry, and Copilot Studio so users can get insights from OneLake within their existing workflows across different applications.
 
 ## Related content
 
