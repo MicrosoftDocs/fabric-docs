@@ -76,7 +76,7 @@ The following table describes the general settings for data layers.
 
 When enabled, data labels display text derived from the chosen fields in your dataset, allowing each map point to show relevant information directly on the visual.
 
-The following examples illustrate data labels on maps with various geometries including point, line and polygon.
+The following examples illustrate data labels on maps with various geometries including point, line, and polygon.
 
 This example uses point geometry to display public schools, with data labels indicating school names:
 
@@ -96,7 +96,7 @@ The following table describes the general settings for data labels.
 |--------------------|---------------------------------------------------------------------------------------------------|
 | Enable data labels | A toggle switch used to enable/disable data labels for the selected layer.                        |
 | Data labels        | A drop-down list showing available fields from the selected data source.                          |
-| Text color         | The text color of the data label.  The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
+| Text color         | The text color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
 | Text size          | The text size of the data label. Valid text sizes range from 8-48. Default=12.                    |
 | Text stroke color  | The text stroke color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
 | Text stroke width  | The text stroke width of the data label. Valid text sizes range from 0-10. Default=1.             |
@@ -141,6 +141,34 @@ The following screenshot displays taxi pick-up location statistics in New York C
 When using the zoom control to zoom in, more granular clustering visuals appear.
 
 :::image type="content" source="media/customize-map/bubble-visual-clustering-zoom-in.png" lightbox="media/customize-map/bubble-visual-clustering-zoom-in.png" alt-text="A zoomed in version of the previous example.":::
+
+#### Custom marker layer
+
+Custom markers let you replace standard point bubbles with meaningful icons so point data is easier to interpret and better aligned with business context.
+With a custom marker layer, points can be rendered using either built‑in Fluent icons or custom icons stored in a Lakehouse. This makes it possible to visually distinguish different types of locations, assets, or events at a glance, instead of relying only on color or size variations.
+
+Custom markers support a range of styling options, including size, color, stroke, opacity, rotation, and placement. These options help ensure markers remain readable at different zoom levels and integrate cleanly with the overall map design.
+
+When using custom icons, you can browse files in a Lakehouse and select supported image formats such as SVG, PNG, or JPG. Once selected, the image is applied directly as the symbol used to represent point data on the map.
+
+Custom markers are especially useful when points represent well‑known entities—such as facilities, vehicles, devices, or incident types—where an icon conveys meaning more effectively than a generic shape.
+
+:::image type="content" source="media/customize-map/custom-markers.png" lightbox="media/customize-map/custom-markers.png" alt-text="A screenshot of a map displaying custom markers for public school locations in a suburban area. Each school is represented by a purple icon resembling a school building, with school names labeled next to the markers. The right panel lists marker customization options such as symbol, stroke color, size, rotation, opacity, and marker anchor.":::
+
+##### Custom marker settings
+
+| Setting | Description |
+|---------|-------------|
+| Symbol | Specifies the icon used to represent each point on the map. This can be a standard bubble or a custom marker icon. |
+| Size | Controls the overall size of the marker on the map, helping balance visibility and visual density. Valid values range from 12px to 72px. |
+| Stroke color | Specifies the color of the marker border. This helps distinguish markers from the basemap and can be used to emphasize or categorize data points. |
+| Stroke width | Specifies the thickness of the marker border in pixels. Valid values range from 0 to 10. |
+| Opacity | Controls the transparency of point features on the map. Valid values range from 0% (fully transparent) to 100% (fully opaque). |
+| Rotation | Rotates the marker icon to indicate orientation or direction when applicable. |
+| Marker anchor | Determines which point of the icon is anchored to the marker's geographic position on the map. |
+| Marker overlap | Allows markers to overlap with each other and with other map elements when enabled. |
+| Pitch alignment to map | Aligns the marker with the map's pitch (viewing angle relative to the horizon). Pitch values range from 0 to 60 degrees. Default is 0. |
+| Rotation alignment to map | Aligns the marker with the map's rotation, allowing the marker to rotate as the map view rotates. Rotation values range from –180 to 180 degrees. Default is 0. |
 
 #### Heat map layer
 
