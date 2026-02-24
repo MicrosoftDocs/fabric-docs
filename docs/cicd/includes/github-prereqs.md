@@ -1,10 +1,7 @@
 ---
 title: Include file for GitHub prereqs
 description: Include file for the GitHub prereqs. This file is referenced in this repo and also in an article in the Power BI repo.
-author: billmath
-ms.author: billmath
 ms.topic: include
-ms.custom: 
 ms.date: 12/15/2025
 ---
 
@@ -16,7 +13,7 @@ To access the Git integration feature, you need a [Fabric capacity](/fabric/ente
 
 In addition, the following [tenant switches](/fabric/admin/about-tenant-settings) must be enabled from the Admin portal:
 
-- [Users can create Fabric items](/fabric/admin/fabric-switch)
+- [Users can create Fabric items](/fabric/admin/fabric-switch) - require in case of Fabric artifacts use
 - [Users can synchronize workspace items with their Git repositories](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-their-git-repositories-preview)
 - [Create workspaces](/fabric/admin/portal-workspace#create-workspaces-new-workspace-experience) (only if you want to branch out to a new workspace.)
 - [Users can synchronize workspace items with GitHub repositories](/fabric/admin/git-integration-admin-settings#users-can-synchronize-workspace-items-with-github-repositories-preview): For GitHub users only

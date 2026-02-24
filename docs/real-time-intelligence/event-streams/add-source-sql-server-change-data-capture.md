@@ -1,11 +1,8 @@
 ---
 title: Add SQL Server Change Data Capture as a source to eventstream
 description: Learn how to add a SQL Server on virtual machine (VM) database (DB)'s Change Data Capture (CDC) feed as a source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 5/23/2025
 ms.search.form: Source and Destination
 ---
@@ -94,3 +91,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

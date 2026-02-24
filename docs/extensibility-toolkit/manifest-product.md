@@ -1,10 +1,8 @@
 ---
 title: Product Manifest
 description: Learn more about the Product Manifest.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ---
 

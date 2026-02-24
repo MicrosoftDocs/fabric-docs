@@ -1,9 +1,7 @@
 ---
 title: "Authentication in SQL database"
 description: Learn about authentication in SQL database in Fabric.
-author: jaszymas
-ms.author: jaszymas
-ms.reviewer: wiassaf
+ms.reviewer: jaszymas
 ms.date: 11/20/2024
 ms.topic: concept-article
 ---
@@ -118,3 +116,4 @@ EXEC (@cmd);
 - [Microsoft Entra logins and users with nonunique display names (preview)](/azure/azure-sql/database/authentication-microsoft-entra-create-users-with-nonunique-names?view=fabricsql&preserve-view=true)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [Connect to your SQL database in Microsoft Fabric](connect.md)
+

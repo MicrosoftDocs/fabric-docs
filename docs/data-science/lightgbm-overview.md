@@ -2,11 +2,9 @@
 title: Overview of LightGBM in SynapseML
 description: Learn about LightGBM in SynapseML.
 ms.topic: overview
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 09/29/2025
 ---
 # Overview of LightGBM in SynapseML
@@ -44,6 +42,6 @@ many other machine learning tasks. LightGBM is part of Microsoft's
 ## Related content
 
 - [How to use LightGBM models with SynapseML in Microsoft Fabric](how-to-use-lightgbm-with-synapseml.md)
-- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

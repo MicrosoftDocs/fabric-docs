@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 08/13/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely access Power BI in a restricted workspace from an open workspace by using workspace-level private links, including setup steps and best practices.

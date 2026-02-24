@@ -1,11 +1,8 @@
 ---
 title: Description and prerequisites for MQTT source
 description: The include file provides description, a note, and prerequisites for using a Message Queueing Transport Telemetry (MQTT) source in an eventstream or in Real-Time hub. 
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
-ms.custom:
 ms.date: 01/26/2026
 ---
 

@@ -1,9 +1,7 @@
 ---
 title: How to Use the Copilot Explain and Fix Quick Action Features in Fabric in the SQL Database Workload
 description: Learn more about Microsoft Copilot Explain and Fix quick action features for Copilot in Fabric in the SQL database workload, to ask questions specific about your database.
-author: yoleichen
-ms.author: yoleichen
-ms.reviewer: maghan, wiassaf
+ms.reviewer: yoleichen, maghan
 ms.date: 11/18/2025
 ms.topic: how-to
 ms.collection:
@@ -75,3 +73,4 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 - [How to use the Copilot code completion for Copilot in Fabric in SQL database](copilot-code-completion.md)
 - [How to use the Copilot chat pane for Copilot in Fabric in SQL database](copilot-chat-pane.md)
 - [Privacy, security, and responsible AI use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+

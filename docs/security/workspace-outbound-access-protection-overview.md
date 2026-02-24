@@ -3,7 +3,6 @@ title: Workspace outbound access protection overview
 description: "This article describes workspace outbound access protection in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.topic: overview
 ms.date: 02/09/2026
 

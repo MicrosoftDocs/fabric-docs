@@ -1,13 +1,13 @@
 ---
 title: Fabric Copilot capacity
 description: Learn how to set up a Fabric Copilot capacity to enable billing to a designated Microsoft Fabric capacity.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
 ms.date: 03/20/2025
 ms.collection: ce-skilling-ai-copilot
-
-# Customer intent: As an admin I want to learn how to enable a Fabric Copilot capacity so that I can bill all Copilot usage to a single capacity.
+ms.update-cycle: 180-days
+#customer intent: As an admin I want to learn how to enable a Fabric Copilot capacity so that I can bill all Copilot usage to a single capacity.
 ---
 
 # Fabric Copilot capacity

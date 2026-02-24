@@ -1,8 +1,7 @@
 ---
 title: Authenticate to Cosmos DB Database From Azure Services
 description: Use Microsoft Entra authentication and the Azure SDK to connect to Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 10/30/2025
 ms.search.form: Get Started with Cosmos DB
@@ -210,3 +209,4 @@ while (iterator.HasMoreResults)
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+

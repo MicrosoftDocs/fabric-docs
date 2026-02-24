@@ -1,8 +1,6 @@
 ---
 title: Migration Strategy and Planning for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the strategy and considerations of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: arturv, johoang
 ms.date: 04/06/2025
 ms.topic: concept-article

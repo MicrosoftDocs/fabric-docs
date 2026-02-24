@@ -1,13 +1,9 @@
 ---
 title: Application lifecycle management tutorial
 description: Understand the workflow of using Git integration with deployment pipelines to manage the lifecycle of your apps.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
 ms.search.form: Variable library tutorial
 ms.topic: tutorial
-ms.service: fabric
-ms.subservice: cicd
 ms.custom: sfi-image-nochange
 ms.date: 12/15/2025
 #customer intent: As a developer, I want to understand how to use Git integration with deployment pipelines to manage the lifecycle of my apps.

@@ -6,7 +6,6 @@ ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: concept-article
 ms.date: 01/20/2026
-ms.custom:
 ---
 
 # Roles in workspaces in Microsoft Fabric

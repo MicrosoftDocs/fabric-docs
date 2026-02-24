@@ -5,7 +5,7 @@ ms.reviewer: akurnala
 ms.date: 01/16/2026
 ms.topic: overview
 ms.custom:
-   - dbt
+  - dbt
 ai-usage: ai-assisted
 ---
 

@@ -1,12 +1,10 @@
 ---
 title: "Monitoring Fabric Materialized Lake Views"
 description: Learn how to monitor Fabric materialized lake views.
-author: eric-urban
-ms.author: eur
 ms.reviewer: sairamyeturi
 ms.topic: how-to
 ms.date: 06/06/2025
-# customer intent: As a data engineer, I want to monitor materialized lake views in Microsoft Fabric so that I can track their status and manage their runs.
+#customer intent: As a data engineer, I want to monitor materialized lake views in Microsoft Fabric so that I can track their status and manage their runs.
 ---
 
 # Monitor materialized lake views

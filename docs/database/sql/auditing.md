@@ -1,8 +1,6 @@
 ---
 title: Auditing for Fabric SQL Database
 description: Learn how to configure and manage auditing for Fabric SQL database using Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: srsaluru
 ms.date: 11/17/2025
 ms.topic: concept-article

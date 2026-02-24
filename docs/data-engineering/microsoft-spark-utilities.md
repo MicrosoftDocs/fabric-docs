@@ -2,10 +2,7 @@
 title: Microsoft Spark Utilities (MSSparkUtils) for Fabric
 description: Use Microsoft Spark Utilities, a built-in package, to work with file systems, get environment variables, chain notebooks together, and work with secrets.
 ms.reviewer: jingzh
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.search.form: Microsoft Spark utilities
 ms.date: 05/02/2024
 ---
@@ -284,7 +281,7 @@ The execution result from the root notebook is as follows:
 > - You may experience that each individual jobs will take longer due to the overhead of initializing REPL instances and orchestrating many notebooks. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
 > - When running short-lived notebooks (e.g., 5 seconds code execution time), the initialization overhead becomes dominant, and variability in prep time may reduce the chance of notebooks overlapping, and therefore result in lower realized concurrency. In these scenrios it may be more optimal to combine small operations into a one or multiple notebooks.
 > - While multi-threading is used for submission, queuing, and monitoring, note that the code run in each notebook is not multi-threaded on each executor. There's no resource sharing between as each notebook process is allocated a portion of the total executor resources, this can cause shorter jobs to run inefficiently and longer jobs to contend for resources.
-> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter. As you increase concurrency you may need to increase **timeoutPerCellInSeconds** to prevent possible resource contention from causing unnessesary timeouts.
+> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter. As you increase concurrency you may need to increase **timeoutPerCellInSeconds** to prevent possible resource contention from causing unnecessary timeouts.
 
 ### Exit a notebook
 

@@ -1,6 +1,4 @@
 ---
-author: whhender
-ms.author: whhender
 ms.date: 09/09/2025
 ms.topic: include
 

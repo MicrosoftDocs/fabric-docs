@@ -1,8 +1,7 @@
 ---
 title: Time To Live in Cosmos DB Database
 description: Automatically purge items after a specified amount of time using the time-to-live (TTL) feature of Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/30/2025
 ai-usage: ai-generated
@@ -92,3 +91,4 @@ This table illustrates example scenarios with different TTL values assigned at t
 
 > [!div class="nextstepaction"]
 > [Configure time-to-live (TTL) for a container in Cosmos DB in Microsoft Fabric](how-to-configure-time-to-live.md)
+

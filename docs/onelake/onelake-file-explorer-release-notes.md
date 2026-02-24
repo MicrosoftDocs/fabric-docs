@@ -2,10 +2,7 @@
 title: OneLake File Explorer Release Notes
 description: Information about major updates in each release of the OneLake file explorer client app for Windows.
 ms.reviewer: eloldag
-ms.author: eloldag
-author: eloldag
 ms.topic: how-to
-ms.custom:
 ms.date: 10/13/2023
 #customer intent: As a OneLake file explorer user, I want to stay informed about app updates and easily access release notes so that I can take advantage of new features and improvements.
 ---
@@ -93,3 +90,4 @@ Only the most recent version of OneLake file explorer is supported. If you conta
 ## Related content
 
 - [Use OneLake file explorer to access Fabric data](onelake-file-explorer.md)
+

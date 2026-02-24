@@ -4,7 +4,6 @@ description: Learn how to configure Workspace Outbound Access Protection (outbou
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure data connections to only approved destinations.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.date: 12/01/2025
 ms.topic: how-to
 ---
@@ -142,3 +141,4 @@ When you allow a gateway, dataflows can connect to any data source accessible th
 - **Workspace staging in pipelines**: Internal staging scenarios using workspace staging don't work. Use external staging instead. Staging settings are configurable in the [pipeline copy settings](/fabric/data-factory/copy-data-activity#configure-your-other-settings-under-settings-tab).
 
 - For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
+
