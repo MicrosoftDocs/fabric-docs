@@ -4,7 +4,7 @@ description: Learn how to create a KQL database in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 03/19/2025
+ms.date: 02/24/2026
 ms.search.form: KQL Database
 ---
 # Create a KQL database
@@ -35,22 +35,22 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 The KQL database is created within the context of the selected eventhouse. You can also [Create an empty table](create-empty-table.md).
 
-### Explore your KQL database
+### Explore your KQL database with the embedded KQL queryset
 
-When you create a new KQL database, an attached environment is automatically created to explore and manage the KQL database using KQL queries. For more information, see [KQL overview](/kusto/query/).
+When you create a new KQL database, an attached environment is automatically created to explore and manage the KQL database using [KQL queries](/kusto/query/).
 
-1. To access the query environment, select *KQLdatabasename_queryset* from your KQL database object tree.
+1. To access the embedded KQL queryset, select the *KQLdatabasename_queryset* item from your KQL database object tree.
 
-    :::image type="content" source="media/create-database/attached-queryset.png" alt-text="Screenshot of new attached KQL queryset to a KQL database.":::
+    :::image type="content" source="media/create-database/attached-queryset.png" alt-text="Screenshot of new embedded KQL queryset to a KQL database.":::
 
 1. To rename the query environment, select the **Pencil icon** next to its name, and enter a new name.
 
     :::image type="content" source="media/create-database/rename-queryset.png" alt-text="Screenshot of the Rename queryset window showing the queryset name and the Pencil icon.":::
 
+You can also [Analyze data with](analyze-data-with.md) an SQL analytics endpoint or a notebook, or create a standalone [KQL queryset](create-query-set.md).
+
 ## Related content
 
 * [Manage and monitor a database](manage-monitor-database.md)
-* [Get data from Azure storage](get-data-azure-storage.md)
-* [Get data from Amazon S3](get-data-amazon-s3.md)
-* [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Get data from OneLake](get-data-onelake.md)
+* [Get data overview](get-data-overview.md)
+* [KQL queries](/kusto/query/)
