@@ -69,7 +69,7 @@ You can enable the Eventhouse endpoint using any of these three methods:
 ### Method 4: From the Analyze data with option in the Lakehouse/Warehouse
 
 1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
-1. Select **Analyze data with** > **Eventhouse Endpoint**.
+1. Select **Analyze data with** > **Eventhouse endpoint**.
 
    :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
 
@@ -77,7 +77,7 @@ You can enable the Eventhouse endpoint using any of these three methods:
 
 After using any of the above methods:
 
-1. The **Eventhouse Endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
+1. The **Eventhouse endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
 
@@ -97,7 +97,7 @@ The Eventhouse endpoint has these characteristics:
 
 * **System Overview**: Shows sync status, storage and activity statistics, and more [details](manage-monitor-eventhouse.md#view-system-overview) including a link to the source lakehouse or warehouse.
 
-* **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse Endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
+* **KQL database**: The database is named **<Lakehouse_Name or Warehouse_Name>_EventhouseEndpoint**. As the **Eventhouse endpoint** is read-only, create database and add table capabilities are disabled. Run KQL queries, create [visualizations](dashboard-real-time-create.md) in a real-time dashboard, and perform advanced analytics with KQL or SQL.
 
 * **Shortcuts**: reference OneLake tables that you can query directly using the table function or using natural language via Copilot. If the source has multiple schemas, the schema name shows in each shortcut name. For example, if the schemas are `sales` and `marketing` and each has a table named `customers`, the shortcuts are `sales_customers` and `marketing_customers`.
 
@@ -135,7 +135,7 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog. Deleti
 
 1. Open your Fabric workspace.
 
-1. Browse to the Eventhouse Endpoint branch of the Lakehouse/Warehouse tree. From the more options menu **...**, select **Delete**.
+1. Browse to the Eventhouse endpoint branch of the Lakehouse/Warehouse tree. From the more options menu **...**, select **Delete**.
 
     :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-delete.png" alt-text="Screenshot of the Lakehouse tree. The more options menu is open, and Delete is highlighted.":::
 
@@ -149,7 +149,7 @@ Remove the Eventhouse endpoint from the workspace or the OneLake catalog. Deleti
 
 Use the reset button to delete the endpoint and restart the connection.
 
-:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-reset.png" alt-text="Screenshot of the reset button under the top navigation bar, when Endpoint is selected.":::
+:::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-reset.png" alt-text="Screenshot of the reset button under the top navigation bar, when endpoint is selected.":::
 
 ## Sync statuses
 

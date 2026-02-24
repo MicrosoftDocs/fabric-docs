@@ -633,7 +633,7 @@ items:
           - name: Access an existing KQL database
             href: access-database-copy-uri.md
             displayName: copy URI, copy query URI, copy ingestion URI
-          - name: Analyze data with Lakehouse/Warehouse
+          - name: Analyze data in a KQL database
             href: analyze-data-with.md
           - name: Manage and monitor a KQL database
             href: manage-monitor-database.md
