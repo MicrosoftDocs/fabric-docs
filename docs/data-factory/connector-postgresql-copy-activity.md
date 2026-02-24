@@ -21,7 +21,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
-- [Destination](#destination)
+- [Destination (Preview)](#destination-preview)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -58,7 +58,7 @@ Under **Advanced**, you can specify the following fields:
 - **Query timeout (minutes)**: Specify the wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout).
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
-### Destination
+### Destination (Preview)
 
 The following properties are supported for PostgreSQL under the Destination tab of a copy activity.
 
@@ -72,7 +72,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before writing data into PostgreSQL in each run. You can use this property to clean up the preloaded data.
 - **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:02:00` (2 minutes).
-- **Write batch size**: Specify the number of rows to insert into the PostgreSQL table per batch. The allowed value is integer (number of rows). New batches will be created if the current one reaches the write batch size. The default value is `50000`.
+- **Write batch size**: Specify the number of rows to insert into the PostgreSQL table per batch. The allowed value is integer (number of rows). A new batche will be created when the current batch reaches the write batch size. The default value is `50000`.
 - **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.The allowed value is integer.
 
 ### Mapping
@@ -153,7 +153,7 @@ The following table contains more information about the copy activity in Postgre
 |**Query timeout (minutes)** | The wait time before terminating the attempt to execute a command and generating an error, default is 120 minutes. If parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes). For more information, see [CommandTimeout](https://www.npgsql.org/doc/api/Npgsql.NpgsqlCommand.html#Npgsql_NpgsqlCommand_CommandTimeout). |timespan |No |queryTimeout|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
-### Destination information
+### Destination information (Preview)
 
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|
