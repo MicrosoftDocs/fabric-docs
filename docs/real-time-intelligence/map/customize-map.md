@@ -144,18 +144,23 @@ When using the zoom control to zoom in, more granular clustering visuals appear.
 
 #### Custom marker layer
 
-Custom markers let you replace standard point bubbles with meaningful icons so point data is easier to interpret and better aligned with business context.
-With a custom marker layer, points can be rendered using either built‑in Fluent icons or custom icons stored in a Lakehouse. This makes it possible to visually distinguish different types of locations, assets, or events at a glance, instead of relying only on color or size variations.
+Markers let you replace standard point bubbles with meaningful icons so point data is easier to interpret and better aligned with business context.
 
-Custom markers support a range of styling options, including size, color, stroke, opacity, rotation, and placement. These options help ensure markers remain readable at different zoom levels and integrate cleanly with the overall map design.
+With a marker, points can be rendered using either built‑in Fluent icons or custom icons stored in a Lakehouse. This makes it possible to visually distinguish different types of locations, assets, or events at a glance, instead of relying only on color or size variations.
 
-When using custom icons, you can browse files in a Lakehouse and select supported image formats such as SVG, PNG, or JPG. Once selected, the image is applied directly as the symbol used to represent point data on the map.
-
-Custom markers are especially useful when points represent well‑known entities—such as facilities, vehicles, devices, or incident types—where an icon conveys meaning more effectively than a generic shape.
+Markers are especially useful when points represent well‑known entities—such as facilities, vehicles, devices, or incident types—where an icon conveys meaning more effectively than a generic shape.
 
 :::image type="content" source="media/customize-map/custom-markers.png" lightbox="media/customize-map/custom-markers.png" alt-text="A screenshot of a map displaying custom markers for public school locations in a suburban area. Each school is represented by a purple icon resembling a school building, with school names labeled next to the markers. The right panel lists marker customization options such as symbol, stroke color, size, rotation, opacity, and marker anchor.":::
 
-##### Custom marker settings
+##### Create custom marker
+
+When using custom icons, you can browse files in a Lakehouse and select supported image formats such as SVG, PNG, or JPG. Once selected, the image is applied directly as the symbol used to represent point data on the map.
+
+:::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying a variety of icon options, including a create button at the bottom.":::
+
+##### Marker settings
+
+Custom markers support a range of styling options, including size, color, stroke, opacity, rotation, and placement. These options help ensure markers remain readable at different zoom levels and integrate cleanly with the overall map design.
 
 | Setting | Description |
 |---------|-------------|
