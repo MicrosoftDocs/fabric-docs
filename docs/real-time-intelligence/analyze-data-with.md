@@ -32,11 +32,11 @@ This integration provides a consistent experience regardless of where your data 
 
 1. Select **Analyze data with** > **SQL analytics endpoint**.
 
-  :::image type="content" source="media/eventhouse/database-analyze-data-sql-endpoint.png" alt-text="Screenshot of the analyze data with button expanded with the SQL analytics endpoint option highlighted.":::
+   :::image type="content" source="media/eventhouse/database-analyze-data-sql-endpoint.png" alt-text="Screenshot of the analyze data with button expanded with the SQL analytics endpoint option highlighted.":::
 
 1. The Lakehouse SQL analytics endpoint opens with a new Eventhouse connection.
 
-  You can see Eventhouse in the explorer pane, where the KQL database is listed.
+   You can see Eventhouse in the explorer pane, where the KQL database is listed.
 
 1. [Query the SQL analytics endpoint](../data-warehouse/query-warehouse.md#run-a-new-query-in-sql-query-editor) and analyze the data in your KQL database by using T-SQL.
 
@@ -46,17 +46,17 @@ This integration provides a consistent experience regardless of where your data 
 
 1. Select **Analyze data with** > **Notebook**.
 
-  :::image type="content" source="media/eventhouse/database-analyze-data-notebook.png" alt-text="Screenshot of the *analyze data with* button expanded with the notebook option highlighted.":::
+   :::image type="content" source="media/eventhouse/database-analyze-data-notebook.png" alt-text="Screenshot of the *analyze data with* button expanded with the notebook option highlighted.":::
 
 1. Select **New Notebook** or **Existing Notebook**.
 
-  If you select **New Notebook**, a new notebook opens with the KQL database automatically added to your notebook environment.
+   If you select **New Notebook**, a new notebook opens with the KQL database automatically added to your notebook environment.
 
-  If you select **Existing Notebook**, the OneLake catalog opens with a list of your existing notebooks. Select the notebook you want to use for data analysis.
+   If you select **Existing Notebook**, the OneLake catalog opens with a list of your existing notebooks. Select the notebook you want to use for data analysis.
 
 1. The notebook opens with the KQL database automatically added to your notebook environment.
 
-  You can see the Eventhouse connection in the explorer pane, where the KQL database is listed.
+   You can see the Eventhouse connection in the explorer pane, where the KQL database is listed.
 
 1. Use the notebook to query and analyze the data in your KQL database by using your preferred language (Python, Spark SQL, or Scala).
 
