@@ -42,7 +42,7 @@ Your workload should follow these guidelines when implementing item definitions:
 1. Item definition contains a reasonable number of files (up to 5).
 1. File types should be text-based files (avoid images).
 
-For more information about item definition structure and best practices, see [Overview of item definitions](/fabric/cicd/git-integration/item-definitions).
+For more information about item definition structure and best practices, see [Overview of item definitions](/fabric/cicd/git-integration/source-code-format).
 
 ## Item definitions in CI/CD and public APIs
 
@@ -70,7 +70,7 @@ Item definitions are exposed through Fabric's public APIs, allowing external too
 
 ## Environment-specific values
 
-If your item definition contains environment-specific values that might change between stages (for example, Test → Prod), we highly encourage you to use the [Variables Library](/fabric/cicd/variables-library/intro-to-variables-library). 
+If your item definition contains environment-specific values that might change between stages (for example, Test → Prod), we highly encourage you to use the [Variables Library](/fabric/cicd/variable-library/variable-library-overview). 
 
 Examples of environment-specific values include:
 - Connections to databases
@@ -114,7 +114,7 @@ When implementing item definition in your item, keep these points in mind:
 
 - Ensure your definition content is human-readable and uses text-based formats like JSON or YAML.
 - Limit the number of files in your item definition (up to five files).
-- Consider using the [Variables Library](/fabric/cicd/variables-library/intro-to-variables-library) for environment-specific values to enable smoother transitions between Test, Staging, and Production environments.
+- Consider using the [Variables Library](/fabric/cicd/variable-library/variable-library-overview) for environment-specific values to enable smoother transitions between Test, Staging, and Production environments.
 - Review the [Git integration guidelines](/fabric/cicd/git-integration/intro-to-git-integration) to ensure your item definition structure complies with Fabric's CI/CD requirements.
 
 > [!NOTE]
@@ -163,7 +163,7 @@ Alternatively, create a user experience within your item that detects version mi
 
 ## Related content
 
-- [Overview of item definitions](/fabric/cicd/git-integration/item-definitions)
+- [Overview of item definitions](/fabric/cicd/git-integration/source-code-format)
 - [Overview of Fabric Git integration](/fabric/cicd/git-integration/intro-to-git-integration)
 - [How-To: Use variables in custom workloads](how-to-use-variables.md)
-- [Get started with Variables Library](/fabric/cicd/variables-library/intro-to-variables-library)
+- [Get started with Variables Library](/fabric/cicd/variable-library/variable-library-overview)

@@ -201,6 +201,6 @@ For more information about storing item definitions, see [How-To: Store item def
 
 ## Related content
 
-- [Get started with Variables Library](/fabric/cicd/variables-library/intro-to-variables-library)
+- [Get started with Variables Library](/fabric/cicd/variable-library/variable-library-overview)
 - [How-To: Store item definition (state)](how-to-store-item-definition.md)
 - [Overview of Fabric Git integration](/fabric/cicd/git-integration/intro-to-git-integration)

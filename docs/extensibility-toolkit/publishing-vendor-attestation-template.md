@@ -1,8 +1,9 @@
 ---
 title: Fabric Extensibility toolkit vendor attestation template
 description: Template document for vendor attestation requirements when publishing to Microsoft Fabric Workload Hub.
-ms.reviewer: gesaur
-ms.topic: concept-article
+author: gsaurer
+ms.author: gsaurer
+ms.topic: article
 ms.date: 02/24/2026
 ---
 
@@ -40,6 +41,7 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 
 ### Vendor Information
 
+
 | Company Name: | (Required) |
 | Company Website: | (Required)  |
 | Address: | (Required)  |
@@ -50,6 +52,7 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 | Phone: | (Optional) |
 
 ### Primary Contact
+
 
 | Name: | (Required)  |
 | Title: | (Required)  |
@@ -63,17 +66,18 @@ To: Microsoft Corporation
 
 Subject: Vendor Self-Attestation for Compliance with Microsoft Workload Development Requirements
 
-We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](https://learn.microsoft.com/fabric/extensibility-toolkit/publishing-requirements).
+We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](./publishing-requirements-workload.md).
 
 ## Section III
 
 ### Publish Workload Requirements Attestation Checklist
 
-We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](https://learn.microsoft.com/fabric/extensibility-toolkit/publishing-requirements)
+We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](./publishing-requirements-workload.md)
 
 The following sections documents details, exceptions, or variances regarding the attestation of adherence to the Publish Workload Requirements.
 
 ### Workload Information
+
 
 | Workload Version: | (Required)  |
 | Workload Name: | (Required)  |
