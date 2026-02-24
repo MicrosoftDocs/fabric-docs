@@ -3,6 +3,7 @@ title: Include file for Eventhouse Endpoint in Lakehouse and Data Warehouse
 description: Include file for Eventhouse Endpoint in Lakehouse and Data Warehouse.
 author: spelluru
 ms.author: spelluru
+ms.reviewer: tzgitlin, salilkanade, wiassaf
 ms.topic: include
 ms.date: 02/23/2026
 ---
