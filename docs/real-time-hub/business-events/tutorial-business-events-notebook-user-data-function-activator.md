@@ -154,7 +154,7 @@ By the end, you have an end-to-end setup that detects important business conditi
 
     :::image type="content" source="media/tutorial-business-events-notebook-user-data-function-activator/run-python-code-cell.png" alt-text="Screenshot of the Spark notebook cell with the Python code." lightbox="media/tutorial-business-events-notebook-user-data-function-activator/run-python-code-cell.png":::
 
-1. Save your notebook if it's not set to auto-save.
+1. Save your notebook if it's not set to AutoSave.
 
 ## Verify published business events
 
