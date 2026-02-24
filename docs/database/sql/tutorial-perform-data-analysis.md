@@ -1,7 +1,6 @@
 ---
 title: SQL database tutorial - Perform Data Analysis using Fabric Notebooks
 description: In this seventh tutorial step, learn how to perform Data Analysis using Microsoft Fabric Notebooks.
-ms.reviewer: bwoody
 ms.date: 10/24/2024
 ms.topic: tutorial
 ---
