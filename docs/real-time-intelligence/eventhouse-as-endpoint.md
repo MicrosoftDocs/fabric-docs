@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 02/23/2026
 ---
 
-# Enable Eventhouse endpoint for lakehouse and data warehouse
+# Enable Eventhouse endpoint for lakehouse and warehouse
 
 The Eventhouse endpoint is a powerful capability in Microsoft Fabric that lets you query tables with exceptional speed and ease. Use the Eventhouse endpoint to query lakehouse or warehouse data, discover real-time insights across your data estate, and streamline the analysis of structured, semi-structured, and unstructured data.
 
@@ -69,9 +69,9 @@ You can enable the Eventhouse endpoint using any of these three methods:
 ### Method 4: From the Analyze data with option in the Lakehouse/Warehouse
 
 1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
-1. Select **Analyze data with** > **Eventhouse endpoint**.
+1. Select **Analyze data with** > **Eventhouse Endpoint**.
 
-   :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL endpoint, eventhouse endpoint, and notebook options.":::
+   :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
 
 ### Complete the setup
 
