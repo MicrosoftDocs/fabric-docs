@@ -62,6 +62,24 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
 
+## Multimodal input
+
+The `ai.analyze_sentiment` function supports file-based multimodal input. You can analyze the sentiment of images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+pokemon_urls = [
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/145.png",
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png",
+]
+pokemon_df = pd.DataFrame({"file_path": pokemon_urls})
+
+pokemon_df["sentiment"] = pokemon_df["file_path"].ai.analyze_sentiment(column_type="path")
+display(pokemon_df)
+```
+
 ## Related content
 
 - Use [ai.analyze_sentiment with PySpark](../pyspark/analyze-sentiment.md).
@@ -75,5 +93,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

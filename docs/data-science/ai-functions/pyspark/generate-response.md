@@ -210,6 +210,28 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/generate-response-format-example-output.png" alt-text="Screenshot showing a data frame with a 'bio' column, and a new column for each specified format, with its corresponding formatted output." lightbox="../../media/ai-functions/generate-response-format-example-output.png":::
 
+## Multimodal input
+
+The `ai.generate_response` function supports file-based multimodal input. You can generate responses based on images, PDFs, and text files by using `col_types` to specify which columns contain file paths. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+pokemon_urls = [
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/145.png",
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",
+    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png",
+]
+pokemon_df = spark.createDataFrame([(u,) for u in pokemon_urls], ["file_path"])
+
+results = pokemon_df.ai.generate_response(
+    prompt="Tell me the most famous trainer who used this Pokemon. Give me only the trainer's name.",
+    col_types={"file_path": "path"},
+    output_col="trainer",
+)
+display(results)
+```
+
 ## Related content
 
 - Use [ai.generate_response with pandas](../pandas/generate-response.md).
@@ -223,5 +245,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
