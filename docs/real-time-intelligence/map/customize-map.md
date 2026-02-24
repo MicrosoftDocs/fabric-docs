@@ -154,13 +154,13 @@ Markers are especially useful when points represent well‑known entities—such
 
 ##### Custom markers
 
-To use custom icons, browse files in a Lakehouse and select supported image formats such as **SVG**, **PNG**, or **JPG**. Once selected, the image is applied directly as the symbol used to represent point data on the map.
+To use custom images as a marker, browse files in a Lakehouse and select supported image formats such as **SVG**, **PNG**, or **JPG**. Once selected, the image is applied directly as the symbol used to represent point data on the map.
 
 :::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying a variety of icon options, including a create button at the bottom.":::
 
 ##### Marker settings
 
-Custom markers support a range of styling options, including size, color, stroke, opacity, rotation, and placement. These options help ensure markers remain readable at different zoom levels and integrate cleanly with the overall map design.
+Markers support a range of styling options, including size, color, stroke, opacity, rotation, and placement. These options help ensure markers remain readable at different zoom levels and integrate cleanly with the overall map design.
 
 | Setting | Description |
 |---------|-------------|
