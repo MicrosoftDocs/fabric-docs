@@ -1,8 +1,8 @@
 ---
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
-ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 02/17/2026
+ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier, ajayj
+ms.date: 02/19/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -30,7 +30,7 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 - Currently, in-memory, ledger, ledger history, and Always Encrypted tables cannot be created in SQL database in Microsoft Fabric.
 - Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The following table-level data definition language (DDL) operations aren't allowed:
-    - Switch/Split/Merge partition
+    - Switch partition
     - Partition compression
 
 ## Column level
@@ -74,7 +74,7 @@ The following table lists the major features of SQL Server and provides informat
 | [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, through [OPENROWSET](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true), with OneLake as the data source. |
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
-| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS` and can't be updated. Collations on individual columns are supported.|
+| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name). Can't be updated after deployment. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS`. Can be configured [when deploying with the REST API](deploy-rest-api.md) or with the [Fabric CLI to create a database](deploy-cli.md). Can't be updated after deployment. Collations on individual columns are supported.|
 | [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
 | [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the index must be created at the same time the table is created, or mirroring must be stopped. For more information, see [Limitations for Fabric SQL database mirroring (preview)](mirroring-limitations.md#table-level).|
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |

@@ -64,7 +64,7 @@ Once a PR to the *dev* branch is approved and merged:
 1. When all automated and manual tests are complete, the release manager can approve and kick off the *build* and *release* pipelines to *Prod* stage. As the *Prod* stage usually has different configurations than *test/Dev* stages, it's important to also test out the changes after the deployment. Also, the deployment should trigger any more ingestion of data, based on the change, to minimize potential non availability to consumers.
 
 #### Which components can be used to implement option #2?
-* [Fabric-cicd](https://microsoft.github.io/fabric-cicd) - a Python library designed for use with Microsoft Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate workspaces into a deployment framework. 
+* [Fabric-cicd](https://microsoft.github.io/fabric-cicd) - a Python library designed for use with Microsoft Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate workspaces into a deployment framework. For a complete end-to-end example follow our [fabric-cicd and Azure DevOps tutorial](tutorial-fabric-cicd-azure-devops.md).
 
 #### When should you consider using option #2?
 
