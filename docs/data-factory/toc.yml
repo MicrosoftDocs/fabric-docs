@@ -1004,7 +1004,7 @@
                 href: dataflows-gen2-fast-copy.md
               - name: Implement slowly changing dimension type 1
                 href: slowly-changing-dimension-type-one.md
-              - name: Implement lowly changing dimension type 2
+              - name: Implement slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
               - name: Staging in Dataflow Gen2
                 href: data-in-staging-artifacts.md
