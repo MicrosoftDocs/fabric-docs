@@ -3,8 +3,7 @@ title: Monitor machine learning experiments and models
 description: Learn how to monitor machine learning experiments from the Fabric Monitoring hub and track traffic for machine learning model endpoints.
 ms.author: ruxu
 author: ruixinxu
-ms.reviewer: 
-reviewer: 
+ms.reviewer: scottpolly
 ms.topic: how-to
 ms.custom:
 ms.date: 02/11/2026
@@ -20,11 +19,11 @@ ms.search.form: machine learning monitoring
 ## Prerequisites
 
 - A [!INCLUDE [product-name](../includes/product-name.md)] workspace with a capacity assigned.
-- At least one [machine learning experiment](machine-learning-experiment.md) with recorded runs, or an [machine learning](machine-learning-model.md) with an active [machine learning model endpoint](model-endpoints.md).
+- At least one [machine learning experiment](machine-learning-experiment.md) with recorded runs, or a [machine learning](machine-learning-model.md) model with an active [machine learning model endpoint](model-endpoints.md).
 
 ## Monitor machine learning experiments from the Monitoring hub
 
-Machine learning experiments are integrated directly into the Fabric Monitoring hub. This integration provides a centralized view of all experiment activities, the related notebooks, Spark applications, and the machine learning experiment runs those applications generate. With the Monitoring hub, you can track, filter, and troubleshoot your experiment runs without navigating away from a single unified experience.
+Machine learning experiments are integrated directly into the Fabric Monitoring hub. This integration provides a centralized view of all experiment activities, the related notebooks, Spark applications, and the machine learning experiment runs those applications generate. By using the Monitoring hub, you can track, filter, and troubleshoot your experiment runs without navigating away from a single unified experience.
 
 ### View experiment runs in the Monitoring hub
 
@@ -32,7 +31,7 @@ To view machine learning experiment runs from the Monitoring hub:
 
 1. Open the **Monitor** hub from the left navigation pane in [!INCLUDE [product-name](../includes/product-name.md)].
 1. Select the **Experiment** filter to narrow the view to experiment-related activities.
-1. Browse the list of experiment activities, which shows details like status, start time, location and duration.
+1. Browse the list of experiment activities, which shows details like status, start time, location, and duration.
 
 :::image type="content" source="media/monitor-machine-learning-experiments-models/monitor-machine-learning-experiments-from-monitoring-hub.png" alt-text="Screenshot showing how to monitor machine learning experiment from monitoring hub." lightbox="media/monitor-machine-learning-experiments-models/monitor-machine-learning-experiments-from-monitoring-hub.png":::
 
@@ -50,7 +49,7 @@ These filters make it easier to manage and analyze experiments, especially in wo
 
 ### Track related machine learning experiment runs from notebook activity
 
-Machine learning experiments are also integrated into the notebook activity view in the Monitoring hub. When you select a notebook activity which triggered a machine learning experiment run, you can access the **Item snapshots** page to see a snapshot of the experiments and runs captured at the time of execution. This page also displays a snapshot of all settings and parameters that were in effect when the notebook ran.
+The Monitoring hub integrates machine learning experiments into the notebook activity view. When you select a notebook activity that triggered a machine learning experiment run, you can access the **Item snapshots** page to see a snapshot of the experiments and runs captured at the time of execution. This page also displays a snapshot of all settings and parameters that were in effect when the notebook ran.
 
 To view related experiment runs from a notebook activity:
 
@@ -68,13 +67,13 @@ This approach is useful when you need to debug, reproduce, or audit the machine 
 
 ## Monitor traffic for machine learning model endpoints
 
-When you activate an [machine learning model endpoint](model-endpoints.md) for a specific model version, [!INCLUDE [product-name](../includes/product-name.md)] begins tracking traffic to that endpoint. Traffic monitoring gives you insight into how frequently your model is being called, which helps you understand adoption and plan for capacity.
+When you activate an [machine learning model endpoint](model-endpoints.md) for a specific model version, [!INCLUDE [product-name](../includes/product-name.md)] starts tracking traffic to that endpoint. Traffic monitoring gives you insight into how frequently your model is being called, which helps you understand adoption and plan for capacity.
 
 ### View endpoint traffic
 
 To view traffic for an active model endpoint:
 
-1. Navigate to the machine learning model in your workspace.
+1. Go to the machine learning model in your workspace.
 1. Select the model version with an active endpoint.
 1. On the model detail view, scroll down to the **Endpoint metrics** section to see traffic information for that version.
 
@@ -82,19 +81,19 @@ The machine learning model endpoint metric view provides key metrics about endpo
 
 | **Metric** | **Description** |
 |---|---|
-| **Request count** | The total number of prediction requests received by the endpoint. |
-| **Error count** | The total number of failed requests received by the endpoint. |
+| **Request count** | The total number of prediction requests the endpoint receives. |
+| **Error count** | The total number of failed requests the endpoint receives. |
 | **Request latency** | The time taken to process and respond to prediction requests. |
 
-:::image type="content" source="media/monitor-machine-learning-experiments-models/endpoint-metrics.png" alt-text="Screenshot showing endpoint metrics for an machine learning model." lightbox="media/monitor-machine-learning-experiments-models/endpoint-metrics.png":::
+:::image type="content" source="media/monitor-machine-learning-experiments-models/endpoint-metrics.png" alt-text="Screenshot showing endpoint metrics for a machine learning model." lightbox="media/monitor-machine-learning-experiments-models/endpoint-metrics.png":::
 
 > [!NOTE]
-> Metrics typically appear within 15 minutes after the endpoint receives traffic. If no data or line appears, the endpoint might have been inactive during the selected time range, or its telemetry might have expired after 90 days. Try adjusting the time range or check back after the endpoint has been used. 
+> Metrics typically appear within 15 minutes after the endpoint receives traffic. If no data or line appears, the endpoint might be inactive during the selected time range, or its telemetry might have expired after 90 days. Try adjusting the time range or check back after the endpoint is used. 
 
 
 ### Monitor traffic across model versions
 
-If your model has multiple active version endpoints, you can compare traffic patterns across versions. This comparison helps you identify which model version is receiving the most requests and whether newer versions are being adopted.
+If your model has multiple active version endpoints, you can compare traffic patterns across versions. This comparison helps you identify which model version receives the most requests and whether newer versions are adopted.
 
 > [!NOTE]
 > Machine learning models can have active endpoints for up to five versions at a time. Traffic monitoring is available for each active version endpoint independently.

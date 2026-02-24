@@ -4,10 +4,7 @@ description: "Learn about tags in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
 ms.reviewer: nschachter
-ms.service: fabric
-ms.subservice: governance
-ms.custom:
-ms.topic: overview #Don't change
+ms.topic: overview
 ms.date: 09/04/2025
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 ---

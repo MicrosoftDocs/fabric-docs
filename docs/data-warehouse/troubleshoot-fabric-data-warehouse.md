@@ -1,8 +1,6 @@
 ---
 title: Troubleshoot the Warehouse
 description: Troubleshoot common issues in the Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul
 ms.date: 10/14/2025
 ms.topic: troubleshooting-general

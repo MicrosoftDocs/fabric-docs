@@ -4,7 +4,6 @@ description: Learn about what the feature switches affecting Git integration do 
 author: billmath
 ms.author: billmath
 ms.topic: how-to
-ms.custom:
 ms.date: 07/02/2024
 ---
 
@@ -18,7 +17,7 @@ For information about how to get to and use tenant settings, see [About tenant s
 :::image type="content" source="./media/git-integration-admin-settings/workspace-settings.png" alt-text="Screenshot of workspace settings.":::
 
 > [!IMPORTANT]
-> The switches that control Git integration are part of Microsoft Fabric and only work if the [Fabric admin switch](fabric-switch.md) is turned on. If Fabric is disabled, Git integration doesn't work regardless of the status of these switches.
+> The switches that control Git integration are part of Microsoft Fabric and only work if the [Fabric admin switch](fabric-switch.md) is turned on. If Fabric is disabled, Git integration will work for workspaces that contain only Power BI artifacts.
 
 ## Users can synchronize workspace items with their Git repositories 
 

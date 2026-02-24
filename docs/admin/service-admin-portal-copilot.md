@@ -3,7 +3,7 @@ title: Copilot admin settings
 description: Learn how administrators can configure Copilot admin settings in Fabric.
 author: snehagunda
 ms.author: sngun
-ms.reviewer: 'guptamaya'
+ms.reviewer: guptamaya
 ms.custom:
   - tenant-setting
 ms.topic: how-to

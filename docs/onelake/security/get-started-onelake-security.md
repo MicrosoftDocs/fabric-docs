@@ -1,11 +1,8 @@
 ---
 title: Get started with OneLake security (preview)
 description: Learn about OneLake security and how you can get started using it to secure your data in OneLake.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: eloldag, aamerril
 ms.topic: how-to
-ms.custom:
 ms.date: 01/12/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
@@ -50,3 +47,4 @@ To ensure a smooth opt-in experience, all users with read permission to data in 
 
 * [Create and manage OneLake security roles](./create-manage-roles.md)
 * [OneLake security data access control model](./data-access-control-model.md)
+

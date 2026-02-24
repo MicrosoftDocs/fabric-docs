@@ -1,11 +1,8 @@
 ---
 title: Create an eventstream in Microsoft Fabric
 description: This article describes how to create an eventstream item with Microsoft Fabric event streams feature.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Eventstreams Overview
 ---
@@ -28,4 +25,6 @@ Before you start, you must complete the following prerequisite:
 ## Next step
 - [Add sources to the eventstream](./add-manage-eventstream-sources.md)
 - [Add destinations to the eventstream](./add-manage-eventstream-destinations.md)
+
+
 

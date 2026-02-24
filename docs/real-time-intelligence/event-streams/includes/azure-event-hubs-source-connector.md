@@ -1,8 +1,7 @@
 ---
 title: Azure Event Hubs connector for Fabric eventstreams
 description: This include file has the common content for configuring an Azure Event Hubs connector for Fabric eventstreams and real-time hub.
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -127,3 +126,4 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-success.png" alt-text="Screenshot that shows the page for reviewing settings and creating a connector after the successful creation of resources." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 ::: zone-end
+

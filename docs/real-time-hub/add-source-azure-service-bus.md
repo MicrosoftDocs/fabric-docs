@@ -1,10 +1,8 @@
 ---
 title: Get events from Azure Service Bus into Real-Time hub
 description: This article describes how to get events from an Azure Service Bus queue or topic's subscription in Real-Time hub.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 07/16/2025
 ---
 
@@ -99,3 +97,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

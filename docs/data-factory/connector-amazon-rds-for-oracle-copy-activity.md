@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon RDS For Oracle.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 10/14/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

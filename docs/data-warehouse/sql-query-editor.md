@@ -1,12 +1,8 @@
 ---
 title: Query Using the SQL Query Editor
 description: Learn how to use the SQL query editor.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad, jacindaeng, pradeepsrikakolapu
 ms.date: 01/08/2026
-ms.service: fabric
-ms.subservice: data-warehouse
 ms.topic: how-to
 ms.custom:
   - sfi-image-nochange

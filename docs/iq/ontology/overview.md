@@ -1,9 +1,6 @@
 ---
 title: What is ontology (preview)?
 description: Learn about core concepts and features of the ontology (preview) item.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 10/06/2025
 ms.topic: overview
 ms.search.form: Ontology Overview
@@ -76,3 +73,4 @@ The *ontology graph* is a queryable instance graph built from your data bindings
 * Prepare your tenant for ontology (preview) by enabling required tenant settings in [Ontology (preview) required tenant settings](overview-tenant-settings.md).
 * Get started with the [Ontology (preview) tutorial](tutorial-0-introduction.md).
 * Skip ahead to instructions for [generating an ontology from a semantic model](tutorial-1-create-ontology.md?pivots=semantic-model#generating-an-ontology-from-a-semantic-model).
+

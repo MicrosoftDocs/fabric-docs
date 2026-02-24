@@ -1,10 +1,8 @@
 ---
 title: Apache Kafka connector for Fabric event streams
 description: This file has the common content for configuring Apache Kafka connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu 
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 07/22/2025
 ---
 
@@ -28,3 +26,4 @@ ms.date: 07/22/2025
     
         :::image type="content" source="./media/apache-kafka-source-connector/configure-source-section.png" alt-text="Screenshot that shows the first page of the Apache Kafka connection settings." lightbox="./media/apache-kafka-source-connector/configure-source-section.png":::      
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
+

@@ -1,10 +1,8 @@
 ---
 title: HowTo - Store Item Definition (State)
-description: Learn about item definitions in Fabric, their role in CI/CD and public APIs, and how to store your item definition.
-author: gsaurer
-ms.author: billmath
+description: Learn how to store your item definition in Fabric
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ai-usage: ai-assisted
 ---

@@ -3,7 +3,6 @@ title: Workspace admin settings
 description: Learn how to configure workspace tenant settings as a Fabric admin.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to

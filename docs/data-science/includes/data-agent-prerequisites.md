@@ -1,10 +1,7 @@
 ---
 title: Data agent prerequisites
 description: Prerequisites to use Data agent.
-author: jonburchel
-ms.author: jburchel
 ms.topic: include
-ms.custom:
 ms.date: 07/10/2025
 ---
 

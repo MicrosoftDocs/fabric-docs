@@ -4,7 +4,7 @@ description: This article explains how to copy data using OData.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

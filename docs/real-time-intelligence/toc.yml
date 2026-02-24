@@ -903,26 +903,40 @@ items:
             href: multivariate-anomaly-detection.md
   - name: Map
     items:
+      - name: Overview
+        items:
+          - name: What is Fabric Maps?
+            href: map/about-fabric-maps.md
       - name: Tutorials
         items:
           - name: Build real-time work order routing
             href: map/tutorial-real-time-work-order-routing-application.md
-      - name: Create a map
-        href: map/create-map.md
-      - name: Customize a map
-        href: map/customize-map.md
-      - name: Map sharing
+      - name: Concepts
         items:
+          - name: Map items
+            href: map/about-maps.md
+          - name: Tilesets in Fabric Maps
+            href: map/about-tile-sets.md
           - name: Sharing maps
             href: map/sharing-maps.md
-          - name: Share maps directly
-            href: map/share-map-direct.md
-          - name: Share maps with org apps
-            href: map/share-map-org-apps.md
-      - name: Create a tileset
-        href: map/spatial-job-create-tile-sets.md
-      - name: Manage Map permissions
-        href: map/manage-map-permissions.md
+          - name: Permissions in Fabric Maps
+            href: map/about-map-permissions.md
+      - name: How-to guides
+        items:
+        - name: Create a map
+          href: map/create-map.md
+        - name: Customize a map
+          href: map/customize-map.md
+        - name: Create a tileset
+          href: map/create-tile-sets.md
+        - name: Map sharing
+          items:
+            - name: Share maps directly
+              href: map/share-map-direct.md
+            - name: Share maps with org apps
+              href: map/share-map-org-apps.md
+        - name: Manage Map permissions
+          href: map/manage-map-permissions.md
   - name: Build AI agents
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
@@ -959,3 +973,61 @@ items:
             href: git-activator.md
   - name: KQL reference
     href: kusto-tocs/query/toc.yml
+  - name: Reference architectures
+    items:
+    - name: Automative and mobile
+      items:
+      - name: Connected fleet data analytics
+        href: architectures/connected-fleet.md
+      - name: Airline - flight operations   
+        href: architectures/airline-flight-operations.md
+      - name: Fleet management
+        href: architectures/fleet-management.md
+      - name: E-mobility charging network analytics
+        href: architectures/electric-mobility.md
+    - name: Energy and resources
+      items:
+      - name: Wind farm maintenance
+        href: architectures/wind-farm-maintenance.md
+      - name: Energy grid management
+        href: architectures/energy-grid-management.md
+      - name: Energy trading management
+        href: architectures/energy-trading.md
+      - name: Carbon emissions management
+        href: architectures/carbon-emissions.md
+      - name: Smart meter insights
+        href: architectures/smart-meter-insights.md
+    - name: Industrials and manufacturing
+      items:
+      - name: Connected Factory
+        href: architectures/connected-factory.md
+      - name: Predictive maintenance
+        href: architectures/predictive-maintenance.md
+      - name: Product embedded Analytics
+        href: architectures/product-embedded-analytics.md
+      - name: Supply chain
+        href: architectures/supply-chain.md
+    - name: Retail and consumer goods
+      items:
+      - name: Grocery store operations
+        href: architectures/grocery-store-operations.md
+    - name: Healthcare and life sciences
+      items:
+      - name: Healthcare billing system
+        href: architectures/healthcare-billing-system.md
+      - name: Hospital operations
+        href: architectures/hospital-operations.md
+    - name: Financial services
+      items:
+      - name: Fraud detection
+        href: architectures/fraud-detection.md
+    - name: Telecommunications and media
+      items:
+      - name: Internet service provider analytics
+        href: architectures/internet-service-provider-analytics.md    
+      - name: Law enforcement
+        href: architectures/law-enforcement.md
+      - name: Call detail or event data records analytics
+        href: architectures/call-event-data-records-analytics.md
+      - name: Customer churn analytics
+        href: architectures/customer-churn.md        

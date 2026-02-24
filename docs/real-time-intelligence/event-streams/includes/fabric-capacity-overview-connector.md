@@ -1,10 +1,8 @@
 ---
 title: Fabric capacity overview events connector for Fabric event streams
 description: The include file has the common content for configuring Fabric capacity overview events connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 03/18/2025
 ---
 

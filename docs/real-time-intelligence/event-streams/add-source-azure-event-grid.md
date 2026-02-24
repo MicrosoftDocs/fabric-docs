@@ -1,8 +1,6 @@
 ---
 title: Connect an Event Grid Namespace Source to an Eventstream
 description: Learn how to add Azure Event Grid namespace to a Microsoft Fabric eventstream for real-time event and MQTT data ingestion.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.custom:
   - ai-gen-docs-bap

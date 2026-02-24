@@ -1,10 +1,8 @@
 ---
 title: How to add jobs-to-be-done
 description: Learn how to configure Item Task Flow Categories in your Fabric workloads using the Product.json manifest.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

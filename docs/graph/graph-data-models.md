@@ -3,8 +3,6 @@ title: Labeled Property Graphs in Microsoft Fabric
 description: Understand the benefits of the Labeled Property Graph (LPG) model used by graph in Microsoft Fabric.
 ms.topic: concept-article
 ms.date: 02/09/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ---
 

@@ -6,8 +6,9 @@ ms.author: mimart
 ms.reviewer: Ben.Zulauf
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 05/22/2025
+ms.date: 02/20/2026
 LocalizationGroup: Administration
+ai-usage: ai-assisted
 ---
 
 # Manage embed codes
@@ -16,11 +17,17 @@ As a Fabric administrator, you can view the embed codes that are generated for s
 
 :::image type="content" source="media/service-admin-portal-embed-codes/power-bi-settings-embed-codes.png" alt-text="Screenshot that shows the embed codes within the Fabric admin portal.":::
 
-To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
+To access the **Embed codes** page in the Admin portal:
+
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
+
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. Select **Embed Codes**.
 
 ## Disable embed codes
 
-You can disable the *Publish to web* feature, or allow embed codes to work only in your organization. If you disable *Publish to web*, the existing embed codes aren't deleted. When you reenable *Publish to web*, the existing embed codes become active again.
+You can disable the *Publish to web* feature, or allow embed codes to work only in your organization. If you disable *Publish to web*, the existing embed codes aren't deleted. When you re-enable *Publish to web*, the existing embed codes become active again.
 
 Disabling the embed codes is described in [Publish to web](service-admin-portal-export-sharing.md#publish-to-web).
 
@@ -33,6 +40,10 @@ To delete embed codes, select the codes you want to delete and then select **Del
 Embed codes are linked directly to the publisher who creates them. This means that if the publisher loses access to the workspace where a report is published, users can no longer view the embedded report. When a publisher leaves a workspace or an organization, Tenant admins can reassign ownership through the Admin portal, thereby restoring user access. 
 
 To change ownership from the Admin portal, follow these steps:
+
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
+
+1. Select the **Settings** (gear) icon, select **Admin portal**, and then select **Embed Codes**.
 
 1. On the **Embed codes** page, select **Change ownership**. 
 

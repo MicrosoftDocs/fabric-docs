@@ -1,9 +1,6 @@
 ---
 title: Ontology (preview) glossary
 description: This article defines key ontology (preview) terminology.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 01/05/2025
 ms.topic: concept-article
 ---
@@ -27,3 +24,5 @@ This article defines key ontology (preview) terminology. The terms are organized
 | *Preview experience* | The view in the ontology (preview) item where you can view and explore your instantiated ontology data. The experience includes basic data previews, instance data, and a graph view. |
 | *[Graph in Microsoft Fabric](../../graph/overview.md)* | A Fabric item that offers native graph storage and compute for nodes, edges, and traversals over connected data. It's good for path finding, dependency analysis, and graph algorithms. When you create an ontology item, a managed Graph item is created automatically. That Graph is integrated into ontology's [preview experience](how-to-use-preview-experience.md) and can be accessed independently in the Fabric workspace where the ontology item is located. |
 | *[Power BI semantic model in Fabric](../../data-warehouse/semantic-models.md)* | A logical description of an analytical domain (like a business). They hold information about your data and the relationships among that data. You can create them from lakehouse tables, and you can [generate an ontology](concepts-generate.md) directly from your data in a semantic model. |
+
+

@@ -1,11 +1,8 @@
 ---
 title: Eventstream CI/CD - Git Integration and Deployment Pipeline
 description: Learn how to use git integration and deployment pipeline for Eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 4/08/2025
 ms.search.form: cicd
 ---
@@ -107,3 +104,5 @@ Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public 
 
 - [Get started with Git integration](/fabric/cicd/git-integration/git-get-started)
 - [Choose the best Fabric CI/CD workflow option for you](/fabric/cicd/manage-deployment)
+
+

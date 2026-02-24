@@ -57,12 +57,12 @@ items:
       href: assign-variables-to-shortcuts.md
     - name: Use shortcuts REST API
       href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
-  - name: Transform data with shortcuts
+  - name: Shortcut transformations
     items: 
-    - name: Shortcuts file transformations
+    - name: Transform structured data
       href: ./shortcuts-file-transformations/transformations.md
-    - name: Shortcuts AI transformations
-      href: ./Shortcuts-ai-transformations/ai-transformations.md
+    - name: Transform unstructured data with AI
+      href: ./shortcuts-ai-transformations/ai-transformations.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?
@@ -73,6 +73,8 @@ items:
     href: onelake-access-python.md
   - name: OneLake Deep Dive ADLS and Blob APIs in Action
     href: onelake-apis-in-action.md
+  - name: Mount OneLake as a file system
+    href: mount-onelake-with-blobfuse.md
 - name: Integrate with other services
   items:
   - name: Azure Synapse Analytics
@@ -145,7 +147,9 @@ items:
     items:
     - name: OneLake diagnostics
       href: onelake-diagnostics-overview.md
-    - name: Plan for disaster recovery and data protection
+    - name: Recover deleted files
+      href: soft-delete.md
+    - name: Plan for disaster recovery
       href: onelake-disaster-recovery.md
   - name: Encrypt data with customer-managed keys
     href: /fabric/security/workspace-customer-managed-keys?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json

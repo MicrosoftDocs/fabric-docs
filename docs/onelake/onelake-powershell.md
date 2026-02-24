@@ -1,11 +1,8 @@
 ---
 title: Manage OneLake with PowerShell
 description: Microsoft OneLake integrates with the Azure PowerShell module for data reading, writing, and management.
-ms.reviewer: eloldag
-ms.author: mabasile
-author: mabasile-MSFT
+ms.reviewer: eloldag, mabasile
 ms.topic: how-to
-ms.custom:
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how OneLake integrates with Azure PowerShell so I can read, write, and manage data in OneLake with the Azure PowerShell module.
 ---
@@ -56,3 +53,4 @@ $colitems = Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $workspaceName
 ## Related content
 
 - [Integrate OneLake with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
+

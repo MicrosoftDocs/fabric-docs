@@ -24,10 +24,9 @@ The MySQL database connector supports the following authentication types for cop
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a MySQL database. The following links provide the specific Power Query connector information you need to connect to a MySQL database in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to MySQL database using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the MySQL database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [MySQL database prerequisites](/power-query/connectors/mysql-database#prerequisites) before connecting to the MySQL database connector.
-- To connect to the MySQL database connector from Power Query, go to [Connect to MySQL database from Power Query Online](/power-query/connectors/mysql-database#connect-to-mysql-database-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up MySQL database prerequisites](/power-query/connectors/mysql-database#prerequisites).
+1. Check [MySQL database limitations](/power-query/connectors/mysql-database#limitations) to make sure your scenario is supported.
+1. [Connect to MySQL database (from Power Query Online)](/power-query/connectors/mysql-database#connect-to-mysql-database-from-power-query-online).

@@ -1,10 +1,7 @@
 ---
 title: Navigate to Fabric Real-Time hub
 description: Include file with instructions to navigate to Fabric Real-Time hub.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 11/18/2024
 ---
 

@@ -2,10 +2,7 @@
 title: Manage Apache Spark libraries
 description: Learn how to manage and use libraries following best practices. A library is a collection of prewritten code that can provide extra functionality.
 ms.reviewer: shuaijunye
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 04/16/2024
 #customer intent: As a user, I want to learn about the mechanisms that Microsoft Fabric offers to manage libraries in order to make use of prewritten code.
 ---

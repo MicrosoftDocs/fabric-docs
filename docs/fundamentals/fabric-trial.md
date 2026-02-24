@@ -7,7 +7,7 @@ ms.reviewer: alpowers, mibruhje
 ms.topic: concept-article
 ms.custom: fabric-cat
 ms.collection: ce-skilling-ai-copilot
-ms.date: 01/09/2026
+ms.date: 01/30/2026
 ms.update-cycle: 180-days
 ai-usage: ai-assisted
 ---
@@ -123,7 +123,7 @@ For more information, see [Sharing trial capacities](#share-trial-capacities).
 
 ## Start using your trial
 
-To start using your Fabric capacity trial, create a new workspace. Assign that workspace to your trial capacity [using the *Trial* license mode](workspaces.md#license-mode), and then all the items in that workspace are saved and executed in that trial capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
+To start using your Fabric capacity trial, create a new workspace. Assign that workspace to your trial capacity [using the *Trial* workspace type](workspaces.md#workspace-type), and then all the items in that workspace are saved and executed in that trial capacity. Invite colleagues to those workspaces so they can share the trial experience with you. If you, as the Capacity administrator, enable **Contributor permissions**, then others can also assign their workspaces to your trial capacity. For more information about sharing, see [Share trial capacities](#share-trial-capacities).
 
 - **Existing Power BI users**: If you're an existing Power BI user, jump to [Start the Fabric trial](#start-the-fabric-capacity-trial). 
 - **New Power BI users**: The Fabric trial requires a per-user license. Navigate to [https://app.fabric.microsoft.com](https://app.fabric.microsoft.com/?pbi_source=learn-get-started-fabric-trial) to sign up for a Fabric (Free) license. Once you have the free license, you can [begin participating in the Fabric capacity trial](#start-the-fabric-capacity-trial).  
@@ -156,15 +156,10 @@ To share and collaborate during a trial, you need to make sure the right tenant 
 If you're the Capacity administrator, assign the trial capacity to multiple workspaces. Anyone with access to one of those workspaces can now use the Fabric capacity trial.
 
 1. Open **Workspaces** and select the name of a workspace.
-1. Select **Workspace settings**, then **License info**.
-1. Select **Edit** in the **License configuration** section.
-1. Select the **Trial** license mode.
+1. Select **Workspace settings**, then **Workspace type**.
+1. Select the **Fabric Trial** as the workspace type and select **Apply**.
 
-    :::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
-
-1. To apply your changes, select the **Select license** button.
-
-For more information, see [Use Workspace settings](workspaces.md#license-mode).  
+For more information, see [Use Workspace settings](workspaces.md#workspace-type).  
 
 ## Increase trial capacity
 
@@ -195,8 +190,8 @@ One reason to cancel a trial capacity is when the Capacity administrator of a tr
 
 If you don't move the workspaces and their contents to a new capacity that supports Fabric:
 
-- The license mode of any workspaces assigned to that trial capacity changes to Pro. 
-- All non Power BI Fabric items in the workspaces become unusable and may be deleted after seven days. Your Power BI items are unaffected and still available when the workspace license mode returns to Pro.    
+- The workspace type of any workspaces assigned to that trial capacity changes to Power BI Pro. 
+- All non Power BI Fabric items in the workspaces become unusable and may be deleted after seven days. Your Power BI items are unaffected and still available when the workspace type returns to Power BI Pro.    
 - You can't create workspaces that support Fabric capabilities.
 - You can't share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - You can't create any other analytics solutions using these Fabric items.
@@ -318,9 +313,7 @@ The Fabric trial capacity doesn't support autoscale. If you need more compute ca
 
 #### How can trial Capacity administrators migrate existing workspaces into a trial capacity?
 
-Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Trial** as the license mode. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
-
-:::image type="content" source="media/fabric-trial/migrate-trial.png" lightbox="media/fabric-trial/migrate-trial.png" alt-text="Screenshot of the trial workspace settings.":::
+Trial Capacity administrators can migrate existing workspaces into a trial capacity using workspace settings and choosing **Fabric Trial** as the workspace type. To learn how to migrate workspaces, see [create workspaces](create-workspaces.md).
 
 #### How many SQL databases can I create in a Fabric trial capacity?
 

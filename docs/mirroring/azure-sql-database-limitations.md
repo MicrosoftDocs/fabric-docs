@@ -1,7 +1,7 @@
 ---
 title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL Database"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
-ms.reviewer: imotiwala, sbahadur, drskwier, ajayj, atodalbagi
+ms.reviewer: imotiwala, sbahadur, drskwier, ajayj, atodalbagi, wiassaf
 ms.date: 11/25/2025
 ms.topic: concept-article
 ms.custom:
@@ -63,7 +63,8 @@ For troubleshooting, see:
     - External tables  
 
 - The following table-level data definition language (DDL) operations aren't allowed on SQL database source tables when enabled for mirroring. 
-    - Switch/Split/Merge partition
+  - Switch partition
+    
     - Alter primary key
 - When there is DDL change, a complete data snapshot is restarted for the changed table, and data is reseeded.
 - Currently, a table cannot be mirrored if it has the **json** or **vector** data type.

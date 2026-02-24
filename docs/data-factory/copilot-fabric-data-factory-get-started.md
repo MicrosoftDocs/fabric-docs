@@ -3,8 +3,6 @@ title: How to Get Started with Microsoft Copilot in Fabric in the Data Factory W
 description: Learn how to get started with Microsoft Copilot in Fabric in the Data Factory workload to use natural language for creating data integration solutions.
 ms.reviewer: maghan, sngun
 ms.date: 09/02/2025
-ms.service: fabric
-ms.subservice: data-factory
 ms.topic: how-to
 ms.collection:
   - ce-skilling-ai-copilot
@@ -180,3 +178,4 @@ Explain this pipeline error and provide troubleshooting steps: "The pipeline fai
 - [Expressions and functions for Data Factory](expression-language.md)
 - [Tutorial: Create an end-to-end pipeline](../data-factory/tutorial-end-to-end-pipeline.md)
 - [Tutorial: Create an end-to-end dataflow](../data-factory/tutorial-end-to-end-dataflow.md)
+

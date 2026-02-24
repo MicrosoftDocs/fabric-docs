@@ -3,8 +3,7 @@ title: "Create and manage protection policies for Fabric"
 description: "This article describes how to create, edit, or delete a Microsoft Purview protection policy for Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 12/03/2025
 
 #customer intent: As a security admin or Fabric admin, I want to learn how to create protection policies for Microsoft Fabric. 

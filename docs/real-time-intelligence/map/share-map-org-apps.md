@@ -1,11 +1,8 @@
 ---
 title: How to share a map in Microsoft Fabric org apps
 description: Learn how to share a map in Microsoft Fabric org apps.
-ms.reviewer: smunk
-author: deniseatmicrosoft
-ms.author: limingchen
+ms.reviewer: smunk, limingchen
 ms.topic: how-to
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Map
 ---
@@ -16,6 +13,11 @@ Sharing geospatial insights across an organization is now easier and more secure
 
 > [!IMPORTANT]
 > The preview for org apps is off by default for tenants. To enable the preview, you must be a Microsoft Fabric administrator. For more information, see [Prerequisites for creating org app items](/power-bi/consumer/org-app-items/org-app-items#prerequisites-for-creating-org-app-items)
+
+For more information about sharing maps in Fabric Maps, see [Sharing Microsoft Fabric Maps](sharing-maps.md).
+
+> [!IMPORTANT]
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Share a map
 
@@ -50,3 +52,4 @@ Sharing geospatial insights across an organization is now easier and more secure
 
 - When sharing via org apps, always verify recipients have access to all underlying data sources. If recipients lack permissions for underlying data sources, they could encounter access errors
 - Monitor for future updates as additions and improvements to features are released.
+

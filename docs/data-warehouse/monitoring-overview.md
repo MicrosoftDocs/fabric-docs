@@ -1,9 +1,7 @@
 ---
 title: Monitoring in Fabric Data Warehouse Overview
 description: Learn about the solutions and methods to monitor query activity in your Fabric warehouse.
-author: jacindaeng
-ms.author: jacindaeng
-ms.reviewer: wiassaf
+ms.reviewer: jacindaeng
 ms.date: 04/06/2025
 ms.topic: overview
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
@@ -42,3 +40,4 @@ Users can get insights about their live connections, sessions, and requests by q
 - [Monitor your running and completed T-SQL queries using Query activity](query-activity.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
+

@@ -2,8 +2,6 @@
 title: "Overview of OneLake table APIs"
 description: "Introduction to the OneLake REST API endpoint for table operations in Microsoft Fabric, including Iceberg support."
 ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
 ms.date: 10/01/2025
 ms.topic: overview
 #customer intent: As a OneLake user, I want to learn what the OneLake table APIs are, what prerequisites and authentication steps are required, and which table formats are supported, so that I can prepare to connect and work with my data programmatically in Microsoft Fabric.
@@ -59,3 +57,4 @@ Learn [how to get started with the OneLake table API endpoint to interact with D
 - Learn more about [OneLake table APIs for Iceberg](./iceberg-table-apis-overview.md).
 - Learn more about [OneLake table APIs for Delta](./delta-table-apis-overview.md). 
 - Set up [automatic Delta Lake to Iceberg format conversion](../onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).
+

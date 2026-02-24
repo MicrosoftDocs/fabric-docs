@@ -2,10 +2,7 @@
 title: Get data from Real-Time hub 
 description: Learn how to get data from Real-Time hub in a KQL database in Real-time Intelligence.
 ms.reviewer: aksdi
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 01/25/2026
 ms.subservice: rti-eventhouse
 ms.search.form: Get data in a KQL Database
