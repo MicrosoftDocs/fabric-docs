@@ -86,4 +86,4 @@ These scenarios often benefit from CDF and mirroring views because both features
 
 ## Related content
 
-[Mirroring for Microsoft Fabric overview](mirroring-overview.md)
+[Mirroring for Microsoft Fabric overview](overview.md)
