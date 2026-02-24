@@ -8,11 +8,11 @@ ms.topic: include
 ms.date: 02/23/2026
 ---
 
-The Lakehouse and Data Warehouse main pages include Eventhouse Endpoint as part of the **Analyze data with** menu. The Eventhouse Endpoint provides an Eventhouse-powered query experience directly on top of Lakehouse and Data Warehouse data, without data duplication or manual synchronization.
+The Lakehouse and Warehouse main pages include Eventhouse endpoint as part of the **Analyze data with** menu. The Eventhouse endpoint provides an Eventhouse-powered query experience directly on top of Lakehouse and Warehouse data, without data duplication or manual synchronization.
 
-:::image type="content" source="media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL endpoint, eventhouse endpoint, and notebook options.":::
+:::image type="content" source="media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
 
-When you enable the Eventhouse Endpoint, an Eventhouse and a KQL database are automatically created as child artifacts of the source Lakehouse or Warehouse, with schema synchronization handled in the background. The endpoint always reflects the current schema of the source data, enabling near-real-time analytical access.
+When you enable the Eventhouse endpoint, an Eventhouse and a KQL database are automatically created as child items of the source Lakehouse or Warehouse, with schema synchronization handled in the background. The endpoint always reflects the current schema of the source data, enabling near-real-time analytical access.
 
 From Lakehouse or Warehouse, you can:
 
