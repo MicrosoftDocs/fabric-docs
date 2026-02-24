@@ -4,7 +4,7 @@ description: Learn about workspace identity in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 01/26/2026
+ms.date: 02/20/2026
 ---
 
 # Workspace identity
@@ -60,7 +60,7 @@ When an identity is deleted, Fabric items relying on the workspace identity for 
 
  Workspace identity currently can be used in two ways:
 
-* For authentication: See [Authenticate with workspace identity](./workspace-identity-authenticate.md)
+* For authentication: To learn how this identity surfaces as an authentication option when connecting OneLake shortcuts, pipelines, semantic models, and Dataflows Gen2 (CI/CD) to data sources, see [Authenticate with workspace identity](./workspace-identity-authenticate.md).
 
 * For trusted workspace access: Shortcuts in a workspace that has a workspace identity can be used for trusted service access. For more information, see [trusted workspace access](../security/security-trusted-workspace-access.md).
 

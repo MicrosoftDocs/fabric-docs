@@ -1,74 +1,106 @@
 ---
 title: What is a lakehouse?
-description: A lakehouse is a collection of files, folders, and tables that represent a database over a data lake used by Apache Spark and SQL for big data processing.
+description: A lakehouse in Microsoft Fabric combines data lake scalability with data warehouse querying. Store structured and unstructured data in one place and analyze it with Spark and SQL.
 ms.reviewer: avinandac
 ms.topic: overview
-ms.date: 07/20/2025
+ms.date: 02/22/2026
+# customer intent: As a data engineer, I want to understand what a lakehouse is in Microsoft Fabric so that I can use it for big data processing and analytics.
 ms.search.form: Lakehouse Overview
 ---
 
 # What is a lakehouse in Microsoft Fabric?
 
-Microsoft Fabric Lakehouse is a data repository for storing, managing, and analyzing structured and unstructured data in a single location. It's a flexible and scalable solution that allows organizations to handle large volumes of data using various tools and frameworks to process and analyze that data. It integrates with other data management and analytics tools to provide a comprehensive solution for data engineering and analytics. A lakehouse combines the scalability of a data lake with the performance and structure of a data warehouse, providing a unified platform for data storage, management, and analytics.
+A lakehouse in Microsoft Fabric combines the scalability of a data lake with the querying capabilities of a data warehouse. You store structured and unstructured data in a single location, manage it with Delta Lake, and analyze it with both Apache Spark and SQL — all without moving data between systems.
 
-:::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Visual representation of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+A lakehouse gives you:
+
+- **One copy of data** for both data engineering and analytics workloads
+- **Delta Lake format** for ACID transactions, schema enforcement, and time travel
+- **Spark and SQL access** so data engineers use notebooks while analysts use T-SQL
+- **Built-in integration** with Power BI, pipelines, dataflows, and other Fabric items
+
+## Lakehouse vs. data warehouse
+
+The main differences between a lakehouse and a [data warehouse](../data-warehouse/data-warehousing.md) in Microsoft Fabric come down to your preferred development tools, data types, and workload patterns. Both share the same SQL engine and store data in Delta format on OneLake, but they're designed for different scenarios:
+
+| | Lakehouse | Data warehouse |
+|-|-|-|
+| **Primary development tool** | Apache Spark (Python, Scala, SQL, R) | T-SQL |
+| **Data types** | Structured and unstructured | Structured |
+| **Multi-table transactions** | No | Yes |
+| **Data ingestion** | Notebooks, pipelines, dataflows, shortcuts | T-SQL (`COPY INTO`, `INSERT`, `CTAS`), pipelines |
+| **Best for** | Data engineering, data science, medallion architectures | BI reporting, dimensional modeling, SQL-first teams |
+
+You can use both in the same workspace — for example, land and transform data in a lakehouse with Spark, then expose curated datasets to a warehouse for SQL-based reporting. For detailed guidance, see [Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md).
+
+## Work with lakehouse data
+
+You can load, transform, and query data in a lakehouse through several Fabric tools:
+
+- **Lakehouse explorer** — Browse tables and files, load data, and manage metadata directly in the browser. You can switch between table view and file view and add multiple lakehouses to the explorer. See [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
+
+  :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Screencast of the Lakehouse explorer showing table view, file view, and adding lakehouses." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
+
+- **Notebooks** — Write Spark code (Python, Scala, SQL, R) to read, transform, and write data to lakehouse tables and folders. See [Explore data with a notebook](lakehouse-notebook-explore.md) and [Load data with a notebook](lakehouse-notebook-load-data.md).
+
+- **Pipelines** — Use the copy activity and other data integration tools to pull data from external sources into the lakehouse. See [Copy data using copy activity](../data-factory/copy-data-activity.md).
+
+- **Spark job definitions** — Run compiled Spark applications in Java, Scala, or Python for production-grade ETL. See [What is an Apache Spark job definition?](spark-job-definition.md).
+
+- **Dataflows Gen 2** — Ingest and prepare data with a low-code, visual interface. See [Create your first dataflow](../data-factory/create-first-dataflow-gen2.md).
+
+For a full comparison of ingestion options, see [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
 
 ## Lakehouse SQL analytics endpoint
 
-When you create a Lakehouse in Microsoft Fabric, a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) is automatically generated. This endpoint provides a read-only, relational interface over your Delta tables, allowing users to explore and query data using T-SQL. While it offers a familiar SQL experience, it doesn't support the full T-SQL capabilities of a traditional transactional data warehouse. The endpoint also includes a default semantic model, making it easier to use the Lakehouse data in Power BI for reporting and visualization. Together, this setup enables a streamlined experience from data ingestion to analysis and reporting.
+When you create a lakehouse, Fabric automatically generates a [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md). This endpoint lets you:
+
+- **Query Delta tables with T-SQL** — Use familiar SQL syntax without setting up a separate warehouse.
+- **Connect Power BI directly** — A default semantic model is included, so you can build reports without extra configuration.
+- **Share read-only access** — Analysts and report builders can query the data without affecting Spark workloads.
+
+The SQL analytics endpoint is read-only and doesn't support the full T-SQL surface of a [data warehouse](../data-warehouse/data-warehousing.md). Use it for exploration, reporting, and ad-hoc queries.
 
 > [!NOTE]
-> Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can't be queried using the SQL analytics endpoint. If you don't see your table, you need to convert it to Delta format.
+> Only Delta tables appear in the SQL analytics endpoint. Parquet, CSV, and other formats can't be queried through this endpoint. If you don't see your table, [convert it to Delta format](load-to-tables.md).
 
 ## Automatic table discovery and registration
 
-The automatic table discovery and registration is a feature of Lakehouse that provides a fully managed file to table experience for data engineers and data scientists. You can drop a file into the managed area of the Lakehouse and the system automatically validates it for supported structured formats, and registers it into the metastore with the necessary metadata such as column names, formats, compression, and more. (Currently the only supported format is Delta table.) You can then reference the file as a table and use SparkSQL syntax to interact with the data.
+A lakehouse organizes data into two top-level folders: **Tables** for managed Delta tables and **Files** for unstructured or non-Delta data. When you place a file in the **Tables** folder, Fabric automatically:
 
-## Interacting with the Lakehouse item
+- Validates the file against supported formats (currently Delta tables only).
+- Extracts metadata — column names, data types, compression, and partitioning.
+- Registers the table in the metastore so you can query it immediately with Spark SQL or T-SQL.
 
-A data engineer can interact with the lakehouse and the data within the lakehouse in several ways:
-
-- **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
-
-- **Notebooks**: Data engineers can use the notebook to write code to read, transform, and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
-
-- **Pipelines**: Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
-
-- **Apache Spark job definitions**: Data engineers can develop robust applications and orchestrate the execution of compiled Spark jobs in Java, Scala, and Python. Learn more about Spark jobs: [What is an Apache Spark job definition?](spark-job-definition.md)
-
-- **Dataflows Gen 2**: Data engineers can use Dataflows Gen 2 to ingest and prepare their data. Find more information on load data using dataflows: [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
-
-Learn more about the different ways to load data into your lakehouse: [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
+This managed file-to-table experience means you don't need to write `CREATE TABLE` statements manually for data you land in the managed area.
 
 ## Multitasking with lakehouse
 
-The multitasking experience provides a browser tab design that allows you to open and switch between multiple items seamlessly allowing you to manage your data lakehouse more efficiently than ever. No more juggling between different windows or losing track of your tasks. Lakehouse provides an enhanced multitasking experience to make your data management journey as efficient and user-friendly as possible with the following capabilities:
+The lakehouse uses a browser-tab design that lets you open and switch between multiple items without losing your place:
 
-- **Preserve running operations:** You can upload or run data load operation in one tab and check on another task in a different tab. With enhanced multi-tasking, the running operations aren't canceled when you navigate between tabs. You can focus on your work without interruptions.
+- **Preserve running operations:** Data loads and uploads continue running when you switch to a different tab.
 
-- **Retain your context:** Selected objects, data tables, or files remain open and readily available when you switch between tabs. The context of your data lakehouse is always at your fingertips.
+- **Retain your context:** Selected tables, files, and objects stay open when you navigate between tabs.
 
-- **Non-blocking list reload:** A nonblocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background. It ensures that you have the latest data while providing you with a smooth and uninterrupted experience.
+- **Non-blocking list reload:** The files and tables list refreshes in the background without blocking your work.
 
-- **Clearly defined notifications:** The toast notifications specify which lakehouse they're coming from, making it easier to track changes and updates in your multi-tasking environment.
+- **Scoped notifications:** Toast notifications identify which lakehouse they came from, so you can track updates across tabs.
 
 ## Accessible lakehouse design
 
-Accessibility has always been a top priority to ensure that Lakehouse is inclusive and user-friendly for everyone. Here are the key initiatives we implemented so far to support accessibility:
+The lakehouse supports assistive technologies and accessible interaction patterns:
 
-- **Screen reader compatibility:** You can work seamlessly with popular screen readers, enabling visually impaired users to navigate and interact with our platform effectively.
-
-- **Text reflow** Responsive design that adapts to different screen sizes and orientations. Text and content reflow dynamically, making it easier for users to view and interact with our application on various devices.
-
-- **Keyboard navigation:** Improved keyboard navigation to allow users to move through the lakehouse without relying on a mouse, enhancing the experience for those with motor disabilities.
-
-- **Alternative text for images:** All images now include a descriptive alt text, making it possible for screen readers to convey meaningful information.
-
-- **Form fields and Labels:** All form fields have associated labels, simplifying data input for everyone, including those using screen readers.
+- **Screen reader compatibility:** Works with popular screen readers for navigation and interaction.
+- **Alternative text for images:** All images include descriptive alt text.
+- **Labeled form fields:** All form fields have associated labels for screen reader and keyboard users.
+- **Text reflow:** Responsive layout that adapts to different screen sizes and orientations.
+- **Keyboard navigation:** Full keyboard support for navigating the lakehouse without a mouse.
 
 ## Related content
 
-In this overview, you get a basic understanding of a lakehouse. Advance to the next article to learn how to create and use your own lakehouse:
-
-- To start using lakehouses, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
-- To recover accidentally deleted lakehouse files, see [Recover deleted files in OneLake](../onelake/soft-delete.md).
+- [Create a lakehouse in Microsoft Fabric](create-lakehouse.md)
+- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)
+- [Lakehouse SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md)
+- [Explore data with a lakehouse notebook](lakehouse-notebook-explore.md)
+- [Choose between Warehouse and Lakehouse](../fundamentals/decision-guide-lakehouse-warehouse.md)
+- [Recover deleted files in OneLake](../onelake/soft-delete.md)
