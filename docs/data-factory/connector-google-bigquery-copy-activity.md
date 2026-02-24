@@ -127,7 +127,7 @@ The following tables contain more information about the copy activity in Google 
 | **table name** | 	Name of the table. | < your table name > | Yes |table |
 | **Pre-copy script** | A GoogleSQL for copy activity to execute before writing data into destination table in each run. You can use this to clean up the pre-loaded data. | < GoogleSQL query > | No | preCopyScript |
 | **Write behavior** | The write behavior for copy activity to load data into Google BigQuery.  | insert (default) | No | writeBehavior |
-| **Write batch timeout** | Wait time for the batch insert operation to complete before it times out. Allowed values are Timespan.  | < timespan ><br>`00:30:00` (default). | No | writeBatchTimeout |
+| **Write batch timeout** | Wait time for the batch insert operation to complete before it times out. Allowed values are timespan.  | < timespan ><br>`00:30:00` (default)| No | writeBatchTimeout |
 | **Write batch size** | The number of rows to insert into the Google BigQuery table per batch. The allowed value is integer (number of rows).   | < integer ><br>`10000` (default) | No | writeBatchSize |
 
 ## Related content
