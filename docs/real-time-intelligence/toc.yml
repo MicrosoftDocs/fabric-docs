@@ -521,7 +521,7 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
-      - name: Smart capacity control
+      - name: Smart capacity control (preview)
         href: eventhouse-smart-capacity-control.md
       - name: Query cold data with hot windows
         href: query-cold-data-hot-windows.md
