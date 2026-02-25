@@ -38,11 +38,9 @@ The following diagram illustrates the four main operational phases of the archit
 
 1. **Data Science** ML models compute a fraud risk score for each transaction based on behavioral patterns and historical data.
 
-1. Fraud analysts use **Real-Time Dashboards** monitor high-risk transactions and risk trends by region or customer segment.
-
 1. **Activator** alerts internal fraud teams when a transaction surpasses the fraud risk threshold or matches a known fraud signature.
 
-1. **Real-Time Dashboards** provide a high-granularity view of the entire financial ecosystem with low latency, enabling drill-down from overall transaction patterns to specific customer transactions.
+1. Fraud analysts use **Real-Time Dashboards** monitor high-risk transactions and risk trends by region or customer segment. **Real-Time Dashboards** provide a high-granularity view of the entire financial ecosystem with low latency, enabling drill-down from overall transaction patterns to specific customer transactions.
 
 1. Rich **Power BI** reports provide a comprehensive business view of transaction data, fraud trends, and operational performance. 
 

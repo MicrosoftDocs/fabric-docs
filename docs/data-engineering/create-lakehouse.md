@@ -4,7 +4,7 @@ description: Create a lakehouse in Microsoft Fabric to store and analyze structu
 ms.reviewer: avinandac
 ms.topic: how-to
 ms.custom:
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: Create lakehouse
 ---
 
