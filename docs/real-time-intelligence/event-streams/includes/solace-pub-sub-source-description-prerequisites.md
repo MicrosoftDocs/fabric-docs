@@ -14,7 +14,5 @@ Before you start, you must complete the following prerequisites:
 
 - Access to the Fabric premium workspace with Contributor or higher permissions.  
 - You need to have appropriate permissions on the Solace Pub Sub+ event broker services. 
-- Ensure that Transport Layer Security (TLS) is disabled, and the Solace Message Format service is enabled to support TCP-based messaging. 
-- Confirm that the event broker is publicly accessible and not behind a firewall or secured in a virtual network. 
-
-
+- Ensure that the Solace Message Format service is enabled to support TCP-based messaging. 
+- Confirm that the event broker is publicly accessible and not behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).

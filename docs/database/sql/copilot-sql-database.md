@@ -10,6 +10,7 @@ ms.collection:
   - ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ms.devlang: copilot-prompt
+ai-usage: ai-assisted
 ---
 
 # What is Copilot in the SQL database in Fabric workload?
@@ -31,6 +32,22 @@ Get started with Copilot in Fabric in SQL database:
 - **[Copilot Explain and Fix quick action features for Copilot in Fabric SQL database](copilot-quick-actions.md)**: In the ribbon of the SQL query editor, the **Fix** and **Explain** options are quick actions. Highlight a SQL query of your choice and select one of the quick action buttons to perform the selected action on your query.
   - **Fix:** Copilot can fix errors in your code as error messages arise. Error scenarios include incorrect/unsupported T-SQL code, wrong spellings, and more. Copilot also provides comments that explain the changes and suggest SQL best practices.
   - **Explain:** Copilot can provide natural language explanations of your SQL query and database schema in comments format.
+
+> [!NOTE]
+> The Fabric portal Query Editor's Copilot is built on the same underlying tools as the SSMS and VS Code integrations, providing consistent chat and inline assistance behavior across clients. Exact capabilities can vary by client—for example, execution plan analysis and Agent mode workflows may be available only in specific clients.
+
+## Use Copilot with SSMS and VS Code
+
+When you connect to a SQL database in Fabric from SQL Server Management Studio 22 or the Visual Studio Code MSSQL extension, Copilot offers chat and inline T-SQL assistance grounded to the connected database. Key capabilities include:
+
+- **Inline T-SQL completions**: Copilot suggests code completions as you type in the query editor.
+- **Chat-based code generation and explanations**: Ask questions or request T-SQL generation through natural language in the chat panel.
+- **Execution plan analysis**: Copilot can analyze your query execution plan and provide optimization recommendations.
+
+These integrations support two operational modes:
+
+- **Ask mode**: Runs read-only queries by default to answer questions and generate T-SQL without modifying data.
+- **Agent mode**: Enables multi-step, tool-driven workflows that can perform write operations. Any action that modifies data requires explicit user approval before it's executed—write actions are never performed without user consent.
 
 ## Enable Copilot in Fabric SQL database
 
@@ -67,6 +84,8 @@ To view Microsoft's guidelines for responsible AI in SQL database, see [Privacy,
 
 Microsoft is committed to ensuring that our AI systems are guided by our [AI principles](https://www.microsoft.com/ai/principles-and-approach/) and [Responsible AI Standard](https://www.microsoft.com/ai/responsible-ai). These principles include empowering our customers to use these systems effectively and in line with their intended uses. Our approach to responsible AI is continually evolving to proactively address emerging issues.
 
+Prompts and responses used by Copilot for SQL database are protected in accordance with Microsoft's privacy practices and aren't used to train foundation models. For more information on privacy and security, see [Privacy, security, and responsible use for Copilot in Fabric](../../fundamentals/copilot-privacy-security.md).
+
 ## Limitations
 
 Here are the current limitations of Copilot in Fabric in SQL database:
@@ -76,6 +95,7 @@ Here are the current limitations of Copilot in Fabric in SQL database:
 - Copilot responses can include inaccurate or low-quality content, so review outputs before using them in your work.
 - People who can meaningfully evaluate the content's accuracy and appropriateness should review the outputs.
 - The Copilot in Fabric in SQL database chat pane isn't currently available if Private Link is enabled and Public Access is disabled in the tenant setting.
+- Copilot in the Fabric portal doesn't autonomously execute queries; any actions that could alter data require user initiation or approval. For users connecting via SSMS or VS Code, tool-driven workflows (Agent mode) involve multi-step actions that request user approval before executing changes.
 
 ## Related content
 
