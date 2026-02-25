@@ -76,7 +76,7 @@ The following properties are supported for Data Warehouse as **Destination** in 
 The following properties are **required**:
 
 - **Connection**: Select a **Data Warehouse** from the data store list.
-- **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **Use existing** or **Auto create table**.
+- **Table option**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **Use existing** or **Auto create table**.
 - **Table**: Choose an existing table from the table list or specify a table name as destination.
 - **Write behavior**: Specify how to write data to the destination.
 
@@ -184,10 +184,10 @@ The following tables contain more information about a copy activity in Data Ware
 |:---|:---|:---|:---|:---|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
 |**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
-|**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
+|**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• Use existing<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
 |**Write behavior**| Specify how to write data to the destination. | • Insert (default) <br>• Upsert | Yes | writeBehavior:<br>• Insert <br>• Upsert |
-|**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | \<your key columns> <br>(the default is destination schema) | No | upsertSettings: keys|
+|**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | \<your key columns> <br>(the default is destination schema) | No | upsertSettings:<br>• keys|
 |**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
 |**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
