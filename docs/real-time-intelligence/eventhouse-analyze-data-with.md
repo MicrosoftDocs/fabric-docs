@@ -36,7 +36,7 @@ This integration provides a consistent experience regardless of where your data 
 
 1. Select **Analyze data with** > **SQL analytics endpoint**.
 
-   :::image type="content" source="media/eventhouse/database-analyze-data-sql-endpoint.png" alt-text="Screenshot of the analyze data with button expanded with the SQL analytics endpoint option highlighted.":::
+   :::image type="content" source="media/eventhouse/database-analyze-data-sql-endpoint.png" alt-text="Screenshot of the **Analyze data with** button expanded with the SQL analytics endpoint option highlighted.":::
 
 1. The Lakehouse SQL analytics endpoint opens with a new Eventhouse connection.
 

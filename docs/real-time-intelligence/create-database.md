@@ -41,7 +41,7 @@ When you create a new KQL database, an attached environment is automatically cre
 
 1. To access the embedded KQL queryset, select the *KQLdatabasename_queryset* item from your KQL database object tree.
 
-    :::image type="content" source="media/create-database/attached-queryset.png" alt-text="Screenshot of the new embedded KQL queryset item within the database explorer pane.." lightbox="media/create-database/attached-queryset.png":::
+    :::image type="content" source="media/create-database/attached-queryset.png" alt-text="Screenshot of the new embedded KQL queryset item within the database explorer pane." lightbox="media/create-database/attached-queryset.png":::
 
 1. To rename the query environment, select the **Pencil icon** next to its name, and enter a new name.
 

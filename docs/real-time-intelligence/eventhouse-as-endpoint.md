@@ -77,7 +77,7 @@ You can enable the Eventhouse endpoint using any of these three methods:
 
 After using any of the above methods:
 
-1. The **Eventhouse endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
+* The **Eventhouse endpoint** opens with a welcome message. Select **Close** to start querying the Eventhouse.
 
    :::image type="content" source="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome-small.png" alt-text="Screenshot of the welcome message for the Eventhouse endpoint." lightbox="media/eventhouse-endpoint-for-lakehouse/eventhouse-endpoint-welcome.png":::
 
