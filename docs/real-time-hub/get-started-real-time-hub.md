@@ -150,6 +150,19 @@ You can connect to these resources and create eventstreams that show up on **My 
 
 :::image type="content" source="./media/get-started-real-time-hub/microsoft-sources-menu.png" alt-text="Screenshot that shows the Microsoft sources page in Real-Time hub." lightbox="./media/get-started-real-time-hub/microsoft-sources-menu.png":::
 
+## Business events page
+
+The **Business events page** lets you define, discover, and consume business events generated from your applications and analytics in Microsoft Fabric. You can create business events from sources such as user data functions and notebooks, and use them to trigger alerts, automate workflows, run analytics, or provide realtime context to Artificial Intelligence (AI). From this experience, you can configure downstream actions like email or Teams notifications through Activator, execute custom logic, or route events to analytical workflows.
+
+:::image type="content" source="./media/get-started-real-time-hub/business-events-page.png" alt-text="Screenshot that shows the Business events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/business-events-page.png":::
+
+For more information, see the following articles:
+
+- [Business events overview](business-events/business-events-overview.md)
+- [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md)
+- [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md)
+- [Publish business events using Eventstream and react using Activator](business-events/tutorial-business-events-event-stream-user-data-function-activator.md)
+
 ## Fabric events page
 
 The **Fabric events page** shows you the list of system events generated in **Fabric** that you can access. You can **create eventstreams** for events from your Fabric workspaces. You can also set up an alert to send notifications via email, Teams, etc. when an event occurs. Use links from the list to navigate to articles that show you how to create eventstreams for Fabric workspace item events.
