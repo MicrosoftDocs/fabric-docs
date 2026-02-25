@@ -889,6 +889,8 @@
             href: cicd-copy-job.md
           - name: REST API Capabilities
             href: copy-job-rest-api-capabilities.md
+          - name: Workspace monitoring for Copy job
+            href: copy-job-workspace-monitoring.md
       - name: Copy activity
         href: copy-data-activity.md
         items:

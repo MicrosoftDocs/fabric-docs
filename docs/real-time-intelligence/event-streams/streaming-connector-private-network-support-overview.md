@@ -10,7 +10,7 @@ ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Eventstream streaming connector virtual network and on-premises support overview
+# Eventstream streaming connector virtual network and on-premises support overview (preview)
 
 Real-Time Intelligence Eventstream is designed to bring real-time data from diverse sources, transforming it, and effortlessly routing it to various destinations. For sources that run in private network environments, such as cloud virtual network or on-premises infrastructures, a secure method is required to enable Eventstream to access the source.
 
