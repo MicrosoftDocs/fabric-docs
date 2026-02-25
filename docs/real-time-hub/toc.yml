@@ -23,6 +23,8 @@ items:
     href: business-events/tutorial-business-events-notebook-user-data-function-activator.md
   - name: Publish business events using User Data Function and react using Activator
     href: business-events/tutorial-business-events-user-data-function-activation-email.md
+  - name: Publish business events using Eventstream and react using Activator
+    href: business-events/tutorial-business-events-event-stream-user-data-function-activator.md
 - name: Create data streams
   items:
   - name: Supported sources
