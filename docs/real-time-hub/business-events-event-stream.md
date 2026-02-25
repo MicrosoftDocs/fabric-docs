@@ -30,7 +30,7 @@ By applying a filter such as: `No_Empty_Docks == 0`
 
 Eventstream converts high-volume telemetry into a **meaningful and actionable business event** (for example, `StationFullDetected`), focusing only on the business-relevant occurrences, not the raw data stream.
 
-This selective transformation allows downstream systems—Activator workflows, pipelines—to react to actual business conditions instead of noisy, high-frequency data.
+This selective transformation allows downstream systems, such as Activator workflows and pipelines, to react to actual business conditions instead of noisy and high-frequency data.
 
 ## Connecting Eventstream to a business event
 
