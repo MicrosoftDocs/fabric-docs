@@ -24,7 +24,7 @@ Once the PostgreSQL Database CDC source is added to the eventstream, it captures
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Registered user access in the PostgreSQL database.
-- Your PostgreSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your PostgreSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - CDC enabled in the PostgreSQL database and tables.
 
   If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).

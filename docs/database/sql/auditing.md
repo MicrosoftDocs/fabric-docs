@@ -2,7 +2,7 @@
 title: Auditing for Fabric SQL Database
 description: Learn how to configure and manage auditing for Fabric SQL database using Fabric portal.
 ms.reviewer: srsaluru
-ms.date: 11/17/2025
+ms.date: 02/24/2026
 ms.topic: concept-article
 ms.search.form: SQL database security
 ---
@@ -33,6 +33,10 @@ For SQL database in Fabric, audit logs are stored in OneLake: `https://onelake.b
 
 These logs are immutable and accessible to users with appropriate permissions. Logs can also be downloaded using OneLake Explorer or Azure Storage Explorer.
 
+## Billing
+
+Currently, writing audit logs to Fabric OneLake does not incur additional charges, and storage is included as part of the capacity's OneLake storage limits.
+
 ## Configuration options
 
 By default, the **Audit everything** option auditing captures all events including: batch completions and successful and failed authentication. 
@@ -53,7 +57,9 @@ To manage auditing with SQL permissions:
 
 ## Retention
 
-By default, audit data is kept indefinitely. You can configure a custom retention period in the section **Automatically delete logs after this duration**.
+By default, audit data is retained indefinitely, unless you configure a custom retention period to automatically delete logs after this duration.
+
+Audit logs are currently stored in the item's folder in OneLake and are scoped to the item lifecycle. If the item is deleted, its audit logs are also deleted. If you require retention independent of the item's lifecycle, move audit logs to a separate storage location (for example, another Lakehouse or an Azure Storage account) using tools such as AzCopy or SSDT.
 
 ## Configure auditing for SQL database from the Fabric portal
 

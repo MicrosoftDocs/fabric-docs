@@ -3,7 +3,7 @@ title: Lakehouse schemas
 description: Organize lakehouse tables into schemas for better discovery, access control, and cross-workspace queries in Microsoft Fabric.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: Lakehouse schemas
 ---
 

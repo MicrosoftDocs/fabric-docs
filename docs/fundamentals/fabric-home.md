@@ -4,7 +4,7 @@ description: Learn how to quickly find content, search, filter, multitask with t
 author: SnehaGunda
 ms.author: sngun
 ms.topic: overview
-ms.date: 11/07/2025
+ms.date: 02/03/2026
 ai-usage: ai-assisted
 #customer intent: As a new Fabric user, I want to quickly find my content, understand navigation, personalize settings, and get help.
 ---
@@ -93,7 +93,27 @@ The object explorer provides a structured view of items across all your currentl
 
 :::image type="content" source="media/fabric-home/tabs-object-explorer.png" alt-text="Screenshot showing the object explorer & multiple tabs to quickly locate and open resources.":::
 
-### Keyboard shortcuts for Object Explorer and Horizontal Tabs
+### Customize horizontal tab display
+
+You can also configure how horizontal tabs are displayed. Right-click any tab and select **Open horizontal tab setting** menu and choose the display style that fits your needs.
+
+:::image type="content" source="media/fabric-home/horizontal-tab-settings.png" alt-text="Screenshot showing the horizontal tab settings menu.":::
+
+You can choose from the following two tab display patterns:
+
+1. **Full tab names**
+   - Displays the complete name of each tab.
+   - Ideal when clarity and readability of item names are most important.
+   - Tabs expand to fit their full text for easy identification.
+
+1. **Adaptive truncated names**
+   - Automatically shortens tab names when horizontal space becomes limited.
+   - Keeps more tabs visible at the same time. It's useful for multitasking or complex development workflows.
+   - The layout intelligently adapts to your window size and the number of open tabs.
+
+After you make a selection, changes apply instantly, it's not required to refresh the browser or tabs. When the number of open tabs exceeds the limit that can be displayed on the screen, an overflow menu appears. This menu provides a complete list of currently open tabs, allowing you to quickly navigate to any item without losing track of your work.
+
+### Keyboard shortcuts for object explorer and horizontal tabs
 
 Use keyboard shortcuts in horizontal tabs and object explorer to switch between items, expand or collapse folders, and jump to specific tabs. This functionality is similar to an IDE environment.
 
@@ -115,18 +135,15 @@ Object explorer helps you browse workspaces, folders, and items. Use the followi
 
 **Use keyboard shortcuts in horizontal tabs**
 
-Horizontal tabs lets you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
+Horizontal tabs let you switch between multiple open items. Use the following shortcuts to move efficiently across tabs:
 
 | Action | Shortcut |
 |--------|----------|
-| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* MacOS: Control + Number (1–9) |
+| Navigate to the Nth tab | * Windows: Alt + Number (1–9)<br>* macOS: Control + Number (1–9) |
 
 ### More open items
 
 The previous limit of 10 open items has been increased. You can keep more resources active at once. This is especially useful for complex workflows that require multiple pipelines, notebooks, or reports.
-
-> [!NOTE]
-> These multitasking features are rolling out in phases starting mid September 2025. Availability might vary across tenants as the rollout progresses.
 
 ## Maximize editing space with focus mode
 

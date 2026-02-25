@@ -17,7 +17,7 @@ The Azure SQL Managed Instance CDC source connector for Microsoft Fabric event s
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL Managed Instance database. 
-- Your Azure SQL Managed Instance must enable public endpoint and not be behind a firewall or secured in a virtual network. 
+- Your Azure SQL Managed Instance should enable public endpoint and not be behind a firewall or secured in a virtual network. If it doesn't enable public endpoint and is in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - CDC enabled in your Azure SQL Managed Instance by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
 
 

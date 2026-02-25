@@ -26,7 +26,7 @@ Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monito
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running SQL Server on VM database. 
-- Your SQL Server on VM database must be configured to allow public access.  
+- Your SQL Server on VM database must be configured to allow public access. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - Enable CDC in your SQL Server on VM database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
 
 ## Enable CDC in your SQL Server on VM database

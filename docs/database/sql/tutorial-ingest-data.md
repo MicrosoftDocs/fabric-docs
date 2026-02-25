@@ -1,7 +1,6 @@
 ---
 title: SQL Database Tutorial - Ingest Sample Data and Create Objects and Data Using T-SQL and Pipelines
 description: In this third tutorial step, learn how to ingest sample data and create extra objects and data.
-ms.reviewer: bwoody
 ms.date: 02/20/2025
 ms.update-cycle: 180-days
 ms.topic: tutorial

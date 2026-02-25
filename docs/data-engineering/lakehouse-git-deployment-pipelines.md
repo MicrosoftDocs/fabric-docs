@@ -3,7 +3,7 @@ title: Lakehouse git integration and deployment pipelines
 description: Learn what lakehouse metadata is tracked in git-connected workspaces and deployment pipelines in Microsoft Fabric.
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 

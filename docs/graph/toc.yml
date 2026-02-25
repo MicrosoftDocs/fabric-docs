@@ -85,3 +85,13 @@ items:
             href: /rest/api/fabric/graphmodel/background-jobs
           - name: Graph Items REST API
             href: /rest/api/fabric/graphmodel/items
+  - name: Resources
+    items:
+      - name: CI/CD in Fabric
+        href: /fabric/cicd/
+      - name: Graph community forum
+        href: https://community.fabric.microsoft.com/t5/Real-Time-Intelligence/bd-p/da_graph
+      - name: Real-Time Intelligence blog
+        href: https://blog.fabric.microsoft.com/blog/category/real-time-intelligence
+      - name: Microsoft Fabric release plan
+        href: https://roadmap.fabric.microsoft.com/?product=real-timeintelligence

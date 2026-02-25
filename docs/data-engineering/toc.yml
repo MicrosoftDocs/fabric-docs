@@ -65,7 +65,7 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
-  - name: Optimize streaming data ingestion
+  - name: Data streaming with Spark structured streaming
     href: lakehouse-streaming-data.md
   - name: Get streaming data into lakehouse with eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md

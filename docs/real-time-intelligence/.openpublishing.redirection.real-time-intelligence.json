@@ -756,6 +756,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/connect-connecots-in-virtual-network-on-premises.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/choose-the-right-network-security-feature",
+      "redirect_document_id": false
+    },
+    {
     "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-set-alert.md",
     "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
     "redirect_document_id": false
