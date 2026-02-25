@@ -24,13 +24,11 @@ The SAP BW Message Server connector supports the following authentication types 
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to an SAP BW Message Server. The following links provide the specific Power Query connector information you need to connect to an SAP BW Message Server in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to SAP BW Message Server using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the SAP BW Message Server connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [SAP BW Message Server prerequisites](/power-query/connectors/sap-bw/message-setup-and-connect#prerequisites) before connecting to the SAP BW Message Server connector.
-- To connect to the SAP BW Message Server connector from Power Query, go to [Connect to an SAP BW Message Server from Power Query Online](/power-query/connectors/sap-bw/message-setup-and-connect#connect-to-an-sap-bw-message-server-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up SAP BW Message Server prerequisites](/power-query/connectors/sap-bw/message-setup-and-connect#prerequisites).
+1. [Connect to an SAP BW Message Server (from Power Query Online)](/power-query/connectors/sap-bw/message-setup-and-connect#connect-to-an-sap-bw-message-server-from-power-query-online).
 
 ## Set up your connection in a pipeline
 

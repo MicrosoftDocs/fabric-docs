@@ -4,9 +4,7 @@ description: Explore and validate functional dependencies in data with semantic 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: romanbat
-reviewer: RomanBat
 ms.topic: how-to
-ms.custom:
 ms.date: 11/19/2024
 ms.search.form: semantic link
 ---

@@ -3,7 +3,7 @@ title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/02/2026
+ms.date: 02/11/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -324,6 +324,8 @@ when you apply reader version 3 with `deletionVectors` in `readerFeatures` in yo
 [Deletion vectors](https://docs.delta.io/latest/delta-deletion-vectors.html) is supported.
 
 [Change Data Feed](https://docs.delta.io/delta-change-data-feed/) is supported.
+
+[Liquid clustering](https://docs.delta.io/delta-clustering/) is supported.
 
 ## Table summary
 

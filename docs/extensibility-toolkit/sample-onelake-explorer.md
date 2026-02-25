@@ -1,10 +1,8 @@
 ---
 title: OneLake Explorer Item
 description: Learn about the OneLake Explorer item, which demonstrates how to interact with OneLake in a Fabric workload.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: sample
-ms.custom:
 ms.date: 12/04/2025
 ---
 

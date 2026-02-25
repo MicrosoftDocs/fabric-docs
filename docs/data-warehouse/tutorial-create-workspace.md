@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Create a Workspace"
 description: "In this first tutorial, learn how to create a workspace to support the other tutorials in the series."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/06/2025
 ms.topic: tutorial

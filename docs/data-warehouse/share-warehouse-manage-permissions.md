@@ -1,8 +1,6 @@
 ---
 title: Share Your Warehouse and Manage Permissions
 description: Learn how to share your warehouse in Microsoft Fabric and manage its user permissions.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: mesrivas, fresantos
 ms.date: 07/14/2025
 ms.topic: how-to

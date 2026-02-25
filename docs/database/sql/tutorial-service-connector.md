@@ -2,8 +2,7 @@
 title: Connect App Service to a SQL database in Fabric
 description: Tutorial showing how to connect a web app to a SQL database in Microsoft Fabric using Service Connector
 #customer intent: As a web app developer I want to connect an App Service resource to a SQL database in Fabric so that my app can reach the SQL database in Microsoft Fabric.
-author: maud-lv
-ms.author: malev
+ms.reviewer: malev
 ms.custom: service-connector
 ms.topic: tutorial
 ai-usage: ai-assisted
@@ -119,3 +118,4 @@ When no longer needed, delete the resource group and all related resources creat
 
 - [Connect App Service with Service Connector](/azure/service-connector/quickstart-portal-app-service-connection)
 - [Integrate SQL database in Microsoft Fabric with Service Connector](/azure/service-connector/how-to-integrate-fabric-sql)
+

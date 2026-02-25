@@ -1,11 +1,8 @@
 ---
 title: Sharing Microsoft Fabric Maps
 description: Learn about sharing maps in Microsoft Fabric.
-ms.reviewer: smunk
-author: deniseatmicrosoft
-ms.author: limingchen
+ms.reviewer: smunk, limingchen
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Share map 
 ---
@@ -103,3 +100,4 @@ To learn more, please see:
 
 > [!div class="nextstepaction"]
 > [How to share a map using org apps](share-map-org-apps.md)
+

@@ -1,9 +1,6 @@
 ---
 title: Create and add data to an API for GraphQL
 description: Learn how to create an API for GraphQL in Fabric, and then how to add data to the API and build your schema.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: freshness-kr
 ms.search.form: Get started with GraphQL API
@@ -122,3 +119,4 @@ That's it! You successfully created a GraphQL API in Fabric, connected your data
 
 - [Fabric API for GraphQL editor](api-graphql-editor.md)
 - [Fabric API for GraphQL schema view and Schema explorer](graphql-schema-view.md)
+

@@ -1,11 +1,8 @@
 ---
 title: MQTT connector for Fabric event streams
 description: The include files has the common content for configuring an MQTT connector for Fabric event streams and Real-Time hub. 
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
-ms.custom:
 ms.date: 01/26/2026
 ---
 
@@ -32,3 +29,5 @@ ms.date: 01/26/2026
 1. For **Topic name**, enter the MQTT topic to subscribe to. The connector supports only a single topic.
 1. For **Version**, select either **V5** or **V3** based on your MQTT broker's protocol version.
 1. Select **Next** to proceed to the **Review + connect** page. Review your configuration settings, and then select **Add** to connect to your MQTT source.
+
+

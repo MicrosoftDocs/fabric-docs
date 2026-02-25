@@ -71,6 +71,8 @@ items:
     href: job-scheduler.md
   - name: Use Delta Lake interoperability
     href: delta-lake-interoperability.md
+  - name: Optimize table maintenance across workloads
+    href: table-maintenance-optimization.md
 
 - name: Use Direct Lake
   items:

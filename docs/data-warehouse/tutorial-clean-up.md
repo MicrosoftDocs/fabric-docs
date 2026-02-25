@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Clean up Tutorial Resources"
 description: "In this tutorial, you will remove the workspace you created in the first tutorial."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/06/2025
 ms.topic: tutorial

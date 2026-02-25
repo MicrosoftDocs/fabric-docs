@@ -52,6 +52,21 @@ Maps in Real-Time Intelligence are suited for a range of location‑based scenar
 
 By integrating real-time analytics with geographic context, Maps help transform streaming data into actionable, location‑aware insights.
 
+## Pricing and capacity units
+
+Fabric Maps uses the same capacity units (CUs) as other Microsoft Fabric workloads. You don't need to purchase a separate map‑specific license or SKU.
+
+All Fabric Maps operations consume your organization's Fabric capacity. This includes activities such as rendering base map tiles, interacting with map layers, and generating tilesets. Capacity consumption varies based on the type and volume of map operations and is shared with other workloads running in the same Fabric capacity.
+
+| Meter Name   | Operation Name  | Description    | Unit of Measure  | Fabric Consumption Rate (CU Hours)  |
+|--------------|-----------------|----------------|------------------|-------------------------------------|
+| Map processing CU | MapProcessing | Tileset generation jobs | Hour | 11                                  |
+| Map services CU | MapServices | Map services usage in item | Transaction | 0.025                         |
+
+You can monitor your graph workload's resource consumption and performance in the [Fabric Capacity Metrics app](../../enterprise/metrics-app.md).  
+
+For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
 ## Next steps
 
 > [!div class="nextstepaction"]

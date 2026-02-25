@@ -1,14 +1,10 @@
-﻿---
+---
 title: Semantic link and Power BI connectivity
 description: See how semantic link and Microsoft Fabric provide Power BI data connectivity for pandas and Spark ecosystems.
-ms.author: jburchel
-author: jonburchel
 ms.reviewerr: marcozo
-reviewer: eisber
 ms.topic: concept-article
 ms.date: 08/15/2025
 ms.search.form: semantic link
-ms.reviewer: scottpolly
 ---
 
 # Power BI connectivity with semantic link
@@ -193,3 +189,4 @@ The `add_measure` method does the following steps:
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 - [Explore and validate data by using semantic link](semantic-link-validate-data.md)
 - [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)
+

@@ -24,10 +24,9 @@ The Google BigQuery connector supports the following authentication types for co
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Google BigQuery data. The following links provide the specific Power Query connector information you need to connect to Google BigQuery data in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Google BigQuery using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Google BigQuery connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Google BigQuery prerequisites](/power-query/connectors/google-bigquery#prerequisites) before connecting to the Google BigQuery connector.
-- To connect to the Google BigQuery connector from Power Query, go to [Connect to Google BigQuery data from Power Query Online](/power-query/connectors/google-bigquery#connect-to-google-bigquery-data-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Google BigQuery prerequisites](/power-query/connectors/google-bigquery#prerequisites).
+1. Check [Google BigQuery limitations and considerations](/power-query/connectors/google-bigquery#limitations-and-considerations) to make sure your scenario is supported.
+1. [Connect to Google BigQuery data (from Power Query Online)](/power-query/connectors/google-bigquery#connect-to-google-bigquery-data-from-power-query-online).

@@ -1,8 +1,6 @@
 ---
 title: Query with the SQL Query Editor
 description: Learn how to use the SQL database query editor in the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: yoleichen, pradeepsrikakolapu
 ms.date: 01/05/2026
 ms.topic: how-to

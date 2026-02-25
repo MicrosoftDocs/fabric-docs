@@ -6,7 +6,7 @@ ms.author: mimart
 ms.topic: how-to
 ms.date: 11/19/2025
 
-# Customer intent: As a developer, learn how to enable service principal authentication to permit use of read-only and update admin APIs.
+#customer intent: As a developer, learn how to enable service principal authentication to permit use of read-only and update admin APIs.
 ---
 
 # Enable service principal authentication for admin APIs

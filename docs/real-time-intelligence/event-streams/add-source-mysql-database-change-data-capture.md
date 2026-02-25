@@ -1,9 +1,7 @@
 ---
 title: Add MySQL Database CDC source to an eventstream
 description: Learn how to add Azure Database for MySQL Change Data Capture (CDC) source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -29,7 +27,7 @@ Once the MySQL Database CDC source is added to the eventstream, it captures row-
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to an instance of MySQL Database, such as: a database in Azure Database for MySQL - Flexible Server.
-- Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your MySQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 
@@ -119,3 +117,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

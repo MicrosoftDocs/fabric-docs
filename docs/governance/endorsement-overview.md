@@ -4,7 +4,6 @@ description: Learn how to make quality content easier to find through promotion 
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 07/11/2024
 ---
 
