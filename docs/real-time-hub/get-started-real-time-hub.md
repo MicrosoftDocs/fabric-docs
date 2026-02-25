@@ -132,7 +132,7 @@ You can reach the **Data sources** page in two ways:
     :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 - Select **Add data** on the left navigation menu.
 
-    :::image type="content" source="media/get-started-real-time-hub/real-time-hub-add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/add-data.png":::
+    :::image type="content" source="media/get-started-real-time-hub/real-time-hub-add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/real-time-hub-add-data.png":::
 
 Then, follow the prompts to complete the flow. Here's a full list of built-in sources.
 
