@@ -529,10 +529,19 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
-      - name: Smart capacity control (preview)
-        href: eventhouse-smart-capacity-control.md
-      - name: Query cold data with hot windows
-        href: query-cold-data-hot-windows.md
+      - name: Eventhouse capacity 
+        items:
+          - name: Resource consumption
+            href: real-time-intelligence-consumption.md
+          - name: Smart capacity control
+            href: eventhouse-smart-capacity-control.md
+            displayName: consumption, CU, metrics app, monitor, billing, usage
+          - name: Understand Eventhouse compute usage
+            href: eventhouse-compute-observability.md
+          - name: Eventhouse Cost per GB Ingested
+            href: pricing-cost-drivers.md
+          - name: Query cold data with hot windows
+            href: query-cold-data-hot-windows.md   
       - name: Migrate
         items:
           - name: Migrate from Azure Data Explorer
@@ -699,14 +708,7 @@ items:
               - name: External tools
                 items:
                   - name: Query Fabric OneLake Delta tables from Snowflake
-                    href: query-onelake-from-snowflake.md
-      - name: Resource consumption
-        href: real-time-intelligence-consumption.md
-        displayName: consumption, CU, metrics app, monitor, billing, usage
-      - name: Understand Eventhouse compute usage
-        href: eventhouse-compute-observability.md
-      - name: Eventhouse Cost per GB Ingested
-        href: pricing-cost-drivers.md
+                    href: query-onelake-from-snowflake.md    
   - name: KQL Queryset
     items:
       - name: Copilot for Writing KQL Queries
