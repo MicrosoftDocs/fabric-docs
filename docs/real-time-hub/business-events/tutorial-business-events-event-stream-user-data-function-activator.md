@@ -45,7 +45,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
     1. Select **string** for **event type**, and enter `BikepointID` for the **name**. 
 
         :::image type="content" source="./media/tutorial-business-events-event-stream-user-data-function-activator/event-property-configuration.png" alt-text="Screenshot that shows the configuration of the business event property." lightbox="./media/tutorial-business-events-event-stream-user-data-function-activator/event-property-configuration.png":::
-    1. Repeat the above step to add the following properties: `Street` (string), `Neighbourhood` (string).
+    1. Repeat the previous step to add the following properties: `Street` (string), `Neighbourhood` (string).
 
         :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/define-business-event-schema.png" alt-text="Screenshot of the business event schema properties configuration." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/define-business-event-schema.png":::
 
@@ -65,11 +65,11 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. Select **+ New item** and then select **Eventstream** in the **Get data** section.
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/new-event-stream-tile.png" alt-text="Screenshot of the new event stream tile." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/new-event-stream-tile.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/new-event-stream-tile.png" alt-text="Screenshot of the new eventstream tile." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/new-event-stream-tile.png":::
 
 1. In the **New Eventstream** dialog, enter a name for the eventstream (for example, `BikeShareStationEventStream`), and then select **Create**.
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/event-stream-name.png" alt-text="Screenshot of the new event stream dialog." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/event-stream-name.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/event-stream-name.png" alt-text="Screenshot of the new eventstream dialog." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/event-stream-name.png":::
 
 1. In the Eventstream editor, select the **Use sample data** tile. 
 
@@ -86,7 +86,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 1.  Add a filter to the eventstream. In this tutorial, you use `No_Empty_Docks == 0` to convert high-volume telemetry into a meaningful business condition so that only actionable situations are published as business events. Follow these steps to define the filter:
     1. Select **down arrow** on the **Transform events or add destination** card, and then select **Filter**.
 
-        :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/select-filter-transformation.png" alt-text="Screenshot that shows how to add a filter to the event stream." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/select-filter-transformation.png":::
+        :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/select-filter-transformation.png" alt-text="Screenshot that shows how to add a filter to the eventstream." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/select-filter-transformation.png":::
 
     1. Select the **Action** link on the Filter card. 
     
@@ -98,18 +98,18 @@ This tutorial walks you through the end-to-end workflow of publishing business e
    
     1. Enter `0` for the value.
     
-    1. Select **Save** to add the filter to the event stream.
+    1. Select **Save** to add the filter to the eventstream.
 
         :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/filter-configuration.png" alt-text="Screenshot that shows the configuration of the filter transformation." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/filter-configuration.png":::
 
         > [!NOTE]
-        > `No_Empty_Docks` represents the remaining capacity at a station. When its value is 0, the station is full, this is the point that matters from a business perspective. By applying this filter, analysts can identify supply imbalances, specifically stations where users cannot return bikes because no empty docks are available. 
+        > `No_Empty_Docks` represents the remaining capacity at a station. When its value is 0, the station is full, this is the point that matters from a business perspective. By applying this filter, analysts can identify supply imbalances, specifically stations where users can't return bikes because no empty docks are available. 
 
 1. On the **Filter** card, select **Action** (or) hover the mouse over the card, and select the **+** button.
 
 1. In the list of destinations, select **Business events**.
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/add-business-event-destination.png" alt-text="Screenshot that shows how to add a business event destination to the event stream." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/add-business-event-destination.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/add-business-event-destination.png" alt-text="Screenshot that shows how to add a business event destination to the eventstream." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/add-business-event-destination.png":::
 
 1. On the **Business events** card, select the **Edit** (pencil icon). 
 
@@ -130,7 +130,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/save-business-event.png" alt-text="Screenshot that shows the Business events window with the Save button selected." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/save-business.png":::
 
-1. On the **StationFullDetected** card, selelct **Add** next to **Add a mapper to map schema**. 
+1. On the **StationFullDetected** card, select **Add** next to **Add a mapper to map schema**. 
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/add-mapper-link.png" alt-text="Screenshot that shows the Business event card with the Add link highlighted." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/add-mapper-link.png":::
     
@@ -138,9 +138,9 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/map-schema.png" alt-text="Screenshot that shows the Map schema window with the schema mapped." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/map-schema.png":::
 
-1. Select **Publish** to publish the event stream.
+1. Select **Publish** to publish the eventstream.
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/publish-event-stream.png" alt-text="Screenshot that shows the Publish button for the event stream." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/publish-event-stream.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/publish-event-stream.png" alt-text="Screenshot that shows the Publish button for the eventstream." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/publish-event-stream.png":::
 
 ## Verify published business events
 
@@ -148,7 +148,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. Select the created business event (for example, `StationFullDetected`).
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/select-business-event-real-time-hub.png" alt-text="Screenshot of the Business events page in Real-Time hubwith the event selected." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/select-business-event-real-time-hub.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/select-business-event-real-time-hub.png" alt-text="Screenshot of the Business events page in Real-Time hub with the event selected." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/select-business-event-real-time-hub.png":::
 
 1. In the **Publisher** tab, confirm that you see events are following in from the bicycle sample source.
 
@@ -166,51 +166,51 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 ## Configure custom business logic with a user data function
 
-1. Go to your workspace and create a new user data function named `ProcessVibrationCritical`.
+1. Open another tab in your web browser, and go to your workspace.
+
+1. 1. Select **+ New item** and then search for **User data functions** and select it.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/create-user-data-function.png" alt-text="Screenshot of creating a new user data function in the workspace." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/create-user-data-function.png":::
 
-1. Create a new Function.
+1. Enter `ProcessStationFull` as the name for the user data function, and then select **Create**.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/create-new-function-dialog.png" alt-text="Screenshot of the new function creation dialog." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/create-new-function-dialog.png":::
+
+1. Select **New function** to create a new function in the user data function item.
+
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/create-new-function.png" alt-text="Screenshot of the Create a new sample function window with New function selected." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/create-new-function.png":::    
 
 1. Modify the logic of your new function and add the input parameters required to receive your business event.
 
     ```python
-    import datetime
-    import fabric.functions as fn
-    import logging
-    import json
-
-    udf = fn.UserDataFunctions()
-
-    @udf.function()
-
-    def processVibrationCritical(
-        machineID: str,
-        productionLine: str,
-        measuredVibration: str,
-        impactAssessment: str,
-        recommendedAction: str
-    ) -> str:
+    import datetime 
+    import fabric.functions as fn 
+    import logging 
+    import json 
     
-        logging.info("processVibrationCritical invoked.")
-
-        event_data = {
-            "machineID": machineID,
-            "productionLine": productionLine,
-            "measuredVibration": measuredVibration,
-            "impactAssessment": impactAssessment,
-            "recommendedAction": recommendedAction
-        }
-
-        # Log as structured JSON for easy searching/filtering in logs
-        logging.info("processVibrationCritical payload=%s", json.dumps(event_data))
-
-        return (
-            f"Processed processVibrationCritical for machineID={machineID} "
-            f"on line={productionLine} at {datetime.datetime.now()}."
-        )
+    udf = fn.UserDataFunctions() 
+    
+    @udf.function() 
+    def processStationFull( 
+        bikepointID: str, 
+        street: str, 
+        neighbourhood: str 
+    ) -> str: 
+    
+        logging.info("processStationFull invoked.") 
+        event_data = { 
+            "bikepointID": bikepointID, 
+            "street": street, 
+            "neighbourhood": neighbourhood, 
+        } 
+    
+        # Log as structured JSON for easy searching/filtering in logs 
+        logging.info("processStationFull payload=%s", json.dumps(event_data)) 
+    
+        return ( 
+            f"Processed processStationFull for bikepointID={bikepointID} " 
+            f"on street={street} at {datetime.datetime.now()}." 
+        )   
     ```
 
 1. Test your function.
@@ -221,11 +221,9 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
     1. In the Test window, enter these sample values, and select **Test**. 
     
-        - machineID: 12345
-        - productionLine: WestLine01
-        - measuredVibration: 1.52
-        - impactAssessment: Production slowdown risk
-        - recommendedAction: Schedule maintenance
+        - bikepointID: 1234
+        - street: Main Street
+        - neighborhood: Downtown   
     
     1.  Verify the output and the logs to confirm that the function is working as expected.
     
@@ -237,6 +235,8 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 ## Create an Activator trigger to consume events
 
+1. Open another tab in your web browser, and go to the Fabric portal home page.
+ 
 1. Select the Real-Time hub icon in the left navigation pane of the Fabric portal.
 
 1. In the Real-Time hub, select **Business events** under the **Subscribe to** category.
@@ -245,9 +245,11 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/set-alert-business-event.png" alt-text="Screenshot of selecting the Set alert option for a business event." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/set-alert-business-event.png":::
 
-1. On the **Add rule** page, in the **Details** section, for **Rule name**, enter a name for the rule. For example, **VibrationCriticalDetected_Rule**. 
+1. On the **Add rule** page, in the **Details** section, for **Rule name**, enter a name for the rule. For example, **StationFullDetected_Rule**. 
 
 1. In the **Condition** section, for **Check**, select **On each event**.
+
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/rule-name-condition.png" alt-text="Screenshot of selecting the Add rule window with the rule name and condition." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/rule-name-condition.png":::
 
 1. In the **Action** section, select one of the following actions. To configure the alert to trigger a function when the condition is met, follow these steps:
 
@@ -255,11 +257,11 @@ This tutorial walks you through the end-to-end workflow of publishing business e
     
         :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/run-function-preview-button.png" alt-text="Screenshot of selecting Run Function as the action." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/run-function-preview-button.png":::
 
-    1. Select the Fabric item you want to run, and then select **Add** to continue (for example, the `ProcessVibrationCritical` user data function).
+    1. Select the Fabric item you want to run, and then select **Add** to continue (for example, the `ProcessStationFull` user data function).
 
          :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/select-fabric-item-to-run.png" alt-text="Screenshot of selecting the Fabric item to run." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/select-fabric-item-to-run.png":::
 
-    1. Select the function you want to use to process the action (for example, the `processVibrationCritical` function).
+    1. Select the function you want to use to process the action (for example, the `processStationFull` function).
 
         :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/select-function-process-action.png" alt-text="Screenshot of selecting the function to process the action." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/select-function-process-action.png":::
 
@@ -277,7 +279,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/create-new-activator-item.png" alt-text="Screenshot of selecting the Create a new item option." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/create-new-activator-item.png":::
 
-1. In the dialog box, enter a name for the new Fabric activator item (for example, **VibrationCriticalDetected_Activator**), and then select **Create**.
+1. In the dialog box, enter a name for the new Fabric activator item (for example, **StationFullDetected_Activator**), and then select **Create**.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/create-rule-button.png" alt-text="Screenshot of the specifying a name for the activator item." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/create-rule-button.png":::
 
@@ -289,9 +291,6 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 ## Test the solution 
 
-### Publish another event
-
-In the Spark notebook, run the cell to publish a new `VibrationCriticalDetected` business event again. 
 
 ### View business event in the Real-Time hub
 
@@ -299,11 +298,11 @@ In the Spark notebook, run the cell to publish a new `VibrationCriticalDetected`
 
 1. In the Real-Time hub, select **Business events** in the left menu.
 
-1. Select **VibrationCriticalDetected** from the list of business events.
+1. Select **StationFullDetected** from the list of business events.
 
-1. In the **Publisher** tab, confirm that you see the newly published event and the old event you published at the beginning of the tutorial. If you don't see the new event, select the refresh button to refresh the list of events. It might take a few seconds for the new event to appear in the list.
+1. In the **Publisher** tab, confirm that you see the published events. It might take a few seconds for new events to appear in the list.
  
-1. In the list of publishers, confirm that the notebook you used to publish the event is listed as a publisher.
+1. In the list of publishers, confirm that the eventstream you used to publish the event is listed as a publisher.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/publishers-tab.png" alt-text="Screenshot of the Publishers tab of the business event page." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/publishers-tab.png":::
 
@@ -323,7 +322,7 @@ In the Spark notebook, run the cell to publish a new `VibrationCriticalDetected`
 
 1. Confirm that you see the consumer filter with the activator you created.
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/data-preview-tab.png" alt-text="Screenshot of the consumer filter in the Data preview tab." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/data-preview-tab.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/data-preview-tab-consumer.png" alt-text="Screenshot of the consumer filter in the Data preview tab." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/data-preview-tab-consumer.png":::
  
 ### View business event in the activator run history
 
@@ -339,11 +338,11 @@ In the Spark notebook, run the cell to publish a new `VibrationCriticalDetected`
 
 1. In the workspace, open the `ProcessVibrationCritical` user data function you created.
 
-1. Switch to Run only mode using the mode switcher.
+1. Switch to **Run only** mode using the mode switcher.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/user-data-function-run-only-mode.png" alt-text="Screenshot that shows how to switch a user data function to run only mode." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/user-data-function-run-only-mode.png":::    
 
-1. Hover over the function name in the functions list, select the ellipses icon (...), and then select View historical log.
+1. Hover over the function name in the functions list, select the ellipses icon (**...**), and then select **View historical log**.
 
     :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/view-historical-log-menu.png" alt-text="Screenshot that shows the View historical log option." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/view-historical-log-menu.png"::: 
 
