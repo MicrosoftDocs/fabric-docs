@@ -7,7 +7,7 @@ ms.date: 02/25/2026
 
 # Using a notebook as a business events publisher
 
-Notebooks provide one of the most flexible and programmable ways to publish business events in Microsoft Fabric. Because notebooks can execute arbitrary Python logic, access datasets, call APIs, perform complex calculations, and integrate with machine learning workflows, they're uniquely suited for generating business events from analytical or operational computations.
+Notebooks provide one of the most flexible and programmable ways to publish business events in Microsoft Fabric. Notebooks can execute arbitrary Python logic, access datasets, call APIs, perform complex calculations, and integrate with machine learning workflows. They're uniquely suited for generating business events from analytical or operational computations.
 
 By acting as publishers, notebooks allow teams to convert **analytical insights, failure detections,** and **custom business rules** directly into actionable business events that downstream systems can consume in real time.
 

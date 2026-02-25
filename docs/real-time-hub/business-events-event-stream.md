@@ -24,11 +24,11 @@ For example, consider a mobility dataset that continuously reports station-level
 * No_Bikes
 * No_Empty_Docks
 
-Analysts and operations teams often need real-time signals about availability imbalances, such as stations that are full or empty. Eventstream can evaluate each incoming record and, through a simple transformation, identify when a station has **no empty docks left—a meaningful business condition.
+Analysts and operations teams often need real-time signals about availability imbalances, such as stations that are full or empty. Eventstream can evaluate each incoming record and, through a simple transformation, identify when a station has **no empty docks left** — a meaningful business condition.
 
 By applying a filter such as: `No_Empty_Docks == 0`
 
-Eventstream converts high-volume telemetry into a **meaningful and actionable business event** (for example, `StationFullDetected`), focusing only on the business-relevant occurrences, not the raw data stream.
+Eventstream converts high-volume telemetry into a **meaningful and actionable business event**, focusing only on the business-relevant occurrences, rather than the raw data stream. For example, `StationFullDetected` becomes the business event that downstream systems can react to, rather than processing every single update about station availability.
 
 This selective transformation allows downstream systems, such as Activator workflows and pipelines, to react to actual business conditions instead of noisy and high-frequency data.
 
@@ -65,7 +65,7 @@ Schema mapping also enforces CloudEvents metadata, ensuring protocol consistency
 
 ## Publishing and operationalizing the Eventstream
 
-After defining transformations and schema mapping, publish Eventstream to start producing business events. When you publish, you activate the pipeline, which enables:
+After defining transformations and schema mapping, publish the Eventstream to start producing business events. When you publish, you activate the pipeline, which enables:
 
 * Continuous ingestion of the operational dataset.
 
