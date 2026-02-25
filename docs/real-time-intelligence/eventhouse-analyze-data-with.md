@@ -20,7 +20,7 @@ From a KQL database in Eventhouse, the **Analyze data with** action lets you:
 This integration provides a consistent experience regardless of where your data lives. The same **Analyze data with** menu is available in Lakehouse, Warehouse, and Eventhouse, so the way you analyze data looks and feels the same across all workloads. Whether you're doing exploratory analysis, advanced transformations, or experimentation, you can get started quickly from a familiar starting point.
 
 > [!TIP]
-> To use KQL queries to analyze the data, use the embedded KQL queryset embedded.
+> To use KQL queries to analyze the data, use the KQL queryset embedded in your Eventhouse.
 > See [Explore your KQL database with the embedded KQL queryset](create-database.md#explore-your-kql-database-with-the-embedded-kql-queryset).
 
 ## Prerequisites
