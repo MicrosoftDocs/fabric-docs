@@ -2,9 +2,10 @@
 title: "Quickstart: Create your first graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes.
 ms.topic: quickstart
-ms.date: 02/02/2026
+ms.date: 02/20/2026
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
+ai-usage: ai-assisted
 ---
 
 # Quickstart: Create your first graph in Microsoft Fabric
@@ -20,9 +21,9 @@ For a comprehensive tutorial that covers the full Adventure Works data model and
 Before you start this quickstart, verify that:
 
 1. [Graph is available in your region](overview.md#region-availability).
-1. Graph is enabled in your Fabric tenant.
+1. Graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
 
-   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
+   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable Graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 
 1. You're a member of a Fabric workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](../admin/portal-workspaces.md).
 

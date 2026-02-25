@@ -5,6 +5,7 @@ ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
 ms.date: 12/10/2025
 ms.search.form: Operations Agent Billing
+ai-usage: ai-assisted
 ---
 
 # Operations agent capacity and billing
@@ -13,7 +14,7 @@ Operations agent in Microsoft Fabric Real-Time Intelligence helps you automate m
 
 ## Key concepts
 - **Capacity Units (CUs):** All operations in Fabric consume CUs. In operations agents, the system aggregates one or more consumed CUs per agent based on its operations.
-- **Preview Status:** Operations agents are currently in public preview. Billing for the 'Copilot in Fabric' meter starts December 12th, 2025 and billing for the other meters will start January 8th, 2026.
+- **Preview Status:** Operations agents are currently in public preview. Billing for the 'Copilot in Fabric' meter starts December 12th, 2025 and billing for the other meters will start no earlier than January 8, 2026.
 
 ## How Real-Time Intelligence measures operations agent usage
 
@@ -25,7 +26,7 @@ Operations agent in Microsoft Fabric Real-Time Intelligence helps you automate m
 
 - **Operations agent autonomous reasoning** refers to the LLM processing that happens when a condition is met. The agent analyzes the data, generates recommendations, and sends messages to the user for approval.
 
-- **Storage** refers to the cost associated with retaining Fabric items and events. Data monitored by the agent is stored within Fabric for 30 days, incurring the applicable Fabric storage charges.
+- **OneLake storage** refers to the cost associated with retaining Fabric items and events. Data monitored by the agent is stored within Fabric for 30 days, incurring the applicable OneLake storage charges, which are billed per GB per hour.
 
 ### Usage categories
 
@@ -38,7 +39,7 @@ Operations agent consumes capacity based on the following factors:
     | Operations Agents Compute Capacity Usage CU  | Operations agent compute | 0.46 CUs per vCore hour |
     | Copilot and AI Capacity Usage CU | Copilot in Fabric | 100 CUs per 1,000 input tokens 400 CUs per 1,000 output tokens |
     | Operations Agents Autonomous Reasoning Capacity Usage CU  | Operations agent autonomous reasoning | 400 CUs per 1,000 input tokens 1600 CUs per 1,000 output tokens |
-    | N/A | storage | per GB per hour |
+    | N/A | OneLake storage | billed per GB per hour under OneLake storage |
 
 - **Other CU consumption:** Operations agents can drive additional CU consumption from other Fabric items or products, such as the Eventhouse being monitored:
   - **Configuration phase:** Copilot in Fabric incurs usage while generating the agent's playbook. Eventhouse usage arises from queries to identify fields and rules to monitor. Storage costs apply for saving the agent's configuration.
@@ -53,6 +54,8 @@ Microsoft Fabric allows administrators to manage costs by pausing their capaciti
 - [Pause and resume your capacity in Microsoft Fabric](../enterprise/pause-resume.md)
 
 ## Reporting and visibility
+
+Operations agent usage begins appearing in the Capacity Metrics app starting in December 2025. Copilot in Fabric billing begins in December 2025, and billing for the other operations agent meters starts no earlier than January 8, 2026.
 
 You can find detailed usage reports in the Microsoft Fabric Capacity Metrics app or through the Azure billing system. These reports provide insights into CU consumption by operations agents, helping you monitor and manage your usage effectively. See [Understand your Metrics app](../enterprise/metrics-app-compute-page.md) or [Understand your Azure bill](../enterprise/azure-billing.md) to learn more about accessing and interpreting these reports.
 
