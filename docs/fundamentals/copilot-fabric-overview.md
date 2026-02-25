@@ -75,6 +75,20 @@ Microsoft Copilot for Fabric Data Warehouse is an AI assistant designed to strea
 
 Copilot for SQL database in Microsoft Fabric is an AI assistant designed to streamline your OLTP database tasks. Key features of Copilot for SQL database include Natural Language to SQL, code completion, quick actions, and document-based Q&A. For more information, see [Copilot for SQL database](../database/sql/copilot.md).
 
+The Fabric portal Query Editor includes a built-in Copilot experience for SQL database that uses the same underlying tooling as the SSMS and VS Code integrations to provide consistent chat and inline assistance.
+
+#### Tooling surfaces for SQL database in Fabric
+
+Copilot is also available when you connect to a SQL database in Fabric from external tools:
+
+Copilot is available when connecting to a Fabric SQL database from external tools such as SSMS 22 and the VS Code MSSQL extension, offering inline T‑SQL assistance and chat-based help grounded to the connected database. To learn more, see [Copilot with SSMS and VS Code](https://github.com/MicrosoftDocs/fabric-docs-pr/database/sql/copilot-sql-database.md%E2%80%8E#use-copilot-with-ssms-and-vscode)
+- **Visual Studio Code (MSSQL extension)**: The VS Code MSSQL extension integrates GitHub Copilot with chat and inline assistance grounded to the connected database, and supports Agent Mode for multi-step, tool-driven workflows.
+
+These tool integrations support two operational modes:
+
+- **Ask mode**: Runs read-only queries by default to answer questions and generate T-SQL.
+- **Agent mode**: Enables multi-step workflows that can perform write operations. Any action that modifies data requires explicit user approval before it's executed—write actions are never performed without user consent.
+
 ### Copilot in Fabric in the Power BI workload
 
 Power BI has introduced generative AI that allows you to create reports automatically by selecting the article for a report or by prompting Copilot for Power BI on a particular article. You can use Copilot for Power BI to generate a summary for the report page that you created, and generate synonyms for better Q&A capabilities. For more information on the features and how to use Copilot for Power BI, see [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction).
@@ -100,7 +114,7 @@ The following table provides an overview of the various AI and Copilot experienc
 | **Copilot for Data Factory** | Dataflows gen2 | - [Generate a new query](copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2). |
 | | Pipeline | - [Generate and run a pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).<br />- [Summarize a pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).<br />- [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot). |
 | **Copilot for Data Warehouse** | SQL Queries in Data Warehouse | - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md).<br />- [Explain code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md). |
-| **Copilot for SQL database** | SQL queries in SQL database | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md). |
+| **Copilot for SQL database** | SQL queries in SQL database (Fabric portal Query Editor, SSMS 22 (preview), VS Code MSSQL extension) | - [Generate SQL queries (preview)](../database/sql/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../database/sql/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- [Explain code in SQL queries (preview)](../database/sql/copilot-quick-actions.md).<br />- Inline T-SQL completions, chat-based code generation, and execution plan analysis when connected via SSMS 22 (preview) or VS Code (MSSQL extension). |
 | **Copilot for Power BI** | Semantic models in Power BI Desktop or Power BI service | - [Suggest linguistic model synonyms](/power-bi/natural-language/q-and-a-copilot-enhancements).<br />- [Suggest measure descriptions](/power-bi/transform-model/desktop-measure-copilot-descriptions).<br />- [Write and explain DAX queries](/dax/dax-copilot).<br />- [Ask questions about your data (preview)](/power-bi/create-reports/copilot-ask-data-question). |
 | | Reports (Power BI Desktop, service, or mobile app) | - Power BI home (announced).<br />- [Suggest a report page (preview)](/power-bi/create-reports/copilot-create-desktop-report).<br />- [Suggest a visual (preview)](/power-bi/create-reports/copilot-create-report-service).<br />- [Summarize data in a narrative visual](/power-bi/create-reports/copilot-create-narrative?tabs=powerbi-service).<br />- [Explain a report page or visual](/power-bi/create-reports/copilot-pane-summarize-content). |
 | **Copilot for Real-Time Intelligence** | KQL queryset | - [Generate KQL queries (preview)](../real-time-intelligence/copilot-writing-queries.md).<br />- [Modify or explore a previously generated KQL query (preview)](../real-time-intelligence/copilot-writing-queries.md). |
