@@ -32,7 +32,7 @@ When a conflict is dectected you’ll see a Confirm metadata overwrite dialog si
 
 This conflict indicates that your workspace item has a different logical ID than the version of the item coming from source control.
 
-Confirming the operation will result that the logical id from your source control will replace the matched item’s logical id within the workspace. 
+Confirming the operation results in the logical id from your source control replacing the matched item’s logical id within the workspace. 
 
 ## Commmon scenarios that lead to conflicts
 Logical ID mismatches may occur when you:
