@@ -71,9 +71,9 @@ The following properties are **required**:
 Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before writing data into PostgreSQL in each run. You can use this property to clean up the preloaded data.
-- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:02:00` (2 minutes).
+- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. The default value is `00:02:00`.
 - **Write batch size**: Specify the number of rows to insert into the PostgreSQL table per batch. The allowed value is integer (number of rows). A new batche will be created when the current batch reaches the write batch size. The default value is `50000`.
-- **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.The allowed value is integer.
+- **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections. The allowed value is integer.
 
 ### Mapping
 
