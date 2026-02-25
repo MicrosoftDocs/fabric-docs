@@ -954,12 +954,14 @@ items:
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
-      - name: RTI MCP Server (preview)
+      - name: MCP Server (preview)
         items:
           - name: Fabric RTI MCP server
             href: mcp-overview.md
-          - name: Get started with Eventhouse MCP Server
-            href: mcp-eventhouse-remote-get-started.md
+          - name: Remote MCP Integrations
+            items:
+              - name: Get started with Eventhouse MCP Server
+                href: mcp-eventhouse-remote-get-started.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:
