@@ -16,7 +16,7 @@ There are two ways to use Fabric notebooks with data from your KQL database:
 
 * [Use Kusto snippets in a notebook](#use-kusto-snippets-in-a-notebook)
 * [Create a notebook from a KQL database](#create-a-notebook-from-a-kql-database)
-* [Analyze data in a KQL Database](analyze-data-with.md) with a new or existing notebook.
+* [Analyze data in a KQL Database](eventhouse-analyze-data-with.md) with a new or existing notebook.
 
 ## Prerequisites
 
@@ -113,4 +113,4 @@ When you create a notebook as a related item in a KQL database, the notebook is 
 
 * [KQL overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rti&pivots=fabric)
 * [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
-* [Analyze data in a KQL Database](analyze-data-with.md)
+* [Analyze data in a KQL Database](eventhouse-analyze-data-with.md)
