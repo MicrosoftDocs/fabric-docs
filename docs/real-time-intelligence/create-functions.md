@@ -1,11 +1,11 @@
 ---
 title: Create and Manage Stored Functions in Real-Time Intelligence
-description: "Learn how to use the `.create-or-alter function` command to create stored functions in Real-Time Intelligence."
+description: Learn how to use the `.create-or-alter function` command to create, manage, and edit stored functions in Real-Time Intelligence.
 ms.reviewer: guregini
 ms.author: spelluru
 author: spelluru
 ms.topic: how-to
-ms.date: 02/23/2026
+ms.date: 02/25/2026
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto
 ---
@@ -51,7 +51,7 @@ This feature enables you to create or alter an existing function by using the `.
 
 ## User-defined functions list
 
-You can view a list of all user-defined functions in the database. By left-clicking on the **Functions** option or by selecting **Show functions** in the dropdown menu, you can see the list of functions.    
+You can view a list of all user-defined functions in the database. By left-clicking on the **Functions** option or by selecting **Show functions** in the dropdown menu, you can open the list of functions.    
 :::image type="content" source="media/create-functions/function-tree.png" alt-text="Screenshot of the function tree in the Explorer pane.":::
 
 The list includes:
