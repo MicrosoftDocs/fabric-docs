@@ -19,7 +19,7 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - An Amazon MSK Kafka cluster in active status. 
-- Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.  
+- Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 
 ## Add Amazon MSK Kafka as a source  
 
