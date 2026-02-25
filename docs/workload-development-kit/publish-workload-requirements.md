@@ -1,8 +1,6 @@
 ---
 title: Fabric Workload Hub validation guidelines and requirements
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload to the Workload Hub.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
 ms.date: 02/18/2025
 ---
@@ -119,3 +117,4 @@ Fabric users expect a fast loading UX. Independent of the technical implementati
 * [Microsoft Fabric Workload Development Kit](development-kit-overview.md)
 * [Publishing flow](./publish-workload-flow.md)
 * [Commercial marketplace certification policies](/legal/marketplace/certification-policies)
+

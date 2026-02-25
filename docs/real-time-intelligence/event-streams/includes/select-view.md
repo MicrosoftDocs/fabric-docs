@@ -1,10 +1,7 @@
 ---
 title: Select enhanced or standard view
 description: The include file has a note about enhanced capabilities versus standard capabilities.
-ms.author: spelluru
-author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 05/21/2024
 ---
 

@@ -1,12 +1,7 @@
 ﻿---
 title: Fabric data agent scenario (preview)
 description: Learn how to configure a Fabric data agent on the AdventureWorks dataset.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: amjafari
-reviewer: amjafari
-ms.service: fabric
-ms.subservice: data-science
 ms.topic: tutorial
 ms.date: 09/24/2025
 ms.update-cycle: 180-days

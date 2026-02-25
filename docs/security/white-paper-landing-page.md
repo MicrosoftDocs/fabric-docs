@@ -4,7 +4,6 @@ description: Download and review the Microsoft Fabric security white paper to ge
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/06/2024
 ---
 

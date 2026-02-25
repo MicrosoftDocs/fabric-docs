@@ -25,13 +25,10 @@ The SharePoint Online List connector supports the following authentication types
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SharePoint Online List. The following links provide the specific Power Query connector information you need to connect to a SharePoint Online List in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to SharePoint Online list using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the SharePoint Online list connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-- To determine the URL to use to access your SharePoint Online list, go to [Determine the site URL](/power-query/connectors/sharepoint-online-list#determine-the-site-url).
-- To connect to the Azure Blobs connector from Power Query, go to [Connect to a SharePoint Online list from Power Query Online](/power-query/connectors/sharepoint-online-list#connect-to-a-sharepoint-online-list-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Connect to a SharePoint Online list (from Power Query Online)](/power-query/connectors/sharepoint-online-list#connect-to-a-sharepoint-online-list-from-power-query-online).
 
 ## Set up your connection in a pipeline
 

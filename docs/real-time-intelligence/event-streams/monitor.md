@@ -1,11 +1,8 @@
 ---
 title: Monitor the Status and Performance of an Eventstream
 description: Learn how to monitor the status and performance of an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/25/2024
 ms.search.form: Data Preview and Insights
 ---
@@ -146,3 +143,5 @@ To view the runtime logs for an Azure event hub, Azure IoT hub, streaming connec
 ## Related content
 
 - [Preview data in an eventstream item](./preview-data.md)
+
+

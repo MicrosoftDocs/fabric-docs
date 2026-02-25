@@ -1,13 +1,13 @@
 ﻿---
 title: Power BI for US Government Customers
 description: "Learn how US government customers can add Power BI to their Microsoft 365 government plan. Sign up, connect to GCC, GCC High, or DoD environments, and review feature availability."
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: dodruker; jonp
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: concept-article
-ms.date: 12/17/2025
+ms.date: 02/18/2026
 ms.custom: gcc
 LocalizationGroup: Get started
 ---
@@ -72,7 +72,7 @@ Authentication, identity, and administration for Power BI depend on connectivity
 
 ### Power BI URLs for general site usage
 
-|  Purpose | Destination |
+| Purpose | Destination |
 | ---- | ----- |
 | Back-end APIs | **GCC**: api.powerbigov.us<br>**GCC High**: api.high.powerbigov.us<br>**DoD**: api.mil.powerbigov.us |
 | Back-end APIs | **GCC**: *.analysis.usgovcloudapi.net<br>**GCC High**: *.high.analysis.usgovcloudapi.net<br>**DoD**: *.mil.analysis.usgovcloudapi.net |
@@ -81,6 +81,7 @@ Authentication, identity, and administration for Power BI depend on connectivity
 | Microsoft 365 integration | **GCC**: [Worldwide endpoints](/microsoft-365/enterprise/urls-and-ip-address-ranges)<br>**GCC High**: [US Government GCC High endpoints](/microsoft-365/enterprise/microsoft-365-u-s-government-gcc-high-endpoints)<br>**DoD**: [US Government DOD endpoints](/microsoft-365/enterprise/microsoft-365-u-s-government-dod-endpoints) |
 | Portal |**GCC**: *.powerbigov.us<br>**GCC High**: *.high.powerbigov.us<br>**DoD**: *.mil.powerbigov.us |
 | Manage gateways, connections, and data policies (preview) |**GCC**: gatewayadminportal-gov.azure.us<br>**GCC High**: gatewayadminportal-high.azure.us<br>**DoD**: gatewayadminportal-mil.azure.us |
+| OAuth 2.0 connections | **All**: preview.powerbi.com |
 | Service telemetry | **All**: dc.services.visualstudio.us |
 | Informational messages (optional) | **All**: arc.msn.com |
 | SharePoint web part integration with Power BI | **All**: api.powerbi.com |

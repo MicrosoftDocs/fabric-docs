@@ -1,10 +1,7 @@
 ---
 title: Classify Natural Language Text with Microsoft Fabric
 description: Learn to build a scalable multi-label text classifier for natural language by using generative AI and LLMs in Microsoft Fabric.
-ms.reviewer: pbhandia
-reviewer: priyank96
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: pbhandia, lagayhar
 ms.topic: tutorial
 ms.date: 09/05/2025
 ---
@@ -294,3 +291,4 @@ def add_system_user_label_validation(row):
 * [Use OpenAI for big data with SynapseML](open-ai.md)
 * [Use Python for Apache Spark](./python-guide/python-overview.md)
 * [Create, evaluate, and score a text classification model](title-genre-classification.md)
+

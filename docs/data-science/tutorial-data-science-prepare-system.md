@@ -1,13 +1,9 @@
-﻿---
+---
 title: Data science tutorials - prepare your system
 description: Before you begin following the data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
-ms.reviewer: amjafari
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
-ms.custom: 
 ms.date: 08/27/2025
-reviewer: jonburchel
 ai.usage: ai-assisted
 ---
 
@@ -88,3 +84,4 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 
 > [!div class="nextstepaction"]
 > [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
+

@@ -2,8 +2,6 @@
 title: Fabric API for GraphQL schema view and Schema explorer
 description: Learn about the Fabric API for GraphQL schema view and the Schema explorer pane, including how to modify objects.
 ms.reviewer: edlima
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
 ms.custom: freshness-kr
 ms.search.form: GraphQL schema view

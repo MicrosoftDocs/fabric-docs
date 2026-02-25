@@ -1,14 +1,10 @@
 ---
 title: Schema Registry in Fabric Real-Time Intelligence
-ms.service: fabric
 description: Learn about Schema Registry, a centralized repository in Fabric Real-Time Intelligence, designed to validate and organize schemas for event-driven architectures.
 #customer intent: As a data engineer, I want to understand what Schema Registry is, so that I can evaluate if it will help me manage data consistency in my real-time workflows.
-author: spelluru
 contributors: null
 ms.topic: overview
 ms.date: 08/07/2025
-ms.author: spelluru
-ms.reviewer: spelluru
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
@@ -78,4 +74,6 @@ See the following articles:
 
 - [Create a schema set](create-manage-event-schema-sets.md)
 - [Create schemas in a schema set](create-manage-event-schemas.md)
+
+
 

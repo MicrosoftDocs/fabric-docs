@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) tutorial part 3: Define relationship types'
 description: Define semantic relationship types between entity types in digital twin builder (preview). Part 3 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---

@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.custom: admin-portal
 ms.topic: overview
-ms.date: 12/15/2025
+ms.date: 01/30/2026
 ai-usage: ai-assisted
 ---
 
@@ -19,7 +19,7 @@ In the Fabric UI, workspaces can be moved to other capacities in the following w
 
 * Fabric admins can reassign workspaces to a different capacity individually via the [Workspaces page](portal-workspaces.md#reassign-a-workspace-to-a-different-capacity) in the Fabric Admin portal.
 * Fabric admins and capacity admins can reassign workspaces to a capacity in bulk via the **Workspaces assigned to this capacity** option in the [capacity's settings](./capacity-settings.md#capacity-settings).
-* Workspace admins can reassign their workspace to a different capacity via the [License info option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity).
+* Workspace admins can reassign their workspace to a different capacity via the [Workspace type option of the workspace settings](../fundamentals/workspace-license-mode.md#reassign-a-workspace-to-a-different-capacity).
 
 ### Permission Requirements by capacity type to reassign workspaces
 
@@ -64,9 +64,9 @@ Moving workspaces from one capacity to another has the following restrictions:
 
     After you remove the non-movable items and the workspace is migrated to a different region, you can create new items of the non-movable type. It can take up to an hour after the migration before can do so.
 
-* Only Power BI items can move from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode (with exceptions as noted here). If you're changing a workspace from Premium capacity or Fabric capacity license mode to Pro or Premium Per User license mode, you must remove all non-Power BI items and any Power BI items that can't be moved first. Otherwise the license mode change fails.
+* Only Power BI items can move from Premium capacity or Fabric to Power BI Pro or Power BI Premium Per-User (PPU) workspace type (with exceptions as noted here). If you're changing a workspace from Premium capacity or Fabric to Power BI Pro or Power BI Premium Per-User (PPU) workspace type, you must remove all non-Power BI items and any Power BI items that can't be moved first. Otherwise the workspace type change fails.
 
-    The following item types are considered Power BI items from the perspective of the workspace license mode.
+    The following item types are considered Power BI items from the perspective of the workspace type.
 
     * Report
     * Semantic model (small storage format and large storage format)
@@ -79,9 +79,9 @@ Moving workspaces from one capacity to another has the following restrictions:
     * Datamart*
     * Scorecard
 
-    *Can't move to Pro<br>**Can't move to Pro or Premium per user
+    *Can't move to Power BI Pro<br>**Can't move to Power BI Pro or Power BI Premium Per-User (PPU)
 
-    All other item types must be removed from the workspace before you can change its license mode from Premium capacity or Fabric capacity to Pro or Premium Per User.
+    All other item types must be removed from the workspace before you can change its workspace type from Power BI Premium capacity or Fabric to Power BI Pro or Power BI Premium Per-User (PPU).
 
 > [!NOTE]
 > If you have Dataflow Gen2 items in your workspace, their underlying staging lakehouse and staging warehouse items only become visible in the workspace UI after **all** Dataflow Gen2 items in the workspace are deleted. These staging items are Fabric items as well, and as such their existence can prevent the workspace from being successfully migrated from one region to another. To ensure that your workspace can be successfully migrated across regions, first delete all Dataflow Gen2 items in the workspace. Then delete all the staging lakehouses and warehouses in the workspace that become visible.
@@ -90,15 +90,15 @@ Moving workspaces from one capacity to another has the following restrictions:
 
 In some cases, a workspace might appear to be successfully reassigned to a new capacity, but some or all of its items remain attached to the original capacity. In this case, a warning banner appears when you open an affected item.
 
-:::image type="content" source="./media/portal-workspace-capacity-reassignment/reassignment-warning.png" alt-text="Screenshot showing the License info page with a warning about items not migrated to the new capacity." lightbox="./media/portal-workspace-capacity-reassignment/reassignment-warning.png":::
+:::image type="content" source="./media/portal-workspace-capacity-reassignment/reassignment-warning.png" alt-text="Screenshot showing the workspace type info page with a warning about items not migrated to the new capacity." lightbox="./media/portal-workspace-capacity-reassignment/reassignment-warning.png":::
 
-If you have access to the workspace settings, a similar warning banner appears when you view the **License info** settings.
+If you have access to the workspace settings, a similar warning banner appears when you view the **Workspace type** settings.
 
-:::image type="content" source="media/portal-workspace-capacity-reassignment/license-info.png" alt-text="Screenshot showing the License Info page." lightbox="media/portal-workspace-capacity-reassignment/license-info.png":::
+:::image type="content" source="media/portal-workspace-capacity-reassignment/license-info.png" alt-text="Screenshot showing the workspace type info page." lightbox="media/portal-workspace-capacity-reassignment/license-info.png":::
 
 To see which items are affected, select **View details** in the warning banner. A detailed view opens showing all items that remain attached to a different capacity than the workspace. For each item, the capacity name, its region, and the reason the migration failed appears.
 
-:::image type="content" source="media/portal-workspace-capacity-reassignment/license-info-details.png" alt-text="Screenshot showing the License Info page with item details." lightbox="media/portal-workspace-capacity-reassignment/license-info-details.png":::
+:::image type="content" source="media/portal-workspace-capacity-reassignment/license-info-details.png" alt-text="Screenshot showing the workspace type info page with item details." lightbox="media/portal-workspace-capacity-reassignment/license-info-details.png":::
 
 These items are at risk of becoming unavailable if their attached capacity is deleted or paused. To prevent disruption and resolve these issues, a workspace administrator should take the steps described in the next section.
 

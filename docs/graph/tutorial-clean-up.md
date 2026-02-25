@@ -3,8 +3,6 @@ title: "Tutorial: Clean up graph tutorial resources"
 description: Learn how to clean up the resources created during the Graph in Microsoft Fabric tutorial.
 ms.topic: tutorial
 ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Clean up graph tutorial resources
 ---

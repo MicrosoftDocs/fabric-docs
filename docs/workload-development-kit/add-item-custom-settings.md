@@ -1,8 +1,6 @@
 ---
 title: Add Customized Item Settings
 description: Learn how you can add your own item settings tabs in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
 ms.date: 11/25/2024
 ---
@@ -159,3 +157,4 @@ The preceding code includes:
 - `displayName` : Must be defined as `About`.
 - `route` : Needed for the custom **About** component that's loaded into the iframe, as shown in the image.
 - `workloadIframeHeight`: Provided as a string, in pixels. If you don't set the iframe height, it's set to a default value of `102vh`.
+

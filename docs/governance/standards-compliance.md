@@ -4,12 +4,9 @@ description: "This article describes Microsoft Fabric's adherence to compliance 
 author: msmimart
 ms.author: mimart
 ms.reviewer: kadejo
-ms.service: fabric
-ms.topic: concept-article #Don't change
+ms.topic: concept-article
 ms.date: 05/23/2024
-
 #customer intent: As a Fabric administrator or decision maker, I want to learn about Fabric's adherence to compliance standards.
-
 ---
 
 # Standards compliance in Microsoft Fabric
