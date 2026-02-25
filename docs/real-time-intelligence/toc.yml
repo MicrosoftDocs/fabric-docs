@@ -642,7 +642,7 @@ items:
             href: access-database-copy-uri.md
             displayName: copy URI, copy query URI, copy ingestion URI
           - name: Analyze data in a KQL database
-            href: analyze-data-with.md
+            href: eventhouse-analyze-data-with.md
           - name: Manage and monitor a KQL database
             href: manage-monitor-database.md
           - name: Create a database shortcut
