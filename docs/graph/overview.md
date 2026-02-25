@@ -82,14 +82,18 @@ You can incorporate graph analytics into your existing workflows, eliminating th
 
 Graph in Microsoft Fabric uses the same capacity units (CUs) as other workloads in Microsoft Fabric. You don't need to purchase a separate graph-specific license or SKU. All graph operations, including data ingestion, querying, and running algorithms, consume your organization's reserved or pay-as-you-go Fabric capacity.
 
-CU consumption is measured in minutes of CPU uptime. For graph storage, a minimum of 100 GB is provisioned. You can monitor your graph workload's resource consumption and performance in the Fabric Capacity Metrics app.
+Graph operations are billed based on CPU uptime. Each second of uptime incurs 10 CU-seconds in cost. Each session of CPU uptime is rounded up to minutes.
 
-| Fabric operation name    | Azure billing meter     | Unit of measure  | Fabric CU consumption rate |
-|--------------------------|-------------------------|------------------|----------------------------|
-| Graph general operations | Graph capacity usage CU | Minute           | 0.16667 CUs per minute     |
-| Graph cache storage      | OneLake Cache           | Per GB per month | -                          |
+For graph storage, a minimum of 100 GB is provisioned. Graph storage is billed at the same rate as OneLake Cache.
 
 For more information on pricing and capacity units, see [Microsoft Fabric pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
+You can monitor your graph workload's resource consumption and performance in the Fabric Capacity [Metrics app](../enterprise/metrics-app.md). You would see the following line items in the Fabric Metrics App and on monthly bills:
+
+| Fabric operation name in Metrics App | Azure billing meter |
+|--------------------------|-------------------------|
+| Graph general operations | Graph capacity usage CU |
+| Graph cache storage      | OneLake Cache           |
 
 ## Region availability
 
