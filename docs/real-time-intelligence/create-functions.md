@@ -49,6 +49,21 @@ This feature enables you to create or alter an existing function by using the `.
 
     :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Explore your data window showing query results of a stored function in Real-Time Intelligence." lightbox="media/create-functions/function-example.png":::
 
+## User-defined functions list
+
+You can view a list of all user-defined functions in the database. By left-clicking on the **Functions** option or by selecting **Show functions** in the dropdown menu, you can see the list of functions.    
+:::image type="content" source="media/create-functions/function-tree.png" alt-text="Screenshot of the function tree in the Explorer pane.":::
+
+The list includes:
+
+* Both stored functions and query-defined functions.
+* The function's location and its definition.
+* Optional sort and search capabilities to help you find specific functions.
+
+:::image type="content" source="media/create-functions/functions-list.png" alt-text="Screenshot of the list of user-defined functions." lightbox="media/create-functions/functions-list.png":::
+
+Left-clicking on a function in the list opens a read-only [preview version](#view-and-preview-a-stored-function) of the function. In the dropdown menu, you can also select **Show function** to open the preview version of the function, [edit, or delete](#edit-or-delete-a-stored-function) the function.
+
 ## View and preview a stored function
 
 To view or preview an existing stored function, follow these steps:
