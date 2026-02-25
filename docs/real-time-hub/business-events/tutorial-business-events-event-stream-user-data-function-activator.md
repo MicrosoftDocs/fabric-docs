@@ -128,7 +128,7 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. In the **Business events** window, select **Save** to save the business event destination configuration.
 
-    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/save-business-event.png" alt-text="Screenshot that shows the Business events window with the Save button selected." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/save-business.png":::
+    :::image type="content" source="media/tutorial-business-events-event-stream-user-data-function-activator/save-business-event.png" alt-text="Screenshot that shows the Business events window with the Save button selected." lightbox="media/tutorial-business-events-event-stream-user-data-function-activator/save-business-event.png":::
 
 1. On the **StationFullDetected** card, select **Add** next to **Add a mapper to map schema**. 
 
