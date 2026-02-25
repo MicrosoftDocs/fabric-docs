@@ -125,6 +125,7 @@ The following table outlines the available bubble visual settings along with the
 | Cluster size | Configure size of clustered bubble, Support **fixed value**, users can configure clustered bubble size from 1px to 50px. Default = *16px*|
 | Aggregate by | The "Aggregate by" property allows users to select a numeric data field from a dropdown list to group and categorize bubble data. This feature is only applicable when working with numeric properties and is typically used to summarize or visualize aggregated values across spatial features. |
 | Aggregation | Select a method for summarizing data based on the chosen numeric property. Available options include:<br><ul><li>**Sum** – Adds all values together</li><li>**Average** – Calculates the mean of values</li><li>**Minimum** – Displays the smallest value in the group</li><li>**Maximum** – Displays the largest value in the group</li><li>**Count** – Tallies the number of data points in the group</li></ul> |
+| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. Custom markers don't support data-driven color styling. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
 
 ##### Enable series group
 
@@ -168,15 +169,20 @@ Markers support a range of styling options, including size, color, stroke, opaci
 | Setting | Description |
 |---------|-------------|
 | Symbol | Specifies the icon used to represent each point on the map. This can be a standard bubble or a custom marker icon. |
-| Size | Controls the overall size of the marker on the map, helping balance visibility and visual density. Valid values range from 12px to 72px. |
 | Stroke color | Specifies the color of the marker border. This helps distinguish markers from the basemap and can be used to emphasize or categorize data points. |
 | Stroke width | Specifies the thickness of the marker border in pixels. Valid values range from 0 to 10. |
-| Opacity | Controls the transparency of point features on the map. Valid values range from 0% (fully transparent) to 100% (fully opaque). |
+| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. Custom markers don't support data-driven color styling. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
+| Size | Controls the overall size of the marker on the map, helping balance visibility and visual density. Valid values range from 12px to 72px. |
 | Rotation | Rotates the marker icon to indicate orientation or direction when applicable. |
-| Marker anchor | Determines which point of the icon is anchored to the marker's geographic position on the map. |
+| Opacity | Controls the transparency of point features on the map. Valid values range from 0% (fully transparent) to 100% (fully opaque). |
 | Marker overlap | Allows markers to overlap with each other and with other map elements when enabled. |
-| Pitch alignment to map | Aligns the marker with the map's pitch (viewing angle relative to the horizon). Pitch values range from 0 to 60 degrees. Default is 0. |
+| Marker anchor | Determines which point of the icon is anchored to the marker's geographic position on the map. |
 | Rotation alignment to map | Aligns the marker with the map's rotation, allowing the marker to rotate as the map view rotates. Rotation values range from –180 to 180 degrees. Default is 0. |
+| Pitch alignment to map | Aligns the marker with the map's pitch (viewing angle relative to the horizon). Pitch values range from 0 to 60 degrees. Default is 0. |
+| Enable extrusion | This property allows polygons to be rendered in 3D by applying height based on a numeric field. It enhances spatial visualization by adding depth and volume to flat shapes. Default = *off*.|
+| Enable clustering | Groups nearby data points into clusters to reduce visual clutter and improve map readability. Default = *off* |
+| Aggregate by | The "Aggregate by" property allows users to select a numeric data field from a dropdown list to group and categorize data. This feature is only applicable when working with numeric properties and is typically used to summarize or visualize aggregated values across spatial features. |
+| Aggregation | Select a method for summarizing data based on the chosen numeric property. Available options include:<br><ul><li>**Sum** – Adds all values together</li><li>**Average** – Calculates the mean of values</li><li>**Minimum** – Displays the smallest value in the group</li><li>**Maximum** – Displays the largest value in the group</li><li>**Count** – Tallies the number of data points in the group</li></ul> |
 
 #### Heat map layer
 
@@ -225,6 +231,7 @@ The following table describes the available line visual setting and description.
 | Stroke width | The width of lines measured in pixels. Valid values: 0-10. Default = *3px* |
 | Enable series group | Toggle to use color to group and differentiate geometries based on the selected data property. Default: *off*<br>Note: If enabled, the **Layer color** defined in General settings aren't applied. |
 | Series group | Select a data property from this drop-down list to group and color-code lines. This option is only accessible when the **Enable series group** setting is active. |
+| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
 
 ##### Enable series group
 
@@ -249,6 +256,7 @@ The following table describes the available polygon visual setting and descripti
 | Fill opacity | The opacity of polygon features on the map. Valid range: 0% (fully transparent) to 100% (fully opaque). Default = *60%* |
 | Enable series group | Toggle to use color to group and differentiate geometries based on the selected data property. Default: *off*<br>Note: If enabled, the **Layer color** defined in General settings aren't applied. |
 | Series group | Select a data property from this drop-down list to group and color-code lines. This option is only accessible when the **Enable series group** setting is active. |
+| Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
 | Enable extrusion | This property allows polygons to be rendered in 3D by applying height based on a numeric field. It enhances spatial visualization by adding depth and volume to flat shapes. Default = *off*.|
 | Height | Specifies the numeric data field used to determine the vertical extrusion of each polygon. This option is only accessible when the **Enable extrusion** setting is active. |
 
@@ -264,3 +272,27 @@ The following screenshot presents a 3D map visualization of the Seattle area, sh
 
 :::image type="content" source="media/customize-map/polygon-visual-enable-extrusion.png" lightbox="media/customize-map/polygon-visual-enable-extrusion.png" alt-text="Screenshot of a map visual of the Seattle area, demonstrating the polygon visual with extrusions enable.":::
 
+## Data-driven styling for map layers
+
+Data-driven styling lets you control how a map layer is colored based on the data in its properties. Instead of using random or fixed colors, you define visual rules that reflect categorical or numeric values in the underlying dataset. This makes it easier to reveal patterns, trends, and outliers directly on the map and to present data with clear business meaning.
+
+Data-driven styling is available for four types of map layers, [Line layer](#line-layer), [Polygon layer](#polygon-layer), [Bubble layer](#bubble-layer) and [Marker layer](#marker-layer).
+
+Fabric Maps supports two data-driven styling modes for layer property settings.
+
+### Color by category
+
+Color by category assigns a distinct color to each unique value in a selected data field, supporting up to 100 categories. You can choose from predefined color palettes or manually assign colors as needed.
+
+A corresponding data legend explains how each category maps to its color, improving readability and helping map consumers understand the business context behind the visualization.
+
+## Color by value range
+
+Color by value range styles numeric fields to show variation by magnitude. This mode supports two approaches:
+
+* Gradient styling – Uses a continuous color transition to represent increasing or decreasing values.
+* Step (manual interval) styling – Uses user-defined breakpoints with distinct colors to emphasize specific ranges or thresholds.
+
+Both approaches help visually differentiate values across a layer and highlight meaningful ranges in the data.
+
+:::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="A screenshot showing a Fabric Maps visualization showing a map with multiple colored polygons representing car parks. The right panel displays customization options for the Car Parks layer, including fill opacity, data-driven styling, color by the number of car park spaces.":::
