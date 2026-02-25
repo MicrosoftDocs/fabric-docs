@@ -76,13 +76,15 @@ The following properties are supported for Data Warehouse as **Destination** in 
 The following properties are **required**:
 
 - **Connection**: Select a **Data Warehouse** from the data store list.
-- **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **None** or **Auto create table**.
+- **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **Use existing** or **Auto create table**.
 - **Table**: Choose an existing table from the table list or specify a table name as destination.
 - **Write behavior**: Specify how to write data to the destination.
 
   - **Insert**: Append all data into destination table.
   - **Upsert**: Update the destination table’s values when Key columns match, and insert a new row when no row matches in the destination. Upsert is not supported for cross‑machine execution.
     - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Warehouse Table. Key columns must have unique values in the source data when *Skip incompatible rows* is disabled. All the key columns should exist in both destination table and source data (or be provided through column mapping).
+
+      :::image type="content" source="./media/connector-data-warehouse/write-behavior-upsert.png" alt-text="Screenshot of the upsert write behavior.":::
 
 Under **Advanced**, you can specify the following fields:
 
