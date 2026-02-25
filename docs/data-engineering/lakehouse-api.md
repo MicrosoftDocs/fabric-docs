@@ -3,7 +3,7 @@ title: Manage a lakehouse with the REST API
 description: Learn how to create, update, delete, and maintain lakehouse tables programmatically by using the Microsoft Fabric REST API.
 ms.reviewer: dacoelho
 ms.topic: how-to
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: lakehouse api
 ---
 

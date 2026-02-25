@@ -3,7 +3,7 @@ title: What is the SQL analytics endpoint for a lakehouse?
 description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric lakehouse tables.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: Lakehouse SQL Analytics Endpoint
 ---
 
@@ -28,7 +28,7 @@ Within that read-only boundary, you can:
 - **Query across workspaces** — Use [OneLake shortcuts](lakehouse-shortcuts.md) to reference Delta tables in other lakehouses or warehouses, then join them in a single query. For more cross-workspace scenarios, see [Better together: the lakehouse and warehouse](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).
 
 > [!NOTE]
-> External Delta tables created with Spark code aren't visible to the SQL analytics endpoint. Use shortcuts in the Tables section to make external Delta tables visible. To learn how, see [Create a shortcut to files or tables](lakehouse-shortcuts.md#create-a-shortcut-to-files-or-tables).
+> External Delta tables created with Spark code aren't visible to the SQL analytics endpoint. Use shortcuts in the Tables section to make external Delta tables visible. To learn how, see [Create a shortcut](lakehouse-shortcuts.md#create-a-shortcut).
 
 ## Access the SQL analytics endpoint
 
