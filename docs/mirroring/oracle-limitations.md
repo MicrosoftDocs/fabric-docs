@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Mirroring Oracle limitations in Microsoft Fabric
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 
 This article outlines the current limits when mirroring [Oracle databases in Microsoft Fabric](overview.md). These limits could change as we continue to improve the service.
 
@@ -36,10 +36,10 @@ We support these Oracle Server environments:
 * Oracle Cloud Infrastructure (OCI)
 * Oracle Database@Azure
 * Oracle Exadata
+* Oracle Autonomous Database
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported in this preview.
 
 ## Mirroring prerequisites
 
