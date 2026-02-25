@@ -71,7 +71,7 @@ You can enable the Eventhouse endpoint using any of these three methods:
 1. In your Fabric workspace, navigate to your **Lakehouse** or **Warehouse**.
 1. Select **Analyze data with** > **Eventhouse endpoint**.
 
-   :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the analyze data with button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
+   :::image type="content" source="../includes/media/analyze-data-with.png" alt-text="Screenshot of the **Analyze data with** button expanded to see the SQL analytics endpoint, eventhouse endpoint, and notebook options.":::
 
 ### Complete the setup
 
