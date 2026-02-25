@@ -6,8 +6,9 @@ author: s-polly
 ms.reviewer: midesa
 reviewer: midesa
 ms.topic: concept-article
-ms.custom: sfi-image-nochange
-ms.date: 01/14/2025
+ms.custom: sfi-image-nochange, dev-focus
+ai-usage: ai-assisted
+ms.date: 02/25/2026
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
@@ -22,12 +23,11 @@ In this article, you learn more about how data scientists can interact with and 
 
 ## Prerequisites
 
-- A Power BI Premium subscription. If you don't have one, see [What is Power BI Premium?](/fabric/enterprise/powerbi/service-premium-what-is)
-- A Power BI Workspace with assigned premium capacity.
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 ## Create an experiment
 
-You can create a machine learning experiment directly from the fabric user interface (UI) or by writing code that uses the MLflow API.
+You can create a machine learning experiment directly from the Fabric user interface (UI) or by writing code that uses the MLflow API.
 
 ### Create an experiment using the UI
 
@@ -94,10 +94,6 @@ Each run includes the following information:
 - **Tags**: Metadata as key-value pairs to runs.
 
 :::image type="content" source="media/machine-learning-experiment/ml-run-detail-screen.png" alt-text="Screenshot of machine learning run detail page." lightbox="media/machine-learning-experiment/ml-run-detail-screen.png":::
-
-### View the run list
-
-You can view all the runs in an experiment in the **Run list** view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
 
 ### View the run list
 
@@ -179,7 +175,7 @@ To compare runs:
 
 ### Compare runs using the MLflow API
 
-Data scientists can also use MLflow to query and search among runs within an experiment. You can explore more MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
+Data scientists can also use MLflow to query and search among runs within an experiment. You can explore more MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html).
 
 #### Get all runs
 
@@ -237,5 +233,5 @@ ML Experiment are integrated directly into Monitor, where you can select a speci
 
 ## Related content
 
-- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Learn about MLflow Experiment APIs](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)
