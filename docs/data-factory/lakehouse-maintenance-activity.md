@@ -13,7 +13,7 @@ The Lakehouse Maintenance activity allows you to run maintenance operations on t
 - Remove obsolete files that are no longer needed
 - Schedule regular maintenance as part of a pipeline
 
-This helps keep Delta tables performant and cost‑efficient by automating maintenance operations such as Optimize and Vacuum as part of your orchestration workflows. Use this activity alongside other pipeline activities, such as Copy, Notebook, or Dataflow activities. 
+This helps keep Delta tables efficient and cost‑efficient by automating maintenance operations such as Optimize and Vacuum as part of your orchestration workflows. Use this activity alongside other pipeline activities, such as Copy, Notebook, or Dataflow activities. 
 
 ## Prerequisites
 
