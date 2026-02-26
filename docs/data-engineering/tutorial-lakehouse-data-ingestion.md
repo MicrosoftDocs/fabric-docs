@@ -4,7 +4,7 @@ description: In this tutorial, you ingest more dimensions and fact tables from t
 ms.reviewer: arali
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 02/14/2026
+ms.date: 02/21/2026
 ai-usage: ai-assisted
 ---
 

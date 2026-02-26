@@ -20,7 +20,7 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
-- Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Azure SQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 

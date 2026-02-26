@@ -2,7 +2,7 @@
 title: "SQL database Overview"
 description: Learn about SQL database in Microsoft Fabric.
 ms.reviewer: antho, sukkaur
-ms.date: 12/05/2025
+ms.date: 02/23/2026
 ms.topic: overview
 ms.search.form: product-databases, SQL database Overview, Databases Overview
 ---
@@ -66,6 +66,15 @@ To successfully authenticate to a SQL database, a Microsoft Entra user, a [servi
 Currently, the only supported connection policy for SQL database in Microsoft Fabric is **Default**. For more information, see [Connection policy](limitations.md#connection-policy) and [Connectivity architecture](/azure/azure-sql/database/connectivity-architecture?view=fabric-sqldb&preserve-view=true#connection-policy). Refer to the [Azure IP Ranges and Service Tags - Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) for a list of your region's IP addresses to allow.
 
 For information on how to grant a Microsoft Entra identity access to a Fabric workspace or a specific database, see [Fabric access controls](authorization.md#fabric-access-controls).
+
+## Best use cases
+
+SQL database in Fabric is designed to support a variety of modern data patterns that bridge operational and analytical workloads:
+
+- **Intelligent applications and AI**: Develop AI-powered applications using Azure OpenAI, vector embeddings, and Retrieval Augmented Generation (RAG) patterns. SQL database supports vector data types and integration with frameworks like LangChain and Semantic Kernel for building intelligent experiences. For more information on all the AI SQL features, see [Intelligent applications and AI](/sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true).
+- **Reverse ETL**: Use SQL database as the target for pushing curated analytical data from warehouses or lakehouses back into operational systems. This enables applications, APIs, and GraphQL endpoints to access transformed business intelligence in real time for operational decision-making. For more information, see [Use SQL database in reverse ETL](use-case-reverse-etl.md).
+- **Operational Data Store (ODS)**: Consolidate data from multiple operational systems into a normalized, near real-time store that supports operational reporting and lightweight analytics. SQL database serves as the "hot, harmonized truth" between source systems and analytical platforms. For more information, see [Use SQL database as an operational data store](use-case-operational-data-store.md).
+- **Translytical applications**: Build applications that require both transactional and analytical access to the same data. Automatic replication to OneLake creates a SQL analytics endpoint that enables analytical queries without impacting transactional performance. For more information, see [Use SQL database as the source for translytical applications](use-case-translytical-applications.md).
 
 ## Cross-database queries
 
