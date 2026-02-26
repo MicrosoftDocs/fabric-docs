@@ -508,7 +508,7 @@ The sample app is ready to test.
 
 Keep going!
 
-- Implement data updates using the example from [Tutorial: Connect an ASP.NET Core app to SQL Server using .NET Aspire and Entity Framework Core](/dotnet/aspire/database/sql-server-integrations).
+- Implement data updates using the example from [Tutorial: Connect a .NET Aspire microservice to an existing database](https://aspire.dev/integrations/databases/sql-server/sql-server-host/).
 - Deploy your application to Azure App Service, Azure Container Apps, Azure Functions, or Azure Kubernetes Service (AKS) using [Service Connector](/azure/service-connector/how-to-integrate-fabric-sql).
 
 ## Related content
