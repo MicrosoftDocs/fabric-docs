@@ -1,11 +1,8 @@
 ---
 title: Query Fabric OneLake Delta tables from Snowflake
 description: Learn how to query acceleration policy over OneLake shortcuts to improve query performance and reduce latency for external delta tables.
-ms.reviewer: chschmidt
-ms.author: v-hzargari
-author: hzargari-ms
+ms.reviewer: chschmidt, v-hzargari
 ms.topic: how-to
-ms.custom:
 ms.subservice: rti-eventhouse
 ms.date: 07/15/2025
 ---
@@ -117,3 +114,4 @@ This article explains how to query Fabric OneLake tables from Snowflake, in scen
     ```kql
     SELECT COUNT(*) FROM MyDATABASE.ONELAKETEST
     ```
+

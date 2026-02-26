@@ -1,11 +1,8 @@
 ---
 title: Preview Data in an Eventstream Item
 description: This article describes how to preview the data in an eventstream item by using the Microsoft Fabric eventstreams feature.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/15/2023
 ms.search.form: Data Preview and Insights
 ---
@@ -64,3 +61,5 @@ You can preview the data in your eventstream and see how different data sources 
 ## Related content
 
 - [Monitor the status and performance of an eventstream](monitor.md)
+
+

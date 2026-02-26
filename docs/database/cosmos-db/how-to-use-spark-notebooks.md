@@ -1,8 +1,7 @@
 ---
 title: Use Cosmos DB in Spark notebook 
 description: Learn how to use the Cosmos DB Spark Connector to work with a Spark notebook in Microsoft Fabric.
-author: garyhope
-ms.author: garyhope
+ms.reviewer: garyhope
 ms.topic: how-to
 ms.date: 11/01/2025
 ---
@@ -377,3 +376,4 @@ To write data directly to a Cosmos DB in Fabric container, you need:
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Frequently asked questions about Cosmos DB in Microsoft Fabric](faq.yml)
+

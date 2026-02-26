@@ -1,10 +1,7 @@
 ---
 title: Manage shortcut connections
 description: How to update the shared cloud connections that are created to enable OneLake shortcuts.
-ms.author: kgremban
-author: kgremban
 ms.topic: how-to
-ms.custom:
 ms.date: 04/23/2025
 #customer intent: As a data engineer, I want to know which of my shortcut connections are out of date and be able to change or replace them as needed so that our data connections stay current.
 ---

@@ -3,9 +3,8 @@ title: "Enable item certification"
 description: "This article shows Microsoft Fabric administrators how to enable item certification in their tenant."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 07/11/2024
 
 #customer intent: As a Fabric administrator, I want to enable the certification endorsement feature so that specified users can apply the Certified badge to items that they can certify as meeting organizational quality standards.

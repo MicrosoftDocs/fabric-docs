@@ -1,9 +1,7 @@
 ---
 title: "Configure Private Networks for Azure Cosmos DB Fabric Mirroring (Preview)"
 description: Learn how to configure Azure Cosmos DB accounts with private networks and private endpoints to work with Fabric mirroring.
-author: jilmal
-ms.author: jmaldonado
-ms.reviewer: mbrown
+ms.reviewer: jmaldonado, mbrown
 ms.date: 01/26/2026
 ms.topic: how-to
 ai-usage: ai-assisted
@@ -28,7 +26,7 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
     1. Custom Mirroring RBAC Policy - See [assign-mirroring-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1)
 - The Cosmos DB account and Fabric workspace must be in the same Azure region. To verify your Fabric workspace region:
   1. Open your Fabric workspace
-  1. Navigate to **Workspace settings** → **License info**
+  1. Navigate to **Workspace settings** → **Workspace type**
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
 - The user configuring private networks for Cosmos DB Mirroring should either be an Azure subscription owner or have Contributor permissions on the Cosmos DB account with RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
@@ -435,3 +433,4 @@ For more troubleshooting guidance, see [Troubleshooting: Microsoft Fabric mirror
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519)
 - [Configure network access to an Azure Cosmos DB account](/azure/cosmos-db/how-to-configure-firewall)
+

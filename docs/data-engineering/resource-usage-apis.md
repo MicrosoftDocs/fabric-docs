@@ -1,8 +1,6 @@
 ---
 title: Resource usage APIs
 description: Learn more on how to get resource usage APIs.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 05/12/2025

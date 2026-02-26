@@ -1,9 +1,7 @@
 ---
 title: Set up SMTP server in data workflows
-description: This tutorial helps to set up smtp server in Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+description: This tutorial helps to set up SMTP server in Apache Airflow Job.
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024
@@ -11,12 +9,11 @@ ms.date: 03/25/2024
 
 # Set up SMTP Server in Apache Airflow Job
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
-Apache Airflow includes a powerful feature that allows you to send email notifications and alerts when tasks fail, succeed, or retry. This capability is essential for monitoring your workflows and troubleshooting any issues that may arise.
+Apache Airflow includes a powerful feature that allows you to send email notifications and alerts when tasks fail, succeed, or retry. This capability is essential for monitoring your workflows and troubleshooting any issues that could arise.
 
-To enable email notifications and alerts, you need to set up a Simple Mail Transfer Protocol (SMTP) server that can send emails on behalf of Airflow. SMTP is a standard protocol for sending and receiving emails over the internet. You can use your own SMTP server or a third-party service like Outlook, Gmail, SendGrid, or Mailgun. This article demonstrates how to configure an SMTP server for your Apache Airflow job using Gmail.
+To enable email notifications and alerts, you need to set up a Simple Mail Transfer Protocol (SMTP) server that can send emails on behalf of Airflow. SMTP is a standard protocol for sending and receiving emails over the internet. You can use your own SMTP server or another service like Outlook, Gmail, SendGrid, or Mailgun. This article demonstrates how to configure an SMTP server for your Apache Airflow job using Gmail.
 
 ## Prerequisites
 
@@ -50,7 +47,7 @@ To enable email notifications and alerts, you need to set up a Simple Mail Trans
   | AIRFLOW__SMTP__SMTP_PORT      | 587                  |
   | AIRFLOW__SMTP__SMTP_MAIL_FROM | your_email@gmail.com |
 
-  :::image type="content" source="media/apache-airflow-jobs/airflow-smtp-configurations.png" lightbox="media/apache-airflow-jobs/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow confiurations for SMTP.":::
+  :::image type="content" source="media/apache-airflow-jobs/airflow-smtp-configurations.png" lightbox="media/apache-airflow-jobs/airflow-smtp-configurations.png" alt-text="Screenshot presents airflow configurations for SMTP.":::
 
 ## Example: A DAG that sends an email on the DAG Failure
 

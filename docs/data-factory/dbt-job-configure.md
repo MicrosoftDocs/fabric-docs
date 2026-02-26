@@ -1,9 +1,7 @@
 ---
 title: How to configure dbt jobs in Microsoft Fabric
 description: This article outlines the options for configuring a dbt job, including adapter settings and advanced execution parameters.
-ms.reviewer: whhender
-ms.author: akurnala
-author: abhinayakurnala1
+ms.reviewer: akurnala
 ms.topic: how-to
 ms.date: 11/20/2025
 ms.search.form: dbt-job-tutorials

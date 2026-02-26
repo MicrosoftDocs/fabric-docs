@@ -1,9 +1,6 @@
 ---
 title: Query multiple data sources in Fabric API for GraphQL
 description: Learn about API for GraphQL support for multiple data sources, and see an example of a query that spans two sources.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
 ms.custom: freshness-kr
 ms.search.form: GraphQL multiple data sources
@@ -91,3 +88,4 @@ This is how the query view looks when you execute this request:
 - [Manage relationships in Fabric API for GraphQL](manage-relationships-graphql.md)
 - [API for GraphQL editor](api-graphql-editor.md)
 - [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
+

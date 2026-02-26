@@ -1,8 +1,6 @@
 ---
 title: "Troubleshoot Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
 description: Troubleshooting mirrored databases from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: scoriani
 ms.date: 11/17/2025
 ms.topic: troubleshooting

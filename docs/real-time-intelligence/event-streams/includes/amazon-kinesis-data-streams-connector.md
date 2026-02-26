@@ -1,10 +1,8 @@
 ---
 title: Amazon Kinesis Data Streams connector for Fabric event streams
 description: This include file has the common content for configuring an Amazon Kinesis Data Streams connector for Fabric event streams and Real-Time hub.
-ms.author: xujiang1
-author: xujxu 
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 05/21/2024
 ---
 
@@ -35,4 +33,5 @@ ms.date: 05/21/2024
 
 1. Select **Next**.
 1. On the **Review and create** screen, review the summary, and then select **Add**.
+
 

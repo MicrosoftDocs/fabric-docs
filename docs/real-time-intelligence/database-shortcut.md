@@ -2,8 +2,6 @@
 title: Create a database shortcut
 description: Learn how to create a database shortcut to data in another KQL Database or in Azure Data Explorer in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/19/2024

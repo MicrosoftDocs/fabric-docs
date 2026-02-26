@@ -2,11 +2,8 @@
 title: Create an Amazon S3 shortcut
 description: Learn how to create a OneLake shortcut for Amazon S3 data access inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 07/25/2024
 #customer intent: As a data engineer, I want to learn how to create an Amazon S3 shortcut inside a Fabric lakehouse so that I can efficiently access and manage S3 data within the lakehouse environment.
 ---

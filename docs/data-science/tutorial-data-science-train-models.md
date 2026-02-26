@@ -1,13 +1,10 @@
-﻿---
+---
 title: "Tutorial: Train and register machine learning models"
 description: In this third part of the tutorial series, learn how to train machine learning models to predict whether bank customers would stop doing business with the bank or not, and then register the trained models.
-ms.reviewer: amjafari
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 12/26/2025
-reviewer: jonburchel
 ---
 
 # Tutorial Part 3: Train and register a machine learning model
@@ -348,3 +345,4 @@ tn, fp, fn, tp = cfm.ravel()
 
 > [!div class="nextstepaction"]
 > [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)
+

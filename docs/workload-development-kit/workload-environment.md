@@ -1,10 +1,7 @@
 ---
 title: Microsoft Fabric workload environment
 description: Learn about the Microsoft Fabric workload environment and how it's configured on your local machine and on the cloud.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/21/2024
 ---
 
@@ -108,3 +105,4 @@ The workload backend (BE) operates within the partner's services. Workload API c
 * [Item lifecycle](./item-lifecycle.md)
 * [Set up your environment](./environment-setup.md)
 * [Manage a workload in Fabric](./manage-workload.md)
+

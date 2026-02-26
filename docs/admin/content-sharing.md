@@ -146,13 +146,13 @@ This section lists the report's considerations and limitations.
 
 * Reports and dashboards embedded in apps appear twice. Use the _Item ID_ value to differentiate.
 
-### Pro and Premium Per User (PPU)
+### Power BI Pro and Power BI Premium Per-User (PPU)
 
-Semantic models in *Pro* and *Premium Per User* (PPU) workspaces are hosted on internal logical capacities.
+Semantic models in *Power BI Pro* and *Power BI Premium Per-User* (PPU) workspaces are hosted on internal logical capacities.
 
   * **Pro** - Appear as *Reserved Capacity for Pro Workspaces* with the capacity SKU value *Pro*.
 
-  * **PPU** - Appear as *Reserved Capacity for Premium Per User Workspaces* with the capacity SKU value *PPU*.
+  * **PPU** - Appear as *Reserved Capacity for Power BI Premium Per-User (PPU) Workspaces* with the capacity SKU value *PPU*.
 
 ### Counting logic
 

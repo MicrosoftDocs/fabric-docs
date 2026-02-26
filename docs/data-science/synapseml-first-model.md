@@ -1,12 +1,10 @@
-﻿---
+---
 title: Build a model with SynapseML
 description: Get a quick introduction to building a machine learning model with SynapseML.
 ms.topic: how-to
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 09/29/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -26,8 +24,8 @@ Set up the tools and resources you need to build the model and pipeline.
 
 1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks)
 1. Attach your notebook to a lakehouse. In **Explorer**, expand **Lakehouses**, and then select **Add**.
-1. Get an Azure AI services key by following the instructions in [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
-1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Azure AI services key to the key vault as a secret.
+1. Get a Foundry Tools key by following the instructions in [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource).
+1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Foundry Tools key to the key vault as a secret.
 1. Record your key vault name and secret name. You need this information to run the one step transform later in this article.
 
 ## Set up the environment
@@ -79,10 +77,10 @@ Call the `transform` function on the model to predict and display the output of 
 display(model.transform(test))
 ```
 
-## Use Azure AI services to transform data in one step
-Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Azure AI services to transform your data in one step. Run the following code with these replacements:
+## Use Foundry Tools to transform data in one step
+Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Foundry Tools to transform your data in one step. Run the following code with these replacements:
 
-- Replace `<secret-name>` with the name of your Azure AI Services key secret.
+- Replace `<secret-name>` with the name of your Foundry Tools key secret.
 - Replace `<key-vault-name>` with the name of your key vault.
 
 ```python
@@ -101,6 +99,6 @@ display(model.transform(test))
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
-- [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource)
+- [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource)

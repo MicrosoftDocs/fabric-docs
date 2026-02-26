@@ -1,10 +1,8 @@
 ---
 title: Deploy a Fabric Workload to Azure
 description: Learn about the components of a proposed architecture for deploying a Microsoft Fabric workload to Azure.
-author: tasdevani21
-ms.author: tadevani
+ms.reviewer: tadevani
 ms.topic: how-to
-ms.custom:
 ms.date: 03/14/2025
 ---
 
@@ -58,3 +56,4 @@ This pattern helps ensure a consistent and reliable deployment process, because 
 
 - [Azure Key Vault](/azure/key-vault/general/basic-concepts) for managing secrets and sensitive information
 - [Managed identities](/azure/app-service/overview-managed-identity) for secure access to Azure resources without the need for credentials in code
+

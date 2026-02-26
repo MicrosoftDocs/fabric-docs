@@ -1,8 +1,7 @@
 ---
 title: Cosmos DB Database
 description: Learn about Cosmos DB in Microsoft Fabric, an integrated NoSQL developer-friendly database.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: overview
 ms.date: 10/30/2025
 ms.search.form: Databases Overview,Cosmos DB Overview
@@ -44,3 +43,4 @@ To learn more about Cosmos DB in Fabric, watch this demo from Microsoft Build 20
 
 > [!div class="nextstepaction"]
 > [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
+

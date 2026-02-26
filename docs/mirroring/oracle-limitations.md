@@ -1,9 +1,7 @@
 ---
 title: "Mirroring Oracle limitations in Microsoft Fabric"
 description: Learn about the limitations when mirroring Oracle databases in Microsoft Fabric.
-author: shaween18
-ms.author: sbahadur
-ms.reviewer: whhender
+ms.reviewer: sbahadur
 ms.date: 08/22/2025
 ms.topic: limits-and-quotas
 ms.custom: references_regions

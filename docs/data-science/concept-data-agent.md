@@ -1,14 +1,8 @@
-﻿---
+---
 title: Fabric data agent creation (preview)
-titleSuffix: Learn how to create a Fabric data agent
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: amjafari
-reviewer: amjafari
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: concept-article #Don't change; maybe should change to "conceptual".
+ms.topic: concept-article
 ms.date: 01/06/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -75,7 +69,7 @@ While both Fabric data agents and Fabric copilots use generative AI to process a
 
 **Configuration Flexibility**: You can highly configure Fabric data agents. You can provide custom instructions and examples to tailor their behavior to specific scenarios. Fabric copilots, on the other hand, come preconfigured and don't offer this level of customization.
 
-**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Azure AI Foundry, Microsoft Teams, or other tools outside Fabric.
+**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Microsoft Foundry, Microsoft Teams, or other tools outside Fabric.
 
 ## Evaluation of the Fabric data agent
 
@@ -96,6 +90,7 @@ The Fabric data agent is currently in public preview and has limitations. Update
 - You can't change the LLM that the Fabric data agent uses.
 - Conversation history in the Fabric data agent might not always persist. In certain cases, such as backend infrastructure changes, service updates, or model upgrades, past conversation history might be reset or lost.
 - The Fabric data agent can't execute queries when the data source's workspace capacity is in a different region than the data agent's workspace capacity. For example, a lakehouse with capacity in North Europe fails if the Data Agent's capacity is in France Central.
+- Users can provide up to 100 example queries per data source in their Data Agent.
 
 ## Related content
 

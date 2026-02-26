@@ -1,9 +1,7 @@
 ---
 title: Process Event Data with the Event Processing Editor
 description: Learn how to use the event processing editor to define event processing logic.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/21/2024
@@ -98,4 +96,6 @@ Here are the destination types that support adding operators before ingestion:
 > For destinations that don't support the addition of a pre-ingestion operator, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream.
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot that shows the layout of the event processing editor with a filter that sends output to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::
+
+
 

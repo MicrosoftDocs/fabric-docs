@@ -1,12 +1,9 @@
 ---
 title: Secure and manage OneLake shortcuts
 description: Understand security for OneLake shortcuts and the permissions required for shortcut creation and data access.
-ms.reviewer: kgremban
-ms.author: aamerril
-author: aamerril
+ms.reviewer: aamerril
 ms.search.form: Shortcuts
 ms.topic: concept-article
-ms.custom:
 ms.date: 10/01/2025
 #customer intent: As a security engineer, I want to understand security for OneLake shortcuts so that I can secure access to my data using roles and permissions.
 ---
@@ -73,7 +70,7 @@ The following table illustrates the necessary permissions to perform shortcut op
 |---|---|---|---|---|
 | **Create** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read  |
 | **Read (GET/LIST shortcuts)** | Fabric Read *and* OneLake security Read | N/A |
-| **Update** | Fabric Read *and* OneLake security ReadWrited | OneLake security Read (on the new target) |
+| **Update** | Fabric Read *and* OneLake security ReadWrite | OneLake security Read (on the new target) |
 | **Delete** | Fabric Read *and* OneLake security ReadWrite | N/A |
 
 ### Shortcut auth models
@@ -102,3 +99,5 @@ All shortcuts from OneLake to external systems (multicloud shortcuts) like AWS S
 * [Create a OneLake shortcut](create-onelake-shortcut.md)
 * [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
 * [Data Access Control Model in OneLake.](./security/data-access-control-model.md#shortcuts)
+
+

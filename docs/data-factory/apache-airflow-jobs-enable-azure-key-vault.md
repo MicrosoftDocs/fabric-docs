@@ -1,9 +1,7 @@
 ---
 title: Enable Azure Key Vault for Apache Airflow backend
 description: This article explains how to enable Azure Key Vault as the secret backend in Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows, sfi-image-nochange
 ms.date: 03/25/2024
@@ -11,8 +9,7 @@ ms.date: 03/25/2024
 
 # Enable Azure Key Vault as a secret backend
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 Apache Airflow offers various backends for securely storing sensitive information such as variables and connections. One of these options is Azure Key Vault. This article walks you through the process of configuring Key Vault as the secret backend for Apache Airflow Job.
 

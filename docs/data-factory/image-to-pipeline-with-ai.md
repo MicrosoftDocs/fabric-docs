@@ -1,8 +1,7 @@
 ---
 title: Use AI to turn whiteboard sketches into pipelines
 description: This article shows how AI can easily transform images directly to pipelines for Data Factory for Microsoft Fabric.
-author: dcstwh
-ms.author: weetok
+ms.reviewer: weetok
 ms.topic: how-to
 ms.date: 08/29/2024
 ms.custom: pipelines, sfi-image-nochange

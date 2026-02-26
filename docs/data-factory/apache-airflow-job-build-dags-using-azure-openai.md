@@ -2,8 +2,6 @@
 title: Use Azure OpenAI in Apache Airflow Job
 description: Learn to generate Apache Airflow DAGs by transforming whiteboard sketches into DAG code using Azure OpenAI.
 ms.reviewer: abnarain
-ms.author: abnarain
-author: abnarain
 ms.topic: how-to
 ms.date: 11/18/2024
 ms.custom: airflows, sfi-image-nochange
@@ -100,7 +98,7 @@ Now, follow the steps to implement the workflow:
        params={
            "system_prompt": Param(
                'You are an AI assistant that helps to write an Apache Airflow DAG code by understanding an image that shows an Apache Airflow DAG containing airflow tasks, task descriptions, parameters, trigger rules and edge labels.\
-               You have to priortize the Apache Airflow provider operators over Apache Airflow core operators if they resonates more with task description.\
+               You have to prioritize the Apache Airflow provider operators over Apache Airflow core operators if they resonate more with the task description.\
                Use the most appropriate Apache Airflow operators as per the task description\
                To give the label to the DAG edge use the Label from the airflow.utils.edgemodifier class\
                You can use Dummy operators for start and end tasks. \

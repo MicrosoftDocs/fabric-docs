@@ -1,14 +1,10 @@
-﻿---
+---
 title: Use R for Apache Spark
 description: Overview of developing Spark applications using the R language.
-ms.reviewer: None
-author: lgayhardt
-ms.author: lagayhar
+ms.reviewer: lagayhar, sgilley
 ms.topic: overview
-ms.custom: 
 ms.date: 08/26/2025
 ms.search.form: R Language
-reviewer: sdgilley
 ai.usage: ai-assisted
 ---
 
@@ -93,3 +89,4 @@ Learn how to create R visualizations in [R visualization](./r-visualization.md).
 - [Visualize data in R](./r-visualization.md)
 - [Tutorial: avocado price prediction](./r-avocado.md)
 - [Tutorial: flight delay prediction](./r-flight-delay.md)
+

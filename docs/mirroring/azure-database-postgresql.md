@@ -1,12 +1,9 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
 description: Learn about the mirrored databases from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: scoriani
 ms.date: 07/15/2025
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

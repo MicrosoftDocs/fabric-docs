@@ -1,8 +1,7 @@
 ---
 title: Google Cloud Pub/Sub connector for Fabric event streams
 description: The include file has the common content for configuring Google Cloud Pub/Sub connector for Fabric event streams and Real-Time hub.
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
 ms.custom: sfi-image-nochange
 ms.date: 11/22/2024
@@ -54,3 +53,4 @@ ms.date: 11/22/2024
 1. Select **Connect** on the **Connection settings** screen.
 
 1. Review the summary, and then select **Add**.
+

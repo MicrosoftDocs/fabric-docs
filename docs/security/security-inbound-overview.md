@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 01/27/2026
 
 #customer intent: As a Fabric admin, I want a unified overview of all inbound protection features across both tenant and workspace scopes, helping me decide which controls to use and how they interact.

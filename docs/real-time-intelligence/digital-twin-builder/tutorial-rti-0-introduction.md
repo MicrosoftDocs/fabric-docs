@@ -1,8 +1,6 @@
 ---
 title: Digital twin builder (preview) in Real-Time Intelligence tutorial introduction
 description: Get started with a sample scenario that uses digital twin builder (preview) with Real-Time Intelligence features.
-author: baanders
-ms.author: baanders
 ms.date: 11/10/2025
 ms.topic: tutorial
 ---

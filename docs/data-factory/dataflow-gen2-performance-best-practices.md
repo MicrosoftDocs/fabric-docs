@@ -1,9 +1,7 @@
 ---
 title: "Best practices for getting the best performance with Dataflow Gen2 in Fabric Data Factory"
 description: "This article provides best practices for optimizing the performance of Dataflow Gen2 in Fabric Data Factory. By following these guidelines, you can enhance the efficiency and speed of your data integration processes."
-author: luitwieler
-ms.author: jeluitwi
-ms.reviewer: dougklo
+ms.reviewer: dougklo, jeluitwi
 ms.topic: concept-article
 ms.date: 07/29/2025
 ms.custom: dataflow

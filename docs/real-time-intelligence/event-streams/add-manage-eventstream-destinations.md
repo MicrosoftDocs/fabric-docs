@@ -1,11 +1,8 @@
 ---
 title: Add and manage eventstream destinations
 description: Learn how to add and manage an event destination in an Eventstream item with the Microsoft Fabric event streams feature.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/27/2024
 ms.search.form: Source and Destination
 ---
@@ -37,3 +34,5 @@ Fabric event streams support the following destinations. Use links in the table 
 To edit or remove an Eventstream destination, switch to **Edit mode** first. Then you can make changes to the destination on the canvas. After completing the required changes, **publish** the Eventstream to apply them.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-v2-destination-edit-deletion.png" alt-text="Screenshot showing enter to edit mode to modify and delete options for destinations on the canvas in eventstream v2." lightbox="./media/add-manage-eventstream-destinations/eventstream-v2-destination-edit-deletion.png" :::
+
+

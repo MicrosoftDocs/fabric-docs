@@ -1,13 +1,12 @@
 ---
 title: Add Apache Kafka as source in Fabric Real-Time hub
 description: This article describes how to add an Apache Kafka topic as an event source in Fabric Real-Time hub using an API key.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
 ms.custom:
   - references_regions
 ms.date: 12/22/2025
-# Customer intent: I want to learn how to add an Apache Kafka topic as a source in Fabric Real-Time hub.
+#customer intent: I want to learn how to add an Apache Kafka topic as a source in Fabric Real-Time hub.
 ---
 
 # Add Apache Kafka as source in Fabric Real-Time hub (preview)
@@ -43,3 +42,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

@@ -1,8 +1,6 @@
 ---
 title: Connect to Binary format in dataflows
 description: This article details how to use the Data Factory Binary format connector in Microsoft Fabric to create a Binary format connection in dataflows.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 12/29/2025
 ms.custom:

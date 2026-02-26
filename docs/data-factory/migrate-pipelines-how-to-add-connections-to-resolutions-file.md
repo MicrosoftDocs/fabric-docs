@@ -1,9 +1,7 @@
 ---
 title: How to Add Connections to Your Resolutions File
 description: Map your Azure Data Factory linked services to your Fabric connections for PowerShell pipeline migration.
-author: ssindhub
-ms.author: ssrinivasara
-ms.reviewer: whhender
+ms.reviewer: ssrinivasara
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 09/17/2025

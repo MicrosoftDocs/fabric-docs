@@ -1,8 +1,6 @@
 ---
 title: Deprecated Fabric workspace events
 description: Provides a note about deprecated Fabric workspace events. 
-author: spelluru
-ms.author: spelluru
 ms.topic: include
 ms.date: 03/18/2025
 ---

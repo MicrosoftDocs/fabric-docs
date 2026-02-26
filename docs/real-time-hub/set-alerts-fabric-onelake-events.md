@@ -1,8 +1,7 @@
 ---
 title: Set alerts on OneLake events in Real-Time hub
 description: This article describes how to set alerts on OneLake events in Real-Time hub.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
 ms.date: 12/14/2025
 ---
@@ -109,3 +108,4 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
 - [Set alerts on Fabric workspace item events](set-alerts-fabric-workspace-item-events.md)
+

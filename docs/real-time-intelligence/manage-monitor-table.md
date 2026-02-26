@@ -2,10 +2,7 @@
 title: Manage and monitor a KQL database table
 description: Learn how to manage and monitor a table and gain insights from the system information in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 03/20/2025
 ms.subservice: rti-eventhouse
 ms.search.form: Database

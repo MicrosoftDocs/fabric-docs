@@ -1,9 +1,7 @@
 ---
 title: Add Azure Blob Storage event source to an eventstream
 description: Learn how to add Azure Blob Storage event source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 2/05/2024
@@ -120,3 +118,5 @@ After you link Azure Blob Storage events to Fabric events in Real-Time hub, you 
 
 - [Add Fabric workspace item events to an eventstream](add-source-fabric-workspace.md)
 - [Create eventstreams for discrete events](create-eventstreams-discrete-events.md)
+
+

@@ -1,10 +1,8 @@
 ---
 title: Microsoft Fabric Extensibility Toolkit Validator
 description: Learn about the Microsoft Fabric Extensibility Toolkit Validator, a tool for validating workloads against Fabric requirements.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/04/2025
 ---
 

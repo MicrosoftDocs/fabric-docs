@@ -1,8 +1,7 @@
 ---
 title: Set up your Oracle database connection
 description: This article provides information about how to create an Oracle database connection in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/14/2025
 ms.custom:
@@ -50,6 +49,15 @@ The Oracle database connector supports the following authentication types for co
         1. Select **Install** button to proceed.
 
             :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
+
+## Set up your connection in Dataflow Gen2
+
+You can connect Dataflow Gen2 in Microsoft Fabric to Oracle database using Power Query connectors. Follow these steps to create your connection:
+
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Oracle database prerequisites](/power-query/connectors/oracle-database#prerequisites).
+1. Check [Oracle database known issues and limitations](/power-query/connectors/oracle-database#known-issues-and-limitations) to make sure your scenario is supported.
+1. [Connect to an Oracle database (from Power Query Online)](/power-query/connectors/oracle-database#connect-to-an-on-premises-oracle-database-from-power-query-online).
 
 ## Set up your connection in a pipeline
 

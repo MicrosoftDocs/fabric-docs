@@ -1,9 +1,7 @@
 ---
 title: Incrementally copy new and changed files based on the last modified date
 description: Learn steps to incrementally copy new and changed files based on the last modified date.
-ms.reviewer: whhender
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: tutorial
 ms.custom: pipelines
 ms.date: 11/20/2025

@@ -2,9 +2,9 @@
 title: Microsoft Fabric product, experience, and item icons
 description: Microsoft Fabric icons are designed for creating architecture diagrams and illustrations, ensuring a consistent and professional appearance for your projects.
 author: SnehaGunda
+ms.author: sngun
 ms.topic: concept-article
 ms.date: 07/03/2025
-ms.author: sngun
 ---
 
 # Microsoft Fabric product, workload, and item icons

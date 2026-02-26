@@ -1,12 +1,9 @@
 ---
 title: "Fabric SQL database source control integration"
 description: Learn how to work with your SQL database with Fabric's git integration source control.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur, drskwier
 ms.date: 02/13/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form:
 ---
 # SQL database source control integration in Microsoft Fabric

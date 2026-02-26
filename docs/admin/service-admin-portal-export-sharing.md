@@ -4,8 +4,9 @@ description: Learn how to configure export and sharing settings in Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 05/26/2025
+ms.date: 02/20/2026
 LocalizationGroup: Administration
+ai-usage: ai-assisted
 ---
 
 # Export and sharing tenant settings
@@ -22,9 +23,13 @@ External data sharing has important [security considerations](../governance/exte
 
 To turn on external data sharing:
 
-1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
-1. Under the **Export and sharing settings** section, find and expand the **External data sharing (preview)** setting.
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. Open the **Tenant settings** tab.
+
+1. Under the **Export and sharing settings** section, find and expand the **External data sharing** setting.
 
 1. Set the toggle to **Enabled**.
 
@@ -36,7 +41,11 @@ When you turn on this setting, the users you specify will be able to accept read
 
 To allow users to accept external data shares:
 
-1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
+
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. Select **Tenant settings**.
 
 1. Under the **Export and sharing settings** section, find and expand the **Users can accept external data shares (preview)** setting.
 

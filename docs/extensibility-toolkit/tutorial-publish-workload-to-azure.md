@@ -1,10 +1,8 @@
 ---
 title: How to publish your workload to Azure
 description: Learn how to deploy your Microsoft Fabric Extensibility Toolkit workload to Azure using Front Door, static websites, and Azure services.
-author: tasdevani21
-ms.author: tadevani
+ms.reviewer: tadevani
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2025
 ---
 
@@ -335,3 +333,4 @@ Enable Application Insights for monitoring:
 - [How to publish and manage a workload](./tutorial-publish-workload.md) - Uploading manifest to Fabric
 - [Setup Guide](./setup-guide.md) - Initial development environment setup
 - [Tutorial: Getting Started](./get-started.md) - Getting started with the Extensibility Toolkit
+

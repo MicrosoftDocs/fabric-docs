@@ -6,7 +6,6 @@ summary: Microsoft Fabric is a unified platform that can meet your organization'
 metadata:
   title: Microsoft Fabric fundamentals documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: get-started
   ms.topic: landing-page # Required
   author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.

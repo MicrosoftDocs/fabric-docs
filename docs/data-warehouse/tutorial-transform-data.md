@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Transform Data with a Stored Procedure in a Warehouse"
 description: "In this tutorial, learn how to create a stored procedure in a Warehouse to transform data in a table."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 04/06/2025
 ms.topic: tutorial

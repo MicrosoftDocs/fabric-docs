@@ -1,12 +1,8 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
-ms.author: lagayhar 
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
-ms.custom:
 ms.date: 01/14/2025
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
@@ -290,7 +286,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 The previous analysis showed that the dataset is highly imbalanced. That imbalance becomes a problem, because the minority class has too few examples for the model to effectively learn the decision boundary.
 
-[SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) can solve the problem. SMOTE is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the Euclidian distances between data points. This method differs from random oversampling, because it creates new examples that don't just duplicate the minority class. The method becomes a more effective technique to handle imbalanced datasets.
+[SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) can solve the problem. SMOTE is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the Euclidean distances between data points. This method differs from random oversampling, because it creates new examples that don't just duplicate the minority class. The method becomes a more effective technique to handle imbalanced datasets.
 
 ```python
 # Disable MLflow autologging because you don't want to track SMOTE fitting

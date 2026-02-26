@@ -1,8 +1,6 @@
 ---
 title: Include file the copy job supported connectors table for automatic table creation and truncate
 description: Include file copy job supported connectors table for automatic table creation and truncate
-author: whhender
-ms.author: whhender
 ms.reviewer: yexu
 ms.date: 01/05/2025
 ms.topic: include

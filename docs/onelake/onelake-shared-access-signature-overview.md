@@ -1,8 +1,7 @@
 ---
 title: What is a OneLake shared access signature (SAS)
 description: Learn how OneLake SAS can provide short-term, delegated access to OneLake
-author: mabasile-MSFT
-ms.author: mabasile
+ms.reviewer: mabasile
 ms.topic: concept-article 
 ms.date: 04/10/2025
 
@@ -63,3 +62,4 @@ You can also monitor the creation of user delegation keys in the Microsoft Purvi
 * [Generate a user delegation key](/rest/api/storageservices/get-user-delegation-key)
 * [Fabric and OneLake data security](security/data-access-control-model.md)
 * [Create a user delegation SAS for a blob with Python](/azure/storage/blobs/storage-blob-user-delegation-sas-create-python)
+

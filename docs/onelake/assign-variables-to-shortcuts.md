@@ -1,11 +1,8 @@
 ---
 title: Assign variables to shortcuts
 description: Learn how to set workspace variable to shortcuts properties
-ms.author: kgremban
-author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 05/30/2025
 #customer intent: As a data engineer, I want to learn how to integrate shortcuts into my CI/CD pipeline.
 ---

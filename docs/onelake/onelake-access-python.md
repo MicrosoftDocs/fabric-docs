@@ -1,11 +1,8 @@
 ---
 title: Access OneLake with Python
 description: Learn how to use the Azure Storage Python SDK to access and manage files and directories in OneLake.
-ms.reviewer: eloldag
-ms.author: mabasile
-author: mabasile-MSFT
+ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.custom:
 ai-usage: ai-assisted
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to learn how to use Python and the Azure Storage Python SDK to access and manage files and directories in OneLake so that I can efficiently work with data stored there and perform necessary operations such as uploading files, creating directories, and listing directory contents.
@@ -142,3 +139,4 @@ python listOneLakeDirectory.py
 - [Use Python to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
 - [OneLake parity and integration](onelake-api-parity.md)
 - [Sync OneLake with your Windows File Explorer](onelake-file-explorer.md)
+

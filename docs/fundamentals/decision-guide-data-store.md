@@ -71,3 +71,4 @@ In Kirby's scenario, data from the operational application must be joined with o
 
 > [!div class="nextstepaction"]
 > [Learn about Fabric migration](migration.md)
+

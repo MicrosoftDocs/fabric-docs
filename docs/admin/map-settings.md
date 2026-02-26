@@ -1,13 +1,12 @@
 ---
 title: Map tenant settings 
 description: Toggle tenant settings to permit or restrict organization members from using Map items.
-author: deniseatmicrosoft
-ms.author: limingchen
+author: msmimart
+ms.author: mimart
+ms.reviewer: limingchen
 ms.topic: how-to
 ms.date: 09/15/2025
 ms.search.form: Map tenant settings
-ms.service: azure-maps
-ms.subservice: 
 ---
 
 # Map tenant settings
@@ -41,3 +40,4 @@ When enabled, this setting allows data sent to Azure Maps to be routed to the ne
 
 > [!NOTE]
 > Azure Maps does not process or transmit any customer names or personally identifiable information (PII).
+

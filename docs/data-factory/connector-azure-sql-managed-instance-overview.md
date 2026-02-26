@@ -1,8 +1,7 @@
 ---
 title: Azure SQL Managed Instance connector overview
 description: This article provides the overview of connecting to and using Azure SQL Managed Instance data in Data Factory.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:

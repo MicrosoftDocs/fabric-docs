@@ -2,11 +2,9 @@
 title: Materialized Lake Views Operational Run Details
 description: Learn how to understand materialized lake views operational run details
 ms.topic: how-to
-author: eric-urban
-ms.author: eur
 ms.reviewer: apsinhar
 ms.date: 06/06/2025
-# customer intent: As a data engineer, I want to understand the operational run details of materialized lake views in Microsoft Fabric so that I can monitor and manage their execution.
+#customer intent: As a data engineer, I want to understand the operational run details of materialized lake views in Microsoft Fabric so that I can monitor and manage their execution.
 ---
 
 # Understand materialized lake views operational run details

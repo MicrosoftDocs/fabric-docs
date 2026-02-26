@@ -4,7 +4,6 @@ description: Learn how changes to domains are recorded and logged so that you ca
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 03/20/2024
 ---
 

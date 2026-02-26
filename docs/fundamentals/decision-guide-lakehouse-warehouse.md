@@ -4,8 +4,7 @@ description: "Learn more about the decisions for your data in the Warehouse or L
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.date: 08/20/2024
-ms.topic: product-comparison  #Don't change in the template.
-ms.custom:
+ms.topic: product-comparison
 ---
 # Microsoft Fabric decision guide: Choose between Warehouse and Lakehouse
 

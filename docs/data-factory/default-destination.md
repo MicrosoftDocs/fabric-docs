@@ -1,9 +1,7 @@
 ---
 title: Dataflow Gen2 default destination
 description: Learn about default data destination configurations and settings in Dataflow Gen2.
-author: luitwieler
-ms.author: jeluitwi
-ms.reviewer: whhender
+ms.reviewer: jeluitwi
 ms.topic: concept-article
 ms.date: 02/26/2025
 ms.custom: dataflows

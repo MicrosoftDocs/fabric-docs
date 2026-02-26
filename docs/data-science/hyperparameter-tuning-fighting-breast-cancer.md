@@ -2,11 +2,9 @@
 title: Hyperparameter tuning - Fighting Breast Cancer
 description: Identify the best combination of hyperparameters for your chosen classifiers with SynapseML.
 ms.topic: overview
-ms.custom:
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: fsolomon
-reviewer: JessicaXYWang
 
 ms.date: 04/04/2025
 ---
@@ -112,5 +110,5 @@ metrics.limit(10).toPandas()
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

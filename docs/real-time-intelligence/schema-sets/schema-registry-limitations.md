@@ -1,14 +1,10 @@
 ---
 title: Schema Registry Limits in Fabric Real-Time Intelligence
-ms.service: fabric
 description: Understand the limitations of Schema Registry in Fabric Real-Time Intelligence, including supported sources, destinations, and handling of non-conforming events.
 #customer intent: As a data engineer, I want to understand the current limitations of Schema Registry in Fabric Real-Time Intelligence so that I can plan my data streaming implementation effectively.
-author: spelluru
 contributors: null
 ms.topic: overview
 ms.date: 08/07/2025
-ms.author: spelluru
-ms.reviewer: spelluru
 ms.custom:
   - ai-gen-docs-bap
   - ai-gen-title
@@ -45,3 +41,5 @@ Schema Registry in Fabric Real-Time Intelligence is currently in preview. This a
 ## Related content
 
 [Schema Registry (preview)](schema-registry-overview.md)
+
+

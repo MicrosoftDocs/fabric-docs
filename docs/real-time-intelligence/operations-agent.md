@@ -1,11 +1,8 @@
 ---
 title: Operations Agent
 description: Learn how to use operations agent in Real-Time Intelligence.
-ms.reviewer: willthom
-author: hzargari-ms
-ms.author: v-hzargari
+ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.custom:
 ms.date: 11/11/2025
 ms.search.form: Operations Agent
 ---
@@ -115,3 +112,4 @@ Choose **Yes** to approve or **No** to reject the recommendation. The message di
 
 ## Related content
 * [Operations agent limitations](operations-agent-limitations.md)
+

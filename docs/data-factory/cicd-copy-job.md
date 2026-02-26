@@ -2,8 +2,7 @@
 title: CI/CD for copy job in Data Factory
 #customer intent: As a developer, I want to set up CI/CD for copy job in Data Factory so that I can automate integration, testing, and deployment.
 description: This article describes how to set up continuous integration and delivery (CI/CD) for copy job in Data Factory for Microsoft Fabric.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 06/20/2025
 ms.custom: copy-job

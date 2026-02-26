@@ -1,9 +1,6 @@
 ---
 title: What is Microsoft Fabric API for GraphQL?  
 description: Discover how the Microsoft Fabric API for GraphQL simplifies querying multiple data sources using a familiar API technology, enabling faster application development.
-ms.reviewer: sngun
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom: freshness-kr
 ms.search.form: GraphQL API Overview
@@ -140,3 +137,4 @@ Refer to [API for GraphQL limitations](api-graphql-limits.md) for more informati
 - [Connect applications to Fabric API for GraphQL](connect-apps-api-graphql.md)
 - [Fabric GraphQL frequently asked questions](graphql-faq.yml)
 - [GraphQL query language](https://graphql.org/learn)
+

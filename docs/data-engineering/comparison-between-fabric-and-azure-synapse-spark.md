@@ -2,12 +2,10 @@
 title: "Compare Fabric and Azure Synapse Spark: Key Differences"
 description: Compare Azure Synapse Spark and Fabric Spark across pools, configurations, libraries, notebooks, and Spark job definitions. Find out which platform fits your analytics needs.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom:
   - fabric-cat
-ms.date: 12/12/2025
+ms.date: 02/13/2026
 ---
 
 # Compare Fabric Data Engineering and Azure Synapse Spark
@@ -72,6 +70,33 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 - **Runtime**: Fabric doesn't support Spark 3.3 and earlier versions. Fabric Spark supports Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md), Spark 3.5 with Delta 3.1 within [Runtime 1.3](runtime-1-3.md), and Spark 4.0 with Delta 4.0 within [Runtime 2.0](runtime-2-0.md).
 
 **When to choose**: Use Fabric Spark pools for fast startup (starter pools), single-node jobs, high concurrency sessions, and V-Order optimization. Use Azure Synapse pools when you need GPU acceleration or fixed scaling up to 200 nodes.
+
+### Understanding Spark pool models
+
+Azure Synapse and Fabric use fundamentally different pool models:
+
+- **Azure Synapse**: A Spark pool is a fixed compute resource with a maximum node count. Each job (notebook or Spark job definition) provisions a cluster inside the pool. The pool defines the upper bound of nodes available across all running artifacts.
+
+- **Fabric**: A Spark pool is a configuration template, not a fixed backing compute resource. Each artifact provisions its own cluster, but sizing is constrained by Capacity vCores, not by a pool max-size property. [High concurrency sessions](high-concurrency-overview.md) allow artifacts to share the same session or cluster.
+
+| Aspect | Azure Synapse | Fabric |
+|--|--|--|
+| What defines total compute? | Pool max nodes | Capacity (vCores + burst) |
+| What does the pool represent? | Actual compute boundary | Template for cluster creation |
+| Parallelism limited by | Pool node count | Total capacity vCores |
+
+#### Practical example: concurrency comparison
+
+The following table compares how many concurrent jobs can run under different configurations, assuming a cluster size of 1 driver + 6 workers (7 nodes, 28 vCores per job) with Small nodes (4 vCores each).
+
+| Metric | Synapse (24-node pool) | Fabric F16 (96 Spark vCores) | Fabric F32 (192 Spark vCores) |
+|--|--|--|--|
+| Compute boundary | 24 nodes | 32 vCores × 3 burst = 96 vCores | 64 vCores × 3 burst = 192 vCores |
+| Max concurrent jobs | 3 (uses 21 nodes) | 3 (uses 84 vCores) | 6 (uses 168 vCores) |
+| Remaining capacity | 3 nodes | 12 vCores | 24 vCores |
+| Queue limit | 200 per pool | 16 per capacity | 32 per capacity |
+
+For more information about Fabric capacity and concurrency, see [Concurrency limits and queueing](spark-job-concurrency-and-queueing.md).
 
 ### Spark runtime versions
 

@@ -1,8 +1,7 @@
 ---
 title: Secure Your Cosmos DB Database
 description: Review the fundamentals of securing Cosmos DB in Microsoft Fabric from the perspective of data security.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: best-practice
 ms.date: 11/12/2025
 ms.custom: [security-horizontal-2025, horz-security]
@@ -39,4 +38,5 @@ This article provides guidance on how to best secure your Cosmos DB in Fabric de
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Authenticate using Microsoft Entra ID to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
 - [Manage authorization in Cosmos DB in Microsoft Fabric](authorization.md)
+
 

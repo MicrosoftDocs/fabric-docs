@@ -1,8 +1,7 @@
 ---
 title: PostgreSQL CDC connector for Fabric event streams
 description: This include file has the common content for configuring a PostgreSQL Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub.
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
 ms.custom: sfi-image-nochange
 ms.date: 10/31/2025
@@ -66,3 +65,4 @@ ms.date: 10/31/2025
 1. On the **Review + connect** page, review the summary, and then select **Add**.
 
     :::image type="content" source="media/postgresql-database-cdc-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page filled for the Azure PostgreSQL database connector." lightbox="media/postgresql-database-cdc-source-connector/review-create-page.png":::
+

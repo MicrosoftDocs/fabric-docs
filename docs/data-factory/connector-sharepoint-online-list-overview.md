@@ -1,8 +1,7 @@
 ---
 title: SharePoint Online List connector overview
 description: This article explains the overview of using SharePoint Online List.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 04/01/2025
 ms.custom:

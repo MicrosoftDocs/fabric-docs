@@ -1,10 +1,7 @@
-﻿---
+---
 title: 'Tutorial: Create, evaluate, and score a sales forecasting model'
 description: This tutorial shows the data science workflow for building a model that predicts the sales for various categories of products.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
 ms.date: 04/25/2025
 #customer intent: As a data scientist, I want to build a forecasting model so I can predict the sales of products.
@@ -462,3 +459,4 @@ Based on this observation, we can have confidence in the forecasting capabilitie
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training/model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

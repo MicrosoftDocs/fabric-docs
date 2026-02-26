@@ -1,11 +1,8 @@
 ---
 title: How do I connect to OneLake?
 description: Microsoft OneLake provides open access to your files and folders through the same APIs and SDKs as ADLS Gen2.
-ms.reviewer: eloldag
-ms.author: mabasile
-author: mabasile-MSFT
+ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.custom:
 ms.date: 02/21/2025
 #customer intent: As a data engineer, I want to understand how to connect to Microsoft OneLake using the existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs so that I can seamlessly access and manipulate my data.
 ---
@@ -102,3 +99,4 @@ Create file
 - [OneLake parity and integration](onelake-api-parity.md)
 - [Connect to OneLake with Python](onelake-access-python.md)
 - [OneLake integration with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
+

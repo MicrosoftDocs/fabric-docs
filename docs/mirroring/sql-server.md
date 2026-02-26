@@ -1,12 +1,9 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From SQL Server"
 description: Learn about the mirrored databases From SQL Server in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: ajayj, rajpo, twright, wiassaf
+ms.reviewer: ajayj, rajpo, twright
 ms.date: 11/05/2025
 ms.topic: concept-article
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -49,11 +46,13 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
     - SQL Server 2017 on Linux supports Fabric Mirroring starting with CU18.
     - SQL Server 2019 and SQL Server 2022 on Linux support Fabric Mirroring.
     - SQL Server instances hosted on on-premises, SQL Server on Azure VM, SQL Server on non-Azure clouds support Fabric Mirroring.
+    - Mirroring for SQL Server 2016 - 2022 uses the Change Data Capture (CDC) feature.
 
 - SQL Server 2025
     - Fabric Mirroring for SQL Server 2025 is supported for on-premises instances, currently not supported for SQL Server 2025 instances running in an Azure Virtual Machine.
     - Fabric Mirroring for SQL Server 2025 is currently not supported in SQL Server on Linux.
     - Fabric Mirroring for SQL Server 2025 requires connection to Azure Arc including the Azure Extension for SQL Server. For steps, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql2025).
+    - Mirroring for SQL Server 2025 uses the Fabric mirroring change feed feature.
 
 ## Mirroring SQL Server behind firewall
 
@@ -94,3 +93,4 @@ Fabric compute used to replicate your data into Fabric OneLake is free. Storage 
 - [Limitations in Microsoft Fabric mirrored databases From SQL Server](../mirroring/sql-server-limitations.md)
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
 - [Troubleshoot Fabric mirrored databases From SQL Server](../mirroring/sql-server-troubleshoot.md)
+

@@ -1,9 +1,7 @@
 ---
 title: Eventhouse cost per GB ingested 
 description: Discover how Eventhouse calculates cost per GB ingested, what drives costs, and how to optimize your cluster.
-ms.reviewer: avnera
-author: bwatts64
-ms.author: bwatts
+ms.reviewer: avnera, bwatts
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
 ms.date: 09/08/2025
@@ -89,7 +87,7 @@ In Eventhouse, all ingested data is stored in persistent storage. Each table and
 
 > [!NOTE]
 >
-> * To learn more on optimizing your Eventhouse Compute, read through [Understanding Eventhouse computer usage](eventhouse-compute-observability.md)
+> * To learn more on optimizing your Eventhouse Compute, read through [Understanding Eventhouse compute usage](eventhouse-compute-observability.md)
 
 ### Volume of data ingested
 
@@ -111,5 +109,7 @@ Each ingestion method has different cost, latency, and functionality characteris
 >
 > - To reduce read transactions, minimize queries over cold data 
 > - Enable autoscale to dynamically match cluster size to demand.
+
+
 
 

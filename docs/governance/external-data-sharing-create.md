@@ -4,7 +4,6 @@ description: "This article describes how to create an external data share to sha
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 11/19/2024
 #customer intent: As a data owner, I want to share data in my tenant's OneLake storage with an user in another Fabric tenant.
 ---

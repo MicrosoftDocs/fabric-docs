@@ -1,9 +1,7 @@
 ---
 title: Install a Private Package as a requirement in Apache Airflow Job
 description: This tutorial shows how to install private package as a requirement in Apache Airflow Job.
-ms.reviewer: xupxhou
-ms.author: abnarain
-author: abnarain
+ms.reviewer: xupxhou, abnarain
 ms.topic: how-to
 ms.custom: airflows
 ms.date: 06/30/2025
@@ -11,8 +9,7 @@ ms.date: 06/30/2025
 
 # Install a Private Package as a requirement in Apache Airflow job
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 A Python package lets you organize related Python modules into a single directory hierarchy. A package is typically represented as a directory that contains a special file called **init**.py. Inside a package directory, you can have multiple Python module files (.py files) that define functions, classes, and variables. With Apache Airflow Jobs, you can develop your own private packages to add custom Apache Airflow operators, hooks, sensors, plugins, and more.
 

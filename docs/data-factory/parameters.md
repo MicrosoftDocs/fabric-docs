@@ -2,8 +2,6 @@
 title: Parameters
 description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: whhender
-author: whhender
 ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 12/18/2024
@@ -71,7 +69,7 @@ Parameterizing connections in pipelines requires use of the connection GUID that
 
 1. Before you can dynamically modify the connection in your pipeline, you must grab the GUID for the connection that you wish to set
 2. Go to Settings | Manage connections and gateways
-3. Find the name of the connection and click the elipses next to the connection name
+3. Find the name of the connection and click the ellipsis next to the connection name
 4. Select Settings and copy the Connection ID
 5. Use a string parameter to paste the GUID in that parameter for use in your dynamic expression
 

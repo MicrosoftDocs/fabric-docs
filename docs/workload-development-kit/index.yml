@@ -6,11 +6,8 @@ summary: Learn to use the Microsoft Fabric Development Kit to develop your own F
 metadata:
   title: Microsoft Fabric Workload Development Kit
   description: A landing page for Microsoft Fabric Workload Development Kit documentation
-  ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: governance
   ms.topic: landing-page # Required
-  author: KesemSharabi
-  ms.author: kesharab
   ms.date: 12/25/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new

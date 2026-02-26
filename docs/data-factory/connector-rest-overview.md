@@ -1,8 +1,7 @@
 ---
 title: REST connector overview
 description: This article explains the overview of using REST.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 07/01/2025
 ms.custom:

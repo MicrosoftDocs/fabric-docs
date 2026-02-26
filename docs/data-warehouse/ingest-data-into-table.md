@@ -1,8 +1,6 @@
 ---
 title: Ingest Data in the Warehouse
 description: Learn how to insert data in your Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jovanpop, procha, salilkanade
 ms.date: 01/09/2026
 ms.topic: how-to

@@ -1,11 +1,8 @@
 ---
 title: Use Blob and ADLS APIs to mirror data into OneLake
 description: This explains how developers can use Azure Data Lake Storage (ADLS) and Blob Storage APIs to efficiently connect existing applications to OneLake, especially for streaming Parquet data into Microsoft Fabric’s open mirroring landing zone, without needing to rewrite their apps. It covers practical implementation details, performance tips, and robust testing strategies using the Azurite emulator
-ms.reviewer: eloldag
-ms.author: tompeplow
-author: tpeplow
+ms.reviewer: eloldag, tompeplow
 ms.topic: overview
-ms.custom:
 ms.date: 10/07/2025
 #customer intent: As a developer or data engineer, I want to seamlessly connect my existing Azure Storage-based applications to OneLake and efficiently stream, serialize, and upload data—such as Parquet files—into Fabric’s open mirroring landing zone, so that I can modernize my data pipelines, optimize performance, and enable robust, testable integrations without rewriting my code.
 ---

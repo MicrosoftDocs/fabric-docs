@@ -1,8 +1,6 @@
 ---
 title: Set up dbt for Fabric Data Warehouse
 description: In this tutorial, learn how to use the dbt adapter for Fabric Data Warehouse. dbt (Data Build Tool) is an open-source framework for SQL-first transformation.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: maprycem
 ms.date: 09/04/2024
 ms.topic: tutorial

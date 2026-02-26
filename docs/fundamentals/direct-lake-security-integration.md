@@ -1,13 +1,13 @@
 ---
 title: Integrate Direct Lake Security
 description: Learn how to integrate Direct Lake security across OneLake and SQL endpoints, configure connections, and apply OLS/RLS to protect data.
-#customer intent: As a Fabric user, I want to know how to integrate Direct Lake security.
 author: JulCsc
 ms.author: juliacawthra
 ms.reviewer: kayu
 ms.date: 09/22/2025
 ms.topic: concept-article
 ai-usage: ai-assisted
+#customer intent: As a Fabric user, I want to know how to integrate Direct Lake security.
 ---
 
 # Integrate Direct Lake security

@@ -1,11 +1,8 @@
 ---
 title: Troubleshoot Errors in Anomaly Detection
 description: This article provides troubleshooting steps for common errors encountered in anomaly detection in Real-Time Intelligence.
-author: hzargari-ms
-ms.author: v-hzargari
-ms.reviewer: tessahurr
+ms.reviewer: v-hzargari, tessahurr
 ms.topic: concept-article
-ms.custom:
 ms.date: 09/15/2025
 ms.search.form: Anomaly Detection Troubleshooting Errors
 ---
@@ -73,3 +70,4 @@ An error message indicating an error computing the anomaly detection model means
 
 * [Anomaly Detection Overview](anomaly-detection.md)
 * [Anomaly Detection Models](anomaly-detection-models.md)
+

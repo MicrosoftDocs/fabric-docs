@@ -1,11 +1,8 @@
 ---
 title: Apache Spark runtime lifecycle in Fabric
 description: Lifecycle for Apache Spark runtime in Fabric
-ms.reviewer: sngun
-ms.author: arali
-author: ms-arali
+ms.reviewer: arali
 ms.topic: overview
-ms.custom:
 ms.date: 11/11/2025
 ---
 
@@ -60,4 +57,3 @@ runtime major version corresponds to the Apache Spark major version. Therefore, 
 - [Runtime 2.0 (Spark 4.0, Java 21, Python 3.12, Delta Lake 4.0)](./runtime-2-0.md)
 - [Runtime 1.3 (Spark 3.5, Java 11, Python 3.11, Delta Lake 3.2)](./runtime-1-3.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
-

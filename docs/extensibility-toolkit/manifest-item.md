@@ -1,10 +1,8 @@
 ---
 title: Item Manifest
 description: What is the item manifest and how does it work.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ---
 

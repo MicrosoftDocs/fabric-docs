@@ -1,8 +1,6 @@
 ---
 title: Fabric workload monitoring hub
 description: Learn how to use the monitoring hub in the Microsoft Fabric Workload Development Kit.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/21/2024
@@ -260,3 +258,4 @@ For an example of how this ribbon was implemented, see *ItemTabToolbar.tsx* in t
 ## Related content
 
 - [Use the monitoring hub](../admin/monitoring-hub.md)
+

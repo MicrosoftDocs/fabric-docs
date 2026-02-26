@@ -2,10 +2,7 @@
 title: Use example queries in Real-Time Intelligence
 description: Learn how to use example queries to get an initial look at your data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 08/25/2025
 ms.subservice: rti-kql-query
 ms.search.form: product-kusto

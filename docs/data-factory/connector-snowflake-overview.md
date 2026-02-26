@@ -1,8 +1,7 @@
 ---
 title: Snowflake connector overview
 description: This article provides an overview of the Snowflake connector in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/10/2025
 ms.custom:

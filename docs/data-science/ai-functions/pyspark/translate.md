@@ -1,10 +1,7 @@
 ---
 title: Use ai.translate with PySpark
 description: Learn how to use the ai.translate function to translate input text into a new language of your choice with PySpark.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

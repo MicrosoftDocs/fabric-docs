@@ -1,10 +1,8 @@
 ---
 title: Publish your workload
 description: Learn the different ways how to publish your workload and make it available in Fabric
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

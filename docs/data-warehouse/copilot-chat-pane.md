@@ -81,3 +81,4 @@ For `/generate-sql`, `/question`, and optionally `/fix`, include additional info
 - [How to use Copilot code completion in Fabric in Data Warehouse](copilot-code-completion.md)
 - [How to use Copilot quick actions in Fabric in Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

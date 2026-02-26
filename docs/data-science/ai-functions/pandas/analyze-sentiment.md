@@ -1,10 +1,7 @@
 ---
 title: Use ai.analyze_sentiment with pandas
 description: Learn how to detect the emotional state of input text by using the ai.analyze_sentiment function with pandas.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

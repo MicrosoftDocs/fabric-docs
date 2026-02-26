@@ -1,10 +1,8 @@
 ---
 title: Quick start - Acquire Microsoft Entra tokens
 description: Quick start guide to acquire Microsoft Entra tokens in your Fabric extension for API access
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: quickstart
-ms.custom:
 ms.date: 12/15/2025
 ---
 # How-To: Acquire Microsoft Entra tokens

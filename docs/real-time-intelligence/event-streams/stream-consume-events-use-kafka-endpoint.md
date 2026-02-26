@@ -1,9 +1,7 @@
 ---
 title: Stream and consume events to and from Real-Time Intelligence using the Apache Kafka endpoint in an eventstream
 description: Learn how to stream and consume events to and from Real-Time Intelligence by using the Apache Kafka endpoint in an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: tutorial
 ms.custom: sfi-image-nochange, sfi-ropc-blocked
 ms.date: 10/30/2024
@@ -152,3 +150,5 @@ By default, Kafka consumers read from the end of the stream rather than the begi
 ## Conclusion
 
 Congratulations. You learned how to use the Kafka endpoint exposed from your eventstream to stream and consume the events within your eventstream. If you already have an application that's sending or consuming from a Kafka topic, you can use the same application to send or consume the events within your eventstream without any code changes. Just change the connection's configuration information.
+
+

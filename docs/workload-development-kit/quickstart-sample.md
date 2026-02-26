@@ -1,12 +1,9 @@
 ---
 title: Quick start - Run a sample workload
 description: Create a Microsoft Fabric workload using a sample workload and the instructions in this quickstart tutorial.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: quickstart  #Don't change
-ms.custom:
+ms.topic: quickstart
 ms.date: 04/09/2025
-# Customer intent: Run a workload sample to get a five minute to 'wow' experience.
+#customer intent: Run a workload sample to get a five minute to 'wow' experience.
 ---
 
 # Quickstart - Run a workload sample

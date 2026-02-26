@@ -2,10 +2,7 @@
 title: High concurrency mode for Lakehouse operations in Microsoft Fabric
 description: Learn how High Concurrency (HC) mode optimizes Spark session utilization for Lakehouse operations like Load to Delta and Preview, improving price-performance and concurrency efficiency in Microsoft Fabric.
 ms.reviewer: saravi
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/04/2025
 ---
 

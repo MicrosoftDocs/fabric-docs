@@ -1,9 +1,7 @@
 ---
 title: How to publish and manage a workload
 description: Learn how to deploy and manage a workload solution in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
-ms.service: fabric
+ms.reviewer: kesharab
 ms.topic: how-to
 ms.date: 11/18/2025
 
@@ -101,3 +99,4 @@ To deactivate a workload:
 ## Related content
 
 * [Setup guide](./setup-guide.md)
+

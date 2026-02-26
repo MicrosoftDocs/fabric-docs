@@ -1,8 +1,6 @@
 ---
 title: Choosing Between Python and PySpark Notebooks in Microsoft Fabric
 description: Learn more about choosing between python and pyspark notebooks in Microsoft Fabric.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 05/26/2025

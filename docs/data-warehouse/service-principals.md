@@ -1,10 +1,8 @@
 ---
 title: Service Principals in Fabric Data Warehouse
 description: Learn about service principals (SPN) as security identities for applications and tools in Fabric warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: sosivara, fresantos # Microsoft alias
-ms.date: 09/08/2025
+ms.reviewer: sosivara, fresantos
+ms.date: 02/17/2026
 ms.topic: how-to
 ---
 
@@ -24,13 +22,13 @@ SPNs represent application objects within a tenant and act as the identity for i
    > Service Principal (SPN) management is part of Entra ID administration duties. Your Entra ID administrator should provide you with the required SPN credentials (App ID, Secret, and Tenant ID). 
 
 1. Ensure the tenant admin can enable **Service principals can use Fabric APIs** in Fabric Admin portal.
-1. Ensure a user with Administrator [workspace role](workspace-roles.md) can grant access for an SPN through **Manage access** in the Workspace.
+1. Ensure a user with Administrator [workspace role](workspace-roles.md) membership can grant access for an SPN through **Manage access** in the Workspace.
 
    :::image type="content" source="media/service-principals/manage-access.png" alt-text="Screenshot from the Fabric portal of the manage access popup window.":::
 
 ## Create and access warehouses through REST APIs using SPN
 
-Users with administrator, member, or contributor [workspace role](workspace-roles.md) can use service principals for authentication to create, update, read, and delete Warehouse items via Fabric [REST APIs](/rest/api/fabric/warehouse/items). This allows you to automate repetitive tasks such as provisioning or managing warehouses without relying on user credentials.
+Users with administrator, member, or contributor [workspace role](workspace-roles.md) membership can use service principals for authentication to create, update, read, and delete Warehouse items via Fabric [REST APIs](/rest/api/fabric/warehouse/items). This allows you to automate repetitive tasks such as provisioning or managing warehouses without relying on user credentials.
 
 If you use a delegated account or fixed identity (owner's identity) to create the warehouse, the warehouse uses that credential while accessing OneLake. This creates a problem when the owner leaves the organization, because the warehouse will stop working. **To avoid this, create warehouses using an SPN.**
 
@@ -54,11 +52,11 @@ You can connect to Fabric warehouses by using service principals with tools like
 
 ### Control plane permissions
 
-SPNs can be granted access to warehouses using [workspace roles](workspace-roles.md) through **Manage access** in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Item Permissions](share-warehouse-manage-permissions.md). 
+SPNs can be granted access to warehouses using [workspace roles](workspace-roles.md) through **Manage access** in the workspace. In addition, warehouses can be shared with an SPN through the Fabric portal via [Fabric Item Permissions](share-warehouse-manage-permissions.md). 
 
 ### Data plane permissions
 
-Once warehouses are provided control plane permissions to an SPN through workspace roles or Item permissions, administrators can use T-SQL commands like `GRANT` to assign specific [data plane permissions](../security/permission-model.md#compute-permissions) to service principals, to control precisely which metadata/data and operations an SPN has access to. This is recommended to follow the principle of least privilege.
+Once warehouses are provided control plane permissions to an SPN through workspace roles or item permissions, administrators can use T-SQL commands like `GRANT` to assign specific [data plane permissions](../security/permission-model.md#compute-permissions) to service principals, to control precisely which metadata/data and operations an SPN has access to. This is recommended to follow the principle of least privilege.
 
 For example:
 
@@ -182,12 +180,7 @@ You can manually test token generation and API connectivity the Azure CLI.
 
 Limitations of service principals with Microsoft Fabric Data Warehouse:
 
-- Service principal or Entra ID credentials are currently not supported for COPY INTO error files.
-- Service principals are not supported for [GIT APIs](/rest/api/fabric/core/git). SPN support exists only for [Deployment pipeline APIs](/rest/api/fabric/core/deployment-pipelines).
-- Service principals are currently not allowed to perform DCL operations within the warehouse. This includes `GRANT`, `REVOKE`, and `DENY` commands, regardless of the target principal's existence.
-- Service principals cannot trigger operations that result in the automatic creation of user identities within the data warehouse. This includes scenarios where the system would normally attempt to create a user as part of an operation. Examples of operations that may trigger implicit user creation include:
-  - `ALTER USER ... WITH DEFAULT_SCHEMA`
-  - `ALTER ROLE ... ADD MEMBER`
+- Service principals are not supported for [Git APIs](/rest/api/fabric/core/git). SPN support exists only for [Deployment pipeline APIs](/rest/api/fabric/core/deployment-pipelines).
 
 ### Related content
 

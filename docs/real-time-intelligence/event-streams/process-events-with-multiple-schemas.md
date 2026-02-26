@@ -1,11 +1,8 @@
 ---
 title: Enhance Event Processing with Multiple Schema Inferencing
 description: This article provides information on using multiple schemas to process and preview events in a Microsoft Fabric eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: wenyang
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 09/08/2025
 ms.search.form: Enhancing events processing with multiple schema inferencing
 ---
@@ -168,3 +165,5 @@ When you enable multiple schema inferencing in an existing eventstream and you s
 
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
 - [Process event data by using the event processing editor](./process-events-using-event-processor-editor.md)
+
+

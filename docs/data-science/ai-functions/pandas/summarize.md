@@ -1,10 +1,7 @@
 ---
 title: Use ai.summarize with pandas
 description: Learn how to to produce summaries of input text by using the ai.summarize function with pandas.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions

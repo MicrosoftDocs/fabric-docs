@@ -1,10 +1,9 @@
 ---
 title: MongoDB Atlas connector overview
 description: This article provides the overview of connecting to and using MongoDB Atlas data in Data Factory.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 12/04/2025
+ms.date: 02/05/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -18,8 +17,8 @@ The MongoDB Atlas connector is supported in Data Factory for [!INCLUDE [product-
 
 | Supported capabilities                                                                 | Gateway                        | Authentication   |
 |----------------------------------------------------------------------------------------|--------------------------------|------------------|
-| **Pipeline** <br>- [Copy activity](connector-mongodb-atlas-copy-activity.md) (source/destination)                            | None<br> On-premises | Basic           |
-| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Upsert|None<br> On-premises| Basic |
+| **Pipeline** <br>- [Copy activity](connector-mongodb-atlas-copy-activity.md) (source/destination)                            | None<br> On-premises<br> Virtual network | Basic           |
+| **Copy job** (source/destination) <br>- Full load<br>- Append <br>- Upsert|None<br> On-premises<br> Virtual network | Basic |
 
 ## Related content
 

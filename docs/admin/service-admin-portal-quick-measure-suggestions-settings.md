@@ -3,8 +3,6 @@ title: Quick measure suggestions admin settings
 description: Learn how to configure Quick measure suggestions admin settings.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
 ms.topic: how-to

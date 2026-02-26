@@ -1,10 +1,8 @@
 ---
 title: Azure and Fabric events capacity consumption
 description: Learn how to monitor capacity consumption for Azure and Fabric events.
-author: george-guirguis
-ms.author: geguirgu
+ms.reviewer: geguirgu
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Monitor Fabric events capacity consumption
 ---
@@ -67,3 +65,4 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 - [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
+

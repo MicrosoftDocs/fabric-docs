@@ -1,8 +1,7 @@
 ---
 title: Authorization in Cosmos DB Database
 description: Learn how authentication works using data plane roles for Cosmos DB databases in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 07/14/2025
 ---
@@ -71,3 +70,4 @@ Or, if you prefer, you can map to the Azure role-based access control permission
 
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Authenticate to Cosmos DB in Microsoft Fabric](how-to-authenticate.md)
+

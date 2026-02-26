@@ -2,10 +2,7 @@
 title: Fabric runtime support in VS Code
 description: Explore How to leverage the Fabric remote runtime to run notebooks.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 06/04/2025
 ms.search.form: VSCodeExtension
 ---

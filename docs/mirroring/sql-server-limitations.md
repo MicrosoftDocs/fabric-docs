@@ -3,7 +3,7 @@ title: "Limitations of Fabric Mirrored Databases From SQL Server"
 description: A detailed list of limitations for mirrored databases From SQL Server in Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.reviewer: ajayj, rajpo, whhender
+ms.reviewer: ajayj, rajpo
 ms.date: 01/12/2026
 ms.topic: concept-article
 ms.custom:
@@ -69,7 +69,8 @@ For troubleshooting, see:
     - Graph  
     - External tables  
 - You can't perform the following table-level data definition language (DDL) operations on SQL database source tables when enabled for mirroring. 
-    - Switch, split, or merge partition
+  - Switch partition
+    
     - Alter primary key
 - Currently, you can't mirror a table if it has the **json** or **vector** data type.
     - Currently, you can't alter a column to use the **vector** or **json** data type when a table is mirrored.

@@ -1,8 +1,6 @@
 ---
 title: "Connect Your Application to a SQL Database in Fabric"
 description: Learn how to quickly connect a .NET Aspire application to the AdventureWorks sample database in your SQL database.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, drskwier, dlevy
 ms.date: 01/15/2026
 ms.topic: quickstart

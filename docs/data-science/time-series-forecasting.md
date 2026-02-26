@@ -1,10 +1,7 @@
 ---
 title: Train and evaluate a time series forecasting model
 description: This is an AI sample for training and evaluating a time series forecasting model; we develop a program to forecast time series data that has seasonal cycles.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
@@ -541,3 +538,4 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

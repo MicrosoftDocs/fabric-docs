@@ -1,11 +1,8 @@
 ---
 title: Pause and resume data streams
 description: Learn how to pause and resume data streams.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: wenyang
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 07/24/2025
 ms.search.form: Pause and Resume
 ---
@@ -99,4 +96,6 @@ Here's a detailed table of the nodes that support pause and resume functionality
 | Eventhouse (Direct Ingestion)                             | Destination   | NO                        |                                             |
 | Fabric Activator (preview)                                | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                          |
 | Derived stream                                            | Destination   | YES                       | - When streaming was last stopped<br>- Now<br>- Custom time                                              |
+
+
 

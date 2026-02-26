@@ -1,8 +1,7 @@
 ---
 title: Deactivate an Activity
 description: Learn how to deactivate an activity to exclude from pipeline run and validation.
-author: kromerm
-ms.author: makromer
+ms.reviewer: makromer
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 11/15/2023

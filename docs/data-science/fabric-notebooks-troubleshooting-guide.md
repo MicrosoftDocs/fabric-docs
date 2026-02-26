@@ -1,11 +1,8 @@
 ---
 title: Fabric Notebooks troubleshooting guide
 description: This article provides troubleshooting steps for common issues encountered in Fabric Notebooks.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: deevij
 ms.topic: troubleshooting
-ms.custom: 
 ms.date: 08/26/2025
 ai.usage: ai-assisted
 ---

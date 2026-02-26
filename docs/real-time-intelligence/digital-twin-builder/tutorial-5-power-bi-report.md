@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) tutorial part 5: Create a Power BI report'
 description: Build Power BI visuals with the data from digital twin builder (preview) tutorial. Part 5 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---

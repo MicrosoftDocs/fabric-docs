@@ -1,9 +1,7 @@
 ---
 title: "Public APIs Capabilities for Dataflow Gen2 in Fabric Data Factory"
 description: "Use the dataflow public APIs to manage your data integration through operations including dataflow CRUD (Create, Read, Update, and Delete), scheduling, and monitoring."
-author: conxu-ms
-ms.author: conxu
-ms.reviewer: whhender
+ms.reviewer: conxu
 ms.topic: concept-article
 ms.date: 05/01/2025
 ms.custom: dataflows
@@ -565,7 +563,7 @@ Retry-After: 60
 - **Service Principal authentication** is not currently supported.
 - **"Get Item"** and **"List Item Access Details"** does not return the correct information if you filter on dataflow item type. 
 - When you do not specify the type it will return the **Dataflow Gen2 (CI/CD, preview)** - the new Dataflow Gen2 with CI/CD and GIT support.
-- **Run APIs** are invokable, but the actual run never succeeds.
+- **Run APIs** can be invoked, but the actual run never succeeds.
 
 ## Related content
 

@@ -1,8 +1,6 @@
 ---
 title: Architecture of Fabric Data Warehouse
 description: Learn more about the architecture of Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul
 ms.date: 01/14/2026
 ms.topic: concept-article

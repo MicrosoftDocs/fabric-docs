@@ -1,8 +1,6 @@
 ---
 title: Change Ownership of a Warehouse
 description: Learn how to change the ownership of a warehouse item in Microsoft Fabric. Follow step-by-step instructions and improve data security.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dhsundar, fresantos
 ms.date: 05/21/2025
 ms.topic: how-to

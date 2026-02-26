@@ -1,8 +1,8 @@
 ---
 title: Microsoft Fabric features by SKU
 description: Learn about Fabric features parity according to the capacity type. The article lists features according to SKUs by capacity type.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot
 ms.date: 05/11/2025

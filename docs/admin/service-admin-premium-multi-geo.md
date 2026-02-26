@@ -3,10 +3,8 @@ title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-ms.custom:
 ms.topic: how-to
-ms.date: 09/19/2025
+ms.date: 01/29/2026
 LocalizationGroup: Premium
 ---
 
@@ -20,7 +18,7 @@ Multi-Geo is a Microsoft Fabric feature that helps multinational customers addre
 
 * Power BI Embedded supports Multi-Geo.
 
-* Power BI Premium Per User (PPU) isn't supported for Multi-Geo.
+* Power BI Premium Per-User (PPU) isn't supported for Multi-Geo.
 
 ## Enable and configure
 
@@ -74,7 +72,7 @@ When you're performing a migration, don't delete or pause either the source or d
 
 1. Open the [workspace settings](../fundamentals/workspaces.md#workspace-settings).
 
-2. From the side bar, select **License info**.
+2. From the side bar, select **Workspace type**.
 
 3. From the **License capacity** dropdown menu, select the capacity you want to move the workspace to.
 
@@ -100,13 +98,8 @@ Large-storage format semantic models shouldn't be moved from the region where th
 
 * Confirm that any movement you initiate between regions follows all corporate and government compliance requirements prior to initiating data transfer.
 
-* When you're using Multi-Geo, the following items are stored in the region that isn't your home region:
-    * SQL databases
-    * Models (*.ABF* files) for import and DirectQuery semantic models
-    * Query cache
-    * R images
+* When you're using Multi-Geo, compute and storage (including OneLake and experience-specific storage) is located in the multi-geo region, yet some tenant metadata remains in the home region, including the following:
 
-    These items remain in the home region of the tenant:
     * Push datasets
     * Dashboard/report metadata: tile names, tile queries, and any other data
     * Service buses for gateway queries or scheduled refresh jobs

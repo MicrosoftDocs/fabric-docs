@@ -1,9 +1,7 @@
 ---
 title: How to create a new dbt job in Microsoft Fabric (preview)
 description: This article guides you through how to create a dbt job, execute it, and view the results.
-ms.reviewer: whhender
-ms.author: akurnala
-author: abhinayakurnala1
+ms.reviewer: akurnala
 ms.topic: how-to
 ms.date: 11/20/2025
 ms.search.form: dbt-job-tutorials

@@ -4,7 +4,6 @@ description: Explanation of the default workspace from which SemPy functions rea
 author: s-polly
 ms.author: scottpolly
 ms.topic: include
-ms.custom:
 ms.date: 06/03/2024
 ---
 

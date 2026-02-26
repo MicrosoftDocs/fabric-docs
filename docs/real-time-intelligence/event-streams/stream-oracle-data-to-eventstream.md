@@ -1,11 +1,8 @@
 ---
 title: Stream Oracle CDC data to Eventstream Kafka endpoint
 description: Learn how to stream real-time events from Oracle CDC data to Eventstream using the Kafka endpoint with GoldenGate.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: tutorial
-ms.custom:
 ms.date: 01/15/2025
 ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream the change data capture events from my Oracle DB using Fabric event streams.
@@ -684,3 +681,5 @@ To validate the whole E2E flow, let’s sign in to the Oracle database with **gg
 1. Preview the data that you sent with this Kafka endpoint source. Select the default stream node, which is the middle node that shows your eventstream name.
 
     :::image type="content" source="./media/stream-oracle-data-to-eventstream/preview-data.png" alt-text="Screenshot that shows how to preview data in eventstream." lightbox="./media/stream-oracle-data-to-eventstream/preview-data.png" :::
+
+

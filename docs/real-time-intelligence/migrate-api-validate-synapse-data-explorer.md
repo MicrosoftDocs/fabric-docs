@@ -1,8 +1,6 @@
 ---
 title: Validate migration from Azure Synapse Data Explorer to Eventhouse - REST API (preview)
 description: Validate whether a source Azure Synapse Data Explorer is valid for Eventhouse migration.
-author: spelluru
-ms.author: spelluru
 ms.reviewer: sharmaanshul
 ms.topic: reference
 ms.date: 03/26/2025

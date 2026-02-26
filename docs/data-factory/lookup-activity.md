@@ -2,11 +2,9 @@
 title: Lookup activity
 description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
-ms.author: whhender
-author: whhender
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 12/18/2024
+ms.date: 01/20/2026
 ---
 
 # Use the Lookup activity to look up data from a data source
@@ -19,8 +17,7 @@ Lookup activity reads and returns the content of a configuration file or table. 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a lookup activity to a pipeline with UI
 
@@ -56,13 +53,13 @@ The example in the previous image shows a blob storage connection, but each conn
 > [!NOTE]
 > When you use query or stored procedure to look up data, make sure to return one and exact one result set. Otherwise, Lookup activity fails.
 
-Fabric supports the data stores listed in the [Connector overview](connector-overview.md) article. Data from any source can be used.
+The following data sources are supported for Lookup activity.
+
+[!INCLUDE [data-factory-v2-supported-data-stores](includes/supported-data-stores-for-lookup-activity.md)]
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

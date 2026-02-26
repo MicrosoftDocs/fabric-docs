@@ -1,8 +1,6 @@
 ---
 title: How to upgrade a Power BI Datamart to a Warehouse
 description: This tutorial provides a step-by-step guide to upgrade Power BI Datamart to a Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 11/18/2025
 ms.topic: how-to

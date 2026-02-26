@@ -1,8 +1,6 @@
 ---
 title: "Create a SQL database in the Fabric portal"
 description: Learn how to create a SQL database in Microsoft Fabric in the Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur, dlevy
 ms.date: 09/05/2025
 ms.topic: how-to

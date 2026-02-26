@@ -1,34 +1,46 @@
-﻿---
-title: AI services in SynapseML with bring your own key
-description: Learn about the capabilities of Azure AI services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
+---
+title: Foundry Tools in SynapseML with bring your own key
+description: Learn about the capabilities of Foundry Tools pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: jessiwang
-reviewer: JessicaXYWang
-ms.date: 08/26/2025
+ms.reviewer: vimeland
+reviewer: virginiaroman
+ms.date: 01/16/2026
 ai-usage: ai-assisted
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
-# Azure AI services in SynapseML with bring your own key
+
+# Foundry Tools in SynapseML with bring your own key
 
 [SynapseML](../synapse-overview.md) is an open source library that simplifies building scalable machine learning pipelines and integrates with Azure Synapse Analytics. It handles text analytics and computer vision tasks. It supports Python, R, Scala, Java, and .NET.
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Azure AI services helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
+[Foundry Tools](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that you use to add AI features to your apps. Foundry Tools helps you build apps that see, hear, speak, understand, and reason. It includes five capabilities: vision, speech, language, web search, and decision. Fabric uses SynapseML to provide access to these services.
 
+> [!NOTE]
+> Fabric integrates with Foundry Tools to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [Foundry Tools in Fabric](./ai-services-overview.md).
+>
+> For Azure OpenAI specifically, Fabric also provides [AI Functions](how-to-use-openai-ai-functions.md) for simple DataFrame operations. For distributed processing, see [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md).
 
-> [!NOTE] 
-> Fabric integrates with Azure AI services to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). This integration is in public preview. Learn more in [AI services in Fabric](./ai-services-overview.md).
+## Usage of Foundry Tools with bring your own key
 
+The following sections document SynapseML transformers available for Foundry Tools with bring-your-own-key. These are useful when you need specific Foundry Tools capabilities or have your own Azure AI services subscriptions.
 
-
-
-## Usage of Azure AI services with bring your own key
+> [!TIP]
+> **Consider simpler alternatives first:**
+>
+> - **For text operations at any scale** (sentiment, translation, summarization, classification, extraction): Use [AI Functions](how-to-use-openai-ai-functions.md) which provide DataFrame extensions with minimal code. **PySpark AI Functions are fully distributed** (powered by SynapseML), handling thousands to millions of rows.
+> - **For advanced custom prompts at scale**: Use [Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) which offers the `OpenAIPrompt` transformer when you need unrestricted prompt control beyond AI Functions' validated templates
+> - **For single API calls with full control**: Use [Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md)
+>
+> The services below require bring-your-own-key and are useful for specialized vision, speech, document intelligence, and search scenarios not covered by AI Functions.
 
 ### Vision
-[Azure AI Vision](https://azure.microsoft.com/products/ai-services/ai-vision/)
+
+[Azure Vision in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-vision/)
+
 - Describe: provides a description of an image in human readable language ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/vision/DescribeImage.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.vision.html#module-synapse.ml.cognitive.vision.DescribeImage)).
 - Analyze (color, image type, face, adult or racy content): analyzes visual features of an image ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/vision/AnalyzeImage.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.vision.html#module-synapse.ml.cognitive.vision.AnalyzeImage)).
 - OCR: reads text from an image ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/vision/OCR.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.vision.html#module-synapse.ml.cognitive.vision.OCR))
@@ -38,6 +50,7 @@ ms.collection: ce-skilling-ai-copilot
 - Tag: identifies list of words that are relevant to the input image ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/vision/TagImage.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.vision.html#module-synapse.ml.cognitive.vision.TagImage))
 
 [Azure AI Face](/azure/ai-services/computer-vision/overview-identity)
+
 - Detect: detects human faces in an image ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/face/DetectFace.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.face.html#module-synapse.ml.cognitive.face.DetectFace))
 - Verify: verifies whether two faces belong to the same person, or a face belongs to a person ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/face/VerifyFaces.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.face.html#module-synapse.ml.cognitive.face.VerifyFaces)).
 - Identify: finds the closest matches of the specific query person face from a person group ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/face/IdentifyFaces.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.face.html#module-synapse.ml.cognitive.face.IdentifyFaces))
@@ -45,23 +58,33 @@ ms.collection: ce-skilling-ai-copilot
 - Group: divides a group of faces into disjoint groups based on similarity ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/face/GroupFaces.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.face.html#module-synapse.ml.cognitive.face.GroupFaces))
 
 ### Speech
-[Azure AI Speech](https://azure.microsoft.com/products/ai-services/ai-speech/)
+
+[Azure Speech in Foundry Tools](https://azure.microsoft.com/products/ai-services/ai-speech/)
+
 - Speech-to-text: transcribes audio streams ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/SpeechToText.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.SpeechToText))
 - Conversation Transcription: transcribes audio streams into live transcripts with identified speakers ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/ConversationTranscription.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.ConversationTranscription)).
 - Text to speech: converts text to realistic audio ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/TextToSpeech.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.TextToSpeech)).
 
 
 ### Language
+
 [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/)
+
 - Language detection: detects language of the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/LanguageDetector.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.LanguageDetector))
 - Key phrase extraction: identifies the key talking points in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/KeyPhraseExtractor.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.KeyPhraseExtractor))
 - Named entity recognition: identifies known entities and general named entities in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/NER.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.NER))
 - Sentiment analysis: returns a score between 0 and 1 indicating the sentiment in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/TextSentiment.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.TextSentiment))
 - Healthcare Entity Extraction: Extracts medical entities and relationships from text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/AnalyzeHealthText.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.AnalyzeHealthText))
 
-
 ### Translation
-[Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/)
+
+[Translator](https://azure.microsoft.com/products/ai-services/translator/)
+
+> [!TIP]
+> **For text translation at any scale, consider using AI Functions first:**
+>
+> Use `df.ai.translate()` to translate text between languages with minimal code. Works with both Pandas and PySpark DataFrames (**PySpark = fully distributed** via SynapseML), no subscription keys required. See [AI Functions overview](how-to-use-openai-ai-functions.md).
+
 - Translate: Translates text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Translate.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Translate))
 - Transliterate: Converts text in one language from one script to another script. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Transliterate.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Transliterate))
 - Detect: Identifies the language of a piece of text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Detect.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Detect))
@@ -70,8 +93,10 @@ ms.collection: ce-skilling-ai-copilot
 - Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/DictionaryExamples.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.DictionaryExamples))
 - Document Translation: Translates documents across all supported languages and dialects while preserving document structure and data format. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/DocumentTranslator.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.DocumentTranslator))
 
-### Azure AI Document Intelligence
-[Azure AI Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/)
+### Azure Document Intelligence in Foundry Tools
+
+[Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/)
+
 - Analyze Layout: Extract text and layout information from a given document. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/form/AnalyzeLayout.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.form.html#module-synapse.ml.cognitive.form.AnalyzeLayout))
 - Analyze Receipts: Detects and extracts data from receipts using optical character recognition (OCR) and our receipt model. This functionality makes it easy to extract structured data from receipts such as merchant name, merchant phone number, transaction date, transaction total, and more. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/form/AnalyzeReceipts.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.form.html#module-synapse.ml.cognitive.form.AnalyzeReceipts))
 - Analyze Business Cards: Detects and extracts data from business cards using optical character recognition (OCR) and our business card model. This functionality makes it easy to extract structured data from business cards such as contact names, company names, phone numbers, emails, and more. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/form/AnalyzeBusinessCards.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.form.html#module-synapse.ml.cognitive.form.AnalyzeBusinessCards))
@@ -87,11 +112,20 @@ ms.collection: ce-skilling-ai-copilot
 - Find anomalies: generates a model using an entire series and finds anomalies in the series ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/anomaly/DetectAnomalies.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.anomaly.html#module-synapse.ml.cognitive.anomaly.DetectAnomalies))
 
 ### Search
+
 - [Bing Image Search](/bing/search-apis/bing-image-search/overview) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/bing/BingImageSearch.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.bing.html#module-synapse.ml.cognitive.bing.BingImageSearch)).
 - [Azure Cognitive Search](/azure/search/search-what-is-azure-search) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/search/AzureSearchWriter$.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.search.html#module-synapse.ml.cognitive.search.AzureSearchWriter))
 
 ## Related content
 
-- [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md)
-- [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md)
-- [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md)
+### Simpler alternatives for common tasks
+
+- [AI Functions overview](how-to-use-openai-ai-functions.md) - Simplest approach for text operations with Pandas and PySpark DataFrames
+- [Use Azure OpenAI with SynapseML](how-to-use-openai-synapse-ml.md) - Distributed processing with OpenAIPrompt transformer, no subscription key needed
+- [Use Azure OpenAI with Python SDK](how-to-use-openai-python-sdk.md) - Fine-grained control for single API calls
+
+### SynapseML with Foundry Tools
+
+- [Use Foundry Tools with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md) - Comprehensive guide with examples
+- [Use Foundry Tools with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md) - Specialized anomaly detection
+- [Create a custom search engine and question answering system](../create-a-multilingual-search-engine-from-forms.md) - Advanced search scenarios

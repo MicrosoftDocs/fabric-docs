@@ -1,8 +1,7 @@
 ---
 title: Data in Dataflow Gen2 staging 
 description: This article provides information about what staging items are.
-author: Luitwieler
-ms.author: jeluitwi
+ms.reviewer: jeluitwi
 ms.topic: concept-article
 ms.date: 11/14/2025
 ms.custom: dataflows

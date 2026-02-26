@@ -1,20 +1,19 @@
 ---
 title: Analyze time series
-description: Use SynapseML and Azure AI services for multivariate anomaly detection.
+description: Use SynapseML and Foundry Tools for multivariate anomaly detection.
 ms.topic: overview
 ms.custom: sfi-ropc-nochange
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 07/21/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Recipe: Azure AI services - Multivariate Anomaly Detection
+# Recipe: Foundry Tools - Multivariate Anomaly Detection
 
-This recipe shows how to use SynapseML and Azure AI services, on Apache Spark, for multivariate anomaly detection. Multivariate anomaly detection involves detection of anomalies among many variables or time series, while accounting for all the inter-correlations and dependencies between the different variables. This scenario uses SynapseML and the Azure AI services to train a model for multivariate anomaly detection. We then use the model to infer multivariate anomalies within a dataset that contains synthetic measurements from three IoT sensors.
+This recipe shows how to use SynapseML and Foundry Tools, on Apache Spark, for multivariate anomaly detection. Multivariate anomaly detection involves detection of anomalies among many variables or time series, while accounting for all the inter-correlations and dependencies between the different variables. This scenario uses SynapseML and Foundry Tools to train a model for multivariate anomaly detection. We then use the model to infer multivariate anomalies within a dataset that contains synthetic measurements from three IoT sensors.
 
 > [!IMPORTANT]
 > Starting September, 20, 2023, you can't create new Anomaly Detector resources. The Anomaly Detector service will be retired on October 1, 2026.
@@ -64,7 +63,7 @@ spark = SparkSession.builder.getOrCreate()
 Read the `ANOMALY_API_KEY` and `BLOB_CONNECTION_STRING` environment variables, and set the `containerName` and `location` variables:
 
 ```python
-# An Anomaly Dectector subscription key
+# An Anomaly Detector subscription key
 anomalyKey = find_secret("anomaly-api-key") # use your own anomaly api key
 # Your storage account name
 storageName = "anomalydetectiontest" # use your own storage account name
@@ -318,5 +317,5 @@ Finally, the last plot shows the contribution of the data from each sensor to th
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)

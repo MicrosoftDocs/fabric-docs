@@ -1,8 +1,6 @@
 ---
 title: Using the semantic canvas
 description: Understand the semantic canvas in the digital twin builder (preview).
-author: baanders
-ms.author: baanders
 ms.date: 07/01/2025
 ms.topic: concept-article
 ---

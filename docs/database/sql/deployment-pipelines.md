@@ -1,8 +1,6 @@
 ---
 title: "Get started with SQL database deployment pipelines"
 description: Learn how to work with your SQL database with Fabric's deployment pipelines.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, drskwier
 ms.date: 11/07/2024
 ms.topic: how-to

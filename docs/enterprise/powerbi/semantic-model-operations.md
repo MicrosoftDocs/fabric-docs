@@ -1,8 +1,8 @@
 ﻿---
 title: Semantic model operation logs
 description: View a set of semantic  model operation logs that you can query in your Fabric workspace monitoring database.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.topic: reference
 ms.date: 11/20/2025

@@ -1,8 +1,6 @@
 ---
 title: Overview of Mirroring for SQL database
 description: "Learn more about automatic mirroring to OneLake for SQL database in Fabric."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 07/02/2025
 ms.topic: concept-article

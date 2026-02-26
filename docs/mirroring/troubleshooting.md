@@ -1,12 +1,9 @@
 ---
 title: "Troubleshoot Fabric Mirrored Databases"
 description: Troubleshooting scenarios, workarounds, and links for mirrored databases in Microsoft Fabric.
-author: whhender
-ms.author: whhender
 ms.reviewer: imotiwala, maprycem, cynotebo, wiassaf
 ms.date: 11/27/2025
 ms.topic: troubleshooting
-ms.custom:
 ms.search.form: Fabric Mirroring
 ---
 
@@ -138,3 +135,4 @@ These common error messages have explanations and mitigations:
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
+

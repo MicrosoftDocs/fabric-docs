@@ -3,8 +3,6 @@ title: Security overview
 description: Learn about security in Graph in Microsoft Fabric, including workspace roles and permissions.
 ms.topic: concept-article
 ms.date: 01/20/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ---
 

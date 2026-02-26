@@ -1,8 +1,6 @@
 ---
 title: Enable Workspace Monitoring in Microsoft Fabric
 description: Discover how Workspace Monitoring helps you track pipeline runs, analyze logs with KQL, and optimize performance with detailed diagnostics.
-author: whhender
-ms.author: whhender
 ms.reviewer: conxu-ms
 ms.date: 12/09/2025
 ms.topic: how-to

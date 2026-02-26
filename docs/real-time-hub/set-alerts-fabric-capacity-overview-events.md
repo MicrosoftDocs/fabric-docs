@@ -1,8 +1,7 @@
 ---
 title: Set alerts on Fabric capacity overview events in Real-Time hub
 description: This article describes how to set alerts on Fabric capacity overview events in Real-Time hub.
-author: george-guirguis
-ms.author: geguirgu
+ms.reviewer: geguirgu
 ms.topic: how-to
 ms.date: 11/17/2025
 ms.custom: references_regions
@@ -74,3 +73,4 @@ Do steps from one of the following sections, which opens a side panel where you 
 ## Related content
 
 - [Set alerts on Azure blob storage events](set-alerts-azure-blob-storage-events.md)
+

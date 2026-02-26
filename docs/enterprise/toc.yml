@@ -192,7 +192,7 @@ items:
     - name: Power BI security
       href: powerbi/service-admin-power-bi-security.md
     - name: Privacy levels
-      href: powerbi/desktop-privacy-levels.md
+      href: /power-query/privacy-levels
     - name: Use service tags with Power BI
       href: powerbi/service-premium-service-tags.md
     - name: Use private links for Power BI for on-premises clients

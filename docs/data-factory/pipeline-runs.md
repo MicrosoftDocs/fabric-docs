@@ -1,9 +1,7 @@
 ---
 title: Run, schedule, or use events to trigger a pipeline
 description: Explanation of what a pipeline run is, including on-demand and scheduled runs.
-ms.reviewer: whhender
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 08/27/2025

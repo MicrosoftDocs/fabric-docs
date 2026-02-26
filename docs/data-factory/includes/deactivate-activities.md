@@ -1,9 +1,6 @@
 ---
 title: Deactivate an Activity
 description: Steps to deactivate an activity to exclude it from pipeline run and validation.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
 ms.topic: include
 ms.date: 12/17/2025
 ---

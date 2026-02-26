@@ -1,8 +1,6 @@
 ---
 title: Data Encryption in SQL Database in Fabric
 description: Learn about data encryption and customer-managed keys in SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pivanho
 ms.date: 11/17/2025
 ms.topic: concept-article
@@ -89,10 +87,6 @@ Current limitations when using customer-managed key for a SQL database in Micros
 
 - 4,096 bit keys are not supported for SQL Database in Microsoft Fabric. Supported key lengths are 2,048 bits and 3,072 bits.
 - The customer-managed key must be an RSA or RSA-HSM asymmetric key.
-- Currently, customer-managed key encryption is available in the following regions:
-   - US: East US 2, South Central US
-   - Asia: Australia East, South East Asia, UAE North
-   - Europe: North Europe, West Europe
 
 ## Related content
 

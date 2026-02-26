@@ -1,8 +1,8 @@
 ---
 title: Understand the metrics app compute page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's compute page.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 07/10/2025

@@ -6,13 +6,10 @@ summary: Data engineering in Microsoft Fabric enables users to design, build, an
 metadata:
   title: Data Engineering in Microsoft Fabric documentation
   description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-engineering
   ms.custom:
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: SnehaGunda
-  ms.author: sngun
   ms.date: 08/06/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -66,7 +63,7 @@ landingContent:
             url: tutorial-lakehouse-data-ingestion.md
           - text: Step 4 - Transform data into delta tables
             url: tutorial-lakehouse-data-preparation.md
-          - text: Step 5 - Build a report
+          - text: Step 5 - Create a semantic model and build a report
             url: tutorial-lakehouse-build-report.md
           - text: Step 6 - Clean up resources
             url: tutorial-lakehouse-clean-up.md

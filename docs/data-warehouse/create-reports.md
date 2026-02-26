@@ -1,8 +1,6 @@
 ---
 title: Create Reports
 description: Learn about creating Power BI reports on Power BI semantic models in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: salilkanade, pvenkat
 ms.date: 07/15/2025
 ms.topic: concept-article

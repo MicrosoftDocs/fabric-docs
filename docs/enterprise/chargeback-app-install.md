@@ -1,11 +1,10 @@
 ---
 title: Install the Microsoft Fabric Chargeback app
 description: Learn how to install the Microsoft Fabric Chargeback app.
-author: kishanpujara-ms
-ms.author: kishanpujara
-ms.reviewer: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
+ms.reviewer: kishanpujara
 ms.topic: how-to
-ms.custom:
 ms.date: 07/02/2025
 ---
 
@@ -106,3 +105,4 @@ After installing the app, if it's not showing data or can't refresh, follow thes
 - [What is Fabric Chargeback app (preview)?](chargeback-app.md) 
 - [Chargeback Azure Reservation costs](/azure/cost-management-billing/reservations/charge-back-usage)
 - [View amortized benefit costs](/azure/cost-management-billing/reservations/view-amortized-costs)
+

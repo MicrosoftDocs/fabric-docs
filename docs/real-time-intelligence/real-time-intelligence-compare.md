@@ -2,10 +2,7 @@
 title: Differences Between Real-Time Intelligence and Comparable Azure Solutions
 description: Discover the differences between Real-Time Intelligence and Azure solutions. Learn which streaming analytics platform best fits your needs.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: overview
-ms.custom:
 ms.date: 06/25/2025
 ms.update-cycle: 180-days
 ms.subservice: rti-core

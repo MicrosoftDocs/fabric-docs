@@ -2,11 +2,8 @@
 title: Get data from Kafka
 description: Learn how to get data from Kafka in a KQL database in Real-Time Intelligence.
 ms.reviewer: akshayd
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.custom:
 ms.date: 11/19/2024
 ---
 # Get data from Kafka

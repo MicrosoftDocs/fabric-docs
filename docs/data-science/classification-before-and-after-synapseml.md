@@ -2,11 +2,9 @@
 title: Classification tasks using SynapseML
 description: Perform the same classification task with and without SynapseML.
 ms.topic: how-to
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
 ms.date: 04/23/2025
 ---
 

@@ -4,7 +4,6 @@ description: Learn how to view the lineage of Fabric items.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.custom:
 ms.date: 11/06/2023
 ---
 
@@ -17,9 +16,6 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 In lineage view, you see the lineage relationships between all the items in a workspace, as well as data sources external to the workspace one-step upstream.
 
 Every workspace automatically has a lineage view.
-
-> [!NOTE]
-> Lineage in Fabric is in preview, and not all connections between items are fully supported yet. It is possible that the lineage between some items will be incorrectly shown.
 
 ## Permissions
 

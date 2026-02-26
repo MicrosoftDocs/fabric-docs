@@ -2,10 +2,7 @@
 title: Real-Time Intelligence tutorial part 7 - Detect anomalies on an Eventhouse table
 description: Learn how to detect anomalies on your Eventhouse table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: tutorial
-ms.custom:
 ms.date: 02/11/2025
 ms.subservice: rti-core
 ms.search.form: Get started

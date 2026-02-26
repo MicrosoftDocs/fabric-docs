@@ -1,15 +1,11 @@
-﻿---
+---
 title: 'Tutorial: Use R to detect fraud'
 description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to detect fraud.
-ms.reviewer: None
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: lagayhar
 ms.topic: tutorial
-ms.custom: 
 ms.date: 04/14/2025
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.
-reviewer: s-polly
 ---
 
 # Tutorial: Use R to create, evaluate, and score a fraud detection model
@@ -521,3 +517,4 @@ The earlier figures clearly show that the model trained on the balanced dataset 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training/model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

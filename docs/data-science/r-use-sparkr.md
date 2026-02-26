@@ -1,14 +1,10 @@
-﻿---
+---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: None
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: lagayhar, sgilley
 ms.topic: how-to
-ms.custom: 
 ms.date: 06/30/2025
 ms.search.form: R Language
-reviewer: sdgilley
 ---
 
 # Use SparkR
@@ -37,7 +33,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 The simplest way to create a DataFrame is to convert a local R data.frame into a Spark DataFrame. 
 
 ```R
-# load SparkR pacakge
+# load SparkR package
 library(SparkR)
 
 # read a SparkR DataFrame from a local R data.frame
@@ -98,7 +94,7 @@ head(faithfulDF_API)
 You can also read a SparkR Dataframe on your Lakehouse using SparkSQL queries.
 
 ```R
-# Regsiter ealier df as temp view
+# Register earlier df as temp view
 createOrReplaceTempView(df, "eruptions")
 
 # Create a df using a SparkSQL query

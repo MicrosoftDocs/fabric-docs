@@ -1,8 +1,6 @@
 ---
 title: Include file for choosing tutorial path
 description: Include file for choosing the creation method for the tutorial
-author: baanders
-ms.author: baanders
 ms.topic: include
 ms.date: 12/09/2025
 ---

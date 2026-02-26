@@ -1,10 +1,8 @@
 ---
 title: Get started with Fabric Extensibility Toolkit
 description: Learn how to get started building your first Microsoft Fabric workload with the Extensibility Toolkit.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: tutorial
-ms.custom:
 ms.date: 12/15/2025
 ---
 

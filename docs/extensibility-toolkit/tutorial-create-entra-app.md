@@ -1,10 +1,8 @@
 ---
 title: Tutorial - Create Microsoft Entra App for Fabric Workload
 description: Learn how to create and configure a Microsoft Entra application for your Fabric workload, both using automated scripts and manual steps
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: tutorial
-ms.custom:
 ms.date: 12/15/2025
 ---
 

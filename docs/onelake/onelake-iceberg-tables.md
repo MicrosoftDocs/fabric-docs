@@ -2,8 +2,6 @@
 title: Use Iceberg tables with OneLake
 description: Discover how to leverage table format virtualization in OneLake to seamlessly read Delta Lake tables as Iceberg or create shortcuts to Iceberg tables in storage. Explore how OneLake automatically virtualizes Iceberg tables into the Delta Lake format for use across Fabric workloads, and Delta Lake tables into the Iceberg format for compatibility with Iceberg readers.
 ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
 ms.topic: how-to
 ms.date: 7/1/2025
 #customer intent: As a OneLake user, I want to learn how to use table format virtualization to read Iceberg tables across Fabric workloads, or read Fabric (Delta Lake) tables using Apache Iceberg readers.
@@ -25,13 +23,6 @@ While this article includes guidance for using Iceberg tables with Snowflake, th
 
 To set up the automatic conversion and virtualization of tables from Delta Lake format to Iceberg format, follow these steps.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
-1.  Enable automatic table virtualization of Delta Lake tables to the Iceberg format by turning on the delegated OneLake setting named **Enable Delta Lake to Apache Iceberg table format virtualization** in your workspace settings.
-
-    > [!NOTE]
-    > This setting controls a feature that is currently in preview. This setting will be removed in a future update when the feature is enabled for all users and is no longer in preview.
-
 1.	Make sure your Delta Lake table, or a shortcut to it, is located in the `Tables` section of your data item. The data item may be a lakehouse or another Fabric data item.
 
     > [!TIP]
@@ -47,7 +38,7 @@ To set up the automatic conversion and virtualization of tables from Delta Lake 
 
 1.  If the conversion log file shows that the table was successfully converted, read the Iceberg table using your service, app, or library of choice.
 
-    Depending on what Iceberg reader you use, you will need to know either the the path to the table directory or to the most recent `.metadata.json` file shown in the `metadata` directory.
+    Depending on what Iceberg reader you use, you will need to know either the path to the table directory or to the most recent `.metadata.json` file shown in the `metadata` directory.
 
     You can see the HTTP path to the latest metadata file of your table by opening the **Properties** view for the `*.metadata.json` file with the highest version number. Take note of this path.
 
@@ -284,5 +275,5 @@ Keep in mind the following temporary limitations when you use this feature:
 ## Related content
 
 - [Use Snowflake to write or read Iceberg tables in OneLake](./onelake-iceberg-snowflake.md).
-- Learn more about [Fabric and OneLake security](./security/fabric-onelake-security.md).
 - Learn more about [OneLake shortcuts](./onelake-shortcuts.md).
+

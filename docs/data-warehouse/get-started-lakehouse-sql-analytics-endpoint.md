@@ -1,8 +1,6 @@
 ---
 title: Better Together - the Lakehouse and Warehouse
 description: Learn more about scenarios for the lakehouse and data warehousing workloads in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: cynotebo
 ms.date: 06/26/2025
 ms.topic: concept-article
@@ -122,7 +120,7 @@ Use the following steps to enable cross-workspace data analytics:
 1. Switch to the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and find the SQL table that has a name that matches the shortcut name. This SQL table references the folder in another workspace.
 1. Query the SQL table that references data in another workspace. The table can be used as any other table in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. You can join the tables that reference data in different workspaces.
 
-For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
 > [!NOTE]
 > If the SQL table is not immediately shown in the [!INCLUDE [fabric-se](includes/fabric-se.md)], you might need to wait a few minutes. The SQL table that references data in another workspace is created with a delay.
@@ -132,6 +130,8 @@ For more about security in the SQL anlaytics endpoint, see [OneLake security for
 Data partitioning is a well-known data access optimization technique in data lakes. Partitioned data sets are stored in the hierarchical folders structures in the format `/year=<year>/month=<month>/day=<day>`, where `year`, `month`, and `day` are the partitioning columns. Partitioned data sets enable faster data access if the queries are filtering data using the predicates that filter data by comparing predicate columns with a value.
 
 A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
+
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md). For an example and use case for querying partitioned parquet files, see [Query partitioned data](query-parquet-files.md#query-partitioned-data-with-openrowset).
 
 ## Related content
 

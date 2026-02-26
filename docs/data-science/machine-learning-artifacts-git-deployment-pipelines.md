@@ -1,12 +1,8 @@
 ---
 title: Machine learning experiment and model Git integration and deployment pipelines
 description: Learn about the Microsoft Fabric Machine learning artifacts deployment pipelines and Git integration, including what is tracked in a Git-connected workspace.
-ms.reviewer: 
-reviewer: 
-ms.author: ruxu
-author: ruixinxu
 ms.topic: concept-article
-ms.custom:
+ms.reviewer: ruxu
 ms.date: 8/27/2025
 ms.search.form: ml model, ml experiment, Git deployment pipelines alm ci cd
 ---

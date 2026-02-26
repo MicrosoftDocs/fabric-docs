@@ -1,8 +1,6 @@
 ---
 title: Debug Pipelines in Microsoft Fabric
 description: Learn how to debug pipelines in Microsoft Fabric Data Factory by deactivating activities, isolating logic, and validating behavior step by step.
-author: whhender
-ms.author: whhender
 ms.reviewer: ssindhub
 ms.date: 12/16/2025
 ms.topic: how-to

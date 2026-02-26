@@ -7,11 +7,15 @@ ms.reviewer: phseamar, Kay.Unkroth
 ms.date: 06/03/2025
 ms.topic: concept-article
 ms.custom: fabric-cat
+ai-usage: ai-assisted
 ---
 
 # Understand Direct Lake query performance
 
 Apart from semantic model design and query complexity, Direct Lake performance specifically depends on well-tuned Delta tables for efficient and fast column loading (transcoding) and optimal query execution. Make sure you apply V-Order optimization. Also, keep the number of Parquet files small, use large row groups, and strive to minimize the effect of data updates on the Delta log. These are common best practices that can help to ensure fast query execution in cold, semiwarm, warm, and hot Direct Lake mode states.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on optimizing Delta tables for Direct Lake consumption, including file size, V-Order, and row group recommendations based on medallion architecture layers, see [Cross-workload table maintenance and optimization](table-maintenance-optimization.md).
 
 This article explains how Direct Lake performance depends on Delta table health and efficient data updates. Understanding these dependencies is crucial. You learn that the data layout in your Parquet files is as important for query performance as are a good semantic model design and well-tuned data analysis expression (DAX) measures.
 

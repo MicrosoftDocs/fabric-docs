@@ -1,8 +1,6 @@
 ---
 title: Create a Power BI Semantic Model
 description: Learn how to create a Power BI semantic model in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: chweb, salilkanade, pvenkat
 ms.date: 12/05/2025
 ms.topic: how-to

@@ -2,8 +2,6 @@
 title: Use Fabric notebooks with data from a KQL database
 description: Learn how to query data in a KQL Database from Microsoft Fabric Notebooks using KQL (Kusto Query Language)
 ms.reviewer: orhasban
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange

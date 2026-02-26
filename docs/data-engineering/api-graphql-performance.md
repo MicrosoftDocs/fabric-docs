@@ -1,8 +1,6 @@
 ---
 title: Fabric API for GraphQL Performance Best Practices
 description: This article contains a list of performance best practices
-author: eric-urban
-ms.author: eur
 ms.reviewer: edlima
 ms.date: 01/21/2026
 ms.topic: best-practice
@@ -43,7 +41,7 @@ To find your Fabric tenant's region:
 Your API for GraphQL runs within a specific capacity. To find the capacity region:
 
 1. Open the workspace hosting your API for GraphQL
-1. Go to **Workspace settings** > **License info**
+1. Go to **Workspace settings** > **Workspace type**
 1. Find the region under **License capacity**
 
    :::image type="content" source="./media/api-graphql-performance/capacity-region.png" alt-text="Screenshot showing how to get the capacity region for your workspace." lightbox="media/api-graphql-performance/capacity-region.png":::

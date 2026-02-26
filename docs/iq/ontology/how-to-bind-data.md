@@ -1,9 +1,6 @@
 ---
 title: Bind data
 description: Learn about the data binding process in ontology (preview).
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 11/12/2025
 ms.topic: how-to
 ---
@@ -134,3 +131,5 @@ Data binding has the following limitations:
 ### Troubleshooting
 
 For troubleshooting tips related to data binding, see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-data-binding).
+
+

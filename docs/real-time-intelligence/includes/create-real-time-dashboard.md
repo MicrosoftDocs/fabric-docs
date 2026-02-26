@@ -1,10 +1,7 @@
 ---
 title: Include file for creating a new Real-Time Dashboard
 description: Include file with the steps for creating a new Real-Time Dashboard in Microsoft Fabric.
-author: spelluru
-ms.author: spelluru
 ms.topic: include
-ms.custom:
 ms.date: 12/12/2025
 ---
 

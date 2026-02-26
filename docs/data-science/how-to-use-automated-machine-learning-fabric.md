@@ -5,7 +5,6 @@ ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
 ms.date: 07/21/2025
 ---
 

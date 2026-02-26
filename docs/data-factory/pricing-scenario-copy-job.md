@@ -1,9 +1,7 @@
 ---
 title: Pricing scenario - Copy job load 1 TB of CSV data to a Lakehouse table
 description: This article provides an example pricing scenario for loading 1 TB of CSV data to Lakehouse files with binary copy using Copy job in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: yexu
-author: dearandyxu
+ms.reviewer: yexu
 ms.topic: concept-article
 ms.custom: configuration
 ms.date: 07/24/2025

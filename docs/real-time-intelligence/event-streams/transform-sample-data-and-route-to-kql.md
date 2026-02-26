@@ -1,9 +1,7 @@
 ---
 title: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
 description: This article provides instruction on how to explore and transform sample bike-sharing data in Fabric Eventstream and then route the data to KQL Database.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 11/17/2023
@@ -105,3 +103,5 @@ If you want to learn more about ingesting and processing data streams using Even
 - [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
 - [Stream real-time events from a custom app to a Microsoft Fabric KQL database](./stream-real-time-events-from-custom-app-to-kusto.md)
+
+

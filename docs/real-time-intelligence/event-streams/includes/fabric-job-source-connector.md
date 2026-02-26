@@ -1,8 +1,7 @@
 ---
 title: Fabric Job events connector for Fabric event streams
 description: The include files has the common content for configuring Fabric Job events connector for Fabric event streams and Real-Time hub. 
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: include
 ms.date: 11/13/2024
 ---
@@ -29,3 +28,4 @@ ms.date: 11/13/2024
 1. On the **Review + connect** page, review settings, select **Add**. 
 
     :::image type="content" source="./media/fabric-job-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/fabric-job-source-connector/review-create-page.png":::
+

@@ -1,8 +1,6 @@
 ---
 title: Move queries from Dataflow Gen1 to Dataflow Gen2
 description: This article describes the procedure for moving Dataflow Gen1 queries to Dataflow Gen2 in Data Factory.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 3/17/2025
 ms.custom:

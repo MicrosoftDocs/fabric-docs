@@ -1,10 +1,8 @@
 ---
 title: HTTP connector for Fabric event streams
 description: This include file has the common content for configuring an HTTP connector for Fabric event streams and Real-Time hub. 
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
-ms.custom:
 ms.date: 12/03/2025
 ---
 

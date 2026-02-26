@@ -1,8 +1,6 @@
 ---
 title: "Data Warehouse Tutorial: Generate a Report from the OneLake Catalog"
 description: "In this tutorial, learn how to generate a report from the OneLake catalog with the data ingested into the warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: scbradl
 ms.date: 07/21/2025
 ms.topic: tutorial

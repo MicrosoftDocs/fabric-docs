@@ -1,11 +1,8 @@
 ---
 title: Create default and derived Fabric event streams
 description: Learn how to create default and derived Microsoft Fabric event streams.
-ms.reviewer: spelluru
-ms.author: anboisve
-author: ahartoon
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 11/10/2025
 ms.search.form: Source and Destination
 ---
@@ -63,3 +60,5 @@ Use this feature to:
 - [Enhanced capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Route data streams based on content](route-events-based-on-content.md)
+
+

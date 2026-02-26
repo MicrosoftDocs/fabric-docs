@@ -1,9 +1,7 @@
 ---
 title: Add an Azure Event Hubs Source to an Eventstream
 description: Learn how to add an Azure Event Hubs source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/25/2025
@@ -69,3 +67,5 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 ## Related content
 
 - For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
+
+

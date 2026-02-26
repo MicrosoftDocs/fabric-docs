@@ -1,8 +1,6 @@
 ---
-title: Write Iceberg tables from Snowflake to OneLake (Preview)
+title: Write Iceberg tables from Snowflake to OneLake
 description: Guidance to set up connectivity between Snowflake and OneLake using the new Snowflake database item in Fabric, enabling Iceberg tables to be written to OneLake and accessed from both Fabric and Snowflake.
-author: matt1883
-ms.author: mahi
 ms.reviewer: mahi
 ms.topic: how-to
 ms.date: 11/17/2025
@@ -10,10 +8,7 @@ ms.search.form: Create new Snowflake database item
 #customer intent: As a data engineer, I want to connect Snowflake to OneLake and have my Iceberg tables written to OneLake by default.
 ---
 
-# Write Iceberg tables from Snowflake to OneLake (Preview)
-
-> [!IMPORTANT]
-> This feature is currently in **Public Preview**. Behavior may change before General Availability.
+# Write Iceberg tables from Snowflake to OneLake
 
 ## Overview
 
@@ -25,9 +20,6 @@ This article shows you how to:
 
 ## Prerequisites
 
-1. Because this feature is in a Preview state, you first need to enable this setting at the **tenant** or **capacity** level.
-   - Your tenant admin can enable the setting tenant-wide using the **"Enable Snowflake database item (preview)"** setting seen in the [Admin portal](../../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
-   - Alternatively, your capacity admin can enable this delegated tenant setting in the [capacity settings area](../../admin/capacity-settings.md#view-your-capacity).
 1. Select (or create) a Fabric workspace for the Snowflake database item.
    - To keep things simple, use alphanumeric characters only for your workspace name. 
    - If workspace name has special characters, copy the workspace ID from the browser URL seen when the workspace is open.  
@@ -256,3 +248,4 @@ To do this, you first need to [follow the prerequisites](#prerequisites), [creat
 1. Back in the Fabric UI, ensure that your Snowflake item reports no errors and is ready for new tables to be written in Snowflake.
 
 You can now proceed to [create your Iceberg tables in Snowflake](#create-an-iceberg-table-in-snowflake)!
+

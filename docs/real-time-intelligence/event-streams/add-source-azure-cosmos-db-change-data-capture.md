@@ -1,11 +1,8 @@
 ---
 title: Add Azure Cosmos DB CDC source to an eventstream
 description: Learn how to add an Azure Cosmos DB Change Data Capture (CDC) source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
 ---
@@ -54,3 +51,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

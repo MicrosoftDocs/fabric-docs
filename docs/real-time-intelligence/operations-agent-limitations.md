@@ -1,11 +1,8 @@
 ---
 title: Operations Agent Best Practices and Limitations
 description: Learn about the best practices and limitations of using operations agents in Real-Time Intelligence.
-ms.reviewer: willthom
-author: hzargari-ms
-ms.author: v-hzargari
+ms.reviewer: willthom, v-hzargari
 ms.topic: how-to
-ms.custom:
 ms.date: 11/05/2025
 ms.search.form: Operations Agent Limitations, Best Practices
 ---
@@ -54,3 +51,4 @@ As with any AI-based product, giving clear instructions and easy-to-understand d
 1. Operations agent is available in Fabric regions excluding South Central US and East US.
 
 1. If your Fabric tenant and capacity are in different regions, you may run into errors when configuring Power Automate actions. Until a fix is available, ensure your workspace capacity is in the same region as your Fabric tenant to use the operations agent.
+

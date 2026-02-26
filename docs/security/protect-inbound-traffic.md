@@ -4,7 +4,6 @@ description: Understand the difference between private links and Microsoft Entra
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 08/13/2025
 ---
 

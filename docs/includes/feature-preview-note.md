@@ -4,7 +4,6 @@ description: Include file for the preview information that applies to features i
 author: jonburchel
 ms.author: jburchel
 ms.topic: include
-ms.custom:
 ms.date: 10/19/2023
 ---
 > [!IMPORTANT]

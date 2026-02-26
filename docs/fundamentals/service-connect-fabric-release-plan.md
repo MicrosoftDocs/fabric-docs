@@ -1,9 +1,9 @@
 ---
 title: Connect to the Microsoft Fabric Release Plan report
 description: How to get and install the Microsoft Fabric Release Plan template app, and how to connect to data.
-author: itsnotaboutthecell
-ms.author: alpowers
-ms.reviewer: juliacawthra
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: alpowers
 ms.topic: how-to
 ms.date: 05/22/2025
 ms.custom: fabric-cat
@@ -69,3 +69,4 @@ For details, see [Customize and share the app](/power-bi/connect-data/service-te
 
 - [What are Microsoft Fabric template apps?](/power-bi/connect-data/service-template-apps-overview)
 - [Install and distribute template apps in your organization](/power-bi/connect-data/service-template-apps-install-distribute)
+

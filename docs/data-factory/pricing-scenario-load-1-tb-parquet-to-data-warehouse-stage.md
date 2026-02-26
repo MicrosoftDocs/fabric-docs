@@ -1,9 +1,7 @@
 ---
 title: Pricing scenario - Pipelines load 1 TB of Parquet data to data warehouse with staging
 description: This article provides an example pricing scenario for loading 1 TB of Parquet data to a data warehouse with staging using Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
+ms.reviewer: susabat
 ms.topic: concept-article
 ms.custom: configuration
 ms.date: 06/16/2025

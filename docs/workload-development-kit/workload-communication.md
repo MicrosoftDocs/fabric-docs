@@ -1,10 +1,7 @@
 ---
 title: Fabric workload communication
 description: Learn how to create communication between the backend and the frontend of a Microsoft Fabric extension.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 05/21/2024
 #customer intent: As a developer, I want to understand how communication between a Microsoft Fabric backend and frontend works so that I can create customized user experiences.
 ---
@@ -42,3 +39,4 @@ Here's an example:
         ContentType = MediaTypeNames.Application.Json,
     };
 ```
+

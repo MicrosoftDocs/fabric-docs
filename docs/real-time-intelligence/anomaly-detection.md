@@ -1,12 +1,9 @@
 ---
 title: Anomaly Detection in Real-Time Intelligence
 description: Learn how to set up and configure anomaly detection for your real-time data streams using Microsoft Fabric Real-Time Intelligence.
-ms.reviewer: tessarhurr
-ms.author: v-hzargari
-author: hzargari-ms
+ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.custom: 
 ms.date: 12/04/2025
 ms.search.form: Anomaly Detection How To
 ---
@@ -212,3 +209,4 @@ Now that you have anomaly detection configured, next you can:
 - [KQL query reference](/kusto/query/)
 - [Real-Time Dashboard documentation](dashboard-real-time-create.md)
 - [Activator overview](../data-activator/data-activator-introduction.md)
+

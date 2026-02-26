@@ -1,12 +1,8 @@
 ---
 title: Machine learning tracking system update
 description: Learn how to upgrade the machine learning tracking system
-ms.author: ruxu
-author: ruixinxu
-ms.reviewer: 
-reviewer: 
 ms.topic: how-to
-ms.custom: 
+ms.reviewer: ruxu
 ms.date: 11/06/2025
 ms.search.form: ML Experiment, ML Model
 ---
@@ -46,3 +42,4 @@ If you encounter any issues or have questions during the upgrade process, don't 
 - [Run machine learning experiments in Microsoft Fabric](./machine-learning-experiment.md)
 - [Track and manage machine learning models](machine-learning-model.md)
 - [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+

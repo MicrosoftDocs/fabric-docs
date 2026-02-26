@@ -1,9 +1,9 @@
 ---
 title: Learn about editing semantic models in Direct Lake in Power BI Project (preview)
 description: Describes using Power BI Project to edit semantic models in Power BI Desktop.
-author: datazoems
-ms.author: zoedouglas
-ms.reviewer: ''
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: zoedouglas
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: concept-article
@@ -76,3 +76,4 @@ During the **preview**, if you wish to switch the remote semantic model in the P
 ## Related 
 
 - [Power BI Project (PBIP)](/power-bi/developer/projects/projects-overview)
+

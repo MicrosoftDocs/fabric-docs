@@ -2,11 +2,9 @@
 title: Include file
 description: Include file
 author: billmath
-ms.service: fabric
-ms.topic: Include
+ms.topic: include
 ms.date: 09/20/2024
 ms.author: billmath
-ms.custom: Include file
 ---
 
 ## Using the username() or userprincipalname() DAX function

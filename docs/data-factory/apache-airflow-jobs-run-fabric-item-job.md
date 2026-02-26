@@ -2,8 +2,6 @@
 title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
-ms.author: noelleli
-author: n0elleli
 ms.topic: tutorial
 ms.date: 10/13/2025
 ms.custom: airflows, sfi-image-nochange
@@ -11,8 +9,7 @@ ms.custom: airflows, sfi-image-nochange
 
 # Tutorial: Run a Fabric item using Apache Airflow DAGs
 
-> [!NOTE]
-> Apache Airflow job is powered by [Apache Airflow](https://airflow.apache.org/).
+[!INCLUDE[apache-airflow-note](includes/apache-airflow-note.md)]
 
 In this tutorial, you build a directed acyclic graph (DAG) to run a Microsoft Fabric item including: 
   - Notebooks

@@ -1,9 +1,7 @@
 ---
 title: Generate invocation code for User Data Functions
 description: Learn how to generate code templates for invoking your User Data Functions from external applications, Fabric Notebooks, and AI agents.
-ms.author: eur
 ms.reviewer: luisbosquez
-author: eric-urban
 ms.topic: how-to
 ms.custom: freshness-kr
 ms.date: 01/21/2026

@@ -1,11 +1,8 @@
 ---
 title: Solace PubSub+ connector for Fabric event streams
 description: The include file has the common content for configuring a Solace PubSub+ connector for Fabric event streams and Real-Time hub. 
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 03/14/2025
 ---
 
@@ -37,3 +34,5 @@ ms.date: 03/14/2025
 
     :::image type="content" source="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png" alt-text="Screenshot that shows the Configure Solace PubSub+ data source section." lightbox="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png":::                
 1. On the **Review + connect** page, review settings, and select **Add** or **Connect**. 
+
+

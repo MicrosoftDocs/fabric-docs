@@ -1,8 +1,6 @@
 ---
 title: Full Text Indexing And Search in Cosmos DB Database
 description: Query data using "best matching 25" scoring in Cosmos DB in Fabric.
-author: seesharprun
-ms.author: sidandrews
 ms.topic: concept-article
 ms.date: 07/16/2025
 ---

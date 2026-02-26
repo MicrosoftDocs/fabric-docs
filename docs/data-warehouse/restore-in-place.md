@@ -1,8 +1,6 @@
 ---
 title: Restore In-Place of a Warehouse from a Restore Point
 description: Learn about how to perform a restore in-place of a warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: ajagadish, sosivara
 ms.date: 04/06/2025
 ms.topic: concept-article

@@ -1,8 +1,6 @@
 ---
 title: Include file for the Save As feature in Dataflow Gen2
 description: Include file for the Save As feature in Dataflow Gen2
-author: whhender
-ms.author: whhender
 ms.topic: include
 ms.date: 08/19/2025
 ---
@@ -16,7 +14,5 @@ ms.date: 08/19/2025
    :::image type="content" source="../media/migrate-to-dataflow-gen2-using-save-as/create-new-dataflow.png" alt-text="Screenshot of the save as option where you can enter the name of the dataflow.":::
 
    The new Dataflow Gen2 (CI/CD) is opened, enabling you to review and make any changes.
-
-   You're required to reconnect to data sources, which can be done by selecting the **Configure connection** button within the `Credentials are required` error message.
 
 1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.

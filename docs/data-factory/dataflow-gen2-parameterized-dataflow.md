@@ -1,9 +1,7 @@
 ---
 title: Parameterized Dataflow Gen2
 description: Learn how to parameterize sources, logic, and destinations in Dataflow Gen2 using public parameters mode for dynamic, reusable dataflows in Microsoft Fabric.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: tutorial
 ms.date: 09/29/2025
 ms.custom: dataflows
@@ -36,7 +34,7 @@ To make the dataflow dynamic, you parameterize the source table, the filter valu
 
 Before continuing, enable public parameters mode by going to the *Home* tab, selecting *Options*, and in the *Parameters* section, checking the box labeled **Enable parameters to be discovered and overridden for execution** and allow your dataflow to accept parameters during execution.
 
-![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overriden for execution" setting.](media/dataflow-gen2-parameterized-dataflow/parameters-options.png)
+![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overridden for execution" setting.](media/dataflow-gen2-parameterized-dataflow/parameters-options.png)
 
 ## Parameterize source
 

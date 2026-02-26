@@ -2,8 +2,6 @@
 title: Evaluate Pipeline Expression
 description: This article provides information about debugging Pipeline Expressions through the Evaluate Expression feature in Microsoft Fabric Data Factory.
 ms.reviewer: conxu
-ms.author: conxu
-author: conxu
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 08/26/2025

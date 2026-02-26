@@ -1,10 +1,9 @@
 ---
 title: How to save and publish your dataflow
 description: This article describes how to save a draft version of your dataflow.
-author: luitwieler
 ms.topic: how-to
 ms.date: 12/18/2024
-ms.author: jeluitwi
+ms.reviewer: jeluitwi
 ms.search.form: DataflowGen2 Tutorials
 ms.custom: dataflows
 ---

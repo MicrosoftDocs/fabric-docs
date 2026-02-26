@@ -1,9 +1,7 @@
 ---
 title: Add PostgreSQL Database CDC source to an eventstream
 description: Learn how to add a PostgreSQL Database Change Data Capture (CDC) source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/23/2025
@@ -26,7 +24,7 @@ Once the PostgreSQL Database CDC source is added to the eventstream, it captures
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Registered user access in the PostgreSQL database.
-- Your PostgreSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your PostgreSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - CDC enabled in the PostgreSQL database and tables.
 
   If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).
@@ -97,3 +95,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

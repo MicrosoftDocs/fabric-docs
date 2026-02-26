@@ -2,10 +2,7 @@
 title: Transform data with Apache Spark and query with SQL
 description: Learn how to load data with OneLake file explorer, and use a Fabric notebook to transform the data and then query with SQL.
 ms.reviewer: eloldag
-ms.author: eloldag
-author: eloldag
 ms.topic: how-to
-ms.custom:
 ms.date: 03/07/2025
 #customer intent: As a data engineer, I want to learn how to transform data with Apache Spark and query it with SQL using OneLake and Fabric notebooks so that I can efficiently analyze and manipulate data in my lakehouse workspace.
 ---
@@ -118,3 +115,4 @@ You can also access any Delta table on OneLake via a SQL analytics endpoint. A S
 ## Related content
 
 - [Connect to ADLS using a OneLake shortcut](onelake-shortcuts-adb-quickstart.md)
+

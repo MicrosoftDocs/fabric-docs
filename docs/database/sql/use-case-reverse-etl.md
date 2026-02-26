@@ -1,8 +1,6 @@
 ---
 title: Use SQL database as the Target of a Reverse ETL Workload
 description: Learn how to use SQL database in Fabric as a reverse ETL target in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pamela, imotiwala, antho
 ms.date: 01/07/2026
 ms.topic: solution-overview

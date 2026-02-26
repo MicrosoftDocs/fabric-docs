@@ -2,11 +2,9 @@
 title: Use AutoML (Python)
 description: Use AutoML APIs in Fabric to automate the ML workflow (preview)
 ms.topic: overview
-ms.custom: 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: pimorano
-reviewer: pimorano
 ms.date: 07/22/2025
 ---
 

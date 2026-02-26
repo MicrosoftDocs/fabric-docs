@@ -3,13 +3,9 @@ title: Create and manage a set of tags
 description: "Learn how to create and manage a set of tags in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 09/04/2025
-
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
-
 ---
 
 # Create and manage a set of tags

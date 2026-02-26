@@ -4,7 +4,6 @@ description: Learn how to create machine learning experiments, use the MLflow AP
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 01/14/2025

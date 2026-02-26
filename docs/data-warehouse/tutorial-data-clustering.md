@@ -1,8 +1,6 @@
 ---
 title: "Tutorial: Use Data Clustering in Fabric Data Warehouse"
 description: This tutorial explains how to use data clustering for better query performance in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/11/2025
 ms.topic: tutorial

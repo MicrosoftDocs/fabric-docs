@@ -1,17 +1,11 @@
 ---
-# Required metadata
-# For more information, see https://learn.microsoft.com/help/platform/learn-editor-add-metadata
-# For valid values of ms.service, ms.prod, and ms.topic, see https://learn.microsoft.com/help/platform/metadata-taxonomies
-
-title:       Use AI in Data Wrangler
+title: Use AI in Data Wrangler
 description: Learn how to use AI functions and other AI-powered features in Data Wrangler to further accelerate data preparation
-author:      s-polly
-ms.author:   scottpolly
-reviewer:    virginiaroman
+author: s-polly
+ms.author: scottpolly
 ms.reviewer: vimeland
-ms.service:  fabric
-ms.topic:    how-to
-ms.date:     09/04/2025
+ms.topic: how-to
+ms.date: 09/04/2025
 ---
 
 # How to use AI in Data Wrangler to enhance data preparation
@@ -29,14 +23,14 @@ To use AI functions in Data Wrangler, you will also need to install OpenAI in yo
 
 ```python
 # The pandas AI functions package requires OpenAI version 1.99.5 or later.
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 ```
 
 # [Python environment](#tab/pandas-python)
 
 ```python
 # Install the fixed version of packages.
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 
 # Install the latest version of SynapseML-core.
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null

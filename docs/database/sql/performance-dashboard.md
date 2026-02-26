@@ -1,8 +1,6 @@
 ---
 title: "Performance Dashboard for SQL Database"
 description: Learn about the Performance Dashboard for SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: amapatil, subasak, lancewright
 ms.date: 09/02/2025
 ms.topic: concept-article

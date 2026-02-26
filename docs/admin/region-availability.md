@@ -3,7 +3,6 @@ title: Fabric region availability
 description: Learn about Microsoft Fabric region availability, including details about the workloads and features supported in each region and how home region impacts access.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
@@ -69,3 +68,5 @@ This table lists regions where the only available Fabric workload is Power BI.
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)
+
+

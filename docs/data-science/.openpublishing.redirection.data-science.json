@@ -136,5 +136,15 @@
         "redirect_url": "/fabric/data-science/ai-functions/pandas/translate",
         "redirect_document_id": true
       },
+      {
+        "source_path_from_root": "/docs/data-science/data-agent-semantic-model.md",
+        "redirect_url": "/fabric/data-science/semantic-model-best-practices",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/ai-services/how-to-use-openai-sdk-synapse.md",
+        "redirect_url": "/fabric/data-science/ai-services/how-to-use-openai-python-sdk",
+        "redirect_document_id": false
+      }
     ]
 }

@@ -1,8 +1,7 @@
 ---
 title: Create a OneLake Shared Access Signature (SAS)
 description: Learn how to create a OneLake shared access signature to provide short-term, delegated access to OneLake.
-author: mabasile-MSFT
-ms.author: mabasile
+ms.reviewer: mabasile
 ms.topic: concept-article
 ms.date: 04/10/2025
 
@@ -229,3 +228,4 @@ https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/File
 - [Create a user delegation SAS](/rest/api/storageservices/create-user-delegation-sas)
 - [Request a user delegation key](/rest/api/storageservices/get-user-delegation-key)
 - [Get started with OneLake data access roles](security/get-started-onelake-security.md)
+

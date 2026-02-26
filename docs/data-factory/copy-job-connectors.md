@@ -1,8 +1,6 @@
 ---
 title: Connectors for Copy Job
 description: This article covers the supported connectors for Copy Job in Microsoft Fabric, including source, destination, CDC replication, automatic table creation, and truncate on destination capabilities.
-author: whhender
-ms.author: whhender
 ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 01/05/2025

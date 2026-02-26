@@ -2,11 +2,9 @@
 title: How to use LightGBM with SynapseML in Microsoft Fabric
 description: Build LightGBM classification, regression, and ranking models with SynapseML in Microsoft Fabric.
 ms.topic: how-to
-ms.custom:
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: JessicaXYWang
-reviewer: jessiwang
 ms.date: 07/30/2025
 ---
 
@@ -255,6 +253,6 @@ In this section, you use LightGBM to build a ranking model.
 
 ## Related content
 
-- [What is Azure AI services in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [What is Foundry Tools in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

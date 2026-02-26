@@ -6,7 +6,6 @@ summary: Microsoft Fabric is a software as a service (SaaS) platform that offers
 metadata:
   title: Microsoft Fabric security
   description: Understand what security features are available for Microsoft Fabric and how to use them.
-  ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: security
   ms.topic: landing-page
   author: msmimart

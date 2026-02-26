@@ -147,3 +147,4 @@ You can review the code and, upon approval, Copilot executes it and confirms tha
 
 - [What is Copilot in Fabric in SQL database?](copilot.md)
 - [Privacy, security, and responsible AI use of Copilot in Fabric](../../fundamentals/copilot-privacy-security.md)
+

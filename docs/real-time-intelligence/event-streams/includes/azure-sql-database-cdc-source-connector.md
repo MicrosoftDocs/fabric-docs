@@ -1,10 +1,8 @@
 ---
 title: Azure SQL Database CDC connector for Fabric event streams
 description: The include file has the common content for configuring an Azure SQL Database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
-ms.custom:
 ms.date: 10/31/2025
 ---
 

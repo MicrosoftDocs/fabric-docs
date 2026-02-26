@@ -1,10 +1,9 @@
 ---
 title: Use a dataflow in a pipeline
 description: This article describes how to use a dataflow in a pipeline.
-author: luitwieler
 ms.topic: tutorial
 ms.date: 12/18/2024   
-ms.author: jeluitwi
+ms.reviewer: jeluitwi
 ms.custom:
     - dataflows
     - pipelines

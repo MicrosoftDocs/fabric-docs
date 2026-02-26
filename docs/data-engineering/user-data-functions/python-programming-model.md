@@ -1,9 +1,7 @@
 ---
 title: Python programming model for Fabric User data functions
 description: Overview of the Fabric User data functions programming model for Python.
-ms.author: eur
 ms.reviewer: sumuth
-author: eric-urban
 ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026
@@ -398,7 +396,7 @@ The `executing_user` object contains the following information:
 
 | Property Name| Data Type| Description|
 |----------------| ----------------|-----------------------------------------|
-| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requestor. This is the verified identity of the user or service principal used to invoke this function across applications. |
+| Oid | string (GUID) | The user's object ID, which is an immutable identifier for the requester. This is the verified identity of the user or service principal used to invoke this function across applications. |
 | TenantId | string (GUID) | The ID of the tenant that the user is signed into. |
 | PreferredUsername | string | The preferred username of the invoking user, as set by the user. This value is mutable. |
 

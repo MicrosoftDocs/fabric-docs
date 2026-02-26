@@ -1,8 +1,6 @@
 ---
 title: Data Clustering in Fabric Data Warehouse
 description: Learn more about data clustering in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/11/2025
 ms.topic: concept-article
@@ -54,8 +52,9 @@ CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | 
 [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) syntax: 
 
 ```syntaxsql
-CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | table_name } (
-) WITH (CLUSTER BY[ ,... n ])
+CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | table_name }
+( { <column_definition> } [ ,... n ] )
+WITH (CLUSTER BY [ ,... n ])
 AS <select_statement>;
 ```
 

@@ -1,8 +1,6 @@
 ---
 title: Data Virtualization in SQL Database
 description: Learn more about data virtualization in SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: hudequei
 ms.date: 10/22/2025
 ms.topic: concept-article

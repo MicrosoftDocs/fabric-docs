@@ -2,9 +2,7 @@
 title: Manage Fabric materialized lake views with public APIs
 description: Learn about public APIs for Fabric materialized lake views.
 ms.topic: reference
-author: rkottackal
-ms.author: rkottackal
-ms.reviewer: nijelsf
+ms.reviewer: rkottackal, nijelsf
 ms.date: 08/20/2025
 ms.search.form: MLV REST API
 ---
@@ -380,3 +378,4 @@ Retry-after: 60
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [Job Scheduler APIs in Fabric](/rest/api/fabric/core/job-scheduler)
+

@@ -1,9 +1,7 @@
 ---
 title: Create your first pipeline to copy data
 description: Learn how to build and schedule a new pipeline to copy sample data to a Lakehouse.
-ms.author: whhender
 ms.reviewer: xupzhou
-author: whhender
 ms.topic: quickstart
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 06/23/2025

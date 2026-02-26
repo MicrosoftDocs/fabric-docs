@@ -1,8 +1,7 @@
 ---
 title: Change data capture (CDC) in Copy Job
 description: This article guides you through how to use CDC in copy job.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 05/15/2025
 ms.search.form: copy-job-tutorials

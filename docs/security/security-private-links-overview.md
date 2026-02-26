@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: concept-article
-ms.custom:
 ms.date: 08/21/2025
 ---
 
@@ -120,6 +119,14 @@ Unsupported scenarios:
 * Custom Endpoint as a destination is not supported.
 * Eventhouse as a destination (with direct ingestion mode) is not supported.
 * Activator as a destination is not supported.
+
+### Data Activator
+
+Data Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant level Private Links. For workspace level, Data Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+
+Limitations:
+
+* Currently, Data Activator doesn't support ingestion from Eventstream with Private Links enabled.
 
 ### Eventhouse
 

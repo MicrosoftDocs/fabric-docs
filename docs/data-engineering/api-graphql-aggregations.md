@@ -1,8 +1,6 @@
 ---
 title: Aggregations in API for GraphQL
 description: Learn how to use GraphQL aggregations in Microsoft Fabric to retrieve summarized data from your lakehouse and warehouse tables through the API for GraphQL.
-author: eric-urban
-ms.author: eur
 ms.reviewer: edlima
 ms.date: 01/21/2026
 ms.topic: concept-article

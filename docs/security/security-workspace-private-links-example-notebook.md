@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 10/13/2025
 
 #customer intent: As a workspace admin, I want to understand how to securely access a lakehouse in a workspace with public access restriction from an open workspace without public access restriction, including setup steps and best practices.

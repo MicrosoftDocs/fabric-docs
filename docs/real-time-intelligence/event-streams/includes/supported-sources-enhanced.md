@@ -1,10 +1,8 @@
 ---
 title: Sources Supported by Fabric Eventstreams (Enhanced)
 description: This file has the list of sources supported by Fabric eventstreams with enhanced capabilities.
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 08/26/2025
 ---
 
@@ -40,3 +38,4 @@ ms.date: 08/26/2025
 | [MQTT (preview)](../add-source-mqtt.md) | You can use Fabric eventstreams to connect to an MQTT broker. Messages in an MQTT broker can be ingested into Fabric eventstreams and routed to various destinations within Fabric. |
 | [Cribl (preview)](../add-source-cribl.md) | You can connect Cribl to an eventstream and route data to various destinations within Fabric. |
 | [Solace PubSub+ (preview)](../add-source-solace-pub-sub.md) | You can use Fabric eventstreams to connect to Solace PubSub+. Messages from Solace PubSub+ can be ingested into Fabric eventstreams and routed to various destinations within Fabric. |
+

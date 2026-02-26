@@ -1,8 +1,7 @@
 ---
 title: Get Capacity overview events in Fabric Real-Time hub
 description: This article describes how to get Fabric capacity overview events as an eventstream in Fabric Real-Time hub. 
-author: george-guirguis
-ms.author: geguirgu
+ms.reviewer: geguirgu
 ms.topic: how-to
 ms.date: 11/17/2025
 ms.custom: references_regions
@@ -85,3 +84,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

@@ -1,13 +1,11 @@
 ---
 title: dbt job in Microsoft Fabric (preview)
 description: Learn how to use dbt job in Microsoft Fabric to transform your data with SQL.
-ms.reviewer: whhender
-ms.author: akurnala
-author: abhinayakurnala1
+ms.reviewer: akurnala
 ms.date: 01/16/2026
 ms.topic: overview
 ms.custom:
-   - dbt
+  - dbt
 ai-usage: ai-assisted
 ---
 

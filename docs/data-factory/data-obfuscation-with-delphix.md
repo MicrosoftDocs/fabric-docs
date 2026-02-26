@@ -1,11 +1,10 @@
 ---
 title: Data obfuscation in Data Factory with Delphix Compliance Services
 description: This article describes how to use Delphix Compliance Services masking APIs to obfuscate data in Data Factory in Microsoft Fabric.
-author: ptyx507
 ms.topic: how-to
 ms.custom: configuration
 ms.date: 11/15/2023
-ms.author: miescobar
+ms.reviewer: miescobar
 ---
 
 # Data obfuscation in Data Factory with Delphix Compliance Services

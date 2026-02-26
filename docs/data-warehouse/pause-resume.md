@@ -1,8 +1,6 @@
 ---
 title: Pause and Resume in Fabric Data Warehouse
 description: Learn more about the pause and resume capacity for Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sosivara
 ms.date: 04/06/2025
 ms.topic: concept-article

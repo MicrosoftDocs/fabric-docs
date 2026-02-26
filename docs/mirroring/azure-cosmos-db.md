@@ -1,12 +1,9 @@
 ---
 title: "Microsoft Fabric Mirrored Databases From Azure Cosmos DB"
 description: Learn about the mirrored databases from Azure Cosmos DB in Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
-ms.reviewer: jmaldonado
+ms.reviewer: mjbrown, jmaldonado
 ms.date: 12/03/2025
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -198,3 +195,4 @@ If you're using the data explorer in Fabric mirroring, you accrue typical costs 
 
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-faq.yml)
+
