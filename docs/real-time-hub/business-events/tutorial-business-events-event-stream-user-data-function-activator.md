@@ -20,6 +20,9 @@ This tutorial walks you through the end-to-end workflow of publishing business e
 
 1. Set an alert on the business event using Fabric Activator and trigger the user defined function when the alert condition is met. 
 
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
+
 ## Create a new business event
 
 1. Go to **Business events** in Real-Time hub.
