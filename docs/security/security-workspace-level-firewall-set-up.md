@@ -5,14 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 01/27/2026
 
 #customer intent: As a workspace admin, I want to configure workspace-level IP firewall rules on my workspace to restrict the IP addresses than can access my Fabric workspace.
 
 ---
 
-# Set up workspace IP firewall rules
+# Set up workspace IP firewall rules (Preview)
 
 Microsoft Fabric offers two options to restrict inbound access to a workspace. Workspace Private Link secures connectivity by routing traffic through Azure Private Link and private endpoints, ensuring all workspace access occurs over Microsoft's private network instead of the public internet. Workspace IP firewall rules provide an alternative by allowing access only from approved public IP addresses, offering a straightforward way to limit inbound connections when a workspace is exposed through public endpoints.
 
@@ -26,7 +25,7 @@ Before you configure workspace IP firewall rules, ensure the following requireme
 
 * **Workspace admin role**: You must be a workspace admin to configure IP firewall rules.
 
-* **Workspace license assignment**: The workspace must be assigned to either a Fabric capacity or trial capacity. You can check assignment by going to the workspace settings and selecting **License info**.
+* **Workspace license assignment**: The workspace must be assigned to either a Fabric capacity or trial capacity. You can check assignment by going to the workspace settings and selecting **Workspace type**.
 
 * **Resource provider registration**: If this is the first time setting up workspace-level network features in your tenant, re-register the **Microsoft.Fabric** resource provider in Azure for subscriptions containing the workspace resources. In the Azure portal, go to **Subscriptions** > **Settings** > **Resource providers**, select **Microsoft.Fabric**, and then select **Re-register**.
 

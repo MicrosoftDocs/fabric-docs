@@ -1,8 +1,7 @@
 ---
 title: Data type mapping in data movement
 description: Learn the principle of data type mapping.
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.custom: pipelines, copy-job
 ms.date: 09/29/2025

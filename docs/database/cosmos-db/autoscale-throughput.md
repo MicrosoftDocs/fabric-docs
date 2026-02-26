@@ -1,8 +1,7 @@
 ---
 title: Autoscale Throughput in Cosmos DB Database
 description: Learn about the benefits and use cases for autoscale throughput in your Cosmos DB database within Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 10/29/2025
 show_latex: true
@@ -127,3 +126,4 @@ Console.WriteLine($"Verified updated autoscale throughput: {updatedThroughputRes
 
 - [Configure a container in Cosmos DB in Microsoft Fabric](how-to-configure-container.md)
 - [Explore request units in Cosmos DB in Microsoft Fabric](request-units.md)
+

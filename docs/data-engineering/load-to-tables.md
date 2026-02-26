@@ -2,10 +2,7 @@
 title: Lakehouse Load to Delta Lake tables
 description: Learn all about the lakehouse Load to Delta Table feature, including feature guidelines and capabilities.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 09/16/2024
 ms.search.form: lakehouse load to delta lake tables
 ---

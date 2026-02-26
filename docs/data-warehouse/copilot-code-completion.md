@@ -64,3 +64,4 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 - [How to use the Copilot chat pane in Fabric in Data Warehouse](copilot-chat-pane.md)
 - [How to use Copilot quick actions in Fabric in Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

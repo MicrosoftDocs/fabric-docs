@@ -1,16 +1,13 @@
 ---
 title: Practice with a sample dbt project in Microsoft Fabric (preview)
 description: Learn how to create and run a dbt job using the sample Jaffle Shop project in Microsoft Fabric.
-author: abhinayakurnala1
-ms.author: akurnala
-ms.service: fabric
+ms.reviewer: akurnala
 ms.topic: tutorial
 ms.date: 12/02/2024
 ms.search.form: dbt-job-sample-project-tutorial
 ai-usage: ai-assisted
 
 #customer intent: As a data engineer, I want to practice with a sample dbt project so that I can learn how to use dbt jobs in Microsoft Fabric.
-
 ---
 
 # Tutorial: Practice with a sample dbt project in Microsoft Fabric (preview)

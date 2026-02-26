@@ -1,14 +1,9 @@
 ---
 title: Git integration workspaces
 description: Learn how to develop an app using Git branches to work in your own isolated workspace environment and improve collaboration with your team.
-author: billmath
-ms.author: billmath
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
 ms.date: 12/15/2025
-ms.custom:
 #customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 

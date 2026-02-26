@@ -1,10 +1,8 @@
 ---
 title: Migrate to Dataflow Gen2 (CI/CD) using Save As
 description: This article describes the procedure for migrating Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) to Dataflow Gen2 (CI/CD) in Data Factory.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 4/21/2025
+ms.date: 02/18/2026
 ms.custom:
   - template-how-to
   - dataflows
@@ -34,17 +32,21 @@ To use the Save As feature:
 
 1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
 
+Save As is disabled when Fabric is not available, including the following scenarios:
+- Power BI Pro Workspace type
+- Power BI Premium Per-User (PPU) Workspace type
+- Admin setting "Users can create fabric items" is disabled for the Tenant, Capacity or User group.
+
+>[!TIP]
+>For bulk and auto-migrations, you can use the [REST API](/rest/api/power-bi/dataflows/save-dataflow-gen-one-as-dataflow-gen-two).
+
 ## Known limitations
 
-The following tables contain the known limitations for the Save As feature:
+These are the known limitations for the Save As feature:
 
-| Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
-| ------------------ | ------------- | ------------- |
-| You're required to reconnect to data sources | Limited | Limited |
-| You're required to reconnect to the output destination | No limitation| Limited |
-| Scheduled refresh settings aren't copied | Limited | Limited |
-| Incremental refresh settings aren't copied | Limited | Limited |
-
+- Scheduled refresh settings are not copied with Dataflow Gen2 Save As
+- Incremental refresh settings are not copied with Dataflow Gen1 Save As
+  
 Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and therefore aren't copied:
 
 | Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
@@ -63,3 +65,4 @@ Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and t
 
 * [Move queries from Dataflow Gen1 to Dataflow Gen2](move-dataflow-gen1-to-dataflow-gen2.md)
 * [Dataflow Gen2 with CI/CD and Git integration support](dataflow-gen2-cicd-and-git-integration.md)
+* [REST API](/rest/api/power-bi/dataflows/save-dataflow-gen-one-as-dataflow-gen-two)

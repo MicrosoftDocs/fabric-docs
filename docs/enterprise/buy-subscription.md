@@ -1,13 +1,12 @@
 ---
 title: Buy a Microsoft Fabric subscription
 description: Learn how to buy a Microsoft Fabric subscription so that you can start working in the Microsoft Fabric platform.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
-ms.custom:
 ms.date: 05/06/2025
 
-# Customer intent: As an administrator or an executive, I want to learn how to but a Microsoft Fabric subscription so that I can start working in the Microsoft Fabric platform.
+#customer intent: As an administrator or an executive, I want to learn how to but a Microsoft Fabric subscription so that I can start working in the Microsoft Fabric platform.
 ---
 
 # Buy a Microsoft Fabric subscription

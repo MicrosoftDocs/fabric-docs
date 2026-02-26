@@ -1,11 +1,8 @@
 ---
 title: Eventstream REST API
 description: Learn how to call APIs to create and manage an Eventstream item in Fabric workspace.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
@@ -472,3 +469,5 @@ Example of stream in API body:
 
 * [Using the Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis)
 * [Eventstream item definition](/rest/api/fabric/articles/item-management/definitions/eventstream-definition)
+
+

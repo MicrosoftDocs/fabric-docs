@@ -1,14 +1,11 @@
 ---
 title: Include file for variable library limitations
 description: This file lists all the limitations to consider when you work with variable libraries. 
-author: billmath
-ms.author: billmath
 ms.topic: include
-ms.custom: 
 ms.date: 12/15/2025
 ---
 
-### Size limitations
+### Limitations for variables
 
 * There can be *up to 1,000 variables* and *up to 1,000 value sets*, as long as you meet both of these requirements:
 

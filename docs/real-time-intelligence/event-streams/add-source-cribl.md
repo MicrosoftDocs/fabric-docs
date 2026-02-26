@@ -1,9 +1,7 @@
 ---
 title: Add Cribl source to an eventstream
 description: Learn how to add a Cribl source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.date: 11/05/2025
 ms.search.form: Source and Destination
@@ -122,3 +120,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

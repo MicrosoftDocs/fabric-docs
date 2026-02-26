@@ -1,8 +1,9 @@
 ---
 title: "Learn About Editing Semantic Models in Direct Lake in Power BI Desktop"
 description: Describes using Power BI Desktop to edit semantic models in Power BI Desktop.
-author: DataZoeMS
-ms.author: zoedouglas
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: zoedouglas
 ms.date: 08/01/2025
 ms.service: powerbi
 ms.subservice: powerbi-premium
@@ -178,3 +179,4 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 
 - [Direct Lake overview](direct-lake-overview.md)
 - [Power BI Project files](/power-bi/developer/projects/projects-overview)
+

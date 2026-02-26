@@ -2,8 +2,7 @@
 metadata:
   title: 'Data Factory in Microsoft Fabric: Frequently asked questions '
   description: Get answers to frequently asked questions about Data Factory in Microsoft Fabric.
-  author: kromerm
-  ms.author: makromer
+  ms.reviewer: makromer
   ms.topic: faq
   ms.custom: configuration
   ms.date: 06/10/2024

@@ -1,8 +1,7 @@
 ---
 title: How to create a Microsoft 365 connection
 description: This article provides information about how to do create Microsoft 365 connection in [!INCLUDE [product-name](../includes/product-name.md)].
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:

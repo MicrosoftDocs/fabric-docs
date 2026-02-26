@@ -1,9 +1,7 @@
 ---
 title: Understand Eventhouse compute usage
 description: This article walks you through some of the most common factors that determine the size of your eventhouse compute so that you can make the right decisions to optimize your eventhouse.
-ms.reviewer: spelluru
-ms.author: bwatts
-author: bwatts64
+ms.reviewer: bwatts
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.date: 07/01/2025
@@ -130,4 +128,6 @@ It gives you the ability to set up actions from KQL querysets for the control co
 ## Summary
 
 Observability for your eventhouse compute is provided using Eventhouse Overview, Database Overview, KQL Database control commands, and the Workspace Monitoring database. In this article, you walked through the most common scenarios and how to use either KQL Database control commands or the Workspace Monitoring database to allow you to understand your compute usage.
+
+
 

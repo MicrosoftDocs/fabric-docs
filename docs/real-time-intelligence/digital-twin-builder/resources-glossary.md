@@ -1,8 +1,6 @@
 ---
 title: Digital twin builder (preview) glossary
 description: This article defines important digital twin builder (preview) terminology.
-author: baanders
-ms.author: baanders
 ms.date: 07/01/2025
 ms.topic: concept-article
 ---

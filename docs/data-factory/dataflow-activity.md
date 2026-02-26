@@ -1,14 +1,12 @@
 ---
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
-ms.reviewer: xupxhou
-ms.author: miescobar
-author: ptyx507x
+ms.reviewer: xupxhou, miescobar
 ms.topic: how-to
-ms.date: 1/27/2026
+ms.date: 2/4/2026
 ms.custom:
-   - pipelines
-   - dataflows
+  - pipelines
+  - dataflows
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -19,8 +17,7 @@ The Dataflow activity in Data Factory for Microsoft Fabric allows you to run a D
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a Dataflow activity to a pipeline
 
@@ -65,9 +62,14 @@ Inside the Dataflow parameters section you're able to enter the name of the para
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+>[!NOTE]
+>To successfully run a Dataflow Gen2 (CI/CD), users must have:
+> - Member (or higher) access to the workspace, and
+> - Access to all connections used by the dataflow  
+>
+>Not meeting these two requirements could result in run failures. 
 
 ## Troubleshooting tips
 
@@ -81,6 +83,10 @@ When troubleshooting a Dataflow run, it is highly encouraged to start inside the
 If your Dataflow used an On-Premises Data Gateway, you can also explore the detailed gateway logs found within the machine where your gateway is installed.
 
 You can also request support through the [Fabric Community Forum](https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory) or by [raising a dedicated support case](https://support.fabric.microsoft.com/) where one of our engineers will be able to assist.
+
+## Known issues
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

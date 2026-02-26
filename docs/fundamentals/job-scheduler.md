@@ -5,7 +5,7 @@ ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 10/27/2025
+ms.date: 02/12/2026
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -74,6 +74,13 @@ Create and manage multiple schedules for a single item. Use different schedules 
 
 :::image type="content" source="media/job-scheduler/job-scheduler-multiple.png" alt-text="Screenshot of multiple scheduler configurations for a single item in Microsoft Fabric.":::
 
+## Scheduler auto-disable
+
+If a scheduler repeatedly triggers jobs and encounters consecutive failures, the Fabric platform shuts down the scheduler and places it into an *auto-disabled* state to prevent further predictable job failures. To resume normal job scheduling, you must manually restart the scheduler through the UI, API, or CI/CD process.
+
+> [!NOTE]
+> The failure threshold that triggers the auto-disabled state varies by item and is typically set to 10 consecutive failed runs.
+
 ## Automate schedules with CI/CD
 
 The job scheduler supports CI/CD integration, so you can deploy and manage schedules as part of your development workflow.
@@ -85,6 +92,8 @@ The job scheduler supports CI/CD integration, so you can deploy and manage sched
 | **Public API** | Manage schedules by using code |
 
 When you deploy an item, its schedules are automatically included, so you don't need to recreate them manually. For step-by-step instructions, see [CI/CD workflow options in Fabric](../cicd/manage-deployment.md).
+
+If you use variable library in the parameters, data sync might experience latency after CI/CD operations. This behavior is expected and will be improved in future releases.
 
 > [!IMPORTANT]
 > All items that had a scheduler configured prior to CI/CD being enabled appear as "uncommitted" when running `git status`. Carefully review and confirm the changes that need to be committed to avoid unintended actions. Items without prior scheduler configuration aren't affected. We apologize for any inconvenience this may cause.

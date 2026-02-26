@@ -3,8 +3,6 @@ title: Example Graph Datasets
 description: Information about example graph datasets used in the documentation for Graph in Microsoft Fabric
 ms.topic: reference
 ms.date: 01/12/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Example Graph Datasets
 ---

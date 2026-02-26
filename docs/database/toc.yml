@@ -21,6 +21,16 @@ items:
       href: sql/use-case-operational-data-store.md
     - name: Translytical applications
       href: sql/use-case-translytical-applications.md
+  - name: AI
+    items:
+    - name: Intelligent applications and AI
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+    - name: Intelligent applications and AI FAQ
+      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+    - name: Vectors and embeddings
+      href: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+    - name: Vectors and embeddings FAQ
+      href: /sql/sql-server/ai/vectors-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
   - name: Copilot
     items:
     - name: What is Copilot in Fabric SQL database? 
@@ -73,16 +83,7 @@ items:
       href: sql/tutorial-create-application.md
     - name: 9. Clean up resources
       href: sql/tutorial-clean-up.md
-  - name: AI
-    items:
-    - name: Intelligent applications and AI
-      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
-    - name: Intelligent applications and AI FAQ
-      href: /sql/sql-server/ai/artificial-intelligence-intelligent-applications-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
-    - name: Vectors and embeddings
-      href: /sql/sql-server/ai/vectors?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
-    - name: Vectors and embeddings FAQ
-      href: /sql/sql-server/ai/vectors-faq?toc=/fabric/database/toc.json&bc=/fabric/breadcrumb/toc.json&view=fabric-sqldb&preserve-view=true
+
   - name: Data recovery
     items:
     - name: Backups

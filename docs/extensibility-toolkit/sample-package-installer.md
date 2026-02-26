@@ -1,10 +1,8 @@
 ---
 title: Package Installer Item
 description: Learn about the Package Installer item, which demonstrates how to package and deploy items in Fabric.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: sample
-ms.custom:
 ms.date: 12/04/2025
 ---
 
