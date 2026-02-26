@@ -110,7 +110,7 @@ The following properties are supported for Oracle database under the **Destinati
 The following properties are **required**:
 
 - **Connection:** Select an Oracle database connection from the connection list. If the connection doesn't exist, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
-- **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data.
+- **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data. For more details on mapping rules for auto-created tables, go to [Default data type mapping for Oracle auto-created table](#default-data-type-mapping-for-oracle-auto-created-table).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -125,9 +125,9 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 
 #### Edit destination data types
 
-For the **Mapping** tab configuration, if you apply Oracle as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle](#data-type-mapping-for-oracle).
+For the **Mapping** tab configuration, if you apply Oracle as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle](#data-type-mapping-for-oracle-database).
 
-For example, the type for *VAL1* column in source is number and you can change it to BINARY_DOUBLE type when mapping to the destination column. 
+For example, you can set the type of the *VAL2* column to TIMESTAMP and adjust its scale as needed when mapping it to the destination.
 
 :::image type="content" source="media/connector-oracle-database/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
@@ -139,7 +139,7 @@ For **Settings** tab configuration, see [Configure your other settings under set
 
 When you copy data from Oracle database, the following mappings are used from Oracle database to interim data types used by the service internally.
 
-| Oracle databse data type | Interim data type |
+| Oracle database data type | Interim data type |
 |:--- |:--- |
 | BFILE | Byte[] |
 | BINARY_FLOAT | Single |
@@ -175,7 +175,7 @@ NUMBER(p,s) is mapped to the appropriate interim data type depending on the prec
 | Int64                    | scale <= 0 AND 10 <= (precision - scale) < 19                                                                  |
 | Single                   | precision < 8 AND ((scale <= 0 AND (precision - scale) <= 38) OR (scale &gt; 0 AND scale <= 44))                  |
 | Decimal                  | precision &gt;= 16 
-| Double                   | If none of the above conditions are met.                                                                       |
+| Double                   | If none of the above conditions are met.                                                                      |
 
 When you copy data to Oracle database, the following mappings are used from interim data types used by the service internally to Oracle database data types.
 
@@ -218,7 +218,7 @@ The following table describes the default mappings from interim data types used 
 | Byte[]           | BLOB                      |
 | GUID             | CHAR(36)                  |
 
-When both the source and destination are Oracle, the destination table is automatically created using the source column’s Oracle data types if those data types are included in the following list：
+When both the source and destination are Oracle, the destination table is automatically created using the source column's Oracle data types if those data types are included in the following list. Any other source data types will first be converted to an internal interim data type by the service, and then mapped to the destination data type.
 
 - BINARY_FLOAT
 - BINARY_DOUBLE
@@ -233,7 +233,7 @@ When both the source and destination are Oracle, the destination table is automa
 - DATE
 - INTERVAL YEAR TO MONTH
 - INTERVAL DAY TO SECOND
-- NUMBER(p, s)
+- NUMBER (p,s)
 - TIMESTAMP
 - TIMESTAMP WITH LOCAL TIME ZONE
 
