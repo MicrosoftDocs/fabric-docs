@@ -2,7 +2,7 @@
 title: "Tutorial: Set up Oracle database mirroring in Microsoft Fabric (Preview)"
 description: Learn how to mirror your Oracle database in Microsoft Fabric for near real-time data replication.
 ms.reviewer: sbahadur
-ms.date: 08/22/2025
+ms.date: 02/26/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
@@ -175,8 +175,8 @@ Your Oracle database needs supplemental logging enabled. If your user doesn't ha
 1. Select **Connect** to test the connection
 
 1. Choose how to select tables for mirroring:
-   * **Auto mode**: Let Fabric select 500 random tables
-   * **Manual**: Pick up to 500 tables yourself
+   * **Auto mode**: Let Fabric mirror all the tables
+   * **Manual**: Choose only certain objects to mirror
 
    :::image type="content" source="media/oracle/choose-data.png" alt-text="Screenshot of the interface prompting the user to select the data they want to be mirrored before connecting.":::
 

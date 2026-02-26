@@ -2,7 +2,7 @@
 title: "Mirroring Oracle limitations in Microsoft Fabric"
 description: Learn about the limitations when mirroring Oracle databases in Microsoft Fabric.
 ms.reviewer: sbahadur
-ms.date: 08/22/2025
+ms.date: 02/26/2026
 ms.topic: limits-and-quotas
 ms.custom: references_regions
 ai-usage: ai-assisted
@@ -21,7 +21,7 @@ This article outlines the current limits when mirroring [Oracle databases in Mic
 
 Here's what you can expect for database scale:
 
-* Currently, mirrored database supports up to **500 tables**
+* Currently, mirrored database supports up to **1000 tables**
 * In each workspace, you can have:
   * One Oracle server
   * One On-Premises Data Gateway (OPDG) instance

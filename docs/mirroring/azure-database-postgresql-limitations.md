@@ -30,9 +30,9 @@ For troubleshooting, see:
 
 - Fabric Mirroring for Azure Database for PostgreSQL flexible server is only supported on a writable primary database.
 - An Azure Database for PostgreSQL flexible server database can only be mirrored to a single Fabric item at a time.
-- The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+- The maximum number of tables that can be mirrored into Fabric is 1000 tables. Any tables above the 1000 limit currently can't be replicated.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 1000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
+  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 1000 tables.
 
 ## Permissions in the source database
 

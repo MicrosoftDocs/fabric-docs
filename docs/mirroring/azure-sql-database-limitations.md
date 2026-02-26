@@ -2,7 +2,7 @@
 title: "Limitations and Behaviors for Fabric Mirrored Databases From Azure SQL Database"
 description: A detailed list of limitations for mirrored databases from Azure SQL Database in Microsoft Fabric.
 ms.reviewer: imotiwala, sbahadur, drskwier, ajayj, atodalbagi, wiassaf
-ms.date: 11/25/2025
+ms.date: 02/26/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -20,9 +20,9 @@ For troubleshooting, see:
 
 - Fabric Mirroring for Azure SQL Database is only supported on a writable primary database.
 - Azure SQL Database cannot be mirrored if the database has: enabled Change Data Capture (CDC), Azure Synapse Link for SQL, or the database is already mirrored in another Fabric workspace.
-- The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+- The maximum number of tables that can be mirrored into Fabric is 1000 tables. Any tables above the 1000 limit currently cannot be replicated.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 1000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
+  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 1000 tables.
 - `.dacpac` deployments to Azure SQL Database require the publish property `/p:DoNotAlterReplicatedObjects=False` to enable modifications to any mirrored tables. For more about publish settings available for `.dacpac` deployments, see the [SqlPackage publish documentation](/sql/tools/sqlpackage/sqlpackage-publish).
 
 - Azure SQL Database cannot be mirrored if [delayed transaction durability](/sql/relational-databases/logs/control-transaction-durability?view=azuresqldb-current&preserve-view=true) is enabled for the database.
