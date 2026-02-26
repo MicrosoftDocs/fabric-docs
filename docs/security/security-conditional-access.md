@@ -39,7 +39,7 @@ If your policy is too restrictive - for example, if it blocks all apps except Po
 > [!NOTE]
 > If you already have a Conditional Access policy configured for Power BI, include the resources listed here in your existing Power BI policy. Otherwise, Conditional Access might not operate as intended in Fabric.
 > Power BI doesn't support the [continuous access evaluation (CAE)](/entra/identity/conditional-access/concept-continuous-access-evaluation#limitations) session control in Conditional Access.
-> In split tunneling environments, enabling CAE in Conditional Access policies could prevent access to Power BI management experiences such as adding or editing gateway users. With split tunneling, requests to Microsoft Graph and Fabric services could originate from different network paths, causing CAE challenges that Power BI experiences don't handle.
+> In split tunneling environments, enabling CAE in Conditional Access policies could prevent access to Power BI experiences such as adding or editing users in the Manage Connections and Gateways portal. With split tunneling, requests to Microsoft Graph and Fabric services could originate from different network paths, causing CAE challenges that Power BI experiences don't handle.
 
 ## Set up a Conditional Access policy for Fabric
 
