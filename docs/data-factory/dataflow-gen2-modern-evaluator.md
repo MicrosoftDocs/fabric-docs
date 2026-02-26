@@ -3,7 +3,7 @@ title: Modern Evaluator for Dataflow Gen2 with CI/CD
 description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for top connectors.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 2/25/2026
+ms.date: 2/28/2026
 ms.custom: dataflows
 ---
 
@@ -81,7 +81,7 @@ This benchmark compares Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) 
 - Dataflow Gen2 (CI/CD) completes the same workload in approximately half the time.
 - The performance improvement is driven by the Modern Query Evaluation Engine, which reduces per‑row processing overhead and optimizes execution for large ingestion workloads.
 
-<!-- ### Legacy vs. Modern evaluator
+### Legacy vs. Modern evaluator
 
 This benchmark compares the legacy evaluation engine and the Modern Query Evaluation Engine within Dataflow Gen2 (CI/CD) under two common query patterns.
 
@@ -101,7 +101,7 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 **Observations**
 
 The Modern Query Evaluation Engine provides significant performance improvements due to a more efficient runtime and reduced execution overhead regardless of whether the query folds or not.
--->
+
 
 ## Supported connectors
 
