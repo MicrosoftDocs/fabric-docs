@@ -111,7 +111,7 @@ If your scenario doesn't require strict transactional consistency at a specific 
 
 - Schedule a refresh every 15 minutes—continuously. Some refresh attempts might fail due to locking, but enough succeed to keep your SQL Endpoint relatively up to date.
 
-:::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-schedule.png" alt-text="Screenshot of a recurring Refresh SQL Endpoint schedule configuration.":::
+:::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-schedule.png" alt-text="Screenshot of a recurring Refresh SQL Endpoint schedule configuration."  lightbox="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-schedule.png":::
 
 This approach is practical and robust for many analytics workloads.
 
@@ -125,4 +125,4 @@ This approach is practical and robust for many analytics workloads.
 
 ## Related content
 
-- [Refresh Sql Endpoint Metadata with the REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata?tabs=HTTP)
+- [Refresh SQL Endpoint Metadata with the REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata?tabs=HTTP)
