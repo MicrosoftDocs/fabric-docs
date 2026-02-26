@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 02/25/2026
+ms.date: 02/26/2026
 ---
 
 # Compare code changes in Git Integration (Public Preview)
@@ -35,13 +35,6 @@ Granular Compare enables users to:
 - Navigate across all changed files within an item—collapsed by default unless opened via single‑item view.
 - Work across large workspaces where items may contain many files.
 
-## Limitations
-The following is a list of limitations for the granular compare feature.
-
-- Files that are over 1 MB, like binary files, don't show content.
-- System files and system level changes currently show content, but sometimes these changes don't reflect actual changes being made to the item.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
-- In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
-
 ## Entry Points
 Granular Compare can be opened from multiple locations. The following table summarizes the various entry points. 
 
@@ -51,24 +44,6 @@ Granular Compare can be opened from multiple locations. The following table summ
 |Source Control → Updates tab|●Shows diffs where Git has new changes relative to workspace</br>●Git branch side is highlighted (“green side”)|
 |Conflict Dialog|●Shows only conflicted items</br>●Comparisons depend on scenario (e.g., workspace vs. latest Git)|
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
-
-
-## System files and system level changes
-System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list.
-
-System files are repesented  by a "/" in the list of changes or updates. The following screenshot shows an update to the git integration schema. An update to the git schema would be considered a system level change.
-
- :::image type="content" source="media/granular-compare/compare-10.png" alt-text="Screenshot of the schema update screen." lightbox="media/granular-compare/compare-10.png":::
-
-You may see additions and deletions but in reality nothing changes, only the change in report.json is changing. This is an extreme edge case where the system file schema versions are different.
-
- :::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
-
-In a normal use case, the changes in the system files are just like any other change.
-
- :::image type="content" source="media/granular-compare/compare-12.png" alt-text="Screenshot of system file displayname change." lightbox="media/granular-compare/compare-12.png":::
-
-For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-changes) for an additional example.
 
 
 ## Example - Review changes to a specific item
@@ -110,7 +85,24 @@ The following steps show how to review updates for items.
 
 5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
-## Example - Sytem file changes
+## System files and system level changes
+System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list.
+
+System files are repesented  by a "/" in the list of changes or updates. The following screenshot shows an update to the git integration schema. An update to the git schema would be considered a system level change.
+
+ :::image type="content" source="media/granular-compare/compare-10.png" alt-text="Screenshot of the schema update screen." lightbox="media/granular-compare/compare-10.png":::
+
+You may see additions and deletions but in reality nothing changes, only the change in report.json is changing. This is an extreme edge case where the system file schema versions are different.
+
+ :::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
+
+In a normal use case, the changes in the system files are just like any other change.
+
+ :::image type="content" source="media/granular-compare/compare-12.png" alt-text="Screenshot of system file displayname change." lightbox="media/granular-compare/compare-12.png":::
+
+For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-changes) for an additional example.
+
+### Example - Sytem file changes
 The following steps show how to review changes to system files. In this example, the **report** item is renamed to **quarterly report**.
 
 1. At the top of your workspace, select **Source control**.
@@ -123,12 +115,19 @@ The following steps show how to review changes to system files. In this example,
 
  5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
+## Conflict resolution
+
 
 ## Example - Items in conflict
 If a conflict is detected between items, the granular compare feature will be disabled until this conflict is resolved.
  :::image type="content" source="media/granular-compare/compare-9.png" alt-text="Screenshot of conflict." lightbox="media/granular-compare/compare-9.png":::
 
+## Limitations
+The following is a list of limitations for the granular compare feature.
 
+- Files that are over 1 MB, like binary files, don't show content.
+- System files and system level changes currently show content, but sometimes these changes don't reflect actual changes being made to the item.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
+- In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 
 
  ## Related content
