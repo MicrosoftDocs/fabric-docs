@@ -6,7 +6,7 @@ ms.date: 02/22/2026
 ms.topic: overview
 ---
 
-# Business events overview
+# Business events overview (Preview)
 
 **Business Events** in Microsoft Fabric are customer-initiated, business-critical notifications that trigger downstream processes in real time. They empower organizations to monitor processes and respond quickly to shifts in operations, customer interactions, or market conditions.
 
@@ -15,6 +15,9 @@ Business Events help drive critical business decisions, automate workflows, trig
 The following diagram shows how a manufacturing system detects abnormal vibration using a Spark Notebook, analyzes it, and publishes a `VibrationCriticalDetected` business event that triggers custom business logic in a User Data Function (UDF) through Activator.
 
 :::image type="content" source="media/business-events-overview/business-event-workflow.png" alt-text="Diagram showing a manufacturing system detecting abnormal vibration using a Spark Notebook, analyzing it, and publishing a VibrationCriticalDetected business event that triggers custom business logic in a User Data Function through Activator." lightbox="media/business-events-overview/business-event-workflow.png":::
+
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
 
 ## What is a business event?
 

@@ -19,6 +19,12 @@ items:
     href: tutorial-build-event-driven-data-pipelines.md
   - name: Monitor Fabric Capacity health with Capacity Overview Events 
     href: tutorial-monitor-capacity-threshold.md
+  - name: Publish business events using Notebook and react using Activator
+    href: business-events/tutorial-business-events-notebook-user-data-function-activator.md
+  - name: Publish business events using User Data Function and react using Activator
+    href: business-events/tutorial-business-events-user-data-function-activation-email.md
+  - name: Publish business events using Eventstream and react using Activator
+    href: business-events/tutorial-business-events-event-stream-user-data-function-activator.md
 - name: Create data streams
   items:
   - name: Supported sources
@@ -141,10 +147,6 @@ items:
     href: fabric-events-subscribe-permission.md   
   - name: Microsoft Fabric events capacity consumption
     href: fabric-events-capacity-consumption.md
-- name: Publish and consume business events
-  items:
-  - name: What are business events?
-    href: business-events/business-events-overview.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
