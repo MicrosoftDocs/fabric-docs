@@ -971,12 +971,14 @@
                 href: dataflow-gen2-copilot-explain.md
               - name: Get data with Copilot
                 href: copilot-modern-get-data.md
-              - name: Query evaluator (Preview)
+              - name: Query evaluator
                 href: dataflow-gen2-modern-evaluator.md
               - name: Preview only (Preview)
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
+              - name: Relative references with Fabric connectors
+                href: dataflow-gen2-relative-references.md
               - name: Public parameters in Dataflow Gen2
                 href: dataflow-parameters.md
               - name: Variable libraries in Dataflow Gen2
