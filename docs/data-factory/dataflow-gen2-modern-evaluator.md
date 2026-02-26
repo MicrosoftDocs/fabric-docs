@@ -124,6 +124,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Azure Cost Management
 - [Azure Data Explorer (Kusto)](connector-azure-data-explorer.md)
 - [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
+- Azure SQL database
 - Azure Synapse Analytics
 - Azure Synapse Analytics workspace
 - Azure Resource Graph
