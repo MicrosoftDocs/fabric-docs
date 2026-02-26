@@ -1142,6 +1142,8 @@
             href: lookup-activity.md
           - name: Office 365 Outlook activity
             href: outlook-activity.md
+          - name: Refresh SQL Endpoint activity
+            href: refresh-sql-endpoint-activity.md
           - name: Semantic model refresh activity
             href: semantic-model-refresh-activity.md
           - name: Set Variable activity
