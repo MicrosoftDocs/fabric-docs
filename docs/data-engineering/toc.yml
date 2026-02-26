@@ -557,3 +557,11 @@ items:
         href: spark-best-practices-development-monitoring.md
       - name: Spark Basics
         href: spark-best-practices-basics.md
+- name: Troubleshooting Guide
+  items:
+  - name: Permissions and capacity errors
+    href: troubleshoot-permissions-capacity.md
+  - name: Lakehouse errors
+    href: troubleshoot-lakehouse.md
+  - name: Notebook errors
+    href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
