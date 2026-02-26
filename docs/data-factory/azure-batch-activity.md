@@ -47,6 +47,11 @@ Select the **Settings** tab, then you can choose an existing or create a new **A
 
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
+## Known issues
+- The WI option in connections settings does not surface in some instances. This is a bug that a fix is being worked on at the moment.
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
+
 ## Related content
 
 - [How to monitor pipeline runs](monitor-pipeline-runs.md)
