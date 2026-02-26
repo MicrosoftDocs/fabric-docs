@@ -46,7 +46,7 @@ You can start anomaly detection in three ways:
 
     1. Select a database and the **table** or the **shortcut** you want to analyze.
 
-    1. In the upper toolbar, select **Create Anomaly Detector**.
+    1. In the upper toolbar, select **Create Anomaly Detector** or select the **Anomaly Detector** option from the ellipsis dropdown menu (...) in the database tree.
 
 1. From the **Real-Time hub**:
 
@@ -84,7 +84,7 @@ You can start anomaly detection in three ways:
 
 Specify which columns to analyze and how to group your data.
 
-1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze. If you're using **Real-Time hub**, skip the selection of source, and continue to configuring the **Value to watch** section. 
+1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze. If you're creating the anomaly detector from **Real-Time hub** or an **Eventhouse table**, skip the selection of source, and continue to configuring the **Value to watch** section. 
 
     :::image type="content" source="media/anomaly-detection/add-source.png" alt-text="Screenshot of the Anomaly detection configuration pane with Data source option highlighted.":::
 
@@ -138,7 +138,7 @@ After the analysis finishes, review the results and explore the detected anomali
 1. Use the model selector to compare the performance of different recommended algorithms and choose the one that best fits your needs.
 
 1. Adjust the **sensitivity** settings to refine the anomaly detection results:
-    - Options include Low, Medium, and High Confidence levels.
+    - Options include low, medium, and high confidence levels.
     - Experiment with these settings to balance between detecting more anomalies and reducing false positives.
 
 1. Interact with the visuals and tables to gain deeper insights into the detected anomalies and understand the patterns in your data.
@@ -174,7 +174,8 @@ For more information, see:
 
 Be aware of these current limitations:
 
-- **Data requirements**: Sufficient historical data improves model recommendations and accuracy.
+- Anomaly detection is disabled if the input table doesn't match the required schema (numeric value column, datetime column, and string column).
+- Sufficient historical data improves model recommendations and accuracy.
 - Each anomaly detector supports only a single model configuration.
 
 ## Running multiple operations in the anomaly detector
@@ -186,7 +187,7 @@ When you interact with the anomaly detector, Eventhouse runs Python queries in t
 - Changing the time window or IDs you're viewing.
 - Continuously monitoring incoming data for anomalies by setting alerts.
 
-Eventhouse supports up to eight concurrent queries per Eventhouse. If you exceed this limit, the system retries the queries, but it doesn't queue additional queries and they might silently fail. Error messages that provide more clarity are under development.
+Eventhouse supports up to eight concurrent queries per Eventhouse. If you exceed this limit, the system retries the queries, but it doesn't queue extra queries and they might silently fail. Error messages that provide more clarity are under development.
 
 To avoid problems:
 
@@ -197,7 +198,7 @@ For more information, see [Python Plugin](/kusto/query/python-plugin?view=micros
 
 ## Wait times for enabling the Python Plugin
 
-When you start data analysis, the anomaly detector automatically enables the Python Plugin on your Eventhouse. Enabling the plugin can take up to one hour. Once enabled, the analysis begins automatically.
+When you start data analysis, the anomaly detector automatically enables the Python Plugin on your Eventhouse. Enabling the plugin can take up to one hour. Once enabled, the analysis starts automatically.
 
 For more information, see [Enable Python plugin in Real-Time Intelligence](python-plugin.md).
 
