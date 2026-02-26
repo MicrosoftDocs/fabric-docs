@@ -26,11 +26,30 @@ The Fabric Livy API allows submitting jobs in two different modes:
   - A Livy batch job entails submitting a Spark application for a single job execution. In contrast to a Livy session job, a batch job doesn't sustain an ongoing Spark session.
   - With Livy batch jobs, each job initiates a new Spark session that ends when the job finishes. This approach works well for tasks that don't rely on previous computations or require maintaining state between jobs.
 
+## High concurrency support
+
+The Fabric Livy API supports high concurrency execution for scenarios that require running multiple Spark statements in parallel through a single API surface.
+
+High concurrency support is designed for automation‑first workloads such as:
+- Services that submit Spark statements programmatically
+- Orchestrators and pipelines triggering parallel Spark execution
+- JDBC/ODBC drivers and ISV applications
+
+With high concurrency support, clients can acquire multiple independent execution contexts and execute Spark statements concurrently, while the system manages underlying Spark session reuse, capacity, and isolation.
+
+> **Note**  
+> High concurrency support is additive and does not change existing Livy API contracts. Existing Livy session and batch workloads continue to work without modification.
+
+Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
+
+
+
 ## Get started with the Livy API
 
-Learn how to [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md):
+- Learn how to [Create and run Spark jobs using the Livy API in Fabric](get-started-api-livy.md):
 - [Submit Spark session jobs using the Livy API](get-started-api-livy-session.md)
 - [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md).
+- [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
 
 ## Related content
 

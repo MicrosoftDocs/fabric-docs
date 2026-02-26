@@ -19,7 +19,7 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 * Fabric Premium or Trial capacity with a LakeHouse
 
-* Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API (preview)
+* Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API 
 
 * A remote client such as Visual Studio Code with Jupyter notebook support, PySpark, and [Microsoft Authentication Library (MSAL) for Python](/entra/msal/python/)
 
@@ -109,6 +109,131 @@ The full swagger files for the Livy API are available here.
 
 * [Livy API Swagger JSON](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/Livy-API-swagger/swagger.json)
 * [Livy API Swagger YAML](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-engineering/Livy-API-swagger/swagger.yaml)
+
+## High concurrency sessions
+
+High concurrency (HC) support enables concurrent Spark execution by allowing clients to acquire multiple independent execution contexts, called **high concurrency sessions**.
+
+Each HC session represents a logical execution context that maps to a Spark REPL. Spark statements submitted under different HC sessions can execute concurrently.
+
+This allows:
+- Parallel execution across HC sessions
+- Predictable resource usage
+- Isolation between concurrent requests
+- Lower overhead compared to creating a new session per request
+
+Using a single session for all requests causes statements to execute sequentially. Creating a new session for every request introduces unnecessary overhead. 
+
+> **Note**  
+> HC session acquisition is not idempotent. Multiple acquire requests with the same `sessionTag` return different HC session IDs, even when they are backed by the same underlying Livy session.
+
+Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
+
+---
+
+### Example: Build and reuse a bounded HC session pool
+
+The following example demonstrates how to:
+- Acquire a fixed number of HC sessions using a shared `sessionTag`
+- Reuse those sessions to execute Spark statements concurrently
+- Delete HC sessions when no longer needed
+
+```python
+import asyncio
+import httpx
+from collections import deque
+
+BASE_URL = "<FABRIC_LIVY_API_BASE>"
+ACCESS_TOKEN = "<ACCESS_TOKEN>"
+
+HEADERS = {
+    "Authorization": f"Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+}
+
+ACQUIRE_HC = f"{BASE_URL}/highConcurrencySessions/"
+GET_HC = f"{BASE_URL}/highConcurrencySessions/{{hc_id}}"
+DELETE_HC = f"{BASE_URL}/highConcurrencySessions/{{hc_id}}"
+
+EXEC_STATEMENT = (
+    f"{BASE_URL}/sessions/{{session_id}}/repls/{{repl_id}}/statements"
+)
+
+SESSION_TAG = "example-hc-pool"
+ARTIFACT_NAME = "<LAKEHOUSE_NAME>"
+
+async def acquire_hc_session(client):
+    payload = {
+        "artifactName": ARTIFACT_NAME,
+        "sessionTag": SESSION_TAG
+    }
+    r = await client.post(ACQUIRE_HC, headers=HEADERS, json=payload)
+    r.raise_for_status()
+    return r.json()["id"]
+
+async def wait_until_ready(client, hc_id):
+    while True:
+        r = await client.get(GET_HC.format(hc_id=hc_id), headers=HEADERS)
+        r.raise_for_status()
+        body = r.json()
+        if body.get("sessionId") and body.get("replId"):
+            return body
+        await asyncio.sleep(2)
+
+async def execute_statement(client, session_id, repl_id, code):
+    r = await client.post(
+        EXEC_STATEMENT.format(
+            session_id=session_id,
+            repl_id=repl_id
+        ),
+        headers=HEADERS,
+        json={"code": code}
+    )
+    r.raise_for_status()
+    return r.json()
+
+async def delete_hc_session(client, hc_id):
+    r = await client.delete(DELETE_HC.format(hc_id=hc_id), headers=HEADERS)
+    r.raise_for_status()
+
+async def main():
+    async with httpx.AsyncClient(timeout=60) as client:
+        pool = deque()
+
+        # Build a bounded pool
+        for _ in range(5):
+            hc_id = await acquire_hc_session(client)
+            details = await wait_until_ready(client, hc_id)
+            pool.append(details)
+
+        async def run(code):
+            item = pool.popleft()
+            try:
+                return await execute_statement(
+                    client,
+                    item["sessionId"],
+                    item["replId"],
+                    code
+                )
+            finally:
+                pool.append(item)
+
+        statements = [
+            "spark.sql('SELECT 1').show()",
+            "spark.sql('SELECT 2').show()",
+            "spark.sql('SELECT 3').show()",
+            "spark.sql('SELECT 4').show()",
+            "spark.sql('SELECT 5').show()"
+        ]
+
+        await asyncio.gather(*(run(code) for code in statements))
+
+        # Cleanup
+        for item in list(pool):
+            await delete_hc_session(client, item["id"])
+
+asyncio.run(main())
+```
 
 ## Submit a Livy API jobs
 

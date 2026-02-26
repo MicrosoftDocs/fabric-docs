@@ -127,8 +127,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     
     # Get the access token
     token = get_access_token(client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint)
+    ```
 
-1. Run the notebook cell. You should see the Microsoft Entra token returned.
+2. Run the notebook cell. You should see the Microsoft Entra token returned.
 
     :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
 
@@ -257,7 +258,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 1. You can verify that the Livy session is created by using the [View your jobs in the Monitoring hub](#View your jobs in the Monitoring hub).
 
-### Integration with Fabric Environments
+## Integration with Fabric Environments
 
 By default, this Livy API session runs against the default starter pool for the workspace. Alternatively you can use Fabric Environments [Create, configure, and use an environment in Microsoft Fabric](/fabric/data-engineering/create-and-use-environment) to customize the Spark pool that the Livy API session uses for these Spark jobs. To use a Fabric Environment, update the prior notebook cell with this json payload.
 
@@ -457,6 +458,18 @@ create_livy_session = requests.post(livy_base_url, headers = headers, json = {
         print(f"Error during session cleanup: {e}")
     ```
 
+
+## Use high concurrency sessions for parallel execution
+
+If your workload requires executing multiple Spark statements concurrently, use high concurrency sessions.
+
+High concurrency sessions provide independent execution contexts that can run in parallel, while the system manages reuse of underlying Livy sessions.
+
+For high‑throughput workloads, reuse a bounded pool of high concurrency sessions rather than routing all requests through a single session.
+
+Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
+
+
 ## View your jobs in the Monitoring hub
 
 You can access the Monitoring hub to view various Apache Spark activities by selecting Monitor in the left-side navigation links.
@@ -481,3 +494,4 @@ To recap the whole process, you need a remote client such as [Visual Studio Code
 * [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Apache Spark application detail](spark-detail-monitoring.md)
+* [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
