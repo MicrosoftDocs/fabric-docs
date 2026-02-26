@@ -11,7 +11,10 @@ User Data Functions provide a flexible execution layer that powers everything fr
  
 Consider a scenario where you have a sales dashboard that tracks the status of sales deals. Previously, if there were changes to the deal, it was difficult to notify all the downstream consumers in a consistent way. Now, you can build a Power BI report that uses the User Data Functions integration to automatically trigger whenever a change is detected.
 
-:::image type="content" source="media/business-events/diagram-user-data-functions.png" alt-text="Diagram showing how user data functions publish business events":::
+:::image type="content" source="media/user-data-functions/diagram-user-data-functions.png" alt-text="Diagram showing how user data functions publish business events":::
+
+> [!TIP]
+> For a step-by-step walkthrough, see [Tutorial: Publish business events using a user data function and get notified via email using Activator](tutorial-business-events-user-data-function-activation-email.md).
 
 ## Why use a user data function to publish business events?
 
@@ -36,7 +39,7 @@ A function publishes a business event by providing:
 1. **data_version**: The version of the business event schema.
 
 Anatomy of a business event publisher in a user data function:
-:::image type="content" source="media/business-events/business-event-anatomy-user-function.png" alt-text="Diagram showing the anatomy of a business event publisher in a user data function":::
+:::image type="content" source="media/user-data-functions/business-event-anatomy-user-function.png" alt-text="Diagram showing the anatomy of a business event publisher in a user data function":::
 
 ## Example: Generate a sale summary business event from a user data function 
 
@@ -157,7 +160,6 @@ def generate_sale_summary_event(
         "lineItemCount": len(line_items), 
         "grandTotal": grand_total, 
         "eventTimestamp": datetime.datetime.now(datetime.timezone.utc).isoformat() 
-
     } 
 
     # Generate the business event 
@@ -177,3 +179,7 @@ def generate_sale_summary_event(
 
 ```
 
+## Related articles
+
+- [Business Events in Microsoft Fabric](business-events-overview.md)
+- [Tutorial: Publish business events from a user data function](tutorial-business-events-user-data-function-activation-email.md)

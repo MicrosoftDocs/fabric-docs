@@ -11,6 +11,9 @@ Eventstream is one of the most flexible and intuitive ways to publish business e
 
 When you configure Eventstream as a publisher, it becomes the bridge between **continuous data streams and well-defined business events** in the Real-Time hub.
 
+> [!TIP]
+> For a step-by-step walkthrough, see [Tutorial: Publish business events using Eventstream](tutorial-business-events-event-stream-user-data-function-activator.md).
+
 ## Transforming raw ingestion into business events
 
 Eventstream provides a set of built-in transformation operations, such as filtering, managing fields, routing, grouping, or basic enrichment that can convert incoming operational data into discrete business events.
@@ -76,3 +79,8 @@ After defining transformations and schema mapping, publish the Eventstream to st
 * End-to-end routing of events into Real-Time hub.
 
 After you publish, Eventstream becomes a **live operational publisher** for the selected business event (such as **StationFullDetected**).
+
+## Related articles
+
+- [Business Events in Microsoft Fabric](business-events-overview.md)
+- [Tutorial: Publish business events using Eventstream](tutorial-business-events-event-stream-user-data-function-activator.md).

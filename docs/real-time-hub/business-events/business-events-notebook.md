@@ -11,6 +11,9 @@ Notebooks provide one of the most flexible and programmable ways to publish busi
 
 By acting as publishers, notebooks allow teams to convert **analytical insights, failure detections,** and **custom business rules** directly into actionable business events that downstream systems can consume in real time.
 
+> [!TIP]
+> For a step-by-step walkthrough, see [Tutorial: Publish business events using a notebook](tutorial-business-events-notebook-user-data-function-activator.md).
+
 ## Why use a notebook to publish business events?
 
 Eventstream is ideal for routing and transformation, but many real world scenarios require more advanced logic before an event is published:
@@ -108,3 +111,8 @@ Because notebooks can operate interactively or through scheduled execution, they
 * **Real-time/streaming analysis**: The notebook continuously processes sensor data and publishes events when conditions are triggered.
 
 * **Batch-based insights**: A notebook aggregates daily or hourly data and publishes an event only when significant anomalies or thresholds are detected.
+
+## Related articles
+
+- [Business Events in Microsoft Fabric](business-events-overview.md)
+- [Tutorial: Publish business events using a notebook](tutorial-business-events-notebook-user-data-function-activator.md)
