@@ -13,17 +13,28 @@ ai-usage: ai-assisted
 ---
 # Tutorial: Create a custom search engine and question-answering system
 
-In this tutorial, learn how to index and query large data loaded from a Spark cluster. You set up a Jupyter Notebook that performs the following actions:
+In this tutorial, you build a custom search engine and question-answering chatbot over invoice data. By the end, you have a working Azure AI Search index with translated, enriched invoice data and a chatbot that queries it.
 
-> + Load various forms (invoices) into a data frame in an Apache Spark session
-> + Analyze them to determine their features
-> + Assemble the resulting output into a tabular data structure
-> + Write the output to a search index hosted in Azure AI Search
-> + Explore and query over the content you created
+Specifically, you:
 
-## 1 - Set up dependencies
+- Load invoices into a Spark data frame
+- Extract structured fields with Azure Document Intelligence
+- Translate item descriptions into multiple languages
+- Enrich data with emoji and continent classifications using Azure OpenAI
+- Write the output to an Azure AI Search index
+- Build a chatbot that searches and answers questions over the indexed data
 
-We start by importing packages and connecting to the Azure resources used in this workflow.
+## Prerequisites
+
+- A [Microsoft Fabric workspace](/fabric/get-started/create-workspaces) with a Spark runtime (1.3 or later)
+- An [Azure AI services resource](/azure/ai-services/multi-service-resource) with a key and endpoint (for Document Intelligence and Translator)
+- An [Azure AI Search resource](/azure/search/search-create-service-portal) with an admin key
+- An [Azure OpenAI resource](/azure/ai-services/openai/how-to/create-resource) with a `gpt-4o-mini` deployment
+- The `openai` Python package (v1.0 or later) installed in your environment
+
+## Set up dependencies
+
+Import packages and connect to the Azure resources used in this workflow.
 
 
 ```python
@@ -50,9 +61,9 @@ openai_deployment_name = "gpt-4o-mini"
 openai_url = f"https://{openai_service_name}.openai.azure.com/"
 ```
 
-## 2 - Load data into Spark
+## Load data into Spark
 
-This code loads a few external files from an Azure storage account that's used for demo purposes. The files are various invoices, and they're read into a data frame.
+This code loads a few external files from an Azure storage account that's used for demo purposes. The files are various invoices, and the code reads them into a data frame.
 
 
 ```python
@@ -81,8 +92,9 @@ df2 = (
 display(df2)
 ```
 
+The output is a data frame with 10 rows, each containing a URL pointing to an invoice image in Azure Blob Storage.
 
-## 3 - Apply form recognition
+## Analyze invoices with Document Intelligence
 
 This code loads the [AnalyzeInvoices transformer](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#form-recognizer) and passes a reference to the data frame containing the invoices. It calls the pre-built invoice model of Azure Document Intelligence.
 
@@ -105,11 +117,13 @@ analyzed_df = (
 display(analyzed_df)
 ```
 
-## 4 - Simplify form recognition output
+The output adds an `invoices` column containing the structured extraction results for each invoice, and an `errors` column for any failures.
+
+## Simplify Document Intelligence output
 
 This code uses the [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/1.0.4/pyspark/synapse.ml.services.form.html), a transformer that analyzes the output of Document Intelligence transformers and infers a tabular data structure. The output of AnalyzeInvoices is dynamic and varies based on the features detected in your content.
 
-FormOntologyLearner extends the utility of the AnalyzeInvoices transformer by looking for patterns that can be used to create a tabular data structure. Organizing the output into multiple columns and rows makes for simpler downstream analysis.
+FormOntologyLearner extends the utility of the AnalyzeInvoices transformer by looking for patterns that it can use to create a tabular data structure. Organizing the output into multiple columns and rows makes for simpler downstream analysis.
 
 ```python
 from synapse.ml.services import FormOntologyLearner
@@ -127,7 +141,9 @@ organized_df = (
 display(organized_df)
 ```
 
-With our nice tabular dataframe, we can flatten the nested tables found in the forms with some SparkSQL
+The output is a flat tabular data frame with one row per invoice, containing extracted fields like vendor name, invoice total, and date.
+
+By using a tabular dataframe, you can flatten the nested tables found in the forms by using SparkSQL.
 
 
 ```python
@@ -143,9 +159,11 @@ itemized_df = (
 display(itemized_df)
 ```
 
-## 5 - Add translations
+The output expands each invoice's line items into individual rows with columns like `Description`, `Quantity`, and `Amount`.
 
-This code loads [Translate](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#translation), a transformer that calls the Azure AI Translator in Foundry Tools. The original text, which is in English in the "Description" column, is machine-translated into various languages. All of the output is consolidated into "output.translations" array.
+## Add translations
+
+This code loads [Translate](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#translation), a transformer that calls the Azure AI Translator in Foundry Tools. The original text, which is in English in the "Description" column, is machine-translated into various languages. The code consolidates all of the output into the "output.translations" array.
 
 
 ```python
@@ -169,9 +187,10 @@ translated_df = (
 display(translated_df)
 ```
 
-## 6 - Translate products to emojis with OpenAI 🤯
+The output adds a `Translations` column containing the translated descriptions in Chinese, French, Russian, and Welsh.
 
-
+## Translate products to emojis with OpenAI
+Use `OpenAIPrompt` to translate invoice item descriptions into emoji representations.
 ```python
 from synapse.ml.services.openai import OpenAIPrompt
 from pyspark.sql.functions import trim, split
@@ -197,10 +216,12 @@ prompter = (
     .setErrorCol("error")
     .setOutputCol("Emoji")
 )
+```
 
 > [!TIP]
 > The `OpenAIPrompt` transformer also supports the Responses API and structured JSON output via `setResponseFormat`. For more options, see [Use Azure OpenAI with SynapseML](../data-science/ai-services/how-to-use-openai-synapse-ml.md).
 
+```python
 emoji_df = (
     prompter.transform(translated_df)
     .withColumn("Emoji", trim(split(col("Emoji"), ",").getItem(0)))
@@ -214,8 +235,11 @@ emoji_df = (
 display(emoji_df.select("Description", "Emoji"))
 ```
 
-## 7 - Infer vendor address continent with OpenAI
+The output shows each item description alongside its emoji translation.
 
+## Infer vendor address continent with OpenAI
+
+Use the same `OpenAIPrompt` transformer with a different template to classify vendor addresses by continent.
 
 ```python
 continent_template = """
@@ -247,8 +271,11 @@ continent_df = (
 display(continent_df.select("VendorAddress", "Continent"))
 ```
 
-## 8 - Create an Azure AI Search index for the forms
+The output shows each vendor address alongside the inferred continent.
 
+## Create an Azure AI Search index for the forms
+
+Write the enriched data frame to an Azure AI Search index using `writeToAzureSearch`. The method infers the index schema from the data frame columns.
 
 ```python
 from synapse.ml.services import *
@@ -267,7 +294,7 @@ from pyspark.sql.functions import monotonically_increasing_id, lit
 )
 ```
 
-## 9 - Try out a search query
+## Try out a search query
 
 
 ```python
@@ -281,7 +308,9 @@ requests.post(
 ).json()
 ```
 
-## 10 - Build a chatbot that can use Azure AI Search as a tool 🧠🔧
+The response is a JSON object containing matching documents from the search index.
+
+## Build a chatbot that can use Azure AI Search as a tool
 
 
 ```python
@@ -357,15 +386,19 @@ def custom_chatbot(question):
             raise e
 ```
 
-## 11 - Asking our chatbot a question
+## Ask the chatbot a question
 
+Test the chatbot by asking about a specific customer's purchases.
 
 ```python
 custom_chatbot("What did Luke Diaz buy?")
 ```
 
-## 12 - A quick double check
+The chatbot searches the index and returns a brief answer listing the items Luke Diaz purchased.
 
+## Verify the results
+
+Cross-check the chatbot's answer against the source data by querying the data frame directly.
 
 ```python
 display(
@@ -374,6 +407,16 @@ display(
     .distinct()
 )
 ```
+
+The output lists the distinct item descriptions for Luke Diaz, which should match the chatbot's response.
+
+## Clean up resources
+
+If you no longer need the resources created in this tutorial:
+
+- Delete the Azure AI Search index (`form-demo-index-5`) from the Azure portal.
+- Stop or delete the Spark session to avoid compute charges.
+
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
