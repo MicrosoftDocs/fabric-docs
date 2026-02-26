@@ -10,13 +10,13 @@ ms.date: 02/26/2026
 
 # Conditional Access in Fabric
 
-Microsoft Fabric uses Microsoft Entra ID Conditional Access as part of its identity-based, [Zero Trust](/security/zero-trust/deploy/identity) security model. Every request to Fabric is authenticated with Microsoft Entra ID, and Conditional Access policies can determine access based on signals such as user identity, device state, and location. Common policies include:
+Microsoft Fabric uses Microsoft Entra ID Conditional Access as part of its identity-based, Zero Trust security model. Every request to Fabric is authenticated with Microsoft Entra ID, and Conditional Access policies can determine access based on signals such as user identity, device state, and location. Common policies include:
 
 - Require multifactor authentication (MFA).
 - Allow only Intune-enrolled devices to access specific services.
 - Restrict user locations and IP ranges.
 
-Conditional Access is one of several security controls available for protecting access to Fabric. It complements network‑based protections such as private links and supports a layered security approach aligned with Zero Trust principles. For more information on the full capabilities of Conditional Access, see [Microsoft Entra Conditional Access documentation](/entra/identity/conditional-access/).
+Conditional Access is one of several security controls available for protecting access to Fabric. It complements network‑based protections such as private links and supports a layered security approach aligned with [Zero Trust](/security/zero-trust/deploy/identity) principles. For more information on the full capabilities of Conditional Access, see [Microsoft Entra Conditional Access documentation](/entra/identity/conditional-access/).
 
 ## Best practices for Fabric Conditional Access policies
 
@@ -59,7 +59,7 @@ The following steps show how to get started with configuring a Conditional Acces
 
    :::image type="content" source="media/security-conditional-access/policy-target-resources.png" alt-text="Screenshot of Azure Conditional Access policy creation with target resources panel showing five selected services." lightbox="media/security-conditional-access/policy-target-resources.png":::
 
-      1. In the **Resources** side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, **Azure Storage**, and **Azure Cosmos DB**. After you select all five items, close the side pane by choosing **Select**.
+1. In the **Resources** side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, **Azure Storage**, and **Azure Cosmos DB**. After you select all five items, close the side pane by choosing **Select**.
 
    :::image type="content" source="media/security-conditional-access/search-add-resources.png" alt-text="Screenshot of Azure Conditional Access resource selection pane with four services chosen and search results for Azure Storage." lightbox="media/security-conditional-access/search-add-resources.png":::
 
