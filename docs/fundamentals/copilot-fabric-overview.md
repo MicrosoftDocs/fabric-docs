@@ -87,10 +87,9 @@ Copilot is available when connecting to a Fabric SQL database from external tool
 
 - **MSSQL extension for Visual Studio Code**: The MSSQL extension for Visual Studio Code integrates GitHub Copilot with chat and inline assistance grounded to the connected database, and supports Agent Mode for multi-step, tool-driven workflows.
 
-These tool integrations support two operational modes:
+Copilot is available when connecting to a Fabric SQL database from external tools such as SQL Server Management Studio (SSMS) and the MSSQL extension for Visual Studio Code, offering inline T‑SQL assistance and chat-based help grounded to the connected database.
 
-- **Ask mode**: Runs read-only queries by default to answer questions and generate T-SQL.
-- **Agent mode**: Enables multi-step workflows that can perform write operations. Any action that modifies data requires explicit user approval before it's executed—write actions are never performed without user consent.
+To learn more, see Copilot with SQL Server Management Studio (SSMS) and MSSQL extension for Visual Studio Code in the [Copilot for SQL database documentation](../database/sql/copilot.md).
 
 ### Copilot in Fabric in the Power BI workload
 
