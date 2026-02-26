@@ -3,7 +3,7 @@ title: Modern Evaluator for Dataflow Gen2 with CI/CD
 description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for top connectors.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 2/28/2026
+ms.date: 3/1/2026
 ms.custom: dataflows
 ---
 
