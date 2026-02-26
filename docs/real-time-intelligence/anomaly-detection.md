@@ -4,7 +4,7 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 02/23/2026
+ms.date: 02/26/2026
 ms.search.form: Anomaly Detection How To
 ---
 
