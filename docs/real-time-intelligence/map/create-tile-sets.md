@@ -23,7 +23,7 @@ You can schedule refresh when creating a new tileset, as long as you have access
 - A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 - A [map](create-map.md) with editor permission. To create a tileset, you must have edit permissions on the map. Edit access is granted through Fabric workspace roles (Contributor, Member, or Admin) or item‑level permissions on the map. For more information, see [Manage Map permissions](manage-map-permissions.md).
 - A [lakehouse](../../data-engineering/lakehouse-overview.md) to store GeoJSON files.
-- Access to the OneLake data source used by the tileset.
+- Access to the Lakehouse data source used by the tileset.
 
 ## Create a tileset
 
