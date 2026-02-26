@@ -57,7 +57,7 @@ items:
   href: ../graph/toc.yml
 - name: Fabric data agent
   href: ../data-science/data-agent-toc/toc.yml
-- name: Operations agents
+- name: Operations agent
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
 - name: Power BI semantic model
   href: ../data-warehouse/semantic-models.md
