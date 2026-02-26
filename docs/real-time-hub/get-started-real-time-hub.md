@@ -157,7 +157,7 @@ The **Business events page** lets you define, discover, and consume business eve
 :::image type="content" source="./media/get-started-real-time-hub/business-events-page.png" alt-text="Screenshot that shows the Business events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/business-events-page.png":::
 
 > [!IMPORTANT]
-> This feature is in [preview](../../fundamentals/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
 
 For more information, see the following articles:
 
