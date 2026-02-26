@@ -56,7 +56,13 @@ The following steps show how to get started with configuring a Conditional Acces
    1. On the **Include** tab, choose **Select resources.**
       
    1. Select the link under **Select specific resources**.
-      1. In the **Select** side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, **Azure Storage**, and **Azure Cosmos DB**. After you select all five items, close the side pane by choosing **Select**.
+
+   :::image type="content" source="media/security-conditional-access/policy-target-resources.png" alt-text="Screenshot of Azure Conditional Access policy creation with target resources panel showing five selected services." lightbox="media/security-conditional-access/policy-target-resources.png":::
+
+      1. In the **Resources** side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, **Azure Storage**, and **Azure Cosmos DB**. After you select all five items, close the side pane by choosing **Select**.
+
+   :::image type="content" source="media/security-conditional-access/search-add-resources.png" alt-text="Screenshot of Azure Conditional Access resource selection pane with four services chosen and search results for Azure Storage." lightbox="media/security-conditional-access/search-add-resources.png":::
+
 1. Select **Create** or **Save**.
 
 ## Related content
