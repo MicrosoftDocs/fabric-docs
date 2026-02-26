@@ -57,7 +57,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the following code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
-    mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
+    notebookutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
     ```
 
 1. Use the following code example to copy tables and files to the newly created lakehouse.
@@ -72,18 +72,18 @@ Customers can recreate lakehouses by using a custom Scala script.
     val destination="abfs path to new Lakehouse file or table directory"
     val timestamp= //timestamp provided by Support
     
-    mssparkutils.fs.cp(source, destination, true)
+    notebookutils.fs.cp(source, destination, true)
     
-    val filesToDelete = mssparkutils.fs.ls(s"$source/_delta_log")
+    val filesToDelete = notebookutils.fs.ls(s"$source/_delta_log")
         .filter{sf => sf.isFile && sf.modifyTime > timestamp}
      
-    for(fileToDelte <- filesToDelete) {
-        val destFileToDelete = s"$destination/_delta_log/${fileToDelte.name}"
+    for(fileToDelete <- filesToDelete) {
+        val destFileToDelete = s"$destination/_delta_log/${fileToDelete.name}"
         println(s"Deleting file $destFileToDelete")
-        mssparkutils.fs.rm(destFileToDelete, false)
+        notebookutils.fs.rm(destFileToDelete, false)
     }
      
-    mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
+    notebookutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
 1. Once you run the script, the tables appear in the new lakehouse.

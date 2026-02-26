@@ -17,39 +17,39 @@ items:
         items:
           - name: End to end tutorial - Introduction
             href: tutorial-introduction.md
-          - name: 1- Set up Eventhouse
+          - name: 1 - Set up Eventhouse
             href: tutorial-1-resources.md
-          - name: 2- Get data in the Real-Time hub
+          - name: 2 - Get data in the Real-Time hub
             href: tutorial-2-get-real-time-events.md
-          - name: 3- Set an alert on an eventstream
+          - name: 3 - Set an alert on an eventstream
             href: tutorial-3-set-alert.md
-          - name: 4- Transform data in your KQL database
+          - name: 4 - Transform data in your KQL database
             href: tutorial-4-transform-kql-database.md
-          - name: 5- Query streaming data using KQL
+          - name: 5 - Query streaming data using Kusto Query Language (KQL)
             href: tutorial-5-query-data.md
-          - name: 6- Create a Real-Time dashboard
+          - name: 6 - Create a Real-Time dashboard
             href: tutorial-6-create-dashboard.md
-          - name: 7- Detect anomalies on an Eventhouse table
+          - name: 7 - Detect anomalies on an Eventhouse table
             href: tutorial-7-create-anomaly-detection.md
-          - name: 8- Create a map using geospatial data
+          - name: 8 - Create a map using geospatial data
             href: tutorial-8-create-map.md
-          - name: 9- Clean up resources
+          - name: 9 - Clean up resources
             href: tutorial-9-clean-up-resources.md
       - name: Digital twin builder tutorial
         items:
           - name: Digital twin builder tutorial - Introduction
             href: digital-twin-builder/tutorial-rti-0-introduction.md
-          - name: 1- Upload contextual data
+          - name: 1 - Upload contextual data
             href: digital-twin-builder/tutorial-rti-1-upload-contextual-data.md
-          - name: 2- Get and process streaming data
+          - name: 2 - Get and process streaming data
             href: digital-twin-builder/tutorial-rti-2-get-streaming-data.md
-          - name: 3- Build the ontology
+          - name: 3 - Build the ontology
             href: digital-twin-builder/tutorial-rti-3-build-ontology.md
-          - name: 4- Project to Eventhouse
+          - name: 4 - Project to Eventhouse
             href: digital-twin-builder/tutorial-rti-4-project-eventhouse.md
-          - name: 5- Query and visualize data
+          - name: 5 - Query and visualize data
             href: digital-twin-builder/tutorial-rti-5-query-and-visualize.md
-          - name: 6- Clean up resources
+          - name: 6 - Clean up resources
             href: digital-twin-builder/tutorial-rti-6-clean-up-resources.md
   - name: User flows
     items:
@@ -105,7 +105,7 @@ items:
             href: event-streams/add-source-sample-data.md
           - name: Real-time weather
             href: event-streams/add-source-real-time-weather.md
-          - name: Azure SQL Database CDC
+          - name: Azure SQL Database Change Data Capture (CDC)
             href: event-streams/add-source-azure-sql-database-change-data-capture.md
           - name: PostgreSQL Database CDC
             href: event-streams/add-source-postgresql-database-change-data-capture.md
@@ -115,7 +115,7 @@ items:
             href: event-streams/add-source-mysql-database-change-data-capture.md
           - name: Azure Cosmos DB CDC
             href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-          - name: SQL Server on VM DB CDC
+          - name: SQL Server on virtual machine database CDC
             href: event-streams/add-source-sql-server-change-data-capture.md
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
@@ -141,7 +141,7 @@ items:
             href: event-streams/add-source-azure-blob-storage.md
           - name: HTTP
             href: event-streams/add-source-http.md
-          - name: MQTT
+          - name: Message Queuing Telemetry Transport (MQTT)
             href: event-streams/add-source-mqtt.md
           - name: Cribl
             href: event-streams/add-source-cribl.md
@@ -201,6 +201,16 @@ items:
                 href: event-streams/api-update-eventstream-definition.md
       - name: Security
         items:
+          - name: Choose the right network security feature
+            href: event-streams/choose-the-right-network-security-feature.md
+          - name: Secure outbound via streaming connector virtual network injection
+            items:
+              - name: Streaming connector private network support overview
+                href: event-streams/streaming-connector-private-network-support-overview.md
+              - name: Streaming connector private network support guide
+                href: event-streams/streaming-connector-private-network-support-guide.md
+              - name: Create and manage streaming virtual network data gateway
+                href: event-streams/create-manage-streaming-virtual-network-data-gateways.md
           - name: Secure outbound via managed private endpoints
             href: event-streams/set-up-private-endpoint.md
           - name: Secure inbound via tenant and workspace private links
@@ -209,8 +219,6 @@ items:
             href: event-streams/custom-endpoint-entra-id-auth.md
           - name: Authenticate with a managed identity
             href: event-streams/connect-using-managed-identity.md
-          - name: Connect to streaming sources in private network
-            href: event-streams/connect-connecots-in-virtual-network-on-premises.md
       - name: Tutorials
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
@@ -905,7 +913,7 @@ items:
     items:
       - name: Overview
         items:
-          - name: What is Fabric Maps?
+          - name: Introduction to Fabric Maps
             href: map/about-fabric-maps.md
       - name: Tutorials
         items:
