@@ -15,9 +15,7 @@ ms.search.form: Get started
 
 Anomaly detection is a feature of Real-Time Intelligence that allows you to identify unusual patterns in your data. In this part of the tutorial, you learn how to create an **Anomaly detector** item on your workspace to detect anomalies in the number of empty docks at a station.
 
-## Detect anomalies on an Eventhouse table
-
-### Getting started
+## Getting started
 
 You can start anomaly detection in two ways:
 
@@ -32,7 +30,7 @@ You can start anomaly detection in two ways:
 
         :::image type="content" source="media/tutorial/detect-anomalies.png" alt-text="Screenshot of eventhouse table details page and detect anomalies selected." lightbox="media/tutorial/detect-anomalies.png":::
 
-### Configure anomaly detection
+## Configure anomaly detection
 
 1. Enter **`BikeAnomaliesconfiguration`** as Name.
 1. Under Save to, select **Create detector**.
