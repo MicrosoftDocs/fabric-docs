@@ -21,7 +21,6 @@ You can start anomaly detection in two ways:
 
 1. From an **Eventhouse**:
     1. Select a database and the **table** or the **shortcut** you want to analyze.
-    1. If you're in **Viewing** mode, toggle to **Editing** mode to enable the anomaly detection option.
     1. In the upper toolbar, select **Create Anomaly Detector**.
 
 1. From **Real-Time hub**:
