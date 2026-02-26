@@ -1,5 +1,5 @@
 ﻿---
-title: Machine learning permissions
+title: Data science roles and permissions
 description: Understand the permissions required for machine learning models and experiments in [!INCLUDE [product-name](../includes/product-name.md)] and how to assign these permissions to users.
 ms.author: scottpolly
 author: s-polly
@@ -7,22 +7,22 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.topic: concept-article
 ms.custom: 
-ms.date: 01/10/2025
+ms.date: 02/26/2026
 ---
 
 # Data science roles and permissions
 
-This article describes machine learning model and experiment permissions in [!INCLUDE [product-name](../includes/product-name.md)] and how these permissions are acquired by users.
+This article describes machine learning model and experiment permissions in [!INCLUDE [product-name](../includes/product-name.md)] and how users acquire these permissions.
 
 
 
 > [!NOTE]
 > After you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], or if you have an admin role in a workspace, you can give others access to it by assigning them a different role.
-> To learn more about workspaces and how to grant users access to your workspace, review the articles [Workspaces](../fundamentals/workspaces.md) and [Giving users access to workspaces](../fundamentals/give-access-workspaces.md).
+> To learn more about workspaces and how to grant users access to your workspace, see [Workspaces](../fundamentals/workspaces.md) and [Giving users access to workspaces](../fundamentals/give-access-workspaces.md).
 
 ## Permissions for machine learning experiments
 
-The table below describes the levels of permission that control access to machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)].
+The following table describes the levels of permission that control access to machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)].
 
 |Permission  |Description  |
 |------------|-------------|
@@ -31,7 +31,7 @@ The table below describes the levels of permission that control access to machin
 
 ## Permissions for machine learning models
 
-The table below describes the levels of permission that control access to machine learning models in [!INCLUDE [product-name](../includes/product-name.md)].
+The following table describes the levels of permission that control access to machine learning models in [!INCLUDE [product-name](../includes/product-name.md)].
 
 |Permission  |Description  |
 |------------|-------------|
@@ -46,9 +46,17 @@ A user's role in a workspace implicitly grants them permissions on the datasets 
 |---------------------------------------|-------|--------|-------------|-------|
 |**Read**                               |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::    |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::     |
 |**Write**                              |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/no.png" border="false":::   |
+|**Execute**                            |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/no.png" border="false":::   |
+|**View execution output**              |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::      |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::            |:::image type="icon" source="./media/data-science-overview/yes.png" border="false":::   |
 
 > [!NOTE]
-> You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. To learn more about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [Roles in workspaces](../fundamentals/roles-workspaces.md)
+> You can assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. For more information about workspace roles in [!INCLUDE [product-name](../includes/product-name.md)], see [Roles in workspaces](../fundamentals/roles-workspaces.md).
+
+## Item-level sharing
+
+In addition to workspace roles, you can share individual machine learning models and experiments with specific users or groups. Sharing grants the recipient Read permission by default, with the option to grant additional permissions such as Edit, Share, or Execute. Use item-level sharing when you want to grant access to a specific item without assigning a workspace role.
+
+For more information, see [Share items in [!INCLUDE [product-name](../includes/product-name.md)]](../fundamentals/share-items.md).
 
 ## Related content
 
