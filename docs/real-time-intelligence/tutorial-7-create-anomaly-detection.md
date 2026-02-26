@@ -3,7 +3,7 @@ title: Real-Time Intelligence tutorial part 7 - Detect anomalies on an Eventhous
 description: Learn how to detect anomalies on your Eventhouse table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 02/11/2025
+ms.date: 02/26/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to detect anomalies on my Eventhouse table in Real-Time Intelligence.
@@ -13,14 +13,26 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Real-Time Intelligence tutorial part 6: Create a Real-Time Dashboard](tutorial-6-create-dashboard.md).
 
-Anomaly detection is a feature of Real-Time Intelligence that allows you to identify unusual patterns in your data. In this part of the tutorial, you learn how to create an 'Anomaly detector' item on your workspace to detect anomalies in the number of empty docks at a station.
+Anomaly detection is a feature of Real-Time Intelligence that allows you to identify unusual patterns in your data. In this part of the tutorial, you learn how to create an **Anomaly detector** item on your workspace to detect anomalies in the number of empty docks at a station.
 
 ## Detect anomalies on an Eventhouse table
 
-1. From the left navigation bar, select **Real-Time** to open the *Real-Time hub*.
-1. Under **All data streams** select the eventhouse table **TransformedData** you created in the previous tutorial. The table details page opens. Select **Detect anomalies** from the top menu.
+### Getting started
 
-    :::image type="content" source="media/tutorial/detect-anomalies.png" alt-text="Screenshot of eventhouse table details page and detect anomalies selected." lightbox="media/tutorial/detect-anomalies.png":::
+You can start anomaly detection in two ways:
+
+1. From an **Eventhouse**:
+    1. Select a database and the **table** or the **shortcut** you want to analyze.
+    1. If you're in **Viewing** mode, toggle to **Editing** mode to enable the anomaly detection option.
+    1. In the upper toolbar, select **Create Anomaly Detector**.
+
+1. From **Real-Time hub**:
+    1. From the left navigation pane, select **Real-Time hub**.
+    1. Under **Streaming data** select the eventhouse table **TransformedData** you created in the previous tutorial. The table details page opens. Select **Detect anomalies** from the top menu.
+
+        :::image type="content" source="media/tutorial/detect-anomalies.png" alt-text="Screenshot of eventhouse table details page and detect anomalies selected." lightbox="media/tutorial/detect-anomalies.png":::
+
+### Configure anomaly detection
 
 1. Enter **`BikeAnomaliesconfiguration`** as Name.
 1. Under Save to, select **Create detector**.

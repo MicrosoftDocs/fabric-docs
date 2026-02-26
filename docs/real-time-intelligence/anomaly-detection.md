@@ -38,13 +38,13 @@ Key capabilities include:
 
 ## How to set up anomaly detection
 
-### Start anomaly detection from an Eventhouse table
+### Getting started
 
 You can start anomaly detection in three ways:
 
-1. From an **Eventhouse table**:
+1. From an **Eventhouse**:
 
-    1. Go to your Eventhouse and select the table you want to analyze.
+    1. Select a database and the **table** or the **shortcut** you want to analyze.
 
     1. If you're in **Viewing** mode, toggle to **Editing** mode to enable the anomaly detection option.
 
@@ -168,6 +168,7 @@ Follow these steps to reanalyze the model with new data:
 
 After publishing your anomaly detection results, you can explore the detected anomalies in the Real-Time Hub and set up alerts to notify you of future anomalies.
 For more information, see:
+
 - [Explore anomaly detection events](../real-time-hub/explore-anomaly-detection.md)
 - [Set alerts on anomaly detection events](../real-time-hub/set-alerts-anomaly-detection.md)
 
@@ -217,4 +218,3 @@ After you configure anomaly detection, you can:
 - [KQL query reference](/kusto/query/)
 - [Real-Time Dashboard documentation](dashboard-real-time-create.md)
 - [Activator overview](data-activator/activator-introduction.md)
-
