@@ -4,7 +4,6 @@ description: Learn about the mirrored databases from Snowflake in Microsoft Fabr
 ms.reviewer: imotiwala, maprycem, sbahadur 
 ms.date: 09/16/2025
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

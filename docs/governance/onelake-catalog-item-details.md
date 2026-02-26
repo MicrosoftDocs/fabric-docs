@@ -6,7 +6,6 @@ ms.author: mimart
 ms.reviewer: nadavsc
 ms.topic: overview
 ms.date: 05/29/2025
-ms.custom: 
 #customer intent: As data engineer, data scientist, analyst, or business user, I want to understand the information I see on a item's item details view, and use the functionality that is provided there.
 ---
 

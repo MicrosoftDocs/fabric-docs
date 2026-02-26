@@ -24,6 +24,11 @@
             "source_path_from_root": "/docs/enterprise/powerbi/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial.md",
             "redirect_url": "/fabric/enterprise/powerbi/service-admin-power-bi-licensing",
             "redirect_document_id": false
+        },
+        {
+        "source_path_from_root": "/docs/enterprise/powerbi/desktop-privacy-levels.md",
+        "redirect_url": "/power-query/privacy-levels",
+        "redirect_document_id": false
         }
     ]
 }

@@ -1,11 +1,10 @@
 ---
 title: Troubleshooting guide - Determine source of report slowness
 description: Diagnose and resolve Microsoft Fabric report slowness caused by capacity throttling. Follow step-by-step troubleshooting to identify and fix performance issues.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
-ms.custom:
 ms.date: 07/10/2025
 ---
 

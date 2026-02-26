@@ -1,8 +1,6 @@
 ---
 title: Ingest Data into Your Warehouse Using the COPY Statement
 description: Follow steps to ingest data into a Warehouse with the COPY statement in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha, jovanpop-msft
 ms.date: 04/24/2025
 ms.topic: how-to

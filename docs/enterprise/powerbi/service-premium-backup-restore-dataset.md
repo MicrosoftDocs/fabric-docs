@@ -1,9 +1,8 @@
 ﻿---
 title: How to Backup and restore Power BI Premium semantic models
 description: Learn about the backup and restore feature for semantic models with a Power BI Premium or Premium Per User license.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to

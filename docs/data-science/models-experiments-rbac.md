@@ -4,7 +4,6 @@ description: Understand the permissions required for machine learning models and
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
 ms.topic: concept-article
 ms.custom: 
 ms.date: 02/26/2026

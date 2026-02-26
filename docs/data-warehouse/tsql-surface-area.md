@@ -1,8 +1,6 @@
 ---
 title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: cynotebo, jovanpop, twinklecyril, emtehran, prlangad
 ms.date: 02/04/2026
 ms.topic: concept-article

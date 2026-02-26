@@ -2,8 +2,6 @@
 title: What is Spark run series analysis?
 description: Learn about the Apache Spark run series analysis, including examples of the analysis and when to use it.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ms.date: 05/21/2024

@@ -1,8 +1,6 @@
 ---
 title: 'Digital twin builder (preview) tutorial part 1: Set up resources'
 description: Prepare your environment for the tutorial scenario and create a digital twin builder item. Part 1 of the digital twin builder (preview) tutorial.
-author: baanders
-ms.author: baanders
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---

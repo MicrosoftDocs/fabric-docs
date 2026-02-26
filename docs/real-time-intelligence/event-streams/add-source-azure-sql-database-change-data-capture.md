@@ -1,9 +1,7 @@
 ---
 title: Add Azure SQL Database CDC source to an eventstream
 description: Learn how to add an Azure SQL Database Change Data Capture (CDC) source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -22,7 +20,7 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
-- Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Azure SQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
@@ -95,3 +93,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

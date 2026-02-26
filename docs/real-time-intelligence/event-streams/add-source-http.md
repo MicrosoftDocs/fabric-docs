@@ -1,11 +1,8 @@
 ---
 title: Add HTTP source to an eventstream
 description: Learn how to add HTTP source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author:  alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 12/03/2025
 ms.search.form: Source and Destination
 ---
@@ -20,6 +17,7 @@ The HTTP connector provides a no-code, configurable way to stream data from any 
 
 - A workspace with **Fabric** capacity or **Fabric Trial** workspace type.
 - Access to the workspace with **Contributor** or higher workspace roles.
+- An HTTP endpoint that is publicly accessible. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, follow the guide to [create an eventstream](create-manage-an-eventstream.md).
 
 ## Add HTTP as a source
@@ -44,8 +42,8 @@ Select **Publish** to publish the changes and begin streaming data from HTTP sou
 ## Limitation
 
 - The HTTP connector currently supports only **JSON** API responses.
-- **OAuth authentication** is not supported.
-- The HTTP source does not support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Exporting or importing an Eventstream item that includes this source through Git may result in errors.
+- **OAuth authentication** isn't supported.
+- The HTTP source doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Exporting or importing an Eventstream item that includes this source through Git might result in errors.
 
 ## Related content
 
@@ -63,3 +61,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

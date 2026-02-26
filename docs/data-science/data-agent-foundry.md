@@ -1,44 +1,39 @@
-﻿---
-title: Consume a data agent in Azure AI foundry (preview)
-description: Learn how to consume a data agent in Azure AI foundry (preview).
-ms.author: jburchel
-author: jonburchel
+---
+title: Consume a data agent in Microsoft Foundry (preview)
+description: Learn how to consume a data agent in Microsoft Foundry (preview).
+ms.topic: how-to
 ms.reviewer: scottpolly
-reviewer: midesa
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: how-to #Don't change
 ms.date: 12/05/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-#customer intent: As an Analyst, I want to consume Fabric data agent within Azure AI Agent Services in Azure AI Foundry.
+#customer intent: As an Analyst, I want to consume Fabric data agent within Foundry Agent Service in Microsoft Foundry.
 ---
 
-# Consume Fabric data agent from Azure AI Foundry Services (preview)
+# Consume Fabric data agent from Microsoft Foundry Services (preview)
 
-Data agent in Microsoft Fabric transforms enterprise data into conversational Q&A systems. It enables users to interact with their data through chat, to uncover actionable insights. One way to consume Fabric data agent is through Azure AI Agent Service, a core component of Azure AI Foundry. Through integration of Fabric data agents with Azure AI Foundry, your Azure AI agents can directly tap into the rich, structured, and semantic data available in Microsoft Fabric OneLake. This integration provides immediate access to high-quality enterprise data, and it empowers your Azure AI agents to generate actionable insights and streamline analytical workflows. Organizations can then enhance data-driven decision-making with Fabric data agent as a powerful knowledge source within their Azure AI environments.
+Data agent in Microsoft Fabric transforms enterprise data into conversational Q&A systems. It enables users to interact with their data through chat, to uncover actionable insights. One way to consume Fabric data agent is through Foundry Agent Service, a core component of Microsoft Foundry. Through integration of Fabric data agents with Foundry, your Azure AI agents can directly tap into the rich, structured, and semantic data available in Microsoft Fabric OneLake. This integration provides immediate access to high-quality enterprise data, and it empowers your Azure AI agents to generate actionable insights and streamline analytical workflows. Organizations can then enhance data-driven decision-making with Fabric data agent as a powerful knowledge source within their Azure AI environments.
 
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md). Use the latest beta or preview version of the [Azure AI Agents Python SDK](https://pypi.org/project/azure-ai-agents/1.1.0b3/).
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
-- Developers and end users in Azure AI Foundry must at least have the `AI Developer` Role-Based Access Control (RBAC) role.
+- Developers and end users in Foundry must at least have the `AI Developer` Role-Based Access Control (RBAC) role.
 
 ## How it works
 
-**Agent Setup**: In Azure AI Agent Service, create a new agent and add Fabric data agent as one of its knowledge sources. To establish this connection, you need the workspace ID and artifact ID for the Fabric data agent. The setup enables your Azure AI agent to evaluate available sources when it receives a query, to ensure that it invokes the correct tool to process the request. Currently, you can only add one Fabric data agent as a knowledge source to your Azure AI agent.
+**Agent Setup**: In Agent Service, create a new agent and add Fabric data agent as one of its knowledge sources. To establish this connection, you need the workspace ID and artifact ID for the Fabric data agent. The setup enables your Azure AI agent to evaluate available sources when it receives a query, to ensure that it invokes the correct tool to process the request. Currently, you can only add one Fabric data agent as a knowledge source to your Azure AI agent.
 
 > [!NOTE]
 > The model you select in Azure AI Agent setup is only used for Azure AI agent orchestration and response generation. It doesn't affect the model that Fabric data agent uses.
 
-**Query Processing**: When a user sends a query from the Foundry playground, the Azure AI Agent Service determines whether or not Fabric data agent is the best tool for the task. If it is, the Azure AI agent:
+**Query Processing**: When a user sends a query from the Foundry playground, the Agent Service determines whether or not Fabric data agent is the best tool for the task. If it is, the Azure AI agent:
 
 - Uses the identity of the end user to generate secure queries over the data sources the user has permission to access from within the Fabric data agent.
 - Invokes Fabric to fetch and process the data, to ensure a smooth, automated experience.
 - Combines the results from Fabric data agent with its own logic to generate comprehensive responses. Identity Passthrough (On-Behalf-Of) authorization secures this flow, to ensure robust security and proper access control across enterprise data.
 
 > [!NOTE]
-> The Fabric data agent and the Azure AI Foundry resources should be on the same tenant, and both Microsoft Fabric and Azure AI Foundry should be signed in with the same account.
+> The Fabric data agent and the Foundry resources should be on the same tenant, and both Microsoft Fabric and Foundry should be signed in with the same account.
 
 ## Add Fabric data agent to your Azure AI Agent
 
@@ -50,7 +45,7 @@ You can add a Fabric data agent to your Azure AI agent either programmatically o
 
 :::image type="content" source="./media/how-to-consume-data-agent/foundry-agents.png" alt-text="Screenshot showing the main Azure Foundry page." lightbox="./media/how-to-consume-data-agent/foundry-agents.png":::
 
-This step displays the list of your existing Azure AI agents. You can add Fabric to one of these agents, or you can select **New Agent** to create a new agent. New agent creation generates a unique agent ID and a default name. You can change that name at any time. For more information, see [What is Azure OpenAI in Azure AI Foundry portal](/azure/ai-foundry/azure-openai-in-ai-foundry).
+This step displays the list of your existing Azure AI agents. You can add Fabric to one of these agents, or you can select **New Agent** to create a new agent. New agent creation generates a unique agent ID and a default name. You can change that name at any time. For more information, see [What is Azure OpenAI in Foundry portal](/azure/ai-foundry/azure-openai-in-ai-foundry).
 
 - Initiate Adding a Knowledge Source: Select the **Add** button, as shown in the following screenshot:
 
@@ -76,7 +71,7 @@ When you set up the connection, provide the Fabric data agent `workspace-id` and
 
 https://fabric.microsoft.com/groups/<**workspace_id**>/aiskills/<**artifact-id**>, and select the **Is Secret** checkbox
 
-Finally, assign a name to your connection, and choose whether to make it available to all projects in Azure AI Foundry or to restrict it to the current project.
+Finally, assign a name to your connection, and choose whether to make it available to all projects in Foundry or to restrict it to the current project.
 
 After you select **Connect**, the Microsoft Fabric data agent is added as a **Knowledge** resource, as shown in the following screenshot:
 
@@ -101,10 +96,10 @@ from azure.ai.agents.models import FabricTool, ListSortOrder
 
 #### Step 2: Create an Agent with the Microsoft Fabric tool enabled
 
-To make the Fabric data agent tool available to your Azure AI agent, use a connection to initialize the tool and attach it to the agent. You can find your connection in the **connected resources** section of your project in the Azure AI Foundry portal.
+To make the Fabric data agent tool available to your Azure AI agent, use a connection to initialize the tool and attach it to the agent. You can find your connection in the **connected resources** section of your project in the Foundry portal.
 
 ```python
-# The Fabric connection ID can be found in the Azure AI Foundry project as a property of the Fabric tool
+# The Fabric connection ID can be found in the Foundry project as a property of the Fabric tool
 # Your connection ID is in the format /subscriptions/<your-subscription-id>/resourceGroups/<your-resource-group>/providers/Microsoft.MachineLearningServices/workspaces/<your-project-name>/connections/<your-fabric-connection-name>
 conn_id = "your-connection-id"
 

@@ -1,12 +1,11 @@
 ---
 title: Overview of Copilot in Fabric
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
-author: denglishbi
-ms.author: daengli
-ms.reviewer: guptamaya, maghan
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: daengli, guptamaya, maghan
 ms.date: 01/25/2026
 ms.update-cycle: 180-days
-ms.service: fabric
 ms.topic: overview
 ms.collection:
   - ce-skilling-ai-copilot
@@ -97,7 +96,7 @@ The following table provides an overview of the various AI and Copilot experienc
 | **Fabric workload** | **Supported items** | **Experience** |
 | --- | --- | --- |
 | **Copilot for Data Science and Data Engineering** | Notebook (typically with lakehouses and other data items) | - [Copilot chat panel](../data-engineering/copilot-notebooks-chat-pane.md) vs [chat magics](../data-engineering/copilot-notebooks-chat-magics.md) in a notebook.<br />- [Generate code or markdown for a notebook (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities).<br />- [Add comments, fix errors, or debug notebook code (preview)](../data-engineering/copilot-notebooks-chat-magics.md#commenting-and-debugging).<br />- [Analyze and visualize data](../data-engineering/copilot-notebooks-chat-pane.md).<br />- [Explain notebook contents (preview)](../data-engineering/copilot-notebooks-chat-pane.md#key-capabilities). |
-| **AI Experiences in Fabric Data Science** | Data agent <br> AI functions <br> AI services | - [Create a Fabric Data agent](../data-science/how-to-create-data-agent.md). <br />- [Transform and enrich data seamlessly with AI functions](../data-science/ai-functions/overview.md).<br />- [AI services in Fabric](../data-science/ai-services/ai-services-overview.md#ai-services-in-fabric-preview).<br />
+| **AI Experiences in Fabric Data Science** | Data agent <br> AI functions <br> AI services | - [Create a Fabric Data agent](../data-science/how-to-create-data-agent.md). <br />- [Transform and enrich data seamlessly with AI functions](../data-science/ai-functions/overview.md).<br />- [AI services in Fabric](../data-science/ai-services/ai-services-overview.md#foundry-tools-in-fabric-preview).<br />
 | **Copilot for Data Factory** | Dataflows gen2 | - [Generate a new query](copilot-fabric-data-factory.md#get-started-with-copilot-for-dataflow-gen2). |
 | | Pipeline | - [Generate and run a pipeline](copilot-fabric-data-factory.md#generate-a-data-pipeline-with-copilot).<br />- [Summarize a pipeline](copilot-fabric-data-factory.md#summarize-a-data-pipeline-with-copilot).<br />- [Troubleshoot pipeline errors](copilot-fabric-data-factory.md#troubleshoot-pipeline-errors-with-copilot). |
 | **Copilot for Data Warehouse** | SQL Queries in Data Warehouse | - [Generate SQL queries (preview)](../data-warehouse/copilot-chat-pane.md).<br />- [Suggest SQL code completions (preview)](../data-warehouse/copilot-code-completion.md).<br />- [Fix code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md).<br />- [Explain code in SQL queries (preview)](../data-warehouse/copilot-quick-action.md). |
@@ -172,3 +171,4 @@ In order to use fully conversational agentic AI experiences, the agent needs to 
 - [Copilot for Microsoft Fabric and Power BI: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
 - [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
+

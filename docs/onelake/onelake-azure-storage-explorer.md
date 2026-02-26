@@ -1,11 +1,8 @@
 ---
 title: Integrate OneLake with Azure Storage Explorer
 description: Learn more about OneLake integration with Azure Storage Explorer to connect to, browse, manage, and download existing data.
-ms.reviewer: eloldag
-ms.author: harmeetgill
-author: gillharmeet
+ms.reviewer: eloldag, harmeetgill
 ms.topic: how-to
-ms.custom:
 ms.date: 09/27/2023
 #customer intent: As a user of OneLake, I want to learn how to integrate it with Azure Storage Explorer so that I can easily connect to, browse, manage, and download existing data.
 ---
@@ -63,3 +60,4 @@ If a workspace name has capital letters, deletion of files or folders fails due 
 ## Related content
 
 - [Integrate OneLake with Azure Databricks](onelake-azure-databricks.md)
+

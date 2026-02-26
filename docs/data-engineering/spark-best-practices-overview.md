@@ -1,8 +1,6 @@
 ---
 title: Fabric Spark best practices overview
 description: The Fabric Spark best practices series provides guidance on security, capacity planning, development lifecycle, observability, and fundamental concepts.
-author: eric-urban
-ms.author: eur
 ms.reviewer: anuve
 ms.topic: concept-article
 ms.custom:

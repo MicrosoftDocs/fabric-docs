@@ -1,10 +1,8 @@
 ---
 title: Build Your Workload
 description: Learn how to build your workload.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

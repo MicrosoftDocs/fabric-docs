@@ -2,10 +2,7 @@
 title: Access an existing KQL database
 description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 07/29/2025
 ms.subservice: rti-eventhouse
 ms.search.form: product-kusto

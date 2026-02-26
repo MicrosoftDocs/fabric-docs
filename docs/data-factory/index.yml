@@ -5,7 +5,6 @@ summary: Data factory in Microsoft Fabric provides cloud-scale data movement and
 metadata:
   title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-factory
   ms.custom: configuration
   ms.topic: landing-page # Required
@@ -90,6 +89,8 @@ landingContent:
             url: data-source-management.md
           - text: Save a draft of your dataflow
             url: dataflows-gen2-save-draft.md
+          - text: Enrich data with ML model during ingestion
+            url: dataflow-gen2-machine-learning-model-endpoints.md
 
   # Card 
   - title: Move data

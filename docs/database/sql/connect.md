@@ -1,8 +1,6 @@
 ---
 title: "Connect to Your SQL Database"
 description: Learn about options to connect to your SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: yoleichen, antho, sukkaurk, imotiwala, maghan
 ms.date: 11/05/2025
 ms.topic: how-to
@@ -135,3 +133,4 @@ For more possibilities to query your data with T-SQL inside Python Notebooks, se
 - [Authentication in SQL database in Microsoft Fabric](authentication.md)
 - [Authorization in SQL database in Microsoft Fabric](authorization.md)
 - [Quickstart: Connect to a SQL database in Fabric with the Microsoft Python Driver for SQL Server](connect-python.md)
+

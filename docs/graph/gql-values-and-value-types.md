@@ -3,8 +3,6 @@ title: GQL Values and Value Types
 description: Complete reference for GQL values, value types, literals, comparison rules, and the type system for graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 11/18/2025
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: splantikow
 ---
 

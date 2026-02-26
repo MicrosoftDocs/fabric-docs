@@ -1,8 +1,6 @@
 ---
 title: Work with customer data in Microsoft Fabric
 description: Learn about how to work with customer data in Microsoft Fabric.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
 ms.custom: sfi-ropc-nochange
 ms.date: 05/21/2024
@@ -163,3 +161,4 @@ Follow the [instructions](#how-to-read-and-write-data-in-microsoft-fabric) above
 ## Related content
 
 * [Microsoft Fabric Workload Development Kit](./index.yml)
+

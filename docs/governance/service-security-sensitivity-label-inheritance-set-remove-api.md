@@ -3,16 +3,14 @@ title: Set or remove sensitivity labels programmatically with admin APIs
 description: See an example of how to use Power BI REST admin APIs to set or remove sensitivity labels on Power BI artifacts.
 author: msmimart
 ms.author: mimart
-
 ms.topic: how-to
-ms.custom:
 ms.date: 09/12/2023
 LocalizationGroup: Data from files
 ---
 
 # Set or remove sensitivity labels using Power BI REST admin APIs
 
-To meet compliance requirements, organizations are often required to classify and label all sensitive data in Power BI. This task can be challenging for tenants that have large volumes of data in Power BI. To make the task easier and more effective, you can use Power BI admin REST APIs to programatically [setLabels](/rest/api/power-bi/admin/information-protection-set-labels-as-admin) and [removeLabels](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin) on large numbers of Power BI artifacts.
+To meet compliance requirements, organizations are often required to classify and label all sensitive data in Power BI. This task can be challenging for tenants that have large volumes of data in Power BI. To make the task easier and more effective, you can use Power BI admin REST APIs to programmatically [setLabels](/rest/api/power-bi/admin/information-protection-set-labels-as-admin) and [removeLabels](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin) on large numbers of Power BI artifacts.
 
 The APIs set or remove labels from artifacts by artifact ID.
 
@@ -69,9 +67,9 @@ The following sample demonstrates how to set and remove sensitivity labels on Po
                 setLabelRequest.LabelId = Guid.Parse("<label Id>");
 
                 // assignmentMethod (optional)
-                setLabelRequest.AssignmentMethod = AssignmentMethod.Priviledged;
+                setLabelRequest.AssignmentMethod = AssignmentMethod.Privileged;
 
-                // delegetedUser (optional)
+                // delegatedUser (optional)
                 var delegatedUser = new DelegatedUser();
                 delegatedUser.EmailAddress = "<delegated user email address>";
 

@@ -1,11 +1,8 @@
 ---
 title: Build a real-time work order routing app with Microsoft Fabric Maps
 description: Learn how to create a map in Real-Time Intelligence based on customer orders that creates an optimized route.
-ms.reviewer: smunk
-author: FarazGIS
-ms.author: fsiddiqui
+ms.reviewer: smunk, fsiddiqui
 ms.topic: tutorial
-ms.custom:
 ms.date: 02/04/2026
 
 #customer intent: I want to learn how to create a real-time work order routing app with Microsoft Fabric Maps.
@@ -511,3 +508,4 @@ For more information on Fabric Maps topics covered in this tutorial:
 
 > [!div class="nextstepaction"]
 > [Data label settings](customize-map.md#data-label-settings)
+

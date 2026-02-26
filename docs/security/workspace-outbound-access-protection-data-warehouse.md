@@ -3,8 +3,7 @@ title: Workspace outbound access protection for data warehouse workloads
 description: "This article describes workspace outbound access protection for data warehouse workloads."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.topic: overview #Don't change
+ms.topic: overview
 ms.date: 11/17/2025
 
 #customer intent: As a data engineer, I want to restrict and manage outbound network connections from my Fabric workspace’s data warehouse workloads, so that I can prevent unauthorized data exfiltration and ensure compliance with my organization’s security requirements.

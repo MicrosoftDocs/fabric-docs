@@ -2,17 +2,18 @@
 title: Table Compaction
 description: Learn about how and why to optimize data files in Delta tables.
 ms.reviewer: milescole
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 09/15/2025
 ms.search.form: lakehouse table maintenance optimize compaction
+ai-usage: ai-assisted
 ---
 
 # Compacting Delta tables
 
 Like file systems and relational databases, data becomes fragmented over time unless closely managed, leading to excessive compute costs to read the data. Delta Lake isn't an exception. Data files should be periodically rewritten into an optimal layout to reduce individual file operation costs, improve data compression, and optimize reader parallelism. The `OPTIMIZE` command addresses this challenge: it groups small files within a partition into bins targeting an _ideal_ file size and rewrites them to storage. The result is the same data compacted into fewer files.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on compaction strategies for different consumption scenarios (SQL Analytics Endpoint, Power BI Direct Lake, Spark), see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 ## Compaction methods
 
@@ -142,7 +143,7 @@ Fast optimize can result in less data being rewritten over a Delta tables lifecy
 
 #### File-level compaction targets
 
-To avoid rewrite of data that was previously considered compacted (large enough) based on changing compaction min and max file size targets, `spark.microsoft.delta.optimize.fileLevelTarget.enabled` can be enabled to prevent recompaction of already compacted files. When enabled, files aren't recompacted if they previously met at least half the target file size at the time of compaction. Maintaining file level targets minimizes write amplification as the compaction target size changes over time (for exmaple, from adaptive target file size evaluating and setting a larger target). If enabled, the `OPTIMIZE_TARGET_SIZE` tag is added to new files when OPTIMIZE is run or for any write operation if the `delta.targetFileSize` or `delta.targetFileSize.adaptive` table property is set.
+To avoid rewrite of data that was previously considered compacted (large enough) based on changing compaction min and max file size targets, `spark.microsoft.delta.optimize.fileLevelTarget.enabled` can be enabled to prevent recompaction of already compacted files. When enabled, files aren't recompacted if they previously met at least half the target file size at the time of compaction. Maintaining file level targets minimizes write amplification as the compaction target size changes over time (for example, from adaptive target file size evaluating and setting a larger target). If enabled, the `OPTIMIZE_TARGET_SIZE` tag is added to new files when OPTIMIZE is run or for any write operation if the `delta.targetFileSize` or `delta.targetFileSize.adaptive` table property is set.
 
 > [!NOTE]
 > While not enabled by default, Microsoft recommends enabling **file-level compaction targets** to limit potential write-amplification.
@@ -241,6 +242,8 @@ Users can run ad-hoc maintenance operations like `OPTIMIZE` from the Lakehouse U
 
 ## Related content
 
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Tune file size](./tune-file-size.md)
 - [Lakehouse table maintenance](./lakehouse-table-maintenance.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

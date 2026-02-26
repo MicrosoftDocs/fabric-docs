@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.date: 05/19/2025
 LocalizationGroup: Administration
 
-# Customer intent: As a Microsoft Fabric administrator, I want to configure the encryption admin settings in Fabric, to enable the workspace customer-managed keys feature.
+#customer intent: As a Microsoft Fabric administrator, I want to configure the encryption admin settings in Fabric, to enable the workspace customer-managed keys feature.
 ---
 
 # Encryption tenant setting

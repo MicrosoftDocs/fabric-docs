@@ -3,7 +3,6 @@ title: Microsoft Fabric tenant settings
 description: Learn how to configure Microsoft Fabric tenant settings in Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to

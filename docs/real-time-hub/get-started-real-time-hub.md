@@ -2,8 +2,7 @@
 title: Get Started With Fabric Real-Time Hub
 description: This article shows how to get started with Fabric Real-Time hub and provides a high-level overview of all the features.
 #customer intent: As a new Fabric user, I want to find and open the Real-Time hub so that I can start streaming and monitoring data.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: quickstart
 ms.custom: null
 ms.date: 02/03/2026
@@ -171,3 +170,4 @@ See following articles to learn how to **set up alerts** on Fabric events:
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
 
 :::image type="content" source="./media/get-started-real-time-hub/azure-events-page.png" alt-text="Screenshot that shows the Azure events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/azure-events-page.png":::
+

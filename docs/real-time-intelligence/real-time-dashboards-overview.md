@@ -1,11 +1,8 @@
 ---
 title: What is Real-Time Dashboard?
 description: Learn about Real-Time Dashboard in Microsoft Fabric.
-ms.reviewer: mibar
-ms.author: v-hzargari
-author: hzargari-ms
+ms.reviewer: mibar, v-hzargari
 ms.topic: overview
-ms.custom:
 ms.date: 01/08/2026
 ms.search.form: Overview
 ai-usage: ai-assisted
@@ -69,3 +66,4 @@ After understanding the basics of Real-Time Dashboard and setting up your first 
 
 * [Explore data in Real-Time Dashboard](dashboard-explore-data.md)
 * [Set alert for Real-Time Dashboard](data-activator/activator-get-data-real-time-dashboard.md)
+

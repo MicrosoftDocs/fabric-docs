@@ -1,8 +1,9 @@
 ---
 title: Fabric known issues
 description: Identify issues that are affecting Microsoft Fabric.
-author: jessicammoss
-ms.author: jessicamo
+author: snehagunda
+ms.author: sngun
+ms.reviewer: jessicamo
 ms.topic: troubleshooting    
 ms.date: 07/21/2025
 ms.collection: ce-skilling-ai-copilot
@@ -32,3 +33,4 @@ To see closed known issues, follow the below steps:
 1. On the top right of the screen, select the **Filters** to open the filters
 1. Uncheck the **Active** option so that only **Closed** is selected
 1. Select **Apply** and view your active known issues
+

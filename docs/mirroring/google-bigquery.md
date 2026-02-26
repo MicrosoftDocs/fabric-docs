@@ -4,7 +4,6 @@ description: Learn about the mirrored databases from Google BigQuery in Microsof
 ms.reviewer: misaacs
 ms.date: 09/09/2025
 ms.topic: concept-article
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---

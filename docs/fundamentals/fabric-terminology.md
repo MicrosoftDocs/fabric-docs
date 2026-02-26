@@ -1,14 +1,12 @@
 ---
 title: Microsoft Fabric terminology
 description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
-ms.reviewer: sngun
-ms.author: sngun
 author: SnehaGunda
+ms.author: sngun
 ms.topic: glossary
-ms.custom:
 ms.search.form: product-trident
 ms.date: 02/04/2026
-# customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
+#customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ---
 
 # Microsoft Fabric terminology
@@ -103,3 +101,5 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
+
+
