@@ -15,6 +15,9 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 1. Validate the published events in Real-Time hub.
 1. Create an Activator rule that listens for the business event and triggers an email notification when the event occurs.
 
+> [!IMPORTANT]
+> This feature is in [preview](../fundamentals/preview.md).
+
 ## Create a new business event
 
 1. Go to **Business events** in Real-Time hub.

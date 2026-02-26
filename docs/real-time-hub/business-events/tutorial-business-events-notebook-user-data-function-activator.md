@@ -15,7 +15,8 @@ This tutorial guides you through the full workflow of reacting to your own busin
 1. Validate the published events in Real-Time hub.
 1. Create an Activator rule that triggers a user data function when the business event occurs. 
 
-By the end, you have an end-to-end setup that detects important business conditions and responds to them instantly.
+> [!IMPORTANT]
+> This feature is in [preview](../fundamentals/preview.md).
 
 ## Create a new business event
 
