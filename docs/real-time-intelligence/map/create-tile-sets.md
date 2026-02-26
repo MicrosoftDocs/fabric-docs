@@ -84,7 +84,7 @@ Next, set the following configuration options:
 
 ### Step 4: Tileset schedule
 
-If you wish to create a schedule to automatically refresh the timeset, follow the steps below, otherwise select **Next**:
+If you wish to create a schedule to automatically refresh the tileset, follow the steps below, otherwise select **Next**:
 
 1. Select **Add schedule**.
 
