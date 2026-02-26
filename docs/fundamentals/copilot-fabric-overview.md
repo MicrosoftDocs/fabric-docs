@@ -171,7 +171,7 @@ The prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-serv
 | UK | EU Data Boundary | Yes | Turn on Copilot.<br />Enable cross-geo data processing. |
 | Australia<br />Brazil<br />Canada<br />India<br />Asia<br />Japan<br />Korea<br />South Africa<br />Southeast Asia<br />United Arab Emirates | US | Yes | Turn on Copilot.<br />Enable cross-geo data processing. |
 
-### Data storages of conversation history cross geographic regions
+### Data storage of conversation history cross geographic regions
 
 > [!NOTE]
 >This section only applies to customers who want to use [Copilot in Notebooks](../data-engineering/copilot-notebooks-overview.md) and Fabric [data agents](../data-science/concept-data-agent.md) (formerly known as Data agent) powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU data boundary and the US. 
