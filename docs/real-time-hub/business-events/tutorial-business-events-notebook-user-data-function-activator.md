@@ -16,7 +16,7 @@ This tutorial guides you through the full workflow of reacting to your own busin
 1. Create an Activator rule that triggers a user data function when the business event occurs. 
 
 > [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
+> This feature is in [preview](../../fundamentals/preview.md).
 
 ## Create a new business event
 

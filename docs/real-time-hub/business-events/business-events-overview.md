@@ -17,7 +17,7 @@ The following diagram shows how a manufacturing system detects abnormal vibratio
 :::image type="content" source="media/business-events-overview/business-event-workflow.png" alt-text="Diagram showing a manufacturing system detecting abnormal vibration using a Spark Notebook, analyzing it, and publishing a VibrationCriticalDetected business event that triggers custom business logic in a User Data Function through Activator." lightbox="media/business-events-overview/business-event-workflow.png":::
 
 > [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
+> This feature is in [preview](../../fundamentals/preview.md).
 
 ## What is a business event?
 

@@ -16,7 +16,7 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 1. Create an Activator rule that listens for the business event and triggers an email notification when the event occurs.
 
 > [!IMPORTANT]
-> This feature is in [preview](../fundamentals/preview.md).
+> This feature is in [preview](../../fundamentals/preview.md).
 
 ## Create a new business event
 
