@@ -37,8 +37,8 @@ Include the following target resources in the policy:
 If your policy is too restrictive - for example, if it blocks all apps except Power BI - some features, such as dataflows, might not work.
 
 > [!NOTE]
-> If you already have a Conditional Access policy configured for Power BI, include the resources listed here in your existing Power BI policy. Otherwise, Conditional Access might not operate as intended in Fabric.
-> Fabric doesn't support the [continuous access evaluation (CAE)](/entra/identity/conditional-access/concept-continuous-access-evaluation#limitations) session control in Conditional Access.
+> - If you already have a Conditional Access policy configured for Power BI, include the resources listed here in your existing Power BI policy. Otherwise, Conditional Access might not operate as intended in Fabric.
+> - Fabric doesn't support the [continuous access evaluation (CAE)](/entra/identity/conditional-access/concept-continuous-access-evaluation#limitations) session control in Conditional Access.
 
 ## Set up a Conditional Access policy for Fabric
 
