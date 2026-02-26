@@ -63,7 +63,7 @@ The following steps show how to get started with configuring a Conditional Acces
 
    :::image type="content" source="media/security-conditional-access/search-add-resources.png" alt-text="Screenshot of Azure Conditional Access resource selection pane with four services chosen and search results for Azure Storage." lightbox="media/security-conditional-access/search-add-resources.png":::
 
-1. Select **Create** or **Save**.
+1. When all assignment and access controls are configured for the policy, select **Create** or **Save**.
 
 ## Related content
 
