@@ -124,6 +124,8 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Azure Cost Management
 - [Azure Data Explorer (Kusto)](connector-azure-data-explorer.md)
 - [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
+- Azure Synapse Analytics
+- Azure Synapse Analytics workspace
 - Azure Resource Graph
 - AzureTables
 - BI 360
@@ -139,6 +141,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Cognite
 - CogniteDataSource
 - CustomerInsights
+- Dataverse
 - DCWInsights
 - DeltaSharing
 - Dynamics 365 Business Central
@@ -150,6 +153,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - eWayCRM
 - Fabric AI Functions
 - [Fabric Lakehouse](connector-lakehouse-overview.md)
+- Fabric SQL database
 - [Fabric Warehouse](connector-data-warehouse-overview.md)
 - FactSet Analytics
 - FactSet RMS
@@ -190,6 +194,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Spigit
 - SumTotal
 - Supermetrics
+- SQL Server database
 - SurveyMonkey
 - TeamDesk
 - Tenforce
