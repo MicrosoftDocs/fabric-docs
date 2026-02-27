@@ -965,15 +965,15 @@
             items:
               - name: Machine learning model in Dataflow Gen2
                 href: dataflow-gen2-machine-learning-model-endpoints.md
-              - name: AI Functions in Dataflow Gen2 (Preview)
+              - name: AI Prompt in Dataflow Gen2
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
               - name: Get data with Copilot
                 href: copilot-modern-get-data.md
-              - name: Query evaluator
+              - name: Moddern query evaluator
                 href: dataflow-gen2-modern-evaluator.md
-              - name: Preview only (Preview)
+              - name: Preview only steps
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
