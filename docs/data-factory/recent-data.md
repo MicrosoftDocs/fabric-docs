@@ -93,7 +93,7 @@ Favorite queries is a feature that helps you reuse queries in your Dataflow Gen2
 
 To save a query as a favorite, right-click the query in the Queries pane and select the option that reads **Save to Favorites**.
 
-![](image)
+![Screenshot of the contextual menu when right-clicking a query that shows the new Save to favorites entry](media/recent-data/query-save-to-favorites.png)
 
 A notification in the upper-right corner that reads **Saving query to favorites** confirms your request.
 
