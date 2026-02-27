@@ -110,7 +110,7 @@ A confirmation appears later and shows the query name used to save it as a favor
 
 To import a favorite query, navigate to the Recents module in the modern Get Data experience, and then locate the filter pill labeled **Favorites**.
 
-<image>
+![Screenshot of the favorite queries dialog within the Dataflow Gen2 modern get data experience](media/recent-data/favorite-queries.png)
 
 In this view, you can see all your favorite queries. Select any query to import the script as-is.
 
