@@ -100,7 +100,7 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 1. On the **Alert created** page, select either **Open** to open the rule in the Fabric activator user interface in a separate tab or **Done** to close the page.
 
-        :::image type="content" source="./media/set-alerts-business-events/activator-editor.png" alt-text="Screenshot that shows the Open link on the Alert created page." lightbox="./media/set-alerts-business-events/activator-editor.png":::
+    :::image type="content" source="./media/set-alerts-business-events/activator-editor.png" alt-text="Screenshot that shows the Open link on the Alert created page." lightbox="./media/set-alerts-business-events/activator-editor.png":::
 
 
 ## Related content
