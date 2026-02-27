@@ -35,7 +35,6 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 | `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
 | `top_p`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
 | `progress_bar_mode`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that controls the progress bar display mode. Set to `"basic"` for clean progress tracking, `"stats"` for full metrics with token counts and CU prediction estimates, or `"disable"` to turn off progress display. See [Progress bar modes](#progress-bar-modes) for details. | `"basic"` |
-| `use_progress_bar`<br> Optional | Show tqdm progress bar for AI function progress over input data. Uses tqdm under the hood. Boolean value, which can be set to `True` or `False`. | `True` |
 | `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
 
 > [!TIP]
