@@ -1,12 +1,12 @@
 ---
-title: "Tutorial: Configure Microsoft Fabric Mirrored Databases from Azure Database for MySQL"
+title: "Tutorial: Configure Microsoft Fabric Mirrored Databases from Azure Database for MySQL (preview)"
 description: Learn how to configure a mirrored database from Azure Database for MySQL in Microsoft Fabric.
 ms.reviewer: vamehta, maghan
 ms.date: 03/16/2026
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for MySQL
+# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)
 
 [Mirroring in Fabric](../overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology.
 
