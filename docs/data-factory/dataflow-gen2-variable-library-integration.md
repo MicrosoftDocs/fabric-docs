@@ -27,11 +27,11 @@ To use Fabric variable libraries in Dataflow Gen2, ensure the following:
 
 Dataflow Gen2 dialogs include an input widget that lets you choose how to enter a field value. In supported dialogs, you can select variables by using this widget.
 
-<image of input widget>
+![Screenshot of the input widget within a filter rows dialog showing the multiple options available for input.](media/dataflow-gen2-variable-library-integration/input-widget.png)
 
 > [!NOTE]
 > To use the input widget, on the **View** tab in the ribbon, in the **Parameters** group, select **Always allow**.
-> <image of the option to enable>
+> ![Screenshot of the always allow checkbox in the View tab of the ribbon to enable the input widget](media/dataflow-gen2-variable-library-integration/allow-parameters.png)
 
 Some dialogs support the input widget experience and Fabric variable libraries, including:
 
@@ -43,7 +43,7 @@ Some dialogs support the input widget experience and Fabric variable libraries, 
 
 When you select the variable option in the input widget, the variable picker dialog appears. In this dialog, you can browse your variable libraries and the variables they contain.
 
-<image of the variable picker>
+![Screenshot of the select variable dialog that displays all available libraries and variables in the current workspace](media/dataflow-gen2-variable-library-integration/select-variable.png)
 
 After you select a variable, the dialog displays the library and variable name so you can confirm your selection before you commit.
 
