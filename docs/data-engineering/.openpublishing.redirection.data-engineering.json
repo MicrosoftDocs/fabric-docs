@@ -24,6 +24,11 @@
         "source_path_from_root": "/docs/data-engineering/runtime-1-1.md",
         "redirect_url": "/fabric/data-engineering/runtime",
         "redirect_document_id": false
+       },
+       {
+        "source_path_from_root": "/docs/data-engineering/get-started-shortcuts.md",
+        "redirect_url": "/fabric/data-engineering/lakehouse-shortcuts",
+        "redirect_document_id": true
        }
     ]
 }
