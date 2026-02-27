@@ -83,8 +83,6 @@ The following list describes the limitations for Dataflow Gen2 in Data Factory i
 
 * **Staging authentication expiration**: If staging items aren’t accessed for more than 90 days, re‑authentication is required. This can be done by creating a new Dataflow Gen2 in the same workspace.
 
-
-
 ## Related content
 
 - [Service level outages](https://support.fabric.microsoft.com)
