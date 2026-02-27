@@ -97,11 +97,11 @@ To save a query as a favorite, right-click the query in the Queries pane and sel
 
 A notification in the upper-right corner that reads **Saving query to favorites** confirms your request.
 
-![Screenshot of the top level notification that displays the message saving query to favorites](media/dataflow-gen2-favorite-queries/save-query-request-notification.png)
+![Screenshot of the top level notification that displays the message saving query to favorites](media/recent-data/save-query-request-notification.png)
 
 A confirmation appears later and shows the query name used to save it as a favorite.
 
-![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites](media/dataflow-gen2-favorite-queries/query-saved-notification.png)
+![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites](media/recent-data/query-saved-notification.png)
 
 > [!NOTE]
 > The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains a Dataflow Gen2 item that stores your saved favorite queries.
