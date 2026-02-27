@@ -17,6 +17,12 @@ Azure SQL Database and SQL database in Microsoft Fabric share a common code base
 
 This article applies to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
 
+## Availability
+
+SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+
+Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
+
 ## Database level limitations
 
 - SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported. Transparent Data Encryption (TDE) is not supported.
@@ -37,10 +43,6 @@ This article applies to SQL database in Fabric only. For the warehouse and SQL a
 
 - Column names for a SQL table cannot contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
 
-## SQL analytics endpoint limitations  
-
-The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
-
 ## Connection policy
 
 Currently, the connection policy for SQL database in Microsoft Fabric is **Default** and cannot be changed. For more information, see [Connectivity architecture - Connection policy](/azure/azure-sql/database/connectivity-architecture?view=fabric-sqldb&preserve-view=true#connection-policy).
@@ -51,11 +53,15 @@ For connections to use this mode, clients need to:
   
   - Allow outbound communication from the client to Azure SQL gateway IP addresses on port 1433.
 
-## Availability
+## Source control and deployment pipelines
 
-SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+SQL database in Microsoft Fabric has built-in source control and deployment pipelines capabilities that modify the database objects while leaving existing data in place. Database-level settings such as collation and compatibility level aren't included in the source control and deployment pipelines integration. For database settings that can be set with T-SQL after database creation, you can modify the database with scripts after deployment.
 
-Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
+Changes made to the `.sqlproj` file in the source control repository will not persist after deployment, as the source control integration will reset the file on the next commit from source control.
+
+## SQL analytics endpoint limitations  
+
+The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
 
 ## Features of Azure SQL Database and Fabric SQL database
 
@@ -187,9 +193,10 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |
-| [Data Factory in Microsoft Fabric connectors](../../data-factory/connector-overview.md) | Yes, see [Azure SQL Database connector overview](../../data-factory/connector-azure-sql-database-overview.md) | Yes, see [SQL database connector overview](../../data-factory/connector-sql-database-overview.md) | 
+| [Data Factory in Microsoft Fabric connectors](../../data-factory/connector-overview.md) | Yes, see [Azure SQL Database connector overview](../../data-factory/connector-azure-sql-database-overview.md) | Yes, see [SQL database connector overview](../../data-factory/connector-sql-database-overview.md) |
+|[Microsoft.Build.Sql projects](/sql/tools/sql-database-projects/sql-database-projects) | Yes | Yes |
 | [SMO](/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) |
-| [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes (minimum version is Visual Studio 2022 17.12) |
+| [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | No |
 | [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) | No, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=azuresql-db&preserve-view=true) | No, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=fabricsql&preserve-view=true) |
