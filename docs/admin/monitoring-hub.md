@@ -31,7 +31,7 @@ The monitor hub displays activities for these Fabric items:
 * Dataflow Gen2
 * Dataflow Gen2 CI/CD
 * Datamart
-* DBT Job
+* Data Build Tool (dbt) Job
 * Digital Twin Builder Flow
 * Experiment
 * Graph model
@@ -102,11 +102,11 @@ When you investigate an issue, use the following filter combinations to quickly 
 - **Check one pipeline owner:** `Item type = Pipeline` + `Submitted by = <owner>`
 - **Investigate one workspace:** `Location = <workspace>` + `Start time = Customize`
 
-Each time you refresh the table, it loads the most recent 100 jobs in order, according to the filter option. By selecting *load more* you can load 50 more jobs.
+Each time you refresh the table, it loads the most recent 100 jobs in order, according to the filter option. By selecting **load more**, you can load 50 more jobs.
 
 #### Filter options
 
-When you don't select a filter, the monitor hub displays activities for all statuses, item types, owners, and workspaces. Select one or more options in each filter category to narrow the displayed results.
+When you don't select a filter, the monitor hub displays activities for all statuses, item types, owners, and workspaces. To narrow the displayed results, select one or more options in each filter category.
 
 * **Status** - Select the type of status you want the table to display.
 
