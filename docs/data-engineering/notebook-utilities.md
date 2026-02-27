@@ -2,8 +2,6 @@
 title: NotebookUtils (former MSSparkUtils) for Fabric
 description: Use NotebookUtils, a built-in package for Fabric Notebook, to work with file systems, modularize and chain notebooks together, manage data engineering items, and work with credentials.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
@@ -210,6 +208,7 @@ get(name: String, workspaceId: String = ""): Artifact -> Get a Notebook by name 
 update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact -> Update a Artifact by name.
 delete(name: String, workspaceId: String = ""): Boolean -> Delete a Notebook by name.
 list(workspaceId: String = "", maxResults: Int = 1000): Array[Artifact] -> List all Notebooks in the workspace.
+getDefinition(name: String, workspaceId: String = "", format: String = ""): String -> Get the definition of a Notebook.
 updateDefinition(name: String, content: String = "", defaultLakehouse: String = "", defaultLakehouseWorkspace: String = "", workspaceId: String = "") -> Update the definition of a Notebook.
 
 Use notebookutils.notebook.help("methodName") for more info about a method.
@@ -417,6 +416,12 @@ artifact = notebookutils.notebook.create("artifact_name", "description", "conten
 
 ```python
 artifact = notebookutils.notebook.get("artifact_name", "optional_workspace_id")
+```
+
+#### Getting definition of a Notebook
+
+```python
+definition = notebookutils.notebook.getDefinition("artifact_name", "optional_workspace_id", "ipynb")
 ```
 
 #### Updating a Notebook
@@ -1017,3 +1022,4 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)
+

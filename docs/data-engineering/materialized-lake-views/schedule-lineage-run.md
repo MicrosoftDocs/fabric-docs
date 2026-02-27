@@ -1,52 +1,56 @@
 ---
 title: Schedule a Materialized Lake View Run
-description: Learn how to schedule a materialized lake view run
+description: Learn how to schedule a materialized lake view refresh run in Microsoft Fabric, including frequency options and configuration steps.
 ms.topic: how-to
-author: eric-urban
-ms.author: eur
 ms.reviewer: apsinhar
-ms.date: 06/26/2025
-# customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
+ms.date: 02/27/2026
+ai-usage: ai-assisted
+#customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
 ---
 
 # Schedule a materialized lake view run
 
-Scheduling the materialized lake view (MLV) run lets users set how often the MLV should be refreshed based on business needs and lineage execution timing.
+Scheduling a materialized lake view (MLV) run lets you control refresh cadence based on business needs and lineage timing.
 
-## Determining the schedule
+## Choose a schedule
 
-The schedule to run the MLV depends on various factors, such as:
+Choose the materialized lake view refresh schedule based on these factors:
 
-* **Data update frequency:** The frequency with which the data is updated.
-* **Query performance requirements:** Business requirement to refresh the data in defined frequent intervals.
-* **System load:** Optimizing the time to run the lineage without overloading the system
+- **Data update frequency**: How often source data changes.
+- **Query performance requirements**: How often downstream processes require refreshed data.
+- **System load**: How often lineage can run without overloading compute.
 
-## Implement the schedule
+Also keep these constraints in mind:
 
-From the **Manage materialized lake views** page, select the **Schedule** option.
+- The scheduler reflects your local time.
+- An MLV run fails if it runs longer than 24 hours.
+- MLV runs use High Concurrency sessions by default.
 
-:::image type="content" source="./media/schedule-lineage-run/schedule-run.png" alt-text="Screenshot showing the schedule button in lineage view." border="true" lightbox="./media/schedule-lineage-run/schedule-run.png":::
+## Create a schedule
 
-The schedule UI opens and is visible to the user.
+To create a schedule for a materialized lake view refresh run in Fabric:
 
-:::image type="content" source="./media/schedule-lineage-run/schedule-inputs.png" alt-text="Screenshot showing the schedule UI where user sends their inputs for scheduling." border="true" lightbox="./media/schedule-lineage-run/schedule-inputs.png":::
+1. From the **Manage materialized lake views** page, select **Schedule**.
 
-Turn **On** the **Schedule Refresh** option and select the following from the schedule UI:
+    :::image type="content" source="./media/schedule-lineage-run/schedule-run.png" alt-text="Screenshot showing the schedule button in lineage view." border="true" lightbox="./media/schedule-lineage-run/schedule-run.png":::
 
-* Repeat (By the minute/Hourly/Daily/Weekly/Monthly)
-* Every (Frequency/Date/Time/Month)
-* Start Date
-* End Date and Time
-* Time Zone
+1. In the schedule pane, for **Schedule refresh**, select the **On** radio button (instead of **Off**).
 
-Select **Apply** to set the schedule for the particular MLV run.
+1. Configure these settings:
 
-> [!NOTE]
-> * The scheduler reflects the user's local time.
-> * A materialized lake view fails if it runs beyond 24 hours.
-> * Materialized lake view runs use High Concurrency Sessions by default.
+	- **Repeat** (By the minute, Hourly, Daily, Weekly, or Monthly).
+	- **Every** (frequency, date, time, or month values).
+	- **Start date**.
+	- **End date and time**.
+	- **Time zone**.
 
-## Related articles
+1. Select **Apply**.
 
-* [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
-* [Monitor Fabric materialized lake views](./monitor-materialized-lake-views.md)
+    :::image type="content" source="./media/schedule-lineage-run/schedule-inputs.png" alt-text="Screenshot showing the schedule pane where you can schedule lineage runs." border="true" lightbox="./media/schedule-lineage-run/schedule-inputs.png":::
+
+Fabric applies the schedule to the selected MLV run.
+
+## Related content
+
+- [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
+- [Monitor Fabric materialized lake views](./monitor-materialized-lake-views.md)

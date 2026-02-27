@@ -38,7 +38,7 @@ Different consumption engines have different optimal file layouts. Understanding
 
 For optimal performance with the SQL analytics endpoint and Warehouse, use the following settings:
 
-- **Target file size**: About 400 MB per file
+- **Target file size**: Maximum 4 GB per file
 - **Row group size**: About 2 million rows per row group
 - **V-Order**: Improves read performance by 10%
 

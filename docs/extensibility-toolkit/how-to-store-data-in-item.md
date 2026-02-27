@@ -1,10 +1,8 @@
 ---
 title: Store data in an item
 description: Learn how to Store date in an item in your item within Microsoft Fabric.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

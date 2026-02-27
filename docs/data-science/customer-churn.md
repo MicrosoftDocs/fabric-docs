@@ -1,10 +1,7 @@
 ---
 title: 'Tutorial: create, evaluate, and score a churn prediction model'
 description: This tutorial describes a data science workflow with an end-to-end example of building a model to predict churn.
-ms.author: lagayhar
-author: lgayhardt
-ms.reviewer: sgilley
-reviewer: sdgilley
+ms.reviewer: lagayhar, sgilley
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 01/14/2025
@@ -626,3 +623,4 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

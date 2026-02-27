@@ -1,11 +1,8 @@
 ---
 title: Warehouse Snapshots
 description: Learn about warehouse snapshots in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: twcyril
 ms.date: 11/10/2025
-ms.service: fabric
 ms.topic: concept-article
 ms.search.form: Warehouse snapshot overview
 ---

@@ -1,8 +1,6 @@
 ---
 title: Transactions in Fabric Data Warehouse
 description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: twcyril
 ms.date: 10/17/2025
 ms.topic: how-to

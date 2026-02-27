@@ -1,12 +1,9 @@
 ---
 title: Manage Map permissions in Microsoft Fabric
 description: Learn how to grant, modify, and revoke access to map items in Microsoft Fabric Maps.
-ms.reviewer: smunk
-author: deniseatmicrosoft
-ms.author: limingchen
+ms.reviewer: smunk, limingchen
 ms.date: 02/16/2025
 ms.topic: how-to
-ms.service: fabric
 ms.subservice: rti-core
 ms.search.form: Map permissions
 ---
@@ -98,7 +95,7 @@ The **Links** tab lets you create and manage sharing links for the map item.
 
 In the **Links** tab, you can:
 
-- reate a sharing link for the map.
+- Create a sharing link for the map.
 - Control who can use the link (for example, specific people or your organization).
 - Specify the permission level granted by the link.
 - View and delete existing sharing links.

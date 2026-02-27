@@ -1,8 +1,6 @@
 ---
 title: In-memory and disk caching
 description: Learn more about fully transparent in-memory and disk caching in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fipopovi, emtehran
 ms.date: 06/11/2025
 ms.topic: concept-article

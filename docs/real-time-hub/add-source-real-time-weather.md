@@ -1,8 +1,6 @@
 ---
 title: Add a real-time weather source
 description: This article describes how to add a real-time weather source as an event source in Fabric Real-Time hub.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.date: 01/18/2026
 ---

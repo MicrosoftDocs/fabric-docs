@@ -65,7 +65,7 @@ items:
     href: load-data-lakehouse.md
   - name: Shortcut data in a lakehouse
     href: lakehouse-shortcuts.md
-  - name: Optimize streaming data ingestion
+  - name: Data streaming with Spark structured streaming
     href: lakehouse-streaming-data.md
   - name: Get streaming data into lakehouse with eventstreams 
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
@@ -269,6 +269,8 @@ items:
       href: spark-sql-connector.md
     - name: JDBC driver for Fabric Data Engineering
       href: spark-jdbc-driver.md
+    - name: ODBC driver for Fabric Data Engineering
+      href: spark-odbc-driver.md    
   - name: Intelligent cache
     href: intelligent-cache.md
   - name: What is the Livy API?
@@ -559,3 +561,11 @@ items:
         href: spark-best-practices-development-monitoring.md
       - name: Spark Basics
         href: spark-best-practices-basics.md
+- name: Troubleshooting Guide
+  items:
+  - name: Permissions and capacity errors
+    href: troubleshoot-permissions-capacity.md
+  - name: Lakehouse errors
+    href: troubleshoot-lakehouse.md
+  - name: Notebook errors
+    href: ../data-science/fabric-notebooks-troubleshooting-guide.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/breadcrumb/toc.json
