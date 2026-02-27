@@ -60,4 +60,4 @@ items:
 - name: Fabric data agent
   href: ../data-science/data-agent-toc/toc.yml
 - name: Power BI semantic model
-  href: ../data-warehouse/semantic-models.md
+  href: ../data-warehouse/semantic-model-toc/toc.yml
