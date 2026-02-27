@@ -51,7 +51,7 @@ Fabric doesn't support other authentication methods such as account keys or SQL 
 
 ### Configure conditional access
 
-To [configure conditional access in Fabric](security-conditional-access.md#configure-conditional-access-for-fabric), you need to select several Fabric related Azure services such as Power BI, Azure Data Explorer, Azure SQL Database, and Azure Storage.
+To [configure conditional access in Fabric](security-conditional-access.md), you need to select several Fabric related Azure services such as Power BI, Azure Data Explorer, Azure SQL Database, and Azure Storage.
 
 >[!NOTE]
 >Conditional access can be considered too broad for some customers as any policy is applied to Fabric and the related Azure services.
