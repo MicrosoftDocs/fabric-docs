@@ -158,7 +158,7 @@ The following table contains more information about the copy activity in Postgre
 | Name | Description | Value | Required | JSON script property |
 |---|---|---|---|---|
 | **Connection** | Your connection to the destination data store. | < your PostgreSQL connection > | Yes | connection |
-| **Table** | The name of the table to write data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name. | < table name > | Yes | typeProperties:<br> • schema <br>•table |
+| **Table** | The name of the table to write data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name. | < table name > | Yes | typeProperties:<br> • schema <br>• table |
 | **Pre-copy script** | A SQL query for the copy activity to execute before writing data into PostgreSQL in each run. You can use this property to clean up the preloaded data. | < your pre-copy script > | No | preCopyScript |
 | **Write behavior** | Defines the write behavior. | insert (default) | No | writeBehavior |
 | **Write batch size** | The number of rows to insert into the PostgreSQL table per batch. The allowed value is integer (number of rows). | < integer ><br>`50000` (default) | No | writeBatchSize |
