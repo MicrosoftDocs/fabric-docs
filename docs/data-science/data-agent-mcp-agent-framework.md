@@ -90,17 +90,17 @@ Coming soon.
 
 ## Authenticate and call the MCP server
 
-# [Python](#tab/python)
-
 The script uses `DefaultAzureCredential`, which supports local development with Azure CLI sign-in and production workloads with managed identity. Sign in with Azure CLI if you are running locally.
 
 ```bash
 az login
 ```
 
-Create a Python file named `fabric_data_agent_mcp.py` and follow the sections to build the script step by step.
+Create a file named `fabric_data_agent_mcp.py` for Python or `Program.cs` for C#, and follow the sections to build the script step by step.
 
 ## Import required libraries
+
+# [Python](#tab/python)
 
 Import the necessary packages for authentication and Agent Framework integration.
 
@@ -114,7 +114,15 @@ from agent_framework.azure import AzureOpenAIResponsesClient
 FABRIC_DATA_AGENT_SCOPE = "https://api.fabric.microsoft.com/.default"
 ```
 
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
+
 ## Load configuration from environment variables
+
+# [Python](#tab/python)
 
 Read the MCP endpoint URL and Azure OpenAI settings from environment variables.
 
@@ -124,6 +132,12 @@ async def main() -> None:
     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
     deployment_name = os.getenv("AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME")
 ```
+
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
 
 ## Authenticate with Microsoft Entra ID
 
@@ -141,6 +155,8 @@ When a token is minted for one audience, the other service rejects it with a `40
 
 In this script, you request the Fabric token directly because MCP tool registration needs explicit HTTP headers. The token is passed in the `headers` argument when calling `get_mcp_tool()`, and `AzureOpenAIResponsesClient` handles its own token acquisition internally by using the same `DefaultAzureCredential` object.
 
+# [Python](#tab/python)
+
 ```python
     credential = DefaultAzureCredential()
     # Fabric MCP endpoint requires a Fabric API token.
@@ -152,7 +168,15 @@ In this script, you request the Fabric token directly because MCP tool registrat
     }
 ```
 
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
+
 ## Create the Azure OpenAI client
+
+# [Python](#tab/python)
 
 Initialize the Azure OpenAI client with your `endpoint`, `deployment_name`, and `credential`. This client handles LLM interactions for the agent.
 
@@ -164,7 +188,15 @@ Initialize the Azure OpenAI client with your `endpoint`, `deployment_name`, and 
     )
 ```
 
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
+
 ## Register the MCP tool with the agent
+
+# [Python](#tab/python)
 
 Register the Fabric data agent MCP tool with the Azure OpenAI client by calling `get_mcp_tool()`. Pass the Fabric bearer token in the `headers` argument so the MCP endpoint receives the correct authorization. Set the approval mode to `never_require` to allow the agent to call the MCP tool automatically without user approval.
 
@@ -177,7 +209,15 @@ Register the Fabric data agent MCP tool with the Azure OpenAI client by calling 
     )
 ```
 
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
+
 ## Create an agent and run the interactive loop
+
+# [Python](#tab/python)
 
 Create an agent that uses the MCP tool to answer questions by calling `client.as_agent()`. The agent runs in an interactive loop, prompting the user for questions and displaying responses until the user presses Enter without input.
 
@@ -201,6 +241,12 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
+
 ## Run the script
 
 # [Python](#tab/python)
@@ -218,6 +264,8 @@ Coming soon.
 ---
 
 ## Complete script
+
+# [Python](#tab/python)
 
 Here's the complete script combining all the sections:
 
@@ -275,6 +323,10 @@ async def main() -> None:
 if __name__ == "__main__":
     asyncio.run(main())
 ```
+
+# [C#](#tab/csharp)
+
+Coming soon.
 
 ---
 
@@ -341,6 +393,8 @@ The example in this article uses `DefaultAzureCredential`, which supports multip
 
 ### Modify the authentication code
 
+# [Python](#tab/python)
+
 Replace the `DefaultAzureCredential` initialization in the script with `ClientSecretCredential`:
 
 ```python
@@ -357,6 +411,12 @@ credential = ClientSecretCredential(
     client_secret=client_secret
 )
 ```
+
+# [C#](#tab/csharp)
+
+Coming soon.
+
+---
 
 > [!IMPORTANT]
 > When using a service principal with delegated permissions, the application acts on behalf of a signed-in user. The user must have appropriate permissions to the Fabric workspace and data agent. Store client secrets securely using Azure Key Vault or environment variables, never in source code.
