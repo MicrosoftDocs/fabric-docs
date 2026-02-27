@@ -261,7 +261,7 @@ Here's a decoded example of the `copyjob-content.json` content:
 }
 ```
 
-The following examples show more comprehensive, real-world definitions with additional properties configured.
+The following examples show definitions with more properties configured.
 
 #### Batch copy with column mappings
 
