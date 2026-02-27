@@ -119,3 +119,11 @@ You can also delete a business event from the **Details** page for the business 
 1. Confirm the deletion on the confirmation dialog by selecting **Delete**.
 
     :::image type="content" source="./media/create-business-events/delete-confirmation.png" alt-text="Screenshot of the Delete business event confirmation dialog." lightbox="./media/create-business-events/delete-confirmation.png":::
+
+## Related content
+
+See the following end-to-end tutorials:
+
+  - [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md)
+  - [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md)
+  - [Publish business events using Eventstream and react using Activator](business-events/tutorial-business-events-event-stream-user-data-function-activator.md)
