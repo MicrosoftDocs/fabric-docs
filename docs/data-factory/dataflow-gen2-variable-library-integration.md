@@ -1,19 +1,18 @@
 ---
-title: Use Fabric variable libraries in Dataflow Gen2 (Preview)
+title: Use Fabric variable libraries in Dataflow Gen2
 description: Overview on how to use Fabric variable libraries inside of a Dataflow Gen2 with CI/CD.
 ms.reviewer: miescobar
 ms.topic: concept-article
-ms.date: 10/20/2025
+ms.date: 3/15/2026
 ms.custom: dataflows
 ---
 
-# Use Fabric variable libraries in Dataflow Gen2 (Preview)
+# Use Fabric variable libraries in Dataflow Gen2
 
 > [!NOTE]
-> This feature is currently in preview and only available for Dataflow Gen2 with CI/CD.
 > For more information on how to leverage this capability in continuous integration / continuous deployment (CI/CD) scenarios, be sure to read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Variable references in a Dataflow](dataflow-gen2-variable-references.md).
 
-[Fabric variable libraries](/fabric/cicd/variable-library/variable-library-overview) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2 (Preview), you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
+[Fabric variable libraries](/fabric/cicd/variable-library/variable-library-overview) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2, you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
 
 ## Prerequisites
 
@@ -115,4 +114,3 @@ The following list outlines important constraints and behaviors to keep in mind 
 - **Variable limit**: Dataflows can only retrieve a maximum of 50 variables.
 
 - **SPN support**: Dataflows can only successfully refresh if the refresh is not using an SPN for authentication.
-

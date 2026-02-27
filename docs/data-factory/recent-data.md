@@ -104,7 +104,7 @@ A confirmation appears later and shows the query name used to save it as a favor
 ![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites](media/recent-data/query-saved-notification.png)
 
 > [!NOTE]
-> The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains a Dataflow Gen2 item that stores your saved favorite queries.
+> The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains Dataflow Gen2 items that store your saved favorite queries.
 
 ### Import a favorite query
 
@@ -113,6 +113,9 @@ To import a favorite query, navigate to the Recents module in the modern Get Dat
 ![Screenshot of the favorite queries dialog within the Dataflow Gen2 modern get data experience](media/recent-data/favorite-queries.png)
 
 In this view, you can see all your favorite queries. Select any query to import the script as-is.
+
+>[!NOTE]
+>The list of queries in this dialog only displays the latest 50 queries used. This is a known limitation that the product group is planning to address.
 
 ## Related content
 
