@@ -7,7 +7,7 @@ ms.date: 02/27/2026
 
 # Ingestion from Eventstreams
 
-This article explains how Activator ingests data from Eventstreams. Understanding this is useful for understanding how rules created from Eventstreams behave. For step-by-step instructions on creating a rule from an Eventstream, see [Create a rule from an Eventstream](../../event-streams/add-destination-activator.md).
+This article explains how Activator ingests data from Eventstreams. Understanding this is useful for understanding how rules created from Eventstreams behave. For step-by-step instructions on creating a rule from an Eventstream, see [Add a Fabric activator destination to an eventstream](../../event-streams/add-destination-activator.md).
 
 ## How it works
 

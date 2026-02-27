@@ -7,7 +7,7 @@ ms.date: 02/27/2026
 
 # Ingestion from Real-Time Dashboards
 
-This article explains how Activator ingests data from Real-Time Dashboards. Understanding this is useful for understanding how rules created from Real-Time Dashboard tiles behave. For step-by-step instructions on creating a rule from a dashboard tile, see [Create a rule from a Real-Time Dashboard](../activator-get-data-real-time-dashboard.md).
+This article explains how Activator ingests data from Real-Time Dashboards. Understanding this is useful for understanding how rules created from Real-Time Dashboard tiles behave. For step-by-step instructions on creating a rule from a dashboard tile, see [Create Activator alerts for a Real-Time Dashboard](../activator-get-data-real-time-dashboard.md).
 
 ## How it works
 
