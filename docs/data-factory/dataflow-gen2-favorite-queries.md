@@ -1,6 +1,7 @@
 ---
 title: Favorite queries in Dataflow Gen2
 description: 
+ai-usage: ai-assisted
 ms.reviewer: miescobar
 ms.topic: conceptual
 ms.date: 03/15/2026
@@ -10,28 +11,30 @@ ms.custom: dataflows
 # Favorite queries
 
 > [!NOTE]
-> Favorite queries is currently in preview.
+>The Favorite queries feature is currently in preview.
 
-Favorite queries is a feature that accelerates the reusability of queries within your Dataflow Gen2 workflow. It brings two core experiences:
+Favorite queries is a feature that helps you reuse queries in your Dataflow Gen2 workflow. It includes two core experiences:
 
-- **Save**: that helps you save your favorite queries from any Dataflows that you are a part of.
-- **Import**: to import a copy of any favorite queries into your current Dataflow and accelerate your authoring process.
+- **Save** helps you save favorite queries from any dataflow you're part of.
+- **Import** copies favorite queries into your current dataflow to speed up authoring.
 
 ## Save a favorite query
 
-To save a query as favorite, right click the query from within the queries pane or within the diagram view.
+To save a query as a favorite, right-click the query in the Queries pane and select the option that reads **Save to Favorites**.
 
 <image>
 
-A notification at the top right that reads **Saving query to favorites** is displayed to confirm your request.
+A notification in the upper-right corner that reads **Saving query to favorites** confirms your request.
 
 <image>
 
-A confirmation that the query was saved successfully is later shown with the name used to saved the query as favorite.
+A confirmation appears later and shows the query name used to save it as a favorite.
 
 <image>
 
->[!NOTE]
->When saving a favorite query for the first time, a new folder with the name *Favorites* is created within your personal workspace (also known as *My Workspace*). This folder contains a Dataflow Gen2 that holds all your saved favorite queries.
+> [!NOTE]
+> The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains a Dataflow Gen2 item that stores your saved favorite queries.
 
-## Import a favorte query
+## Import a favorite query
+
+To import a favorite query, navigate to the [recents module in the modern Get Data experience](recent-data.md)
