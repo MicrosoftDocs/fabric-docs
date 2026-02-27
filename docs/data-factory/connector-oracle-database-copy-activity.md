@@ -236,6 +236,7 @@ When both the source and destination are Oracle, the destination table is automa
 - NUMBER(p,s)
 - TIMESTAMP
 - TIMESTAMP WITH LOCAL TIME ZONE
+- TIMESTAMP WITH TIME ZONE
 
 ## Parallel copy from Oracle database
 
