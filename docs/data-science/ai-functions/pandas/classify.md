@@ -69,7 +69,7 @@ The `ai.classify` function supports file-based multimodal input. You can classif
 # This code uses AI. Always review output for mistakes.
 
 file_path_series = aifunc.list_file_paths("/lakehouse/default/Files")
-custom_df = pd.DataFrame({"file_path": file_path_series}).reset_index(drop=True)
+custom_df = pd.DataFrame({"file_path": file_path_series})
 
 custom_df["highest_degree"] = custom_df["file_path"].ai.classify(
     "Master", "PhD", "Bachelor", "Other",
