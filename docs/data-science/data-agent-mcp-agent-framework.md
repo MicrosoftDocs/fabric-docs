@@ -42,20 +42,6 @@ Use this guide to call a Fabric data agent MCP server using the [Microsoft Agent
 
 1. Activate the virtual environment.
 
-   # [Windows](#tab/windows)
-
-   ```cmd
-   .venv\Scripts\activate
-   ```
-
-   # [macOS](#tab/macos)
-
-   ```bash
-   source .venv/bin/activate
-   ```
-
-   # [Linux](#tab/linux)
-
    ```bash
    source .venv/bin/activate
    ```
@@ -74,20 +60,6 @@ Install only the packages required for Azure OpenAI and MCP integration. Use `ag
 
 The `azure-identity` package handles authentication to Azure services using your Microsoft Entra ID credentials, enabling secure connections to Azure OpenAI and the Fabric data agent MCP server.
 
-# [Windows](#tab/windows)
-
-```cmd
-pip install agent-framework-azure-ai azure-identity
-```
-
-# [macOS](#tab/macos)
-
-```bash
-pip install agent-framework-azure-ai azure-identity
-```
-
-# [Linux](#tab/linux)
-
 ```bash
 pip install agent-framework-azure-ai azure-identity
 ```
@@ -103,24 +75,6 @@ Coming soon.
 # [Python](#tab/python)
 
 Set environment variables with your MCP endpoint and Azure OpenAI settings.
-
-# [Windows](#tab/windows)
-
-```cmd
-set FABRIC_DATA_AGENT_MCP_URL=<your-fabric-data-agent-mcp-url>
-set AZURE_OPENAI_ENDPOINT=<your-azure-openai-endpoint>
-set AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME=<your-deployment-name>
-```
-
-# [macOS](#tab/macos)
-
-```bash
-export FABRIC_DATA_AGENT_MCP_URL="<your-fabric-data-agent-mcp-url>"
-export AZURE_OPENAI_ENDPOINT="<your-azure-openai-endpoint>"
-export AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME="<your-deployment-name>"
-```
-
-# [Linux](#tab/linux)
 
 ```bash
 export FABRIC_DATA_AGENT_MCP_URL="<your-fabric-data-agent-mcp-url>"
@@ -249,21 +203,9 @@ if __name__ == "__main__":
 
 ## Run the script
 
+# [Python](#tab/python)
+
 After you create the script, run it with Python.
-
-# [Windows](#tab/windows)
-
-```cmd
-python fabric_data_agent_mcp.py
-```
-
-# [macOS](#tab/macos)
-
-```bash
-python fabric_data_agent_mcp.py
-```
-
-# [Linux](#tab/linux)
 
 ```bash
 python fabric_data_agent_mcp.py
