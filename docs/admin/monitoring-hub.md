@@ -56,21 +56,17 @@ To open the monitor hub in Fabric, select **Monitor** from the navigation pane. 
 
 ## Find details and history
 
-### Perform actions on activities
-
 If you have the right permissions for a Fabric item, you can perform certain actions directly from the monitor hub. The available actions depend on the item type.
 
 ### View details
 
-To view the details of an activity, point to the activity name and select the **View details** symbol (**i**). The details panel opens and displays information about the activity, such as its status, start time, and duration.
+The details panel provides information about an activity, such as its status, start time, and duration. To view the details of an activity, point to the activity name and select the **View details** symbol (**i**).
 
 ### View activity history
 
-To view the history of an activity, point to the activity name, select **More options** (**...**), and then select **Historical runs**. The table displays up to 30 days of historical information for that activity.
+The monitor hub shows up to 100 job history records from the past 30 days. As a result, you might not see the complete list of activity for the full 30-day period, especially for high-frequency jobs. However, you can see the full 30-day history for an individual activity by using the **Historical runs** option.
 
-To return to the main display, select **Back to main view**.
-
-
+To view the history of an activity, point to the activity name, select **More options** (**...**), and then select **Historical runs**. The table displays up to 30 days of historical information for that activity. To return to the main display, select **Back to main view**.
 
 ## Search and filter activities
 
