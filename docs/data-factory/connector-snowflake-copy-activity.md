@@ -65,7 +65,7 @@ If your destination data store and format meet the criteria described in this se
   - When you specify **Storage integration** in the source:
     The destination data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
 
-    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage using any supported authentication type, except Organizational account authentication.
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage using any supported authentication type, except the organizational account authentication.
 
     2. Grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the destination Azure Blob Storage **Access Control (IAM)**.
 
@@ -136,7 +136,7 @@ If your source data store and format meet the criteria described in this section
   
   The source data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
 
-    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage using any supported authentication type, except Organizational account authentication.
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage using any supported authentication type, except the organizational account authentication.
 
     2. Grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the source Azure Blob Storage **Access Control (IAM)**.
 
