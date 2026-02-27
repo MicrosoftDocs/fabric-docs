@@ -19,7 +19,7 @@ Dataflow Gen2 is the newer, more powerful version that works alongside the origi
 
 With dataflows, you can:
 
-- **Connect to your data**: Pull information from databases, files, web services, and more. With Dataflow Gen2, you can also quickly reconnect to recently used sources via Recent data, helping you get back to your work faster.
+- **Connect to your data**: Pull information from databases, files, web services, and more. You can also reconnect to recently used sources.
 - **Transform your data**: Clean, filter, combine, and reshape your data using a visual interface.
 - **Load data anywhere**: Send your transformed data to databases, data warehouses, or cloud storage.
 - **Automate the process**: Set up schedules so your data stays fresh and up-to-date.
