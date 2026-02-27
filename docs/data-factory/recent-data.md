@@ -91,7 +91,7 @@ Favorite queries is a feature that helps you reuse queries in your Dataflow Gen2
 
 ### Save a favorite query
 
-To save a query as a favorite, right-click the query in the Queries pane and select the option that reads **Save to Favorites**.
+To save a query as a favorite, right-click the query in the Queries pane, and then select **Save to Favorites**.
 
 ![Screenshot of the contextual menu when right-clicking a query that shows the new Save to favorites entry](media/recent-data/query-save-to-favorites.png)
 
@@ -103,19 +103,24 @@ A confirmation appears later and shows the query name used to save it as a favor
 
 ![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites](media/recent-data/query-saved-notification.png)
 
-> [!NOTE]
-> The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains Dataflow Gen2 items that store your saved favorite queries.
+Important behaviors for this functionality include:
+
+- **Recents list**: Any query saved as a favorite is also added to the recents list.
+- **Saved contents**: A copy of your query is saved as-is with only its M code. Information about query attributes, credentials, or associated data destination metadata isn't stored.
+- **Deduplication**: If you try to save a query with a name that already exists in your favorites, the feature appends a numeric value to create a unique name.
+- **List order**: The list is sorted by last-used timestamp, from newest to oldest.
+- **Storage**: The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains Dataflow Gen2 items that store your saved favorite queries.
 
 ### Import a favorite query
 
-To import a favorite query, navigate to the Recents module in the modern Get Data experience, and then locate the filter pill labeled **Favorites**.
+To import a favorite query, go to the **Recents** module in the modern **Get data** experience, and then select the filter pill labeled **Favorites**.
 
 ![Screenshot of the favorite queries dialog within the Dataflow Gen2 modern get data experience](media/recent-data/favorite-queries.png)
 
 In this view, you can see all your favorite queries. Select any query to import the script as-is.
 
->[!NOTE]
->The list of queries in this dialog only displays the latest 50 queries used. This is a known limitation that the product group is planning to address.
+> [!NOTE]
+> The list in this dialog shows only the latest 50 queries. This limit is a known issue.
 
 ## Related content
 
