@@ -53,12 +53,6 @@ Dataflow Gen2 feels familiar if you've used Power Query before. We have streamli
 
 :::image type="content" source="./media/dataflows-gen2-overview/authoring-experience.png" alt-text="Screenshot of the overall authoring experience in dataflows." lightbox="./media/dataflows-gen2-overview/authoring-experience.png":::
 
-#### Find and reuse recent data sources
-
-Dataflow Gen2 includes a **Recent data** module that records items you've previously used—such as tables, files, folders, databases, and sheets—and lets you load them directly into the Dataflow Gen2 editing canvas. You can access Recent data from the Power Query ribbon or from the Modern Get Data experience, so you can quickly get back to the data you need without reconfiguring your connections.
-
-From any Recent data entry, you can also select **Browse location** to explore and select additional related items within the same folder or database, making it easy to work with multiple resources in the same location.
-
 ### AutoSave keeps your work safe
 
 Dataflow Gen2 automatically saves your changes as you work. You can step away from your computer, close your browser, or lose internet connection without worrying about losing your progress. When you come back, everything's right where you left it.
@@ -103,6 +97,12 @@ To learn more about connecting dataflows with pipelines, see [dataflow activitie
 ### High-performance computing
 
 Dataflow Gen2 uses advanced compute Fabric SQL Compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+
+### Find and reuse recent data sources
+
+Dataflow Gen2 includes a **Recent data** module that records items you've previously used—such as tables, files, folders, databases, and sheets—and lets you load them directly into the Dataflow Gen2 editing canvas. You can access Recent data from the Power Query ribbon or from the Modern Get Data experience, so you can quickly get back to the data you need without reconfiguring your connections.
+
+From any Recent data entry, you can also select **Browse location** to explore and select additional related items within the same folder or database, making it easy to work with multiple resources in the same location.
 
 ## Copilot for Dataflow Gen2
 
