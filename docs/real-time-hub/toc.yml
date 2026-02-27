@@ -117,6 +117,12 @@ items:
       href: explore-fabric-onelake-events.md
     - name: Explore Fabric Job events
       href: explore-fabric-job-events.md
+  - name: Explore business events
+    items:
+    - name: Business events page
+      href: business-events-page.md    
+    - name: Business event details page
+      href: business-event-details-page.md
 - name: Consume data streams and events
   items:
   - name: Consume data streams
