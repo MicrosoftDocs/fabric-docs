@@ -46,7 +46,7 @@ Granular Compare can be opened from multiple locations. The following table summ
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
 
-## Example - Review changes to a specific item
+## Example - Review changes to a all or specific items
 The following steps show how to review changes for a specific item.
 
 1. At the top of your workspace, select **Source control**.
@@ -116,7 +116,9 @@ The following steps show how to review changes to system files. In this example,
  5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
 ## Conflict resolution
+Granular compare mitigates conflicts by making differences explicit, scoped, and reviewable before a Git operation is executed, reducing accidental overwrites and uncertainty when multiple users work in the same workspace.
 
+ :::image type="content" source="media/granular-compare/compare-14.png" alt-text="Conceputal image simulating a conflict." lightbox="media/granular-compare/compare-14.png":::
 
 ## Example - Items in conflict
 If a conflict is detected between items, the granular compare feature will be disabled until this conflict is resolved.
