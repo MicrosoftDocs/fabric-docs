@@ -1,17 +1,18 @@
 ---
-title: PySpark Reference for Materialized Lake Views
+title: PySpark Reference for Materialized Lake Views (Preview)
 description: Learn about the PySpark semantics for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
-author: eric-urban
-ms.author: eur
 ms.reviewer: abhishjain
-ms.date: 02/06/2026
+ms.date: 02/26/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
-# PySpark reference for materialized lake views
+# PySpark reference for materialized lake views (Preview)
 
 This article is for data engineers who need to create materialized lake views using PySpark instead of Spark SQL. Use PySpark when your transformations require complex logic, reusable functions, external Python libraries, or custom UDFs that are difficult to express in SQL.
+
+> [!NOTE]
+> PySpark-based materialized lake views are currently in preview and available only in the following Fabric regions: Canada East, France Central, Indonesia Central, Japan East, Japan West, Korea Central, North Central US, Poland Central, UAE North, UK South, and UK West.
 
 ## Create a materialized lake view
 
@@ -89,16 +90,12 @@ def customer_enriched():
     return enriched_df
 ```
 
-> [!IMPORTANT]
-> To create the materialized lake view, you need to execute the command once in the notebook and schedule the lineage for subsequent refresh.
-
-> [!NOTE]
-> This feature is currently available in UK South, North Central US, Poland Central, UAE North, UK West, Korea Central, Indonesia Central, Japan West, Japan East, France Central, Canada East regions.
+To create a PySpark-based materialized lake view, run the notebook once to register the definition, and then use lineage scheduling for subsequent refreshes.
 
 ## Notebook organization and refresh behavior for PySpark materialized lake views
 
 > [!IMPORTANT]
-> PySpark materialized lake view refresh requires a notebook, unlike Spark SQL. During the refresh, Fabric automatically determines the notebook associated with the PySpark MLV and executes the cells in the notebook required to refresh.
+> PySpark materialized lake view refresh requires a notebook, unlike Spark SQL. During refresh, Fabric determines the notebook associated with the PySpark materialized lake view and executes the cells required to refresh it.
 
 
 ### Best practices for defining PySpark-based materialized lake views
@@ -156,7 +153,7 @@ def customer_silver():
 
 **Cell 3: Another materialized lake view creation**
 
-Define additional materialized lake views in separate cells within the same notebook.
+Define more materialized lake views in separate cells within the same notebook.
 
 ```python
 import fmlv
@@ -182,7 +179,7 @@ PySpark is the better choice when you need:
 ### Trade-offs when using PySpark
 
 - **Incremental refresh strategy in Optimal refresh**: PySpark-based materialized lake views don't support Incremental refresh strategy in optimal refresh; all refreshes either default to a full refresh or no refresh, depending on the configuration. This means that you might not be able to take advantage of the performance benefits of incremental refresh for PySpark materialized lake views. 
-- **Flexibility in refresh options**: You can only refresh PySpark materialized lake views through the lineage schedule, which may not provide the same level of flexibility as Spark SQL-based views that can be refreshed on-demand via notebook.
+- **Flexibility in refresh options**: You can only refresh PySpark materialized lake views through the lineage schedule, which might not provide the same level of flexibility as Spark SQL-based views that can be refreshed on-demand via notebook.
 
 ## Decision flowchart
 
@@ -202,7 +199,7 @@ Use this flowchart to decide which approach to use:
             │  Use Spark SQL│            │ Does transformation logic │
             └───────────────┘            │ requires - (UDFs, external|
                                          |                libs)      │
-                                         └────────────┬────────────┘
+                                         └────────────┬──────────────┘
                                                       │
                                          ┌────────────┴────────────┐
                                          │                         │
