@@ -2,8 +2,10 @@
 title: Consume a Fabric data agent MCP server with Microsoft Agent Framework
 description: Learn how to authenticate with Microsoft Entra ID and call a Fabric data agent MCP server using Microsoft Agent Framework.
 author: jordanbean-msft
-ms.date: 2026-02-27
+ms.author: jordanbean
+ms.date: 02/27/2026
 ms.topic: how-to
+ai-usage: ai-assisted
 keywords:
   - microsoft fabric
   - data agent
@@ -14,7 +16,7 @@ estimated_reading_time: 10
 
 # Consume a Fabric data agent with the Agent Framework SDK (preview)
 
-Use this guide to call a Fabric data agent MCP server by using [Microsoft Agent Framework SDK](https://learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-python). You authenticate with Microsoft Entra ID, connect to the MCP endpoint and invoke a tool exposed by the data agent.
+Use this guide to call a Fabric data agent MCP server using the [Microsoft Agent Framework SDK](/agent-framework/overview/?pivots=programming-language-python). You authenticate with Microsoft Entra ID, connect to the MCP endpoint, and invoke a tool exposed by the data agent.
 
 > [!NOTE]
 > Fabric data agent MCP support is in preview.
@@ -28,7 +30,7 @@ Use this guide to call a Fabric data agent MCP server by using [Microsoft Agent 
   * **Python**: Python 3.10 or later
   * **C#**: .NET 8.0 or later (coming soon)
 
-## Set up your environment in VS Code
+## Set up your environment
 
 # [Python](#tab/python)
 
@@ -68,24 +70,26 @@ Coming soon.
 
 # [Python](#tab/python)
 
-Install only the packages required for the MCP call:
+Install only the packages required for Azure OpenAI and MCP integration. Use `agent-framework-azure-ai` instead of `agent-framework` to avoid installing unnecessary optional integrations.
+
+The `azure-identity` package handles authentication to Azure services using your Microsoft Entra ID credentials, enabling secure connections to Azure OpenAI and the Fabric data agent MCP server.
 
 # [Windows](#tab/windows)
 
 ```cmd
-pip install agent-framework azure-identity httpx
+pip install agent-framework-azure-ai azure-identity
 ```
 
 # [macOS](#tab/macos)
 
 ```bash
-pip install agent-framework azure-identity httpx
+pip install agent-framework-azure-ai azure-identity
 ```
 
 # [Linux](#tab/linux)
 
 ```bash
-pip install agent-framework azure-identity httpx
+pip install agent-framework-azure-ai azure-identity
 ```
 
 # [C#](#tab/csharp)
@@ -104,7 +108,6 @@ Set environment variables with your MCP endpoint and Azure OpenAI settings.
 
 ```cmd
 set FABRIC_DATA_AGENT_MCP_URL=<your-fabric-data-agent-mcp-url>
-set FABRIC_DATA_AGENT_SCOPE=https://api.fabric.microsoft.com/.default
 set AZURE_OPENAI_ENDPOINT=<your-azure-openai-endpoint>
 set AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME=<your-deployment-name>
 ```
@@ -113,16 +116,14 @@ set AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME=<your-deployment-name>
 
 ```bash
 export FABRIC_DATA_AGENT_MCP_URL="<your-fabric-data-agent-mcp-url>"
-export FABRIC_DATA_AGENT_SCOPE="https://api.fabric.microsoft.com/.default"
 export AZURE_OPENAI_ENDPOINT="<your-azure-openai-endpoint>"
-export AZURE_OPENAI_DEPLOYMENT_ID="<your-deployment-id>"
+export AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME="<your-deployment-name>"
 ```
 
 # [Linux](#tab/linux)
 
 ```bash
 export FABRIC_DATA_AGENT_MCP_URL="<your-fabric-data-agent-mcp-url>"
-export FABRIC_DATA_AGENT_SCOPE="https://api.fabric.microsoft.com/.default"
 export AZURE_OPENAI_ENDPOINT="<your-azure-openai-endpoint>"
 export AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME="<your-deployment-name>"
 ```
@@ -132,36 +133,6 @@ export AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME="<your-deployment-name>"
 Coming soon.
 
 ---
-
-## Configure Entra ID app registration for service principal authentication
-
-If you authenticate through a service principal to act as the signed-in user, configure your Entra ID app registration with the appropriate API permissions.
-
-1. In the Azure portal, navigate to **Microsoft Entra ID** > **App registrations**.
-
-1. Select your app registration or create a new one.
-
-1. Select **API permissions** > **Add a permission**.
-
-1. Select **APIs my organization uses** and search for **Power BI Service**.
-
-1. Select **Delegated permissions** and add the following permissions:
-   * `Workspace.ReadWrite.All` - Required to access Fabric workspaces and data agents
-   * `Item.ReadWrite.All` - Required to read and write Fabric items
-   * `Dataset.ReadWrite.All` - Required to access datasets in Fabric
-   * `DataAgent.Read.All` - Required to read data agent configurations
-   * `DataAgent.Execute.All` - Required to execute data agent operations
-
-1. Select **Add permissions**.
-
-1. If your organization requires admin consent, select **Grant admin consent for [Your Organization]**.
-
-1. Create a client secret under **Certificates & secrets** > **Client secrets** > **New client secret**.
-
-1. Note the **Application (client) ID**, **Directory (tenant) ID**, and **Client secret value** for use in your application.
-
-> [!IMPORTANT]
-> When using a service principal with delegated permissions, the application acts on behalf of a signed-in user. The user must have appropriate permissions to the Fabric workspace and data agent. The service principal requires both the API permissions listed above and a valid user context.
 
 ## Authenticate and call the MCP server
 
@@ -185,37 +156,51 @@ import os
 
 from azure.identity import DefaultAzureCredential
 from agent_framework.azure import AzureOpenAIResponsesClient
+
+FABRIC_DATA_AGENT_SCOPE = "https://api.fabric.microsoft.com/.default"
 ```
 
 ## Load configuration from environment variables
 
-Read the MCP endpoint URL, authentication scope and Azure OpenAI settings from environment variables.
+Read the MCP endpoint URL and Azure OpenAI settings from environment variables.
 
 ```python
 async def main() -> None:
     mcp_url = os.getenv("FABRIC_DATA_AGENT_MCP_URL")
-    scope = os.getenv("FABRIC_DATA_AGENT_SCOPE")
     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
     deployment_name = os.getenv("AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME")
 ```
 
 ## Authenticate with Microsoft Entra ID
 
-Use `DefaultAzureCredential` to obtain an access token for authenticating with the Fabric data agent MCP server. The credential automatically uses Azure CLI credentials for local development or managed identity in production.
+Use `DefaultAzureCredential` as the shared authentication mechanism for both services in this script:
+
+* The script explicitly requests a Fabric token (`https://api.fabric.microsoft.com/.default`) and sends it as a bearer token in MCP HTTP headers.
+* The same credential instance is also passed to `AzureOpenAIResponsesClient`, which requests Azure OpenAI tokens as needed.
+
+This pattern is required because each downstream API validates a different token audience (`aud`) claim:
+
+* Fabric data agent MCP endpoint expects a token issued for the Fabric resource (`aud = https://api.fabric.microsoft.com`).
+* Azure OpenAI expects a token issued for the Cognitive Services resource (`aud = https://cognitiveservices.azure.com`).
+
+When a token is minted for one audience, the other service rejects it with a `401 Unauthorized` error because the `aud` claim doesn't match its expected resource. In other words, a Fabric token can call Fabric MCP, but not Azure OpenAI, and an Azure OpenAI token can call Azure OpenAI, but not Fabric MCP.
+
+In this script, you request the Fabric token directly because MCP tool registration needs explicit HTTP headers. The token is passed in the `headers` argument when calling `get_mcp_tool()`, and `AzureOpenAIResponsesClient` handles its own token acquisition internally by using the same `DefaultAzureCredential` object.
 
 ```python
     credential = DefaultAzureCredential()
-    access_token = credential.get_token(scope).token
+    # Fabric MCP endpoint requires a Fabric API token.
+    fabric_access_token = credential.get_token(FABRIC_DATA_AGENT_SCOPE).token
 
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorization": f"Bearer {fabric_access_token}",
         "Content-Type": "application/json",
     }
 ```
 
 ## Create the Azure OpenAI client
 
-Initialize the Azure OpenAI client with your endpoint, deployment name and credentials. This client handles LLM interactions for the agent.
+Initialize the Azure OpenAI client with your `endpoint`, `deployment_name`, and `credential`. This client handles LLM interactions for the agent.
 
 ```python
     client = AzureOpenAIResponsesClient(
@@ -227,7 +212,7 @@ Initialize the Azure OpenAI client with your endpoint, deployment name and crede
 
 ## Register the MCP tool with the agent
 
-Register the Fabric data agent MCP tool with the Azure OpenAI client. Set the approval mode to `never_require` to allow the agent to call the MCP tool automatically without user approval.
+Register the Fabric data agent MCP tool with the Azure OpenAI client by calling `get_mcp_tool()`. Pass the Fabric bearer token in the `headers` argument so the MCP endpoint receives the correct authorization. Set the approval mode to `never_require` to allow the agent to call the MCP tool automatically without user approval.
 
 ```python
     mcp_tool = client.get_mcp_tool(
@@ -240,7 +225,7 @@ Register the Fabric data agent MCP tool with the Azure OpenAI client. Set the ap
 
 ## Create an agent and run the interactive loop
 
-Create an agent that uses the MCP tool to answer questions. The agent runs in an interactive loop, prompting the user for questions and displaying responses until the user presses Enter without input.
+Create an agent that uses the MCP tool to answer questions by calling `client.as_agent()`. The agent runs in an interactive loop, prompting the user for questions and displaying responses until the user presses Enter without input.
 
 ```python
     agent = client.as_agent(
@@ -253,8 +238,9 @@ Create an agent that uses the MCP tool to answer questions. The agent runs in an
         user_question = input("Question (press Enter to quit): ").strip()
         if not user_question:
             break
+        print("Running agent...")
         result = await agent.run(user_question)
-        print(result.text)
+        print(f"Answer: {result.text}")
 
 
 if __name__ == "__main__":
@@ -300,18 +286,19 @@ import os
 from azure.identity import DefaultAzureCredential
 from agent_framework.azure import AzureOpenAIResponsesClient
 
+FABRIC_DATA_AGENT_SCOPE = "https://api.fabric.microsoft.com/.default"
 
 async def main() -> None:
     mcp_url = os.getenv("FABRIC_DATA_AGENT_MCP_URL")
-    scope = os.getenv("FABRIC_DATA_AGENT_SCOPE")
     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
     deployment_name = os.getenv("AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME")
 
     credential = DefaultAzureCredential()
-    access_token = credential.get_token(scope).token
+    # Fabric MCP endpoint requires a Fabric API token.
+    fabric_access_token = credential.get_token(FABRIC_DATA_AGENT_SCOPE).token
 
     headers = {
-        "Authorization": f"Bearer {access_token}",
+        "Authorization": f"Bearer {fabric_access_token}",
         "Content-Type": "application/json",
     }
 
@@ -338,8 +325,9 @@ async def main() -> None:
         user_question = input("Question (press Enter to quit): ").strip()
         if not user_question:
             break
+        print("Running agent...")
         result = await agent.run(user_question)
-        print(result.text)
+        print(f"Answer: {result.text}")
 
 
 if __name__ == "__main__":
@@ -348,9 +336,92 @@ if __name__ == "__main__":
 
 ---
 
+## Authentication flow
+
+The following diagram shows how authentication and tool invocation work when using the Agent Framework with a Fabric data agent MCP server:
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Script
+    participant AzureIdentity as Azure Identity<br/>(DefaultAzureCredential)
+    participant FabricMCP as Fabric Data Agent<br/>MCP Server
+    participant AzureOpenAI as Azure OpenAI
+
+    User->>Script: Run script
+    Script->>AzureIdentity: Request Fabric token<br/>(scope: api.fabric.microsoft.com)
+    AzureIdentity->>Script: Return Fabric access token<br/>(aud: api.fabric.microsoft.com)
+    Script->>AzureOpenAI: Create client with<br/>DefaultAzureCredential
+    Script->>Script: Register MCP tool with<br/>Fabric bearer token in headers
+    Script->>Script: Create agent with MCP tool
+    User->>Script: Ask question
+    Script->>AzureOpenAI: Send user question
+    AzureIdentity->>AzureOpenAI: Provide Azure OpenAI token<br/>(aud: cognitiveservices.azure.com)
+    AzureOpenAI->>Script: Determine tool call needed
+    Script->>FabricMCP: Call MCP tool with<br/>Fabric bearer token
+    FabricMCP->>Script: Return data
+    Script->>AzureOpenAI: Send tool result
+    AzureOpenAI->>Script: Generate response
+    Script->>User: Display answer
+```
+
+## Alternative: Service principal authentication
+
+The example in this article uses `DefaultAzureCredential`, which supports multiple authentication methods including Azure CLI for local development and managed identity for production. If you need to authenticate using a service principal with a client secret instead, configure your Microsoft Entra ID app registration and modify the authentication code.
+
+> [!NOTE]
+> This is an alternative authentication approach. The main example earlier in this article uses `DefaultAzureCredential`, which is recommended for most scenarios.
+
+### Configure Entra ID app registration
+
+1. In the Azure portal, navigate to **Microsoft Entra ID** > **App registrations**.
+
+1. Select your app registration or create a new one.
+
+1. Select **API permissions** > **Add a permission**.
+
+1. Select **APIs my organization uses** and search for **Power BI Service**.
+
+1. Select **Delegated permissions** and add the following permissions:
+   * `Workspace.ReadWrite.All` - Required to access Fabric workspaces and data agents
+   * `Item.ReadWrite.All` - Required to read and write Fabric items
+   * `Dataset.ReadWrite.All` - Required to access datasets in Fabric
+   * `DataAgent.Read.All` - Required to read data agent configurations
+   * `DataAgent.Execute.All` - Required to execute data agent operations
+
+1. Select **Add permissions**.
+
+1. If your organization requires admin consent, select **Grant admin consent for [Your Organization]**.
+
+1. Create a client secret under **Certificates & secrets** > **Client secrets** > **New client secret**.
+
+1. Note the **Application (client) ID**, **Directory (tenant) ID**, and **Client secret value** for use in your application.
+
+### Modify the authentication code
+
+Replace the `DefaultAzureCredential` initialization in the script with `ClientSecretCredential`:
+
+```python
+from azure.identity import ClientSecretCredential
+
+# Replace the placeholder values with your app registration details
+tenant_id = "<your-tenant-id>"
+client_id = "<your-client-id>"
+client_secret = "<your-client-secret>"
+
+credential = ClientSecretCredential(
+    tenant_id=tenant_id,
+    client_id=client_id,
+    client_secret=client_secret
+)
+```
+
+> [!IMPORTANT]
+> When using a service principal with delegated permissions, the application acts on behalf of a signed-in user. The user must have appropriate permissions to the Fabric workspace and data agent. Store client secrets securely using Azure Key Vault or environment variables, never in source code.
+
 ## Related content
 
-* [Using Hosted MCP tools with Agent Framework](https://learn.microsoft.com/en-us/agent-framework/agents/tools/hosted-mcp-tools)
-* [Fabric data agent concepts](https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent)
-* [Fabric data agent SDK](https://learn.microsoft.com/en-us/fabric/data-science/fabric-data-agent-sdk)
-* [Data agent end-to-end tutorial](https://learn.microsoft.com/en-us/fabric/data-science/data-agent-end-to-end-tutorial)
+* [Using Hosted MCP tools with Agent Framework](/agent-framework/agents/tools/hosted-mcp-tools)
+* [Fabric data agent concepts](concept-data-agent.md)
+* [Fabric data agent SDK](fabric-data-agent-sdk.md)
+* [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
