@@ -19,7 +19,7 @@ Dataflow Gen2 is the newer, more powerful version that works alongside the origi
 
 With dataflows, you can:
 
-- **Connect to your data**: Pull information from databases, files, web services, and more.
+- **Connect to your data**: Pull information from databases, files, web services, and more. With Dataflow Gen2, you can also quickly reconnect to recently used sources via Recent data, helping you get back to your work faster.
 - **Transform your data**: Clean, filter, combine, and reshape your data using a visual interface.
 - **Load data anywhere**: Send your transformed data to databases, data warehouses, or cloud storage.
 - **Automate the process**: Set up schedules so your data stays fresh and up-to-date.
@@ -41,6 +41,7 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
 | AI-powered insights | ✓ | ✓ |
+| Recent data shortcuts to previously used sources | ✓ |  |
 
 ## Upgrades to Dataflow Gen2
 
@@ -51,6 +52,12 @@ In the next sections are some of the key improvements in Dataflow Gen2 compared 
 Dataflow Gen2 feels familiar if you've used Power Query before. We have streamlined the process to get you up and running faster. You'll be guided step-by-step when getting data into your dataflow, and we've reduced the number of steps needed to create your dataflows.
 
 :::image type="content" source="./media/dataflows-gen2-overview/authoring-experience.png" alt-text="Screenshot of the overall authoring experience in dataflows." lightbox="./media/dataflows-gen2-overview/authoring-experience.png":::
+
+#### Find and reuse recent data sources
+
+Dataflow Gen2 includes a **Recent data** module that records items you've previously used—such as tables, files, folders, databases, and sheets—and lets you load them directly into the Dataflow Gen2 editing canvas. You can access Recent data from the Power Query ribbon or from the Modern Get Data experience, so you can quickly get back to the data you need without reconfiguring your connections.
+
+From any Recent data entry, you can also select **Browse location** to explore and select additional related items within the same folder or database, making it easy to work with multiple resources in the same location.
 
 ### AutoSave keeps your work safe
 
