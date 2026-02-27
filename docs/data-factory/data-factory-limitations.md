@@ -3,7 +3,7 @@ title: Data Factory limitations overview
 description: Identifies limitations that affect Data Factory in Microsoft Fabric features.
 ms.reviewer: susabat
 ms.topic: troubleshooting
-ms.date: 03/07/2025
+ms.date: 3/15/2026
 ms.custom: configuration
 ---
 
@@ -63,36 +63,27 @@ The following table describes the limitations for Copy job in Data Factory in Mi
 ## Data Factory Dataflow Gen2 limitations
 
 The following list describes the limitations for Dataflow Gen2 in Data Factory in Microsoft Fabric.
+* **Query limit for staging and destinations**: A single Dataflow Gen2 supports up to **50 queries** that either:
+  * Have **staging enabled**, or
+  * Have a **data destination configured** (for example, Warehouse, Lakehouse, or other Fabric destinations).
 
-- Data destination to Lakehouse:
-  - Spaces or special characters aren't supported in column or table names.
-  - Duration and binary columns aren't supported while authoring Dataflow Gen2 dataflows.
-- You must have a [currently supported gateway installed](/data-integration/gateway/service-gateway-monthly-updates) to use with Dataflow Gen2. At minimum, Dataflow Gen2 supports the last six released gateway versions.
-- When you use OAuth2 credentials, the gateway currently doesn't support refreshes longer than an hour. These refreshes fail because the gateway can't support refreshing tokens automatically when access tokens expire, which happens one hour after the refresh started. If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
-- The Delta Lake specification doesn't support case sensitive column names, so `MyColumn` and `mycolumn`, while supported in Mashup, results in a "duplicate columns" error.
-- Currently, column nullability is defaulting to allow nulls in all columns in the destination.
-- After you save/publish your dataflow gen2 we require the validation/publish process to finish within 10 minutes per query. If you exceed this 10-minute limit try to simplify your queries or split your queries in dataflow gen2. 
-- You can't connect to a public endpoint of an Azure Storage account using Power Query Online or Dataflow Gen2 (no gateway) if the Azure Storage account already has one or more Private Endpoints created. You need to connect to such storage accounts using a VNet data gateway or an on-premises data gateway that can connect using private endpoints.
-- Dataflow Gen2 doesn't support for guest users in the tenant to connect to the data sources and destinations in the tenant the user is guest. Use a native user in the tenant to connect to the data sources and destinations.
-- Consuming data from a dataflow gen2 with the dataflow connector requires Admin, Member or Contributor permissions. Viewer permission isn't sufficient and isn't supported for consuming data from the dataflow.
-- When you don't access staging items with your dataflow for more than 90 days, you need to re-authendicate to ensure the dataflow is able to access the staging items. You can do this by creating a new dataflow gen2 within the same workspace. 
+  Queries that **don’t write data**—such as **functions**, **helper queries**, or **intermediate transformation queries** that aren’t staged and don’t have a data destination—**don’t count toward this limit**.
 
-The following table indicates the supported data types in specific storage locations.
+* **Supported gateway required**: Dataflow Gen2 requires a currently supported data gateway. At minimum, the last six released gateway versions are supported.
 
-| **Supported data types per storage location:**  | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output |
-|-------------------------------------------------|--------------------------|-----------------------|----------------------------|------------------------------|------------------------------|
-| Action| No| No | No  | No    | No    |
-| Any   | No| No | No  | No    | No    |
-| Binary| No| No | No  | No    | No    |
-| Currency | Yes   | Yes| Yes | Yes   | No    |
-| DateTimeZone| Yes   | Yes| Yes | No    | No    |
-| Duration | No| No | Yes | No    | No    |
-| Function | No| No | No  | No    | No    |
-| None  | No| No | No  | No    | No    |
-| Null  | No| No | No  | No    | No    |
-| Time  | Yes   | Yes| No  | No   | No   |
-| Type  | No| No | No  | No    | No    |
-| Structured (List, Record, Table)| No| No | No  | No    | No    |
+* **Delta Lake case sensitivity limitation**: Delta Lake doesn’t support case‑sensitive column names. Columns like `MyColumn` and `mycolumn` result in duplicate column errors, even though they’re allowed in Mashup.
+
+* **Column nullability default behavior**: All destination columns default to allowing null values.
+
+* **Publish and validation time limit**: Each query must complete validation and publish within 10 minutes. Queries exceeding this limit should be simplified or split across multiple dataflows.
+
+* **Guest user access not supported**: Guest users can’t connect to data sources or destinations in the tenant they’re visiting. Use a native user account in the tenant instead.
+
+* **Required permissions to consume dataflows**: Consuming data from a Dataflow Gen2 requires Admin, Member, or Contributor permissions. Viewer permission isn’t supported.
+
+* **Staging authentication expiration**: If staging items aren’t accessed for more than 90 days, re‑authentication is required. This can be done by creating a new Dataflow Gen2 in the same workspace.
+
+
 
 ## Related content
 
