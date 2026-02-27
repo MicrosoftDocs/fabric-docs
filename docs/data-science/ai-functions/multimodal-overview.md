@@ -40,7 +40,8 @@ Multimodal AI functions support the following file types:
 
 ## Supported URL protocols
 
-You can reference files using the following URL protocols: 
+Multimodal inputs are provided as string with one of the following URL protocols:
+
 - local file paths
 - http(s)
 - wasbs
