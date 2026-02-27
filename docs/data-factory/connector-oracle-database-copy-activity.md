@@ -141,10 +141,10 @@ When you copy data from Oracle database, the following mappings are used from Or
 
 | Oracle database data type | Interim data type |
 |:--- |:--- |
-| BFILE | Byte[] |
+| BFILE | Byte array |
 | BINARY_FLOAT | Single |
 | BINARY_DOUBLE | Double |
-| BLOB | Byte[] |
+| BLOB | Byte array |
 | CHAR | String |
 | CLOB | String |
 | DATE | DateTime |
@@ -153,13 +153,13 @@ When you copy data from Oracle database, the following mappings are used from Or
 | INTERVAL YEAR TO MONTH | Int64 |
 | INTERVAL DAY TO SECOND | TimeSpan |
 | LONG | String |
-| LONG RAW | Byte[] |
+| LONG RAW | Byte array |
 | NCHAR | String |
 | NCLOB | String |
-| NUMBER (p,s) | Int16, Int32, Int64, Single, Double, Decimal |
+| NUMBER(p,s) | Int16, Int32, Int64, Single, Double, Decimal |
 | NUMBER without precision and scale | Decimal (256,130) |
 | NVARCHAR2 | String |
-| RAW | Byte[] |
+| RAW | Byte array |
 | TIMESTAMP | DateTime |
 | TIMESTAMP WITH LOCAL TIME ZONE | DateTime |
 | TIMESTAMP WITH TIME ZONE | DateTimeOffset |
@@ -183,13 +183,13 @@ When you copy data to Oracle database, the following mappings are used from inte
 |:---|:---|
 | Single | BINARY_FLOAT |
 | Double | BINARY_DOUBLE |
-| Byte[] | BLOB |
+| Byte array | BLOB |
 | String | CHAR, VARCHAR2, NCHAR, NVARCHAR2, CLOB |
 | TimeSpan | INTERVAL DAY TO SECOND |
-| Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal | NUMBER (p,s), NUMBER |
+| Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal | NUMBER(p,s), NUMBER |
 | DateTime | TIMESTAMP, TIMESTAMP WITH LOCAL TIME ZONE, DATE |
 | DateTimeOffset | TIMESTAMP WITH TIME ZONE |
-| Boolean | NUMBER (p,s), BOOLEAN |
+| Boolean | NUMBER(p,s), BOOLEAN |
 
 To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
 
@@ -214,8 +214,8 @@ The following table describes the default mappings from interim data types used 
 | Boolean          | NUMBER(1,0)               |
 | DateTime         | TIMESTAMP(7)              |
 | DateTimeOffset   | TIMESTAMP(7) WITH TIME ZONE |
-| Timespan         | INTERVAL DAY(8) TO SECOND(7) |
-| Byte[]           | BLOB                      |
+| TimeSpan         | INTERVAL DAY(8) TO SECOND(7) |
+| Byte array       | BLOB                      |
 | GUID             | CHAR(36)                  |
 
 When both the source and destination are Oracle, the destination table is automatically created using the source column's Oracle data types if those data types are included in the following list. Any other source data types will first be converted to an internal interim data type by the service, and then mapped to the destination data type.
@@ -233,7 +233,7 @@ When both the source and destination are Oracle, the destination table is automa
 - DATE
 - INTERVAL YEAR TO MONTH
 - INTERVAL DAY TO SECOND
-- NUMBER (p,s)
+- NUMBER(p,s)
 - TIMESTAMP
 - TIMESTAMP WITH LOCAL TIME ZONE
 
