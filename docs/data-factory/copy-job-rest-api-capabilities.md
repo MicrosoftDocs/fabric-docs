@@ -261,7 +261,7 @@ Here's a decoded example of the `copyjob-content.json` content:
 }
 ```
 
-The following examples show more comprehensive, real-world definitions with additional properties filled in.
+The following examples show more comprehensive, real-world definitions with additional properties configured.
 
 #### Batch copy with column mappings
 
@@ -486,7 +486,7 @@ This example configures a CDC (Change Data Capture) Copy job that incrementally 
 > [!NOTE]
 > Replace `<source-connectionId>` and `<destination-connectionId>` with the connection IDs you obtained from the [Create a connection](#create-a-connection) step. Replace `<workspace-guid>`, `<lakehouse-guid>`, and `<activity-guid>` with the appropriate GUIDs for your environment.
 
-To use these definitions in the API, Base64-encode the JSON and place it as the `payload` value for the `copyjob-content.json` part.
+To use any of these definitions in the API, Base64-encode the JSON and place it as the `payload` value for the `copyjob-content.json` part.
 
 **Sample request:**
 
