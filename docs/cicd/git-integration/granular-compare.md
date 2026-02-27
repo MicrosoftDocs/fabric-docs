@@ -165,6 +165,7 @@ The following is a list of limitations for the granular compare feature.
 - System files and system level changes currently show content, but sometimes these changes don't reflect actual changes being made to the item.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
 - In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
 - Granular compare is in preview and as such, currently not all items are supported
+- if the change is one of encoding (if the file was manually uploaded to git and saved under a special encoding), the git status will detect the change, but granular compare will show 0 diffs
 
 
  ## Related content
