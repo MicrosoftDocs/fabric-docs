@@ -12,9 +12,9 @@ keywords:
 estimated_reading_time: 10
 ---
 
-## Overview
+# Consume a Fabric data agent with the Agent Framework SDK (preview)
 
-Use this guide to call a Fabric data agent MCP server by using Microsoft Agent Framework. You authenticate with Microsoft Entra ID, connect to the MCP endpoint, and invoke a tool exposed by the data agent.
+Use this guide to call a Fabric data agent MCP server by using [Microsoft Agent Framework SDK](https://learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-python). You authenticate with Microsoft Entra ID, connect to the MCP endpoint and invoke a tool exposed by the data agent.
 
 > [!NOTE]
 > Fabric data agent MCP support is in preview.
@@ -106,7 +106,7 @@ Set environment variables with your MCP endpoint and Azure OpenAI settings.
 set FABRIC_DATA_AGENT_MCP_URL=<your-fabric-data-agent-mcp-url>
 set FABRIC_DATA_AGENT_SCOPE=https://api.fabric.microsoft.com/.default
 set AZURE_OPENAI_ENDPOINT=<your-azure-openai-endpoint>
-set AZURE_OPENAI_DEPLOYMENT_ID=<your-deployment-id>
+set AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME=<your-deployment-name>
 ```
 
 # [macOS](#tab/macos)
@@ -124,7 +124,7 @@ export AZURE_OPENAI_DEPLOYMENT_ID="<your-deployment-id>"
 export FABRIC_DATA_AGENT_MCP_URL="<your-fabric-data-agent-mcp-url>"
 export FABRIC_DATA_AGENT_SCOPE="https://api.fabric.microsoft.com/.default"
 export AZURE_OPENAI_ENDPOINT="<your-azure-openai-endpoint>"
-export AZURE_OPENAI_DEPLOYMENT_ID="<your-deployment-id>"
+export AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME="<your-deployment-name>"
 ```
 
 # [C#](#tab/csharp)
@@ -173,24 +173,37 @@ The script uses `DefaultAzureCredential`, which supports local development with 
 az login
 ```
 
-Create a Python file and paste the sample below.
+Create a Python file named `fabric_data_agent_mcp.py` and follow the sections to build the script step by step.
+
+## Import required libraries
+
+Import the necessary packages for authentication and Agent Framework integration.
 
 ```python
 import asyncio
 import os
 
-import httpx
 from azure.identity import DefaultAzureCredential
-from agent_framework import Agent, MCPStreamableHTTPTool
-from agent_framework.openai import AzureOpenAIResponsesClient
+from agent_framework.azure import AzureOpenAIResponsesClient
+```
 
+## Load configuration from environment variables
 
+Read the MCP endpoint URL, authentication scope and Azure OpenAI settings from environment variables.
+
+```python
 async def main() -> None:
     mcp_url = os.getenv("FABRIC_DATA_AGENT_MCP_URL")
     scope = os.getenv("FABRIC_DATA_AGENT_SCOPE")
     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-    deployment_id = os.getenv("AZURE_OPENAI_DEPLOYMENT_ID")
+    deployment_name = os.getenv("AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME")
+```
 
+## Authenticate with Microsoft Entra ID
+
+Use `DefaultAzureCredential` to obtain an access token for authenticating with the Fabric data agent MCP server. The credential automatically uses Azure CLI credentials for local development or managed identity in production.
+
+```python
     credential = DefaultAzureCredential()
     access_token = credential.get_token(scope).token
 
@@ -198,57 +211,59 @@ async def main() -> None:
         "Authorization": f"Bearer {access_token}",
         "Content-Type": "application/json",
     }
+```
 
-    async with httpx.AsyncClient(headers=headers) as http_client:
-        mcp_browser = MCPStreamableHTTPTool(
-            name="fabric_data_agent",
-            url=mcp_url,
-            description="Fabric Data Agent MCP server",
-            http_client=http_client,
-        )
+## Create the Azure OpenAI client
 
-        await mcp_browser.connect()
-        try:
-            print("Available MCP tools:")
-            for tool in mcp_browser.functions:
-                print(f"- {tool.name}")
-        finally:
-            await mcp_browser.close()
+Initialize the Azure OpenAI client with your endpoint, deployment name and credentials. This client handles LLM interactions for the agent.
 
+```python
     client = AzureOpenAIResponsesClient(
         endpoint=azure_endpoint,
-        deployment_id=deployment_id,
+        deployment_name=deployment_name,
         credential=credential,
     )
+```
 
+## Register the MCP tool with the agent
+
+Register the Fabric data agent MCP tool with the Azure OpenAI client. Set the approval mode to `never_require` to allow the agent to call the MCP tool automatically without user approval.
+
+```python
     mcp_tool = client.get_mcp_tool(
         name="FabricDataAgent",
         url=mcp_url,
         headers=headers,
         approval_mode="never_require",
     )
+```
 
-    async with Agent(
-        client=client,
+## Create an agent and run the interactive loop
+
+Create an agent that uses the MCP tool to answer questions. The agent runs in an interactive loop, prompting the user for questions and displaying responses until the user presses Enter without input.
+
+```python
+    agent = client.as_agent(
         name="FabricDataAgentAssistant",
-        instructions=(
-            "Use the Fabric Data Agent MCP tool to answer the user question."
-        ),
-        tools=mcp_tool,
-    ) as agent:
-        while True:
-            user_question = input("Question (press Enter to quit): ").strip()
-            if not user_question:
-                break
-            result = await agent.run(user_question)
-            print(result.text)
+        instructions="Use the Fabric Data Agent MCP tool to answer the user question.",
+        tools=[mcp_tool],
+    )
+
+    while True:
+        user_question = input("Question (press Enter to quit): ").strip()
+        if not user_question:
+            break
+        result = await agent.run(user_question)
+        print(result.text)
 
 
 if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Run the script.
+## Run the script
+
+After you create the script, run it with Python.
 
 # [Windows](#tab/windows)
 
@@ -271,6 +286,65 @@ python fabric_data_agent_mcp.py
 # [C#](#tab/csharp)
 
 Coming soon.
+
+---
+
+## Complete script
+
+Here's the complete script combining all the sections:
+
+```python
+import asyncio
+import os
+
+from azure.identity import DefaultAzureCredential
+from agent_framework.azure import AzureOpenAIResponsesClient
+
+
+async def main() -> None:
+    mcp_url = os.getenv("FABRIC_DATA_AGENT_MCP_URL")
+    scope = os.getenv("FABRIC_DATA_AGENT_SCOPE")
+    azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+    deployment_name = os.getenv("AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME")
+
+    credential = DefaultAzureCredential()
+    access_token = credential.get_token(scope).token
+
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json",
+    }
+
+    client = AzureOpenAIResponsesClient(
+        endpoint=azure_endpoint,
+        deployment_name=deployment_name,
+        credential=credential,
+    )
+
+    mcp_tool = client.get_mcp_tool(
+        name="FabricDataAgent",
+        url=mcp_url,
+        headers=headers,
+        approval_mode="never_require",
+    )
+
+    agent = client.as_agent(
+        name="FabricDataAgentAssistant",
+        instructions="Use the Fabric Data Agent MCP tool to answer the user question.",
+        tools=[mcp_tool],
+    )
+
+    while True:
+        user_question = input("Question (press Enter to quit): ").strip()
+        if not user_question:
+            break
+        result = await agent.run(user_question)
+        print(result.text)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
 
 ---
 
