@@ -10,7 +10,7 @@ ms.topic: concept-article
 ms.custom:
 ms.date: 02/26/2026
 ---
-```\```
+
 # Compare code changes in Git Integration (Public Preview)
 
 Granular Compare is a feature of Microsoft Fabric Git integration that lets users review the exact changes that occur during Git operations—commit, undo, or update—before applying them.
@@ -100,7 +100,7 @@ Under **Source control** you can see two red marks indicating status changes. Di
 
 Under **Updates** we see the update coming from the GitHub repo.
 
- :::image type="content" source="media/granular-compare/compare-18.png" alt-text="Screenshot showing the change to the notebook." lightbox="media/granular-compare/compare-17.png":::
+ :::image type="content" source="media/granular-compare/compare-18.png" alt-text="Screenshot showing the update to the notebook." lightbox="media/granular-compare/compare-17.png":::
 
 Using granular compare, we can see both changes by click the **Resolve conflicts** button.  This brings up a new dialog that allows you to choose between keeping the current changes in the workspace or importing the changes from your git provider.  
 
@@ -119,7 +119,7 @@ Hovering over the two options will reveal the **Review changes** button.  Click 
 
 Selecting **Accept incoming changes** will overwrite the changes in the workspace with the changes that are coming from Git.
 
- :::image type="content" source="media/granular-compare/compare-20.png" alt-text="Screenshot showing the workspace and git item in conflict." lightbox="media/granular-compare/compare-20.png":::
+ :::image type="content" source="media/granular-compare/compare-20.png" alt-text="Screenshot showing accept incoming changes." lightbox="media/granular-compare/compare-20.png":::
 
 You need to place a check in **I understand workspace items may be deleted and can't be restored** and click **Merge and Update**.  This will bring the change into the workspace.
 
@@ -155,7 +155,7 @@ System files are repesented  by a "/" in the list of changes or updates.
 
 In most cases, the changes in the system files are just like any other changes. In some extreme edge cases, you may see additions and deletions but in reality nothing changes.
 
-For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-changes) for an additional example.
+For more information see [Automatically generated system files](../git-integration/source-code-format.md).
 
 
 ## Limitations
