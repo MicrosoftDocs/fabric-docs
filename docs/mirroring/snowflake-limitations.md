@@ -16,13 +16,13 @@ Current limitations in the Microsoft Fabric mirrored databases from Snowflake ar
 - Only replicating native tables are supported. Currently, External, Transient, Temporary, Dynamic tables aren't supported.
 - Source schema hierarchy is replicated to the mirrored database. For mirrored databases created before this feature enabled, the source schema is flattened, and schema name is encoded into the table name. If you want to reorganize tables with schemas, recreate your mirrored database. Learn more from [Replicate source schema hierarchy](troubleshooting.md#replicate-source-schema-hierarchy).
 - Mirroring supports replicating columns containing spaces or special characters in names (such as  `,` `;` `{` `}` `(` `)` `\n` `\t` `=`). For tables under replication before this feature enabled, you need to update the mirrored database settings or restart mirroring to include those columns. Learn more from [Delta column mapping support](troubleshooting.md#delta-column-mapping-support).
-- The maximum number of tables that can be mirrored into Fabric is 1000 tables. Any tables above the 1000 limit currently can't be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 1000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you're prevented from selecting more than 1000 tables.
+- The maximum number of tables that can be mirrored into Fabric is 1,000 tables. Any tables above the 1000 limit currently can't be replicated.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 1,000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list won't be mirrored over.
+  - If you unselect **Mirror all data** and select individual tables, you're prevented from selecting more than 1,000 tables.
 
 ## Security
 
-- Snowflake authentication via username/password and Entra (single sign on (SSO)) are supported.
+- Snowflake authentication via username/password and Microsoft Entra (single sign-on (SSO)) are supported.
 - Sharing recipients must be added to the workspace. To share a dataset or report, first add access to the workspace with a role of admin, member, reader, or contributor.
 
 ## Performance

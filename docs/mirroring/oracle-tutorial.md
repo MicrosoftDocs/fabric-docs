@@ -175,8 +175,8 @@ Your Oracle database needs supplemental logging enabled. If your user doesn't ha
 1. Select **Connect** to test the connection
 
 1. Choose how to select tables for mirroring:
-   * **Auto mode**: Let Fabric mirror all the tables
-   * **Manual**: Choose only certain objects to mirror
+   * **Auto mode**: Let Fabric mirror all the tables.
+   * **Manual**: Choose only certain objects to mirror.
 
    :::image type="content" source="media/oracle/choose-data.png" alt-text="Screenshot of the interface prompting the user to select the data they want to be mirrored before connecting.":::
 

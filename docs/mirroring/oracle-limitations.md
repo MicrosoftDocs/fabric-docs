@@ -79,7 +79,7 @@ For schema (DDL) changes, we currently support:
 
 We also support mirroring tables that have a partitioning - if your source tables are partitioned, then we can mirror those tables over.
 
-Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables doesn't have a Primary Key (PK) or a unique index, we won't support mirroring those tables over.
+Tables that don't have a Primary Key (PK) are supported - if you have a unique index in your tables, then we can support mirroring those tables. If your tables don't have a Primary Key (PK) or a unique index, we won't support mirroring those tables over.
 
 We can't support table names that have a length greater than or equal to 30.
 
