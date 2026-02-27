@@ -10,7 +10,7 @@ ms.topic: concept-article
 ms.custom:
 ms.date: 02/26/2026
 ---
-
+```\```
 # Compare code changes in Git Integration (Public Preview)
 
 Granular Compare is a feature of Microsoft Fabric Git integration that lets users review the exact changes that occur during Git operations—commit, undo, or update—before applying them.
@@ -116,13 +116,73 @@ The following steps show how to review changes to system files. In this example,
  5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
 ## Conflict resolution
-Granular compare mitigates conflicts by making differences explicit, scoped, and reviewable before a Git operation is executed, reducing accidental overwrites and uncertainty when multiple users work in the same workspace.
+Granular compare helps mitigate conflicts by making differences explicit, scoped, and reviewable before a Git operation is executed, reducing accidental overwrites and uncertainty when multiple users work in the same workspace.
 
  :::image type="content" source="media/granular-compare/compare-14.png" alt-text="Conceputal image simulating a conflict." lightbox="media/granular-compare/compare-14.png":::
 
-## Example - Items in conflict
-If a conflict is detected between items, the granular compare feature will be disabled until this conflict is resolved.
- :::image type="content" source="media/granular-compare/compare-9.png" alt-text="Screenshot of conflict." lightbox="media/granular-compare/compare-9.png":::
+For example, lets consider the following scenario:
+
+- A Microsoft Fabric wokspace connected to a GitHub repository
+- The Fabric workspace contains a notebook that is synced to the GitHub repo.
+- Developer A changes the display name of the notebook from `Notebook_Test_1` to `My_Notebook_Test_1` in the workspace. 
+- Developer B chnages the display name of the notebook from `Notebook_Test_1` to `New_Notebook_Test_1` in the GitHub repo.
+
+The following scenario will introduce a conflict.
+
+ :::image type="content" source="media/granular-compare/compare-16.png" alt-text="Screenshot showing the conflict between the notebooks." lightbox="media/granular-compare/compare-16.png":::
+
+Under **Source control** you can see two red marks indicating status changes. Digging deeper, under **Changes** we see the uncommitted name change of `Notebook_Test_1` to `My_Notebook_Test_1` in the workspace.
+
+ :::image type="content" source="media/granular-compare/compare-17.png" alt-text="Screenshot showing the change to the notebook." lightbox="media/granular-compare/compare-17.png":::
+
+Under **Updates** we see the display name change of the notebook from `Notebook_Test_1` to `New_Notebook_Test_1` in the GitHub repo.
+
+ :::image type="content" source="media/granular-compare/compare-18.png" alt-text="Screenshot showing the change to the notebook." lightbox="media/granular-compare/compare-17.png":::
+
+Using granular compare, we can see both changes by click the **Resolve conflicts** button.  This brings up a new dialog that allows you to choose between keeping the current changes in the workspace or importing the changes from your git provider.  
+
+|Resolution option|Description|
+|-----|-----|
+|Accept incoming changes|Accepts the change from your Git provider. This will overwrite the value in the workspace.|
+|Keep current content|Keeps the current workspace change and ignores the incoming change from your Git provider. This will overwrite the value in your Git repository.|
+
+:::image type="content" source="media/granular-compare/compare-13.png" alt-text="Screenshot of the resolve conflicts diaglog." lightbox="media/granular-compare/compare-13.png":::
+
+Hovering over the two options will reveal the **Review changes** button.  Click on it and you can see the changes from both the workspace and the Git repo.
+
+ :::image type="content" source="media/granular-compare/compare-19.png" alt-text="Screenshot showing the workspace and git item in conflict." lightbox="media/granular-compare/compare-19.png":::
+
+ ### Accept incoming changes
+
+Selecting **Accept incoming changes** will overwrite the changes in the workspace with the changes that are coming from Git.
+
+ :::image type="content" source="media/granular-compare/compare-20.png" alt-text="Screenshot showing the workspace and git item in conflict." lightbox="media/granular-compare/compare-20.png":::
+
+You need to place a check in **I understand workspace items may be deleted and can't be restored** and click **Merge and Update**.  This will bring the change into the workspace.
+
+However, you still need to commit this new change to the workspace, so click on the **Changes** tab. Place a check next to the notebook and click **Commit**.
+
+ :::image type="content" source="media/granular-compare/compare-21.png" alt-text="Screenshot showing commiting changes." lightbox="media/granular-compare/compare-21.png":::
+
+That should commit and the conflict should be resolved.
+
+ ### Keep current content
+
+Selecting **Keep current content** will ignore the changes coming from Git and will keep the change in the workspace.
+
+ :::image type="content" source="media/granular-compare/compare-22.png" alt-text="Screenshot showing keeping current content." lightbox="media/granular-compare/compare-22.png":::
+
+Click **Merge and Update**.  This will ignore the change coming from Git.
+
+However, you still need to commit this new change to the workspace, so click on the **Changes** tab. Place a check next to the notebook and click **Commit**.
+
+ :::image type="content" source="media/granular-compare/compare-21.png" alt-text="Screenshot showing commiting changes." lightbox="media/granular-compare/compare-21.png":::
+
+That should commit, the changes from the workspace should be synched to the Git repo and the conflict should be resolved.
+
+>[!NOTE]
+> After selecting Accept incoming changes or Keep current content or , you still need to commit the workspace change.
+
 
 ## Limitations
 The following is a list of limitations for the granular compare feature.
