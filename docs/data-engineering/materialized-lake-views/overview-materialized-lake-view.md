@@ -139,7 +139,6 @@ WHERE price > 0;
 
 The following features are currently not available for materialized lake views in Microsoft Fabric:
 
-* Declarative syntax support for PySpark. You can use Spark SQL syntax to create and refresh materialized lake views.
 * Cross-lakehouse lineage and execution features.
 
 ## Related content

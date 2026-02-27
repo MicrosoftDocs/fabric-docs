@@ -2,7 +2,7 @@
 title: Limitations of Fabric Data Warehouse
 description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
 ms.reviewer: joanpo, ajagadish, anphil, fresantos
-ms.date: 11/19/2025
+ms.date: 02/20/2026
 ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
@@ -66,7 +66,6 @@ Since all tables do not support **varchar(max)** joins on these columns may not 
 
 You can confirm if a table has any **varchar(max)** column from the schema metadata using the following T-SQL query. A `max_length` value of `-1` represents **varchar(max)**:
 
-
 ```sql
 SELECT o.name, c.name, type_name(user_type_id) AS [type], max_length
 FROM sys.columns AS c
@@ -76,7 +75,7 @@ WHERE max_length = -1
 AND type_name(user_type_id) IN ('varchar', 'varbinary');
 ```
 
-- Schemas with names that are [SQL reserved keywords](/sql/t-sql/language-elements/reserved-keywords-transact-sql?view=sql-server-ver17) aren't supported in SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint. Use non‑reserved names for schemas.
+- Schemas with names that conflict with system schemas (such as `sys` or `information_schema`) and database security principals (such as `db_owner`, `db_datareader`) aren't supported in the SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint.
 
 ## Known issues
 

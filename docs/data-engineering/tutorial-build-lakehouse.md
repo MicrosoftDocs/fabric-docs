@@ -6,7 +6,7 @@ ms.topic: tutorial
 ms.custom:
 - FY25Q1-Linter
 - sfi-image-nochange
-ms.date: 02/14/2026
+ms.date: 02/21/2026
 # Customer Intent: As a data engineer, I want to use lakehouses to transform data and build reports using Power BI and Fabric.
 ---
 
@@ -73,7 +73,7 @@ In this section, you ingest sample customer data into the lakehouse.
 
    :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse." lightbox="media\tutorial-build-lakehouse\load-data-lakehouse-option.png":::
 
-1. In the **New Dataflow Gen2** pane, enter **Customer Dimension Data** in the **Name** field and select **Next**.
+1. In the **New Dataflow Gen2** pane, enter **Customer Dimension Data** in the **Name** field and select **Create**.
 
    :::image type="content" source="media\tutorial-build-lakehouse\create-dataflow-name.png" alt-text="Screenshot of the New Dataflow Gen2 pane, showing where to enter the dataflow name." lightbox="media\tutorial-build-lakehouse\create-dataflow-name.png":::
 

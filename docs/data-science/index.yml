@@ -150,7 +150,7 @@ landingContent:
         links:
           - text: Use OpenAI for big data with SynapseML
             url: open-ai.md
-          - text: Use AI Services with SynapseML
+          - text: Use Foundry Tools with SynapseML
             url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
 
 # Card
