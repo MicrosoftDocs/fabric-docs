@@ -3,7 +3,7 @@ title: Recent data in Fabric (Preview)
 description: Learn how to use the recent data module to quickly access your most frequently used tables, files, folders, databases, and sheets in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 02/24/2026
+ms.date: 3/15/2026
 ai-usage: ai-assisted
 
 #customer intent: As a data engineer, I want to quickly access my recently used data sources so that I can reduce navigation time when working with data in Fabric.
@@ -81,6 +81,38 @@ After accessing recent data, you can use the **Browse location** option to explo
 1. Apply transformations, merge queries, or configure your dataflow as needed.
 
 This option helps you discover related data without leaving the Power Query editor or reconfiguring connections.
+
+## Favorite queries
+
+Favorite queries is a feature that helps you reuse queries in your Dataflow Gen2 workflow. It includes two core experiences:
+
+- **Save** helps you save favorite queries from any dataflow you're part of.
+- **Import** copies favorite queries into your current dataflow to speed up authoring.
+
+### Save a favorite query
+
+To save a query as a favorite, right-click the query in the Queries pane and select the option that reads **Save to Favorites**.
+
+![](image)
+
+A notification in the upper-right corner that reads **Saving query to favorites** confirms your request.
+
+![Screenshot of the top level notification that displays the message saving query to favorites](media/dataflow-gen2-favorite-queries/save-query-request-notification.png)
+
+A confirmation appears later and shows the query name used to save it as a favorite.
+
+![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites](media/dataflow-gen2-favorite-queries/query-saved-notification.png)
+
+> [!NOTE]
+> The first time you save a favorite query, a folder named *Favorites* is created in your personal workspace (also known as *My Workspace*). This folder contains a Dataflow Gen2 item that stores your saved favorite queries.
+
+### Import a favorite query
+
+To import a favorite query, navigate to the Recents module in the modern Get Data experience, and then locate the filter pill labeled **Favorites**.
+
+<image>
+
+In this view, you can see all your favorite queries. Select any query to import the script as-is.
 
 ## Related content
 
