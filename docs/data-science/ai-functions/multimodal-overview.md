@@ -38,6 +38,11 @@ Multimodal AI functions support the following file types:
 - **Documents**: pdf
 - **Text files**: md, txt, csv, tsv, json, xml, py, and other text files
 
+> [!NOTE]
+> - Office file formats (such as .docx, .pptx, and .xlsx) aren't currently supported.
+> - You can convert .docx and .pptx files to PDF and .xlsx files to CSV before using them with multimodal AI functions.
+> - Each input file is limited to 50 MB in size.
+
 ## Supported URL protocols
 
 Multimodal inputs are provided as string with one of the following URL protocols:
