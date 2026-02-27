@@ -47,73 +47,36 @@ Granular Compare can be opened from multiple locations. The following table summ
 
 
 ## Example - Review changes to a all or specific items
-The following steps show how to review changes for a specific item.
+The following steps show how to review changes for a specific item. 
 
 1. At the top of your workspace, select **Source control**.
-2. On the right, under **changes**, select the item you want to review.
-3. Select the **Review changes** box next to the item.
- :::image type="content" source="media/granular-compare/compare-1.png" alt-text="Screenshot of item review changes." lightbox="media/granular-compare/compare-1.png":::
+2. To review all changes, select the **review changes** button at the top. This will open a dialog showing all the changes.
+3. To review a specific item's changes, hover next to it and select the **review changes** button.  This will open a dialog that takes you directly to that item. You can review additional items from here also.
+ 
+ :::image type="content" source="media/granular-compare/compare-new-1.png" alt-text="Screenshot of item review changes." lightbox="media/granular-compare/compare-new-1.png":::
 
 4. On the diff screen, review the changes.
- :::image type="content" source="media/granular-compare/compare-2.png" alt-text="Screenshot of the item diff screen." lightbox="media/granular-compare/compare-2.png":::
+ 
+ :::image type="content" source="media/granular-compare/compare-new-2.png" alt-text="Screenshot of the item diff screen." lightbox="media/granular-compare/compare-new-2.png":::
 
-5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
-
-
-## Example - Review changes to all items
-The following steps show how to review changes for all items.
-
-1. At the top of your workspace, select **Source control**.
-2. On the right, select **Review changes**.
- :::image type="content" source="media/granular-compare/compare-3.png" alt-text="Screenshot of review all changes." lightbox="media/granular-compare/compare-3.png":::
-
-3. On the diff screen, review the changes.
- :::image type="content" source="media/granular-compare/compare-4.png" alt-text="Screenshot of the diff screen." lightbox="media/granular-compare/compare-4.png":::
-
-4. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
+5. Once you have reviewed it, click **Commit** to commit the changes.
 
 ## Example - Review updates
 The following steps show how to review updates for items.
 
 1. At the top of your workspace, select **Source control**.
-2. On the right, under **updates**, select the item you want to review.
-3. Select the **Review changes** box next to the item.
- :::image type="content" source="media/granular-compare/compare-5.png" alt-text="Screenshot of item review upsates." lightbox="media/granular-compare/compare-5.png":::
+2. To review all updates, select the **review changes** button at the top. This will open a dialog showing all the incoming updates.
+3. To review a specific item's update, hover next to it and select the **review changes** button.  This will open a dialog that takes you directly to that item. You can review additional items from here also.
+
+:::image type="content" source="media/granular-compare/compare-new-3.png" alt-text="Screenshot of item review changes for updates." lightbox="media/granular-compare/compare-new-3.png":::
 
 4. On the diff screen, review the updates.
- :::image type="content" source="media/granular-compare/compare-6.png" alt-text="Screenshot of the review changes." lightbox="media/granular-compare/compare-6.png":::
 
-5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
+:::image type="content" source="media/granular-compare/compare-new-4.png" alt-text="Screenshot of diffs for updates." lightbox="media/granular-compare/compare-new-4.png":::
 
-## System files and system level changes
-System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list.
+5. Once you have reviewed it, click **Update all** to commit the changes.
 
-System files are repesented  by a "/" in the list of changes or updates. The following screenshot shows an update to the git integration schema. An update to the git schema would be considered a system level change.
 
- :::image type="content" source="media/granular-compare/compare-10.png" alt-text="Screenshot of the schema update screen." lightbox="media/granular-compare/compare-10.png":::
-
-You may see additions and deletions but in reality nothing changes, only the change in report.json is changing. This is an extreme edge case where the system file schema versions are different.
-
- :::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
-
-In a normal use case, the changes in the system files are just like any other change.
-
- :::image type="content" source="media/granular-compare/compare-12.png" alt-text="Screenshot of system file displayname change." lightbox="media/granular-compare/compare-12.png":::
-
-For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-changes) for an additional example.
-
-### Example - Sytem file changes
-The following steps show how to review changes to system files. In this example, the **report** item is renamed to **quarterly report**.
-
-1. At the top of your workspace, select **Source control**.
-2. On the right, under **changes**, select the item you want to review.
-3. Select the **Review changes** box next to the item.
- :::image type="content" source="media/granular-compare/compare-7.png" alt-text="Screenshot of report changes." lightbox="media/granular-compare/compare-7.png":::
-
-4. On the diff screen, note that there are no visible changes.
- :::image type="content" source="media/granular-compare/compare-8.png" alt-text="Screenshot of report diffs." lightbox="media/granular-compare/compare-8.png":::
-
- 5. Once you have reviewed it, under **Source control** the item has a checkbox and you should see a **Reviewed By** information with the reviewer and date.
 
 ## Conflict resolution
 Granular compare helps mitigate conflicts by making differences explicit, scoped, and reviewable before a Git operation is executed, reducing accidental overwrites and uncertainty when multiple users work in the same workspace.
@@ -135,7 +98,7 @@ Under **Source control** you can see two red marks indicating status changes. Di
 
  :::image type="content" source="media/granular-compare/compare-17.png" alt-text="Screenshot showing the change to the notebook." lightbox="media/granular-compare/compare-17.png":::
 
-Under **Updates** we see the display name change of the notebook from `Notebook_Test_1` to `New_Notebook_Test_1` in the GitHub repo.
+Under **Updates** we see the update coming from the GitHub repo.
 
  :::image type="content" source="media/granular-compare/compare-18.png" alt-text="Screenshot showing the change to the notebook." lightbox="media/granular-compare/compare-17.png":::
 
@@ -183,6 +146,17 @@ That should commit, the changes from the workspace should be synched to the Git 
 >[!NOTE]
 > After selecting Accept incoming changes or Keep current content or , you still need to commit the workspace change.
 
+## System files and system level changes
+System files and system level changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system file—format changes, metadata changes, version updates—it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list.
+
+System files are repesented  by a "/" in the list of changes or updates. 
+
+:::image type="content" source="media/granular-compare/compare-11.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-11.png":::
+
+In most cases, the changes in the system files are just like any other changes. In some extreme edge cases, you may see additions and deletions but in reality nothing changes.
+
+For more information see [Automatically generated system files](../git-integration/source-code-format.md) and see [Example - Sytem file 1.0 changes](#example---sytem-file-changes) for an additional example.
+
 
 ## Limitations
 The following is a list of limitations for the granular compare feature.
@@ -190,6 +164,7 @@ The following is a list of limitations for the granular compare feature.
 - Files that are over 1 MB, like binary files, don't show content.
 - System files and system level changes currently show content, but sometimes these changes don't reflect actual changes being made to the item.  See [System files and system level changes](#system-files-and-system-level-changes) for more information.
 - In case of conflict,  you can only open the compare dialog from the **changes** tab and via the conflict dialog.
+- Granular compare is in preview and as such, currently not all items are supported
 
 
  ## Related content
