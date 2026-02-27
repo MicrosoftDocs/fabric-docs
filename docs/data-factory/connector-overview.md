@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 12/02/2025
+ms.date: 02/25/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -217,7 +217,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Sybase database](/power-query/connectors/sybase-database#connect-to-a-sybase-database-from-power-query-online) | ✓/− |  |  |
 | TeamDesk (Beta) | ✓/− |  |  |
 | Tenforce (Smart)List | ✓/− |  |  |
-| [Teradata database](connector-teradata-database-overview.md) | ✓/− | ✓/✓ |  |
+| [Teradata database](connector-teradata-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Text/CSV](/power-query/connectors/text-csv#connect-to-textcsv-file-from-power-query-online) | ✓/− |  |  |
 | [TIBCO(R) Data Virtualization](/power-query/connectors/tibco) | ✓/− |  |  |
 | Topcon Aptix Insights | ✓/− |  |  |

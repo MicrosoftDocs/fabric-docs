@@ -17,7 +17,7 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
-- Your Amazon Kinesis data stream must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Amazon Kinesis data stream must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 
 
 ## Add Amazon Kinesis Data Streams as a source
