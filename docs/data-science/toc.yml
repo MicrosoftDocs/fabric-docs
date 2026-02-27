@@ -35,7 +35,7 @@ items:
   items: 
   - name: Transform and enrich data with AI functions
     href: ./ai-functions/overview.md
-  - name: Use multimodal input with AI functions
+  - name: Multimodal AI Functions
     href: ./ai-functions/multimodal-overview.md
   - name: pandas
     items: 
