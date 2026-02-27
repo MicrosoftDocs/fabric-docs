@@ -633,7 +633,7 @@ display(results)
 
 ---
 
-You can also summarize values across all columns in a DataFrame by omitting the input column and specifying file path columns with `column_type_dict` (pandas) or `col_types` (PySpark):
+You may summarize values across all columns in a DataFrame by omitting the input column and specifying file path columns with `column_type_dict` (pandas) or `col_types` (PySpark):
 
 # [pandas](#tab/pandas)
 
