@@ -1,3 +1,10 @@
+---
+title: Activator ingestion from Eventstreams
+description: Learn how Activator ingests streaming data from Eventstreams, including event mapping, object IDs, and timestamps.
+ms.topic: concept-article
+ms.date: 02/27/2026
+---
+
 # Ingestion from Eventstreams
 
 This article explains how Activator ingests data from Eventstreams. Understanding this is useful for understanding how rules created from Eventstreams behave. For step-by-step instructions on creating a rule from an Eventstream, see [Create a rule from an Eventstream](../../event-streams/add-destination-activator.md).

@@ -805,6 +805,22 @@ items:
             href: data-activator/activator-get-data-power-bi.md
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
+      - name: Ingestion
+        items:
+          - name: Ingestion overview
+            href: data-activator/ingestion/ingestion-overview.md
+          - name: Ingestion from Power BI
+            href: data-activator/ingestion/ingestion-powerbi.md
+          - name: Ingestion from KQL Querysets
+            href: data-activator/ingestion/ingestion-kql-querysets.md
+          - name: Ingestion from Real-Time Dashboards
+            href: data-activator/ingestion/ingestion-realtime-dashboards.md
+          - name: Ingestion from Eventstreams
+            href: data-activator/ingestion/ingestion-event-streams.md
+          - name: Ingestion of Fabric events
+            href: data-activator/ingestion/ingestion-fabric-events.md
+          - name: Ingestion of Azure events
+            href: data-activator/ingestion/ingestion-azure-events.md
           - name: Create rules and activations
             href: data-activator/activator-create-activators.md
           - name: Assign data to Activator objects

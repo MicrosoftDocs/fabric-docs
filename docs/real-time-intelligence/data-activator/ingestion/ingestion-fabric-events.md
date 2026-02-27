@@ -1,3 +1,10 @@
+---
+title: Activator ingestion of Fabric events
+description: Learn how Activator ingests streaming Fabric events from Real-Time Hub, including workspace item, OneLake, and job events.
+ms.topic: concept-article
+ms.date: 02/27/2026
+---
+
 # Ingestion of Fabric Events
 
 This article explains how Activator ingests Fabric events. Understanding this is useful for understanding how rules created from Fabric events behave. For step-by-step instructions on creating a rule from Fabric events, see [Set alerts on Fabric workspace item events](../../../real-time-hub/set-alerts-fabric-workspace-item-events.md), [Set alerts on Fabric OneLake events](../../../real-time-hub/set-alerts-fabric-onelake-events.md), or [Set alerts on Fabric Job events](../../../real-time-hub/set-alerts-fabric-job-events.md).

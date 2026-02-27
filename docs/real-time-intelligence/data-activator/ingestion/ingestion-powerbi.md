@@ -1,3 +1,10 @@
+---
+title: Activator ingestion from Power BI
+description: Learn how Activator ingests data from Power BI semantic models, including query frequency, object mapping, and time handling.
+ms.topic: concept-article
+ms.date: 02/27/2026
+---
+
 # Ingestion from Power BI
 
 This article explains how Activator ingests data from Power BI. Understanding this is useful for understanding how rules created from Power BI behave. For step-by-step instructions on creating a rule from a Power BI visual, see [Create a rule from Power BI](../activator-get-data-power-bi.md).

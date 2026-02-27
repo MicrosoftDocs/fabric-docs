@@ -1,3 +1,10 @@
+---
+title: Activator ingestion from Real-Time Dashboards
+description: Learn how Activator ingests data from Real-Time Dashboard tiles, including query execution, object mapping, and time handling.
+ms.topic: concept-article
+ms.date: 02/27/2026
+---
+
 # Ingestion from Real-Time Dashboards
 
 This article explains how Activator ingests data from Real-Time Dashboards. Understanding this is useful for understanding how rules created from Real-Time Dashboard tiles behave. For step-by-step instructions on creating a rule from a dashboard tile, see [Create a rule from a Real-Time Dashboard](../activator-get-data-real-time-dashboard.md).

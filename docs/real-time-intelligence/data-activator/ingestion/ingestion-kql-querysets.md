@@ -1,3 +1,10 @@
+---
+title: Activator ingestion from KQL Querysets
+description: Learn how Activator ingests data from KQL Querysets, including query execution, object mapping, and time handling.
+ms.topic: concept-article
+ms.date: 02/27/2026
+---
+
 # Ingestion from KQL Querysets
 
 This article explains how Activator ingests data from KQL Querysets. Understanding this is useful for understanding how rules created from KQL Querysets behave. For step-by-step instructions on creating a rule from a KQL Queryset, see [Create a rule from a KQL Queryset](../activator-alert-queryset.md).

@@ -1,3 +1,10 @@
+---
+title: Activator ingestion of Azure events
+description: Learn how Activator ingests streaming Azure Blob Storage events from Real-Time Hub, including event types and object mapping.
+ms.topic: concept-article
+ms.date: 02/27/2026
+---
+
 # Ingestion of Azure Events
 
 This article explains how Activator ingests Azure events. Understanding this is useful for understanding how rules created from Azure events behave. For step-by-step instructions on creating a rule from Azure events, see [Set alerts on Azure Blob Storage events](../../../real-time-hub/set-alerts-azure-blob-storage-events.md).

@@ -57,7 +57,7 @@ landingContent:
           - text: Ingestion from Real-Time Dashboards
             url: ingestion/ingestion-realtime-dashboards.md
           - text: Ingestion from Eventstreams
-            url: ingestion/ingestion-eventstreams.md
+            url: ingestion/ingestion-event-streams.md
           - text: Ingestion of Fabric Events
             url: ingestion/ingestion-fabric-events.md
           - text: Ingestion of Azure Events
