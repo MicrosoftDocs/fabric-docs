@@ -9,13 +9,13 @@ ai-usage: ai-assisted
 
 # Limitations in Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)
 
-This article lists current limitations in the [Microsoft Fabric mirrored databases](https://learn.microsoft.com/en-us/fabric/mirroring/overview) from Azure Database for MySQL. This article is subject to change.
+This article lists current limitations in the [Microsoft Fabric mirrored databases](../overview.md) from Azure Database for MySQL. This article is subject to change.
 
 For troubleshooting, see:
 
-- [Troubleshoot Fabric mirrored databases](https://learn.microsoft.com/en-us/fabric/mirroring/troubleshooting)
+[Troubleshoot Fabric mirrored databases](../troubleshooting.md)
 
-- [Troubleshoot Fabric mirrored databases from Azure Database for MySQL flexible server](https://learn.microsoft.com/en-us/fabric/mirroring/azure-database-postgresql-troubleshoot) (Needs to be updated)
+[Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md)
 
 ## Server level limitations
 
@@ -51,7 +51,7 @@ The following limitations apply to individual databases when using mirroring in 
 
 Mirroring requires additional configuration for network-isolated servers.
 
-- If your server isn't publicly accessible and doesn't [allow Azure services](https://learn.microsoft.com/en-us/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](https://learn.microsoft.com/en-us/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL flexible server when allowed by the firewall rule.
+- If your server isn't publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL flexible server when allowed by the firewall rule.
 
 ## Table level
 
@@ -69,15 +69,14 @@ Certain table configurations and data types have limitations when mirroring to F
 
 The SQL analytics endpoint for mirrored databases has the same limitations as the Lakehouse SQL analytics endpoint.
 
-- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview#lakehouse-sql-analytics-endpoint). It's the same read-only experience. For more information, see [SQL analytics endpoint limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/limitations#limitations-of-the-sql-analytics-endpoint).
+- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. For more information, see [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
 ## Supported regions
 
-All Microsoft Fabric regions support database mirroring and open mirroring. For more information, see [Fabric region availability](https://learn.microsoft.com/en-us/fabric/admin/region-availability).
+All Microsoft Fabric regions support database mirroring and open mirroring. For more information, see [Fabric region availability](../../admin/region-availability.md).
 
 ## Related content
 
 - [Microsoft Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql.md)
 - [Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md)
 - [Microsoft Fabric mirrored databases from Azure Database for MySQL limitations](azure-database-mysql-limitations.md)
-- 

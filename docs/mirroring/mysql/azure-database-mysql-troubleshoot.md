@@ -32,7 +32,7 @@ When you create a new mirrored database, in the **Choose data** page you might r
 
 <sup>2</sup> This table type isn't supported for mirroring. Currently, views, materialized views, foreign tables, and partitioned tables aren't supported.
 
-<sup>3</sup> For a list of unsupported data types, see [Limitations](azure-database-mysql-limitations.md#column-level). Only columns with following types are supported:
+<sup>3</sup> For a list of unsupported data types, see [Limitations](azure-database-mysql-limitations.md#table-level). Only columns with following types are supported:
 
 - `bigint`
 - `binary`
@@ -83,10 +83,10 @@ Any other DDL operation on source tables is currently not supported and can caus
 | Fabric capacity paused/deleted | Mirroring stops | 1. Resume or assign capacity from the Azure portal<br />2. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br />3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Fabric capacity resumed | Mirroring will not be resumed | 1. Go to Fabric mirrored database item. From the toolbar, select **Stop replication**.<br />2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure Database for MySQL, connect using a server admin and stop the mirroring replication process through the MySQL administrative tools or by disabling the mirroring configuration in the Fabric portal. |
-| Fabric trial capacity expired | Mirroring stops automatically | See [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |
-| Fabric capacity exceeded | Mirroring pauses | Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). Mirroring continues once the capacity is recovered. |
+| Fabric trial capacity expired | Mirroring stops automatically | See [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
+| Fabric capacity exceeded | Mirroring pauses | Wait until the overload state is over or update your capacity. Learn more from [Actions you can take to recover from overload situations](../../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). Mirroring continues once the capacity is recovered. |
 | Any other resource errors | Mirroring is disabled | To ensure your compute resources are not affected and to minimize impact on the Azure Database for MySQL, mirroring disables on any persistent resource errors. |
-| "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" | Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings). |
+| "Users can access data stored in OneLake with apps external to Fabric" setting disabled | "Replicator - Tables Cannot Reach Replicating Status" | Enable the Tenant setting [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings). |
 
 ## SQL queries for troubleshooting
 
@@ -121,7 +121,7 @@ If you're experiencing mirroring problems, perform the following server level ch
 
 ## Managed identity
 
-The System Assigned Managed Identity (SAMI) of the Azure Database for MySQL needs to be enabled, and must be the primary identity. For more information, see [Managed identities for MySQL](/azure/mysql/flexible-server/concepts-identity).
+The System Assigned Managed Identity (SAMI) of the Azure Database for MySQL needs to be enabled, and must be the primary identity.
 
 After enablement, if SAMI setting status is later disabled then enabled again, the mirroring of Azure Database for MySQL to Fabric OneLake fails.
 

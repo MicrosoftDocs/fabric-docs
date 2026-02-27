@@ -8,7 +8,7 @@ ms.topic: tutorial
 
 # Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for MySQL
 
-[Mirroring in Fabric](../mirroring/overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology.
+[Mirroring in Fabric](../overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology.
 
 In this section, you learn how to create a mirrored Azure Database for MySQL, which creates a read-only, continuously replicated copy of your MySQL data in OneLake.
 
@@ -20,11 +20,11 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
 - Create or use an existing Azure Database for MySQL.
   - If you don't have an Azure Database for MySQL, [create a new server](/azure/mysql/flexible-server/quickstart-create-server).
   - As a tutorial, use a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure Database for MySQL](/azure/mysql/flexible-server/how-to-restore-server-portal).
-- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
+- You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - The Fabric capacity needs to be active and running. A paused or deleted capacity also stops Mirroring and no data is replicated.
-- Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
-  - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
-  - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
+- Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../../admin/about-tenant-settings.md) are enabled:
+  - [Service principals can use Fabric APIs](../../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
+  - [Users can access data stored in OneLake with apps external to Fabric](../../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when creating a mirrored database from the Fabric portal. During creation, the managed identity of Azure Database for MySQL is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
 - If your server doesn't have public connectivity enabled or doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL via a private endpoint or is allowed by the firewall rule.
 - Fabric Mirroring isn't supported on a Read Replica, or on a Primary server where a Read Replica exists.
@@ -33,7 +33,7 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
 
 Mirroring in Azure Database for MySQL uses Binary Log Replication. Before you connect to your data, you need to configure some specific prerequisites.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > To help you enable these prerequisites, the Azure portal provides a specific Fabric Mirroring page that **automates all these steps for you**. For more information, see [Fabric mirroring concepts for MySQL](/azure/mysql/flexible-server/concepts-fabric-mirroring).
 >
 > - Enable system-assigned managed identity (SAMI).
@@ -121,15 +121,15 @@ The following steps guide you through the process of creating the connection to 
 1. Now that your data is up and running, various analytics scenarios are available across all of Fabric.
 
 > [!IMPORTANT]  
-> You must reconfigure any granular security established in the source database in the mirrored database in Microsoft Fabric. See [SQL granular permissions in Microsoft Fabric](../data-warehouse/sql-granular-permissions.md).
+> You must reconfigure any granular security established in the source database in the mirrored database in Microsoft Fabric. See [SQL granular permissions in Microsoft Fabric](../../data-warehouse/sql-granular-permissions.md).
 
 ## Monitor Fabric mirroring
 
-Once you configure mirroring, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../mirroring/monitor.md).
+Once you configure mirroring, you're directed to the **Mirroring Status** page. Here, you can monitor the current state of replication. For more information and details on the replication states, see [Monitor Fabric mirrored database replication](../monitor.md).
 
 ## Related content
 
 - [Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md)
 - [Microsoft Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql.md)
 - [Microsoft Fabric mirrored databases from Azure Database for MySQL limitations](azure-database-mysql-limitations.md)
-- [What is Mirroring in Fabric?](../mirroring/overview.md)
+- [What is Mirroring in Fabric?](../overview.md)
