@@ -14,7 +14,7 @@ To explore more details about a business event, select the business event from t
 
 ### Publishers tab
 
-Publshers tab shows the publishers that are sending events for this business event. 
+Publishers tab shows the publishers that are sending events for this business event. 
 
 - Events published by the publisher: You can select a publisher to see the events published by this publisher. This helps you understand what kind of events are being published for this business event and analyze the event data.
 - Publishing failures: You can also see if there are any publishing failures for this publisher. If there are failures, you can select the failure to see more details about the failure, such as the error message and the time of the failure. This helps you troubleshoot any issues with event publishing.
@@ -58,6 +58,6 @@ You can create a Notebook consumer for a business event to analyze the event dat
 
 You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the business event, select **Create User Data Function consumer** at the top of the details page. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md).
 
-#### Publish business event using Event Stream
+#### Publish business event using eventstream
 
-You can create an Event Stream to publish events for a business event. This allows you to stream the event data in real time and integrate with other systems. To create an Event Stream for the business event, select **Create Event Stream** at the top of the details page. For step-by-step guidance on creating an Event Stream, see [Publish business events using Eventstream and react using Activator](business-events/tutorial-business-events-event-stream-user-data-function-activator.md).
+You can create an eventstream to publish events for a business event. This allows you to stream the event data in real time and integrate with other systems. To create an eventstream for the business event, select **Create Event Stream** at the top of the details page. For step-by-step guidance on creating an eventstream, see [Publish business events using Eventstream and react using Activator](business-events/tutorial-business-events-event-stream-user-data-function-activator.md).
