@@ -261,10 +261,232 @@ Here's a decoded example of the `copyjob-content.json` content:
 }
 ```
 
-> [!NOTE]
-> Replace `<source-connectionId>` and `<destination-connectionId>` with the connection IDs you obtained from the [Create a connection](#create-a-connection) step.
+The following examples show more comprehensive, real-world definitions with additional properties filled in.
 
-To use this definition in the API, Base64-encode the JSON and place it as the `payload` value for the `copyjob-content.json` part.
+#### Batch copy with column mappings
+
+This example copies data from an Azure SQL Database table to a Lakehouse with explicit column-level mappings, write behavior, and type conversion settings:
+
+```json
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "AzureSqlDatabase",
+      "connectionSettings": {
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+          "database": "salesdb"
+        },
+        "externalReferences": {
+          "connection": "<source-connectionId>"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "<workspace-guid>",
+          "artifactId": "<lakehouse-guid>",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "<activity-guid>",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Customers"
+          }
+        },
+        "destination": {
+          "writeBehavior": "Overwrite",
+          "datasetSettings": {
+            "table": "Customers"
+          }
+        },
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "CustomerID",
+                "type": "Int32",
+                "physicalType": "int"
+              },
+              "destination": {
+                "name": "CustomerID",
+                "type": "Int32",
+                "physicalType": "int"
+              }
+            },
+            {
+              "source": {
+                "name": "CustomerName",
+                "type": "String",
+                "physicalType": "nvarchar"
+              },
+              "destination": {
+                "name": "CustomerName",
+                "type": "String",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "Email",
+                "type": "String",
+                "physicalType": "nvarchar"
+              },
+              "destination": {
+                "name": "Email",
+                "type": "String",
+                "physicalType": "string"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+#### CDC (incremental) copy with column mappings
+
+This example configures a CDC (Change Data Capture) Copy job that incrementally replicates changes from an Azure SQL Database table to a Lakehouse, with column-level mappings and type conversion settings:
+
+```json
+{
+  "properties": {
+    "jobMode": "CDC",
+    "source": {
+      "type": "AzureSqlDatabase",
+      "connectionSettings": {
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+          "database": "inventorydb"
+        },
+        "externalReferences": {
+          "connection": "<source-connectionId>"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "<workspace-guid>",
+          "artifactId": "<lakehouse-guid>",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "1.00:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "<activity-guid>",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "Products"
+          }
+        },
+        "destination": {
+          "writeBehavior": "Append",
+          "datasetSettings": {
+            "table": "Products"
+          }
+        },
+        "translator": {
+          "type": "TabularTranslator",
+          "mappings": [
+            {
+              "source": {
+                "name": "ProductID",
+                "type": "Int32",
+                "physicalType": "int"
+              },
+              "destination": {
+                "name": "ProductID",
+                "type": "Int32",
+                "physicalType": "int"
+              }
+            },
+            {
+              "source": {
+                "name": "ProductName",
+                "type": "String",
+                "physicalType": "nvarchar"
+              },
+              "destination": {
+                "name": "ProductName",
+                "type": "String",
+                "physicalType": "string"
+              }
+            },
+            {
+              "source": {
+                "name": "Quantity",
+                "type": "Int32",
+                "physicalType": "int"
+              },
+              "destination": {
+                "name": "Quantity",
+                "type": "Int32",
+                "physicalType": "int"
+              }
+            },
+            {
+              "source": {
+                "name": "LastModified",
+                "type": "DateTime",
+                "physicalType": "datetime2"
+              },
+              "destination": {
+                "name": "LastModified",
+                "type": "DateTime",
+                "physicalType": "timestamp"
+              }
+            }
+          ]
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+> [!NOTE]
+> Replace `<source-connectionId>` and `<destination-connectionId>` with the connection IDs you obtained from the [Create a connection](#create-a-connection) step. Replace `<workspace-guid>`, `<lakehouse-guid>`, and `<activity-guid>` with the appropriate GUIDs for your environment.
+
+To use these definitions in the API, Base64-encode the JSON and place it as the `payload` value for the `copyjob-content.json` part.
 
 **Sample request:**
 
