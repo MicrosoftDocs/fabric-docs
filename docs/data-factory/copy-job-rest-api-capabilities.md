@@ -369,7 +369,7 @@ This example copies data from an Azure SQL Database table to a Lakehouse with ex
 
 #### CDC (incremental) copy with column mappings
 
-This example configures a CDC (Change Data Capture) Copy job that incrementally replicates changes from an Azure SQL Database table to a Lakehouse, with column-level mappings and type conversion settings:
+This example configures a CDC (Change Data Capture) in Copy job that incrementally replicates changes from an Azure SQL Database table to a Lakehouse, with column-level mappings and type conversion settings:
 
 ```json
 {
@@ -413,7 +413,7 @@ This example configures a CDC (Change Data Capture) Copy job that incrementally 
           }
         },
         "destination": {
-          "writeBehavior": "Append",
+          "writeBehavior": "Upsert",
           "datasetSettings": {
             "table": "Products"
           }
