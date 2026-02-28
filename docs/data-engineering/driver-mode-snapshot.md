@@ -66,6 +66,8 @@ spark.conf.set("spark.microsoft.delta.snapshot.driverMode.enabled", "true")
 spark.conf.set("spark.microsoft.delta.snapshot.driverMode.enabled", "true")
 ```
 
+---
+
 Set size limits (example values):
 
 # [PySpark](#tab/pyspark)
@@ -82,6 +84,8 @@ spark.conf.set("spark.microsoft.delta.snapshot.driverMode.maxLogSize", "4MB")
 spark.conf.set("spark.microsoft.delta.snapshot.driverMode.maxLogFileCount", "10")
 ```
 
+---
+
 Load a Delta table. If the table version fits the configured limits, driver mode snapshot is used.
 
 # [PySpark](#tab/pyspark)
@@ -95,6 +99,8 @@ spark.read.format("delta").load(path).count()
 ```scala
 spark.read.format("delta").load(path).count()
 ```
+
+---
 
 ### Configuration recommendations
 
