@@ -67,11 +67,6 @@ For a Fabric data agent to function properly, enable the [**Copilot and Azure Op
   - Users can delete their conversation history at any time by clearing the chat.
   - For more information, see [Conversation history stored outside your capacity's geographic region](../admin/service-admin-portal-copilot.md#conversation-history-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).
 
-- **Capacities can be designated as Fabric Copilot capacities**
-
-  - Enable this setting to allow capacity administrators to designate capacities as Fabric Copilot capacities. This consolidates Copilot usage and billing under a single capacity.
-  - For more information, see [Capacities can be designated as Fabric Copilot capacities](../admin/service-admin-portal-copilot.md#capacities-can-be-designated-as-fabric-copilot-capacities).
-
 ## Fabric data agent tenant setting
 
 By default, the Fabric data agent feature is enabled at the tenant level. This activation allows users to craft natural language Q&A experiences using generative AI, and then share the Fabric data agent within the organization.

@@ -19,7 +19,7 @@ Dataflow Gen2 is the newer, more powerful version that works alongside the origi
 
 With dataflows, you can:
 
-- **Connect to your data**: Pull information from databases, files, web services, and more.
+- **Connect to your data**: Pull information from databases, files, web services, and more. You can also reconnect to recently used sources.
 - **Transform your data**: Clean, filter, combine, and reshape your data using a visual interface.
 - **Load data anywhere**: Send your transformed data to databases, data warehouses, or cloud storage.
 - **Automate the process**: Set up schedules so your data stays fresh and up-to-date.
@@ -41,6 +41,7 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
 | AI-powered insights | ✓ | ✓ |
+| Recent data shortcuts to previously used sources | ✓ |  |
 
 ## Upgrades to Dataflow Gen2
 
@@ -96,6 +97,12 @@ To learn more about connecting dataflows with pipelines, see [dataflow activitie
 ### High-performance computing
 
 Dataflow Gen2 uses advanced compute Fabric SQL Compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
+
+### Find and reuse recent data sources
+
+Dataflow Gen2 includes a **Recent data** module that records items you've previously used—such as tables, files, folders, databases, and sheets—and lets you load them directly into the Dataflow Gen2 editing canvas. You can access Recent data from the Power Query ribbon or from the Modern Get Data experience, so you can quickly get back to the data you need without reconfiguring your connections.
+
+From any Recent data entry, you can also select **Browse location** to explore and select additional related items within the same folder or database, making it easy to work with multiple resources in the same location.
 
 ## Copilot for Dataflow Gen2
 

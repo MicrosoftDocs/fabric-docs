@@ -264,3 +264,4 @@ Conformance to GQL standards is still in progress for:
 
 - [Graph in Microsoft Fabric overview](./overview.md)
 - [What is a graph database?](./graph-database.md)
+- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
