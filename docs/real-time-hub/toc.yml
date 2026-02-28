@@ -152,7 +152,7 @@ items:
   - name: Consume business events
     items:
     - name: Set alerts on business events
-      href: set-alerts-business-events.md
+      href: business-events/set-alerts-business-events.md
   - name: Subscribe permission for Fabric/Azure events
     href: fabric-events-subscribe-permission.md   
   - name: Microsoft Fabric events capacity consumption
