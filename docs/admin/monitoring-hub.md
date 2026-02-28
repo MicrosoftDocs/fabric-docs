@@ -20,10 +20,10 @@ Any Fabric user can open the monitoring hub, but you only see activities for Fab
 
 ### Key capabilities
 
-- **Current run status:** [Open the monitoring hub](#open-the-monitor-hub) to track active and recently completed jobs from one place.
+- **Current run status:** [Open the monitoring hub](#open-the-monitoring-hub) to track active and recently completed jobs from one place.
 - **Historical runs:** [View activity history](#view-activity-history) to investigate failures, compare performance over time, and validate reruns.
 - **Activity details and diagnostics:** [View details](#view-details) to inspect status, timing, and error details for faster troubleshooting.
-- **Activity filtering and search:** Use [search and filtering](#filter-and-search-activities) to narrow the list to the activities and run windows pertaining to your investigation.
+- **Activity filtering and search:** [Use search and filtering](#search-and-filter-activities) to narrow the list to the activities and run windows pertaining to your investigation.
 
 :::image type="content" source="media/monitoring-hub/monitoring-hub-table.png" alt-text="Screenshot of Fabric monitoring hub displaying activity history with filter, refresh, and column options visible." lightbox="media/monitoring-hub/monitoring-hub-table.png":::
 
