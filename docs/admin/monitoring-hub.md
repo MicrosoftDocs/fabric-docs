@@ -26,7 +26,7 @@ The monitoring hub provides the following features to help you track and investi
 
 - **Current run status:** [Open the monitoring hub](#open-the-monitoring-hub) to track active and recently completed jobs from one place.
 - **Historical runs:** [View activity history](#view-activity-history) to investigate failures, compare performance over time, and validate reruns.
-- **Activity details and diagnostics:** [View details](#view-details) to inspect status, timing, and error details for faster troubleshooting.
+- **Activity details and diagnostics:** [View details](#get-activity-details) to inspect status, timing, and error details for faster troubleshooting.
 - **Activity filtering and search:** [Use search and filtering](#search-and-filter-activities) to narrow the list to the activities and run windows pertaining to your investigation.
 - **Item types:** The monitoring hub displays activities for these Fabric items:
 
@@ -88,7 +88,7 @@ To find specific activities or items in the monitoring hub, use the following se
    * **Status** - Select the type of status you want the table to display.
 
       >[!NOTE]
-      >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitoring hub might show a simplified version of an item's status. You can find the exact status of an item in the [details panel](#view-details).
+      >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitoring hub might show a simplified version of an item's status. You can find the exact status of an item in the [details panel](#get-activity-details).
 
    * **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
 
