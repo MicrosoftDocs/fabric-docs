@@ -97,11 +97,11 @@ The following table describes the general settings for data labels.
 | Enable data labels | A toggle switch used to enable/disable data labels for the selected layer.                        |
 | Data labels        | A drop-down list showing available fields from the selected data source.                          |
 | Font weight        | Sets the font weight: **Regular**, **Medium**, or **Bold**.                                       |
-| Text color         | The text color of the data label.  The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
+| Text color         | The text color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
 | Text size          | The text size of the data label. Valid text sizes range from 8-48. Default=12.                    |
 | Text stroke color  | The text stroke color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
 | Text stroke width  | The text stroke width of the data label. Valid text sizes range from 0-10. Default=1.             |
-| Label position     | Sets the position of the data label relative to the element it is tied to. This setting is available for the following geometry types:<br><br><ul><li><strong>Line layers:</strong> Choose the label position at the top, bottom, or center of the line geometry.</li><li><strong>Polygon layers:</strong> The label is positioned at the center of the polygon area by default.</li> <li><strong>Point layers:</strong> Choose the label position around the point geometry, including top center, bottom center, top left, top right, bottom left, or bottom right.</li></ul>  |
+| Label position     | Sets the position of the data label relative to the element it's tied to. This setting is available for the following geometry types:<br><br><ul><li><strong>Line layers:</strong> Choose the label position at the top, bottom, or center of the line geometry.</li><li><strong>Polygon layers:</strong> The label is positioned at the center of the polygon area by default.</li> <li><strong>Point layers:</strong> Choose the label position around the point geometry, including top center, bottom center, top left, top right, bottom left, or bottom right.</li></ul>  |
 | Data label overlap | Controls whether data labels can overlap map symbols. |
 
 ### Point settings
@@ -160,7 +160,7 @@ Markers are especially useful when points represent well‑known entities—such
 
 To use custom images as a marker, browse files in a Lakehouse and select supported image formats such as **SVG**, **PNG**, or **JPG**. Once selected, the image is applied directly as the symbol used to represent point data on the map.
 
-:::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying a variety of icon options, including a create button at the bottom.":::
+:::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying various icon options, including a create button at the bottom.":::
 
 > [!TIP]
 > For custom marker images that may need to scale at different zoom levels, **SVG** works best. SVG icons are vector‑based, so they resize cleanly without losing sharpness, keeping markers crisp and readable at any size. **PNG** and **JPG** are raster formats and can appear blurry or pixelated when scaled up, which can reduce map clarity—especially on high‑resolution displays or when zooming in.
@@ -279,7 +279,7 @@ The following screenshot presents a 3D map visualization of the Seattle area, sh
 
 Data-driven styling lets you control how a map layer is colored based on the data in its properties. Instead of using random or fixed colors, you define visual rules that reflect categorical or numeric values in the underlying dataset. This makes it easier to reveal patterns, trends, and outliers directly on the map and to present data with clear business meaning.
 
-Data-driven styling is available for four types of map layers, [Line layer](#line-layer), [Polygon layer](#polygon-layer), [Bubble layer](#bubble-layer) and [Marker layer](#marker-layer).
+Data-driven styling is available for four types of map layers, [Line layer](#line-layer), [Polygon layer](#polygon-layer), [Bubble layer](#bubble-layer), and [Marker layer](#marker-layer).
 
 Fabric Maps supports two data-driven styling modes for layer property settings.
 
