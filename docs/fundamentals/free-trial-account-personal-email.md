@@ -28,7 +28,7 @@ Before you begin, make sure you have the required information and tools ready.
 
 An Azure account is required to access Microsoft Fabric. Create or sign in to an Azure account so you can access the services required to start a Fabric trial.
 
-1. Go to the [Azure free account page](https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account?icid=azurefreeaccount).
+1. Go to the [Azure free account page](https://azure.microsoft.com/pricing/purchase-options/azure-account?icid=azurefreeaccount).
 1. Select **Try Azure for free**.
 1. If you have an existing Azure account, sign in with it. Otherwise, select **Sign up** and use your personal email address to register.
 1. Follow the prompts to complete the setup. You may be asked to verify your identity with a phone number and provide a payment method. Microsoft uses this information for verification purposes, and you won't be charged unless you explicitly upgrade to a paid subscription.
