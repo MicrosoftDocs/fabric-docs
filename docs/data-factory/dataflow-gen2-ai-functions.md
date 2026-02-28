@@ -31,7 +31,7 @@ In the dialog, enter your prompt and choose which columns to include as context.
 
 ## Considerations and limitations
 
-- This feature incurs Fabric AI Functions charges. Costs are reported under the operation name [**AI Functions**](/enterprise/fabric-operations) when queries run in the data preview and during run operations.
+- This feature incurs Fabric AI Functions charges. Costs are reported under the operation name [**AI Functions**](/fabric/enterprise/fabric-operations) when queries run in the data preview and during run operations.
 - VNet Gateway support isn't currently available.
 - Dataflow Gen2 creates a cloud connection for Fabric AI Functions the first time you use this feature. To update connection settings, go to [Manage connections](/power-query/manage-connections).
 - If your query uses other data sources, set privacy levels before Dataflow Gen2 can send data to AI Functions. If needed, the preview shows *Information is required about data privacy.* so you can configure missing privacy settings.
