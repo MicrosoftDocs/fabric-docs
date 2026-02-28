@@ -27,7 +27,7 @@ The monitoring hub provides the following features to help you track and investi
 - **Current run status:** [Open the monitoring hub](#open-the-monitoring-hub) to track active and recently completed jobs from one place.
 - **Historical runs:** [View activity history](#view-activity-history) to investigate failures, compare performance over time, and validate reruns.
 - **Activity details and diagnostics:** [View details](#get-activity-details) to inspect status, timing, and error details for faster troubleshooting.
-- **Activity filtering and search:** [Use search and filtering](#search-and-filter-activities) to narrow the list to the activities and run windows pertaining to your investigation.
+- **Activity filtering and search:** [Use search and filtering](#search-and-filter) to narrow the list to the activities and run windows pertaining to your investigation.
 - **Item types:** The monitoring hub displays activities for these Fabric items:
 
    * Copy Job
