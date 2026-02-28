@@ -26,6 +26,9 @@ In the dialog, enter your prompt and choose which columns to include as context.
 
 :::image type="content" source="media/dataflow-gen2-ai-functions/dialog.png" alt-text="Screenshot of AI Prompt dialog in Dataflow Gen2 (CI/CD)." lightbox="media/dataflow-gen2-ai-functions/dialog.png":::
 
+>[!TIP]
+>Learn how to craft more effective prompts to get higher-quality responses by following [OpenAI's prompting tips for gpt-4.1](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#2-long-context).
+
 ## Considerations and limitations
 
 - This feature incurs Fabric AI Functions charges. Costs are reported under the operation name [**AI Functions**](/docs/enterprise/fabric-operations.md) when queries run in the data preview and during run operations.
