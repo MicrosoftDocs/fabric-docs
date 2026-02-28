@@ -47,7 +47,7 @@ When you select the variable option in the input widget, the variable picker dia
 
 After you select a variable, the dialog displays the library and variable name so you can confirm your selection before you commit.
 
-<image of variable selected>
+![Screenshot of a variable with the name Ceiling from the library My library shown as selected in the filter rows dialog](media/dataflow-gen2-variable-library-integration/variable-selected.png)
 
 > [!NOTE]
 > Not all Dataflow experiences support the input widget. For unsupported experiences or custom scenarios, use the variable functions manually.
