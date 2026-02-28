@@ -37,7 +37,9 @@ When you use **Load to tables**, the dialog title and fields change based on you
 
 Dialog titles follow those choices (for example, **Load file to new table**, **Load folder to new table**, **Load file to existing table**, or **Load folder to existing table**).
 
-### Fields by scenario
+## Fields by scenario
+
+Use the following table to quickly identify which fields appear for each load scenario, what values to provide, and how validation behaves.
 
 | Field | When you see it | What to enter or select | Validation and behavior |
 |---|---|---|---|
