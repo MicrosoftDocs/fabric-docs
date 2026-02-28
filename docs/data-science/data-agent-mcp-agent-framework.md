@@ -330,41 +330,12 @@ Coming soon.
 
 ---
 
-## Authentication flow
-
-The following diagram shows how authentication and tool invocation work when using the Agent Framework with a Fabric data agent MCP server:
-
-```mermaid
-sequenceDiagram
-    participant User
-    participant Script
-    participant AzureIdentity as Azure Identity<br/>(DefaultAzureCredential)
-    participant FabricMCP as Fabric Data Agent<br/>MCP Server
-    participant AzureOpenAI as Azure OpenAI
-
-    User->>Script: Run script
-    Script->>AzureIdentity: Request Fabric token<br/>(scope: api.fabric.microsoft.com)
-    AzureIdentity->>Script: Return Fabric access token<br/>(aud: api.fabric.microsoft.com)
-    Script->>AzureOpenAI: Create client with<br/>DefaultAzureCredential
-    Script->>Script: Register MCP tool with<br/>Fabric bearer token in headers
-    Script->>Script: Create agent with MCP tool
-    User->>Script: Ask question
-    Script->>AzureOpenAI: Send user question
-    AzureIdentity->>AzureOpenAI: Provide Azure OpenAI token<br/>(aud: cognitiveservices.azure.com)
-    AzureOpenAI->>Script: Determine tool call needed
-    Script->>FabricMCP: Call MCP tool with<br/>Fabric bearer token
-    FabricMCP->>Script: Return data
-    Script->>AzureOpenAI: Send tool result
-    AzureOpenAI->>Script: Generate response
-    Script->>User: Display answer
-```
-
 ## Alternative: Service principal authentication
 
 The example in this article uses `DefaultAzureCredential`, which supports multiple authentication methods including Azure CLI for local development and managed identity for production. If you need to authenticate using a service principal with a client secret instead, configure your Microsoft Entra ID app registration and modify the authentication code.
 
 > [!NOTE]
-> This is an alternative authentication approach. The main example earlier in this article uses `DefaultAzureCredential`, which is recommended for most scenarios.
+> This is an alternative authentication approach. The main example earlier in this article uses `DefaultAzureCredential`.
 
 ### Configure Entra ID app registration
 
