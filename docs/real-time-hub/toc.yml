@@ -120,9 +120,9 @@ items:
   - name: Explore business events
     items:
     - name: Business events page
-      href: business-events-page.md    
+      href: business-events/business-events-page.md    
     - name: Business event details page
-      href: business-event-details-page.md
+      href: business-events/business-event-details-page.md
 - name: Consume data streams and events
   items:
   - name: Consume data streams

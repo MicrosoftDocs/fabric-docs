@@ -12,7 +12,7 @@ This article describes how to set alerts on business events in Real-Time hub.
 
 ## Navigate to Real-Time hub
 
-[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)]
+[!INCLUDE [navigate-to-real-time-hub](../includes/navigate-to-real-time-hub.md)]
 
 ## Launch the Set alert page
 
@@ -43,7 +43,7 @@ Do steps from one of the following sections, which opens a side panel where you 
     :::image type="content" source="./media/set-alerts-business-events/set-alert-from-detail-page.png" alt-text="Screenshot of the Azure blob storage events detail page with Set alert button selected." lightbox="./media/set-alerts-business-events/set-alert-from-detail-page.png":::
 
 
-[!INCLUDE [rule-details](./includes/rule-details.md)]
+[!INCLUDE [rule-details](../includes/rule-details.md)]
 
 ## Monitor section
 
@@ -83,11 +83,11 @@ Do steps from one of the following sections, which opens a side panel where you 
     
     :::image type="content" source="./media/set-alerts-business-events/review-connect.png" alt-text="Screenshot of the Review + connect page of the Connect data source wizard." lightbox="./media/set-alerts-business-events/review-connect.png":::    
 
-[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+[!INCLUDE [rule-condition-events](../includes/rule-condition-events.md)]
 
-[!INCLUDE [rule-action](./includes/rule-action.md)]
+[!INCLUDE [rule-action](../includes/rule-action.md)]
 
-[!INCLUDE [rule-save-location](./includes/rule-save-location.md)]
+[!INCLUDE [rule-save-location](../includes/rule-save-location.md)]
 
 ## Create alert
 
@@ -107,6 +107,6 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 See the following end-to-end tutorials:
 
-  - [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md)
-  - [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md)
-  - [Publish business events using Eventstream and react using Activator](business-events/tutorial-business-events-event-stream-user-data-function-activator.md)
+  - [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md)
+  - [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md)
+  - [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md)

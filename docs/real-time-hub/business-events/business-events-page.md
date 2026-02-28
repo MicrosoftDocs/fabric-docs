@@ -35,7 +35,7 @@ Apart from filters, the search bar allows you to search business events by name.
 
 #### Create new business event
 
-You can create a new business event by selecting the **+ New business event** button at the top of the list page. This opens the Create business event page, where you can define your new business event. For step-by-step guidance on creating a business event, see [Create business events](business-events/create-business-events.md).
+You can create a new business event by selecting the **+ New business event** button at the top of the list page. This opens the Create business event page, where you can define your new business event. For step-by-step guidance on creating a business event, see [Create business events](create-business-events.md).
 
 #### Add an alert for the business event
 
@@ -43,9 +43,9 @@ You can create an alert on a business event to monitor the event and get notifie
 
 #### Add a Notebook consumer for the business event
 
-You can create a Notebook consumer for a business event to analyze the event data in a Notebook. To create a Notebook consumer for the selected event, select **Add consumer** -> **Create Notebook consumer** on the ribbon. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md).
+You can create a Notebook consumer for a business event to analyze the event data in a Notebook. To create a Notebook consumer for the selected event, select **Add consumer** -> **Create Notebook consumer** on the ribbon. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md).
 
 #### Add a User Data Function consumer for the business event
 
-You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the selected event, select **Add consumer** -> **Create User Data Function consumer** on the ribbon. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md).
+You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the selected event, select **Add consumer** -> **Create User Data Function consumer** on the ribbon. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md).
 

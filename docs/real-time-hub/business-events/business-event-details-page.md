@@ -52,12 +52,12 @@ You can create an alert on the business event to monitor the event and get notif
 
 #### Create Notebook consumer for the business event
 
-You can create a Notebook consumer for a business event to analyze the event data in a Notebook. To create a Notebook consumer for the business event, select **Create Notebook consumer** at the top of the details page. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md).
+You can create a Notebook consumer for a business event to analyze the event data in a Notebook. To create a Notebook consumer for the business event, select **Create Notebook consumer** at the top of the details page. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md).
 
 #### Create User Data Function consumer for the business event
 
-You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the business event, select **Create User Data Function consumer** at the top of the details page. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md).
+You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the business event, select **Create User Data Function consumer** at the top of the details page. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md).
 
 #### Publish business event using eventstream
 
-You can create an eventstream to publish events for a business event. This allows you to stream the event data in real time and integrate with other systems. To create an eventstream for the business event, select **Create Event Stream** at the top of the details page. For step-by-step guidance on creating an eventstream, see [Publish business events using Eventstream and react using Activator](business-events/tutorial-business-events-event-stream-user-data-function-activator.md).
+You can create an eventstream to publish events for a business event. This allows you to stream the event data in real time and integrate with other systems. To create an eventstream for the business event, select **Create Event Stream** at the top of the details page. For step-by-step guidance on creating an eventstream, see [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md).
