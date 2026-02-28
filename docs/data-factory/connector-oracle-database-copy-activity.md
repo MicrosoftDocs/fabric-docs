@@ -49,7 +49,7 @@ The following properties are supported for Oracle database under the **Source** 
 
 The following properties are **required**:
 
-- **Connection**:  Select an Oracle database connection from the connection list. If no connection exists, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
+- **Connection**: Select an Oracle database connection from the connection list. If no connection exists, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
       - **Table**: Specify the name of the table in the Oracle database to read data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
@@ -125,7 +125,7 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 
 #### Edit destination data types
 
-For the **Mapping** tab configuration, if you apply Oracle as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle](#data-type-mapping-for-oracle-database).
+For the **Mapping** tab configuration, if you apply Oracle as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle database](#data-type-mapping-for-oracle-database).
 
 For example, you can set the type of the *VAL2* column to TIMESTAMP and adjust its scale as needed when mapping it to the destination.
 
