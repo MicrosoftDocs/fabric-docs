@@ -97,8 +97,6 @@ Power BI introduces generative AI that you can use to create reports automatical
 
 Copilot is also available for Power BI apps, where it's scoped to the curated content within an app. App-scoped Copilot helps users search reports, ask questions, and get summaries based on the app's content. For more information, see [Overview of Copilot for Power BI apps (preview)](/power-bi/create-reports/copilot-apps-overview).
 
-AI Auto-Summary for semantic models (Preview) uses AI to generate model descriptions that surface in OneLake catalog explorer when Copilot capacity and permissions are enabled, helping users understand a model's purpose without opening it. For more information, see [Create AI Auto-Summary for Semantic Models](../governance/onelake-catalog-explore.md#create-ai-auto-summary-for-semantic-models-preview).
-
 ### Copilot in Fabric in the Real-Time Intelligence workload
 
 Copilot for Real-Time Intelligence is an advanced AI tool designed to help you explore your data and extract valuable insights. You can input questions about your data, which are then automatically translated into Kusto Query Language (KQL) queries. Copilot streamlines the process of analyzing data for both experienced KQL users and citizen data scientists. Copilot lets you create and refine KQL queries directly in Real-Time Dashboard tiles using natural language.
