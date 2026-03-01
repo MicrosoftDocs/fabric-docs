@@ -11,9 +11,11 @@ ms.date: 02/28/2026
 
 This article covers the business events list page in Real-Time hub. The list page shows all your business events in a list, lets you filter them, and provides quick access to their details.
 
-> [!NOTE]
-> Business events in Microsoft Fabric are customer-initiated, business-critical notifications that trigger downstream processes in real time. They empower organizations to monitor processes and respond quickly to shifts in operations, customer interactions, or market conditions. This article shows how to explore business events in Fabric Real-Time hub. To learn more about business events, see [Business events overview](business-events-overview.md).
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
 
+> [!NOTE]
+> If you aren't familiar with business events, see [Business events overview](business-events-overview.md) to learn what business events are and how they can benefit your organization.
 
 ## Business events list
 
@@ -36,7 +38,7 @@ The list view shows the following information about each business event:
     :::image type="content" source="./media/business-events-page/list-columns.png" alt-text="Screenshot of columns in the business events list page." lightbox="./media/business-events-page/list-columns.png":::
     
 
-### Filters for the list
+## Filters for the list
 
 Use filters to find the business events you're interested in. The list displays the filters at the top. Select a value for each filter to narrow down the list of business events. The available filters include:
 
@@ -51,32 +53,6 @@ Use filters to find the business events you're interested in. The list displays 
 Apart from filters, the search bar allows you to search business events by name. Enter the full name or part of the name to find your business events.
 
 :::image type="content" source="./media/business-events-page/search-bar.png" alt-text="Screenshot of search bar in the business events list page." lightbox="./media/business-events-page/search-bar.png":::    
-
-### Actions on the ribbon
-
-The business events list page enables the following actions:
-
-#### Create new business event
-
-Create a new business event by selecting the **+ New business event** button at the top of the list page. You can create a business event by using a new schema or by using an existing schema. For step-by-step guidance on creating a business event, see [Create business events](create-business-events.md).
-
-:::image type="content" source="./media/business-events-page/new-business-event-button.png" alt-text="Screenshot of new business event button in the business events list page." lightbox="./media/business-events-page/new-business-event-button.png":::  
-
-#### Add a consumer for the business event
-
-- **Add an alert for the business event**: You can create an alert on a business event to monitor the event and get notified when the event occurs. To create an alert for the selected event, select **Add consumer** -> **Set alert** on the ribbon. For step-by-step guidance on setting alerts, see [Set alerts on business events in Real-Time hub](set-alerts-business-events.md).
-
-- **Add a Notebook consumer for the business event**: You can create a Notebook consumer for a business event to analyze the event data in a notebook. To create a Notebook consumer for the selected event, select **Add consumer** -> **Create Notebook consumer** on the ribbon. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md).
-
-- **Add a User Data Function consumer for the business event**: You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the selected event, select **Add consumer** -> **Create User Data Function consumer** on the ribbon. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md).
-
-:::image type="content" source="./media/business-events-page/add-consumer-button.png" alt-text="Screenshot of add consumer button in the business events list page." lightbox="./media/business-events-page/add-consumer-button.png":::
-
-#### Publish from Eventstream
-
-Select **Publish from Eventstream** to publish a business event from an eventstream. Select an eventstream to publish a business event with the schema associated with that eventstream. For step-by-step guidance on publishing from eventstream, see [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md).
-
-:::image type="content" source="./media/business-events-page/publish-from-event-stream.png" alt-text="Screenshot of publish from eventstream button in the business events list page." lightbox="./media/business-events-page/publish-from-event-stream.png":::
 
 ## Actions in context menu
 
@@ -93,3 +69,30 @@ Hover the mouse over a business event row and select the three dots (**...**) at
 ## View business event details
 
 To view details of a business event, select the business event from the list. You see the details page for the business event, where you can see more information about the business event, including its schema, associated consumers, and activity history. For more information on the business event details page, see [Business event details](business-event-details-page.md).
+
+## Actions on the ribbon
+
+The business events list page enables the following actions:
+
+### Create new business event
+
+Create a new business event by selecting the **+ New business event** button at the top of the list page. You can create a business event by using a new schema or by using an existing schema. For step-by-step guidance on creating a business event, see [Create business events](create-business-events.md).
+
+:::image type="content" source="./media/business-events-page/new-business-event-button.png" alt-text="Screenshot of new business event button in the business events list page." lightbox="./media/business-events-page/new-business-event-button.png":::  
+
+### Add a consumer for the business event
+
+- **Add an alert for the business event**: You can create an alert on a business event to monitor the event and get notified when the event occurs. To create an alert for the selected event, select **Add consumer** -> **Set alert** on the ribbon. For step-by-step guidance on setting alerts, see [Set alerts on business events in Real-Time hub](set-alerts-business-events.md).
+
+- **Add a Notebook consumer for the business event**: You can create a Notebook consumer for a business event to analyze the event data in a notebook. To create a Notebook consumer for the selected event, select **Add consumer** -> **Create Notebook consumer** on the ribbon. For step-by-step guidance on creating a Notebook consumer, see [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md).
+
+- **Add a User Data Function consumer for the business event**: You can create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the selected event, select **Add consumer** -> **Create User Data Function consumer** on the ribbon. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md).
+
+:::image type="content" source="./media/business-events-page/add-consumer-button.png" alt-text="Screenshot of add consumer button in the business events list page." lightbox="./media/business-events-page/add-consumer-button.png":::
+
+### Publish from Eventstream
+
+Select **Publish from Eventstream** to publish a business event from an eventstream. Select an eventstream to publish a business event with the schema associated with that eventstream. For step-by-step guidance on publishing from eventstream, see [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md).
+
+:::image type="content" source="./media/business-events-page/publish-from-event-stream.png" alt-text="Screenshot of publish from eventstream button in the business events list page." lightbox="./media/business-events-page/publish-from-event-stream.png":::
+
