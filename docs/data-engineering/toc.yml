@@ -143,6 +143,8 @@ items:
       href: autotune.md
     - name: Spark concurrency limits
       href: spark-job-concurrency-and-queueing.md
+    - name: Job Concurrency and Queue Monitoring
+      href: job-concurrency-queue-monitoring.md
     - name: Job admission and management
       href: job-admission-management.md
     - name: Job queueing for Fabric Spark
