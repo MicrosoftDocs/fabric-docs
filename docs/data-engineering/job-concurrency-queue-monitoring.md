@@ -69,7 +69,7 @@ To view concurrency and queue signals for your specific workspace:
 
 ## Related Content
 
-* Learn about [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](concurrency-limits.md).
+* Learn about [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](spark-job-concurrency-and-queueing.md).
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 * Understand [Spark Compute for Fabric](spark-compute.md).
