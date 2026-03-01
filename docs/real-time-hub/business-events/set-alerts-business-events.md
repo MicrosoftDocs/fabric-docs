@@ -10,6 +10,9 @@ ms.date: 02/27/2026
 
 This article describes how to set alerts on business events in Real-Time hub.
 
+> [!IMPORTANT]
+> This feature is in [preview](../../fundamentals/preview.md).
+
 ## Navigate to Real-Time hub
 
 [!INCLUDE [navigate-to-real-time-hub](../includes/navigate-to-real-time-hub.md)]
