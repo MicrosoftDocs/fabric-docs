@@ -2,7 +2,7 @@
 title: "Data quality report for materialized lake views"
 description: Learn how to create, use, and share the data quality report for materialized lake views in a lakehouse in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 02/27/2026
+ms.date: 03/01/2026
 ai-usage: ai-assisted
 # customer-intent: As a data engineer, I want to use the data quality report in materialized lake views to monitor data quality trends and configure alerts.
 ---
