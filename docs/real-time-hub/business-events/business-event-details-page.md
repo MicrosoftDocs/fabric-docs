@@ -46,6 +46,13 @@ Event schema pane shows the schema of the events for this business event. The sc
 
 ### Actions on the details page
 
+When you select a business event from the list, you can also take the following actions on the details page:
+
+- Set alert for the business event.
+- Create a Notebook consumer for the business event to analyze the event data in a notebook.
+- Create a User Data Function consumer for the business event to trigger an action when the event occurs.
+- Publish the business event using an eventstream to stream the event data in real time.
+
 #### Set alert for the business event
 
 You can create an alert on the business event to monitor the event and get notified when the event occurs. To create an alert for the business event, select **Set alert** at the top of the details page. For step-by-step guidance on setting alerts, see [Set alerts on business events in Real-Time hub](set-alerts-business-events.md).
