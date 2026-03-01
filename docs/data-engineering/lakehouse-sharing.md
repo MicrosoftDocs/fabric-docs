@@ -62,6 +62,8 @@ OneLake security permissions (preview) allow you to create custom roles within a
 
 Learn more about OneLake [Role-based access control (RBAC)](../onelake/security/data-access-control-model.md).
 
+For an overview of OneLake security concepts, see [Data security overview](../onelake/security/get-started-security.md).
+
 ### OneLake security roles
 
 To create a new data access role:
@@ -97,3 +99,4 @@ The sharing dialog for lakehouse shows an option to subscribe to OneLake events.
 - [Workspace roles in Lakehouse](workspace-roles-lakehouse.md)
 - [Share items in Microsoft Fabric](../fundamentals/share-items.md)
 - [Role-based access control (RBAC)](../onelake/security/data-access-control-model.md)
+- [Data security overview](../onelake/security/get-started-security.md)
