@@ -12,7 +12,7 @@ ms.date: 02/28/2026
 
 Efficient management of Apache Spark workloads requires deep visibility into how compute resources are allocated and consumed across a capacity. In high-concurrency environments, multiple jobs from various notebooks, job definitions, and pipelines often compete for the same pool of Capacity Units (CUs). 
 
-Without granular monitoring, identifying why a job is delayed—whether due to internal workspace limits or external capacity pressure—can be difficult. The **Job Concurrency and Queue Monitoring** feature addresses this by providing a transparent look into the job lifecycle, from submission to execution, directly within the workspace context.
+Without granular monitoring, identifying why a job is delayed—whether due to internal workspace limits or external capacity pressure—can be difficult. The **Job Concurrency and Queue Monitoring** addresses this by providing a transparent look into the job lifecycle, from submission to execution, directly within the workspace context.
 
 ---
 
@@ -64,9 +64,12 @@ To view concurrency and queue signals for your specific workspace:
 3.  Click on **Jobs** to view the live dashboard.
 4.  Select **Monitoring** for a deeper inspection of specific job logs.
 
+   :::image type="content" source="media\job-concurrency-queue-monitoring\job-concurrency-queue-monitoring.png" alt-text="Screenshot showing the job monitoring view in workspace settings.":::
 ---
 
 ## Related Content
 
 * Learn about [Concurrency limits and queueing in Apache Spark for Microsoft Fabric](concurrency-limits.md).
+* [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
+* [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 * Understand [Spark Compute for Fabric](spark-compute.md).
