@@ -39,7 +39,7 @@ A function publishes a business event by providing:
 * **data_version**: The version of the business event schema.
 
 Anatomy of a business event publisher in a user data function:
-:::image type="content" source="media/user-data-functions/business-event-anatomy-user-function.png" alt-text="Diagram showing the anatomy of a business event publisher in a user data function" lightbox="media/user-data-functions/business-event-anatomy-user-function.png":::
+:::image type="content" source="media/user-data-functions/business-event-anatomy-user-function.png" alt-text="Diagram showing the anatomy of a business event publisher in a user data function." lightbox="media/user-data-functions/business-event-anatomy-user-function.png":::
 
 ## Example: Generate a sale summary business event from a user data function 
 
