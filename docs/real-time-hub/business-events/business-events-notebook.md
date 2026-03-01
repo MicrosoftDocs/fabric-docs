@@ -1,11 +1,11 @@
 ---
-title: Using Notebook as a Business Events Publisher
+title: Use Notebook as a Business Events Publisher
 description: This article describes how to use a notebook to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
 ms.date: 02/25/2026
 ---
 
-# Using a notebook as a business events publisher
+# Use a notebook as a business events publisher
 
 Notebooks provide one of the most flexible and programmable ways to publish business events in Microsoft Fabric. Notebooks can execute arbitrary Python logic, access datasets, call APIs, perform complex calculations, and integrate with machine learning workflows. They're uniquely suited for generating business events from analytical or operational computations.
 
@@ -37,15 +37,15 @@ This approach creates a strongly typed, contract-driven event publishing pattern
 
 A notebook publishes a business event by providing:
 
-1. **eventSchemaSetWorkspace**: The Workspace where the Event Schema Set is stored. 
+* **eventSchemaSetWorkspace**: The Workspace where the Event Schema Set is stored. 
 
-1. **eventSchemaSetName**: The Event Schema Set name.
+* **eventSchemaSetName**: The Event Schema Set name.
 
-1. **eventTypeName**: The business event name.
+* **eventTypeName**: The business event name.
 
-1. **eventData**: A data payload that matches the business event schema.
+* **eventData**: A data payload that matches the business event schema.
 
-1. **dataVersion**: The version of the business event schema.
+* **dataVersion**: The version of the business event schema.
 
 > [!NOTE]
 > The properties `eventSchemaSetWorkspace` and `eventSchemaSetName` support both Fabric item names and Fabric item IDs.

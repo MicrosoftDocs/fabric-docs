@@ -1,17 +1,17 @@
 ---
-title: Using User Data Function as a Business Events Publisher
-description: This article describes how to use user data functions to publish business events in Fabric Real-Time hub.
+title: Use User Data Function as a Business Events Publisher
+description: This article describes how to use user data function to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
 ms.date: 02/25/2026
 ---
 
-# Using a user data function as a business events publisher
+# Use a user data function as a business events publisher
 
 User Data Functions provide a flexible execution layer that powers everything from service-to-service integration to application logic in Power BI and Data Agents. By using native support for publishing business events, UDFs can now emit events whenever a meaningful change occurs, enabling downstream systems to react instantly.
  
 Consider a scenario where you have a sales dashboard that tracks the status of sales deals. Previously, if there were changes to the deal, it was difficult to notify all the downstream consumers in a consistent way. Now, you can build a Power BI report that uses the User Data Functions integration to automatically trigger whenever a change is detected.
 
-:::image type="content" source="media/user-data-functions/diagram-user-data-functions.png" alt-text="Diagram showing how user data functions publish business events":::
+:::image type="content" source="media/user-data-functions/diagram-user-data-functions.png" alt-text="Diagram showing how user data functions publish business events.":::
 
 > [!TIP]
 > For a step-by-step walkthrough, see [Tutorial: Publish business events using a user data function and get notified via email using Activator](tutorial-business-events-user-data-function-activation-email.md).
@@ -32,14 +32,14 @@ At a high level, this API allows a UDF to publish business events by using a bui
 
 A function publishes a business event by providing:
 
-1. **type**: The business event name.
+* **type**: The business event name.
 
-1. **event_data**: A data payload that matches the business event schema.
+* **event_data**: A data payload that matches the business event schema.
 
-1. **data_version**: The version of the business event schema.
+* **data_version**: The version of the business event schema.
 
 Anatomy of a business event publisher in a user data function:
-:::image type="content" source="media/user-data-functions/business-event-anatomy-user-function.png" alt-text="Diagram showing the anatomy of a business event publisher in a user data function":::
+:::image type="content" source="media/user-data-functions/business-event-anatomy-user-function.png" alt-text="Diagram showing the anatomy of a business event publisher in a user data function" lightbox="media/user-data-functions/business-event-anatomy-user-function.png":::
 
 ## Example: Generate a sale summary business event from a user data function 
 

@@ -1,11 +1,11 @@
 ---
-title: Using Eventstream as a Business Events Publisher
+title: Use Eventstream as a Business Events Publisher
 description: This article describes how to use eventstreams to publish business events in Fabric Real-Time hub.
 ms.topic: how-to
 ms.date: 02/25/2026
 ---
 
-# Using Eventstream as a business events Publisher
+# Use Eventstream as a business events publisher
 
 Eventstream is one of the most flexible and intuitive ways to publish business events in Microsoft Fabric. By using Eventstream, organizations can ingest real-time data from operational systems, apply lightweight transformations, and emit meaningful business events that carry full business context. This capability makes Eventstream ideal for scenarios where raw telemetry or device signals need to be elevated into actionable events for downstream analytics, automation, or business workflows.
 
