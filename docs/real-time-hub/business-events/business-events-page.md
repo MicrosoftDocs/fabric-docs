@@ -92,4 +92,4 @@ Hover the mouse over a business event row and select the three dots (**...**) at
 
 ## View business event details
 
-To view details of a business event, select the business event from the list. You see the details page for the business event, where you can see more information about the business event, including its schema, associated consumers, and activity history. For more information on the business event details page, see [Business event details](business-event-details.md).
+To view details of a business event, select the business event from the list. You see the details page for the business event, where you can see more information about the business event, including its schema, associated consumers, and activity history. For more information on the business event details page, see [Business event details](business-event-details-page.md).
