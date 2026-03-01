@@ -208,7 +208,7 @@ VACUUM schema_name.table_name RETAIN 168 HOURS
 
 The default retention period is seven days. Setting shorter retention periods affects Delta's time travel capabilities and can cause issues with concurrent readers or writers.
 
-For more information, see [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations).
+For more information, see [Run table maintenance from Lakehouse](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
 
 ## V-Order optimization
 
