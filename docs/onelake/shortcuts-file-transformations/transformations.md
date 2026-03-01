@@ -102,6 +102,6 @@ Use the [Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) 
 
 ## Clean up
 
-To stop synchronization, delete the shortcut transformation from the lakehouse UI.  
+To stop synchronization, delete the shortcut transformation from Lakehouse Explorer.  
 
 Deleting the transformation doesn't remove the underlying files.

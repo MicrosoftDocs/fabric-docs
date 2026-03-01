@@ -3,7 +3,7 @@ title: Run History of Microsoft Fabric Materialized Lake Views
 description: Learn how to check the run history of materialized lake views in Microsoft Fabric, including run states and troubleshooting.
 ms.topic: how-to
 ms.reviewer: apsinhar
-ms.date: 02/27/2026
+ms.date: 03/01/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to check the run history of materialized lake views in Microsoft Fabric so that I can monitor and troubleshoot the runs.
 ---
