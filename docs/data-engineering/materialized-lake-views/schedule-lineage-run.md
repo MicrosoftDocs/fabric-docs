@@ -3,7 +3,7 @@ title: Schedule a Materialized Lake View Run
 description: Learn how to schedule a materialized lake view refresh run in Microsoft Fabric, including frequency options and configuration steps.
 ms.topic: how-to
 ms.reviewer: apsinhar
-ms.date: 02/27/2026
+ms.date: 03/01/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
 ---
