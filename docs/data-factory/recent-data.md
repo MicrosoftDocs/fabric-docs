@@ -93,15 +93,15 @@ Favorite queries is a feature that helps you reuse queries in your Dataflow Gen2
 
 To save a query as a favorite, right-click the query in the Queries pane, and then select **Save to Favorites**.
 
-![Screenshot of the contextual menu when right-clicking a query that shows the new Save to favorites entry](media/recent-data/query-save-to-favorites.png)
+![Screenshot of the contextual menu when right-clicking a query that shows the new Save to favorites entry.](media/recent-data/query-save-to-favorites.png)
 
 A notification in the upper-right corner that reads **Saving query to favorites** confirms your request.
 
-![Screenshot of the top level notification that displays the message saving query to favorites](media/recent-data/save-query-request-notification.png)
+![Screenshot of the top level notification that displays the message saving query to favorites.](media/recent-data/save-query-request-notification.png)
 
 A confirmation appears later and shows the query name used to save it as a favorite.
 
-![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites](media/recent-data/query-saved-notification.png)
+![Screenshot of the top level notification that displays the message that the query name was successfully saved to Favorites.](media/recent-data/query-saved-notification.png)
 
 Important behaviors for this functionality include:
 
@@ -115,7 +115,7 @@ Important behaviors for this functionality include:
 
 To import a favorite query, go to the **Recents** module in the modern **Get data** experience, and then select the filter pill labeled **Favorites**.
 
-![Screenshot of the favorite queries dialog within the Dataflow Gen2 modern get data experience](media/recent-data/favorite-queries.png)
+![Screenshot of the favorite queries dialog within the Dataflow Gen2 modern get data experience.](media/recent-data/favorite-queries.png)
 
 In this view, you can see all your favorite queries. Select any query to import the script as-is.
 

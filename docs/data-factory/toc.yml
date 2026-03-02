@@ -979,7 +979,7 @@
                 href: dataflow-gen2-copilot-explain.md
               - name: Get data with Copilot
                 href: copilot-modern-get-data.md
-              - name: Moddern query evaluator
+              - name: Modern query evaluator
                 href: dataflow-gen2-modern-evaluator.md
               - name: Preview only steps
                 href: dataflow-gen2-preview-only-step.md

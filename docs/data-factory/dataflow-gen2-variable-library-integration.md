@@ -31,7 +31,7 @@ Dataflow Gen2 dialogs include an input widget that lets you choose how to enter 
 
 > [!NOTE]
 > To use the input widget, on the **View** tab in the ribbon, in the **Parameters** group, select **Always allow**.
-> ![Screenshot of the always allow checkbox in the View tab of the ribbon to enable the input widget](media/dataflow-gen2-variable-library-integration/allow-parameters.png)
+> ![Screenshot of the always allow checkbox in the View tab of the ribbon to enable the input widget.](media/dataflow-gen2-variable-library-integration/allow-parameters.png)
 
 Some dialogs support the input widget experience and Fabric variable libraries, including:
 
@@ -43,11 +43,11 @@ Some dialogs support the input widget experience and Fabric variable libraries, 
 
 When you select the variable option in the input widget, the variable picker dialog appears. In this dialog, you can browse your variable libraries and the variables they contain.
 
-![Screenshot of the select variable dialog that displays all available libraries and variables in the current workspace](media/dataflow-gen2-variable-library-integration/select-variable.png)
+![Screenshot of the select variable dialog that displays all available libraries and variables in the current workspace.](media/dataflow-gen2-variable-library-integration/select-variable.png)
 
 After you select a variable, the dialog displays the library and variable name so you can confirm your selection before you commit.
 
-![Screenshot of a variable with the name Ceiling from the library My library shown as selected in the filter rows dialog](media/dataflow-gen2-variable-library-integration/variable-selected.png)
+![Screenshot of a variable with the name Ceiling from the library My library shown as selected in the filter rows dialog.](media/dataflow-gen2-variable-library-integration/variable-selected.png)
 
 > [!NOTE]
 > Not all Dataflow experiences support the input widget. For unsupported experiences or custom scenarios, use the variable functions manually.
