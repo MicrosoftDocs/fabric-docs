@@ -120,7 +120,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | | | WindowsAzureHDInsightService | | | | |
 | [Impala](connector-impala-overview.md) | ✓/- | Anonymous | | N | | |
 | | | UsernameAndPassword | | | | |
-| [Informix](connector-informix-for-pipeline-overview.md) | ✓/✓ | Anonymous | Support `credential`. | ✓/✓ | Anonymous | `credential` is not supported.<br>Support Server, Host, Service, Protocol and Database. |
+| [Informix](connector-informix-for-pipeline-overview.md) | ✓/✓ | Anonymous | Support `credential`. | ✓/✓ | Anonymous | `credential` is not supported.<br><br>Support Server, Host, Service, Protocol and Database. |
 | | | Basic | | | Basic | |
 | [MariaDB](connector-mariadb-overview.md) | ✓/- | Basic | Support `sslMode` and `useSystemTrustStore`. | ✓/- | Basic | `sslMode` and `useSystemTrustStore` are not supported. |
 | [Microsoft Access](connector-microsoft-access-overview.md) | ✓/✓ | Anonymous | Support `credential`. | ✓/✓ | Anonymous | `credential` is not supported. |
