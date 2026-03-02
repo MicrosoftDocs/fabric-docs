@@ -170,7 +170,7 @@ translated_df = (
 display(translated_df)
 ```
 
-## Translate products to emojis with OpenAI 🤯
+## Translate products to emojis with OpenAI
 
 
 ```python
@@ -279,7 +279,7 @@ requests.post(
 ).json()
 ```
 
-## Build a chatbot that can use Azure AI Search as a tool 🧠🔧
+## Build a chatbot that can use Azure AI Search as a tool
 
 
 ```python
