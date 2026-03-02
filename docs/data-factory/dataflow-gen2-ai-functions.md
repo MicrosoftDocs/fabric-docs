@@ -3,7 +3,7 @@ title: Fabric AI Prompt in Dataflow Gen2
 description: Learn how to use Fabric AI Functions Prompt in Dataflow Gen2.
 ms.reviewer: miescobar
 ms.topic: concept-article
-ms.date: 03/14/2026
+ms.date: 03/15/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ms.collection: ce-skilling-ai-copilot
