@@ -39,7 +39,7 @@ You can also programmatically force a refresh of the automatic metadata scanning
 ## Guidance
 
 - Automatic metadata discovery tracks changes committed to lakehouses, and is a single instance per Fabric workspace. If you're observing increased latency for changes to sync between lakehouses and the [!INCLUDE [fabric-se](includes/fabric-se.md)], it could be due to large number of lakehouses in one workspace. In such a scenario, consider migrating each lakehouse to a separate workspace as this allows automatic metadata discovery to scale.
-- Parquet files are immutable by design. When there's an update or a delete operation, a Delta table will add new parquet files with the changeset, increasing the number of files over time, depending on frequency of updates and deletes. If there's no maintenance scheduled, eventually, this pattern creates a read overhead and this impacts time it takes to sync changes to [!INCLUDE [fabric-se](includes/fabric-se.md)]. To address this, schedule regular [lakehouse table maintenance operations](../data-engineering/lakehouse-table-maintenance.md#execute-ad-hoc-table-maintenance-on-a-delta-table-using-lakehouse).
+- Parquet files are immutable by design. When there's an update or a delete operation, a Delta table will add new parquet files with the changeset, increasing the number of files over time, depending on frequency of updates and deletes. If there's no maintenance scheduled, eventually, this pattern creates a read overhead and this impacts time it takes to sync changes to [!INCLUDE [fabric-se](includes/fabric-se.md)]. To address this, schedule regular [lakehouse table maintenance operations](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
 - In some scenarios, you might observe that changes committed to a lakehouse aren't visible in the associated [!INCLUDE [fabric-se](includes/fabric-se.md)]. For example, you might have created a new table in lakehouse, but it's not yet listed in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. Or, you might have committed a large number of rows to a table in a lakehouse but this data isn't yet visible in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. We recommend initiating an on-demand metadata sync, triggered from the SQL query editor **Refresh** ribbon option or the [Refresh SQL endpoint metadata REST API](/rest/api/fabric/sqlendpoint/items/refresh-sql-endpoint-metadata). This option forces an on-demand metadata sync, rather than waiting on the background metadata sync to finish.
 - Not all Delta features are understood by the automatic sync process. For more information on the functionality supported by each engine in Fabric, see [Delta Lake table format interoperability](../fundamentals/delta-lake-interoperability.md).
 - If there's an extremely large volume of tables changes during the Extract Transform and Load (ETL) processing, an expected delay could occur until all the changes are processed.
@@ -55,7 +55,7 @@ In addition to row count guidance, file size is equally important. The SQL analy
 1. Set `maxRecordsPerFile` to 2,000,000 before data changes occurs.
 1. Perform your data changes (data ingestion, updates, deletes).
 1. Set `maxFileSize` to 4 GB.
-1. Run `OPTIMIZE`. For details on using `OPTIMIZE`, refer to [Table maintenance operations](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations).
+1. Run `OPTIMIZE`. For details on using `OPTIMIZE`, refer to [Run table maintenance from Lakehouse](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
 
 The following script provides a template for these steps, and should be executed on a lakehouse: 
 
@@ -82,7 +82,7 @@ spark.sql("""
 To maintain healthy file sizes, users should periodically run Delta optimization operations such as OPTIMIZE, especially for tables that receive frequent incremental writes, updates and deletes. These maintenance operations compact small files into appropriately sized ones, helping ensure the SQL analytics endpoint can process queries efficiently.
 
 > [!NOTE]
-> For guidance on general maintenance of lakehouse tables, refer to [Execute ad-hoc table maintenance on a Delta table using Lakehouse](../data-engineering/lakehouse-table-maintenance.md#execute-ad-hoc-table-maintenance-on-a-delta-table-using-lakehouse).
+> For guidance on general maintenance of lakehouse tables, refer to [Run table maintenance from Lakehouse](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
 
 ## Partition size considerations
 
