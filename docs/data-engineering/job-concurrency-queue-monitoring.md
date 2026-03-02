@@ -49,9 +49,9 @@ The new settings experience focuses on transparency and actionable insights:
 
 With these insights, administrators can:
 
-1.  **Diagnose Delays:** Quickly identify if a job is waiting due to SKU-level concurrency limits or physical capacity bottlenecks.
-2.  **Track Cross-Workspace Activity:** Understand overall capacity load and how different teams are impacting shared resources.
-3.  **Optimize Load:** Make informed decisions about upgrading SKUs or scheduling jobs during off-peak hours based on clearer visibility into queued states.
+-  **Diagnose delays:** Quickly identify if a job is waiting due to SKU-level concurrency limits or physical capacity bottlenecks.
+-  **Track cross-workspace activity:** Understand overall capacity load and how different teams are impacting shared resources.
+-  **Optimize load:** Make informed decisions about upgrading SKUs or scheduling jobs during off-peak hours based on clearer visibility into queued states.
 
 ---
 
