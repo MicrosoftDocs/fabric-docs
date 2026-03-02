@@ -17,12 +17,12 @@ In this tutorial, you load invoices into Spark, extract structured data with Azu
 
 ## Prerequisites
 
-- A [Microsoft Fabric subscription](https://learn.microsoft.com/fabric/enterprise/licenses) with a lakehouse
+- A [Microsoft Fabric subscription](../../enterprise/licenses.md). Or, sign up for a free [Microsoft Fabric trial](../../fundamentals/fabric-trial.md).
 - A Fabric notebook attached to a lakehouse
-- An [Azure AI services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) (Foundry Tools) resource and key
-- An [Azure Translator](https://learn.microsoft.com/azure/ai-services/translator/overview) resource and key
-- An [Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search) service and admin key
-- An [Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/overview) resource with a `gpt-4o-mini` (or equivalent) deployment
+- An [Azure AI services](/azure/ai-services/what-are-ai-services) (Foundry Tools) resource and key
+- An [Azure Translator](/azure/ai-services/translator/overview) resource and key
+- An [Azure AI Search](/azure/search/search-what-is-azure-search) service and admin key
+- An [Azure OpenAI](/azure/ai-services/openai/overview) resource with a `gpt-4o-mini` (or equivalent) deployment
 
 ## Set up dependencies
 
