@@ -63,3 +63,4 @@ Important characteristics:
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Apache Spark application detail](spark-detail-monitoring.md)
+

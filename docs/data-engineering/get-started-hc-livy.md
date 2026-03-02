@@ -53,7 +53,7 @@ DELETE /v1/.../highConcurrencySessions/{highConcurrencySessionId}
 - List statements in REPL: 
 
 ```text 
-GET /v1/.../sessions/{sessionId}/statements
+GET /v1/.../sessions/{sessionId}/repls/{replId}/statements
 ```
 
 - Execute statement in REPL: 
@@ -140,14 +140,11 @@ Sample response:
 
 ```json
 {
-  "id": "HC_123e4567-e89b-12d3-a456-426614174000",
-  "state": "queued",
-  "fabricSessionStateInfo": { "state": "queued", "errorMessage": null },
-  "sessionId": "LIVY_9876",
-  "replId": "REPL_9876_1",
-  "workspaceId": "workspace-guid",
-  "creatorId": "user@test.com",
-  "createdAt": "2025-03-07T12:34:56Z",
+  "id": "198cfe00-5fcb-4d53-bd6f-0b7d7a59a9b3",
+  "state": "NotStarted",
+  "workspaceId": "a0125232-9446-49ed-8a76-7b2ee2a706b5",
+  "artifactId": "e67fbef8-1cf7-4c17-ad20-6caad1533684",
+  "createdAt": "0001-01-01T00:00:00",
   "sessionTag": "team-analytics-loop"
 }
 ```
@@ -155,13 +152,13 @@ Sample response:
 
 ## Monitoring experience and UX considerations
 
-HC jobs surface in Monitoring Hub as `HC_<LakehouseName>_<LIVY_SESSION_ID>` to maintain consistency with other job types. This allows top-level visibility but limits REPL-level cancellation from the UI.
+HC jobs surface in Monitoring Hub as `HC_<LakehouseName>_<LivySessionId>` to maintain consistency with other job types. This allows top-level visibility but limits REPL-level cancellation from the UI.
 
 
 ## Best practices
 
 - Use `sessionTag` to pack related jobs into shared Livy sessions when acceptable.
-- Poll the HC session GET endpoint to determine when `sessionId` and `replId` become available.
+- Poll the HC session GET endpoint to determine when the `state` is `Idle` and both `sessionId` and `replId` are populated.
 
 ## Related content
 * [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).

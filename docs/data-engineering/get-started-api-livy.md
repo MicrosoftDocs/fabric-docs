@@ -15,7 +15,7 @@ Get started with Livy API for Fabric Data Engineering by creating a Lakehouse; a
 
 ## Prerequisites
 
-* Fabric Premium or Trial capacity with a LakeHouse
+* Fabric Premium or Trial capacity with a Lakehouse
 
 * Enable the [Tenant Admin Setting](/fabric/admin/about-tenant-settings) for Livy API 
 
@@ -130,7 +130,7 @@ This allows:
 - Isolation between concurrent requests
 - Lower overhead compared to creating a new session per request
 
-Using a single session for all requests causes statements to execute sequentially. Creating a new session for every request introduces unnecessary overhead. 
+Using a single session for all requests causes statements to execute sequentially. Creating a new session for every request introduces unnecessary overhead and resource underutilization. 
 
 > **Note**  
 > HC session acquisition is not idempotent. Multiple acquire requests with the same `sessionTag` return different HC session IDs, even when they are backed by the same underlying Livy session.

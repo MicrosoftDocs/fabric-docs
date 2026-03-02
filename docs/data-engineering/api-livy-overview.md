@@ -35,7 +35,7 @@ High concurrency support is designed for automation‑first workloads such as:
 
 With high concurrency support, clients can acquire multiple independent execution contexts and execute Spark statements concurrently, while the system manages underlying Spark session reuse, capacity, and isolation.
 
-> **Note**  
+> [!NOTE]  
 > High concurrency support is additive and does not change existing Livy API contracts. Existing Livy session and batch workloads continue to work without modification.
 
 Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
