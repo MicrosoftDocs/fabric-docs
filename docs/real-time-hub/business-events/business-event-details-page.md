@@ -11,13 +11,13 @@ ms.date: 03/01/2026
 
 To explore more details about a business event, follow these steps to navigate to the business event details page in Real-Time hub. The details page provides in-depth information about the business event, such as the event schema, recent events, and consumers created for this business event.
 
-- Select **Business events** under the **Subscribe to** category in Real-Time hub. You see the business events list page, where you can see all your business events. 
+1. Select **Business events** under the **Subscribe to** category in Real-Time hub. You see the business events list page, where you can see all your business events. 
 
-- Select a business event to see the details page for that business event.
+1. Select a business event to see the details page for that business event.
 
     :::image type="content" source="./media/business-event-details-page/select-business-event.png" alt-text="Screenshot of selecting a business event from the list in Real-Time hub." lightbox="./media/business-event-details-page/select-business-event.png":::
 
-- You see the business event details page.
+1. You see the business event details page.
 
     :::image type="content" source="./media/business-event-details-page/business-event-details-page.png" alt-text="Screenshot of the business event details page." lightbox="./media/business-event-details-page/business-event-details-page.png":::
 

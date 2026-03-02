@@ -29,11 +29,13 @@ items:
   items:
   - name: Business Events
     items:
-    - name: Using Notebook as a Business Events Publisher
+    - name: Create business events
+      href: business-events/create-business-events.md
+    - name: Publish business events using Notebook
       href: business-events/business-events-notebook.md
-    - name: Using User Data Function as a Business Events Publisher
+    - name: Publish business events using User Data Function
       href: business-events/business-events-user-data-function.md
-    - name: Using Eventstream as a Business Events Publisher
+    - name: Publish business events using Eventstream
       href: business-events/business-events-event-stream.md
   - name: Supported sources
     href: supported-sources.md
