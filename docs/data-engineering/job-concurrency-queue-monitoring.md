@@ -12,7 +12,7 @@ ms.date: 02/28/2026
 
 Efficient management of Apache Spark workloads requires deep visibility into how compute resources are allocated and consumed across a capacity. In high-concurrency environments, multiple Spark jobs from various notebooks, Spark job definitions, and pipelines often compete for the same pool of Capacity Units (CUs). 
 
-Without granular monitoring, identifying why a job is delayed—whether due to internal workspace limits or external capacity pressure—can be difficult. The **Job Concurrency and Queue Monitoring** addresses this by providing a transparent look into the job lifecycle, from submission to execution, directly within the workspace context.
+Without granular monitoring, identifying why a job is delayed—whether due to internal workspace limits or external capacity pressure—can be difficult. Detailed visibility into the job lifecycle, from submission through execution, helps surface where delays occur directly within the workspace context.
 
 ---
 
