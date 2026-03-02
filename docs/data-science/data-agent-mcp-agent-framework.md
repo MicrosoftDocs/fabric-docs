@@ -27,7 +27,6 @@ Use this guide to call a Fabric data agent MCP server using the [Microsoft Agent
 * Access to the MCP endpoint URL from the Fabric data agent settings.
 * Development environment based on your chosen language:
   * **Python**: Python 3.10 or later
-  * **C#**: .NET 8.0 or later (coming soon)
 
 ## Set up your environment
 
