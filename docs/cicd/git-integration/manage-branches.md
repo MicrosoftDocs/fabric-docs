@@ -18,108 +18,12 @@ This article outlines a few distinct integration options, but many organizations
 [!INCLUDE [prerequisites](../includes/github-prereqs.md)]
 
 ## Development process
-
 The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
 
 - [Develop using client tools](#scenario-1---develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
-- [Develop in a separate Fabric workspace](#scenario-2---develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
+- [Branch-out to a separate Fabric workspace](#scenario-2---develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 
 To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
-
-Then, each developer can choose the isolated environment in which to work.
-
-## Types of branch out
- 
- When you start a branch‑out operation in Fabric, you choose between **automatic mode** and **selective mode**. These modes determine how items from the git branch are brought into the new (or existing) feature workspace.
- 
- ### Automatic Mode
- Automatic mode represents the traditional branch‑out experience:
- 
- - All git branch items are copied into the branched‑out workspace with no filtering or selection.
- - No item selection is allowed—the user can't change which items come over.
- - All existing Git‑connected workspaces created before the Selective Branching feature automatically remain in this mode.
- - Behavior remains consistent with today’s full branch‑out workflow, ensuring compatibility and predictability.
- 
- Best for:
- - Full‑workspace development
- - onboarding users with existing Git connections
- - scenarios where you truly need the complete workspace content.
- 
- ### Selective Mode
- Selective mode introduces the Selective Branching experience:
- 
- - You choose which items to include in the branched‑out workspace. 
- - Related items must be selected — Fabric enforces dependencies, but not automatically. You can use the **select related items** button for that purpose.
- - Ideal for reducing clutter, improving performance, and avoiding unintended changes.
- 
- Best for:
- - Focused development on a small set of items
- - accelerating branch‑out performance
- - minimizing workspace sprawl
- - unblocking failures caused by problematic items.
-
-
-## What is selective branching?
-Before selective branching, branching out required synchronizing all items in the git branch with the new feature workspace.
-
-Selective Branching helps you create a streamlined feature workspace by choosing only the specific items you need—rather than copying the entire workspace. This results in faster branch‑outs, fewer unnecessary items, and a safer, more focused development experience. Selective Branching gives you control over what gets copied into your new feature workspace. 
-
-## How to use selective branching
-To use selective branching, follow these steps:
-
-1. From your Microsoft Fabric workspace, select **Source control** at the top.
-2. On the right, select the **branch out** symbol.
-3. Use the drop-down and select **Branch out to workspace**.
-4. If it's a new branch, under Workspace, new enter the name of the new workspace, otherwise select an existing one.
-5. Place a check in the **Select items individually (preview)**.
-  :::image type="content" source="media/branch-out/branch-2.png" alt-text="Screenshot of select items individually." lightbox="media/branch-out/branch-2.png":::
-
-
-
-6. Click the **Branch out** button.
-7. This action brings up a dialog to **Select items for your workspace**.
-8. Select the items that you want for this workspace.
-9. Click **Create branch**.
- :::image type="content" source="media/branch-out/branch-4.png" alt-text="Screenshot of create branch." lightbox="media/branch-out/branch-4.png":::
-
-10. When you perform selective branching, all the item’s dependencies are required. If you don't select one of the dependencies, you see the following:
-  :::image type="content" source="media/branch-out/branch-3.png" alt-text="Screenshot of dependency error." lightbox="media/branch-out/branch-3.png":::
-
-
-11. Once the branch is created, you can verify that you are in a selective branch by the icon in the bottom status bar (lower left corner). It says selective branch.
-
-:::image type="content" source="media/branch-out/branch-5.png" alt-text="Screenshot of selective branch icon." lightbox="media/branch-out/branch-5.png":::
-
-12. Once the feature workspace is set up, it contains only the items that you selected.
-13. Now you can change items, add new items, or delete existing items and then commit the changes to git. 
-
-## How to add additional items to the workspace
-Use the steps below to add additional items to your workspace.
-
-1. From your new Microsoft Fabric workspace (the one you created using selective branching), select **Source control** at the top.
-2. On the right, select the **branch out** symbol.
-3. Use the drop-down and select **Select additional items**.
-4. This action brings up a dialog to **Select items for your workspace**. 	The select items dialog shows **only** items from the git branch that weren't previously selected.
-5. Select the additional items you want to add to the feature workspace.
-6. Click **Add**. The selected items are added to the pending updates in the source control pane.
-7. Click **Update all**. This operation performs an update from git and creates the items in the workspace.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### Scenario 1 - Develop using client tools
 
@@ -141,55 +45,71 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 For a specific guidance on how to use the new Power BI Desktop file format in git, see [Source code format](./source-code-format.md).
 
-### Scenario 2 - Develop using another workspace
+### Scenario 2 - Branch-out to a separate Fabric workspace
+For Fabric developers, the branch‑out experience creates a new branch based on the latest commit of the source workspace’s connected branch, allowing users to either create a new workspace connected to the newly created branch or target an existing workspace by replacing the branch connected to it.
 
-For a developer who works in the web, the flow would be as follows:
+By default, when a branch‑out operation completes, all items from the source workspace are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace allow faster time to code experience.
+
+As a Fabric developer, the branch-out flow would be as follows:
 
 1. From the *Branches* tab of the **Source control** menu, select **Branch out to another workspace**.
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-2. Specify if you want to create a new workspace or switch to an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list. You will see the following screenshot when creating a new workspace.
+2. Specify if you want to create a new workspace or branch-out into an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list. Check the **Select items individually (Preview)** in case you would like to work only on subset of the items in the branched workspace. You will see the following screenshot when creating a new selective workspace.
 
  >[!NOTE]
  >When you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you commit any items you want to keep before branching out.
    
-   :::image type="content" source="./media/manage-branches/branch-out-details.png" alt-text="Screenshot of branch out specifying the name of the new branch and workspace.":::
+   :::image type="content" source="media/branch-out/branch-2.png" alt-text="Screenshot of select items individually." lightbox="media/branch-out/branch-2.png":::
 
  >[!IMPORTANT]
- >When you branch out to an existing workspace some items may be deleted.
+ >When branching out to an existing workspace, some items may be deleted. You must confirm that you understand this risk before proceeding with the operation
 
- For an existing workspace, you will see the screenshot below which warns that connecting to an existing workspace may result in some items being deleted.
-   
-   :::image type="content" source="./media/manage-branches/branch-out-existing-workspace.png" alt-text="Screenshot of branch out specifying existing branch and workspace.":::
+3. Click the **Branch out** button (steps 4-8 apply only when **Select items individually (Preview)** is selected)
+4. This action brings up a dialog to **Select items for your workspace**.
 
-3. Select **Branch out**.
+ >[!NOTE]
+ >If the Git branch contains a large number of items, the Select items dialog may take some time to load.
+
+5. Select the items that you want for this workspace.
+6. Click **Create branch**.
+ :::image type="content" source="media/branch-out/branch-4.png" alt-text="Screenshot of create branch." lightbox="media/branch-out/branch-4.png":::
+7. When you perform selective branching, all the item’s dependencies are required. You can use the **select related items** button for that purpose. If you don't select one of the dependencies, you see the following:
+  :::image type="content" source="media/branch-out/branch-3.png" alt-text="Screenshot of dependency error." lightbox="media/branch-out/branch-3.png":::
+8. Once the branch is created, you can verify that you are in a selective branch by the icon in the bottom status bar (lower left corner). It says selective branch.
+:::image type="content" source="media/branch-out/branch-5.png" alt-text="Screenshot of selective branch icon." lightbox="media/branch-out/branch-5.png":::
+9. Once the feature workspace is set up, it contains only the items that you selected.
 
    Fabric creates the new workspace and branch. You're automatically taken to the new workspace.
 
-   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new isolated environment. The sync might take a few minutes. For more information on branching out, see [troubleshooting tips](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
+   The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new branched workspace. The sync might take a few minutes. For more information on branching out, see [troubleshooting tips](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
 
    :::image type="content" source="./media/manage-branches/branches-update-commit.png" alt-text="Diagram showing the workflow of commits.":::
 
-4. Save your changes and [commit](./git-get-started.md#commit-changes-to-git) them into the feature branch.
-5. When ready, create a PR to the *main* branch. The review and merge processes are done through Azure Repos based on the configuration your team defined for that repo.
+10. Save your changes and [commit](./git-get-started.md#commit-changes-to-git) them into the feature branch.
+11. When ready, create a PR to the *main* branch. The review and merge processes are done through related Git provider based on the configuration your team defined for that repo.
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
 For more information, see [branching out limitations](./git-integration-process.md#branching-out-limitations).
 
-## Release process
+#### How to add additional items to a selective workspace
+When a Fabric developer needs to add items that were not selected during the branch‑out operation, the steps below describe how to add additional items to the workspace:
+1. Go to the required Fabric workspace, and select **Source control** at the top.
+2. On the right, select the **branch out** symbol.
+3. Use the drop-down and select **Select additional items**.
+4. This action brings up a dialog to **Select items for your workspace**. The select items dialog shows **only** items from the git branch that weren't previously selected.
+5. Select the additional items you want to add to the workspace.
+6. Click **Add**. The selected items are added to the pending updates in the source control pane.
+7. Click **Update all**. This operation performs an update from git and creates the items in the workspace.
 
-The release process begins once new updates complete a Pull Request process and merge into the team’s shared branch (such as *Main*, *Dev*, etc.). From this point, There are different options to build a release process in Fabric. To read about different options to consider when designing your workflow, see [release process](../manage-deployment.md#release-process).
-
-## Switch branches
-
+#### Switch branches
 If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** pane without disconnecting and reconnecting.  
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
 
->[!IMPORTANT]
->When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted.
-
+>[!NOTE]
+>When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted. Additionally, in a selective workspace, performing a switch operation resets the item selection, and all items from the switched branch are synchronized to the workspace.
 
 To switch between branches, follow these steps:
 
