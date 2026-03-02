@@ -25,8 +25,16 @@ items:
     href: business-events/tutorial-business-events-user-data-function-activation-email.md
   - name: Publish business events using Eventstream and react using Activator
     href: business-events/tutorial-business-events-event-stream-user-data-function-activator.md
-- name: Create data streams
+- name: Create data streams and events
   items:
+  - name: Business Events
+    items:
+    - name: Using Notebook as a Business Events Publisher
+      href: business-events/business-events-notebook.md
+    - name: Using User Data Function as a Business Events Publisher
+      href: business-events/business-events-user-data-function.md
+    - name: Using Eventstream as a Business Events Publisher
+      href: business-events/business-events-event-stream.md
   - name: Supported sources
     href: supported-sources.md
   - name: Amazon Kinesis Data Streams 
