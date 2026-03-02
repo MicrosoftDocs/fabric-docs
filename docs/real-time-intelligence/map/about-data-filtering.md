@@ -37,7 +37,7 @@ The available filter types depend on the data source and field type.
 | Categorical   | Filters text-based fields using one or more selected values | GeoJSON, PMTiles, Kusto, Ontology |
 | Numeric range | Filters numeric fields using a minimum and maximum range    | GeoJSON, PMTiles, Kusto, Ontology |
 | Boolean       | Filters true/false fields                                   | GeoJSON, PMTiles, Kusto, Ontology |
-| Date/time     | Filters records within a time range                         | Kusto, Ontology only              |
+| Date/time     | Filters records within a time range                         | Kusto only                        |
 
 > [!NOTE]
 > Date/time filtering isn't available for GeoJSON or PMTiles layers.

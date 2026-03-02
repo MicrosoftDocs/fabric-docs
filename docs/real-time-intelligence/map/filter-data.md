@@ -7,7 +7,7 @@ ms.author: limingchen
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 2/23/2026
+ms.date: 3/5/2026
 ms.search.form: Data filtering
 ---
 
@@ -80,10 +80,10 @@ Use numeric range filters to limit records within a value range.
 Use Boolean filters for true/false fields.
 
 1. Select a Boolean field.
-1. Choose **Yes**, **No**, or both.
+1. Select the **Filter value** toogle switch to **On** or **Off**.
 1. Select **Apply**.
 
-:::image type="content" source="media/data-filters/boolean-field.png" alt-text="A screenshot showing a filter dialog box with Field name dropdown set to MOTORCYCLEPARKING. The Filter value section shows a search box, one selected indicator, and a list with Select all checkbox partially filled, Yes checkbox checked, and No checkbox unchecked. A Lock filter toggle switch appears in the off position at the bottom, followed by Apply and Cancel buttons.":::
+:::image type="content" source="media/data-filters/boolean-field.png" alt-text="A screenshot showing two filter dialog boxes for a Boolean field side by side, one showing the Filter value toggle switch is on and the other is off. At the bottom are Apply and Cancel buttons.":::
 
 ### Create a date/time filter (Kusto and Ontology only)
 
