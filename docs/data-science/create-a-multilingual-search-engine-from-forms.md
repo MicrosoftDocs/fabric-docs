@@ -44,40 +44,35 @@ Import packages and connect to the Azure resources used in this workflow.
 
 
 ```python
-import os
 from pyspark.sql import SparkSession
-from synapse.ml.core.platform import running_on_synapse, find_secret
 
-# Bootstrap Spark Session
+# Bootstrap Spark session
 spark = SparkSession.builder.getOrCreate()
 
-# find_secret retrieves secrets from the linked Key Vault or Fabric secret store.
-# For local development, replace these calls with your own resource keys.
-# For production, use Microsoft Entra ID with managed identities instead of keys.
-
-# Foundry resource key (Ocp-Apim-Subscription-Key) – used by Document Intelligence
-foundry_key = find_secret("foundry-resource-key")  # your Foundry resource key
+# Foundry resource key (Ocp-Apim-Subscription-Key)
+# Used by Document Intelligence and Translator
+foundry_key = "<your-foundry-resource-key>"
 foundry_location = "eastus"
 
-# Azure Translator resource key (a separate key is required when Translator
+# Azure Translator resource key (required when Translator
 # is not accessed through the Foundry multi-service resource)
-translator_key = find_secret("translator-resource-key")  # your Azure Translator resource key
+translator_key = "<your-translator-resource-key>"
 translator_location = "eastus"
 
-# Azure AI Search admin API key – grants read/write access to the index
-search_admin_key = find_secret("search-admin-api-key")  # your Azure AI Search admin API key
-search_service = "mmlspark-azure-search"
-search_index = "form-demo-index-5"
+# Azure AI Search admin API key
+search_admin_key = "<your-search-admin-api-key>"
+search_service = "<your-search-service-name>"
+search_index = "form-demo-index"
 
-# Azure OpenAI resource key
-openai_key = find_secret("openai-resource-key")  # your Azure OpenAI resource key
-openai_service_name = "synapseml-openai"
+# Azure OpenAI resource key and deployment
+openai_key = "<your-openai-resource-key>"
+openai_service_name = "<your-openai-service-name>"
 openai_deployment_name = "gpt-4o-mini"
 openai_url = f"https://{openai_service_name}.openai.azure.com/"
 ```
 
-> [!NOTE]
-> This tutorial uses resource keys for simplicity. Key-based authentication is still supported but is considered transitional. For production workloads, authenticate with [Microsoft Entra ID and managed identities](/azure/ai-services/authentication#authenticate-with-microsoft-entra-id) to enable role-based access control (RBAC) and eliminate key management.
+> [!IMPORTANT]
+> Don't share notebooks that contain keys or check them into source control. This tutorial uses direct key assignment for simplicity. For production workloads, store keys in [Azure Key Vault](/azure/key-vault/general/overview) and retrieve them with `notebookutils.credentials.getSecret()`, or authenticate with [Microsoft Entra ID and managed identities](/azure/ai-services/authentication#authenticate-with-microsoft-entra-id) to eliminate key management entirely.
 
 ## Load data into Spark
 
