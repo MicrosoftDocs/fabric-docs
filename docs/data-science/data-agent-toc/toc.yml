@@ -1,0 +1,46 @@
+### YamlMime:TOC
+items: 
+  - name: What is the Fabric data agent?
+    href: ../concept-data-agent.md
+  - name: Fabric data agent tenant settings
+    href: ../data-agent-tenant-settings.md      
+  - name: How to create a Fabric data agent
+    href: ../how-to-create-data-agent.md
+  - name: Fabric data agent SDK
+    href: ../fabric-data-agent-sdk.md
+  - name: Evaluate a Fabric data agent
+    href: ../evaluate-data-agent.md
+  - name: Configure your Fabric data agent
+    items:
+      - name: Data agent configurations
+        href: ../data-agent-configurations.md
+      - name: Semantic model best practices
+        href: ../semantic-model-best-practices.md
+      - name: Example queries
+        href: ../data-agent-example-queries.md
+      - name: Best practices for configuring data agents 
+        href: ../data-agent-configuration-best-practices.md
+      - name: How to configure a data agent
+        href: ../develop-iterative-process-data-agent.md
+      - name: Connect to a Foundry Search Index
+        href: ../data-agent-ai-search-index.md
+  - name: How to consume a Fabric data agent
+    items:
+      - name: Consume a data agent from Microsoft Foundry (preview)
+        href: ../data-agent-foundry.md
+      - name: Consume a data agent from Copilot in Power BI (preview)
+        href: ../data-agent-copilot-powerbi.md
+      - name: Consume a data agent from Microsoft Copilot Studio (preview)
+        href: ../data-agent-microsoft-copilot-studio.md         
+      - name: Consume a data agent using Python SDK (preview)
+        href: ../consume-data-agent-python.md
+      - name: Consume a data agent from Microsoft 365 Copilot (preview)
+        href: ../data-agent-microsoft-365-copilot.md  
+      - name: Consume a data agent as Model Context Protocol Server (preview)
+        href: ../data-agent-mcp-server.md       
+  - name: Source Control, CI/CD, and ALM for Fabric data agent
+    href: ../data-agent-source-control.md 
+  - name: Fabric data agent end-to-end tutorial
+    href: ../data-agent-end-to-end-tutorial.md        
+  - name: Fabric data agent sharing
+    href: ../data-agent-sharing.md
