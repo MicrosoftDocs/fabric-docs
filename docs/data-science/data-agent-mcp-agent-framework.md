@@ -45,10 +45,6 @@ Use this guide to call a Fabric data agent MCP server using the [Microsoft Agent
    source .venv/bin/activate
    ```
 
-# [C#](#tab/csharp)
-
-Coming soon.
-
 ---
 
 ## Install dependencies
@@ -63,10 +59,6 @@ The `azure-identity` package handles authentication to Azure services using your
 pip install agent-framework-azure-ai azure-identity
 ```
 
-# [C#](#tab/csharp)
-
-Coming soon.
-
 ---
 
 ## Configure the client
@@ -80,10 +72,6 @@ export FABRIC_DATA_AGENT_MCP_URL="<your-fabric-data-agent-mcp-url>"
 export AZURE_OPENAI_ENDPOINT="<your-azure-openai-endpoint>"
 export AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME="<your-deployment-name>"
 ```
-
-# [C#](#tab/csharp)
-
-Coming soon.
 
 ---
 
@@ -113,10 +101,6 @@ from agent_framework.azure import AzureOpenAIResponsesClient
 FABRIC_DATA_AGENT_SCOPE = "https://api.fabric.microsoft.com/.default"
 ```
 
-# [C#](#tab/csharp)
-
-Coming soon.
-
 ---
 
 ## Load configuration from environment variables
@@ -131,10 +115,6 @@ async def main() -> None:
     azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
     deployment_name = os.getenv("AZURE_OPENAI_RESPONSES_DEPLOYMENT_NAME")
 ```
-
-# [C#](#tab/csharp)
-
-Coming soon.
 
 ---
 
@@ -167,10 +147,6 @@ In this script, you request the Fabric token directly because MCP tool registrat
     }
 ```
 
-# [C#](#tab/csharp)
-
-Coming soon.
-
 ---
 
 ## Create the Azure OpenAI client
@@ -186,10 +162,6 @@ Initialize the Azure OpenAI client with your `endpoint`, `deployment_name`, and 
         credential=credential,
     )
 ```
-
-# [C#](#tab/csharp)
-
-Coming soon.
 
 ---
 
@@ -207,10 +179,6 @@ Register the Fabric data agent MCP tool with the Azure OpenAI client by calling 
         approval_mode="never_require",
     )
 ```
-
-# [C#](#tab/csharp)
-
-Coming soon.
 
 ---
 
@@ -240,10 +208,6 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-# [C#](#tab/csharp)
-
-Coming soon.
-
 ---
 
 ## Run the script
@@ -255,10 +219,6 @@ After you create the script, run it with Python.
 ```bash
 python fabric_data_agent_mcp.py
 ```
-
-# [C#](#tab/csharp)
-
-Coming soon.
 
 ---
 
@@ -323,10 +283,6 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-# [C#](#tab/csharp)
-
-Coming soon.
-
 ---
 
 ## Alternative: Service principal authentication
@@ -381,10 +337,6 @@ credential = ClientSecretCredential(
     client_secret=client_secret
 )
 ```
-
-# [C#](#tab/csharp)
-
-Coming soon.
 
 ---
 
