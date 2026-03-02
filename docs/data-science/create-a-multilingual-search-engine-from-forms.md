@@ -1,7 +1,9 @@
 ---
 title: Build a Search Engine
 description: Build a custom search engine and question-answering system with SynapseML.
-ms.topic: overview
+ms.topic: tutorial
+ms.custom: dev-focus
+ai-usage: ai-assisted
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
@@ -11,17 +13,20 @@ ms.collection: ce-skilling-ai-copilot
 ---
 # Tutorial: Create a custom search engine and question-answering system
 
-In this tutorial, learn how to index and query large data loaded from a Spark cluster. You set up a Jupyter Notebook that performs the following actions:
+In this tutorial, you load invoices into Spark, extract structured data with Azure Document Intelligence, translate text, enrich with Azure OpenAI, and write results to an Azure AI Search index you can query. The tutorial takes approximately 30 minutes to complete.
 
-> + Load various forms (invoices) into a data frame in an Apache Spark session
-> + Analyze them to determine their features
-> + Assemble the resulting output into a tabular data structure
-> + Write the output to a search index hosted in Azure Cognitive Search
-> + Explore and query over the content you created
+## Prerequisites
 
-## 1 - Set up dependencies
+- A [Microsoft Fabric subscription](https://learn.microsoft.com/fabric/enterprise/licenses) with a lakehouse
+- A Fabric notebook attached to a lakehouse
+- An [Azure AI services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services) (Foundry Tools) resource and key
+- An [Azure Translator](https://learn.microsoft.com/azure/ai-services/translator/overview) resource and key
+- An [Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search) service and admin key
+- An [Azure OpenAI](https://learn.microsoft.com/azure/ai-services/openai/overview) resource with a `gpt-4o-mini` (or equivalent) deployment
 
-We start by importing packages and connecting to the Azure resources used in this workflow.
+## Set up dependencies
+
+Import packages and connect to the Azure resources used in this workflow.
 
 
 ```python
@@ -32,25 +37,25 @@ from synapse.ml.core.platform import running_on_synapse, find_secret
 # Bootstrap Spark Session
 spark = SparkSession.builder.getOrCreate()
 
-cognitive_key = find_secret("cognitive-api-key") # replace with your cognitive api key
+cognitive_key = find_secret("Foundry-resource-key") # replace with your Azure AI services key
 cognitive_location = "eastus"
 
-translator_key = find_secret("translator-key") # replace with your cognitive api key
+translator_key = find_secret("translator-key") # replace with your Azure Translator resource key
 translator_location = "eastus"
 
-search_key = find_secret("azure-search-key") # replace with your cognitive api key
+search_key = find_secret("azure-search-key") # replace with your Azure AI Search key
 search_service = "mmlspark-azure-search"
 search_index = "form-demo-index-5"
 
-openai_key = find_secret("openai-api-key") # replace with your open ai api key
+openai_key = find_secret("openai-api-key") # replace with your Azure OpenAI key
 openai_service_name = "synapseml-openai"
-openai_deployment_name = "gpt-35-turbo"
+openai_deployment_name = "gpt-4o-mini"
 openai_url = f"https://{openai_service_name}.openai.azure.com/"
 ```
 
-## 2 - Load data into Spark
+## Load data into Spark
 
-This code loads a few external files from an Azure storage account that's used for demo purposes. The files are various invoices, and they're read into a data frame.
+This code loads a few external files from an Azure storage account that's used for demo purposes. The files are various invoices, and the code reads them into a data frame.
 
 
 ```python
@@ -80,9 +85,9 @@ display(df2)
 ```
 
 
-## 3 - Apply form recognition
+## Apply document intelligence
 
-This code loads the [AnalyzeInvoices transformer](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#form-recognizer) and passes a reference to the data frame containing the invoices. It calls the pre-built invoice model of Azure Forms Analyzer.
+This code loads the [AnalyzeInvoices transformer](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#form-recognizer) and passes a reference to the data frame containing the invoices. It calls the prebuilt invoice model of Azure Document Intelligence.
 
 
 ```python
@@ -103,11 +108,9 @@ analyzed_df = (
 display(analyzed_df)
 ```
 
-## 4 - Simplify form recognition output
+## Simplify document intelligence output
 
-This code uses the [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/0.10.0/pyspark/synapse.ml.cognitive.html#module-synapse.ml.cognitive.FormOntologyTransformer), a transformer that analyzes the output of Form Recognizer transformers (for Azure Document Intelligence in Foundry Tools) and infers a tabular data structure. The output of AnalyzeInvoices is dynamic and varies based on the features detected in your content.
-
-FormOntologyLearner extends the utility of the AnalyzeInvoices transformer by looking for patterns that can be used to create a tabular data structure. Organizing the output into multiple columns and rows makes for simpler downstream analysis.
+The [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/0.10.0/pyspark/synapse.ml.cognitive.html#module-synapse.ml.cognitive.FormOntologyTransformer) transformer infers a tabular structure from the dynamic `AnalyzeInvoices` output, organizing it into columns and rows for simpler downstream analysis.
 
 ```python
 from synapse.ml.cognitive import FormOntologyLearner
@@ -125,7 +128,7 @@ organized_df = (
 display(organized_df)
 ```
 
-With our nice tabular dataframe, we can flatten the nested tables found in the forms with some SparkSQL
+By using a tabular dataframe, you can flatten the nested tables found in the forms by using SparkSQL.
 
 
 ```python
@@ -141,7 +144,7 @@ itemized_df = (
 display(itemized_df)
 ```
 
-## 5 - Add translations
+## Add translations
 
 This code loads [Translate](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/AI%20Services/Overview/#translation), a transformer that calls the Azure Translator in Foundry Tools service. The original text, which is in English in the "Description" column, is machine-translated into various languages. All of the output is consolidated into "output.translations" array.
 
@@ -167,7 +170,7 @@ translated_df = (
 display(translated_df)
 ```
 
-## 6 - Translate products to emojis with OpenAI 🤯
+## Translate products to emojis with OpenAI 🤯
 
 
 ```python
@@ -209,7 +212,7 @@ emoji_df = (
 display(emoji_df.select("Description", "Emoji"))
 ```
 
-## 7 - Infer vendor address continent with OpenAI
+## Infer vendor address continent with OpenAI
 
 
 ```python
@@ -242,7 +245,7 @@ continent_df = (
 display(continent_df.select("VendorAddress", "Continent"))
 ```
 
-## 8 - Create an Azure Search Index for the Forms
+## Create an Azure AI Search index for the forms
 
 
 ```python
@@ -262,13 +265,13 @@ from pyspark.sql.functions import monotonically_increasing_id, lit
 )
 ```
 
-## 9 - Try out a search query
+## Try out a search query
 
 
 ```python
 import requests
 
-search_url = "https://{}.search.windows.net/indexes/{}/docs/search?api-version=2019-05-06".format(
+search_url = "https://{}.search.windows.net/indexes/{}/docs/search?api-version=2024-07-01".format(
     search_service, search_index
 )
 requests.post(
@@ -276,17 +279,18 @@ requests.post(
 ).json()
 ```
 
-## 10 - Build a chatbot that can use Azure Search as a tool 🧠🔧
+## Build a chatbot that can use Azure AI Search as a tool 🧠🔧
 
 
 ```python
 import json
-import openai
+from openai import AzureOpenAI
 
-openai.api_type = "azure"
-openai.api_base = openai_url
-openai.api_key = openai_key
-openai.api_version = "2023-03-15-preview"
+client = AzureOpenAI(
+    api_key=openai_key,
+    api_version="2024-10-21",
+    azure_endpoint=openai_url,
+)
 
 chat_context_prompt = f"""
 You are a chatbot designed to answer questions with the help of a search engine that has the following information:
@@ -322,10 +326,10 @@ You should use the results to help you answer questions. If you dont know the an
 
 
 def prompt_gpt(messages):
-    response = openai.ChatCompletion.create(
-        engine=openai_deployment_name, messages=messages, max_tokens=None, top_p=0.95
+    response = client.chat.completions.create(
+        model=openai_deployment_name, messages=messages, max_tokens=None, top_p=0.95
     )
-    return response["choices"][0]["message"]["content"]
+    return response.choices[0].message.content
 
 
 def custom_chatbot(question):
@@ -351,14 +355,14 @@ def custom_chatbot(question):
             raise e
 ```
 
-## 11 - Asking our chatbot a question
+## Ask the chatbot a question
 
 
 ```python
 custom_chatbot("What did Luke Diaz buy?")
 ```
 
-## 12 - A quick double check
+## Verify the results
 
 
 ```python
