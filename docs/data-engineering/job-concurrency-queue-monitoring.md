@@ -59,12 +59,14 @@ With these insights, administrators can:
 
 ### Accessing Workspace Monitoring
 To view concurrency and queue signals for your specific workspace:
-1.  Go to **Workspace Settings**.
-2.  Select **Data Engineering**.
-3.  Click on **Jobs** to view the live dashboard.
-4.  Select **Monitoring** for a deeper inspection of specific job logs.
+1.  Go to **Workspace settings**.
+1.  Select **Data Engineering/Science** > **Spark settings**.
+1.  Select **Jobs** to view the live dashboard.
 
    :::image type="content" source="media\job-concurrency-queue-monitoring\job-concurrency-queue-monitoring.png" alt-text="Screenshot showing the job monitoring view in workspace settings.":::
+   
+1.  Select **View job submission details** for a deeper inspection of specific job logs.
+
 ---
 
 ## Related Content
