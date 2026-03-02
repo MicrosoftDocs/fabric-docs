@@ -1,17 +1,15 @@
 ---
-title: "Microsoft Fabric Mirrored Databases From SAP (Preview)"
+title: "Microsoft Fabric Mirrored Databases From SAP"
 description: Learn about the mirrored databases from SAP in Microsoft Fabric.
 ms.reviewer: jingwang
-ms.date: 11/03/2025
+ms.date: 02/26/2026
 ms.topic: concept-article
 ms.search.form: Fabric Mirroring
 ---
 
-# Mirroring SAP (Preview)
+# Mirroring SAP
 
 [Mirroring in Fabric](overview.md) offers a simple way to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing SAP estate with the rest of your data in Fabric. You can continuously replicate your SAP data directly into Fabric’s OneLake. Once in Fabric, you can take advantage of powerful capabilities for business intelligence, AI, data engineering, data science, and data sharing.
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Why use mirroring in Fabric?
 
