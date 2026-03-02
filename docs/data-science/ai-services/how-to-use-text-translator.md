@@ -3,7 +3,7 @@ title: Use Azure Translator in Foundry Tools with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
 ms.reviewer: lagayhar, ruxu
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 02/28/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -15,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Foundry Tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
-This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, in Fabric:
+This sample shows how to use the prebuilt Azure AI translator in Fabric with RESTful APIs to:
 
 -   Translate text
 -   Transliterate text

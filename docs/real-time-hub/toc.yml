@@ -29,11 +29,13 @@ items:
   items:
   - name: Business Events
     items:
-    - name: Using Notebook as a Business Events Publisher
+    - name: Create business events
+      href: business-events/create-business-events.md
+    - name: Publish business events using Notebook
       href: business-events/business-events-notebook.md
-    - name: Using User Data Function as a Business Events Publisher
+    - name: Publish business events using User Data Function
       href: business-events/business-events-user-data-function.md
-    - name: Using Eventstream as a Business Events Publisher
+    - name: Publish business events using Eventstream
       href: business-events/business-events-event-stream.md
   - name: Supported sources
     href: supported-sources.md
@@ -125,6 +127,12 @@ items:
       href: explore-fabric-onelake-events.md
     - name: Explore Fabric Job events
       href: explore-fabric-job-events.md
+  - name: Explore business events
+    items:
+    - name: Business events page
+      href: business-events/business-events-page.md    
+    - name: Business event details page
+      href: business-events/business-event-details-page.md
 - name: Consume data streams and events
   items:
   - name: Consume data streams
@@ -151,14 +159,14 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
+  - name: Consume business events
+    items:
+    - name: Set alerts on business events
+      href: business-events/set-alerts-business-events.md
   - name: Subscribe permission for Fabric/Azure events
     href: fabric-events-subscribe-permission.md   
   - name: Microsoft Fabric events capacity consumption
     href: fabric-events-capacity-consumption.md
-  - name: Consume business events
-    items:
-    - name: Set alerts on business events
-      href: set-alerts-business-events.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
