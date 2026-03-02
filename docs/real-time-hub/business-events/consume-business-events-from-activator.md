@@ -11,7 +11,7 @@ This article describes how to set alerts on business events in Real-Time hub.
 
 ## Navigate to Real-Time hub
 
-[!INCLUDE [navigate-to-real-time-hub](./includes/navigate-to-real-time-hub.md)] 
+[!INCLUDE [navigate-to-real-time-hub](../includes/navigate-to-real-time-hub.md)] 
 
 ## Launch the Set alert page 
 
