@@ -947,7 +947,9 @@
           - name: Stored Procedure activity
             href: stored-procedure-activity.md
           - name: SQL script activity
-            href: script-activity.md      
+            href: script-activity.md
+          - name: Invoke SSIS package activity
+            href: invoke-ssis-package-activity.md
       - name: Dataflows
         items:
           - name: What are dataflows?
@@ -961,6 +963,12 @@
             items:
               - name: Dataflow default destination
                 href: default-destination.md
+              - name: Data destinations validation rules
+                href: dataflow-gen2-data-destinations-validation-rules.md
+              - name: Advanced edit for data destination queries
+                href: dataflow-gen2-advanced-edit-data-destinations.md
+              - name: Excel advanced data destination
+                href: dataflow-gen2-data-destinations-excel-advanced.md
           - name: Authoring tools
             items:
               - name: Machine learning model in Dataflow Gen2
@@ -1128,10 +1136,14 @@
             href: invoke-pipeline-activity.md
           - name: KQL activity
             href: kql-activity.md
+          - name: Lakehouse maintenance activity
+            href: lakehouse-maintenance-activity.md
           - name: Lookup activity
             href: lookup-activity.md
           - name: Office 365 Outlook activity
             href: outlook-activity.md
+          - name: Refresh SQL Endpoint activity
+            href: refresh-sql-endpoint-activity.md
           - name: Semantic model refresh activity
             href: semantic-model-refresh-activity.md
           - name: Set Variable activity
