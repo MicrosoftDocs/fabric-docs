@@ -101,13 +101,14 @@ Incremental refresh works when your materialized lake view definition uses only 
 
 |SQL Construct |  Remark|
 |--------------| -------|
-|SELECT | Deterministic built-in functions only. Nondeterministic and window functions cause a fallback to full refresh.|
-|FROM| |
-|WHERE| Deterministic built-in functions only.|
-|INNER JOIN | |
-|WITH| Common table expressions (CTEs) are supported.|
-|UNION ALL| |
-|Data quality constraints| Deterministic built-in functions only. Incremental refresh enforces data quality constraints during updates.|
+|SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh: **aggregate functions** (`COUNT()`, `SUM()`, `AVG()`, `MIN()`, etc.), **`DISTINCT`**, **`GROUP BY`**, **window functions** (`ROW_NUMBER()`, `RANK()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.).|
+|FROM||
+|WHERE| Only deterministic inbuilt functions are supported.|
+|INNER JOIN || 
+|UNION ALL|| 
+|Data quality constraints| Only deterministic built-in functions are supported in constraints.|
+|WITH| Common table expressions are supported with the above supported clauses.|
+
 
 > [!NOTE]
 > Using unsupported constructs doesn't prevent you from creating a materialized lake view. It only means that Fabric uses a full refresh instead of an incremental refresh.

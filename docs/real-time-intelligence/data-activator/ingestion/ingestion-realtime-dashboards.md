@@ -37,7 +37,7 @@ This has two important implications:
 
 ### Query frequency
 
-By default, Activator runs the tile's KQL query every 5 minutes. You can change the query frequency in the data source settings for the rule.
+By default, Activator runs the tile's KQL query every 5 minutes. You can change the query frequency in the data source settings, as described in [Query frequency for query data sources](../activator-query-frequency.md).
 
 > [!TIP]
 > Real-Time Dashboards are often used to visualize rapidly changing operational data. If your dashboard is configured to auto-refresh frequently, consider aligning the Activator query frequency to the same interval so that your rules reflect the same view of the data that the dashboard shows.
