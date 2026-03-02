@@ -80,7 +80,7 @@ Use numeric range filters to limit records within a value range.
 Use Boolean filters for true/false fields.
 
 1. Select a Boolean field.
-1. Select the **Filter value** toogle switch to **On** or **Off**.
+1. Select the **Filter value** toggle switch to **On** or **Off**.
 1. Select **Apply**.
 
 :::image type="content" source="media/data-filters/boolean-field.png" alt-text="A screenshot showing two filter dialog boxes for a Boolean field side by side, one showing the Filter value toggle switch is on and the other is off. At the bottom are Apply and Cancel buttons.":::
