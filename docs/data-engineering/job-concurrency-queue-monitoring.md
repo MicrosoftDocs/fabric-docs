@@ -8,7 +8,7 @@ ms.date: 02/28/2026
 
 # Job Concurrency and Queue Monitoring (Preview)
 
-**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-and-ds.md)]
+**Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
 Efficient management of Apache Spark workloads requires deep visibility into how compute resources are allocated and consumed across a capacity. In high-concurrency environments, multiple Spark jobs from various notebooks, Spark job definitions, and pipelines often compete for the same pool of Capacity Units (CUs). 
 
