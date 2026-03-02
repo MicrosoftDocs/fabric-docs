@@ -3,7 +3,7 @@ title: "Lakehouse end-to-end scenario: overview and architecture"
 description: This article provides an overview of the lakehouse, including its architecture, the components involved in its implementation, and the semantic model.
 ms.reviewer: arali
 ms.topic: tutorial
-ms.date: 02/14/2026
+ms.date: 02/21/2026
 ai-usage: ai-assisted
 ---
 
