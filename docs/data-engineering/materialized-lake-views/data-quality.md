@@ -3,7 +3,7 @@ title: "Data Quality in Materialized Lake Views in a Lakehouse in Microsoft Fabr
 description: Learn about data quality in materialized lake views in a lakehouse in Microsoft Fabric
 ms.reviewer: abhishjain
 ms.topic: concept-article
-ms.date: 02/27/2026
+ms.date: 03/01/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to implement data quality in materialized lake views in a lakehouse so that I can ensure the integrity and reliability of my data.
 ---
