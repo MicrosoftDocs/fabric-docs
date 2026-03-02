@@ -5,16 +5,16 @@ description: Gain visibility into Microsoft Fabric activities with the monitorin
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 02/27/2026
+ms.date: 03/02/2026
 ---
 
 # Use the monitoring hub to track Fabric activity
 
 The Microsoft Fabric **Monitor** feature opens the monitoring hub, which provides a centralized view of job execution health, progress, and outcomes. You can quickly identify problems and take action. Use the monitoring hub to answer these questions:
 
-- Is a job running, succeeded, or failed?
-- Where did it fail and what error details are available?
-- Did this job fail before in the last 30 days?
+- What is the current status of a job—running, succeeded, or failed?
+- Where did it fail, and what error details are available?
+- Has this job failed before in the last 30 days?
 
 Any Fabric user can open the monitoring hub, but you only see activities for Fabric items you have permission to view.
 
@@ -54,19 +54,19 @@ The monitoring hub provides the following features to help you track and investi
 
 ## Open the monitoring hub
 
-To open the monitoring hub in Fabric, select **Monitor** from the navigation pane. The **Monitor** page displays Fabric activities from the past 30 days, ordered by start time with the newest activities at the top. The table shows up to 100 activities per Fabric item.
+To open the monitoring hub in Fabric, select **Monitor** from the navigation pane. The **Monitor** page displays up to 100 Fabric activities from the past 30 days, ordered by start time with the newest activities at the top. The table shows up to 100 activities per Fabric item.
 
 If you have the appropriate permissions for a Fabric item, you can perform certain actions directly from the monitoring hub. The available actions depend on the item type.
 
 ## Get activity details
 
-The details panel provides information about an activity, such as its status, start time, duration, and error details. To view the details of an activity, point to the activity name and select the **View details** symbol (**i**). The details panel opens on the right side of the page.
+The details pane provides information about an activity, such as its status, start time, duration, and error details. To open the details pane for an activity, point to the activity name and select the **View details** symbol (**i**).
 
 ## View activity history
 
-The **Monitor** page displays up to 100 recent activities from the past 30 days. For high-frequency jobs, this table might not show all activities in that period. To view the complete 30-day history for a specific activity, use the **Historical runs** option.
+The main **Monitor** page displays only the 100 most recent activities from the past 30 days, so frequently run jobs might not show all executions. However, you can view the complete 30-day history for a specific activity by using the **Historical runs** option.
 
-To view the history of an activity, point to the activity name, select **More options** (**...**), and then select **Historical runs**. The table displays up to 30 days of historical information for that activity. To return to the main display, select **Back to main view**.
+To access the full 30-day history for an activity, point to the activity name, select **More options** (**...**), and then select **Historical runs**. The table displays up to 30 days of historical information for that activity. To return to the main display, select **Back to main view**.
 
 :::image type="content" source="media/monitoring-hub/monitoring-hub-historical.png" alt-text="Screenshot of the Monitor hub displaying a table of activity history and a details panel." lightbox="media/monitoring-hub/monitoring-hub-historical.png":::
 
@@ -83,16 +83,16 @@ To find specific activities or items in the monitoring hub, use the following se
 
 * **Keyword search** - Use the **Filter by keyword** search box to quickly find activities or items by name or keyword. The search queries only the loaded data, not all the activities in the database.
 
-* **Filter** - Use **Filter** to narrow results by properties like status, start time, and owner. For example, to find failed jobs in a specific workspace from the last 24 hours, select `Status = Failed`, `Location = <workspace>`, and `Start time = Last 24 hours`, and then select **Apply**. The monitoring hub remembers your filter selection for the next time you access the hub. Use the following filter options to customize the displayed results (filter options vary by item type):
+* **Filter** - Use **Filter** to narrow results by properties like status, start time, and owner. For example, to find failed jobs in a specific workspace from the last 24 hours, select `Status = Failed`, `Location = <workspace>`, and `Start time = Last 24 hours`. The monitoring hub remembers your filter selection for the next time you access the hub. Use the following filter options to customize the displayed results (filter options vary by item type):
 
    * **Status** - Select the type of status you want the table to display.
 
       >[!NOTE]
       >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitoring hub might show a simplified version of an item's status. You can find the exact status of an item in the [details panel](#get-activity-details).
 
-   * **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
-
    * **Item type** - Select the Fabric item types you want the table to display.
+
+   * **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
 
    * **Submitted by** - Select the owner of the Fabric item that the table displays activities for.
 
