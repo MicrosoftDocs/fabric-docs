@@ -270,4 +270,5 @@ You can also define compound keys that use multiple properties together to ensur
 - [GQL language guide](gql-language-guide.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL values and value types](gql-values-and-value-types.md)
+- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
 - [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)

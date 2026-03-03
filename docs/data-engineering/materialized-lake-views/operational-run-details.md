@@ -3,7 +3,7 @@ title: Materialized Lake Views Operational Run Details
 description: Learn how to use the activity panel and details panel to understand materialized lake views operational run details in Microsoft Fabric.
 ms.topic: how-to
 ms.reviewer: apsinhar
-ms.date: 02/27/2026
+ms.date: 03/01/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to understand the operational run details of materialized lake views in Microsoft Fabric so that I can monitor and manage their execution.
 ---
