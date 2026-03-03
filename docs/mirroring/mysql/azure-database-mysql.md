@@ -2,7 +2,7 @@
 title: Microsoft Fabric Mirrored Databases from Azure Database for MySQL (Preview)
 description: Learn about the mirrored databases from Azure Database for MySQL in Microsoft Fabric.
 ms.reviewer: vamehta, maghan
-ms.date: 03/16/2026
+ms.date: 03/18/2026
 ms.topic: overview
 ai-usage: ai-assisted
 ---
@@ -54,7 +54,7 @@ Monitor storage, IOPS, and long-running transactions to ensure sufficient capaci
 
 The source Azure Database for MySQL can use either a General Purpose or Memory Optimized compute tier. Burstable compute tier is **not supported** as a source for mirroring.
 
-For more information about compute tiers available in Azure Database for MySQL, see </azure/mysql/flexible-server/concepts-service-tiers-storage>.
+For more information about compute tiers available in Azure Database for MySQL, see [service tiers](/azure/mysql/flexible-server/concepts-service-tiers-storage).
 
 ## Related content
 
