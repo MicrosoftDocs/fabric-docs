@@ -1,7 +1,7 @@
 ---
 title: Multivariate anomaly detection with Foundry Tools
 description: Use SynapseML and Foundry Tools for multivariate anomaly detection.
-ms.topic: how-to-guide
+ms.topic: how-to
 ms.custom: sfi-ropc-nochange, dev-focus
 ai-usage: ai-assisted
 ms.author: scottpolly
