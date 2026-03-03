@@ -1,9 +1,9 @@
 ---
-title: OneLake File Explorer Release Notes
+title: OneLake file explorer release notes
 description: Information about major updates in each release of the OneLake file explorer client app for Windows.
-ms.reviewer: eloldag
+ms.reviewer: harmeetgill
 ms.topic: how-to
-ms.date: 10/13/2023
+ms.date: 03/03/2026
 #customer intent: As a OneLake file explorer user, I want to stay informed about app updates and easily access release notes so that I can take advantage of new features and improvements.
 ---
 
@@ -11,21 +11,25 @@ ms.date: 10/13/2023
 
 Continue reading for information on major updates to OneLake file explorer.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+## March 2026 update (v 1.1.0)
 
-## December 2025 Update (v 1.0.15.0)
+### OneLake file explorer general availability
 
-### Improved Stability on Windows 11
+OneLake file explorer is now generally available.
+
+## December 2025 update (v 1.0.15.0)
+
+### Improved stability on Windows 11
 Improved stability in certain Windows 11 environments for a more consistent user experience.
 
-### Enhanced File Sync and Cleanup
+### Enhanced file sync and cleanup
 Resolved issues where local changes to Excel (.xlsx) files were not automatically syncing to the cloud and temporary .tmp files created during save operations were not being removed or deleted. This update ensures accurate synchronization and proper cleanup for seamless file management.
 
-## September 2025 Update (v 1.0.14.0)
+## September 2025 update (v 1.0.14.0)
 
-### .NET 8 Migration
+### .NET 8 migration
 
-OneLake File Explorer now runs on .NET 8, ensuring the application remains aligned with Microsoft’s latest supported frameworks. This upgrade enhances security and ensures continued eligibility for long-term support. 
+OneLake file explorer now runs on .NET 8, ensuring the application remains aligned with Microsoft’s latest supported frameworks. This upgrade enhances security and ensures continued eligibility for long-term support. 
 
 ### Smarter sync on temporary files
 Temporary files (.tmp) created during file edits—often created during edits in applications like Microsoft Excel—will no longer get stuck in the sync pending state. This issue typically occurred when there were network connectivity problems, preventing .tmp files from uploading and causing conflicts with the server. These files are now cleaned up automatically once the network connection is restored, eliminating persistent sync indicators on temporary files. 
@@ -34,10 +38,9 @@ Temporary files (.tmp) created during file edits—often created during edits in
 
 We’ve resolved a memory access violation that previously caused crashes when syncing files that had not been opened before. This fix improves reliability and prevents unexpected shutdowns during background sync operations.
 
+## April 2024 update
 
-## April 2024 Update
-
-### v 1.0.13.0 - Update Notifications
+### v 1.0.13.0 - Update notifications
 
 We believe that staying informed about app updates is crucial. Whether it’s a bug fix, performance improvement, or exciting new features. Starting with this version, the OneLake file explorer app will now notify you when a new update is available. You receive a Windows notification when a new version is available and the OneLake icon in the Windows notification area will change. Simply right-click the icon to see if an update is available.
 
@@ -45,21 +48,21 @@ We believe that staying informed about app updates is crucial. Whether it’s a 
 
 This release includes minor internal fixes to enhance functionality.
 
-## December 2023 Update (v 1.0.11.0)
+## December 2023 update (v 1.0.11.0)
 
 ### Ability to update files using Excel
 
 With this release users can make edits and updates with Excel to OneLake files, similar to the experience with OneDrive. Start by opening a csv or xlsx file using Excel, make updates and close the file. Closing the file initiates the sync to OneLake. You can then view the updated file online in the Fabric web portal. This enhancement aims to streamline your workflow and provide a more intuitive approach to managing and editing your files with Excel.  
 
-### Menu option to view Release Notes
+### Menu option to view release notes
 
-With this menu option, you can easily find details about what's new in the latest OneLake File Explorer version. Right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **About** > **Release Notes**. This action opens the OneLake file explorer release notes page in your browser window.
+With this menu option, you can easily find details about what's new in the latest OneLake file explorer version. Right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **About** > **Release Notes**. This action opens the OneLake file explorer release notes page in your browser window.
 
 ### TLS 1.3 support
 
 OneLake file explorer defaults to the latest TLS version supported by Windows, currently TLS 1.3. Support for TLS 1.3 is recommended for maintaining the security and privacy of data exchanged over the internet.
 
-## September 2023 Update (v 1.0.10.0)
+## September 2023 update (v 1.0.10.0)
 
 ### Option to open workspaces and items on the web portal
 
@@ -71,7 +74,7 @@ In addition, you can right-click on an item, subfolder, or file and select **One
 
 With this menu option, you can now easily find your client-side logs, which can help you troubleshoot issues. Right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select Select **Diagnostic Operations** > **Open logs directory**. This action opens your logs directory in a new Windows file explorer window.
 
-## July 2023 Update (v 1.0.9.0)
+## July 2023 update (v 1.0.9.0)
 
 ### Option to sign in to different accounts
 
