@@ -1,11 +1,8 @@
 ---
 title: Customize a map
 description: Learn how to customize a map in Microsoft Fabric Real-Time Intelligence.
-ms.reviewer: smunk
-author: sipa
-ms.author: sipa
+ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.custom:
 ms.date: 09/15/2025
 ms.search.form: Customize the map
 ---
@@ -230,3 +227,4 @@ The following screenshot displays a thematic map of California highlighting hist
 The following screenshot presents a 3D map visualization of the Seattle area, showcasing building extrusion. Each building is rendered with varying heights based on its actual elevation data, creating a realistic urban landscape.
 
 :::image type="content" source="media/customize-map/polygon-visual-enable-extrusion.png" lightbox="media/customize-map/polygon-visual-enable-extrusion.png" alt-text="Screenshot of a map visual of the Seattle area, demonstrating the polygon visual with extrusions enable.":::
+

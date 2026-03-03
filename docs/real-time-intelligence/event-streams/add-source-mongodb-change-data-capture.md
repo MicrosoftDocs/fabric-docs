@@ -1,9 +1,7 @@
 ---
 title: Add MongoDB CDC source to an eventstream
 description: Learn how to add MongoDB CDC source to an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/22/2025
@@ -19,7 +17,7 @@ The MongoDB CDC Connector for Eventstream allows you to stream Change Data Captu
 ## Prerequisites
 
 - A workspace in Fabric capacity or Trial license mode, with **Contributor** or higher permissions.  
-- A MongoDB cluster that is accessible from your client IP address.  
+- A MongoDB cluster that is publicly accessible from your client IP address. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - Change Data Capture (CDC) enabled for the collections you want to capture.  
 - An eventstream in Fabric. If you don’t have one, [create an eventstream](create-manage-an-eventstream.md).  
 
@@ -88,3 +86,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

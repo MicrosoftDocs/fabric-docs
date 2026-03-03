@@ -1,8 +1,6 @@
 ---
 title: Migrate Data with the Migration Assistant for Fabric Data Warehouse
 description: This tutorial provides a step-by-step guide for the Migration Assistant experience for Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: anphil, pvenkat, prlangad, chweb
 ms.date: 02/06/2026
 ms.topic: how-to

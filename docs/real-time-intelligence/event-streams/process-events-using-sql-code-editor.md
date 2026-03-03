@@ -1,11 +1,8 @@
 ---
 title: Process Events Using a SQL Operator
 description: Learn how to use a SQL operator to process events that flow through eventstreams. 
-ms.reviewer: spelluru
-ms.author: vashriva
-author: vaibhav3sh
+ms.reviewer: vashriva
 ms.topic: how-to
-ms.custom:
 ms.date: 06/18/2025
 ms.search.form: Event Processor
 ---
@@ -136,3 +133,5 @@ To perform stream processing operations on your data streams by using a SQL oper
 ## Related content
 
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
+
+

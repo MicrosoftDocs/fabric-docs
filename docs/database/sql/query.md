@@ -1,12 +1,9 @@
 ---
 title: "Query your SQL database"
 description: Learn how to query your SQL database in Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: dlevy
 ms.date: 11/01/2024
 ms.topic: how-to
-ms.custom:
 ---
 # Query your SQL database in Fabric
 

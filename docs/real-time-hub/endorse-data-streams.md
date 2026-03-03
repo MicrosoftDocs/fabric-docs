@@ -1,10 +1,8 @@
 ---
 title: Endorse streams in Fabric Real-Time hub
 description: This article shows how to endorse streams in Fabric Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -60,3 +58,4 @@ You can endorse data in a data stream using the following steps:
 ## Related content
 
 For details on endorsing data, see [Endorsement in Fabric](../fundamentals/endorsement-promote-certify.md).
+

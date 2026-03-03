@@ -7,8 +7,6 @@ brand: fabric
 metadata:
   title: Microsoft Fabric documentation
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
-  ms.service: fabric
-  ms.custom:
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda

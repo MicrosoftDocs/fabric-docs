@@ -1,9 +1,7 @@
 ---
 title: "How To: Query Using Time Travel at the Statement Level"
 description: Learn from samples and examples of querying a warehouse using time travel at the statement level.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: ajagadish # Microsoft alias
+ms.reviewer: ajagadish
 ms.date: 06/20/2025
 ms.topic: how-to
 ---

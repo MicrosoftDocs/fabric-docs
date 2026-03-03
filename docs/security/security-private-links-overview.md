@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: concept-article
-ms.custom:
 ms.date: 08/21/2025
 ---
 
@@ -121,6 +120,14 @@ Unsupported scenarios:
 * Eventhouse as a destination (with direct ingestion mode) is not supported.
 * Activator as a destination is not supported.
 
+### Data Activator
+
+Data Activator supports ingesting events from KQL/Eventhouse, Power BI, and Real-Time Hub Fabric Events for tenant level Private Links. For workspace level, Data Activator supports ingesting events from KQL/Eventhouse and Real-Time Hub Fabric Events.
+
+Limitations:
+
+* Currently, Data Activator doesn't support ingestion from Eventstream with Private Links enabled.
+
 ### Eventhouse
 
 Eventhouse supports Private Link, allowing secure data ingestion and querying from your Azure Virtual Network via a private link. You can ingest data from various sources, including Azure Storage accounts, local files, and Dataflow Gen2. Streaming ingestion ensures immediate data availability. Additionally, you can utilize KQL queries or Spark to access data within an Eventhouse.
@@ -165,6 +172,16 @@ Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring)
 
 For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link.
 
+### API for GraphQL
+
+API for GraphQL supports Private Link, allowing secure API access and querying from your Azure Virtual Network via a private link. 
+
+**Limitations:**
+
+* API monitoring dashboard and logging based on Workspace Monitoring is not supported.
+* Service Principals (SPN) are supported as clients however it's not possible to use a service principal to create a saved credential for access between the API and data source.
+
+  
 ## Other considerations and limitations
 
 There are several considerations to keep in mind while working with private endpoints in Fabric:

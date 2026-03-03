@@ -1,8 +1,7 @@
 ---
 title: Service details and limitations 
 description: Overview of service properties and limitations
-ms.author: luisbosquez
-author: luisbosquez
+ms.reviewer: luisbosquez
 ms.topic: overview
 ms.custom: freshness-kr
 ms.date: 01/21/2026
@@ -55,3 +54,4 @@ The following list details the service limits for User Data Functions items.
 ## Next steps
 - [Create a new User Data Functions item from the Fabric portal](./create-user-data-functions-portal.md) or by using [the VS Code extension](./create-user-data-functions-vs-code.md).
 - [Learn about User data functions programming model](./python-programming-model.md)
+

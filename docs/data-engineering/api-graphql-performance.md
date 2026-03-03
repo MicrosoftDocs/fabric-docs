@@ -1,8 +1,6 @@
 ---
 title: Fabric API for GraphQL Performance Best Practices
 description: This article contains a list of performance best practices
-author: eric-urban
-ms.author: eur
 ms.reviewer: edlima
 ms.date: 01/21/2026
 ms.topic: best-practice

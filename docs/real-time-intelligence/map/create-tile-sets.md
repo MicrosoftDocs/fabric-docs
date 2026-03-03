@@ -1,11 +1,8 @@
 ---
 title: How to create tilesets 
 description: Learn how to create a map tileset in Microsoft Fabric Real-Time Intelligence.
-ms.reviewer: smunk
-author: sipa
-ms.author: sipa
+ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.custom:
 ms.date: 02/16/2026
 ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, tileset
 ---

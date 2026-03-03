@@ -1,14 +1,10 @@
-﻿---
+---
 title: "Tutorial: Visualize predictions with a Power BI report"
 description: In this fifth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
-ms.reviewer: amjafari
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
-ms.custom: 
 ms.date: 04/25/2025
 #CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.
-reviewer: s-polly
 ---
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
@@ -50,7 +46,7 @@ Create a new semantic model linked to the predictions data you produced in part 
 
 1. Select **New semantic model** in the top ribbon, as shown in the following screenshot:
 
-   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New semantic model option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
+    :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the Lakehouse home page, showing where to select the New semantic model option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
 
 1. Give the semantic model a name - for example, "bank churn predictions." Then, select the **customer_churn_test_predictions** dataset as shown in the following screenshot:
 
@@ -219,3 +215,4 @@ This completes the five part tutorial series. See other end-to-end sample tutori
 
 > [!div class="nextstepaction"]
 > [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)
+

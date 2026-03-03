@@ -2,50 +2,59 @@
 title: High concurrency mode in Apache Spark compute for Fabric
 description: Learn about sharing Spark sessions using high concurrency mode in Microsoft Fabric for data engineering and data science workloads.
 ms.reviewer: saravi
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
-ms.custom:
-ms.date: 10/20/2023
+ms.date: 03/01/2026
+ai-usage: ai-assisted
 ---
 
 # High concurrency mode in Apache Spark for Fabric
 
-High concurrency mode allows users to share the same Spark sessions in Spark for Fabric for data engineering and data science workloads. An item like a notebook uses a standard Spark session for its execution. In high concurrency mode, the Spark session can support independent execution of multiple items within individual read-eval-print loop (REPL) cores that exist within the Spark application. These REPL cores provide isolation for each item, and prevent local notebook variables from being overwritten by variables with the same name from other notebooks sharing the same session.
+High concurrency mode lets compatible Spark workloads share one running Spark session instead of starting a separate session for each workload. This mode is commonly used for notebook and pipeline scenarios in Fabric.
 
-As the session is already running, this provides users with an instant run experience when reusing the session across multiple notebooks.
+In a standard Spark session, each item runs in its own session. In high concurrency mode, one Spark application can host multiple independent workloads in separate read-eval-print loop (REPL) cores. Each REPL core isolates execution state so local variables from one workload don't overwrite variables from another workload.
+
+Because the shared session is already running, subsequent workloads can start much faster.
 
 > [!NOTE]
-> For custom pools with high concurrency mode, users get 36X faster session start experience compared to a standard Spark session.
+> For custom pools with high concurrency mode, session start can be up to 36x faster than a standard Spark session.
+
+## How it works in practice
+
+The diagram highlights three core characteristics of high concurrency mode:
+
+- **Security**: Session sharing is always within a single user boundary.
+- **Multitask**: You can switch between notebooks and continue work without waiting for a new Spark session to be created or initialized.
+- **Cost-effective**: Shared sessions improve resource utilization and reduce compute cost for data engineering and data science workloads.
 
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-security-multitask-overview.png" alt-text="Diagram showing the working of high concurrency mode in Fabric." lightbox="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-security-multitask-overview.png":::
 
-> [!IMPORTANT]
-> Session sharing conditions include:
->
->- Sessions should be within a single user boundary.
->- Sessions should have the same default lakehouse configuration.
->- Sessions should have the same Spark compute properties.
+## When sessions can be shared
 
-As part of Spark session initialization, a REPL core is created. Every time a new item starts sharing the same session and the executors are allocated in FAIR based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
+Session sharing applies when these conditions are met:
 
+- Sessions are within a single user boundary.
+- Sessions use the same default lakehouse configuration.
+- Sessions use the same Spark compute properties.
 
-## Billing of High Concurrency Sessions
+During session initialization, Fabric creates a REPL core. As new workloads join the shared session, executors are allocated using FAIR scheduling across those REPL cores to reduce starvation risk.
 
-When you use high concurrency mode, **only the initiating session** that starts the shared Spark application is billed. All subsequent sessions that share the same Spark session **do not incur additional billing**. This approach enables cost optimization for teams and users running multiple concurrent workloads in a shared context.
+## Billing behavior
 
-### 📌 Example:
+When you use high concurrency mode, only the initiating session that starts the shared Spark application is billed. Subsequent sessions that share the same Spark session don't incur separate billing.
+
+### Example
 
 - A user starts **Notebook 1**, which initiates a Spark session in high concurrency mode.
 - The same session is then shared by **Notebook 2**, **Notebook 3**, **Notebook 4**, and **Notebook 5**.
-- In this case, **only Notebook 1 will be billed** for the Spark compute usage.
-- The shared notebooks (2 to 5) **will not be billed** individually.
+- In this case, only **Notebook 1** is billed for Spark compute.
+- Shared notebooks (2 to 5) aren't billed individually.
 
-This billing behavior is also reflected in **Capacity Metrics**, where usage is only reported against the initiating notebook (Notebook 1 in this case).
+This behavior is also reflected in **Capacity Metrics**, where usage is reported against the initiating notebook.
 
 > [!NOTE]
-> The same billing behavior applies when high concurrency mode is used within **pipeline activities**, where only the notebook or activity that initiates the Spark session is charged.
+> The same billing behavior applies to pipeline activities. Only the notebook or activity that initiates the Spark session is charged.
 
 ## Related content
 
 - To get started with high concurrency mode in notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).
+- For Lakehouse load and preview behavior, see [High concurrency mode for Lakehouse operations in Microsoft Fabric](high-concurrency-for-lakehouse-operations.md).

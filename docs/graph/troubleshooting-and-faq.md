@@ -3,8 +3,6 @@ title: Troubleshooting Graph in Microsoft Fabric
 description: Learn about troubleshooting Graph in Microsoft Fabric.
 ms.topic: reference
 ms.date: 01/26/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ---
 
@@ -75,3 +73,4 @@ By default, nodes display their ID as the label. To change the display label:
 
 - [What is Graph in Microsoft Fabric?](overview.md)
 - [Quickstart guide for Graph in Microsoft Fabric](quickstart.md)
+- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)

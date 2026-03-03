@@ -1,12 +1,9 @@
 ---
 title: Publish a workload to the Fabric Workload Hub
 description: Learn how to publish a workload you created using the Microsoft Fabric Workload Development Kit, to the Fabric Workload Hub.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 05/21/2024
-# customer intent: As an ISV I want to publish my workload to the Fabric Workload Hub so that I can make it available to customers.
+#customer intent: As an ISV I want to publish my workload to the Fabric Workload Hub so that I can make it available to customers.
 ---
 
 # Publish a workload to the Fabric Workload Hub
@@ -55,3 +52,4 @@ After the form was submitted, the Fabric workload team validates the information
 * [Publishing guidelines and requirements](./publish-workload-requirements.md)
 
 * [Monetize your workload](monetization.md)
+

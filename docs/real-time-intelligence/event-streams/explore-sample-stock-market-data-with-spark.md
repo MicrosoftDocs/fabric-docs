@@ -1,9 +1,7 @@
 ---
 title: Explore sample Stock Market data using Fabric Eventstream and Spark Structured Streaming
 description: This article provides instruction on how to explore the sample Stock Market data in Fabric Eventstream using Spark Structured Streaming.
-ms.reviewer: spelluru
-ms.author: arindamc
-author: arindamc
+ms.reviewer: arindamc
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 12/22/2025
@@ -78,3 +76,5 @@ To learn more about ingesting and processing data streams using Eventstream, che
 
 - [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
+
+

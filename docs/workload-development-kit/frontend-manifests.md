@@ -1,10 +1,7 @@
 ---
 title: Frontend manifests documentation
 description: This document outlines the structure, core functionalities, and examples for a workload's frontend manifests, detailing the Product and Item manifests required in the Fabric Workload Development Kit.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
 ms.date: 10/29/2024
 #customer intent: As a developer, I want to understand how to create frontend manifests for a customized Fabric workload to define identity, appearance, and behavior.
 ---
@@ -200,3 +197,4 @@ Defines create item dialog configuration, which is used to show the dialog from 
 
 > [!NOTE]
 > `createItemDialogConfig` usage requires to add `onCreationFailure` and `onCreationSuccess` action handlers in `index.worker.ts`. Example can be found in [our sample repository](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/023e346e4d2353a7f755d50affc70b40b99a0b82/Frontend/src/index.worker.ts#L46C14-L62C24).
+
