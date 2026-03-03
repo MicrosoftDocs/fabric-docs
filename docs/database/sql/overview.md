@@ -45,7 +45,7 @@ Creating a new SQL database in Fabric creates these items in your Fabric workspa
 - Data in your SQL database is automatically replicated of into the [OneLake](../../onelake/onelake-overview.md) and converted to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 - A [SQL analytics endpoint](sql-analytics-endpoint.md)
 
-In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), and even GitHub Copilot. 
+In addition to the [Fabric SQL database Query Editor](query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), and even GitHub Copilot. 
 
 <a id="sharing"></a>
 

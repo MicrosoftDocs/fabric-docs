@@ -24,7 +24,7 @@ To find the connection string to your SQL database in Fabric, see [Connect to yo
 
 You can connect to a database using Microsoft Entra authentication with:
 
-- SQL tools that support Microsoft Entra authentication, including [SQL Server Management Studio](connect.md#connect-with-sql-server-management-studio-manually) and [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
+- SQL tools that support Microsoft Entra authentication, including [SQL Server Management Studio](connect.md#connect-with-sql-server-management-studio-manually) and [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
 - Applications that use SQL client drivers supporting Microsoft Entra authentication, including [SqlClient](/sql/connect/ado-net/sql/azure-active-directory-authentication), [JDBC](/sql/connect/jdbc/connecting-using-azure-active-directory-authentication), [ODBC](/sql/connect/odbc/using-azure-active-directory), and [OLE DB](/sql/connect/oledb/features/using-azure-active-directory).
 
 Applications and tools must upgrade drivers to versions that support Microsoft Entra authentication and add an authentication mode keyword in their [SQL connection string](connect.md), like `ActiveDirectoryInteractive`, `ActiveDirectoryServicePrincipal`, or `ActiveDirectoryPassword`.
