@@ -13,15 +13,11 @@ The goal of this article is to present Fabric developers with different options 
 
 This article outlines a few distinct integration options, but many organizations use a combination of them.  
 
-## Prerequisites
-
-[!INCLUDE [prerequisites](../includes/github-prereqs.md)]
-
 ## Development process
 The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
 
 - [Develop using client tools](#scenario-1---develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
-- [Branch-out to a separate Fabric workspace](#scenario-2---develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
+- [Branch out to a separate Fabric workspace](#scenario-2---branch-out-to-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 
 To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
 
@@ -45,10 +41,10 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 For a specific guidance on how to use the new Power BI Desktop file format in git, see [Source code format](./source-code-format.md).
 
-### Scenario 2 - Branch-out to a separate Fabric workspace
+### Scenario 2 - Branch-out to another workspace
 For Fabric developers, the branch‑out experience creates a new branch based on the latest commit of the source workspace’s connected branch, allowing users to either create a new workspace connected to the newly created branch or target an existing workspace by replacing the branch connected to it.
 
-By default, when a branch‑out operation completes, all items from the source workspace are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace allow faster time to code experience.
+By default, when a branch‑out operation completes, all items from the source branch are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace to allow faster time to code experience.
 
 As a Fabric developer, the branch-out flow would be as follows:
 
@@ -56,7 +52,7 @@ As a Fabric developer, the branch-out flow would be as follows:
 
     :::image type="content" source="./media/manage-branches/branch-out.png" alt-text="Screenshot of source control branch out option.":::
 
-2. Specify if you want to create a new workspace or branch-out into an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list. Check the **Select items individually (Preview)** in case you would like to work only on subset of the items in the branched workspace. You will see the following screenshot when creating a new selective workspace.
+2. Specify if you want to create a new workspace or branch-out into an existing one. Specify the names of the new branch and workspace, or select the existing workspace from the dropdown list. Check the **Select items individually (Preview)** in case you would like to work only on subset of the items in the branched workspace. You will see the following screenshot when creating a new workspace with selective branching.
 
  >[!NOTE]
  >When you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you commit any items you want to keep before branching out.
@@ -79,9 +75,7 @@ As a Fabric developer, the branch-out flow would be as follows:
   :::image type="content" source="media/branch-out/branch-3.png" alt-text="Screenshot of dependency error." lightbox="media/branch-out/branch-3.png":::
 8. Once the branch is created, you can verify that you are in a selective branch by the icon in the bottom status bar (lower left corner). It says selective branch.
 :::image type="content" source="media/branch-out/branch-5.png" alt-text="Screenshot of selective branch icon." lightbox="media/branch-out/branch-5.png":::
-9. Once the feature workspace is set up, it contains only the items that you selected.
-
-   Fabric creates the new workspace and branch. You're automatically taken to the new workspace.
+9. Fabric creates the new branched workspace. You're automatically taken to the new workspace. It contains all items or only the items that you selected in case of selective branching.
 
    The workspace syncs with your feature branch, and becomes an isolated environment to work in, as illustrated. You can now work in this new branched workspace. The sync might take a few minutes. For more information on branching out, see [troubleshooting tips](../troubleshoot-cicd.md#branching-out-i-dont-see-the-branch-i-want-to-connect-to).
 
@@ -94,7 +88,7 @@ Once the review and merge are complete, a new commit is created to the *main* br
 
 For more information, see [branching out limitations](./git-integration-process.md#branching-out-limitations).
 
-#### How to add additional items to a selective workspace
+#### How to add additional items to a workspace with selective branching
 When a Fabric developer needs to add items that were not selected during the branch‑out operation, the steps below describe how to add additional items to the workspace:
 1. Go to the required Fabric workspace, and select **Source control** at the top.
 2. On the right, select the **branch out** symbol.
@@ -106,10 +100,10 @@ When a Fabric developer needs to add items that were not selected during the bra
 
 #### Switch branches
 If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** pane without disconnecting and reconnecting.  
-When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
+When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced.
 
 >[!NOTE]
->When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted. Additionally, in a selective workspace, performing a switch operation resets the item selection, and all items from the switched branch are synchronized to the workspace.
+>When switching branches, if the workspace contains an item in the old branch but not the new one, the item is deleted. Additionally, in a workspace with selective branching, performing a switch operation resets the item selection, and all items from the switched branch are synchronized to the workspace.
 
 To switch between branches, follow these steps:
 
@@ -128,6 +122,5 @@ You can't switch branches if you have any uncommitted changes in the workspace. 
 To connect the current workspace to a new branch while keeping the existing workspace status, select **Checkout new branch**. Learn more about checking out a new branch at [Resolve conflicts in Git](./conflict-resolution.md#resolve-conflict-in-git).
 
 ## Related content
-
 - [Resolve errors and conflicts](./conflict-resolution.md)
 - [Git integration best practices](../best-practices-cicd.md)
