@@ -1,8 +1,9 @@
 ---
-title: Analyze time series
+title: Multivariate anomaly detection with Foundry Tools
 description: Use SynapseML and Foundry Tools for multivariate anomaly detection.
-ms.topic: overview
-ms.custom: sfi-ropc-nochange
+ms.topic: how-to-guide
+ms.custom: sfi-ropc-nochange, dev-focus
+ai-usage: ai-assisted
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: jessiwang
@@ -27,17 +28,12 @@ For more information about the Azure AI Anomaly Detector, visit the [Anomaly Det
 
 ## Setup
 
-Starting with an existing `Anomaly Detector` resource, you can explore ways to handle data of various forms. The catalog of services within Azure AI provides several options:
-
-- [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector)
-- [Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/)
-- [Language](https://azure.microsoft.com/products/ai-services/text-analytics/)
-- [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/)
-- [Translation](https://azure.microsoft.com/products/ai-services/ai-translator)
-- [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/)
-- [Web search](https://www.bing.com/visualsearch)
+Starting with an existing `Anomaly Detector` resource, you can explore ways to handle data of various forms.
 
 ### Create an Anomaly Detector resource
+
+> [!NOTE]
+> Since September 20, 2023, you can't create new Anomaly Detector resources. The following steps apply only if you have an existing Anomaly Detector resource. For a multivariate anomaly detection approach that doesn't require the Anomaly Detector service, see [Multivariate Anomaly Detection with Isolation Forest](isolation-forest-multivariate-anomaly-detection.md).
 
 - In the Azure portal, select **Create** in your resource group, and then type **Anomaly Detector**. Select the Anomaly Detector resource.
 - Name the resource, and ideally use the same region as the rest of your resource group. Use the default options for the rest, and then select **Review + Create** and then **Create**.
@@ -98,7 +94,7 @@ from pyspark.sql.types import DoubleType
 import matplotlib.pyplot as plt
 
 import synapse.ml
-from synapse.ml.cognitive import *
+from synapse.ml.services import *
 ```
 
 Read the sample data into a Spark DataFrame:
@@ -316,6 +312,7 @@ Finally, the last plot shows the contribution of the data from each sensor to th
 
 ## Related content
 
+- [Multivariate Anomaly Detection with Isolation Forest](isolation-forest-multivariate-anomaly-detection.md) — doesn't require an Azure AI Anomaly Detector resource
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)
