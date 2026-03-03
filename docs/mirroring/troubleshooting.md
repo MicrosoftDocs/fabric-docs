@@ -11,20 +11,20 @@ ms.search.form: Fabric Mirroring
 
 This article describes common scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases. For each data source, also review the specific troubleshooting, frequently asked questions (FAQ), and limitations.
 
-| Source | Troubleshooting | Limitations | FAQ |
+| Source | Limitations | Troubleshoot | FAQ |
 | --- | --- | --- | --- |
-| Azure Cosmos DB | [Troubleshoot](./azure-cosmos-db-troubleshooting.yml) | [Limitations](./azure-cosmos-db-limitations.md) | [FAQ](./azure-cosmos-db-faq.yml) |
-| Azure Database for MySQL | [Troubleshoot](./mysql/azure-database-mysql-troubleshoot.md) | [Limitations](./mysql/azure-database-mysql-limitations.md) | [FAQ](./mysql/azure-database-mysql-mirroring-faq.yml) |
-| Azure Database for PostgreSQL | [Troubleshoot](./azure-database-postgresql-troubleshoot.md) | [Limitations](./azure-database-postgresql-limitations.md) | [FAQ](./azure-database-postgresql-mirroring-faq.yml) |
-| Azure Databricks | N/A | [Limitations](./azure-databricks-limitations.md) | [FAQ](./azure-databricks-faq.yml) |
-| Azure SQL Database | [Troubleshoot](./azure-sql-database-troubleshoot.md) | [Limitations](./azure-sql-database-limitations.md) | [FAQ](./azure-sql-database-mirroring-faq.yml) |
-| Azure SQL Managed Instance | [Troubleshoot](./azure-sql-managed-instance-troubleshoot.md) | [Limitations](./azure-sql-managed-instance-limitations.md) | [FAQ](./azure-sql-managed-instance-faq.yml) |
-| Fabric SQL database | [Troubleshoot](../database/sql/mirroring-troubleshooting.md) | [Limitations](../database/sql/mirroring-limitations.md) | [FAQ](../database/sql/mirroring-faq.yml) |
-| Google BigQuery | N/A | [Limitations](./google-bigquery-limitations.md) | [FAQ](./google-bigquery-faq.yml) |
-| Oracle | N/A | [Limitations](./oracle-limitations.md) | [FAQ](./oracle-faq.yml) |
-| SAP | N/A | [Limitations](./sap-limitations.md) | [FAQ](./sap-faq.yml) |
-| Snowflake | [Troubleshoot](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric) | [Limitations](./snowflake-limitations.md) | [FAQ](./snowflake-faq.yml) |
-| SQL Server | [Troubleshoot](./sql-server-troubleshoot.md) | [Limitations](./sql-server-limitations.md) | [FAQ](./sql-server-faq.yml) |
+| Azure Cosmos DB | [Limitations](./azure-cosmos-db-limitations.md) | [Troubleshoot](./azure-cosmos-db-troubleshooting.yml) | [FAQ](./azure-cosmos-db-faq.yml) |
+| Azure Database for MySQL | [Limitations](./mysql/azure-database-mysql-limitations.md) | [Troubleshoot](./mysql/azure-database-mysql-troubleshoot.md) | [FAQ](./mysql/azure-database-mysql-mirroring-faq.yml) |
+| Azure Database for PostgreSQL | [Limitations](./azure-database-postgresql-limitations.md) | [Troubleshoot](./azure-database-postgresql-troubleshoot.md) | [FAQ](./azure-database-postgresql-mirroring-faq.yml) |
+| Azure Databricks | [Limitations](./azure-databricks-limitations.md) | N/A | [FAQ](./azure-databricks-faq.yml) |
+| Azure SQL Database | [Limitations](./azure-sql-database-limitations.md) | [Troubleshoot](./azure-sql-database-troubleshoot.md) | [FAQ](./azure-sql-database-mirroring-faq.yml) |
+| Azure SQL Managed Instance | [Limitations](./azure-sql-managed-instance-limitations.md) | [Troubleshoot](./azure-sql-managed-instance-troubleshoot.md) | [FAQ](./azure-sql-managed-instance-faq.yml) |
+| Fabric SQL database | [Limitations](../database/sql/mirroring-limitations.md) | [Troubleshoot](../database/sql/mirroring-troubleshooting.md) | [FAQ](../database/sql/mirroring-faq.yml) |
+| Google BigQuery | [Limitations](./google-bigquery-limitations.md) | N/A | [FAQ](./google-bigquery-faq.yml) |
+| Oracle | [Limitations](./oracle-limitations.md) | N/A | N/A |
+| SAP | [Limitations](./sap-limitations.md) | N/A | N/A |
+| Snowflake | [Limitations](./snowflake-limitations.md) | [Troubleshoot](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric) | N/A |
+| SQL Server | [Limitations](./sql-server-limitations.md) | [Troubleshoot](./sql-server-troubleshoot.md) | [FAQ](./sql-server-faq.yml) |
 
 ## Changes to Fabric capacity
 

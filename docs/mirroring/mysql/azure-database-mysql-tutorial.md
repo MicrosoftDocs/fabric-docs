@@ -15,8 +15,8 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
 ## Prerequisites
 
 - Create or use an existing Azure Database for MySQL.
-  - If you don't have an Azure Database for MySQL, [create a new server](/azure/mysql/flexible-server/quickstart-create-server).
-  - As a tutorial, use a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure Database for MySQL](/azure/mysql/flexible-server/how-to-restore-server).
+  - If you don't have an Azure Database for MySQL, [create a new server](/azure/mysql/flexible-server/quickstart-create-server-portal).
+  - As a tutorial, use a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. If you want to use a database from an existing backup, see [Restore a database from a backup in Azure Database for MySQL](/azure/mysql/flexible-server/how-to-restore-server-portal).
 - An existing capacity for Fabric. If you don't have one, [start a Fabric trial](../../fundamentals/fabric-trial.md).
 - The Fabric capacity must be active and running. A paused or deleted capacity also stops Mirroring and no data is replicated.
 - Fabric tenant settings. Ensure the following two [Fabric Tenant settings](../../admin/about-tenant-settings.md) are enabled:
