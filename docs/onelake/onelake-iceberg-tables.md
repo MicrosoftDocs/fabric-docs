@@ -2,8 +2,6 @@
 title: Use Iceberg tables with OneLake
 description: Discover how to leverage table format virtualization in OneLake to seamlessly read Delta Lake tables as Iceberg or create shortcuts to Iceberg tables in storage. Explore how OneLake automatically virtualizes Iceberg tables into the Delta Lake format for use across Fabric workloads, and Delta Lake tables into the Iceberg format for compatibility with Iceberg readers.
 ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
 ms.topic: how-to
 ms.date: 7/1/2025
 #customer intent: As a OneLake user, I want to learn how to use table format virtualization to read Iceberg tables across Fabric workloads, or read Fabric (Delta Lake) tables using Apache Iceberg readers.
@@ -278,3 +276,4 @@ Keep in mind the following temporary limitations when you use this feature:
 
 - [Use Snowflake to write or read Iceberg tables in OneLake](./onelake-iceberg-snowflake.md).
 - Learn more about [OneLake shortcuts](./onelake-shortcuts.md).
+

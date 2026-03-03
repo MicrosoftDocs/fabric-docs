@@ -1,11 +1,9 @@
 ---
-author: eric-urban
-ms.author: eur
-ms.reviewer: sngun
-ms.date: 06/16/2025
+ms.date: 02/27/2026
 ms.topic: include
 ms.custom: references_regions
 ---
 
 > [!NOTE]
-> This feature is currently in [preview](../../../fundamentals/preview.md).
+> Materialized lake views are currently in [preview](../../../fundamentals/preview.md). 
+> Materialized lake views are currently not available in the South Central US region.

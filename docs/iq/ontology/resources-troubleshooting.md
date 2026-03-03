@@ -1,9 +1,6 @@
 ---
 title: Troubleshooting ontology (preview)
 description: This article provides troubleshooting suggestions for ontology (preview).
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/16/2025
 ms.topic: concept-article
 ---
@@ -62,6 +59,7 @@ The following table describes common issues when using the preview experience of
 | Preview experience shows no data | This error might happen because your ontology instance can't access the underlying Fabric Graph. Ontology only supports **managed** lakehouse tables (located in the same OneLake directory as the lakehouse), not **external** tables that show in the lakehouse but reside in a different location. Changing the table name after mappings are created might also break the connection relied on by the preview experience. |
 | No entity instances shown | This behavior indicates an error accessing the data bindings. Confirm that the source data tables exist in OneLake with matching column names, and that your Fabric identity has data access. |
 | Graph is sparse or missing data | Check that entity type keys are defined for each entity type, and verify that the source data is properly bound to those keys. |
+| Preview page becomes unresponsive | This issue might occur when you have insufficient permissions to Fabric resources. Ensure that you have at least **Contributor** access (not just **Viewer**) in your Fabric workspace, and at least **read** access to the data source used for bindings in the ontology. |
 
 ## Troubleshoot ontology as data agent source
 
@@ -73,3 +71,4 @@ The following table describes common issues when using ontology (preview) as a s
 | First queries fail | If you experience failures with the first few queries after the data agent is created, try waiting a few minutes to give the agent more time to initialize. Then, run the queries again. |
 | Query results don't aggregate correctly | There's a known issue affecting aggregation in queries. To enable better aggregation, add the instruction `Support group by in GQL` to the agent's instructions as described in [Provide agent instructions](tutorial-4-create-data-agent.md#provide-agent-instructions). |
 | Query results are vague or generic | Make sure that the agent includes the ontology as a knowledge source. Also, make sure that entity and relationship names are meaningful and documented in the ontology. |
+

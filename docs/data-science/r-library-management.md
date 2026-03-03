@@ -1,14 +1,10 @@
-﻿---
+---
 title: R library management
 description: How to manage R libraries.
-ms.reviewer: None
-ms.author: lagayhar
-author: lgayhardt
+ms.reviewer: lagayhar, sgilley
 ms.topic: how-to
-ms.custom: 
-ms.date: 03/22/2024
+ms.date: 02/28/2026
 ms.search.form: R Language
-reviewer: sdgilley
 ---
 
 # R library management
@@ -20,7 +16,7 @@ Libraries provide reusable code that you might want to include in your programs 
 
 You might need to update your R libraries for various reasons. For example, one of your core dependencies released a new version, or your team has built a custom package that you need available in your Spark clusters.
 
-There are two types of libraries you may want to include based on your scenario:
+Two types of libraries might fit your scenario:
 
 - **Feed libraries** refer to the ones residing in public sources or repositories, such as [CRAN](https://cran.r-project.org/) or GitHub.
 
@@ -32,7 +28,7 @@ There are two levels of packages installed on [!INCLUDE [product-name](../includ
 
 - **Session** : A session-level installation creates an environment for a specific notebook session. The change of session-level libraries isn't persisted between sessions. 
 
-Summarizing the current available R library management behaviors: 
+The following table summarizes the current available R library management behaviors: 
 
 |Library Type |Environment installation |Session-level installation |
 |---------------|---------------|---------------|
@@ -47,17 +43,17 @@ Summarizing the current available R library management behaviors:
 
 ## Session-level R libraries
 
-When doing interactive data analysis or machine learning, you might try newer packages or you might need packages that are currently unavailable on your workspace. Instead of updating the workspace settings, you can use session-scoped packages to add, manage, and update session dependencies.
+When you do interactive data analysis or machine learning, you might try newer packages or need packages that are currently unavailable on your workspace. Instead of updating the workspace settings, use session-scoped packages to add, manage, and update session dependencies.
 
 - When you install session-scoped libraries, only the current notebook has access to the specified libraries.
-- These libraries don't impact other sessions or jobs using the same Spark pool.
-- These libraries are installed on top of the base runtime and pool level libraries.
+- These libraries don't impact other sessions or jobs that use the same Spark pool.
+- These libraries install on top of the base runtime and pool level libraries.
 - Notebook libraries take the highest precedence.
-- Session-scoped R libraries don't persist across sessions. These libraries are installed at the start of each session when the related installation commands are executed.
-- Session-scoped R libraries are automatically installed across both the driver and worker nodes.
+- Session-scoped R libraries don't persist across sessions. These libraries install at the start of each session when the related installation commands are executed.
+- Session-scoped R libraries automatically install across both the driver and worker nodes.
 
 > [!NOTE]
-> The commands of managing R libraries are disabled when running pipeline jobs. If you want to install a package within a pipeline, you must use the library management capabilities at the workspace level.
+> The commands for managing R libraries are disabled when running pipeline jobs. If you want to install a package within a pipeline, you must use the library management capabilities at the workspace level.
 
 ### Install R packages from CRAN
 
@@ -78,7 +74,7 @@ install.packages("highcharter", repos = "https://cran.microsoft.com/snapshot/202
 
 The `devtools` library simplifies package development to expedite common tasks. This library is installed within the default [!INCLUDE [product-name](../includes/product-name.md)] runtime.
 
-You can use `devtools` to specify a specific version of a library to install. These libraries are installed across all nodes within the cluster.
+Use `devtools` to specify a specific version of a library to install. The cluster installs these libraries across all nodes.
 
 ```R
 # Install a specific version. 
@@ -107,19 +103,15 @@ Currently, the following `devtools` functions are supported within [!INCLUDE [pr
 
 ### Install R custom libraries
 
-To use a session-level custom library, you must first upload it to an attached Lakehouse.  
+To use a session-level custom library, first upload it to an attached Lakehouse.  
 
 1. Open the notebook you want to use the custom library in.
-1. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-
-    :::image type="content" source="media/r-library-management/add-lakehouse.png" alt-text="Screenshot of how to add a lakehouse to your notebook.":::
-
-1. Right click or select the "..." next to **Files** to upload your _.tar.gz_ file.
+1. [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+1. Select the dropdown next to the lakehouse you just added. Then, right-click or select the "..." next to **Files** to upload your _.tar.gz_ file.
 
     :::image type="content" source="media/r-library-management/upload-files.png" alt-text="Screenshot of how to upload your file to the lakehouse Files folder.":::
 
-
-1. After uploading, go back to your notebook.  Use the following command to install the custom library to your session:
+1. After uploading the file, go back to your notebook. Use the following command to install the custom library to your session:
 
     ```R
     install.packages("filepath/filename.tar.gz", repos = NULL, type = "source")
@@ -143,7 +135,7 @@ packageVersion("caesar")
 
 ### Remove an R package from a session
 
-You can use the `detach` function to remove a library from the namespace. These libraries stay on disk until they're loaded again.
+Use the `detach` function to remove a library from the namespace. These libraries stay on disk until you load them again.
 
 ```R
 # detach a library
@@ -184,7 +176,7 @@ spark.lapply(docs, str_length_function)
 
 ### Session-scoped R libraries and sparklyr
 
-With `spark_apply()` in sparklyr, you can use any R packages inside Spark. By default, in `sparklyr::spark_apply()`, the packages argument sets to FALSE. This copies libraries in the current libPaths to the workers, allowing you to import and use them on workers. For example, you can run the following to generate a caesar-encrypted message with `sparklyr::spark_apply()`:
+By using `spark_apply()` in sparklyr, you can use any R packages inside Spark. By default, in `sparklyr::spark_apply()`, the `packages` argument is set to `FALSE`. This setting copies libraries in the current `libPaths` to the workers, so you can import and use them on workers. For example, you can run the following command to generate a caesar-encrypted message by using `sparklyr::spark_apply()`:
 
 ```R
 install.packages("caesar", repos = "https://cran.microsoft.com/snapshot/2021-07-16/")

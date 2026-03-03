@@ -1,9 +1,7 @@
 ---
 title: Add a custom endpoint or custom app destination to an eventstream
 description: Learn how to add a custom endpoint or custom app destination to an eventstream for consuming real-time events with multiple protocols, like the Apache Kafka protocol.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -149,4 +147,6 @@ To learn how to add other destinations to an eventstream, see the following arti
 - [KQL Database](add-destination-kql-database.md)
 - [Lakehouse](add-destination-lakehouse.md)
 - [Fabric [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]](add-destination-activator.md)
+
+
 

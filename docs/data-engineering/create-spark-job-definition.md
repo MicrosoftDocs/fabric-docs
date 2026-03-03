@@ -2,10 +2,7 @@
 title: Create an Apache Spark job definition
 description: Learn how to create a Spark job definition for different languages from the Fabric portal.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 11/07/2025
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---

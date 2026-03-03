@@ -14,9 +14,8 @@ You can connect to Parquet files in Dataflow Gen2 using the Parquet connector pr
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Parquet files. The following links provide the specific Power Query connector information you need to connect to Parquet files in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Parquet files using Power Query connectors. Follow these steps to create your connection:
 
-* To get started using the Parquet connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-* To connect to the Parquet connector from Power Query, go to [Connect to a Parquet file from Power Query Online](/power-query/connectors/parquet#connect-to-a-parquet-file-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. Check [Parquet known issues and limitations](/power-query/connectors/parquet#known-issues-and-limitations) to make sure your scenario is supported.
+1. [Connect to a Parquet file (from Power Query Online)](/power-query/connectors/parquet#connect-to-a-parquet-file-from-power-query-online).

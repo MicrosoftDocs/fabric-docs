@@ -3,8 +3,6 @@ title: Current Limitations of Graph in Microsoft Fabric
 description: Understand the current limitations of Graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
 ms.date: 01/26/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: wangwilliam
 ---
 
@@ -266,3 +264,4 @@ Conformance to GQL standards is still in progress for:
 
 - [Graph in Microsoft Fabric overview](./overview.md)
 - [What is a graph database?](./graph-database.md)
+- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)

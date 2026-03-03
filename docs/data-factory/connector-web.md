@@ -26,16 +26,11 @@ Both the Web API and Web page connectors support the following authentication ty
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a website. The following links provide the specific Power Query connector information you need to connect to a website in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Web using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Web API or Web page connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Web connector prerequisites](/power-query/connectors/web/web#prerequisites) before connecting to the Web API or Web page connector.
-- To connect to the Web API or Web page connector from Power Query, go to [Load Web data using Power Query Online](/power-query/connectors/web/web#load-web-data-using-power-query-online).
-
-The following Power Query Web connector articles supply more useful information when you use the Web API or Web page connectors:
-
-- [Get webpage data by providing examples](/power-query/connectors/web/web-by-example)
-- [Troubleshooting the Web connector](/power-query/connectors/web/web-troubleshoot)
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Web connector prerequisites](/power-query/connectors/web/web#prerequisites).
+1. [Load Web data (from Power Query Online)](/power-query/connectors/web/web#load-web-data-using-power-query-online).
 
 ## Set up your connection in a pipeline
 

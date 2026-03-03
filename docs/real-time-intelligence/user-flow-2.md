@@ -2,10 +2,7 @@
 title: Get and transform events from streaming sources
 description: Learn about Real-Time Intelligence tutorial user flow 2 - Transform events from streaming sources in Microsoft Fabric.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: concept-article
-ms.custom:
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Get started

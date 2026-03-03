@@ -2,10 +2,7 @@
 title: Develop, execute, and debug notebook in VS Code
 description: Learn about the VS Code extension for Synapse, which supports a pro-developer authoring experience, including running and debugging notebooks.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 09/21/2025
 ms.search.form: VSCodeExtension
 ---

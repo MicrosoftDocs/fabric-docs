@@ -2,10 +2,7 @@
 title: Microsoft Fabric VS Code extensions
 description: Learn about the Microsoft Fabric and Fabric User data functions extensions for Visual Studio Code to support local development and debugging. 
 ms.reviewer: sumuth
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 06/17/2025
 ms.search.form: VS Code extension
 ---
@@ -32,6 +29,9 @@ The supported features are:
 - Clone Git enabled workspaces.
 - Support for version control for your items.
 - Open Fabric SQL Databases in [MSSQL extension](https://marketplace.visualstudio.com/items?itemName=ms-mssql.mssql).
+- Explore and edit item definitions in VS Code for Fabric items
+- Fabric MCP support
+- Manage folders and items within folders
 
 ### Sign in
 

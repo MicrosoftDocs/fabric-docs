@@ -1,9 +1,6 @@
 ---
 title: "Tutorial part 1: Create an ontology"
 description: Create an ontology (preview) item with data from a semantic model or OneLake. Part 1 of the ontology (preview) tutorial.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/19/2025
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
@@ -280,3 +277,4 @@ When you're done, you have two relationships targeting the *SaleEvent* entity ty
 In this step, you created an ontology (preview) item and populated it with entity types, their properties, and relationship types between them. Next, enrich the entities further by adding a *Freezer* entity that's bound to both static and time series data.
 
 Next, continue to [Enrich the ontology with additional data](tutorial-2-enrich-ontology.md).
+

@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure SQL Managed Inst
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 01/13/2026
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

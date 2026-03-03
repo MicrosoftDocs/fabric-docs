@@ -1,10 +1,9 @@
 ---
 title: What is the Microsoft Fabric Capacity Metrics app?
 description: Learn how to evaluate your Microsoft Fabric capacity's health, by reading the metrics app.
-author: julcsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/14/2026
 ---
 

@@ -1,11 +1,8 @@
 ---
 title: How to share a map using Direct access and share link
 description: Learn how to share a map using Direct access and share link in Microsoft Fabric Real-Time Intelligence.
-ms.reviewer: smunk
-author: sinnypan
-ms.author: sipa
+ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Map
 ---
@@ -15,6 +12,8 @@ ms.search.form: Map
 Sharing a map through direct access grants permissions on the map item only. It doesn't provide access to underlying data sources (like Lakehouse or KQL database), so recipients must have those permissions for the map to load and function.
 
 Sharing a map through [direct access](#direct-access) automatically enforces permission checks for both the map and its underlying data sources. This ensures secure, role-based access without requiring full workspace-level permissions.
+
+For more information about sharing maps in Fabric Maps, see [Sharing Microsoft Fabric Maps](sharing-maps.md).
 
 <!------------------------------------------------------------------------------------
 > [!NOTE]
@@ -83,3 +82,4 @@ To learn more, please see:
 
 > [!div class="nextstepaction"]
 > [How to share a map using org apps](share-map-org-apps.md)
+

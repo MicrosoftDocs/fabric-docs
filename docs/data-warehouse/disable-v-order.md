@@ -1,8 +1,6 @@
 ---
 title: Disable V-Order in Warehouse
 description: Learn how to disable V-Order in a warehouse item in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 07/29/2024
 ms.topic: how-to

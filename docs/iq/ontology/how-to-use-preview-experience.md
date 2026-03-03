@@ -1,9 +1,6 @@
 ---
 title: Use preview experience
 description: Learn about the preview experience in ontology (preview).
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/02/2025
 ms.topic: how-to
 ---
@@ -23,7 +20,7 @@ When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../.
 Before using the preview experience, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-    * **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
+* **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
 * An ontology (preview) item with [data binding](how-to-bind-data.md) completed.
 
 ## Key concepts
@@ -33,7 +30,7 @@ The preview experience uses the following ontology (preview) concepts. For defin
 * *Entity type*
 * *Entity instance*
 * *Preview experience*
-* [Graph in Microsoft Fabric](../../graph/overview.md)
+* *[Graph in Microsoft Fabric](../../graph/overview.md)*
 
 ## Access preview experience
 
@@ -167,3 +164,5 @@ To refresh the graph, follow these steps:
 ## Troubleshooting
 
 For troubleshooting tips related to the preview experience in ontology (preview), see [Troubleshoot ontology (preview)](resources-troubleshooting.md#troubleshoot-preview-experience).
+
+

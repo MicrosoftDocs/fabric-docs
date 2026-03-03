@@ -1,10 +1,7 @@
 ---
 title: Add an Azure Data Explorer Database as a Source
 description: Learn how to add an Azure Data Explorer database as a source to a Microsoft Fabric eventstream.
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.date: 03/19/2025
 ---
 

@@ -1,13 +1,8 @@
 ---
 title: Microsoft Fabric Variable Library variable types
 description: Understand how to use variable librarie's variables and what variable types are allowed.
-author: billmath
-ms.author: billmath
-ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
+ms.reviewer: Lee
 ms.date: 08/15/2024
 ms.search.form: Introduction to variable libraries, variable library types, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and which variable types exist, so that I can manage my content lifecycle.

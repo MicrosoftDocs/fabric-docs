@@ -2,10 +2,7 @@
 title: Set alerts based on Fabric events in Real-Time hub
 description: Describes a scenario that shows how you can create an alert based on Fabric events (Azure Blob Storage events and Fabric Workspace item events) in Real-Time hub.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: concept-article
-ms.custom:
 ms.date: 11/19/2024
 ms.subservice: rti-core
 ms.search.form: Data Activator Real Time Hub Onramp

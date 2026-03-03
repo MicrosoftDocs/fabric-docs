@@ -4,7 +4,7 @@ metadata:
   description: This article answers frequently asked questions about Microsoft Copilot in Fabric in the SQL database workload.
   author: markingmyname
   ms.author: maghan
-  ms.reviewer: yoleichen
+  ms.reviewer: yoleichen, wiassaf
   ms.topic: faq
   ms.custom:
   ms.date: 11/18/2025

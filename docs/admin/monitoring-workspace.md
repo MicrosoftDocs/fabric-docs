@@ -4,7 +4,6 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.custom:
 ms.date: 09/17/2024
 ---
 

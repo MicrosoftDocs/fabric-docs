@@ -1,11 +1,8 @@
 ---
 title: Edit and publish Microsoft Fabric event streams
 description: Learn how to edit and publish an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 10/26/2024
 ms.search.form: Source and Destination
 ---
@@ -92,3 +89,5 @@ The following steps show how you can add event processing operations and a desti
 - [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
 - [Route data streams based on content](route-events-based-on-content.md)
+
+

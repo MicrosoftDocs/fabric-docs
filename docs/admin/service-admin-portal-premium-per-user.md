@@ -3,8 +3,6 @@ title: Manage Power BI Premium Per-User (PPU)
 description: Learn how to manage and understand how to use Power BI Premium Per-User settings in the admin portal.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - admin-portal
 ms.topic: how-to

@@ -1,9 +1,7 @@
 ---
 title: Add an Azure Service Bus Source to an Eventstream
 description: Learn how to add an Azure Service Bus source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 11/18/2024
 ms.search.form: Source and Destination
@@ -19,7 +17,7 @@ This article shows you how to add a Service Bus source to an eventstream.
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.  
-- Appropriate permission to get access keys for the Service Bus namespace, queues, or topics. The Service Bus namespace must be publicly accessible and not behind a firewall or secured in a virtual network.
+- Appropriate permission to get access keys for the Service Bus namespace, queues, or topics. The Service Bus namespace should be publicly accessible and not behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - An eventstream. If you don't have an eventstream, [create one](create-manage-an-eventstream.md).
 
 ## Start the wizard for selecting a data source
@@ -50,3 +48,5 @@ On the **Select a data source** page, search for **Azure Service Bus**. On the *
 ## Related content
 
 - For a list of all supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
+
+

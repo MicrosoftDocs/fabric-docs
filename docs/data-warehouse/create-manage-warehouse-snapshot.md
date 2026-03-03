@@ -1,11 +1,8 @@
 ---
 title: Create and Manage a Warehouse Snapshot
 description: Learn how to create, use, and manage warehouse snapshots in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: twcyril
 ms.date: 11/10/2025
-ms.service: fabric
 ms.topic: how-to
 ms.search.form: Manage warehouse snapshots
 ---

@@ -4,7 +4,6 @@ description: Learn how to configure Workspace Outbound Access Protection (OAP) t
 #customer intent: As a workspace admin, I want to enable outbound access protection for my workspace so that I can secure data connections to only approved destinations.
 author: msmimart
 ms.author: mimart
-ms.reviewer: mimart
 ms.date: 01/20/2026
 ms.topic: how-to
 ---
