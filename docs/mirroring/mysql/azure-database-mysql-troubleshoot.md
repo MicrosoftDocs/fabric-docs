@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Fabric Mirrored Databases from Azure Database for MySQL (preview)
 description: Troubleshooting mirrored databases from Azure Database for MySQL in Microsoft Fabric.
-ms.reviewer: vamehta, maghan
+ms.reviewer: vamehta, jingwang, maghan
 ms.date: 03/18/2026
 ms.topic: troubleshooting
 ms.custom:

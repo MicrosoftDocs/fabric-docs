@@ -1,7 +1,7 @@
 ---
 title: Limitations in Microsoft Fabric Mirrored Databases from Azure Database for MySQL (Preview)
 description: Learn about the limitations for mirrored databases from Azure Database for MySQL in Microsoft Fabric.
-ms.reviewer: vamehta, maghan
+ms.reviewer: vamehta, jingwang, maghan
 ms.date: 03/18/2026
 ms.topic: concept-article
 ai-usage: ai-assisted
