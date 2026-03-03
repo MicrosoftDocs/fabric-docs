@@ -12,7 +12,7 @@ ms.reviewer: midesa
 
 # Use the low-code AutoML interface in Fabric (preview)
 
-The low-code AutoML interface in Fabric makes it easy for users to get started with machine learning by specifying their ML task and a few basic configurations. Based on these selections, the AutoML UI generates a pre-configured notebook tailored to the user's inputs. Once executed, all model metrics and iterations are automatically logged and tracked within existing ML experiments and model items, providing an organized and efficient way to manage and evaluate model performance.
+The low-code AutoML interface in Fabric makes it easy for you to get started with machine learning by specifying your ML task and a few basic configurations. Based on these selections, the AutoML UI generates a preconfigured notebook tailored to your inputs. When you run the notebook, it automatically logs and tracks all model metrics and iterations within existing ML experiments and model items, providing an organized and efficient way to manage and evaluate model performance.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -20,20 +20,20 @@ The low-code AutoML interface in Fabric makes it easy for users to get started w
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-## Setup an Automated ML trial
+## Set up an Automated ML trial
 
-The AutoML wizard in Fabric can be conveniently launched directly from an existing experiment, model, or notebook item.
+You can conveniently launch the AutoML wizard in Fabric directly from an existing experiment, model, or notebook item.
 
 :::image type="content" source="media/automl/automl-entry-experiment.png" alt-text="Screenshot of the AutoML entrypoint from an experiment item." lightbox="media/automl/automl-entry-experiment.png":::
 
 ### Choose data source
 
-AutoML users in Fabric have the option to select from their available lakehouses, making it easy to access and analyze data stored within the platform. Once a lakehouse is selected, users can choose a specific table or file to use for their AutoML tasks.
+As an AutoML user in Fabric, you can select from your available lakehouses, making it easy to access and analyze data stored within the platform. After you select a lakehouse, choose a specific table or file to use for your AutoML tasks.
 
 :::image type="content" source="media/automl/automl-choose-data.png" alt-text="Screenshot of selecting a Lakehouse in AutoML." lightbox="media/automl/automl-choose-data.png":::
 
 > [!TIP]
-> When selecting a lakehouse, users can pick a **table** or a **file** to use with AutoML. Supported file types include **CSV, XLS, XLSX, and JSON**.
+> When selecting a lakehouse, you can pick a **table** or a **file** to use with AutoML. Supported file types include **CSV, XLS, XLSX, and JSON**.
 
 ### Define ML model purpose
 
@@ -59,7 +59,7 @@ Selecting the right ML task and AutoML mode ensures that the AutoML wizard align
 
 ### Set up training data
 
-In this step, you'll configure the training data that AutoML will use to build your model. Start by selecting the **prediction column**—this is the target column that your model will be trained to predict.
+In this step, you configure the training data that AutoML will use to build your model. Start by selecting the **prediction column**—this is the target column that your model will be trained to predict.
 
 :::image type="content" source="media/automl/setup-training-data.png" alt-text="Screenshot of setting up training data for AutoML." lightbox="media/automl/setup-training-data.png":::
 
@@ -74,20 +74,20 @@ You can also enable or disable the **auto featurize** setting. When enabled, aut
 
 ### Provide final details
 
-Now, you'll decide how you want your AutoML trial to be executed, along with naming conventions for your experiment and output. You have two options for executing your AutoML trial:
+Now, you decide how you want your AutoML trial to be executed, along with naming conventions for your experiment and output. You have two options for executing your AutoML trial:
 
-1. **Train Multiple Models Simultaneously:** This option is ideal if your data can be loaded into a pandas DataFrame, allowing you to leverage your Spark cluster to run multiple models in parallel. This approach accelerates the trial process by training several models at once.
+1. **Train Multiple Models Simultaneously:** This option is ideal if your data can be loaded into a pandas DataFrame, allowing you to use your Spark cluster to run multiple models in parallel. This approach accelerates the trial process by training several models at once.
 
 2. **Train Models Sequentially Using Spark:** This option is suited for larger datasets or those that benefit from distributed training. It uses Spark and SynapseML to explore distributed models, training one model at a time with the scalability that Spark provides.
 
 > [!NOTE]
-> Currently, the **Spark mode** does not support logging the input and output schema for Spark-based models. This schema is a required field for the **SynapseML PREDICT** function. As a workaround, you can load the model directly with **MLflow** and perform inferencing within your notebook, bypassing the schema requirement for prediction.
+> Currently, the **Spark mode** doesn't support logging the input and output schema for Spark-based models. This schema is a required field for the **SynapseML PREDICT** function. As a workaround, you can load the model directly with **MLflow** and perform inferencing within your notebook, bypassing the schema requirement for prediction.
 
-After selecting your execution mode, finalize your setup by specifying names for your **Notebook**, **Experiment**, and **Model**. These naming conventions will help organize your AutoML assets within Fabric and make it easy to track and manage your trials. Once complete, a notebook will be generated based on your selections, ready to execute and customize as needed.
+After selecting your execution mode, finalize your setup by specifying names for your **Notebook**, **Experiment**, and **Model**. These naming conventions help organize your AutoML assets within Fabric and make it easy to track and manage your trials. Once complete, a notebook is generated based on your selections, ready to execute and customize as needed.
 
 ### Review and create notebook
 
-In the final step, you'll have the chance to review all your AutoML settings and preview the generated code that aligns with your selections. This is your opportunity to ensure that the chosen ML task, mode, data setup, and other configurations meet your objectives.
+In the final step, you have the chance to review all your AutoML settings and preview the generated code that aligns with your selections. This is your opportunity to ensure that the chosen ML task, mode, data setup, and other configurations meet your objectives.
 
 :::image type="content" source="media/automl/final-details.png" alt-text="Screenshot of finalizing AutoML details." lightbox="media/automl/final-details.png":::
 
@@ -95,9 +95,9 @@ Once you're satisfied, you can finalize this step to generate a notebook that in
 
 ## Track Your AutoML Runs
 
-Once you execute your notebook, the AutoML code will utilize **MLflow logging** to automatically track key metrics and parameters for each model tested during the trial. This seamless integration allows you to monitor and review each iteration of your AutoML run without needing additional setup.
+Once you execute your notebook, the AutoML code utilizes **MLflow logging** to automatically track key metrics and parameters for each model tested during the trial. This seamless integration allows you to monitor and review each iteration of your AutoML run without needing additional setup.
 
-:::image type="content" source="media/automl/experiment-runs-automl.png" alt-text="Screenshot of viewing AutoML runs in a ML experiment." lightbox="media/automl/experiment-runs-automl.png":::
+:::image type="content" source="media/automl/experiment-runs-automl.png" alt-text="Screenshot of viewing AutoML runs in an ML experiment." lightbox="media/automl/experiment-runs-automl.png":::
 
 To explore the results of your AutoML trial:
 
