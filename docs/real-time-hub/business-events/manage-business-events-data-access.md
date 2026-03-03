@@ -25,7 +25,7 @@ Each role has multiple components:
 
     - **Publish**: Grants the user the ability to publish a business event from any of the supported publishing items like User Data Functions or Notebooks. It also enables users to view data preview per publisher. For more information about supported publishing items, see [Publish business events using Notebook](business-events-notebook.md), [Publish business events using User Data Function](business-events-user-data-function.md), and [Publish business events using Eventstream](business-events-event-stream.md).
 
-    - **Consume**: Grants the user the ability to consume a business event from any of the supported consuming items like Activator. It also enables users to view data preview per consumer. For more information about supported consuming items, see [Set alerts on business events](set-alerts-business-events-events.md).
+    - **Consume**: Grants the user the ability to consume a business event from any of the supported consuming items like Activator. It also enables users to view data preview per consumer. For more information about supported consuming items, see [Set alerts on business events](set-alerts-business-events.md).
 
 - **Scope**: The granularity of the role. Data access roles are enforced at the Event Schema Set level. A role can't span multiple Event Schema Sets. 
 
