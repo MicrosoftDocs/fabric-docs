@@ -31,7 +31,7 @@ This article describes common scenarios, resolutions, and workarounds for Micros
 | Scenario | Description |
 | --- | --- |
 | Fabric capacity paused | Mirroring stops and you can't list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
-| Fabric capacity resumed | When you resume capacity from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br />To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused.<br />If the capacity remains paused for a long time, mirroring might not resume from its stopping point and reseeds data from the beginning. This condition occurs because pausing mirroring for a long time causes the source database transaction log usage to grow and holds up log truncation. To minimize impact to the database, if the log space used is close to being full, when mirroring is resumed a reseed of the database initiates to release the held up log space. |
+| Fabric capacity resumed | When you resume capacity from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br />To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused.<br />If the capacity remains paused for a long time, mirroring might not resume from its stopping point and reseeds data from the beginning. This condition occurs because pausing mirroring for a long time causes the source database transaction log usage to grow and holds up log truncation. To minimize impact to the database, if the log space used is close to being full, when mirroring is resumed as a reseed of the database initiates to release the held up log space. |
 | Fabric capacity scaling | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity might incur additional storage charge. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring). |
 | Fabric capacity throttled | Wait until the overload state is over or update your capacity. Mirroring continues once the capacity is restored. For more information, see [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
 | Fabric trial capacity expired | Mirroring stops. To retain your mirrored database, purchase Fabric capacity. For more information, see [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |
@@ -68,7 +68,7 @@ If you use API to create or update a mirrored database, set a value for the `def
 
 ## Delta column mapping support
 
-Mirroring supports replicating columns containing spaces or special characters in names (such as `,`, `;`, `{`, `}`, `(`, `)`, `\n`, `\t`, `=`) from your source databases to the mirrored databases. Behind the scene, mirroring writes data into OneLake with Delta column mapping enabled.
+Mirroring supports replicating columns containing spaces or special characters in names (such as `,`, `;`, `{`, `}`, `(`, `)`, `\n`, `\t`, `=`) from your source databases to the mirrored databases. Behind the scenes, mirroring writes data into OneLake with Delta column mapping enabled.
 
 For tables that are already under replication before this feature is enabled, to include columns with special characters in names, you need to update the mirrored database settings by removing and readding those tables, or stop and restart the mirrored database.
 
@@ -86,7 +86,7 @@ This section contains general Mirroring troubleshooting steps.
 
 #### I can't connect to a source database
 
-1. Check your connection details are correct, including the server name, database name, username, and password.
+1. Check your connection details, including the server name, database name, username, and password.
 1. Check the server isn't behind a firewall or private virtual network. Open the appropriate firewall ports.
    - Some mirrored sources support virtual network data gateway or on-premises data gateways. Consult the source's documentation for support of this feature.
 
@@ -122,7 +122,7 @@ The SQL analytics endpoint supports **varchar(max)** up to 16 MB.
 
 Table level:
 
-- When you choose to mirror a list of selective tables and the source table is dropped, the mirrored table stays and you see error "The source table does not exist" in monitoring. If you no longer want to replicate this table, update your mirrored database configuration and remove it, then the mirrored table is deleted.
+- When you choose to mirror a list of selective tables and the source table is dropped, the mirrored table stays and you see error "The source table doesn't exist" in monitoring. If you no longer want to replicate this table, update your mirrored database configuration and remove it, then the mirrored table is deleted.
 - When you choose to mirror all data and the source table is dropped, the mirrored table is deleted as well.
 
 Schema level: When you drop the schema in the source database, you still see the schema in the SQL Analytics Endpoint as an empty schema.

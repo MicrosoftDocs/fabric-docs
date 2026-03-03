@@ -15,7 +15,7 @@ For troubleshooting, see:
 
 [Troubleshoot Fabric mirrored databases](../troubleshooting.md)
 
-[Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md)
+[Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md).
 
 ## Server level limitations
 
@@ -31,7 +31,7 @@ The following limitations apply at the MySQL server level when configuring mirro
 
 - Entra ID Authentication isn't supported.
 
-- Recovering a server with Mirroring in Fabric enabled via Point in Time Restore (PITR) requires Mirroring to be reconfigured on the new server.
+- Recovering a server with Mirroring in Fabric enabled through Point in Time Restore (PITR) requires Mirroring to be reconfigured on the new server.
 
 - Before executing a Major Version Upgrade (MVU), disable Mirroring in Fabric and re-enable it once the upgrade finishes.
 
@@ -49,7 +49,7 @@ The following limitations apply to individual databases when using mirroring in 
 
 ## Network and connectivity security
 
-Mirroring requires additional configuration for network-isolated servers.
+Mirroring requires extra configuration for network-isolated servers.
 
 - If your server isn't publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL flexible server when allowed by the firewall rule.
 
@@ -63,7 +63,7 @@ Certain table configurations and data types have limitations when mirroring to F
 
 - The following MySQL data types aren't supported: tinytext, text, mediumtext, longtext, tinyblob, blob, mediumblob, longblob. Tables containing unsupported data types are mirrored excluding the columns containing unsupported data types.
 
-- Database and table names are case-sensitive. When setting up a mirrored database, ensure the input matches with the MySQL settings.
+- Database and table names are case-sensitive. When setting up a mirrored database, ensure the input matches the MySQL settings.
 
 ## SQL analytics endpoint limitations
 

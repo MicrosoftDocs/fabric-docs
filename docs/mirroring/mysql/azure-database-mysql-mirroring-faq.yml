@@ -25,7 +25,7 @@ sections:
       - question: |
           How long does the initial replication take? 
         answer: 
-          It depends on the size of the data that is being brought in. 
+          It depends on the size of the data that's being brought in. 
 
       - question: |
           How long does it take to replicate inserts/updates/deletes? 
@@ -69,7 +69,7 @@ sections:
           See [Monitor Fabric Mirror replication](../monitor.md).
 
       - question: |
-          Can Azure Database for MySQL be VNET integrated or only accessible through a Private Endpoint? 
+          Can Azure Database for MySQL be virtual network integrated or only accessible through a Private Endpoint? 
         answer: 
           Yes, to access an Azure Database for MySQL that doesn't support public connectivity you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways).
 
@@ -118,7 +118,7 @@ sections:
       - question: |
           What are the costs associated with Mirroring?
         answer: 
-          There is no compute cost for mirroring data from the source to Fabric OneLake. The Mirroring storage cost is free up to a certain limit based on the purchased compute capacity SKU you provision. Learn more from the Mirroring section in [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+          There's no compute cost for mirroring data from the source to Fabric OneLake. The Mirroring storage cost is free up to a certain limit based on the purchased compute capacity SKU you provision. Learn more from the Mirroring section in [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
       - question: |
           What do we recommend a customer do to avoid or reduce Azure Database for MySQL costs? 
         answer: 
@@ -130,7 +130,7 @@ sections:
       - question: |
           How are egress fees handled?
         answer: 
-          If the Azure Database for MySQL is located in a different region from your Fabric capacity, data egress will be charged. If in the same region, there is no data egress.
+          If the Azure Database for MySQL is located in a different region from your Fabric capacity, data egress is charged. If in the same region, there's no data egress.
 
   - name: Licensing
     questions:
@@ -150,7 +150,7 @@ sections:
       - question: | 
           What if I stop or pause my Fabric capacity?
         answer: |
-          The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data will be replicated.
+          The Fabric capacity needs to be active and running. A paused or deleted capacity will impact Mirroring and no data are replicated.
 
 additionalContent: |
 
