@@ -6,7 +6,7 @@ ms.author: mimart
 ms.reviewer: saravi
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
-ms.date: 01/29/2026
+ms.date: 03/03/2026
 ---
 
 # Connect to external sources or on-premises data sources to Microsoft Fabric using managed private endpoints
