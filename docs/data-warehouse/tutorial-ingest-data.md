@@ -2,7 +2,7 @@
 title: "Data Warehouse Tutorial: Ingest Data into a Warehouse"
 description: "In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables."
 ms.reviewer: jovanpop, procha, salilkanade
-ms.date: 01/06/2026
+ms.date: 03/03/2026
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ---
