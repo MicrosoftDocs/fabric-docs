@@ -6,7 +6,7 @@ ms.date: 02/22/2026
 ms.topic: overview
 ---
 
-## Business events in Fabric Real-Time Hub - Key concepts and terminology 
+# Business events in Fabric Real-Time Hub - Key concepts and terminology 
 
 This section defines the foundational terms used throughout the business events ecosystem in Microsoft Fabric. These concepts represent the mental model for how events are defined, published, discovered, routed, and consumed across the platform. 
 
