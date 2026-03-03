@@ -23,7 +23,7 @@ Each role has multiple components:
 
 - **Permission**: The permissions that users have on the data. You can apply any or both of the following permissions on a data access role: 
 
-    - **Publish**: Grants the user the ability to publish a business event from any of the supported publishing items like User Data Functions or Notebooks. It also enables users to view data preview per publisher. For more information about supported publishing items, see [Publish business events using Notebook](business-events-notebook.md), [Publish business events using User Data Function](business-events-user-data-function.md), and [Publish business events using Eventstream](business-events-event-stream.md).
+    - **Publish**: Grants the user the ability to publish a business event from any of the supported publishing items like User Data Functions or Notebooks. It also enables users to view data preview per publisher. For more information about supported publishing items, see [Publish business events using Notebook](business-events-notebook.md) and [Publish business events using User Data Function](business-events-user-data-function.md).
 
     - **Consume**: Grants the user the ability to consume a business event from any of the supported consuming items like Activator. It also enables users to view data preview per consumer. For more information about supported consuming items, see [Set alerts on business events](set-alerts-business-events.md).
 
@@ -172,4 +172,4 @@ See the following end-to-end tutorials:
 
   - [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md)
   - [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md)
-  - [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md)
+  
