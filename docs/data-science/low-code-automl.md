@@ -76,9 +76,9 @@ You can also enable or disable the **auto featurize** setting. When enabled, aut
 
 Now, you decide how you want your AutoML trial to be executed, along with naming conventions for your experiment and output. You have two options for executing your AutoML trial:
 
-1. **Train Multiple Models Simultaneously:** This option is ideal if your data can be loaded into a pandas DataFrame, allowing you to use your Spark cluster to run multiple models in parallel. This approach accelerates the trial process by training several models at once.
+- **Train Multiple Models Simultaneously:** This option is ideal if your data can be loaded into a pandas DataFrame, allowing you to use your Spark cluster to run multiple models in parallel. This approach accelerates the trial process by training several models at once.
 
-2. **Train Models Sequentially Using Spark:** This option is suited for larger datasets or those that benefit from distributed training. It uses Spark and SynapseML to explore distributed models, training one model at a time with the scalability that Spark provides.
+- **Train Models Sequentially Using Spark:** This option is suited for larger datasets or those that benefit from distributed training. It uses Spark and SynapseML to explore distributed models, training one model at a time with the scalability that Spark provides.
 
 > [!NOTE]
 > Currently, the **Spark mode** doesn't support logging the input and output schema for Spark-based models. This schema is a required field for the **SynapseML PREDICT** function. As a workaround, you can load the model directly with **MLflow** and perform inferencing within your notebook, bypassing the schema requirement for prediction.
