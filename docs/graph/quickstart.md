@@ -2,7 +2,7 @@
 title: "Quickstart: Create your first graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes.
 ms.topic: quickstart
-ms.date: 02/20/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
 ai-usage: ai-assisted
@@ -14,13 +14,13 @@ ai-usage: ai-assisted
 
 In this quickstart, you create a basic graph with two nodes and one edge, and then run a query. This process takes about 15 minutes.
 
-For a comprehensive tutorial that covers the full Adventure Works data model and more advanced scenarios, see the [Graph tutorial](tutorial-introduction.md).
+For a comprehensive tutorial that covers the full Adventure Works data model and more advanced scenarios, see the [Fabric Graph tutorial](tutorial-introduction.md).
 
 ## Prerequisites
 
 Before you start this quickstart, verify that:
 
-1. [Graph is available in your region](overview.md#region-availability).
+1. [Fabric Graph is available in your region](overview.md#region-availability).
 1. Graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
 
    :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable Graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
@@ -153,6 +153,6 @@ Congratulations! You created your first graph in Microsoft Fabric and ran a quer
 
 ## Next steps
 
-- [Graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries
+- [Fabric Graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries
 - [GQL language guide](gql-language-guide.md) - Learn GQL syntax
-- [What is Graph in Microsoft Fabric?](overview.md) - Learn about graph concepts
+- [What is Fabric Graph?](overview.md) - Learn about graph concepts

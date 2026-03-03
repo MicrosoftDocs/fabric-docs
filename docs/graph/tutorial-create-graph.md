@@ -2,7 +2,7 @@
 title: "Tutorial: Create a graph"
 description: Learn how to create a graph model and load data into it from OneLake in Microsoft Fabric.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Create a graph
 ---
