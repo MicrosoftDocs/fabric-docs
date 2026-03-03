@@ -23,169 +23,59 @@ In this tutorial, you build a directed acyclic graph (DAG) to run a Microsoft Fa
 
 To get started, you must complete the following prerequisites:
 
-  > [!NOTE]
-  > Make sure Apache Airflow job is available in the capacity region you're using for your workspace. For more information, see [available capacity regions](../data-factory/apache-airflow-jobs-concepts.md#region-availability).
-
-- [Create a Microsoft Entra ID app](/azure/active-directory/develop/quickstart-register-app) if you don't have one.
-
-- Tenant level admin account must enable the setting 'Allow user consent for apps'. To configure user consent settings through the Microsoft Entra admin center:
-
-   1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/) as a [Privileged Role Administrator](/entra/identity/role-based-access-control/permissions-reference#privileged-role-administrator).
-
-   1. Browse to **Identity** > **Applications** > **Enterprise applications** > **Consent and permissions** > **User consent settings**.
-
-   1. Under User consent for applications, select which consent setting you want to configure for all users.
-
-   1. Select Save to save your settings.
-
-      :::image type="content" source="media/apache-airflow-jobs/user-consent.png" lightbox="media/apache-airflow-jobs/user-consent.png" alt-text="Screenshot to enable user consent in tenant.":::
-
-   For more information, Refer to: [Configure user consent](/entra/identity/enterprise-apps/configure-user-consent?pivots=portal)
-
-- Ensure that the account used for generating the refresh tokens has contributor permissions on the workspace that contains the pipeline and notebook.
-
-- Enable the Triggers in data workflows to allow the usage of deferrable operators.
+- In your Apache Airflow job, select the **Settings** gear button, select **Environment configuration**, and **Enable triggers** in data workflows to allow the use of deferrable operators.
 
    :::image type="content" source="media/apache-airflow-jobs/enable-triggerers.png" lightbox="media/apache-airflow-jobs/enable-triggerers.png" alt-text="Screenshot to enable triggers.":::
 
-## Apache Airflow plugin
+- In Fabric, select **Settings**, **Admin portal**, **Tenant Settings**, and enable service principals to call Fabric public APIs on your fabric tenant.
 
-To trigger an on-demand Microsoft Fabric item run, this tutorial uses the [apache-airflow-microsoft-fabric-plugin](https://pypi.org/project/apache-airflow-microsoft-fabric-plugin/) which is preinstalled in the Apache Airflow job requirements.
+    :::image type="content" source="media/apache-airflow-jobs/enable-service-principals.png" lightbox="media/apache-airflow-jobs/enable-service-principals.png" alt-text="Screenshot of the Microsoft Fabric Admin portal settings with service principals enabled to call Fabric public APIs.":::
 
-## Authentication
+- In Microsoft Entra ID, [create a service principal](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal). Save these values to use later for your Apache Airflow credential:
 
-To call Microsoft Fabric APIs, an app must obtain an access token from the Microsoft identity platform. This access token includes information about whether the app is authorized to access Microsoft Fabric items on behalf of signed-in user or with its own identity.
-This section provides the raw HTTP requests involved for an app to get access on behalf of a user using a popular flow called the [OAuth 2.0 authorization code grant flow](/entra/identity-platform/v2-oauth2-auth-code-flow).
+  - Tenant ID
+  - Client ID
+  - Secret
 
-You must complete the following steps to obtain the refresh token that are used later in the Apache Airflow connection:
+- Grant your service principal appropriate permissions:
 
-1. [Request authorization.](#step-1-request-authorization)
-1. [Request an access token and refresh token.](#step-2-request-an-access-token)
-
-Before proceeding with the steps in this article, Save the following values from the app registration you created initially:
-
-- **Client ID**: A unique identifier of your application assigned by the Microsoft identity platform.
-- **Client Secret**: (Optional) A password that your app uses to authenticate with the Microsoft identity platform. This property isn't required for public clients like native, mobile, and single page applications.
-- **Tenant ID**: A unique identifier for your tenant in the Microsoft identity platform.
-- **Redirect URI/URL**: Endpoints at which your app receives responses from the Microsoft Identity platform. In these steps, you receive authorization code at registered redirect URI.
-
-### Step 1: Request authorization
-
-#### Authorization endpoint
-
-The first step in the authorization code flow is for the user to authorize the app to act on their behalf. By sending the 'GET' request to '/authorize' endpoint, Microsoft Entra ID signs the user in and requests their consent for the permissions that the app requests. Replace the placeholders with your values and paste the following URL in your browser.
-
-The plugin requires the following scopes for authentication:
-
-- **itemType.Execute.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling Application is allowed to execute all items of '\<itemtype\>' that the user has access to.
-- **itemType.Read.All** (for example: Notebook.Execute.All, Pipeline.Execute.All): Calling application is allowed to read all items of type '\<itemType\>' that the user has access to.
-- **offline_access**: Standard OIDC scope requested so that the app can get a refresh token. The app can use the refresh token to get a new access token when the current one expires.
-
-```http
-
-// Line breaks for legibility only
-// This request uses Item.Execute.All, Item.Read.All and offline_access scopes. You can update them as per your requirements.
-
-
-https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id={client_id}
-&response_type=code
-&redirect_uri={redirect_uri}
-&response_mode=query
-&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%20https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Read.All%20offline_access 
-&state=12345
-&code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
-&code_challenge_method=S256
-```
-
-To know more about parameters, refer to [Request authorization code](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-authorization-code).
-
-#### User consent experience
-
-After the app sends the authorization request, the user is asked to enter their credentials to authenticate with Microsoft. The Microsoft identity platform v2.0 endpoint ensures that the user consents to the permissions indicated in the scope query parameter. The following screenshot is an example of the consent dialog box presented for a Microsoft account user.
-
-:::image type="content" source="media/apache-airflow-jobs/user-consent-fabric-plugin.png" lightbox="media/apache-airflow-jobs/user-consent-fabric-plugin.png" alt-text="Screenshot to show user consent experience while authenticating with Microsoft Fabric.":::
-
-#### Authorization response
-
-If the user consents to the permissions requested by the app, the Microsoft identity platform sends an authorization code to the app's redirect URI. Here's an example of a successful response to the previous request. Because the response_mode parameter in the request was set to query, the response is returned in the query string of the redirect URL. For the next step, copy the 'code' value from the response.
-
-```http
-HTTP/1.1 200 OK
-
-https://localhost/myapp/?
-code=M0ab92efe-b6fd-df08-87dc-2c6500a7f84d...
-&state=12345
-&session_state=fe1540c3-a69a-469a-9fa3-8a2470936421#
-```
-
-### Step 2: Request an access token
-
-The app uses the authorization code received in the previous step to request an access token by sending a POST request to the `/token` endpoint. Make sure your scope and redirect_uri match the values you used in the previous step. You can paste the following request in a tool like Insomnia to send the request.
-
-```http
-// Line breaks for legibility only
-// This request uses Item.Execute.All, Item.Read.All and offline_access scopes. You can update them as per your requirements.
-
-POST /{tenant}/oauth2/v2.0/token HTTP/1.1
-Host: https://login.microsoftonline.com
-Content-Type: application/x-www-form-urlencoded
-
-client_id={client_id}
-&scope=https%3A%2F%2Fapi.fabric.microsoft.com%2FItem.Execute.All%2FItem.Read.All%20offline_access
-&code=OAAABAAAAiL9Kn2Z27UubvWFPbm0gLWQJVzCTE9UkP3pSx1aXxUjq3n8b2JRLk4OxVXr...
-&redirect_uri={redirect_uri}
-&grant_type=authorization_code
-&code_verifier=WuiPvLwjYU6ehi--Gv5P58u7NOd4dJgE8BSQzZ-7nT3xq4OrVp2cxADyUvYJqkH2sfLhPjuqUCbbbk4x11cfzLCKADIE8mht3vwyGoSL7DnMhC4SFAunOx_mJ99hVeKh
-&client_secret={client_secret}   // NOTE: (Optional) Only required for web apps.
-```
-
-To know more about parameters, refer to [Request an access token](/entra/identity-platform/v2-oauth2-auth-code-flow#request-an-access-token).
-
-#### Access token response
-
-The access token contains a list of the permissions that the access token is good for in the scope parameter. The response is similar to the following sample. Copy the 'refresh_token' value from the response for use in the Apache Airflow connection.
-
-```http
-HTTP/1.1 200 OK
-Content-type: application/json
-
-{
-    "token_type": "Bearer",
-    "scope": "Mail.Read User.Read",
-    "expires_in": 3736,
-    "ext_expires_in": 3736,
-    "access_token": "Cc3Dd~4Ee5.-Ff6Gg7Hh8Ii9Jj0Kk1_Ll2Mm3Nn4...",
-    "refresh_token": "Dd4Ee~5Ff6.-Gg7Hh8Ii9Jj0Kk1Ll2_Mm3Nn4Oo5..."
-}
-```
+    1. In Microsoft Entra ID, find your service principal under **App registrations**.
+    1. Select **Manage** from the menu, then **API permissions**.
+    1. Select **Add a permission**, then select **Power BI Service**
+    1. Select **Delegated permissions**.  
+    1. Add **Item.Read.All** and **Item.Execute.All**. (Alternatively you can also add the read and execute permissions based on the item type, like Notebook.Read.All and Notebook.Execute.All.)
+    1. Finally, [add the service principal as a contributor in the workspace](/fabric/fundamentals/give-access-workspaces) where the item you'll use Airflow to run is located.
 
 ## Set up Apache Airflow connection
 
-Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs. You can set up your connections in two ways.
+Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs. You can set up your connections in two ways:
 
-## Fabric Apache Airflow job UI
+1. [Through the Apache Airflow job UI](#fabric-apache-airflow-job-ui)
+1. [Through the Apache Airflow UI](#fabric-apache-airflow-ui)
 
-1. On the **Home** bar, select **Add connection**.
+### Fabric Apache Airflow job UI
 
-   :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection.png" alt-text="Screenshot to add an Apache Airflow connection.":::
-  
-1. A pop-up opens to help you set up your Apache Airflow Fabric connection. Follow the instructions and add the following details:
+1. On the **Home** bar, select **Add connection**.
 
-   - **Connection ID:** Name of the Connection ID.
-   - **Description:** Description of the connection
-   - **Endpoint:** Your Fabric API endpoint. Ex. "https://api.fabric.microsoft.com"
-   - **Tenant ID:** Your Tenant ID
-   - **Client ID:** Your application client ID assigned to your app.
-   - **Client secret:** Your app registration client secret.
+    :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection.png" alt-text="Screenshot to add an Apache Airflow connection.":::
 
-   :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" alt-text="Screenshot to add Apache Airflow connection through the pop-up.":::
+1. A pop-up opens to help you set up your Apache airflow Fabric connection. Follow the instructions and add the following details:
 
-1. Select **Create** once you compete the form. This creates the connection and you can select the connection to view details, edit, or delete the connection.
+    - **Connection ID:** Name of the Connection ID.
+    - **Description:** Description of the connection
+    - **Endpoint:** Your Fabric API endpoint. Ex. "https://api.fabric.microsoft.com"
+    - **Tenant ID:** Your Tenant ID
+    - **Client ID:** Your application client ID assigned to your app.
+    - **Client secret:** Your app registration client secret.
+
+    :::image type="content" source="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" lightbox="media/apache-airflow-jobs/add-apache-airflow-connection-pop-up.png" alt-text="Screenshot to add Apache Airflow connection through the pop-up.":::
+
+1. Select **Create** once you have completed the connection. You can also create and manage the Microsoft Fabric connection directly in  the Airflow UI. Will need to do that to periodically refresh your SPN secret. The instructions below will not work if you're using GIT sync – in that case, you'll need to edit your DAG manually.  
 
 ### Apache Airflow UI
 
-1. Navigate to "View Airflow connections" to add a new Apache Airflow connection.
+1. Navigate to **View Airflow connections** to add a new Apache Airflow connection.
+
    :::image type="content" source="media/apache-airflow-jobs/view-apache-airflow-connection.png" lightbox="media/apache-airflow-jobs/view-apache-airflow-connection.png" alt-text="Screenshot to view Apache Airflow connection.":::
 
 1. Add a new connection and fill the following details:
@@ -215,33 +105,27 @@ Apache Airflow connection is used to store the credentials required to authentic
 
 ## Create a DAG to trigger Microsoft Fabric item run
 
-On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This opens a new pop-up.
+On your Apache Airflow job canvas, there are three tiles. Select **Run Fabric artifact**. This opens a new pop-up. (Accessible when no DAG is opened)
 
-:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric artifacts.":::
+:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact.png" alt-text="Screenshot of canvas tile for running Fabric items.":::
 
-:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" alt-text="Screenshot of pop up to select a Fabric artifact to run.":::
+:::image type="content" source="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" lightbox="media/apache-airflow-jobs/run-fabric-artifact-pop-up.png" alt-text="Screenshot of pop up to select a Fabric item to run.":::
 
-1. Select your Fabric Connection using the drop-down list. If you haven't created a connection, select **+** to add a new Fabric connection.
+1. Select your Fabric connection using the drop-down list. If you haven't created a connection, select **+** to add a new Fabric connection.
 
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-connection.png" lightbox="media/apache-airflow-jobs/set-fabric-connection.png" alt-text="Screenshot of pop-up to select a Fabric artifact to run with connection drop-down highlighted.":::
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-connection.png" lightbox="media/apache-airflow-jobs/set-fabric-connection.png" alt-text="Screenshot of pop-up to select a Fabric item to run with connection drop-down highlighted.":::
 
 1. Then, select your workspace using the drop-down list.
 
    :::image type="content" source="media/apache-airflow-jobs/set-fabric-workspace.png" lightbox="media/apache-airflow-jobs/set-fabric-workspace.png" alt-text="Screenshot to select your workspace in the DAG set-up pop-up.":::
 
-1. Choose which artifact type you want to run. You can choose from:
+1. Choose which item type you want to run.
 
-    - Notebook
-    - Spark job definition
-    - Pipeline
-    - Semantic Model
-    - User data function
+    :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact-type.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact-type.png" alt-text="Screenshot to select your item type in the DAG set-up pop-up.":::
 
-    :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact-type.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact-type.png" alt-text="Screenshot to select your artifact type in the DAG set-up pop-up.":::
+1. Then, select the item that you want to run.
 
-1. Then, select the artifact that you want to run.
-
-   :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact.png" alt-text="Screenshot to select the artifact you want to run in the DAG set-up pop-up.":::
+   :::image type="content" source="media/apache-airflow-jobs/set-fabric-artifact.png" lightbox="media/apache-airflow-jobs/set-fabric-artifact.png" alt-text="Screenshot to select the item you want to run in the DAG set-up pop-up.":::
 
 1. Name your DAG and then configure your max timeout time and whether you want to enable **Deferrable execution**.
 
