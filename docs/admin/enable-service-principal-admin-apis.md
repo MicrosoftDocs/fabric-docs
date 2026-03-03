@@ -23,18 +23,22 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 
 1. [Create a Microsoft Entra app](/entra/identity-platform/howto-create-service-principal-portal). You can skip this step if you already have a Microsoft Entra app you want to use. Take note of the app ID, which you need in later steps.
 
-    >[!IMPORTANT]
-    > Make sure the app you use doesn't have any admin-consent required permissions for Fabric set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
+   >[!IMPORTANT]
+   > Make sure the app you use doesn't have any admin-consent required permissions for Fabric set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
 
 1. Create a new Microsoft Entra [Security Group](/entra/fundamentals/how-to-manage-groups) and make sure to select **Security** as the Group type. You can skip this step if you already have a Microsoft Entra security group you'd like to use.
 
 1. Add your app ID as a member of the security group you created. To do so:
-    1. Navigate to **Azure portal > Microsoft Entra ID > Groups**, and choose the security group you created in *Step 2*.
-    2. Select **Add Members**.
+   
+1. Navigate to **Azure portal > Microsoft Entra ID > Groups**, and choose the security group you created in *Step 2*.
+
+   1. Select **Add Members**.
 
 1. Enable the Fabric admin settings:
-    1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
-    2. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
+
+   1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
+   1. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
+
         * **Service principals can access read-only admin APIs** (see [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
         * **Service principals can access admin APIs used for updates** (see [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
 
@@ -99,11 +103,11 @@ An app using service principal authentication that calls read-only admin APIs **
 
 1. Sign into the **Azure portal**.
 
-2. Select **Microsoft Entra ID**, then **Enterprise applications**.
+1. Select **Microsoft Entra ID**, then **Enterprise applications**.
 
-3. Select the application you want to grant access to Power BI.
+1. Select the application you want to grant access to Power BI.
 
-4. Select **Permissions**. There must be no admin-consent required permissions of type Application registered for the app.
+1. Select **Permissions**. There must be no admin-consent required permissions of type Application registered for the app.
 
 ## Supported Fabric admin APIs for updates
 
