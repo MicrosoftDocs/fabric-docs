@@ -5,10 +5,10 @@ ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
 ms.topic: concept-article
-ms.custom: sfi-image-nochange, dev-focus
-ai-usage: ai-assisted
-ms.date: 02/25/2026
+ms.custom: sfi-image-nochange
+ms.date: 03/03/2026
 ms.search.form: Create New Experiment, Run Comparison
+ai-usage: ai-assisted
 ---
 
 # Machine learning experiments in Microsoft Fabric
