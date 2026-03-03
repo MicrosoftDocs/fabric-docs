@@ -7,41 +7,41 @@ ms.topic: how-to
 
 # Resource links in ontology (preview)
 
-In ontology (preview), *report links* let you associate [Power BI reports](/power-bi/create-reports/) with an entity type. Linking reports provides essential *provenance*, *context*, and *discoverability* for insights tied to a business concept. By linking reports directly to an entity type, you can:
+In ontology (preview), *resource links* let you associate resources with an entity type. Currently, the only type of resource that's supported are [Power BI reports](/power-bi/create-reports/). Linking reports provides essential *provenance*, *context*, and *discoverability* for insights tied to a business concept. By linking reports directly to an entity type, you can:
 * Quickly access relevant analytics without searching across workspaces
 * Maintain consistent context between data, ontology, and reporting
 
 ## Prerequisites
 
-Before adding report links, make sure you have the following prerequisites:
+Before adding resource links, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 * **Ontology item (preview)** enabled on your tenant.
 * An ontology (preview) item with [entity types](how-to-create-entity-types.md) defined.
 * A Power BI report containing insights relevant to an entity type, and permission to view the report. (If you don't have view permission for a report, you can still add it as a link, but it will appear as *Report unavailable* when viewed in the list.)
 
-## Add a report link
+## Add a resource link
 
 To add a link to an existing Power BI report on an entity type, follow these steps.
 
 1. Open your ontology (preview) item to the contextual canvas.
 1. Select the entity type from the **Entity Types** pane to open its configuration. Open the **Report links** tab.
 
-    :::image type="content" source="media/how-to-use-resource-links/report-links-empty.png" alt-text="Screenshot of the entity type configuration with an empty report links tab.":::
+    :::image type="content" source="media/how-to-use-resource-links/report-links-empty.png" alt-text="Screenshot of the entity type configuration with an empty resource links tab.":::
 
-1. If there are no reports linked yet, the **Report links** tab is empty with a button to **Add report link**. If you have existing report links, they appear in a list.
+1. If there are no reports linked yet, the **Report links** tab is empty with a button to **Add resource link**. If you have existing resource links, they appear in a list.
 
-    :::image type="content" source="media/how-to-use-resource-links/report-links.png" alt-text="Screenshot of the report links tab with reports.":::
+    :::image type="content" source="media/how-to-use-resource-links/report-links.png" alt-text="Screenshot of the resource links tab with reports.":::
 
-1. To add a report link, select the **Add report link** button (if no reports are linked yet) or the **+** button (if other reports are linked already).
+1. To add a resource link, select the **Add resource link** button (if no reports are linked yet) or the **+** button (if other reports are linked already).
 
-    :::image type="content" source="media/how-to-use-resource-links/add-report-link.png" alt-text="Screenshot of adding a report link with the + button.":::
+    :::image type="content" source="media/how-to-use-resource-links/add-report-link.png" alt-text="Screenshot of adding a resource link with the + button.":::
 
 1. Fabric opens your OneLake catalog of resources. Choose the Power BI report you want to link to the entity type, and select **Connect**.
 
 1. Verify that the new report appears in the list of linked reports on the **Report links** tab.
 
-## View report links
+## View resource links
 
 You can view reports linked to an entity type from the following locations.
 
@@ -49,7 +49,7 @@ You can view reports linked to an entity type from the following locations.
 
 To view a list of linked reports by entity, open the entity type configuration in the contextual canvas and select the **Report links** tab.
 
-:::image type="content" source="media/how-to-use-resource-links/report-links.png" alt-text="Screenshot of the report links tab with reports.":::
+:::image type="content" source="media/how-to-use-resource-links/report-links.png" alt-text="Screenshot of the resource links tab with reports.":::
 
 ### Entity type overview
 
@@ -89,10 +89,10 @@ You might also see these messages on the tile creation step:
 
     :::image type="content" source="media/how-to-use-resource-links/no-links-tile.png" alt-text="Screenshot of the empty link tile in the entity type overview.":::
 
-## Delete a report link
+## Delete a resource link
 
 >[!NOTE]
->Deleting a report link in ontology does **not** delete the report from the Power BI workspace.
+>Deleting a resource link in ontology does **not** delete the report from the Power BI workspace.
 
 To remove a linked report from an entity type:
 
@@ -103,7 +103,7 @@ To remove a linked report from an entity type:
 
 1. Select **Delete** when prompted to confirm the deletion.
 
-    :::image type="content" source="media/how-to-use-resource-links/delete-2.png" alt-text="Screenshot of confirming the report link deletion.":::
+    :::image type="content" source="media/how-to-use-resource-links/delete-2.png" alt-text="Screenshot of confirming the resource link deletion.":::
 
 To remove linked reports from the entity type overview, remove the entire Power BI Report links tile. (You can't keep the tile while deleting individual links from it.)
 
