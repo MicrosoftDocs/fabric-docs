@@ -112,7 +112,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD is not supported |
 | [DB2](connector-ibm-db2-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) | ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) <br><br>Service Account Email is not supported for Service Account Login authentication type.| ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) <br><br>Service Account Login authentication type supports Service Account Email. |
 | | | ServiceAuthentication | | | Service Account Login | |
 | [Greenplum](connector-greenplum-for-pipeline-overview.md) | ✓/- | Basic | Support `sslMode`. | ✓/- | Basic | `sslMode` is not supported. |
 | [Hive](connector-hive-llap-overview.md) | ✓/- | Anonymous | | N | | |
@@ -134,7 +134,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | | | LDAP | | | LDAP | |
 | [SAP BW Open Hub](connector-sap-bw-open-hub-application-server-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
 | SAP BW MDX | ✓/- | Basic | | N | | |
-| [SAP HANA](connector-sap-hana-overview.md) | ✓/✓ | Basic | | ✓/- | Basic | |
+| [SAP HANA](connector-sap-hana-overview.md) | ✓/✓ | Basic | SSL crypto provider is not supported. | ✓/- | Basic | Support SSL crypto provider: CommonCrypto, MsCrypto, SapCrypto. |
 | | | Windows | | | Windows | |
 | [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | Support `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop`. | ✓/− | Basic | `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop` are not supported. |
 | | | Secure Network Communications (SNC) | | | | |
