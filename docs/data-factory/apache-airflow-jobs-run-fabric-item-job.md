@@ -51,7 +51,7 @@ To get started, you must complete the following prerequisites:
 Apache Airflow connection is used to store the credentials required to authenticate with Microsoft Fabric APIs. You can set up your connections in two ways:
 
 1. [Through the Apache Airflow job UI](#fabric-apache-airflow-job-ui)
-1. [Through the Apache Airflow UI](#fabric-apache-airflow-ui)
+1. [Through the Apache Airflow UI](#apache-airflow-ui)
 
 ### Fabric Apache Airflow job UI
 
