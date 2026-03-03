@@ -79,7 +79,7 @@ The creator can publish and consume any business event within the same Event Sch
 
     :::image type="content" source="./media/manage-business-events-data-access/save-changes.png" alt-text="Screenshot of the Manage data access role pane showing the Save button to save changes." lightbox="./media/manage-business-events-data-access/save-changes.png":::
 
-## Manage data access roles by using REST APIs 
+## Manage data access roles using REST APIs 
 
 Use the [Fabric REST API](/rest/api/fabric/core/onelake-data-access-security/create-or-update-data-access-roles#dataaccessrole) to create or update data access roles for business events. This API updates role definitions by creating, updating, and deleting roles to match the payload you send.  
 
