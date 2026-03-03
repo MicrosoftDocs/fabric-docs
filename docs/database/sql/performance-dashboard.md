@@ -110,7 +110,7 @@ The Automatic index tab report shows a history and status of automatically creat
 
 In the **Queries** tab, queries can be opened to troubleshoot the query details. Each query includes details including an execution history and query preview.
 
-To troubleshoot a T-SQL query, open the T-SQL code in the query editor, [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true). You might also consider the [Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md).
+To troubleshoot a T-SQL query, open the T-SQL code in the query editor, [SQL Server Management Studio](https://aka.ms/ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true). You might also consider the [Copilot Explain and Fix quick action features for SQL database in Fabric](copilot-quick-actions.md).
 
 :::image type="content" source="media/performance-dashboard/query-details.png" alt-text="Screenshot from the Fabric portal of the query details screen in the Performance dashboard." lightbox="media/performance-dashboard/query-details.png":::
 
