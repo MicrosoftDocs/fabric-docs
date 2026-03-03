@@ -4,7 +4,6 @@ description: A comprehensive index of Microsoft Fabric tenant settings in the Fa
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
 ms.date: 03/02/2026
