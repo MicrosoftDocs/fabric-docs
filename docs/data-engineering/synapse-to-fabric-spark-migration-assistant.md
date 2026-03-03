@@ -92,7 +92,7 @@ https://msit.powerbi.com/groups/{workspaceid}/list?trident=1&experience=fabric-d
 8. Review the **Migration Report** - Click the **Migration Report** link from the previous step to view the migration 
 report.
 
-:::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/migration-summary.png" alt-text="Screenshot of migration summary." lightbox="media/synapse-to-fabric-spark-migration-assistant/migration-summary.png":::
+   :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/migration-summary.png" alt-text="Screenshot of migration summary." lightbox="media/synapse-to-fabric-spark-migration-assistant/migration-summary.png":::
 
 >[!NOTE]
 >
