@@ -21,32 +21,32 @@ When you create a Microsoft Entra app, a [service principal object](/entra/ident
 
 To enable service principal authentication for Fabric APIs, follow these steps:
 
-1. * [Create a Microsoft Entra app](/entra/identity-platform/howto-create-service-principal-portal). You can skip this step if you already have a Microsoft Entra app you want to use. Take note of the app ID, which you need in later steps.
+1. [Create a Microsoft Entra app](/entra/identity-platform/howto-create-service-principal-portal). You can skip this step if you already have a Microsoft Entra app you want to use. Take note of the app ID, which you need in later steps.
 
-    >* [!IMPORTANT]
-    > Make sure the app you use doesn't have any admin-consent required permissions for Fabric set on it in the Azure portal. * [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
+    >[!IMPORTANT]
+    > Make sure the app you use doesn't have any admin-consent required permissions for Fabric set on it in the Azure portal. [See how to check whether your app has any such permissions](#how-to-check-if-your-app-has-admin-consent-required-permissions).
 
-2. Create a new Microsoft Entra * [Security Group](/entra/fundamentals/how-to-manage-groups) and make sure to select **Security** as the Group type. You can skip this step if you already have a Microsoft Entra security group you'd like to use.
+1. Create a new Microsoft Entra [Security Group](/entra/fundamentals/how-to-manage-groups) and make sure to select **Security** as the Group type. You can skip this step if you already have a Microsoft Entra security group you'd like to use.
 
-3. Add your app ID as a member of the security group you created. To do so:
+1. Add your app ID as a member of the security group you created. To do so:
     1. Navigate to **Azure portal > Microsoft Entra ID > Groups**, and choose the security group you created in *Step 2*.
     2. Select **Add Members**.
 
-4. Enable the Fabric admin settings:
+1. Enable the Fabric admin settings:
     1. Sign in to the Fabric admin portal. You need to be a Fabric admin to see the tenant settings page.
     2. Under **Admin API settings**, select the switch for the type of admin APIs you want to enable:
         * **Service principals can access read-only admin APIs** (see [supported Power BI admin APIs](#supported-power-bi-admin-apis-for-read-only))
         * **Service principals can access admin APIs used for updates** (see [supported Fabric admin APIs](#supported-fabric-admin-apis-for-updates))
 
-5. Set the toggle to **Enabled**.
+1. Set the toggle to **Enabled**.
 
-6. Select the **Specific security groups** radio button. In the text field that appears below it, add the security group you created in *Step 2*.
+1. Select the **Specific security groups** radio button. In the text field that appears below it, add the security group you created in *Step 2*.
 
-7. Select **Apply**.
+1. Select **Apply**.
 
 ## Supported Power BI admin APIs for read-only
 
-The following read-only admin APIs support service principal authentication. This list may not be exhaustive; for the latest information about individual APIs, refer to the [Power BI REST API documentation](/rest/api/power-bi/admin).
+The following read-only admin APIs support service principal authentication. This list may not be exhaustive; for the latest information about APIs not listed here, refer to the [Power BI REST API documentation](/rest/api/power-bi/admin).
 
 * [Apps GetAppsAsAdmin](/rest/api/power-bi/admin/apps-get-apps-as-admin)
 * [Apps GetAppUsersAsAdmin](/rest/api/power-bi/admin/apps-get-app-users-as-admin)
@@ -79,7 +79,6 @@ The following read-only admin APIs support service principal authentication. Thi
 * [Imports GetImportsAsAdmin](/rest/api/power-bi/admin/imports-get-imports-as-admin)
 * [Pipelines GetPipelinesAsAdmin](/rest/api/power-bi/admin/pipelines-get-pipelines-as-admin)
 * [Pipelines GetPipelineUsersAsAdmin](/rest/api/power-bi/admin/pipelines-get-pipeline-users-as-admin)
-* [Pipelines GetPipelineUsersAsAdmin](/rest/api/power-bi/admin/pipelines-get-pipeline-users-as-admin)
 * [Profiles GetProfilesAsAdmin](/rest/api/power-bi/admin/profiles-get-profiles-as-admin)
 * [Reports GetReportsAsAdmin](/rest/api/power-bi/admin/reports-get-reports-as-admin)
 * [Reports GetReportsInGroupAsAdmin](/rest/api/power-bi/admin/reports-get-reports-in-group-as-admin)
@@ -93,7 +92,6 @@ The following read-only admin APIs support service principal authentication. Thi
 * [WorkspaceInfo GetScanResult](/rest/api/power-bi/admin/workspace-info-get-scan-result)
 * [WorkspaceInfo GetScanStatus](/rest/api/power-bi/admin/workspace-info-get-scan-status)
 * [WorkspaceInfo PostWorkspaceInfo](/rest/api/power-bi/admin/workspace-info-post-workspace-info)
-
 
 ### How to check if your app has admin-consent required permissions
 
@@ -109,9 +107,9 @@ An app using service principal authentication that calls read-only admin APIs **
 
 ## Supported Fabric admin APIs for updates
 
-The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the * [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
+The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
 
-To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the * [Microsoft Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
+To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
 ## Considerations and limitations
 
