@@ -160,17 +160,15 @@ for conn in resp.json().get("value", []):
    print(f"{conn['displayName']}: {conn['id']}")
 ```
 
-## Connection recency (Preview)
+## Monitor connection usage (Preview)
 
 Microsoft Fabric provides usage-based properties to help you better understand how connections are configured and used over time. These properties improve audit visibility and support safer connection lifecycle management.
 
 Over time, connections may be reused, replaced, or left idle. Without clear usage signals, it can be difficult to determine whether a connection is still active or safe to modify, rotate credentials for, or remove. The Last Used Time capability introduces additional metadata to help you make more informed decisions.
 
-:::image type="content" source="media/data-source-management/connection-recency.png" alt-text="Screenshot showing the recency of connection." lightbox="media/data-source-management/connection-recency.png":::
-
 Two new properties are available in connection metadata:
 
-### Last linked to items
+**Last linked to items**
 
 - Shows the most recent time the connection was linked to a Fabric item.
 
@@ -180,7 +178,7 @@ Two new properties are available in connection metadata:
 
 This property indicates when a connection was last configured or associated with an item.
 
-### Last credentials used
+**Last credentials used**
 
 - Shows the most recent time the connection’s credentials were used at runtime.
 
