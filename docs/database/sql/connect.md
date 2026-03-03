@@ -48,9 +48,9 @@ To find the server name of the **SQL analytics endpoint** of your SQL database:
 
 ## Open in button to connect
 
-You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
+You can easy connect to your SQL database with the **Open in** button in the Fabric portal [query editor](query-editor.md). Choose [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true).
 
-:::image type="content" source="media/connect/open-in-sql-tools.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the mssql extension in VS Code." lightbox="media/connect/open-in-sql-tools.png":::
+:::image type="content" source="media/connect/open-in-sql-tools.png" alt-text="Screenshot from the Fabric portal query editor showing the Open in button for easy connections with SSMS or the MSSQL extension in VS Code." lightbox="media/connect/open-in-sql-tools.png":::
 
 ## Connect with SQL Server Management Studio manually
 
