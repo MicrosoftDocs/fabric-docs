@@ -138,7 +138,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | | | Windows | | | Windows | |
 | [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | Support `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop`. | ✓/− | Basic | `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop` are not supported. |
 | | | Secure Network Communications (SNC) | | | | |
-| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema`. | ✓/✓ | | `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema` are not supported. <br><br>Support Additional connection properties. |
+| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema`. | ✓/✓ | | `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema` are not supported. |
 | | | KeyPair | | | KeyPair | |
 | | | | | | Snowflake | |
 | | | | | | Microsoft Account | |
