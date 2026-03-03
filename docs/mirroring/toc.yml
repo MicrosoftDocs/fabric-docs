@@ -153,19 +153,19 @@ items:
     - name: Troubleshoot
       displayName: Troubleshoot mirrored PostgreSQL
       href: azure-database-postgresql-troubleshoot.md
-- name: Mirroring MySQL
+- name: Mirroring MySQL (preview)
   items: 
-    - name: Mirrored databases from MySQL (preview)
+    - name: Mirrored databases from MySQL
       href: mysql/azure-database-mysql.md
-    - name: MySQL tutorial (preview)
+    - name: MySQL tutorial
       href: mysql/azure-database-mysql-tutorial.md
-    - name: FAQ about mirrored MySQL (preview)
+    - name: FAQ about mirrored MySQL
       displayName: Frequently asked questions about mirrored MySQL
       href: mysql/azure-database-mysql-mirroring-faq.yml
-    - name: Limitations (preview)
+    - name: Limitations
       displayName: Limitations in mirrored MySQL
       href: mysql/azure-database-mysql-limitations.md
-    - name: Troubleshoot (preview)
+    - name: Troubleshoot
       displayName: Troubleshoot mirrored MySQL
       href: mysql/azure-database-mysql-troubleshoot.md
 - name: Mirroring SAP
