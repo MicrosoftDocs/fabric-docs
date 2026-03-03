@@ -6,9 +6,9 @@ ms.date: 03/18/2026
 ms.topic: tutorial
 ---
 
-# Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)
+# Tutorial: Create a mirrored database from Azure Database for MySQL in Microsoft Fabric (preview)
 
-[Mirroring in Fabric](../overview.md) (now generally available) is an enterprise, cloud-based, zero-ETL, SaaS technology.
+[Mirroring in Fabric](../overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology.
 
 In this section, you learn how to create a mirrored Azure Database for MySQL, which creates a read-only, continuously replicated copy of your MySQL data in OneLake.
 
@@ -66,8 +66,6 @@ After you create the mirror, monitor the health of replication. For more informa
 ## Data availability in OneLake
 
 When replication finishes, the SQL Analytics endpoint has all tables available. To learn how to use this data in near-real time for analytics, see [Explore Data in Your Mirrored Database Using Microsoft Fabric - Microsoft Fabric | Microsoft Learn](https://learn.microsoft.com/en-us/fabric/explore-data-mirrored-database).
-
-
 
 ## Related content
 

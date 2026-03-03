@@ -9,6 +9,8 @@ ai-usage: ai-assisted
 
 # Mirroring Azure Database for MySQL (preview)
 
+[!INCLUDE [feature-preview-note](../../includes/feature-preview-note.md)]
+
 [Mirroring in Fabric](../overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure Database for MySQL estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure Database for MySQL directly into Fabric's OneLake, whether your servers are publicly accessible, network-isolated through virtual networks or private endpoints, or configured for high availability. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, data engineering, data science, and data sharing scenarios.
 
 For a tutorial on configuring your Azure Database for MySQL Mirroring in Fabric, see - *Link to tutorial page.*
@@ -40,7 +42,7 @@ Mirrored databases also offer one-click integration with Microsoft Power BI with
 
 ## Network requirements
 
-Mirroring supports both publicly accessible servers and network-isolated configurations, including servers hosted in virtual networks. If your server isn't publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL and is allowed by the firewall rule.
+Mirroring supports both publicly accessible servers and network-isolated configurations, including servers hosted in virtual networks. If your server isn't publicly accessible and doesn't [allow public access](/azure/mysql/flexible-server/concepts-networking) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [set up on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL and is allowed by the firewall rule.
 
 ## Active transactions, workloads, and replicator engine behaviors
 
