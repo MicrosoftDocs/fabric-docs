@@ -4,14 +4,16 @@ description: Learn how to enable service principal authentication to permit use 
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 02/13/2026
+ms.date: 03/03/2026
 
 #customer intent: As a developer, learn how to enable service principal authentication to permit use of read-only and update admin APIs.
 ---
 
-# Enable service principal authentication for read-only admin APIs
+# Enable service principal authentication for admin APIs
 
-Service principal authentication is a method used to allow Microsoft Entra applications to access Microsoft Fabric content and APIs securely. This article explains how to enable service principal authentication for admin APIs in Microsoft Fabric, including [Power BI read-only admin APIs](#supported-power-bi-admin-apis-for-read-only) and [Fabric admin APIs for updates](#supported-fabric-admin-apis-for-updates). Once enabled, service principals can call these admin APIs to perform tasks such as metadata scanning, monitoring, and workspace management.
+This article shows how to enable service principal authentication for [Power BI *read-only* admin APIs](#supported-power-bi-admin-apis-for-read-only) and [Microsoft Fabric *update* admin APIs](#supported-fabric-admin-apis-for-updates).
+
+Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs.
 
 When you create a Microsoft Entra app, a [service principal object](/entra/identity-platform/app-objects-and-service-principals#service-principal-object) is created. The service principal object, also known simply as the service principal, allows Microsoft Entra ID to authenticate your app. Once authenticated, the app can access Microsoft Entra tenant resources.
 
@@ -44,7 +46,7 @@ To enable service principal authentication for Fabric APIs, follow these steps:
 
 ## Supported Power BI admin APIs for read-only
 
-Service principal authentication is currently supported for the following read-only admin APIs.
+The following read-only admin APIs support service principal authentication. This list might not be exhaustive; check the [Power BI REST API documentation](/rest/api/power-bi/admin) for current information about whether an API supports service principal authentication.
 
 * [GetGroupsAsAdmin](/rest/api/power-bi/admin/groups_getgroupsasadmin) with $expand for dashboards, semantic models, reports, and dataflows 
 * [GetGroupUsersAsAdmin](/rest/api/power-bi/admin/groups-get-group-users-as-admin)
@@ -97,19 +99,7 @@ An app using service principal authentication that calls read-only admin APIs **
 
 The **Service principals can access admin APIs used for updates** setting applies to Fabric admin APIs, such as the [Workspaces - Restore Workspace API](/rest/api/fabric/admin/workspaces/restore-workspace?tabs=HTTP). 
 
-To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the Microsoft Fabric REST API reference. Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
-
-## Other supported Fabric REST APIs
-
-When service principal authentication is enabled for read-only admin APIs, service principals can also call various other Fabric REST APIs including:
-
-- **Domain APIs** - [List Domains](/rest/api/fabric/admin/domains/list-domains), [List Domain Workspaces](/rest/api/fabric/admin/domains/list-domain-workspaces), Get Domain details
-- **Workspace APIs** - List workspaces, Get workspace details
-- **Capacity APIs** - List capacities, Get capacity details
-- **Usage metrics APIs** - Tenant usage reporting
-
-> [!NOTE]
-> The list of supported APIs continues to expand. For the most current list of available APIs, see the [Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis).
+To find out if a specific Fabric admin API supports service principal authentication, check the API's documentation in the [Microsoft Fabric REST API reference](/rest/api/fabric/articles/using-fabric-apis). Look for the "Microsoft Entra supported identities" section, which indicates whether service principal authentication is supported.
 
 ## Considerations and limitations
 
