@@ -67,19 +67,6 @@ For a Fabric data agent to function properly, enable the [**Copilot and Azure Op
   - Users can delete their conversation history at any time by clearing the chat.
   - For more information, see [Conversation history stored outside your capacity's geographic region](../admin/service-admin-portal-copilot.md#conversation-history-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).
 
-## Fabric data agent tenant setting
-
-By default, the Fabric data agent feature is enabled at the tenant level. This activation allows users to craft natural language Q&A experiences using generative AI, and then share the Fabric data agent within the organization.
-
-To prevent users from creating and sharing Fabric data agent items, administrators can disable this setting.
-
-### Steps to disable Fabric data agent
-
-1. In **Tenant Settings**, locate the **Fabric data agent** section.
-1. To disable this setting, toggle the **Disabled** option in **Tenant Settings** and select **Apply** as shown in the next screenshot:
-
-:::image type="content" source="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png" alt-text="Screenshot highlighting the Fabric data agent creation and sharing option in the admin portal." lightbox="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png":::
-
 ## Enable integration of Power BI semantic models via XMLA endpoints
 
 Fabric data agents can query and manage Power BI semantic models programmatically via XMLA (XML for Analysis) endpoints. To enable this functionality, you must configure XMLA endpoints correctly.
