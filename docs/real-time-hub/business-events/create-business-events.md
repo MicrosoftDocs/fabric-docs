@@ -126,4 +126,4 @@ See the following end-to-end tutorials:
 
   - [Publish business events using Notebook and react using Activator](tutorial-business-events-notebook-user-data-function-activator.md)
   - [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md)
-  - [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md)
+  

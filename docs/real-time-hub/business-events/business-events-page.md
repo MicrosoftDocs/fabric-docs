@@ -90,9 +90,3 @@ Create a new business event by selecting the **+ New business event** button at 
 
 :::image type="content" source="./media/business-events-page/add-consumer-button.png" alt-text="Screenshot of add consumer button in the business events list page." lightbox="./media/business-events-page/add-consumer-button.png":::
 
-### Publish from Eventstream
-
-Select **Publish from Eventstream** to publish a business event from an eventstream. Select an eventstream to publish a business event with the schema associated with that eventstream. For step-by-step guidance on publishing from eventstream, see [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md).
-
-:::image type="content" source="./media/business-events-page/publish-from-event-stream.png" alt-text="Screenshot of publish from eventstream button in the business events list page." lightbox="./media/business-events-page/publish-from-event-stream.png":::
-

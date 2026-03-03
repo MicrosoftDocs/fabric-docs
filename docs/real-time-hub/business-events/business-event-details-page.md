@@ -87,12 +87,6 @@ Create a Notebook consumer for a business event to analyze the event data in a N
 
 Create a User Data Function consumer for a business event to trigger an action when the event occurs. To create a User Data Function consumer for the business event, select **Create User Data Function consumer** at the top of the details page. For step-by-step guidance on creating a User Data Function consumer, see [Publish business events using User Data Function and react using Activator](tutorial-business-events-user-data-function-activation-email.md).
 
-## Publish business event from an eventstream
-
-Create an eventstream to publish events for a business event. By using this approach, you can stream the event data in real time and integrate with other systems. To create an eventstream for the business event, select **Create Event Stream** at the top of the details page. For step-by-step guidance on creating an eventstream, see [Publish business events using Eventstream and react using Activator](tutorial-business-events-event-stream-user-data-function-activator.md).
-
-
-:::image type="content" source="./media/business-event-details-page/publish-button.png" alt-text="Screenshot of the Publish button for creating an eventstream on the business event details page." lightbox="./media/business-event-details-page/publish-button.png":::
 
 ## Actions on the ribbon
 
