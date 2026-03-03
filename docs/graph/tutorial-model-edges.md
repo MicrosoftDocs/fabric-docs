@@ -69,7 +69,7 @@ You should see all the edge types represented in your graph.
 
 After adding all node types and edge types, load the graph:
 
-1. Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
+- Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
 
 > [!IMPORTANT]
 > Currently, you need to reload the graph (by selecting **Save**) whenever you change the model or the underlying data.

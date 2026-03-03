@@ -19,7 +19,7 @@ You can also query your graph by using GQL, the graph query language. The [next 
 
 Follow these steps to switch to query builder and start querying your graph interactively:
 
-1. Select **Modes** > **Query** from your graph's home page.
+- Select **Modes** > **Query** from your graph's home page.
 
     > [!TIP]
     > From this view, you can also create a read-only queryset. This queryset has the same functionalities and it allows you to share your query results.
