@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 [Mirroring in Fabric](../overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Azure Database for MySQL estate with the rest of your data in Microsoft Fabric. You can continuously replicate your existing Azure Database for MySQL directly into Fabric's OneLake, whether your servers are publicly accessible, network-isolated through virtual networks or private endpoints, or configured for high availability. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, data engineering, data science, and data sharing scenarios.
 
-For a tutorial on configuring your Azure Database for MySQL Mirroring in Fabric, see - *Link to tutorial page.*
+For a tutorial on configuring your Azure Database for MySQL Mirroring in Fabric, see [Tutorial: Create a mirrored database from Azure Database for MySQL in Microsoft Fabric (preview)](azure-database-mysql-tutorial.md).
 
 ## Why use Mirroring in Fabric?
 

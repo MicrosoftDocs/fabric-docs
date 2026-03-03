@@ -15,7 +15,7 @@ sections:
       - question: |
           What authentication to the Azure Database for MySQL is allowed? 
         answer:
-          We support both Entra and MySQL database users. For more information see [Configure Microsoft Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-tutorial.md)
+          We support Basic (MySQL Authentication) for database users. Microsoft Entra ID authentication isn't currently supported. For more information, see [Configure Microsoft Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-tutorial.md).
 
       - question: |
           Is there a staging or landing zone for Azure Database for MySQL? If so, is it outside of OneLake? 

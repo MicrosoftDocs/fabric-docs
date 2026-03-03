@@ -29,7 +29,7 @@ The following limitations apply at the MySQL server level when configuring mirro
 
 - You can't configure mirroring in Fabric on a Read Replica server.
 
-- Entry Id Authentication isn't supported.
+- Entra ID Authentication isn't supported.
 
 - Recovering a server with Mirroring in Fabric enabled via Point in Time Restore (PITR) requires Mirroring to be reconfigured on the new server.
 
