@@ -170,7 +170,7 @@
                 "database/cosmos-db/**/*.yml": "database-cosmos-db",
                 "database/cosmos-db/**/*.md": "database-cosmos-db",
                 "database/sql/**/*.yml": "database-sql",
-                "database/sql/**/*.md": "database-sql",                  
+                "database/sql/**/*.md": "database-sql",
                 "get-started/**/*.yml": "get-started",
                 "get-started/**/*.md": "get-started",
                 "fundamentals/**/*.yml": "get-started",
@@ -321,9 +321,29 @@
         "template": [],
         "dest": "fabric-docs",
         "rules": {
+            "sensitive-language-ma": {
+                "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md"
+                ]
+            },
             "sensitive-language-sl": {
                 "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md",
                     "real-time-intelligence/event-streams/add-source-mysql-database-change-data-capture.md"
+                ]
+            },
+            "sensitive-language-bl": {
+                "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md"
+                ]
+            },
+            "sensitive-language-wl": {
+                "exclude": [
+                    "docs/mirroring/mysql/**/*.md",
+                    "docs/mirroring/postgresql/**/*.md"
                 ]
             }
         }
