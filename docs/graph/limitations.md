@@ -69,7 +69,7 @@ Creating graphs with more than 500 million nodes and edges might result in unsta
 
 ### Multitasking UI
 
-The graph model might disappear or become empty when you switch between tabs or windows in the Fabric multitask UI. The team is actively working to resolve this known problem.
+The graph model might disappear or become empty when you switch between tabs or windows in the Fabric multitask UI. The product team is actively working to resolve this known problem.
 
 ### Node property selection
 
@@ -90,6 +90,11 @@ The system currently truncates responses that are larger than 64 MB.
 ### Timeout
 
 Queries time out if they take more than 20 minutes.
+
+## Data export and visualization
+
+- Exporting graph query results or graph structures isn't currently supported.
+- Connecting Power BI directly to a graph for visualization scenarios isn't currently supported.
 
 ## GQL conformance
 
@@ -264,4 +269,5 @@ Conformance to GQL standards is still in progress for:
 
 - [Fabric Graph overview](./overview.md)
 - [What is a graph database?](./graph-database.md)
+- [Troubleshooting and FAQ for Fabric Graph](troubleshooting-and-faq.md)
 - [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
