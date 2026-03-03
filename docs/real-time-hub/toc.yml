@@ -31,6 +31,8 @@ items:
     items:
     - name: Create business events
       href: business-events/create-business-events.md
+    - name: Manage data access for business events
+      href: business-events/manage-business-events-data-access.md
     - name: Publish business events using Notebook
       href: business-events/business-events-notebook.md
     - name: Publish business events using User Data Function
