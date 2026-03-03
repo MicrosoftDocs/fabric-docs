@@ -159,7 +159,7 @@ items:
       href: mysql/azure-database-mysql.md
     - name: MySQL tutorial
       href: mysql/azure-database-mysql-tutorial.md
-    - name: FAQ about mirrored MySQL
+    - name: FAQ
       displayName: Frequently asked questions about mirrored MySQL
       href: mysql/azure-database-mysql-mirroring-faq.yml
     - name: Limitations
