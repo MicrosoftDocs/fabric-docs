@@ -45,7 +45,7 @@ In this task, learn how to ingest data into the warehouse to create tables.
 
 1. The last step to configure the destination is to provide a name to the destination table and configure the column mappings. You can load the data to a new table or to an existing one, provide a schema and table names, change column names, remove columns, or change their mappings. 
 
-   For this example, leave everything as default. 
+   For this example, provide a new name to the table. Replace the text with a table name of your choice, such as `WWI Tutorial`. 
    
    Select **Next**.
    
