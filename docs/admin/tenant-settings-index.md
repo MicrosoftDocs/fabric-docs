@@ -4,9 +4,10 @@ description: A comprehensive index of Microsoft Fabric tenant settings in the Fa
 author: msmimart
 ms.author: mimart
 ms.topic: reference
+ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
-ms.date: 02/17/2026
+ms.date: 03/02/2026
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -41,7 +42,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 | Setting name | Description |
 |------|-------|
 |[Publish "Get Help" information](service-admin-portal-help-support.md#publish-get-help-information)|Users in the organization can go to internal help and support resources from the Power BI help menu.|
-|[Receive email notifications for service outages or incidents](../admin/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents)|Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident.|
+|Receive email and Teams notifications for service outages or incidents|Mail-enabled security groups will receive email and Teams notifications if this tenant is impacted by a service outage or incident.|
 |[Users can try Microsoft Fabric paid features](service-admin-portal-help-support.md#users-can-try-microsoft-fabric-paid-features)|When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227896)|
 |[Show a custom message before publishing reports](service-admin-portal-help-support.md#show-a-custom-message-before-publishing-reports)|When people attempt to publish a report, they'll see a custom message before it gets published.|
 
@@ -109,7 +110,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Allow DirectQuery connections to Power BI semantic models](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-semantic-models)|DirectQuery connections allow users to make changes to existing semantic models or use them to build new ones.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2179788)|
 |[Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants)|Authorized guest users can discover semantic models shared with them in the OneLake data hub (in Power BI Desktop), and then work with these semantic models in their own Power BI tenants.|
 |[Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing)|Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own Power BI tenants.|
-|Enforce multi-factor authentication on access requests from outside the organization|Multi-factor authentication is required for people outside your organization to access content from your Fabric tenant. This setting governs access to the SQL endpoints of Fabric data warehouses. [Learn More](https://go.microsoft.com/fwlink/?linkid=2340946)|
 
 ## [Discovery settings](service-admin-portal-discovery.md)
 
@@ -133,7 +133,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Allow XMLA endpoints and Analyze in Excel with on-premises semantic models](/power-bi/collaborate-share/service-analyze-in-excel)|Users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to XMLA endpoints.|
 |[Semantic Model Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries)|Users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs.|
-|Users can use the Power BI Model Context Protocol server endpoint (preview)|When enabled, the Power BI Model Context Protocol (MCP) server endpoint allows users in the organization to connect MCP clients to Power BI to use MCP tools to interact with their permissioned Power BI artifacts. Github Copilot in Visual Studio will operate by default; configure other MCP clients with service principals.  To allow service principals to connect to the MCP Server, turn on "Service principals can call Fabric public APIs."  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338916)|
+|Users can use the Power BI Model Context Protocol server endpoint (preview)|When enabled, the Power BI Model Context Protocol (MCP) server endpoint allows users to connect MCP clients to Power BI to use MCP tools to interact with their permissioned Power BI artifacts. Github Copilot in Visual Studio will operate by default; configure other MCP clients with service principals.  To allow service principals to connect to the MCP Server, turn on "Service principals can call Fabric public APIs."  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338916)|
 |[Use ArcGIS Maps for Power BI](/power-bi/visuals/power-bi-visualizations-arcgis)|Users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri.|
 |[Use global search for Power BI](/power-bi/consumer/end-user-search-sort)|Turn on this setting to let users use the global search bar at the top of the page.|
 |[Users can use the Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started)|With this setting on, users can create and view the Azure Maps visual. Your data may be temporarily stored and processed by Microsoft for essential services, including translating location names into latitudes and longitudes. Use of Azure Maps is subject to the following  [Terms of use](https://go.microsoft.com/fwlink/?linkid=2271924).|
