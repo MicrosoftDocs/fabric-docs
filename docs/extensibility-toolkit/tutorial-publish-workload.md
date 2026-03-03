@@ -40,6 +40,9 @@ To upload a workload to Microsoft Fabric:
 
 1. Go to the NuGet package you want to upload and select **Open**.
 
+   > [!IMPORTANT]
+   > Each uploaded NuGet package must have a unique version number. If you try to upload a package with a version that already exists, you get a **This package has already been uploaded** error. To resolve this issue, increment the minor version in your NuGet package (for example, change `1.0.0` to `1.1.0`) and upload it again.
+   
    :::image type="content" source="./media/tutorial-publish-workload/browse-nuget-package.png" alt-text="Screenshot showing how to browse to the NuGet package.":::
 
 1. Select the workload.
