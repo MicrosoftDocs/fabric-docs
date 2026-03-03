@@ -101,7 +101,7 @@ Materialized Lake Views from the original region remain unavailable to customers
 
 -  Recover the Lakehouse tables by using Approach 1 or Approach 2 described above. **Copy only the source tables.**
 -  Recover the notebooks that contain your MLV definitions. Refer to the [Notebook](#notebook) section for recovery steps.
--  Run the recovered notebooks to recreate the MLVs in the new Lakehouse. For information about creating MLVs, see [Create a Materialized Lake View](../data-engineering/materialized-lake-views/create-materialized-lake-view). If MLVs were also copied in the earlier step, run **CREATE OR REPLACE** while recreating them.
+-  Run the recovered notebooks to recreate the MLVs in the new Lakehouse. For information about creating MLVs, see [Create a Materialized Lake View](../data-engineering/materialized-lake-views/create-materialized-lake-view.md). If MLVs were also copied in the earlier step, run **CREATE OR REPLACE** while recreating them.
 -  Recreate the MLV refresh schedules manually in the new workspace. Schedule history and execution metrics aren't recoverable.
 -  If your MLVs feed semantic models or reports, verify and update the Lakehouse ID and dataset ID references as needed. Reconnect reports to the updated semantic model and validate data freshness.
 
