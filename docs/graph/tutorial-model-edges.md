@@ -2,7 +2,7 @@
 title: "Tutorial: Add edge types to your graph"
 description: Learn how to add edges to define relationships between nodes in your graph model.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ---
@@ -14,10 +14,11 @@ ms.search.form: Tutorial - Add edges to your graph
 In this tutorial step, you add edge types to your graph model. Edges define the relationships between nodes, such as "Customer purchases Order" or "Employee sells Order."
 
 > [!IMPORTANT]
-> When defining an edge type, you must use a mapping table that contains two columns such that:
+> When you define an edge type, use a mapping table that contains two columns such that:
+>
 > - One column matches the **source node's key** in terms of values and data type
 > - Another column matches the **target node's key** in terms of values and data type
-> 
+>
 > Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
 
 ## Adventure Works edge mappings
@@ -79,4 +80,3 @@ At this point, you defined all the node types and edge types for your graph. The
 
 > [!div class="nextstepaction"]
 > [Create multiple node and edge types from one mapping table](tutorial-model-node-edge-from-same-table.md)
-

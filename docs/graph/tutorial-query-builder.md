@@ -2,7 +2,7 @@
 title: "Tutorial: Query the graph with the query builder"
 description: Learn how to query your graph using the visual query builder in Microsoft Fabric.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with the query builder
 ---
@@ -42,7 +42,7 @@ Build a query to answer the question: "What products did a specific customer pur
 
     :::image type="content" source="./media/tutorial/query-nodes-and-edges-selected.png" alt-text="Screenshot showing the query pattern with selected nodes and edges." lightbox="./media/tutorial/query-nodes-and-edges-selected.png":::
 
-1. Apply a filter to the Customer node to focus on a specific customer. For this tutorial, select the Customer node, then select **Add filter**.
+1. Apply a filter to the Customer node to focus on a specific customer. For this tutorial, select the Customer node, and then select **Add filter**.
 
 1. In the **Filter** popup, configure the filter as shown in the following diagram:
 
