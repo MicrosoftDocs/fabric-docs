@@ -7,7 +7,7 @@ ms.reviewer: midesa
 reviewer: midesa
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
-ms.date: 01/14/2025
+ms.date: 03/03/2026
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
@@ -94,10 +94,6 @@ Each run includes the following information:
 - **Tags**: Metadata as key-value pairs to runs.
 
 :::image type="content" source="media/machine-learning-experiment/ml-run-detail-screen.png" alt-text="Screenshot of machine learning run detail page." lightbox="media/machine-learning-experiment/ml-run-detail-screen.png":::
-
-### View the run list
-
-You can view all the runs in an experiment in the **Run list** view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
 
 ### View the run list
 
