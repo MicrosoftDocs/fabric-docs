@@ -3,10 +3,8 @@ title: Add Fabric URLs to your allowlist
 description: Learn about URL endpoints and ports with their associated linked sites to add to your allowlist for connectivity to Fabric.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-ms.service: fabric
 ms.topic: reference
-ms.date: 10/14/2025
+ms.date: 02/13/2026
 ---
 
 # Add Fabric URLs to your allowlist
@@ -142,8 +140,10 @@ For complete information on SQL database in Fabric connection policy, see [Defau
 
 |Purpose   |Endpoint  |Port      |
 |:---------|:---------|:---------|
-|**Required**|*.database.fabric.microsoft.com|1433|
+|**Required**|*.database.fabric.microsoft.com<br>(Can use service tag: SQL)|1433|
 |**Required** Redirect connection policy ports |*.database.fabric.microsoft.com|11000-11999|
+
+For SQL database in Fabric, if your environment uses redirect connection policy, also allow TCP ports 11000-11999 for *.database.fabric.microsoft.com.
 
 ## Related content
 

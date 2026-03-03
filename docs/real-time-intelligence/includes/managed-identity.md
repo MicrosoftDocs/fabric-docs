@@ -1,6 +1,4 @@
 ---
-author: spelluru
-ms.author: spelluru
 ms.topic: include
 ms.date: 01/31/2024
 ---

@@ -1,14 +1,15 @@
 ---
 title: Fabric operations
 description: Understand the Microsoft Fabric operations.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: reference
 ms.custom:
 ms.date: 03/03/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Fabric operations

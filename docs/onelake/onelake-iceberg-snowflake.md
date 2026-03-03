@@ -2,8 +2,6 @@
 title: Use Snowflake with Iceberg tables in OneLake
 description: Learn how to use Snowflake to write Iceberg tables to OneLake and read any Fabric table as an Iceberg-formatted table.
 ms.reviewer: mahi
-ms.author: mahi
-author: matt1883
 ms.topic: how-to
 ms.date: 6/30/2025
 #customer intent: As a Snowflake user, I want to learn how to write Iceberg tables to OneLake and/or to read a Fabric (Delta Lake) table as an Iceberg table.
@@ -181,3 +179,4 @@ To use Snowflake on Azure to read a virtual Iceberg table based on a Delta Lake 
 ## Troubleshooting
 
 See the [troubleshooting](./onelake-iceberg-tables.md#troubleshooting) and [limitations and considerations](./onelake-iceberg-tables.md#limitations-and-considerations) sections of our documentation of OneLake table format virtualization and conversion between Delta Lake and Apache Iceberg table formats.
+

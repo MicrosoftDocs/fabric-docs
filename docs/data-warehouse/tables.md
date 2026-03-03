@@ -1,8 +1,6 @@
 ---
 title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul, randolphwest
 ms.date: 09/24/2025
 ms.topic: how-to

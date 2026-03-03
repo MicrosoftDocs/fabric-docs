@@ -1,10 +1,7 @@
 ---
 title: Fabric Workload Development Kit backend authentication
 description: Learn about building the backend authentication of a customized Fabric workload.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 05/21/2024
 ---
 
@@ -156,3 +153,4 @@ Authorization is achieved by invoking the [ValidatePermissions](https://github.c
 Authorization is achieved by invoking the [ValidatePermissions](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample/blob/main/Backend/dotnet/src/Services/AuthorizationHandler.cs#L37) method. This method calls the `resolvePermissions` API in the Fabric workload-control endpoint for the relevant Fabric item and verifies that the user has the necessary permissions for the operation.
 
 If your workloads include long running operations, for example, as part of [JobScheduler](./monitoring-hub.md) you might run into a situation where the Token lifetime isn't sufficient. For more information about how to authenticate long running process, [Long-running OBO processes](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#long-running-obo-processes).
+

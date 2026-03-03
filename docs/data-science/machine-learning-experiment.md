@@ -4,11 +4,11 @@ description: Learn how to create machine learning experiments, use the MLflow AP
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 03/03/2026
 ms.search.form: Create New Experiment, Run Comparison
+ai-usage: ai-assisted
 ---
 
 # Machine learning experiments in Microsoft Fabric
@@ -22,12 +22,11 @@ In this article, you learn more about how data scientists can interact with and 
 
 ## Prerequisites
 
-- A Power BI Premium subscription. If you don't have one, see [What is Power BI Premium?](/fabric/enterprise/powerbi/service-premium-what-is)
-- A Power BI Workspace with assigned premium capacity.
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 ## Create an experiment
 
-You can create a machine learning experiment directly from the fabric user interface (UI) or by writing code that uses the MLflow API.
+You can create a machine learning experiment directly from the Fabric user interface (UI) or by writing code that uses the MLflow API.
 
 ### Create an experiment using the UI
 
@@ -175,7 +174,7 @@ To compare runs:
 
 ### Compare runs using the MLflow API
 
-Data scientists can also use MLflow to query and search among runs within an experiment. You can explore more MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://www.mlflow.org/docs/latest/python_api/mlflow.html).
+Data scientists can also use MLflow to query and search among runs within an experiment. You can explore more MLflow APIs for searching, filtering, and comparing runs by visiting the [MLflow documentation](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html).
 
 #### Get all runs
 
@@ -233,5 +232,5 @@ ML Experiment are integrated directly into Monitor, where you can select a speci
 
 ## Related content
 
-- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+- [Learn about MLflow Experiment APIs](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)

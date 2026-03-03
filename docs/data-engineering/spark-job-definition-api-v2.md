@@ -2,10 +2,7 @@
 title: Apache Spark job definition API v2
 description: Learn how to create and update a Spark job definition with the Microsoft Fabric REST API with v2 version
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 11/07/2025
 ms.search.form: spark_job_definition
 ---

@@ -4,7 +4,6 @@ description: Learn about how to secure data in mirrored databases From SQL Serve
 ms.reviewer: ajayj
 ms.date: 11/18/2025
 ms.topic: how-to
-ms.custom:
 ---
 
 # How to: Secure data Microsoft Fabric mirrored databases from SQL Server

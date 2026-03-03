@@ -25,7 +25,7 @@ The CloudBluePSA connector supports the following authentication types for copy 
 
 You can connect Dataflow Gen2 to CloudBluePSA in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
 1. [Set up CloudBluePSA prerequisites](/power-query/connectors/cloudbluepsa#prerequisites).
 1. [Connect to CloudBluePSA (from Power Query online)](/power-query/connectors/cloudbluepsa#connect-to-cloudbluepsa-from-powerquery-online).
 

@@ -1,11 +1,8 @@
 ---
 title: Get Eventstream item Definition
 description: Learn how to call APIs to get an Eventstream item definition.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 09/08/2025
 ms.search.form: Eventstream REST API
 ---
@@ -169,3 +166,5 @@ Below is the decoded payload content of the Base64 string for reference.
 ## Related content
 
 * [Get Eventstream Definition](/rest/api/fabric/eventstream/items/get-eventstream-definition)
+
+

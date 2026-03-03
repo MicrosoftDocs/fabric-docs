@@ -3,8 +3,6 @@ title: GQL Language Guide
 description: Complete guide to GQL language support for graph in Microsoft Fabric
 ms.topic: reference
 ms.date: 02/09/2026
-author: lorihollasch
-ms.author: loriwhip
 ms.reviewer: splantikow
 ms.search.form: GQL Language Guide
 ---
@@ -1280,6 +1278,7 @@ Keep these references handy for quick lookups:
 - [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions.
 - [GQL graph types](gql-graph-types.md) - Graph types and constraints.
 - [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling.
+- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md) - Best practices for writing efficient GQL queries.
 
 **Quick references:**
 

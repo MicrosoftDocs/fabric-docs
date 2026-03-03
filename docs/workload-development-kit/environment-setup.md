@@ -1,10 +1,7 @@
 ---
 title: Set up your Microsoft Fabric development environment
 description: Learn how to set up your Microsoft Fabric Workload Development Kit environment so that you can start developing your workloads.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
-ms.custom:
 ms.date: 04/09/2025
 ---
 
@@ -75,3 +72,4 @@ Download and install these tools before you start developing your workload.
 
 * * [Quickstart - Run a workload sample](quickstart-sample.md)
 * [Authentication overview](./authentication-concept.md)
+

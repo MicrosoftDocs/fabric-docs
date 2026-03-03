@@ -1,8 +1,6 @@
 ---
 title: "OneLake Security for SQL analytics endpoints (Preview)"
 description: Learn how Microsoft Fabric's OneLake security enhances data access control with centralized governance or granular SQL-based permissions.
-author: kgremban
-ms.author: kgremban
 ms.reviewer: aamerril
 ms.date: 09/05/2025
 ms.topic: concept-article
@@ -51,7 +49,7 @@ In user identity mode:
 
 * SQL permissions are allowed for nondata objects like views, stored procedures, and functions, enabling flexibility for defining custom logic or user-facing entry points to data.
 
-* Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse UI and are governed by workspace roles (Admin, Member, Contributor).
+* Write operations aren't supported at the SQL analytics endpoint. All writes must occur through the Lakehouse page in the Fabric portal and are governed by workspace roles (Admin, Member, Contributor).
 
 >[!IMPORTANT]
 >The SQL Analytics Endpoint requires a one-to-one mapping between item permissions and members in a OneLake security role to sync correctly. If you grant an identity access to a OneLake security role, that same identity needs to have Fabric Read permission to the lakehouse as well. For example, if a user assigns "user123@microsoft.com" to a OneLake security role then "user123@microsoft.com" must also be assigned to that lakehouse.

@@ -2,10 +2,7 @@
 title: Explore lakehouses in Visual Studio Code
 description: Use the VS Code extension for Synapse to explore your Fabric lakehouses, including tables and raw data.
 ms.reviewer: qixwang
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
 ms.date: 03/11/2025
 ms.search.form: VSCodeExtension
 ---

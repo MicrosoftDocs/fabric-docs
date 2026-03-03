@@ -1,10 +1,7 @@
 ---
 title: Metrics
 description: View and analyze the metrics of ingestions, materialized views, and continuous exports of an Eventhouse KQL database within Real-Time Intelligence.
-author: spelluru
-ms.author: spelluru
 ms.topic: reference
-ms.custom:
 ms.date: 11/06/2024
 ---
 

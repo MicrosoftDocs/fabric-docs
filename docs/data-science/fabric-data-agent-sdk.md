@@ -1,13 +1,8 @@
 ﻿---
 title: Fabric data agent Python SDK (preview)
 description: Learn how to use the Fabric data agent SDK.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: midesa
-reviewer: midesa
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 12/05/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

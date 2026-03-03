@@ -23,13 +23,12 @@ The Google Analytics connector supports the following authentication types for c
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Google Analytics data. The following links provide the specific Power Query connector information you need to connect to Google Analytics data in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to Google Analytics using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the Google Analytics connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Google Analytics prerequisites](/power-query/connectors/google-analytics#prerequisites) before connecting to the Google Analytics connector.
-- To connect to the Google Analytics connector from Power Query, go to [Connect to Google Analytics data from Power Query Online](/power-query/connectors/google-analytics#connect-to-google-analytics-data-from-power-query-online).
-
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Set up Google Analytics prerequisites](/power-query/connectors/google-analytics#prerequisites).
+1. Check [Google Analytics limitations and issues](/power-query/connectors/google-analytics#limitations-and-issues) to make sure your scenario is supported.
+1. [Connect to Google Analytics data (from Power Query Online)](/power-query/connectors/google-analytics#connect-to-google-analytics-data-from-power-query-online).
 
 ## Set up your connection in a pipeline
 

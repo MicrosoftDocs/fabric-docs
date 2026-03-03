@@ -1,8 +1,8 @@
 ---
 title: 'Plan Your Microsoft Fabric Capacity: Strategic Guide Overview'
 description: This four-part series provides Fabric capacity planning guidance for administrators and Center of Excellence (COE) leads. Learn how to allocate and manage Fabric capacity effectively, from initial adoption to enterprise-scale governance, ensuring your analytics solutions are scalable and well governed.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.reviewer: cnovak
 ms.topic: troubleshooting
 ms.custom:

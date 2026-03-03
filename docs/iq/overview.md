@@ -1,12 +1,8 @@
 ---
 title: What is Fabric IQ (preview)?
 description: Learn about the purpose and item components of the IQ (preview) workload in Microsoft Fabric.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 11/04/2025
 ms.topic: overview
-ms.service: fabric
 ---
 
 # What is Fabric IQ (preview)?
@@ -85,3 +81,4 @@ This section describes how items work together or relate to one another.
 ## Next steps
 
 Learn more about ontology (preview), the core semantic representation item in the IQ workload: [What is ontology (preview)?](ontology/overview.md).
+
