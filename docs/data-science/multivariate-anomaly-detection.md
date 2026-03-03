@@ -14,10 +14,10 @@ ms.collection: ce-skilling-ai-copilot
 
 # Recipe: Foundry Tools - Multivariate Anomaly Detection
 
-This recipe shows how to use SynapseML and Foundry Tools, on Apache Spark, for multivariate anomaly detection. Multivariate anomaly detection involves detection of anomalies among many variables or time series, while accounting for all the inter-correlations and dependencies between the different variables. This scenario uses SynapseML and Foundry Tools to train a model for multivariate anomaly detection. We then use the model to infer multivariate anomalies within a dataset that contains synthetic measurements from three IoT sensors.
+This recipe shows how to use SynapseML and Foundry Tools, on Apache Spark, for multivariate anomaly detection. Multivariate anomaly detection involves detection of anomalies among many variables or time series, while accounting for all the inter-correlations and dependencies between the different variables. This scenario uses SynapseML and Foundry Tools to train a model for multivariate anomaly detection. You then use the model to infer multivariate anomalies within a dataset that contains synthetic measurements from three IoT sensors.
 
 > [!IMPORTANT]
-> Starting September, 20, 2023, you can't create new Anomaly Detector resources. The Anomaly Detector service will be retired on October 1, 2026.
+> Starting September 20, 2023, you can't create new Anomaly Detector resources. The Anomaly Detector service retires on October 1, 2026.
 
 For more information about the Azure AI Anomaly Detector, visit the [Anomaly Detector](/azure/ai-services/anomaly-detector/) information resource.
 
@@ -45,7 +45,7 @@ To save intermediate data, you must create an Azure Blob Storage Account. Within
 
 ### Enter your service keys
 
-First, set up the environment variables for our service keys. The next cell sets the `ANOMALY_API_KEY` and the `BLOB_CONNECTION_STRING` environment variables, based on the values stored in our Azure Key Vault. If you run this tutorial in your own environment, be sure to set these environment variables before you proceed:
+First, set up the environment variables for your service keys. The next cell sets the `ANOMALY_API_KEY` and the `BLOB_CONNECTION_STRING` environment variables, based on the values stored in Azure Key Vault. If you run this tutorial in your own environment, be sure to set these environment variables before you proceed:
 
 ```python
 import os
@@ -73,7 +73,7 @@ intermediateSaveDir = (
 location = "westus2"
 ```
 
-Connect to our storage account, so that the anomaly detector can save intermediate results in that storage account:
+Connect to the storage account, so that the anomaly detector can save intermediate results in that storage account:
 
 ```python
 spark.sparkContext._jsc.hadoopConfiguration().set(
@@ -116,7 +116,7 @@ df = (
 df.show(5)
 ```
 
-We can now create an `estimator` object, which we use to train our model. We specify the start and end times for the training data. We also specify the input columns to use, and the name of the column that contains the timestamps. Finally, we specify the number of data points to use in the anomaly detection sliding window, and we set the connection string to the Azure Blob Storage Account:
+You can now create an `estimator` object, which you use to train your model. Specify the start and end times for the training data. Also specify the input columns to use, and the name of the column that contains the timestamps. Finally, specify the number of data points to use in the anomaly detection sliding window, and set the connection string to the Azure Blob Storage Account:
 
 ```python
 trainingStartTime = "2020-06-01T12:00:00Z"
@@ -137,13 +137,13 @@ estimator = (
 )
 ```
 
-Let's fit the `estimator` to the data:
+Fit the `estimator` to the data:
 
 ```python
 model = estimator.fit(df)
 ```
 
-Once the training is done, we can use the model for inference. The code in the next cell specifies the start and end times for the data in which we'd like to detect the anomalies:
+Once the training is done, use the model for inference. The code in the next cell specifies the start and end times for the data in which you'd like to detect the anomalies:
 
 ```python
 inferenceStartTime = "2020-07-02T18:00:00Z"
@@ -162,9 +162,9 @@ result = (
 result.show(5)
 ```
 
-In the previous cell, `.show(5)` showed us the first five dataframe rows. The results were all `null` because they landed outside the inference window.
+In the previous cell, `.show(5)` shows the first five dataframe rows. The results are all `null` because they land outside the inference window.
 
-To show the results only for the inferred data, select the needed columns. We can then order the rows in the dataframe by ascending order, and filter the result to show only the rows in the inference window range. Here, `inferenceEndTime` matches the last row in the dataframe, so can ignore it.
+To show the results only for the inferred data, select the needed columns. You can then order the rows in the dataframe by ascending order, and filter the result to show only the rows in the inference window range. Here, `inferenceEndTime` matches the last row in the dataframe, so you can ignore it.
 
 Finally, to better plot the results, convert the Spark dataframe to a Pandas dataframe:
 
@@ -201,7 +201,7 @@ rdf = pd.concat(
 rdf
 ```
 
-We now have the contribution scores of sensors 1, 2, and 3 in the `series_0`, `series_1`, and `series_2` columns respectively.
+You now have the contribution scores of sensors 1, 2, and 3 in the `series_0`, `series_1`, and `series_2` columns respectively.
 
 To plot the results, run the next cell. The `minSeverity` parameter specifies the minimum severity of the anomalies to plot:
 
@@ -308,11 +308,11 @@ The plots show the raw data from the sensors (inside the inference window) in or
 
 The second plot shows the severity score of all the detected anomalies, with the `minSeverity` threshold shown in the dotted red line.
 
-Finally, the last plot shows the contribution of the data from each sensor to the detected anomalies. It helps us diagnose and understand the most likely cause of each anomaly.
+Finally, the last plot shows the contribution of the data from each sensor to the detected anomalies. It helps diagnose and understand the most likely cause of each anomaly.
 
 ## Related content
 
-- [Multivariate Anomaly Detection with Isolation Forest](isolation-forest-multivariate-anomaly-detection.md) — doesn't require an Azure AI Anomaly Detector resource
+- [Multivariate Anomaly Detection with Isolation Forest](isolation-forest-multivariate-anomaly-detection.md) – doesn't require an Azure AI Anomaly Detector resource.
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)
