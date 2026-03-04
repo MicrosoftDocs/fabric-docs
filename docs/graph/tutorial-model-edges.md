@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Add edge types to your graph"
-description: Learn how to add edges to define relationships between nodes in your graph model.
+description: Learn how to add edge types to define relationships between nodes in your Fabric Graph model, including configuring source and destination nodes.
 ms.topic: tutorial
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam

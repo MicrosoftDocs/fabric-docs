@@ -1,6 +1,6 @@
 ---
-title: What is a Graph Database?
-description: Learn what a graph database is, how it differs from relational databases, and the benefits of using a graph database.
+title: What Is a Graph Database? - Fabric Graph
+description: Learn what a graph database is, how it differs from relational databases, and the key benefits of using a graph database for data analysis.
 ms.topic: concept-article
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
@@ -81,4 +81,4 @@ Representing your data as a graph and storing it in a separate, standalone graph
 ## Related content
 
 - [Compare graph and relational databases](graph-relational-databases.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

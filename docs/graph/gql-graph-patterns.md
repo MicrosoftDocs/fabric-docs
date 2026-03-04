@@ -1,5 +1,5 @@
 ---
-title: GQL Graph Patterns
+title: GQL Graph Patterns in Fabric Graph
 description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in Fabric Graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
 ms.date: 03/02/2026
@@ -395,4 +395,4 @@ Both forms are equivalent and match chains of at least 2 `knows` relationships.
 - [GQL language guide](gql-language-guide.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
