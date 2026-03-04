@@ -1,8 +1,8 @@
 ---
 title: GQL Query HTTP API reference
-description: Refer to the complete HTTP API reference for querying graph data in Microsoft Fabric using GQL (Graph Query Language).
+description: Refer to the complete HTTP API reference for querying graph data in Fabric Graph using GQL (Graph Query Language).
 ms.topic: reference
-ms.date: 11/18/2025
+ms.date: 03/02/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Query HTTP API reference
 ---
@@ -11,7 +11,7 @@ ms.search.form: GQL Query HTTP API reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Run GQL queries against property graphs in Microsoft Fabric using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
+Run GQL queries against property graphs in Fabric Graph using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
 
 > [!IMPORTANT]
 > This article exclusively uses the [social network example graph dataset](sample-datasets.md).
@@ -29,9 +29,9 @@ The GQL Query API is a single endpoint (RPC over HTTP) that accepts GQL queries 
 
 ## Prerequisites
 
-* You need a graph in Microsoft Fabric that contains data — including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
-* You should be familiar with [property graphs and a basic understanding of GQL](gql-language-guide.md), including the structure of [execution outcomes and results](gql-language-guide.md#execution-outcomes-and-results).
-* You need to install and set up the [Azure CLI](/cli/azure/) tool `az` to log in to your organization. Command line examples in this article assume use of a POSIX-compatible command line shell such as bash.
+- You need a graph in Fabric Graph that contains data, including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
+- You should be familiar with [property graphs and a basic understanding of GQL](gql-language-guide.md), including the structure of [execution outcomes and results](gql-language-guide.md#execution-outcomes-and-results).
+- You need to install and set up the [Azure CLI](/cli/azure/) tool `az` to sign in to your organization. Command line examples in this article assume use of a POSIX-compatible command line shell such as bash.
 
 ## Authentication
 
@@ -43,14 +43,13 @@ Include your access token in the Authorization header of every request:
 Authorization: Bearer <your-access-token>
 ```
 
-In general, you can obtain bearer tokens using [Microsoft Authentication Library (MSAL)](/entra/identity-platform/msal-overview) 
-or other authentication flows compatible with Microsoft Entra.
+In general, you can obtain bearer tokens using [Microsoft Authentication Library (MSAL)](/entra/identity-platform/msal-overview) or other authentication flows compatible with Microsoft Entra.
 
 Bearer tokens are commonly obtained through two major paths:
 
 ### User-delegated access
 
-You can obtain bearer tokens for user-delegated service calls from the command line via the [Azure CLI](/cli/azure/) tool `az`, 
+You can obtain bearer tokens for user-delegated service calls from the command line via the [Azure CLI](/cli/azure/) tool `az`.
 
 Get a bearer token for user-delegated calls from the command line by:
 
@@ -69,7 +68,7 @@ You can obtain bearer tokens for applications registered in Microsoft Entra. Con
 
 The API uses a single endpoint that accepts all query operations:
 
-```
+```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true
 ```
 
@@ -92,7 +91,7 @@ You can use more parameters to further narrow down query results:
 - `--query '{query}'` for listing only items that match the provided JMESPath `{query}`. See the [Azure CLI documentation on JMESPath](/cli/azure/use-azure-cli-successfully-query) regarding the supported syntax for `{query}`.
 - `-o table` for producing a table result.
 
-> [!NOTE] 
+> [!NOTE]
 > See the [section on using az-rest](#complete-example-with-az-rest) or the [section on using curl](#complete-example-with-curl) for how to execute queries via the API endpoint from a command line shell.
 
 ### Request headers
@@ -105,7 +104,7 @@ You can use more parameters to further narrow down query results:
 
 ## Request format
 
-All requests use HTTP POST with a JSON payload. 
+All requests use HTTP POST with a JSON payload.
 
 ### Basic request structure
 
@@ -171,10 +170,10 @@ For more information, see the [GQL status codes reference](gql-reference-status-
 
 #### Diagnostic records
 
-Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to graph for Microsoft Fabric. The GQL standard prescribes all other keys.
+Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to Graph. The GQL standard prescribes all other keys.
 
 > [!NOTE]
-> Values in the diagnostic record of keys specific to graph in Microsoft Fabric are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
+> Values in the diagnostic record of keys specific to Graph are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
 
 #### Causes
 
@@ -277,7 +276,7 @@ Large integers outside JavaScript's safe range (-9,007,199,254,740,991 to 9,007,
 #### Floating-point types
 
 | GQL Type | Range | JSON Serialization | Example |
-|---|---|---|---|
+| -------- | ----- | ------------------ | ------- |
 | `FLOAT64` | IEEE 754 binary64 | JSON number or string | `{"gqlType": "FLOAT64", "value": 3.14}` |
 
 Floating-point values support IEEE 754 special values:
@@ -320,6 +319,7 @@ Lists contain arrays of nullable values with consistent element types:
 ```
 
 Special list types:
+
 - `LIST<ANY>` - Mixed types (each element includes full type info)
 - `LIST<NULL>` - Only null values allowed
 - `LIST<NOTHING>` - Always empty array

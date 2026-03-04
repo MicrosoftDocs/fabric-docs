@@ -1,8 +1,8 @@
 ---
-title: GQL Quick Reference
-description: Quick reference for GQL syntax, statements, patterns, and expressions supported by graph in Microsoft Fabric.
+title: GQL Quick Reference for Fabric Graph
+description: Quick reference for GQL syntax, statements, graph patterns, expressions, and functions supported by Fabric Graph, with examples.
 ms.topic: reference
-ms.date: 02/03/2025
+ms.date: 03/02/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Quick Reference
 ---
@@ -11,7 +11,7 @@ ms.search.form: GQL Quick Reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article is a quick reference for GQL (Graph Query Language) syntax for graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+This article is a quick reference for GQL (Graph Query Language) syntax for Fabric Graph. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 
 > [!NOTE]
 > This article primarily uses the [social network example graph dataset](sample-datasets.md). It also provides a few examples that use the Adventure Works dataset from the [Graph tutorial](tutorial-introduction.md).
@@ -39,7 +39,7 @@ RETURN fullName, m.firstName
 **Statement order:**  
 
 > [!IMPORTANT]
-> Graph in Microsoft Fabric doesn't yet support arbitrary statement composition.
+> Fabric Graph doesn't yet support arbitrary statement composition.
 > See the article on [current limitations](limitations.md).
 
 Statements generally can appear in any order within a query:
@@ -197,7 +197,7 @@ Graph patterns describe the structure of the graph to match.
 
 ### Node patterns
 
-In [graph databases](graph-database.md), nodes are usually used to represent entities, such as people, products, or places.
+In [graph databases](graph-database.md), use nodes to represent entities, such as people, products, or places.
 
 Node patterns describe how to match nodes in the graph. You can filter by label or bind variables.
 
@@ -251,7 +251,7 @@ For more information about path patterns, see the [Graph patterns](gql-graph-pat
 
 ### Multiple patterns
 
-You can use multiple patterns to match complex, nonlinear graph structures in a single query.
+Use multiple patterns to match complex, nonlinear graph structures in a single query.
 
 ```gql
 (a)->(b), (a)->(c)               -- Multiple edges from same node
