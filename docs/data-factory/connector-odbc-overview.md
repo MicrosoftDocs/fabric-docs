@@ -2,10 +2,11 @@
 title: Odbc connector overview
 description: This article provides an overview of the supported capabilities of the Odbc connector.
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 03/03/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Odbc connector overview
@@ -17,9 +18,11 @@ The open database connectivity (Odbc) connector is supported in Data Factory for
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|On-premises |Anonymous<br> Basic<br> Windows |
-| **Pipeline**<br>- Copy activity (source/destination) <br>- Lookup activity    |On-premises |Anonymous<br> Basic |
+| **Pipeline**<br>- [Copy activity](connector-odbc-copy-activity.md) (source/destination) <br>- Lookup activity    |On-premises |Anonymous<br> Basic |
 | **Copy job** (source/destination) <br>- Full load<br>- Append |On-premises |Anonymous<br> Basic |
 
 ## Related content
 
 To learn about how to connect to Odbc, go to [Set up your Odbc connection](connector-odbc.md).
+
+To learn about the copy activity configuration for ODBC in pipelines, go to [Configure ODBC in a copy activity](connector-odbc-copy-activity.md).
