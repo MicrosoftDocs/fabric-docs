@@ -519,4 +519,4 @@ CAST('true' AS BOOL)          -- TRUE
 - [GQL language guide](gql-language-guide.md)
 - [GQL expressions and functions](gql-expressions.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
