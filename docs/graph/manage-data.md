@@ -1,5 +1,5 @@
 ---
-title: Manage data in Fabric Graph
+title: Manage and Refresh Data in Fabric Graph
 description: Learn how to refresh graph data manually and configure a scheduled refresh in Microsoft Fabric, including workspace settings and refresh history monitoring.
 ms.topic: how-to
 ms.date: 03/03/2026

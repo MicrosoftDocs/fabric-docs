@@ -610,5 +610,5 @@ ORDER BY total_orders DESC
 ## Related content
 
 - [GQL language guide](gql-language-guide.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)
