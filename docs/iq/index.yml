@@ -56,11 +56,11 @@ landingContent:
             url: ontology/how-to-use-preview-experience.md
             
   # Card
-  - title: About Graph in Microsoft Fabric
+  - title: About Fabric Graph
     linkLists:
       - linkListType: overview
         links:
-          - text: Graph in Microsoft Fabric Overview
+          - text: Fabric Graph overview
             url: ../graph/overview.md
           - text: What is a graph database?
             url: ../graph/graph-database.md
@@ -68,11 +68,11 @@ landingContent:
             url: ../graph/graph-data-models.md
 
   # Card
-  - title: Get started with Graph in Microsoft Fabric
+  - title: Get started with Fabric Graph
     linkLists:
       - linkListType: get-started
         links:
-          - text: Quickstart guide for Graph in Microsoft Fabric
+          - text: Quickstart guide for Fabric Graph
             url: ../graph/quickstart.md
           - text: Try Microsoft Fabric for free
             url: /fabric/fundamentals/fabric-trial
