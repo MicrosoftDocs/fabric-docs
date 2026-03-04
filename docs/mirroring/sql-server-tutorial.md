@@ -14,7 +14,7 @@ ms.topic: tutorial
 
 - Install or use an existing SQL Server instance, on-premises or in the cloud.
     - As a tutorial, we recommend using a copy of one of your existing databases or any existing test or development database that you can recover quickly from a backup. 
-- Install a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+- Install a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
     - The Fabric capacity needs to be active and running. A paused or deleted capacity prevents Fabric Mirroring and no data is replicated.
 - Fabric tenant settings are required. Ensure the following two [Fabric Tenant settings](../admin/about-tenant-settings.md) are enabled:
@@ -47,7 +47,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
          - VIEW DATABASE PERFORMANCE STATE
          - VIEW DATABASE SECURITY STATE
     
-1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. Create a server login and assign the appropriate permissions.
 
    > [!IMPORTANT] 
@@ -95,7 +95,7 @@ Follow these instructions for either SQL Server 2025 or SQL Server 2016-2022 to 
 
 For SQL Server versions 2016-2022, an admin must be a member of the `sysadmin` server role to set up CDC. The `sysadmin` server role is also required for any future CDC maintenance. Mirroring uses CDC if it's already enabled for the database and tables to mirror. The following steps create the `fabric_login` login and add it to the sysadmin server role to configure CDC. If CDC already exists, you don't need to temporarily add the `fabric_login` principal to the `sysadmin` server role. Once CDC is set up, enabling Mirroring only requires CONNECT at the server level, and SELECT and CONNECT permissions at the database level to replicate the data.
 
-1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+1. Connect to your SQL Server instance using a T-SQL querying tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 1. Connect to the `master` database. In this step, you'll create a server login and assign the appropriate permissions.
 
    If CDC is already enabled for the database and tables to mirror, the `fabric_login` does not need to be a member of the sysadmin server role. If CDC is not already enabled, the `fabric_login` needs to be a member of the sysadmin server role to configure CDC.

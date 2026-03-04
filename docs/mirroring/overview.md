@@ -52,7 +52,7 @@ Mirroring creates these items in your Fabric workspace:
 - A process that manages the replication of data and metadata into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This process enables downstream scenarios like data engineering, data science, and more.
 - A [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
 [Sharing](#sharing) makes it easy to control access and manage permissions, so you can protect sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 

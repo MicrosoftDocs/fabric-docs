@@ -2,7 +2,7 @@
 title: "Tutorial: Create multiple node and edge types from one mapping table"
 description: Learn how to add nodes and edges from one mapping table.
 ms.topic: tutorial
-ms.date: 02/13/2026
+ms.date: 03/03/2026
 author: lorihollasch
 ms.author: loriwhip
 ms.reviewer: wangwilliam
@@ -38,18 +38,20 @@ Create a node type named `Country` using the **Employees** table by following th
 
 ## Modify the `Employee` node type as needed
 
-If it's not necessary for the `Employee` node type to have the `Territory`, `Country`, and `Group` properties during your queries or analyses, you may remove these properties. 
+If the `Employee` node type doesn't need the `Territory`, `Country`, and `Group` properties for your queries or analyses, remove these properties. 
 
 > [!TIP]
-> Excessive properties make your graph harder to maintain and use. Generally, for all node types you should remove properties that are
-> - Not required for the uniqueness of the nodes
-> - Not necessary during your queries or analyses
+> Excessive properties make your graph harder to maintain and use. Generally, for all node types, remove properties that are:
 >
-> In the case of the `Country` node type, since it's created from the **Employees** table, you should remove properties like `EmployeeID_K`, `ManagerID`, `EmployeeFullName`, `JobTitle`, `OrganizationLevel`, `MaritalStatus`, and `Gender`, at a minimum.
+> - Not required for the uniqueness of the nodes
+> - Not necessary for your queries or analyses
+>
+> For the `Country` node type, since it's created from the **Employees** table, remove properties like `EmployeeID_K`, `ManagerID`, `EmployeeFullName`, `JobTitle`, `OrganizationLevel`, `MaritalStatus`, and `Gender`, at a minimum.
 
 ## Create a `lives_in` edge
 
 Create an edge type named `lives_in` using the **Employees** table by following the steps in [Add edge types to your graph](tutorial-model-edges.md). Configure the edge schema like so:
+
 - **Label**: `lives_in`
 - **Mapping table**: `adventureworks_employees`
 - **Source node**: `Employee`
