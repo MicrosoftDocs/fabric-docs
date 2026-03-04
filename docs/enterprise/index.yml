@@ -5,7 +5,7 @@ summary: Learn about Microsoft Fabric licenses, and how to monitor and control t
 
 metadata:
   title: Microsoft Fabric enterprise documentation
-  description: Brose the Microsoft Fabric enterprise documentation.
+  description: Browse the Microsoft Fabric enterprise documentation.
   author: dknappettmsft
   ms.author: daknappe
   ms.topic: landing-page
@@ -122,7 +122,7 @@ landingContent:
       - linkListType: concept
         links:            
           - text: Power BI Desktop privacy levels
-            url: powerbi/desktop-privacy-levels.md                      
+            url: /power-query/privacy-levels                     
       - linkListType: how-to-guide
         links:                    
           - text: Use service tags

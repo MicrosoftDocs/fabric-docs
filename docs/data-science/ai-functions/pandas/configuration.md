@@ -124,19 +124,19 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 
     ```python
     df["embedding"] = df["text"].ai.embed(
-        conf=Conf(embedding_deployment_name="<embbedding deployment name>"),
+        conf=Conf(embedding_deployment_name="<embedding deployment name>"),
     )
     ```
 
 ### Configure a custom model endpoint
 
 By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
-You may choose to use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft AI Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
+You may choose to use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
 
 ```python
 from openai import AzureOpenAI
 
-# Example to create client for Microsoft AI Foundry OpenAI models
+# Example to create client for Foundry OpenAI models
 client = AzureOpenAI(
     azure_endpoint="https://<ai-foundry-resource>.openai.azure.com/",
     api_key="<API_KEY>",
@@ -147,19 +147,19 @@ aifunc.setup(client)  # Set the client for all functions.
 ```
 
 > [!TIP]
-> - You can configure a custom AI Foundry resource to use models beyond OpenAI.
+> - You can configure a custom Foundry resource to use models beyond OpenAI.
 
-The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Microsoft AI Foundry resource to use models beyond OpenAI:
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
 
 > [!IMPORTANT]
-> - Support for Microsoft AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+> - Support for Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
-> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using an AI Foundry resource
+> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
 
 ```python
 from openai import OpenAI
 
-# Example to create client for Azure AI Foundry models
+# Example to create client for Foundry models
 client = OpenAI(
     base_url="https://<ai-foundry-resource>.services.ai.azure.com/openai/v1/",
     api_key="<API_KEY>",

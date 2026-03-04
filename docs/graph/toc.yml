@@ -1,23 +1,12 @@
 items:
-  - name: Graph in Microsoft Fabric documentation
-  - name: Overview
+  - name: Getting started
     items:
-      - name: What is Graph in Microsoft Fabric?
+      - name: What is Fabric Graph?
         href: overview.md
-      - name: What is a graph database?
-        href: graph-database.md
-      - name: Compare graph and relational databases
-        href: graph-relational-databases.md
-      - name: Labeled property graph
-        href: graph-data-models.md
-      - name: Security
-        href: security-overview.md
-  - name: Get started
-    items:
-      - name: Quickstart guide for Graph in Microsoft Fabric
+      - name: Quickstart guide for Fabric Graph
         href: quickstart.md
-      - name: Monitoring graph status
-        href: monitoring-overview.md
+      - name: Example graph datasets
+        href: sample-datasets.md
   - name: Tutorial
     items:
       - name: Introduction
@@ -38,43 +27,73 @@ items:
         href: tutorial-query-code-editor.md
       - name: 8 - Clean up tutorial resources
         href: tutorial-clean-up.md
+  - name: Concepts
+    items:
+      - name: What is a graph database?
+        href: graph-database.md
+      - name: Labeled property graph
+        href: graph-data-models.md
+      - name: Compare graph and relational databases
+        href: graph-relational-databases.md
+      - name: Fabric Graph architecture
+        href: how-graph-works.md
+      - name: Security
+        href: security-overview.md
+  - name: How-tos
+    items:
+      - name: Manage data
+        href: manage-data.md
+      - name: Monitor graph status
+        href: monitoring-overview.md
+      - name: Optimize GQL query performance
+        href: gql-query-performance.md
   - name: Troubleshoot
     items:
       - name: Troubleshooting
         href: troubleshooting-and-faq.md
       - name: Limitations
         href: limitations.md
-  - name: Graph Query Language (GQL)
+  - name: Reference
     items:
-      - name: GQL manual
+      - name: Graph Query Language (GQL)
         items:
-        - name: GQL language guide
-          href: gql-language-guide.md
-        - name: 'GQL schema example: Social network'
-          href: gql-schema-example.md
-        - name: GQL graph patterns
-          href: gql-graph-patterns.md
-        - name: GQL expressions, predicates, and functions
-          href: gql-expressions.md
-        - name: GQL graph types
-          href: gql-graph-types.md
-        - name: GQL values and value types
-          href: gql-values-and-value-types.md
-      - name: GQL query API    
-        href: gql-query-api.md
-      - name: GQL reference material
+          - name: GQL manual
+            items:
+            - name: GQL language guide
+              href: gql-language-guide.md
+            - name: 'GQL schema example: Social network'
+              href: gql-schema-example.md
+            - name: GQL graph patterns
+              href: gql-graph-patterns.md
+            - name: GQL expressions, predicates, and functions
+              href: gql-expressions.md
+            - name: GQL graph types
+              href: gql-graph-types.md
+            - name: GQL values and value types
+              href: gql-values-and-value-types.md
+          - name: GQL query API    
+            href: gql-query-api.md
+          - name: GQL reference material
+            items:
+            - name: GQL quick reference
+              href: gql-reference-abridged.md
+            - name: GQL status codes reference
+              href: gql-reference-status-codes.md
+            - name: GQL reserved words reference
+              href: gql-reference-reserved-terms.md
+      - name: REST API
         items:
-        - name: GQL quick reference
-          href: gql-reference-abridged.md
-        - name: GQL status codes reference
-          href: gql-reference-status-codes.md
-        - name: GQL reserved words reference
-          href: gql-reference-reserved-terms.md
-  - name: Example graph datasets
-    href: sample-datasets.md
-  - name: REST API Reference
+          - name: Graph Background Jobs REST API
+            href: /rest/api/fabric/graphmodel/background-jobs
+          - name: Graph Items REST API
+            href: /rest/api/fabric/graphmodel/items
+  - name: Resources
     items:
-      - name: Graph Background Jobs REST API
-        href: /rest/api/fabric/graphmodel/background-jobs
-      - name: Graph Items REST API
-        href: /rest/api/fabric/graphmodel/items
+      - name: CI/CD in Fabric
+        href: ../cicd/
+      - name: Graph community forum
+        href: https://community.fabric.microsoft.com/t5/Real-Time-Intelligence/bd-p/da_graph
+      - name: Real-Time Intelligence blog
+        href: https://blog.fabric.microsoft.com/blog/category/real-time-intelligence
+      - name: Microsoft Fabric release plan
+        href: https://roadmap.fabric.microsoft.com/?product=real-timeintelligence

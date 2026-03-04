@@ -27,7 +27,7 @@ Once the MySQL Database CDC source is added to the eventstream, it captures row-
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Access to an instance of MySQL Database, such as: a database in Azure Database for MySQL - Flexible Server.
-- Your MySQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your MySQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 

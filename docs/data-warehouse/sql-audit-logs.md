@@ -2,7 +2,7 @@
 title: "SQL Audit Logs in Fabric Data Warehouse (Preview)"
 description: Learn more about SQL Audit Logs on Fabric Data Warehouse.
 ms.reviewer: fresantos
-ms.date: 08/04/2025
+ms.date: 02/24/2026
 ms.topic: concept-article
 ms.search.form: Warehouse SQL Audit Logs # This article's title should not change. If so, contact engineering.
 ---
@@ -10,7 +10,7 @@ ms.search.form: Warehouse SQL Audit Logs # This article's title should not chang
 
 **Applies to:** [!INCLUDE [fabric-dw.md](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events.  
+Auditing in Fabric Data Warehouse provides enhanced security and compliance capabilities by tracking and recording database events. The SQL audit logs feature is currently in preview.
 
 This feature enables organizations to monitor database activities, detect potential security threats, and meet compliance requirements by maintaining an audit trail of key actions:
 
@@ -21,8 +21,6 @@ This feature enables organizations to monitor database activities, detect potent
 
 > [!IMPORTANT]
 > By default, SQL audit logs are **OFF**. Users with **Audit queries** permissions must enable it to capture the logs.
-
-The SQL audit logs feature is currently in preview.
 
 To get started, review the steps in [How to configure SQL audit logs in Fabric Data Warehouse (Preview)](configure-sql-audit-logs.md).
 
@@ -35,6 +33,10 @@ Audit log files cannot be accessed directly from OneLake but they can be queried
 > [!TIP]
 > Configuring audit logs in Microsoft Fabric Data Warehouse can increase storage costs depending on the action groups and events recorded. Enable only the required events to avoid unnecessary storage costs.
  
+## Performance
+
+The SQL audit logs feature is optimized for availability and performance of the database being audited. During periods of very high activity or high network load, the auditing feature might allow transactions to proceed without recording all of the events marked for auditing.
+
 ## Permissions
 
 Users must have the **Audit permission** to configure and query audit logs.
@@ -89,8 +91,8 @@ In addition to action groups, individual audit actions can be configured to log 
 ## Limitations
 
 - If audit logs are disabled, all action groups must be reconfigured upon re-enabling.
-- Currently SQL Audit for Fabric Data Warehouse is not supported in the default workspace.
-- SQL Audit Logs is not supported for [Warehouse Snapshots](warehouse-snapshot.md). 
+- Currently, SQL Audit for Fabric Data Warehouse is not supported in the default workspace.
+- The SQL audit logs feature is not supported for [warehouse snapshots](warehouse-snapshot.md). 
 
 ## Next step
 

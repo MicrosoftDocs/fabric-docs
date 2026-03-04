@@ -18,7 +18,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 - Access to the Fabric workspace with Contributor or above permissions.
 - An Apache Kafka cluster running. 
-- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
+- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 
 
 ## Add Apache Kafka as a source 

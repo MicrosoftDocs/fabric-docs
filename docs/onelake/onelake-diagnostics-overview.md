@@ -3,7 +3,7 @@ title: OneLake diagnostics
 description: OneLake diagnostics makes it simple to answer "who accessed what, when, and how" across your Fabric workspaces
 ms.reviewer: tompeplow
 ms.topic: overview
-ms.date: 10/03/2025
+ms.date: 01/12/2026
 #customer intent: As a data steward or workspace admin, I want to monitor and analyze how data is accessed across Fabric workspaces so that I can support governance, compliance, and operational insight using OneLake diagnostics.
 ---
 
@@ -32,10 +32,6 @@ Diagnostic events are captured for both Fabric and non-Fabric sources. For acces
 
 ## Configure OneLake diagnostics
 
-### Best practice recommendations
-
-To simplify management and improve access control, consider using a dedicated workspace to store diagnostic events. If you enable diagnostics across multiple workspaces in the same capacity, consider centralizing logs in a single lakehouse to make analysis easier.
-
 ### Prerequisites
 
 - Create a lakehouse to store OneLake diagnostic events.
@@ -61,6 +57,8 @@ Use the following steps to enable OneLake diagnostics:
 
 You can make OneLake diagnostic events immutable, which means that no one can tamper with or delete the JSON files that contain diagnostic events during the immutability retention period. OneLake diagnostics immutability is built on the immutable storage for Azure Blob Storage capability. For more information, see [Store business-critical blob data with immutable storage in a write once, read many (WORM) state](/azure/storage/blobs/immutable-storage-overview).
 
+Immutability doesn't introduce additional charges, but it does affect how long diagnostic data remains in storage. Because files can't be deleted during the immutability period, storage costs grow as new diagnostic events are written.
+
 :::image type="content" source="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" lightbox="./media/onelake-diagnostics/onelake-diagnostics-immutability.png" alt-text="Screenshot that shows configuring the immutability period for OneLake diagnostics.":::
 
 You configure the immutability period on the workspace that contains the diagnostic lakehouse. The immutability period applies to all events stored in this workspace.
@@ -69,7 +67,7 @@ You configure the immutability period on the workspace that contains the diagnos
 1. Select **Apply**.
 
 > [!NOTE]
-> After you apply the immutability policy, you can't modify or delete the files until the immutability retention period passes. Use caution when applying the policy as it can't be changed once set. 
+> After you apply the immutability policy, you can't modify or delete the files until the immutability retention period passes. Use caution when applying the policy as it can't be changed once set.
 
 ### Change the OneLake diagnostic lakehouse
 
@@ -90,40 +88,19 @@ Changing the lakehouse doesn't affect existing diagnostic events. Previously cap
 
 OneLake saves your diagnostic lakehouse information. If you re-enable diagnostics, it uses the same lakehouse as before.
 
-## OneLake diagnostic events
+## Best practice recommendations
 
-:::image type="content" source="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" lightbox="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" alt-text="Screenshot that shows OneLake a lakehouse containing diagnostics events as JSON.":::
+Follow these recommendations to simplify management and improve access control.
 
-The **DiagnosticLogs** folder within the **Files** section of a lakehouse stores the OneLake diagnostic events. JSON files are written to a folder with the following path: `Files/DiagnosticLogs/OneLake/Workspaces/WorkspaceId/y=YYYY/m=MM/d=DD/h=HH/m=00/PT1H.json`
+- **Use a dedicated workspace for diagnostic logs.** If you enable diagnostics across multiple workspaces in the same capacity, consider centralizing logs in a single lakehouse to make analysis easier. A dedicated workspace isolates permissions and prevents operational workloads from interfering with audit data.
 
-The JSON event contains the following attributes:
+If you enable immutable diagnostic logs, also consider these practices:
 
-|   Property  | Description |
-| -------- | ----------- |
-| workspaceId | The GUID of the workspace with diagnostics enabled.  |
-| itemId  | The GUID of the fabric item, such as the lakehouse, which performed the OneLake operation. |
-| itemType | The kind of item that performed the OneLake operation. |
-| tenantId |	The tenant identifier that performed the OneLake operation. |
-| executingPrincipalId |	The GUID of the Microsoft Entra principle that performed the OneLake operation. |
-| correlationId |	A GUID correlation identifier for the OneLake operation. |
-| operationName |	The OneLake operation being performed (not provided for internal Fabric operations). For more information, see the [Operations](#operations) section. |
-| operationCategory |	The broad category of the OneLake operation, for example Read. |
-| executingUPN |	The Microsoft Entra unique principal name that performed the operation (not provided for internal Fabric operations). |
-| executingPrincipalType |	The type of principal being used, for example User or Service Principal. |
-| accessStartTime |	The time the operation was performed. Or, when temporary access is provided, the time temporary access started. |
-| accessEndTime |	The time the operation was completed. Or, when temporary access is provided, the time temporary access completed. |
-| originatingApp |	The workload that performed the operation. For external access, then originatingApp is the user agent string. |
-| serviceEndpoint |	The OneLake service endpoint being used (DFS, Blob, or Other). |
-| Resource |	The resources being accessed (relative to the workspace). |
-| capacityId |	The identifier of the capacity that performed the OneLake operation. |
-| httpStatusCode |	The status code returned to the user. |
-| isShortcut |	Indicates if access was performed via a shortcut. |
-| accessedViaResource |	The resource the data was accessed via. When a shortcut is used, this resource is the location of the shortcut. |
-| callerIPAddress |	The IP address of the caller. |
+- **Restrict workspace admin roles.** Limit workspace admins to a small, trusted group responsible for configuring immutability and managing workspace-level settings. This separation of duties prevents any single team from both generating diagnostic activity and controlling the environment that stores the logs.
 
-### Personal data
+- **Protect against deletion of the workspace or lakehouse.** Immutability prevents file deletion, but doesn't prevent someone with the right permissions from deleting the workspace or lakehouse itself. Keep the admin list small to reduce the risk of accidental or intentional removal.
 
-OneLake diagnostic events include `executingUPN` and `callerIpAddress`. To redact this data, tenant admins can disable the setting **Include end-user identifiers in OneLake diagnostic logs** in the Fabric Admin Portal. When disabled, these fields are excluded from new diagnostic events.
+- **Align the immutability retention period with organizational policies.** Choose an immutability period that fits your audit, compliance, legal, and investigation requirements. Since immutability can't be shortened or reversed once applied, ensure the retention window reflects your true obligations.
 
 ## Frequently asked questions (FAQ)
 
@@ -162,6 +139,41 @@ OneLake diagnostics consumption costs are comparable to Azure Storage diagnostic
 OneLake diagnostics isn't compatible with [Workspace outbound access protection (OAP)](../security/workspace-outbound-access-protection-overview.md) across workspaces. If you require OneLake diagnostics and OAP to work together, you must select a lakehouse in the same workspace.
 
 When you configure OneLake diagnostics, the selection of the workspace honors workspace private link configuration by limiting your selection to workspaces within the same private network. However, OneLake diagnostics doesn't automatically respond to networking changes.
+
+## OneLake diagnostic events
+
+:::image type="content" source="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" lightbox="./media/onelake-diagnostics/onelake-diagnostic-lakehouse.png" alt-text="Screenshot that shows OneLake a lakehouse containing diagnostics events as JSON.":::
+
+The **DiagnosticLogs** folder within the **Files** section of a lakehouse stores the OneLake diagnostic events. JSON files are written to a folder with the following path: `Files/DiagnosticLogs/OneLake/Workspaces/WorkspaceId/y=YYYY/m=MM/d=DD/h=HH/m=00/PT1H.json`
+
+The JSON event contains the following attributes:
+
+|   Property  | Description |
+| -------- | ----------- |
+| workspaceId | The GUID of the workspace with diagnostics enabled.  |
+| itemId  | The GUID of the fabric item, such as the lakehouse, which performed the OneLake operation. |
+| itemType | The kind of item that performed the OneLake operation. |
+| tenantId |	The tenant identifier that performed the OneLake operation. |
+| executingPrincipalId |	The GUID of the Microsoft Entra principle that performed the OneLake operation. |
+| correlationId |	A GUID correlation identifier for the OneLake operation. |
+| operationName |	The OneLake operation being performed (not provided for internal Fabric operations). For more information, see the [Operations](#operations) section. |
+| operationCategory |	The broad category of the OneLake operation, for example Read. |
+| executingUPN |	The Microsoft Entra unique principal name that performed the operation (not provided for internal Fabric operations). |
+| executingPrincipalType |	The type of principal being used, for example User or Service Principal. |
+| accessStartTime |	The time the operation was performed. Or, when temporary access is provided, the time temporary access started. |
+| accessEndTime |	The time the operation was completed. Or, when temporary access is provided, the time temporary access completed. |
+| originatingApp |	The workload that performed the operation. For external access, then originatingApp is the user agent string. |
+| serviceEndpoint |	The OneLake service endpoint being used (DFS, Blob, or Other). |
+| Resource |	The resources being accessed (relative to the workspace). |
+| capacityId |	The identifier of the capacity that performed the OneLake operation. |
+| httpStatusCode |	The status code returned to the user. |
+| isShortcut |	Indicates if access was performed via a shortcut. |
+| accessedViaResource |	The resource the data was accessed via. When a shortcut is used, this resource is the location of the shortcut. |
+| callerIPAddress |	The IP address of the caller. |
+
+### Personal data
+
+OneLake diagnostic events include `executingUPN` and `callerIpAddress`. To redact this data, tenant admins can disable the setting **Include end-user identifiers in OneLake diagnostic logs** in the Fabric Admin Portal. When disabled, these fields are excluded from new diagnostic events.
 
 ## Operations
 
