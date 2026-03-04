@@ -12,7 +12,7 @@ ms.date: 06/23/2025
 1. To create a connection to the Confluent Cloud for Apache Kafka source, select **New connection**.
 
     :::image type="content" source="./media/confluent-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
-1. In the **Connection settings** section, enter **Confluent Bootstrap Server**. Navigate to your Confluent Cloud home page, select **Cluster Settings**, and copy the address to your Bootstrap Server.      
+1. In the **Connection settings** section, enter one or more **Confluent Kafka bootstrap server** addresses from **Cluster Settings** on your Confluent Cloud cluster home page. Separate multiple addresses with commas (,).  
 1. In the **Connection credentials** section, If you have an existing connection to the Confluent cluster, select it from the dropdown list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
     1. For **Authentication kind**, confirm that **Confluent Cloud Key** is selected. 
@@ -22,6 +22,8 @@ ms.date: 06/23/2025
         1. Select the **Add key** button to create a new API key. 
         1. Copy the **API Key** and **Secret**. 
         1. Paste those values into the **API Key** and **API Key Secret** fields. 
+            > [!NOTE]
+            > if you only use mTLS to do the authentication, you can add any string in the Key section during connection creation. 
         1. Select **Connect**
 
             :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings.":::        
@@ -35,6 +37,11 @@ ms.date: 06/23/2025
 
         > [!NOTE]
         > The **None** option isn't available during this creation step. If a committed offset exists and you want to use **None**, you can first complete the configuration and then update the setting in the Eventstream edit mode. 
+    1. If your Kafka cluster requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed.  
+        When both **Trust CA Certificate** and **Client certificate and key** are enabled and configured, the system automatically uses **mTLS** to establish the connection. No separate security protocol selection is required.
+
+        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group and key vault, and then provide the server ca name. 
+        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group and key vault, and then provide the client certificate name. 
 
     :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
 1. Depending on whether your data is encoded using Confluent Schema Registry:
