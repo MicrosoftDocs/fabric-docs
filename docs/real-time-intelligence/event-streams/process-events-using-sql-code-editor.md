@@ -3,8 +3,9 @@ title: Process Events Using a SQL Operator
 description: Learn how to use a SQL operator to process events that flow through eventstreams. 
 ms.reviewer: vashriva
 ms.topic: how-to
-ms.date: 06/18/2025
+ms.date: 03/04/2026
 ms.search.form: Event Processor
+ai-usage: ai-assisted
 ---
 
 # Process events by using a SQL operator (preview)
@@ -124,9 +125,68 @@ To perform stream processing operations on your data streams by using a SQL oper
 
     :::image type="content" source="./media/process-events-using-sql-code-editor/complete.png" alt-text="Screenshot that shows a completed eventstream." lightbox="./media/process-events-using-sql-code-editor/complete.png":::
 
+## More examples
+
+The following examples show common real-time analytics scenarios you can implement with the SQL operator.
+
+**Per-minute city sales aggregation** — Use `TumblingWindow` to compute fixed, non-overlapping one-minute sales totals grouped by city:
+
+```sql
+SELECT
+    System.Timestamp AS WindowEnd,
+    city,
+    SUM(salesAmount) AS TotalSales
+INTO
+    output
+FROM
+    input
+GROUP BY
+    city,
+    TumblingWindow(minute, 1)
+```
+
+**Burst and bot detection** — Use `HoppingWindow` to detect users who place an unusually high number of orders within a five-minute rolling window, evaluated every minute:
+
+```sql
+SELECT
+    System.Timestamp AS WindowEnd,
+    userId,
+    COUNT(*) AS OrderCount
+INTO
+    output
+FROM
+    input
+GROUP BY
+    userId,
+    HoppingWindow(minute, 5, 1)
+HAVING
+    COUNT(*) > 10
+```
+
+**Anomaly flagging against a rolling baseline** — Use `HoppingWindow` to compute a rolling average and flag devices whose maximum metric value exceeds twice the average within the window, which indicates a potential anomaly:
+
+```sql
+SELECT
+    System.Timestamp AS WindowEnd,
+    deviceId,
+    AVG(metricValue) AS RollingAvg,
+    MAX(metricValue) AS CurrentMax
+INTO
+    output
+FROM
+    input
+GROUP BY
+    deviceId,
+    HoppingWindow(minute, 10, 1)
+HAVING
+    MAX(metricValue) > 2 * AVG(metricValue)
+```
+
 ## Limitations
 
-- The SQL operator is designed to centralize all your transformation logic. As a result, you can't use it alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported. Additionally, the SQL operator can send output data to only the destination node in the topology.
+- The SQL operator is designed to centralize all your transformation logic. As a result, you can't use it alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported.
+
+- The SQL operator can send output data to only the destination node in the topology.
 
 - Currently, authoring eventstream topologies is supported only through the user interface. REST API support for the SQL operator isn't available yet.
 
