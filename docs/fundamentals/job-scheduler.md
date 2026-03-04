@@ -74,7 +74,7 @@ While configuring a schedule, add users or groups under **Failure notifications*
 
 ### Important considerations
 - **Applies to all schedules**: Notification settings apply across all schedules for the item.
-- **Scheduled runs only**: Notifications are sent only for failures from scheduled runs. Manually triggered runs don’t send notifications.
+- **Scheduled runs only**: Notifications are sent only for failures from scheduled runs. Notifications aren't sent for manually triggered runs.
 - **Recipients**: Notifications can be sent to users or groups in your Microsoft Entra tenant, including internal users and B2B guest users. Direct external email addresses aren’t supported.
 - **Language**: Notifications are sent in each recipient’s Fabric display language. English is used as a fallback. 
 
