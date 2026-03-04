@@ -23,7 +23,7 @@ ms.date: 06/23/2025
         1. Copy the **API Key** and **Secret**. 
         1. Paste those values into the **API Key** and **API Key Secret** fields. 
             > [!NOTE]
-            > if you only use mTLS to do the authentication, you can add any string in the Key section during connection creation. 
+            > If you only use mTLS to do the authentication, you can add any string in the Key section during connection creation. 
         1. Select **Connect**
 
             :::image type="content" source="./media/confluent-kafka-source-connector/confluent-connection-settings-page-1.png" alt-text="Screenshot that shows the first page of the Confluent connection settings.":::        

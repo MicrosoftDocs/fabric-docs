@@ -17,7 +17,7 @@ ms.date: 07/22/2025
     1. For **Authentication kind**, confirm that **API Key** is selected. 
     1. For **Key** and **Secret**, enter API key and key Secret.  
         > [!NOTE]
-        > if you only use mTLS to do the authentication, you can add any string in the Key section during connection creation.     
+        > If you only use mTLS to do the authentication, you can add any string in the Key section during connection creation.     
 1. Select **Connect**.  
 1. Now, on the Connect page, follow these steps.  
     1. For **Topic**, enter the Kafka topic. 
