@@ -14,6 +14,8 @@ items:
     href: tutorial-fabric-cicd-azure-devops.md
   - name: Tutorial - Local deployment with fabric-cicd 
     href: tutorial-fabric-cicd-local.md   
+  - name: Tutorial - CI/CD using Fabric Bulk API
+    href: placeholder.md   
 - name: Continuous integration with Git
   items:
   - name: "Introduction to Git integration"
