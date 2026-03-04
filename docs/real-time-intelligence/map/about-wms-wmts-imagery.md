@@ -34,7 +34,7 @@ WMS and WMTS layers behave like other imagery layers in Fabric Maps. You can:
 - Adjust layer opacity.
 - Stack them with vector layers, basemaps, and other imagery.
 
-For more information on how to add WMS and WMTS layers to a map item, see [Add a WMS or WMTS imagery layer to a map](wms-wmts-imagery.md).
+For more information on how to add WMS and WMTS layers to a map item, see [Add a WMS or WMTS imagery layer to a map](add-wms-wmts-imagery-layer.md).
 
 ## Microsoft Planetary Computer Pro integration
 
@@ -47,7 +47,7 @@ To use MPC Pro imagery:
 
 Once connected, MPC Pro imagery layers behave the same as other WMTS layers in Fabric Maps.
 
-For more information on Microsoft Planetary Computer Pro integration, see [Use Microsoft Planetary Computer Pro imagery](wms-wmts-imagery.md#use-microsoft-planetary-computer-pro-imagery).
+For more information on Microsoft Planetary Computer Pro integration, see [Use Microsoft Planetary Computer Pro imagery](add-wms-wmts-imagery-layer.md#use-microsoft-planetary-computer-pro-imagery).
 
 ## Supported authentication methods
 
@@ -61,7 +61,7 @@ Fabric Maps supports the following authentication methods for WMS and WMTS conne
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Add a WMS or WMTS imagery layer to a map](wms-wmts-imagery.md)
+> [Add a WMS or WMTS imagery layer to a map](add-wms-wmts-imagery-layer.md)
 
 > [!div class="nextstepaction"]
 > [Use Microsoft Planetary Computer Pro imagery](wms-wmts-imagery.md#use-microsoft-planetary-computer-pro-imagery)
