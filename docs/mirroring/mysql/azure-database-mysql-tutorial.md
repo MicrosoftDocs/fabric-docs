@@ -30,7 +30,7 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
 
 Mirroring in Azure Database for MySQL is based on Logical Replication and requires some specific prerequisites to be configured before being able to connect to your data.
 
-For detailed instructions, see [Mirroring Azure Database for MySQL](azure-database-mysql.md).
+For detailed instructions, see [Mirroring Azure Database for MySQL](azure/mysql/integration/fabric-mirroring-mysql).
 
 ## Create a mirrored Azure Database for MySQL
 
@@ -49,11 +49,10 @@ The following steps guide you through the process of creating the connection to 
    - **Database**: Enter the name of the database to replicate.
    - **Connection**: Select "Create new connection" or reuse an existing connection.
    - **Connection name**: An automatic name is provided. You can change it.
-   - **Data Gateway**: select an available [virtual network data gateway](/data-integration/vnet/create-data-gateways) to connect an Azure Database for MySQL with virtual network integration.
+   - **Data gateway**: Select the default (none) or the name of virtual network data gateway / on-premises data gateway you set up according to your scenario.
    - **Authentication kind**: Basic (MySQL Authentication)
    - Leave **Use encrypted connection** checkbox selected, and **This connection can be used with on-premises data gateway and VNET data gateway** unselected.
-1. Select **Connect**.
-1. Select Connect. If all the credentials are correct, the connection is tested and saved. If the credentials aren't correct, the creation fails with errors.
+1. Select **Connect**. If all the credentials are correct, the connection is tested and saved. If the credentials aren't correct, the creation fails with errors.
 1. After the connection is created successfully, a list of tables in the database mirror is available to select. You can select up to 1,000 tables at a time. Fab7.png
 1. Select the tables, give the mirror (also known as artifact) a name, and select **Create mirrored database**. This action starts the mirror creation.
 1. After some time (few minutes), you see *Rows Replicated* and the data is visible in the data warehouse view, also known as *Mirrored Database* view. The status changes to *Running*. This view also serves as a management interface to start, stop, and monitor replication. Fab8.png

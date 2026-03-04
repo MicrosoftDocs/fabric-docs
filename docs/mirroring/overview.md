@@ -60,14 +60,14 @@ In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), th
 
 Microsoft Fabric offers three different approaches for bringing data into OneLake through mirroring.
 
-- **Database mirroring** - Database mirroring in Microsoft Fabric replicates entire databases and tables. Use it to bring data from various systems together into a single analytics platform.
-- **Metadata mirroring** - Metadata mirroring in Microsoft Fabric synchronizes metadata (such as catalog names, schemas, and tables) instead of physically moving the data. This approach uses [shortcuts](../onelake/onelake-shortcuts.md), ensuring the data remains in its source while still being easily accessible within Microsoft Fabric.
-- **Open mirroring** - Open mirroring in Microsoft Fabric is designed to extend mirroring based on open Delta Lake table format. This capability enables any developer to write their application's change data directly into a mirrored database item in Microsoft Fabric, based on the open mirroring approach and public APIs.
+- **Database mirroring** - Database mirroring in Fabric replicates entire databases and tables to bring data from various systems together into a single analytics platform.
+- **Metadata mirroring** - Metadata mirroring in Fabric synchronizes metadata (such as catalog names, schemas, and tables) instead of physically moving the data. This approach uses [shortcuts](../onelake/onelake-shortcuts.md), ensuring the data remains in its source while still being easily accessible within Fabric.
+- **Open mirroring** - Open mirroring in Fabric is designed to extend mirroring based on open Delta Lake table format. This capability enables any developer to write their application's change data directly into a mirrored database item in Fabric, based on the open mirroring approach and public APIs.
 
 Currently, the following external databases are available:
 
 | Platform | Near real-time replication | Type of mirroring | End-to-end tutorial |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | [Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md) | Yes | Database mirroring | [Tutorial: Azure Cosmos DB](azure-cosmos-db-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Databricks](azure-databricks.md) | Yes | Metadata mirroring | [Tutorial: Azure Databricks](azure-databricks-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Azure Database for PostgreSQL](azure-database-postgresql.md) | Yes | Database mirroring | [Tutorial: Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md) |
