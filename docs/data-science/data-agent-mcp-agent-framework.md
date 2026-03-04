@@ -1,5 +1,5 @@
 ---
-title: Consume a Fabric data agent MCP server with Microsoft Agent Framework
+title: Consume a Fabric data agent using MCP & the Agent Framework SDK (preview)
 description: Learn how to authenticate with Microsoft Entra ID and call a Fabric data agent MCP server using Microsoft Agent Framework.
 author: jordanbean-msft
 ms.author: jordanbean
@@ -13,7 +13,7 @@ keywords:
   - agent framework
 ---
 
-# Consume a Fabric data agent with the Agent Framework SDK (preview)
+# Consume a Fabric data agent using MCP & the Agent Framework SDK (preview)
 
 Use this guide to call a Fabric data agent MCP server using the [Microsoft Agent Framework SDK](/agent-framework/overview/?pivots=programming-language-python). You authenticate with Microsoft Entra ID, connect to the MCP endpoint, and invoke a tool exposed by the data agent.
 
@@ -82,7 +82,7 @@ The script uses `DefaultAzureCredential`, which supports local development with 
 az login
 ```
 
-Create a file named `fabric_data_agent_mcp.py` for Python or `Program.cs` for C#, and follow the sections to build the script step by step.
+Create a file named `fabric_data_agent_mcp.py` for Python and follow the sections to build the script step by step.
 
 ## Import required libraries
 
