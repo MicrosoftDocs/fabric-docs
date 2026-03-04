@@ -1,20 +1,20 @@
 ---
 title: Security overview
-description: Learn about security in Graph in Microsoft Fabric, including workspace roles and permissions.
+description: Learn about security in Fabric Graph, including workspace roles and permissions.
 ms.topic: concept-article
-ms.date: 01/20/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ---
 
-# Security overview for Graph in Microsoft Fabric
+# Security overview for Fabric Graph
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Graph in Microsoft Fabric conforms to the security requirements implemented in Microsoft Fabric's platform-wide security model. For comprehensive information about security across all Fabric workloads, see [Security in Microsoft Fabric](/fabric/security/security-overview).
+Fabric Graph conforms to the security requirements of Microsoft Fabric's platform-wide security model. For comprehensive information about security across all Microsoft Fabric workloads, see [Security in Microsoft Fabric](/fabric/security/security-overview).
 
 ## Workspace roles and permissions
 
-Graph in Microsoft Fabric uses the same workspace roles as other Microsoft Fabric items.
+Graph uses the same workspace roles as other Microsoft Fabric items.
 
 The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models.
 
