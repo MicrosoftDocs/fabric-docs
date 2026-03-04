@@ -40,7 +40,7 @@ Here's how IQ (preview) implements key Fabric capabilities:
 
 * **Ingest and store:** Builds on data from lakehouse tables, eventhouse streams, and existing Power BIsemantic models.
 * **Model and represent semantics:** The ontology (preview) item offers modeling capabilities by defining entity types, properties on entity types, and relationship types. Optionally bootstrap an ontology structure from existing data sources and models, or create your own. Then, bind ontology features to data sources, and explore them in a navigable graph that is built automatically.
-* **Analyze and visualize:** The IQ items of Ontology (preview) and Graph work together to provide a visual graph and query experience based on your business concepts. You can also build ontologies based on your Power BI semantic models so the same terminology can be used for analysis across items, or use the ontology to inform power domain aware agents.
+* **Analyze and visualize:** The IQ items of ontology (preview) and graph work together to provide a visual graph and query experience based on your business concepts. You can also build ontologies based on your Power BI semantic models so the same terminology can be used for analysis across items, or use the ontology to inform power domain aware agents.
 * **Operate and govern:** You can version, validate, and govern your ontology definitions. You can also monitor ontology health through Fabric monitoring tools.
 
 ## Items in IQ (preview)
