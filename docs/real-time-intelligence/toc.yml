@@ -507,6 +507,16 @@ items:
                 href: /stream-analytics-query/where-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: WITH
                 href: /stream-analytics-query/with-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+          - name: Time management
+            items:
+              - name: Time management overview
+                href: /stream-analytics-query/time-management-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: System.Timestamp()
+                href: /stream-analytics-query/system-timestamp-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: TIMESTAMP BY
+                href: /stream-analytics-query/timestamp-by-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Time skew policies
+                href: /stream-analytics-query/time-skew-policies-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
   - name: Event Schema Set
     items:
       - name: Schema Registry in Real-Time hub
