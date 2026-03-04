@@ -11,7 +11,7 @@ ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Com
 
 # Create layers using WMS and WMTS imagery sources in Fabric Maps
 
-Fabric Maps supports rendering raster imagery hosted on external OGC-compliant **Web Map Service (WMS)** and **Web Map Tile Service (WMTS)** endpoints. These services provide map images dynamically (WMS) or as pre-rendered tiles (WMTS), and are commonly used for satellite imagery, elevation models, weather overlays, and other authoritative raster datasets.
+Fabric Maps supports rendering raster imagery hosted on external OGC-compliant **Web Map Service (WMS)** and **Web Map Tile Service (WMTS)** endpoints. These services provide map images dynamically (WMS) or as prerendered tiles (WMTS), and are commonly used for satellite imagery, elevation models, weather overlays, and other authoritative raster datasets.
 
 By connecting to a WMS or WMTS endpoint, you can visualize external imagery directly in Fabric Maps without copying the imagery into Fabric.
 
@@ -43,7 +43,7 @@ To use MPC Pro imagery:
 
 - You connect using a WMTS endpoint generated from the MPC Pro geocatalog.
 - Authentication is handled using OAuth 2.0 through Microsoft Entra ID.
-- Reader access to the target MPC Pro geocatalog is required.
+- Reader access to the target MPC Pro geocatalog is required when creating the connection.
 
 Once connected, MPC Pro imagery layers behave the same as other WMTS layers in Fabric Maps.
 
@@ -55,10 +55,8 @@ Fabric Maps supports the following authentication methods for WMS and WMTS conne
 
 - **Anonymous**: For public or open endpoints
 - **Basic authentication**: Username and password
-- **API key**: Key name and value passed to the service
+- **API key**:     Key name and value passed to the service
 - **OAuth 2.0 (Microsoft Entra ID)**: Required for Microsoft Planetary Computer Pro
-
-For more information on authentication in Fabric Maps, see [About map permissions](about-map-permissions.md).
 
 ## Next steps
 

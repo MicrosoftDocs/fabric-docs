@@ -11,7 +11,7 @@ ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Com
 
 # Add a WMS or WMTS imagery layer to a map
 
-This how-to article shows you how to add external raster imagery to Fabric Maps using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. You'll learn how to create and manage Fabric Maps cloud connections, authenticate to external imagery services, and render WMS or WMTS layers— including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
+This how-to article shows you how to add external raster imagery to Fabric Maps using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. Learn how to create and manage Fabric Maps cloud connections, authenticate to external imagery services, and render WMS or WMTS layers—including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
 
 For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-wms-wmts-imagery.md)
 
@@ -30,7 +30,7 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Fabric Maps cloud 
 ### Step 1: Create a Fabric Maps cloud connection
 
 > [!TIP]
-> Create one connection per imagery service and reuse it across multiple maps to avoid re‑entering credentials.
+> Create one connection per imagery service and reuse it across multiple maps to avoid reentering credentials.
 
 1. In Fabric, open **User settings**.
 
@@ -83,7 +83,7 @@ Shared connections allow teams to use the same imagery source without embedding 
 
 ### Step 3: Add the imagery layer to a map
 
-Once Fabric Maps cloud connections have been created, you can add one or more to your map instance as an external source for a new map layer.
+Once Fabric Maps cloud connections are created, you can add one or more to your map instance as an external source for a new map layer.
 
 1. Open an existing map or create a new map in Fabric Maps.
 1. Open the **External sources** tab.
@@ -136,14 +136,14 @@ Access to the MPC Pro geocatalog is required to retrieve this information.
 
 ### Step 2: Create the MPC Pro connection in Fabric
 
-Once you have the WMTS endpoint URL from the previous section, you are ready to create a connection to a  _Microsoft Planetary Computer_.
+Once you have the WMTS endpoint URL from the previous section, you're ready to create a connection to a  _Microsoft Planetary Computer_.
 
 1. Open **Manage connections and gateways**.
 1. Select **New**, and then choose **Cloud**.
 1. Enter a **Connection name**.
 1. For **Connection type**, select **Microsoft Planetary Computer**.
 1. Enter the WMTS endpoint URL for the **Base URL**.
-1. Select **WMTS** as the **Protocal**.
+1. Select **WMTS** as the **Protocol**.
 1. Select **OAuth 2.0** as the authentication method.
 1. Select **Create**.
 
@@ -162,4 +162,4 @@ MPC Pro imagery layers behave like other WMTS imagery layers and can be reordere
 - A Fabric Maps item can reference up to 100 external connections.
 - Some WMS services don't provide complete metadata (such as bounding boxes or minimum zoom levels), which can cause **Zoom to fit** to behave unexpectedly.
 - Rendering performance and availability depend on the external imagery service.
-- External imagery is not cached or stored by Fabric Maps.
+- External imagery isn't cached or stored by Fabric Maps.
