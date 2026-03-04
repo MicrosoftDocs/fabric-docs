@@ -15,7 +15,7 @@ Fabric Maps supports rendering raster imagery hosted on external OGC-compliant *
 
 By connecting to a WMS or WMTS endpoint, you can visualize external imagery directly in Fabric Maps without copying the imagery into Fabric.
 
-This feature also supports **Microsoft Planetary Computer (MPC) Pro** imagery through WMTS endpoints secured with Microsoft Entra ID.
+This feature also supports **Microsoft Planetary Computer (MPC) Pro** imagery through WMTS endpoints secured with Microsoft Entra ID authentication.
 
 > [!NOTE]
 > WMS and WMTS imagery sources are added as imagery layers. They behave like other imagery layers in Fabric Maps and can be combined with vector layers, basemaps, filters, and labels.
@@ -25,8 +25,8 @@ This feature also supports **Microsoft Planetary Computer (MPC) Pro** imagery th
 When you add a WMS or WMTS source to a map, Fabric Maps:
 
 - Connects to the external imagery endpoint through a Fabric Maps cloud connection.
-- Discovers available layers exposed by the service.
-- Renders selected layers as imagery layers in the map canvas.
+- Lists the imagery layers published by the WMS or WMTS service.
+- Renders selected layers as imagery layers on the map canvas.
 
 WMS and WMTS layers behave like other imagery layers in Fabric Maps. You can:
 
@@ -53,9 +53,9 @@ For more information on Microsoft Planetary Computer Pro integration, see [Use M
 
 Fabric Maps supports the following authentication methods for WMS and WMTS connections:
 
-- **Anonymous**:  For public or open endpoints
-- **Basic authentication**:  Username and password
-- **API key**:  Key name and value passed to the service
+- **Anonymous**: For public or open endpoints
+- **Basic authentication**: Username and password
+- **API key**: Key name and value passed to the service
 - **OAuth 2.0 (Microsoft Entra ID)**: Required for Microsoft Planetary Computer Pro
 
 For more information on authentication in Fabric Maps, see [About map permissions](about-map-permissions.md).

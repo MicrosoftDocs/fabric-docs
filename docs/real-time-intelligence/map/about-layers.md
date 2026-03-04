@@ -69,6 +69,11 @@ Layers are rendered in a defined order, allowing you to stack imagery and vector
 
 Because each layer is independently configured, you can update, filter, or style one layer without affecting others.
 
+> [!TIP]
+> Duplicating a layer is a quick way to create alternate views of the same data with different styling or filters.
+>
+> **Limitation**: When you duplicate a layer that contains **point data**, the **clustering setting** is shared between the original layer and the duplicated layer. If clustering is enabled or disabled in one layer, the change is automatically applied to the other.
+
 ## Layers in Real‑Time Intelligence solutions
 
 In Real‑Time Intelligence scenarios, layers enable Fabric Maps to serve as a visual endpoint for streaming analytics workflows. Real‑time layers can refresh as new data arrives, while static layers provide geographic context and reference information.
