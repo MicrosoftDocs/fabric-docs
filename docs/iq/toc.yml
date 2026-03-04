@@ -55,7 +55,7 @@ items:
       href: ../cicd/cicd-overview.md
 - name: Graph
   href: ../graph/toc.yml
-- name: Data Agent
+- name: Data agent
   href: ../data-science/data-agent-toc/toc.yml
 - name: Operations agent
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
