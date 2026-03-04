@@ -89,6 +89,8 @@ You can configure email notifications to be sent when a scheduled pipeline run f
 
 To configure failure notifications, open the pipeline, select **Schedule** in the top banner of the **Home** tab, and add users or groups under **Failure notifications**.
 
+To configure failure notifications, open the pipeline, go to the **Home** tab, select **Schedule**, and then add users or groups under **Failure notifications**.
+
 :::image type="content" source="media/pipeline-runs/schedule-failure-notifications.png" alt-text="Failure notification settings for scheduled pipeline runs." lightbox="media/pipeline-runs/schedule-failure-notifications.png":::
 
 ## Event-based pipeline runs
