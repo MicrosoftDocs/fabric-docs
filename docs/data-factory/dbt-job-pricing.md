@@ -3,7 +3,7 @@ title: dbt Job Pricing in Microsoft Fabric
 description: Discover the pricing model for dbt jobs in Microsoft Fabric, including CU consumption rates, cost estimation, and workload monitoring tools.
 ms.reviewer: akurnala
 ms.date: 01/28/2026
-ms.topic: article
+ms.topic: concept-article
 ---
 
 # dbt job pricing for Microsoft Fabric
