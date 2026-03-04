@@ -1,9 +1,10 @@
 ---
 title: Fabric Extensibility toolkit vendor attestation template
 description: Template document for vendor attestation requirements when publishing to Microsoft Fabric Workload Hub.
-ms.reviewer: gesaur
-ms.topic: concept-article
-ms.date: 12/15/2025
+author: gsaurer
+ms.author: gsaurer
+ms.topic: article
+ms.date: 02/24/2026
 ---
 
 # Vendor Attestation Document Template
@@ -40,8 +41,7 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 
 ### Vendor Information
 
-|Name|Required or optional|
-|-----|-----|
+
 | Company Name: | (Required) |
 | Company Website: | (Required)  |
 | Address: | (Required)  |
@@ -53,8 +53,7 @@ Microsoft must be notified promptly prior to releasing any changes if the change
 
 ### Primary Contact
 
-|Name|Required or optional|
-|-----|-----|
+
 | Name: | (Required)  |
 | Title: | (Required)  |
 | Email: | (Required / Email Alias OK) |
@@ -67,20 +66,19 @@ To: Microsoft Corporation
 
 Subject: Vendor Self-Attestation for Compliance with Microsoft Workload Development Requirements
 
-We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](publishing-requirements-workload.md).
+We, the undersigned, [Vendor Name], hereby confirm and attest that we have reviewed, understood, and complied with all applicable requirements as outlined in the Microsoft Extensibility toolkit documentation, specifically the [Publish Workload Requirements](./publishing-requirements-workload.md).
 
 ## Section III
 
 ### Publish Workload Requirements Attestation Checklist
 
-We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](publishing-requirements-workload.md)
+We, the vendor, [Vendor Name], confirm and attest to reviewing, meeting, and complying with the requirements outlined in the Microsoft Fabric Extensibility Toolkit specifically the [Publish Workload Requirements](./publishing-requirements-workload.md)
 
 The following sections documents details, exceptions, or variances regarding the attestation of adherence to the Publish Workload Requirements.
 
 ### Workload Information
 
-|Name|Required or optional|
-|-----|-----|
+
 | Workload Version: | (Required)  |
 | Workload Name: | (Required)  |
 | Release Date: | (Required / Email Alias OK) |
@@ -386,8 +384,6 @@ Partner workloads are an integral part of Fabric that requires that the Microsof
 
 **Microsoft direct vendor outreach:**
 
-|Name|Required or optional|
-|-----|-----|
 | Contact Name/Team: | (Vendor Primary contact Name / Team Here) |
 | Number | (Optional Phone # here) |
 | Email alias | (Email alias here) |
@@ -412,11 +408,33 @@ Vendors need to host a service health dashboard that shows their service health 
 
 #### Application Life Cycle Management (ALM)
 
-Microsoft Fabric's lifecycle  management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements.
+Microsoft Fabric's lifecycle management tools enable efficient product development, continuous updates, fast releases, and ongoing feature enhancements.
 
 [ ] Supported
 
 [X] Not Supported
+
+#### CI/CD (Continuous Integration / Continuous Deployment)
+
+The workload supports CI/CD pipelines to enable automated deployment and integration workflows within Microsoft Fabric.
+
+[ ] CI/CD is supported via the Fabric CICD manifest section
+
+[ ] CI/CD is not supported
+
+> [!NOTE]
+> Describe any limitations or details about the CI/CD integration
+
+#### Item Definition Portability
+
+Items can be exported with their full definition and restored in other workspaces, enabling lifecycle management and cross-workspace deployment.
+
+[ ] Items can be restored with their definition in other workspaces
+
+[ ] Items cannot be restored in other workspaces
+
+> [!NOTE]
+> Describe any limitations or constraints around item portability across workspaces
 
 #### Private Links
 
