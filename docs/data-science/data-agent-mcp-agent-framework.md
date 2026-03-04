@@ -82,7 +82,7 @@ The script uses `DefaultAzureCredential`, which supports local development with 
 az login
 ```
 
-Create a file named `fabric_data_agent_mcp.py` for Python or `Program.cs` for C#, and follow the sections to build the script step by step.
+Create a file named `fabric_data_agent_mcp.py` for Python and follow the sections to build the script step by step.
 
 ## Import required libraries
 
