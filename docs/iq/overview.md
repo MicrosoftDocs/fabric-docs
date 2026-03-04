@@ -14,7 +14,7 @@ IQ (preview) is a workload for unifying data sitting across OneLake and organizi
 As a [workload in Fabric](../fundamentals/fabric-terminology.md), IQ is a collection of capabilities targeted to the common functionality of modeling an environment with unified language. The items grouped into the IQ workload include:
 * [Ontology (preview)](ontology/overview.md)
 * [Graph (preview)](../graph/overview.md)
-* [Data Agent (preview)](../data-science/concept-data-agent.md)
+* [Data agent (preview)](../data-science/concept-data-agent.md)
 * [Operations agent (preview)](../real-time-intelligence/operations-agent.md)
 * [Power BI semantic models](../data-warehouse/semantic-models.md)
 
