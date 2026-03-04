@@ -1,6 +1,6 @@
 ---
-title: Example Graph Datasets
-description: Information about example graph datasets used in the documentation for Fabric Graph
+title: Example Graph Datasets for Fabric Graph
+description: Information about the example graph datasets used in the documentation for Fabric Graph, including data models, schemas, and sample queries.
 ms.topic: reference
 ms.date: 03/03/2026
 ms.reviewer: splantikow

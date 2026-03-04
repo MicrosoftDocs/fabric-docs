@@ -1,6 +1,6 @@
 ---
-title: Fabric Graph Overview
-description: Learn about the core purpose, architecture, and benefits of Fabric Graph, including integration and feature highlights.
+title: What Is Fabric Graph? Overview
+description: Learn about the core purpose, architecture, and benefits of Fabric Graph, including integration and feature highlights in Microsoft Fabric.
 ms.topic: concept-article
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
@@ -139,5 +139,7 @@ Graph is currently available in the following regions:
 ## Related content
 
 - [Sign up for preview of natural language querying of Fabric Graph](https://forms.office.com/r/97QkVDBeuM)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)
+- [GQL in KQL graph semantics overview](/kusto/query/graph-query-language)
+- [KQL graph semantics overview](/kusto/query/graph-semantics-overview)

@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Load data"
-description: Learn how to load the Adventure Works sample data into a lakehouse for use with Fabric Graph.
+title: "Tutorial: Load Sample Data for Fabric Graph"
+description: Learn how to load the Adventure Works sample data into a lakehouse for use with Fabric Graph, including uploading CSV files and verifying data.
 ms.topic: tutorial
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
