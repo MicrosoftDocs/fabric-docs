@@ -85,7 +85,7 @@ To delete a schedule, select the **Edit** icon (pencil) next to the schedule you
 
 ### Configure failure notifications
 
-You can configure email notifications to be sent when a **scheduled** pipeline run fails. Notifications aren’t sent for on‑demand runs.
+You can configure email notifications to be sent when a scheduled pipeline run fails. Notifications aren’t sent for on‑demand runs.
 
 To configure failure notifications, open the pipeline, select **Schedule** in the top banner of the **Home** tab, and add users or groups under **Failure notifications**.
 
