@@ -1,7 +1,7 @@
 ---
 title: Authenticate Remote Endpoints
 description: Learn how to implement authentication and authorization for remote endpoints in your Fabric workload using SubjectAndAppToken format and OAuth 2.0 flows.
-author: gsaurer
+
 ms.author: billmath
 ms.topic: how-to
 ms.custom:
