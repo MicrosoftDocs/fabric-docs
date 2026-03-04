@@ -1,7 +1,7 @@
 ---
 title: HowTo - Use Endpoint Resolution Service
 description: Learn how to configure and use the Endpoint Resolution Service for dynamic endpoint routing in your custom Fabric workload.
-author: gsaurer
+
 ms.author: billmath
 ms.topic: how-to
 ms.custom:

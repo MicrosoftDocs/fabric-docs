@@ -1,6 +1,6 @@
 ---
 title: "Quickstart: Create your first graph in Microsoft Fabric"
-description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes.
+description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes using the visual graph modeling experience.
 ms.topic: quickstart
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
@@ -55,7 +55,7 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 1. Enter a name (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and select **Create**.
 
     > [!IMPORTANT]
-    > Graph doesn't currently support lakehouses with [lakehouse schema (preview) enabled](/fabric/data-engineering/lakehouse-schemas).
+    > Graph doesn't currently support lakehouses with [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
 
 ### Load the data into tables
 

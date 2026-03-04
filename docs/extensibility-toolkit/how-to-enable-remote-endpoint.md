@@ -1,7 +1,7 @@
 ---
 title: HowTo - Enable Remote Endpoints for Custom Items
 description: Learn how to configure remote service endpoints for your custom Fabric items to enable job execution and backend processing.
-author: gsaurer
+
 ms.author: billmath
 ms.topic: how-to
 ms.custom:

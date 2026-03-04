@@ -308,4 +308,4 @@ RETURN coalesce(p.firstName, 'Unknown') AS display_name
 - [GQL values and value types](gql-values-and-value-types.md)
 - [Optimize GQL query performance](gql-query-performance.md)
 - [Graph patterns](gql-graph-patterns.md)
-- [Try Fabric Graph for free](/fabric/fundamentals/fabric-trial)
+- [Try Fabric Graph for free](../fundamentals/fabric-trial.md)

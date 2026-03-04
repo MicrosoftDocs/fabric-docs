@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Clean up graph tutorial resources"
-description: Learn how to clean up the resources created during the Fabric Graph tutorial.
+description: Learn how to clean up the lakehouse, graph model, and workspace resources created during the Fabric Graph tutorial series.
 ms.topic: tutorial
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
@@ -54,5 +54,5 @@ Congratulations! You completed the Fabric Graph tutorial. You learned how to:
 - [What is Fabric Graph?](overview.md)
 - [GQL language guide](gql-language-guide.md)
 - [GQL quick reference](gql-reference-abridged.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)
