@@ -1,6 +1,6 @@
 ---
 title:  Compare Graph and Relational Databases
-description: Compare graph databases and relational databases, highlighting key differences, use cases, and advantages in analytics.
+description: Compare graph databases and relational databases, highlighting key differences, data model comparisons, use cases, and advantages in analytics.
 ms.topic: concept-article
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
@@ -80,5 +80,5 @@ Many projects use both types of databases: a relational database for core transa
 
 ## Related content
 
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)

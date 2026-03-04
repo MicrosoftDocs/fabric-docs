@@ -637,7 +637,7 @@ Use these patterns to handle null values safely:
 
 - **Check for values**: `p.firstName IS NOT NULL` - has a first name
 - **Validate data**: `p.id > 0` - valid ID  
-- **Handle missing data**: `NOT coalesce(p.locationIP, '127.0.0.1') STARTS WITH '127.0.0.1'` - didn't connect from local network
+- **Handle missing data**: `NOT coalesce(p.locationIP, '10.x.x.x') STARTS WITH '10.x.x.x'` - didn't connect from local network
 - **Combine conditions**: Use `AND`/`OR` with explicit null checks for complex logic
 
 > [!CAUTION]
@@ -1259,8 +1259,8 @@ Keep these references handy for quick lookups:
 
 - **[Graph data models](graph-data-models.md)** - Understanding graph concepts and modeling
 - **[Graph vs relational databases](graph-relational-databases.md)** - Choose the right approach
-- **[Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)** - Get hands-on experience
-- **[End-to-end tutorials](/fabric/fundamentals/end-to-end-tutorials)** - Complete learning scenarios
+- **[Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)** - Get hands-on experience
+- **[End-to-end tutorials](../fundamentals/end-to-end-tutorials.md)** - Complete learning scenarios
 
 ### Get involved
 
@@ -1292,5 +1292,5 @@ Keep these references handy for quick lookups:
 
 - [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling.
 - [Graph and relational databases](graph-relational-databases.md) - Differences and when to use each.
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial).
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials).
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md).
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md).
