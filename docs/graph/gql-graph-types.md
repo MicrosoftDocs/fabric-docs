@@ -1,5 +1,5 @@
 ---
-title: GQL Graph Types
+title: GQL Graph Types Reference for Fabric Graph
 description: Complete reference for defining graph types in GQL for Fabric Graph, including node types, edge types, constraints, and inheritance.
 ms.topic: reference
 ms.date: 03/02/2026
@@ -270,4 +270,4 @@ You can also define compound keys that use multiple properties together to ensur
 - [Social network schema example](gql-schema-example.md)
 - [GQL values and value types](gql-values-and-value-types.md)
 - [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

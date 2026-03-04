@@ -455,4 +455,4 @@ Every node type has a corresponding key constraint ensuring unique identificatio
 
 - [GQL language guide](gql-language-guide.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

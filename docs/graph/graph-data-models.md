@@ -1,6 +1,6 @@
 ---
 title: Labeled Property Graphs in Fabric Graph
-description: Understand the benefits of the Labeled Property Graph (LPG) model used by Fabric Graph.
+description: Understand the benefits of the Labeled Property Graph (LPG) model used by Fabric Graph, including nodes, edges, properties, and labels.
 ms.topic: concept-article
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam
@@ -43,5 +43,5 @@ For most customers, LPG provides the best balance of performance, usability, and
 
 ## Related content
 
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)

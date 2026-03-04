@@ -1,6 +1,6 @@
 ---
-title: "Tutorial: Create multiple node and edge types from one mapping table"
-description: Learn how to add nodes and edges from one mapping table.
+title: "Tutorial: Create Node and Edge Types from One Mapping Table"
+description: Learn how to create multiple node and edge types from a single mapping table in your Fabric Graph model in Microsoft Fabric.
 ms.topic: tutorial
 ms.date: 03/03/2026
 author: lorihollasch
