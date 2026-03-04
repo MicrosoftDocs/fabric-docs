@@ -1,8 +1,8 @@
 ---
-title: GQL Graph Patterns
-description: Complete reference for graph pattern syntax in GQL for graph in Microsoft Fabric.
+title: GQL Graph Patterns in Fabric Graph
+description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in Fabric Graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
-ms.date: 11/18/2025
+ms.date: 03/02/2026
 ms.reviewer: splantikow
 ---
 
@@ -10,7 +10,9 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Graph patterns are core building blocks of your GQL queries. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
+Graph patterns are core building blocks of your GQL queries in Fabric Graph. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
+
+This article explains the syntax and composition rules for graph patterns in GQL.
 
 > [!IMPORTANT]
 > This article exclusively uses the [social network example graph dataset](sample-datasets.md).
@@ -28,7 +30,7 @@ A node pattern specifies the labels and properties that a node must have to matc
 (:City { name: "New York" })
 ```
 
-This pattern matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York"`. This specification of required labels and properties is called the *filler* of the node pattern.
+This pattern matches all nodes that have **both** the `Place` and `City` labels (indicated by the `&` operator) and whose `name` property equals `"New York"`. This combination of required labels and properties is called the *filler* of the node pattern.
 
 **Key concepts:**
 
@@ -37,7 +39,7 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
 > [!NOTE]
-> Graph models with multiple element labels are not yet supported (known issue).
+> Graph models with multiple element labels aren't yet supported (known issue).
 
 ### Simple edge patterns
 
@@ -100,9 +102,9 @@ This counts the number of `isLocatedIn` edges connecting `Person` nodes or `Orga
 
 | Syntax                | Meaning                                        |
 |-----------------------|------------------------------------------------|
-| <code>A&B</code>      | Labels need to include both A and B.           |
-| <code>A&#124;B</code> | Labels need to include at least one of A or B. |
-| <code>!A</code>       | Labels need to exclude A.                      |
+| `A&B`                 | Labels need to include both A and B.           |
+| `A\|B`                | Labels need to include at least one of A or B. |
+| `!A`                  | Labels need to exclude A.                      |
 
 Additionally, use parenthesis to control the order of label expression evaluation. By default, `!` has the highest precedence and `&` has higher precedence than `|`. Therefore `!A&B|C|!D` is the same as `((!A)&B)|C|(!D)`.
 
@@ -238,7 +240,7 @@ The pattern finds a person along with their education, employment, and content p
 
 ### Match trails
 
-In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, graph in Microsoft Fabric supports the `TRAIL` match mode. 
+In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, Graph supports the `TRAIL` match mode.
 
 Prefixing a path pattern with the keyword `TRAIL` discards all matches that bind the same edge multiple times:
 
@@ -320,7 +322,7 @@ The pattern finds pairs of comments where people who know each other liked diffe
 
 ### Bind variable-length pattern edge variables
 
-When you bind a variable-length edge pattern, the value and type of the edge variable change depending on the reference context. 
+When you bind a variable-length edge pattern, the value and type of the edge variable change depending on the reference context.
 Understanding this behavior is crucial for correctly processing variable-length matches:
 
 **Two degrees of reference:**
@@ -354,7 +356,7 @@ RETURN a, b, size(e) AS num_edges
 LIMIT 100
 ```
 
-See the section on [horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables) for further details.
+For more information, see [horizontal aggregation](gql-language-guide.md#horizontal-aggregation-with-group-list-variables).
 
 <!-- Commented out intentionally
 
@@ -393,4 +395,4 @@ Both forms are equivalent and match chains of at least 2 `knows` relationships.
 - [GQL language guide](gql-language-guide.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
