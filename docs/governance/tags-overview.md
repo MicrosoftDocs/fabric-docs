@@ -63,21 +63,17 @@ Once tags are applied, they enhance visibility across multiple surfaces.
 
 - **Workspace settings:** Workspace admins can assign and manage tags in the workspace settings panel. Non-admins can view applied tags in read-only mode.
 
-  <!-- ![Screenshot showing the workspace tags panel in workspace settings.](media/tags-overview/workspace-tags-settings.png) -->
-
+  ![Screenshot showing the workspace tags panel in workspace settings](media/tags-overview/workspace-tags-setting.png)
+  
 - **Workspace list:** A tag icon appears next to the workspace name in the workspaces list panel. Hover to view applied workspace tags.
-
-  <!-- ![Screenshot showing workspace tags in the workspaces list.](media/tags-overview/workspace-tags-list.png) -->
 
 - **Workspace view:** Workspace tag names are displayed directly in the workspace screen.
 
-  <!-- ![Screenshot showing workspace tags displayed in the workspace view.](media/tags-overview/workspace-tags-view.png) -->
-
+  ![Screenshot showing workspace tags displayed in the workspace view](media/tags-overview/workspace-view-tags.png)
+  
 - **Workspace list filtering:** Filter workspaces by applied tags in the workspaces list panel and OneLake Catalog Explorer.
 
-  
-  
-  ![Screenshot showing the workspace tags filter](media/tags-overview/screenshot-2026-02-08-110523.png)
+  ![Screenshot showing the workspace tags filter](media/tags-overview/workspace-tags-filtering.png)
   
 ### Tags in APIs
 
