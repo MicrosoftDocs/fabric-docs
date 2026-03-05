@@ -15,6 +15,9 @@ This how-to article shows you how to add external raster imagery to Fabric Maps 
 
 For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-external-sourced-imagery.md)
 
+> [!IMPORTANT]
+> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+
 ## Prerequisites
 
 Before you begin, make sure you have:
@@ -61,7 +64,7 @@ The connection becomes available for use in Fabric Maps.
 > [!NOTE]
 > The Base URL must use the **HTTPS** protocol.
 >
-> Fabric Maps supports the following WMTS Base URL formats:
+> Fabric Maps supports the following WMS/WMTS base URL formats:
 >
 > - **KVP binding**: `https://example.com/geoserver/wmts`
 > - **RESTful binding**: `https://example.com/geoserver/wmts/WMTSCapabilities.xml`
@@ -113,6 +116,9 @@ After adding the imagery layer, you can:
 
 External imagery layers behave like other imagery layers in Fabric Maps and can be combined with other imagery layers or vector layers.
 
+> [!NOTE]
+> Fabric Maps currently supports rendering WMS and WMTS imagery using the EPSG:3857 (Web Mercator) projection and JPEG or PNG image formats.
+
 ## Use Microsoft Planetary Computer Pro imagery
 
 Fabric Maps integrates with **Microsoft Planetary Computer (MPC) Pro** by connecting to WMTS endpoints exposed through the MPC Pro geocatalog. **Authentication uses OAuth 2.0 with Microsoft Entra ID**.
@@ -126,6 +132,7 @@ To connect to MPC Pro, you must construct a WMTS endpoint URL from a geocatalog 
 
 1. Identify the target MPC Pro geocatalog collection.
 1. Retrieve the **Search ID** and **render configuration** parameters.
+1. To ensure correct WMTS rendering in MPC Pro, the bounding box (bbox) and associated metadata must be registered through the [registration API](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register?view=rest-planetarycomputer-data-plane-2025-04-30-preview&tabs=HTTP).
 1. Use these values to construct the WMTS capabilities URL.
 
 <!---------------------------------------------------------------
