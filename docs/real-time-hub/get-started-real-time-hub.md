@@ -162,6 +162,7 @@ The **Business events page** lets you define, discover, and consume business eve
 For more information, see the following articles:
 
 - [Business events overview](business-events/business-events-overview.md)
+- [Concepts and terminology for business events](business-events/business-events-concepts.md)
 - [Publish business events using Notebook and react using Activator](business-events/tutorial-business-events-notebook-user-data-function-activator.md)
 - [Publish business events using User Data Function and react using Activator](business-events/tutorial-business-events-user-data-function-activation-email.md)
 
