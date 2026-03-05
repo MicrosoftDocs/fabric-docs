@@ -19,7 +19,7 @@ Anomaly detection is a feature of Real-Time Intelligence that allows you to iden
 
 You can start anomaly detection in **three** ways:
 
-## [From an Eventhouse](#tab/eventhouse)
+## [From an Eventhouse table](#tab/eventhouse)
 
 1. Select a database and the **table** or the **shortcut** you want to analyze.
 
@@ -27,7 +27,7 @@ You can start anomaly detection in **three** ways:
 
 :::image type="content" source="media/anomaly-detection/eventhouse-bike-anomaly-detector.png" alt-text="Screenshot of the Anomaly Detector option in the Eventhouse database tree and in the upper toolbar." lightbox="media/anomaly-detection/eventhouse-bike-anomaly-detector.png":::
 
-## [From the Real-Time hub](#tab/real-time-hub)
+## [From Real-Time hub](#tab/real-time-hub)
 
 1. Select **Real-Time hub** in the left navigation pane.
 
