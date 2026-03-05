@@ -30,7 +30,7 @@ In this section, you learn how to create a mirrored Azure Database for MySQL, wh
 
 Mirroring in Azure Database for MySQL is based on Logical Replication and requires some specific prerequisites to be configured before being able to connect to your data.
 
-For detailed instructions, see [Mirroring Azure Database for MySQL](azure/mysql/integration/fabric-mirroring-mysql).
+For detailed instructions, see [Mirroring Azure Database for MySQL](/azure/mysql/integration/fabric-mirroring-mysql).
 
 ## Create a mirrored Azure Database for MySQL
 
