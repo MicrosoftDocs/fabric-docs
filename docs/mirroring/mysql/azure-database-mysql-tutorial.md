@@ -53,8 +53,8 @@ The following steps guide you through the process of creating the connection to 
    - **Authentication kind**: Basic (MySQL Authentication)
    - Leave **Use encrypted connection** checkbox selected, and **This connection can be used with on-premises data gateway and VNET data gateway** unselected.
 1. Select **Connect**. If all the credentials are correct, the connection is tested and saved. If the credentials aren't correct, the creation fails with errors.
-1. After the connection is created successfully, a list of tables in the database mirror is available to select. You can select up to 1,000 tables at a time. Fab7.png
-1. Select the tables, give the mirror (also known as artifact) a name, and select **Create mirrored database**. This action starts the mirror creation.
+1. After the connection is created successfully, a list of tables in the database mirror is available to select. You can select up to 1,000 tables at a time.
+1. Select the tables, give the mirror a name, and select **Create mirrored database**. This action starts the mirror creation.
 1. After some time (few minutes), you see *Rows Replicated* and the data is visible in the data warehouse view, also known as *Mirrored Database* view. The status changes to *Running*. This view also serves as a management interface to start, stop, and monitor replication. Fab8.png
 1. Now that your data is up and running, various analytics scenarios are available across all of Fabric.
 
