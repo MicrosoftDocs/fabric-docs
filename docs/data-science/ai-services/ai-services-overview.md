@@ -137,7 +137,7 @@ To test the new logic, first iterate it in a Spark notebook interactive run. For
 
 Once the shop owner validates the logic, the owner sets up the regular run and expects to see an all-up usage of 1300 CUs under the operation name "Spark Job Scheduled Run," with the Spark billing meter accounting for the entire usage.​
 
-According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-compute-usage-reporting), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
+According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-usage-in-capacity-metrics-app), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
 
 ## Related content
 
