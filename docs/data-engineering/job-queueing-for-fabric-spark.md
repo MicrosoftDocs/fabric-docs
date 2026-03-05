@@ -4,7 +4,7 @@ description: Learn about background job queueing for notebooks, Apache Spark job
 ms.reviewer: saravi
 ms.topic: concept-article
 ms.custom: sfi-image-blocked
-ms.date: 03/04/2026
+ms.date: 03/05/2026
 ai-usage: ai-assisted
 ---
 # Job queueing in Apache Spark for Microsoft Fabric

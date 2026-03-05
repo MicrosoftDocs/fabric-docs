@@ -3,7 +3,7 @@ title: Create custom Apache Spark pools in Fabric
 description: Learn about custom Apache Spark pools and how to configure them from your Fabric workspace settings.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 03/04/2026
+ms.date: 03/05/2026
 ai-usage: ai-assisted
 ---
 
