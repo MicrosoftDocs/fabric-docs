@@ -25,7 +25,7 @@ Foundry Tools help developers create applications that see, hear, speak, underst
 > - **[OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md)**: Distributed processing with the `OpenAIPrompt` transformer for millions of rows
 > - **[OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md)**: Fine-grained control for single API calls
 >
-> This article focuses on using SynapseML with bring-your-own-key for other Foundry Tools.
+> This article focuses on using SynapseML with bring-your-own-key for other Microsoft Foundry tools.
 
 ## Prerequisites
 

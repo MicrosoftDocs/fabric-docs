@@ -25,13 +25,13 @@ Fabric provides two options to use Foundry Tools:
 
 - **Pre-built AI models in Fabric (preview)**
 
-    Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Foundry Tools available.
+    Fabric seamlessly integrates with Foundry Tools, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend this option because you can use your Fabric authentication to access Foundry Tools, and all usages are billed against your Fabric capacity. This option is currently in public preview, with limited Microsoft Foundry tools available.
 
     Fabric offers [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), and [Azure Translator in Foundry Tools](https://azure.microsoft.com/products/ai-services/translator/) by default, with support for both SynapseML and the RESTful API. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information about available models, visit [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**
 
-    You can provision your Foundry Tools on Azure, and bring your own key to use them from Fabric. If the prebuilt AI models don't yet support the desired Foundry Tools, you can still use BYOK (Bring your own key).
+    You can provision your Foundry tools on Azure, and bring your own key to use them from Fabric. If the prebuilt AI models don't yet support the desired Foundry tools, you can still use BYOK (Bring your own key).
 
     To learn more about how to use Foundry Tools with BYOK, visit [Foundry Tools in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
 
@@ -62,7 +62,7 @@ Fabric provides two options to use Foundry Tools:
 
 ### Available regions for Azure OpenAI Service
 
-For the list of Azure regions where prebuilt Foundry Tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
+For the list of Azure regions where prebuilt Foundry tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
 
 ### Available regions for Text Analytics and Translator 
 Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
@@ -122,10 +122,10 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Monitor the Usage
 
-The workload meter associated with the task determines the charges for prebuilt Foundry Tools in Fabric. For example, if Foundry Tool usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
+The workload meter associated with the task determines the charges for prebuilt Foundry tools in Fabric. For example, if Foundry Tools usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
 
 > [!NOTE]
-> The billing for prebuilt Foundry Tools does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
+> The billing for prebuilt Foundry tools does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
 
 ### Example
 

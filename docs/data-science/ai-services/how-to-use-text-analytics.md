@@ -14,7 +14,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure Language in Foundry Tools](/azure/ai-services/language-service/) is a [Foundry Tool](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Azure Language in Foundry Tools](/azure/ai-services/language-service/) is a [Microsoft Foundry tool](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
 In this article, you learn how to use Language services directly in Microsoft Fabric to analyze text. By the end of this article, you're able to:
 
@@ -32,7 +32,7 @@ In this article, you learn how to use Language services directly in Microsoft Fa
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
 
@@ -61,7 +61,7 @@ This article provides two ways to use Language services in Fabric:
 Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Language services:
 
 > [!NOTE]
-> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt Foundry Tools. No API key is required.
+> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt Foundry tools. No API key is required.
 
 ``` python
 # Get workload endpoints and access token
@@ -73,9 +73,9 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESful request to Foundry Tool
+# Make a RESful request to Foundry tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/textanalytics/"
-print("Workload endpoint for Foundry Tool: \n" + prebuilt_AI_base_host)
+print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
 service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
 print("Service URL: \n" + service_url)

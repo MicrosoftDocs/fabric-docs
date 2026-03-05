@@ -13,7 +13,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Foundry Tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
+[Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Microsoft Foundry tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
 This sample shows how to use the prebuilt Azure AI translator in Fabric with RESTful APIs to:
 
@@ -29,7 +29,7 @@ This sample shows how to use the prebuilt Azure AI translator in Fabric with RES
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
@@ -60,9 +60,9 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESTful request to Foundry Tool
+# Make a RESTful request to Foundry tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/texttranslation/"
-print("Workload endpoint for Foundry Tool: \n" + prebuilt_AI_base_host)
+print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
 service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
 print("Service URL: \n" + service_url)
