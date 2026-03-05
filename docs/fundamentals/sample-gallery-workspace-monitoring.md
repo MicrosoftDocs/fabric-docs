@@ -5,29 +5,68 @@ author: SnehaGunda
 ms.author: sngun
 ms.reviewer: guregini, v-hzargari
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 03/05/2026
 ---
 
 # Visualize your workspace monitoring in a Real-Time dashboard or Power BI report using Sample Templates
 
-Fabric workspace monitoring provides rich telemetry across your workspace assets, including Eventhouses, Power BI Semantic Models, Data Engineering (GraphQL), and Mirrored Databases. The workspace monitoring data is stored in an Eventhouse, which is part of Fabric Real-Time Intelligence. This telemetry includes diagnostic logs, ingestion results, query activity, and system metrics, all of which are collected and organized in a secure, read-only Eventhouse database.
-To help you turn this data into actionable insights, this article guides you through connecting your monitoring data to a Real-Time Dashboard or a Power BI report using a sample end-to-end monitoring solution.
+Fabric workspace monitoring provides rich telemetry across your workspace assets, including Eventhouses, Power BI Semantic Models, Data Engineering (GraphQL), and Mirrored Databases. The workspace monitoring data is stored in an Eventhouse, which is part of Fabric Real-Time Intelligence. This telemetry includes diagnostic logs, ingestion results, query activity, and system metrics. The system collects and organizes all this data in a secure, read-only Eventhouse database.
+
+To help you turn this data into actionable insights, this article guides you through two approaches to connect your monitoring data to a Real-Time dashboard or a Power BI report:
+
+* **Built-In Templates Solution** – Use prebuilt templates with visualizations to quickly create dashboards for monitoring Eventhouses and Semantic Models.
+* **Step-by-Step Solution** – Set up a custom monitoring solution using the end-to-end sample, giving you more flexibility to customize your dashboards and reports.
 
 :::image type="content" source="media/sample-gallery-workspace-monitoring/workflow.png" alt-text="Screenshot of the Workflow diagram that illustrates the process of connecting monitoring data to dashboards and reports.":::
 
-To get started, follow the [end-to-end sample guide](../real-time-intelligence/sample-end-to-end.md) to set up the sample environment. Once complete, follow the steps in this article to learn how to connect your own monitoring data and visualize it in real time.
+## [Built-In Templates Solution](#tab/built-in-templates)
 
-## Prerequisites
+The Real-Time dashboard Templates with built-in visualizations enable you to easily transform your data into actionable insights. Currently, two templates are available: one for Eventhouse items and another for Semantic Model items.
+
+**Prerequisites:**
+
+* A Power BI Premium capacity or a [workspace](create-workspaces.md) with Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* [Workspace monitoring](enable-workspace-monitoring.md) must be enabled in your workspace.
+
+**Getting started:**
+
+You can create these dashboards directly from any Workspace Monitoring Eventhouse. To get started, go to your Workspace Monitoring Eventhouse, open the upper ribbon, and select Fabric Monitoring.
+
+**Create a template-based dashboard:**
+
+Choose the template that best suits your needs:
+
+* [Eventhouse Monitoring](../real-time-intelligence/monitor-eventhouse.md) Dashboard – use this dashboard to monitor Eventhouse items in your workspace. You can track: 
+
+    * Ingestion results and logs. 
+    * Commands and queries monitoring. 
+    * Metrics related to Eventhouse performance. 
+
+* [Semantic Model Monitoring](../enterprise/powerbi/semantic-model-operations.md) Dashboard – use this dashboard to monitor Semantic Models in your workspace. You can use semantic model logs to: 
+
+    * Identify periods of high or unusual Analysis Services engine activity by capacity, workspace, report, or user. 
+    * Analyze query performance and trends, including external DirectQuery operations. 
+
+    * Track semantic model refresh durations, overlaps, and processing steps. 
+    * Monitor custom operations sent using the Premium XMLA endpoint. 
+
+Once you create the dashboards, they're ready to use immediately, providing instant visibility into your workspace. You can also edit them to meet your specific needs by modifying the queries to add custom filters or joining the data with other monitoring data. 
+
+ ## [Step-by-Step Solution](#tab/step-by-step-solution)
+
+**Prerequisites:**
 
 * A Power BI Premium capacity or a [workspace](create-workspaces.md) with Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 * [Workspace monitoring](enable-workspace-monitoring.md) must be enabled in your workspace.
 * A monitoring sample workspace with the [End-to-End Real-Time Intelligence sample solution](../real-time-intelligence/sample-end-to-end.md) setup.
 
-## Connect the sample Real-Time Dashboard
+To get started, follow the [end-to-end sample guide](../real-time-intelligence/sample-end-to-end.md) to set up the sample environment. When you're done, follow the steps in this article to learn how to connect your own monitoring data and visualize it in real time.
+
+**Connect the sample Real-Time Dashboard:**
 
 To connect the sample Real-Time dashboard to monitoring data from another workspace:
 
-1. Open the folder containing the autogenerated items from the sample end-to-end solution and navigate to the **Real-Time dashboard**.
+1. Open the folder containing the autogenerated items from the sample end-to-end solution and go to the **Real-Time dashboard**.
 
     :::image type="content" source="media/sample-gallery-workspace-monitoring/dashboard.png" alt-text="Screenshot of the Real-Time dashboard autogenerated from the samples solution.":::
 1. Open the sample dashboard and switch to **Editing mode**.
@@ -41,20 +80,20 @@ To connect the sample Real-Time dashboard to monitoring data from another worksp
     :::image type="content" source="media/sample-gallery-workspace-monitoring/add-data.png" alt-text="Screenshot of the Add data option.":::
 1. Select the KQL Database from the Monitoring Eventhouse in the workspace you want to connect to.
 1. After you add the data source, change the display name to reflect the workspace the Monitoring database belongs to.
-1. Finally, select **Save** to apply the changes.
+1. Select **Save** to apply the changes.
 1. Use the **Workspace** parameter to switch between Eventhouses and monitor multiple workspaces from a single dashboard.
 
     :::image type="content" source="media/sample-gallery-workspace-monitoring/change-workspace.png" alt-text="Screenshot of the workspace parameter in the Real-Time dashboard.":::
 
-## Connect the sample Power BI Report
+**Connect the sample Power BI Report:**
 
 To connect the sample Power BI report to monitoring data from another workspace:
 
-1. Open the folder containing the autogenerated items from the sample end-to-end solution and navigate to the **Semantic model** report.
+1. Open the folder containing the autogenerated items from the sample end-to-end solution and go to the **Semantic model** report.
 
     :::image type="content" source="media/sample-gallery-workspace-monitoring/pbi/semantic-model.png" alt-text="Screenshot of the Semantic model report autogenerated from the samples solution.":::
 
-1. Select the ellipsis (...) next to the report name and navigate to the **Settings** option.
+1. Select the ellipsis (...) next to the report name and go to the **Settings** option.
 
     :::image type="content" source="media/sample-gallery-workspace-monitoring/pbi/settings.png" alt-text="Screenshot of the dropdown menu.":::
 
@@ -63,7 +102,7 @@ To connect the sample Power BI report to monitoring data from another workspace:
 
         :::image type="content" source="media/sample-gallery-workspace-monitoring/pbi/query-uri.png" alt-text="Screenshot of the Query URI field in the parameters settings.":::
 
-        * Find the Monitoring Eventhouse URI by navigating to the Eventhouse's **System Overview** page, and locating the **Query URI** in the **Eventhouse Details** side pane.
+        * Find the Monitoring Eventhouse URI by going to the Eventhouse's **System Overview** page, and locating the **Query URI** in the **Eventhouse Details** side pane.
 
             :::image type="content" source="media/sample-gallery-workspace-monitoring/system-overview.png" alt-text="Screenshot of the Query URI field in the System overview page.":::
 
@@ -71,14 +110,16 @@ To connect the sample Power BI report to monitoring data from another workspace:
 
         :::image type="content" source="media/sample-gallery-workspace-monitoring/pbi/database-id.png" alt-text="Screenshot of the Database ID field in the parameters settings.":::
 
-        * Find the database ID by navigating to the Monitoring KQL Database page in the Monitoring Eventhouse and locating the database ID in the page URL, after the `/databases/` segment.
+        * Find the database ID by going to the Monitoring KQL Database page in the Monitoring Eventhouse and locating the database ID in the page URL, after the `/databases/` segment.
     1. Select **Apply** to save the changes. You might be prompted to sign in and validate your credentials.
 
-1. Navigate back to the autogenerated items list and refresh the Semantic model.
+1. Go back to the autogenerated items list and refresh the Semantic model.
 
     :::image type="content" source="media/sample-gallery-workspace-monitoring/pbi/refresh.png" alt-text="Screenshot of the refresh option.":::
 
-## Related Content
+----
+
+## Related content
 
 * [Sample Gallery](../real-time-intelligence/sample-gallery.md)
 * [End-to-End Sample](../real-time-intelligence/sample-end-to-end.md)
