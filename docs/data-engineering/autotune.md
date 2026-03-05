@@ -45,13 +45,13 @@ You can use autotune with notebooks, Spark Job Definitions, and pipelines. Benef
 
 Autotune uses an iterative optimization loop:
 
-1. It starts from default Spark configuration values.
-1. It generates candidate configurations around a baseline (*centroid*).
-1. It predicts the best candidate with a model trained on previous runs.
-1. It applies the candidate and executes the query.
-1. It feeds execution results back into the model.
+1. Start from default Spark configuration values.
+1. Generate candidate configurations around a baseline (*centroid*).
+1. Predict the best candidate by using a model trained on previous runs.
+1. Apply the candidate and execute the query.
+1. Feed execution results back into the model.
 
-Over time, the baseline shifts toward better settings while reducing regression risk. Using all collected data points also helps reduce the impact of anomalies.
+Over time, the baseline shifts toward better settings while reducing regression risk. Using all collected data points also helps reduce the effect of anomalies.
 
 ### Enable autotune
 
