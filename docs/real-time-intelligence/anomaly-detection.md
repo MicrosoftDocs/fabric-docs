@@ -71,7 +71,7 @@ You can start anomaly detection in **three** ways:
 
     :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
 
-## [From the Create](#tab/create)
+## [From the Create button](#tab/create)
 
 1. In the Fabric home page, select the ellipsis (⋯) icon and then the **Create** option.
 
@@ -88,6 +88,8 @@ You can start anomaly detection in **three** ways:
 1. In the **Select source** pane, choose the Eventhouse and table you want to analyze, and then select **Add**.
 
     :::image type="content" source="media/anomaly-detection/select-source.png" alt-text="Screenshot of the Select source pane with an Eventhouse and table selected.":::
+
+----
 
 ### Configure input columns for analysis
 

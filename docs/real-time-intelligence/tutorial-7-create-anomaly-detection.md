@@ -3,7 +3,7 @@ title: Real-Time Intelligence tutorial part 7 - Detect anomalies on an Eventhous
 description: Learn how to detect anomalies on your Eventhouse table in Real-Time Intelligence.
 ms.reviewer: tzgitlin
 ms.topic: tutorial
-ms.date: 02/26/2026
+ms.date: 03/05/2026
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to detect anomalies on my Eventhouse table in Real-Time Intelligence.
@@ -17,23 +17,61 @@ Anomaly detection is a feature of Real-Time Intelligence that allows you to iden
 
 ## Getting started
 
-You can start anomaly detection in two ways:
+You can start anomaly detection in **three** ways:
 
-1. From an **Eventhouse**:
-    1. Select a database and the **table** or the **shortcut** you want to analyze.
-    1. In the upper toolbar, select **Create Anomaly Detector**.
+## [From an Eventhouse](#tab/eventhouse)
 
-1. From **Real-Time hub**:
-    1. From the left navigation pane, select **Real-Time hub**.
-    1. Under **Streaming data** select the eventhouse table **TransformedData** you created in the previous tutorial. The table details page opens. Select **Detect anomalies** from the top menu.
+1. Select a database and the **table** or the **shortcut** you want to analyze.
 
-        :::image type="content" source="media/tutorial/detect-anomalies.png" alt-text="Screenshot of eventhouse table details page and detect anomalies selected." lightbox="media/tutorial/detect-anomalies.png":::
+1. In the upper toolbar, select **Create Anomaly Detector** or select the **Anomaly Detector** option from the ellipsis (⋯) in the database tree.
+
+:::image type="content" source="media/anomaly-detection/eventhouse-bike-anomaly-detector.png" alt-text="Screenshot of the Anomaly Detector option in the Eventhouse database tree and in the upper toolbar." lightbox="media/anomaly-detection/eventhouse-bike-anomaly-detector.png":::
+
+## [From the Real-Time hub](#tab/real-time-hub)
+
+1. Select **Real-Time hub** in the left navigation pane.
+
+    :::image type="content" source="media/anomaly-detection/real-time-hub.png" alt-text="Screenshot of the Real-Time hub button in the left navigation pane.":::
+
+1. Find the table you want to analyze for anomalies and do **either** of the following steps:
+    1. Select the ellipsis (⋯) to open the table's ribbon menu, and select **Anomaly detection**.
+
+        :::image type="content" source="media/anomaly-detection/detect-dropdown.png" alt-text="Screenshot of the Real-Time hub with a table selected for anomaly detection.":::
+
+    1. Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
+
+        :::image type="content" source="media/anomaly-detection/detect-details-page.png" alt-text="Screenshot of the detect anomalies option in the details page.":::
+1. On the **Anomaly detection** page, for **Save to**, select the drop-down list, and then select **Create detector**. 
+
+    :::image type="content" source="media/anomaly-detection/real-time-hub-create-detector.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::
+1. On the **Create anomaly detector** page, select your Fabric **workspace**, enter a **name** for the anomaly detector, and then select **Create**. 
+
+    :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
+
+## [From the Create button](#tab/create)
+
+1. In the Fabric home page, select the ellipsis (⋯) icon and then the **Create** option.
+
+    :::image type="content" source="media/anomaly-detection/create-button.png" alt-text="Screenshot of the Create button in the left navigation pane.":::
+
+1. In the **Create** pane, select **Anomaly detection** under the **Real-Time Intelligence** section.
+
+    :::image type="content" source="media/anomaly-detection/create-anomaly-detection.png" alt-text="Screenshot of the Create pane with Anomaly detection selected.":::
+
+1. In the **Anomaly detection** configuration pane, enter **`BikeAnomaliesconfiguration`** as Name and select the **Data source** you want to analyze. 
+
+    :::image type="content" source="media/anomaly-detection/add-source.png" alt-text="Screenshot of the Anomaly detection configuration pane with Data source option highlighted.":::
+
+1. Select the workspace in which you want to create the anomaly detector item, enter **`BikeAnomalies`**. Then select **Create**.
+
+1. In the **Select source** pane, choose the Eventhouse and table you want to analyze, and then select **Add**.
+
+    :::image type="content" source="media/anomaly-detection/select-source.png" alt-text="Screenshot of the Select source pane with an Eventhouse and table selected.":::
+
+----
 
 ## Configure anomaly detection
 
-1. Enter **`BikeAnomaliesconfiguration`** as Name.
-1. Under Save to, select **Create detector**.
-1. Select the workspace in which you want to create the anomaly detector item, enter **`BikeAnomalies`**. Then select **Create**.
 1. In the *Select attributes* section, choose the following options:
 
     | Field | Value |
