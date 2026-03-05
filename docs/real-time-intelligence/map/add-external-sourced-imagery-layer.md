@@ -13,7 +13,7 @@ ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Com
 
 This how-to article shows you how to add external raster imagery to Fabric Maps using Web Map Service (WMS) and Web Map Tile Service (WMTS) endpoints. Learn how to create and manage Fabric Maps cloud connections, authenticate to external imagery services, and render WMS or WMTS layers—including Microsoft Planetary Computer Pro imagery—directly on a map. By connecting to external imagery sources, you can enrich your maps with authoritative raster data such as satellite imagery, elevation models, or thematic overlays without copying or storing the imagery in Fabric.
 
-For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-wms-wmts-imagery.md)
+For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-external-sourced-imagery.md)
 
 ## Prerequisites
 
@@ -99,7 +99,7 @@ Once Fabric Maps cloud connections are created, you can add one or more to your 
 1. Expand the connection to view available imagery layers.
 1. Right‑click a layer and select **Show on map**.
 
-:::image type="content" source="media/layers/show-on-map.png" alt-text="A screenshot of the Explorer panel in Microsoft Fabric Maps with External sources tab open, displaying a list of layers, one with its More options menu expanded, showing the option Show on map highlighted.":::
+:::image type="content" source="media/layers/show-on-map.png" alt-text="A screenshot showing the Explorer panel in Microsoft Fabric Maps with the External sources tab selected. A list of layers is shown with the More options menu for Registre parcellaire graphique 2017 expanded, displaying the option Show on map highlighted.":::
 
 The imagery layer is rendered on the map canvas.
 
@@ -147,7 +147,7 @@ Once you have the WMTS endpoint URL from the previous section, you're ready to c
 1. Select **OAuth 2.0** as the authentication method.
 1. Select **Create**.
 
-:::image type="content" source="media/layers/mpc-connection.png" alt-text="A screenshot of the Explorer panel in Microsoft Fabric Maps with External sources tab open, displaying a list of layers, one with its More options menu expanded, showing the option Show on map highlighted.":::
+:::image type="content" source="media/layers/microsoft-planetary-computer-connection.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the External sources tab in the Explorer panel. A list of imagery layers is displayed, with one layer's More options menu expanded and the Show on map option highlighted.":::
 
 ### Step 3: Add MPC Pro imagery to a map
 

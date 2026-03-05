@@ -83,7 +83,7 @@ This layered approach makes it possible to monitor live events, analyze spatial 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Create layers using WMS and WMTS imagery sources](about-wms-wmts-imagery.md)
+> [Create layers using WMS and WMTS imagery sources](about-external-sourced-imagery.md)
 
 > [!div class="nextstepaction"]
 > [Data filtering](about-data-filtering.md)
