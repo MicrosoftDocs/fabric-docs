@@ -98,6 +98,8 @@ The ribbon at the top of the business event details page provides quick access t
 
 - **Manage event schema**: View and manage the schema of the events for this business event. This action helps you understand the structure of the event data and troubleshoot any problems with the event schema. For step-by-step guidance on managing event schema, see [Manage event schema](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md).
 
+- **Manage data access roles**: View and manage the data access roles for the business event. You see the roles and permissions associated with the event and make changes if needed. Currently, only the default role is available. For step-by-step guidance on managing data access roles, see [Manage data access roles](manage-business-events-data-access.md).
+
 - **Delete business event**: Delete the business event if it's no longer needed. This action helps you keep your list of business events organized and relevant. For more information on deleting a business event, see [Delete a business event](create-business-events.md#delete-a-business-event).
 
     :::image type="content" source="./media/business-event-details-page/actions-ribbon.png" alt-text="Screenshot of the Actions ribbon showing available actions on the business event details page." lightbox="./media/business-event-details-page/actions-ribbon.png":::

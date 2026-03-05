@@ -62,6 +62,8 @@ Hover the mouse over a business event row and select the three dots (**...**) at
 
 - **Manage event schema**: View and manage the event schema for the business event. You see the structure of the event data and make changes to the schema if needed. For step-by-step guidance on managing event schema, see [Manage event schema](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md).
 
+- **Manage data access roles**: View and manage the data access roles for the business event. You see the roles and permissions associated with the event and make changes if needed. Currently, only the default role is available. For step-by-step guidance on managing data access roles, see [Manage data access roles](manage-business-events-data-access.md).
+
 - **Delete**: Delete the business event. This action is irreversible, so make sure you want to delete the business event before selecting this option. For more information on deleting a business event, see [Delete a business event](create-business-events.md#delete-a-business-event).
 
     :::image type="content" source="./media/business-events-page/context-menu-actions.png" alt-text="Screenshot of context menu for a business event in the business events list page." lightbox="./media/business-events-page/context-menu-actions.png":::
