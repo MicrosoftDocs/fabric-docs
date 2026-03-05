@@ -23,7 +23,7 @@ To help you turn this data into actionable insights, this article guides you thr
 
 The Real-Time dashboard Templates with built-in visualizations enable you to easily transform your data into actionable insights. Currently, two templates are available: one for Eventhouse items and another for Semantic Model items.
 
-:::image type="content" source="media/sample-gallery-workspace-monitoring/monitoring-template.png" alt-text="Screenshot of the Monitoring Eventhouse with the Fabric Monitoring template option.":::
+:::image type="content" source="media/sample-gallery-workspace-monitoring/monitoring-template.png" alt-text="Screenshot of the Monitoring Eventhouse with the Fabric Monitoring template option." lightbox="media/sample-gallery-workspace-monitoring/monitoring-template.png":::
 
 **Prerequisites:**
 
