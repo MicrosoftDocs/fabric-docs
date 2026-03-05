@@ -3,7 +3,7 @@ title: Configure Snowflake in a copy activity
 description: This article explains how to copy data using Snowflake.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 01/22/2026
+ms.date: 03/04/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -32,7 +32,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Snowflake under the **Source** tab of a copy activity.
 
-  :::image type="content" source="./media/connector-snowflake/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-snowflake/source.png":::
+  :::image type="content" source="./media/connector-snowflake/snowflake-source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-snowflake/source.png":::
 
 The following properties are **required**:
 
@@ -42,9 +42,12 @@ The following properties are **required**:
       :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
+
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
     - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
     - **Query**: Specify the SQL query to read data from Snowflake. If the names of the schema, table and columns contain lower case, quote the object identifier in query e.g. `select * from "schema"."myTable"`.
+
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -102,7 +105,7 @@ To use this feature, create an [Azure Blob storage connection](connector-azure-b
 
 The following properties are supported for Snowflake under the **Destination** tab of a copy activity.
 
-  :::image type="content" source="./media/connector-snowflake/destination.png" alt-text="Screenshot showing Destination tab.":::
+  :::image type="content" source="./media/connector-snowflake/snowflake-destination.png" alt-text="Screenshot showing Destination tab.":::
 
 The following properties are **required**:
 
@@ -111,8 +114,16 @@ The following properties are **required**:
 
       :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for destination.":::
 
-- **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
-- **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
+- **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges. 
+
+- **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually. If the destination table doesn't exist, it is automatically created based on the source data. For more details about the mapping for auto-created tables, go to [Edit destination data types](#edit-destination-data-types) and [Default data type mapping for Snowflake auto-created table](#default-data-type-mapping-for-snowflake-auto-created-table).
+
+- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
+
+- **Write behavior**: Describes how to write data to Snowflake. It is only available in version 1.1 or above. Allowed values are **Insert** (default) and **Upsert**. 
+    - **Insert**: Choose this option if your source data has inserts.
+    - **Upsert**: Insert new values to existing table and update existing values.
+        - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. You can specify one or more columns to be treated as key columns.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -179,6 +190,14 @@ To use this feature, create an [Azure Blob storage connection](connector-azure-b
 
 For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
+#### Edit destination data types
+
+For the **Mapping** tab configuration, when Snowflake is used as the destination  and the destination table is auto-created, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Snowflake](#data-type-mapping-for-snowflake).
+
+For example, you can set the type of the *decimal* column to NUMBER and adjust its precision and scale as needed when mapping it to the destination.
+
+:::image type="content" source="media/connector-snowflake/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
 ### Settings
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
@@ -187,14 +206,14 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 When copying data from Snowflake, the following mappings are used from Snowflake data types to interim data types used by the service internally.
 
-| Snowflake data type | Interim service data type |
-|--------------------|---------------------------------------------|
-| NUMBER (p,0)       | Decimal                                     |
-| NUMBER (p,s where s>0) | Decimal                                 |
+| Snowflake data type | Interim data type |
+|:--- |:--- |
+| NUMBER(p,0)       | Decimal                                     |
+| NUMBER(p,s where s>0) | Decimal                                 |
 | FLOAT              | Double                                      |
 | VARCHAR            | String                                      |
 | CHAR               | String                                      |
-| BINARY             | Byte[]                                      |
+| BINARY             | Byte array                                  |
 | BOOLEAN            | Boolean                                     |
 | DATE               | DateTime                                    |
 | TIME               | TimeSpan                                    |
@@ -204,6 +223,48 @@ When copying data from Snowflake, the following mappings are used from Snowflake
 | VARIANT            | String                                      |
 | OBJECT             | String                                      |
 | ARRAY              | String                                      |
+
+When copying data to Snowflake, the following mappings are used from interim data types used by the service internally to Snowflake data types.
+
+| Interim data type | Snowflake data type |
+|:--- |:--- |
+| Decimal | NUMBER <br> (0 < s < p < 38) |
+| Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64 | NUMBER <br> ( S = 0, 0 < p < 38) |
+| Double, Single | FLOAT |
+| String, GUID | VARCHAR <br> ( 0 < Length <= 16777216) |
+| Byte array | BINARY <br> (0 < Length <= 8388608) |
+| Boolean | BOOLEAN |
+| Date | DATE |
+| Time | TIME |
+| DateTime | TIMESTAMP_NTZ |
+| DateTimeOffset | TIMESTAMP_TZ, TIMESTAMP_LTZ <br> (0 <= p <= 9) |
+
+To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
+
+### Default data type mapping for Snowflake auto-created table
+
+The following table describes the default mappings from interim data types used internally by the service to Snowflake data types when the destination table is created automatically.
+
+| Interim data type | Snowflake data type |
+|:--- |:--- |
+| String, GUID | VARCHAR(16777216) |
+| Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64 | NUMBER(38,0) |
+| Decimal | NUMBER(38,18) |
+| Single, Double | FLOAT |
+| Boolean | BOOLEAN |
+| Date | DATE |
+| Time | TIME |
+| DateTime | TIMESTAMP_NTZ |
+| DateTimeOffset | TIMESTAMP_TZ(9) |
+| Byte array | BINARY(8388608) |
+
+## Differences between Snowflake versions
+
+The table below shows the feature differences between various versions.
+
+| Version 1.1 | Version 1.0 |
+|-------------|-------------|
+| Support **Write behavior**. | **Write behavior** is not supported. |
 
 ## Table summary
 
@@ -215,10 +276,11 @@ The following tables contain more information about the copy activity in Snowfla
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
-|**Database** |Your database that you use as source.|< your database > |Yes|database|
-|**Use query** |The way to read data from Snowflake.|• Table <br> • Query |No |• table<br>• query|
-|**Table** | The name of the table to read data. |< name of your source table>|Yes |schema <br> table|
+|**Database** |Your database that you use as source.|< your database > |Yes|typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - database|
+|**Use query** |The way to read data from Snowflake.|/ |No |/ |
+|**Table** | The name of the table to read data. |< name of your source table>|Yes |typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table|
 |**Query**| The SQL query to read data from Snowflake. |< name of your source query>|Yes|query|
+|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements.| • 1.1<br>• 1.0 |No |version|
 |**Storage integration**| Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).| < your storage integration > |No|storageIntegration|
 |**Additional Snowflake copy options** |Additional copy options, provided as a dictionary of key-value pairs. Examples: MAX_FILE_SIZE, OVERWRITE. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location#copy-options-copyoptions).|• Name<br>• Value|No |additionalCopyOptions|
 |**Additional Snowflake format options** |Additional file format options that are provided to COPY command as a dictionary of key-value pairs. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Snowflake Format Type Options](https://docs.snowflake.com/sql-reference/sql/copy-into-location#format-type-options-formattypeoptions).|• Name<br>• Value|No |additionalFormatOptions|
@@ -232,8 +294,11 @@ The following tables contain more information about the copy activity in Snowfla
 |:---|:---|:---|:---|:---|
 |**Connection** |Your connection to the destination data store.|< your connection > |Yes|connection|
 |**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
-|**Database** |Your database that you use as destination.|< your database> |Yes|/|
-|**Table** | Your destination data table. |< name of your destination table>|Yes |• schema <br> • table|
+|**Database** |Your database that you use as destination.|< your database> |Yes|typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;- database |
+|**Table** | Your destination data table. |< name of your destination table>|Yes |typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp; - schema<br>&nbsp; - table|
+|**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements.| • 1.1<br>• 1.0 |No |version|
+|**Write behavior** |Describes how to write data to Snowflake (only available in version 1.1 or above).| • insert (default)<br>• upsert|No |writeBehavior|
+|**Key columns** |The column is used to determine if a row from the source matches a row from the destination. You can specify one or more columns to be treated as key columns.|< key columns > |No |keys (under *`upsertSettings`*)|
 |**Pre-copy script**|A SQL query for the Copy activity to run before writing data into Snowflake in each run. Use this property to clean up the preloaded data.	|< your pre-copy script>|NO|preCopyScript|
 |**Storage integration**| Specify the name of your storage integration that you created in the Snowflake. For the prerequisite steps of using the storage integration, see [Configuring a Snowflake storage integration](https://docs.snowflake.com/en/user-guide/data-load-azure-config#option-1-configuring-a-snowflake-storage-integration).| < your storage integration > |No|storageIntegration|
 |**Additional Snowflake copy options** |Additional copy options, provided as a dictionary of key-value pairs. Examples: ON_ERROR, FORCE, LOAD_UNCERTAIN_FILES. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table#copy-options-copyoptions).|• Name<br>• Value|No |additionalCopyOptions|
