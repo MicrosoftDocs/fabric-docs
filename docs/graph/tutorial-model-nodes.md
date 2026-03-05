@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Add node types to your graph"
-description: Learn how to add nodes to your graph model in Microsoft Fabric.
+description: Learn how to add node types to your graph model in Microsoft Fabric by mapping source tables and configuring node properties.
 ms.topic: tutorial
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam

@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Query the graph with the query builder"
-description: Learn how to query your graph using the visual query builder in Microsoft Fabric.
+description: Learn how to query your graph using the visual query builder in Microsoft Fabric, including selecting nodes, edges, and filters.
 ms.topic: tutorial
 ms.date: 03/03/2026
 ms.reviewer: wangwilliam

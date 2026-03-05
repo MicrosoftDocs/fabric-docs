@@ -1,7 +1,7 @@
 ---
 title: HowTo - Use Variables in Custom Workloads
 description: Learn how to use the Variables Library in your custom workload to manage environment-specific values in item definitions.
-author: gsaurer
+
 ms.author: billmath
 ms.topic: how-to
 ms.custom:

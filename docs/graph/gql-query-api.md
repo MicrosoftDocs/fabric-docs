@@ -1,6 +1,6 @@
 ---
-title: GQL Query HTTP API reference
-description: Refer to the complete HTTP API reference for querying graph data in Fabric Graph using GQL (Graph Query Language).
+title: GQL Query HTTP API Reference for Fabric Graph
+description: Refer to the complete HTTP API reference for querying graph data in Fabric Graph using GQL (Graph Query Language) via REST endpoints.
 ms.topic: reference
 ms.date: 03/02/2026
 ms.reviewer: splantikow
