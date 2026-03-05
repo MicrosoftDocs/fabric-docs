@@ -14,9 +14,9 @@ This article outlines the best practices and limitations when using operations a
 
 ## Best practices
 
-Give the operations agent clear, specific instructions and well-structured data to improve monitoring accuracy and produce actionable recommendations.
+Monitor real-time operational data from Eventhouse. Trigger alerts and actions when monitored values meet defined conditions.
 
-*** Operational Instructions ***
+### Operational instructions
 
 - **Eventhouse tables**: If Eventhouse tables contain nested columns such as JSON, flatten the tables before configuring the agent. Flat tables with descriptive column names improve the agent's ability to parse and evaluate data.
 - **Column descriptions**: If a column's purpose is unclear from its name, add a plain-language description using the description field in your KQL table schema. This helps the agent interpret data values correctly.
@@ -26,7 +26,7 @@ Give the operations agent clear, specific instructions and well-structured data 
 - **Rule separation**: If you define multiple rules, describe each rule on a separate line or bullet point. Don't combine conditions from different rules in the same sentence.
 - **Rule order**: If the agent needs to prioritize certain rules, list higher-priority rules first. LLMs might interpret information differently based on its position in the prompt.
 
-*** Semantic Instructions ***
+### Semantic instructions
 
 - Entity data for monitored objects such as stations, sensors, or personnel is sourced from flat tables in the Eventhouse and KQL database that the agent monitors.
 - A business entity is uniquely identified by a key column in its source table. For example, a bike station entity is identified by a “StationID” column, and a sensor entity is identified by a “SensorID” column. Specifying the identifying column and its table prevents the agent from confusing entities that have similar properties.
