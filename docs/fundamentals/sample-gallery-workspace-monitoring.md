@@ -1,6 +1,6 @@
 ---
-title: Visualize Your Workspace Monitoring in a Real-Time Dashboard or Power BI Report Using Sample Templates
-description: Learn how to load your monitoring data into Real-Time Dashboards and Power BI reports created in the sample end-to-end solution.
+title: Visualize Your Workspace Monitoring in a Real-Time Dashboard or Power BI Report
+description: Learn how to load your monitoring data into Real-Time Dashboards and Power BI reports.
 author: SnehaGunda
 ms.author: sngun
 ms.reviewer: guregini, v-hzargari
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 03/05/2026
 ---
 
-# Visualize your workspace monitoring in a Real-Time dashboard or Power BI report using Sample Templates
+# Visualize your workspace monitoring in a Real-Time dashboard or Power BI report
 
 Fabric workspace monitoring provides rich telemetry across your workspace assets, including Eventhouses, Power BI Semantic Models, Data Engineering (GraphQL), and Mirrored Databases. The workspace monitoring data is stored in an Eventhouse, which is part of Fabric Real-Time Intelligence. This telemetry includes diagnostic logs, ingestion results, query activity, and system metrics. The system collects and organizes all this data in a secure, read-only Eventhouse database.
 
@@ -22,6 +22,8 @@ To help you turn this data into actionable insights, this article guides you thr
 ## [Built-In Templates Solution](#tab/built-in-templates)
 
 The Real-Time dashboard Templates with built-in visualizations enable you to easily transform your data into actionable insights. Currently, two templates are available: one for Eventhouse items and another for Semantic Model items.
+
+:::image type="content" source="media/sample-gallery-workspace-monitoring/monitoring-template.png" alt-text="Screenshot of the Monitoring Eventhouse with the Fabric Monitoring template option.":::
 
 **Prerequisites:**
 
