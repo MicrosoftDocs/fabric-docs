@@ -29,7 +29,7 @@ To turn on the Scorecards setting:
 1. Make sure you are in Fabric tenant settings and use the Search feature to find the Scorecards settings.
 1. Toggle the **Users in the organization can create and use Scorecards** switch to **Enabled**.
 
-:::image type="content" source="media/service-admin-portal-goals-settings/scorecards-admin-setting.png" alt-text="Screenshot of how to get to the Scorecards settings." lightbox="media/service-admin-portal-goals-settings/scorecards-admin-setting.png":::
+   :::image type="content" source="media/service-admin-portal-goals-settings/scorecards-admin-setting.png" alt-text="Screenshot of how to get to the Scorecards settings." lightbox="media/service-admin-portal-goals-settings/scorecards-admin-setting.png":::
 
 1. Specify who can access scorecards in Power BI. 
 1. Select **Apply** to save your changes.
