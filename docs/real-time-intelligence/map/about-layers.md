@@ -47,12 +47,13 @@ Vector layers support styling, filtering, labeling, and interaction to highlight
 
 ### Imagery layers
 
-Imagery layers provide raster context for your map and are rendered beneath vector layers. These layers help users interpret spatial patterns by showing the physical or thematic environment where events occur.
-Fabric Maps support imagery layers from:
+Imagery layers provide raster context for your map and are rendered beneath vector layers. These layers help users interpret spatial patterns by showing the physical or thematic environment in which events occur.
 
-- Built‑in basemaps powered by Azure Maps
-- Custom imagery stored in OneLake, such as Cloud Optimized GeoTIFF (COG) files
-- External imagery sources, such as WMS and WMTS services
+Fabric Maps supports imagery layers from the following sources:
+
+- **Built‑in basemaps powered by Azure Maps**, including the **Satellite** and **Hybrid** map styles, which provide global imagery coverage.
+- **Custom imagery stored in OneLake**, such as Cloud Optimized GeoTIFF (COG) files.
+- **External imagery sources**, such as WMS and WMTS services.
 
 Imagery layers can be reordered, toggled, and blended with vector layers using opacity controls.
 

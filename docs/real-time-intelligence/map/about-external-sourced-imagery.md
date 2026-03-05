@@ -21,7 +21,7 @@ By connecting to a WMS or WMTS endpoint, you can visualize external imagery dire
 This feature also supports **Microsoft Planetary Computer (MPC) Pro** imagery through WMTS endpoints secured with Microsoft Entra ID authentication.
 
 > [!NOTE]
-> WMS and WMTS imagery sources are added as imagery layers. They behave like other imagery layers in Fabric Maps and can be combined with vector layers, basemaps, filters, and labels.
+> WMS and WMTS sources are added as imagery layers and can be combined with basemaps and vector layers.
 
 ## How WMS and WMTS imagery works in Fabric Maps
 
