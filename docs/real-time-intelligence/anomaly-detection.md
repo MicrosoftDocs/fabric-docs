@@ -4,7 +4,7 @@ description: Learn how to set up and configure anomaly detection for your real-t
 ms.reviewer: tessarhurr, v-hzargari
 ms.topic: how-to
 ms.subservice: rti-anomaly-detector
-ms.date: 02/26/2026
+ms.date: 03/05/2026
 ms.search.form: Anomaly Detection How To
 ---
 
@@ -23,14 +23,14 @@ Key capabilities include:
 
 ## Prerequisites
 
-- A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-- Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md)
-- An [Eventhouse](create-eventhouse.md) in your workspace with a KQL database
-- A Python plugin enabled on that same Eventhouse
+- A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+- Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md).
+- An [Eventhouse](create-eventhouse.md) in your workspace with a KQL database.
+- A Python plugin enabled on that same Eventhouse.
   - To enable the plugin, navigate to your Eventhouse.
   - In the upper toolbar, select **Plugins** and then enable the **Python language extension**.
   - Select the Python 3.11.7 DL plugin and select **Done**.
-  :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse.":::
+  :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse." lightbox="media/anomaly-detection/python.png":::
 
 > [!NOTE]
 > * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
@@ -40,57 +40,58 @@ Key capabilities include:
 
 ### Getting started
 
-You can start anomaly detection in three ways:
+You can start anomaly detection in **three** ways:
 
-1. From an **Eventhouse**:
+## [From an Eventhouse](#tab/eventhouse)
 
-    1. Select a database and the **table** or the **shortcut** you want to analyze.
+1. Select a database and the **table** or the **shortcut** you want to analyze.
 
-    1. In the upper toolbar, select **Create Anomaly Detector** or select the **Anomaly Detector** option from the ellipsis dropdown menu (...) in the database tree.
+1. In the upper toolbar, select **Create Anomaly Detector** or select the **Anomaly Detector** option from the ellipsis (⋯) in the database tree.
 
-1. From the **Real-Time hub**:
+:::image type="content" source="media/anomaly-detection/eventhouse-anomaly-detector.png" alt-text="Screenshot of the Anomaly Detector option in the Eventhouse database tree and in the upper toolbar." lightbox="media/anomaly-detection/eventhouse-anomaly-detector.png":::
 
-    1. Select **Real-Time hub** in the left navigation pane.
+## [From the Real-Time hub](#tab/real-time-hub)
 
-        :::image type="content" source="media/anomaly-detection/real-time-hub.png" alt-text="Screenshot of the Real-Time hub button in the left navigation pane.":::
+1. Select **Real-Time hub** in the left navigation pane.
 
-    1. Find the table you want to analyze for anomalies and do **either** of the following steps:
-       1. Select the ⋯ (three dots) to open the table's ribbon menu, and select **Anomaly detection**.
+    :::image type="content" source="media/anomaly-detection/real-time-hub.png" alt-text="Screenshot of the Real-Time hub button in the left navigation pane.":::
 
-          :::image type="content" source="media/anomaly-detection/detect-dropdown.png" alt-text="Screenshot of the Real-Time hub with a table selected for anomaly detection.":::
+1. Find the table you want to analyze for anomalies and do **either** of the following steps:
+    1. Select the ellipsis (⋯) to open the table's ribbon menu, and select **Anomaly detection**.
 
-       1. Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
+        :::image type="content" source="media/anomaly-detection/detect-dropdown.png" alt-text="Screenshot of the Real-Time hub with a table selected for anomaly detection.":::
 
-            :::image type="content" source="media/anomaly-detection/detect-details-page.png" alt-text="Screenshot of the detect anomalies option in the details page.":::
-    1. On the **Anomaly detection** page, for **Save to**, select the drop-down list, and then select **Create detector**. 
+    1. Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
 
-        :::image type="content" source="media/anomaly-detection/real-time-hub-create-detector.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::
-    1. On the **Create anomaly detector** page, select your Fabric **workspace**, enter a **name** for the anomaly detector, and then select **Create**. 
-    
-        :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
+        :::image type="content" source="media/anomaly-detection/detect-details-page.png" alt-text="Screenshot of the detect anomalies option in the details page.":::
+1. On the **Anomaly detection** page, for **Save to**, select the drop-down list, and then select **Create detector**. 
 
-        Now, continue to the [Configure input columns for analysis](#configure-input-columns-for-analysis) section, but skip configuring the **source** as the source is already selected in Real-Time hub. Start with configuring the **Value to watch** section.
-1. From the **Create** button:
+    :::image type="content" source="media/anomaly-detection/real-time-hub-create-detector.png" alt-text="Screenshot of the Anomaly Detector page in Real-Time hub.":::
+1. On the **Create anomaly detector** page, select your Fabric **workspace**, enter a **name** for the anomaly detector, and then select **Create**. 
 
-    1. In the Fabric home page, select the ellipses (...) icon and then the **Create** option.
+    :::image type="content" source="media/anomaly-detection/real-time-hub-create-anomaly-detector-dialog.png" alt-text="Screenshot of the Create Anomaly Detector page in Real-Time hub.":::     
 
-        :::image type="content" source="media/anomaly-detection/create-button.png" alt-text="Screenshot of the Create button in the left navigation pane.":::
+## [From the Create](#tab/create)
 
-    1. In the **Create** pane, select **Anomaly detection** under the **Real-Time Intelligence** section.
+1. In the Fabric home page, select the ellipsis (⋯) icon and then the **Create** option.
 
-        :::image type="content" source="media/anomaly-detection/create-anomaly-detection.png" alt-text="Screenshot of the Create pane with Anomaly detection selected.":::
+    :::image type="content" source="media/anomaly-detection/create-button.png" alt-text="Screenshot of the Create button in the left navigation pane.":::
 
-### Configure input columns for analysis
+1. In the **Create** pane, select **Anomaly detection** under the **Real-Time Intelligence** section.
 
-Specify which columns to analyze and how to group your data.
+    :::image type="content" source="media/anomaly-detection/create-anomaly-detection.png" alt-text="Screenshot of the Create pane with Anomaly detection selected.":::
 
-1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze. If you're creating the anomaly detector from **Real-Time hub** or an **Eventhouse table**, skip the selection of source, and continue to configuring the **Value to watch** section. 
+1. In the **Anomaly detection** configuration pane, select the **Data source** you want to analyze. 
 
     :::image type="content" source="media/anomaly-detection/add-source.png" alt-text="Screenshot of the Anomaly detection configuration pane with Data source option highlighted.":::
 
 1. In the **Select source** pane, choose the Eventhouse and table you want to analyze, and then select **Add**.
 
     :::image type="content" source="media/anomaly-detection/select-source.png" alt-text="Screenshot of the Select source pane with an Eventhouse and table selected.":::
+
+### Configure input columns for analysis
+
+Specify which columns to analyze and how to group your data.
 
 1. In the configuration pane, add the **Value to watch** column that contains the numeric data you want to monitor for anomalies.
 
