@@ -5,7 +5,7 @@ ms.reviewer: saravi
 ms.topic: how-to
 ms.custom:
   - fabcon-2025
-ms.date: 03/26/2025
+ms.date: 03/04/2026
 ---
 
 # Configure Resource Profile Configurations in Microsoft Fabric

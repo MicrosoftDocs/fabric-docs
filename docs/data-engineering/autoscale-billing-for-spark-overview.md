@@ -3,7 +3,7 @@ title: Autoscale Billing for Spark in Microsoft Fabric
 description: Learn about the Autoscale Billing model for Apache Spark in Microsoft Fabric and how it enables flexible, pay-as-you-go compute for Spark workloads.
 ms.reviewer: saravi
 ms.topic: concept-article
-ms.date: 03/26/2025
+ms.date: 03/04/2026
 ---
 
 # Autoscale Billing for Spark in Microsoft Fabric
