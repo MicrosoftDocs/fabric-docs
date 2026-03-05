@@ -14,7 +14,7 @@ This article outlines the best practices and limitations when using operations a
 
 ## Best practices
 
-Monitor real-time operational data from Eventhouse. Trigger alerts and actions when monitored values meet defined conditions.
+Operations Agent helps organizations operationalize clear business goals by continuously monitoring real-time data, evaluating explicit thresholds, and recommending actions when defined conditions are met—such as responding proactively when bike availability drops to a critical level.
 
 ### Operational instructions
 
