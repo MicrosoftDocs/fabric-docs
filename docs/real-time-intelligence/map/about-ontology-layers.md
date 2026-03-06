@@ -105,4 +105,4 @@ This is especially important for:
 To learn how to create and configure a map:
 
 > [!div class="nextstepaction"]
-> [What is ontology (preview)?](/../../iq/ontology/overview.md)
+> [What is ontology (preview)?](../../iq/ontology/overview.md)

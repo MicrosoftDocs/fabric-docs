@@ -24,12 +24,12 @@ Fabric Maps can connect directly to ontology items in your workspace and render 
 Before you begin, ensure that the following requirements are met:
 
 - You have access to a Microsoft Fabric workspace.
-- An [Ontology](/../../iq/ontology/overview.md) item exists in the workspace.
+- An [Ontology](../../iq/ontology/overview.md) item exists in the workspace.
 - The ontology includes at least one entity type with spatial properties, such as latitude and longitude, or a geometry property.
 - You have permission to create or edit Fabric Map items.
 
 > [!NOTE]
-> [Ontologies](/../../iq/ontology/overview.md) in Fabric define business concepts as entity types, properties, and relationships, and bind them to data stored in OneLake. Fabric Maps uses these bindings to visualize entity instances spatially.
+> [Ontologies](../../iq/ontology/overview.md) in Fabric define business concepts as entity types, properties, and relationships, and bind them to data stored in OneLake. Fabric Maps uses these bindings to visualize entity instances spatially.
 
 ## Connect a Fabric Map to an ontology
 
@@ -93,7 +93,7 @@ Fabric Maps is designed to add geographic context to business data, helping you 
 To learn more about Ontology:
 
 > [!div class="nextstepaction"]
-> [What is ontology (preview)?](/../../iq/ontology/overview.md)
+> [What is ontology (preview)?](../../iq/ontology/overview.md)
 
 <!--------------------------------------------------------
 > [!div class="nextstepaction"]
