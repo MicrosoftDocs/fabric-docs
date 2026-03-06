@@ -61,7 +61,7 @@ In Fabric Maps, PMTiles are stored as files in a **lakehouse** and consumed dire
 
 Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add data to the map – PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the *Create a map* article.
 
-### Data refresh and scheduling
+### Data refresh and scheduling (Preview)
 
 Fabric Maps supports scheduled data refresh for tilesets generated as PMTiles and stored in Lakehouse. Scheduling keeps map visualizations aligned with changes in the underlying data without requiring manual regeneration. A map item can have up to 20 associated schedules. The refresh schedule is defined during tileset creation.
 
