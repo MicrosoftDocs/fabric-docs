@@ -58,7 +58,6 @@ aifunc.default_conf.set_reasoning_effort("low")  # "minimal", "low", "medium", "
 aifunc.default_conf.set_verbosity("low")  # "low", "medium", "high"
 aifunc.default_conf.set_temperature(1)  # gpt-5 only accepts default value of temperature
 aifunc.default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
-
 ```
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the following code sample:
