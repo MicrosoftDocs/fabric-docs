@@ -49,7 +49,7 @@ This has two important implications:
 
 ### Query frequency
 
-By default, Activator queries the semantic model once per hour. You can change the query frequency in the data source settings for the rule.
+By default, Activator queries the semantic model once per hour. You can change the query frequency in the data source settings, as described in [Query frequency for query data sources](../activator-query-frequency.md).
 
 > [!TIP]
-> Choose a query frequency that matches how often the data in your semantic model changes. Querying more frequently than the semantic model refreshes provides no benefit and may increase load on the model.
+> Choose a query frequency that matches how often the data in your semantic model changes. Querying more frequently than the semantic model refreshes provides no benefit and might increase load on the model.

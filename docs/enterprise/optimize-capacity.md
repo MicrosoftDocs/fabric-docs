@@ -105,7 +105,7 @@ In Spark, one CU translates to two spark vCores of compute. For example, when a 
 
 All Spark operations are background operations, and they're [smoothed](../data-warehouse/compute-capacity-smoothing-throttling.md#smoothing) over a 24-hour period.
 
-For more information, see [Billing and utilization reporting in Fabric Spark](../data-engineering/billing-capacity-management-for-spark.md#fabric-capacity).
+For more information, see [Billing and utilization reporting in Fabric Spark](../data-engineering/billing-capacity-management-for-spark.md#how-spark-billing-works-on-fabric-capacity).
 
 Here are some points to consider to help minimize compute.
 

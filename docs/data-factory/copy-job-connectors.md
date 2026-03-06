@@ -33,6 +33,15 @@ For more information about each of these modes, see [the copy job overview](what
 
 [!INCLUDE [copy-job-source-destination-connectors](includes/copy-job-source-destination-connectors.md)]
 
+> [!NOTE]
+> The ODBC connector with native incremental copy capability only works for Microsoft SQL family data stores, including:
+> - Amazon RDS for SQL Server
+> - Azure SQL DB
+> - Azure SQL Managed Instance
+> - Azure Synapse Analytics
+> - Fabric Warehouse
+> - SQL Server On-premises
+
 ## CDC Replication (Preview)
 
 Change data capture (CDC) in Copy job enables automated replication of changed data (including inserted, updated, and deleted records) from a source to a destination. This table outlines the connectors that support CDC replication in Copy job, including their capabilities for reading and writing CDC data.
