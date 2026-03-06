@@ -57,7 +57,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the following code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
-    mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
+    notebookutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
     ```
 
 1. Use the following code example to copy tables and files to the newly created lakehouse.
@@ -72,18 +72,18 @@ Customers can recreate lakehouses by using a custom Scala script.
     val destination="abfs path to new Lakehouse file or table directory"
     val timestamp= //timestamp provided by Support
     
-    mssparkutils.fs.cp(source, destination, true)
+    notebookutils.fs.cp(source, destination, true)
     
-    val filesToDelete = mssparkutils.fs.ls(s"$source/_delta_log")
+    val filesToDelete = notebookutils.fs.ls(s"$source/_delta_log")
         .filter{sf => sf.isFile && sf.modifyTime > timestamp}
      
-    for(fileToDelte <- filesToDelete) {
-        val destFileToDelete = s"$destination/_delta_log/${fileToDelte.name}"
+    for(fileToDelete <- filesToDelete) {
+        val destFileToDelete = s"$destination/_delta_log/${fileToDelete.name}"
         println(s"Deleting file $destFileToDelete")
-        mssparkutils.fs.rm(destFileToDelete, false)
+        notebookutils.fs.rm(destFileToDelete, false)
     }
      
-    mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
+    notebookutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
 1. Once you run the script, the tables appear in the new lakehouse.
@@ -94,6 +94,20 @@ To recover only specific Lakehouse files or tables from the original lakehouse, 
 
 > [!NOTE]
 > The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (for example, CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
+
+### Recovering Fabric materialized lake views
+
+Materialized Lake Views from the original region remain unavailable to customers after failover. Refresh schedules, and execution history aren't replicated to the secondary region. To recover them, complete the following steps after you've recovered your Lakehouse data.
+
+-  Recover the Lakehouse tables by using Approach 1 or Approach 2 described above. **Copy only the source tables.**
+-  Recover the notebooks that contain your MLV definitions. Refer to the [Notebook](#notebook) section for recovery steps.
+-  Run the recovered notebooks to recreate the MLVs in the new Lakehouse. For information about creating MLVs, see [Create a Materialized Lake View](../data-engineering/materialized-lake-views/create-materialized-lake-view.md). If MLVs were also copied in the earlier step, run **CREATE OR REPLACE** while recreating them.
+-  Recreate the MLV refresh schedules manually in the new workspace. Schedule history and execution metrics aren't recoverable.
+-  If your MLVs feed semantic models or reports, verify and update the Lakehouse ID and dataset ID references as needed. Reconnect reports to the updated semantic model and validate data freshness.
+
+> [!TIP]
+> To minimize code changes when running notebooks post-failover, use the same workspace and Lakehouse names in the new region (especially when using the Workspace or Lakehouse name in the naming conventions).
+>  The refresh schedules, execution history, and operational metrics start fresh in the recovered region. Plan for a baseline period when establishing new monitoring thresholds.
 
 ### Notebook
 
@@ -398,6 +412,8 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
 ### Customer-managed keys for Fabric workspaces
 
 You can use customer-managed keys (CMK) stored in Azure Key Vault to add an additional layer of encryption on top of Microsoft-managed keys for data at rest. In the event that Fabric becomes inaccessible or inoperable in a region, its components will fail over to a backup instance. During failover, the CMK feature supports read-only operations. As long as the Azure Key Vault service remains healthy and permissions to the vault are intact, Fabric will continue to connect to your key and allow you to read data normally. This means the following operations aren't supported during failover: enabling and disabling the workspace CMK setting and updating the key. 
+
+
 
 ## Related information
 

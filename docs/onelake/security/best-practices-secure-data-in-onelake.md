@@ -20,7 +20,7 @@ Least privilege access is a fundamental security principle in computer science t
 
 - Use [OneLake security](./get-started-onelake-security.md) to restrict access to folders and tables within a lakehouse. For sensitive data, OneLake security [row](./row-level-security.md) or [column](./column-level-security.md) level security ensures that protected row and columns remain hidden.
 
-- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilized through the various methods of writing data in OneLake such as pipelines, notebooks, etc.
+- To write data to OneLake, there are two permission options: workspace roles or [OneLake security ReadWrite permission.](./data-access-control-model.md#readwrite-permission) Users with Admin, Member, or Contributor workspace roles can write data to OneLake. For Viewers or users with only Read permissions on the item, you can grant granular OneLake security ReadWrite permission to specific folders and tables. These permissions can be utilized through Spark notebooks, OneLake File Explorer, and OneLake APIs. Write operations through the Lakehouse UX for viewers aren't supported at this time.
 
 - If users need to manage access to data, such as sharing an item or configuring OneLake security roles, then Admin or Member workspace roles are required.
 

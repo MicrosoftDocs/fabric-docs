@@ -27,7 +27,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 | Parameter | Description | Default |
 |---|---|---|
 | `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` |
-| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Azure AI Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Azure AI Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
+| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
 | `embedding_deployment_name` | A string value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
 | `reasoning_effort` | Part of OpenAIDefaults. Used by gpt-5 series models for number of reasoning tokens they should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None |
 | `subscription_key` | An API key used for authentication with your large language model (LLM) resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
@@ -131,7 +131,7 @@ Set the `embedding_deployment_name` to one of the [models supported by Fabric](.
 ### Configure a custom model endpoint
 
 By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
-You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Microsoft AI Foundry (formerly Azure OpenAI) resource's model deployments:
+You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Foundry or Azure OpenAI resource's model deployments:
 
 ```python
 from synapse.ml.services.openai import OpenAIDefaults
@@ -141,19 +141,19 @@ default_conf.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
 default_conf.set_subscription_key("<API_KEY>")
 ```
 
-The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Microsoft AI Foundry resource to use models beyond OpenAI:
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
 
 > [!IMPORTANT]
-> - Support for Microsoft AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+> - Support for Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
-> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using an AI Foundry resource
+> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
 
 ```python
 import synapse.ml.spark.aifunc.DataFrameExtensions
 from synapse.ml.services.openai import OpenAIDefaults
 
 default_conf = OpenAIDefaults()
-default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your AI Foundry Endpoint
+default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your Foundry Endpoint
 default_conf.set_subscription_key("<API_KEY>")
 default_conf.set_deployment_name("grok-4-fast-non-reasoning")
 ```

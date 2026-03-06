@@ -39,7 +39,7 @@ What to do when the Explore mode view appears empty after mapping data to entity
 
     :::image type="content" source="media/resources-troubleshooting/sql-endpoint.png" alt-text="Screenshot of selecting the SQL endpoint from the Fabric workspace.":::
 
-* If there's no SQL endpoint associated with your lakehouse, the lakehouse might have failed to provision correctly. Open the lakehouse and follow the error message prompts to recreate the SQL endpoint. For more information, see [What is the SQL analytics endpoint for a lakehouse? - SQL analytics endpoint reprovisioning](../../data-engineering/lakehouse-sql-analytics-endpoint.md#sql-analytics-endpoint-reprovisioning).
+* If there's no SQL endpoint associated with your lakehouse, the lakehouse might have failed to provision correctly. Open the lakehouse and follow the error message prompts to recreate the SQL endpoint. For more information, see [What is the SQL analytics endpoint for a lakehouse? - SQL analytics endpoint reprovisioning](../../data-engineering/lakehouse-sql-analytics-endpoint.md#reprovisioning).
 
 ### Entity instances missing time series data
 

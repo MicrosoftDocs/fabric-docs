@@ -61,7 +61,7 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
 
-1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI powered transforms are available for .txt files. For more information, see [AI-powered transforms](./shortcuts-ai-transformations/ai-transformations.md).
+1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI-powered shortcut transformations are available for .txt files. For more information, see [Transform unstructured text files into Delta tables by using AI-powered tools](./shortcuts-ai-transformations/ai-transformations.md).
 
 1. On the review page, verify your selections. Here you can see each shortcut to be created. In the **Actions** column, you can select the pencil icon to edit the shortcut name. You can select the trash can icon to delete the shortcut.
 
@@ -193,7 +193,7 @@ The following limitations apply to SharePoint shortcuts:
 
 * OneLake doesn't support shortcuts to personal **or OnPremise** SharePoint sites. Shortcuts can only connect to enterprise SharePoint sites **and OneDrive for Business.**
 
-* Based on Azure ACL [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs), Service Principal authentication will not work for SharePoint tenants created after Nov 1st, 2024.
+* Based on Azure ACS [retirement](/sharepoint/dev/solution-guidance/security-apponly-azureacs), Service Principal authentication will not work for SharePoint tenants created after Nov 1st, 2024.
 
 * SharePoint and OneDrive Shortcuts are supported only at folder level and not at file level.
 

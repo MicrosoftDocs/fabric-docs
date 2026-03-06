@@ -1,8 +1,8 @@
 ---
 title: "Create a SQL database with the REST API"
 description: Learn how to deploy a new SQL database in Microsoft Fabric with the REST API.
-ms.reviewer: dlevy
-ms.date: 07/02/2025
+ms.reviewer: dlevy, imotiwala
+ms.date: 02/19/2026
 ms.topic: how-to
 ms.search.form: Develop and run queries in SQL editor
 ---
@@ -103,7 +103,7 @@ try {
 
     $databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
 
-    #4. Connnect to the database and create a table
+    #4. Connect to the database and create a table
 
     Write-Host 'Attempting to connect to the database.'
 
@@ -201,7 +201,7 @@ Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/wor
 
 $databaseProperties = (Invoke-RestMethod -Headers $headers -Uri https://api.fabric.microsoft.com/v1/workspaces/$($workspaceid)/SqlDatabases/$($databaseid) | select -ExpandProperty Properties)
 
-#4. Connnect to the database and create a table
+#4. Connect to the database and create a table
 
 Write-Host 'Attempting to connect to the database.'
 
@@ -232,6 +232,28 @@ Write-Output 'Cleaned up: '$databaseProperties.DatabaseName
 ```
 
 ---
+
+## Database collation
+
+By default, the database is created with the case-insensitive collation `SQL_Latin1_General_CP1_CI_AS`. 
+
+Database collation can't be modified after creation, though collations on individual columns are supported.
+
+When you create a SQL database with the REST API, you can specify the collation in PowerShell. Add a property named `creationPayload` in the `$body` hashtable. The `collation` property contains the collation name, for example:
+
+```powershell
+$collation = 'Latin1_General_100_BIN2_UTF8' # Desired collation name
+
+$body = @{
+    displayName = $matches[0] + (Get-Date -Format "MMddyyyy")
+    type = "SQLDatabase"
+    description = "Created using public api"
+    creationPayload = @{
+        collation = $collation
+        creationMode = "new"
+    }
+}
+```
 
 ## Related content
 

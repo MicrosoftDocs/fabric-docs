@@ -17,7 +17,7 @@ The MongoDB CDC Connector for Eventstream allows you to stream Change Data Captu
 ## Prerequisites
 
 - A workspace in Fabric capacity or Trial license mode, with **Contributor** or higher permissions.  
-- A MongoDB cluster that is accessible from your client IP address.  
+- A MongoDB cluster that is publicly accessible from your client IP address. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - Change Data Capture (CDC) enabled for the collections you want to capture.  
 - An eventstream in Fabric. If you don’t have one, [create an eventstream](create-manage-an-eventstream.md).  
 

@@ -57,12 +57,12 @@ items:
       href: assign-variables-to-shortcuts.md
     - name: Use shortcuts REST API
       href: /rest/api/fabric/core/onelake-shortcuts?toc=/fabric/onelake/toc.json&bc=/fabric/onelake/toc.json
-  - name: Transform data with shortcuts
+  - name: Shortcut transformations
     items: 
-    - name: Shortcuts file transformations
+    - name: Transform structured data
       href: ./shortcuts-file-transformations/transformations.md
-    - name: Shortcuts AI transformations
-      href: ./Shortcuts-ai-transformations/ai-transformations.md
+    - name: Transform unstructured data with AI
+      href: ./shortcuts-ai-transformations/ai-transformations.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?
