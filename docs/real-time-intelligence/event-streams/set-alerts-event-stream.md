@@ -26,6 +26,8 @@ This article shows you how to set up alerts on an eventstream. When you set an a
 
    :::image type="content" source="./media/set-alerts-event-stream/set-alert-ribbon.png" alt-text="Screenshot of the Set alert button on the ribbon." lightbox="./media/set-alerts-event-stream/set-alert-ribbon.png" border="true":::
 
+## Add an alert rule
+
 1. In the **Add rule** pane, for **Rule name**, enter a name for the alert rule.
 
    :::image type="content" source="./media/set-alerts-event-stream/rule-name-input-field.png" alt-text="Screenshot of the Rule name field in the Add rule pane." lightbox="./media/set-alerts-event-stream/rule-name-input-field.png" border="true":::
@@ -72,13 +74,15 @@ This article shows you how to set up alerts on an eventstream. When you set an a
 
    :::image type="content" source="media/set-alerts-event-stream/alert-created.png" alt-text="Screenshot of the Alert created pane." lightbox="media/set-alerts-event-stream/alert-created.png" border="true":::
 
-1. Now, you should see the Activator destination added to the eventstream with the alert rule you created.
+## Activation destination
 
-   :::image type="content" source="./media/set-alerts-event-stream/activator-destination.png" alt-text="Screenshot of the eventstream with an Activator destination added." lightbox="./media/set-alerts-event-stream/activator-destination.png" border="true":::
+You should see the Activator destination added to the eventstream with the alert rule you created.
 
-    Here's an example of an alert you receive when the condition of the rule is met:
+:::image type="content" source="./media/set-alerts-event-stream/activator-destination.png" alt-text="Screenshot of the eventstream with an Activator destination added." lightbox="./media/set-alerts-event-stream/activator-destination.png" border="true":::
 
-    :::image type="content" source="./media/set-alerts-event-stream/alert-teams-message.png" alt-text="Screenshot of the alert message received in Teams." lightbox="./media/set-alerts-event-stream/alert-teams-message.png" border="true":::
+Here's an example of an alert you receive when the condition of the rule is met:
+
+:::image type="content" source="./media/set-alerts-event-stream/alert-teams-message.png" alt-text="Screenshot of the alert message received in Teams." lightbox="./media/set-alerts-event-stream/alert-teams-message.png" border="true":::
 
 ## Manage rules
 
