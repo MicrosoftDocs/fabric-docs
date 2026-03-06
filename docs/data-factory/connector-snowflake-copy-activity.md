@@ -40,7 +40,7 @@ The following properties are **required**:
     - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs.
       - **Role**: The default security role used for the session after connecting. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
     
-      :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+        :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
@@ -56,7 +56,6 @@ Under **Advanced**, you can specify the following fields:
   :::image type="content" source="./media/connector-snowflake/copy-options-source.png" alt-text="Screenshot showing additional snowflake copy options for source.":::
 
 - **Additional Snowflake format options**: Specify additional Snowflake format options, which will be used in Snowflake COPY statement to load data. Additional file format options provided to the COPY command are provided as a dictionary of key-value pairs. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Snowflake Format Type Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location#format-type-options-formattypeoptions).
-  - **Role**:
 
   :::image type="content" source="./media/connector-snowflake/format-options-source.png" alt-text="Screenshot showing additional snowflake format options for source.":::
 
