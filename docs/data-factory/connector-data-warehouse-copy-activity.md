@@ -81,7 +81,7 @@ The following properties are **required**:
 - **Write behavior**: Specify how to write data to the destination.
 
   - **Insert**: Append all data into destination table.
-  - **Upsert**: Update the destination table’s values when Key columns match, and insert a new row when no row matches in the destination.
+  - **Upsert**: Update the destination table’s values when key columns match, and insert a new row when no row matches in the destination.
     - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Warehouse Table. Key columns must have unique values in the source data. All the key columns should exist in both destination table and source data (or be provided through column mapping).
 
       :::image type="content" source="./media/connector-data-warehouse/write-behavior-upsert.png" alt-text="Screenshot of the upsert write behavior.":::
