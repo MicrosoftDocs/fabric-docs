@@ -1,6 +1,6 @@
 ---
 title: Create a map layer from ontology entities in Fabric Maps
-description: Learn how to filter data in Fabric Maps.
+description: Learn how to create a map layer from ontology entities in Fabric Maps.
 ms.reviewer: smunk
 author: deniseatmicrosoft
 ms.author: limingchen
