@@ -105,12 +105,4 @@ This is especially important for:
 To learn how to create and configure a map:
 
 > [!div class="nextstepaction"]
-> [What is ontology (preview)?](/../iq/ontology/overview)
-
-<!--------------------------------------------------------
-> [!div class="nextstepaction"]
-> [Fabric Maps layers](about-layers.md)
-
-Explore additional ways to add and style layers in Fabric Maps.
-Combine ontology-based layers with real-time or historical data to build richer geospatial analyses.
--------------------------------------------------------->
+> [What is ontology (preview)?](/../../iq/ontology/overview.md)
