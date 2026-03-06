@@ -76,6 +76,10 @@ This article shows you how to set up alerts on an eventstream. When you set an a
 
    :::image type="content" source="./media/set-alerts-event-stream/activator-destination.png" alt-text="Screenshot of the eventstream with an Activator destination added." lightbox="./media/set-alerts-event-stream/activator-destination.png" border="true":::
 
+    Here's an example of an alert you receive when the condition of the rule is met:
+
+    :::image type="content" source="./media/set-alerts-event-stream/alert-teams-message.png" alt-text="Screenshot of the alert message received in Teams." lightbox="./media/set-alerts-event-stream/alert-teams-message.png" border="true":::
+
 ## Manage rules
 
 Select the **alert** icon on the Activator destination in the eventstream. You see the **Rules** pane where you perform the following actions:
