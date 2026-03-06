@@ -55,7 +55,7 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Fabric Maps cloud 
     - **Authentication method**: Anonymous, Basic authentication, or API key.
     - **Privacy level**: None, Private, Organizational, Public.
 
-    :::image type="content" source="media/layers/fabric-maps-connection-settings.png" alt-text="New connection dialog in Microsoft Fabric Maps showing fields for configuring a Fabric Maps cloud connection. The form includes dropdowns and input fields for connection type set to Fabric Maps, base URL, protocol, API key name, authentication method, and privacy level set to Organizational. There are checkboxes for allowing code-first artifacts and gateway utilization.":::
+    :::image type="content" source="media/layers/fabric-maps-connection-settings.png" alt-text="A screenshot that shows the New connection dialog in Microsoft Fabric Maps showing fields for configuring a Fabric Maps cloud connection. The form includes dropdowns and input fields for connection type set to Fabric Maps, base URL, protocol, API key name, authentication method, and privacy level set to Organizational. There are checkboxes for allowing code-first artifacts and gateway utilization.":::
 
 1. Select **Create**.
 
@@ -134,10 +134,6 @@ To connect to MPC Pro, you must construct a WMTS endpoint URL from a geocatalog 
 1. Retrieve the **Search ID** and **render configuration** parameters.
 1. To ensure correct WMTS rendering in MPC Pro, the bounding box (bbox) and associated metadata must be registered through the [registration API](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register?view=rest-planetarycomputer-data-plane-2025-04-30-preview&tabs=HTTP).
 1. Use these values to construct the WMTS capabilities URL.
-
-<!---------------------------------------------------------------
-More details needed for constructing the WMTS capabilities URL 
------------------------------------------------------------------>
 
 Access to the MPC Pro geocatalog is required to retrieve this information.
 

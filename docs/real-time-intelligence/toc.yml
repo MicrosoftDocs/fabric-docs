@@ -964,7 +964,7 @@ items:
         - name: Layers
           items:
             - name: Add a WMS or WMTS imagery layer to a map
-              href: map/about-external-sourced-imagery.md
+              href: map/add-external-sourced-imagery-layer.md
             - name: Filter data
               href: map/filter-data.md
         - name: Customize a map
