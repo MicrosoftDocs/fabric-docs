@@ -52,4 +52,4 @@ ms.date: 03/06/2026
  
 1. On the **Alert created** pane, you see the details of the alert you created. Select **Done** to close the pane. Alternatively, you can select **Open** to view the Activator item in the Fabric Activator user interface (UI).
 
-   :::image type="content" source="../media/set-alerts-event-stream/alert-created.png" alt-text="Screenshot of the Alert created pane." lightbox="media/set-alerts-event-stream/alert-created.png" border="true":::
+   :::image type="content" source="../media/set-alerts-event-stream/alert-created.png" alt-text="Screenshot of the Alert created pane." lightbox="../media/set-alerts-event-stream/alert-created.png" border="true":::
