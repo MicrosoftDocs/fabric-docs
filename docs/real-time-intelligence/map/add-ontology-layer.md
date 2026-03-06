@@ -17,20 +17,19 @@ This article shows how to create a new map layer in Fabric Maps by connecting to
 
 Fabric Maps can connect directly to ontology items in your workspace and render entity instances as spatial features on a map. This allows you to visualize real-world business concepts—such as facilities, assets, vehicles, or service locations—in their geographic context and analyze them alongside other map layers.
 
-> [!IMPORTANT]
-> Ontology layers in Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
 Before you begin, ensure that the following requirements are met:
 
 - You have access to a Microsoft Fabric workspace.
-- An [Ontology](/../../iq/ontology/overview) item exists in the workspace.
+- An [Ontology](/../iq/ontology/overview) item exists in the workspace.
 - The ontology includes at least one entity type with spatial properties, such as latitude and longitude, or a geometry property.
 - You have permission to create or edit Fabric Map items.
 
 > [!NOTE]
-> [Ontologies](/../../iq/ontology/overview) in Fabric define business concepts as entity types, properties, and relationships, and bind them to data stored in OneLake. Fabric Maps uses these bindings to visualize entity instances spatially.
+> [Ontologies](/../iq/ontology/overview) in Fabric define business concepts as entity types, properties, and relationships, and bind them to data stored in OneLake. Fabric Maps uses these bindings to visualize entity instances spatially.
 
 ## Connect a Fabric Map to an ontology
 
@@ -94,7 +93,7 @@ Fabric Maps is designed to add geographic context to business data, helping you 
 To learn more about Ontology:
 
 > [!div class="nextstepaction"]
-> [What is ontology (preview)?](/../../iq/ontology/overview)
+> [What is ontology (preview)?](/../iq/ontology/overview)
 
 <!--------------------------------------------------------
 > [!div class="nextstepaction"]

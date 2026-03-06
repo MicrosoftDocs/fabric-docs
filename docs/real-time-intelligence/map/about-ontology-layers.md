@@ -15,8 +15,7 @@ ms.search.form: ontology, ontology entities, ontology layers
 
 Fabric Maps uses ontology to add semantic meaning to map layers, so maps visualize governed business entities and relationships—not just raw spatial data.
 
-> [!IMPORTANT]
-> Ontology layers in Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality can change.
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## How ontology applies to Fabric Maps
 
@@ -106,7 +105,7 @@ This is especially important for:
 To learn how to create and configure a map:
 
 > [!div class="nextstepaction"]
-> [What is ontology (preview)?](/../../iq/ontology/overview)
+> [What is ontology (preview)?](/../iq/ontology/overview)
 
 <!--------------------------------------------------------
 > [!div class="nextstepaction"]
