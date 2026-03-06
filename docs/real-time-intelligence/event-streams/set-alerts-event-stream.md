@@ -111,7 +111,7 @@ In the **Rules** pane, select the **ellipsis (...)** on the Activator destinatio
 
 :::image type="content" source="./media/set-alerts-event-stream/open-activator.png" alt-text="Screenshot of the context menu for a rule in the Rules pane with Open in Activator highlighted." lightbox="./media/set-alerts-event-stream/open-activator.png" border="true":::
 
-## Add another alert rule 
+### Add another alert rule 
 
 To add more rules to the Activator item, select **Add rule** at the bottom of the **Rules** pane. 
 
