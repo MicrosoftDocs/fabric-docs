@@ -110,7 +110,7 @@ Users can connect to semantic models in a personal workspace (My Workspace) by u
 
 XMLA-based clients can connect to a personal workspace with the following requirements:
 
-- Analysis Services Client Libraries version 17.0.40.18 or higher.
+- Analysis Services Client Libraries version MSOLAP 17.0.40.18 or higher, ADOMD 19.104.2.0 or higher.
 - Connection string in v2 format, referencing the owner of the target personal workspace by UPN or object ID:
   - `powerbi://api.powerbi.com/v2.0/[tenantId]/home/myworkspace/[URI_encoded_UPN]`
   - `powerbi://api.powerbi.com/v2.0/[tenantId]/home/myworkspace/[UserObjectId]`
