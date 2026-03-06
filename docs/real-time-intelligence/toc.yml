@@ -949,6 +949,8 @@ items:
                 href: map/about-layers.md
               - name: Create layers using WMS and WMTS imagery sources
                 href: map/about-external-sourced-imagery.md
+              - name: Ontology layers in Fabric Maps
+                href: map/about-ontology-layers.md
               - name: Data filtering
                 href: map/about-data-filtering.md
           - name: Tilesets in Fabric Maps
@@ -965,6 +967,8 @@ items:
           items:
             - name: Add a WMS or WMTS imagery layer to a map
               href: map/add-external-sourced-imagery-layer.md
+            - name: Add an ontology layer to a map
+              href: map/add-ontology-layer.md
             - name: Filter data
               href: map/filter-data.md
         - name: Customize a map
