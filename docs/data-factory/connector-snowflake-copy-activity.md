@@ -47,7 +47,7 @@ The following properties are **required**:
     - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
     - **Query**: Specify the SQL query to read data from Snowflake. If the names of the schema, table and columns contain lower case, quote the object identifier in query e.g. `select * from "schema"."myTable"`.
 
-- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
+- **Version**: Specify the version. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -118,7 +118,7 @@ The following properties are **required**:
 
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually. If the destination table doesn't exist, it is automatically created based on the source data. For more details about the mapping for auto-created tables, go to [Edit destination data types](#edit-destination-data-types) and [Default data type mapping for Snowflake auto-created table](#default-data-type-mapping-for-snowflake-auto-created-table).
 
-- **Version**: The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
+- **Version**: Specify the version. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
 
 - **Write behavior**: Describes how to write data to Snowflake. It is only available in version 1.1 or above. Allowed values are **Insert** (default) and **Upsert**. 
     - **Insert**: Choose this option if your source data has inserts.
@@ -277,7 +277,7 @@ The following tables contain more information about the copy activity in Snowfla
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
 |**Database** |Your database that you use as source.|< your database > |Yes|typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - database|
-|**Use query** |The way to read data from Snowflake.|/ |No |/ |
+|**Use query** |The way to read data from Snowflake.|/ |Yes |/ |
 |**Table** | The name of the table to read data. |< name of your source table>|Yes |typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table|
 |**Query**| The SQL query to read data from Snowflake. |< name of your source query>|Yes|query|
 |**Version** |The version that you specify. Recommend upgrading to the latest version to take advantage of the newest enhancements.| • 1.1<br>• 1.0 |No |version|
