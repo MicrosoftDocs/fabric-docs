@@ -31,7 +31,7 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 |Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/list-libraries)|[List published libraries](/rest/api/fabric/environment/published/list-libraries)|
 |Published|List published Spark compute|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/get-spark-compute)|[List published libraries](/rest/api/fabric/environment/published/get-spark-compute)|
 
-The `beta` parameter defaults to `True` until **March 31, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
+The `beta` parameter defaults to `True` until **April 30, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
 
 Using `List staging libraries` API as an example, which has an update in the API response.
 
@@ -97,12 +97,12 @@ Using `List staging libraries` API as an example, which has an update in the API
 
 > [!IMPORTANT]
 >
-> - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
+> - The to-be-deprecated APIs will continue to be supported until **April 30, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
 
 |Category|API|Description|Note|
 |---------|---------|---------|---------|
-|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library)|Add one custom library or one/multiple public library in the environment.|Support until **March 31, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
-|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library)|Delete one staging custom library or all public libraries.|Support until **March 31, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
+|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library)|Add one custom library or one/multiple public library in the environment.|Support until **April 30, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
+|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library)|Delete one staging custom library or all public libraries.|Support until **April 30, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
 
 Below are a few examples covering the scenarios when managing staging libraries.
 
