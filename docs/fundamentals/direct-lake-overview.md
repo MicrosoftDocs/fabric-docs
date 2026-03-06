@@ -62,10 +62,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 **Direct Lake table storage mode** have two options:
 
 * **Direct Lake on OneLake** can use data from one or more Fabric data source with delta tables. Direct Lake on OneLake doesn't fall back to DirectQuery mode via the SQL analytics endpoint of the data source. Semantic models with Direct Lake on OneLake tables can also have import tables added from other data sources.
- 
- > [!NOTE]
- > Direct Lake on OneLake is currently in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with this table storage mode. Already created semantic models aren't impacted by this tenant setting.
-    
+
 * **Direct Lake on SQL** can use the data from a single Fabric data source with delta tables. The SQL analytics endpoint is used for delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can't load the data directly from a delta table, such as when the data source is a SQL view or when the Warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fall back behavior.
 
 
@@ -100,18 +97,7 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 
 For details on how Direct Lake works, including column loading (transcoding), framing, automatic updates, and DirectQuery fallback, see [How Direct Lake works](direct-lake-how-it-works.md).
 
-## Data security and access permissions
-
-Direct Lake enforces a layered security model that depends on Fabric item permissions, source-level permissions, and authentication configuration. By default, Direct Lake uses single sign-on (SSO), which means that the identity querying the semantic model must be authorized to access the data. Alternatively, you can bind a Direct Lake model to a sharable cloud connection (SCC) to provide a fixed identity.
-
-Operational guidance:
-
-- Use SSO for interactive scenarios where per-user authorization is required.
-- Use fixed-identity SCC for embedded or read-only consumer scenarios where source-level access is scoped to a single service account.
-- Apply least-privilege principles at both the source and workspace levels.
-- Test and validate behavior for both authentication modes before production deployment.
-
-For detailed information about permissions, OLS/RLS, and data-access rule options, see [Integrate Direct Lake security](direct-lake-security-integration.md).
+For details on permissions, authentication, OLS/RLS, and data-access rule options, see [Integrate Direct Lake security](direct-lake-security-integration.md).
 
 ## Fabric capacity requirements
 

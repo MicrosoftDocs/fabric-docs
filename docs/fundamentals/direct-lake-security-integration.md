@@ -40,6 +40,9 @@ When you use an explicit data connection with a fixed identity instead of SSO, D
 > [!NOTE]
 > You can configure a data connection to use both SSO and a fixed identity. Direct Lake checks the current user's permissions at query time and uses the fixed identity for framing and transcoding at refresh time. To use a fixed identity for both queries and refreshes, make sure SSO is disabled in the data connection configuration.
 
+> [!TIP]
+> Use SSO for interactive scenarios where per-user authorization is required. Use a fixed-identity cloud connection for embedded or read-only consumer scenarios where source-level access is scoped to a single service account. Apply least-privilege principles at both the source and workspace levels, and test and validate behavior for both authentication modes before production deployment.
+
 ## Authentication requirements
 
 Direct Lake models use Microsoft Entra ID authentication. In the data connection configuration, choose **OAuth 2.0**, **Service Principal**, or **Workspace Identity** as the authentication method. Other methods, like key or SAS authentication, might appear in the configuration UI but aren't supported for Direct Lake models.
@@ -129,11 +132,11 @@ A Direct Lake model might exist in the same workspace as the source artifact or 
 
 Git integration enables developers to integrate their application lifecycle management (ALM) processes into the Fabric platform. The Git repository preserves the workspace structure, including all supported artifacts. Developers have full visibility to the metadata of all their items in the Git repository. Direct Lake model metadata lets them see that secured tables or columns exist even if they don't have access to the target data source in another workspace. For more information, see [What is Microsoft Fabric Git integration?](../cicd/git-integration/intro-to-git-integration.md)
 
-## How queries are evaluated
+## How queries are evaluated in Direct Lake on SQL
 
 The [reason to develop Direct Lake semantic models](../fundamentals/direct-lake-overview.md#when-should-you-use-direct-lake-storage-mode) is to achieve high performance queries over large volumes of data in OneLake. Therefore, you should strive to design a solution that maximizes the chances of in-memory querying.
 
-The following steps approximate how queries are evaluated (and whether they fail). The benefits of Direct Lake storage mode are only possible when the fifth step is achieved.
+The following steps approximate how Direct Lake on SQL queries are evaluated (and whether they fail). The benefits of Direct Lake storage mode are only possible when the fifth step is achieved.
 
 1. If the query contains any table or column that's restricted by semantic model OLS, an error result is returned (report visuals fail to render).
 1. If the query contains any column that's restricted by SQL analytics endpoint CLS (or the table is denied), an error result is returned (report visuals fail to render).
@@ -176,7 +179,7 @@ The following table compares data-access setup options for Direct Lake on SQL en
 | Apply data-access rules to | Direct Lake on SQL | Direct Lake on OneLake | Comment |
 | --- | --- | --- | --- |
 | Semantic model only | Supported | Supported | Use this option when users aren't granted item permissions to query the lakehouse or warehouse. Set up the cloud connection to use a fixed identity. High query performance can be achieved from the in-memory cache. |
-| SQL analytics endpoint only | Supported (falls back to DirectQuery) | Not applicable | Use this option when users need to access data from either the warehouse or the semantic model, and with consistent data-access rules. Ensure SSO is enabled for the cloud connection. Query performance might be slow due to DirectQuery fallback. |
+| SQL analytics endpoint only | Supported (falls back to DirectQuery) | Not applicable | Depends on the Fabric data item (like Lakehouse or Warehouse) using [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint). Use this option when users need to access data from either the warehouse or the semantic model, and with consistent data-access rules. Ensure SSO is enabled for the cloud connection. Query performance might be slow due to DirectQuery fallback. |
 | OneLake Security only | Not applicable | Supported | Use this option for unified access control across all Fabric compute engines. OneLake Security enforces OLS and RLS consistently for all users accessing the data through any path. High query performance can be achieved from the in-memory cache. |
 | Multiple layers (semantic model and SQL endpoint) | Supported | Not applicable | This option involves extra management overhead. Set up the cloud connection to use a fixed identity. |
 | Multiple layers (semantic model and OneLake Security) | Not applicable | Supported | OneLake Security rules are applied first, then semantic model rules. Consider consolidating rules at one layer to reduce complexity. |
@@ -192,8 +195,7 @@ Consider these Direct Lake security limitations.
 - Use a fixed identity to isolate users from a source Fabric artifact. Bind the Direct Lake model to a cloud connection. Keep SSO disabled on the cloud connection to use the fixed identity for refreshes and queries.
 - Direct Lake semantic models that rely on Fabric OneLake security on the source artifact don't support backup operations.
 - Bidirectional relationships aren't supported in a Direct Lake model if the source Fabric artifact relies on OneLake security RLS.
-- During public preview, OneLake security supports only static RLS on a single table.
-- During public preview, OneLake security doesn't support dynamic definitions or complex role configurations, such as combining multiple OLS and RLS roles across related tables.
+- OneLake security doesn't support dynamic definitions or complex role configurations, such as combining multiple OLS and RLS roles across related tables.
 - Consolidate OneLake security RLS and OLS permissions into one role per user instead of assigning multiple roles.
 - If the OneLake security configuration changes, such as due to shortcut changes in the target artifact, refresh Direct Lake on OneLake models that access that artifact. If autosync is enabled, the service usually refreshes them automatically. Otherwise, refresh the models manually.
 - If a Lakehouse has OneLake security:
