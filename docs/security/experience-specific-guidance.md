@@ -323,8 +323,7 @@ If you want to recover a Graph Model or Graph Queryset item when a disaster happ
 During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Graph Model and Graph Queryset items in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step restores the Graph Model and Graph Queryset items in the new workspace.
 
 > [!NOTE]
-
-> If the original Graph Model item has a Lakehouse configured for data loading, refer to the [Lakehouse section](#lakehouse) to recover it first. After the Lakehouse is recovered, connect the newly recovered Lakehouse to the newly recovered Graph Model item.
+> If the original Graph Model item has a lakehouse configured for data loading, refer to the [Lakehouse section](#lakehouse) to recover it first. After the lakehouse is recovered, connect the newly recovered lakehouse to the newly recovered Graph Model item.
 
 ### KQL Database/Queryset
 
