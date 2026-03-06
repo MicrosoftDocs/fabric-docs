@@ -52,32 +52,31 @@ display(results)
 The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
 
 ```python
-from synapse.ml.services.openai import OpenAIDefaults
-default_conf = OpenAIDefaults()
+aifunc.default_conf.set_deployment_name("gpt-5")
+aifunc.default_conf.set_api_type("chat_completions")  # To get around a bug when using gpt-5 with default "responses" api
+aifunc.default_conf.set_reasoning_effort("low")  # "minimal", "low", "medium", "high"
+aifunc.default_conf.set_verbosity("low")  # "low", "medium", "high"
+aifunc.default_conf.set_temperature(1)  # gpt-5 only accepts default value of temperature
+aifunc.default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
 
-default_conf.set_deployment_name("gpt-5")
-default_conf.set_temperature(1)  # gpt-5 only accepts default value of temperature
-default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
-default_conf.set_verbosity("low")
-default_conf.set_reasoning_effort("low")
 ```
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the following code sample:
 
 ```python
-print(default_conf.get_deployment_name())
-print(default_conf.get_subscription_key())
-print(default_conf.get_URL())
-print(default_conf.get_temperature())
+print(aifunc.default_conf.get_deployment_name())
+print(aifunc.default_conf.get_subscription_key())
+print(aifunc.default_conf.get_URL())
+print(aifunc.default_conf.get_temperature())
 ```
 
 You can also reset the parameters as easily as you modified them. The following code sample resets the AI functions library so that it uses the default Fabric LLM endpoint:
 
 ```python
-default_conf.reset_deployment_name()
-default_conf.reset_subscription_key()
-default_conf.reset_URL()
-default_conf.reset_temperature()
+aifunc.default_conf.reset_deployment_name()
+aifunc.default_conf.reset_subscription_key()
+aifunc.default_conf.reset_URL()
+aifunc.default_conf.reset_temperature()
 ```
 
 ## Custom models
@@ -89,9 +88,7 @@ Set the `deployment_name` to one of the [models supported by Fabric](../../ai-se
 - Globally in the `OpenAIDefaults()` object:
 
     ```python
-    from synapse.ml.services.openai import OpenAIDefaults
-    default_conf = OpenAIDefaults()
-    default_conf.set_deployment_name("<model deployment name>")
+    aifunc.default_conf.set_deployment_name("<model deployment name>")
     ```
 
 - Individually in each AI function call:
@@ -113,9 +110,7 @@ Set the `embedding_deployment_name` to one of the [models supported by Fabric](.
 - Globally in the `OpenAIDefaults()` object:
 
     ```python
-    from synapse.ml.services.openai import OpenAIDefaults
-    default_conf = OpenAIDefaults()
-    default_conf.set_embedding_deployment_name("<embedding deployment name>")
+    aifunc.default_conf.set_embedding_deployment_name("<embedding deployment name>")
     ```
 
 - Individually in each AI function call:
@@ -134,11 +129,8 @@ By default, AI functions use the Fabric LLM endpoint API for unified billing and
 You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Foundry or Azure OpenAI resource's model deployments:
 
 ```python
-from synapse.ml.services.openai import OpenAIDefaults
-default_conf = OpenAIDefaults()
-
-default_conf.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
-default_conf.set_subscription_key("<API_KEY>")
+aifunc.default_conf.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
+aifunc.default_conf.set_subscription_key("<API_KEY>")
 ```
 
 The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
@@ -149,13 +141,9 @@ The following code sample uses placeholder values to show you how to override th
 > - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
 
 ```python
-import synapse.ml.spark.aifunc.DataFrameExtensions
-from synapse.ml.services.openai import OpenAIDefaults
-
-default_conf = OpenAIDefaults()
-default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your Foundry Endpoint
-default_conf.set_subscription_key("<API_KEY>")
-default_conf.set_deployment_name("grok-4-fast-non-reasoning")
+aifunc.default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your Foundry Endpoint
+aifunc.default_conf.set_subscription_key("<API_KEY>")
+aifunc.default_conf.set_deployment_name("grok-4-fast-non-reasoning")
 ```
 
 ## Related content
