@@ -30,7 +30,7 @@ ms.date: 03/06/2026
 
    :::image type="content" source="../media/set-alerts-event-stream/alert-actions.png" alt-text="Screenshot of the Action section of the Add rule pane." lightbox="../media/set-alerts-event-stream/alert-actions.png" border="true":::
 
-    For more information about actions, see [Action section in the Add rule pane](../../real-time-hub/set-alerts-azure-blob-storage-events.md#action-section).
+    For more information about actions, see [Action section in the Add rule pane](../../../real-time-hub/set-alerts-azure-blob-storage-events.md#action-section).
 
     Here's an example of the action configuration:
 
@@ -52,4 +52,4 @@ ms.date: 03/06/2026
  
 1. On the **Alert created** pane, you see the details of the alert you created. Select **Done** to close the pane. Alternatively, you can select **Open** to view the Activator item in the Fabric Activator user interface (UI).
 
-   :::image type="content" source="media/set-alerts-event-stream/alert-created.png" alt-text="Screenshot of the Alert created pane." lightbox="media/set-alerts-event-stream/alert-created.png" border="true":::
+   :::image type="content" source="../media/set-alerts-event-stream/alert-created.png" alt-text="Screenshot of the Alert created pane." lightbox="media/set-alerts-event-stream/alert-created.png" border="true":::
