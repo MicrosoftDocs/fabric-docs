@@ -40,12 +40,12 @@ To visualize ontology entities, first connect your map to an ontology item.
 1. In **Map Explorer**, select **Add**.
 1. Select **Ontology** as the data source.
 
-    :::image type="content" source="media/onotology/add-onotology.png" alt-text="A screenshot showing the Explorer pane in Fabric Maps showing the Fabric items tab with the Add dropdown menu expanded, listing three options: Lakehouse, KQL database, and Ontology (preview), with Ontology (preview) highlighted.":::
+    :::image type="content" source="media/ontology/add-ontology.png" alt-text="A screenshot showing the Explorer pane in Fabric Maps showing the Fabric items tab with the Add dropdown menu expanded, listing three options: Lakehouse, KQL database, and Ontology (preview), with Ontology (preview) highlighted.":::
 
 1. Choose the ontology item you want to connect to.
 1. Select **Add**.
 
-    :::image type="content" source="media/onotology/catalog.png" alt-text="A screenshot showing the OneLake catalog dialog titled Choose the data you want to connect with. A table lists ontology items with columns for Name, Owner, Refreshed, Location, Endorsement, and Sensitivity. An item is selected with a green checkbox. An Add button highlighted with a red border and a Cancel button appear in the bottom right corner.":::
+    :::image type="content" source="media/ontology/catalog.png" alt-text="A screenshot showing the OneLake catalog dialog titled Choose the data you want to connect with. A table lists ontology items with columns for Name, Owner, Refreshed, Location, Endorsement, and Sensitivity. An item is selected with a green checkbox. An Add button highlighted with a red border and a Cancel button appear in the bottom right corner.":::
 
 After the connection is established, the entity types defined in the ontology appear in the explorer pane and are available for visualization.
 
@@ -56,7 +56,7 @@ To display ontology entities on the map, you must specify which ontology propert
 1. In the entity type list, select the entity you want to visualize.
 1. Select **Show on map** to open the configuration wizard.
 
-    :::image type="content" source="media/onotology/show-on-map.png" alt-text="A screenshot showing the Explorer pane in Fabric Maps displaying a tree view under OneLake with an expanded Ontology item listing entity types. A three-dot menu button next to the entity that is selected revealing a context menu with the option Show on map.":::
+    :::image type="content" source="media/ontology/show-on-map.png" alt-text="A screenshot showing the Explorer pane in Fabric Maps displaying a tree view under OneLake with an expanded Ontology item listing entity types. A three-dot menu button next to the entity that is selected revealing a context menu with the option Show on map.":::
 
 1. **Select an Ontology entity**, then select the **Next button**.
 1. In the **Configure spatial properties** step, map the ontology properties to spatial fields:
@@ -64,12 +64,12 @@ To display ontology entities on the map, you must specify which ontology propert
     - **Longitude**: Select the property that represents the entity's longitude.
     **OR** Select a property that contains geometry data, if your entity uses geometries instead of separate coordinate fields.
 
-        :::image type="content" source="media/onotology/configure-spatial-properties.png" alt-text="A screenshot showing the Configure spatial properties step of the View Ontology data on map wizard, titled Visualize Ontology entity with spatial data over time on map (Preview). The form includes a Data layer section with a Name field, a Geometry data column section with Geometry column location set to Latitude and longitude data locate on separate columns, Latitude column set to Latitude, and Longitude column set to Longitude, and a Data refresh section with Data refresh interval set to Disable auto refresh. The left sidebar shows three steps: Select an Ontology entity marked complete, Configure spatial properties currently active, and Review and add to map not yet started. Back and Next buttons appear at the bottom right, with the Next button highlighted to indicate it should be selected.":::
+        :::image type="content" source="media/ontology/configure-spatial-properties.png" alt-text="A screenshot showing the Configure spatial properties step of the View Ontology data on map wizard, titled Visualize Ontology entity with spatial data over time on map (Preview). The form includes a Data layer section with a Name field, a Geometry data column section with Geometry column location set to Latitude and longitude data locate on separate columns, Latitude column set to Latitude, and Longitude column set to Longitude, and a Data refresh section with Data refresh interval set to Disable auto refresh. The left sidebar shows three steps: Select an Ontology entity marked complete, Configure spatial properties currently active, and Review and add to map not yet started. Back and Next buttons appear at the bottom right, with the Next button highlighted to indicate it should be selected.":::
 
 1. Select **Next**.
 1. Review the configuration, then select **Add to map**.
 
-:::image type="content" source="media/onotology/review-add-to-map.png" alt-text="A screenshot showing the Review and add to map step of the View Ontology data on map wizard, titled Visualize Ontology entity with spatial data over time on map (Preview). The left sidebar shows three steps with green checkmarks next to Select an Ontology entity and Configure spatial properties, and a filled circle next to Review and add to map indicating it's the current step. The main panel displays a summary of the configuration organized into sections. Data source shows Ontology (preview) set to AirlineOntology and Entity set to Airport. Data layer shows Name set to Airport. Geometry data column shows Geometry column location set to Latitude and longitude data locate on separate columns, Latitude column set to Latitude, and Longitude column set to Longitude. Data refresh shows Data refresh interval set to Disable auto refresh. Back and Add to map buttons appear at the bottom right, with the Add to map button highlighted to indicate it should be selected.":::
+:::image type="content" source="media/ontology/review-add-to-map.png" alt-text="A screenshot showing the Review and add to map step of the View Ontology data on map wizard, titled Visualize Ontology entity with spatial data over time on map (Preview). The left sidebar shows three steps with green checkmarks next to Select an Ontology entity and Configure spatial properties, and a filled circle next to Review and add to map indicating it's the current step. The main panel displays a summary of the configuration organized into sections. Data source shows Ontology (preview) set to AirlineOntology and Entity set to Airport. Data layer shows Name set to Airport. Geometry data column shows Geometry column location set to Latitude and longitude data locate on separate columns, Latitude column set to Latitude, and Longitude column set to Longitude. Data refresh shows Data refresh interval set to Disable auto refresh. Back and Add to map buttons appear at the bottom right, with the Add to map button highlighted to indicate it should be selected.":::
 
 Each entity instance is rendered on the map according to the configured spatial properties.
 
