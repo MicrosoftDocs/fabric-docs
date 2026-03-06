@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: IQ (preview) documentation in Microsoft Fabric
+title: Fabric IQ documentation
 summary:  Fabric IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
 
 metadata:
-  title: Fabric IQ (preview) documentation
-  description: Learn about Fabric IQ (preview).
+  title: Fabric IQ documentation
+  description: Learn about Fabric IQ (preview) for governed, self-service knowledge graphs in Fabric.
   ms.topic: landing-page
   ms.collection: collection
   ms.date: 11/05/2025
@@ -56,11 +56,11 @@ landingContent:
             url: ontology/how-to-use-preview-experience.md
             
   # Card
-  - title: About Fabric Graph
+  - title: About graph in Microsoft Fabric
     linkLists:
       - linkListType: overview
         links:
-          - text: Fabric Graph overview
+          - text: Graph overview
             url: ../graph/overview.md
           - text: What is a graph database?
             url: ../graph/graph-database.md
@@ -68,13 +68,13 @@ landingContent:
             url: ../graph/graph-data-models.md
 
   # Card
-  - title: Get started with Fabric Graph
+  - title: Get started with graph in Microsoft Fabric
     linkLists:
       - linkListType: get-started
         links:
-          - text: Quickstart guide for Fabric Graph
+          - text: Quickstart guide for graph
             url: ../graph/quickstart.md
-          - text: Try Microsoft Fabric for free
+          - text: Try Fabric for free
             url: /fabric/fundamentals/fabric-trial
 
   # Card
@@ -112,5 +112,5 @@ landingContent:
             url: ../graph/gql-query-api.md
           - text: Graph Items REST API reference
             url: /rest/api/fabric/graphmodel/items
-          - text: Microsoft Fabric REST API reference
+          - text: Fabric REST API reference
             url: /rest/api/fabric/articles

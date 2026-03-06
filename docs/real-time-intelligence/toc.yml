@@ -943,10 +943,16 @@ items:
         items:
           - name: Map items
             href: map/about-maps.md
+          - name: Layers
+            items:
+              - name: Layers
+                href: map/about-layers.md
+              - name: Create layers using WMS and WMTS imagery sources
+                href: map/about-external-sourced-imagery.md
+              - name: Data filtering
+                href: map/about-data-filtering.md
           - name: Tilesets in Fabric Maps
             href: map/about-tile-sets.md
-          - name: Data filtering in Fabric Maps
-            href: map/about-data-filtering.md
           - name: Sharing maps
             href: map/sharing-maps.md
           - name: Permissions in Fabric Maps
@@ -955,12 +961,16 @@ items:
         items:
         - name: Create a map
           href: map/create-map.md
+        - name: Layers
+          items:
+            - name: Add a WMS or WMTS imagery layer to a map
+              href: map/add-external-sourced-imagery-layer.md
+            - name: Filter data
+              href: map/filter-data.md
         - name: Customize a map
           href: map/customize-map.md
         - name: Create a tileset
           href: map/create-tile-sets.md
-        - name: Filter data
-          href: map/filter-data.md
         - name: Map sharing
           items:
             - name: Share maps directly
