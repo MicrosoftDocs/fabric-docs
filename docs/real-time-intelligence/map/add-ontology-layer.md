@@ -49,7 +49,7 @@ To visualize ontology entities, first connect your map to an ontology item.
 
 After the connection is established, the entity types defined in the ontology appear in the explorer pane and are available for visualization.
 
-## Configure spatial properties for an entity
+## Configure spatial properties for an entity type
 
 To display ontology entities on the map, you must specify which ontology properties represent spatial coordinates or geometry.
 

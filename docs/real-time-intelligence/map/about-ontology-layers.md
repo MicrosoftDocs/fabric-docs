@@ -101,22 +101,6 @@ This is especially important for:
 - Decision support scenarios
 - AI-assisted exploration and analysis
 
-## What ontology isn't in Fabric Maps
-
-Ontology and Fabric Maps were designed with clearly separated responsibilities:
-
-- Ontology doesn't store geometry
-- Ontology doesn't replace GeoJSON, tilesets, or query results
-- Ontology doesn't control rendering engines
-
-Instead:
-
-- Ontology defines meaning
-- Fabric Maps renders spatial form
-- OneLake stores data
-
-This separation keeps the system composable, governable, and scalable—while allowing maps to remain both technically flexible and semantically grounded.
-
 ## Next steps
 
 To learn how to create and configure a map:
