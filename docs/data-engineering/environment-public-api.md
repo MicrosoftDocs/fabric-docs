@@ -3,7 +3,7 @@ title: Manage the Environment Through Public APIs
 description: This article gives an overview of the public APIs of the environment. It also describes the best practice of using the environment APIs.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 10/09/2025
+ms.date: 03/06/2026
 ms.search.form: Manage the environment through public APIs
 ---
 
@@ -16,9 +16,9 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 > [!IMPORTANT]
 >
 > - The GA release includes updates in the request/response contract of existing APIs, API deprecations, and new APIs. You can find the details in the following sections.
-> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **March 31, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
+> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **April 30, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
 > - `Preview` query parameter has been replaced by `beta`. For backward compatibility, preview is still supported and behaves the same as beta.
-> - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**, please use the newly introduced APIs to replace them as soon as possible.
+> - The to-be-deprecated APIs will continue to be supported until **April 30, 2026**, please use the newly introduced APIs to replace them as soon as possible.
 
 ### APIs with request/response contract update
 
