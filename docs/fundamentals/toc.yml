@@ -14,6 +14,8 @@ items:
     href: migration.md
   - name: Start a Fabric trial
     href: fabric-trial.md
+  - name: Fabric free trial with a personal email
+    href: free-trial-account-personal-email.md
   - name: Connect to the Fabric release plan
     href: service-connect-fabric-release-plan.md
   - name: Review Fabric preview information
