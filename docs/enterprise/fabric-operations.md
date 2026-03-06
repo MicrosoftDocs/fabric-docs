@@ -4,10 +4,12 @@ description: Understand the Microsoft Fabric operations.
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: reference
-ms.date: 11/26/2025
+ms.custom:
+ms.date: 03/03/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Fabric operations
@@ -60,6 +62,11 @@ This section is divided into Fabric experience. Each experience had a table that
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
 | Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI | Background |
+| AI Functions | Consolidates Fabric AI functions usage and Azure OpenAI Service calls (via REST API, Python SDK, and SynapseML) initiated from Notebooks and Dataflows Gen2 | Multiple | Copilot and AI | Background |
+| AI Services | Reports Azure AI Services usage in Fabric, including Text Analytics and Azure AI Translator | Multiple | Copilot and AI | Background |
+
+> [!NOTE]
+> Starting March 17, 2025, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
 
 ### Data agent in Fabric
 

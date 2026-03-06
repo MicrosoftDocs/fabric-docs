@@ -23,14 +23,14 @@ To use AI functions in Data Wrangler, you will also need to install OpenAI in yo
 
 ```python
 # The pandas AI functions package requires OpenAI version 1.99.5 or later.
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 ```
 
 # [Python environment](#tab/pandas-python)
 
 ```python
 # Install the fixed version of packages.
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 
 # Install the latest version of SynapseML-core.
 %pip install -q --force-reinstall https://mmlspark.blob.core.windows.net/pip/1.0.12-spark3.5/synapseml_core-1.0.12.dev1-py2.py3-none-any.whl 2>/dev/null

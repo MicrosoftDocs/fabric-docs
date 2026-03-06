@@ -1,17 +1,18 @@
 ---
-title: "Tutorial: Introduction to Graph in Microsoft Fabric"
-description: Learn how to build a complete graph model in Microsoft Fabric, from creating a graph model to querying your data.
+title: "Tutorial: Introduction to Fabric Graph"
+description: Learn how to build a complete graph model in Microsoft Fabric, from loading data and creating a graph model to querying your data with GQL.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
-ms.search.form: Tutorial - Introduction to Graph in Microsoft Fabric
+ms.search.form: Tutorial - Introduction to Fabric Graph
+ai-usage: ai-assisted
 ---
 
-# Tutorial: Introduction to Graph in Microsoft Fabric
+# Tutorial: Introduction to Fabric Graph
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This tutorial is a step-by-step walkthrough of an end-to-end graph scenario in Microsoft Fabric. It covers everything from creating your graph model to querying your data and analyzing insights. Complete this tutorial to build a basic understanding of the Microsoft Fabric graph experience and its capabilities.
+This tutorial provides a step-by-step walkthrough of an end-to-end graph scenario in Microsoft Fabric. It covers everything from creating your graph model to querying your data and analyzing insights. Complete this tutorial to build a basic understanding of the Microsoft Fabric graph experience and its capabilities.
 
 ## Prerequisites
 
@@ -39,15 +40,7 @@ In this tutorial, you take on the role of a data analyst at the fictional Advent
 1. [Query the graph with GQL](tutorial-query-code-editor.md) using the code editor.
 1. [Clean up tutorial resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
-## Graph end-to-end architecture
-
-- **Data sources** - Microsoft Fabric makes it quick and easy to connect to Azure Data Services, other cloud platforms, and on-premises data sources.
-
-- **Storage** - Microsoft Fabric standardizes on Delta Lake format stored in OneLake. Graph in Microsoft Fabric reads data directly from your lakehouse tables to construct the graph model.
-
-- **Graph modeling** - Create nodes and edges that represent entities and relationships in your data. The graph model provides a flexible way to explore connected data.
-
-- **Query and analyze** - Use the visual query builder for interactive exploration or write GQL (Graph Query Language) queries for more complex analysis.
+For a detailed overview of how data flows through Graph — from data sources through OneLake storage, graph modeling, querying, and results — see [Fabric Graph architecture](how-graph-works.md).
 
 ## Sample data
 

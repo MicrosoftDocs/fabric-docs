@@ -39,6 +39,7 @@ Microsoft Purview works with Microsoft Fabric so users can discover and manage M
 - **Microsoft Purview Information Protection** - allows you to discover, classify, and protect Fabric data using sensitivity labels from Microsoft Purview Information Protection. Sensitivity labels can be set on all Fabric items. Data remains protected when it's exported via supported export paths. Compliance admins can monitor activities on sensitivity labels in Microsoft Purview Audit. For more information, see [Information Protection in Microsoft Fabric](information-protection.md). Moreover, you can control access to items in Fabric using sensitivity labels with protection policies. Learn more about [Protection Policies in Fabric](protection-policies-overview.md)
 - **Microsoft Purview Data Loss Prevention (DLP)** - DLP policies support structured data in Fabric, such as lakehouses, warehouses, various databases and semantic mondels. DLP policies detect upload of sensitive data into OneLake. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for Fabric users and alerts for security admins. DLP policies can also be configured to allow workspace admins to override them. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 - **Microsoft Purview Audit** - all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [track user activities in Microsoft Fabric](../admin/track-user-activities.md) and [track user activities in Power BI](../admin/service-admin-portal-audit-usage.md).
+- **Microsoft Purview Insider Risk Management (IRM)** – IRM policies support ready-to-use risk indicators for Microsoft Fabric such as Power BI and lakehouse activities. These indicators help organizations detect potential data theft or data leakage involving Fabric lakehouse and Power BI assets. For more information on supported Fabric workloads, see [Configure policy indicators in Insider Risk Management](/purview/insider-risk-management-settings-policy-indicators#microsoft-fabric-indicators).
 
 Microsoft Purview and Microsoft Fabric will continue to work more closely together. Soon you'll be able to use more solutions to monitor and manage Microsoft Fabric as well.
 
@@ -49,7 +50,7 @@ The Microsoft Purview Hub allows you to see insights about your Fabric data insi
 [You can follow this link to the Microsoft Purview Hub documentation.](use-microsoft-purview-hub.md)
 
 > [!NOTE]
-> Purview Hub insights are permanently moving to the **Govern** tab in the OneLake catalog. For more information, see [Govern Fabric data](onelake-catalog-govern.md)
+> Purview Hub insights are now available in the OneLake catalog on the **Govern** tab. For more information, see [Govern Fabric data](onelake-catalog-govern.md).
 
 ## Learn more
 

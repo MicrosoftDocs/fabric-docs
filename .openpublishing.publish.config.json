@@ -26,6 +26,7 @@
         "docs/database/mirrored-database/.openpublishing.redirection.database.json",
         "docs/enterprise/.openpublishing.redirection.enterprise.json",
         "docs/fundamentals/.openpublishing.redirection.fundamentals.json",
+        "docs/graph/.openpublishing.redirection.graph.json",
         "docs/onelake/.openpublishing.redirection.onelake.json",
         "docs/iq/.openpublishing.redirection.iq.json",
         "docs/real-time-intelligence/.openpublishing.redirection.real-time-intelligence.json",
@@ -70,6 +71,12 @@
     {
       "path_to_root": "kusto-repo",
       "url": "https://github.com/MicrosoftDocs/dataexplorer-docs-pr",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "powerquery-repo",
+      "url": "https://github.com/MicrosoftDocs/powerquery-docs-pr",
       "branch": "main",
       "branch_mapping": {}
     }
