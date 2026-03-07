@@ -33,7 +33,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 | `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. | `responses` | Both |
 | `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` | Function parameter |
 | `deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` | Both |
-| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` | Both |
+| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` | Global |
 | `reasoning_effort` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for number of reasoning tokens they should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None | Both |
 | `subscription_key` | A [string](https://docs.python.org/3/library/stdtypes.html#str) API key used for authentication with your large language model (LLM) resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A | Both |
 | `temperature` | A [float](https://docs.python.org/3/library/functions.html#float) value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` | Both |
@@ -41,18 +41,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 | `URL`| A [string](https://docs.python.org/3/library/stdtypes.html#str) URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A | Both |
 | `verbosity` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None | Both |
 
-The following code sample shows how to configure `concurrency` for an individual function call.
-
-```python
-df = spark.createDataFrame([
-        ("There are an error here.",),
-        ("She and me go weigh back. We used to hang out every weeks.",),
-        ("The big picture are right, but you're details is all wrong.",),
-    ], ["text"])
-
-results = df.ai.fix_grammar(input_col="text", output_col="corrections", concurrency=200)
-display(results)
-```
+### Configure Reasoning Models
 
 The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
 
@@ -65,6 +54,27 @@ aifunc.default_conf.set_temperature(1)  # gpt-5 only accepts default value of te
 aifunc.default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
 ```
 
+### Configure Concurrency
+
+The following code sample shows how to configure `concurrency` for an individual function call.
+
+```python
+df = spark.createDataFrame([
+        ("There are an error here.",),
+        ("She and me go weigh back. We used to hang out every weeks.",),
+        ("The big picture are right, but you're details is all wrong.",),
+    ], ["text"])
+
+results = df.ai.fix_grammar(
+    input_col="text",
+    output_col="corrections",
+    concurrency=200,
+)
+display(results)
+```
+
+### Retrieve and reset parameters
+
 You can retrieve and print each of the `OpenAIDefaults` parameters with the following code sample:
 
 ```python
@@ -74,7 +84,7 @@ print(aifunc.default_conf.get_URL())
 print(aifunc.default_conf.get_temperature())
 ```
 
-You can also reset the parameters as easily as you modified them. The following code sample resets the AI functions library so that it uses the default Fabric LLM endpoint:
+You may reset the parameters as easily as you modified them. The following code sample resets the AI functions library so that it uses the default Fabric LLM endpoint:
 
 ```python
 aifunc.default_conf.reset_deployment_name()
