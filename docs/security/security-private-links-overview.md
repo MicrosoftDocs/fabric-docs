@@ -172,6 +172,16 @@ Private link is supported for [open mirroring](/fabric/mirroring/open-mirroring)
 
 For open mirroring, when the **Block public Internet access** tenant setting is **enabled**, ensure the publisher writes data into the OneLake landing zone via a private link.
 
+### API for GraphQL
+
+API for GraphQL supports Private Link, allowing secure API access and querying from your Azure Virtual Network via a private link. 
+
+**Limitations:**
+
+* API monitoring dashboard and logging based on Workspace Monitoring is not supported.
+* Service Principals (SPN) are supported as clients however it's not possible to use a service principal to create a saved credential for access between the API and data source.
+
+  
 ## Other considerations and limitations
 
 There are several considerations to keep in mind while working with private endpoints in Fabric:

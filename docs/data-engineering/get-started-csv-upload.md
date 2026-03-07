@@ -1,5 +1,5 @@
 ---
-title: CSV file upload to Delta table for Power BI reporting
+title: CSV file upload to Delta tables for Power BI reporting
 description: Learn how to upload a CSV file to a lakehouse, convert it to a Delta table, and generate a semantic model and Power BI report.
 ms.reviewer: dacoelho
 ms.topic: get-started
@@ -8,7 +8,7 @@ ms.date: 02/28/2026
 ms.search.form: csv load to delta to pbi report
 ---
 
-# CSV file upload to Delta table for Power BI reporting
+# CSV file upload to Delta tables for Power BI reporting
 
 This quickstart shows a simple end-to-end flow in Fabric: upload a local CSV file, load it as a Delta table in a lakehouse, and build a report from it.
 

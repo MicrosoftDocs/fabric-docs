@@ -62,6 +62,8 @@ landingContent:
             url: ingestion/ingestion-fabric-events.md
           - text: Ingestion of Azure Events
             url: ingestion/ingestion-azure-events.md
+          - text: Query frequency for query data sources
+            url: activator-query-frequency.md
 
   - title: Create objects and triggers
     linkLists:
