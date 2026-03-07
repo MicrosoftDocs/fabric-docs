@@ -22,19 +22,24 @@ AI functions are designed to work out of the box, with the underlying model and 
 
 ## Configurations
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can  only be applied per function call are specified in the following section.
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can ONLY be applied per function call are specified in the last column of the table below.
 
-| Parameter | Description | Default |
-|---|---|---|
-| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` |
-| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
-| `embedding_deployment_name` | A string value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `reasoning_effort` | Part of OpenAIDefaults. Used by gpt-5 series models for number of reasoning tokens they should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None |
-| `subscription_key` | An API key used for authentication with your large language model (LLM) resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
-| `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
-| `top_p` | Part of OpenAIDefaults. A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | None |
-| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A |
-| `verbosity` | Part of OpenAIDefaults. Used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None |
+> [!NOTE]
+> - Global PySpark AI function configurations are set by calling functions of an object of class `OpenAIDefaults()`. An object of this class is created for use as `aifunc.default_conf` when you import the PySpark AI functions library `import synapse.ml.spark.aifunc as aifunc`. You can modify the parameters of this object to change the default settings for all AI function calls in your notebook session.
+> - When passing one of these configurations as parameter to a PySpark AI Function call, the global configuration is renamed to use camelCase instead of snake_case and the parameter is passed without the "set_" prefix. For example, `aifunc.default_conf.set_deployment_name("gpt-5")` would be passed as `deploymentName="gpt-5"` in the function call.
+
+| Parameter | Description | Default | Global or Per-Function Parameter |
+|---|---|---|---|
+| `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. | `responses` | Both |
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` | Function parameter |
+| `deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` | Both |
+| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` | Both |
+| `reasoning_effort` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for number of reasoning tokens they should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None | Both |
+| `subscription_key` | A [string](https://docs.python.org/3/library/stdtypes.html#str) API key used for authentication with your large language model (LLM) resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A | Both |
+| `temperature` | A [float](https://docs.python.org/3/library/functions.html#float) value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` | Both |
+| `top_p` | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | None | Both |
+| `URL`| A [string](https://docs.python.org/3/library/stdtypes.html#str) URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A | Both |
+| `verbosity` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None | Both |
 
 The following code sample shows how to configure `concurrency` for an individual function call.
 
