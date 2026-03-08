@@ -77,15 +77,15 @@ Once tags are applied, they enhance visibility across multiple surfaces.
   
 ### Tags in APIs
 
-- **Tag management APIs**: Use the [Fabric REST Admin APIs for tags](/en-us/rest/api/fabric/admin/tags) to create, update, delete, and list tags at the tenant and domain levels. Use the [List Tags](/en-us/rest/api/fabric/admin/tags/list-tags) API to resolve tag IDs to tag names.
+- **Tag management APIs**: Use the [Fabric REST Admin APIs for tags](/en-us/rest/api/fabric/admin/tags) to create, update, delete, and list tags at the tenant and domain levels.
 
-- **Item APIs**: Use the [Get Item](/en-us/rest/api/fabric/core/items/get-item) and [List Items](/en-us/rest/api/fabric/core/items/list-items) APIs to return applied tag IDs for each item. The [Update Item](/en-us/rest/api/fabric/core/items/update-item) API apply or remove tags from individual items.
+- **Item APIs**: Use the [Apply Tags](/en-us/rest/api/fabric/core/tags/apply-tags) and [Unapply Tags](/en-us/rest/api/fabric/core/tags/unapply-tags) APIs to add or remove tags from individual items. Use the [List Tags](/en-us/rest/api/fabric/core/tags/list-tags) API to retrieve applied tag UUIDs and names for an item.
 
-- **Workspace APIs**: Use the [Create Workspace](/en-us/rest/api/fabric/core/workspaces/create-workspace) and [Update Workspace](/en-us/rest/api/fabric/core/workspaces/update-workspace) APIs to set or update workspace tags. The [List Workspaces](/en-us/rest/api/fabric/core/workspaces/list-workspaces) (User and Admin) APIs return applied workspace tag IDs.
+- **Workspace APIs**: Use the [Apply Workspace Tags](/en-us/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/en-us/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace. The [List Workspaces](/en-us/rest/api/fabric/core/workspaces/list-workspaces) (User and Admin) APIs return applied workspace tag UUIDs and names.
 
 - **Scanner API**: Tags are included in [metadata scanning](/en-us/fabric/governance/metadata-scanning-overview) (scanner) APIs so that governance and discovery solutions can retrieve tag assignments at scale for both items and workspaces.
 
-  For every applicable item returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. Workspace scans also return applied workspace tags.
+  For every applicable item and workspace returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. Use the [List Tags](/en-us/rest/api/fabric/admin/tags/list-tags) API to resolve the UUIDs to tag names.
 
   ![Screenshot showing tags in the scanner API response.](./media/tags-overview/tags-list-api.png)
   
