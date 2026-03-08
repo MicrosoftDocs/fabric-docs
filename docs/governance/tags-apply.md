@@ -1,6 +1,6 @@
 ---
-title: Apply tags to items in Fabric
-description: "Learn how to apply tags to items in Microsoft Fabric."
+title: Apply tags to items and workspaces in Fabric
+description: Learn how to apply tags to items and workspaces in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
