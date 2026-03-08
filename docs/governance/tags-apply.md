@@ -29,7 +29,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
 
    ![Screenshot showing how to choose tags to apply to an item.](./media/tags-apply/choose-tags.png)
    
-   > [!NOTE]
+      > [!NOTE]
    > If the **Select tags to apply** drop-down is disabled, you don't have permission to apply tags to the item.
    
 3. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
@@ -41,7 +41,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
    All the tags applied to the item appear under **Applied tags**.
 
    ![Screenshot showing how to remove tags from an item.](media/tags-apply/remove-tags.png)
-
+   
 2. Select the **X** next to the names of the tags you want to remove from the item.
 
 3. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
@@ -76,7 +76,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
 Tags can be applied or removed programmatically using public REST APIs:
 
 1. For items, use the [Update Item](/en-us/rest/api/fabric/core/items/update-item) API to apply or remove tags from an item.
-2. For workspaces, use the [Create Workspace](/en-us/rest/api/fabric/core/workspaces/create-workspace) or [Update Workspace](/en-us/rest/api/fabric/core/workspaces/update-workspace) APIs to set or update workspace tags.
+2. For workspaces, use the [Apply Workspace Tags](/en-us/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/en-us/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace.
 
 ## Related content
 
@@ -84,3 +84,4 @@ Tags can be applied or removed programmatically using public REST APIs:
 - [Create and manage a set of tags](tags-define)
 
 - [Fabric REST Admin APIs for tags](/en-us/rest/api/fabric/admin/tags)
+
