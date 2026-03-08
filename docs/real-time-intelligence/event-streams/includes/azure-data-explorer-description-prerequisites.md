@@ -13,7 +13,7 @@ Azure Data Explorer is a fully managed, high-performance platform that delivers 
 
 - Access to the Fabric premium workspace with Contributor or higher permissions.
 - An active Azure subscription.
-- An Azure Data Explorer cluster with at least one database deployed. Ensure that the cluster is publicly accessible and not restricted by a firewall or a virtual network.
+- An Azure Data Explorer cluster with at least one database deployed. Ensure that the cluster is publicly accessible and not restricted by a firewall or a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).
 - The required permissions to access the Azure Data Explorer cluster.
 
 

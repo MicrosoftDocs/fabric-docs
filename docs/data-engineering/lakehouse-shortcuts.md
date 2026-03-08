@@ -1,30 +1,102 @@
 ---
-title: Referencing data to a Lakehouse using shortcuts
-description: Learn how to set up shortcuts in your Fabric lakehouse, which allows you to reference data from other locations without copying it.
+title: Shortcuts in a lakehouse
+description: Learn how to use shortcuts in a Fabric lakehouse to reference data from internal and external sources without copying it.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 05/23/2023
+ms.date: 02/24/2026
+ms.update-cycle: 180-days
 ms.search.form: Lakehouse shortcuts
 #customer intent: As a data engineer, I want to create and manage shortcuts in a Fabric lakehouse to reference data from various sources without copying it.
 ---
 
-# Create shortcuts in lakehouse
+# Shortcuts in a lakehouse
 
-Shortcuts in a lakehouse allow users to reference data without copying it. It unifies data from different lakehouses, [Eventhouses](../real-time-intelligence/eventhouse.md), workspaces, or external storage, such as ADLS Gen2 or AWS S3. You can quickly make large amounts of data available in your lakehouse locally without the latency of copying data from the source.
+Shortcuts let you reference data in a lakehouse without copying it. Instead of ingesting data from another source, you create a pointer that makes the data appear as a local folder or table. This approach is useful when you want to:
 
-## Create a shortcut to files or tables
+- Query data from other lakehouses, warehouses, or workspaces without duplication.
+- Access external storage (for example, ADLS Gen2 or Amazon S3) directly from your lakehouse.
+- Combine data from multiple sources into a single lakehouse view without moving it.
+- Reduce storage costs and avoid data staleness from redundant copies.
 
-To create a shortcut, open lakehouse **Explorer**. Select the **...** symbol next to the **Tables** or **Files** section and select **New shortcut**. Creating a shortcut to a Delta formatted table in the **Tables** section of lakehouse explorer automatically registers it as a table enabling data access through Spark and SQL analytics endpoint. Spark can access shortcuts in the **Files** section for data science projects or for transformation into structured data.
+For a full conceptual overview of shortcuts, including caching, security, and limitations, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-schortcut.png" alt-text="Screenshot showing how to create a shortcut for a table or file from the lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-schortcut.png":::
+## Where to place shortcuts in a lakehouse
 
-After a shortcut is created, you can differentiate a regular file or table from the shortcut from its properties. The properties have a **Shortcut Type** parameter that indicates the item is a shortcut.
+A lakehouse has two top-level folders — **Tables** and **Files** — and shortcuts behave differently in each:
 
-## Access Control for shortcuts
+- **Tables** — Shortcuts must be created at the top level (no subdirectories). If the shortcut target contains Delta-formatted data, the lakehouse automatically recognizes it as a table. You can then query it through both Spark and the SQL analytics endpoint.
+- **Files** — Shortcuts can be created at any level of the folder hierarchy. Data in the Files section isn't automatically registered as a table, but Spark can read it directly for data science or transformation workloads.
 
-Shortcuts to Microsoft Fabric internal sources will use the calling user identity. External shortcuts will use connectivity details, including security details specified when the shortcut is created.
+> [!TIP]
+> Use the **Tables** section for structured data you want to query with SQL. Use the **Files** section for raw or semi-structured data you plan to process with Spark.
+
+| Location | Menu option | What it creates |
+|---|---|---|
+| **Tables** section | **New table shortcut** | A shortcut to a single Delta table, automatically registered as a table in the lakehouse. |
+| **Tables** section | **New schema shortcut** | A shortcut to a folder containing multiple Delta tables, which appear as a new schema in the lakehouse. For more information, see [Lakehouse schemas](lakehouse-schemas.md#bring-multiple-tables-with-schema-shortcut). |
+| **Files** section | **New shortcut** | A shortcut to any folder, in any format. Data isn't automatically registered as a table. |
+
+## Supported shortcut sources
+
+You can create shortcuts to both internal Fabric items and external storage systems.
+
+**Internal sources** (use the calling user's identity for authorization):
+
+- Lakehouses
+- Warehouses
+- KQL databases
+- Mirrored databases
+- Mirrored Azure Databricks Catalogs
+- SQL databases
+- Semantic models
+
+**External sources** (use a cloud connection with stored credentials):
+
+- [Azure Data Lake Storage Gen2](../onelake/create-adls-shortcut.md)
+- [Azure Blob Storage](../onelake/create-blob-shortcut.md)
+- [Amazon S3](../onelake/create-s3-shortcut.md)
+- [Amazon S3 compatible storage](../onelake/create-s3-compatible-shortcut.md)
+- [Google Cloud Storage](../onelake/create-gcs-shortcut.md)
+- [Dataverse](../onelake/create-dataverse-shortcut.md)
+- [OneDrive and SharePoint](../onelake/create-onedrive-sharepoint-shortcut.md)
+- [On-premises or network-restricted locations](../onelake/create-on-premises-shortcut.md) (through the on-premises data gateway)
+- [Iceberg tables](../onelake/onelake-iceberg-tables.md)
+
+## Create a shortcut
+
+To create a shortcut, open a lakehouse and go to the **Explorer** view. Select the ellipsis (**...**) next to **Tables** or **Files**. The menu label depends on where you create the shortcut:
+
+The following example shows creating a shortcut in the **Files** section. 
+
+:::image type="content" source="media\lakehouse-shortcuts\create-lakehouse-shortcut.png" alt-text="Screenshot showing the New shortcut option in the Files section of the lakehouse explorer." lightbox="media\lakehouse-shortcuts\create-lakehouse-shortcut.png":::
+
+For detailed step-by-step instructions for each source type, see [Create an internal OneLake shortcut](../onelake/create-onelake-shortcut.md) or select one of the external source links in the [Supported shortcut sources](#supported-shortcut-sources) section.
+
+> [!NOTE]
+> External Delta tables created with Spark code aren't automatically visible in the SQL analytics endpoint. Create a shortcut in the **Tables** section to make external Delta tables available for SQL queries. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+
+## When to use shortcuts vs. copying data
+
+| **Scenario** | **Recommended approach** |
+|---|---|
+| Data is already in Fabric (another lakehouse, warehouse, or workspace) | Shortcut — avoids duplication and keeps data in sync |
+| Data is in external cloud storage and you need near-real-time access | Shortcut — no ingestion pipeline to maintain |
+| Data needs complex transformations before use | Copy — use pipelines, dataflows, or notebooks to transform and load |
+| Compliance or security requires data to reside in a specific region | Copy — shortcuts don't move data, so the data stays in its source region |
+| You need full control over schema evolution and table maintenance | Copy — Delta table maintenance operations only work on local tables |
+
+For other ways to bring data into a lakehouse, see [Options to get data into the Lakehouse](load-data-lakehouse.md).
+
+## Access control
+
+- **Internal shortcuts** use the calling user's identity. The user must have read permissions on the shortcut target to access the data.
+- **External shortcuts** use the cloud connection credentials specified when the shortcut is created. Any user with access to the lakehouse can read data through the shortcut using those stored credentials.
+
+For full details on shortcut permissions, see [OneLake shortcut security](../onelake/onelake-shortcut-security.md).
 
 ## Related content
 
-- [Learn more about shortcuts](../onelake/onelake-shortcuts.md)
-- [Eventhouse OneLake Availability](../real-time-intelligence/event-house-onelake-availability.md)
+- [OneLake shortcuts](../onelake/onelake-shortcuts.md)
+- [Create an internal OneLake shortcut](../onelake/create-onelake-shortcut.md)
+- [Options to get data into the Lakehouse](load-data-lakehouse.md)
+- [Eventhouse OneLake availability](../real-time-intelligence/event-house-onelake-availability.md)
