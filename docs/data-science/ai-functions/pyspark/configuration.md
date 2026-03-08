@@ -41,7 +41,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 | `URL`| A [string](https://docs.python.org/3/library/stdtypes.html#str) URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A | Both |
 | `verbosity` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None | Both |
 
-### Configure Reasoning Models
+### Configure reasoning models
 
 The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
 
@@ -54,7 +54,7 @@ aifunc.default_conf.set_temperature(1)  # gpt-5 only accepts default value of te
 aifunc.default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
 ```
 
-### Configure Concurrency
+### Configure concurrency
 
 The following code sample shows how to configure `concurrency` for an individual function call.
 
