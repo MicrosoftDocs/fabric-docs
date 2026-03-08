@@ -29,7 +29,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
 
    ![Screenshot showing how to choose tags to apply to an item.](./media/tags-apply/choose-tags.png)
    
-      > [!NOTE]
+         > [!NOTE]
    > If the **Select tags to apply** drop-down is disabled, you don't have permission to apply tags to the item.
    
 3. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
