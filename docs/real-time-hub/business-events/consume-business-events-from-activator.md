@@ -25,10 +25,14 @@ Follow the steps in one of the following sections. Each section opens a side pan
 
 1. In Real-Time hub, select **Business events**.
 
+1. If you don't have any business events, see the [Create event schema sets](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) article to create event schema sets first. After you have event schema sets, you can select business events under the event schema sets to set alerts on. 
+
 1. Move the mouse over your target **Business events**, and do one of the following steps:
 
     * Select the **Set alert** button.
     * Select ellipsis (...), and select **Set alert**.
+
+    :::image type="content" source="media/consume-business-event/set-alert-business-event.png" alt-text="Screenshot of the set alert options for the business event." lightbox="media/consume-business-event/set-alert-business-event.png":::
 
 ### Using the event detail page
 
@@ -39,6 +43,8 @@ Follow the steps in one of the following sections. Each section opens a side pan
 ## Details section 
 
 On the **Add rule** page, in the **Details** section, enter a name for the rule in the **Rule name** field.
+
+:::image type="content" source="media/consume-business-event/set-alerts-name.png" alt-text="Screenshot of the set alert Name field." lightbox="media/consume-business-event/set-alerts-name.png":::
 
 ## Monitor section
 
@@ -59,9 +65,13 @@ On the **Set alert** page, follow these steps:
         1. Select **Next** at the bottom of the page.
         1. On the **Review + connect** page, review the settings, and select **Save**.
 
+:::image type="content" source="media/consume-business-event/set-alerts-monitor.png" alt-text="Screenshot of the set alert Monitor section." lightbox="media/consume-business-event/set-alerts-monitor.png":::
+
 ## Condition section
 
 In the **Condition** section, select **On each event** for the **Check** option.
+
+:::image type="content" source="media/consume-business-event/set-alerts-condition.png" alt-text="Screenshot of the set alert Condition section." lightbox="media/consume-business-event/set-alerts-condition.png":::
 
 ## Action section
 
@@ -85,6 +95,8 @@ To configure the alert to send an email when the condition is met, follow these 
     > When entering subject, headline, or notes, you can refer to properties in the data by typing @ or by selecting the button next to the text boxes. For example, `@BikepointID`.
 
 1. For **Context**, select values from the drop-down list that you want to include in the context.
+
+:::image type="content" source="media/consume-business-event/set-alerts-email.png" alt-text="Screenshot of the set Action with the email option selected." lightbox="media/consume-business-event/set-alerts-email.png":::
 
 ### Teams message
 
@@ -111,9 +123,13 @@ To configure the alert to send a Teams message to an individual or a group chat 
 
 1. For **Context**, select values from the drop-down list that you want to include in the context.
 
+:::image type="content" source="media/consume-business-event/set-alerts-teams.png" alt-text="Screenshot of the set Action with the Teams option selected." lightbox="media/consume-business-event/set-alerts-teams.png":::
+
 ## Run Fabric activities 
 
 To configure the alert to launch a Fabric pipeline, dataflow (preview), notebook, or Spark job when the condition is met, follow these steps:
+
+:::image type="content" source="media/consume-business-event/set-alerts-fabric.png" alt-text="Screenshot of the Fabric activities in the Actions dropdown menu." lightbox="media/consume-business-event/set-alerts-fabric.png":::
 
 1. For **Select action**, select the appropriate Fabric item type within the "Run Fabric Activities" section.
 
@@ -133,6 +149,8 @@ You can use properties from the data by typing @ or by selecting the button 
 
 To configure the alert to call a custom action when the condition is met, follow these steps:
 
+:::image type="content" source="media/consume-business-event/set-alerts-custom.png" alt-text="Screenshot of the custom action setup in the Actions dropdown menu." lightbox="media/consume-business-event/set-alerts-custom.png":::
+
 1. For **Select action**, select **Create custom action**.
 
 1. As mentioned in the **Action** section, create the rule first, and then complete the custom action setup by following steps from [Trigger custom actions (Power Automate flows)](../../real-time-intelligence/data-activator/activator-trigger-power-automate-flows.md).
@@ -142,6 +160,8 @@ To configure the alert to call a custom action when the condition is met, follow
 ## Save location section
 
 In the **Save location** section, for **Workspace**, select the workspace where you want to create the Fabric activator item or select an existing workspace. If you're creating a new activator item, enter a **name** for the activator item.
+
+:::image type="content" source="media/consume-business-event/set-alerts-save.png" alt-text="Screenshot of the save location section." lightbox="media/consume-business-event/set-alerts-save.png":::
 
 ### Create a rule
 
