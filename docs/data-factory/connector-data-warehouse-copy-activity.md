@@ -26,7 +26,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For the **General** tab configuration, select the copy activity, then select the the [General](activity-overview.md#general-settings) tab.
+For the **General** tab configuration, select the copy activity, then select the [General](activity-overview.md#general-settings) tab.
 
 ### Source
 
