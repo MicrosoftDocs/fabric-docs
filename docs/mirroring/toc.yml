@@ -156,18 +156,18 @@ items:
 - name: Mirroring MySQL
   items: 
     - name: Mirrored databases from MySQL
-      href: mysql/azure-database-mysql.md
+      href: azure-database-mysql.md
     - name: MySQL tutorial
-      href: mysql/azure-database-mysql-tutorial.md
+      href: azure-database-mysql-tutorial.md
     - name: FAQ
       displayName: Frequently asked questions about mirrored MySQL
-      href: mysql/azure-database-mysql-mirroring-faq.yml
+      href: azure-database-mysql-mirroring-faq.yml
     - name: Limitations
       displayName: Limitations in mirrored MySQL
-      href: mysql/azure-database-mysql-limitations.md
+      href: azure-database-mysql-limitations.md
     - name: Troubleshoot
       displayName: Troubleshoot mirrored MySQL
-      href: mysql/azure-database-mysql-troubleshoot.md
+      href: azure-database-mysql-troubleshoot.md
 - name: Mirroring SAP
   items:
     - name: Mirrored databases from SAP
