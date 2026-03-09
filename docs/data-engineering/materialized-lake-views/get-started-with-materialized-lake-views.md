@@ -3,7 +3,7 @@ title: Get Started with Materialized Lake Views in a Microsoft Fabric Lakehouse
 description: Learn how to create your first materialized lake view in a Microsoft Fabric lakehouse.
 ms.topic: quickstart
 ms.reviewer: abhishjain
-ms.date: 02/27/2026
+ms.date: 03/09/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -29,6 +29,9 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
    :::image type="content" source="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png" alt-text="Screenshot of selections for opening a new notebook to create a materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/new-materialized-lake-view.png":::
 
    A new notebook opens with a template to create a materialized lake view as shown in this screenshot.
+
+> [!NOTE]
+> If you are using a Fabric Data Warehouse table as source for materialized lake view, you are required to create a table shortcut in your Lakehouse.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png" alt-text="Screenshot that shows a notebook template to create a materialized lake view." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-view-notebook.png":::
 
