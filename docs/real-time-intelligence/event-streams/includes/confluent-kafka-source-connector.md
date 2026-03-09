@@ -3,7 +3,7 @@ title: Confluent Cloud for Apache Kafka connector for Fabric event streams
 description: This include files has the common content for configuring Confluent Cloud for Apache Kafka connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 06/23/2025
+ms.date: 03/09/2026
 ---
 
 1. On the **Select a data source** page, select **Confluent Cloud for Apache Kafka**. 
@@ -43,7 +43,15 @@ ms.date: 06/23/2025
         - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group and key vault, and then provide the server ca name. 
         - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group and key vault, and then provide the client certificate name. 
 
-    :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
+         :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
+    
+    1. You may expand **Additional settings** to configure **TLS verify hostname**, **TLS cipher suites** and **TLS revocation mode**:
+        - **TLS verify hostname**: Controls whether hostname verification is enabled for the TLS connection. The default value is **True**.
+        - **TLS cipher suites**: Specifies which TLS cipher suites the client can use. The default value is **Use system defaults**.
+        - **TLS revocation mode**: Controls whether client certificate revocation checking is enabled for the TLS connection. The default value is **Off**.
+
+        :::image type="content" source="./media/confluent-kafka-source-connector/configure-addtional-settings.png" alt-text="Screenshot that shows the addtional settings of Confluent TLS/mTLS settings."::: 
+
 1. Depending on whether your data is encoded using Confluent Schema Registry:
    - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
    - If encoded, proceed to the next step: [Connect to Confluent schema registry to decode data (preview)](#connect-to-confluent-schema-registry-to-decode-data-preview)
@@ -54,7 +62,9 @@ Eventstream's Confluent Cloud for Apache Kafka streaming connector is capable of
 You may expand **Advanced settings** to configure Confluent Schema Registry connection:
 
 1. **Define and serialize data**: Select **Yes** allows you to serialize the data into a standardized format. Select **No** keeps the data in its original format and passes it through without modification.
-1. If your data is encoded using a schema registry, select **Yes** when choosing whether the data is encoded with a schema registry. Then, select **New connection** to configure access to your Confluent Schema Registry:
+1. If your data is encoded using a schema registry, select **Yes** when choosing whether the data is encoded with a schema registry. 
+1. **Use broker TLS certificates**:  Specifies whether the Kafka broker’s TLS/mTLS certificates are used to secure the connection to the Confluent Schema Registry. Set this option to **True** when the broker and the Schema Registry use the same certificate configuration.
+1. Then, select **New connection** to configure access to your Confluent Schema Registry:
     - **Schema Registry URL**: The public endpoint of your schema registry.
     - **API Key** and **API Key Secret**: Navigate to Confluent Cloud Environment's Schema Registry to copy the **API Key** and **API Secret**. Ensure the account used to create this API key has **DeveloperRead** or higher permission on the schema. 
     - **Privacy Level**: Choose from **None**, **Private**, **Organizational**, or **Public**.
