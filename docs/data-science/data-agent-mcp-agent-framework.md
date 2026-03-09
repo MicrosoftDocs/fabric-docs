@@ -3,8 +3,8 @@ title: Consume a Fabric data agent using MCP & the Agent Framework SDK (preview)
 description: Learn how to authenticate with Microsoft Entra ID and call a Fabric data agent MCP server using Microsoft Agent Framework.
 author: jonburchel
 ms.author: jburchel
-ms.reviewer: jordanbean
-reviewer: jordanbean-msft
+ms.reviewer: amjafari, jordanbean
+reviewer: amjafari, jordanbean-msft
 ms.date: 03/09/2026
 ms.topic: how-to
 ai-usage: ai-assisted
