@@ -5,8 +5,6 @@ ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 5/23/2025
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add SQL Server on VM DB (CDC) source to an eventstream
@@ -69,20 +67,6 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## View updated eventstream
 
-::: zone pivot="basic-features"
-
-You can see the SQL Server on VM DB CDC source added to your eventstream in **Edit** mode.
-
-:::image type="content" source="media/add-source-sql-server-change-data-capture/edit-mode.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-sql-server-change-data-capture/edit-mode.png":::
-
-To implement this newly added SQL Server on VM DB CDC source, select **Publish**. After you complete these steps, your SQL Server on VM DB CDC source is available for visualization in the **Live view**.
-
-:::image type="content" source="media/add-source-sql-server-change-data-capture/live-view.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Live view mode." lightbox="media/add-source-sql-server-change-data-capture/live-view.png":::
-
-::: zone-end
-
-::: zone pivot="extended-features"
-
 You can see the SQL Server on VM DB CDC source added to your eventstream in **Edit** mode.
 
 :::image type="content" source="media/add-source-sql-server-change-data-capture/edit-mode.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Edit mode with extended features." lightbox="media/add-source-sql-server-change-data-capture/edit-mode.png":::
@@ -103,8 +87,6 @@ If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the
 :::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
 
 You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
-
-::: zone-end
 
 
 ## Related content
