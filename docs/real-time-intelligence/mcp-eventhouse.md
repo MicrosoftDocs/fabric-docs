@@ -99,16 +99,18 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 
 Once configured, verify that the setup is working.
 
-1. Start the **Eventhouse MPC server** in Visual Studio Code.
-2. Ensure the Eventhouse MCP server shows as **Running**.
-3. Open **GitHub Copilot Chat** window in VS Code.
-5. Enable **agent mode**.
-6. Ask a question, for example:
-   - *What tables are in this Eventhouse?*
+### Start the Eventhouse MCP server
+1. Start the **Eventhouse MCP server** in Visual Studio Code.
+1. Authenticate to the MCP server using credential that has access to the eventhouse. 
+1. Ensure the Eventhouse MCP server status shows as **Running**.
+
+### Use GitHub Copilot run queries
+1. Open **GitHub Copilot Chat** window in VS Code.
+1. Enable **agent mode**.
+1. Ask a question, for example:
+   - *What tables are in #eventhouse-remote?* (use the remote name you provided in the mcp.json). 
    - *Analyze the data in the StormEvents table and show the most damaging storm events*
-7. When prompted, authorize Copilot to use the MCP server tool.
-8. Authenticate with your Microsoft credentials if requested.
-9. Review the response returned by Copilot.
+1. Review the response returned by Copilot.
 
 ## Troubleshooting
 
