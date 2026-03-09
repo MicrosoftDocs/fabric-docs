@@ -21,9 +21,6 @@ Git integration and deployment pipelines are essential for:
 
 Use source control and deployment pipelines when you need to manage GraphQL APIs as part of a structured development lifecycle with multiple environments.
 
-> [!NOTE]
-> API for GraphQL source control and deployment is currently in **preview**.
-
 ## Prerequisites
 
 * You must have an API for GraphQL in Fabric. For more information, see [**Create an API for GraphQL in Fabric and add data**](get-started-api-graphql.md).
