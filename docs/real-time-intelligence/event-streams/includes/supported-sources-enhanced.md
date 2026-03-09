@@ -11,8 +11,9 @@ ms.date: 08/26/2025
 | [Azure Data Explorer (preview)](../add-source-azure-data-explorer-database.md) | If you have an Azure Data Explorer database and a table, you can ingest data from the table into Microsoft Fabric by using eventstreams.  |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Fabric by using eventstreams.  |
 | [Azure Event Grid (preview)](../add-source-azure-event-grid.md) | If you have an Azure Event Grid namespace, you can ingest MQTT or non-MQTT event data into Fabric by using eventstreams. |
-| [Azure Service Bus (preview)](../add-source-azure-service-bus.md) | You can ingest data from an Azure Service Bus queue or a topic's subscription into Fabric by using eventstreams.  |
+| [Azure Service Bus (preview)](../add-source-azure-service-bus.md) | You can ingest data from an Azure Service Bus queue or a topic's subscription into Fabric by using eventstreams. |
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Fabric by using eventstreams.  |
+| [Anomaly Detection events (preview)](../add-source-anomaly-events.md) | You can ingest data from an Anomaly detector into Fabric by using eventstreams. |
 | [Custom endpoint (that is, custom app in standard capability)](../add-source-custom-app.md) | The custom endpoint feature allows your applications or Kafka clients to connect to eventstreams by using a connection string. This connection enables the smooth ingestion of streaming data into eventstreams. |
 | [Azure IoT Operations](/azure/iot-operations/connect-to-cloud/howto-configure-fabric-real-time-intelligence) | Configure Azure IoT Operations to send real-time data directly to Fabric Real-Time Intelligence by using an eventstream custom endpoint. This capability supports Microsoft Entra ID or SASL authentication.  |
 | [Sample data](../add-source-sample-data.md) | You can choose **Bicycles**, **Yellow Taxi**, **Stock Market**, **Buses**, **S&P 500 companies stocks**, or **Semantic Model Logs** as a sample data source to test the data ingestion while setting up an eventstream. |

@@ -99,6 +99,8 @@ items:
             href: event-streams/add-source-azure-service-bus.md
           - name: Azure IoT Hub
             href: event-streams/add-source-azure-iot-hub.md
+          - name: Anomaly Detection events
+            href: event-streams/add-source-anomaly-events.md
           - name: Custom endpoint
             href: event-streams/add-source-custom-app.md
           - name: Sample data
