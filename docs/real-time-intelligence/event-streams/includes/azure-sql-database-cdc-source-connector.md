@@ -148,7 +148,7 @@ When you enable **Analytics-ready events & auto-updated schema** (DeltaFlow), th
 - **Automatic destination table management**: When you route DeltaFlow-enabled streams to a supported destination like an eventhouse, destination tables are automatically created to match the source table schema. You don't need to manually create or configure destination tables.
 - **Schema evolution handling**: When source database tables change (for example, new columns are added or tables are created), DeltaFlow automatically detects the changes, updates the registered schemas, and adjusts the destination tables accordingly. This minimizes manual intervention caused by schema changes.
 
-    :::image type="content" source="./media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing Eventhouse destination tables in analytics-ready shape created by DeltaFlow." lightbox="./media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
+    :::image type="content" source="./media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif alt-text="Screenshot showing Eventhouse destination tables in analytics-ready shape created by DeltaFlow." lightbox="./media/configure-destinations-schema-enabled-sources/ddeltaflow-destination-tables.gif::
 
 > [!NOTE]
 > DeltaFlow (Preview) is currently supported with Azure SQL Database CDC, Azure SQL Managed Instance CDC, SQL Server on VM CDC, and PostgreSQL CDC source connectors.
