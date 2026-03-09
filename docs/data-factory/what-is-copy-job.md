@@ -38,14 +38,14 @@ You can choose how your data is copied from source to destination:
 ### Incremental copy (CDC, Watermark) 
 
 In incremental copy, every run after the initial full copy (called a "subsequent load") transfers only certain changes. Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. 
-- When copying from a database using an incremental column ("watermark column"), each subsequent load copies only rows with a value in that column larger than any row previously copied.
-- When copying from a database that has CDC enabled, each subsequent load copies all rows inserted, updated, or deleted since the last successful run.
-- When copying files, each subsequent load copies only those files created or modified since the last successful run.
+- When Copy job copies from a database using an incremental column ("watermark column"), each subsequent load copies only rows with a value in that column larger than any row previously copied.
+- When Copy job copied from a database that has CDC enabled, each subsequent load copies all rows inserted, updated, or deleted since the last successful run.
+- When Copy job copies files, each subsequent load copies only those files created or modified since the last successful run.
 
 Typically, an incremental column holds a date/time value or an increasing number.
 If your database has CDC enabled, you don’t need to choose an incremental column — Copy job automatically detects the changes. 
 
-Note that if you are using a watermark to copy incrementally from a database, subsequent loads do not copy any rows with a "null" value in that column, because the "null" value is considered _less_ than any other value.
+If you are using a watermark to copy incrementally from a database, subsequent loads do not copy any rows with a "null" value in that column, because the "null" value is considered _less_ than any other value.
 
 See more details for [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
 
@@ -70,7 +70,7 @@ By default, Copy job **appends** new data, so you keep a full history. If you pr
 
 When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination.
 
-### Automatic table creation and truncate on destination
+### Automatic table creation and truncation on destination
 
 Copy job can automatically create tables in the destination if they don’t already exist. If the destination tables are already available, you can simply select them as your target. With flexible column mapping options, you can easily define how to map schemas from the source tables to the destination tables.
 
