@@ -12,10 +12,6 @@ ms.custom:
 
 This article covers troubleshooting steps for mirroring Azure Database for MySQL.
 
-## Troubleshoot error or warning messages during table selection for mirroring
-
-When you create a new mirrored database, in the **Choose data** page you might receive some visual feedback regarding specific tables in source database. The following table provides a list of potential issues, including the displayed message and related description on how to solve the problem.
-
 ## Changes to Fabric capacity or workspace
 
 | Cause | Result | Recommended resolution |
@@ -69,9 +65,6 @@ Check if the following server parameters are set to the required values:
 | `ValidationNullSelectedDatabases` | ERROR | No databases selected for mirroring. Recommended Action - Select one database and start Fabric mirroring again. |
 | `CdcRowImageMismatch` | ERROR | Source schema (DDL) change detected; DDL isn't supported. |
 | `CdcParquetWriteFailed` | ERROR | Make sure you don't use unsupported data types. If the issue persists, contact support. |
-
-- DML changes are only supported at this time.
-- Currently, views, materialized views, foreign tables, and partitioned tables aren't supported.
 
 ### Supported data types
 
