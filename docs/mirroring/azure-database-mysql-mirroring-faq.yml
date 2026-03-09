@@ -66,7 +66,7 @@ sections:
       - question: |
           What are the replication statuses? 
         answer: 
-          See [Monitor Fabric Mirror replication](../monitor.md).
+          See [Monitor Fabric Mirror replication](monitor.md).
 
       - question: |
           Can Azure Database for MySQL be virtual network integrated or only accessible through a Private Endpoint? 
@@ -137,7 +137,7 @@ sections:
       - question: |
           What are licensing options for Fabric Mirroring? 
         answer:
-          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../../enterprise/licenses.md).
+          A Power BI Premium, Fabric Capacity, or Trial Capacity is required. For more information on licensing, see [Microsoft Fabric licenses](../enterprise/licenses.md).
 
   - name: Stop or pause Fabric Mirroring
     questions:
@@ -156,6 +156,6 @@ additionalContent: |
 
   ## Related content
 
-  - [What is Mirroring in Fabric?](../overview.md)
+  - [What is Mirroring in Fabric?](overview.md)
   - [Azure Database for MySQL mirroring in Microsoft Fabric](azure-database-mysql.md)
   - [Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md).

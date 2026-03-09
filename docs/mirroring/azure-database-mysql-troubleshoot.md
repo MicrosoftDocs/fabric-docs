@@ -19,8 +19,8 @@ This article covers troubleshooting steps for mirroring Azure Database for MySQL
 | Fabric capacity paused or deleted | Mirroring stops | 1. Resume or assign capacity from the Azure portal.<br />2. Go to the Fabric mirrored database item. From the toolbar, select **Stop replication**.<br />3. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Fabric capacity resumed | Mirroring doesn't resume | 1. Go to the Fabric mirrored database item. From the toolbar, select **Stop replication**.<br />2. Start replication by selecting **Mirror database** for the mirrored item in the Fabric portal. |
 | Workspace deleted | Mirroring stops automatically | If mirroring is still active on the Azure Database for MySQL, connect by using a server admin and stop the mirroring replication process through the MySQL administrative tools or by disabling the mirroring configuration in the Fabric portal. |
-| Fabric trial capacity expired | Mirroring stops automatically | See [Fabric trial capacity expires](../../fundamentals/fabric-trial.md#the-trial-expires). |
-| Fabric capacity exceeded | Mirroring pauses | Wait until the overload state is over or update your capacity. For more information, see [Actions you can take to recover from overload situations](../../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). Mirroring continues once the capacity is recovered. |
+| Fabric trial capacity expired | Mirroring stops automatically | See [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |
+| Fabric capacity exceeded | Mirroring pauses | Wait until the overload state is over or update your capacity. For more information, see [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). Mirroring continues once the capacity is recovered. |
 | Any other resource errors | Mirroring is disabled | To ensure your compute resources aren't affected and to minimize impact on the Azure Database for MySQL, mirroring disables on any persistent resource errors. |
 
 ## SQL queries for troubleshooting

@@ -9,11 +9,11 @@ ai-usage: ai-assisted
 
 # Limitations in Microsoft Fabric mirrored databases from Azure Database for MySQL (preview)
 
-This article lists current limitations in the [Microsoft Fabric mirrored databases](../overview.md) from Azure Database for MySQL. This article is subject to change.
+This article lists current limitations in the [Microsoft Fabric mirrored databases](overview.md) from Azure Database for MySQL. This article is subject to change.
 
 For troubleshooting, see:
 
-[Troubleshoot Fabric mirrored databases](../troubleshooting.md)
+[Troubleshoot Fabric mirrored databases](troubleshooting.md)
 
 [Troubleshoot Fabric mirrored databases from Azure Database for MySQL](azure-database-mysql-troubleshoot.md).
 
@@ -69,11 +69,11 @@ Certain table configurations and data types have limitations when mirroring to F
 
 The SQL analytics endpoint for mirrored databases has the same limitations as the Lakehouse SQL analytics endpoint.
 
-- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. For more information, see [SQL analytics endpoint limitations](../../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
+- The SQL analytics endpoint is the same as [the Lakehouse SQL analytics endpoint](../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It's the same read-only experience. For more information, see [SQL analytics endpoint limitations](../data-warehouse/limitations.md#limitations-of-the-sql-analytics-endpoint).
 
 ## Supported regions
 
-All Microsoft Fabric regions support database mirroring and open mirroring. For more information, see [Fabric region availability](../../admin/region-availability.md).
+All Microsoft Fabric regions support database mirroring and open mirroring. For more information, see [Fabric region availability](../admin/region-availability.md).
 
 ## Related content
 
