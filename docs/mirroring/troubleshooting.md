@@ -12,26 +12,26 @@ ms.search.form: Fabric Mirroring
 This article describes common scenarios, resolutions, and workarounds for Microsoft Fabric mirrored databases. For each data source, also review the specific troubleshooting, frequently asked questions (FAQ), and limitations.
 
 | Source | Limitations | Troubleshoot | FAQ |
-| --- | --- | --- | --- |
+| :--- | :--- | :--- | :--- |
 | Azure Cosmos DB | [Limitations](./azure-cosmos-db-limitations.md) | [Troubleshoot](./azure-cosmos-db-troubleshooting.yml) | [FAQ](./azure-cosmos-db-faq.yml) |
 | Azure Database for MySQL (Preview) | [Limitations](./mysql/azure-database-mysql-limitations.md) | [Troubleshoot](./mysql/azure-database-mysql-troubleshoot.md) | [FAQ](./mysql/azure-database-mysql-mirroring-faq.yml) |
 | Azure Database for PostgreSQL | [Limitations](./azure-database-postgresql-limitations.md) | [Troubleshoot](./azure-database-postgresql-troubleshoot.md) | [FAQ](./azure-database-postgresql-mirroring-faq.yml) |
-| Azure Databricks | [Limitations](./azure-databricks-limitations.md) | N/A | [FAQ](./azure-databricks-faq.yml) |
+| Azure Databricks | [Limitations](./azure-databricks-limitations.md) | [Troubleshoot](./azure-databricks-troubleshoot.md) | [FAQ](./azure-databricks-faq.yml) |
 | Azure SQL Database | [Limitations](./azure-sql-database-limitations.md) | [Troubleshoot](./azure-sql-database-troubleshoot.md) | [FAQ](./azure-sql-database-mirroring-faq.yml) |
 | Azure SQL Managed Instance | [Limitations](./azure-sql-managed-instance-limitations.md) | [Troubleshoot](./azure-sql-managed-instance-troubleshoot.md) | [FAQ](./azure-sql-managed-instance-faq.yml) |
 | Fabric SQL database | [Limitations](../database/sql/mirroring-limitations.md) | [Troubleshoot](../database/sql/mirroring-troubleshooting.md) | [FAQ](../database/sql/mirroring-faq.yml) |
-| Google BigQuery | [Limitations](./google-bigquery-limitations.md) | N/A | [FAQ](./google-bigquery-faq.yml) |
-| Oracle | [Limitations](./oracle-limitations.md) | N/A | N/A |
-| SAP | [Limitations](./sap-limitations.md) | N/A | N/A |
-| Snowflake | [Limitations](./snowflake-limitations.md) | [Troubleshoot](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric) | N/A |
+| Google BigQuery | [Limitations](./google-bigquery-limitations.md) | | [FAQ](./google-bigquery-faq.yml) |
+| Oracle | [Limitations](./oracle-limitations.md) | | |
+| SAP | [Limitations](./sap-limitations.md) | | |
+| Snowflake | [Limitations](./snowflake-limitations.md) | [Troubleshoot](snowflake-mirroring-faq.yml#troubleshoot-mirroring-snowflake-in-microsoft-fabric) | |
 | SQL Server | [Limitations](./sql-server-limitations.md) | [Troubleshoot](./sql-server-troubleshoot.md) | [FAQ](./sql-server-faq.yml) |
 
 ## Changes to Fabric capacity
 
 | Scenario | Description |
-| --- | --- |
+| :--- | :--- |
 | Fabric capacity paused | Mirroring stops and you can't list or access the mirrored database item. Resume or reassign the capacity to your workspace. |
-| Fabric capacity resumed | When you resume capacity from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br />To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused.<br />If the capacity remains paused for a long time, mirroring might not resume from its stopping point and reseeds data from the beginning. This condition occurs because pausing mirroring for a long time causes the source database transaction log usage to grow and holds up log truncation. To minimize impact to the database, if the log space used is close to being full, when mirroring is resumed as a reseed of the database initiates to release the held up log space. |
+| Fabric capacity resumed | When you resume capacity from a paused state, the mirrored database status appears as **Paused**. As a result, changes made in the source aren't replicated to OneLake.<br />To resume mirroring, go to the mirrored database in the Fabric portal, select **Resume replication**. Mirroring continues from where it was paused.<br />If the capacity remains paused for a long time, mirroring might not resume from its stopping point and reseeds data from the beginning. A reseed occurs because pausing mirroring for a long time causes the source database transaction log usage to grow and prevents log truncation. To minimize impact to the source database, if the log space used is close to being full, when mirroring is resumed, a reseed of the database releases the log space. |
 | Fabric capacity scaling | Mirroring continues. If you scale down the capacity, be aware that the OneLake storage for the mirrored data is free up to a limit based on the capacity size, thus scaling down the capacity might incur additional storage charge. For more information, see [Cost of mirroring](overview.md#cost-of-mirroring). |
 | Fabric capacity throttled | Wait until the overload state is over or update your capacity. Mirroring continues once the capacity is restored. For more information, see [Actions you can take to recover from overload situations](../enterprise/throttling.md#how-to-stop-throttling-when-it-occurs). |
 | Fabric trial capacity expired | Mirroring stops. To retain your mirrored database, purchase Fabric capacity. For more information, see [Fabric trial capacity expires](../fundamentals/fabric-trial.md#the-trial-expires). |
@@ -48,7 +48,7 @@ If you observe a delay in the appearance of mirrored data, check the following i
 
 - **Data in OneLake:** Mirroring continuously replicates your data into OneLake in Delta Lake table format. To validate if the data lands in OneLake properly, you can create a shortcut from the mirrored tables into a Lakehouse, then build notebooks with Spark queries to query the data. Learn more about [Explore with notebooks](../mirroring/explore-onelake-shortcut.md).
 
-- **Data in SQL analytics endpoint:** You can query mirrored data through the SQL analytics endpoint of the mirrored database or a Lakehouse with a shortcut to the mirrored data. When you see a delay, validate the mirroring status and data in OneLake as mentioned above. If the data shows up in OneLake but not in SQL analytics endpoint, it might be caused by a delay in [metadata sync](../data-warehouse/sql-analytics-endpoint-performance.md) in SQL analytics endpoint.
+- **Data in SQL analytics endpoint:** You can query mirrored data through the SQL analytics endpoint of the mirrored database or a Lakehouse with a shortcut to the mirrored data. When you see a delay, validate the mirroring status and data in OneLake as mentioned previously. If the data shows up in OneLake but not in SQL analytics endpoint, it might be caused by a delay in [metadata sync](../data-warehouse/sql-analytics-endpoint-performance.md) in SQL analytics endpoint.
 
   You can manually force a refresh of the automatic metadata scanning. On the page for the SQL analytics endpoint, select the **Refresh** button as shown in the following image. Wait for some time then query the data again to check.
 
@@ -112,7 +112,7 @@ The SQL analytics endpoint supports **varchar(max)** up to 16 MB.
 - Existing tables created before November 18, 2025 only support **varchar(8000)** and need to be recreated to adopt new data type and support data greater that 8 KB.
 
 | Mirrored platform item | **varchar(max)** limit |
-| --- | --- |
+| :--- | :--- |
 | Mirrored SQL Server, Azure SQL Database, Azure SQL Managed Instance | 1 MB |
 | SQL database in Fabric | 1 MB |
 | Mirrored Azure Cosmos DB | 2 MB |
@@ -136,7 +136,7 @@ Changing the source database isn't supported. Create a new mirrored database.
 These common error messages have explanations and mitigations:
 
 | **Error message** | **Reason** | **Mitigation** |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | "The tables count might exceed the limit, there could be some tables missing." | There's a maximum of 1,000 tables. | In the source database, drop or filter tables. If the new table is the 1,000th table, no mitigation required. |
 | "The replication is being throttled and expected to continue at YYYY-MM-DDTHH:MM:ss." | There's a maximum of 1 TB of change data captured per Mirrored database per day. | Wait for throttling to end. |
 
