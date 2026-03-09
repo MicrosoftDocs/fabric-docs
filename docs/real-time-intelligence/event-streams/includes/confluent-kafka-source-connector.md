@@ -50,7 +50,7 @@ ms.date: 03/09/2026
         - **TLS cipher suites**: Specifies which TLS cipher suites the client can use. The default value is **Use system defaults**.
         - **TLS revocation mode**: Controls whether client certificate revocation checking is enabled for the TLS connection. The default value is **Off**.
 
-        :::image type="content" source="./media/confluent-kafka-source-connector/configure-addtional-settings.png" alt-text="Screenshot that shows the addtional settings of Confluent TLS/mTLS settings."::: 
+        :::image type="content" source="./media/confluent-kafka-source-connector/configure-additional-settings.png" alt-text="Screenshot that shows the addtional settings of Confluent TLS/mTLS settings."::: 
 
 1. Depending on whether your data is encoded using Confluent Schema Registry:
    - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
