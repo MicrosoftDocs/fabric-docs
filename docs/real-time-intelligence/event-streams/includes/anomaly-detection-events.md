@@ -6,7 +6,7 @@ ms.topic: include
 ms.date: 03/09/2026
 ---
 
-1. On the **Connect** page, for **Event types**, the default value is set to **Microsoft.Fabric.AnomalyEvents.AnomalyDetected**.
+1. On the **Connect** page, for **Event types**, the default value is **Microsoft.Fabric.AnomalyEvents.AnomalyDetected**.
 
 1. This step is optional. To see the [Schemas](../add-source-anomaly-events.md#schemas) for event types,  select **View selected event type schemas**. If you select it, browse through schemas for the events, and then navigate back to previous page by selecting the backward arrow button at the top. 
 

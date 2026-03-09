@@ -7,14 +7,13 @@ ms.date: 03/06/2026
 ms.search.form: Source and Destination
 ---
 
-# Add Anomaly detection events to an eventstream 
+# Add Anomaly detection events to an eventstream (preview)
 
-Anomaly detection events allow you to subscribe to anomalies detected in your Eventhouse data, and then react to those anomalies in real time. With Fabric event streams, you can capture these anomaly detection events, transform them, and route them to various destinations in Fabric for further analysis or automated actions. 
+Anomaly detection events allow you to subscribe to anomalies detected in your Eventhouse data, and then react to those anomalies in real time. With Fabric event streams, you can capture these anomaly detection events, transform them, and route them to various destinations in Fabric for further analysis. 
 
 This article shows you how to add Anomaly detection events source to an eventstream.
 
 ## Schemas
-An event has the following top-level data:
 An event has the following top-level data:
 
 | Property | Type | Description | Example |
@@ -60,11 +59,11 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 1. Once the connection is created, you can see the Fabric OneLake events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the OneLake events.
 
-:::image type="content" source="./media/add-source-anomaly-events/edit-mode.png" alt-text="Screenshot that shows the edit mode in Eventstream.":::
+    :::image type="content" source="./media/add-source-anomaly-events/edit-mode.png" alt-text="Screenshot that shows the edit mode in Eventstream.":::
 
-1. If you want to transform the Anomaly detection events, open your eventstream and select **Edit** on the toolbar to enter **Edit mode**. Then you can add operations to transform the Anomaly detection events or route them to a destination such as Lakehouse.
+1. If you want to transform events from the Anomaly detection events source, open your eventstream and select **Edit** on the toolbar to enter **Edit mode**. Then you can add operations to transform the Anomaly detection events or route them to a destination such as Lakehouse.
 
-:::image type="content" source="./media/add-source-anomaly-events/live-view.png" alt-text="Screenshot that shows the live view in Eventstream.":::
+    :::image type="content" source="./media/add-source-anomaly-events/live-view.png" alt-text="Screenshot that shows the live view in Eventstream.":::
 
 ## Limitation
 * The Anomaly Detection events source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.    
