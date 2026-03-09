@@ -55,9 +55,9 @@ items:
       href: /rest/api/fabric/ontology/items
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
-- name: Graph in Microsoft Fabric
+- name: Graph
   href: ../graph/toc.yml
-- name: Fabric data agent
+- name: Data agent
   href: ../data-science/data-agent-toc/toc.yml
 - name: Operations agent
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml

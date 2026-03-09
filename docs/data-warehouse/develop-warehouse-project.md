@@ -2,7 +2,7 @@
 title: Develop Warehouse Projects in Visual Studio Code
 description: Learn how to develop warehouse projects for Fabric Data Warehouse in Visual Studio Code.
 ms.reviewer: pvenkat, randolphwest
-ms.date: 11/12/2025
+ms.date: 03/03/2026
 ms.topic: how-to
 ---
 # Develop warehouse projects in Visual Studio Code
@@ -61,7 +61,7 @@ You can create a database project from scratch or existing warehouse.
 1. First, create a new connection profile for your warehouse in Visual Studio Code.
     1. Select the **SQL Server** extension in Visual Studio Code from the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout).
     1. Provide a **Profile Name**. Choose **Parameters**.
-    1. Provide the **Server name**. In the Fabric portal, in the **Settings** of your warehouse, retrieve the **SQL Endpoint** string. (This is different from the SQL analytics endpoint.) It looks like `<server unique ID>.datawarehouse.fabric.microsoft.com`. This is the **Server name**.
+    1. Provide the **Server name**. In the Fabric portal, in the **Settings** of your warehouse, select **SQL endpoint**, and copy the provided string. This is the server name of your warehouse, and is different from the SQL analytics endpoint. It looks like `<server unique ID>.datawarehouse.fabric.microsoft.com`.
     1. For **Authentication type**, use **Microsoft Entra ID - Universal with MFA support**. Authenticate with your Microsoft Entra ID.
     1. Provide other information as default, or desired, and select **Connect**.
 

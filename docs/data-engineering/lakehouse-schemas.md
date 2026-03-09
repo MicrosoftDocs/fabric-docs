@@ -16,6 +16,7 @@ Lakehouse schemas in Microsoft Fabric let you group tables into named collection
 - **Query across workspaces** — Reference tables with a four-part namespace (`workspace.lakehouse.schema.table`) to join data from multiple lakehouses and workspaces in a single Spark SQL query.
 - **Reference external data with schema shortcuts** — Map a schema to a folder in another lakehouse or in Azure Data Lake Storage (ADLS) Gen2, so external Delta tables appear as local tables.
 - **Use advanced features** — Features like [materialized lake views](materialized-lake-views/overview-materialized-lake-view.md) require schema-enabled lakehouses.
+- **Schema name** - The schema name can only contain letters, numbers, and underscores (_).
 
 If you have an existing lakehouse that was created before schemas were available, see [Enable schemas for existing lakehouses](#enable-schemas-for-existing-lakehouses).
 
