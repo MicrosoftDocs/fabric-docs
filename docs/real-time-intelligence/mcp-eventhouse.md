@@ -126,7 +126,6 @@ If you encounter issues:
 Explore advanced scenarios such as:
 
 - Natural language–to–KQL translation.
-- Root cause analysis over time-series data.
 - Real-time anomaly detection using Eventhouse MCP tools.
 
 ## Example: Analyze your data
