@@ -15,7 +15,8 @@ ms.collection: not-ai
 
 Learn how to use a remote Model Context Protocol (MCP) for eventhouse to execute KQL queries. The eventhouse remote MCP server allows AI agents to query, reason, and act on real-time data in the RTI eventhouse. This is a hosted MCP where you configure a URL to point to the Eventhouse. There is no need to install or deploy anything.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+> [!NOTE]
+> This feature is currently in preview. 
 
 The Eventhouse remote MCP enables AI agents to query Eventhouse using natural language. Through the **Model Context Protocol (MCP)**, AI assistants can:
 
@@ -26,8 +27,6 @@ The Eventhouse remote MCP enables AI agents to query Eventhouse using natural la
 - Sample data.
 
 This capability allows Copilot and custom AI agents to securely interact with your eventhouse and be consumed by cloud agent platforms, such as **Copilot Studio** and **Azure AI Foundry**.
-
-For the full list of available tools and natural language query examples, see [overview](https://github.com/microsoft/fabric-rti-mcp/?tab=readme-ov-file#-overview) in the Fabric RTI MCP Server repository.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -103,9 +102,8 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 Once configured, verify that the setup is working.
 
 1. Start the **Microsoft Fabric MCP server** in Visual Studio Code.
-2. Ensure the Eventhouse MCP server shows as **connected**.
-3. Open **GitHub Copilot**.
-4. Launch the chat window in VS Code.
+2. Ensure the Eventhouse MCP server shows as **Running**.
+3. Open **GitHub Copilot Chat** window in VS Code.
 5. Enable **agent mode**.
 6. Ask a question, for example:
    - *What tables are in this Eventhouse?*
