@@ -6,8 +6,6 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/23/2025
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add PostgreSQL Database CDC source to an eventstream

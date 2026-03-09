@@ -5,8 +5,6 @@ ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 5/23/2025
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add SQL Server on VM DB (CDC) source to an eventstream
