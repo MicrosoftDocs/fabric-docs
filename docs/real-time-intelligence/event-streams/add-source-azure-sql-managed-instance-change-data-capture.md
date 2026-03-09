@@ -53,7 +53,6 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 ## Add Azure SQL Managed Instance CDC as a source
 
-## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure SQL MI DB (CDC)** tile.

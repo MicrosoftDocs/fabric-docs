@@ -56,7 +56,6 @@ Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monito
 
 ## Add SQL Server on VM database as a source
 
-## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **SQL Server on VM DB (CDC)** tile.
