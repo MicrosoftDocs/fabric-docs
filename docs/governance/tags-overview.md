@@ -11,23 +11,23 @@ ms.date: 09/04/2025
 
 # Tags in Microsoft Fabric
 
-Tags in Microsoft Fabric let you apply additional metadata to items and workspaces, making it easier to categorize, organize, and discover data. Tags are configurable text labels, such as _Sales – FR 2025_, _HR – Summer Event_, or _FY 2025_, that can be applied at both the tenant and [domain](domains) levels, offering flexibility in how assets are governed across your organization. Data and content owners can then apply these tags to their Fabric items and workspaces, helping users find the data and content they need.
+Tags in Microsoft Fabric let you apply additional metadata to items and workspaces, making it easier to categorize, organize, and discover data. Tags are configurable text labels, such as _Sales – FR 2025_, _HR – Summer Event_, or _FY 2025_, that can be applied at both the tenant and [domain](domains.md) levels, offering flexibility in how assets are governed across your organization. Data and content owners can then apply these tags to their Fabric items and workspaces, helping users find the data and content they need.
 
 Tags are an important component of Fabric's data mesh architecture. They let you add details at the item and workspace levels, across workspaces and domains.
 
-- **Tenant and domain admins [create tags](tags-define).**
+- **Tenant and domain admins [create tags](tags-define.md).**
 
   - **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
 
   - **Domain-level tags** can be defined by Fabric or domain administrators and are specific to particular domains within your Fabric environment. These tags are available only for items and workspaces within that domain. Domain-level tags let domain owners implement more targeted governance policies that reflect the needs of their area. A tag created at the domain level can't be duplicated at the tenant level. However, it can be duplicated on other domains.
 
-- **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](tags-apply). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
+- **Data owners apply tags to items.** Data owners, who best know how to categorize their own data, [apply tags to items](tags-apply.md). An item can have up to 10 tags applied to it. When data owners apply tags, they can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
 
-- **Workspace admins apply tags to workspaces.** Workspace admins can [apply tags at the workspace level](tags-apply#apply-tags-to-a-workspace), so you don't have to tag each item individually. Workspace tags are useful for cost attribution, governance reporting, and policy enforcement. A workspace can have up to 10 tags, counted independently from per-item tags. Non-admin workspace members (Viewer, Member, Contributor) can view workspace tags but can't modify them.
+- **Workspace admins apply tags to workspaces.** Workspace admins can [apply tags at the workspace level](tags-apply.md#apply-tags-to-a-workspace), so you don't have to tag each item individually. Workspace tags are useful for cost attribution, governance reporting, and policy enforcement. A workspace can have up to 10 tags, counted independently from per-item tags. Non-admin workspace members (Viewer, Member, Contributor) can view workspace tags but can't modify them.
 
 - **Users use tags for discoverability.** Once tags are applied to items and workspaces, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
 
-- **Admins use tags for governance.** Admins can use the [metadata scanning (scanner)](metadata-scanning-overview) APIs to programmatically fetch tag associations for both items and workspaces at scale and use them in downstream governance and discovery solutions.
+- **Admins use tags for governance.** Admins can use the [metadata scanning (scanner)](metadata-scanning-overview.md) APIs to programmatically fetch tag associations for both items and workspaces at scale and use them in downstream governance and discovery solutions.
 
 ## How tags enhance data discoverability
 

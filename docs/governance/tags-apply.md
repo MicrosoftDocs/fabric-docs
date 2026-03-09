@@ -14,7 +14,7 @@ ms.date: 05/05/2025
 
 This article describes how to apply tags to items and workspaces in Microsoft Fabric.
 
-For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
+For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md).
 
 ## Prerequisites
 
@@ -27,10 +27,10 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
 
 1. Select the **Select tags to apply** drop-down to display the list of available tags. Choose the tags that are relevant for your item. You can select more than one tag. An item can have up to 10 tags. Tags already applied to the item are listed under **Applied tags**.
 
-   ![Screenshot showing how to choose tags to apply to an item.](./media/tags-apply/choose-tags.png)
-   
-         > [!NOTE]
-   > If the **Select tags to apply** drop-down is disabled, you don't have permission to apply tags to the item.
+    :::image type="content" source="media/tags-apply/choose-tags.png" alt-text="Screenshot showing how to choose tags to apply to an item.":::
+
+    > [!NOTE]
+    > If the **Select tags to apply** drop-down is disabled, you don't have permission to apply tags to the item.
    
 3. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
 
@@ -76,12 +76,11 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview).
 Tags can be applied or removed programmatically using public REST APIs:
 
 1. For items, use the [Update Item](/en-us/rest/api/fabric/core/items/update-item) API to apply or remove tags from an item.
-2. For workspaces, use the [Apply Workspace Tags](/en-us/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/en-us/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace.
+2. For workspaces, use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace.
 
 ## Related content
 
-- [Tags overview](tags-overview)
-- [Create and manage a set of tags](tags-define)
-
-- [Fabric REST Admin APIs for tags](/en-us/rest/api/fabric/admin/tags)
+- [Tags overview](tags-overview.md)
+- [Create and manage a set of tags](tags-define.md)
+- [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)
 
