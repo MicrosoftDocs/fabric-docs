@@ -50,7 +50,7 @@ df.ai.extract(labels=["entity1", "entity2", "entity3"], input_col="input")
 
 The function returns a [Spark DataFrame](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/dataframe.html) with a new column for each specified entity type. The column or columns contain the entities extracted for each row of input text. If the function identifies more than one match for an entity, it returns only one of those matches. If no match is found, the result is `null`.
 
-The default return type is a list of strings for each label. If users choose to specify a different type in the `aifunc.ExtractLabel` configuration, such as "type=integer", then the output will be a list of python int. If users specify "max_items=1" in the `aifunc.ExtractLabel` configuration, then only one element of the type is returned for that label.
+The default return type is a list of strings for each label. If users choose to specify a different type in the `aifunc.ExtractLabel` configuration, such as "type=integer", then the output will be a list of Python `int` values. If users specify "max_items=1" in the `aifunc.ExtractLabel` configuration, then only one element of the type is returned for that label.
 
 ## Example
 
@@ -60,7 +60,7 @@ The default return type is a list of strings for each label. If users choose to 
 # This code uses AI. Always review output for mistakes. 
 
 df = spark.createDataFrame([
-        ("MJ Lee lives in Tuscon, AZ, and works as a software engineer for Contoso.",),
+        ("MJ Lee lives in Tucson, AZ, and works as a software engineer for Contoso.",),
         ("Kris Turner, a nurse at NYU Langone, is a resident of Jersey City, New Jersey.",)
     ], ["descriptions"])
 

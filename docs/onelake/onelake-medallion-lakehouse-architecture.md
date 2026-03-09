@@ -84,7 +84,7 @@ In the bronze layer, you store data in its original format, which might be eithe
 
 In the silver and gold layers, you typically store data in Delta tables. However, you can also store data in Parquet or CSV files. If you do that, you must explicitly create a shortcut or an external table with a location that points to the unmanaged folder that contains the Delta Lake files in Apache Spark.
 
-In Microsoft Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md#lakehouse-explorer) provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
+In Microsoft Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md) provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
 
 ### Delta Lake storage
 
