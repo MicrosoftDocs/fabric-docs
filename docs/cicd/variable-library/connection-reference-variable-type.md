@@ -56,24 +56,49 @@ The following is a list of connections that are currently supported using connec
 - Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
 - [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
 
-### Permissions Required to Create/Use Connection References
+## Permissions Required to Create/Use Connection References
 Using connection reference variables involves two layers of permissions:
 
 - **Editing the Variable Library**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the Referenced Connection**: In addition to rights on the Variable Library, **you must have at least Read permission on the connection** you intend to reference.
 
-#### Permission validation
-Permission validation is triggered by two different use-cases:
+## Permission validation
 
-- UI-based creation and editing of connection reference variables
-- Non-UI updates such as (API update, import through Git or Deployment pipelines)
+Permission validation applies to both connection reference and item reference variables in the Variable library. Validation ensures that referenced resources exist and that the user performing an action has at least read permissions to those resources. Validation is triggered across UI and non-UI workflows, including APIs, Git updates, and deployments. 
 
-So what this means is:
+### When permission validation occurs
+Permission checks are triggered in the following scenarios:
 
- - When the connection reference is first created and a value for the connection referenced is selected, the user performing this action, needs at least read permissions to the connection being referenced. 
- - Attempting to edit an existing connection reference in the active value set, the user performing this action, needs at least read permissions to the connection being referenced. 
-		
-You can view connection reference additional details in the Variable library page (UI only) Users with access to the Variable library (WS viewer or higher) who lack permissions for the connection in the referenced connection variable, won't see their details in the UI. Instead, they'll see the connection ID accompanied by a hover message, rather than the details component.
+#### Create or edit reference variables
+
+- UI
+    - When creating a connection reference or item reference variable, or when updating the value of any value set (default or alternative), users can select only connections or items for which they have at least read permission.
+    - Editing an existing reference value in the active value set also requires read permission to the referenced resource. [ws variables spec M1 | Word], [Variable l...soft Learn | Learn.Microsoft.com]
+- APIs, Git updates, and deployments
+    - Updates fail if the user or identity performing the operation does not have read permission to the active value of the referenced connection or item in the target workspace.
+    - Variable library deployments fail under the same conditions. 
+
+
+#### Edit a Variable library item
+When editing a Variable library item that contains connection reference or item reference variables, validation is performed for all active reference values, even if those values were not modified:
+
+- UI 
+    – During save, the system validates that referenced resources exist and that the saving user has read permission to all active reference values.
+- APIs/Git updates 
+    – Validation occurs during update and fails if read permission is missing.
+- Deployment 
+    – Deployment fails if the user or identity applying the deployment lacks read permission to referenced resources in the target workspace.
+
+#### Use of item reference variables in consumer items
+
+- UI 
+    – When creating a reference to an item reference variable from a consumer item (for example, using the Select variable dialog in a shortcut or data pipeline), the system validates that the user has read permission to the items referenced by the variable’s active value set.
+    - If permissions are missing, only the item IDs are shown. 
+
+#### Viewing reference details in the UI
+- In the Variable library UI, users with access to the Variable library (workspace Viewer or higher) but without read permission to a referenced connection or item:
+   - Do not see the full details of the referenced resource
+   - See only the resource ID, accompanied by a hover message instead of the details component
 
  :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
 
