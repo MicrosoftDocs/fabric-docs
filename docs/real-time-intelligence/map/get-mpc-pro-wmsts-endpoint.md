@@ -1,36 +1,38 @@
 ---
-title: ARetrieve the WMTS endpoint URL from the MPC Pro geocatalog
-description: Learn how to Retrieve the WMTS endpoint URL from the MPC Pro geocatalog.
+title: Get the WMTS endpoint URL from the MPC Pro geocatalog
+description: Learn how to get the WMTS endpoint URL from the MPC Pro geocatalog.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
 ms.service: fabric
 ms.subservice: rti-core
 ms.date: 3/12/2026
-ms.search.form: WMTS, MPC, Microsoft Planetary Computer Pro imagery, MPC Pro geocatalog
+ms.search.form: WMTS, MPC, Microsoft Planetary Computer Pro imagery, MPC Pro geocatalog, WMTS endpoint URL
 ---
 
-# Retrieve the WMTS endpoint URL from the MPC Pro geocatalog
+# Get the WMTS endpoint URL from the MPC Pro geocatalog
 
 Use the following Python code snippets to retrieve the information required to construct the WMTS endpoint for imagery data in your MPC Pro geocatalog.
 
-1. Install the required libraries:
+1. Install required libraries:
 
     ```
     pip install azure-identity ipykernel requests
     ```
 
-1. Import the libraries:
+1. Import libraries:
 
     ```python
     import json
     import requests
     import urllib.parse
-    import xml.etree.ElementTree as ET
     from azure.identity import DefaultAzureCredential
-    from IPython.display import Image, display
     ```
 
-1. Setup API authorization and common parameters
+1. Authenticate and retrieve collection metadata
+
+    Authenticate to the Microsoft Planetary Computer Pro Geocatalog using Azure AD and define common request parameters. Then retrieve the STAC collection metadata to obtain the collection's spatial extent and descriptive information.
+
+    The collection response provides the bounding box (bbox), which defines the geographic coverage of the imagery, and the collection title, which can be reused later when registering the WMTS endpoint source name. This metadata is required to correctly scope imagery requests and configure downstream WMTS usage.
 
     ```python
     # Setup API authorization for Microsoft Planetary Computer Pro
@@ -40,11 +42,18 @@ Use the following Python code snippets to retrieve the information required to c
     
     headers = {"authorization": "Bearer " + token.token}
     params = {"api-version": "2025-04-30-preview"}
-    geocatalog_url = "https://{geocatalog_instance_name}.{region_name}}.geocatalog.spatio.azure.com"
+    geocatalog_url = "https://{geocatalog_instance_name}.{region_name}.geocatalog.spatio.azure.com"
     collection_id = "{collection_id}"
-    Get Bounding Box and Render Configuration from the collection
+    ```
+
+    > [!NOTE]
+    > If a request returns 401 or 403, verify that your Azure AD principal has access to the MPC Pro geocatalog instance.
+
+1. Get Bounding Box and Render Configuration from the collection
+
     Retrieve the bbox (bounding box) from the STAC collection metadata. In addition, capture the collection title to use later when registering the WMTS endpoint source name.
-    
+
+    ```python    
     collection = requests.get(
         f"{geocatalog_url}/stac/collections/{collection_id}",
         headers=headers,
@@ -60,7 +69,9 @@ Use the following Python code snippets to retrieve the information required to c
     print(f"Title: {title}")
     ```
 
-1. The `minzoom` can be obtained from the collection's render configuration:
+1. Retrieve render configuration and minZoom.
+
+    The `minZoom` indicates the lowest zoom level at which the imagery can be rendered and should be used when configuring WMTS clients to avoid requesting tiles outside the supported zoom range. If multiple render configurations are returned, this example uses the first option. If `minZoom` isn't defined, default zoom behavior applies.
 
     ```python
     render_config = requests.get(
@@ -71,7 +82,8 @@ Use the following Python code snippets to retrieve the information required to c
     
     print(f"Render configuration:\n{json.dumps(render_config, indent=2)}")
     
-    # Let's get the minzoom (if present) from the first render configuration option
+    # Let's get the minzoom (if present) from the first render configuration option. Note that the render   
+    # configuration uses minZoom (camel case), while the mosaic registration metadata expects minzoom (lowercase).
     
     min_zoom = 0
     render_config_options = {}
@@ -82,9 +94,9 @@ Use the following Python code snippets to retrieve the information required to c
     ```
 
     > [!Note]
-    > Rendering options are required for retrieving WMTS endpoint in MPC Pro. Refer to [Render options](/rest/api/planetarycomputer/data-plane/stac-collection-render-options/create) provided by MPC Pro.
+    > Render options are required to retrieve a WMTS endpoint in MPC Pro. The render configuration defines asset selection, color processing, and zoom constraints that are reflected in the generated WMTS service. For more information, see [Render options](/rest/api/planetarycomputer/data-plane/stac-collection-render-options/create).
 
-    Example ender configuration output:
+    Example render configuration output:
 
     ```
     [
@@ -100,7 +112,9 @@ Use the following Python code snippets to retrieve the information required to c
     MinZoom: 7
     ```
 
-1. Register search in MPC Pro. This step mainly to [register](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register) a SearchID for focusing on specific area for of the target MPC Pro imagery collection.
+1. [Register](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register) a search.
+
+    This step creates a Search ID that scopes the request to a specific geographic area within the target MPC Pro imagery collection.
 
     ```python
     register_search_response = requests.post(
@@ -144,7 +158,7 @@ Use the following Python code snippets to retrieve the information required to c
     print(f"Search ID: {search_id}")
     ```
 
-    Example register search response output:
+    Example register search response:
 
     ```
     {
@@ -173,7 +187,11 @@ Use the following Python code snippets to retrieve the information required to c
     Search ID: search_id
     ```
 
-1. Retrive WMTS Capabilities of MPC Pro Collection
+1. Get the WMTS capabilities document.
+
+    Use the WMTS link returned from the registered search response to request the WMTS GetCapabilities document for the collection identified by the Search ID. This request returns service metadata that describes how the imagery can be consumed, including supported layers, tile matrix sets, formats, and RESTful tile endpoints.
+
+    Render configuration options (asset selection, color processing, and tile scale) are passed as query parameters so the capabilities document reflects the exact rendering behavior of the imagery.
 
     ```python
     # Get the link with rel equals to wmts
@@ -194,9 +212,9 @@ Use the following Python code snippets to retrieve the information required to c
     
     print(f"WMTS Capabilities response:\n{wmts_capabilities}")
     ```
-    
+
     Example output:
-    
+
     ```
     WMTS URL: https://{geocatalog_url}/data/mosaic/{search_id}/WMTSCapabilities.xml
     WMTS Capabilities response:
@@ -239,4 +257,9 @@ As a result, you obtain the WMTS endpoint configured with rendering options from
 https://{geocatalog_url}/data/mosaic/{search_id}/WMTSCapabilities.xml?api-version=2025-04-30-preview&assets=red&assets=green&assets=blue&nodata=0&color_formula=Gamma+RGB+3.2+Saturation+0.8+Sigmoidal+RGB+25+0.35&tile_scale=2
 ```
 
-Use this URL as the base URL when configuring the Microsoft Planetary Computer Pro connection.
+Use this URL as the WMTS capabilities endpoint when configuring a Microsoft Planetary Computer Pro connection.
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Use Microsoft Planetary Computer Pro imagery](add-external-sourced-imagery-layer.md)
