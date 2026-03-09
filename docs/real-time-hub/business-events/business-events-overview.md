@@ -8,9 +8,22 @@ ms.topic: overview
 
 # Business events overview (Preview)
 
-**Business Events** in Microsoft Fabric are customer-initiated, business-critical notifications that trigger downstream processes in real time. They empower organizations to monitor processes and respond quickly to shifts in operations, customer interactions, or market conditions.
+**Business events** in Microsoft Fabric are customer-initiated, business-critical notifications that trigger downstream processes in real time. They empower organizations to monitor processes and respond quickly to shifts in operations, customer interactions, or market conditions.
 
-Business Events help drive critical business decisions, automate workflows, trigger alerts, enable analytics, and provide real-time context to artificial intelligence (AI). This capability delivers a unified view of customer-initiated business events in Fabric.
+You can generate business events from the following sources:
+
+- Spark notebooks 
+- User data functions (UDFs)
+ 
+Once published, these events are available in Real-Time hub, where you can set up alerts to take actions such as the following ones:
+
+- Alert and automate downstream processes (Activator – Email, Teams)
+- Execute custom logic (User Data Functions)
+- Run analytical workflows (Notebooks)
+- Give real time context to AI/ML (Notebooks)
+- Run distributed processing (Spark Jobs)
+- Prepare and Move data (Dataflows)
+- Automate business processes (Power Automation)  
 
 The following diagram shows how a manufacturing system detects abnormal vibration using a Spark Notebook, analyzes it, and publishes a `VibrationCriticalDetected` business event that triggers custom business logic in a User Data Function (UDF) through Activator.
 
@@ -21,7 +34,7 @@ The following diagram shows how a manufacturing system detects abnormal vibratio
 
 ## What is a business event?
 
-A business event is a critical occurrence or change in state that matters to a business. It captures something meaningful enough that a downstream workflow should act on it.
+A business event is a critical occurrence or change in state that matters to a business. It captures something meaningful enough that a downstream workflow should act on it. Business events help drive critical business decisions, automate workflows, trigger alerts, enable analytics, and provide real-time context to artificial intelligence (AI). This capability delivers a unified view of customer-initiated business events in Fabric. 
 
 ## Why business events matter
 
