@@ -6,6 +6,8 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 05/23/2025
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add PostgreSQL Database CDC source to an eventstream
@@ -19,6 +21,9 @@ The PostgreSQL Database Change Data Capture (CDC) source connector for Microsoft
 - **Google Cloud SQL for PostgreSQL**
 
 Once the PostgreSQL Database CDC source is added to the eventstream, it captures row-level changes to the specified tables. These changes can then be processed in real-time and sent to different destinations for further analysis.
+
+> [!NOTE]
+> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. For more information, see the [extended features](#configure-and-connect-to-postgresql-database-cdc) section in this article.
 
 ## Prerequisites
 
@@ -70,12 +75,40 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## View updated eventstream
 
+::: zone pivot="basic-features"
+
 1. You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
 
     :::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Edit view." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
 1. To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
 
     :::image type="content" source="media/add-source-postgresql-database-cdc-connector/live-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Live view." lightbox="media/add-source-postgresql-database-cdc-connector/live-view.png":::
+
+::: zone-end
+
+::: zone pivot="extended-features"
+
+1. You can see the PostgreSQL Database CDC source added to your eventstream in **Edit mode**.
+
+    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/edit-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Edit view with extended features." lightbox="media/add-source-postgresql-database-cdc-connector/edit-view.png":::
+1. To implement this newly added PostgreSQL DB CDC source, select **Publish**. After you complete these steps, your PostgreSQL DB CDC source is available for visualization in the **Live view**.
+
+    :::image type="content" source="media/add-source-postgresql-database-cdc-connector/live-view.png" alt-text="A screenshot of streaming PostgreSQL DB CDC source in Live view with extended features." lightbox="media/add-source-postgresql-database-cdc-connector/live-view.png":::
+
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+### View DeltaFlow analytics-ready output (Preview)
+
+If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the destination tables are automatically created in a shape that mirrors your source database tables. Each table includes the original columns along with metadata columns for the change type and timestamp.
+
+> [!NOTE]
+> The following screenshot shows Azure SQL Database CDC. The DeltaFlow destination table output is the same for all supported CDC source connectors.
+
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif":::
+
+You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
+
+::: zone-end
 
 ## Related content
 

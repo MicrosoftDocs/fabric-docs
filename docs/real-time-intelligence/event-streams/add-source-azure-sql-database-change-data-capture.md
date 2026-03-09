@@ -16,6 +16,9 @@ This article shows you how to add an Azure SQL Database Change Data Capture (CDC
 
 The Azure SQL Database CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+> [!NOTE]
+> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. For more information, see the [extended features](#configure-and-connect-to-azure-sql-database-cdc) section in this article.
+
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
@@ -74,6 +77,14 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ::: zone pivot="extended-features"
 
 [!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+### View DeltaFlow analytics-ready output (Preview)
+
+If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the destination tables are automatically created in a shape that mirrors your source database tables. Each table includes the original columns along with metadata columns for the change type and timestamp.
+
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif":::
+
+You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 ::: zone-end
 ## Related content

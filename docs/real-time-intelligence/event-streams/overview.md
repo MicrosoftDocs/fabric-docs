@@ -73,6 +73,26 @@ Eventstreams provide schema management capabilities to help you govern and valid
 
 These features improve schema governance and interoperability when you consume varied streams in your eventstreams.
 
+## DeltaFlow: Analytics-ready CDC streams (Preview)
+
+DeltaFlow is a capability within Fabric Eventstreams that transforms raw Change Data Capture (CDC) events from your operational databases into analytics-ready streaming data. 
+
+Key capabilities of DeltaFlow:
+
+- **Analytics-ready event shape**: CDC events are transformed into a tabular format that reflects the source table structure. You can then write straightforward analytics queries using tools like KQL without first parsing nested Debezium JSON payloads.
+- **Automatic schema registration**: DeltaFlow autodiscovers source table schemas and registers them with the Fabric Schema Registry.
+- **Automatic destination table management**: When you route DeltaFlow-enabled streams to a supported destination such as an eventhouse, destination tables are automatically created and managed to match the source table schema.
+- **Schema evolution handling**: When source database tables change (for example, new columns are added or new tables are created), DeltaFlow automatically detects the changes, updates registered schemas, and adjusts destination tables accordingly.
+
+DeltaFlow (Preview) is available with the following CDC source connectors:
+
+- [Azure SQL Database CDC](./add-source-azure-sql-database-change-data-capture.md)
+- [Azure SQL Managed Instance CDC](./add-source-azure-sql-managed-instance-change-data-capture.md)
+- [SQL Server on VM CDC](./add-source-sql-server-change-data-capture.md)
+- [PostgreSQL Database CDC](./add-source-postgresql-database-change-data-capture.md)
+
+To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step when setting up a CDC connector as an Eventstream source.
+
 > [!NOTE]
 > We recommend that you use the Fabric eventstreams feature with at least four capacity units ([SKU](../../enterprise/licenses.md#capacity): F4).
 

@@ -5,6 +5,8 @@ ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 5/23/2025
 ms.search.form: Source and Destination
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add SQL Server on VM DB (CDC) source to an eventstream
@@ -21,6 +23,9 @@ The SQL Server on VM DB (CDC) source connector for Fabric event streams allows
 > AWS RDS SQL Server, AWS RDS Custom SQL Server, and Google Cloud SQL SQL Server do not support the Express version. Make sure you are using an appropriate edition of SQL Server for CDC.
 
 Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monitors and records future row-level changes, which can then be processed in real-time and sent to various destinations for further analysis.
+
+> [!NOTE]
+> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. For more information, see the [extended features](#configure-and-connect-to-sql-server-on-vm-database) section in this article.
 
 ## Prerequisites
 
@@ -53,19 +58,19 @@ Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monito
 
 ## Add SQL Server on VM database as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
+## Launch the Select a data source wizard
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
-
-2. On the next screen, select **Add external source**.
-
-   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
+On the **Select a data source** page, search for and select **Connect** on the **SQL Server on VM DB (CDC)** tile.
 
 ## Configure and connect to SQL Server on VM database
 
 [!INCLUDE [sql-server-on-virtual-machine-cdc-source-connector](./includes/sql-server-on-virtual-machine-cdc-source-connector.md)]
 
 ## View updated eventstream
+
+::: zone pivot="basic-features"
+
 You can see the SQL Server on VM DB CDC source added to your eventstream in **Edit** mode.
 
 :::image type="content" source="media/add-source-sql-server-change-data-capture/edit-mode.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-sql-server-change-data-capture/edit-mode.png":::
@@ -73,6 +78,33 @@ You can see the SQL Server on VM DB CDC source added to your eventstream in **Ed
 To implement this newly added SQL Server on VM DB CDC source, select **Publish**. After you complete these steps, your SQL Server on VM DB CDC source is available for visualization in the **Live view**.
 
 :::image type="content" source="media/add-source-sql-server-change-data-capture/live-view.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Live view mode." lightbox="media/add-source-sql-server-change-data-capture/live-view.png":::
+
+::: zone-end
+
+::: zone pivot="extended-features"
+
+You can see the SQL Server on VM DB CDC source added to your eventstream in **Edit** mode.
+
+:::image type="content" source="media/add-source-sql-server-change-data-capture/edit-mode.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Edit mode with extended features." lightbox="media/add-source-sql-server-change-data-capture/edit-mode.png":::
+
+To implement this newly added SQL Server on VM DB CDC source, select **Publish**. After you complete these steps, your SQL Server on VM DB CDC source is available for visualization in the **Live view**.
+
+:::image type="content" source="media/add-source-sql-server-change-data-capture/live-view.png" alt-text="A screenshot of the added SQL Server on VM DB CDC source in Live view mode with extended features." lightbox="media/add-source-sql-server-change-data-capture/live-view.png":::
+
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+### View DeltaFlow analytics-ready output (Preview)
+
+If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the destination tables are automatically created in a shape that mirrors your source database tables. Each table includes the original columns along with metadata columns for the change type and timestamp.
+
+> [!NOTE]
+> The following screenshot shows Azure SQL Database CDC. The DeltaFlow destination table output is the same for all supported CDC source connectors.
+
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif":::
+
+You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
+
+::: zone-end
 
 
 ## Related content
