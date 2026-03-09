@@ -60,7 +60,7 @@ The remote Eventhouse MCP server acts as an **HTTP-based MCP endpoint**.
 
 ### Installation
 
-- Manual configuration by adding the server definition to the MCP configuration file.
+Add the remote MCP server definition to the MCP configuration file. Currently, only manual configuration is supported. 
 
 1. Open the MCP configuration file in Visual Studio Code.
 
