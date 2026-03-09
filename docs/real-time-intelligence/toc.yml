@@ -968,7 +968,7 @@ items:
             - name: Add a WMS or WMTS imagery layer to a map
               href: map/add-external-sourced-imagery-layer.md
             - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
-              href: map/get-mpc-pro-wmsts-endpoint.md
+              href: map/get-mpc-pro-wmts-endpoint.md
             - name: Add an ontology layer to a map
               href: map/add-ontology-layer.md
             - name: Filter data
