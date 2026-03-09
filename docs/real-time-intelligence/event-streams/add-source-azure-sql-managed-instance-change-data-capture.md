@@ -13,11 +13,14 @@ This article shows you how to add an Azure SQL Managed Instance Change Data Capt
 
 The Azure SQL Managed Instance CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in a SQL Managed Instance database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+> [!NOTE]
+> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. For more information, see the [extended features](#configure-and-connect-to-azure-sql-managed-instance-cdc) section in this article.
+
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL Managed Instance database. 
-- Your Azure SQL Managed Instance should enable public endpoint and not be behind a firewall or secured in a virtual network. If it doesn't enable public endpoint and is in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your Azure SQL Managed Instance should enable public endpoint and not be behind a firewall or secured in a virtual network. If it doesn't enable public endpoint and is in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - CDC enabled in your Azure SQL Managed Instance by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
 
 
@@ -50,26 +53,36 @@ Go to the Azure portal, open your Azure SQL managed instance, select **Network
 
 ## Add Azure SQL Managed Instance CDC as a source
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
-
-2. On the next screen, select **Add external source**.
-
-   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
+On the **Select a data source** page, search for and select **Connect** on the **Azure SQL MI DB (CDC)** tile.
 
 ## Configure and connect to Azure SQL Managed Instance CDC
 
 [!INCLUDE [azure-sql-managed-instance-cdc-source-connector](./includes/azure-sql-managed-instance-cdc-source-connector.md)]
 
 ## View updated eventstream
+
 You can see the Azure SQL MI DB (CDC) source added to your eventstream in **Edit** mode.
 
-:::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png":::
+:::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Edit mode with extended features." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png":::
 
 To implement this newly added Azure SQL Managed Instance source, select **Publish**. After you complete these steps, your Azure SQL Managed Instance source is available for visualization in the **Live view**.
 
-:::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/live-view.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Live view mode." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/live-view.png":::
+:::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/live-view.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Live view mode with extended features." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/live-view.png":::
+
+[!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+### View DeltaFlow analytics-ready output (Preview)
+
+If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the destination tables are automatically created in a shape that mirrors your source database tables. Each table includes the original columns along with metadata columns for the change type and timestamp.
+
+> [!NOTE]
+> The following screenshot shows Azure SQL Database CDC. The DeltaFlow destination table output is the same for all supported CDC source connectors.
+
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
+
+You can query these tables using Kusto Query Language (KQL) or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 
 ## Related content
