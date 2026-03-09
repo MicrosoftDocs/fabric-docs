@@ -15,9 +15,6 @@ ms.collection: not-ai
 
 Learn how to use a remote Model Context Protocol (MCP) for eventhouse to execute KQL queries. The eventhouse remote MCP server allows AI agents to query, reason, and act on real-time data in the RTI eventhouse. This is a hosted MCP where you configure a URL to point to the Eventhouse. There is no need to install or deploy anything.
 
-> [!NOTE]
-> This feature is currently in preview. 
-
 The Eventhouse remote MCP enables AI agents to query Eventhouse using natural language. Through the **Model Context Protocol (MCP)**, AI assistants can:
 
 - Discover KQL database schemas and metadata dynamically.
@@ -28,7 +25,8 @@ The Eventhouse remote MCP enables AI agents to query Eventhouse using natural la
 
 This capability allows Copilot and custom AI agents to securely interact with your eventhouse and be consumed by cloud agent platforms, such as **Copilot Studio** and **Azure AI Foundry**.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+> [!NOTE]
+> This feature is currently in preview.
 
 ## Get started
 
