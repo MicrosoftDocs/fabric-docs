@@ -99,7 +99,7 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 
 Once configured, verify that the setup is working.
 
-1. Start the **Microsoft Fabric MCP server** in Visual Studio Code.
+1. Start the **Eventhouse MPC server** in Visual Studio Code.
 2. Ensure the Eventhouse MCP server shows as **Running**.
 3. Open **GitHub Copilot Chat** window in VS Code.
 5. Enable **agent mode**.
