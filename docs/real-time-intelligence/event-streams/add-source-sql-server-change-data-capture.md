@@ -15,12 +15,12 @@ This article shows you how to add a SQL Server on VM DB Change Data Capture (CDC
 
 The SQL Server on VM DB (CDC) source connector for Fabric event streams allows you to capture a snapshot of the current data in a SQL Server database on VM. Currently, SQL Server on VM DB (CDC) is supported from the following services where the databases can be accessed publicly:
 - [SQL Server on Azure Virtual Machines](/azure/azure-sql/virtual-machines/windows/sql-vm-create-portal-quickstart)
-- **Amazon RDS for SQL Server**
+- **Amazon Relational Database Service (RDS) for SQL Server**
 - **Amazon RDS Custom for SQL Server**
 - **Google Cloud SQL for SQL Server**
 
 > [!NOTE]
-> AWS RDS SQL Server, AWS RDS Custom SQL Server, and Google Cloud SQL SQL Server do not support the Express version. Make sure you are using an appropriate edition of SQL Server for CDC.
+> Amazon Web Services (AWS) RDS SQL Server, AWS RDS Custom SQL Server, and Google Cloud SQL SQL Server don't support the Express version. Make sure you're using an appropriate edition of SQL Server for CDC.
 
 Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monitors and records future row-level changes, which can then be processed in real-time and sent to various destinations for further analysis.
 
@@ -31,7 +31,7 @@ Once the SQL Server on VM DB (CDC) source is added to the eventstream, it monito
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running SQL Server on VM database. 
-- Your SQL Server on VM database must be configured to allow public access. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your SQL Server on VM database must be configured to allow public access. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - Enable CDC in your SQL Server on VM database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
 
 ## Enable CDC in your SQL Server on VM database

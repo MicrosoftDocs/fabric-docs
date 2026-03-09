@@ -22,7 +22,7 @@ The Azure SQL Managed Instance CDC source connector for Microsoft Fabric event s
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL Managed Instance database. 
-- Your Azure SQL Managed Instance should enable public endpoint and not be behind a firewall or secured in a virtual network. If it doesn't enable public endpoint and is in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your Azure SQL Managed Instance should enable public endpoint and not be behind a firewall or secured in a virtual network. If it doesn't enable public endpoint and is in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - CDC enabled in your Azure SQL Managed Instance by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server). 
 
 
@@ -68,7 +68,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ::: zone pivot="basic-features"
 
-You can see the Azure SQL MI DB (CDC) source added to your eventstream in **Edit** mode.
+You can see the Azure SQL Managed Instance (MI) database (DB) CDC source added to your eventstream in **Edit** mode.
 
 :::image type="content" source="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png" alt-text="A screenshot of the added Azure SQL MI DB CDC source in Edit mode with the Publish button highlighted." lightbox="media/add-source-azure-sql-managed-instance-change-data-capture/edit-mode.png":::
 
@@ -99,7 +99,7 @@ If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the
 
 :::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
 
-You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
+You can query these tables using Kusto Query Language (KQL) or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 ::: zone-end
 

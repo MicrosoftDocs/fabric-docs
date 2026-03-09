@@ -23,15 +23,16 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
-- Your Azure SQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your Azure SQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
-Note that you must not enable mirroring in your Azure SQL database.
+> [!NOTE]
+> You must not enable mirroring in your Azure SQL database.
 
 ## Enable CDC in your Azure SQL Database
 
-1. Go to the Azure portal, open your Azure SQL database, and select **Query editor**. Choose an authentication method to log in.
+1. Go to the Azure portal, open your Azure SQL database, and select **Query editor**. Choose an authentication method to sign in.
 
     :::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png" alt-text="A screenshot of opening Azure SQL database." lightbox="./media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png":::
 
@@ -54,7 +55,7 @@ Note that you must not enable mirroring in your Azure SQL database.
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure SQL DB (CDC)** tile.
 
-:::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL DB CDC as the source type in the Get events wizard." lightbox="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png":::
+:::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL Database (DB) CDC as the source type in the Get events wizard." lightbox="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png":::
 
 
 ## Configure and connect to Azure SQL Database CDC
@@ -84,7 +85,7 @@ If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the
 
 :::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
 
-You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
+You can query these tables using Kusto Query Language (KQL) or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 ::: zone-end
 ## Related content
