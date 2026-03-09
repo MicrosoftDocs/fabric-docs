@@ -97,7 +97,7 @@ If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the
 > [!NOTE]
 > The following screenshot shows Azure SQL Database CDC. The DeltaFlow destination table output is the same for all supported CDC source connectors.
 
-:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/deltaflow-destination-tables.gif":::
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
 
 You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
 
