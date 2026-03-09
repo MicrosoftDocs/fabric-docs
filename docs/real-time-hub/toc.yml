@@ -29,7 +29,7 @@ items:
     items:
     - name: Key concepts and terminology
       href: business-events/business-events-concepts.md
-    - name: Create business events
+    - name: Create and manage business events
       href: business-events/create-business-events.md
     - name: Manage data access for business events
       href: business-events/manage-business-events-data-access.md
