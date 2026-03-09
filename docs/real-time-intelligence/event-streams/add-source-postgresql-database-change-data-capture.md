@@ -29,7 +29,7 @@ Once the PostgreSQL Database CDC source is added to the eventstream, it captures
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - Registered user access in the PostgreSQL database.
-- Your PostgreSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your PostgreSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - CDC enabled in the PostgreSQL database and tables.
 
   If you have Azure Database for PostgreSQL, follow the steps in the next section to enable CDC. For detailed information, see [Logical replication and logical decoding - Azure Database for PostgreSQL - Flexible Server](/azure/postgresql/flexible-server/concepts-logical).
@@ -56,7 +56,7 @@ To enable CDC in your **Azure Database for PostgreSQL Flexible Server**, follow 
 
 1. Confirm that your Azure Database for PostgreSQL Flexible Server instance allows public network traffic.
 
-1. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL DB to fetch CDC, ensure the user is the **table owner**.
+1. Grant the **admin user** replication permissions by running the following SQL statement. If you want to use other user account to connect your PostgreSQL Database (DB) to fetch CDC, ensure the user is the **table owner**.
 
    ```sql
    ALTER ROLE <admin_user_or_table_owner_user> WITH REPLICATION;
@@ -106,7 +106,7 @@ If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the
 
 :::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
 
-You can query these tables using KQL or other analytics tools without needing to parse raw Debezium CDC payloads.
+You can query these tables using Kusto Query Language (KQL) or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 ::: zone-end
 

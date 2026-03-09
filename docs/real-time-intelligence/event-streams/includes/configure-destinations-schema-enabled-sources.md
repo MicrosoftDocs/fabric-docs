@@ -10,7 +10,7 @@ ms.date: 09/27/2025
 Currently, only the Eventhouse, custom endpoint, and derived stream destinations are supported for Eventstreams with associated schemas. This section shows you how to add and configure an Eventhouse destination when extended features (like schema support) are enabled for the eventstream.
 
 > [!NOTE]
-> When using **DeltaFlow (Preview)** with a supported CDC source, destination tables in the Eventhouse are automatically created and managed to match the source table structure. You don't need to manually configure the destination table schema. DeltaFlow also handles schema evolution automatically when source tables change.
+> When you use **DeltaFlow (Preview)** with a supported Change Data Capture (CDC) source, destination tables in the Eventhouse are automatically created and managed to match the source table structure. You don't need to manually configure the destination table schema. DeltaFlow also handles schema evolution automatically when source tables change.
 
 <a name = "configure-schema-for-a-custom-endpoint-destination"></a>
 
