@@ -3,7 +3,7 @@ title: Configure Google BigQuery in a copy activity
 description: This article explains how to copy data using Google BigQuery.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/14/2026
+ms.date: 03/09/2026
 ms.custom:
   - pipelines
   - template-how-to
@@ -98,6 +98,23 @@ When copying data from Google BigQuery, the following mappings are used from Goo
 | GEOGRAPHY                 | String                      |
 | RECORD/STRUCT             | String                      |
 | ARRAY                     | String                      |
+
+When copying data to Google BigQuery, the following mappings are used from interim data types used by the service internally to Google BigQuery data types.
+
+| Interim data type | Google BigQuery data type |
+|:--- |:--- |
+| Boolean | BOOLEAN |
+| Byte array | BYTES |
+| Date | DATE |
+| DateTime | DATETIME |
+| DateTimeOffset | TIMESTAMP |
+| Decimal | NUMERIC |
+| Float-point | FLOAT |
+| GUID | STRING |
+| Integer | INTEGER |
+| String | BIGNUMERIC, STRING, JSON, GEOGRAPHY, RECORD, STRUCT, ARRAY, RANGE |
+| Time | TIME |
+| TimeSpan | INTEGER |
 
 ## Table summary
 
