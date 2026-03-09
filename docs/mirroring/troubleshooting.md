@@ -14,7 +14,7 @@ This article describes common scenarios, resolutions, and workarounds for Micros
 | Source | Limitations | Troubleshoot | FAQ |
 | :--- | :--- | :--- | :--- |
 | Azure Cosmos DB | [Limitations](./azure-cosmos-db-limitations.md) | [Troubleshoot](./azure-cosmos-db-troubleshooting.yml) | [FAQ](./azure-cosmos-db-faq.yml) |
-| Azure Database for MySQL (Preview) | [Limitations](./mysql/azure-database-mysql-limitations.md) | [Troubleshoot](./mysql/azure-database-mysql-troubleshoot.md) | [FAQ](./mysql/azure-database-mysql-mirroring-faq.yml) |
+| Azure Database for MySQL (Preview) | [Limitations](./azure-database-mysql-limitations.md) | [Troubleshoot](./azure-database-mysql-troubleshoot.md) | [FAQ](./azure-database-mysql-mirroring-faq.yml) |
 | Azure Database for PostgreSQL | [Limitations](./azure-database-postgresql-limitations.md) | [Troubleshoot](./azure-database-postgresql-troubleshoot.md) | [FAQ](./azure-database-postgresql-mirroring-faq.yml) |
 | Azure Databricks | [Limitations](./azure-databricks-limitations.md) | [Troubleshoot](./azure-databricks-troubleshoot.md) | [FAQ](./azure-databricks-faq.yml) |
 | Azure SQL Database | [Limitations](./azure-sql-database-limitations.md) | [Troubleshoot](./azure-sql-database-troubleshoot.md) | [FAQ](./azure-sql-database-mirroring-faq.yml) |
