@@ -685,7 +685,7 @@ items:
                 href: table-update-policy.md
               - name: Create materialized views
                 href: materialized-view.md
-              - name: Create stored functions
+              - name: Create and manage functions
                 href: create-functions.md
               - name: Enable Python plugin
                 href: python-plugin.md
