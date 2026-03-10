@@ -7,12 +7,9 @@ ms.date: 10/17/2025
 ms.search.form: Create a map
 ---
 
-# Create a map (preview)
+# Create a map
 
-Map (preview) is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
-
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+Fabric Maps is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
 
 Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 
@@ -44,7 +41,7 @@ To create a new map:
 
 1. Select the desired workspace.
 1. Select **+ New item**.
-1. In the **New item** window, select **Map (preview)**.
+1. In the **New item** window, select **Map**.
   :::image type="content" source="media/create-map/new-item-button.png" lightbox="media/create-map/new-item-button.png" alt-text="Screenshot of the New item page with Map filtered.":::
 1. On the **New Map** popup, enter a name for the map. Configure workspace you want to save to and select **Create**.
   :::image type="content" source="media/create-map/create-map.png" alt-text="Screenshot of the New Map page with a name for the map and default workspace.":::
