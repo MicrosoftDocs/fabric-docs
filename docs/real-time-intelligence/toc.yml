@@ -1006,7 +1006,7 @@ items:
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
-      - name: MCP Server (preview)
+      - name: MCP servers
         items:
           - name: Fabric RTI MCP local server
             href: mcp-overview.md
