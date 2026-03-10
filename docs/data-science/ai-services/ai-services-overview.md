@@ -62,7 +62,7 @@ Fabric provides two options to use Foundry Tools:
 
 ### Available regions for Azure OpenAI Service
 
-For the list of Azure regions where prebuilt Foundry tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
+For the list of Azure regions where prebuilt Foundry Tools in Fabric are now available, visit the [Available regions](../../fundamentals/copilot-fabric-overview.md#available-regions) section of the **Overview of Copilot in Fabric and Power BI (preview)** article.
 
 ### Available regions for Text Analytics and Translator 
 Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) and the [Translator](https://azure.microsoft.com/products/ai-services/translator/) in Fabric are now available for public preview in the Azure regions listed in this article. If you don't find your Microsoft Fabric home region in this article, you can still create a Microsoft Fabric capacity in a supported region. For more information, visit [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
@@ -122,10 +122,10 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Monitor the Usage
 
-The workload meter associated with the task determines the charges for prebuilt Foundry tools in Fabric. For example, if Foundry Tools usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
+The workload meter associated with the task determines the charges for prebuilt Foundry Tools in Fabric. For example, if Foundry Tools usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
 
 > [!NOTE]
-> The billing for prebuilt Foundry tools does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
+> The billing for prebuilt Foundry Tools does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
 
 ### Example
 

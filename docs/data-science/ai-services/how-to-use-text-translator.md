@@ -29,7 +29,7 @@ This sample shows how to use the prebuilt Azure AI translator in Fabric with RES
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt Foundry tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:

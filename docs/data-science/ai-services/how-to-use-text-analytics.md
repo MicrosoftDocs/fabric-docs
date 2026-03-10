@@ -32,7 +32,7 @@ In this article, you learn how to use Language services directly in Microsoft Fa
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 
 > [!NOTE]
-> This article uses Microsoft Fabric's built-in prebuilt Foundry tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+> This article uses Microsoft Fabric's built-in prebuilt Foundry Tools, which handle authentication automatically. You don't need to obtain a separate Foundry Tools key - the authentication is managed through your Fabric workspace. For more information, see [Prebuilt AI models in Fabric (preview)](ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 The code samples in this article use libraries that are preinstalled in Microsoft Fabric notebooks:
 
@@ -61,7 +61,7 @@ This article provides two ways to use Language services in Fabric:
 Copy and paste this code into the first cell of your Fabric notebook to set up the connection to Language services:
 
 > [!NOTE]
-> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt Foundry tools. No API key is required.
+> This code uses Fabric's built-in authentication. The `get_fabric_env_config ` function automatically retrieves your workspace credentials and connects to the prebuilt Foundry Tools. No API key is required.
 
 ``` python
 # Get workload endpoints and access token
