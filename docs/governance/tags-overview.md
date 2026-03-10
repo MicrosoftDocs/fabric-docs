@@ -13,7 +13,7 @@ ms.date: 09/04/2025
 
 Tags in Microsoft Fabric let you apply additional metadata to workspaces and items, making it easier to categorize, organize, and discover data.
 
-Tags are configurable text labels, such as *Sales – FR 2025*, *HR – Summer Event*, or *FY 2025*, that can be defined at both the tenant and [domain](domains.md) levels, offering flexibility in how assets are governed across your organization. 
+Tags are configurable text labels, such as *Sales – FR 2026*, *HR – Summer Event*, or *FY 2026*, that can be defined at both the tenant and [domain](domains.md) levels, offering flexibility in how assets are governed across your organization. 
 
 ## How tags work
 
