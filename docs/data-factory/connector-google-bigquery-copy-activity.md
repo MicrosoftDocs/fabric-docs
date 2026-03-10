@@ -112,7 +112,7 @@ When copying data to Google BigQuery, the following mappings are used from inter
 | Float-point | FLOAT |
 | GUID | STRING |
 | Integer | INTEGER |
-| String | BIGNUMERIC, STRING, JSON, GEOGRAPHY, RECORD, STRUCT, ARRAY, RANGE |
+| String | BIGNUMERIC, STRING, JSON, GEOGRAPHY, RECORD/STRUCT, ARRAY, RANGE |
 | Time | TIME |
 | TimeSpan | INTEGER |
 
