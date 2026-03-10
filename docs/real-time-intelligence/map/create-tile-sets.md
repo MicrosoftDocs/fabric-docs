@@ -15,8 +15,7 @@ This article shows how to create a tileset as well as schedule data refresh for 
 
 You can schedule refresh when creating a new tileset, as long as you have access to its underlying data source.
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

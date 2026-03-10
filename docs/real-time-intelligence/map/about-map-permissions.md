@@ -15,9 +15,6 @@ ms.search.form: Map permissions
 
 This article explains how permissions work in Fabric Maps, including how workspace roles, map‑level permissions, and permissions on underlying data sources—such as Eventhouses, KQL databases, and Lakehouses—interact. Understanding this permission model helps you determine who can view, edit, and share maps, and explains why missing permissions can result in non‑rendering layers, incomplete results, or access errors. For step‑by‑step instructions on managing access to individual map items, see [Manage map permissions](manage-map-permissions.md).
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
-
 ## How Fabric Maps permissions work
 
 Access to a map in Fabric Maps is determined by **three layers of permissions**:

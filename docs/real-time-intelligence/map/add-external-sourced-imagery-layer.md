@@ -15,8 +15,7 @@ This how-to article shows you how to add external raster imagery to Fabric Maps 
 
 For more information on WMS or WMTS imagery, see [Create layers using WMS and WMTS imagery sources in Fabric Maps](about-external-sourced-imagery.md)
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality can change.
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

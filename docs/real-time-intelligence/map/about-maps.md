@@ -19,9 +19,6 @@ Maps are designed analytical scenarios where *where something happens* is as imp
 
 For a high‑level overview of the Fabric Maps capability, see [What is Fabric Maps?](about-fabric-maps.md).
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
-
 ## What is a map item?
 
 A map is an interactive visualization canvas that lives in a Fabric workspace. Each map:

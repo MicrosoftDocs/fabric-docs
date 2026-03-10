@@ -16,9 +16,6 @@ Microsoft Fabric Maps let you visualize real-time and historical location data i
 
 Maps are built to work with data in space and time. You can visualize real‑time event data queried from [Eventhouses](../eventhouse.md) using [Kusto Query Language (KQL)](/kusto/query/?view=microsoft-fabric), and historical or static spatial data stored in a [Lakehouse](/fabric/data-engineering/lakehouse-overview). This combination makes it possible to view live operational activity in geographic context while maintaining access to historical reference data.
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
-
 ## How maps fit into Real-Time Intelligence
 
 In a Real-Time Intelligence solution, data is ingested from streaming sources, processed and stored in Eventhouses, and a visual endpoint in this workflow by rendering query results as spatial layers that refresh as new data arrives. Each map is a first‑class Fabric item that belongs to a workspace and participates in Fabric's permission, sharing, and lifecycle management model.

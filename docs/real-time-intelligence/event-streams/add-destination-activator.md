@@ -76,21 +76,8 @@ To add an activator destination to a default stream or derived stream, follow th
 
    :::image type="content" source="media/add-destination-activator-enhanced/rule-list.png" alt-text="Screenshot of the Rules pane with a rule created." lightbox="media/add-destination-activator-enhanced/rule-list.png" border="true":::
 
-1. You can activate or deactivate the rule by **toggling** the switch next to the rule name. When the rule is active, it evaluates incoming events against the defined condition and performs the specified action when the condition is met.
+[!INCLUDE [Manage rules](includes/manage-rules.md)]
 
-1. If you select ellipsis (`...`) next to the rule, you see options to perform the following actions:
-
-    - **Edit**: Edit the rule within the Eventstream editor to change the condition or action.
-    
-    - **Delete**: Delete the rule if you no longer need it.
-    
-    - **Open in Activator**: Open the activator instance in the Activator user interface (UI) to view more details or manage the activator instance.
-
-       :::image type="content" source="media/add-destination-activator-enhanced/rule-actions.png" alt-text="Screenshot of the options to edit or delete a rule in the Rules pane." lightbox="media/add-destination-activator-enhanced/rule-actions.png" border="true":::
-
-1. To add more rules to the Activator destination, select **Add rule** at the bottom of the *Rules** pane. 
-
-1. Select **X** at the top right corner of the **Rules** pane to close it when you're done.
  
 ## Related content
 

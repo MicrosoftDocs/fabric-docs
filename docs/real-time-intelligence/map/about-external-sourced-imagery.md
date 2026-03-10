@@ -13,8 +13,7 @@ ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Com
 
 Fabric Maps supports rendering raster imagery hosted on external OGC-compliant **Web Map Service (WMS)** and **Web Map Tile Service (WMTS)** endpoints. These services provide map images dynamically (WMS) or as prerendered tiles (WMTS), and are commonly used for satellite imagery, elevation models, weather overlays, and other authoritative raster datasets.
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 By connecting to a WMS or WMTS endpoint, you can visualize external imagery directly in Fabric Maps without copying the imagery into Fabric.
 
