@@ -65,8 +65,8 @@ Fabric Maps currently supports generating PMTiles from valid GeoJSON files using
 
 Fabric Maps supports scheduled data refresh for tilesets generated as PMTiles and stored in Lakehouse. Scheduling keeps map visualizations aligned with changes in the underlying data without requiring manual regeneration. A map item can have up to 20 associated schedules. The refresh schedule is defined during tileset creation.
 
-< [!TIP]
-< If a schedule is deleted, the tileset must be recreated to re-enable scheduling.
+> [!TIP]
+> If a schedule is deleted, the tileset must be recreated to re-enable scheduling.
 
 <!---------------------------------------------------------------------------------------------------------------
 - **Automatic refresh based on data changes**  
