@@ -12,7 +12,7 @@ ms.date: 03/10/2026
 ---
 
 # Resolve Logical ID Conflicts in Microsoft Fabric
-When working with Git‑connected workspaces in Microsoft Fabric, you may encounter situations where items in your workspace and items in your Git branch share the same name and type, but have different logical IDs. This mismatch can trigger a metadata overwrite warning and requires you to decide which logical ID should be retained.
+When working with Git‑connected workspaces in Microsoft Fabric, you may encounter situations where items in your workspace and items in your Git branch have the same name and type, but have different logical IDs. This mismatch can trigger a metadata overwrite warning and requires you to decide which logical ID should be retained.
 
 This article explains what logical IDs are, why conflicts happen, and how to resolve them safely.
 
@@ -24,25 +24,25 @@ To learn more about logical IDs and how Fabric represents items in source contro
 [Git integration source code format documentation](source-code-format.md).
 
 ## What is a Logical ID conflict?
-A Logical ID conflict occurs when Fabric detects two items that have the same name and item type but different Logical IDs—one in the workspace and one in the Git-connected branch. Since Logical IDs are the unique binding keys between Fabric items and their Git representations, a mismatch means Fabric doesn’t know which version should be treated as the “true” identity of the item.
+A Logical ID conflict occurs when Fabric detects two items that have the same name and item type but different Logical IDs—one in the workspace and one in the Git-connected branch. Since Logical IDs are the unique binding keys between Fabric items and their Git representations, a mismatch means Fabric doesn’t know which version should be treated as the "true" identity of the item.
 
-When a conflict is dectected you’ll see a Confirm metadata overwrite dialog similar to the following:
+When a conflict is detected, you see a Confirm metadata overwrite dialog similar to the following:
 
-   :::image type="content" source="media/logical-id-conflict-resolution/id-1.png" alt-text="Screenshot of confirm metadata overwrite." lightbox="media/logical-id-conflict-resolution/id-1.png":::
+  :::image type="content" source="media/logical-id-conflict-resolution/id-1.png" alt-text="Screenshot of confirm metadata overwrite." lightbox="media/logical-id-conflict-resolution/id-1.png":::
 
 This conflict indicates that your workspace item has a different logical ID than the version of the item coming from source control.
 
 Confirming the operation results in the logical id from your source control replacing the matched item’s logical id within the workspace. 
 
-## Commmon scenarios that lead to conflicts
+## Common scenarios that lead to conflicts
 Logical ID mismatches may occur when you:
 
 |Scenario|Description|
 |-----|-----|
-|Connect a workspace to a non‑empty Git folder|If the Git repo contains items that match the workspace items by name and type but hold different logical IDs, Fabric will prompt you to confirm overwriting workspace metadata.|
-|Switch to a different branch|Changing branches may bring in item definitions that do not share the same logical IDs as the workspace versions.|
+|Connect a workspace to a nonempty Git folder|If the Git repo contains items that match the workspace items by name and type but hold different logical IDs, Fabric prompts you to confirm overwriting workspace metadata.|
+|Switch to a different branch|Changing branches may bring in item definitions that don't share the same logical IDs as the workspace versions.|
 |Branch-out to a new branch based on a different branch than the connected branch|Introduces a second, unrelated lineage of item identities into a workspace that is already mapped to a specific Git branch.|
-|Branch‑out to an existing workspace that contains items|When branching out from a workspace into a existing workspace that already contains items, Microsoft Fabric aligns the target workspace metadata with the new connected branch which was created from the source workspace branch metadata.|
+|Branch‑out to an existing workspace that contains items|When branching out from a workspace into an existing workspace that already contains items, Microsoft Fabric aligns the target workspace metadata with the new connected branch which was created from the source workspace branch metadata.|
 
 
 
@@ -55,7 +55,7 @@ When a conflict occurs, you must decide whether to overwrite the workspace metad
 If you confirm the overwrite:
 
 - The logical ID from source control replaces the existing logical ID in the workspace.
-- Workspace metadata will now match the Git version.
+- Workspace metadata now matches the Git version.
 
 Use this option when you want the workspace to align fully with your Git branch.
 
@@ -65,7 +65,7 @@ By choosing to overwrite the workspace metadata, you replace the existing Logica
 ### Option 2: Keep existing workspace metadata (keep workspace version)
 If you want to preserve the workspace’s logical ID:
 
-- Do not confirm the overwrite.
+- Don't confirm the overwrite.
 - Update your Git repository with the logical IDs currently present in the workspace.
 
 You can do this by:
