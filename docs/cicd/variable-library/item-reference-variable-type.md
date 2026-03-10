@@ -50,31 +50,6 @@ Keep in mind the following when working with item references:
 - For stage-specific variations, use value-sets, where each set can point to a different static item (e.g., different lakehouses per stage).
 - All values across value-sets **should** be of the same item type to ensure compatibility and prevent runtime errors. However, we don't enforce having the same item type across value sets.
 
-
-## Supported items
-The following is a list of items that are currently supported using item reference:
-- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
-- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
-- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
- 
- :::image type="content" source="media/item-reference/item-4.png" alt-text="Screenshot of the item reference notebook." lightbox="media/item-reference/item-4.png":::
-
-
->[!NOTE]
->Notebook, through [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command) isn't supported.
-
-### Limitations
-Currently, you can only reference fabric items and semantic models. Other Power BI items, like Datamarts, Dataflow Gen1 are currently not supported.
-
-
-## Permissions Required to Create/Use item reference variables
-Using item reference variables involves two layers of permissions:
-
-- **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
-- **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
-
-For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md)
-
 ## Representation in Git and APIs
 The Variable Library is managed as code. Using Git or REST APIs, Item Reference variables have a clear JSON format. All variables appear in the Variable Library’s definition file (stored in Git, usually .json), listing properties like name, type, and value.
 
@@ -119,6 +94,30 @@ This code does the following:
 - Retrieves the metadata object for that referenced item
 - Extracts the workspace ID and item ID
 - Prints them so they can be used programmatically.
+
+## Supported items
+The following is a list of items that are currently supported using item reference:
+- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
+- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
+ 
+ :::image type="content" source="media/item-reference/item-4.png" alt-text="Screenshot of the item reference notebook." lightbox="media/item-reference/item-4.png":::
+
+
+>[!NOTE]
+>Notebook, through [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command) isn't supported.
+
+
+## Permissions Required to Create/Use item reference variables
+Using item reference variables involves two layers of permissions:
+
+- **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
+- **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
+
+For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md)
+
+### Limitations
+Currently, you can only reference fabric items and semantic models. Other Power BI items, like Datamarts, Dataflow Gen1 are currently not supported.
 
 ## Additonal information  
 The Variable Library enables CI/CD for Fabric content across environments (Dev, Test, Prod) using Item Reference variables for stage-specific configurations. Keep in mind the following:

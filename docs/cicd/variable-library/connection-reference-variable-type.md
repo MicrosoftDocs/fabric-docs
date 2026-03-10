@@ -48,21 +48,6 @@ Keep in mind the following when working with connection references:
 - Values are chosen via a UI dialog, not free text, ensuring only authorized connections are selectable.
 - Only connections with at least read permissions are available for selection.
 
-## Supported connections
-The following is a list of connections that are currently supported using connection reference:
-
-- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
-- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
-
-## Permissions Required to Create/Use Connection References
-Using connection reference variables involves two layers of permissions:
-
-- **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
-- **Accessing the connection reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
-
-For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md)
-
-
 ## Representation in Git and APIs
 A Connection Reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
 
@@ -97,6 +82,25 @@ This code does the following:
 - Retrieves the connection metadata object
 - Extracts the connectionId
 - Prints the ID so it can be used in code or API calls.
+
+## Permissions Required to Create/Use Connection References
+Using connection reference variables involves two layers of permissions:
+
+- **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
+- **Accessing the connection reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
+
+For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md)
+
+
+## Items that support connection references
+The following is a list of items are currently supported using connection reference:
+
+- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
+
+
+
+
 
 
 ## Related content
