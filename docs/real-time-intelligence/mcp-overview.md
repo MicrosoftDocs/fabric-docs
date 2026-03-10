@@ -1,22 +1,23 @@
 ---
-title: What is the Fabric Real-Time Intelligence Model Context Protocol (MCP) Server?
-description: Model Context Protocol (MCP) for RTI is a fully open-source implementation for Microsoft Fabric Real-Time Intelligence (RTI). It enables AI agents to interact with RTI components like Eventhouse.
+title: What is the Fabric Real-Time Intelligence Model Context Protocol (MCP) local server?
+description: Model Context Protocol (MCP) local server for RTI is a fully open-source implementation for Microsoft Fabric Real-Time Intelligence (RTI). It enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 09/14/2025
+ms.date: 03/10/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 
 #CustomerIntent: As a Fabric RTI AI developer, I want to use the RTI MCP server to create AI agents and AI applications.
 ---
 
-# What is the Fabric RTI MCP Server (preview)?
+# What is the Fabric RTI MCP local server (preview)?
 
-Integrating Model Context Protocol (MCP) with Real-Time Intelligence (RTI) lets you get AI-driven insights and actions in real time. This is a local RTI MCP server that lets AI agents or AI applications interact with Fabric RTI or Azure Data Explorer (ADX) by providing tools through the MCP interface, so you can query and analyze data easily.
+Integrating Model Context Protocol (MCP) with Real-Time Intelligence (RTI) lets you get AI-driven insights and actions in real time. This is a local RTI MCP local server that lets AI agents or AI applications interact with Fabric RTI or Azure Data Explorer (ADX) by providing tools through the MCP interface, so you can query and analyze data easily.
 
 MCP support for RTI and ADX is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI). Customers need to install, host, and manage the deployment.
 
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+> [!NOTE]
+> This feature is currently in preview
 
 ## Introduction to the Model Context Protocol (MCP)
 
