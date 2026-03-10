@@ -309,4 +309,4 @@ process_with_mount(
 ## Related content
 
 - [NotebookUtils for Fabric](../notebook-utilities.md)
-- [NotebookUtils file system utilities](notebook-utilities-file-system.md)
+- [NotebookUtils file system utilities](notebookutils-file-system.md)

@@ -24,7 +24,7 @@ The following table lists the available notebook run and orchestration methods:
 | `validateDAG` | `validateDAG(dag: Any): bool` | Validates whether a DAG definition is correctly structured. |
 | `exit` | `exit(value: str): None` | Exits the current notebook with a value. |
 
-For notebook CRUD operations (create, get, update, delete, list), see [Manage notebook artifacts](notebook-utilities-notebook-management.md).
+For notebook CRUD operations (create, get, update, delete, list), see [Manage notebook artifacts](notebookutils-notebook-management.md).
 
 > [!NOTE]
 > The `config` parameter in `runMultiple()` is only available in Python. Scala and R don't support this parameter.
@@ -327,4 +327,4 @@ Notebook is executed successfully with exit value 20
 ## Related content
 
 - [NotebookUtils overview](../notebook-utilities.md)
-- [Manage notebook artifacts](notebook-utilities-notebook-management.md)
+- [Manage notebook artifacts](notebookutils-notebook-management.md)

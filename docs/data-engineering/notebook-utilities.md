@@ -22,16 +22,16 @@ NotebookUtils provides the following modules. Select a module to see detailed do
 
 | Module | Namespace | Description |
 |---|---|---|
-| [File system utilities](notebook-utilities/notebook-utilities-file-system.md) | `notebookutils.fs` | Work with files and directories across ADLS Gen2, Azure Blob Storage, and Lakehouse storage. Includes copy, move, read, write, delete, and list operations. |
-| [File mount and unmount](notebook-utilities/notebook-utilities-mount.md) | `notebookutils.fs` | Attach remote storage (ADLS Gen2) to Spark nodes as local mount points for simplified file access. |
-| [Notebook run and orchestration](notebook-utilities/notebook-utilities-notebook-run.md) | `notebookutils.notebook` | Run and chain notebooks together, including parallel execution with DAG support, cross-workspace references, and exit values. |
-| [Notebook management](notebook-utilities/notebook-utilities-notebook-management.md) | `notebookutils.notebook` | Programmatically create, get, update, delete, and list notebook artifacts. |
-| [Credentials utilities](notebook-utilities/notebook-utilities-credentials.md) | `notebookutils.credentials` | Get access tokens for Azure services and retrieve secrets from Azure Key Vault. |
-| [Lakehouse utilities](notebook-utilities/notebook-utilities-lakehouse.md) | `notebookutils.lakehouse` | Create, get, update, delete, and manage Lakehouse items and tables programmatically. |
-| [Runtime context](notebook-utilities/notebook-utilities-runtime.md) | `notebookutils.runtime` | Access session context information including notebook name, workspace details, and execution context. |
-| [Session management](notebook-utilities/notebook-utilities-session-management.md) | `notebookutils.session` | Stop interactive sessions and restart the Python interpreter. |
-| [User Data Function (UDF) utilities](notebook-utilities/notebook-utilities-udf.md) | `notebookutils.udf` | Retrieve and invoke User Data Functions from notebooks. |
-| [Variable library utilities](notebook-utilities/notebook-utilities-variable-library.md) | `notebookutils.variableLibrary` | Access centrally managed variables and configuration from Variable Library items. |
+| [File system utilities](notebookutils/notebookutils-file-system.md) | `notebookutils.fs` | Work with files and directories across ADLS Gen2, Azure Blob Storage, and Lakehouse storage. Includes copy, move, read, write, delete, and list operations. |
+| [File mount and unmount](notebookutils/notebookutils-mount.md) | `notebookutils.fs` | Attach remote storage (ADLS Gen2) to Spark nodes as local mount points for simplified file access. |
+| [Notebook run and orchestration](notebookutils/notebookutils-notebook-run.md) | `notebookutils.notebook` | Run and chain notebooks together, including parallel execution with DAG support, cross-workspace references, and exit values. |
+| [Notebook management](notebookutils/notebookutils-notebook-management.md) | `notebookutils.notebook` | Programmatically create, get, update, delete, and list notebook artifacts. |
+| [Credentials utilities](notebookutils/notebookutils-credentials.md) | `notebookutils.credentials` | Get access tokens for Azure services and retrieve secrets from Azure Key Vault. |
+| [Lakehouse utilities](notebookutils/notebookutils-lakehouse.md) | `notebookutils.lakehouse` | Create, get, update, delete, and manage Lakehouse items and tables programmatically. |
+| [Runtime context](notebookutils/notebookutils-runtime.md) | `notebookutils.runtime` | Access session context information including notebook name, workspace details, and execution context. |
+| [Session management](notebookutils/notebookutils-session-management.md) | `notebookutils.session` | Stop interactive sessions and restart the Python interpreter. |
+| [User Data Function (UDF) utilities](notebookutils/notebookutils-udf.md) | `notebookutils.udf` | Retrieve and invoke User Data Functions from notebooks. |
+| [Variable library utilities](notebookutils/notebookutils-variable-library.md) | `notebookutils.variableLibrary` | Access centrally managed variables and configuration from Variable Library items. |
 
 To get an overview of all available modules and methods, run:
 

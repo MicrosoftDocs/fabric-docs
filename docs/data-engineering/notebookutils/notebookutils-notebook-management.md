@@ -514,4 +514,4 @@ migrated_nb = migrate_notebook("DataPipeline", target_ws, "DataPipeline_v2")
 ## Related content
 
 - [NotebookUtils for Fabric](../notebook-utilities.md)
-- [NotebookUtils notebook run](notebook-utilities-notebook-run.md)
+- [NotebookUtils notebook run](notebookutils-notebook-run.md)

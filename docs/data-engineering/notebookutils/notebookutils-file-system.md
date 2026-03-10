@@ -36,7 +36,7 @@ The following table lists the available file system methods:
 > [!NOTE]
 > All file system methods are available in Python, PySpark, Scala, and R notebooks unless otherwise noted. Scala uses camelCase parameter names (for example, `createPath` instead of `create_path`, `maxBytes` instead of `max_bytes`).
 
-For mount and unmount operations, see [File mount and unmount](notebook-utilities-mount.md).
+For mount and unmount operations, see [File mount and unmount](notebookutils-mount.md).
 
 > [!NOTE]
 > Keep the following constraints and considerations in mind when you work with `notebookutils.fs`:
@@ -270,4 +270,4 @@ print(properties)
 ## Related content
 
 - [NotebookUtils overview](../notebook-utilities.md)
-- [Mount and unmount storage with NotebookUtils](notebook-utilities-mount.md)
+- [Mount and unmount storage with NotebookUtils](notebookutils-mount.md)
