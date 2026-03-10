@@ -96,7 +96,7 @@ Use the following Python code snippets to retrieve the information required to c
     ```
 
     > [!Note]
-    > Render options are required to retrieve a WMTS endpoint in MPC Pro. The render configuration defines asset selection, color processing, and zoom constraints that are reflected in the generated WMTS service. For more information, see [Render options](/rest/api/planetarycomputer/data-plane/stac-collection-render-options/create).
+    > Render options are required to retrieve a WMTS endpoint in MPC Pro. A render configuration controls which assets are rendered, how colors are processed, and the zoom levels at which imagery is available in the generated WMTS service. For more information, see [Configure render settings for visualizing data in Microsoft Planetary Computer Pro](/azure/planetary-computer/render-configuration).
 
     Example render configuration output:
 
