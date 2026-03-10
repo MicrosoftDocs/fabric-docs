@@ -1001,7 +1001,7 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
-  - name: Build AI agents
+  - name: AI agents and MCP servers
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
       - name: Operations agents
