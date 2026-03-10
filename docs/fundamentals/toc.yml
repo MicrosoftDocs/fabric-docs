@@ -179,6 +179,8 @@ items:
     href: task-flow-create.md
   - name: Work with task flows
     href: task-flow-work-with.md
+  - name: Manage multiple task flow canvases
+    href: task-flow-multiple-canvases.md
 
 - name: Use decision guides
   items:
