@@ -7,7 +7,7 @@ ms.date: 03/06/2026
 ms.search.form: Source and Destination
 ---
 
-# Add Anomaly detection events to an eventstream (preview)
+# Add anomaly detection events to an eventstream (preview)
 
 Anomaly detection events allow you to subscribe to anomalies detected in your Eventhouse data, and then react to those anomalies in real time. With Fabric event streams, you can capture these anomaly detection events, transform them, and route them to various destinations in Fabric for further analysis. 
 
