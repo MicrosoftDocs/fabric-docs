@@ -120,7 +120,7 @@ items:
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
           - name: DeltaFlow output transformation (Preview)
-            href: event-streams/deltaflow-output-transformation.md
+            href: event-streams/delta-flow-output-transformation.md
           - name: Google Cloud Pub/Sub
             href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
