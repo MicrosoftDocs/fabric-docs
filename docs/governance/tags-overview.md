@@ -39,7 +39,7 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 
 - **Workspace list:** A tag icon appears next to the workspace name in the workspaces list panel. Hover to view applied workspace tags.
 
-  ![workspace-list-tags](media/tags-overview/workspace-list-tags.png)
+  ![Screenshot showing workspace tags in the workspaces list](media/tags-overview/workspace-list-tags.png)
 
 - **Workspace list filtering:** Filter workspaces by applied tags in the workspaces list panel and OneLake Catalog Explorer.
 
@@ -47,7 +47,7 @@ Once tags are applied, they enhance visibility across multiple surfaces:
   
 - **Workspace view:** Workspace tag names appear directly in the workspace screen.
 
-  ![Screenshot showing workspace tags displayed in the workspace view](media/tags-overview/workspace-view-tags.png)
+  ![Screenshot showing workspace tags displayed in a single workspace view](media/tags-overview/workspace-view-tags.png)
   
 ### Item tags
 
