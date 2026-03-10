@@ -215,5 +215,5 @@ landingContent:
         - linkListType: how-to-guide
           links:
           - text: Use MCP with Eventhouse
-            url:  mcp-eventhouse.md
+            url:  mcp-remote-eventhouse.md
               
