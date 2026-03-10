@@ -18,16 +18,16 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
 ## Prerequisites
 
-- You must have Write or Contributor permissions on a specific item to apply tags to it or remove tags from it.
 - You must be a workspace admin to apply tags to a workspace or remove tags from it. Non-admin workspace members (Viewer, Member, Contributor) can view workspace tags but can't modify them.
+- You must have Write or Contributor permissions on an item to apply or remove tags from it.
 
 ## Apply tags to a workspace
 
 1. Open the workspace settings and go to the **Tags** section.
 
-    ![workspace tags setting](media/tags-apply/workspace-tags-setting.png)
+   ![workspace tags setting](media/tags-apply/workspace-tags-setting.png)
 
-2. Select the **Select tags to apply** drop-down to display the list of available tags. Choose the tags that are relevant for your workspace. You can select more than one tag. A workspace can have up to 10 tags. Tags already applied to the workspace are listed under **Applied tags**.
+2. Use the **Select tags to apply** dropdown list to select one or more tags for your workspace. A workspace can have up to 10 tags.
 
    > [!NOTE]
    > If the drop-down is disabled, you might not have workspace admin permissions.
@@ -38,9 +38,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
 1. Open the workspace settings and go to the **Tags** section.
 
-   All the tags applied to the workspace are listed.
-
-   <!-- ![Screenshot showing how to remove tags from a workspace.](media/tags-apply/remove-workspace-tags.png) -->
+   You'll see all tags currently applied to the workspace.
 
 2. Select the **X** next to the names of the tags you want to remove from the workspace.
 
@@ -50,7 +48,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
 1. Open the item's settings and go to the **Tags** tab.
 
-1. Select the **Select tags to apply** drop-down to display the list of available tags. Choose the tags that are relevant for your item. You can select more than one tag. An item can have up to 10 tags.
+2. Use the **Select tags to apply** dropdown list to select one or more tags for your item. An item can have up to 10 tags.
 
     :::image type="content" source="media/tags-apply/choose-tags.png" alt-text="Screenshot showing how to choose tags to apply to an item.":::
 
@@ -66,21 +64,20 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
    All the tags applied to the item appear under **Applied tags**.
 
    ![Screenshot showing how to remove tags from an item.](media/tags-apply/remove-tags.png)
-   
+
 2. Select the **X** next to the names of the tags you want to remove from the item.
 
-3. When done, close the settings pane. For Power BI items, select **Save** or **Apply**.
+3. When done, close the settings pane.
 
 ## Apply or remove tags using APIs
 
-Tags can be applied or removed programmatically using public REST APIs:
+You can apply or remove tags programmatically using REST APIs:
 
-1. For items, use the [Update Item](/en-us/rest/api/fabric/core/items/update-item) API to apply or remove tags from an item.
-2. For workspaces, use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace.
+- For workspaces, use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace.
+- For items, use the [Apply Tags](/rest/api/fabric/core/tags/apply-tags) and [Unapply Tags](/rest/api/fabric/core/tags/unapply-tags) APIs to add or remove tags from an item.
 
 ## Related content
 
 - [Tags overview](tags-overview.md)
 - [Create and manage a set of tags](tags-define.md)
 - [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)
-
