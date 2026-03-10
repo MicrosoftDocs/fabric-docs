@@ -11,23 +11,23 @@ ms.date: 09/04/2025
 
 # Tags in Microsoft Fabric
 
-Tags in Microsoft Fabric let you apply additional metadata to items and workspaces, making it easier to categorize, organize, and discover data. Tags are configurable text labels, such as _Sales – FR 2025_, _HR – Summer Event_, or _FY 2025_, that can be applied at both the tenant and [domain](domains.md) levels, offering flexibility in how assets are governed across your organization. Data and content owners can then apply these tags to their Fabric items and workspaces, helping users find the data and content they need.
+Tags in Microsoft Fabric let you apply additional metadata to workspaces and items, making it easier to categorize, organize, and discover data.
 
-Tags are an important component of Fabric's data mesh architecture. They let you add details at the item and workspace levels, across workspaces and domains.
+Tags are configurable text labels, such as *Sales – FR 2025*, *HR – Summer Event*, or *FY 2025*, that can be defined at both the tenant and [domain](domains.md) levels, offering flexibility in how assets are governed across your organization. 
 
-- **Tenant and domain admins [create tags](tags-define.md).**
+## How tags work
 
-  - **Tenant-level tags** are defined by Fabric administrators and are available for use across all items and workspaces throughout the entire tenant. These tags are suitable for broad classifications, compliance, or security labels that apply universally across your organization.
+1. **Admins [define tags](tags-define.md).** Fabric admins create tenant-level tags; Fabric or domain admins create domain-level tags.
+   - **Tenant-level tags** are available across all items and workspaces in the tenant. They're suitable for broad classifications, compliance, or security labels that apply universally across your organization.
+   - **Domain-level tags** are available only for items and workspaces assigned to that domain. If a workspace isn't assigned to a domain, only tenant-level tags are available. Domain-level tags let domain owners implement more targeted governance policies that reflect the needs of their area. A domain-level tag can't duplicate a tenant-level tag name, but the same name can exist across different domains.
+   
+2. **Workspace admins [apply tags to workspaces](tags-apply.md#apply-tags-to-a-workspace).** Workspace tags let you tag at a broad level without tagging each item individually. They're useful for cost attribution, governance reporting, and policy enforcement. A workspace can have up to 10 tags, counted independently from item tags. Non-admin members (Viewer, Member, Contributor) can view workspace tags but can't modify them.
 
-  - **Domain-level tags** can be defined by Fabric or domain administrators and are specific to particular domains within your Fabric environment. These tags are available only for items in workspaces that are assigned to that domain, and for the workspaces themselves. If a workspace isn't assigned to a domain, only tenant-level tags are available. Domain-level tags let domain owners implement more targeted governance policies that reflect the needs of their area. A tag created at the domain level can't be duplicated at the tenant level. However, it can be duplicated on other domains.
+3. **Data owners [apply tags to items](tags-apply.md).** Users with Write or Contributor permissions can apply up to 10 tags per item. Available tags include tenant-level tags and, if the item's workspace is assigned to a domain, that domain's tags.
 
-- **Data owners apply tags to items.** Users with Write or Contributor permissions on a specific item can [apply tags to it](tags-apply.md). An item can have up to 10 tags applied to it. When applying tags, you can choose from the list of available tenant-level tags and, if the item resides in a workspace assigned to a domain, the domain-level tags associated with that domain.
+4. **Users [discover content by tag](#how-tags-enhance-data-discoverability).** Once tags are applied, users can filter or search for relevant content across the catalog, workspace list, and other surfaces.
 
-- **Workspace admins apply tags to workspaces.** Workspace admins can [apply tags at the workspace level](tags-apply.md#apply-tags-to-a-workspace), so you don't have to tag each item individually. Workspace tags are useful for cost attribution, governance reporting, and policy enforcement. A workspace can have up to 10 tags, counted independently from per-item tags. Non-admin workspace members (Viewer, Member, Contributor) can view workspace tags but can't modify them.
-
-- **Users use tags for discoverability.** Once tags are applied to items and workspaces, users in the organization can use them to [filter or search for the most relevant content](#how-tags-enhance-data-discoverability).
-
-- **Admins use tags for governance.** Admins can use the [metadata scanning (scanner)](metadata-scanning-overview.md) APIs to programmatically fetch tag associations for both items and workspaces at scale and use them in downstream governance and discovery solutions.
+5. **Admins [govern at scale](metadata-scanning-overview.md).** Use the metadata scanning (scanner) APIs to programmatically fetch tag associations for items and workspaces and feed them into downstream governance solutions.
 
 ## How tags enhance data discoverability
 
@@ -91,14 +91,14 @@ Once tags are applied, they enhance visibility across multiple surfaces:
   
 ## Considerations and limitations
 
-- A maximum of 10,000 unique tags can be created in a tenant.
+**Propagation and visibility**
 
-- An item or workspace can have a maximum of 10 tags applied to it at any one time. Workspace and item tag limits are counted independently.
-
-- There is no limit on the number of tagged items or workspaces.
-
-- After you apply a tag to an item, the icon might take several hours to appear next to the item name, and before you can find the item in global search using the tag name as a search term.
-
+- After you apply a tag to an item, the icon might take several hours to appear next to the item name. It might also take time before the item appears in global search results when you use the tag name as a search term.
 - Workspace tags are visible only where other workspace metadata is visible to you.
-
 - When a workspace is moved to a different domain, existing domain-level tags remain applied. However, those tags might not be available in the new domain, so you can't reapply them if removed.
+**Limitations**
+
+- A maximum of 10,000 unique tags can be created in a tenant.
+- An item or workspace can have a maximum of 10 tags applied to it at any one time. Workspace and item tag limits are counted independently.
+- There's no limit on the number of tagged items or workspaces.
+
