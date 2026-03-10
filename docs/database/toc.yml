@@ -168,6 +168,8 @@ items:
       href: sql/security-overview.md
     - name: Auditing for SQL database
       href: sql/auditing.md
+    - name: Manage SQL database auditing with the REST API
+      href: sql/auditing-manage-rest-api.md
     - name: Authentication in SQL database
       href: sql/authentication.md
     - name: Access control
