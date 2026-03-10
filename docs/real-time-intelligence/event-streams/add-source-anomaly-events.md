@@ -13,31 +13,6 @@ Anomaly detection events allow you to subscribe to anomalies detected in your Ev
 
 This article shows you how to add Anomaly detection events source to an eventstream.
 
-## Schemas
-An event has the following top-level data:
-
-| Property | Type | Description | Example |
-| -------- | ---- | ----------- | ----- |
-| `source` | string | Identifies the context in which an event happened.  | `<tenant-id>` |
-| `subject` | string | Identifies the subject of the event in the context of the event producer. |  `/workspaces/<workspace-id>/items/<ad-item-id>/configuration/<configuration-id>` |
-| `type` | string | One of the registered event types for this event source. | `Microsoft.Fabric.AnomalyEvents.AnomalyDetected` |
-| `time` | timestamp | The time the event is generated based on the provider's UTC time. | `2017-06-26T18:41:00.9584103Z` |
-| `id` | string | Unique identifier for the event. | `<Required-GUID>` |
-| `specversion` | string | The version of the Cloud Event spec. | 1.0 |
-| `dataschemaversion` | string | The version of the data schema. | 1.0 |
-| `data` | object | Event data. | See the next table for details. |
-
-The `data` object has the following properties:
-
-| Property | Type | Description | Example |
-| -------- | ---- | ----------- | ------- |
-| `analysisType` | string | Type of analysis performed. | `univariate` |
-| `confidenceScore` | number | Confidence score of the anomaly detection. | `0.95` |
-| `timeStampAttributeName` | string | Name of the timestamp attribute used in the analysis. | `StartTime` |
-| `timeStampAttributeValue` | string | Value of the timestamp attribute at the time of the anomaly detection. | `2017-06-26T18:41:00.9584103Z` |
-| `univariate` | object | Contains details of the univariate analysis. | See the next table for details. |
-| `customAttributes` | object | Contains any custom attributes associated with the anomaly detection. | See the next table for details. |
-
 ## Prerequisites
 
 - Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
@@ -45,11 +20,21 @@ The `data` object has the following properties:
 
 ## Add Anomaly detection events as source
 
+You can add Anomaly detection events as a source in two ways:
+
+### From Real-Time Hub
+
+Navigate to Real-Time Hub, find the Fabric events and select **Anomaly detection events**. Select the **+** botton to create Eventstream. 
+
+:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events1.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window.":::
+
+### From Eventstream
+
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
 On the **Select a data source** page, search for and select **Connect** on the **Anomaly detection events** tile.
 
-:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window.":::
+:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events2.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window.":::
 
 ## Configure and connect to Anomaly detection events
 
