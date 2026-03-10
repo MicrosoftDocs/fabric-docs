@@ -121,13 +121,6 @@ If you encounter issues:
 - Confirm you have sufficient permissions on the Eventhouse database.
 - Reauthenticate if prompted.
 
-## Next steps
-
-Explore advanced scenarios such as:
-
-- Natural language–to–KQL translation.
-- Real-time anomaly detection using Eventhouse MCP tools.
-
 ## Example: Analyze your data
 
 Example prompt:
