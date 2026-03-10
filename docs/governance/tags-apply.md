@@ -27,7 +27,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
     ![workspace tags setting](media/tags-apply/workspace-tags-setting.png)
 
-1. Select the **Select tags to apply** drop-down to display the list of available tags. Choose the tags that are relevant for your workspace. You can select more than one tag. A workspace can have up to 10 tags. Tags already applied to the workspace are listed under **Applied tags**.
+2. Select the **Select tags to apply** drop-down to display the list of available tags. Choose the tags that are relevant for your workspace. You can select more than one tag. A workspace can have up to 10 tags. Tags already applied to the workspace are listed under **Applied tags**.
 
    > [!NOTE]
    > If the drop-down is disabled, you might not have workspace admin permissions.
