@@ -14,9 +14,9 @@ ms.search.form: Kusto, fabric maps layers, kusto layer
 This article walks through adding KQL data from Kusto tables, functions, and materialized views to Fabric Maps and configuring the resulting layer for visualization. For more information on Kusto integration, see [Kusto integration in Fabric Maps](about-kusto-integration.md).
 
 > [!IMPORTANT]
-> If you have a map that was created previously using an embedded KQL queryset, migrate it to a supported Kusto object to ensure continued compatibility.
+> Existing layers created from a KQL query will continue to work until June 29, 2026. To avoid service disruptions, migrate these queries to Kusto Tables, Functions, and Materialized Views as described in this article.
 >
-> For detailed steps, see [Migrate KQL Queryset to Kusto Tables, Functions, and Materialized Views](TBD.md).
+> For detailed steps, see [Migrate KQL Queryset to Kusto Tables, Functions, and Materialized Views](migrate-kusto-query-layer.md).
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ Before you begin, ensure that:
 
 1. Expand your connected **OneLake** database, then expand Tables, Functions, or Materialized views.
 
-    :::image type="content" source="media/layers/database/explorer-kql-database-view.png" alt-text="A screenshot of the Explorer pane in Fabric Maps showing the Fabric items tab. The Add dropdown menu is open and displays three options: Lakehouse, KQL database, and Ontology (preview). Ontology (preview) is highlighted in the list. The interface provides access to data sources for adding to map layers.":::
+    :::image type="content" source="media/layers/database/explorer-kql-database-view.png" alt-text="A screenshot of the Explorer pane in Fabric Maps showing the Fabric items tab with an expanded OneLake database. The database hierarchy displays three collapsible sections: Tables, Materialized Views, and Functions.":::
 
 1. Right‑click the target object, and select Show on map.
 

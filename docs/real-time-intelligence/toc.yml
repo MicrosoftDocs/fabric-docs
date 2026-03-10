@@ -992,7 +992,7 @@ items:
             - name: Filter data
               href: map/filter-data.md
             - name: Migrate KQL Queryset to a Kusto function
-              href: map/migrate-kql-queryset-to-kusto-function.md
+              href: map/migrate-kusto-query-layer.md
         - name: Customize a map
           href: map/customize-map.md
         - name: Create a tileset
