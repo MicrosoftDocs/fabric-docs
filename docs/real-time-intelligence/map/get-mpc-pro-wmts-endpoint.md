@@ -30,7 +30,7 @@ Use the following Python code snippets to retrieve the information required to c
 
 1. Authenticate and retrieve collection metadata
 
-    Authenticate to the Microsoft Planetary Computer Pro Geocatalog using Azure AD and define common request parameters. Then retrieve the STAC collection metadata to obtain the collection's spatial extent and descriptive information.
+    Authenticate to the Microsoft Planetary Computer Pro Geocatalog using Microsoft Entra ID and define common request parameters. Then retrieve the STAC collection metadata to obtain the collection's spatial extent and descriptive information.
 
     The collection response provides the bounding box (bbox), which defines the geographic coverage of the imagery, and the collection title, which can be reused later when registering the WMTS endpoint source name. This metadata is required to correctly scope imagery requests and configure downstream WMTS usage.
 
@@ -47,13 +47,13 @@ Use the following Python code snippets to retrieve the information required to c
     ```
 
     > [!NOTE]
-    > If a request returns 401 or 403, verify that your Azure AD principal has access to the MPC Pro geocatalog instance.
+    > If a request returns 401 or 403, verify that your Microsoft Entra ID principal has access to the MPC Pro geocatalog instance.
 
-1. Get Bounding Box and Render Configuration from the collection
+1. Get bounding box and title from the collection
 
     Retrieve the bbox (bounding box) from the STAC collection metadata. In addition, capture the collection title to use later when registering the WMTS endpoint source name.
 
-    ```python    
+    ```python
     collection = requests.get(
         f"{geocatalog_url}/stac/collections/{collection_id}",
         headers=headers,
@@ -72,6 +72,8 @@ Use the following Python code snippets to retrieve the information required to c
 1. Retrieve render configuration and minZoom.
 
     The `minZoom` indicates the lowest zoom level at which the imagery can be rendered and should be used when configuring WMTS clients to avoid requesting tiles outside the supported zoom range. If multiple render configurations are returned, this example uses the first option. If `minZoom` isn't defined, default zoom behavior applies.
+
+    Before your geospatial assets can be viewed within the Fabric Maps you must first define at least one render configuration for your collection, which allows you to visualize data in different ways.
 
     ```python
     render_config = requests.get(
@@ -189,7 +191,7 @@ Use the following Python code snippets to retrieve the information required to c
 
 1. Get the WMTS capabilities document.
 
-    Use the WMTS link returned from the registered search response to request the WMTS GetCapabilities document for the collection identified by the Search ID. This request returns service metadata that describes how the imagery can be consumed, including supported layers, tile matrix sets, formats, and RESTful tile endpoints.
+    Use the WMTS link returned from the registered search response to request the WMTS GetCapabilities document for the imagery data found (or searched) by the Search ID. This request returns service metadata that describes how the imagery can be consumed, including supported layers, tile matrix sets, formats, and RESTful tile endpoints.
 
     Render configuration options (asset selection, color processing, and tile scale) are passed as query parameters so the capabilities document reflects the exact rendering behavior of the imagery.
 
