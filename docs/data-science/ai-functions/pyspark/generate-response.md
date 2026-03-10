@@ -217,17 +217,29 @@ The `ai.generate_response` function supports file-based multimodal input. You ca
 ```python
 # This code uses AI. Always review output for mistakes.
 
-pokemon_urls = [
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/145.png",
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png",
+animal_urls = [
+    "<image-url-golden-retriever>",  # Replace with URL to an image of a golden retriever
+    "<image-url-giant-panda>",  # Replace with URL to an image of a giant panda
+    "<image-url-bald-eagle>",  # Replace with URL to an image of a bald eagle
 ]
-pokemon_df = spark.createDataFrame([(u,) for u in pokemon_urls], ["file_path"])
+animal_df = spark.createDataFrame([(u,) for u in animal_urls], ["file_path"])
 
-results = pokemon_df.ai.generate_response(
-    prompt="Tell me the most famous trainer who used this Pokemon. Give me only the trainer's name.",
+results = animal_df.ai.generate_response(
+    prompt="What type of animal is in this image? Give me only the animal's common name.",
     col_types={"file_path": "path"},
-    output_col="trainer",
+    output_col="animal_name",
+)
+display(results)
+```
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+# DataFrame-level: use all columns as context
+results = animal_df.ai.generate_response(
+    prompt="Describe this animal's natural habitat and one interesting fact about it.",
+    col_types={"file_path": "path"},
+    output_col="description",
 )
 display(results)
 ```

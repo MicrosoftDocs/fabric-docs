@@ -207,11 +207,18 @@ For **Series-level** calls, set `column_type="path"`:
 ```python
 # This code uses AI. Always review output for mistakes.
 
-pokemon_df["trainer"] = pokemon_df["file_path"].ai.generate_response(
-    prompt="Tell me the most famous trainer who used this Pokemon. Give me only the trainer's name.",
+animal_urls = [
+    "<image-url-golden-retriever>",  # Replace with URL to an image of a golden retriever
+    "<image-url-giant-panda>",  # Replace with URL to an image of a giant panda
+    "<image-url-bald-eagle>",  # Replace with URL to an image of a bald eagle
+]
+animal_df = pd.DataFrame({"file_path": animal_urls})
+
+animal_df["animal_name"] = animal_df["file_path"].ai.generate_response(
+    prompt="What type of animal is in this image? Give me only the animal's common name.",
     column_type="path",
 )
-display(pokemon_df)
+display(animal_df)
 ```
 
 For **DataFrame-level** calls, use `column_type_dict` to specify which columns contain file paths:
@@ -219,11 +226,11 @@ For **DataFrame-level** calls, use `column_type_dict` to specify which columns c
 ```python
 # This code uses AI. Always review output for mistakes.
 
-pokemon_df["story"] = pokemon_df.ai.generate_response(
-    prompt="Tell me the original story about this Pokemon and its trainer.",
+animal_df["description"] = animal_df.ai.generate_response(
+    prompt="Describe this animal's natural habitat and one interesting fact about it.",
     column_type_dict={"file_path": "path"},
 )
-display(pokemon_df)
+display(animal_df)
 ```
 
 ## Related content

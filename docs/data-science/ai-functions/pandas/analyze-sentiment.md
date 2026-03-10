@@ -69,15 +69,15 @@ The `ai.analyze_sentiment` function supports file-based multimodal input. You ca
 ```python
 # This code uses AI. Always review output for mistakes.
 
-pokemon_urls = [
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/145.png",
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png",
+animal_urls = [
+    "<image-url-golden-retriever>",  # Replace with URL to an image of a golden retriever
+    "<image-url-giant-panda>",  # Replace with URL to an image of a giant panda
+    "<image-url-bald-eagle>",  # Replace with URL to an image of a bald eagle
 ]
-pokemon_df = pd.DataFrame({"file_path": pokemon_urls})
+animal_df = pd.DataFrame({"file_path": animal_urls})
 
-pokemon_df["sentiment"] = pokemon_df["file_path"].ai.analyze_sentiment(column_type="path")
-display(pokemon_df)
+animal_df["sentiment"] = animal_df["file_path"].ai.analyze_sentiment(column_type="path")
+display(animal_df)
 ```
 
 ## Related content

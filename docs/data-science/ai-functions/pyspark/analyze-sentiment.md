@@ -72,14 +72,14 @@ The `ai.analyze_sentiment` function supports file-based multimodal input. You ca
 ```python
 # This code uses AI. Always review output for mistakes.
 
-pokemon_urls = [
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/145.png",
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png",
-    "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png",
+animal_urls = [
+    "<image-url-golden-retriever>",  # Replace with URL to an image of a golden retriever
+    "<image-url-giant-panda>",  # Replace with URL to an image of a giant panda
+    "<image-url-bald-eagle>",  # Replace with URL to an image of a bald eagle
 ]
-pokemon_df = spark.createDataFrame([(u,) for u in pokemon_urls], ["file_path"])
+animal_df = spark.createDataFrame([(u,) for u in animal_urls], ["file_path"])
 
-results = pokemon_df.ai.analyze_sentiment(
+results = animal_df.ai.analyze_sentiment(
     input_col="file_path",
     input_col_type="path",
     output_col="sentiment",
