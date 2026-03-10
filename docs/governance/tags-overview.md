@@ -13,9 +13,11 @@ ms.date: 09/04/2025
 
 Tags in Microsoft Fabric let you apply additional metadata to workspaces and items, making it easier to categorize, organize, and discover data.
 
-Tags are configurable text labels, such as *Sales – FR 2026*, *HR – Summer Event*, or *FY 2026*, that can be defined at both the tenant and [domain](domains.md) levels, offering flexibility in how assets are governed across your organization. 
+Tags are configurable text labels, such as *Sales – FR 2025*, *HR – Summer Event*, or *FY 2025*, that admins define at the tenant or [domain](domains.md) level.
 
 ## How tags work
+
+Here's how tags flow from definition to discovery:
 
 1. **Admins [define tags](tags-define.md).** Fabric admins create tenant-level tags; Fabric or domain admins create domain-level tags.
    - **Tenant-level tags** are available across all items and workspaces in the tenant. They're suitable for broad classifications, compliance, or security labels that apply universally across your organization.
@@ -32,7 +34,7 @@ Tags are configurable text labels, such as *Sales – FR 2026*, *HR – Summer E
 ## How tags enhance data discoverability
 
 Once tags are applied, they enhance visibility across multiple surfaces:
-  
+
 ### Workspace tags
 
 - **Workspace list:** A tag icon appears next to the workspace name in the workspaces list panel. Hover to view applied workspace tags.
@@ -53,7 +55,7 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 
   ![Screenshot showing the tag icon and hover card for a tagged item.](./media/tags-overview/tags-icon.png)
   
-- **Workspaces:** Filter items list by assigned tag.
+- **Workspace item list:** Filter items list by assigned tag.
 
   ![Screenshot showing the tags filter.](./media/tags-overview/tags-filter.png)
   
@@ -69,7 +71,7 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 
   ![Screenshot showing the tag indication in lineage view.](./media/tags-overview/tags-indication-lineage-view.png)
   
-- **Global search:** Search by tag name in global search to find all relevant results, accompanied by other metadata such as item owner and location.
+- **Global search:** Search by tag name in global search to find all relevant results, along with other metadata like item owner and location.
 
   ![Screenshot showing tags used as a search term in the global search.](media/tags-overview/tags-global-search.png)
   
@@ -77,27 +79,32 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 
 - **Tag management APIs**: Use the [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags) to create, update, delete, and list tags at the tenant and domain levels.
 
-- **Workspace APIs**: Use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace. The [List Workspaces](/rest/api/fabric/core/workspaces/list-workspaces) (User and Admin) APIs return applied workspace tag UUIDs and names.
+- **Workspace APIs**: Use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace. The [List Workspaces](/rest/api/fabric/core/workspaces/list-workspaces) (User and Admin) APIs return applied workspace tag IDs and names.
 
-- **Item APIs**: Use the [Apply Tags](/rest/api/fabric/core/tags/apply-tags) and [Unapply Tags](/rest/api/fabric/core/tags/unapply-tags) APIs to add or remove tags from individual items. Use the [List Tags](/rest/api/fabric/core/tags/list-tags) API to retrieve applied tag UUIDs and names for an item.
+- **Item APIs**: Use the [Apply Tags](/rest/api/fabric/core/tags/apply-tags) and [Unapply Tags](/rest/api/fabric/core/tags/unapply-tags) APIs to add or remove tags from individual items. Use the [List Tags](/rest/api/fabric/core/tags/list-tags) API to retrieve applied tag IDs and names for an item.
 
-- **Scanner API**: Tags are included in [metadata scanning](/fabric/governance/metadata-scanning-overview) (scanner) APIs so that governance and discovery solutions can retrieve tag assignments at scale for both items and workspaces.
+- **Scanner API**: The [metadata scanning](metadata-scanning-overview.md) (scanner) APIs include tag data, so governance and discovery solutions can retrieve tag assignments at scale for both items and workspaces.
 
-  For every applicable item and workspace returned in a scan, the payload includes a `tags` field containing a list of applied tag UUIDs. Use the [List Tags](/rest/api/fabric/admin/tags/list-tags) API to resolve the UUIDs to tag names.
+  For every applicable item and workspace returned in a scan, the payload includes a `tags` field containing a list of applied tag IDs. Use the [List Tags](/rest/api/fabric/admin/tags/list-tags) API to resolve the IDs to tag names.
 
-  ![Screenshot showing tags in the scanner API response.](./media/tags-overview/tags-list-api.png)
-  
+  ![Screenshot showing tags in the scanner API response.](media/tags-overview/tags-list-api.png)
+
 ## Considerations and limitations
 
-**Propagation and visibility**
+### Limits
+
+- A maximum of 10,000 unique tags can be created in a tenant.
+- An item or workspace can have a maximum of 10 tags applied to it at a time. Workspace and item tag limits are counted independently.
+- There's no limit on the number of tagged items or workspaces.
+
+### Propagation and visibility
 
 - After you apply a tag to an item, the icon might take several hours to appear next to the item name. It might also take time before the item appears in global search results when you use the tag name as a search term.
 - Workspace tags are visible only where other workspace metadata is visible to you.
 - When a workspace is moved to a different domain, existing domain-level tags remain applied. However, those tags might not be available in the new domain, so you can't reapply them if removed.
 
-**Limitations**
-  
-- A maximum of 10,000 unique tags can be created in a tenant.
-- An item or workspace can have a maximum of 10 tags applied to it at any one time. Workspace and item tag limits are counted independently.
-- There's no limit on the number of tagged items or workspaces.
+## Related content
 
+- [Create and manage a set of tags](tags-define.md)
+- [Apply tags](tags-apply.md)
+- [Microsoft Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)
