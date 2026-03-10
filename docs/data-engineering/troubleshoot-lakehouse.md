@@ -973,7 +973,7 @@ This error occurs when the browser or application cannot complete the file uploa
 
 #### Scenario
 
-This issue typically occurs when you are using the lakehouse UI to upload files from your local machine or OneDrive.
+This issue typically occurs when you upload files from your local machine or OneDrive through the Lakehouse home page in the Fabric portal.
 
 #### Common Causes
 

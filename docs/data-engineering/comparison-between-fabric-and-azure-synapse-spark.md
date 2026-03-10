@@ -12,6 +12,8 @@ ms.date: 02/13/2026
 
 This article compares Azure Synapse Spark and Fabric Spark across Spark pools, configurations, libraries, notebooks, and Spark job definitions (SJD).
 
+For a Delta Lake and Lakehouse-focused view (including default table formats and runtime defaults), see [Lakehouse and Delta Lake tables](lakehouse-and-delta-tables.md).
+
 |Category | Azure Synapse Spark | Fabric Spark |
 | --- | --- | --- |
 | Spark pools | Spark pool <br>- <br>-| [Starter pool (pre-warmed)](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
