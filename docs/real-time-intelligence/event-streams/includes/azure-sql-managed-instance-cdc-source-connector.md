@@ -74,5 +74,3 @@ When you enable **Analytics-ready events & auto-updated schema** (DeltaFlow), th
 
 For details on how DeltaFlow transforms raw CDC events into analytics-ready output, including operation types and metadata columns, see [DeltaFlow output transformation](../deltaflow-output-transformation.md).
 
-::: zone-end
-
