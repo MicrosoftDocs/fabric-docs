@@ -46,10 +46,10 @@ Before you set up and query the MCP server, you need:
   - You need read or query permissions on the Eventhouse database.
   - Note your Workspace ID and KQL Database ID for configuration.
 
-It's recommended to:
+We recommend that you:
 
 - Have well-described schemas and table metadata to improve AI query quality.  
-- [Enable Copilot in Fabric](../fundamentals/copilot-enable-fabric.md) and have a paid Fabric capacity (F2 or higher, or any P edition).
+- [Enable Copilot in Fabric](../fundamentals/copilot-enable-fabric.md) and have a paid Fabric capacity (F2 or higher, or any P edition). If you don't enable the Copilot in Fabric, the MCP server can only execute KQL queries. It can't fetch the schema. 
 
 ## Set up the remote Eventhouse MCP server
 
@@ -61,7 +61,7 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 
 1. Open the MCP configuration file in Visual Studio Code.
 
-    The configuration file is typically located at `~/.mcp/config.json`, or in your [user profile](https://code.visualstudio.com/docs/configure/profiles).
+    The configuration file is typically located at `.vscode/mcp.json`, or in your [user profile](https://code.visualstudio.com/docs/configure/profiles).
     Also see [MCP configuration reference](https://code.visualstudio.com/docs/copilot/reference/mcp-configuration).
 
 1. Modify the configuration file to include the Eventhouse definition, using the URL format below in the [Example MCP configuration](#example-mcp-configuration). Replace `<Workspace ID>` and `<KQL database ID>` with your actual values.
@@ -86,7 +86,7 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 
 ### Find your KQL database ID
 
-1. Sign in to the [Fabric portal](https://app.powerbi.com/)
+1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com/)
 2. Navigate to the workspace containing your Eventhouse.
 3. Select the KQL database to open its details page.
 4. Copy the KQL database ID from the URL.
