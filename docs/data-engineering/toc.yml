@@ -446,7 +446,7 @@ items:
     href: api-graphql-aggregations.md
   - name: Introspection and schema export
     href: api-graphql-introspection-schema-export.md
-  - name: GraphQL source control and deployment pipelines (preview)
+  - name: GraphQL source control and deployment pipelines
     href: graphql-source-control-and-deployment.md
   - name: How-to guides
     items:
