@@ -9,7 +9,7 @@ ms.search.form: Eventstream Overview
 ai-usage: ai-assisted
 ---
 
-# DeltaFlow output transformation (Preview)
+# DeltaFlow output transformation (preview)
 
 DeltaFlow is a capability within Fabric Eventstreams that transforms raw Change Data Capture (CDC) events into a flattened, analytics-ready format. Instead of working with deeply nested Debezium JSON payloads, you get tabular rows that closely mirror the structure of your source database tables — enriched with metadata columns that describe each change.
 
