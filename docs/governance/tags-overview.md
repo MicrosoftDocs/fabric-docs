@@ -35,20 +35,20 @@ Once tags are applied, they enhance visibility across multiple surfaces:
   
 ### Workspace tags
 
-- **Workspace settings:** Workspace admins can assign and manage tags in the workspace settings panel. Non-admins can view applied tags in read-only mode.
-
-  ![Screenshot showing the workspace tags panel in workspace settings](media/tags-overview/workspace-tags-setting.png)
-  
 - **Workspace list:** A tag icon appears next to the workspace name in the workspaces list panel. Hover to view applied workspace tags.
 
+
+
+![workspace-list-tags](media/tags-overview/workspace-list-tags.png)
+
+- **Workspace list filtering:** Filter workspaces by applied tags in the workspaces list panel and OneLake Catalog Explorer.
+
+  ![Screenshot showing the workspace tags filter](media/tags-overview/workspace-tags-filtering.png)
+  
 - **Workspace view:** Workspace tag names appear directly in the workspace screen.
 
   ![Screenshot showing workspace tags displayed in the workspace view](media/tags-overview/workspace-view-tags.png)
   
-- **Workspace list filtering:** Filter workspaces by applied tags in the workspaces list panel and OneLake Catalog Explorer.
-
-  ![Screenshot showing the workspace tags filter](media/tags-overview/workspace-tags-filtering.png)
-
 ### Item tags
 
 - **Item list views:** A tag icon appears next to the item name. Hover to view applied tags.
@@ -96,8 +96,9 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 - After you apply a tag to an item, the icon might take several hours to appear next to the item name. It might also take time before the item appears in global search results when you use the tag name as a search term.
 - Workspace tags are visible only where other workspace metadata is visible to you.
 - When a workspace is moved to a different domain, existing domain-level tags remain applied. However, those tags might not be available in the new domain, so you can't reapply them if removed.
-**Limitations**
 
+**Limitations**
+  
 - A maximum of 10,000 unique tags can be created in a tenant.
 - An item or workspace can have a maximum of 10 tags applied to it at any one time. Workspace and item tag limits are counted independently.
 - There's no limit on the number of tagged items or workspaces.
