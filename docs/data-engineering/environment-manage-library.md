@@ -18,6 +18,8 @@ Microsoft Fabric environments provide flexible configurations for running your S
 
 In Fabric, each runtime version comes preloaded with a curated set of built-in libraries that are optimized for performance, compatibility, and security across Python, R, Java, and Scala. The Built-in Libraries section within the environment allows you to browse and search these preinstalled libraries based on the selected runtime.
 
+These libraries are installed by default in every environment and can't be changed. They'll be available if you run your notebook or Spark job definition in this environment.
+
 To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md).
 
 > [!IMPORTANT]
@@ -31,7 +33,7 @@ In the External repositories section, you can either add libraries from public l
 > [!NOTE]
 > Installing libraries from Azure Artifact Feed is currently supported in Spark 3.5, and NOT supported in Private link or outbound access protection enabled workspaces.
 
-:::image type="content" source="media\environment-lm\environment-library-management-external-repositories-library.png" alt-text="Screenshot that shows the environment External repositories Libraries screen." lightbox="media\environment-lm\environment-library-management-external-repositories-library.png":::
+:::image type="content" source="media\environment-library-management\environment-library-management-external-repositories-library.png" alt-text="Screenshot that shows the environment External repositories Libraries screen." lightbox="media\environment-library-management\environment-library-management-external-repositories-library.png":::
 
 ### Add a new library from public repositories
 
@@ -48,11 +50,11 @@ In Fabric, directly storing the credential is forbidden. The connections need to
 
 1. Step 1: In your workspace ***Settings***, go to ***Manage connections and gateways***.
 
-    :::image type="content" source="media\environment-lm\external-library-connector-in-setting.png" alt-text="Screenshot that shows the entrypoint of the environment External repositories connectors." lightbox="media\environment-lm\external-library-connector-in-setting.png":::
+    :::image type="content" source="media\environment-library-management\external-library-connector-in-setting.png" alt-text="Screenshot that shows the entrypoint of the environment External repositories connectors." lightbox="media\environment-library-management\external-library-connector-in-setting.png":::
 
 2. Step 2: Create a new ***connection***. Select ***Cloud*** as the type and choose ***Azure Artifact Feed (Preview)*** as the connection type. Enter the URL and user token in the respective fields, and make sure to check ***Allow Code-First Artifact ... to access this connection (Preview)***.
 
-    :::image type="content" source="media\environment-lm\external-library-connector-example.png" alt-text="Screenshot that shows an example of creating a new connector screen." lightbox="media\environment-lm\external-library-connector-example.png":::
+    :::image type="content" source="media\environment-library-management\external-library-connector-example.png" alt-text="Screenshot that shows an example of creating a new connector screen." lightbox="media\environment-library-management\external-library-connector-example.png":::
 
 3. Step 3: Record the connection ID after creation, this is needed for using the connection in Fabric environments.
 
@@ -113,7 +115,7 @@ Custom libraries refer to code built by you or your organization. Fabric support
 > [!NOTE]
 > Fabric supports only ```.tar.gz``` files for R language. Use the ```.whl``` and ```.py``` file format for Python language.
 
-:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot that shows the environment Custom Libraries screen." lightbox="media\environment-lm\env-library-management-custom-library.png":::
+:::image type="content" source="media\environment-library-management\env-library-management-custom-library.png" alt-text="Screenshot that shows the environment Custom Libraries screen." lightbox="media\environment-library-management\env-library-management-custom-library.png":::
 
 ### Upload the custom library
 

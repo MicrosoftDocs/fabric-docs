@@ -5,6 +5,7 @@ ms.reviewer: saravi
 ms.topic: how-to
 ms.date: 07/03/2025
 ms.search.form: Manage Spark compute in Environment
+ai-usage: ai-assisted
 ---
 
 # Spark compute configuration settings in Fabric environments
@@ -12,6 +13,26 @@ ms.search.form: Manage Spark compute in Environment
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. It includes starter pools and custom pools.
 
 A Fabric environment contains a collection of configurations, including Spark compute properties, that you can use to configure the Spark session after they're attached to notebooks and Spark jobs. With an environment, you have a flexible way to customize compute configurations for running your Spark jobs.
+
+## Select runtime in an environment
+
+Use the **Home** tab in your environment to select the Spark runtime.
+
+1. Open your environment item.
+
+1. On the **Home** tab, select the **Runtime** dropdown.
+
+1. Select the runtime you want to use. For example, select **Runtime 1.3 (Spark 3.5, Delta 3.2)**.
+
+   :::image type="content" source="media\environment-introduction\select-runtime.png" alt-text="Screenshot showing how to select the runtime version for the environment." lightbox="media\environment-introduction\select-runtime.png":::
+
+You can choose from multiple [Spark runtimes](runtime.md), each with its own default settings and preinstalled packages.
+
+> [!IMPORTANT]
+>
+> - If you change the runtime for an existing environment, the change doesn't take effect until you save and publish the environment.
+> - If existing libraries or Spark compute settings aren't compatible with the new runtime, publishing fails. Remove or update the incompatible settings, and then publish again.
+> - For step-by-step publish instructions, see [Save and publish changes](create-and-use-environment.md#save-and-publish-changes).
 
 ## Configure settings
 
