@@ -5,7 +5,7 @@ ms.reviewer: smunk, sipa
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
-ms.date: 3/06/2026
+ms.date: 3/12/2026
 ms.search.form: Fabric Maps layers, layers, map layers, Kusto integration, Kusto integration in Fabric Maps
 ---
 
