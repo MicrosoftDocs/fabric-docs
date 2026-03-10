@@ -196,7 +196,7 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility) | Yes | Yes |
 | [System Center Operations Manager](/system-center/scom/welcome) | Yes, see [Microsoft System Center Management Pack for Azure SQL Database](https://www.microsoft.com/download/details.aspx?id=38829). | No |
 | [Visual Studio Code](https://code.visualstudio.com) | Yes | Yes |
-| [Visual Studio Code with the mssql extension](/sql/tools/visual-studio-code/mssql-extensions) | Yes | Yes |
+| [Visual Studio Code with the MSSQL extension](/sql/tools/visual-studio-code/mssql-extensions) | Yes | Yes |
 
 ## Limitations
 

@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Data Engineering documentation in Microsoft Fabric
-summary: Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data. # < 160 chars
+title: Fabric Data Engineering documentation
+summary: Fabric Data Engineering enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data. # < 160 chars
 
 metadata:
-  title: Data Engineering in Microsoft Fabric documentation
-  description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
+  title: Fabric Data Engineering documentation
+  description: Fabric Data Engineering enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
   ms.subservice: data-engineering
   ms.custom:
   ms.topic: landing-page
@@ -21,7 +21,7 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Data engineering?
+          - text: What is Data Engineering?
             url: data-engineering-overview.md
           - text: What is a lakehouse?
             url: lakehouse-overview.md
@@ -162,7 +162,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Microsoft Fabric environments
+          - text: Fabric environments
             url: create-and-use-environment.md
       - linkListType: how-to-guide
         links:
@@ -193,7 +193,7 @@ landingContent:
             url: get-started-api-livy-batch.md
 
 # Card 
-  - title: Optimize with Materialized lake views 
+  - title: Optimize with materialized lake views 
     linkLists:
       - linkListType: overview
         links:
@@ -203,7 +203,7 @@ landingContent:
         links:
           - text: Get started with materialized lake views
             url: materialized-lake-views/get-started-with-materialized-lake-views.md
-          - text: Implement Medallion architecture with materialized lake views
+          - text: Implement medallion architecture with materialized lake views
             url: materialized-lake-views/tutorial.md
           - text: Manage materialized lake views
             url: materialized-lake-views/create-materialized-lake-view.md

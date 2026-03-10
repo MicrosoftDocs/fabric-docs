@@ -1,8 +1,8 @@
 ---
 title: Monitor Graph workloads in Microsoft Fabric
-description: Learn how to monitor Graph workloads and troubleshoot issues in Microsoft Fabric using the Monitoring hub.
+description: Learn how to monitor Fabric Graph workloads and troubleshoot performance issues in Microsoft Fabric using the Monitoring hub and admin tools.
 ms.topic: how-to
-ms.date: 02/17/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -10,9 +10,9 @@ ms.reviewer: wangwilliam
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article shows you how to monitor your Graph workloads in Microsoft Fabric by using the [Monitoring hub](/fabric/admin/monitoring-hub). You can use monitoring data to track activities, view historical activity, and gain insights into the performance and usage of your Graph workloads. The data enables administrators and users to troubleshoot issues and optimize resource usage.
+This article shows you how to monitor your Graph workloads in Microsoft Fabric by using the [Monitoring hub](../admin/monitoring-hub.md). Use monitoring data to track activities, view historical activity, and gain insights into the performance and usage of your Graph workloads. The data helps administrators and users troubleshoot problems and optimize resource usage.
 
-Graph in Microsoft Fabric follows the existing Fabric-wide telemetry framework. Graph items are workspace-scoped (each graph belongs to a specific workspace), but the Monitoring hub aggregates visibility based on your role and permissions. You don't need to navigate workspace-by-workspace to monitor your Graph workloads. They're all visible in the centralized Monitoring hub, filtered by what you're authorized to see.
+Fabric Graph follows the existing Fabric-wide telemetry framework. Graph items are workspace-scoped (each graph belongs to a specific workspace), but the Monitoring hub aggregates visibility based on your role and permissions. You don't need to navigate workspace-by-workspace to monitor your Graph workloads. You can see them all in the centralized Monitoring hub, filtered by what you're authorized to see.
 
 ## Access monitoring data
 
@@ -56,6 +56,6 @@ If your Graph refresh fails or produces unexpected results, try the following st
 
 ## Related content
 
-- [Graph overview](overview.md)
-- [Monitoring hub](/fabric/admin/monitoring-hub)
+- [Fabric Graph overview](overview.md)
+- [Monitoring hub](../admin/monitoring-hub.md)
 - [Troubleshooting and FAQ](troubleshooting-and-faq.md)

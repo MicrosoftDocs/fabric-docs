@@ -10,7 +10,7 @@ ms.date: 01/27/2026
 ms.search.form: Eventstream connector private network support
 ---
 
-# Eventstream streaming connector virtual network and on-premises support guide
+# Eventstream streaming connector virtual network and on-premises support guide (preview)
 
 The streaming connector virtual network and on-premises support offers a secure, managed way for Eventstream to access streaming sources that are in private networks. This guide shows you how to use this feature to connect your private-network sources with Eventstream. You learn how to grant the necessary permissions, set up a virtual network, link your source network, create a data gateway for the streaming virtual network, and add your private network data source to Eventstream.
 
@@ -211,7 +211,7 @@ After the Streaming virtual network data gateway is created, go back to Get even
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-connection.png" alt-text="Screenshot of showing how to select a streaming virtual network connection." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-connection.png":::
 
 
-Alternatively, you can create a connection in **Manage connections and gateways** page, and then select it in **Connection** on Get events wizard page.
+Alternatively, you can create a connection with streaming data gateway in **Manage connections and gateways** page, and then select it in **Connection** on Get events wizard page.
 
 1. On the **Manage connections and gateways** page, select **Connections** tab and select **+ New** button. When creating a **new connection**, select **Streaming virtual network**.
 

@@ -3,7 +3,7 @@ title: Connector Capability Comparison Between Azure Data Factory and Data Facto
 description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
 ms.reviewer: lle
 ms.topic: how-to
-ms.date: 01/28/2026
+ms.date: 02/28/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -29,7 +29,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
-| [Azure Blob Storage](connector-azure-blob-storage-overview.md) | ✓/✓ | Anonymous |  | ✓/✓ | Anonymous |  |
+| [Azure Blob Storage](connector-azure-blob-storage-overview.md) | ✓/✓ | Anonymous | Service principal authentication type supports `azureCloudType`, `accountKind`, `servicePrincipalCredentialType` and `servicePrincipalCert`. | ✓/✓ | Anonymous | `azureCloudType`, `accountKind`, `servicePrincipalCredentialType` and `servicePrincipalCert` are not supported for service principal authentication type. |
 |  |  | Account key |  |  | Account key |  |
 |  |  | Shared Access Signature (SAS) |  |  | Shared Access Signature (SAS) |  |
 |  |  | Service principal |  |  | Service principal |  |
@@ -47,21 +47,21 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
 |  |  |  |  |  | Organizational account |  |
-| [ADLS Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/✓ | Account key |  | ✓/✓ | Account key |  |
+| [ADLS Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/✓ | Account key | Service principal authentication type supports `azureCloudType`, `servicePrincipalCredentialType` and `servicePrincipalCert`. | ✓/✓ | Account key | `azureCloudType`, `servicePrincipalCredentialType` and `servicePrincipalCert` are not supported for service principal authentication type. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | Shared Access Signature (SAS) |  |  | Shared Access Signature (SAS) |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic |  | ✓/✓ | Basic |  |
-| Azure Databricks Delta Lake | ✓/✓ | Access token | Support Lookup activity | ✓/✓ | Personal Access Token | Lookup activity is not supported |
+| [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic | Support `SSLMode` and `UseSystemTrustStore`. | ✓/✓ | Basic | `SSLMode` and `UseSystemTrustStore` are not supported. |
+| Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`.<br>Support Lookup activity. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path. <br>Lookup activity is not supported. |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 | [Azure File Storage](connector-azure-files-overview.md) | ✓/✓ | Account key |  | ✓/✓ | Account key |  |
 |  |  | Shared access signature |  |  |  |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
-| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓ | Basic |  | ✓/✓ | Basic |  |
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓ | Basic | Support `sslMode`. <br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `readBufferSize`, `timezone`, `encoding`. | ✓/✓ | Basic | `sslMode` is not supported.  <br> Additional connection properties are not supported.|
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  | Service principal |  |  |  |  |
@@ -69,22 +69,22 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | Shared access signature |  |  |  |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
-| [Azure SQL Database](connector-azure-sql-database-overview.md) | ✓/✓ | SQL |  | ✓/✓ | Basic |  |
+| [Azure SQL Database](connector-azure-sql-database-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) | ✓/✓ | SQL |  | ✓/✓ | Basic |  |
+| [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic |  `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure Synapse Analytics](connector-azure-synapse-analytics-overview.md) | ✓/✓ | SQL |  | ✓/✓ | Basic |  |
+| [Azure Synapse Analytics](connector-azure-synapse-analytics-overview.md) | ✓/✓ | SQL | Support `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure File Storage](connector-azure-files-overview.md) | ✓/✓ | Account key |  | ✓/✓ | Account key |  |
+| [Azure File Storage](connector-azure-files-overview.md) | ✓/✓ | Account key | Support `fileShare`. | ✓/✓ | Account key | Support Share URL. |
 |  |  | Shared access signature |  |  |  |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
@@ -112,39 +112,39 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD is not supported |
 | [DB2](connector-ibm-db2-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) | ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) <br><br>Service Account Email is not supported for Service Account Login authentication type.| ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) <br><br>Service Account Login authentication type supports Service Account Email. |
 | | | ServiceAuthentication | | | Service Account Login | |
-| [Greenplum](connector-greenplum-for-pipeline-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
+| [Greenplum](connector-greenplum-for-pipeline-overview.md) | ✓/- | Basic | Support `sslMode`. | ✓/- | Basic | `sslMode` is not supported. |
 | [Hive](connector-hive-llap-overview.md) | ✓/- | Anonymous | | N | | |
 | | | UsernameAndPassword | | | | |
 | | | WindowsAzureHDInsightService | | | | |
 | [Impala](connector-impala-overview.md) | ✓/- | Anonymous | | N | | |
 | | | UsernameAndPassword | | | | |
-| [Informix](connector-informix-for-pipeline-overview.md) | ✓/✓ | Anonymous | | ✓/✓ | Anonymous | |
+| [Informix](connector-informix-for-pipeline-overview.md) | ✓/✓ | Anonymous | Support `credential`. | ✓/✓ | Anonymous | `credential` is not supported.<br><br>Support Server, Host, Service, Protocol and Database. |
 | | | Basic | | | Basic | |
-| [MariaDB](connector-mariadb-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Microsoft Access](connector-microsoft-access-overview.md) | ✓/✓ | Anonymous | | ✓/✓ | Anonymous | |
+| [MariaDB](connector-mariadb-overview.md) | ✓/- | Basic | Support `sslMode` and `useSystemTrustStore`. | ✓/- | Basic | `sslMode` and `useSystemTrustStore` are not supported. |
+| [Microsoft Access](connector-microsoft-access-overview.md) | ✓/✓ | Anonymous | Support `credential`. | ✓/✓ | Anonymous | `credential` is not supported. |
 | | | Basic | | | Basic | |
-| [MySQL](connector-mysql-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
+| [MySQL](connector-mysql-database-overview.md) | ✓/- | Basic | Support `port`, `sslMode` and `useSystemTrustStore`.<br><br>Support additional connection properties: `allowZeroDateTime`, `connectionTimeout`, `convertZeroDateTime`, `guidFormat`, `sslCert`, `sslKey`, `treatTinyAsBoolean`. | ✓/- | Basic | `port`, `sslMode` and `useSystemTrustStore` are not supported.<br><br>Additional connection properties are not supported. |
 | Netezza | ✓/- | Basic | | N | | |
-| [Oracle](connector-oracle-database-overview.md) | ✓/✓ | Basic | | ✓/✓ | Basic | |
-| [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) | ✓/- | Basic | | ✓/− | Basic | |
-| [PostgreSQL](connector-postgresql-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Presto](connector-presto-overview.md) | ✓/- | Anonymous | | ✓/- | Anonymous | |
+| [Oracle](connector-oracle-database-overview.md) | ✓/✓ | Basic | Support additional connection properties: `encryptionClient`, `encryptionTypesClient`, `cryptoChecksumClient`, `cryptoChecksumTypesClient`, `initialLobFetchSize`, `fetchSize`, `statementCacheSize`, `initializationString`, `enableBulkLoad`, `supportV1DataTypes`, and `fetchTswtzAsTimestamp`. | ✓/✓ | Basic | Additional connection properties are not supported. |
+| [Amazon RDS for Oracle](connector-amazon-rds-for-oracle-overview.md) | ✓/- | Basic | Support additional connection properties: `encryptionClient`, `encryptionTypesClient`, `cryptoChecksumClient`, `cryptoChecksumTypesClient`, `initialLobFetchSize`, `fetchSize`, `statementCacheSize`, `initializationString`, `enableBulkLoad`, `supportV1DataTypes`, and `fetchTswtzAsTimestamp`. | ✓/− | Basic | Additional connection properties are not supported. |
+| [PostgreSQL](connector-postgresql-overview.md) | ✓/- | Basic | Support `port` and `sslMode`.<br><br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `sslCertificate`, `sslKey`, `sslPassword`, `readBufferSize`, `logParameters`, `timezone`, `encoding`. | ✓/- | Basic | `port` and `sslMode` are not supported.<br><br>Additional connection properties are not supported. |
+| [Presto](connector-presto-overview.md) | ✓/- | Anonymous | Support `enableSsl`. | ✓/- | Anonymous | `enableSsl` is not supported. |
 | | | LDAP | | | LDAP | |
 | [SAP BW Open Hub](connector-sap-bw-open-hub-application-server-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
 | SAP BW MDX | ✓/- | Basic | | N | | |
-| [SAP HANA](connector-sap-hana-overview.md) | ✓/✓ | Basic | | ✓/- | Basic | |
+| [SAP HANA](connector-sap-hana-overview.md) | ✓/✓ | Basic | SSL crypto provider is not supported. | ✓/- | Basic | Support SSL crypto provider: CommonCrypto, MsCrypto, SapCrypto. |
 | | | Windows | | | Windows | |
-| [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | | ✓/− | Basic | |
+| [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | Support `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop`. | ✓/− | Basic | `sncMode`, `sncMyName`, `sncPartnerName`, `sncLibraryPath`, and `sncQop` are not supported. |
 | | | Secure Network Communications (SNC) | | | | |
-| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support treatDecimalAsString | ✓/✓ | | treatDecimalAsString is not supported|
-| | | KeyPair |Support UseUtcTimestamps | | KeyPair | UseUtcTimestamps is not supported|
+| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema`. | ✓/✓ | | `accountIdentifier`, `database`, `UseUtcTimestamps`, `treatDecimalAsString` and `schema` are not supported. |
+| | | KeyPair | | | KeyPair | |
 | | | | | | Snowflake | |
 | | | | | | Microsoft Account | |
-| [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) | ✓/- | SQL | | ✓/- | Basic | |
+| [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) | ✓/- | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate`.<br><br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/- | Basic | `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate` are not supported.<br><br>Additional connection properties are not supported. |
 | | | Windows | | | | |
-| [SQL Server](connector-sql-server-database-overview.md) | ✓/✓ | SQL | | ✓/✓ | Basic | |
+| [SQL Server](connector-sql-server-database-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate`.<br><br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate`, and `hostNameInCertificate` are not supported.<br><br>Additional connection properties are not supported. |
 |                           |                     | Windows                             | |                       | Windows (Only for on-premises gateway) | |
 |                           |                     |                                     | |                       | Organizational account        | |
 |                           |                     |                                     | |                       | Service principal             | |
@@ -153,10 +153,10 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |                           |                     | WindowsAzureHDInsightService        | |                       |                                | |
 | Sybase                    | ✓/-                 | Basic                               | | N                     |                                | |
 |                           |                     | Windows                             | |                       |                                | |
-| [Teradata](connector-teradata-database-overview.md) | ✓/- | Basic | | ✓/✓ | Basic | |
+| [Teradata](connector-teradata-database-overview.md) | ✓/- | Basic | Support `sslMode`, `portNumber`, `httpsPortNumber`, `UseDataEncryption`, `CharacterSet` and `MaxRespSize`. | ✓/✓ | Basic | `sslMode`, `portNumber`, `httpsPortNumber`, `UseDataEncryption`, `CharacterSet` and `MaxRespSize` are not supported. |
 |                           |                     | Windows                             | |                       | Windows                        | |
 |                           |                     | LDAP                                | |                       |                                | |
-| [Vertica](connector-vertica-overview.md) | ✓/- | Basic | | ✓/− | Basic | |
+| [Vertica](connector-vertica-overview.md) | ✓/- | Basic | Support `port`. | ✓/− | Basic | `port` is not supported. |
 
 
 ## File connectors
@@ -245,7 +245,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|------------------------|------------------------|--------------------------|
 | [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
 | | | Basic | | Basic |
-| | | Digeset | | |
+| | | Digest | | |
 | | | Windows | | |
 | | | Client certificate | | |
 | [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
