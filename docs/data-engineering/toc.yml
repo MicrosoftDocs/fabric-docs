@@ -31,7 +31,7 @@ items:
     href: tutorial-lakehouse-introduction.md
   - name: 2 Get started
     href: tutorial-lakehouse-get-started.md
-  - name: 3 Build a lakehouse 
+  - name: 3 Build a lakehouse
     href: tutorial-build-lakehouse.md
   - name: 4 Ingest data
     href: tutorial-lakehouse-data-ingestion.md
@@ -57,7 +57,7 @@ items:
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
     href: lakehouse-api.md
-- name: Get data into lakehouse
+- name: Get data into a lakehouse
   items:
   - name: Get data into a lakehouse
     href: load-data-lakehouse.md
@@ -65,8 +65,79 @@ items:
     href: lakehouse-shortcuts.md
   - name: Data streaming with Spark structured streaming
     href: lakehouse-streaming-data.md
-  - name: Get streaming data into lakehouse with eventstreams 
+  - name: Get streaming data into a lakehouse with Eventstreams
     href: ../real-time-intelligence/event-streams/add-destination-lakehouse.md
+- name: Delta Lake
+  items:
+    - name: Lakehouse and Delta tables
+      href: lakehouse-and-delta-tables.md
+    - name: Load to tables
+      href: load-to-tables.md
+    - name: High concurrency mode for lakehouse table load and preview operations
+      href: high-concurrency-for-lakehouse-operations.md
+    - name: Lakehouse table maintenance
+      href: lakehouse-table-maintenance.md
+    - name: Delta tables performance
+      items: 
+        - name: Delta optimization and V-Order
+          href: delta-optimization-and-v-order.md
+        - name: Table compaction
+          href: table-compaction.md
+        - name: Tune file size
+          href: tune-file-size.md
+        - name: Automated statistics for Delta tables
+          href: automated-table-statistics.md	
+    - name: Delta driver mode snapshot
+      href: driver-mode-snapshot.md
+- name: Notebooks
+  items:
+  - name: Get started and authoring
+    items:
+    - name: Create and use notebooks
+      href: how-to-use-notebook.md
+    - name: Develop and run notebooks
+      href: author-execute-notebook.md  
+    - name: Use Python experience in notebooks
+      href: using-python-experience-on-notebook.md  
+    - name: Python vs. PySpark notebooks
+      href: fabric-notebook-selection-guide.md
+    - name: Author and run T-SQL in notebooks
+      href: author-tsql-notebook.md
+    - name: T-SQL magic command in Python notebooks
+      href: tsql-magic-command-notebook.md
+    - name: Notebook visualization
+      href: notebook-visualization.md
+    - name: Notebook in app
+      href: notebook-in-app.md  
+  - name: Data access and analysis
+    items:
+    - name: Explore data in lakehouse
+      href: lakehouse-notebook-explore.md
+    - name: Load data in lakehouse
+      href: lakehouse-notebook-load-data.md
+    - name: Query mirrored databases in Spark notebooks
+      href: query-mirrored-database-spark-notebooks.md
+    - name: Query Eventstream from Spark notebooks
+      href: notebook-with-event-stream.md
+    - name: Fabric connection with notebooks
+      href: fabric-connection-with-notebook.md  
+  - name: Operations and engineering
+    items:
+    - name: NotebookUtils
+      href: notebook-utilities.md
+      displayName: MSSparkUtils
+    - name: Run notebooks in high concurrency mode
+      href: configure-high-concurrency-session-notebooks.md
+    - name: Run notebooks in pipelines with high concurrency mode
+      href: configure-high-concurrency-session-notebooks-in-pipelines.md
+    - name: Notebook source control and deployment
+      href: notebook-source-control-deployment.md
+    - name: Use notebook public APIs
+      href: notebook-public-api.md
+  - name: Troubleshooting and limitations
+    items:
+    - name: Fabric notebook known limitations
+      href: notebook-limitation.md
 - name: Copilot
   items:
   - name: Overview of Copilot for Data Science and Data Engineering (preview)
@@ -127,32 +198,66 @@ items:
     href: lakehouse-sharing.md
 - name: Spark compute
   items:
-    - name: Overview
-      href: spark-compute.md
-    - name: Configure starter pools
-      href: configure-starter-pools.md
-    - name: Create custom pools
-      href: create-custom-spark-pools.md
-    - name: Billing and utilization
-      href: billing-capacity-management-for-spark.md
-    - name: High concurrency mode
-      href: high-concurrency-overview.md
-    - name: Autotune Spark configuration
-      href: autotune.md
-    - name: Spark concurrency limits
-      href: spark-job-concurrency-and-queueing.md
-    - name: Job concurrency and queue monitoring (preview)
-      href: job-concurrency-queue-monitoring.md
-    - name: Job admission and management
-      href: job-admission-management.md
-    - name: Job queueing for Fabric Spark
-      href: job-queueing-for-fabric-spark.md
-    - name: Autoscale Spark billing
-      href: autoscale-billing-for-spark-overview.md
-    - name: Configure autoscale billing 
-      href: configure-autoscale-billing.md
-    - name: Resource profile configurations
-      href: configure-resource-profile-configurations.md
+    - name: Overview and planning
+      items:
+      - name: Overview
+        href: spark-compute.md
+      - name: Billing and utilization
+        href: billing-capacity-management-for-spark.md
+      - name: Spark concurrency limits
+        href: spark-job-concurrency-and-queueing.md
+    - name: Configure and optimize
+      items:
+      - name: Configure starter pools
+        href: configure-starter-pools.md
+      - name: Create custom pools
+        href: create-custom-spark-pools.md
+      - name: High concurrency mode
+        href: high-concurrency-overview.md
+      - name: Autotune Spark configuration
+        href: autotune.md
+      - name: Autoscale Spark billing
+        href: autoscale-billing-for-spark-overview.md
+      - name: Configure autoscale billing
+        href: configure-autoscale-billing.md
+      - name: Resource profile configurations
+        href: configure-resource-profile-configurations.md
+    - name: Job operations and monitoring
+      items:
+      - name: Job admission and management
+        href: job-admission-management.md
+      - name: Job queueing for Fabric Spark
+        href: job-queueing-for-fabric-spark.md
+      - name: Job concurrency and queue monitoring (preview)
+        href: job-concurrency-queue-monitoring.md
+- name: Environments
+  items:
+  - name: Get started
+    items:
+    - name: Create, configure and use an environment
+      href: create-and-use-environment.md
+  - name: Configure and manage
+    items:
+    - name: Manage Spark compute in environments
+      href: environment-manage-compute.md
+    - name: Manage libraries in environments
+      href: environment-manage-library.md
+    - name: Manage libraries in environments secured by outbound access protection
+      href: environment-manage-library-with-outbound-access-protection.md
+    - name: Manage resources in a Fabric environment
+      href: environment-manage-resources.md
+  - name: Automation and governance
+    items:
+    - name: Environment Git integration and deployment pipeline
+      href: environment-git-and-deployment-pipeline.md
+    - name: Manage the environment through public APIs
+      href: environment-public-api.md
+    - name: Library management best practices
+      href: library-management.md
+  - name: Migration
+    items:
+    - name: Migrate existing workspace libraries and Spark properties
+      href: environment-workspace-migration.md
 - name: Apache Spark
   items:
   - name: Apache Spark Runtimes
@@ -195,7 +300,7 @@ items:
       href: capacity-settings-overview.md
     - name: Configure capacity settings
       href: capacity-settings-management.md
-    - name: Spark workspace settings 
+    - name: Spark workspace settings
       href: workspace-admin-settings.md
     - name: Spark admin settings - FAQ
       href: spark-admin-settings-faq.yml 
@@ -281,92 +386,9 @@ items:
         href: get-started-api-livy-session.md
       - name: Submit Livy API batch jobs
         href: get-started-api-livy-batch.md
-- name: Delta Lake
+- name: VS Code integration
   items:
-    - name: Lakehouse and Delta tables
-      href: lakehouse-and-delta-tables.md
-    - name: Load to tables
-      href: load-to-tables.md
-    - name: High concurrency mode for lakehouse table load and preview operations
-      href: high-concurrency-for-lakehouse-operations.md
-    - name: Lakehouse table maintenance
-      href: lakehouse-table-maintenance.md
-    - name: Delta tables performance
-      items: 
-        - name: Delta optimization and V-Order
-          href: delta-optimization-and-v-order.md
-        - name: Table compaction
-          href: table-compaction.md
-        - name: Tune file size
-          href: tune-file-size.md
-        - name: Automated statistics for Delta tables
-          href: automated-table-statistics.md	
-    - name: Delta driver mode snapshot
-      href: driver-mode-snapshot.md
-- name: Notebooks
-  items:
-  - name: Create and use notebooks
-    href: how-to-use-notebook.md
-  - name: Develop and run notebooks
-    href: author-execute-notebook.md  
-  - name: Use Python experience on notebook
-    href: using-python-experience-on-notebook.md  
-  - name: NotebookUtils
-    href: notebook-utilities.md
-    displayName: MSSparkUtils
-  - name: Run notebooks in High Concurrency mode
-    href: configure-high-concurrency-session-notebooks.md
-  - name: Run notebooks in pipelines with high concurrency mode
-    href: configure-high-concurrency-session-notebooks-in-pipelines.md
-  - name: Notebook visualization
-    href: notebook-visualization.md
-  - name: Notebook in app
-    href: notebook-in-app.md  
-  - name: Explore data in lakehouse
-    href: lakehouse-notebook-explore.md
-  - name: Load data in lakehouse
-    href: lakehouse-notebook-load-data.md
-  - name: Notebook source control and deployment
-    href: notebook-source-control-deployment.md
-  - name: Use notebook public APIs
-    href: notebook-public-api.md
-  - name: Author and run T-SQL in notebook
-    href: author-tsql-notebook.md
-  - name: Python vs. PySpark notebooks
-    href: fabric-notebook-selection-guide.md
-  - name: T-SQL magic command in Python notebook
-    href: tsql-magic-command-notebook.md
-  - name: Fabric connection with notebook
-    href: fabric-connection-with-notebook.md  
-  - name: Fabric notebook known limitations
-    href: notebook-limitation.md
-  - name: Query mirrored databases in Spark notebook
-    href: query-mirrored-database-spark-notebooks.md
-  - name: Query Eventstream from Spark notebook 
-    href: notebook-with-event-stream.md
-- name: Environments
-  items:
-  - name: Create, configure and use an environment
-    href: create-and-use-environment.md
-  - name: Manage Spark compute in environments
-    href: environment-manage-compute.md
-  - name: Manage libraries in environments
-    href: environment-manage-library.md
-  - name: Library management best practices
-    href: library-management.md
-  - name: Environment Git integration and deployment pipeline
-    href: environment-git-and-deployment-pipeline.md
-  - name: Manage the environment through public APIs
-    href: environment-public-api.md
-  - name: Manage resources in a Fabric environment
-    href: environment-manage-resources.md
-  - name: Migrate existing workspace libraries and Spark properties
-    href: environment-workspace-migration.md
-  - name: Managing libraries in environment secured by outbound access protection
-    href: environment-manage-library-with-outbound-access-protection.md
-- name: VS Code integration 
-  items:
-  - name: Fabric extensions for VS Code  
+  - name: Fabric extensions for VS Code
     items:
     - name: Overview
       href: set-up-fabric-vs-code-extension.md
@@ -414,52 +436,52 @@ items:
       href: migrate-synapse-hms-metadata.md
 - name: API for GraphQL
   items:
-   - name: What is API for GraphQL?
-     href: api-graphql-overview.md
-   - name: API for GraphQL editor
-     href: api-graphql-editor.md
-   - name: Schema view and explorer
-     href: graphql-schema-view.md
-   - name: Data aggregation
-     href: api-graphql-aggregations.md
-   - name: Introspection and schema export
-     href: api-graphql-introspection-schema-export.md 
-   - name: GraphQL source control and deployment pipelines (preview)
-     href: graphql-source-control-and-deployment.md     
-   - name: How tos
-     items:
-      - name: Create an API for GraphQL
-        href: get-started-api-graphql.md  
-      - name: Manage relationships
-        href: manage-relationships-graphql.md
-      - name: Query multiple data sources
-        href: multiple-data-sources-graphql.md
-      - name: Connect applications
-        href: connect-apps-api-graphql.md
-      - name: Develop GraphQL applications on VS Code
-        href: api-graphql-develop-vs-code.md
-      - name: Use service principals
-        href: api-graphql-service-principal.md
-      - name: Use stored procedures
-        href: api-graphql-stored-procedures.md
-      - name: Integrate with Azure API Management (APIM)
-        href: api-graphql-azure-api-management.md     
-      - name: Connect AI agents with a local Model Context Protocol (MCP) server
-        href: api-graphql-local-model-context-protocol.md     
-   - name: Monitoring  
-     items:
-      - name: Monitoring dashboard and logging (preview)
-        href: graphql-monitor-log.md
-      - name: Monitoring GraphQL operations
-        href: graphql-operations.md
-   - name: Performance best practices
-     href: api-graphql-performance.md
-   - name: Pricing
-     href: api-graphql-pricing.md     
-   - name: Limitations
-     href: api-graphql-limits.md
-   - name: Frequently asked questions
-     href: graphql-faq.yml  
+  - name: What is API for GraphQL?
+    href: api-graphql-overview.md
+  - name: API for GraphQL editor
+    href: api-graphql-editor.md
+  - name: Schema view and explorer
+    href: graphql-schema-view.md
+  - name: Data aggregation
+    href: api-graphql-aggregations.md
+  - name: Introspection and schema export
+    href: api-graphql-introspection-schema-export.md
+  - name: GraphQL source control and deployment pipelines
+    href: graphql-source-control-and-deployment.md
+  - name: How-to guides
+    items:
+    - name: Create an API for GraphQL
+      href: get-started-api-graphql.md
+    - name: Manage relationships
+      href: manage-relationships-graphql.md
+    - name: Query multiple data sources
+      href: multiple-data-sources-graphql.md
+    - name: Connect applications
+      href: connect-apps-api-graphql.md
+    - name: Develop GraphQL applications on VS Code
+      href: api-graphql-develop-vs-code.md
+    - name: Use service principals
+      href: api-graphql-service-principal.md
+    - name: Use stored procedures
+      href: api-graphql-stored-procedures.md
+    - name: Integrate with Azure API Management (APIM)
+      href: api-graphql-azure-api-management.md
+    - name: Connect AI agents with a local Model Context Protocol (MCP) server
+      href: api-graphql-local-model-context-protocol.md
+  - name: Monitoring
+    items:
+    - name: Monitoring dashboard and logging (preview)
+      href: graphql-monitor-log.md
+    - name: Monitoring GraphQL operations
+      href: graphql-operations.md
+  - name: Performance best practices
+    href: api-graphql-performance.md
+  - name: Pricing
+    href: api-graphql-pricing.md
+  - name: Limitations
+    href: api-graphql-limits.md
+  - name: Frequently asked questions
+    href: graphql-faq.yml
 - name: Partner integration
   items:
    - name: Esri - ArcGIS GeoAnalytics
