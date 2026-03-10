@@ -956,11 +956,11 @@ items:
         href: operations-agent-tocs/toc.yml
       - name: MCP Server (preview)
         items:
-          - name: Fabric RTI MCP server
+          - name: Fabric RTI MCP local server
             href: mcp-overview.md
           - name: Remote MCP Integrations
             items:
-              - name: Get started with Eventhouse MCP Server
+              - name: Get started with Eventhouse MCP remote Server
                 href: mcp-eventhouse.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
