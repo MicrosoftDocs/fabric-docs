@@ -50,6 +50,10 @@ items:
         href: /samples/azurecosmosdb/cosmos-fabric-samples/vector-search-advanced
       - name: Disaster Recovery for Cosmos artifacts
         href: /samples/azurecosmosdb/cosmos-fabric-samples/disaster-recovery
+      - name: Translytical Task Flows with Cosmos DB
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/translytical-taskflows
+      - name: Cosmos DB Data Pipeline with Reverse ETL
+        href: /samples/azurecosmosdb/cosmos-fabric-samples/data-pipelines
   - name: Build AI applications
     items:
       - name: Index vector data
