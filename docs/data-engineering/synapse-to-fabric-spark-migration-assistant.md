@@ -1,118 +1,121 @@
 ---
-title: Spark Synapse to Fabric Spark MigrationAssistant
+title: Spark Synapse to Fabric Spark Migration Assistant
 description: This document describes the Spark Synapse to Fabric Migration Assistant, a Microsoft Fabric-owned experience that helps customers migrate Spark workloads from Azure Synapse Analytics to Microsoft Fabric.
 ms.reviewer: jejiang
 ms.topic: tutorial
-ms.date: 03/01/2026
+ms.date: 03/18/2026
+ai-usage: ai-assisted
 ---
 
-#  Spark Synapse to Fabric Migration Assistant - Private Preview
+# Spark Synapse to Fabric Spark Migration Assistant (Preview)
 
-The Spark Synapse to Fabric Migration Assistant automates the migration of Spark-related artifacts from a Synapse workspace to a Microsoft Fabric workspace. In this private preview, the tool supports migration of the following resources:
+> [!NOTE]
+> The Spark Synapse to Fabric Migration Assistant is currently in public preview.
 
-- **Spark Pools**: All supported Spark pools are migrated to Fabric Pools and corresponding Environments. 
-- **Notebooks**: All notebooks and their associated environments are migrated. The notebook code remains unchanged, though manual updates may be required to ensure compatibility with Fabric execution. 
-- **Spark Job Definitions (SJDs)**: All SJDs migrated along with their respective environments. 
-- **Databases**: The default database in Synapse is mapped to the dbo schema in Fabric. Each additional database results in the creation of a new schema within the same Lakehouse. All managed Delta tables are migrated by creating shortcuts in OneLakeCatalog schemas that point to the original table locations. Migration of non-Delta tables is not yet supported in this private preview.  
+Use the Spark Synapse to Fabric Spark Migration Assistant to migrate Spark workloads from Azure Synapse Analytics to Microsoft Fabric through a guided workflow.
 
-**Important**: No data is moved during the migration process. All data remains in its original location. A detailed migration report is generated upon completion
+In public preview, the assistant migrates Spark pools, notebooks, Spark job definitions, and lake databases.
 
-## Access the Migration Assistant
+Migration doesn't move your data. The assistant copies and transforms supported Spark items for Fabric and generates a migration report for each run.
 
-To enable the feature, append **?sparkUpgradeToFabric=1** if it is the first parameter in the URL, or **&sparkUpgradeToFabric=1** if other parameters are already present. Add it at the end of your Fabric URL.
+The assistant supports migration of the following items:
 
-Examples:
+- **Spark pools** are migrated to Fabric Pools and corresponding environments.
+- **Notebooks** and associated environments are migrated.
+- **Spark job definitions (SJDs)** are migrated with associated environments.
+- **Lake databases** are mapped to Fabric schemas, and managed Delta tables are migrated by creating OneLake catalog shortcuts.
 
-```
-https://msit.fabric.microsoft.com/home?sparkUpgradeToFabric=1  
-```
-```
-https://msit.powerbi.com/groups/{workspaceid}/list?trident=1&experience=fabric-developer&referrer=embed.appsource&sparkUpgradeToFabric=1
-```
+For lake database migration details, the default Synapse database maps to the `dbo` schema in Fabric, and more databases are migrated as schemas in the same Lakehouse.
 
-## Getting Started with the Migration Assistant
+## How migration works
 
-1. **Start the Migration Process** - From the **workspace toolbar**, click the **Migrate** button.
+To migrate Apache Spark pools, notebooks, Spark job definitions, and lake databases to Fabric, the assistant guides you through a short workflow.
 
-2. **Select Data Engineering Items** - In the wizard, choose the **Data Engineering Items** tile.
+### Copy and transform items
+
+First, the assistant helps you locate the source workspace that contains the data engineering items you want to migrate. It then copies and transforms supported items so they can run in a Fabric workspace.
+
+### Monitor migration
+
+During migration, you can monitor progress and review a summary of migrated data engineering items. When migration is complete, the new items are available in your Fabric workspace.
+
+## Get started with the migration assistant
+
+1. Open a Fabric workspace, and then select **Migrate** from the toolbar.
+
+1. In the wizard, select **Data engineering items**.
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/migrate-to-fabric.png" alt-text="Screenshot of migrate to fabric." lightbox="media/synapse-to-fabric-spark-migration-assistant/migrate-to-fabric.png":::
 
-3. **Enter Migration Details**
-   - Provide a **name** for the migration.
-   - Select the **Subscription** and **Synapse Workspace** that you created or accessed in Prerequisites Step 1.
+1. Specify the source Azure Synapse workspace details. You can search for the source workspace by subscription. After you select the subscription, you can select the source workspace from that subscription. 
+   - Enter a migration **Name**.
+   - Select the **Subscription** and source **Source workspace**.
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/select-a-source.png" alt-text="Screenshot of select a source" lightbox="media/synapse-to-fabric-spark-migration-assistant/select-a-source.png":::
 
-4. **Select the Fabric Workspace Name** - Specify the Fabric workspace where the items should be migrated.
+1. Select the target Fabric workspace where items should be migrated.
+
+   The source workspace and target Fabric workspace that you select in the wizard determine the migration direction.
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/select-a-destination.png" alt-text="Screenshot of select a destination." lightbox="media/synapse-to-fabric-spark-migration-assistant/select-a-destination.png":::
 
-5. **Select or Create a Data Gateway Connection (Optional)**
-   - Any existing gateway connections to which you have access will be listed here.
+1. Review available data gateway connections that you can access. Add a new connection if needed.
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/select-or-create-a-data-gateway-connection.png" alt-text="Screenshot of select or create a data gateway connection." lightbox="media/synapse-to-fabric-spark-migration-assistant/select-or-create-a-data-gateway-connection.png":::
 
-   >[!NOTE]
-   >
-   > If you do not select a **gateway connection, databases will not be migrated.**
+   - To create a new connection, select **Add new**.
 
-   - To create a new connection, select **"Add new"** which brings up this screen:
-
-   - The server and path will be autogenerated based off the default AzureDataLake Gen2 storage and container of the Synapse workspace. This is required because the DB Upgrade will create shortcuts to this container which will have the location of all managed tables.
+   - The server and path are generated from the default Azure Data Lake Storage Gen2 account and container for the source workspace. This value is required because lake database migration creates shortcuts to the managed-table locations.
    
       :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/new-connection.png" alt-text="Screenshot of new connection." lightbox="media/synapse-to-fabric-spark-migration-assistant/new-connection.png":::
+
+1. Optionally select the data gateway connection to use for this migration run.
+
+   > [!NOTE]
+   > If you don't select a gateway connection, databases aren't migrated.
    
-6. **Review Migration Details -** Click **Next** to proceed to the review screen.
+1. Review migration details, and then select **Next**.
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/finish-and-migrate.png" alt-text="Screenshot of finish and migrate." lightbox="media/synapse-to-fabric-spark-migration-assistant/finish-and-migrate.png":::
 
-   Closing the dialog at this point will allow you to cancel the migration:
+   Closing the dialog at this point allows you to cancel the migration:
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/cancel-this-migration.png" alt-text="Screenshot of cancel this migration." lightbox="media/synapse-to-fabric-spark-migration-assistant/cancel-this-migration.png":::
 
-7. **Start the Migration Process**
-
-   - Click **Migrate** to initiate the actual migration.
-   - The spinner will indicate that the migration has started.
+1. Select **Migrate** to start migration. 
 
       :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/migrate.png" alt-text="Screenshot of migration button." lightbox="media/synapse-to-fabric-spark-migration-assistant/migrate.png":::
 
-**Notifications:**
-   - A notification at the **top-right** corner will indicate the progress.
-   - A link to the **Migration Report** will be available.
-   - After a few seconds, you will be **automatically redirected** to the report.
+1. Monitor migration progress. During migration, you can see the status and summary of migrated items. 
+   - The spinner indicates that migration started.
+   - A notification at the **top-right** corner indicates the progress.
+   - A link to the **Migration Report** is available.
+   - After a few seconds, you're automatically redirected to the report.
 
       :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/migrate-spark-items.png" alt-text="Screenshot of migrate spark items." lightbox="media/synapse-to-fabric-spark-migration-assistant/migrate-spark-items.png":::
 
       >[!NOTE]
-      >
       > The migration report can also be accessed from the Monitoring Hub. You can search for the migration job by its migration name or filter by the Spark Job Definition item type.
 
-8. Review the **Migration Report** - Click the **Migration Report** link from the previous step to view the migration 
-report.
+1. Select the **Migration Report** link from the previous step to review results.
 
    :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/migration-summary.png" alt-text="Screenshot of migration summary." lightbox="media/synapse-to-fabric-spark-migration-assistant/migration-summary.png":::
 
->[!NOTE]
->
-> Click **Details** to view additional information about errors or warnings encountered during migration.
+    >[!NOTE]
+    > Select **Details** to view additional information about errors or warnings encountered during migration.
 
-## Known issue
+## Public preview limitations
 
-Synapse workspaces that contain a hyphen in their name are currently unable to migrate. The 
-engineering team has developed a fix, and it is in the process of being deployed. In the meantime, try to avoid migrating any Synapse workspaces that contain hyphens in their names.
+- Synapse workspaces under a virtual network (VNET) can't be migrated.
+- Spark configurations, custom libraries, and custom executor settings aren't migrated.
+- Non-Delta table formats aren't supported.
 
-## Private Preview: By Design Limitations
-
-- Workspaces under a VNET in Synapse cannot be migrated yet.
-- Migration to an older Fabric Workspace with Spark Runtime = 3.3 is not supported as 3.3 is deprecated and newer workspaces cannot be created with that Runtime.
-- Spark configurations and libraries are not included in the migration.
-- If a Notebook or SJD in Synapse was associated with a pool that has custom executor settings, those settings will not be migrated.
-- Migration of non-Delta tables is not yet supported. 
-- Migration to specific folders is not yet supported.
-- The current user experience does not yet support accessibility features or content reflow
-
-
+## Related content
+- [Migrate from Azure Synapse Spark to Fabric](migrate-synapse-overview.md)
+- [Compare Fabric Spark and Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md)
+- [Migrate Azure Synapse Spark pools to Fabric](migrate-synapse-spark-pools.md)
+- [Migrate Azure Synapse notebooks to Fabric](migrate-synapse-notebooks.md)
+- [Migrate Spark job definitions from Azure Synapse to Fabric](migrate-synapse-spark-job-definition.md)
+- [Migrate Hive Metastore metadata from Azure Synapse to Fabric](migrate-synapse-hms-metadata.md)
 
 
