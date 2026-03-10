@@ -124,8 +124,30 @@ items:
   - name: Operations and engineering
     items:
     - name: NotebookUtils
-      href: notebook-utilities.md
       displayName: MSSparkUtils
+      items:
+      - name: Overview
+        href: notebook-utilities.md
+      - name: File system utilities
+        href: notebook-utilities/notebook-utilities-file-system.md
+      - name: File mount and unmount
+        href: notebook-utilities/notebook-utilities-mount.md
+      - name: Notebook run and orchestration
+        href: notebook-utilities/notebook-utilities-notebook-run.md
+      - name: Notebook management
+        href: notebook-utilities/notebook-utilities-notebook-management.md
+      - name: Credentials utilities
+        href: notebook-utilities/notebook-utilities-credentials.md
+      - name: Lakehouse utilities
+        href: notebook-utilities/notebook-utilities-lakehouse.md
+      - name: Runtime context
+        href: notebook-utilities/notebook-utilities-runtime.md
+      - name: Session management
+        href: notebook-utilities/notebook-utilities-session-management.md
+      - name: User Data Function (UDF) utilities
+        href: notebook-utilities/notebook-utilities-udf.md
+      - name: Variable library utilities
+        href: notebook-utilities/notebook-utilities-variable-library.md
     - name: Run notebooks in high concurrency mode
       href: configure-high-concurrency-session-notebooks.md
     - name: Run notebooks in pipelines with high concurrency mode
@@ -515,7 +537,7 @@ items:
       - name: Integration with Fabric pipelines
         href: ./user-data-functions/create-functions-activity-data-pipelines.md
       - name: Integration with Fabric notebooks
-        href: ./notebook-utilities.md#user-data-function-udf-utilities
+        href: ./notebook-utilities/notebook-utilities-udf.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: Manage
