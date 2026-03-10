@@ -24,9 +24,9 @@ You can add Anomaly detection events as a source in two ways:
 
 ### From Real-Time Hub
 
-Navigate to Real-Time Hub, find the Fabric events and select **Anomaly detection events**. Select the **+** botton to create Eventstream. 
+Navigate to Real-Time Hub, find **Fabric events**, and select **Anomaly detection events**. Then, select the **+** button to create Eventstream.
 
-:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events1.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window.":::
+:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events1.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window from Real-Time Hub.":::
 
 ### From Eventstream
 
@@ -34,7 +34,7 @@ Navigate to Real-Time Hub, find the Fabric events and select **Anomaly detection
 
 On the **Select a data source** page, search for and select **Connect** on the **Anomaly detection events** tile.
 
-:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events2.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window.":::
+:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events2.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window from Eventstream.":::
 
 ## Configure and connect to Anomaly detection events
 
