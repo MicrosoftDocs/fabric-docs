@@ -147,6 +147,8 @@ items:
     items:
     - name: Manage inbound access
       href: onelake-manage-inbound-access.md
+    - name: Manage inbound access with trusted resources
+      href: onelake-manage-inbound-access-trusted-resources.md
     - name: Manage outbound access
       href: onelake-manage-outbound-access.md
   - name: Monitor and recover

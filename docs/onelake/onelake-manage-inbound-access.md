@@ -36,3 +36,7 @@ To connect to your tenant private endpoint, you can continue to use the OneLake 
 
 If your environment doesn't have a workspace private link set up, the workspace FQDN connects over the public internet. If only a tenant private link is set up, the workspace FQDN connects to the tenant private link. If both a tenant and workspace private link are set up, the workspace FQDN connects to the workspace private link.
 
+## Related content
+
+- To learn how to restrict inbound access based on approved Azure resource, see [Manage inbound access to OneLake with trusted resources](onelake-manage-inbound-access-trusted-resources.md).
+
