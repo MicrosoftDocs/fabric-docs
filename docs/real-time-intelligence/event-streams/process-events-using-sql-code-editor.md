@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 A SQL operator (preview), also called a SQL code editor, is a new data transformation capability in Microsoft Fabric eventstreams. SQL operators provide a code editing experience where you can easily define your own custom data transformation logic by using simple SQL expressions. This article describes how to use a SQL operator for data transformations in an eventstream.
 
 > [!NOTE]
-> Eventstream artifact names that include an underscore (_) or dot (.) are not compatible with SQL operators. For the best experience, create a new eventstream without using underscores or dots in the artifact name.
+> Eventstream artifact names that include an underscore (_) or dot (.) aren't compatible with SQL operators. For the best experience, create a new eventstream without using underscores or dots in the artifact name.
 
 ## Prerequisites
 
@@ -129,7 +129,7 @@ To perform stream processing operations on your data streams by using a SQL oper
 
 The following examples show common real-time analytics scenarios you can implement with the SQL operator.
 
-**Per-minute city sales aggregation** — Use `TumblingWindow` to compute fixed, non-overlapping one-minute sales totals grouped by city:
+**Per-minute city sales aggregation** - Use `TumblingWindow` to compute fixed, nonoverlapping one-minute sales totals grouped by city:
 
 ```sql
 SELECT
@@ -145,7 +145,7 @@ GROUP BY
     TumblingWindow(minute, 1)
 ```
 
-**Burst and bot detection** — Use `HoppingWindow` to detect users who place an unusually high number of orders within a five-minute rolling window, evaluated every minute:
+**Burst and bot detection** - Use `HoppingWindow` to detect users who place an unusually high number of orders within a five-minute rolling window, evaluated every minute:
 
 ```sql
 SELECT
@@ -163,7 +163,7 @@ HAVING
     COUNT(*) > 10
 ```
 
-**Anomaly flagging against a rolling baseline** — Use `HoppingWindow` to compute a rolling average and flag devices whose maximum metric value exceeds twice the average within the window, which indicates a potential anomaly:
+**Anomaly flagging against a rolling baseline** - Use `HoppingWindow` to compute a rolling average and flag devices whose maximum metric value exceeds twice the average within the window, which indicates a potential anomaly:
 
 ```sql
 SELECT
@@ -181,6 +181,122 @@ GROUP BY
 HAVING
     MAX(metricValue) > 2 * AVG(metricValue)
 ```
+
+## Write to multiple destinations from a single SQL operator
+
+With SQL operator, you can send data to multiple output sinks or destinations by adding multiple `INTO` clauses in your SQL query and by defining multiple outputs. 
+
+### Define multiple outputs in the query editor
+
+1. Select **Edit** (Pencil icon) on the SQL operator node to open the **SQL Code** pane.
+1. In the **SQL Code** pane, select **Edit query** to open the full-screen code editor.
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/edit-query-sql-code-button.png" alt-text="Screenshot that shows the SQL Code pane." lightbox="./media/process-events-using-sql-code-editor/edit-query-sql-code-button.png":::
+1. In the full-screen code editor, select **+** in the **Outputs** section to add a new output. Select the output type of your choice. It creates an alias of the output that you can use it in a query. Select the name of the created output and enter a name of your choice. 
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/add-output.png" alt-text="Screenshot that shows the button for adding an output in the SQL full editor." lightbox="./media/process-events-using-sql-code-editor/add-output.png":::
+
+
+### Use multiple SELECT ... INTO statements
+
+Each `SELECT` statement can write to a different output. Add the query to write output to multiple destinations. 
+
+In the following query example, the first `SELECT` statement writes to an output named `RawArchive` (type: Lakehouse), and the second `SELECT` statement writes to an output named `AggregationResults` (type: Eventhouse).
+
+```sql
+
+-- Query 1: Archive all data to Lakehouse
+SELECT *
+INTO [RawArchive]
+FROM [SQLDemoES-stream]
+
+-- Query 2: Aggregate and filter data to create a real time dashboard to an Eventhouse
+SELECT System.Timestamp() AS EventTime, COUNT(*) AS EventCount
+INTO [AggregationResults]
+FROM [SQLDemoES-stream]
+GROUP BY TumblingWindow(minute, 1)
+HAVING COUNT(*) > 100
+```
+
+### Reuse intermediate logic (best practice)
+
+If you want to avoid duplicating logic, use a WITH clause and fan out to multiple outputs from there. In the following example, the `InputStream` common table expression (CTE) is defined to read from the input stream once, and then the two `SELECT` statements reference the `InputStream` CTE to write to different outputs. This approach is more efficient because it avoids reading from the input stream multiple times.
+
+1. Enter the following query in the SQL code editor to read from the input stream once and write to multiple outputs.
+
+    ```sql
+    
+    --Base query:  Reading input stream once
+    With InputStream AS(
+    SELECT * 
+    FROM [SQLDemoES-stream] )
+    
+    -- Query 1: Archive all data to Lakehouse
+    SELECT *
+    INTO [RawArchive]
+    FROM InputStream
+    
+    -- Query 2: Aggregate and filter data to create a real time dashboard to an Eventhouse
+    SELECT System.Timestamp() AS EventTime, COUNT(*) AS EventCount
+    INTO [AggregationResults]
+    FROM InputStream
+    GROUP BY TumblingWindow(minute, 1)
+    HAVING COUNT(*) > 100
+    
+    ```
+
+1. Select **Test query** to validate the query result. Each output defined in the query has a separate tab in the **Test results** panel. 
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/add-multiple-destination-query.png" alt-text="Screenshot that shows an example of adding multiple destination queries in the SQL full editor." lightbox="./media/process-events-using-sql-code-editor/add-multiple-destination-query.png":::
+
+1. Select **Save** to save the query and exit the editor. 
+ 
+    :::image type="content" source="./media/process-events-using-sql-code-editor/save-query-multiple-tables.png" alt-text="Screenshot that shows the Save button in the SQL full editor." lightbox="./media/process-events-using-sql-code-editor/save-query-multiple-tables.png":::
+
+1. Select **Save** again in the SQL Editor pane.
+
+1. Select each destination node created from the SQL operator, and then configure the destination settings for each of them.
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/configure-destination-nodes.png" alt-text="Screenshot that shows the configuration links for each destination node." lightbox="./media/process-events-using-sql-code-editor/configure-destination-nodes.png":::    
+
+1. After you finish the configuration, your eventstream should look like the following example, where the SQL operator node has two output destinations.
+
+    :::image type="content" source="./media/process-events-using-sql-code-editor/multiple-destinations-sql-operator.png" alt-text="Screenshot that shows an example of a SQL operator with multiple outputs." lightbox="./media/process-events-using-sql-code-editor/multiple-destinations-sql-operator.png":::
+
+### Configure event ordering policies in SQL operator
+
+With SQL operator, you can process data using event or application time. By default, Eventstream uses **arrival time**. To process by **event time**, you must explicitly configure it using `TIMESTAMP BY` in your query.
+
+#### Sample input
+
+```json
+{
+    "deviceId": "device123",
+    "temperature": 72,
+    "eventTime": "2024-01-01T12:00:00Z"
+}
+```
+
+#### Sample query using event time
+
+```sql
+
+SELECT
+    deviceId,
+    temperature,
+    System.Timestamp() AS EventTimestamp
+INTO
+    Output
+FROM
+    Input
+TIMESTAMP BY eventTime;
+
+```
+
+You can also add thresholds for late arrival and out of order events under advanced settings of the SQL operator. 
+
+:::image type="content" source="./media/process-events-using-sql-code-editor/advanced-settings.png" alt-text="Screenshot that shows advanced settings of a SQL operator." lightbox="./media/process-events-using-sql-code-editor/advanced-settings.png":::
+
 
 ## Limitations
 

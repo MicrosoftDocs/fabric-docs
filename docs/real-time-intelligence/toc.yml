@@ -183,6 +183,8 @@ items:
             href: event-streams/configure-settings.md
           - name: Pause and resume data streams
             href: event-streams/pause-resume-data-streams.md
+      - name: Set alert on an eventstream
+        href: event-streams/set-alerts-event-stream.md
       - name: Monitor status and performance of eventstreams
         href: event-streams/monitor.md
       - name: Integrate with other Fabric items
@@ -243,6 +245,8 @@ items:
             href: event-streams/transform-sample-data-and-route-to-kql.md
       - name: Eventstream Query Language Reference
         items:
+          - name: Common query patterns 
+            href: /stream-analytics/stream-analytics-stream-analytics-query-patterns?context=/fabric/context/context-rti&pivots=fabric
           - name: Built-in Functions
             items:
               - name: Built-in Functions Overview
@@ -507,6 +511,16 @@ items:
                 href: /stream-analytics-query/where-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
               - name: WITH
                 href: /stream-analytics-query/with-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+          - name: Time management
+            items:
+              - name: Time management overview
+                href: /stream-analytics-query/time-management-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: System.Timestamp()
+                href: /stream-analytics-query/system-timestamp-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: TIMESTAMP BY
+                href: /stream-analytics-query/timestamp-by-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
+              - name: Time skew policies
+                href: /stream-analytics-query/time-skew-policies-azure-stream-analytics?context=/fabric/context/context-rti&pivots=fabric
   - name: Event Schema Set
     items:
       - name: Schema Registry in Real-Time hub
@@ -685,7 +699,7 @@ items:
                 href: table-update-policy.md
               - name: Create materialized views
                 href: materialized-view.md
-              - name: Create stored functions
+              - name: Create and manage functions
                 href: create-functions.md
               - name: Enable Python plugin
                 href: python-plugin.md
