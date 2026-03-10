@@ -961,7 +961,7 @@ items:
           - name: Remote MCP Integrations
             items:
               - name: Get started with Eventhouse MCP remote Server
-                href: mcp-eventhouse.md
+                href: mcp-remote-eventhouse.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:
