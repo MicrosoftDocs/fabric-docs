@@ -92,8 +92,8 @@ Using connection reference variables involves two layers of permissions:
 For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md)
 
 
-## Items that support connection references
-The following is a list of items are currently supported using connection reference:
+## Supported items
+The following is a list of items that support connection reference variables:
 
 - Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
 - [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
