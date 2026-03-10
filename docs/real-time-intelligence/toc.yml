@@ -981,12 +981,16 @@ items:
           href: map/create-map.md
         - name: Layers
           items:
+            - name: Create layers using Kusto data
+              href: map/create-layers-using-kusto-data.md
             - name: Add a WMS or WMTS imagery layer to a map
               href: map/add-external-sourced-imagery-layer.md
             - name: Add an ontology layer to a map
               href: map/add-ontology-layer.md
             - name: Filter data
               href: map/filter-data.md
+            - name: Migrate KQL Queryset to a Kusto function
+              href: map/migrate-kql-queryset-to-kusto-function.md
         - name: Customize a map
           href: map/customize-map.md
         - name: Create a tileset

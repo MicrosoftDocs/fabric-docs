@@ -26,11 +26,11 @@ With Kusto integration, you can:
 
 Fabric Maps supports the following Kusto objects as data sources:
 
-- Tables – Queryable datasets stored in a KQL database.
-- Functions – Reusable KQL definitions that encapsulate query logic.
-- Materialized views – Persisted query results optimized for fast, repeated access.
+- **Tables** – Queryable datasets stored in a KQL database.
+- **Functions** – Reusable KQL definitions that encapsulate query logic.
+- **Materialized views** – Persisted query results optimized for fast, repeated access.
 
-These objects appear as distinct nodes under a connected KQL database in the Unified Explorer, making them discoverable and reusable across map layers.
+These objects appear as distinct nodes under a connected KQL database in the Explorer, making them discoverable and reusable across map layers.
 
 ## How Kusto data becomes a map layer
 
@@ -60,15 +60,15 @@ Once added, Kusto layers behave like other point layers in Fabric Maps. You can:
 
 The following limitations apply to Kusto integration in Fabric Maps:
 
-- The result dataset size cannot exceed 20 MB.
-- Kusto functions with parameters are not supported.
+- The result dataset size can't exceed 20 MB.
+- Kusto functions with parameters aren't supported.
 
 These constraints align with existing limits for GeoJSON‑based data layers.
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Create layers kusto](add-kusto-layer.md)
+> [Create layers using Kusto data](create-layers-using-kusto-data.md)
 
 > [!div class="nextstepaction"]
 > [Data filtering](about-data-filtering.md)
