@@ -91,7 +91,7 @@ DeltaFlow (Preview) is available with the following CDC source connectors:
 - [SQL Server on virtual machine (VM) CDC](./add-source-sql-server-change-data-capture.md)
 - [PostgreSQL Database CDC](./add-source-postgresql-database-change-data-capture.md)
 
-To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step when setting up a CDC connector as an Eventstream source.
+To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step when setting up a CDC connector as an Eventstream source. To learn how DeltaFlow transforms raw CDC events into analytics-ready output, see [DeltaFlow output transformation](./deltaflow-output-transformation.md).
 
 > [!NOTE]
 > We recommend that you use the Fabric eventstreams feature with at least four [capacity](../../enterprise/licenses.md#capacity) units: F4.
