@@ -68,13 +68,13 @@ After you select the views that you want to replicate, a dialog box appears aski
 
 :::image type="content" source="media/mirroring-extended-capabilities/enable-extended-capabilities.png" lightbox="media/mirroring-extended-capabilities/enable-extended-capabilities.png" alt-text="Screenshot of the extended capabilities in mirroring dialog to enable extended capabilities and acknowledge billing implications.":::
 
-## Billing and pricing
+## Pricing for extended capabilities
 
 [!INCLUDE [Extended capabilities billing start note](includes/extended-capabilities-billing-start-note.md)]
 
 Features like change data feed and mirroring views require extra compute to continuously track, process, and apply incremental changes at fine granularity. These capabilities go beyond basic replication and are priced based on the actual work performed, so customers pay only for the added value they use.
 
-For the pricing model, metering details, and billing scope, see [Billing for extended capabilities in mirroring](extended-capabilities-billing.md).
+For the pricing model, metering details, and billing scope, see [pricing for extended capabilities in mirroring](extended-capabilities-billing.md).
 
 ## When to use extended capabilities
 
