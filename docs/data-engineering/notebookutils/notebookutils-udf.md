@@ -5,13 +5,14 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils User Data Function (UDF) utilities for Fabric
 
 The `notebookutils.udf` module provides utilities for integrating notebook code with User Data Function (UDF) items. You can access functions from a UDF item within the same workspace or across different workspaces, and then invoke those functions as needed. UDF items promote code reusability, centralized maintenance, and team collaboration.
 
-Key capabilities:
+Use UDF utilities to:
 
 - **Function retrieval** – Access functions from UDF items by name.
 - **Cross-workspace access** – Use functions from UDF items in other workspaces.
@@ -27,12 +28,16 @@ The following table lists the available UDF methods:
 |---|---|---|
 | `getFunctions` | `getFunctions(udf: String, workspaceId: String = ""): UDFFunctions` | Retrieves all functions from a UDF item by artifact ID or name. Returns an object with callable function attributes. |
 
-The returned object also exposes:
+The returned `UDFFunctions` object exposes the following properties:
 
-| Property | Description |
-|---|---|
-| `functionDetails` | A list of function metadata dictionaries with keys: `Name`, `Description`, `Parameters`, `FunctionReturnType`, and `DataSourceConnections`. |
-| `itemDetails` | A dictionary of UDF item metadata with keys: `Id`, `Name`, `WorkspaceId`, and `CapacityId`. |
+| Property | Type | Description |
+|---|---|---|
+| `functionDetails` | List | A list of function metadata dictionaries. Each dictionary includes: `Name` (function name), `Description` (function description), `Parameters` (list of parameter definitions), `FunctionReturnType` (return type), and `DataSourceConnections` (data source connections used). |
+| `itemDetails` | Dictionary | A dictionary of UDF item metadata with keys: `Id` (artifact ID), `Name` (item name), `WorkspaceId` (workspace ID), and `CapacityId` (capacity ID). |
+| `<functionName>` | Callable | Each function in the UDF item becomes a callable method on the returned object. Use `myFunctions.functionName(...)` to invoke. |
+
+> [!TIP]
+> Retrieve UDF functions once and cache the wrapper object. Avoid calling `getFunctions()` repeatedly in a loop—cache the result instead to minimize overhead.
 
 ## Retrieve functions from a UDF
 
@@ -55,10 +60,17 @@ var myFunctions = notebookutils.udf.getFunctions("UDFItemName")
 var myFunctions = notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
 ```
 
----
+### [R](#tab/r)
 
-> [!TIP]
-> Retrieve UDF functions once and reuse the wrapper object. Avoid calling `getFunctions()` repeatedly in a loop—cache the result instead.
+```r
+# Get functions from a UDF item in the current workspace
+myFunctions <- notebookutils.udf.getFunctions("UDFItemName")
+
+# Get functions from a UDF item in another workspace
+myFunctions <- notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
+```
+
+---
 
 ## Invoke a function
 
@@ -141,7 +153,9 @@ myFunctions$functionDetails()
 
 ## Error handling
 
-Wrap UDF invocations in `try-except` blocks to handle missing functions or unexpected parameter types gracefully.
+Wrap UDF invocations in language-appropriate error handling to manage missing functions or unexpected parameter types gracefully. Always verify that a function exists in the UDF item before you call it.
+
+### [Python](#tab/python)
 
 ```python
 try:
@@ -158,13 +172,47 @@ try:
         )
         print(f"Schema validation: {'passed' if is_valid else 'failed'}")
     else:
-        print("validateSchema function not available")
+        print("validateSchema function not available in this UDF item")
+        print(f"Available functions: {', '.join(function_names)}")
 
 except AttributeError as e:
     print(f"Function not found: {e}")
+except TypeError as e:
+    print(f"Parameter type mismatch: {e}")
 except Exception as e:
     print(f"Error invoking UDF: {e}")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+try {
+    val validators = notebookutils.udf.getFunctions("DataValidators")
+    val isValid = validators.validateSchema("sales_schema", "Files/data/sales.csv")
+    println(s"Schema validation: ${if (isValid) "passed" else "failed"}")
+} catch {
+    case e: Exception => println(s"Error invoking UDF: ${e.getMessage}")
+}
+```
+
+### [R](#tab/r)
+
+```r
+validators <- notebookutils.udf.getFunctions("DataValidators")
+
+result <- tryCatch({
+    validators$validateSchema("sales_schema", "Files/data/sales.csv")
+}, error = function(e) {
+    print(paste("Error invoking UDF:", e$message))
+    NULL
+})
+
+if (!is.null(result)) {
+    print(paste("Schema validation:", ifelse(result, "passed", "failed")))
+}
+```
+
+---
 
 ### Use UDF functions in a data pipeline
 

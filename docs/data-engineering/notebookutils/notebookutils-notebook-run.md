@@ -5,6 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils notebook run and orchestration
@@ -36,6 +37,8 @@ For notebook CRUD operations (create, get, update, delete, list), see [Manage no
 
 The `run()` method references a notebook and returns its exit value. You can run nesting function calls in a notebook interactively or in a pipeline. The notebook being referenced runs on the Spark pool of the notebook that calls this function.
 
+### [Python](#tab/python)
+
 ```python
 notebookutils.notebook.run("notebook name", <timeout_seconds>, <arguments>, <workspace>)
 ```
@@ -46,15 +49,47 @@ For example:
 notebookutils.notebook.run("Sample1", 90, {"input": 20 })
 ```
 
-The `run()` method returns the exact string passed to `notebookutils.notebook.exit(value)` in the child notebook. If `exit()` isn't called, an empty string (`""`) is returned.
+### [Scala](#tab/scala)
 
-Fabric notebook also supports referencing notebooks across multiple workspaces by specifying the *workspace ID*.
+```scala
+notebookutils.notebook.run("Sample1", 90, Map("input" -> 20), "")
+```
+
+### [R](#tab/r)
+
+```r
+notebookutils.notebook.run("Sample1", 90, list(input = 20), "")
+```
+
+---
+
+### Return value
+
+The `run()` method returns the exact string passed to `notebookutils.notebook.exit(value)` in the child notebook. If `exit()` isn't called in the child notebook, an empty string (`""`) is returned.
+
+Fabric notebooks also support referencing notebooks across workspaces by specifying the *workspace ID*.
+
+### [Python](#tab/python)
 
 ```python
 notebookutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
 ```
 
-You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
+### [Scala](#tab/scala)
+
+```scala
+notebookutils.notebook.run("Sample1", 90, Map("input" -> 20), "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
+```
+
+### [R](#tab/r)
+
+```r
+notebookutils.notebook.run("Sample1", 90, list(input = 20), "fe0a6e2a-a909-4aa3-a698-0a651de790aa")
+```
+
+---
+
+Open the snapshot link in the cell output to inspect the reference run. The snapshot captures run results and helps you debug the referenced notebook.
 
 :::image type="content" source="../media/notebook-utilities/reference-run.png" alt-text="Screenshot of reference run result." lightbox="../media/notebook-utilities/reference-run.png":::
 
@@ -75,17 +110,19 @@ date = "2024-01-01"
 region = "US"
 ```
 
+> [!TIP]
+> Exit values are always strings. If you need a numeric value in the parent notebook, convert the result after retrieval (for example, `int(result)`).
+
 ### Considerations
 
 - The cross-workspace reference notebook is supported by **runtime version 1.2 and above**.
 - If you use the files under [Notebook Resource](../how-to-use-notebook.md#notebook-resources), use `notebookutils.nbResPath` in the referenced notebook to make sure it points to the same folder as the interactive run.
-- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse than the parent notebook. To bypass this check, set `useRootDefaultLakehouse: True`.
-- Exit values are always strings. If you need a numeric value in the parent notebook, convert the result after retrieval (for example, `int(result)`).
+- Reference run allows child notebooks to run only if they use the same lakehouse as the parent, inherit the parent's lakehouse, or neither defines one. The execution is blocked if the child specifies a different lakehouse than the parent notebook. To bypass this check, set `useRootDefaultLakehouse: True` in the arguments.
 - Don't call `notebookutils.notebook.exit(value)` inside a `try-catch` block. The exit call won't take effect when wrapped in exception handling.
 
 ## Reference run multiple notebooks in parallel
 
-The method `notebookutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API uses a multi-thread implementation mechanism within a Spark session, which means the reference notebook runs share the compute resources.
+Use `notebookutils.notebook.runMultiple()` to run multiple notebooks in parallel or in a predefined topological structure. The API uses a multithreaded implementation within a Spark session, which means referenced notebook runs share compute resources.
 
 With `notebookutils.notebook.runMultiple()`, you can:
 
@@ -99,23 +136,48 @@ With `notebookutils.notebook.runMultiple()`, you can:
 
 - Get the exit value of each executive activity and use them in downstream tasks.
 
-You can also try to run the `notebookutils.notebook.help("runMultiple")` to find the example and detailed usage.
+Run `notebookutils.notebook.help("runMultiple")` to view more examples and usage details.
 
 ### Run a simple list of notebooks
 
-Here's a simple example of running a list of notebooks in parallel using this method:
+The following example runs a list of notebooks in parallel:
+
+### [Python](#tab/python)
 
 ```python
 notebookutils.notebook.runMultiple(["NotebookSimple", "NotebookSimple2"])
 ```
 
+### [Scala](#tab/scala)
+
+```scala
+notebookutils.notebook.runMultiple(Seq("NotebookSimple", "NotebookSimple2"))
+```
+
+### [R](#tab/r)
+
+```r
+notebookutils.notebook.runMultiple(list("NotebookSimple", "NotebookSimple2"))
+```
+
+---
+
 The execution result from the root notebook is as follows:
 
 :::image type="content" source="../media/notebook-utilities/reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="../media/notebook-utilities/reference-notebook-list.png":::
 
+### Return value
+
+The `runMultiple()` method returns a dictionary where each key is the activity name and each value is a dictionary with the following keys:
+
+- `exitVal`: The string returned by the child notebook's `exit()` call, or an empty string if `exit()` wasn't called.
+- `exception`: An error object if the activity failed, or `None` if it succeeded.
+
 ### Run notebooks with a DAG structure
 
-Here's an example of running notebooks with topological structure using `notebookutils.notebook.runMultiple()`. Use this method to easily orchestrate notebooks through a code experience.
+The following example runs notebooks in a DAG structure by using `notebookutils.notebook.runMultiple()`.
+
+### [Python](#tab/python)
 
 ```python
 # run multiple notebooks with parameters
@@ -151,6 +213,83 @@ DAG = {
 notebookutils.notebook.runMultiple(DAG, {"displayDAGViaGraphviz": False})
 ```
 
+### [Scala](#tab/scala)
+
+```scala
+val dag =
+    """
+        |{
+        |  "activities": [
+        |    {
+        |      "name": "Process_1",
+        |      "path": "NotebookSimple",
+        |      "timeoutPerCellInSeconds": 90,
+        |      "args": {"p1": "changed value", "p2": 100},
+        |      "workspace": "WorkspaceName"
+        |    },
+        |    {
+        |      "name": "Process_2",
+        |      "path": "NotebookSimple2",
+        |      "timeoutPerCellInSeconds": 120,
+        |      "args": {"p1": "changed value 2", "p2": 200},
+        |      "workspace": "id"
+        |    },
+        |    {
+        |      "name": "Process_1.1",
+        |      "path": "NotebookSimple2",
+        |      "timeoutPerCellInSeconds": 120,
+        |      "args": {"p1": "changed value 3", "p2": 300},
+        |      "retry": 1,
+        |      "retryIntervalInSeconds": 10,
+        |      "dependencies": ["Process_1"]
+        |    }
+        |  ],
+        |  "timeoutInSeconds": 43200,
+        |  "concurrency": 12
+        |}
+        |""".stripMargin
+
+notebookutils.notebook.runMultiple(dag)
+```
+
+### [R](#tab/r)
+
+```r
+DAG <- '{
+    "activities": [
+        {
+            "name": "Process_1",
+            "path": "NotebookSimple",
+            "timeoutPerCellInSeconds": 90,
+            "args": {"p1": "changed value", "p2": 100},
+            "workspace": "WorkspaceName"
+        },
+        {
+            "name": "Process_2",
+            "path": "NotebookSimple2",
+            "timeoutPerCellInSeconds": 120,
+            "args": {"p1": "changed value 2", "p2": 200},
+            "workspace": "id"
+        },
+        {
+            "name": "Process_1.1",
+            "path": "NotebookSimple2",
+            "timeoutPerCellInSeconds": 120,
+            "args": {"p1": "changed value 3", "p2": 300},
+            "retry": 1,
+            "retryIntervalInSeconds": 10,
+            "dependencies": ["Process_1"]
+        }
+    ],
+    "timeoutInSeconds": 43200,
+    "concurrency": 12
+}'
+
+notebookutils.notebook.runMultiple(DAG)
+```
+
+---
+
 The execution result from the root notebook is as follows:
 
 :::image type="content" source="../media/notebook-utilities/reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="../media/notebook-utilities/reference-notebook-list-with-parameters.png":::
@@ -163,14 +302,14 @@ The following table describes each field you can use in the DAG definition:
 |---|---|---|---|
 | `activities` | Root | Yes | A list of activity objects that define the notebooks to run. |
 | `timeoutInSeconds` | Root | No | Maximum timeout for the entire DAG. Default is 43200 (12 hours). |
-| `concurrency` | Root | No | Maximum number of notebooks to run concurrently. Default is 50 for Spark notebooks and 25 for Python notebooks. |
+| `concurrency` | Root | No | Maximum number of notebooks to run concurrently. Default is 3 times the available CPU core count. Set this value explicitly if you need tighter control, or use `0` for unlimited concurrency. |
 | `name` | Activity | Yes | A unique name for the activity. Used to identify results and define dependencies. |
 | `path` | Activity | Yes | The notebook item name or path to execute. |
 | `timeoutPerCellInSeconds` | Activity | No | Maximum timeout for each cell in the child notebook. Default is 90 seconds. |
 | `args` | Activity | No | A dictionary of parameters to pass to the child notebook. |
 | `workspace` | Activity | No | The workspace name or ID where the notebook resides. By default, the child notebook runs in the same workspace as the caller. |
 | `retry` | Activity | No | Number of retry attempts if the activity fails. Default is 0. |
-| `retryIntervalInSeconds` | Activity | No | Wait time in seconds between retry attempts. |
+| `retryIntervalInSeconds` | Activity | No | Wait time in seconds between retry attempts. Default is 0. |
 | `dependencies` | Activity | No | A list of activity names that must complete before this activity starts. |
 
 ### Reference exit values between activities
@@ -200,6 +339,9 @@ DAG = {
 
 results = notebookutils.notebook.runMultiple(DAG)
 ```
+
+> [!TIP]
+> Use the `@activity('activity_name').exitValue()` expression in the `args` field to pass results from one activity to another within a DAG.
 
 ### Build a dynamic DAG
 
@@ -234,11 +376,31 @@ results = notebookutils.notebook.runMultiple(dag)
 
 ### Validate a DAG
 
-Use `validateDAG()` to check if your DAG structure is correctly defined before executing it. This method catches issues like duplicate activity names, missing dependencies, and circular references.
+Use `validateDAG()` to verify that your DAG structure is valid before execution. It catches issues such as duplicate activity names, missing dependencies, and circular references.
+
+### [Python](#tab/python)
 
 ```python
 notebookutils.notebook.validateDAG(DAG)
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+notebookutils.notebook.validateDAG(dag)
+```
+
+### [R](#tab/r)
+
+```r
+notebookutils.notebook.validateDAG(DAG)
+```
+
+---
+
+### Return value
+
+The `validateDAG()` method returns `True` if the DAG structure is valid or raises an exception if validation fails.
 
 > [!TIP]
 > Always call `validateDAG()` before `runMultiple()` in production workflows to catch structural errors early.
@@ -263,7 +425,7 @@ for activity_name, result in results.items():
 ### Considerations
 
 - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-- The default number of concurrent notebooks is **50** for Spark notebook, while it's **25** for Python Notebook. You can customize this value, but excessive parallelism might lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple `runMultiple` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+- The default number of concurrent notebooks is **3 times the available CPU core count**. You can customize this value, but excessive parallelism might lead to stability and performance issues because of high compute resource usage. If issues arise, consider separating notebooks into multiple `runMultiple` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
 - The default timeout for the entire DAG is 12 hours, and the default timeout for each cell in a child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
 - Configure `retry` and `retryIntervalInSeconds` for activities that might fail due to transient issues such as network timeouts or temporary service unavailability.
 - Parallel notebooks share compute resources within a single Spark session. Monitor resource utilization to avoid memory pressure and CPU contention.
@@ -278,19 +440,39 @@ The `exit()` method exits a notebook with a value. You can run nesting function 
 
 - When you call an `exit()` function in a notebook that is being referenced, Fabric Spark stops the further execution of the referenced notebook, and continues to run the next cells in the main notebook that calls the `run()` function. For example: Notebook1 has three cells and calls an `exit()` function in the second cell. Notebook2 has five cells and calls `run(notebook1)` in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the `exit()` function. Notebook2 continues to run its fourth cell and fifth cell.
 
+### [Python](#tab/python)
+
 ```python
 notebookutils.notebook.exit("value string")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+notebookutils.notebook.exit("value string")
+```
+
+### [R](#tab/r)
+
+```r
+notebookutils.notebook.exit("value string")
+```
+
+---
+
+### Return behavior
+
+The `exit()` method doesn't return a value. It terminates the current notebook and passes the provided string to the calling notebook or pipeline.
 
 > [!NOTE]
 > The `exit()` function overwrites the current cell output. To avoid losing the output of other code statements, call `notebookutils.notebook.exit()` in a separate cell.
 
 > [!IMPORTANT]
-> Don't call `notebookutils.notebook.exit()` inside a `try-catch` block. The exit won't take effect when wrapped in exception handling.
+> Don't call `notebookutils.notebook.exit()` inside a `try-catch` block. The exit won't take effect when wrapped in exception handling. The `exit()` call must be at the top level of your code to work correctly.
 
 For example:
 
-**Sample1** notebook with following two cells:
+The **Sample1** notebook has the following two cells:
 
 - Cell 1 defines an **input** parameter with default value set to 10.
 

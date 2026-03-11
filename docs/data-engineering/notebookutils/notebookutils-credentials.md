@@ -5,6 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils credentials utilities for Fabric
@@ -15,6 +16,17 @@ The credentials utilities are available in Python, PySpark, Scala, and R noteboo
 
 > [!IMPORTANT]
 > Never hardcode secrets or credentials directly in notebook code. Always use Azure Key Vault to store sensitive values and retrieve them at runtime with `notebookutils.credentials.getSecret`.
+
+## Constraints and safety
+
+Before you use credentials utilities, be aware of these constraints:
+
+- **Token expiration** – Tokens expire after a period. For long-running operations, implement refresh logic to request a new token before expiration.
+- **Service principal scope limitations** – When running under a service principal, tokens for the `pbi` audience have restricted scopes compared to user identity.
+- **MSAL for full scope** – If you need the full Fabric service scope under a service principal, use MSAL authentication instead of `getToken`.
+- **Secret redaction** – Notebook outputs automatically redact secret values to prevent accidental exposure.
+- **Key Vault permissions** – You must have appropriate permissions (Get for reading, Set for writing) on the Azure Key Vault to access or store secrets.
+- **Audience changes** – Token audience scopes might evolve over time. Verify current scopes in the documentation.
 
 Run the following command to get an overview of the available methods:
 
@@ -170,13 +182,16 @@ for container in blob_client.list_containers():
 - When you call `notebookutils.credentials.getToken("pbi")`, the returned token has limited scope if the notebook runs under a service principal. The token doesn't have the full Fabric service scope. If the notebook runs under the user identity, the token still has the full Fabric service scope, but this might change with security improvements. To ensure that the token has the full Fabric service scope, use MSAL authentication instead of the `notebookutils.credentials.getToken` API. For more information, see [Authenticate with Microsoft Entra ID](/entra/msal/python/).
 
 - The following scopes are available when you call `notebookutils.credentials.getToken` with the audience key `pbi` under the service principal identity:
-  - Lakehouse.ReadWrite.All
-  - MLExperiment.ReadWrite.All
-  - MLModel.ReadWrite.All
-  - Notebook.ReadWrite.All
-  - SparkJobDefinition.ReadWrite.All
-  - Workspace.ReadWrite.All
-  - Dataset.ReadWrite.All
+  - `Lakehouse.ReadWrite.All` – Read and write access to Lakehouse items
+  - `MLExperiment.ReadWrite.All` – Read and write access to Machine Learning Experiment items
+  - `MLModel.ReadWrite.All` – Read and write access to Machine Learning Model items
+  - `Notebook.ReadWrite.All` – Read and write access to Notebook items
+  - `SparkJobDefinition.ReadWrite.All` – Read and write access to Spark Job Definition items
+  - `Workspace.ReadWrite.All` – Read and write access to Workspace items
+  - `Dataset.ReadWrite.All` – Read and write access to Dataset items
+
+> [!TIP]
+> If you need access to additional Fabric services or broader permissions under a service principal, use [MSAL for Python](/entra/msal/python/) to authenticate directly with the full Fabric service scope instead of relying on `getToken("pbi")`.
 
 ## Get secret
 
@@ -265,7 +280,7 @@ notebookutils.credentials.putSecret(vault_url, "api-key", "my-secret-api-key-val
 
 ## Validate token
 
-`isValidToken` checks whether a token is valid and hasn't expired. Use this method to verify a token before making API calls with it.
+Use `isValidToken` to check whether a token is valid and not expired before you call an API with it.
 
 ### [Python](#tab/python)
 

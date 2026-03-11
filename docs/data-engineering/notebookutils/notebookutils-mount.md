@@ -5,6 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils file mount and unmount for Fabric
@@ -35,7 +36,7 @@ Mount operations support several authentication methods. Choose the method based
 
 ### Microsoft Entra token (default and recommended)
 
-Microsoft Entra token authentication uses the identity of the notebook executor (user or service principal). It doesn't require any explicit credentials in the mount call, making it the most secure option. This method is required for Lakehouse mounting and works seamlessly with Fabric workspace storage.
+Microsoft Entra token authentication uses the identity of the notebook executor, either a user or service principal. It doesn't require explicit credentials in the mount call, which makes it the most secure option. Use this option for Lakehouse mounting and Fabric workspace storage.
 
 ```python
 # Mount using Microsoft Entra token (no credentials needed)
@@ -64,7 +65,7 @@ notebookutils.fs.mount(
 
 ### Shared access signature (SAS) token
 
-Use a [shared access signature (SAS)](/azure/storage/common/storage-sas-overview) token for time-limited, permission-scoped access. This method is useful for granting temporary access to external parties. Store SAS tokens in Azure Key Vault for security.
+Use a [shared access signature (SAS)](/azure/storage/common/storage-sas-overview) token for time-limited, permission-scoped access. This option is useful when you need to grant temporary access to external parties. Store SAS tokens in Azure Key Vault.
 
 ```python
 # Retrieve SAS token from Azure Key Vault
@@ -97,7 +98,7 @@ Sample code for the *accountKey* method:
 
 ```python
 # get access token for keyvault resource
-# you can also use full audience here like https://vault.azure.net
+# You can also use the full audience, such as https://vault.azure.net.
 accountKey = notebookutils.credentials.getSecret("<vaultURI>", "<secretName>")
 notebookutils.fs.mount(  
     "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
@@ -110,7 +111,7 @@ Sample code for *sastoken*:
 
 ```python
 # get access token for keyvault resource
-# you can also use full audience here like https://vault.azure.net
+# You can also use the full audience, such as https://vault.azure.net.
 sasToken = notebookutils.credentials.getSecret("<vaultURI>", "<secretName>")
 notebookutils.fs.mount(  
     "abfss://mycontainer@<accountname>.dfs.core.windows.net",  
@@ -153,6 +154,7 @@ When multiple clients modify files simultaneously, use a zero-cache configuratio
 
 ```python
 # For scenarios with multiple clients modifying files
+# Use zero cache to always fetch the latest from the server
 notebookutils.fs.mount(
     "abfss://shared@account.dfs.core.windows.net",
     "/shared_data",
@@ -176,7 +178,7 @@ notebookutils.fs.mount(
 
 ## Access files under the mount point by using the notebookutils fs API
 
-The main purpose of the mount operation is to let you access the data stored in a remote storage account with a local file system API. You can also access the data by using the `notebookutils fs` API with a mounted path as a parameter. This path format is a little different.
+Use mount operations when you want to access data in remote storage through a local file system API. You can also access mounted data by using the `notebookutils.fs` API with a mounted path, but the path format differs.
 
 Assume that you mounted the Data Lake Storage Gen2 container *mycontainer* to */test* by using the mount API. When you access the data with a local file system API, the path format is like this:
 
@@ -190,19 +192,19 @@ When you want to access the data by using the `notebookutils fs` API, use `getMo
 path = notebookutils.fs.getMountPath("/test")
 ```
 
-- List directories:
+- List directories.
 
    ```python
    notebookutils.fs.ls(f"file://{notebookutils.fs.getMountPath('/test')}")
    ```
 
-- Read file content:
+- Read file content.
 
    ```python
    notebookutils.fs.head(f"file://{notebookutils.fs.getMountPath('/test')}/myFile.txt")
    ```
 
-- Create a directory:
+- Create a directory.
 
    ```python
    notebookutils.fs.mkdirs(f"file://{notebookutils.fs.getMountPath('/test')}/newdir")
@@ -210,7 +212,7 @@ path = notebookutils.fs.getMountPath("/test")
 
 ## Access files under the mount point via local path
 
-You can read and write the files in a mount point by using the standard file system. Here's a Python example:
+You can read and write files in a mount point by using the standard file system. The following Python example shows this pattern:
 
 ```python
 #File read
@@ -302,8 +304,8 @@ process_with_mount(
 
 ## Known limitations
 
-- The current mount is a job-level configuration; we recommend you use the `mounts` API to check if a mount point exists or isn't available.
-- The unmount mechanism isn't automatically applied. When the application run finishes, to unmount the mount point and release the disk space, you need to explicitly call an unmount API in your code. Otherwise, the mount point still exists in the node after the application run finishes.
+- Mounts are job-level configurations. Use the `mounts` API to check whether a mount point already exists or is available.
+- Unmounting doesn't happen automatically. When the application run finishes, call an unmount API in your code to release disk space. Otherwise, the mount point remains on the node after the application run finishes.
 - Mounting an ADLS Gen1 storage account isn't supported.
 
 ## Related content

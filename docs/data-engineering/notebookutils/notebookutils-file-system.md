@@ -5,6 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils file system utilities for Fabric
@@ -43,6 +44,7 @@ For mount and unmount operations, see [File mount and unmount](notebookutils-mou
 >
 > - **Path behavior varies by notebook type**: In Spark notebooks, relative paths resolve to the default Lakehouse ABFSS path. In Python notebooks, relative paths resolve to the local file system working directory (`/home/trusted-service-user/work`).
 > - **Concurrent write limitations**: `notebookutils.fs.append()` and `notebookutils.fs.put()` don't support concurrent writes to the same file due to a lack of atomicity guarantees.
+> - **Append loop delay**: When using `notebookutils.fs.append()` in loops, add 0.5-1 second sleep between writes for data integrity.
 > - **OneLake shortcut limitations**: For S3/GCS type shortcuts, use mounted paths instead of ABFS paths for `cp()` and `fastcp()` operations.
 > - **Cross-region limitations**: `fastcp()` doesn't support copying files in OneLake across regions. Use `cp()` instead.
 > - **Runtime version**: NotebookUtils is designed to work with Spark 3.4 (Runtime v1.2) and above.
@@ -89,7 +91,7 @@ The `notebookutils.fs.ls()` API behaves differently when using a relative path, 
 
 ## View file properties
 
-This method returns file properties including file name, file path, file size, and whether it's a directory and a file.
+Use `notebookutils.fs.ls()` to inspect file properties such as file name, file path, file size, and whether an item is a file or directory.
 
 ```python
 files = notebookutils.fs.ls('Your directory path')
@@ -97,7 +99,7 @@ for file in files:
     print(file.name, file.isDir, file.isFile, file.path, file.size)
 ```
 
-You can also use f-string formatting for more readable output:
+Use f-strings if you want more readable output:
 
 ```python
 files = notebookutils.fs.ls("Files/data")
@@ -107,7 +109,7 @@ for file in files:
 
 ## Create new directory
 
-This method creates the given directory if it doesn't exist, and creates any necessary parent directories.
+Create a directory if it doesn't exist, including any necessary parent directories.
 
 ```python
 notebookutils.fs.mkdirs('new directory name')  
@@ -118,13 +120,15 @@ notebookutils.fs.mkdirs("file:/<new_dir>")  # Based on local file system of driv
 
 ## Copy file
 
-This method copies a file or directory, and supports copy activity across file systems. Set `recurse=True` to copy all files and directories recursively.
+Copy a file or directory across file systems. Set `recurse=True` to copy directories recursively.
 
 ```python
 notebookutils.fs.cp('source file or directory', 'destination file or directory', recurse=True)
 ```
 
 > [!NOTE]
+>
+> **Python notebook note**: In Python notebooks, `cp()` internally uses the same azcopy-based mechanism as `fastcp()`, providing efficient performance for both methods.
 > Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.cp()` to copy data from S3/GCS type shortcut, it's recommended to use a mounted path instead of an abfss path.
 
 > [!TIP]
@@ -142,23 +146,23 @@ notebookutils.fs.cp(
 
 ## Performant copy file
 
-This method offers a more efficient approach to copying or moving files, particularly when dealing with large data volumes. For enhanced performance in Fabric, it's advisable to use `fastcp` as a substitute for the traditional `cp` method.
+Use `fastcp` for more efficient copy operations, especially with large data volumes. The `recurse` parameter defaults to `True`.
 
 ```python
 notebookutils.fs.fastcp('source file or directory', 'destination file or directory', recurse=True)
 ```
 
 > [!TIP]
-> Use `fastcp()` instead of `cp()` for large data transfers. The `fastcp` method uses azcopy under the hood, which provides significantly better throughput for bulk file operations.
+> Use `fastcp()` instead of `cp()` for large data transfers. The `fastcp` method uses azcopy under the hood, which provides significantly better throughput for bulk file operations. In Python notebooks, both `cp()` and `fastcp()` use the same underlying mechanism.
 
-**Considerations:**
+Keep these considerations in mind:
 
 - `notebookutils.fs.fastcp()` doesn't support copying files in OneLake across regions. In this case, you can use `notebookutils.fs.cp()` instead.
 - Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.fastcp()` to copy data from S3/GCS type shortcut, it's recommended to use a mounted path instead of an abfss path.
 
 ## Preview file content
 
-This method returns up to the first `max_bytes` bytes of the given file as a String encoded in UTF-8.
+Return up to the first `max_bytes` bytes of a file as a UTF-8 string.
 
 ```python
 notebookutils.fs.head('file path', max_bytes)
@@ -179,7 +183,7 @@ print(content)
 
 ## Move file
 
-This method moves a file or directory, and supports moves across file systems.
+Move a file or directory across file systems.
 
 ```python
 notebookutils.fs.mv('source file or directory', 'destination directory', create_path=True, overwrite=True)
@@ -193,7 +197,7 @@ notebookutils.fs.mv('source file or directory', 'destination directory', create_
 >
 > To ensure consistent behavior across runtimes, explicitly set the `create_path` parameter in your code. In Scala, this parameter is named `createPath`.
 
-You can also use named parameters for clarity:
+Use named parameters if you want clearer code:
 
 ```python
 notebookutils.fs.mv("Files/source.csv", "Files/new_folder/dest.csv", create_path=True, overwrite=True)
@@ -201,7 +205,7 @@ notebookutils.fs.mv("Files/source.csv", "Files/new_folder/dest.csv", create_path
 
 ## Write file
 
-This method writes the given string out to a file, encoded in UTF-8.
+Write a UTF-8 string to a file.
 
 ```python
 notebookutils.fs.put("file path", "content to write", True) # Set the last parameter as True to overwrite the file if it already exists
@@ -209,7 +213,7 @@ notebookutils.fs.put("file path", "content to write", True) # Set the last param
 
 ## Append content to a file
 
-This method appends the given string to a file, encoded in UTF-8.
+Append a UTF-8 string to a file.
 
 ```python
 notebookutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it doesn't exist
@@ -230,7 +234,7 @@ for i in range(100):
 
 ## Delete file or directory
 
-This method removes a file or directory. Set `recurse=True` to remove all files and directories recursively.
+Remove a file or directory. Set `recurse=True` to remove directories recursively.
 
 ```python
 notebookutils.fs.rm('file path', recurse=True) 
@@ -238,7 +242,7 @@ notebookutils.fs.rm('file path', recurse=True)
 
 ## Check if a file or directory exists
 
-This method checks whether a file or directory exists at the specified path. It returns `True` if the path exists, and `False` otherwise.
+Check whether a file or directory exists at the specified path. It returns `True` if the path exists; otherwise, it returns `False`.
 
 ```python
 notebookutils.fs.exists("Files/data/input.csv")
@@ -257,10 +261,18 @@ else:
 
 ## Get file properties
 
+Get properties for a path as a map of name-value pairs. It's only supported for Azure Blob Storage paths.
+
 > [!NOTE]
 > The `getProperties` method is available only in Python notebooks. It isn't supported in Spark notebooks (PySpark, Scala, or R).
 
-This method gets the properties of the given path. It's only supported for Azure Blob Storage paths.
+**Parameters:**
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `path` | String | Yes | ABFS path to the file or directory. |
+
+**Returns:** A dictionary (map) containing metadata properties such as file size, creation time, last modified time, and content type.
 
 ```python
 properties = notebookutils.fs.getProperties("abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/<path>")

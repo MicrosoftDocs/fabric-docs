@@ -5,13 +5,14 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # NotebookUtils runtime context for Fabric
 
-The `notebookutils.runtime` module gives you read-only access to context information about the current notebook execution session. You can retrieve metadata such as the notebook name, workspace details, default lakehouse configuration, pipeline execution flags, and reference run hierarchy—all without modifying any state.
+Use `notebookutils.runtime` to read context information about the current notebook session. You can retrieve metadata such as the notebook name, workspace details, default lakehouse configuration, pipeline execution flags, and reference run hierarchy without modifying any state.
 
-Runtime context is useful for:
+Use runtime context to:
 
 - **Dynamic configuration** – Adapt notebook behavior based on the execution environment.
 - **Conditional logic** – Branch logic depending on whether the notebook runs in a pipeline or interactively.
@@ -21,9 +22,9 @@ Runtime context is useful for:
 > [!NOTE]
 > Runtime context is available in Python, PySpark, Scala, and R notebooks. The context is read-only—you can't modify any of the properties returned by `notebookutils.runtime.context`. Some properties are only populated in specific contexts, such as reference runs or pipeline executions, and might return `null` or empty values otherwise.
 
-## Show session context info
+## View session context
 
-Use `notebookutils.runtime.context` to get the context information of the current live session, including the notebook name, default lakehouse, workspace info, and whether it's a pipeline run.
+Use `notebookutils.runtime.context` to view context information for the current session, including the notebook name, default lakehouse, workspace information, and whether the session runs in a pipeline.
 
 ### [Python](#tab/python)
 
@@ -47,43 +48,43 @@ notebookutils.runtime.context()
 
 The following table describes the available properties.
 
-| Property | Type | Description |
-|---|---|---|
-| `currentNotebookName` | String | The name of the current notebook. |
-| `currentNotebookId` | String | The unique ID of the current notebook. |
-| `currentWorkspaceName` | String | The name of the current workspace. |
-| `currentWorkspaceId` | String | The ID of the current workspace. |
-| `defaultLakehouseName` | String | The display name of the default lakehouse, if defined. |
-| `defaultLakehouseId` | String | The ID of the default lakehouse, if defined. |
-| `defaultLakehouseWorkspaceName` | String | The workspace name of the default lakehouse, if defined. |
-| `defaultLakehouseWorkspaceId` | String | The workspace ID of the default lakehouse, if defined. |
-| `currentRunId` | String | In a reference run, the current run ID. |
-| `parentRunId` | String | In a reference run with nested runs, this ID is the parent run ID. |
-| `rootRunId` | String | In a reference run with nested runs, this ID is the root run ID. |
-| `isForPipeline` | Boolean | Whether the run is for a pipeline. |
-| `isForInteractive` | Boolean | Whether the run is an interactive session. |
-| `isReferenceRun` | Boolean | Whether the current run is a reference run. |
-| `referenceTreePath` | String | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page. |
-| `rootNotebookId` | String | (Only in reference run) The ID of the root notebook in a reference run. |
-| `rootNotebookName` | String | (Only in reference run) The name of the root notebook in a reference run. |
-| `rootWorkspaceId` | String | (Only in reference run) The workspace ID of the root notebook in a reference run. |
-| `rootWorkspaceName` | String | (Only in reference run) The workspace name of the root notebook in a reference run. |
-| `activityId` | String | The Livy job ID for the current activity. |
-| `hcReplId` | String | The REPL ID in High Concurrency Mode. |
-| `clusterId` | String | The identity of the Synapse Spark cluster. |
-| `poolName` | String | The name of the Spark pool being used. |
-| `environmentId` | String | The environment ID where the job is running. |
-| `environmentWorkspaceId` | String | The workspace ID of the environment. |
-| `userId` | String | The user ID of the current user. |
-| `userName` | String | The user name of the current user. |
-| `currentKernel` | String | The name of the current notebook kernel. |
-| `productType` | String | The product type identifier (for example, `Fabric`). |
+| Property | Type | Description | Availability |
+|---|---|---|---|
+| `currentNotebookName` | String | The name of the current notebook. | All contexts |
+| `currentNotebookId` | String | The unique ID of the current notebook. | All contexts |
+| `currentWorkspaceName` | String | The name of the current workspace. | All contexts |
+| `currentWorkspaceId` | String | The ID of the current workspace. | All contexts |
+| `defaultLakehouseName` | String | The display name of the default lakehouse, if defined. | When default lakehouse is attached |
+| `defaultLakehouseId` | String | The ID of the default lakehouse, if defined. | When default lakehouse is attached |
+| `defaultLakehouseWorkspaceName` | String | The workspace name of the default lakehouse, if defined. | When default lakehouse is attached |
+| `defaultLakehouseWorkspaceId` | String | The workspace ID of the default lakehouse, if defined. | When default lakehouse is attached |
+| `currentRunId` | String | In a reference run, the current run ID. | Reference runs only |
+| `parentRunId` | String | In a reference run with nested runs, this ID is the parent run ID. | Nested reference runs only |
+| `rootRunId` | String | In a reference run with nested runs, this ID is the root run ID. | Nested reference runs only |
+| `isForPipeline` | Boolean | Whether the run is for a pipeline. | All contexts |
+| `isForInteractive` | Boolean | Whether the run is an interactive session. | All contexts |
+| `isReferenceRun` | Boolean | Whether the current run is a reference run. | All contexts |
+| `referenceTreePath` | String | The tree structure of nested reference runs, used only for the snapshot hierarchy in the monitoring L2 page. | Nested reference runs only |
+| `rootNotebookId` | String | The ID of the root notebook in a reference run. | Reference runs only |
+| `rootNotebookName` | String | The name of the root notebook in a reference run. | Reference runs only |
+| `rootWorkspaceId` | String | The workspace ID of the root notebook in a reference run. | Reference runs only |
+| `rootWorkspaceName` | String | The workspace name of the root notebook in a reference run. | Reference runs only |
+| `activityId` | String | The Livy job ID for the current activity. | All contexts |
+| `hcReplId` | String | The REPL ID in High Concurrency Mode. | High concurrency mode only |
+| `clusterId` | String | The identity of the Synapse Spark cluster. | All contexts |
+| `poolName` | String | The name of the Spark pool being used. | All contexts |
+| `environmentId` | String | The environment ID where the job is running. | All contexts |
+| `environmentWorkspaceId` | String | The workspace ID of the environment. | All contexts |
+| `userId` | String | The user ID of the current user. | All contexts |
+| `userName` | String | The user name of the current user. | All contexts |
+| `currentKernel` | String | The name of the current notebook kernel. | Python Notebook only |
+| `productType` | String | The product type identifier (for example, `Fabric`). | All contexts |
 
 ## Usage examples
 
 ### Access basic context information
 
-Cache the context object when you need to read multiple properties:
+Cache the context object when you need to read multiple properties.
 
 ### [Python](#tab/python)
 
@@ -119,6 +120,8 @@ cat(paste("Workspace:", context$currentWorkspaceName, "\n"))
 
 Use the `isForPipeline` flag to branch logic depending on the execution mode. For example, you can apply stricter error handling in pipeline runs.
 
+### [Python](#tab/python)
+
 ```python
 context = notebookutils.runtime.context
 
@@ -136,9 +139,44 @@ else:
     max_retries = 1
 ```
 
+### [Scala](#tab/scala)
+
+```scala
+val context = notebookutils.runtime.context
+
+if (context("isForPipeline").asInstanceOf[Boolean]) {
+    println("Pipeline mode: Strict error handling")
+} else if (context("isReferenceRun").asInstanceOf[Boolean]) {
+    println("Running as a referenced notebook")
+} else {
+    println("Interactive mode: Lenient error handling")
+}
+```
+
+### [R](#tab/r)
+
+```r
+context <- notebookutils.runtime.context()
+
+if (context$isForPipeline) {
+    print("Pipeline mode: Strict error handling")
+} else if (context$isReferenceRun) {
+    print("Running as a referenced notebook")
+} else {
+    print("Interactive mode: Lenient error handling")
+}
+```
+
+---
+
+> [!TIP]
+> Use `isForPipeline` and `isReferenceRun` together to implement three-way branching for different execution contexts. This pattern helps you tailor retry counts, logging verbosity, and error handling strategies. For production workloads, pipeline and reference runs typically require stricter error handling than interactive sessions.
+
 ### Inspect the reference run hierarchy
 
 When a notebook runs as part of a nested reference run, you can trace the full hierarchy from the current run back to the root:
+
+### [Python](#tab/python)
 
 ```python
 context = notebookutils.runtime.context
@@ -153,9 +191,45 @@ else:
     print("Not a reference run")
 ```
 
+### [Scala](#tab/scala)
+
+```scala
+val context = notebookutils.runtime.context
+
+if (context("isReferenceRun").asInstanceOf[Boolean]) {
+    println("Reference Run Context:")
+    println(s"  Current Run ID: ${context("currentRunId")}")
+    println(s"  Parent Run ID: ${context("parentRunId")}")
+    println(s"  Root Run ID: ${context("rootRunId")}")
+    println(s"  Root Notebook: ${context("rootNotebookName")}")
+} else {
+    println("Not a reference run")
+}
+```
+
+### [R](#tab/r)
+
+```r
+context <- notebookutils.runtime.context()
+
+if (context$isReferenceRun) {
+    print("Reference Run Context:")
+    print(paste("Current Run ID:", context$currentRunId))
+    print(paste("Parent Run ID:", context$parentRunId))
+    print(paste("Root Run ID:", context$rootRunId))
+    print(paste("Root Notebook:", context$rootNotebookName))
+} else {
+    print("Not a reference run")
+}
+```
+
+---
+
 ### Include context in logging
 
 Enrich log messages with execution context for easier debugging and monitoring:
+
+### [Python](#tab/python)
 
 ```python
 context = notebookutils.runtime.context
@@ -168,8 +242,26 @@ log_prefix = (
 print(f"{log_prefix} Processing started")
 ```
 
-> [!TIP]
-> Use `isForPipeline` and `isReferenceRun` together to implement three-way branching: pipeline mode, reference-run mode, and interactive mode. This pattern helps you tailor retry counts, logging verbosity, and error handling per execution context.
+### [Scala](#tab/scala)
+
+```scala
+val context = notebookutils.runtime.context
+
+val logPrefix = s"[${context("currentWorkspaceName")}/${context("currentNotebookName")}] run=${context.getOrElse("currentRunId", "interactive")}"
+
+println(s"${logPrefix} Processing started")
+```
+
+### [R](#tab/r)
+
+```r
+context <- notebookutils.runtime.context()
+
+run_id <- if (!is.null(context$currentRunId) && nzchar(context$currentRunId)) context$currentRunId else "interactive"
+log_prefix <- paste0("[", context$currentWorkspaceName, "/", context$currentNotebookName, "] run=", run_id)
+
+print(paste(log_prefix, "Processing started"))
+```
 
 ## Related content
 

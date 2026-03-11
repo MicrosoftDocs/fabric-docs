@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # NotebookUtils lakehouse utilities
 
-`notebookutils.lakehouse` provides utilities tailored for managing Lakehouse items programmatically. These utilities empower you to create, get, update, and delete Lakehouse artifacts directly from Fabric notebooks.
+Use `notebookutils.lakehouse` to manage Lakehouse items programmatically in Fabric notebooks. You can create, get, update, delete, and list Lakehouses directly from notebook code.
 
 The Lakehouse utilities are available in Python, PySpark, Scala, and R notebooks. The examples on this page use Python as the primary language, with Scala and R equivalents shown for key methods.
 
@@ -23,16 +23,16 @@ To display the available methods and their descriptions, call `notebookutils.lak
 
 The following table summarizes the available methods:
 
-| Method | Description |
-|---|---|
-| `create` | Creates a new Lakehouse, with optional schema support. |
-| `get` | Retrieves a Lakehouse artifact by name. |
-| `getWithProperties` | Retrieves a Lakehouse artifact with extended properties. |
-| `update` | Updates an existing Lakehouse name or description. |
-| `delete` | Deletes a Lakehouse artifact. |
-| `list` | Lists all Lakehouse artifacts in a workspace. |
-| `listTables` | Lists all tables in a Lakehouse. |
-| `loadTable` | Starts a load table operation in a Lakehouse. |
+| Method | Description | Returns |
+|---|---|---|
+| `create` | Creates a new Lakehouse, with optional schema support. | `Artifact` object with properties: `id`, `displayName`, `description`, and `workspaceId`. |
+| `get` | Retrieves a Lakehouse by name. | `Artifact` object with basic metadata. |
+| `getWithProperties` | Retrieves a Lakehouse with extended properties. | `Artifact` object with extended metadata and connection details. |
+| `update` | Updates an existing Lakehouse name or description. | Updated `Artifact` object. |
+| `delete` | Deletes a Lakehouse. | `Boolean`. `True` if successful; otherwise, `False`. |
+| `list` | Lists Lakehouses in a workspace. | Array of `Artifact` objects. |
+| `listTables` | Lists tables in a Lakehouse. | Array of `Table` objects. |
+| `loadTable` | Starts a load operation for a Lakehouse table. | `Boolean`. `True` if successful; otherwise, `False`. |
 
 ```python
 # Method signatures
@@ -66,29 +66,31 @@ Use `notebookutils.lakehouse.create()` to create a new Lakehouse in the current 
 ### [Python](#tab/python)
 
 ```python
-artifact = notebookutils.lakehouse.create("artifact_name", "Description of the artifact")
+artifact = notebookutils.lakehouse.create("lakehouse_name", "Description of the Lakehouse")
 ```
 
 ### [Scala](#tab/scala)
 
 ```scala
-val artifact = notebookutils.lakehouse.create("artifact_name", "Description of the artifact")
+val artifact = notebookutils.lakehouse.create("lakehouse_name", "Description of the Lakehouse")
 ```
 
 ### [R](#tab/r)
 
 ```r
-artifact <- notebookutils.lakehouse.create("artifact_name", "Description of the artifact")
+artifact <- notebookutils.lakehouse.create("lakehouse_name", "Description of the Lakehouse")
 ```
 
 ---
 
 > [!NOTE]
-> In Scala, the `create` method doesn't support the `definition` parameter. Schema-enabled Lakehouse creation is available in Python, PySpark, and R.
+> In Scala, pass the `definition` parameter as a JSON string. In Python, PySpark, and R, you can pass a dictionary or list.
 
 ### Create a Lakehouse with schema support
 
 When you enable schema support, the Lakehouse supports multiple schemas for organizing tables. Pass `{"enableSchemas": True}` as the `definition` parameter:
+
+### [Python](#tab/python)
 
 ```python
 artifact = notebookutils.lakehouse.create(
@@ -101,7 +103,40 @@ print(f"Created lakehouse with schema support: {artifact.displayName}")
 print(f"Lakehouse ID: {artifact.id}")
 ```
 
+### [Scala](#tab/scala)
+
+```scala
+val definition = """{"enableSchemas": true}"""
+
+val artifact = notebookutils.lakehouse.create(
+    "SalesAnalyticsWithSchema",
+    "Lakehouse with schema support for multi-tenant data",
+    definition,
+    ""
+)
+
+println(s"Created lakehouse with schema support: ${artifact.displayName}")
+println(s"Lakehouse ID: ${artifact.id}")
+```
+
+### [R](#tab/r)
+
+```r
+artifact <- notebookutils.lakehouse.create(
+    "SalesAnalyticsWithSchema",
+    "Lakehouse with schema support for multi-tenant data",
+    list(enableSchemas = TRUE)
+)
+
+print(paste("Created lakehouse with schema support:", artifact$displayName))
+print(paste("Lakehouse ID:", artifact$id))
+```
+
+---
+
 ### Create a Lakehouse in a different workspace
+
+### [Python](#tab/python)
 
 ```python
 workspace_id = "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb"
@@ -114,6 +149,36 @@ artifact = notebookutils.lakehouse.create(
 
 print(f"Created lakehouse in workspace: {workspace_id}")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+val workspaceId = "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb"
+
+val artifact = notebookutils.lakehouse.create(
+    "SharedAnalytics",
+    "Shared analytics lakehouse",
+    workspaceId = workspaceId
+)
+
+println(s"Created lakehouse in workspace: ${workspaceId}")
+```
+
+### [R](#tab/r)
+
+```r
+workspace_id <- "aaaaaaaa-1111-2222-3333-bbbbbbbbbbbb"
+
+artifact <- notebookutils.lakehouse.create(
+    "SharedAnalytics",
+    "Shared analytics lakehouse",
+    workspaceId = workspace_id
+)
+
+print(paste("Created lakehouse in workspace:", workspace_id))
+```
+
+---
 
 ### Batch create Lakehouses
 
@@ -139,7 +204,7 @@ print(f"Created {len(created_lakehouses)} lakehouses")
 
 ## Get a Lakehouse
 
-Use `notebookutils.lakehouse.get()` to retrieve a Lakehouse artifact by name.
+Use `notebookutils.lakehouse.get()` to retrieve a Lakehouse by name.
 
 ### Parameters
 
@@ -151,7 +216,7 @@ Use `notebookutils.lakehouse.get()` to retrieve a Lakehouse artifact by name.
 ### [Python](#tab/python)
 
 ```python
-artifact = notebookutils.lakehouse.get("artifact_name", "optional_workspace_id")
+artifact = notebookutils.lakehouse.get("lakehouse_name", "optional_workspace_id")
 
 print(f"Lakehouse Name: {artifact.displayName}")
 print(f"Lakehouse ID: {artifact.id}")
@@ -161,14 +226,14 @@ print(f"Workspace ID: {artifact.workspaceId}")
 ### [Scala](#tab/scala)
 
 ```scala
-val artifact = notebookutils.lakehouse.get("artifact_name", "optional_workspace_id")
+val artifact = notebookutils.lakehouse.get("lakehouse_name", "optional_workspace_id")
 println(s"Lakehouse Name: ${artifact.displayName}")
 ```
 
 ### [R](#tab/r)
 
 ```r
-artifact <- notebookutils.lakehouse.get("artifact_name", "optional_workspace_id")
+artifact <- notebookutils.lakehouse.get("lakehouse_name", "optional_workspace_id")
 print(paste("Lakehouse Name:", artifact$displayName))
 ```
 
@@ -178,14 +243,38 @@ print(paste("Lakehouse Name:", artifact$displayName))
 
 Use `notebookutils.lakehouse.getWithProperties()` when you need extended properties beyond basic metadata, such as connection strings or configuration details:
 
+### [Python](#tab/python)
+
 ```python
-artifact = notebookutils.lakehouse.getWithProperties("artifact_name", "optional_workspace_id")
+artifact = notebookutils.lakehouse.getWithProperties("lakehouse_name", "optional_workspace_id")
 
 print(f"Lakehouse: {artifact.displayName}")
 print(f"Properties: {artifact.properties}")
 ```
 
+### [Scala](#tab/scala)
+
+```scala
+val artifact = notebookutils.lakehouse.getWithProperties("lakehouse_name", "optional_workspace_id")
+
+println(s"Lakehouse: ${artifact.displayName}")
+println(s"Properties: ${artifact.properties}")
+```
+
+### [R](#tab/r)
+
+```r
+artifact <- notebookutils.lakehouse.getWithProperties("lakehouse_name", "optional_workspace_id")
+
+print(paste("Lakehouse:", artifact$displayName))
+print(artifact$properties)
+```
+
+---
+
 ### Get a Lakehouse from another workspace
+
+### [Python](#tab/python)
 
 ```python
 workspace_id = "bbbbbbbb-2222-3333-4444-cccccccccccc"
@@ -193,6 +282,26 @@ artifact = notebookutils.lakehouse.get("SharedData", workspaceId=workspace_id)
 
 print(f"Retrieved: {artifact.displayName} from workspace {workspace_id}")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+val workspaceId = "bbbbbbbb-2222-3333-4444-cccccccccccc"
+val artifact = notebookutils.lakehouse.get("SharedData", workspaceId)
+
+println(s"Retrieved: ${artifact.displayName} from workspace ${workspaceId}")
+```
+
+### [R](#tab/r)
+
+```r
+workspace_id <- "bbbbbbbb-2222-3333-4444-cccccccccccc"
+artifact <- notebookutils.lakehouse.get("SharedData", workspace_id)
+
+print(paste("Retrieved:", artifact$displayName, "from workspace", workspace_id))
+```
+
+---
 
 ## Update a Lakehouse
 
@@ -254,7 +363,7 @@ Use `notebookutils.lakehouse.delete()` to permanently remove a Lakehouse from a 
 ### [Python](#tab/python)
 
 ```python
-is_deleted = notebookutils.lakehouse.delete("artifact_name", "optional_workspace_id")
+is_deleted = notebookutils.lakehouse.delete("lakehouse_name", "optional_workspace_id")
 
 if is_deleted:
     print("Lakehouse deleted successfully")
@@ -265,20 +374,20 @@ else:
 ### [Scala](#tab/scala)
 
 ```scala
-val isDeleted = notebookutils.lakehouse.delete("artifact_name", "optional_workspace_id")
+val isDeleted = notebookutils.lakehouse.delete("lakehouse_name", "optional_workspace_id")
 ```
 
 ### [R](#tab/r)
 
 ```r
-is_deleted <- notebookutils.lakehouse.delete("artifact_name", "optional_workspace_id")
+is_deleted <- notebookutils.lakehouse.delete("lakehouse_name", "optional_workspace_id")
 ```
 
 ---
 
 ## List Lakehouses
 
-Use `notebookutils.lakehouse.list()` to enumerate all Lakehouse artifacts in a workspace.
+Use `notebookutils.lakehouse.list()` to enumerate Lakehouses in a workspace.
 
 ### Parameters
 
@@ -329,19 +438,19 @@ Use `notebookutils.lakehouse.listTables()` to list all tables in a Lakehouse.
 ### [Python](#tab/python)
 
 ```python
-artifacts_tables_list = notebookutils.lakehouse.listTables("artifact_name", "optional_workspace_id")
+artifacts_tables_list = notebookutils.lakehouse.listTables("lakehouse_name", "optional_workspace_id")
 ```
 
 ### [Scala](#tab/scala)
 
 ```scala
-val tables = notebookutils.lakehouse.listTables("artifact_name", "optional_workspace_id")
+val tables = notebookutils.lakehouse.listTables("lakehouse_name", "optional_workspace_id")
 ```
 
 ### [R](#tab/r)
 
 ```r
-tables <- notebookutils.lakehouse.listTables("artifact_name", "optional_workspace_id")
+tables <- notebookutils.lakehouse.listTables("lakehouse_name", "optional_workspace_id")
 ```
 
 ---
@@ -369,8 +478,12 @@ The `loadOption` dictionary supports the following keys:
 | `recursive` | Set to `True` to include files in subfolders. |
 | `formatOptions` | A dictionary with format-specific settings like `format`, `header`, and `delimiter`. |
 
+**Example:**
+
+### [Python](#tab/python)
+
 ```python
-notebookutils.lakehouse.loadTable(
+result = notebookutils.lakehouse.loadTable(
     {
         "relativePath": "Files/myFile.csv",
         "pathType": "File",
@@ -381,8 +494,61 @@ notebookutils.lakehouse.loadTable(
             "header": True,
             "delimiter": ","
         }
-    }, "table_name", "artifact_name", "optional_workspace_id")
+    }, "table_name", "lakehouse_name", "optional_workspace_id")
+
+if result:
+    print("Table loaded successfully")
+else:
+    print("Table load failed")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+val result = notebookutils.lakehouse.loadTable(
+    Map(
+        "relativePath" -> "Files/myFile.csv",
+        "pathType" -> "File",
+        "mode" -> "Overwrite",
+        "recursive" -> false,
+        "formatOptions" -> Map(
+            "format" -> "Csv",
+            "header" -> true,
+            "delimiter" -> ","
+        )
+    ),
+    "table_name",
+    "lakehouse_name",
+    "optional_workspace_id"
+)
+
+println(s"Table loaded successfully: ${result}")
+```
+
+### [R](#tab/r)
+
+```r
+result <- notebookutils.lakehouse.loadTable(
+    list(
+        relativePath = "Files/myFile.csv",
+        pathType = "File",
+        mode = "Overwrite",
+        recursive = FALSE,
+        formatOptions = list(
+            format = "Csv",
+            header = TRUE,
+            delimiter = ","
+        )
+    ),
+    "table_name",
+    "lakehouse_name",
+    "optional_workspace_id"
+)
+
+print(paste("Table loaded successfully:", result))
+```
+
+---
 
 ## Related content
 

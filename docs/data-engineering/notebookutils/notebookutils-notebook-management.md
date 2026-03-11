@@ -5,14 +5,15 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/31/2025
+ai-usage: ai-assisted
 ---
 
 # Manage notebook artifacts with NotebookUtils
 
-`notebookutils.notebook` provides utilities for managing notebook items programmatically in Microsoft Fabric. You can use these APIs to create, retrieve, update, delete, and list notebook artifacts, which enables automation of notebook deployment, lifecycle management, and CI/CD integration.
+Use `notebookutils.notebook` to manage notebook items programmatically in Microsoft Fabric. You can create, retrieve, update, delete, and list notebook artifacts to automate deployment, lifecycle management, and CI/CD workflows.
 
 > [!NOTE]
-> These APIs are supported only in Fabric notebooks, not in Azure Synapse. The user must have appropriate permissions in the target workspace for each operation.
+> These APIs are supported only in Fabric notebooks, not in Azure Synapse. You must have appropriate permissions in the target workspace for each operation.
 
 The following table lists the available notebook management methods:
 
@@ -30,19 +31,30 @@ The following table lists the available notebook management methods:
 
 Use `notebookutils.notebook.create()` to create a new notebook artifact in the current workspace or a specified workspace.
 
+> [!NOTE]
+> Workflow examples in this article that read or write `.ipynb` files use Python for file I/O. The core `notebookutils.notebook` APIs are available in Python, PySpark, Scala, and R unless otherwise noted.
+
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
 | `name` | String | Yes | Display name for the new notebook. Must be unique within the workspace. |
 | `description` | String | No | Description of the notebook. Defaults to empty. |
-| `content` | String, bytes, or dict | No | Notebook content in valid `.ipynb` JSON format. Can also be raw bytes or a dict object. |
+| `content` | String, bytes, or dict | Yes | Notebook content in valid `.ipynb` JSON format. Can also be raw bytes or a dict object. **Cannot be empty**. |
 | `defaultLakehouse` | String | No | Name or ID of the default lakehouse to attach. |
 | `defaultLakehouseWorkspace` | String | No | Workspace ID of the default lakehouse. Leave empty for the current workspace. |
 | `workspaceId` | String | No | Target workspace ID. Leave empty for the current workspace. |
 
 > [!IMPORTANT]
-> You must provide valid `.ipynb` format content when you create a notebook. At minimum, provide a valid empty notebook structure.
+> The `content` parameter cannot be empty. You must provide valid `.ipynb` format content when you create a notebook. At minimum, provide a valid empty notebook structure:
+> ```json
+> {
+>   "cells": [],
+>   "metadata": {},
+>   "nbformat": 4,
+>   "nbformat_minor": 5
+> }
+> ```
 
 ### Create a notebook from a template
 
@@ -63,8 +75,10 @@ print(f"Created notebook: {notebook.displayName} (ID: {notebook.id})")
 
 ### Create a notebook with a default lakehouse
 
+### [Python](#tab/python)
+
 ```python
-# Minimum valid notebook content - content can't be empty
+# Minimum valid notebook content - content cannot be empty
 minimal_content = '''{
     "cells": [],
     "metadata": {},
@@ -83,6 +97,60 @@ notebook = notebookutils.notebook.create(
 
 print(f"Created notebook with lakehouse: {notebook.displayName}")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+val minimalContent = """{
+    "cells": [],
+    "metadata": {},
+    "nbformat": 4,
+    "nbformat_minor": 5
+}"""
+
+val notebook = notebookutils.notebook.create(
+    "DataAnalysis",
+    "Analysis notebook with lakehouse access",
+    minimalContent,
+    "MyLakehouse",
+    "",
+    ""
+)
+
+println(s"Created notebook with lakehouse: ${notebook.displayName}")
+```
+
+### [R](#tab/r)
+
+```r
+minimal_content <- '{
+    "cells": [],
+    "metadata": {},
+    "nbformat": 4,
+    "nbformat_minor": 5
+}'
+
+notebook <- notebookutils.notebook.create(
+    "DataAnalysis",
+    "Analysis notebook with lakehouse access",
+    minimal_content,
+    "MyLakehouse",
+    "",
+    ""
+)
+
+print(paste("Created notebook with lakehouse:", notebook$displayName))
+```
+
+---
+
+### Return value
+
+The `create()` method returns an `Artifact` object with the following properties:
+
+- `displayName`: The notebook's display name.
+- `id`: The unique identifier of the created notebook.
+- `description`: The notebook's description.
 
 ### Create a notebook in another workspace
 
@@ -128,7 +196,7 @@ print(f"\nCreated {len(created_notebooks)} notebooks")
 
 ## Get a notebook
 
-Use `notebookutils.notebook.get()` to retrieve notebook metadata by name or ID. This method returns an `Artifact` object with properties like `displayName`, `id`, and `description`.
+Use `notebookutils.notebook.get()` to retrieve notebook metadata by name or ID. It returns an `Artifact` object with properties such as `displayName`, `id`, and `description`.
 
 ### Parameters
 
@@ -139,6 +207,8 @@ Use `notebookutils.notebook.get()` to retrieve notebook metadata by name or ID. 
 
 ### Get a notebook from the current workspace
 
+### [Python](#tab/python)
+
 ```python
 notebook = notebookutils.notebook.get("MyNotebook")
 
@@ -146,6 +216,28 @@ print(f"Notebook Name: {notebook.displayName}")
 print(f"Notebook ID: {notebook.id}")
 print(f"Description: {notebook.description}")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+val notebook = notebookutils.notebook.get("MyNotebook")
+
+println(s"Notebook Name: ${notebook.displayName}")
+println(s"Notebook ID: ${notebook.id}")
+println(s"Description: ${notebook.description}")
+```
+
+### [R](#tab/r)
+
+```r
+notebook <- notebookutils.notebook.get("MyNotebook")
+
+print(paste("Notebook Name:", notebook$displayName))
+print(paste("Notebook ID:", notebook$id))
+print(paste("Description:", notebook$description))
+```
+
+---
 
 ### Get a notebook from another workspace
 
@@ -156,15 +248,23 @@ notebook = notebookutils.notebook.get("SharedNotebook", workspaceId=workspace_id
 print(f"Retrieved: {notebook.displayName} from workspace {workspace_id}")
 ```
 
+### Return value
+
+The `get()` method returns an `Artifact` object with the following properties:
+
+- `displayName`: The notebook's display name.
+- `id`: The unique identifier.
+- `description`: The notebook's description.
+
 > [!TIP]
-> Use `get()` before update or delete operations to verify that the target notebook exists. You can also use it to check if a notebook name is already taken before you create a new one.
+> Use `get()` before update or delete operations to verify that the target notebook exists. You can also use it to check whether a notebook name is already in use before you create a new one.
 
 ## Get a notebook definition
 
 > [!NOTE]
 > The `getDefinition()` method isn't available in R. Use Python or Scala to retrieve notebook definitions.
 
-Use `notebookutils.notebook.getDefinition()` to retrieve the full notebook content in `.ipynb` format. This method is useful for backup, migration, version control, and content analysis scenarios.
+Use `notebookutils.notebook.getDefinition()` to retrieve the full notebook content in `.ipynb` format. Use it for backup, migration, version control, or content analysis.
 
 ### Parameters
 
@@ -213,6 +313,10 @@ notebook_content = notebookutils.notebook.getDefinition(
 print(f"Retrieved definition from workspace {workspace_id}")
 ```
 
+### Return value
+
+The `getDefinition()` method returns a string containing the notebook content in `.ipynb` JSON format.
+
 ### Export all notebooks for backup
 
 ```python
@@ -249,7 +353,7 @@ backup_location = export_all_notebooks()
 
 ## Update a notebook
 
-Use `notebookutils.notebook.update()` to change a notebook's metadata, such as its display name and description. This method doesn't modify the notebook's content or lakehouse configuration.
+Use `notebookutils.notebook.update()` to change notebook metadata, such as its display name and description. It doesn't modify notebook content or lakehouse configuration.
 
 ### Parameters
 
@@ -272,9 +376,13 @@ updated_notebook = notebookutils.notebook.update(
 print(f"Updated notebook: {updated_notebook.displayName}")
 ```
 
+### Return value
+
+The `update()` method returns an `Artifact` object with the updated properties.
+
 ## Update a notebook definition
 
-Use `notebookutils.notebook.updateDefinition()` to modify a notebook's content, default lakehouse, or both. Use this method when you need to change what's inside a notebook rather than its metadata.
+Use `notebookutils.notebook.updateDefinition()` to modify notebook content, the default lakehouse, or both. Use it when you need to change the notebook definition rather than its metadata.
 
 ### Parameters
 
@@ -292,6 +400,10 @@ Use `notebookutils.notebook.updateDefinition()` to modify a notebook's content, 
 > The `environmentId` and `environmentWorkspaceId` parameters are only available in the Spark notebook runtime. Python notebooks don't support these parameters.
 
 ### Update notebook content
+
+### [Python](#tab/python)
+
+```python
 # Load new content
 with open("/path/to/updated_notebook.ipynb", "r") as f:
     new_content = f.read()
@@ -303,6 +415,44 @@ is_updated = notebookutils.notebook.updateDefinition(
 
 print(f"Notebook definition updated: {is_updated}")
 ```
+
+### [Scala](#tab/scala)
+
+```scala
+val newContent = """{
+    "cells": [],
+    "metadata": {},
+    "nbformat": 4,
+    "nbformat_minor": 5
+}"""
+
+val isUpdated = notebookutils.notebook.updateDefinition(
+    "MyNotebook",
+    newContent
+)
+
+println(s"Notebook definition updated: ${isUpdated}")
+```
+
+### [R](#tab/r)
+
+```r
+new_content <- '{
+    "cells": [],
+    "metadata": {},
+    "nbformat": 4,
+    "nbformat_minor": 5
+}'
+
+is_updated <- notebookutils.notebook.updateDefinition(
+    "MyNotebook",
+    new_content
+)
+
+print(paste("Notebook definition updated:", is_updated))
+```
+
+---
 
 ### Change the default lakehouse
 
@@ -332,12 +482,16 @@ is_updated = notebookutils.notebook.updateDefinition(
 print(f"Notebook fully updated: {is_updated}")
 ```
 
+### Return value
+
+The `updateDefinition()` method returns `True` if the update succeeds or `False` if it fails.
+
 > [!TIP]
 > Use `update()` for metadata changes (name, description) and `updateDefinition()` for content and lakehouse changes. When you need a full refresh of both metadata and content, call both methods in sequence.
 
 ## Delete a notebook
 
-Use `notebookutils.notebook.delete()` to permanently remove a notebook from a workspace. This method returns `True` if the deletion succeeds and `False` otherwise.
+Use `notebookutils.notebook.delete()` to permanently remove a notebook from a workspace. It returns `True` if the deletion succeeds; otherwise, it returns `False`.
 
 ### Parameters
 
@@ -348,6 +502,10 @@ Use `notebookutils.notebook.delete()` to permanently remove a notebook from a wo
 
 > [!IMPORTANT]
 > Deletion is permanent. Deleted notebooks can't be recovered. Always verify the notebook name before you delete, and consider backing up the notebook definition with `getDefinition()` first.
+
+### Return value
+
+The `delete()` method returns `True` if the deletion succeeds or `False` if it fails.
 
 ### Delete a notebook
 
@@ -369,6 +527,18 @@ else:
 val isDeleted = notebookutils.notebook.delete("ObsoleteNotebook")
 
 if (isDeleted) println("Deleted") else println("Failed to delete")
+```
+
+### [R](#tab/r)
+
+```r
+is_deleted <- notebookutils.notebook.delete("ObsoleteNotebook")
+
+if (is_deleted) {
+    print("Notebook deleted successfully")
+} else {
+    print("Failed to delete notebook")
+}
 ```
 
 ---
@@ -409,7 +579,7 @@ cleanup_notebooks("temp_", dry_run=True)
 
 ## List notebooks
 
-Use `notebookutils.notebook.list()` to enumerate all notebooks in a workspace. This method returns an array of `Artifact` objects.
+Use `notebookutils.notebook.list()` to enumerate notebooks in a workspace. It returns an array of `Artifact` objects.
 
 ### Parameters
 
@@ -440,6 +610,17 @@ println(s"Found ${notebooks.length} notebooks")
 notebooks.foreach(nb => println(s"  - ${nb.displayName}"))
 ```
 
+### [R](#tab/r)
+
+```r
+notebooks <- notebookutils.notebook.list()
+
+print(paste("Found", length(notebooks), "notebooks:"))
+for (nb in notebooks) {
+    print(paste(" -", nb$displayName, "(ID:", nb$id, ")"))
+}
+```
+
 ---
 
 ### List notebooks in another workspace
@@ -450,6 +631,10 @@ notebooks = notebookutils.notebook.list(workspaceId=workspace_id)
 
 print(f"Found {len(notebooks)} notebooks in workspace {workspace_id}")
 ```
+
+### Return value
+
+The `list()` method returns an array of `Artifact` objects. Each object contains `displayName`, `id`, and `description` properties.
 
 ### Filter notebooks by name pattern
 
