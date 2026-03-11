@@ -19,7 +19,7 @@ Extended capabilities in mirroring for Microsoft Fabric are optional and billed 
 
 ## Extended capabilities pricing model
 
-| **Aspect** | **Change Data Feed (extended capability)** | **Views (extended capability)** |
+| **Aspect** | **Delta change data feed (extended capability)** | **Views (extended capability)** |
 |---|---|---|
 | Consumption meter | Data movement - incremental replication | Data movement - incremental replication |
 | Fabric Capacity Unit (CU) consumption rate | 3 CU-hours | 3 CU-hours |
@@ -47,9 +47,9 @@ Extended capabilities use the DataMovementIncrementalCopy meter and follow the s
 ## Billing scope and metering
 
 - Extended capabilities are optional, and core mirroring works without them.
-- CDF is applied at the mirror level, so billing covers the full mirror replication workload, including tables and views (if present).
-- CDF and mirroring views enabled together result in one unified charge for the mirror workload, not double charging.
-- Change data feed reuses the DataMovementIncrementalCopy meter rather than a separate CDF-specific meter, and the operation name appears as Mirror Replication Premium using DataMovementIncrementalCopy.
+- DCDF is applied at the mirror level, so billing covers the full mirror replication workload, including tables and views (if present).
+- DCDF and mirroring views enabled together result in one unified charge for the mirror workload, not double charging.
+- Delta change data feed reuses the DataMovementIncrementalCopy meter rather than a separate DCDF-specific meter, and the operation name appears as Mirror Replication Premium using DataMovementIncrementalCopy.
 
 ## How usage is measured
 

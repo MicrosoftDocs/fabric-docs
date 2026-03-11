@@ -1,6 +1,6 @@
 ---
 title: Extended Capabilities in Mirroring
-description: Learn about extended mirroring features in Microsoft Fabric, including change data feed and mirroring views for advanced replication and analytics.
+description: Learn about extended mirroring features in Microsoft Fabric, including delta change data feed and mirroring views for advanced replication and analytics.
 ms.date: 03/11/2026
 ms.topic: overview
 ai-usage: ai-assisted
@@ -13,7 +13,7 @@ Extended capabilities in mirroring for Microsoft Fabric are optional, paid featu
 
 Today, extended capabilities include:
 
-- Change data feed (CDF): Tracks row-level inserts, updates, and deletes so only changed data is processed.
+- Delta change data feed (DCDF): Tracks row-level inserts, updates, and deletes so only changed data is processed.
 - Mirroring views: Replicates logical views from the source system instead of only physical tables.
 
 Both capabilities run on the same managed mirroring foundation: secure source connectivity, near real-time replication, Delta Lake storage in OneLake, and seamless use across Fabric workloads like SQL analytics, Spark, and Direct Lake.
@@ -22,25 +22,25 @@ Both capabilities run on the same managed mirroring foundation: secure source co
 
 | Core mirroring (free compute and storage) | Extended capabilities (paid) |
 |---|---|
-| Continuous replication of source tables into OneLake with near real-time freshness, Delta Lake format, and Fabric integration. | Optional features like Change data feed and Mirroring views that add incremental change processing and view replication on top of core mirroring. |
+| Continuous replication of source tables into OneLake with near real-time freshness, Delta Lake format, and Fabric integration. | Optional features like Delta change data feed and Mirroring views that add incremental change processing and view replication on top of core mirroring. |
 
-## Change data feed (CDF) (preview)
+## Delta change data feed (DCDF) (preview)
 
-Change data feed (CDF) captures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
+Delta change data feed (DCDF) captures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
 
 - Continuously processes incremental changes (delta-based).
 - Uses change-only processing.
 - Supports downstream incremental processing.
 - Is available for all mirroring sources, including open mirroring partners.
 
-### Enable change data feed
+### Enable delta change data feed
 
-Change data feed is enabled per mirrored database.
+Delta change data feed is enabled per mirrored database.
 
 1. For any mirrored source, select the gear icon to open the configuration dashboard.
 1. Under **Delta table management**, select the check box to **Enable delta change data feed**.
 
-:::image type="content" source="media/mirroring-extended-capabilities/enable-change-data-feed.png" alt-text="Screenshot of the Oracle Database mirroring configuration dashboard showing Change Data Feed settings, OneLake data access options, and replication status.":::
+:::image type="content" source="media/mirroring-extended-capabilities/enable-change-data-feed.png" alt-text="Screenshot of the Oracle Database mirroring configuration dashboard showing delta change data feed settings, OneLake data access options, and replication status.":::
 
 ## Mirroring views (preview)
 
@@ -72,7 +72,7 @@ After you select the views that you want to replicate, a dialog box appears aski
 
 [!INCLUDE [Extended capabilities billing start note](includes/extended-capabilities-billing-start-note.md)]
 
-Features like change data feed and mirroring views require extra compute to continuously track, process, and apply incremental changes at fine granularity. These capabilities go beyond basic replication and are priced based on the actual work performed, so customers pay only for the added value they use.
+Features like delta change data feed and mirroring views require extra compute to continuously track, process, and apply incremental changes at fine granularity. These capabilities go beyond basic replication and are priced based on the actual work performed, so customers pay only for the added value they use.
 
 For the pricing model, metering details, and billing scope, see [pricing for extended capabilities in mirroring](extended-capabilities-billing.md).
 
@@ -86,7 +86,7 @@ Extended capabilities are useful when you need:
 - Replication of source view logic.
 - Low-latency analytics on operational systems.
 
-These scenarios often benefit from CDF and mirroring views because both features reduce full refreshes and complex ETL workflows.
+These scenarios often benefit from DCDF and mirroring views because both features reduce full refreshes and complex ETL workflows.
 
 ## Related content
 
