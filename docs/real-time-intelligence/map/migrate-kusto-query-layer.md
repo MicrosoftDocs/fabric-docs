@@ -1,5 +1,5 @@
 ---
-title: Migrate KQL Queryset to Kusto Tables, Functions, and Materialized Views
+title: Migrate KQL Queryset to Kusto functions
 description: Learn how to Migrate KQL Queryset to a Kusto function.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
@@ -9,14 +9,14 @@ ms.date: 3/12/2026
 ms.search.form: Migrate KQL Queryset, Kusto layer
 ---
 
-# Migrate KQL Queryset to Kusto Tables, Functions, and Materialized Views
+# Migrate KQL Queryset to Kusto function
 
-Starting in March 2026, Fabric Maps no longer supports KQL querysets as a data source for creating map layers. To continue using Kusto data in maps, you must create new layers based on KQL tables, functions, or materialized views.
+Starting in March 2026, Fabric Maps no longer supports KQL querysets as a data source for creating map layers. To continue using Kusto data in maps, you must create new layers based on KQL functions.
 
-This article explains how to migrate an existing map layer that was created from a KQL query to a new layer backed by a KQL table, function, or materialized view, and how to configure the migrated layer for visualization in Fabric Maps. For an overview of supported Kusto data sources, see [Kusto integration in Fabric Maps](about-kusto-integration.md). For information of how to create new layers from a Kusto data source, see [Create layers using Kusto data](create-layers-using-kusto-data.md).
+This article explains how to migrate an existing map layer that was created from a KQL query to a new layer backed by a KQL function, and how to configure the migrated layer for visualization in Fabric Maps. For an overview of supported Kusto data sources, see [Kusto integration in Fabric Maps](about-kusto-integration.md). For information of how to create new layers from a Kusto data source, see [Create layers using Kusto data](create-layers-using-kusto-data.md).
 
 > [!NOTE]
-> Existing layers created from a KQL query will continue to work until June 29, 2026. To avoid service disruptions, migrate these queries to Kusto Tables, Functions, and Materialized Views as described in this article.
+> Existing layers created from a KQL query will continue to work until June 29, 2026. To avoid service disruptions, migrate these queries to Kusto functions as described in this article.
 
 ## Prerequisites
 
@@ -49,12 +49,16 @@ In your KQL database, create a function that encapsulates the query logic:
 }
 ```
 
-### Update the map layer query
+A new user-defined stored function is created under the Functions node of the KQL database. You'll use this function in the next step to create a new map layer.
 
-Replace the original embedded query with a call to the function:
+### Add a new data layer from the Kusto function
 
-```kusto
-resultFromOneDay()
-```
+After migrating the embedded KQL query to a Kusto function, create a new map layer that uses the function as its data source.
 
-The map layer now references a supported Kusto object, allowing it to continue working as KQL querysets are deprecated.
+1. Create a new data layer from the Kusto function by following the steps in [Create layers using Kusto data](create-layers-using-kusto-data.md).
+1. Configure the layer geometry, refresh settings, and any required styling or formatting.
+1. Verify that the new layer renders correctly on the map.
+
+After the new layer is configured and validated, you can remove the existing map layer that was sourced from the embedded KQL queryset.
+
+The map layer now references a supported Kusto entity, allowing it to continue working as KQL querysets are deprecated.

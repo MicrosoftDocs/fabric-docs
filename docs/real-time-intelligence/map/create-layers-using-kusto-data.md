@@ -23,7 +23,7 @@ This article walks through adding KQL data from Kusto tables, functions, and mat
 Before you begin, ensure that:
 
 - You have access to a KQL database in Microsoft Fabric.
-- The target table, function, or materialized view returns latitude and longitude columns.
+- The target table, function, or materialized view returns geometry columns.
 - You have permission to create and edit maps in Fabric.
 
 ## Create a data layer from a KQL database
@@ -38,9 +38,9 @@ Before you begin, ensure that:
 
     :::image type="content" source="media/layers/database/explorer-kql-database-view.png" alt-text="A screenshot of the Explorer pane in Fabric Maps showing the Fabric items tab with an expanded OneLake database. The database hierarchy displays three collapsible sections: Tables, Materialized Views, and Functions.":::
 
-1. Right‑click the target object, and select Show on map.
+1. Right‑click the target entity, and select Show on map.
 
-    :::image type="content" source="media/layers/database/show-on-map.png" alt-text="A screenshot of the Explorer pane in Fabric Maps with the Fabric items tab active. The context menu is open on a KQL database object, displaying the Show on map option. The menu appears in the left sidebar above the map visualization, allowing users to add the selected Kusto data source as a layer.":::
+    :::image type="content" source="media/layers/database/show-on-map.png" alt-text="A screenshot of the Explorer pane in Fabric Maps with the Fabric items tab active. The context menu is open on a KQL database entity, displaying the Show on map option. The menu appears in the left sidebar above the map visualization, allowing users to add the selected Kusto data source as a layer.":::
 
     This action launches the data layer configuration wizard.
 
@@ -67,12 +67,12 @@ Before you begin, ensure that:
 
 After the layer is added, you can:
 
-1. Change the layer type to **Marker**.
+1. Change the layer type to **Marker** for point-based layers.
 1. Apply color, size, and rotation using data‑driven styling.
 1. Enable clustering for dense datasets.
 1. Add filters to restrict the displayed features based on field values.
 
-These options allow you to tailor the visualization to your scenario without modifying the underlying KQL object.
+These options allow you to tailor the visualization to your scenario without modifying the underlying KQL entity.
 
 ## Next steps
 

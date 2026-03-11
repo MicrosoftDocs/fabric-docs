@@ -11,7 +11,7 @@ ms.search.form: Fabric Maps layers, layers, map layers, Kusto integration, Kusto
 
 # Kusto integration in Fabric Maps
 
-Fabric Maps integrates with Azure Data Explorer (Kusto) to let you visualize spatial data directly from KQL tables, functions, and materialized views. This integration enables near real‑time mapping scenarios, supports rich styling and filtering, and aligns Fabric Maps with the broader Real‑Time Intelligence experience in Microsoft Fabric.
+Fabric Maps integrates with Kusto databases to let you visualize spatial data directly from KQL tables, functions, and materialized views. This integration enables near real‑time mapping scenarios, supports rich styling and filtering, and aligns Fabric Maps with the broader Real‑Time Intelligence experience in Microsoft Fabric.
 
 With Kusto integration, you can:
 
@@ -20,21 +20,25 @@ With Kusto integration, you can:
 - Apply the same styling, labeling, clustering, and filtering capabilities used by other Fabric Maps data layers.
 
 > [!IMPORTANT]
-> Embedded KQL querysets in maps are being deprecated. Migration guidance is provided to help you move existing querysets to Kusto tables, functions, or materialized views.
+> Embedded KQL querysets are deprecated for use in Fabric Maps. You can no longer create new map layers using KQL querysets.  
+> 
+> Existing map layers created from KQL querysets will continue to function until **June 29, 2026**.  
+> 
+> To ensure continued support, migrate your existing layers to Kusto functions. For more information, see [Migrate KQL Queryset to Kusto function](migrate-kusto-query-layer.md).
 
-## Supported Kusto objects
+## Supported Kusto entities
 
-Fabric Maps supports the following Kusto objects as data sources:
+Fabric Maps supports the following Kusto [Entity types](/kusto/query/schema-entities?view=microsoft-fabric) as data sources:
 
-- **Tables** – Queryable datasets stored in a KQL database.
-- **Functions** – Reusable KQL definitions that encapsulate query logic.
-- **Materialized views** – Persisted query results optimized for fast, repeated access.
+- **Tables** – Queryable datasets stored in a KQL database. For more information, see [Tables](/kusto/query/schema-entities/tables?view=microsoft-fabric).
+- **Functions** – KQL functions can be either built-in or user-defined. Fabric Maps supports **user-defined, stored functions** that return tabular results (table or view shape). Built-in functions and non-tabular functions aren't supported. FOr more information, see [Function types](/kusto/query/functions/?view=microsoft-fabric) and [Stored functions](/kusto/query/schema-entities/stored-functions?view=microsoft-fabric).
+- **Materialized views** – Persisted query results optimized for fast, repeated access. For more information, see [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
 
-These objects appear as distinct nodes under a connected KQL database in the Explorer, making them discoverable and reusable across map layers.
+These entities appear as distinct nodes under a connected KQL database in the Explorer, making them discoverable and reusable across map layers.
 
 ## How Kusto data becomes a map layer
 
-When you add a Kusto object to a map, Fabric Maps treats the query result as a point‑based data layer. You define which columns contain latitude and longitude values, and Fabric Maps renders each row as a map feature.
+When you add a Kusto entity to a map, Fabric Maps treats the query result as a vector layer. You define which columns contain latitude and longitude values, and Fabric Maps renders each row as a map feature.
 
 A configuration wizard guides you through:
 
@@ -49,7 +53,7 @@ Kusto‑backed layers can refresh automatically at a configured interval. This m
 
 ## Styling and interaction
 
-Once added, Kusto layers behave like other point layers in Fabric Maps. You can:
+Once added, Kusto layers behave like other vector layers in Fabric Maps. You can:
 
 - Use marker layers and custom symbols.
 - Apply data‑driven styling and labels.
