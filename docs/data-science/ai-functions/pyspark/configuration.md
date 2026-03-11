@@ -30,7 +30,7 @@ If you're working with AI functions in PySpark, you can use the `OpenAIDefaults`
 
 | Parameter | Description | Default | Global or Per-Function Parameter |
 |---|---|---|---|
-| `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. <br><br> **NOTE:** When using GPT-5, set `api_type = chat_completions`. This is a temporary workaround for a known issue with the responses API. The responses API will be supported once the issue is resolved. | `responses` | Both |
+| `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. <br><br> **NOTE:** When using GPT-5 and other reasoning models, please set `api_type = chat_completions`. This is a temporary workaround for a known issue with the responses API. The responses API will be supported once the issue is resolved. | `responses` | Both |
 | `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` | Function parameter |
 | `deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` | Both |
 | `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` | Global |
@@ -47,7 +47,7 @@ The following code sample shows how to configure the `gpt-5` and other reasoning
 
 ```python
 aifunc.default_conf.set_deployment_name("gpt-5")
-aifunc.default_conf.set_api_type("chat_completions")  # To get around a bug when using gpt-5 with default "responses" api
+aifunc.default_conf.set_api_type("chat_completions")  # Workaround for bug when using reasoning models with default "responses" api
 aifunc.default_conf.set_reasoning_effort("low")  # "minimal", "low", "medium", "high"
 aifunc.default_conf.set_verbosity("low")  # "low", "medium", "high"
 aifunc.default_conf.set_temperature(1)  # gpt-5 only accepts default value of temperature
