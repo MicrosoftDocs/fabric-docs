@@ -51,6 +51,8 @@ The following limitations apply to individual databases when using mirroring in 
 
 Mirroring requires extra configuration for network-isolated servers.
 
+- Virtual Network enabled Azure MySQL servers aren't supported for Fabric Mirroring.
+
 - If your server isn't publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for MySQL flexible server when allowed by the firewall rule.
 
 ## Table level
