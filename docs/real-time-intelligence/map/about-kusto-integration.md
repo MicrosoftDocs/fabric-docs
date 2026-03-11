@@ -6,7 +6,7 @@ ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
 ms.date: 3/12/2026
-ms.search.form: Fabric Maps layers, layers, map layers, Kusto integration, Kusto integration in Fabric Maps
+ms.search.form: Kusto integration in Fabric Maps
 ---
 
 # Kusto integration in Fabric Maps
@@ -35,6 +35,9 @@ Fabric Maps supports the following Kusto [Entity types](/kusto/query/schema-enti
 - **Materialized views** – Persisted query results optimized for fast, repeated access. For more information, see [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
 
 These entities appear as distinct nodes under a connected KQL database in the Explorer, making them discoverable and reusable across map layers.
+
+> [!NOTE]
+> [Database shortcuts](../database-shortcut.md?tabs=workspace) are also supported as a data source for a Fabric Maps.
 
 ## How Kusto data becomes a map layer
 

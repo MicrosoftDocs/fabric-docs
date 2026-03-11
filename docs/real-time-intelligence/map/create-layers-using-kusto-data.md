@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.service: fabric
 ms.subservice: rti-core
 ms.date: 3/12/2026
-ms.search.form: Kusto, fabric maps layers, kusto layer
+ms.search.form: Create layers using Kusto data
 ---
 
 # Create layers using Kusto data

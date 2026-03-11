@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.service: fabric
 ms.subservice: rti-core
 ms.date: 3/12/2026
-ms.search.form: Migrate KQL Queryset, Kusto layer
+ms.search.form: Migrate KQL Queryset to Kusto function
 ---
 
 # Migrate KQL Queryset to Kusto function
