@@ -72,7 +72,7 @@ If the bar is marked red, an exception has been detected for that run instance. 
 
 > [!NOTE]
 >
-> A minimum runtime threshold of **five minutes** is applied for anomaly detection. Spark applications that run for **less than five minutes** are **not included** in anomaly analysis.
+> A minimum run duration of five minutes is required for anomaly detection. Spark application runs shorter than five minutes are excluded from anomaly analysis.
 
 ## Related content
 
