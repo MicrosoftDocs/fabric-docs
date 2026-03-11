@@ -822,6 +822,8 @@ items:
             href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Create alerts on Power BI reports
             href: data-activator/activator-get-data-power-bi.md
+          - name: Create alerts on ontology
+            href: ../iq/ontology/how-to-use-rules.md
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
           - name: Create rules and activations
