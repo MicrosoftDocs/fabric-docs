@@ -67,21 +67,7 @@ Example:
   }
  ```
 
- ### Python code example
-The following code example shows how to use a connection reference in a python script.
-
-```python
-var_ref = "$(/**/VarLibItem/ConnectionReference)"
-var_obj = notebookutils.variableLibrary.get(var_ref)
-connection_id = var_obj.get("connectionId").value()
-print(connection_id)
-```
-This code does the following:
-
-- Resolves a Connection Reference variable from a Fabric Variable Library
-- Retrieves the connection metadata object
-- Extracts the connectionId
-- Prints the ID so it can be used in code or API calls.
+ 
 
 ## Permissions Required to Create/Use Connection References
 Using connection reference variables involves two layers of permissions:
@@ -98,9 +84,26 @@ The following is a list of items that support connection reference variables:
 - Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
 - [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
 
+### Python code example
+The following code example shows how to use a connection reference in a python script.
 
+```python
+var_ref = "$(/**/VarLibItem/ConnectionReference)"
+var_obj = notebookutils.variableLibrary.get(var_ref)
+connection_id = var_obj.get("connectionId").value()
+print(connection_id)
+```
+This code does the following:
 
+- Resolves a Connection Reference variable from a Fabric Variable Library
+- Retrieves the connection metadata object
+- Extracts the connectionId
+- Prints the ID so it can be used in code or API calls.
 
+## Limitations
+The following limitations apply to connection reference variables:
+
+- Built-in Connections in Notebooks are not supported since the connection_id for the Notebook COnnection isn't the same one.
 
 
 ## Related content

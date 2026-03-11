@@ -75,6 +75,18 @@ Remember the following when working via API:
 - Only IDs are stored; names and metadata are retrieved at runtime or cached in Fabric. 
 - Creating/updating via API, you provide workspace and item IDs. Invalid IDs cause errors.
 
+
+
+## Supported items
+The following is a list of items that are currently supported using item reference:
+- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
+- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
+- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
+ 
+
+>[!NOTE]
+>Notebook, through [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command) isn't supported.
+
 ### Python code example
 The following code example shows how to use an item reference in a python script.
 
@@ -94,19 +106,6 @@ This code does the following:
 - Retrieves the metadata object for that referenced item
 - Extracts the workspace ID and item ID
 - Prints them so they can be used programmatically.
-
-## Supported items
-The following is a list of items that are currently supported using item reference:
-- [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
-- [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
-- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
- 
- :::image type="content" source="media/item-reference/item-4.png" alt-text="Screenshot of the item reference notebook." lightbox="media/item-reference/item-4.png":::
-
-
->[!NOTE]
->Notebook, through [`%%configure`](../../data-engineering/author-execute-notebook.md#spark-session-configuration-magic-command) isn't supported.
-
 
 ## Permissions Required to Create/Use item reference variables
 Using item reference variables involves two layers of permissions:

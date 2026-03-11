@@ -33,6 +33,8 @@ For more information about workspace roles, see [Roles in workspaces in Microsof
 
 There's no permission management at the variable level. Permission for each variable is the same as the permissions for the entire item.
 
+
+
 ## Permission validation
 
 Permission validation ensures that referenced resources exist and that the user performing an action has at least read permissions to those resources. Validation is triggered across UI and non-UI workflows, including APIs, Git updates, and deployments. 
