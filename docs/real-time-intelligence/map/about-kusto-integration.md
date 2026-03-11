@@ -20,18 +20,18 @@ With Kusto integration, you can:
 - Apply the same styling, labeling, clustering, and filtering capabilities used by other Fabric Maps data layers.
 
 > [!IMPORTANT]
-> Embedded KQL querysets are deprecated for use in Fabric Maps. You can no longer create new map layers using KQL querysets.  
+> Embedded KQL querysets are deprecated for use in Fabric Maps. You can no longer create new map layers using KQL querysets or use Application Lifecycle Management (ALM) to import or export the queryset associated with a map layer, which is now no longer supported.  
 > 
 > Existing map layers created from KQL querysets will continue to function until **June 29, 2026**.  
 > 
-> To ensure continued support, migrate your existing layers to Kusto functions. For more information, see [Migrate KQL Queryset to Kusto function](migrate-kusto-query-layer.md).
+> To ensure continued support, migrate your existing layers to Kusto functions, which also work with ALM. For more information, see [Migrate KQL Queryset to Kusto function](migrate-kusto-query-layer.md).
 
 ## Supported Kusto entities
 
 Fabric Maps supports the following Kusto [Entity types](/kusto/query/schema-entities?view=microsoft-fabric) as data sources:
 
 - **Tables** – Queryable datasets stored in a KQL database. For more information, see [Tables](/kusto/query/schema-entities/tables?view=microsoft-fabric).
-- **Functions** – KQL functions can be either built-in or user-defined. Fabric Maps supports **user-defined, stored functions** that return tabular results (table or view shape). Built-in functions and non-tabular functions aren't supported. FOr more information, see [Function types](/kusto/query/functions/?view=microsoft-fabric) and [Stored functions](/kusto/query/schema-entities/stored-functions?view=microsoft-fabric).
+- **Functions** – KQL functions can be either built-in or user-defined. Fabric Maps supports **user-defined, stored functions** that return tabular results (table or view shape). Built-in functions and nontabular functions aren't supported. For more information, see [Function types](/kusto/query/functions/?view=microsoft-fabric) and [Stored functions](/kusto/query/schema-entities/stored-functions?view=microsoft-fabric).
 - **Materialized views** – Persisted query results optimized for fast, repeated access. For more information, see [Materialized views](/kusto/management/materialized-views/materialized-view-overview?view=microsoft-fabric)
 
 These entities appear as distinct nodes under a connected KQL database in the Explorer, making them discoverable and reusable across map layers.

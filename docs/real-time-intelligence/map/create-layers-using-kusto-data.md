@@ -70,26 +70,37 @@ Before you begin, ensure that:
 
     With Geometry data in two columns:
 
-    :::image type="content" source="media/layers/database/kql-database-review-and-add-to-map.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Latitude and longitude data located in separate columns with populated latitude and longitude fields, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
+    :::image type="content" source="media/layers/database/kql-database-review-and-add-to-map.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Latitude and longitude data located in separate columns with populated latitude and longitude fields, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry, and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
 
     With Geometry data in a single column:
 
-    :::image type="content" source="media/layers/database/kqldata-review-geometry.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Geometry data locates on single column with populated geometry field, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
+    :::image type="content" source="media/layers/database/kqldata-review-geometry.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Geometry data locates on single column with populated geometry field, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry, and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
 
 1. Once your layer is created, you can focus the map to zoom into where the data elements are located. To do this. select the data layer context menu (**...**) then **Zoom to fit**.
 
     :::image type="content" source="media/layers/database/kql-database-auto-zoom-to-fit.png" alt-text="Screenshot of the Fabric Maps interface showing a data layer context menu with the Zoom to fit option highlighted.":::
 
-## Style and filter the layer
+## Configure styling and filtering
 
 After the layer is added, you can:
 
 1. Change the layer type to **Marker** for point-based layers.
-1. Apply color, size, and rotation using data‑driven styling.
+1. Apply color, size, and rotation using data-driven styling.
 1. Enable clustering for dense datasets.
 1. Add filters to restrict the displayed features based on field values.
 
 These options allow you to tailor the visualization to your scenario without modifying the underlying KQL entity.
+
+- For more information on layer styling, see [Customize a map](customize-map.md).
+- For more information on data filtering in layers, see [Data filtering in Fabric Maps](about-data-filtering.md).
+
+The following screenshot demonstrates a polygon-based data layer that autorefreshes every 5 seconds:
+
+:::image type="content" source="media/layers/database/kusto-data-refresh-polygon.gif" alt-text="Animated demonstration of Fabric Maps showing a polygon layer updating in real time as new flight data arrives. The map displays colored polygons across the United States representing data points, with the layer configuration panel visible on the left side. The polygons change color and position as the data refreshes every 5 seconds, illustrating how live Kusto data flows into map visualizations.":::
+
+The following screenshot demonstrates a point-based data layer that autorefreshes every 5 seconds:
+
+:::image type="content" source="media/layers/database/kql-database-layer-refresh.gif" alt-text="Animated demonstration of Fabric Maps displaying a real-time updating polygon layer across a US map. The map shows colored points representing flight data points distributed throughout the United States. As new data arrives, the points change color and shift position, refreshing every 5 seconds. The layer configuration panel is visible on the left sidebar. This animation illustrates how live Kusto data continuously flows into and updates map visualizations.":::
 
 ## Next steps
 
