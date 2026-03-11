@@ -33,25 +33,25 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | Account key |  |  | Account key |  |
 |  |  | Shared Access Signature (SAS) |  |  | Shared Access Signature (SAS) |  |
 |  |  | Service principal |  |  | Service principal |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure AI Search index](connector-azure-search-overview.md) | -/✓ | Basic |  | -/✓ | Service admin key |  |
 | [Azure Cosmos DB for NoSQL](connector-azure-cosmosdb-for-nosql-overview.md) | ✓/✓ | Key |  | ✓/✓ | Account key |  |
 |  |  | Service principal |  |  |  |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping: <br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String  |
 | [Azure Data Explorer](connector-azure-data-explorer-overview.md) | ✓/✓ | Service principal |  | ✓/✓ |  |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [ADLS Gen2](connector-azure-data-lake-storage-gen2-overview.md) | ✓/✓ | Account key | Service principal authentication type supports `azureCloudType`, `servicePrincipalCredentialType` and `servicePrincipalCert`. | ✓/✓ | Account key | `azureCloudType`, `servicePrincipalCredentialType` and `servicePrincipalCert` are not supported for service principal authentication type. |
 |  |  | Service principal |  |  | Service principal |  |
 |  |  | Shared Access Signature (SAS) |  |  | Shared Access Signature (SAS) |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic | Support `SSLMode` and `UseSystemTrustStore`. | ✓/✓ | Basic | `SSLMode` and `UseSystemTrustStore` are not supported. |
 | Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`.<br>Support Lookup activity. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path. <br>Lookup activity is not supported. |
@@ -67,12 +67,12 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | Service principal |  |  |  |  |
 | [Azure Table Storage](connector-azure-table-storage-overview.md) | ✓/✓ | Account key |  | ✓/✓ | Account key |  |
 |  |  | Shared access signature |  |  |  |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 | [Azure SQL Database](connector-azure-sql-database-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
 |  |  | Service principal |  |  | Service principal |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure SQL Managed Instance](connector-azure-sql-managed-instance-overview.md) | ✓/✓ | SQL | Support `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic |  `alwaysEncryptedSettings`, `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
 |  |  | Service principal |  |  | Service principal |  |
@@ -81,8 +81,8 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  |  |  |  | Organizational account |  |
 | [Azure Synapse Analytics](connector-azure-synapse-analytics-overview.md) | ✓/✓ | SQL | Support `encrypt`, `trustServerCertificate` and `hostNameInCertificate`. <br>Support additional connection properties: `applicationIntent`, `connectTimeout`, `connectRetryCount`, `connectRetryInterval`, `loadBalanceTimeout`, `commandTimeout`, `integratedSecurity`, `failoverPartner`, `maxPoolSize`, `minPoolSize`, `multipleActiveResultSets`, `multiSubnetFailover`, `packetSize`, `pooling`. | ✓/✓ | Basic | `encrypt`, `trustServerCertificate` and `hostNameInCertificate` are not supported. <br>Additional connection properties are not supported. |
 |  |  | Service principal |  |  | Service principal |  |
-|  |  | System-assigned managed identity |  |  |  |  |
-|  |  | User-assigned managed identity |  |  | Workspace identity |  |
+|  |  | System-assigned managed identity |  |  | Workspace identity |  |
+|  |  | User-assigned managed identity |  |  |  |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure File Storage](connector-azure-files-overview.md) | ✓/✓ | Account key | Support `fileShare`. | ✓/✓ | Account key | Support Share URL. |
 |  |  | Shared access signature |  |  |  |  |
@@ -208,16 +208,19 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|------------------------|------------------|-------------------------------|---------------------------|---------------------|
 | [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
 |  | | Office 365 | | | | |
-|  | | User-assigned managed identity | | | Workspace identity      | |
+|  | | User-assigned managed identity | | | | |
+|  | | | |  | Workspace identity | |
 |  | | | |  | Organizational account      | |
 | Dynamics 365       | ✓/✓                | Service principal | | ✓/✓                      | Service principal                         | |
 | | | Office 365 | | | | |
-| | | User-assigned managed identity | | | Workspace identity      | |
+| | | User-assigned managed identity | | | | |
+|  | | | |  | Workspace identity | |
 | [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | | ✓/-                      | Service principal                         | |
 | | | | | | Workspace identity | |
 | [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
 | | | Office 365 | | | | |
-| | | User-assigned managed identity| | | Workspace identity | |
+| | | User-assigned managed identity| | | | |
+| | | | | | Workspace identity | |
 | Google Ads     | ✓/-                | User authentication    | | N                      |                          | |
 | | | Service authentication | | | | |
 | HubSpot            | ✓/-                | Access token          | | N                      |                          | |
