@@ -39,6 +39,8 @@ items:
       href: ontology/how-to-create-relationship-types.md
     - name: Use preview experience
       href: ontology/how-to-use-preview-experience.md
+    - name: Add rules
+      href: ontology/how-to-use-rules.md
   - name: Resources
     items:
     - name: Troubleshooting
