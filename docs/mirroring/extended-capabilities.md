@@ -1,22 +1,28 @@
 ---
 title: Extended Capabilities in Mirroring
 description: Learn about extended mirroring features in Microsoft Fabric, including change data feed and mirroring views for advanced replication and analytics.
-ms.date: 02/24/2026
+ms.date: 03/11/2026
 ms.topic: overview
 ai-usage: ai-assisted
+ms.reviewer: sbahadur
 ---
 
 # Extended capabilities in mirroring for Fabric
 
-Mirroring in Microsoft Fabric keeps operational data available in OneLake for analytics with low latency. Extended capabilities are optional, paid features for teams that need more control over replication and freshness.
+Extended capabilities in mirroring for Microsoft Fabric are optional, paid features that build on the core mirroring experience. While core mirroring keeps operational data continuously available in OneLake at no cost for compute, extended capabilities provide more granular change tracking, fresher data, and richer replication options for advanced analytics scenarios.
 
-Currently, extended capabilities let you:
+Today, extended capabilities include:
 
-- Track source changes at row level.
-- Process only changed data.
-- Replicate source views instead of only physical tables.
+- Change data feed (CDF): Tracks row-level inserts, updates, and deletes so only changed data is processed.
+- Mirroring views: Replicates logical views from the source system instead of only physical tables.
 
-These capabilities use the same managed mirroring foundation: secure source connections, near real-time replication, Delta Lake conversion, and integration with Fabric workloads such as SQL analytics, Spark, and Direct Lake.
+Both capabilities run on the same managed mirroring foundation: secure source connectivity, near real-time replication, Delta Lake storage in OneLake, and seamless use across Fabric workloads like SQL analytics, Spark, and Direct Lake.
+
+## What's included by default vs. extended capabilities
+
+| Core mirroring (free compute and storage) | Extended capabilities (paid) |
+|---|---|
+| Continuous replication of source tables into OneLake with near real-time freshness, Delta Lake format, and Fabric integration. | Optional features like Change data feed and Mirroring views that add incremental change processing and view replication on top of core mirroring. |
 
 ## Change data feed (CDF) (preview)
 
@@ -28,6 +34,8 @@ Change data feed (CDF) captures inserts, updates, and deletes, then applies them
 - Is available for all mirroring sources, including open mirroring partners.
 
 ### Enable change data feed
+
+Change data feed is enabled per mirrored database.
 
 1. For any mirrored source, select the gear icon to open the configuration dashboard.
 1. Under **Delta table management**, select the check box to **Enable delta change data feed**.
@@ -45,32 +53,21 @@ Mirroring views replicate logical views from your source system instead of full 
 > [!NOTE]
 > Currently, views are only supported in preview in mirroring for Snowflake.
 
-## Extended capabilities pricing model
+### Enable views
 
-| **Aspect**  | **Change Delta Feed (Extended Capability)**  | **Views (Extended Capability)**  |
-|----|----|----|
-| Consumption Meter  | Data movement – incremental replication  | Data movement – incremental replication  |
-| Fabric Capacity Unit (CU) consumption rate  | 3 CU‑hours  | 3 CU‑hours  |
-| Runtime model  | Continuous, iteration‑based  | Continuous, incremental view processing  |
-| Granularity  | Per‑second billing granularity  | Per‑capability reporting per mirrored database item  |
-| Empty runs  | Not charged (initially)  | Not applicable (views reflect source‑defined projections)  |
-| Reporting granularity  | Per mirrored database item  | Per mirrored database item  |
+You can enable views during the creation experience when you create a Snowflake mirror. For more information, see [Tutorial: Set up mirroring from Snowflake (preview)](/fabric/mirroring/snowflake-tutorial). If you have an existing mirroring item, you can add views through the configuration setup on the mirroring monitoring page.
 
-Extended capabilities are billed by actual replication work, using the same pricing approach as [Incremental Copy in Copy Job](/fabric/data-factory/pricing-copy-job). Charges map to Fabric Capacity Units (CUs), and billing is based on usage.
+Once you establish a connection to your Snowflake database, you see **Views** as part of the table selection screen.
 
-Currently:
+After you select the views that you want to replicate, a dialog box appears asking you to agree to billing charges before you proceed.
 
-- Billing is based on replication work performed.
-- Idle or always-on time isn't billed.
-- CDF billing applies to the full mirror replication workload, including all tables and views (if present).
-- Multiple extended capabilities are billed as one unified charge per mirror.
-- Core mirroring compute remains free.
+## Billing and pricing
 
-### CDF pricing details
+[!INCLUDE [Extended capabilities billing start note](includes/extended-capabilities-billing-start-note.md)]
 
-CDF uses the DataMovementIncrementalCopy meter and follows the same pricing principles as [Incremental Copy in Copy Job](/fabric/data-factory/pricing-copy-job). Billing uses per-second runtime and consumed throughput resources. In parallel execution, billing includes the total active child jobs.
+Features like change data feed and mirroring views require extra compute to continuously track, process, and apply incremental changes at fine granularity. These capabilities go beyond basic replication and are priced based on the actual work performed, so customers pay only for the added value they use.
 
-Currently, empty iterations aren't billed. Iterations with system errors aren't billed, while iterations with user errors are billed. The operation name appears as Mirror Replication Premium using DataMovementIncrementalCopy.
+For the pricing model, metering details, and billing scope, see [Billing for extended capabilities in mirroring](extended-capabilities-billing.md).
 
 ## When to use extended capabilities
 
@@ -86,4 +83,5 @@ These scenarios often benefit from CDF and mirroring views because both features
 
 ## Related content
 
-[Mirroring for Microsoft Fabric overview](overview.md)
+- [Billing for extended capabilities in mirroring](extended-capabilities-billing.md)
+- [Mirroring for Microsoft Fabric overview](overview.md)

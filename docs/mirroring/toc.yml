@@ -23,7 +23,11 @@ items:
     displayName: Explore mirrored data with notebooks
     href: explore-onelake-shortcut.md
 - name: Extended capabilities
-  href: extended-capabilities.md
+  items:
+  - name: Extended capabilities
+    href: extended-capabilities.md
+  - name: Pricing for extended capabilities
+    href: extended-capabilities-billing.md
 - name: Mirroring Azure SQL Database
   items:
     - name: Mirrored database from Azure SQL Database
