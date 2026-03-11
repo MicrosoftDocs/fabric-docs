@@ -51,7 +51,7 @@ During migration, you can monitor progress and review a summary of migrated data
    - Enter a migration **Name**.
    - Select the **Subscription** and source **Source workspace**.
 
-   :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/select-a-source.png" alt-text="Screenshot of select a source" lightbox="media/synapse-to-fabric-spark-migration-assistant/select-a-source.png":::
+   :::image type="content" source="media/synapse-to-fabric-spark-migration-assistant/select-a-source.png" alt-text="Screenshot of select a source." lightbox="media/synapse-to-fabric-spark-migration-assistant/select-a-source.png":::
 
 1. Select the target Fabric workspace where items should be migrated.
 
