@@ -17,6 +17,7 @@ The HTTP connector provides a no-code, configurable way to stream data from any 
 
 - A workspace with **Fabric** capacity or **Fabric Trial** workspace type.
 - Access to the workspace with **Contributor** or higher workspace roles.
+- An HTTP endpoint that is publicly accessible. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, follow the guide to [create an eventstream](create-manage-an-eventstream.md).
 
 ## Add HTTP as a source
@@ -41,8 +42,8 @@ Select **Publish** to publish the changes and begin streaming data from HTTP sou
 ## Limitation
 
 - The HTTP connector currently supports only **JSON** API responses.
-- **OAuth authentication** is not supported.
-- The HTTP source does not support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Exporting or importing an Eventstream item that includes this source through Git may result in errors.
+- **OAuth authentication** isn't supported.
+- The HTTP source doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Exporting or importing an Eventstream item that includes this source through Git might result in errors.
 
 ## Related content
 

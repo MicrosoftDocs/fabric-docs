@@ -52,7 +52,7 @@ Mirroring creates these items in your Fabric workspace:
 - Mirroring manages the replication of data and metadata into [OneLake](../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
 - A [SQL analytics endpoint](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md)
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
 [Sharing](#sharing) enables ease of access control and management, to make sure you can control access to sensitive information. Sharing also enables secure and democratized decision-making across your organization.
 
@@ -75,7 +75,7 @@ Currently, the following external databases are available:
 | [Microsoft Fabric mirrored databases from Azure SQL Managed Instance](azure-sql-managed-instance.md) | Yes | Database mirroring | [Tutorial: Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Google BigQuery (preview)](google-bigquery.md) | Yes | Database mirroring | [Tutorial: Google BigQuery](google-bigquery-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Oracle (preview)](oracle.md) | Yes | Database mirroring | [Tutorial: Oracle](oracle-tutorial.md) |
-| [Microsoft Fabric mirrored databases from SAP (preview)](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
+| [Microsoft Fabric mirrored databases from SAP](sap.md) | Yes | Database mirroring | [Tutorial: SAP](sap-datasphere-tutorial.md) |
 | [Microsoft Fabric mirrored databases from Snowflake](snowflake.md) | Yes | Database mirroring | [Tutorial: Snowflake](snowflake-tutorial.md) |
 | [Microsoft Fabric mirrored databases from SQL Server](sql-server.md) | Yes | Database mirroring | [Tutorial: SQL Server](sql-server-tutorial.md) |
 | [Open mirrored databases](open-mirroring.md) | Yes | Open mirroring | [Tutorial: Open mirroring](open-mirroring-tutorial.md)|
@@ -168,7 +168,7 @@ Mirroring in Fabric continuously replicates your existing data estate into OneLa
 
 You can customize the retention setting according to your requirements. For instance, you may choose a shorter retention period to reduce mirroring storage consumption or extend the retention period to utilize Delta's time travel capabilities for analytics.
 
-For mirrored databases created from the Fabric portal after mid-June 2025, the default retention is one day. For old mirrored databases, the default is seven days. To check or update the retention setting, in the Fabric portal, navigate to your mirrored database -> **Settings** -> **Maintenance** tab, and specify the retention threshold. You can also configure it via [public API](mirrored-database-rest-api.md#configure-data-retention) by specifying the `retentionInDays` property.
+For mirrored databases created from the Fabric portal after mid-June 2025, the default retention is one day. For old mirrored databases, the default is seven days. To check or update the retention setting, in the Fabric portal, navigate to your mirrored database -> **Settings** -> **Delta table management** tab, and specify the retention threshold. You can also configure it via [public API](mirrored-database-rest-api.md#configure-data-retention) by specifying the `retentionInDays` property.
 
 ## SQL database in Fabric
 

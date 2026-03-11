@@ -1,7 +1,7 @@
 ---
 title: Customize AI functions with PySpark
 description: Learn how to configure AI functions in Fabric for custom use. For example, modifying the underlying LLM or other related settings with PySpark.
-ms.reviewer: vimeland
+ms.reviewer: nareshvenkat, singhrana
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -22,19 +22,39 @@ AI functions are designed to work out of the box, with the underlying model and 
 
 ## Configurations
 
-If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can  only be applied per function call are specified in the following section.
+If you're working with AI functions in PySpark, you can use the `OpenAIDefaults` class to configure the underlying AI model used by all functions. Settings that can ONLY be applied per function call are specified in the last column of the table below.
 
-| Parameter | Description | Default |
-|---|---|---|
-| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` |
-| `deployment_name` | A string value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` |
-| `embedding_deployment_name` | A string value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `reasoning_effort` | Part of OpenAIDefaults. Used by gpt-5 series models for number of reasoning tokens they should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None |
-| `subscription_key` | An API key used for authentication with your large language model (LLM) resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A |
-| `temperature` | A numeric value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` |
-| `top_p` | Part of OpenAIDefaults. A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | None |
-| `URL`| A URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A |
-| `verbosity` | Part of OpenAIDefaults. Used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None |
+> [!NOTE]
+> - Global PySpark AI function configurations are set by calling functions of an object of class `OpenAIDefaults()`. An object of this class is created for use as `aifunc.default_conf` when you import the PySpark AI functions library `import synapse.ml.spark.aifunc as aifunc`. You can modify the parameters of this object to change the default settings for all AI function calls in your notebook session.
+> - When passing one of these configurations as parameter to a PySpark AI Function call, the global configuration is renamed to use camelCase instead of snake_case and the parameter is passed without the "set_" prefix. For example, `aifunc.default_conf.set_deployment_name("gpt-5")` would be passed as `deploymentName="gpt-5"` in the function call.
+
+| Parameter | Description | Default | Global or Per-Function Parameter |
+|---|---|---|---|
+| `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. <br><br> **NOTE:** When using GPT-5 and other reasoning models, please set `api_type = chat_completions`. This is a temporary workaround for a known issue with the responses API. The responses API will be supported once the issue is resolved. | `responses` | Both |
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. This value must be set per individual AI function call. In spark, this concurrency value is for each worker. | `50` | Function parameter |
+| `deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the underlying model. You can choose from [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). This value can also be set to a custom model deployment in Azure OpenAI or Microsoft Foundry. In the Azure portal, this value appears under **Resource Management** > **Model Deployments**. In the Foundry portal, the value appears on the **Deployments** page.  | `gpt-4.1-mini` | Both |
+| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` | Global |
+| `reasoning_effort` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for number of reasoning tokens they should use. Can be set to None or a string value of "minimal", "low", "medium", or "high". | None | Both |
+| `subscription_key` | A [string](https://docs.python.org/3/library/stdtypes.html#str) API key used for authentication with your large language model (LLM) resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. | N/A | Both |
+| `temperature` | A [float](https://docs.python.org/3/library/functions.html#float) value between **0.0** and **1.0**. Higher temperatures increase the randomness or creativity of the underlying model's outputs. | `0.0` | Both |
+| `top_p` | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | None | Both |
+| `URL`| A [string](https://docs.python.org/3/library/stdtypes.html#str) URL that designates the endpoint of your LLM resource. In the Azure portal, this value appears in the **Keys and Endpoint** section. For example: `https://your-openai-endpoint.openai.azure.com/`. | N/A | Both |
+| `verbosity` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for output length. Can be set to None or a string value of "low", "medium", or "high". | None | Both |
+
+### Configure reasoning models
+
+The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
+
+```python
+aifunc.default_conf.set_deployment_name("gpt-5")
+aifunc.default_conf.set_api_type("chat_completions")  # Workaround for bug when using reasoning models with default "responses" api
+aifunc.default_conf.set_reasoning_effort("low")  # "minimal", "low", "medium", "high"
+aifunc.default_conf.set_verbosity("low")  # "low", "medium", "high"
+aifunc.default_conf.set_temperature(1)  # gpt-5 only accepts default value of temperature
+aifunc.default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
+```
+
+### Configure concurrency
 
 The following code sample shows how to configure `concurrency` for an individual function call.
 
@@ -45,39 +65,32 @@ df = spark.createDataFrame([
         ("The big picture are right, but you're details is all wrong.",),
     ], ["text"])
 
-results = df.ai.fix_grammar(input_col="text", output_col="corrections", concurrency=200)
+results = df.ai.fix_grammar(
+    input_col="text",
+    output_col="corrections",
+    concurrency=200,
+)
 display(results)
 ```
 
-The following code sample shows how to configure the `gpt-5` and other reasoning models for all functions.
-
-```python
-from synapse.ml.services.openai import OpenAIDefaults
-default_conf = OpenAIDefaults()
-
-default_conf.set_deployment_name("gpt-5")
-default_conf.set_temperature(1)  # gpt-5 only accepts default value of temperature
-default_conf.set_top_p(1)  # gpt-5 only accepts default value of top_p
-default_conf.set_verbosity("low")
-default_conf.set_reasoning_effort("low")
-```
+### Retrieve and reset parameters
 
 You can retrieve and print each of the `OpenAIDefaults` parameters with the following code sample:
 
 ```python
-print(default_conf.get_deployment_name())
-print(default_conf.get_subscription_key())
-print(default_conf.get_URL())
-print(default_conf.get_temperature())
+print(aifunc.default_conf.get_deployment_name())
+print(aifunc.default_conf.get_subscription_key())
+print(aifunc.default_conf.get_URL())
+print(aifunc.default_conf.get_temperature())
 ```
 
-You can also reset the parameters as easily as you modified them. The following code sample resets the AI functions library so that it uses the default Fabric LLM endpoint:
+You may reset the parameters as easily as you modified them. The following code sample resets the AI functions library so that it uses the default Fabric LLM endpoint:
 
 ```python
-default_conf.reset_deployment_name()
-default_conf.reset_subscription_key()
-default_conf.reset_URL()
-default_conf.reset_temperature()
+aifunc.default_conf.reset_deployment_name()
+aifunc.default_conf.reset_subscription_key()
+aifunc.default_conf.reset_URL()
+aifunc.default_conf.reset_temperature()
 ```
 
 ## Custom models
@@ -89,9 +102,7 @@ Set the `deployment_name` to one of the [models supported by Fabric](../../ai-se
 - Globally in the `OpenAIDefaults()` object:
 
     ```python
-    from synapse.ml.services.openai import OpenAIDefaults
-    default_conf = OpenAIDefaults()
-    default_conf.set_deployment_name("<model deployment name>")
+    aifunc.default_conf.set_deployment_name("<model deployment name>")
     ```
 
 - Individually in each AI function call:
@@ -113,9 +124,7 @@ Set the `embedding_deployment_name` to one of the [models supported by Fabric](.
 - Globally in the `OpenAIDefaults()` object:
 
     ```python
-    from synapse.ml.services.openai import OpenAIDefaults
-    default_conf = OpenAIDefaults()
-    default_conf.set_embedding_deployment_name("<embedding deployment name>")
+    aifunc.default_conf.set_embedding_deployment_name("<embedding deployment name>")
     ```
 
 - Individually in each AI function call:
@@ -134,11 +143,8 @@ By default, AI functions use the Fabric LLM endpoint API for unified billing and
 You may choose to use your own model endpoint by setting up an Azure OpenAI or AsyncOpenAI-compatible client with your endpoint and key. The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with your own Foundry or Azure OpenAI resource's model deployments:
 
 ```python
-from synapse.ml.services.openai import OpenAIDefaults
-default_conf = OpenAIDefaults()
-
-default_conf.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
-default_conf.set_subscription_key("<API_KEY>")
+aifunc.default_conf.set_URL("https://<ai-foundry-resource>.openai.azure.com/")
+aifunc.default_conf.set_subscription_key("<API_KEY>")
 ```
 
 The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
@@ -149,13 +155,9 @@ The following code sample uses placeholder values to show you how to override th
 > - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
 
 ```python
-import synapse.ml.spark.aifunc.DataFrameExtensions
-from synapse.ml.services.openai import OpenAIDefaults
-
-default_conf = OpenAIDefaults()
-default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your Foundry Endpoint
-default_conf.set_subscription_key("<API_KEY>")
-default_conf.set_deployment_name("grok-4-fast-non-reasoning")
+aifunc.default_conf.set_URL("https://<ai-foundry-resource>.services.ai.azure.com")  # Use your Foundry Endpoint
+aifunc.default_conf.set_subscription_key("<API_KEY>")
+aifunc.default_conf.set_deployment_name("grok-4-fast-non-reasoning")
 ```
 
 ## Related content
