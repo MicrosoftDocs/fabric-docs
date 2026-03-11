@@ -87,7 +87,7 @@ If you have an interval-based schedule configured, you will see 2 new parameters
 
 :::image type="content" source="media/pipeline-runs/configure-interval-based-schedule.png" alt-text="Screenshot of the interval-based schedule configuration screen." lightbox="media/pipeline-runs/configure-interval-based-schedule.png":::
 
-> [Note]
+> [!Note]
 > Time slice monitoring and backfill capabilities are not yet available for Interval-based schedules. 
 
 
@@ -97,7 +97,7 @@ You can manage your scheduled runs by selecting **Schedule** in the top banner o
 
 :::image type="content" source="media/pipeline-runs/toggle-or-edit.png" alt-text="Screenshot showing where in the schedule menu you can toggle or edit a scheduled run." lightbox="media/pipeline-runs/toggle-or-edit.png":::
 
-> [Note]
+> [!Note]
 > You can't enable, disable or edit your Interval-based schedules. If you want to make changes, delete and re-create your schedule. 
 
 To delete a Fixed schedule, select the **Edit** icon (pencil) next to the schedule you want to delete. In the Edit Schedule pane, select **Delete schedule** at the bottom of the pane.
