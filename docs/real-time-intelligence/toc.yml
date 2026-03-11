@@ -965,6 +965,8 @@ items:
             items:
               - name: Layers
                 href: map/about-layers.md
+              - name: Create layers using Kusto data sources
+                href: map/about-kusto-integration.md
               - name: Create layers using WMS and WMTS imagery sources
                 href: map/about-external-sourced-imagery.md
               - name: Ontology layers in Fabric Maps
@@ -983,6 +985,8 @@ items:
           href: map/create-map.md
         - name: Layers
           items:
+            - name: Add a Kusto data layer to a map 
+              href: map/create-layers-using-kusto-data.md
             - name: Add a WMS or WMTS imagery layer to a map
               href: map/add-external-sourced-imagery-layer.md
             - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
@@ -991,6 +995,8 @@ items:
               href: map/add-ontology-layer.md
             - name: Filter data
               href: map/filter-data.md
+            - name: Migrate KQL Queryset to a Kusto function
+              href: map/migrate-kusto-query-layer.md
         - name: Customize a map
           href: map/customize-map.md
         - name: Create a tileset
