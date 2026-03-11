@@ -38,7 +38,9 @@ Follow the steps in one of the following sections. Each section opens a side pan
 
 1. Select the target business event from the list.
 
-1. On the detail page, select **Set alert** button at the top of page.
+1. On the detail page, select **Set alert** button in the upper toolbar.
+
+:::image type="content" source="media/consume-business-event/set-alert-ribbon.png" alt-text="Screenshot of the Set alert button in the upper toolbar.":::
 
 ## Details section 
 
