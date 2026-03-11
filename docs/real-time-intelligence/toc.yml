@@ -121,6 +121,8 @@ items:
             href: event-streams/add-source-sql-server-change-data-capture.md
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: DeltaFlow output transformation (Preview)
+            href: event-streams/delta-flow-output-transformation.md
           - name: Google Cloud Pub/Sub
             href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
@@ -1001,15 +1003,19 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
-  - name: Build AI agents
+  - name: AI agents and MCP servers
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
-      - name: Fabric RTI MCP Server (preview)
-        href: mcp-overview.md
-      - name: Use MCP with Eventhouse
-        href: mcp-eventhouse.md
+      - name: MCP servers
+        items:
+          - name: Fabric RTI MCP local server
+            href: mcp-overview.md
+          - name: Remote MCP Integrations
+            items:
+              - name: Get started with Eventhouse MCP remote Server
+                href: mcp-remote-eventhouse.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:

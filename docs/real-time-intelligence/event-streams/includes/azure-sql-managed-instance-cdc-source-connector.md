@@ -71,3 +71,6 @@ When you enable **Analytics-ready events & auto-updated schema** (DeltaFlow), th
 
 > [!NOTE]
 > DeltaFlow (Preview) is currently supported with Azure SQL Database CDC, Azure SQL Managed Instance CDC, SQL Server on VM CDC, and PostgreSQL CDC source connectors.
+
+For details on how DeltaFlow transforms raw CDC events into analytics-ready output, including operation types and metadata columns, see [DeltaFlow output transformation](../delta-flow-output-transformation.md).
+

@@ -159,10 +159,8 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
-  - name: Consume business events
-    items:
-    - name: Set alerts on business events
-      href: business-events/set-alerts-business-events.md
+  - name: Consume Business events
+    href: business-events/consume-business-events-from-activator.md
   - name: Subscribe permission for Fabric/Azure events
     href: fabric-events-subscribe-permission.md   
   - name: Microsoft Fabric events capacity consumption
