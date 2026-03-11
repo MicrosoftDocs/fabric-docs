@@ -14,7 +14,7 @@ ms.search.form: Kusto, fabric maps layers, kusto layer
 This article walks through adding KQL data from Kusto tables, functions, and materialized views to Fabric Maps and configuring the resulting layer for visualization. For more information on Kusto integration, see [Kusto integration in Fabric Maps](about-kusto-integration.md).
 
 > [!IMPORTANT]
-> Existing layers created from a KQL query will continue to work until June 29, 2026. To avoid service disruptions, migrate these queries to Kusto Tables, Functions, and Materialized Views as described in this article.
+> Existing layers created from a KQL queryset tab will continue to work until June 29, 2026. To avoid service disruptions, migrate these queries to Kusto Functions as described in this article.
 >
 > For detailed steps, see [Migrate KQL Queryset to Kusto Tables, Functions, and Materialized Views](migrate-kusto-query-layer.md).
 
