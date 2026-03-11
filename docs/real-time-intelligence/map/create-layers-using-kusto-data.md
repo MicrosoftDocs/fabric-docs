@@ -46,7 +46,7 @@ Before you begin, ensure that:
 
 1. In the **Preview data** step, review the query output to confirm that the expected columns and values are returned. This preview reflects the data that is rendered on the map. Once confirmed, select **Next**.
 
-    :::image type="content" source="media/layers/database/kqldata-preview-geometry-data.png" alt-text="Screenshot of the Fabric Maps Query result preview step showing a table with spatial data. The table displays columns for latitude, longitude, and geometry containing nine rows of data. The left sidebar shows three steps: Preview data (currently active and highlighted in teal), Set geometry and data refresh interval, and Review and add to map. At the bottom right are Cancel and Next buttons. This step allows users to verify that the expected columns and geographic coordinate values are present before configuring the layer.":::
+    :::image type="content" source="media/layers/database/kql-data-preview-geometry-data.png" alt-text="Screenshot of the Fabric Maps Query result preview step showing a table with spatial data. The table displays columns for latitude, longitude, and geometry containing nine rows of data. The left sidebar shows three steps: Preview data (currently active and highlighted in teal), Set geometry and data refresh interval, and Review and add to map. At the bottom right are Cancel and Next buttons. This step allows users to verify that the expected columns and geographic coordinate values are present before configuring the layer.":::
 
 1. In the **the Fabric Maps Set geometry and data refresh interval configuration** step, Specify how geometry is defined, then select **Next**.
 
@@ -64,7 +64,7 @@ Before you begin, ensure that:
         - Choose the geometry column from the list.
         - Select your desired data refresh interval.
 
-        :::image type="content" source="media/layers/database/kqldata-configure-geometry-column.png" alt-text="Screenshot of the Fabric Maps Set geometry and data refresh interval configuration step for single geometry column. The form shows Data layer name field with Latest flight data - US, Geometry data column dropdown set to Geometry data locates on single column with a geometry column field populated, and Data refresh dropdown set to 5 seconds. The left sidebar displays the three-step progress indicator with Set geometry and data refresh interval highlighted. Back and Next buttons appear at the bottom right.":::
+        :::image type="content" source="media/layers/database/kql-data-configure-geometry-column.png" alt-text="Screenshot of the Fabric Maps Set geometry and data refresh interval configuration step for single geometry column. The form shows Data layer name field with Latest flight data - US, Geometry data column dropdown set to Geometry data locates on single column with a geometry column field populated, and Data refresh dropdown set to 5 seconds. The left sidebar displays the three-step progress indicator with Set geometry and data refresh interval highlighted. Back and Next buttons appear at the bottom right.":::
 
 1. In the **Review and add to map** step, confirm the settings as expected. Once confirmed, select **Add to map**.
 
@@ -74,7 +74,7 @@ Before you begin, ensure that:
 
     With Geometry data in a single column:
 
-    :::image type="content" source="media/layers/database/kqldata-review-geometry.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Geometry data locates on single column with populated geometry field, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry, and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
+    :::image type="content" source="media/layers/database/kql-data-review-geometry.png" alt-text="Fabric Maps Review and add to map configuration step. Form displays Data source: KQL database RandomRealTimeData, Function: RealTimeDataFunction1, Data layer name: Latest flight data - US, Geometry data column: Geometry data locates on single column with populated geometry field, Data refresh: 5 seconds. Left sidebar shows three-step progress: Preview data, Set geometry, and data refresh interval, and Review and add to map (currently highlighted in teal). Bottom right contains Back and Add to map buttons for finalizing Kusto layer configuration.":::
 
 1. Once your layer is created, you can focus the map to zoom into where the data elements are located. To do this. select the data layer context menu (**...**) then **Zoom to fit**.
 
