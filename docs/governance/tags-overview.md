@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: nschachter
 ms.topic: overview
-ms.date: 09/04/2025
+ms.date: 03/11/2026
 #customer intent: As a Fabric admin, domain admin, data creator, or data consumer, I want to learn about tags in Microsoft Fabric.
 ---
 
@@ -78,8 +78,8 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 ### Tags in APIs
 
 - **Tag management APIs**: Use the [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags) to create, update, delete, and list tags at the tenant and domain levels.
-
-- **Workspace APIs**: Use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace. The [List Workspaces](/rest/api/fabric/core/workspaces/list-workspaces) (User and Admin) APIs return applied workspace tag IDs and names.
+<!--
+- **Workspace APIs**: Use the [Apply Workspace Tags](/rest/api/fabric/core/workspaces/apply-workspace-tags) and [Unapply Workspace Tags](/rest/api/fabric/core/workspaces/unapply-workspace-tags) APIs to add or remove tags from a workspace. The [List Workspaces](/rest/api/fabric/core/workspaces/list-workspaces) (User and Admin) APIs return applied workspace tag IDs and names.-->
 
 - **Item APIs**: Use the [Apply Tags](/rest/api/fabric/core/tags/apply-tags) and [Unapply Tags](/rest/api/fabric/core/tags/unapply-tags) APIs to add or remove tags from individual items. Use the [List Tags](/rest/api/fabric/core/tags/list-tags) API to retrieve applied tag IDs and names for an item.
 
