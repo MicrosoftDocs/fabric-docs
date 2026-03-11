@@ -112,7 +112,7 @@ Workload must have a published marketplace offer with a valid, accessible licens
 
 **References:**
 
-- [Creating a SaaS offer](/partner-center/marketplace-offers/plan-saas-offer)(
+- [Creating a SaaS offer](/partner-center/marketplace-offers/plan-saas-offer)
 - [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
 - [Publishing Overview](./publishing-overview.md)
 - [Publish Workload Tutorial](./tutorial-publish-workload.md)
