@@ -130,7 +130,7 @@ Fabric Maps integrates with **Microsoft Planetary Computer (MPC) Pro** by connec
 To connect to MPC Pro, you must construct a WMTS endpoint URL from a geocatalog collection.
 
 1. Identify the target MPC Pro geocatalog collection.
-1. Retrieve the **Search ID** and **render configuration** parameters. For detailed instructions, see [Get the WMTS endpoint URL from the MPC Pro geocatalog](get-mpc-pro-wmts-endpoint.md).
+1. Retrieve minZoom, bbox and render configuration parameters. For detailed instructions, see [Get the WMTS endpoint URL from the MPC Pro geocatalog](get-mpc-pro-wmts-endpoint.md).
 1. To ensure correct WMTS rendering in MPC Pro, the bounding box (bbox) and associated metadata must be registered through the [registration API](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register?view=rest-planetarycomputer-data-plane-2025-04-30-preview&tabs=HTTP).
 1. Use these values to construct the WMTS capabilities URL.
 
