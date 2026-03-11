@@ -32,7 +32,7 @@ To use a WMS or WMTS service in Fabric Maps, first create a **Fabric Maps cloud 
 ### Step 1: Create a Fabric Maps cloud connection
 
 > [!TIP]
-> Create one connection per imagery service and reuse it across multiple maps to avoid reentering credentials.
+> Create one connection per imagery service and reuse it across maps to avoid re‑entering credentials.
 
 1. In Fabric, open **User settings**.
 
@@ -101,7 +101,7 @@ Once Fabric Maps cloud connections are created, you can add one or more to your 
 1. Expand the connection to view available imagery layers.
 1. Right‑click a layer and select **Show on map**.
 
-:::image type="content" source="media/layers/show-on-map.png" alt-text="A screenshot showing the Explorer panel in Microsoft Fabric Maps with the External sources tab selected. A list of layers is shown with the More options menu for Registre parcellaire graphique 2017 expanded, displaying the option Show on map highlighted.":::
+:::image type="content" source="media/layers/show-on-map.png" alt-text="A screenshot showing the Explorer panel in Microsoft Fabric Maps with the External sources tab selected. A list of layers is shown with the More options menu displaying the option Show on map highlighted.":::
 
 The imagery layer is rendered on the map canvas.
 
@@ -130,7 +130,7 @@ Fabric Maps integrates with **Microsoft Planetary Computer (MPC) Pro** by connec
 To connect to MPC Pro, you must construct a WMTS endpoint URL from a geocatalog collection.
 
 1. Identify the target MPC Pro geocatalog collection.
-1. Retrieve the **Search ID** and **render configuration** parameters.
+1. Retrieve minZoom, bbox and render configuration parameters. For detailed instructions, see [Get the WMTS endpoint URL from the MPC Pro geocatalog](get-mpc-pro-wmts-endpoint.md).
 1. To ensure correct WMTS rendering in MPC Pro, the bounding box (bbox) and associated metadata must be registered through the [registration API](/rest/api/planetarycomputer/data-plane/mosaics-register-search/register?view=rest-planetarycomputer-data-plane-2025-04-30-preview&tabs=HTTP).
 1. Use these values to construct the WMTS capabilities URL.
 
@@ -151,6 +151,9 @@ Once you have the WMTS endpoint URL from the previous section, you're ready to c
 
 :::image type="content" source="media/layers/microsoft-planetary-computer-connection.png" alt-text="A screenshot of the Microsoft Fabric Maps interface showing the External sources tab in the Explorer panel. A list of imagery layers is displayed, with one layer's More options menu expanded and the Show on map option highlighted.":::
 
+> [!IMPORTANT]
+> Creating an MPC Pro connection requires **Reader** access to the MPC Pro geocatalog and a nonguest account in the Azure tenant.
+
 ### Step 3: Add MPC Pro imagery to a map
 
 1. Open a map in Fabric Maps.
@@ -164,4 +167,4 @@ MPC Pro imagery layers behave like other WMTS imagery layers and can be reordere
 - A Fabric Maps item can reference up to 100 external connections.
 - Some WMS services don't provide complete metadata (such as bounding boxes or minimum zoom levels), which can cause **Zoom to fit** to behave unexpectedly.
 - Rendering performance and availability depend on the external imagery service.
-- External imagery isn't cached or stored by Fabric Maps.
+- Fabric Maps doesn't cache or stored external imagery.
