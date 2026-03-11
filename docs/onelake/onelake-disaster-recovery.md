@@ -21,7 +21,7 @@ This article provides guidance on how to further protect your data from rare reg
 
 ## Disaster recovery
 
-You can enable or disable disaster recovery (DR) for a specific capacity through the [capacity admin portal](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting). If your capacity has DR enabled, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region. 
+You can enable or disable disaster recovery (DR) for a specific capacity through the [capacity admin portal](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting). If your capacity has DR enabled, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region.
 
 If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
 
