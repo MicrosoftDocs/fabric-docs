@@ -11,7 +11,7 @@ ms.date: 02/27/2026
 
 [!INCLUDE [preview-note](./includes/materialized-lake-views-preview-note.md)]
 
-Materialized lake views are precomputed, stored results of SQL queries in a lakehouse. You define a transformation using SQL, and Fabric stores the results as a Delta table that can be refreshed on demand or on a schedule. Materialized lake views support incremental refresh, built-in data quality rules, and automatic dependency management across views.
+Materialized lake views turn complex lakehouse transformations into fast, reusable, query‑ready assets that accelerate analytics and reduce compute. Results are persisted as Delta files in OneLake and refreshed automatically via schedules or event triggers, delivering dependable, up‑to‑date data. Major advantages include declarative pipelines for predictable deployments, optimal refresh for performance and cost, built‑in data quality, and intuitive monitoring for visibility and trust.
 
 ## When to use materialized lake views
 
