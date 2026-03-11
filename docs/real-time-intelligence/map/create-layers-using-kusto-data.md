@@ -34,7 +34,7 @@ Before you begin, ensure that:
 
     :::image type="content" source="media/layers/database/connect-kql-database.png" alt-text="A screenshot of the Explorer pane in Fabric Maps showing the Fabric items tab. The Add dropdown menu is open and displays three options: Lakehouse, KQL database, and Ontology (preview). Ontology (preview) is highlighted in the list. The interface provides access to data sources for adding to map layers.":::
 
-1. Expand your connected **OneLake** database, then expand Tables, Functions, or Materialized views.
+1. Expand your connected **KQL database**, then expand Tables, Functions, or Materialized views.
 
     :::image type="content" source="media/layers/database/explorer-kql-database-view.png" alt-text="A screenshot of the Explorer pane in Fabric Maps showing the Fabric items tab with an expanded OneLake database. The database hierarchy displays three collapsible sections: Tables, Materialized Views, and Functions.":::
 
