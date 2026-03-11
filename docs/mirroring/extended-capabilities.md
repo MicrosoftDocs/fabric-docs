@@ -55,11 +55,18 @@ Mirroring views replicate logical views from your source system instead of full 
 
 ### Enable views
 
-You can enable views during the creation experience when you create a Snowflake mirror. For more information, see [Tutorial: Set up mirroring from Snowflake (preview)](/fabric/mirroring/snowflake-tutorial). If you have an existing mirroring item, you can add views through the configuration setup on the mirroring monitoring page.
+You can enable views two ways:
 
-Once you establish a connection to your Snowflake database, you see **Views** as part of the table selection screen.
+- During the creation experience for a new mirrored database.
+- For an existing mirrored database, through the configuration dashboard on the mirroring monitoring page.
 
-After you select the views that you want to replicate, a dialog box appears asking you to agree to billing charges before you proceed.
+Once you establish a connection to your Snowflake database, you see **Views** as part of the table selection screen. (In this example, we're enabling views for a Snowflake source by selecting them.)
+
+:::image type="content" source="media/mirroring-extended-capabilities/enable-views.png" lightbox="media/mirroring-extended-capabilities/enable-views.png" alt-text="Screenshot of the Snowflake mirroring configuration dashboard showing the option to select (and therefore enable) views.":::
+
+After you select the views that you want to replicate, a dialog box appears asking you to agree enabling extended capabilities, and billing charges, before you proceed.
+
+:::image type="content" source="media/mirroring-extended-capabilities/enable-extended-capabilities.png" lightbox="media/mirroring-extended-capabilities/enable-extended-capabilities.png" alt-text="Screenshot of the extended capabilities in mirroring dialog to enable extended capabilities and acknowledge billing implications.":::
 
 ## Billing and pricing
 
