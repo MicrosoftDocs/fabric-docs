@@ -1,6 +1,6 @@
 ---
 title: Manage SQL database auditing with the REST API
-description: Learn how to view and configure SQL database auditing settings across a workspace using the Microsoft Fabric REST API and PowerShell.
+description: Learn how to use the database-level SQL audit settings REST API with PowerShell to manage auditing across all SQL databases in a Microsoft Fabric workspace.
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: srsaluru, wiassaf
@@ -14,9 +14,9 @@ ms.search.form: SQL database security
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
-You can use the [Fabric REST API](/rest/api/fabric/articles/) to view and configure SQL database auditing settings programmatically. While the Fabric portal allows you to configure auditing per database, the REST API lets you manage auditing consistently across all databases in a workspace.
+You can use the [Fabric REST API](/rest/api/fabric/articles/) to view and configure SQL database auditing settings programmatically. The SQL audit settings API is a database-level API that operates on individual SQL databases. By combining the API with PowerShell scripts, you can manage auditing consistently across all databases in a workspace.
 
-This article demonstrates how to use PowerShell and the Fabric REST API to retrieve and update SQL auditing settings for SQL databases in a Fabric workspace.
+This article demonstrates how to use PowerShell and the database-level SQL audit settings REST API to retrieve and update auditing settings for SQL databases in a Fabric workspace.
 
 ## Prerequisites
 
