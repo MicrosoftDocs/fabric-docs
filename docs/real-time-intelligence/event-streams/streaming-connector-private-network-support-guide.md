@@ -58,10 +58,13 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-virtual-network.png" alt-text="Screenshot of showing the first step of creating virtual network." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-virtual-network.png":::
 
-    You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**. 
+    You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**.  
 
 2. Navigate to the **Subnets** tab under your virtual network resource to prepare the subnet. 
-3. You can either select an existing subnet to edit or create a new one. 
+3. You can either select an existing subnet to edit or create a new one.
+
+    > [!NOTE]  
+    > It is strongly recommended to **create a new subnet for connector vNet injection** to avoid potential conflicts. If you choose to use an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets (VMSS), or network interfaces (NICs).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png":::
 
@@ -71,7 +74,7 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
 ## Prerequisite 3: Connect your streaming source’s network to the Azure virtual network 
 
-When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source.  
+When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source. You can create a virtual machine in another subnet within the Azure virtual network and use it to verify connectivity to the private network where your source is located.
 
 ### Non-Azure sources and on-premises sources
 
@@ -109,7 +112,7 @@ The example demonstrates using Azure SQL Server source.
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-private-endpoint.png" alt-text="Screenshot of showing how create a private endpoint." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-private-endpoint.png":::
 
-1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, choose a subnet different from the one delegated to ‘MessagingConnector’ in Prerequisite #1. 
+1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, **choose a subnet different from the one delegated to ‘MessagingConnector’** in Prerequisite #1. 
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png" alt-text="Screenshot of showing how to delegate to ‘MessagingConnector’." lightbox="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png":::
 
