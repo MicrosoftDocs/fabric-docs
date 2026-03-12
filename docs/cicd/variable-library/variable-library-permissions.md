@@ -29,17 +29,17 @@ To set an item as a variable value in a variable library, you need to have at le
 
 For more information about workspace roles, see [Roles in workspaces in Microsoft Fabric](../../get-started/roles-workspaces.md).
 
-## Variable permissions
 
-There's no permission management at the variable level. Permission for each variable is the same as the permissions for the entire item.
+>[!NOTE]
+>There's no permission management at the variable level. Permission for each variable is the same as the permissions for the entire item.
 
 
-## Advanced variable tyoes 
+## Advanced variable types 
 The following sections provides permissions information on advanced variable library types such as item referenence and connection reference variables.
 
 ### Item reference
 
-## Permissions Required to Create/Use item reference variables
+#### Permissions Requirements
 Using item reference variables involves two layers of permissions:
 
 - **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
@@ -57,7 +57,7 @@ When updating a variable library item, the Variable Library enforces the followi
 When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced item or the referenced item does not exist, the request does not fail.
 Instead, an appropriate status is returned, as explained below.
 
-### Missing permissions or nonexistent items
+#### Missing permissions or nonexistent items
 If the caller lacks READ permissions or the item doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
 
 The following examples show the resolvedDetails.status for a discover and a resolve call where the item reference does not exist.
@@ -96,7 +96,7 @@ The following examples show the resolvedDetails.status for a discover and a reso
 
 ### Connection reference 
 
-#### Permissions Required to Create/Use Connection References
+#### Permissions requirements
 Using connection reference variables involves two layers of permissions:
 
 - **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
