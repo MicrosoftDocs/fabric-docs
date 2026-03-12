@@ -163,7 +163,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |----------------------|---------------------|-------------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
-| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    | Support `sessionToken`. | ✓/✓                           | Access key                | `sessionToken` is not supported. <br><br>Support RoleARN. |
+| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    | Support `sessionToken`. | ✓/✓                           | Access key                | `sessionToken` is not supported. |
 |                      |                     | Temporary security credential |                        |                               |                           |                           |
 | [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) | ✓/-                | Access key                    | Support `forcePathStyle`. | ✓/✓                           | Access key                | `forcePathStyle` is not supported. |
 | File System          | ✓/✓                | Windows                       |  | ✓/✓                           | Windows                   |  |
@@ -173,7 +173,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [HDFS](connector-hdfs-for-pipeline-overview.md)                 | ✓/-                | Windows                       |  | ✓/-                           |                           |  |
 |                      |                     | Anonymous                     |                        |                               | Anonymous                 |                           |
 | [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) | ✓/-                | Access key                    |  | ✓/-                           | Access Key                |  |
-| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `port` and `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `port` and `skipHostKeyValidation` are not supported. |
+| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `skipHostKeyValidation` is not supported. |
 |                      |                     | SSH public key                |                        |                               |                           |                           |
 |                      |                     | multifactor                   |                        |                               |                           |                           |
 ## File format connectors
