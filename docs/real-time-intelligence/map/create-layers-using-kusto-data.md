@@ -14,9 +14,11 @@ ms.search.form: Create layers using Kusto data
 This article walks through adding KQL data from Kusto tables, functions, and materialized views to Fabric Maps and configuring the resulting layer for visualization. For more information on Kusto integration, see [Kusto integration in Fabric Maps](about-kusto-integration.md).
 
 > [!IMPORTANT]
-> Existing layers created from a KQL queryset tab will continue to work until June 29, 2026. To avoid service disruptions, migrate these queries to Kusto Functions as described in this article.
->
-> For detailed steps, see [Migrate KQL Queryset to Kusto Tables, Functions, and Materialized Views](migrate-kusto-query-layer.md).
+> Embedded KQL querysets are deprecated for use in Fabric Maps. You can no longer create new map layers using KQL querysets or use Application Lifecycle Management (ALM) to import or export the queryset associated with a map layer, which is now no longer supported.  
+> 
+> Existing map layers created from KQL querysets will continue to function until **June 29, 2026**.  
+> 
+> To ensure continued support, migrate your existing layers to Kusto functions, which also work with ALM. For more information, see [Migrate KQL Queryset to Kusto function](migrate-kusto-query-layer.md).
 
 ## Prerequisites
 
@@ -66,7 +68,9 @@ Before you begin, ensure that:
 
         :::image type="content" source="media/layers/database/kql-data-configure-geometry-column.png" alt-text="Screenshot of the Fabric Maps Set geometry and data refresh interval configuration step for single geometry column. The form shows Data layer name field with Latest flight data - US, Geometry data column dropdown set to Geometry data locates on single column with a geometry column field populated, and Data refresh dropdown set to 5 seconds. The left sidebar displays the three-step progress indicator with Set geometry and data refresh interval highlighted. Back and Next buttons appear at the bottom right.":::
 
-        > [!TIP]When to use dynamic geometry
+        > [!TIP]
+        > **When to use dynamic geometry**
+        >
         > Use a dynamic geometry column when your Kusto function returns non‑point geometries—such as lines or polygons—or when geometry is represented as GeoJSON. Dynamic geometry is well suited for routes, boundaries, and areas where latitude and longitude columns aren't sufficient. For more information, see [The dynamic data type](/kusto/query/scalar-data-types/dynamic?view=microsoft-fabric)
 
 1. In the **Review and add to map** step, confirm the settings as expected. Once confirmed, select **Add to map**.

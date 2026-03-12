@@ -11,7 +11,7 @@ ms.search.form: Data layer management
 
 # Data layer management
 
-When managing multiple data layers on a map, maintaining organization is key to creating clear and effective visualizations. The Data layer pane provides essential tools to help you manage layers efficiently, including options to **Reorder**, **Rename**, **Delete**, and **Duplicate**. The following section outlines best practices for layer management, supporting the creation of clean, maintainable, and insightful spatial visualizations.
+When managing multiple data layers on a map, maintaining organization is key to creating clear and effective visualizations. The Data layer pane provides essential tools to help you manage layers efficiently, including options to **Reorder**, **Rename**, **Delete**, and **Duplicate**. This article outlines best practices for layer management, supporting the creation of clean, maintainable, and insightful spatial visualizations.
 
 ## Show or hide data layer
 
