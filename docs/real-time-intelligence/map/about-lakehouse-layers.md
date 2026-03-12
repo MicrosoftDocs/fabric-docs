@@ -11,13 +11,13 @@ ms.search.form: Use lakehouse data in Fabric Maps
 
 # Use lakehouse data in Fabric Maps
 
-Fabric Maps can visualize spatial data stored in a Microsoft Fabric lakehouse. By connecting a map to a lakehouse, you can create map layers directly from files in OneLake—without copying data or deploying external GIS services.This approach lets you keep geospatial data centrally governed in the lakehouse while using Fabric Maps for interactive visualization and analysis.
+Fabric Maps can visualize spatial data stored in a Microsoft Fabric lakehouse. By connecting a map to a lakehouse, you can create map layers directly from files in OneLake—without copying data or deploying external GIS services. This approach lets you keep geospatial data centrally governed in the lakehouse while using Fabric Maps for interactive visualization and analysis.
 
 Fabric Maps supports connecting to lakehouses directly from the map explorer and browsing items through the OneLake catalog.
 
 ## How lakehouse data is used in maps
 
-A lakehouse stores data files in OneLake. When you add a lakehouse file to a map, Fabric Maps reads the data directly from OneLake and renders it as a map layer. Lakehouse‑based layers are file‑backed and are optimized for reference, boundary, and imagery data rather than high‑frequency streaming updates.The lakehouse remains the system of record, and changes to the underlying data are reflected in the map based on refresh behavior.
+A lakehouse stores data files in OneLake. When you add a lakehouse file to a map, Fabric Maps reads the data directly from OneLake and renders it as a map layer. Lakehouse‑based layers are file‑backed and are optimized for reference, boundary, and imagery data rather than high‑frequency streaming updates. The lakehouse remains the system of record, and changes to the underlying data are reflected in the map based on refresh behavior.
 
 ## Supported lakehouse data types
 
