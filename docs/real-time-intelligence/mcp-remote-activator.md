@@ -108,39 +108,40 @@ When you create rules, provide the **workspace ID** and **artifact ID** of the A
 Rules need a data source. You can specify the connection in two ways:
 
 - **ADX / Kusto cluster URL**: provide the cluster hostname and database name (for example, `https://mycluster.kusto.windows.net`, database `TelemetryDB`).
+
 - **Fabric Eventhouse**: provide the Eventhouse KQL Database item ID and workspace ID instead of a URL.
 
 ## Examples: Create rules
 
-Example prompt:
+**Example prompt:**
 
-**"Create a rule that monitors the `Metrics` table in my Eventhouse database `TelemetryDB` (cluster: `https://mycluster.kusto.windows.net`). Email me at alice@contoso.com when CPU usage rises above 90%."**
+"Create a rule that monitors the `Metrics` table in my Eventhouse database `TelemetryDB` (cluster: `https://mycluster.kusto.windows.net`). Email me at alice@contoso.com when CPU usage rises above 90%."
 
-Response:
+**Response:**
 
 Connects through ADX cluster URL and creates an `increasesAbove` condition on the CPU column with an email action.
 
-Example prompt:
+**Example prompt:**
 
-**"Connect to the Eventhouse KQL database (item ID: `aabbccdd-1234-5678-abcd-ef0123456789`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). Monitor the `SensorReadings` table — for each machine, if disk space drops below 10 GB and stays that way for 15 minutes, send a Teams message to bob@contoso.com."**
+"Connect to the Eventhouse KQL database (item ID: `aabbccdd-1234-5678-abcd-ef0123456789`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). Monitor the `SensorReadings` table — for each machine, if disk space drops below 10 GB and stays that way for 15 minutes, send a Teams message to bob@contoso.com."
 
-Response:
+**Response:**
 
 Connects through Fabric Eventhouse IDs, uses `splitColumn` for per-machine tracking with a `decreasesBelow` / `andStays` detection.
 
-Example prompt:
+**Example prompt:**
 
-**"Using the `Heartbeat` table in my Eventhouse database `MonitoringDB` (cluster: `https://monitoring.kusto.windows.net`), alert me if there's no data for 10 minutes."**
+"Using the `Heartbeat` table in my Eventhouse database `MonitoringDB` (cluster: `https://monitoring.kusto.windows.net`), alert me if there's no data for 10 minutes."
 
-Response:
+**Response:**
 
 Connects through ADX cluster URL and creates a heartbeat rule using `noPresenceOfData(600)`.
 
-Example prompt:
+**Example prompt:**
 
-**"Monitor the `AppLogs` table in my Fabric Eventhouse (item ID: `11223344-aabb-ccdd-eeff-556677889900`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). If the status column changes to 'Error' more than three times in 5 minutes, email oncall@contoso.com."**
+"Monitor the `AppLogs` table in my Fabric Eventhouse (item ID: `11223344-aabb-ccdd-eeff-556677889900`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). If the status column changes to 'Error' more than three times in 5 minutes, email oncall@contoso.com."
 
-Response:
+**Response:**
 
 Connects through Fabric Eventhouse IDs and uses `changesTo` with an `everyNthTime(3, 300)` occurrence modifier.
 
@@ -148,11 +149,11 @@ Connects through Fabric Eventhouse IDs and uses `changesTo` with an `everyNthTim
 
 Example prompts:
 
--**"List all the rules in this artifact."**
+- "List all the rules in this artifact."
 
-- **"Stop the rule called 'High CPU Alert'."**
+- "Stop the rule called 'High CPU Alert'."
 
-- **"Start all rules that are currently stopped."**
+- "Start all rules that are currently stopped."
 
 ## Limitations
 
@@ -161,14 +162,19 @@ Example prompts:
 - **Per-item configuration**: The MCP server URL applies to a single Activator artifact. To work with multiple artifacts, you must configure a separate MCP server entry for each one.
 
 - **Teams and email actions only**: Rules can trigger Microsoft Teams messages or emails. Other action types, such as webhooks or Power Automate flows, aren't available through the MCP server.
+
 - **No multievent triggers**: Each rule monitors a single eventstream. Triggers that correlate across multiple event streams or tables aren't supported.
+
 - **No aggregation or summarization**: Detection conditions operate on individual events. Aggregate functions, such as average, sum, or count over a window, aren't supported.
 
 ## Tips
 
 - **Connect the Eventhouse MCP server too.** If your data source is a Fabric Eventhouse, connecting the [Eventhouse MCP server](mcp-remote-eventhouse.md) alongside Activator significantly improves results. Your agent can then inspect your database schema, sample data, and validate KQL queries before creating rules.
+
 - **Be specific about columns.** The assistant needs to know which data column to monitor. If you're unsure, ask it to list the schema first (which is easier with the Eventhouse MCP server connected).
+
 - **State vs. change matters.** Use "rises above" or "drops below" for one-time transition alerts. Use "is above" or "is below" for repeated alerts on every matching event.
+
 - **Dynamic values in actions.** Use `{columnName}` in email or Teams message bodies to insert live data values. For example, `"CPU is at {cpuPercent}%"`.
 
 ## Related content
