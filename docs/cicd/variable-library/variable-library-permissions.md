@@ -57,41 +57,7 @@ When updating a variable library item, the Variable Library enforces the followi
 When calling consumption APIs (such as Resolve or Discover), the request does not fail if the calling principal lacks permission to the referenced item or if the item does not exist. Instead, the API returns a specific status that indicates the outcome, as described below.
 
 ### Missing permissions or nonexistent items
-If the caller lacks READ permissions or the item doesn't exist, the APIs still return the variable value, but without extended metadata. The resolvedDetails.status indicates the issue.
-
-The following examples show the resolvedDetails.status for discover and resolve calls where the item reference doesn't exist.
-
-```json
- {
- 	"name": "ItemRefDemo",
- 	"note": "",
- 	"type": "ItemReference",
- 	"value": {
- 		"itemId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
- 		"workspaceId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb"
- 	},
- 	"resolvedDetails": {
- 		"status": "ReferencedEntityNotFound" // or "ReferencedEntityAccessDenied" if caller has no permissions to item.
- 	},
- 	"libraryName": "VariableLibraryDemo"
- }
- ```
-
- ```json
-  {
- 	"referenceString": "$(/**/VariableLibraryDemo/ItemRefDemo)",
- 	"status": "Ok",
- 	"variableLibraryObjectId": "aaaabbbb-1111-2222-3333-aaaabbbbcccc",
- 	"type": "ItemReference",
- 	"value": {
- 		"itemId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
- 		"workspaceId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb"
- 	},
-             "resolvedDetails": {
- 		"status": "ReferencedEntityNotFound" // or "ReferencedEntityAccessDenied" if caller has no permissions to item.
- 	},
- }
- ```
+If the caller lacks READ permissions or the item doesn't exist, the APIs still return the variable value, but without extended metadata. 
 
 ## Connection reference variable type (preview)
 The following section provides permissions information on connection reference variables.
@@ -116,40 +82,7 @@ When calling consumption APIs (such as Resolve or Discover), if the caller princ
 Instead, an appropriate status is returned, as explained below.
 
 ### Missing permissions or nonexistent items
-If the caller lacks READ permissions or the connection doesn't exist, the APIs still return the variable value, but without extended metadata. The resolvedDetails.status indicates the issue.
-
-The following examples show the resolvedDetails.status for discover and resolve calls for a connection reference that either doesn't exist or the caller does not have permissions.
-
-```json
- {
- 	"name": "ConnectionRefDemo",
- 	"note": "",
- 	"type": "ConnectionReference",
- 	"value": {
- 		"connectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
- 	},
- 	"resolvedDetails": {
- 		"status": "ReferencedEntityNotFoundOrAccessDenied"
- 	},
- 	"libraryName": "VariableLibraryDemo"
- }
-```
-
-```json
- {
- 	"referenceString": "$(/**/VariableLibraryDemo/ConnectionRefDemo)",
- 	"status": "Ok",
- 	"variableLibraryObjectId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb",
- 	"type": "ConnectionReference",
- 	"value": {
- 		"connectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
- 	},
-             "resolvedDetails": {
- 		"status": "ReferencedEntityNotFoundOrAccessDenied"
- 	},
- }
- ```
-The following shows the status in the Fabric portal.
+If the caller lacks READ permissions or the connection doesn't exist, the APIs still return the variable value, but without extended metadata. The following shows this in the Fabric portal.
 
  :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
 

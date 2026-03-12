@@ -49,11 +49,12 @@ Keep in mind the following when working with connection references:
 - Only connections with at least read permissions are available for selection.
 
 ## Representation in Git and APIs
-A Connection Reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
+A Connection reference is an advanced variable type whose value schema stores the connectionId (and the platform resolves/display metadata). The authoring payload includes:
 
+- name: the displayName of the connection reference variable
 - type: "connectionReference" (advanced type)
 - value: per value‑set, each value stores { "connectionId": "&lt;GUID/ID string&gt;" }
-- Optional descriptive metadata (display name, description)
+
 
 Example:
 
@@ -103,7 +104,7 @@ This code does the following:
 ## Limitations
 The following limitations apply to connection reference variables:
 
-- Built-in Connections in Notebooks are not supported since the connection_id for the Notebook COnnection isn't the same one.
+- Built-in Connections in Notebooks are not supported since the connection_id for the Notebook connection isn't the same one.
 
 
 ## Related content
