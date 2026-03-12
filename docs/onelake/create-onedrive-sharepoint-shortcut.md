@@ -183,17 +183,13 @@ OneLake supports sensitivity label alignment during the creation of SharePoint s
 
 Before sensitivity label alignment can be applied during SharePoint shortcut creation, the tenant must enable sensitivity labeling for Fabric content. An admin must turn on **Allow users to apply sensitivity labels for content** in the Fabric/Power BI admin portal. If this setting is disabled, the label alignment option is not available during shortcut creation, and no label updates can be applied.
 
-#### Behavior
+### Behavior
 
-- Sensitivity label comparison occurs **only during initial shortcut creation**.
+- Sensitivity label comparison occurs **only during initial shortcut creation**. No sensitivity label checks or updates occur during shortcut updates or after creation.
 
 - If the SharePoint site has a more restrictive label than the Fabric item, a **Data integrity** warning is displayed.
 
-- The **Apply the same sensitivity label** checkbox is enabled by default, allowing the Fabric item label to be updated to match SharePoint.
-
-- Users can clear the checkbox to proceed without updating the Fabric item label.
-
-- No sensitivity label checks or updates occur during shortcut updates or after creation.
+- The **Apply the same sensitivity label** checkbox is enabled by default, allowing the Fabric item label to be updated to match SharePoint. Users can clear the checkbox to proceed without updating the Fabric item label.
 
 - If sensitivity label validation or the label update fails, shortcut creation fails.
 
