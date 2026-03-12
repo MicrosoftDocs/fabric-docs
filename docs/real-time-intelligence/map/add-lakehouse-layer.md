@@ -11,7 +11,7 @@ ms.search.form: Create layers from lakehouse data in Fabric Maps
 
 # Create layers from lakehouse data in Fabric Maps
 
-This article shows how to create map layers in Fabric Maps using data stored in a Microsoft Fabric lakehouse. You'll learn how to connect a map to a lakehouse, select supported geospatial data types, and configure the resulting map layers for visualization.
+This article explains how to create map layers in Fabric Maps from geospatial data stored in a Microsoft Fabric lakehouse. You'll learn how to connect a map to a lakehouse, add supported data types, and configure layers for visualization.
 
 For conceptual background, see [Use lakehouse data in Fabric Maps](about-lakehouse-layers.md).
 
@@ -20,13 +20,13 @@ For conceptual background, see [Use lakehouse data in Fabric Maps](about-lakehou
 Before you begin, ensure that:
 
 - You have a workspace with a Fabric-enabled capacity.
-- You have permission to view the target lakehouse and create or edit maps.
+- You have permission to view the target lakehouse and create or edit maps in the workspace.
 - Your lakehouse contains supported geospatial data (for example, GeoJSON, PMTiles, or COG files).
 
 ## Connect a map to a lakehouse
 
 1. Open your map in Edit mode.
-1. Select **Add** button in the **Fabric items** tab, to open the OneLake catalog.
+1. In the **Fabric items** tab, select **Add** to open the OneLake catalog.
 
     :::image type="content" source="media/layers/lakehouse/add-lakehouse.png" alt-text="A screenshot showing the Explorer pane in Fabric Maps showing the Fabric items tab with the Add dropdown menu expanded, listing three options: Lakehouse, KQL database, and Ontology (preview), with Ontology (preview) highlighted.":::
 
@@ -35,15 +35,15 @@ Before you begin, ensure that:
 
     :::image type="content" source="media/layers/lakehouse/catalog.png" alt-text="A screenshot showing the OneLake catalog dialog titled Choose the data you want to connect with. A table lists lakehouse items. An item is selected with a green checkbox. An Add button highlighted with a red border and a Cancel button appear in the bottom right corner.":::
 
-Fabric Maps lists available tables and files from the selected lakehouse.
+Fabric Maps lists the available tables and files from the selected lakehouse.
 
 ## Create a layer from vector data
 
 ### Add a GeoJSON file
 
-GeoJSON is a widely used open standard format for representing geospatial data in a lightweight, human-readable way using JSON (JavaScript Object Notation). It's designed to encode geographic features and their attributes, making it easy to share and process spatial data across web applications and APIs. For more information, see [GeoJSON](https://geojson.org/).
+GeoJSON is an open standard format for representing vector geospatial data such as points, lines, and polygons. Fabric Maps automatically detects geometry types and attributes when you add a GeoJSON file. For more information, see [GeoJSON](https://geojson.org/).
 
-1. In the OneLake catalog, expand the Files section of your lakehouse.
+1. In the OneLake catalog, expand the **Files** section of your lakehouse.
 1. Select a **GeoJSON** file.
 1. Choose **Show on map**.
 
@@ -52,14 +52,14 @@ GeoJSON is a widely used open standard format for representing geospatial data i
 Fabric Maps creates a vector layer and automatically detects the geometry type (point, line, or polygon).
 
 > [!TIP]
-> To get a larger canvas for your map, collapse the **Explorer** pane to expand the map view.
+> Collapse the **Explorer** pane to expand the map canvas when working with large datasets.
 :::image type="content" source="media/layers/lakehouse/geo-json-after-zoom-fit.png" lightbox="media/layers/lakehouse/geo-json-after-zoom-fit.png" alt-text="Screenshot of the map after selecting 'Zoom to fit', where the map zoomed in to show only the portion of the map with data points displayed.":::
 
 ### Add a PMTiles file
 
-**PMTiles** is a single-file archive format designed for storing and serving tiled geospatial data—such as vector and raster map tiles—in a highly efficient and portable way. Instead of managing thousands or millions of small tile files in a directory structure, PMTiles packages all tiles into one file, simplifying deployment and reducing storage and request overhead. For more information, see [PMTiles Concepts](https://docs.protomaps.com/pmtiles/).
+**PMTiles** is a single‑file archive format for tiled geospatial data, including vector and raster tiles. By packaging all tiles into one file, PMTiles simplifies storage and improves performance for interactive panning and zooming. For more information, see [PMTiles Concepts](https://docs.protomaps.com/pmtiles/).
 
-1. In the OneLake catalog, expand the Files section of your lakehouse.
+1. In the OneLake catalog, expand the **Files** section of your lakehouse.
 1. Select a **PMTiles** file.
 1. Choose **Show on map**.
 
@@ -90,11 +90,11 @@ A Cloud Optimized GeoTIFF (COG) is a standard GeoTIFF file (.tiff) designed for 
 >
 > Ensure your imagery is correctly formatted before uploading. Files that don't meet these requirements won't render and can trigger an error message.
 
-1. Right-click the desired COG file and choose **Show on map**. The map automatically displays the spatial data using its default settings.
+1. Right-click the COG file and select **Show on map**. The map automatically displays the spatial data using its default settings.
 
 1. Navigate to the **Data layer** pane and select the ellipsis menu (**...**) to show the actions available in the layer.
 
-1. Select **Zoom to fit** to take closer look at the data distribution.
+1. Select **Zoom to fit** to focus the map on the raster extent.
     :::image type="content" source="media/layers/lakehouse/cog-file-example.png" lightbox="media/layers/lakehouse/cog-file-example.png" alt-text="Screenshot of a map with a Cloud Optimized GeoTIFF (COG) file overlaying it.":::
 
 There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
@@ -110,13 +110,14 @@ After adding a layer, you can:
 - Adjust visibility and ordering.
 - Apply styling options such as color, opacity, and size (for vector layers).
 - Configure labels and tooltips.
+- Apply filters to limit the data shown (for supported vector layers).
 
 Changes apply immediately to the map canvas. For more information about layer settings, see [Customize a map](customize-map.md).
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Data layer management](data-layer-management.md)
+> [Data filtering in Fabric Maps](about-data-filtering.md)
 
 > [!div class="nextstepaction"]
-> [Data filtering in Fabric Maps](about-data-filtering.md)
+> [Data layer management](data-layer-management.md)
