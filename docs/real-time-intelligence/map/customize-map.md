@@ -274,25 +274,59 @@ The following screenshot presents a 3D map visualization of the Seattle area, sh
 
 ## Data-driven styling for map layers
 
-Data-driven styling lets you control how a map layer is colored based on the data in its properties. Instead of using random or fixed colors, you define visual rules that reflect categorical or numeric values in the underlying dataset. This makes it easier to reveal patterns, trends, and outliers directly on the map and to present data with clear business meaning.
+Data‑driven styling lets you control how map layers are colored based on values in the underlying data, rather than using a single fixed color. By applying visual rules to layer properties, you can highlight patterns, trends, and outliers directly on the map and present data with clear business meaning.
+Data‑driven styling is supported for the following vector layer types:
 
-Data-driven styling is available for four types of map layers, [Line layer](#line-layer), [Polygon layer](#polygon-layer), [Bubble layer](#bubble-layer), and [Marker layer](#marker-layer).
+* [Line](#line-layer)
+* [Polygon](#polygon-layer)
+* [Bubble](#bubble-layer)
+* [Marker](#marker-layer)
 
-Fabric Maps supports two data-driven styling modes for layer property settings.
+Fabric Maps supports two data‑driven styling modes for layer properties, depending on whether the selected field is categorical or numeric, described in the following table.
 
-### Color by category
+| Styling mode | Description | Supported data types | Typical use cases |
+|-------------|-------------|----------------------|-------------------|
+| **Color by category** | Assigns a distinct color to each unique value in a selected property. This mode emphasizes differences between discrete categories and displays a corresponding legend on the map. | Text or categorical fields | Status classification (for example, *Active*, *Inactive*), asset types, regions, ownership, or any field with a limited set of distinct values. |
+| **Color by value range** | Styles features based on numeric values to show variation by magnitude. Values can be rendered using a continuous gradient or user‑defined step intervals, with a legend explaining the value ranges. | Numeric fields | Counts, volumes, scores, intensity, risk levels, or other quantitative measures where relative magnitude is important. |
 
-Color by category assigns a distinct color to each unique value in a selected data field, supporting up to 100 categories. You can choose from predefined color palettes or manually assign colors as needed.
+A corresponding data legend is displayed on the map to help viewers understand how values map to colors.
 
-A corresponding data legend explains how each category maps to its color, improving readability and helping map consumers understand the business context behind the visualization.
+### Use data‑driven styling on a map layer
 
-## Color by value range
+You enable and configure data‑driven styling from the Layer settings pane while editing a map.
 
-Color by value range styles numeric fields to show variation by magnitude. This mode supports two approaches:
+#### Enable data‑driven styling
 
-* Gradient styling – Uses a continuous color transition to represent increasing or decreasing values.
-* Step (manual interval) styling – Uses user-defined breakpoints with distinct colors to emphasize specific ranges or thresholds.
+1. Open the map in **Edit** mode.
+1. Select a vector data layer (line, polygon, bubble, or marker).
+1. In the **Layer settings** pane, select **Enable data‑driven styling**.
+    :::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="A screenshot showing a Fabric Maps visualization showing a map with multiple colored polygons representing car parks. The right panel displays customization options for the Car Parks layer, including fill opacity, data-driven styling, color by the number of car park spaces.":::
+1. In the **Color by** field, select a data property to drive the styling.
 
-Both approaches help visually differentiate values across a layer and highlight meaningful ranges in the data.
+#### Configure the styling mode
 
-:::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="A screenshot showing a Fabric Maps visualization showing a map with multiple colored polygons representing car parks. The right panel displays customization options for the Car Parks layer, including fill opacity, data-driven styling, color by the number of car park spaces.":::
+* **Color by category**
+  * Choose a categorical property.
+  * Select a built‑in color palette or customize individual category colors using the color picker.
+
+    :::image type="content" source="media/customize-map/customize-individual-category-colors.png" lightbox="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a ":::
+Fabric Maps customization panel showing the Color by option with a dropdown menu displaying payment method categories including American Express variants, Account Balance, Cash, Credit, Android Pay, and Apple Pay, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each payment category in data-driven styling.
+  * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
+
+* **Color by value range**
+  * Choose a numeric property.
+  * Select **Gradient** or **Step** styling.
+  * Configure the gradient or define value intervals.
+  * The map displays a legend explaining the value ranges.
+
+### Additional behavior and considerations
+
+* Legends collapse automatically when more than 10 items are shown; select **Show more** to expand.
+* A maximum of 100 categories is supported. Additional values appear as **Other**.
+* Data‑driven styling works with other layer features such as **filters**, **labels**, and **built‑in marker layers**.
+* Existing layers that used series grouping are automatically upgraded to **Color by category**, preserving existing color assignments.
+
+
+
+
+
