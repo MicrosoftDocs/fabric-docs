@@ -123,7 +123,7 @@ The following properties are **required**:
 - **Write behavior**: Describes how to write data to Snowflake. It is only available in version 1.1 or above. Allowed values are **Insert** (default) and **Upsert**. 
     - **Insert**: Choose this option if your source data has inserts.
     - **Upsert**: Insert new values to existing table and update existing values.
-        - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. You can specify one or more columns to be treated as key columns. If you don't specify a key column, the service use the primary key in the destination table as the key column.
+        - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. You can specify one or more columns to be treated as key columns. If the key column is not specified, the primary key of the destination table is used as the key column.
 
 Under **Advanced**, you can specify the following fields:
 
