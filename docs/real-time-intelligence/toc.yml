@@ -826,6 +826,8 @@ items:
             href: data-activator/activator-get-data-power-bi.md
           - name: Create alerts on ontology
             href: ../iq/ontology/how-to-use-rules.md
+          - name: Create alert on a Warehouse SQL query
+            href: data-activator/set-alerts-warehouse-sql-query.md            
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
           - name: Create rules and activations
