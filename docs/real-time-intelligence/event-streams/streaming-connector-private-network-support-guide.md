@@ -58,10 +58,13 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-virtual-network.png" alt-text="Screenshot of showing the first step of creating virtual network." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-virtual-network.png":::
 
-    You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**. 
+    You can reuse the existing Azure virtual network that is this region. But ensure the virtual network has an IP address range that doesn't overlap with the following ranges: **10.240.0.0/16** and **10.224.0.0/12**.  
 
 2. Navigate to the **Subnets** tab under your virtual network resource to prepare the subnet. 
 3. You can either select an existing subnet to edit or create a new one. 
+
+    > [!NOTE]  
+    > If using an existing subnet, ensure that it does not contain any Private Endpoints, Load Balancers, Application Gateways, virtual machines (VMs), virtual machine scale sets (VMSS), or network interfaces (NICs).
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png" alt-text="Screenshot of showing selecting or creating subnets." lightbox="media/streaming-connector-virtual-network-on-premises-support/select-subnet.png":::
 
