@@ -25,8 +25,7 @@ The Eventhouse remote MCP enables AI agents to query Eventhouse using natural la
 
 This capability allows Copilot and custom AI agents to securely interact with your eventhouse and be consumed by cloud agent platforms, such as **Copilot Studio** and **Azure AI Foundry**.
 
-> [!NOTE]
-> This feature is currently in preview.
+[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Get started
 
@@ -57,7 +56,7 @@ The remote Eventhouse MCP server acts as an **HTTP-based MCP endpoint**.
 
 ### Installation
 
-Add the remote MCP server definition to the MCP configuration file. Currently, only manual configuration is supported. 
+Add the remote MCP server definition to the MCP configuration file. Currently, only manual configuration is supported.
 
 1. Open the MCP configuration file in Visual Studio Code.
 
