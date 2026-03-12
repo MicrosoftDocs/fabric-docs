@@ -30,7 +30,7 @@ Below, you find a comprehensive comparison of key components, including Apache S
 
 | Component | [Runtime 1.2](./runtime-1-2.md) | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
 |--|--|--|--|
-| **Release Stage** | EOSA | GA | Experimental (Preview) |
+| **Release Stage** | EOSA | GA | Public Preview |
 | **Apache Spark version** | 3.4.1 | 3.5.5 | 4.0.0 |
 | **Operating System** | Mariner 2.0 | Mariner 2.0 | Mariner 3.0 |
 | **Java version** | 11 | 11 | 21 |
