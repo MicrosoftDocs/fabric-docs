@@ -34,46 +34,124 @@ For more information about workspace roles, see [Roles in workspaces in Microsof
 There's no permission management at the variable level. Permission for each variable is the same as the permissions for the entire item.
 
 
+## Advanced variable tyoes 
+The following sections provides permissions information on advanced variable library types such as item referenence and connection reference variables.
 
-## Permission validation
+### Item reference
 
-Permission validation ensures that referenced resources exist and that the user performing an action has at least read permissions to those resources. Validation is triggered across UI and non-UI workflows, including APIs, Git updates, and deployments. 
+## Permissions Required to Create/Use item reference variables
+Using item reference variables involves two layers of permissions:
 
-### When permission validation occurs
-Permission checks are triggered in the following scenarios:
+- **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
+- **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
 
-#### Create or edit reference variables
+#### Permissions enforcement
 
-- UI
-  - When creating a connection reference or item reference variable, or when updating the value of any value set (default or alternative), users can select only connections or items for which they have at least read permission.
-  - Editing an existing reference value in the active value set also requires read permission to the referenced resource. [ws variables spec M1 | Word], [Variable l...soft Learn | Learn.Microsoft.com]
-- APIs, Git updates, and deployments
-  - Updates fail if the user or identity performing the operation does not have read permission to the active value of the referenced connection or item in the target workspace.
-  - Variable library deployments fail under the same conditions. 
+1. During variable library item updates
+When updating a variable library item, the Variable Library enforces the following permissions checks:
 
+- All referenced items in the active value set must exist.
+- The calling user must have **READ** permissions for each referenced item in the active value set.
 
-#### Edit a Variable library item
-When editing a Variable library item that contains connection reference or item reference variables, validation is performed for all active reference values, even if those values were not modified:
+2. During variable usage in a consuming item
+When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced item or the referenced item does not exist, the request does not fail.
+Instead, an appropriate status is returned, as explained below.
 
-- UI 
-  – During save, the system validates that referenced resources exist and that the saving user has read permission to all active reference values.
-- APIs/Git updates 
-  – Validation occurs during update and fails if read permission is missing.
-- Deployment 
-  – Deployment fails if the user or identity applying the deployment lacks read permission to referenced resources in the target workspace.
+### Missing permissions or nonexistent items
+If the caller lacks READ permissions or the item doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
 
-#### Use of item reference variables in consumer items
+The following examples show the resolvedDetails.status for a discover and a resolve call where the item reference does not exist.
 
-- UI 
-  – When creating a reference to an item reference variable from a consumer item (for example, using the Select variable dialog in a shortcut or data pipeline), the system validates that the user has read permission to the items referenced by the variable’s active value set.
-  - If permissions are missing, only the item IDs are shown. 
+```json
+ {
+ 	"name": "ItemRefDemo",
+ 	"note": "",
+ 	"type": "ItemReference",
+ 	"value": {
+ 		"itemId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ 		"workspaceId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb"
+ 	},
+ 	"resolvedDetails": {
+ 		"status": "ReferencedEntityNotFound" // or "ReferencedEntityAccessDenied" if caller has no permissions to item.
+ 	},
+ 	"libraryName": "VariableLibraryDemo"
+ }
+ ```
 
-#### Viewing reference details in the UI
-- In the Variable library UI, users with access to the Variable library (workspace Viewer or higher) but without read permission to a referenced connection or item:
-  - Do not see the full details of the referenced resource
-  - See only the resource ID, accompanied by a hover message instead of the details component
+ ```json
+  {
+ 	"referenceString": "$(/**/VariableLibraryDemo/ItemRefDemo)",
+ 	"status": "Ok",
+ 	"variableLibraryObjectId": "aaaabbbb-1111-2222-3333-aaaabbbbcccc",
+ 	"type": "ItemReference",
+ 	"value": {
+ 		"itemId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ 		"workspaceId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb"
+ 	},
+             "resolvedDetails": {
+ 		"status": "ReferencedEntityNotFound" // or "ReferencedEntityAccessDenied" if caller has no permissions to item.
+ 	},
+ }
+ ```
+
+### Connection reference 
+
+#### Permissions Required to Create/Use Connection References
+Using connection reference variables involves two layers of permissions:
+
+- **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
+- **Accessing the connection reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the connection reference variable** you intend to reference.
+
+#### Permissions enforcement
+
+1. During variable library item updates
+When updating a variable library item, the Variable Library enforces the following permissions checks:
+
+- All referenced connections in the active value set must exist.
+- The calling user must have READ permissions for each referenced connection in the active value set.
+
+2. During variable usage in a consuming item
+When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced connection or the referenced connection does not exist, the request does not fail.
+Instead, an appropriate status is returned, as explained below.
+
+#### Missing permissions or nonexistent items
+If the caller lacks READ permissions or the connection doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
+
+The following examples show the resolvedDetails.status for a discover and a resolve call where the connection reference does not exist.
+
+```json
+ {
+ 	"name": "ConnectionRefDemo",
+ 	"note": "",
+ 	"type": "ConnectionReference",
+ 	"value": {
+ 		"connectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb",
+ 	},
+ 	"resolvedDetails": {
+ 		"status": "ReferencedEntityNotFoundOrAccessDenied"
+ 	},
+ 	"libraryName": "VariableLibraryDemo"
+ }
+```
+
+```json
+ {
+ 	"referenceString": "$(/**/VariableLibraryDemo/ConnectionRefDemo)",
+ 	"status": "Ok",
+ 	"variableLibraryObjectId": "aaaabbbb-0000-1111-2222-aaaaaabbbbbb",
+ 	"type": "ConnectionReference",
+ 	"value": {
+ 		"connectionId": "aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb"
+ 	},
+             "resolvedDetails": {
+ 		"status": "ReferencedEntityNotFoundOrAccessDenied"
+ 	},
+ }
+ ```
+The following shows how this would appear in the Fabric portal.
 
  :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
+
 
  ## Related content
  
