@@ -1026,7 +1026,6 @@ items:
                 href: mcp-remote-eventhouse.md
               - name: Get started with Activator MCP remote Server
                 href: mcp-remote-activator.md
-
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:
