@@ -1,6 +1,6 @@
 ---
 title: Get Started With the Activator Remote MCP Server (Preview)
-description: Learn how to set up and use the Activator remote MCP server to enable AI agents to interact with Fabric Activator using natural language to create monitoring rules, mange alrets, and trigger actions.
+description: Learn how to set up and use the Activator remote MCP server to enable AI agents to interact with Fabric Activator using natural language to create monitoring rules, manage alerts, and trigger actions.
 ms.topic: how-to
 ms.date: 02/22/2026
 ms.search.form: MCP, RTI, AI, product-reflex
@@ -13,7 +13,7 @@ ms.collection: not-ai
 
 # Get started with the Activator remote MCP server (preview)
 
-By using the Activator MCP (Model Context Protocol) server, AI assistants can interact with [Fabric Activator](data-activator/activator-introduction.md) to create monitoring rules, manage alerts, and trigger actions — all through natural language.
+By using the Activator MCP (Model Context Protocol) server, AI assistants can interact with [Fabric Activator](data-activator/activator-introduction.md) to create monitoring rules, manage alerts, and trigger actions—all through natural language.
 
 [!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -34,8 +34,8 @@ Before you set up and query the MCP server, make sure you have:
 - [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in VS Code.
 - A [data source connection](#data-source-connection).
 - An Activator item created in the Fabric workspace. 
-  - Note the Workspace and Activator artifact ID from the Fabric item URL for configuration. 
-  - The URL fomat is `https://msit.powerbi.com/groups/<Workspace ID>/reflexes/<Artifact ID>/data/welcome?experience=power-bi&extensionScenario=openArtifact`
+  - Note the Workspace and Activator artifact ID from the Fabric item URL for configuration.
+  - The URL format is `https://msit.powerbi.com/groups/<Workspace ID>/reflexes/<Artifact ID>/data/welcome?experience=power-bi&extensionScenario=openArtifact`
 - review the [Tips](#tips).
 
 ## Authentication
@@ -89,15 +89,15 @@ The Activator MCP server exposes a set of tools that AI agents can use to intera
 
 Every monitoring rule has three core parts:
 
-1. **Stream** — Defines *what* data to monitor.
+1. **Stream**: Defines *what* data to monitor.
    - `splitColumn`: Group by a column for per-entity monitoring, or leave empty for global monitoring.
    - `filters`: Narrow data before detection (for example, only rows where `Region == "EU"`).
 
-2. **Detection** — Defines *when* to trigger.
+2. **Detection**: Defines *when* to trigger.
    - `condition`: The monitoring condition (for example, *temperature increases above 100*).
    - `occurrence`: How often the condition must be met (for example, *every time*, *stays for 5 minutes*, *three times in 10 minutes*).
 
-3. **Action** — Defines *what* to do when the condition fires (email or Teams message).
+3. **Action**: Defines *what* to do when the condition fires (email or Teams message).
 
 ### Workspace and artifact IDs
 
@@ -107,8 +107,8 @@ When you create rules, provide the **workspace ID** and **artifact ID** of the A
 
 Rules need a data source. You can specify the connection in two ways:
 
-- **ADX / Kusto cluster URL** — provide the cluster hostname and database name (for example, `https://mycluster.kusto.windows.net`, database `TelemetryDB`).
-- **Fabric Eventhouse** — provide the Eventhouse KQL Database item ID and workspace ID instead of a URL.
+- **ADX / Kusto cluster URL**: provide the cluster hostname and database name (for example, `https://mycluster.kusto.windows.net`, database `TelemetryDB`).
+- **Fabric Eventhouse**: provide the Eventhouse KQL Database item ID and workspace ID instead of a URL.
 
 ## Examples: Create rules
 
@@ -161,12 +161,12 @@ Example prompts:
 - **Per-item configuration**: The MCP server URL applies to a single Activator artifact. To work with multiple artifacts, you must configure a separate MCP server entry for each one.
 
 - **Teams and email actions only**: Rules can trigger Microsoft Teams messages or emails. Other action types, such as webhooks or Power Automate flows, aren't available through the MCP server.
-- **No multievent triggers**: Each rule monitors a single event stream. Triggers that correlate across multiple event streams or tables aren't supported.
+- **No multievent triggers**: Each rule monitors a single eventstream. Triggers that correlate across multiple event streams or tables aren't supported.
 - **No aggregation or summarization**: Detection conditions operate on individual events. Aggregate functions, such as average, sum, or count over a window, aren't supported.
 
 ## Tips
 
-- **Connect the Eventhouse MCP server too.** If your data source is a Fabric Eventhouse, connecting the [Eventhouse MCP server ](mcp-remote-eventhouse.md) alongside Activator significantly improves results. Your agent can then inspect your database schema, sample data, and validate KQL queries before creating rules.
+- **Connect the Eventhouse MCP server too.** If your data source is a Fabric Eventhouse, connecting the [Eventhouse MCP server](mcp-remote-eventhouse.md) alongside Activator significantly improves results. Your agent can then inspect your database schema, sample data, and validate KQL queries before creating rules.
 - **Be specific about columns.** The assistant needs to know which data column to monitor. If you're unsure, ask it to list the schema first (which is easier with the Eventhouse MCP server connected).
 - **State vs. change matters.** Use "rises above" or "drops below" for one-time transition alerts. Use "is above" or "is below" for repeated alerts on every matching event.
 - **Dynamic values in actions.** Use `{columnName}` in email or Teams message bodies to insert live data values. For example, `"CPU is at {cpuPercent}%"`.
