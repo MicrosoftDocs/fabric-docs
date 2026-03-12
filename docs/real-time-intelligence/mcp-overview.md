@@ -64,3 +64,4 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 * [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
 * [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
 * [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)
+* [Get started with the Activator remote MCP](mcp-remote-activator.md)
