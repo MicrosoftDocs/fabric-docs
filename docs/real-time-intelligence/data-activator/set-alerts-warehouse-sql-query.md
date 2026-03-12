@@ -48,6 +48,12 @@ On the **Add rule** page, select **Create** to create the rule. After the rule c
 
 [!INCLUDE [rules-pane](../../real-time-hub/includes/rules-pane.md)]
 
+## Sample alert
+
+Here's a sample alert Teams message that you receive when the alert is triggered:
+
+:::image type="content" source="./media/set-alerts-warehouse-sql-query/sample-alert.png" alt-text="Screenshot of the samples Teams alert message." lightbox="./media/set-alerts-warehouse-sql-query/sample-alert.png" border="true":::
+
 ## Related content
 - [Create an alert on a KQL queryset](activator-alert-queryset.md)
 - [Set alerts on eventstreams in Real-Time hub](../../real-time-hub/set-alerts-data-streams.md)
