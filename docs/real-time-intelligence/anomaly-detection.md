@@ -57,11 +57,11 @@ You can start anomaly detection in **three** ways:
     :::image type="content" source="media/anomaly-detection/real-time-hub.png" alt-text="Screenshot of the Real-Time hub button in the left navigation pane.":::
 
 1. Find the table you want to analyze for anomalies and do **either** of the following steps:
-    1. Select the ellipsis (⋯) to open the table's ribbon menu, and select **Anomaly detection**.
+    - Select the ellipsis (⋯) to open the table's ribbon menu, and select **Anomaly detection**.
 
         :::image type="content" source="media/anomaly-detection/detect-dropdown.png" alt-text="Screenshot of the Real-Time hub with a table selected for anomaly detection.":::
 
-    1. Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
+    - Select the table to open the details page. In the upper toolbar, select **Anomaly detection**.
 
         :::image type="content" source="media/anomaly-detection/detect-details-page.png" alt-text="Screenshot of the detect anomalies option in the details page.":::
 1. On the **Anomaly detection** page, for **Save to**, select the drop-down list, and then select **Create detector**. 
