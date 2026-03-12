@@ -74,7 +74,7 @@ This section shows how to prepare the Azure virtual network with a subnet config
 
 ## Prerequisite 3: Connect your streaming source’s network to the Azure virtual network 
 
-When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source.  
+When the source is in private network, it's required to have your Azure virtual network created in the previous step to be connected with your source’s private network, that is, the client in this Azure virtual network should be able to connect to this source. You can create a virtual machine in another subnet within the Azure virtual network and use it to verify connectivity to the private network where your source is located.
 
 ### Non-Azure sources and on-premises sources
 
@@ -112,7 +112,7 @@ The example demonstrates using Azure SQL Server source.
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/create-private-endpoint.png" alt-text="Screenshot of showing how create a private endpoint." lightbox="media/streaming-connector-virtual-network-on-premises-support/create-private-endpoint.png":::
 
-1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, choose a subnet different from the one delegated to ‘MessagingConnector’ in Prerequisite #1. 
+1. Use the wizard to create the private endpoint, selecting the Azure virtual network created in Prerequisite #1 during the 'Virtual Network' step. For the subnet selection, **choose a subnet different from the one delegated to ‘MessagingConnector’** in Prerequisite #1. 
 
     :::image type="content" source="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png" alt-text="Screenshot of showing how to delegate to ‘MessagingConnector’." lightbox="media/streaming-connector-virtual-network-on-premises-support/configure-virtual-network.png":::
 
