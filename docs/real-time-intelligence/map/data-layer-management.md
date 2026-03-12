@@ -70,3 +70,8 @@ Delete a data layer when you need to permanently remove it from the map. The fol
 
 1. The layer is removed from both the map and the **Data layers** list.
   :::image type="content" source="media/layers/data-layer-management/data-layer-after-delete.png" lightbox="media/layers/data-layer-management/data-layer-after-delete.png" alt-text="Screenshot showing results after deleting the data layer.":::
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Data filtering in Fabric Maps](about-data-filtering.md)

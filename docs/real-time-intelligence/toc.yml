@@ -967,6 +967,8 @@ items:
             items:
               - name: Layers
                 href: map/about-layers.md
+              - name: Create layers using Lakehouse data sources
+                href: map/about-lakehouse-layers.md
               - name: Create layers using Kusto data sources
                 href: map/about-kusto-integration.md
               - name: Create layers using WMS and WMTS imagery sources
@@ -987,14 +989,18 @@ items:
           href: map/create-map.md
         - name: Layers
           items:
-            - name: Add a Kusto data layer to a map 
+            - name: Create layers from lakehouse data 
+              href: map/add-lakehouse-layer.md
+            - name: Create layers from Kusto data 
               href: map/create-layers-using-kusto-data.md
-            - name: Add a WMS or WMTS imagery layer to a map
+            - name: Create layers from WMS or WMTS imagery data
               href: map/add-external-sourced-imagery-layer.md
             - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
               href: map/get-mpc-pro-wmts-endpoint.md
             - name: Add an ontology layer to a map
               href: map/add-ontology-layer.md
+            - name: Data layer management
+              href: map/data-layer-management.md
             - name: Filter data
               href: map/filter-data.md
             - name: Migrate KQL Queryset to a Kusto function

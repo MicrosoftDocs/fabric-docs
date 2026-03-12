@@ -66,6 +66,9 @@ Before you begin, ensure that:
 
         :::image type="content" source="media/layers/database/kql-data-configure-geometry-column.png" alt-text="Screenshot of the Fabric Maps Set geometry and data refresh interval configuration step for single geometry column. The form shows Data layer name field with Latest flight data - US, Geometry data column dropdown set to Geometry data locates on single column with a geometry column field populated, and Data refresh dropdown set to 5 seconds. The left sidebar displays the three-step progress indicator with Set geometry and data refresh interval highlighted. Back and Next buttons appear at the bottom right.":::
 
+        > [!TIP]When to use dynamic geometry
+        > Use a dynamic geometry column when your Kusto function returns non‑point geometries—such as lines or polygons—or when geometry is represented as GeoJSON. Dynamic geometry is well suited for routes, boundaries, and areas where latitude and longitude columns aren't sufficient. For more information, see [The dynamic data type](/kusto/query/scalar-data-types/dynamic?view=microsoft-fabric)
+
 1. In the **Review and add to map** step, confirm the settings as expected. Once confirmed, select **Add to map**.
 
     With Geometry data in two columns:

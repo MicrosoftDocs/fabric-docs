@@ -50,7 +50,7 @@ To create a new map:
 
 ## Visualize spatial data
 
-You can start visualizing spatial data on the map canvas by connecting to supported data sources. Map currently supports connections to Lakehouses and Eventhouses. Refer to the following sections for instructions on establishing these connections, along with details about supported data formats and item types in Microsoft Fabric.
+You can start visualizing spatial data on the map canvas by connecting to supported data sources. Map currently supports connections to Lakehouses and Eventhouses. For more information on establishing these connections to create map layers in Fabric Maps, see [Fabric Maps layers](about-layers.md).
 
 ## Next steps
 
@@ -62,4 +62,3 @@ You can start visualizing spatial data on the map canvas by connecting to suppor
 
 > [!div class="nextstepaction"]
 > [Share a map](share-map.md)
-

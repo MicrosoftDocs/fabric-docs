@@ -7,7 +7,7 @@ ms.date: 02/16/2026
 ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, tileset
 ---
 
-# Create tilesets (preview)
+# Create tilesets
 
 Large static spatial datasets can be expensive to render directly on a map. To improve performance, Fabric Maps can convert GeoJSON files into high‑performance tilesets that enable faster rendering and smoother interaction. For background concepts, see [What is a tileset in Fabric Maps?](about-tile-sets.md).
 
@@ -81,7 +81,7 @@ Next, set the following configuration options:
 
 :::image type="content" source="media/spatial-job-create-tilesets/configure-layer-settings.png" lightbox="media/spatial-job-create-tilesets/configure-layer-settings.png" alt-text="A screenshot showing the layer options screen.":::
 
-### Step 4: Tileset schedule
+### Step 4: Tileset schedule (preview)
 
 If you wish to create a schedule to automatically refresh the tileset, follow the steps below, otherwise select **Next**:
 

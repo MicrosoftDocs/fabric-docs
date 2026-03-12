@@ -11,18 +11,13 @@ ms.search.form: Create layers using Lakehouse data sources
 
 # Use lakehouse data in Fabric Maps
 
-Fabric Maps can visualize spatial data stored in a Microsoft Fabric lakehouse. By connecting a map to a lakehouse, you can create map layers from files and tables stored in OneLake without copying data or standing up external GIS services. This approach lets you keep geospatial data centrally governed in the lakehouse while using Fabric Maps for interactive visualization and analysis.
+Fabric Maps can visualize spatial data stored in a Microsoft Fabric lakehouse. By connecting a map to a lakehouse, you can create map layers from files stored in OneLake without copying data or standing up external GIS services. This approach lets you keep geospatial data centrally governed in the lakehouse while using Fabric Maps for interactive visualization and analysis.
 
 Fabric Maps supports connecting to lakehouses directly from the map explorer and browsing items through the OneLake catalog.
 
 ## How lakehouse data is used in maps
 
-A lakehouse stores data in OneLake and exposes it in two primary ways:
-
-- **Tables** – Managed Delta Lake tables that can be queried and refreshed.
-- **Files** – Unmanaged files stored in OneLake, including geospatial file formats.
-
-When you add a lakehouse item to a map, Fabric Maps reads the data directly from OneLake and renders it as a map layer. The lakehouse remains the system of record, and changes to the underlying data are reflected in the map based on refresh behavior.
+A lakehouse stores data files in OneLake. When you add a lakehouse file to a map, Fabric Maps reads the data directly from OneLake and renders it as a map layer. The lakehouse remains the system of record, and changes to the underlying data are reflected in the map based on refresh behavior.
 
 ## Supported lakehouse data types
 
@@ -55,12 +50,12 @@ Using a lakehouse as a data source for Fabric Maps provides several benefits:
 
 - Centralized storage and governance in OneLake.
 - No data duplication between analytics and visualization workloads.
-- Compatibility with other Fabric engines such as Spark, Warehouse, and Power BI.
+- Compatibility with other Fabric engines such as Notebook, Warehouse, and Power BI.
 - Support for both vector and raster geospatial formats.
 
 ## Relationship to other data sources
 
-Fabric Maps also supports other data sources, such as Eventhouses (KQL databases). Lakehouse‑based layers are file‑ or table‑backed, while Eventhouse‑based layers can be created from adding KQL data from Kusto tables, functions, and materialized views. For more information on layers created from KQL databases, see [Kusto integration in Fabric Maps](about-kusto-integration.md). Both can be combined in the same map to enrich spatial analysis.
+Fabric Maps also supports other data sources, such as Eventhouses (KQL databases). Lakehouse‑based layers are file‑backed, while Eventhouse‑based layers can be created from adding KQL data from Kusto tables, functions, and materialized views. For more information on layers created from KQL databases, see [Kusto integration in Fabric Maps](about-kusto-integration.md). Both can be combined in the same map to enrich spatial analysis.
 
 ## Next steps
 

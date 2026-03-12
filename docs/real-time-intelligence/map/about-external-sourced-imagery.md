@@ -6,7 +6,7 @@ ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
 ms.date: 3/06/2026
-ms.search.form: WMS, WMTS, WMS and WMTS imagery sources, Microsoft Planetary Computer Pro imagery, MPC
+ms.search.form: Create layers using WMS and WMTS imagery sources
 ---
 
 # Create layers using WMS and WMTS imagery sources in Fabric Maps

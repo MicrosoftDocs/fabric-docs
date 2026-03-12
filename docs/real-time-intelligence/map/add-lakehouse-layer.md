@@ -35,7 +35,6 @@ Before you begin, ensure that:
 
     :::image type="content" source="media/layers/lakehouse/catalog.png" alt-text="A screenshot showing the OneLake catalog dialog titled Choose the data you want to connect with. A table lists lakehouse items. An item is selected with a green checkbox. An Add button highlighted with a red border and a Cancel button appear in the bottom right corner.":::
 
-After the connection is established, the entity types defined in the ontology appear in the explorer pane and are available for visualization.
 Fabric Maps lists available tables and files from the selected lakehouse.
 
 ## Create a layer from vector data
