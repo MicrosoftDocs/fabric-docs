@@ -25,7 +25,7 @@ The Eventhouse remote MCP enables AI agents to query Eventhouse using natural la
 
 This capability allows Copilot and custom AI agents to securely interact with your eventhouse and be consumed by cloud agent platforms, such as **Copilot Studio** and **Azure AI Foundry**.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)
 
 ## Get started
 

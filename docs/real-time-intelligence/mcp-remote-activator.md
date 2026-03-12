@@ -15,7 +15,7 @@ ms.collection: not-ai
 
 By using the Activator MCP (Model Context Protocol) server, AI assistants can interact with [Fabric Activator](data-activator/activator-introduction.md) to create monitoring rules, manage alerts, and trigger actions — all through natural language.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Get started
 
@@ -162,14 +162,14 @@ Example prompts:
 
 ## Tips
 
-- **Connect the Eventhouse MCP server too.** If your data source is a Fabric Eventhouse, connecting the [Eventhouse MCP server](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/eventhouse-mcp-server) alongside Activator significantly improves results. Your agent can then inspect your database schema, sample data, and validate KQL queries before creating rules.
+- **Connect the Eventhouse MCP server too.** If your data source is a Fabric Eventhouse, connecting the [Eventhouse MCP server ](mcp-remote-eventhouse.md) alongside Activator significantly improves results. Your agent can then inspect your database schema, sample data, and validate KQL queries before creating rules.
 - **Be specific about columns.** The assistant needs to know which data column to monitor. If you're unsure, ask it to list the schema first (which is easier with the Eventhouse MCP server connected).
 - **State vs. change matters.** Use "rises above" or "drops below" for one-time transition alerts. Use "is above" or "is below" for repeated alerts on every matching event.
 - **Dynamic values in actions.** Use `{columnName}` in email or Teams message bodies to insert live data values. For example, `"CPU is at {cpuPercent}%"`.
 
 ## Related content
 
-* 
+* [Eventhouse MCP server ](mcp-remote-eventhouse.md)
+* [What is Fabric Activator? Transform data streams into automated actions](data-activator/activator-introduction.md)
 * Learn more about using [Using MCP servers in Visual Studio Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
 * [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers).
-* [What is the Fabric RTI MCP Server (preview)?](mcp-overview.md)
