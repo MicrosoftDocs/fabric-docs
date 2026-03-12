@@ -32,9 +32,12 @@ Before you set up and query the MCP server, make sure you have:
 
 - [Visual Studio Code](https://code.visualstudio.com/Download).
 - [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in VS Code.
-[data source connection](#data-source-connection)
-- An Activator instance created in the Fabric workspace.
-    - Note the artifact ID for configuration.
+- A [data source connection](#data-source-connection).
+- An Activator item created in the Fabric workspace. Note the artifact ID from the Activoator item URL for configuration.
+
+## Authentication
+
+The server uses OAuth. Your MCP client must be configured to acquire and pass a valid Microsoft Entra ID token. GitHub Copilot automatically supports this token handling.
 
 ## Connect to the Activator MCP Server
 
@@ -65,8 +68,6 @@ Add the remote Activator MCP server definition to the MCP client configuration f
   }
 }
 ```
-
-**Authentication:** The server uses OAuth. Your MCP client must be configured to acquire and pass a valid Microsoft Entra ID token. GitHub Copilot automatically supports this token handling.
 
 ## Available tools
 
@@ -140,7 +141,7 @@ Response:
 
 Connects through Fabric Eventhouse IDs and uses `changesTo` with an `everyNthTime(3, 300)` occurrence modifier.
 
-### ## Examples: Managing rules
+## Examples: Managing rules
 
 Example prompts:
 
