@@ -54,7 +54,7 @@ Fabric Maps creates a vector layer and automatically detects the geometry type (
 
 > [!TIP]
 > To get a larger canvas for your map, collapse the **Explorer** pane to expand the map view.
-:::image type="content" source="media/create-map/geo-json-after-zoom-fit.png" lightbox="media/create-map/geo-json-after-zoom-fit.png" alt-text="Screenshot of the map after selecting 'Zoom to fit', where the map zoomed in to show only the portion of the map with data points displayed.":::
+:::image type="content" source="media/layers/lakehouse/geo-json-after-zoom-fit.png" lightbox="media/layers/lakehouse/geo-json-after-zoom-fit.png" alt-text="Screenshot of the map after selecting 'Zoom to fit', where the map zoomed in to show only the portion of the map with data points displayed.":::
 
 ### Add a PMTiles file
 
@@ -96,7 +96,7 @@ A Cloud Optimized GeoTIFF (COG) is a standard GeoTIFF file (.tiff) designed for 
 1. Navigate to the **Data layer** pane and select the ellipsis menu (**...**) to show the actions available in the layer.
 
 1. Select **Zoom to fit** to take closer look at the data distribution.
-    :::image type="content" source="media/layers/lakehouse/cog-file-example.png" lightbox="media/create-map/cog-file-example.png" alt-text="Screenshot of a map with a Cloud Optimized GeoTIFF (COG) file overlaying it.":::
+    :::image type="content" source="media/layers/lakehouse/cog-file-example.png" lightbox="media/layers/lakehouse/cog-file-example.png" alt-text="Screenshot of a map with a Cloud Optimized GeoTIFF (COG) file overlaying it.":::
 
 There are other data layer customization options available. For more information, see [Customize a map](customize-map.md).
 

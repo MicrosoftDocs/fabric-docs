@@ -141,4 +141,4 @@ To cancel the tileset creation, open the **Monitor** page and select the **Cance
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Add data to a map – PMTiles](create-map.md#add-data-to-the-map---pmtiles)
+> [Add a PMTiles file](add-lakehouse-layer.md#add-a-pmtiles-file)
