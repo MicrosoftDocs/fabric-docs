@@ -285,14 +285,3 @@ Fabric Maps supports two data-driven styling modes for layer property settings.
 Color by category assigns a distinct color to each unique value in a selected data field, supporting up to 100 categories. You can choose from predefined color palettes or manually assign colors as needed.
 
 A corresponding data legend explains how each category maps to its color, improving readability and helping map consumers understand the business context behind the visualization.
-
-## Color by value range
-
-Color by value range styles numeric fields to show variation by magnitude. This mode supports two approaches:
-
-* Gradient styling – Uses a continuous color transition to represent increasing or decreasing values.
-* Step (manual interval) styling – Uses user-defined breakpoints with distinct colors to emphasize specific ranges or thresholds.
-
-Both approaches help visually differentiate values across a layer and highlight meaningful ranges in the data.
-
-:::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="A screenshot showing a Fabric Maps visualization showing a map with multiple colored polygons representing car parks. The right panel displays customization options for the Car Parks layer, including fill opacity, data-driven styling, color by the number of car park spaces.":::

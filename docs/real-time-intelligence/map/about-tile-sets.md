@@ -59,7 +59,7 @@ Key benefits of PMTiles include:
 
 In Fabric Maps, PMTiles are stored as files in a **lakehouse** and consumed directly by the map. When a map is viewed, Fabric Maps requests only the tile data required for the current zoom level and map extent. This selective loading reduces data transfer and improves rendering performance when working with large static spatial datasets.
 
-Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add data to the map – PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the *Create a map* article.
+Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add a PMTiles file](add-lakehouse-layer.md#add-a-pmtiles-file).
 
 ### Data refresh and scheduling (Preview)
 
