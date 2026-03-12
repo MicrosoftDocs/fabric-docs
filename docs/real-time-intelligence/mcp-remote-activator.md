@@ -33,7 +33,10 @@ Before you set up and query the MCP server, make sure you have:
 - [Visual Studio Code](https://code.visualstudio.com/Download).
 - [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in VS Code.
 - A [data source connection](#data-source-connection).
-- An Activator item created in the Fabric workspace. Note the artifact ID from the Activoator item URL for configuration.
+- An Activator item created in the Fabric workspace. 
+  - Note the Workspace and Activator artifact ID from the Fabric item URL for configuration. 
+  - The URL fomat is `https://msit.powerbi.com/groups/<Workspace ID>/reflexes/<Artifact ID>/data/welcome?experience=power-bi&extensionScenario=openArtifact`
+- review the [Tips](#tips).
 
 ## Authentication
 
@@ -52,7 +55,7 @@ https://api.fabric.microsoft.com/v1/mcp/workspaces/<Workspace ID>/reflexes/<Arti
 | Parameter     | Description                                      |
 |---------------|--------------------------------------------------|
 | `Workspace ID` | The Fabric workspace ID (UUID)                   |
-| `Artifact ID`  | The Activator artifact (reflex) ID (UUID)        |
+| `Artifact ID`  | The Activator artifact (reflex) ID (UUID).       |
 
 ### MCP Client Configuration
 
