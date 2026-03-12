@@ -118,7 +118,7 @@ The user must be assigned at least one role that grants access to the target Big
 
 Check the networking requirements to access your BigQuery data source.
 
-If you are using \*\*Mirroring for Google BigQuery with the On-Premises Data Gateway (OPDG)\*\*, you must use:
+If you're using \*\*Mirroring for Google BigQuery with the on-premises Data Gateway (OPDG)\*\*, you must use:
 
 \-\*\*OPDG version 3000.286.6 or later\*\*
 
@@ -131,7 +131,7 @@ More permissions may be required depending on your use case. The permissions lis
     - Working with change history
     - Handling tables of various sizes, including tables larger than 10 GB
 
-Even if you are not currently working with tables larger than 10 GB, enabling all minimum permissions is recommended to ensure successful Mirroring.
+Even if you aren't currently working with tables larger than 10 GB, enabling all minimum permissions is recommended to ensure successful Mirroring.
 
 For more information, see:
 
