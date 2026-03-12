@@ -27,10 +27,11 @@ Key capabilities include:
 - Role of **Admin**, **Contributor**, or **Member** [in the workspace](../fundamentals/roles-workspaces.md).
 - An [Eventhouse](create-eventhouse.md) in your workspace with a KQL database.
 - A Python plugin enabled on that same Eventhouse.
-  - To enable the plugin, navigate to your Eventhouse.
-  - In the upper toolbar, select **Plugins** and then enable the **Python language extension**.
-  - Select the Python 3.11.7 DL plugin and select **Done**.
-  :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse." lightbox="media/anomaly-detection/python.png":::
+  1. To enable the plugin, navigate to your Eventhouse.
+  1. In the upper toolbar, select **Plugins** and then enable the **Python language extension**.
+  1. Select the Python 3.11.7 DL plugin and select **Done**.
+  
+    :::image type="content" source="media/anomaly-detection/python.png" alt-text="Screenshot of enabling the Python plugin in Eventhouse." lightbox="media/anomaly-detection/python.png":::
 
 > [!NOTE]
 > * Ensure your Eventhouse table contains sufficient historical data to improve model recommendations and anomaly detection accuracy. For example, datasets with one data point per day require a few months of data, while datasets with one data point per second might only need a few days.
