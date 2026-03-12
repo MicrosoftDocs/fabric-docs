@@ -34,18 +34,17 @@ For more information about workspace roles, see [Roles in workspaces in Microsof
 >There's no permission management at the variable level. Permission for each variable is the same as the permissions for the entire item.
 
 
-## Advanced variable types 
-The following sections provides permissions information on advanced variable library types such as item referenence and connection reference variables.
 
-### Item reference
+## Item reference variable type (preview)
+The following section provides permissions information on item referenence variables.
 
-#### Permissions Requirements
+### Permissions Requirements
 Using item reference variables involves two layers of permissions:
 
 - **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
 
-#### Permissions enforcement
+### Permissions enforcement
 
 1. During variable library item updates
 When updating a variable library item, the Variable Library enforces the following permissions checks:
@@ -57,7 +56,7 @@ When updating a variable library item, the Variable Library enforces the followi
 When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced item or the referenced item does not exist, the request does not fail.
 Instead, an appropriate status is returned, as explained below.
 
-#### Missing permissions or nonexistent items
+### Missing permissions or nonexistent items
 If the caller lacks READ permissions or the item doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
 
 The following examples show the resolvedDetails.status for a discover and a resolve call where the item reference does not exist.
@@ -94,15 +93,16 @@ The following examples show the resolvedDetails.status for a discover and a reso
  }
  ```
 
-### Connection reference 
+## Connection reference variable type (preview)
+The following section provides permissions information on connection referenence variables.
 
-#### Permissions requirements
+### Permissions requirements
 Using connection reference variables involves two layers of permissions:
 
 - **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the connection reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the connection reference variable** you intend to reference.
 
-#### Permissions enforcement
+### Permissions enforcement
 
 1. During variable library item updates
 When updating a variable library item, the Variable Library enforces the following permissions checks:
@@ -114,7 +114,7 @@ When updating a variable library item, the Variable Library enforces the followi
 When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced connection or the referenced connection does not exist, the request does not fail.
 Instead, an appropriate status is returned, as explained below.
 
-#### Missing permissions or nonexistent items
+### Missing permissions or nonexistent items
 If the caller lacks READ permissions or the connection doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
 
 The following examples show the resolvedDetails.status for a discover and a resolve call where the connection reference does not exist.
