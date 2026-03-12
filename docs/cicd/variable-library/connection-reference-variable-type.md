@@ -75,7 +75,7 @@ Using connection reference variables involves two layers of permissions:
 - **Create and Edit a connection reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the connection reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the connection reference variable** you intend to reference.
 
-For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#connection-reference)
+For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#connection-reference-variable-type-preview)
 
 
 ## Supported items

@@ -36,7 +36,7 @@ For more information about workspace roles, see [Roles in workspaces in Microsof
 
 
 ## Item reference variable type (preview)
-The following section provides permissions information on item referenence variables.
+The following section provides permissions information on item reference variables.
 
 ### Permissions Requirements
 Using item reference variables involves two layers of permissions:
@@ -46,20 +46,20 @@ Using item reference variables involves two layers of permissions:
 
 ### Permissions enforcement
 
-1. During variable library item updates
+1. During variable library item updates:
 When updating a variable library item, the Variable Library enforces the following permissions checks:
 
 - All referenced items in the active value set must exist.
 - The calling user must have **READ** permissions for each referenced item in the active value set.
 
-2. During variable usage in a consuming item
-When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced item or the referenced item does not exist, the request does not fail.
-Instead, an appropriate status is returned, as explained below.
+2. During variable usage in a consuming item:
+
+When calling consumption APIs (such as Resolve or Discover), the request does not fail if the calling principal lacks permission to the referenced item or if the item does not exist. Instead, the API returns a specific status that indicates the outcome, as described below.
 
 ### Missing permissions or nonexistent items
-If the caller lacks READ permissions or the item doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
+If the caller lacks READ permissions or the item doesn't exist, the APIs still return the variable value, but without extended metadata. The resolvedDetails.status indicates the issue.
 
-The following examples show the resolvedDetails.status for a discover and a resolve call where the item reference does not exist.
+The following examples show the resolvedDetails.status for discover and resolve calls where the item reference doesn't exist.
 
 ```json
  {
@@ -94,7 +94,7 @@ The following examples show the resolvedDetails.status for a discover and a reso
  ```
 
 ## Connection reference variable type (preview)
-The following section provides permissions information on connection referenence variables.
+The following section provides permissions information on connection reference variables.
 
 ### Permissions requirements
 Using connection reference variables involves two layers of permissions:
@@ -104,20 +104,21 @@ Using connection reference variables involves two layers of permissions:
 
 ### Permissions enforcement
 
-1. During variable library item updates
+1. During variable library item updates:
 When updating a variable library item, the Variable Library enforces the following permissions checks:
 
 - All referenced connections in the active value set must exist.
 - The calling user must have READ permissions for each referenced connection in the active value set.
 
-2. During variable usage in a consuming item
-When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced connection or the referenced connection does not exist, the request does not fail.
+2. During variable usage in a consuming item:
+
+When calling consumption APIs (such as Resolve or Discover), if the caller principal lacks permissions to the referenced connection or the referenced connection doesn't exist, the request doesn't fail.
 Instead, an appropriate status is returned, as explained below.
 
 ### Missing permissions or nonexistent items
-If the caller lacks READ permissions or the connection doesn't exist, the APIs will still return the variable value, but without extended metadata. The resolvedDetails.status will indicate the issue.
+If the caller lacks READ permissions or the connection doesn't exist, the APIs still return the variable value, but without extended metadata. The resolvedDetails.status indicates the issue.
 
-The following examples show the resolvedDetails.status for a discover and a resolve call where the connection reference does not exist.
+The following examples show the resolvedDetails.status for discover and resolve calls for a connection reference that either doesn't exist or the caller does not have permissions.
 
 ```json
  {
@@ -148,7 +149,7 @@ The following examples show the resolvedDetails.status for a discover and a reso
  	},
  }
  ```
-The following shows how this would appear in the Fabric portal.
+The following shows the status in the Fabric portal.
 
  :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
 

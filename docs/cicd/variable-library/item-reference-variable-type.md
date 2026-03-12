@@ -113,7 +113,7 @@ Using item reference variables involves two layers of permissions:
 - **Create and Edit an item reference variable**: Users with Contributor or above roles in the workspace can create and edit variables in the library, while Viewers are read-only.
 - **Accessing the item reference variable**: In addition to rights on the Variable Library, **you must have at least Read permission on the item reference variable** you intend to reference.
 
-For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#item-reference)
+For more information on permissions and permission validation, see [Variable library permissions](variable-library-permissions.md#item-reference-variable-type-preview)
 
 ### Limitations
 Currently, you can only reference fabric items and semantic models. Other Power BI items, like Datamarts, Dataflow Gen1 are currently not supported.
