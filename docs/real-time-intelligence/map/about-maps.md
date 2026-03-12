@@ -13,11 +13,13 @@ ms.search.form: Map item
 
 # What is a map in Fabric Maps?
 
-A map in Fabric Maps is a first‑class Fabric item used to visualize and analyze spatial data in Microsoft Fabric. A map connects to your historical or real‑time data sources and renders that data as interactive geographic layers, allowing you to explore patterns, relationships, and trends based on location.
+Fabric Maps is a powerful geospatial visualization platform that transforms spatial data, whether static or real-time, into actionable intelligence. By uncovering patterns, relationships, and trends across space and time, Map reveals insights often missed in traditional charts and tables, helping you make informed decisions with greater clarity.
 
-Maps are designed analytical scenarios where *where something happens* is as important as *when it happens*.
+Map offers robust customization capabilities that let you tailor visualizations to your audience and data content. Overlay diverse data layers—such as bubbles, heatmaps, lines, polygons, and 3D extrusions—to represent complex spatial relationships. Each layer supports advanced styling options including color schemes, opacity, stroke width, interactive tooltips, and data labels. To enhance clarity and emphasize key insights, choose from multiple map styles like Grayscale, Road, Satellite, or Night.
 
 For a high‑level overview of the Fabric Maps capability, see [What is Fabric Maps?](about-fabric-maps.md).
+
+For instructions on how to create a map, see [Create a map](create-map.md).
 
 ## What is a map item?
 

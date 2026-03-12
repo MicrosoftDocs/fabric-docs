@@ -308,9 +308,12 @@ You enable and configure data‑driven styling from the Layer settings pane whil
 * **Color by category**
   * Choose a categorical property.
   * Select a built‑in color palette or customize individual category colors using the color picker.
+    :::image type="content" source="media/customize-map/customize-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel showing the Color by option with a dropdown menu displaying different categories, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each category in data-driven styling.":::
 
-    :::image type="content" source="media/customize-map/customize-individual-category-colors.png" lightbox="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a ":::
-Fabric Maps customization panel showing the Color by option with a dropdown menu displaying payment method categories including American Express variants, Account Balance, Cash, Credit, Android Pay, and Apple Pay, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each payment category in data-driven styling.
+    Select the color next to a category name to assign a custom color to that category:
+
+    :::image type="content" source="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel showing the Color by option with a dropdown menu displaying different categories, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each category in data-driven styling.":::
+  * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
 
 * **Color by value range**
@@ -325,8 +328,3 @@ Fabric Maps customization panel showing the Color by option with a dropdown menu
 * A maximum of 100 categories is supported. Additional values appear as **Other**.
 * Data‑driven styling works with other layer features such as **filters**, **labels**, and **built‑in marker layers**.
 * Existing layers that used series grouping are automatically upgraded to **Color by category**, preserving existing color assignments.
-
-
-
-
-
