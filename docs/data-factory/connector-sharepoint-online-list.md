@@ -21,7 +21,7 @@ The SharePoint connector supports the following authentication types for copy an
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Organizational account| √ | √|
-|Service Principal| √ | √ |
+|Service Principal| n/a | √ |
 |Workspace identity| √ | √ |
 
 ## Set up your connection in Dataflow Gen2

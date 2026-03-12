@@ -18,8 +18,8 @@ This SharePoint Online File connector is supported in Data Factory for [!INCLUDE
 
 | Supported capabilities                                                                 | Gateway                        | Authentication |
 |----------------------------------------------------------------------------------------|--------------------------------|----------------|
-| **Pipeline** <br> - [Copy activity](connector-sharepoint-online-file-copy-activity.md) (source/destination) <br> - Lookup activity <br> - Get Metadata activity <br> - Delete activity | None <br> On-premises <br> Virtual network | Organizational account <br> Service principal <br> Workspace identity |
-| **Copy job** (source/destination) <br> | None <br> On-premises <br> Virtual network | Organizational account <br> Service principal <br> Workspace identity |
+| **Pipeline** <br> - [Copy activity](connector-sharepoint-online-file-copy-activity.md) (source/destination) <br> - Lookup activity <br> - Get Metadata activity <br> - Delete activity | None <br> On-premises <br> Virtual network | Organizational account <br> Workspace identity |
+| **Copy job** (source/destination) <br> | None <br> On-premises <br> Virtual network | Organizational account <br> Workspace identity |
 
 ## Related content
 
