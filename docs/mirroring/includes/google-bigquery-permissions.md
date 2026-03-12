@@ -13,13 +13,10 @@ The following permissions are required to determine whether change history is en
 
 ### Required Permissions
 
-\-\`bigquery.tables.get\`
-
-\-\`bigquery.tables.list\`
-
-\-\`bigquery.routines.get\`
-
-\-\`bigquery.routines.list\`
+    - `bigquery.tables.get\`
+    - `bigquery.tables.list\`
+    - `bigquery.routines.get\`
+    - `bigquery.routines.list\`
 
 \---
 
@@ -29,17 +26,12 @@ The following permissions are required to read change history and table data.
 
 ### Required Permissions
 
-\-\`bigquery.tables.getData\`
-
-\-\`bigquery.jobs.create\`
-
-\-\`bigquery.jobs.get\`
-
-\-\`bigquery.jobs.list\`
-
-\-\`bigquery.readsessions.create\`
-
-\-\`bigquery.readsessions.getData\`
+    - `bigquery.tables.getData\`
+    - `bigquery.jobs.create\`
+    - `bigquery.jobs.get\`
+    - `bigquery.jobs.list\`
+    - `bigquery.readsessions.create\`
+    - `bigquery.readsessions.getData\`
 
 \---
 
@@ -57,7 +49,7 @@ Allows enabling change history on tables.
 
 Ensure the following table option is set to \`TRUE\`:
 
-\-\`enable\_change\_history\`
+    -  `enable\_change\_history\`
 
 \---
 
@@ -66,16 +58,11 @@ Ensure the following table option is set to \`TRUE\`:
 The following permissions are required to export BigQuery data to Google Cloud Storage for staging and copy it into OneLake.
 
 ### Required Permissions
-
-\-\`bigquery.tables.export\`
-
-\-\`storage.objects.create\`
-
-\-\`storage.objects.list\`
-
-\-\`storage.buckets.get\`
-
-\-\`iam.serviceAccounts.signBlob\`
+    - `bigquery.tables.export\`
+    - `storage.objects.create\`
+    - `storage.objects.list\`
+    - `storage.buckets.get\`
+    - `iam.serviceAccounts.signBlob\`
 
 \---
 
@@ -91,19 +78,15 @@ Use \*\*one\*\* of the following approaches:
 
 Grant the following permission:
 
-\-\`storage.buckets.create\`
+    - `storage.buckets.create\`
 
 #### Option 2: Manually Create the Staging Bucket
 
-Create a bucket with the following naming convention:
-
-\-\`<your\_project\_id\_in\_lowercase>\_fabric\_staging\_bucket\`
+Create a bucket with the following naming convention: `<your\_project\_id\_in\_lowercase>\_fabric\_staging\_bucket\`
 
 ### Bucket Requirements
-
-\- The bucket \*\*must be in the same location/region as the BigQuery dataset\*\*.
-
-\- The Mirroring system will automatically detect the bucket once it exists.
+    - The bucket \*\*must be in the same location/region as the BigQuery dataset\*\*.
+    - The Mirroring system will automatically detect the bucket once it exists.
 
 \---
 
@@ -111,7 +94,7 @@ Create a bucket with the following naming convention:
 
 ### Required Permissions
 
-\-\`bigquery.datasets.get\`
+    - `bigquery.datasets.get\`
 
 \---
 
@@ -119,7 +102,7 @@ Create a bucket with the following naming convention:
 
 ### Required Permissions
 
-\-\`resourcemanager.projects.get\`
+    - `resourcemanager.projects.get\`
 
 \---
 
@@ -145,19 +128,16 @@ If you are using \*\*Mirroring for Google BigQuery with the On-Premises Data Gat
 
 More permissions may be required depending on your use case. The permissions listed above represent the \*\*minimum required\*\* for:
 
-\- Working with change history
-
-\- Handling tables of various sizes, including tables larger than 10 GB
+    - Working with change history
+    - Handling tables of various sizes, including tables larger than 10 GB
 
 Even if you are not currently working with tables larger than 10 GB, enabling all minimum permissions is recommended to ensure successful Mirroring.
 
 For more information, see:
 
-\-\[Required Privileges for Streaming Data\](https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery)
-
-\-\[Required Permissions for Change History Access\](https://cloud.google.com/bigquery/docs/change-history)
-
-\-\[Required Permissions for Writing Query Results\](https://cloud.google.com/bigquery/docs/writing-results)
+    - [Required Privileges for Streaming Data\](https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery)
+    - [Required Permissions for Change History Access\](https://cloud.google.com/bigquery/docs/change-history)
+    - [Required Permissions for Writing Query Results\](https://cloud.google.com/bigquery/docs/writing-results)
 
 \> \[!IMPORTANT\]
 
