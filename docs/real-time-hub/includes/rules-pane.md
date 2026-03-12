@@ -5,7 +5,7 @@ ms.topic: include
 ms.date: 02/27/2026
 ---
 
-## Rule pane
+## Rules pane
 
 After the rule creation is successful, you see the Rules pane with the list of rules. In the Rules pane, you can perform the following tasks:
 
