@@ -175,6 +175,24 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 
 Now, when you create a shortcut you can select **Workspace identity** as the **Authentication kind**.
 
+## Sensitivity label alignment for SharePoint shortcuts
+
+OneLake supports sensitivity label alignment during the creation of SharePoint shortcuts to help ensure consistent data protection between SharePoint and Fabric item. When a shortcut is created, OneLake compares the sensitivity label of the SharePoint site with the target Fabric item. If the SharePoint site has a more restrictive label, users are prompted to optionally align the Fabric item’s label to match. Sensitivity labels are evaluated only at creation time and are not re-evaluated afterward.
+
+#### Prerequisite
+
+The tenant must enable sensitivity labeling for Fabric content. An admin must turn on **Allow users to apply sensitivity labels for content** in the Fabric/Power BI admin portal. If this setting is disabled, the label alignment option is not available during shortcut creation, and no label updates can be applied.
+
+### Behavior
+
+- Sensitivity label comparison occurs only during initial shortcut creation. No sensitivity label checks or updates occur during shortcut updates or after creation.
+
+- If the SharePoint site has a more restrictive label than the Fabric item, a **Data integrity** warning is displayed.
+
+- The **Apply the same sensitivity label** checkbox is enabled by default, allowing the Fabric item label to be updated to match SharePoint. Users can clear the checkbox to proceed without updating the Fabric item label.
+
+- If sensitivity label validation or the label update fails, shortcut creation fails.
+
 ## Best practices
 
 * HTTP 429 errors when accessing OneDrive or SharePoint shortcuts are due to SharePoint throttling. SharePoint enforces service throttling to protect reliability; review the [official throttling guidance](/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) to understand applicable limits and behaviors. Use the following best practices to minimize throttling:
