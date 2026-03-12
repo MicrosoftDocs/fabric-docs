@@ -16,8 +16,8 @@ The item details page in the **OneLake catalog** explorer provides a comprehensi
 The item details view includes several tabs that help you explore and manage the selected item. It's especially useful for:
 
 * **Item owners**: Manage permissions, view refresh history, and track lineage to monitor and manage items.
-  * **Developers and Analysts**: Access trust signals for an item, identify high-quality data to use as starting points, and avoid creating redundant items.
-  * **Consumers**: Discover reliable apps, reports, and dashboards to support everyday work.
+* **Developers and Analysts**: Access trust signals for an item, identify high-quality data to use as starting points, and avoid creating redundant items.
+* **Consumers**: Discover reliable apps, reports, and dashboards to support everyday work.
 
 The item details page adapts to how you access it, offering two convenient ways to explore items:
 
@@ -35,19 +35,19 @@ The item details page features multiple tabs that vary by item type (for example
 The **Overview** tab is the default view when you open an item in the OneLake catalog explorer. It shows the following information about the selected item:
 
 * **Description**: The description associated with the item, displayed under the item name. A useful and meaningful description helps users discover the right item for them.
-  * **Location**: The workspace where the item is located. Selecting the workspace navigates to the workspace.
-  * **Refreshed**: The last time the item was refreshed or run. A red warning icon appears if the last update was unsuccessful. Selecting the icon displays the error details. 
-  * **Owner**: Displays the item owner or [contact](/power-bi/create-reports/service-item-contact). Selecting the name opens an email to them.
-  * **Sensitivity label**: If applied, the name of the [sensitivity label](protected-sensitivity-labels.md) associated with the item.
-  * **Tags**: If applied, the list of [tags](tags-overview.md) associated with the item.
-  * **Endorsement**: [Endorsement](endorsement-overview.md) status and the details of the endorsing user. Endorsing your item (promoting or certifying it) makes it easier for users to find and signifies it's a trustworthy data source.
+* **Location**: The workspace where the item is located. Selecting the workspace navigates to the workspace.
+* **Refreshed**: The last time the item was refreshed or run. A red warning icon appears if the last update was unsuccessful. Selecting the icon displays the error details. 
+* **Owner**: Displays the item owner or [contact](/power-bi/create-reports/service-item-contact). Selecting the name opens an email to them.
+* **Sensitivity label**: If applied, the name of the [sensitivity label](protected-sensitivity-labels.md) associated with the item.
+* **Tags**: If applied, the list of [tags](tags-overview.md) associated with the item.
+* **Endorsement**: [Endorsement](endorsement-overview.md) status and the details of the endorsing user. Endorsing your item (promoting or certifying it) makes it easier for users to find and signifies it's a trustworthy data source.
 
 ### Data schema in the Tables section
 
 For data items like semantic models and lakehouses, the **Tables** section displays a structured view of the underlying table and column schema for the item.
 
 * Use the **Filter by keyword** box to search for a specific table or column.
-  * To explore data in a table or column, point to it and select the binoculars icon. The [Explore this data](/power-bi/consumer/explore-data-service) view opens, which displays the data for ad-hoc analysis.
+* To explore data in a table or column, point to it and select the binoculars icon. The [Explore this data](/power-bi/consumer/explore-data-service) view opens, which displays the data for ad-hoc analysis.
 
 :::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-item-details/onelake-catalog-explore-overview-tab.png":::
 
@@ -67,7 +67,7 @@ In the OneLake catalog explorer, you can view and interact with semantic models 
 
 - **Create a paginated report:** If you prefer to choose specific tables and columns before exporting, select **Explore this data > Create a [paginated report](/power-bi/paginated-reports/web-authoring/paginated-formatted-table)**. In the paginated report editor, select the columns you need, then go to **Home > Export** and choose your preferred format (PDF, Excel, Word, and more).
 
-![A screenshot showing the export menu of a paginated report](media/onelake-catalog-item-details/paginated-report-export.png)
+:::image type="content" source="media/onelake-catalog-item-details/paginated-report-export.png" alt-text="A screenshot showing the export menu of a paginated report." lightbox="media/onelake-catalog-item-details/paginated-report-export.png":::
 
 ### Lineage tab
 
@@ -111,7 +111,7 @@ General actions are universally available across all item types in OneLake catal
 These actions are available in:
 
 * The item's context menu (three dots icon), which is available when you point to an item in the list.
-  * The item's details page, which opens when you select an item in the list.
+* The item's details page, which opens when you select an item in the list.
 
 | Action | Description | Where to find it in the item details page |
 |---|---|---|
@@ -131,7 +131,7 @@ Item-specific actions are unique to particular artifact types, providing special
 These actions are available in:
 
 * The item's context menu (three dots icon), which is available when you point to an item in the list.
-  * The item's details page, which opens when you select an item in the list.
+* The item's details page, which opens when you select an item in the list.
 
 #### Data Items
 
