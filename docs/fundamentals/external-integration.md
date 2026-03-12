@@ -32,10 +32,6 @@ This article describes how to:
 - Outlook to send automated emails for alerts or approvals.
 - **[Fabric items](../real-time-intelligence/data-activator/activator-trigger-fabric-items.md)** to initiate actions such as refreshing a semantic model or starting a pipeline run.
 
-The following diagram shows how Data Activator routes real-time conditions to downstream actions.
-
-:::image type="content" source="./media/external-integration/integration-actions.png" alt-text="Diagram of integration actions architecture.":::
-
 ## Collaborate across Microsoft 365
 
 Microsoft Fabric works within the Microsoft 365 ecosystem, enabling collaborative analytics and data-driven workflows across familiar productivity tools:
@@ -45,9 +41,7 @@ Microsoft Fabric works within the Microsoft 365 ecosystem, enabling collaborativ
 - [PowerPoint](/power-bi/collaborate-share/service-power-bi-powerpoint-add-in-about): Embed or export Power BI reports into presentations so stakeholders can view live or snapshot analytics.
 - [SharePoint and OneDrive](/power-bi/create-reports/desktop-sharepoint-save-share): Publish reports to SharePoint Online and store supporting files in OneDrive with Microsoft 365 security and compliance controls.
 
-These integrations enable analytics to flow naturally into collaboration, review, and decision-making processes. The following diagram summarizes collaboration touchpoints across Microsoft 365 and Fabric.
-
-:::image type="content" source="./media/external-integration/integration-collaboration.png" alt-text="Diagram of integration collaboration architecture.":::
+These integrations enable analytics to flow naturally into collaboration, review, and decision-making processes.
 
 ## Integrate with agentic AI solutions
 
@@ -57,9 +51,7 @@ Fabric supports agent-based AI scenarios through a shared semantic foundation. T
 - **Copilot Studio** enables you to design conversational agents and automate processes that invoke [Fabric Data Agents](/microsoft-copilot-studio/add-agent-fabric-data-agent) for governed insights.
 - **Microsoft 365 Copilot** surfaces these capabilities in tools such as Teams and Outlook, routing queries to appropriate agents while respecting enterprise security controls. Microsoft 365 Copilot can [consume Fabric Data Agents](../data-science/data-agent-microsoft-365-copilot.md) as part of an agentic AI workflow.
 
-Together, these services extend Fabric from analytics into contextual AI automation. The following diagram maps how Fabric IQ, Foundry, Copilot Studio, and Microsoft 365 Copilot work together.
-
-:::image type="content" source="./media/external-integration/agentic-integration.png" alt-text="Diagram of agentic AI integration architecture.":::
+Together, these services extend Fabric from analytics into contextual AI automation.
 
 ## Use developer tools and APIs
 
@@ -71,9 +63,7 @@ Fabric supports code-first development and DevOps practices.
   - **SQL endpoints**: Lakehouses and warehouses expose [T-SQL endpoints](../data-warehouse/how-to-connect.md) so you can query data from standard SQL tools.
   - **GraphQL APIs**: [Programmatically access data and metadata](../data-engineering/connect-apps-api-graphql.md) to build custom applications and integrations.
 
-These capabilities enable automation, CI/CD workflows, and custom solutions that extend Fabric beyond the web interface. The following diagram highlights developer entry points, including VS Code, APIs, and SQL endpoints.
-
-:::image type="content" source="./media/external-integration/integration-developer.png" alt-text="Diagram of developer integration architecture.":::
+These capabilities enable automation, CI/CD workflows, and custom solutions that extend Fabric beyond the web interface.
 
 ### Unified data estate
 
@@ -93,9 +83,7 @@ The unified data estate gives you a consistent foundation for cross-platform ana
   - **[Table APIs](../onelake/table-apis/table-apis-overview.md)**: Provide programmatic access to tables regardless of file format.
   - **[ADLS Gen2 compatibility](../onelake/onelake-api-parity.md)**: Supports the same REST APIs and hierarchical namespace features as Azure Data Lake Storage Gen2.
 
-By using these open file formats and APIs, OneLake ensures that data stored in OneLake can be read and written by multiple compute engines without conversion, making it a true interoperable data foundation. The following diagram shows how OneLake provides a unified, open data estate across formats and APIs.
-
-:::image type="content" source="./media/external-integration/integration-unified-data-estate.png" alt-text="Diagram of unified data estate integration architecture.":::
+By using these open file formats and APIs, OneLake ensures that data stored in OneLake can be read and written by multiple compute engines without conversion, making it a true interoperable data foundation.
 
 #### Azure Databricks integration
 
