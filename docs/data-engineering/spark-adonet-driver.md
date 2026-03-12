@@ -1,11 +1,9 @@
 ﻿---
 title: Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering
 description: Learn how to connect, query, and manage Spark workloads in Microsoft Fabric using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering.
-author: ms-arali
-ms.author: arali
 ms.reviewer: arali
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 03/18/2026
 ---
 
 # Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering (Preview)

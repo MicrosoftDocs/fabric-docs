@@ -4,7 +4,7 @@ description: Learn about the Apache Spark-based runtimes available in Fabric, in
 ms.reviewer: arali
 ms.topic: overview
 ms.custom: sfi-image-nochange
-ms.date: 12/11/2025
+ms.date: 03/18/2026
 ---
 
 # Apache Spark Runtimes in Fabric
