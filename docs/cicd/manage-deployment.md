@@ -65,6 +65,7 @@ Once a PR to the *dev* branch is approved and merged:
 
 #### Which components can be used to implement option #2?
 * [Fabric-cicd](https://microsoft.github.io/fabric-cicd) - a Python library designed for use with Microsoft Fabric workspaces. This library supports code-first Continuous Integration / Continuous Deployment (CI/CD) automations to seamlessly integrate workspaces into a deployment framework. For a complete end-to-end example follow our [fabric-cicd and Azure DevOps tutorial](tutorial-fabric-cicd-azure-devops.md).
+* [Bulk-Import-Item-Definitions-API](https://learn.microsoft.com/en-us/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) - The API supports both creating new items and updating existing ones in place, while relying on Fabric’s built‑in dependency handling to ensure items are deployed in the correct order. This enables consistent, repeatable deployments into test and production environments without manual intervention. For a sample tutorial follow our [Fabric CI/CD with Bulk Import Item Definitions API](tutorial-bulkapi-cicd.md).
 
 #### When should you consider using option #2?
 
