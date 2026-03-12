@@ -314,6 +314,9 @@ You enable and configure data‑driven styling from the Layer settings pane whil
 
     :::image type="content" source="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel showing the Color by option with a dropdown menu displaying different categories, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each category in data-driven styling.":::
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
+
+    :::image type="content" source="media/customize-map/data-layer-legend.png" alt-text="Fabric Maps layer settings panel displaying color-by-category data-driven styling options. A dropdown menu shows category names with color swatches, ranging from dark red through purple to teal. Each category has an assigned color used to differentiate distinct values on the map legend. The panel demonstrates how to customize colors for individual categories in geographic data visualization.":::
+  
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
 
 * **Color by value range**
