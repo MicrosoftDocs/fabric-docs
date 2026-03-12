@@ -434,6 +434,8 @@ items:
       href: migrate-synapse-data-pipelines.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md
+    - name: Fabric Spark Migration Assistant (preview)
+      href: synapse-to-fabric-spark-migration-assistant.md
 - name: API for GraphQL
   items:
   - name: What is API for GraphQL?
@@ -446,7 +448,7 @@ items:
     href: api-graphql-aggregations.md
   - name: Introspection and schema export
     href: api-graphql-introspection-schema-export.md
-  - name: GraphQL source control and deployment pipelines (preview)
+  - name: GraphQL source control and deployment pipelines
     href: graphql-source-control-and-deployment.md
   - name: How-to guides
     items:
