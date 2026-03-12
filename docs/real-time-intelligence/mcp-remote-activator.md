@@ -21,7 +21,7 @@ https://api.fabric.microsoft.com/v1/mcp/workspaces/{workspaceId}/reflexes/{artif
 
 ### MCP Client Configuration
 
-Add the following to your MCP client settings (e.g. `mcp.json`, VS Code Copilot settings, etc.):
+Add the following to your MCP client settings (for example, `mcp.json`, VisualStudio Code Copilot settings, etc.):
 
 ```json
 {
@@ -34,7 +34,7 @@ Add the following to your MCP client settings (e.g. `mcp.json`, VS Code Copilot 
 }
 ```
 
-**Authentication:** The server uses OAuth. Your MCP client must be configured to acquire and pass a valid Microsoft Entra ID (Azure AD) token. This is automatically supported in Github Copilot.
+**Authentication:** The server uses OAuth. Your MCP client must be configured to acquire and pass a valid Microsoft Entra ID token. This token handling is automatically supported in GitHub Copilot.
 
 ---
 
@@ -59,24 +59,24 @@ Every monitoring rule has three core parts:
 
 1. **Stream** — Defines *what* data to monitor.
    - `splitColumn`: Group by a column for per-entity monitoring, or leave empty for global monitoring.
-   - `filters`: Narrow data before detection (e.g. only rows where `Region == "EU"`).
+   - `filters`: Narrow data before detection (for example, only rows where `Region == "EU"`).
 
 2. **Detection** — Defines *when* to trigger.
-   - `condition`: The monitoring condition (e.g. *temperature increases above 100*).
-   - `occurrence`: How often the condition must be met (e.g. *every time*, *stays for 5 minutes*, *3 times in 10 minutes*).
+   - `condition`: The monitoring condition (for example, *temperature increases above 100*).
+   - `occurrence`: How often the condition must be met (for example, *every time*, *stays for 5 minutes*, *three times in 10 minutes*).
 
 3. **Action** — Defines *what* to do when the condition fires (email or Teams message).
 
 ### Workspace and Artifact IDs
 
-When creating rules, you need to provide the **workspace ID** and **artifact ID** of the Activator item in your prompt. These are the same IDs used in the MCP server URL. The assistant needs them to target the correct Activator artifact.
+When creating rules, you need to provide the **workspace ID** and **artifact ID** of the Activator item in your prompt. These IDs are the same ones that are used in the MCP server URL. The assistant needs them to target the correct Activator artifact.
 
 ### Data Source Connection
 
 Rules need a data source. You can specify the connection in two ways:
 
-- **ADX / Kusto cluster URL** — provide the cluster hostname and database name (e.g. `https://mycluster.kusto.windows.net`, database `TelemetryDB`).
-- **Fabric Eventhouse** — provide the Eventhouse KQL database item ID and workspace ID instead of a URL.
+- **ADX / Kusto cluster URL** — provide the cluster hostname and database name (for example, `https://mycluster.kusto.windows.net`, database `TelemetryDB`).
+- **Fabric Eventhouse** — provide the Eventhouse KQL Database item ID and workspace ID instead of a URL.
 
 ---
 
@@ -96,7 +96,7 @@ Rules need a data source. You can specify the connection in two ways:
 >
 > Connects via ADX cluster URL and creates a heartbeat rule using `noPresenceOfData(600)`.
 
-> **"Monitor the `AppLogs` table in my Fabric Eventhouse (item ID: `11223344-aabb-ccdd-eeff-556677889900`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). If the status column changes to 'Error' more than 3 times in 5 minutes, email oncall@contoso.com."**
+> **"Monitor the `AppLogs` table in my Fabric Eventhouse (item ID: `11223344-aabb-ccdd-eeff-556677889900`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). If the status column changes to 'Error' more than three times in 5 minutes, email oncall@contoso.com."**
 >
 > Connects via Fabric Eventhouse IDs and uses `changesTo` with an `everyNthTime(3, 300)` occurrence modifier.
 
@@ -113,17 +113,17 @@ Rules need a data source. You can specify the connection in two ways:
 
 ## Known Limitations
 
-- **KQL data sources only.** Rules can only be created against Kusto (ADX) or Fabric Eventhouse KQL databases. Other data source types are not currently supported.
+- **KQL data sources only.** Rules can only be created against Kusto (ADX) or Fabric Eventhouse KQL databases. Other data source types aren't currently supported.
 - **Per-item configuration.** The MCP server URL is scoped to a single Activator artifact. To work with multiple artifacts, you must configure a separate MCP server entry for each one.
-- **Teams and email actions only.** Rules can trigger Microsoft Teams messages or emails. Other action types (e.g. webhooks, Power Automate flows) are not available through the MCP server.
-- **No multi-event triggers.** Each rule monitors a single event stream. Triggers that correlate across multiple event streams or tables are not supported.
-- **No aggregation or summarization.** Detection conditions operate on individual events. Aggregate functions (e.g. average, sum, count over a window) are not supported.
+- **Teams and email actions only.** Rules can trigger Microsoft Teams messages or emails. Other action types (for example, webhooks, Power Automate flows) aren't available through the MCP server.
+- **No multi-event triggers.** Each rule monitors a single event stream. Triggers that correlate across multiple event streams or tables aren't supported.
+- **No aggregation or summarization.** Detection conditions operate on individual events. Aggregate functions (for example, average, sum, count over a window) aren't supported.
 
 ---
 
 ## Tips
 
 - **Connect the Eventhouse MCP server too.** If your data source is a Fabric Eventhouse, connecting the [Eventhouse MCP server](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/eventhouse-mcp-server) alongside Activator significantly improves results — your agent can then inspect your database schema, sample data, and validate KQL queries before creating rules.
-- **Be specific about columns.** The assistant needs to know which data column to monitor. If you're unsure, ask it to list the schema first (much easier with the Eventhouse MCP server connected). 
+- **Be specific about columns.** The assistant needs to know which data column to monitor. If you're unsure, ask it to list the schema first (which is easier with the Eventhouse MCP server connected). 
 - **State vs. Change matters.** Use "rises above" / "drops below" for one-time transition alerts. Use "is above" / "is below" for repeated alerts on every matching event.
-- **Dynamic values in actions.** Use `{columnName}` in email/Teams message bodies to insert live data values (e.g. `"CPU is at {cpuPercent}%"`).
+- **Dynamic values in actions.** Use `{columnName}` in email/Teams message bodies to insert live data values (for example, `"CPU is at {cpuPercent}%"`).
