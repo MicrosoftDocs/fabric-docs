@@ -57,7 +57,7 @@ When updating a variable library item, the Variable Library enforces the followi
 When calling consumption APIs (such as Resolve or Discover), the request does not fail if the calling principal lacks permission to the referenced item or if the item does not exist. Instead, the API returns a specific status that indicates the outcome, as described below.
 
 ### Missing permissions or nonexistent items
-If the caller lacks READ permissions or the item doesn't exist, the APIs still return the variable value, but without extended metadata. 
+If the caller lacks READ permissions or the item doesn't exist, the variable value will still be returned, but without extended metadata. 
 
 ## Connection reference variable type (preview)
 The following section provides permissions information on connection reference variables.
@@ -82,7 +82,7 @@ When calling consumption APIs (such as Resolve or Discover), if the caller princ
 Instead, an appropriate status is returned, as explained below.
 
 ### Missing permissions or nonexistent items
-If the caller lacks READ permissions or the connection doesn't exist, the APIs still return the variable value, but without extended metadata. The following shows this in the Fabric portal.
+If the caller lacks READ permissions or the connection doesn't exist, the variable value will still be returned, but without extended metadata. The following shows this in the Fabric portal.
 
  :::image type="content" source="media/connection-reference/connection-4.png" alt-text="Screenshot of the permissions being denied." lightbox="media/connection-reference/connection-4.png":::
 
