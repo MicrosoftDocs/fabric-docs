@@ -36,7 +36,7 @@ Before you set up and query the MCP server, make sure you have:
 - An Activator item created in the Fabric workspace. 
   - Note the Workspace and Activator artifact ID from the Fabric item URL for configuration.
   - The URL format is `https://msit.powerbi.com/groups/<Workspace ID>/reflexes/<Artifact ID>/data/welcome?experience=power-bi&extensionScenario=openArtifact`
-- review the [Tips](#tips).
+- Review the [Tips](#tips).
 
 ## Authentication
 
@@ -89,15 +89,15 @@ The Activator MCP server exposes a set of tools that AI agents can use to intera
 
 Every monitoring rule has three core parts:
 
-1. **Stream**: Defines *what* data to monitor.
+- **Stream**: Defines *what* data to monitor.
    - `splitColumn`: Group by a column for per-entity monitoring, or leave empty for global monitoring.
    - `filters`: Narrow data before detection (for example, only rows where `Region == "EU"`).
 
-2. **Detection**: Defines *when* to trigger.
+- **Detection**: Defines *when* to trigger.
    - `condition`: The monitoring condition (for example, *temperature increases above 100*).
    - `occurrence`: How often the condition must be met (for example, *every time*, *stays for 5 minutes*, *three times in 10 minutes*).
 
-3. **Action**: Defines *what* to do when the condition fires (email or Teams message).
+- **Action**: Defines *what* to do when the condition fires (email or Teams message).
 
 ### Workspace and artifact IDs
 
