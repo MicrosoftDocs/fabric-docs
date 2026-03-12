@@ -15,7 +15,7 @@ The item details page in the **OneLake catalog** explorer provides a comprehensi
 
 The item details view includes several tabs that help you explore and manage the selected item. It's especially useful for:
 
-  * **Item owners**: Manage permissions, view refresh history, and track lineage to monitor and manage items.
+* **Item owners**: Manage permissions, view refresh history, and track lineage to monitor and manage items.
   * **Developers and Analysts**: Access trust signals for an item, identify high-quality data to use as starting points, and avoid creating redundant items.
   * **Consumers**: Discover reliable apps, reports, and dashboards to support everyday work.
 
@@ -34,7 +34,7 @@ The item details page features multiple tabs that vary by item type (for example
 
 The **Overview** tab is the default view when you open an item in the OneLake catalog explorer. It shows the following information about the selected item:
 
-  * **Description**: The description associated with the item, displayed under the item name. A useful and meaningful description helps users discover the right item for them.
+* **Description**: The description associated with the item, displayed under the item name. A useful and meaningful description helps users discover the right item for them.
   * **Location**: The workspace where the item is located. Selecting the workspace navigates to the workspace.
   * **Refreshed**: The last time the item was refreshed or run. A red warning icon appears if the last update was unsuccessful. Selecting the icon displays the error details. 
   * **Owner**: Displays the item owner or [contact](/power-bi/create-reports/service-item-contact). Selecting the name opens an email to them.
@@ -46,7 +46,7 @@ The **Overview** tab is the default view when you open an item in the OneLake ca
 
 For data items like semantic models and lakehouses, the **Tables** section displays a structured view of the underlying table and column schema for the item.
 
-  * Use the **Filter by keyword** box to search for a specific table or column.
+* Use the **Filter by keyword** box to search for a specific table or column.
   * To explore data in a table or column, point to it and select the binoculars icon. The [Explore this data](/power-bi/consumer/explore-data-service) view opens, which displays the data for ad-hoc analysis.
 
 :::image type="content" source="./media/onelake-catalog-item-details/onelake-catalog-explore-overview-tab.png" alt-text="Screenshot of the explore tab item view overview tab." lightbox="./media/onelake-catalog-item-details/onelake-catalog-explore-overview-tab.png":::
@@ -55,9 +55,19 @@ For data items like semantic models and lakehouses, the **Tables** section displ
 
 In the OneLake catalog explorer, you can view and interact with semantic models based on your permissions and whether the model is set to be discoverable.
 
-  * **Discoverable**: These are semantic models that have been made [discoverable](/power-bi/collaborate-share/service-discovery) by their owner. Discoverable semantic models make it easier for users across the organization to find relevant data assets. While you can see the semantic model and its metadata, you can't see the owner details, view underlying data, or build content on top of the semantic model. You need to **request access** (Build permission) to access the semantic model's full information and capabilities.
-  * **Read-only Permission**: If someone shares a report or semantic model with you but doesn’t grant Build [permission](/power-bi/connect-data/service-datasets-permissions), you might have read-only access, which limits your ability to view and interact with the semantic model. To create content or perform more actions, you need at least Build permission.
-  * **Build Permission**: If you have [Build permission](/power-bi/connect-data/service-datasets-build-permissions) on a semantic model, you can create new reports based on it, connect to it from Excel, and export its data.
+* **Discoverable**: These are semantic models that have been made [discoverable](/power-bi/collaborate-share/service-discovery) by their owner. Discoverable semantic models make it easier for users across the organization to find relevant data assets. While you can see the semantic model and its metadata, you can't see the owner details, view underlying data, or build content on top of the semantic model. You need to **request access** (Build permission) to access the semantic model's full information and capabilities.
+* **Read-only Permission**: If someone shares a report or semantic model with you but doesn’t grant Build [permission](/power-bi/connect-data/service-datasets-permissions), you might have read-only access, which limits your ability to view and interact with the semantic model. To create content or perform more actions, you need at least Build permission.
+* **Build Permission**: If you have [Build permission](/power-bi/connect-data/service-datasets-build-permissions) on a semantic model, you can create new reports based on it, connect to it from Excel, and export its data.
+
+####  Export semantic model data
+
+  If you have Build permission on a semantic model, you can export its data in two ways:
+
+- **Analyze in Excel**: Select [Analyze in Excel](/power-bi/collaborate-share/service-analyze-in-excel) in the action bar to quickly generate an Excel workbook with the entire semantic model's content. This is the fastest way to export data for ad-hoc analysis.
+
+- **Create a paginated report:** If you prefer to choose specific tables and columns before exporting, select **Explore this data > Create a [paginated report](/power-bi/paginated-reports/web-authoring/paginated-formatted-table)**. In the paginated report editor, select the columns you need, then go to **Home > Export** and choose your preferred format (PDF, Excel, Word, and more).
+
+![A screenshot showing the export menu of a paginated report](media/onelake-catalog-item-details/paginated-report-export.png)
 
 ### Lineage tab
 
@@ -100,7 +110,7 @@ General actions are universally available across all item types in OneLake catal
 
 These actions are available in:
 
-  * The item's context menu (three dots icon), which is available when you point to an item in the list.
+* The item's context menu (three dots icon), which is available when you point to an item in the list.
   * The item's details page, which opens when you select an item in the list.
 
 | Action | Description | Where to find it in the item details page |
@@ -120,7 +130,7 @@ Item-specific actions are unique to particular artifact types, providing special
 
 These actions are available in:
 
-  * The item's context menu (three dots icon), which is available when you point to an item in the list.
+* The item's context menu (three dots icon), which is available when you point to an item in the list.
   * The item's details page, which opens when you select an item in the list.
 
 #### Data Items
@@ -169,4 +179,4 @@ This section covers actions unique to Pipelines, Dataflow Gen2 CI/CD, and Notebo
 
 ## Considerations and limitations
 
-  * Real-time semantic models don't have a details page, as they're being [retired](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
+* Real-time semantic models don't have a details page, as they're being [retired](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
