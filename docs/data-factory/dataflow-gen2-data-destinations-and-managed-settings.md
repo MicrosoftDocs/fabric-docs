@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 02/05/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -45,14 +45,56 @@ Connecting to the data destination works like connecting to a data source. You c
 
 ## Set up file-based destinations
 
-When you choose a file-based destination (for example, SharePoint), you'll need to configure a few settings. Here's what you need to set:
+When you choose a file-based destination (for example, SharePoint), you'll need to configure settings based on the file format you select.
+
+### Delimited text format
+
+When you select **Delimited text** as the file format, configure these settings:
 
 * **File name**: The name of the file that gets created in the destination. By default, the file name matches your query name.
-* **File format**: The format of the file that gets created in the destination.
-* **File origin**: The encoding that's used to create the file in the destination. By default, this is set to **UTF-8**.
-* **File delimiter**: The delimiter that gets used to create the file in the destination. By default, this is set to **Comma**.
+* **File origin**: The encoding used to create the file in the destination. By default, this is set to **65001: Unicode (UTF-8)**.
+* **Delimiter**: The delimiter used to separate values in the file. Options include:
+  * Colon
+  * Comma (default)
+  * Equals sign
+  * Semicolon
+  * Space
+  * Tab
 
-:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the file name, file format, file origin, and file delimiter settings displayed.":::
+:::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/file-destinations-settings.png" alt-text="Screenshot of the File destination settings window with the delimited text format selected.":::
+
+### Excel format (Preview)
+
+> [!NOTE]
+> Excel format for file-based destinations is currently in preview.
+
+When you select **Excel** as the file format, you have three format options: **Single sheet**, **Multi sheet**, and **Advanced**.
+
+#### Single sheet format
+
+The single sheet format writes your data to a single sheet in the Excel file. Configure these settings:
+
+* **File name**: The name of the Excel file that gets created in the destination. By default, the file name matches your query name with an `.xlsx` extension.
+* **Output type**: Choose how your data is represented in the sheet:
+  * **Sheet**: Outputs data as a standard Excel table.
+  * **Chart**: Outputs data as a chart. When you select Chart, you need to configure additional settings:
+    * **Sheet name**: The name of the sheet where the chart is created.
+    * **Chart kind**: The type of chart to create (for example, Area).
+    * **Axis columns**: The columns to use for the chart axis.
+    * **Value columns**: The columns to use for the chart values.
+    * **Primary axis column**: The column to use as the primary axis (optional).
+* **Sheet name**: The name of the sheet where data is written (when Output type is Sheet).
+
+#### Multi sheet format
+
+The multi sheet format partitions your data across multiple sheets based on a column value. Configure these settings:
+
+* **File name**: The name of the Excel file that gets created in the destination.
+* **Sheet partition column**: The column used to partition data across multiple sheets. Each unique value in this column creates a separate sheet.
+
+#### Advanced format
+
+The advanced format provides more control over Excel output, allowing you to create complex workbooks with multiple sheets, charts, and customized formatting using navigation tables. For more information, see [Excel Advanced Data Destination](dataflow-gen2-data-destinations-excel-advanced.md).
 
 ## Create a new table or pick an existing table
 
@@ -209,9 +251,9 @@ If you already have a warehouse as a destination and try to disable staging, a w
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-staging.png" alt-text="Screenshot of the Enable staging warning.":::
 
-### Schema support for Lakehouse, Warehouse and SQL databases (preview)
+### Schema support for Lakehouse, Warehouse and SQL databases
 
-Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly. To use this feature in combination with a gateway we require at least 3000.290 version of the gateway. 
+Lakehouse, Warehouse, and SQL databases in Microsoft Fabric all support the ability to create a schema for your data. This means you can structure your data in a way that makes it easier to manage and query. In order to be able to write to schemas in these destinations you need to enable the **Navigate using full hierarchy** option under **advanced options** when you set up your connection. If you don't enable this option, you won't be able to select or view the schemas in the destination. A preview limitation for enabling Navigate using full hierarchy is that fast copy may not work properly. To use this feature in combination with a gateway we require at least 3000.290 version of the gateway.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/enable-schema-support.png" alt-text="Screenshot highlighting the Enable schema support option.":::
 
