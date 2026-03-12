@@ -50,5 +50,5 @@ On the **Add rule** page, select **Create** to create the rule. After the rule c
 
 ## Related content
 - [Create an alert on a KQL queryset](activator-alert-queryset.md)
-- [Set alerts on eventstreams in Real-Time hub](../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric)
-- [Set alerts on workspace item events](../real-time-hub/set-alerts-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric)
+- [Set alerts on eventstreams in Real-Time hub](../../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric)
+- [Set alerts on workspace item events](../../real-time-hub/set-alerts-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric)
