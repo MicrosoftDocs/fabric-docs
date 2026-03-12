@@ -9,11 +9,13 @@ ms.reviewer: sbahadur
 
 # Extended capabilities in mirroring for Fabric
 
+[!INCLUDE [Extended capabilities billing start note](includes/extended-capabilities-billing-start-note.md)]
+
 Extended capabilities in mirroring for Microsoft Fabric are optional, paid features that build on the core mirroring experience. While core mirroring keeps operational data continuously available in OneLake at no cost for compute, extended capabilities provide more granular change tracking, fresher data, and richer replication options for advanced analytics scenarios.
 
 Today, extended capabilities include:
 
-- Delta change data feed (DCDF): Tracks row-level inserts, updates, and deletes so only changed data is processed.
+- Delta change data feed: Tracks row-level inserts, updates, and deletes so only changed data is processed.
 - Mirroring views: Replicates logical views from the source system instead of only physical tables.
 
 Both capabilities run on the same managed mirroring foundation: secure source connectivity, near real-time replication, Delta Lake storage in OneLake, and seamless use across Fabric workloads like SQL analytics, Spark, and Direct Lake.
@@ -24,9 +26,9 @@ Both capabilities run on the same managed mirroring foundation: secure source co
 |---|---|
 | Continuous replication of source tables into OneLake with near real-time freshness, Delta Lake format, and Fabric integration. | Optional features like Delta change data feed and Mirroring views that add incremental change processing and view replication on top of core mirroring. |
 
-## Delta change data feed (DCDF) (preview)
+## Delta change data feed (preview)
 
-Delta change data feed (DCDF) captures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
+Delta change data feedcaptures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
 
 - Continuously processes incremental changes (delta-based).
 - Uses change-only processing.
@@ -86,7 +88,7 @@ Extended capabilities are useful when you need:
 - Replication of source view logic.
 - Low-latency analytics on operational systems.
 
-These scenarios often benefit from DCDF and mirroring views because both features reduce full refreshes and complex ETL workflows.
+These scenarios often benefit from delta change data feed and mirroring views because both features reduce full refreshes and complex ETL workflows.
 
 ## Related content
 

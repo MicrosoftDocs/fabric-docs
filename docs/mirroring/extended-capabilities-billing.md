@@ -47,9 +47,9 @@ Extended capabilities use the DataMovementIncrementalCopy meter and follow the s
 ## Billing scope and metering
 
 - Extended capabilities are optional, and core mirroring works without them.
-- DCDF is applied at the mirror level, so billing covers the full mirror replication workload, including tables and views (if present).
-- DCDF and mirroring views enabled together result in one unified charge for the mirror workload, not double charging.
-- Delta change data feed reuses the DataMovementIncrementalCopy meter rather than a separate DCDF-specific meter, and the operation name appears as Mirror Replication Premium using DataMovementIncrementalCopy.
+- Delta change data feed is applied at the mirror level, so billing covers the full mirror replication workload, including tables and views (if present).
+- Delta change data feed and mirroring views enabled together result in one unified charge for the mirror workload, not double charging.
+- Delta change data feed reuses the DataMovementIncrementalCopy meter rather than a separate delta change data feed-specific meter, and the operation name appears as Mirror Replication Premium using DataMovementIncrementalCopy.
 
 ## How usage is measured
 
