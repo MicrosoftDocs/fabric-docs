@@ -27,7 +27,7 @@ This article provides suggestions to troubleshoot common problems with the SQL d
 
 1. Select **Save** to save the connection.
 
-For more information on creating Fabric SQL connections that work with on-premises data gateways, see [the guide for creating a Fabric SQL database connection](../database/sql/migrate-with-migration-assistant.md#create-a-fabric-sql-connection).
+For more information on creating Fabric SQL connections that work with on-premises data gateways, see [the guide for creating a Fabric SQL database connection](/fabric/database/sql/migrate-with-migration-assistant#create-a-fabric-sql-connection).
 
 ## Related content
 
