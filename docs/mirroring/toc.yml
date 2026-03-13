@@ -73,6 +73,9 @@ items:
       href: azure-cosmos-db.md        
     - name: Azure Cosmos DB tutorial
       href: azure-cosmos-db-tutorial.md
+    - name: Migrate from Azure Synapse Link
+      displayName: Migrate from Azure Synapse Link to Cosmos DB mirroring
+      href: azure-cosmos-db-migrate-synapse-link.md
     - name: FAQ about mirrored Azure Cosmos DB 
       displayName: Frequently asked questions about mirrored Azure Cosmos DB
       href: azure-cosmos-db-faq.yml
