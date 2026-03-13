@@ -10,7 +10,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types.
+Tables in [!INCLUDE [product-name](../includes/product-name.md)] support a subset of T‑SQL data types for persisted storage. This article describes the data types that are supported when creating tables that store data in a Warehouse. It does not describe all data types that can be used in T‑SQL queries, variables, parameters, or expressions.
 
 - For more information on table creation, see [Tables](tables.md).
 - The supported data types of Warehouse are different from the [supported data types of SQL database in Fabric](../database/sql/limitations.md#column-level).
@@ -21,6 +21,9 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 ## Data types in Fabric Data Warehouse
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports a subset of T-SQL data types. Each offered data type is based on the SQL Server data type of the same name. For more information, to the reference article for each in the following table.
+
+> [!NOTE]  
+> The supported and unsupported data types listed below apply to tables and other persisted objects in Fabric Data Warehouse. Some unsupported types can still be used in queries, variables, parameters, and stored procedure logic.
 
 | **Category** | **Supported data types** |
 |---|---|
@@ -37,7 +40,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 
 For more information about the supported data types including their precisions, see [data types in CREATE TABLE reference](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true#DataTypesFabric).
 
-### Unsupported data types
+### Unsupported data types for tables
 
 For T-SQL data types that aren't currently supported, some alternatives are available. Make sure you evaluate the use of these types, as precision and query behavior vary:
 
@@ -66,7 +69,7 @@ The tables in [!INCLUDE [fabric-se](includes/fabric-se.md)] are automatically cr
 
 Types that aren't listed in the table aren't represented as the table columns in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
-The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric-se](includes/fabric-se.md)] are shown in the following table:
+As with Warehouse tables, only data types supported for persisted storage are materialized as columns in the SQL analytics endpoint. The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric-se](includes/fabric-se.md)] are shown in the following table:
 
 | Delta data type | SQL data type (mapped) |
 | :---| :---|
