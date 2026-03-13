@@ -13,7 +13,7 @@ This article provides suggestions to troubleshoot common problems with the SQL d
 
 ## Error code: Failed
 
-- **Message**: `Operation on target CopyJobActivityLoop failed: Activity failed because an inner activity failed; Inner activity name: CopyData_final, Error: The activity was running on gateway, but some cloud connections are incompatible with it. To ensure compatibility, enable the option "Allow this connection to be used with gateways.".`
+- **Message**: `Operation on target CopyJobActivityLoop failed: Activity failed because an inner activity failed; Inner activity name: CopyData_final, Error: The activity was running on gateway, but some cloud connections are incompatible with it. To ensure compatibility, enable the option "Allow this connection to be used with gateways."`
 
 - **Cause**: the Fabric SQL connection must be enabled for gateway usage.
 
