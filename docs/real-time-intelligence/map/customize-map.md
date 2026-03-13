@@ -93,7 +93,7 @@ The following table describes the general settings for data labels.
 | Enable data labels | A toggle switch used to enable/disable data labels for the selected layer.                        |
 | Data labels        | A drop-down list showing available fields from the selected data source.                          |
 | Font weight        | Sets the font weight: **Regular**, **Medium**, or **Bold**.                                       |
-| Text color         | The text color of the data label. (#change-map-settings).|
+| Text color         | The text color of the data label. |
 | Text size          | The text size of the data label. Valid text sizes range from 8-48. Default=12.                    |
 | Text stroke color  | The text stroke color of the data label.  |
 | Text stroke width  | The text stroke width of the data label. Valid text sizes range from 0-10. Default=1.             |
