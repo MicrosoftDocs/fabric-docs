@@ -1,23 +1,23 @@
 ---
-title: Labeled Property Graphs in Fabric Graph
-description: Understand the benefits of the Labeled Property Graph (LPG) model used by Fabric Graph, including nodes, edges, properties, and labels.
+title: Labeled Property Graphs in graph in Microsoft Fabric
+description: Understand the benefits of the Labeled Property Graph (LPG) model used by graph in Microsoft Fabric, including nodes, edges, properties, and labels.
 ms.topic: concept-article
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ---
 
-# Labeled property graphs in Fabric Graph
+# Labeled property graphs in graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article introduces the Labeled Property Graph (LPG) model, which is the data model used by Fabric Graph. LPG delivers practical benefits for analytics and connected data in Graph.
+This article introduces the Labeled Property Graph (LPG) model, which is the data model used by graph in Microsoft Fabric. LPG delivers practical benefits for analytics and connected data in graph.
 
 > [!IMPORTANT]
-> Graph only supports the LPG model. Resource Description Framework (RDF) isn't supported.
+> graph only supports the LPG model. Resource Description Framework (RDF) isn't supported.
 
 ## Labeled property graph (LPG)
 
-Many popular [graph databases](graph-database.md) use the LPG data model, including Graph. In an LPG:
+Many popular [graph databases](graph-database.md) use the LPG data model, including graph. In an LPG:
 
 - You represent data as nodes and edges, which are also sometimes called vertices and relationships, respectively.
 - You classify nodes (such as Person or Product) and edges (such as FRIENDS_WITH or PURCHASED) with **labels**.
@@ -27,9 +27,9 @@ LPGs don't require global identifiers (IRIs/URIs) for every node or edge. Instea
 
 ## What about Resource Description Framework (RDF)?
 
-**RDF** is a W3C-standardized model for representing information as subject-predicate-object triples. It's often used for semantic web and knowledge graph scenarios. RDF excels at interoperability, data integration, and formal reasoning with ontologies. However, Graph *doesn't support RDF*.
+**RDF** is a W3C-standardized model for representing information as subject-predicate-object triples. It's often used for semantic web and knowledge graph scenarios. RDF excels at interoperability, data integration, and formal reasoning with ontologies. However, graph *doesn't support RDF*.
 
-If your use case requires semantic web standards, semantic web ontologies, or global data integration, you might need to consider other platforms that support RDF. For most enterprise analytics, operational graph workloads, and business intelligence scenarios, use LPG, which is the recommended and supported model in Graph.
+If your use case requires semantic web standards, semantic web ontologies, or global data integration, you might need to consider other platforms that support RDF. For most enterprise analytics, operational graph workloads, and business intelligence scenarios, use LPG, which is the recommended and supported model in graph.
 
 ## Key benefits of LPG
 
@@ -39,7 +39,7 @@ For most customers, LPG provides the best balance of performance, usability, and
 - **Properties on edges:** You can easily model weighted, temporal, or labeled relationships. This feature supports advanced analytics like recommendations and fraud detection.
 - **Performance and storage efficiency:** Graph databases that use the LPG model store data compactly and enable fast traversals, even for large, complex graphs.
 - **Flexible schema:** You can evolve your graph model as your business needs change, without rigid constraints.
-- **Integration with Fabric:** The use of LPGs by Graph is deeply integrated with OneLake and Power BI, enabling seamless analytics and visualization.
+- **Integration with Fabric:** The use of LPGs by graph is deeply integrated with OneLake and Power BI, enabling seamless analytics and visualization.
 
 ## Related content
 
