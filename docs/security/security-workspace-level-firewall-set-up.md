@@ -21,7 +21,7 @@ This article describes how to set up and manage workspace IP firewall rules in F
 
 Before you configure workspace IP firewall rules, ensure the following requirements are met:
 
-* **Tenant setting enabled**: A Fabric administrator must enable the **Configure workspace IP firewall rules** tenant setting. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
+* **Tenant setting enabled**: The **Configure workspace IP firewall rules** tenant setting is enabled by default. If this setting has been disabled, a Fabric administrator must enable it. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 
 * **Workspace admin role**: You must be a workspace admin to configure IP firewall rules.
 
