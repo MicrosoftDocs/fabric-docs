@@ -201,7 +201,7 @@ landingContent:
     linkLists:
       - linkListType: deploy
         links:
-          - text: Migration assistant 
+          - text: Migration Assistant 
             url: migration-assistant.md
           - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
             url: migration-synapse-dedicated-sql-pool-warehouse.md
