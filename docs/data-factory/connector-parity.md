@@ -112,7 +112,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD isn't supported |
 | [DB2](connector-ibm-db2-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) | ✓/- | |  Version 1.1 isn't supported. (Return the result of the first statement when executing multiple statements) |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) | ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) |
 | | | ServiceAuthentication | | | Service Account Login | |
 | [Greenplum](connector-greenplum-for-pipeline-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
 | [Hive](connector-hive-llap-overview.md) | ✓/- | Anonymous | | N | | |
