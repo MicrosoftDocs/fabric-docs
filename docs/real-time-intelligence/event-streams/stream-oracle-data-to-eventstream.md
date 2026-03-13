@@ -468,7 +468,7 @@ The Windows VM (oggXServer) is still used to download these software packages an
 
 1. Download OGG for big data (Oracle GoldenGate for Big Data 21.4.0.0.0 on Linux x86-64) from [Oracle GoldenGate Downloads](https://www.oracle.com/middleware/technologies/goldengate-downloads.html). 
 
-1. Download [Kafka package(kafka_2.13-3.9.0.tgz)](https://dlcdn.apache.org/kafka/3.9.0/kafka_2.13-3.9.0.tgz).
+1. Download [Kafka package(kafka_2.13-3.9.0.tgz)](https://archive.apache.org/dist/kafka/3.9.0/kafka_2.13-3.9.0.tgz).
 
 1. Download [JAVA SDK(jdk-8u202-linux-x64.tar.gz](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
 
