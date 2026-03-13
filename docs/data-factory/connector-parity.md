@@ -206,18 +206,18 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------|-------------------------------|---------------------------|---------------------|
-| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
+| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
 |  | | Office 365 | | | | |
 |  | | User-assigned managed identity | | | | |
 |  | | | |  | Workspace identity | |
 |  | | | |  | Organizational account      | |
-| Dynamics 365       | ✓/✓                | Service principal | | ✓/✓                      | Service principal                         | |
+| Dynamics 365       | ✓/✓                | Service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                      | Service principal                         | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity | | | | |
 |  | | | |  | Workspace identity | |
-| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | | ✓/-                      | Service principal                         | |
+| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | Support `aadResourceId`. | ✓/-                      | Service principal                         | `aadResourceId` is not supported. |
 | | | | | | Workspace identity | |
-| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
+| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity| | | | |
 | | | | | | Workspace identity | |
@@ -227,13 +227,13 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | Jira               | ✓/-                | Basic                 | | N                      |                          | |
 | [Microsoft 365](connector-microsoft-365-overview.md)      | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
 | QuickBooks         | ✓/-                | OAuth 2.0             | | N                      |                          | |
-| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | | ✓/✓                   | Organizational account  | |
+| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | Support `clientId`, `clientSecret` and `apiVersion`. | ✓/✓                   | Organizational account  | `clientId`, `clientSecret` and `apiVersion` are not supported. |
 | [Salesforce Service Cloud](connector-salesforce-service-cloud-overview.md) | ✓/✓         | OAuth2ClientCredentials | | ✓/✓                   | Organizational account  | |
 | SAP Cloud for Customer (C4C) | ✓/✓         | Basic                 | | N                      |                          | |
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
 | [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
 | | | OAuth2 | | | | |
-| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
+| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | | ✓/-                   | Service principal       | Support Implementation and View. |
 | | | | | | Organizational account | |
 | | | | | | Workspace identity | |
 | Shopify            | ✓/-                | Access token          | | N                      |                          | |
@@ -244,26 +244,26 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Generic connectors
 
-| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Destination** | **Fabric Authentication** |
-|--------------------|---------------------|------------------------|------------------------|--------------------------|
-| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| | | Basic | | Basic |
-| | | Digest | | |
-| | | Windows | | |
-| | | Client certificate | | |
-| [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| | | Basic authentication | | Basic |
-| | | Windows authentication | | |
-| | | Service principal with Key | | |
-| | | Service principal with Cert | | |
-| [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
-| | | Basic | | Basic |
-| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
-| | | Basic | | Basic |
-| | | Service principal | | Service principal |
-| | | OAuth 2.0 Client Credential | | Organizational account |
-| | | System-assigned managed identity | | |
-| | | User-assigned managed identity | | |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+|--------------------|---------------------|------------------------|------------------------|------------------------|--------------------------|------------------------|
+| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | Support `enableServerCertificateValidation` and `authHeaders`. | ✓/-                   | Anonymous               | `enableServerCertificateValidation` and `authHeaders` are not supported. |
+| | | Basic | | | Basic | |
+| | | Digest | | | | |
+| | | Windows | | | | |
+| | | Client certificate | | | | |
+| [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | Support `authHeaders`, `aadResourceId` and `azureCloudType`. | ✓/-                   | Anonymous               |`authHeaders`, `aadResourceId` and `azureCloudType` are not supported. |
+| | | Basic authentication | | | Basic | |
+| | | Windows authentication | | | | |
+| | | Service principal with Key | | | | |
+| | | Service principal with Cert | | | | |
+| [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | Support `credential`. | ✓/✓                   | Anonymous               | `credential` is not supported.<br><br>Support SQL statement. |
+| | | Basic | | | Basic | |
+| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | Support `enableServerCertificateValidation` and `authHeaders`. | ✓/✓                   | Anonymous               | `enableServerCertificateValidation` and `authHeaders` are not supported.<br><br>Support Token Audience Uri. |
+| | | Basic | | | Basic | |
+| | | Service principal | | | Service principal | |
+| | | OAuth 2.0 Client Credential | | | Organizational account | |
+| | | System-assigned managed identity | | | | |
+| | | User-assigned managed identity | | | | |
 
 ## Conclusion
 
