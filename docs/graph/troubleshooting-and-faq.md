@@ -1,16 +1,16 @@
 ---
-title: Troubleshooting and FAQ for Fabric Graph
-description: Find solutions for common Fabric Graph issues like model loading errors and queryset problems, plus frequently asked questions and best practices.
+title: Troubleshooting and FAQ for graph in Microsoft Fabric
+description: Find solutions for common graph in Microsoft Fabric issues like model loading errors and queryset problems, plus frequently asked questions and best practices.
 ms.topic: reference
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ---
 
-# Troubleshooting and FAQ for Fabric Graph
+# Troubleshooting and FAQ for graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article provides troubleshooting guidance and answers to frequently asked questions about Fabric Graph. For known limitations that might impact your experience, see [Current Limitations of Fabric Graph](limitations.md).
+This article provides troubleshooting guidance and answers to frequently asked questions about graph in Microsoft Fabric. For known limitations that might impact your experience, see [Current limitations of graph](limitations.md).
 
 ## Graph model disappears or becomes empty when switching tabs
 
@@ -71,6 +71,6 @@ By default, nodes display their ID as the label. To change the display label:
 
 ## Related content
 
-- [What is Graph in Microsoft Fabric?](overview.md)
-- [Quickstart guide for Graph in Microsoft Fabric](quickstart.md)
-- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
+- [What is graph in Microsoft Fabric?](overview.md)
+- [Quickstart guide for graph in Microsoft Fabric](quickstart.md)
+- [Optimize GQL query performance in graph](gql-query-performance.md)

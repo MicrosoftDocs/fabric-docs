@@ -1,12 +1,12 @@
 ---
-title: Manage and Refresh Data in Fabric Graph
+title: Manage and Refresh Data in graph in Microsoft Fabric
 description: Learn how to refresh graph data manually and configure a scheduled refresh in Microsoft Fabric, including workspace settings and refresh history monitoring.
 ms.topic: how-to
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ---
 
-# Manage data in Fabric Graph
+# Manage data in graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
@@ -14,7 +14,7 @@ This article shows you how to save your graph model, refresh graph data, and con
 
 ## Save your graph model
 
-When you select **Save** in the graph model editor, Fabric Graph performs two operations:
+When you select **Save** in the graph model editor, graph in Microsoft Fabric performs two operations:
 
 1. **Persists your graph model** – Saves the current configuration, including node types, edge types, and column mappings.
 1. **Triggers data ingestion** – Ingests data from the underlying lakehouse tables and constructs the queryable graph based on the updated model.
@@ -54,6 +54,6 @@ To edit or delete a scheduled refresh, select the **Edit** option in the **Sched
 
 ## Related content
 
-- [Fabric Graph overview](overview.md)
+- [graph overview](overview.md)
 - [Monitor graph status](monitoring-overview.md)
 - [Troubleshooting and FAQ](troubleshooting-and-faq.md)
