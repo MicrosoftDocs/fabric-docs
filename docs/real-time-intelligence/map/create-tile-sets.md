@@ -15,8 +15,6 @@ This article shows how to create a tileset as well as schedule data refresh for 
 
 You can schedule refresh when creating a new tileset, as long as you have access to its underlying data source.
 
-[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 - A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
@@ -82,6 +80,8 @@ Next, set the following configuration options:
 :::image type="content" source="media/spatial-job-create-tilesets/configure-layer-settings.png" lightbox="media/spatial-job-create-tilesets/configure-layer-settings.png" alt-text="A screenshot showing the layer options screen.":::
 
 ### Step 4: Tileset schedule (preview)
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 If you wish to create a schedule to automatically refresh the tileset, follow the steps below, otherwise select **Next**:
 
