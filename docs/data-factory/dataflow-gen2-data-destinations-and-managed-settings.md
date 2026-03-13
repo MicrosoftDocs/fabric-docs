@@ -3,7 +3,7 @@ title: Dataflow Gen2 data destinations and managed settings
 description: Describes how to use Dataflow Gen2 to save your data in specific destinations, along with instructions on how to use managed settings.
 ms.reviewer: jeluitwi
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 03/13/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -123,6 +123,7 @@ Schema options on publish only apply when the update method is **replace**. When
 
 > [!NOTE]
 > When loading data into the warehouse, only fixed schema is supported.
+> When loading data into a Snowflake database, only fixed schema is supported. If you change the schema of your source query, you need to reconfigure the destination mapping manually.
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/fixed-schema.png" alt-text="Screenshot of the Schema options on publish option, with Fixed schema selected.":::
 
@@ -164,20 +165,20 @@ These pieces of M scripts aren't visible inside of the Dataflow application, but
 
 ## Supported data source types per destination
 
-| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output |
-| --- | --- | --- | --- | --- | --- |--- |
-| Action                           | No  | No  | No  | No  | No  | No  |
-| Any                              | No  | No  | No  | No  | No  | No  |
-| Binary                           | No  | No  | No  | No  | No  | No  |
-| Currency                         | Yes | Yes | Yes | Yes | No  | Yes |
-| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes |
-| Duration                         | No  | No  | Yes | No  | No  | No  |
-| Function                         | No  | No  | No  | No  | No  | No  |
-| None                             | No  | No  | No  | No  | No  | No  |
-| Null                             | No  | No  | No  | No  | No  | No  |
-| Time                             | Yes | Yes | No  | No | No   | Yes |
-| Type                             | No  | No  | No  | No  | No  | No  |
-| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  |
+| Supported data types per storage location | DataflowStagingLakehouse | Azure DB (SQL) Output | Azure Data Explorer Output | Fabric Lakehouse (LH) Output | Fabric Warehouse (WH) Output | Fabric SQL Database (SQL) Output | Snowflake Output |
+| --- | --- | --- | --- | --- | --- |--- |--- |
+| Action                           | No  | No  | No  | No  | No  | No  | No  |
+| Any                              | No  | No  | No  | No  | No  | No  | No  |
+| Binary                           | No  | No  | No  | No  | No  | No  | No  |
+| Currency                         | Yes | Yes | Yes | Yes | No  | Yes | Yes |
+| DateTimeZone                     | Yes | Yes | Yes | No  | No  | Yes | No  |
+| Duration                         | No  | No  | Yes | No  | No  | No  | No  |
+| Function                         | No  | No  | No  | No  | No  | No  | No  |
+| None                             | No  | No  | No  | No  | No  | No  | No  |
+| Null                             | No  | No  | No  | No  | No  | No  | No  |
+| Time                             | Yes | Yes | No  | No | No   | Yes | Yes |
+| Type                             | No  | No  | No  | No  | No  | No  | No  |
+| Structured (List, Record, Table) | No  | No  | No  | No  | No  | No  | No  |
 
 When working with data types such as currency or percentage, we typically convert them to their decimal equivalents for most destinations. However, when reconnecting to these destinations and following the existing table path, you might encounter difficulties mapping, for example, currency to a decimal column. In such cases, try changing the data type in the editor to decimal, as this will facilitate easier mapping to the existing table and column.
 
@@ -197,9 +198,17 @@ To enable staging, right-click on the query and enable staging by selecting the 
 
 :::image type="content" source="media/dataflow-gen2-data-destinations-and-managed-settings/disable-staging.png" alt-text="Screenshot of the query drop-down menu with Enable staging emphasized.":::
 
+#### Snowflake destination preview limitations
+
+Snowflake as a data destination has the following known limitations:
+
+* **Dynamic schema is not supported.** If you change the columns in your source query (add, rename, or remove columns), you need to manually reconfigure the destination mapping. Other destinations like Fabric Lakehouse support dynamic schema, but Snowflake doesn't yet.
+* **Default destination only works for new tables.** When using the default destination experience with Snowflake, it creates a new table on the first refresh. However, if you later change the schema of your dataflow, the destination schema isn't updated automatically.
+* **Gateway is not supported.** Snowflake as a data destination is currently only available for cloud-based dataflows. Gateway support is coming soon.  
+
 #### Loading data into the Warehouse
 
-When you load data into the Warehouse, staging is required before the write operation to the data destination. This requirement improves performance. Currently, only loading into the same workspace as the dataflow is supported. Ensure staging is enabled for all queries that load into the warehouse.  
+When you load data into the Warehouse, staging is required before the write operation to the data destination. This requirement improves performance. Currently, only loading into the same workspace as the dataflow is supported. Ensure staging is enabled for all queries that load into the warehouse.
 
 When staging is disabled, and you choose Warehouse as the output destination, you get a warning to enable staging first before you can configure the data destination.
 
