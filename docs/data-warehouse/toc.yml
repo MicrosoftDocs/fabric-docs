@@ -280,12 +280,19 @@ items:
   - name: Capacity pause and resume
     href: pause-resume.md
     displayName: pause, warehouse
+  - name: Custom SQL pools
+    href: custom-sql-pools.md
   - name: Smoothing and throttling
     href: compute-capacity-smoothing-throttling.md
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
-
+  - name: How to
+    items:    
+    - name: Configure custom SQL pools in Fabric portal
+      href: configure-custom-sql-pools-portal.md
+    - name: Configure custom SQL pools with REST API
+      href: configure-custom-sql-pools-api.md
 - name: Migrate
   items:
   - name: Migration Assistant
