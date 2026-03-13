@@ -1,19 +1,19 @@
 ---
-title: Fabric Graph Architecture and Data Flow
-description: Learn how data flows through Fabric Graph, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
+title: How graph in Microsoft Fabric works
+description: Learn how data flows through graph in Microsoft Fabric, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
 ms.topic: concept-article
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
 
-# Fabric Graph architecture
+# How graph in Microsoft Fabric works
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Fabric Graph transforms structured data stored in OneLake into a modeled, queryable graph. You can then query the graph by using visual or GQL-based tools that execute through a common engine to produce visual, tabular, or programmatic results.
+Graph in Microsoft Fabric transforms structured data stored in OneLake into a modeled, queryable graph. You can then query the graph by using visual or GQL-based tools that execute through a common engine to produce visual, tabular, or programmatic results.
 
-This article briefly describes Graph's architecture and walks through the end-to-end data flow from source to insights.
+This article briefly describes graph's architecture and walks through the end-to-end data flow from source to insights.
 
 The following diagram illustrates the end-to-end data flow from source to insights:
 
@@ -38,11 +38,11 @@ In the graph modeling step, define the graph schema by specifying:
 This step establishes the [labeled property graph](graph-data-models.md) structure. You must complete graph modeling before you can query the graph.
 
 > [!NOTE]
-> Graph currently doesn't support schema evolution. If you need to make structural changes, such as adding new properties, modifying labels, or changing relationship types, reingest the updated source data into a new model.
+> graph currently doesn't support schema evolution. If you need to make structural changes, such as adding new properties, modifying labels, or changing relationship types, reingest the updated source data into a new model.
 
 ## Queryable graph
 
-When you save the graph model, Graph ingests data from the underlying lakehouse tables and constructs a read-optimized, queryable graph. This graph structure is optimized for traversal and pattern matching, which enables fast and efficient graph queries at scale.
+When you save the model, graph ingests data from the underlying lakehouse tables and constructs a read-optimized, queryable graph. This graph structure is optimized for traversal and pattern matching, which enables fast and efficient graph queries at scale.
 
 ## Query authoring
 
@@ -75,6 +75,6 @@ You can explore results interactively, share them as read-only querysets, or con
 
 ## Related content
 
-- [Graph overview](overview.md)
-- [Quickstart guide for Fabric Graph](quickstart.md)
-- [Tutorial: Introduction to Fabric Graph](tutorial-introduction.md)
+- [graph overview](overview.md)
+- [Quickstart guide for graph](quickstart.md)
+- [Tutorial: Introduction to graph](tutorial-introduction.md)
