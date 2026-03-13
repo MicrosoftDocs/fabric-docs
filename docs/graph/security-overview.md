@@ -10,11 +10,11 @@ ms.reviewer: wangwilliam
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-graph in Microsoft Fabric conforms to the security requirements of Microsoft Fabric's platform-wide security model. For comprehensive information about security across all Microsoft Fabric workloads, see [Security in Microsoft Fabric](../security/security-overview.md).
+Graph in Microsoft Fabric conforms to the security requirements of Microsoft Fabric's platform-wide security model. For comprehensive information about security across all Microsoft Fabric workloads, see [Security in Microsoft Fabric](../security/security-overview.md).
 
 ## Workspace roles and permissions
 
-graph uses the same workspace roles as other Microsoft Fabric items.
+Graph uses the same workspace roles as other Microsoft Fabric items.
 
 The following table summarizes the permissions associated with each Microsoft Fabric workspace role's capability on graph models.
 

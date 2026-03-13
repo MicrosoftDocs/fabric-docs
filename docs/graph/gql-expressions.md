@@ -190,7 +190,7 @@ GQL supports various built-in functions for data processing and analysis.
 
 ### Aggregate functions
 
-Use aggregate functions to evaluate an expression over a set of rows and get a final result value by combining the values computed for each row. graph supports the following aggregate functions:
+Use aggregate functions to evaluate an expression over a set of rows and get a final result value by combining the values computed for each row. Graph supports the following aggregate functions:
 
 - `count(*)` - counts rows
 - `sum(expression)` - sums numeric values

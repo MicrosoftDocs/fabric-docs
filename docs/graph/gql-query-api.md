@@ -29,7 +29,7 @@ The GQL Query API is a single endpoint (RPC over HTTP) that accepts GQL queries 
 
 ## Prerequisites
 
-- You need a graph in graph that contains data, including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
+- You need a graph that contains data, including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
 - You should be familiar with [property graphs and a basic understanding of GQL](gql-language-guide.md), including the structure of [execution outcomes and results](gql-language-guide.md#execution-outcomes-and-results).
 - You need to install and set up the [Azure CLI](/cli/azure/) tool `az` to sign in to your organization. Command line examples in this article assume use of a POSIX-compatible command line shell such as bash.
 

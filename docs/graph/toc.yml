@@ -35,7 +35,7 @@ items:
         href: graph-data-models.md
       - name: Compare graph and relational databases
         href: graph-relational-databases.md
-      - name: graph in Microsoft Fabric architecture
+      - name: How graph in Microsoft Fabric works
         href: how-graph-works.md
       - name: Security
         href: security-overview.md
@@ -61,7 +61,7 @@ items:
             items:
             - name: GQL language guide
               href: gql-language-guide.md
-            - name: 'GQL schema example: Social network'
+            - name: 'GQL schema example: social network'
               href: gql-schema-example.md
             - name: GQL graph patterns
               href: gql-graph-patterns.md
@@ -83,9 +83,9 @@ items:
               href: gql-reference-reserved-terms.md
       - name: REST API
         items:
-          - name: Graph Background Jobs REST API
+          - name: Graph background jobs REST API
             href: /rest/api/fabric/graphmodel/background-jobs
-          - name: Graph Items REST API
+          - name: Graph items REST API
             href: /rest/api/fabric/graphmodel/items
   - name: Resources
     items:

@@ -12,7 +12,7 @@ ms.reviewer: wangwilliam
 
 This article shows you how to monitor your graph workloads in Microsoft Fabric by using the [Monitoring hub](../admin/monitoring-hub.md). Use monitoring data to track activities, view historical activity, and gain insights into the performance and usage of your graph workloads. The data helps administrators and users troubleshoot problems and optimize resource usage.
 
-graph in Microsoft Fabric follows the existing Fabric-wide telemetry framework. graph items are workspace-scoped (each graph belongs to a specific workspace), but the Monitoring hub aggregates visibility based on your role and permissions. You don't need to navigate workspace-by-workspace to monitor your graph workloads. You can see them all in the centralized Monitoring hub, filtered by what you're authorized to see.
+Graph in Microsoft Fabric follows the existing Fabric-wide telemetry framework. Graph items are workspace-scoped (each graph belongs to a specific workspace), but the Monitoring hub aggregates visibility based on your role and permissions. You don't need to navigate workspace-by-workspace to monitor your graph workloads. You can see them all in the centralized Monitoring hub, filtered by what you're authorized to see.
 
 ## Access monitoring data
 

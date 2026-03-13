@@ -19,7 +19,7 @@ This tutorial provides a step-by-step walkthrough of an end-to-end graph scenari
 Before you start this tutorial, verify that:
 
 1. [graph is available in your region](overview.md#region-availability).
-1. graph is enabled in your Fabric tenant.
+1. Graph is enabled in your Fabric tenant.
 
    :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 

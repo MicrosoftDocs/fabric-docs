@@ -161,7 +161,7 @@ STRING [ NOT NULL ]
 
 ### Exact numeric types
 
-graph supports exact numbers that are negative or positive integers.
+Graph supports exact numbers that are negative or positive integers.
 
 **How comparison works:**
 
@@ -191,7 +191,7 @@ So do `UINT` and `UINT64`.
 
 ### Approximate numeric types
 
-graph supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
+Graph supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
 
 **How comparison works:**
 
@@ -262,7 +262,7 @@ Node reference values represent references to specific nodes in your graph. You 
 
 Compare node reference values only for equality. Two node reference values are equal if and only if they reference the same node.
 
-graph defines a deterministic order over reference values. However, this order can change from query to query and you shouldn't rely on it in production queries.
+Graph defines a deterministic order over reference values. However, this order can change from query to query and you shouldn't rely on it in production queries.
 
 **How to access properties:**
 
@@ -405,7 +405,7 @@ Lists are compared first by size, then element by element in order. Two lists ar
 
 **Group lists:**
 
-Group lists are lists bound by matching variable-length edge patterns. graph tracks their status as group lists.
+Group lists are lists bound by matching variable-length edge patterns. Graph tracks their status as group lists.
 
 You can use group lists in horizontal aggregation. For more information, see [GQL expressions and functions](gql-expressions.md).
 

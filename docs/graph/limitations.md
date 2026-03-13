@@ -25,7 +25,7 @@ For help with common problems, see [Troubleshooting graph](troubleshooting-and-f
 
 ### Data types
 
-graph currently supports the following data types:
+Graph currently supports the following data types:
 
 - Boolean (values are `true` and `false`)
 - Double (values are 64-bit floating point numbers)
@@ -79,7 +79,7 @@ When you add a node to your graph model, all columns from the source table are a
 
 ### Number of hops in multihop queries
 
-graph currently supports up to eight hops on variable length patterns.
+Graph currently supports up to eight hops on variable length patterns.
 
 ### Size of results
 
@@ -98,7 +98,7 @@ Queries time out if they take more than 20 minutes.
 
 ## GQL conformance
 
-graph supports the following query features from the GQL standard:
+Graph supports the following query features from the GQL standard:
 
 - FILTER statement
 - LET statement

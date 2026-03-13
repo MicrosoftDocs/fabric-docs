@@ -41,7 +41,7 @@ Before you start, make sure you're familiar with these concepts:
 
 **What you need:**
 
-- Access to graph with graph capabilities.
+- Access to a graph workspace with query capabilities.
 - Sample data or willingness to work with our social network examples.
 - Basic text editor for writing queries.
 
@@ -98,7 +98,7 @@ Sometimes, you also call edges relationships.
 Every graph element has these characteristics:
 
 - An **internal ID** that uniquely identifies it
-- **One or more labels** - descriptive names like `Person` or `knows`. In graph, graph edges always have exactly one label.
+- **One or more labels** - descriptive names like `Person` or `knows`. In graph, edges always have exactly one label.
 - **Properties** - name-value pairs that store data about the element (such as `firstName: "Alice"` or `birthday: "19730108"`).
 
 ### How graphs are structured
@@ -112,7 +112,7 @@ Property graphs as supported in graph are always well-formed, meaning every edge
 
 ### Graph models and graph types
 
-The **graph model** describes the structure of a graph in graph. It acts like a database schema for your application domain. Graph models define:
+The **graph model** describes the structure of a graph. It acts like a database schema for your application domain. Graph models define:
 
 - Which nodes and edges can exist
 - What labels and properties they can have

@@ -108,7 +108,7 @@ Therefore the previous syntax can be understood to effectively define the follow
 
 ### Save time with inheritance shortcuts
 
-Repeating labels and properties from parent node types gets tedious and error-prone. graph provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
+Repeating labels and properties from parent node types gets tedious and error-prone. Graph provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
 
 ```gql
 (:Post => :Message += {

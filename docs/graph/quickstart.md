@@ -21,7 +21,7 @@ For a comprehensive tutorial that covers the full Adventure Works data model and
 Before you start this quickstart, verify that:
 
 1. [graph is available in your region](overview.md#region-availability).
-1. graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
+1. Graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
 
    :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 

@@ -1,5 +1,5 @@
 ---
-title: graph in Microsoft Fabric Architecture and Data Flow
+title: How graph in Microsoft Fabric works
 description: Learn how data flows through graph in Microsoft Fabric, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
 ms.topic: concept-article
 ms.date: 03/12/2026
@@ -7,11 +7,11 @@ ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
 
-# graph in Microsoft Fabric architecture
+# How graph in Microsoft Fabric works
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-graph in Microsoft Fabric transforms structured data stored in OneLake into a modeled, queryable graph. You can then query the graph by using visual or GQL-based tools that execute through a common engine to produce visual, tabular, or programmatic results.
+Graph in Microsoft Fabric transforms structured data stored in OneLake into a modeled, queryable graph. You can then query the graph by using visual or GQL-based tools that execute through a common engine to produce visual, tabular, or programmatic results.
 
 This article briefly describes graph's architecture and walks through the end-to-end data flow from source to insights.
 
@@ -25,7 +25,7 @@ Data originates from external systems such as Azure services, other cloud platfo
 
 ## Storage in OneLake
 
-You store ingested data in [OneLake](../onelake/onelake-overview.md) as tabular source tables in a lakehouse. graph reads directly from your lakehouse tables, so you don't need to duplicate or move data into a separate database.
+You store ingested data in [OneLake](../onelake/onelake-overview.md) as tabular source tables in a lakehouse. Graph reads directly from your lakehouse tables, so you don't need to duplicate or move data into a separate database.
 
 ## Graph modeling
 
@@ -42,7 +42,7 @@ This step establishes the [labeled property graph](graph-data-models.md) structu
 
 ## Queryable graph
 
-When you save the graph model, graph ingests data from the underlying lakehouse tables and constructs a read-optimized, queryable graph. This graph structure is optimized for traversal and pattern matching, which enables fast and efficient graph queries at scale.
+When you save the model, graph ingests data from the underlying lakehouse tables and constructs a read-optimized, queryable graph. This graph structure is optimized for traversal and pattern matching, which enables fast and efficient graph queries at scale.
 
 ## Query authoring
 
