@@ -312,11 +312,9 @@ You enable and configure data‑driven styling from the Layer settings pane whil
 
     Select the color next to a category name to assign a custom color to that category:
 
-    :::image type="content" source="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel showing the Color by option with a dropdown menu displaying different categories, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each category in data-driven styling.":::
+    :::image type="content" source="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel displaying a Color by dropdown menu with category options. Each category has an associated color swatch ranging from dark red through orange to teal. A color picker interface appears above showing a gradient from light red to dark red with a hue slider and hex color input field. Users can select any category name to open the color picker and assign a custom color to that specific category for data-driven styling on the map.":::
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
-
-    :::image type="content" source="media/customize-map/data-layer-legend.png" alt-text="Fabric Maps layer settings panel displaying color-by-category data-driven styling options. A dropdown menu shows category names with color swatches, ranging from dark red through purple to teal. Each category has an assigned color used to differentiate distinct values on the map legend. The panel demonstrates how to customize colors for individual categories in geographic data visualization.":::
-  
+    :::image type="content" source="media/customize-map/data-layer-legend.png" alt-text="A screenshot showing a Fabric Maps layer settings panel displaying color-by-category data-driven styling options. A dropdown menu shows category names with color swatches, ranging from dark red through purple to teal. Each category has an assigned color used to differentiate distinct values on the map legend. The panel demonstrates custom colors for individual categories in geographic data visualization.":::
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
 
 * **Color by value range**
