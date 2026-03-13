@@ -19,7 +19,7 @@ To decide which data ingestion option to use, you can use the following criteria
 - Use the **COPY (Transact-SQL)** statement for code-rich data ingestion operations, for the highest data ingestion throughput possible, or when you need to add data ingestion as part of a Transact-SQL logic. 
     - To get started, see [Ingest data using the COPY statement](ingest-data-copy.md)
     - The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] also supports traditional `BULK INSERT` statement that is synonym for `COPY INTO` with classic loading options.
-    - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders. OneLake sources are currently a preview feature.
+    - The `COPY` statement in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports data sources from Azure storage accounts and OneLake lakehouse folders.
 - Use **pipelines** for code-free or low-code, robust data ingestion workflows that run repeatedly, at a schedule, or that involves large volumes of data. 
     - To get started, see [Ingest data into your Warehouse using pipelines](ingest-data-pipelines.md).
     - Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
