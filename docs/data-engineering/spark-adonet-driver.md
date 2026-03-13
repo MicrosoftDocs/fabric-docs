@@ -38,9 +38,9 @@ Before using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering,
 - **Workspace and Lakehouse IDs**: GUID identifiers for your Fabric workspace and lakehouse
 - **Azure CLI** (optional): Required for Azure CLI authentication method
 
-## Download, Include, Reference and Verify
+## Download, include, reference, and verify
 
-### Download NuGet Package
+### Download NuGet package
 
 Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering version 1.0.0 is in public preview which you can download from these download center links.
 
@@ -57,7 +57,7 @@ Include the downloaded NuGet package in your project and add a reference of the 
 </ItemGroup>
 ```
 
-### Verify Installation
+### Verify installation
 
 After inclusion and reference, verify the package is available in your project:
 
@@ -69,7 +69,7 @@ var factory = LivyProviderFactory.Instance;
 Console.WriteLine($"Provider: {factory.GetType().Name}");
 ```
 
-## Quick Start Example
+## Quick start example
 
 ```csharp
 using Microsoft.Spark.Livy.AdoNet;
@@ -99,9 +99,9 @@ if (await reader.ReadAsync())
 }
 ```
 
-## Connection String Format
+## Connection string format
 
-### Basic Format
+### Basic format
 
 The Microsoft ADO.NET Driver uses standard ADO.NET connection string format:
 
@@ -109,7 +109,7 @@ The Microsoft ADO.NET Driver uses standard ADO.NET connection string format:
 Parameter1=Value1;Parameter2=Value2;...
 ```
 
-### Required Parameters
+### Required parameters
 
 | Parameter | Description | Example |
 |-----------|-------------|---------|
@@ -119,9 +119,9 @@ Parameter1=Value1;Parameter2=Value2;...
 | `FabricLakehouseID` | Microsoft Fabric lakehouse identifier (GUID) | `<lakehouse-id>` |
 | `AuthFlow` | Authentication method | `AzureCli`, `BrowserBased`, `ClientSecretCredential`, `ClientCertificateCredential`, `AuthAccessToken`, `FileToken` |
 
-### Optional Parameters
+### Optional parameters
 
-#### Connection Settings
+#### Connection settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -130,7 +130,7 @@ Parameter1=Value1;Parameter2=Value2;...
 | `SessionName` | String | (auto) | Custom name for the Spark session |
 | `AutoReconnect` | Boolean | `false` | Enable automatic session recovery |
 
-#### Connection Pool Settings
+#### Connection pool settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -142,7 +142,7 @@ Parameter1=Value1;Parameter2=Value2;...
 | `ValidateConnections` | Boolean | `true` | Validate connections before use |
 | `ValidationTimeoutMs` | Integer | `5000` | Timeout for connection validation |
 
-#### Logging Settings
+#### Logging settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -175,7 +175,7 @@ Server=https://api.fabric.microsoft.com/v1;SparkServerType=Fabric;FabricWorkspac
 
 The Microsoft ADO.NET Driver supports multiple authentication methods through Microsoft Entra ID (formerly Azure Active Directory). Authentication is configured using the `AuthFlow` parameter in the connection string.
 
-### Authentication Methods
+### Authentication methods
 
 | AuthFlow Value | Description | Best For |
 |----------------|-------------|----------|
@@ -299,9 +299,9 @@ await connection.OpenAsync();
 > [!NOTE]
 > We strongly recommend avoiding hard‑coding credentials such as passwords, keys, secrets, tokens, or certificates in your code. Instead, use Azure Key Vault to securely store these values and retrieve them at runtime.
 
-## Usage Examples
+## Usage examples
 
-### Basic Connection and Query
+### Basic connection and query
 
 ```csharp
 using Microsoft.Spark.Livy.AdoNet;
@@ -342,7 +342,7 @@ while (await reader.ReadAsync())
 }
 ```
 
-### Parameterized Queries
+### Parameterized queries
 
 ```csharp
 using var command = connection.CreateCommand();
@@ -420,7 +420,7 @@ while (await reader.ReadAsync())
 Console.WriteLine($"Total rows processed: {rowCount}");
 ```
 
-### Schema Discovery
+### Schema discovery
 
 ```csharp
 // List all tables
@@ -494,7 +494,7 @@ using var reader = await command.ExecuteReaderAsync();
 // Process results...
 ```
 
-## Data Type Mapping
+## Data type mapping
 
 The driver maps Spark SQL data types to .NET types:
 
@@ -545,11 +545,15 @@ if (await reader.ReadAsync())
 
 ## Troubleshooting
 
-### Common Issues
+This section provides guidance for resolving common issues you might encounter when using the Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering.
 
-#### Connection Failures
+### Common issues
 
-**Problem**: Cannot connect to Microsoft Fabric
+The following sections describe common problems and their solutions:
+
+#### Connection failures
+
+**Problem**: Can't connect to Microsoft Fabric
 
 **Solutions**:
 1. Verify `FabricWorkspaceID` and `FabricLakehouseID` are correct GUIDs
@@ -557,7 +561,7 @@ if (await reader.ReadAsync())
 3. Ensure you have appropriate Fabric workspace permissions
 4. Verify network connectivity to `api.fabric.microsoft.com`
 
-#### Authentication Errors
+#### Authentication errors
 
 **Problem**: Authentication fails with Azure CLI
 
@@ -566,7 +570,7 @@ if (await reader.ReadAsync())
 2. Verify correct tenant: `az account set --subscription <subscription-id>`
 3. Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
 
-#### Query Timeouts
+#### Query timeouts
 
 **Problem**: Queries timing out on large tables
 
@@ -575,7 +579,7 @@ if (await reader.ReadAsync())
 2. Use `LIMIT` clause to restrict result size during development
 3. Ensure Spark cluster has adequate resources
 
-#### Session Creation Timeout
+#### Session creation timeout
 
 **Problem**: Connection times out during session creation
 
@@ -584,9 +588,11 @@ if (await reader.ReadAsync())
 2. Check Fabric capacity availability
 3. Verify workspace hasn't reached session limits
 
-### Enable Logging
+### Enable logging
 
-For troubleshooting, enable detailed logging via connection string:
+When troubleshooting issues, enabling detailed logging can help you identify the root cause of problems. You can enable logging through the connection string or programmatically.
+
+To enable detailed logging via connection string:
 
 ```
 LogLevel=Debug
@@ -613,7 +619,7 @@ Log levels:
 - `Warning`: Warnings only
 - `Error`: Errors only
 
-## Related Content
+## Related content
 
 * [Apache Spark Runtimes in Fabric](./runtime.md)
 * [Fabric Runtime 1.3](./runtime-1-3.md)

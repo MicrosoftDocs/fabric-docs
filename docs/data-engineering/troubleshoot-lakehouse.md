@@ -1,9 +1,7 @@
 ---
 title: Troubleshoot Lakehouse Errors in Data Engineering
 description: Troubleshoot common Lakehouse issues in Data Engineering in Microsoft Fabric.
-author: ValOlson
-ms.author: vallariolson
-ms.reviewer: eur
+ms.reviewer: vallariolson
 ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---

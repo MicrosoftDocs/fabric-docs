@@ -1,9 +1,7 @@
 ---
 title: Troubleshoot Permission and Capacity Errors in Data Engineering
 description: Troubleshoot common permission and capacity issues in Data Engineering in Microsoft Fabric.
-author: ValOlson
-ms.author: vallariolson
-ms.reviewer: eur
+ms.reviewer: vallariolson
 ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---
