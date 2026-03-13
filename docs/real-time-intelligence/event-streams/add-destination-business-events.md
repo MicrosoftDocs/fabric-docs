@@ -68,7 +68,4 @@ To add a business event as a destination to your eventstream, follow these steps
 
     
 ## Related content
-You can set an alert on the business event by using Eventstream or Real-Time hub. To learn more, see the following articles:
-
-- [Set alert on a business event using Eventstream](set-alerts-event-stream.md)
-- [Set alert on a business event in Real-Time hub](../../real-time-hub/set-alerts-data-streams.md)
+You can set an alert on the business event by using Eventstream or Real-Time hub. To learn more, see the following article: [Set alert on a business event in Real-Time hub](../../real-time-hub/set-alerts-data-streams.md)
