@@ -122,22 +122,26 @@ Consumption rates are subject to change at any time. Microsoft uses reasonable e
 
 ## Monitor the Usage
 
-The workload meter associated with the task determines the charges for prebuilt Foundry Tools in Fabric. For example, if Foundry Tools usage is derived from a Spark workload, the AI usage is grouped together and billed under the Spark billing meter on [Fabric Capacity Metrics app](../../enterprise/metrics-app-compute-page.md).
+Prebuilt AI services in Fabric are billed against the Copilot and AI billing meter on your Fabric capacity. For current consumption rates, see [Consumption rate](#consumption-rate) earlier in this article.
+
+You can monitor AI services usage using the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md). To view AI-related usage:
+
+1. Install the [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md#install-the-app) (requires capacity admin permissions for initial setup).
+2. In the app, look for usage reported under the Copilot and AI meter to see capacity consumption from AI Services and AI Functions operations.
 
 > [!NOTE]
-> The billing for prebuilt Foundry Tools does not support the [Autoscale Spark billing](../../data-engineering/autoscale-billing-for-spark-overview.md).
+> Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
+> 
+> Prebuilt AI services and AI functions usage is reported under the Copilot and AI meter.
+> This is separate from the Spark compute used to run your notebook or Spark job, which continues to be reported under the Spark billing meter. For more information on Spark compute usage, see [Spark compute usage reporting](../../data-engineering/spark-compute.md).
 
 ### Example
+A data analyst uses [Fabric AI functions](../ai-functions/overview.md) in a Fabric PySpark notebook to leverage LLM to classify millions of customer reviews into product categories. The notebook runs on Spark compute and calls [`ai.classify`](../ai-functions/pyspark/classify.md) for each row.
 
-An online shop owner uses SynapseML and Spark to categorize millions of products into relevant categories. Currently, the shop owner applies hard-coded logic to clean and map the raw "product type" to categories. However, the owner plans to switch to use of the new native Fabric OpenAI LLM (Large Language Model) endpoints. This iteratively processes the data against an LLM for each row, and then categorizes the products based on their "product name," "description," "technical details," and so on.
+- The CU consumption for running the notebook (cluster time, data processing) is reported under the Spark billing meter.
+- The CU consumption for the AI function calls (token usage for classification) is reported as AI Functions under the Copilot and AI billing meter.
 
-The expected cost for Spark usage is 1000 CUs. The expected cost for OpenAI usage is about 300 CUs.
-
-To test the new logic, first iterate it in a Spark notebook interactive run. For the operation name of the run, use "Notebook Run." The owner expects to see an all-up usage of 1300 CUs under "Notebook Run," with the Spark billing meter accounting for the entire usage.​
-
-Once the shop owner validates the logic, the owner sets up the regular run and expects to see an all-up usage of 1300 CUs under the operation name "Spark Job Scheduled Run," with the Spark billing meter accounting for the entire usage.​
-
-According to [Spark compute usage reporting](../../data-engineering/billing-capacity-management-for-spark.md#spark-usage-in-capacity-metrics-app), all Spark related operations are classified as [background operations](../../enterprise/fabric-operations.md#background-operations).
+This separation makes it easier to track and forecast AI-related costs independently from your compute costs.
 
 ## Related content
 
