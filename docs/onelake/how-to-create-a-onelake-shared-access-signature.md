@@ -4,6 +4,7 @@ description: Learn how to create a OneLake shared access signature to provide sh
 ms.reviewer: mabasile
 ms.topic: concept-article
 ms.date: 04/10/2025
+ai-usage: ai-assisted
 
 #CustomerIntent: As a data engineer, I want to generate a OneLake SAS to integrate new applications into my Fabric environment.
 ---
@@ -222,6 +223,68 @@ The following example shows a OneLake SAS URI with a OneLake SAS token appended 
 ```HTTP
 https://onelake.blob.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/Files/?sp=rw&st=2023-05-24T01:13:55Z&se=2023-05-24T09:13:55Z&skoid=<object-id>&sktid=<tenant-id>&skt=2023-05-24T01:13:55Z&ske=2023-05-24T09:13:55Z&sks=b&skv=2022-11-02&sv=2022-11-02&sr=d&sig=<signature>
 ```
+
+## Create a OneLake SAS with Python
+
+The following example shows how to generate a OneLake SAS for a lakehouse directory by using the Azure SDK for Python. The example acquires credentials, requests a user delegation key, and then generates a SAS token with read and list permissions.
+
+### Prerequisites
+
+Install the required packages:
+
+```bash
+pip install azure-identity azure-storage-blob
+```
+
+### Generate a SAS for a lakehouse directory
+
+```python
+from datetime import datetime, timezone, timedelta
+from azure.identity import DefaultAzureCredential
+from azure.storage.blob import (
+    BlobServiceClient,
+    generate_blob_sas,
+    BlobSasPermissions,
+)
+
+# Set the OneLake blob endpoint as the account URL.
+account_url = "https://onelake.blob.fabric.microsoft.com"
+
+# Authenticate with Microsoft Entra ID.
+credential = DefaultAzureCredential()
+client = BlobServiceClient(account_url, credential=credential)
+
+# Request a user delegation key valid for one hour.
+start_time = datetime.now(timezone.utc)
+expiry_time = start_time + timedelta(hours=1)
+delegation_key = client.get_user_delegation_key(start_time, expiry_time)
+
+# Generate a SAS token for a file in the lakehouse.
+# Replace the workspace, lakehouse, and file path with your values.
+sas_token = generate_blob_sas(
+    account_name="onelake",
+    container_name="myWorkspace",
+    blob_name="myLakehouse.Lakehouse/Files/sales.csv",
+    user_delegation_key=delegation_key,
+    permission=BlobSasPermissions(read=True),
+    expiry=expiry_time,
+    start=start_time,
+)
+
+# Build the full SAS URL.
+sas_url = f"{account_url}/myWorkspace/myLakehouse.Lakehouse/Files/sales.csv?{sas_token}"
+print(sas_url)
+```
+
+To generate a SAS for a directory instead of a single file, use `generate_container_sas` with the `resource_types` parameter set to directory.
+
+> [!NOTE]
+> If you run this code in a Fabric notebook, you must use the [regional endpoint](onelake-access-api.md#data-residency) instead of `onelake.blob.fabric.microsoft.com` when requesting the user delegation key.
+
+For more information about the Python libraries used in this example, see:
+
+- [Azure Identity client library for Python](/python/api/overview/azure/identity-readme)
+- [Azure Storage Blob client library for Python](/python/api/overview/azure/storage-blob-readme)
 
 ## Related content
 
