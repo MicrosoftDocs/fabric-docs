@@ -21,7 +21,7 @@ Select the **alert** icon on the Activator destination in the eventstream. You s
 
 Select the **alert** icon on the Activator destination in the eventstream.
 
-:::image type="content" source="../media/set-alerts-event-stream/stop-alert-rule-toggle.png" alt-text="Screenshot of the alert icon on the Activator destination and rule status toggle." lightbox="../media/set-alerts-event-stream/stop-alert-rule-toggle.png" border="true":::
+:::image type="content" source="./media/manage-rules/stop-alert-rule-toggle.png" alt-text="Screenshot of the alert icon on the Activator destination and rule status toggle." lightbox="./media/manage-rules/stop-alert-rule-toggle.png" border="true":::
 
 You can use the same toggle to start the alert rule again after you stop it.
 
@@ -29,17 +29,17 @@ You can use the same toggle to start the alert rule again after you stop it.
 
 In the **Rules** pane, select the **ellipsis (...)** on the Activator destination in the eventstream.
 
-:::image type="content" source="../media/set-alerts-event-stream/edit-delete-rule.png" alt-text="Screenshot of the context menu for a rule in the Rules pane." lightbox="../media/set-alerts-event-stream/edit-delete-rule.png" border="true":::
+:::image type="content" source="./media/manage-rules/edit-delete-rule.png" alt-text="Screenshot of the context menu for a rule in the Rules pane." lightbox="./media/manage-rules/edit-delete-rule.png" border="true":::
 
 ### Open the rule in the Fabric Activator UI
 
 In the **Rules** pane, select the **ellipsis (...)** on the Activator destination in the eventstream.
 
-:::image type="content" source="../media/set-alerts-event-stream/open-activator.png" alt-text="Screenshot of the context menu for a rule in the Rules pane with Open in Activator highlighted." lightbox="../media/set-alerts-event-stream/open-activator.png" border="true":::
+:::image type="content" source="./media/manage-rules/open-activator.png" alt-text="Screenshot of the context menu for a rule in the Rules pane with Open in Activator highlighted." lightbox="./media/manage-rules/open-activator.png" border="true":::
 
 ### Add another alert rule 
 
 To add more rules to the Activator item, select **Add rule** at the bottom of the **Rules** pane. 
 
 
-:::image type="content" source="../media/set-alerts-event-stream/rules-pane-add-rule-button.png" alt-text="Screenshot of the context menu for a rule in the Rules pane with Add rule highlighted." lightbox="../media/set-alerts-event-stream/rules-pane-add-rule-button.png" border="true":::
+:::image type="content" source="./media/manage-rules/rules-pane-add-rule-button.png" alt-text="Screenshot of the context menu for a rule in the Rules pane with Add rule highlighted." lightbox="./media/manage-rules/rules-pane-add-rule-button.png" border="true":::
