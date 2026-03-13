@@ -1,16 +1,16 @@
 ---
-title: Optimize GQL Query Performance in Fabric Graph
-description: Learn how to write efficient GQL queries for Fabric Graph. Apply filtering, traversal, and key constraint strategies to improve query performance.
+title: Optimize GQL Query Performance for graph in Microsoft Fabric
+description: Learn how to write efficient GQL queries for graph in Microsoft Fabric. Apply filtering, traversal, and key constraint strategies to improve query performance.
 ms.topic: how-to
-ms.date: 02/27/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
-# Optimize GQL query performance in Fabric Graph
+# Optimize GQL query performance for graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article provides guidance for writing GQL (Graph Query Language) queries that perform predictably and efficiently when working with Fabric Graph. The recommendations are based on current platform behavior and documented constraints.
+This article provides guidance for writing GQL (Graph Query Language) queries that perform predictably and efficiently when working with graph in Microsoft Fabric. The recommendations are based on current platform behavior and documented constraints.
 
 For hard limits on graph size, result size, and query timeout, see [Current limitations](limitations.md).
 
@@ -44,7 +44,7 @@ Both queries return the same results, but the first version lets the query engin
 
 Return only the node and edge properties your scenario requires. Avoid returning full nodes or using `RETURN *` when you need only a subset of properties.
 
-In Graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, all columns from the source table are added as properties by default unless you remove them.
+In graph, OneLake tables back node properties. Selecting unnecessary properties increases data read, serialization cost, and response size. During graph modeling, all columns from the source table are added as properties by default unless you remove them.
 
 **Recommended:** Narrow projection.
 
@@ -83,7 +83,7 @@ RETURN p.firstName, friend.firstName
 ```
 
 > [!IMPORTANT]
-> Graph truncates responses larger than 64 MB and aggregation performance can be unstable when results exceed 128 MB. Use `FILTER`, `LIMIT`, and `GROUP BY` to keep results within these bounds. For more information, see [Current limitations](limitations.md).
+> graph truncates responses larger than 64 MB and aggregation performance can be unstable when results exceed 128 MB. Use `FILTER`, `LIMIT`, and `GROUP BY` to keep results within these bounds. For more information, see [Current limitations](limitations.md).
 
 ## Keep traversals shallow and targeted
 
@@ -107,7 +107,7 @@ RETURN *
 ```
 
 > [!IMPORTANT]
-> Graph supports up to **eight hops** in variable-length patterns. Even so, use the tightest bounds your scenario allows. In the example, the `{1,3}` pattern is significantly cheaper than `{1,8}` on the same graph.
+> graph supports up to **eight hops** in variable-length patterns. Even so, use the tightest bounds your scenario allows. In the example, the `{1,3}` pattern is significantly cheaper than `{1,8}` on the same graph.
 
 ## Use TRAIL to prevent redundant traversals
 
