@@ -42,7 +42,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
 |  |  |  |  |  | Organizational account |  |
-| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping: <br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String  |
+| [Azure Cosmos DB for MongoDB](connector-azure-cosmos-db-for-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 isn't supported. Differences are in the data type mapping: <br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String  |
 | [Azure Data Explorer](connector-azure-data-explorer-overview.md) | ✓/✓ | Service principal |  | ✓/✓ |  |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
@@ -54,14 +54,14 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |  |  | User-assigned managed identity |  |  | Workspace identity |  |
 |  |  |  |  |  | Organizational account |  |
 | [Azure Database for MySQL](connector-azure-database-for-mysql-overview.md) | ✓/✓ | Basic | Support `SSLMode` and `UseSystemTrustStore`. | ✓/✓ | Basic | `SSLMode` and `UseSystemTrustStore` are not supported. |
-| Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`.<br>Support Lookup activity. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path. <br>Lookup activity is not supported. |
+| Azure Databricks Delta Lake | ✓/✓ | Access token | Support `domain` and `clusterId`.<br>Support Lookup activity. | ✓/✓ | Personal Access Token | Support Server Hostname, HTTP Path. <br>Lookup activity isn't supported. |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 | [Azure File Storage](connector-azure-files-overview.md) | ✓/✓ | Account key |  | ✓/✓ | Account key |  |
 |  |  | Shared access signature |  |  |  |  |
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
-| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓ | Basic | Support `sslMode`. <br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `readBufferSize`, `timezone`, `encoding`. | ✓/✓ | Basic | `sslMode` is not supported.  <br> Additional connection properties are not supported.|
+| [Azure Database for PostgreSQL](connector-azure-database-for-postgresql-overview.md) | ✓/✓ | Basic | Support `sslMode`. <br>Support additional connection properties: `schema`, `pooling`, `connectionTimeout`, `commandTimeout`, `trustServerCertificate`, `readBufferSize`, `timezone`, `encoding`. | ✓/✓ | Basic | `sslMode` isn't supported.  <br> Additional connection properties are not supported.|
 |  |  | System-assigned managed identity |  |  |  |  |
 |  |  | User-assigned managed identity |  |  |  |  |
 |  |  | Service principal |  |  |  |  |
@@ -95,7 +95,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|----------------------------|----------------------------|
-| [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table is not supported| ✓/✓ | | Support Upsert for Table|
+| [Microsoft Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | Service principal |Upsert for Table isn't supported| ✓/✓ | | Support Upsert for Table|
 |                    |                     | System-assigned managed identity | |                       |                            | |
 |                    |                     | User-assigned managed identity   | |                       |                            | |
 |                    |                     |                                 | |                       | Organizational account      | |
@@ -110,9 +110,9 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|-------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
-| [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD is not supported |
+| [Amazon Redshift](connector-amazon-redshift-overview.md) | ✓/- | Basic | Support Amazon Redshift UNLOAD  | ✓/- | Amazon Redshift |Amazon Redshift UNLOAD isn't supported |
 | [DB2](connector-ibm-db2-database-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) | ✓/- | |  Version 1.1 is not supported. (Return the result of the first statement when executing multiple statements) |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/- | UserAuthentication | Support version 1.1 (Return the results of the first statement after excluding the evaluation statements when executing multiple statements) | ✓/- | |  Version 1.1 isn't supported. (Return the result of the first statement when executing multiple statements) |
 | | | ServiceAuthentication | | | Service Account Login | |
 | [Greenplum](connector-greenplum-for-pipeline-overview.md) | ✓/- | Basic | | ✓/- | Basic | |
 | [Hive](connector-hive-llap-overview.md) | ✓/- | Anonymous | | N | | |
@@ -138,8 +138,8 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | | | Windows | | | Windows | |
 | [SAP Table](connector-sap-table-application-server-overview.md) | ✓/- | Basic | | ✓/− | Basic | |
 | | | Secure Network Communications (SNC) | | | | |
-| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support treatDecimalAsString | ✓/✓ | | treatDecimalAsString is not supported|
-| | | KeyPair |Support UseUtcTimestamps | | KeyPair | UseUtcTimestamps is not supported|
+| [Snowflake](connector-snowflake-overview.md) | ✓/✓ | Basic | Support treatDecimalAsString | ✓/✓ | | treatDecimalAsString isn't supported|
+| | | KeyPair |Support UseUtcTimestamps | | KeyPair | UseUtcTimestamps isn't supported|
 | | | | | | Snowflake | |
 | | | | | | Microsoft Account | |
 | [Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-overview.md) | ✓/- | SQL | | ✓/- | Basic | |
@@ -163,9 +163,9 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 | **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |----------------------|---------------------|-------------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
-| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    | Support `sessionToken`. | ✓/✓                           | Access key                | `sessionToken` is not supported. |
+| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    | Support `sessionToken`. | ✓/✓                           | Access key                | `sessionToken` isn't supported. |
 |                      |                     | Temporary security credential |                        |                               |                           |                           |
-| [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) | ✓/-                | Access key                    | Support `forcePathStyle`. | ✓/✓                           | Access key                | `forcePathStyle` is not supported. |
+| [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) | ✓/-                | Access key                    | Support `forcePathStyle`. | ✓/✓                           | Access key                | `forcePathStyle` isn't supported. |
 | File System          | ✓/✓                | Windows                       |  | ✓/✓                           | Windows                   |  |
 | [FTP](connector-ftp-overview.md)                  | ✓/-                | Basic                         | Support `enableSsl` and `enableServerCertificateValidation`. | ✓/-                           | Basic                     | `enableSsl` and `enableServerCertificateValidation` are not supported. |
 |                      |                     | Anonymous                     |                        |                               | Anonymous                 |                           |
@@ -173,7 +173,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [HDFS](connector-hdfs-for-pipeline-overview.md)                 | ✓/-                | Windows                       |  | ✓/-                           |                           |  |
 |                      |                     | Anonymous                     |                        |                               | Anonymous                 |                           |
 | [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) | ✓/-                | Access key                    |  | ✓/-                           | Access Key                |  |
-| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `skipHostKeyValidation` is not supported. |
+| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `skipHostKeyValidation` isn't supported. |
 |                      |                     | SSH public key                |                        |                               |                           |                           |
 |                      |                     | multifactor                   |                        |                               |                           |                           |
 ## File format connectors
@@ -183,7 +183,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|-------------------------|-------------------------------|----------------------------|
 | AVRO               | ✓/✓                 |                         | ✓/✓                           |                            |
 | Binary             | ✓/✓                 |                         | ✓/✓                           |                            |
-| Delimited Text     | ✓/✓                 |  Support skipLineCount                       | ✓/✓                           |   skipLineCount is not supported                        |
+| Delimited Text     | ✓/✓                 |  Support skipLineCount                       | ✓/✓                           |   skipLineCount isn't supported                        |
 | Excel              | ✓/-                 |                         | ✓/-                           |                            |
 | JSON               | ✓/✓                 |                         | ✓/✓                           |                            |
 | ORC                | ✓/✓                 |                         | ✓/✓                           |                            |
@@ -198,8 +198,8 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Cassandra](connector-cassandra-overview.md) | ✓/- | Anonymous | | ✓/- | Anonymous | |
 | | | Basic | | | Basic | |
-| [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String <br><br>Support `connectionString` and `database`. | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support server. |
-| [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  <br><br>Support `connectionString` and `database`.| ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support Server and Cluster. |
+| [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 isn't supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String <br><br>Support `connectionString` and `database`. | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support server. |
+| [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 isn't supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  <br><br>Support `connectionString` and `database`.| ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support Server and Cluster. |
 
 ## Services & apps connectors
 
@@ -227,7 +227,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | [Salesforce Service Cloud](connector-salesforce-service-cloud-overview.md) | ✓/✓         | OAuth2ClientCredentials | | ✓/✓                   | Organizational account  | |
 | SAP Cloud for Customer (C4C) | ✓/✓         | Basic                 | | N                      |                          | |
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
-| [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
+| [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize isn't supported|
 | | | OAuth2 | | | | |
 | [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
 | | | | | | Organizational account | |
