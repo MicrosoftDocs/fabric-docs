@@ -1,8 +1,8 @@
 ---
-title: GQL reserved words reference for Fabric Graph
-description: Review the complete list of GQL reserved words and keywords in Fabric Graph, including standard GQL reserved terms and implementation-specific reserved words.
+title: GQL reserved words reference for graph in Microsoft Fabric
+description: Review the complete list of GQL reserved words and keywords in graph in Microsoft Fabric, including standard GQL and implementation-specific reserved words.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -10,12 +10,12 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article provides a comprehensive reference of GQL (Graph Query Language) reserved words for [Fabric Graph](overview.md). Reserved words are keywords that have special meaning in GQL and can't be used as identifiers, such as names for variables or properties.
+This article provides a comprehensive reference of GQL (Graph Query Language) reserved words for [graph in Microsoft Fabric](overview.md). Reserved words are keywords that have special meaning in GQL and can't be used as identifiers, such as names for variables or properties.
 
-The alphabetical list includes both standard GQL reserved words and reserved words specific to Graph.
+The alphabetical list includes both standard GQL reserved words and reserved words specific to graph.
 
 > [!NOTE]
-> Items marked "Graph only" are reserved for potential Microsoft-specific extensions to GQL. Items marked "GQL standard prereserved" are reserved for future use in the GQL standard.
+> Items marked "graph only" are reserved for potential Microsoft-specific extensions to GQL. Items marked "GQL standard prereserved" are reserved for future use in the GQL standard.
 
 Use this reference to avoid conflicts when naming objects in your GQL queries and scripts.
 
@@ -73,8 +73,8 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **COLLECT_LIST** - GQL standard
 - **COMMIT** - GQL standard
 - **CONSTRAINT** - GQL standard prereserved
-- **CONSTRUCT** - Graph only
-- **CONTAINS** - Graph only
+- **CONSTRUCT** - graph only
+- **CONTAINS** - graph only
 - **COPY** - GQL standard
 - **COS** - GQL standard
 - **COSH** - GQL standard
@@ -97,7 +97,7 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **DATETIME** - GQL standard
 - **DEC** - GQL standard
 - **DECIMAL** - GQL standard
-- **DECLARE** - Graph only
+- **DECLARE** - graph only
 - **DEGREES** - GQL standard
 - **DELETE** - GQL standard
 - **DESC** - GQL standard
@@ -113,16 +113,16 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## E
 
-- **EDGE** - Graph only
-- **EDGES** - Graph only
-- **ELEMENT** - Graph only
-- **ELEMENTS** - Graph only
+- **EDGE** - graph only
+- **EDGES** - graph only
+- **ELEMENT** - graph only
+- **ELEMENTS** - graph only
 - **ELEMENT_ID** - GQL standard
 - **ELSE** - GQL standard
 - **END** - GQL standard
-- **ENDS** - Graph only
-- **ENUM** - Graph only
-- **EXACT** - Graph only
+- **ENDS** - graph only
+- **ENUM** - graph only
+- **EXACT** - graph only
 - **EXCEPT** - GQL standard
 - **EXISTING** - GQL standard prereserved
 - **EXISTS** - GQL standard
@@ -141,12 +141,12 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **FLOOR** - GQL standard
 - **FOR** - GQL standard
 - **FROM** - GQL standard
-- **FULLTEXT** - Graph only
+- **FULLTEXT** - graph only
 - **FUNCTION** - GQL standard prereserved
 
 ## G
 
-- **GQL** - Graph only
+- **GQL** - graph only
 - **GQLSTATUS** - GQL standard prereserved
 - **GRANT** - GQL standard prereserved
 - **GROUP** - GQL standard
@@ -162,8 +162,8 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 - **IF** - GQL standard
 - **IN** - GQL standard
-- **INCLUDE** - Graph only
-- **INDEX** - Graph only
+- **INCLUDE** - graph only
+- **INDEX** - graph only
 - **INFINITY** - GQL standard prereserved
 - **INSERT** - GQL standard
 - **INSTANT** - GQL standard prereserved
@@ -177,8 +177,8 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **INTEGER32** - GQL standard
 - **INT64** - GQL standard
 - **INTEGER64** - GQL standard
-- **INT96** - Graph only
-- **INTEGER96** - Graph only
+- **INT96** - graph only
+- **INTEGER96** - graph only
 - **INT128** - GQL standard
 - **INTEGER128** - GQL standard
 - **INT256** - GQL standard
@@ -189,17 +189,17 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 ## J
 
-- **JSON** - Graph only
+- **JSON** - graph only
 
 ## K
 
-- **KEY** - Graph only
-- **KEYS** - Graph only
+- **KEY** - graph only
+- **KEYS** - graph only
 
 ## L
 
-- **LABEL** - Graph only
-- **LABELS** - Graph only
+- **LABEL** - graph only
+- **LABELS** - graph only
 - **LEADING** - GQL standard
 - **LEFT** - GQL standard
 - **LET** - GQL standard
@@ -220,17 +220,17 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 
 - **MATCH** - GQL standard
 - **MAX** - GQL standard
-- **MERGE** - Graph only
-- **MICROSOFT** - Graph only
+- **MERGE** - graph only
+- **MICROSOFT** - graph only
 - **MIN** - GQL standard
 - **MOD** - GQL standard
-- **MSFTGQL** - Graph only
+- **MSFTGQL** - graph only
 
 ## N
 
 - **NEXT** - GQL standard
-- **NODE** - Graph only
-- **NODES** - Graph only
+- **NODE** - graph only
+- **NODES** - graph only
 - **NODETACH** - GQL standard
 - **NORMALIZE** - GQL standard
 - **NOT** - GQL standard
@@ -263,11 +263,11 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **PATHS** - GQL standard
 - **PERCENTILE_CONT** - GQL standard
 - **PERCENTILE_DISC** - GQL standard
-- **POINT** - Graph only
+- **POINT** - graph only
 - **POWER** - GQL standard
-- **PRAGMA** - Graph only
+- **PRAGMA** - graph only
 - **PRECISION** - GQL standard
-- **PREPARE** - Graph only
+- **PREPARE** - graph only
 - **PROCEDURE** - GQL standard prereserved
 - **PRODUCT** - GQL standard prereserved
 - **PROJECT** - GQL standard prereserved
@@ -280,14 +280,14 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 ## R
 
 - **RADIANS** - GQL standard
-- **RANGE** - Graph only
+- **RANGE** - graph only
 - **REAL** - GQL standard
 - **RECORD** - GQL standard
 - **RECORDS** - GQL standard prereserved
 - **REFERENCE** - GQL standard prereserved
-- **REGEXP_CONTAINS** - Graph only
-- **RELATIONSHIP** - Graph only
-- **RELATIONSHIPS** - Graph only
+- **REGEXP_CONTAINS** - graph only
+- **RELATIONSHIP** - graph only
+- **RELATIONSHIPS** - graph only
 - **REMOVE** - GQL standard
 - **RENAME** - GQL standard prereserved
 - **REPLACE** - GQL standard
@@ -306,7 +306,7 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **SESSION** - GQL standard
 - **SESSION_USER** - GQL standard
 - **SET** - GQL standard
-- **SHOW** - Graph only
+- **SHOW** - graph only
 - **SIGNED** - GQL standard
 - **SIN** - GQL standard
 - **SINH** - GQL standard
@@ -316,11 +316,11 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **SMALLINT** - GQL standard
 - **SQRT** - GQL standard
 - **START** - GQL standard
-- **STARTS** - Graph only
+- **STARTS** - graph only
 - **STDDEV_POP** - GQL standard
 - **STDDEV_SAMP** - GQL standard
 - **STRING** - GQL standard
-- **STRING_JOIN** - Graph only
+- **STRING_JOIN** - graph only
 - **SUBSTRING** - GQL standard prereserved
 - **SUM** - GQL standard
 - **SYSTEM_USER** - GQL standard prereserved
@@ -330,12 +330,12 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **TAN** - GQL standard
 - **TANH** - GQL standard
 - **TEMPORAL** - GQL standard prereserved
-- **TEXT** - Graph only
+- **TEXT** - graph only
 - **THEN** - GQL standard
 - **TIME** - GQL standard
 - **TIMESTAMP** - GQL standard
-- **TO_JSON** - Graph only
-- **TO_JSON_STRING** - Graph only
+- **TO_JSON** - graph only
+- **TO_JSON_STRING** - graph only
 - **TRAILING** - GQL standard
 - **TRIM** - GQL standard
 - **TYPED** - GQL standard
@@ -354,11 +354,11 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **UNIQUE** - GQL standard prereserved
 - **UNIT** - GQL standard prereserved
 - **UNSIGNED** - GQL standard
-- **UPDATE** - Graph only
+- **UPDATE** - graph only
 - **UPPER** - GQL standard
 - **USE** - GQL standard
 - **USMALLINT** - GQL standard
-- **USING** - Graph only
+- **USING** - graph only
 
 ## V
 
@@ -367,9 +367,9 @@ Use this reference to avoid conflicts when naming objects in your GQL queries an
 - **VARBINARY** - GQL standard
 - **VARCHAR** - GQL standard
 - **VARIABLE** - GQL standard
-- **VECTOR** - Graph only
-- **VERTEX** - Graph only
-- **VERTICES** - Graph only
+- **VECTOR** - graph only
+- **VERTEX** - graph only
+- **VERTICES** - graph only
 
 ## W
 
