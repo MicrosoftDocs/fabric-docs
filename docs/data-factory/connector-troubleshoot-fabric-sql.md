@@ -7,7 +7,7 @@ ms.date: 03/13/2026
 ms.custom: connectors
 ---
 
-# Troubleshoot the sql database in Fabric connector in Data Factory in Microsoft Fabric
+# Troubleshoot the SQL database in Fabric connector in Data Factory in Microsoft Fabric
 
 This article provides suggestions to troubleshoot common problems with the SQL database in Fabric connector in Data Factory in Microsoft Fabric.
 
@@ -21,13 +21,13 @@ This article provides suggestions to troubleshoot common problems with the SQL d
 
 1. In the Microsoft Fabric portal, select Settings.
 
-1. Select Manage connections and gateways, and select the connection with the *SQL database in Fabric* connection type.
+1. Select **Manage connections and gateways**, and select the connection with the **SQL database in Fabric** connection type.
 
-1. Under the Authentication settings, select *Allow this connection to be utilized with either on-premises data gateways or VNet data gateways*. This setting is required because copy operations run through a gateway runtime. If the Fabric SQL connection isn't enabled for gateway usage, data copy operations fail.
+1. Under **Authentication settings**, select **Allow this connection to be utilized with either on-premises data gateways or VNet data gateways**. This setting is required because copy operations run through a gateway runtime. If the Fabric SQL connection isn't enabled for gateway usage, data copy operations fail.
 
 1. Select Save to save the connection.
 
-For more information on creating Fabric SQL connections that work with on-premises data gateways, see [the guide for creating a Fabric SQL connection](/fabric/database/sql/migrate-with-migration-assistant#create-a-fabric-sql-connection).
+For more information on creating Fabric SQL connections that work with on-premises data gateways, see [the guide for creating a Fabric SQL connection](../database/sql/migrate-with-migration-assistant.md#create-a-fabric-sql-connection).
 
 ## Related content
 
