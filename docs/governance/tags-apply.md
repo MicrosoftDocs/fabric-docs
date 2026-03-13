@@ -63,7 +63,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
    All the tags applied to the item appear under **Applied tags**.
 
-   ![Screenshot showing how to remove tags from an item.](media/tags-apply/remove-tags.png)
+   :::image type="content" source="media/tags-apply/remove-tags.png" alt-text="Screenshot showing how to remove tags from an item." lightbox="media/tags-apply/remove-tags.png":::
 
 1. Select the **X** next to the names of the tags you want to remove from the item.
 

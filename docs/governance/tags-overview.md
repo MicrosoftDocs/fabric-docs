@@ -39,41 +39,41 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 
 - **Workspace list:** A tag icon appears next to the workspace name in the workspaces list panel. Hover to view applied workspace tags.
 
-  ![Screenshot showing workspace tags in the workspaces list.](media/tags-overview/workspace-list-tags.png)
+  :::image type="content" source="media/tags-overview/workspace-list-tags.png" alt-text="Screenshot showing workspace tags in the workspaces list." lightbox="media/tags-overview/workspace-list-tags.png":::
 
 - **Workspace list filtering:** Filter workspaces by applied tags in the workspaces list panel and OneLake Catalog Explorer.
 
-  ![Screenshot showing the workspace tags filter.](media/tags-overview/workspace-tags-filtering.png)
+  :::image type="content" source="media/tags-overview/workspace-tags-filtering.png" alt-text="Screenshot showing the workspace tags filter." lightbox="media/tags-overview/workspace-tags-filtering.png":::
   
 - **Workspace view:** Workspace tag names appear directly in the workspace screen.
 
-  ![Screenshot showing workspace tags displayed in a single workspace view.](media/tags-overview/workspace-view-tags.png)
+  :::image type="content" source="media/tags-overview/workspace-view-tags.png" alt-text="Screenshot showing workspace tags displayed in a single workspace view." lightbox="media/tags-overview/workspace-view-tags.png":::
   
 ### Item tags
 
 - **Item list views:** A tag icon appears next to the item name. Hover to view applied tags.
 
-  ![Screenshot showing the tag icon and hover card for a tagged item.](./media/tags-overview/tags-icon.png)
+  :::image type="content" source="./media/tags-overview/tags-icon.png" alt-text="Screenshot showing the tag icon and hover card for a tagged item." lightbox="./media/tags-overview/tags-icon.png":::
   
 - **Workspace item list:** Filter items list by assigned tag.
 
-  ![Screenshot showing the tags filter.](./media/tags-overview/tags-filter.png)
+  :::image type="content" source="./media/tags-overview/tags-filter.png" alt-text="Screenshot showing the tags filter." lightbox="./media/tags-overview/tags-filter.png":::
   
 - **Item details:** Tags are shown in the OneLake Catalog item details pane of each item.
 
-  ![Screenshot showing the tag indication in item details.](./media/tags-overview/tag-indication-item-details.png)
+  :::image type="content" source="./media/tags-overview/tag-indication-item-details.png" alt-text="Screenshot showing the tag indication in item details." lightbox="./media/tags-overview/tag-indication-item-details.png":::
   
 - **Flyout card:** When editing an item, select the item name or sensitivity label to view tags.
 
-  ![Screenshot showing the tag indication in an item's flyout card.](./media/tags-overview/tag-indication-item-flyout.png)
+  :::image type="content" source="./media/tags-overview/tag-indication-item-flyout.png" alt-text="Screenshot showing the tag indication in an item's flyout card." lightbox="./media/tags-overview/tag-indication-item-flyout.png":::
   
 - **Lineage view:** Tags appear in workspace lineage and item-level lineage views.
 
-  ![Screenshot showing the tag indication in lineage view.](./media/tags-overview/tags-indication-lineage-view.png)
+  :::image type="content" source="./media/tags-overview/tags-indication-lineage-view.png" alt-text="Screenshot showing the tag indication in lineage view.":::
   
 - **Global search:** Search by tag name in global search to find all relevant results, along with other metadata like item owner and location.
 
-  ![Screenshot showing tags used as a search term in the global search.](media/tags-overview/tags-global-search.png)
+  :::image type="content" source="media/tags-overview/tags-global-search.png" alt-text="Screenshot showing tags used as a search term in the global search.":::
   
 ### Tags in APIs
 
@@ -87,7 +87,7 @@ Once tags are applied, they enhance visibility across multiple surfaces:
 
   For every applicable item and workspace returned in a scan, the payload includes a `tags` field containing a list of applied tag IDs. Use the [List Tags](/rest/api/fabric/admin/tags/list-tags) API to resolve the IDs to tag names.
 
-  ![Screenshot showing tags in the scanner API response.](media/tags-overview/tags-list-api.png)
+  :::image type="content" source="media/tags-overview/tags-list-api.png" alt-text="Screenshot showing tags in the scanner API response." lightbox="media/tags-overview/tags-list-api.png":::
 
 ## Considerations and limitations
 
