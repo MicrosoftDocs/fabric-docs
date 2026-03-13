@@ -9,16 +9,16 @@ ms.search.form: Customize the map
 
 # Customize a map
 
-Microsoft Fabric Maps offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, apply a data color theme, and toggle the visibility of various map elements. More customization options include adding interactive controls, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
+Microsoft Fabric Maps offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, and toggle the visibility of various map elements. More customization options include adding interactive controls, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
 
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [map](create-map.md) with editing permissions and connected data sources, either geoJson files in lakehouse, or KQL querysets.
+* A [map](create-map.md) with editing permissions and connected data sources, either geoJson files in lakehouse, or KQL databases.
 
 ## Change Map settings
 
-The Map visual in Microsoft Fabric offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, apply a data color theme, and toggle the visibility of various map elements. More customization options include adding interactive controls such as zoom, scale, pitch, compass, and world wrap, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
+The Map visual in Microsoft Fabric offers a comprehensive set of options for customizing the map and display. By default, the map style is set to Grayscale Light, but you can easily change the map style, and toggle the visibility of various map elements. More customization options include adding interactive controls such as zoom, scale, pitch, compass, and world wrap, setting the initial map view, and selecting a display language that best suits the needs of the map's audience.
 
 :::image type="content" source="media/customize-map/ribbon-map-setting.png" lightbox="media/customize-map/ribbon-map-setting.png" alt-text="Screenshot of ribbon map settings.":::
 
@@ -35,7 +35,6 @@ The following table describes the available map settings and their corresponding
 | Section | Property | Description |
 |--|--|--|
 | Style | Map style | Supports the following built-in [map styles](/azure/azure-maps/supported-map-styles):<br><ul><li>Road</li><li>Satellite</li><li>Hybrid</li><li>Grayscale (Light)</li><li>Grayscale (Dark)</li><li>Night</li><li>High Contrast (Light)</li><li>High Contrast (Dark)</li><li>Blank</li><li>Blank (Accessible)</li></ul><br>Default = *Grayscale (Light)* |
-| | Data theme | Change color theme for geometry data such as points, lines, and polygons. Supports the following themes:<br> <ul><li>Default</li><li>Classic</li><li>Innovate</li><li>Storm</li><li>Temperature</li><li>Color blind safe</li></ul><br>Default = *Default* |
 | | Background color | Configure background color when the map style is set to *Blank* or *Blank (accessible)*. |
 | Initial map view | Latitude | The latitude coordinate defines the center point of your preferred map view. The value must be set between -90 and 90 degrees. |
 | | Longitude | The longitude coordinate defines the center point of your preferred map view. The value must be set between -180 and 180 degrees. |
@@ -45,7 +44,7 @@ The following table describes the available map settings and their corresponding
 | Map elements | Labels | Toggle the visibility of map labels such as road names, city names, and country/region names. Default = *on* |
 | | Country/Region border | Toggle the visibility of Country/Region borders on the map. Default = *on* |
 | | Administrative district border | Toggle visibility of borders for first-level administrative areas, such as states or provinces. Default = *on* |
-| | Admin distric 2 border | Toggle visibility of borders for second-level administrative areas, such as counties. Default = *on* |
+| | Admin district 2 border | Toggle visibility of borders for second-level administrative areas, such as counties. Default = *on* |
 | | Road details | Toggle visibility of detailed street layouts in populated areas. Default = *on* |
 | | Building footprints | Toggle visibility of building footprints at higher zoom levels. Default = *on* |
 | Controls | Zoom control | Toggle visibility of the zoom control on the map, enabling users to adjust the zoom level interactively. Default = *off* |
@@ -94,9 +93,9 @@ The following table describes the general settings for data labels.
 | Enable data labels | A toggle switch used to enable/disable data labels for the selected layer.                        |
 | Data labels        | A drop-down list showing available fields from the selected data source.                          |
 | Font weight        | Sets the font weight: **Regular**, **Medium**, or **Bold**.                                       |
-| Text color         | The text color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
+| Text color         | The text color of the data label. (#change-map-settings).|
 | Text size          | The text size of the data label. Valid text sizes range from 8-48. Default=12.                    |
-| Text stroke color  | The text stroke color of the data label. The available color choices depend on the selected data theme. For more information, see [Change Map settings](#change-map-settings).|
+| Text stroke color  | The text stroke color of the data label.  |
 | Text stroke width  | The text stroke width of the data label. Valid text sizes range from 0-10. Default=1.             |
 | Label position     | Sets the position of the data label relative to the element it's tied to. This setting is available for the following geometry types:<br><br><ul><li><strong>Line layers:</strong> Choose the label position at the top, bottom, or center of the line geometry.</li><li><strong>Polygon layers:</strong> The label is positioned at the center of the polygon area by default.</li> <li><strong>Point layers:</strong> Choose the label position around the point geometry, including top center, bottom center, top left, top right, bottom left, or bottom right.</li></ul>  |
 | Data label overlap | Controls whether data labels can overlap map symbols. |
