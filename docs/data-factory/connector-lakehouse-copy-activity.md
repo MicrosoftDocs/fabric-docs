@@ -175,7 +175,9 @@ The following properties are **required**:
             - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Lakehouse Table.
     
     - Under **Advanced**, you can specify the following fields:
-      - **Enable TimestampNtz**: Specifies whether to enable timestampNtz for the Lakehouse Table destination. Disabling it (default) writes DateTime values as timestamp. Enabling it allows editing destination column type to timestampNtz, and for auto-created tables where column type is not specified, default mapping to timestampNtz.
+      
+      - **Enable TimestampNtz**: Specifies whether to enable timestampNtz for the Lakehouse table destination. Disabling it (default) writes DateTime values as timestamp. Enabling it allows editing destination column type to timestampNtz, and for auto-created tables where column type is not specified, default mapping to timestampNtz.
+
       - **Apply V-Order**: Specify to apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
   - If you select **Files**:
