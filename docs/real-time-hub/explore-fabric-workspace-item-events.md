@@ -78,7 +78,7 @@ An event has the following top-level data:
 | `dataschemaversion` | String | The version of the data schema. | `1.0` |
 | `capacityId` | string | Unique identifier for the capacity. | `00000000-0000-0000-0000-000000000000` |
 | `domainId` | string | Unique identifier for the domain. | `00000000-0000-0000-0000-000000000000` |
-| `datacontenttype` | string | Content type of data value. The value is "application/json" for workspace item events.  | `00000000-0000-0000-0000-000000000000` |
+| `datacontenttype` | string | Content type of data value. | `application/json` |
 
 The `data` object has the following properties: 
 

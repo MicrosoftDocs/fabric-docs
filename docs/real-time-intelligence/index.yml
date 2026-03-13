@@ -1,11 +1,11 @@
 ### YamlMime:Landing
 
-title: Real-Time Intelligence documentation in Microsoft Fabric
-summary:  Real-time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
+title: Fabric Real-Time Intelligence documentation
+summary: Fabric Real-Time Intelligence is an end-to-end solution for event-driven scenarios, streaming data, and data logs. It enables the extraction of insights, visualization, and action on data in motion by handling data ingestion, transformation, storage, analytics, visualization, tracking, AI, and real-time actions.
 
 metadata:
-  title: Real-Time Intelligence in Microsoft Fabric documentation
-  description: Learn about Real-Time Intelligence, an end-to-end solution for event-driven scenarios, streaming data, and data logs.
+  title: Fabric Real-Time Intelligence documentation
+  description: Learn about Fabric Real-Time Intelligence, an end-to-end solution for event-driven scenarios, streaming data, and data logs.
   ms.subservice: rti-core
   ms.custom:
   ms.topic: landing-page
@@ -35,7 +35,7 @@ landingContent:
             url: eventhouse.md
           - text: Real-Time hub
             url: ../real-time-hub/real-time-hub-overview.md
-          - text: Eventstreams
+          - text: Eventstream
             url: event-streams/overview.md
 
   # Card
@@ -69,7 +69,7 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What's eventstreams?
+          - text: What's Eventstream?
             url: event-streams/overview.md
       - linkListType: how-to-guide
         links:
@@ -132,9 +132,9 @@ landingContent:
           links:
           - text: Activate Fabric items
             url: data-activator/activator-trigger-fabric-items.md
-          - text: Alert on a Real-Time Dashboard
+          - text: Alert on a Real-Time dashboard
             url: data-activator/activator-get-data-real-time-dashboard.md
-          - text: Alert on a KQL Queryset
+          - text: Alert on a KQL queryset
             url: data-activator/activator-alert-queryset.md
   
     # Card
@@ -210,7 +210,7 @@ landingContent:
     linkLists:
         - linkListType: overview
           links:
-            - text: Fabric RTI MCP Server (preview)
+            - text: Real-Time Intelligence MCP Server (preview)
               url: mcp-overview.md 
         - linkListType: how-to-guide
           links:
