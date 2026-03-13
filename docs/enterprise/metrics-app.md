@@ -99,6 +99,8 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following con
 
 - The *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table displays the cumulative consumption of CU seconds for a specific item over the past 14 days. If you move the item from another workspace to the current workspace in the last 14 days, the *CU (s)* column includes the cumulative consumption of CU seconds for the item in the previous workspace.
 
+- The Microsoft Fabric Capacity Metrics app supports environments that use [tenant-level private links](../security/security-private-links-overview.md). However, a workspace-level private link cannot be enabled on a workspace where the Metrics app is installed.
+
 - The threshold values on throttling visuals don't reflect applied surge protection settings. To view the actual [surge protection](surge-protection.md) thresholds, refer to the Admin Portal in the Power BI service.
 
 ## Related content
