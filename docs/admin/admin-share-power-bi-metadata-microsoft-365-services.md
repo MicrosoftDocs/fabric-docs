@@ -3,13 +3,11 @@ title: "Metadata passed from Microsoft Fabric to Microsoft Graph"
 description: Learn about sharing Fabric metadata with Microsoft 365 services.
 author: msmimart
 ms.author: mimart
-ms.reviewer: 'jadelynray'
-
-ms.custom:
+ms.reviewer: jadelynray
 ms.topic: concept-article
 ms.date: 12/05/2025
 LocalizationGroup: Admin
-Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
+#customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 ---
 
 # Share data with your Microsoft 365 services

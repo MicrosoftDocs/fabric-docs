@@ -1,10 +1,7 @@
 ---
 title: Configure destinations for schema-enabled sources
 description: Include file with instructions on how to configure supported destinations for schema-enabled sources.
-ms.author: spelluru
-author: spelluru 
 ms.topic: include
-ms.custom:
 ms.date: 09/27/2025
 ---
 

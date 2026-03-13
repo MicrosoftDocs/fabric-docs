@@ -1,11 +1,8 @@
 ---
 title: Route events based on content in Fabric event streams
 description: Learn how events can be routed based on content in the data received from a source in an eventstream.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: concept-article
-ms.custom:
 ms.date: 06/06/2024
 ms.search.form: Source and Destination
 ---
@@ -61,3 +58,5 @@ To transform and route your data stream based on content, follow the steps at [E
 - [New capabilities in Microsoft Fabric event streams](overview.md)
 - [Edit and publish an eventstream](edit-publish.md)
 - [Create default and derived eventstreams](create-default-derived-streams.md)
+
+

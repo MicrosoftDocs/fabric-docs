@@ -1,9 +1,6 @@
 ---
 title: "Tutorial part 5: Conclude and clean up resources"
 description: Finish the tutorial and clean up resources. Part 5 of the ontology (preview) tutorial.
-author: baanders
-ms.author: baanders
-ms.reviewer: baanders
 ms.date: 12/03/2025
 ms.topic: tutorial
 ---
@@ -29,3 +26,4 @@ When you finish the tutorial, use the steps in this section to delete all the re
 ## Next steps
 
 Use the table of contents to explore the ontology (preview) documentation and learn more about its features and capabilities.
+

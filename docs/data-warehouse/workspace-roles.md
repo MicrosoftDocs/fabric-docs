@@ -1,8 +1,6 @@
 ---
 title: Workspace Roles in Fabric Data Warehouse
 description: Learn about the roles you can use to manage user access within a workspace.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: cynotebo, jacindaeng
 ms.date: 06/26/2025
 ms.topic: concept-article

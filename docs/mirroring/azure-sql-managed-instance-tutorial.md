@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn how to configure a mirrored database from Azure SQL Managed Instance in Microsoft Fabric.
-ms.reviewer: lazartimotic, jingwang, nzagorac
+ms.reviewer: lazartimotic, jingwang, nzagorac, wiassaf
 ms.date: 12/04/2025
 ms.topic: tutorial
 ---
@@ -42,7 +42,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
-1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [mssql extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). Connect to the `master` database.
+1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [MSSQL extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
 
     The permissions required for the Fabric login are:

@@ -2,8 +2,6 @@
 title: "OneLake table APIs for Delta"
 description: "Overview of the OneLake REST API endpoint for Delta APIs in Microsoft Fabric."
 ms.reviewer: preshah
-ms.author: preshah
-author: mspreshah
 ms.date: 10/23/2025
 ms.topic: concept-article
 #customer intent: As a OneLake user, I want to learn what the Delta are, what operations they support, and any current limitations or considerations, so that I can understand how to interact with my Fabric data using the Delta API standard.
@@ -87,3 +85,4 @@ The use of the OneLake table APIs for Delta is subject to the following limitati
 
 - Learn more about [OneLake table APIs](./table-apis-overview.md).
 - See [detailed guidance and API details](./delta-table-apis-get-started.md).
+

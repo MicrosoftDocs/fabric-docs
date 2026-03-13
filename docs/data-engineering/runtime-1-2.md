@@ -2,17 +2,14 @@
 title: Runtime 1.2 in Fabric
 description: Gain a deep understanding of the Apache Spark-based Runtime 1.2 available in Fabric. Understand its unique features, capabilities, and best practices.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: overview
-ms.custom:
-ms.date: 12/11/2025
+ms.date: 03/10/2026
 ---
 
 # Fabric Runtime 1.2 (EOSA)
 
 > [!WARNING]
-> End of Support for Microsoft Fabric Runtime 1.2 has been announced. Microsoft Fabric Runtime 1.2 will be deprecated and disabled 31, March 2026. We strongly recommend [upgrading your Fabric workspace](/fabric/data-engineering/runtime) and environments to use [Runtime 1.3 (Apache Spark 3.5 and Delta Lake 3.2)](/fabric/data-engineering/runtime-1-3). 
+> End of Support for Microsoft Fabric Runtime 1.2 has been announced. Microsoft Fabric Runtime 1.2 will be deprecated 31, March 2026. We strongly recommend [upgrading your Fabric workspace](/fabric/data-engineering/runtime) and environments to use [Runtime 1.3 (Apache Spark 3.5 and Delta Lake 3.2)](/fabric/data-engineering/runtime-1-3). 
 
 The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.2 components and versions.
 

@@ -14,11 +14,30 @@ items:
     href: migration.md
   - name: Start a Fabric trial
     href: fabric-trial.md
+  - name: Fabric free trial with a personal email
+    href: free-trial-account-personal-email.md
   - name: Connect to the Fabric release plan
     href: service-connect-fabric-release-plan.md
   - name: Review Fabric preview information
     href: preview.md
   
+- name: Fabric data lifecycle
+  items:
+    - name: Data lifecycle overview
+      href: data-lifecycle.md
+    - name: Get data
+      href: get-data.md
+    - name: Store data
+      href: store-data.md
+    - name: Prepare and transform data
+      href: prepare-transform-data.md
+    - name: Analyze and train data
+      href: analyze-train-data.md
+    - name: Track and visualize data
+      href: track-visualize-data.md
+    - name: External systems integration
+      href: external-integration.md
+
 - name: Navigate and find content
   items:
   - name: Find items with Fabric Home
@@ -36,8 +55,6 @@ items:
     href: create-workspaces.md
   - name: Assign workspace roles
     href: roles-workspaces.md
-  - name: Reassign a workspace to a different capacity
-    href: workspace-license-mode.md
   - name: Create items in workspaces
     href: create-items-in-workspaces.md
   - name: Create folders in workspaces
@@ -73,6 +90,8 @@ items:
     href: job-scheduler.md
   - name: Use Delta Lake interoperability
     href: delta-lake-interoperability.md
+  - name: Optimize table maintenance across workloads
+    href: table-maintenance-optimization.md
 
 - name: Use Direct Lake
   items:

@@ -1,8 +1,6 @@
 ---
 title: "Configure SQL Audit Logs in Fabric Data Warehouse (Preview)"
 description: Step-by-step instructions to enable and configure SQL audit logs on Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fresantos
 ms.date: 08/01/2025
 ms.topic: how-to
@@ -146,7 +144,7 @@ SQL audit logs rely on predefined action groups that capture specific events wit
 
 SQL audit log data is stored in **.XEL files** in the OneLake, and can only be accessed using the [sys.fn_get_audit_file_v2](/sql/relational-databases/system-functions/sys-fn-get-audit-file-v2-transact-sql?view=fabric&preserve-view=true) Transact-SQL (T-SQL) function. For more information on how audit files are stored in the OneLake, see [SQL audit logs in Fabric Data Warehouse](sql-audit-logs.md#storage).
 
-From the [SQL query editor](sql-query-editor.md) or any query tool such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), use the following sample T-SQL queries, providing your own `workspaceId` and `<warehouseId>`.
+From the [SQL query editor](sql-query-editor.md) or any query tool such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), use the following sample T-SQL queries, providing your own `workspaceId` and `<warehouseId>`.
 
 ```sql
 SELECT * 

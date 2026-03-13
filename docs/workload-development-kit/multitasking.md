@@ -1,8 +1,6 @@
 ---
 title: Format Multitasking Tabs
 description: Learn how to format multitasking tabs on the left pane of Microsoft Fabric. One item opens by default with automatically handled lifecycle events.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: how-to
 ms.date: 08/22/2025
 ---
@@ -151,3 +149,4 @@ workloadClient.action.onAction(async function ({ action, data }) {
 ## Related content
 
 For a full example of handling the tab actions, see `index.ui.ts` in the [sample repo](https://github.com/microsoft/Microsoft-Fabric-workload-development-sample). Search for actions that start with `item.tab`.
+

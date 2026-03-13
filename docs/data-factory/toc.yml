@@ -861,6 +861,8 @@
                     href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Download diagnostics logs
                     href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json  
+      - name: Access recent data
+        href: recent-data.md
   - name: Move data
     items:
       - name: Decide - Data movement strategy
@@ -881,6 +883,10 @@
                 href: monitor-copy-job.md
               - name: Change data capture from SAP via SAP Datasphere Outbound 
                 href: copy-job-tutorial-sap-datasphere.md
+              - name: Change data capture from Snowflake
+                href: cdc-copy-job-snowflake.md
+              - name: Change data capture from Google BigQuery
+                href: cdc-copy-job-bigquery.md
           - name: Run copy job from a pipeline
             href: copy-job-activity.md
           - name: Change data capture (CDC) in Copy job
@@ -891,6 +897,8 @@
             href: cicd-copy-job.md
           - name: REST API Capabilities
             href: copy-job-rest-api-capabilities.md
+          - name: Workspace monitoring for Copy job
+            href: copy-job-workspace-monitoring.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -963,18 +971,22 @@
                 href: default-destination.md
           - name: Authoring tools
             items:
+              - name: Machine learning model in Dataflow Gen2
+                href: dataflow-gen2-machine-learning-model-endpoints.md
               - name: AI Functions in Dataflow Gen2 (Preview)
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
               - name: Get data with Copilot
                 href: copilot-modern-get-data.md
-              - name: Query evaluator (Preview)
+              - name: Query evaluator
                 href: dataflow-gen2-modern-evaluator.md
               - name: Preview only (Preview)
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
+              - name: Relative references with Fabric connectors
+                href: dataflow-gen2-relative-references.md
               - name: Public parameters in Dataflow Gen2
                 href: dataflow-parameters.md
               - name: Variable libraries in Dataflow Gen2
@@ -1006,7 +1018,7 @@
                 href: dataflows-gen2-fast-copy.md
               - name: Implement slowly changing dimension type 1
                 href: slowly-changing-dimension-type-one.md
-              - name: Implement lowly changing dimension type 2
+              - name: Implement slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
               - name: Staging in Dataflow Gen2
                 href: data-in-staging-artifacts.md
@@ -1175,6 +1187,8 @@
         href: pipeline-rest-api-capabilities.md
       - name: Tutorials
         items:
+          - name: Set service principal as pipeline owner
+            href: set-pipeline-owner-tutorial.md
           - name: Run a Script activity and send output by email
             href: script-activity-email-output.md
           - name: Use AI to turn sketches into pipelines

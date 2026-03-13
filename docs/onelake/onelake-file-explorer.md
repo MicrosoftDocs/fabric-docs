@@ -2,10 +2,7 @@
 title: Access Fabric data locally with OneLake file explorer
 description: OneLake file explorer seamlessly integrates OneLake with Windows File Explorer. Learn how to install and use this application.
 ms.reviewer: eloldag
-ms.author: eloldag
-author: eloldag
 ms.topic: how-to
-ms.custom:
 ms.date: 03/06/2025
 #customer intent: As a OneLake user, I want to learn how to install and use the OneLake file explorer client app for Windows so that I can seamlessly access and sync my OneLake data with Windows File Explorer.
 ---
@@ -161,3 +158,4 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 ## Related content
 
 - [What's new in the latest OneLake file explorer?](onelake-file-explorer-release-notes.md)
+

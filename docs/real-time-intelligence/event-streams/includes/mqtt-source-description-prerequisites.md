@@ -1,11 +1,8 @@
 ---
 title: Description and prerequisites for MQTT source
 description: The include file provides description, a note, and prerequisites for using a Message Queueing Transport Telemetry (MQTT) source in an eventstream or in Real-Time hub. 
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
-ms.custom:
 ms.date: 01/26/2026
 ---
 
@@ -15,9 +12,9 @@ Message Queuing Telemetry Transport (MQTT) is a lightweight publish-subscribe me
 
 Before you start, you must complete the following prerequisites:
 
-- A workspace with **Fabric capacity** or **Trial** license mode.
+- A workspace with **Fabric** capacity or **Fabric Trial** workspace type.
 - Access to the workspace with **Contributor** or higher workspace roles.
-- Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network.
+- Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).
 
 Depending on your scenario, you can also use one of the following approaches to stream MQTT data to Eventstream:
 

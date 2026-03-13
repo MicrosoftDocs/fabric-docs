@@ -1,20 +1,15 @@
 ﻿---
-title: Fabric data agent sharing and permission management (preview)
+title: Fabric data agent sharing and permission management
 description: Learn how to share a Fabric data agent, and manage Fabric data agent permissions.
-author: jonburchel
-ms.author: jburchel
-ms.reviewer: amjafari
+ms.reviewer: amjafari, scottpolly
 ms.topic: concept-article
 ms.date: 09/17/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
-reviewer: s-polly
 ai-usage: ai-assisted
 ---
 
-# Fabric data agent sharing and permission management (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Fabric data agent sharing and permission management
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 

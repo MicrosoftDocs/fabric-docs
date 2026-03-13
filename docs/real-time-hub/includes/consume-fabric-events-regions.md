@@ -1,12 +1,10 @@
 ---
 title: Include file with unsupported regions for consuming Fabric events
 description: Includes a note that lists the unsupported regions for consuming Fabric and Azure events via Fabric eventstreams. 
-author: spelluru
-ms.author: spelluru
 ms.topic: include
 ms.date: 01/15/2025
 ms.custom: references_regions
 ---
 
 > [!NOTE]
-> Consuming Fabric and Azure events via Eventstream or Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] isn't supported if the capacity region of the Eventstream or [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] is in the following regions: West India, Qatar Central, Singapore, UAE Central, Brazil Southeast, South Central US.
+> Consuming Fabric and Azure events via Eventstream or Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] isn't supported if the capacity region of the Eventstream or [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] is in the following regions: West India, Qatar Central, Singapore, UAE Central, Brazil Southeast.

@@ -2,8 +2,6 @@
 metadata:
   title: "Microsoft Fabric API for GraphQL FAQ"
   description: Find answers to frequently asked questions about Microsoft Fabric API for GraphQL, which is currently in preview.
-  author: snehagunda
-  ms.author: sngun
   ms.topic: faq
   ms.custom: freshness-kr
   ms.date: 01/21/2026
@@ -73,7 +71,7 @@ sections:
         answer: To get help from Microsoft Support on any issue related to Fabric API for GraphQL, visit our [Fabric Support site](https://support.fabric.microsoft.com/support/) and choose the **Data Engineering** option.
 
       - question: Does API for GraphQL support Private Link?
-        answer: API for GraphQL doesn't support Private Link at this time.
+        answer: API for GraphQL supports only [Tenant Level Private Link](../security/security-private-links-overview.md#api-for-graphql) at this time.
 
       - question: Why does my request perform poorly the first time I issue it, then perform well on subsequent requests?
         answer: |

@@ -1,10 +1,8 @@
 ---
 title: MongoDB CDC connector for Fabric event streams
 description: This include file has the common content for configuring a Mongo Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: WenyangShi
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 09/22/2025
 ---
 
@@ -58,3 +56,4 @@ ms.date: 09/22/2025
 1. On the **Review + connect** page, after reviewing the summary for MongoDB CDC source, select **Add** to complete the configuration.
 
       :::image type="content" source="media/mongodb-change-data-capture-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mongodb-change-data-capture-connector/review-connect.png":::
+

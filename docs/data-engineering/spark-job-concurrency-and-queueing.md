@@ -2,124 +2,119 @@
 title: Concurrency limits and queueing in Apache Spark for Fabric
 description: Learn about the job concurrency limits and queueing for notebooks, Apache Spark job definitions, and lakehouse jobs in Fabric.
 ms.reviewer: saravi
-ms.author: eur
-author: eric-urban
 ms.topic: concept-article
-ms.custom:
-ms.date: 10/20/2023
+ms.date: 03/05/2026
+ai-usage: ai-assisted
 ---
 
 # Concurrency limits and queueing in Apache Spark for Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Microsoft Fabric allows allocation of compute units through capacity, which is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Microsoft Fabric offers capacity through the Fabric SKUs and trials. For more information, see [What is capacity?](../enterprise/scale-capacity.md).
+Microsoft Fabric allocates compute through capacity. Capacity is a dedicated set of resources available at a point in time, and different items consume that capacity differently. Fabric provides capacity through Fabric SKUs and trial capacity. To learn more, see [What is capacity?](../enterprise/scale-capacity.md).
 
-When users create a Microsoft Fabric capacity on Azure, they choose a capacity size based on their analytics workload size. In Apache Spark, users get two Apache Spark VCores for every capacity unit they reserve as part of their SKU.
+When you create a Fabric capacity, you select a size based on workload needs. For Apache Spark, each capacity unit maps to two Spark VCores.
 
-**One Capacity Unit = Two Spark VCores**
+**One capacity unit = two Spark VCores**
 
-Once they have purchased the capacity, admins can create workspaces within the capacity in Microsoft Fabric. The Spark VCores associated with the capacity are shared among all the Apache Spark-based items like notebooks, Apache Spark job definitions, and lakehouses created in these workspaces.
+After capacity is provisioned, admins create workspaces in that capacity. Spark VCores are shared across Spark-based items in those workspaces, including notebooks, Spark Job Definitions, and lakehouse jobs.
 
 ## Concurrency throttling and queueing
 
-Spark for Fabric enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available.
+Spark in Fabric uses core-based throttling and queueing. Job admission is based on available Spark VCores in your purchased capacity. Queueing uses first in, first out (FIFO) behavior and retries queued jobs automatically when capacity becomes available.
 
-When users submit notebook or lakehouse jobs (such as **Load to Table**) and the capacity is at maximum utilization—due to concurrent jobs using all Spark VCores—they receive the following error on too many requests for capacity: 
+When a notebook or lakehouse job (such as **Load to Table**) is submitted while capacity is fully used, Fabric returns this error:
 
 ```text
 [TooManyRequestsForCapacity] HTTP Response code 430: This Spark job can't be run because you have hit a Spark compute or API rate limit. To run this Spark job, cancel an active Spark job through the Monitoring hub, or choose a larger capacity SKU or try again later.
 ```
 
-With **queueing enabled**, notebook jobs triggered from **pipelines**, **job scheduler**, and **Spark job definitions** are added to the queue and automatically retried when capacity becomes available.
+With queueing enabled, jobs triggered from pipelines, scheduler, and Spark Job Definitions are queued and retried automatically.
+
+Queueing doesn't apply to interactive notebook jobs or notebook jobs submitted through the notebook public API.
 
 > [!NOTE]
-> The queue expiration is set to **24 hours** from job submission time. After this period, jobs are removed from the queue and must be resubmitted manually.
+> Queue expiration is **24 hours** from job submission time. After that period, jobs are removed from the queue and must be resubmitted manually.
+>
+> If a Fabric capacity is in a throttled state, new Spark jobs are rejected instead of queued.
 
-Fabric capacities are also enabled with **bursting**, allowing you to consume **up to 3×** the number of Spark VCores you've purchased. This burst helps improve concurrency by allowing more jobs to run in parallel.
+Spark throttling in Fabric is based on available cores, not an arbitrary per-job count limit. By default, Spark uses optimistic admission control, where jobs are admitted using their minimum core requirements. To learn more, see [Job admission and management](job-admission-management.md).
+
+## Bursting and pool configuration
+
+Fabric capacities support **bursting**, which allows consumption of up to **3×** your purchased Spark VCores. Bursting can increase concurrency by allowing more parallel execution when capacity is available.
 
 > [!NOTE]
-> The **bursting factor increases the total Spark VCores** for concurrency **and can be leveraged by a single job**, if the Spark pool is configured with a higher core count.  
-> In other words, the **pool configuration** determines the max cores a job can use—not just the base SKU allocation.
+> The bursting factor increases total Spark VCores for concurrency and can also be used by a single job if the Spark pool is configured with enough cores. In other words, pool configuration determines the maximum cores a job can use, not only base SKU allocation.
 
-### Example
+### Example: F64 with bursting
 
-If you have a **F64** SKU with **384 Max Spark VCores with Burst Factor**:
+If you use an **F64** SKU, the burst maximum is **384 Spark VCores**:
 
-- You can configure a custom or starter pool with **up to 384 Spark VCores**.
-- If a workspace admin creates such a pool, a **single Spark job** (e.g., a notebook, job definition, or lakehouse job) **can use all 384 VCores**.
-- Example: A pool with `Medium` nodes (8 VCores each) and 48 max nodes = 384 VCores.
-
+- You can configure a starter or custom pool with up to **384 Spark VCores**.
+- If the pool is configured to that limit, a **single Spark job** can consume all **384 VCores**.
+- Example: `Medium` nodes (8 VCores each) × 48 max nodes = 384 VCores.
 
 > [!TIP]
-> To maximize job performance, confirm your workspace pool is configured with sufficient node size and count.
+> To maximize job performance, configure your workspace pool with appropriate node size and max node count.
 
-## Spark Capacity SKU Limits
+## Job-level bursting control
 
-| Fabric capacity SKU | Equivalent Power BI SKU | Spark VCores | Max Spark VCores with Burst Factor | Queue limit |
-|----------------------|--------------------------|--------------|------------------------------------|--------------|
-| F2                   | -                        | 4            | 20                                 | 4            |
-| F4                   | -                        | 8            | 24                                 | 4            |
-| F8                   | -                        | 16           | 48                                 | 8            |
-| F16                  | -                        | 32           | 96                                 | 16           |
-| F32                  | -                        | 64           | 192                                | 32           |
-| F64                  | P1                       | 128          | 384                                | 64           |
-| F128                 | P2                       | 256          | 768                                | 128          |
-| F256                 | P3                       | 512          | 1536                               | 256          |
-| F512                 | P4                       | 1024         | 3072                               | 512          |
-| F1024                | -                        | 2048         | 6144                               | 1024         |
-| F2048                | -                        | 4096         | 12288                              | 2048         |
-| Trial Capacity       | P1                       | 128          | 128                                | NA           |
+Capacity admins can enable or disable job-level bursting in the Admin portal:
 
-> [!Important]
-> The table applies only to Spark jobs running on Fabric Capacity. With autoscale billing enabled, Spark jobs run separately from Fabric capacity, avoiding bursting or smoothing. The total Spark VCores will be twice the maximum capacity units set in autoscale settings.
+1. Go to **Admin portal** > **Capacity settings** > **Fabric capacity**.
+1. Select the capacity you want to manage.
+1. Open **Data Engineering/Science settings** > **Open Spark Compute**.
+1. Use **Disable job-level bursting**.
+
+When job-level bursting is disabled, Spark prevents any single job from consuming all available capacity (including burst cores). This behavior helps keep capacity available for other concurrent jobs.
+
+This setting is useful for multi-tenant or high-concurrency environments where fairness and throughput across teams are more important than maximizing one job's runtime.
+
+### Example scenarios
+
+**Bursting enabled (default)**
+
+A large batch notebook job can consume all 384 Spark VCores in an F64 capacity when no other jobs are running.
+
+**Bursting disabled**
+
+A job can be capped at the base core limit (for example, 128 Spark VCores for F64), leaving headroom for other jobs to start.
+
+> [!TIP]
+> For mixed workloads (for example ETL, ML, and ad hoc analysis), disabling job-level bursting can reduce capacity monopolization and queueing delays.
+
+## Spark capacity SKU limits
+
+|Fabric capacity SKU|Equivalent Power BI SKU|Spark VCores|Max Spark VCores with burst factor|Queue limit|
+|---|---|---|---|---|
+|F2|-|4|20|4|
+|F4|-|8|24|4|
+|F8|-|16|48|8|
+|F16|-|32|96|16|
+|F32|-|64|192|32|
+|F64|P1|128|384|64|
+|F128|P2|256|768|128|
+|F256|P3|512|1536|256|
+|F512|P4|1024|3072|512|
+|F1024|-|2048|6144|1024|
+|F2048|-|4096|12288|2048|
+|Trial Capacity|P1|128|128|Not available|
+
+> [!IMPORTANT]
+> This table applies only to Spark jobs running on Fabric capacity. With autoscale billing enabled, Spark jobs run separately from Fabric capacity and don't use bursting or smoothing. Total Spark VCores are two times the maximum capacity units set in autoscale settings.
 
 ### Example calculation
 
-- A **F64 SKU** offers **128 Spark VCores**.
-- With a burst factor of 3, it supports **up to 384 Spark VCores** for concurrent execution.
-- If a pool is configured with the full 384 VCores, **a single job can use them all**, assuming no other jobs are consuming capacity.
-- Example: 3 jobs using 128 VCores each can run concurrently OR 1 job using 384 VCores can run.
+- An **F64** SKU provides **128 Spark VCores**.
+- With a 3× burst factor, it supports up to **384 Spark VCores**.
+- If a pool is configured for all 384 VCores, one job can consume all 384 when capacity is otherwise free.
+- Example: either three 128-VCore jobs run concurrently, or one 384-VCore job runs.
 
 > [!NOTE]
-> Jobs have a queue expiration period of 24 hours, after which they're canceled, and users must resubmit them for execution.
+> Jobs expire from queue after 24 hours and must be resubmitted.
 
-Spark for Fabric throttling doesn't have enforced arbitrary jobs-based limits, and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU. Job admission by default is an optimistic admission control, where jobs are admitted based on their minimum core requirements. Learn more: [Job Admission and Management](job-admission-management.md).
-
-If the default pool (Starter Pool) option is selected for the workspace, the following table lists the max concurrency job limits.
-
-Learn more: [Configuring Starter Pools](configure-starter-pools.md).
-
-Admins can configure their Apache Spark pools to utilize the maximum Spark VCores available in the capacity, including the burst factor of 3× that Fabric offers for concurrent execution. For example, a workspace admin with an F64 Fabric capacity can configure their Spark pool (Starter Pool or Custom Pool) to use up to 384 Spark VCores by:
-
-Setting Starter Pool max nodes to 48 (with Medium nodes = 8 VCores each), or
-
-Configuring a Custom Pool using larger nodes (e.g., XXLarge = 64 VCores each) with an appropriate node count to reach the desired capacity.
-
-With this configuration, a single Spark job can consume the entire burst capacity, which is ideal for large-scale data processing that prioritizes performance.
-
-New: Job-level bursting control via admin portal
-Capacity admins now have control over enabling or disabling job-level bursting through a new setting in the Admin Portal:
-
-Navigate to Admin Portal → Capacity Settings → Data Engineering/Science tab
-
-Use the new "Disable Job-Level Bursting" switch to prevent a single Spark job from consuming all available burst capacity
-
-> [!NOTE]
-> When job-level bursting is disabled, the Spark engine enforces that no single job can utilize all available capacity (including burst cores). This ensures that capacity remains available for concurrent jobs, improving throughput and multi-user concurrency.
-
-This feature is particularly useful in multi-tenant or high-concurrency environments, where workloads need to be balanced across multiple teams and pipelines. Admins can tune this setting based on whether the capacity is optimized for maximum job throughput (bursting enabled) or higher concurrency and fairness (bursting disabled).
-
-Example scenarios
-Bursting enabled (default):
-A large batch notebook job can consume all 384 Spark VCores in an F64 capacity, assuming no other jobs are running.
-
-Bursting disabled:
-A job may be capped at the base core limit (e.g., 128 Spark VCores for F64), allowing headroom for other jobs to start concurrently.
-
-> [!TIP]
-> For teams with diverse job types (ETL, ML, Adhoc), disabling job-level bursting can help prevent capacity monopolization and reduce job queueing delays.
-
+To learn more about starter pools and configuration, see [Configure starter pools in Fabric](configure-starter-pools.md).
 
 
 ## Related content

@@ -1,9 +1,8 @@
 ﻿---
 title: How admins can manage the Power BI Desktop sign-in form
 description: Learn how you can manage the initial sign-in form when opening Power BI Desktop by using registry keys.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to

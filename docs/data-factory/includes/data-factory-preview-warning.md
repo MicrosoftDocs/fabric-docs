@@ -2,7 +2,6 @@
 title: Include file for the Data Factory in Microsoft Fabric preview warning
 description: Include file for the Data Factory in Microsoft Fabric preview warning
 ms.topic: include
-ms.custom:
 ms.date: 11/15/2023
 ---
 > [!IMPORTANT]

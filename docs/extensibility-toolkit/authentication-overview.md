@@ -1,10 +1,8 @@
 ---
 title: Authentication overview for Microsoft Fabric Extensibility Toolkit
 description: This article describes how to use tokens to authenticate for a Fabric extensibility toolkit workload.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/15/2025
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: Migration Methods for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: arturv, johoang
 ms.date: 02/04/2026
 ms.topic: concept-article

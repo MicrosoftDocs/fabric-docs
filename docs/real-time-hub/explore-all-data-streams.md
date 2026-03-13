@@ -1,10 +1,8 @@
 ---
 title: Explore All data streams in Fabric Real-Time hub
 description: This article shows how to explore All data streams in Fabric Real-Time hub. It provides details on the All data streams page in the Real-Time hub user interface.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ---
 
@@ -79,3 +77,4 @@ Here are the actions available on a KQL table from the **All data streams** page
 - [Preview data streams](preview-data-streams.md)
 - [Endorse data streams](endorse-data-streams.md)
 - [Explore fabric events](explore-fabric-events.md)
+

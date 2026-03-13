@@ -1,10 +1,7 @@
 ---
 title: Customize AI functions with pandas
 description: Learn how to configure AI functions in Fabric for custom use. For example, modifying the underlying LLM or other related settings with pandas.
-ms.author: jburchel
-author: jonburchel
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: nareshvenkat, singhrana
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -29,16 +26,17 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 
 | Parameter | Description | Default |
 |---|---|---|
-| `concurrency`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
-| `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
-| `reasoning_effort`<br> Optional | Used by gpt-5 series models for number of reasoning tokens they should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
-| `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
-| `temperature`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
-| `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
-| `top_p`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
-| `use_progress_bar`<br> Optional | Show tqdm progress bar for AI function progress over input data. Uses tqdm under the hood. Boolean value, which can be set to `True` or `False`. | `True` |
-| `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
+| `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. | `responses` |
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
+| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
+| `model_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
+| `reasoning_effort` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for number of reasoning tokens they should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
+| `seed` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
+| `temperature` | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
+| `timeout` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
+| `top_p` | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
+| `use_progress_bar` | Show tqdm progress bar for AI function progress over input data. Uses tqdm under the hood. Boolean value, which can be set to `True` or `False`. | `True` |
+| `verbosity` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
 
 > [!TIP]
 > - If your model deployment capacity can accommodate more requests, setting a higher *concurrency* values can speed up processing time. 
@@ -127,19 +125,19 @@ Select one of the [models supported by Fabric](../../ai-services/ai-services-ove
 
     ```python
     df["embedding"] = df["text"].ai.embed(
-        conf=Conf(embedding_deployment_name="<embbedding deployment name>"),
+        conf=Conf(embedding_deployment_name="<embedding deployment name>"),
     )
     ```
 
 ### Configure a custom model endpoint
 
 By default, AI functions use the Fabric LLM endpoint API for unified billing and easy setup.
-You may choose to use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft AI Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
+You may choose to use your own model endpoint by setting up an Azure OpenAI or OpenAI-compatible client with your endpoint and key. The following example shows how to bring your own Microsoft Foundry (formerly Azure OpenAI) resource using `aifunc.setup`:
 
 ```python
 from openai import AzureOpenAI
 
-# Example to create client for Microsoft AI Foundry OpenAI models
+# Example to create client for Foundry OpenAI models
 client = AzureOpenAI(
     azure_endpoint="https://<ai-foundry-resource>.openai.azure.com/",
     api_key="<API_KEY>",
@@ -150,19 +148,19 @@ aifunc.setup(client)  # Set the client for all functions.
 ```
 
 > [!TIP]
-> - You can configure a custom AI Foundry resource to use models beyond OpenAI.
+> - You can configure a custom Foundry resource to use models beyond OpenAI.
 
-The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Microsoft AI Foundry resource to use models beyond OpenAI:
+The following code sample uses placeholder values to show you how to override the built-in Fabric AI endpoint with a custom Foundry resource to use models beyond OpenAI:
 
 > [!IMPORTANT]
-> - Support for Microsoft AI Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
+> - Support for Foundry models is limited to  models that support `Chat Completions` API and accept `response_format` parameter with JSON schema
 > - Output may vary depending on the behavior of the selected AI model. Please explore the capabilities of other models with appropriate caution
-> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using an AI Foundry resource
+> - The embedding based AI functions `ai.embed` and `ai.similarity` aren't supported when using a Foundry resource
 
 ```python
 from openai import OpenAI
 
-# Example to create client for Azure AI Foundry models
+# Example to create client for Foundry models
 client = OpenAI(
     base_url="https://<ai-foundry-resource>.services.ai.azure.com/openai/v1/",
     api_key="<API_KEY>",

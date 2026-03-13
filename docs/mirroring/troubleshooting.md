@@ -4,7 +4,6 @@ description: Troubleshooting scenarios, workarounds, and links for mirrored data
 ms.reviewer: imotiwala, maprycem, cynotebo, wiassaf
 ms.date: 11/27/2025
 ms.topic: troubleshooting
-ms.custom:
 ms.search.form: Fabric Mirroring
 ---
 
@@ -129,10 +128,11 @@ These common error messages have explanations and mitigations:
 
 | **Error message** | **Reason** | **Mitigation** |
 |:--|:--|:--|
-| "The tables count may exceed the limit, there could be some tables missing."| There's a maximum of 500 tables. | In the source database, drop or filter tables. If the new table is the 500th table, no mitigation required. |
+| "The tables count may exceed the limit, there could be some tables missing."| There's a maximum of 1000 tables. | In the source database, drop or filter tables. If the new table is the 1000th table, no mitigation required. |
 | "The replication is being throttled and expected to continue at YYYY-MM-DDTHH:MM:ss." | There's a maximum of 1 TB of change data captured per Mirrored database per day. | Wait for throttling to end. |
 
 ## Related content
 
 - [What is Mirroring in Fabric?](../mirroring/overview.md)
 - [Monitor Fabric mirrored database replication](../mirroring/monitor.md)
+
