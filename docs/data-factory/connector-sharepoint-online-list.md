@@ -104,7 +104,6 @@ Fill in the required properties. You need to specify the tenant ID, service prin
 
 >[!Note]
 > - For permission settings related to SharePoint Online List in the pipeline, refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites).
-> - For permission settings related to SharePoint Online File in the pipeline, refer to [Prerequisites](connector-sharepoint-online-file-copy-activity.md#prerequisites).
 
 ### Workspace identity authentication
 
