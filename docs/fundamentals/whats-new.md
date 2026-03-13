@@ -3,7 +3,7 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/10/2026
+ms.date: 03/12/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -38,6 +38,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 | **Feature** | **Learn more** |
 |:-- |:-- |
 |**Access your Delta Lake tables as Apache Iceberg in OneLake (Preview)**|[OneLake now lets you access your Delta Lake tables using Apache Iceberg compatible readers](https://blog.fabric.microsoft.com/blog/new-in-onelake-access-your-delta-lake-tables-as-iceberg-automatically?ft=All), automatically, without data movement or duplication. To get started, see [Use Iceberg tables with OneLake](../onelake/onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).|
+| **ALTER DATABASE SET options in SQL database** | `ALTER DATABASE SET` options in SQL database are now available as a preview feature. For more information, see [ALTER DATABASET SET options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric-sqldb&preserve-view=true) for SQL database in Fabric. Full text indexing is also now available in SQL database as a preview feature. Full text indexing is also now available in SQL database as a preview feature.|
 |**Anomaly detection (Preview)**|With a no-code interface, automatic model selection, and flexible alerts, tracking changes and unexpected events is easy with [Anomaly detection in Real-Time Intelligence (Preview)](../real-time-intelligence/anomaly-detection.md). For more information, see [AI–Powered Real-Time Intelligence with Anomaly Detection (Preview)](https://blog.fabric.microsoft.com/blog/ai-powered-real-time-intelligence-with-anomaly-detection-preview?ft=All). [Billing for Anomaly Detector starts in December](https://blog.fabric.microsoft.com/blog/billing-for-anomaly-detector-in-real-time-intelligence?ft=All).|
 |**Apache Iceberg data in OneLake using Snowflake and shortcuts (Preview)**|You can now [consume Apache Iceberg-formatted data across Microsoft Fabric with no data movement or duplication](https://blog.fabric.microsoft.com/blog/store-and-use-your-snowflake-iceberg-data-in-onelake?ft=All), plus Snowflake has added the ability to write Iceberg tables directly to OneLake. For more information, see [Use Apache Iceberg tables with OneLake](../onelake/onelake-iceberg-tables.md).|
 |**AutoML code-first preview**|In Fabric Data Science, the [new AutoML feature](https://blog.fabric.microsoft.com/blog/microsoft-fabric-march-2024-update?ft=Monthly-update:category#post-7976-_Toc162004174) enables [automation of your machine learning workflow](../data-science/how-to-use-automated-machine-learning-fabric.md). [AutoML, or Automated Machine Learning](../data-science/automated-machine-learning-fabric.md), is a set of techniques and tools that can automatically train and optimize machine learning models for any given data and task type.|
@@ -371,6 +372,7 @@ This section summarizes recent improvements and features for [SQL databases in M
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|March 2026| **ALTER DATABASE SET options** | `ALTER DATABASE SET` options in SQL database are now available as a preview feature. For more information, see [ALTER DATABASET SET options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric-sqldb&preserve-view=true) for SQL database in Fabric. | 
 |March 2026|**Manage built-in SQL database mirroring to OneLake (preview)**|[Built‑in database mirroring](../database/sql/mirroring-overview.md) to OneLake makes operational data immediately available for analytics and AI, with zero ETL. You can now selectively manage the tables mirrored into Fabric OneLake, and [start or restart the Mirroring capability using the REST API](../database/sql/start-stop-mirroring-api.md).|
 |March 2026|**Vector index improvements in SQL database**|Improvements to [vector search and vector indexes in the SQL Database Engine](/sql/sql-server/ai/vectors?view=fabric-sqldb&preserve-view=true) improve performance, flexibility, and functionality for vector search operations. |
 |March 2026|**Dynamic Data Masking (DDM) (GA)**|[Dynamic data masking](/sql/relational-databases/security/dynamic-data-masking?view=fabric-sqldb&preserve-view=true) limits sensitive data exposure by masking it to nonprivileged users. It can be used to greatly simplify the design and coding of security in your application.|

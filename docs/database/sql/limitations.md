@@ -2,7 +2,7 @@
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
 ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier, ajayj
-ms.date: 02/19/2026
+ms.date: 03/03/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -29,12 +29,12 @@ Mirroring of SQL database in Fabric is available in [Fabric regions that support
 - In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
 - Each database in the workspace must have a unique name. If a database is deleted, another cannot be re-created with the same name.
 - Database names cannot contain characters `!` `[` `]` `<` `>` `*` `%` `&` `:` `/` `?` `#` `=` `@` `^` `"` `'` `;` `(` `)`.
+- All `ALTER DATABASE SET` options that are available in SQL database in Fabric are currently a preview feature. For more information, see [ALTER DATABASET SET options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric-sqldb&preserve-view=true) for SQL database in Fabric.
 
 ## Table level
 
 - A table primary key cannot be one of these data types: **hierarchyid**, **sql_variant**, **timestamp**.
 - Currently, in-memory, ledger, ledger history, and Always Encrypted tables cannot be created in SQL database in Microsoft Fabric.
-- Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The following table-level data definition language (DDL) operations aren't allowed:
     - Switch partition
     - Partition compression
@@ -74,7 +74,6 @@ The following table lists the major features of SQL Server and provides informat
 | [AI functions](/sql/t-sql/functions/ai-functions-transact-sql?view=fabric-sqldb&preserve-view=true) | Yes | Yes |
 | [Always Encrypted](/azure/azure-sql/database/always-encrypted-landing) | Yes | No |
 | [Application roles](/sql/relational-databases/security/authentication-access/application-roles) | Yes | No |
-| Microsoft Entra authentication | [Yes](/azure/azure-sql/database/authentication-aad-overview) | [Yes](authentication.md) |
 | [BACKUP command](/sql/t-sql/statements/backup-transact-sql) | No, only [system-initiated automatic backups](/azure/azure-sql/database/automated-backups-overview?view=azuresql-db&preserve-view=true) | No, only [system-initiated automatic backups](backup.md) |
 | [Built-in functions](/sql/t-sql/functions/functions) | Most, see individual functions | Most, see individual functions |
 | [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, through [OPENROWSET](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true), with OneLake as the data source. |
@@ -102,13 +101,14 @@ The following table lists the major features of SQL Server and provides informat
 | [Extended events (XEvents)](/sql/relational-databases/extended-events/extended-events) | Some, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=azuresql-db&preserve-view=true) | Some, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=fabricsql&preserve-view=true) |
 | [External tables](/sql/t-sql/statements/create-external-table-transact-sql?view=fabric-sqldb&preserve-view=true) | Yes | Yes (Parquet and CSV) |
 | [Files and file groups](/sql/relational-databases/databases/database-files-and-filegroups) | Primary file group only | Primary file group only |
-| [Full-text search (FTS)](/sql/relational-databases/search/full-text-search) |  Yes, but third-party filters and word breakers aren't supported | No |
+| [Full-text search (FTS)](/sql/relational-databases/search/full-text-search) |  Yes, but third-party filters and word breakers aren't supported | Yes, as a preview feature, but third-party filters and word breakers aren't supported. |
 | [Functions](/sql/t-sql/functions/functions) | Most, see individual functions |  Most, see individual functions |
 | [Intelligent query processing](/sql/relational-databases/performance/intelligent-query-processing?view=azuresqldb-current&preserve-view=true) | Yes | Yes |
 | [Language elements](/sql/t-sql/language-elements/language-elements-transact-sql) | Most, see individual elements | Most, see individual elements  |
 | [Ledger](/sql/relational-databases/security/ledger/ledger-overview) | Yes | No |
 | [Linked servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Yes, only as a target | Yes, only as a target |
 | [Logins and users](/sql/relational-databases/security/authentication-access/principals-database-engine) | Yes, but `CREATE` and `ALTER` login statements are limited. Windows logins are not supported. | Logins are not supported. Only users representing Microsoft Entra principals are supported. |
+| Microsoft Entra authentication | [Yes](/azure/azure-sql/database/authentication-aad-overview) | [Yes](authentication.md) |
 | [Minimal logging in bulk import](/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | No, only Full Recovery model is supported. | No, only Full Recovery model is supported. |
 | [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)|Yes, only to import from Azure Blob storage | Yes, with [OPENROWSET BULK function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true) (preview) |
 | [Operators](/sql/t-sql/language-elements/operators-transact-sql) | Most, see individual operators | Most, see individual operators |
