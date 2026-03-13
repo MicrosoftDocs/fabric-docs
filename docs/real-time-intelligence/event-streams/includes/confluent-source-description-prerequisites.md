@@ -12,4 +12,4 @@ Confluent Cloud for Apache Kafka is a streaming platform offering powerful data 
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Confluent Cloud for Apache Kafka cluster and an API Key. 
-- Your Confluent Cloud for Apache Kafka cluster should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- Your Confluent Cloud for Apache Kafka cluster should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).
