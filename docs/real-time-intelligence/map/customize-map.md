@@ -282,12 +282,11 @@ Data‑driven styling is supported for the following vector layer types:
 * [Bubble](#bubble-layer)
 * [Marker](#marker-layer)
 
-Fabric Maps supports two data‑driven styling modes for layer properties, depending on whether the selected field is categorical or numeric, described in the following table.
+Fabric Maps supports the **Color by category** data‑driven styling mode for layer properties, as described in the following table.
 
 | Styling mode | Description | Supported data types | Typical use cases |
 |-------------|-------------|----------------------|-------------------|
 | **Color by category** | Assigns a distinct color to each unique value in a selected property. This mode emphasizes differences between discrete categories and displays a corresponding legend on the map. | Text or categorical fields | Status classification (for example, *Active*, *Inactive*), asset types, regions, ownership, or any field with a limited set of distinct values. |
-| **Color by value range** | Styles features based on numeric values to show variation by magnitude. Values can be rendered using a continuous gradient or user‑defined step intervals, with a legend explaining the value ranges. | Numeric fields | Counts, volumes, scores, intensity, risk levels, or other quantitative measures where relative magnitude is important. |
 
 A corresponding data legend is displayed on the map to help viewers understand how values map to colors.
 
@@ -316,12 +315,6 @@ You enable and configure data‑driven styling from the Layer settings pane whil
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
     :::image type="content" source="media/customize-map/data-layer-legend.png" alt-text="A screenshot showing a Fabric Maps layer settings panel displaying color-by-category data-driven styling options. A dropdown menu shows category names with color swatches, ranging from dark red through purple to teal. Each category has an assigned color used to differentiate distinct values on the map legend. The panel demonstrates custom colors for individual categories in geographic data visualization.":::
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
-
-* **Color by value range**
-  * Choose a numeric property.
-  * Select **Gradient** or **Step** styling.
-  * Configure the gradient or define value intervals.
-  * The map displays a legend explaining the value ranges.
 
 ### Additional behavior and considerations
 
