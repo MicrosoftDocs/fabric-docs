@@ -65,7 +65,7 @@ The following table describes the general settings for data layers.
 
 | Setting | Description |
 |--|--|
-| Layer color | Defines the base color applied to this data layer. Note: If the "series group" option is enabled, individual series colors override the layer color setting. |
+| Layer color | Defines the base color applied to this data layer.  |
 | Tooltips | Specifies which more data properties should be displayed when hovering over map geometries. These properties provide contextual information about the spatial features shown on the map.|
 | Zoom level | Defines the range of zoom levels at which map geometries are visible.<br>Note: This setting isn't supported when using PMTiles as the data source. |
 
@@ -118,20 +118,12 @@ The following table outlines the available bubble visual settings along with the
 | Opacity | Controls the opacity of point features on the map. Valid range: 0% (fully transparent) to 100% (fully opaque). |
 | Stroke width | The numeric value that determines how thick the border of each bubble appears on the map, measured in pixels. Valid values: 0-10. |
 | Stroke color | Specifies the color used for the border of each bubble. This helps distinguish bubbles from the map background and can be used to emphasize or categorize data points. |
-| Enable series group | Toggle to use color to group and differentiate geometries based on the selected data property. Default: *off*<br>Note: If enabled, the **Layer color** defined in General settings aren't applied. |
-| Series group | Select a data property from this drop-down list to group and color-code bubble features. This option is only accessible when the **Enable series group** setting is active. |
 | Size | Configure how bubble sizes are displayed on the map:<br> <ul><li>**Fixed Size:** Select a consistent bubble size using a slider ranging from *1px to 50px*. Default = *8px*.</li><li>**Data-Driven Size:** Bubble size adjusts dynamically based on a numeric data property, allowing the size to reflect the magnitude of the underlying data. Only numeric properties are supported.</li></ul> |
 | Enable clustering | Groups nearby data points into clusters to reduce visual clutter and improve map readability. Default = *off* |
 | Cluster size | Configure size of clustered bubble, Support **fixed value**, users can configure clustered bubble size from 1px to 50px. Default = *16px*|
 | Aggregate by | The "Aggregate by" property allows users to select a numeric data field from a dropdown list to group and categorize bubble data. This feature is only applicable when working with numeric properties and is typically used to summarize or visualize aggregated values across spatial features. |
 | Aggregation | Select a method for summarizing data based on the chosen numeric property. Available options include:<br><ul><li>**Sum** – Adds all values together</li><li>**Average** – Calculates the mean of values</li><li>**Minimum** – Displays the smallest value in the group</li><li>**Maximum** – Displays the largest value in the group</li><li>**Count** – Tallies the number of data points in the group</li></ul> |
 | Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. Custom markers don't support data-driven color styling. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
-
-##### Enable series group
-
-The following screenshot displays electric vehicle (EV) charging stations in Washington State, United States, categorized by access hours. Users can easily identify stations that operate 24 hours a day.
-
-:::image type="content" source="media/customize-map/bubble-visual-series-group.png" lightbox="media/customize-map/bubble-visual-series-group.png" alt-text="Screenshot of bubble visual showing the 'enabling series group' option.":::
 
 ##### Enable clustering
 
@@ -160,7 +152,7 @@ To use custom images as a marker, browse files in a Lakehouse and select support
 :::image type="content" source="media/customize-map/create-custom-marker.png" lightbox="media/customize-map/create-custom-marker.png" alt-text="Screenshot showing the process of selecting a custom marker icon for locations on a map. The main focus is a panel displaying various icon options, including a create button at the bottom.":::
 
 > [!TIP]
-> For custom marker images that may need to scale at different zoom levels, **SVG** works best. SVG icons are vector‑based, so they resize cleanly without losing sharpness, keeping markers crisp and readable at any size. **PNG** and **JPG** are raster formats and can appear blurry or pixelated when scaled up, which can reduce map clarity—especially on high‑resolution displays or when zooming in.
+> For custom marker images that may need to scale at different zoom levels, **SVG** works best. SVG icons are vector‑based, so they resize cleanly without losing sharpness, keeping markers crisp and readable at any size. **PNG** and **JPG** are raster formats and can appear blurry or pixelated when scaled up, which can reduce map clarity—especially on high‑resolution displays or when zooming in. Custom marker images must be 1 MB or smaller.
 
 ##### Marker settings
 
@@ -229,15 +221,7 @@ The following table describes the available line visual setting and description.
 |--|--|
 | Stroke opacity | The opacity of line features. Valid values range from 1% to 100%. Default = *100%* |
 | Stroke width | The width of lines measured in pixels. Valid values: 0-10. Default = *3px* |
-| Enable series group | Toggle to use color to group and differentiate geometries based on the selected data property. Default: *off*<br>Note: If enabled, the **Layer color** defined in General settings aren't applied. |
-| Series group | Select a data property from this drop-down list to group and color-code lines. This option is only accessible when the **Enable series group** setting is active. |
 | Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
-
-##### Enable series group
-
-The following screenshot shows national forest trail data near by Mount Rainier. Enable series group and use data property ```ATV_RESTRICTED``` to identify trails that restricts ATVs (All-Terrain Vehicle).
-
-:::image type="content" source="media/customize-map/line-visual-enable-series-group.png" lightbox="media/customize-map/line-visual-enable-series-group.png" alt-text="Screenshot of line visual enable series group.":::
 
 ### Polygon settings
 
@@ -254,17 +238,9 @@ The following table describes the available polygon visual setting and descripti
 | Setting | Description |
 |--|--|
 | Fill opacity | The opacity of polygon features on the map. Valid range: 0% (fully transparent) to 100% (fully opaque). Default = *60%* |
-| Enable series group | Toggle to use color to group and differentiate geometries based on the selected data property. Default: *off*<br>Note: If enabled, the **Layer color** defined in General settings aren't applied. |
-| Series group | Select a data property from this drop-down list to group and color-code lines. This option is only accessible when the **Enable series group** setting is active. |
 | Data-driven styling | Colors are driven by the selected data field and apply only to predefined markers. For more information, see [Data-driven styling for map layers](#data-driven-styling-for-map-layers). |
 | Enable extrusion | This property allows polygons to be rendered in 3D by applying height based on a numeric field. It enhances spatial visualization by adding depth and volume to flat shapes. Default = *off*.|
 | Height | Specifies the numeric data field used to determine the vertical extrusion of each polygon. This option is only accessible when the **Enable extrusion** setting is active. |
-
-##### Enable series group
-
-The following screenshot displays a thematic map of California highlighting historic fire perimeters using the polygon visual. Each fire-affected area is color-coded according to the *DECADES* field, enabling viewers to distinguish wildfire events by time periods such as 1960–1969, 1970–1979, and beyond.
-
-:::image type="content" source="media/customize-map/polygon-visual-series-group.png" lightbox="media/customize-map/polygon-visual-series-group.png" alt-text="Screenshot of polygon visual showing historic fire data as a heat map.":::
 
 ##### Enable extrusion
 
@@ -299,7 +275,9 @@ You enable and configure data‑driven styling from the Layer settings pane whil
 1. Open the map in **Edit** mode.
 1. Select a vector data layer (line, polygon, bubble, or marker).
 1. In the **Layer settings** pane, select **Enable data‑driven styling**.
+
     :::image type="content" source="media/customize-map/data-driven-styling.png" lightbox="media/customize-map/data-driven-styling.png" alt-text="A screenshot showing a Fabric Maps visualization showing a map with multiple colored polygons representing car parks. The right panel displays customization options for the Car Parks layer, including fill opacity, data-driven styling, color by the number of car park spaces.":::
+
 1. In the **Color by** field, select a data property to drive the styling.
 
 #### Configure the styling mode
@@ -307,13 +285,17 @@ You enable and configure data‑driven styling from the Layer settings pane whil
 * **Color by category**
   * Choose a categorical property.
   * Select a built‑in color palette or customize individual category colors using the color picker.
+
     :::image type="content" source="media/customize-map/customize-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel showing the Color by option with a dropdown menu displaying different categories, each with corresponding color swatches ranging from dark red to teal, used to assign distinct colors to each category in data-driven styling.":::
 
     Select the color next to a category name to assign a custom color to that category:
 
     :::image type="content" source="media/customize-map/customize-individual-category-colors.png" alt-text="A screenshot showing a Fabric Maps customization panel displaying a Color by dropdown menu with category options. Each category has an associated color swatch ranging from dark red through orange to teal. A color picker interface appears above showing a gradient from light red to dark red with a hue slider and hex color input field. Users can select any category name to open the color picker and assign a custom color to that specific category for data-driven styling on the map.":::
+
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
+
     :::image type="content" source="media/customize-map/data-layer-legend.png" alt-text="A screenshot showing a Fabric Maps layer settings panel displaying color-by-category data-driven styling options. A dropdown menu shows category names with color swatches, ranging from dark red through purple to teal. Each category has an assigned color used to differentiate distinct values on the map legend. The panel demonstrates custom colors for individual categories in geographic data visualization.":::
+
   * The map displays a legend in the **Data layer** pane showing each category and its assigned color.
 
 ### Additional behavior and considerations
