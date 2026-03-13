@@ -25,7 +25,7 @@ For more information about tags, see [Tags in Microsoft Fabric](tags-overview.md
 
 1. Open the workspace settings and go to the **Tags** section.
 
-   ![workspace tags setting](media/tags-apply/workspace-tags-setting.png)
+   :::image type="content" source="media/tags-apply/workspace-tags-setting.png" alt-text="Screenshot showing the workspace tags setting.":::
 
 1. Use the **Select tags to apply** dropdown list to select one or more tags for your workspace. A workspace can have up to 10 tags.
 
