@@ -1,8 +1,8 @@
 ---
-title: GQL Graph Patterns in Fabric Graph
-description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in Fabric Graph queries. Includes examples and pattern composition rules.
+title: GQL Graph Patterns for graph in Microsoft Fabric
+description: Learn about GQL graph pattern syntax for matching nodes, edges, and paths in graph queries. Includes examples and pattern composition rules.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -10,7 +10,7 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Graph patterns are core building blocks of your GQL queries in Fabric Graph. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
+Graph patterns are core building blocks of your GQL queries in graph in Microsoft Fabric. They describe the structures you're looking for in the graph using nodes and edges in an intuitive, visual way. Think of graph patterns as templates that the query engine tries to match against the actual data in your graph.
 
 This article explains the syntax and composition rules for graph patterns in GQL.
 
@@ -39,7 +39,7 @@ This pattern matches all nodes that have **both** the `Place` and `City` labels 
 - **Flexible ("covariant") matching**: Matched nodes can have more labels and properties beyond the ones specified.
 
 > [!NOTE]
-> Graph models with multiple element labels aren't yet supported (known issue).
+> graph models with multiple element labels aren't yet supported (known issue).
 
 ### Simple edge patterns
 
@@ -240,7 +240,7 @@ The pattern finds a person along with their education, employment, and content p
 
 ### Match trails
 
-In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, Graph supports the `TRAIL` match mode.
+In complex patterns, it's often undesirable to traverse the same edge multiple times. Edge reuse becomes important when the actual graph contains cycles that could lead to infinite or overly long paths. To handle edge reuse, graph supports the `TRAIL` match mode.
 
 Prefixing a path pattern with the keyword `TRAIL` discards all matches that bind the same edge multiple times:
 
