@@ -298,8 +298,10 @@ items:
     items:    
     - name: Extract DAC from a dedicated SQL pool
       href: extract-data-tier-application-synapse-dedicated-sql-pool.md
-    - name: Migration Assistant guide for Azure Synapse Analytics
-      href: migrate-with-migration-assistant.md
+    - name: Migrate with a DACPAC file
+      href: migrate-using-upload-file.md
+    - name: Migrate with a direct connection
+      href: migrate-using-connection-to-source-system.md
     - name: Migrate to IDENTITY columns
       href: migrate-identity-columns.md
 - name: Troubleshoot
