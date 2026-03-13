@@ -56,6 +56,11 @@ productDirectory:
   summary: Learn about Fabric, evaluate its features, the experiences it offers, analyze your data and run reports. # Optional but good for SEO. Remove if not applicable.
   items:
     # Card
+    - title: Get started in Fabric
+      imageSrc: ./media/fabric-icon.png
+      summary: Start with an end-to-end view of how to get data, store it, transform it, analyze it, and share insights in Microsoft Fabric.
+      url: fundamentals/data-lifecycle.md
+    # Card
     - title: Copilot in Fabric
       imageSrc: ./media/copilot-icon.svg
       summary: Leverage AI-powered assistance to enhance your data analysis and decision-making processes.
