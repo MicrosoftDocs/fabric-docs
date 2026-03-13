@@ -1,8 +1,8 @@
 ---
-title: GQL Values and Value Types for Fabric Graph
-description: Learn about GQL values and value types in Fabric Graph, including literals, comparison rules, type conversions and the type system hierarchy.
+title: GQL Values and Value Types for graph in Microsoft Fabric
+description: Learn about GQL values and value types in graph in Microsoft Fabric, including literals, comparison rules, type conversions and the type system hierarchy.
 ms.topic: reference
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -10,7 +10,7 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article provides a comprehensive reference for GQL values and value types in Fabric Graph.
+This article provides a comprehensive reference for GQL values and value types in graph in Microsoft Fabric.
 
 The GQL language supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
 
@@ -161,7 +161,7 @@ STRING [ NOT NULL ]
 
 ### Exact numeric types
 
-Graph supports exact numbers that are negative or positive integers.
+graph supports exact numbers that are negative or positive integers.
 
 **How comparison works:**
 
@@ -191,7 +191,7 @@ So do `UINT` and `UINT64`.
 
 ### Approximate numeric types
 
-Graph supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
+graph supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
 
 **How comparison works:**
 
@@ -262,7 +262,7 @@ Node reference values represent references to specific nodes in your graph. You 
 
 Compare node reference values only for equality. Two node reference values are equal if and only if they reference the same node.
 
-Graph defines a deterministic order over reference values. However, this order can change from query to query and you shouldn't rely on it in production queries.
+graph defines a deterministic order over reference values. However, this order can change from query to query and you shouldn't rely on it in production queries.
 
 **How to access properties:**
 
@@ -394,7 +394,7 @@ NULL NOT NULL
 List values are sequences of elements. Lists can contain elements of the same type and can include null values.
 
 > [!IMPORTANT]
-> Currently, lists in Graph can't contain elements of mixed types.
+> Currently, lists in graph can't contain elements of mixed types.
 
 **How comparison works:**
 
@@ -405,7 +405,7 @@ Lists are compared first by size, then element by element in order. Two lists ar
 
 **Group lists:**
 
-Group lists are lists bound by matching variable-length edge patterns. Graph tracks their status as group lists.
+Group lists are lists bound by matching variable-length edge patterns. graph tracks their status as group lists.
 
 You can use group lists in horizontal aggregation. For more information, see [GQL expressions and functions](gql-expressions.md).
 

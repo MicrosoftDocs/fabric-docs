@@ -2,7 +2,7 @@
 title: "Quickstart: Create your first graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes using the visual graph modeling experience.
 ms.topic: quickstart
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
 ai-usage: ai-assisted
@@ -12,18 +12,18 @@ ai-usage: ai-assisted
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this quickstart, you create a basic graph with two nodes and one edge, and then run a query. This process takes about 15 minutes.
+In this quickstart, you use graph in Microsoft Fabric to create a basic graph with two nodes and one edge, and then run a query. This process takes about 15 minutes.
 
-For a comprehensive tutorial that covers the full Adventure Works data model and more advanced scenarios, see the [Fabric Graph tutorial](tutorial-introduction.md).
+For a comprehensive tutorial that covers the full Adventure Works data model and more advanced scenarios, see the [graph tutorial](tutorial-introduction.md).
 
 ## Prerequisites
 
 Before you start this quickstart, verify that:
 
-1. [Fabric Graph is available in your region](overview.md#region-availability).
-1. Graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
+1. [graph is available in your region](overview.md#region-availability).
+1. graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
 
-   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable Graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
+   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 
 1. You're a member of a Fabric workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](../admin/portal-workspaces.md).
 
@@ -36,7 +36,7 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 
 ### Download the sample data
 
-1. Go to the [Fabric Graph GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
+1. Go to the [graph GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
 1. Select the *adventureworks_docs_sample.zip* file and download it to your local machine.
 
     > [!TIP]
@@ -55,7 +55,7 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 1. Enter a name (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and select **Create**.
 
     > [!IMPORTANT]
-    > Graph doesn't currently support lakehouses with [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
+    > graph doesn't currently support lakehouses with [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
 
 ### Load the data into tables
 
@@ -153,6 +153,6 @@ Congratulations! You created your first graph in Microsoft Fabric and ran a quer
 
 ## Next steps
 
-- [Fabric Graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries
+- [graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries
 - [GQL language guide](gql-language-guide.md) - Learn GQL syntax
-- [What is Fabric Graph?](overview.md) - Learn about graph concepts
+- [What is graph in Microsoft Fabric?](overview.md) - Learn about graph concepts

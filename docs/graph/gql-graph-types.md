@@ -1,8 +1,8 @@
 ---
-title: GQL Graph Types Reference for Fabric Graph
-description: Complete reference for defining graph types in GQL for Fabric Graph, including node types, edge types, constraints, and inheritance.
+title: GQL Graph Types Reference for graph in Microsoft Fabric
+description: Complete reference for defining graph types in GQL for graph in Microsoft Fabric, including node types, edge types, constraints, and inheritance.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -24,7 +24,7 @@ Graph types provide several key benefits:
 - **Documentation**: Serve as a clear specification of your graph's structure for developers and analysts.
 
 > [!NOTE]
-> This article introduces graph types conceptually and illustrates their definition using the syntax defined in the GQL standard. However, this syntax isn't currently supported directly for Graph.
+> This article introduces graph types conceptually and illustrates their definition using the syntax defined in the GQL standard. However, this syntax isn't currently supported directly for graph.
 
 Structurally, a graph type defines allowed node types and edge types of graphs of the graph type, as well as additional constraints that further restrict those graphs.
 
@@ -108,7 +108,7 @@ Therefore the previous syntax can be understood to effectively define the follow
 
 ### Save time with inheritance shortcuts
 
-Repeating labels and properties from parent node types gets tedious and error-prone. Graph provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
+Repeating labels and properties from parent node types gets tedious and error-prone. graph provides the `+=` operator so you can specify only the extra (noninherited) labels and property types:
 
 ```gql
 (:Post => :Message += {
@@ -125,7 +125,7 @@ When no extra properties are specified, the graph inherits all required properti
 
 ### Use abstract node types
 
-You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. Abstract node types are useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in Graph:
+You can define node types purely for building hierarchies, even when your graph doesn't contain concrete nodes of that type. Abstract node types are useful for creating conceptual groupings and shared property sets. For this purpose, you can define a node type as `ABSTRACT` in graph:
 
 ```gql
 ABSTRACT (:Message => {
@@ -205,7 +205,7 @@ This definition implicitly defines the following edge types:
 
 ## Supported property types
 
-When you define a property type, use a property value type that Graph supports. Choosing the right data types is important for storage efficiency and query performance.
+When you define a property type, use a property value type that graph supports. Choosing the right data types is important for storage efficiency and query performance.
 
 Use the following data types for property values:
 
@@ -235,7 +235,7 @@ Understanding key constraints is crucial because they:
 - **Support data integration**: Provide a stable way to reference nodes across different data sources.
 
 > [!IMPORTANT]
-> For Graph, exactly one key constraint must constrain every node.
+> For graph, exactly one key constraint must constrain every node.
 
 ### How node key constraints work
 
@@ -269,5 +269,5 @@ You can also define compound keys that use multiple properties together to ensur
 - [GQL language guide](gql-language-guide.md)
 - [Social network schema example](gql-schema-example.md)
 - [GQL values and value types](gql-values-and-value-types.md)
-- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
+- [Optimize GQL query performance for graph](gql-query-performance.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

@@ -1,14 +1,14 @@
 ---
-title: "Tutorial: Introduction to Fabric Graph"
+title: "Tutorial: Introduction to graph in Microsoft Fabric"
 description: Learn how to build a complete graph model in Microsoft Fabric, from loading data and creating a graph model to querying your data with GQL.
 ms.topic: tutorial
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
-ms.search.form: Tutorial - Introduction to Fabric Graph
+ms.search.form: Tutorial - Introduction to graph in Microsoft Fabric
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Introduction to Fabric Graph
+# Tutorial: Introduction to graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
@@ -18,8 +18,8 @@ This tutorial provides a step-by-step walkthrough of an end-to-end graph scenari
 
 Before you start this tutorial, verify that:
 
-1. [Graph is available in your region](overview.md#region-availability).
-1. Graph is enabled in your Fabric tenant.
+1. [graph is available in your region](overview.md#region-availability).
+1. graph is enabled in your Fabric tenant.
 
    :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 
@@ -28,7 +28,7 @@ Before you start this tutorial, verify that:
     > [!IMPORTANT]
     > Access management of the graph is restricted to the workspace that hosts it. Users outside of the workspace can't access the graph. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
 
-## Graph end-to-end scenario
+## graph end-to-end scenario
 
 In this tutorial, you take on the role of a data analyst at the fictional Adventure Works company. You build a graph model to represent the relationships between customers, orders, employees, products, and vendors. Then, you query the graph to uncover insights about customer purchasing behavior and product performance. Follow these steps:
 
@@ -40,14 +40,14 @@ In this tutorial, you take on the role of a data analyst at the fictional Advent
 1. [Query the graph with GQL](tutorial-query-code-editor.md) using the code editor.
 1. [Clean up tutorial resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
-For a detailed overview of how data flows through Graph — from data sources through OneLake storage, graph modeling, querying, and results — see [Fabric Graph architecture](how-graph-works.md).
+For a detailed overview of how data flows through graph — from data sources through OneLake storage, graph modeling, querying, and results — see [graph architecture](how-graph-works.md).
 
 ## Sample data
 
 For this tutorial's sample data, use the [Adventure Works sample dataset](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph). Adventure Works is a fictional bicycle manufacturer that sells bicycles and accessories to customers worldwide.
 
 > [!NOTE]
-> The Adventure Works dataset used in this tutorial is a custom-transformed version designed specifically for demonstrating Graph capabilities. It differs from standard Adventure Works datasets and supports graph-specific features.
+> The Adventure Works dataset used in this tutorial is a custom-transformed version designed specifically for demonstrating graph capabilities. It differs from standard Adventure Works datasets and supports graph-specific features.
 
 The Adventure Works dataset includes:
 

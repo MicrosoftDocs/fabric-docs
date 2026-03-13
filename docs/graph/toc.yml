@@ -1,9 +1,9 @@
 items:
   - name: Getting started
     items:
-      - name: What is Fabric Graph?
+      - name: What is graph in Microsoft Fabric?
         href: overview.md
-      - name: Quickstart guide for Fabric Graph
+      - name: Quickstart guide for graph
         href: quickstart.md
       - name: Example graph datasets
         href: sample-datasets.md
@@ -35,7 +35,7 @@ items:
         href: graph-data-models.md
       - name: Compare graph and relational databases
         href: graph-relational-databases.md
-      - name: Fabric Graph architecture
+      - name: graph in Microsoft Fabric architecture
         href: how-graph-works.md
       - name: Security
         href: security-overview.md

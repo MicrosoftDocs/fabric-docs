@@ -1,8 +1,8 @@
 ---
-title: GQL Query HTTP API Reference for Fabric Graph
-description: Refer to the complete HTTP API reference for querying graph data in Fabric Graph using GQL (Graph Query Language) via REST endpoints.
+title: GQL Query HTTP API Reference for graph in Microsoft Fabric
+description: Refer to the complete HTTP API reference for querying graph data in graph in Microsoft Fabric using GQL (Graph Query Language) via REST endpoints.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Query HTTP API reference
 ---
@@ -11,7 +11,7 @@ ms.search.form: GQL Query HTTP API reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Run GQL queries against property graphs in Fabric Graph using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
+Run GQL queries against property graphs in graph in Microsoft Fabric using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
 
 > [!IMPORTANT]
 > This article exclusively uses the [social network example graph dataset](sample-datasets.md).
@@ -29,7 +29,7 @@ The GQL Query API is a single endpoint (RPC over HTTP) that accepts GQL queries 
 
 ## Prerequisites
 
-- You need a graph in Fabric Graph that contains data, including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
+- You need a graph in graph that contains data, including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
 - You should be familiar with [property graphs and a basic understanding of GQL](gql-language-guide.md), including the structure of [execution outcomes and results](gql-language-guide.md#execution-outcomes-and-results).
 - You need to install and set up the [Azure CLI](/cli/azure/) tool `az` to sign in to your organization. Command line examples in this article assume use of a POSIX-compatible command line shell such as bash.
 
@@ -170,10 +170,10 @@ For more information, see the [GQL status codes reference](gql-reference-status-
 
 #### Diagnostic records
 
-Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to Graph. The GQL standard prescribes all other keys.
+Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to graph. The GQL standard prescribes all other keys.
 
 > [!NOTE]
-> Values in the diagnostic record of keys specific to Graph are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
+> Values in the diagnostic record of keys specific to graph are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
 
 #### Causes
 
@@ -467,7 +467,7 @@ Follow these best practices when using the GQL Query API.
 
 ## Related content
 
-- [Graph data models](graph-data-models.md)
+- [graph data models](graph-data-models.md)
 - [GQL language guide](gql-language-guide.md)
 - [GQL values and value types](gql-values-and-value-types.md)
 - [GQL status codes reference](gql-reference-status-codes.md)

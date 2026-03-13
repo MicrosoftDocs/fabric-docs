@@ -1,18 +1,18 @@
 ---
-title: Current Limitations of Fabric Graph
-description: Understand the current limitations of Fabric Graph, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
+title: Current Limitations of graph in Microsoft Fabric
+description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ---
 
-# Current limitations of Fabric Graph
+# Current limitations of graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-While Fabric Graph is in preview, the service has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
+While graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
 
-For help with common problems, see [Troubleshooting Fabric Graph](troubleshooting-and-faq.md).
+For help with common problems, see [Troubleshooting graph](troubleshooting-and-faq.md).
 
 ## Creating graph models
 
@@ -25,7 +25,7 @@ For help with common problems, see [Troubleshooting Fabric Graph](troubleshootin
 
 ### Data types
 
-Graph currently supports the following data types:
+graph currently supports the following data types:
 
 - Boolean (values are `true` and `false`)
 - Double (values are 64-bit floating point numbers)
@@ -79,7 +79,7 @@ When you add a node to your graph model, all columns from the source table are a
 
 ### Number of hops in multihop queries
 
-Graph currently supports up to eight hops on variable length patterns.
+graph currently supports up to eight hops on variable length patterns.
 
 ### Size of results
 
@@ -98,7 +98,7 @@ Queries time out if they take more than 20 minutes.
 
 ## GQL conformance
 
-Graph supports the following query features from the GQL standard:
+graph supports the following query features from the GQL standard:
 
 - FILTER statement
 - LET statement
@@ -267,7 +267,7 @@ Conformance to GQL standards is still in progress for:
 
 ## Related content
 
-- [Fabric Graph overview](./overview.md)
+- [graph overview](./overview.md)
 - [What is a graph database?](./graph-database.md)
-- [Troubleshooting and FAQ for Fabric Graph](troubleshooting-and-faq.md)
-- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md)
+- [Troubleshooting and FAQ for graph](troubleshooting-and-faq.md)
+- [Optimize GQL query performance in graph](gql-query-performance.md)
