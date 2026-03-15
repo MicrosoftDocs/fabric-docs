@@ -188,6 +188,8 @@ items:
       href: sql/limitations.md
     - name: Start/stop mirroring with REST API
       href: sql/start-stop-mirroring-api.md
+    - name: Control compute usage
+      href: sql/control-compute-usage.md
   - name: Reference
     items: 
     - name: T-SQL Reference for Fabric
