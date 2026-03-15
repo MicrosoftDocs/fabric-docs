@@ -75,6 +75,7 @@ Create a pipeline in Azure DevOps that references the `deploy-using-bulk-api.yml
 
 > ⚠️ **Permission Tip:** The first time the pipeline runs, ADO may prompt you to authorize access to the variable groups and environments. An ADO admin can pre-authorize these under Pipeline → Settings.
 
+> ⚠️ **Production Tip:** This pipeline demonstrates deployment to a test environment. The production deployment can follow a similar flow, with an approval gate added after successful validation in the test environment.
 
 ## 3. Code Deep Dive: ADO Pipeline YAML
 
@@ -84,16 +85,13 @@ Below is the full pipeline with line-by-line annotations.
 
 ```yaml
 # ──────────────────────────────────────────────────────────────
-# TRIGGER: for simplicity here it is manual trigger
+# TRIGGER: pipeline start on every push to main branch
 # ──────────────────────────────────────────────────────────────
 trigger:
   branches:
     include:
-    - none
-```
-
-### 🔍 Explanation-Trigger
-- for more complex trigger mechanism check: [fabric-cicd and Azure DevOps tutorial](tutorial-fabric-cicd-azure-devops.md). 
+    - main
+``` 
 
 ```yaml
 
@@ -101,17 +99,12 @@ trigger:
 # Define the Azure DevOps agent, use of the variable group, and parameters initialization
 # ─────────────────────────────────────────────────────────────────────────────────────────
 pool:
-  name: 'Default' ## change to: `vmImage: ubuntu-latest` for Microsoft Hosted Agent (Linux based)
+  vmImage: ubuntu-latest
 
 variables:
   - group: bulkapi-group
-  - name: workspace_to_deploy
-    ${{ if startsWith(variables['Build.SourceBranchName'], 'main') }}:
-      value: "bulk-tutorial-test"
-    ${{ if startsWith(variables['Build.SourceBranchName'], 'test-') }}:
-      value: "bulk-tutorial-test"
-    ${{ if startsWith(variables['Build.SourceBranchName'], 'prod-') }}:
-      value: "bulk-tutorial-prod"
+  - name: test_workspace_to_deploy
+    value: "bulk-tutorial-test"
 ```
 
 ```yaml
@@ -120,7 +113,7 @@ variables:
 # Step 1: Checkout & Get Fabric API token using service principal
 # ────────────────────────────────────────────────────────────────
 stages:
-  - stage: Deploy_Release
+  - stage: Deploy_Test
     jobs:
       - job: Deploy
         displayName: 'Deploy using Bulk-API'
@@ -141,17 +134,18 @@ stages:
 # Step 2: Build REQUEST_BODY and call Bulk Import Item Definitions API 
 # ────────────────────────────────────────────────────────────────────
         - script: |
-            # Get workspace ID from workspace name to deploy
+            ## Get workspace ID from workspace name to deploy
             WORKSPACE_ID=$(curl -s -H "Authorization: Bearer $(FABRIC_TOKEN)" \
               "https://api.fabric.microsoft.com/v1/workspaces" \
-              | jq -r '.value[] | select(.displayName=="'"$(workspace_to_deploy)"'") | .id')
+              | jq -r '.value[] | select(.displayName=="'"$(test_workspace_to_deploy)"'") | .id')
 
             if [ -z "$WORKSPACE_ID" ] || [ "$WORKSPACE_ID" = "null" ]; then
-              echo "##vso[task.logissue type=error]Workspace '$(workspace_to_deploy)' not found"
+              echo "##vso[task.logissue type=error]Workspace '$(test_workspace_to_deploy)' not found"
               exit 1
             fi
             echo "Workspace ID: $WORKSPACE_ID"
 
+            ## Iterate through each file in the specified folder, read its contents, and encode them in Base64.
             BASE_DIR="$(Build.SourcesDirectory)/bulk-tutorial-dev"
 
             PARTS_JSON="[]"
@@ -164,6 +158,7 @@ stages:
                 '. + [{path: $path, payload: $payload, payloadType: "InlineBase64"}]')
             done < <(find "$BASE_DIR" -type f -print0)
 
+            ## Prepare the request body with base64 encoded items
             REQUEST_BODY=$(jq -n \
               --argjson parts "$PARTS_JSON" \
               '{
@@ -205,7 +200,7 @@ stages:
               echo "##vso[task.logissue type=error]Bulk import failed with HTTP $HTTP_CODE"
               exit 1
             fi
-          displayName: 'Deploy to $(workspace_to_deploy)'
+          displayName: 'Deploy to $(test_workspace_to_deploy)'
 ```
 
 ```yaml
