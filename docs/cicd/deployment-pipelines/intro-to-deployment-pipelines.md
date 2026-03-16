@@ -1,28 +1,23 @@
 ---
 title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines in the Fabric Application lifecycle management (ALM) tool. Learn which items can be deployed, the structure of a pipeline, and how to pair items.
-author: mberdugo
-ms.author: monaberdugo
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/28/2024
+ms.date: 12/15/2025
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 #customer intent: As a developer, I want to learn about deployment pipelines in the Fabric service so that I can manage my development process efficiently.
 ---
 
-# What is deployment pipelines?
+# Introduction to deployment pipelines
 
 > [!NOTE]
-> This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
+> The articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
 Microsoft Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](#supported-items) that you can deploy.
 
-> [!IMPORTANT]
-> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
+> [!NOTE]
+>
+> * The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
+> * Some of the items for deployment pipelines are in preview. For more information, see the list of [supported items](#supported-items).
 
 ## Learn to use deployment pipelines
 
@@ -30,26 +25,85 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 * [Create and manage a deployment pipeline](/training/modules/power-bi-deployment-pipelines) - A Learn module that walks you through the entire process of creating a deployment pipeline.
 
-* [Get started with deployment pipelines](get-started-with-deployment-pipelines.md) - An article explaining how to create a pipeline and key functions such as deployment, comparing content in different stages, and creating deployment rules.
+* [Get started with deployment pipelines](./get-started-with-deployment-pipelines.md) - An article that explains how to create a pipeline and perform key functions such as deployment, comparing content in different stages, and creating deployment rules.
 
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* [Data pipelines](../../data-factory/git-integration-deployment-pipelines.md)
-* Dataflows Gen1
-* [Datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
-* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
-* Reports (based on supported semantic models)
-* [Spark environment](../../data-engineering/environment-git-and-deployment-pipeline.md)
-* Semantic models (only semantic models that originate from .pbix files and aren't PUSH datasets)
-* [Warehouses](../../data-warehouse/data-warehousing.md)
+>[!IMPORTANT]
+>Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. For more information see [Retirement of semantic model support for deployment pipelines](../troubleshoot-cicd.md#retirement-of-semantic-model-support-for-deployment-pipelines).
+
+* Data Engineering items:
+
+  * [Environment](../../data-engineering/environment-git-and-deployment-pipeline.md#set-up-a-deployment-pipeline-for-an-environment)
+  * [GraphQL](../../data-engineering/graphql-source-control-and-deployment.md#api-for-graphql-in-deployment-pipeline)
+  * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md#what-is-tracked)
+  * [Notebook](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
+  * [Spark Job Definitions](../../data-engineering/spark-job-definition-source-control.md)
+  * [User Data Functions](../../data-engineering/user-data-functions/user-data-functions-overview.md)
+
+* Data Science items:
+  * [Machine learning experiments](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
+  * [Machine learning models](../../data-science/machine-learning-artifacts-git-deployment-pipelines.md#machine-learning-experiments-and-models-in-deployment-pipelines) *(preview)*
+  * [Data Agents](../../data-science/how-to-create-data-agent.md) *(preview)*
+
+* Data Factory items:
+
+  * [Copy Job](../../data-factory/cicd-copy-job.md#deployment-pipelines-for-git)
+  * [Dataflows gen2](../../data-factory/dataflow-gen2-cicd-and-git-integration.md)
+  * [Pipeline](../../data-factory/cicd-pipelines.md)
+  * [Mirrored database](../../mirroring/mirrored-database-cicd.md#mirrored-database-in-deployment-pipelines)
+  * [Mount ADF](../../data-factory/tutorial-bring-azure-data-factory-to-fabric.md)
+  * [Mirrored snowflake](../../mirroring/snowflake.md) *(preview)*
+  
+
+* Real-time Intelligence items:
+
+  * [Activator](../../real-time-intelligence/git-deployment-pipelines.md) *(preview)*
+  * [Digital twin builder](../../real-time-intelligence/digital-twin-builder/overview.md) *(preview)*
+  * [Eventhouse](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [EventStream](../../real-time-intelligence/event-streams/eventstream-cicd.md#deploy-eventstream-items-from-one-stage-to-another)
+  * [KQL database](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [KQL Queryset](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Real-time Dashboard](../../real-time-intelligence/git-deployment-pipelines.md)
+  * [Event Schema Set](../../real-time-intelligence/schema-sets/create-manage-event-schemas.md) *(preview)*
+  * [Maps](/azure/azure-maps/) *(preview)*
+  * [Anomaly detection](../../real-time-intelligence/multivariate-anomaly-overview.md) *(preview)*
+
+* Data Warehouse items:
+
+  * [Warehouse](../../data-warehouse/source-control.md#deployment-pipelines) *(preview)
+  * Mirrored Azure Databricks Catalog 
+
+
+* Power BI items:
+
+  * Dashboard *(preview)*
+  * Dataflow *(preview)*
+  * Datamart *(preview)*
+  * [Org app](/power-bi/consumer/org-app-items/org-app-cicd) *(preview)*
+  * Paginated report *(preview)*
+  * Report (based on supported semantic models) *(preview)*
+  * Semantic model (that originates from a .pbix file and isn't a PUSH dataset) *(preview)*
+
+* Database items:
+
+  * [SQL database](../../database/sql/deployment-pipelines.md) *(preview)*
+  * [Cosmos database](../../database/cosmos-db/overview.md) *(preview)*
+
+* Industry solutions:
+
+  * [Healthcare](/industry/healthcare/healthcare-data-solutions/application-lifecycle-management) *(preview)*
+  * HealthCare Cohort *(preview)*
+
+* IQ (preview) items:
+
+  * [Ontology](../../iq/ontology/overview.md) *(preview)*
 
 ## Pipeline structure
 
-You decide how many stages you want in your deployment pipeline. There can be anywhere from two to ten stages. When you create a pipeline, the default three typical stages are given as a starting point, but you can add, delete, or rename the stages to suit your needs. Regardless of how many stages there are, the general concepts are the same:
+You decide how many stages you want in your deployment pipeline. There can be anywhere from two to 10 stages. When you create a pipeline, the default three typical stages are given as a starting point, but you can add, delete, or rename the stages to suit your needs. Regardless of how many stages there are, the general concepts are the same:
 
 * **<a name="development"></a>Development**
 
@@ -69,11 +123,11 @@ You decide how many stages you want in your deployment pipeline. There can be an
 
     After testing the content, use the production stage to share the final version of your content with business users across the organization.
 
-### [New pipeline design](#tab/new)
+### [New pipeline design](#tab/new-ui)
 
 :::image type="content" source="media/intro-to-deployment-pipelines/full-pipeline-new.gif" alt-text="A screenshot of a working deployment pipeline with all three stages, development, test, and production, populated.":::
 
-### [Original pipeline design](#tab/old)
+### [Original pipeline design](#tab/old-ui)
 
 :::image type="content" source="media/intro-to-deployment-pipelines/full-pipeline-old.gif" alt-text="A screenshot the original working deployment pipeline design with all three stages, development, test, and production, populated.":::
 
@@ -83,17 +137,17 @@ You decide how many stages you want in your deployment pipeline. There can be an
 
 Pairing is the process by which an item (such as a report, dashboard, or semantic model) in one stage of the deployment pipeline is associated with the same item in the adjacent stage. Pairing occurs when you assign a workspace to a deployment stage or when you deploy new unpaired content from one stage to another (a clean deploy).
 
-It's important to understand how pairing works, in order to understand when items are copied, when they're overwritten, and when a deployment fails when using the deploy function.
+A good understanding of pairing is crucial to help you understand when items are copied, when they're overwritten, and when a deployment fails.
 
 If items aren't paired, even if they appear to be the same (have the same name, type, and folder), they don't overwrite on a deployment. Instead, a duplicate copy is created and paired with the item in the previous stage.
 
 Paired items appear on the same line in the pipeline content list. Items that aren't paired, appear on a line by themselves:
 
-### [New pairing design](#tab/new)
+### [New pairing design](#tab/new-ui)
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items-new.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line in the new UI.":::
 
-### [Original pairing design](#tab/old)
+### [Original pairing design](#tab/old-ui)
 
 :::image type="content" source="./media/intro-to-deployment-pipelines/paired-items.png" alt-text="Screenshot showing adjacent stages with paired items listed on the same line and one item in the second stage that's not in the first stage.":::
 
@@ -105,6 +159,17 @@ Paired items appear on the same line in the pipeline content list. Items that ar
 For a detailed explanation of which items are paired and how pairing works, see [Item pairing](./assign-pipeline.md#item-pairing).
 
 ## Deployment method
+Deployment pipelines provide content creators with a production environment where they can collaborate with others to manage the lifecycle of organizational content. 
+
+The deployment pipeline is composed of stages.  You decide how many stages you want in your deployment pipeline. There can be anywhere from two to 10 stages. The default is 3.
+
+The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production. During deployment, Microsoft Fabric copies the content from the source stage to the target stage.
+
+Folders enable users to efficiently organize and manage workspace items in a familiar way. When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
+
+With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+ 
+Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 To deploy content to another stage, at least one item must be selected. When you deploy content from one stage to another, the items being copied from the source stage overwrite the paired item in the stage you're in according to the [pairing rules](./assign-pipeline.md#item-pairing). Items that don't exist in the source stage remain as is.
 

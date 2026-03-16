@@ -1,14 +1,10 @@
 ---
 title: Troubleshoot the Fabric lifecycle management tools.
 description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools.
-author: mberdugo
-ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/28/2024
+ms.custom: sfi-image-nochange
+ms.date: 02/17/2026
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -56,13 +52,23 @@ To understand the considerations and limitations of various lifecycle management
 **Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them doesn't work.  
 **Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Microsoft Entra ID (formerly known as Azure Active Directory) are defined in [Manage authentication methods](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy).
 
+#### I exceeded the Git rate limit
+
+**Description of problem**: When I try to update or commit to Git, I get an error message that says that I exceeded the Git rate limit.
+
+:::image type="content" source="./media/troubleshoot-cicd/git-rate-limit.png" alt-text="Screenshot of error message saying Git rate limit exceeded.":::
+
+**Cause**: Your git provider limits the number of Git actions you can perform in a given amount of time. The rate limit can be reached either by performing a large number of Git operations, or by executing operations that involve a large number of items. For information about GitHub rate limits, see [About primary rate limits](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-primary-rate-limits). For Azure DevOps limits, see [Rate and usage limits](/azure/devops/integrate/concepts/rate-limits).
+
+**Solution**: Wait the amount of time specified in the error message, and then try again. If you continue to see this error, contact your Git provider for more information.
+
 ### Connect issues
 
 #### Connect failure: Unable to connect to repository
 
 **Description of problem**: When I try to connect to a Git repo I get a message that it can't connect because the workspace is in a different region.  
 **Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
-**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations).
 
 #### Connect failure: It says something went wrong when I try to connect
 
@@ -76,18 +82,6 @@ To understand the considerations and limitations of various lifecycle management
 
 **Solution**: Open the Git repository in Azure DevOps and navigate to the Git folder defined in the connection. If the Git folder contains subdirectories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a subdirectory. If the Git folder doesn't contain any item directories, you can't connect to it. Either remove the subdirectories or connect to a different folder that doesn't contain subdirectories.
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
-
-**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
-
-:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
-
-**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
-
-**Solution**:
-
-* To create a new folder and connect it to the workspace, select **Create and sync**.  
-* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
 
 #### The Source control icon doesn't have a number
 
@@ -104,15 +98,38 @@ To understand the considerations and limitations of various lifecycle management
 
 #### Branching out: I don't see the branch I want to connect to
 
-**Description of problem**: I don't see the branch I want to connect to in the branching out tab of the **Source control** panel.  
-**Cause**: The branching out list only shows branches that you have permission to view.  
-**Solution**: Check that the branch you want exists and that you have permission to view it. If not, ask the owner of the branch to give you permission to see [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
+**Description of problem**: I don't see the workspace I want to connect to in the branching out tab of the **Source control** panel.  
+**Cause**: The branching out list only shows workspaces that you have permission to view.  
+**Solution**: Check that the workspace you want exists and that you have permission to view it. If not, ask the owner of the workspace to give you permission. See [Branch limitations](./git-integration/git-integration-process.md#branching-out-limitations) for more information.
 
 #### Branching out: My new workspace wasn’t synced with my Git repository
 
 **Description of problem**: When branching out to a new workspace, I’m navigated to the new workspace but Git integration isn’t enabled there.
 **Cause**: The [Git integration switch](../admin/git-integration-admin-settings.md) might be enabled for your source workspace, but not for the whole tenant as the tenant admin can delegate control of the switch to workspace admins. If this is the case, your new workspace won't have Git integration enabled and you'll need to manually enable it from the workspace settings before syncing the workspace with Git.
 **Solution**: Enable Git integration from the workspace settings of your new workspace.
+
+### Connect folder issues
+
+#### Connect failure: I am prompted to create a new folder when connecting to a Git branch.
+
+**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
+
+:::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
+
+**Cause**: The folder you're trying to connect doesn't exist, was deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
+
+**Solution**:
+
+* To create a new folder and connect it to the workspace, select **Create and sync**.  
+* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
+
+#### My Git status says I have uncommitted changes, but I didn't make any changes to my workspace 
+
+**Description of problem**: I want to update my workspace but it says that I have uncommitted changes. I didn't make any changes to my workspace.
+
+**Cause**: If your workspace has folders and the connected Git folder doesn't yet have subfolders, they are considered to be different. If your workspace has folders but the Git branch doesn't, you see the *uncommitted changes* message. If you try to update the workspace before committing the changes, you get a conflict. Once the Git folder has the same folder structure as the workspace, you won't get this message anymore.
+
+**Solution**: To resolve the issue, [commit](./git-integration/git-get-started.md#commit-changes-to-git) changes to Git. If you can't make changes directly to the connected branch, we recommend using the [checkout branch](./git-integration/git-integration-process.md#handling-folder-changes-safely) option. For more information, see [Handling folder changes safely](./git-integration/git-integration-process.md#handling-folder-changes-safely).
 
 ### Commit issues
 
@@ -137,6 +154,22 @@ To understand the considerations and limitations of various lifecycle management
 **Description of problem**: Changing the same item in the workspace and the Git branch can lead a possible conflict. If changes were made in the workspace and in the Git branch on the same item, updates are disabled until the conflict is resolved.  
 **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
 
+#### Update failure: Fix duplicate logical IDs
+
+**Description of problem**: When trying to update, a dialog pops up indicating failure because the Git directory contains items with duplicate logical IDs.
+
+:::image type="content" source="./media/troubleshoot-cicd/duplicate-logical-id.png" alt-text="Screenshot of error message in the source control pane about duplicate logical IDs.":::
+
+**Cause**: The [logical ID](./git-integration/source-code-format.md#automatically-generated-system-files) of each item in the workspace must be unique. When you copy an item in the workspace, the logical ID is automatically changed to a unique ID. When you copy an item's directory in Git, the logical ID isn't changed. If you copy an item file in Git, and then try to update to the workspace, the logical ID is duplicated, causing an error.
+
+**Solution**: To resolve the issue, you need to change the logical ID of the duplicate item or items in Git before updating the workspace. You have two options:
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message offering two options for fixing logical IDs.":::
+
+* If you have permission to make direct commits to the branch, select **Fix with direct commit**. This will modify the item's system file to create a unique logical ID in Git. The workspace data isn't modified until you update from Git.
+
+* If you don't have permission to make direct commits to the branch, select **Create branch and go to Git**. This will open a new branch and change the logical ID. You then need to merge the changes in Git before they can be seen in Fabric. Then, when you update from Git, the workspace data is modified.
+
 #### Update failure: Update doesn't complete because it would break dependency links
 
 **Description of problem**: After selecting **Update all** or **Undo**, a dialog pops up indicating failure because the action would break a dependency links.
@@ -159,7 +192,7 @@ For more information, see [Manually Update from Git](./git-integration/partial-u
 
 **Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-Reason: Git Integration doesn't support Direct Query and proxy models at this time.
+**Cause**: Git Integration doesn't support Direct Query and proxy models at this time.
 
 **Solution**: To fix the dependencies, do one of the following actions:
 
@@ -167,6 +200,20 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
+
+#### Fix duplicate logical IDs
+
+**Description of problem**: When you try to commit changes to Git, you get an error message that says that there are duplicate logical IDs in the workspace.
+
+:::image type="content" source="./media/troubleshoot-cicd/fix-logical-id.png" alt-text="Screenshot of error message when there are two or more items in the workspace with the same logical ID.":::
+
+**Cause**: The logical ID is a unique ID for each item in the workspace. When you copy an item in Git, the entire folder is duplicated exactly, including the logical ID. When you try to update the workspace, the system checks for duplicate logical IDs and prevents you from committing changes if it finds any.
+
+**Solution**: To fix the issue, you need to change the logical ID of one of the items.
+
+* If you have write permission to the repository, select **Fix with direct commit**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then commit the changes.
+
+* If you don't have write permission to the repository, **select Create branch and go to Git**. A new branch is automatically created. Change the logical ID of the copied item in the new branch, and then create a pull request to merge the changes.
 
 ### Undo issues
 
@@ -201,22 +248,24 @@ To read more about dependencies, see [Understand dependencies](./git-integration
 
 ### I can't see the deployment pipelines button
 
-If the following conditions aren't met, you can't see the deployment pipelines button.
+The following conditions must be met in order to see the deployment pipelines button.
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
-* You're an admin of a [workspace](../get-started/create-workspaces.md).
+* You're an admin of a [workspace](../fundamentals/create-workspaces.md).
+
+* You have [admin permissions](./deployment-pipelines/understand-the-deployment-process.md#permissions) for the deployment pipeline the workspace is assigned to.
 
 ### I can't see the pipeline stage tag in my workspace
 
 Deployment pipelines display a pipeline stage tag in workspaces that are assigned to a pipeline. To see these tags, you need to be a [pipeline admin](deployment-pipelines/understand-the-deployment-process.md#permissions). Tags for the *Development* and *Test* stages are always visible. However, you only see the *Production* tag if you have [access to the pipeline](deployment-pipelines/understand-the-deployment-process.md#permissions).
 
-> [!div class="mx-imgBorder"]
-> ![A screenshot of the production tag in a production pipeline workspace.](media/troubleshoot-cicd/production-tag.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/production-tag.png" alt-text="A screenshot of the production tag in a production pipeline workspace.":::
 
 ### Lost connections after deployment
 
-**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.  
+**Description of problem**: In a full pipeline, after you unassign a workspace from a stage and then deploy to it, deployment pipelines reestablishes the connections between items in the source stage you deployed from and the target stage. However, sometimes deployment pipelines can't reestablish the connections between items in the source and target stages. This can happen, for example, when you accidentally delete an item.
+
 **Solution**: To reestablish these connections, unassign and reassign the same workspace in the target stage.
 
 ### I can't assign a workspace to a stage
@@ -446,7 +495,7 @@ If your deployment was previously successful, and is suddenly failing with broke
 
 Your deployment rules are missing values. This might have happened if your semantic model changed.
 
-![A screenshot of the invalid rules error displayed when a deployment fails due to broken links.](media/troubleshoot-cicd/broken-rule.png)
+:::image type="content" border="true" source="media/troubleshoot-cicd/broken-rule.png" alt-text="A screenshot of the invalid rules error displayed when a deployment fails due to broken links.":::
 
 When a previously successful deployment fails due to broken links, a warning is displayed. You can select **Configure rules** to navigate to the deployment rules pane, where the failed semantic model is marked. When you select the semantic model, the broken rules are marked.
 
@@ -458,14 +507,11 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 
 **Solution**: To apply deployment rules, you have to deploy the semantic models from the source stage to the target stage which includes the created deployment rules. After configuring deployment rules, and before you deploy, the *different* indicator is shown next to the semantic model with the configured rules. This indicates that you need to deploy that semantic model from the source stage to the target stage. Once you deploy, if no other changes were made, the *different* indicator disappears signifying that the rules were applied successfully.
 
-#### Deployment rules are greyed out
+#### Deployment rules are grayed out
 
-**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are greyed out.
+**Solution**: To create a [deployment rule](deployment-pipelines/create-rules.md), you must be the owner of the item you're creating a deployment rule for. If you're not the owner of the item, deployment rules are grayed out.
 
->[!div class="mx-imgBorder"]
->![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
-
-If one of the rule options is greyed out, it could be because of the following reasons:
+If one of the rule options is grayed out, it could be because of the following reasons:
 
 * **Data source rules** - There are no data sources that a rule can be configured on.
 
@@ -485,9 +531,87 @@ If one of the rule options is greyed out, it could be because of the following r
 
 **Solution**: Format the semantic model connection in Power BI Desktop so that the semantic model source appears in the first row. Then, republish the semantic model.
 
+
+
+### Retirement of semantic model support for deployment pipelines
+To improve reliability and consistency across deployment environments, Microsoft Fabric deployment pipelines is retiring support for semantic models that haven't been upgraded to enhanced metadata (Git supports only the Enhanced Metadata format). This change supports strategic improvements in semantic model management, including XMLA read/write and Analysis Services migration, and ensures consistency across environments (see Using enhanced semantic model metadata).
+
+#### What change is Microsoft making to semantic model support in deployment pipelines?
+**Solution**: Beginning February 12, 2026, Microsoft Fabric deployment pipelines will retire support for semantic models that have not been upgraded to Enhanced Metadata. Deployment pipelines—and Git integration—require Enhanced Metadata for improved reliability, consistency, and alignment with ongoing platform investments such as XMLA read/write and Analysis Services migration.
+
+#### Why is this change happening?
+**Solution**: Enhanced Metadata provides a consistent, modernized model structure that enables:
+
+- More reliable deployments across environments
+- Compatibility with Git (which supports only Enhanced Metadata)
+- Improved XMLA read/write experiences
+- Future migration paths aligned with Analysis Services
+- Greater consistency across the unified Microsoft Fabric platform
+
+
+#### Who is impacted?
+**Solution**:  Any organization using Microsoft Fabric deployment pipelines with semantic models still using legacy (non‑enhanced) metadata. This change also applies to Power BI semantic models within Fabric.
+
+#### What happens if we try to deploy models that haven’t been upgraded?
+**Solution**: 
+
+- Deployment of legacy metadata models will fail.
+- PBIX files opened in the latest Power BI Desktop are automatically upgraded.
+- If a report has unapplied query changes or upgrade errors, users will see a warning and must upgrade manually.
+- Some legacy queries (especially for SQL Server, Oracle, Teradata, SAP HANA) may not convert cleanly and could generate errors like:
+- "Unable to convert an M query in table 'Dimension City' into a native source query."
+
+
+#### Are there any exceptions?
+**Solution**:  Yes. ASLC (Analysis Services Live Connection) semantic models—which use external AS servers—cannot be upgraded because they rely on non‑enhanced metadata. Deployment pipelines will continue to support ASLC models.
+
+#### How can I check whether a semantic model still uses legacy metadata?
+**Solution**: 
+
+- **Deployment failure:** If a deployment error says the semantic model wasn't upgraded, it still uses legacy metadata.
+- **Workspace check:** In the workspace, hover over Open Semantic Model in the item's menu. If it's grayed out with an "upgrade required" tooltip, the model is likely not using Enhanced Metadata.
+ :::image type="content" source="media/troubleshoot-cicd/retire-1.png" alt-text="Screenshot of workspace check." lightbox="media/troubleshoot-cicd/retire-1.png":::
+
+#### What should my organization do to prepare?
+**Solution**: 
+
+- Upgrade all source‑stage semantic models to Enhanced Metadata before February 2026.
+- Inform helpdesk and internal support teams about the coming change.
+- Update internal documentation and workflows to reflect the new requirement.
+- Review limitations and troubleshooting steps in the Using enhanced semantic model metadata guidance.
+
+
+#### How do I convert a legacy semantic model to Enhanced Metadata?
+**Recommended method:** Republish via Power BI Desktop
+
+1. Download the model from the ALM source stage.
+2. Open it using the latest Power BI Desktop.
+3. Save the file—this triggers conversion to Enhanced Metadata.
+Republish to Power BI.
+
+**Alternative method:** Convert using XMLA read/write (SSMS)
+
+Using XMLA, update the model:
+
+1. Set `compatibilityLevel` to 1520
+2. Add `"defaultPowerBIDataSourceVersion": "powerBI_V3"` inside the "model" object
+
+
+See [Semantic model connectivity and management with the XMLA endpoint in Power BI](../enterprise/powerbi/service-premium-connect-tools.md) for details.
+
+>[!NOTE]
+> Even after a successful conversion, the Open Semantic Model option may remain grayed out. However, deployments will succeed.
+
+
+
+
+
+
+
+
 ## Troubleshooting errors
 
-Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-and-semantic-model-rules), and try to reconfigure the rule.
+Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-rules.md) you created. If you don't see a rule error message name, review the [deployment rule limitations](deployment-pipelines/create-rules.md#considerations-and-limitations) and the [supported data sources for dataflow and semantic model rules](deployment-pipelines/create-rules.md#supported-data-sources-for-dataflow-gen1-and-semantic-model-rules), and try to reconfigure the rule.
 
 |Error message |Solution |
 |--------------|---------|

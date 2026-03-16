@@ -2,10 +2,9 @@
 title: Keyboard shortcuts
 description: Learn about keyboard shortcuts (hot keys) in Real-Time Intelligence.
 ms.reviewer: mibar
-author: YaelSchuster
-ms.author: yaschust
 ms.topic: reference
-ms.date: 04/21/2024
+ms.date: 11/19/2024
+ms.subservice: rti-kql-query
 ms.search.form: KQL Queryset
 ---
 
@@ -44,6 +43,7 @@ The letters that appear below represent letter keys on your keyboard. For exampl
 | Unfold                                        | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>]</kbd>                |
 | Unfold all                                    | <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>Ctrl</kbd>+<kbd>J</kbd>    |
 | Run query                                     | <kbd>Shift</kbd>+<kbd>Enter</kbd>                            |
+| Cancel query                                  | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> (or) <kbd>ESC</kbd> | 
 | Recall execution result                       | <kbd>F8</kbd>                                                |
 | Reopen closed tab                             | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> |
 

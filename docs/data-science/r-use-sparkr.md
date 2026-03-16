@@ -1,14 +1,9 @@
 ---
 title: Use SparkR
 description: How to use SparkR, a light-weight frontend to use Apache Spark from R.
-ms.reviewer: None
-ms.author: sgilley
-author: sdgilley
+ms.reviewer: lagayhar, sgilley
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 05/23/2023
+ms.date: 06/30/2025
 ms.search.form: R Language
 ---
 
@@ -38,7 +33,7 @@ R support is only available in Spark3.1 or above.  R in Spark 2.4 is not support
 The simplest way to create a DataFrame is to convert a local R data.frame into a Spark DataFrame. 
 
 ```R
-# load SparkR pacakge
+# load SparkR package
 library(SparkR)
 
 # read a SparkR DataFrame from a local R data.frame
@@ -99,54 +94,13 @@ head(faithfulDF_API)
 You can also read a SparkR Dataframe on your Lakehouse using SparkSQL queries.
 
 ```R
-# Regsiter ealier df as temp view
+# Register earlier df as temp view
 createOrReplaceTempView(df, "eruptions")
 
 # Create a df using a SparkSQL query
 waiting <- sql("SELECT * FROM eruptions")
 
 head(waiting)
-```
-
-### Read and write SQL tables through RODBC
-
-Use RODBC to connect to SQL based databases through an ODBC interface. For example, you can connect to a Synapse dedicated SQL pool as shown in the following example code.  Substitute your own connection details for `<database>`, `<uid>`, `<password>`, and `<table>`.
-
-```R
-# load RODBC package
-library(RODBC)
-
-
-# config connection string
-
-DriverVersion <- substr(system("apt list --installed *msodbc*", intern=TRUE, ignore.stderr=TRUE)[2],10,11)
-ServerName <- "your-server-name"
-DatabaseName <- "your-database-name"
-Uid <- "your-user-id-list"
-Password <- "your-password"
-
-ConnectionString = sprintf("Driver={ODBC Driver %s for SQL Server};
-Server=%s;
-Database=%s;
-Uid=%s;
-Pwd=%s;
-Encrypt=yes;
-TrustServerCertificate=yes;
-Connection Timeout=30;",DriverVersion,ServerName,DatabaseName,Uid,Password)
-print(ConnectionString)
-
-
-# connect to driver
-channel <-odbcDriverConnect(ConnectionString)
-
-# query from existing tables
-Rdf <- sqlQuery(channel, "select * from <table>")
-class(Rdf)
-
-# use SparkR::as.DataFrame to convert R data.frame to SparkR DataFrame.
-spark_df <- as.DataFrame(Rdf)
-class(spark_df)
-head(spark_df)
 ```
 
 ## DataFrame operations

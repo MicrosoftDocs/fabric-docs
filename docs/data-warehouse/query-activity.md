@@ -1,12 +1,11 @@
 ---
-title: Monitor your running and completed queries using Query activity
+title: Monitor Your Running and Completed Queries Using Query Activity
 description: Learn about monitoring queries in your Fabric warehouse using Query activity.
-author: jacindaeng
-ms.author: jacindaeng
-ms.reviewer: wiassaf
+ms.reviewer: jacindaeng
 ms.date: 05/28/2024
-ms.topic: conceptual
+ms.topic: how-to
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
+ms.custom: sfi-image-nochange
 ---
 # Monitor your running and completed T-SQL queries using Query activity
 
@@ -95,6 +94,7 @@ The same information regarding completed, failed, and canceled queries from Quer
 
 ## Related content
 
-- [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
+- [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
-- [Monitor connections, sessions, and requests using DMVs](query-activity.md)
+- [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
+

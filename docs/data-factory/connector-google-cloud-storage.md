@@ -1,14 +1,13 @@
 ---
 title: Set up your Google Cloud Storage connection
 description: This article provides information about how to do create a Google Cloud Storage connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
 ms.custom:
-  - template-how-to
-  - build-2023
-  - ignite-2023
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your Google Cloud Storage connection
@@ -27,11 +26,11 @@ This Google Cloud Storage connector supports the following authentication types 
 
 The Google Cloud Storage connector isn't currently supported in Dataflow Gen2.
 
-## Set up your connection in a data pipeline
+## Set up your connection in a pipeline
 
-To create a connection in a data pipeline:
+To create a connection in a pipeline:
 
-1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
+1. From the page header in the Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open the manage gateway resource.":::
 
@@ -82,7 +81,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 
 ## Table summary
 
-The following table contains connector properties that are supported in pipeline copy.
+The following table contains connector properties that are supported in a pipeline copy.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|

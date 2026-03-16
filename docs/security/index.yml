@@ -1,16 +1,15 @@
 ### YamlMime:Landing
 
-title: Microsoft Fabric security
-summary: Microsoft Fabric is a software as a service (SaaS) platform that offers a complete security package. Fabric removes the cost and responsibility of maintaining your security solution and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations.
+title: Fabric security documentation
+summary: Fabric is a SaaS platform that offers a complete security package to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations.
 
 metadata:
-  title: Microsoft Fabric security
-  description: Understand what security features are available for Microsoft Fabric and how to use them.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  title: Fabric security documentation
+  description: Understand what security features are available for Fabric and how to use them.
   ms.subservice: security
   ms.topic: landing-page
-  author: KesemSharabi
-  ms.author: kesharab
+  author: msmimart
+  ms.author: mimart
   ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -22,9 +21,9 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: Security in Microsoft Fabric
+          - text: Security in Fabric
             url: security-overview.md
-          - text: Microsoft Fabric security fundamentals
+          - text: Fabric security fundamentals
             url: security-fundamentals.md 
       - linkListType: concept
         links:
@@ -67,7 +66,7 @@ landingContent:
           - text: Lakehouse SQL analytics endpoints
             url: ../data-engineering/lakehouse-sql-analytics-endpoint.md
           - text: Direct lake
-            url: ../get-started/direct-lake-overview.md                       
+            url: ../fundamentals/direct-lake-overview.md                       
       - linkListType: reference
         links:            
           - text: Azure service tags
@@ -85,7 +84,7 @@ landingContent:
             url: ../governance/index.yml
       - linkListType: overview
         links:
-          - text: Governance and compliance in Microsoft Fabric
+          - text: Governance and compliance in Fabric
             url: ../governance/governance-compliance-overview.md        
       - linkListType: concept
         links:

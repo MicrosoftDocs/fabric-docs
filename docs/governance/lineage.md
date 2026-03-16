@@ -1,12 +1,9 @@
 ---
 title: Lineage in Fabric
 description: Learn how to view the lineage of Fabric items.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
 ms.date: 11/06/2023
 ---
 
@@ -20,12 +17,9 @@ In lineage view, you see the lineage relationships between all the items in a wo
 
 Every workspace automatically has a lineage view.
 
-> [!NOTE]
-> Lineage in Fabric is in preview, and not all connections between items are fully supported yet. It is possible that the lineage between some items will be incorrectly shown.
-
 ## Permissions
 
-Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
+Any user with a [role in a workspace](../fundamentals/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
 
 ## Open lineage view
 
@@ -91,3 +85,4 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 ## Related content
 
 * [Impact analysis](./impact-analysis.md)
+* [Entity diagram view in KQL database](../real-time-intelligence/database-entity-diagram.md)

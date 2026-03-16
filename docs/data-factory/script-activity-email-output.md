@@ -1,13 +1,10 @@
 ---
 title: Run a Script activity and send an output summary by email
 description: Learn how to add a run a Script activity in a pipeline and send output from the activity by email.
-ms.reviewer: jburchel
-ms.author: abnarain
-author: nabhishek
+ms.reviewer: abnarain
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines, sfi-image-nochange
+ms.date: 12/18/2024
 ---
 
 # Run a Script activity and send an output summary by email
@@ -18,8 +15,7 @@ This example shows how to run a script on an Azure SQL instance and send an outp
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Create a script activity and configure its output to be sent by email
 
@@ -43,7 +39,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Create the connection and specify a SQL script
 
-1. Select the **Settings** tab, and then select an existing Azure SQL or Azure SQL Managed Instance connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+1. Select the **Settings** tab, and then select an existing Azure SQL or Azure SQL Managed Instance connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
 1. Specify a script. You can execute any query, or non-query scripts that perform operations on the database as well, in the **Script** textbox on the Script activity settings page. For this example, you can use this simple SQL script:
 
@@ -83,9 +79,7 @@ Select the Script activity, and then drag it's **On success** output (a green ch
 
 ## Save and run or schedule the pipeline
 
-Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted." lightbox="media/lookup-activity/pipeline-home-tab.png":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Confirm success
 

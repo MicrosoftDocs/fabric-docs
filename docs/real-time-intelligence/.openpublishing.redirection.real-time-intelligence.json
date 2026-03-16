@@ -1,5 +1,45 @@
 {
-  "redirections": [
+  "redirections": [    
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/reduce-cost-rules.md",
+      "redirect_url": "/docs/real-time-intelligence/data-activator/reduce-cost-rules-apply-summarizations",
+      "redirect_document_id": false
+    },   
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/map/share-map.md",
+      "redirect_url": "/fabric/real-time-intelligence/map/share-map-direct",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/map/spatial-job-create-tile-sets.md",
+      "redirect_url": "/fabric/real-time-intelligence/map/create-tile-sets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/whats-new.md",
+      "redirect_url": "/fabric/fundamentals/whats-new#real-time-intelligence-in-microsoft-fabric",
+      "redirect_document_id": false
+    },        
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-basic-concepts.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-get-data-real-time-hub.md",
+      "redirect_url": "/fabric/real-time-hub/set-alerts-data-streams",
+      "redirect_document_id": false
+    },    
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-get-data-eventstreams.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-activator",
+      "redirect_document_id": false
+    },        
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/activator-get-started.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-tutorial",
+      "redirect_document_id": false
+    },    
     {
       "redirect_url": "/fabric/context/context-rti.json",
       "source_path_from_root": "/docs/context/context-rta.json.yml",
@@ -51,8 +91,13 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/real-time-intelligence/data-connectors/data-connectors.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-house-connectors",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/real-time-analytics/data-connectors/data-connectors.md",
-      "redirect_url": "/fabric/real-time-intelligence/data-connectors/data-connectors",
+      "redirect_url": "/fabric/real-time-intelligence/event-house-connectors",
       "redirect_document_id": false
     },
     {
@@ -90,6 +135,11 @@
       "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-reflex",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/add-destination-reflex.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-activator",
+      "redirect_document_id": false
+    },    
     {
       "source_path_from_root": "/docs/real-time-analytics/event-streams/add-manage-eventstream-destinations.md",
       "redirect_url": "/fabric/real-time-intelligence/event-streams/add-manage-eventstream-destinations",
@@ -195,6 +245,11 @@
       "redirect_url": "/fabric/real-time-intelligence/event-streams/transform-sample-data-and-route-to-kql",
       "redirect_document_id": false
     },
+    {
+      "source_path_from_root": "/fabric/real-time-intelligence/event-streams/includes/create-eventstream.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/includes/create-an-eventstream",
+      "redirect_document_id": false
+    },    
     {
       "source_path_from_root": "/docs/real-time-analytics/eventhouse.md",
       "redirect_url": "/fabric/real-time-intelligence/eventhouse",
@@ -337,27 +392,27 @@
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-3-get-historical-data.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-get-historical-data",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-transform-kql-database",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-4-explore.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-explore",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-5-advanced-kql-query.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-advanced-kql-query",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-6-build-report.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-build-report",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
       "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-analytics/tutorial-7-clean-up-resources.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-7-clean-up-resources",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-9-clean-up-resources",
       "redirect_document_id": false
     },
     {
@@ -447,43 +502,268 @@
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-get-historical-data.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-transform-kql-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-transform-kql-database.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-transform-kql-database",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-explore.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-query-data",
-      "redirect_document_id": true
-    },
-    {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-create-dashboard",
-      "redirect_document_id": true
-    },
-    {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-power-bi-report",
-      "redirect_document_id": true
-    },
-    {
-      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-set-alert.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-set-alert",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-query-data",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-query-data.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-query-data",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-query-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-advanced-kql-queries.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-create-dashboard",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-create-dashboard.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-4-create-dashboard",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-create-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-build-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-create-dashboard",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-power-bi-report.md",
-      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-power-bi-report",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-create-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-7-set-alert.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-3-query-data.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-5-query-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-4-create-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-create-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-5-power-bi-report.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-6-create-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-7-clean-up-resources.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-9-clean-up-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/tutorial-8-clean-up-resources.md",
+      "redirect_url": "/fabric/real-time-intelligence/tutorial-9-clean-up-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-alert-queryset.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-alert-queryset",
       "redirect_document_id": true
-    }
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator-alert-queryset.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-alert-queryset",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-assign-data-objects.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-assign-data-objects",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator-assign-data-objects.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-assign-data-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-create-triggers-design-mode.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-create-activators",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-create-triggers-design-mode.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-create-activators",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-detection-conditions.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-detection-conditions",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-detection-conditions.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-detection-conditions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-get-data-eventstreams.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-activator",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-get-data-eventstreams.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/add-destination-activator",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-get-data-power-bi.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-get-data-power-bi",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-get-data-power-bi.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-get-data-power-bi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-get-data-real-time-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-get-data-real-time-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-get-data-real-time-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-get-data-real-time-dashboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-get-data-real-time-hub.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-get-data-real-time-hub",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-get-data-real-time-hub.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-get-data-real-time-hub",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-get-started.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-get-started.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-introduction.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-activator/data-activator/data-activator-introduction.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-latency.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-latency",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-latency.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-latency",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-limitations.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-limitations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-limitations.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-limitations",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-trigger-fabric-items.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-trigger-fabric-items",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-trigger-fabric-items.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-trigger-fabric-items",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-trigger-power-automate-flows.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-trigger-power-automate-flows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-trigger-power-automate-flows.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-trigger-power-automate-flows",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-troubleshooting.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-troubleshooting.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-troubleshooting",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/data-activator-tutorial.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/data-activator/data-activator-tutorial.md",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-tutorial",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/data-activator/index.yml",
+      "redirect_url": "/fabric/real-time-intelligence/data-activator/activator-introduction",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/eventhouse-git-deployment-pipelines.md",
+      "redirect_url": "/fabric/real-time-intelligence/git-deployment-pipelines",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/copilot-for-writing-queries.md",
+      "redirect_url": "/fabric/real-time-intelligence/copilot-writing-queries",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/copilot-generate-dashboard.md",
+      "redirect_url": "/fabric/real-time-intelligence/copilot-generate-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/dashboard-copy-from-data-explorer.md",
+      "redirect_url": "/fabric/real-time-intelligence/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/real-time-intelligence/event-streams/connect-connecots-in-virtual-network-on-premises.md",
+      "redirect_url": "/fabric/real-time-intelligence/event-streams/choose-the-right-network-security-feature",
+      "redirect_document_id": false
+    },
+    {
+    "source_path_from_root": "/docs/real-time-intelligence/tutorial-6-set-alert.md",
+    "redirect_url": "/fabric/real-time-intelligence/tutorial-3-set-alert",
+    "redirect_document_id": false
+  }
   ]
 }

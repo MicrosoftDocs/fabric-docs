@@ -2,104 +2,114 @@
 title: Real-Time Intelligence tutorial part 2- Get data in the Real-Time hub
 description: Learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: yaschust
-author: YaelSchuster
 ms.topic: tutorial
-ms.custom:
-  - build-2024
-ms.date: 07/23/2024
+ms.date: 10/28/2025
+ms.subservice: rti-core
 ms.search.form: Get started
-# customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
+#customer intent: I want to learn how to get data in the Real-Time hub in Real-Time Intelligence.
 ---
 # Real-Time Intelligence tutorial part 2: Get data in the Real-Time hub
 
+This part of the tutorial explains how to browse the Real-Time hub, create an eventstream, transform events, and create a destination to send the transformed events to a KQL database.
+
 > [!NOTE]
-> This tutorial is part of a series. For the previous section, see:  [Tutorial part 1: Create resources](tutorial-1-resources.md).
+> This tutorial is part of a series. For the previous section, see [Tutorial part 1: Set up Eventhouse](tutorial-1-resources.md).
 
-In this part of the tutorial, you browse the Real-Time hub, create an event stream, transform events, and create a destination to send the transformed events to a KQL database.
+## Create an eventstream
 
-## Create an event stream
+Use the sample gallery to create an eventstream that simulates bicycle rental data.
 
-1. From the navigation bar, select **Real-Time hub**.
-1. Select **+ Get events**.
-    
-    :::image type="content" source="media/tutorial/get-events.png" alt-text="Screenshot of Real-time hub with get events highlighted.":::
+1. Select **Real-Time** in the left navigation bar.
 
-1. The **Get events** pane opens. Select **Sample data**. 
+1. Select **Add data** in the top-right corner of the page.
 
-### Sample data
+   :::image type="content" source="media/tutorial/connect-data-source.png" alt-text="Screenshot of the Real-Time hub with Get Events highlighted." lightbox="media/tutorial/connect-data-source.png":::
 
-1. In **Source name**, enter *TutorialSource*.
-1. In **Sample data** select *Bicycles (Reflex compatible)*.
+1. Under **Sample scenarios**, select **Connect** on the **Bicycle rentals** tile.
 
-### Stream details
+1. On the **Connect data source** page, for **Source name**, enter **TutorialSource**.
 
-1. Edit the **Eventstream name** by selecting the pencil icon and entering *TutorialEventstream*.
-1. Select **Next**.
+1. In the **Stream details** section, select the pencil button. Change the name of the eventstream to **TutorialEventstream**, and then select **Next**.
 
-:::image type="content" source="media/tutorial/connect-source.png" alt-text="Screenshot of connect window in Real-Time hub.":::
+1. On the **Review + connect** page, review the settings, and select **Connect**.
 
-### Review and create
+   :::image type="content" source="media/tutorial/review-data-source.png" alt-text="Screenshot of the review and connect page.":::
 
-1. Review the event stream details and select **Create source**.
+## Transform events: Add a timestamp
 
-   A new event stream named *TutorialEventstream* is created.
+Once the eventstream source is created, you can open the eventstream and add more settings.
 
-## Transform events
+1. After the eventstream is created, on the **Review + connect** page, select **Open Eventstream**.
 
-1. Select **Open Eventstream** from the notification that appears after creating the event stream, or browse to the event stream from the Real-time hub and select **Open Eventstream**.
-1. From the menu ribbon, select **Edit**.
-1. In the event stream authoring canvas, select the down arrow on the **Transform events or add destination** tile.  
-1. Select **Manage fields**. The tile is renamed to *Manage_fields*.
-1. Select the pencil icon on the *Manage_fields* tile.
-1. In the **Manage fields** pane, do the following actions:
-    1. In **Operation name**, enter *TutorialTransform*. 
+    :::image type="content" source="media/tutorial/open-event-stream-button.png" alt-text="Screenshot of Review + connect page with Open Eventstream button selected." lightbox="media/tutorial/open-event-stream-button.png":::
+
+    You can also browse to the eventstream from **My data streams** by selecting the stream and then selecting **Open Eventstream**.
+
+1. On the menu ribbon, select **Edit**. The authoring canvas, which is the center section, turns yellow and becomes active for changes.
+
+    :::image type="content" source="media/tutorial/event-stream-edit-button.png" alt-text="Screenshot with the Edit button selected." lightbox="media/tutorial/event-stream-edit-button.png":::
+
+1. In the eventstream authoring canvas, select the down arrow on the **Transform events or add destination** tile, and then select **Manage fields**. The tile is renamed to `ManageFields`.
+
+    :::image type="content" source="media/tutorial/manage-fields.png" alt-text="Screenshot of authoring canvas with transform events or add destination." lightbox="media/tutorial/manage-fields.png":::
+
+1. Select the pencil icon in the **Manage fields** pane, and follow these steps:
+    1. In **Operation name**, enter **TutorialTransform**.
     1. Select **Add all fields**
-    1. Select **+ Add field**.
-    1. From the **Built-in Date Time Function** dropdown, select **SYSTEM.Timestamp()**
 
-        :::image type="content" source="media/tutorial/system-timestamp.png" alt-text="Screenshot showing the system timestamp selected in the event stream manage fields tile in Real-Time Intelligence.":::
+        :::image type="content" source="media/tutorial/add-all-fields.png" alt-text="Screenshot with the Add all fields button selected." lightbox="media/tutorial/add-all-fields.png":::
 
-    1. Enter *Timestamp* as the **Field name**.
+    1. Select **+ Add Field**.
+    1. From the **Field** dropdown, select **Built-in Date Time Function** > **SYSTEM.Timestamp()**.
+
+        :::image type="content" source="media/tutorial/select-built-in-function.png" alt-text="Screenshot with a built-in function selected." lightbox="media/tutorial/select-built-in-function.png":::
+
+    1. In **Name**, enter **Timestamp**.
     1. Select **Add**.
+    1. Confirm that **Timestamp** is added to the field list, and select **Save**.
+        The **TutorialTransform** tile shows an error because the destination isn't configured yet.
+
+## Create a destination for the timestamp
+
+Create a destination to send the transformed events to a KQL database.
+
+1. Point to the right edge of the **TutorialTransform** tile and select the green plus icon.
+
+1. Select **Destinations** > **Eventhouse** to create a destination.
+
+1. Select the pencil icon on the **Eventhouse** tile.
+
+    :::image type="content" source="media/tutorial/pencil-on-event-house.png" alt-text="Screenshot showing the pencil icon selected on Eventhouse tile." lightbox="media/tutorial/pencil-on-event-house.png":::
+
+1. In the **Eventhouse** pane, enter the following information:
+
+    | Field                   | Value                                                     |
+    | ----------------------- | --------------------------------------------------------- |
+    | **Data ingestion mode** | *Event processing before ingestion*                       |
+    | **Destination name**    | *TutorialDestination*                                     |
+    | **Workspace**           | Select the workspace in which you created your resources. |
+    | **Eventhouse**          | *Tutorial*                                                |
+    | **KQL Database**        | *Tutorial*                                                |
+    | **Destination table**   | *Create new* - enter *RawData* as table name        |
+    | **Input data format**   | *Json*                                                    |
+
+1. Verify that the box **Activate ingestion after adding the data** is checked.
+
 1. Select **Save**.
 
-    The *TutorialTransform* tile now displays but with an error, because the destination isn't set.
+1. On the menu ribbon, select **Publish**.
 
-## Create a destination
-
-1. Hover over the right edge of the *TutorialTransform* tile and select the green plus icon.
-1. Select **Destinations** > **KQL Database**.
-
-    A new tile is created entitled *KQLDatabase1*.
-
-1. Select the pencil icon on the *KQLDatabase1* tile.
-1. Enter the following information in the **KQL Database** pane:
-
-    :::image type="content" source="media/tutorial/kql-database-details.png" alt-text="Screenshot showing the KQL database destination pane in Real-Time Intelligence.":::
-
-    | Field | Value |
-    | --- | --- |
-    | **Destination name** | *TutorialDestination* |
-    | **Workspace** | Select the workspace in which you created your resources. |
-    | **KQL Database** | *Tutorial* |
-    | **Destination table** | *Create new* - enter *TutorialTable* as table name |
-    | **Input data format** | *JSON* |  
-
-1. Select **Save**.
-1. From the menu ribbon, select **Publish**.
-
-The event stream is now set up to transform events and send them to a KQL database.
+    The eventstream is now set up to transform events and send them to a KQL database.
 
 ## Related content
 
-For more information about tasks performed in this tutorial, see:
+For more information about tasks in this tutorial, see:
 
-* [Create and manage an event stream](event-streams/create-manage-an-eventstream.md)
-* [Add a sample data as a source](event-streams/add-source-sample-data.md#add-sample-data-as-a-source)
+* [Create and manage an eventstream](event-streams/create-manage-an-eventstream.md)
+* [Add sample data as a source](event-streams/add-source-sample-data.md#add-sample-data-as-a-source)
 * [Add a KQL database as a destination](event-streams/add-destination-kql-database.md)
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial part 3: Query streaming data in a KQL queryset](tutorial-3-query-data.md)
+> [Real-Time Intelligence tutorial part 3: Set an alert on your event stream](tutorial-3-set-alert.md)

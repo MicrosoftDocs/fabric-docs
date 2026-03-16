@@ -1,36 +1,43 @@
 ---
 title: OneLake Disaster Recovery and Data Protection
-description: Information on how to plan for disaster recovery and ensure OneLake data protection in Microsoft Fabric.
-ms.author: eloldag
-author: eloldag
+description: Get information on how to plan for disaster recovery and ensure OneLake data protection in Microsoft Fabric.
+ms.reviewer: eloldag
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
-#customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can ensure the safety and availability of my data.
+ms.date: 3/11/2026
+#customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can help ensure the safety and availability of my data.
 ---
 
 # Disaster recovery and data protection for OneLake
 
-All data in OneLake is accessed through data items. These data items can reside in different regions depending on their workspace, as a workspace is created under a capacity tied to a specific region.
+All data in OneLake is accessed through data items. These data items can reside in different regions depending on their workspace, because a workspace is created under a capacity that's tied to a specific region.
 
-OneLake utilizes zone-redundant storage (ZRS) where available (see [Azure regions with availability zones](/azure/reliability/availability-zones-service-support#azure-regions-with-availability-zone-support)) and locally redundant storage (LRS) elsewhere. With both LRS and ZRS storage, your data is resilient to transient hardware failures within a data center. With ZRS, your data has fault tolerance to data center failures. This article provides guidance on how to further protect your data from rare region-wide outages.
+OneLake uses zone-redundant storage (ZRS) where that storage type is available. (See [Azure regions with availability zones](/azure/reliability/availability-zones-service-support#azure-regions-with-availability-zone-support).) Elsewhere, OneLake uses locally redundant storage (LRS). With both LRS and ZRS, your data is resilient to transient hardware failures within a datacenter.
+
+Just like for [Azure Storage](/azure/storage/common/storage-redundancy), LRS replicates data within a single datacenter in the primary region. LRS provides at least 99.999999999% (11 nines) durability of objects over a year. This durability helps protect against server rack and drive failures, but not against datacenter disasters.
+
+Meanwhile, ZRS provides fault tolerance to datacenter failures by copying data synchronously across three Azure availability zones in the primary region. ZRS offers a durability of at least 99.9999999999% (12 nines) over a year.
+
+This article provides guidance on how to further protect your data from rare region-wide outages.
 
 ## Disaster recovery
 
-You can enable or disable Business Continuity and Disaster Recovery (BCDR) for a specific capacity through the Capacity Admin Portal. If your capacity has BCDR activated, your data is duplicated and stored in two different geographic regions, making it geo-redundant. The choice of the secondary region is determined by Azure's standard region pairings and can't be modified.
+You can enable or disable disaster recovery (DR) for a specific capacity through the [capacity admin portal](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting). If your capacity has DR enabled, your data is duplicated and stored in two geographic regions so that it's geo-redundant. The standard region pairings in Azure determine the choice of the secondary region. You can't modify the secondary region.
 
-If a disaster makes the primary region unrecoverable, OneLake may initiate a regional failover. Once the failover completes, you can use OneLake's APIs through the [global endpoint](onelake-access-api.md) to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary data center will have local redundancy only.
+If a disaster makes the primary region unrecoverable, OneLake might initiate a regional failover. After the failover finishes, you can use the OneLake APIs through the [global endpoint](onelake-access-api.md) to read and write data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary datacenter has local redundancy only.
 
-For a comprehensive understanding of the end-to-end experience, see [Fabric BCDR](/azure/reliability/reliability-fabric).
+> [!NOTE]
+> Keep in mind that this approach applies only when the secondary region supports Fabric.
+
+For a comprehensive understanding of the end-to-end experience, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
 ## Soft delete for OneLake files
 
-OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. The current default is 28 days but starting May 2024 we are transitioning to a 7-day default retention period, so new workspaces will have this updated period. All soft-deleted data is billed at the same rate as active data.
+OneLake automatically protects your data with soft delete, which retains deleted files for seven days before permanent removal. This built-in protection helps you recover from accidental deletions or user errors.
 
-You can restore files and folders using Blob REST APIs, Azure Storage SDKs, and the PowerShell Az.Storage module.  Learn how to list and undelete files using these [PowerShell instructions](/azure/storage/blobs/soft-delete-blob-manage#restore-soft-deleted-blobs-and-directories-by-using-powershell) and how to connect to [OneLake with PowerShell](../onelake/onelake-powershell.md#connect-to-onelake-with-azure-powershell).  
+For step-by-step instructions on how to list and restore soft-deleted files, see [Recover deleted files in OneLake](soft-delete.md).
 
 ## Related content
 
+- [Recover deleted files in OneLake](soft-delete.md)
 - [OneLake compute and storage consumption](onelake-consumption.md)
+

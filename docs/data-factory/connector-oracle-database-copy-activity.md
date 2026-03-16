@@ -1,19 +1,31 @@
 ---
 title: Configure Oracle database in a copy activity
 description: This article explains how to copy data using Oracle database.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 06/21/2024
-ms.custom:
+ms.date: 01/30/2026
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Oracle database in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Oracle database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Oracle database.
+
+Specifically, this Oracle database connector supports:
+
+- The following versions of an Oracle database:
+    - Oracle database 19c and higher
+    - Oracle database 18c and higher
+    - Oracle database 12c and higher
+    - Oracle database 11g and higher
+
+- Parallel copying from an Oracle database source. See the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section for details.
+
+> [!Note]
+> Oracle proxy server isn't supported.
 
 ## Supported configuration
 
@@ -37,7 +49,7 @@ The following properties are supported for Oracle database under the **Source** 
 
 The following properties are **required**:
 
-- **Connection**:  Select an Oracle database connection from the connection list. If no connection exists, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
+- **Connection**: Select an Oracle database connection from the connection list. If no connection exists, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
       - **Table**: Specify the name of the table in the Oracle database to read data. Select the table from the drop-down list or select **Enter manually** to enter the schema and table name.
@@ -45,7 +57,7 @@ The following properties are **required**:
         :::image type="content" source="./media/connector-oracle-database/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
-      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
+      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;).
         
         When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section.
 
@@ -81,6 +93,12 @@ Under **Advanced**, you can specify the following fields:
 
 - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If a parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
 
+- **NUMBER settings**: Specify the precision and scale for NUMBER. This applies only to NUMBER types that do not have precision and scale explicitly defined in the Oracle database.
+
+  - **Precision**: Specify the maximum number of significant decimal digits. Allowed values range from 1 to 256. Defaults to 256 if not specified.
+
+  - **Scale**: Specify the number of digits after the decimal point. Allowed values range from 0 to 130 and must be less than or equal to the precision. Defaults to 130 if not specified.
+
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ### Destination
@@ -92,7 +110,7 @@ The following properties are supported for Oracle database under the **Destinati
 The following properties are **required**:
 
 - **Connection:** Select an Oracle database connection from the connection list. If the connection doesn't exist, then create a new Oracle database connection by selecting **More** at the bottom of the connection list.
-- **Table**: Select the table in your database from the drop-down list. Or check **Enter manually** to enter the schema and table name.
+- **Table**: Select the table in your database from the drop-down list, or select **Enter manually** to enter the schema and table name. If the destination table doesn't exist, it is automatically created based on the source data. For more details on mapping rules for auto-created tables, go to [Default data type mapping for Oracle auto-created table](#default-data-type-mapping-for-oracle-auto-created-table).
 
 Under **Advanced**, you can specify the following fields:
 
@@ -105,9 +123,120 @@ Under **Advanced**, you can specify the following fields:
 
 For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
+#### Edit destination data types
+
+For the **Mapping** tab configuration, if you apply Oracle as your destination and the destination table is auto-created, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination. For more information about the mapping rules, go to [Data type mapping for Oracle database](#data-type-mapping-for-oracle-database).
+
+For example, you can set the type of the *VAL2* column to TIMESTAMP and adjust its scale as needed when mapping it to the destination.
+
+:::image type="content" source="media/connector-oracle-database/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
 ### Settings
 
 For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+
+## Data type mapping for Oracle database
+
+When you copy data from Oracle database, the following mappings are used from Oracle database to interim data types used by the service internally.
+
+| Oracle database data type | Interim data type |
+|:--- |:--- |
+| BFILE | Byte array |
+| BINARY_FLOAT | Single |
+| BINARY_DOUBLE | Double |
+| BLOB | Byte array |
+| CHAR | String |
+| CLOB | String |
+| DATE | DateTime |
+| FLOAT (P < 16) | Double |
+| FLOAT (P >= 16) | Decimal |
+| INTERVAL YEAR TO MONTH | Int64 |
+| INTERVAL DAY TO SECOND | TimeSpan |
+| LONG | String |
+| LONG RAW | Byte array |
+| NCHAR | String |
+| NCLOB | String |
+| NUMBER(p,s) | Int16, Int32, Int64, Single, Double, Decimal |
+| NUMBER without precision and scale | Decimal (256,130) |
+| NVARCHAR2 | String |
+| RAW | Byte array |
+| TIMESTAMP | DateTime |
+| TIMESTAMP WITH LOCAL TIME ZONE | DateTime |
+| TIMESTAMP WITH TIME ZONE | DateTimeOffset |
+| VARCHAR2 | String |
+| XMLTYPE | String |
+
+NUMBER(p,s) is mapped to the appropriate interim data type depending on the precision (p) and scale (s):
+
+| Interim service data type | Condition                                                                                                    |
+|:--------------------------|:----------------------------------------------------------------------------------------------------------------|
+| Int16                    | scale <= 0 AND (precision - scale) < 5                                                                         |
+| Int32                    | scale <= 0 AND 5 <= (precision - scale) < 10                                                                   |
+| Int64                    | scale <= 0 AND 10 <= (precision - scale) < 19                                                                  |
+| Single                   | precision < 8 AND ((scale <= 0 AND (precision - scale) <= 38) OR (scale &gt; 0 AND scale <= 44))                  |
+| Decimal                  | precision &gt;= 16 
+| Double                   | If none of the above conditions are met.                                                                      |
+
+When you copy data to Oracle database, the following mappings are used from interim data types used by the service internally to Oracle database data types.
+
+| Interim data type | Oracle database data type |
+|:---|:---|
+| Single | BINARY_FLOAT |
+| Double | BINARY_DOUBLE |
+| Byte array | BLOB |
+| String | CHAR, VARCHAR2, NCHAR, NVARCHAR2, CLOB |
+| TimeSpan | INTERVAL DAY TO SECOND |
+| Byte, SByte, Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal | NUMBER(p,s), NUMBER |
+| DateTime | TIMESTAMP, TIMESTAMP WITH LOCAL TIME ZONE, DATE |
+| DateTimeOffset | TIMESTAMP WITH TIME ZONE |
+| Boolean | NUMBER(p,s), BOOLEAN |
+
+To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
+
+### Default data type mapping for Oracle auto-created table
+
+The following table describes the default mappings from interim data types used internally by the service to Oracle database data types when the destination table is created automatically.
+
+| Interim data type | Oracle database data type |
+|------------------|---------------------------|
+| String           | VARCHAR2(4000)            |
+| Byte             | NUMBER(3,0)               |
+| SByte            | NUMBER(3,0)               |
+| Decimal          | NUMBER(38,9)              |
+| Int16            | NUMBER(5,0)               |
+| UInt16           | NUMBER(5,0)               |
+| Int32            | NUMBER(10,0)              |
+| UInt32           | NUMBER(10,0)              |
+| Int64            | NUMBER(19,0)              |
+| UInt64           | NUMBER(20,0)              |
+| Single           | BINARY_FLOAT              |
+| Double           | BINARY_DOUBLE             |
+| Boolean          | NUMBER(1,0)               |
+| DateTime         | TIMESTAMP(7)              |
+| DateTimeOffset   | TIMESTAMP(7) WITH TIME ZONE |
+| TimeSpan         | INTERVAL DAY(8) TO SECOND(7) |
+| Byte array       | BLOB                      |
+| GUID             | CHAR(36)                  |
+
+When both the source and destination are Oracle, the destination table is automatically created using the source column's Oracle data types if those data types are included in the following list. Any other source data types will first be converted to an internal interim data type by the service, and then mapped to the destination data type.
+
+- BINARY_FLOAT
+- BINARY_DOUBLE
+- BLOB
+- BOOLEAN
+- CHAR
+- CLOB
+- JSON
+- NCHAR
+- NVARCHAR2
+- VARCHAR2
+- DATE
+- INTERVAL YEAR TO MONTH
+- INTERVAL DAY TO SECOND
+- NUMBER
+- TIMESTAMP
+- TIMESTAMP WITH LOCAL TIME ZONE
+- TIMESTAMP WITH TIME ZONE
 
 ## Parallel copy from Oracle database
 
@@ -129,7 +258,7 @@ You are suggested to enable parallel copy with data partitioning especially when
 
 ## Table summary
 
-The following tables contain more information about the copy activity in Oracle database.
+The following table contains more information about the copy activity in Oracle database.
 
 ### Source information
 
@@ -141,7 +270,7 @@ The following tables contain more information about the copy activity in Oracle 
 | **schema name** | Name of the schema. |< your schema name >  | No | schema |
 | **table name** | Name of the table. | < your table name > | No |table |
 | *For **Query*** |  |  |  |  |
-| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. <br>When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section. |  < SQL queries > |No | oracleReaderQuery|
+| **Query** | Use the custom SQL query to read data. An example is `SELECT * FROM MyTable`. Note that the query should not end with a semicolon (;). <br>When you enable partitioned load, you need to hook any corresponding built-in partition parameters in your query. For examples, see the [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section. |  < SQL queries > |No | oracleReaderQuery|
 |  |  |  |  |  |
 |**Partition option** |The data partitioning options used to load data from Oracle database. |• **None** (default)<br>• **Physical partitions of table**<br>• **Dynamic range** |No |/|
 | *For **Physical partitions of table*** |  |  |  |  |
@@ -153,6 +282,8 @@ The following tables contain more information about the copy activity in Oracle 
 | **Partition lower bound** | Specify the minimum value of the partition column to copy data out. If you use a query to retrieve the source data, hook `?DfRangePartitionLowbound` in the WHERE clause. For an example, see the Parallel copy from [Parallel copy from Oracle database](#parallel-copy-from-oracle-database) section. | < your partition lower bound > | No | partitionLowerBound |
 |  |  |  |  |  |
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
+| **Precision** | The maximum number of significant decimal digits. Allowed values range from 1 to 256. Defaults to 256 if not specified. | < your precision > | No | numberPrecision |
+| **Scale** | The number of digits after the decimal point. Allowed values range from 0 to 130 and must be less than or equal to the precision. Defaults to 130 if not specified. | < your scale > | No | numberScale |
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
 ### Destination information

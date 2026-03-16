@@ -1,111 +1,73 @@
 ---
-title: Data warehouse tutorial - ingest data into a Warehouse in Microsoft Fabric
-description: In this third tutorial step, learn how to ingest data into the warehouse you created in the last step.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: scbradl
-ms.date: 07/18/2024
+title: "Data Warehouse Tutorial: Ingest Data into a Warehouse"
+description: "In this tutorial, learn how to ingest data from Microsoft Azure Storage into a Warehouse to create tables."
+ms.reviewer: jovanpop, procha, salilkanade
+ms.date: 03/03/2026
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: sfi-image-nochange
 ---
 
-# Tutorial: Ingest data into a Warehouse in Microsoft Fabric
+# Tutorial: Ingest data into a Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can ingest data into that warehouse.
+In this tutorial, learn how to ingest sample data into a Warehouse using a **Copy job**. You'll create a table from a sample data file and populate it with sample data.
+
+> [!NOTE]
+> This tutorial forms part of an [end-to-end scenario](tutorial-introduction.md#data-warehouse-end-to-end-scenario). In order to complete this tutorial, you must first complete these tutorials:
+>
+> 1. [Create a workspace](tutorial-create-workspace.md)
+> 1. [Create a Warehouse](tutorial-create-warehouse.md)
 
 ## Ingest data
 
-1. From the **Build a warehouse** landing page, select the **Data Warehouse Tutorial** workspace in the navigation menu to return to the workspace item list.
+In this task, learn how to ingest data into the warehouse to create tables.
 
-   :::image type="content" source="media/tutorial-ingest-data/select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
+1. Ensure that the workspace you created in the [first tutorial](tutorial-create-workspace.md) is open.
 
-1. Select **New** > **More options** to display a full list of available items.
+1. In the workspace landing pane, select **+ New Item** to display the full list of available item types.
 
-1. In the **Data Factory** section, select **Data pipeline**.
+1. From the list, in the **Get data** section, select the **Copy job** item type.
 
-1. On the **New pipeline** dialog, enter `Load Customer Data` as the name.
+1. In the **New copy job** window, in the **Name** box, enter `Load Customer Data`.
 
-   :::image type="content" source="media/tutorial-ingest-data/new-pipeline-dialog.png" alt-text="Screenshot of the New pipeline dialog box, showing where to enter the name and select Create.":::
+1. Select **Create**. Provisioning is complete when the **Copy job** page opens.
 
-1. Select **Create**.
+1. On the first page of the **Copy job** window, you can pick from various data sources, or select from one of the provided samples to get started. For this tutorial, select **Sample data** from the menu bar on this page. For this tutorial, we use the **Retail Data Model from Wide World Importers** sample. Select this option to navigate to the next page
 
-1. Select **Pipeline activity**.
+   :::image type="content" source="media/tutorial-ingest-data/sample-data-retail-data-model.png" alt-text="Screenshot from the Fabric portal of the Sample Data page. The Retail Data model is selected.":::
 
-   :::image type="content" source="media/tutorial-ingest-data/start-building-pipeline.png" alt-text="Screenshot of the Pipeline activity button.":::
+1. The data preview of the sample data loads. In the **Choose data** page, you can preview the selected dataset. After you review the data, select **Next**.
 
-1. Select **Copy data** from the **Move & transform** section.
+1. The **Choose data destination** page allows you to configure the type of item. In the **OneLake catalog**, select your `Wide World Importers` warehouse created in the previous tutorial step, and select **Next**.
 
-   :::image type="content" source="media/tutorial-ingest-data/select-copy-data.png" alt-text="Screenshot of the Move and transform section, showing where to select Copy data.":::
+1. The **Choose copy job mode** page allows you to configure how you want the data to be copied: a full copy, or incremental copies that perform only subsequent copies when the source data changes. For this example, pick **Full copy** and select **Next**. 
 
-1. If necessary, select the newly created **Copy data** activity from the design canvas and follow the next steps to configure it.
+1. The last step to configure the destination is to provide a name to the destination table and configure the column mappings. You can load the data to a new table or to an existing one, provide a schema and table names, change column names, remove columns, or change their mappings. 
 
-1. On the **General** page, for **Name**, enter `CD Load dimension_customer`.
+   For this example, provide a new name to the table. Replace the text with a table name of your choice, such as `WWI Tutorial`. 
+   
+   Select **Next**.
+   
+1. On the **Review + save** page, review the **Source** and **Destination**. 
 
-   :::image type="content" source="media/tutorial-ingest-data/general-tab-name.png" alt-text="Screenshot of the General tab, showing where to enter the copy activity name.":::
+   Keep the **Start data transfer immediately** checkbox checked, this will start the copy job as soon as it's ready to run.
+   
+   Select **Save + Run**.
+   
+   :::image type="content" source="media/tutorial-ingest-data/copy-data-into-data-warehouse-review-save.png" alt-text="Screenshot from the Fabric portal of the Copy Data Review + Save screen.":::
+   
+1. The Copy job will be created and the Fabric portal will open the new **Load Customer Data** object design canvas when ready.
 
-1. On the **Source** page, select the **Connection** dropdown. Select **More** to see all of the data sources you can choose from, including data sources in your local OneLake data hub.
+1. Use the **Results** tab to monitor the execution of the Copy job. 
 
-1. Select **New** to create a new connection.
-
-1. On the **New connection** page, select or type to select **Azure Blobs** from the list of connection options.
-
-1. Select **Continue**.
-
-1. On the **Connection settings** page, configure the settings as follows:
-
-   1. In the **Account name or URL**, enter `https://azuresynapsestorage.blob.core.windows.net/sampledata/`.
-
-   1. In the **Connection credentials** section, select **Create new connection** in the dropdown list for the **Connection**. 
-
-   1. The **Connection name** field is automatically populated, but for clarity, type in `Wide World Importers Public Sample`.
-
-   1. Set the **Authentication kind** to **Anonymous**.
-
-   :::image type="content" source="media/tutorial-ingest-data/new-connection-settings.png" alt-text="Screenshot of the Connections settings screen with the Account name and Connection credentials fields filled in as directed in the previous steps.":::
-
-1. Select **Connect**.
-
-1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_customer/*.parquet`:
-
-   1. In the **File path** text boxes, provide:
-
-       1. **Container:** `sampledata`
-
-       1. **File path - Directory:** `WideWorldImportersDW/tables`
-
-       1. **File path - File name:** `dimension_customer.parquet`
-
-   1. In the **File format** drop-down, choose **Parquet**.
-
-1. Select **Preview data** next to the **File path** setting to ensure there are no errors.
-
-   :::image type="content" source="media/tutorial-ingest-data/source-tab-change-details.png" alt-text="Screenshot of the Source tab, showing where to change the file path and format details, and select Preview data." lightbox="media/tutorial-ingest-data/source-tab-change-details.png"::: <!-- TODO UPDATE -->
-
-1. Select the **Destination** page of the Copy data activity. For **Connection**, select the warehouse item **WideWorldImporters** from the list, or select **More** to search for the warehouse.
-
-1. Next to the **Table option** configuration setting, select the **Auto create table** radio button.
-
-1. The dropdown menu next to the **Table** configuration setting will automatically change to two text boxes.
-
-1. In the first box next to the **Table** setting, enter `dbo`.
-
-1. In the second box next to the **Table** setting, enter `dimension_customer`.
-
-   :::image type="content" source="media/tutorial-ingest-data/destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps." lightbox="media/tutorial-ingest-data/destination-tab.png":::
-
-1. From the ribbon, select **Run**.
-
-1. Select **Save and run** from the dialog box. The pipeline to load the `dimension_customer` table with start.
-
-1. Monitor the copy activity's progress on the **Output** page and wait for it to complete.
-
-   :::image type="content" source="media/tutorial-ingest-data/monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like." lightbox="media/tutorial-ingest-data/monitor-output-page.png":::
+1. When complete, the **Copy job** will deliver a **Succeeded** notification and status. You'll now see six new tables from the Wide World Importers dataset in your warehouse.
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create tables in a data warehouse](tutorial-create-tables.md)
+> [Tutorial: Clone a table with T-SQL in a Warehouse](tutorial-clone-table.md)
+
+## Related content
+
+- [Create tables in the Warehouse in Microsoft Fabric](create-table.md)

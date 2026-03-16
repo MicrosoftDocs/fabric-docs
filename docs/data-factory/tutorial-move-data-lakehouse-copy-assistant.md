@@ -1,14 +1,10 @@
 ---
 title: Move data from Azure SQL DB into Lakehouse via copy assistant
 description: Learn steps to move data as files or tables into Lakehouse.
-ms.reviewer: jonburchel
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines, sfi-image-nochange
+ms.date: 12/18/2024
 ms.search.form: Pipeline Copy Assistant
 ---
 
@@ -35,7 +31,7 @@ Follow these steps to set up your copy activity.
 
 ### Step 1: Start with copy assistant
 
-1. Open an existing data pipeline or create a new data pipeline.
+1. Open an existing pipeline or create a new pipeline.
 
 1. Select **Copy data assistant** on the canvas to open the wizard and get started. Or select **Use copy assistant** from the **Copy data** drop down list under **Activities** tab on the ribbon.
 
@@ -79,7 +75,7 @@ Follow these steps to set up your copy activity.
 
    :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/review-create.png" alt-text="Screenshot showing where to select ok on the Review and create screen.":::
 
-### Step 4: Save your data pipeline and run it to load data
+### Step 4: Save your pipeline and run it to load data
 
 1. Select **Run** from the **Home** toolbar and then select **Save and run** when prompted.
 
@@ -98,7 +94,7 @@ Follow these steps to set up your copy activity.
    :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/view-table-output.png" alt-text="Screenshot showing where to switch to Table view.":::
 
    > [!Note]
-   > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files will be automatically registered as a table and be visible under Table view from Lakehouse portal.
+   > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files are automatically registered as a table and become visible under Table view in Lakehouse Explorer.
    > Only the first layer folders under Tables will be registered as delta table.
    > Browsing or Previewing from Lakehouse Table isn't supported yet.
    > Data that gets loaded into the same table will be appended. Delete or Update to tables isn't supported yet.

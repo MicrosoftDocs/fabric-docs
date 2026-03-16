@@ -1,13 +1,10 @@
 ---
 title: Pause and resume your capacity
 description: Understand how to save money by using your capacity pause and resume feature.
-author: KesemSharabi
-ms.author: kesharab
+author: dknappettmsft
+ms.author: daknappe
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 03/20/2024
+ms.date: 10/06/2024
 ---
 
 # Pause and resume your capacity
@@ -30,8 +27,8 @@ To pause your capacity, you need:
 * To be a [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles) with the following [Azure role-based access control](/azure/role-based-access-control/overview) (Azure RBAC) permissions:
     * Microsoft.Fabric/capacities/read
     * Microsoft.Fabric/capacities/write
-    * Microsoft.Fabric/suspend/action
-    * Microsoft.Fabric/resume/action
+    * Microsoft.Fabric/capacities/suspend/action
+    * Microsoft.Fabric/capacities/resume/action
 
 ## Pause your capacity
 
@@ -71,6 +68,13 @@ With [Azure runbook](/azure/automation/automation-runbook-types) you can schedul
 
 3. Select the notebook you want to schedule. The scheduling parameters are described in the description of the runbook.
 
+## Use APIs
+
+You can use these Fabric REST APIs to pause and resume your capacity:
+
+* [Pause or suspend your capacity](/rest/api/microsoftfabric/fabric-capacities/suspend)
+
+* [Resume your capacity](/rest/api/microsoftfabric/fabric-capacities/resume)
 
 ## Related content
 

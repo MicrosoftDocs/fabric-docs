@@ -1,68 +1,50 @@
 ### YamlMime:Landing
 
-title: Data warehousing documentation in Microsoft Fabric  # < 60 chars
-summary: Learn more about Synapse Data Warehouse in Microsoft Fabric # < 160 chars
+title: Fabric Data Warehouse documentation
+summary: Learn about Fabric Data Warehouse, a fully managed, scalable data warehouse solution.
 
 metadata:
-  title: Synapse Data Warehouse in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data warehousing in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list.
+  title: Fabric Data Warehouse documentation
+  description: Learn about Fabric Data Warehouse, a fully managed, scalable data warehouse solution.
   ms.subservice: data-warehouse
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
-  ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 04/17/2024
+  ms.date: 02/11/2026
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: Data warehousing
+  - title: About Data Warehouse
     linkLists:
       - linkListType: overview
         links:
           - text: Overview
             url: data-warehousing.md
+          - text: Better together - the lakehouse and warehouse
+            url: get-started-lakehouse-sql-analytics-endpoint.md
+          - text: Architecture
+            url: architecture.md
+
   # Card 
   - title: Get started with Data Warehouse
     linkLists:
       - linkListType: tutorial
         links:
-          - text: End to End tutorials 
-            url: ../get-started/end-to-end-tutorials.md
-          - text: Data warehouse tutorial
+          - text: End to end tutorials 
+            url: ../fundamentals/end-to-end-tutorials.md
+          - text: Data Warehouse tutorial
             url: tutorial-introduction.md            
-          - text: Create a Warehouse quickstart
+          - text: Create a warehouse quickstart
             url: create-warehouse.md
-          - text: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
-            url: migration-synapse-dedicated-sql-pool-warehouse.md            
-  # Card 
-  - title: Get started with SQL analytics endpoint
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: What is a Lakehouse?
-            url: ../data-engineering/lakehouse-overview.md
-          - text: Better together - the lakehouse and warehouse
-            url: get-started-lakehouse-sql-analytics-endpoint.md
-          - text: Create a lakehouse with OneLake
-            url: ../onelake/create-lakehouse-onelake.md
-          - text: Default Power BI semantic models
-            url: semantic-models.md
-          - text: Load data into the Lakehouse
-            url: ../data-engineering/load-data-lakehouse.md
-          - text: How to copy data using Copy activity in Data pipeline
-            url: ../data-factory/copy-data-activity.md
-          - text: How to move data into Lakehouse via Copy assistant
-            url: ../data-factory/tutorial-move-data-lakehouse-copy-assistant.md
+
   # Card 
   - title: Security
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: concept
         links:
-          - text: Data warehousing security
+          - text: Warehouse security
             url: security.md
           - text: Connectivity
             url: connectivity.md    
@@ -72,14 +54,16 @@ landingContent:
             url: workspace-roles.md
           - text: SQL granular permissions
             url: sql-granular-permissions.md
+          - text: SQL audit logs
+            url: sql-audit-logs.md            
           - text: Row-level security
             url: row-level-security.md
           - text: Column-level security
             url: column-level-security.md
-          - text: Share your Warehouse
+          - text: Share your data
             url: share-warehouse-manage-permissions.md            
-          - text: User audit logs
-            url: user-audit-logs.md
+          - text: Encryption
+            url: encryption.md
   # Card 
   - title: Ingest data
     linkLists:
@@ -94,29 +78,41 @@ landingContent:
           - text: Ingest data using Copy
             url: ingest-data-copy.md
       - linkListType: concept
-        links:            
-          - text: Database Mirroring in Fabric 
-            url: ../database/mirrored-database/overview.md
+        links:
+          - text: Mirroring 
+            url: ../mirroring/overview.md
+          - text: Database Mirroring in Fabric
+            url: ../mirroring/overview.md
           - text: Mirroring Azure SQL Database
-            url: ../database/mirrored-database/azure-sql-database.md
+            url: ../mirroring/azure-sql-database.md
+          - text: Mirroring Azure SQL Managed Instance
+            url: ../mirroring/azure-sql-managed-instance.md
           - text: Mirroring Azure Cosmos DB
-            url: ../database/mirrored-database/azure-cosmos-db.md
+            url: ../mirroring/azure-cosmos-db.md
+          - text: Mirroring Databricks
+            url: ../mirroring/azure-databricks.md
           - text: Mirroring Snowflake
-            url: ../database/mirrored-database/snowflake.md
+            url: ../mirroring/snowflake.md
+          - text: Mirroring SQL Server
+            url: ../mirroring/sql-server.md
+          - text: Open mirroring 
+            url: ../mirroring/open-mirroring.md
+          - text: Share and secure mirrored databases
+            url: ../mirroring/share-and-manage-permissions.md
   # Card 
-  - title: Design and Develop
+  - title: Design and develop
     linkLists:
       - linkListType: concept
         links:
+          - text: Development and deployment
+            url: development-deployment.md
+          - text: Warehouse projects in Visual Studio Code
+            url: develop-warehouse-project.md
           - text: Semantic models
             url: semantic-models.md            
-          - text: Model data in the default Power BI semantic model
-            url: default-power-bi-semantic-model.md          
-          - text: Define relationships in data models
-            url: data-modeling-defining-relationships.md
           - text: Reports in the Power BI service
             url: reports-power-bi-service.md   
-  # card
+  # Card
   - title: Query
     linkLists: 
       - linkListType: concept
@@ -125,15 +121,27 @@ landingContent:
             url: sql-query-editor.md
           - text: Query with T-SQL
             url: query-warehouse.md
-          - text: Query using visual query editor
-            url: visual-query-editor.md
+          - text: Query delimited files
+            url: query-delimited-files.md
+          - text: Query external data lake files
+            url: query-external-data-lake-files.md
+          - text: Query JSON files
+            url: query-json-files.md
+          - text: Query Parquet files
+            url: query-parquet-files.md
           - text: View data in the Data preview
             url: data-preview.md
+          - text: Visual query editor
+            url: visual-query-editor.md
+          - text: Warehouse snapshots
+            url: warehouse-snapshot.md
   # Card 
   - title: Manage
     linkLists:
       - linkListType: how-to-guide
         links:
+          - text: Manage objects in a warehouse
+            url: manage-objects.md
           - text: Statistics 
             url: statistics.md
           - text: Query insights
@@ -141,7 +149,7 @@ landingContent:
           - text: Caching
             url: caching.md
           - text: Troubleshoot
-            url: troubleshoot-synapse-data-warehouse.md
+            url: troubleshoot-fabric-data-warehouse.md
   # Card 
   - title: Monitor
     linkLists:
@@ -152,7 +160,7 @@ landingContent:
           - text: Monitor using DMVs
             url: monitor-using-dmv.md
   # Card 
-  - title: Warehouse capacity
+  - title: Data Warehouse capacity
     linkLists:
       - linkListType: architecture
         links:
@@ -162,7 +170,7 @@ landingContent:
             url: pause-resume.md
           - text: Smoothing and throttling
             url: compute-capacity-smoothing-throttling.md
-          - text: Workload Management
+          - text: Workload management
             url: workload-management.md            
   # Card 
   - title: Data recovery
@@ -180,11 +188,24 @@ landingContent:
     linkLists:
       - linkListType: architecture
         links:
-          - text: Warehouse performance
+          - text: Data Warehouse performance
             url: guidelines-warehouse-performance.md
           - text: SQL analytics endpoint performance
             url: sql-analytics-endpoint-performance.md
           - text: Security
             url: security.md
-          - text: Ingest Data
+          - text: Ingest data
             url: ingest-data.md
+  # Card 
+  - title: Migration
+    linkLists:
+      - linkListType: deploy
+        links:
+          - text: Migration assistant 
+            url: migration-assistant.md
+          - text: Migrate planning for Azure Synapse Analytics dedicated SQL pools
+            url: migration-synapse-dedicated-sql-pool-warehouse.md
+          - text: Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools
+            url: migration-synapse-dedicated-sql-pool-methods.md
+          - text: Migrate to Fabric
+            url: ../fundamentals/migration.md

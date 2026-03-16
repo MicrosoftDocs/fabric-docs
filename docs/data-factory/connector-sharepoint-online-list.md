@@ -1,14 +1,13 @@
 ---
 title: Set up your SharePoint Online List connection
 description: This article provides information about how to create a SharePoint Online List connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 04/01/2025
 ms.custom:
-  - template-how-to
-  - build-2023
-  - ignite-2023
+- template-how-to
+- connectors
+- sfi-image-nochange
 ---
 
 # Set up your SharePoint Online List connection
@@ -21,24 +20,21 @@ The SharePoint Online List connector supports the following authentication types
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Organizational account| n/a | √|
+|Organizational account| √ | √|
 |Service Principal| √ | √ |
 
 ## Set up your connection in Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SharePoint Online List. The following links provide the specific Power Query connector information you need to connect to a SharePoint Online List in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to SharePoint Online list using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the SharePoint Online list connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-- To determine the URL to use to access your SharePoint Online list, go to [Determine the site URL](/power-query/connectors/sharepoint-online-list#determine-the-site-url).
-- To connect to the Azure Blobs connector from Power Query, go to [Connect to a SharePoint Online list from Power Query Online](/power-query/connectors/sharepoint-online-list#connect-to-a-sharepoint-online-list-from-power-query-online).
+1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+1. [Connect to a SharePoint Online list (from Power Query Online)](/power-query/connectors/sharepoint-online-list#connect-to-a-sharepoint-online-list-from-power-query-online).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+## Set up your connection in a pipeline
 
-## Set up your connection in a data pipeline
+To create a connection in a pipeline:
 
-To create a connection in a data pipeline:
-
-1. From the page header in Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
+1. From the page header in Data Factory service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**.
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 

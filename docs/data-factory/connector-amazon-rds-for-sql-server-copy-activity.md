@@ -1,16 +1,18 @@
 ---
 title: How to configure Amazon RDS for SQL Server in copy activity
 description: This article explains how to copy data using Amazon RDS for SQL Server.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
-ms.custom: template-how-to, build-2023
+ms.date: 01/22/2026
+ms.custom:
+  - pipelines
+  - template-how-to
+  - connectors
 ---
 
 # How to configure Amazon RDS for SQL Server in copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Amazon RDS for SQL Server.
+This article outlines how to use the copy activity in a pipeline to copy data from Amazon RDS for SQL Server.
 
 ## Supported configuration
 
@@ -29,11 +31,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Amazon RDS for SQL Server under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-amazon-rds-for-sql-server/source.png" alt-text="Screenshot showing the source tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**: Select an Amazon RDS for SQL Server connection from the connection list. If the connection doesn't exist, then create a new Amazon RDS for SQL Server connection by selecting **New**.
 - **Connection type**: Select **Amazon RDS for SQL Server**.
 - **Use query**: Specify the way to read data. You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting:
@@ -87,6 +86,50 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
+## Data type mapping for Amazon RDS for SQL Server
+
+When copying data from Amazon RDS for SQL Server, the following mappings are used from Amazon RDS for SQL Server data types to interim data types used by the service internally.
+
+| Amazon RDS for SQL Server data type | Interim service data type |
+| ------ | ------ |
+| bigint | Int64 |
+| binary | Byte[] |
+| bit | Boolean |
+| char | String, Char[] |
+| date | DateTime |
+| Datetime | DateTime |
+| datetime2 | DateTime |
+| Datetimeoffset | DateTimeOffset |
+| Decimal | Decimal |
+| FILESTREAM attribute (varbinary(max)) | Byte[] |
+| Float | Double |
+| image | Byte[] |
+| int | Int32 |
+| money | Decimal |
+| nchar | String, Char[] |
+| ntext | String, Char[] |
+| numeric | Decimal |
+| nvarchar | String, Char[] |
+| real | Single |
+| rowversion | Byte[] |
+| smalldatetime | DateTime |
+| smallint | Int16 |
+| smallmoney | Decimal |
+| sql_variant | Object |
+| text | String, Char[] |
+| time | TimeSpan |
+| timestamp | Byte[] |
+| tinyint | Int16 |
+| uniqueidentifier | Guid |
+| varbinary | Byte[] |
+| varchar | String, Char[] |
+| xml | String |
+
+>[!NOTE]
+> For data types that map to the Decimal interim type, currently Copy activity supports precision up to 28. If you have data that requires precision larger than 28, consider converting to a string in a SQL query.  
+>
+> When copying data from Amazon RDS for SQL Server using Fabric Data Factory, the bit data type is mapped to the Boolean interim data type. If you have data that need to be kept as the bit data type, use queries with [T-SQL CAST or CONVERT](/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-ver15&preserve-view=true).
+
 ## Parallel copy from SQL database
 
 The Amazon RDS for SQL Server connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
@@ -124,7 +167,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-amazon-rds-for-sql-server/sql-query-result.png" alt-text="Sql query result":::
+:::image type="content" source="./media/connector-amazon-rds-for-sql-server/sql-query-result.png" alt-text="Screenshot of the SQL query result.":::
 
 ## Table summary
 
@@ -134,7 +177,6 @@ See the following table for the summary and more information for the Amazon RDS 
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **Amazon RDS for SQL Server**.|**Amazon RDS for SQL Server** |Yes|/|
 |**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |Yes |/|

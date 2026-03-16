@@ -1,21 +1,18 @@
 ---
-title: Data warehouse billing and utilization reporting
+title: Data Warehouse Billing and Utilization Reporting
 description: Learn more about utilization reporting for the data warehouse, including capacity and compute usage reporting.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: sosivara
-ms.date: 08/22/2024
-ms.topic: conceptual
-ms.custom:
-  - ignite-2023
+ms.date: 04/06/2025
+ms.topic: concept-article
 ms.search.form: Warehouse billing and utilization
+ms.custom: sfi-image-nochange
 ---
 
-# Billing and utilization reporting in Synapse Data Warehouse
+# Billing and utilization reporting in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+The article explains compute usage reporting of the Fabric Data Warehouse, which includes read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
@@ -23,15 +20,17 @@ For more information about monitoring current and historical query activity, see
 
 ## Capacity
 
-In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
+In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
 Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times.
 
-## Capacity in Fabric Synapse Data Warehouse
+<a id="capacity-in-fabric-synapse-data-warehouse"></a>
 
-In the capacity-based SaaS model, Fabric data warehousing aims to make the most of the purchased capacity and provide visibility into usage.
+## Capacity in Fabric Data Warehouse
 
-CUs consumed by data warehousing include read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
+In the capacity-based SaaS model, Fabric Data Warehouse aims to make the most of the purchased capacity and provide visibility into usage.
+
+CUs consumed by Fabric Data Warehouse include read and write activity against the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and read activity on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 
 In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 32 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] vCores.
 
@@ -65,7 +64,7 @@ This graph in the Microsoft Fabric Capacity Metrics app shows utilization of res
 
 :::image type="content" source="media/usage-reporting/throttling-explore.png" alt-text="Screenshot of the explore button in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/throttling-explore.png":::
 
-In general, similar to Power BI, [operations are classified either as interactive or background](../enterprise/fabric-operations.md#interactive-and-background-operations), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md#throttling).
+In general, similar to Power BI, [operations are classified either as interactive or background](../enterprise/fabric-operations.md#interactive-and-background-operations), and denoted by color. Most operations in **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. Classifying data warehousing as background reduces the frequency of peaks of CU utilization from triggering [throttling](compute-capacity-smoothing-throttling.md).
 
 ### Timepoint drill through graph
 
@@ -73,7 +72,7 @@ In general, similar to Power BI, [operations are classified either as interactiv
 
 This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table represents the list of operations that were executed at that timepoint.
 
-The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](../data-warehouse/compute-capacity-smoothing-throttling.md). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
+The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](compute-capacity-smoothing-throttling.md). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
 
 Top use cases for this view include:
 
@@ -119,18 +118,18 @@ Consider the following usage reporting nuances:
 
 - Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a [!INCLUDE [fabric-se](includes/fabric-se.md)]), usage is reported against the originating resource.
 - Queries on system catalog views and dynamic management views are billable queries.
-- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
+- **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration. Duration might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 ## Next step
 
 > [!div class="nextstepaction"]
-> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+> [How to: Observe Fabric Data Warehouse utilization trends](how-to-observe-utilization.md)
 
 ## Related content
 
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [Workload management](workload-management.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)

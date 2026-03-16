@@ -1,0 +1,100 @@
+### YamlMime:Landing
+
+title: Activator documentation
+summary: Learn about Activator, and how to create events and triggers for your data.
+
+metadata:
+  title: Activator documentation
+  description: Browse the Activator documentation.
+  ms.topic: landing-page
+  ms.date: 09/24/2024
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  - title: Introduction
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Activator?
+            url: activator-introduction.md
+
+  - title: Create alerts
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+        - text: Create alerts from a Real-Time Dashboard
+          url: activator-get-data-real-time-dashboard.md
+        - text: Create alerts from a KQL Queryset
+          url: activator-alert-queryset.md
+        - text: Set alerts on eventstreams in Real-Time hub
+          url: ../../real-time-hub/set-alerts-data-streams.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Fabric workspace item events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-fabric-workspace-item-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Fabric OneLake events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-fabric-onelake-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Fabric Job events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-fabric-job-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Set alerts on Azure Blob Storage events in Real-Time hub
+          url: ../../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
+        - text: Create alerts on Power BI reports
+          url: activator-get-data-power-bi.md
+        - text: Get data from eventstreams
+          url: ../event-streams/add-destination-activator.md
+
+  - title: Ingestion
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Ingestion overview
+            url: ingestion/ingestion-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Ingestion from Power BI
+            url: ingestion/ingestion-powerbi.md
+          - text: Ingestion from KQL Querysets
+            url: ingestion/ingestion-kql-querysets.md
+          - text: Ingestion from Real-Time Dashboards
+            url: ingestion/ingestion-realtime-dashboards.md
+          - text: Ingestion from Eventstreams
+            url: ingestion/ingestion-event-streams.md
+          - text: Ingestion of Fabric Events
+            url: ingestion/ingestion-fabric-events.md
+          - text: Ingestion of Azure Events
+            url: ingestion/ingestion-azure-events.md
+          - text: Query frequency for query data sources
+            url: activator-query-frequency.md
+
+  - title: Create objects and triggers
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Creating triggers
+            url: activator-create-activators.md
+          - text: Detection conditions
+            url: activator-detection-conditions.md          
+      - linkListType: how-to-guide
+        links:
+          - text: Assign data to objects
+            url: activator-assign-data-objects.md
+          - text: Trigger Fabric items
+            url: activator-trigger-fabric-items.md
+          - text: Use custom actions to trigger Power Automate flows
+            url: activator-trigger-power-automate-flows.md
+
+  - title: Tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Activator tutorial using sample data
+            url: activator-tutorial.md
+
+  - title: Troubleshoot
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Activator limitations
+            url: activator-limitations.md
+          - text: Troubleshoot errors
+            url: activator-troubleshooting.md                   
+            

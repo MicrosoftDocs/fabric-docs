@@ -1,15 +1,12 @@
 ---
 title: Developer admin settings
 description: Learn how to configure developer admin settings in Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
+author: msmimart
+ms.author: mimart
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 01/26/2026
 LocalizationGroup: Administration
 ---
 
@@ -32,11 +29,34 @@ Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded
 
 ## Service principals can use Fabric APIs
 
+>[!NOTE]
+>This setting is being rolled out and might not be available in your tenant. Once removed, these settings replace it:
+>* [Service principals can create workspaces, connections, and deployment pipelines](#service-principals-can-create-workspaces-connections-and-deployment-pipelines)
+>* [Service principals can call Fabric public APIs](#service-principals-can-call-fabric-public-apis)
+
 Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
 
-You can control who can access service principals by creating dedicated security groups and using these groups in any Power BI tenant level-settings.
+## Service principals can create workspaces, connections, and deployment pipelines
 
-To learn more, see [Embed Power BI content with service principal and an application secret](/power-bi/developer/embedded/embed-service-principal).
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access these Fabric APIs that aren't protected by a Fabric permission model.
+
+* [Create Workspace](/rest/api/fabric/core/workspaces/create-workspace)
+
+* [Create Connection](/rest/api/fabric/core/connections/create-connection)
+
+* [Create Deployment Pipeline](/rest/api/fabric/core/deployment-pipelines/create-deployment-pipeline)
+
+To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
+
+This setting is disabled by default for new customers.
+
+## Service principals can call Fabric public APIs
+
+Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Fabric public APIs that include create, read, update, and delete (CRUD) operations, and are protected by a Fabric permission model.
+
+To allow an app to use service principal authentication, its service principal must be included in an allowed security group. You can control who can access service principals by creating dedicated security groups and using these groups in other tenant settings.
+
+This setting is enabled by default for new customers.
 
 ## Allow service principals to create and use profiles
 
@@ -46,9 +66,15 @@ To learn more, see [Service principal profiles for multitenancy apps](/power-bi/
 
 ## Block ResourceKey Authentication
 
-For extra security, you can block the use of resource key-based authentication. The Block ResourceKey Authentication setting applies to streaming and PUSH datasets. If disabled, users will not be allowed send data to streaming and PUSH datasets using the API with a resource key.  
+For extra security, you can block the use of resource key-based authentication. The Block ResourceKey Authentication setting applies to streaming and PUSH datasets. If disabled, users aren't allowed to send data to streaming and PUSH datasets using the API with a resource key.  
 
 This setting applies to the entire organization. You can't apply it only to a select security group.
+
+## Define maximum number of Fabric identities in a tenant
+
+This setting specifies the maximum number of Fabric identities that can be created in a Fabric tenant. If this setting is disabled, a default value of 10,000 Fabric identities can be created in a tenant. If you enable this setting, you can set a custom limit of how many Fabric identities can be created in your Fabric tenant. You can also manage this value programmatically by using the [Update Tenant Setting REST API](/rest/api/fabric/admin/tenants/update-tenant-setting).
+
+The maximum number of Fabric identities defined and created for a Fabric tenant can't exceed the maximum number of resources allowed in a Microsoft Entra tenant. Fabric doesn't validate that your custom limit falls within your Microsoft Entra ID resource quota. Before setting a custom limit, check your tenant's [Microsoft Entra service limits](/entra/identity/users/directory-service-limits-restrictions). To increase your resource limit in your Microsoft Entra tenant, contact Microsoft support.
 
 ## Related content
 

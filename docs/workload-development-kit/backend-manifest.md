@@ -1,10 +1,7 @@
 ---
 title: Overview of the backend manifest of a workload for the Fabric Workload Development Kit
 description: This article describes the overview and key concepts for the backend manifest definition.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: concept-article
-ms.custom:
 ms.date: 07/14/2024
 #customer intent: As a developer, I want to understand how to create a backend manifest for a customized Fabric workload so that I can create customized user experiences.
 ---
@@ -55,7 +52,7 @@ Consult the [authentication documentation](./authentication-concept.md) for a de
 
 ### ServiceEndpoint Elements
 
-Represent the configuration of a specific logical endpoint, for example the backend endpoint which includes implementation for item CRUD and jobs APIs.
+Represent the configuration of a specific logical endpoint, for example, the backend endpoint which includes implementation for item CRUD and jobs APIs.
 * The configuration for workload's backend endpoint states the backend URL of your workload.
 ```
 <ServiceEndpoint>
@@ -65,8 +62,35 @@ Represent the configuration of a specific logical endpoint, for example the back
     <EndpointResolutionContext>...
 </ServiceEndpoint>
 ```
-* `<IsEndpointResolutionService>` and `EndpointResolutionContext`  are set based on whether your endpoint implements the workload API or only the endpoint resolution. See [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution) for detailed information about the resolution context and response.
 
+* `<IsEndpointResolutionService>` and `<EndpointResolutionContext>` are set based on whether your endpoint implements the workload API or only the endpoint resolution.
+* The resolved endpoint that is returned from the service must meet the following requirements:
+  * The domain of the resolved endpoint must match the domain of the [resource ID](/fabric/workload-development-kit/workload-cloud-setup#microsoft-entra-id-app-resourceid-format) found in the WorkloadManifest.xml.
+  * The resolved endpoint URL may have up to six extra subdomains before the main domain.
+  * Any subdomain after the first segment must belong to the list of [verified domains](/entra/fundamentals/add-custom-domain) of the publisher tenant.
+
+#### Example
+
+**Resource ID URL:** `https://contoso.com/fe/be/Org.WorkloadSample`
+(where domain is `contoso.com`)
+
+**Verified domains in tenant:** `contoso.com`, `be.contoso.com`, `eastus.be.contoso.com`
+
+**Valid resolved endpoints:**
+
+- `api.eastus.be.contoso.com`
+- `be.contoso.com`
+- `api.be.contoso.com`
+
+**Invalid resolved endpoints:**
+
+- `api.eastus.fe.contoso.com` (invalid because `eastus.fe.contoso.com` isn't a verified domain)
+- `contoso-dev.com` (invalid because `contoso-dev.com` isn't a verified domain, and also doesn't match the main domain of the resource ID)
+
+* For more information about using the workload-client API for endpoint resolution, see [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution).
+
+> [!NOTE]
+> Endpoint resolution for Frontend is not supported.
 
 ## Item Manifest - Key Manifest Components
 
@@ -107,3 +131,4 @@ See [monitoring hub guide](monitoring-hub.md) for more information on jobs and r
 
 In summary, the Workload and Item Manifests serve as foundational documents for adding custom workloads to Fabric.
 The authentication process triggers a straightforward sequence of actions: upload, parsing, and registration, guaranteeing proper configuration and efficient workload management within the Azure ecosystem.
+

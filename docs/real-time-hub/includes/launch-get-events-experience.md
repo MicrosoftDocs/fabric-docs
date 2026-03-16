@@ -1,22 +1,23 @@
 ---
-title: Launch Get events experiences
-description: Include file with instructions to launch the Get events experience in Fabric Real-Time hub.
-author: spelluru
-ms.author: spelluru
+title: Launch the Connect data source wizard
+description: Include file with instructions to launch the "Add source experience" in Fabric Real-Time hub.
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 12/11/2025
 ---
 
-## Launch Get events experience
 
-1. Switch to the Real-Time Intelligence experience in Microsoft Fabric. Select **Microsoft Fabric** on the left navigation bar, and select **Real-Time Intelligence**. 
 
-    :::image type="content" source="./media/launch-get-events-experience/switch-to-real-time-intelligence-experience.png" alt-text="Screenshot that shows how to switch to the Real-Time Intelligence experience." lightbox="./media/launch-get-events-experience/switch-to-real-time-intelligence-experience.png":::
-1. Select **Real-Time hub** on the left navigation bar. 
+1. Sign in to [Microsoft Fabric](https://fabric.microsoft.com/).
+1. If you see **Power BI** at the bottom-left of the page, switch to the **Fabric** workload by selecting **Power BI** and then by selecting **Fabric**.
 
-    :::image type="content" source="./media/launch-get-events-experience/select-real-time-hub.png" alt-text="Screenshot that shows how to launch Real-Time hub In Microsoft Fabric." lightbox="./media/launch-get-events-experience/select-real-time-hub.png":::
-1. On the **Real-Time hub** page, select **+ Get events** in the top-right corner of the page. 
+    :::image type="content" source="./media/launch-get-events-experience/switch-to-fabric-workload.png" alt-text="Screenshot that shows how to switch to the Fabric workload.":::    
+1. Select **Real-Time** on the left navigation bar.
 
-    :::image type="content" source="./media/launch-get-events-experience/get-events-button.png" alt-text="Screenshot that shows the selection of Get events button in Real-Time hub." lightbox="./media/launch-get-events-experience/get-events-button.png" :::
+    :::image type="content" source="./media/launch-get-events-experience/real-time-hub.png" alt-text="Screenshot that shows how to launch Connect to data source experience." lightbox="./media/launch-get-events-experience/real-time-hub.png":::
+1. The **Streaming data** page opens by default. Click on the **Add data** button to get to the **Data sources** page. 
+    
+    :::image type="content" source="./media/launch-get-events-experience/streaming-data.png" alt-text="Screenshot that shows the Data sources page in the Real-Time hub." lightbox="./media/launch-get-events-experience/streaming-data.png":::
+
+    You can also get to the **Data sources** page directly by selecting the **Add data** option in the left navigation bar.    
+
+    :::image type="content" source="./media/launch-get-events-experience/add-data.png" alt-text="Screenshot that shows the Connect data source button." lightbox="./media/launch-get-events-experience/add-data.png":::

@@ -1,11 +1,9 @@
 ---
 title: Understand V-Order
 description: Learn how to manage the V-Order state of warehouses in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 08/02/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Understand V-Order for Microsoft Fabric Warehouse
@@ -26,9 +24,9 @@ V-Order works by applying special sorting, row group distribution, dictionary en
 
 Consider the following before deciding to disable V-Order:
 
-- [Microsoft Fabric Direct Lake mode](../get-started/direct-lake-overview.md) depends on V-Order.
+- [Microsoft Fabric Direct Lake mode](../fundamentals/direct-lake-overview.md) depends on V-Order.
 - In warehouse, the effect of V-Order on performance can vary depending on your table schemas, data volumes, query, and ingestion patterns.
-- Make sure you test how V-Order affects the performance of data ingestion and of your queries before deciding to disable it. Consider creating a [copy of your test warehouse using source control](source-control.md#publish-sql-database-project-to-a-new-warehouse), disabling V-Order on the copy, and executing data ingestion and querying tasks to test the performance implications.
+- Make sure you test how V-Order affects the performance of data ingestion and of your queries before deciding to disable it. Consider creating a [copy of your test warehouse using source control](source-control.md), disabling V-Order on the copy, and executing data ingestion and querying tasks to test the performance implications.
 
 ### Scenarios where V-Order might not be beneficial
 

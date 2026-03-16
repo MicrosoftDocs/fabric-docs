@@ -1,12 +1,11 @@
 ---
-title: "Modeling fact tables in Warehouse"
+title: "Modeling Fact Tables in Warehouse"
 description: "Learn about fact tables in Microsoft Fabric Warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: v-myerspeter, drubiolo, chweb
-ms.date: 06/21/2024
-ms.topic: conceptual
-ms.custom: fabric-cat
+ms.reviewer: drubiolo, chweb
+ms.date: 04/06/2025
+ms.topic: concept-article
+ms.custom:
+  - fabric-cat
 ---
 
 # Dimensional modeling in Microsoft Fabric Warehouse: Fact tables
@@ -46,7 +45,7 @@ CREATE TABLE f_Sales
     ShipDate_Date_FK INT NOT NULL,
     Product_FK INT NOT NULL,
     Salesperson_FK INT NOT NULL,
-    <…>
+    <...>
     
     --Attributes
     SalesOrderNo INT NOT NULL,
@@ -54,7 +53,7 @@ CREATE TABLE f_Sales
     
     --Measures
     Quantity INT NOT NULL,
-    <…>
+    <...>
     
     --Audit attributes
     AuditMissing BIT NOT NULL,

@@ -1,13 +1,10 @@
 ---
 title: Information protection tenant settings
 description: Learn how to configure information protection tenant settings in Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
+author: msmimart
+ms.author: mimart
 ms.custom:
   - tenant-setting
-  - ignite-2023
 ms.topic: how-to
 ms.date: 02/15/2024
 LocalizationGroup: Administration

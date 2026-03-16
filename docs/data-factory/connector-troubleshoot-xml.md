@@ -1,13 +1,9 @@
 ---
 title: Troubleshoot the XML format connector
 description: Learn how to troubleshoot issues with the XML format connector in Data Factory in Microsoft Fabric.
-ms.reviewer: jburchel
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: connectors
 ms.date: 11/15/2023
 ---
 
@@ -15,7 +11,7 @@ ms.date: 11/15/2023
 
 This article provides suggestions to troubleshoot common problems with the XML format connector in Data Factory in Microsoft Fabric.
 
-## Error code: XmlSinkNotSupported
+## Error code: XmldestinationNotSupported
 
 - **Message**: `Write data in XML format is not supported yet, choose a different format!`
 
@@ -54,6 +50,6 @@ This article provides suggestions to troubleshoot common problems with the XML f
 
 For more troubleshooting help, try these resources:
 
-- [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
+- [Data Factory blog](https://blog.fabric.microsoft.com/blog/category/data-factory)
 - [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)

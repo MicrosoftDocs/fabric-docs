@@ -1,13 +1,10 @@
 ---
 title: Sensitivity label downstream inheritance in Power BI
 description: Learn how sensitivity labels can be propagated to downstream content.
-author: paulinbar
-ms.author: painbar
-
-ms.topic: conceptual
-ms.custom:
-  - ignite-2023
-ms.date: 09/12/2023
+author: msmimart
+ms.author: mimart
+ms.topic: concept-article
+ms.date: 01/06/2026
 LocalizationGroup: Data from files
 ---
 
@@ -25,6 +22,19 @@ Downstream inheritance is illustrated using [lineage view](/power-bi/collaborate
 >
 >* Downstream inheritance never overwrites labels that were applied manually.
 >* Downstream inheritance never overwrites a label with a less restrictive label.
+
+## Downstream inheritance vs. inheritance upon creation
+
+It's important to understand the difference between downstream inheritance and inheritance upon item creation:
+
+* **Downstream inheritance** applies labels to *existing* downstream items when you change a label on a parent item (semantic model or report). This feature is what this article describes.
+* **Inheritance upon creation** automatically applies a label to a *new* item when you create it based on a labeled parent item. This happens regardless of the downstream inheritance settings.
+
+For example, when you create a new report based on a labeled semantic model, the report automatically inherits the semantic model's label to prevent creating unlabeled artifacts that could expose data. This inheritance upon creation occurs even if the **Automatically apply sensitivity labels to downstream content** tenant setting is disabled.
+
+The **Automatically apply sensitivity labels to downstream content** setting only controls whether labels propagate to existing downstream items when you change a parent item's label. It doesn't affect label inheritance when you create new items.
+
+For more information about inheritance upon creation, see [Sensitivity label inheritance upon creation of new content](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-label-inheritance-upon-creation-of-new-content).
 
 ## Downstream inheritance modes
 
@@ -58,9 +68,10 @@ In certain cases, downstream inheritance (like other automated labeling scenario
 
 ## Enabling fully automated downstream inheritance
 
-By default, downstream inheritance operates in user consent mode. To switch downstream inheritance in the tenant to fully automated mode, the Power BI admin must enable the **Automatically apply sensitivity labels to downstream content** tenant setting in the admin portal.
+Fully automated downstream inheritance is controlled by the tenant setting **Automatically apply sensitivity labels to downstream content**. This setting is enabled by default when information protection is enabled (that is, when the tenant setting **Allow users to apply sensitivity labels for content**
+is enabled). To change the downstream inheritance setting, [go to the tenant settings in the admin portal](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings) and enable/disable the **Automatically apply sensitivity labels to downstream content** setting as desired.
 
-:::image type="content" source="media/sensitivity-labels/downstream-inheritance-fully-automated-tenant-switch.png" alt-text="Screenshot of tenant setting for automatically applying labels to downstream content.":::
+:::image type="content" source="media/service-security-sensitivity-label-downstream-inheritance/downstream-inheritance-fully-automated-tenant-switch.png" alt-text="Screenshot of tenant setting for automatically applying labels to downstream content.":::
 
 ## Considerations and limitations
 

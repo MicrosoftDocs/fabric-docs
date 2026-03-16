@@ -1,15 +1,11 @@
 ---
 title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
-description: Learn how to use event streams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+description: Learn how to use eventstreams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehouse.
+ms.reviewer: xujiang1
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.custom: sfi-image-nochange
 ms.date: 11/15/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
@@ -32,7 +28,7 @@ In this tutorial, you learn how to:
 
 Before you start, you must have:
 
-- Access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse items are located.
+- Access to a workspace with Contributor or above permissions where your Eventstream and Lakehouse items are located.
 - An Azure event hub with event data and appropriate permission available to access the policy keys. The event hub must be publicly accessible and not be behind a firewall or secured in a virtual network. To create an event hub, see [Quickstart: Create an event hub using Azure portal](/azure/event-hubs/event-hubs-create).
 
 ## Create a lakehouse and an eventstream
@@ -133,7 +129,7 @@ In this section, after you have started the process of adding a lakehouse destin
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/manage-fields-operator.png" alt-text="Screenshot showing where to select Manage fields in the Operations menu.":::
 
-1. Hover on the connection line and then select the "+" button. A drop-down menu appears on the connection line, and you can insert the **Manage fields** operator between them.
+1. Hover on the connection line and then select the "+" button. A dropdown menu appears on the connection line, and you can insert the **Manage fields** operator between them.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" alt-text="Screenshot showing where to select and delete the operator connection between the eventstream and the lakehouse." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" :::
 
@@ -196,3 +192,5 @@ In this tutorial, you learned how to ingest, filter, and transform real-time eve
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
 - [Process event data with event processor editor](./process-events-using-event-processor-editor.md)
+
+

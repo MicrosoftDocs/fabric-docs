@@ -1,49 +1,56 @@
 ---
-title: Configure and manage starter pools in Fabric Spark.
+title: Configure and manage starter pools in Fabric Spark
 description: Learn how to customize starter pools from your Fabric workspace settings for your analytics workloads.
-ms.reviewer: snehagunda
-ms.author: saravi
-author: santhoshravindran7
+ms.reviewer: saravi
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 10/20/2023
+ms.date: 03/05/2026
+ai-usage: ai-assisted
 ---
-# Configuring starter pools in Microsoft Fabric
+# Configure starter pools in Microsoft Fabric
 
-In this article, we explain how to customize starter pools in Microsoft Fabric for your analytics workloads. Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
+Starter pools provide fast Spark session startup in Fabric. You can start Spark work quickly, instead of waiting for full cluster provisioning on each run.
 
-Starter pools have Spark clusters that are always on and ready for your requests. They use medium-sized nodes and can be scaled up based on your workload requirements.
+Starter pools use Medium nodes and support autoscaling based on workload demand. Default and maximum limits depend on your Fabric capacity SKU.
 
-You can specify the maximum nodes for autoscaling based on the data engineering or data science workload requirements. Based on the max nodes you configure, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance.
+## Prerequisites
 
-You can also set the maximum limit for executors in starter pools and with Dynamic Allocation enabled, the system adjusts the number of executors depending on the data volume and job-level compute needs. This process enables you to focus on your workloads without worrying about performance optimization and resource management.
+To customize a starter pool, you need the **Admin** role in the workspace.
 
-> [!NOTE]
-> To customize a starter pool, you need admin access to the workspace.
+## Understand starter pool settings
 
-## Configure starter pools
+In workspace settings, you can configure these starter pool controls:
+
+- **Autoscale**: If enabled, your Apache Spark pool automatically scales up and down based on activity.
+- **Dynamically allocate executors**: If enabled, Spark allocates and releases executors based on workload demand.
+
+Both options are enabled by default. Use the sliders to increase or decrease the configured limits for your workload.
+
+## Configure starter pool settings
 
 To manage the starter pool associated with your workspace:
 
-1. Go to your workspace and choose the **Workspace settings**.
+1. Go to your workspace, and select **Workspace settings**.
 
    :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
 
-1. Then, select the **Data Engineering/Science** option to expand the menu.
+1. Expand **Data Engineering/Science** in the left pane and then select **Spark settings**.
 
-   :::image type="content" source="media/configure-starter-pools/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view.":::
+   :::image type="content" source="media/configure-starter-pools/starter-pool-settings.png" alt-text="Screenshot showing starter pool settings." lightbox="media/configure-starter-pools/starter-pool-settings.png":::
 
-1. Select the **StarterPool** option.
+1. Select **StarterPool** from the **Default pool for workspace** dropdown to view an overview of the starter pool settings.
 
-   :::image type="content" source="media\configure-starter-pools\starter-pool-settings.png" alt-text="Screenshot showing starter pool configuration options.":::
+1. Select the pencil icon in the **Pool details** section to edit the settings for the starter pool. 
+1. In the edit view, configure **Autoscale** and **Dynamically allocate executors**.
 
-1. You can set the maximum node configuration for your starter pools to an allowed number based on the purchased capacity or reduce the default max node configuration to a smaller value when running smaller workloads.
+   Use the sliders to increase or decrease each setting based on your workload needs.
 
-   :::image type="content" source="media\configure-starter-pools\starter-pool-max-node.png" alt-text="Screenshot showing starter pool max node and max executor options for autoscaling and dynamic allocation.":::
+   :::image type="content" source="media\configure-starter-pools\starter-pool-max-node.png" alt-text="Screenshot showing autoscale and dynamically allocate executors settings with sliders for starter pools." lightbox="media\configure-starter-pools\starter-pool-max-node.png":::
 
-The following section lists various default configurations and the max node limits supported for starter pools based on Microsoft Fabric capacity SKUs:
+   You can keep the default values or reduce limits for smaller workloads. You can also increase values up to the maximum allowed for your SKU.
+
+1. After making your changes, select **Save** to apply the new settings for the starter pool or select **Discard** to discard your changes. Otherwise, you can select the back arrow to exit without saving or discarding changes.
+
+The following table shows default and maximum starter pool node limits by SKU.
 
 | SKU name | Capacity units | Spark VCores | Node size | Default max nodes | Max number of nodes |
 |--|--|--|--|--|--|
@@ -60,10 +67,7 @@ The following section lists various default configurations and the max node limi
 | F1024 | 1024 | 2048 | Medium | 10 | 200 |
 | F2048 | 2048 | 4096 | Medium | 10 | 200 |
 
-> [!NOTE]
-> To customize a starter pool, you need admin access to the workspace.
-
 ## Related content
 
-* Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
-* Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
+- Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).

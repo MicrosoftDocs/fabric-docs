@@ -1,14 +1,10 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a fraud detection model'
 description: This tutorial shows the data science workflow for building a model that detects credit card fraud.
-ms.author: lagayhar 
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
-ms.custom:
-  - ignite-2023
-ms.date: 01/22/2024
+ms.custom: sfi-image-nochange
+ms.date: 02/28/2026
 #customer intent: As a data scientist, I want to build a machine learning model so I can detect future fraudulent transactions.
 ---
 
@@ -34,10 +30,10 @@ This tutorial covers these steps:
 
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+To follow along in a notebook, choose one of these options:
 
-- Open and run the built-in notebook in the Data Science experience
-- Upload your notebook from GitHub to the Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -58,7 +54,7 @@ The [AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-sampl
 For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
 * Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
-* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment are available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
 For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. 
 
@@ -72,14 +68,14 @@ For this tutorial, use `%pip install` to install the `imblearn` library in your 
 
 ## Step 2: Load the data
 
-The fraud detection dataset contains credit card transactions, from September 2013, that European cardholders made over the course of two days. The dataset contains only numerical features because of a Principal Component Analysis (PCA) transformation applied to the original features. PCA transformed all features except for `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
+The fraud detection dataset contains credit card transactions from September 2013 that European cardholders made over the course of two days. The dataset contains only numerical features because of a Principal Component Analysis (PCA) transformation applied to the original features. PCA transformed all features except for `Time` and `Amount`. To protect confidentiality, the original features or more background information about the dataset aren't available.
 
 These details describe the dataset:
 
-- The `V1`, `V2`, `V3`, …, `V28` features are the principal components obtained with PCA
-- The `Time` feature contains the elapsed seconds between a transaction and the first transaction in the dataset
-- The `Amount` feature is the transaction amount. You can use this feature for example-dependent, cost-sensitive learning
-- The `Class` column is the response (target) variable. It has the value `1` for fraud, and `0` otherwise
+- The `V1`, `V2`, `V3`, …, `V28` features are the principal components obtained with PCA.
+- The `Time` feature contains the elapsed seconds between a transaction and the first transaction in the dataset.
+- The `Amount` feature is the transaction amount. You can use this feature for example-dependent, cost-sensitive learning.
+- The `Class` column is the response (target) variable. It has the value `1` for fraud, and `0` otherwise.
 
 Only 492 transactions, out of 284,807 transactions total, are fraudulent. The dataset is highly imbalanced, because the minority (fraudulent) class accounts for only about 0.172% of the data.
 
@@ -92,7 +88,7 @@ This table shows a preview of the *creditcard.csv* data:
 
 ### Download the dataset and upload to the lakehouse
 
-Define these parameters, so that you can use this notebook with different datasets:
+Define these parameters so that you can use this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the dataset has to be uploaded manually
@@ -110,14 +106,14 @@ EXPERIMENT_NAME = "aisample-fraud"  # MLflow experiment name
 This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Otherwise, you'll get an error.
+> Before running the notebook, [add a lakehouse](https://aka.ms/fabric/addlakehouse). Otherwise, you get an error.
 
 ```python
 if not IS_CUSTOM_DATA:
     # Download data files into the lakehouse if they're not already there
     import os, requests
 
-    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection"
+    remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/Credit_Card_Fraud_Detection"
     fname = "creditcard.csv"
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
@@ -133,11 +129,11 @@ if not IS_CUSTOM_DATA:
 
 ### Set up MLflow experiment tracking
 
-The experiment tracking process saves all relevant experiment-related information for every experiment that you run. Sometimes, you have no way to obtain better results when you run a specific experiment. In those cases, you should stop the experiment and try a new one.
+The experiment tracking process saves all relevant experiment-related information for every experiment that you run. Sometimes, you can't obtain better results when you run a specific experiment. In those cases, stop the experiment and try a new one.
 
 The Synapse Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)] includes an autologging feature. This feature reduces the amount of code needed to automatically log the parameters, metrics, and items of a machine learning model during training. The feature extends the MLflow autologging capabilities. It has deep integration in the Data Science experience.
 
-With autologging, you can easily track and compare the performance of different models and experiments, without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+By using autologging, you can easily track and compare the performance of different models and experiments, without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
 To disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`:
 
@@ -169,7 +165,7 @@ In this section, you first explore the raw data and high-level statistics. Then,
 
 ### Display the raw data
 
-1. Explore the raw data, and view high-level statistics, with the `display` command. For more information about data visualization, see [Notebook visualization in Microsoft Fabric](https://aka.ms/fabric/visualization).
+1. Explore the raw data and view high-level statistics by using the `display` command. For more information about data visualization, see [Notebook visualization in Microsoft Fabric](https://aka.ms/fabric/visualization).
 
     ```python
     display(df)
@@ -217,7 +213,7 @@ In this section, you first explore the raw data and high-level statistics. Then,
     print('Frauds', round(df_pd['Class'].value_counts()[1]/len(df_pd) * 100,2), '% of the dataset')
     ```
 
-    The code returns this dataset class distribution: 99.83% `No Frauds` and 0.17% `Frauds`. This class distribution shows that most of the transactions are nonfraudulent. Therefore, data preprocessing is required before model training, to avoid overfitting.
+    The code returns this dataset class distribution: 99.83% `No Frauds` and 0.17% `Frauds`. This class distribution shows that most of the transactions are nonfraudulent. Therefore, data preprocessing is required before model training to avoid overfitting.
 
 1. Use a plot to show the class imbalance in the dataset, by viewing the distribution of fraudulent versus nonfraudulent transactions:
 
@@ -243,7 +239,7 @@ In this section, you first explore the raw data and high-level statistics. Then,
 
 ## Step 4: Train and evaluate the models
 
-Here, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
+In this step, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
 ### Prepare training and test datasets
 
@@ -284,7 +280,7 @@ For more information about SMOTE, see the [scikit-learn reference page for the S
 
 ### Train machine learning models and run experiments
 
-Apache Spark, in [!INCLUDE [product-name](../includes/product-name.md)], enables machine learning with big data. With Apache Spark, you can get valuable insights from large amounts of structured, unstructured, and fast-moving data.
+Apache Spark, in [!INCLUDE [product-name](../includes/product-name.md)], enables machine learning with big data. By using Apache Spark, you can get valuable insights from large amounts of structured, unstructured, and fast-moving data.
 
 You have several available options to train machine learning models with Apache Spark in Microsoft Fabric: Apache Spark MLlib, SynapseML, and other open-source libraries. For more information, see [Train machine learning models in Microsoft Fabric](https://aka.ms/fabric/MLTrain).
 
@@ -358,7 +354,7 @@ For experiment tracking, you can organize all the required components of a speci
         mlflow.log_figure(smote_importance.figure, "feauture_importance_smote.png")
     ```
 
-To train a model with the imbalanced dataset, the important features have significant differences when compared with a model trained with the balanced dataset.
+When you train a model with the imbalanced dataset, the important features show significant differences compared to a model trained with the balanced dataset.
 
 ### Evaluate the models
 
@@ -369,7 +365,7 @@ Here, you evaluate the two trained models:
 
 #### Compute model metrics
 
-1. Define a `prediction_to_spark` function that performs predictions, and converts the prediction results into a Spark DataFrame. You can then compute model statistics on the prediction results with [SynapseML](https://aka.ms/fabric/SynapseEval).
+1. Define a `prediction_to_spark` function that makes predictions and converts the prediction results into a Spark DataFrame. You can then compute model statistics on the prediction results by using [SynapseML](https://aka.ms/fabric/SynapseEval).
 
     ```python
     from pyspark.sql.functions import col
@@ -388,7 +384,7 @@ Here, you evaluate the two trained models:
         return predictions
     ```
 
-1. Use the `prediction_to_spark` function to perform predictions with the two models, `model` and `smote_model`:
+1. Use the `prediction_to_spark` function to make predictions with the two models, `model` and `smote_model`:
 
     ```python
     predictions = prediction_to_spark(model, test)
@@ -518,15 +514,15 @@ To evaluate performance with the AUC-ROC and AUPRC measures:
 
 The model trained on the balanced data returns higher AUC-ROC and AUPRC values compared to the model trained on the imbalanced data. Based on these measures, SMOTE seems like an effective technique to enhance model performance when working with highly imbalanced data.
 
-As the next image shows, any experiment is logged with its respective name. You can track the experiment parameters and performance metrics in your workspace.
+As the following image shows, the system logs each experiment with its respective name. You can track the experiment parameters and performance metrics in your workspace.
 
 :::image type="content" source="media/fraud-detection/fraud-detection-experiment-mlflow.png" alt-text="Screenshot of the tracked experiment." lightbox="media/fraud-detection/fraud-detection-experiment-mlflow.png":::
 
-This image shows the performance metrics for the model trained on the balanced dataset (in **Version 2**):
+The following image shows the performance metrics for the model trained on the balanced dataset (in **Version 2**):
 
 :::image type="content" source="media/fraud-detection/fraud-detection-model-mlflow.png" alt-text="Screenshot of logged model performance metrics and model parameters." lightbox="media/fraud-detection/fraud-detection-model-mlflow.png":::
 
-You can select **Version 1** to see the metrics for the model trained on the imbalanced dataset. When you compare the metrics, the AUROC is higher for the model trained with the balanced dataset. These results indicate that this model is better at correctly predicting `0` classes as `0`, and predicting `1` classes as `1`.
+Select **Version 1** to see the metrics for the model trained on the imbalanced dataset. When you compare the metrics, you see that the AUROC is higher for the model trained with the balanced dataset. These results indicate that this model is better at correctly predicting `0` classes as `0`, and predicting `1` classes as `1`.
 
 ## Step 5: Register the models
 
@@ -545,7 +541,7 @@ mlflow.register_model(smote_model_uri, registered_model_name)
 
 ## Step 6: Save the prediction results
 
-Microsoft Fabric allows users to operationalize machine learning models with the `PREDICT` scalable function. This function supports batch scoring (or batch inferencing) in any compute engine.
+Microsoft Fabric users can operationalize machine learning models by using the `PREDICT` scalable function. This function supports batch scoring (or batch inferencing) in any compute engine.
 
 You can generate batch predictions directly from the Microsoft Fabric notebook or from a model's item page. For more information about `PREDICT`, see [Model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
 
@@ -583,3 +579,4 @@ You can generate batch predictions directly from the Microsoft Fabric notebook o
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+

@@ -1,26 +1,21 @@
 ---
-title: Apply conditional formatting in Real-Time Dashboard visuals (preview)
+title: Apply conditional formatting in Real-Time Dashboard visuals
 description: Learn how to apply conditional formatting to Real-Time Dashboard visuals.
-ms.author: yaschust
-author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 02/21/2023
+ms.subservice: rti-dashboard
+ms.date: 11/19/2024
 ---
 
-# Apply conditional formatting in Real-Time Dashboard visuals (preview)
+# Apply conditional formatting in Real-Time Dashboard visuals
 
 Conditional formatting allows you to format the visual representation of data points based on their values, utilizing colors, tags, and icons. Conditional formatting can be applied either to a specific set of cells within a designated column or to entire rows.
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 For each visual, you have the flexibility to define one or more conditional formatting rules. In cases where multiple rules conflict, the last rule defined takes precedence over any previous ones.
 
 ## Prerequisites
 
-* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 * A table, stat, or multi stat dashboard visual
 

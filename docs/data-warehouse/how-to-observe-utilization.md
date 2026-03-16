@@ -1,17 +1,14 @@
 ---
-title: How to observe Synapse Data Warehouse utilization trends
-description: Learn how to use the Fabric Capacity Metrics app to observe Microsoft Fabric Synapse Data Warehouse utilization trends.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+title: How to Observe Fabric Data Warehouse Utilization Trends
+description: Learn how to use the Fabric Capacity Metrics app to observe Microsoft Fabric Data Warehouse utilization trends.
 ms.reviewer: sosivara
-ms.date: 08/22/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
 ms.search.form: Warehouse billing and utilization
+ms.custom: sfi-image-nochange
 ---
 
-# How to: Observe Synapse Data Warehouse utilization trends
+# How to: Observe Fabric Data Warehouse utilization trends
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -39,7 +36,7 @@ This graph can provide high-level CU trends in the last 14 days to see which Fab
 
 Use the timepoint graph to identify a range of activity where CU utilization was at its peak. We can identify individual interactive and background activities consuming utilization.
 
-The following animated image walks through several steps you can use to drill through utilization, throttling, and overage information. For more information, visit [Throttling in Microsoft Fabric](../enterprise/throttling.md).
+The following animated image walks through several steps you can use to drill through utilization, throttling, and overage information. For more information, see [Throttling in Microsoft Fabric](../enterprise/throttling.md).
 
 :::image type="content" source="media/how-to-observe-utilization/metrics-app-throttling.gif" alt-text="An animated gif of the Metrics app showing the drill through steps." lightbox="media/how-to-observe-utilization/metrics-app-throttling.gif":::
 
@@ -74,10 +71,10 @@ The following animated image walks through several steps you can use to drill th
 
 ## Related content
 
-- [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
+- [Billing and utilization reporting in Fabric Data Warehouse](usage-reporting.md)
 - [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md)
 - [Workload management](workload-management.md)
-- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
-- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
-- [Pause and resume in Fabric data warehousing](pause-resume.md)
+- [Smoothing and throttling in Fabric Data Warehouse](compute-capacity-smoothing-throttling.md)
+- [Pause and resume in Fabric Data Warehouse](pause-resume.md)

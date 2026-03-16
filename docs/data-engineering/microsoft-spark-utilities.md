@@ -1,15 +1,8 @@
 ---
 title: Microsoft Spark Utilities (MSSparkUtils) for Fabric
 description: Use Microsoft Spark Utilities, a built-in package, to work with file systems, get environment variables, chain notebooks together, and work with secrets.
-ms.reviewer: snehagunda
-ms.author: jingzh
-author: JeneZhang
+ms.reviewer: jingzh
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Microsoft Spark utilities
 ms.date: 05/02/2024
 ---
@@ -20,7 +13,7 @@ Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easil
 
 > [!NOTE]
 >
-> - MsSparkUtils has been officially renamed to **NotebookUtils**. The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
+> - MsSparkUtils has been officially renamed to [**NotebookUtils**](notebook-utilities.md). The existing code will remain **backward compatible** and won't cause any breaking changes. It is **strongly recommend** upgrading to notebookutils to ensure continued support and access to new features. The mssparkutils namespace will be retired in the future.
 > - NotebookUtils is designed to work with **Spark 3.4(Runtime v1.2) and above**. All new features and updates will be exclusively supported with notebookutils namespace going forward.
 
 ## File system utilities
@@ -117,7 +110,8 @@ mssparkutils.fs.fastcp('source file or directory', 'destination file or director
 This method returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8.
 
 ```python
-mssparkutils.fs.head('file path', maxBytes to read)
+# Set the second parameter as an integer for the maxBytes to read
+mssparkutils.fs.head('file path', <maxBytes>)
 ```
 
 ### Move file
@@ -145,6 +139,9 @@ This method appends the given string to a file, encoded in UTF-8.
 mssparkutils.fs.append("file path", "content to append", True) # Set the last parameter as True to create the file if it does not exist
 ```
 
+> [!NOTE] 
+> When using the ``` mssparkutils.fs.append ``` API in a ```for``` loop to write to the same file, we recommend to add a ```sleep``` statement around 0.5s~1s between the recurring writes. This is because the ```mssparkutils.fs.append``` API's internal ```flush``` operation is asynchronous, so a short delay helps ensure data integrity.
+
 ### Delete file or directory
 
 This method removes a file or directory.
@@ -169,7 +166,7 @@ mssparkutils.notebook.help()
 
 ```console
 
-exit(value: String): void -> This method lets you exit a notebook with a value.
+exit(value: String): Raises NotebookExit Exception -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map): String -> This method runs a notebook and returns its exit value.
 ```
 
@@ -198,9 +195,9 @@ mssparkutils.notebook.run("Sample1", 90, {"input": 20 }, "fe0a6e2a-a909-4aa3-a69
 
 You can open the snapshot link of the reference run in the cell output. The snapshot captures the code run results and allows you to easily debug a reference run.
 
-:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot of reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
+:::image type="content" source="media\microsoft-spark-utilities\reference-run.png" alt-text="Screenshot showing the reference run result." lightbox="media\microsoft-spark-utilities\reference-run.png":::
 
-:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
+:::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot with code run results." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
 
 > [!NOTE]
 >
@@ -210,9 +207,9 @@ You can open the snapshot link of the reference run in the cell output. The snap
 ### Reference run multiple notebooks in parallel
 
 > [!IMPORTANT]
-> This feature is in [preview](../get-started/preview.md).
+> This feature is in [preview](../fundamentals/preview.md).
 
-The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API is using a multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
+The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a predefined topological structure. The API uses a multi-threaded implementation to submit, queue, and monitor child notebooks that execute on isolated REPL instances (read-eval-print-loop) within the existing spark session. The sessions compute resources are shared by the referenced child notebooks.
 
 With `mssparkutils.notebook.runMultiple()`, you can:
 
@@ -269,7 +266,7 @@ DAG = {
         }
     ],
     "timeoutInSeconds": 43200, # max timeout for the entire DAG, default to 12 hours
-    "concurrency": 50 # max number of notebooks to run concurrently, default to 50
+    "concurrency": 50 # max number of notebooks to run concurrently, defaults to 50 but ultimately constrained by the number of driver cores
 }
 mssparkutils.notebook.runMultiple(DAG, {"displayDAGViaGraphviz": False})
 ```
@@ -279,9 +276,12 @@ The execution result from the root notebook is as follows:
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
 
 > [!NOTE]
-> - The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
-> - The upper limit for notebook activities or concurrent notebooks is **50**. Exceeding this limit may lead to stability and performance issues due to high compute resource usage. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
-> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter.
+> - The upper limit for notebook activities or concurrent notebooks is constrained by the number of driver cores. For example, a Medium node driver with 8 cores would be able to execute up to 8 notebooks concurrently. This is because each notebook that is submitted executes on its own REPL (read-eval-print-loop) instance, each of which consumes one driver core.
+> - The default concurrency parameter is set to **50** to support automatically scaling the max concurrency as users configure Spark pools with larger nodes and thus more driver cores. While you can set this to a higher value when using a larger driver node, increasing the amount of concurrent processes executed on a single driver node typically does not scale linearly. Increasing concurrency can lead to reduced efficiency due to driver and executor resource contention. Each running notebook runs on a dedicated REPL instance which consumes CPU and memory on the driver, and under high concurrency this can increase the risk of driver instability or out-of-memory errors, particularly for long-running workloads.
+> - You may experience that each individual jobs will take longer due to the overhead of initializing REPL instances and orchestrating many notebooks. If issues arise, consider separating notebooks into multiple ```runMultiple``` calls or reducing the concurrency by adjusting the **concurrency** field in the DAG parameter.
+> - When running short-lived notebooks (e.g., 5 seconds code execution time), the initialization overhead becomes dominant, and variability in prep time may reduce the chance of notebooks overlapping, and therefore result in lower realized concurrency. In these scenrios it may be more optimal to combine small operations into a one or multiple notebooks.
+> - While multi-threading is used for submission, queuing, and monitoring, note that the code run in each notebook is not multi-threaded on each executor. There's no resource sharing between as each notebook process is allocated a portion of the total executor resources, this can cause shorter jobs to run inefficiently and longer jobs to contend for resources.
+> - The default timeout for entire DAG is 12 hours, and the default timeout for each cell in child notebook is 90 seconds. You can change the timeout by setting the **timeoutInSeconds** and **timeoutPerCellInSeconds** fields in the DAG parameter. As you increase concurrency you may need to increase **timeoutPerCellInSeconds** to prevent possible resource contention from causing unnecessary timeouts.
 
 ### Exit a notebook
 
@@ -289,7 +289,7 @@ This method exits a notebook with a value. You can run nesting function calls in
 
 - When you call an *exit()* function from a notebook interactively, the Fabric notebook throws an exception, skips running subsequent cells, and keeps the Spark session alive.
 
-- When you orchestrate a notebook in a pipeline that calls an *exit()* function, the notebook activity returns with an exit value, completes the pipeline run, and stops the Spark session.
+- When you orchestrate a notebook in a pipeline that calls an *exit()* function, the notebook activity returns with an exit value, completes the pipeline run, and stops the Spark session. Do not enclose the *exit()* function around a try/catch as this NotebookExit Exception must propagate for the pipeline to get the return value.
 
 - When you call an *exit()* function in a notebook that is being referenced, Fabric Spark will stop the further execution of the referenced notebook, and continue to run the next cells in the main notebook that calls the *run()* function. For example: Notebook1 has three cells and calls an *exit()* function in the second cell. Notebook2 has five cells and calls *run(notebook1)* in the third cell. When you run Notebook2, Notebook1 stops at the second cell when hitting the *exit()* function. Notebook2 continues to run its fourth cell and fifth cell.
 
@@ -625,6 +625,9 @@ With ``` mssparkutils.runtime.context ``` you can get the context information of
 ```python
 mssparkutils.runtime.context
 ```
+
+> [!NOTE]
+> ```mssparkutils.env``` is not officially supported on Fabric, please use ```notebookutils.runtime.context``` as alternative.
 
 ## Known issue 
 

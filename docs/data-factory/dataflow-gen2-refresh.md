@@ -1,11 +1,10 @@
 ---
 title: Dataflow Gen2 refresh
 description: Explanation of what a dataflow refresh is, including on-demand and scheduled refresh.
-author: Luitwieler
-ms.author: jeluitwi
-ms.service: fabric
+ms.reviewer: jeluitwi
 ms.topic: concept-article #Required; leave this attribute/value as-is.
-ms.date: 2/1/2024
+ms.date: 2/4/2026
+ms.custom: dataflows
 ---
 
 # Dataflow refresh
@@ -21,6 +20,7 @@ A dataflow refresh can be triggered in one of two ways, either on-demand or by s
 Here are the prerequisites for refreshing a dataflow:
 
 - [Quickstart: Quickstart: Create your first dataflow to get and transform data](create-first-dataflow-gen2.md)
+- User who triggers the refresh must have member (or higher) access to the workspace, and access to all connections used by the dataflow  
 
 ## On-demand refresh
 
@@ -48,7 +48,7 @@ To cancel a dataflow refresh, select **Cancel** icon found in workspace list or 
 
 :::image type="content" source="media/concept-dataflow-refresh/cancel-dataflow-refresh.png" alt-text="Screenshot showing where to configure dataflow refresh schedule in the dataflow settings page.":::
 
-Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status:
+Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancellation status:
 
 :::image type="content" source="media/concept-dataflow-refresh/canceled-dataflow-refresh-history.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
 
@@ -56,24 +56,35 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 For dataflow refreshes, a couple of limitations are in place:
 
-1. Per dataflow, you're only allowed to have 150 refreshes per 24 hours (rolling window). When you exceed this limit, you receive an error in your refresh history and refreshes resume after you are below the limit.
-2. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
+1. Each dataflow is allowed up to 300 refreshes per 24-hour rolling window. If this limit is exceeded, an error may appear in the refresh history, and refreshes will resume once usage drops below the threshold. For non-CI/CD Dataflows Gen2, the limit is 150 refreshes per 24-hour rolling window.
+2. In addition to the per-dataflow limits, system-level throttling may apply to protect overall service stability. This means that while 300 refreshes spread across 24 hours is acceptable, attempting 300 refreshes within a short burst (e.g., 60 seconds) may trigger throttling and result in rejected requests. These protections are in place to ensure system reliability.
+3. If your scheduled dataflow refresh fails consecutively, we pause your dataflow refresh schedule and send the owner of the dataflow an email. The following rules apply in this case:
    - 72 hours (3 days)
      - 100% failure rate over 72 hours
      - Minimum of 6 refreshes (2 refreshes a day)
    - 168 hours (1 week)
      - 100% failure rate over 168 hours
      - Minimum of 5 refreshes (1 refresh a day)
-3. A single evaluation of a query has a limit of 8 hours.
-4. Total refresh time of a single refresh of a dataflow is limited to a max of 24 hours.
-5. Per dataflow you can have a maximum of 50 staged queries, or queries with output destination, or combination of both. 
+4. A single evaluation of a query has a limit of 8 hours.
+5. Total refresh time of a single refresh of a dataflow is limited to a max of 24 hours.
+6. Per dataflow you can have a maximum of 50 staged queries, or queries with output destination, or combination of both. 
 
-### Refresh cancelation implications to output data
+### Intermittent failures when consuming dataflow data via the Dataflows connector
+
+When downstream items (such as semantic models or other dataflows) consume data from a Dataflow Gen2 using the Dataflows connector, they retrieve the data through an internal API. This API can experience intermittent timeouts, which may cause the consuming item's refresh to fail with a misleading error message such as: "The key didn't match any rows in the table."
+
+This error doesn't mean your data is missing or incorrect. It indicates that the backend service was temporarily unable to return the dataflow results.
+
+**Recommended workaround:** Configure an [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) (Lakehouse or Warehouse) for each source dataflow, and update downstream items to read directly from that destination using the Lakehouse or Warehouse connector instead of the Dataflows connector. By reading from OneLake storage directly, you bypass the internal API entirely and eliminate this failure mode. This change also typically improves overall refresh performance.
+
+For more details about this limitation, see [Data Factory Dataflow Gen2 limitations](data-factory-limitations.md#data-factory-dataflow-gen2-limitations).
+
+### Refresh cancellation implications to output data
 
 A dataflow refresh can be stopped via cancel refresh feature or if a failure occurred during processing of the dataflow's queries. Different outcomes can be observed depending on the type of destination and when refresh was stopped. Here are the possible outcomes, for the two types of data destination for a query:
 
 - Query is loading data to staging: Data from the last successful refresh is available.
-- Query is loading data to a data destination: Data written up to the point of cancelation is available.
+- Query is loading data to a data destination: Data written up to the point of cancellation is available.
 
 Not all queries in a dataflow are processed at the same time, for example, if a dataflow contains many queries or some queries depend on others. If a refresh is canceled before evaluation of a query that loads data to a destination began, there's no change to data in that query's destination.
 

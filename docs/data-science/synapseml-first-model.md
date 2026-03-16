@@ -2,33 +2,31 @@
 title: Build a model with SynapseML
 description: Get a quick introduction to building a machine learning model with SynapseML.
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.author: ssalgado
-author: ssalgadodev
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: jessiwang
-reviewer: JessicaXYWang
-ms.date: 06/04/2024
+ms.date: 09/29/2025
+ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai.usage: ai-assisted
 ---
 
 # Build a model with SynapseML
 
-This article describes how to build a machine learning model by using SynapseML, and demonstrates how SynapseML can simplify complex machine learning tasks. You use SynapseML to create a small machine learning training pipeline that includes a featurization stage and a LightGBM regression stage. The pipeline predicts ratings based on review text from a dataset of book reviews. You also see how SynapseML can simplify the use of prebuilt models to solve machine learning problems.
+This article shows how to build a machine learning model with SynapseML and how it simplifies complex machine learning tasks. Use SynapseML to build a training pipeline with a featurization stage and a LightGBM regression stage. The pipeline predicts ratings from book review text. Here's how to use prebuilt models with SynapseML to solve machine learning problems.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 ## Prepare resources
-Create the tools and resources you need to build the model and pipeline.
+Set up the tools and resources you need to build the model and pipeline.
 
-1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-1. Attach your notebook to a lakehouse. To add an existing lakehouse or create a new one, expand **Lakehouses** under **Explorer** at left, and then select **Add**.
-1. Get an Azure AI services key by following the instructions in [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
-1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Azure AI services key to the key vault as a secret.
-1. Make a note of your key vault name and secret name. You need this information to run the one-step transform later in this article.
+1. [Create a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks)
+1. Attach your notebook to a lakehouse. In **Explorer**, expand **Lakehouses**, and then select **Add**.
+1. Get a Foundry Tools key by following the instructions in [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource).
+1. [Create an Azure Key Vault instance](/azure/key-vault/general/quick-create-portal) and add your Foundry Tools key to the key vault as a secret.
+1. Record your key vault name and secret name. You need this information to run the one step transform later in this article.
 
 ## Set up the environment
 In your notebook, import SynapseML libraries and initialize your Spark session.
@@ -79,10 +77,10 @@ Call the `transform` function on the model to predict and display the output of 
 display(model.transform(test))
 ```
 
-## Use Azure AI services to transform data in one step
-Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Azure AI services to transform your data in one step. Run the following code with these replacements:
+## Use Foundry Tools to transform data in one step
+Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Foundry Tools to transform your data in one step. Run the following code with these replacements:
 
-- Replace `<secret-name>` with the name of your Azure AI Services key secret.
+- Replace `<secret-name>` with the name of your Foundry Tools key secret.
 - Replace `<key-vault-name>` with the name of your key vault.
 
 ```python
@@ -101,6 +99,6 @@ display(model.transform(test))
 ## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
+- [How to use Foundry Tools with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
-- [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource)
+- [Quickstart: Create a multi-service resource for Foundry Tools](/azure/ai-services/multi-service-resource)

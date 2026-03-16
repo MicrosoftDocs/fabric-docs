@@ -1,17 +1,13 @@
 ---
 title: Delete data activity
 description: Learn how to add a Delete data activity to a pipeline and use it to delete data from a data source.
-ms.reviewer: jburchel
-ms.author: yexu
-author: dearandyxu
+ms.reviewer: yexu
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: pipelines
+ms.date: 12/18/2024
 ---
 
-# Use the Delete data activity to look up data from a data source
+# Use the Delete data activity to delete data from a data source
 
 The Fabric Delete data activity can delete data from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. 
 
@@ -21,8 +17,7 @@ You can use the Delete Activity in Data Factory to delete files or folders from 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a lookup activity to a pipeline with UI
 
@@ -43,11 +38,13 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Choose a data source
 
-Select the **Source** tab, and select an existing connection from the **Connection** dropdown, or use the **+ New** button to create a new connection, and specify its configuration details.
+Select the **Source** tab, and select an existing connection from the **Connection** dropdown, or create a new connection, and specify its configuration details.
 
 :::image type="content" source="media/delete-data-activity/choose-delete-data-source-and-configure.png" alt-text="Screenshot showing the Delete data activity Source tab highlighted, and highlighting where to create a new connection.":::
 
 The example in the previous image shows a blob storage connection, but each connection type has its own configuration details specific to the data source selected.
+
+If you are using wildcard characters, allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder or file name has wildcard or this escape character inside.
 
 ## Supported data stores
 
@@ -72,11 +69,7 @@ Now you are using the Delete activity to delete folder or files by the combinati
 
 ## Save and run or schedule the pipeline
 
-1. Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.
-1. Select **Run** to run it directly, or **Schedule** to schedule it.  
-1. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/delete-data-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

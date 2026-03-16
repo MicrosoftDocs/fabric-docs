@@ -1,21 +1,15 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
-ms.author: lagayhar 
-author: lgayhardt
-ms.reviewer: amjafari
-reviewer: amhjf
+ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/22/2024
+ms.date: 02/28/2026
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
 
 # Tutorial: create, evaluate, and score a machine fault detection model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses machine learning for a more systematic approach to fault diagnosis, to proactively identify issues and to take actions before an actual machine failure. The goal is to predict whether a machine would experience a failure based on process temperature, rotational speed, etc.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses machine learning for a more systematic approach to fault diagnosis, to proactively identify problems and to take actions before an actual machine failure. The goal is to predict whether a machine would experience a failure based on process temperature, rotational speed, and other factors.
 
 This tutorial covers these steps:
 
@@ -35,10 +29,10 @@ This tutorial covers these steps:
 
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+To follow along in a notebook, choose one of these options:
 
-- Open and run the built-in notebook in the Data Science experience
-- Upload your notebook from GitHub to the Data Science experience
+- Open and run the built-in notebook.
+- Upload your notebook from GitHub.
 
 ### Open the built-in notebook
 
@@ -62,7 +56,7 @@ For machine learning model development or ad-hoc data analysis, you might need t
 For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. 
 
 > [!NOTE]
-> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
+> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before running any other cells.
 
 
 ```python
@@ -74,37 +68,37 @@ For this tutorial, use `%pip install` to install the `imblearn` library in your 
 
 The dataset simulates logging of a manufacturing machine's parameters as a function of time, which is common in industrial settings. It consists of 10,000 data points stored as rows with features as columns. The features include:
 
-- A Unique Identifier (UID) that ranges from 1 to 10000
-- Product ID, consisting of a letter L (for low), M (for medium), or H (for high), to indicate the product quality variant, and a variant-specific serial number. Low, medium, and high-quality variants make up 60%, 30%, and 10% of all products, respectively
-- Air temperature, in degrees Kelvin (K)
-- Process Temperature, in degrees Kelvin
-- Rotational Speed, in revolutions per minute (RPM)
-- Torque, in Newton-Meters (Nm)
-- Tool wear, in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of tool wear respectively to the tool used in the process
-- A Machine Failure Label, to indicate whether the machine failed in the specific data point. This specific data point can have any of the following five independent failure modes:
+- A unique identifier (UID) that ranges from 1 to 10,000.
+- Product ID, consisting of a letter L (for low), M (for medium), or H (for high), to indicate the product quality variant, and a variant-specific serial number. Low, medium, and high-quality variants make up 60%, 30%, and 10% of all products, respectively.
+- Air temperature, in degrees Kelvin (K).
+- Process temperature, in degrees Kelvin.
+- Rotational speed, in revolutions per minute (RPM).
+- Torque, in Newton-Meters (Nm).
+- Tool wear, in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of tool wear respectively to the tool used in the process.
+- A machine failure label, to indicate whether the machine failed in the specific data point. This specific data point can have any of the following five independent failure modes:
 
-    - Tool Wear Failure (TWF): the tool is replaced or fails at a randomly selected tool wear time, between 200 and 240 minutes
-    - Heat Dissipation Failure (HDF): heat dissipation causes a process failure if the difference between the air temperature and the process temperature is less than 8.6 K, and the tool's rotational speed is less than 1380 RPM
-    - Power Failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. The process fails if this power falls below 3,500 W or exceeds 9,000 W
-    - OverStrain Failure (OSF): if the product of tool wear and torque exceeds 11,000 minimum Nm for the L product variant (12,000 for M, 13,000 for H), the process fails due to overstrain
-    - Random Failures (RNF): each process has a failure chance of 0.1%, regardless of the process parameters
+    - Tool Wear Failure (TWF): the tool is replaced or fails at a randomly selected tool wear time, between 200 and 240 minutes.
+    - Heat Dissipation Failure (HDF): heat dissipation causes a process failure if the difference between the air temperature and the process temperature is less than 8.6 K, and the tool's rotational speed is less than 1,380 RPM
+    - Power Failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. The process fails if this power falls below 3,500 W or exceeds 9,000 W.
+    - OverStrain Failure (OSF): if the product of tool wear and torque exceeds 11,000 minimum Nm for the L product variant (12,000 for M, 13,000 for H), the process fails due to overstrain.
+    - Random Failures (RNF): each process has a failure chance of 0.1%, regardless of the process parameters.
 
 > [!NOTE]
-> If at least one of the above failure modes is true, the process fails, and the "machine failure" label is set to 1. The machine learning method can't determine which failure mode caused the process failure.
+> If at least one of the above failure modes is true, the process fails, and the machine failure label is set to 1. The machine learning method can't determine which failure mode caused the process failure.
 
 ### Download the dataset and upload to the lakehouse
 
 Connect to the Azure Open Datasets container, and load the Predictive Maintenance dataset. This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> Add a lakehouse to the notebook before you run it. Otherwise, you'll get an error. For information about adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
+> Add a lakehouse to the notebook before you run it. Otherwise, you get an error. For information about adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
 
 ```python
 # Download demo data files into the lakehouse if they don't exist
 import os, requests
 DATA_FOLDER = "Files/predictive_maintenance/"  # Folder that contains the dataset
 DATA_FILE = "predictive_maintenance.csv"  # Data file name
-remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection"
+remote_url = "https://synapseaisolutionsa.z13.web.core.windows.net/data/MachineFaultDetection"
 file_list = ["predictive_maintenance.csv"]
 download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
@@ -145,7 +139,7 @@ This table shows a preview of the data:
 
 ### Write a Spark DataFrame to a lakehouse delta table
 
-Format the data (for example, replace the spaces with underscores) to facilitate Spark operations in subsequent steps:
+Format the data (for example, replace the spaces with underscores) to make Spark operations easier in later steps:
 
 ```python
 # Replace the space in the column name with an underscore to avoid an invalid character while saving 
@@ -187,7 +181,7 @@ df = df.rename(columns = {'Target': "IsFail"})
 df.info()
 ```
 
-Convert specific columns of the dataset to floats or integer types as required, and map strings (`'L'`, `'M'`, `'H'`) to numerical values (`0`, `1`, `2`):
+Convert specific columns of the dataset to float or integer types as required, and map strings (`'L'`, `'M'`, `'H'`) to numerical values (`0`, `1`, `2`):
 
 ```python
 # Convert temperature, rotational speed, torque, and tool wear columns to float
@@ -221,7 +215,7 @@ sns.heatmap(corr_matrix, annot=True)
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/correlation-matrix.png" alt-text="Screenshot showing a plot of the correlation matrix of features.":::
+:::image type="content" source="media/predictive-maintenance/correlation-matrix.png" alt-text="Screenshot showing a plot of the correlation matrix of features." lightbox ="media/predictive-maintenance/correlation-matrix.png":::
 
 As expected, failure (`IsFail`) correlates with the selected features (columns). The correlation matrix shows that `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` have the highest correlation with the `IsFail` variable.
 
@@ -239,7 +233,7 @@ fig.subplots_adjust(hspace=0.2)
 fig.delaxes(axes[1,2])
 ```
 
-:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="Screenshot showing a graph plot of the features.":::
+:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="Screenshot showing a graph plot of the features." lightbox= "media/predictive-maintenance/sparse-plot.png":::
 
 As the plotted graphs show, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse. They seem to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset likely produces reliable results that can generalize to a new dataset.
 
@@ -265,7 +259,7 @@ for p in ax.patches:
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Screenshot of a plot showing that samples are imbalanced.":::
+:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Screenshot of a plot showing that samples are imbalanced." lightbox ="media/predictive-maintenance/imbalance-plot.png":::
 
 The plots indicate that the no-failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a more balanced training dataset:
 
@@ -290,9 +284,9 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 ### Oversample to balance classes in the training dataset
 
-The previous analysis showed that the dataset is highly imbalanced. That imbalance becomes a problem, because the minority class has too few examples for the model to effectively learn the decision boundary.
+The previous analysis shows that the dataset is highly imbalanced. That imbalance becomes a problem, because the minority class has too few examples for the model to effectively learn the decision boundary.
 
-[SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) can solve the problem. SMOTE is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the Euclidian distances between data points. This method differs from random oversampling, because it creates new examples that don't just duplicate the minority class. The method becomes a more effective technique to handle imbalanced datasets.
+[SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) solves the problem. SMOTE is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the Euclidean distances between data points. This method differs from random oversampling, because it creates new examples that don't just duplicate the minority class. The method becomes a more effective technique to handle imbalanced datasets.
 
 ```python
 # Disable MLflow autologging because you don't want to track SMOTE fitting
@@ -313,7 +307,7 @@ for p in ax.patches:
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Screenshot of a plot showing that samples are balanced.":::
+:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Screenshot of a plot showing that samples are balanced." lightbox= "media/predictive-maintenance/balanced-plot.png":::
 
 You successfully balanced the dataset. You can now move to model training.
 
@@ -383,7 +377,7 @@ with mlflow.start_run() as run:
     print("Recall_test:", recall_test)
 ```
 
-From the output, both the training and test datasets yield an F1 score, accuracy and recall of about 0.9 when using the random forest classifier.
+From the output, both the training and test datasets yield an F1 score, accuracy, and recall of about 0.9 when using the random forest classifier.
 
 ### Train a logistic regression classifier
 
@@ -481,15 +475,15 @@ with mlflow.start_run() as run:
 
 ## Step 5: Select the best model and predict outputs
 
-In the previous section, you trained three different classifiers: random forest, logistic regression, and XGBoost. You now have the choice to either programmatically access the results, or use the user interface (UI).
+In the previous section, you trained three different classifiers: random forest, logistic regression, and XGBoost. You now have the choice to either programmatically access the results or use the user interface (UI).
 
 For the UI path option, navigate to your workspace and filter the models.
 
-:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="Screenshot of the filter, with models selected.":::
+:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="Screenshot of the filter, with models selected." lightbox = "media/predictive-maintenance/filter-models.png":::
 
 Select individual models for details of the model performance.
 
-:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of performance details for models.":::
+:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of performance details for models." lightbox = "media/predictive-maintenance/model-metrics.png":::
 
 This example shows how to programmatically access the models through MLflow:
 
@@ -571,7 +565,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 Show the results in an offline format, with a Power BI dashboard.
 
-:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="Screenshot of the data displayed as a Power BI dashboard.":::
+:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="Screenshot of the data displayed as a Power BI dashboard." lightbox= "media/predictive-maintenance/predictive-maintenance-power-bi.png":::
 
 The dashboard shows that `Tool_wear` and `Torque` create a noticeable boundary between failed and unfailed cases, as expected from the earlier correlation analysis in step 2.
 

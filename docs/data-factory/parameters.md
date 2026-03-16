@@ -2,28 +2,25 @@
 title: Parameters
 description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: jburchel
-author: jonburchel
-ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/15/2023
+ms.topic: concept-article
+ms.custom: pipelines
+ms.date: 12/18/2024
+ai-usage: ai-assisted
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
-This document describes how to use parameters in your pipelines for Data Factory in Fabric.
+This guide shows you how to use parameters in your Data Factory pipelines in Fabric. It’s a simple way to make your workflows more flexible and easier to manage.
 
-## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
+## How to use parameters, expressions, and functions in pipelines for Data Factory in Fabric
 
-In this document, we focus on learning fundamental concepts with various examples to explore the ability to create parameterized data pipelines within Data Factory in Fabric. Parameterization and dynamic expressions can save a tremendous amount of time and allow for a much more flexible Extract, Transform, Load (ETL) or Extract, Load, Transform (ELT) solution, which will dramatically reduce the cost of solution maintenance and speed up the implementation of new features into existing pipelines. These gains are because parameterization minimizes the amount of hard coding and increases the number of reusable objects and processes in a solution.
+This guide walks you through the basics of creating parameterized pipelines in Data Factory for Fabric, using clear examples along the way. By using parameters and dynamic expressions, you can save a lot of time and build flexible ETL (Extract, Transform, Load) or ELT (Extract, Load, Transform) solutions. These techniques cut down on hard coding and help you reuse objects and processes, which makes it easier to maintain your pipelines and roll out new features faster.
 
 ## Parameter and expression concepts
 
-You can use parameters to pass external values into pipelines. Once the parameter has been passed into the resource, it cannot be changed. By parameterizing resources, you can reuse them with different values each time. Parameters can be used individually or as a part of expressions. Parameter values in the definition can be literal or expressions that are evaluated at runtime.
+You can use parameters to pass external values into your pipelines. Once a parameter is set, it stays the same throughout the run and cannot be changed. By using parameters, you can reuse the same pipeline with different values each time. They can be used on their own or inside expressions, and those values can be either fixed or calculated when the pipeline runs.
 
-Expressions can appear anywhere in a string value and always generate another string value. Here, password is a pipeline parameter in the expression. If a parameter value is an expression, the body of the expression is extracted by removing the at-sign (@). If a literal string is needed that starts with @, it must be escaped by using @@. The following examples show how expressions are evaluated.
+Expressions can go anywhere in a string value and always return another string value. For example, if you use @password, the pipeline treats password as a parameter. If the value is an expression, just remove the @ to get the actual content. And if you need a string that starts with @, just escape it by typing @@. Below are a few examples to show how this works in practice.
 
 |Parameter value|Result|  
 |----------------|------------|  
@@ -52,7 +49,7 @@ Expressions can also appear inside strings, using a feature called *string inter
 
 ### Creating and using parameters
 
-To create parameters, select the background of the pipeline editor canvas, and then the **Parameters** tab of the properties window at the bottom.  Select the **+ New** button to add a new parameter to the pipeline, give it a name, a data type, and a default value:
+To create parameters, select the background of the pipeline editor canvas, and then the **Parameters** tab of the properties window at the bottom. Select the **+ New** button to add a new parameter to the pipeline, give it a name, a data type, and a default value:
 
 :::image type="content" source="media/parameters/add-parameter.png" alt-text="Screenshot showing the Parameters editor on the properties pages for a pipeline.":::
 
@@ -64,9 +61,21 @@ The **Add dynamic content** window is displayed, allowing you to specify any kin
 
 :::image type="content" source="media/parameters/select-pipeline-parameter.png" alt-text="Screenshot showing the Add dynamic content window with a pipeline parameter selected.":::
 
+### How to parameterize connections
+
+Parameterizing connections in pipelines requires use of the connection GUID that you wish to replace dynamically.
+
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=90a72fa2-6dcd-4e4a-b046-68330ae95a8c]
+
+1. Before you can dynamically modify the connection in your pipeline, you must grab the GUID for the connection that you wish to set
+2. Go to Settings | Manage connections and gateways
+3. Find the name of the connection and click the ellipsis next to the connection name
+4. Select Settings and copy the Connection ID
+5. Use a string parameter to paste the GUID in that parameter for use in your dynamic expression
+
 ### Complex expression example
 
-The below example shows a complex example that references a deep sub-field of activity output. To reference a pipeline parameter that evaluates to a sub-field, use [] syntax instead of dot(.) operator (as in case of subfield1 and subfield2)
+The following example shows a complex example that references a deep subfield of activity output. To reference a pipeline parameter that evaluates to a subfield, use [] syntax instead of dot(.) operator (as with subfield1 and subfield2)
 
 `@activity('*activityName*').output.*subfield1*.*subfield2*[pipeline().parameters.*subfield3*].*subfield4*`
 
@@ -76,7 +85,7 @@ The dynamic content editor automatically escapes characters in your content when
 
 `@{toUpper('myData')}`
 
-The dynamic content editor converts the above content to the following expression:
+The dynamic content editor converts the previous content to the following expression:
 
 `MYDATA`
 
@@ -96,7 +105,7 @@ These system variables can be referenced anywhere in the pipeline JSON.
 | @pipeline().TriggerId|ID of the trigger that invoked the pipeline |
 | @pipeline().TriggerName|Name of the trigger that invoked the pipeline |
 | @pipeline().TriggerTime|Time of the trigger run that invoked the pipeline. This is the time at which the trigger **actually** fired to invoke the pipeline run, and it may differ slightly from the trigger's scheduled time.  |
-| @pipeline().GroupId | ID of the group to which pipeline run belongs. |
+| @pipeline().GroupId | ID of the group to which pipeline run belongs. In Microsoft Fabric, a 'group' refers to a collection of related resources that can be managed together. Groups are used to organize and control access to resources, making it easier to manage permissions and monitor activities across multiple pipelines. |
 | @pipeline()?.TriggeredByPipelineName | Name of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
 | @pipeline()?.TriggeredByPipelineRunId | Run ID of the pipeline that triggers the pipeline run. Applicable when the pipeline run is triggered by an ExecutePipeline activity. Evaluate to _Null_ when used in other circumstances. Note the question mark after @pipeline() |
 

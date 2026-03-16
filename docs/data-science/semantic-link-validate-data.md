@@ -1,52 +1,48 @@
 ---
 title: Validate functional dependencies in data with semantic link
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
-ms.author: franksolomon
-author: fbsolo-ms1
+ms.author: scottpolly
+author: s-polly
 ms.reviewer: romanbat
-reviewer: RomanBat
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
-ms.date: 11/15/2023
+ms.custom: dev-focus
+ms.date: 03/03/2026
 ms.search.form: semantic link
+ai-usage: ai-assisted
 ---
 
-# Detect, explore, and validate functional dependencies in your data, using semantic link
+# Detect, explore, and validate functional dependencies in your data by using semantic link
 
-Functional dependencies are relationships between columns in a table, where the values in one column are used to determine the values in another column.
-An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
-Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that might be hard to detect otherwise.
+Functional dependencies are relationships between columns in a table, where the values in one column determine the values in another column. Understanding these dependencies can help you uncover patterns and relationships in your data. This understanding can help with feature engineering, data cleaning, and model building tasks. Functional dependencies act as an effective invariant that helps you find and fix data quality problems that might be hard to detect otherwise.
 
-In this article, you'll use semantic link to:
+In this article, you use semantic link to:
 
 > [!div class="checklist"]
 > * Find dependencies between columns of a FabricDataFrame
 > * Visualize dependencies
-> * Identify data quality issues
-> * Visualize data quality issues
+> * Identify data quality problems
+> * Visualize data quality problems
 > * Enforce functional constraints between columns in a dataset
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
-- Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
-- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
+- Go to the Data Science experience found in [!INCLUDE [product-name](../includes/product-name.md)].
+- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy and paste code into cells.
 - [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
-For Spark 3.4 and above, Semantic link is available in the default runtime when using Fabric, and there is no need to install it. If you are using Spark 3.3 or below, or if you want to update to the most recent version of Semantic Link, you can run the command:
 
-` ` ` python
+Semantic link is available in the default Fabric runtime. To update to the most recent version of semantic link, run this command:
+
+```python
 %pip install -U semantic-link
-` ` ` 
+```
 
 ## Find functional dependencies in data
 
-The `find_dependencies` function in SemPy detects functional dependencies between the columns of a FabricDataFrame.
-The function uses a threshold on conditional entropy to discover approximate functional dependencies, where low conditional entropy indicates strong dependence between columns.
-To make the `find_dependencies` function more selective, you can set a lower threshold on conditional entropy. The lower threshold means that only stronger dependencies will be detected.
+The SemPy `find_dependencies` function detects functional dependencies between the columns of a FabricDataFrame. The function uses a threshold on conditional entropy to discover approximate functional dependencies, where low conditional entropy indicates strong dependence between columns. To make the `find_dependencies` function more selective, set a lower threshold on conditional entropy. The lower threshold means that only stronger dependencies are detected.
 
-The following Python code snippet demonstrates how to use `find_dependencies`.
+This Python code snippet demonstrates how to use `find_dependencies`:
 
 ```python
 from sempy.fabric import FabricDataFrame
@@ -60,11 +56,9 @@ deps = df.find_dependencies()
 ```
 
 The `find_dependencies` function returns a FabricDataFrame with detected dependencies between columns.
-Columns that have a 1:1 mapping will be represented as a list.
-The function also tries to prune the potential dependencies by removing [transitive edges](https://en.wikipedia.org/wiki/Transitive_dependency).
+A list represents columns that have a 1:1 mapping. The function also removes [transitive edges](https://en.wikipedia.org/wiki/Transitive_dependency), to try to prune the potential dependencies.
 
-When you specify the `dropna=True` option, rows that have a NaN value in either column are eliminated from evaluation.
-This can result in dependencies being nontransitive, as in the following example:
+When you specify the `dropna=True` option, the function eliminates rows that have a NaN value in either column from evaluation. This elimination can result in nontransitive dependencies, as shown in the following example:
 
 | A | B   | C |
 |---|-----|---|
@@ -87,15 +81,15 @@ In some cases, the dependency chain can form cycles when you specify the `dropna
 
 ## Visualize dependencies in data
 
-After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependency_metadata` function.
-This function takes the resulting FabricDataFrame from `find_dependencies` and creates a visual representation of the dependencies between columns and groups of columns.
+After you find functional dependencies in a dataset by using `find_dependencies`, you can visualize the dependencies by using the `plot_dependency_metadata` function. This function takes the resulting FabricDataFrame from `find_dependencies` and creates a visual representation of the dependencies between columns and groups of columns.
 
-The following Python code snippet demonstrates how to use `plot_dependencies`.
+This Python code snippet shows how to use `plot_dependencies`:
 
 ```python
 from sempy.fabric import FabricDataFrame
 from sempy.dependencies import plot_dependency_metadata
 from sempy.samples import download_synthea
+import pandas as pd
 
 download_synthea(which='small')
 
@@ -105,26 +99,23 @@ deps = df.find_dependencies()
 plot_dependency_metadata(deps)
 ```
 
-The `plot_dependency_metadata` function generates a visualization that shows the 1:1 groupings of columns.
-Columns that belong to a single group are put into a single cell. If no suitable candidates are found, an empty FabricDataFrame is returned.
+The `plot_dependency_metadata` function generates a visualization that shows the 1:1 groupings of columns. Columns that belong to a single group are placed in a single cell. If the function doesn't find any suitable candidates, it returns an empty FabricDataFrame.
+:::image type="content" source="media/semantic-link-validate-data/plot-dependencies.png" alt-text="Screenshot showing the output of the plot_dependencies function." lightbox="media/semantic-link-validate-data/plot-dependencies.png"
 
 :::image type="content" source="media/semantic-link-validate-data/plot-dependencies.png" alt-text="Screenshot showing the output of the plot_dependencies function." lightbox="media/semantic-link-validate-data/plot-dependencies.png":::
 
-## Identify data quality issues
+## Identify data quality problems
 
-Data quality issues can arise in various forms, such as missing values, inconsistencies, or inaccuracies.
-Identifying and addressing these issues is crucial for ensuring the reliability and validity of any analysis or model built on the data.
-One way to detect data quality issues is by examining violations of functional dependencies between columns in a dataset.
+Data quality problems can take many forms - for example, missing values, inconsistencies, or inaccuracies. To ensure the reliability and validity of any analysis or model built on the data, it's important to identify and address these problems. One way to detect data quality problems is to examine violations of functional dependencies between columns in a dataset.
 
-The `list_dependency_violations` function can help you identify violations of functional dependencies between columns in a dataset.
-Given a determinant column and a dependent column, this function shows values that violate the functional dependency, along with the count of their respective occurrences.
-This can be useful for inspecting approximate dependencies and identifying data quality issues.
+The `list_dependency_violations` function can help you find violations of functional dependencies between dataset columns. When you provide a determinant column and a dependent column, the function shows values that violate the functional dependency, along with the count of their respective occurrences. This information can help you inspect approximate dependencies and identify data quality problems.
 
-The following code shows an example of how to use the `list_dependency_violations` function:
+The following code snippet shows how to use the `list_dependency_violations` function:
 
 ```python
 from sempy.fabric import FabricDataFrame
 from sempy.samples import download_synthea
+import pandas as pd
 
 download_synthea(which='small')
 
@@ -133,38 +124,33 @@ df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 violations = df.list_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
 
-In this example, the function assumes that there exists a functional dependency between the ZIP (determinant) and CITY (dependent) columns.
-If the dataset has data quality issues, such as the same ZIP Code being assigned to multiple cities, the function outputs the violating values:
+In this example, the function assumes a functional dependency between the ZIP (determinant) and CITY (dependent) columns. If the dataset has data quality problems - for example, the same ZIP Code assigned to multiple cities - the function outputs the data with the problems:
 
 | ZIP   | CITY      | count |
 |-------|-----------|-------|
 | 12345 | Boston    | 2     |
 | 12345 | Seattle   | 1     |
 
-This output indicates that the same ZIP Code (12345) is attached to two different cities (Boston and Seattle), suggesting a data quality issue within the dataset.
+This output indicates that two different cities (Boston and Seattle) have the same ZIP Code value (12345). This result suggests a data quality problem within the dataset.
 
-The `list_dependency_violations` function provides more options for handling missing values, showing values mapped to violating values, limiting the number of violations returned, and sorting the results by count or determinant column. 
+The `list_dependency_violations` function provides more options that can handle missing values, show values mapped to violating values, limit the number of violations returned, and sort the results by count or determinant column.
 
-The output of `list_dependency_violations` can help identify data quality issues in your dataset.
-However, it's essential to carefully examine the results and consider the context of your data to determine the most appropriate course of action for addressing the identified issues.
-This course of action might involve further data cleaning, validation, or exploration to ensure the reliability and validity of your analysis or model.
+The `list_dependency_violations` output can help you identify dataset data quality problems. However, you should carefully examine the results and consider the context of your data, to determine the most appropriate course of action to address the identified problems. This approach might involve more data cleaning, validation, or exploration to ensure the reliability and validity of your analysis or model.
 
-## Visualize data quality issues
+## Visualize data quality problems
 
-Data quality issues can negatively impact the reliability and validity of any analysis or model built on the data.
-Identifying and addressing these issues is crucial for ensuring the accuracy of your results.
-One way to detect data quality issues is by examining violations of functional dependencies between columns in a dataset.
-Visualizing these violations can provide a better understanding of the issues and help you address them more effectively.
+Data quality problems can damage the reliability and validity of any analysis or model built on that data.
+Identifying and addressing these problems is important to ensure the accuracy of your results. To detect data quality problems, examine violations of functional dependencies between columns in a dataset.
+Visualizing these violations can show the problems more clearly, and help you address them more effectively.
 
-The `plot_dependency_violations` function can help visualize violations of functional dependencies between columns in a dataset.
-Given a determinant column and a dependent column, this function shows the violating values in a graphical format, making it easier to understand the nature and extent of the data quality issues.
+The `plot_dependency_violations` function can help visualize violations of functional dependencies between columns in a dataset. Given a determinant column and a dependent column, this function shows the violating values in a graphical format, to make it easier to understand the nature and extent of the data quality problems.
 
-The following code shows an example of how to use the `plot_dependency_violations` function:
+This code snippet shows how to use the `plot_dependency_violations` function:
 
 ```python
 from sempy.fabric import FabricDataFrame
-from sempy.dependencies import plot_dependency_violations
 from sempy.samples import download_synthea
+import pandas as pd
 
 download_synthea(which='small')
 
@@ -173,30 +159,26 @@ df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 df.plot_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
 
-In this example, the function assumes that a functional dependency exists between the ZIP (determinant) and CITY (dependent) columns.
-If the dataset has data quality issues, such as the same ZIP code being assigned to multiple cities, the function generates a graph of the violating values.
+In this example, the function assumes an existing functional dependency between the ZIP (determinant) and CITY (dependent) columns. If the dataset has data quality problems - for example, the same ZIP code assigned to multiple cities - the function generates a graph of the violating values.
 
-The `plot_dependency_violations` function provides more options for handling missing values, showing values mapped to violating values, limiting the number of violations returned, and sorting the results by count or determinant column. 
+The `plot_dependency_violations` function provides more options that can handle missing values, show values mapped to violating values, limit the number of violations returned, and sort the results by count or determinant column.
 
-The visualization generated by `plot_dependency_violations` can help you identify data quality issues in your dataset and understand their nature and extent.
-By examining the graph, you can gain insights into the relationships between determinant and dependent columns and identify potential errors or inconsistencies in your data.
+The `plot_dependency_violations` function generates a visualization that can help identify dataset data quality problems. However, you should carefully examine the results and consider the context of your data, to determine the most appropriate course of action to address the identified problems. This approach might involve more data cleaning, validation, or exploration to ensure the reliability and validity of your analysis or model.
 
-:::image type="content" source="media/semantic-link-validate-data/plot-dependency-violations.png" alt-text="Screenshot showing the output of the plot_dependency_violations function." lightbox="media/semantic-link-validate-data/plot-dependency-violations.png":::
+:::image type="content" source="media/semantic-link-validate-data/plot-dependency-violations.png" alt-text="Screenshot showing the plot_dependency_violations function output." lightbox="media/semantic-link-validate-data/plot-dependency-violations.png":::
 
 ## Enforce functional constraints
 
-Data quality is crucial for ensuring the reliability and validity of any analysis or model built on a dataset.
-One way to improve data quality is by enforcing functional constraints between columns in a dataset.
-Functional constraints can help ensure that the relationships between columns are consistent and accurate, which can lead to more accurate results in your analysis or model.
+Data quality is crucial for ensuring the reliability and validity of any analysis or model built on a dataset. Enforcement of functional constraints between columns in a dataset can help improve data quality. Functional constraints ensure that the relationships between columns have accuracy and consistency, which can lead to more accurate analysis or model results.
 
-The `drop_dependency_violations` function can help enforce functional constraints between columns in a dataset by dropping rows that violate a given constraint.
-Given a determinant column and a dependent column, this function removes rows with values that don't adhere to the functional constraint between the two columns.
+The `drop_dependency_violations` function enforces functional constraints between columns in a dataset. It removes rows that violate a given constraint. Given a determinant column and a dependent column, this function removes rows with values that don't conform to the functional constraint between the two columns.
 
-The following code shows an example of how to use the `drop_dependency_violations` function:
+This code snippet shows how to use the `drop_dependency_violations` function:
 
 ```python
 from sempy.fabric import FabricDataFrame
 from sempy.samples import download_synthea
+import pandas as pd
 
 download_synthea(which='small')
 
@@ -205,9 +187,7 @@ df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 cleaned_df = df.drop_dependency_violations(determinant_col="ZIP", dependent_col="CITY")
 ```
 
-In this example, the function enforces a functional constraint between the ZIP (determinant) and CITY (dependent) columns.
-For each value of the determinant, the most common value of the dependent is picked, and all rows with other values are dropped.
-For example, given the following dataset:
+In this example, the function enforces a functional constraint between the ZIP (determinant) and CITY (dependent) columns. For each value of the determinant, the function picks the most common value of the dependent column, and drops all rows with other values. For example, given this dataset, the row with **CITY=Seattle** is dropped, and the functional dependency **ZIP -> CITY** holds in the output:
 
 | ZIP   | CITY          |
 |-------|---------------|
@@ -217,12 +197,9 @@ For example, given the following dataset:
 | 98765 | Baltimore     |
 | 00000 | San Francisco |
 
-The row with CITY=Seattle would be dropped, and the functional dependency ZIP -> CITY holds in the output.
+The `drop_dependency_violations` function provides the `verbose` option to control the output verbosity. By setting `verbose=1`, you can see the number of dropped rows. A `verbose=2` value shows the entire row content of the dropped rows.
 
-The `drop_dependency_violations` function provides the `verbose` option for controlling the verbosity of the output. By setting `verbose=1`, you can see the number of dropped rows, and `verbose=2` lets you see the entire row content of the dropped rows.
-
-By using the `drop_dependency_violations` function, you can enforce functional constraints between columns in your dataset, which can help improve data quality and lead to more accurate results in your analysis or model.
-However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
+The `drop_dependency_violations` function can enforce functional constraints between columns in your dataset, which can help improve data quality and lead to more accurate results in your analysis or model. However, carefully consider the context of your data and the functional constraints you choose to enforce, to ensure that you don't accidentally remove valuable information from your dataset.
 
 ## Related content
 

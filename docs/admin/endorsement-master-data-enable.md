@@ -1,11 +1,10 @@
 ---
 title: "Enable master data endorsement"
 description: "This article shows Microsoft Fabric administrators how to enable master data endorsement on their tenant."
-author: paulinbar
-ms.author: painbar
-ms.service: fabric
+author: msmimart
+ms.author: mimart
 ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 07/11/2024
 
 #customer intent: As a Fabric administrator, I want to enable the master data endorsement feature so that specified users can apply the master data badge to data items that my organization considers to be core, single-source-of-truth data.
@@ -43,5 +42,5 @@ To enable master data endorsement, turn on the **Endorse master data (preview)**
 
 * [Endorsement overview](../governance/endorsement-overview.md)
 * [Enable item certification](./endorsement-certification-enable.md)
-* [Endorse items](../get-started/endorsement-promote-certify.md)
+* [Endorse items](../fundamentals/endorsement-promote-certify.md)
 * [Governance documentation](../governance/index.yml)

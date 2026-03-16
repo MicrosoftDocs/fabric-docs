@@ -1,6 +1,4 @@
 ---
-author: YaelSchuster
-ms.author: yaschust
 ms.topic: include
 ms.date: 01/31/2024
 ---

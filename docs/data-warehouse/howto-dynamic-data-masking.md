@@ -1,16 +1,12 @@
 ---
-title: How to implement dynamic data masking in Synapse Data Warehouse
-description: Learn how to implement dynamic data masking in Synapse Data Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: stwynant
-ms.date: 04/24/2024
+title: How to Implement Dynamic Data Masking in Fabric Data Warehouse
+description: Learn how to implement dynamic data masking in Fabric Data Warehouse.
+ms.reviewer: dhsundar
+ms.date: 10/09/2024
 ms.topic: how-to
-ms.custom:
-  - ignite-2023
 ---
 
-# How to implement dynamic data masking in Synapse Data Warehouse
+# How to implement dynamic data masking in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -39,7 +35,7 @@ Before you begin, make sure you have the following:
 ### 2. Configure dynamic data masking
 
 1. Sign into the Fabric portal with your admin account.
-1. In the Fabric workspace, navigate to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse.
+1. In the Fabric workspace, navigate to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. Select the **New SQL query** option, and under **Blank**, select **New SQL query**.
 1. In your SQL script, define dynamic data masking rules using the `MASKED WITH FUNCTION` clause. For example:
     
@@ -71,7 +67,7 @@ Before you begin, make sure you have the following:
 
 Once the dynamic data masking rules are applied, you can test the masking by querying the table with a test user who does not have the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-1. Sign in to a tool like Azure Data Studio or SQL Server Management Studio as the test user, for example TestUser@contoso.com.
+1. Sign in to a tool like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) as the test user, for example TestUser@contoso.com.
 1. As the test user, run a query against the table. The masked data is displayed according to the rules you defined.
     ```sql
     SELECT * FROM dbo.EmployeeData;

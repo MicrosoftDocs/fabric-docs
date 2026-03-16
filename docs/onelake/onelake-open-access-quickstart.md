@@ -2,13 +2,8 @@
 title: Ingest data into OneLake and analyze with Azure Databricks
 description: Learn how to create a pipeline to ingest data into OneLake and analyze that data with Azure Databricks.
 ms.reviewer: eloldag
-ms.author: eloldag
-author: eloldag
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 07/25/2024
+ms.date: 02/25/2025
 #customer intent: As a data engineer, I want to learn how to load data into OneLake and analyze it with Azure Databricks so that I can use my Azure Databricks notebook to read from and write to Delta tables.
 ---
 
@@ -32,13 +27,13 @@ Before you start, you must have:
 
 ## Ingest data and modify the Delta table
 
-1. Navigate to your lakehouse in the Power BI service and select **Get data** and then select **New data pipeline**.
+1. Navigate to your lakehouse in the Power BI service and select **Get data** and then select **New pipeline**.
 
-   :::image type="content" source="media\onelake-open-access-quickstart\onelake-new-pipeline.png" alt-text="Screenshot showing how to navigate to new data pipeline option from within the UI.":::
+   :::image type="content" source="media\onelake-open-access-quickstart\onelake-new-pipeline.png" alt-text="Screenshot showing how to navigate to new pipeline option from within the UI.":::
 
 1. In the **New Pipeline** prompt, enter a name for the new pipeline and then select **Create**.
 
-1. For this exercise, select the **NYC Taxi - Green** sample data as the data source and then select **Next**.
+1. For this exercise, select the **NYC Taxi - Green** sample data as the data source.
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample semantic model.":::
 
@@ -48,7 +43,7 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-open-access-quickstart\onelake-dest-lake.png" alt-text="Screenshot showing how to select destination lakehouse.":::
 
-1. Select where you want to store the output. Choose **Tables** as the Root folder and enter "nycsample" as the table name.
+1. Select where you want to store the output. Choose **Tables** as the Root folder. Enter "nycsample" as the table name and select **Next**.
 
 1. On the **Review + Save** screen, select **Start data transfer immediately** and then select **Save + Run**.
 
@@ -76,3 +71,4 @@ Before you start, you must have:
 ## Related content
 
 - [Transform data with Apache Spark and query with SQL](onelake-onecopy-quickstart.md)
+

@@ -1,16 +1,10 @@
 ---
 title: Resolve conflicts with Git integration
-description: Learn how to resolve conflicts when using Fabric's Git integration tools.
-author: mberdugo
-ms.author: monaberdugo
+description: Learn how to resolve conflicts when using Fabric's Git integration tools, including selecting versions, reverting states, and resolving conflicts in Git.
 ms.reviewer: NimrodShalit
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: how-to
-ms.date: 06/06/2024
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.date: 12/15/2025
+#customer intent: As a developer, I want to know how to resolve conflicts when using Fabric's Git integration tools.
 ---
 
 # Conflict resolution
@@ -18,8 +12,6 @@ ms.custom:
 A conflict occurs when changes are made *to the same item* in both the workspace and the remote Git repository. When a conflict occurs, the Git status says **Conflict** and **Commit** is disabled.
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a Git status that says conflict.":::
-
-[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
 
@@ -30,14 +22,18 @@ There are three ways to resolve a conflict:
 - [Select which version to keep](#resolve-conflict-in-ui) through the UI.
 - [Revert](#revert-to-a-previous-state) either the workspace or the Git repository to a previous synced state.
 - [Resolve](#resolve-conflict-in-git) the conflict in Git.
+- [Manually update](./partial-update.md) the workspace if one or more items fail to update.
 
 ## Resolve conflict in UI
 
 Select **Update all** to see a list of all the items that have conflicts. You can then select which version to keep for each item. For each conflicted item, you can choose to accept the incoming changes from the Git repository or keep the current version that's in the workspace.
 
-:::image type="content" source="./media/conflict-resolution/choose-version.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
+:::image type="content" source="./media/conflict-resolution/conflict-resolution.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
 
 - Choose **Accept incoming changes** to override the changes in the workspace. The workspace changes are lost and the Git status changes to *synced* if the import succeeds.
+
+>[!NOTE]
+> Accepting incoming changes will override the current item in the workspace.
 
 - Choose **Keep current content** to keep the version currently in the workspace. After the update is complete, the Git status becomes *uncommitted changes* as the changes in the workspace aren't yet committed to the branch.
 

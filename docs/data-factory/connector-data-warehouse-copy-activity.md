@@ -1,19 +1,18 @@
 ---
 title: Configure Data Warehouse in copy activity in Data Factory in Microsoft Fabric
 description: This article explains how to copy data using Data Warehouse.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 04/10/2024
-ms.custom:
+ms.date: 02/13/2026
+ms.custom: 
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Data Warehouse in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to a Data Warehouse.
+This article outlines how to use the copy activity in a pipeline to copy data from and to a Data Warehouse.
 
 ## Supported configuration
 
@@ -27,19 +26,15 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For the **General** tab configuration, go to [General](activity-overview.md#general-settings).
+For the **General** tab configuration, select the copy activity, then select the [General](activity-overview.md#general-settings) tab.
 
 ### Source
 
 The following properties are supported for Data Warehouse as **Source** in a copy activity.
 
-:::image type="content" source="./media/connector-data-warehouse/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **Data Warehouse** from the data store type list.
-- **Data Warehouse**: Select an existing **Data Warehouse** from the workspace.
+- **Connection**: Select a **Data Warehouse** from the data store list.
 - **Use query**: Select **Table**, **Query**, or **Stored procedure**.
 
   - If you select **Table**, choose an existing table from the table list, or specify a table name manually by selecting the **Edit** box.
@@ -80,10 +75,16 @@ The following properties are supported for Data Warehouse as **Destination** in 
 
 The following properties are **required**:
 
-- **Data store type**: Select **Workspace**.
-- **Workspace data store type**: Select **Data Warehouse** from the data store type list.
-- **Data Warehouse**: Select an existing **Data Warehouse** from the workspace.
+- **Connection**: Select a **Data Warehouse** from the data store list.
+- **Table option**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **Use existing** or **Auto create table**.
 - **Table**: Choose an existing table from the table list or specify a table name as destination.
+- **Write behavior**: Specify how to write data to the destination.
+
+  - **Insert**: Append all data into destination table.
+  - **Upsert**: Update the destination table’s values when key columns match, and insert a new row when no row matches in the destination.
+    - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination. A drop-down listing all destination columns. You can select one or more columns to be treated as key columns while writing into Warehouse Table. Key columns must have unique values in the source data. All the key columns should exist in both destination table and source data (or be provided through column mapping).
+
+      :::image type="content" source="./media/connector-data-warehouse/write-behavior-upsert.png" alt-text="Screenshot of the upsert write behavior.":::
 
 Under **Advanced**, you can specify the following fields:
 
@@ -91,7 +92,6 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-data-warehouse/default-values.png" alt-text="Screenshot showing default values of copy command settings.":::
 
-- **Table options**: Specify whether to automatically create the destination table if none exists based on the source schema. You can select **None** or **Auto create table**.
 - **Pre-copy script**: Specify a SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
@@ -104,8 +104,12 @@ The COPY statement is the primary way to ingest data into Warehouse tables. Data
 
     |**Supported source data store type** |**Supported format** |**Supported source authentication type**|
     |:---|:---|:---|
-    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Shared access signature authentication|
-    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br> Shared access signature authentication |
+    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Organizational account<br>Shared access signature authentication|
+    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br>Organizational account<br>Shared access signature authentication |
+    
+      >[!NOTE]
+      >- When you use organizational account authentication for your storage linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
+      >- If your Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, you should use your workspace identity to bypass the firewall. Learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
 
 1. The following Format settings can be set:<br>
    1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
@@ -125,15 +129,23 @@ If your source data store and format isn't originally supported by a COPY comman
 
 #### Staged copy
 
-When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. 
+When your source data is not natively compatible with COPY command, enable data copying via an interim staging storage. In this case, the service automatically converts the data to meet the data format requirements of COPY command. Then it invokes COPY command to load data into Data Warehouse. Finally, it cleans up your temporary data from the storage. For more information about staged copy, see this [article](copy-data-activity.md#configure-your-other-settings-under-settings-tab). 
 
-To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage.
+To use staged copy, go to **Settings** tab and select **Enable staging**. You can choose **Workspace** to use auto-created staging storage within Fabric. For **External**, Azure Blob Storage and Azure Data Lake Storage Gen2 are supported as the external staging storage. You need to create an Azure Blob Storage or Azure Data Lake Storage Gen2 connection first, and then select the connection from the drop-down list to use the staging storage. These storage options support multiple authentication types. The following table summarizes the supported options:
 
-Please note that you need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
+| External staging storage       | Supported authentication types          |
+|--------------------------------|------------------------------------------|
+| **Azure Blob Storage**         | Anonymous<br>Account key<br>Organizational account<br>Shared Access Signature (SAS) |
+| **Azure Data Lake Storage Gen2** | Account key<br>Organizational account<br>Shared Access Signature (SAS) |
+
+  > [!NOTE]
+  > - When you use organizational account authentication for your staging linked service, learn the needed configurations for [Azure Blob Storage](connector-azure-blob-storage.md#organizational-account-authentication) and [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2.md#oauth2-authentication) respectively.
+  > - If your staged Azure Blob Storage or Azure Data Lake Storage Gen2 is behind a firewall, you should use your workspace identity to bypass the firewall. Learn the needed configurations in this [article](/sql/t-sql/statements/copy-into-transact-sql).
+  > - You need to ensure the IP range of the Data Warehouse has been allowed correctly from the staging storage.
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, select the copy activity, then select the [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab) tab.
 
 If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
@@ -141,9 +153,11 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 :::image type="content" source="media/connector-data-warehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
+If you choose varchar or varbinary type for the destination column, you can specify the length for the type. The length should be larger than 0 and smaller than 8000 or be MAX (indicates a maximum storage size of 2³¹-1 bytes). The default value is 8000. For more information, see this [article](../data-warehouse/data-types.md#data-types-in-warehouse).
+
 ### Settings
 
-For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
+For the **Settings** tab configuration, select the copy activity, then select the [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab) tab.
 
 ## Table summary
 
@@ -153,9 +167,8 @@ The following tables contain more information about a copy activity in Data Ware
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse** |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
 |**Use query** |The way to read data from Data Warehouse. |• Tables<br>• Query<br>• Stored procedure|No|*(under `typeProperties` -> `source`)*<br>• typeProperties:<br>&emsp;schema<br>&emsp;table<br>• sqlReaderQuery<br>• sqlReaderStoredProcedureName|
 |**Query timeout (minutes)**|Timeout for query command execution, with a default of 120 minutes. If this property is set, the allowed values are in the format of a timespan, such as "02:00:00" (120 minutes).|timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for source. |• None<br>• Snapshot|No |isolationLevel|
@@ -169,16 +182,24 @@ The following tables contain more information about a copy activity in Data Ware
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**Workspace**|Yes|/|
 |**Workspace data store type**|The section to select your workspace data store type.|**Data Warehouse**  |Yes|type|
-|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>artifactId|
+|**Data Warehouse** |The Data Warehouse that you want to use.|\<your data warehouse>|Yes|endpoint<br>itemId|
+|**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• Use existing<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
 |**Table** |The destination table to write data.|\<name of your destination table>|Yes|schema <br> table|
+|**Write behavior**| Specify how to write data to the destination. | • Insert (default) <br>• Upsert | Yes | writeBehavior:<br>• Insert <br>• Upsert |
+|**Key columns**| Choose which column is used to determine if a row from the source matches a row from the destination. | \<your key columns> <br>(the default is destination schema) | No | upsertSettings:<br>• keys|
 |**Copy command settings**|The copy command property settings. Contains the default value settings.|Default value:<br>• Column<br> • Value|No |copyCommandSettings:<br>defaultValues:<br>• columnName<br>• defaultValue|
-|**Table option**|Whether to automatically create the destination table if none exists based on the source schema.|• None<br>• Auto create table|No|tableOption:<br><br>• autoCreate|
 |**Pre-copy script** |A SQL query to run before writing data into Data Warehouse in each run. Use this property to clean up the preloaded data.|\<pre-copy script>|No|preCopyScript|
 |**Write batch timeout** |The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).| timespan |No |writeBatchTimeout|
 |**Disable performance metrics analytics**|The service collects metrics for copy performance optimization and recommendations, which introduce additional master DB access.|select or unselect|No|disableMetricsCollection:<br> true or false|
 
+### Using Fabric Warehouse as a sink with staging enabled
+If the staging storage location has a firewall enabled, access issues may occur.
+#### Workarounds
+- **Different Regions**:  
+  If the Fabric capacity and staging storage are in different regions, ensure the regional Data Factory and Azure SQL IP addresses are allowed in the storage location firewall to enable connectivity.
+- **Same Region**:  
+  If the Fabric capacity and staging storage are in the same region and access issues persist, choose an alternative staging storage location in a different region than the Fabric capacity.
 ## Related content
 
 - [Data Warehouse connector overview](connector-data-warehouse-overview.md)

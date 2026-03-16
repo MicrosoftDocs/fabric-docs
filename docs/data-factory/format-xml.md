@@ -1,19 +1,16 @@
 ---
-title: How to configure XML format in the data pipeline of Data Factory in Microsoft Fabric
-description: This article explains how to configure XML format in the data pipeline of Data Factory in Microsoft Fabric.
-author: jianleishen
-ms.author: jianleishen
+title: How to configure XML format in the pipeline of Data Factory in Microsoft Fabric
+description: This article explains how to configure XML format in the pipeline of Data Factory in Microsoft Fabric.
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 06/25/2024
 ms.custom:
   - template-how-to
-  - build-2023
-  - ignite-2023
 ---
 
 # XML format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 
 
-This article outlines how to configure XML format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
+This article outlines how to configure XML format in the pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ## Supported capabilities
 
@@ -41,7 +38,7 @@ XML format is supported for the following activities and connectors as source.
 
 ## XML format in copy activity
 
-To configure XML format, choose your connection in the source of data pipeline copy activity, and then select **XML** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
+To configure XML format, choose your connection in the source of a pipeline copy activity, and then select **XML** in the drop-down list of **File format**. Select **Settings** for further configuration of this format.
 
 :::image type="content" source="./media/format-common/file-settings.png" alt-text="Screenshot showing file format settings.":::
 
@@ -83,14 +80,14 @@ Under **Advanced** settings in the **Source** tab, the following XML format rela
     - **xsd**: Select this to validate the XML schema using XSD.
     - **dtd**: Select this to validate the XML schema using DTD.
     
-    :::image type="content" source="./media/format-xml/validation-mode.png" alt-text="Screenshot showing validation modes. ":::
+    :::image type="content" source="./media/format-xml/validation-mode.png" alt-text="Screenshot showing validation modes.":::
 
 - **Namespaces**: Specify whether to enable namespace when parsing the XML files. It is selected by default.
 - **Namespace prefix pairs**: If the **Namespaces** is enabled, selecting **+ New** and specify the **URL** and **Prefix**. You can add more pairs by selecting **+ New**. <br> Namespace URI to prefix mapping is used to name fields when parsing the XML file.
 If an XML file has namespace and namespace is enabled, by default, the field name is the same as it is in the XML document.
 If there is an item defined for the namespace URI in this map, the field name is `prefix:fieldName`.
 
-    :::image type="content" source="./media/format-xml/namespace-prefix-pairs.png" alt-text="Screenshot showing namespace prefix pairs. ":::
+    :::image type="content" source="./media/format-xml/namespace-prefix-pairs.png" alt-text="Screenshot showing namespace prefix pairs.":::
 
 - **Detect data type**: Specify whether to detect integer, double, and Boolean data types. It is selected by default.
 

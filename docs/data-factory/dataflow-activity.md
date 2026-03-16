@@ -1,11 +1,12 @@
 ---
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
-ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.reviewer: xupxhou, miescobar
 ms.topic: how-to
-ms.date: 12/07/2023
+ms.date: 2/4/2026
+ms.custom:
+  - pipelines
+  - dataflows
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -16,14 +17,13 @@ The Dataflow activity in Data Factory for Microsoft Fabric allows you to run a D
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
-## Add a Dataflow activity to a pipeline with UI
+## Add a Dataflow activity to a pipeline
 
 To use a Dataflow activity in a pipeline, complete the following steps:
 
-### Creating the activity
+### Create the activity
 
 1. Create a new pipeline in your workspace.
 1. Search for Dataflow in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
@@ -36,17 +36,57 @@ To use a Dataflow activity in a pipeline, complete the following steps:
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
+>[!NOTE]
+>Timeout and cancellation only apply to Dataflow Gen2 with CI/CD support. For runs for Dataflow Gen2 without CI/CD support, timeouts are ignored and pipeline cancellation won’t stop the dataflow run.
+
 ### Dataflow activity settings
 
-Select the **Settings** tab, then select an existing workspace and dataflow to run. The notification option is disabled for now, but the feature is coming soon.
+Select the **Settings** tab, then select an existing workspace and dataflow to run. If you have made a [Dataflow Gen2 with CI/CD and Git integration support (Preview)](dataflow-gen2-cicd-and-git-integration.md), you can also select it from the dropdown. 
+
+   :::image type="content" source="media/dataflow-activity/select-a-dataflow.png" alt-text="Screenshot showing the dropdown with a list of dataflows to select in the Dataflow activity Settings tab":::
+
+The notification option isn't currently available.
+
+When selecting a [Dataflow Gen2 with CI/CD that has the public parameters mode enabled](dataflow-parameters.md), a Dataflow parameters section is displayed which lists all the available parameters, their types, and default values for the selected Dataflow.
 
    :::image type="content" source="media/dataflow-activity/dataflow-settings.png" alt-text="Screenshot showing the Dataflow activity Settings tab, and highlighting the tab.":::
 
+Required parameters are shown with an asterisk next to their name, whereas optional parameters don't have the asterisk. Furthermore, optional parameters can be selected and deleted from the grid, but required parameters can't be deleted and must be passed for the dataflow to run.
+
+You can select the refresh button to request the latest parameter information from your dataflow.
+
+Inside the Dataflow parameters section you're able to enter the name of the parameter that you wish to pass and the type and value that you wish to pass.
+
+>[!NOTE]
+>Parameterizing the DataflowId in the dataflow pipeline activity settings will only support the legacy Dataflow Gen2 version without CI/CD support. That is,  you can't invoke dataflows with CI/CD support using parameterization of the DataflowId.
+
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+>[!NOTE]
+>To successfully run a Dataflow Gen2 (CI/CD), users must have:
+> - Member (or higher) access to the workspace, and
+> - Access to all connections used by the dataflow  
+>
+>Not meeting these two requirements could result in run failures. 
+
+## Troubleshooting tips
+
+>[!CAUTION]
+>Error information showcased in the Dataflow activity could be incomplete or partial. Do not solely rely on the information shown in the Dataflow activity for troubleshooting scenarios.
+
+>[!TIP]
+>Detailed information about a run of a Dataflow can be found in the *Recent runs* dialog available inside the Dataflow Gen2 (CI/CD) and through the workspace explorer.
+
+When troubleshooting a Dataflow run, it is highly encouraged to start inside the [Dataflow Gen2 (CI/CD) recent runs](dataflows-gen2-monitor.md) where you are able to download the detailed logs of a particular run.
+If your Dataflow used an On-Premises Data Gateway, you can also explore the detailed gateway logs found within the machine where your gateway is installed.
+
+You can also request support through the [Fabric Community Forum](https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory) or by [raising a dedicated support case](https://support.fabric.microsoft.com/) where one of our engineers will be able to assist.
+
+## Known issues
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

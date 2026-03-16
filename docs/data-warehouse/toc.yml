@@ -3,19 +3,21 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
+- name: Architecture
+  href: architecture.md
 - name: Get started with Warehouse
   expanded: true
   items:
   - name: Decision guide - choose a data store
-    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    href: ../fundamentals/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: Decision guide - Warehouse and Lakehouse
-    href: ../get-started/decision-guide-lakehouse-warehouse.md
+    href: ../fundamentals/decision-guide-lakehouse-warehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
     href: create-table.md
   - name: 3. Ingest data 
-    href: ingest-data-pipelines.md
+    href: ingest-data-into-table.md
   - name: 4. Query the warehouse
     href: query-warehouse.md
   - name: 5. Create reports
@@ -30,70 +32,94 @@ items:
     href: tutorial-create-warehouse.md
   - name: 3. Ingest data into a warehouse
     href: tutorial-ingest-data.md
-  - name: 4. Create tables
-    href: tutorial-create-tables.md
-  - name: 5. Load data using T-SQL
-    href: tutorial-load-data.md
-  - name: 6. Clone a table using T-SQL
+  - name: 4. Clone a table with T-SQL
     href: tutorial-clone-table.md
-  - name: 7. Transform data using stored procedure
+  - name: 5. Transform data with a stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Time travel using T-SQL
+  - name: 6. Time travel with T-SQL
     href: tutorial-time-travel.md
-  - name: 9. Create queries with visual query builder
+  - name: 7. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 10. Analyze data with a notebook
+  - name: 8. Analyze data in a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 11. Create queries with the SQL query editor
+  - name: 9. Create a cross-warehouse query
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 12. Create Power BI reports
+  - name: 10. Create a semantic model and report
     href: tutorial-power-bi-report.md
-  - name: 13. Build a report from the OneLake data hub
+  - name: 11. Generate a report from OneLake catalog
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 14. Clean up resources
+  - name: 12. Clean up tutorial resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
     href: connectivity.md
-- name: Copilot for Data Warehouse
+  - name: How to Connect
+    href: how-to-connect.md
+- name: Copilot in Fabric in Data Warehouse
   items:
-  - name: Overview of Copilot for Data Warehouse
+  - name: What is Copilot in Fabric in Data Warehouse?
     href: copilot.md
-  - name: Use the Copilot chat pane
+  - name: Use the chat pane
     href: copilot-chat-pane.md
   - name: Use code completions
     href: copilot-code-completion.md
   - name: Use quick actions
     href: copilot-quick-action.md
-- name: Design and Develop
+- name: Design
   items:
   - name: Better together - the lakehouse and warehouse
     href: get-started-lakehouse-sql-analytics-endpoint.md
-  - name: Create a sample warehouse 
-    href: create-warehouse-sample.md
-  - name: Warehouse performance
-    href: guidelines-warehouse-performance.md
-  - name: SQL analytics endpoint performance
-    href: sql-analytics-endpoint-performance.md
-  - name: Tables
-    href: tables.md
   - name: Data types
     href: data-types.md
+  - name: IDENTITY column
+    href: identity.md
+  - name: Primary, foreign, and unique keys
+    href: table-constraints.md    
+  - name: Tables
+    href: tables.md
   - name: T-SQL surface area
     href: tsql-surface-area.md
-  - name: Primary, foreign, and unique keys
-    href: table-constraints.md
-  - name: Generate unique identifiers
-    href: generate-unique-identifiers.md
-  - name: Transactions
-    href: transactions.md 
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
+  - name: How to  
+    items:
+    - name: Create IDENTITY column
+      href: tutorial-identity.md      
+    - name: Manage objects in a warehouse
+      href: manage-objects.md
+- name: Continuous integration & continuous deployment (CI/CD)
+  items:
+  - name: Development and deployment workflows
+    href: development-deployment.md
+  - name: Cross-warehouse dependencies
+    href: cross-warehouse-development-database-projects.md
+  - name: Developer warehouse projects
+    href: develop-warehouse-project.md
   - name: Source control with Warehouse
     href: source-control.md
-  - name: Analyze with range bands
-    href: analyze-range-bands.md
+- name: Develop
+  items:
+  - name: Query labels
+    href: query-label.md
+  - name: Transactions
+    href: transactions.md 
+  - name: Warehouse collation
+    href: collation.md
+  - name: Warehouse snapshots
+    href: warehouse-snapshot.md
+    displayName: Snapshot
+  - name: How to  
+    items:    
+    - name: Create a sample warehouse 
+      href: create-warehouse-sample.md      
+    - name: Create and manage a warehouse snapshot
+      href: create-manage-warehouse-snapshot.md
+      displayName: Create a warehouse snapshot
+    - name: Analyze with range bands
+      href: analyze-range-bands.md
+    - name: Datamart upgrade to warehouse
+      href: datamart-upgrade-to-warehouse.md
+    - name: Create an IDENTITY column
+      href: tutorial-identity.md
 - name: Dimensional modeling
   items:
   - name: Overview
@@ -106,44 +132,53 @@ items:
     href: dimensional-modeling-load-tables.md
 - name: Load data into the warehouse
   items:
+  - name: Explore file content with OPENROWSET
+    href: browse-file-content-with-openrowset.md
   - name: Ingesting data into the warehouse
     href: ingest-data.md
-  - name: Ingest data with data pipelines
-    href: ingest-data-pipelines.md
   - name: Ingest data with the COPY statement
     href: ingest-data-copy.md
+  - name: Ingest data with pipelines
+    href: ingest-data-pipelines.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
   - name: Use dbt with data warehouse
-    href: tutorial-setup-dbt.md          
+    href: tutorial-setup-dbt.md   
+
 - name: Create models and build Power BI reports
-  items:
-  - name: Semantic models
-    href: semantic-models.md
-  - name: Model data in the default Power BI semantic model
-    href: default-power-bi-semantic-model.md          
-  - name: Define relationships in data models
-    href: data-modeling-defining-relationships.md
-  - name: Create reports in the Power BI service
-    href: reports-power-bi-service.md    
+  href: semantic-model-toc/toc.yml
 - name: Collaborate, share, and manage security
   items:
   - name: Data warehousing security
     href: security.md
-  - name: Microsoft Entra ID authentication
+  - name: Entra ID authentication
     href: entra-id-authentication.md
+  - name: Service principals
+    href: service-principals.md
+    displayName: SPN
+  - name: SQL Audit Logs
+    href: sql-audit-logs.md
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Manage SQL granular permissions
-    href: sql-granular-permissions.md
-  - name: Share your Warehouse
-    href: share-warehouse-manage-permissions.md    
+  - name: How to
+    items:
+    - name: Share your data
+      href: share-warehouse-manage-permissions.md    
+    - name: Manage SQL granular permissions
+      href: sql-granular-permissions.md
+    - name: Configure SQL Audit Logs
+      href: configure-sql-audit-logs.md 
+    - name: Query Delta Lake logs
+      href: query-delta-lake-logs.md
+- name: Encryption and data protection
+  items:
+  - name: Encryption
+    displayName: CMK encryption
+    href: encryption.md
   - name: Column-level security
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
-  - name: User audit logs
-    href: user-audit-logs.md
   - name: Dynamic data masking
     href: dynamic-data-masking.md
   - name: How to
@@ -154,7 +189,7 @@ items:
       href: tutorial-row-level-security.md
     - name: Implement dynamic data masking
       href: howto-dynamic-data-masking.md
-- name: Query the warehouse
+- name: Query tools 
   items:
   - name: Query using Visual Query editor
     href: visual-query-editor.md
@@ -162,14 +197,26 @@ items:
     href: sql-query-editor.md    
   - name: View data in the Data preview
     href: data-preview.md
-  - name: Query Delta Lake logs
-    href: query-delta-lake-logs.md
+  - name: Query data with a T-SQL notebook
+    href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+- name: Query external data
+  items:
+  - name: Query external data lake files
+    href: query-external-data-lake-files.md
+  - name: Query delimited files
+    href: query-delimited-files.md
+  - name: Query JSON files
+    href: query-json-files.md
+  - name: Query Parquet files
+    href: query-parquet-files.md
+- name: Time travel
+  items:
   - name: Query data as it existed in the past
     href: time-travel.md
-    displayName: Time travel
   - name: "How to: Query using time travel"
     href: how-to-query-using-time-travel.md
     displayName: Query using time travel
+
 - name: Data recovery
   items:
   - name: Restore in-place
@@ -181,108 +228,49 @@ items:
     href: clone-table.md
   - name: Clone tables in the Fabric portal
     href: tutorial-clone-table-portal.md
-- name: Mirroring databases
-  items: 
-  - name: Mirroring overview
-    href: ../database/mirrored-database/overview.md
-  - name: How to
-    items:
-    - name: Enable Mirroring in your tenant
-      href: ../database/mirrored-database/enable-mirroring.md
-    - name: Monitor mirrored databases
-      displayName: Monitor mirroring
-      href: ../database/mirrored-database/monitor.md
-  - name: Explore mirrored data
-    items:
-    - name: Explore your mirrored database
-      href: ../database/mirrored-database/explore.md
-    - name: Explore directly in OneLake
-      displayName: Explore mirrored data directly in OneLake
-      href: ../database/mirrored-database/explore-data-directly.md
-    - name: Explore with notebooks
-      displayName: Explore mirrored data with notebooks
-      href: ../database/mirrored-database/explore-onelake-shortcut.md
-  - name: Mirroring Azure SQL Database
-    items:
-      - name: Mirrored database from Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database.md
-      - name: Azure SQL Database tutorial
-        href: ../database/mirrored-database/azure-sql-database-tutorial.md
-      - name: FAQ about mirrored Azure SQL Database
-        displayName: Frequently asked questions about Mirroring Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-mirroring-faq.yml
-      - name: Secure data 
-        displayName: Securing data in mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-how-to-data-security.md
-      - name: Troubleshoot
-        displayName: Troubleshoot mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-troubleshoot.md
-      - name: Limitations
-        displayName: Limitations in mirrored Azure SQL Database
-        href: ../database/mirrored-database/azure-sql-database-limitations.md
-  - name: Mirroring Azure Cosmos DB
-    items: 
-      - name: Mirrored databases from Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db.md        
-      - name: Azure Cosmos DB tutorial
-        href: ../database/mirrored-database/azure-cosmos-db-tutorial.md
-      - name: FAQ about mirrored Azure Cosmos DB 
-        displayName: Frequently asked questions about mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-faq.yml
-      - name: Limitations
-        displayName: Limitations in mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-limitations.md
-      - name: Troubleshoot 
-        displayName: Troubleshoot mirrored Azure Cosmos DB
-        href: ../database/mirrored-database/azure-cosmos-db-troubleshooting.yml
-      - name: How to
-        items:
-          - name: Join data
-            href: ../database/mirrored-database/azure-cosmos-db-how-to-join-multiple.md
-          - name: Query nested data
-            href: ../database/mirrored-database/azure-cosmos-db-how-to-query-nested.md
-          - name: Access data using Lakehouse and notebooks
-            href: ../database/mirrored-database/azure-cosmos-db-lakehouse-notebooks.md
-  - name: Mirroring Snowflake
-    items: 
-      - name: Mirrored warehouses from Snowflake
-        href: ../database/mirrored-database/snowflake.md
-      - name: Snowflake tutorial
-        href: ../database/mirrored-database/snowflake-tutorial.md
-      - name: FAQ about mirrored Snowflake
-        displayName: Frequently asked questions about mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-mirroring-faq.yml
-      - name: Secure data
-        displayName: Secure data in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-how-to-data-security.md
-      - name: Limitations 
-        displayName: Limitations in mirrored Snowflake
-        href: ../database/mirrored-database/snowflake-limitations.md        
-  - name: Troubleshoot Mirroring
-    href: ../database/mirrored-database/troubleshooting.md           
 - name: Manage performance
   items:
+  - name: Data clustering
+    href: data-clustering.md
+  - name: In-memory and disk caching
+    href: caching.md
+  - name: Performance guidelines
+    displayName: Warehouse performance
+    href: guidelines-warehouse-performance.md
+  - name: Result set caching
+    href: result-set-caching.md
+    displayName: result set caching
+  - name: SQL analytics endpoint performance
+    href: sql-analytics-endpoint-performance.md
   - name: Statistics
     href: statistics.md
-  - name: Caching
-    href: caching.md
   - name: V-Order 
     href: v-order.md
+  - name: How to
+    items:    
+      - name: Use data clustering in Fabric Data Warehouse
+        href: tutorial-data-clustering.md
+- name: Mirroring databases
+  items:
+    - name: Mirroring overview
+      href: /fabric/mirroring/overview?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+    - name: Mirroring documentation
+      href: /fabric/mirroring/
 - name: Monitor the warehouse
   items:
   - name: Monitoring overview
     href: monitoring-overview.md
-  - name: Monitor using Capacity Metrics app
-    href: usage-reporting.md
-    displayName: Billing, usage reporting
-  - name: Monitor using DMVs
-    href: monitor-using-dmv.md
   - name: Query activity
     href: query-activity.md
   - name: Query insights
     href: query-insights.md
   - name: How to
     items:    
+      - name: Monitor using Capacity Metrics app
+        href: usage-reporting.md
+        displayName: Billing, usage reporting
+      - name: Monitor using DMVs
+        href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
 - name: Warehouse capacity
@@ -297,14 +285,27 @@ items:
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
+
 - name: Migrate
   items:
-  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+  - name: Migration Assistant
+    href: migration-assistant.md
+  - name: Planning for migration from Azure Synapse Analytics
     href: migration-synapse-dedicated-sql-pool-warehouse.md
+  - name: Methods for migration from Azure Synapse Analytics
+    href: migration-synapse-dedicated-sql-pool-methods.md
+  - name: How to
+    items:    
+    - name: Extract DAC from a dedicated SQL pool
+      href: extract-data-tier-application-synapse-dedicated-sql-pool.md
+    - name: Migration Assistant guide for Azure Synapse Analytics
+      href: migrate-with-migration-assistant.md
+    - name: Migrate to IDENTITY columns
+      href: migrate-identity-columns.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
-    href: troubleshoot-synapse-data-warehouse.md
+    href: troubleshoot-fabric-data-warehouse.md
   - name: Limitations
     href: limitations.md      
   - name: Change ownership of Warehouse

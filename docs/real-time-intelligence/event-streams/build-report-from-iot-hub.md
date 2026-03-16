@@ -1,15 +1,10 @@
 ---
 title: Build a report by streaming events from Azure IoT Hub to Microsoft Fabric
 description: This article provides instruction on how to build a report by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/18/2024
-ms.search.form: Event Streams Tutorials
+ms.date: 11/18/2024
+ms.search.form: Eventstreams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a report to monitor the health my devices.
 ---
 
@@ -21,28 +16,30 @@ If you have IoT devices that are connected to your Azure IoT Hub, you can ingest
 
 Before you begin, make sure you have:
 
-- Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
+- Access to a workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
 - An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
-## Create a KQL database and an eventstream
+> [!NOTE]
+> The examples in this article use **my-kqldb** for the KQL database and **my-eventstream** for the eventstream. Confirm that these two items appear in your workspace.
 
-Follow these steps to create a KQL database and an eventstream in your workspace:
+## Create an eventstream
+Follow these steps to create an eventstream in your workspace:
 
-1. Navigate to **My workspace**, and under the **New** drop-down menu, select **Show all**.
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-    :::image type="content" source="./media/add-iot-hub-source/my-workspace-show-all.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
 
-2. Scroll down to the **Real-Time Intelligence** section, select **KQL Database** or **Eventstream**.
+## Create a KQL database
 
-    :::image type="content" source="./media/add-iot-hub-source/add-kusto-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database.":::
+Follow these steps to create an eventhouse, which automatically creates a KQL database in your workspace:
 
-3. Enter the name for the new KQL database or eventstream, and then select **Create**. The examples in this article use **my-kqldb** for the KQL database and **my-eventstream** for the eventstream. Confirm that these two items appear in your workspace.
-
-    :::image type="content" source="./media/add-iot-hub-source/workspace-kql-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database in the workspace.":::
+1. Navigate to **My workspace**. 
+1. Select **+ New item** button at the top of the page.
+1. On the **New item** page, select **Eventhouse**. 
+1. In the **new Eventhouse** pop-up window, enter a name for the eventhouse. 
 
 ## Add an IoT source to the eventstream
 
-1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
+1. In the Eventstream editor, expand the **New source** dropdown menu within the node and choose **Azure IoT Hub**.
 
    :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream." lightbox="./media/add-iot-hub-source/add-iot-hub-source.png":::
 
@@ -63,7 +60,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
    :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
-    1. Select **Create new connection** from the drop-down menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
+    1. Select **Create new connection** from the dropdown menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
 
         :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection." lightbox="./media/add-iot-hub-source/add-new-cloud-connection.png":::
 
@@ -83,7 +80,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 ## Add a Kusto destination to the eventstream
 
-1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
+1. In the Eventstream editor, expand the **New destination** dropdown menu within the destination node and choose **KQL Database**.
 
    :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to add a kusto destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
 
@@ -93,7 +90,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
       - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
       - **Workspace**: Select the workspace associated with your Kusto database.
-      - **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
+      - **KQL Database**: Select your Kusto database from the dropdown menu, and then **Create and configure**.
 
 3. You see a popup window helping you to complete the Kusto configuration. Select an existing table or create a new one for your IoTHub data stream. Enter the table name and select **Next**.
 
@@ -147,3 +144,4 @@ If you want to learn more about ingesting and processing real-time using Eventst
 - [Introduction to Microsoft Fabric Eventstream](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
 - [Stream real-time events from a custom app to a Microsoft Fabric KQL database](./stream-real-time-events-from-custom-app-to-kusto.md)
+

@@ -1,19 +1,18 @@
 ---
 title: Configure Azure SQL Database in a copy activity
 description: This article explains how to copy data using Azure SQL Database.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 02/27/2024
+ms.date: 1/13/2025
 ms.custom:
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Azure SQL Database in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Azure SQL Database.
 
 ## Supported configuration
 
@@ -33,11 +32,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure SQL Database under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-database/source.png" alt-text="Screenshot showing the source tab and the list of properties." lightbox="./media/connector-azure-sql-database/source.png":::
-
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure SQL Database connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Database connection by selecting **New**.
 - **Connection type**: Select **Azure SQL Database**.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
@@ -90,7 +86,6 @@ The following properties are supported for Azure SQL Database under the **Destin
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
 - **Connection**:  Select an Azure SQL Database connection from the connection list. If the connection doesn't exist, then create a new Azure SQL Database connection by selecting **New**.
 - **Connection type**: Select **Azure SQL Database**.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
@@ -153,6 +148,48 @@ For example, the type for *ID* column in source is int, and you can change it to
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
+## Data type mapping for Azure SQL Database
+
+When copying data from Azure SQL Database, the following mappings are used from Azure SQL Database data types to interim data types used by the service internally.
+
+| Azure SQL Database data type | Interim service data type |
+|:--- |:--- |
+| bigint |Int64 |
+| binary |Byte[] |
+| bit |Boolean |
+| char |String, Char[] |
+| date |DateTime |
+| Datetime |DateTime |
+| datetime2 |DateTime |
+| Datetimeoffset |DateTimeOffset |
+| Decimal |Decimal |
+| FILESTREAM attribute (varbinary(max)) |Byte[] |
+| Float |Double |
+| image |Byte[] |
+| int |Int32 |
+| money |Decimal |
+| nchar |String, Char[] |
+| ntext |String, Char[] |
+| numeric |Decimal |
+| nvarchar |String, Char[] |
+| real |Single |
+| rowversion |Byte[] |
+| smalldatetime |DateTime |
+| smallint |Int16 |
+| smallmoney |Decimal |
+| sql_variant |Object |
+| text |String, Char[] |
+| time |TimeSpan |
+| timestamp |Byte[] |
+| tinyint |Byte |
+| uniqueidentifier |Guid |
+| varbinary |Byte[] |
+| varchar |String, Char[] |
+| xml |String |
+
+> [!NOTE]
+> For data types that map to the Decimal interim type, currently Copy activity supports precision up to 28. If you have data with precision larger than 28, consider converting to a string in SQL query.
+
 ## Parallel copy from Azure SQL Database
 
 The Azure SQL Database connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
@@ -190,7 +227,7 @@ WHERE s.name='[your schema]' AND t.name = '[your table name]'
 
 If the table has physical partition, you would see "HasPartition" as "yes" like the following.
 
-:::image type="content" source="./media/connector-azure-sql-database-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
+:::image type="content" source="./media/connector-azure-sql-managed-instance/sql-query-result.png" alt-text="Sql query result.":::
 
 ## Table summary
 
@@ -200,7 +237,6 @@ The following tables contain more information about the copy activity in Azure S
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table** | Your source data table. |\<name of your destination table>|Yes |schema <br> table|
@@ -214,7 +250,6 @@ The following tables contain more information about the copy activity in Azure S
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|

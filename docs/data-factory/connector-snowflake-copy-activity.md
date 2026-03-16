@@ -1,19 +1,18 @@
 ---
 title: Configure Snowflake in a copy activity
 description: This article explains how to copy data using Snowflake.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 07/12/2024
+ms.date: 02/27/2026
 ms.custom:
+  - pipelines
   - template-how-to
-  - build-2023
-  - ignite-2023
+  - connectors
 ---
 
 # Configure Snowflake in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Snowflake.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Snowflake.
 
 ## Supported configuration
 
@@ -37,8 +36,12 @@ The following properties are supported for Snowflake under the **Source** tab of
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection by selecting **New**.
+- **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
+    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs.
+      - **Role**: The default security role used for the session after connecting. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+    
+        :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
     - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
@@ -63,7 +66,7 @@ If your destination data store and format meet the criteria described in this se
   - When you specify **Storage integration** in the source:
     The destination data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
 
-    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage with any supported authentication types.
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage using any supported authentication type, except the organizational account authentication.
 
     2. Grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the destination Azure Blob Storage **Access Control (IAM)**.
 
@@ -90,7 +93,7 @@ If your destination data store and format meet the criteria described in this se
 
 When your destination data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service exports data from Snowflake into staging storage, then copies the data to destination, and finally cleans up your temporary data from the staging storage.
 
-To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
+To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-for-a-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
 
 - When you specify **Storage integration** in the source, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
 
@@ -104,8 +107,11 @@ The following properties are supported for Snowflake under the **Destination** t
 
 The following properties are **required**:
 
-- **Data store type**: Select **External**.
-- **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection by selecting **New**.
+- **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
+    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+
+      :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for destination.":::
+
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
 
@@ -131,7 +137,7 @@ If your source data store and format meet the criteria described in this section
   
   The source data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
 
-    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage with any supported authentication types.
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage using any supported authentication type, except the organizational account authentication.
 
     2. Grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the source Azure Blob Storage **Access Control (IAM)**.
 
@@ -164,7 +170,7 @@ If your source data store and format meet the criteria described in this section
 
 When your source data store or format isn't natively compatible with the Snowflake COPY command, as mentioned in the last section, enable the built-in staged copy using an interim Azure Blob storage instance. The staged copy feature also provides you with better throughput. The service automatically converts the data to meet the data format requirements of Snowflake. It then invokes the COPY command to load data into Snowflake. Finally, it cleans up your temporary data from the blob storage.
 
-To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
+To use this feature, create an [Azure Blob storage connection](connector-azure-blob-storage.md#set-up-your-connection-for-a-pipeline) that refers to the Azure storage account as the interim staging. Then go to **Settings** tab to configure your staging settings. You need to select **External** to configure the Azure Blob Storage staging connection.
 
 - When you specify **Storage integration** in the destination, the interim staging Azure Blob Storage should be the one that you referred in the external stage in Snowflake. Ensure that you create an [Azure Blob Storage](connector-azure-blob-storage.md) connection for it with any supported authentication, and grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the staging Azure Blob Storage **Access Control (IAM)**. The **Storage path** under **Staging settings** in **Settings** tab is required.
 
@@ -178,6 +184,28 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
+## Data type mapping for Snowflake
+
+When copying data from Snowflake, the following mappings are used from Snowflake data types to interim data types used by the service internally.
+
+| Snowflake data type | Interim service data type |
+|--------------------|---------------------------------------------|
+| NUMBER (p,0)       | Decimal                                     |
+| NUMBER (p,s where s>0) | Decimal                                 |
+| FLOAT              | Double                                      |
+| VARCHAR            | String                                      |
+| CHAR               | String                                      |
+| BINARY             | Byte[]                                      |
+| BOOLEAN            | Boolean                                     |
+| DATE               | DateTime                                    |
+| TIME               | TimeSpan                                    |
+| TIMESTAMP_LTZ      | DateTimeOffset                              |
+| TIMESTAMP_NTZ      | DateTimeOffset                              |
+| TIMESTAMP_TZ       | DateTimeOffset                              |
+| VARIANT            | String                                      |
+| OBJECT             | String                                      |
+| ARRAY              | String                                      |
+
 ## Table summary
 
 The following tables contain more information about the copy activity in Snowflake.
@@ -186,8 +214,8 @@ The following tables contain more information about the copy activity in Snowfla
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
+|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
 |**Database** |Your database that you use as source.|< your database > |Yes|database|
 |**Use query** |The way to read data from Snowflake.|• Table <br> • Query |No |• table<br>• query|
 |**Table** | The name of the table to read data. |< name of your source table>|Yes |schema <br> table|
@@ -203,8 +231,8 @@ The following tables contain more information about the copy activity in Snowfla
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|< your connection > |Yes|connection|
+|**Additional connection properties** |Additional connection properties, provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).|• Name<br>• Value|No |connectionProperties|
 |**Database** |Your database that you use as destination.|< your database> |Yes|/|
 |**Table** | Your destination data table. |< name of your destination table>|Yes |• schema <br> • table|
 |**Pre-copy script**|A SQL query for the Copy activity to run before writing data into Snowflake in each run. Use this property to clean up the preloaded data.	|< your pre-copy script>|NO|preCopyScript|

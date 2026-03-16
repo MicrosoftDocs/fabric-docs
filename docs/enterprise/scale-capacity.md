@@ -1,18 +1,20 @@
 ---
 title: Scale your Fabric capacity
 description: This article walks through how to scale a Microsoft Fabric capacity in Azure.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/30/2024
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: how-to
+ms.date: 02/27/2025
 ---
 
 # Scale your capacity
 
 This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling allows you to increase or decrease the size of your capacity.
+
+You are charged pay as you go hourly rates according to the capacity size you scale up or down to. However, scaling below your reserved instance capacity doesn't affect your bill.
+
+>[!NOTE]
+>Scaling up or down between SKUs smaller or equal to F256 and equal or higher than F512, might result in a slower experience.
 
 ## Prerequisites
 
@@ -38,7 +40,7 @@ To scale your capacity, you need:
 
 ## Considerations and limitations
 
-Scaling up a capacity that’s smaller than F64 to a larger capacity happens almost immediately. However the capacity license might take up to three hours to update. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
+Scaling up a capacity that’s smaller than F64 to a larger capacity happens almost immediately. The capacity license updates usually take up to a day, however some updates could take longer. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
 
 ## Related content
 

@@ -1,14 +1,9 @@
 ---
 title: 'Tutorial: Use R to predict avocado prices'
 description: This tutorial shows an end-to-end example of using R to analyze and visualize avocado prices in the United States to predict future prices.
-ms.reviewer: None
-author: sdgilley
-ms.author: sgilley
+ms.reviewer: amjafari, lagayhar
 ms.topic: tutorial
-ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 01/22/2024
+ms.date: 07/11/2025
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to create a machine learning model by using R so I can predict prices.
 ---
@@ -49,7 +44,7 @@ library(hms)
 Read avocado prices from a .CSV file, downloaded from the internet:
 
 ```r
-df <- read.csv('https://synapseaisolutionsa.blob.core.windows.net/public/AvocadoPrice/avocado.csv', header = TRUE)
+df <- read.csv('https://synapseaisolutionsa.z13.web.core.windows.net/data/AvocadoPrice/avocado.csv', header = TRUE)
 head(df,5)
 ```
 
@@ -197,7 +192,7 @@ conv_houston_ts_arima <- auto.arima(conv_houston_ts,
 checkresiduals(conv_houston_ts_arima)
 ```
 
-![Screenshot that shows a graph of residuals.](./media/r-avocado/residuals.png)
+:::image type="content" border="true" source="./media/r-avocado/residuals.png" alt-text="Screenshot that shows a graph of residuals.":::
 
 Show a graph of forecasts from the Houston ARIMA model:
 

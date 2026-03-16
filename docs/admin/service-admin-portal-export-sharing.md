@@ -1,23 +1,21 @@
 ---
 title: Export and sharing tenant settings
 description: Learn how to configure export and sharing settings in Fabric.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: ''
-
-ms.custom:
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.date: 03/16/2024
+ms.date: 02/20/2026
 LocalizationGroup: Administration
+ai-usage: ai-assisted
 ---
 
 # Export and sharing tenant settings
 
 The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization's security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
 
-Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the [Admin portal](./admin-center.md#how-to-get-to-the-admin-portal). For information about how to get to and use tenant settings, see [About tenant settings](about-tenant-settings.md).
 
-## External data sharing (preview)
+## External data sharing
 
 When you turn on this setting, the users you specify will be able to share read-only links to data stored in your organization's OneLake storage with collaborators both outside and inside your organization. Collaborators who receive the link will be able to view, build on, and share the data both within and beyond their own Fabric tenants, using their organization's licenses and capacities.
 
@@ -25,21 +23,29 @@ External data sharing has important [security considerations](../governance/exte
 
 To turn on external data sharing:
 
-1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
 
-1. Under the **Export and sharing settings** section, find and expand the **External data sharing (preview)** setting.
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. Open the **Tenant settings** tab.
+
+1. Under the **Export and sharing settings** section, find and expand the **External data sharing** setting.
 
 1. Set the toggle to **Enabled**.
 
 1. Specify which users you want to be able to create external data shares.
 
-## Users can accept external data shares (preview)
+## Users can accept external data shares
 
 When you turn on this setting, the users you specify will be able to accept read-only links to data from another organization’s Fabric tenant. Users who accept an external share link can view, build on, and share this data, both inside and outside of your organization. For more information about external data sharing and its security considerations, see [External data sharing](../governance/external-data-sharing-overview.md).
 
 To allow users to accept external data shares:
 
-1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com/?pbi_source=learn-admin-admin-center) using your admin account credentials.
+
+1. Select the **Settings** (gear) icon, and then select **Admin portal**.
+
+1. Select **Tenant settings**.
 
 1. Under the **Export and sharing settings** section, find and expand the **Users can accept external data shares (preview)** setting.
 
@@ -52,9 +58,9 @@ To allow users to accept external data shares:
 
 ## Guest users can access Microsoft Fabric
 
-When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Fabric.
+When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests via item sharing and permissions. Use the specific security groups option to control which B2B guest users can access Fabric.
 
-To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/fabric/enterprise/powerbi/service-admin-entra-b2b).
 
 ## Users can invite guest users to collaborate through item sharing and permissions
 
@@ -62,7 +68,7 @@ This setting helps organizations choose whether new guest users can be invited t
 
 To invite external users to your organization, the user must also have the Microsoft Entra Guest Inviter role. Once invited, external users become Microsoft Entra B2B guest users. This setting only controls the ability to invite through Fabric.
 
-To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure-ad-b2b#invite-guest-users).
+To learn more, see [Invite guest users](/fabric/enterprise/powerbi/service-admin-entra-b2b#invite-guest-users).
 
 > [!IMPORTANT]
 > This setting was previously called **Share content with external users**.
@@ -71,15 +77,9 @@ To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure
 
 This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
 
-To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/fabric/enterprise/powerbi/service-admin-entra-b2b).
 
 ## Users can see guest users in lists of suggested people
-
-This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
-
-To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
-
-## Show Microsoft Entra guests in lists of suggested people
 
 This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
 
@@ -295,4 +295,5 @@ Users can deliver reports to OneDrive or SharePoint. If the **Users can set up s
 
 ## Related content
 
-* [About tenant settings](tenant-settings-index.md)
+* [About tenant settings](about-tenant-settings.md)
+* [Tenant settings index](tenant-settings-index.md)

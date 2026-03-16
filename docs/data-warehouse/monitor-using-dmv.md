@@ -1,14 +1,9 @@
 ---
-title: Monitor connections, sessions, and requests using DMVs
+title: Monitor Connections, Sessions, and Requests Using DMVs
 description: Learn about monitoring with the available Dynamic Management Views.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: jacindaeng
 ms.date: 04/24/2024
-ms.topic: conceptual
-ms.custom:
-  - build-2023
-  - ignite-2023
+ms.topic: how-to
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Monitor connections, sessions, and requests using DMVs
@@ -46,8 +41,6 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
-:::image type="content" source="media/monitor-using-dmv/exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media/monitor-using-dmv/exec-sessions-results.png":::
-
 ### Find the relationship between connections and sessions
 
 The following example joins `sys.dm_exec_connections` and `sys.dm_exec_sessions` to the relationship between the active session in a specific connection.

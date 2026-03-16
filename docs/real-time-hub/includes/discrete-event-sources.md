@@ -1,13 +1,14 @@
 ---
-title: Supported discrete event sources for Fabric Real-Time hub
-description: Include file with a list of discrete event sources supported by Fabric Real-Time hub.
-author: spelluru
-ms.author: spelluru
+title: Explore supported discrete event sources for Fabric Real-Time hub  
+description: Discover the list of discrete event sources supported by Fabric Real-Time hub and how they can be used.
 ms.topic: include
-ms.custom:
-  - build-2024
-ms.date: 05/21/2024
+ms.date: 11/18/2024
 ---
 
-- [Azure Blob Storage events](../get-azure-blob-storage-events.md)
-- [Fabric Workspace Item events](../create-streams-fabric-workspace-item-events.md)
+| Event Source | Description |  
+| ------------- | ----------- |  
+| [Azure Blob Storage events](../get-azure-blob-storage-events.md) | Learn how to capture and process events from Azure Blob Storage. |  
+| [Fabric Workspace Item events](../create-streams-fabric-workspace-item-events.md) | Understand how to work with events from Fabric Workspace Items. |  
+| [Fabric OneLake events](../create-streams-fabric-onelake-events.md) | Explore event handling for Fabric OneLake. |  
+| [Fabric Job events](../create-streams-fabric-job-events.md) | Manage and process Fabric Job events effectively. |
+

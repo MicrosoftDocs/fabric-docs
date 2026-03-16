@@ -1,17 +1,18 @@
 ---
 title: Azure Cosmos DB CDC - prerequisites and connection details
 description: This include file has the prerequisites for adding an Azure Cosmos DB Change Data Capture (CDC) source and information on getting connection details.
-ms.author: xujiang1
-author: xujxu 
+ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 06/18/2024
+ms.custom: sfi-image-nochange
+ms.date: 11/18/2024
 ---
 
 ## Prerequisites
 
-- Access to the Fabric **premium workspace** with **Contributor** or higher permissions.
+- Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - Access to an **Azure Cosmos DB for NoSQL** account and database.
-- Your Azure Cosmos DB for NoSQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Azure Cosmos DB for NoSQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).
+- If you don't have an eventstream, [create an eventstream](../create-manage-an-eventstream.md). 
 
 
 ## Get connection details from the Azure portal
@@ -26,8 +27,9 @@ The labels for the items you need to collect from the Azure portal are shown in 
 
 1. On the **Keys** page, copy the **URI** and **Primary key** values to use for setting up the eventstream connection.
 
-   ![A screenshot of the URI and Primary key on the Azure Cosmos DB Keys page in the Azure portal.](media/azure-cosmos-db-cdc-source-prerequisites-connection-details/uri.png)
+   :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-prerequisites-connection-details/uri.png" alt-text="A screenshot of the URI and Primary key on the Azure Cosmos DB Keys page in the Azure portal.":::
 
 1. On the Azure portal **Overview** page for your Azure Cosmos DB account, note the **Database** and item **ID** you want to collect data for.
 
-   ![A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.](media/azure-cosmos-db-cdc-source-prerequisites-connection-details/containers.png)
+   :::image type="content" border="true" source="media/azure-cosmos-db-cdc-source-prerequisites-connection-details/containers.png" alt-text="A screenshot of the Containers listing for an Azure Cosmos DB NoSQL API account.":::
+

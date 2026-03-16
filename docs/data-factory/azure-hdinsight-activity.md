@@ -1,13 +1,10 @@
 ---
 title: Azure HDInsight activity
-description: Learn how to transform data by running an Azure HDInsight activity in a data pipeline in Data Factory for Microsoft Fabric.
+description: Learn how to transform data by running an Azure HDInsight activity in a pipeline in Data Factory for Microsoft Fabric.
 ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
 ms.topic: how-to
-ms.custom:
-  - build-2024
-ms.date: 05/08/2024
+ms.custom: pipelines
+ms.date: 06/06/2025
 ---
 
 # Transform data by running an Azure HDInsight activity
@@ -26,13 +23,12 @@ This article provides a step-by-step walkthrough that describes how to create an
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add an Azure HDInsight (HDI) activity to a pipeline with UI
 
-1. Create a new data pipeline in your workspace.
-1. Search for Azure HDInsight from the home screen card and select it or select the activity from the Activities bar to add it to the pipeline canvas.
+1. Create a new pipeline in your workspace.
+1. Select the **Pipeline activity** card, or select the **Activities** tab, and select Azure HDInsight.
 
    - Creating the activity from the home screen card:
 
@@ -59,7 +55,7 @@ To get started, you must complete the following prerequisites:
 
 Select the **Settings** tab to see the advanced settings for the activity.
 
-:::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window. ":::
+:::image type="content" source="media/azure-hdinsight-activity/settings.png" alt-text="Screenshot showing the Settings tab of the Azure HDInsight activity properties in the pipeline editor window.":::
 
 All advanced cluster properties and dynamic expressions supported in the [Azure Data Factory and Synapse Analytics HDInsight linked service](/azure/data-factory/compute-linked-services#azure-hdinsight-linked-service) are now also supported in the Azure HDInsight activity for Data Factory in Microsoft Fabric, under the **Advanced** section in the UI. These properties all support easy-to-use custom parameterized expressions with dynamic content.
 
@@ -117,9 +113,7 @@ If you choose _Streaming_ for **Type**, the activity invokes a Streaming program
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the Home tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
-
-:::image type="content" source="media/azure-hdinsight-activity/save-run-schedule.png" alt-text="Screenshot showing the Home tab of the pipeline editor, highlighting the Save, Run, and Schedule buttons.":::
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
 ## Related content
 

@@ -1,16 +1,9 @@
 ---
-title: Create a Warehouse sample
+title: Create a Warehouse Sample
 description: Learn how to create a sample Warehouse in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
-ms.date: 04/24/2024
+ms.date: 04/06/2025
 ms.topic: how-to
-ms.custom:
-  - build-2023
-  - build-2023-dataai
-  - build-2023-fabric
-  - ignite-2023
 ms.search.form: Create a warehouse
 ---
 # Create a sample Warehouse in Microsoft Fabric
@@ -35,32 +28,32 @@ In this section, we walk you through creating a new [!INCLUDE [fabric-dw](includ
 
 1. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few seconds to complete.
 
-   :::image type="content" source="media/create-warehouse-sample/loading-sample-data.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media/create-warehouse-sample/loading-sample-data.png":::
+   :::image type="content" source="media/create-warehouse-sample/loading-sample-data-samplewh.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media/create-warehouse-sample/loading-sample-data-samplewh.png":::
 
 1. On completion of loading sample data, the warehouse opens with data loaded into tables and views to query.
 
-   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view.png":::
+   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png" alt-text="Screenshot showing the Warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png":::
 
 ### Load sample data into existing warehouse
 
 1. Once you have created your warehouse, you can load sample data into warehouse from **Use sample database** card.
 
-   :::image type="content" source="media/create-warehouse-sample/use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub." lightbox="media/create-warehouse-sample/use-sample-database.png":::
+   :::image type="content" source="media/create-warehouse-sample/use-sample-database-samplewh.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub." lightbox="media/create-warehouse-sample/use-sample-database-samplewh.png":::
 
 1. The data loading takes few seconds to complete.
 
-   :::image type="content" source="media/create-warehouse-sample/loading-sample-data.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media/create-warehouse-sample/loading-sample-data.png":::
+   :::image type="content" source="media/create-warehouse-sample/loading-sample-data-samplewh.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media/create-warehouse-sample/loading-sample-data-samplewh.png":::
 
 1. On completion of loading sample data, the warehouse displays data loaded into tables and views to query.
 
-   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view.png":::
+   :::image type="content" source="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png" alt-text="Screenshot showing the warehouse loaded with sample data." lightbox="media/create-warehouse-sample/warehouse-with-sample-table-view-samplewh.png":::
 
 ### Sample scripts
 
 Your new warehouse is ready to accept T-SQL queries. The following sample T-SQL scripts can be used on the sample data in your new warehouse.
 
 > [!NOTE]
-> It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query a warehouse](query-warehouse.md).
+> It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query the SQL analytics endpoint or Warehouse](query-warehouse.md).
 
 ```sql
 
@@ -120,4 +113,3 @@ ORDER BY
 ## Related content
 
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
-- [Warehouse settings and context menus](settings-context-menus.md)

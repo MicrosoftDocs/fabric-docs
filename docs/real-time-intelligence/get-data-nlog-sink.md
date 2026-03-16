@@ -1,11 +1,10 @@
 ---
-title: Get data with the NLog sink 
+title: Get data with the NLog sink
 description: Learn how to get data with the NLog sink in a KQL database in Real-Time Intelligence.
-ms.reviewer: yaschust 
-ms.author: v-andykop
-author: AndyKop
+ms.reviewer: akshayd
 ms.topic: how-to
-ms.date: 06/30/2024
+ms.subservice: rti-eventhouse
+ms.date: 11/19/2024
 ---
 # Get data with the NLog sink
 
@@ -19,7 +18,7 @@ For a complete list of data connectors, see [Data connectors overview](/azure/da
 ## Prerequisites
 
 * .NET SDK 6.0 or later
-* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).
+* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
 * A [KQL database in Microsoft Fabric](create-database.md). Copy the URI of this database using the instructions in [Access an existing KQL database](access-database-copy-uri.md).
 * A [KQL queryset](kusto-query-set.md). This will be referred to as your query environment.
 
@@ -34,3 +33,4 @@ Create an [empty table](create-empty-table.md) as the target table for the incom
 ## Related content
 
 * [Kusto Query Language (KQL) overview](/azure/data-explorer/kusto/query/index)
+

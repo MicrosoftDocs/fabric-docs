@@ -1,24 +1,23 @@
 ---
 title: Overview of managed private endpoints for Microsoft Fabric
 description: Learn about managed private endpoints for Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
-ms.topic: conceptual
-ms.custom: references_regions
-ms.date: 09/05/2024
+author: msmimart
+ms.author: mimart
+ms.reviewer: karthikeyana
+ms.topic: concept-article
+ms.custom: references_regions, sfi-image-nochange
+ms.date: 05/12/2025
 ---
 
 # Overview of managed private endpoints for Fabric
 
-Managed private endpoints are feature that allows secure and private access to data sources from Fabric Spark workloads.
+Managed private endpoints are feature that allows secure and private access to data sources from certain Fabric workloads.
 
 ## What are Managed Private Endpoints?
 
 * Managed private endpoints are connections that workspace admins can create to access data sources that are behind a firewall or that are blocked from public internet access.
 
-* Managed private endpoints allow Fabric Spark workloads to securely access data sources without exposing them to the public network or requiring complex network configurations.
-
-* The private endpoints provide a secure way to connect and access the data from these data sources using items such as notebooks and Spark job definitions. 
+* Managed private endpoints allow Fabric workloads to securely access data sources without exposing them to the public network or requiring complex network configurations.
 
 * Microsoft Fabric creates and manages managed private endpoints based on the inputs from the workspace admin. Workspace admins can set up managed private endpoints from the workspace settings by specifying the resource ID of the data source, identifying the target subresource, and providing a justification for the private endpoint request.
 
@@ -26,54 +25,48 @@ Managed private endpoints are feature that allows secure and private access to d
 
 :::image type="content" source="./media/security-managed-private-endpoints-overview/managed_private_endpoint.gif" alt-text="Animated illustration showing the process of creating a managed private endpoint in Microsoft Fabric.":::
 
+> [!NOTE]
+> Managed private endpoints are supported for Fabric trial capacity and all Fabric F SKU capacities.
+
 For more information about supported data sources for managed private endpoints in Fabric, see [Supported data sources](./security-managed-private-endpoints-create.md#supported-data-sources).
+
+## Supported item types
+
+* Fabric Data Engineering workloads: This includes notebooks (Spark and Python runtimes), lakehouses, and Spark job definitions. For more information, see [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
+
+* Eventstream: For more information, see [Connect to Azure resources securely using managed private endpoints (Preview)](../real-time-intelligence/event-streams/set-up-private-endpoint.md).
 
 ## Limitations and considerations
 
-* **Starter pool limitation**: Workspaces with managed virtual networks (VNets) can't access starter pools. This category encompasses workspaces that use managed private endpoints or are associated with a Fabric tenant enabled with Azure Private Links and have executed Spark jobs. Such workspaces rely on on-demand clusters, taking three to five minutes to start a session.
 
-* **Managed private endpoints**: Managed private endpoints are supported for Fabric trial capacity and all Fabric F SKU capacities.
+### Regional availability considerations
 
-* **Tenant Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported Fabric Tenant home regions results in errors. These unsupported Tenant home regions include:
-  
-    | Region         |
-    |----------------|
-    | Singapore |
-    | Israel Central |
-    | Switzerland West | 
-    | Italy North    |
-    | West India     |
-    | Mexico Central |
-    | Qatar Central  |
-    | Spain Central  |
-    | Brazil South  |
+Managed private endpoints in Microsoft Fabric are supported in **all regions where Fabric Data Engineering workloads are available**.
 
-* **Capacity Region Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors. These unsupported regions include: 
-  
-    | Region         |
-    |----------------|
-    | West Central US |
-    | Switzerland West |
-    | Italy North    |
-    | Qatar Central  |
-    | West India     |
-    | France South   |
-    | Germany North  |
-    | Japan West     |
-    | Korea South    |
-    | Southafrica West |
-    | UAE Central    |
-    | Brazil South   |
-    | Singapore |
-    | Central US  |
+Please refer to the regional availability documentation for the list of supported regions.
+- [Fabric region availability](../admin/region-availability.md)
 
-* **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to any Fabric F SKU capacity.
+### Important notes
+
+- Managed private endpoints require **Fabric Data Engineering (Spark-based) workload support** in both:
+  - The tenant home region
+  - The capacity region where the workspace is assigned
+- If a region supports Fabric Data Engineering, managed private endpoints are expected to be available in that region.
+- If Fabric Data Engineering is not available in a given region, creation of managed private endpoints in that region will be blocked.
+
+
+* **Limitations for specific workloads**:
+
+    * Spark: See [Create and use managed private endpoints](https://go.microsoft.com/fwlink/?linkid=2295703).
+
+    * Eventstream: [Connect to Azure resources securely using managed private endpoints (Preview)](../real-time-intelligence/event-streams/set-up-private-endpoint.md).
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 
-* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts using managed private endpoints.
+* **[OneLake shortcuts](../onelake/onelake-shortcuts.md)** do not yet support connections to ADLS Gen2 storage accounts and Azure Blob Storage accounts using managed private endpoints.
 
-* Creating a managed private endpoint with a fully qualified domain name (FQDN) is not supported.
+* Creating a managed private endpoint with a fully qualified domain name (FQDN) via Private Link Service is not supported using the UX and is only supported using the REST API. 
+* After you request to delete a managed private endpoint, wait at least 15 minutes before trying to create a new private endpoint to the same resource again. 
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 

@@ -1,0 +1,28 @@
+# YamlMime:ZonePivotGroups
+groups:
+  - id: dev-lang-complete
+    title: Developer languages
+    prompt: Select your preferred developer language
+    pivots:
+      - id: dev-lang-python
+        title: Python
+      - id: dev-lang-typescript
+        title: TypeScript/Node.js
+      - id: dev-lang-csharp
+        title: C#/.NET
+      - id: dev-lang-java
+        title: Java
+      - id: dev-lang-go
+        title: Go
+      - id: dev-lang-rust
+        title: Rust
+  - id: dev-lang-core
+    title: Developer languages
+    prompt: Select your preferred developer language
+    pivots:
+      - id: dev-lang-python
+        title: Python
+      - id: dev-lang-typescript
+        title: TypeScript/Node.js
+      - id: dev-lang-csharp
+        title: C#/.NET

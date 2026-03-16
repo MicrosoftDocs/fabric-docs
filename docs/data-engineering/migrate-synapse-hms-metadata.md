@@ -1,18 +1,14 @@
 ---
 title: Migrate Hive Metastore metadata
 description: Learn about your different options for migrating Hive Metastore metadata from Azure Synapse Spark to Microsoft Fabric.
-ms.reviewer: snehagunda
-ms.author: aimurg
-author: murggu
+ms.reviewer: aimurg
 ms.topic: how-to
 ms.custom:
   - fabric-cat
-  - ignite-2023
-  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
-# Migrate Hive Metastore metadata from Azure Synapse to Fabric
+# Migrate Hive Metastore metadata from Azure Synapse Analytics to Fabric
 
 The initial step in the Hive Metastore (HMS) migration involves determining the databases, tables, and partitions you want to transfer. It's not necessary to migrate everything; you can select specific databases. When identifying databases for migration, make sure to verify if there are managed or external Spark tables.
 
@@ -23,7 +19,7 @@ For HMS considerations, refer to [differences between Azure Synapse Spark and Fa
 
 ## Prerequisites
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric workspace](../fundamentals/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ## Option 1: Export and import HMS to lakehouse metastore
@@ -63,7 +59,7 @@ The focus of Step 1 is on exporting the metadata from source HMS to the Files se
 
 * **1.3) Run all notebook commands** to export catalog objects to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
-  :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake.":::
+  :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-export-api.png" alt-text="Screenshot showing HMS export in OneLake." lightbox="media/migrate-synapse/migrate-hms-metadata-export-api.png":::
 
 ### Step 2: Import metadata into Fabric lakehouse
 
@@ -137,7 +133,7 @@ DESCRIBE EXTENDED <lakehouse_name>.<table_name>
 
 Alternatively, all imported tables are visible within the Lakehouse explorer UI Tables section for each lakehouse. 
 
-:::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse.":::
+:::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse." lightbox="media/migrate-synapse/migrate-hms-metadata-import-lakehouse.png":::
 
 ### Other considerations
 

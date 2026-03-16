@@ -1,15 +1,11 @@
----
+﻿---
 title: What is semantic link?
 description: Get an overview of semantic link, which lets you connect semantic models to Synapse Data Science in Microsoft Fabric.
-ms.author: mopeakande
-author: msakande
-ms.reviewer: marcozo
-reviewer: eisber
+ms.reviewer: ruxu
 ms.topic: overview
-ms.custom:
-  - ignite-2023
-ms.date: 06/05/2024
+ms.date: 03/03/2026
 ms.search.form: semantic link
+ai-usage: ai-assisted
 ---
 
 # What is semantic link?
@@ -17,8 +13,8 @@ ms.search.form: semantic link
 Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric.
 Use of semantic link is supported only in Microsoft Fabric.
 
-- For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
-- For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
+- For Fabric Runtime 1.2 (Spark 3.4) and above, semantic link is available in the default runtime, and there's no need to install it.
+- To update to the latest version of semantic link, run the following command:
 
   ```python
   %pip install -U semantic-link
@@ -38,7 +34,7 @@ The semantic link data flow starts with semantic models that contain data and se
 
 :::image type="content" source="media/semantic-link-overview/data-flow-with-semantic-link.png" alt-text="A diagram that shows data flow from Power BI to notebooks in Synapse Data Science and back to Power BI." border="false":::
 
-Semantic link allows you to use semantic models from Power BI in the Synapse Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. You can store the output of your data science work into [OneLake](../onelake/onelake-overview.md) by using Apache Spark, and ingest the stored output into Power BI by using [Direct Lake](../get-started/direct-lake-overview.md).
+Semantic link allows you to use semantic models from Power BI in the Synapse Data Science experience to perform tasks such as in-depth statistical analysis and predictive modeling with machine learning techniques. You can store the output of your data science work into [OneLake](../onelake/onelake-overview.md) by using Apache Spark, and ingest the stored output into Power BI by using [Direct Lake](../fundamentals/direct-lake-overview.md).
 
 ## Power BI connectivity
 

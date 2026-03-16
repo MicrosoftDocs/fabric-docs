@@ -1,11 +1,11 @@
 ---
 title: Create and use managed private endpoints in Microsoft Fabric
 description: Learn how to create and use managed private endpoints in Microsoft Fabric.
-author: paulinbar
-ms.author: painbar
+author: msmimart
+ms.author: mimart
 ms.topic: how-to
-ms.custom:
-ms.date: 09/05/2024
+ms.custom: sfi-image-nochange, sfi-ropc-nochange
+ms.date: 06/20/2025
 ---
 
 # Create and  use managed private endpoints
@@ -15,6 +15,10 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 * The user can also monitor the status and the approval process of the managed private endpoints from the **Network security** section of the workspace settings.
 
 * The user can access the data sources using the private endpoint name from the Fabric Spark workloads.
+
+## Prerequisites
+
+A Microsoft.Network resource provider needs to be registered in the Azure subscription 
 
 ## Create a managed private endpoint
 
@@ -26,18 +30,18 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/create-managed-private-endpoint-dialog.png" alt-text="Screenshot of the Network security tab in the workspace settings.":::
 
-1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure portal page.
+1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure portal page. For more information, see: [How to get your Azure Resource ID](/azure/communication-services/quickstarts/voice-video-calling/get-resource-id)
 
     > [!NOTE]
-    > Creating a managed private endpoint with a fully qualified domain name (FQDN) is not supported.
+    > Creating a managed private endpoint with a fully qualified domain name (FQDN) isn't supported.
 
     When done, select **Create**.  
 
-1. When the managed private endpoint has been provisioned, the Activation status change to *Succeeded*.
+1. When the managed private endpoint is provisioned, the Activation status change to *Succeeded*.
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/managed-private-endpoint-provisioning-success.png" alt-text="Screenshot of managed private endpoint provisioning success indication on the Networking tab.":::
 
-    In addition the request for the private endpoint access is sent to the data source. The data source admins are notified on the Azure portal resource pages for their data sources. There they'll see a pending access request with the request message.
+    In addition the request for the private endpoint access is sent to the data source. The data source admins are notified on the Azure portal resource pages for their data sources. There they see a pending access request with the request message.
 
 Taking SQL server as an example, users can navigate to the Azure portal and search for the "SQL Server" resource.
 
@@ -56,12 +60,12 @@ Taking SQL server as an example, users can navigate to the Azure portal and sear
 1. Once the request has been approved or rejected by the data source admin, the status is updated in the Fabric workspace settings page upon refresh.
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/endpoint-request-approved-state.png" alt-text="Screenshot showing the managed private endpoint in the approved state.":::
-f25
-1. When the status has changed to *approved*, the endpoint can be used in notebooks or Spark job definitions to access the data stored in the data source from Fabric workspace.
+
+1. When the status changes to *approved*, the endpoint can be used in notebooks or Spark job definitions to access the data stored in the data source from Fabric workspace.
 
 ## Use managed private endpoints in Fabric
 
-Microsoft Fabric notebooks support seamless interaction with data sources behind secured networks using managed private endpoints for data exploration and processing. Within a notebook, users can quickly read data from their protected data sources (and write data back to) their lakehouses in a variety of file formats.
+Microsoft Fabric notebooks support seamless interaction with data sources behind secured networks using managed private endpoints for data exploration and processing. Within a notebook, users can quickly read data from their protected data sources (and write data back to) their lakehouses in various file formats.
 
 This guide provides code samples to help you get started in your own notebooks to access data from data sources such as SQL DB through managed private endpoints.
 
@@ -75,21 +79,23 @@ This guide provides code samples to help you get started in your own notebooks t
 
 1. Using the steps listed in [Create a managed private-endpoint](#create-a-managed-private-endpoint), create the managed private endpoint from the Fabric Network security settings page.
 
-1. Once the data source administrator of the SQL server has approved the new private endpoint connection request, you should be able to use the newly created Managed Private Endpoint.
+1. Once the data source administrator of the SQL server approves the new private endpoint connection request, you should be able to use the newly created Managed Private Endpoint.
 
-### Connect to the Data Source from Notebooks
+### Connect to the data source from notebooks
 
-1. In the Microsoft Fabric workspace, use the experience switcher on the left-hand side of your home page to switch to the Synapse Data Engineering experience.
+1. Sign into the [Microsoft Fabric portal](https://app.fabric.microsoft.com).
 
-    :::image type="content" source="./media/security-managed-private-endpoints-create/enter-data-engineering-experience.png" alt-text="Screenshot showing how to get into the data engineering experience in Fabric.":::
+1. Use the experience switcher on the left-hand side of your home page to switch the **Develop** experience.
 
-1. Select **Create** and create a new notebook.
+1. Navigate to your desired workspace or create a new one if needed.
 
-1. Now, in the notebook, by specifying the name of the SQL database and its connection properties, you can connect through the managed private endpoint connection that's been set up to read the tables in the database and write them to your lakehouse in Microsoft Fabric.
+1. To create a notebook, select **New item** from the workspace and choose **Notebook**.
+
+1. Now, in the notebook, by specifying the name of the SQL database and its connection properties, you can connect through the managed private endpoint connection that's set up to read the tables in the database and write them to your lakehouse in Microsoft Fabric.
 
 1. The following PySpark code shows how to connect to an SQL database.
 
-```
+```pyspark
 serverName = "<server_name>.database.windows.net"
 database = "<database_name>"
 dbPort = 1433
@@ -124,18 +130,17 @@ Now that the connection has been established, next step is to create a data fram
 
 ## Supported data sources
 
-Microsoft Fabric supports over 26 data sources to connect to using managed private endpoints. Users need to specify the resource identifier, which can be found in the **Properties** settings page of their data source in the Azure portal.
+Microsoft Fabric supports over 27 data sources to connect to using managed private endpoints. Users need to specify the resource identifier, which can be found in the **Properties** settings page of their data source in the Azure portal.
 Ensure resource ID format is followed as shown in the following table. 
 
 | Service| Resource ID Format|
 |:-----------|:--------------|
 | Cognitive Services | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.CognitiveServices/accounts/{resource-name}|
 | Azure Databricks | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Databricks/workspaces/{workspace-name}|
-| Azure Database for MariaDB | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforMariaDB/servers/{server-name}|
-| Azure Database for MySQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforMySQL/servers/{server-name}|
-| Azure Database for PostgreSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforPostgreSQL/servers/{server-name}|
+| Azure Database for MySQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforMySQL/flexibleServers/{server-name}|
+| Azure Database for PostgreSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{server-name}|
 | Azure Cosmos DB for MongoDB | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{account-name}|
-| Azure Cosmos DB for NoSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{account-name}
+| Azure Cosmos DB for NoSQL | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.DocumentDB/databaseAccounts/{account-name}|
 | Azure Monitor Private Link Scopes | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Insights/privateLinkScopes/{scope-name}|
 | Azure Key Vault | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.KeyVault/vaults/{vault-name}|
 | Azure Data Explorer (Kusto) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Kusto/clusters/{cluster-name}|
@@ -155,6 +160,10 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Event Hubs | /subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.EventHub/namespaces/{namespace-name}|
 | Azure IoT Hub | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Devices/IotHubs/{iothub-name}|
 | Azure Private Link Service | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/privateLinkServices/{private-link-service-name}|
+| Azure Data Manager for Energy (ADME) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OpenEnergyPlatform/energyServices/{service-name}|
+
+
+Please note creating managed private endpoint to a private link service for your Fabric tenant isn't supported. 
 
 ## Related content
 

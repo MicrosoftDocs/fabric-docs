@@ -1,15 +1,11 @@
 ---
 title: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
 description: This article provides instruction on how to explore and transform sample bike-sharing data in Fabric Eventstream and then route the data to KQL Database.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: tutorial
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
+ms.custom: sfi-image-nochange
 ms.date: 11/17/2023
-ms.search.form: Event Streams Tutorials
+ms.search.form: Eventstreams Tutorials
 ---
 
 # Tutorial: Explore and transform sample bike-sharing data with Eventstream for KQL Database integration
@@ -18,23 +14,21 @@ Eventstream is a streaming platform that allows you to ingest, transform, and ro
 
 ## Prerequisites
 
-* Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL Database are located.
+* Access to a workspace with Contributor or above permissions where your Eventstream and KQL Database are located.
 * A KQL Database created in your workspace.
 
-## Create an eventstream and add sample bike data
-
+## Create an eventstream 
 Follow these steps to create an eventstream in your workspace:
 
-1. Switch your Power BI experience to **Real-Time Intelligence** and select the **Eventstream** button to create a new one.
-2. Name your Eventstream "eventstream-1" and select **Create**.
+[!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-    :::image type="content" source="./media/transform-sample-data-and-to-kql/create-eventstream.png" alt-text="Screenshot that shows where to add new eventstream." lightbox="./media/transform-sample-data-and-to-kql/create-eventstream.png":::
 
-3. On the Eventstream canvas, expand **New source** and select **Sample data**. Give a name to the source and select **Bicycles** as the sample data.
+## Add sample bike data
+
+1. On the Eventstream canvas, expand **New source** and select **Sample data**. Give a name to the source and select **Bicycles** as the sample data.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/add-bike-data.png" alt-text="Screenshot that shows where to add sample data in eventstream." lightbox="./media/transform-sample-data-and-to-kql/add-bike-data.png":::
-
-4. You can preview the data in eventstream to verify if the sample bike data is added successfully.
+1. You can preview the data in eventstream to verify if the sample bike data is added successfully.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/preview-eventstream.png" alt-text="Screenshot that shows where to preview data in eventstream." lightbox="./media/transform-sample-data-and-to-kql/preview-eventstream.png":::
 
@@ -52,7 +46,7 @@ Follow these steps to create an eventstream in your workspace:
 
 ## Add a KQL destination with event processor
 
-1. On the Eventstream canvas, expand the **New destination** drop-down menu and choose **KQL Database**. Enter the necessary details of your KQL Database.
+1. On the Eventstream canvas, expand the **New destination** dropdown menu and choose **KQL Database**. Enter the necessary details of your KQL Database.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/add-kql-db.png" alt-text="Screenshot that shows where add KQL Database in eventstream." lightbox="./media/transform-sample-data-and-to-kql/add-kql-db.png":::
 
@@ -109,3 +103,5 @@ If you want to learn more about ingesting and processing data streams using Even
 - [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
 - [Stream real-time events from a custom app to a Microsoft Fabric KQL database](./stream-real-time-events-from-custom-app-to-kusto.md)
+
+

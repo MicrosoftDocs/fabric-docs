@@ -1,14 +1,9 @@
 ---
 title: Semantic link and Power BI connectivity
 description: See how semantic link and Microsoft Fabric provide Power BI data connectivity for pandas and Spark ecosystems.
-ms.author: mopeakande
-author: msakande
 ms.reviewerr: marcozo
-reviewer: eisber
-ms.topic: conceptual
-ms.custom:
-  - ignite-2023
-ms.date: 06/18/2024
+ms.topic: concept-article
+ms.date: 03/03/2026
 ms.search.form: semantic link
 ---
 
@@ -33,9 +28,9 @@ Semantic link offers connectivity to:
 
 The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the semantic link feature and serves pandas users. SemPy functionality includes data retrieval from [tables](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-read-table), [computation of measures](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-measure), and [execution of Data Analysis Expressions (DAX) queries](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-dax) and metadata.
 
-- For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
+- For Fabric Runtime 1.2 (Spark 3.4) and above, semantic link is available in the default runtime, and there's no need to install it.
 
-- For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
+- To update to the latest version of semantic link, run the following command:
 
    ``` python
    %pip install -U semantic-link
@@ -194,3 +189,4 @@ The `add_measure` method does the following steps:
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 - [Explore and validate data by using semantic link](semantic-link-validate-data.md)
 - [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)
+

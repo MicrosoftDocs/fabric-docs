@@ -1,15 +1,11 @@
 ---
 title: The Microsoft Fabric deployment pipelines process
 description: Understand how deployment pipelines, the Fabric Application lifecycle management (ALM) tool, works.
-author: mberdugo
-ms.author: monaberdugo
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
-ms.topic: conceptual
-ms.custom:
-ms.date: 07/29/2024
+ms.topic: concept-article
+ms.date: 12/15/2025
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
+#customer intent: As a developer, I want to understand how the Microsoft Fabric deployment pipelines process works so that I can use it effectively.
 ---
 
 # The deployment pipelines process
@@ -19,6 +15,9 @@ The deployment process lets you clone content from one stage in the deployment p
 During deployment, Microsoft Fabric copies the content from the source stage to the target stage. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
+
+> [!NOTE]
+> The new Deployment pipeline user interface is currently in **preview**. To turn on or use the new UI, see [Begin using the new UI](./deployment-pipelines-new-ui.md#begin-using-the-new-ui).
 
 There are two main parts of the deployment pipelines process:
 
@@ -72,15 +71,25 @@ Deploying content from a working production pipeline to a stage that has an exis
 
 * Deploying updated content to replace some of the content already there.
 
+After the initial deployment:
+
+- the gateway associated with the target item is not automatically mapped to the corresponding data source.
+- You need to manually configure this mapping through the target item's settings page
+- After configuring verify that the data refresh completes successfully.
+- Subsequent deployments do not alter or reset this gateway configuration.
+
 ### Deployment process
 
 When content from the source stage is copied to the target stage, Fabric identifies existing content in the target stage and overwrites it. To identify which content item needs to be overwritten, deployment pipelines uses the connection between the parent item and its clones. This connection is kept when new content is created. The overwrite operation only overwrites the content of the item. The item's ID, URL, and permissions remain unchanged.
 
 In the target stage, [item properties that aren't copied](understand-the-deployment-process.md#item-properties-that-are-not-copied), remain as they were before deployment. New content and new items are copied from the source stage to the target stage.
 
+
+
+
 ## Autobinding
 
-In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model it's connected to. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
+In Fabric, when items are connected, one of the items depends on the other. For example, a report always depends on the semantic model connected to it. A semantic model can depend on another semantic model, and can also be connected to several reports that depend on it. If there's a connection between two items, deployment pipelines always tries to maintain this connection.
 
 ### Autobinding in the same workspace
 
@@ -92,11 +101,11 @@ During deployment, deployment pipelines checks for dependencies. The deployment 
 
 Autobinding works only with items that are supported by deployment pipelines and reside within Fabric. To view the dependencies of an item, from the item's *More options* menu, select *View lineage*.
 
-#### [New View lineage UI](#tab/new)
+#### [New View lineage UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/view-lineage-new.png" alt-text="A screenshot of the new view lineage option, in an item's more options menu.":::
 
-#### [Original View lineage UI](#tab/old)
+#### [Original View lineage UI](#tab/old-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/view-lineage-old.png" alt-text="A screenshot of the old view lineage option, in an item's more options menu.":::
 
@@ -104,19 +113,18 @@ Autobinding works only with items that are supported by deployment pipelines and
 
 ### Autobinding across workspaces
 
-Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a semantic model in the test stage of pipeline B, deployment pipelines recognizes this connection.
+Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item connected to it in the other pipeline. For example, if you have a report in the test stage of pipeline *A* that's connected to a semantic model in the test stage of pipeline *B*, deployment pipelines recognizes this connection.
+
+>[!NOTE]
+>Each pipeline must have the same number of stages. So for example, if pipeline *A* has 3 stages, then pipeline *B* must also have 3 stages.  Pipeline *A* cannot have 3 stages and pipeline *B* 5 stages for autobinding to succeed. 
 
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
-1. You have a semantic model in the development stage of pipeline A.
-
-1. You also have a report in the development stage of pipeline B.
-
-1. Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
-
-1. You deploy the report in pipeline B from the development stage to the test stage.
-
-1. The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
+- You have a semantic model in the development stage of pipeline A.
+- You also have a report in the development stage of pipeline B.
+- Your report in pipeline B is connected to your semantic model in pipeline A. Your report depends on this semantic model.
+- You deploy the report in pipeline B from the development stage to the test stage.
+- The deployment succeeds or fails, depending on whether or not you have a copy of the semantic model it depends on in the test stage of pipeline A:
 
     * *If you have a copy of the semantic model the report depends on in the test stage of pipeline A*:
 
@@ -146,7 +154,7 @@ There are three methods you can use to avoid using autobinding:
 
 #### Autobinding and parameters
 
-Parameters can be used to control the connections between semantic models or dataflows and the items that they depend on. When a parameter controls the connection, autobinding after deployment doesn't take place, even when the connection includes a parameter that applies to the semantic model’s or dataflow's ID, or the workspace ID. In such cases, you'll need to rebind the items after the deployment by changing the parameter value, or by using [parameter rules](create-rules.md).
+Parameters can be used to control the connections between semantic models or dataflows and the items that they depend on. When a parameter controls the connection, autobinding after deployment doesn't take place, even when the connection includes a parameter that applies to the semantic model’s or dataflow's ID, or the workspace ID. In those cases, rebind the items after the deployment by changing the parameter value, or by using [parameter rules](create-rules.md).
 
 >[!NOTE]
 >If you're using parameter rules to rebind items, the parameters must be of type `Text`.  
@@ -166,9 +174,12 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a cont
 Folders enable users to efficiently organize and manage workspace items in a familiar way.
 When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
+>[!NOTE]
+>Items cannot be selected for deployment across workspace folders in the default stage view. However switching to [flat list view](deploy-content.md#flat-list-view) allows you to select items for deployment across workspace folders.
+
 ### Folders representation
 
-#### [New folders representation UI](#tab/new)
+#### [New folders representation UI](#tab/new-ui)
 
 The workspace content is shown as it's structured in the workspace. Folders are listed, and in order to see their items you need to select the folder. An item’s full path is shown at the top of the items list. Since a deployment is of items only, you can only select a folder that contains supported items. Selecting a folder for deployment means selecting all its items and subfolders with their items for a deployment.
 
@@ -176,7 +187,7 @@ This picture shows the contents of a folder inside the workspace. The full pathn
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path-new.png" alt-text="Screenshot showing the contents of a folder with full pathname of the folder. The name includes the name of the folder.":::
 
-#### [Original folders representation UI](#tab/old)
+#### [Original folders representation UI](#tab/old-ui)
 
 The workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
 
@@ -184,19 +195,21 @@ The workspace content is shown in Deployment pipelines as a flat list of items. 
 
 ---
 
-In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it is created in its workspace first. Folders can be seen and managed only on the workspace page.
+In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it's created in its workspace first. Folders can be seen and managed only on the workspace page.
 
-Deploy items inside a folder from that folder. You can't deploy items from different hierarchies at the same time.
+With the current view of the folders hierarchy, you can select for deployment, only items in the same folder level. You cannot select items across folders.
+ 
+Flat list view of deployment pipelines allows you to select items regardless of its location. With the flat list view, you can select items across folders, regarding their location in the workspace. For more information, see [flat list view](deploy-content.md#flat-list-view).
 
 ### Identify items that were moved to different folders
 
 Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* when compared. This item doesn't appear in the compare window since it isn't a schema change but settings change.
 
-#### [Moved folder item in new UI](#tab/new)
+#### [Moved folder item in new UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item-new.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder in the new UI.":::
 
-#### [Moved folder item in original UI](#tab/old)
+#### [Moved folder item in original UI](#tab/old-ui)
 
 Unless there's also a schema change, the option next to the label to open a *Change review* window that presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*).
 
@@ -210,11 +223,11 @@ Unless there's also a schema change, the option next to the label to open a *Cha
 
 * Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
-* Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't be deployed.
+* Deploying one item out of several in a folder also updates the structure of the items that aren't deployed in the target stage even though the items themselves aren't deployed.
 
 ## Parent-child item representation
 
-These appear only in the new UI. Looks same as in the workspace. Child isn't deployed but recreated on the target stage
+Parent child relationships only appear in the new UI. They looks the same as in the workspace. The child isn't deployed but recreated on the target stage
 
 :::image type="content" source="media/understand-the-deployment-process/parent-child.png" alt-text="Screenshot showing the depiction of a parent child relationship in the new UI.":::
 
@@ -243,9 +256,11 @@ During deployment, the following item properties are copied and overwrite the it
   * A new item is deployed, or an existing item is deployed to an empty stage.
 
     >[!NOTE]
-    > In cases where default labeling is enabled on the tenant, and the default label is valid, if the item being deployed is a semantic model or dataflow, the label will be copied from the source item **only** if the label has protection. If the label is not protected, the default label will be applied to the newly created target semantic model or dataflow.
+    > In cases where default labeling is enabled on the tenant, and the default label is valid, if the item being deployed is a semantic model or dataflow, the label is copied from the source item **only** if the label has protection. If the label isn't protected, the default label is applied to the newly created target semantic model or dataflow.
 
   * The source item has a label with protection and the target item doesn't. In this case, a pop-up window asks for consent to override the target sensitivity label.
+
+    See also [Data loss prevention (DLP) considerations](#data-loss-prevention-dlp-considerations).
 
 ### Item properties that are not copied
 
@@ -362,11 +377,11 @@ Hybrid tables are tables with [incremental refresh](/power-bi/connect-data/incre
 
 Create an app for each deployment pipeline stage, so that you can test each update from an end user's point of view. Use the **publish** or **view** button in the workspace card to publish or view the app in a specific pipeline stage.
 
-### [Publish app - new UI](#tab/new)
+### [Publish app - new UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/publish-new.png" alt-text="A screenshot showing the publish app button, in the stage options.":::
 
-### [Publish app - original UI](#tab/old)
+### [Publish app - original UI](#tab/old-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/publish.png" alt-text="A screenshot highlighting the publish app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/publish.png":::
 
@@ -374,18 +389,18 @@ Create an app for each deployment pipeline stage, so that you can test each upda
 
 In the production stage, you can also update the app page in Fabric, so that any content updates become available to app users.
 
-### [Update app - new UI](#tab/new)
+### [Update app - new UI](#tab/new-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/update-new.png" alt-text="A screenshot highlighting the update app button in the new UI.":::
 
-### [Update app - original UI](#tab/old)
+### [Update app - original UI](#tab/old-ui)
 
 :::image type="content" source="media/understand-the-deployment-process/update-app.png" alt-text="A screenshot highlighting the update app button, at the bottom right of the production stage." lightbox="media/understand-the-deployment-process/update-app.png":::
 
 ---
 
 >[!IMPORTANT]
->The deployment process does not include updating the app content or settings. To apply changes to content or settings, you need to manually update the app in the required pipeline stage.
+>The deployment process doesn't include updating the app content or settings. To apply changes to content or settings, you need to manually update the app in the required pipeline stage.
 
 ## Permissions
 
@@ -393,11 +408,11 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Pipelines only have one permission, *Admin*, which is required for sharing, editing and deleting a pipeline.
 
-* Workspaces have different permissions, also called [roles](../../get-started/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
+* Workspaces have different permissions, also called [roles](../../fundamentals/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
 * Deployment pipelines doesn't support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
 
-To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a contributor, member or admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
+To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a contributor, member, or admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, can view the pipeline and share it with others. However, this user can't view the content of the workspace in the pipeline, or in the service, and can't perform deployments.
 
 ### Permissions table
 
@@ -436,18 +451,29 @@ The following table lists required permissions for popular deployment pipeline a
 |Add or remove a pipeline user     |Pipeline admin         |
 |Assign a workspace to a stage     |<ul><li>Pipeline admin</li><li>Workspace admin (of the workspace to be assigned)</li></ul>         |
 |Unassign a workspace to a stage     |One of the following roles:<ul><li>Pipeline admin</li><li>Workspace admin (using the [Pipelines - Unassign Workspace](/rest/api/power-bi/pipelines/unassign-workspace) API)</li></ul>         |
-|Deploy to an empty stage     |<ul><li>Pipeline admin</li><li>Source workspace contributor</li></ul>         |
-|Deploy items to the next stage    |<ul><li>Pipeline admin</li><li>Workspace contributor to both the source and target stages</li><li>To deploy datamarts or dataflows, you must be the owner of the deployed item</li><li>If the semantic model tenant admin switch is turned on and you're deploying a semantic model, you need to be the owner of the semantic model</li></ul>         |
+|Deploy to an empty stage (see note)    |<ul><li>Pipeline admin</li><li>Source workspace contributor</li></ul>         |
+|Deploy items to the next stage (see note)   |<ul><li>Pipeline admin</li><li>Workspace contributor to both the source and target stages</li><li>To deploy datamarts or dataflows, you must be the owner of the deployed item</li><li>If the semantic model tenant admin switch is turned on and you're deploying a semantic model, you need to be the owner of the semantic model</li></ul>         |
 |View or set a rule     |<ul><li>Pipeline admin</li><li>Target workspace contributor, member, or admin</li><li>Owner of the item you're setting a rule for</li></ul>         |
 |Manage pipeline settings     |Pipeline admin         |
-|View a pipeline stage     |<ul><li>Pipeline admin</li><li>Workspace reader, contributor, member, or admin. You'll see the items that your workspace permissions grant access to.</li></ul>         |
+|View a pipeline stage     |<ul><li>Pipeline admin</li><li>Workspace reader, contributor, member, or admin. You see the items that your workspace permissions grant access to.</li></ul>         |
 |View the list of items in a stage     |Pipeline admin         |
 |Compare two stages     |<ul><li>Pipeline admin</li><li>Workspace contributor, member, or admin for both stages</li></ul>         |
 |View deployment history     |Pipeline admin         |
 
+> [!NOTE]
+> To deploy content in the GCC environment, you need to be at least a member of both the source and target workspace. Deploying as a contributor isn't supported yet.
+
 ## Considerations and limitations
 
 This section lists most of the limitations in deployment pipelines.
+
+* [General considerations and limitations](#general-considerations-and-limitations)
+* [Semantic model limitations](#semantic-model-limitations)
+* [Dataflow limitations](#dataflow-limitations)
+* [Datamart limitations](#datamart-limitations)
+* [Data loss prevention (DLP) considerations](#data-loss-prevention-dlp-considerations)
+
+### General considerations and limitations
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md#capacity).
 * The maximum number of items that can be deployed in a single deployment is 300.
@@ -457,7 +483,7 @@ This section lists most of the limitations in deployment pipelines.
 * For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 * For a list of supported items, see [supported items](./intro-to-deployment-pipelines.md#supported-items). Any item not on the list isn't supported.
 * The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
-* Only Power BI items can be deployed to a workspace in a different capacity region. Other Fabric items can't be deployed to a workspace in a different capacity region.
+* PBIR reports aren't supported.
 
 ### Semantic model limitations
 
@@ -471,9 +497,13 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
+* If autobinding is engaged, then:
 
-* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+  * Native query and DirectQuery together isn't supported. This includes proxy datasets.
+  * The datasource connection must be the first step in the mashup expression.
+
+* When a Direct Lake semantic model is deployed, it doesn't automatically bind to items in the target stage. For example, if a LakeHouse is a source for a DirectLake semantic model and they're both deployed to the next stage, the DirectLake semantic model in the target stage will still be bound to the LakeHouse in the source stage. Use datasource rules to bind it to an item in the target stage. Other types of semantic models are automatically bound to the paired item in the target stage.
+* Deployment of a semantic model that uses 'Dataflow Gen 2 (CI/CD)' item as a datasource is not supported.
 
 ### Dataflow limitations
 
@@ -491,11 +521,17 @@ This section lists most of the limitations in deployment pipelines.
 
 * If you compare stages during a dataflow refresh, the results are unpredictable.
 
+* Autobinding isn't supported for dataflows Gen2.
+
 ### Datamart limitations
 
 * You can't deploy a datamart with sensitivity labels.
 
 * You need to be the datamart owner to deploy a datamart.
+
+### Data loss prevention (DLP) considerations
+
+After deploying an item to a new stage, if you see a DLP policy tip indication on the item, try refreshing the item to see whether the indication disappears before investigating further. Because DLP runs as soon as an item is copied, possibly before other processes that bring in data or metadata (such as a default sensitivity label) have completed, DLP might have run on the item prematurely, resulting in the misapplication of the policy tip indication. Refreshing the item should cause the policy tip indication to go away.
 
 ## Related content
 
