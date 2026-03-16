@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 03/18/2026
 ---
 
-# Microsoft ODBC Driver for Microsoft Fabric Data Engineering (Preview)
+# Microsoft ODBC driver for Microsoft Fabric Data Engineering (Preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -15,7 +15,7 @@ ODBC (Open Database Connectivity) is a widely adopted standard that enables clie
 
 The Microsoft ODBC Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of the ODBC standard. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET, Python, and other ODBC-compatible applications and BI tools.
 
-## Key Features
+## Key features
 
 - **ODBC 3.x Compliant**: Full implementation of ODBC 3.x specification
 - **Microsoft Entra ID Authentication**: Multiple authentication flows including Azure CLI, interactive, client credentials, certificate-based, and access token authentication
@@ -133,7 +133,7 @@ The Microsoft ODBC Driver for Microsoft Fabric Data Engineering uses the followi
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};<parameter1>=<value1>;<parameter2>=<value2>;...
 ```
 
-### Connection String Components
+### Connection string components
 
 | Component | Description | Example |
 |-----------|-------------|---------|
@@ -142,21 +142,21 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};<parameter1
 | LakehouseId | Microsoft Fabric lakehouse identifier (GUID) | `xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx` |
 | AuthFlow | Authentication method | `AZURE_CLI`, `INTERACTIVE`, `CLIENT_CREDENTIAL`, `CLIENT_CERTIFICATE`, `ACCESS_TOKEN` |
 
-### Example Connection Strings
+### Example connection strings
 
-#### Basic Connection (Azure CLI Authentication)
+#### Basic connection (Azure CLI authentication)
 
 ```
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI
 ```
 
-#### With Performance Options
+#### With performance options
 
 ```
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;ReuseSession=true;LargeTableSupport=true;PageSizeBytes=18874368
 ```
 
-#### With Logging
+#### With logging
 
 ```
 DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId=<workspace-id>;LakehouseId=<lakehouse-id>;AuthFlow=AZURE_CLI;LogLevel=DEBUG;LogFile=odbc_driver.log
@@ -166,7 +166,7 @@ DRIVER={Microsoft ODBC Driver for Microsoft Fabric Data Engineering};WorkspaceId
 
 The Microsoft ODBC Driver for Microsoft Fabric Data Engineering supports multiple authentication methods through Microsoft Entra ID (formerly Azure Active Directory). Authentication is configured using the `AuthFlow` parameter in the connection string.
 
-### Authentication Methods
+### Authentication methods
 
 | AuthFlow Value | Description |
 |----------------|-------------|
@@ -176,7 +176,7 @@ The Microsoft ODBC Driver for Microsoft Fabric Data Engineering supports multipl
 | `CLIENT_CERTIFICATE` | Service principal with certificate |
 | `ACCESS_TOKEN` | Pre-acquired bearer access token |
 
-### Azure CLI Authentication
+### Azure CLI authentication
 
 **Best for**: Development and interactive applications
 
@@ -196,7 +196,7 @@ conn = pyodbc.connect(connection_string)
 - Azure CLI installed: `az --version`
 - Logged in: `az login`
 
-### Interactive Browser Authentication
+### Interactive browser authentication
 
 **Best for**: User-facing applications
 
@@ -219,7 +219,7 @@ conn = pyodbc.connect(connection_string)
 - Opens a browser window for user authentication
 - Credentials are cached for subsequent connections
 
-### Client Credentials (Service Principal) Authentication
+### Client credentials (service principal) authentication
 
 **Best for**: Automated services and background jobs
 
@@ -235,17 +235,17 @@ connection_string = (
 )
 ```
 
-**Required Parameters**
+**Required parameters**
 - `TenantId`: Azure tenant ID
 - `ClientId`: Application (client) ID from Microsoft Entra ID
 - `ClientSecret`: Client secret from Microsoft Entra ID
  
-**Best Practices**
+**Best practices**
 - Store secrets securely (Azure Key Vault, environment variables)
 - Use managed identities when possible
 - Rotate secrets regularly
 
-### Certificate-Based Authentication
+### Certificate-based authentication
 
 **Best for**: Enterprise applications requiring certificate-based authentication
 
@@ -262,13 +262,13 @@ connection_string = (
 )
 ```
 
-**Required Parameters**:
+**Required parameters**:
 - `TenantId`: Azure tenant ID
 - `ClientId`: Application (client) ID
 - `CertificatePath`: Path to PFX/PKCS12 certificate file
 - `CertificatePassword`: Certificate password
 
-### Access Token Authentication
+### Access token authentication
 
 **Best for**: Custom authentication scenarios
 
@@ -285,9 +285,9 @@ connection_string = (
 )
 ```
 
-## Configuration Parameters
+## Configuration parameters
 
-### Required Parameters
+### Required parameters
 
 These parameters must be present in every connection string:
 
@@ -297,16 +297,16 @@ These parameters must be present in every connection string:
 | LakehouseId | UUID | Microsoft Fabric lakehouse identifier | `d8faa650-...` |
 | AuthFlow | String | Authentication flow type | `AZURE_CLI` |
 
-### Optional Parameters
+### Optional parameters
 
-#### Connection Settings
+#### Connection settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | Database | String | None | Specific database to connect to |
 | Scope | String | `https://api.fabric.microsoft.com/.default` | OAuth scope |
 
-#### Performance Settings
+#### Performance settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -315,14 +315,14 @@ These parameters must be present in every connection string:
 | EnableAsyncPrefetch | Boolean | `false` | Enable background data prefetching |
 | PageSizeBytes | Integer | `18874368` (18 MB) | Page size for result pagination (1-18 MB) |
 
-#### Logging Settings
+#### Logging settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | LogLevel | String | `INFO` | Log level: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` |
 | LogFile | String | `odbc_driver.log` | Log file path (absolute or relative) |
 
-#### Proxy Settings
+#### Proxy settings
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -359,7 +359,7 @@ These parameters must be present in every connection string:
    - Select "Test Connection" to verify settings
    - Select "OK" to save
 
-### Use DSN in Applications
+### Use DSN in applications
 
 ```python
 # Python - Connect using DSN
@@ -515,7 +515,7 @@ print(f"Total rows processed: {row_count}")
 conn.close()
 ```
 
-### Schema Discovery
+### Schema discovery
 
 ```python
 import pyodbc
@@ -545,7 +545,7 @@ for db in cursor.fetchall():
 conn.close()
 ```
 
-## Data Type Mapping
+## Data type mapping
 
 The driver maps Spark SQL data types to ODBC SQL types:
 
@@ -569,7 +569,7 @@ The driver maps Spark SQL data types to ODBC SQL types:
 | MAP | SQL_VARCHAR | SQLCHAR* | str (JSON) | string |
 | STRUCT | SQL_VARCHAR | SQLCHAR* | str (JSON) | string |
 
-## BI Tool Integration
+## BI tool integration
 
 ### Microsoft Excel
 
@@ -615,7 +615,7 @@ EXEC('SELECT * FROM employees LIMIT 10') AT FABRIC_LINKED_SERVER;
 
 This section provides guidance for resolving common issues you might encounter when using the Microsoft ODBC Driver for Microsoft Fabric Data Engineering.
 
-### Common Issues
+### Common issues
 
 The following sections describe common problems and their solutions:
 
@@ -634,21 +634,21 @@ The following sections describe common problems and their solutions:
 **Problem**: Authentication fails with Azure CLI
 
 **Solutions**:
-1. Run `az login` to refresh credentials
-2. Verify correct tenant: `az account set --subscription <subscription-id>`
-3. Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
+- Run `az login` to refresh credentials
+- Verify correct tenant: `az account set --subscription <subscription-id>`
+- Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
 
 #### Query timeouts
 
 **Problem**: Queries timing out on large tables
 
 **Solutions**:
-1. Enable `LargeTableSupport=true`
-2. Adjust `PageSizeBytes` for optimal chunk size
-3. Enable async prefetch: `EnableAsyncPrefetch=1`
-4. Use `LIMIT` clause to restrict result size
+- Enable `LargeTableSupport=true`
+- Adjust `PageSizeBytes` for optimal chunk size
+- Enable async prefetch: `EnableAsyncPrefetch=1`
+- Use `LIMIT` clause to restrict result size
 
-### Enable Logging
+### Enable logging
 
 When troubleshooting issues, enabling detailed logging can help you identify the root cause of problems. You can enable logging through the connection string.
 
@@ -665,7 +665,7 @@ Log levels:
 - `WARN`: Warnings only
 - `ERROR`: Errors only
 
-### ODBC Tracing
+### ODBC tracing
 
 For low-level diagnostics, you can enable Windows ODBC tracing to capture detailed ODBC API calls and driver behavior. Remember to turn off tracing when not needed to maintain optimal performance.
 

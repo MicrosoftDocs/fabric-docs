@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.date: 03/18/2026
 ---
 
-# Microsoft ADO.NET Driver for Microsoft Fabric Data Engineering (Preview)
+# Microsoft ADO.NET driver for Microsoft Fabric Data Engineering (preview)
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -14,7 +14,7 @@ ADO.NET is a widely adopted data access technology in the .NET ecosystem that en
 
 The Microsoft ADO.NET Driver for Fabric Data Engineering lets you connect, query, and manage Spark workloads in Microsoft Fabric with the reliability and simplicity of standard ADO.NET patterns. Built on Microsoft Fabric's Livy APIs, the driver provides secure and flexible Spark SQL connectivity to your .NET applications using familiar `DbConnection`, `DbCommand`, and `DbDataReader` abstractions.
 
-## Key Features
+## Key features
 
 - **ADO.NET Compliant**: Full implementation of ADO.NET abstractions (`DbConnection`, `DbCommand`, `DbDataReader`, `DbParameter`, `DbProviderFactory`)
 - **Microsoft Entra ID Authentication**: Multiple authentication flows including Azure CLI, interactive browser, client credentials, certificate-based, and access token authentication
@@ -149,23 +149,24 @@ Parameter1=Value1;Parameter2=Value2;...
 | `LogLevel` | String | `Information` | Log level: `Trace`, `Debug`, `Information`, `Warning`, `Error` |
 | `LogFilePath` | String | (none) | Path for file-based logging |
 
+> [!NOTE]
 > **Cross-driver aliases:** The driver accepts JDBC and ODBC property names in addition to native ADO.NET names (e.g., `WorkspaceId` maps to `FabricWorkspaceID`, `LakehouseId` maps to `FabricLakehouseID`). All property names are case-insensitive.
 
-### Example Connection Strings
+### Example connection strings
 
-#### Basic Connection (Azure CLI Authentication)
+#### Basic connection (Azure CLI authentication)
 
 ```
 Server=https://api.fabric.microsoft.com/v1;SparkServerType=Fabric;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=AzureCli
 ```
 
-#### With Connection Pooling Options
+#### With connection pooling options
 
 ```
 Server=https://api.fabric.microsoft.com/v1;SparkServerType=Fabric;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=AzureCli;ConnectionPoolEnabled=true;MinPoolSize=2;MaxPoolSize=10
 ```
 
-#### With Auto-Reconnect and Logging
+#### With auto-reconnect and logging
 
 ```
 Server=https://api.fabric.microsoft.com/v1;SparkServerType=Fabric;FabricWorkspaceID=<workspace-id>;FabricLakehouseID=<lakehouse-id>;AuthFlow=AzureCli;AutoReconnect=true;LogLevel=Debug
@@ -185,7 +186,7 @@ The Microsoft ADO.NET Driver supports multiple authentication methods through Mi
 | `ClientCertificateCredential` | Service principal with certificate | Enterprise applications |
 | `AuthAccessToken` | Pre-acquired bearer access token | Custom authentication scenarios |
 
-### Azure CLI Authentication
+### Azure CLI authentication
 
 **Best for**: Development and testing
 
@@ -205,7 +206,7 @@ await connection.OpenAsync();
 - Azure CLI installed: `az --version`
 - Logged in: `az login`
 
-### Interactive Browser Authentication
+### Interactive browser authentication
 
 **Best for**: User-facing applications
 
@@ -226,7 +227,7 @@ await connection.OpenAsync(); // Opens browser for authentication
 - Opens a browser window for user authentication
 - Credentials are cached for subsequent connections
 
-### Client Credentials (Service Principal) Authentication
+### Client credentials (service principal) authentication
 
 **Best for**: Automated services and background jobs
 
@@ -245,12 +246,12 @@ using var connection = new LivyConnection(connectionString);
 await connection.OpenAsync();
 ```
 
-**Required Parameters**:
+**Required parameters**:
 - `AuthTenantID`: Azure tenant ID
 - `AuthClientID`: Application (client) ID from Microsoft Entra ID
 - `AuthClientSecret`: Client secret from Microsoft Entra ID
 
-### Certificate-Based Authentication
+### Certificate-based authentication
 
 **Best for**: Enterprise applications requiring certificate-based authentication
 
@@ -270,13 +271,13 @@ using var connection = new LivyConnection(connectionString);
 await connection.OpenAsync();
 ```
 
-**Required Parameters**:
+**Required parameters**:
 - `AuthTenantID`: Azure tenant ID
 - `AuthClientID`: Application (client) ID
 - `AuthCertificatePath`: Path to PFX/PKCS12 certificate file
 - `AuthCertificatePassword`: Certificate password
 
-### Access Token Authentication
+### Access token authentication
 
 **Best for**: Custom authentication scenarios
 
@@ -359,7 +360,7 @@ while (await reader.ReadAsync())
 }
 ```
 
-### ExecuteScalar for Single Values
+### ExecuteScalar for single values
 
 ```csharp
 using var command = connection.CreateCommand();
@@ -369,7 +370,7 @@ var count = await command.ExecuteScalarAsync();
 Console.WriteLine($"Total customers: {count}");
 ```
 
-### ExecuteNonQuery for DML Operations
+### ExecuteNonQuery for DML operations
 
 ```csharp
 // INSERT
@@ -396,7 +397,7 @@ rowsAffected = await deleteCommand.ExecuteNonQueryAsync();
 Console.WriteLine($"Deleted {rowsAffected} row(s)");
 ```
 
-### Working with Large Result Sets
+### Working with large result sets
 
 ```csharp
 using var command = connection.CreateCommand();
@@ -518,7 +519,7 @@ The driver maps Spark SQL data types to .NET types:
 | MAP&lt;K,V&gt; | `Dictionary<K,V>` or `string` (JSON) | Object |
 | STRUCT | `object` or `string` (JSON) | Object |
 
-### Working with Complex Types
+### Working with complex types
 
 Complex types (ARRAY, MAP, STRUCT) are returned as JSON strings by default:
 
@@ -566,27 +567,27 @@ The following sections describe common problems and their solutions:
 **Problem**: Authentication fails with Azure CLI
 
 **Solutions**:
-1. Run `az login` to refresh credentials
-2. Verify correct tenant: `az account set --subscription <subscription-id>`
-3. Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
+- Run `az login` to refresh credentials
+- Verify correct tenant: `az account set --subscription <subscription-id>`
+- Check token validity: `az account get-access-token --resource https://api.fabric.microsoft.com`
 
 #### Query timeouts
 
 **Problem**: Queries timing out on large tables
 
 **Solutions**:
-1. Increase statement timeout: `LivyStatementTimeoutSeconds=300`
-2. Use `LIMIT` clause to restrict result size during development
-3. Ensure Spark cluster has adequate resources
+- Increase statement timeout: `LivyStatementTimeoutSeconds=300`
+- Use `LIMIT` clause to restrict result size during development
+- Ensure Spark cluster has adequate resources
 
 #### Session creation timeout
 
 **Problem**: Connection times out during session creation
 
 **Solutions**:
-1. Increase session timeout: `LivySessionTimeoutSeconds=120`
-2. Check Fabric capacity availability
-3. Verify workspace hasn't reached session limits
+- Increase session timeout: `LivySessionTimeoutSeconds=120`
+- Check Fabric capacity availability
+- Verify workspace hasn't reached session limits
 
 ### Enable logging
 

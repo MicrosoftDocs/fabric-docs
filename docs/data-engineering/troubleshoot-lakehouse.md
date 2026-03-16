@@ -29,7 +29,7 @@ Use this reference table to quickly identify common Microsoft Fabric Lakehouse e
 | Lakehouse Data Copy Operation failed | [Lakehouse Operation and Data Copy Errors](#lakehouse-operation-and-data-copy-errors) |
 | Internal server error / Job execution fails with 500 | [Internal Server and Processing Errors](#internal-server-and-processing-errors) |
 | An error occurred while processing your request | [Materialized Lake Views Errors](#materialized-lake-views-errors) |
-| Power BI Entity Not Found / Not Autorized at Lakehouse Refresh | [Power BI Integration Errors](#power-bi-integration-errors) |
+| Power BI Entity Not Found / Not Authorized at Lakehouse Refresh | [Power BI Integration Errors](#power-bi-integration-errors) |
 
 ## Delta Table Schema Errors
 

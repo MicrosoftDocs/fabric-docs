@@ -61,7 +61,7 @@ You can now start experimenting with the newest improvements and functionalities
 > [!NOTE]
 > The WASB protocol for General Purpose v2 (GPv2) Azure Storage accounts is deprecated. You should use the latest ABFS protocol instead for reading from and writing to GPv2 storage accounts.
 
-## Public Preview
+## Public preview
 
 The Fabric Runtime 2.0 public preview stage gives you access to new features and APIs from both Spark 4.0 and Delta Lake 4.0. The preview lets you use the latest Spark and Delta-based enhancements right away as well as ensuring a smooth readiness and transition for enhanced and improved changes like the newer Java, Scala, and Python versions.  
 
