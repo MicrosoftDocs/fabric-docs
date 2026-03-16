@@ -61,6 +61,22 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../../media/ai-functions/classify-example-output.png":::
 
+## Multimodal input
+
+The `ai.classify` function supports file-based multimodal input. You can classify images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+results = custom_df.ai.classify(
+    labels=["Master", "PhD", "Bachelor", "Other"],
+    input_col="file_path",
+    input_col_type="path",
+    output_col="highest_degree",
+)
+display(results)
+```
+
 ## Related content
 
 - Use [ai.classify with pandas](../pandas/classify.md).
@@ -74,5 +90,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
