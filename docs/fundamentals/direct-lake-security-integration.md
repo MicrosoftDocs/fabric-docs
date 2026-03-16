@@ -180,9 +180,9 @@ The following table compares data-access setup options for Direct Lake on SQL en
 | --- | --- | --- | --- |
 | Semantic model only | Supported | Supported | Use this option when users aren't granted item permissions to query the lakehouse or warehouse. Set up the cloud connection to use a fixed identity. High query performance can be achieved from the in-memory cache. |
 | SQL analytics endpoint only | Supported (falls back to DirectQuery) | Not applicable | Depends on the Fabric data item (like Lakehouse or Warehouse) using [delegated identity mode](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint). Use this option when users need to access data from either the warehouse or the semantic model, and with consistent data-access rules. Ensure SSO is enabled for the cloud connection. Query performance might be slow due to DirectQuery fallback. |
-| OneLake Security only | Not applicable | Supported | Use this option for unified access control across all Fabric compute engines. OneLake Security enforces OLS and RLS consistently for all users accessing the data through any path. High query performance can be achieved from the in-memory cache. |
+| OneLake security only | Not applicable | Supported | Use this option for unified access control across all Fabric compute engines. OneLake security enforces OLS and RLS consistently for all users accessing the data through any path. High query performance can be achieved from the in-memory cache. |
 | Multiple layers (semantic model and SQL endpoint) | Supported | Not applicable | This option involves extra management overhead. Set up the cloud connection to use a fixed identity. |
-| Multiple layers (semantic model and OneLake Security) | Not applicable | Supported | OneLake Security rules are applied first, then semantic model rules. Consider consolidating rules at one layer to reduce complexity. |
+| Multiple layers (semantic model and OneLake security) | Not applicable | Supported | OneLake security rules are applied first, then semantic model rules. Consider consolidating rules at one layer to reduce complexity. |
 
 ## Considerations and limitations
 
