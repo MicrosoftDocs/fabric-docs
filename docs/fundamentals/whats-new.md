@@ -3,7 +3,7 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/12/2026
+ms.date: 03/18/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 # What's new in Microsoft Fabric?
 
-This page is continuously updated with a recent review of what's new in [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md).
+This article is continuously updated with a recent review of what's new in [Microsoft Fabric](../fundamentals/microsoft-fabric-overview.md).
 
 - To follow the latest in Fabric news and features, see the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
 - For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
@@ -101,6 +101,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**Microsoft JDBC Driver (Preview)** |The [Microsoft JDBC driver for Fabric Data Engineering (Preview)](https://blog.fabric.microsoft.com/blog/microsoft-jdbc-driver-for-microsoft-fabric-data-engineering-preview) lets Java apps and BI tools connect to Spark SQL in Fabric using enterprise authentication, pooling, and Livy-based connectivity. For more information, see [Microsoft JDBC driver for Fabric Data Engineering](../data-engineering/spark-jdbc-driver.md). |
 |**Microsoft ODBC Driver (Preview)**|The [Microsoft ODBC Driver for Fabric Data Engineering (Preview)](https://blog.fabric.microsoft.com/blog/microsoft-odbc-driver-for-microsoft-fabric-data-engineering-preview) enables .NET, Python, and other ODBC-compatible applications and BI tools to connect to Spark SQL in Fabric through Livy APIs with Microsoft Entra ID authentication, session reuse, and async prefetch. For more information, see [Microsoft ODBC driver for Fabric Data Engineering](../data-engineering/spark-odbc-driver.md).|
 |**Migration Assistant to SQL database (preview)**|The new Migration Assistant for SQL databases simplifies moving SQL Server on-premises workloads into Fabric. Designed for SQL developers, it imports schema via DACPACs, identifies compatibility issues, and provides clear, actionable guidance before migration. For more information, see [Fabric Migration Assistant for SQL database (Preview)](../database/sql/migrate-with-migration-assistant.md) and [Introducing the Migration Assistant to SQL database in Fabric (preview)](https://aka.ms/fabricsqldbmigrationassistant).|
+|**Mirroring for Azure Database for MySQL (Preview)**|[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Azure Database for MySQL data with the rest of your data in Fabric. For more information, see [Mirroring Azure Database for MySQL](../mirroring/azure-database-mysql.md).|
 |**Mirroring from SAP databases (Preview)**|You can continuously replicate your SAP data directly into Fabric's OneLake. Once in Fabric, you can take advantage of powerful capabilities for business intelligence, AI, data engineering, data science, and data sharing. For more information, see [Mirroring SAP (preview)](/fabric/mirroring/sap)|
 | **Mirroring for Google BigQuery (Preview)** | [Mirroring in Fabric](../mirroring/overview.md) offers a simple way to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Google BigQuery warehouse data with the rest of your data in Fabric. For more information, see [Mirrored databases from Google BigQuery](../mirroring/google-bigquery.md) and [Tutorial: Set up mirroring for Google BigQuery](../mirroring/google-bigquery-tutorial.md). |
 |**Modern evaluator for Dataflow Gen2 (Preview)**| The Modern Query Evaluation Engine (also known as the "Modern Evaluator") provides a new query execution engine running on .NET core version 8, which can significantly improve the performance of dataflow runs in some scenarios. For more information, see [the Modern evaluator for Dataflow Gen2](../data-factory/dataflow-gen2-modern-evaluator.md).|
@@ -437,6 +438,7 @@ This section summarizes recent improvements and features for [Mirroring in Micro
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|March 2026|**Mirroring for Azure Database for MySQL (Preview)**|[Mirroring in Fabric](../mirroring/overview.md) provides an easy experience to avoid complex ETL (Extract, Transform, Load) processes and seamlessly integrate your existing Azure Database for MySQL data with the rest of your data in Fabric. For more information, see [Mirroring Azure Database for MySQL](../mirroring/azure-database-mysql.md).|
 |February 2026|**Mirroring Azure Databricks catalogs from Azure Databricks workspaces behind private endpoints (Generally Available)**|[Mirroring Azure Databricks catalogs](https://blog.fabric.microsoft.com/blog/mirroring-azure-databricks-catalogs-from-azure-databricks-workspaces-behind-private-endpoints-generally-available?ft=All) from Azure Databricks workspaces behind private endpoints uses the Virtual Network data gateway to establish secure private connectivity, enabling Unity Catalog metadata and data to mirror into Fabric while maintaining network isolation. For more information, see [Mirroring Azure Databricks Unity Catalog](../mirroring/azure-databricks.md) and [Mirroring from workspaces accessible only through private endpoints](../mirroring/azure-databricks-private-endpoint.md).|
 |January 2026|**OneLake security for Mirrored Databases (Preview)**|[OneLake security for Mirrored Databases (Preview)](https://blog.fabric.microsoft.com/blog/manage-onelake-security-for-mirrored-databases-preview?ft=All) enables you to define OneLake data access roles on all Mirrored item types, granting table-level or folder-level access to replicated data with security enforced consistently at the OneLake layer and respected by shortcuts. For more information, see [Get started with OneLake security](../onelake/security/get-started-onelake-security.md).|
 | December 2025 | **Staging for Mirroring for Google BigQuery (Preview)** | [Staging for BigQuery mirroring (Preview)](https://blog.fabric.microsoft.com/blog/announcing-staging-for-mirroring-for-google-bigquery-in-microsoft-fabricmirroring-for-gbq-staging-blog) accelerates initial replication by loading data through a staging layer before applying CDC, improving speed and reliability for large datasets. For more information, see [Mirrored databases from Google BigQuery](../mirroring/google-bigquery.md) and [Tutorial: Set up mirroring for Google BigQuery](../mirroring/google-bigquery-tutorial.md). |

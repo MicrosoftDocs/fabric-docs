@@ -66,7 +66,6 @@ items:
         href: azure-sql-managed-instance-troubleshoot.md
       - name: Automatic reseed
         href: azure-sql-managed-instance-automatic-reseed.md
-
 - name: Mirroring Azure Cosmos DB
   items: 
     - name: Mirrored databases from Azure Cosmos DB
@@ -154,6 +153,21 @@ items:
     - name: Troubleshoot
       displayName: Troubleshoot mirrored PostgreSQL
       href: azure-database-postgresql-troubleshoot.md
+- name: Mirroring MySQL
+  items: 
+    - name: Mirrored databases from MySQL
+      href: azure-database-mysql.md
+    - name: MySQL tutorial
+      href: azure-database-mysql-tutorial.md
+    - name: FAQ
+      displayName: Frequently asked questions about mirrored MySQL
+      href: azure-database-mysql-mirroring-faq.yml
+    - name: Limitations
+      displayName: Limitations in mirrored MySQL
+      href: azure-database-mysql-limitations.md
+    - name: Troubleshoot
+      displayName: Troubleshoot mirrored MySQL
+      href: azure-database-mysql-troubleshoot.md
 - name: Mirroring SAP
   items:
     - name: Mirrored databases from SAP
