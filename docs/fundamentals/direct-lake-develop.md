@@ -30,7 +30,7 @@ The following table shows the most common creation methods for each type of Dire
 | Creation from **Power BI Desktop**. | Yes | No |
 | Creation from the **SQL analytics endpoint** page. For example, open the SQL analytics endpoint for a lakehouse, then select **New semantic model**. | Yes | Yes |
 
-Creation methods that support both Direct Lake types provide the option shown in the following image.
+When you create a Direct Lake semantic model from the SQL analytics endpoint, you can choose between the two Direct Lake types, as shown in the following image:
 
 :::image type="content" source="media/direct-lake-develop/creation-sql-analytics-endpoint-page.png" alt-text="Screenshot showing the Direct Lake type selection dialog when creating a semantic model from the SQL analytics endpoint page.":::
 
