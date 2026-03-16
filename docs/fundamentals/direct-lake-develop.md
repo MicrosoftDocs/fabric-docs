@@ -28,7 +28,7 @@ The following table shows the most common creation methods for each type of Dire
 |---|---|---|
 | Creation from the **Power BI service**. For example, select **Create** from the left navigation bar, then select **OneLake catalog**. | Yes | No |
 | Creation from **Power BI Desktop**. | Yes | No |
-| Creation from the **SQL analytics endpoint** page. For example, the SQL analytics endpoint for a lakehouse and click the **New semantic model** button. | Yes | Yes |
+| Creation from the **SQL analytics endpoint** page. For example, open the SQL analytics endpoint for a lakehouse, then select **New semantic model**. | Yes | Yes |
 
 Creation methods that support both Direct Lake types provide the option shown in the following image.
 
