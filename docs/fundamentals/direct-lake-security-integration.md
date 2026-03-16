@@ -161,7 +161,7 @@ You can set up data-access rules in:
 
 ### Rules in the semantic model
 
-If you must enforce data-access rules, you should do so in OneLake Security so that the rules apply across all compute engines and ensures unified access control for users. Use semantic model RLS/OLS when report consumers aren't granted permission to query the lakehouse or warehouse and the cloud connection uses a fixed identity instead of SSO. SSO would imply that end users can access the data source directly and might therefore bypass security rules in the semantic model.
+If you must enforce data-access rules, you should do so in OneLake security so that the rules apply across all compute engines and ensure unified access control for users. Use semantic model RLS or OLS when report consumers aren't granted permission to query the lakehouse or warehouse and the cloud connection uses a fixed identity instead of SSO. SSO implies that end users can access the data source directly and might therefore bypass security rules in the semantic model.
 
 > [!IMPORTANT]
 > Semantic model item permissions can be [set explicitly](/power-bi/connect-data/service-datasets-manage-access-permissions) via [Power BI apps](/power-bi/consumer/end-user-apps), or [acquired implicitly](/power-bi/connect-data/service-datasets-permissions#permissions-acquired-implicitly-via-workspace-role) via workspace roles.
