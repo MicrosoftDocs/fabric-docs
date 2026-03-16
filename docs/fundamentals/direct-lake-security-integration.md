@@ -146,7 +146,7 @@ The following steps approximate how Direct Lake on SQL queries are evaluated (an
     1. If the cloud connection uses SSO (default), RLS is determined by the access level of the report consumer.
     1. If the cloud connection uses a fixed identity, RLS is determined by the access level of the fixed identity.
 1. If the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), it falls back to DirectQuery mode.
-1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](../fundamentals/direct-lake-overview.md#column-loading-transcoding) as and when it's required.
+1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](../fundamentals/direct-lake-overview.md#column-loading-transcoding) when required.
 
 > [!IMPORTANT]
 > Direct Lake on OneLake does not support fallback to DirectQuery mode. If any table in the SQL analytics endpoint enforces RLS or the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), an error result is returned (report visuals fail to render).
