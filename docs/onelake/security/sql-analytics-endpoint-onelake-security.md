@@ -179,6 +179,18 @@ The access mode determines how data access is authenticated and enforced when qu
 
 * The item owner must have valid OneLake access, or all queries may fail.
 
+## Troubleshooting
+
+In **User's identity mode** the security sync results can be validated through the UX. Open the SQL Analytics endpoint, expand the **Security** folder in the **Explorer**, then select **DB Roles (custom)**. If the sync is successfully, you will see roles listed with an "ols_" prefix. For example, "ols_TestRole". Role names with "ols_{alphanumericString}_rolename" are roles from other lakehouses that propagated across a shortcut.
+
+### Fixes for common security sync errors
+
+* Security sync will fail if any of the roles reference a table that has been dropped. Delete those tables from the roles, and then re-try security sync.
+
+* SPNs cannot be the owners of the lakehouse. Ensure the parent lakehouse item is owned by a user account.
+
+* All OneLake security role members need to be given Fabric **Read** permission to the lakehouse for security sync to recognize the user or group.
+
 ## Limitations
 
 * **Applies only to readers**: OneLake security governs users accessing data as *Viewers*. Users in other workspace roles (Admin, Member, or Contributor) bypass OneLake security and retain full access.
@@ -227,8 +239,6 @@ The access mode determines how data access is authenticated and enforced when qu
 * **Table renames do not preserve security policies**: If OneLake security (OLS) roles are defined on Schema level, those roles remain in effect only as long as the table name is unchanged. Renaming the table breaks the association, and security policies won't be migrated automatically. This can result in unintended data exposure until policies are reapplied.
 
 * OneLake security roles can't have names longer than 124 characters; otherwise, security sync can't synchronize the roles.
- 
-* OneLake security roles are propagated on the SQL analytics endpoint with the OLS_ prefix.
 
 * User changes on the OLS_ roles are not supported, and can cause unexpected behaviors.
  
@@ -236,7 +246,7 @@ The access mode determines how data access is authenticated and enforced when qu
   
 * The owner of the lakehouse must be a member of the admin, member, or contributor workspace roles; otherwise, security isn't applied to the SQL analytics endpoint.
 
-* The owner of the lakehouse cannot be a service principal for security sync to work. 
+* The owner of the lakehouse cannot be a service principal for security sync to work.
 
 ## Related content
 
