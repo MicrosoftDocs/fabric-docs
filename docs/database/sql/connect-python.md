@@ -15,7 +15,7 @@ In this quickstart, you use [`Streamlit`](https://streamlit.io/) to quickly crea
 
 The `mssql-python` driver doesn't require any external dependencies on Windows machines. The driver installs everything that it needs with a single `pip` install, allowing you to use the latest version of the driver for new scripts without breaking other scripts that you don't have time to upgrade and test.
 
-[mssql-python documentation](https://github.com/microsoft/mssql-python/wiki) | [mssql-python source code](https://github.com/microsoft/mssql-python/wiki) | [Package (PyPi)](https://pypi.org/project/mssql-python/) | [UV](https://docs.astral.sh/uv/)
+[mssql-python documentation](https://github.com/microsoft/mssql-python/wiki) | [mssql-python source code](https://github.com/microsoft/mssql-python) | [Package (PyPI)](https://pypi.org/project/mssql-python/) | [UV](https://docs.astral.sh/uv/)
 
 ## Prerequisites
 
@@ -119,7 +119,7 @@ code .
 
 1. Update the description to be more descriptive.
 
-   ```python
+   ```toml
    description = "A quick example of rapid prototyping using the mssql-python driver and Streamlit."
    ```
 
@@ -169,7 +169,7 @@ code .
 
       event = st.dataframe(
           df,
-          width='stretch',
+          use_container_width=True,
           hide_index=True,
           on_select="rerun",
           selection_mode="single-row"
