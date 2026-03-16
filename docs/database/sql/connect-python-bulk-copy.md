@@ -222,7 +222,7 @@ code .
        return dt.upper()
 
 
-   def _arrow_type(sql_type: str, max_length: int, precision: int, scale: int) -> pa.DataType:
+   def _arrow_type(sql_type: str, precision: int, scale: int) -> pa.DataType:
        sql_type = sql_type.lower()
        if sql_type in _SQL_TO_ARROW:
            return _SQL_TO_ARROW[sql_type]
@@ -265,7 +265,7 @@ code .
            raise ValueError(f"No columns found for {schema_name}.{table_name}")
        fields = []
        for col_name, data_type, max_len, precision, scale, nullable in rows:
-           arrow_t = _arrow_type(data_type, max_len, precision, scale)
+           arrow_t = _arrow_type(data_type, precision, scale)
            sql_t = _sql_type_str(data_type, max_len, precision, scale)
            fields.append(
                pa.field(
