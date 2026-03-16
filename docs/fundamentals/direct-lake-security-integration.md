@@ -172,7 +172,7 @@ If you must enforce data-access rules, you should do so in OneLake security so t
 
 Data-access rules can be enforced at all layers. However, this approach involves extra complexity and management overhead. In this case, it's recommended that the cloud connection uses a fixed identity instead of SSO.
 
-### Comparison of data-access rule options
+### Compare data-access rule options
 
 The following table compares data-access setup options for Direct Lake on SQL endpoints and Direct Lake on OneLake.
 
