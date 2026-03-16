@@ -83,7 +83,6 @@ items:
       href: sql/tutorial-create-application.md
     - name: 9. Clean up resources
       href: sql/tutorial-clean-up.md
-
   - name: Data recovery
     items:
     - name: Backups
@@ -134,6 +133,11 @@ items:
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md
+  - name: Migrate
+    items:
+    - name: Migrate from SQL Server
+      href: sql/migrate-with-migration-assistant.md
+      displayName: Migration
   - name: Mirroring to OneLake
     items:
     - name: Mirroring to OneLake Overview
