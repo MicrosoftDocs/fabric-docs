@@ -15,7 +15,7 @@ In this quickstart, you use the `mssql-python` driver to bulk copy data between 
 
 The `mssql-python` driver doesn't require any external dependencies on Windows machines. The driver installs everything that it needs with a single `pip` install, allowing you to use the latest version of the driver for new scripts without breaking other scripts that you don't have time to upgrade and test.
 
-[mssql-python documentation](https://github.com/microsoft/mssql-python/wiki) | [mssql-python source code](https://github.com/microsoft/mssql-python/wiki) | [Package (PyPi)](https://pypi.org/project/mssql-python/) | [UV](https://docs.astral.sh/uv/)
+[mssql-python documentation](https://github.com/microsoft/mssql-python/wiki) | [mssql-python source code](https://github.com/microsoft/mssql-python) | [Package (PyPI)](https://pypi.org/project/mssql-python/) | [UV](https://docs.astral.sh/uv/)
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ The `mssql-python` driver doesn't require any external dependencies on Windows m
 
   - [Python extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
-- [Azure Command-Line Interface (CLI)](/cli/azure/install-azure-cli) - Recommended for macOS and Linux authentication.
+- [Azure Command-Line Interface (CLI)](/cli/azure/install-azure-cli) - Required for passwordless authentication on macOS and Linux.
 
 - If you don't already have `uv`, install `uv` by following the instructions from [https://docs.astral.sh/uv/getting-started/installation/](https://docs.astral.sh/uv/getting-started/installation/).
 - Install one-time operating system specific prerequisites.
@@ -121,7 +121,7 @@ code .
 
 1. Review the contents of the file. It should be similar to this example. Note the Python version and dependency for `mssql-python` uses `>=` to define a minimum version. If you prefer an exact version, change the `>=` before the version number to `==`. The resolved versions of each package are then stored in the [uv.lock](https://docs.astral.sh/uv/concepts/projects/layout/#the-lockfile). The lockfile ensures that developers working on the project are using consistent package versions. It also ensures that the exact same set of package versions is used when distributing your package to end users. You shouldn't edit the `uv.lock` file.
 
-   ```python
+   ```toml
    [project]
    name = "mssql-python-bcp-qs"
    version = "0.1.0"
@@ -137,7 +137,7 @@ code .
 
 1. Update the description to be more descriptive.
 
-   ```python
+   ```toml
    description = "Bulk copies data between SQL databases using mssql-python and Apache Arrow"
    ```
 
@@ -294,7 +294,7 @@ code .
        )
    ```
 
-1. Add the download function. `download_table` reads all rows from a source table, converts each value to an Arrow-compatible Python type, builds a columnar Arrow table, and writes it to a local Parquet file. The function uses two separate cursors: one to read column metadata, and another to stream the data. If the table is empty, it returns early.
+1. Add the download function. `download_table` reads rows from a source table in batches using `fetchmany`, converts each value to an Arrow-compatible Python type, and writes record batches incrementally to a Parquet file with `pq.ParquetWriter`. This approach avoids loading the entire table into memory. The function uses two separate cursors: one to read column metadata, and another to stream the data. If the table is empty, it returns early.
 
    ```python
    def download_table(conn, schema_name: str, table_name: str, parquet_file: str) -> int:
@@ -305,30 +305,38 @@ code .
        with conn.cursor() as cursor:
            schema = _get_arrow_schema(cursor, schema_name, table_name)
 
+       n_cols = len(schema)
+       row_count = 0
+       t0 = time.perf_counter()
+
        with conn.cursor() as cursor:
-           t0 = time.perf_counter()
            cursor.execute(f"SELECT * FROM {source}")
-           n_cols = len(schema)
-           columns = [[] for _ in range(n_cols)]
-           row_count = 0
-           for row in cursor.fetchall():
-               for i in range(n_cols):
-                   columns[i].append(_convert_value(row[i]))
-               row_count += 1
+           with pq.ParquetWriter(parquet_file, schema) as writer:
+               while True:
+                   rows = cursor.fetchmany(BATCH_SIZE)
+                   if not rows:
+                       break
+                   columns = [[] for _ in range(n_cols)]
+                   for row in rows:
+                       for i in range(n_cols):
+                           columns[i].append(_convert_value(row[i]))
+                   arrays = [
+                       pa.array(columns[i], type=schema.field(i).type)
+                       for i in range(n_cols)
+                   ]
+                   batch = pa.record_batch(arrays, schema=schema)
+                   writer.write_batch(batch)
+                   row_count += len(rows)
 
        if row_count == 0:
+           os.remove(parquet_file)
            return 0
 
-       arrays = [
-           pa.array(columns[i], type=schema.field(i).type)
-           for i in range(n_cols)
-       ]
-       pa_table = pa.table(dict(zip(schema.names, arrays)), schema=schema)
-       pq.write_table(pa_table, parquet_file)
        elapsed = time.perf_counter() - t0
+       rate = f"{int(row_count / elapsed):,} rows/sec" if elapsed > 0 else "n/a"
        print(
            f"{schema_name}.{table_name} → {parquet_file}: {row_count:,} rows downloaded "
-           f"in {elapsed:.2f}s ({int(row_count / elapsed):,} rows/sec)"
+           f"in {elapsed:.2f}s ({rate})"
        )
        return row_count
    ```
@@ -366,6 +374,7 @@ code .
                        table_lock=True, timeout=3600,
                    )
                    uploaded += batch.num_rows
+       conn.commit()
        elapsed = time.perf_counter() - t0
 
        # ── Verify ──
@@ -373,9 +382,10 @@ code .
            cursor.execute(f"SELECT COUNT(*) FROM {target}")
            count = cursor.fetchone()[0]
 
+       rate = f"{int(uploaded / elapsed):,} rows/sec" if elapsed > 0 else "n/a"
        print(
            f"{parquet_file} → {target}: {uploaded:,} rows uploaded "
-           f"in {elapsed:.2f}s ({int(uploaded / elapsed):,} rows/sec) "
+           f"in {elapsed:.2f}s ({rate}) "
            f"| verified: {count:,}"
        )
        return uploaded
@@ -420,12 +430,14 @@ code .
                    parquet_files.append((table_name, parquet_file))
 
        # ── Enrich parquet files ──
+       enriched_files = []
        for table_name, parquet_file in parquet_files:
-           enrich_parquet(parquet_file)
+           enriched_file = enrich_parquet(parquet_file)
+           enriched_files.append((table_name, enriched_file))
 
        # ── Upload to destination ──
        with mssql_python.connect(dest_conn_str) as dest_conn:
-           for table_name, parquet_file in parquet_files:
+           for table_name, parquet_file in enriched_files:
                target = f"{dest_schema}.[{table_name}]"
                upload_parquet(dest_conn, parquet_file, target)
    ```
@@ -516,7 +528,7 @@ code .
 
 The application performs a full round-trip data transfer in three phases:
 
-1. **Download**: Connects to the source database, reads column metadata from `INFORMATION_SCHEMA.COLUMNS`, builds an Apache Arrow schema, then downloads each table into a local Parquet file.
+1. **Download**: Connects to the source database, reads column metadata from `INFORMATION_SCHEMA.COLUMNS`, builds an Apache Arrow schema, then downloads each table in batches to a local Parquet file using `pq.ParquetWriter`.
 1. **Enrich** (optional): Provides a hook (`enrich_parquet`) where you can add transformations, derived columns, or joins before uploading.
 1. **Upload**: Reads each Parquet file in batches, recreates the table in the destination database using DDL generated from Arrow schema metadata, then uses `cursor.bulkcopy()` for high-performance bulk insert.
 

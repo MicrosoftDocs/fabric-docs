@@ -194,9 +194,9 @@ code .
           st.write(
               f"Displaying orders for Customer ID: {customer_id}")
           SQL_QUERY = """SELECT * FROM [SalesLT].[SalesOrderHeader] soh WHERE soh.CustomerID = ?;"""
-          st.dataframe(load_data(SQL_QUERY, (customer_id,)), hide_index=True, width='stretch')
+          st.dataframe(load_data(SQL_QUERY, (customer_id,)), hide_index=True, use_container_width=True)
           SQL_QUERY = """SELECT sod.* FROM [SalesLT].[SalesOrderHeader] soh INNER JOIN SalesLT.SalesOrderDetail sod on soh.SalesOrderId = sod.SalesOrderId WHERE CustomerID = ?;"""
-          st.dataframe(load_data(SQL_QUERY, (customer_id,)), hide_index=True, width='stretch')
+          st.dataframe(load_data(SQL_QUERY, (customer_id,)), hide_index=True, use_container_width=True)
    ```
 
 1. Between the imports and `def page_load() -> None:`, add this code.
