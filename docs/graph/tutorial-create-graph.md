@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Create a Graph Model in Microsoft Fabric"
+title: "Tutorial: Create a graph model in Microsoft Fabric"
 description: Learn how to create a new graph model in Microsoft Fabric, including loading data from OneLake and configuring graph properties.
 ms.topic: tutorial
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Create a graph
 ---
