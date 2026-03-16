@@ -27,8 +27,8 @@ This architecture demonstrates two complementary patterns:
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-    > [!TIP]
-    > When naming your database, avoid using spaces or special characters, to ensure that the notebooks and code samples work without modification.
+> [!TIP]
+> When naming your database, avoid using spaces or special characters, to ensure that the notebooks and code samples work without modification.
 
 - A Fabric workspace that you can use to create a lakehouse, notebooks, a pipeline, and a User data functions item.
 
