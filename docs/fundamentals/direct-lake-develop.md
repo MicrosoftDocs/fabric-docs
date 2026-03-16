@@ -36,7 +36,7 @@ When you create a Direct Lake semantic model from the SQL analytics endpoint, yo
 
 This dialog defaults to Direct Lake on OneLake if the SQL analytics endpoint is in user identity mode, or Direct Lake on SQL if the SQL analytics endpoint is in delegated mode. For more information, see [Access modes in SQL analytics endpoint](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint).
 
-Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. For more information, see [Model write support with the XMLA endpoint](#model-write-support-with-the-xmla-endpoint) later in this article. Fabric notebooks can also programmatically create and edit semantic models with semantic link and semantic link labs.
+Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. Fabric notebooks can also programmatically create and edit semantic models with semantic link and semantic link labs.
 
 ## Power Query connectors
 
