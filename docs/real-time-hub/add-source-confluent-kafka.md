@@ -10,10 +10,7 @@ ms.date: 01/14/2026
 
 This article describes how to add Confluent Cloud Kafka as an event source in Fabric Real-Time hub.
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- A Confluent Cloud Kafka cluster and an API Key.
+[!INCLUDE [confluent-source-description-prerequisites](../real-time-intelligence/event-streams/includes/confluent-source-description-prerequisites.md)]
 
 ## Data sources page
 

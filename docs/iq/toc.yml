@@ -39,6 +39,8 @@ items:
       href: ontology/how-to-create-relationship-types.md
     - name: Use preview experience
       href: ontology/how-to-use-preview-experience.md
+    - name: Add rules
+      href: ontology/how-to-use-rules.md
   - name: Resources
     items:
     - name: Troubleshooting
@@ -53,9 +55,77 @@ items:
       href: /rest/api/fabric/ontology/items
     - name: CI/CD in Fabric
       href: ../cicd/cicd-overview.md
-- name: Graph in Microsoft Fabric
+- name: Plan
+  items:
+  - name: What is plan?
+    href: plan/overview.md
+  - name: Planning sheets
+    items:
+    - name: Planning sheets overview
+      href: plan/planning-overview.md
+    - name: How-tos
+      items:
+        - name: Get started with planning sheets
+          href: plan/planning-how-to-get-started.md
+        - name: Build forecasts
+          href: plan/planning-how-to-build-forecasts.md
+        - name: Input data
+          href: plan/planning-how-to-input-data.md
+        - name: Set up scenarios
+          href: plan/planning-how-to-set-up-scenarios.md
+        - name: Write back data
+          href: plan/planning-how-to-write-back-data.md
+  - name: PowerTable sheets
+    items:
+    - name: PowerTable sheets overview
+      href: plan/powertable-overview.md
+    - name: How-tos
+      items:
+        - name: Create a table app
+          href: plan/powertable-how-to-create-table-app.md
+        - name: Connect to semantic model
+          href: plan/powertable-how-to-connect-semantic-model.md
+        - name: Set up access control
+          href: plan/powertable-how-to-set-up-access-control.md  
+        - name: Generate forms
+          href: plan/powertable-how-to-generate-forms.md  
+        - name: Configure approval workflow
+          href: plan/powertable-how-to-configure-approval-workflow.md
+        - name: Review changes in approval workflow
+          href: plan/powertable-how-to-review-approval-workflow.md      
+  - name: Intelligence sheets
+    items:
+    - name: Intelligence sheets overview
+      href: plan/intelligence-overview.md
+    - name: How-tos
+      items:
+        - name: Get started with Intelligence sheets
+          href: plan/intelligence-how-to-get-started.md
+        - name: Build financial reports
+          href: plan/intelligence-how-to-build-financial-reports.md
+        - name: Comment and collaborate
+          href: plan/intelligence-how-to-comment-collaborate.md
+        - name: Create paginated reports
+          href: plan/intelligence-how-to-create-paginated-reports.md
+        - name: Export data and visuals
+          href: plan/intelligence-how-to-export-data-visuals.md
+        - name: Visualize planning data
+          href: plan/intelligence-how-to-visualize-planning-data.md
+        - name: Plan projects with Gantt charts
+          href: plan/intelligence-how-to-create-gantt-chart.md
+  - name: Infobridge
+    items:
+    - name: Infobridge overview
+      href: plan/infobridge-overview.md
+    - name: How-tos
+      items:
+        - name: Share measures
+          href: plan/infobridge-how-to-share-measures.md
+        - name: Write back data
+          href: plan/infobridge-how-to-write-back-data.md
+- name: Graph
   href: ../graph/toc.yml
-- name: Fabric data agent
+- name: Data agent
   href: ../data-science/data-agent-toc/toc.yml
 - name: Operations agent
   href: ../real-time-intelligence/operations-agent-tocs/toc.yml
