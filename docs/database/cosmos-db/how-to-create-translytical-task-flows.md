@@ -31,7 +31,7 @@ A translytical task flow uses three components:
 
 - Install [Power BI Desktop](https://powerbi.microsoft.com/desktop/) with the [required preview features enabled](/power-bi/create-reports/translytical-task-flow-overview).
 
-- Note the name of the Cosmos DB database you created. You use this value in later step(s).
+- Note the name of the Cosmos DB database you created. You use this value in later steps.
 
 - A Cosmos DB container that contains sample data. For instructions, see [load the sample data container](./quickstart-portal.md#load-sample-data).
 
