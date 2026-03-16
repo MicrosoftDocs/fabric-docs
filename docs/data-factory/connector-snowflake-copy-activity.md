@@ -116,7 +116,7 @@ The following properties are **required**:
 
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges. 
 
-- **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually. If the destination table doesn't exist, it is automatically created based on the source data. For more details about the mapping for auto-created tables, go to [Edit destination data types](#edit-destination-data-types) and [Default data type mapping for Snowflake auto-created table](#default-data-type-mapping-for-snowflake-auto-created-table).
+- **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually. If the destination table doesn't exist, it is automatically created based on the source data. Automatic table creation is supported in version 1.1 or above. For more details about the mapping for auto-created tables, go to [Edit destination data types](#edit-destination-data-types) and [Default data type mapping for Snowflake auto-created table](#default-data-type-mapping-for-snowflake-auto-created-table).
 
 - **Version**: Specify the version. Recommend upgrading to the latest version to take advantage of the newest enhancements. To learn the difference between various versions, go to this [section](#differences-between-snowflake-versions).
 
@@ -265,6 +265,7 @@ The table below shows the feature differences between various versions.
 | Version 1.1 | Version 1.0 |
 |-------------|-------------|
 | Support **Write behavior**. | **Write behavior** is not supported. |
+| Support automatic table creation when the destination table doesn't exist. | Automatic table creation is not supported. |
 
 ## Table summary
 
