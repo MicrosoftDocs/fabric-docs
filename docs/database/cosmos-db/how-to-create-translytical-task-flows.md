@@ -4,7 +4,7 @@ description: How to build translytical task flows with Cosmos DB in Microsoft Fa
 ai-usage: ai-assisted
 ms.reviewer: mjbrown
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 03/16/2026
 ---
 
 # How to build translytical task flows with Cosmos DB in Microsoft Fabric
@@ -37,19 +37,7 @@ A translytical task flow uses three components:
 
 ## Retrieve Cosmos DB endpoint
 
-Get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect the user data function to Cosmos DB.
-
-1. Open the Fabric portal (<https://app.fabric.microsoft.com>).
-
-1. Navigate to your existing Cosmos DB database.
-
-1. Select the **Settings** option in the menu bar for the database.
-
-    :::image type="content" source="media/how-to-authenticate/settings-option.png" lightbox="media/how-to-authenticate/settings-option.png" alt-text="Screenshot of the 'Settings' menu bar option for a database in the Fabric portal.":::
-
-1. In the settings dialog, navigate to the **Connection** section. Then, copy the value of the **Endpoint for Cosmos DB NoSQL database** field. You use this value in later steps.
-
-    :::image type="content" source="media/how-to-authenticate/settings-connection-endpoint.png" lightbox="media/how-to-authenticate/settings-connection-endpoint.png" alt-text="Screenshot of the 'Connection' section of the 'Settings' dialog for a database in the Fabric portal.":::
+[!INCLUDE[Retrieve Cosmos DB endpoint](includes/retrieve-cosmos-db-endpoint.md)]
 
 ## Create and publish a User Data Function
 
@@ -122,13 +110,7 @@ Create a User Data Function that updates the current price of a product in the C
 
 1. Replace `YOUR_DATABASE_NAME_HERE` with the name of your Cosmos DB database.
 
-1. On the top menu bar, select **Library Management** > **+ Add from PyPI**. Search for and select the `azure-cosmos` library, then select the latest version.
-
-   :::image type="content" source="./media/how-to-user-data-functions/add-cosmos-library.png" alt-text="Screenshot showing how to add azure-cosmos library." lightbox="./media/how-to-user-data-functions/add-cosmos-library.png":::
-
-1. Close the library management pane once the library is added, and on the top menu bar, select **Publish**.
-
-    :::image type="content" source="media/how-to-create-translytical-task-flows/publish-user-data-function.png" lightbox="media/how-to-create-translytical-task-flows/publish-user-data-function.png" alt-text="Screenshot of the Publish button on the top menu bar.":::
+[!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
 
 1. Hover over the function name in the left pane after publishing completes, and select the **Test** icon.
 
