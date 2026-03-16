@@ -207,7 +207,7 @@ Create a Fabric data pipeline that runs the notebooks in sequence and then calls
 
 Your final pipeline should have the three notebook activities connected in sequence, followed by the Functions activity, all connected with the **On success** output.
 
-    :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/final-pipeline.png" alt-text="Screenshot of the final pipeline with three notebook activities connected in sequence followed by a Functions activity." lightbox="media/how-to-build-reverse-etl-data-pipeline/final-pipeline.png":::
+:::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/final-pipeline.png" alt-text="Screenshot of the final pipeline with three notebook activities connected in sequence followed by a Functions activity." lightbox="media/how-to-build-reverse-etl-data-pipeline/final-pipeline.png":::
 
 ## Run the pipeline and validate the results
 
