@@ -1,15 +1,15 @@
 ---
-title: Data pipelines with Reverse ETL for Cosmos DB in Microsoft Fabric
-description: How to build a medallion data pipeline with Cosmos DB in Microsoft Fabric, then write gold-layer insights back to Cosmos DB.
+title: Build a Reverse ETL data pipeline for Cosmos DB in Microsoft Fabric
+description: Build a medallion data pipeline with Cosmos DB in Microsoft Fabric that writes Gold-layer insights back to Cosmos DB and stores pipeline metadata in the same database.
 ai-usage: ai-assisted
 ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 03/16/2026
 ---
 
-# Data pipelines with Reverse ETL for Cosmos DB in Microsoft Fabric
+# Build a Reverse ETL data pipeline for Cosmos DB in Microsoft Fabric
 
-You can use Cosmos DB in Microsoft Fabric to build a medallion architecture data pipeline with Reverse ETL that writes insights back to Cosmos DB for low-latency operational serving. This article provides step-by-step instructions to build this architecture while also demonstrating how the same database can be used to store pipeline metadata such as data quality checks, dataset profiles by using User data functions.
+You can use Cosmos DB in Microsoft Fabric to build a medallion architecture data pipeline that uses Reverse ETL to write insights back to Cosmos DB for low-latency operational serving. This article also shows how to use the same database to store pipeline metadata, such as data quality checks and dataset profiles, by using User data functions.
 
 A Cosmos DB database in Microsoft Fabric maintains a mirrored copy of the operational data in OneLake. This mirrored copy of data can be accessed from a lakehouse shortcut, which provides the Bronze layer of the pipeline. The Silver and Gold layers are implemented in Fabric notebooks that read from the lakehouse shortcut, perform transformations with Spark, and write outputs to new lakehouse tables. The Gold to operational serving layer uses the Azure Cosmos DB Spark connector to write insights back to Cosmos DB.
 

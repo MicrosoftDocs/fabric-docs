@@ -32,7 +32,7 @@ items:
         href: how-to-user-data-functions.md
       - name: Translytical task flows
         href: how-to-create-translytical-task-flows.md
-      - name: Data pipelines with Reverse ETL
+      - name: Reverse ETL data pipeline
         href: how-to-build-reverse-etl-data-pipeline.md
   - name: Samples
     items:
