@@ -1,7 +1,7 @@
 ---
 title: "Bulk copy data between SQL databases in Fabric with the Microsoft Python Driver for SQL Server"
 description: This quickstart describes bulk copying data between SQL databases in Fabric using mssql-python and Apache Arrow (Parquet).
-ms.reviewer: antho, drskwier
+ms.reviewer: antho, drskwier, dlevy
 ms.date: 03/14/2026
 ms.topic: quickstart-sdk
 ms.custom:
