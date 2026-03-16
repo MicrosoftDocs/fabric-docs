@@ -312,6 +312,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path_from_root": "/docs/database/sql/migrate.md",
+      "redirect_url": "/fabric/database/sql/migrate-with-migration-assistant",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/database/cosmos-db/customer-managed-keys.md",
       "redirect_url": "/fabric/database/cosmos-db",
       "redirect_document_id": false
