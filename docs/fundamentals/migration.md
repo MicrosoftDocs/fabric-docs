@@ -3,7 +3,7 @@ title: Microsoft Fabric Migration Overview
 description: Overview of migration options for moving data and workloads to Fabric from various sources.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/15/2026
+ms.date: 03/16/2026
 ms.topic: overview
 ms.custom:
 - migration
@@ -81,12 +81,6 @@ Microsoft Fabric provides a unified analytics platform. By migrating your data a
 | Article | Description |
 |:--|:--|
 | **[Migrate from Dataflow Gen1 to Dataflow Gen2](../data-factory/dataflow-gen2-migrate-from-dataflow-gen1.md)**|Learn how to migrate from Power BI dataflows, now known as *Dataflow Gen1*, to Dataflow Gen2 in [Data Factory](../data-factory/data-factory-overview.md) for Microsoft Fabric. |
-
-## Migrate from Power BI datamarts
-
-| Article | Description |
-|:--|:--|
-| **[Upgrade a Power BI Datamart to a Warehouse](../data-warehouse/datamart-upgrade-to-warehouse.md)** | Migrate an existing Power BI datamart to Fabric Data Warehouse. Power BI datamarts are replaced by Fabric Data Warehouse.|
 
 ## Migrate from Spark
 
