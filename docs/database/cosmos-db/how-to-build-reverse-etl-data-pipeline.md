@@ -1,19 +1,17 @@
 ---
-title: Data pipelines with reverse ETL for Cosmos DB in Microsoft Fabric
-description: How to build a simple medallion data pipeline with Cosmos DB in Microsoft Fabric, then write gold-layer insights back to Cosmos DB.
+title: Data pipelines with Reverse ETL for Cosmos DB in Microsoft Fabric
+description: How to build a medallion data pipeline with Cosmos DB in Microsoft Fabric, then write gold-layer insights back to Cosmos DB.
 ai-usage: ai-assisted
 ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 03/16/2026
 ---
 
-Use Cosmos DB in Microsoft Fabric alongside Lakehouse, notebooks, data pipelines, and User data functions to build a simple medallion pipeline architecture that reads operational data, transforms it into analytics-ready tables, and writes enriched insights back to Cosmos DB.
+# Data pipelines with Reverse ETL for Cosmos DB in Microsoft Fabric
 
-A Cosmos DB database in Microsoft Fabric maintain a mirrored copy of the operational data in OneLake. This mirrored copy of data can be accessed from a lakehouse shortcut, which provides the Bronze layer of the pipeline.
+You can use Cosmos DB in Microsoft Fabric to build a medallion architecture data pipeline with Reverse ETL that writes insights back to Cosmos DB for low-latency operational serving. This article provides step-by-step instructions to build this architecture while also demonstrating how the same database can be used to store pipeline metadata such as data quality checks, dataset profiles by using User data functions.
 
-The Silver and Gold layers are implemented in Fabric notebooks that read from the lakehouse shortcut, perform transformations with Spark, and write outputs to new lakehouse tables.
-
-The Gold to operational serving layer uses the Azure Cosmos DB Spark connector to write insights back to Cosmos DB.
+A Cosmos DB database in Microsoft Fabric maintains a mirrored copy of the operational data in OneLake. This mirrored copy of data can be accessed from a lakehouse shortcut, which provides the Bronze layer of the pipeline. The Silver and Gold layers are implemented in Fabric notebooks that read from the lakehouse shortcut, perform transformations with Spark, and write outputs to new lakehouse tables. The Gold to operational serving layer uses the Azure Cosmos DB Spark connector to write insights back to Cosmos DB.
 
 The pipeline is orchestrated with a Fabric data pipeline that runs the notebooks in sequence and then calls a User data function to log a summary of the pipeline run back to Cosmos DB.
 
@@ -56,8 +54,8 @@ This architecture demonstrates two complementary patterns:
 
 Prepare the containers used by the pipeline.
 
-1. If you haven't already done so, load the built-in sample data into the database so that the `SampleData` container is available. For instructions, see [load the sample data container](quickstart-portal.md#load-sample-data).
-§
+1. If the built-in sample data isn't loaded, load it into the database. For instructions, see [load the sample data container](quickstart-portal.md#load-sample-data).
+
 1. Select **+ New container** on the left sidebar pane to create a new container.
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/new-container-option.png" lightbox="media/how-to-build-reverse-etl-data-pipeline/new-container-option.png" alt-text="Screenshot of the 'New container' option in the left sidebar pane of the Cosmos DB database view in the Fabric portal.":::
@@ -131,7 +129,7 @@ Next, import the sample notebooks and attach each one to the lakehouse before co
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/import-notebook.png" alt-text="Screenshot showing how to import a notebook from your computer." lightbox="media/how-to-build-reverse-etl-data-pipeline/import-notebook.png":::
 
-1. Select **Upload**, on the pane that opens on the right and select the notebooks you downloaded earlier:
+1. Select **Upload**, on the pane that opens and select the notebooks you downloaded earlier:
 
     - `02_bronze_to_silver.ipynb`
     - `03_silver_to_gold.ipynb`
@@ -140,13 +138,15 @@ Next, import the sample notebooks and attach each one to the lakehouse before co
 > [!TIP]
 > To upload multiple notebooks at once, hold down the Ctrl key (Cmd key on Mac) while selecting the files.
 
-1. Open the `02_bronze_to_silver` notebook from the workspace items and on the left explorer pane, select **Add data items** > **From Onelake catalog**.
+1. Open the `02_bronze_to_silver` notebook from the workspace items and on the left explorer pane.
+
+1. Select **Add data items** > **From OneLake catalog**.
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/add-data-items.png" alt-text="Screenshot showing how to add data items from the OneLake catalog to a notebook." lightbox="media/how-to-build-reverse-etl-data-pipeline/add-data-items.png":::
 
 1. Select the `ProductCatalog_LH` lakehouse you created earlier, and select **Add** to attach the lakehouse to the notebook.
 
-1. Repeat these steps to attach the `ProductCatalog_LH` lakehouse to the other two notebooks as well.
+1. Repeat these steps for the other two notebooks, and attach the `ProductCatalog_LH` lakehouse to each one.
 
 1. After attaching the lakehouse to all three notebooks, open `04_gold_to_cosmos.ipynb`and scroll down to the **Spark Session Configuration** section.
 
@@ -178,7 +178,7 @@ Create a Fabric data pipeline that runs the notebooks in sequence and then calls
 
 1. Add another parameter by selecting **+ New** again, and set the Name to `pipeline_name`, Type `String`, and Value to `@pipeline().Pipeline` to pass the pipeline name to the notebook.
 
-    :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/notebook-activity-settings.png" alt-text="Screenshot of the Settings tab for a notebook activity with the run_id base parameter configured." lightbox="media/how-to-build-reverse-etl-data-pipeline/notebook-activity-settings.png":::
+    :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/notebook-activity-settings.png" alt-text="Screenshot of the Settings tab for a notebook activity where the run_id base parameter is configured." lightbox="media/how-to-build-reverse-etl-data-pipeline/notebook-activity-settings.png":::
 
 1. Repeat these steps for the other two notebook activities, setting the Notebook field to `03_silver_to_gold` and `04_gold_to_cosmos` respectively, and adding the same `run_id` and `pipeline_name` base parameters to each one.
 
@@ -198,12 +198,12 @@ Create a Fabric data pipeline that runs the notebooks in sequence and then calls
     - **User data functions**: Select the `PipelineMetadata` item from the dropdown
     - **Function**: Select the `summarize_pipeline_run` function from the dropdown
 
-1. In the **Parameters** section, there is a parameter named `run_id` that is required by the function. Set the value of this parameter to `@pipeline().RunId` to pass the pipeline run identifier to the function.
+1. In the **Parameters** section, find the required `run_id` parameter and set its value to `@pipeline().RunId`.
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/functions-activity-settings.png" alt-text="Screenshot of the Settings tab for the Functions activity with the summarize_pipeline_run function configured and the run_id parameter set." lightbox="media/how-to-build-reverse-etl-data-pipeline/functions-activity-settings.png":::
 
 > [!TIP]
-> You can select each of the pipeline activities and in the **General** tab set the **Name** property to a more descriptive name such as `bronze_to_silver`, `silver_to_gold`, `gold_to_cosmos`, and `summarize_run` for the each activity respectively.
+> You can select each of the pipeline activities and in the **General** tab set the **Name** property to a more descriptive name such as `bronze_to_silver`, `silver_to_gold`, `gold_to_cosmos`, and `summarize_run` for each activity respectively.
 
 Your final pipeline should have the three notebook activities connected in sequence, followed by the Functions activity, all connected with the **On success** output.
 
@@ -224,9 +224,9 @@ Run the pipeline and verify that the reverse ETL outputs and metadata documents 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/pipeline-output.png" alt-text="Screenshot of the Output tab where you can monitor the pipeline run." lightbox="media/how-to-build-reverse-etl-data-pipeline/pipeline-output.png":::
 
 > [!TIP]
-> The pipeline run may take several minutes to complete, and after 5 minutes the output tab may stop automatically refreshing. If the automatic refresh stops, you can manually refresh the output by selecting the refresh icon next to the **Pipeline run ID** in the Output tab.
+> The pipeline run could take several minutes to complete, and after 5 minutes the output tab may stop automatically refreshing. If the automatic refresh stops, you can manually refresh the output by selecting the refresh icon next to the **Pipeline run ID** in the Output tab.
 
-1. Confirm all pipeline activities run successfully. If any fail, review the error message, fix the issue, and re-run the pipeline. The final output should show all four activities as **Succeeded**.
+1. Confirm all pipeline activities run successfully. If any fail, review the error message, fix the issue, and rerun the pipeline. The final output should show all four activities as **Succeeded**.
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/succeeded-activities.png" alt-text="Screenshot of the pipeline output showing all activities with a status of Succeeded." lightbox="media/how-to-build-reverse-etl-data-pipeline/succeeded-activities.png":::
 
@@ -248,7 +248,7 @@ Finally, review the outputs of the pipeline in the Lakehouse and Cosmos DB to co
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/refresh-containers.png" alt-text="Screenshot showing how to refresh the container list in the Cosmos DB database view." lightbox="media/how-to-build-reverse-etl-data-pipeline/refresh-containers.png":::
 
-1. Confirm that the following new containers were created by the pipeline: `category-dashboard` and `product-insights`.
+1. Verify that the following new containers are present and were created by the pipeline: `category-dashboard` and `product-insights`.
 
 1. Select **Items** in the **category-dashboard** container to view the documents created by Reverse ETL from the Gold layer.
 
