@@ -27,8 +27,8 @@ This architecture demonstrates two complementary patterns:
 
 [!INCLUDE[Prerequisites - Existing database](includes/prerequisite-existing-database.md)]
 
-> [!TIP]
-> When naming your database, avoid using spaces or special characters, to ensure that the notebooks and code samples work without modification.
+    > [!TIP]
+    > When naming your database, avoid using spaces or special characters, to ensure that the notebooks and code samples work without modification.
 
 - A Fabric workspace that you can use to create a lakehouse, notebooks, a pipeline, and a User data functions item.
 
@@ -135,8 +135,8 @@ Next, import the sample notebooks and attach each one to the lakehouse before co
     - `03_silver_to_gold.ipynb`
     - `04_gold_to_cosmos.ipynb`
 
-> [!TIP]
-> To upload multiple notebooks at once, hold down the Ctrl key (Cmd key on Mac) while selecting the files.
+    > [!TIP]
+    > To upload multiple notebooks at once, hold down the Ctrl key (Cmd key on Mac) while selecting the files.
 
 1. Open the `02_bronze_to_silver` notebook from the workspace items and on the left explorer pane.
 
@@ -223,8 +223,8 @@ Run the pipeline and verify that the reverse ETL outputs and metadata documents 
 
     :::image type="content" source="media/how-to-build-reverse-etl-data-pipeline/pipeline-output.png" alt-text="Screenshot of the Output tab where you can monitor the pipeline run." lightbox="media/how-to-build-reverse-etl-data-pipeline/pipeline-output.png":::
 
-> [!TIP]
-> The pipeline run could take several minutes to complete, and after 5 minutes the output tab may stop automatically refreshing. If the automatic refresh stops, you can manually refresh the output by selecting the refresh icon next to the **Pipeline run ID** in the Output tab.
+    > [!TIP]
+    > The pipeline run could take several minutes to complete, and after 5 minutes the output tab may stop automatically refreshing. If the automatic refresh stops, you can manually refresh the output by selecting the refresh icon next to the **Pipeline run ID** in the Output tab.
 
 1. Confirm all pipeline activities run successfully. If any fail, review the error message, fix the issue, and rerun the pipeline. The final output should show all four activities as **Succeeded**.
 
@@ -254,13 +254,13 @@ Finally, review the outputs of the pipeline in the Lakehouse and Cosmos DB to co
 
 1. Repeat this step for the `product-insights` container to view those documents as well.
 
-> [!TIP]
-> The data written back to Cosmos DB by the pipeline can now be used to serve low-latency insights to operational applications or agents.
+    > [!TIP]
+    > The data written back to Cosmos DB by the pipeline can now be used to serve low-latency insights to operational applications or agents.
 
 1. Select the `pipeline-metadata` container and then select **Items** to view the metadata documents created by the User data function during pipeline execution.
 
-> [!TIP]
-> The metadata logged to Cosmos DB can be used for monitoring beyond what the built-in pipeline monitoring in Fabric provides.
+    > [!TIP]
+    > The metadata logged to Cosmos DB can be used for monitoring beyond what the built-in pipeline monitoring in Fabric provides.
 
 ## Related content
 
