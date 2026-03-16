@@ -24,6 +24,7 @@ Each connector has its own troubleshooting guide with specific issues, causes, a
 - [Azure Database for PostgreSQL](connector-troubleshoot-azure-database-for-postgresql.md)
 - [Azure Files](connector-troubleshoot-azure-files.md)
 - [Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server](connector-troubleshoot-synapse-sql.md)
+- [SQL database in Fabric](connector-troubleshoot-fabric-sql.md)
 - [Azure Table Storage](connector-troubleshoot-azure-table-storage.md)
 - [Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM](connector-troubleshoot-dynamics-dataverse.md)
 - [MongoDB](connector-troubleshoot-mongodb.md)
