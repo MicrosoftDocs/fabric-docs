@@ -3,7 +3,7 @@ title: PySpark Reference for Materialized Lake Views (Preview)
 description: Learn about the PySpark semantics for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
 ms.reviewer: abhishjain
-ms.date: 02/27/2026
+ms.date: 03/18/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -12,7 +12,7 @@ ms.date: 02/27/2026
 This article is for data engineers who need to create materialized lake views using PySpark instead of Spark SQL. Use PySpark when your transformations require complex logic, reusable functions, external Python libraries, or custom UDFs that are difficult to express in SQL.
 
 > [!NOTE]
-> PySpark-based materialized lake views are currently in preview and available only in the following Fabric regions: Canada East, France Central, Indonesia Central, Japan East, Japan West, Korea Central, North Central US, Poland Central, UAE North, UK South, and UK West.
+> PySpark-based materialized lake views are currently in preview.
 
 ## Create a materialized lake view
 
