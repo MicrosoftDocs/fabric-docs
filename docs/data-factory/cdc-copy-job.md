@@ -47,7 +47,7 @@ This method keeps only the latest version of each record. No historical data is 
 
 SCD Type 2 preserves historical data by creating new rows for changes while keeping previous versions of records. This approach typically uses additional columns such as `StartDate`, `EndDate`, and `IsCurrent` to track when each version of a record was valid.
 
-CDC in Copy job doesn't natively support SCD Type 2. To implement SCD Type 2 patterns in Microsoft Fabric, consider one of these approaches:
+CDC in Copy job doesn't provide built-in support for SCD Type 2. To implement SCD Type 2 patterns in Microsoft Fabric, consider one of these approaches:
 
 - **Dataflow Gen2**: Use the merge and append capabilities in Dataflow Gen2 to implement change detection logic and manage historical record versions. For a step-by-step tutorial, see [Implement slowly changing dimension type 2](slowly-changing-dimension-type-two.md).
 - **Data pipelines with Script activity**: Use a Script activity in a data pipeline to run T-SQL MERGE statements or stored procedures that apply SCD Type 2 logic to your destination tables.
