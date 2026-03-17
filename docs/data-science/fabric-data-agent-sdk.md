@@ -12,7 +12,7 @@ ms.collection: ce-skilling-ai-copilot
 > [!IMPORTANT]  
 > This feature is in [preview](../fundamentals/preview.md).
 
-# Fabric Data Agent Python SDK
+# Fabric Data Agent Python SDK (Preview)
 
 The Fabric Data Agent Python SDK library provides programmatic access to Fabric Data Agent artifacts. The SDK is designed for code-first users, and it simplifies the creation, management, and use of Fabric data agents within Microsoft Fabric notebooks. It offers a set of straightforward APIs to integrate and manage data sources, automate workflow operations, and interact with the Fabric Data Agent, based on the OpenAI Assistants API within Microsoft Fabric notebook.
 
