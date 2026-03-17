@@ -3,9 +3,10 @@ title: Change data capture (CDC) in Copy Job
 description: This article guides you through how to use CDC in copy job.
 ms.reviewer: yexu
 ms.topic: how-to
-ms.date: 05/15/2025
+ms.date: 03/17/2026
 ms.search.form: copy-job-tutorials
 ms.custom: copy-job
+ai-usage: ai-assisted
 ---
 
 # Change data capture (CDC) in Copy Job (Preview)
@@ -27,6 +28,39 @@ Change data capture (CDC) in Copy job is a powerful capability in Fabric Data Fa
 
 - CDC-based incremental copy: If your source database has CDC enabled, Copy job automatically captures and replicates inserts, updates, and deletes to the destination, applying the exact changes.
 - Watermark-based incremental copy: If CDC isn't enabled on your source database, Copy job detects changes by comparing an incremental column (e.g., timestamp or ID) against the last run, then appends or merges the changed data to the destination based on your configuration.
+
+## Update methods: SCD Type 1 (Merge) vs. SCD Type 2
+
+When using CDC in Copy job, it's important to understand how changes are applied to your destination. The update method you choose maps to slowly changing dimension (SCD) patterns commonly used in data warehousing.
+
+### SCD Type 1 (Merge)
+
+SCD Type 1, also known as the **Merge** update method, is the default behavior for CDC in Copy job. With this approach, the destination always reflects the **current state** of the source data:
+
+- **Inserts**: New rows from the source are added to the destination.
+- **Updates**: Changed rows in the source overwrite the corresponding rows in the destination.
+- **Deletes**: Deleted rows in the source are removed from the destination.
+
+This method keeps only the latest version of each record. No historical data is preserved. It's ideal when you need the destination to be an exact, up-to-date replica of the source.
+
+### SCD Type 2 (Historical tracking)
+
+SCD Type 2 preserves historical data by creating new rows for changes while keeping previous versions of records. This approach typically uses additional columns such as `StartDate`, `EndDate`, and `IsCurrent` to track when each version of a record was valid.
+
+CDC in Copy job doesn't natively support SCD Type 2. To implement SCD Type 2 patterns in Microsoft Fabric, consider one of these approaches:
+
+- **Dataflow Gen2**: Use the merge and append capabilities in Dataflow Gen2 to implement change detection logic and manage historical record versions. For a step-by-step tutorial, see [Implement slowly changing dimension type 2](slowly-changing-dimension-type-two.md).
+- **Data pipelines with Script activity**: Use a Script activity in a data pipeline to run T-SQL MERGE statements or stored procedures that apply SCD Type 2 logic to your destination tables.
+
+### Choosing between SCD Type 1 and SCD Type 2
+
+| Feature | SCD Type 1 (Merge) | SCD Type 2 |
+|---|---|---|
+| **Supported in CDC Copy job** | Yes | No (requires custom implementation) |
+| **Historical data** | Not preserved | Preserved with versioned rows |
+| **Destination state** | Always reflects current source | Contains all versions of records |
+| **Use case** | Operational reporting, real-time sync | Historical analysis, audit trails |
+| **Implementation effort** | Built-in, no extra configuration | Requires additional logic |
 
 ## Supported connectors
 
@@ -123,3 +157,5 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
 - [What is the Copy job in Data Factory](what-is-copy-job.md)
 - [How to monitor a Copy job](monitor-copy-job.md)
+- [Implement slowly changing dimension type 1](slowly-changing-dimension-type-one.md)
+- [Implement slowly changing dimension type 2](slowly-changing-dimension-type-two.md)
