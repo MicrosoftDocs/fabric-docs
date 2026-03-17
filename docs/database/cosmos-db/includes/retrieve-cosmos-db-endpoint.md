@@ -1,6 +1,10 @@
 ---
 ms.topic: include
 ms.date: 03/16/2026
+author: Jcardif
+ms.author: jndemenge
+ms.service: Microsoft Fabric
+ms.subservice: Cosmos DB
 ---
 
 Get the endpoint for the Cosmos DB database in Fabric. This endpoint is required to connect the user data function to Cosmos DB.

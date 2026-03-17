@@ -1,6 +1,10 @@
 ---
 ms.topic: include
 ms.date: 03/16/2026
+author: Jcardif
+ms.author: jndemenge
+ms.service: Microsoft Fabric
+ms.subservice: User Data Functions
 ---
 
 1. In the top menu bar, select **Library Management**, then choose **+ Add from PyPI**. Search for `azure-cosmos`, select it from the results, and pick the latest version.

@@ -5,6 +5,8 @@ ai-usage: ai-assisted
 ms.reviewer: mjbrown
 ms.topic: how-to
 ms.date: 03/16/2026
+author: Jcardif
+ms.author: jndemenge
 ---
 
 # How to build translytical task flows with Cosmos DB in Microsoft Fabric
@@ -110,7 +112,7 @@ Create a User Data Function that updates the current price of a product in the C
 
 1. Replace `YOUR_DATABASE_NAME_HERE` with the name of your Cosmos DB database.
 
-[!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
+1. [!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
 
 1. Hover over the function name in the left pane after publishing completes, and select the **Test** icon.
 
