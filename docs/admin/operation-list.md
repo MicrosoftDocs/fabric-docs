@@ -510,6 +510,7 @@ The following operations are available in the audit logs.
 | Requested Power BI semantic model refresh | :::no-loc text="RefreshDataset"::: |   |
 | Requested SAS token for Power BI storage | :::no-loc text="AcquireStorageSASFromExternalApplication"::: |   |
 | Requested account key for Power BI storage | :::no-loc text="AcquireStorageAccountKey"::: |   |
+| Reserve workload name | :::no-loc text="ExtensibilityNameReserved"::: | Reserves a workload name |
 | Restore container | :::no-loc text="RestoreContainer"::: | OneLake operation. |
 | Restore deleted workspace | :::no-loc text="RestoreWorkspaceViaAdminApi"::: | Restores the deleted workspace |
 | Restored Power BI workspace | :::no-loc text="RestoreWorkspace"::: |   |
