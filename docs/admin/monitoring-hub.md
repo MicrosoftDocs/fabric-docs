@@ -5,7 +5,7 @@ description: Gain visibility into Microsoft Fabric activities with the monitorin
 author: msmimart
 ms.author: mimart
 ms.topic: overview
-ms.date: 03/02/2026
+ms.date: 03/17/2026
 ---
 
 # Use the monitoring hub to track Fabric activity
