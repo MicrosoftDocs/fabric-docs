@@ -147,8 +147,6 @@ To edit recipients or remove failure notifications for an item:
 
 2. The **Notification details** pane opens on the right, showing the current recipients.
 
-   :::image type="content" source="media/monitoring-hub/monitoring-hub-schedule-failures-scheduler-pane.png" alt-text="Screenshot of the Notification details pane showing current recipients for a selected item." lightbox="media/monitoring-hub/monitoring-hub-schedule-failures-scheduler-pane.png":::
-
 3. To edit recipients, select **Edit recipients**, make your changes, and save.
 
 4. To stop receiving failure notifications for this item entirely, select **Remove notifications**.
