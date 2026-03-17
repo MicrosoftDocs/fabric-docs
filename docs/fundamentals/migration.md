@@ -98,7 +98,6 @@ Microsoft Fabric provides a unified analytics platform. By migrating your data a
 
 | Article | Description |
 |:--|:--|
-| **[Migrate with Migration Assistant](../database/sql/migrate-with-migration-assistant.md)** | Migrate from an on-premises SQL Server database to a SQL database in Fabric by using the Fabric Migration Assistant. |
 | **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | Migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime by using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
 
 ## Migration resources
