@@ -44,7 +44,7 @@ An easy way to tell if an existing Direct Lake semantic model is on OneLake or S
 
 Direct Lake on OneLake uses the [Azure Data Lake Storage](/power-query/connectors/data-lake-storage) connector.
 
-:::image type="content" source="media/direct-lake-develop/adlsgen2-connector.png" alt-text="Screenshot showing the Azure Data Lake Storage Gen2 connector in TMDL view for a Direct Lake on OneLake model.":::
+:::image type="content" source="media/direct-lake-develop/azure-storage-connector.png" alt-text="Screenshot showing the Azure Data Lake Storage Gen2 connector in TMDL view for a Direct Lake on OneLake model.":::
 
 Direct Lake on SQL uses the [SQL Server](/power-query/connectors/sql-server) connector, or the `OneLake.SqlAnalytics()` connector.
 
@@ -56,7 +56,7 @@ Direct Lake on OneLake enables creation of multi-source, composite models that c
 
 ## Model tables
 
-Model tables are normally based on the table in the source Fabric data item. Direct Lake on SQL also allows selection of a SQL view. Queries to a model table based on a SQL view [fall back to DirectQuery mode](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+Model tables are normally based on the table in the source Fabric data item. Direct Lake on SQL also allows selection of a SQL view. Queries to a model table based on a SQL view [fall back to DirectQuery mode](direct-lake-how-it-works.md#directquery-fallback), which might result in slower query performance.
 
 > [!NOTE]
 > With Direct Lake on OneLake, tables based on SQL views can be added using other storage modes like Import and/or DirectQuery because Direct Lake on OneLake supports composite models.
@@ -74,7 +74,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 - The `compatibilityLevel` property of the database object is 1604 (or higher).
 - The mode property of Direct Lake partitions is set to `directLake`.
 - Direct Lake partitions use shared expressions to define data sources.
-  - **Direct Lake on SQL** — The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-overview.md#directquery-fallback) mode for any reason).
+  - **Direct Lake on SQL** — The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-how-it-works.md#directquery-fallback) mode for any reason).
   - **Direct Lake on OneLake** — The expression points directly to the OneLake storage location of the Fabric data source. Direct Lake uses the OneLake APIs for schema discovery, security checks, and data loading. Direct Lake on OneLake doesn't fall back to DirectQuery mode.
 
 ## Post-publication tasks

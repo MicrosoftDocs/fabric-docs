@@ -53,7 +53,7 @@ The permission requirements differ between Direct Lake on SQL endpoints and Dire
 
 ### Direct Lake on SQL endpoints
 
-Direct Lake on SQL endpoints performs permission checks via the SQL analytics endpoint to determine whether the effective identity attempting to access the data has the necessary data access permissions. Notably, the effective identity doesn't need permission to read Delta tables directly in OneLake. It's enough to have *read* access to the Fabric artifact, such as a lakehouse, and SELECT permission on a table through its SQL analytics endpoint. That's because Fabric grants the necessary permissions to the semantic model to read the Delta tables and associated Parquet files (to [**load column data**](direct-lake-overview.md#column-loading-transcoding) into memory). The semantic model has permission to periodically read the SQL analytics endpoint to check what data the querying user (or fixed identity) can access.
+Direct Lake on SQL endpoints performs permission checks via the SQL analytics endpoint to determine whether the effective identity attempting to access the data has the necessary data access permissions. Notably, the effective identity doesn't need permission to read Delta tables directly in OneLake. It's enough to have *read* access to the Fabric artifact, such as a lakehouse, and SELECT permission on a table through its SQL analytics endpoint. That's because Fabric grants the necessary permissions to the semantic model to read the Delta tables and associated Parquet files (to [**load column data**](direct-lake-how-it-works.md#column-loading-transcoding) into memory). The semantic model has permission to periodically read the SQL analytics endpoint to check what data the querying user (or fixed identity) can access.
 
 ### Direct Lake on OneLake
 
@@ -146,7 +146,7 @@ The following steps approximate how Direct Lake on SQL queries are evaluated (an
     1. If the cloud connection uses SSO (default), RLS is determined by the access level of the report consumer.
     1. If the cloud connection uses a fixed identity, RLS is determined by the access level of the fixed identity.
 1. If the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), it falls back to DirectQuery mode.
-1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](../fundamentals/direct-lake-overview.md#column-loading-transcoding) when required.
+1. Otherwise, the query is satisfied from the in-memory cache. Column data is [loaded into memory](direct-lake-how-it-works.md#column-loading-transcoding) when required.
 
 > [!IMPORTANT]
 > Direct Lake on OneLake does not support fallback to DirectQuery mode. If any table in the SQL analytics endpoint enforces RLS or the query [exceeds the guardrails of the capacity](../fundamentals/direct-lake-overview.md#fabric-capacity-requirements), an error result is returned (report visuals fail to render).

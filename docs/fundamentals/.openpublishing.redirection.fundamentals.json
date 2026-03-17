@@ -168,7 +168,7 @@
     {
       "source_path_from_root": "/docs/get-started/directlake-create-lakehouse.md",
       "redirect_url": "/fabric/fundamentals/direct-lake-overview",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/get-started/direct-lake-manage.md",
