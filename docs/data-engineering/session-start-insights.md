@@ -11,15 +11,15 @@ ai-usage: ai-assisted
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Fast session startup is critical for interactive analytics. Fabric starter pools are designed to deliver Spark sessions in approximately 5 seconds by default. However, when that target isn't met, users have historically had little visibility into why.
+Fast session startup is critical for interactive analytics. Fabric starter pools are designed to deliver Spark sessions in approximately 5 seconds by default. However, when that target isn't met, you might have little visibility into why.
 
 Session start insights closes that gap by making session acquisition transparent, debuggable, and actionable.
 
 This article helps you understand:
 
-- Why sessions don't always start in 5 seconds.
-- What Session Start Insights surfaces in the product.
-- How to use the session details view to diagnose delays.
+- Why sessions don't always start in 5 seconds
+- What session start insights surfaces in the product
+- How to use the session details view to diagnose delays
 
 ## Why sessions don't always start in 5 seconds
 
