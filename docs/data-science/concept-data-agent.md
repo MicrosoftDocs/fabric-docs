@@ -16,8 +16,6 @@ Data agent in Microsoft Fabric is a new Microsoft Fabric feature that enables yo
 
 You can also add organization-specific instructions, examples, and guidance to fine-tune the Fabric data agent. This approach ensures that responses align with your organization's needs and goals, allowing everyone to engage with data more effectively. Fabric data agent fosters a culture of data-driven decision-making because it lowers barriers to insight accessibility, facilitates collaboration, and helps your organization extract more value from its data.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
-
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
 ## How the Fabric data agent works
