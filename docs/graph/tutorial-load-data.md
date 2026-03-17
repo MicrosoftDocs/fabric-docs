@@ -1,8 +1,8 @@
 ---
-title: "Tutorial: Load Sample Data for Fabric Graph"
-description: Learn how to load the Adventure Works sample data into a lakehouse for use with Fabric Graph, including uploading CSV files and verifying data.
+title: "Tutorial: Load Sample Data for graph in Microsoft Fabric"
+description: Learn how to load the Adventure Works sample data into a lakehouse for use with graph in Microsoft Fabric, including uploading CSV files and verifying data.
 ms.topic: tutorial
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Load sample data
 ---
@@ -17,7 +17,7 @@ The dataset contains tables in Parquet format. The tables represent various enti
 
 ## Download the sample data
 
-1. Go to the [Fabric Graph GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
+1. Go to the [graph in Microsoft Fabric GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
 1. Select the *adventureworks_docs_sample.zip* file and download it to your local machine.
 
     > [!TIP]
@@ -38,7 +38,7 @@ If you don't already have a lakehouse, create one to store the sample data:
 1. Enter a name for your lakehouse (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and then select **Create**.
 
     > [!IMPORTANT]
-    > Make sure you clear the lakehouse schema option. Fabric Graph doesn't currently support lakehouses that have [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
+    > Make sure you clear the lakehouse schema option. Graph doesn't currently support lakehouses that have [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
 
 For more detailed instructions, see [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
 
