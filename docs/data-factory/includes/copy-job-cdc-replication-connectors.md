@@ -6,7 +6,7 @@ ms.date: 03/17/2026
 ms.topic: include
 ---
 
-| Connector | Source | Destination | Read - CDC (Preview) | Write - CDC Merge | Write - CDC SCD Type 2 (Preview) |
+| Connector | Source | Destination | Read - CDC | Write - Merge | Write - SCD Type 2 |
 | --- | --- | --- | --- | --- | --- |
 | Azure SQL DB | <!--Copy Job (source)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (destination)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (CDC)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (SCD2)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: |
 | Azure SQL Managed Instance | <!--Copy Job (source)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (destination)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (CDC)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (SCD2)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: |
