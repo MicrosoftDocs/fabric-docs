@@ -1,6 +1,6 @@
 ---
 title: Data Types in Fabric Data Warehouse
-description: Learn about the T-SQL data types supported the SQL analytics endpoint and Warehouse in Microsoft Fabric.
+description: Learn about the T-SQL data types supported by the SQL analytics endpoint and Fabric Data Warehouse in Microsoft Fabric.
 ms.reviewer: jovanpop, procha
 ms.date: 03/13/2026
 ms.topic: concept-article
@@ -10,7 +10,7 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 
 **Applies to:** [!INCLUDE [fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Tables in [!INCLUDE [product-name](../includes/product-name.md)] support a subset of T‑SQL data types for persisted storage. This article describes the data types that are supported when creating tables that store data in a Warehouse. It does not describe all data types that can be used in T‑SQL queries, variables, parameters, or expressions.
+Tables in [!INCLUDE [product-name](../includes/product-name.md)] support a subset of T-SQL data types for persisted storage. This article describes the data types that are supported when creating tables that store data in a Warehouse. It does not describe all data types that can be used in T-SQL queries, variables, parameters, or expressions.
 
 - For more information on table creation, see [Tables](tables.md).
 - The supported data types of Warehouse are different from the [supported data types of SQL database in Fabric](../database/sql/limitations.md#column-level).
