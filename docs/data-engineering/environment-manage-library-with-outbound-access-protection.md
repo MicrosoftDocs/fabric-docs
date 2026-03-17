@@ -30,7 +30,7 @@ To get started, you need to prepare your libraries specification as`requirement.
 > - The Runtime setup file contains a few Microsoft hosted private libraries, which can't be recognized. Make sure to **remove them from the setup file**.
 > - **Libraries hosted by Microsoft**: 'library-metadata-cooker', 'mmlspark', 'azureml-synapse', 'notebookutils', 'flt-python', 'synapse-jupyter-notebook', 'synapse-jupyter-proxy', 'azure-synapse-ml-predict', 'fsspec_wrapper', 'horovod', 'sqlanalyticsconnectorpy', 'synapseml', 'control-script', 'impulse-python-handler', 'chat-magics', 'ds-copilot', 'fabric-connection', 'chat-magics-fabric', 'dscopilot-installer', 'sqlanalyticsfabricconnectorpy', 'geoanalytics-fabric', 'spark-mssql-connector-fabric35', 'flaml', 'semantic-link-sempy', 'synapseml-*', 'prose-pandas2pyspark', 'prose-suggestions', 'kqlmagiccustom'
 
-:::image type="content" source="media\environment-lm\outbound-access-protection-runtime-setup.png" alt-text="Screenshot that shows the example of Runtime setup file." lightbox="media\environment-lm\outbound-access-protection-runtime-setup.png":::
+:::image type="content" source="media\environment-library-management\outbound-access-protection-runtime-setup.png" alt-text="Screenshot that shows the example of Runtime setup file." lightbox="media\environment-library-management\outbound-access-protection-runtime-setup.png":::
 
 ### Step 2: Set up the Virtual Python Environment in your compute resource
 
@@ -122,7 +122,7 @@ bandersnatch --config <path-to-bandersnatch.conf> mirror
 
 After the commands are executed successfully, the sub folders in your mirror directory on local filesystem will be created.
 
-:::image type="content" source="media\environment-lm\outbound-access-protection-mirror.png" alt-text="Screenshot that shows the PyPI mirror created by bandersnatch." lightbox="media\environment-lm\outbound-access-protection-mirror.png":::
+:::image type="content" source="media\environment-library-management\outbound-access-protection-mirror.png" alt-text="Screenshot that shows the PyPI mirror created by bandersnatch." lightbox="media\environment-library-management\outbound-access-protection-mirror.png":::
 
 ### Step 3: Verify local mirror setup (optional)
 
@@ -140,7 +140,7 @@ pip install <package> -index-url http://localhost:8000/simple
 
 Enable Static Website on your Azure storage account. This step allows you to host static content like PyPI index page in this case. It also automatically generates a container named $web.
 
-:::image type="content" source="media\environment-lm\outbound-access-protection-storage-account.png" alt-text="Screenshot that shows the storage account example." lightbox="media\environment-lm\outbound-access-protection-storage-account.png":::
+:::image type="content" source="media\environment-library-management\outbound-access-protection-storage-account.png" alt-text="Screenshot that shows the storage account example." lightbox="media\environment-library-management\outbound-access-protection-storage-account.png":::
 
 And then, you can use either az CLI or azcopy of blobfuse2 to upload the local mirror from your devbox to your Azure storage account.\
 
@@ -151,7 +151,7 @@ And then, you can use either az CLI or azcopy of blobfuse2 to upload the local m
 
 In order to access the Azure Storage account, add two private managed endpoints in the Fabric workspace.
 
-:::image type="content" source="media\environment-lm\outbound-access-protection-private-endpoints.png" alt-text="Screenshot that shows the private endpoints example." lightbox="media\environment-lm\outbound-access-protection-private-endpoints.png":::
+:::image type="content" source="media\environment-library-management\outbound-access-protection-private-endpoints.png" alt-text="Screenshot that shows the private endpoints example." lightbox="media\environment-library-management\outbound-access-protection-private-endpoints.png":::
 
 And then, you can install the library from the Azure storage account by providing the YAML file in Environment or use inline %pip install in Notebook session.
 

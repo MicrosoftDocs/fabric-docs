@@ -23,7 +23,7 @@ The following scenarios describe best practices when using libraries in Microsof
 
 To set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
 
-1. [Create a new environment](create-and-use-environment.md#create-an-environment)
+1. [Create a new environment](create-and-use-environment.md#create-an-environment-from-a-workspace)
 2. [Install the required libraries in the environment](environment-manage-library.md)
 3. [Attach this environment as the workspace default](create-and-use-environment.md#attach-an-environment-as-a-workspace-default)
 
@@ -67,7 +67,7 @@ The system restarts the Python interpreter to apply the change of libraries. Any
 
 The inline commands for managing Python libraries are disabled in notebook pipeline run by default. If you want to enable `%pip install` for pipeline, add "_inlineInstallationEnabled" as bool parameter equals True in the notebook activity parameters.
 
-:::image type="content" source="media\environment-lm\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run." lightbox="media/environment-lm/library-management-enable-pip-in-pipeline.png":::
+:::image type="content" source="media\environment-library-management\library-management-enable-pip-in-pipeline.png" alt-text="Screenshot showing the the configuration of enabling pip install for notebook pipeline run." lightbox="media/environment-library-management/library-management-enable-pip-in-pipeline.png":::
 
 > [!NOTE]
 >
@@ -179,7 +179,7 @@ The *.jar* files are support at notebook sessions with following command.
 ```
 
 The code cell is using Lakehouse's storage as an example. At the notebook explorer, you can copy the full file ABFS path and replace in the code.
-:::image type="content" source="media\environment-lm\library-management-get-ABFS-path.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-lm\library-management-get-ABFS-path.png":::
+:::image type="content" source="media\environment-library-management\library-management-get-ABFS-path.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-library-management\library-management-get-ABFS-path.png":::
 
 ## Related content
 

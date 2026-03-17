@@ -3,7 +3,7 @@ title: Create, Configure, and Use an Environment in Fabric
 description: Learn how to create, configure, and use a Microsoft Fabric environment in your notebooks and Spark job definitions.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 03/31/2025
+ms.date: 03/20/2026
 ms.search.form: Create and use Environment
 ai-usage: ai-assisted
 ---
@@ -23,8 +23,6 @@ Use an environment item when you need reusable, governed defaults for teams:
 - Define Spark compute and libraries once, and apply them consistently across notebooks and Spark job definitions.
 - Set an environment as workspace default so users inherit shared configuration through **Workspace default**.
 - Version and operate environment settings as a single artifact.
-
-Existing workspace settings can remain effective for workloads that don't attach an environment item. However, if you want to standardize and keep evolving workspace-level libraries and Spark properties, migrate to an environment-backed default. For guidance, see [Migrate existing workspace libraries and Spark properties](environment-workspace-migration.md).
 
 ## Workspace-level environments
 
