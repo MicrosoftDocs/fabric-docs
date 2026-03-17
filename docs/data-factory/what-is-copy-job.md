@@ -90,7 +90,7 @@ This approach ensures that your destination remains clean, fully synchronized, a
 
 ### Run options (Run, Schedule, Event Trigger)
 
-You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still click **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
+You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still select **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
 
 With support for **multiple schedules** in copy job, you gain even greater control. A single copy job can have multiple schedules—for example, one running daily at 6 AM and another running weekly on Sundays. All schedules can be managed directly within the same copy job, making orchestration simpler, cleaner, and more efficient. 
 
@@ -99,9 +99,9 @@ If you use the copy job activity in a pipeline, you can also take advantage of t
 See more details for [copy job activity](/fabric/data-factory/copy-job-activity).
 
 
-### Hosting options (VNet, On-Premises, Cloud)
+### Hosting options (Virtual network, On-premises, Cloud)
 
-You can use Copy job to move data from any source to any destination, whether your data is on-premises, in the cloud, or within a virtual network. On the connection page of Copy job, you can choose from multiple host options, including an on-premises gateway or a VNet gateway, to securely access data behind a firewall or within a VNet. 
+You can use Copy job to move data from any source to any destination, whether your data is on-premises, in the cloud, or within a virtual network. On the connection page of Copy job, you can choose from multiple host options, including an on-premises gateway or a virtual network gateway, to securely access data behind a firewall or within a virtual network. 
 
 See more details to [Secure your data movement with Copy Job and Virtual Network Data Gateway](/fabric/data-factory/copy-job-with-virtual-network-data-gateway).
 
