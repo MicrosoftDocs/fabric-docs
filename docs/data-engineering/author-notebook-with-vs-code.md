@@ -117,5 +117,6 @@ By selecting the kernel **synapse-spark-kernel** shipped with this extension, yo
 
 ## Related content
 
+- [Develop Microsoft Fabric notebooks with the Fabric Notebook custom agent in Visual Studio Code](notebook-custom-agent-with-vs-code.md)
 - [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
 - [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)

@@ -109,6 +109,6 @@ The product team tested the data agent on various public and private benchmarks,
 ## Related content
 
 - [Privacy, security, and responsible use of Copilot for Data Factory (preview)](copilot-data-factory-privacy-security.md)
-- [Overview of Copilot for Data Science and Data Engineering (preview)](../data-engineering/copilot-notebooks-overview.md)
+- [Overview of Copilot for Data Engineering and Data Science (preview)](../data-engineering/copilot-notebooks-overview.md)
 - [Copilot for Data Factory overview](copilot-fabric-data-factory.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
