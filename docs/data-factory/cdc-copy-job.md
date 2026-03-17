@@ -73,6 +73,7 @@ SCD Type 2 is supported as a write method with the following destination connect
 > [!NOTE]
 > SCD Type 2 in Copy job is currently in preview.
 > When doing CDC replication from Snowflake or Oracle sources, SCD Type 2 is not supported yet.
+> If your destination database already has exisitng schema created by yourselves, SCD2 can not be supported.  
 
 ### Choosing between SCD Type 1 and SCD Type 2
 
