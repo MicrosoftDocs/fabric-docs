@@ -59,8 +59,8 @@ For example, if a customer moves from California to New York, both versions are 
 
 | CustomerKey | CustomerID | Name | State | Valid_From | Valid_To | Is_Current |
 |---|---|---|---|---|---|---|
-| 1001 | C-123 | Acme Corp | CA | 2023-01-15 | 2026-02-20 | No |
-| 1002 | C-123 | Acme Corp | NY | 2026-02-20 | NULL | Yes |
+| 1001 | C-123 | Company | CA | 2023-01-15 | 2026-02-20 | No |
+| 1002 | C-123 | Company | NY | 2026-02-20 | NULL | Yes |
 
 SCD Type 2 is supported as a write method with the following destination connectors:
 
@@ -73,7 +73,7 @@ SCD Type 2 is supported as a write method with the following destination connect
 > [!NOTE]
 > SCD Type 2 in Copy job is currently in preview.
 > When doing CDC replication from Snowflake or Oracle sources, SCD Type 2 is not supported yet.
-> If your destination database already has exisitng schema created by yourselves, SCD2 can not be supported.  
+> If your destination database already has exisitng schema created by yourselves, SCD2 cannot be supported.  
 
 ### Choosing between SCD Type 1 and SCD Type 2
 
@@ -111,7 +111,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
    Learn more in [Enable and Disable change data capture - SQL Server | Microsoft Learn](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 
-1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and click **Create**.
+1. Select **+ New Item**, choose the **Copy job** icon,  name your Copy job, and select **Create**.
 
    :::image type="content" source="media/copy-job/create-new-copy-job.png" alt-text="Screenshot showing where to navigate to the Data Factory home page and create a new Copy job.":::
 
@@ -119,7 +119,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
    :::image type="content" source="media/copy-job/choose-data-source.png" alt-text="Screenshot showing where to choose a data source for the Copy job.":::
 
-1. Enter your **server path** and **credentials** to connect to Azure SQL DB. You can copy data securely within a VNET environment using on-premises or VNET gateway. 
+1. Enter your **server path** and **credentials** to connect to Azure SQL DB. You can copy data securely within a virtual network environment using on-premises or virtual network gateway. 
 
    :::image type="content" source="media/copy-job/enter-credentials-data-source.png" alt-text="Screenshot showing where to enter credentials.":::
 
@@ -151,7 +151,7 @@ Complete the following steps to create a new Copy job to ingest data from Azure 
 
    :::image type="content" source="media/copy-job/copy-job-cdc-mode.png" alt-text="Screenshot showing where to select the CDC.":::
 
-1. Review the job summary, set the run option to on schedule, and click **Save + Run**.
+1. Review the job summary, set the run option to on schedule, and select **Save + Run**.
 
    :::image type="content" source="media/copy-job/cdc-review-save.png" alt-text="Screenshot showing where to review and save the newly created Copy job.":::
 
