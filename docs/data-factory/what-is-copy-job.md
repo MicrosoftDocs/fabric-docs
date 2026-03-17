@@ -59,16 +59,18 @@ You can reset incremental copy either per entire job or per table, giving you fi
 
 In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job will reset the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.
 
-### Update methods (Append, Overwrite, Merge) 
+### Update methods (Append, Overwrite, Merge, SCD Type 2) 
 
 You can also decide how data is written to your destination:
 
-By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column) or **overwrite** (replace existing data). If you select merge, Copy job uses the primary key by default, if one exists.
+By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column), **overwrite** (replace existing data), or **SCD Type 2** (preserve full change history with effective dating). If you select merge, Copy job uses the primary key by default, if one exists.
 
-- When copying to a database: New rows are added to your tables. For supported databases, you can also choose to merge or overwrite existing data.
+- When copying to a database: New rows are added to your tables. For supported databases, you can also choose to merge, overwrite, or use SCD Type 2 for existing data.
 - When copying to storage: New data is saved as new files. If a file with the same name already exists, it's replaced.
 
-When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination.
+When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination. When using SCD Type 2 with CDC replication, changes are preserved as versioned rows with effective dating, and deletes are handled as soft deletes.
+
+See more details for [SCD Type 2 in CDC Copy job](/fabric/data-factory/cdc-copy-job#scd-type-2-historical-tracking-preview).
 
 ### Automatic table creation and truncation on destination
 
