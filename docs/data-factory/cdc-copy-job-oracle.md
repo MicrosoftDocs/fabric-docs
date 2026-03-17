@@ -190,7 +190,7 @@ Complete the following steps to create a new Copy job to ingest data from Oracle
 
 1. Choose the data store to copy data from. In this example, choose **Oracle database**.
 
-1. Enter your **connection details** and **credentials** to connect to your Oracle database. You can copy data securely within a VNET environment using an on-premises data gateway.
+1. Enter your **connection details** and **credentials** to connect to your Oracle database. You can copy data securely within a virtual network environment using an on-premises data gateway.
 
 1. You should have clear visibility of which source tables have CDC enabled. Select the **tables with CDC enabled** to copy.
 
