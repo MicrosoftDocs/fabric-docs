@@ -1,8 +1,8 @@
 ---
 title: GQL Expressions, Predicates, and Functions
-description: Learn about GQL expressions, predicates, and built-in functions for data processing, filtering, and analysis in Fabric Graph queries.
+description: Learn about GQL expressions, predicates, and built-in functions for data processing, filtering, and analysis in graph in Microsoft Fabric queries.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -10,7 +10,7 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article provides a comprehensive reference for GQL expressions, predicates, and built-in functions available in Fabric Graph queries. Use this reference to understand how to perform calculations, filter results, and transform data in your graph queries.
+This article provides a comprehensive reference for GQL expressions, predicates, and built-in functions available in graph in Microsoft Fabric queries. Use this reference to understand how to perform calculations, filter results, and transform data in your graph queries.
 
 For an overview of the GQL query language and end-to-end query examples, see [GQL language guide](gql-language-guide.md). For information about supported data types and literal syntax, see [GQL values and value types](gql-values-and-value-types.md).
 
@@ -308,4 +308,4 @@ RETURN coalesce(p.firstName, 'Unknown') AS display_name
 - [GQL values and value types](gql-values-and-value-types.md)
 - [Optimize GQL query performance](gql-query-performance.md)
 - [Graph patterns](gql-graph-patterns.md)
-- [Try Fabric Graph for free](../fundamentals/fabric-trial.md)
+- [Try graph for free](../fundamentals/fabric-trial.md)
