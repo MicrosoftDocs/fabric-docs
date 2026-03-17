@@ -52,8 +52,6 @@ To review session startup details for a notebook:
 
 1. Review the **delay reason** and **session source** (starter pool vs. on-demand).
 
-   :::image type="content" source="media/session-start-insights/session-details-pane.png" alt-text="Screenshot of the Session Details pane showing session start details including delay reason and session source." lightbox="media/session-start-insights/session-details-pane.png":::
-
 This makes it immediately clear whether the delay was:
 
 - **Expected** due to configuration choices.

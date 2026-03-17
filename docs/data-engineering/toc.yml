@@ -287,7 +287,7 @@ items:
     - name: Native execution engine overview
       href: native-execution-engine-overview.md
     - name: Z-Order and liquid clustering support
-      href: native-execution-engine-zorder-liquid-clustering.md
+      href: native-execution-engine-z-order-liquid-clustering.md
   - name: Spark job definition (SJD)
     items:
     - name: What is a Spark job definition?
