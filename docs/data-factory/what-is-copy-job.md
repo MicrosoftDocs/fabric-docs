@@ -63,7 +63,7 @@ In some cases, when you edit a copy job — for example, updating the incrementa
 
 You can also decide how data is written to your destination:
 
-By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column), **overwrite** (replace existing data), or **SCD Type 2** (preserve full change history with effective dating). If you select merge, Copy job uses the primary key by default, if one exists.
+By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column), **overwrite** (replace existing data), or **SCD Type 2** (preserve change history with effective dating). If you select merge or SCD Type 2, Copy job uses the primary key by default, if one exists.
 
 - When copying to a database: New rows are added to your tables. For supported databases, you can also choose to merge, overwrite, or use SCD Type 2 for existing data.
 - When copying to storage: New data is saved as new files. If a file with the same name already exists, it's replaced.
