@@ -4,10 +4,9 @@ description: A comprehensive index of Microsoft Fabric tenant settings in the Fa
 author: msmimart
 ms.author: mimart
 ms.topic: reference
-ms.custom:
 ms.collection: ce-skilling-ai-copilot
 ms.update-cycle: 180-days
-ms.date: 01/30/2026
+ms.date: 03/02/2026
 ---
 
 <!--WARNING! DO NOT MANUALLY EDIT THIS DOCUMENT - MANUAL EDITS WILL BE LOST. This document is automatically generated weekly from the tenant settings of the PROD version of Microsoft Fabric. Manual edits will be overwritten with the tenant settings content as it appears to customers in the current PROD Fabric UI.-->
@@ -36,14 +35,13 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Users can create Maps (preview)|Users can build map items to analyze live geospatial data with interactive, real-time visualizations, helping uncover location-based insights.|
 |Enable Operations Agents (Preview)|Users can create operations agents, which use Azure OpenAI to create operations plans and recommend actions to users in your organization in response to real-time data. By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2338555).<br><br>Messages users send to operations agents will be processed through the Azure AI Bot Service, which processes data in the EU Data Boundary. Therefore, if your capacity's geographic boundary or national cloud boundary is outside the EU Data Boundary, data sent to operations agents can be processed outside your capacity's geographic boundary or national cloud boundary.<br><br>This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338555).|
 |All Power BI users can see "Set alert" button to create Fabric Activator alerts|When enabled, all Power BI users will see the "Set alert" button in reports. However, only users with permission to create Fabric items can actually set up Fabric Activator alerts, which send real-time notifications based on predefined data conditions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2331953)|
-|Enable Snowflake database item (preview)|Turn on this setting to allow users to create the Snowflake database item in Fabric, to serve as a default storage location for Iceberg tables written by Snowflake.  [Learn More](https://aka.ms/sdbfabricdoc)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
 | Setting name | Description |
 |------|-------|
 |[Publish "Get Help" information](service-admin-portal-help-support.md#publish-get-help-information)|Users in the organization can go to internal help and support resources from the Power BI help menu.|
-|[Receive email notifications for service outages or incidents](../admin/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents)|Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident.|
+|Receive email and Teams notifications for service outages or incidents|Mail-enabled security groups will receive email and Teams notifications if this tenant is impacted by a service outage or incident.|
 |[Users can try Microsoft Fabric paid features](service-admin-portal-help-support.md#users-can-try-microsoft-fabric-paid-features)|When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227896)|
 |[Show a custom message before publishing reports](service-admin-portal-help-support.md#show-a-custom-message-before-publishing-reports)|When people attempt to publish a report, they'll see a custom message before it gets published.|
 
@@ -134,7 +132,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |------|-------|
 |[Allow XMLA endpoints and Analyze in Excel with on-premises semantic models](/power-bi/collaborate-share/service-analyze-in-excel)|Users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to XMLA endpoints.|
 |[Semantic Model Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries)|Users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs.|
-|Users can use the Power BI Model Context Protocol server endpoint (preview)|When enabled, the Power BI Model Context Protocol (MCP) server endpoint allows users in the organization to connect MCP clients to Power BI to use MCP tools to interact with their permissioned Power BI artifacts. Github Copilot in Visual Studio will operate by default; configure other MCP clients with service principals.  To allow service principals to connect to the MCP Server, turn on "Service principals can call Fabric public APIs."  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338916)|
+|Users can use the Power BI Model Context Protocol server endpoint (preview)|When enabled, the Power BI Model Context Protocol (MCP) server endpoint allows users to connect MCP clients to Power BI to use MCP tools to interact with their permissioned Power BI artifacts. Github Copilot in Visual Studio will operate by default; configure other MCP clients with service principals.  To allow service principals to connect to the MCP Server, turn on "Service principals can call Fabric public APIs."  [Learn More](https://go.microsoft.com/fwlink/?linkid=2338916)|
 |[Use ArcGIS Maps for Power BI](/power-bi/visuals/power-bi-visualizations-arcgis)|Users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri.|
 |[Use global search for Power BI](/power-bi/consumer/end-user-search-sort)|Turn on this setting to let users use the global search bar at the top of the page.|
 |[Users can use the Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started)|With this setting on, users can create and view the Azure Maps visual. Your data may be temporarily stored and processed by Microsoft for essential services, including translating location names into latitudes and longitudes. Use of Azure Maps is subject to the following  [Terms of use](https://go.microsoft.com/fwlink/?linkid=2271924).|
@@ -309,7 +307,6 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Use short-lived user-delegated SAS tokens|OneLake SAS tokens enable applications to access data in OneLake through short-lived SAS tokens, based on a Microsoft Fabric user's Entra identity. These token's permissions can be further limited to provide least privileged access and cannot exceed a lifetime of one hour.   [Learn More](https://go.microsoft.com/fwlink/?linkid=2268260)|
 |Authenticate with OneLake user-delegated SAS tokens|Allow applications to authenticate using a OneLake SAS token. Fabric users can create OneLake SAS by requesting a user delegation key. The tenant setting, Use short-lived user delegated SAS tokens, must be turned on to generate user delegation keys. The lifetimes of the user delegation keys and SAS tokens cannot exceed one hour.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268260)|
 |[Users can sync data in OneLake with the OneLake File Explorer app](../onelake/onelake-file-explorer.md)|Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive. [Learn More](https://go.microsoft.com/fwlink/?linkid=2231052)|
-|[Enable Delta Lake to Apache Iceberg table format virtualization (preview)](../onelake/onelake-iceberg-tables.md)|Delta Lake tables will be virtually converted to have additional Iceberg table metadata. This allows different services/workloads to read your Delta Lake tables as Iceberg tables.<br><br>Note: This setting controls a feature that is currently in preview. This setting will be removed in a future update when the feature is no longer in preview.|
 |Include end-user identifiers in OneLake diagnostic logs|Control whether OneLake diagnostic logs capture end user identifiable information (EUII), such as email addresses and IP addresses. When enabled, these fields are recorded to support diagnostics, investigations, and usage analysis across your tenant. When disabled, these fields are redacted from new events.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2335502)|
 
 ## [Git integration](git-integration-admin-settings.md)

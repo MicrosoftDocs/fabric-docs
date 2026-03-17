@@ -80,51 +80,7 @@ items:
     - name: Custom configurations
       href: ./ai-functions/pyspark/configuration.md
 - name: Fabric data agent
-  items: 
-    - name: What is the Fabric data agent?
-      href: concept-data-agent.md
-    - name: Fabric data agent tenant settings
-      href: data-agent-tenant-settings.md      
-    - name: How to create a Fabric data agent
-      href: how-to-create-data-agent.md
-    - name: Fabric data agent SDK
-      href: fabric-data-agent-sdk.md
-    - name: Evaluate a Fabric data agent
-      href: evaluate-data-agent.md
-    - name: Configure your Fabric data agent
-      items:
-        - name: Data agent configurations
-          href: data-agent-configurations.md
-        - name: Semantic model best practices
-          href: semantic-model-best-practices.md
-        - name: Example queries
-          href: data-agent-example-queries.md
-        - name: Best practices for configuring data agents 
-          href: data-agent-configuration-best-practices.md
-        - name: How to configure a data agent
-          href: develop-iterative-process-data-agent.md
-        - name: Connect to an AI Foundry Search Index
-          href: data-agent-ai-search-index.md
-    - name: How to consume a Fabric data agent
-      items:
-        - name: Consume a data agent from Azure AI foundry (preview)
-          href: data-agent-foundry.md
-        - name: Consume a data agent from Copilot in Power BI (preview)
-          href: data-agent-copilot-powerbi.md
-        - name: Consume a data agent from Microsoft Copilot Studio (preview)
-          href: data-agent-microsoft-copilot-studio.md         
-        - name: Consume a data agent using Python SDK (preview)
-          href: consume-data-agent-python.md
-        - name: Consume a data agent from Microsoft 365 Copilot (preview)
-          href: data-agent-microsoft-365-copilot.md  
-        - name: Consume a data agent as Model Context Protocol Server (preview)
-          href: data-agent-mcp-server.md       
-    - name: Source Control, CI/CD, and ALM for Fabric data agent
-      href: data-agent-source-control.md 
-    - name: Fabric data agent end-to-end tutorial
-      href: data-agent-end-to-end-tutorial.md        
-    - name: Fabric data agent sharing
-      href: data-agent-sharing.md
+  href: data-agent-toc/toc.yml
 - name: Notebooks
   items:
   - name: Create and use notebooks
@@ -363,16 +319,20 @@ items:
     href: ../data-engineering/intelligent-cache.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: AI services
   items:
-  - name: Overview of AI services in Fabric
+  - name: Overview of Foundry Tools in Fabric
     href: ./ai-services/ai-services-overview.md
   - name: How-to guides
     items:
-    - name: Use prebuilt Azure openAI
+    - name: Use Fabric Azure OpenAI
       items:
+        - name: with AI Functions
+          href: ./ai-services/how-to-use-openai-ai-functions.md
+        - name: with OpenAI Python SDK
+          href: ./ai-services/how-to-use-openai-python-sdk.md
         - name: with REST API
           href: ./ai-services/how-to-use-openai-via-rest-api.md
-        - name: with SynapseML or OpenAI Python SDK
-          href: ./ai-services/how-to-use-openai-sdk-synapse.md
+        - name: with SynapseML
+          href: ./ai-services/how-to-use-openai-synapse-ml.md
     - name: Use prebuilt text analytics with REST API or SynapseML
       href: ./ai-services/how-to-use-text-analytics.md
     - name: Use prebuilt Azure AI translator with REST API or SynapseML 
@@ -441,7 +401,7 @@ items:
     items:
     - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: Azure AI services in SynapseML with bring your own key
+    - name: Foundry Tools in SynapseML with bring your own key
       href: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
   - name: Get started
     items:
@@ -455,7 +415,7 @@ items:
       href: open-ai.md
     - name: Use LightGBM with SynapseML
       href: how-to-use-lightgbm-with-synapseml.md
-    - name: Use Azure AI services with SynapseML
+    - name: Use Foundry Tools with SynapseML
       href: how-to-use-ai-services-with-synapseml.md
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
@@ -469,7 +429,7 @@ items:
       href: isolation-forest-multivariate-anomaly-detection.md 
     - name: Build a Search engine with SynapseML
       href: create-a-multilingual-search-engine-from-forms.md
-    - name: Use SynapseML and Azure AI services for multivariate anomaly detection
+    - name: Use SynapseML and Foundry Tools for multivariate anomaly detection
       href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md

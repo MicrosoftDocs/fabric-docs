@@ -2,11 +2,8 @@
 title: Real-Time Dashboard permissions
 description: Learn how to share Real-Time Dashboards without giving access to the underlying data source.
 ms.reviewer: yaschust
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.subservice: rti-dashboard
-ms.custom:
 ms.date: 05/15/2025
 ---
 # Real-Time Dashboard permissions

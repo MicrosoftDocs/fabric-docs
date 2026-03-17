@@ -1,9 +1,7 @@
 ---
 title: Add and Manage Eventstream Sources
 description: Learn how to add and manage an event source in an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 11/18/2024
@@ -36,4 +34,6 @@ Fabric eventstreams with enhanced capabilities support the following sources. Ea
 
 - [Create an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)
+
+
 

@@ -2,10 +2,7 @@
 title: Create roles 
 description: Learn how to create and manage roles with OneLake security (preview) to control access to items within OneLake.
 ms.reviewer: aamerril
-ms.author: kgremban
-author: kgremban
 ms.topic: how-to
-ms.custom:
 ms.date: 01/29/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---

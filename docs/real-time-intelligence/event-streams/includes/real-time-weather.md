@@ -1,10 +1,8 @@
 ---
 title: Add a real-time weather source to an eventstream
 description: Include file that provides the common content for configuring a real-time weather for Fabric event streams and real-time hub.
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: include
-ms.custom:
 ms.date: 12/11/2025
 ---
 

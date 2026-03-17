@@ -4,7 +4,6 @@ description: Learn how metadata scanning can help you govern your organizations 
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.custom:
 ms.date: 06/10/2025
 ---
 

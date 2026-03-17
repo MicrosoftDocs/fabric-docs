@@ -1,8 +1,6 @@
 ---
 title: Overview of Fabric Workload Authentication Guidelines 
 description: This article describes important concepts and guidelines when you're working with authentication in Microsoft Fabric workloads.
-author: KesemSharabi
-ms.author: kesharab
 ms.topic: best-practice
 ms.date: 11/03/2024
 #customer intent: As a developer, I want to understand what the best practices are for working with authentication to grant users the optimal experience.
@@ -152,3 +150,4 @@ The workload frontend can extract the error code from the URL and handle it acco
 
 > [!NOTE]
 > In both scenarios (error and success), the workload must always close the window immediately, with no latency.
+

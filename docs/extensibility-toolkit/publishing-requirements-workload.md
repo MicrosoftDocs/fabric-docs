@@ -1,10 +1,10 @@
 ---
 title: Fabric Extensibility toolkit validation guidelines and requirements for workloads
 description: Learn about the guidelines and requirements for publishing a Microsoft Fabric workload.
-author: gsaurer
-ms.author: billmath
-ms.topic: concept-article
-ms.date: 12/15/2025
+
+
+ms.topic: article
+ms.date: 02/24/2026
 ---
 
 # Microsoft Fabric Workload Publishing Requirements
@@ -31,7 +31,7 @@ Workload must clearly articulate its value proposition, benefits, and use cases 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 ---
@@ -43,10 +43,11 @@ Workload must provide a valid, accessible HTTPS link to terms of use in the mani
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Governance overview and guidance](../governance/governance-compliance-overview.md)
 - [Product Manifest](./manifest-product.md)
 
@@ -57,6 +58,7 @@ Workload must provide a valid, accessible HTTPS link to terms of use in the mani
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.terms.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
@@ -73,10 +75,11 @@ Workload must provide a valid, accessible HTTPS link to privacy policy in the ma
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Governance overview and guidance](../governance/governance-compliance-overview.md#secure-protect-and-comply)
 - [Product Manifest](./manifest-product.md)
 
@@ -87,6 +90,7 @@ Workload must provide a valid, accessible HTTPS link to privacy policy in the ma
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.privacy.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
@@ -98,17 +102,18 @@ This validation extracts a URL from the manifest and verifies it is reachable vi
 
 ### 1.3.1 - Marketplace Offer has been published
 
-Workload must have a published marketplace offer with a valid, accessible license URL
+Workload must have a published marketplace offer with a valid, accessible license URL pointing to Azure Marketplace or AppSource
 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
-- [Creating a SaaS offer](/partner-center/marketplace-offers/create-new-saas-offer)
-- [Commercial marketplace certification policies](/legal/marketplace/certification-policies#1000-software-as-a-service-saas)
+
+- [Creating a SaaS offer](/partner-center/marketplace-offers/plan-saas-offer.md)
+- [Commercial marketplace certification policies](/marketplace/certification-policies#1000-software-as-a-service-saas)
 - [Publishing Overview](./publishing-overview.md)
 - [Publish Workload Tutorial](./tutorial-publish-workload.md)
 
@@ -119,11 +124,13 @@ Workload must have a published marketplace offer with a valid, accessible licens
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.license.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
 - URL format must be valid and well-formed
 - Manifest field `product.productDetail.supportLink.license.url` must exist and contain a valid URL
+- URL domain must be one of:  https://azuremarketplace.microsoft.com, https://appsource.microsoft.com/, https://marketplace.microsoft.com
 - URL redirects are allowed and will be followed
 
 ---
@@ -135,10 +142,11 @@ The offer link needs to point to Azure Marketplace or AppSource.
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Documentation](/marketplace/marketplace-overview)
 
 **Guidelines:**
@@ -148,12 +156,13 @@ The offer link needs to point to Azure Marketplace or AppSource.
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.license.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
 - URL format must be valid and well-formed
 - Manifest field `product.productDetail.supportLink.license.url` must exist and contain a valid URL
-- URL domain must be one of:  https://azuremarketplace.microsoft.com, https://appsource.microsoft.com/
+- URL domain must be one of:  https://azuremarketplace.microsoft.com, https://appsource.microsoft.com/, https://marketplace.microsoft.com
 - URL redirects are allowed and will be followed
 
 ---
@@ -165,10 +174,11 @@ Workload must display a clear, professional publisher name that helps customers 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Documentation](/marketplace/marketplace-overview)
 
 ---
@@ -180,10 +190,11 @@ Publisher name must be consistent between the workload manifest and Azure Market
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Documentation](/marketplace/marketplace-overview)
 
 ---
@@ -195,10 +206,11 @@ Workload must provide a valid, accessible HTTPS link to certification attestatio
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
@@ -209,6 +221,7 @@ Workload must provide a valid, accessible HTTPS link to certification attestatio
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.certification.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
@@ -221,6 +234,7 @@ This validation extracts a URL from the manifest and verifies it is reachable vi
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -236,10 +250,11 @@ Workload must provide learning materials or getting started guides to help new u
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 
 ---
@@ -251,10 +266,11 @@ Workload must include visual content (images or videos) in the 'At a glance' sec
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [How to configure at a glance section](./how-to-configure-workload-media-section.md)
 - [Product Manifest](./manifest-product.md)
 - [Video guidelines](/partner-center/marketplace-offers/create-new-saas-offer-listing#add-videos-optional)
@@ -268,10 +284,11 @@ Learning material links must direct users to stable, static documentation pages 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 
 ---
@@ -283,10 +300,11 @@ Workload must provide a valid, accessible HTTPS link to comprehensive product do
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 
 **Guidelines:**
@@ -296,6 +314,7 @@ Workload must provide a valid, accessible HTTPS link to comprehensive product do
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.documentation.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
@@ -318,10 +337,11 @@ Workload must register a valid Microsoft Entra application with proper GUID form
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Authentication Overview](./authentication-overview.md)
 - [Documentation](./authentication-overview.md)
@@ -337,10 +357,11 @@ The workload must take a static dependency on Fabric.Extend scope and get user c
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Entra Scopes](/entra/identity-platform/scopes-oidc)
 
 ---
@@ -352,10 +373,11 @@ The redirect must land in Fabric for The Extensibility Authentication redirect U
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Authentication Overview](./authentication-overview.md)
 - [How to Acquire Entra Token](./how-to-acquire-entra-token.md)
 
@@ -368,10 +390,11 @@ Workload should request only essential Microsoft Entra scopes to minimize permis
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ⚠️ Optional | ⚠️ Optional |
 
 **References:**
+
 - [Entra Scopes](/entra/identity-platform/scopes-oidc)
 - [Fabric Scopes](/rest/api/fabric/articles/scopes)
 - [Authentication Overview](./authentication-overview.md)
@@ -386,10 +409,11 @@ OneLake is where data is stored in Fabric. Workloads need to integrate with it t
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [OneLake Overview](../onelake/onelake-overview.md)
 - [How to Store Data in OneLake](./how-to-store-data-in-onelake.md)
@@ -401,6 +425,7 @@ OneLake is where data is stored in Fabric. Workloads need to integrate with it t
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -416,10 +441,11 @@ Workload must support Microsoft Entra Conditional Access policies for enterprise
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](./authentication-overview.md)
 
@@ -430,6 +456,7 @@ Workload must support Microsoft Entra Conditional Access policies for enterprise
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -445,10 +472,11 @@ Workload must provide monitoring and diagnostic capabilities for customers to tr
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
 **Guidelines:**
@@ -458,6 +486,7 @@ Workload must provide monitoring and diagnostic capabilities for customers to tr
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -473,10 +502,11 @@ Fabric sharing strategy is focused on allowing customers to collaborate with the
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ⚠️ Optional | ⚠️ Optional |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../security/security-b2b.md)
 
@@ -487,6 +517,7 @@ Fabric sharing strategy is focused on allowing customers to collaborate with the
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -502,10 +533,11 @@ Fabric commits to a seamless service availability to customers. We recognize the
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ⚠️ Optional | ⚠️ Optional |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric)
 
@@ -516,6 +548,7 @@ Fabric commits to a seamless service availability to customers. We recognize the
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -531,10 +564,11 @@ Performance is an important requirement for Fabric customers. We recommend our p
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
 **Guidelines:**
@@ -544,6 +578,7 @@ Performance is an important requirement for Fabric customers. We recommend our p
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -559,10 +594,11 @@ To ensure that you can meet customer expectations independent of their home or c
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../admin/region-availability.md)
 
@@ -573,6 +609,7 @@ To ensure that you can meet customer expectations independent of their home or c
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -588,10 +625,11 @@ The workload and all Item types the partner provides as part of it need to compl
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 
@@ -602,6 +640,7 @@ The workload and all Item types the partner provides as part of it need to compl
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -617,10 +656,11 @@ English has to be the default language. Content can be localized if you decide t
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
 **Guidelines:**
@@ -630,6 +670,7 @@ English has to be the default language. Content can be localized if you decide t
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -653,10 +694,11 @@ Workload must have a clear, descriptive name that helps users understand its pur
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 
 ---
@@ -668,10 +710,11 @@ Workload must provide custom, professional icons, and images that are distinct f
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -685,10 +728,11 @@ Product icon must meet dimension requirements (240x240) and be visually clear an
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -700,6 +744,7 @@ Product icon must meet dimension requirements (240x240) and be visually clear an
 Make sure the image in the manifest is aligned with the requirements
 
 *Requirements:*
+
 - Image file must exist and be accessible
 - Image file must not be corrupted or invalid
 - Image must be of the following types: image/png, image/jpeg, image/svg+xml
@@ -715,10 +760,11 @@ Favicon must be provided in the manifest with appropriate dimensions and clarity
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -730,6 +776,7 @@ Favicon must be provided in the manifest with appropriate dimensions and clarity
 Make sure the image in the manifest is aligned with the requirements
 
 *Requirements:*
+
 - Image file must exist and be accessible
 - Image file must not be corrupted or invalid
 - Image must be of the following types: image/png, image/jpeg, image/svg+xml
@@ -745,10 +792,11 @@ Custom action icons must meet dimension requirements and be clear, recognizable 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -762,10 +810,11 @@ Create experience icons must meet dimension requirements and provide clear visua
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -779,10 +828,11 @@ Small create experience icons must meet dimension requirements and remain clear 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -796,10 +846,11 @@ Tab icons must meet dimension requirements and be visually distinct to aid navig
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -813,10 +864,11 @@ Active tab icons must meet dimension requirements and provide clear visual indic
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 - [Microsoft Fabric visuals kit](https://aka.ms/fabricvisualskit)
@@ -830,10 +882,11 @@ Workload must provide a clear, concise slogan/subtitle that complements the name
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 
@@ -846,10 +899,11 @@ Workload must provide a comprehensive description that explains features, capabi
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 
 ---
@@ -861,10 +915,11 @@ Workload Hub card must include a concise description optimized for the card disp
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 
 ---
@@ -876,10 +931,11 @@ Workload must provide a banner image with exact dimensions of 1920x240 pixels fo
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Product Manifest](./manifest-product.md)
 - [Fabric UX System](https://aka.ms/fabricux)
 
@@ -890,6 +946,7 @@ Workload must provide a banner image with exact dimensions of 1920x240 pixels fo
 Make sure the image in the manifest is aligned with the requirements
 
 *Requirements:*
+
 - Image file must exist and be accessible
 - Image file must not be corrupted or invalid
 - Image must be of the following types: image/png, image/jpeg, image/svg+xml
@@ -905,10 +962,11 @@ Gallery videos must focus exclusively on product features without displaying thi
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Video guidelines](/partner-center/marketplace-offers/create-new-saas-offer-listing#add-videos-optional)
 
 ---
@@ -926,10 +984,11 @@ Microsoft customers entrust Fabric with their most sensitive data. As partners i
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../governance/governance-compliance-overview.md)
 
@@ -940,6 +999,7 @@ Microsoft customers entrust Fabric with their most sensitive data. As partners i
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -955,10 +1015,11 @@ Workload must obtain Microsoft Entra ID tokens exclusively through the Fabric ho
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Authentication Guidelines](./authentication-guidelines.md)
 
@@ -969,6 +1030,7 @@ Workload must obtain Microsoft Entra ID tokens exclusively through the Fabric ho
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -984,10 +1046,11 @@ Workload must use only the official Fabric Workload Client SDK JavaScript APIs f
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Authentication Guidelines](./authentication-guidelines.md)
 
@@ -998,6 +1061,7 @@ Workload must use only the official Fabric Workload Client SDK JavaScript APIs f
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1013,10 +1077,11 @@ Workload must not rely on third-party cookies; only essential HTTP-only cookies 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Cookie compliance](https://european-union.europa.eu/cookies_en)
 
@@ -1027,6 +1092,7 @@ Workload must not rely on third-party cookies; only essential HTTP-only cookies 
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1042,10 +1108,11 @@ Microsoft Entra application name and publisher must align with the workload name
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Authentication Guidelines](./authentication-guidelines.md)
 - [How to register an Entra app](/entra/identity-platform/quickstart-register-app)
 
@@ -1058,10 +1125,11 @@ Microsoft customers entrust Fabric with their most sensitive data. As such, part
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../governance/governance-compliance-overview.md)
 
@@ -1072,6 +1140,7 @@ Microsoft customers entrust Fabric with their most sensitive data. As such, part
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1087,10 +1156,11 @@ Workload owners can only use essential HTTP-only cookies. Workload can use them 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](https://european-union.europa.eu/cookies_en)
 
@@ -1101,6 +1171,7 @@ Workload owners can only use essential HTTP-only cookies. Workload can use them 
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1116,10 +1187,11 @@ Partner workloads aren't to use, write, or rely on third-party cookies
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../governance/governance-compliance-overview.md)
 
@@ -1130,6 +1202,7 @@ Partner workloads aren't to use, write, or rely on third-party cookies
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1145,10 +1218,11 @@ Publisher must only obtain any Microsoft Entra token using the JavaScript APIs p
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
 **Guidelines:**
@@ -1158,6 +1232,7 @@ Publisher must only obtain any Microsoft Entra token using the JavaScript APIs p
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1173,10 +1248,11 @@ Fabric is making an Enterprise Promise around data not leaving the geography of 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](https://azure.microsoft.com/explore/global-infrastructure/data-residency/)
 
@@ -1187,6 +1263,7 @@ Fabric is making an Enterprise Promise around data not leaving the geography of 
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1202,10 +1279,11 @@ Within the Attestation Document you can show customers how your app handles secu
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../governance/governance-compliance-overview.md)
 
@@ -1216,6 +1294,7 @@ Within the Attestation Document you can show customers how your app handles secu
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1237,10 +1316,11 @@ Partner workloads are becoming an integral part of Fabric therefore our support 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ⚠️ Optional | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
 **Guidelines:**
@@ -1250,6 +1330,7 @@ Partner workloads are becoming an integral part of Fabric therefore our support 
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1265,10 +1346,11 @@ Partners are responsible to define and document their support parameters (Servic
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ⚠️ Optional | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
@@ -1279,6 +1361,7 @@ Partners are responsible to define and document their support parameters (Servic
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1294,10 +1377,11 @@ Workload must provide a valid, accessible HTTPS link to help resources and suppo
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 
 **Guidelines:**
@@ -1307,6 +1391,7 @@ Workload must provide a valid, accessible HTTPS link to help resources and suppo
 This validation extracts a URL from the manifest and verifies it is reachable via HTTP request. The URL is extracted from the manifest field `product.productDetail.supportLink.help.url`. 
 
 *Requirements:*
+
 - URL must use HTTPS protocol for security
 - URL must be reachable and return HTTP status 200-399
 - URL must respond within reasonable timeout period
@@ -1323,10 +1408,11 @@ Product details page must clearly display support contact information for custom
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
@@ -1337,6 +1423,7 @@ Product details page must clearly display support contact information for custom
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1352,10 +1439,11 @@ Partners need to host a website that shows their service health and availability
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ⚠️ Optional | ⚠️ Optional |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](/partner-center/marketplace-offers/marketplace-criteria-content-validation)
 
@@ -1366,6 +1454,7 @@ Partners need to host a website that shows their service health and availability
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1387,10 +1476,11 @@ Microsoft Fabric's lifecycle management tools enable efficient product developme
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../cicd/cicd-overview.md)
 
@@ -1401,6 +1491,38 @@ Microsoft Fabric's lifecycle management tools enable efficient product developme
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
+- Attestation document URL must be present in manifest
+- Document must be downloadable and accessible
+- Document must be in a supported format (Website, PDF)
+- Document must follow the template format
+- Document content must be extractable and readable
+
+---
+
+### 6.1.1 - CICD section is present in the manifest
+
+Workload manifest should include a CICD section to declare support for deployment pipelines and git integration, enabling seamless application lifecycle management within Microsoft Fabric.
+
+**Stage Requirements:**
+
+| Preview | General Availability |
+| ------- | -------------------- |
+| ⚠️ Optional | ⚠️ Optional |
+
+**References:**
+
+- [Documentation](../cicd/cicd-overview.md)
+- [Product Manifest](./manifest-product.md)
+
+**Guidelines:**
+
+**ATTESTATION:**
+
+Make sure the information in the Attestation document is valid, can be reached and follows the template. 
+
+*Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1416,10 +1538,11 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../security/security-private-links-use.md)
 
@@ -1430,6 +1553,7 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1445,10 +1569,11 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [How to integrate with OneLake catalog](./how-to-integrate-with-onelake-catalog.md)
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../governance/onelake-catalog-overview.md)
@@ -1460,6 +1585,7 @@ The OneLake data hub makes it easy to find, explore, and use the Fabric data ite
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1475,10 +1601,11 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../governance/lineage.md)
 
@@ -1489,6 +1616,7 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1504,10 +1632,11 @@ Sensitivity labels from Microsoft Purview Information Protection on items can gu
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../fundamentals/apply-sensitivity-labels.md)
 
@@ -1518,6 +1647,7 @@ Sensitivity labels from Microsoft Purview Information Protection on items can gu
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1533,10 +1663,11 @@ For partners that are using Export functionality within their Item they need to 
 **Stage Requirements:**
 
 | Preview | General Availability |
-|---------|---------------------|
+| ------- | -------------------- |
 | ✅ Required | ✅ Required |
 
 **References:**
+
 - [Vendor Attestation Document Template](./publishing-vendor-attestation-template.md)
 - [Documentation](../fundamentals/apply-sensitivity-labels.md)
 
@@ -1547,6 +1678,7 @@ For partners that are using Export functionality within their Item they need to 
 Make sure the information in the Attestation document is valid, can be reached and follows the template. 
 
 *Requirements:*
+
 - Attestation document URL must be present in manifest
 - Document must be downloadable and accessible
 - Document must be in a supported format (Website, PDF)
@@ -1566,4 +1698,4 @@ This document is automatically generated.
 ---
 
 *Generated by Microsoft Fabric Workload Validation System*  
-*© 2025 Microsoft Corporation. All rights reserved.*
+*© 2026 Microsoft Corporation. All rights reserved.*

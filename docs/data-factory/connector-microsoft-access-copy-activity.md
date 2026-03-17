@@ -4,7 +4,7 @@ description: This article explains how to copy data using Microsoft Access.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 08/25/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors

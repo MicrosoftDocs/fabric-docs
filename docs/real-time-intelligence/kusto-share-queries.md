@@ -2,11 +2,8 @@
 title: Share KQL queries
 description: Learn how to share KQL queries in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-author: spelluru
-ms.author: spelluru
 ms.topic: how-to
 ms.subservice: rti-kql-query
-ms.custom:
 ms.date: 08/10/2025
 ---
 # Share KQL queries

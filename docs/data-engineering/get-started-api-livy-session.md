@@ -2,8 +2,6 @@
 title: Submit Spark session jobs using the Livy API
 description: Learn how to submit Spark session jobs using the Livy API.
 ms.reviewer: avinandac
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.search.form: Get started with Session jobs with the Livy API for Data Engineering
 ms.date: 11/05/2025
@@ -226,7 +224,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
         create_livy_session = requests.post(livy_api_session_url, headers=headers, json={})
         
         # Check if the request was successful
-        if create_livy_session.status_code == 200:
+        if create_livy_session.status_code == 202:
             session_info = create_livy_session.json()
             print('Livy session creation request submitted successfully')
             print(f'Session Info: {json.dumps(session_info, indent=2)}')

@@ -1,8 +1,6 @@
 ---
 title: "How To: IDENTITY Columns in Fabric Data Warehouse"
 description: Learn how to use IDENTITY columns in Fabric Data Warehouse to create and manage surrogate keys efficiently.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
 ms.topic: how-to

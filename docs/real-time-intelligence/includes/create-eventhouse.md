@@ -4,7 +4,6 @@ description: Include file for creating an eventhouse to support the end-to-end a
 author: baanders
 ms.author: baanders
 ms.topic: include
-ms.custom:
 ms.date: 12/03/2025
 ---
 

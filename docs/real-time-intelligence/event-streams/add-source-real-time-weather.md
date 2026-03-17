@@ -1,11 +1,8 @@
 ---
 title: Add a real-time weather source to an eventstream
 description: Learn how to add a real-time weather source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 12/11/2025
 ms.search.form: Source and Destination
 ---
@@ -75,3 +72,4 @@ To learn more about weather data fields and concepts, check out:
 
 - [Weather - Get Current Conditions](/rest/api/maps/weather/get-current-conditions)
 - [Weather service concepts](/azure/azure-maps/weather-services-concepts)
+

@@ -1,8 +1,6 @@
 ---
 title: Query the Warehouse or SQL analytics endpoint
 description: Learn more about options to write T-SQL queries on a warehouse or SQL analytics endpoint in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: prlangad
 ms.date: 01/06/2026
 ms.topic: how-to
@@ -25,7 +23,7 @@ To get started with this tutorial, check the following prerequisites:
 
 - Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#fabric-data-warehouse) via a T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-    - Download and install both [Visual Studio Code and the mssql extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
+    - Download and install both [Visual Studio Code and the MSSQL extension](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true).
 
 > [!NOTE]
 > Review the [T-SQL surface area in Fabric Data Warehouse](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].

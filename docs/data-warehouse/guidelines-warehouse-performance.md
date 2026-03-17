@@ -1,12 +1,9 @@
 ---
 title: Performance Guidelines
 description: Get performance guidelines for Microsoft Fabric Data Warehouse to optimize queries, ingestion, table design, statistics, caching, and more.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul, procha, fipopovi, twcyril
 ms.date: 01/14/2026
 ms.topic: best-practice
-ms.custom:
 ai-usage: ai-assisted
 ---
 # Performance guidelines in Fabric Data Warehouse
@@ -56,13 +53,13 @@ You can detect cold start effects caused by fetching data from remote storage in
 > [!IMPORTANT]
 > Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
 
-<a id="result-set-caching-preview"></a>
-
+<!--
 #### Result set caching
 
 Distinct from in-memory and disk caching, result set caching is a built-in optimization for warehouses and Lakehouse SQL analytics endpoints in Fabric that reduces query read latency. It stores the final result of eligible `SELECT` statements so subsequent cache hits can skip compilation and data processing, returning results faster.
 
-During the current preview, result set caching is off by default for all items. For more information on enabling, see [Result set caching](result-set-caching.md).
+For more information, see [Result set caching](result-set-caching.md).
+-->
 
 ### Queries on tables with string columns  
 
@@ -152,7 +149,7 @@ In Microsoft Fabric, the Warehouse automatically optimizes data layouts, and per
 
 #### Optimize lakehouse tables or shortcuts with many small files
 
-Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
+Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
 
 To optimize a table in a Fabric Lakehouse, open the Lakehouse in the Fabric portal. In the **Explorer**, right-click on the table, select **Maintenance**. Choose options from the **Run maintenance commands** page, then select **Run now**.
 
@@ -287,7 +284,7 @@ In Fabric Data Warehouse, data compaction is a background optimization process t
 
 Although the Fabric Data Warehouse engine automatically resolves fragmentation over time through data compaction, performance might degrade until the process completes. Data compaction runs automatically without user intervention for Fabric Data Warehouse. 
 
-Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) after significant data changes to maintain optimal storage layout.
+Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) after significant data changes to maintain optimal storage layout.
 
 #### Data compaction preemption
 

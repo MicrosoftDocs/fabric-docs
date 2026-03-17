@@ -2,10 +2,7 @@
 title: Create and edit materialized views
 description: Learn how to run an aggregation query over a source table using materialized views in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
-ms.custom:
 ms.subservice: rti-eventhouse
 ms.date: 11/19/2024
 ms.search.form: Data management

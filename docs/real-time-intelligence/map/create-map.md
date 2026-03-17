@@ -1,11 +1,8 @@
 ---
 title: Create a map
 description: Learn how to create a map in Real-Time Intelligence.
-ms.reviewer: smunk
-author: sipa
-ms.author: sipa
+ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.custom:
 ms.date: 10/17/2025
 ms.search.form: Create a map
 ---
@@ -250,3 +247,4 @@ Delete a data layer when you need to permanently remove it from the map. The fol
 
 > [!div class="nextstepaction"]
 > [Share a map](share-map.md)
+

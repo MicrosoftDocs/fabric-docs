@@ -3,8 +3,6 @@ title: Datamart tenant settings
 description: Learn how to configure datamart tenant settings as the Fabric administrator.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
 ms.topic: how-to

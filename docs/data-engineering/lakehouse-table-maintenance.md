@@ -1,75 +1,62 @@
 ---
 title: Delta Table Maintenance in Microsoft Fabric
-description: Learn about the Lakehouse Delta table maintenance feature. It allows you to efficiently manage Delta tables and to keep them always ready for analytics.
-author: eric-urban
-ms.author: eur
+description: Learn how to run Delta table maintenance in Lakehouse, choose the right maintenance action, and track maintenance jobs in Microsoft Fabric.
 ms.reviewer: dacoelho
-ms.date: 02/12/2026
+ms.date: 03/01/2026
 ms.topic: how-to
 ms.search.form: lakehouse table maintenance delta lake tables
 ai-usage: ai-assisted
 ---
 
-# Use table maintenance feature to manage delta tables in Fabric
+# Run Delta table maintenance in Lakehouse
 
-The [Lakehouse](lakehouse-overview.md) in Microsoft Fabric provides the *Table maintenance* feature to efficiently manage delta tables and to keep them always ready for analytics. This guide describes the table maintenance feature in Lakehouse and its capabilities.
+Run table maintenance on Delta tables to keep them healthy over time by compacting small files, applying read optimizations, and removing obsolete files that are no longer referenced. 
 
-> [!TIP]
-> For comprehensive cross-workload guidance on table maintenance strategies, including optimization recommendations for SQL analytics endpoint, Power BI Direct Lake, and Data Warehouse consumers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
+You can run maintenance either as an ad hoc operation in the Fabric portal (Lakehouse table **Maintenance** action) or as a scheduled and orchestrated process by using notebooks, pipelines, or REST API. This article focuses on the ad hoc portal workflow.
 
-Key capabilities of the lakehouse table maintenance feature:
+For cross-workload maintenance guidance, including recommendations for SQL analytics endpoint, Power BI Direct Lake, and Data Warehouse consumers, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md). For code-first maintenance patterns, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) and [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md).
 
-- Perform ad hoc table maintenance using contextual right-click actions in a delta table within the Lakehouse explorer.
-- Apply bin-compaction, V-Order, and unreferenced old files cleanup.
+## Run table maintenance from Lakehouse
 
-> [!NOTE]
-> For advanced maintenance tasks, such as grouping multiple table maintenance commands, orchestrating it based on a schedule, a code-centric approach is the recommended choice. To learn more, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) article.
-> It is also possible to use the Lakehouse API to automate table maintenance operations, to learn more see [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md).
+Table maintenance in Lakehouse applies only to Delta tables. Legacy Hive tables that use formats such as Parquet, ORC, AVRO, or CSV aren't supported.
 
-## Supported file types
+In the **Run maintenance commands** dialog, choose options based on your goal.
 
-__Lakehouse table maintenance__ applies only to delta Lake tables. The legacy Hive tables that use PARQUET, ORC, AVRO, CSV, and other formats aren't supported.
-
-## Table maintenance operations
-
-The table maintenance feature offers three operations.
-
-- **Optimize**: Consolidates multiple small Parquet files into large file. Big Data processing engines, and all Fabric engines, benefit from having larger files sizes. Having files of size above 128 MB, and optimally close to 1 GB, improves compression and data distribution, across the cluster nodes. It reduces the need to scan numerous small files for efficient read operations. It's a general best practice to run optimization strategies after loading large tables.
-- **V-Order**: Applies optimized sorting, encoding, and compression to Delta parquet files to enable fast read operations across all the Fabric engines. V-Order happens during the optimize command, and is presented as an option to the command group in the user experience. To learn more about V-Order, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md).
-- **Vacuum**: Removes old files no longer referenced by a Delta table log. Files need to be older than the retention threshold, and the default file retention threshold is seven days. All the delta tables in OneLake have the same retention period. File retention period is same regardless of the Fabric compute engine you are using. This maintenance is important to optimize storage cost. 
-
-> [!IMPORTANT]
-> Setting a shorter retention period impacts Delta's time travel capabilities. It's a general best practice to set a retention interval to at least seven days, because old snapshots and uncommitted files can still be in use by the concurrent table readers and writers. Cleaning up active files with the VACUUM command might lead to reader failures or even table corruption if the uncommitted files are removed. Table maintenance experiences in the user interface and in the Public APIs __will fail__ by default when intervals are less than 7 days. In order to __force__ lower retention intervals for the vacuum command, configure the `spark.databricks.delta.retentionDurationCheck.enabled` to `false` in the workspace. Table Maintenance jobs will then pick up the configuration and allow the lower retention during the job execution.
-
-## Execute ad hoc table maintenance on a Delta table using Lakehouse
-
-How to use the feature:
+As a general practice, run maintenance after major ingestion or update activity, or when you observe many small files and slower read performance.
 
 1. From your Microsoft Fabric account, navigate to the desired Lakehouse.
-1. From the Lakehouse explorer's **Tables** section, either right-click on the table or use the ellipsis to access the contextual menu.
+1. In Lakehouse Explorer, under **Tables**, right-click the target table (or use the ellipsis).
 1. Select the **Maintenance** menu entry.
-1. Check the maintenance options in the dialog per your requirement. For more information, see the [Table maintenance operations](#table-maintenance-operations) section of this article.
+
+   :::image type="content" source="media/table-maintenance/table-maintenance.png" alt-text="Screenshot showing the Run maintenance commands dialog." lightbox="media/table-maintenance/table-maintenance.png":::
+
+1. In the **Run maintenance commands** dialog, choose the maintenance options:
+   - Select the **OPTIMIZE** checkbox to compact small Parquet files into larger files for more efficient reads.
+    - If **OPTIMIZE** is selected, you can also select the **Apply V-Order** checkbox. When you select this option, Fabric applies V-Order (optimized sorting, encoding, and compression) as part of optimize.
+
+       > [!NOTE]
+       > V-Order has about a 15% impact on average write times. It can also provide up to 50% more compression.
+
+   - Select the **Run VACUUM** checkbox to run the Delta Lake `VACUUM` command and remove unreferenced files older than your retention threshold. For retention behavior and safety details, see [Vacuum retention settings](#vacuum-retention-settings).
 1. Select **Run now** to execute the table maintenance job.
-1. Track maintenance job execution by the notifications pane, or the Monitoring Hub.
+1. Track job execution in either of these places:
+   - **Notifications** pane (bell icon in the Fabric portal header) for immediate run status.
+   - **Monitoring hub** (select **Monitor** in the left navigation) for full job details. Look for activities that contain `TableMaintenance` in the activity name.
 
-   :::image type="content" source="media/table-maintenance/table-maintenance.png" alt-text="Screenshot showing the load to tables dialog box with filled table name." lightbox="media/table-maintenance/table-maintenance.png":::
+After you run maintenance, success appears as a completed table maintenance activity in Notifications and as a successful `TableMaintenance` entry in Monitoring hub.
 
-## How does table maintenance work?
+For more information about Monitoring hub navigation and filters, see [Use the Monitoring hub](../admin/monitoring-hub.md).
 
-After **Run now** is selected, a Spark maintenance job is submitted for execution.
+## Vacuum retention settings
 
-1. The Spark job is submitted using the user identity and table privileges.
-1. The Spark job consumes Fabric capacity of the workspace/user that submitted the job.
-1. If there is another maintenance job running on a table, a new one is rejected.
-1. Jobs on different tables can execute in parallel.
-1. Table maintenance jobs can be easily tracked in the Monitoring Hub. Look for "TableMaintenance" text within the activity name column in the monitoring hub main page.
+The `VACUUM` command removes files that are no longer referenced by the Delta log and that are older than your retention threshold. The default retention threshold is seven days.
+
+Using a shorter retention interval can reduce Delta time-travel history and can affect concurrent readers or writers. Fabric portal and API maintenance requests fail by default for retention intervals under seven days.
+
+If you must use a retention interval under seven days, set `spark.databricks.delta.retentionDurationCheck.enabled` to `false` in the Spark properties of the Fabric environment used by your workspace Spark workloads. To learn where to configure and attach environments, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md) and [Spark compute configuration settings in Fabric environments](environment-manage-compute.md).
 
 ## Related content
 
 - [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
-- [Table compaction](table-compaction.md)
-- [Tune file size](tune-file-size.md)
 - [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)
-- [CSV file upload to Delta for Power BI reporting](get-started-csv-upload.md)
-- [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

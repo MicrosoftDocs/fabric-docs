@@ -1,8 +1,6 @@
 ---
 title: Set conditions for a rule
 description: Include file with instructions to add conditions for a rule in a Fabric activator. 
-author: spelluru
-ms.author: spelluru
 ms.topic: include
 ms.date: 10/13/2025
 ---

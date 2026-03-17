@@ -1,12 +1,9 @@
 ---
 title: "Fabric SQL database source control integration"
 description: Learn how to work with your SQL database with Fabric's git integration source control.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: antho, sukkaur, drskwier
 ms.date: 02/13/2025
 ms.topic: how-to
-ms.custom:
 ms.search.form:
 ---
 # SQL database source control integration in Microsoft Fabric
@@ -45,7 +42,7 @@ The scenarios in this article are covered in an episode of Data Exposed. Watch t
 - Make sure that you [Enable Git integration tenant settings](../../admin/git-integration-admin-settings.md).
 - Create a new workspace or use an existing Fabric workspace.
 - Create or use an existing SQL database in Fabric. If you don't have one already, [create a new SQL database in Fabric](create.md).
-- Optional: Install [Visual Studio Code](https://visualstudio.microsoft.com/downloads/), the mssql extension, and the [SQL projects](https://aka.ms/sqlprojects) extension for VS Code.
+- Optional: Install [Visual Studio Code](https://visualstudio.microsoft.com/downloads/), the MSSQL extension, and the [SQL projects](https://aka.ms/sqlprojects) extension for VS Code.
 
 ## Setup
 
@@ -57,7 +54,7 @@ For steps to connect your workspace to a source control repository, see [Get sta
 
 In this scenario, you'll commit database objects to source control. You might be developing an application where you're creating objects directly in a test database and track that database in source control just like your application code. As a result, you have access to the history of the definitions of your database objects and can use Git concepts like branching and merging to further customize your development process.
 
-1. [Connect to your SQL database](connect.md) in the Fabric SQL editor, [SQL Server Management Studio](https://aka.ms/ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), or other external tools.
+1. [Connect to your SQL database](connect.md) in the Fabric SQL editor, [SQL Server Management Studio](https://aka.ms/ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric-sqldb&preserve-view=true), or other external tools.
 1. Create a new table, stored procedure, or other object in the database.
 1. Select the `...` menu for the database, select **Refresh Git sync status**.
 1. Select the **Source control** button to open the source control panel.

@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon S3.
 ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 11/11/2025
-ms.custom: 
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
