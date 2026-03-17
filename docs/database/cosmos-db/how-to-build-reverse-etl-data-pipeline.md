@@ -121,7 +121,7 @@ Create a User data functions item to store pipeline metadata in Cosmos DB.
 
 1. Update the placeholder values for the `COSMOS_DB_URI` and `DB_NAME` variables in the functions code with the Cosmos DB endpoint URI and database name from earlier steps.
 
-1. [!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
+[!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
 
 ## Import the notebooks and attach the lakehouse
 

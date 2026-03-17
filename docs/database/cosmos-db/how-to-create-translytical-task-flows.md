@@ -112,7 +112,7 @@ Create a User Data Function that updates the current price of a product in the C
 
 1. Replace `YOUR_DATABASE_NAME_HERE` with the name of your Cosmos DB database.
 
-1. [!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
+[!INCLUDE[Add Azure Cosmos DB UDF](includes/add-azure-cosmos-udf.md)]
 
 1. Hover over the function name in the left pane after publishing completes, and select the **Test** icon.
 
