@@ -157,7 +157,7 @@ You can set up data-access rules in:
 
 - The semantic model.
 - The SQL analytics endpoint (Direct Lake on SQL endpoints only).
-- In OneLake Security.
+- OneLake security.
 
 ### Rules in the semantic model
 
