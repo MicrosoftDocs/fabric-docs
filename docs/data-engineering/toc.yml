@@ -134,6 +134,8 @@ items:
       href: notebook-source-control-deployment.md
     - name: Use notebook public APIs
       href: notebook-public-api.md
+    - name: Notebook data export controls (preview)
+      href: notebook-data-export-controls.md
   - name: Troubleshooting and limitations
     items:
     - name: Fabric notebook known limitations
@@ -212,6 +214,12 @@ items:
         href: configure-starter-pools.md
       - name: Create custom pools
         href: create-custom-spark-pools.md
+      - name: Custom live pools overview
+        href: custom-live-pools-overview.md
+      - name: Configure custom live pools
+        href: custom-live-pools-configure.md
+      - name: Session start insights
+        href: session-start-insights.md
       - name: High concurrency mode
         href: high-concurrency-overview.md
       - name: Autotune Spark configuration
@@ -222,6 +230,8 @@ items:
         href: configure-autoscale-billing.md
       - name: Resource profile configurations
         href: configure-resource-profile-configurations.md
+      - name: Configure resource profiles
+        href: configure-resource-profiles.md
     - name: Job operations and monitoring
       items:
       - name: Job admission and management
@@ -272,8 +282,12 @@ items:
       href: runtime-1-3.md
     - name: Runtime 1.2 (Spark 3.4)
       href: runtime-1-2.md
-  - name: Native Execution Engine
-    href: native-execution-engine-overview.md
+  - name: Native execution engine
+    items:
+    - name: Native execution engine overview
+      href: native-execution-engine-overview.md
+    - name: Z-Order and liquid clustering support
+      href: native-execution-engine-zorder-liquid-clustering.md
   - name: Spark job definition (SJD)
     items:
     - name: What is a Spark job definition?
