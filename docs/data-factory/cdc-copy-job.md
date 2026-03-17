@@ -45,19 +45,19 @@ This method keeps only the latest version of each record. No historical data is 
 
 ### SCD Type 2 (Historical tracking) (Preview)
 
-SCD Type 2 preserves historical data by creating new rows for changes while keeping previous versions of records. When a record changes at the source, the current version in the destination is closed (its `ValidTo` date is set and `IsCurrent` is flipped to false), and a new version is inserted with the updated values. When a record is deleted at the source, the current version is soft-deleted — it isn't physically removed, but its `ValidTo` date is set and `IsCurrent` is marked as false. This approach preserves the complete lifecycle of each record, including records that no longer exist in the source.
+SCD Type 2 preserves historical data by creating new rows for changes while keeping previous versions of records. When a record changes at the source, the current version in the destination is closed (its `Valid_To` date is set and `Is_Current` is flipped to false), and a new version is inserted with the updated values. When a record is deleted at the source, the current version is soft-deleted — it isn't physically removed, but its `Valid_To` date is set and `Is_Current` is marked as false. This approach preserves the complete lifecycle of each record, including records that no longer exist in the source.
 
 CDC in Copy job provides built-in support for SCD Type 2 as a write method. To enable SCD Type 2, select it as the write method when configuring your Copy job — no custom code or additional logic is required. Both history tracking and soft delete handling are enabled together and applied consistently across all selected tables.
 
 SCD Type 2 in Copy job adds the following columns to the destination:
 
-- `ValidFrom`: The timestamp when the record version became effective.
-- `ValidTo`: The timestamp when the record version was superseded or deleted. Active records use a high-date sentinel value (for example, `9999-12-31`).
-- `IsCurrent`: A flag indicating whether the record is the current active version.
+- `Valid_From`: The timestamp when the record version became effective.
+- `Valid_To`: The timestamp when the record version was superseded or deleted. Active records use a high-date sentinel value (for example, `9999-12-31`).
+- `Is_Current`: A flag indicating whether the record is the current active version.
 
 For example, if a customer moves from California to New York, both versions are preserved:
 
-| CustomerKey | CustomerID | Name | State | ValidFrom | ValidTo | IsCurrent |
+| CustomerKey | CustomerID | Name | State | Valid_From | Valid_To | Is_Current |
 |---|---|---|---|---|---|---|
 | 1001 | C-123 | Acme Corp | CA | 2023-01-15 | 2026-02-20 | No |
 | 1002 | C-123 | Acme Corp | NY | 2026-02-20 | 9999-12-31 | Yes |
@@ -72,6 +72,7 @@ SCD Type 2 is supported as a write method with the following destination connect
 
 > [!NOTE]
 > SCD Type 2 in Copy job is currently in preview.
+> When doing CDC replication from Snowflake or Oracle sources, SCD Type 2 is not supported for the destination store.
 
 ### Choosing between SCD Type 1 and SCD Type 2
 
