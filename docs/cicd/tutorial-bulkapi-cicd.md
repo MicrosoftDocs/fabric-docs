@@ -7,17 +7,17 @@ author: billmath
 ms.topic: overview
 ms.custom:
 ms.search.form:
-ms.date: 03/04/2026
+ms.date: 03/18/2026
 ---
 
 # Tutorial - Fabric CI/CD with Bulk Import Item Definitions API
-In this tutorial, you’ll use an Azure DevOps pipeline that leverages the [Bulk import item definition api](https://learn.microsoft.com/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) to deploy items from a Git folder. The Git folder contains item definitions from a **dev** workspace that is connected to Git, and the pipeline deploys them to a **test** workspace that isn’t connected to Git.
+In this tutorial, you use an Azure DevOps pipeline that leverages the [Bulk import item definition api](https://learn.microsoft.com/rest/api/fabric/core/items/bulk-import-item-definitions(beta)) to deploy items from a Git folder. The Git folder contains item definitions from a **dev** workspace that is connected to Git, and the pipeline deploys them to a **test** workspace that isn’t connected to Git.
 
 ## Prerequisites
 - **Azure DevOps** Azure Project and repository + permissions to configure Azure DevOps pipeline and create variable groups.
 - **Fabric workspace** name: `bulk-tutorial-test` - target workspace for the deployment
-- **Service Principal (SPN)** - An Entra ID (Azure AD) App Registration with a client secret, need to have the client id, client secret and tenant id.
-- The service principal has **Conributor** permission for `bulk-tutorial-test` Fabric workspace 
+- **Service Principal (SPN)** - An Entra ID (Azure AD) App Registration with a client secret, need to have the client id, client secret, and tenant id.
+- The service principal has **Contributor** permission for `bulk-tutorial-test` Fabric workspace 
 - Fabric Admin Setting for Service Principal - A Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings** 
 
 > 💡 **Tip:** To enable Service Principal access in Fabric, a Fabric Admin must enable *"Service principals can use Fabric APIs"* in the Fabric Admin Portal under **Tenant Settings**.
@@ -26,7 +26,7 @@ In this tutorial, you’ll use an Azure DevOps pipeline that leverages the [Bulk
 
 In [Git‑based deployment using a build environment](./manage-deployment.md), deployments across Microsoft Fabric workspaces are driven from a central Git repository, where Fabric item definitions are treated as code and promoted through a structured release flow. All environments—Dev, Test, and Prod—are aligned to the same main branch, while each stage is deployed independently using dedicated build and release pipelines.
 
-Pipelines typically begin by exporting Fabric item definitions from a development workspace using Fabric Git Integration. These definitions can then be validated in a build environment through automated checks, pull request reviews, and policy enforcement before promotion. (not cover in this tutorial)
+Pipelines typically begin by exporting Fabric item definitions from a development workspace using Fabric Git Integration. These definitions can then be validated in a build environment through automated checks, pull request reviews, and policy enforcement before promotion. (Not covered in this tutorial).
 
 During deployment, the pipeline invokes the Bulk Import API to promote approved item definitions into the target workspace. The API supports both creating new items and updating existing ones in place, while relying on Fabric’s built‑in dependency handling to ensure items are deployed in the correct order. This enables consistent, repeatable deployments into test and production environments without manual intervention. 
 
@@ -44,7 +44,7 @@ During deployment, the pipeline invokes the Bulk Import API to promote approved 
 ## Step 2. - Run Azure DevOps pipeline
 ### 2.1 Variable Group: `bulkapi-group`
 
-This variable group store the service principal details which the Azure Pipeline will authenticate with.
+This variable group store the service principal details which the Azure Pipeline authenticates with.
 
 #### Steps to Create
 
