@@ -60,3 +60,4 @@ If you want to access additional information about the Spark execution at the no
 - Learn about [Spark advisor](spark-advisor-introduction.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
 - [Use the extended Spark history server to debug apps](apache-spark-history-server.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
