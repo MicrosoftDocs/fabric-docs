@@ -10,7 +10,7 @@ ms.date: 11/17/2025
 
 ---
 
-# Workspace outbound access protection for Data Warehouse (preview)
+# Workspace outbound access protection for Data Warehouse
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from Data Warehouse items in your workspace to external data sources. When this feature is enabled, [Data Warehouse items](#supported-data-warehouse-item-types) are restricted from making outbound connections. At this time, exceptions can't be configured. All outbound connections from warehouses and SQL analytics endpoints are blocked when outbound access protection is enabled.
 
