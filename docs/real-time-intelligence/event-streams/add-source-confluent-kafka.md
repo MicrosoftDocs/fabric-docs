@@ -11,11 +11,6 @@ ms.search.form: Source and Destination
 # Add Confluent Cloud for Apache Kafka source to an eventstream
 This article shows you how to add Confluent Cloud for Apache Kafka source to an eventstream. 
 
-<<<<<<< HEAD
-[!INCLUDE [confluent-source-description-prerequisites](./includes/confluent-source-description-prerequisites.md)]
-
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md).
-=======
 Confluent Cloud for Apache Kafka is a streaming platform offering powerful data streaming and processing functionalities using Apache Kafka. By integrating Confluent Cloud for Apache Kafka as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric. 
 
 ## Prerequisites 
@@ -29,7 +24,6 @@ Confluent Cloud for Apache Kafka is a streaming platform offering powerful data 
     - Import the required certificates into Azure Key Vault in **.pem** format.
     - The user who configures the source and previews data must have permission to access the certificates in the Key Vault (for example, **Key Vault Certificate User** or **Key Vault Administrator**).  
     - If the current user doesn’t have the required permissions, data can’t be previewed from this source in Eventstream.
->>>>>>> 294c01a05a (update multiple sever and mTLS support for Apache Kafka)
 
 ## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
