@@ -10,10 +10,12 @@ items:
   items:
   - name: Overview
     href: manage-deployment.md
-  - name: Tutorial - CI/CD for Microsoft Fabric Using Azure DevOps & the fabric-cicd Python Package
+  - name: Tutorial - CI/CD using Azure DevOps & fabric-cicd library
     href: tutorial-fabric-cicd-azure-devops.md
   - name: Tutorial - Local deployment with fabric-cicd 
     href: tutorial-fabric-cicd-local.md   
+  - name: Tutorial - CI/CD using Fabric Bulk API
+    href: tutorial-bulkapi-cicd.md   
 - name: Continuous integration with Git
   items:
   - name: "Introduction to Git integration"
