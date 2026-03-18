@@ -46,6 +46,8 @@ items:
       href: git-integration/git-integration-with-service-principal.md
   - name: GitHub data residency support
     href: github-data-residency-support.md
+  - name: Compare code changes
+    href: git-integration/granular-compare.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
