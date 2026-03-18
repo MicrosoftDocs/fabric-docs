@@ -7,18 +7,20 @@ ms.date: 02/16/2026
 ms.search.form: Create a tileset, Creating tilesets, how to create tilesets, tileset
 ---
 
-# Create tilesets (preview)
+# Create tilesets
 
 Large static spatial datasets can be expensive to render directly on a map. To improve performance, Fabric Maps can convert GeoJSON files into high‑performance tilesets that enable faster rendering and smoother interaction. For background concepts, see [What is a tileset in Fabric Maps?](about-tile-sets.md).
 
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
+This article shows how to create a tileset as well as schedule data refresh for tilesets generated in Fabric Maps. Scheduling lets you rebuild PMTiles on a fixed schedule.
+
+You can schedule refresh when creating a new tileset, as long as you have access to its underlying data source.
 
 ## Prerequisites
 
 - A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
 - A [map](create-map.md) with editor permission. To create a tileset, you must have edit permissions on the map. Edit access is granted through Fabric workspace roles (Contributor, Member, or Admin) or item‑level permissions on the map. For more information, see [Manage Map permissions](manage-map-permissions.md).
 - A [lakehouse](../../data-engineering/lakehouse-overview.md) to store GeoJSON files.
+- Access to the Lakehouse data source used by the tileset.
 
 ## Create a tileset
 
@@ -77,7 +79,25 @@ Next, set the following configuration options:
 
 :::image type="content" source="media/spatial-job-create-tilesets/configure-layer-settings.png" lightbox="media/spatial-job-create-tilesets/configure-layer-settings.png" alt-text="A screenshot showing the layer options screen.":::
 
-### Step 4: Review and create tileset
+### Step 4: Tileset schedule (preview)
+
+[!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
+If you wish to create a schedule to automatically refresh the tileset, follow the steps below, otherwise select **Next**:
+
+1. Select **Add schedule**.
+
+    :::image type="content" source="media/spatial-job-create-tilesets/schedule.png" lightbox="media/spatial-job-create-tilesets/schedule.png" alt-text="A screenshot showing the Schedule Preview page in the Create tileset wizard with the Add schedule button under the Schedule section.":::
+
+1. Select the schedule settings you need, then **Save**.
+
+    :::image type="content" source="media/spatial-job-create-tilesets/schedule-add.png" lightbox="media/spatial-job-create-tilesets/schedule-add.png" alt-text="A screenshot showing the Schedule panel in the Create tileset wizard with options for Schedule type including Repeat set to By the minute and Interval set to 1, Start date and time set to 2/20/2026 at 15:09, End date and time set to 2/20/2027 at 15:09, Time zone set to UTC-06:00 Central Time US and Canada, and Save and Cancel buttons at the bottom.":::
+
+1. Once your schedule is created, select **Next**.
+
+    :::image type="content" source="media/spatial-job-create-tilesets/schedule-created.png" lightbox="media/spatial-job-create-tilesets/schedule-created.png" alt-text="A screenshot showing the Tileset schedule Preview page in the Create tileset wizard with a configured schedule displayed. Back and Next buttons appear at the bottom right.":::
+
+### Step 5: Review and create tileset
 
 Review the configuration from previous steps, then select **Create** to start the spatial job.
 
@@ -121,4 +141,4 @@ To cancel the tileset creation, open the **Monitor** page and select the **Cance
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Add data to a map – PMTiles](create-map.md#add-data-to-the-map---pmtiles)
+> [Add a PMTiles file](add-lakehouse-layer.md#add-a-pmtiles-file)
