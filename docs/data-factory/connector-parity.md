@@ -233,7 +233,7 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
 | [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
 | | | OAuth2 | | | | |
-| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | | ✓/-                   | Service principal       | Support Implementation and View mode. |
+| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   | Service principal       |  `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword` are not supported.<br><br>Support Implementation and View mode. |
 | | | | | | Organizational account | |
 | | | | | | Workspace identity | |
 | Shopify            | ✓/-                | Access token          | | N                      |                          | |
