@@ -42,7 +42,7 @@ Before using this activity, make sure that:
 1. Select the **Settings** tab to configure the activity.  
 1. Configure connection by selecting an existing connection from the **Connection** dropdown, or creating a new connection, and specifying its configuration details.
 1. Specify the **Workspace** that contains the Lakehouse.
-1. Specify the**SQL Endpoint** that contains the materialized lake view to refresh. This SQL endpoint is the Lakehouse whose SQL endpoint you want to refresh. The SQL endpoint associated with the selected Lakehouse.
+1. Specify the **SQL Endpoint** that contains the materialized lake view to refresh. This SQL endpoint is the Lakehouse whose SQL endpoint you want to refresh. The SQL endpoint associated with the selected Lakehouse.
 
     :::image type="content" source="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-settings.png" alt-text="Screenshot of the Refresh SQL Endpoint activity settings." lightbox="media/refresh-sql-endpoint-activity/refresh-sql-endpoint-settings.png":::
 
