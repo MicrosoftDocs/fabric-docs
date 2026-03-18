@@ -115,7 +115,7 @@ Each component is designed to solve a critical business need while working seaml
 
 ## Enable required tenant setting
 
-This setting is **required** to create plan (preview) items: *Users can create Planning (preview) items*.
+This setting is **required** to create plan (preview) items: *Users can create a Planning (preview) item(s)*.
 
 :::image type="content" source="media/overview/prerequisite-plan.png" alt-text="Screenshot of enabling plan in the admin portal." lightbox="media/overview/prerequisite-plan.png":::
 
