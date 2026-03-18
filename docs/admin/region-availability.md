@@ -42,8 +42,8 @@ This table lists regions where all Fabric workloads are available.
 | West US 2                             | Switzerland West             |             |                    | New Zealand North <sup>1</sup>|
 | West US 3                             | UK South                     |             |                    | Southeast Asia                |
 |                                       | UK West                      |             |                    | South India                   |
-|                                       |                              |             |                    | Taiwan North                  |
-|                                       |                              |             |                    | Taiwan Northwest              |
+|                                       |                              |             |                    | Taiwan North <sup>1</sup>                  |
+|                                       |                              |             |                    | Taiwan Northwest <sup>1</sup>              |
 
 
   <sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.

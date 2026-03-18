@@ -29,6 +29,9 @@ To access the job scheduler:
 
 You can also access the scheduler from within an item's settings by selecting the **Schedule** label. 
 
+> [!NOTE]
+> To set up or modify a schedule, or to configure failure notifications, you must have at least the **Contributor** role in the workspace, or **Write** permission on the item. Users with only **Viewer** access can see existing schedules but can't make changes. For more information, see [Roles in workspaces](../get-started/roles-workspaces.md).
+
 ## Set up your schedule
 
 After you open the scheduler for an item:
@@ -68,6 +71,8 @@ To ensure your schedule is valid:
 ## Receive notifications for failed scheduled jobs
 
 You can receive email notifications when a job triggered by a **schedule** fails to complete.
+
+:::image type="content" source="media/job-scheduler/job-scheduler-failure-notifications.png" alt-text="Screenshot of failure notification field in scheduler pane.":::
 
 ### Configure failure notifications
 While configuring a schedule, add users or groups under **Failure notifications** to receive emails when a scheduled run fails.
