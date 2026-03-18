@@ -4,7 +4,7 @@ description: Learn how to manage your Microsoft Fabric capacity and understand t
 author: julcsc
 ms.author: juliacawthra
 ms.topic: how-to
-ms.date: 09/02/2025
+ms.date: 03/06/2026
 ai-usage: ai-assisted
 ---
 
@@ -242,7 +242,7 @@ To resize a Fabric capacity, see [Scale your capacity](../enterprise/scale-capac
 
 To delete a capacity you need to be a [Microsoft Fabric admin](../admin/microsoft-fabric-admin.md).
 
-When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in OneLake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention policy](portal-workspaces.md#workspace-retention).
+When you delete a Power BI Premium, Trial or Fabric Capacity, non-Power BI Fabric items in workspaces assigned to the capacity are soft deleted. These Fabric items can still be seen in OneLake Data Hub and in the workspace list, but can't be opened or used. If the workspace that holds these items is associated to a capacity (other than Power BI Embedded) from the same region as the deleted capacity within seven days, the deleted items are restored. This seven-day period is separate from the [workspace retention setting](workspace-retention.md#set-up-the-retention-period-for-deleted-collaborative-workspaces).
 
 # [Power BI Premium](#tab/power-bi-premium)
 
