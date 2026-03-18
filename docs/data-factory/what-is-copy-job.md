@@ -59,16 +59,18 @@ You can reset incremental copy either per entire job or per table, giving you fi
 
 In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job will reset the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.
 
-### Update methods (Append, Overwrite, Merge) 
+### Update methods (Append, Overwrite, Merge, SCD Type 2) 
 
 You can also decide how data is written to your destination:
 
-By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column) or **overwrite** (replace existing data). If you select merge, Copy job uses the primary key by default, if one exists.
+By default, Copy job **appends** new data, so you keep a full history. If you prefer, you can choose to **merge** (update existing rows using a key column), **overwrite** (replace existing data), or **SCD Type 2** (preserve change history with effective dating). If you select merge or SCD Type 2, Copy job uses the primary key by default, if one exists.
 
-- When copying to a database: New rows are added to your tables. For supported databases, you can also choose to merge or overwrite existing data.
+- When copying to a database: New rows are added to your tables. For supported databases, you can also choose to merge, overwrite, or use SCD Type 2 for existing data.
 - When copying to storage: New data is saved as new files. If a file with the same name already exists, it's replaced.
 
-When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination.
+When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination. When using SCD Type 2 with CDC replication, changes are preserved as versioned rows with effective dating, and deletes are handled as soft deletes.
+
+See more details for [SCD Type 2 in CDC Copy job](/fabric/data-factory/cdc-copy-job#scd-type-2-historical-tracking-preview).
 
 ### Automatic table creation and truncation on destination
 
@@ -88,7 +90,7 @@ This approach ensures that your destination remains clean, fully synchronized, a
 
 ### Run options (Run, Schedule, Event Trigger)
 
-You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still click **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
+You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still select **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
 
 With support for **multiple schedules** in copy job, you gain even greater control. A single copy job can have multiple schedules—for example, one running daily at 6 AM and another running weekly on Sundays. All schedules can be managed directly within the same copy job, making orchestration simpler, cleaner, and more efficient. 
 
@@ -97,9 +99,9 @@ If you use the copy job activity in a pipeline, you can also take advantage of t
 See more details for [copy job activity](/fabric/data-factory/copy-job-activity).
 
 
-### Hosting options (VNet, On-Premises, Cloud)
+### Hosting options (Virtual network, On-premises, Cloud)
 
-You can use Copy job to move data from any source to any destination, whether your data is on-premises, in the cloud, or within a virtual network. On the connection page of Copy job, you can choose from multiple host options, including an on-premises gateway or a VNet gateway, to securely access data behind a firewall or within a VNet. 
+You can use Copy job to move data from any source to any destination, whether your data is on-premises, in the cloud, or within a virtual network. On the connection page of Copy job, you can choose from multiple host options, including an on-premises gateway or a virtual network gateway, to securely access data behind a firewall or within a virtual network. 
 
 See more details to [Secure your data movement with Copy Job and Virtual Network Data Gateway](/fabric/data-factory/copy-job-with-virtual-network-data-gateway).
 

@@ -140,10 +140,8 @@ items:
       href: notebook-limitation.md
 - name: Copilot
   items:
-  - name: Overview of Copilot for Data Science and Data Engineering (preview)
+  - name: Copilot for Data Engineering and Data Science (preview)
     href: copilot-notebooks-overview.md
-  - name: Chat-magics in notebooks (preview)
-    href: copilot-notebooks-chat-magics.md
   - name: Use the Copilot chat panel (preview)
     href: copilot-notebooks-chat-pane.md
 - name: AI functions
@@ -304,9 +302,9 @@ items:
       href: workspace-admin-settings.md
     - name: Spark admin settings - FAQ
       href: spark-admin-settings-faq.yml 
-  - name: Spark monitoring
+  - name: Spark monitoring and diagnostics
     items:
-      - name: Apache Spark Core Monitoring Features
+      - name: Spark monitoring and diagnostics features
         items: 
          - name: Apache Spark monitoring overview
            href: spark-monitoring-overview.md
@@ -318,12 +316,14 @@ items:
            href: spark-item-recent-runs.md
          - name: Monitor Spark jobs within notebooks
            href: spark-monitor-debug.md
-         - name: Monitor Spark job definition runs
-           href: monitor-spark-job-definitions.md
+         - name: Diagnose notebook failures with Copilot (preview)
+           href: copilot-notebooks-chat-pane.md#diagnose-notebook-failures
          - name: Leverage the Apache Spark advisor
            href: spark-advisor-introduction.md
          - name: Job insights diagnostic library (preview)
-           href: job-insight-library.md    
+           href: job-insight-library.md
+         - name: Monitor Spark job definition runs
+           href: monitor-spark-job-definitions.md
       - name: Spark Application Run Series Analysis
         items: 
          - name: Run series analysis overview
@@ -358,12 +358,16 @@ items:
             href: spark-advisor-api.md
       - name: Collecting Spark logs and metrics
         items: 
+          - name: Apache Spark Diagnostic Emitter overview
+            href: spark-diagnostic-emitter-overview.md
           - name: Collect logs and metrics with Azure Log Analytics
-            href: azure-fabric-diagnostic-emitters-log-analytics.md
-          - name: Collect logs and metrics with Azure Storage account
-            href: azure-fabric-diagnostic-emitters-azure-storage.md
+            href: data-collector-api-to-log-ingestion-api.md
           - name: Collect logs and metrics with Azure Event Hubs
             href: azure-fabric-diagnostic-emitters-azure-event-hub.md
+          - name: Collect logs and metrics with Azure Storage Account
+            href: azure-fabric-diagnostic-emitters-azure-storage.md
+          - name: Legacy HTTP Data Collector API for Azure Log Analytics
+            href: azure-fabric-diagnostic-emitters-log-analytics.md
   - name: Spark Connectors
     items:
     - name: Data warehouse and lakehouse connector
@@ -404,6 +408,8 @@ items:
       href: manage-environment-with-vs-code.md  
     - name: Notebook with VS Code extension
       href: author-notebook-with-vs-code.md
+    - name: Fabric Notebook custom agent inside VS Code
+      href: notebook-custom-agent-with-vs-code.md
     - name: Notebook resource with VS Code extension
       href: author-notebook-resource-with-vs-code.md
     - name: Spark job definition with VS Code extension
@@ -528,7 +534,7 @@ items:
         href: ./user-data-functions/git-and-deployment-pipelines.md
       - name: Service details and limitations
         href: ./user-data-functions/user-data-functions-service-limits.md
-- name: Materialized lake views (preview)
+- name: Materialized lake views
   items:
   - name: Overview
     href: ./materialized-lake-views/overview-materialized-lake-view.md
@@ -542,7 +548,7 @@ items:
       items: 
       - name: SQL language reference
         href: ./materialized-lake-views/create-materialized-lake-view.md
-      - name: PySpark language reference
+      - name: PySpark language reference (preview)
         href: ./materialized-lake-views/create-materialized-lake-view-pyspark.md
     - name: Data quality in materialized lake views
       href: ./materialized-lake-views/data-quality.md
@@ -556,8 +562,6 @@ items:
       href: ./materialized-lake-views/schedule-lineage-run.md
     - name: Run history of materialized lake views
       href: ./materialized-lake-views/run-history.md
-    - name: Operational run details
-      href: ./materialized-lake-views/operational-run-details.md
     - name: REST APIs for materialized lake views
       href: ./materialized-lake-views/materialized-lake-views-public-api.md
   - name: Monitor

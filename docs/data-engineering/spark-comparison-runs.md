@@ -15,10 +15,10 @@ The Spark applications comparison feature allows you to analyze and compare the 
 
 You can access the Spark applications comparison from the [Monitor run series](apache-spark-monitor-run-series.md#access-the-monitor-run-series-feature) page:
 
-1. Go to the **Monitor run series** page.
-2. Switch to the **Compare runs** tab.
+1. Go to the **Monitor run series** page. From the monitor run series page, you can access the Spark application comparison feature for items—such as Notebooks and Spark Job Definitions—for which you have read access.
+1. Switch to the **Compare runs** tab.
 
-:::image type="content" source="media\spark-comparison-runs\access-the-compare-run-feature.png" alt-text="Screenshot showing access the compare run feature." lightbox="media\spark-comparison-runs\access-the-compare-run-feature.png":::
+    :::image type="content" source="media\spark-comparison-runs\access-the-compare-run-feature.png" alt-text="Screenshot showing access the compare run feature." lightbox="media\spark-comparison-runs\access-the-compare-run-feature.png":::
 
 ## Spark application runs list
 

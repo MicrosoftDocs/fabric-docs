@@ -3,92 +3,186 @@ title: Notebook source control and deployment
 description: Learn about Fabric notebook source control and deployment pipelines, and Git integration with notebooks.
 ms.reviewer: jingzh
 ms.topic: how-to
-ms.date: 08/22/2024
+ms.date: 03/05/2026
 ms.search.form: Notebook git deployment pipelines alm ci cd
 ---
 
 # Notebook source control and deployment
 
-This article explains how Git integration and deployment pipelines work for notebooks in Microsoft Fabric. Learn how to set up a connection to your repository, manage your notebooks, and deploy them across different environments.
+This article explains how to use Git integration and deployment pipelines with notebooks in Microsoft Fabric. You learn how to connect a repository, manage notebook source code, and deploy notebooks across environments.
+
+## Before you start
+
+- Connect your workspace to Git before you complete notebook source-control steps. For setup instructions, see [Get started with Git integration](../cicd/git-integration/git-get-started.md).
+- Create notebook deployment rules on the target stage (for example, **Test** or **Production**), not on **Development**.
+- To create deployment rules, you must be the owner of the item.
 
 ## Notebook Git integration
 
-Fabric notebooks offer Git integration for source control with Azure DevOps. With Git integration, you can back up and version your notebook, revert to previous stages as needed, collaborate or work alone using Git branches, and manage your notebook content lifecycle entirely within Fabric.
+Fabric notebooks support Git integration with Azure DevOps for source control. You can version notebook changes, collaborate by using branches, and manage notebook lifecycle updates directly in Fabric.
+
+When you commit a notebook together with its attached dependencies (for example, environments), syncing to another workspace preserves these bindings. Fabric automatically binds the notebook to the corresponding resources in the new workspace.
+
+To support this behavior, Fabric stores logical identifiers for attached resources in notebook metadata. As a result, Git diffs can show metadata updates from physical IDs to logical IDs.
 
 > [!NOTE]
-> Start from October 2024, Notebook git integration supports persisting the mapping relationship of the attached Environment when syncing to new workspace, which means when you commit the notebook and attached environment together to git repo, and sync it to another workspace, the newly generated notebook and environment are bound together. This upgrade has impact to existing Notebooks and dependent Environments that are versioned in git, the **Physical id** of attached environment in notebook metadata content is replaced with a **Logical id**, and the change gets reflected on the diff view.
+> Metadata updates related to logical IDs and auto-binding can appear in Git diff views even when notebook code doesn't change.
 
 ### Set up a connection
 
-From your workspace settings, you can easily set up a connection to your repo to commit and sync changes. To set up the connection, see [Get started with Git integration](../cicd/git-integration/git-get-started.md). Once connected, your items, including notebooks, appear in the **Source control** panel.
+From workspace settings, set up a connection to your repository to commit and sync changes. For setup instructions, see [Get started with Git integration](../cicd/git-integration/git-get-started.md). After you connect, your items, including notebooks, appear in the **Source control** panel.
 
 :::image type="content" source="media\notebook-source-control-deployment\git-source-panel.png" alt-text="Screenshot of workspace source control panel." lightbox="media\notebook-source-control-deployment\git-source-panel.png":::
 
-After you successfully commit the notebook instances to the Git repo, you see the notebook folder structure in the repo.
+After you commit notebook instances to the Git repository, you can see the notebook folder structure in the repository.
 
-You can now execute future operations, like **Create pull request**.
+You can now perform Git operations, such as **Create pull request**.
 
 ### Notebook representation in Git
 
-The following image is an example of the file structure of each notebook item in the repo:
+The following text shows the file structure for a notebook item in the Git repository:
 
-:::image type="content" source="media\notebook-source-control-deployment\notebook-repo-view.png" alt-text="Screenshot of notebook Git repo file structure." lightbox="media\notebook-source-control-deployment\notebook-repo-view.png":::
+```text
+.
+├── Notebook_1.Notebook/
+│   ├── Resources/ (Optional)
+│   │   └── builtin/
+│   │       ├── large_dataset.parquet
+│   │       └── model_output.parquet
+│   ├── .platform
+│   ├── fs-settings.json (Optional)
+│   ├── notebook-content.py
+│   └── notebook-settings.json (Optional)
+└── Readme.md
+```
 
-When you commit the notebook item to the Git repo, the notebook code is converted to a source code format, instead of a standard `.ipynb` file. For example, a PySpark notebook converts to a notebook-content.py file. This approach allows for easier code reviews using built-in diff features.
+```text
+.
+├── Notebook_2.Notebook/
+│   ├── Resources/ (Optional)
+│   │   └── builtin/
+│   │       ├── large_dataset.parquet
+│   │       └── model_output.parquet
+│   ├── .platform
+│   ├── fs-settings.json (Optional)
+│   ├── notebook-content.sql
+│   └── notebook-settings.json (Optional)
+└── Readme.md
+```
 
-In the item content source file, metadata (including the default lakehouse and attached environment), markdown cells, and code cells are preserved and distinguished. This approach supports a precise recovery when you sync back to a Fabric workspace.
+When you commit a notebook item, Fabric stores it as source files instead of a standard `.ipynb` file. For example, a PySpark notebook is stored as `notebook-content.py`. This format is easier to review in Git diffs.
+
+The source file keeps notebook metadata (including the default lakehouse and attached environment), markdown cells, and code cells as separate sections. Fabric uses this structure to reconstruct the notebook when you sync back to a workspace.
 
 Notebook cell output isn't included when syncing to Git.
+
+The following screenshot shows the source format in the Git repository:
 
 :::image type="content" source="media\notebook-source-control-deployment\notebook-content.png" alt-text="Screenshot of notebook Git repo content format." lightbox="media\notebook-source-control-deployment\notebook-content.png":::
 
 > [!NOTE]
->
-> - Currently, files in **Notebook resources** aren't committed to the repo. Committing these files is supported in an upcoming release.
-> - We recommend you to manage the notebooks and their dependent environment in the same workspace, and use git to version control both notebook and [environment](./environment-git-and-deployment-pipeline.md) items. The Fabric Git system handles the mapping relationship when syncing the notebook and attached environment to new workspaces.
-> - The default lakehouse ID persists in the notebook when you sync from the repo to a Fabric workspace. If you commit a notebook with the default lakehouse, you must refer a newly created lakehouse item manually. For more information, see [Lakehouse Git integration](lakehouse-git-deployment-pipelines.md).
+> Keep notebooks and their dependent environments in the same workspace, and version both notebook and [environment](./environment-git-and-deployment-pipeline.md) items in Git. Fabric maps these relationships when you sync to new workspaces.
+> 
+> The default lakehouse ID stays in notebook metadata when you sync from the repository to a Fabric workspace. If needed, manually bind the notebook to the new lakehouse item. For more information, see [Lakehouse Git integration](#lakehouse-auto-binding-in-git).
+
+## Notebook Git settings
+
+The Git settings panel lets you control how notebooks interact with source control, including options for Git binding and managing which Resources folder files are included in commits.
+
+> [!NOTE]
+> Don't edit `notebook-settings.json` in the Git repository to control Git auto-binding or resources. Manage these settings through the notebook settings page instead.
+
+### Lakehouse Auto-Binding in Git
+
+Lakehouse Auto-Binding lets Fabric resolve the correct default lakehouse for each Git-connected workspace. This reduces manual rebinding when you move notebooks across development, test, and production workspaces.
+
+Enable this feature from Notebook settings. After you enable it, Fabric creates `notebook-settings.json` in the repository and manages this file automatically. Don't edit this file manually.
+
+:::image type="content" source="media\notebook-source-control-deployment\notebook-git-binding.png" alt-text="Screenshot of notebook git-binding." lightbox="media\notebook-source-control-deployment\notebook-git-binding.png":::
+
+> [!NOTE]
+> Notebook Git integration supports persisting the binding relationship between notebooks and their attached lakehouses when syncing across workspaces. When syncing a notebook to another workspace, you can choose whether it binds to the lakehouse in the source workspace or the lakehouse in the new workspace. For notebooks already versioned in Git, the physical ID of the attached lakehouse in the notebook metadata is replaced with a logical ID. This change may appear in the Git diff view.
+
+### Notebooks Resources Folder Support in Git
+
+> [!NOTE]
+> The Environment Resources folder and integration with deployment pipelines and public APIs are not currently supported.
+
+The built-in Resources folder can be committed to Git so scripts and configuration files are versioned with the notebook.
+
+This feature is optional and off by default. Enable it from Notebook settings in the Git settings section. After you enable it, files in the Resources folder are included in commits. Because commits have a **50 MB** limit, use `.gitignore` file or Git rules to exclude large or temporary files or folders.
+
+:::image type="content" source="media\notebook-source-control-deployment\notebook-resources-in-git.png" alt-text="Screenshot of notebook resources in git configuration." lightbox="media\notebook-source-control-deployment\notebook-resources-in-git.png":::
+
+> [!NOTE]
+> Only the `.gitignore` in the built-in resource root folder takes effect.
+
+After you configure Git rules and commit changes, Fabric saves the rules in `fs-settings.json` in the repository. Fabric generates and manages this file to keep repository configuration consistent. We also don't recommend editing this file directly in the Git repository.
+
+:::image type="content" source="media\notebook-source-control-deployment\notebook-resources-structure-in-git.png" alt-text="Screenshot of notebook resources structure in git configuration." lightbox="media\notebook-source-control-deployment\notebook-resources-structure-in-git.png":::
 
 ## Notebook in deployment pipelines
 
-You can also use Deployment pipeline to deploy your notebook code across different environments, such as development, test, and production. This feature can enable you to streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight low-code operations. You can also use deployment rules to customize the behavior of your notebooks when they're deployed, such as changing the default lakehouse of a notebook.
+Use deployment pipelines to promote notebook changes across stages such as **Development**, **Test**, and **Production**. Validate updates in earlier stages before you promote them to production.
+
+Notebook deployment supports auto-binding for the default lakehouse and attached environment when dependent items are in the same workspace. During deployment, Fabric can rebind these dependencies to corresponding items in the target workspace. Metadata changes can appear in the diff view.
+
+If you need a specific target-stage default lakehouse, configure a deployment rule to override auto-binding.
+
+The new deployment pipeline UI is currently used in this article. You can switch to the old UI by turning off **New Deployment pipeline**.
 
 > [!NOTE]
-> 
-> - You're using the new design of deployment pipeline now. The old UI can be accessed by turning off 'New Deployment pipeline'.
-> - Start from October, Fabric notebook supports auto-binding feature that will bind the default lakehouse and attached environment within the same workspace when deploying to next stage. The change will have impacts to existing notebooks in deployment pipeline.
->   - The default lakehouse and attached environment (when all dependent items are in the same workspace) will be replaced by newly generated items in target workspace, the notebook metadata change will be highlighted in the diff view in next round of deployment.
->   - You can set deployment rules for default lakehouse to override the auto-binded lakehouse.
-> - Known issue: Frozen cell status in the notebook will be lost during deployment. We are currently working on related tasks.
+> Known issue: frozen cell status in notebooks isn't preserved during deployment.
 
-Use the following steps to complete your notebook deployment using the deployment pipeline.
+Use the following steps to deploy notebooks through a deployment pipeline.
 
-1. Create a new deployment pipeline or open an existing deployment pipeline. (For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).)
+1. Create a deployment pipeline, or open an existing one. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
 1. Assign workspaces to different stages according to your deployment goals.
 
-1. Select, view, and compare items including notebooks between different stages, as shown in the following example. The highlighted badge indicating changed item count between the previous stage and current stage.
+1. Select, view, and compare items, including notebooks, between stages. The highlighted badge shows the number of changed items between the previous stage and the current stage.
 
     :::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
 
-1. Select **Deploy** to deploy your notebooks across the Development, Test, and Production stages.
+1. Select **Deploy** to promote notebooks across the **Development**, **Test**, and **Production** stages.
 
     :::image type="content" source="media\notebook-source-control-deployment\select-items-and-deploy.png" alt-text="Screenshot of select items and deploy." lightbox="media\notebook-source-control-deployment\select-items-and-deploy.png":::
 
+1. In the **Deploy to this stage** window, review the new and changed items. To continue deployment even if one or more items fail, select **Continue deployment if one or more items fail**.
+
+    After you review and confirm the selection, select **Deploy**.
+
     :::image type="content" source="media\notebook-source-control-deployment\deploy-contents-pop-up.png" alt-text="Screenshot of deploy contents pop-up.png." lightbox="media\notebook-source-control-deployment\deploy-contents-pop-up.png":::
 
-1. (Optional.) You can select **Deployment rules** to create deployment rules for a deployment process. Deployment rules entry is on the target stage for a deployment process.
+1. (Optional.) To create deployment rules, select **Deployment rules** on the target stage item in the pipeline (for example, **Test** or **Production**).
+
+    For general rule behavior and limitations, see [Create deployment rules](../cicd/deployment-pipelines/create-rules.md).
 
     :::image type="content" source="media\notebook-source-control-deployment\deploy-rule-entry.png" alt-text="Screenshot of deployment rules entry." lightbox="media\notebook-source-control-deployment\deploy-rule-entry.png":::
 
-    Fabric supports parameterizing the default lakehouse for **each** notebook instance when deploying with deployment rules. Three options are available to specify the target default lakehouse: Same with source lakehouse, _N/A_(no default lakehouse), and other lakehouse.
+1. Configure a default lakehouse rule for each notebook deployment.
+
+    This rule controls which lakehouse the notebook connects to in the target stage after deployment.
+
+    In the **Set deployment rules** pane, select the **Default lakehouse** tile.
+
+    Use the **From** and **To** dropdowns to map the source-stage default lakehouse to the target-stage default lakehouse:
+
+    - **Same with source lakehouse**: Keep the same default lakehouse setting as the source stage.
+    - **N/A (no default lakehouse)**: Remove the default lakehouse setting in the target stage.
+    - **Other**: Replace the source-stage default lakehouse with a different lakehouse in the target stage.
+
+    If you select **Other** in the **To** dropdown, provide the target lakehouse details:
+
+    - **Lakehouse ID**
+    - **Lakehouse name**
+    - **Lakehouse workspace ID**
 
     :::image type="content" source="media\notebook-source-control-deployment\set-default-lakehouse.png" alt-text="Screenshot of set default lakehouse." lightbox="media\notebook-source-control-deployment\set-default-lakehouse.png":::
 
-    You can achieve secured data isolation by setting up this rule. Your notebook's default lakehouse is replaced by the one you specified as target during deployment.
-
     > [!NOTE]
-    > When setting default lakehouse in deployment rules, the **Lakehouse ID** is must have. You can get the lakehouse id from the item URL link.
-    > The deployment rules has higher priority than auto-binding, the auto-binded lakehouse will be overwritten when there's deployment rule configured.
+    > **Lakehouse ID** is required when you configure this rule. You can get the lakehouse ID from the item URL.
+    > Deployment rules take priority over auto-binding. If a deployment rule is configured, it overrides the auto-bound lakehouse.
 
 1. Monitor the deployment status from **Deployment history**.
 

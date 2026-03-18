@@ -5,11 +5,12 @@ ms.reviewer: shuaijunye
 ms.topic: how-to
 ms.date: 03/20/2026
 ms.search.form: Manage libraries in Environment
+ai-usage: ai-assisted
 ---
 
 # Library management in Fabric environments
 
-Microsoft Fabric environments provide flexible configurations for running your Spark jobs. Libraries provide reusable code that developers want to include in their work. Except for the built-in libraries that come with each Spark runtime, you can install public and custom libraries in your Fabric environments. You can easily attach environments to your notebooks and Spark job definitions.
+Microsoft Fabric environments provide flexible configuration for running Spark jobs. Libraries provide reusable code for notebooks and Spark job definitions. In addition to built-in libraries that come with each Spark runtime, you can install public and custom libraries in Fabric environments.
 
 > [!NOTE]
 > Navigate to the workspace where your environment is located, select your environment and library management options are located in the left navigation pane. If you don't have an environment created, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md).
@@ -23,8 +24,45 @@ These libraries are installed by default in every environment and can't be chang
 To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md).
 
 > [!IMPORTANT]
-> Fabric supports different ways of managing packages. For more options and **best practices** for managing libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md)
-> When your workspace has networking features such as **Workspace outbound access protection** or **Managed VNets**, the access of public repositories like PyPI are blocked. Follow the instruction in [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md) to seamlessly managing the libraries in Environment.
+> Fabric supports different ways to manage packages. For more options and **best practices**, see [Manage Apache Spark libraries in Fabric](library-management.md).
+> If your workspace uses networking features such as **Workspace outbound access protection** or **Managed VNets**, access to public repositories such as PyPI is blocked. For guidance, see [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md).
+> If the built‑in library versions don’t meet your needs, you can override them by specifying the desired version in the external repository section or by uploading your own custom packages.
+
+## Select publish mode for libraries
+Before you add libraries from external repositories or upload custom packages, choose a publish mode. Fabric environments support two modes: **Full mode** and **Quick mode**.
+
+:::image type="content" source="media\environment-lm\environment-library-management-different-mode.png" alt-text="Screenshot that shows the different modes in the library management screen." lightbox="media\environment-lm\environment-library-management-different-mode.png":::
+
+### Full mode
+Full mode uses the traditional publish workflow. During publish, Fabric resolves dependencies, validates compatibility, and creates a stable library snapshot. That snapshot is deployed when a new session starts.
+
+Use Full mode for production workloads, pipelines, and environments with heavier dependency sets.
+
+### Quick mode
+Quick mode skips dependency processing during publish. Instead, packages are installed at notebook session startup.
+
+Use Quick mode for lightweight dependencies, rapid iteration, and early-stage experimentation.
+
+### Choosing the right mode for your needs
+Use dependency complexity and release stage to choose a mode.
+
+- **Full mode**: Best for larger dependency sets (for example, more than 10 packages), production runs, and pipeline reliability. Publish time is typically 2 to 10 minutes, with another 30 seconds to 2 minutes at session startup, depending on dependency size.
+- **Quick mode**: Best for lighter dependency sets and rapid iteration. Publish usually completes in seconds, and install time occurs at session startup.
+
+You can mix modes during development. A common pattern is to iterate in Quick mode, then move validated dependencies to Full mode for a stable production snapshot.
+
+You can also keep an existing Full mode snapshot unchanged and add only new test packages in Quick mode. In that setup, publish remains fast, the existing snapshot is deployed first, and Quick mode packages are installed at session startup.
+
+### Mode limitations and behavior
+
+- Quick mode is supported only for notebooks.
+- JAR files aren't supported in Quick mode.
+- Only Full mode supports private repositories (Azure Artifact Feed).
+- You can't move custom libraries directly between modes. To switch modes, download the file, remove it from the current mode, then upload it to the target mode.
+- Installation logs aren't shown in the notebook. Use **Monitoring (Level 2)** to track progress and troubleshoot issues.
+- Duplicate packages across modes are supported, including same and different versions. Full mode snapshot packages are applied first, then Quick mode packages. If names match, Quick mode versions override Full mode versions.
+- Quick mode packages install when the first code cell for that language runs. For example, Python packages install when the first Python cell runs, and R packages install when the first R cell runs.
+
 
 ## External repositories
 
@@ -67,7 +105,7 @@ Private repositories let you install packages using pip or conda.
 Azure Artifact Feeds can be scoped to either a project (private) or an organization (public). Fabric supports both scopes. Regardless of the feed's visibility in Azure DevOps, Fabric always connects through an authenticated Data Factory connection, so you need to set up a connection even for public feeds.
 
 > [!NOTE]
-> Installing libraries from Azure Artifact Feed is currently supported in Spark 3.5, and NOT supported in Private link or outbound access protection enabled workspaces.
+> Installing libraries from Azure Artifact Feed is supported in Spark 3.5. It isn't supported in workspaces with Private Link or outbound access protection enabled.
 
 #### Set up a connection for your Azure Artifact Feed
 
@@ -110,7 +148,7 @@ dependencies:
   - pip:
     - fuzzywuzzy==0.18.0
     - wordcloud==1.9.4
-    - --index-url <YOUR_CONNECTION_ID> 
+    - --index-url <YOUR_CONNECTION_ID>
 ```
 
 Upload the YML file directly to the environment, or switch to **YML editor view** and paste the content. When you publish the environment, Fabric reads the packages from your feed and persists them. If you update packages in your Azure Artifact Feed, **republish the environment** to pick up the latest versions.
