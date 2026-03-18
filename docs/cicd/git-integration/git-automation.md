@@ -559,6 +559,7 @@ Copy the ID of the connection you want and use it in the [Git - Connect](/rest/a
 
 * Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
 * Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git *diff* after each refresh.
+* Error: 'Items with conflicting logical IDs detected' - users which execute **InitializeGitConnection** API, may encounter situation where a conflict is detected between logical IDs in the workspace and the git repository, to learn more about the situation follow [Logical ID Conflicts in Microsoft Fabric](https://learn.microsoft.com/en-us/fabric/cicd/git-integration/logical-id-conflict-resolution). To resolve this issue user can either rename the conflicting item name or change the logical id on the remote Git.
 
 ## Related content
 * [Git integration - get started](git-get-started.md)
