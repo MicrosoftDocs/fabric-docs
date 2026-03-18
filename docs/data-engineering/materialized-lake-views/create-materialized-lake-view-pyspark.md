@@ -217,13 +217,13 @@ Use this flowchart to decide which approach to use:
 You can drop a materialized lake view by using the **Delete** option in the lakehouse object explorer or by running the following command in the notebook:
 
 ```python
-spark.sql("DROP MATERIALIZED LAKE IF EXISTS <materialized lake view_Identifier") 
+spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS <materialized lake view_Identifier") 
 ```
 
 Here's an example:
 
 ```python
-spark.sql("DROP MATERIALIZED LAKE IF EXISTS silver.customer_enriched") 
+spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS silver.customer_enriched") 
 ```
 
 > [!NOTE]
