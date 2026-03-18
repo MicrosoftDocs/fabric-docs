@@ -3,7 +3,7 @@ title: Git integration process
 description: Understand how Microsoft Fabric interacts with Git on Azure Repos or GitHub, what permissions are needed, and how to sync.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 03/18/2026
 #customer intent: As a developer I want to learn about the Git integration feature in Fabric so that my team can collaborate more effectively.
 ---
 
@@ -216,7 +216,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
- - [*Branch out to another workspace*](./manage-branches.md#scenario-2---develop-using-another-workspace) (contributor and above): Creates a new workspace, or switches to an existing workspace based on the last commit to the current workspace. It then connects to the target workspace and branch.
+ - [*Branch out to another workspace*](./manage-branches.md#scenario-2---branch-out-to-another-workspace) (contributor and above): Creates a new workspace, or switches to an existing workspace based on the last commit to the current workspace. It then connects to the target workspace and branch.
  - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
  - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
