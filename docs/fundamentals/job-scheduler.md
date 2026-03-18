@@ -29,6 +29,9 @@ To access the job scheduler:
 
 You can also access the scheduler from within an item's settings by selecting the **Schedule** label. 
 
+> [!NOTE]
+> To set up or modify a schedule, or to configure failure notifications, you must have at least the **Contributor** role in the workspace, or **Write** permission on the item. Users with only **Viewer** access can see existing schedules but can't make changes. For more information, see [Roles in workspaces](../get-started/roles-workspaces.md).
+
 ## Set up your schedule
 
 After you open the scheduler for an item:
