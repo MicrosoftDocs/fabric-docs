@@ -31,7 +31,7 @@ To view the list of preinstalled packages and their versions for each runtime, s
 ## Select publish mode for libraries
 Before you add libraries from external repositories or upload custom packages, choose a publish mode. Fabric environments support two modes: **Full mode** and **Quick mode**.
 
-:::image type="content" source="media\environment-lm\environment-library-management-different-mode.png" alt-text="Screenshot that shows the different modes in the library management screen." lightbox="media\environment-lm\environment-library-management-different-mode.png":::
+:::image type="content" source="media\environment-library-management\environment-library-management-different-mode.png" alt-text="Screenshot that shows the different modes in the library management screen." lightbox="media\environment-library-management\environment-library-management-different-mode.png":::
 
 ### Full mode
 Full mode uses the traditional publish workflow. During publish, Fabric resolves dependencies, validates compatibility, and creates a stable library snapshot. That snapshot is deployed when a new session starts.
