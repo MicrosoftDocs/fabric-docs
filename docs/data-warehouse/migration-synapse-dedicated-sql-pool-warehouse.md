@@ -105,7 +105,7 @@ Lift and shift migration is a good fit for these scenarios:
 - You have an existing environment with data that's already in a well-designed star or snowflake schema.
 - You're under time and cost pressure to move to Fabric Data Warehouse.
 
-In summary, this approach works well for those workloads that is optimized with your current Azure Synapse dedicated SQL pools environment, and therefore doesn't require major changes in Fabric.
+In summary, this approach works well for those workloads that are optimized with your current Azure Synapse dedicated SQL pools environment, and therefore doesn't require major changes in Fabric.
 
 ### Modernize in a phased approach with architectural changes
 
@@ -135,19 +135,19 @@ There are several data type differences in Fabric Data Warehouse. For more infor
 
 The following table provides the mapping of supported data types from Synapse dedicated SQL pools to Fabric Data Warehouse.
 
-|Synapse dedicated SQL pools | Fabric Data Warehouse|
+|Synapse dedicated SQL pools | Fabric Data Warehouse |
 |:--|:--|
-| `money` |     `decimal(19,4)` |
-| `smallmoney` |     `decimal(10,4)` |
-| `smalldatetime` |     `datetime2` |
-| `datetime` |     `datetime2` |
-| `nchar` |     `char` |
-| `nvarchar` |     `varchar` |
-| `tinyint` |     `smallint` |
-| `binary` |     `varbinary` |
-| `datetimeoffset`\* |     `datetime2` |
+| **money** |     **decimal(19,4)** |
+| **smallmoney** |     **decimal(10,4)** |
+| **smalldatetime** |     **datetime2** |
+| **datetime** |     **datetime2** |
+| **nchar** |     **char** |
+| **nvarchar** |     **varchar** |
+| **tinyint** |     **smallint** |
+| **binary** |     **varbinary** |
+| **datetimeoffset**\* |     **datetime2** |
 
-\* `Datetime2` does not store the extra time zone offset information that is stored in. Since the `datetimeoffset` data type is not currently supported in Fabric Data Warehouse, the time zone offset data would need to be extracted into a separate column.
+\* **Datetime2** does not store the extra time zone offset information that is stored in **datetimeoffset**. Since the **datetimeoffset** data type is not currently supported in Fabric Data Warehouse, the time zone offset data would need to be extracted into a separate column.
 
 > [!TIP]
 > **Ready to migrate?**
