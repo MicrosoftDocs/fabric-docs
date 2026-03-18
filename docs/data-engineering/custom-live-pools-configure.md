@@ -96,7 +96,7 @@ The live pool status includes details such as:
 
 To get the most out of custom live pools, consider the following best practices for configuration and management:
 
-### Optimizing for cost and performance
+### Optimize for cost and performance
 
 - **Align count with demand**: Set the max cluster count based on expected concurrent sessions. Over-provisioning increases costs.
 - **Monitor utilization**: Regularly review pool metrics and adjust cluster count if necessary.
@@ -117,18 +117,18 @@ When configuring your pool, consider the following settings and recommendations:
 | Medium compute | 8-12 cores | Daily reporting, medium-size datasets |
 | Heavy compute | 14-16 cores | Large datasets, complex transformations |
 
-### Managing library dependencies
+### Manage library dependencies
 
 - **Use environment grouping**: Pre-install common libraries in the environment rather than on-the-fly installation.
 - **Environment versioning**: Updating an attached environment requires re-publishing and refreshing hydrated clusters.
 - **Refresh hydrated clusters**: After environment changes, refresh the pool or wait for the next scheduled cycle to apply changes.
 
-### Adapting to workload patterns
+### Adapt to workload patterns
 
 - **Monitor outside behavior**: Adjust idle timeouts based on actual usage patterns.
 - **Share across sessions**: Consider sharing the same environment across multiple pools if you have consistent workload patterns to improve resource utilization.
 
-### Scheduling best practices
+### Schedule best practices
 
 - **Align with workload patterns**: Schedule active times when your team runs interactive or scheduled notebooks.
 - **Buffer time**: Add 60-90 minutes before expected usage windows to ensure complete hydration.

@@ -35,7 +35,7 @@ To configure a resource profile for your workspace:
 1. Expand **Data Engineering/Science** in the left pane and then select **Spark settings**.
 1. To get a recommended compute configuration to optimize your resource usage, under **Optimize for your use case**, select **Get started**.
 
-    :::image type="content" source="media/configure-resource-profiles/spark-settings-optimize-get-started.png" alt-text="Screenshot showing the Get started button under Optimize for your use case in Spark settings" lightbox="media/configure-resource-profiles/spark-settings-optimize-get-started.png":::
+    :::image type="content" source="media/configure-resource-profiles/spark-settings-optimize-get-started.png" alt-text="Screenshot showing the Get started button under Optimize for your use case in Spark settings." lightbox="media/configure-resource-profiles/spark-settings-optimize-get-started.png":::
 
 1. In the **Optimize for your use case** page, provide the following inputs:
 
