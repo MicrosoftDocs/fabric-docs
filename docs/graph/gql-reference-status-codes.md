@@ -1,10 +1,8 @@
 ---
-title: GQL Status Codes Reference
-description: Complete reference of GQLSTATUS codes used by graph in Microsoft Fabric
+title: GQL status codes reference for graph in Microsoft Fabric
+description: Review the complete reference of GQL status codes returned by graph in Microsoft Fabric queries, including success, warning, and error condition codes.
 ms.topic: reference
-ms.date: 11/18/2025
-author: lorihollasch
-ms.author: loriwhip
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -12,7 +10,7 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-When you run GQL queries in Microsoft Fabric, you receive status information along with your results. This reference lists all GQLSTATUS codes used by graph in Microsoft Fabric.
+When you run GQL queries in Microsoft Fabric, you receive status information along with your results. This article lists all GQLSTATUS codes used by graph in Microsoft Fabric.
 
 ## Success codes
 
@@ -32,9 +30,9 @@ When you run GQL queries in Microsoft Fabric, you receive status information alo
 
 ## Understanding status codes
 
-**Success indicators:** Codes starting with `0` indicate successful query execution. Even if your query returns no data (02000), query execution was successful.
+**Success indicators:** Codes that start with `0` indicate successful query execution. Even if your query returns no data (02000), query execution was successful.
 
-**Using status codes:** Check the GQLSTATUS code to determine if your query succeeded and handle empty results appropriately in your applications.
+**Using status codes:** Check the GQLSTATUS code to determine if your query succeeded. Handle empty results appropriately in your applications.
 
 ## Related content
 

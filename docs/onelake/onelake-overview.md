@@ -2,10 +2,7 @@
 title: OneLake, the OneDrive for data
 description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Learn more.
 ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
 ms.topic: overview
-ms.custom:
 ms.date: 12/10/2025
 #customer intent: As a data analyst, I want to understand the benefits of using OneLake so that I can effectively manage and analyze all the analytics data for my organization.
 ---
@@ -18,6 +15,7 @@ OneLake brings customers:
 
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines
+- **Built-in data protection** with automatic soft delete and disaster recovery options
 
 ## One data lake for the entire organization
 
@@ -79,6 +77,22 @@ Business users can build Power BI reports directly on top of OneLake using the D
 
 :::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Example diagram showing loading data using Spark, querying using T-SQL, and viewing the data in a Power BI report." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
 
+## Built-in data protection
+
+OneLake automatically protects your data with built-in features that help you recover from accidental deletions and prepare for regional outages.
+
+### Soft delete for file recovery
+
+When you delete files in OneLake, they aren't immediately removed. OneLake retains deleted files for seven days, giving you time to recover from accidental deletions or user errors. You can restore soft-deleted files using Azure Storage Explorer or PowerShell.
+
+For step-by-step instructions, see [Recover deleted files in OneLake](soft-delete.md).
+
+### Disaster recovery
+
+OneLake uses zone-redundant storage (ZRS) where available to protect against datacenter failures. You can also enable business continuity and disaster recovery (BCDR) for a capacity to replicate your data to a secondary geographic region.
+
+For more information, see [Plan for disaster recovery and data protection](onelake-disaster-recovery.md).
+
 ## Next steps
 
 Ready to start using OneLake? Here's how to get started:
@@ -90,4 +104,5 @@ Ready to start using OneLake? Here's how to get started:
 
 - [OneLake file explorer for Windows](onelake-file-explorer.md)
 - [OneLake shortcuts](onelake-shortcuts.md)
+- [Recover deleted files in OneLake](soft-delete.md)
 - [OneLake access and APIs](onelake-access-api.md)

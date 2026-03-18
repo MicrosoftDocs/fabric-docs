@@ -1,8 +1,6 @@
 ---
 title: Connectors for Copy Job
 description: This article covers the supported connectors for Copy Job in Microsoft Fabric, including source, destination, CDC replication, automatic table creation, and truncate on destination capabilities.
-author: whhender
-ms.author: whhender
 ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 01/05/2025
@@ -34,6 +32,15 @@ The following table shows which connectors are supported as sources and destinat
 For more information about each of these modes, see [the copy job overview](what-is-copy-job.md).
 
 [!INCLUDE [copy-job-source-destination-connectors](includes/copy-job-source-destination-connectors.md)]
+
+> [!NOTE]
+> The ODBC connector with native incremental copy capability only works for Microsoft SQL family data stores, including:
+> - Amazon RDS for SQL Server
+> - Azure SQL DB
+> - Azure SQL Managed Instance
+> - Azure Synapse Analytics
+> - Fabric Warehouse
+> - SQL Server On-premises
 
 ## CDC Replication (Preview)
 

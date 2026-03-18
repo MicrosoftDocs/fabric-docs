@@ -1,9 +1,7 @@
 ---
 title: Decision Guide for Data Movement and Transformation
 description: Identify the best strategy for your workload and skill level with our Microsoft Fabric data integration decision guide, and compare data integration strategies like Mirrored Database, Copy Job, Copy Activity, Pipelines, Apache Airflow Job, Notebooks, and Dataflow Gen2.
-author: whhender
-ms.author: whhender
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.date: 08/08/2025
 ms.topic: product-comparison
 ai-usage: ai-assisted

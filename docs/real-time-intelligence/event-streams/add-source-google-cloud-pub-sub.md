@@ -1,11 +1,8 @@
 ---
 title: Add Google Cloud Pub/Sub source to an eventstream
 description: Learn how to add Google Cloud Pub/Sub source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 11/22/2024
 ms.search.form: Source and Destination
 ---
@@ -20,7 +17,7 @@ Google Pub/Sub is a messaging service that enables you to publish and subscribe 
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Google Cloud account with the Pub/Sub service enabled and a role with the required permissions.
-- Your Google Cloud Pub/Sub source must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Google Cloud Pub/Sub source should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Add Google Cloud Pub/Sub as a source
@@ -62,3 +59,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

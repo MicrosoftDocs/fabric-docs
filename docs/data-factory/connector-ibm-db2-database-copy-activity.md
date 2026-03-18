@@ -1,8 +1,6 @@
 ---
 title: Configure IBM Db2 database in a copy activity
 description: This article explains how to copy data using IBM Db2 database.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
 ms.date: 08/12/2025
 ms.custom:

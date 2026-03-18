@@ -5,26 +5,23 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
-ms.date: 01/27/2026
+ms.date: 03/09/2026
 
 #customer intent: As a workspace admin, I want to lean about using workspace-level IP firewall rules on my workspace to restrict the IP addresses than can access my Fabric workspace.
 
 ---
 
-# Protect workspaces by using IP firewall rules (Preview)
+# Protect workspaces by using IP firewall rules
 
-Workspace IP firewall rules let workspace admins control access to their Microsoft Fabric workspace by allowing connections only from trusted public IP addresses. By setting up a simple allow list, you can prevent unauthorized traffic from reaching your workspace. This protection reduces exposure to the public internet and adds an extra layer of protection on top of identity and role-based access controls.
+Workspace IP firewall rules let workspace admins control access to their Microsoft Fabric workspace by allowing connections only from trusted public IP addresses. By setting up a simple allow list, you can prevent unauthorized traffic from reaching your workspace. This feature adds an extra layer of protection in addition to identity and role-based access controls.
 
 This article provides an overview of workspace IP firewall rules. For configuration steps, see [Set up workspace IP firewall rules](security-workspace-level-firewall-set-up.md).
 
 ## Workspace-level IP firewall overview
 
-Fabric provides network security at both tenant and workspace levels, including Microsoft Entra Conditional Access, tenant-level Private Link, and workspace-level Private Link. These features help secure access to workspaces and tenant resources. However, when a workspace is exposed over public endpoints, many organizations need a straightforward, IP-based method to limit access. This method complements the strong private connectivity and identity-based controls already in place.
+Fabric provides network security at both tenant and workspace levels, including Microsoft Entra Conditional Access, tenant-level Private Link, and workspace-level Private Link. Workspace-level IP firewall rules complement private connectivity and identity-based controls already in place.
 
-Workspace IP firewall rules address this need by enabling administrators to define an IP allow list directly at the workspace level. This method provides a straightforward way to restrict inbound access to trusted office networks, VPN gateways, or partner IP ranges. It's useful when Private Link isn't feasible or when identity policies alone don't provide sufficient network-layer boundaries.
-
-Workspace IP firewall rules work alongside existing Fabric security features to provide IP-based access restrictions. Because they operate at the workspace level, they don't require tenant-wide configuration changes or complex networking setups.
+Workspace IP firewall rules address this need by enabling administrators to define an IP allow list directly at the workspace level. This method provides a straightforward way to restrict inbound access to trusted office networks, VPN gateways, or partner IP ranges.
 
 > [!NOTE]
 > IP firewall rules apply only to inbound traffic. They don't govern or restrict outbound connections from the workspace.  
@@ -76,7 +73,11 @@ Use workspace-level IP firewall rules to control access to the following Fabric 
 - Duplicate rule names aren't allowed, and spaces aren't allowed in IP addresses.
 - To enable traffic from an on-premises network, identify the internet-facing IP addresses that your network uses. Contact your network administrator for assistance.
 - If you're using Azure ExpressRoute from your premises, identify the NAT IP addresses used for Microsoft peering. Either the service provider or the customer provides the NAT IP addresses.
-- If incorrect or missing allowed public IP addresses make the workspace inaccessible, use the API to update IP firewall rules.
+- In case a workspace is inaccessible due to misconfiguration of IP rules, use the API to update IP firewall rules.
+- Following Fabric items are not supported:
+  - Databricks Unity Catalog mirrored item
+  - OneLake security
+  - Power BI and Copilot experiences
 
 ## How IP firewall rules interact with other network security settings
 
@@ -97,15 +98,14 @@ For each scenario in this table, the user wants to access the IP firewall settin
 | Scenario | Tenant private link | Tenant public internet | Workspace private link and public access allowed | Workspace private link (public access blocked) | Portal access to workspace IP firewall settings? | API access to workspace IP firewall settings? |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | 1 | Yes | Blocked | Yes | - | Yes, from the network with tenant private link only | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
-| 2 | Yes | Blocked | Yes | - | Yes, using network with tenant private link | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
-| 3 | Yes | Blocked | - | Yes | No | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
-| 4 | Yes | Allowed | Yes | - | Yes, via public internet or network with tenant private link | Yes, using api.fabric.microsoft.com over the public internet or network with tenant private link using tenant-specific FQDN |
-| 5 | Yes | Allowed | - | Yes | No | Yes, using api.fabric.microsoft.com over the public internet or network with tenant private link using tenant-specific FQDN |
-| 6 | No | N/A | Yes | - | Yes, via public internet | Yes, using api.fabric.microsoft.com over the public internet |
-| 7 | No | N/A | - | Yes | No | Yes, using api.fabric.microsoft.com over the public internet |
-| 8 | Yes | Blocked | - | - | Yes, using network with tenant private link | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
-| 9 | Yes | Allowed | - | - | Yes, via public internet or network with tenant private link | Yes, using api.fabric.microsoft.com over the public internet or network with tenant private link using tenant-specific FQDN |
-| 10 | No | N/A | - | - | Yes, via public internet | Yes, using api.fabric.microsoft.com over the public internet |
+| 2 | Yes | Blocked | - | Yes | No | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
+| 3 | Yes | Allowed | Yes | - | Yes, via public internet or network with tenant private link | Yes, using api.fabric.microsoft.com over the public internet or network with tenant private link using tenant-specific FQDN |
+| 4 | Yes | Allowed | - | Yes | No | Yes, using api.fabric.microsoft.com over the public internet or network with tenant private link using tenant-specific FQDN |
+| 5 | No | N/A | Yes | - | Yes, via public internet | Yes, using api.fabric.microsoft.com over the public internet |
+| 6 | No | N/A | - | Yes | No | Yes, using api.fabric.microsoft.com over the public internet |
+| 7 | Yes | Blocked | - | - | Yes, using network with tenant private link | Yes, from the network with tenant private link using either api.fabric.microsoft.com or tenant-specific FQDN |
+| 8 | Yes | Allowed | - | - | Yes, via public internet or network with tenant private link | Yes, using api.fabric.microsoft.com over the public internet or network with tenant private link using tenant-specific FQDN |
+| 9 | No | N/A | - | - | Yes, via public internet | Yes, using api.fabric.microsoft.com over the public internet |
 
 ### Access behavior with IP firewall rules
 
@@ -123,10 +123,7 @@ For each scenario in this table:
 | Tenant-level inbound configuration | Access from | Portal access to workspace and items? | API access to workspace and items? |
 |---|:--:|:--:|:--:|
 | Tenant Private Link: Enabled<br>Tenant Block Public Access: Enabled | Allowed IP | No | Yes, using api.fabric.microsoft.com |
-| Tenant Private Link: Enabled<br>Tenant Block Public Access: Enabled | Allowed IP | No | Yes, using api.fabric.microsoft.com |
 | Tenant Private Link: Enabled<br>Tenant Block Public Access: Disabled | Allowed IP | Yes | Yes, using api.fabric.microsoft.com |
-| Tenant Private Link: Enabled<br>Tenant Block Public Access: Disabled | Allowed IP | Yes | Yes, using api.fabric.microsoft.com |
-| Tenant Private Link: Disabled | Allowed IP | Yes | Yes, using api.fabric.microsoft.com |
 | Tenant Private Link: Disabled | Allowed IP | Yes | Yes, using api.fabric.microsoft.com |
 
 ## Next steps

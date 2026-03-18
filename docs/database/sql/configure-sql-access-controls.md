@@ -1,9 +1,7 @@
 ---
 title: Configure granular access control for a SQL database
 description: Learn how to configure granular access control for SQL database using SQL access control mechanisms.
-author: jaszymas
-ms.author: jaszymas
-ms.reviewer: wiassaf # Microsoft alias
+ms.reviewer: jaszymas, wiassaf
 ms.date: 10/11/2024
 ms.topic: how-to
 ms.search.form: SQL database security
@@ -88,3 +86,4 @@ To configure access for a user or an application using Transact SQL:
 
 - [Authorization in SQL database](authorization.md)
 - [Share your SQL database and manage permissions](share-sql-manage-permission.md)
+

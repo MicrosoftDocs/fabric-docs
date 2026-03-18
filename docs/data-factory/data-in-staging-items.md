@@ -1,8 +1,7 @@
 ---
 title: Data in Dataflow Gen2 staging 
 description: This article provides information about what staging items are.
-author: Luitwieler
-ms.author: jeluitwi
+ms.reviewer: jeluitwi
 ms.topic: concept-article
 ms.date: 11/14/2025
 ms.custom: dataflows
@@ -19,6 +18,15 @@ Staging items are intermediate data storage locations used by Dataflow Gen2 to s
 ## Data in staging items
 
 Staging items aren't designed for direct access by users. Dataflow Gen2 manages the data in the staging items and ensures that the data is in a consistent state. Accessing data in staging items directly isn't supported as it can't be guaranteed that the data is in a consistent state. If you need to access data in staging items, you can use the dataflow connector in Power BI, Excel, or other dataflows.
+
+> [!IMPORTANT]
+> The internal API that serves staged data to downstream consumers (such as semantic models or other dataflows using the Dataflows connector) can experience intermittent timeouts.
+> These timeouts may cause refresh failures in consuming items, often surfacing as the error "The key didn't match any rows in the table."
+> This error doesn't indicate a data issue. It means the backend could not retrieve the staged results in time.
+>
+> **Recommended workaround:** Configure an [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) (Lakehouse or Warehouse) for your dataflow, and update downstream items to read from that destination directly using the Lakehouse or Warehouse connector. This bypasses the internal staging API and improves refresh reliability.
+>
+> For more information, see [Data Factory limitations](data-factory-limitations.md#data-factory-dataflow-gen2-limitations).
 
 Removing data from the staging items can be forced by one of the following actions:
 

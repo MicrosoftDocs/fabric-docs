@@ -1,16 +1,12 @@
 ---
 title: "Limitations in Microsoft Fabric mirrored databases from SAP"
 description: Learn about the limitations in mirrored databases from SAP in Microsoft Fabric.
-author: linda33wj
-ms.author: jingwang
-ms.reviewer: whhender
-ms.date: 11/03/2025
+ms.reviewer: jingwang
+ms.date: 02/26/2026
 ms.topic: concept-article
 ---
 
 # Limitations in Microsoft Fabric mirrored databases from SAP
-
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 Current limitations in the [mirroring SAP in Microsoft Fabric](sap.md) are listed in this page. This page is subject to change.
 
@@ -20,8 +16,8 @@ Current limitations in the [mirroring SAP in Microsoft Fabric](sap.md) are liste
 
 - SAP Datasphere replication flow setup requirements:
 
-  - Ensure you configure the target storage settings propertly: set **Group Delta** to **None** and set **File Type** to **Parquet**.
-  - Currently, SAP mirroring supports replication flow load type as **Initial and Delta**.
+  - Ensure you configure the target storage settings properly: set **Group Delta** to **None** and set **File Type** to **Parquet**.
+  - Currently, SAP mirroring supports replication flow load type as **Initial and Delta** or **Initial Only**.
 
 - Mirroring for SAP replicates all the data under the lakehouse shortcut path configured in the mirrored database. To add or remove the objects to mirror, update the SAP Datasphere replication flow and clean up the storage if needed.
 

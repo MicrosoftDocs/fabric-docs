@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.custom:
 ms.date: 08/13/2025
 
 #customer intent: As a workspace admin, I want to understand how tenant-level and workspace-level private links interact, so I can securely control access to my Fabric workspaces within the same tenant.

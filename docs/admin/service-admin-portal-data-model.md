@@ -3,8 +3,6 @@ title: Semantic model tenant settings
 description: Learn how to configure semantic model settings as the Fabric administrator.
 author: msmimart
 ms.author: mimart
-ms.reviewer: ''
-
 ms.custom:
   - tenant-setting
 ms.topic: how-to

@@ -1,9 +1,7 @@
 ---
 title: Move data from Azure SQL DB into Lakehouse via copy assistant
 description: Learn steps to move data as files or tables into Lakehouse.
-ms.reviewer: whhender
-ms.author: jianleishen
-author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: tutorial
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 12/18/2024
@@ -96,7 +94,7 @@ Follow these steps to set up your copy activity.
    :::image type="content" source="media/tutorial-move-data-lakehouse-copy-assistant/view-table-output.png" alt-text="Screenshot showing where to switch to Table view.":::
 
    > [!Note]
-   > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files will be automatically registered as a table and be visible under Table view from Lakehouse portal.
+   > Currently data lands into Lakehouse Tables folders (a managed area) in Delta format only. Those files are automatically registered as a table and become visible under Table view in Lakehouse Explorer.
    > Only the first layer folders under Tables will be registered as delta table.
    > Browsing or Previewing from Lakehouse Table isn't supported yet.
    > Data that gets loaded into the same table will be appended. Delete or Update to tables isn't supported yet.

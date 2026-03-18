@@ -1,10 +1,8 @@
 ---
 title: FAQ for workload certification
 description: Learn how to certify and publish a workload with the Microsoft Fabric Workload Development Kit.
-author: teddyberco
-ms.author: tebercov
+ms.reviewer: tebercov
 ms.topic: how-to
-ms.custom:
 ms.date: 07/22/2025
 ---
 
@@ -105,5 +103,5 @@ Currently there's no direct integration with Partner Center leads when a workloa
 ### Where do I create a SaaS offer?
 ### Do I need to submit a SaaS offer for my workload to show up in Fabric Hub?
 ### When should I re-submit SaaS offer in Partner center??
-### Should I re-submit a SaaS offer in Partner center everytime I have a new .nugget package?
+### Should I re-submit a SaaS offer in Partner center every time I have a new .nugget package?
 -->

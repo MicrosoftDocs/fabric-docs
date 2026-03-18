@@ -1,10 +1,8 @@
 ---
 title: Confluent Cloud for Apache Kafka connector for Fabric event streams
 description: This include files has the common content for configuring Confluent Cloud for Apache Kafka connector for Fabric event streams and Real-Time hub. 
-ms.author: xujiang1
-author: xujxu 
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 06/23/2025
 ---
 
@@ -60,3 +58,4 @@ You may expand **Advanced settings** to configure Confluent Schema Registry conn
 
     :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
     
+

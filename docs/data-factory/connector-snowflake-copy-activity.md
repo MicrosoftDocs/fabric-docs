@@ -1,11 +1,10 @@
 ---
 title: Configure Snowflake in a copy activity
 description: This article explains how to copy data using Snowflake.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 01/22/2026
-ms.custom: 
+ms.date: 02/27/2026
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
@@ -38,9 +37,10 @@ The following properties are supported for Snowflake under the **Source** tab of
 The following properties are **required**:
 
 - **Connection**:  Select a Snowflake connection from the connection list. If the connection doesn't exist, then create a new Snowflake connection.
-    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs, for example, Role. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
+    - **Additional connection properties**: Specify additional connection properties which will be used in Snowflake connection to set advanced options. Additional connection properties are provided as a dictionary of key-value pairs.
+      - **Role**: The default security role used for the session after connecting. For more information, see this [article](https://docs.snowflake.com/en/user-guide/security-access-control-overview#roles).
     
-      :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
+        :::image type="content" source="./media/connector-snowflake/additional-connection-properties.png" alt-text="Screenshot showing additional connection properties for source.":::
 
 - **Database**: The default database to use once connected. It should be an existing database for which the specified role has privileges.
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
@@ -66,7 +66,7 @@ If your destination data store and format meet the criteria described in this se
   - When you specify **Storage integration** in the source:
     The destination data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
 
-    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage with any supported authentication types.
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the destination Azure Blob Storage using any supported authentication type, except the organizational account authentication.
 
     2. Grant at least **Storage Blob Data Contributor** role to the Snowflake service principal in the destination Azure Blob Storage **Access Control (IAM)**.
 
@@ -137,7 +137,7 @@ If your source data store and format meet the criteria described in this section
   
   The source data store is the Azure Blob Storage that you referred in the external stage in Snowflake. You need to complete the following steps before copying data:
 
-    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage with any supported authentication types.
+    1. Create an [**Azure Blob Storage**](connector-azure-blob-storage.md) connection for the source Azure Blob Storage using any supported authentication type, except the organizational account authentication.
 
     2. Grant at least **Storage Blob Data Reader** role to the Snowflake service principal in the source Azure Blob Storage **Access Control (IAM)**.
 

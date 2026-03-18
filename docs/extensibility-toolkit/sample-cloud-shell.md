@@ -1,10 +1,8 @@
 ---
 title: Cloud Shell Item
 description: Learn about the Cloud Shell Item, which demonstrates how to interact with Spark Livy API in a Fabric workload.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: sample
-ms.custom:
 ms.date: 12/20/2025
 ---
 

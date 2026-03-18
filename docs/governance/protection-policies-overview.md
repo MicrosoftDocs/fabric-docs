@@ -3,8 +3,7 @@ title: "Protection policies in Microsoft Fabric"
 description: "This article describes Microsoft Purview protection policies in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.topic: concept-article #Don't change
+ms.topic: concept-article
 ms.date: 12/03/2025
 
 #customer intent: As a security admin, Fabric admin, Fabric user, or business decision maker, I want to learn about how protection policies control access to items in Fabric. 

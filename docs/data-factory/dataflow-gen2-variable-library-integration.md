@@ -1,9 +1,7 @@
 ---
 title: Use Fabric variable libraries in Dataflow Gen2 (Preview)
 description: Overview on how to use Fabric variable libraries inside of a Dataflow Gen2 with CI/CD.
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: concept-article
 ms.date: 10/20/2025
 ms.custom: dataflows
@@ -13,7 +11,7 @@ ms.custom: dataflows
 
 > [!NOTE]
 > This feature is currently in preview and only available for Dataflow Gen2 with CI/CD.
-> For more information on how to leverage this capability in continous integration / continous deployment (CI/CD) scenarios, be sure to read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Variable references in a Dataflow](dataflow-gen2-variable-references.md).
+> For more information on how to leverage this capability in continuous integration / continuous deployment (CI/CD) scenarios, be sure to read the article on [CI/CD and ALM solution architectures for Dataflow Gen2](dataflow-gen2-cicd-alm-solution-architecture.md) and the end-to-end tutorial on [Variable references in a Dataflow](dataflow-gen2-variable-references.md).
 
 [Fabric variable libraries](/fabric/cicd/variable-library/variable-library-overview) offer a centralized way to manage configuration values across Microsoft Fabric workloads. With the new integration in Dataflow Gen2 (Preview), you can reference these variables directly in your dataflow, enabling dynamic behavior across environments and simplifying CI/CD workflows.
 

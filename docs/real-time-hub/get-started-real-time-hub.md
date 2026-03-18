@@ -2,16 +2,15 @@
 title: Get Started With Fabric Real-Time Hub
 description: This article shows how to get started with Fabric Real-Time hub and provides a high-level overview of all the features.
 #customer intent: As a new Fabric user, I want to find and open the Real-Time hub so that I can start streaming and monitoring data.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: quickstart
 ms.custom: null
-ms.date: 01/12/2026
+ms.date: 02/03/2026
 ---
 
 # Get started with Fabric Real-Time hub
 
-Real-Time hub is the single estate for all data-in-motion across your entire organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manages it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
+Real-Time hub is the central place to discover and manage all streaming data across your organization. Every Microsoft Fabric tenant is automatically provisioned with Real-Time hub, with no extra steps needed to set up or manage it. For detailed overview, see [Real-Time hub overview](real-time-hub-overview.md).
 
 This article provides guidance on getting started with Fabric Real-Time hub.
 
@@ -124,13 +123,13 @@ Here are the actions available on a KQL table from the **All data streams** page
 
 You can connect to data from both inside and outside of Fabric in a mere few steps within Fabric Real-Time hub. Whether data is coming from new or existing sources, streams, or available events, the Add data experience allows you to connect to a wide range of event sources directly from Real-Time hub.
 
-It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching the Change Data Capture (CDC) streams. Connectivity to notification sources and discrete events is also included, which enables access to notification events from Azure and other clouds solutions including Amazon Web Services and Google Cloud Platform.  
+It allows for easy connectivity to external data streams including Kafka connectors powered by Kafka Connect and Debezium connectors for fetching Change Data Capture (CDC) streams, which track and stream changes made to your databases in real time. Connectivity to notification sources and discrete events is also included, which enables access to notification events from Azure and other cloud solutions including Amazon Web Services and Google Cloud Platform.  
 
 There are two ways you can get to the **Data sources** page:
 
 - By selecting **Add data** button on the **Streaming Data** page.
 
-    :::image type="content" source="media/get-started-real-time-hub/streaming-data-add-data.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/streaming-data-add-data.png":::
+    :::image type="content" source="media/get-started-real-time-hub/connect-to-data-source-button.png" alt-text="Screenshot that shows the Add data button." lightbox="./media/get-started-real-time-hub/connect-to-data-source-button.png":::
 - By selecting **Add data** on the left navigation menu.
 
     :::image type="content" source="media/get-started-real-time-hub/add-data.png" alt-text="Screenshot that shows the Data sources page." lightbox="./media/get-started-real-time-hub/add-data.png":::
@@ -171,3 +170,4 @@ See following articles to learn how to **set up alerts** on Fabric events:
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
 
 :::image type="content" source="./media/get-started-real-time-hub/azure-events-page.png" alt-text="Screenshot that shows the Azure events page in Real-Time hub." lightbox="./media/get-started-real-time-hub/azure-events-page.png":::
+

@@ -1,8 +1,7 @@
 ---
 title: Cassandra connector overview
 description: This article explains the overview of using Cassandra.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
 ms.date: 12/04/2025
 ms.custom:

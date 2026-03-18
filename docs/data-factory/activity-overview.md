@@ -2,8 +2,6 @@
 title: Activity overview
 description: Learn about activities.
 ms.reviewer: pennyzhou-msft
-ms.author: whhender
-author: whhender
 ms.topic: overview
 ms.date: 07/25/2025
 ms.custom: pipelines

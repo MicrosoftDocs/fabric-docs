@@ -2,15 +2,12 @@
 title: Apache Spark Applications Comparison
 description: This article introduces the Compare runs feature of Spark applications.
 ms.reviewer: jejiang
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
-ms.custom:
 ms.date: 06/26/2025
 ms.search.form: Apache Spark applications comparison
 ---
 
-# Apache Spark applications comparison (preview)
+# Apache Spark applications comparison
 
 The Spark applications comparison feature allows you to analyze and compare the performance of multiple Spark application runs. By examining trends in duration, input/output data, and other metrics, you can quickly spot regressions, improvements, or anomalies relative to a baseline run.
 

@@ -1,10 +1,8 @@
 ---
 title: Get Azure Blob Storage events in Real-Time hub
 description: This article describes how to get Azure Blob Storage events as an eventstream in Fabric Real-Time hub.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 12/22/2025
 ---
 
@@ -94,3 +92,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

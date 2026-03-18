@@ -1,8 +1,7 @@
 ---
 title: Get events from Azure Event Hubs into Real-Time hub
 description: This article describes how to get events from an Azure event hub in Real-Time hub.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 07/16/2025
@@ -16,7 +15,7 @@ This article describes how to get events from an Azure event hub into Real-Time 
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions. 
 - [Create an Azure Event Hubs namespace and an event hub](/azure/event-hubs/event-hubs-create) if you don't have one.
 - You need to have appropriate permission to get access keys for the event hub. The event hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
@@ -83,3 +82,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

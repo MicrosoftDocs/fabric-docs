@@ -1,10 +1,8 @@
 ---
 title: Introduction to Azure and Fabric events
 description: This article describes what Fabric and Azure events in Real-Time hub are and how it can be used in near-realtime scenarios.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: overview
-ms.custom:
 ms.date: 02/27/2025
 ---
 
@@ -67,4 +65,5 @@ For more information, see the following articles:
 - [Explore Fabric OneLake events](explore-fabric-onelake-events.md).</br>
 - [Explore Fabric workspace item events](explore-fabric-workspace-item-events.md).</br>
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md).
+
 

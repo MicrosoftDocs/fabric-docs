@@ -2,17 +2,14 @@
 title: Column-level security
 description: Learn how to use OneLake security (preview) to enforce access permissions at the column level in OneLake.
 ms.reviewer: aamerril
-ms.author: kgremban
-author: kgremban
 ms.topic: how-to
-ms.custom:
 ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
 # Column-level security in OneLake (preview)
 
-Column-level security (CLS) is a feature of [OneLake security (preview)](get-started-security.md?#onelake-security-preview) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Any columns that are removed from the list aren't visible to users.
+Column-level security (CLS) is a feature of [OneLake security (preview)](./get-started-onelake-security.md) that allows you to have access to selected columns in a table instead of full access to the table. CLS lets you specify a subset of tables that users can access. Any columns that are removed from the list aren't visible to users.
 
 ## Prerequisites
 

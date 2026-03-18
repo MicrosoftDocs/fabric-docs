@@ -1,9 +1,7 @@
 ---
 title: Run, schedule, or use events to trigger a pipeline
 description: Explanation of what a pipeline run is, including on-demand and scheduled runs.
-ms.reviewer: whhender
-ms.author: noelleli
-author: n0elleli
+ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
 ms.date: 08/27/2025
@@ -84,6 +82,16 @@ You can manage your scheduled runs by selecting **Schedule** in the top banner o
 To delete a schedule, select the **Edit** icon (pencil) next to the schedule you want to delete. In the Edit Schedule pane, select **Delete schedule** at the bottom of the pane.
 
 :::image type="content" source="media/pipeline-runs/delete-schedule.png" alt-text="Screenshot showing the delete button can be found in the edit window.":::
+
+### Configure failure notifications
+
+You can configure email notifications to be sent when a scheduled pipeline run fails. Notifications aren’t sent for on‑demand runs.
+
+To configure failure notifications, open the pipeline, select **Schedule** in the top banner of the **Home** tab, and add users or groups under **Failure notifications**.
+
+To configure failure notifications, open the pipeline, go to the **Home** tab, select **Schedule**, and then add users or groups under **Failure notifications**.
+
+:::image type="content" source="media/pipeline-runs/schedule-failure-notifications.png" alt-text="Screenshot that shows failure notification settings for scheduled pipeline runs." lightbox="media/pipeline-runs/schedule-failure-notifications.png":::
 
 ## Event-based pipeline runs
 

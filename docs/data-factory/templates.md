@@ -2,8 +2,6 @@
 title: Templates
 description: Learn about templates for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
-ms.author: whhender
-author: whhender
 ms.topic: how-to
 ms.custom: pipelines
 ms.date: 12/18/2024

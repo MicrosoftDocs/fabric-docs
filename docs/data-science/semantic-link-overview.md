@@ -1,14 +1,11 @@
 ﻿---
 title: What is semantic link?
 description: Get an overview of semantic link, which lets you connect semantic models to Synapse Data Science in Microsoft Fabric.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: ruxu
-reviewer: ruixinxu
 ms.topic: overview
-ms.custom: 
-ms.date: 07/16/2025
+ms.date: 03/03/2026
 ms.search.form: semantic link
+ai-usage: ai-assisted
 ---
 
 # What is semantic link?
@@ -16,8 +13,8 @@ ms.search.form: semantic link
 Semantic link is a feature that allows you to establish a connection between [semantic models](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric.
 Use of semantic link is supported only in Microsoft Fabric.
 
-- For Spark 3.4 and above, semantic link is available in the default runtime when using Fabric, and there's no need to install it.
-- For Spark 3.3 or below, or to update to the latest version of semantic link, run the following command:
+- For Fabric Runtime 1.2 (Spark 3.4) and above, semantic link is available in the default runtime, and there's no need to install it.
+- To update to the latest version of semantic link, run the following command:
 
   ```python
   %pip install -U semantic-link

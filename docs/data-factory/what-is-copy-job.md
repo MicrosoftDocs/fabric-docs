@@ -1,8 +1,7 @@
 ---
 title: What is Copy job in Data Factory
 description: This article explains the concept of the Copy job and the benefits it provides.
-author: dearandyxu
-ms.author: yexu
+ms.reviewer: yexu
 ms.topic: how-to
 ms.date: 06/13/2025
 ms.search.form: copy-job-tutorials 
@@ -38,17 +37,27 @@ You can choose how your data is copied from source to destination:
 
 ### Incremental copy (CDC, Watermark) 
 
-In incremental copy, every run after the initial full copy only transfers changes: 
-- Databases: Only new or updated rows are copied. If Change Data Capture (CDC) is enabled, inserted, updated, and deleted rows are included. 
-- Storage: Only files with a newer LastModifiedTime are copied. 
+In incremental copy, every run after the initial full copy (called a "subsequent load") transfers only certain changes. Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. 
+- When Copy job copies from a database using an incremental column ("watermark column"), each subsequent load copies only rows with a value in that column larger than any row previously copied.
+- When Copy job copied from a database that has CDC enabled, each subsequent load copies all rows inserted, updated, or deleted since the last successful run.
+- When Copy job copies files, each subsequent load copies only those files created or modified since the last successful run.
 
-Copy job automatically tracks and manages the state of the last successful run, so it knows what data to copy next. 
-- Databases: You need to select an incremental column for each table. This column acts as a marker, telling Copy job which rows are new or updated since the last run. Typically, the column is a date/time value or an increasing number. If your database has CDC enabled, you don’t need to choose a column — Copy job automatically detects the changes. 
-- Storage: Copy job compares the LastModifiedTime of files in your source storage with the values recorded in the last run. Only files with newer timestamps are copied. 
+Typically, an incremental column holds a date/time value or an increasing number.
+If your database has CDC enabled, you don’t need to choose an incremental column — Copy job automatically detects the changes. 
+
+If you are using a watermark to copy incrementally from a database, subsequent loads do not copy any rows with a "null" value in that column, because the "null" value is considered _less_ than any other value.
 
 See more details for [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
 
-When a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the state of the last successful run. A failure does not change the state managed by copy job. 
+If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure does not change the state managed by Copy job. 
+
+### Reset incremental copy
+
+You have the flexibility in managing incremental copy, including the ability to reset it back to a full copy on the next run. This is incredibly useful when there’s a data discrepancy between your source and destination—you can simply let Copy Job perform a full copy in the next run to resolve the issue, then continue with incremental updates afterward.
+
+You can reset incremental copy either per entire job or per table, giving you fine-grained control. For example, you can re-copy smaller tables without impacting larger ones. This means smarter troubleshooting, less disruption, and more efficient data movement. 
+
+In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job will reset the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.
 
 ### Update methods (Append, Overwrite, Merge) 
 
@@ -61,15 +70,7 @@ By default, Copy job **appends** new data, so you keep a full history. If you pr
 
 When performing an incremental copy from the source and merging into the destination, rows from the source are inserted or updated in the destination. When performing CDC replication from the source and merging into the destination, rows from the source are inserted, updated, or deleted in the destination.
 
-### Reset incremental copy
-
-You have the flexibility in managing incremental copy, including the ability to reset it back to a full copy on the next run. This is incredibly useful when there’s a data discrepancy between your source and destination—you can simply let Copy Job perform a full copy in the next run to resolve the issue, then continue with incremental updates afterward.
-
-You can reset incremental copy either per entire job or per table, giving you fine-grained control. For example, you can re-copy smaller tables without impacting larger ones. This means smarter troubleshooting, less disruption, and more efficient data movement. 
-
-In some cases, when you edit a copy job — for example, updating the incremental column in your source table — Copy job will reset the incremental copy to a full copy on the next run. This ensures data consistency between the source and the destination.  
-
-### Automatic table creation and truncate on destination
+### Automatic table creation and truncation on destination
 
 Copy job can automatically create tables in the destination if they don’t already exist. If the destination tables are already available, you can simply select them as your target. With flexible column mapping options, you can easily define how to map schemas from the source tables to the destination tables.
 

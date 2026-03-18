@@ -1,32 +1,31 @@
 ---
-title: Current Limitations of Graph in Microsoft Fabric
-description: Understand the current limitations of Graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
+title: Current Limitations of graph in Microsoft Fabric
+description: Understand the current limitations of graph in Microsoft Fabric, including data types, graph size, query constraints, and GQL (Graph Query Language) conformance.
 ms.topic: reference
-ms.date: 01/26/2026
-author: lorihollasch
-ms.author: loriwhip
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ---
 
-# Current limitations of Graph in Microsoft Fabric
+# Current limitations of graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-While Graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
+While graph in Microsoft Fabric is in preview, the service has certain functional and performance limitations. This article highlights some key limitations but isn't an exhaustive list. Check back regularly for updates.
 
-For help with common problems, see [Troubleshooting Graph in Microsoft Fabric](troubleshooting-and-faq.md).
+For help with common problems, see [Troubleshooting graph](troubleshooting-and-faq.md).
 
 ## Creating graph models
 
 ### Data sources
 
-- Graph currently doesn't support Lakehouse with schema enabled.
-- OneLake parquet files are the only data sources currently supported.
-- Power BI semantic model support is under development.
+- OneLake parquet and CSV files are the only data sources currently supported.
+- Support for Power BI semantic models as data sources is under development.
+- Support for column- and row-level [OneLake security](../onelake/security/get-started-security.md#onelake-security-preview) is under development.
+- Support for [Lakehouse with schema](../data-engineering/lakehouse-schemas.md) is under development.
 
 ### Data types
 
-Graph in Microsoft Fabric currently supports the following data types:
+Graph currently supports the following data types:
 
 - Boolean (values are `true` and `false`)
 - Double (values are 64-bit floating point numbers)
@@ -47,12 +46,6 @@ The following OneLake types are supported:
 - DateType
 - TimestampNtzType
 - TimestampType
-
-### Data sources
-
-- OneLake parquet and CSV files are the only data sources currently supported.
-- Power BI semantic model support is under development.
-- Lakehouse with schema enabled isn't supported.
 
 ### Edge creation
 
@@ -76,17 +69,17 @@ Creating graphs with more than 500 million nodes and edges might result in unsta
 
 ### Multitasking UI
 
-The graph model might disappear or become empty when you switch between tabs or windows in the Fabric multitask UI. The team is actively working to resolve this known problem.
+The graph model might disappear or become empty when you switch between tabs or windows in the Fabric multitask UI. The product team is actively working to resolve this known problem.
 
 ### Node property selection
 
-When you add a node to your graph model, all columns from the source table are added as properties by default. You can remove properties by clicking the trashcan icon. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
+When you add a node to your graph model, all columns from the source table are added as properties by default. You can remove properties by selecting the trashcan icon. Choosing a custom display label (for example, displaying a name instead of an ID) isn't yet supported.
 
 ## Querying
 
 ### Number of hops in multihop queries
 
-Graph in Microsoft Fabric currently supports up to eight hops on variable length patterns.
+Graph currently supports up to eight hops on variable length patterns.
 
 ### Size of results
 
@@ -98,9 +91,14 @@ The system currently truncates responses that are larger than 64 MB.
 
 Queries time out if they take more than 20 minutes.
 
+## Data export and visualization
+
+- Exporting graph query results or graph structures isn't currently supported.
+- Connecting Power BI directly to a graph for visualization scenarios isn't currently supported.
+
 ## GQL conformance
 
-We support the following query features from the GQL standard:
+Graph supports the following query features from the GQL standard:
 
 - FILTER statement
 - LET statement
@@ -231,7 +229,7 @@ Conformance to GQL standards is still in progress for:
 - Parameter passing
 - Undirected edges
 - GQL-preamble
-- Non-local pattern predicates
+- Nonlocal pattern predicates
 - Undirected edge patterns
 - IS DIRECTED predicate
 - REGEXP_CONTAINS predicate
@@ -269,5 +267,7 @@ Conformance to GQL standards is still in progress for:
 
 ## Related content
 
-- [Graph in Microsoft Fabric overview](./overview.md)
+- [graph overview](./overview.md)
 - [What is a graph database?](./graph-database.md)
+- [Troubleshooting and FAQ for graph](troubleshooting-and-faq.md)
+- [Optimize GQL query performance in graph](gql-query-performance.md)
