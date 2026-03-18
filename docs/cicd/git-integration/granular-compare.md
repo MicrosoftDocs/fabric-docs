@@ -29,8 +29,8 @@ Compare code changes can be opened from multiple locations. The following table 
 
 |Entry Point|Description|
 |-----|-----|
-|Source Control → Changes tab|●Shows diffs where the workspace has changes relative to workspace last Git synced</br>●Workspace side is highlighted (“green side”)|
-|Source Control → Updates tab|●Shows diffs where connected Git folder has new changes relative to workspace last Git synced</br>●Git branch side is highlighted (“green side”)|
+|Source Control → Changes tab|●Shows diffs where the workspace has changes relative to workspace last Git synced</br>●Workspace side is highlighted ("green side")|
+|Source Control → Updates tab|●Shows diffs where connected Git folder has new changes relative to workspace last Git synced</br>●Git branch side is highlighted ("green side")|
 |Conflict Dialog|●Shows only conflicted items</br>●Comparisons current workspace version vs. current Git version)|
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
@@ -42,7 +42,7 @@ The following steps show how to review commit changes:
 2. To review all changes, select the **review changes** button at the top. This action opens a dialog showing all the changes.
 3. To review a specific item's changes, hover next to it and select the **review changes** button.  This action opens a dialog that takes you directly to that item. You can review additional items from here also.
  
- :::image type="content" source="media/granular-compare/compare-new-1.png" alt-text="Screenshot of item review changes." lightbox="media/granular-compare/compare-new-1.png":::
+ ::: image type="content" source="media/granular-compare/compare-new-1.png" alt-text="Screenshot of item review changes." lightbox="media/granular-compare/compare-new-1.png" :::
 
 4. On the diff screen, review the changes.
  
