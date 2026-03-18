@@ -131,6 +131,12 @@ items:
         href: ./security/column-level-security.md
       - name: Row-level security
         href: ./security/row-level-security.md
+  - name: Integrate with OneLake security
+    items:
+    - name: Overview of OneLake security integrations
+      href: ./security/onelake-security-integrations-overview.md
+    - name: Using external engines with OneLake security
+      href: ./security/onelake-security-integrations-external-engines.md
   - name: Authorize with a shared access signature (SAS)
     items:
     - name: OneLake SAS overview
@@ -185,3 +191,9 @@ items:
     href: /rest/api/fabric/core/onelake-shortcuts
   - name: OneLake data access roles REST API
     href: /rest/api/fabric/core/onelake-data-access-security
+  - name: OneLake security integration reference
+    items:
+    - name: OneLake security integrations reference
+      href: ./security/onelake-security-integrations-reference.md
+    - name: Authorized access for a principal API reference
+      href: ./security/authorized-access-for-principal-reference.md

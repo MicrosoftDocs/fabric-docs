@@ -69,6 +69,8 @@ To ensure your schedule is valid:
 
 You can receive email notifications when a job triggered by a **schedule** fails to complete.
 
+:::image type="content" source="media/job-scheduler/job-scheduler-failure-notifications.png" alt-text="Screenshot of failure notification field in scheduler pane.":::
+
 ### Configure failure notifications
 While configuring a schedule, add users or groups under **Failure notifications** to receive emails when a scheduled run fails.
 

@@ -173,13 +173,11 @@ items:
           href: ../real-time-intelligence/copilot-generate-dashboard.md?context=/fabric/context/context-rti&pivots=fabric
         - name: Use Copilot to explore data in a Real-Time Dashboard
           href: ../real-time-intelligence/dashboard-explore-data.md?context=/fabric/context/context-rti&pivots=fabric
-    - name: Use Copilot for Data Science and Data Engineering
+    - name: Use Copilot for Data Engineering and Data Science
       items:
-      - name: Explore Chat magics in notebooks (preview)
-        href: ../data-engineering/copilot-notebooks-chat-magics.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
       - name: Use the Copilot chat panel (preview)
         href: ../data-engineering/copilot-notebooks-chat-pane.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
-      - name: Use Copilot for Data Science and Data Engineering overview
+      - name: Use Copilot for Data Engineering and Data Science overview
         href: ../data-engineering/copilot-notebooks-overview.md?toc=/fabric/fundamentals/toc.json&bc=/fabric/fundamentals/toc.json
   - name: Monitor Copilot consumption
     items:
