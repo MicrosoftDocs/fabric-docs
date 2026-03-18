@@ -45,7 +45,8 @@ In incremental copy, every run after the initial full copy (called a "subsequent
 Copy job supports the following watermark column types for incremental copy:
 
 - **ROWVERSION**: A binary column that automatically changes whenever a row is modified. It’s ideal for SQL-based systems with high-throughput transactional workloads, because every insert or update is captured reliably without depending on application-managed timestamps.
-- **Date**: Date or datetime columns such as `LastUpdatedDate` or `ModifiedAt`. Copy job automatically applies delayed extraction from the last day to ensure there’s no data loss or overlap between runs, safely managing incremental windows.
+- **Datetime**: Datetime columns such as `LastUpdatedDatetime` or `ModifiedAt` that store both date and time. Copy job uses the precise timestamp to track incremental progress across runs.
+- **Date**: Date-only columns such as `LastUpdatedDate`. Because date values don’t include a time component, Copy job automatically applies delayed extraction from the last day to ensure there’s no data loss or overlap between runs, safely managing incremental windows.
 - **String (interpreted as datetime)**: String columns whose values can be interpreted as datetime. This lets you use incremental copy even when timestamps are stored as strings, with no need to cast or transform columns or make schema changes in the source.
 - **Integer**: An increasing number that tracks row changes.
 
@@ -137,6 +138,14 @@ Audit columns are additional metadata columns that Copy job can automatically ap
 With audit columns, you get row-level data lineage without custom code, enabling compliance reporting, data quality debugging, and ingestion freshness tracking.
 
 See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
+
+### Performance
+
+Copy job automatically optimizes copy performance based on the data volume, so you get fast data movement without manual tuning. Whether you're copying a small lookup table or a large transaction log, Copy job applies the right strategy for each table automatically.
+
+When copying data from large tables, you can also optionally enable **auto-partitioning (Preview)**. With auto-partitioning, Copy job analyzes the source schema and data characteristics to determine the optimal partitioning strategy — selecting the right partition column, computing balanced boundaries, and executing parallel reads — all without any user input. This can dramatically increase throughput for large datasets. You can turn on the auto-partitioning toggle under **Advanced settings** in your Copy job.
+
+Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, and Azure SQL Managed Instance.
 
 ## Region availability
 
