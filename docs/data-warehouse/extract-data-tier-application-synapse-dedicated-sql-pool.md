@@ -13,7 +13,7 @@ ms.topic: how-to
 
 This guide provides step-by-step instructions to extract a Data-tier Application (DAC) from an Azure Synapse Analytics dedicated SQL pool using SQL Server Object Explorer in Visual Studio 2022. 
 
-An extracted data-tier application (DACPAC) file can be used in [Migration assistant](migration-assistant.md) to migrate from an Azure Synapse Analytics dedicated SQL pool to Fabric Data Warehouse. For more information, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
+An extracted data-tier application (DACPAC) file can be used in [Migration Assistant](migration-assistant.md) to migrate from an Azure Synapse Analytics dedicated SQL pool to Fabric Data Warehouse. For more information, see [Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-warehouse.md).
 
 ## Prerequisites
 
@@ -77,4 +77,4 @@ Other scenarios to generate a DAC:
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Migrate with the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md)
+> [Migrate by uploading a file with source metadata](migrate-using-upload-file.md)
