@@ -19,7 +19,7 @@ Before you set up Planning sheets, make sure you have the following prerequisite
 * [Create a Fabric SQL database](../../database/sql/create.md) in your workspace. This database stores your plan report's metadata.
 
 > [!NOTE]
-> The preview of Planning in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric, as part of the Microsoft Fabric SKU, and new meters have been created.All meters are expected to be available by June 2026.
+> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
 ## Create a database connection
 

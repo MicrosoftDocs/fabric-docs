@@ -15,7 +15,7 @@ Organizations rely heavily on data to run their operations, but key processes su
 When you need to reconcile a static spreadsheet or disconnected system with a live dashboard, it can be difficult to achieve a single source of truth. By consolidating these functions into a unified platform, you move from being reactive (looking at what happened) to being active (adjusting the plan in real time, based on data).
 
 > [!NOTE]
-> The preview of Planning in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric, as part of the Microsoft Fabric SKU, and new meters have been created.All meters are expected to be available by June 2026.
+> The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
 ## About plan
 
@@ -112,6 +112,14 @@ Each component is designed to solve a critical business need while working seaml
 * Maintain **consistent** and **trusted datasets** across business processes
 * Schedule **data refresh** and **synchronization** to keep insights up to date
 * Enable **governed data access** and **integration** across teams
+
+## Enable required tenant setting
+
+This setting is **required** to create plan (preview) items: *Users can create a Planning (preview) item(s)*.
+
+:::image type="content" source="media/overview/prerequisite-plan.png" alt-text="Screenshot of enabling plan in the admin portal." lightbox="media/overview/prerequisite-plan.png":::
+
+If you don't enable this setting, you get errors when creating a new plan item.
 
 ## Next steps
 
