@@ -8,7 +8,7 @@ ms.service: fabric
 ms.subservice: cicd
 ms.topic: concept-article
 ms.custom:
-ms.date: 02/26/2026
+ms.date: 03/18/2026
 ---
 
 # Compare code changes in Git Integration (Public Preview)
