@@ -130,7 +130,7 @@ Now that the connection has been established, next step is to create a data fram
 
 ## Supported data sources
 
-Microsoft Fabric supports over 26 data sources to connect to using managed private endpoints. Users need to specify the resource identifier, which can be found in the **Properties** settings page of their data source in the Azure portal.
+Microsoft Fabric supports over 27 data sources to connect to using managed private endpoints. Users need to specify the resource identifier, which can be found in the **Properties** settings page of their data source in the Azure portal.
 Ensure resource ID format is followed as shown in the following table. 
 
 | Service| Resource ID Format|
@@ -159,6 +159,7 @@ Ensure resource ID format is followed as shown in the following table.
 | Azure Functions | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{function-app-name}|
 | Azure Event Hubs | /subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/Microsoft.EventHub/namespaces/{namespace-name}|
 | Azure IoT Hub | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Devices/IotHubs/{iothub-name}|
+| Azure Private Link Service | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/privateLinkServices/{private-link-service-name}|
 | Azure Data Manager for Energy (ADME) | /subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.OpenEnergyPlatform/energyServices/{service-name}|
 
 

@@ -1,5 +1,5 @@
 ---
-title: Fabric data agent creation (preview)
+title: Fabric data agent creation
 description: Learn how to create a Fabric data agent that can answer questions about data.
 ms.reviewer: amjafari
 ms.topic: concept-article
@@ -10,7 +10,7 @@ ms.search.form: Fabric data agent Concepts
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
 ---
 
-# Fabric data agent concepts (preview)
+# Fabric data agent concepts 
 
 Data agent in Microsoft Fabric is a new Microsoft Fabric feature that enables you to build your own conversational Q&A systems by using generative AI. A Fabric data agent makes data insights more accessible and actionable for everyone in your organization. By using a Fabric data agent, your team can have conversations, with plain English-language questions, about the data that your organization stored in Fabric OneLake and then receive relevant answers. This way, even people without technical expertise in AI or a deep understanding of the data structure can receive precise and context-rich answers.
 
