@@ -20,7 +20,7 @@ Operations Agent helps organizations operationalize clear business goals by cont
 
 - **Eventhouse tables**: If Eventhouse tables contain nested columns such as JSON, flatten the tables before configuring the agent. Flat tables with descriptive column names improve the agent's ability to parse and evaluate data.
 - **Column descriptions**: If a column's purpose is unclear from its name, add a plain-language description using the description field in your KQL table schema. This helps the agent interpret data values correctly.
-- **Entity identification**: If the agent needs to monitor a specific business entity such as a station, sensor, or personnel record, identify the column that uniquely identifies the entity (for example, “StationID” or “SensorID”) and specify which table it belongs to.
+- **Business object identification**: If the agent needs to monitor a specific business object such as a station, sensor, or personnel record, identify the column that uniquely identifies the object (for example, “StationID” or “SensorID”) and specify which table it belongs to.
 - **Field name quoting**: If a rule references column names that contain special characters such as underscores or hyphens, enclose the column name in quotation marks (“”) to ensure the agent identifies it correctly.
 - **Quantifiable conditions**: If a rule uses qualitative language such as “low availability” or “high temperature,” replace it with a specific numeric threshold, such as “fewer than 3 bikes available” or “temperature exceeds 80.”
 - **Rule separation**: If you define multiple rules, describe each rule on a separate line or bullet point. Don't combine conditions from different rules in the same sentence.
