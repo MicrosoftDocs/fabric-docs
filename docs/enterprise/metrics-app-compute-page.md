@@ -99,13 +99,16 @@ To toggle how the visual is displayed, use the tabs at the top right corner of t
 
 To toggle between interactive delay, interactive rejection, and background rejection, use the tabs at the top of the visual. Timepoints with a value that's above 100% are rendered with a darker color.
 
+In each of these visuals, the visuals are rendered as per legends on the visual. For example, in the Interactive delay visual, the legends are Interactive delay, No Interactive delay and No interactive delay (capacity overage billed).
+
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
 The throttling chart displays the following elements:
 
-  * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
+  * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold. 
   * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
+
 
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
@@ -113,17 +116,33 @@ Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbo
 * *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multimetric ribbon chart's x-axis.
 
 ### Overages
-  
-Displays the *add*, *burndown*, and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
+
+Displays the add, burndown, and cumulative carryforward over time. Carryforward only takes into account billable operations. The Overages tab also includes Overage (Billed) which shows how much overage has actually been billed for the capacity. These visuals only display non-zero values when overage billing is enabled for the capacity.
 
 :::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
 
-The overages chart displays the following elements:
+The overages carryforward chart displays the following elements:
 
   * **Add %** - Green columns represent the carryforward percent added during the current 30-second period.
   * **Burndown %** - Blue columns represent the carryforward percent burned down for the current 30-second period.
   * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30-second period. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
-  
+
+The overages (billed) tab shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage billing is enabled and the capacity has incurred billed overages. If overage billing isn’t enabled, or is enabled but no billed overages have occurred, these visuals remain blank.
+
+This tab displays the following visuals:
+
+- **Table** - Visual shows details of billed overages for the capacity at a point in time.
+  - **Rolling cumulative 24 hour billed overage CU (hr)** - Max of rolling cumulative 24 hours billed overage in capacity unit hours.
+  - **Overage billing limit CU (hr)** - Max of overage billing limit in capacity units hours.
+  - **Overage (Billed) CUs (s)** - Sum of billed overages in capacity units seconds.
+
+- **Timepoint visual** - Visual shows billed overage capacity unit seconds over time.
+  - **Overage (Billed) CUs (s)** - Amount of overage capacity unit seconds billed for the current 30-second window.
+
+- **Cumulative visual** - Visual shows the cumulative overages billed over the past 24 hours for each window
+  - **Rolling cumulative 24 hour billed overage CU (hr)** - Amount of overage capacity unit hours billed for the past 24 hours from the current window.
+  - **Overage billing limit CU (hr)** - 24-hour limit for billed overage set at the capacity level in capacity unit hours.
+
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint detail](metrics-app-timepoint-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint summary preview](metrics-app-timepoint-summary-page.md) and [timepoint detail](metrics-app-timepoint-page.md).
 
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
