@@ -51,7 +51,7 @@ The example scenario for this tutorial is a fictional company called Lakeshore R
 
 ## Download sample data 
 
-Download the contents of this GitHub folder: [Ontology samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq/ontology).
+Download the contents of this GitHub folder: [IQ samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/iq).
 
 It contains the following sample CSV files. The data contains static entity details about the Lakeshore Retail scenario and streaming data from its freezers:
 * *DimStore.csv*
