@@ -1,6 +1,6 @@
 ---
-title: Library management in Fabric environments
-description: Learn about library management in Microsoft Fabric, including how to add public and custom libraries to your Fabric environments.
+title: Manage libraries in Fabric environments
+description: Learn how to add, update, and manage public and custom libraries in Microsoft Fabric environments.
 ms.reviewer: shuaijunye
 ms.topic: how-to
 ms.date: 03/20/2026
@@ -8,7 +8,7 @@ ms.search.form: Manage libraries in Environment
 ai-usage: ai-assisted
 ---
 
-# Library management in Fabric environments
+# Manage libraries in Fabric environments
 
 Microsoft Fabric environments provide flexible configuration for running Spark jobs. Libraries provide reusable code for notebooks and Spark job definitions. In addition to built-in libraries that come with each Spark runtime, you can install public and custom libraries in Fabric environments.
 
@@ -28,45 +28,9 @@ To view the list of preinstalled packages and their versions for each runtime, s
 > If your workspace uses networking features such as **Workspace outbound access protection** or **Managed VNets**, access to public repositories such as PyPI is blocked. For guidance, see [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md).
 > If the built‑in library versions don’t meet your needs, you can override them by specifying the desired version in the external repository section or by uploading your own custom packages.
 
-## Select publish mode for libraries
-Before you add libraries from external repositories or upload custom packages, choose a publish mode. Fabric environments support two modes: **Full mode** and **Quick mode**.
-
-:::image type="content" source="media\environment-library-management\environment-library-management-different-mode.png" alt-text="Screenshot that shows the different modes in the library management screen." lightbox="media\environment-library-management\environment-library-management-different-mode.png":::
-
-### Full mode
-Full mode uses the traditional publish workflow. During publish, Fabric resolves dependencies, validates compatibility, and creates a stable library snapshot. That snapshot is deployed when a new session starts.
-
-Use Full mode for production workloads, pipelines, and environments with heavier dependency sets.
-
-### Quick mode
-Quick mode skips dependency processing during publish. Instead, packages are installed at notebook session startup.
-
-Use Quick mode for lightweight dependencies, rapid iteration, and early-stage experimentation.
-
-### Choosing the right mode for your needs
-Use dependency complexity and release stage to choose a mode.
-
-- **Full mode**: Best for larger dependency sets (for example, more than 10 packages), production runs, and pipeline reliability. Publish time is typically 2 to 10 minutes, with another 30 seconds to 2 minutes at session startup, depending on dependency size.
-- **Quick mode**: Best for lighter dependency sets and rapid iteration. Publish usually completes in seconds, and install time occurs at session startup.
-
-You can mix modes during development. A common pattern is to iterate in Quick mode, then move validated dependencies to Full mode for a stable production snapshot.
-
-You can also keep an existing Full mode snapshot unchanged and add only new test packages in Quick mode. In that setup, publish remains fast, the existing snapshot is deployed first, and Quick mode packages are installed at session startup.
-
-### Mode limitations and behavior
-
-- Quick mode is supported only for notebooks.
-- JAR files aren't supported in Quick mode.
-- Only Full mode supports private repositories (Azure Artifact Feed).
-- You can't move custom libraries directly between modes. To switch modes, download the file, remove it from the current mode, then upload it to the target mode.
-- Installation logs aren't shown in the notebook. Use **Monitoring (Level 2)** to track progress and troubleshoot issues.
-- Duplicate packages across modes are supported, including same and different versions. Full mode snapshot packages are applied first, then Quick mode packages. If names match, Quick mode versions override Full mode versions.
-- Quick mode packages install when the first code cell for that language runs. For example, Python packages install when the first Python cell runs, and R packages install when the first R cell runs.
-
-
 ## External repositories
 
-You can add libraries from public repositories like PyPI and Conda, or from private repositories. The source and publish mode options differ depending on the repository type.
+You can add libraries from public repositories like PyPI and Conda, or from private repositories. The source and publish mode options differ depending on the repository type. When you add a library, you select a publish mode (Full or Quick). For details on how each mode works, see [Select publish mode for libraries](#select-publish-mode-for-libraries).
 
 :::image type="content" source="media\environment-library-management\environment-library-management-external-repositories-library.png" alt-text="Screenshot that shows the environment External repositories Libraries screen." lightbox="media\environment-library-management\environment-library-management-external-repositories-library.png":::
 
@@ -171,7 +135,7 @@ After you add external libraries, you can manage them from the **External reposi
 
 ## Custom libraries
 
-Custom libraries refer to code built by you or your organization. Fabric supports custom library files in `.whl`, `.py`, `.jar`, and `.tar.gz` formats. 
+Custom libraries refer to code built by you or your organization. Fabric supports custom library files in `.whl`, `.py`, `.jar`, and `.tar.gz` formats. As with external libraries, you choose a publish mode (Full or Quick) when you upload custom packages. For details, see [Select publish mode for libraries](#select-publish-mode-for-libraries). 
 
 > [!NOTE]
 > Fabric supports only `.tar.gz` files for R language. Use the `.whl` and `.py` file format for Python language.
@@ -181,6 +145,41 @@ Use the **Upload** and **Download** buttons in the **Custom** libraries page to 
 :::image type="content" source="media\environment-library-management\env-library-management-custom-library.png" alt-text="Screenshot that shows the environment Custom Libraries screen." lightbox="media\environment-library-management\env-library-management-custom-library.png":::
 
 To delete a library, hover over its row and select the trash icon, or select multiple libraries and then select **Delete**.
+
+## Select publish mode for libraries
+
+When you add external or custom libraries, you choose a publish mode. **Full mode** is available for all library sources and workload types. **Quick mode** is available for public repositories and most custom library formats, but only when running notebooks.
+
+:::image type="content" source="media\environment-library-management\environment-library-management-different-mode.png" alt-text="Screenshot that shows the different modes in the library management screen." lightbox="media\environment-library-management\environment-library-management-different-mode.png":::
+
+The following table shows which publish mode each library source supports.
+
+| Library source | Full mode | Quick mode |
+|---|---|---|
+| Public repository (PyPI/Conda) | Yes | Yes |
+| Private repository (pip/conda) | Yes | No |
+| Azure Artifact Feed | Yes | No |
+| Custom `.whl`, `.py`, `.tar.gz` | Yes | Yes |
+| Custom `.jar` | Yes | No |
+
+### Choose the right mode for your needs
+
+Use dependency complexity and workload type to decide which mode fits.
+
+- **Full mode** resolves dependencies, validates compatibility, and creates a stable library snapshot during publish. That snapshot is deployed when a new session starts. Best for larger dependency sets (for example, more than 10 packages), production workloads, and pipelines. Publish takes 2 to 10 minutes; session startup adds 30 seconds to 2 minutes depending on dependency size.
+- **Quick mode** skips dependency processing during publish and installs packages at notebook session startup instead. Best for lighter dependency sets, rapid iteration, and early-stage experimentation. Publish completes in seconds; install time shifts to session startup.
+
+You can mix modes during development. A common pattern is to iterate in quick mode, then move validated dependencies to full mode for a stable production snapshot. You can also keep an existing full mode snapshot unchanged and layer new test packages in quick mode — the full mode snapshot deploys first, then quick mode packages install on top.
+
+### Mode limitations and behavior
+
+Keep these constraints in mind when working with publish modes.
+
+- Quick mode works only with notebooks, not Spark job definitions.
+- To move a custom library between modes, download the file, remove it from the current mode, then upload it to the target mode. Direct transfers between modes aren't supported.
+- Installation logs don't appear in the notebook. Use **Monitoring (Level 2)** to track progress and troubleshoot.
+- When both modes contain packages, the full mode snapshot applies first. Quick mode packages install on top and override any full mode package with the same name.
+- Quick mode packages install when the first code cell for that language runs. For example, Python packages install when the first Python cell runs, and R packages install when the first R cell runs.
 
 ## Related content
 
