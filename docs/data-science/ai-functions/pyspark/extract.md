@@ -100,6 +100,34 @@ This example code cell provides the following output:
 
 ---
 
+## Multimodal input
+
+The `ai.extract` function supports file-based multimodal input. You can extract entities from images, PDFs, and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+extracted = custom_df.ai.extract(
+    labels=[
+        aifunc.ExtractLabel(
+            "name",
+            description="The full name of the candidate, first letter capitalized.",
+            max_items=1,
+        ),
+        "companies_worked_for",
+        aifunc.ExtractLabel(
+            "year_of_experience",
+            description="The total years of professional work experience the candidate has, excluding internships.",
+            type="integer",
+            max_items=1,
+        ),
+    ],
+    input_col="file_path",
+    input_col_type="path",
+)
+display(extracted)
+```
+
 ## Related content
 
 - Use [ai.extract with pandas](../pandas/extract.md).
@@ -113,5 +141,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

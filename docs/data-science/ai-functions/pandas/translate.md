@@ -61,6 +61,20 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/translate-example-output.png" alt-text="Screenshot of a data frame with columns 'text' and 'translations'. The 'translations' column contains the text translated to Spanish." lightbox="../../media/ai-functions/translate-example-output.png":::
 
+## Multimodal input
+
+The `ai.translate` function supports file-based multimodal input. You can translate the content of images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+custom_df["chinese_version"] = custom_df["file_path"].ai.translate(
+    "Chinese",
+    column_type="path",
+)
+display(custom_df)
+```
+
 ## Related content
 
 - Use [ai.translate with PySpark](../pyspark/translate.md).
@@ -74,5 +88,6 @@ This example code cell provides the following output:
 - Summarize text with [ai.summarize](./summarize.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
