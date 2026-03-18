@@ -105,6 +105,8 @@ items:
       href: sql/connect-python.md
     - name: Jupyter Notebooks
       href: sql/connect-jupyter-notebook.md
+    - name: Bulk copy with Python
+      href: sql/connect-python-bulk-copy.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control
