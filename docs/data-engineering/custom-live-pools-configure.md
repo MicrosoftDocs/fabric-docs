@@ -61,7 +61,7 @@ After you create a custom Spark pool, enable live pool compute through the [envi
     > [!IMPORTANT]
     > Fabric uses standard Spark provisioning for activity outside the scheduled window, which has slower startup times. Clusters aren't kept warm outside the scheduled window.
     
-    For scheduling tips, see [Scheduling best practices](#scheduling-best-practices).
+    For scheduling tips, see [Schedule best practices](#schedule-best-practices).
 
 1. Save the compute settings.
 1. Select the **Publish** button in the top ribbon.
