@@ -73,7 +73,8 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## IQ
 
-- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md).
+- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md)
+- **Plan**: Plan (preview) is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is plan (preview)?](../iq/plan/overview.md)
 
 ## Real-Time Intelligence
 

@@ -21,7 +21,7 @@ Fabric Data Warehouse is an enterprise scale relational warehouse on a data lake
 Data warehouse customers benefit from:
 
 - **Cross database queries** can use multiple data sources for fast insights with zero data duplication.
-- **Easily ingest, load and transform data** at scale through Pipelines, Dataflows, cross database query or the COPY INTO command.
+- **Easily ingest, load and transform data** at scale through Pipelines, Dataflows, cross database query or the `COPY INTO` T-SQL command.
 - **Autonomous workload management** with industry-leading distributed query processing engine means no knobs to turn to achieve best in class performance.
 - **Scale near instantaneously** to meet business demands. Storage and compute are separated.
 - **Data is automatically replicated** to OneLake Files for external access. 
@@ -80,7 +80,7 @@ For more detailed decision guidance, see [Microsoft Fabric decision guide: Choos
 
 ## Migration
 
-Use [the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
+Use [the Fabric Migration Assistant for Data Warehouse](migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
 
 For migration guidance across Microsoft Fabric, review the tools and links in [Microsoft Fabric migration overview](../fundamentals/migration.md).
 

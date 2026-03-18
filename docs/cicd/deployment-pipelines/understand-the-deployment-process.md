@@ -533,6 +533,16 @@ This section lists most of the limitations in deployment pipelines.
 
 After deploying an item to a new stage, if you see a DLP policy tip indication on the item, try refreshing the item to see whether the indication disappears before investigating further. Because DLP runs as soon as an item is copied, possibly before other processes that bring in data or metadata (such as a default sensitivity label) have completed, DLP might have run on the item prematurely, resulting in the misapplication of the policy tip indication. Refreshing the item should cause the policy tip indication to go away.
 
-## Related content
+### Differences between Deployment Pipeline and recycle bin item recovery behavior
+If you use Deployment Pipeline, you might encounter unexpected behavior in scenarios where deleted items are re‑created or restored through a combination of deployment pipelines, and recycle bin recovery.
+This occurs because deployment pipelines re‑create deleted items by assigning a new item ID, whereas restoring an item from the recycle bin preserves the original item ID. As a result, duplicate items with different identities can exist in the workspace, which may cause deployment pipelines to stop working as expected and also can affect existing dependencies.
+##### Mitigation
+Delete the item that was re‑created by the deployment pipeline. After the duplicate item is removed, deployments should resume normally.
 
+### Deletion of subfolder
+If both a subfolder and its parent were deleted and moved to the recycle bin in the target stage, and are then redeployed from the source, the deployment may fail and can also block unassign and reassign operations.
+##### Mitigation 
+Permanently delete the soft-deleted subfolders in the target stage before redeploying.
+
+## Related content
 [Get started with deployment pipelines](get-started-with-deployment-pipelines.md).
