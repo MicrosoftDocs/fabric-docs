@@ -2,7 +2,7 @@
 title: "Data quality report for materialized lake views"
 description: Learn how to create, use, and share the data quality report for materialized lake views in a lakehouse in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 03/01/2026
+ms.date: 03/18/2026
 ai-usage: ai-assisted
 # customer-intent: As a data engineer, I want to use the data quality report in materialized lake views to monitor data quality trends and configure alerts.
 ---
@@ -19,7 +19,7 @@ To create the materialized lake views data quality report for your lakehouse in 
 
 1. In your workspace, open the lakehouse.
 
-1. Select **Manage materialized lake views (preview)**.
+1. Select **Manage materialized lake views**.
 
 1. On the Manage materialized lake views page, select **Data quality report**.
 
@@ -53,7 +53,7 @@ A violation means a row doesn't meet a constraint condition for one or more colu
 
 In the following screenshot, the dashboard tile **Data Quality Violations - Top MLVs by Day for the Last Week** on the **Overview** page shows daily data quality state for the past week.
 
-:::image type="content" source="./media/data-quality-reports/overview_page.png" alt-text="Screenshot showing the overview page." border="true" lightbox="./media/data-quality-reports/overview_page.png":::
+:::image type="content" source="./media/data-quality-reports/overview-page.png" alt-text="Screenshot showing the overview page." border="true" lightbox="./media/data-quality-reports/overview-page.png":::
 
 Use the data quality violations tile to track trends and compare recent performance. Other visuals on the page show aggregated live data for current quality status.
 
@@ -64,12 +64,6 @@ The **MLV Detail** page of the data quality report shows data quality metrics at
 :::image type="content" source="./media/data-quality-reports/materialized-lake-views-detail-page.png" alt-text="Screenshot showing the MLV detail page." border="true" lightbox="./media/data-quality-reports/materialized-lake-views-detail-page.png":::
 
 All charts on **MLV Detail** display historical data, so you can drill down into daily metrics across multiple weeks.
-
-## Customize in Power BI (optional)
-
-If you need full Power BI authoring features, you can customize the materialized lake views data quality report. Open the workspace report by selecting **Customize report** in the upper-right corner of the top navigation bar.
-
-:::image type="content" source="./media/data-quality-reports/customize-report.png" alt-text="Screenshot showing the redirection to workspace report." border="true" lightbox="./media/data-quality-reports/customize-report.png":::
 
 ## Share the report
 

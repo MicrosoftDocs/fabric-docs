@@ -56,7 +56,7 @@ For step-by-step notebook creation guidance in specific workflows, see:
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) for creating a notebook from a lakehouse context in the Fabric portal.
 - [Author notebooks in Microsoft Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
-- [Public APIs for notebooks](notebook-public-api.md#create-a-notebook-with-a-definition) for creating notebooks through REST APIs.
+- [Public APIs for notebooks](/rest/api/fabric/core/items) for creating notebooks through REST APIs.
 
 ### Import existing notebooks
 
@@ -279,4 +279,5 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
 

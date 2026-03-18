@@ -78,4 +78,5 @@ To select a Fabric workspace:
 Now you have a basic understanding of how to install and set up the Fabric Data Engineering VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
 
 - To get started with notebooks, see [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md).
+- To use AI-assisted notebook authoring, see [Develop Microsoft Fabric notebooks with the Fabric Notebook custom agent in Visual Studio Code](notebook-custom-agent-with-vs-code.md).
 - To get started with Spark job definitions, see [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md).
