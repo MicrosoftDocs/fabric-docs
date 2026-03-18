@@ -16,8 +16,6 @@ This article outlines the best practices and limitations when using operations a
 
 Operations Agent helps organizations operationalize clear business goals by continuously monitoring real-time data, evaluating explicit thresholds, and recommending actions when defined conditions are met—such as responding proactively when bike availability drops to a critical level.
 
-### Operational instructions
-
 - **Eventhouse tables**: If Eventhouse tables contain nested columns such as JSON, flatten the tables before configuring the agent. Flat tables with descriptive column names improve the agent's ability to parse and evaluate data.
 - **Column descriptions**: If a column's purpose is unclear from its name, add a plain-language description using the description field in your KQL table schema. This helps the agent interpret data values correctly.
 - **Business object identification**: If the agent needs to monitor a specific business object such as a station, sensor, or personnel record, identify the column that uniquely identifies the object (for example, “StationID” or “SensorID”) and specify which table it belongs to.
@@ -26,14 +24,22 @@ Operations Agent helps organizations operationalize clear business goals by cont
 - **Rule separation**: If you define multiple rules, describe each rule on a separate line or bullet point. Don't combine conditions from different rules in the same sentence.
 - **Rule order**: If the agent needs to prioritize certain rules, list higher-priority rules first. LLMs might interpret information differently based on its position in the prompt.
 
-### Semantic instructions
+## Sample instructions
 
-- Entity data for monitored objects such as stations, sensors, or personnel is sourced from flat tables in the Eventhouse and KQL database that the agent monitors.
-- A business entity is uniquely identified by a key column in its source table. For example, a bike station entity is identified by a “StationID” column, and a sensor entity is identified by a “SensorID” column. Specifying the identifying column and its table prevents the agent from confusing entities that have similar properties.
-- Column descriptions in the KQL database schema are the authoritative source of context for the agent. For example, a column named “AvailableBikes” with description “Number of bikes currently available at this station” helps the agent correctly apply thresholds defined in rules.
-- All rule conditions should be expressed as numeric thresholds rather than qualitative terms. For example, “bike availability is low” should be stated as “AvailableBikes is fewer than 3.” Numeric thresholds ensure consistent evaluation across polling intervals.
-- The agent runs data queries every five minutes when it's active. A rule condition is evaluated at each polling interval against the data available at that time.
-- When the agent detects data that matches a rule, it creates an operation to track the recommended action and the user's response. An operation is automatically canceled if the user doesn't respond within three days.
+Here is an example of how you can lay out your instructions to the agent to be clear about its operational rules and the semantic information about the fields in your data.
+
+```
+*** Operational Instructions ***
+1. Alert me when a trip has high occupancy level.
+2. Alert me when a trip has high departure delay.
+
+*** Semantic Instructions ***
+1. Information about a trip can be found in 'TripUpdateFlattened' table, each identified by the 'trip_id' column.
+2. Information about a vehicle can be found in 'VehiclePositionsFlat' table, each identified the 'vehicle_id' column.
+3. A trip is a associated with multiple vehicles via shared trip id.
+4. Occupancy status of a trip is calculated as the latest occupancy status from the vehicle the trip is associated with. The value 'HIGH' means high occupancy level.
+5. The departure delay is measured in number of second. Higher than 300 seconds of delay is considered significant.
+```
 
 ## Limitations
 
