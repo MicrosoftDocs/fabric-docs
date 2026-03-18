@@ -30,7 +30,7 @@ Compare code changes can be opened from multiple locations. The following table 
 |Entry Point|Description|
 |-----|-----|
 |Source Control → Changes tab|●Shows diffs where the workspace has changes relative to workspace last Git synced</br>●Workspace side is highlighted (“green side”)|
-|Source Control → Updates tab|●Shows diffs where connected Git folder has new changes relative to workspac last Git synced</br>●Git branch side is highlighted (“green side”)|
+|Source Control → Updates tab|●Shows diffs where connected Git folder has new changes relative to workspace last Git synced</br>●Git branch side is highlighted (“green side”)|
 |Conflict Dialog|●Shows only conflicted items</br>●Comparisons current workspace version vs. current Git version)|
 |Per‑item compare|●Clicking a specific item shows its diff expanded</br>●Other items remain collapsed|
 
@@ -64,7 +64,7 @@ The following steps show how to review incoming updates changes:
 ## Conflict resolution
 Compare code changes helps in [resolving conflicts](conflict-resolution.md) by making differences explicit, scoped, and reviewable before taking any actions.
 
-:::image type="content" source="media/granular-compare/compare-13.png" alt-text="Screenshot of the resolve conflicts diaglog." lightbox="media/granular-compare/compare-13.png":::
+:::image type="content" source="media/granular-compare/compare-13.png" alt-text="Screenshot of the resolve conflicts dialog." lightbox="media/granular-compare/compare-13.png":::
 
 Hovering over the two options will reveal the **Review changes** button. Click on it and you can see the compare the current workspace version vs. current Git version.
 
@@ -73,13 +73,13 @@ Hovering over the two options will reveal the **Review changes** button. Click o
 ## System files and system level changes
 System files and platform changes participate in Git synchronization. So whenever Microsoft Fabric sees a difference in the underlying system files, metadata changes, version updates — it correctly marks the item as "modified." This is why the item appears in the Changes or Updates list.
 
-System files are repesented  by a "/" in the list of changes or updates. 
+System files are represented  by a "/" in the list of changes or updates. 
 
 :::image type="content" source="media/granular-compare/compare-10.png" alt-text="Screenshot of item deletion and addition." lightbox="media/granular-compare/compare-10.png":::
 
-In most cases, the changes in the system files are just like any other changes. In case of system platform file upgrade from version 1 to version 2. You may see additions and deletion of files which won’t affect your current changes.
+In most cases, the changes in the system files are just like any other changes. You may see system platform file upgrade from version 1 to version 2 that shows additions and deletion of files which won’t affect your current changes.
 
-For more information see [Automatically generated system files](source-code-format.md).
+For more information, see [Automatically generated system files](source-code-format.md).
 
 
 ## Limitations
