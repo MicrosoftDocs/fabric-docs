@@ -99,6 +99,8 @@ items:
             href: event-streams/add-source-azure-service-bus.md
           - name: Azure IoT Hub
             href: event-streams/add-source-azure-iot-hub.md
+          - name: Anomaly Detection events
+            href: event-streams/add-source-anomaly-events.md
           - name: Custom endpoint
             href: event-streams/add-source-custom-app.md
           - name: Sample data
@@ -119,6 +121,8 @@ items:
             href: event-streams/add-source-sql-server-change-data-capture.md
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: DeltaFlow output transformation (Preview)
+            href: event-streams/delta-flow-output-transformation.md
           - name: Google Cloud Pub/Sub
             href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
@@ -163,6 +167,8 @@ items:
             href: event-streams/add-destination-activator.md
           - name: Custom endpoint
             href: event-streams/add-destination-custom-app.md
+          - name: Business events
+            href: event-streams/add-destination-business-events.md
       - name: Process events
         items:
           - name: Process events using event processor
@@ -541,8 +547,19 @@ items:
         href: eventhouse-deploy-with-fabric-api.md
       - name: Manage and monitor an eventhouse
         href: manage-monitor-eventhouse.md
-      - name: Query cold data with hot windows
-        href: query-cold-data-hot-windows.md
+      - name: Eventhouse capacity 
+        items:
+          - name: Resource consumption
+            href: real-time-intelligence-consumption.md
+          - name: Smart capacity control
+            href: eventhouse-smart-capacity-control.md
+            displayName: consumption, CU, metrics app, monitor, billing, usage
+          - name: Understand Eventhouse compute usage
+            href: eventhouse-compute-observability.md
+          - name: Eventhouse Cost per GB Ingested
+            href: pricing-cost-drivers.md
+          - name: Query cold data with hot windows
+            href: query-cold-data-hot-windows.md   
       - name: Migrate
         items:
           - name: Migrate from Azure Data Explorer
@@ -709,14 +726,7 @@ items:
               - name: External tools
                 items:
                   - name: Query Fabric OneLake Delta tables from Snowflake
-                    href: query-onelake-from-snowflake.md
-      - name: Resource consumption
-        href: real-time-intelligence-consumption.md
-        displayName: consumption, CU, metrics app, monitor, billing, usage
-      - name: Understand Eventhouse compute usage
-        href: eventhouse-compute-observability.md
-      - name: Eventhouse Cost per GB Ingested
-        href: pricing-cost-drivers.md
+                    href: query-onelake-from-snowflake.md    
   - name: KQL Queryset
     items:
       - name: Copilot for Writing KQL Queries
@@ -812,6 +822,10 @@ items:
             href: ../real-time-hub/set-alerts-azure-blob-storage-events.md?context=/fabric/context/context-rti&pivots=fabric
           - name: Create alerts on Power BI reports
             href: data-activator/activator-get-data-power-bi.md
+          - name: Create alerts on ontology
+            href: ../iq/ontology/how-to-use-rules.md
+          - name: Create alert on a Warehouse SQL query
+            href: data-activator/set-alerts-warehouse-sql-query.md            
           - name: Get data from eventstreams
             href: event-streams/add-destination-activator.md
           - name: Create rules and activations
@@ -951,6 +965,20 @@ items:
         items:
           - name: Map items
             href: map/about-maps.md
+          - name: Layers
+            items:
+              - name: Layers
+                href: map/about-layers.md
+              - name: Create layers using Lakehouse data sources
+                href: map/about-lakehouse-layers.md
+              - name: Create layers using Kusto data sources
+                href: map/about-kusto-integration.md
+              - name: Create layers using WMS and WMTS imagery sources
+                href: map/about-external-sourced-imagery.md
+              - name: Ontology layers in Fabric Maps
+                href: map/about-ontology-layers.md
+              - name: Data filtering
+                href: map/about-data-filtering.md
           - name: Tilesets in Fabric Maps
             href: map/about-tile-sets.md
           - name: Sharing maps
@@ -961,6 +989,24 @@ items:
         items:
         - name: Create a map
           href: map/create-map.md
+        - name: Layers
+          items:
+            - name: Create layers from lakehouse data 
+              href: map/add-lakehouse-layer.md
+            - name: Create layers from Kusto data 
+              href: map/create-layers-using-kusto-data.md
+            - name: Create layers from WMS or WMTS imagery data
+              href: map/add-external-sourced-imagery-layer.md
+            - name: Get the WMTS endpoint URL from the MPC Pro geocatalog
+              href: map/get-mpc-pro-wmts-endpoint.md
+            - name: Add an ontology layer to a map
+              href: map/add-ontology-layer.md
+            - name: Data layer management
+              href: map/data-layer-management.md
+            - name: Filter data
+              href: map/filter-data.md
+            - name: Migrate KQL Queryset to a Kusto function
+              href: map/migrate-kusto-query-layer.md
         - name: Customize a map
           href: map/customize-map.md
         - name: Create a tileset
@@ -973,15 +1019,21 @@ items:
               href: map/share-map-org-apps.md
         - name: Manage Map permissions
           href: map/manage-map-permissions.md
-  - name: Build AI agents
+  - name: AI agents and MCP servers
     displayName: AI agents, AI, agents, RTI MCP, RTI, MCP, open source
     items:
       - name: Operations agents
         href: operations-agent-tocs/toc.yml
-      - name: Fabric RTI MCP Server (preview)
-        href: mcp-overview.md
-      - name: Use MCP with Eventhouse
-        href: mcp-eventhouse.md
+      - name: MCP servers
+        items:
+          - name: Fabric RTI MCP local server
+            href: mcp-overview.md
+          - name: Remote MCP Integrations
+            items:
+              - name: Get started with Eventhouse MCP remote Server
+                href: mcp-remote-eventhouse.md
+              - name: Get started with Activator MCP remote Server
+                href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops
     items:

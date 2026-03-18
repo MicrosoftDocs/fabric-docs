@@ -8,12 +8,9 @@ ms.subservice: rti-core
 ms.search.form: Map permissions
 ---
 
-# Manage map permissions in Fabric Maps (preview)
+# Manage map permissions in Fabric Maps
 
 This article describes how to grant, modify, and revoke access to individual map items in Fabric Maps. It focuses on map‑level permissions only. For a conceptual overview of how workspace roles, map permissions, and data permissions interact, see [Permissions in Fabric Maps](about-map-permissions.md).
-
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## Prerequisites
 

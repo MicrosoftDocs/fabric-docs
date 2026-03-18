@@ -89,6 +89,8 @@ items:
       items:
       - name: Item references
         href: variable-library/item-reference-variable-type.md
+      - name: Connection references
+        href: variable-library/connection-reference-variable-type.md
     - name: Permissions
       href: variable-library/variable-library-permissions.md
     - name: "CI/CD and Variable libraries"
