@@ -34,6 +34,9 @@ ms.date: 07/22/2025
 
             If you don’t use mTLS but still use **SASL_SSL** with your custom CA cert, then you can skip this client certificate configuration.  
 
+        > [!NOTE]
+        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector vNet injection (for example, via a private endpoint).
+
     :::image type="content" source="./media/apache-kafka-source-connector/configure-source-section.png" alt-text="Screenshot that shows the first page of the Apache Kafka connection settings." lightbox="./media/apache-kafka-source-connector/configure-source-section.png":::   
 
 1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
