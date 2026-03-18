@@ -40,7 +40,7 @@ The following steps show how to review commit changes:
 
 1. At the top of your workspace, select **Source control**, **Changes** tab.
 2. To review all changes, select the **review changes** button at the top. This action opens a dialog showing all the changes.
-3. To review a specific item's changes, hover next to it and select the **review changes** button.  This action opens a dialog that takes you directly to that item. You can review additional items from here also.
+3. To review a specific item's changes, hover next to it and select the **review changes** button.  This action opens a dialog that takes you directly to that item. You can review more items from here also.
  
  ::: image type="content" source="media/granular-compare/compare-new-1.png" alt-text="Screenshot of item review changes." lightbox="media/granular-compare/compare-new-1.png" :::
 
@@ -53,7 +53,7 @@ The following steps show how to review incoming updates changes:
 
 1. At the top of your workspace, select **Source control**, **Updates** tab.
 2. To review all updates, select the **review changes** button at the top. This action opens a dialog showing all the incoming updates.
-3. To review a specific item's update, hover next to it and select the **review changes** button.  This action opens a dialog that takes you directly to that item. You can review additional items from here also.
+3. To review a specific item's update, hover next to it and select the **review changes** button.  This action opens a dialog that takes you directly to that item. You can review more items from here also.
 
 :::image type="content" source="media/granular-compare/compare-new-3.png" alt-text="Screenshot of item review changes for updates." lightbox="media/granular-compare/compare-new-3.png":::
 
