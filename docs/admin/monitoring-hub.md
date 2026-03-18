@@ -117,7 +117,7 @@ The **Schedule failures** page lets you view and manage failure notifications fo
 
 Notifications configured on the Schedule failures page and in the [job scheduler](../fundamentals/job-scheduler.md#receive-notifications-for-failed-scheduled-jobs) are the same underlying configuration. Changes made in either location are reflected in both.
 
-To open the Schedule failures page, under **Configure notifications** in the side panel, select **Schedule failures**.
+To open the **Schedule failures** page, under **Configure notifications** in the side panel, select **Schedule failures**.
 
 :::image type="content" source="media/monitoring-hub/monitoring-hub-schedule-failures-list.png" alt-text="Screenshot of the Schedule failures page in the monitoring hub showing a list of items with failure notifications configured." lightbox="media/monitoring-hub/monitoring-hub-schedule-failures-list.png":::
 
@@ -125,31 +125,29 @@ To open the Schedule failures page, under **Configure notifications** in the sid
 
 To set up failure notifications for a scheduled item:
 
-1. On the Schedule failures page, select **+ Configure notifications**.
+1. On the **Schedule failures** page, select **+ Configure notifications**.
 
    :::image type="content" source="media/monitoring-hub/monitoring-hub-schedule-failures-configure-item.png" alt-text="Screenshot showing the item picker when configuring new failure notifications." lightbox="media/monitoring-hub/monitoring-hub-schedule-failures-configure-item.png":::
 
-2. Select an item that supports schedules from the list.
+1. Select an item that supports schedules from the list.
 
-3. Enter the recipients who should receive an email when a scheduled run of the item fails.
+1. Enter the recipients who should receive an email when a scheduled run of the item fails. Recipients can be users or groups in your Microsoft Entra tenant, including B2B guest users. Direct external email addresses aren't supported.
 
    :::image type="content" source="media/monitoring-hub/monitoring-hub-schedule-failures-configure-recipients.png" alt-text="Screenshot showing the recipient entry when configuring failure notifications." lightbox="media/monitoring-hub/monitoring-hub-schedule-failures-configure-recipients.png":::
 
-4. Select **Save**.
-
-Recipients can be users or groups in your Microsoft Entra tenant, including B2B guest users. Direct external email addresses aren't supported.
+1. Select **Save**.
 
 ### Edit or remove failure notifications
 
 To edit recipients or remove failure notifications for an item:
 
-1. On the Schedule failures page, select an item from the table.
+1. On the **Schedule failures** page, select an item from the table.
 
-2. The **Notification details** pane opens on the right, showing the current recipients.
+1. The **Notification details** pane opens on the right, showing the current recipients.
 
-3. To edit recipients, select **Edit recipients**, make your changes, and save.
+1. To edit recipients, select **Edit recipients**, make your changes, and save.
 
-4. To stop receiving failure notifications for this item entirely, select **Remove notifications**.
+1. To stop receiving failure notifications for this item entirely, select **Remove notifications**.
 
 ### Permissions
 
@@ -158,7 +156,7 @@ To edit recipients or remove failure notifications for an item:
 
 ### Limitations
 
-- Semantic models aren't yet supported on the Schedule failures page. All other item types visible on the Activities page are supported.
+- Semantic models aren't yet supported on the **Schedule failures** page. All other item types visible on the **Activities** page are supported.
 - Failure notifications apply only to **scheduled runs**. Manually triggered runs or runs initiated through other means don't trigger notifications.
 - Notifications are sent in the display language of the recipient's Fabric account. English is used as a fallback.
 
