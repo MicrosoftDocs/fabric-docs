@@ -681,6 +681,14 @@
                 href: connector-sharepoint-list-overview.md
               - name: Set up your connection
                 href: connector-sharepoint-list.md
+          - name: SharePoint Online File
+            items: 
+              - name: SharePoint Online File - Overview
+                href: connector-sharepoint-online-file-overview.md
+              - name: Set up your connection
+                href: connector-sharepoint-online-list.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-sharepoint-online-file-copy-activity.md
           - name: SharePoint online list
             items: 
               - name: SharePoint online list - Overview
@@ -853,6 +861,8 @@
                     href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Download diagnostics logs
                     href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json  
+      - name: Access recent data
+        href: recent-data.md
   - name: Move data
     items:
       - name: Decide - Data movement strategy
@@ -877,6 +887,8 @@
                 href: cdc-copy-job-snowflake.md
               - name: Change data capture from Google BigQuery
                 href: cdc-copy-job-bigquery.md
+              - name: Change data capture from Oracle database
+                href: cdc-copy-job-oracle.md
           - name: Run copy job from a pipeline
             href: copy-job-activity.md
           - name: Change data capture (CDC) in Copy job
@@ -887,6 +899,8 @@
             href: cicd-copy-job.md
           - name: REST API Capabilities
             href: copy-job-rest-api-capabilities.md
+          - name: Workspace monitoring for Copy job
+            href: copy-job-workspace-monitoring.md
       - name: Copy activity
         href: copy-data-activity.md
         items:
@@ -943,7 +957,9 @@
           - name: Stored Procedure activity
             href: stored-procedure-activity.md
           - name: SQL script activity
-            href: script-activity.md      
+            href: script-activity.md
+          - name: Invoke SSIS package activity
+            href: invoke-ssis-package-activity.md
       - name: Dataflows
         items:
           - name: What are dataflows?
@@ -957,22 +973,30 @@
             items:
               - name: Dataflow default destination
                 href: default-destination.md
+              - name: Data destinations validation rules
+                href: dataflow-gen2-data-destinations-validation-rules.md
+              - name: Advanced edit for data destination queries
+                href: dataflow-gen2-advanced-edit-data-destinations.md
+              - name: Excel advanced data destination
+                href: dataflow-gen2-data-destinations-excel-advanced.md
           - name: Authoring tools
             items:
               - name: Machine learning model in Dataflow Gen2
                 href: dataflow-gen2-machine-learning-model-endpoints.md
-              - name: AI Functions in Dataflow Gen2 (Preview)
+              - name: AI Prompt in Dataflow Gen2
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
               - name: Get data with Copilot
                 href: copilot-modern-get-data.md
-              - name: Query evaluator (Preview)
+              - name: Modern query evaluator
                 href: dataflow-gen2-modern-evaluator.md
-              - name: Preview only (Preview)
+              - name: Preview only steps
                 href: dataflow-gen2-preview-only-step.md
               - name: Partitioned compute (Preview)
                 href: dataflow-gen2-partitioned-compute.md
+              - name: Relative references with Fabric connectors
+                href: dataflow-gen2-relative-references.md
               - name: Public parameters in Dataflow Gen2
                 href: dataflow-parameters.md
               - name: Variable libraries in Dataflow Gen2
@@ -1004,7 +1028,7 @@
                 href: dataflows-gen2-fast-copy.md
               - name: Implement slowly changing dimension type 1
                 href: slowly-changing-dimension-type-one.md
-              - name: Implement lowly changing dimension type 2
+              - name: Implement slowly changing dimension type 2
                 href: slowly-changing-dimension-type-two.md
               - name: Staging in Dataflow Gen2
                 href: data-in-staging-artifacts.md
@@ -1122,10 +1146,14 @@
             href: invoke-pipeline-activity.md
           - name: KQL activity
             href: kql-activity.md
+          - name: Lakehouse maintenance activity
+            href: lakehouse-maintenance-activity.md
           - name: Lookup activity
             href: lookup-activity.md
           - name: Office 365 Outlook activity
             href: outlook-activity.md
+          - name: Refresh SQL Endpoint activity
+            href: refresh-sql-endpoint-activity.md
           - name: Semantic model refresh activity
             href: semantic-model-refresh-activity.md
           - name: Set Variable activity
@@ -1213,20 +1241,22 @@
             href: connector-troubleshoot-azure-table-storage.md
           - name: Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM
             href: connector-troubleshoot-dynamics-dataverse.md
+          - name: FTP-SFTP-HTTP
+            href: connector-troubleshoot-ftp-sftp-http.md
           - name: Lakehouse
             href: connector-troubleshoot-lakehouse.md
           - name: MongoDB
             href: connector-troubleshoot-mongodb.md
           - name: Oracle
             href: connector-troubleshoot-oracle.md
-          - name: Snowflake
-            href: connector-troubleshoot-snowflake.md
-          - name: FTP-SFTP-HTTP
-            href: connector-troubleshoot-ftp-sftp-http.md
-          - name: REST
-            href: connector-troubleshoot-rest.md
           - name: Sharepoint Online list
             href: connector-troubleshoot-sharepoint-online-list.md
+          - name: Snowflake
+            href: connector-troubleshoot-snowflake.md
+          - name: SQL database in Fabric
+            href: connector-troubleshoot-fabric-sql.md
+          - name: REST
+            href: connector-troubleshoot-rest.md
           - name: Format
             items: 
               - name: Delimited text

@@ -4,7 +4,7 @@ description: A detailed list of limitations for mirrored databases from Azure SQ
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: lazartimotic, jingwang, nzagorac, ajayj
-ms.date: 02/09/2026
+ms.date: 02/26/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -24,13 +24,13 @@ For troubleshooting, see:
 ## Database level limitations
 
 - Mirroring on Azure SQL Managed Instance is available for instances that have their [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true) set to **Always up to date** or **SQL Server 2025**.
-   - SQL managed instances with the **SQL Server 2022** update policy can use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
+   - SQL managed instances with the **SQL Server 2022** update policy should use Fabric Mirroring for SQL Server 2016-2022, which uses CDC instead of the change feed. For more information, see [Tutorial: Configure Microsoft Fabric Mirroring from SQL Server](sql-server-tutorial.md?tabs=sql201622).
 - Geo Disaster Recovery setup isn't supported by Mirroring.
 - Fabric Mirroring for Azure SQL Managed Instance is only supported on a **writable primary** database.
 - An Azure SQL Managed Instance database can't be mirrored if the database has: enabled Change Data Capture (CDC), transactional replication, or the database is already mirrored in another Fabric workspace.
-- The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list aren't mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+- The maximum number of tables that can be mirrored into Fabric is 1000 tables. Any tables above the 1000 limit currently can't be replicated.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 1000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list aren't mirrored over.
+  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 1000 tables.
 - The database copy/move feature isn't supported on databases that are mirrored. If you move or copy a database with mirroring enabled, the copy will report a mirroring error state.
 - If your SQL managed instance database is set up to use [Azure SQL Managed Instance Link feature](/azure/azure-sql/managed-instance/managed-instance-link-feature-overview?view=azuresql-mi&preserve-view=true), the readable replica isn't supported to be a source for Fabric mirroring.
 - If your database is configured for mirroring and then renamed, the **Monitor Mirroring** functionality will stop working. Renaming the database to the name it had when mirroring was set up will resolve the issue.

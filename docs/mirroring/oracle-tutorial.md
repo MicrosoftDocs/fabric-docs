@@ -1,15 +1,13 @@
 ---
-title: "Tutorial: Set up Oracle database mirroring in Microsoft Fabric (Preview)"
+title: "Tutorial: Set up Oracle database mirroring in Microsoft Fabric"
 description: Learn how to mirror your Oracle database in Microsoft Fabric for near real-time data replication.
 ms.reviewer: sbahadur
-ms.date: 08/22/2025
+ms.date: 02/26/2026
 ms.topic: tutorial
 ai-usage: ai-assisted
 ---
 
-# Tutorial: Set up Oracle database mirroring in Microsoft Fabric (Preview)
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+# Tutorial: Set up Oracle database mirroring in Microsoft Fabric
 
 [Database mirroring in Microsoft Fabric](overview.md) is a cloud-based, zero-ETL solution that creates a mirror of your Oracle database. When you set up mirroring, you'll get a read-only copy of your Oracle data in OneLake that updates in near real-time.
 
@@ -23,11 +21,9 @@ You need:
   * Oracle OCI
   * Oracle Database@Azure
   * Exadata
-  * Note: Oracle Autonomous Database isn't supported in this preview
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported in this preview.
 
 ## Set up archive of redo log files
 
@@ -142,9 +138,9 @@ Your Oracle database needs supplemental logging enabled. If your user doesn't ha
 
 1. Open your Fabric workspace and check that it has a Trial or Premium Fabric capacity
 
-1. Select **New** > **Mirrored Oracle (preview)**
+1. Select **New** > **Mirrored Oracle**
 
-   :::image type="content" source="media/oracle/microsoft-fabric-oracle-mirroring.png" alt-text="Screenshot of Microsoft Fabric workspace showing the Mirrored Oracle (preview) option selected to create a new artifact." lightbox="media/oracle/microsoft-fabric-oracle-mirroring.png":::
+   :::image type="content" source="media/oracle/microsoft-fabric-oracle-mirroring.png" alt-text="Screenshot of Microsoft Fabric workspace showing the Mirrored Oracle option selected to create a new artifact." lightbox="media/oracle/microsoft-fabric-oracle-mirroring.png":::
 
 1. Select **Oracle Database**
 
@@ -175,8 +171,8 @@ Your Oracle database needs supplemental logging enabled. If your user doesn't ha
 1. Select **Connect** to test the connection
 
 1. Choose how to select tables for mirroring:
-   * **Auto mode**: Let Fabric select 500 random tables
-   * **Manual**: Pick up to 500 tables yourself
+   * **Auto mode**: Let Fabric mirror all the tables.
+   * **Manual**: Choose only certain objects to mirror.
 
    :::image type="content" source="media/oracle/choose-data.png" alt-text="Screenshot of the interface prompting the user to select the data they want to be mirrored before connecting.":::
 

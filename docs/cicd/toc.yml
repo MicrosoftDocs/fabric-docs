@@ -10,10 +10,12 @@ items:
   items:
   - name: Overview
     href: manage-deployment.md
-  - name: Tutorial - CI/CD for Microsoft Fabric Using Azure DevOps & the fabric-cicd Python Package
+  - name: Tutorial - CI/CD using Azure DevOps & fabric-cicd library
     href: tutorial-fabric-cicd-azure-devops.md
   - name: Tutorial - Local deployment with fabric-cicd 
     href: tutorial-fabric-cicd-local.md   
+  - name: Tutorial - CI/CD using Fabric Bulk API
+    href: tutorial-bulkapi-cicd.md   
 - name: Continuous integration with Git
   items:
   - name: "Introduction to Git integration"
@@ -34,6 +36,8 @@ items:
       href: git-integration/dependency-errors.md
     - name: Expired licenses
       href: git-integration/license-change.md
+    - name: Logical ID conflicts
+      href: git-integration/logical-id-conflict-resolution.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
   - name: Automate Git integration
@@ -46,6 +50,8 @@ items:
       href: git-integration/git-integration-with-service-principal.md
   - name: GitHub data residency support
     href: github-data-residency-support.md
+  - name: Compare code changes
+    href: git-integration/granular-compare.md
 - name: Continuous Deployment with deployment pipelines
   items:
   - name: Introduction to deployment pipelines
@@ -87,6 +93,8 @@ items:
       items:
       - name: Item references
         href: variable-library/item-reference-variable-type.md
+      - name: Connection references
+        href: variable-library/connection-reference-variable-type.md
     - name: Permissions
       href: variable-library/variable-library-permissions.md
     - name: "CI/CD and Variable libraries"

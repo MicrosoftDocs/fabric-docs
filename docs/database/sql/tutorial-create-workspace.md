@@ -1,7 +1,6 @@
 ---
 title: SQL database in Fabric tutorial - Create a workspace
 description: Learn how to create a Fabric workspace, which you'll work in for the rest of the tutorial.
-ms.reviewer: bwoody
 ms.date: 10/24/2024
 ms.topic: tutorial
 ---

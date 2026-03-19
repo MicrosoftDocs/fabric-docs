@@ -3,7 +3,7 @@ title: Manage a lakehouse with the REST API
 description: Learn how to create, update, delete, and maintain lakehouse tables programmatically by using the Microsoft Fabric REST API.
 ms.reviewer: dacoelho
 ms.topic: how-to
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: lakehouse api
 ---
 
@@ -174,7 +174,7 @@ GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lak
 
 ## Load a file into a Delta table
 
-To convert CSV or Parquet files into Delta tables without writing Spark code, use the Load Table API. This is the programmatic equivalent of the [Load to Tables](load-to-tables.md) feature in the lakehouse UI. For the full parameter list, see the [Load Table API reference](/rest/api/fabric/lakehouse/tables/load-table).
+To convert CSV or Parquet files into Delta tables without writing Spark code, use the Load Table API. This is the programmatic equivalent of the [Load to Tables](load-to-tables.md) feature on the Lakehouse home page. For the full parameter list, see the [Load Table API reference](/rest/api/fabric/lakehouse/tables/load-table).
 
 The operation is asynchronous. Follow these steps:
 
@@ -240,7 +240,7 @@ Possible operation status for load to tables:
 
 ## Run table maintenance on a Delta table
 
-To optimize Delta tables — applying bin-compaction, V-Order, Z-Order, or VACUUM — without opening the lakehouse UI, use the Table Maintenance API. This is the programmatic equivalent of the [table maintenance feature](lakehouse-table-maintenance.md). For the full parameter list, see the [Table Maintenance API reference](/rest/api/fabric/lakehouse/background-jobs/run-on-demand-table-maintenance).
+To optimize Delta tables — applying bin-compaction, V-Order, Z-Order, or VACUUM — without using Lakehouse Explorer, use the Table Maintenance API. This is the programmatic equivalent of the [table maintenance feature](lakehouse-table-maintenance.md). For the full parameter list, see the [Table Maintenance API reference](/rest/api/fabric/lakehouse/background-jobs/run-on-demand-table-maintenance).
 
 The operation is asynchronous. Follow these steps:
 

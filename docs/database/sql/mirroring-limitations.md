@@ -1,8 +1,8 @@
 ---
 title: Limitations of Mirroring for SQL database
 description: "Details on the limitations of mirroring for SQL database in Fabric."
-ms.reviewer: nzagorac
-ms.date: 11/10/2025
+ms.reviewer: nzagorac, imotiwala, ajayj
+ms.date: 02/24/2026
 ms.topic: concept-article
 ---
 # Limitations for Fabric SQL database mirroring
@@ -34,17 +34,10 @@ For general limitations for SQL database in Microsoft Fabric, see [Limitations i
 
 - A table cannot be mirrored if the primary key includes an [unsupported data type](#column-level).
 - Source tables that have any of the following features in use cannot be mirrored to Fabric OneLake.
-   - [Clustered columnstore indexes (CCI)](/sql/t-sql/statements/create-table-transact-sql?view=fabric-sqldb&preserve-view=true#index-index_name-clustered-columnstore) can be created on an existing table, but the table then cannot be mirrored to Fabric OneLake.
-       - CCI are supported and mirrored when they are created at the same time the table is created. For example:
-
-         ```sql
-         CREATE TABLE [Sales].InvoiceLines (
-          <... column list ... >,
-         INDEX IDX_CS_Sales_InvoiceLines CLUSTERED COLUMNSTORE
-         );
-         ```
-
-       - You can add a CCI to a table, if you first stop mirroring, add the CCI, then restart mirroring. If Mirroring is running (it usually is), it can be [stopped using the sqldatabase API](/rest/api/fabric/sqldatabase/mirroring/stop-mirroring) and then [re-started using the sqldatabase API](/rest/api/fabric/sqldatabase/mirroring/start-mirroring). For instructions on how to stop and start mirroring with an API call, see [Start and stop SQL database mirroring with the Fabric REST API](start-stop-mirroring-api.md).
+   - When mirroring is active, [Clustered columnstore indexes](/sql/t-sql/statements/create-table-transact-sql?view=fabric-sqldb&preserve-view=true#index-index_name-clustered-columnstore) cannot be created on an existing table.
+       - You can add a CCI to an existing table if you first stop mirroring, add the clustered columnstore index, then restart mirroring. However, the table will not be mirrored.
+          - If Mirroring is running (it usually is), it can be [stopped using the sqldatabase API](/rest/api/fabric/sqldatabase/mirroring/stop-mirroring) and then [re-started using the sqldatabase API](/rest/api/fabric/sqldatabase/mirroring/start-mirroring). For instructions on how to stop and start mirroring with an API call, see [Start and stop SQL database mirroring with the Fabric REST API](start-stop-mirroring-api.md).
+       - Clustered columnstore indexes are supported when they are created at the same time the table is created using the inline index syntax, however, the new table cannot be mirrored. 
    - Temporal history tables and ledger history tables
    - Always Encrypted
    - In-memory tables

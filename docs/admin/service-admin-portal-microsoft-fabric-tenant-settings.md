@@ -49,9 +49,9 @@ For more information, see [Learn about Microsoft Fabric feedback](../fundamental
 
 For more information, see [Fabric data agent creation (preview)](../data-science/concept-data-agent.md).
 
-## Users can discover and use metrics (preview)
+## Users in the organization can create and use Scorecards
 
-For more information, see [Metric sets setting (preview)](./service-admin-portal-goals-settings.md#metric-sets-setting-preview).
+For more information, see [Scorecards settings](./service-admin-portal-goals-settings.md#scorecards-settings).
 
 ## Mirrored Azure Databricks Catalog
 

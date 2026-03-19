@@ -1,8 +1,8 @@
 ---
 title: "Tutorial: Add edge types to your graph"
-description: Learn how to add edges to define relationships between nodes in your graph model.
+description: Learn how to add edge types to define relationships between nodes in your graph in Microsoft Fabric model, including configuring source and destination nodes.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add edges to your graph
 ---
@@ -14,10 +14,11 @@ ms.search.form: Tutorial - Add edges to your graph
 In this tutorial step, you add edge types to your graph model. Edges define the relationships between nodes, such as "Customer purchases Order" or "Employee sells Order."
 
 > [!IMPORTANT]
-> When defining an edge type, you must use a mapping table that contains two columns such that:
+> When you define an edge type, use a mapping table that contains two columns such that:
+>
 > - One column matches the **source node's key** in terms of values and data type
 > - Another column matches the **target node's key** in terms of values and data type
-> 
+>
 > Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
 
 ## Adventure Works edge mappings
@@ -68,7 +69,7 @@ You should see all the edge types represented in your graph.
 
 After adding all node types and edge types, load the graph:
 
-1. Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
+- Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
 
 > [!IMPORTANT]
 > Currently, you need to reload the graph (by selecting **Save**) whenever you change the model or the underlying data.
@@ -79,4 +80,3 @@ At this point, you defined all the node types and edge types for your graph. The
 
 > [!div class="nextstepaction"]
 > [Create multiple node and edge types from one mapping table](tutorial-model-node-edge-from-same-table.md)
-
