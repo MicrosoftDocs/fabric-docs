@@ -46,8 +46,10 @@ When you enable **Capacity Planner mode**, you don't pay for *OneLake Cache Stor
 
 * From the eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Panner mode** is enabled.
 
+:::image type="content" source="media/eventhouse-capacity-observability/capacity-planner-mode.png" alt-text="Screenshot of the capacity planner window that opens when you select capacity planner from the toolbar. The enable button is highlighted." lightbox="media/eventhouse-capacity-observability/capacity-planner-mode.png":::
+
 > [!NOTE]
-> If you don't customize by scheduling capacity values, the minimum capacity is set at a minimum value of 2 CUs (25 GB of premium storage size).
+> If you don't continue by scheduling capacity values, the minimum capacity is set at a minimum value of 2 CUs (25 GB of premium storage size).
 
 ## Schedule minimum capacity
 
