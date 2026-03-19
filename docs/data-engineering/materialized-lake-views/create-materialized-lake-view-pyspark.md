@@ -3,7 +3,7 @@ title: PySpark Reference for Materialized Lake Views (Preview)
 description: Learn about the PySpark semantics for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
 ms.reviewer: abhishjain
-ms.date: 03/18/2026
+ms.date: 03/19/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -16,13 +16,13 @@ This article is for data engineers who need to create materialized lake views us
 
 ## Create a materialized lake view
 
-The `fmlv` module contains all the essential functions for creating materialized lake views using PySpark. To define a materialized lake view, be sure to import this module. 
+The `fmlv` module provides the functions for creating materialized lake views using PySpark. Import it before defining a view.
 
 ```python
 import fmlv 
 ```
 
-You can define a materialized lake view using a decorator `@fmlv.materialized_lake_view`, making it easy to encapsulate the creation logic and metadata. The following code outlines the syntax for declaring a materialized lake view by using PySpark:
+Use the `@fmlv.materialized_lake_view` decorator to define a materialized lake view. The following code shows the syntax:
 
 ```python
 @fmlv.materialized_lake_view(
@@ -44,12 +44,12 @@ The following table describes the parameters for the `@fmlv.materialized_lake_vi
                 
 | Parameter | Description |
 |-----------|-------------|
-| **name**         | Name of materialized lake view.<br/><br/>Required        |
-| **comment**      | Description of materialized lake view.           |
+| **name**         | Name of the materialized lake view.<br/><br/>Required        |
+| **comment**      | Description of the materialized lake view.           |
 | **partition_cols** | Parameter for creating partitions based on the specified columns.  |
 | **replace** | Parameter to indicate whether to replace the existing view definition. Defaults to False.|
-| **table_properties** | A list of key-value pairs for defining the properties of materialized lake view. | 
-| **function definition** | A function to define the logic, which returns a Spark dataframe object.<br/><br/>Required         |  
+| **table_properties** | List of key-value pairs for defining the properties of the materialized lake view. | 
+| **function definition** | Function that returns a Spark DataFrame defining the view logic.<br/><br/>Required         |  
 | **check** | Function to define the data quality constraints.<br/><br/>Optional    |  
 
 ## Examples
@@ -95,7 +95,7 @@ To create a PySpark-based materialized lake view, run the notebook once to regis
 ## Notebook organization and refresh behavior for PySpark materialized lake views
 
 > [!IMPORTANT]
-> PySpark materialized lake view refresh requires a notebook, unlike Spark SQL. During refresh, Fabric determines the notebook associated with the PySpark materialized lake view and executes the cells required to refresh it.
+> PySpark materialized lake view refresh requires a notebook, unlike Spark SQL. During refresh, Fabric identifies the notebook that defines the view and executes the relevant cells.
 
 
 ### Best practices for defining PySpark-based materialized lake views
@@ -110,7 +110,6 @@ Follow these guidelines to organize your notebooks and avoid common errors.
 * After changing the `@fmlv` decorator, re-execute the notebook. Otherwise, the next refresh uses the latest code and might fail.
 * Don't define materialized lake views in notebooks with unrelated code.
 * Don't use variables for `@fmlv` parameter values. All parameters must be hardcoded.
-
 
 Consider the following example of defining a materialized lake view in a notebook:
 
@@ -171,15 +170,15 @@ def customer_enriched():
 
 PySpark is the better choice when you need:
 
-- **Complex transformation logic** that's difficult to express in SQL
-- **Reusable functions** across multiple materialized lake views. When you have common transformation logic shared across multiple views, PySpark allows you to define reusable functions.
-- **External Python libraries** for data processing. When you need specialized data processing libraries that aren't available in SQL, such as pandas or NumPy.
-- **Custom UDFs** as packages such as .jar files. When you need to implement custom logic that isn't supported by built-in functions, PySpark allows you to create User-Defined Functions (UDFs) to encapsulate that logic.
+- **Complex transformation logic** that is difficult to express in SQL.
+- **Reusable functions** — define common transformation logic once and call it from multiple views.
+- **External Python libraries** — use specialized libraries such as pandas or NumPy that are not available in SQL.
+- **Custom UDFs** — package custom logic as `.jar` files or Python UDFs when built-in functions are insufficient.
 
 ### Trade-offs when using PySpark
 
-- **Incremental refresh strategy in Optimal refresh**: PySpark-based materialized lake views don't support Incremental refresh strategy in optimal refresh; all refreshes either default to a full refresh or no refresh, depending on the configuration. This means that you might not be able to take advantage of the performance benefits of incremental refresh for PySpark materialized lake views. 
-- **Flexibility in refresh options**: You can only refresh PySpark materialized lake views through the lineage schedule, which might not provide the same level of flexibility as Spark SQL-based views that can be refreshed on-demand via notebook.
+- **No incremental refresh** — all refreshes default to full refresh or no refresh. See [Current limitations](#current-limitations) for details.
+- **Lineage-schedule refresh only** — you cannot refresh on-demand via notebook as with Spark SQL-based views.
 
 ## Decision flowchart
 
@@ -196,9 +195,9 @@ Use this flowchart to decide which approach to use:
                     │                               │
                     ▼                               ▼
             ┌───────────────┐            ┌───────────────────────────┐
-            │  Use Spark SQL│            │ Does transformation logic │
-            └───────────────┘            │ requires - (UDFs, external|
-                                         |                libs)      │
+            │  Use Spark SQL│            │ Does the transformation   │
+            └───────────────┘            │ require UDFs or external  |
+                                         | libraries?                │
                                          └────────────┬──────────────┘
                                                       │
                                          ┌────────────┴────────────┐
@@ -217,7 +216,7 @@ Use this flowchart to decide which approach to use:
 You can drop a materialized lake view by using the **Delete** option in the lakehouse object explorer or by running the following command in the notebook:
 
 ```python
-spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS <materialized lake view_Identifier") 
+spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS <materialized_lake_view_Identifier>") 
 ```
 
 Here's an example:
@@ -234,7 +233,7 @@ spark.sql("DROP MATERIALIZED LAKE VIEW IF EXISTS silver.customer_enriched")
 
 * Incremental refresh strategy in optimal refresh isn't supported for PySpark based materialized lake views; all refreshes either default to a full refresh or no refresh
 * You can only refresh PySpark materialized lake views through the lineage schedule.
-* You can rename a PySpark-based materialized lake view by using the rename option in lakehouse explorer, but you can't rename it through a notebook. To rename a PySpark-based materialized lake view through a notebook, you need to drop and recreate the materialized lake view with the new name.
+* Renaming is supported only through lakehouse explorer. To rename via notebook, drop and recreate the view with the new name.
 * Only `%%pyspark` and `%%sql` magic commands are supported, and they must appear at the top of a notebook cell. Magic commands placed elsewhere within the same cell aren't supported.
 * The name of a materialized lake view can include special characters except for periods.
 * The `@fmlv` decorator doesn't support dynamic parameters or variables. All parameters must be hardcoded in the decorator definition. For example, the following code doesn't work because it uses a variable to pass the name parameter value:
