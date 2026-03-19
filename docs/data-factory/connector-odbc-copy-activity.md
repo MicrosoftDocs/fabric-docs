@@ -15,7 +15,7 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 
 ## Prerequisites
 
-To use this connector, you must install a Self-hosted Integration Runtime. The Integration Runtime installation needs to have the 64-bit ODBC driver for the data store. See [Create and configure a self-hosted integration runtime](create-self-hosted-integration-runtime.md) for more details.
+To use this connector, set up an on-premises data gateway. For more information, see [How to access on-premises data sources in Data Factory](how-to-access-on-premises-data.md).
 
 ## Supported configuration
 
@@ -40,7 +40,7 @@ The following properties are **required**:
 - **Connection**: Select an ODBC connection from the connection list. If the connection doesn't exist, then create a new ODBC connection.
 - **Use query**: You can choose either **Table** or **Query** as your use query. The following list describes the configuration of each setting.
     - **Table**: Select the table in your database from the drop-down list. Or check **Edit** to enter your table name manually.
-    - **Query**: Specify the custom SQL query to read data. For example: `select * from MyTable`.
+    - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM MyTable`.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -62,7 +62,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Pre-copy script**: Specify a SQL query for the copy activity to execute before writing data into destination table in each run. You can use this property to clean up the preloaded data.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan.
+- **Write batch timeout**: Specify the wait time for the batch insert operation to complete before it times out. The allowed value is timespan. For example, "00:30:00" (30 minutes).
 
 - **Write batch size**: Specify the number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). A new batch will be created when the current batch reaches the write batch size. The default value is `0` (auto-detected).
 
