@@ -7,9 +7,13 @@ ms.topic: overview
 
 # Region availability for plan (preview)
 
-Plan (preview) is NOT available in the following regions.
+This article describes the region availability of the plan (preview) item.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
+
+## Unsupported regions
+
+Plan (preview) is NOT available in the following regions.
 
 * Austria East
 * Belgium Central
@@ -26,4 +30,6 @@ Plan (preview) is NOT available in the following regions.
 * Germany North
 * Japan West 
 
-Plan (preview) is available in all other Fabric regions as described in [Fabric region availability](../../admin/region-availability.md).
+## Supported regions
+
+Plan (preview) is available in all other Fabric regions not listed above, as described in [Fabric region availability](../../admin/region-availability.md).
