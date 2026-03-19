@@ -224,7 +224,7 @@ If you choose Binary as your file format, mapping isn't supported.
 
 For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-## Lakehouse tables data type mapping
+## Data type mapping for Lakehouse tables
 
 The following sections describe data type mappings when copying data from Lakehouse tables. Refer to the subsection corresponding to your source mode for details.
 
