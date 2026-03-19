@@ -37,7 +37,8 @@ The capacity planner scheduler allows you to define different minimum capacity l
 * Define a minimum capacity per block, or explicitly mark it as no minimum.
 * Turn on guaranteed capacity only when needed, without disabling autoscale. The scheduler doesn't replace autoscale rather works alongside it.
     * When you define a minimum, Eventhouse guarantees a capacity floor. Autoscale can still scale above that floor during demand spikes.
-    * When you don't define a minimum, Eventhouse can scale down to zero when idle. The system never forces a scale-down if capacity is already higher due to active demand.
+    * When you don't define a minimum using the capacity planner scheduler, the default minimum is 2 CUs. In this scenation, Eventhouse can scale down to 1CU, without cost to the customer. 
+    * The system never forces a scale-down if capacity is already higher due to active demand.
 
 ## Enable capacity planner
 
@@ -46,7 +47,7 @@ When you enable **Capacity Planner mode**, you don't pay for *OneLake Cache Stor
 * From the eventhouse ribbon, select **Capacity Planner** and ensure **Capacity Panner mode** is enabled.
 
 > [!NOTE]
-> If you don't customize by scheduling capacity values, the minimum capacity is set at a minimum value of 2 CUs (25 GB + supported premium storage size).
+> If you don't customize by scheduling capacity values, the minimum capacity is set at a minimum value of 2 CUs (25 GB of premium storage size).
 
 ## Schedule minimum capacity
 
@@ -76,6 +77,7 @@ The table maps storage sizes to minimum [capacity units](../admin/capacity-setti
 
 | Minimum CUs | SSD capacity (GB) of free storage |
 | ----------- | --------------------------------- |
+| 2 (default) | 25                                |
 | 4           | 50                                |
 | 8           | 200                               |
 | 12          | 800                               |
