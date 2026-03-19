@@ -42,9 +42,9 @@ To create a new rule, select the stream you just added. You see a **Create rule*
 
 Next, choose the type of condition that you want to detect. You can use conditions that check:
 
-- on each event, perform an action
-- on each event when a value is met, perform an action
-- on each event grouped by a field, perform an action (for example, on each PackageId event when Temperature is greater than 30)
+- On each event, perform an action
+- On each event when a value is met, perform an action
+- On each event grouped by a field, perform an action (for example, on each PackageId event when Temperature is greater than 30)
 
 Finally, select whether you want the action to send you an email or send you a Teams message, and select **Create**. You can modify the conditions and actions later.
 
