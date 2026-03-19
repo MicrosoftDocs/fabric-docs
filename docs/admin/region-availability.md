@@ -29,15 +29,15 @@ This table lists regions where all Fabric workloads are available.
 
 | Americas                           | Europe                       | Middle East | Africa             | Asia Pacific                  | 
 |:-----------------------------------|:-----------------------------|:------------|:-------------------|:------------------------------|
-| Brazil South                          | North Europe <sup>4</sup>    | UAE North   | South Africa North | Australia East                |
+| Brazil South                          | North Europe <sup>4</sup>    | UAE North   | South Africa North | Australia East <sup>6</sup>               |
 | Canada Central                        | West Europe                  |             |                    | Australia Southeast           |
 | Canada East <sup>3</sup>              | France Central               |             |                    | Central India                 | 
 | Central US                            | Germany West Central         |             |                    | East Asia                     |
-| East US <sup>5</sup>                  | Italy North                  |             |                    | Indonesia Central <sup>1</sup>|
-| East US 2                             | Norway East                  |             |                    | Israel Central <sup>1, 4</sup>|
+| East US <sup>5, 6</sup>                  | Italy North                  |             |                    | Indonesia Central <sup>1</sup>|
+| East US 2 <sup>6</sup>                            | Norway East                  |             |                    | Israel Central <sup>1, 4</sup>|
 | Mexico Central <sup>1</sup>           | Poland Central               |             |                    | Japan East                    |
-| North Central US                      | Spain Central <sup>1</sup>   |             |                    | Japan West <sup>1, 4</sup>    |
-| South Central US <sup>1, 2, 4, 5</sup>| Sweden Central               |             |                    | Korea Central                 |
+| North Central US                      | Spain Central <sup>1</sup>   |             |                    | Japan West <sup>1, 4, 6</sup>    |
+| South Central US <sup>1, 2, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                 |
 | West US                               | Switzerland North            |             |                    | Malaysia West <sup>1</sup>                |
 | West US 2                             | Switzerland West             |             |                    | New Zealand North <sup>1</sup>|
 | West US 3                             | UK South                     |             |                    | Southeast Asia                |
@@ -51,6 +51,7 @@ This table lists regions where all Fabric workloads are available.
   <sup>3</sup> [Fabric User Data Functions](../data-engineering/user-data-functions/user-data-functions-overview.md) isn't available in these regions.
   <sup>4</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions.
   <sup>5</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions.
+  <sup>6</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions.
   
 ### Power BI
 
