@@ -3,6 +3,8 @@ title: Region availability for plan (preview)
 description: See the list of regions where plan (preview) is available.
 ms.date: 03/19/2026
 ms.topic: overview
+ms.custom:
+  - references_regions
 ---
 
 # Region availability for plan (preview)
