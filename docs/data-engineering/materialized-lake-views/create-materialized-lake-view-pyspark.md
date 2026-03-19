@@ -48,9 +48,9 @@ The following table describes the parameters for the `@fmlv.materialized_lake_vi
 | **comment**      | Description of the materialized lake view.           |
 | **partition_cols** | Parameter for creating partitions based on the specified columns.  |
 | **replace** | Parameter to indicate whether to replace the existing view definition. Defaults to False.|
-| **table_properties** | A list of key-value pairs for defining the properties of the materialized lake view. | 
-| **function definition** | A function to define the logic, which returns a Spark dataframe object.<br/><br/>Required         |  
-| **check** | A function to define the data quality constraints.<br/><br/>Optional    |  
+| **table_properties** | List of key-value pairs for defining the properties of the materialized lake view. | 
+| **function definition** | Function that returns a Spark DataFrame defining the view logic.<br/><br/>Required         |  
+| **check** | Function to define the data quality constraints.<br/><br/>Optional    |  
 
 ## Examples
 
