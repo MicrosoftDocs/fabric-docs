@@ -302,9 +302,9 @@ You can also add thresholds for late arrival and out of order events under advan
 
 - The SQL operator is designed to centralize all your transformation logic. As a result, you can't use it alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported.
 
-- The SQL operator can send output data to only the destination node in the topology.
+- If you add a SQL operator to your topology, you must create new destination nodes. Existing destination nodes cannot be reused with the SQL operator.
 
-- Currently, authoring eventstream topologies is supported only through the user interface. REST API support for the SQL operator isn't available yet.
+
 
 ## Related content
 
