@@ -57,8 +57,12 @@ items:
       href: ../cicd/cicd-overview.md
 - name: Plan
   items:
-  - name: What is plan?
-    href: plan/overview.md
+  - name: Overview
+    items:
+    - name: What is plan?
+      href: plan/overview.md
+    - name: Region availability
+      href: plan/overview-regions.md
   - name: Planning sheets
     items:
     - name: Planning sheets overview
