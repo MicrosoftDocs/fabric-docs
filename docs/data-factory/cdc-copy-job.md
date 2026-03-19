@@ -62,18 +62,6 @@ For example, if a customer moves from California to New York, both versions are 
 | 1001 | C-123 | Company | CA | 2023-01-15 | 2026-02-20 | No |
 | 1002 | C-123 | Company | NY | 2026-02-20 | NULL | Yes |
 
-SCD Type 2 is supported as a write method with the following destination connectors:
-
-- Azure SQL DB
-- Azure SQL Managed Instance
-- On-premises SQL Server
-- SQL database in Fabric
-- Fabric Lakehouse table
-
-> [!NOTE]
-> SCD Type 2 in Copy job is currently in preview.
-> When doing CDC replication from Snowflake or Oracle sources, SCD Type 2 is not supported yet.
-> If your destination database already has exisitng schema created by yourselves, SCD2 cannot be supported.  
 
 ### Choosing between SCD Type 1 and SCD Type 2
 
