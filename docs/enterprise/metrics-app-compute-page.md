@@ -99,7 +99,10 @@ To toggle how the visual is displayed, use the tabs at the top right corner of t
 
 To toggle between interactive delay, interactive rejection, and background rejection, use the tabs at the top of the visual. Timepoints with a value that's above 100% are rendered with a darker color.
 
-In each of these visuals, the visuals are rendered as per legends on the visual. For example, in the Interactive delay visual, the legends are Interactive delay, No Interactive delay and No interactive delay (capacity overage billed).
+In each of these visuals, the visuals are rendered as per static legends on the visual. For example, in the Interactive delay visual, the legends are Interactive delay, No interactive delay, and No interactive delay (capacity overage billed). The interactive rejection and background rejection tabs follow the same pattern with their respective legends.
+
+> [!NOTE]
+> The *capacity overage billed* legend (such as *No interactive delay (capacity overage billed)*, *No interactive rejection (capacity overage billed)*, or *No background rejection (capacity overage billed)*) appears when overage billing is enabled for the capacity. When overage billing is enabled, the throttling policy doesn't apply and usage is billed as overage instead. For more information, see [Enable capacity overage](enable-capacity-overage.md).
 
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
@@ -117,9 +120,13 @@ Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbo
 
 ### Overages
 
-Displays the add, burndown, and cumulative carryforward over time. Carryforward only takes into account billable operations. The Overages tab also includes Overage (Billed) which shows how much overage has actually been billed for the capacity. These visuals only display non-zero values when overage billing is enabled for the capacity.
+The Overages tab has two views: [Overage (Carryforward)](#overage-carryforward) and [Overage (Billed)](#overage-billed). These visuals only display non-zero values when overage billing is enabled for the capacity.
 
 :::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
+
+#### Overage (Carryforward)
+
+Displays the add, burndown, and cumulative carryforward over time. Carryforward only takes into account billable operations.
 
 The overages carryforward chart displays the following elements:
 
@@ -127,9 +134,11 @@ The overages carryforward chart displays the following elements:
   * **Burndown %** - Blue columns represent the carryforward percent burned down for the current 30-second period.
   * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30-second period. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
 
-The overages (billed) tab shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage billing is enabled and the capacity has incurred billed overages. If overage billing isn’t enabled, or is enabled but no billed overages have occurred, these visuals remain blank.
+#### Overage (Billed)
 
-This tab displays the following visuals:
+Shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage billing is enabled and the capacity has incurred billed overages. If overage billing isn't enabled, or is enabled but no billed overages have occurred, these visuals remain blank.
+
+This view displays the following visuals:
 
 - **Table** - Visual shows details of billed overages for the capacity at a point in time.
   - **Rolling cumulative 24 hour billed overage CU (hr)** - Max of rolling cumulative 24 hours billed overage in capacity unit hours.
@@ -152,8 +161,6 @@ Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbo
 
 >[!NOTE]
 >Peak is calculated as the highest number of seconds from both [*interactive* and *background*](fabric-operations.md#interactive-and-background-operations) operations.
-
-To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
 >[!NOTE]
 >Nonbillable usage doesn't drain capacity or lead to throttling or auto scale.
