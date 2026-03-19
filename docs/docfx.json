@@ -183,6 +183,8 @@
                 "iq/**/*.yml": "iq",
                 "iq/ontology/**/*.md": "iq-ontology",
                 "iq/ontology/**/*.yml": "iq-ontology",
+                "iq/plan/**/*.md": "iq-plan",
+                "iq/plan/**/*.yml": "iq-plan",
                 "onelake/**/*.md": "onelake",
                 "onelake/**/*.yml": "onelake",
                 "real-time-hub/**/*.md": "rti-hub",
