@@ -4,30 +4,31 @@ description: Learn how to run an aggregation query over a source table using mat
 ms.reviewer: tzgitlin
 ms.topic: how-to
 ms.subservice: rti-eventhouse
-ms.date: 11/19/2024
+ms.date: 03/19/2026
 ms.search.form: Data management
 ---
+
 # Create and edit materialized views
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
-* Empty materialized view: it includes records ingested after view creation. A creation of this kind returns immediately, with the view instantly being available for query.
-* Materialized view based on existing records in the source table: Creation might take a long while to complete, depending on the number of records in the source table.
+* Empty materialized view: it includes records ingested after view creation. Creation of this kind returns immediately, with the view instantly available for query.
+* Materialized view based on existing records in the source table: creation might take a long while to complete, depending on the number of records in the source table.
 
 For more information on materialized views, see [Materialized view overview](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context).
 
-In this article, you learn how to create materialized views using the `.create materialized-view` command.
+In this article, you learn how to create materialized views by using the `.create materialized-view` command.
 
 For more information on the `.create materialized-view` command, see [.create materialized-view](/azure/data-explorer/kusto/management/materialized-views/materialized-view-create?context=/fabric/context/context).
 
 ## Prerequisites
 
-* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions
+* A [workspace](../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
+* A [KQL database](create-database.md) with editing permissions.
 
 ## Materialized view
 
-1. Browse to your KQL database, and select **+New** > **Materialized view**.
+1. Browse to your KQL database, and select **+ New** > **Materialized view**.
 
     :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu, with the option titled Materialized view highlighted."  lightbox="media/materialized-view/materialized-view-extended.png":::
 
@@ -44,11 +45,11 @@ For more information on the `.create materialized-view` command, see [.create ma
 ## View, edit, or delete a materialized view
 
 To view, edit, or delete an existing materialized view, follow these steps:
-1. In the **Explorer** pane, expand the **Materialized views** section, and click on the three dots next to the desired materialized view.
+1. In the **Explorer** pane, expand the **Materialized views** section, and select the three dots next to the desired materialized view.
 1. From the dropdown menu, choose either:
    1. **Show materialized view script** to view the materialized view script.
    1. **Edit with code** to edit the materialized view script in the **Explore your data** window.
-   1. **Delete**
+   1. **Delete**.
 
     :::image type="content" source="media/materialized-view/drop-down-menu-materialized.png" alt-text="Screenshot of dropdown menu." lightbox="media/materialized-view/drop-down-menu-materialized.png":::
 
