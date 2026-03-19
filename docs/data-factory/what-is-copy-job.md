@@ -145,7 +145,7 @@ See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
 ### Observability
 
-See more details in [How to monitor a Copy job](monitor-copy-job.md).
+See more details in [How to monitor a Copy job](monitor-copy-job.md) and [Worksapce monitoring for Copy job](copy-job-workspace-monitoring.md)
 
 
 ## Region availability
