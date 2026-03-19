@@ -647,10 +647,10 @@
             items: 
               - name: SAP HANA database - Overview
                 href: connector-sap-hana-overview.md
-              - name: Configure in a pipeline Copy activity
-                href: connector-sap-hana-copy-activity.md
               - name: Set up your connection
                 href: connector-sap-hana.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-sap-hana-copy-activity.md
           - name: SAP Table Application Server
             items:
             - name: SAP Table Application Server - Overview
