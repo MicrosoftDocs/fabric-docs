@@ -76,14 +76,17 @@ The table maps storage sizes to minimum [capacity units](../admin/capacity-setti
 
 | Minimum CUs | SSD capacity (GB) of free storage |
 | ----------- | --------------------------------- |
-| 4.25        | 50                                |
-| 8.5         | 200                               |
-| 13          | 800                               |
-| 18          | 3500-4000                         |
-| 26          | 5250-6000                         |
-| 34          | 7000-8000                         |
-| 50          | 10500-12000                       |
+| 4           | 50                                |
+| 8           | 200                               |
+| 12          | 800                               |
+| 16          | 3500-4000                         |
+| 24          | 5250-6000                         |
+| 32          | 7000-8000                         |
+| 48          | 10500-12000                       |
 | Custom      | ~200/CU (Ex: 100 CU = ~20,000 GB) |
+
+> [!TIP]
+> If you had *Always-on* enabled with a minimum CU value of 4.25, 8.5, 18, 26, 34, or 50, when you enable **Capacity Planner mode** the minimum CU value is set to 4, 8, 16, 24, 32, or 48 respectively. If you had a custom minimum CU value that doesn't match the values in the table, when you enable **Capacity Planner mode** the minimum CU value is set to the closest lower value in the table. For example, if your custom minimum CU value was 10, when you enable **Capacity Planner mode** the minimum CU value is set to 8.
 
 ## Related content
 
