@@ -8,7 +8,7 @@ ms.topic: overview
 
 # Business events overview (Preview)
 
-**Business events** in Microsoft Fabric are customer-initiated, business-critical notifications that trigger downstream processes in real time. They empower organizations to monitor processes and respond quickly to shifts in operations, customer interactions, or market conditions.
+**Business events** a capability in Fabric Real-Time Intelligence that empowers teams to define, explore, and act on business signals in real time, accelerating event‑driven application development and faster decision‑making. 
 
 You can generate business events from the following sources:
 
