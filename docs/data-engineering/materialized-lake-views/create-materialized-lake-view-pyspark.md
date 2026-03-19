@@ -50,7 +50,7 @@ The following table describes the parameters for the `@fmlv.materialized_lake_vi
 | **replace** | Parameter to indicate whether to replace the existing view definition. Defaults to False.|
 | **table_properties** | A list of key-value pairs for defining the properties of the materialized lake view. | 
 | **function definition** | A function to define the logic, which returns a Spark dataframe object.<br/><br/>Required         |  
-| **check** | Function to define the data quality constraints.<br/><br/>Optional    |  
+| **check** | A function to define the data quality constraints.<br/><br/>Optional    |  
 
 ## Examples
 
