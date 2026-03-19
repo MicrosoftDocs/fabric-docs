@@ -3,7 +3,7 @@ title: Create Activator Rules
 description: Learn how to create rules for Fabric Activator. Rules take action on your data, such as sending notifications and starting automated workflows. 
 ms.topic: how-to
 ms.search.form: Data Activator Rule Creation
-ms.date: 19/03/2026
+ms.date: 03/19/2026
 
 #customer intent: As a new Activator user, I want learn how to create a rule so that I can receive notifications about my streaming data or trigger automated workflows.
 ---

@@ -4,7 +4,7 @@ description: Learn about the limitations of using Activator in your applications
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.search.form: product-reflex
-ms.date: 19/03/2026
+ms.date: 03/19/2026
 #customer intent: As a Fabric user I want to learn about Activator limitations so that I can know when I can use it appropriately.
 ---
 
