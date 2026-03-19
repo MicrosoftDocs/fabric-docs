@@ -46,13 +46,7 @@ Delta change data feed is enabled per mirrored database.
 
 ### Enable delta change data feed via APIs
 
-Delta change data feed is enabled per mirrored database. To enable via APIs, follow these steps:
-
-1. Use [Get mirrored database definition API](mirrored-database-rest-api.md#get-mirrored-database-definition) to retrieve the current definition.
-1. Add the `enableDeltaChangeDataFeed` sink property in your mirrored database definition.
-1. Use [Update mirrored database definition API](mirrored-database-rest-api.md#update-mirrored-database-definition) to apply the update.
-
-For a full JSON example, see [JSON definition example of replicating entire database](mirrored-database-rest-api.md#json-definition-example-of-replicating-entire-database).
+To enable delta change data feed using APIs, follow [the steps outlined in the mirrored database REST API documentation](mirrored-database-rest-api.md#enable-delta-change-data-feed-for-a-mirrored-database).
 
 ## Mirroring views (preview)
 

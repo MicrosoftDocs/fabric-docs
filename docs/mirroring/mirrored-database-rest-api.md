@@ -83,7 +83,9 @@ To mirror all the tables from the source database:
 }
 ```
 
-To enable delta change data feed for a mirrored database via APIs:
+## Enable delta change data feed for a mirrored database
+
+[Delta change data feed](extended-capabilities.md#delta-change-data-feed-preview) is enabled per mirrored database. To enable, follow these steps:
 
 1. Use [Get mirrored database definition API](#get-mirrored-database-definition) to retrieve the current definition.
 1. Add the `enableDeltaChangeDataFeed` sink property.
