@@ -6,8 +6,6 @@ ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 03/19/2026
 ms.search.form: Source and Destination
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Add Azure SQL Database CDC source to an eventstream
@@ -16,11 +14,14 @@ This article shows you how to add an Azure SQL Database Change Data Capture (CDC
 
 The Azure SQL Database CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
+> [!NOTE]
+> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. For more information, see the [extended features](#configure-and-connect-to-azure-sql-database-cdc) section in this article.
+
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode or the Trial license mode with Contributor or higher permissions. 
 - A running Azure SQL server with an Azure SQL database.
-- Your Azure SQL database must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Azure SQL database should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
 - Enabled CDC in your Azure SQL database by running the stored procedure `sys.sp_cdc_enable_db`. For details, see [Enable and disable change data capture](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
@@ -53,7 +54,7 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 On the **Select a data source** page, search for and select **Connect** on the **Azure SQL DB (CDC)** tile.
 
-:::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL DB CDC as the source type in the Get events wizard." lightbox="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png":::
+:::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png" alt-text="Screenshot that shows the selection of Azure SQL Database (DB) CDC as the source type in the Get events wizard." lightbox="./media/add-source-azure-sql-database-change-data-capture/select-azure-sql-db-cdc.png":::
 
 ## Configure and connect to Azure SQL Database CDC
 
@@ -68,13 +69,16 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
     :::image type="content" source="media/add-source-azure-sql-database-change-data-capture/live-view.png"     alt-text="Screenshot of streaming Azure SQL Database CDC source in Live view." lightbox="media/add-source-azure-sql-database-change-data-capture/live-view.png":::
 
-::: zone pivot="basic-features"
-
-::: zone-end
-
-::: zone pivot="extended-features"
 
 [!INCLUDE [configure-destintions-schema-enabled-sources](./includes/configure-destinations-schema-enabled-sources.md)]
+
+### View DeltaFlow analytics-ready output (Preview)
+
+If you enabled **Analytics-ready events & auto-updated schema** (DeltaFlow), the destination tables are automatically created in a shape that mirrors your source database tables. Each table includes the original columns along with metadata columns for the change type and timestamp.
+
+:::image type="content" source="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing the Eventhouse destination tables created by DeltaFlow in analytics-ready shape." lightbox="includes/media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
+
+You can query these tables using Kusto Query Language (KQL) or other analytics tools without needing to parse raw Debezium CDC payloads.
 
 ::: zone-end
 

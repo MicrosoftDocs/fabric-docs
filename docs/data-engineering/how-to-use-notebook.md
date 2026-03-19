@@ -52,6 +52,12 @@ You can either create a new notebook or import an existing notebook.
 
 Like other standard Fabric item creation processes, you can easily create a new notebook from the Fabric **Data Engineering** homepage, the workspace **New** option, or the **Create Hub**.
 
+For step-by-step notebook creation guidance in specific workflows, see:
+
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) for creating a notebook from a lakehouse context in the Fabric portal.
+- [Author notebooks in Microsoft Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
+- [Public APIs for notebooks](/rest/api/fabric/core/items) for creating notebooks through REST APIs.
+
 ### Import existing notebooks
 
 You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
@@ -273,4 +279,5 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
 

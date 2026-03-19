@@ -3,7 +3,7 @@ title: Lakehouse git integration and deployment pipelines
 description: Learn what lakehouse metadata is tracked in git-connected workspaces and deployment pipelines in Microsoft Fabric.
 ms.reviewer: dacoelho
 ms.topic: concept-article
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 
@@ -19,8 +19,7 @@ The following table summarizes which lakehouse items and subitems are tracked in
 |---|---|---|---|---|
 | Lakehouse metadata (display name, description, logical GUID) | ✅ Tracked | ✅ Tracked | GA | Cross-workspace identifier for source control |
 | OneLake shortcuts metadata | ✅ Tracked | ✅ Tracked | GA | Stored in `shortcuts.metadata.json` |
-| External shortcuts: ADLS Gen2, S3, Dataverse, Google Cloud Storage | ✅ Tracked | ✅ Synced across stages | GA | Definition only. Same targets across all stages unless remapped with Variable Library |
-| External shortcuts: SharePoint, Azure Blob Storage, OneDrive | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |
+| External shortcuts: ADLS Gen2, S3, Dataverse, Google Cloud Storage, SharePoint, Azure Blob Storage, OneDrive | ✅ Tracked | ✅ Synced across stages | GA | Definition only. Same targets across all stages unless remapped with Variable Library |
 | Internal OneLake shortcuts | ✅ Tracked | ✅ Automatically remapped across stages | GA | Definition only. Requires valid targets in workspace |
 | OneLake security data access roles (DAR) metadata | ✅ Tracked | ✅ Tracked | Preview | Stored in `data-access-roles.json` |
 | Tables (Delta and non-Delta) | ❌ Not tracked | ❌ Not overwritten | Not supported | Data always preserved during operations |

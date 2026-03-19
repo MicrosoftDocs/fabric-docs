@@ -42,13 +42,23 @@ Some GitHub Enterprise versions and settings aren't supported. For example:
 ### Azure DevOps to GitHub Enterprise migration consideration
 If your team uses Fabric Git Integration and is evaluating a migration from Azure DevOps to GitHub Enterprise, it’s recommended to run validation tests to ensure Git Integration functionality remains unaffected. Fabric Git Integration relies on the underlying Git provider APIs, which differ in capabilities and limitations between Azure DevOps and GitHub Enterprise, as described above.
 
+### Differences between Git Integration and recycle bin item recovery behavior
+If you use Git Integration, you might encounter unexpected behavior in scenarios where deleted items are re‑created or restored through a combination of Git operations and recycle bin recovery.
+This occurs because Git operations (such as Undo or Update from Git) re‑create deleted items by assigning a new item ID, whereas restoring an item from the recycle bin preserves the original item ID. As a result, duplicate items with different identities can exist in the workspace, which may cause Git Integration to stop working as expected and also can affect existing dependencies.
+##### Mitigation
+Delete the item that was re‑created by Git Integration. After the duplicate item is removed, Git operations should resume normally.
+##### Additional note
+Git Integration re‑creates item definitions only and does not restore item data. In contrast, restoring an item from the recycle bin restores both the item definition and its data.
+
+For differences in Deployment Pipeline, check out our [documentation](../deployment-pipelines/understand-the-deployment-process.md#differences-between-deployment-pipeline-and-recycle-bin-item-recovery-behavior). 
+
 ### Workspace limitations
 
 - Only the workspace admin can manage the connections to the [Git Repo](/azure/devops/repos/get-started) such as connecting, disconnecting, or adding a branch.  
   Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
 - Workspaces with template apps installed can't be connected to Git.
 - [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
-- Workspaces can contain a maximum of 1,000 items. If the Git branch contains more than 1,000 items, syncing the content to the workspace will fail. To avoid this limitation, consider splitting your artifacts into smaller sets. Each set should be placed in a separate workspace and linked to a different Git branch, or organized into different folders within a single branch.
+- Workspaces can contain a maximum of 1,000 items. If the Git branch contains more than 1,000 items, syncing the content to the workspace will fail. To avoid this limitation, consider splitting your artifacts into smaller sets. Each set should be placed in a separate workspace and linked to a different Git branch, or organized into different folders within a single branch. For further reading follow [workspace item limits](/fabric/admin/portal-workspaces#workspace-item-limits).
 
 ### Branch and folder limitations
 

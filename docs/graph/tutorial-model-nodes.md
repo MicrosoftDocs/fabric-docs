@@ -1,8 +1,8 @@
 ---
 title: "Tutorial: Add node types to your graph"
-description: Learn how to add nodes to your graph model in Microsoft Fabric.
+description: Learn how to add node types to your graph model in Microsoft Fabric by mapping source tables and configuring node properties.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/03/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add nodes to your graph
 ---
@@ -67,10 +67,10 @@ To add node types to your graph, follow these steps:
 
 1. Select **Save** to save your progress.
 
-Now that you added nodes to your graph, the next step is to add edges to define the relationships between these nodes.
+After you add nodes to your graph, add edges to define the relationships between these nodes.
 
 > [!TIP]
-> Besides creating node types from entire tables, any column (or set of columns) from any table can form a standalone node type if it represents an entity that you need on the graph. For example, you can create a **country** node type from the **country** column in the **adventureworks_employees** table, with **country** as the ID. Delete properties that aren't required for the uniqueness of the **country** nodes, such as employee name, employee ID, job title, gender, and other properties.
+> Besides creating node types from entire tables, any column or set of columns from any table can form a standalone node type if it represents an entity that you need on the graph. For example, you can create a **country** node type from the **country** column in the **adventureworks_employees** table, with **country** as the ID. Delete properties that aren't required for the uniqueness of the **country** nodes, such as employee name, employee ID, job title, gender, and other properties.
 
 ## Next step
 

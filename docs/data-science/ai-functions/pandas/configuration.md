@@ -1,7 +1,7 @@
 ---
 title: Customize AI functions with pandas
 description: Learn how to configure AI functions in Fabric for custom use. For example, modifying the underlying LLM or other related settings with pandas.
-ms.reviewer: vimeland
+ms.reviewer: nareshvenkat, singhrana
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -26,19 +26,50 @@ By default, AI functions are powered by the built-in AI endpoint in Fabric. The 
 
 | Parameter | Description | Default |
 |---|---|---|
-| `concurrency`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
-| `embedding_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
-| `model_deployment_name`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
-| `reasoning_effort`<br> Optional | Used by gpt-5 series models for number of reasoning tokens they should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
-| `seed`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
-| `temperature`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
-| `timeout`<br> Optional | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
-| `top_p`<br> Optional | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
-| `use_progress_bar`<br> Optional | Show tqdm progress bar for AI function progress over input data. Uses tqdm under the hood. Boolean value, which can be set to `True` or `False`. | `True` |
-| `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | `openai.NOT_GIVEN` |
+| `api_type` | A [string](https://docs.python.org/3/library/stdtypes.html#str) value that designates the type of API to call on the underlying model. The default value is `responses`, which is compatible with OpenAI models. You may set this value to `chat_completions` to use LLMs compatible with the chat completions API, such as non-OpenAI models hosted on Microsoft Foundry. | `responses` |
+| `concurrency` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the maximum number of rows to process in parallel with asynchronous requests to the model. Higher values speed up processing time (if your capacity can accommodate it). It can be set up to 1,000. | `200` |
+| `embedding_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the embedding model deployment that powers AI functions. | `text-embedding-ada-002` |
+| `model_deployment_name` | A [string](https://docs.python.org/3/library/stdtypes.html#str) that designates the name of the language model deployment that powers AI functions. You can choose from the [models supported by Fabric](../../ai-services/ai-services-overview.md#azure-openai-service). | `gpt-4.1-mini` |
+| `reasoning_effort` | A [string](https://docs.python.org/3/library/stdtypes.html#str) used by gpt-5 series models for number of reasoning tokens they should use. Can be set to `openai.NOT_GIVEN` or a string value of "minimal", "low", "medium", or "high". | `openai.NOT_GIVEN` |
+| `seed` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the seed to use for the response of the underlying model. The default behavior randomly picks a seed value for each row. The choice of a constant value improves the reproducibility of your experiments. | `openai.NOT_GIVEN` |
+| `temperature` | A [float](https://docs.python.org/3/library/functions.html#float) between `0.0` and `1.0` that designates the temperature of the underlying model. Higher temperatures increase the randomness or creativity of the model's outputs. | `0.0` |
+| `timeout` | An [int](https://docs.python.org/3/library/functions.html#int) that designates the number of seconds before an AI function raises a time-out error. By default, there's no timeout. | None |
+| `top_p` | A [float](https://docs.python.org/3/library/functions.html#float) between 0 and 1. A lower value (for example, 0.1) restricts the model to consider only the most probable tokens, making the output more deterministic. A higher value (for example, 0.9) allows for more diverse and creative outputs by including a broader range of tokens. | `openai.NOT_GIVEN` |
+| `progress_bar_mode`<br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) which controls the progress bar display mode as pandas AI Function transforms rows. Set to `"basic"` for clean tqdm based progress tracking, `"stats"` for custom tqdm progress bar with live token metrics and CU cost of running AI functions along with their predicted estimates, or `"disable"` to turn off the progress display. See [Progress bar modes](#progress-bar-modes) for details. Enhanced version of deprecated parameter `use_progress_bar` | `"basic"` |
+| `verbosity`<br> Optional | Used by gpt-5 series models for output length. Can be set to `openai.NOT_GIVEN` or a string value of "low", "medium", or "high". | 
 
 > [!TIP]
 > - If your model deployment capacity can accommodate more requests, setting a higher *concurrency* values can speed up processing time. 
+
+### Progress bar modes
+
+The `progress_bar_mode` parameter controls how much information the progress bar displays. Set it globally with `aifunc.default_conf.progress_bar_mode`:
+
+```python
+aifunc.default_conf.progress_bar_mode = "stats"  # "basic", "stats", or "disable"
+```
+
+The three modes are:
+
+- **`"basic"`** (default) — Clean progress tracking that shows completion percentage, item count, elapsed time, and processing speed:
+
+    ```
+    ai.extract: 100%|██████████| 1000/1000 [00:10<00:00, 22.1it/s]
+    ```
+
+- **`"stats"`** — Full metrics with token counts and CU prediction estimates. While the function is running, ranges are shown with arrows (`->`) to indicate the projected final values:
+
+    ```
+    ai.extract:  67%|██████▋   | 670/1000 [00:06<00:04, 22.1it/s, cached=150.03k->250.50k, in=800.82k->1.21M, out=68.65K->101.06k, CU-h=3.60->5.33]
+    ```
+
+    When the function completes, the final values are shown without arrows:
+
+    ```
+    ai.extract: 100%|██████████| 1000/1000 [00:10<00:00, 22.1it/s, cached=305.80k, in=1.21M, out=101.06k, CU-h=5.17]
+    ```
+
+- **`"disable"`** — No progress output is displayed.
 
 The following code sample shows how to override `aifunc.Conf` settings globally, so that they apply to all AI function calls in a session:
 
