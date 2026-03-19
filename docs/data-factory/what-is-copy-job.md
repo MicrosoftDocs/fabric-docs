@@ -42,7 +42,7 @@ In incremental copy, every run after the initial full copy (called a "subsequent
 - When Copy job copies from a database that has CDC enabled, each subsequent load copies all rows inserted, updated, or deleted since the last successful run.
 - When Copy job copies files, each subsequent load copies only those files created or modified since the last successful run.
 
-Copy job supports the following watermark column types for incremental copy:
+Copy job supports the following watermark column types for incremental copy from a database:
 
 - **ROWVERSION**: A binary column that automatically changes whenever a row is modified. It’s ideal for SQL-based systems with high-throughput transactional workloads, because every insert or update is captured reliably without depending on application-managed timestamps.
 - **Datetime**: Datetime columns such as `LastUpdatedDatetime` or `ModifiedAt` that store both date and time. Copy job uses the precise timestamp to track incremental progress across runs. Datetime is preferred when your source tracks changes with high-frequency precision.
@@ -95,6 +95,28 @@ This approach ensures that your destination remains clean, fully synchronized, a
 
 [!INCLUDE [copy-job-auto-table-creation-truncate-connectors](includes/copy-job-auto-table-creation-truncate-connectors.md)]
 
+### Audit columns
+
+Audit columns are additional metadata columns that Copy job can automatically append to every row it writes to the destination. When you enable audit columns, each row in your destination table can be enriched with information such as:
+
+- Data extraction time
+- Source file path
+- Workspace ID, Copy job ID, Copy job run ID, and Copy job name
+- Incremental window lower bound and upper bound
+- Custom user-defined values
+
+With audit columns, you get row-level data lineage without custom code, enabling compliance reporting, data quality debugging, and ingestion freshness tracking.
+
+See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
+
+### Performance
+
+Copy job automatically optimizes copy performance based on the data volume, so you get fast data movement without manual tuning. Whether you're copying a small lookup table or a large transaction log, Copy job applies the right strategy for each table automatically.
+
+When copying data from large tables, you can also optionally enable **auto-partitioning (Preview)**. With auto-partitioning, Copy job analyzes the source schema and data characteristics to determine the optimal partitioning strategy. It automatically selects the right partition column, computes balanced boundaries, and executes parallel reads — all without any user input. This can dramatically increase throughput for large datasets. You can turn on the auto-partitioning toggle under **Advanced settings** in your Copy job.
+
+Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, and Azure SQL Managed Instance.
+
 ### Run options (Run, Schedule, Event Trigger)
 
 You have full flexibility to decide when a copy job runs — it can **run once** or on a **schedule**. Even if a job is scheduled, you can still select **Run** at any time to trigger it manually. In incremental copy, the manually triggered job will still only transfer changes since the last run. 
@@ -125,27 +147,6 @@ See more details in [CI/CD for Copy job](/fabric/data-factory/cicd-copy-job).
 
 See more details in [How to monitor a Copy job](monitor-copy-job.md).
 
-### Audit columns
-
-Audit columns are additional metadata columns that Copy job can automatically append to every row it writes to the destination. When you enable audit columns, each row in your destination table can be enriched with information such as:
-
-- Data extraction time
-- Source file path
-- Workspace ID, Copy job ID, Copy job run ID, and Copy job name
-- Incremental window lower bound and upper bound
-- Custom user-defined values
-
-With audit columns, you get row-level data lineage without custom code, enabling compliance reporting, data quality debugging, and ingestion freshness tracking.
-
-See more details in [Audit columns in Copy job](audit-columns-copy-job.md).
-
-### Performance
-
-Copy job automatically optimizes copy performance based on the data volume, so you get fast data movement without manual tuning. Whether you're copying a small lookup table or a large transaction log, Copy job applies the right strategy for each table automatically.
-
-When copying data from large tables, you can also optionally enable **auto-partitioning (Preview)**. With auto-partitioning, Copy job analyzes the source schema and data characteristics to determine the optimal partitioning strategy. It automatically selects the right partition column, computes balanced boundaries, and executes parallel reads — all without any user input. This can dramatically increase throughput for large datasets. You can turn on the auto-partitioning toggle under **Advanced settings** in your Copy job.
-
-Auto-partitioning is supported for watermark-based incremental copy including both initial full copy and incremental copy, on the following connectors: Amazon RDS for SQL Server, Azure SQL Database, Azure Synapse Analytics (SQL Pool), Fabric Data Warehouse, SQL database in Fabric, SQL Server, and Azure SQL Managed Instance.
 
 ## Region availability
 
