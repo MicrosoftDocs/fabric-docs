@@ -52,11 +52,9 @@ Copy job supports the following watermark column types for incremental copy from
 
 If your database has CDC enabled, you don’t need to choose an incremental column — Copy job automatically detects the changes. 
 
-If you are using a watermark to copy incrementally from a database, subsequent loads do not copy any rows with a “null” value in that column, because the “null” value is considered _less_ than any other value.
+If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure does not change the state managed by Copy job. 
 
 See more details for [Change data capture (CDC) in Copy Job](/fabric/data-factory/cdc-copy-job).
-
-If a copy job fails, you don’t need to worry about data loss. Copy job always resumes from the end of the last successful run. A failure does not change the state managed by Copy job. 
 
 ### Reset incremental copy
 
