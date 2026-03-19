@@ -35,10 +35,10 @@ The capacity planner scheduler allows you to define different minimum capacity l
 * Configure a 7-day recurring schedule.
 * Split each day into 60-minute time blocks.
 * Define a minimum capacity per block, or explicitly mark it as no minimum.
-* Turn on guaranteed capacity only when needed, without disabling autoscale. The scheduler doesn't replace autoscale rather works alongside it.
+* Use the scheduler to raise or lower the minimum capacity for a certain time block, as needed, without disabling autoscale. The scheduler doesn't replace autoscale rather works alongside it.
     * When you define a minimum, Eventhouse guarantees a capacity floor. Autoscale can still scale above that floor during demand spikes.
-    * When you don't define a minimum using the capacity planner scheduler, the default minimum is 2 CUs. In this scenation, Eventhouse can scale down to 1CU, without cost to the customer. 
     * The system never forces a scale-down if capacity is already higher due to active demand.
+    *  If no minimum is defined for a time block, the default minimum capacity is 2 CUs (25 GB of premium storage size).
 
 ## Enable capacity planner
 
