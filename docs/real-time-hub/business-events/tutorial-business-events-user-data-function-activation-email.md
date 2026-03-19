@@ -137,18 +137,6 @@ This tutorial walks you through an end-to-end workflow for publishing business e
 
     :::image type="content" source="media/tutorial-business-events-user-data-function-activation-email/test-function.png" alt-text="Screenshot of the Functions explorer with the Test option selected." lightbox="media/tutorial-business-events-user-data-function-activation-email/test-function.png":::
 
-1. Before you can test or run the function, enable **Preview** features. 
-
-    1. Select **Library management** on the ribbon.
-    
-    1. Switch to the **Settings** tab in the Library management pane.
-    
-    1. Enable the **Preview mode** by toggling the switch to On.
-     
-    1. Select **X** in the top-right corner to close the pane.
- 
-        :::image type="content" source="media/tutorial-business-events-user-data-function-activation-email/preview-mode.png" alt-text="Screenshot of the Library management pane with Preview mode enabled." lightbox="media/tutorial-business-events-user-data-function-activation-email/preview-mode.png":::
-  
 1. In the Test window, select **Test** to run the function, and confirm that it works as expected. You should see the output message **Event 'OrderPlaced' published successfully.** in the output pane.
 
     :::image type="content" source="media/tutorial-business-events-user-data-function-activation-email/test-function-window.png" alt-text="Screenshot of the Test window for the user data function." lightbox="media/tutorial-business-events-user-data-function-activation-email/test-function-window.png":::
