@@ -8,9 +8,9 @@ ms.search.form: Event Processor
 ai-usage: ai-assisted
 ---
 
-# Process events by using a SQL operator (preview)
+# Process events by using a SQL operator
 
-A SQL operator (preview), also called a SQL code editor, is a new data transformation capability in Microsoft Fabric eventstreams. SQL operators provide a code editing experience where you can easily define your own custom data transformation logic by using simple SQL expressions. This article describes how to use a SQL operator for data transformations in an eventstream.
+A SQL operator, also called a SQL code editor, is a new data transformation capability in Microsoft Fabric eventstreams. SQL operators provide a code editing experience where you can easily define your own custom data transformation logic by using simple SQL expressions. This article describes how to use a SQL operator for data transformations in an eventstream.
 
 > [!NOTE]
 > Eventstream artifact names that include an underscore (_) or dot (.) aren't compatible with SQL operators. For the best experience, create a new eventstream without using underscores or dots in the artifact name.
