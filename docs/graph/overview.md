@@ -138,7 +138,6 @@ Graph is currently available in the following regions:
 
 ## Related content
 
-- [Sign up for preview of natural language querying of graph](https://forms.office.com/r/97QkVDBeuM)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
 - [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)
 - [GQL in KQL graph semantics overview](/kusto/query/graph-query-language)
