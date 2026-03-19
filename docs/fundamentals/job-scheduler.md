@@ -5,7 +5,7 @@ ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
 ms.topic: how-to
-ms.date: 02/12/2026
+ms.date: 03/19/2026
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -84,8 +84,13 @@ When a scheduled run fails, the email includes:
 - Submitter
 - Error details  
 - Run time (UTC)  
-- Link to view details in the Monitoring Hub  
+- Link to view details in the monitoring hub  
 - Technical details for troubleshooting, including Activity ID, Request ID, and timestamps
+
+> [!TIP]
+> To view and manage job failure notifications across all your scheduled items in one place, see [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring mub.
+
+ [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring hub.
 
 ## Manage multiple schedules
 
@@ -127,3 +132,4 @@ The job scheduler in Microsoft Fabric lets you automate recurring jobs, manage m
 ## Related content
 
 - [CI/CD workflow options in Fabric](../cicd/manage-deployment.md)
+- [Monitor job activity and status in the monitoring hub](../admin/monitoring-hub.md)
