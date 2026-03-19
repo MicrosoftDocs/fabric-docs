@@ -99,10 +99,8 @@ To toggle how the visual is displayed, use the tabs at the top right corner of t
 
 To toggle between interactive delay, interactive rejection, and background rejection, use the tabs at the top of the visual. Timepoints with a value that's above 100% are rendered with a darker color.
 
-In each of these visuals, the visuals are rendered as per static legends on the visual. For example, in the Interactive delay visual, the legends are Interactive delay, No interactive delay, and No interactive delay (capacity overage billed). The interactive rejection and background rejection tabs follow the same pattern with their respective legends.
+In each of these visuals, the visuals are rendered as per static legends on the visual. For example, in the Interactive delay visual, the legends are Interactive delay, No Interactive delay and No interactive delay (capacity overage billed).
 
-> [!NOTE]
-> The *capacity overage billed* legend (such as *No interactive delay (capacity overage billed)*, *No interactive rejection (capacity overage billed)*, or *No background rejection (capacity overage billed)*) appears when overage billing is enabled for the capacity. When overage billing is enabled, the throttling policy doesn't apply and usage is billed as overage instead. For more information, see [Enable capacity overage](enable-capacity-overage.md).
 
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
@@ -112,6 +110,8 @@ The throttling chart displays the following elements:
   * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
+> [!NOTE]
+> When capacity overage is enabled for the capacitiy, the capacity does not enter the above throttling state till the capacity overage limit is exceeded. This is represented as No interactive delay (capacity overage billed), No interactive rejection rejection (capacity overage billed) and No background rejection (capacity overage billed) in above throttling charts. For more information, see [Capacity overage overview](capacity-overage-overview.md).
 
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
@@ -120,7 +120,7 @@ Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbo
 
 ### Overages
 
-The Overages tab has two views: [Overage (Carryforward)](#overage-carryforward) and [Overage (Billed)](#overage-billed). These visuals only display non-zero values when overage billing is enabled for the capacity.
+The Overages tab has two views: [Overage (Carryforward)](#overage-carryforward) and [Overage (Billed)](#overage-billed).
 
 :::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
 
@@ -136,7 +136,7 @@ The overages carryforward chart displays the following elements:
 
 #### Overage (Billed)
 
-Shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage billing is enabled and the capacity has incurred billed overages. If overage billing isn't enabled, or is enabled but no billed overages have occurred, these visuals remain blank.
+Shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage is enabled and the capacity has incurred overages and has overages which would have resulted in throttling.
 
 This view displays the following visuals:
 
@@ -154,7 +154,7 @@ This view displays the following visuals:
 
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint detail](metrics-app-timepoint-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint summary preview](metrics-app-timepoint-summary-page.md) and [timepoint detail](metrics-app-timepoint-page.md).
 
-Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
+Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect Timepoint and Cumulative visuals as follows:
 
 * *No filters applied* - Columns display the peak timepoint every 20 minutes.
 * *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multimetric ribbon chart's x-axis.
