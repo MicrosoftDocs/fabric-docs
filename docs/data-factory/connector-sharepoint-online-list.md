@@ -3,7 +3,7 @@ title: Set up your SharePoint connection
 description: This article provides information about how to create a SharePoint connection in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 02/10/2026
+ms.date: 03/19/2026
 ms.custom:
 - template-how-to
 - connectors
@@ -100,10 +100,6 @@ Fill in the required properties. You need to specify the tenant ID, service prin
 - **Tenant ID**: The tenant ID under which your application resides.
 - **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID.
 - **Service principal key**: The application's key.
-
-
->[!Note]
-> - For permission settings related to SharePoint Online List in the pipeline, refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites).
 
 ### Workspace identity authentication
 
