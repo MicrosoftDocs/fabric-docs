@@ -47,9 +47,9 @@ For more information on the `.create materialized-view` command, see [.create ma
 To view, edit, or delete an existing materialized view, follow these steps:
 1. In the **Explorer** pane, expand the **Materialized views** section, and select the three dots next to the desired materialized view.
 1. From the dropdown menu, choose either:
-   1. **Show materialized view script** to view the materialized view script.
-   1. **Edit with code** to edit the materialized view script in the **Explore your data** window.
-   1. **Delete**.
+   - **Show materialized view script** to view the materialized view script.
+   - **Edit with code** to edit the materialized view script in the **Explore your data** window.
+   - **Delete**.
 
     :::image type="content" source="media/materialized-view/drop-down-menu-materialized.png" alt-text="Screenshot of dropdown menu." lightbox="media/materialized-view/drop-down-menu-materialized.png":::
 
