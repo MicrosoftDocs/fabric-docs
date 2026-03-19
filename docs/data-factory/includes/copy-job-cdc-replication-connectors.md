@@ -20,3 +20,9 @@ ms.topic: include
 | Oracle | <!--Copy Job (source)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (destination)-->:::image type="icon" source="../media/data-pipeline-support/no.png"::: | <!--Copy Job (CDC)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="../media/data-pipeline-support/no.png"::: | <!--Copy Job (SCD2)-->:::image type="icon" source="../media/data-pipeline-support/no.png"::: |
 | SQL database in Fabric (Preview) | <!--Copy Job (source)-->:::image type="icon" source="../media/data-pipeline-support/No.png"::: | <!--Copy Job (destination)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (CDC)-->:::image type="icon" source="../media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (SCD2)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: |
 | Fabric Data Warehouse | <!--Copy Job (source)-->:::image type="icon" source="../media/data-pipeline-support/No.png"::: | <!--Copy Job (destination)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (CDC)-->:::image type="icon" source="../media/data-pipeline-support/no.png"::: | <!--Copy Job (Merge)-->:::image type="icon" source="../media/data-pipeline-support/yes.png"::: | <!--Copy Job (SCD2)-->:::image type="icon" source="../media/data-pipeline-support/no.png"::: |
+
+
+> [!NOTE]
+> SCD Type 2 in Copy job is currently in preview.
+> When doing CDC replication from Snowflake or Oracle sources, SCD Type 2 is not supported yet.
+> If your destination database already has exisitng schema created by yourselves, SCD2 cannot be supported.  
