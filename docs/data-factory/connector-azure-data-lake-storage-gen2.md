@@ -24,11 +24,35 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 |Organizational account| √| √|
 |Service Principal|√||
 |Shared Access Signature (SAS)| √| √|
-|Workspace Identity| √||
+|Workspace Identity| √|√|
 
-## Considerations and limitations
+## Set up your connection for Dataflow Gen2
 
-* Workspace identity, Organizational Account, and Service Principal are the only supported authentication types.
+You can connect Dataflow Gen2 to Azure Data Lake Storage Gen2 in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
+
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Azure Data Lake Storage Gen2](#prerequisites).
+1. Go to [Get data](#get-data).
+1. [Connect to Azure Data Lake Storage Gen2](#connect-to-azure-data-lake-storage-gen2).
+
+### Capabilities
+
+[!INCLUDE [data-lake-storage-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [data-lake-storage-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Azure Data Lake Storage Gen2
+
+[!INCLUDE [data-lake-storage-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/data-lake-storage/data-lake-storage-connect-to-power-query-online.md)]
+
+### Limitations and considerations
+
 * Connections for trusted workspace access only work in OneLake shortcuts and pipelines.
 * Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
 * Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
@@ -44,19 +68,6 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#configure-trusted-workspace-access-in-adls-gen2).
 
 1. Follow steps from [Set up your connection](#set-up-your-connection-for-a-pipeline) to create the connection.
-
-## Set up your connection for Dataflow Gen2
-
-You can connect Dataflow Gen2 to Azure Data Lake Storage Gen2 in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
-
-- [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- [Install or set up any Azure Data Lake Storage Gen2 prerequisites](/power-query/connectors/data-lake-storage#prerequisites).
-- [Connect to Azure Data Lake Storage Gen2](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online).
-
-### Learn more about this connector
-
-- [Supported capabilities](/power-query/connectors/data-lake-storage#capabilities-supported)
-- [Limitations](/power-query/connectors/data-lake-storage#limitations)
 
 ## Set up your connection for a pipeline
 
