@@ -3,14 +3,18 @@ title: Set alerts on Fabric capacity overview events in Real-Time hub
 description: This article describes how to set alerts on Fabric capacity overview events in Real-Time hub.
 ms.reviewer: geguirgu
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 03/20/2026
 ms.custom: references_regions
+ai-usage: ai-assisted
 ---
 
 # Set alerts on Fabric capacity overview events in Real-Time hub
 This article describes how to set alerts on Fabric capacity overview events in Real-Time hub.
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+
+> [!TIP]
+> Capacity overview events fire frequently. If you set an alert that triggers on every event where usage exceeds a threshold, you receive a continuous stream of alerts for the entire duration that usage remains high. To avoid this, use a **numeric change** condition when you configure the alert rule. A numeric change condition fires a single alert when usage crosses the threshold, and doesn't fire again until usage drops below the threshold and then crosses it again.
 
 ## Navigate to Real-Time hub
 
@@ -42,21 +46,29 @@ Do steps from one of the following sections, which opens a side panel where you 
 
 ## Monitor section
 
-
 1. In the **Monitor** section, for **Source**, choose **Select source events**.
 
     :::image type="content" source="media/set-alerts-anomaly-detection/select-events.png" alt-text="Screenshot of the Set alert side panel.":::
 
 1. In the **Connect data source** wizard, do these steps:
-    1. For **Event types**, select event types that you want to monitor.
-    1. For **Event types**, select event types that you want to monitor.
-    1. For **Event source**, confirm that By capacity is selected.
-    1. For **Capacity**, select the Fabric capacity.
-    1. In the **Set filters** section, select **+ Filter** to a filter based on a field.   
+    1. For **Event types**, select **Microsoft.Fabric.Capacity.Summary**.
+    1. For **Event source**, confirm that **By capacity** is selected.
+    1. For **Capacity**, select the Fabric capacity that you want to monitor.
     1. Select **Next**.
+
+        > [!IMPORTANT]
+        > Don't set a filter in the connection settings. Instead of filtering events here, you configure a numeric change condition in the next section. A numeric change condition fires only when the measure crosses the threshold, which prevents repeated alerts.
+
     1. On the **Review + connect** page, review the settings, and select **Save**.
 
-[!INCLUDE [rule-condition-events](./includes/rule-condition-events.md)]
+## Condition section
+
+After you connect the data source, configure the condition so that Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] fires a single alert when the measure crosses the threshold.
+
+1. In the **Condition** section, for **Check**, select **On each event grouped by a field when a value is met**.
+1. For the grouping field, select **capacityId**.
+1. In the **When** field, select the measure that you want to monitor. For a list of available fields and their definitions, see [Explore Fabric capacity overview events](explore-fabric-capacity-overview-events.md).
+1. For the condition, select one of the **numeric change** conditions. Always use a numeric change condition for capacity alerts. A numeric change condition sends a single alert when the value goes above or below the threshold, rather than alerting on every event that meets the criteria.
 
 [!INCLUDE [rule-action](./includes/rule-action.md)]
 
