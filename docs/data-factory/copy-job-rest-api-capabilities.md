@@ -413,7 +413,7 @@ This example configures a CDC (Change Data Capture) in Copy job that incremental
           }
         },
         "destination": {
-          "writeBehavior": "Upsert",
+          "writeBehavior": "Merge",
           "datasetSettings": {
             "table": "Products"
           }
