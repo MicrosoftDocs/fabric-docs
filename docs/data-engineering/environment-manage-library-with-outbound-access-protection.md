@@ -104,7 +104,7 @@ On your Linux machine, set up a conda environment that mirrors the Fabric runtim
 
    For other distros, use the equivalent package manager (for example, `tdnf` on Azure Linux).
 
-1. Use the [edited YML file from a previous step](#step-2-edit-the-runtime-yml-file) to create a conda environment. The following example uses the Runtime 1.3 setup file. Replace the YML filename with the one for your runtime version.
+1. Use the [edited YML file from a previous step](#step-2-remove-private-libraries-from-the-yml-file) to create a conda environment. The following example uses the Runtime 1.3 setup file. Replace the YML filename with the one for your runtime version.
 
    ```shell
    conda env create -n fabric-env -f Fabric-Python311-CPU.yml
