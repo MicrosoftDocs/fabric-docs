@@ -88,7 +88,7 @@ When a scheduled run fails, the email includes:
 - Technical details for troubleshooting, including Activity ID, Request ID, and timestamps
 
 > [!TIP]
-> To view and manage job failure notifications across all your scheduled items in one place, see [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring mub.
+> To view and manage job failure notifications across all your scheduled items in one place, see [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring hub.
 
  [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring hub.
 
