@@ -105,7 +105,7 @@ The interactive and background rejection tabs work in the same way. If you see t
 
 The throttling chart displays the following elements:
 
-  * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold. 
+  * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
   * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
@@ -134,7 +134,7 @@ The overages carryforward chart displays the following elements:
 
 #### Overage (Billed)
 
-Shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage is enabled and the capacity has incurred overages and has overages which would have resulted in throttling.
+**Overage (Billed)** shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage is enabled and the capacity has incurred overages and has overages which would have resulted in throttling.
 
 This view displays the following visuals:
 
@@ -152,7 +152,7 @@ This view displays the following visuals:
 
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint detail](metrics-app-timepoint-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint summary preview](metrics-app-timepoint-summary-page.md) and [timepoint detail](metrics-app-timepoint-page.md).
 
-Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect Timepoint and Cumulative visuals as follows:
+Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect the Timepoint and Cumulative visuals as follows:
 
 * *No filters applied* - Columns display the peak timepoint every 20 minutes.
 * *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multimetric ribbon chart's x-axis.
