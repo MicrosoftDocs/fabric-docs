@@ -25,4 +25,4 @@ ms.topic: include
 > [!NOTE]
 > SCD Type 2 in Copy job is currently in preview.
 > When doing CDC replication from Snowflake or Oracle sources, SCD Type 2 is not supported yet.
-> If your destination database already has exisitng schema created by yourselves, SCD2 cannot be supported.  
+> If your destination database already has existing schema created by yourself, SCD2 cannot be supported.  
