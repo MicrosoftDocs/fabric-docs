@@ -4,7 +4,7 @@ description: Learn about permissions for reading, writing, and sharing Map items
 ms.reviewer: smunk
 author: deniseatmicrosoft
 ms.author: limingchen
-ms.date: 02/16/2025
+ms.date: 03/20/2026
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
