@@ -4,7 +4,7 @@ description: Learn about permissions for reading, writing, and sharing Map items
 ms.reviewer: smunk
 author: deniseatmicrosoft
 ms.author: limingchen
-ms.date: 02/16/2025
+ms.date: 03/20/2026
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
@@ -14,9 +14,6 @@ ms.search.form: Map permissions
 # Permissions in Fabric Maps
 
 This article explains how permissions work in Fabric Maps, including how workspace roles, map‑level permissions, and permissions on underlying data sources—such as Eventhouses, KQL databases, and Lakehouses—interact. Understanding this permission model helps you determine who can view, edit, and share maps, and explains why missing permissions can result in non‑rendering layers, incomplete results, or access errors. For step‑by‑step instructions on managing access to individual map items, see [Manage map permissions](manage-map-permissions.md).
-
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 ## How Fabric Maps permissions work
 
@@ -89,7 +86,7 @@ This table summarizes the minimum permissions required on workspace roles, map i
 | Create, edit, or delete a map | Workspace | Contributor or higher |
 | Add GeoJSON or tileset layers | Lakehouse | Read                  |
 | Upload PMTiles for tilesets   | Lakehouse | Write                 |
-| Add KQL-based layers          | KQL database | Write              |
+| Add KQL-based layers          | KQL database | Read               |
 | Save changes to the map       | Map item | Edit                   |
 
 #### Permissions required to view or interact with a map

@@ -62,6 +62,52 @@ This behavior is also reflected in **Capacity Metrics**, where usage is reported
 > [!NOTE]
 > The same billing behavior applies to pipeline activities. Only the notebook or activity that initiates the Spark session is charged.
 
+## Dynamic session sharing limit
+ 
+By default, a high concurrency session supports up to five notebooks sharing the same Spark session. For workloads that require higher notebook density—such as large-scale parallel pipelines or enterprise analytics at peak load—you can increase this limit to up to 50 notebooks per session.
+ 
+> [!NOTE]
+> This update doesn't change the default limit of five. You must explicitly set `spark.highConcurrency.max` to increase it.
+ 
+### Configure the session sharing limit
+ 
+Set the session sharing limit in the **Environment** item that your notebooks or pipeline-triggered notebooks use.
+ 
+1. Go to your workspace and open **Environments**.
+1. Select the Environment attached to your notebook or pipeline.
+1. Open **Spark Properties**.
+1. Add the following property and set a value between **2** and **50**:
+ 
+   ```
+   spark.highConcurrency.max = <value>
+   ```
+ 
+   For example, to allow up to 20 notebooks per session:
+ 
+   ```
+   spark.highConcurrency.max = 20
+   ```
+ 
+1. Save and publish the Environment.
+ 
+All notebooks and pipeline activities that use this Environment inherit the updated limit automatically.
+ 
+### When to increase the session sharing limit
+ 
+| Scenario | Recommended action |
+|---|---|
+| Large-scale parallel pipelines with many notebook activities | Increase `spark.highConcurrency.max` to reduce session fragmentation |
+| Peak-load interactive workloads with many concurrent users | Increase the limit to improve session acquisition times |
+| Cost-sensitive workloads where dense packing reduces compute spend | Tune the limit to match your concurrency requirements |
+| Workloads with strict isolation requirements | Keep the default limit of 5 or lower |
+ 
+Increasing the session sharing limit enables:
+ 
+- **Faster session acquisition** during peak load by reducing wait time for a new session.
+- **Higher notebook density** without fragmenting into many separate sessions.
+- **Dynamic tuning** aligned to workload intensity, cost, and price-performance goals.
+- **Better price-performance efficiency** while preserving isolation and fairness across jobs.
+
 ## Related content
 
 - [Apache Spark compute in Microsoft Fabric](spark-compute.md)

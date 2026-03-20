@@ -11,7 +11,7 @@ ms.date: 01/27/2026
 
 ---
 
-# Set up workspace IP firewall rules (Preview)
+# Set up workspace IP firewall rules
 
 Microsoft Fabric offers two options to restrict inbound access to a workspace. Workspace Private Link secures connectivity by routing traffic through Azure Private Link and private endpoints, ensuring all workspace access occurs over Microsoft's private network instead of the public internet. Workspace IP firewall rules provide an alternative by allowing access only from approved public IP addresses, offering a straightforward way to limit inbound connections when a workspace is exposed through public endpoints.
 
@@ -21,7 +21,7 @@ This article describes how to set up and manage workspace IP firewall rules in F
 
 Before you configure workspace IP firewall rules, ensure the following requirements are met:
 
-* **Tenant setting enabled**: A Fabric administrator must enable the **Configure workspace IP firewall rules** tenant setting. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
+* **Tenant setting enabled**: The **Configure workspace IP firewall rules** tenant setting is enabled by default. If this setting has been disabled, a Fabric administrator must enable it. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 
 * **Workspace admin role**: You must be a workspace admin to configure IP firewall rules.
 

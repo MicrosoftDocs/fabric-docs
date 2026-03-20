@@ -4,7 +4,7 @@ description: Explanation of what a pipeline run is, including on-demand and sche
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines, sfi-image-nochange
-ms.date: 08/27/2025
+ms.date: 03/10/2026
 ai-usage: ai-assisted
 ---
 
@@ -62,16 +62,33 @@ Select **Schedule**, found in the top banner of the **Home** tab, and then selec
 
 :::image type="content" source="media/pipeline-runs/schedule-pipeline-run.png" alt-text="Screenshot showing where to select Schedule on the Home tab." lightbox="media/pipeline-runs/schedule-pipeline-run.png":::
 
-On the Schedule configuration page, you can specify a schedule frequency, start and end dates and times, and time zone.
+On the Schedule configuration page, you can specify a schedule type, schedule frequency, start and end dates and times, and time zone.
 
 > [!TIP]
 > When scheduling a pipeline, you must set both a start and end date. There's no option for an open-ended schedule. To keep a pipeline running long-term, set the end date far in the future (for example, **01/01/2099 12:00 AM**). You can update or stop the schedule at any time.
 
-:::image type="content" source="media/pipeline-runs/configure-schedule.png" alt-text="Screenshot of the Schedule configuration screen." lightbox="media/pipeline-runs/configure-schedule.png":::
+### Fixed schedule
 
-Once configured, select **Save** to set your schedule.
+:::image type="content" source="media/pipeline-runs/configure-fixed-schedule.png" alt-text="Screenshot of the fixed schedule configuration screen." lightbox="media/pipeline-runs/configure-fixed-schedule.png":::
+
+Once your Fixed schedule is configured, select **Save** to set your schedule.
+
+### Interval-based schedule
+
+Interval-based schedules allow you to configure fixed, non-overlapping intervals to run your pipelines.
+
+:::image type="content" source="media/pipeline-runs/interval-based-schedule-trigger-parameters.png" alt-text="Screenshot showing Trigger parameters with Window start time and Window end time for an interval-based schedule." lightbox="media/pipeline-runs/interval-based-schedule-trigger-parameters.png":::
+
+Once your Interval-based schedule is configured, select **Save** to set your schedule.
 
 You can add up to 20 schedules for a single pipeline by selecting **Add Schedule** again after saving your first schedule. Each schedule can have different frequencies and start and end times.
+
+If you have an interval-based schedule configured, you will see 2 new parameters in your pipeline expression builder under **Trigger parameters** called Window start time and Window end time.
+
+:::image type="content" source="media/pipeline-runs/configure-interval-based-schedule.png" alt-text="Screenshot of the interval-based schedule configuration screen." lightbox="media/pipeline-runs/configure-interval-based-schedule.png":::
+
+> [!NOTE]
+> Time slice monitoring and backfill capabilities are not yet available for Interval-based schedules.
 
 ### Manage scheduled runs
 
@@ -79,9 +96,16 @@ You can manage your scheduled runs by selecting **Schedule** in the top banner o
 
 :::image type="content" source="media/pipeline-runs/toggle-or-edit.png" alt-text="Screenshot showing where in the schedule menu you can toggle or edit a scheduled run." lightbox="media/pipeline-runs/toggle-or-edit.png":::
 
-To delete a schedule, select the **Edit** icon (pencil) next to the schedule you want to delete. In the Edit Schedule pane, select **Delete schedule** at the bottom of the pane.
+> [!NOTE]
+> You can't enable, disable or edit your Interval-based schedules. If you want to make changes, delete and re-create your schedule.
+
+To delete a Fixed schedule, select the **Edit** icon (pencil) next to the schedule you want to delete. In the Edit Schedule pane, select **Delete schedule** at the bottom of the pane.
 
 :::image type="content" source="media/pipeline-runs/delete-schedule.png" alt-text="Screenshot showing the delete button can be found in the edit window.":::
+
+To delete an Interval-based schedule, select the **Delete** icon (trashcan) next to the schedule you want to delete.
+
+:::image type="content" source="media/pipeline-runs/delete-interval-based-schedule.png" alt-text="Screenshot showing the delete button can be found next to the interval-based schedule.":::
 
 ### Configure failure notifications
 
