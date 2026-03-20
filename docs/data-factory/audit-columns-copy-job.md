@@ -87,7 +87,7 @@ In your Fabric workspace, start by creating a new Copy job or opening an existin
 
 In the Copy job setup, after selecting the source tables or folders to be copied, add audit columns. This automatically adds metadata columns to every destination table in your job.
 
-   :::image type="content" source="media/copy-job/configure-audit-columns.png" alt-text="Configure Audit Columns.":::
+   :::image type="content" source="media/copy-job/configure-audit-columns.png" alt-text="Screenshot of configuring Audit Columns in Copy job.":::
 
 ### Step 3: Run your Copy job
 
@@ -97,7 +97,7 @@ Run the Copy job. With each execution, every row written to the destination tabl
 
 Open your destination table and query the audit columns along with your business data for a complete context. Audit columns are standard table fields, so they work seamlessly with Power BI, KQL queries, and other tools. You can build dashboards for data freshness, monitor ingestion SLAs, and create compliance lineage reports without relying on external metadata stores.
 
-   :::image type="content" source="media/copy-job/show-audit-columns.png" alt-text="Show Audit Columns.":::
+   :::image type="content" source="media/copy-job/show-audit-columns.png" alt-text="Screenshot of showing Audit Columns created by Copy job.":::
 
 
 ## Related content
