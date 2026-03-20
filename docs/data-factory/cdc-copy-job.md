@@ -57,7 +57,7 @@ SCD Type 2 in Copy job adds the following columns to the destination:
 
 For example, if a customer moves from California to New York, both versions are preserved:
 
-| CustomerKey | CustomerID | Name | State | Valid_From | Valid_To | Is_Current |
+| Customer Key | Customer ID | Name | State | Valid_From | Valid_To | Is_Current |
 |---|---|---|---|---|---|---|
 | 1001 | C-123 | Company | CA | 2023-01-15 | 2026-02-20 | No |
 | 1002 | C-123 | Company | NY | 2026-02-20 | NULL | Yes |
