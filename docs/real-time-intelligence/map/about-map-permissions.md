@@ -86,7 +86,7 @@ This table summarizes the minimum permissions required on workspace roles, map i
 | Create, edit, or delete a map | Workspace | Contributor or higher |
 | Add GeoJSON or tileset layers | Lakehouse | Read                  |
 | Upload PMTiles for tilesets   | Lakehouse | Write                 |
-| Add KQL-based layers          | KQL database | Write              |
+| Add KQL-based layers          | KQL database | Read            |
 | Save changes to the map       | Map item | Edit                   |
 
 #### Permissions required to view or interact with a map
