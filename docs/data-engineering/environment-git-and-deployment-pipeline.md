@@ -1,24 +1,28 @@
 ---
-title: Fabric Environment Git Integration and Deployment Pipeline
+title: Fabric environment Git integration and deployment pipeline
 description: Learn about the Git integration and deployment pipeline for Microsoft Fabric environments, including how to connect Azure DevOps.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 07/14/2024
+ms.date: 03/20/2026
 ms.search.form: Fabric environment Git integration and deployment pipeline
 ---
 
 # Use Git integration and deployment pipelines for environments
 
-This article describes how to use Git integration and deployment pipelines for environments in Microsoft Fabric.
+When you configure an environment in the Fabric portal — adding libraries, selecting a Spark runtime, tuning compute settings — those choices live only in the Fabric service. If someone accidentally changes a setting or you need to reproduce the environment in another workspace, there's no built-in history to fall back on.
+
+Git integration and deployment pipelines solve this problem. By connecting your workspace to a Git repo, you get version history, branching, and code review for your environment configuration, just like you would for application code. Deployment pipelines then let you promote a tested environment across stages (for example, from development to test to production) without manually recreating it.
 
 ## Integrate Git for Fabric environments
 
-Fabric supports Git integration. Developers can use Git to back up, control versions, revert to previous stages, and collaborate on their work by using Git branches.
+Git integration lets you back up, version, and collaborate on your environment configuration through Git branches. When you connect a workspace to a Git repo, Fabric serializes the environment's libraries and Spark compute settings (including the Spark runtime) into files that Git can track. Other environment components aren't included in Git at this time.
 
-- Currently, Git supports only libraries and Spark compute, including Spark runtime.
-- Git integration manages the staging state of the environment. To apply changes made in Git to the environment, they must be published. We recommend that you publish after you update the environment from Git to ensure the effectiveness of the configuration. You can use the [Publish API of the environment](environment-public-api.md#make-the-changes-effective) to publish changes through the REST API if you prefer the code-first experience.
-- The attached custom pool persists in an environment when you sync from a repo to a Fabric workspace. The pool definition is in the workspace setting. Cross-workspace referencing of the pool isn't supported. You must manually update *instance_pool_id* to an existing custom pool in your destination workspace space or revert to a starter pool by removing this property. For the full list of available pools in the destination workspace by the REST API, see [Custom Pools - List Workspace Custom Pools](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools). To create a new custom pool, see [Custom Pools - Create Workspace Custom Pool](/rest/api/fabric/spark/custom-pools/create-workspace-custom-pool).
-- Each commit has an upper limit of 150 MB. Currently, custom libraries larger than 150 MB aren't supported through Git.
+Changes you make in Git are synced to the environment's *staging* state — they don't take effect until you publish. Publish after every Git sync to ensure the live environment reflects your changes. If you prefer a code-first workflow, you can publish through the [Environment Publish API](environment-public-api.md#make-the-changes-effective).
+
+Keep the following considerations in mind:
+
+- **Custom pool references** — When you sync an environment from a repo to a different workspace, the attached custom pool ID is preserved as-is. Because pool definitions are workspace-scoped, cross-workspace references don't resolve. Update *instance_pool_id* in the synced file to an existing pool in the destination workspace, or remove the property to revert to a starter pool. You can list available pools with the [List Workspace Custom Pools API](/rest/api/fabric/spark/custom-pools/list-workspace-custom-pools) or create one with the [Create Workspace Custom Pool API](/rest/api/fabric/spark/custom-pools/create-workspace-custom-pool).
+- **Commit size limit** — Each commit is limited to 150 MB. Custom libraries larger than 150 MB can't be committed through Git.
 
 ## Connect the Fabric workspace to an Azure DevOps repository
 
@@ -57,13 +61,13 @@ The **Spark compute** section is also transformed into the YAML representation. 
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-Fabric deployment pipelines simplify the process of delivering modified content across different phases, such as moving from development to test. The automatic pipeline can include the environment items to stream the re-creation process.
+Fabric deployment pipelines simplify the process of delivering modified content across different phases, such as moving from development to test. The automatic pipeline can include the environment items to streamline the recreation process.
 
 You can set up a deployment pipeline by assigning the workspaces with different phases. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
 :::image type="content" source="media\environment-git-and-deployment-pipeline\environment-deployment-pipeline.png" alt-text="Screenshot that shows deploying an environment in a deployment pipeline." lightbox="media\environment-git-and-deployment-pipeline\environment-deployment-pipeline.png":::
 
-You can find the deploying status after you set up the pipeline successfully. After you select **Deploy** with the environment selected, all contents of the environment are deployed to the destination workspaces. The status of the original environment is preserved in this process so that the published configurations stay in the published state and require no extra publishing.
+You can find the deployment status after you set up the pipeline successfully. After you select **Deploy** with the environment selected, all contents of the environment are deployed to the destination workspaces. The status of the original environment is preserved in this process so that the published configurations stay in the published state and require no extra publishing.
 
 > [!IMPORTANT]
 > Currently, the custom pool isn't supported in deployment pipelines. If the environment selects the custom pool, the configurations of the **Compute** section in the destination environment are set with default values. In this case, the environments keep showing diff in the deployment pipeline even if the deployment is done successfully.
