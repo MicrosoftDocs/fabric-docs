@@ -33,7 +33,7 @@ For more information about Oracle LogMiner and supplemental logging, see the off
 **Fabric requirements:**
 - A Fabric workspace with the necessary permissions to create a Copy job.
 - A destination data store supported by Copy job for CDC replication.
-- An on-premises data gateway configured to connect to your Oracle database.
+- An on‑premises data gateway running version 3000.310 or later, configured to connect to your Oracle database.
 
 > [!TIP]
 > Use the `SYSDBA` or `DBA` role in Oracle to perform administrative tasks such as enabling ARCHIVELOG mode and granting LogMiner privileges. For day-to-day CDC operations, create a dedicated user with only the required permissions.
