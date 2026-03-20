@@ -3,15 +3,13 @@ title: Create a map
 description: Learn how to create a map in Fabric Maps to visualize spatial data in Real-Time Intelligence.
 ms.reviewer: smunk, sipa
 ms.topic: how-to
-ms.date: 10/17/2025
+ms.date: 03/20/2026
 ms.search.form: Create a map
 ---
 
 # Create a map
 
 Fabric Maps lets you visualize spatial data—static or real time—directly in Microsoft Fabric. By creating a map, you can explore patterns and relationships across space and time that are difficult to see in traditional charts and tables.
-
-
 
 ## Prerequisites
 
@@ -25,8 +23,6 @@ Fabric Maps lets you visualize spatial data—static or real time—directly in 
 
 1. Go to the [admin portal](../../admin/admin-center.md).
 1. Select the **Tenant settings** tab in the [admin portal](../../admin/tenant-settings-index.md) and search for *Map*. For more information, see [About tenant settings](../../admin/about-tenant-settings.md).
-1. Set **Users can create Maps (preview)** to **Enabled**, then select **Apply**. For more information, see [Tenant settings](../../admin/tenant-settings-index.md).
-  :::image type="content" source="media/create-map/tenant-setting-microsoft-fabric-section-enable-map.png" lightbox="media/create-map/tenant-setting-microsoft-fabric-section-enable-map.png" alt-text="Screenshot of tenant settings for Maps showing the toggle button for the Users can create Maps setting.":::
 1. If your Fabric capacity is located outside the EU or US regions, you must enable the Azure Maps services tenant settings. Begin by searching for **Azure Maps services** in the tenant settings, then toggle the option **Data sent to Azure Maps can be processed outside your capacity's geography region, compliance boundary, or national cloud instance** to **Enabled**.
 1. Select **Apply**
 
