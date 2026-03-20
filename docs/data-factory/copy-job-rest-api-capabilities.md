@@ -484,8 +484,8 @@ This example configures a CDC (Change Data Capture) in Copy job that incremental
 ```
 
 > [!NOTE]
-> Replace `<source-connectionId>` and `<destination-connectionId>` with the connection IDs you obtained from the [Create a connection](#create-a-connection) step. Replace `<workspace-guid>`, `<lakehouse-guid>`, and `<activity-guid>` with the appropriate GUIDs for your environment.
-> You can also access the `copyjob-content.json` from the Copy job UI by selecting the **View** button in the top panel and then selecting **View JSON code**.
+> - Replace `<source-connectionId>` and `<destination-connectionId>` with the connection IDs you obtained from the [Create a connection](#create-a-connection) step. Replace `<workspace-guid>`, `<lakehouse-guid>`, and `<activity-guid>` with the appropriate GUIDs for your environment.
+> - You can also access the `copyjob-content.json` from the Copy job UI by selecting the **View** button in the top panel and then selecting **View JSON code**.
 
 
 To use any of these definitions in the API, Base64-encode the JSON and place it as the `payload` value for the `copyjob-content.json` part.
