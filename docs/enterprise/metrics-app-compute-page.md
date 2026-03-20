@@ -110,7 +110,7 @@ The throttling chart displays the following elements:
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
 > [!NOTE]
-> When capacity overage is enabled for the capacitiy, the capacity does not enter the above throttling state till the capacity overage limit is exceeded. This is represented as No interactive delay (capacity overage billed), No interactive rejection rejection (capacity overage billed) and No background rejection (capacity overage billed) in above throttling charts. For more information, see [Capacity overage overview](capacity-overage-overview.md).
+> When capacity overage is enabled for the capacity, the capacity does not enter the above throttling state until the capacity overage limit is exceeded. This is represented as No interactive delay (capacity overage billed), No interactive rejection (capacity overage billed) and No background rejection (capacity overage billed) in above throttling charts. For more information, see [Capacity overage overview](capacity-overage-overview.md).
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
 * *No filters applied* - Columns display the peak timepoint every six minutes.
