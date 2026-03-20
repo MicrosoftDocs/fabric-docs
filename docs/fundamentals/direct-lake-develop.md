@@ -28,15 +28,15 @@ The following table shows the most common creation methods for each type of Dire
 |---|---|---|
 | Creation from the **Power BI service**. For example, select **Create** from the left navigation bar, then select **OneLake catalog**. | Yes | No |
 | Creation from **Power BI Desktop**. | Yes | No |
-| Creation from the **SQL analytics endpoint** page. For example, the SQL analytics endpoint for a lakehouse and click the **New semantic model** button. | Yes | Yes |
+| Creation from the **SQL analytics endpoint** page. For example, open the SQL analytics endpoint for a lakehouse, then select **New semantic model**. | Yes | Yes |
 
-Creation methods that support both Direct Lake types provide the option shown in the following image.
+When you create a Direct Lake semantic model from the SQL analytics endpoint, you can choose between the two Direct Lake types, as shown in the following image:
 
 :::image type="content" source="media/direct-lake-develop/creation-sql-analytics-endpoint-page.png" alt-text="Screenshot showing the Direct Lake type selection dialog when creating a semantic model from the SQL analytics endpoint page.":::
 
 This dialog defaults to Direct Lake on OneLake if the SQL analytics endpoint is in user identity mode, or Direct Lake on SQL if the SQL analytics endpoint is in delegated mode. For more information, see [Access modes in SQL analytics endpoint](../onelake/security/sql-analytics-endpoint-onelake-security.md#access-modes-in-sql-analytics-endpoint).
 
-Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. For more information, see [Model write support with the XMLA endpoint](#model-write-support-with-the-xmla-endpoint) later in this article. Fabric notebooks can also programmatically create and edit semantic models with semantic link and semantic link labs.
+Alternatively, as with any Power BI semantic model, you can continue the development of your model by using an XMLA-compliant tool, like SQL Server Management Studio (SSMS) (version 19.1 or later) or open-source, community tools. Fabric notebooks can also programmatically create and edit semantic models with semantic link and semantic link labs.
 
 ## Power Query connectors
 
@@ -44,7 +44,7 @@ An easy way to tell if an existing Direct Lake semantic model is on OneLake or S
 
 Direct Lake on OneLake uses the [Azure Data Lake Storage](/power-query/connectors/data-lake-storage) connector.
 
-:::image type="content" source="media/direct-lake-develop/adlsgen2-connector.png" alt-text="Screenshot showing the Azure Data Lake Storage Gen2 connector in TMDL view for a Direct Lake on OneLake model.":::
+:::image type="content" source="media/direct-lake-develop/azure-storage-connector.png" alt-text="Screenshot showing the Azure Data Lake Storage Gen2 connector in TMDL view for a Direct Lake on OneLake model.":::
 
 Direct Lake on SQL uses the [SQL Server](/power-query/connectors/sql-server) connector, or the `OneLake.SqlAnalytics()` connector.
 
@@ -56,7 +56,7 @@ Direct Lake on OneLake enables creation of multi-source, composite models that c
 
 ## Model tables
 
-Model tables are normally based on the table in the source Fabric data item. Direct Lake on SQL also allows selection of a SQL view. Queries to a model table based on a SQL view [fall back to DirectQuery mode](direct-lake-overview.md#directquery-fallback), which might result in slower query performance.
+Model tables are normally based on the table in the source Fabric data item. Direct Lake on SQL also allows selection of a SQL view. Queries to a model table based on a SQL view [fall back to DirectQuery mode](direct-lake-how-it-works.md#directquery-fallback), which might result in slower query performance.
 
 > [!NOTE]
 > With Direct Lake on OneLake, tables based on SQL views can be added using other storage modes like Import and/or DirectQuery because Direct Lake on OneLake supports composite models.
@@ -74,7 +74,7 @@ When you connect to a Direct Lake semantic model with the XMLA endpoint, the met
 - The `compatibilityLevel` property of the database object is 1604 (or higher).
 - The mode property of Direct Lake partitions is set to `directLake`.
 - Direct Lake partitions use shared expressions to define data sources.
-  - **Direct Lake on SQL** — The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-overview.md#directquery-fallback) mode for any reason).
+  - **Direct Lake on SQL** — The expression points to the SQL analytics endpoint of the lakehouse or warehouse. Direct Lake uses the SQL analytics endpoint to discover schema and security information, but it loads the data directly from OneLake (unless it [falls back to DirectQuery](direct-lake-how-it-works.md#directquery-fallback) mode for any reason).
   - **Direct Lake on OneLake** — The expression points directly to the OneLake storage location of the Fabric data source. Direct Lake uses the OneLake APIs for schema discovery, security checks, and data loading. Direct Lake on OneLake doesn't fall back to DirectQuery mode.
 
 ## Post-publication tasks
