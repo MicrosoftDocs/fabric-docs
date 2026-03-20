@@ -4,7 +4,7 @@ description: Learn about permissions for reading, writing, and sharing Map items
 ms.reviewer: smunk
 author: deniseatmicrosoft
 ms.author: limingchen
-ms.date: 02/16/2025
+ms.date: 03/20/2026
 ms.topic: article
 ms.service: fabric
 ms.subservice: rti-core
@@ -86,7 +86,7 @@ This table summarizes the minimum permissions required on workspace roles, map i
 | Create, edit, or delete a map | Workspace | Contributor or higher |
 | Add GeoJSON or tileset layers | Lakehouse | Read                  |
 | Upload PMTiles for tilesets   | Lakehouse | Write                 |
-| Add KQL-based layers          | KQL database | Write              |
+| Add KQL-based layers          | KQL database | Read               |
 | Save changes to the map       | Map item | Edit                   |
 
 #### Permissions required to view or interact with a map
