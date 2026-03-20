@@ -17,6 +17,8 @@ When you need to reconcile a static spreadsheet or disconnected system with a li
 > [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
+For region availability of plan while in preview, see [Region availability for plan (preview)](overview-regions.md).
+
 ## About plan
 
 *Plan (preview)* in Fabric allows you to integrate planning, visualization, analytics, and data management on a single platform. Plan is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. It enables organizations to work from a consistent data foundation, allowing business users to plan, analyze, and report without switching between multiple tools.
