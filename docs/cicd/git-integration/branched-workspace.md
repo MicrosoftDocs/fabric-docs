@@ -1,5 +1,12 @@
+---
+title: Development process using Branch-Out experience
+description: Learn how to develop in Fabric using client tool
+ms.reviewer: PrigalYaron
+ms.topic: concept-article
+ms.date: 03/21/2026
+---
 
-### Development process using Branch-Out experience
+# Development process using Branch-Out experience
 For Fabric developers, the branch‑out experience creates a new branch based on the latest commit of the source workspace’s connected branch, allowing users to either create a new workspace connected to the newly created branch or target an existing workspace by replacing the branch connected to it.
 
 By default, when a branch‑out operation completes, all items from the source branch are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace to allow faster time to code experience.
@@ -46,7 +53,7 @@ Once the review and merge are complete, a new commit is created to the *main* br
 
 For more information, see [branching out limitations](./git-integration-process.md#branching-out-limitations).
 
-#### How to add additional items to a workspace with selective branching
+### How to add additional items to a workspace with selective branching
 When a Fabric developer needs to add items that were not selected during the branch‑out operation, the steps below describe how to add additional items to the workspace:
 1. Go to the required Fabric workspace, and select **Source control** at the top.
 2. On the right, select the **branch out** symbol.
@@ -56,7 +63,7 @@ When a Fabric developer needs to add items that were not selected during the bra
 6. Click **Add**. The selected items are added to the pending updates in the source control pane.
 7. Click **Update all**. This operation performs an update from git and creates the items in the workspace.
 
-#### Switch branches
+### Switch branches
 If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the **Source control** pane without disconnecting and reconnecting.  
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced.
 

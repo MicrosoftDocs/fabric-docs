@@ -1,4 +1,12 @@
-### Development process using client tool
+---
+title: Development process using client tool
+description: Learn how to develop in Fabric using client tool
+ms.reviewer: PrigalYaron
+ms.topic: concept-article
+ms.date: 03/21/2026
+---
+
+# Development process using client tool
 
 If the items you're developing are available in other tools, you can work on those items directly in the client tool. Not all items are available in every tool. Items that are only available in Fabric need to be developed in Fabric.
 

@@ -1,5 +1,5 @@
 ---
-title: Git integration workspaces
+title: Development Process in Microsoft Fabric
 description: Learn how to develop an app using Git branches to work in your own isolated workspace environment and improve collaboration with your team.
 ms.reviewer: NimrodShalit
 ms.topic: concept-article

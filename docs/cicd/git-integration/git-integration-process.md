@@ -216,9 +216,9 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
- - [*Branch out to another workspace*](./manage-branches.md#scenario-2---branch-out-to-another-workspace) (contributor and above): Creates a new branched workspace, or switches the connected branch of existing branched workspace to a new Git branch which created based on the last commit of the source workspace. 
+ - [*Branch out to another workspace*](./branched-workspace.md) (contributor and above): Creates a new branched workspace, or switches the connected branch of existing branched workspace to a new Git branch which created based on the last commit of the source workspace. 
  - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
- - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
+ - [*Switch branch*](./branched-workspace.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
