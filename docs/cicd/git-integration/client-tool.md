@@ -1,6 +1,6 @@
 ---
 title: Development process using client tool
-description: Learn how to develop in Fabric using client tool
+description: Learn how to developer can leverage client tools into their development process
 ms.reviewer: PrigalYaron
 ms.topic: concept-article
 ms.date: 03/21/2026
