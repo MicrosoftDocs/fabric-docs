@@ -24,8 +24,14 @@ items:
     href: git-integration/git-get-started.md
   - name: "Understand the Git integration process"
     href: git-integration/git-integration-process.md
-  - name: "Manage Git branches"
-    href: git-integration/manage-branches.md
+  - name: "Development Process in Fabric"
+    items:
+    - name: Overview
+      href: git-integration/manage-branches.md
+    - name: Development process using Branch-Out experience
+      href: git-integration/branched-workspace.md
+    - name: Development process using client tool
+      href: git-integration/client-tool.md     
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts

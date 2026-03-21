@@ -216,15 +216,17 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
 - **Actions you can take on the current branch**:
 
- - [*Branch out to another workspace*](./manage-branches.md#scenario-2---branch-out-to-another-workspace) (contributor and above): Creates a new workspace, or switches to an existing workspace based on the last commit to the current workspace. It then connects to the target workspace and branch.
+ - [*Branch out to another workspace*](./manage-branches.md#scenario-2---branch-out-to-another-workspace) (contributor and above): Creates a new branched workspace, or switches the connected branch of existing branched workspace to a new Git branch which created based on the last commit of the source workspace. 
  - [*Checkout new branch*](./conflict-resolution.md#resolve-conflict-in-git) (must be workspace admin): Creates a new branch based on the last synced commit in the workspace and changes the Git connection in the current workspace. It doesn't change the workspace content.
  - [*Switch branch*](./manage-branches.md#switch-branches) (must be workspace admin): Syncs the workspace with another new or existing branch and overrides all items in the workspace with the content of the selected branch.
 
  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
 - **Related branches**. 
-  The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one with the same connection properties as the current branch, such as the same organization, project, repository, and git folder. 
-  This feature allows you to navigate to workspaces connected to other branches related to the context of your current work, without having to look for them in your list of Fabric workspaces. 
+  The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one of the two:
+  1) Branched workspaces
+  1) Has same connection properties as the current branch, such as the same organization, project, repository, and git folder. 
+  This feature allows you to navigate to related workspaces from the context of your current work, without having to look for them in your list of Fabric workspaces. 
   To open the relevant workspace, select item in the list.
 
  :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
