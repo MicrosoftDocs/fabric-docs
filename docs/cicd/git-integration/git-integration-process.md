@@ -223,7 +223,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
  :::image type="content" source="./media/git-integration-process/branch-out.png" alt-text="Screenshot of the branch out tab in the source control panel.":::
 
 - **Related branches**. 
-  The *Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one of the two:
+  The *Related Branches* tab also has a list of related workspaces you can select and switch to. A related workspace is one of the two:
   1) Branched workspaces
   1) Has same connection properties as the current branch, such as the same organization, project, repository, and git folder. 
   This feature allows you to navigate to related workspaces from the context of your current work, without having to look for them in your list of Fabric workspaces. 

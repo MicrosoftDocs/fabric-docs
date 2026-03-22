@@ -24,7 +24,7 @@ items:
     href: git-integration/git-get-started.md
   - name: "Understand the Git integration process"
     href: git-integration/git-integration-process.md
-  - name: "Development Process in Fabric"
+  - name: "Development process in Fabric"
     items:
     - name: Overview
       href: git-integration/manage-branches.md

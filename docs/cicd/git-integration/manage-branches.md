@@ -7,7 +7,7 @@ ms.date: 12/15/2025
 #customer intent: As a developer, I want to learn how to use Git branches in Fabric so that I can work in my own isolated environment.
 ---
 
-# Development Process in Microsoft Fabric
+# Development process in Microsoft Fabric
 
 The goal of this article is to present developers with different developement process in Microsoft Fabric, based on common customer scenarios. This article focuses more on the *continuous integration (CI)* part of the CI/CD process. For a discussion of the continuous delivery (CD) part, see [Fabric deployment options](../manage-deployment.md).
 
