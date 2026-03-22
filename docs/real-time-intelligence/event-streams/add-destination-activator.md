@@ -1,9 +1,9 @@
 ---
-title: Add a Fabric Activator destination to an eventstream
+title: Add a Fabric Activator Destination to an Eventstream
 description: Learn how to add Activator destination to a Fabric eventstream.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 03/22/2026
 ms.search.form: Source and Destination
 ---
 
@@ -13,7 +13,7 @@ This article shows you how to add an activator destination to an eventstream.
 
 ## Prerequisites
 
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+- Access to a workspace in the Fabric capacity license mode or the Trial license mode with Contributor or higher permissions. 
 - If you already have an activator you want to use, access to the workspace where your activator is located with Contributor or higher permissions.
 - Each event in the source must consist of a JSON dictionary.
 - One of the dictionary keys must represent a unique object ID.
@@ -49,7 +49,7 @@ To add an activator destination to a default stream or derived stream, follow th
 
    :::image type="content" border="true" source="media/add-destination-activator-enhanced/edit-mode.png" alt-text="A screenshot of the stream and Activator destination in Edit mode with the Publish button highlighted.":::
 
-   Once you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
+   When you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
 
    :::image type="content" border="true" source="media/add-destination-activator-enhanced/live-view.png" alt-text="A screenshot of the Activator destination available for visualization in Live view.":::
 
