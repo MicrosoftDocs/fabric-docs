@@ -19,7 +19,7 @@ You can access the Monitor hub to view various MLV runs in your workspace by sel
 
 For better usability and discoverability, you can sort the MLV runs by selecting different columns in the UI. You can also filter the using the Job Type, Location, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
 
-The Job Type for MLV runs is MaterializedLakeViews
+The Job Type for MLV runs is RefreshMaterializedLakeViews
 
 :::image type="content" source="./media/monitor-materialized-lake-views/sort-filter-column-options.png" alt-text="Screenshot showing job type for materialized lake view." border="true" lightbox="./media/monitor-materialized-lake-views/sort-filter-column-options.png":::
 
@@ -63,5 +63,5 @@ If you need more information about MLV runs and the MLV statistics, access Apach
 
 ## Related articles
 
-* [Create materialized lake views in a lakehouse](./create-materialized-lake-view.md)
+* [Spark SQL reference for materialized lake views](./create-materialized-lake-view.md)
 * [Manage materialized lake views lineage](./view-lineage.md)

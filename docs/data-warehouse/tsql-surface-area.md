@@ -61,6 +61,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 ## Related content
 
 - [Query insights in Fabric data warehousing](query-insights.md)
-- [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
+- [What is Fabric Data Warehouse?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Limitations of Microsoft Fabric Data Warehouse](limitations.md)

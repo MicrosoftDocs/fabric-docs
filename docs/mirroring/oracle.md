@@ -1,5 +1,5 @@
 ---
-title: "Mirror Oracle Databases in Microsoft Fabric (Preview)"
+title: "Mirror Oracle Databases in Microsoft Fabric"
 description: Learn how to mirror your Oracle databases in Microsoft Fabric for analytics.
 ms.reviewer: sbahadur
 ms.date: 08/22/2025
@@ -8,9 +8,7 @@ ms.search.form: Oracle overview
 ai-usage: ai-assisted
 ---
 
-# Mirroring Oracle Databases (Preview)
-
-[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+# Mirroring Oracle Databases
 
 [Mirroring in Fabric](overview.md) lets you mirror your Oracle databases into a unified analytics platform. When you mirror your Oracle data, you can analyze it together with data from other sources in near real-time with minimal latency and cost.
 
@@ -23,10 +21,10 @@ We support these Oracle Server environments:
 * Oracle Cloud Infrastructure (OCI)
 * Oracle Database@Azure
 * Oracle Exadata
+* Oracle Autonomous Database
 
 >[!NOTE]
 >* LogMiner needs to be enabled on your Oracle server. This tool helps track changes in your Oracle database for real-time mirroring.
->* Oracle Autonomous Database isn't supported in this preview.
 
 ## Built-in analytics features
 

@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Query the graph with GQL"
-description: Learn how to query your graph using GQL (Graph Query Language) in the code editor.
+description: Learn how to query your graph using GQL (Graph Query Language) in the code editor, including pattern matching and filtering examples.
 ms.topic: tutorial
 ms.date: 02/02/2026
 ms.reviewer: wangwilliam

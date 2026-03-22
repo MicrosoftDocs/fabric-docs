@@ -14,7 +14,7 @@ Before you start, you must complete the following prerequisites:
 
 - A workspace with **Fabric** capacity or **Fabric Trial** workspace type.
 - Access to the workspace with **Contributor** or higher workspace roles.
-- Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network.
+- Ensure that the MQTT broker is publicly accessible and not restricted by a firewall or a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](../streaming-connector-private-network-support-guide.md).
 
 Depending on your scenario, you can also use one of the following approaches to stream MQTT data to Eventstream:
 

@@ -1,7 +1,6 @@
 ---
 title: SQL database tutorial - Create a SQL database in Fabric Database
 description: In this second tutorial step, after you've created your workspace, learn how to create your first SQL database in Microsoft Fabric.
-ms.reviewer: bwoody
 ms.date: 10/24/2024
 ms.topic: tutorial
 ---

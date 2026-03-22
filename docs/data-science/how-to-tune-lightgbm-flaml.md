@@ -1,20 +1,18 @@
 ---
 title: Perform hyperparameter tuning in Fabric
-description: Identify the best combination of hyperparameters for your chosen model with FLAML (preview).
+description: Identify the best combination of hyperparameters for your chosen model with FLAML.
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-ms.date: 04/07/2025
+ms.date: 02/23/2026
 ---
 
-# Perform hyperparameter tuning in Fabric (preview)
+# Perform hyperparameter tuning in Fabric
 
 Hyperparameter tuning involves finding the optimal machine learning model parameter values that affect its performance. This can become challenging and time-consuming, especially for complex models and large datasets. This article shows how to perform Fabric hyperparameter tuning.
 
 This tutorial uses the California housing dataset. That resource contains information about the median house value and other features for different census blocks in California. Once we prep the data, we train a SynapseML LightGBM model to predict the house value based on the features. Next, we use FLAML - a fast and lightweight AutoML library - to find the best hyperparameters for the LightGBM model. Finally, we compare the results of the tuned model with the baseline model that uses the default parameters.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
