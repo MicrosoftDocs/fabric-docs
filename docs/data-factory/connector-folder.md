@@ -10,7 +10,6 @@ ai-usage: ai-assisted
 ms.custom:
   - template-how-to
   - connectors
-ai-usage: ai-assisted
 ---
 
 # Set up your Folder connection

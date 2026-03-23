@@ -72,7 +72,7 @@ The following properties are **required**:
   - **File filter**: File server side native filter, which provides better performance than wildcard filter.
 
     - **Folder path**: Specify the path to the folder.
-    - **File filter**: Use `*` to match zero or more characters and `?` to match zero or single character. Learn more about the syntax and notes from the **Remarks** under this [section](/dotnet/api/system.io.directory.getfiles?view=net-10.0#system-io-directory-getfiles(system-string-system-string-system-io-searchoption)).
+    - **File filter**: Use `*` to match zero or more characters and `?` to match zero or single character. Learn more about the syntax and notes from the **Remarks** under this [section](/dotnet/api/system.io.directory.getfiles#system-io-directory-getfiles(system-string-system-string-system-io-searchoption)).
 
   - **Wildcard file path**: Specify the Wildcard paths.
 
