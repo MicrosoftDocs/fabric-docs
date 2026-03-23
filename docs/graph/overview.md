@@ -8,7 +8,7 @@ ms.custom: references_regions
 ms.search.form: graph overview
 ---
 
-# graph in Microsoft Fabric overview (preview)
+# Graph in Microsoft Fabric overview (preview)
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
