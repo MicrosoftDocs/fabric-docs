@@ -18,10 +18,10 @@ This article walks you through installing the extension, signing in, and selecti
 
 The extension supports the following Fabric items and tasks:
 
-- **Workspaces** – Manage one or more Fabric workspaces directly in VS Code. For more information, see [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs.md).
-- **Notebooks** – Create, edit, and run Fabric notebooks locally and execute them on remote Spark compute. For more information, see [Create and manage Fabric notebooks in VS Code](author-notebook-with-vs-code.md) and [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs.md).
+- **Workspaces** – Manage one or more Fabric workspaces directly in VS Code. For more information, see [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs-mode.md).
+- **Notebooks** – Create, edit, and run Fabric notebooks locally and execute them on remote Spark compute. For more information, see [Create and manage Fabric notebooks in VS Code](author-notebook-with-vs-code.md) and [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs-mode.md).
 - **Spark job definitions** – Create and manage Spark job definitions with full CRUD support. For more information, see [Create and manage Spark job definitions in VS Code](author-sjd-with-vs-code.md).
-- **Environments** – Explore and inspect Spark environments, including hardware profiles, libraries, and Spark configuration. For more information, see [Explore and inspect Spark environments with VS Code](manage-environment-with-vs-code.md) and [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md).
+- **Environments** – Explore and inspect Spark environments, including hardware profiles, libraries, and Spark configuration. For more information, see [Explore and inspect Spark environments with VS Code](manage-environment-with-vs-code.md) and [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs-mode.md).
 - **Lakehouses** – Browse lakehouse tables and files, preview data, and copy paths for use in your code. For more information, see [Explore Fabric lakehouses in VS Code](explore-lakehouse-with-vs-code.md).
 
 ## Prerequisites
@@ -84,14 +84,14 @@ After you select a workspace, you can browse its items in the side bar. When you
 
 In VFS (Virtual File System) mode, you open and edit workspace items directly as remote files, without downloading them. VFS mode also lets you add multiple Fabric workspaces to a single VS Code window and work across them side by side.
 
-To enter VFS mode, select the **Open a Remote Window** button in VS Code, then select **Open Fabric Data Engineering Workspaces**. For the full setup steps, see [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs.md).
+To enter VFS mode, select the **Open a Remote Window** button in VS Code, then select **Open Fabric Data Engineering Workspaces**. For the full setup steps, see [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs-mode.md).
 
 ## Related content
 
 - [Create and manage Fabric notebooks in VS Code](author-notebook-with-vs-code.md)
-- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs.md)
+- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs-mode.md)
 - [Explore and inspect Spark environments with VS Code](manage-environment-with-vs-code.md)
-- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md)
+- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs-mode.md)
 - [Create and manage Spark job definitions in VS Code](author-sjd-with-vs-code.md)
 - [Explore Fabric lakehouses in VS Code](explore-lakehouse-with-vs-code.md)
 - [Access and manage notebook resources in VS Code](author-notebook-resource-with-vs-code.md)

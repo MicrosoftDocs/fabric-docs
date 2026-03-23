@@ -419,15 +419,15 @@ items:
     - name: Get started with the VS Code extension
       href: setup-vs-code-extension.md
     - name: Manage Fabric workspace with VS Code under VFS mode
-      href: manage-workspace-with-vs-code-vfs.md
+      href: manage-workspace-with-vs-code-vfs-mode.md
     - name: Manage environments with VS Code extension
       href: manage-environment-with-vs-code.md
     - name: Manage environments with VS Code under VFS mode
-      href: manage-environment-with-vs-code-vfs.md  
+      href: manage-environment-with-vs-code-vfs-mode.md
     - name: Notebook with VS Code extension
       href: author-notebook-with-vs-code.md
     - name: Notebook with VS Code under VFS mode
-      href: author-notebook-with-vs-code-vfs.md
+      href: author-notebook-with-vs-code-vfs-mode.md
     - name: Fabric Notebook custom agent inside VS Code
       href: notebook-custom-agent-with-vs-code.md
     - name: Notebook resource with VS Code extension

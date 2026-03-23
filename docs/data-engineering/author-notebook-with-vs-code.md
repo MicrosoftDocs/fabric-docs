@@ -114,7 +114,7 @@ To update your local version with the latest workspace version, you pull the rem
 
 Select the kernel **Microsoft Fabric Runtime** to run code cells on the remote Spark compute.
 
-:::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing how to select kernel to run notebook in VS Code." lightbox="media\vscode\fabric-runtime-kernel.png":::
+:::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing how to select the kernel to run a notebook in VS Code." lightbox="media\vscode\fabric-runtime-kernel.png":::
 
 Following are the languages supported:
 - PySpark

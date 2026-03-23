@@ -16,13 +16,13 @@ With VS Code VFS (Virtual File System) mode, you can open and develop your noteb
 
 To open a notebook in VFS mode, select the **Open In VS Code (Desktop)** button on the notebook authoring page in the Fabric portal. After the notebook opens in VS Code, the workspace connects automatically. You can also open the notebook by selecting the **Open Notebook Folder** button next to the notebook name in the extension panel.
 
-:::image type="content" source="media\vscode\open-notebook-in-vs-code-vfs.png" alt-text="Screenshot showing how to open a notebook in VS Code under VFS mode." lightbox="media\vscode\open-notebook-in-vs-code-vfs.png":::
+:::image type="content" source="media\vscode\open-notebook-in-vs-code-vfs-mode.png" alt-text="Screenshot showing how to open a notebook in VS Code under VFS mode." lightbox="media\vscode\open-notebook-in-vs-code-vfs-mode.png":::
 
 ## Run notebook with the VFS mode
 
 Select **Microsoft Fabric Runtime** to run the notebook in VFS mode. This runs the notebook on the remote Spark compute directly, without downloading the notebook file or managing local copies. 
 
-:::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing how to select kernel to run notebook in VS Code." lightbox="media\vscode\fabric-runtime-kernel.png":::
+:::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing how to select the kernel to run a notebook in VS Code." lightbox="media\vscode\fabric-runtime-kernel.png":::
 
 The Fabric Runtime supports multiple languages, including:
 - PySpark
@@ -69,9 +69,9 @@ In VFS mode, you can switch the environment associated with your notebook. Expan
 
 :::image type="content" source="media\vscode\switch-environment-artifact.png" alt-text="Screenshot showing how to switch the environment for a notebook in VS Code." lightbox="media\vscode\switch-environment-artifact.png":::
 
-To edit an environment, see [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md).
+To edit an environment, see [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs-mode.md).
 
 ## Related content
 
-- [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs.md)
-- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md)
+- [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs-mode.md)
+- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs-mode.md)
