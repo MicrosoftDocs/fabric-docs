@@ -71,7 +71,7 @@ In addition to the always-on **Capacity Planner mode**, you can further customiz
 
 :::image type="content" source="media/eventhouse/minimum-capacity-small.png" alt-text="Screenshot showing the eventhouse capacity planner for the Eventhouse." lightbox="media/eventhouse/minimum-capacity.png":::
 
-### Capacity units mapping
+## Capacity units mapping
 
 Use the following table to determine the appropriate minimum capacity unit (CU) size for your eventhouse based on your expected workload and performance requirements. The minimum CU size you select ensures that your eventhouse has enough resources to handle your workload during the scheduled times. You can also optimize costs by allowing the eventhouse to scale down during periods of low activity.
 
