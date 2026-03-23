@@ -6,7 +6,7 @@ ms.author: spelluru
 ms.reviewer: tzgitlin
 ms.subservice: rti-eventhouse
 ms.topic: how-to
-ms.date: 02/12/2026
+ms.date: 03/23/2026
 ms.search.form: Eventhouse
 
 #CustomerIntent: As a data engineer, I want to configure a capacity schedule for my Eventhouse so that I can optimize costs and ensure performance during peak hours.
