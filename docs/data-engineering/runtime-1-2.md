@@ -3,7 +3,7 @@ title: Runtime 1.2 in Fabric
 description: Gain a deep understanding of the Apache Spark-based Runtime 1.2 available in Fabric. Understand its unique features, capabilities, and best practices.
 ms.reviewer: arali
 ms.topic: overview
-ms.date: 03/10/2026
+ms.date: 03/18/2026
 ---
 
 # Fabric Runtime 1.2 (EOSA)

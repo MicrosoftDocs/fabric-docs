@@ -161,22 +161,21 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## File connectors
 
-| **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **Fabric Source/Destination** | **Fabric Authentication** |
-|----------------------|---------------------|-------------------------------|------------------------|---------------------------|
-| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    |✓/✓                      | Access Key |
-|                      |                     | Temporary security credential |                        |
-| [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) | ✓/-                | Access key                    | ✓/✓                   | Access Key                |
-| File System          | ✓/✓                | Windows                       | ✓/✓                   | Windows                   |
-| [FTP](connector-ftp-overview.md)                  | ✓/-                | Basic                         | ✓/-                   | Basic                     |
-|                      |                     | Anonymous                     |                        | Anonymous                 |
-| [Google Cloud Storage](connector-google-cloud-storage-overview.md) | ✓/-                | Access key                    | ✓/✓                   | HMAC key                  |
-| [HDFS](connector-hdfs-for-pipeline-overview.md)                 | ✓/-                | Windows                       | ✓/-                   |                           |
-|                      |                     | Anonymous                     |                        | Anonymous                 |
-| [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) | ✓/-                | Access key                    | ✓/-                   | Access Key                |
-| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | ✓/✓                   | Basic                     |
-|                      |                     | SSH public key                |                        |                           |
-|                      |                     | multifactor                   |                        |                           |
-
+| **Connector Type**   | **ADF Source/Sink** | **ADF Authentication**        | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+|----------------------|---------------------|-------------------------------|------------------------|-------------------------------|---------------------------|---------------------------|
+| [Amazon S3](connector-amazon-s3-overview.md)            | ✓/-                | Access key                    | Support `sessionToken`. | ✓/✓                           | Access key                | `sessionToken` is not supported. |
+|                      |                     | Temporary security credential |                        |                               |                           |                           |
+| [Amazon S3 Compatible](connector-amazon-s3-compatible-overview.md) | ✓/-                | Access key                    | Support `forcePathStyle`. | ✓/✓                           | Access key                | `forcePathStyle` is not supported. |
+| File System          | ✓/✓                | Windows                       |  | ✓/✓                           | Windows                   |  |
+| [FTP](connector-ftp-overview.md)                  | ✓/-                | Basic                         | Support `enableSsl` and `enableServerCertificateValidation`. | ✓/-                           | Basic                     | `enableSsl` and `enableServerCertificateValidation` are not supported. |
+|                      |                     | Anonymous                     |                        |                               | Anonymous                 |                           |
+| [Google Cloud Storage](connector-google-cloud-storage-overview.md) | ✓/-                | Access key                    |  | ✓/✓                           | HMAC key                  |  |
+| [HDFS](connector-hdfs-for-pipeline-overview.md)                 | ✓/-                | Windows                       |  | ✓/-                           |                           |  |
+|                      |                     | Anonymous                     |                        |                               | Anonymous                 |                           |
+| [Oracle Cloud Storage](connector-oracle-cloud-storage-overview.md) | ✓/-                | Access key                    |  | ✓/-                           | Access Key                |  |
+| [SFTP](connector-sftp-overview.md)                 | ✓/✓                | Basic                         | Support `skipHostKeyValidation`. | ✓/✓                           | Basic                     | `skipHostKeyValidation` is not supported. |
+|                      |                     | SSH public key                |                        |                               |                           |                           |
+|                      |                     | multifactor                   |                        |                               |                           |                           |
 ## File format connectors
 
 
@@ -199,25 +198,25 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 |--------------------|---------------------|------------------------|-------------------------|-------------------------------|---------------------------|----------------------------|
 | [Cassandra](connector-cassandra-overview.md) | ✓/- | Anonymous | | ✓/- | Anonymous | |
 | | | Basic | | | Basic | |
-| [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String| ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String|
-| [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  | ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String |
+| [MongoDB](connector-mongodb-overview.md) | ✓/✓ | Basic | Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> Int64<br>TimeStamp (the most significant 32 bits) -> Int64<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String <br><br>Support `connectionString` and `database`. | ✓/✓ | Basic | Support version 1.1. Differences are in the data type mapping: <br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support server. |
+| [MongoDB Atlas](connector-mongodb-atlas-overview.md) | ✓/✓ | Basic |Version 1.1 is not supported. Differences are in the data type mapping:<br><br>Date -> String<br>TimeStamp (the most significant 32 bits) -> Int64<br>TimeStamp (the least significant 32 bits) -> Int64<br>Double -> String<br>Int32 -> String<br>Int64 -> String<br>Min key -> Int64<br>Max key -> Int64<br>Binary -> String  <br><br>Support `connectionString` and `database`.| ✓/✓ | Basic |Support version 1.1. Differences are in the data type mapping:<br><br>Date -> DateTime<br>TimeStamp (the most significant 32 bits) -> DateTime<br>TimeStamp (the least significant 32 bits) -> Int32<br>Double -> Double<br>Int32 -> Int32<br>Int64 -> Int64<br>Min key -> String<br>Max key -> String<br>Binary -> GUID (when SubType is "04") / String <br><br>Support Server and Cluster. |
 
 ## Services & apps connectors
 
 | **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
 |--------------------|---------------------|------------------------|------------------|-------------------------------|---------------------------|---------------------|
-| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
+| [Dataverse](connector-dataverse-overview.md)          | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
 |  | | Office 365 | | | | |
 |  | | User-assigned managed identity | | | | |
 |  | | | |  | Workspace identity | |
 |  | | | |  | Organizational account      | |
-| Dynamics 365       | ✓/✓                | Service principal | | ✓/✓                      | Service principal                         | |
+| Dynamics 365       | ✓/✓                | Service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                      | Service principal                         | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity | | | | |
 |  | | | |  | Workspace identity | |
-| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | | ✓/-                      | Service principal                         | |
+| [Dynamics AX](connector-dynamics-ax-overview.md)        | ✓/-                | OData protocol with Service Principal | Support `aadResourceId`. | ✓/-                      | Service principal                         | `aadResourceId` is not supported. |
 | | | | | | Workspace identity | |
-| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | | ✓/✓                   | Service principal       | |
+| [Dynamics CRM](connector-dynamics-crm-overview.md)       | ✓/✓                | Microsoft Entra service principal | Support `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials`. | ✓/✓                   | Service principal       | `deploymentType`, `serviceUri`, `servicePrincipalCredentialType` and `credentials` are not supported.<br><br>Support Environment domain. |
 | | | Office 365 | | | | |
 | | | User-assigned managed identity| | | | |
 | | | | | | Workspace identity | |
@@ -227,13 +226,13 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 | Jira               | ✓/-                | Basic                 | | N                      |                          | |
 | [Microsoft 365](connector-microsoft-365-overview.md)      | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
 | QuickBooks         | ✓/-                | OAuth 2.0             | | N                      |                          | |
-| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | | ✓/✓                   | Organizational account  | |
+| [Salesforce](connector-salesforce-objects-overview.md)         | ✓/✓                | OAuth2ClientCredentials | Support `clientId`, `clientSecret` and `apiVersion`. | ✓/✓                   | Organizational account  | `clientId`, `clientSecret` and `apiVersion` are not supported. |
 | [Salesforce Service Cloud](connector-salesforce-service-cloud-overview.md) | ✓/✓         | OAuth2ClientCredentials | | ✓/✓                   | Organizational account  | |
 | SAP Cloud for Customer (C4C) | ✓/✓         | Basic                 | | N                      |                          | |
 | SAP ECC            | ✓/-                | Basic                 | | N                      |                          | |
 | [ServiceNow](connector-servicenow-overview.md)         | ✓/-                | Basic                 | Support pageSize | ✓/-                   | Basic                   |  pageSize is not supported|
 | | | OAuth2 | | | | |
-| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | | ✓/-                   | Service principal       | |
+| [SharePoint Online List](connector-sharepoint-online-list-overview.md) | ✓/-                | Service principal     | Support `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword`. | ✓/-                   | Service principal       |  `servicePrincipalCredentialType`, `ServicePrincipalCert`, `servicePrincipalEmbeddedCert` and `servicePrincipalEmbeddedCertPassword` are not supported.<br><br>Support Implementation and View mode. |
 | | | | | | Organizational account | |
 | | | | | | Workspace identity | |
 | Shopify            | ✓/-                | Access token          | | N                      |                          | |
@@ -244,26 +243,26 @@ With Data Factory in Microsoft Fabric, pipelines provide connectivity to a rich 
 
 ## Generic connectors
 
-| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **Fabric Source/Destination** | **Fabric Authentication** |
-|--------------------|---------------------|------------------------|------------------------|--------------------------|
-| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| | | Basic | | Basic |
-| | | Digest | | |
-| | | Windows | | |
-| | | Client certificate | | |
-| [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | ✓/-                   | Anonymous               |
-| | | Basic authentication | | Basic |
-| | | Windows authentication | | |
-| | | Service principal with Key | | |
-| | | Service principal with Cert | | |
-| [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
-| | | Basic | | Basic |
-| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | ✓/✓                   | Anonymous               |
-| | | Basic | | Basic |
-| | | Service principal | | Service principal |
-| | | OAuth 2.0 Client Credential | | Organizational account |
-| | | System-assigned managed identity | | |
-| | | User-assigned managed identity | | |
+| **Connector Type** | **ADF Source/Sink** | **ADF Authentication** | **ADF Other Settings** | **Fabric Source/Destination** | **Fabric Authentication** | **Fabric Other Settings** |
+|--------------------|---------------------|------------------------|------------------------|------------------------|--------------------------|------------------------|
+| [HTTP](connector-http-overview.md)               | ✓/-                | Anonymous             | Support `enableServerCertificateValidation` and `authHeaders`. | ✓/-                   | Anonymous               | `enableServerCertificateValidation` and `authHeaders` are not supported. |
+| | | Basic | | | Basic | |
+| | | Digest | | | | |
+| | | Windows | | | | |
+| | | Client certificate | | | | |
+| [OData](connector-odata-overview.md)              | ✓/-                | Anonymous             | Support `authHeaders`, `aadResourceId` and `azureCloudType`. | ✓/-                   | Anonymous               |`authHeaders`, `aadResourceId` and `azureCloudType` are not supported. |
+| | | Basic authentication | | | Basic | |
+| | | Windows authentication | | | | |
+| | | Service principal with Key | | | | |
+| | | Service principal with Cert | | | | |
+| [ODBC](connector-odbc-overview.md)               | ✓/✓                | Anonymous             | Support `credential`. | ✓/✓                   | Anonymous               | `credential` is not supported.<br><br>Support SQL statement. |
+| | | Basic | | | Basic | |
+| [REST](connector-rest-overview.md)               | ✓/✓                | Anonymous             | Support `enableServerCertificateValidation` and `authHeaders`. | ✓/✓                   | Anonymous               | `enableServerCertificateValidation` and `authHeaders` are not supported.<br><br>Support Token Audience Uri. |
+| | | Basic | | | Basic | |
+| | | Service principal | | | Service principal | |
+| | | OAuth 2.0 Client Credential | | | Organizational account | |
+| | | System-assigned managed identity | | | | |
+| | | User-assigned managed identity | | | | |
 
 ## Conclusion
 

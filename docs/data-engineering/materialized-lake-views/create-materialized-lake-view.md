@@ -3,7 +3,7 @@ title: Spark SQL Reference for Materialized Lake Views
 description: Learn about the Spark SQL syntax for activities related to materialized lake views in Microsoft Fabric.
 ms.topic: concept-article
 ms.reviewer: abhishjain
-ms.date: 02/27/2026
+ms.date: 03/18/2026
 #customer intent: As a data engineer, I want to understand the Spark SQL syntax for creating, listing, updating, and deleting materialized lake views in Microsoft Fabric so that I can manage them effectively.
 ---
 
@@ -164,4 +164,4 @@ The following limitations apply to the Spark SQL statements for materialized lak
 
 * [What are materialized lake views in Microsoft Fabric?](./overview-materialized-lake-view.md)
 * [Data quality in materialized lake views](./data-quality.md)
-* [Refresh materialized lake views in a lakehouse](./refresh-materialized-lake-view.md)
+* [Optimal refresh for materialized lake views](./refresh-materialized-lake-view.md)

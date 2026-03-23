@@ -1,8 +1,8 @@
 ---
-title: GQL Values and Value Types for Fabric Graph
-description: Learn about GQL values and value types in Fabric Graph, including literals, comparison rules, type conversions and the type system hierarchy.
+title: GQL Values and Value Types for graph in Microsoft Fabric
+description: Learn about GQL values and value types in graph in Microsoft Fabric, including literals, comparison rules, type conversions and the type system hierarchy.
 ms.topic: reference
-ms.date: 03/03/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -10,7 +10,7 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article provides a comprehensive reference for GQL values and value types in Fabric Graph.
+This article provides a comprehensive reference for GQL values and value types in graph in Microsoft Fabric.
 
 The GQL language supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
 
@@ -394,7 +394,7 @@ NULL NOT NULL
 List values are sequences of elements. Lists can contain elements of the same type and can include null values.
 
 > [!IMPORTANT]
-> Currently, lists in Graph can't contain elements of mixed types.
+> Currently, lists in graph can't contain elements of mixed types.
 
 **How comparison works:**
 

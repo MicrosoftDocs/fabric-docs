@@ -1,7 +1,7 @@
 ---
 title: Billing and capacity usage
 description: Learn how ontology (preview) capacity usage is billed and reported.
-ms.date: 03/02/2026
+ms.date: 03/20/2026
 ms.topic: concept-article
 ms.search.form: Ontology Billing
 ---
@@ -24,6 +24,7 @@ The following table defines how many capacity units (CU) are consumed when an on
 | Ontology Modeling | Ontology Modeling | Measures the usage of ontology definitions (including entity types, relationships, properties, data bindings, and rules). | Per ontology definition usage <br><br>*Usage is defined by intervals of at minimum 30 minutes, each time the API is triggered by CRUD operations to entity types, properties, relationship types, or bindings.* | 0.0039 CU per hour |
 | Ontology Logic and Operations​ | Ontology Logic and Operations​ | Measures the usage for ontology operations, including visualizations, logic, graph creation, ontology exploration, and querying and analyzing with query endpoints (including API and SQL endpoints) | Per min | 0.666667 CU per min <br><br>*This meter is not currently in effect. Ontology users are only billed for logic and operations according to their underlying [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.* |
 | Ontology AI | Ontology AI Operations | Measures the usage of AI for context driven reasoning and query over ontology | (Input) Per 1,000 Tokens <br><br>(Output) Per 1,000 Tokens | (Input) 400 CU seconds <br><br>(Output) 1,600 CU seconds <br><br>*This meter is visible in preview, but not billed. Ontology users are only billed for AI operations according to their underlying [Copilot in Fabric](../../fundamentals/copilot-fabric-consumption.md) usage.* |
+| OneLake Cache | Graph cache storage | Use of graph incurs [graph cache storage](../../graph/overview.md#pricing-and-capacity-units), which is billed at the same rate as [OneLake Cache](https://azure.microsoft.com/pricing/details/microsoft-fabric/). | [OneLake Cache usage per month](https://azure.microsoft.com/pricing/details/microsoft-fabric/) | *n/a* |
 
 ## Capacity usage examples
 
@@ -39,9 +40,9 @@ Now, say you trigger a second operation 15 minutes later. The total time calcula
 
 ### Ontology Logic and Operations​
 
-Ontology Logic and Operations usage is incurred when ontology is actively executing compute operations. Examples of operations that contribute to this meter are changing the properties on an entity that's undergone data binding, traversing the graph, querying data through the entity type overview tiles, refreshing the graph, or exploring the graph through use of the ontology API or SQL. Usage is measured only during active compute execution, and is billed in minutes of CPU uptime with a minimum of 15 minutes.
+Ontology Logic and Operations usage is incurred when ontology is actively executing compute operations. Examples of operations that contribute to this meter are changing the properties on an entity that's undergone data binding, traversing the graph, querying data through the entity type overview tiles, refreshing the graph, or exploring the graph through use of the ontology API or SQL. Usage is measured in minutes of CPU uptime. Each query session includes a 20-minute window after the last query.
 
-For example, say you run ontology exploration and workload queries for 15 minutes per hour, 8 hours a day. The calculated time for this meter is 15 minutes * 8 hours * 0.666667 CU/min (Fabric consumption rate of this operation) = 1.33 CU hours per day.
+For example, say you run ontology exploration and workload queries continuously for 2 hours (120 minutes) in a single session. The calculated time for this meter is 140 minutes (120 active minutes + 20-minute window) * 0.666667 CU/min (Fabric consumption rate of this operation) = 93.3 CU minutes (or 1.56 CU hours).
 
 *This meter is not currently in effect. Ontology users are only billed for logic and operations according to their underlying [Fabric Graph](../../graph/overview.md#pricing-and-capacity-units) usage.*
 
