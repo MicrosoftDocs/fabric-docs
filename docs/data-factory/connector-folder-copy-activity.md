@@ -125,7 +125,9 @@ The following properties are supported for Folder under the **Destination** tab 
 The following properties are **required**:
 
 - **Connection**: Select a Folder connection from the connection list. If no connection exists, then create a new Folder connection.
+
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
+
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format).
 
 The following properties are **optional**:
