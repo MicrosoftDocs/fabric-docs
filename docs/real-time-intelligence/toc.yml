@@ -248,7 +248,7 @@ items:
       - name: Eventstream Query Language Reference
         items:
           - name: Common query patterns 
-            href: /stream-analytics/stream-analytics-stream-analytics-query-patterns?context=/fabric/context/context-rti&pivots=fabric
+            href: /azure/stream-analytics/stream-analytics-stream-analytics-query-patterns?context=/fabric/context/context-rti&pivots=fabric
           - name: Built-in Functions
             items:
               - name: Built-in Functions Overview
