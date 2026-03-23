@@ -1,82 +1,99 @@
 ---
-title: VS Code extension overview
-description: Explore lakehouses, Fabric notebooks, Spark job definitions with the Fabric Data Engineering VS Code extension. Learn about the prerequisites and installation.
+title: Get started with the Fabric Data Engineering VS Code extension
+description: Install the Fabric Data Engineering VS Code extension, sign in, and choose a workspace to start authoring notebooks, managing environments, and running Spark jobs.
 ms.reviewer: qixwang
 ms.topic: overview
-ms.date: 10/27/2025
+ms.date: 03/23/2026
 ms.search.form: VSCodeExtension
+ai-usage: ai-assisted
 ---
 
-# What is the Fabric Data Engineering VS Code extension?
+# Get started with the Fabric Data Engineering VS Code extension
 
-The [Fabric Data Engineering VS Code extension](https://marketplace.visualstudio.com/items?itemName=SynapseVSCode.synapse) supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. 
+The [Fabric Data Engineering VS Code extension](https://marketplace.visualstudio.com/items?itemName=SynapseVSCode.synapse) brings Microsoft Fabric development into Visual Studio Code. With the extension you can author and run Fabric notebooks, create Spark job definitions, explore lakehouses, and manage Spark environments—all from your VS Code environment.
 
-In this article, you learn more about the extension, including how to get started with the necessary prerequisites.
+This article walks you through installing the extension, signing in, and selecting a workspace so you're ready to start developing.
 
-Visual Studio Code (VS Code) is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Fabric Data Engineering VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
+## What you can do with the extension
+
+The extension supports the following Fabric items and tasks:
+
+- **Workspaces** – Manage one or more Fabric workspaces directly in VS Code. For more information, see [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs.md).
+- **Notebooks** – Create, edit, and run Fabric notebooks locally and execute them on remote Spark compute. For more information, see [Create and manage Fabric notebooks in VS Code](author-notebook-with-vs-code.md) and [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs.md).
+- **Spark job definitions** – Create and manage Spark job definitions with full CRUD support. For more information, see [Create and manage Spark job definitions in VS Code](author-sjd-with-vs-code.md).
+- **Environments** – Explore and inspect Spark environments, including hardware profiles, libraries, and Spark configuration. For more information, see [Explore and inspect Spark environments with VS Code](manage-environment-with-vs-code.md) and [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md).
+- **Lakehouses** – Browse lakehouse tables and files, preview data, and copy paths for use in your code. For more information, see [Explore Fabric lakehouses in VS Code](explore-lakehouse-with-vs-code.md).
 
 ## Prerequisites
 
-Prerequisites for the VS Code extension:
-
 - Install [Visual Studio Code](https://code.visualstudio.com/Download).
 - Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) from the Visual Studio Code Marketplace.
+- Have a Fabric workspace. If you don't have one, see [Create a workspace](../fundamentals/create-workspaces.md).
 
-## Install the extension and prepare your environment
+## Install the extension
 
-1. Search for **Fabric Data Engineering VS Code** in the VS Code extension marketplace and install the extension.
+To install the Fabric Data Engineering VS Code extension:
 
-1. After the extension installation completes, restart VS Code. VS Code lists the icon for the extension at the activity bar.
+1. Open the **Extensions** view in VS Code (**Ctrl+Shift+X** on Windows/Linux, **Cmd+Shift+X** on macOS), search for **Fabric Data Engineering VS Code**, and select **Install**. You can also install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=SynapseVSCode.synapse).
 
-### Access the command palette
+1. After the installation completes, you might need to restart VS Code. The extension icon appears in the activity bar.
+
+## Access the command palette
 
 You can access many of the extension's features through the VS Code command palette. To open the command palette:
 
 - On Windows/Linux: Press **Ctrl+Shift+P**
 - On macOS: Press **Cmd+Shift+P**
 
-Alternatively, you can access it from the menu by selecting **View** > **Command Palette**.
+Once the command palette opens, enter "Fabric Data Engineering" (in full or in part) to filter the available commands. 
 
-Once the command palette opens, start typing the command name (for example, "Fabric Data Engineering") to filter and find the commands the extension provides.
+## Sign in to your account
 
-### Local working directory
+1. From the VS Code command palette, enter the `Fabric Data Engineering: Sign In` command. 
 
-To edit a notebook, you must have a local copy of the notebook content. The local working directory of the extension serves as the local root folder for all downloaded notebooks, even notebooks from different workspaces. By invoking the command `Fabric Data Engineering: Set Local Work Folder`, you can specify a folder as the local working directory for the extension.
+   :::image type="content" source="media\vscode\command-palette-sign-in.png" alt-text="Screenshot of the VS Code command palette, showing the Fabric Data Engineering: Sign In command." lightbox="media\vscode\command-palette-sign-in.png":::
 
-To validate the setup, open the extension settings and check the details there:
+1. A browser window opens. Select the account you want to use for your Fabric workspaces and complete the authentication.
 
-:::image type="content" source="media\vscode\local-working-dir.png" alt-text="Screenshot of the Settings screen, showing the selected local working directory." lightbox="media/vscode/local-working-dir.png":::
+1. After you authenticate, the VS Code status bar at the bottom displays your account name. 
 
-### Sign in and out of your account
+    > [!NOTE]
+    > If your account has access to multiple tenants, one is selected automatically. You can see which tenant you're signed in to and switch tenants by selecting the account name in the status bar.
 
-1. From the VS Code command palette, enter the `Fabric Data Engineering: Sign In` command to sign in to the extension. A separate browser sign-in page appears.
+To sign out later, enter the command `Fabric Data Engineering: Sign Out` from the command palette.
 
-1. Enter your username and password.
+## Choose a workspace
 
-1. After you successfully sign in, the VS Code status bar displays your username to indicate that you're signed in.
+After you sign in, connect to a Fabric workspace so you can start working with its items. The extension supports two authoring modes, and each has a different way to connect to a workspace.
 
-   :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot of the VS Code status bar, showing where to find your sign-in status." lightbox="media/vscode/signin-status.png":::
+### Local mode
 
-1. To sign out of the extension, enter the command `Fabric Data Engineering: Sign Out`.
+In local mode, you download notebooks and other items to a local working directory, edit them locally, and sync changes back to your Fabric workspace.
 
-### Choose a workspace to work with
+1. Select the **Fabric Data Engineering** icon in the activity bar to open the extension's side bar.
 
-To select a Fabric workspace:
+1. Select **Select Workspace**, or select the **Switch Workspace** icon (the arrows icon). A list of all workspaces you have access to appears; select the one you want.
 
-1. You must have a workspace created. If you don't have one, you can create one in the Fabric portal. For more information, see [Create a workspace](../fundamentals/create-workspaces.md).
+    :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option." lightbox="media\vscode\select-workspace.png":::
 
-1. Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
+    To switch to a different workspace later, select the **Switch Workspace** icon at any time.
 
-    :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option." lightbox="media/vscode/select-workspace.png":::
+After you select a workspace, you can browse its items in the side bar. When you want to edit an item such as a notebook, you download it to a local folder on your machine. To choose where downloaded items are stored, run `Fabric Data Engineering: Set Local Work Folder` from the command palette.
 
-### Current Limitations
+### VFS mode
 
-- The extension doesn't support shell commands that start with "!".
+In VFS (Virtual File System) mode, you open and edit workspace items directly as remote files, without downloading them. VFS mode also lets you add multiple Fabric workspaces to a single VS Code window and work across them side by side.
+
+To enter VFS mode, select the **Open a Remote Window** button in VS Code, then select **Open Fabric Data Engineering Workspaces**. For the full setup steps, see [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs.md).
 
 ## Related content
 
-Now you have a basic understanding of how to install and set up the Fabric Data Engineering VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
-
-- To get started with notebooks, see [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md).
-- To use AI-assisted notebook authoring, see [Develop Microsoft Fabric notebooks with the Fabric Notebook custom agent in Visual Studio Code](notebook-custom-agent-with-vs-code.md).
-- To get started with Spark job definitions, see [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md).
+- [Create and manage Fabric notebooks in VS Code](author-notebook-with-vs-code.md)
+- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs.md)
+- [Explore and inspect Spark environments with VS Code](manage-environment-with-vs-code.md)
+- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md)
+- [Create and manage Spark job definitions in VS Code](author-sjd-with-vs-code.md)
+- [Explore Fabric lakehouses in VS Code](explore-lakehouse-with-vs-code.md)
+- [Access and manage notebook resources in VS Code](author-notebook-resource-with-vs-code.md)
+- [Develop notebooks with the Fabric Notebook custom agent](notebook-custom-agent-with-vs-code.md)
+- [Use Docker containers with the VS Code extension](set-up-vs-code-extension-with-docker-image.md)

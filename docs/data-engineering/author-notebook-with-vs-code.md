@@ -1,26 +1,27 @@
 ---
-title: Develop, execute, and debug notebook in VS Code
-description: Learn about the VS Code extension for Synapse, which supports a pro-developer authoring experience, including running and debugging notebooks.
+title: Create and manage Fabric notebooks in VS Code
+description: Create, edit, sync, and run Fabric notebooks in VS Code using the Fabric Data Engineering extension in local mode.
 ms.reviewer: qixwang
-ms.topic: overview
-ms.date: 09/21/2025
+ms.topic: how-to
+ms.date: 03/23/2026
 ms.search.form: VSCodeExtension
+ai-usage: ai-assisted
 ---
 
-# Create and manage Microsoft Fabric notebooks in Visual Studio Code
+# Create and manage Fabric notebooks in VS Code
 
-The Fabric Data Engineering Visual Studio (VS) Code extension fully supports the create, read, update, and delete (CRUD) notebook operations in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
+The Fabric Data Engineering VS Code extension fully supports create, read, update, and delete (CRUD) notebook operations in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
 
-With this extension, you can also run notebooks onto the remote Apache Spark compute for Fabric.
+With this extension, you can also run notebooks on the remote Apache Spark compute for Fabric.
 
 ## Open a notebook with the Data Engineering extension
 
-By clicking the **Open in VS Code** button in the notebook authoring page in the Fabric portal, you can directly open the same notebook with the Data Engineering VS Code extension for Fabric. After you activate the extension in VS Code and open the notebook once, your workspace should automatically connect to the notebook.
+Select the **Open in VS Code** button on the notebook authoring page in the Fabric portal to open the notebook with the Fabric Data Engineering VS Code extension. After you activate the extension and open the notebook, your workspace automatically connects.
 
 :::image type="content" source="media\vscode\open-notebook-in-vs-code.png" alt-text="Screenshot showing how to open a notebook in VS Code." lightbox="media\vscode\open-notebook-in-vs-code.png":::
 
 > [!TIP]
-> Be sure to install the Fabric Data Engineering VS Code extension first. For more information, see [Install the Fabric Data Engineering VS Code extension](setup-vs-code-extension.md#install-the-extension-and-prepare-your-environment). After the extension is publicly released, the installation is automated.
+> Be sure to install the Fabric Data Engineering VS Code extension first. For more information, see [Install the Fabric Data Engineering VS Code extension](setup-vs-code-extension.md#install-the-extension). After the extension is publicly released, the installation is automated.
 
 ## View the list of notebooks
 
@@ -111,12 +112,17 @@ To update your local version with the latest workspace version, you pull the rem
 
 ## Run or debug a notebook on remote Spark compute
 
-By selecting the kernel **synapse-spark-kernel** shipped with this extension, you can run the code cell on top of the remote Spark compute. Once you select this kernel, the extension intercepts all the PySpark API calls during runtime and translates them to the corresponding http call to the remote Spark compute. Python code is still executed in the local environment.
+Select the kernel **Microsoft Fabric Runtime** to run code cells on the remote Spark compute.
 
-:::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing where to run a notebook." lightbox="media\vscode\run-notebook.png":::
+:::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing how to select kernel to run notebook in VS Code." lightbox="media\vscode\fabric-runtime-kernel.png":::
+
+Following are the languages supported:
+- PySpark
+- Spark SQL
+- Scala
+- Python
 
 ## Related content
 
-- [Develop Microsoft Fabric notebooks with the Fabric Notebook custom agent in Visual Studio Code](notebook-custom-agent-with-vs-code.md)
 - [Create and manage Apache Spark job definitions in Visual Studio Code](author-sjd-with-vs-code.md)
 - [Explore Microsoft Fabric lakehouses in Visual Studio Code](explore-lakehouse-with-vs-code.md)
