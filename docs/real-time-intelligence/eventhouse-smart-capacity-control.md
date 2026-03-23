@@ -16,9 +16,11 @@ ms.search.form: Eventhouse
 
 Real-time analytics workloads often follow predictable patterns. You might see heavy ingestion during business hours, lighter query traffic overnight, quiet weekends, and short but critical pipeline windows. You can customize a minimum capacity schedule that aligns with your workload patterns.
 
+## Smart control for real-world workloads
+
 A customized schedule prevents using a single minimum capacity value for the entire week, paying for guaranteed resources when they're not needed, or risking performance during peak hours.
 
-The Capacity Planner scheduler supports common real-world patterns, including:
+The capacity planner scheduler supports common real-world patterns, including:
 
 * Guaranteed ingestion during ETL or streaming windows.
 * High query concurrency during business hours.
