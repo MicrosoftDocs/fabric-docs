@@ -83,38 +83,6 @@ To mirror all the tables from the source database:
 }
 ```
 
-## Enable delta change data feed for a mirrored database
-
-[Delta change data feed](extended-capabilities.md#delta-change-data-feed-preview) is enabled per mirrored database. To enable, follow these steps:
-
-1. Use [Get mirrored database definition API](#get-mirrored-database-definition) to retrieve the current definition.
-1. Add the `enableDeltaChangeDataFeed` sink property.
-1. Use [Update mirrored database definition API](#update-mirrored-database-definition) to update the definition.
-
-Example:
-
-```json
-{
-    "properties": {
-        "source": {
-            "type": "<your source type>",
-            "typeProperties": {
-                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
-                "database": "xxxx"
-            }
-        },
-        "target": {
-            "type": "MountedRelationalDatabase",
-            "typeProperties": {
-                "defaultSchema": "xxxx",
-                "enableDeltaChangeDataFeed": true,
-                "format": "Delta"
-            }
-        }
-    }
-}
-```
-
 ### JSON definition example of replicating specified tables
 
 To mirror selective tables from the source database, you can specify the `mountedTables` property as in the following example.
@@ -160,6 +128,38 @@ Response 201:
     "description": "A mirrored database description", 
     "workspaceId": "<your workspace ID>" 
 } 
+```
+
+## Enable delta change data feed for a mirrored database
+
+[Delta change data feed](extended-capabilities.md#delta-change-data-feed-preview) is enabled per mirrored database. To enable, follow these steps:
+
+1. Use [Get mirrored database definition API](#get-mirrored-database-definition) to retrieve the current definition.
+1. Add the `enableDeltaChangeDataFeed` sink property.
+1. Use [Update mirrored database definition API](#update-mirrored-database-definition) to update the definition.
+
+Example:
+
+```json
+{
+    "properties": {
+        "source": {
+            "type": "<your source type>",
+            "typeProperties": {
+                "connection": "a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1",
+                "database": "xxxx"
+            }
+        },
+        "target": {
+            "type": "MountedRelationalDatabase",
+            "typeProperties": {
+                "defaultSchema": "xxxx",
+                "enableDeltaChangeDataFeed": true,
+                "format": "Delta"
+            }
+        }
+    }
+}
 ```
 
 ## Delete mirrored database
