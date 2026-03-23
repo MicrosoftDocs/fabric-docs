@@ -360,6 +360,8 @@
                 href: connector-folder-overview.md
               - name: Set up your connection
                 href: connector-folder.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-folder-copy-activity.md
           - name: Format
             items: 
               - name: Avro
