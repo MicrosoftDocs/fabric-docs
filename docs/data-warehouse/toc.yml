@@ -98,6 +98,8 @@ items:
     href: source-control.md
 - name: Develop
   items:
+  - name: AI functions
+    href: ai-functions.md
   - name: Query labels
     href: query-label.md
   - name: Transactions
