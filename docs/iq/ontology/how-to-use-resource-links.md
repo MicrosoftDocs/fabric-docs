@@ -35,7 +35,7 @@ To add a link to an existing Power BI report on an entity type, follow these ste
 
 1. If there are no resources linked yet, the **Resource links** tab is empty with a button to **Add resource link**. If you have existing resource links, they appear in a list.
 
-    :::image type="content" source="media/how-to-use-resource-links/resource-links.png" alt-text="Screenshot of the resource links tab with reports.":::
+    :::image type="content" source="media/how-to-use-resource-links/resource-links.png" alt-text="Screenshot of the resource links tab with linked resources.":::
 
 1. To add a resource link, select the **+** button (if some resources are linked already) or the **Add resource link** button (if no resources are linked yet).
 
@@ -43,21 +43,21 @@ To add a link to an existing Power BI report on an entity type, follow these ste
 
 1. Fabric opens your OneLake catalog of resources. Choose the Power BI report you want to link to the entity type, and select **Connect**.
 
-1. Verify that the new report appears in the list of linked reports on the **Resource links** tab.
+1. Verify that the new report appears in the list of linked resources on the **Resource links** tab.
 
 ## View resource links
 
-You can view reports linked to an entity type from the following locations.
+You can view resources linked to an entity type from the following locations.
 
 ### Resource links tab
 
-To view a list of linked reports by entity, open the entity type configuration in the contextual canvas and select the **Resource links** tab.
+To view a list of linked resources by entity, open the entity type configuration in the contextual canvas and select the **Resource links** tab.
 
-:::image type="content" source="media/how-to-use-resource-links/resource-links.png" alt-text="Screenshot of the Resource links tab with reports.":::
+:::image type="content" source="media/how-to-use-resource-links/resource-links.png" alt-text="Screenshot of the Resource links tab with resources.":::
 
 ### Entity type overview
 
-Linked reports are also visible in the **Entity type overview** experience. 
+Linked resources are also visible in the **Entity type overview** experience. 
 
 1. To open the entity type overview, select the entity type from the **Entity Types** pane and select **Entity type overview** from the menu ribbon.
 
@@ -67,7 +67,7 @@ Linked reports are also visible in the **Entity type overview** experience.
 
     :::image type="content" source="media/how-to-use-resource-links/resource-links-tile.png" alt-text="Screenshot of the Resource links tile.":::
 
-1. You can open the reports directly from the tile by selecting their names. Reports open inside Fabric in a new tab.
+1. You can open the resources directly from the tile by selecting their names. Reports open inside Fabric in a new tab.
 
 ## Manage the Resource links tile
 
@@ -85,7 +85,7 @@ You might also see these messages on the tile creation step:
 * If a tile already exists, you see this message: *A Resource links tile already exists on this overview*.
 
     :::image type="content" source="media/how-to-use-resource-links/tile-already-exists.png" alt-text="Screenshot of the message when a Resource links tile already exists.":::
-* If there are no linked reports on the entity type, you see this message: *No links to display*, with a link to the entity type configuration.
+* If there are no linked resources on the entity type, you see this message: *No links to display*, with a link to the entity type configuration.
 
     :::image type="content" source="media/how-to-use-resource-links/no-links-tile.png" alt-text="Screenshot of the empty link tile configuration.":::
 
