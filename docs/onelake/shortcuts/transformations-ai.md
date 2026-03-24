@@ -6,7 +6,7 @@ ms.topic:    how-to
 ms.date:     07/16/2025
 ---
 
-# Transform unstructured text files into Delta tables by using AI-powered tools
+# Transform unstructured text files into Delta tables by using AI-powered tools (preview)
 
 Use AI-powered shortcut transformations to extract insights from unstructured text files. AI-powered transformations apply language processing to `.txt` files to summarize content, detect sentiment, translate languages, redact PII, or extract named entities.
 
