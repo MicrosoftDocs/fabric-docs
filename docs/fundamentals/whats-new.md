@@ -3,7 +3,7 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 03/18/2026
+ms.date: 03/23/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -37,6 +37,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 
 | **Feature** | **Learn more** |
 |:-- |:-- |
+|**AI functions in Fabric Data Warehouse (preview)**| Fabric Data Warehouse now brings AI directly into T‑SQL, enabling you to categorize and classify text, analyze sentiment, extract structured information, translate text across languages, and even correct grammar—all using built‑in AI functions. To get started, see [Use AI functions in Fabric Data Warehouse (preview)](../data-warehouse/ai-functions.md).|
 |**Access your Delta Lake tables as Apache Iceberg in OneLake (Preview)**|[OneLake now lets you access your Delta Lake tables using Apache Iceberg compatible readers](https://blog.fabric.microsoft.com/blog/new-in-onelake-access-your-delta-lake-tables-as-iceberg-automatically?ft=All), automatically, without data movement or duplication. To get started, see [Use Iceberg tables with OneLake](../onelake/onelake-iceberg-tables.md#virtualize-delta-lake-tables-as-iceberg).|
 |**Advanced edit for data destination queries in Dataflow Gen2 (Preview)**|You can now use [advanced edit for data destination queries in Dataflow Gen2](../data-factory/dataflow-gen2-advanced-edit-data-destinations.md) to modify destination-side query logic directly in authoring.|
 | **ALTER DATABASE SET options in SQL database** | `ALTER DATABASE SET` options in SQL database are now available as a preview feature. For more information, see [ALTER DATABASE SET options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric-sqldb&preserve-view=true) for SQL database in Fabric. Full text indexing is also now available in SQL database as a preview feature.|
@@ -158,6 +159,7 @@ The following table lists the features of Microsoft Fabric that recently transit
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|March 2026| `ANY_VALUE` aggregate function| Fabric Data Warehouse introduces the `ANY_VALUE` aggregate function, which lets you return a representative value from each group without requiring it to be part of the GROUP BY clause. This is especially useful when grouped rows share the same logical value or when an exact choice isn’t important, helping simplify queries, reduce boilerplate aggregation logic, and improve query readability. For more information, see [ANY_VALUE (Transact-SQL) function](/sql/t-sql/functions/any-value-transact-sql?view=fabric&preserve-view=true).|
 |March 2026|**Fabric Maps in Real-Time Intelligence (Generally Available)**|Microsoft Fabric Maps let you visualize real-time and historical location data in Microsoft Fabric, helping you monitor live events, analyze spatial patterns, and understand geographic context alongside time-based insights. For more information, see [What is Fabric Maps?](../real-time-intelligence/map/about-fabric-maps.md)|
 |March 2026|**Mirroring from SAP databases (Generally Available)**|You can continuously replicate your SAP data directly into Fabric's OneLake. Once in Fabric, you can take advantage of powerful capabilities for business intelligence, AI, data engineering, data science, and data sharing. For more information, see [Mirroring SAP](../mirroring/sap.md).|
 |March 2026|**Preview-only steps for Dataflow Gen2 (Generally Available)**| Preview-only steps are transformation steps in Dataflow Gen2 that run only during the authoring phase for the data preview. They're excluded from run operations, ensuring they don't affect runtime behavior or production logic. For more information, see [preview-only step in Dataflow Gen2](../data-factory/dataflow-gen2-preview-only-step.md).|
@@ -412,6 +414,8 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|March 2026|**Built-in AI functions (preview)**| Fabric Data Warehouse now brings AI directly into T‑SQL, enabling you to categorize and classify text, analyze sentiment, extract structured information, translate text across languages, and even correct grammar—all using built‑in AI functions. To get started, see [Use AI functions in Fabric Data Warehouse (preview)](../data-warehouse/ai-functions.md).|
+|March 2026|**ANY_VALUE**| Fabric Data Warehouse introduces the ANY_VALUE aggregate function, which lets you return a representative value from each group without requiring it to be part of the GROUP BY clause. This is especially useful when grouped rows share the same logical value or when an exact choice isn't important, helping simplify queries, reduce boilerplate aggregation logic, and improve query readability. For more information, see [ANY_VALUE (Transact-SQL) function](/sql/t-sql/functions/any-value-transact-sql?view=fabric&preserve-view=true).|
 |March 2026|**Outbound Access Protection (OAP) for Warehouse (Generally Available)**|[Outbound Access Protection (OAP) support for Warehouse (Generally Available)](https://blog.fabric.microsoft.com/blog/fabric-march-2026-feature-summary/#post-34196-_Toc224559641) provides stronger data exfiltration protection for enterprise environments, with connector rules that allow you to control external sources including specific Azure Data Lake Storage Gen2 accounts, other Fabric workspaces, and approved external connectors. For more information, see [Workspace outbound access protection for data warehouse workloads](../security/workspace-outbound-access-protection-data-warehouse.md).|
 |March 2026|**Warehouse SQL Audit Logs (Generally Available)**|[SQL Audit Logs](../data-warehouse/sql-audit-logs.md) in Fabric Data Warehouse and SQL analytics endpoints provide a comprehensive and immutable record of all database activities. They capture critical details such as the event timestamp, the user or process that triggered the action, and the executed T-SQL statements. To get started, see [How to configure SQL audit logs](../data-warehouse/configure-sql-audit-logs.md).|
 |March 2026|**OneLake as a source for COPY INTO and OPENROWSET (Generally Available)**|The `COPY INTO` and `OPENROWSET` T-SQL statements can read directly from OneLake paths in Fabric Data Warehouse, enabling SQL-based data ingestion and ad hoc querying from Lakehouse folders without external storage or complex setup. For more information, see [Ingest data into the Warehouse](../data-warehouse/ingest-data.md).|
