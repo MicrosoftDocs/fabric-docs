@@ -48,7 +48,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Partition option**: Specifies the data partitioning options used to load data from SAP HANA. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from SAP HANA is controlled by the **Degree of copy parallelism** setting on the copy activity. The allowed values are:
     - **None** (default): No partitioning.
-    - **Physical partitions of table**: The service automatically detects the physical partition type of the specified SAP HANA table and chooses the corresponding partition strategy. For more information, go to [Parallel copy from SAP HANA](#parallel-copy-from-sap-hana) section. This option is not avaliable when you use query to read table.
+    - **Physical partitions of table**: The service automatically detects the physical partition type of the specified SAP HANA table and chooses the corresponding partition strategy. For more information, go to [Parallel copy from SAP HANA](#parallel-copy-from-sap-hana) section. This option is not available when you use query to read table.
     - **Dynamic range**: When using a query to retrieve the source data, hook `?AdfHanaDynamicRangePartitionCondition` in the WHERE clause. For more information, see the [Parallel copy from SAP HANA](#parallel-copy-from-sap-hana) section.
         - **Partition column name**: Specify the name of the source column that is used by partition for parallel copy. If not specified, the index or the primary key of the table is detected automatically and used as the partition column.
 
