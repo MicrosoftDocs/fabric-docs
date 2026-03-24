@@ -16,7 +16,7 @@ This article outlines a few distinct integration options, but many organizations
 ## Development process
 The Fabric workspace is a *shared runtime environment* for all items, and each workspace can thus be connected to a **single branch**. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to have a *seperate runtime environment* - **a different workspace**. There are two ways for a developer to work in their own protected workspace.
 
-- [Branch out to a separate Fabric workspace](./branched-workspace.md). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
+- [Develop using branched workspace](./branched-workspace.md). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 - [Develop using client tools](./client-tool.md), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and semantic models, or [VS Code](https://code.visualstudio.com/) for Notebooks.
 
 ## Related content

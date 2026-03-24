@@ -6,7 +6,7 @@ ms.topic: concept-article
 ms.date: 03/21/2026
 ---
 
-# Development process using Branch-Out experience
+# Development process using branched Workspace
 For Fabric developers, the branch‑out experience creates a new branch based on the latest commit of the source workspace’s connected branch, allowing users to either create a new workspace connected to the newly created branch or target an existing workspace by replacing the branch connected to it.
 
 By default, when a branch‑out operation completes, all items from the source branch are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace to allow faster time to code experience.
@@ -85,3 +85,19 @@ To switch between branches, follow these steps:
 You can't switch branches if you have any uncommitted changes in the workspace. Select **Cancel** to go back and commit your changes before switching branches.
 
 To connect the current workspace to a new branch while keeping the existing workspace status, select **Checkout new branch**. Learn more about checking out a new branch at [Resolve conflicts in Git](./conflict-resolution.md#resolve-conflict-in-git).
+
+### Branching out limitations
+
+- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
+- There must be an available capacity for this action.
+- All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
+- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
+- The related branches list only shows branches and workspaces you have permission to view.
+- [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
+- When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
+- When branching out to an existing workspace:
+  - The target workspace must support a Git connection.
+  - The user must be an admin of the target workspace.
+  - The target workspace must have capacity.
+  - The workspace can't have template apps.
+- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](./git-integration-process#commit-to-git) any items you want to keep before branching out.**
