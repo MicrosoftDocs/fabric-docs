@@ -15,7 +15,7 @@ The Change Event Streaming (CES) feature is a new, advanced data integration cap
 
 This tutorial shows you how to stream the SQL change events from Azure SQL Database to a custom endpoint in Fabric Eventstream using the Change Event Streaming (CES) feature. And then extract the SQL table data from change events through Eventstream’s SQL operator.
 
-In this tutorial, you will learn how to:
+In this tutorial, you learn how to:
 
 > [!div class="checklist"]
 >
@@ -27,7 +27,7 @@ In this tutorial, you will learn how to:
 ## Prerequisites
 
 - Get access to a workspace with Contributor or higher permissions where your eventstream is located. If using Microsoft Entra authentication, Member or higher permissions are required to grant Entra ID Contributor or higher access.
-- A login in the [db_owner](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver17) role or that has [CONTROL DATABASE](/sql/relational-databases/security/permissions-database-engine?) permission for the Azure SQL database where you intend to enable CES.
+- A sign-in in the [db_owner](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver17) role or that has [CONTROL DATABASE](/sql/relational-databases/security/permissions-database-engine?) permission for the Azure SQL database where you intend to enable CES.
 - For Azure SQL Database configured to use [outbound firewall rules](/azure/azure-sql/database/outbound-firewall-rule-overview) or a [Network Security Perimeter](/azure/azure-sql/database/network-security-perimeter), allow access to the Eventstream’s source custom endpoint through [Firewall ports to open](/azure/event-hubs/event-hubs-faq)
 
 ## Create an eventstream
@@ -37,11 +37,11 @@ In this tutorial, you will learn how to:
 1. On the **My workspace** page, select **+ New item** on the command bar.
 1. On the **New item** page, search for **Eventstream**, and then select **Eventstream**.
 
-    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/select-eventstream.png" alt-text="Screenshot that shows where to select the Eventstream." lightbox="./media/stream-sql-change-events-to-eventstream/select-eventstream.png" :::
+    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/select-eventstream-item.png" alt-text="Screenshot that shows where to select the Eventstream." lightbox="./media/stream-sql-change-events-to-eventstream/select-eventstream-item.png" :::
 
 1. In the **New Eventstream** window, enter a **name** for the eventstream, and then select **Create**.
 
-    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/create-eventstream.png" alt-text="Screenshot that shows where to create an eventstream." lightbox="./media/stream-sql-change-events-to-eventstream/create-eventstream.png" :::
+    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/create-eventstream-item.png" alt-text="Screenshot that shows where to create an eventstream." lightbox="./media/stream-sql-change-events-to-eventstream/create-eventstream-item.png" :::
 
 1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream.
 
@@ -84,9 +84,9 @@ There are two protocols that the change event streaming supports to stream the c
 - AMQP protocol
 - Kafka protocol
 
-Both approaches require completing these steps, but with different parameters. And both ways support three authentication types: **Microsoft Entra**, **SAS token** and **SAS key**. You can select whichever protocol and authentication type best suits your needs. In the example below, we will use **AMQP protocol** and **Microsoft Entra and SAS token** authentication to walk through these steps. For other protocol and the authentication method, please refer to [Configure Change Event Streaming](/sql/relational-databases/track-changes/change-event-streaming/configure)
+Both approaches require completing these steps, but with different parameters. And both ways support three authentication types: **Microsoft Entra**, **SAS token**, and **SAS key**. You can select whichever protocol and authentication type best suits your needs. In the following example, we use **AMQP protocol** and **Microsoft Entra and SAS token** authentication to walk through these steps. For other protocol and the authentication method, refer to [Configure Change Event Streaming](/sql/relational-databases/track-changes/change-event-streaming/configure)
 
-### 1. Set the database to [full recovery model](/sql/relational-databases/backup-restore/recovery-models-sql-server) if it is not already configured:
+### 1. Set the database to [full recovery model](/sql/relational-databases/backup-restore/recovery-models-sql-server) if it isn't already configured:
 
 ```sql
 -- set the recovery mode as FULL
@@ -116,17 +116,17 @@ CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<Password>';
 EXEC sys.sp_enable_event_stream;
 ```
 
-### 4. Create the event stream group:
+### 4. Create the event streaming group:
 
-To create the event stream group, you need to decide which authentication is used. There are two recommended authentication types: **Microsoft Entra** and **SAS token**. To create the change event stream group in SQL database using the AMQP protocol, use the key information from Eventstream’s source custom endpoint for setup and configuration.
+To create the event streaming group, you need to decide which authentication is used. There are two recommended authentication types: **Microsoft Entra** and **SAS token**. To create the change event stream group in SQL database using the AMQP protocol, use the key information from Eventstream’s source custom endpoint for setup and configuration.
 
 - `<EventHubNamespaceEndpoint>` and `<EventHubName>`
 
-    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/event-hub-name.png" alt-text="Screenshot that shows how to get the Event Hub name." lightbox="./media/stream-sql-change-events-to-eventstream/event-hub-name.png" :::
+    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/event-hub-name.png" alt-text="Screenshot that shows how to get the event hub name." lightbox="./media/stream-sql-change-events-to-eventstream/event-hub-name.png" :::
 
 - `<SharedAccessKeyName>` and `<PrimaryOrSecondaryKey>`
 
-    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/primary-key.png" alt-text="Screenshot that shows how to get the Event Hub primary key." lightbox="./media/stream-sql-change-events-to-eventstream/primary-key.png" :::
+    :::image type="content" source="./media/stream-sql-change-events-to-eventstream/primary-key.png" alt-text="Screenshot that shows how to get the event hub primary key." lightbox="./media/stream-sql-change-events-to-eventstream/primary-key.png" :::
 
 #### Microsoft Entra
 
@@ -140,7 +140,7 @@ This is the most secure authentication and is highly recommended. Follow these s
 
     :::image type="content" source="./media/stream-sql-change-events-to-eventstream/search-identity.png" alt-text="Screenshot that shows how to search Identity." lightbox="./media/stream-sql-change-events-to-eventstream/search-identity.png" :::
 
-1. Login to your Azure SQL database and run the following SQL commands. Replace any values in <> with those specific to your eventstream and SQL environment.
+1. Sign in to your Azure SQL database and run the following SQL commands. Replace any values in <> with those specific to your eventstream and SQL environment.
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL <CredentialName>
@@ -178,7 +178,7 @@ $SASToken = "SharedAccessSignature sr=" + [System.Web.HttpUtility]::UrlEncode($U
 $SASToken
 ```
 
-1. Login to your Azure SQL database and run the following SQL commands. Replace any values in <> with those specific to your eventstream and SQL environment
+1. Sign in to your Azure SQL database and run the following SQL commands. Replace any values in <> with those specific to your eventstream and SQL environment
 
 ```sql
 CREATE DATABASE SCOPED CREDENTIAL <CredentialName>
@@ -195,7 +195,7 @@ EXEC sys.sp_create_event_stream_group
     @encoding = N'JSON'
 ```
 
-### 5. Add one or more tables to the event stream group
+### 5. Add one or more tables to the event streaming group
 
 ```sql
 -- add table into the stream group created above
@@ -204,15 +204,15 @@ EXEC sys.sp_add_object_to_event_stream_group
 @object_name = N'<SchemaName>.<TableName>'
 ```
 
-After get the change event streaming configured in your Azure SQL database with these steps above, you can proceed to make modifications to your database. To confirm these changes flow into Eventstream, navigate to Eventstream and select the default stream node (the middle node). For example, new records were added to the table, or existing records were deleted, as demonstrated below:
+After getting the change event streaming configured in your Azure SQL database with these steps above, you can proceed to make modifications to your database. To confirm these changes flow into Eventstream, navigate to Eventstream and select the default stream node (the middle node). For example, new records were added to the table, or existing records were deleted, as demonstrated below:
 
 :::image type="content" source="./media/stream-sql-change-events-to-eventstream/live-view.png" alt-text="Screenshot that shows the eventstream live view." lightbox="./media/stream-sql-change-events-to-eventstream/live-view.png" :::
 
 ## Extract table data from change events with SQL operator
 
-To extract SQL table data from change events, it's important to understand both the event format and the data types for each column. SQL change events adhere to the [CloudEvents](https://github.com/cloudevents/spec) specification. The actual table data is contained in the 'data' column, while the 'operation' column specifies whether the record has been inserted, updated, or deleted. For further details, see [JSON Message format](/sql/relational-databases/track-changes/change-event-streaming/message-format).
+To extract SQL table data from change events, it's important to understand both the event format and the data types for each column. SQL change events adhere to the [CloudEvents](https://github.com/cloudevents/spec) specification. The actual table data is contained in the 'data' column, while the 'operation' column specifies whether the record has been inserted, updated, or deleted. For more information, see [JSON Message format](/sql/relational-databases/track-changes/change-event-streaming/message-format).
 
-The following example demonstrates how to extract purchase order data from the SQL table 'Purchases' by processing change events within Eventstream. This extracted data can then be leveraged to analyze new order information.
+The following example demonstrates how to extract purchase order data from the SQL table 'Purchases' by processing change events within Eventstream. This extracted data can then be used to analyze new order information.
 
 ```sql
 EXEC sp_help 'dbo.Purchases';
@@ -220,11 +220,11 @@ EXEC sp_help 'dbo.Purchases';
 
 :::image type="content" source="./media/stream-sql-change-events-to-eventstream/order-information.png" alt-text="Screenshot that shows result of leverage." lightbox="./media/stream-sql-change-events-to-eventstream/order-information.png" :::
 
-1. According to the change event format described in [JSON Message format](/sql/relational-databases/track-changes/change-event-streaming/message-format), the table data in change event is under “eventrow” node in the column of ‘data’, and its type is ‘string’ following JSON format, i.e., JSON string which can be parsed as JSON. SQL operator in Eventstream has a built-in function: json_parse(_string_) which can parse the JSON string into JSON object. See the screenshot of the data column example below.
+1. According to the change event format described in [JSON Message format](/sql/relational-databases/track-changes/change-event-streaming/message-format), the table data in change event is under “eventrow” node in the column of ‘data’, and its type is ‘string’ following JSON format, that is, JSON string, which can be parsed as JSON. SQL operator in Eventstream has a built-in function: json_parse(_string_) which can parse the JSON string into JSON object. See the screenshot of the data column example below.
 
     :::image type="content" source="./media/stream-sql-change-events-to-eventstream/column-example.png" alt-text="Screenshot that shows the data column example." lightbox="./media/stream-sql-change-events-to-eventstream/column-example.png" :::
 
-1. Since only the data of new orders is needed, only the change events with ‘Insert’ operation should be included, i.e., the ‘operation’ column with ‘INS’: ‘operation’ = ‘INS’.
+1. Since only the data of new orders is needed, only the change events with ‘Insert’ operation should be included, that is, the ‘operation’ column with ‘INS’: ‘operation’ = ‘INS’.
 
 In your eventstream’s edit mode, add a ‘**SQL operator**’ to extract the data and a derived stream to receive the extracted data.
 
