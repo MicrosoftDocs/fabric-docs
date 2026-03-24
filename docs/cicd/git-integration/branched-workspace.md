@@ -88,16 +88,16 @@ To connect the current workspace to a new branch while keeping the existing work
 
 ### Branching out limitations
 
-- Branch out requires permissions listed in [permissions table](/fabric/cicd/git-integration/git-integration-process#fabric-permissions-needed-for-common-operations).
+- Branch out requires permissions listed in [permissions table](./git-integration-process#fabric-permissions-needed-for-common-operations).
 - There must be an available capacity for this action.
-- All [workspace](#workspace-limitations) and [branch naming limitations](#branch-and-folder-limitations) apply when branching out to a new workspace.
-- Only [Git supported items](/fabric/cicd/git-integration/intro-to-git-integration#supported-items) are available in the new workspace.
+- All [workspace](./git-integration-process.md#workspace-limitations) and [branch naming limitations](./git-integration-process.md#branch-and-folder-limitations) apply when branching out to a new workspace.
+- Only [Git supported items](./intro-to-git-integration#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
-- [Git integration](/fabric/admin/git-integration-admin-settings) must be enabled.
+- [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
 - When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
 - When branching out to an existing workspace:
   - The target workspace must support a Git connection.
   - The user must be an admin of the target workspace.
   - The target workspace must have capacity.
   - The workspace can't have template apps.
-- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](./git-integration-process#commit-to-git) any items you want to keep before branching out.**
+- **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](./git-integration-process.md#commits-and-updates) any items you want to keep before branching out.**
