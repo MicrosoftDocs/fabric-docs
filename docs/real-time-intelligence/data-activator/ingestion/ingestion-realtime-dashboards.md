@@ -23,6 +23,23 @@ Activator converts the columns returned by the tile's KQL query into objects and
 
 If the tile's query does not include a timestamp column, Activator uses the time at which it ran the query as the event time.
 
+### Time range requirement
+
+To create an alert from a dashboard tile, the tile's KQL query must use the dashboard's predefined `_startTime` and `_endTime` time range parameters. For example:
+
+```kql
+test
+| extend Timestamp = ingestion_time()
+| where Timestamp between (_startTime .. _endTime)
+| summarize count() by bin(Timestamp, 5m)
+```
+
+The `_startTime` and `_endTime` parameters are standard Real-Time Dashboard parameters that reflect the time range selected on the dashboard. Your tile's query must filter data using these parameters in a `where` clause.
+
+If the tile's query uses a custom time range instead of `_startTime` and `_endTime`, the **Set alert** option is disabled and you see the following error:
+
+*"Alerts can only be set for tiles using one of the predefined time ranges. Remove the custom time range and try again."*
+
 ### Activator queries the Eventhouse directly
 
 Activator makes a copy of the tile's KQL query at the time you create your rule. It then repeatedly runs that query directly against the Eventhouse KQL database, not against the dashboard itself.
@@ -37,7 +54,7 @@ This has two important implications:
 
 ### Query frequency
 
-By default, Activator runs the tile's KQL query every 5 minutes. You can change the query frequency in the data source settings for the rule.
+By default, Activator runs the tile's KQL query every 5 minutes. You can change the query frequency in the data source settings, as described in [Query frequency for query data sources](../activator-query-frequency.md).
 
 > [!TIP]
 > Real-Time Dashboards are often used to visualize rapidly changing operational data. If your dashboard is configured to auto-refresh frequently, consider aligning the Activator query frequency to the same interval so that your rules reflect the same view of the data that the dashboard shows.

@@ -1,180 +1,115 @@
 ---
-title: Overview of Copilot for Data Science and Data Engineering in Microsoft Fabric (preview)
-description: Learn about Copilot for Data Science and Data Engineering, an AI assistant that helps analyze and visualize data.
+title: Overview of Copilot for Data Engineering and Data Science in Microsoft Fabric (preview)
+description: Learn about Copilot for Data Engineering and Data Science, an AI assistant that helps you analyze, transform, debug, and understand data in Fabric notebooks.
 ms.topic: overview
-ms.reviewer: sngun
+ms.reviewer: jejiang
 ms.custom:
   - build-2023
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
   - copilot-learning-hub
-ms.date: 08/15/2025
+ms.date: 03/18/2026
 ms.update-cycle: 180-days
 ms.search.form: Data Science Overview
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
-# Overview of Copilot for Data Science and Data Engineering (preview)
+# Overview of Copilot for Data Engineering and Data Science (preview)
 
-[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+> [!IMPORTANT]
+> Copilot for Data Engineering and Data Science is in [preview](../fundamentals/preview.md).
 
-Copilot for Data Science and Data Engineering is an AI assistant that helps analyze and visualize data. It works with Lakehouse tables and files, Power BI Datasets, and pandas/spark/fabric dataframes to provide answers and code snippets directly in a notebook. Connections to OneLake and default attached Lakehouses allow Copilot to provide contextualized code suggestions and natural language responses tailored to your data.
+Copilot in Microsoft Fabric is your AI partner for turning data into insights faster, with less friction.
 
-Copilot can help you understand your data better and offer suggestions to begin your notebook, including generating code for the initial cells. After identifying and adding data sources through the Fabric object explorer, Copilot Chat suggests model types to implement. You can copy these recommendations directly into your notebook to start development. If you're unsure of your next steps, you can invoke Copilot in-cell for model direction insights.
+Available across Fabric workloads, each Copilot experience is tailored to the task at hand. This article focuses on the Data Science and Data Engineering notebook experience.
 
-When you encounter errors, Copilot provides suggested fixes. For further help, you can chat with Copilot for more options, avoiding constant online searches.
+In notebooks, Copilot helps you move from data to working code without breaking your flow. It understands your notebook context, including attached Lakehouses, workspace tables and files, and loaded dataframes, to suggest relevant code, explain results, and troubleshoot issues so you can turn questions into trusted insights faster.
 
-You also benefit from automatic documentation with a simple "Add Comments" feature that summarizes code and data changes. This makes cells clear for you and others. Throughout your workflow, you can consult Copilot at specific points, receiving real-time support and guidance to accelerate your development process.
+For information about Copilot in other workloads, see [Overview of Copilot in Fabric and Power BI](../fundamentals/copilot-fabric-overview.md).
 
-> [!NOTE]
-> With Spark 3.4 and later versions in Microsoft Fabric, no installation cell is required to use Copilot in your notebook. Previous versions that required an installation cell (Spark 3.3 and earlier) are no longer supported.
+## What you can accomplish with Copilot
 
-[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
+Copilot supports your full notebook workflow, from exploration to optimization, so you can move from question to validated result without leaving your notebook.
 
-## Introduction to Copilot for Data Science and Data Engineering for Fabric Data Science
+When you open the Copilot chat pane, you can start with a suggested prompt or ask your own question in natural language.
 
-With Copilot for Data Science and Data Engineering, you can chat with an AI assistant to handle your data analysis and visualization tasks. You can ask Copilot questions about lakehouse tables, Power BI Datasets, or Pandas/Spark dataframes inside notebooks. Copilot answers in natural language or code snippets. Copilot can also generate data-specific code for you, depending on the task. For example, Copilot for Data Science and Data Engineering can generate code for:
+With Copilot, you can:
 
-- Chart creation
-- Filtering data
-- Applying transformations
-- Machine learning models
+- Accelerate development with code generation and less repetitive setup.
+- Explore, validate, and prepare data by profiling tables, sampling data, and cleaning inconsistencies.
+- Resolve issues in context by understanding errors and applying suggested fixes.
+- Analyze and optimize notebooks by generating metrics, exploring trends, converting code, and documenting logic for collaboration.
 
-First, select the Copilot icon in the notebooks ribbon. The Copilot chat panel opens, and a new cell appears at the top of your notebook. You might also select Copilot at the top of your Fabric Notebooks cell.
+If you want step-by-step usage instructions, prompt examples, and portal walkthroughs, see [Use the Copilot chat pane](./copilot-notebooks-chat-pane.md).
 
-To maximize Copilot's effectiveness, load a table or dataset as a dataframe in your notebook. The AI can then access the data and understand its structure and content. Next, start chatting with the AI. Select the chat icon in the notebook toolbar, and type your question or request in the chat panel. For example, you can ask:
+For failure diagnostics and recovery workflows, see [Diagnose notebook failures with Copilot](./copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
-- "What is the average age of customers in this dataset?"
-- "Show me a bar chart of sales by region."
+## How Copilot works
 
-Copilot responds with the answer or the code, which you can copy and paste into your notebook. Copilot for Data Science and Data Engineering is a convenient, interactive way to explore and analyze your data.
+When you open a notebook, Copilot automatically understands:
 
-## Using the Copilot Chat Panel to Interact with Your Data
+- The current workspace
+- The attached Lakehouse
+- Available schemas, tables, and files
+- The notebook's structure and existing code
+- The execution environment
 
-To chat with your data and get insights, select the chat icon in the notebook toolbar to open the Copilot chat panel. Type your questions or requests in the chat panel. For example, you can ask:
+You don't need to describe your setup. Copilot uses this context to generate relevant, environment-aware responses as your notebook evolves.
 
-- "What is the average age of customers in this dataset?"
-- "Show me a bar chart of sales by region."
-
-Copilot responds with the answer or the code, which you can copy and paste into your notebook. Additionally, Copilot can suggest what to do next with your data. Copilot provides suggestions and generates relevant code snippets to help you proceed with your data analysis and visualization tasks.
-
-To interact with the Copilot chat panel in Microsoft Fabric notebooks, follow these steps:
-
-1. **Open the Copilot Chat Panel**: Select the chat icon in the notebook toolbar.
-
-1. **Ask Questions or Make Requests**: Type your questions or requests in the chat panel. Here are some specific examples for data science and data engineering:
-
-  - **Data Exploration**:
-    - "What is the distribution of the 'age' column in this dataset?"
-    - "Show me a histogram of the 'income' column."
-
-  - **Data Cleaning**:
-    - "How can I handle missing values in this dataset?"
-    - "Generate code to remove duplicates from this dataframe."
-
-  - **Data Transformation**:
-    - "How do I normalize the 'sales' column?"
-    - "Create a new column 'profit' by subtracting 'cost' from 'revenue'."
-
-  - **Visualization**:
-    - "Plot a scatter plot of 'height' vs 'weight'."
-    - "Generate a box plot for the 'salary' column."
-
-  - **Machine Learning**:
-    - "Train a decision tree classifier on this dataset."
-    - "Generate code for a k-means clustering algorithm with 3 clusters."
-
-  - **Model Evaluation**:
-    - "How do I evaluate the accuracy of a logistic regression model?"
-    - "Generate a confusion matrix for the predictions."
-
-1. **Receive Responses**: Copilot responds with natural language explanations or code snippets. You can copy and paste the code into your notebook to execute it.
-
-1. **Get Suggestions**: If you don't know how to proceed, ask Copilot for suggestions:
-  - "What should I do next with this dataset?"
-  - "What are some recommended feature engineering techniques for this data?"
-
-1. **Use Generated Code**: Copy the generated code snippets from the chat panel, and paste them into your notebook cells to run them.
-
-With these steps and the provided examples, you can effectively interact with the Copilot chat panel to enhance your data science and data engineering workflows in Microsoft Fabric notebooks.
-
-## Using the Copilot In-Cell Panel and Quick Actions
-
-You can interact with Copilot directly within your notebook cells to generate code and perform quick actions on your code cells. Here's how to use the Copilot in-cell panel:
-
-1. **Generate Code**: To generate code for specific tasks, you can use the Copilot in-cell panel. For example, you can type your request in the text panel above the code cell:
-
-```plaintext
-Can you generate code for a logistic regression that fits this data?
-```
-Copilot provides the necessary code snippet directly in the cell below.
-
-1. **Fix Code**: You can ask Copilot to fix errors in your code. Type your request in the text panel above the code cell, and Copilot suggests corrections.
-
-1. **Add Comments**: To automatically document your code, use the "Add Comments" feature. Copilot generates comments that summarize the code and data changes, making your notebook more readable.
-
-1. **Optimize Code**: For performance improvements, you can ask Copilot to optimize your code. Copilot provides suggestions to enhance the efficiency of your code.
-
-1. **Explain Code**: If you need clarification about a piece of code, ask Copilot for an explanation. Copilot provides a detailed explanation of the code's functionality.
-
-### Steps to Use Quick Actions
-
-1. **Invoke Copilot In-Cell**: Select the Copilot icon in the notebook toolbar to start interacting with Copilot.
-
-1. **Type Your Request**: Enter your request or question in the text panel above the code cell. For example:
-
-```plaintext
-Explain the following code snippet.
-```
-
-1. **Receive Suggestions**: Copilot responds with the relevant code, fixes, comments, optimizations, or explanations.
-
-1. **Apply Suggestions**: Copy the generated code or suggestions from Copilot and paste them into your notebook cells to execute them.
-
-With the Copilot in-cell panel, you can generate code, fix errors, add comments, optimize performance, and understand your code better, all within your Microsoft Fabric notebooks.
-
-:::image type="content" source="media/copilot-notebooks-overview/copilot-logistic-regression.png" alt-text="Screenshot showing logistic regression code generation." lightbox="media/copilot-notebooks-overview/copilot-logistic-regression.png":::
-
-Copilot for Data Science and Data Engineering also has schema and metadata awareness of lakehouse tables. Copilot can provide relevant information in the context of your data hosted in an attached lakehouse. For example, you can ask:
+Because Copilot is schema-aware, you can ask:
 
 - "How many tables are in the lakehouse?"
 - "What are the columns of the table customers?"
+- "Create a dataframe from sales.csv."
 
-Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask Copilot to "Create a dataframe from sales.csv". Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
+Copilot generates code and explanations directly in the chat pane, aligned to your environment.
 
-## Copilot inline code completion (Preview)
+## Work the way you prefer: chat pane and in-cell Copilot
 
-Copilot inline code completion is an AI-powered feature that helps you to write code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. To learn more see, [Copilot inline code completion](author-execute-notebook.md#copilot-inline-code-completion-preview)
+Copilot integrates into notebooks in two complementary ways.
 
-## Tips
+- **Chat pane**: Best for multi-step workflows, building pipelines across cells, exploring datasets, and reviewing generated code with diff view.
+- **In-cell Copilot**: Best for focused improvements within a single cell, such as generating code, explaining logic (`/explain`), fixing errors (`/fix`), adding documentation (`/comments`), or optimizing performance (`/optimize`).
 
-- "Clear" your conversation in the Copilot chat panel with the broom located at the top of the chat panel. Copilot retains knowledge of any inputs or outputs during the session, but this helps if you find the current content distracting.
-- Use the chat magics library to configure settings about Copilot, including privacy settings. The default sharing mode maximizes the context sharing Copilot can access. Therefore, limiting the information provided to Copilot can directly and significantly affect the relevance of its responses.
-- When Copilot first launches, it offers a set of helpful prompts that can help you get started. They can help kickstart your conversation with Copilot. To refer to prompts later, you can use the sparkle button at the bottom of the chat panel.
-- You can "drag" the sidebar of the Copilot chat to expand the chat panel, to view the code more clearly or to improve the readability of the outputs on your screen.
+Both experiences share the same notebook context, so you can move seamlessly between broader workflow design and targeted refinement.
+
+For end-to-end instructions and examples, see [Use the Copilot chat pane](./copilot-notebooks-chat-pane.md). For details on slash commands and in-cell usage, see [In-cell Copilot](./copilot-notebooks-chat-pane.md#in-cell-copilot). For inline code completion, see [Copilot inline code completion](./author-execute-notebook.md#copilot-inline-code-completion-preview).
+
+## Responsible use of AI
+
+Copilot is a productivity tool, not a replacement for human judgment. Always review AI-generated code, explanations, and suggestions before applying them to your notebook. Copilot might produce results that are inaccurate, incomplete, or based on outdated library syntax.
+
+To support responsible use:
+
+- **Review all output** — Validate generated code and results against your data and expectations before running in production.
+- **Control what Copilot runs** — By default, Copilot asks for your approval before running cells or editing code. Keep this setting enabled so you can review each action before it executes. For details, see [Approval settings](./copilot-notebooks-chat-pane.md#approval-settings).
+- **Understand data handling** — Customer data is temporarily stored and processed to detect harmful use of AI. For full details on data privacy, security, and retention, see [Privacy, security, and responsible use of Copilot in notebooks](../fundamentals/copilot-data-science-privacy-security.md).
+
+## Prerequisites
+
+Before you can use Copilot in notebooks:
+
+- Confirm that the **Users can use Copilot and other features powered by Azure OpenAI** tenant setting is enabled. This setting is enabled by default, but your Fabric admin might have turned it off.
+- Ensure your workspace is on a supported capacity (F2 or higher, or P1 or higher).
+- If your capacity is outside the US or EU, ensure your admin enables more tenant settings for cross-geo data processing and storage.
+
+For details on capacity requirements, region availability, required tenant settings, and data processing across geographic areas, see [Overview of Copilot in Fabric and Power BI](../fundamentals/copilot-fabric-overview.md). For the full list of tenant settings, see [Copilot tenant settings](../admin/service-admin-portal-copilot.md).
 
 ## Limitations
 
-* Copilot features in the Data Science experience are currently scoped to notebooks. These features include the Copilot chat pane, IPython magic commands that can be used within a code cell, and automatic code suggestions as you type in a code cell. Copilot can also read Power BI semantic models using an integration of semantic link.
+- Copilot features in the Data Science and Data Engineering experience are currently scoped to notebooks. Copilot can also read Power BI semantic models through semantic link integration.
 
-* If your tenant is configured with private link, the Copilot chat (sidecar chat) experience will not function. Copilot’s inline code suggestions and quick actions may still work, but chat interactions will fail to load.
+- If your tenant is configured with private link, the Copilot chat pane doesn't work. Inline code suggestions and quick actions might still work, but chat interactions fail to load.
 
-* Copilot has two key intended uses:
+- Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
 
-  - You can ask Copilot to examine and analyze data in your notebook (for example, by first loading a DataFrame and then asking Copilot about data inside the DataFrame).
-  - You can ask Copilot to generate a range of suggestions about your data analysis process - for example, what predictive models might be relevant, code to perform different types of data analysis, and documentation for a completed notebook.
+- AI-generated content might be inaccurate. Always review Copilot suggestions before applying them.
 
-* Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
+## Related content
 
-## Deletion and Export of Data
-
-Copilot in notebooks provides users with two essential commands to manage chat history within notebook cells: **show_chat_history** and **clear_chat_history**. The **show_chat_history** command exports the complete chat history for compliance purposes, to ensure that all necessary interactions are documented and accessible for review. For example, executing **show_chat_history** generates a comprehensive log of the chat history, which can then be reviewed or archived for compliance.
-
-The **clear_chat_history** command removes all previous conversations from the notebook, so that the user can start fresh. This command clears out old interactions, to start a new conversation thread. For instance, executing **clear_chat_history** deletes all previous chat history, to leave the notebook free of any past conversations. These features enhance the overall functionality and user experience of Copilot in notebooks.
-
-## Related Content
-
-- [How to use Chat-magics](./copilot-notebooks-chat-magics.md)
-- [How to use the Copilot Chat Pane](./copilot-notebooks-chat-pane.md)
+- [How to use the Copilot chat pane](./copilot-notebooks-chat-pane.md)
+- [Overview of Copilot in Fabric and Power BI](../fundamentals/copilot-fabric-overview.md)
+- [Privacy, security, and responsible use of Copilot in notebooks](../fundamentals/copilot-data-science-privacy-security.md)

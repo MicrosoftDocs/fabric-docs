@@ -3,7 +3,7 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 02/27/2026
+ms.date: 03/18/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -41,20 +41,20 @@ The following table describes the refresh strategies that optimal refresh can se
 
 ## Set up optimal refresh
 
-The optimal refresh toggle gives you no-refresh and full-refresh strategies. To unlock incremental refresh, you also need to enable change data feed on your source tables.
+The optimal refresh toggle gives you no-refresh and full-refresh strategies without any extra setup. To unlock incremental refresh strategy, you also need to enable change data feed on your source tables.
 
 ### Turn on optimal refresh mode
 
 By default, optimal refresh mode is enabled for a materialized lake view lineage. If it's not enabled, follow these steps to turn it on:
 
-1. Go to your lakehouse and select **Manage materialized lake views (preview)**.
-1. In the lineage view, select the **Optimal refresh** toggle to turn it on.
+1. Go to your lakehouse and select **Materialized lake views**.
+1. Select **Manage**, and then select the **Optimal refresh** toggle to turn it on.
    
    :::image type="content" source="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png" alt-text="Screenshot that shows toggle to enable optimal refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/enable-optimal-refresh-option.png":::
 
 ### Enable incremental refresh
 
-To use incremental refresh, you need to enable the delta change data feed (CDF) property on all source tables referenced in the materialized lake view definition. CDF lets Fabric read only the rows that changed since the last refresh, instead of reprocessing the full dataset.
+To use incremental refresh, you need to enable the delta change data feed (CDF) property on all source tables or materialized lake views referenced in the materialized lake view definition. CDF lets Fabric read only the rows that changed since the last refresh, instead of reprocessing the full dataset.
 
 Without CDF enabled, optimal refresh can only choose between no refresh and full refresh.
 
@@ -99,15 +99,16 @@ ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
 
 Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes constructs not in this table—such as `LEFT JOIN` or nondeterministic functions—Fabric still refreshes your data, but falls back to a full refresh instead.
 
-|SQL Construct |  Remark|
-|--------------| -------|
-|SELECT | Deterministic built-in functions only. Nondeterministic and window functions cause a fallback to full refresh.|
-|FROM| |
-|WHERE| Deterministic built-in functions only.|
-|INNER JOIN | |
-|WITH| Common table expressions (CTEs) are supported.|
-|UNION ALL| |
-|Data quality constraints| Deterministic built-in functions only. Incremental refresh enforces data quality constraints during updates.|
+| SQL Construct | Remark |
+|---|---|
+| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh: **unsupported aggregate functions** (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`GROUP BY`**, **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). |
+| FROM | |
+| WHERE | Only deterministic built-in functions are supported. |
+| INNER JOIN | |
+| UNION ALL | |
+| Data quality constraints | Only deterministic built-in functions are supported in constraints. |
+| WITH | Common table expressions are supported with the above supported clauses. |
+
 
 > [!NOTE]
 > Using unsupported constructs doesn't prevent you from creating a materialized lake view. It only means that Fabric uses a full refresh instead of an incremental refresh.
@@ -131,8 +132,8 @@ REFRESH MATERIALIZED LAKE VIEW [workspace.lakehouse.schema].MLV_Identifier FULL
 
 If you want every scheduled run to perform a full refresh, you can turn off the optimal refresh toggle. This disables both the no-refresh and incremental strategies—every run recomputes the full dataset, even if no source data changed.
 
-1. Go to your lakehouse and select **Manage materialized lake views (preview)**.
-1. In the lineage view, turn off the **Optimal refresh** toggle.
+1. Go to your lakehouse and select **Materialized lake views**.
+1. Click on  **Manage** and turn off the **Optimal refresh** toggle.
 
    :::image type="content" source="./media/refresh-materialized-lake-view/full-refresh-option.png" alt-text="Screenshot that shows toggle to switch to full refresh mode." border="true" lightbox="./media/refresh-materialized-lake-view/full-refresh-option.png":::
 

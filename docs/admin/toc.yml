@@ -80,6 +80,12 @@ items:
     href: portal-workspace.md
   - name: Capacity reassignment restrictions
     href: portal-workspace-capacity-reassignment.md
+  - name: Retention and recovery
+    href: retention-recovery.md
+  - name: Set up workspace retention
+    href: workspace-retention.md
+  - name: Recover or delete items
+    href: item-recovery.md
 - name: Feature set up
   items:
   - name: Enable item certification
@@ -91,6 +97,7 @@ items:
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication
+    displayName: API, REST, Power BI, read-only
     href: enable-service-principal-admin-apis.md
   - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
@@ -157,7 +164,7 @@ items:
       href: service-admin-portal-advanced-networking.md
     - name: Encryption 
       href: service-admin-portal-encryption.md
-    - name: Metrics settings
+    - name: Scorecards settings
       href: service-admin-portal-goals-settings.md
     - name: User experience experiments
       href: service-admin-portal-user-experience-experiments.md

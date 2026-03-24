@@ -3,7 +3,7 @@ title: Use Azure Translator in Foundry Tools with REST API
 description: How to use prebuilt Azure AI translator in Fabric with REST API
 ms.reviewer: lagayhar, ruxu
 ms.topic: how-to
-ms.date: 07/31/2025
+ms.date: 02/28/2026
 ms.update-cycle: 180-days
 ms.search.form: 
 ms.collection: ce-skilling-ai-copilot
@@ -13,9 +13,9 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Foundry Tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
+[Azure Translator in Foundry Tools](/azure/ai-services/translator/) is a [Microsoft Foundry tool](/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
-This sample shows use, with RESTful APIs, of the prebuilt Azure AI translator, in Fabric:
+This sample shows how to use the prebuilt Azure AI translator in Fabric with RESTful APIs to:
 
 -   Translate text
 -   Transliterate text
@@ -60,9 +60,9 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESTful request to Foundry Tool
+# Make a RESTful request to Foundry tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/texttranslation/"
-print("Workload endpoint for Foundry Tool: \n" + prebuilt_AI_base_host)
+print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
 service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
 print("Service URL: \n" + service_url)
