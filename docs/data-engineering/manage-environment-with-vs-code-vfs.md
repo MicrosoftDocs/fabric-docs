@@ -30,5 +30,5 @@ To publish your changes, right-click inside the editor and select **Publish Envi
 
 ## Related content
 
-- [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs-mode.md)
-- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs-mode.md)
+- [Manage Fabric workspace with VS Code under VFS mode](manage-workspace-with-vs-code-vfs.md)
+- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs.md)

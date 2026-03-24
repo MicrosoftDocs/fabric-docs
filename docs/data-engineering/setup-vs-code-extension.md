@@ -51,7 +51,7 @@ Once the command palette opens, enter "Fabric Data Engineering" (in full or in p
 
 1. From the VS Code command palette, enter the `Fabric Data Engineering: Sign In` command. 
 
-   :::image type="content" source="media\vscode\command-palette-sign-in.png" alt-text="Screenshot of the VS Code command palette, showing the Fabric Data Engineering: Sign In command." lightbox="media\vscode\command-palette-sign-in.png":::
+   :::image type="content" source="media\vs-code\command-palette-sign-in.png" alt-text="Screenshot of the VS Code command palette, showing the Fabric Data Engineering: Sign In command." lightbox="media\vs-code\command-palette-sign-in.png":::
 
 1. A browser window opens. Select the account you want to use for your Fabric workspaces and complete the authentication.
 
@@ -74,7 +74,7 @@ In local mode, you download notebooks and other items to a local working directo
 
 1. Select **Select Workspace**, or select the **Switch Workspace** icon (the arrows icon). A list of all workspaces you have access to appears; select the one you want.
 
-    :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option." lightbox="media\vscode\select-workspace.png":::
+    :::image type="content" source="media\vs-code\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option." lightbox="media\vs-code\select-workspace.png":::
 
     To switch to a different workspace later, select the **Switch Workspace** icon at any time.
 

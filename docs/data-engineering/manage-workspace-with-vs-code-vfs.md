@@ -43,11 +43,11 @@ This article explains how to enter VFS mode and how to add or remove workspaces.
 
 1. Right-click any empty area in the Explorer view (or press **Shift+F10**) to open the context menu. Scroll down if needed and select **Manage Fabric Workspaces**.
 
-    :::image type="content" source="media\vs-code\manage-workspace-vfs-mode.png" alt-text="Screenshot of the VS Code Explorer panel, showing how to manage Fabric workspaces." lightbox="media\vs-code\manage-workspace-vfs-mode.png":::
+    :::image type="content" source="media\vs-code\manage-workspace-vfs.png" alt-text="Screenshot of the VS Code Explorer panel, showing how to manage Fabric workspaces." lightbox="media\vs-code\manage-workspace-vfs.png":::
 
 1. Select **Add Workspace**, then choose the workspace from the list.
 
-    :::image type="content" source="media\vs-code\add-workspace-vfs-mode.png" alt-text="Screenshot of the VS Code Explorer panel, showing how to add a workspace." lightbox="media\vs-code\add-workspace-vfs-mode.png":::
+    :::image type="content" source="media\vs-code\add-workspace-vfs.png" alt-text="Screenshot of the VS Code Explorer panel, showing how to add a workspace." lightbox="media\vs-code\add-workspace-vfs.png":::
 
 After you add a workspace, expand its tree node in the Explorer panel to view and manage the items in that workspace.
 
@@ -59,12 +59,12 @@ After you add a workspace, expand its tree node in the Explorer panel to view an
 
 1. In the workspace list that appears, select the **x** button next to the workspace you want to remove.
 
-    :::image type="content" source="media\vs-code\remove-workspace-vfs-mode.png" alt-text="Screenshot of the VS Code Explorer panel, showing how to remove a workspace." lightbox="media\vs-code\remove-workspace-vfs-mode.png":::
+    :::image type="content" source="media\vs-code\remove-workspace-vfs.png" alt-text="Screenshot of the VS Code Explorer panel, showing how to remove a workspace." lightbox="media\vs-code\remove-workspace-vfs.png":::
 
 Removing a workspace from VS Code doesn't delete the workspace or its items; it only disconnects the workspace from your VS Code window.
 
 ## Related content
 
 - [Get started with the Fabric Data Engineering VS Code extension](setup-vs-code-extension.md)
-- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs-mode.md)
-- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs-mode.md)
+- [Develop Fabric notebooks in VS Code with VFS mode](author-notebook-with-vs-code-vfs.md)
+- [Manage Spark environments in VS Code under VFS mode](manage-environment-with-vs-code-vfs.md)
