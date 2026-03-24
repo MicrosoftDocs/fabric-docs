@@ -231,7 +231,7 @@ The *Branches* tab of the Source control panel enables you to manage your branch
 
  :::image type="content" source="./media/git-integration-process/related-branches.png" alt-text="Screenshot showing a list of related branches that the user can switch to.":::
 
-For more information, see [Branching out limitations](#branching-out-limitations).
+For more information, see [Branching out limitations](./branched-workspace.md#branching-out-limitations).
 
 ### Account details
 

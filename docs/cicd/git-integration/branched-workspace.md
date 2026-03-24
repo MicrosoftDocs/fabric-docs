@@ -51,7 +51,7 @@ As a Fabric developer, the branch-out flow would be as follows:
 
 Once the review and merge are complete, a new commit is created to the *main* branch. This commit prompts the user to update the content in the Dev team's workspace with the merged changes.
 
-For more information, see [branching out limitations](./git-integration-process.md#branching-out-limitations).
+For more information, see [branching out limitations](#branching-out-limitations).
 
 ### How to add additional items to a workspace with selective branching
 When a Fabric developer needs to add items that were not selected during the branch‑out operation, the steps below describe how to add additional items to the workspace:
@@ -88,7 +88,7 @@ To connect the current workspace to a new branch while keeping the existing work
 
 ### Branching out limitations
 
-- Branch out requires permissions listed in [permissions table](./git-integration-process#fabric-permissions-needed-for-common-operations).
+- Branch out requires permissions listed in [permissions table](./git-integration-process#Permissions).
 - There must be an available capacity for this action.
 - All [workspace](./git-integration-process.md#workspace-limitations) and [branch naming limitations](./git-integration-process.md#branch-and-folder-limitations) apply when branching out to a new workspace.
 - Only [Git supported items](./intro-to-git-integration#supported-items) are available in the new workspace.
