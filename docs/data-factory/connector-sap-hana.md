@@ -16,7 +16,7 @@ This article outlines the steps to create an SAP HANA database connection.
 
 ## Supported authentication types
 
-The SAP HANA database connector supports the following authentication types for copy and Dataflow Gen2.
+The SAP HANA database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
@@ -64,9 +64,9 @@ The following table contains a summary of the properties needed for an SAP HANA 
 | **Server** | The host name or IP address of the SAP HANA server. | Yes |
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
 | **Validate server certificate** | Specifies whether to validate the SAP HANA server certificate. | No |
-| **SSL crypto provider** | The SSL crypto provider that you want to use. Allowed values are **mscrypto**, **sapcrypto**, and **commoncrypto**. | Yes |
+| **SSL crypto provider** | The SSL crypto provider that you want to use. Allowed values are **mscrypto**, **sapcrypto**, and **commoncrypto**. | No |
 | **Single sign-on** | Configure SSO options for Kerberos or SAML based on your query mode. | No |
-| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
+| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | No |
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
