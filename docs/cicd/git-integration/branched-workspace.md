@@ -88,10 +88,10 @@ To connect the current workspace to a new branch while keeping the existing work
 
 ### Branching out limitations
 
-- Branch out requires permissions listed in [permissions table](./git-integration-process#Permissions).
+- Branch out requires permissions listed in [permissions table](./git-integration-process.md#permissions).
 - There must be an available capacity for this action.
 - All [workspace](./git-integration-process.md#workspace-limitations) and [branch naming limitations](./git-integration-process.md#branch-and-folder-limitations) apply when branching out to a new workspace.
-- Only [Git supported items](./intro-to-git-integration#supported-items) are available in the new workspace.
+- Only [Git supported items](./intro-to-git-integration.md#supported-items) are available in the new workspace.
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
 - When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
