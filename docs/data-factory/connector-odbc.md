@@ -62,7 +62,7 @@ The following table contains a summary of the properties needed for ODBC connect
 | **Connection type** | Select **ODBC** for your connection type. | Yes |
 | **Connection string** | The connection string for the ODBC connection. <br>Example: `Driver={ODBC Driver 13 for SQL Server};server=test.corp.contoso.com;database=TestDB;` | Yes |
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
-| **Privacy Level** | The privacy level that you want to apply. Allowed values are None, Organizational, Privacy, and Public. | Yes |
+| **Privacy Level** | The privacy level that you want to apply. Allowed values are None, Private, Organizational, and Public. | Yes |
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
@@ -89,7 +89,7 @@ For specific instructions to set up your connection in Manage connections and ga
    - [Basic](#basic-authentication)
    - [Windows](#windows-authentication)
 
-1. Optionally, set the privacy level that you want to apply. Allowed values are **None**, **Organizational**, **Privacy**, and **Public**.
+1. Optionally, set the privacy level that you want to apply. Allowed values are **None**, **Private**, **Organizational**, and **Public**.
 
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
