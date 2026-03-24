@@ -21,7 +21,19 @@ Let's start at the pipeline activity level. To create alerts at the activity lev
 
 ## Pipeline level alerts
 
-Perhaps you'd rather actively monitor the entirety of your pipeline (create, delete, update) or the status of the pipeline run (succeed, fail). That's very easy in Fabric as well. You can follow these steps below:
+Perhaps you'd rather actively monitor the entirety of your pipeline (create, delete, update) or the status of the pipeline run (succeed, fail). That's very easy in Fabric as well. 
+
+### Configure failure notifications for scheduled pipeline runs
+You can configure email notifications to be sent when a [scheduled pipeline run](pipeline-runs.md#scheduled-pipeline-runs) fails.
+
+To configure failure notifications, open the pipeline, select **Schedule** in the top banner of the **Home** tab, and add users or groups under **Failure notifications**.
+
+To configure failure notifications, open the pipeline, go to the **Home** tab, select **Schedule**, and then add users or groups under **Failure notifications**.
+
+:::image type="content" source="media/pipeline-runs/schedule-failure-notifications.png" alt-text="Screenshot that shows failure notification settings for scheduled pipeline runs." lightbox="media/pipeline-runs/schedule-failure-notifications.png":::
+
+### Advanced alerting scenarios 
+For more advanced alerting scenarios—such as monitoring pipeline creation, deletion, updates, or tracking both succeed and failed statuses—you can use [Data Activator](https://learn.microsoft.com/fabric/real-time-intelligence/data-activator/activator-introduction). Activator lets you define rules that react to pipeline job events and trigger actions like email or Microsoft Teams notifications. You can follow these steps below:
 
 1. Go to your Fabric Workspace and create a new Activator item.
 
