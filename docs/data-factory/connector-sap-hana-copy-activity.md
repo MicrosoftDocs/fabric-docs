@@ -52,7 +52,7 @@ Under **Advanced**, you can specify the following fields:
     - **Dynamic range**: When using a query to retrieve the source data, hook `?AdfHanaDynamicRangePartitionCondition` in the WHERE clause. For more information, see the [Parallel copy from SAP HANA](#parallel-copy-from-sap-hana) section.
         - **Partition column name**: Specify the name of the source column that is used by partition for parallel copy. If not specified, the index or the primary key of the table is detected automatically and used as the partition column.
 
-- **Packet size (KB)**: Specifies the network packet size in kilobytes to split data to multiple blocks. If you have large amount of data to copy, increasing the packet size can increase reading speed from SAP HANA in most cases.
+- **Packet size (KB)**: Specifies the network packet size in kilobytes to split data to multiple blocks. If you have large amount of data to copy, increasing the packet size can increase reading speed from SAP HANA in most cases. The default value is 2048 (2MB).
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
@@ -125,7 +125,7 @@ The following table contains more information about the copy activity in SAP HAN
 |**Query**| The SQL query to read data from SAP HANA. |< your SQL query>|Yes (if **Use query** is **Query**)|query|
 |**Partition option**|The data partitioning options used to load data from SAP HANA. |• None<br>• PhysicalPartitionsOfTable<br>• SapHanaDynamicRange|No|partitionOption|
 |**Partition column name**|The name of the source column used by partition for parallel copy.|< your partition column >|Yes (when using Dynamic range partition)|partitionColumnName (under *`partitionSettings`*)|
-|**Packet size (KB)** |The network packet size (in kilobytes) to split data to multiple blocks.|< packet size >|No|packetSize|
+|**Packet size (KB)** |The network packet size (in kilobytes) to split data to multiple blocks.|< packet size ><br>Default value is 2048 (2MB)|No|packetSize|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No |additionalColumns:<br>• name<br>• value|
 
 ## Related content
