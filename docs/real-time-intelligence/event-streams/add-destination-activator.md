@@ -1,10 +1,9 @@
 ---
-title: Add Fabric Activator Destination to Eventstream
-description: Learn how to add an Activator destination to your Fabric eventstream. Follow step-by-step instructions to configure, publish, and manage rules effectively.
-#customer intent: As a data engineer, I want to add an activator destination to an eventstream so that I can trigger automated actions based on event conditions.
+title: Add a Fabric Activator Destination to an Eventstream
+description: Learn how to add Activator destination to a Fabric eventstream.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 03/02/2026
+ms.date: 03/22/2026
 ms.search.form: Source and Destination
 ---
 
@@ -49,6 +48,7 @@ To add an activator destination to a default stream or derived stream, follow th
 1. To implement the newly added activator destination, select **Publish**.
 
 
+   When you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
 
 1. After you complete these steps, the activator destination is available for visualization in **Live view**. Select **Edit** to switch to the Edit mode to make more changes to the eventstream.
 

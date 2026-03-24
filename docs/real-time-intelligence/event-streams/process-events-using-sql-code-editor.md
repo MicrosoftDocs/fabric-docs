@@ -8,9 +8,9 @@ ms.search.form: Event Processor
 ai-usage: ai-assisted
 ---
 
-# Process events by using a SQL operator (preview)
+# Process events by using a SQL operator
 
-A SQL operator (preview), also called a SQL code editor, is a new data transformation capability in Microsoft Fabric eventstreams. SQL operators provide a code editing experience where you can easily define your own custom data transformation logic by using simple SQL expressions. This article describes how to use a SQL operator for data transformations in an eventstream.
+A SQL operator, also called a SQL code editor, is a new data transformation capability in Microsoft Fabric eventstreams. SQL operators provide a code editing experience where you can easily define your own custom data transformation logic by using simple SQL expressions. This article describes how to use a SQL operator for data transformations in an eventstream.
 
 > [!NOTE]
 > Eventstream artifact names that include an underscore (_) or dot (.) aren't compatible with SQL operators. For the best experience, create a new eventstream without using underscores or dots in the artifact name.
@@ -302,9 +302,9 @@ You can also add thresholds for late arrival and out of order events under advan
 
 - The SQL operator is designed to centralize all your transformation logic. As a result, you can't use it alongside other built-in operators within the same processing path. Chaining multiple SQL operators in a single path is also not supported.
 
-- The SQL operator can send output data to only the destination node in the topology.
+- If you add a SQL operator to your topology, you must create new destination nodes. Existing destination nodes cannot be reused with the SQL operator.
 
-- Currently, authoring eventstream topologies is supported only through the user interface. REST API support for the SQL operator isn't available yet.
+
 
 ## Related content
 

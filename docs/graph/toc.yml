@@ -1,5 +1,6 @@
 items:
   - name: Getting started
+    expanded: true
     items:
       - name: What is graph in Microsoft Fabric?
         href: overview.md
@@ -28,6 +29,7 @@ items:
       - name: 8 - Clean up tutorial resources
         href: tutorial-clean-up.md
   - name: Concepts
+    expanded: true
     items:
       - name: What is a graph database?
         href: graph-database.md
