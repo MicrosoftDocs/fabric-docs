@@ -52,4 +52,4 @@ For example, customer feedback stored in a data lake might contain sensitive det
 
 ## Regional availability
 
-AI-powered transforms are currently available in these regions: [Azure AI Language regional support](/azure/ai-services/language-service/concepts/regional-support)
+AI-powered transforms are currently available in these regions: [Azure Language in Foundry Tools regional support](/azure/ai-services/language-service/concepts/regional-support)

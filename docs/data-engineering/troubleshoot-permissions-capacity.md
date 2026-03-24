@@ -1,9 +1,7 @@
 ---
 title: Troubleshoot Permission and Capacity Errors in Data Engineering
 description: Troubleshoot common permission and capacity issues in Data Engineering in Microsoft Fabric.
-author: ValOlson
-ms.author: vallariolson
-ms.reviewer: eur
+ms.reviewer: vallariolson
 ms.date: 02/09/2026
 ms.topic: troubleshooting
 ---
@@ -76,7 +74,7 @@ See [workspace permission model](../security/permission-model.md) and [share war
 
 For Delta tables using Azure Data Lake Storage (ADLS) or OneLake:
 
-1. Go to Azure Portal > Storage Account > Access Control (IAM)
+1. Go to the [Azure portal](https://portal.azure.com/) and then select **Storage Account** > **Access Control (IAM)**
 2. Add role assignment: **Storage Blob Data Contributor** (for write) or **Storage Blob Data Reader** (for read-only)
 3. Select your user or service principal
 4. For service principals: Enable in Fabric Admin Portal (Tenant settings) and add to workspace with Contributor role

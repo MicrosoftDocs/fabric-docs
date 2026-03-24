@@ -3,7 +3,7 @@ title: "Manage Fabric Materialized Lake Views Lineage"
 description: Learn how to view and manage materialized lake views lineage in Microsoft Fabric, including the lineage interface and custom Spark environments.
 ms.reviewer: sairamyeturi
 ms.topic: how-to
-ms.date: 03/01/2026
+ms.date: 03/18/2026
 ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to manage Fabric materialized lake views lineage in Microsoft Fabric so that I can efficiently handle large datasets and optimize query performance.
 ---
@@ -59,9 +59,7 @@ The lineage page includes these actions:
 
 - **Schedule**: Schedules refresh runs based on your business requirements.
 
-:::image type="content" source="./media/view-lineage/schedule-button.png" alt-text="Screenshot showing the schedule button." border="true" lightbox="./media/view-lineage/schedule-button.png":::
-
-- **Toggle view**: Switches layout between portrait and landscape.
+  :::image type="content" source="./media/view-lineage/schedule-button.png" alt-text="Screenshot showing the schedule button." border="true" lightbox="./media/view-lineage/schedule-button.png":::
 
 - **Reset lineage**: Resets lineage layout for your current screen size.
 

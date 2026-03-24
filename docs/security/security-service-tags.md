@@ -4,7 +4,7 @@ description: Learn how to use service tags in Microsoft Fabric.
 author: msmimart
 ms.author: mimart
 ms.topic: concept-article
-ms.date: 02/25/2024
+ms.date: 03/11/2026
 ---
 
 # Service tags
@@ -29,6 +29,12 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 ## Use service tags
 
 You can use the service tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes.
+
+When using a regional service tag, ensure that you add:
+
+* The service tag for your home region
+* The capacity region, if it differs from the home region
+* The corresponding paired regions
 
 ## Related content
 
