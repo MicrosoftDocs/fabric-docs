@@ -14,7 +14,7 @@ ms.custom:
 
 # Configure Folder in a copy activity
 
-This article outlines how to use the copy activity in Data pipeline to copy data from and to Folder.
+This article outlines how to use the copy activity in a pipeline to copy data from and to Folder.
 
 ## Prerequisites
 
