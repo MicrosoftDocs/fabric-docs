@@ -35,6 +35,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for ODBC under the **Source** tab of a copy activity.
 
+:::image type="content" source="./media/connector-odbc/odbc-source.png" alt-text="Screenshot showing the Source tab configuration for ODBC.":::
+
 The following properties are **required**:
 
 - **Connection**: Select an ODBC connection from the connection list. If the connection doesn't exist, then create a new ODBC connection.
@@ -51,6 +53,8 @@ Under **Advanced**, you can specify the following fields:
 ### Destination
 
 The following properties are supported for ODBC under the **Destination** tab of a copy activity.
+
+:::image type="content" source="./media/connector-odbc/odbc-destination.png" alt-text="Screenshot showing the Destination tab configuration for ODBC.":::
 
 The following properties are **required**:
 
