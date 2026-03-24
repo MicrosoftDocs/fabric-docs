@@ -416,14 +416,18 @@ items:
       href: ./user-data-functions/create-user-data-functions-vs-code.md
   - name: Fabric Data Engineering VS Code extension
     items:
-    - name: Overview
+    - name: Get started with the VS Code extension
       href: setup-vs-code-extension.md
-    - name: VS Code extension with Docker image
-      href: set-up-vs-code-extension-with-docker-image.md
-    - name: Manage environment artifact with VS Code extension
-      href: manage-environment-with-vs-code.md  
+    - name: Manage Fabric workspace with VS Code under VFS mode
+      href: manage-workspace-with-vs-code-vfs-mode.md
+    - name: Manage environments with VS Code extension
+      href: manage-environment-with-vs-code.md
+    - name: Manage environments with VS Code under VFS mode
+      href: manage-environment-with-vs-code-vfs-mode.md
     - name: Notebook with VS Code extension
       href: author-notebook-with-vs-code.md
+    - name: Notebook with VS Code under VFS mode
+      href: author-notebook-with-vs-code-vfs-mode.md
     - name: Fabric Notebook custom agent inside VS Code
       href: notebook-custom-agent-with-vs-code.md
     - name: Notebook resource with VS Code extension
@@ -436,6 +440,8 @@ items:
       href: author-notebook-with-vs-code-web.md
     - name: Develop notebook with Fabric runtime
       href: fabric-runtime-in-vscode.md
+    - name: VS Code extension with Docker image
+      href: set-up-vs-code-extension-with-docker-image.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse
