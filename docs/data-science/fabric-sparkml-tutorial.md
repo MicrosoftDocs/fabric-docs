@@ -33,7 +33,7 @@ Logistic regression produces a *logistic function* that can predict the probabil
 
 ## Predictive analysis example of NYC taxi data
 
-The data is available through the [Azure Open Datasets](https://learn.microsoft.com/azure/open-datasets/dataset-taxi-yellow) resource. This dataset subset hosts information about yellow taxi trips, including the start times, end times, start locations, end locations, trip costs, and other attributes.
+The data is available through the [Azure Open Datasets](/azure/open-datasets/dataset-taxi-yellow) resource. This dataset subset hosts information about yellow taxi trips, including the start times, end times, start locations, end locations, trip costs, and other attributes.
 
 The rest of this article relies on Apache Spark to first perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
 
