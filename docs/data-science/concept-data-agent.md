@@ -79,8 +79,6 @@ The product team rigorously evaluated the quality and safety of Fabric data agen
 
 ## Limitations
 
-The Fabric data agent is currently in public preview and has limitations. Updates will improve the Fabric data agent over time.
-
 - The Fabric data agent only generates SQL, DAX, and KQL "read" queries. It doesn't generate SQL, DAX, or KQL queries that create, update, or delete data.
 - The Fabric data agent doesn't support unstructured data, such as .pdf, .docx, or .txt files. You can't use the Fabric data agent to access unstructured data resources.
 - For lakehouse data sources, the Fabric data agent answers questions using the lakehouse tables you select. It doesn't directly read standalone lakehouse files (for example, CSV or JSON files) unless they're ingested or exposed as tables.
