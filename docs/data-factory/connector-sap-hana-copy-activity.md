@@ -131,4 +131,4 @@ The following table contains more information about the copy activity in SAP HAN
 ## Related content
 
 - [SAP HANA connector overview](connector-sap-hana-overview.md)
-- [Set up your SAP HANA database connection](connector-sap-hana-database.md)
+- [Set up your SAP HANA database connection](connector-sap-hana.md)

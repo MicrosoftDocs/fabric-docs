@@ -22,6 +22,6 @@ The SAP HANA database connector is supported in Data Factory for [!INCLUDE [prod
 
 ## Related content
 
-For information on how to connect to an SAP HANA, go to [Set up your SAP HANA database connection](connector-sap-hana-database.md).
+For information on how to connect to an SAP HANA, go to [Set up your SAP HANA database connection](connector-sap-hana.md).
 
 To learn about the copy activity configuration for SAP HANA in pipelines, go to [Configure SAP HANA in a copy activity](connector-sap-hana-copy-activity.md).
