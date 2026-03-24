@@ -107,8 +107,8 @@ Incremental refresh works when your materialized lake view definition uses only 
 | INNER JOIN | |
 | UNION ALL | |
 | Data quality constraints | Only deterministic built-in functions are supported in constraints. |
-| Subquery | Derived tables in FROM clause. Scalar subqueries in expressions (SELECT, WHERE, JOIN ON) and correlated subqueries lead to full refresh. | 
-| WITH | Common table expressions are supported with the above supported clauses. |
+| Subquery | Supported for derived tables in FROM clause. Subqueries in expressions (SELECT, WHERE) lead to full refresh. | 
+| WITH | Common table expressions are supported. |
 
 
 > [!NOTE]
