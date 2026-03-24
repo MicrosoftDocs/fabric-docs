@@ -96,7 +96,7 @@ Guidelines:
 You can configure custom SQL pools in Fabric Data Warehouse in the Fabric portal or through API calls.
 
 - For an example of configuring in the Fabric portal, see [Configure custom SQL pools in the Fabric portal](configure-custom-sql-pools-portal.md).
-- For an example of using the [SQL Pools REST API](/rest/api/fabric/warehouse/sql-pools), see [How to configure custom SQL pools by using the Fabric REST API](configure-custom-sql-pools-api.md).
+- For an example of using the [SQL Pools REST API](/rest/api/fabric/warehouse/items), see [How to configure custom SQL pools by using the Fabric REST API](configure-custom-sql-pools-api.md).
 
 ## Monitor
 
