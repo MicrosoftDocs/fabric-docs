@@ -18,7 +18,7 @@ The SAP HANA database connector is supported in Data Factory for [!INCLUDE [prod
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|On-premises |Basic<br> Windows |
 | **Pipeline**<br>- [Copy activity](connector-sap-hana-copy-activity.md)(source/-) <br>- Lookup activity    |On-premises |Basic<br> Windows |
-| **Copy job** (source/-) <br>- Full load |On-premises |Basic<br> Windows |
+| **Copy job** (source/-) <br>- Full load<br>- Incremental load |On-premises |Basic<br> Windows |
 
 ## Related content
 
