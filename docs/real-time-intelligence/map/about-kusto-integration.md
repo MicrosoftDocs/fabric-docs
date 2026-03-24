@@ -68,6 +68,7 @@ Once added, Kusto layers behave like other vector layers in Fabric Maps. You can
 The following limitations apply to Kusto integration in Fabric Maps:
 
 - The result dataset size can't exceed 20 MB.
+- Only the last 100 ingested rows are displayed for Kusto tables.
 - Kusto functions with parameters aren't supported.
 
 These constraints align with existing limits for GeoJSON‑based data layers.
