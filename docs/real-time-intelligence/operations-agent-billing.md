@@ -41,7 +41,7 @@ Operations agent consumes capacity based on the following factors:
     | Operations agents autonomous reasoning capacity usage CU | Operations agent autonomous reasoning | 400 CUs per 1,000 input tokens; 1600 CUs per 1,000 output tokens |
     | Not applicable | OneLake storage | Billed per GB per hour under OneLake storage |
 
-- **Other CU consumption:** Operations agents can drive additional CU consumption from other Fabric items or products, such as the Eventhouse being monitored:
+- **Other CU consumption:** Operations agents can drive additional CU consumption from other Fabric items or products, such as the eventhouse being monitored:
   
   - **Configuration phase:** Copilot in Fabric incurs usage while you generate the agent's playbook. Eventhouse usage arises from queries to identify fields and rules to monitor. Storage costs apply for saving the agent's configuration.
   

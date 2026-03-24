@@ -16,7 +16,7 @@ This article outlines the best practices and limitations when you use operations
 
 Operations agents help organizations operationalize clear business goals by continuously monitoring real-time data, evaluating explicit thresholds, and recommending actions when defined conditions are met. For example, operations agents help you respond proactively when inventory availability drops to a critical level. We recommend the following best practices for operations agents.
 
-- **Eventhouse tables**: If Eventhouse tables contain nested columns such as JSON, flatten the tables before you configure the agent. Flat tables with descriptive column names improve the agent's ability to parse and evaluate data.
+- **Eventhouse tables**: If eventhouse tables contain nested columns such as JSON, flatten the tables before you configure the agent. Flat tables with descriptive column names improve the agent's ability to parse and evaluate data.
 
 - **Column descriptions**: If a column's purpose is unclear from its name, add a plain-language description by using the description field in your KQL table schema. This helps the agent interpret data values correctly.
 
@@ -51,7 +51,7 @@ Here's an example of how you can lay out your instructions to the agent to be cl
 
 - Operations agents rely on an LLM to create the playbook and rules the agent follows, and to reason about and generate messages for actions and recommendations. Since LLM-based AI services are probabilistic and can be fallible, it's important to carefully review the results and recommendations they provide. For more information, see [Privacy, security, and responsible use of Copilot for Real-Time Intelligence](../fundamentals/copilot-real-time-intelligence-privacy-security.md).
 
-   To track what queries and data the agent accesses, you can look into the Eventhouse and KQL database it monitors. On the **Query insights** tab, you see the queries that it runs and can validate the KQL it uses.
+   To track what queries and data the agent accesses, you can look into the eventhouse and KQL database it monitors. On the **Query insights** tab, you see the queries that it runs and can validate the KQL it uses.
 
    :::image type="content" source="media/operations-agent/query-insights.png" alt-text="Screenshot of the Query insights tab in the KQL database.":::
 
