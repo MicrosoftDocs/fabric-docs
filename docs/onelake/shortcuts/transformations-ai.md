@@ -1,7 +1,7 @@
 ---
 title:       Shortcut transformations (AI-powered)
 description: Use AI-powered shortcut transformations to convert unstructured text files into queryable Delta tables.
-ms.reviewer: mideboer
+ms.reviewer: preshah
 ms.topic:    how-to
 ms.date:     07/16/2025
 ---

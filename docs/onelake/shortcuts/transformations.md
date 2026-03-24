@@ -1,7 +1,7 @@
 ---
 title: Shortcut transformations (file)
 description: Use OneLake shortcut transformations to convert raw files into Delta tables that stay always in sync with the source data.  
-ms.reviewer: mideboer
+ms.reviewer: preshah
 ms.topic: how-to
 ms.date: 11/12/2025
 ai-usage: ai-assisted
