@@ -15,7 +15,7 @@ This article provides suggestions to troubleshoot common problems with the SQL d
 
 - **Message**: `Operation on target CopyJobActivityLoop failed: Activity failed because an inner activity failed; Inner activity name: CopyData_final, Error: The activity was running on gateway, but some cloud connections are incompatible with it. To ensure compatibility, enable the option "Allow this connection to be used with gateways."`
 
-- **Cause**: the Fabric SQL connection must be enabled for gateway usage.
+- **Cause**: the SQL Database in Fabric connection must be enabled for gateway usage.
 
 - **Recommendation**: To resolve the issue, try these steps:
 
@@ -23,7 +23,7 @@ This article provides suggestions to troubleshoot common problems with the SQL d
 
 1. Select **Manage connections and gateways**, and select the connection with the **SQL database in Fabric** connection type.
 
-1. Under **Authentication settings**, select **Allow this connection to be utilized with either on-premises data gateways or VNet data gateways**. This setting is required because copy operations run through a gateway runtime. If the Fabric SQL connection isn't enabled for gateway usage, data copy operations fail.
+1. Under **Authentication settings**, select **Allow this connection to be utilized with either on-premises data gateways or VNet data gateways**. This setting is required because copy operations run through a gateway runtime. If the SQL Database in Fabric connection isn't enabled for gateway usage, data copy operations fail.
 
 1. Select **Save** to save the connection.
 

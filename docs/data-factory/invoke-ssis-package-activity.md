@@ -13,6 +13,8 @@ SQL Server Integration Services (SSIS) is a widely used ETL tool that lets you d
 
 Over time, organizations accumulate a considerable number of SSIS packages that serve different business purposes. The **Invoke SSIS Package** activity in Data Factory for Microsoft Fabric lets you move existing SSIS workloads into Fabric with minimal changes.
 
+> [!VIDEO https://www.youtube.com/embed/sgvtMtMU6og]
+
 > [!IMPORTANT]
 > The Invoke SSIS Package activity is currently in **preview**. Preview features may have limited functionality and are subject to change before general availability.
 

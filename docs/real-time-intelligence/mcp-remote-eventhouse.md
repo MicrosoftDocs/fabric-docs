@@ -83,16 +83,12 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 }
 ```
 
-### Find your KQL database ID
+### Find your KQL database MCP URL
 
-1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com/)
-2. Navigate to the workspace containing your Eventhouse.
-3. Select the KQL database to open its details page.
-4. Copy the KQL database ID from the URL.
-
-  The KQL Database URL is in this format:
-
-  `https://app.powerbi.com/groups/[Workspace ID]/databases/[**KQL Database ID**]`
+1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com/).
+1. Navigate to the workspace containing your Eventhouse.
+1. Select the KQL database to open its details page.
+1. In the **Database details** panel under the **Overview** section, select **Copy URI** next to the **MCP Server URI**.
 
 ## Test the connection
 

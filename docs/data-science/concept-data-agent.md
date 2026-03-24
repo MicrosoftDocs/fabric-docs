@@ -1,5 +1,5 @@
 ---
-title: Fabric data agent creation (preview)
+title: Fabric data agent creation
 description: Learn how to create a Fabric data agent that can answer questions about data.
 ms.reviewer: amjafari
 ms.topic: concept-article
@@ -10,13 +10,11 @@ ms.search.form: Fabric data agent Concepts
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
 ---
 
-# Fabric data agent concepts (preview)
+# Fabric data agent concepts
 
 Data agent in Microsoft Fabric is a new Microsoft Fabric feature that enables you to build your own conversational Q&A systems by using generative AI. A Fabric data agent makes data insights more accessible and actionable for everyone in your organization. By using a Fabric data agent, your team can have conversations, with plain English-language questions, about the data that your organization stored in Fabric OneLake and then receive relevant answers. This way, even people without technical expertise in AI or a deep understanding of the data structure can receive precise and context-rich answers.
 
 You can also add organization-specific instructions, examples, and guidance to fine-tune the Fabric data agent. This approach ensures that responses align with your organization's needs and goals, allowing everyone to engage with data more effectively. Fabric data agent fosters a culture of data-driven decision-making because it lowers barriers to insight accessibility, facilitates collaboration, and helps your organization extract more value from its data.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -80,8 +78,6 @@ The product team rigorously evaluated the quality and safety of Fabric data agen
 **Enhanced Harm Mitigations**: The product team implemented safeguards to ensure that Fabric data agent outputs remain focused on the context of selected data sources, reducing the risk of irrelevant or misleading answers.
 
 ## Limitations
-
-The Fabric data agent is currently in public preview and has limitations. Updates will improve the Fabric data agent over time.
 
 - The Fabric data agent only generates SQL, DAX, and KQL "read" queries. It doesn't generate SQL, DAX, or KQL queries that create, update, or delete data.
 - The Fabric data agent doesn't support unstructured data, such as .pdf, .docx, or .txt files. You can't use the Fabric data agent to access unstructured data resources.

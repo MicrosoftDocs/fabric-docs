@@ -2,10 +2,11 @@
 title: Set up your Azure Data Explorer connection
 description: This article provides information about how to create an Azure Data Explorer connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Azure Data Explorer connection
@@ -22,18 +23,28 @@ The Azure Data Explorer connector supports the following authentication types fo
 |Organizational account| √ | |
 
 ## Set up your connection for Dataflow Gen2
-
 You can connect Dataflow Gen2 to Azure Data Explorer in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data in Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-1. Install or set up any [Azure Data Explorer prerequisites](/power-query/connectors/azure-data-explorer#prerequisites).
-1. [Connect to Azure Data Explorer](/power-query/connectors/azure-data-explorer#connect-to-azure-data-explorer-from-power-query-online).
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Azure Data Explorer](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Azure Data Explorer](#connect-to-azure-data-explorer).
 
-### Learn more about this connector
+### Capabilities
 
-- [Supported capabilities](/power-query/connectors/azure-analysis-services#capabilities-supported)
-- [Troubleshooting](/power-query/connectors/azure-analysis-services#troubleshooting)
-- [Connect using advanced options](/power-query/connectors/azure-analysis-services#connect-using-advanced-options)
+[!INCLUDE [azure-data-explorer-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [azure-data-explorer-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Azure Data Explorer
+
+[!INCLUDE [azure-data-explorer-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-data-explorer/azure-data-explorer-connect-to-power-query-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -69,13 +80,13 @@ For specific instructions to set up your connection in a pipeline, follow these 
     * **Connection name**: Specify a name for your connection.
 
 1. Under **Data gateway**, select an existing data gateway if your Azure Data Explorer instance isn't publicly accessible.
-
 1. For **Authentication kind**, select either **Workspace identity** or **Organizational account** and complete the related configuration based on your selection.
 
 1. Optionally, set the privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
-
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
+
 
 ## Related content
 
+- [For more information about this connector, see the Azure Data Explorer connector documentation.](/power-query/connectors/azure-data-explorer)
 - [Configure Azure Data Explorer in a copy activity](connector-azure-data-explorer-copy-activity.md)

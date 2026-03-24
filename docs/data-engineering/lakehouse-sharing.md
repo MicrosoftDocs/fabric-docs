@@ -89,6 +89,7 @@ Use the following checks when sharing or permission updates don't behave as expe
 - **You can't select Share**: Verify that you have share permission for the lakehouse (Admin or Member by default, or explicit Share permission). For role behavior, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
 - **Users can open the item but can't query data**: Verify that recipients have the required permission for their access path (**Read all with SQL analytics endpoint** for SQL endpoint access, **Read all with Apache Spark** for Spark and OneLake APIs). For permission definitions, see [Share items in Microsoft Fabric](../fundamentals/share-items.md#item-permission-model).
 - **Users still have old access after changes**: Permission updates can take up to two hours to propagate for signed-in users. Recheck the **Direct access** list and ask the recipient to refresh or sign in again. For platform behavior details, see [Share items in Microsoft Fabric](../fundamentals/share-items.md#considerations-and-limitations).
+- **Users with "Read all with SQL analytics endpoint" permission**: Users can access data using the SQL Endpoint URL but cannot access the data using the Lakehouse URL. If users need access using the Lakehouse URL, grant the **Read all with Apache Spark** permission as well in addition to **Read all with SQL analytics endpoint** permission. For permission definitions, see [Share items in Microsoft Fabric](../fundamentals/share-items.md#item-permission-model).
 
 ## Known issues
 

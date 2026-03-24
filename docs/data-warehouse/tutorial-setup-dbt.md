@@ -154,7 +154,7 @@ Important things to consider when using dbt-fabric adapter:
 
 - Some T-SQL commands are supported by dbt-fabric adapter using `Create Table as Select` (CTAS), `DROP`, and `CREATE` commands, such as `ALTER TABLE ADD/ALTER/DROP COLUMN`, `MERGE`, `TRUNCATE`, `sp_rename`.
 
-- Review [Unsupported data types](data-types.md#unsupported-data-types) to learn about the supported and unsupported data types.
+- Review [Unsupported data types](data-types.md#unsupported-data-types-for-tables) to learn about the supported and unsupported data types.
 
 - You can log issues on the dbt-fabric adapter on GitHub by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
 
