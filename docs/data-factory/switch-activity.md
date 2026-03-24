@@ -87,7 +87,7 @@ When we run the pipeline, we input a value for the `v_string_input`. If we input
 
 After a successful run of the pipeline with "blue" as the input, we can see in the output of the **Set variable activity** in the "Blue" case that `v_output` was set to "Blue", confirming that the switch activity evaluated the expression and ran the correct case.
 
-:::image type="content" source="media/switch-activity/pipeline-run-example.png" alt-text="Screenshot showing a successful pipeline run example after switch case evaluation, showing that the correct (blue) activity was run after an input of blue.":::
+:::image type="content" source="media/switch-activity/pipeline-run-example.png" lightbox="media/switch-activity/pipeline-run-example.png" alt-text="Screenshot showing a successful pipeline run example after switch case evaluation, showing that the correct (blue) activity was run after an input of blue.":::
 
 ## Related content
 
