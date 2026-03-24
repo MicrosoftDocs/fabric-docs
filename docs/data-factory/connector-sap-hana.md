@@ -64,9 +64,9 @@ The following table contains a summary of the properties needed for an SAP HANA 
 | **Server** | The host name or IP address of the SAP HANA server. | Yes |
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
 | **Validate server certificate** | Specifies whether to validate the SAP HANA server certificate. | No |
-| **SSL crypto provider** | The SSL crypto provider that you want to use. Allowed values are **mscrypto**, **sapcrypto**, and **commoncrypto**. | No |
+| **SSL crypto provider** | The SSL crypto provider that you want to use. Allowed values are **mscrypto**, **sapcrypto**, and **commoncrypto**. | Yes if you enable **Validate server certificate**  |
 | **Single sign-on** | Configure SSO options for Kerberos or SAML based on your query mode. | No |
-| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | No |
+| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
