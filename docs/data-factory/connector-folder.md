@@ -55,7 +55,7 @@ The following table contains a summary of the properties needed for a Folder con
 | **Connection type** | Select **Folder**. | Yes |
 | **Full path** | The root path of the folder that you want to copy. Use the escape character "" for special characters in the string. For example，
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
-| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | No |
+| **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
 
 For specific instructions to set up your connection in Manage connections and gateways, follow these steps:
 
