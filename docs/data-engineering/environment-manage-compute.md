@@ -3,7 +3,7 @@ title: Compute Management in Fabric Environments
 description: A Microsoft Fabric environment contains configurations that include Spark compute properties. Learn how to configure these properties in an environment.
 ms.reviewer: saravi
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 03/25/2026
 ms.search.form: Manage Spark compute in Environment
 ai-usage: ai-assisted
 ---

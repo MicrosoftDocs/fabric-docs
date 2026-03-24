@@ -3,7 +3,7 @@ title: Create, Configure, and Use an Environment in Fabric
 description: Learn how to create, configure, and use a Microsoft Fabric environment in your notebooks and Spark job definitions.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 03/25/2026
 ms.search.form: Create and use Environment
 ai-usage: ai-assisted
 ---

@@ -3,7 +3,7 @@ title: Manage libraries with limited network access in Fabric
 description: Learn how to add and manage libraries in Fabric when outbound network access is restricted.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 03/25/2026
 ms.search.form: Manage libraries when private links and OAP enabled.
 ---
 

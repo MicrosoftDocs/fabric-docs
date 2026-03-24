@@ -3,7 +3,7 @@ title: Manage Apache Spark libraries
 description: Learn how to manage and use Python, R, and Java libraries in Microsoft Fabric, including best practices for environments and inline installation.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 03/25/2026
 #customer intent: As a user, I want to learn about the mechanisms that Microsoft Fabric offers to manage libraries in order to make use of prewritten code.
 ---
 

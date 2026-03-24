@@ -3,7 +3,7 @@ title: Manage libraries in Fabric environments
 description: Learn how to add, update, and manage public and custom libraries in Microsoft Fabric environments.
 ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 03/20/2026
+ms.date: 03/25/2026
 ms.search.form: Manage libraries in Environment
 ai-usage: ai-assisted
 ---
