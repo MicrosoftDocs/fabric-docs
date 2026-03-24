@@ -6,7 +6,6 @@ ms.topic: include
 
 You need user permissions for your BigQuery database that contains the following permissions:
 
-## Mirroring for Google BigQuery (GBQ) – Permissions List
 
 - `bigquery.datasets.create`
 - `bigquery.tables.list`
