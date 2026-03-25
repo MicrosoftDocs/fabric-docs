@@ -197,6 +197,9 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
 
 ## Create a Livy API Spark session
 
+> [!TIP]
+> If your workload requires executing multiple Spark statements concurrently, consider using [high concurrency sessions](high-concurrency-livy.md) instead. HC sessions provide independent execution contexts that run in parallel while the system manages reuse of underlying Livy sessions.
+
 1. Add another notebook cell and insert this code.
 
     ```python
@@ -456,16 +459,6 @@ create_livy_session = requests.post(livy_base_url, headers = headers, json = {
         print(f"Error during session cleanup: {e}")
     ```
 
-
-## Use high concurrency sessions for parallel execution
-
-If your workload requires executing multiple Spark statements concurrently, use high concurrency sessions.
-
-High concurrency sessions provide independent execution contexts that can run in parallel, while the system manages reuse of underlying Livy sessions.
-
-For high‑throughput workloads, reuse a bounded pool of high concurrency sessions rather than routing all requests through a single session.
-
-Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
 
 
 ## View your jobs in the Monitoring hub
