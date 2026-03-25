@@ -16,10 +16,10 @@ Learn how to acquire Spark High Concurrency (HC) sessions, demonstrate **session
 
 ## Prerequisites
 
-- [Fabric Premium or Trial capacity](https://learn.microsoft.com/en-us/fabric/fundamentals/fabric-trial) with a Lakehouse
+- [Fabric Premium or Trial capacity](../fundamentals/fabric-trial.md) with a Lakehouse
 - A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [PySpark](https://code.visualstudio.com/docs/python/python-quick-start) and Python 3.10+
-- A Microsoft Entra service principal (SPN) with workspace access. [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app)
-- A client secret for the service principal. [Add and manage application credentials](https://learn.microsoft.com/en-us/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+- A Microsoft Entra service principal (SPN) with workspace access. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
+- A client secret for the service principal. [Add and manage application credentials](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
 
 Replace the placeholders `{Entra_TenantID}`, `{Entra_ClientID}`, `{Entra_ClientSecret}`, `{Fabric_WorkspaceID}`, and `{Fabric_LakehouseID}` with your values when following the examples in this article.
 
@@ -307,7 +307,7 @@ for label, url in [("A", session_url_a), ("B", session_url_b)]:
 
 ## Related content
 
-- [Get started with Livy API session (regular)](https://learn.microsoft.com/en-us/fabric/data-engineering/get-started-api-livy-session)
-- [Submit Spark batch jobs using the Livy API](https://learn.microsoft.com/en-us/fabric/data-engineering/get-started-api-livy-batch)
-- [Apache Spark monitoring overview](https://learn.microsoft.com/en-us/fabric/data-engineering/spark-monitoring-overview)
+- [Get started with Livy API session (regular)](get-started-api-livy-session.md)
+- [Submit Spark batch jobs using the Livy API](get-started-api-livy-batch.md)
+- [Apache Spark monitoring overview](spark-monitoring-overview.md)
 - [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)

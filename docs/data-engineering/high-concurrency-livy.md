@@ -93,7 +93,7 @@ If an active Livy session already exists for the SessionTag and has available RE
 ```
 
 Notes:
-- `artifactName` (Lakehouse) is used to surface HC jobs in Monitoring Hub as HC_<LakehouseName>_<LIVY_SESSION_ID>.
+- `artifactName` (Lakehouse) is used to surface HC jobs in Monitoring Hub as `HC_<LakehouseName>_<LIVY_SESSION_ID>`.
 - `sessionTag` is a hint for packing; it is not a strict lock — rapid concurrent POSTs with same `sessionTag` may create multiple Livy sessions.
 - The API is non-idempotent by default in this contract (multiple POSTs can yield distinct HC IDs / REPLs).
 
