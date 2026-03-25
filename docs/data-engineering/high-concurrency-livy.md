@@ -17,7 +17,7 @@ Existing Livy session and batch workloads continue to work without modification.
 
 ## Why high concurrency is needed
 
-Traditional Livy usage is optimized for sequential or low‑concurrency execution. As automation scenarios grow, customers need:
+Standard Livy usage is optimized for sequential or low‑concurrency execution. As automation scenarios grow, customers need:
 - Parallel Spark execution
 - Predictable resource usage
 - Isolation between concurrent workloads
@@ -56,6 +56,78 @@ Important characteristics:
 - Multiple acquire requests with the same `sessionTag` return **different HC session IDs**
 - These HC sessions may still be backed by the same underlying Livy session
 
+
+## Key concepts
+Here's a breakdown of the key parameters:
+- **HC ID**: Fabric identifier for a REPL-level high-concurrency session (system-generated GUID returned by the API).
+- **Livy session ID**: underlying Spark/Livy session that can host multiple REPLs.
+- **REPL ID**: identifier of the REPL inside a Livy session (maps to an HC ID).
+- **SessionTag (optional)**: hint used to pack REPLs into existing Livy sessions when possible.
+- **Limits**: Supports upto 5 REPLs Livy session. Rapid concurrent creates using the same SessionTag might create multiple Livy sessions.
+
+
+### Acquire High Concurrency Spark Session
+
+If an active Livy session already exists for the SessionTag and has available REPL slots, the service will create a REPL inside that session. Otherwise, a new Livy session is requested and a REPL created inside it.
+
+#### Request payload (HighConcurrencySessionRequest)
+
+```json
+{
+  "artifactName": "string",
+  "sessionTag": "string",
+  "tags": { "key": "value" },
+  "name": "string",
+  "file": "string",
+  "className": "string",
+  "args": ["string"],
+  "jars": ["string"],
+  "files": ["string"],
+  "pyFiles": ["string"],
+  "archives": ["string"],
+  "conf": { "spark.some.config": "value" },
+  "driverMemory": "string",
+  "driverCores": 1,
+  "executorMemory": "string",
+  "executorCores": 1,
+  "numExecutors": 2
+}
+```
+
+Notes:
+- `artifactName` (Lakehouse) is used to surface HC jobs in Monitoring Hub as HC_<LakehouseName>_<LIVY_SESSION_ID>.
+- `sessionTag` is a hint for packing; it is not a strict lock — rapid concurrent POSTs with same `sessionTag` may create multiple Livy sessions.
+- The API is non-idempotent by default in this contract (multiple POSTs can yield distinct HC IDs / REPLs).
+
+#### Response payload (HighConcurrencySessionResponse)
+
+```json
+{
+  "id": "string",
+  "state": "string",
+  "fabricSessionStateInfo": { "state": "string", "errorMessage": null },
+  "sessionId": "string | null",
+  "workspaceId": "string",
+  "artifactId": "string | null",
+  "creatorId": "string",
+  "createdAt": "ISO 8601",
+  "replId": "string | null",
+  "sessionTag": "string | null"
+}
+```
+
+Responses: 200, 400, 401, 404, 409, 500
+
+## Monitoring experience and UX considerations
+
+HC jobs surface in Monitoring Hub as `HC_<LakehouseName>_<LivySessionId>` to maintain consistency with other job types. This allows top-level visibility but limits REPL-level cancellation from the UI.
+
+
+## Best practices
+
+- Use `sessionTag` to pack related jobs into shared Livy sessions when acceptable.
+- Poll the HC session GET endpoint to determine when the `state` is `Idle` and both `sessionId` and `replId` are populated.
+
 ## Related content
 * [Getting started with High Concurrency with Livy Endpoint](get-started-hc-livy.md).
 * [Submit session jobs using the Livy API](get-started-api-livy-session.md)
@@ -63,4 +135,3 @@ Important characteristics:
 * [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Apache Spark application detail](spark-detail-monitoring.md)
-

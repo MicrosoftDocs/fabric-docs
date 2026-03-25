@@ -28,11 +28,6 @@ The Fabric Livy API allows submitting jobs in two different modes:
 
 The Fabric Livy API supports high concurrency execution for scenarios that require running multiple Spark statements in parallel through a single API surface.
 
-High concurrency support is designed for automation‑first workloads such as:
-- Services that submit Spark statements programmatically
-- Orchestrators and pipelines triggering parallel Spark execution
-- JDBC/ODBC drivers and ISV applications
-
 With high concurrency support, clients can acquire multiple independent execution contexts and execute Spark statements concurrently, while the system manages underlying Spark session reuse, capacity, and isolation.
 
 > [!NOTE]  
