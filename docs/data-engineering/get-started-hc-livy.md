@@ -1,6 +1,6 @@
 ---
-title: Getting started with High Concurrency with Livy Endpoint
-description: Learn about acquiring High Concurrency Spark Session for the Microsoft Fabric Livy API
+title: Getting started with high concurrency with the Livy endpoint
+description: Learn about acquiring high concurrency Spark sessions for the Microsoft Fabric Livy API.
 ms.reviewer: avinandac
 ms.author: eur
 author: eric-urban
@@ -8,56 +8,58 @@ ms.topic: how-to
 ms.search.form: Get started with High Concurrency with the Livy API for Data Engineering
 ms.date: 02/26/2026
 ---
-# Get started with the Livy API for Fabric High Concurrency Sessions
+# Get started with the Livy API for Fabric high concurrency sessions
 
 **Applies to:** ✅ Fabric Data Engineering and Data Science
 
-Learn how to acquire Spark High Concurrency (HC) sessions, demonstrate **session packing**, execute statements in parallel, and verify **REPL isolation** using the Livy API for Fabric Data Engineering.
+Learn how to acquire Spark high concurrency (HC) sessions, demonstrate session packing, execute statements in parallel, and verify REPL isolation using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
-- [Fabric Premium or Trial capacity](../fundamentals/fabric-trial.md) with a Lakehouse
-- A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [PySpark](https://code.visualstudio.com/docs/python/python-quick-start) and Python 3.10+
-- A Microsoft Entra service principal (SPN) with workspace access. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app)
-- A client secret for the service principal. [Add and manage application credentials](/entra/identity-platform/how-to-add-credentials?tabs=client-secret)
+- [Fabric Premium or Trial capacity](../fundamentals/fabric-trial.md) with a Lakehouse.
+- A remote client such as [Visual Studio Code](https://code.visualstudio.com/) with [PySpark](https://code.visualstudio.com/docs/python/python-quick-start) and Python 3.10+.
+- A Microsoft Entra service principal (SPN) with workspace access. [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
+- A client secret for the service principal. [Add and manage application credentials](/entra/identity-platform/how-to-add-credentials?tabs=client-secret).
 
 Replace the placeholders `{Entra_TenantID}`, `{Entra_ClientID}`, `{Entra_ClientSecret}`, `{Fabric_WorkspaceID}`, and `{Fabric_LakehouseID}` with your values when following the examples in this article.
 
-## What are High Concurrency sessions?
+## What are high concurrency sessions?
 
-High Concurrency (HC) sessions allow multiple users or processes to share a single Spark session. Each caller gets an isolated **REPL** (Read-Eval-Print Loop) within the shared session, so statements from different callers don't interfere with each other.
+High concurrency (HC) sessions allow multiple users or processes to share a single Spark session. Each caller gets an isolated **REPL** (Read-Eval-Print Loop) within the shared session. Statements from different callers don't interfere with each other.
 
 ### Session packing
 
-When two HC sessions are created with the same **`sessionTag`**, the Fabric API packs them onto the **same underlying Livy session**. Each HC session gets its own REPL, providing:
+When two HC sessions are created with the same `sessionTag`, the Fabric API packs them onto the same underlying Livy session. Each HC session gets its own REPL, which provides:
 
-- **Resource efficiency** — Multiple users share one Spark session instead of each spinning up their own.
-- **REPL isolation** — Variables and state in one REPL are not visible to others.
-- **Parallel execution** — Statements on different REPLs can run concurrently.
+- **Resource efficiency**: Multiple users share one Spark session instead of each creating their own.
+- **REPL isolation**: Variables and state in one REPL aren't visible to others.
+- **Parallel execution**: Statements on different REPLs can run concurrently.
 
 ### Key IDs
 
-| ID | Unique per… | Used for |
+| ID | Unique per | Used for |
 |----|------------|----------|
 | HC session `id` | HC session | Poll status, delete session |
-| `sessionId` | Livy session (**shared** when packed!) | Statement URLs |
+| `sessionId` | Livy session (shared when packed) | Statement URLs |
 | `replId` | REPL (isolated context) | Statement URLs |
 
-> **Important:** The `sessionId` and `replId` are only available once the HC session reaches the `Idle` state.
+> [!IMPORTANT]
+> The `sessionId` and `replId` are only available once the HC session reaches the `Idle` state.
 
 ### How HC sessions differ from regular Livy sessions
 
-| Aspect | Regular Livy Session | HC Session |
+| Aspect | Regular Livy session | HC session |
 |--------|---------------------|------------|
 | **Endpoint** | `.../sessions` | `.../highConcurrencySessions` |
-| **Statements** | Submitted directly to the session | Submitted through a **REPL** (`/repls/{replId}/statements`) |
-| **Acquisition** | Session becomes `idle` directly | `NotStarted` → `AcquiringHighConcurrencySession` → `Idle` |
+| **Statements** | Submitted directly to the session | Submitted through a REPL (`/repls/{replId}/statements`) |
+| **Acquisition** | Session becomes `idle` directly | `NotStarted` then `AcquiringHighConcurrencySession` then `Idle` |
 | **Session packing** | Not applicable | Optional `sessionTag` to share underlying Spark sessions |
 
-## Get started with Livy API HC Session
+## Get started with Livy API HC session
 
 ### 1. Authenticate with Microsoft Entra
-Acquire an access token using the SPN client-credentials flow. Replace the placeholder values below with your actual credentials.
+
+Acquire an access token using the SPN client-credentials flow. Replace the placeholder values with your actual credentials.
 
 ```python
 from msal import ConfidentialClientApplication
@@ -89,7 +91,8 @@ else:
 ```
 
 ### 2. Create two HC sessions with the same session tag
-We create two HC sessions using `sessionTag: "demo-tag"`. Because they share the same tag, the Fabric API will pack them onto the **same underlying Livy session**, giving each one its own isolated REPL.
+
+Create two HC sessions using `sessionTag: "demo-tag"`. Because they share the same tag, the Fabric API packs them onto the same underlying Livy session. Each session gets its own isolated REPL.
 
 ```python
 import json
@@ -137,12 +140,13 @@ session_url_b = f"{livy_base_url}/{hc_id_b}"
 
 ### 3. Poll both sessions until ready and verify session packing
 
-Each session transitions: `NotStarted` → `AcquiringHighConcurrencySession` → `Idle`.
+Each session transitions through these states: `NotStarted`, `AcquiringHighConcurrencySession`, and then `Idle`.
 
-Once both are `Idle`, we verify:
-- `hc_id_a ≠ hc_id_b` — different HC sessions
-- `sessionId_a == sessionId_b` — **same** underlying Livy session (packing!)
-- `replId_a ≠ replId_b` — different isolated REPLs
+Once both sessions are `Idle`, verify the following:
+
+- `hc_id_a` and `hc_id_b` differ, which confirms they're different HC sessions.
+- `sessionId_a` and `sessionId_b` match, which confirms they share the same underlying Livy session (session packing).
+- `replId_a` and `replId_b` differ, which confirms they have separate isolated REPLs.
 
 ```python
 import time
@@ -174,16 +178,16 @@ repl_id_a = ready_a["replId"]
 repl_id_b = ready_b["replId"]
 
 print()
-print("═" * 50)
+print("=" * 50)
 print("SESSION PACKING VERIFICATION")
-print("═" * 50)
+print("=" * 50)
 print(f"HC session A id:    {hc_id_a}")
 print(f"HC session B id:    {hc_id_b}")
 print(f"HC IDs differ:      {hc_id_a != hc_id_b}")
 print()
 print(f"Livy sessionId A:   {livy_session_id_a}")
 print(f"Livy sessionId B:   {livy_session_id_b}")
-print(f"Same Livy session:  {livy_session_id_a == livy_session_id_b}  ← session packing!")
+print(f"Same Livy session:  {livy_session_id_a == livy_session_id_b}")
 print()
 print(f"REPL A:             {repl_id_a}")
 print(f"REPL B:             {repl_id_b}")
@@ -192,7 +196,7 @@ print(f"REPLs differ:       {repl_id_a != repl_id_b}")
 
 ### 4. Submit statements to both REPLs in parallel
 
-We fire two POST requests (one per REPL) before polling either for results. Because the REPLs share the same Spark session, both statements can execute concurrently.
+Submit two POST requests (one per REPL) before polling either for results. Because the REPLs share the same Spark session, both statements can run concurrently.
 
 ```python
 # Build statement URLs for each REPL
@@ -212,7 +216,7 @@ assert resp_b.status_code in (200, 201), f"Failed: {resp_b.text}"
 stmt_b = resp_b.json()
 stmt_url_b = f"{stmts_url_b}/{stmt_b['id']}"
 
-print("Both statements submitted — polling for results...")
+print("Both statements submitted. Polling for results...")
 
 # Poll both statements
 def poll_statement(url, label):
@@ -231,16 +235,16 @@ output_a = result_a.get("output", {}).get("data", {}).get("text/plain", "")
 output_b = result_b.get("output", {}).get("data", {}).get("text/plain", "")
 
 print()
-print("═" * 50)
+print("=" * 50)
 print("PARALLEL EXECUTION RESULTS")
-print("═" * 50)
+print("=" * 50)
 print(f"REPL A output: {output_a}")
 print(f"REPL B output: {output_b}")
 ```
 
 ### 5. Demonstrate REPL isolation
 
-Set a variable `x = 42` in REPL A, then try to access it from REPL B. This proves that even though both REPLs share the same Spark session, their **variables are isolated**.
+Set a variable `x = 42` in REPL A, then try to access it from REPL B. Even though both REPLs share the same Spark session, their variables are isolated.
 
 ```python
 # Set x = 42 in REPL A
@@ -261,16 +265,16 @@ output_b = result_b.get("output", {}).get("data", {}).get("text/plain", "")
 print(f"[B] Output: {output_b}")
 
 print()
-print("═" * 50)
+print("=" * 50)
 print("REPL ISOLATION RESULTS")
-print("═" * 50)
+print("=" * 50)
 print(f"REPL A (x = 42): {output_a}")
-print(f"REPL B (print(x)): {output_b}  ← variable not shared!")
+print(f"REPL B (print(x)): {output_b}  <- variable not shared!")
 ```
 
 ### 6. Clean up both HC sessions
 
-Delete both HC sessions to release resources. Use the HC session `id` (not the underlying `sessionId`).
+Delete both HC sessions to release resources. Use the HC session `id`, not the underlying `sessionId`.
 
 ```python
 for label, url in [("A", session_url_a), ("B", session_url_b)]:
@@ -287,23 +291,22 @@ for label, url in [("A", session_url_a), ("B", session_url_b)]:
 ## View your jobs in the Monitoring hub
 
 1. Navigate to **Monitor** in the left-side navigation.
-2. Select the most recent activity name to view session details.
-3. You'll see both HC sessions sharing the same underlying Spark session.
+1. Select the most recent activity name to view session details.
+1. Both HC sessions share the same underlying Spark session.
 
 ## API endpoints reference
 
 | Operation | Method | Endpoint |
 |-----------|--------|----------|
 | Create HC session | `POST` | `/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/livyapi/versions/2023-12-01/highConcurrencySessions` |
-| Get HC session | `GET` | `…/highConcurrencySessions/{highConcurrencySessionId}` |
-| Delete HC session | `DELETE` | `…/highConcurrencySessions/{highConcurrencySessionId}` |
-| Submit statement | `POST` | `…/highConcurrencySessions/{sessionId}/repls/{replId}/statements` |
-| Get statement | `GET` | `…/highConcurrencySessions/{sessionId}/repls/{replId}/statements/{statementId}` |
-| Cancel statement | `POST` | `…/highConcurrencySessions/{sessionId}/repls/{replId}/statements/{statementId}/cancel` |
+| Get HC session | `GET` | `.../highConcurrencySessions/{highConcurrencySessionId}` |
+| Delete HC session | `DELETE` | `.../highConcurrencySessions/{highConcurrencySessionId}` |
+| Submit statement | `POST` | `.../highConcurrencySessions/{sessionId}/repls/{replId}/statements` |
+| Get statement | `GET` | `.../highConcurrencySessions/{sessionId}/repls/{replId}/statements/{statementId}` |
+| Cancel statement | `POST` | `.../highConcurrencySessions/{sessionId}/repls/{replId}/statements/{statementId}/cancel` |
 
-
-> **Note:** Create, Get, and Delete operations use the HC session `id`. Statement operations use the underlying Livy `sessionId`.
-
+> [!NOTE]
+> Create, Get, and Delete operations use the HC session `id`. Statement operations use the underlying Livy `sessionId`.
 
 ## Related content
 
