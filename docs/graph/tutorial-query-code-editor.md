@@ -2,9 +2,10 @@
 title: "Tutorial: Query the graph with GQL"
 description: Learn how to query your graph using GQL (Graph Query Language) in the code editor, including pattern matching and filtering examples.
 ms.topic: tutorial
-ms.date: 02/02/2026
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with GQL
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Query the graph by using GQL
@@ -20,7 +21,7 @@ Follow these steps to switch to the code editor and start querying your graph by
 1. Go to your graph's home page.
 1. Select **Code editor** from the top menu.
 
-    :::image type="content" source="./media/tutorial/select-code-editor.png" alt-text="Screenshot showing result of selecting 'Code editor'." lightbox="./media/tutorial/select-code-editor.png":::
+    :::image type="content" source="./media/tutorial/select-code-editor.png" alt-text="Screenshot showing result of selecting Code editor." lightbox="./media/tutorial/select-code-editor.png":::
 
 ## Run a basic query
 
@@ -48,7 +49,7 @@ RETURN c.fullName, o, p.productName
 
 This query:
 
-1. **Matches** the pattern Customer → purchases → Order → contains → Product
+1. **Matches** the pattern `Customer` → `purchases` → `Order` → `contains` → `Product`
 1. **Filters** for the customer named "Carla Adams"
 1. **Returns** the customer's full name, order details, and product names
 
@@ -63,7 +64,7 @@ You can run more complex queries that combine matching graph patterns, filtering
 ```gql
 MATCH (v:Vendor)-[:produces]->(p:`Product`)->(sc:`ProductSubcategory`)->(c:`ProductCategory`), 
       (o:`Order`)-[:`contains`]->(p)
-FILTER c.subCategoryName = 'Touring Bikes'
+FILTER c.categoryName = 'Clothing'
 LET vendorName = v.vendorName, subCategoryName = sc.subCategoryName
 RETURN vendorName, subCategoryName, count(DISTINCT p) AS num_products, count(o) AS num_orders
 GROUP BY vendorName, subCategoryName
@@ -74,16 +75,16 @@ LIMIT 5
 This query:
 
 1. **Matches** a pattern that connects vendors to products through the supply chain, and orders to products.
-1. **Filters** for products in the 'Touring Bikes' category.
+1. **Filters** for products in the `Clothing` category.
 1. **Defines** variables for vendor and subcategory names.
 1. **Returns** the vendor name, subcategory name, distinct product count, and order count.
 1. **Groups** results by vendor and subcategory.
 1. **Orders** results by order count in descending order.
 1. **Limits** results to the top 5.
 
-In summary, it shows the top five vendors supplying products in the 'Touring Bikes' category, along with how many products they supply and how many orders those products have.
+In summary, it shows the top five vendors supplying products in the `Clothing` category, along with how many products they supply and how many orders those products have.
 
-:::image type="content" source="./media/tutorial/code-editor-query-results-3.png" alt-text="Screenshot showing the result of running a GQL query to find the top five vendors supplying products in the 'Touring Bikes' category." lightbox="./media/tutorial/code-editor-query-results-3.png":::
+:::image type="content" source="./media/tutorial/code-editor-query-results-3.png" alt-text="Screenshot showing the result of running a GQL query to find the top five vendors supplying products in the Clothing category." lightbox="./media/tutorial/code-editor-query-results-3.png":::
 
 ## Related content
 
