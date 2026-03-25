@@ -2,7 +2,7 @@
 title: General troubleshooting
 description: Learn how to troubleshoot external control activities for Data Factory in Microsoft Fabric.
 ms.topic: troubleshooting
-ms.date: 12/18/2024
+ms.date: 03/25/2026
 ms.reviewer: abnarain
 ms.custom: pipelines
 ---
@@ -218,6 +218,20 @@ For connector issues such as an encounter error using the copy activity, refer t
 - **Cause**: The Azure function activity definition isn't complete.
 
 - **Recommendation**: Check that the input Azure function activity JSON definition has connection details.
+
+### Error code: LSROBOTokenFailure
+
+- **Message**:
+  - `Access has been blocked by Conditional Access policies. The access policy does not allow token issuance.`
+  - `Device object was not found in the tenant 'YY' directory.`
+  - `The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password.`
+
+- **Cause**:
+  - Entra validates that a device that matches the deviceId claim from a token is actually read from directory and is enabled irrespective of device based conditional access policies. In this case, the person left the organization, but along with it that device that minted the token in the first place has been either deprecated or recycled or unregistered from the Tenant. The reason that the tokens are rejected is because the presence of the deviceId claim indicates a binding to that device and when this device is not found in the directory it indicates a revocation action where the device was deleted or disabled and tokens for that device will no longer be valid.
+  - When the customer creates a pipeline in fabric, their entraID authentication is used to generate a token which is stored and refreshed by ADF for future use of whenever the pipeline is run, so user doesn’t have to authenticate again and again, but once this password changes, the token needs to be updated in Fabric Pipelines. Note that this password can change anytime (initiated by the user) and fabric won’t know it. Across services, the new token is not passed in broadcast mode for security reasons. So next time when the customer runs the pipeline, this stored token needs to be updated. Since it’s difficult and insecure to keep providing the password.
+  - Pipeline is associated with refresh token and Pipeline uses refresh token to acquire access token. This refresh token contains the device identifier. If the device is deleted from the tenant or became uncompliant if Conditional Access Policy is defined, the access token retrieval activity using the refresh token fails with the error
+
+- **Recommendation**: Make a small update to the pipeline (for example, add a description), then save it. If multiple pipelines were created using old credentials, each much be edited and saved. For script examples, you can use [this script to update one or a few pipelines](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-factory/update-few-pipelines.ps1) or [this script to update all pipelines in a subscription](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-factory/update-all-pipelines.ps1).
 
 ## Azure Machine Learning
 
