@@ -15,7 +15,7 @@ Microsoft Fabric Livy API lets users submit and execute Spark code within Spark 
 
 ## Features
 
-The Fabric Livy API allows submitting jobs in two different modes:
+The Fabric Livy API allows submitting jobs in three different modes:
 
 - Session Jobs
   - A Livy session job entails establishing a Spark session that remains active throughout the interaction with the Livy API. Livy Sessions are useful for interactive workloads.
@@ -23,17 +23,12 @@ The Fabric Livy API allows submitting jobs in two different modes:
 - Batch Jobs
   - A Livy batch job entails submitting a Spark application for a single job execution. In contrast to a Livy session job, a batch job doesn't sustain an ongoing Spark session.
   - With Livy batch jobs, each job initiates a new Spark session that ends when the job finishes. This approach works well for tasks that don't rely on previous computations or require maintaining state between jobs.
+- High Concurrency Sessions
+  - A high concurrency (HC) session enables concurrent Spark execution by allowing clients to acquire multiple independent execution contexts. Each HC session maps to a Spark REPL within a shared underlying Livy session.
+  - HC sessions support parallel execution, predictable resource usage, and isolation between concurrent requests. Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
 
-## High concurrency support
-
-The Fabric Livy API supports high concurrency execution for scenarios that require running multiple Spark statements in parallel through a single API surface.
-
-With high concurrency support, clients can acquire multiple independent execution contexts and execute Spark statements concurrently, while the system manages underlying Spark session reuse, capacity, and isolation.
-
-> [!NOTE]  
-> High concurrency support is additive and does not change existing Livy API contracts. Existing Livy session and batch workloads continue to work without modification.
-
-Learn more on [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
+> [!NOTE]
+> High concurrency support is additive and doesn't change existing Livy API contracts. Existing Livy session and batch workloads continue to work without modification.
 
 
 
