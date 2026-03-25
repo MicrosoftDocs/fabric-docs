@@ -2,16 +2,17 @@
 title: "Tutorial: Clean up graph tutorial resources"
 description: Learn how to clean up the lakehouse, graph model, and workspace resources created during the graph in Microsoft Fabric tutorial series.
 ms.topic: tutorial
-ms.date: 03/12/2026
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Clean up graph tutorial resources
+ai-usage: ai-assisted
 ---
-
+ 
 # Tutorial: Clean up graph tutorial resources
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources can help you avoid unnecessary charges and keeps your workspace organized.
+As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources helps you avoid unnecessary charges and keeps your workspace organized.
 
 ## Delete the graph model
 
@@ -25,7 +26,7 @@ To delete the graph model you created:
 
 ## Delete the workspace
 
-If you created a new workspace specifically for this tutorial and you no longer need it, you can delete the entire workspace:
+If you created a new workspace specifically for this tutorial and you no longer need it, delete the entire workspace:
 
 1. Go to **Workspaces** from the left navigation pane.
 1. Select the workspace you want to delete.
