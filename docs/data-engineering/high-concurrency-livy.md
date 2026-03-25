@@ -35,11 +35,9 @@ The HC execution model works as follows:
 5. The client can **retrieve**, **cancel**, or **delete** HC sessions independently.
 
 Each HC session:
-- Maps to a Spark REPL
-- Can execute Spark statements independently
-- Is isolated from failures or cancellations in other HC sessions
-
-Multiple HC sessions can execute concurrently, even when backed by the same underlying Livy session.
+- Maps to a Spark REPL.
+- Can execute Spark statements independently.
+- Is isolated from failures or cancellations in other HC sessions.
 
 
 ### Session reuse and `sessionTag`
