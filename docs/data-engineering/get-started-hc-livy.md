@@ -63,9 +63,9 @@ Acquire an access token using the SPN client-credentials flow. Replace the place
 from msal import ConfidentialClientApplication
 
 # Configuration — Replace with your actual values
-tenant_id = "<add tenant id here>"       # Microsoft Entra tenant ID
-client_id = "<add client id here>"       # Service principal application ID
-client_secret = "<add client secret here>"  # Service principal client secret
+tenant_id = "{Entra_TenantID}"       # Microsoft Entra tenant ID
+client_id = "{Entra_ClientID}"       # Service principal application ID
+client_secret = "{Entra_ClientSecret}"  # Service principal client secret
 
 # OAuth settings
 authority = f"https://login.microsoftonline.com/{tenant_id}"
@@ -96,8 +96,8 @@ import json
 import requests
 
 # Fabric resource IDs — Replace with your actual values
-workspace_id = {workpace-id}
-lakehouse_id = {lakehouse-id}
+workspace_id = "{Fabric_WorkspaceID}"
+lakehouse_id = "{Fabric_LakehouseID}"
 
 # Construct the HC session endpoint URL
 livy_base_url = (
