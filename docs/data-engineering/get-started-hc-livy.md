@@ -12,7 +12,7 @@ ms.date: 02/26/2026
 
 **Applies to:** ✅ Fabric Data Engineering and Data Science
 
-Learn how to acquire Spark high concurrency (HC) sessions, demonstrate session packing, execute statements in parallel, and verify REPL isolation using the Livy API for Fabric Data Engineering.
+Learn how to acquire Spark high concurrency (HC) sessions, demonstrate **session packing**, execute statements in parallel, and verify **REPL isolation** using the Livy API for Fabric Data Engineering.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ High concurrency (HC) sessions allow multiple users or processes to share a sing
 
 ### Session packing
 
-When two HC sessions are created with the same `sessionTag`, the Fabric API packs them onto the same underlying Livy session. Each HC session gets its own REPL, which provides:
+When two HC sessions are created with the same **`sessionTag`**, the Fabric API packs them onto the **same underlying Livy session**. Each HC session gets its own REPL, which provides:
 
 - **Resource efficiency**: Multiple users share one Spark session instead of each creating their own.
 - **REPL isolation**: Variables and state in one REPL aren't visible to others.
@@ -40,7 +40,7 @@ When two HC sessions are created with the same `sessionTag`, the Fabric API pack
 | ID | Unique per | Used for |
 |----|------------|----------|
 | HC session `id` | HC session | Poll status, delete session |
-| `sessionId` | Livy session (shared when packed) | Statement URLs |
+| `sessionId` | Livy session (**shared** when packed) | Statement URLs |
 | `replId` | REPL (isolated context) | Statement URLs |
 
 > [!IMPORTANT]
@@ -51,7 +51,7 @@ When two HC sessions are created with the same `sessionTag`, the Fabric API pack
 | Aspect | Regular Livy session | HC session |
 |--------|---------------------|------------|
 | **Endpoint** | `.../sessions` | `.../highConcurrencySessions` |
-| **Statements** | Submitted directly to the session | Submitted through a REPL (`/repls/{replId}/statements`) |
+| **Statements** | Submitted directly to the session | Submitted through a **REPL** (`/repls/{replId}/statements`) |
 | **Acquisition** | Session becomes `idle` directly | `NotStarted` then `AcquiringHighConcurrencySession` then `Idle` |
 | **Session packing** | Not applicable | Optional `sessionTag` to share underlying Spark sessions |
 
@@ -92,7 +92,7 @@ else:
 
 ### 2. Create two HC sessions with the same session tag
 
-Create two HC sessions using `sessionTag: "demo-tag"`. Because they share the same tag, the Fabric API packs them onto the same underlying Livy session. Each session gets its own isolated REPL.
+Create two HC sessions using `sessionTag: "demo-tag"`. Because they share the same tag, the Fabric API packs them onto the **same underlying Livy session**. Each session gets its own isolated REPL.
 
 ```python
 import json
@@ -145,7 +145,7 @@ Each session transitions through these states: `NotStarted`, `AcquiringHighConcu
 Once both sessions are `Idle`, verify the following:
 
 - `hc_id_a` and `hc_id_b` differ, which confirms they're different HC sessions.
-- `sessionId_a` and `sessionId_b` match, which confirms they share the same underlying Livy session (session packing).
+- `sessionId_a` and `sessionId_b` match, which confirms they share the **same** underlying Livy session (session packing).
 - `replId_a` and `replId_b` differ, which confirms they have separate isolated REPLs.
 
 ```python
@@ -244,7 +244,7 @@ print(f"REPL B output: {output_b}")
 
 ### 5. Demonstrate REPL isolation
 
-Set a variable `x = 42` in REPL A, then try to access it from REPL B. Even though both REPLs share the same Spark session, their variables are isolated.
+Set a variable `x = 42` in REPL A, then try to access it from REPL B. Even though both REPLs share the same Spark session, their **variables are isolated**.
 
 ```python
 # Set x = 42 in REPL A
