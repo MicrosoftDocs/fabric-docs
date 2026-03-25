@@ -184,7 +184,7 @@ async def wait_until_ready(client, hc_id):
         r = await client.get(GET_HC.format(hc_id=hc_id), headers=HEADERS)
         r.raise_for_status()
         body = r.json()
-        if body.get("sessionId") and body.get("replId"):
+        if body.get("state") == "Idle" and body.get("sessionId") and body.get("replId"):
             return body
         await asyncio.sleep(2)
 
