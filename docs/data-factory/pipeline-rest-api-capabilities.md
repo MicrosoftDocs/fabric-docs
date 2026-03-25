@@ -118,31 +118,18 @@ Here's an example of what the JSON pipeline description might look like before e
 
 ```json
 {
-
   "name": "SamplePipeline",
-
   "properties": {
-
     "activities": [
-
       {
-
         "name": "Wait10Seconds",
-
         "type": "Wait",
-
         "typeProperties": {
-
           "waitTimeInSeconds": 10
-
         }
-
       }
-
     ]
-
   }
-
 }
 ```
 
