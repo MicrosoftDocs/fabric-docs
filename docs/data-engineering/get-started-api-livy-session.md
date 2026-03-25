@@ -127,7 +127,7 @@ The Livy API defines a unified endpoint for operations. Replace the placeholders
     token = get_access_token(client_id, audience, authority, certificate_path, private_key_path, certificate_thumbprint)
     ```
 
-2. Run the notebook cell. You should see the Microsoft Entra token returned.
+1. Run the notebook cell. You should see the Microsoft Entra token returned.
 
     :::image type="content" source="media/livy-api/livy-session-entra-spn-token.png" alt-text="Screenshot showing the Microsoft Entra SPN token returned after running cell." lightbox= "media/livy-api/Livy-session-entra-spn-token.png":::
 
