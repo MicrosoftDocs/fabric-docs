@@ -287,7 +287,7 @@ If you want to remove an existing Spark property, specify the value as `null` wi
 - Sample request
 
     ```http
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute?beta=False
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/environments/bbbbcccc-1111-dddd-2222-eeee3333ffff/staging/sparkcompute?beta=False
 
     {
       "instancePool": {
@@ -354,8 +354,8 @@ The changes that you made for the staging libraries and Spark compute are cached
 - Sample response
 
     ```http
-    Location: https://api.fabric.microsoft.com/v1/operations/abcdef00-9d7e-469a-abf1-fca847a0ea69
-    x-ms-operation-id: abcdef00-9d7e-469a-abf1-fca847a0ea69
+    Location: https://api.fabric.microsoft.com/v1/operations/ccccdddd-2222-eeee-3333-ffff4444aaaa
+    x-ms-operation-id: ccccdddd-2222-eeee-3333-ffff4444aaaa
     Retry-After: 120  
     ```
 
@@ -371,4 +371,3 @@ During the publish operation, you can also call the following API to cancel it.
 
 - [Create, configure, and use an environment in Fabric](create-and-use-environment.md)
 - [Item APIs - Environment](https://aka.ms/EnvironmentRESTAPISwaggerPage)
-

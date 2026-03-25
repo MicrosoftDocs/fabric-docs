@@ -89,7 +89,7 @@ Fabric provides [shortcuts](../onelake/onelake-shortcuts.md) to enable data virt
 
 :::image type="content" source="./media/get-data/external-storage-shortcut.png" alt-text="Diagram of external storage shortcuts architecture.":::
 
-OneLake can detect the data type referenced by a shortcut and apply either [file transformations](../onelake/shortcuts-file-transformations/transformations.md) or [AI transformations](../onelake/shortcuts-ai-transformations/ai-transformations.md) without requiring a pipeline or custom code. OneLake maintains the resulting Delta table in sync with the source automatically. For example, you can convert `.csv` files to Delta tables or apply AI-based sentiment analysis to `.txt` files in a folder.
+OneLake can detect the data type referenced by a shortcut and apply either [file transformations](../onelake/shortcuts/transformations.md) or [AI transformations](../onelake/shortcuts/transformations-ai.md) without requiring a pipeline or custom code. OneLake maintains the resulting Delta table in sync with the source automatically. For example, you can convert `.csv` files to Delta tables or apply AI-based sentiment analysis to `.txt` files in a folder.
 
 Combined with Mirroring, shortcuts give you flexible data access patterns. You can keep data in place by using shortcuts, or you can replicate data by using mirroring. In both cases, data is ready for Fabric analytics tools without complex ETL.
 
