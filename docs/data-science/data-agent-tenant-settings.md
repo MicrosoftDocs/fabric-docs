@@ -1,13 +1,8 @@
 ---
-title: Configure Fabric data agent tenant settings (preview)
+title: Configure Fabric data agent tenant settings
 description: Learn how to configure Fabric data agent tenant settings for Power BI Semantic Models.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: amjafari
-reviewer: amjafari
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: concept-article #Don't change; maybe should change to "how-to".
+ms.topic: how-to
 ms.date: 02/02/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -71,24 +66,6 @@ For a Fabric data agent to function properly, enable the [**Copilot and Azure Op
   - In order to use fully conversational agentic AI experiences, the agent needs to store conversation history across user sessions. This ensures that the AI agent keeps context about what a user asked in previous sessions. Conversation history is stored for as long as the user allows, up to 28 days if not manually removed.
   - Users can delete their conversation history at any time by clearing the chat.
   - For more information, see [Conversation history stored outside your capacity's geographic region](../admin/service-admin-portal-copilot.md#conversation-history-stored-outside-your-capacitys-geographic-region-compliance-boundary-or-national-cloud-instance).
-
-- **Capacities can be designated as Fabric Copilot capacities**
-
-  - Enable this setting to allow capacity administrators to designate capacities as Fabric Copilot capacities. This consolidates Copilot usage and billing under a single capacity.
-  - For more information, see [Capacities can be designated as Fabric Copilot capacities](../admin/service-admin-portal-copilot.md#capacities-can-be-designated-as-fabric-copilot-capacities).
-
-## Fabric data agent tenant setting
-
-By default, the Fabric data agent feature is enabled at the tenant level. This activation allows users to craft natural language Q&A experiences using generative AI, and then share the Fabric data agent within the organization.
-
-To prevent users from creating and sharing Fabric data agent items, administrators can disable this setting.
-
-### Steps to disable Fabric data agent
-
-1. In **Tenant Settings**, locate the **Fabric data agent** section.
-1. To disable this setting, toggle the **Disabled** option in **Tenant Settings** and select **Apply** as shown in the next screenshot:
-
-:::image type="content" source="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png" alt-text="Screenshot highlighting the Fabric data agent creation and sharing option in the admin portal." lightbox="media/data-agent-tenant-settings/disable-dataagent-tenant-setting.png":::
 
 ## Enable integration of Power BI semantic models via XMLA endpoints
 

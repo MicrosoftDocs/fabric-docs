@@ -1,10 +1,7 @@
 ---
 title: Use ai.generate_response with pandas
 description: Learn how to generate custom text responses based on your own instruction by using the ai.generate_response function with pandas.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -201,6 +198,41 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/generate-response-format-example-output.png" alt-text="Screenshot showing a data frame with a 'bio' column, and a new column for each specified format, with its corresponding formatted output." lightbox="../../media/ai-functions/generate-response-format-example-output.png":::
 
+## Multimodal input
+
+The `ai.generate_response` function supports file-based multimodal input. You can generate responses based on images, PDFs, and text files. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+For **Series-level** calls, set `column_type="path"`:
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+animal_urls = [
+    "<image-url-golden-retriever>",  # Replace with URL to an image of a golden retriever
+    "<image-url-giant-panda>",  # Replace with URL to an image of a giant panda
+    "<image-url-bald-eagle>",  # Replace with URL to an image of a bald eagle
+]
+animal_df = pd.DataFrame({"file_path": animal_urls})
+
+animal_df["animal_name"] = animal_df["file_path"].ai.generate_response(
+    prompt="What type of animal is in this image? Give me only the animal's common name.",
+    column_type="path",
+)
+display(animal_df)
+```
+
+For **DataFrame-level** calls, use `column_type_dict` to specify which columns contain file paths:
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+animal_df["description"] = animal_df.ai.generate_response(
+    prompt="Describe this animal's natural habitat and one interesting fact about it.",
+    column_type_dict={"file_path": "path"},
+)
+display(animal_df)
+```
+
 ## Related content
 
 - Use [ai.generate_response with PySpark](../pyspark/generate-response.md).
@@ -214,5 +246,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

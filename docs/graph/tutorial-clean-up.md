@@ -1,19 +1,18 @@
 ---
 title: "Tutorial: Clean up graph tutorial resources"
-description: Learn how to clean up the resources created during the Graph in Microsoft Fabric tutorial.
+description: Learn how to clean up the lakehouse, graph model, and workspace resources created during the graph in Microsoft Fabric tutorial series.
 ms.topic: tutorial
-ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Clean up graph tutorial resources
+ai-usage: ai-assisted
 ---
-
+ 
 # Tutorial: Clean up graph tutorial resources
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources can help you avoid unnecessary charges and keeps your workspace organized.
+As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources helps you avoid unnecessary charges and keeps your workspace organized.
 
 ## Delete the graph model
 
@@ -27,7 +26,7 @@ To delete the graph model you created:
 
 ## Delete the workspace
 
-If you created a new workspace specifically for this tutorial and you no longer need it, you can delete the entire workspace:
+If you created a new workspace specifically for this tutorial and you no longer need it, delete the entire workspace:
 
 1. Go to **Workspaces** from the left navigation pane.
 1. Select the workspace you want to delete.
@@ -40,7 +39,7 @@ If you created a new workspace specifically for this tutorial and you no longer 
 
 ## Tutorial complete
 
-Congratulations! You completed the Graph in Microsoft Fabric tutorial. You learned how to:
+Congratulations! You completed the graph in Microsoft Fabric tutorial. You learned how to:
 
 - Load sample data into a lakehouse
 - Create a graph model
@@ -53,8 +52,8 @@ Congratulations! You completed the Graph in Microsoft Fabric tutorial. You learn
 
 ## Related content
 
-- [What is Graph in Microsoft Fabric?](overview.md)
+- [What is graph in Microsoft Fabric?](overview.md)
 - [GQL language guide](gql-language-guide.md)
 - [GQL quick reference](gql-reference-abridged.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
-- [End-to-end tutorials in Microsoft Fabric](/fabric/fundamentals/end-to-end-tutorials)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)

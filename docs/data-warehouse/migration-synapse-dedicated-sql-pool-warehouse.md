@@ -1,8 +1,6 @@
 ---
 title: Migration Strategy and Planning for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the strategy and considerations of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: arturv, johoang
 ms.date: 04/06/2025
 ms.topic: concept-article
@@ -163,5 +161,5 @@ The following table provides the mapping of supported data types from Synapse de
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
-- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
+- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric Data Warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
 - [Microsoft Fabric Migration Overview](../fundamentals/migration.md)

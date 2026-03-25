@@ -3,11 +3,12 @@ title: Set up your Oracle database connection
 description: This article provides information about how to create an Oracle database connection in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/14/2025
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your Oracle database connection
@@ -22,7 +23,20 @@ The Oracle database connector supports the following authentication types for co
 |:---|:---|:---|
 |Basic| √| √|
 
-## Prerequisites
+## Set up your connection for Dataflow Gen2
+
+You can connect Dataflow Gen2 in Microsoft Fabric to Oracle database using Power Query connectors. Follow these steps to create your connection:
+
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Oracle database](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to an Oracle database](#connect-to-an-oracle-database).
+
+### Capabilities
+
+[!INCLUDE [oracle-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-capabilities-supported.md)]
+
+### Prerequisites
 
 - Install an on-premises data gateway by following this [guidance](/data-integration/gateway/service-gateway-install?toc=%2Ffabric%2Fdata-factory%2Ftoc.json).  
 
@@ -49,6 +63,18 @@ The Oracle database connector supports the following authentication types for co
         1. Select **Install** button to proceed.
 
             :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to an Oracle database
+
+[!INCLUDE [oracle-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-connect-to-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [oracle-database-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
@@ -121,6 +147,8 @@ The following table contains properties for the supported authentication type.
 |- User name |The Oracle database user name.|Yes ||
 |- Password |The Oracle database password.|Yes ||
 
+
 ## Related content
 
+- [For more information about this connector, see the Oracle database connector documentation.](/power-query/connectors/oracle-database)
 - [Configure in a pipeline copy activity](connector-oracle-database-copy-activity.md)

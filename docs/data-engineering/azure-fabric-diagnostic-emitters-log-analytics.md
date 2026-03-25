@@ -1,18 +1,19 @@
 ---
-title: Monitor Apache Spark applications with Azure Log Analytics
-description: Learn how to enable the Fabric connector for collecting and sending the Apache Spark application metrics and logs to your Log Analytics workspace.
-author: eric-urban
-ms.author: eur
+title: Legacy HTTP Data Collector API path for Azure Log Analytics
+description: Learn how to use the legacy HTTP Data Collector API path for sending Apache Spark diagnostics to Azure Log Analytics in Microsoft Fabric.
 ms.reviewer: jejiang
-ms.topic: tutorial
-ms.date: 08/22/2024
+ms.topic: how-to
+ms.date: 03/18/2026
 ms.custom: references_regions
 ---
-# Monitor Apache Spark applications with Azure log analytics (preview)
+# Legacy HTTP Data Collector API path for Azure Log Analytics
+
+> [!IMPORTANT]
+> Instead of following this article, go to [Collect logs and metrics with Azure Log Analytics](data-collector-api-to-log-ingestion-api.md) for new setups and migrations. This article is for the legacy HTTP Data Collector API path and is kept for reference only.
 
 The Fabric Apache Spark diagnostic emitter extension is a library that enables Apache Spark applications to emit logs, event logs, and metrics to multiple destinations, including Azure log analytics, Azure storage, and Azure event hubs.
 
-In this tutorial, you learn how to configure and emit Spark logs and metrics to Log analytics in Fabric. Once configured, you are able to collect and analyze Apache Spark application metrics and logs in your [Log analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). 
+In this article, you learn how to configure and emit Spark logs and metrics to Log analytics in Fabric. Once configured, you are able to collect and analyze Apache Spark application metrics and logs in your [Log analytics workspace](/azure/azure-monitor/logs/quick-create-workspace). 
 
 ## Configure workspace information
 
@@ -32,7 +33,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 #### Option 1: Configure with Log Analytics Workspace ID and Key
 
 1. Create a Fabric Environment Artifact in Fabric
-2. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_1.yml), which already containing the required properties.  
+1. Add the following **Spark properties** with the appropriate values to the environment artifact, or select **Add from .yml** in the ribbon to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_1.yml), which already containing the required properties.  
 
    - `<EMITTER_NAME>`: The name for emmiter.
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: Log Analytics workspace ID.
@@ -56,7 +57,7 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
    spark.fabric.pools.skipStarterPools: "true" //Add this Spark property when using the default pool.
    ```
 
-3. Save and publish changes.
+1. Save and publish changes.
 
 #### Option 2: Configure with Azure Key Vault
 
@@ -67,13 +68,13 @@ To configure Spark, create a Fabric Environment Artifact and choose one of the f
 To configure Azure Key Vault to store the workspace key, follow these steps:
 
 1. Go to your Key Vault in the Azure portal.
-2. On the settings page for the key vault, select **Secrets**, then **Generate/Import**.
-3. On the **Create a secret** screen, Enter the following values:
+1. On the settings page for the key vault, select **Secrets**, then **Generate/Import**.
+1. On the **Create a secret** screen, Enter the following values:
    - **Name**: Enter a name for the secret. For the default, enter `SparkLogAnalyticsSecret`.
    - **Value**: Enter the `<LOG_ANALYTICS_WORKSPACE_KEY>` for the secret.
    - Leave the other values to their defaults. Then select **Create**.
-4. Create a Fabric Environment Artifact in Fabric
-5. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_2.yml) which includes following Spark properties.
+1. Create a Fabric Environment Artifact in Fabric
+1. Add the following **Spark properties** with the corresponding values to the environment artifact, or Select **Add from .yml** on the ribbon in the Environment artifact to download the [sample yaml file](https://tridentvscodeextension.z13.web.core.windows.net/diagnostics/SparkDiagnosticSampleConfig/log_analytics_spark_properties_option_2.yml) which includes following Spark properties.
 
    - `<EMITTER_NAME>`: The name for emmiter.
    - `<LOG_ANALYTICS_WORKSPACE_ID>`: The Log Analytics workspace ID.
@@ -105,7 +106,7 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
    >
    > You can also store the workspace ID in Key Vault. Set the secret name to `SparkLogAnalyticsWorkspaceId`, or use the configuration `spark.synapse.logAnalytics.keyVault.key.workspaceId` to specify the workspace ID secret name.
 
- 6. Save and publish changes.
+ 1. Save and publish changes.
 
 ### Step 3: Attach the environment artifact to notebooks or spark job definitions, or set it as the workspace default
 
@@ -117,14 +118,14 @@ To configure Azure Key Vault to store the workspace key, follow these steps:
 
 **To attach the environment to notebooks or Spark job definitions:**
 1. Navigate to your notebook or Spark job definition in Fabric.
-2. Select the **Environment** menu on the Home tab and select the configured environment.
-3. The configuration will be applied after starting a **Spark session**.
+1. Select the **Environment** menu on the Home tab and select the configured environment.
+1. The configuration will be applied after starting a **Spark session**.
 
 **To set the environment as the workspace default:**
 
 1. Navigate to Workspace settings in Fabric.
-2. Find the **Spark settings** in your Workspace settings **(Workspace setting -> Data Engineering/Science -> Spark settings)**
-3. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and click **Save**.
+1. Find **Spark settings** in workspace settings (**Workspace setting** > **Data Engineering/Science** > **Spark settings**).
+1. Select **Environment** tab and choose the environment with diagnostics spark properties configured, and select **Save**.
 
 ## Submit an Apache Spark application and view the logs and metrics
 
@@ -135,7 +136,7 @@ To submit an Apache Spark application:
     - Submit an Apache Spark batch job through an Apache Spark job definition.
     - Run your Spark activities in your Pipelines.
 
-2. Go to the specified Log Analytics workspace, and then view the application metrics and logs when the Apache Spark application starts to run.
+1. Go to the specified Log Analytics workspace, and then view the application metrics and logs when the Apache Spark application starts to run.
 
 ## Write custom application logs
 
@@ -266,19 +267,19 @@ Using `spark.synapse.logAnalytics.*` prefix to configure the Log Analytics infor
       - Tables in Log Analytics workspaces support only up to 500 columns.
       - Maximum of 45 characters for column names.
 
-2. **How can I confirm that Log Analytics permissions are correctly configured?**
+1. **How can I confirm that Log Analytics permissions are correctly configured?**
 
    To ensure Log Analytics can receive logs, verify the following permissions:
 
    1) **Log Analytics Write Permissions**:
-      - Log in to the Azure portal and navigate to your Log Analytics workspace.
+      - Sign in to the Azure portal and navigate to your Log Analytics workspace.
       - In the "Access control (IAM)" section, confirm that your user, service principal, or application has been assigned the "Log Analytics Contributor" or "Contributor" role.
 
    2) **KeyVault Read Permissions (if applicable)**:
       - If logs involve KeyVault, go to the KeyVault's "Access policies" or "Access control (IAM)" section.
-      - Ensure the relevant user or service principal has read permissions, such as the "Key Vault Reader" role. If permissions are misconfigured, contact your Azure administrator to adjust the role assignments and wait for the permissions to sync (this may take a few minutes).
+      - Ensure the relevant user or service principal has read permissions, such as the "Key Vault Reader" role. If permissions are misconfigured, contact your Azure administrator to adjust the role assignments and wait for the permissions to sync (this might take a few minutes).
 
-3. **Why does starting a Spark session become slow after configuring these spark properties?**
+1. **Why does starting a Spark session become slow after configuring these spark properties?**
 
    This occurs because you have configured spark.fabric.pools.skipStarterPool: true, which skips the Starter Pool (a type of Live Pool) and instead uses an On-Demand Pool to start the Spark session. Starting a spark session in the On-Demand Pool typically takes around 3 minutes to create and initialize.
 

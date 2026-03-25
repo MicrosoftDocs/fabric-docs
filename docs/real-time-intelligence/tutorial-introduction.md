@@ -2,10 +2,7 @@
 title: "Introduction to real-time intelligence tutorial"
 description: "Learn how to use real-time intelligence in Microsoft Fabric to extract insights and visualize streaming data."
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: tutorial
-ms.custom:
 ms.date: 10/21/2025
 ms.subservice: rti-core
 ms.search.form: Get started//

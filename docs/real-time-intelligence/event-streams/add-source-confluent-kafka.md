@@ -1,11 +1,8 @@
 ---
 title: Add Confluent Cloud for Apache Kafka source to an eventstream
 description: Provides information on adding a Confluent Cloud for Apache Kafka source to an eventstream in Microsoft Fabric along with limitations.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 05/06/2025
 ms.search.form: Source and Destination
 #Customer intent: I want to learn how to bring events from a Confluent Cloud for Apache Kafka source into Microsoft Fabric.
@@ -14,15 +11,9 @@ ms.search.form: Source and Destination
 # Add Confluent Cloud for Apache Kafka source to an eventstream
 This article shows you how to add Confluent Cloud for Apache Kafka source to an eventstream. 
 
-Confluent Cloud for Apache Kafka is a streaming platform offering powerful data streaming and processing functionalities using Apache Kafka. By integrating Confluent Cloud for Apache Kafka as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric. 
+[!INCLUDE [confluent-source-description-prerequisites](./includes/confluent-source-description-prerequisites.md)]
 
-## Prerequisites 
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- A Confluent Cloud for Apache Kafka cluster and an API Key. 
-- Your Confluent Cloud for Apache Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
-
+- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md).
 
 ## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
@@ -62,3 +53,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

@@ -5,8 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: yaronc
 ms.topic: overview
-ms.date: 05/29/2025
-ms.custom: 
+ms.date: 02/18/2026
 #customer intent: As data engineer, data scientist, analyst, decision maker, or business user, I want to use OneLake catalog's Explore to discover, manage, and use the content I need.
 ---
 
@@ -22,13 +21,13 @@ The explore tab provides
 * [An item details view that enables you to drill down on an item without leaving the context of the explore tab](./onelake-catalog-item-details.md).
 * [Filters and selectors to help you find the content you're looking for](#filter-the-items-list).
 * [A way to scope the catalog to display only items of a particular domain](#scope-the-catalog-to-a-particular-domain).
-* [An options menu for item actions](#open-an-items-options-menu)
+* [An options menu for item actions](#open-an-items-options-menu).
 
 This article explains what you see in the explore tab and describes how to use it.
 
 ## Open the explore tab
 
-To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab.
+To open the explore tab, select the OneLake catalog icon in the Fabric navigation pane and then select the explore tab. The Explore tab surfaces lakehouses, warehouses, Fabric databases, mirrored items, and other supported item types.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-open.png" alt-text="Screenshot showing how to open the OneLake catalog." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-open.png":::
 
@@ -57,13 +56,13 @@ The following table describes the list columns.
 <a name="onelake-catalog-dlp-note"></a>
 
 > [!NOTE]
-> The explore tab also lists the following items even if you don't have access to them. This is to enable you to request access.
-> * Semantic models that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery).
-> * Power BI reports whose associated semantic model has violated a [data loss prevention policy that restricts access](/purview/dlp-powerbi-get-started#how-do-dlp-policies-for-fabric-work).
+> The explore tab also lists the following items even if you don't have access to them. This listing enables you to request access.
+> * Semantic models that are configured as [discoverable](/power-bi/collaborate-share/service-discovery).
+> * Power BI reports whose associated semantic model violates a [data loss prevention policy that restricts access](/purview/dlp-powerbi-get-started#how-do-dlp-policies-for-fabric-work).
 
 ## Scope the catalog to a particular domain
 
-If domains have been defined in your organization, you can use the OneLake catalog's domain selector to select a domain or subdomain. Only workspaces and items and belonging to the selected domain or subdomain will be displayed and treated in the explore tab. Your selection persists for subsequent sessions.
+If your organization defines domains, use the OneLake catalog's domain selector to select a domain or subdomain. The explore tab displays only workspaces and items belonging to the selected domain or subdomain. Your selection persists for subsequent sessions.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-domains-selector.png" alt-text="Screenshot of the domains selector in the OneLake catalog.":::
 
@@ -71,20 +70,20 @@ For more information about domains, see [Fabric domains](./domains.md).
 
 ## Filter the items list
 
-You can use the filters in the filter pane and the [item type](#find-items-by-item-type-category) and [tag selectors](#find-items-by-tag) at the top of the items list to narrow down the items list so it displays just the types of items you're interested in. You can then select items to explore them in more detail.
+Use the filters in the filter pane and the [item type](#find-items-by-item-type-category) and [tag selectors](#find-items-by-tag) at the top of the items list to narrow down the items list. The list displays just the types of items you're interested in. Select items to explore them in more detail.
 
-The filters pane contains several [predefined filters](#filter-items-by-predefined-filters), and also enables you to [filter by workspace](#filter-items-by-workspace).
+The filters pane contains several [predefined filters](#filter-items-by-predefined-filters). It also enables you to [filter by workspace](#filter-items-by-workspace).
 
 ### Filter items by predefined filters
 
-The filters pane contains several predefined filters. These filters operate across workspaces, showing all the applicable items from across your tenant/domain, as long as **All workspaces** is selected as the workspaces filter. They're described in the following table.
+The filters pane contains several predefined filters. These filters operate across workspaces. They show all the applicable items from across your tenant or domain, as long as you select **All workspaces** as the workspaces filter. They're described in the following table.
 
 |Filter  |Description  |
 |:-------------------------|:----------------------------------------------------|
 | **All Items**                  | Items that you're allowed to find.  |
 | **My items**              | Items that you own.      |
 | **Endorsed items** | Endorsed items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
-| **Favorites** | Items that you have marked as favorites. |
+| **Favorites** | Items you marked as favorites. |
 
 ### Find items by item type category
 
@@ -103,23 +102,23 @@ Use the tags selector to display items tagged with the tags you select.
 
 ### Filter items by workspace
 
-Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you're allowed to see in that workspace will be displayed in the items list.
+Related items are often grouped together in a workspace. To find items by workspace, find and select the workspace you're interested in under the **Workspaces** heading in the filters pane. The items you're allowed to see in that workspace appear in the items list.
 
 > [!TIP]
-> The workspace filter can help you find the workspace your looking for. Select the magnifying glass icon to open the filter.
+> The workspace filter can help you find the workspace you're looking for. Select the magnifying glass icon to open the filter.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png" alt-text="Screenshot of the explore tab's workspaces filter." lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-workspace-filter.png":::
 
 The preceding image shows the *Sales Org* workspace selected in the Workspaces section. Because the item classification selector is set to *Data types*, only semantic models are shown (as no other type of data items are present in this workspace). The semantic model *Contoso FY21 goals* is selected, and its details are shown in the item details view. To explore the details of other items in the list, just select them. The item details view stays open until you dismiss it. This makes it easy to browse the details of items one after another, without losing your list context.
 
 > [!NOTE]
->Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example) or that have been configured as [discoverable](/power-bi/collaborate-share/service-discovery). If you select such a workspace, only the items you have access to and any discoverable items will be displayed in the items list.
+>Generally, the **Workspaces** section only displays workspaces you have access to. However, workspaces you don't have access to might be listed if the workspace contains items that you do have access to (through explicitly granted permissions, for example) or that are configured as [discoverable](/power-bi/collaborate-share/service-discovery). If you select such a workspace, only the items you have access to and any discoverable items appear in the items list.
 
 ## Open an item's options menu
 
-Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, etc. The options available depend on the item and your permissions on the item.
+Each item in the items list has an options menu that enables you to do things, such as open the item's settings, manage item permissions, and more. The options available depend on the item and your permissions on the item.
 
-To display the options menu, hover over the item whose options menu you want to see and select **More options (...)**.
+To display the options menu, hover over the item and select **More options (...)**.
 
 :::image type="content" source="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png" alt-text="Screenshot of an item's option menu in the OneLake catalog." border="false" lightbox="./media/onelake-catalog-explore/onelake-catalog-explore-options-menu.png":::
 
@@ -146,11 +145,11 @@ After a summary is generated, you can generate another version, copy the text fo
 :::image type="content" source="media/onelake-catalog-explore/semantic-model-auto-summary-example.png" alt-text="Screenshot of OneLake Explorer with an example of an AI summary panel expanded." lightbox="media/onelake-catalog-explore/semantic-model-auto-summary-example.png":::
 
 ## View item details
-When you select an item from the items list, its detailed information appears in a dedicated pane alongside your current view. This in-context view allows you to quickly browse through item metadata, lineage, and permissions without losing your place in the item list, making it easy to compare and find the most suitable items. For a comprehensive understanding of how item details are presented and the various ways you can access them, refer to [View item details](./onelake-catalog-item-details.md).
+When you select an item from the items list, its detailed information appears in a dedicated pane alongside your current view. This in-context view allows you to quickly browse through item metadata, lineage, and permissions without losing your place in the item list. You can easily compare and find the most suitable items. For a comprehensive understanding of how item details are presented and the various ways you can access them, see [View item details](./onelake-catalog-item-details.md).
 
 ## Considerations and limitations
 
-* Streaming semantic models are being retired and thus aren't shown. For more information, see [Announcing the retirement of real-time streaming in Power BI](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
+* Streaming semantic models are retired and thus aren't shown. For more information, see [Announcing the retirement of real-time streaming in Power BI](https://powerbi.microsoft.com/blog/announcing-the-retirement-of-real-time-streaming-in-power-bi/).
 
 ## Related content
 

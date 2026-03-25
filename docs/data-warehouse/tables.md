@@ -1,8 +1,6 @@
 ---
 title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul, randolphwest
 ms.date: 09/24/2025
 ms.topic: how-to
@@ -168,7 +166,7 @@ The following list shows some of the table features that aren't currently suppor
 
 ## Related content
 
-- [What is Data warehousing in Microsoft Fabric?](data-warehousing.md)
+- [What is Fabric Data Warehouse?](data-warehousing.md)
 - [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

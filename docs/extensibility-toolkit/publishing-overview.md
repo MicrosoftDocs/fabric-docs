@@ -1,11 +1,10 @@
 ---
 title: Publishing Overview
 description: Overview on how to publish a workload in Fabric.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
+ai-usage: ai-assisted
 ---
 
 # Publishing overview
@@ -57,7 +56,7 @@ This scenario is for Independent Software Vendors (ISVs) and Software Developmen
 Before you begin publishing to the Workload Hub, ensure you have:
 
 - **Publishing tenant**: Define the tenant that manages your workload lifecycle
-- **Unique Workload ID**: Choose a unique identifier in the form `[Publisher].[Workload]` (for example, `Contoso.SalesInsights`)
+- **Unique Workload ID**: Choose a unique identifier in the form `[Publisher].[Workload]` (for example, `Contoso.SalesInsights`). The Workload portion cannot exceed 32 characters.
 - **Workload registration**: Complete registration at <https://aka.ms/fabric_workload_registration>
 
 > [!IMPORTANT]

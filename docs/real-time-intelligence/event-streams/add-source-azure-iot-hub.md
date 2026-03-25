@@ -1,9 +1,7 @@
 ---
 title: Add an Azure IoT Hub Source to an Eventstream
 description: Learn how to add an Azure IoT Hub source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 12/05/2025
@@ -49,5 +47,7 @@ On the **Select a data source** page, search for **Azure IoT Hub**. On the **Azu
 ## Related content
 
 - For a list of supported sources, see [Add and manage an event source in an eventstream](add-manage-eventstream-sources.md).
+
+
 
 

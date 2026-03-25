@@ -3,11 +3,12 @@ title: Set up your OData connection
 description: This article provides information about how to create an OData connection from a pipeline in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your OData connection
@@ -24,14 +25,29 @@ This OData connector supports the following authentication types for copy and Da
 |Basic| √ | √ |
 |Organizational account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to OData. The following links provide the specific Power Query connector information you need to connect to OData in Dataflow Gen2:
+You can connect Dataflow Gen2 in Microsoft Fabric to OData using Power Query connectors. Follow these steps to create your connection:
 
-- To get started using the OData connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-- To load data from the OData connector from Power Query, go to [Load data from an OData Feed in Power Query Online](/power-query/connectors/odata-feed#load-data-from-an-odata-feed-in-power-query-online).
+1. [Get data in Fabric](#get-data).
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Load data from an OData feed](#load-data-from-an-odata-feed).
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+### Capabilities
+
+[!INCLUDE [odata-feed-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/odata-feed-capabilities-supported.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Load data from an OData feed
+
+[!INCLUDE [odata-feed-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/odata-feed-load-data-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [odata-feed-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/odata-feed/odata-feed-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
@@ -116,6 +132,8 @@ The properties in the following table are the supported authentication type.
 |- Username|The user name to use to access the OData endpoint.|Yes |||
 |- Password|The password for the specified username.|Yes |||
 
+
 ## Related content
 
+- [For more information about this connector, see the OData connector documentation.](/power-query/connectors/odata-feed)
 - [Configure OData in a copy activity](connector-odata-copy-activity.md)

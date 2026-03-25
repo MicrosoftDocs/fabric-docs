@@ -4,9 +4,10 @@ description: A tutorial on how to use Apache Spark MLlib to create a machine lea
 ms.reviewer: midesa
 ms.author: scottpolly
 author: s-polly
-ms.topic: how-to
-ms.custom: 
+ms.topic: tutorial
+ms.custom: dev-focus
 ms.date: 06/19/2024
+ai-usage: ai-assisted
 ---
 
 # Build a machine learning model with Apache Spark MLlib
@@ -32,11 +33,7 @@ Logistic regression produces a *logistic function* that can predict the probabil
 
 ## Predictive analysis example of NYC taxi data
 
-First, install ```azureml-opendatasets```. The data is available through the [Azure Open Datasets](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) resource. This dataset subset hosts information about yellow taxi trips, including the start times, end times, start locations, end locations, trip costs, and other attributes.
-
-```python
-%pip install azureml-opendatasets
-```
+The data is available through the [Azure Open Datasets](/azure/open-datasets/dataset-taxi-yellow) resource. This dataset subset hosts information about yellow taxi trips, including the start times, end times, start locations, end locations, trip costs, and other attributes.
 
 The rest of this article relies on Apache Spark to first perform some analysis on the NYC taxi-trip tip data and then develop a model to predict whether a particular trip includes a tip or not.
 
@@ -55,11 +52,10 @@ The rest of this article relies on Apache Spark to first perform some analysis o
     from pyspark.ml.feature import RFormula
     from pyspark.ml.feature import OneHotEncoder, StringIndexer, VectorIndexer
     from pyspark.ml.classification import LogisticRegression
-    from pyspark.mllib.evaluation import BinaryClassificationMetrics
     from pyspark.ml.evaluation import BinaryClassificationEvaluator
     ```
 
-3. We'll use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
+3. Use [MLflow](https://mlflow.org/) to track your machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
 
     ```python
     import mlflow
@@ -67,30 +63,29 @@ The rest of this article relies on Apache Spark to first perform some analysis o
 
 ## Construct the input DataFrame
 
-This example loads the data into a Pandas dataframe, and then converts it into an Apache Spark dataframe. In that format, we can apply other Apache Spark operations to clean and filter the dataset.
+This example loads the data into a Pandas dataframe, and then converts it into an Apache Spark dataframe. In that format, you can apply other Apache Spark operations to clean and filter the dataset.
 
-1. Paste these lines into a new cell, and run them to create a Spark DataFrame. This step retrieves the data via the Open Datasets API. We can filter this data down to examine a specific window of data. The code example uses `start_date` and `end_date` to apply a filter that returns a single month of data.
+1. Paste these lines into a new cell, and run them to create a Spark DataFrame. This step retrieves the data directly from Azure Open Datasets storage. You can filter this data down to examine a specific window of data. The code example uses a filter that returns a single month of data.
 
     ```python
-    from azureml.opendatasets import NycTlcYellow
-    
-    end_date = parser.parse('2018-06-06')
-    start_date = parser.parse('2018-05-01')
-    nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)
-    nyc_tlc_pd = nyc_tlc.to_pandas_dataframe()
+    blob_account_name = "azureopendatastorage"
+    blob_container_name = "nyctlc"
+    blob_relative_path = "yellow"
+    wasbs_path = f"wasbs://{blob_container_name}@{blob_account_name}.blob.core.windows.net/{blob_relative_path}"
 
-    nyc_tlc_df = spark.createDataFrame(nyc_tlc_pd).repartition(20)
-
+    nyc_tlc_df = spark.read.parquet(wasbs_path) \
+        .filter((col("tpepPickupDateTime") >= "2018-05-01") & (col("tpepPickupDateTime") < "2018-06-06")) \
+        .repartition(20)
     ```
 
-2. This code reduces the dataset to about 10,000 rows. To speed up the development and training, the code samples down our dataset for now.
+2. This code reduces the dataset to about 10,000 rows. To speed up the development and training, the code samples down the dataset for now.
 
     ```python
     # To make development easier, faster, and less expensive, sample down for now
     sampled_taxi_df = nyc_tlc_df.sample(True, 0.001, seed=1234)
     ```
 
-3. We want to look at our data using the built-in ```display()``` command. With this command, we can easily view a data sample, or graphically explore trends in the data.
+3. Look at the data using the built-in ```display()``` command. With this command, you can easily view a data sample, or graphically explore trends in the data.
 
     ```python
     #sampled_taxi_df.show(10)
@@ -142,14 +137,14 @@ taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'p
 
 The final task converts the labeled data into a format that logistic regression can handle. The input to a logistic regression algorithm must have a *label/feature vector pairs* structure, where the *feature vector* is a vector of numbers that represent the input point.
 
-Based on the final task requirements, we must convert the categorical columns into numbers. Specifically, we must convert the `trafficTimeBins` and `weekdayString` columns into integer representations. We have many options available to handle this requirement. This example involves the `OneHotEncoder` approach:
+Based on the final task requirements, you must convert the categorical columns into numbers. Specifically, convert the `trafficTimeBins` and `weekdayString` columns into integer representations. Many options are available to handle this requirement. This example involves the `OneHotEncoder` approach:
 
 ```python
 # Because the sample uses an algorithm that works only with numeric features, convert them so they can be consumed
 sI1 = StringIndexer(inputCol="trafficTimeBins", outputCol="trafficTimeBinsIndex")
-en1 = OneHotEncoder(dropLast=False, inputCol="trafficTimeBinsIndex", outputCol="trafficTimeBinsVec")
+en1 = OneHotEncoder(inputCol="trafficTimeBinsIndex", outputCol="trafficTimeBinsVec")
 sI2 = StringIndexer(inputCol="weekdayString", outputCol="weekdayIndex")
-en2 = OneHotEncoder(dropLast=False, inputCol="weekdayIndex", outputCol="weekdayVec")
+en2 = OneHotEncoder(inputCol="weekdayIndex", outputCol="weekdayVec")
 
 # Create a new DataFrame that has had the encodings applied
 encoded_final_df = Pipeline(stages=[sI1, en1, sI2, en2]).fit(taxi_featurised_df).transform(taxi_featurised_df)
@@ -171,7 +166,7 @@ seed = 1234
 train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, testingFraction], seed=seed)
 ```
 
-Once we have two DataFrames, we must create the model formula and run it against the training DataFrame. Then we can validate against the test dataFrame. Experiment with different versions of the model formula to see the effects of different combinations.
+Once you have two DataFrames, create the model formula and run it against the training DataFrame. Then validate against the test DataFrame. Experiment with different versions of the model formula to see the effects of different combinations.
 
 ```python
 ## Create a new logistic regression object for the model
@@ -185,9 +180,9 @@ lrModel = Pipeline(stages=[classFormula, logReg]).fit(train_data_df)
 
 ## Predict tip 1/0 (yes/no) on the test dataset; evaluation using area under ROC
 predictions = lrModel.transform(test_data_df)
-predictionAndLabels = predictions.select("label","prediction").rdd
-metrics = BinaryClassificationMetrics(predictionAndLabels)
-print("Area under ROC = %s" % metrics.areaUnderROC)
+evaluator = BinaryClassificationEvaluator(labelCol="label", rawPredictionCol="prediction", metricName="areaUnderROC")
+auc = evaluator.evaluate(predictions)
+print("Area under ROC = %s" % auc)
 ```
 
 The cell outputs:
@@ -198,7 +193,7 @@ Area under ROC = 0.9749430523917996
 
 ## Create a visual representation of the prediction
 
-We can now build a final visualization to interpret the model results. A [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) can certainly present the result.
+Build a final visualization to interpret the model results. A [ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) can present the result.
 
 ```python
 ## Plot the ROC curve; no need for pandas, because this uses the modelSummary object

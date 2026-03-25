@@ -4,7 +4,6 @@ description: Learn about the mirrored databases from Azure Database for PostgreS
 ms.reviewer: scoriani
 ms.date: 07/15/2025
 ms.topic: overview
-ms.custom:
 ms.search.form: Fabric Mirroring
 no-loc: [Copilot]
 ---
@@ -38,7 +37,7 @@ Each mirrored database in Azure Database for PostgreSQL flexible server has an a
 - Manage permissions on the objects.
 - Query data in other Warehouses and Lakehouses in the same workspace.
 
-In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling that can query the SQL analytics endpoint, including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the mssql extension with Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
+In addition to the [SQL query editor](../data-warehouse/sql-query-editor.md), there's a broad ecosystem of tooling that can query the SQL analytics endpoint, including [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code/mssql-extensions?view=fabric&preserve-view=true), and even GitHub Copilot.
 
 Mirrored databases also offer one-click integration with Microsoft Power BI within Fabric, enabling rapid report creation directly from the mirrored data or SQL analytics endpoint.
 

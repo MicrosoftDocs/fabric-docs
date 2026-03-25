@@ -1,9 +1,7 @@
 ---
 title: Connect to Azure resources securely using managed private endpoints
 description: Learn how to set up managed private endpoints in Fabric network security and stream data securely from Azure Event Hubs or IoT Hub to Eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 7/04/2025
 ms.search.form: fabric's manage private endpoints
@@ -101,3 +99,5 @@ By following these steps, you have a fully operational Eventstream running over 
 * [Network security in Fabric](/fabric/security/security-overview)
 * [Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-overview)
 * [Create Managed Private Endpoints](/fabric/security/security-managed-private-endpoints-create)
+
+

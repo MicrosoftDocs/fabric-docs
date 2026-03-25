@@ -74,6 +74,10 @@ sections:
           - Apache Spark SDK
           
           Use these SDKs along with the Azure Identity library for Microsoft Entra authentication. For more information, see [connect to Cosmos DB in Fabric](how-to-authenticate.md).
+
+          > [!NOTE] 
+          > Cosmos DB in Fabric only supports *Gateway* connection mode.  Some SDKs (for example, .NET and Java) don't default to Gateway, so you must explicitly configure the client to use Gateway before connecting.
+
       - question: |
           Can I use connection strings or primary keys to connect to Cosmos DB in Fabric?
         answer: |
@@ -282,7 +286,7 @@ sections:
       - question: |
           What region is my Cosmos DB database located in?
         answer: |
-          Your Cosmos DB database is located in the region of your Fabric workspace. The workspace region is determined by the capacity assigned to it, which is displayed in **Workspace settings** under the **License info** page.
+          Your Cosmos DB database is located in the region of your Fabric workspace. The workspace region is determined by the capacity assigned to it, which is displayed in **Workspace settings** under the **Workspace type** page.
 
           For more information, see [Fabric regional availability](../../admin/region-availability.md).
       - question: |

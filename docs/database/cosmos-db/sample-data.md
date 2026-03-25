@@ -1,8 +1,7 @@
 ---
 title: Sample Data Sets Cosmos DB Database
 description: Explore the sample data sets and schemas that are available for use in to the Cosmos DB database workload within Microsoft Fabric.
-author: markjbrown
-ms.author: mjbrown
+ms.reviewer: mjbrown
 ms.topic: concept-article
 ms.date: 11/03/2025
 ai-usage: ai-generated
@@ -298,6 +297,7 @@ The following JSON schemas describe the structure of documents in both sample da
 
 ## Related content
 
-- [Review the Cosmos DB in Microsoft Fabric Samples Repository](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/readme.md)
+- [Review the Cosmos DB in Microsoft Fabric Samples Repository](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/README.md)
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
+

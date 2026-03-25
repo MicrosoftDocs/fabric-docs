@@ -1,10 +1,8 @@
 ---
 title: "Limitations for SQL database"
 description: A detailed list of limitations for SQL database in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier
-ms.date: 12/09/2025
+ms.reviewer: nzagorac, antho, sukkaur, imotiwala, drskwier, ajayj
+ms.date: 03/03/2026
 ms.topic: concept-article
 ms.update-cycle: 180-days
 ms.search.form: Databases Limitations for SQL, Databases Limitations
@@ -19,29 +17,31 @@ Azure SQL Database and SQL database in Microsoft Fabric share a common code base
 
 This article applies to SQL database in Fabric only. For the warehouse and SQL analytics endpoint items in Fabric Data Warehouse, see [Limitations of Fabric Data Warehouse](../../data-warehouse/limitations.md).
 
+## Availability
+
+SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **Workspace type** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+
+Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
+
 ## Database level limitations
 
 - SQL database in Fabric uses storage encryption with service-managed keys to protect all customer data at rest. Customer-managed keys are not supported. Transparent Data Encryption (TDE) is not supported.
 - In a [trial capacity](../../fundamentals/fabric-trial.md), you are limited to three databases. There is no limit on databases in other capacities.
 - Each database in the workspace must have a unique name. If a database is deleted, another cannot be re-created with the same name.
 - Database names cannot contain characters `!` `[` `]` `<` `>` `*` `%` `&` `:` `/` `?` `#` `=` `@` `^` `"` `'` `;` `(` `)`.
+- All `ALTER DATABASE SET` options that are available in SQL database in Fabric are currently a preview feature. For more information, see [ALTER DATABASET SET options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=fabric-sqldb&preserve-view=true) for SQL database in Fabric.
 
 ## Table level
 
 - A table primary key cannot be one of these data types: **hierarchyid**, **sql_variant**, **timestamp**.
 - Currently, in-memory, ledger, ledger history, and Always Encrypted tables cannot be created in SQL database in Microsoft Fabric.
-- Full-text indexing is not supported and cannot be created in SQL database in Microsoft Fabric.
 - The following table-level data definition language (DDL) operations aren't allowed:
-    - Switch/Split/Merge partition
+    - Switch partition
     - Partition compression
 
 ## Column level
 
 - Column names for a SQL table cannot contain spaces nor the following characters: `,` `;` `{` `}` `(` `)` `\n` `\t` `=`.
-
-## SQL analytics endpoint limitations  
-
-The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
 
 ## Connection policy
 
@@ -53,11 +53,15 @@ For connections to use this mode, clients need to:
   
   - Allow outbound communication from the client to Azure SQL gateway IP addresses on port 1433.
 
-## Availability
+## Source control and deployment pipelines
 
-SQL database in Fabric is available in most regions where Microsoft Fabric is available. The region of your workspace based on the license capacity, which is displayed in **Workspace settings**, in the **License info** page. For more information, see [Fabric availability](/azure/reliability/reliability-fabric#availability).
+SQL database in Microsoft Fabric has built-in source control and deployment pipelines capabilities that modify the database objects while leaving existing data in place. Database-level settings such as collation and compatibility level aren't included in the source control and deployment pipelines integration. For database settings that can be set with T-SQL after database creation, you can modify the database with scripts after deployment.
 
-Mirroring of SQL database in Fabric is available in [Fabric regions that support mirroring](../../mirroring/azure-sql-database-limitations.md#supported-regions).
+Changes made to the `.sqlproj` file in the source control repository will not persist after deployment, as the source control integration will reset the file on the next commit from source control.
+
+## SQL analytics endpoint limitations  
+
+The SQL analytics endpoint of the SQL database in Fabric works just like the [Lakehouse SQL analytics endpoint](../../data-engineering/lakehouse-overview.md#lakehouse-sql-analytics-endpoint). It is the same read-only experience.
 
 ## Features of Azure SQL Database and Fabric SQL database
 
@@ -70,13 +74,12 @@ The following table lists the major features of SQL Server and provides informat
 | [AI functions](/sql/t-sql/functions/ai-functions-transact-sql?view=fabric-sqldb&preserve-view=true) | Yes | Yes |
 | [Always Encrypted](/azure/azure-sql/database/always-encrypted-landing) | Yes | No |
 | [Application roles](/sql/relational-databases/security/authentication-access/application-roles) | Yes | No |
-| Microsoft Entra authentication | [Yes](/azure/azure-sql/database/authentication-aad-overview) | [Yes](authentication.md) |
 | [BACKUP command](/sql/t-sql/statements/backup-transact-sql) | No, only [system-initiated automatic backups](/azure/azure-sql/database/automated-backups-overview?view=azuresql-db&preserve-view=true) | No, only [system-initiated automatic backups](backup.md) |
 | [Built-in functions](/sql/t-sql/functions/functions) | Most, see individual functions | Most, see individual functions |
 | [BULK INSERT statement](/sql/relational-databases/import-export/import-bulk-data-by-using-bulk-insert-or-openrowset-bulk-sql-server) | Yes, but just from Azure Blob storage as a source. | Yes, through [OPENROWSET](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true), with OneLake as the data source. |
 | [Certificates and asymmetric keys](/sql/relational-databases/security/sql-server-certificates-and-asymmetric-keys) | Yes | Yes |
 | [Change data capture - CDC](/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Yes, for S3 tier and above. Basic, S0, S1, S2 aren't supported. | No  |
-| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name) and can't be updated. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS` and can't be updated. Collations on individual columns are supported.|
+| [Collation - database collation](/sql/relational-databases/collations/set-or-change-the-server-collation) | By default, `SQL_Latin1_General_CP1_CI_AS`. [Set on database creation](/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current&preserve-view=true#collation_name). Can't be updated after deployment. Collations on individual columns are supported.| By default, `SQL_Latin1_General_CP1_CI_AS`. Can be configured [when deploying with the REST API](deploy-rest-api.md) or with the [Fabric CLI to create a database](deploy-cli.md). Can't be updated after deployment. Collations on individual columns are supported.|
 | [Column encryption](/sql/relational-databases/security/encryption/encrypt-a-column-of-data) | Yes | Yes |
 | [Columnstore indexes, clustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes, but the index must be created at the same time the table is created, or mirroring must be stopped. For more information, see [Limitations for Fabric SQL database mirroring (preview)](mirroring-limitations.md#table-level).|
 | [Columnstore indexes, nonclustered](/sql/relational-databases/indexes/columnstore-indexes-overview) | Yes - [Premium tier, Standard tier - S3 and above, General Purpose tier, Business Critical, and Hyperscale tiers](/sql/relational-databases/indexes/columnstore-indexes-overview). | Yes |
@@ -98,13 +101,14 @@ The following table lists the major features of SQL Server and provides informat
 | [Extended events (XEvents)](/sql/relational-databases/extended-events/extended-events) | Some, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=azuresql-db&preserve-view=true) | Some, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=fabricsql&preserve-view=true) |
 | [External tables](/sql/t-sql/statements/create-external-table-transact-sql?view=fabric-sqldb&preserve-view=true) | Yes | Yes (Parquet and CSV) |
 | [Files and file groups](/sql/relational-databases/databases/database-files-and-filegroups) | Primary file group only | Primary file group only |
-| [Full-text search (FTS)](/sql/relational-databases/search/full-text-search) |  Yes, but third-party filters and word breakers aren't supported | No |
+| [Full-text search (FTS)](/sql/relational-databases/search/full-text-search) |  Yes, but third-party filters and word breakers aren't supported | Yes, as a preview feature, but third-party filters and word breakers aren't supported. |
 | [Functions](/sql/t-sql/functions/functions) | Most, see individual functions |  Most, see individual functions |
 | [Intelligent query processing](/sql/relational-databases/performance/intelligent-query-processing?view=azuresqldb-current&preserve-view=true) | Yes | Yes |
 | [Language elements](/sql/t-sql/language-elements/language-elements-transact-sql) | Most, see individual elements | Most, see individual elements  |
 | [Ledger](/sql/relational-databases/security/ledger/ledger-overview) | Yes | No |
 | [Linked servers](/sql/relational-databases/linked-servers/linked-servers-database-engine) | Yes, only as a target | Yes, only as a target |
 | [Logins and users](/sql/relational-databases/security/authentication-access/principals-database-engine) | Yes, but `CREATE` and `ALTER` login statements are limited. Windows logins are not supported. | Logins are not supported. Only users representing Microsoft Entra principals are supported. |
+| Microsoft Entra authentication | [Yes](/azure/azure-sql/database/authentication-aad-overview) | [Yes](authentication.md) |
 | [Minimal logging in bulk import](/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | No, only Full Recovery model is supported. | No, only Full Recovery model is supported. |
 | [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql)|Yes, only to import from Azure Blob storage | Yes, with [OPENROWSET BULK function](/sql/t-sql/functions/openrowset-bulk-transact-sql?view=fabric-sqldb&preserve-view=true) (preview) |
 | [Operators](/sql/t-sql/language-elements/operators-transact-sql) | Most, see individual operators | Most, see individual operators |
@@ -174,6 +178,7 @@ The Azure platform provides a number of PaaS capabilities that are added as an a
 | **Availability** | See [Fabric Reliability](/azure/reliability/reliability-fabric) |
 | **Backups** | Zone-redundant (ZRS) automatic backups with 7 days retention period (enabled by default). |
 | **Read-only replicas** | Use the read-only [SQL analytics endpoint](sql-analytics-endpoint.md) for a read-only TDS SQL connection |
+| **Number of SQL databases** | 150 per workspace | 
 
 ## Tools
 
@@ -188,16 +193,17 @@ Azure SQL Database and SQL database in Fabric support various data tools that ca
 | [BCP](/sql/tools/bcp-utility) | Yes | Yes |
 | [BICEP](/azure/azure-resource-manager/bicep/overview) | Yes | No |
 | [Database watcher](/azure/azure-sql/database-watcher-overview) | Yes | Not currently |
-| [Data Factory in Microsoft Fabric connectors](../../data-factory/connector-overview.md) | Yes, see [Azure SQL Database connector overview](../../data-factory/connector-azure-sql-database-overview.md) | Yes, see [SQL database connector overview](../../data-factory/connector-sql-database-overview.md) | 
+| [Data Factory in Microsoft Fabric connectors](../../data-factory/connector-overview.md) | Yes, see [Azure SQL Database connector overview](../../data-factory/connector-azure-sql-database-overview.md) | Yes, see [SQL database connector overview](../../data-factory/connector-sql-database-overview.md) |
+|[Microsoft.Build.Sql projects](/sql/tools/sql-database-projects/sql-database-projects) | Yes | Yes |
 | [SMO](/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) | Yes, see [SMO](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) |
-| [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes (minimum version is Visual Studio 2022 17.12) |
+| [SQL Server Data Tools (SSDT)](/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | No |
 | [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) | No, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=azuresql-db&preserve-view=true) | No, see [Extended events](/azure/azure-sql/database/xevent-db-diff-from-svr?view=fabricsql&preserve-view=true) |
 | [sqlcmd](/sql/tools/sqlcmd/sqlcmd-utility) | Yes | Yes |
 | [System Center Operations Manager](/system-center/scom/welcome) | Yes, see [Microsoft System Center Management Pack for Azure SQL Database](https://www.microsoft.com/download/details.aspx?id=38829). | No |
 | [Visual Studio Code](https://code.visualstudio.com) | Yes | Yes |
-| [Visual Studio Code with the mssql extension](/sql/tools/visual-studio-code/mssql-extensions) | Yes | Yes |
+| [Visual Studio Code with the MSSQL extension](/sql/tools/visual-studio-code/mssql-extensions) | Yes | Yes |
 
 ## Limitations
 

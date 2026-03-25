@@ -1,14 +1,8 @@
-﻿---
-title: Fabric data agent creation (preview)
-titleSuffix: Learn how to create a Fabric data agent
+---
+title: Fabric data agent creation
 description: Learn how to create a Fabric data agent that can answer questions about data.
-author: jonburchel
-ms.author: jburchel
 ms.reviewer: amjafari
-reviewer: amjafari
-ms.service: fabric
-ms.subservice: data-science
-ms.topic: concept-article #Don't change; maybe should change to "conceptual".
+ms.topic: concept-article
 ms.date: 01/06/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -16,13 +10,11 @@ ms.search.form: Fabric data agent Concepts
 #customer intent: As a Data Analyst, I want to create a Fabric data agent so that I can make it easier for me and my colleagues to get answers from data.
 ---
 
-# Fabric data agent concepts (preview)
+# Fabric data agent concepts
 
 Data agent in Microsoft Fabric is a new Microsoft Fabric feature that enables you to build your own conversational Q&A systems by using generative AI. A Fabric data agent makes data insights more accessible and actionable for everyone in your organization. By using a Fabric data agent, your team can have conversations, with plain English-language questions, about the data that your organization stored in Fabric OneLake and then receive relevant answers. This way, even people without technical expertise in AI or a deep understanding of the data structure can receive precise and context-rich answers.
 
 You can also add organization-specific instructions, examples, and guidance to fine-tune the Fabric data agent. This approach ensures that responses align with your organization's needs and goals, allowing everyone to engage with data more effectively. Fabric data agent fosters a culture of data-driven decision-making because it lowers barriers to insight accessibility, facilitates collaboration, and helps your organization extract more value from its data.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -75,7 +67,7 @@ While both Fabric data agents and Fabric copilots use generative AI to process a
 
 **Configuration Flexibility**: You can highly configure Fabric data agents. You can provide custom instructions and examples to tailor their behavior to specific scenarios. Fabric copilots, on the other hand, come preconfigured and don't offer this level of customization.
 
-**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Azure AI Foundry, Microsoft Teams, or other tools outside Fabric.
+**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Microsoft Foundry, Microsoft Teams, or other tools outside Fabric.
 
 ## Evaluation of the Fabric data agent
 
@@ -87,8 +79,6 @@ The product team rigorously evaluated the quality and safety of Fabric data agen
 
 ## Limitations
 
-The Fabric data agent is currently in public preview and has limitations. Updates will improve the Fabric data agent over time.
-
 - The Fabric data agent only generates SQL, DAX, and KQL "read" queries. It doesn't generate SQL, DAX, or KQL queries that create, update, or delete data.
 - The Fabric data agent doesn't support unstructured data, such as .pdf, .docx, or .txt files. You can't use the Fabric data agent to access unstructured data resources.
 - For lakehouse data sources, the Fabric data agent answers questions using the lakehouse tables you select. It doesn't directly read standalone lakehouse files (for example, CSV or JSON files) unless they're ingested or exposed as tables.
@@ -97,6 +87,7 @@ The Fabric data agent is currently in public preview and has limitations. Update
 - Conversation history in the Fabric data agent might not always persist. In certain cases, such as backend infrastructure changes, service updates, or model upgrades, past conversation history might be reset or lost.
 - The Fabric data agent can't execute queries when the data source's workspace capacity is in a different region than the data agent's workspace capacity. For example, a lakehouse with capacity in North Europe fails if the Data Agent's capacity is in France Central.
 - Users can provide up to 100 example queries per data source in their Data Agent.
+- Fabric Data Agents are currently designed for conversational insights rather than for returning complete datasets. To ensure concise and performant responses, chat outputs automatically limit and/or summarize the data returned. At present, responses are capped at a maximum of 25 rows and 25 columns. Please note that previous chat history can influence subsequent responses. For example, if you ask to “show all rows for this year,” the agent will still return a maximum of 25 rows. Follow‑up questions may then be answered based on this already limited context, which can affect the result. In such cases, starting a new chat session is recommended.
 
 ## Related content
 

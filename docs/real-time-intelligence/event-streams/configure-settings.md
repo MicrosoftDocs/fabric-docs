@@ -1,15 +1,14 @@
 ---
-title: Configure settings for a Fabric eventstream
+title: Configure Settings for a Fabric Eventstream
 description: This article describes how to configure sensitivity label, endorsement, retention, and throughput settings for an eventstream. 
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 03/18/2024
+ms.date: 03/22/2026
 ms.search.form: Eventstreams Overview
 ---
 
 # Configure settings for a Fabric eventstream
+
 This article describes how to configure sensitivity label, endorsement, retention, and throughput settings for an eventstream. 
 
 When you open an existing eventstream, you see the **Settings** button on the toolbar.
@@ -21,13 +20,13 @@ You can also launch the **Settings** page from a workspace by selecting **...(el
 :::image type="content" source="./media/configure-settings/workspace-settings-button.png" alt-text="Screenshot that shows the Settings button on the workspace page." lightbox="./media/configure-settings/workspace-settings-button.png":::
 
 ## Retention setting
-For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. The maximum value for this setting is 90 days. To learn more about usage billing and reporting, see [Monitor capacity consumption for eventstreams](monitor-capacity-consumption.md).
+For the **retention** setting, specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. The maximum value for this setting is 90 days. To learn more about usage billing and reporting, see [Monitor capacity consumption for eventstreams](monitor-capacity-consumption.md).
 
 :::image type="content" source="./media/create-manage-an-eventstream/retention-setting.png" alt-text="Screenshot that shows the retention setting for an eventstream.":::
 
 ## Event throughput setting
 
-For the **event throughput** setting, you can select the throughput level for incoming and outgoing events in your eventstream. This feature allows you to scale your eventstream by optimizing performance for its sources and destinations based on the selected level. Throughput levels include:
+For the **event throughput** setting, select the throughput level for incoming and outgoing events in your eventstream. This feature helps you scale your eventstream by optimizing performance for its sources and destinations based on the selected level. Throughput levels include:
 - **Low**: < 10 MB/s  
 - **Medium**: 10–100 MB/s  
 - **High**: > 100 MB/s  
@@ -35,16 +34,16 @@ For the **event throughput** setting, you can select the throughput level for in
 :::image type="content" source="./media/create-manage-an-eventstream/throughput-setting.png" alt-text="Screenshot that shows the throughput setting for an eventstream.":::
 
 > [!NOTE]
-> To update the throughput setting, if your eventstream contains no node (source or destination) that support pause and resume, you can update throughput setting directly. Otherwise, deactivate all nodes that support pause and resume, then reactivate them after the update. The update won't be blocked if only nodes that don't support deactivation remain active, but you may need to update the data client if custom endpoints are used, as the partition count will increase. See the [detailed table of  nodes that support pause and resume functionality](pause-resume-data-streams.md#activating-or-deactivating-a-node-using-the-switch-toggle).
+> To update the throughput setting, if your eventstream contains no node (source or destination) that supports pause and resume, you can update the throughput setting directly. Otherwise, deactivate all nodes that support pause and resume, then reactivate them after the update. The update isn't blocked if only nodes that don't support deactivation remain active, but you might need to update the data client if you use custom endpoints, as the partition count increases. See the [detailed table of nodes that support pause and resume functionality](pause-resume-data-streams.md#activating-or-deactivating-a-node-using-the-switch-toggle).
 
-Here’s how different sources and destinations perform at each throughput level.
+Here's how different sources and destinations perform at each throughput level.
 
 > [!NOTE]
-> The throughput upper limits listed here are based on the results from lab testing under specific configuration. Results may vary with different configurations.
+> The throughput upper limits listed here are based on the results from lab testing under specific configurations. Results might vary with different configurations.
 
 ### Azure Event Hubs source
 
-For Azure Event Hubs sources, throughput depends on both the selected throughput level and the number of Azure Event Hubs source partitions. When the Azure Event Hubs source partition count is less than 4, throughput is limited by the partition count, regardless of the selected throughput level. The throughput upper limits are as follows:
+For Azure Event Hubs sources, throughput depends on both the selected throughput level and the number of Azure Event Hubs source partitions. When the Azure Event Hubs source partition count is less than four, throughput is limited by the partition count, regardless of the selected throughput level. The throughput upper limits are as follows:
 
 | Partition Count | Approximate Throughput (up-to) |
 |-----------------|-----------------|
@@ -55,7 +54,7 @@ When the partition count is 4, 16, or 32, throughput depends on the selected lev
 
 ### Streaming connector sources
 
-The throughput for streaming connector sources is up to **30 MB/s**. If higher throughput is needed (except the database CDC sources), please contact product group team via [this form](https://aka.ms/EventStreamsConnThroughputRequest).
+The throughput for streaming connector sources is up to **30 MB/s**. If you need higher throughput (except for database CDC sources), contact the product group team through [this form](https://aka.ms/EventStreamsConnThroughputRequest).
 
 **Streaming connector sources include**:
 - Azure SQL Database Change Data Capture (CDC)
@@ -72,9 +71,9 @@ The throughput for streaming connector sources is up to **30 MB/s**. If higher t
 - Amazon MSK Kafka
 
 ### Other eventstream sources and destinations
-The following table shows the approximate throughput upper limit for custom endpoint source and different destinations, based on internal lab testing.
+The following table shows the approximate throughput upper limit for custom endpoint sources and different destinations, based on internal lab testing.
 
-| Node                       |  Type        | Throughput level | Approximate throughput (up-to)   |
+| Node                       |  Type        | Throughput level | Approximate throughput (up to)   |
 |----------------------------|--------------|------------------|-----------------------|
 | **Custom Endpoint**        | Source / Destination      | Low              | 100 MB/s             |
 |                            |              | Medium           | 150 MB/s             |
@@ -89,17 +88,17 @@ The following table shows the approximate throughput upper limit for custom endp
 |                            |              | Medium           | 100 MB/s             |
 |                            |              | High             | 200 MB/s             |
 
->[!Note]
-> The throughput data above was tested under specific conditions below. Results may vary with different configurations.
->- The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput is not a bottleneck.
->- Events are in JSON format, each 1KB in size. Events are batched in groups of 100 before being sent or received.
->- The source event data was sent using thousands of threads to continuously send data via EventHubProducerClient which should utilize the full bandwidth of the network throughput.
+>[!NOTE]
+> The throughput data was tested under the specific conditions described in the following list. Results might vary with different configurations.
+>- The source event sender, consumer, and Eventstream are in the same data center to ensure that network throughput isn't a bottleneck.
+>- The source event sender, consumer, and eventstream are in the same data center to ensure that network throughput isn't a bottleneck.
+>- Events are in JSON format, each 1 KB in size. Events batch in groups of 100 before being sent or received.
 >- The test setup followed a 'One Source → One Eventstream → One Destination' structure. No processing operators were applied before data routed the Lakehouse or Eventhouse (using 'Event processing before ingestion' option) destinations. Eventhouse received data in batch mode.
 
 
 
 ## Endorsement setting
-On the **Endorsement** tab of the **Settings** page, you can promote or endorse or recommended the eventstream for others to use. For more information on endorsement, see [Endorsement](/fabric/governance/endorsement-overview).
+On the **Endorsement** tab of the **Settings** page, you can promote, endorse, or recommend the eventstream for others to use. For more information about endorsement, see [Endorsement](/fabric/governance/endorsement-overview).
 
 :::image type="content" source="./media/create-manage-an-eventstream/endorsement-setting.png" alt-text="Screenshot that shows the endorsement setting for an eventstream.":::
 
@@ -110,3 +109,5 @@ On the **Sensitivity label** tab of the **Settings** page, you can specify the s
 
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)
+
+

@@ -5,7 +5,6 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: overview
-ms.custom:
 ms.date: 10/22/2025
 
 #customer intent: As a workspace admin, I want to get more information about how to use workspace-level private link in supported and unsupported scenarios.
@@ -99,13 +98,23 @@ Create and manage Lakehouses in workspaces enabled with private links by using t
 * [Background Jobs - REST API (Lakehouse)](/rest/api/fabric/lakehouse/background-jobs)
 ---
 
+### Materialized lake views support (Preview)
+ 
+Use Fabric portal or REST APIs in workspaces enabled with private links to refresh materialized lake views in Lakehouse. This feature is in preview.
+ 
+#### [Fabric portal](#tab/fabric-portal-2)
+* [Schedule lineage](/fabric/data-engineering/materialized-lake-views/schedule-lineage-run)
+#### [REST API](#tab/rest-apis-2)
+* [Manage materialized lake views using REST API](/fabric/data-engineering/materialized-lake-views/materialized-lake-views-public-api)
+---
+
 ### Warehouse support
 
 Create and manage warehouses in workspaces enabled with private links by using the Fabric portal or REST APIs.
 
-#### [Fabric portal](#tab/fabric-portal-2)
+#### [Fabric portal](#tab/fabric-portal-15)
 * [Create a Warehouse](/fabric/data-warehouse/create-warehouse)
-#### [REST API](#tab/rest-apis-2)
+#### [REST API](#tab/rest-apis-15)
 * [Warehouse REST API](/rest/api/fabric/warehouse/items)
 * [Items - REST API (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
 * To get the workspace private link service connection string for a warehouse:

@@ -1,10 +1,8 @@
 ---
-title: What is a graph database?
-description: Learn about the benefits of using a graph database.
+title: What Is a Graph Database? - graph in Microsoft Fabric
+description: Learn what a graph database is, how it differs from relational databases, and the key benefits of using a graph database for data analysis.
 ms.topic: concept-article
-ms.date: 01/12/2026
-author: lorihollasch
-ms.author: loriwhip
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -12,7 +10,7 @@ ms.reviewer: wangwilliam
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Graph databases offer a powerful way to model and query connected data. Unlike traditional relational databases that store data in tables, graph databases represent information as nodes (entities) and edges (relationships), making it easier to more flexibly explore complex connections and patterns.
+Graph databases offer a powerful way to model and query connected data. Unlike traditional relational databases that store data in tables, graph databases represent information as nodes (entities) and edges (relationships), making it easier to more flexibly explore complex connections and patterns. This article explains the core concepts of graph databases, how graph queries work, and outlines when to consider using a graph database for your workload. It also compares graph in Microsoft Fabric to standalone graph database deployments.
 
 The most commonly used type of graph database implements the [labeled property graph](graph-data-models.md#labeled-property-graph-lpg) (LPG) model: entities (nodes) and relationships (edges) can have labels and properties (key–value pairs). This flexible model enables both schema-optional and schema-driven designs, and it lets you express rich semantics. Because connections are stored explicitly as edges, queries traverse relationships by following edges instead of computing expensive joins at query time.
 
@@ -27,9 +25,9 @@ The most commonly used type of graph database implements the [labeled property g
 
 ## How querying relationships works
 
-Graph queries retrieve connected information by traversing from a starting node to its neighbors, then to their neighbors, and so on. The effort a traversal performs is tied to the number of edges it touches (the local neighborhood), not the total size of the dataset. This makes questions about paths, connections, and patterns—such as *friends of friends*, shortest paths, or multi-hop dependencies—natural and efficient to express.
+Graph queries retrieve connected information by traversing from a starting node to its neighbors, then to their neighbors, and so on. The effort a traversal performs is tied to the number of edges it touches (the local neighborhood), not the total size of the dataset. This characteristic makes questions about paths, connections, and patterns—such as *friends of friends*, shortest paths, or multi-hop dependencies—natural and efficient to express.
 
-Graph databases use pattern-based query languages, such as the increasingly adopted **Graph Query Language (GQL)**, to describe these traversals concisely. GQL is being standardized by the same international working group that oversees SQL (ISO/IEC 39075), aligning graph querying with established database standards.
+Graph databases use pattern-based query languages, such as the increasingly adopted **Graph Query Language (GQL)**, to describe these traversals concisely. The same international working group that oversees SQL (ISO/IEC 39075) is standardizing GQL, which aligns graph querying with established database standards.
 
 **Example (pattern matching with GQL):**
 
@@ -64,23 +62,23 @@ In these scenarios, questions are less about single records and more about how m
 
 Choose a graph database when:
 
-- Your primary questions involve paths, neighborhoods, and patterns in connected data
-- The number of hops is variable or not known in advance
-- You need to combine and navigate relationships across disparate datasets
+- Your primary questions involve paths, neighborhoods, and patterns in connected data.
+- The number of hops is variable or not known in advance.
+- You need to combine and navigate relationships across disparate datasets.
 
 If you regularly ask these kinds of questions, a graph model is a natural fit.
 
-## Graph in Microsoft Fabric
+## How graph in Microsoft Fabric compares to standalone graph databases
 
-Representing your data as a graph and storing it in a separate, standalone graph database often introduces ETL (extract, transform, load) and governance overhead. By contrast, Graph in Microsoft Fabric operates directly on OneLake, which reduces or eliminates the need for separate ETL pipelines and data duplication. Consider these tradeoffs:
+Representing your data as a graph and storing it in a separate, standalone graph database often introduces ETL (extract, transform, load) and governance overhead. By contrast, graph operates directly on OneLake, which reduces or eliminates the need for separate ETL pipelines and data duplication. Consider these tradeoffs:
 
-- **Data movement and duplication**: Standalone graph databases typically require extracting, transforming, and loading data into a separate store, which increases complexity and can lead to duplicated datasets. Graph in Microsoft Fabric operates on OneLake so you can model and query connected data without moving it.
-- **Operational costs**: Standalone graph stacks run as separate clusters or services and often carry idle-capacity charges. Graph workloads in Fabric consume pooled capacity units (CUs) with automatic scale-down and centralized metrics, which simplifies operations and can lower cost.
-- **Scalability**: Some standalone graph databases depend on scale-up or vendor-specific clustering. Graph in Microsoft Fabric is designed for large-scale graphs and uses scale-out sharding across multiple workers to handle big-data workloads efficiently.
-- **Tooling and skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph in Microsoft Fabric provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI and AI integration, and low/no-code exploratory tools. These capabilities enable a broader set of users to work with connected data.
-- **Governance and security**: Separate graph deployments need independent governance and security setups. Graph in Microsoft Fabric uses OneLake governance, lineage, and workspace role-based access control (RBAC) so compliance, auditing, and permissions remain consistent with the rest of your Fabric environment.
+- **Data movement and duplication**: Standalone graph databases typically require extracting, transforming, and loading data into a separate store, which increases complexity and can lead to duplicated datasets. Graph operates on OneLake so you can model and query connected data without moving it.
+- **Operational costs**: Standalone graph stacks run as separate clusters or services and often carry idle-capacity charges. In graph, workloads consume pooled capacity units (CUs) with automatic scale-down and centralized metrics, which simplifies operations and can lower cost.
+- **Scalability**: Some standalone graph databases depend on scale-up or vendor-specific clustering. Graph is designed for large-scale graphs and uses scale-out sharding across multiple workers to handle big-data workloads efficiently.
+- **Tooling and skills**: Vendor-specific graph systems can require specialized languages and separate analytics frameworks. Graph provides unified modeling, standards-based querying (GQL), built-in graph analytics algorithms, BI, and AI integration, and low/no-code exploratory tools. These capabilities enable a broader set of users to work with connected data.
+- **Governance and security**: Separate graph deployments need independent governance and security setups. Graph uses OneLake governance, lineage, and workspace role-based access control (RBAC) so compliance, auditing, and permissions remain consistent with the rest of your Fabric environment.
 
 ## Related content
 
 - [Compare graph and relational databases](graph-relational-databases.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

@@ -2,20 +2,15 @@
 title: Create an Amazon S3 shortcut
 description: Learn how to create a OneLake shortcut for Amazon S3 data access inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
-ms.author: kgremban
-author: kgremban
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom:
 ms.date: 07/25/2024
 #customer intent: As a data engineer, I want to learn how to create an Amazon S3 shortcut inside a Fabric lakehouse so that I can efficiently access and manage S3 data within the lakehouse environment.
 ---
 
 # Create an Amazon S3 shortcut
 
-In this article, you learn how to create an Amazon S3 shortcut inside a Fabric lakehouse. When you create shortcuts to Amazon S3 accounts, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
-
-S3 shortcuts are read-only. They don't support write operations regardless of the user's permissions.
+In this article, you learn how to create an Amazon S3 shortcut inside a Fabric lakehouse. S3 shortcuts give you read-only access to data in your S3 buckets in any file format, without copying or converting the data. When you create shortcuts to Amazon S3 accounts, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
@@ -24,6 +19,8 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+
+- An Amazon Web Services (AWS) account with an S3 bucket. This article covers the native AWS S3 connector. If you use a non-AWS storage service that provides an S3-compatible API, see [Create an Amazon S3 compatible shortcut](create-s3-compatible-shortcut.md) instead.
 
 - Ensure your chosen S3 bucket and IAM user meet the [access](#access) and [authorization](#authorization) requirements for S3 shortcuts.
 
@@ -38,6 +35,10 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
    :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
 
 1. Under **External sources**, select **Amazon S3**.
+
+    > [!TIP]
+    > The **Amazon S3** option is for connecting directly to an AWS S3 bucket. If your data is in a non-AWS storage service that provides an S3-compatible API, select **Amazon S3 compatible** instead. For more information, see [Create an Amazon S3 compatible shortcut](create-s3-compatible-shortcut.md).
+
     :::image type="content" source="./media/create-s3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted." lightbox="./media/create-s3-shortcut/new-shortcut-expanded.png":::
 
 1. Enter the **Connection settings** according to the following table:
@@ -61,7 +62,7 @@ S3 shortcuts can take advantage of file caching to reduce egress costs associate
 
     If you used the global endpoint in the connection URL, all of your available buckets appear in the left navigation view. If you used a bucket specific endpoint in the connection URL, only the specified bucket and its contents appear in the navigation view.
 
-    Navigate the storage account by selecting a folder or clicking on the expansion arrow next to a folder.
+    Navigate the storage account by selecting a folder or clicking on the expansion arrow next to a folder. The shortcut provides read-only access to the data in your S3 bucket regardless of file format. Data isn't required to be in Delta or Parquet format.
 
     In this view, you can select one or more shortcut target locations. Choose target locations by clicking the checkbox next a folder in the left navigation view.
 

@@ -5,14 +5,13 @@ author: msmimart
 ms.author: mimart
 ms.reviewer: karthikeyana
 ms.topic: how-to
-ms.custom:
 ms.date: 01/27/2026
 
 #customer intent: As a workspace admin, I want to configure workspace-level IP firewall rules on my workspace to restrict the IP addresses than can access my Fabric workspace.
 
 ---
 
-# Set up workspace IP firewall rules (Preview)
+# Set up workspace IP firewall rules
 
 Microsoft Fabric offers two options to restrict inbound access to a workspace. Workspace Private Link secures connectivity by routing traffic through Azure Private Link and private endpoints, ensuring all workspace access occurs over Microsoft's private network instead of the public internet. Workspace IP firewall rules provide an alternative by allowing access only from approved public IP addresses, offering a straightforward way to limit inbound connections when a workspace is exposed through public endpoints.
 
@@ -22,11 +21,11 @@ This article describes how to set up and manage workspace IP firewall rules in F
 
 Before you configure workspace IP firewall rules, ensure the following requirements are met:
 
-* **Tenant setting enabled**: A Fabric administrator must enable the **Configure workspace IP firewall rules** tenant setting. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
+* **Tenant setting enabled**: The **Configure workspace IP firewall rules** tenant setting is enabled by default. If this setting has been disabled, a Fabric administrator must enable it. For details, see [Enable workspace inbound access protection for your tenant](security-workspace-enable-inbound-access-protection.md).
 
 * **Workspace admin role**: You must be a workspace admin to configure IP firewall rules.
 
-* **Workspace license assignment**: The workspace must be assigned to either a Fabric capacity or trial capacity. You can check assignment by going to the workspace settings and selecting **License info**.
+* **Workspace license assignment**: The workspace must be assigned to either a Fabric capacity or trial capacity. You can check assignment by going to the workspace settings and selecting **Workspace type**.
 
 * **Resource provider registration**: If this is the first time setting up workspace-level network features in your tenant, re-register the **Microsoft.Fabric** resource provider in Azure for subscriptions containing the workspace resources. In the Azure portal, go to **Subscriptions** > **Settings** > **Resource providers**, select **Microsoft.Fabric**, and then select **Re-register**.
 

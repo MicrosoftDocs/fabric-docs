@@ -1,10 +1,8 @@
 ---
 title: How to configure at-a-glance section
 description: Learn how to configure the at-a-glance section with slide media content for your Fabric workload's product details page.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
 ms.date: 12/15/2025
 ---
 

@@ -1,10 +1,7 @@
 ---
 title: Use ai.fix_grammar with PySpark
 description: Learn how to correct the spelling, grammar, and punctuation of input text by using the ai.fix_grammar function with PySpark.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -63,6 +60,21 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/fix-grammar-example-output.png" alt-text="Screenshot showing a  data frame with a 'text' column and a 'corrections' column, which has the text from the text column with corrected grammar." lightbox="../../media/ai-functions/fix-grammar-example-output.png":::
 
+## Multimodal input
+
+The `ai.fix_grammar` function supports file-based multimodal input. You can fix grammar in the content of PDFs and text files by setting `input_col_type="path"`. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+results = custom_df.ai.fix_grammar(
+    input_col="file_path",
+    input_col_type="path",
+    output_col="corrections",
+)
+display(results)
+```
+
 ## Related content
 
 - Use [ai.fix_grammar with pandas](../pandas/fix-grammar.md).
@@ -77,5 +89,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

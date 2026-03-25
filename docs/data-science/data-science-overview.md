@@ -2,14 +2,10 @@
 title: Explore Data Science in Microsoft Fabric
 description: Learn how to build end-to-end data science workflows in Microsoft Fabric, from data cleaning to predictive insights. Explore tutorials and resources now.
 #customer intent: As a data scientist, I want to understand the data science capabilities in Microsoft Fabric so that I can build end-to-end workflows.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: negust
 ms.topic: overview
-ms.custom: 
 ms.date: 12/03/2025
 ms.search.form: Data Science Overview
-reviewer: s-polly
 ---
 
 # What is Data Science in Microsoft Fabric?
@@ -74,7 +70,7 @@ MLflow experiments and runs can track ML model training. To log experiments and 
 
 ### SynapseML
 
-Microsoft owns and operates the SynapseML (formerly known as MMLSpark) open-source library. It simplifies the creation of massively scalable machine learning pipelines. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for predictive model development, and it uses pretrained AI models from Azure AI services. For more information, visit the [SynapseML](https://aka.ms/spark) resource.
+Microsoft owns and operates the SynapseML (formerly known as MMLSpark) open-source library. It simplifies the creation of massively scalable machine learning pipelines. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for predictive model development, and it uses pretrained AI models from Foundry Tools. For more information, visit the [SynapseML](https://aka.ms/spark) resource.
 
 ## Enrich and operationalize
 

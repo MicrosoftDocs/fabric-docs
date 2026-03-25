@@ -1,16 +1,13 @@
 ---
 title: Sharing Microsoft Fabric Maps
 description: Learn about sharing maps in Microsoft Fabric.
-ms.reviewer: smunk
-author: deniseatmicrosoft
-ms.author: limingchen
+ms.reviewer: smunk, limingchen
 ms.topic: concept-article
-ms.custom:
 ms.date: 12/05/2025
 ms.search.form: Share map 
 ---
 
-# Sharing Microsoft Fabric Maps (preview)
+# Sharing Microsoft Fabric Maps
 
 Microsoft Fabric Maps can be shared either directly with individuals or groups, or by packaging them into Fabric org apps for broader, governed distribution. Direct sharing provides flexible access and editing capabilities, while org apps offer a curated, read-only experience with streamlined permission management. This article provides the information you need to select the sharing method that best fits your audience, collaboration needs, and governance requirements.
 
@@ -100,3 +97,4 @@ To learn more, please see:
 
 > [!div class="nextstepaction"]
 > [How to share a map using org apps](share-map-org-apps.md)
+

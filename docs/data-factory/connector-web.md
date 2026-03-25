@@ -2,10 +2,11 @@
 title: Set up your Web connection
 description: This article provides information about how to create a Web connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Web connection
@@ -24,19 +25,34 @@ Both the Web API and Web page connectors support the following authentication ty
 |Organizational account| n/a | √ |
 |Windows| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect Dataflow Gen2 in Microsoft Fabric to Web using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a website. The following links provide the specific Power Query connector information you need to connect to a website in Dataflow Gen2:
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Web](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Load web data](#load-web-data).
 
-- To get started using the Web API or Web page connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Web connector prerequisites](/power-query/connectors/web/web#prerequisites) before connecting to the Web API or Web page connector.
-- To connect to the Web API or Web page connector from Power Query, go to [Load Web data using Power Query Online](/power-query/connectors/web/web#load-web-data-using-power-query-online).
+### Capabilities
 
-The following Power Query Web connector articles supply more useful information when you use the Web API or Web page connectors:
+[!INCLUDE [web-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-capabilities-supported.md)]
 
-- [Get webpage data by providing examples](/power-query/connectors/web/web-by-example)
-- [Troubleshooting the Web connector](/power-query/connectors/web/web-troubleshoot)
+### Prerequisites
+
+[!INCLUDE [web-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Load web data
+
+[!INCLUDE [web-load-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/web/web-load-data-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory in Microsoft Fabric doesn't currently support the Web API or Web page connector in pipelines.
+
+## Related content
+
+- [For more information about this connector, see the Web connector documentation.](/power-query/connectors/web/web)

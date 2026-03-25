@@ -2,11 +2,9 @@
 title: Apache Spark runtime in Fabric
 description: Learn about the Apache Spark-based runtimes available in Fabric, including Fabric optimizations and support.
 ms.reviewer: arali
-ms.author: eur
-author: eric-urban
 ms.topic: overview
 ms.custom: sfi-image-nochange
-ms.date: 12/11/2025
+ms.date: 03/18/2026
 ---
 
 # Apache Spark Runtimes in Fabric
@@ -32,7 +30,7 @@ Below, you find a comprehensive comparison of key components, including Apache S
 
 | Component | [Runtime 1.2](./runtime-1-2.md) | [Runtime 1.3](./runtime-1-3.md) | [Runtime 2.0](./runtime-2-0.md) |
 |--|--|--|--|
-| **Release Stage** | EOSA | GA | Experimental (Preview) |
+| **Release Stage** | EOSA | GA | Public Preview |
 | **Apache Spark version** | 3.4.1 | 3.5.5 | 4.0.0 |
 | **Operating System** | Mariner 2.0 | Mariner 2.0 | Mariner 3.0 |
 | **Java version** | 11 | 11 | 21 |

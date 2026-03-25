@@ -2,11 +2,8 @@
 title: Create roles 
 description: Learn how to create and manage roles with OneLake security (preview) to control access to items within OneLake.
 ms.reviewer: aamerril
-ms.author: kgremban
-author: kgremban
 ms.topic: how-to
-ms.custom:
-ms.date: 01/29/2026
+ms.date: 03/03/2026
 #customer intent: As a Fabric user, I want to learn how to create and manage OneLake security roles so that I can control access to specific folders in my lakehouse and ensure data security.
 ---
 
@@ -36,7 +33,7 @@ Use the following steps to create a OneLake security role.
 
 1. Select **Manage OneLake security (preview)** from the item menu.
 
-1. On the **OneLake security (preview)** pane, select **New**.
+1. On the **OneLake security** pane, select **New**.
 
 1. Provide the following information for the new role:
 
@@ -45,25 +42,33 @@ Use the following steps to create a OneLake security role.
    | **Role name** | Provide a name that meets the following guidelines:<br><br>* The role name only contains alphanumeric characters.<br>* The role name starts with a letter.<br>* Names are case insensitive and must be unique.<br>* The maximum name length is 128 characters. |
    | **Type of role** | Select **Grant**. |
    | **Select Grant permissions** | Choose the permissions you want to grant. **Read** is selected at a minimum, and you can optionally add **ReadWrite**. |
-   | **Add data to your role** | If you want this role to apply to all of the tables and files in this lakehouse, select the **All data** toggle. This selection also provides access to any folders that are added in the future.<br><br>If you want this role to apply only to a selected group of tables and folders, select the **Selected data** toggle. Then, use the following steps to define the approved data for this role. |
-   | **Add members to your role** | Manually enter the names or email addresses of the users that you want to include in the role. Or, select **Advanced configuration** and follow the steps in [Assign virtual members](#assign-virtual-members) |
+
+1. Select **Next**.
+
+1. Define the scope of the role by selecting the data to include. 
+
+   * Choose **All data** if you want this role to apply to all of the tables and files in this item. This selection also provides access to any folders that are added in the future.
+   * Choose **Selected data** if you want this role to apply only to a selected group of tables and folders. Then, use the following steps to define the approved data for this role.
 
 1. If you chose to add **Selected data** to your role, configure that selection:
 
-   1. Select **Browse Lakehouse** or the equivalent for the item that you're working with.
+   1. Select **Edit**.
 
-      :::image type="content" source="./media/create-manage-roles/browse-lakehouse.png" alt-text="Screenshot that highlights the 'Browse Lakehouse' option to select data.":::
+      :::image type="content" source="./media/create-manage-roles/selected-data-edit.png" alt-text="Screenshot that highlights the 'Edit' button to select data.":::
 
    1. Expand the **Tables** and **Files** directories to view data in your lakehouse.
    1. Check the boxes next to the tables and files that you want the role to apply to.
+   1. To apply row-level or column-level security to a table, select the table name, select **Data access**, and choose the appropriate option. For more information, see [Row-level security](row-level-security.md) and [Column-level security](column-level-security.md).
+   
+      :::image type="content" source="media/create-manage-roles/data-access.png" alt-text="Screenshot that highlights the 'Data access' option for a table.":::
+
    1. Select **Add data** to add the selected items to your role.
 
-1. Review the **Preview role** summaries.
+1. Select **Next**.
 
-   1. To edit the **Data preview**, select **Browse Lakehouse** and update the selected tables and folders.
-   1. To remove a user from the **Members preview**, select more options (**...**) next to their name, then **Remove from role**.
+1. Add members to your role. Manually enter the names or email addresses of the users that you want to include in the role. Or, select **Advanced configuration** and follow the steps in [Assign virtual members](#assign-virtual-members).
 
-1. Select **Create role** and wait for the notification that the role was successfully published.
+1. Select **Create**.
 
 ## Edit a role
 

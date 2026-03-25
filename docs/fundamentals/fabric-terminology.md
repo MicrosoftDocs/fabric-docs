@@ -1,14 +1,12 @@
 ---
 title: Microsoft Fabric terminology
 description: Learn the definitions of terms used in Microsoft Fabric, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
-ms.reviewer: sngun
-ms.author: sngun
 author: SnehaGunda
+ms.author: sngun
 ms.topic: glossary
-ms.custom:
 ms.search.form: product-trident
 ms.date: 02/04/2026
-# customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
+#customer intent: As a Microsoft Fabric user I want to learn about Fabric terms, including terms specific to Fabric Data Warehouse, Fabric Data Engineering, and Fabric Data Science.
 ---
 
 # Microsoft Fabric terminology
@@ -75,7 +73,8 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## IQ
 
-- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md).
+- **Ontology**: Ontology (preview) is an item where you can define entity types, relationships, properties, and other constraints to organize data according to your business vocabulary. For more information, see [What is ontology (preview)?](../iq/ontology/overview.md)
+- **Plan**: Plan (preview) is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. For more information, see [What is plan (preview)?](../iq/plan/overview.md)
 
 ## Real-Time Intelligence
 
@@ -103,3 +102,5 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
+
+

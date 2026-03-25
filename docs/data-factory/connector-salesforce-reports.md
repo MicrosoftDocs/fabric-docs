@@ -2,10 +2,11 @@
 title: Set up your Salesforce reports connection
 description: This article provides information about how to create a Salesforce reports connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Salesforce reports connection
@@ -21,16 +22,38 @@ The Salesforce reports connector supports the following authentication types for
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect Dataflow Gen2 in Microsoft Fabric to Salesforce reports using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Salesforce reports. The following links provide the specific Power Query connector information you need to connect to Salesforce reports in Dataflow Gen2:
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Salesforce reports](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Salesforce Reports](#connect-to-salesforce-reports).
 
-- To get started using the Salesforce reports connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Salesforce reports prerequisites](/power-query/connectors/salesforce-reports#prerequisites) before connecting to the Salesforce reports connector.
-- To connect to the Salesforce reports connector from Power Query, go to [Connect to Salesforce reports from Power Query Online](/power-query/connectors/salesforce-reports#connect-to-salesforce-reports-from-power-query-online).
+### Capabilities
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [salesforce-reports-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [salesforce-reports-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Salesforce Reports
+
+[!INCLUDE [salesforce-reports-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-connect-to-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [salesforce-reports-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/salesforce-reports/salesforce-reports-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory in Microsoft Fabric doesn't currently support Salesforce reports in pipelines.
+
+## Related content
+
+- [For more information about this connector, see the Salesforce reports connector documentation.](/power-query/connectors/salesforce-reports)

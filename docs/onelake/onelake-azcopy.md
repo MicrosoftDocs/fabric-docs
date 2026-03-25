@@ -1,11 +1,8 @@
 ---
 title: Moving data with OneLake and AzCopy
 description: AzCopy makes it easy to quickly move data into, out of, and around OneLake.
-ms.reviewer: eloldag
-ms.author: mabasile
-author: mabasile-MSFT
+ms.reviewer: eloldag, mabasile
 ms.topic: how-to
-ms.custom:
 ms.date: 08/12/2025
 #customer intent: As a data engineer, I want to understand how I can use AzCopy to copy data in or out of OneLake easily and with the best performance, from a variety of sources.
 ---
@@ -78,3 +75,4 @@ When attempting to perform operations directly between two Fabric tenants, you m
 ## Related content
 
 * [Copy blobs between Azure Storage accounts by using AzCopy](/azure/storage/common/storage-use-azcopy-blobs-copy)
+

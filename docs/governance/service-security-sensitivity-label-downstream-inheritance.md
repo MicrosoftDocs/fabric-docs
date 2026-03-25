@@ -3,9 +3,7 @@ title: Sensitivity label downstream inheritance in Power BI
 description: Learn how sensitivity labels can be propagated to downstream content.
 author: msmimart
 ms.author: mimart
-
 ms.topic: concept-article
-ms.custom:
 ms.date: 01/06/2026
 LocalizationGroup: Data from files
 ---

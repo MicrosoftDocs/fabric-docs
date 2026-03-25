@@ -1,20 +1,15 @@
 ---
-title: "Configure Private Networks for Azure Cosmos DB Fabric Mirroring (Preview)"
+title: "Configure Private Networks for Azure Cosmos DB Fabric Mirroring"
 description: Learn how to configure Azure Cosmos DB accounts with private networks and private endpoints to work with Fabric mirroring.
-author: jilmal
-ms.author: jmaldonado
-ms.reviewer: mbrown
+ms.reviewer: jmaldonado, mbrown
 ms.date: 01/26/2026
 ms.topic: how-to
 ai-usage: ai-assisted
 ---
 
-# How to: Configure private networks for Azure Cosmos DB Fabric Mirroring (Preview)
+# How to: Configure private networks for Azure Cosmos DB Fabric Mirroring
 
 This guide helps you configure Azure Cosmos DB accounts that use virtual networks or private endpoints to work with Microsoft Fabric mirroring. You can mirror data from Azure Cosmos DB accounts configured with virtual network (VNET) or private endpoints, while maintaining enhanced network security.
-
-> [!NOTE]
-> Private network support for Azure Cosmos DB Fabric Mirroring is currently in Preview.
 
 ## Prerequisites
 
@@ -28,7 +23,7 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
     1. Custom Mirroring RBAC Policy - See [assign-mirroring-rbac.ps1](https://github.com/Azure-Samples/azure-docs-powershell-samples/blob/main/azure-cosmosdb/common/ps-account-rbac-mirroring.ps1)
 - The Cosmos DB account and Fabric workspace must be in the same Azure region. To verify your Fabric workspace region:
   1. Open your Fabric workspace
-  1. Navigate to **Workspace settings** → **License info**
+  1. Navigate to **Workspace settings** → **Workspace type**
   1. Note the region of the Fabric capacity
   1. Ensure this matches your Cosmos DB account region
 - The user configuring private networks for Cosmos DB Mirroring should either be an Azure subscription owner or have Contributor permissions on the Cosmos DB account with RBAC assignment permissions on the subscription. To learn how to assign this role to a user, see [Assign a user as an administrator of an Azure subscription with conditions](/azure/role-based-access-control/role-assignments-portal-subscription-admin).
@@ -37,8 +32,8 @@ This guide helps you configure Azure Cosmos DB accounts that use virtual network
 
 Azure Cosmos DB supports two primary network security configurations for mirroring:
 
-- **Virtual network**: Restrict access to your Azure Cosmos DB account to specific virtual network subnets. With this configuration, you maintain "Selected networks" access and add the necessary Azure service IP addresses.
-- **Private endpoint**: Provide a private IP address from your virtual network to your Azure Cosmos DB account, keeping all traffic on the Microsoft backbone network. This requires temporarily enabling public access to specific Azure services during mirroring setup.
+- **Virtual network**: Restrict access to your Azure Cosmos DB account to specific virtual network subnets. With this configuration, you maintain **Selected networks** access and add the necessary Azure service IP addresses.
+- **Private endpoint**: Provide a private IP address from your virtual network to your Azure Cosmos DB account, keeping all traffic on the Microsoft backbone network. This requires temporarily enabling **Selected networks** to add Fabric service IPs during mirroring setup.
 
 Both configurations use the **Network ACL** feature to allow Fabric to access your Cosmos DB account as a trusted workspace authorizing specific Fabric workspace IDs.
 
@@ -50,10 +45,10 @@ Both configurations use the **Network ACL** feature to allow Fabric to access yo
 For a streamlined setup experience, use the provided PowerShell script that automates all configuration steps. The script performs the following actions:
 
 1. **Configures RBAC permissions** - Creates a custom role with required read permissions for Fabric mirroring and assigns it to your Fabric workspace identity. Also applies the Built-in Data Contributor if not already configured.
-1. **Sets up IP firewall rules** - Enables public access and adds region specific IP Firewall rules for DataFactory and PowerQueryOnline to allow these services to initialize mirroring. *(Public access is disabled after mirroring successfully configured)*
+1. **Sets up IP firewall rules** - Enables **Selected networks** and adds region-specific IP firewall rules for DataFactory and PowerQueryOnline to allow these services to initialize mirroring.
 1. **Enables Network ACL capability** - Activates the `EnableFabricNetworkAclBypass` feature on your Cosmos DB account to allow a Fabric workspace to authenticate as a trusted resource.
 1. **Configures trusted workspace** - Authorizes your Fabric workspace ID.
-1. **Disables public access** - For private endpoint configurations only. If public access was enabled previously, it leaves it enabled.
+1. **Restores network settings** - For private endpoint configurations, restores the original network access settings after mirroring setup completes.
 
 ### Run the automated script
 
@@ -86,7 +81,7 @@ For a streamlined setup experience, use the provided PowerShell script that auto
 
 1. When prompted, create your mirrored database in Fabric while the account is temporarily accessible.
 
-1. After mirroring is created, return to the script and press `Y` to have it restore your original network security settings including disabling public access for private endpoints or restoring your original IP firewall rules for Virtual Network.
+1. After mirroring is created, return to the script and press `Y` to have it restore your original network security settings, including removing the temporary IP firewall rules and restoring the original network access configuration.
 
 ## Manual configuration
 
@@ -145,17 +140,17 @@ The script ensures the following data plane permissions are added:
     - `Microsoft.DocumentDB/databaseAccounts/readMetadata`
     - `Microsoft.DocumentDB/databaseAccounts/readAnalytics`  
 
-To learn more about applying custom RBAC polices, refer to [Grant data plane role-base access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access).
+To learn more about applying custom RBAC policies, refer to [Grant data plane role-based access](/azure/cosmos-db/nosql/how-to-connect-role-based-access-control?pivots=azure-cli#grant-data-plane-role-based-access).
 
 ### Step 2: Configure network access
 
 Configure network access to allow Fabric services to connect to your Cosmos DB account.
 
-> [IMPORTANT!]
+> [!IMPORTANT]
 > Manual configuration using Azure Service IP Ranges requires downloading and applying over 1200 IP addresses for PowerQueryOnline from the [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519) file. We recommend using the PowerShell script above to handle the Cosmos network configuration, or use Network Security Perimeter with Service Tags (see below).
 
 > [!IMPORTANT]
-> **For private endpoint users only:** Before adding IP addresses, you must temporarily enable public network access:
+> **For private endpoint users only:** Before adding IP addresses, you must temporarily enable **Selected networks** under Public network access to allow Fabric service IPs:
 > 
 > :::image type="content" source="./media/azure-cosmos-db-private-network/public-access-disabled.png" alt-text="Screenshot showing disabled public network access for private endpoints." lightbox="./media/azure-cosmos-db-private-network/public-access-disabled-full.png":::
 > 
@@ -165,7 +160,8 @@ Configure network access to allow Fabric services to connect to your Cosmos DB a
 > 
 > :::image type="content" source="./media/azure-cosmos-db-private-network/public-access-enabled-without-internet-protocols.png" alt-text="Screenshot showing enabled public network access set to selected networks." lightbox="./media/azure-cosmos-db-private-network/public-access-enabled-without-internet-protocols-full.png":::
 > 
-> After mirroring is configured, you can disable public access. See [Step 6](#step-6-disable-public-network-access-optional-for-private-endpoints).
+> After mirroring is configured, you can restore your original network settings. See [Step 6](#step-6-restore-original-network-settings-optional-for-private-endpoints).
+> This **does not** enable access from all networks. For private endpoint-enabled accounts, the **All networks** option is blocked and can't be selected.
 
 #### Add Azure service IP addresses
 
@@ -187,7 +183,7 @@ Choose one of the following methods to allow Fabric service access:
     - `PowerQueryOnline.<region>` For example, `PowerQueryOnline.WestUS3`, `PowerQueryOnline.EastUS`, etc.
     - Also include `PowerQueryOnline` with no region appended in the name.
 
-    > [IMPORTANT!]
+    > [!IMPORTANT]
     > This will result in over 1200 IP addresses. You can choose to remove duplicates which will result in approximately 400+ IPv4 addresses that manually need to be added to the Cosmos DB IP Firewall rules. The PowerShell script above can handle this automatically or use Network Security Perimeter with Service Tags (see below).
 
 1. In the Azure portal, navigate to your Azure Cosmos DB account.
@@ -267,7 +263,7 @@ Authorize your Fabric workspace as a trusted resource:
 
 1. Get your Fabric tenant ID.
     - Navigate to your [Fabric portal](https://app.fabric.microsoft.com/)
-    - Click your avatar at the top right of the Fabric Portal
+    - Select your avatar at the top right of the Fabric portal
     - Hover over the information icon next to your tenant name
 
 1. Run the following PowerShell command:
@@ -322,9 +318,9 @@ Create your mirrored database in Fabric:
 
 1. Monitor replication to verify the connection is working properly.
 
-### Step 6: Disable public network access (Optional for private endpoints)
+### Step 6: Restore original network settings (Optional for private endpoints)
 
-After successfully creating the mirror and verifying replication, disable public network access to restore your private endpoint-only configuration. You can do this using either the Azure portal or PowerShell:
+After successfully creating the mirror and verifying replication, disable Public network access to restore your private endpoint-only configuration. You can do this using either the Azure portal or PowerShell:
 
 **Option A: Azure portal**
 
@@ -377,7 +373,9 @@ When using virtual networks or private endpoints with Azure Cosmos DB mirroring,
 - The `EnableFabricNetworkAclBypass` capability must be enabled on your Cosmos DB account before configuring the Network ACL.
 - Network ACL configuration is workspace-specific. Each workspace that needs to access the Cosmos DB account must be authorized separately.
 - You must add all IPv4 addresses for the DataFactory and PowerQueryOnline service tags in your region. Partial IP lists may cause connection failures.
-- For private endpoint configurations, you must temporarily enable public access during the initial mirror setup. After mirroring is established, you can disable public access.
+- For private endpoint configurations, you must temporarily enable **Selected networks** under Public network access to add Fabric service IPs during the initial mirror setup. After mirroring is established, you can restore your original network settings.
+- Configuring containers requires PowerQueryOnline and DataFactory IPs to be allowlisted. If the IP firewall rules are not in place, container configuration changes are blocked. However, if **Automatically mirror future tables** is enabled, mirroring continues for new containers without issues.
+- Creating a new mirrored database on a Network ACL-enabled account requires PowerQueryOnline and DataFactory IPs to be allowlisted. Re-enable the IP firewall rules before creating any new mirror.
 - For virtual network configurations, the endpoint rules must remain in place along with the added IP addresses.
 - Configuring your public network access can take 5-15 minutes to complete.
 
@@ -412,7 +410,7 @@ If you experience issues connecting to your Azure Cosmos DB account:
 1. **Review Azure Cosmos DB firewall settings:**
 
     - For virtual networks, ensure the endpoint rules are still in place
-    - For private endpoints, only disable public access after mirror setup completes
+    - For private endpoints, only restore original network settings after mirror setup completes
 
 1. **Check connection credentials:**
 
@@ -435,3 +433,4 @@ For more troubleshooting guidance, see [Troubleshooting: Microsoft Fabric mirror
 - [Limitations in Microsoft Fabric mirrored databases from Azure Cosmos DB](../mirroring/azure-cosmos-db-limitations.md)
 - [Azure IP Ranges and Service Tags](https://www.microsoft.com/download/details.aspx?id=56519)
 - [Configure network access to an Azure Cosmos DB account](/azure/cosmos-db/how-to-configure-firewall)
+

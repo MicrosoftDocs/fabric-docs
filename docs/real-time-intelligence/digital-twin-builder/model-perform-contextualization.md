@@ -1,8 +1,6 @@
 ---
 title: Perform contextualization
 description: Learn about building relationship types with the contextualization feature of digital twin builder (preview).
-author: baanders
-ms.author: baanders
 ms.date: 05/02/2025
 ms.topic: how-to
 ---

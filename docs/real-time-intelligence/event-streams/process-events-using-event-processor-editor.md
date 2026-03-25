@@ -1,18 +1,16 @@
 ---
-title: Process Event Data with the Event Processing Editor
+title: Process Event Data by Using the Event Processing Editor
 description: Learn how to use the event processing editor to define event processing logic.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 11/21/2024
+ms.date: 03/19/2026
 ms.search.form: Event Processor
 ---
 
 # Process event data by using the event processing editor
 
-The event processing editor is a no-code experience in which you drag items to design processing logic for event data. This article describes how to use the editor to design your processing logic.
+The event processing editor is a no-code experience where you drag items to design processing logic for event data. This article describes how to use the editor to design your processing logic.
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
@@ -28,12 +26,12 @@ To perform processing operations on your data streams by using a no-code editor,
 1. Select **Edit** on the ribbon if you aren't already in **Edit** mode. Ensure that the upstream node for the connected operations has a schema.
 
     :::image type="content" source="./media/process-events-using-event-processor-editor/enhanced-edit-mode.png" alt-text="Screenshot that shows the event processing editor in Edit mode." lightbox="./media/process-events-using-event-processor-editor/enhanced-edit-mode.png":::
-1. To insert an event processing operator between the stream node and the destination in **Edit** mode, you can use one of the following two methods:
+1. To insert an event processing operator between the stream node and the destination in **Edit** mode, use one of the following two methods:
     - Insert the operator directly from the connection line. Hover over the connection line and then select the **+** button. A dropdown menu appears on the connection line, and you can select an operator from this menu.
 
         :::image type="content" source="./media/process-events-using-event-processor-editor/select-add.png" alt-text="Screenshot that shows the selection of the plus button on the connection line." lightbox="./media/process-events-using-event-processor-editor/select-add.png":::
     - Insert the operator from the ribbon menu or canvas:
-        1. On the ribbon, you can select an operator from the **Transform events** menu.
+        1. On the ribbon, select an operator from the **Transform events** menu.
 
             :::image type="content" source="./media/process-events-using-event-processor-editor/select-manage-fields.png" alt-text="Screenshot that shows the selection of a Manage fields operator on the ribbon.":::
 
@@ -43,7 +41,7 @@ To perform processing operations on your data streams by using a no-code editor,
         1. After you insert the operator, you need to reconnect these nodes. Hover over the left edge of the stream node, and then drag the green circle to connect it to the **Manage fields** operator node. Follow the same process to connect the **Manage fields** operator node to your destination.
 
             :::image type="content" source="./media/process-events-using-event-processor-editor/connect-manage-fields.png" alt-text="Screenshot that shows how to connect the stream node to the operator node." lightbox="./media/process-events-using-event-processor-editor/connect-manage-fields.png":::
-1. Select the **Manage fields** operator node. On the **Manage fields** configuration pane, select the fields that you want to use for output. If you want to add all fields, select **Add all fields**.
+1. Select the **Manage fields** operator node. On the **Manage fields** configuration pane, select the fields that you want to use for output. To add all fields, select **Add all fields**.
 
    You can also add a new field by using the built-in functions to aggregate the data from upstream. Currently, the supported built-in functions are string functions, date and time functions, and mathematical functions. To find them, search for **built-in**.
 
@@ -79,7 +77,7 @@ The event processing editor consists of three sections numbered in the following
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/layout-enhanced.png" alt-text="Screenshot that shows the layout of the event processing editor for an eventstream with enhanced capabilities." lightbox="./media/process-events-using-event-processor-editor/layout-enhanced.png":::
 
-1. On the pane that contains the ribbon menu and canvas, you design your data transformation logic by selecting an operator (from the **Transform events** menu) and connecting the stream and the destination nodes via the newly created operator node. You can drag connecting lines or select and delete connections.
+1. On the pane that contains the ribbon menu and canvas, you design your data transformation logic by selecting an operator from the **Transform events** menu and connecting the stream and the destination nodes through the newly created operator node. You can drag connecting lines or select and delete connections.
 
 2. On the right editing pane, you configure the selected node or view the stream name.
 
@@ -87,7 +85,7 @@ The event processing editor consists of three sections numbered in the following
 
 ### Supported node types and examples
 
-Here are the destination types that support adding operators before ingestion:
+The following destination types support adding operators before ingestion:
 
 - Lakehouse
 - Eventhouse (event processing before ingestion)
@@ -95,7 +93,9 @@ Here are the destination types that support adding operators before ingestion:
 - Activator
 
 > [!NOTE]
-> For destinations that don't support the addition of a pre-ingestion operator, you can first add a derived stream as the output of your operator. Then, append your intended destination to this derived stream.
+> For destinations that don't support adding a preingestion operator, add a derived stream as the output of your operator. Then, append your intended destination to this derived stream.
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/unsupported-destination.png" alt-text="Screenshot that shows the layout of the event processing editor with a filter that sends output to an unsupported destination." lightbox="./media/process-events-using-event-processor-editor/unsupported-destination.png":::
+
+
 

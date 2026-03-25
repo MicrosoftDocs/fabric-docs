@@ -1,13 +1,8 @@
 ---
 title: Microsoft Fabric Variable Library variable types
 description: Understand how to use variable librarie's variables and what variable types are allowed.
-author: billmath
-ms.author: billmath
-ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: concept-article
-ms.custom:
+ms.reviewer: Lee
 ms.date: 08/15/2024
 ms.search.form: Introduction to variable libraries, variable library types, variable types
 #customer intent: As a developer, I want to learn how to use variable libraries and which variable types exist, so that I can manage my content lifecycle.
@@ -35,6 +30,7 @@ Variables within a variable library have the following supported variable types
 |DateTime|Basic|Date and time represented as the ISO 8601 standard *yyyy-MM-ddTHH:mm:ss.xxxZ*, where:</br></li> *yyyy-MM-dd* is the four-digit year, followed by the two-digit month and two-digit day.</br></li>*T* separates the date and the time. </br></li>*HH:mm:ss.xxx* is the two-digit hour in 24-hour format, followed by the two-digit minute, two-digit second, and three-digit millisecond.</br></li>*Z* indicates that the time is in Coordinated Universal Time (UTC).|
 |Guid|Basic|Globally unique identifier used for distinct object identification.|
 |[Item reference](item-reference-variable-type.md)|Advanced|Used within the Fabric Variable Library to hold a reference to an existing Fabric item—such as a lakehouse, notebook, or data pipeline, by storing its workspace ID and item ID.|
+|[Connection reference](connection-reference-variable-type.md)|Advanced|A workspace variable that stores the ID of an external data connection (For example, Snowflake, Azure SQL), allowing items to reference external resources without embedding credentials or connection strings.| 
 
 
 ### Variable properties

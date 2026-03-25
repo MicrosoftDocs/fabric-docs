@@ -1,11 +1,10 @@
 ---
 title: Build Power BI Reports with Direct Lake Tables
 description: Learn how to build Power BI reports on top of semantic models with Direct Lake tables
-ms.reviewer: snehagunda
-ms.author: zoedouglas
-author: DataZoeMS
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: zoedouglas
 ms.topic: how-to
-ms.custom:
 ms.date: 10/01/2025
 ms.search.form: Direct Lake Power BI Reporting
 ---
@@ -112,3 +111,4 @@ Use SSO to the Fabric item on the semantic model, and publish the report. Grant 
 ## Related content
 
 - [Power BI reporting](/power-bi/create-reports/)
+

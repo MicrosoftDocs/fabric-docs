@@ -1,9 +1,8 @@
 ﻿---
 title: Learn about Microsoft OneLake Delta table integration in Power BI and Microsoft Fabric
 description: Describes using Microsoft OneLake integration to automatically write import data into Delta tables.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to
@@ -12,7 +11,7 @@ LocalizationGroup: Enterprise
 ---
 # OneLake integration for semantic models
 
-With Microsoft OneLake integration for semantic models, data imported into model tables can also be automatically written to [*Delta tables*](/azure/databricks/introduction/delta-comparison) in OneLake. The Delta format is the unified table format across all compute engines in Microsoft Fabric. OneLake integration exports the data with all key performance features enabled to provide more seamless data access with higher performance.
+With Microsoft OneLake integration for semantic models, data imported into model tables can also be automatically written to [*Delta tables*](../../data-engineering/lakehouse-and-delta-tables.md) in OneLake. The Delta format is the unified table format across all compute engines in Microsoft Fabric. OneLake integration exports the data with all key performance features enabled to provide more seamless data access with higher performance.
 
 Data scientists, database analysts, app developers, data engineers, and other data consumers can then access the same data that drives your business intelligence and financial reports in Power BI. T-SQL, Python, Scala, PySpark, Spark SQL, R, and no-code/low-code solutions can all be used to query data from  Delta tables.
 
@@ -101,7 +100,9 @@ By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic mod
 
 - Workspace Admins, Members, and Contributors, as well as Users with direct Write permission on a semantic model are granted Read permission on the exported artifact folder in OneLake.
   
-- Users with Read permission on a semantic model get Read permission to the artifact folder in OneLake only if there are no RLS/OLS roles defined for the semantic model.
+- If the semantic model contains RLS/OLS roles, then only users with write access (workspace admins/members/contributors) are given read access to the semantic model data in OneLake.
+
+- If the semantic model has no RLS/OLS roles, then users with Read+Build permission are also given access to the OneLake data.
   
 - Currency data types with values larger than 18 decimal points can have some precision loss when exported to Delta files.
 

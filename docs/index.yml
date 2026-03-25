@@ -7,8 +7,6 @@ brand: fabric
 metadata:
   title: Microsoft Fabric documentation
   description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
-  ms.service: fabric
-  ms.custom:
   ms.topic: hub-page
   ms.collection: collection
   author: SnehaGunda
@@ -24,7 +22,7 @@ highlightedContent:
       itemType: overview
       url: get-started/microsoft-fabric-overview.md
     # Card
-    - title: Try Microsoft Fabric for free
+    - title: Try Fabric for free
       itemType: get-started
       url: fundamentals/fabric-trial.md
     # Card
@@ -32,11 +30,11 @@ highlightedContent:
       itemType: tutorial
       url: fundamentals/end-to-end-tutorials.md
     # Card
-    - title: Security in Microsoft Fabric
+    - title: Security in Fabric
       itemType: overview
       url: security/security-overview.md
     # Card
-    - title: Migrate to Microsoft Fabric
+    - title: Migrate to Fabric
       itemType: deploy
       url: fundamentals/migration.md
     # Card
@@ -55,8 +53,13 @@ highlightedContent:
 # productDirectory section (Optional; Remove if not applicable.)
 productDirectory:
   title: Explore Microsoft Fabric # Optional but good for SEO. Remove if not applicable.
-  summary: Learn about Microsoft Fabric, evaluate its features, the experiences it offers, analyze your data and run reports. # Optional but good for SEO. Remove if not applicable.
+  summary: Learn about Fabric, evaluate its features, the experiences it offers, analyze your data and run reports. # Optional but good for SEO. Remove if not applicable.
   items:
+    # Card
+    - title: Get started in Fabric
+      imageSrc: ./media/fabric-icon.png
+      summary: Start with an end-to-end view of how to get data, store it, transform it, analyze it, and share insights in Microsoft Fabric.
+      url: fundamentals/data-lifecycle.md
     # Card
     - title: Copilot in Fabric
       imageSrc: ./media/copilot-icon.svg
@@ -89,22 +92,22 @@ productDirectory:
       summary: Discover insights from your streaming data. Quickly ingest, query, create visualizations, and take actions on changes in your data.
       url: real-time-intelligence/index.yml
     # Card
-    - title: IQ
+    - title: Fabric IQ
       imageSrc: ./media/iq-icon.svg
       summary: "Unify business semantics across data, models, and systems to power intelligent agents and decisions grounded in a live, holistic view of the business."
       url: iq/index.yml
     # Card
-    - title: Fabric Data Engineering
+    - title: Data Engineering
       imageSrc: ./media/fabric-data-engineering-icon.png
       summary: Build, transform, and share your data estate using lakehouses, notebooks, and Spark environments.
       url: data-engineering/index.yml
     # Card
-    - title: Fabric Data Science
+    - title: Data Science
       imageSrc: ./media/fabric-data-science-icon.png
       summary: Unlock powerful insights using AI and machine learning technology.
       url: data-science/index.yml
     # Card
-    - title: Fabric Data Warehouse
+    - title: Data Warehouse
       imageSrc: ./media/fabric-data-warehouse-icon.png
       summary: Analyze data in a secure SQL warehouse for greater scale and performance in an open data format.
       url: data-warehouse/index.yml
@@ -112,7 +115,7 @@ productDirectory:
     - title: Application lifecycle management
       # imageSrc should be square in ratio with no white space
       imageSrc: ./media/fabric-icon.png
-      summary: Start learning about Microsoft Fabric, its capabilities, and how to use them.
+      summary: Learn about lifecycle management tools in Fabric for CI/CD, Git integration, and deployment pipelines.
       url: cicd/cicd-overview.md
 
 # conceptualContent section (optional)
@@ -157,7 +160,7 @@ conceptualContent:
               text: Signup for the Fabric newsletter
             - url: fundamentals/feedback.md#fabric-user-panel
               itemType: concept
-              text: Microsoft Fabric user panel
+              text: Fabric user panel
             - url: https://aka.ms/LearnFAIAD
               itemType: concept
               text: Register for Fabric Analyst in a Day workshop

@@ -1,10 +1,7 @@
 ---
 title: Use ai.analyze_sentiment with pandas
 description: Learn how to detect the emotional state of input text by using the ai.analyze_sentiment function with pandas.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -65,6 +62,24 @@ This example code cell provides the following output:
 
 :::image type="content" source="../../media/ai-functions/analyze-sentiment-example-output.png" alt-text="Screenshot of a data frame with 'reviews' and 'sentiment' columns. The 'sentiment' column includes 'negative', 'positive', 'mixed', and 'neutral'." lightbox="../../media/ai-functions/analyze-sentiment-example-output.png":::
 
+## Multimodal input
+
+The `ai.analyze_sentiment` function supports file-based multimodal input. You can analyze the sentiment of images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+animal_urls = [
+    "<image-url-golden-retriever>",  # Replace with URL to an image of a golden retriever
+    "<image-url-giant-panda>",  # Replace with URL to an image of a giant panda
+    "<image-url-bald-eagle>",  # Replace with URL to an image of a bald eagle
+]
+animal_df = pd.DataFrame({"file_path": animal_urls})
+
+animal_df["sentiment"] = animal_df["file_path"].ai.analyze_sentiment(column_type="path")
+display(animal_df)
+```
+
 ## Related content
 
 - Use [ai.analyze_sentiment with PySpark](../pyspark/analyze-sentiment.md).
@@ -78,5 +93,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

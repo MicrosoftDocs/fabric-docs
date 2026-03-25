@@ -1,9 +1,8 @@
 ﻿---
 title: PowerShell cmdlets, REST APIs, and .NET Client libraries for administrators
 description: Learn about the ways you can administer Power BI through scripts and programming APIs.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: reference

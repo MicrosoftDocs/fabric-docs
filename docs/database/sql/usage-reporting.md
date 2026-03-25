@@ -1,20 +1,18 @@
 ---
 title: Billing and Utilization Reporting
 description: Understand what customers can expect from the metrics app experience for SQL database in Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: amapatil # Microsoft alias
-ms.date: 10/08/2025
+ms.reviewer: amapatil
+ms.date: 03/11/2026
 ms.topic: concept-article
 ms.search.form: SQL database Billing and Utilization, Databases Billing and Utilization
 ---
-# Billing and utilization reporting for SQL database in Microsoft Fabric
+# Billing and utilization reporting
+
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 The article explains compute usage reporting of the SQL database in Microsoft Fabric.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
-
-After February 1, 2025, compute and data storage for SQL database are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
 
 ## Capacity
 
@@ -37,6 +35,8 @@ The cost for SQL database in Fabric is the summation of compute cost and storage
 For example, a database with workload activity for two minutes and otherwise inactive for the remainder of the hour. The capacity is billed for compute for two minutes and kept online for another 15 minutes, totaling 17 minutes of compute billing. The database is kept online to preserve application response times and prevent performance delays when accessing an idle database.
 
 Only storage is billed throughout the hour.
+
+To limit compute utilization for a SQL database, consider [controlling compute usage by configuring a maximum vCore setting](control-compute-usage.md). Configuring a maximum vCore limit for a SQL database can control peak compute usage in shared Fabric capacities, prevent unexpected cost spikes and throttling. You can also apply capacity consumption guardrails to development, test, or early preview workloads.
 
 ## Autoscaling and minimum memory allocation
 
@@ -175,5 +175,6 @@ For example, if a database accumulates 100 GB of allocated data storage and back
 
 ## Related content
 
-- [Performance Dashboard for SQL database in Microsoft Fabric](performance-dashboard.md)
+- [Control compute usage](control-compute-usage.md)
 - [Monitor SQL database in Microsoft Fabric](monitor.md)
+- [Performance Dashboard for SQL database in Microsoft Fabric](performance-dashboard.md)

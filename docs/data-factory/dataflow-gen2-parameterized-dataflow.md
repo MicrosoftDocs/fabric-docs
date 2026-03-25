@@ -3,7 +3,7 @@ title: Parameterized Dataflow Gen2
 description: Learn how to parameterize sources, logic, and destinations in Dataflow Gen2 using public parameters mode for dynamic, reusable dataflows in Microsoft Fabric.
 ms.reviewer: miescobar
 ms.topic: tutorial
-ms.date: 09/29/2025
+ms.date: 03/23/2026
 ms.custom: dataflows
 ---
 
@@ -34,7 +34,7 @@ To make the dataflow dynamic, you parameterize the source table, the filter valu
 
 Before continuing, enable public parameters mode by going to the *Home* tab, selecting *Options*, and in the *Parameters* section, checking the box labeled **Enable parameters to be discovered and overridden for execution** and allow your dataflow to accept parameters during execution.
 
-![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overriden for execution" setting.](media/dataflow-gen2-parameterized-dataflow/parameters-options.png)
+![Screenshot of the options dialog in Dataflow Gen2 with the Parameters section showing the "Enable to be discovered and overridden for execution" setting.](media/dataflow-gen2-parameterized-dataflow/parameters-options.png)
 
 ## Parameterize source
 
@@ -105,27 +105,40 @@ Once you select OK, notice that the diagram view has already created the link be
 >[!NOTE]
 >It's recommended that you get acquainted with the concept of data destinations in Dataflow Gen2 and how its mashup script gets created from the article on [data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md#mashup-script-for-data-destination-queries) 
 
-The last component to parameterize in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to parameterize this part of the dataflow you need to use Git or the REST API.
+The last component to parameterize in this scenario is the destination. To do this, you use the [advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md) feature, which lets you modify the destination query script directly in the Dataflow editor using Power Query M code.
 
 ![Screenshot of the flyout that contains the data destination settings for the dimension_city query.](media/dataflow-gen2-parameterized-dataflow/destination-settings-flyout.png)
 
-This tutorial shows you how to make the changes through Git. Before you can make changes through git make sure to:
-* **Create a parameter with the name WarehouseId**: make sure to use the corresponding ID of your Warehouse as the current value, set it as required and of the text data type.
-* **Save the Dataflow**: use the Save button in the home tab of the ribbon.
+Before you begin, create a parameter with the name **WarehouseId**. Make sure to use the corresponding ID of your Warehouse as the current value, set it as required, and set it to the text data type.
 
-![Screenshot of the dataflow save button.](media/dataflow-gen2-parameterized-dataflow/dataflow-save.png)
+### Enable advanced edit for data destination queries
 
-Once your Dataflow is saved, make sure to commit the changes to your Git repository and head over to your repository to see the *mashup.pq* file of your Dataflow.
-When looking at the *mashup.pq* file, look for the query that you associated the data destination with. In this scenario, the name of that query is dimension_city. You see a record attribute above this query name:
+To modify the destination query directly in the Dataflow editor, you first need to enable the advanced edit feature:
 
-```M code 
-[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dimension_city_DataDestination", IsNewTarget = true], Settings = [Kind = "Manual", AllowCreation = true, ColumnSettings = [Mappings = {[SourceColumnName = "CityKey", DestinationColumnName = "CityKey"], [SourceColumnName = "WWICityID", DestinationColumnName = "WWICityID"], [SourceColumnName = "City", DestinationColumnName = "City"], [SourceColumnName = "StateProvince", DestinationColumnName = "StateProvince"], [SourceColumnName = "Country", DestinationColumnName = "Country"], [SourceColumnName = "Continent", DestinationColumnName = "Continent"], [SourceColumnName = "SalesTerritory", DestinationColumnName = "SalesTerritory"], [SourceColumnName = "Region", DestinationColumnName = "Region"], [SourceColumnName = "Subregion", DestinationColumnName = "Subregion"], [SourceColumnName = "Location", DestinationColumnName = "Location"], [SourceColumnName = "LatestRecordedPopulation", DestinationColumnName = "LatestRecordedPopulation"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
-shared dimension_city = let
-```
-This attribute record has a field with the name QueryName, which holds the name of the query that has all the data destination logic associated for this query. This query looks as follows:
+1. Select **Options** from the **Home** tab in the ribbon.
+
+1. In the **Options** dialog, scroll down to the **Data destinations** section.
+
+1. Select the checkbox for **Enable advanced edit for data destination queries**.
+
+1. A warning dialog appears explaining that modifying destination queries can cause unexpected behavior or break the dataflow. Read the warning carefully and select **OK** to confirm.
+
+1. Select **OK** to close the Options dialog.
+
+### Modify the destination query
+
+After you enable advanced edit, you can access and modify the destination query for your data destination:
+
+1. In the **Queries** pane, locate the data destination section that shows your configured destinations.
+
+1. Right-click on the destination query named **dimension_city**.
+
+1. From the context menu, select **Advanced editor**.
+
+The destination query looks as follows:
 
 ```M code    
-shared dimension_city_DataDestination = let
+let
   Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
   Navigation_1 = Pattern{[workspaceId = "8b325b2b-ad69-4103-93ae-d6880d9f87c6"]}[Data],
   Navigation_2 = Navigation_1{[warehouseId = "527ba9c1-4077-433f-a491-9ef370e9230a"]}[Data],
@@ -134,10 +147,10 @@ in
   TableNavigation
 ```
 
-You notice that, similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceid that needs to be used and also the warehouseId. Replace those fixed values with the identifiers of the parameters and your script shall look as follows:
+Similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceId and warehouseId. Replace those fixed values with the identifiers of the parameters and your script looks as follows:
 
 ```M code 
-shared dimension_city_DataDestination = let
+let
   Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
   Navigation_1 = Pattern{[workspaceId = WorkspaceId]}[Data],
   Navigation_2 = Navigation_1{[warehouseId = WarehouseId]}[Data],
@@ -146,8 +159,12 @@ in
   TableNavigation
 ```
 
-You can now commit this change and update your dataflow using the changes from your Dataflow through the source control feature in your workspace.
-You can verify that all changes are in place by opening your Dataflow and reviewing the data destination and any previous parameter references that were added.
+Select **OK** to save your changes in the advanced editor.
+
+> [!IMPORTANT]
+> After you modify a destination query using advanced edit, the standard UI for changing that destination no longer works. You must continue to use the advanced editor for any further modifications to that destination. For more information, see [Advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md).
+
+You can verify that all changes are in place by reviewing the data destination and any previous parameter references that were added.
 This finalizes all the parameterization of your Dataflow and you can now move on to run your Dataflow by passing parameter values for execution.
 
 ## Run request with parameter values

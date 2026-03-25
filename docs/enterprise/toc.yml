@@ -39,6 +39,12 @@ items:
     href: fabric-operations.md   
   - name: Optimize your capacity
     href: optimize-capacity.md
+  - name: Capacity overage
+    items:
+    - name: Capacity overage overview
+      href: capacity-overage-overview.md
+    - name: Enable capacity overage
+      href: enable-capacity-overage.md
   - name: Metrics app
     items:
     - name: What is the Microsoft Fabric Capacity Metrics app?
@@ -192,7 +198,7 @@ items:
     - name: Power BI security
       href: powerbi/service-admin-power-bi-security.md
     - name: Privacy levels
-      href: powerbi/desktop-privacy-levels.md
+      href: /power-query/privacy-levels
     - name: Use service tags with Power BI
       href: powerbi/service-premium-service-tags.md
     - name: Use private links for Power BI for on-premises clients

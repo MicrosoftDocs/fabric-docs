@@ -1,26 +1,25 @@
 ---
-title: "Tutorial: Introduction to Graph in Microsoft Fabric"
-description: Learn how to build a complete graph model in Microsoft Fabric, from creating a graph model to querying your data.
+title: "Tutorial: Introduction to graph in Microsoft Fabric"
+description: Learn how to build a complete graph model in Microsoft Fabric, from loading data and creating a graph model to querying your data with GQL.
 ms.topic: tutorial
-ms.date: 02/02/2026
-author: lorihollasch
-ms.author: loriwhip
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
-ms.search.form: Tutorial - Introduction to Graph in Microsoft Fabric
+ms.search.form: Tutorial - Introduction to graph in Microsoft Fabric
+ai-usage: ai-assisted
 ---
 
-# Tutorial: Introduction to Graph in Microsoft Fabric
+# Tutorial: Introduction to graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This tutorial is a step-by-step walkthrough of an end-to-end graph scenario in Microsoft Fabric. It covers everything from creating your graph model to querying your data and analyzing insights. Complete this tutorial to build a basic understanding of the Microsoft Fabric graph experience and its capabilities.
+This tutorial provides a step-by-step walkthrough of an end-to-end graph scenario in Microsoft Fabric. It covers everything from creating your graph model to querying your data and analyzing insights. Complete this tutorial to build a basic understanding of the Microsoft Fabric graph experience and its capabilities.
 
 ## Prerequisites
 
 Before you start this tutorial, verify that:
 
 1. [Graph is available in your region](overview.md#region-availability).
-1. Graph is enabled in your Fabric tenant.
+1. A Fabric administrator enabled Graph in your Fabric tenant. They enable this setting in the [admin portal](../admin/admin-center.md).
 
    :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 
@@ -41,31 +40,23 @@ In this tutorial, you take on the role of a data analyst at the fictional Advent
 1. [Query the graph with GQL](tutorial-query-code-editor.md) using the code editor.
 1. [Clean up tutorial resources](tutorial-clean-up.md) by deleting the workspace and other items.
 
-## Graph end-to-end architecture
-
-- **Data sources** - Microsoft Fabric makes it quick and easy to connect to Azure Data Services, other cloud platforms, and on-premises data sources.
-
-- **Storage** - Microsoft Fabric standardizes on Delta Lake format stored in OneLake. Graph in Microsoft Fabric reads data directly from your lakehouse tables to construct the graph model.
-
-- **Graph modeling** - Create nodes and edges that represent entities and relationships in your data. The graph model provides a flexible way to explore connected data.
-
-- **Query and analyze** - Use the visual query builder for interactive exploration or write GQL (Graph Query Language) queries for more complex analysis.
+For a detailed overview of how data flows through graph — from data sources through OneLake storage, graph modeling, querying, and results — see [graph architecture](how-graph-works.md).
 
 ## Sample data
 
 For this tutorial's sample data, use the [Adventure Works sample dataset](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph). Adventure Works is a fictional bicycle manufacturer that sells bicycles and accessories to customers worldwide.
 
 > [!NOTE]
-> The Adventure Works dataset used in this tutorial is a custom-transformed version designed specifically for demonstrating Graph capabilities. It differs from standard Adventure Works datasets and supports graph-specific features.
+> The Adventure Works dataset used in this tutorial is a custom-transformed version designed specifically for demonstrating graph capabilities. It differs from standard Adventure Works datasets and supports graph-specific features.
 
 The Adventure Works dataset includes:
 
-- **Customers** - People who purchase products
-- **Orders** - Sales transactions
-- **Employees** - Staff who process sales
-- **Products** - Items available for purchase
-- **Product categories and subcategories** - Product classification hierarchy
-- **Vendors** - Suppliers who produce products
+- **Customers** - People who purchase products.
+- **Orders** - Sales transactions.
+- **Employees** - Staff who process sales.
+- **Products** - Items available for purchase.
+- **Product categories and subcategories** - Product classification hierarchy.
+- **Vendors** - Suppliers who produce products.
 
 ## Data model
 
@@ -73,12 +64,12 @@ The Adventure Works data model demonstrates a typical retail scenario with multi
 
 | Relationship | Description |
 | ------------ | ----------- |
-| Employee **sells** Order | Employees process customer orders |
-| Customer **purchases** Order | Customers make purchases |
-| Order **contains** Product | Orders include products |
-| Product **isOfType** ProductSubcategory | Products belong to subcategories |
-| ProductSubcategory **belongsTo** ProductCategory | Subcategories belong to categories |
-| Vendor **produces** Product | Vendors supply products |
+| `Employee sells Order` | Employees process customer orders |
+| `Customer purchases Order` | Customers make purchases |
+| `Order contains Product` | Orders include products |
+| `Product isOfType ProductSubcategory` | Products belong to subcategories |
+| `ProductSubcategory belongsTo ProductCategory` | Subcategories belong to categories |
+| `Vendor produces Product` | Vendors supply products |
 
 ## Next step
 

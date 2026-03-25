@@ -1,10 +1,7 @@
 ---
 title: Transform and Enrich Data with AI Functions
 description: Learn how to transform and enrich data with lightweight, LLM-powered code by using AI functions in Microsoft Fabric.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -29,6 +26,8 @@ AI functions use industry-leading large language models (LLMs) for summarization
 
 You can incorporate these functions as part of data science and data engineering workflows, whether you're working with pandas or Spark. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
 
+AI functions also support [multimodal input](./multimodal-overview.md), enabling you to process images, PDFs, and text files alongside text data.
+
 ## Prerequisites
 
 - To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
@@ -46,7 +45,7 @@ You can incorporate these functions as part of data science and data engineering
 AI functions now support broader models and providers beyond the default Azure OpenAI models. You can configure AI functions to use:
 
 - Azure OpenAI models
-- Azure AI Foundry resources (including models such as Claude and LLaMA)
+- Microsoft Foundry resources (including models such as Claude and LLaMA)
 
 Model and provider selection is configurable through the AI functions configuration. For details on how to set up and configure different models and providers, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
@@ -72,7 +71,7 @@ AI functions now execute with increased default concurrency of 200, allowing for
 
 ```python
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 ```
 
 # [pandas (Python runtime)](#tab/pandas-python)
@@ -83,8 +82,7 @@ AI functions now execute with increased default concurrency of 200, allowing for
 !wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
-
+%pip install -q openai synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 ```
 
 ---
@@ -523,5 +521,6 @@ Fabric AI functions provide a built-in way to inspect usage and execution statis
 - Summarize text with [`ai.summarize in pandas`](./pandas/summarize.md) or [`ai.summarize in PySpark`](./pyspark/summarize.md).
 - Translate text with [`ai.translate in pandas`](./pandas/translate.md) or [`ai.translate in PySpark`](./pyspark/translate.md).
 
-- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md) .
+- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
+- Use [multimodal input with AI functions](./multimodal-overview.md) to process images, PDFs, and text files.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).
