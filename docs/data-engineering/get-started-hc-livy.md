@@ -311,4 +311,3 @@ for label, url in [("A", session_url_a), ("B", session_url_b)]:
 - [Submit Spark batch jobs using the Livy API](https://learn.microsoft.com/en-us/fabric/data-engineering/get-started-api-livy-batch)
 - [Apache Spark monitoring overview](https://learn.microsoft.com/en-us/fabric/data-engineering/spark-monitoring-overview)
 - [Apache Livy REST API documentation](https://livy.incubator.apache.org/docs/latest/rest-api.html)
-
