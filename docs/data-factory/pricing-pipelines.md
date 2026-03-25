@@ -26,6 +26,7 @@ The following table shows a breakdown of the pricing model for pipelines within 
 |---------|---------|---------|
 |Data movement    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CU hours   |
 |Data orchestration     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CU hours for each non-copy activity run |
+|SQL Server Integration Services | Based on SQL Server Integration Services uptime used by Invoke SSIS package activity | 1.35 CU hours per VCore
 
 It indicates that for each intelligent optimization throughput resource usage in a pipeline execution, 1.5 CU hours are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU hours. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
 

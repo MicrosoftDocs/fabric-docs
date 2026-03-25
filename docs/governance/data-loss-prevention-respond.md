@@ -14,7 +14,7 @@ When a [supported item type](/purview/dlp-powerbi-get-started#supported-item-typ
 
 * From a semantic model details page, select the **View all** button on the policy tip.
 
-* In a lakehouse's edit mode, select the policy violation notice in the header and then select **View all** in the policy violation section of the flyout that appears.
+* In a Fabric item's edit mode, select the policy violation notice in the header and then select **View all** in the policy violation section of the flyout that appears.
 
 This article describes the information you see on the side pane and the actions you can take regarding the violations.
 

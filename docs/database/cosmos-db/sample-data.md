@@ -297,7 +297,7 @@ The following JSON schemas describe the structure of documents in both sample da
 
 ## Related content
 
-- [Review the Cosmos DB in Microsoft Fabric Samples Repository](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/readme.md)
+- [Review the Cosmos DB in Microsoft Fabric Samples Repository](https://github.com/AzureCosmosDB/cosmos-fabric-samples/blob/main/README.md)
 - [Learn about Cosmos DB in Microsoft Fabric](overview.md)
 - [Quickstart: Create a Cosmos DB database workload in Microsoft Fabric](quickstart-portal.md)
 

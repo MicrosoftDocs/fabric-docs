@@ -3,7 +3,7 @@ title: Apache Airflow Job workspace settings
 description: This article enumerates the Apache Airflow job environment run-time configurations.
 ms.reviewer: abnarain
 ms.topic: how-to
-ms.date: 08/22/2025
+ms.date: 03/02/2026
 ms.custom: airflows
 ---
 
@@ -28,12 +28,12 @@ The following table contains the list the properties of both the pools.
 ## Configure Custom Pool
 
 1. Go to your workspace settings.
-2. In the 'Data Factory' section, select 'Data Workflow Settings.'
-3. You find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled 'Default Data Workflow Setting' and select 'New Pool.'
+1. In the **Data Factory** section, select **Apache Airflow Runtime Settings**.
+1. You find that the Default Data Workflow Setting is currently set to Starter Pool. To switch to a Custom Pool, expand the dropdown menu labeled **Default Data Workflow Setting** and select **New Pool**.
 
-   :::image type="content" source="media/apache-airflow-jobs/data-workflow-runtime-settings.png" lightbox="media/apache-airflow-jobs/data-workflow-runtime-settings.png" alt-text="Screenshot shows data workflows run time settings.":::
+   :::image type="content" source="media/apache-airflow-jobs/apache-airflow-runtime-settings.png" lightbox="media/apache-airflow-jobs/apache-airflow-runtime-settings.png" alt-text="Screenshot shows the Apache Airflow run time settings.":::
 
-4. Customize the following properties according to your needs:
+1. Customize the following properties according to your needs:
 
    - Name: Give a suitable name to your pool.
    - Compute node size: The size of compute node you want to run your environment on. You can choose the value `Large` for running complex or production DAGs and `Small` for running simpler Directed Acyclic Graphs (DAGs).
@@ -42,7 +42,7 @@ The following table contains the list the properties of both the pools.
 
    :::image type="content" source="media/apache-airflow-jobs/new-custom-pool.png" lightbox="media/apache-airflow-jobs/new-custom-pool.png" alt-text="Screenshot shows custom pool settings in data workflow.":::
 
-5. Select **Create** to finalize your configuration.
+1. Select **Create** to finalize your configuration.
 
 ## Related content
 

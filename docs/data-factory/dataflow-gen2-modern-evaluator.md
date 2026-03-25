@@ -3,7 +3,7 @@ title: Modern Evaluator for Dataflow Gen2 with CI/CD
 description: Boost Dataflow Gen2 with CI/CD performance with the Modern Evaluator—faster query execution, scalable workflows, and support for top connectors.
 ms.reviewer: miescobar
 ms.topic: how-to
-ms.date: 2/25/2026
+ms.date: 3/1/2026
 ms.custom: dataflows
 ---
 
@@ -81,7 +81,7 @@ This benchmark compares Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) 
 - Dataflow Gen2 (CI/CD) completes the same workload in approximately half the time.
 - The performance improvement is driven by the Modern Query Evaluation Engine, which reduces per‑row processing overhead and optimizes execution for large ingestion workloads.
 
-<!-- ### Legacy vs. Modern evaluator
+### Legacy vs. Modern evaluator
 
 This benchmark compares the legacy evaluation engine and the Modern Query Evaluation Engine within Dataflow Gen2 (CI/CD) under two common query patterns.
 
@@ -101,7 +101,7 @@ This benchmark compares the legacy evaluation engine and the Modern Query Evalua
 **Observations**
 
 The Modern Query Evaluation Engine provides significant performance improvements due to a more efficient runtime and reduced execution overhead regardless of whether the query folds or not.
--->
+
 
 ## Supported connectors
 
@@ -124,6 +124,9 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Azure Cost Management
 - [Azure Data Explorer (Kusto)](connector-azure-data-explorer.md)
 - [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-overview.md)
+- Azure SQL database
+- Azure Synapse Analytics
+- Azure Synapse Analytics workspace
 - Azure Resource Graph
 - AzureTables
 - BI 360
@@ -139,6 +142,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Cognite
 - CogniteDataSource
 - CustomerInsights
+- Dataverse
 - DCWInsights
 - DeltaSharing
 - Dynamics 365 Business Central
@@ -150,6 +154,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - eWayCRM
 - Fabric AI Functions
 - [Fabric Lakehouse](connector-lakehouse-overview.md)
+- Fabric SQL database
 - [Fabric Warehouse](connector-data-warehouse-overview.md)
 - FactSet Analytics
 - FactSet RMS
@@ -190,6 +195,7 @@ The Modern Query Evaluation Engine supports a variety of data connectors. Ensure
 - Spigit
 - SumTotal
 - Supermetrics
+- SQL Server database
 - SurveyMonkey
 - TeamDesk
 - Tenforce

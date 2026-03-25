@@ -69,6 +69,16 @@ For dataflow refreshes, a couple of limitations are in place:
 5. Total refresh time of a single refresh of a dataflow is limited to a max of 24 hours.
 6. Per dataflow you can have a maximum of 50 staged queries, or queries with output destination, or combination of both. 
 
+### Intermittent failures when consuming dataflow data via the Dataflows connector
+
+When downstream items (such as semantic models or other dataflows) consume data from a Dataflow Gen2 using the Dataflows connector, they retrieve the data through an internal API. This API can experience intermittent timeouts, which may cause the consuming item's refresh to fail with a misleading error message such as: "The key didn't match any rows in the table."
+
+This error doesn't mean your data is missing or incorrect. It indicates that the backend service was temporarily unable to return the dataflow results.
+
+**Recommended workaround:** Configure an [data destination](dataflow-gen2-data-destinations-and-managed-settings.md) (Lakehouse or Warehouse) for each source dataflow, and update downstream items to read directly from that destination using the Lakehouse or Warehouse connector instead of the Dataflows connector. By reading from OneLake storage directly, you bypass the internal API entirely and eliminate this failure mode. This change also typically improves overall refresh performance.
+
+For more details about this limitation, see [Data Factory Dataflow Gen2 limitations](data-factory-limitations.md#data-factory-dataflow-gen2-limitations).
+
 ### Refresh cancellation implications to output data
 
 A dataflow refresh can be stopped via cancel refresh feature or if a failure occurred during processing of the dataflow's queries. Different outcomes can be observed depending on the type of destination and when refresh was stopped. Here are the possible outcomes, for the two types of data destination for a query:

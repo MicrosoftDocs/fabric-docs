@@ -3,14 +3,14 @@ title: Add an Azure Service Bus Source to an Eventstream
 description: Learn how to add an Azure Service Bus source to an eventstream. This feature is currently in preview.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 03/22/2026
 ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---
 
 # Add an Azure Service Bus source to an eventstream (preview)
 
-Azure Service Bus is a fully managed enterprise message broker with message queues and publish/subscribe topics. You can use Microsoft Fabric eventstreams to connect to Service Bus. Messages in Service Bus can be fetched into a Fabric eventstream and routed to various destinations within Fabric.
+Azure Service Bus is a fully managed enterprise message broker with message queues and publish/subscribe topics. You can use Microsoft Fabric eventstreams to connect to Service Bus. You can fetch messages from Service Bus into a Fabric eventstream and route them to various destinations within Fabric.
 
 This article shows you how to add a Service Bus source to an eventstream.
 
@@ -34,16 +34,16 @@ On the **Select a data source** page, search for **Azure Service Bus**. On the *
 
 ## View an updated eventstream
 
-1. Confirm that the Service Bus source is added to your eventstream on the canvas in the **Edit** mode. To publish it, select **Publish** on the ribbon.
+1. Confirm that you add the Service Bus source to your eventstream on the canvas in the **Edit** mode. To publish it, select **Publish** on the ribbon.
 
     :::image type="content" source="./media/add-source-azure-service-bus/event-stream-publish.png" alt-text="Screenshot that shows the editor with the Publish button selected." lightbox="./media/add-source-azure-service-bus/event-stream-publish.png":::
 
-1. The Service Bus source is available for visualization in the **Live** view. Select the **Service Bus** tile in the diagram to open a page similar to the following example.
+1. You can visualize the Service Bus source in the **Live** view. Select the **Service Bus** tile in the diagram to open a page similar to the following example.
 
     :::image type="content" source="./media/add-source-azure-service-bus/live-view.png" alt-text="Screenshot that shows the editor in the live view.":::
 
 ## Limitation
-* The Azure Service Bus source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.
+* The Azure Service Bus source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository might result in errors.
 
 ## Related content
 

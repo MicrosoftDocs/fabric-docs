@@ -139,6 +139,8 @@ Shortcut caching can reduce egress costs associated with cross-cloud data access
 
 > [!NOTE]
 > Shortcut caching currently supports Google Cloud Storage (GCS), S3, S3 compatible, and on-premises data gateway shortcuts.
+>
+> Caching is also supported for on-premises Amazon S3 shortcuts that use Microsoft Entra service principal authentication.
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and select the **Retention Period**.
 

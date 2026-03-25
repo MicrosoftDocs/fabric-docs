@@ -2,10 +2,11 @@
 title: Set up your Data Warehouse connection
 description: This article provides information about how to create a Data Warehouse connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 2/9/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Data Warehouse connection
@@ -20,13 +21,29 @@ The Data Warehouse connector supports the following authentication types for cop
 |:---|:---|:---|
 |Organizational account| √ | √ |
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 to a Data Warehouse in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-1. [Set up Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites).
-1. [Connect to a Warehouse (from Power Query online)](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Data Warehouse](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to a Warehouse](#connect-to-a-warehouse).
+
+### Capabilities
+
+[!INCLUDE [warehouse-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [warehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to a Warehouse
+
+[!INCLUDE [warehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/warehouse/warehouse-connect-to-power-query-online.md)]
 
 ### Using relative references
 
@@ -35,7 +52,6 @@ Inside the navigator, a special node with the name **!(Current Workspace)** is l
 ![Screenshot of the navigator showing the !(Current Workspace) node for the Fabric Warehouse connector](media/connector-data-warehouse/warehouse-relative-reference-current-workspace.png)
 
 When using any items within this node, the M script emitted uses workspace or warehouse identifiers and instead uses relative references such as the ```"."``` handler to denote the current workspace and the name of the warehouse as in the example M code.
-
 
 ```M-code
 let
@@ -46,10 +62,6 @@ let
 in
   #"Navigation 3"
   ```
-
-### More information
-
-- [Warehouse connector capabilities](/power-query/connectors/warehouse#capabilities)
 
 ## Set up your connection in a pipeline
 
@@ -82,3 +94,7 @@ You can set up a Data Warehouse connection in the **Get Data** page or in the **
     >If you create the connection through **Manage connections and gateways** page:
     >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
     >- If you choose to use an existing Data Warehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Data Warehouse. For more information about the permission, see this [article](../data-warehouse/workspace-roles.md).
+
+## Related content
+
+- [For more information about this connector, see the Data Warehouse connector documentation.](/power-query/connectors/warehouse)

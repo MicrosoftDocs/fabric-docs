@@ -2,10 +2,11 @@
 title: Set up your Lakehouse connection
 description: This article details how to use the Data Factory Lakehouse connector in Microsoft Fabric to create a data lake connection.
 ms.topic: how-to
-ms.date: 2/9/2026
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Lakehouse connection
@@ -20,13 +21,29 @@ The Lakehouse connector supports the following authentication types for copy and
 | --- | :---: | :---: |
 | Organizational account | √ | √ |
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 in Microsoft Fabric to Lakehouse using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
-1. [Set up Lakehouse prerequisites](/power-query/connectors/lakehouse#prerequisites).
-1. [Connect to a Lakehouse (from Power Query Online)](/power-query/connectors/lakehouse#connect-to-a-lakehouse-from-power-query-online).
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Lakehouse](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to a Lakehouse](#connect-to-a-lakehouse).
+
+### Capabilities
+
+[!INCLUDE [lakehouse-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [lakehouse-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to a Lakehouse
+
+[!INCLUDE [lakehouse-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/lakehouse/lakehouse-connect-to-power-query-online.md)]
 
 ### Using relative references
 
@@ -78,6 +95,8 @@ You can set up a Lakehouse connection in the **Get Data** page or in the **Manag
     >- To allow multiple users to collaborate in one pipeline, please ensure the connection is shared with them.
     >- If you choose to use an existing Lakehouse connection within the tenant, ensure it has at least Viewer permission to access the workspace and Lakehouse. For more information about the permission, see this [article](../data-engineering/workspace-roles-lakehouse.md).
     
+
 ## Related content
 
+- [For more information about this connector, see the Lakehouse connector documentation.](/power-query/connectors/lakehouse)
 * [Configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)

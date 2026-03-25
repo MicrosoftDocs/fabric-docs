@@ -3,13 +3,13 @@ title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
 ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
-ms.date: 01/14/2025
+ms.date: 02/28/2026
 #customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
 
 # Tutorial: create, evaluate, and score a machine fault detection model
 
-This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses machine learning for a more systematic approach to fault diagnosis, to proactively identify issues and to take actions before an actual machine failure. The goal is to predict whether a machine would experience a failure based on process temperature, rotational speed, etc.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses machine learning for a more systematic approach to fault diagnosis, to proactively identify problems and to take actions before an actual machine failure. The goal is to predict whether a machine would experience a failure based on process temperature, rotational speed, and other factors.
 
 This tutorial covers these steps:
 
@@ -29,7 +29,7 @@ This tutorial covers these steps:
 
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+To follow along in a notebook, choose one of these options:
 
 - Open and run the built-in notebook.
 - Upload your notebook from GitHub.
@@ -56,7 +56,7 @@ For machine learning model development or ad-hoc data analysis, you might need t
 For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. 
 
 > [!NOTE]
-> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
+> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before running any other cells.
 
 
 ```python
@@ -68,30 +68,30 @@ For this tutorial, use `%pip install` to install the `imblearn` library in your 
 
 The dataset simulates logging of a manufacturing machine's parameters as a function of time, which is common in industrial settings. It consists of 10,000 data points stored as rows with features as columns. The features include:
 
-- A Unique Identifier (UID) that ranges from 1 to 10000
-- Product ID, consisting of a letter L (for low), M (for medium), or H (for high), to indicate the product quality variant, and a variant-specific serial number. Low, medium, and high-quality variants make up 60%, 30%, and 10% of all products, respectively
-- Air temperature, in degrees Kelvin (K)
-- Process Temperature, in degrees Kelvin
-- Rotational Speed, in revolutions per minute (RPM)
-- Torque, in Newton-Meters (Nm)
-- Tool wear, in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of tool wear respectively to the tool used in the process
-- A Machine Failure Label, to indicate whether the machine failed in the specific data point. This specific data point can have any of the following five independent failure modes:
+- A unique identifier (UID) that ranges from 1 to 10,000.
+- Product ID, consisting of a letter L (for low), M (for medium), or H (for high), to indicate the product quality variant, and a variant-specific serial number. Low, medium, and high-quality variants make up 60%, 30%, and 10% of all products, respectively.
+- Air temperature, in degrees Kelvin (K).
+- Process temperature, in degrees Kelvin.
+- Rotational speed, in revolutions per minute (RPM).
+- Torque, in Newton-Meters (Nm).
+- Tool wear, in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of tool wear respectively to the tool used in the process.
+- A machine failure label, to indicate whether the machine failed in the specific data point. This specific data point can have any of the following five independent failure modes:
 
-    - Tool Wear Failure (TWF): the tool is replaced or fails at a randomly selected tool wear time, between 200 and 240 minutes
-    - Heat Dissipation Failure (HDF): heat dissipation causes a process failure if the difference between the air temperature and the process temperature is less than 8.6 K, and the tool's rotational speed is less than 1380 RPM
-    - Power Failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. The process fails if this power falls below 3,500 W or exceeds 9,000 W
-    - OverStrain Failure (OSF): if the product of tool wear and torque exceeds 11,000 minimum Nm for the L product variant (12,000 for M, 13,000 for H), the process fails due to overstrain
-    - Random Failures (RNF): each process has a failure chance of 0.1%, regardless of the process parameters
+    - Tool Wear Failure (TWF): the tool is replaced or fails at a randomly selected tool wear time, between 200 and 240 minutes.
+    - Heat Dissipation Failure (HDF): heat dissipation causes a process failure if the difference between the air temperature and the process temperature is less than 8.6 K, and the tool's rotational speed is less than 1,380 RPM
+    - Power Failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. The process fails if this power falls below 3,500 W or exceeds 9,000 W.
+    - OverStrain Failure (OSF): if the product of tool wear and torque exceeds 11,000 minimum Nm for the L product variant (12,000 for M, 13,000 for H), the process fails due to overstrain.
+    - Random Failures (RNF): each process has a failure chance of 0.1%, regardless of the process parameters.
 
 > [!NOTE]
-> If at least one of the above failure modes is true, the process fails, and the "machine failure" label is set to 1. The machine learning method can't determine which failure mode caused the process failure.
+> If at least one of the above failure modes is true, the process fails, and the machine failure label is set to 1. The machine learning method can't determine which failure mode caused the process failure.
 
 ### Download the dataset and upload to the lakehouse
 
 Connect to the Azure Open Datasets container, and load the Predictive Maintenance dataset. This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> Add a lakehouse to the notebook before you run it. Otherwise, you'll get an error. For information about adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
+> Add a lakehouse to the notebook before you run it. Otherwise, you get an error. For information about adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
 
 ```python
 # Download demo data files into the lakehouse if they don't exist
@@ -139,7 +139,7 @@ This table shows a preview of the data:
 
 ### Write a Spark DataFrame to a lakehouse delta table
 
-Format the data (for example, replace the spaces with underscores) to facilitate Spark operations in subsequent steps:
+Format the data (for example, replace the spaces with underscores) to make Spark operations easier in later steps:
 
 ```python
 # Replace the space in the column name with an underscore to avoid an invalid character while saving 
@@ -181,7 +181,7 @@ df = df.rename(columns = {'Target': "IsFail"})
 df.info()
 ```
 
-Convert specific columns of the dataset to floats or integer types as required, and map strings (`'L'`, `'M'`, `'H'`) to numerical values (`0`, `1`, `2`):
+Convert specific columns of the dataset to float or integer types as required, and map strings (`'L'`, `'M'`, `'H'`) to numerical values (`0`, `1`, `2`):
 
 ```python
 # Convert temperature, rotational speed, torque, and tool wear columns to float
@@ -284,9 +284,9 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 ### Oversample to balance classes in the training dataset
 
-The previous analysis showed that the dataset is highly imbalanced. That imbalance becomes a problem, because the minority class has too few examples for the model to effectively learn the decision boundary.
+The previous analysis shows that the dataset is highly imbalanced. That imbalance becomes a problem, because the minority class has too few examples for the model to effectively learn the decision boundary.
 
-[SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) can solve the problem. SMOTE is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the Euclidean distances between data points. This method differs from random oversampling, because it creates new examples that don't just duplicate the minority class. The method becomes a more effective technique to handle imbalanced datasets.
+[SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) solves the problem. SMOTE is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the Euclidean distances between data points. This method differs from random oversampling, because it creates new examples that don't just duplicate the minority class. The method becomes a more effective technique to handle imbalanced datasets.
 
 ```python
 # Disable MLflow autologging because you don't want to track SMOTE fitting
@@ -377,7 +377,7 @@ with mlflow.start_run() as run:
     print("Recall_test:", recall_test)
 ```
 
-From the output, both the training and test datasets yield an F1 score, accuracy and recall of about 0.9 when using the random forest classifier.
+From the output, both the training and test datasets yield an F1 score, accuracy, and recall of about 0.9 when using the random forest classifier.
 
 ### Train a logistic regression classifier
 
@@ -475,7 +475,7 @@ with mlflow.start_run() as run:
 
 ## Step 5: Select the best model and predict outputs
 
-In the previous section, you trained three different classifiers: random forest, logistic regression, and XGBoost. You now have the choice to either programmatically access the results, or use the user interface (UI).
+In the previous section, you trained three different classifiers: random forest, logistic regression, and XGBoost. You now have the choice to either programmatically access the results or use the user interface (UI).
 
 For the UI path option, navigate to your workspace and filter the models.
 

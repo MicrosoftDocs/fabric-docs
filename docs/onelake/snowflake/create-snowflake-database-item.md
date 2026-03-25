@@ -59,6 +59,12 @@ In your Snowflake account, log in with a user that has an administrative role.
     -- Allow role to use an existing warehouse (adjust COMPUTE_WH as needed)
     GRANT USAGE ON WAREHOUSE COMPUTE_WH TO ROLE R_ICEBERG_METADATA;
     ```
+   > [!NOTE]
+   > You may need to ensure that your user has the Snowflake feature "Secondary Roles" enabled.
+   > 
+   > To check the status of secondary roles feature, run `DESC USER SVC_FABRIC_ICEBERG_METADATA;` and check the `DEFAULT_SECONDARY_ROLES` property. The value should be `["ALL"]`, rather than `[]` or another value.
+   >
+   > You may wish to unset this property to restore its value to `["ALL"]` by running `ALTER USER SVC_FABRIC_ICEBERG_METADATA UNSET DEFAULT_SECONDARY_ROLES;`.
 
 1. Go to **Ingestion** > **Add data**.
 1. Select **Microsoft OneLake**.
@@ -82,6 +88,7 @@ In a new browser tab:
    - **Authentication method:** Snowflake
    - **Username:** `SVC_FABRIC_ICEBERG_METADATA` (unless customized)
    - **Password:** *Your chosen password*
+   - **Role name:** (under Advanced Options) `R_ICEBERG_METADATA` (unless customized)
 
 1. Create the connection. If it fails, recheck the information from the previous section.
 

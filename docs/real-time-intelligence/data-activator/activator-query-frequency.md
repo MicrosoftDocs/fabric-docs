@@ -1,39 +1,37 @@
 ---
-title: Setting the query frequency of Activator rules
-description: Explains how to alter the frequency with which Activator monitors rules created from certain data sources.
+title: Query frequency for query data sources
+description: Learn how to set the frequency at which Activator queries your query data sources and how to choose the right frequency.
 ms.reviewer: jameshutton
-ms.topic: overview
+ms.topic: concept-article
 ms.search.form: product-reflex
-ms.date: 7/18/2025
+ms.date: 02/27/2026
 ---
 
-# Query frequency in [!INCLUDE [fabric-activator](../includes/fabric-activator.md)]
+# Query frequency for query data sources
 
-Some Fabric Activator rules work by running regular queries on the rule's data source. This article explains how to set the query frequency, and how to determine the right query frequency for your rule.
+Activator [query data sources](ingestion/ingestion-overview.md) work by running regular queries against the underlying data store. This article explains how to set the query frequency for a query data source, and how to choose the right frequency for your rule.
 
-## Data sources that have a query frequency
+The following query data sources have a configurable query frequency:
 
-Activator rules created from the following data source types have a query frequency:
+- [Power BI](ingestion/ingestion-powerbi.md)
+- [KQL Querysets](ingestion/ingestion-kql-querysets.md)
+- [Real-Time Dashboards](ingestion/ingestion-realtime-dashboards.md)
 
-- Power BI reports
-- KQL Querysets
-- Real-Time Dashboards.
-  
-## Setting the query frequency
+## Set the query frequency
 
-To set the query frequency for your rule:
+To set the query frequency for a query data source:
 
 1. Open your rule's Activator item.
-2. Select your rule's data source in the Explorer pane.
-3. Go to the "Manage Source" tab.
-4. Set the value of "Run query every" to your desired query frequency.
+1. Select the query data source in the Explorer pane.
+1. Go to the **Manage Source** tab.
+1. Set the value of **Run query every** to your desired query frequency.
 
-:::image type="content" source="media/activator-query-frequency/activator-set-query-frequency.png" alt-text="Screenshot of the query frequency value in the data source for an Activator rule":::
+:::image type="content" source="media/activator-query-frequency/activator-set-query-frequency.png" alt-text="Screenshot of the query frequency value in the data source for an Activator rule.":::
 
-## Determining the right query frequency
+## Determine the right query frequency
 
-To determine the right query frequency for your rule, you should consider the following factors:
+To determine the right query frequency for your query data source, consider the following factors:
 
 - **How often your data source changes**: the more often your data changes, the more often you should query it.
-- **How quickly you need your rules to activate**: the more often you query your data, the sooner Activator will activate your rule after your rule's condition is met.
-- **Capacity usage**: querying your data consumes Fabric Capacity. The more often you query your data, the more Fabric Capacity you'll use.
+- **How quickly you need your rules to activate**: the more often you query your data, the sooner Activator activates your rule after the rule's condition is met.
+- **Capacity usage**: querying your data consumes Fabric capacity. The more often you query your data, the more capacity you use.

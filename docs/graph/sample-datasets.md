@@ -1,21 +1,21 @@
 ---
-title: Example Graph Datasets
-description: Information about example graph datasets used in the documentation for Graph in Microsoft Fabric
+title: Example Graph Datasets for graph in Microsoft Fabric
+description: Information about the example graph datasets used in the documentation for graph in Microsoft Fabric, including data models, schemas, and sample queries.
 ms.topic: reference
-ms.date: 01/12/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Example Graph Datasets
 ---
 
 # Example graph datasets
 
-The GQL queries given by most documentation articles for Graph in Microsoft Fabric assume one of the following example [property graphs](graph-data-models.md):
+Most documentation articles for graph in Microsoft Fabric assume one of the following example [property graphs](graph-data-models.md) when they provide GQL queries:
 
 * The *social network example graph* is the primary example graph used in the documentation.
-  The detailed structure of the graph is explained in the article on its [schema definition](gql-schema-example.md).
+  The article on its [schema definition](gql-schema-example.md) explains the detailed structure of the graph.
 
-* The *AdventureWorks example graph* is explained and used in the [quickstart tutorial](quickstart.md).
+* The *AdventureWorks example graph* is explained and used in the [quickstart tutorial](quickstart.md) and [tutorial](tutorial-introduction.md).
 
-The required datasets for these graphs are published in the [Graph in Microsoft Fabric samples repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/graph).
+The [graph samples repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/graph) publishes the required datasets for these graphs.
 
-See the [README file](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/graph/README.md) for further instructions on how to obtain and load these datasets.
+For further instructions on how to obtain and load these datasets, see the [README file](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/graph/README.md).

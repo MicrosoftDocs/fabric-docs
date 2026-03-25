@@ -19,7 +19,7 @@ You run the [Starter-Kit](https://aka.ms/fabric-extensibility-starter-kit) insid
 - Access to a Fabric tenant and a workspace where you can create items
 - A GitHub account (required for Codespaces)
 - If developing locally: a recent Node.js LTS and a package manager (see the README for exact tooling)
-- Access to create an [Microsoft Entra Application](https://entra.microsoft.com/)
+- Access to create a [Microsoft Entra Application](https://entra.microsoft.com/)
 - Optional: an Azure subscription if you plan to host your web app in Azure
 
 > [!TIP]

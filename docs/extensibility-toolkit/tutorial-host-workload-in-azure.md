@@ -187,7 +187,7 @@ Publish-AzWebApp -ResourceGroupName <resource_group_name> -Name <web_app_name> -
 
 Parameter | Description | Example
 ----------|-------------|----------
-`<subscription_id>` | Your Azure subscription ID | `12345678-1234-1234-1234-123456789012`
+`<subscription_id>` | Your Azure subscription ID | `aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e`
 `<resource_group_name>` | Resource group containing your web app | `fabric-workload-rg`
 `<web_app_name>` | Name of your Azure web app | `my-fabric-workload`
 `<zip_file_path>` | Full path to your deployment zip file | `C:\path\to\deployment.zip`
@@ -328,4 +328,3 @@ Enable Application Insights for monitoring:
 - [How to publish and manage a workload](./tutorial-publish-workload.md) - Uploading manifest to Fabric
 - [Setup Guide](./setup-guide.md) - Initial development environment setup
 - [Tutorial: Getting Started](./get-started.md) - Getting started with the Extensibility Toolkit
-

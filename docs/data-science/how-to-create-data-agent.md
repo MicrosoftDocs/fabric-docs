@@ -1,5 +1,5 @@
 ﻿---
-title: Create a Fabric data agent (preview)
+title: Create a Fabric data agent
 description: Learn how to create a Fabric data agent.
 ms.reviewer: amjafari
 ms.topic: how-to
@@ -10,11 +10,9 @@ ai.usage: ai-assisted
 #customer intent: As an Analyst, I want to create a Fabric data agent that relies on generative AI, that my colleagues and I can use to have conversations about our data.
 ---
 
-# Create a Fabric data agent (preview)
+# Create a Fabric data agent
 
 With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, KQL databases, and ontologies in Fabric. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren't AI experts or deeply familiar with the data.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 

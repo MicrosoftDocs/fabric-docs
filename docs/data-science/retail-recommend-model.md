@@ -4,7 +4,7 @@ description: This tutorial shows the data engineering and data science workflow 
 ms.reviewer: lagayhar, amjafari
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
-ms.date: 01/15/2025
+ms.date: 02/28/2026
 #customer intent: As a data scientist, I want to build a recommendation model so I can create personalized recommendations.
 ---
 
@@ -20,7 +20,7 @@ This tutorial covers these steps:
 > * Train a model, and log it with MLflow
 > * Load the model and make predictions
 
-We have many types of recommendation algorithms available. This tutorial uses the Alternating Least Squares (ALS) matrix factorization algorithm. ALS is a model-based collaborative filtering algorithm.
+Many types of recommendation algorithms are available. This tutorial uses the Alternating Least Squares (ALS) matrix factorization algorithm. ALS is a model-based collaborative filtering algorithm.
 
 :::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Screenshot showing a chart of recommendation algorithms types." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
 
@@ -38,7 +38,7 @@ The ALS algorithm is iterative. Each iteration holds one of the factor matrices 
 
 ## Follow along in a notebook
 
-You can choose one of these options to follow along in a notebook:
+Choose one of these options to follow along in a notebook:
 
 - Open and run the built-in notebook.
 - Upload your notebook from GitHub.
@@ -59,7 +59,7 @@ The [AIsample - Book Recommendation.ipynb](https://github.com/microsoft/fabric-s
 
 The book recommendation dataset in this scenario consists of three separate datasets:
 
-- *Books.csv*: An International Standard Book Number (ISBN) identifies each book, with invalid dates already removed. The data set also includes the title, author, and publisher. For a book with multiple authors, the **Books.csv** file lists only the first author. URLs point to Amazon website resources for the cover images, in three sizes.
+- *Books.csv*: An International Standard Book Number (ISBN) identifies each book, with invalid dates already removed. The dataset also includes the title, author, and publisher. For a book with multiple authors, the **Books.csv** file lists only the first author. URLs point to Amazon website resources for the cover images, in three sizes.
 
   | ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-l |
   |---|---|---|---|---|---|---|---|
@@ -80,7 +80,7 @@ The book recommendation dataset in this scenario consists of three separate data
   | 1 | "nyc new york usa" |  |
   | 2 | "stockton california usa" | 18.0 |
 
-Define these parameters, so that you can this notebook with different datasets:
+Define these parameters, so that you can use this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the dataset has to be uploaded manually
@@ -109,7 +109,7 @@ EXPERIMENT_NAME = "aisample-recommendation"  # MLflow experiment name
 This code downloads the dataset, and then stores it in the lakehouse.
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) to the notebook before you run it. Otherwise, you'll get an error.
+> Be sure to [add a lakehouse](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) to the notebook before you run it. Otherwise, you get an error.
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -147,7 +147,7 @@ mlflow.autolog(disable=True)  # Disable MLflow autologging
 
 ### Read data from the lakehouse
 
-After the correct data is placed in the lakehouse, read the three datasets into separate Spark DataFrames in the notebook. The file paths in this code use the parameters defined earlier.
+After you place the correct data in the lakehouse, read the three datasets into separate Spark DataFrames in the notebook. The file paths in this code use the parameters defined earlier.
 
 ```python
 df_items = (
@@ -176,7 +176,7 @@ df_users = (
 
 ### Display raw data
 
-Explore the DataFrames with the `display` command. With this command, you can view high-level DataFrame statistics, and understand how different dataset columns relate to each other. Before you explore the datasets, use this code to import the required libraries:
+Explore the DataFrames by using the `display` command. By using this command, you can view high-level DataFrame statistics and understand how different dataset columns relate to each other. Before you explore the datasets, use this code to import the required libraries:
 
 ```python
 import pyspark.sql.functions as F
@@ -346,9 +346,9 @@ plt.show()
 
 The ALS matrix requires some data preparation before training. Use this code sample to prepare the data. The code performs these actions:
 
-- Cast the rating column to the correct type
-- Sample the training data with user ratings
-- Split the data into training and test datasets
+- Cast the rating column to the correct type.
+- Sample the training data with user ratings.
+- Split the data into training and test datasets.
 
 ```python
 if IS_SAMPLE:
@@ -444,7 +444,7 @@ als = ALS(
 
 ### Tune model hyperparameters
 
-The next code sample constructs a parameter grid, to help search over the hyperparameters. The code also creates a regression evaluator that uses the root-mean-square error (RMSE) as the evaluation metric:
+The next code sample constructs a parameter grid to help search over the hyperparameters. The code also creates a regression evaluator that uses the root-mean-square error (RMSE) as the evaluation metric:
 
 ```python
 #  Construct a grid search to select the best values for the training parameters
@@ -490,14 +490,14 @@ else:
 
 ### Evaluate the model
 
-You should evaluate modules against the test data. A well-trained model should have high metrics on the dataset.
+Evaluate models against the test data. A well-trained model has high metrics on the dataset.
 
-An overfitted model might need an increase in the size of the training data, or a reduction of some of the redundant features. The model architecture might need to change, or its parameters might need some fine tuning.
+An overfitted model might need more training data or a reduction of some redundant features. You might need to change the model architecture or fine tune its parameters.
 
 > [!NOTE]
 > A negative R-squared metric value indicates that the trained model performs worse than a horizontal straight line. This finding suggests that the trained model doesn't explain the data.
 
-To define an evaluation function, use this code:
+Use this code to define an evaluation function:
 
 ```python
 def evaluate(model, data, verbose=0):
@@ -609,13 +609,13 @@ with mlflow.start_run(run_name="als"):
     )
 ```
 
-Select the experiment named `aisample-recommendation` from your workspace to view the logged information for the training run. If you changed the experiment name, select the experiment that has the new name. The logged information resembles this image:
+Select the experiment named `aisample-recommendation` from your workspace to view the logged information for the training run. If you change the experiment name, select the experiment that has the new name. The logged information resembles this image:
 
 :::image type="content" source="./media/retail-recommend-model/experiment-logs.png" alt-text="Screenshot of the experiment logs." lightbox="./media/retail-recommend-model/experiment-logs.png":::
 
 ## Step 4: Load the final model for scoring and make predictions
 
-After you finish the model training, and then select the best model, load the model for scoring (sometimes called inferencing). This code loads the model and uses predictions to recommend the top 10 books for each user:
+After you finish training the model and select the best model, load the model for scoring (sometimes called inferencing). This code loads the model and uses predictions to recommend the top 10 books for each user:
 
 ```python
 # Load the best model

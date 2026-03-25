@@ -1,17 +1,19 @@
 ---
-title: Graph in Microsoft Fabric architecture
-description: Learn how data flows through Graph in Microsoft Fabric, from data ingestion and storage to graph modeling, querying, and results.
+title: How graph in Microsoft Fabric works
+description: Learn how data flows through graph in Microsoft Fabric, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
 ms.topic: concept-article
-ms.date: 02/20/2026
+ms.date: 03/12/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
 
-# Graph in Microsoft Fabric architecture
+# How graph in Microsoft Fabric works
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
 Graph in Microsoft Fabric transforms structured data stored in OneLake into a modeled, queryable graph. You can then query the graph by using visual or GQL-based tools that execute through a common engine to produce visual, tabular, or programmatic results.
+
+This article briefly describes graph's architecture and walks through the end-to-end data flow from source to insights.
 
 The following diagram illustrates the end-to-end data flow from source to insights:
 
@@ -23,7 +25,7 @@ Data originates from external systems such as Azure services, other cloud platfo
 
 ## Storage in OneLake
 
-Ingested data is stored in [OneLake](../onelake/onelake-overview.md) as tabular source tables in a lakehouse. Graph in Microsoft Fabric reads directly from your lakehouse tables, so you don't need to duplicate or move data into a separate database.
+You store ingested data in [OneLake](../onelake/onelake-overview.md) as tabular source tables in a lakehouse. Graph reads directly from your lakehouse tables, so you don't need to duplicate or move data into a separate database.
 
 ## Graph modeling
 
@@ -36,11 +38,11 @@ In the graph modeling step, define the graph schema by specifying:
 This step establishes the [labeled property graph](graph-data-models.md) structure. You must complete graph modeling before you can query the graph.
 
 > [!NOTE]
-> Graph in Microsoft Fabric currently doesn't support schema evolution. If you need to make structural changes, such as adding new properties, modifying labels, or changing relationship types, reingest the updated source data into a new model.
+> graph currently doesn't support schema evolution. If you need to make structural changes, such as adding new properties, modifying labels, or changing relationship types, reingest the updated source data into a new model.
 
 ## Queryable graph
 
-When you save the graph model, Graph ingests data from the underlying lakehouse tables and constructs a read-optimized, queryable graph. This graph structure is optimized for traversal and pattern matching, which enables fast and efficient graph queries at scale.
+When you save the model, graph ingests data from the underlying lakehouse tables and constructs a read-optimized, queryable graph. This graph structure is optimized for traversal and pattern matching, which enables fast and efficient graph queries at scale.
 
 ## Query authoring
 
@@ -53,7 +55,7 @@ Both options target the same underlying graph. Choose the authoring experience t
 
 ## Query execution
 
-Authored queries are executed through a common execution layer that supports:
+You execute authored queries through a common execution layer that supports:
 
 - **GQL:** Queries the graph by using the [international standard for graph query language (ISO/IEC 39075)](gql-language-guide.md).
 - **Natural Language to GQL (NL2GQL):** Converts natural language questions into GQL queries. [Sign up for the NL2GQL preview](https://forms.office.com/r/97QkVDBeuM).
@@ -73,6 +75,6 @@ You can explore results interactively, share them as read-only querysets, or con
 
 ## Related content
 
-- [Graph in Microsoft Fabric overview](overview.md)
-- [Quickstart guide for Graph in Microsoft Fabric](quickstart.md)
-- [Tutorial: Introduction to Graph in Microsoft Fabric](tutorial-introduction.md)
+- [graph overview](overview.md)
+- [Quickstart guide for graph](quickstart.md)
+- [Tutorial: Introduction to graph](tutorial-introduction.md)

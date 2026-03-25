@@ -46,7 +46,7 @@ Create a new semantic model linked to the predictions data you produced in part 
 
 1. Select **New semantic model** in the top ribbon, as shown in the following screenshot:
 
-   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New semantic model option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
+    :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the Lakehouse home page, showing where to select the New semantic model option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
 
 1. Give the semantic model a name - for example, "bank churn predictions." Then, select the **customer_churn_test_predictions** dataset as shown in the following screenshot:
 

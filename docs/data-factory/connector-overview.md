@@ -3,7 +3,7 @@ title: Connector overview
 description: Learn about the available data connectors for Data Factory in Microsoft Fabric.
 ms.reviewer: jianleishen
 ms.topic: overview
-ms.date: 02/25/2026
+ms.date: 02/27/2026
 ms.search.form: product-data-factory
 ms.custom: connectors
 ---
@@ -117,7 +117,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
 | [Funnel](/power-query/connectors/funnel) | ✓/− |  |  |
 | [Google Analytics](connector-google-analytics-overview.md) | ✓/− |  |  |
-| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/− | ✓/− |
+| [Google BigQuery](connector-google-bigquery-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad#connect-to-google-bigquery-microsoft-entra-id-data-from-power-query-online) | ✓/− |  |  |
 | [Google Cloud Storage](connector-google-cloud-storage-overview.md) |  | ✓/✓ | ✓/✓ |
 | [Google Sheets](/power-query/connectors/google-sheets) | ✓/− |  |  |
@@ -157,7 +157,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [MongoDB Atlas for Pipelines](connector-mongodb-atlas-overview.md) |  | ✓/✓ | ✓/✓ |
 | [MongoDB Atlas SQL](connector-mongodb-atlas-sql-overview.md) | ✓/− |  |  |
 | [MongoDB for Pipeline](connector-mongodb-overview.md) |  | ✓/✓ |✓/✓  |
-| [MySQL database](connector-mysql-database-overview.md) | ✓/− | ✓/− | ✓/− |
+| [MySQL database](connector-mysql-database-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [OData](connector-odata-overview.md) | ✓/− | ✓/− | ✓/− |
 | [Odbc](connector-odbc-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [OneStream](/power-query/connectors/onestream) | ✓/− |  |  |
@@ -173,7 +173,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Planview OKR (Beta)](/power-query/connectors/planview-okr#load-data-from-planview-okr-in-power-query-online) | ✓/− |  |  |
 | Planview Portfolios | ✓/− |  |  |
 | Planview ProjectPlace | ✓/− |  |  |
-| [PostgreSQL database](connector-postgresql-overview.md) | ✓/− | ✓/− | ✓/− |
+| [PostgreSQL database](connector-postgresql-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | Power BI dataflows (Legacy) | ✓/− |  |  |
 | [Presto](connector-presto-overview.md) |  | ✓/− | ✓/− |
 | Product Insights (Beta) | ✓/− |  |  |
