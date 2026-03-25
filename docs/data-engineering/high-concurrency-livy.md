@@ -63,7 +63,7 @@ Here's a breakdown of the key parameters:
 - **Livy session ID**: underlying Spark/Livy session that can host multiple REPLs.
 - **REPL ID**: identifier of the REPL inside a Livy session (maps to an HC ID).
 - **SessionTag (optional)**: hint used to pack REPLs into existing Livy sessions when possible.
-- **Limits**: Supports upto 5 REPLs Livy session. Rapid concurrent creates using the same SessionTag might create multiple Livy sessions.
+- **Limits**: Currently supports up to 5 REPLs per Livy session. Rapid concurrent calls to the acquire HC session API might create multiple Livy sessions.
 
 
 ### Acquire High Concurrency Spark Session
