@@ -177,7 +177,7 @@ You can add *.jar* files to notebook sessions with the following command.
 ```
 
 The preceding code cell uses lakehouse storage as an example. In the notebook explorer, you can copy the full ABFS path of the file and replace it in the code.
-:::image type="content" source="media\environment-library-management\library-management-get-ABFS-path.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-library-management\library-management-get-ABFS-path.png":::
+:::image type="content" source="media\environment-library-management\library-management-get-path-abfs.png" alt-text="Screenshot of the menu commands to get the ABFS path." lightbox="media\environment-library-management\library-management-get-path-abfs.png":::
 
 ## Related content
 
