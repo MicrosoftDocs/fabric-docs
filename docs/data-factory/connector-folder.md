@@ -53,7 +53,7 @@ The following table contains a summary of the properties needed for a Folder con
 | **Gateway cluster name** | Select the on-premises data gateway cluster that you use to connect to the custom data source. | Yes |
 | **Connection name** | A name for your connection. | Yes |
 | **Connection type** | Select **Folder**. | Yes |
-| **Full path** | The root path of the folder that you want to copy. Use the escape character "" for special characters in the string. For example，
+| **Full path** | The root path of the folder that you want to copy. Use the escape character "" for special characters in the string. 
 | **Authentication method** | Go to [Authentication](#authentication). | Yes |
 | **Privacy level** | The privacy level that you want to apply. Allowed values are None, Organizational, Private, and Public. | Yes |
 
