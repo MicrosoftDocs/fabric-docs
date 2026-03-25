@@ -174,7 +174,7 @@ landingContent:
             url: environment-git-and-deployment-pipeline.md
           - text: Manage the environment through public APIs
             url: environment-public-api.md   
-          - text: Managing libraries in environment secured by outbound access protection
+          - text: Manage libraries with limited network access in Fabric
             url: environment-manage-library-with-outbound-access-protection.md
 # Card 
   - title: Fabric Livy API
