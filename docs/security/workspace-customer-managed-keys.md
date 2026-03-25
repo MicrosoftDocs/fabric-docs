@@ -52,7 +52,7 @@ A [Fabric administrator](../admin/microsoft-fabric-admin.md#power-platform-and-f
 
 Fabric uses the *Fabric Platform CMK* app to access your Azure Key Vault. For the app to work, a [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) must be created for the tenant. This process is performed by a user that has Microsoft Entra ID privileges, such as a [Cloud Application Administrator](/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator).
 
-Follow the instructions in [Create an enterprise application from a multitenant application in Microsoft Entra ID](/entra/identity/enterprise-apps/create-service-principal-cross-tenant) to create a service principal for an application called *Fabric Platform CMK* with app ID *00001111-aaaa-2222-bbbb-3333cccc4444* in your Microsoft Entra ID tenant.
+Follow the instructions in [Create an enterprise application from a multitenant application in Microsoft Entra ID](/entra/identity/enterprise-apps/create-service-principal-cross-tenant) to create a service principal for an application called *Fabric Platform CMK* with app ID *61d6811f-7544-4e75-a1e6-1c59c0383311* in your Microsoft Entra ID tenant.
 
 ### Step 3: Configure Azure Key Vault
 
