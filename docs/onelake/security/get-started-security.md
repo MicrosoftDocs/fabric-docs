@@ -137,9 +137,6 @@ You can allow or restrict access to OneLake data from applications that are outs
 
 When you turn on this setting, users can access data from all sources. For example, turn this setting on if you have custom applications that use Azure Data Lake Storage (ADLS) APIs or OneLake file explorer. When you turn off this setting, users can still access data from internal apps like Spark, Data Engineering, and Data Warehouse, but can't access data from applications running outside of Fabric environments.
 
-> [!NOTE]
-> Enabling external access governs data connectivity, but consistent security policy enforcement for external query engines requires integration with the [authorized engine APIs](./onelake-security-integrations-overview.md).
-
 ## Related content
 
 * [OneLake security overview](./get-started-onelake-security.md)
@@ -147,4 +144,3 @@ When you turn on this setting, users can access data from all sources. For examp
 * [Workspace roles](../../fundamentals/roles-workspaces.md)
 * [OneLake file explorer](../onelake-file-explorer.md)
 * [Share items](../../fundamentals/share-items.md)
-
