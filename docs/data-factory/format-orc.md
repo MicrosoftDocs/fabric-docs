@@ -21,7 +21,6 @@ ORC format is supported for the following activities and connectors as a source 
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Amazon S3 Compatible](connector-amazon-s3-compatible-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen2-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | [Azure Files](connector-azure-files-copy-activity.md)|
 |  | File system |
