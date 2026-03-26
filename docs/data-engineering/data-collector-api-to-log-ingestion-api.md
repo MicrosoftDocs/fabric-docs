@@ -147,7 +147,7 @@ Create a custom table in your Log Analytics workspace with the Log Ingestion API
 
 To configure Spark, create an environment in Fabric and choose one of the following authentication options. Use only one option for a given emitter.
 
-An environment in Fabric stores Spark settings and libraries that notebooks and Spark job definitions use at runtime. For steps to create one, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md#create-an-environment).
+An environment in Fabric stores Spark settings and libraries that notebooks and Spark job definitions use at runtime. For steps to create one, see [Create, configure, and use an environment in Fabric](create-and-use-environment.md#create-an-environment-from-a-workspace).
 
 - Choose **Option 1** if you want a simpler setup by using a client secret.
 - Choose **Option 2** if your organization requires certificate-based authentication and centralized certificate management in Azure Key Vault.
