@@ -16,8 +16,8 @@ This article provides steps to create a mirrored Sharepoint List database in Mic
 
 ## Prerequisites
 
-- A tenant account with an active Microsoft Fabric subscription. [You can try Fabric with a free trial](../../fundamentals/fabric-trial.md).
-- A Fabric [workspace](../../fundamentals/create-workspaces.md).
+- A tenant account with an active Microsoft Fabric subscription. [You can try Fabric with a free trial](../fundamentals/fabric-trial.md).
+- A Fabric [workspace](../fundamentals/create-workspaces.md).
 
 ## Create a mirrored database
 
