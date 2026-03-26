@@ -335,6 +335,41 @@ You can manage mirrored databases in workspaces enabled with private links by us
 * **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
 * Workspace monitoring isn't currently supported when a workspace-level private link is enabled for a workspace.
 
+## Azure role-based access control (RBAC) and workspace-level private links
+
+Provisioning and management of workspace‑level private links and associated private endpoints require specific Azure RBAC permissions. These permissions can be narrowly scoped by defining a custom Azure role that grants only the required Virtual Network, Private Link, and Private Endpoint actions at the resource group level, enabling delegated management without assigning broad roles such as Owner or Contributor. The following custom role definition provides necessary permissions to create virual networks, subnets, Fabric workspace private links and private endpoints scoped to a specific group.
+
+```
+{
+  "Name": "Custom Fabric WSPL role",
+  "Description": "Read access to resource group, create private endpoints for Fabric WSPL",
+  "Actions": [
+    "*/read",
+    "Microsoft.Network/virtualNetworks/write",
+    "Microsoft.Network/virtualNetworks/subnets/write",
+    "Microsoft.Network/privateEndpoints/write",
+    "Microsoft.Network/privateEndpoints/delete",
+    "Microsoft.Network/privateEndpoints/privateDnsZoneGroups/write",
+    "Microsoft.Network/virtualNetworks/subnets/join/action",
+    "Microsoft.Network/virtualNetworks/join/action",
+    "Microsoft.Network/privateDnsZones/join/action",
+    "Microsoft.Network/privateDnsZones/write",
+    "Microsoft.Network/privateDnsZones/delete",
+    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/write",
+    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/delete",
+    "Microsoft.Resources/deployments/validate/action",
+    "Microsoft.Resources/deployments/write",
+    "Microsoft.Fabric/privateLinkServicesForFabric/*",
+    "Microsoft.Network/privateEndpoints/privateLinkServiceProxies/write"
+  ],
+  "NotActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/<replace-with-subscription-id>/resourceGroups/<replace-with-resource-group>"
+  ]
+}
+```
+
 ## Common errors and troubleshooting
 
 ### Request denied by inbound policy
