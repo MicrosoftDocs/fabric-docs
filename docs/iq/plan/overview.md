@@ -1,127 +1,114 @@
 ---
-title: What is plan (preview)?
+title: What is plan (preview)? - Microsoft Fabric | Microsoft Learn
 description: Learn about the plan (preview) item, including its components, core features, and use cases.
-ms.date: 03/12/2026
 ms.topic: overview
+ms.date: 2026-03-20T00:00:00.0000000Z
 #customer intent: As a user, I want to understand what plan is, including its components, key capabilities, use cases, and why to choose it.
 ---
 
-# What is plan (preview)?
+# What is Plan?
 
-Organizations rely heavily on data to run their operations, but key processes such as planning, reporting, and analytics are often managed with separate tools. This strategy leads to data duplication, increased manual effort, and a risk to data consistency. Planning is frequently done in spreadsheets/specialized SaaS, reporting in separate systems, and dashboards provide only a limited view of overall business performance.
+**Plan** is an Enterprise and Corporate Performance Management (EPM & CPM) solution built directly into **Microsoft Fabric**. It enables organizations to create, manage, and analyze plans—such as budgets, forecasts, and scenarios—within the same governed platform used for data, analytics, and AI.&#x20;
+
+Plan brings together three integrated capabilities in a single unified suite:&#x20;
+
+1. **Planning Applications**&#x20;
+2. **PowerTable** for data management and data applications&#x20;
+3. **Intelligence** for integrated reporting and insights&#x20;
+
+By planning natively in Fabric, Plan eliminates the need for separate planning systems and spreadsheet-driven workflows. Organizations can unify **goals, plans**, and **actuals** on shared semantic models, enabling a shift from manual planning to **continuous & autonomous decision-making.** &#x20;
+
+Plan completes a **full circle, future-ready data foundation** by unifying historical data, real-time signals, and forward-looking projections in a single environment that is **AI agent–ready by design**.&#x20;
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-When you need to reconcile a static spreadsheet or disconnected system with a live dashboard, it can be difficult to achieve a single source of truth. By consolidating these functions into a unified platform, you move from being reactive (looking at what happened) to being active (adjusting the plan in real time, based on data).
+For region availability of plan while in preview, see [Region availability for plan (preview)](overview-regions.md).
+
+### What Plan Enables&#x20;
+
+Plan allows organizations to:&#x20;
+
+* Perform **enterprise planning, scenario modelling, and what-if analysis** &#x20;
+* Model and integrate **budgets and forecasts** &#x20;
+* Automatically **write planning results back to Fabric SQL** &#x20;
+* Unify **goals, plans, and actuals** on a shared semantic model &#x20;
+* Manage **forward-looking reference data** &#x20;
+* Perform **variance reporting and analysis** &#x20;
+* Operate entirely within a **single, governed Fabric environment**&#x20;
 
 > [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
-For region availability of plan while in preview, see [Region availability for plan (preview)](overview-regions.md).
+### Why Plan in Fabric&#x20;
 
-## About plan
+Traditional enterprise planning typically relies on multiple tools:&#x20;
 
-*Plan (preview)* in Fabric allows you to integrate planning, visualization, analytics, and data management on a single platform. Plan is a unified no-code platform for collaborative planning, reporting, analytics, data integration, and management. It enables organizations to work from a consistent data foundation, allowing business users to plan, analyze, and report without switching between multiple tools.
+* BI platforms for reporting on historical data&#x20;
+* Separate planning or CPM tools for forecasts and budgets&#x20;
+* Spreadsheets for modelling and scenario analysis&#x20;
 
-By bringing these capabilities together in a single environment, plan supports end-to-end decision workflows and helps teams move from data to insights and from insights to action more efficiently.
+This fragmented approach introduces data silos, manual reconciliation, delayed insights, and governance challenges.&#x20;
 
-Plan offers a unified suite of Planning sheets, Intelligence sheets, and PowerTable sheets on Microsoft Fabric. Plan connects every stage of the data-to-decision lifecycle into a single integrated platform within Microsoft Fabric.
+Plan addresses these challenges by bringing planning directly into Fabric.&#x20;
 
-| Capability | Description |
-|---|---|
-| **Plan and report** | - Build collaborative budgets, plans, and forecasts <br>- Distribute plans across teams and functions <br>- Create and compare planning scenarios to evaluate business outcomes <br>- Generate structured financial and operational reports <br>- Write back plans and forecasts to preferred destinations |
-| **Transform and consolidate data** | - Connect to plans across data platforms <br>- Transform and write back to destinations <br>- Integrate data from multiple sources <br>- Build a connected planning model |
-| **Control and govern data** | - Manage master and reference data <br>- Schedule synchronizations and automatic data refreshes <br>- Automate cascaded data updates across tables <br>- Write back updates to sources and destinations <br>- Audit, access control and approval flows for data governance |
-| **Explore, visualize and analyze** | - Create interactive dashboards with 100+ charts, tables, and KPIs <br>- Explore and analyze data using drill-down and dynamic filtering <br>- Connect planning data with visualizations instantly |
-| **Manage and collaborate** | - Collaborate directly on data with threaded comments <br>- Assign, plan and track project and task timelines <br>- Notify stakeholders for alignment |
+Historical data, real-time signals, and future projections are combined in one platform, using consistent definitions and governed access.&#x20;
 
-## Why choose plan?
+### Unified Data Foundation&#x20;
 
-Plan (preview) brings together **planning**, **reporting**, **analytics**, and **data management** into a unified ecosystem that supports the entire decision lifecycle. Organizations can work directly on governed data, reducing manual effort, improving alignment across teams, and responding faster to changing business needs. The result is a connected environment where planning, reporting, and analytics converge to support smarter business outcomes. Plan ultimately provides an **end-to-end solution for modern data-driven organizations**, helping you transform how they plan, analyze, and make decisions.
+Plan is built on Fabric semantic models, ensuring that planning and analytics share the same trusted business logic.&#x20;
 
-### Benefits of an integrated platform
+With Plan, organizations can combine:&#x20;
 
-* **Elimination of "shadow data"**: Moving planning out of disconnected spreadsheets/systems ensures that the logic used to set targets is the same logic used to measure them.
-* **Reduced latency**: Traditional reporting cycles often take days or weeks of manual data cleaning. Integration allows for continuous planning, where forecasts update as soon as transaction data hits the system.
-* **Bidirectional data flow**: Instead of only pulling data outwards for a report, a unified tool allows you to write back into the system, ensuring that revised targets are immediately visible to all stakeholders.
-* **Enhanced data integrity**: By centralizing management, you minimize the risk of "version fatigue," where different departments report different numbers for the same KPI.
+* **Historical data** from Fabric analytics&#x20;
+* **Real-time** or **refreshed operational data**&#x20;
+* **Future projections and assumptions**&#x20;
 
-### Move towards integrated planning
+Because plans are stored and governed in Fabric, they remain aligned with enterprise reporting and downstream analytics.&#x20;
 
-If you're evaluating how to bridge these gaps, it often helps to look at your organization's planning maturity.
+### Designed for Business Users and the Enterprise&#x20;
 
-| Phase | State | Characteristics |
-|---|---|---|
-| Siloed | Manual | Spreadsheets for planning, manual exports for reporting |
-| Connected | Automated | Automated data pipelines (ETL) feeding into a central warehouse |
-| Integrated | Unified | Planning and analytics happen in the same environment with write-back capabilities |
+Plan is designed to be accessible to business users while meeting enterprise requirements.&#x20;
 
-## Plan components
+**For business users:**&#x20;
 
-Plan (preview) brings together four powerful components that support the complete business data workflow from data integration to planning, reporting, and analytical exploration. The components are: [Planning sheets](#planning-sheets), [PowerTable sheets](#powertable-sheets), [Intelligence sheets](#intelligence-sheets), and [InfoBridge](#infobridge).
+* Native experience inside Fabric&#x20;
+* **No code / low code** interactions&#x20;
+* Familiar **Excel-like interface**&#x20;
 
-Each component is designed to solve a critical business need while working seamlessly within the unified plan ecosystem.
+&#x20;
 
-### Planning sheets
+**For enterprises:**&#x20;
 
-*Planning sheets* are collaborative workspaces built for **business planning, budgeting, and forecasting**. Designed with a no-code, self-service architecture, Planning sheets enable business users to create and manage budgets, forecasts, and operational plans. They help you do these things without relying on spreadsheets or technical expertise, and while maintaining structured and governed planning processes.
+* Centralized governance&#x20;
+* Security and access controls&#x20;
+* Scalability for large planning models&#x20;
+* Alignment with Fabric administration and compliance standards&#x20;
 
-#### Highlights
+&#x20;
 
-* Create **multi-dimensional** and **flexible planning models**
-* Support **top-down** and **bottom-up planning** across teams and departments
-* Enable **real-time collaboration** and **data write-back** for synchronized updates
-* Build **driver-based models** and **scenario planning** to evaluate business outcomes
-* Manage **hierarchical planning structures** across organizational units
-* Generate **rolling forecasts** to keep plans aligned with changing business needs
+This balance enables finance teams and business stakeholders to participate directly in planning without heavy IT dependency.&#x20;
 
-### PowerTable sheets
+### Core Components of Plan&#x20;
 
-*PowerTable sheets* are **enterprise-grade master and reference data management** workspaces designed to create structured financial and operational reports on trusted business data in Microsoft Fabric. They enable teams to build scalable tabular reports, analyze hierarchical data, and manage reporting workflows within a governed and collaborative environment.
+Plan consists of four primary components that support end-to-end planning workflows.&#x20;
 
-#### Highlights
+### Planning Sheets&#x20;
 
-* Create structured **financial** and **operational reports** with **advanced calculations** and formatting
-* Analyze hierarchical data with **drill-down**, **variance analysis**, and comparisons
-* Manage and update data directly to the database **without writing complex queries**
-* Interact with tables through multi-user editing, **dynamic filters**, and expandable views
-* Enable controlled data input and **write-back** for preserving data integrity
-* Manage tasks and timelines using **Gantt charts** and **workflow approvals**
-* Automate repetitive tasks such as **scheduling** and **cascading** table updates
-* Structured data entry through forms
+Planning Sheets are used for budgeting, forecasting, and scenario modelling. They allow users to define assumptions, inputs, and calculated outcomes in a familiar, spreadsheet‑like experience.&#x20;
 
-### Intelligence sheets
+### PowerTable Sheets&#x20;
 
-*Intelligence sheets* in plan enable you to create **interactive dashboards, analytical reports, and data visualizations** through a no-code, self-service analytics experience. They empower business users to explore data, uncover insights and present findings using rich visuals, KPI tracking, and intuitive data exploration tools.
+PowerTable Sheets enable structured planning at scale. They support large, dimensional planning models aligned with Fabric data structures and semantic models.&#x20;
 
-#### Highlights
+### Intelligence Sheets&#x20;
 
-* Explore data through **ad-hoc analysis**, **drill-downs**, and **dynamic filtering**
-* Access rich visual components including **charts**, **KPI cards**, **tables**, and **matrices**
-* Monitor performance using **KPI tracking** and **trend analysis**
-* Communicate insights with **storyboards**, **annotations**, and **contextual comments**
-* Automate delivery through **report scheduling** and **broadcasting**
+Intelligence Sheets provide analytical insights and AI‑assisted reasoning over planning data. They help users understand variances, trends, and forward‑looking implications.&#x20;
 
-### InfoBridge
+### InfoBridge&#x20;
 
-*InfoBridge* provides a unified **data integration and preparation layer** that connects enterprise data with planning, reporting, and analytics workflows. It enables organizations to ingest, transform, and prepare data from multiple sources, ensuring a trusted and consistent data foundation for business decision-making.
+InfoBridge connects and integrates data across systems, ensuring planning data stays aligned with Fabric workloads and source systems.&#x20;
 
-#### Highlights
-
-* Connect multiple enterprise data sources into a **unified data model**
-* Perform **data ingestion**, **transformation**, and **preparation workflows**
-* Build **scalable dataflows** for planning, reporting, and analytics
-* Maintain **consistent** and **trusted datasets** across business processes
-* Schedule **data refresh** and **synchronization** to keep insights up to date
-* Enable **governed data access** and **integration** across teams
-
-## Enable required tenant setting
-
-This setting is **required** to create plan (preview) items: *Users can create a Planning (preview) item(s)*.
-
-:::image type="content" source="media/overview/prerequisite-plan.png" alt-text="Screenshot of enabling plan in the admin portal." lightbox="media/overview/prerequisite-plan.png":::
-
-If you don't enable this setting, you get errors when creating a new plan item.
+Plan extends Microsoft Fabric beyond analytics into enterprise decision intelligence. By embedding planning directly into Fabric, organizations can unify data, analytics, and planning in a single platform, reducing manual effort, improving alignment, and enabling proactive, AI-assisted decision-making.&#x20;
 
 ## Next steps
 
