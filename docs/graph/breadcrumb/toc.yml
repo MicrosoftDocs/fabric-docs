@@ -3,6 +3,6 @@ items:
   tocHref: /fabric/
   topicHref: /fabric/index
   items:
-  - name: Graph
+  - name: graph
     tocHref: /fabric/graph
     topicHref: /fabric/graph/index   

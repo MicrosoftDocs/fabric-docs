@@ -1,6 +1,6 @@
 ---
-ms.date: 05/23/2023
+ms.date: 03/05/2026
 ms.topic: include
 ---
-&#x2705; Data Engineering and Data Science in Microsoft Fabric
+&#x2705; Fabric Data Engineering and Data Science
 

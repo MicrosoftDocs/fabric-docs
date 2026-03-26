@@ -13,7 +13,7 @@ ms.search.form: Create New Model, Model Comparison
 
 A machine learning model is a file trained to recognize certain types of patterns. You train a model over a set of data, and you provide it with an algorithm that uses to reason over and learn from that data set. After you train the model, you can use it to reason over data that it never saw before, and make predictions about that data.
 
-In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent a model iteration. 
+In [MLflow](https://mlflow.org/), a machine learning model can include multiple model versions. Here, each version can represent a model iteration. In this article, you learn how to interact with ML models to track and compare model iterations.
 
 **In this article, you learn how to:**
 - Create machine learning models in Microsoft Fabric
@@ -23,9 +23,7 @@ In [MLflow](https://mlflow.org/), a machine learning model can include multiple 
 
 ## Create a machine learning model
 
-In MLflow, machine learning models include a standard packaging format. This format allows use of those models in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention to save a model in different "flavors" that different downstream tools can understand.
-
-You can directly create a machine learning model from the Fabric UI. The MLflow API can also directly create the model.
+You can create a machine learning model from the Fabric UI or programmatically with the MLflow API. In MLflow, models use a standard packaging format that works with various downstream tools, including batch inferencing on Apache Spark. The format saves a model in different "flavors" that different downstream tools can understand.
 
 To create a machine learning model from the UI:
 
@@ -67,13 +65,15 @@ A machine learning model version represents an individual model that is register
 
 Each model version includes the following information:
 
-- **Time Created**: Date and time of model creation.
-- **Run Name**: The identifier for the experiment runs used to create this specific model version.
-- **Hyperparameters**: Hyperparameters are saved as key-value pairs. Both keys and values are strings.
-- **Metrics**: Run metrics saved as key-value pairs. The value is numeric.
-- **Model Schema/Signature**: A description of the model inputs and outputs.
-- **Logged files**: Logged files in any format. For example, you can record images, environment, models, and data files.
-- **Tags**: Metadata as key-value pairs to runs.
+| Property | Description |
+|---|---|
+| **Time Created** | Date and time of model creation. |
+| **Run Name** | The identifier for the experiment run used to create this specific model version. |
+| **Hyperparameters** | Saved as key-value pairs. Both keys and values are strings. |
+| **Metrics** | Run metrics saved as key-value pairs. The value is numeric. |
+| **Model Schema/Signature** | A description of the model inputs and outputs. |
+| **Logged files** | Logged files in any format. For example, you can record images, environment, models, and data files. |
+| **Tags** | Custom metadata as key-value pairs attached to runs. [Learn how to apply tags](#apply-tags-to-machine-learning-models). |
 
 ### Apply tags to machine learning models
 
@@ -161,10 +161,18 @@ for rm in client.search_registered_models():
 
 Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. 
 
-**Next steps:**
-- [Learn about batch scoring in Fabric](model-scoring-predict.md)
-- [Deploy models for real-time scoring](model-endpoints.md)
-- [Learn about MLflow Experiment APIs](https://www.mlflow.org/docs/latest/python_api/mlflow.html)
+Fabric supports multiple approaches for applying your trained models:
+
+- **Batch scoring** – Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
+- **Real-time scoring** – Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
+
+To get started with applying your models, choose the approach that fits your scenario:
+
+> [!div class="nextstepaction"]
+> [Get started with batch scoring](model-scoring-predict.md)
+
+> [!div class="nextstepaction"]
+> [Deploy models for real-time scoring](model-endpoints.md)
 
 ## Related content
 

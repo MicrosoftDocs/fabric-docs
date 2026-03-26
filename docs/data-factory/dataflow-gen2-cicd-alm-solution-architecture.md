@@ -3,7 +3,7 @@ title: CI/CD and ALM solution architectures for Dataflow Gen2
 description: Overview of Dataflow Gen2 solution architectures for CI/CD and ALM that apply to Fabric deployment pipelines, including guidance on selecting the right approach based on requirements and best practices.
 ms.reviewer: miescobar
 ms.topic: concept-article
-ms.date: 10/2/2025
+ms.date: 2/25/2026
 ms.custom: dataflows
 ai-usage: ai-assisted
 ---
@@ -32,6 +32,7 @@ The following table covers the available solution architectures when using a Dat
 |---|---|---|--|
 |**Parameterized Dataflow Gen2**| Using the [public parameters mode](dataflow-parameters.md), you can parameterize Dataflow components—such as logic, sources, or destinations—and pass runtime values to dynamically adapt the Dataflow based on the pipeline stage.|:::image type="content" source="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-public-parameters-mode-architecture.png" alt-text="Diagram of the public parameters mode inside a Dataflow Gen2 high level solution architecture." lightbox="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-public-parameters-mode-architecture.png":::| [Link to Tutorial](dataflow-gen2-parameterized-dataflow.md)|
 | **Variable references in a Dataflow Gen2** | Using the [variable libraries integration with Dataflow Gen2](dataflow-gen2-variable-library-integration.md), you can reference variables throughout your Dataflow. These variables are evaluated at runtime based on values stored in the library, enabling dynamic behavior aligned with the pipeline stage.|  :::image type="content" source="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-variable-libraries-references-architecture.png" alt-text="Diagram of the variable libraries inside a Dataflow Gen2 high level solution architecture." lightbox="media/dataflow-gen2-cicd-alm-solution-architecture/diagram-variable-libraries-references-architecture.png":::|[Link to Tutorial](dataflow-gen2-variable-references.md)|
+| **Relative references in a Dataflow Gen2** | Using relative references through Fabric connectors ensures that all references to Fabric items are relative using the name and types of the items instead of using their GUIDs. | :::image type="content" source="media/dataflow-gen2-cicd-alm-solution-architecture/fabric-relative-references-dataflow.png" alt-text="Illustration of Fabric relative references in Dataflow." lightbox="media/dataflow-gen2-cicd-alm-solution-architecture/fabric-relative-references-dataflow.png":::|[Link to Tutorial](dataflow-gen2-relative-references.md)
 
 The main difference between these two approaches is how they pass values at runtime. A parameterized Dataflow requires a process through either the REST API or the [Fabric pipeline Dataflow activity](dataflow-activity.md) to pass values. The variable libraries integration with Dataflow Gen2 requires a variable library at the workspace level and the correct variables referenced inside the Dataflow.
 

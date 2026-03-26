@@ -1,13 +1,13 @@
 ---
 title: Ontology (preview) required tenant settings
 description: Enable settings on your Fabric tenant before using ontology (preview) features.
-ms.date: 12/01/2025
+ms.date: 03/13/2026
 ms.topic: concept-article
 ---
 
 # Required tenant settings for ontology (preview)
 
-Before you can use all the features of ontology (preview), you must enable certain settings on your Fabric tenant. This article describes required and optional tenant settings for using ontology.
+Before you can use all the features of ontology (preview), you must enable certain settings on your Fabric tenant. This article describes required and optional tenant settings for using ontology and plan.
 
 [Fabric administrators](../../admin/roles.md) can grant access to these settings in the [admin portal](../../admin/admin-center.md) under [tenant settings](../../admin/tenant-settings-index.md).
 
@@ -15,7 +15,7 @@ Before you can use all the features of ontology (preview), you must enable certa
 
 This setting is **required** to create ontology (preview) items: *Enable Ontology item (preview)*.
 
-:::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal.":::
+:::image type="content" source="media/overview-tenant-settings/prerequisite-ontology.png" alt-text="Screenshot of enabling ontology in the admin portal." lightbox="media/overview-tenant-settings/prerequisite-ontology.png":::
 
 If you don't enable this setting, you get errors when creating a new ontology item.
 

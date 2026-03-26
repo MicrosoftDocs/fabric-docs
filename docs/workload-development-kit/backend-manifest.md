@@ -87,7 +87,7 @@ Represent the configuration of a specific logical endpoint, for example, the bac
 - `api.eastus.fe.contoso.com` (invalid because `eastus.fe.contoso.com` isn't a verified domain)
 - `contoso-dev.com` (invalid because `contoso-dev.com` isn't a verified domain, and also doesn't match the main domain of the resource ID)
 
-* For more information about using the workload-client API for endpoint resolution, see [Endpoint Resolution](/rest/api/fabric/workload/workloadapi/endpoint-resolution).
+* For more information about using the workload-client API for endpoint resolution, see [Endpoint Resolution](/rest/api/fabric/workload/fabricextensibilitytoolkit/endpoint-resolution).
 
 > [!NOTE]
 > Endpoint resolution for Frontend is not supported.

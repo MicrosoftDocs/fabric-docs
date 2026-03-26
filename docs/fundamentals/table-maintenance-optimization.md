@@ -38,7 +38,7 @@ Different consumption engines have different optimal file layouts. Understanding
 
 For optimal performance with the SQL analytics endpoint and Warehouse, use the following settings:
 
-- **Target file size**: About 400 MB per file
+- **Target file size**: Maximum 4 GB per file
 - **Row group size**: About 2 million rows per row group
 - **V-Order**: Improves read performance by 10%
 
@@ -208,7 +208,7 @@ VACUUM schema_name.table_name RETAIN 168 HOURS
 
 The default retention period is seven days. Setting shorter retention periods affects Delta's time travel capabilities and can cause issues with concurrent readers or writers.
 
-For more information, see [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations).
+For more information, see [Run table maintenance from Lakehouse](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse).
 
 ## V-Order optimization
 

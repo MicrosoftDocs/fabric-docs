@@ -108,6 +108,20 @@ This example code cell provides the following output:
 
 ---
 
+## Multimodal input
+
+The `ai.summarize` function supports file-based multimodal input. You can summarize the content of images, PDFs, and text files by setting `column_type="path"` when your column contains file path strings. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+custom_df["summary"] = custom_df["file_path"].ai.summarize(
+    instructions="Talk like a pirate! You only have one minute",
+    column_type="path",
+)
+display(custom_df)
+```
+
 ## Related content
 
 - Use [ai.summarize with PySpark](../pyspark/summarize.md).
@@ -121,5 +135,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

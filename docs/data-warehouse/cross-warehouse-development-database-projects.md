@@ -28,7 +28,7 @@ Before you begin, make sure you:
 > [!NOTE]
 > This article focuses on **warehouse projects** in Visual Studio Code and how you version them in Git as regular code projects. Fabric **Git integration** for workspaces and warehouse items is covered separately in [Source control with Fabric Data Warehouse](source-control.md) and Git integration docs. The article assumes that your Fabric workspace is the deployment target and T-SQL schema lives in one or more Visual Studio Code projects that you version control in Git.
 >
-> This article **does not cover** cross-warehouse development for the **SQL analytics endpoint of a Lakehouse**. Lakehouse tables and SQL endpoint objects aren't tracked objects in source control the same way warehouse projects are. Use **Warehouse** items with database projects for complete git integration and deployment support in Fabric native experiences and client tools.
+> This article **does not cover** cross-warehouse development for the **SQL analytics endpoint of a Lakehouse**. Lakehouse tables and SQL analytics endpoint objects aren't tracked objects in source control the same way warehouse projects are. Use **Warehouse** items with database projects for complete git integration and deployment support in Fabric native experiences and client tools.
 
 ## Scenario: Zava Analytics cross-domain warehouses
 

@@ -59,7 +59,21 @@ Key benefits of PMTiles include:
 
 In Fabric Maps, PMTiles are stored as files in a **lakehouse** and consumed directly by the map. When a map is viewed, Fabric Maps requests only the tile data required for the current zoom level and map extent. This selective loading reduces data transfer and improves rendering performance when working with large static spatial datasets.
 
-Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add data to the map – PMTiles](create-map.md#add-data-to-the-map---pmtiles) in the *Create a map* article.
+Fabric Maps currently supports generating PMTiles from valid GeoJSON files using vector tiles, as described in [Create tilesets](create-tile-sets.md). For more information about using PMTiles in maps, see [Add a PMTiles file](add-lakehouse-layer.md#add-a-pmtiles-file).
+
+### Data refresh and scheduling (Preview)
+
+Fabric Maps supports scheduled data refresh for tilesets generated as PMTiles and stored in Lakehouse. Scheduling keeps map visualizations aligned with changes in the underlying data without requiring manual regeneration. A map item can have up to 20 associated schedules. The refresh schedule is defined during tileset creation.
+
+> [!TIP]
+> If a schedule is deleted, the tileset must be recreated to re-enable scheduling.
+
+<!---------------------------------------------------------------------------------------------------------------
+- **Automatic refresh based on data changes**  
+  Automatically rebuild the tileset when changes are detected in the source data in Lakehouse.
+
+Scheduled refresh is especially useful for read-only maps shared across an organization, where keeping visualizations up to date is critical for decision-making.
+--------------------------------------------------------------------------------------------------------------->
 
 #### Understanding zoom levels in tilesets
 

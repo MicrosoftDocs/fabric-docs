@@ -4,7 +4,8 @@ description: Learn about eventhouse data storage in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
 ms.topic: concept-article
 ms.subservice: rti-eventhouse
-ms.date: 07/29/2025
+ms.custom:
+ms.date: 02/12/2026
 ms.search.form: Eventhouse
 ---
 # Eventhouse overview
@@ -46,15 +47,11 @@ The databases page of an eventhouse shows you database information either in lis
 
 For more information, see [Database details](manage-monitor-database.md#database-details).
 
-## Always-On
-Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, use **Always-On**. This setting enables the service to be always available, scaling according to our autoscale mechanism. With Always-On enabled, you see 100% EventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
+## Capacity Planner
 
-### Minimum consumption
-As part of the Always-On feature, you can additionally configure your minimum consumption. This step is useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our autoscale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, autoscale adjusts to the next larger size.
+Your eventhouse is designed to optimize cost by suspending the service when not in use. When reactivating the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can't tolerate this latency, enable the [Capacity Planner mode](eventhouse-smart-capacity-control.md#enable-capacity-planner). This setting enables the service to be always available. With Always-On enabled, you see 100% EventHouse UpTime and you don't pay for cache storage as it's included in the capacity charges.
 
-[!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
-
-For instructions on how to enable always-on, see [Enable always-on](manage-monitor-eventhouse.md#enable-always-on).
+As part of the always-on capacity planner feature, you can additionally [schedule and configure your minimum capacity](eventhouse-smart-capacity-control.md#schedule-minimum-capacity). This step is useful in scenarios where you have unpredictable query or ingestion loads and need to ensure adequate performance during sudden high loads. This setting allows you to prevent our autoscale mechanism from scaling below a certain size, while still allowing it to scale to a larger size if the workload requires it. A limited amount of premium storage is included in the service, and if your cache utilization approaches this limit, autoscale adjusts to the next larger size.
 
 ## Share an eventhouse
 

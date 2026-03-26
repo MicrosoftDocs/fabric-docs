@@ -7,4 +7,4 @@ ms.custom: references_regions
 ---
 
 > [!NOTE]
-> Consuming Fabric and Azure events via Eventstream or Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] isn't supported if the capacity region of the Eventstream or [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] is in the following regions: West India, Qatar Central, Singapore, UAE Central, Brazil Southeast, South Central US.
+> Consuming Fabric and Azure events via Eventstream or Fabric [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] isn't supported if the capacity region of the Eventstream or [!INCLUDE [fabric-activator](../../real-time-intelligence/includes/fabric-activator.md)] is in the following regions: West India, Qatar Central, Singapore, UAE Central, Brazil Southeast.

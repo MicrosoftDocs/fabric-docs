@@ -3,7 +3,7 @@ title: Lakehouse schemas
 description: Organize lakehouse tables into schemas for better discovery, access control, and cross-workspace queries in Microsoft Fabric.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 02/22/2026
+ms.date: 02/24/2026
 ms.search.form: Lakehouse schemas
 ---
 
@@ -16,6 +16,7 @@ Lakehouse schemas in Microsoft Fabric let you group tables into named collection
 - **Query across workspaces** — Reference tables with a four-part namespace (`workspace.lakehouse.schema.table`) to join data from multiple lakehouses and workspaces in a single Spark SQL query.
 - **Reference external data with schema shortcuts** — Map a schema to a folder in another lakehouse or in Azure Data Lake Storage (ADLS) Gen2, so external Delta tables appear as local tables.
 - **Use advanced features** — Features like [materialized lake views](materialized-lake-views/overview-materialized-lake-view.md) require schema-enabled lakehouses.
+- **Schema name** - The schema name can only contain letters, numbers, and underscores (_).
 
 If you have an existing lakehouse that was created before schemas were available, see [Enable schemas for existing lakehouses](#enable-schemas-for-existing-lakehouses).
 
@@ -136,10 +137,8 @@ Schema-enabled lakehouses have the following known limitations. The table also d
 
 | Limitation | Description | Workaround |
 |---|---|---|
-| Spark views | `CREATE VIEW` in Spark SQL isn't currently supported for schema-enabled lakehouses. | Use [materialized lake views](materialized-lake-views/overview-materialized-lake-view.md) to precompute and persist query results as Delta tables. |
 | Shared lakehouses | A schema-enabled lakehouse can't currently be shared directly through workspace-level sharing. | Create [shortcuts](../onelake/onelake-shortcuts.md) in a lakehouse where the user has a workspace role, and reference the shared lakehouse tables through those shortcuts. |
 | External ADLS tables | External table metadata over Azure Data Lake Storage (ADLS) isn't supported directly in schema-enabled lakehouses. | Use [OneLake shortcuts](/rest/api/fabric/core/onelake-shortcuts) to reference external Delta tables. |
-| Outbound access protection | Cross-workspace Spark SQL queries are blocked when outbound access protection is enabled. | Use non-schema lakehouses for cross-workspace query scenarios in environments where outbound access protection is enabled. |
 
 ## Related content
 

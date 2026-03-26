@@ -1,8 +1,8 @@
 ---
 title: "Understand Direct Lake query performance"
 description: "Learn how Direct Lake query performance depends on Delta table health and efficient data updates. Understand the importance of V-Order optimization, row groups, and Delta log management for optimal query execution."
-author: JulCsc
-ms.author: juliacawthra
+author: kgremban
+ms.author: kgremban
 ms.reviewer: phseamar, Kay.Unkroth
 ms.date: 06/03/2025
 ms.topic: concept-article
@@ -17,7 +17,7 @@ Apart from semantic model design and query complexity, Direct Lake performance s
 > [!TIP]
 > For comprehensive cross-workload guidance on optimizing Delta tables for Direct Lake consumption, including file size, V-Order, and row group recommendations based on medallion architecture layers, see [Cross-workload table maintenance and optimization](table-maintenance-optimization.md).
 
-This article explains how Direct Lake performance depends on Delta table health and efficient data updates. Understanding these dependencies is crucial. You learn that the data layout in your Parquet files is as important for query performance as are a good semantic model design and well-tuned data analysis expression (DAX) measures.
+This article explains how Direct Lake performance depends on Delta table health and efficient data updates. The storage decisions you make — file layout, update patterns, and maintenance routines — directly determine how quickly Direct Lake can load and query your data. The data layout in your Parquet files is as important for query performance as are a good semantic model design and well-tuned data analysis expression (DAX) measures.
 
 ## What you need to know
 
@@ -88,7 +88,7 @@ With dictionaries, column segments, and join indexes loaded, Direct Lake reaches
 
 ## Delta table differences
 
-Parquet files organize data by columns rather than rows. Direct Lake also organizes data by columns. The alignment facilitates seamless integration, yet there are important differences, specifically concerning row groups and dictionaries.
+How you structure your Delta tables directly affects how efficiently Direct Lake can load columns and execute queries. Parquet files organize data by columns rather than rows. Direct Lake also organizes data by columns. The alignment facilitates seamless integration, yet there are important differences, specifically concerning row groups and dictionaries.
 
 ### Row groups versus column segments
 
@@ -109,7 +109,7 @@ The total row group count of a Delta table also has direct effect on dictionary 
 
 ## Delta table update patterns
 
-The method used to ingest data into a Delta table can greatly influence incremental framing efficiency. For instance, using the **Overwrite** option when loading data into an existing table erases the Delta log with each load. This means Direct Lake can't use incremental framing and must reload all the data, dictionaries, and join indexes. Such destructive update patterns negatively affect query performance.
+The method used to ingest data into a Delta table can greatly influence incremental framing efficiency, which in turn determines whether queries run at warm-state speed or suffer a full cold-state reload. For instance, using the **Overwrite** option when loading data into an existing table erases the Delta log with each load. This means Direct Lake can't use incremental framing and must reload all the data, dictionaries, and join indexes. The resulting cold-state reload increases query latency because every column segment must be retranscoded before the query can complete.
 
 :::image type="content" source="media/direct-lake-query-performance/connect-data-destination.png" alt-text="Diagram showing data ingestion and update patterns for Delta tables in Direct Lake." lightbox="media/direct-lake-query-performance/connect-data-destination.png":::
 
@@ -147,7 +147,7 @@ Vacuuming removes Parquet files no longer included in the current Delta commit v
 
 ### Spark Optimize
 
-Delta table optimization merges multiple small Parquet files into fewer large files. Because this can affect cold Direct Lake performance, it's good practice to optimize infrequently, such as over weekends or at the end of the month. Optimize more often if small Parquet files accumulate quickly (high-frequency small updates) to ensure the Delta table stays within guardrail limits.
+Delta table optimization merges multiple small Parquet files into fewer large files. Running optimization replaces existing Parquet files, which invalidates the corresponding column segments in memory and forces Direct Lake to retranscode the affected data on the next query — a short-term cold-state penalty. However, the resulting fewer, larger, and more uniform segments improve long-term query performance. Balance these tradeoffs by optimizing infrequently, such as over weekends or at the end of the month. Optimize more often if small Parquet files accumulate quickly (high-frequency small updates) to ensure the Delta table stays within guardrail limits.
 
 Partitioning can help to minimize optimization effect on incremental framing because partitioning effectively collocates the data. For example, partitioning a large Delta table based on a low-cardinality date_key column would constrain weekly maintenance to a maximum of seven partitions. The Delta table would retain most of the existing Parquet files. Direct Lake would only have to reload seven days of data.
 

@@ -88,7 +88,7 @@ Copilot capacities enable users' usage and billing to be consolidated under a si
 
 :::image type="content" source="./media/service-admin-portal-copilot/fabric-copilot-capacity-tenant-setting.png" alt-text="Screenshot showing the tenant setting for data storage outside the capacity's region." lightbox="./media/service-admin-portal-copilot/fabric-copilot-capacity-tenant-setting.png":::
 
-**Default:** Disabled
+**Default:** Enabled
 
 <a id="stand-alone-experience"></a>
 ## Users can access a standalone, cross-item Power BI Copilot experience (preview)

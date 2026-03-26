@@ -30,6 +30,10 @@ items:
         href: how-to-use-python-notebooks.md
       - name: User data functions
         href: how-to-user-data-functions.md
+      - name: Translytical task flows
+        href: how-to-create-translytical-task-flows.md
+      - name: Reverse ETL data pipeline
+        href: how-to-build-reverse-etl-data-pipeline.md
   - name: Samples
     items:
       - name: Cosmos DB getting started

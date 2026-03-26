@@ -2,7 +2,7 @@
 title: Secure Your Fabric Data Warehouse
 description: Learn more about securing your warehouse in Microsoft Fabric.
 ms.reviewer: fresantos
-ms.date: 02/17/2026
+ms.date: 03/13/2026
 ms.topic: concept-article
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -88,10 +88,10 @@ For details on dynamic data masking, see [Dynamic data masking in Fabric data wa
 
 ## User audit logs
 
-To track user activity in warehouse and SQL analytics endpoint for meeting regulatory compliance and records managements requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell. 
+To track user activity in a warehouse or SQL analytics endpoint for meeting regulatory compliance and records requirements, a set of audit activities are accessible via Microsoft Purview and PowerShell.
 
 - You can use user audit logs to identify who is taking what action on your Fabric items. 
-- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse (Preview)](configure-sql-audit-logs.md). 
+- To get started, learn [how to configure SQL audit logs in Fabric Data Warehouse](configure-sql-audit-logs.md). 
 - You can [track user activities across Microsoft Fabric](../admin/track-user-activities.md). For more information, see the [Operation list](../admin/operation-list.md).
 
 ## SQL analytics endpoint security

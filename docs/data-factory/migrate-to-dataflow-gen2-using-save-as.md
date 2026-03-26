@@ -2,7 +2,7 @@
 title: Migrate to Dataflow Gen2 (CI/CD) using Save As
 description: This article describes the procedure for migrating Dataflow Gen1, Dataflow Gen2, and Dataflow Gen2 (CI/CD) to Dataflow Gen2 (CI/CD) in Data Factory.
 ms.topic: how-to
-ms.date: 01/28/2026
+ms.date: 02/18/2026
 ms.custom:
   - template-how-to
   - dataflows
@@ -32,18 +32,21 @@ To use the Save As feature:
 
 1. Close the new Dataflow Gen2 (CI/CD), or select **Save** or **Save and run**.
 
+Save As is disabled when Fabric is not available, including the following scenarios:
+- Power BI Pro Workspace type
+- Power BI Premium Per-User (PPU) Workspace type
+- Admin setting "Users can create fabric items" is disabled for the Tenant, Capacity or User group.
+
 >[!TIP]
 >For bulk and auto-migrations, you can use the [REST API](/rest/api/power-bi/dataflows/save-dataflow-gen-one-as-dataflow-gen-two).
 
 ## Known limitations
 
-The following tables contain the known limitations for the Save As feature:
+These are the known limitations for the Save As feature:
 
-| Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |
-| ------------------ | ------------- | ------------- |
-| Scheduled refresh settings | Limited |  |
-| Incremental refresh settings | | Limited |
-
+- Scheduled refresh settings are not copied with Dataflow Gen2 Save As
+- Incremental refresh settings are not copied with Dataflow Gen1 Save As
+  
 Dataflow Gen1 capabilities that aren't applicable in Dataflow Gen2 (CI/CD) and therefore aren't copied:
 
 | Feature/Limitation | Dataflow Gen1 | Dataflow Gen2 |

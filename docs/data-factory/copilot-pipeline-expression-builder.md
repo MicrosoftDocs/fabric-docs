@@ -8,10 +8,7 @@ ms.topic: concept-article
 ms.collection: ce-skilling-ai-copilot
 ---
 
-# Build pipeline expressions with Copilot (Preview)
-
-> [!NOTE]
-> Currently, this feature is in [preview](/fabric/fundamentals/preview).
+# Build pipeline expressions with Copilot
 
 The pipeline expression builder now comes with Copilot built in! You can chat with Copilot directly in the expression builder, similar to how you interact with it in other Data Factory features. This means you can get help creating and understanding expressions without leaving your workspace.
 

@@ -20,7 +20,7 @@ When your ontology (preview) item is created, a [Graph in Microsoft Fabric](../.
 Before using the preview experience, make sure you have the following prerequisites:
 
 * A [Fabric workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-    * **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
+* **Ontology item (preview)** and **Graph (preview)** enabled on your tenant.
 * An ontology (preview) item with [data binding](how-to-bind-data.md) completed.
 
 ## Key concepts
@@ -30,7 +30,7 @@ The preview experience uses the following ontology (preview) concepts. For defin
 * *Entity type*
 * *Entity instance*
 * *Preview experience*
-* [Graph in Microsoft Fabric](../../graph/overview.md)
+* *[Graph in Microsoft Fabric](../../graph/overview.md)*
 
 ## Access preview experience
 

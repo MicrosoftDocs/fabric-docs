@@ -63,8 +63,6 @@ Before enabling CMK for your Fabric Data Warehouse, review the following conside
 
 - DMV support: Since the CMK configuration is established and configured at workspace level, you cannot use `sys.dm_database_encryption_keys` to view the encryption status of the database; that happens exclusively at Workspace Level.
 
-- Firewall restrictions: CMK is not supported when the Azure Key Vault firewall is enabled.
-
 - Queries in the Fabric portal query editor Object Explorer are not encrypted with CMK.
 
 ## Related content

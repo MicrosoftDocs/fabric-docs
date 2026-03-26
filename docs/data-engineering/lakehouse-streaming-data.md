@@ -1,179 +1,148 @@
 ---
-title: Streaming data into lakehouse
-description: Learn how to use Spark structured streaming and retry policy to set up streaming jobs to get data into lakehouse.
+title: Data streaming into a lakehouse with Spark
+description: Learn about Spark structured streaming for ingesting data into a lakehouse, optimizing write performance, and running production streaming jobs.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 05/23/2023
+ms.date: 02/24/2026
 ms.search.form: Lakehouse Spark Structured Streaming
 ---
 
-# Get streaming data into lakehouse with Spark structured streaming
+# Data streaming into a lakehouse with Spark
 
-Structured Streaming is a scalable and fault-tolerant stream processing engine built on Spark. Spark takes care of running the streaming operation incrementally and continuously as data continues to arrive.
+Structured streaming is a scalable, fault-tolerant stream processing engine built on Spark. It treats a live data stream as a table that new rows are continuously appended to. Structured Streaming supports built-in file sources such as CSV, JSON, ORC, and Parquet, along with messaging services like Kafka and Azure Event Hubs.
 
-Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
+This article covers setting up a streaming source such as Azure Event Hubs, ingesting streaming data into a lakehouse Delta table, optimizing write performance with partitioning and event batching, and running streaming jobs reliably in production.
 
-This article provides insights into how to optimize the processing and ingestion of events through Spark structured streaming in production environments with high throughput. The suggested approaches include:
+## Set up a streaming source
 
-* Data streaming throughput optimization
-* Optimizing write operations in the delta table and
-* Event batching
+To stream data into a lakehouse, first configure a connection to your streaming source. Azure Event Hubs is a common choice. Use the [Azure Event Hubs Connector for Apache Spark](https://github.com/Azure/azure-event-hubs-spark) to connect your Spark application to Azure Event Hubs.
 
-## Spark job definitions and Spark notebooks
+A basic Event Hubs configuration requires the Event Hubs namespace name, hub name, shared access key name, and consumer group.
 
-Spark notebooks are an excellent tool for validating ideas and doing experiments to get insights from your data or code. Notebooks are widely used in data preparation, visualization, machine learning, and other big data scenarios. Spark job definitions are non-interactive code-oriented tasks running on a Spark cluster for long periods. Spark job definitions provide robustness and availability.
+A consumer group is a view of an entire event hub. Consumer groups enable multiple consuming applications to each have a separate view of the eventstream and to read the stream independently at their own pace and with their own offsets.
 
-Spark notebooks are excellent source to test the logic of your code and address all the business requirements. However to keep it running in a production scenario, Spark job definitions with Retry Policy enabled are the best solution.
+Partitions in Event Hubs allow you to process large volumes of events in parallel. A single processor has a limited capacity for handling events per second, while multiple processors can work in parallel across partitions.
 
-## Retry policy for Spark Job Definitions
+If too many partitions are used with a low ingestion rate, partition readers deal with a small portion of data, causing nonoptimal processing. The ideal number of partitions depends on the desired processing rate. As you increase the number of throughput units in your namespace, you might want extra partitions to allow concurrent readers to achieve their maximum throughput.
 
-In Microsoft Fabric, the user can set a retry policy for Spark Job Definition jobs. Though the script in the job might be infinite, the infrastructure running the script might incur an issue requiring stopping the job. Or the job could be eliminated due to underlying infrastructure patching needs. The retry policy allows the user to set rules for automatically restarting the job if it stops because of any underlying issues. The parameters specify how often the job should be restarted, up to infinite retries, and setting time between retries. That way, the users can ensure that their Spark Job Definition jobs continue running infinitely until the user decides to stop them.
+Test the best number of partitions for your throughput scenario. Scenarios with high throughput commonly use 32 or more partitions.
 
-## Streaming sources
+## Delta table as a streaming sink
 
-Setting up streaming with Event Hubs require basic configuration, which, includes Event Hubs namespace name, hub name, shared access key name, and the consumer group. A consumer group is a view of an entire event hub. It enables multiple consuming applications to have a separate view of the eventstream and to read the stream independently at their own pace and with their offsets.
+Delta Lake is an open-source storage layer that provides ACID (atomicity, consistency, isolation, and durability) transactions on top of data lake storage. In Fabric Data Engineering, Delta Lake supports upserts, data compaction, time travel, schema evolution, and open-format storage.
 
-Partitions are an essential part of being able to handle a high volume of data. A single processor has a limited capacity for handling events per second, while multiple processors can do a better job when executed in parallel. Partitions allow the possibility of processing large volumes of events in parallel.
-
-If too many partitions are used with a low ingestion rate, partition readers deal with a tiny portion of this data, causing nonoptimal processing. The ideal number of partitions directly depends on the desired processing rate. If you want to scale your event processing, consider adding more partitions. There's no specific throughput limit on a partition. However, the aggregate throughput in your namespace is limited by the number of throughput units. As you increase the number of throughput units in your namespace, you may want extra partitions to allow concurrent readers to achieve their maximum throughput.
-
-The recommendation is to investigate and test the best number of partitions for your throughput scenario. But it's common to see scenarios with high throughput using 32 or more partitions.
-
-Azure Event Hubs Connector for Apache Spark ([azure-event-hubs-spark](https://github.com/Azure/azure-event-hubs-spark)) is recommended to connect Spark application to Azure Event Hubs.
-
-## Lakehouse as streaming sink
-
-Delta Lake is an open-source storage layer that provides ACID (atomicity, consistency, isolation, and durability) transactions on top of data lake storage solutions. Delta Lake also supports scalable metadata handling, schema evolution, time travel (data versioning), open format, and other features.
-
-In Fabric Data Engineering, Delta Lake is used to:
-
-* Easily upsert (insert/update) and delete data using Spark SQL.
-* Compact data to minimize the time spent querying data.
-* View the state of tables before and after operations are executed.
-* Retrieve a history of operations performed on tables.
-
-Delta is added as one of the possible outputs sinks formats used in writeStream. For more information about the existing output sinks, see [Spark Structured Streaming Programming Guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks).
-
-The following example demonstrates how it's possible to stream data into Delta Lake.  
+With `delta` as the output format in `writeStream`, streaming data flows directly into a Delta table. The following example reads from Event Hubs, parses the message body, and writes to a Delta table:
 
 ```python
-import pyspark.sql.functions as f 
-from pyspark.sql.types import * 
+import pyspark.sql.functions as f
+from pyspark.sql.types import *
 
-df = spark \ 
-  .readStream \ 
-  .format("eventhubs") \ 
-  .options(**ehConf) \ 
-  .load()  
+df = (
+    spark.readStream
+    .format("eventhubs")
+    .options(**ehConf)
+    .load()
+)
 
-Schema = StructType([StructField("<column_name_01>", StringType(), False), 
-                     StructField("<column_name_02>", StringType(), False), 
-                     StructField("<column_name_03>", DoubleType(), True), 
-                     StructField("<column_name_04>", LongType(), True), 
-                     StructField("<column_name_05>", LongType(), True)]) 
+Schema = StructType([
+    StructField("<column_name_01>", StringType(), False),
+    StructField("<column_name_02>", StringType(), False),
+    StructField("<column_name_03>", DoubleType(), True),
+    StructField("<column_name_04>", LongType(), True),
+    StructField("<column_name_05>", LongType(), True),
+])
 
-rawData = df \ 
-  .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
-  .select("events.*") \ 
-  .writeStream \ 
-  .format("delta") \ 
-  .option("checkpointLocation", "Files/checkpoint") \ 
-  .outputMode("append") \ 
-  .toTable("deltaeventstable") 
+rawData = (
+    df
+    .withColumn("bodyAsString", f.col("body").cast("string"))
+    .select(f.from_json("bodyAsString", Schema).alias("events"))
+    .select("events.*")
+    .writeStream
+    .format("delta")
+    .option("checkpointLocation", "Files/checkpoint")
+    .outputMode("append")
+    .toTable("deltaeventstable")
+)
 ```
 
- About the code snipped in the example:  
+In the code, `format("delta")` sets Delta as the output format, `outputMode("append")` writes only new rows to the table, and `toTable("deltaeventstable")` persists the streamed data to a managed Delta table.
 
-- *format()* is the instruction that defines the output format of the data.  
-- *outputMode()* defines in which way the new rows in the streaming are written (that is, append, overwrite). 
-- *toTable()* persists the streamed data into a Delta table created using the value passed as parameter.  
+## Optimize streaming performance
 
-### Optimizing Delta writes 
+Once basic streaming ingestion works, you can improve throughput and file organization with the optimization techniques in the following sections.
 
-Data partitioning is a critical part in creating a robust streaming solution: partitioning improves the way data is organized, and it also improves the throughput. Files easily get fragmented after Delta operations, resulting in too many small files. And too large files are also a problem, due to the long time to write them on the disk. The challenge with data partitioning is finding the proper balance that results in optimal file sizes. Spark supports partitioning in memory and on disk. Properly partitioned data can provide the best performance when persisting data to Delta Lake and querying data from Delta Lake. 
+### Partition data for writes
 
-- When partitioning data on disk, you can choose how to partition the data based on columns by using *partitionBy()*. *partitionBy()* is a function used to partition large semantic model into smaller files based on one or multiple columns provided while writing to disk. Partitioning is a way to improve the performance of query when working with a large semantic model. Avoid choosing a column that generates too small or too large partitions. Define a partition based on a set of columns with a good cardinality and split the data into files of optimal size. 
-- Partitioning data in memory can be done using *repartition()* or *coalesce()* transformations, distributing data on multiple worker nodes and creating multiple tasks that can read and process data in parallel using the fundamentals of Resilient Distributed Dataset (RDD). It allows dividing semantic model into logical partitions, which can be computed on different nodes of the cluster. 
-    - *repartition()* is used to increase or decrease the number of partitions in memory. Repartition reshuffles whole data over the network and balances it across all partitions.  
-    - *coalesce()* is only used to decrease the number of partitions efficiently. That is an optimized version of *repartition()* where the movement of data across all partitions is lower using coalesce(). 
+To optimize throughput, partition your data effectively. Partitioning improves both write throughput and downstream query performance. You can partition data in memory, on disk, or both.
 
-Combining both partitioning approaches is a good solution in scenario with high throughput. *repartition()* creates a specific number of partitions in memory, while *partitionBy()* writes files to disk for each memory partition and partitioning column. The following example illustrates the usage of both partitioning strategies in the same Spark job: data is first split into 48 partitions in memory (assuming we have total 48 CPU cores), and then partitioned on disk based in two existing columns in the payload. 
+**On disk** — Use `partitionBy()` to organize data into subdirectories based on column values. Choose columns with good cardinality that produce optimally sized files. Avoid columns that create too many tiny partitions or too few large ones.
+
+**In memory** — Use `repartition()` or `coalesce()` to distribute data across worker nodes before writing:
+
+- `repartition()` increases or decreases partitions with a full shuffle, balancing data evenly.
+- `coalesce()` only decreases partitions, minimizing data movement.
+
+Combining both approaches works well for high-throughput scenarios. The following example splits data into 48 partitions in memory (matching available CPU cores) and then partitions on disk by two columns:
 
 ```python
-import pyspark.sql.functions as f 
-from pyspark.sql.types import * 
-import json 
-
-rawData = df \ 
-  .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
-  .select("events.*") \ 
-  .repartition(48) \ 
-  .writeStream \ 
-  .format("delta") \ 
-  .option("checkpointLocation", "Files/checkpoint") \ 
-  .outputMode("append") \ 
-  .partitionBy("<column_name_01>", "<column_name_02>") \ 
-  .toTable("deltaeventstable") 
+rawData = (
+    df
+    .withColumn("bodyAsString", f.col("body").cast("string"))
+    .select(f.from_json("bodyAsString", Schema).alias("events"))
+    .select("events.*")
+    .repartition(48)
+    .writeStream
+    .format("delta")
+    .option("checkpointLocation", "Files/checkpoint")
+    .outputMode("append")
+    .partitionBy("<column_name_01>", "<column_name_02>")
+    .toTable("deltaeventstable")
+)
 ```
 
-### Optimized Write
+### Use Optimized Write
 
-Another option to optimize writes to Delta Lake is using Optimized Write. Optimized Write is an optional feature that improves the way data is written to Delta table. Spark merges or splits the partitions before writing the data, maximizing the throughput of data being written to the disk. However, it incurs full shuffle, so for some workloads it can cause a performance degradation. Jobs using *coalesce()* and/or *repartition()* to partition data on disk can be refactored to start using Optimized Write instead.  
-
-The following code is an example of the use of Optimized Write. Note that *partitionBy()* is still used.  
+As an alternative to manual partitioning, Optimized Write merges or splits partitions before writing, maximizing disk throughput without manual `repartition()` or `coalesce()` calls. Enable it with a Spark configuration:
 
 ```python
-spark.conf.set("spark.databricks.delta.optimizeWrite.enabled", true) 
- 
-rawData = df \ 
- .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
-  .select("events.*") \ 
-  .writeStream \ 
-  .format("delta") \ 
-  .option("checkpointLocation", "Files/checkpoint") \ 
-  .outputMode("append") \ 
-  .partitionBy("<column_name_01>", "<column_name_02>") \ 
-  .toTable("deltaeventstable") 
+spark.conf.set("spark.databricks.delta.optimizeWrite.enabled", True)
 ```
 
-### Batching events
+With Optimized Write enabled, you can remove `repartition()` or `coalesce()` from your code and let Spark handle partition sizing. You can still use `partitionBy()` for disk-level organization.
 
-In order to minimize the number of operations to improve the time spent ingesting data into Delta lake, batching events is a practical alternative.  
+### Batch events with triggers
 
-Triggers define how often a streaming query should be executed (triggered) and emit new data. Setting them up defines a periodical processing time interval for microbatches, accumulating data and batching events into few persisting operations, instead of writing into disk all the time.  
+To further optimize write performance, batch events before writing them to disk. By default, Spark processes each microbatch as soon as the previous one completes. Setting a trigger interval accumulates data over a time period and writes it in fewer, larger operations. Larger batches produce bigger Delta files and reduce small-file overhead.
 
-The following example shows a streaming query where events are periodically processed in intervals of one minute.  
+The following example processes events in one-minute intervals:
 
 ```python
-rawData = df \ 
-  .withColumn("bodyAsString", f.col("body").cast("string")) \  
-  .select(f.from_json("bodyAsString", Schema).alias("events")) \ 
-  .select("events.*") \ 
-  .repartition(48) \ 
-  .writeStream \ 
-  .format("delta") \ 
-  .option("checkpointLocation", "Files/checkpoint") \ 
-  .outputMode("append") \ 
-  .partitionBy("<column_name_01>", "<column_name_02>") \ 
-  .trigger(processingTime="1 minute") \ 
-  .toTable("deltaeventstable") 
+rawData = (
+    df
+    .withColumn("bodyAsString", f.col("body").cast("string"))
+    .select(f.from_json("bodyAsString", Schema).alias("events"))
+    .select("events.*")
+    .writeStream
+    .format("delta")
+    .option("checkpointLocation", "Files/checkpoint")
+    .outputMode("append")
+    .partitionBy("<column_name_01>", "<column_name_02>")
+    .trigger(processingTime="1 minute")
+    .toTable("deltaeventstable")
+)
 ```
 
-The advantage of combining batching of events in Delta table writing operations is that it creates larger Delta files with more data in them, avoiding small files. You should analyze the amount of data being ingested and find the best processing time to optimize the size of the Parquet files created by Delta library.
+Analyze the volume of incoming data and choose a processing interval that produces well-sized Parquet files in the Delta table.
 
-## Monitoring
+## Run streaming jobs in production
 
-Spark 3.1 and higher versions have a built-in [structured streaming UI](https://spark.apache.org/docs/latest/web-ui.html#structured-streaming-tab) containing the following streaming metrics:
+Spark notebooks are an effective tool for developing and testing streaming logic. However, for production workloads that need to run continuously, use Spark job definitions instead. Spark job definitions are non-interactive, code-oriented tasks that run on a Spark cluster and provide greater robustness and availability.
 
-* Input Rate
-* Process Rate
-* Input Rows
-* Batch Duration
-* Operation Duration
+The infrastructure running a streaming job can encounter issues that stop the job, such as hardware failures or infrastructure patching. A retry policy automatically restarts the job when it stops unexpectedly. Configure the retry policy on a Spark job definition to specify how many times to restart the job (up to infinite retries) and the time interval between retries. With a retry policy enabled, your streaming job continues running until you explicitly stop it.
+
+The [Fabric monitoring hub](spark-monitoring-overview.md) includes a Structured Streaming tab with metrics including Input Rate, Process Rate, Input Rows, Batch Duration, and Operation Duration.
 
 ## Related content
 
-* [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.
+- [Get streaming data into a lakehouse and access with the SQL analytics endpoint](get-started-streaming.md)
+- [Get streaming data into lakehouse with eventstreams](../real-time-intelligence/event-streams/add-destination-lakehouse.md)
