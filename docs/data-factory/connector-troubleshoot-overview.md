@@ -41,7 +41,7 @@ We also have guides for different file formats:
 - [Parquet](connector-troubleshoot-parquet-format.md)
 - [XML](connector-troubleshoot-xml.md)
 
-Can't find what you need in the guides above? Check out the [Data Factory limitations](data-factory-limitations.md) and [known issues](/fabric/get-started/known-issues/) pages for more help.
+Can't find what you need in the guides above? Check out the [Data Factory limitations](data-factory-limitations.md) and [known issues](/fabric/known-issues/fabric-known-issues) pages for more help.
 
 ## General copy activity errors
 
