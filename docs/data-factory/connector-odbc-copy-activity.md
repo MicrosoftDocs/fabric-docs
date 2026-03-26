@@ -108,5 +108,5 @@ The following tables contain more information about the copy activity in ODBC.
 
 ## Related content
 
-- [Odbc connector overview](connector-odbc-overview.md)
-- [Set up your Odbc connection](connector-odbc.md).
+- [ODBC connector overview](connector-odbc-overview.md)
+- [Set up your ODBC connection](connector-odbc.md).

@@ -1,6 +1,6 @@
 ---
-title: Odbc connector overview
-description: This article provides an overview of the supported capabilities of the Odbc connector.
+title: ODBC connector overview
+description: This article provides an overview of the supported capabilities of the ODBC connector.
 ms.topic: how-to
 ms.date: 03/03/2026
 ms.custom:
@@ -9,9 +9,9 @@ ms.custom:
 ai-usage: ai-assisted
 ---
 
-# Odbc connector overview
+# ODBC connector overview
 
-The open database connectivity (Odbc) connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The open database connectivity (ODBC) connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Supported capabilities
 
@@ -23,6 +23,6 @@ The open database connectivity (Odbc) connector is supported in Data Factory for
 
 ## Related content
 
-To learn about how to connect to Odbc, go to [Set up your Odbc connection](connector-odbc.md).
+To learn about how to connect to ODBC, go to [Set up your ODBC connection](connector-odbc.md).
 
 To learn about the copy activity configuration for ODBC in pipelines, go to [Configure ODBC in a copy activity](connector-odbc-copy-activity.md).

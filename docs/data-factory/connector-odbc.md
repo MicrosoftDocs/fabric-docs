@@ -57,7 +57,7 @@ The following table contains a summary of the properties needed for ODBC connect
 
 | Name | Description | Required |
 | --- | --- | --- |
-| **Gateway cluster name** | The on-premise data gateway to use for the connection. | Yes |
+| **Gateway cluster name** | The on-premises data gateway to use for the connection. | Yes |
 | **Connection name** | A name for your connection. | Yes |
 | **Connection type** | Select **ODBC** for your connection type. | Yes |
 | **Connection string** | The connection string for the ODBC connection. <br>Example: `Driver={ODBC Driver 13 for SQL Server};server=test.corp.contoso.com;database=TestDB;` | Yes |
@@ -68,7 +68,7 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
 
-   :::image type="content" source="./media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
+   :::image type="content" source="./media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open "Manage connections and gateways".":::
 
 1. Select **New** at the top of the ribbon to add a new data source.
 
