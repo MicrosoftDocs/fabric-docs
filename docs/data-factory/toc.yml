@@ -1084,52 +1084,6 @@
         href: modern-get-data-experience-pipeline.md
       - name: Activities in pipelines
         href: activity-overview.md 
-      - name: Apache Airflow Job
-        items: 
-          - name: Concepts
-            href: apache-airflow-jobs-concepts.md
-          - name: Apache Airflow compute
-            href: apache-airflow-compute.md
-          - name: Tutorials
-            items: 
-              - name: Airflow Hello World
-                href: create-apache-airflow-jobs.md
-              - name: Run Fabric pipelines and notebooks
-                href: apache-airflow-jobs-run-fabric-item-job.md
-              - name: Use AI to build DAGs from an image
-                href: apache-airflow-job-build-dags-using-azure-openai.md
-              - name: Run ADF pipeline
-                href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
-              - name: Run Azure Databricks job
-                href: apache-airflow-jobs-run-databricks-job.md
-              - name: Refresh Power BI Semantic Model
-                href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
-              - name: Transform data using dbt
-                href: apache-airflow-jobs-dbt-fabric.md
-          - name: How-to
-            items: 
-              - name: Synchronize your code from an existing Git repo
-                href: apache-airflow-jobs-sync-git-repo.md
-              - name: APIs in Apache Airflow Jobs
-                href: apache-airflow-jobs-api-capabilities.md
-              - name: Apache Airflow Job workspace settings
-                href: apache-airflow-jobs-workspace-settings.md
-              - name: Install a private package
-                href: apache-airflow-jobs-install-private-package.md
-              - name: Enable Azure Key Vault as Secret Backend
-                href: apache-airflow-jobs-enable-azure-key-vault.md
-              - name: Set up SMTP Server
-                href: apache-airflow-jobs-set-smtp-server.md
-              - name: Add a Kubernetes secret
-                href: apache-airflow-jobs-access-private-container-registry.md
-              - name: Apache Airflow configurations
-                href: apache-airflow-jobs-supported-apache-airflow-configurations.md
-              - name: Migrate from Azure Workflow Orchestration Manager
-                href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
-              - name: Access logs
-                href: access-apache-airflow-job-logs.md
-              - name: CI/CD for Apache Airflow Jobs
-                href: cicd-apache-airflow-jobs.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Control flow activities
@@ -1221,6 +1175,52 @@
             href: image-to-pipeline-with-ai.md
       - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
+  - name: Orchestrate workflows with Apache Airflow
+    items:
+      - name: What is Apache Airflow?
+        href: apache-airflow-jobs-concepts.md
+      - name: Apache Airflow compute
+        href: apache-airflow-compute.md
+      - name: Tutorials
+        items:
+          - name: Airflow Hello World
+            href: create-apache-airflow-jobs.md
+          - name: Run Fabric pipelines and notebooks
+            href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Use AI to build DAGs from an image
+            href: apache-airflow-job-build-dags-using-azure-openai.md
+          - name: Run ADF pipeline
+            href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
+          - name: Run Azure Databricks job
+            href: apache-airflow-jobs-run-databricks-job.md
+          - name: Refresh Power BI Semantic Model
+            href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
+          - name: Transform data using dbt
+            href: apache-airflow-jobs-dbt-fabric.md
+      - name: How-to
+        items:
+          - name: Synchronize your code from an existing Git repo
+            href: apache-airflow-jobs-sync-git-repo.md
+          - name: APIs in Apache Airflow Jobs
+            href: apache-airflow-jobs-api-capabilities.md
+          - name: Apache Airflow Job workspace settings
+            href: apache-airflow-jobs-workspace-settings.md
+          - name: Install a private package
+            href: apache-airflow-jobs-install-private-package.md
+          - name: Enable Azure Key Vault as Secret Backend
+            href: apache-airflow-jobs-enable-azure-key-vault.md
+          - name: Set up SMTP Server
+            href: apache-airflow-jobs-set-smtp-server.md
+          - name: Add a Kubernetes secret
+            href: apache-airflow-jobs-access-private-container-registry.md
+          - name: Apache Airflow configurations
+            href: apache-airflow-jobs-supported-apache-airflow-configurations.md
+          - name: Migrate from Azure Workflow Orchestration Manager
+            href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
+          - name: Access logs
+            href: access-apache-airflow-job-logs.md
+          - name: CI/CD for Apache Airflow Jobs
+            href: cicd-apache-airflow-jobs.md
   - name: FAQ and Troubleshooting
     items: 
       - name: Frequently asked questions
