@@ -2,7 +2,7 @@
 title: General troubleshooting
 description: Learn how to troubleshoot external control activities for Data Factory in Microsoft Fabric.
 ms.topic: troubleshooting
-ms.date: 12/18/2024
+ms.date: 03/25/2026
 ms.reviewer: abnarain
 ms.custom: pipelines
 ---
@@ -541,8 +541,22 @@ The following table applies to Azure Batch.
 
 - **Recommendation**: Verify that you have provided the correct resource URL for your managed identity.
 
-
 ## General
+
+### Error code: LSROBOTokenFailure
+
+- **Message**:
+  - `Access has been blocked by Conditional Access policies. The access policy does not allow token issuance.`
+  - `Device object was not found in the tenant 'YY' directory.`
+  - `The provided grant has expired due to it being revoked, a fresh auth token is needed. The user might have changed or reset their password.`
+
+- **Cause**:
+   - Microsoft Entra ID checks the `deviceId` claim in the refresh token. If that device no longer exists, is disabled, or no longer meets Conditional Access requirements, token issuance fails.
+   - Pipelines use a stored refresh token to get new access tokens at run time. If the user's password changes or credentials are revoked, that stored token can no longer get a valid access token.
+   - If a user leaves the organization, the related device or account state often changes. That change can invalidate the token chain used by existing pipelines.
+
+- **Recommendation**: Update and save each affected pipeline to refresh its auth context (for example, update the description). If multiple pipelines use old credentials, update and save each one. For script examples, use [this script to update one or a few pipelines](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-factory/update-few-pipelines.ps1) or [this script to update all pipelines in a subscription](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-factory/update-all-pipelines.ps1).
+
 
 ### REST continuation token NULL error 
 
