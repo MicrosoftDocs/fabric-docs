@@ -121,6 +121,8 @@ items:
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory (preview)
                 href: workspace-outbound-access-protection-data-factory.md
+              - name: Data Science (preview)
+                href: workspace-outbound-access-protection-data-science.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
               - name: Mirrored databases (preview)
