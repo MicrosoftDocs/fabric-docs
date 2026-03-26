@@ -9,11 +9,11 @@ ms.search.form: Operations Agent Transparency Note
 
 # Operations agent transparency note
 
-## What is a Transparency Note?
+## What is a transparency note?
 
-An AI system includes not only the technology but also the people who use it, the people who are affected by it, and the environment in which it's deployed. Creating a system that's fit for its intended purpose requires an understanding of how the technology works, what its capabilities and limitations are, and how to achieve the best performance. Microsoft's Transparency Notes help you understand how our AI technology works, the choices system owners can make that influence system performance and behavior, and the importance of thinking about the whole system, including the technology, the people, and the environment. Use Transparency Notes when developing or deploying your own system, or share them with the people who use or are affected by your system.  
+An AI system includes not only the technology but also the people who use it, the people who are affected by it, and the environment in which it's deployed. Creating a system that's fit for its intended purpose requires an understanding of how the technology works, what its capabilities and limitations are, and how to achieve the best performance. Microsoft transparency notes help you understand how our AI technology works, the choices system owners can make that influence system performance and behavior, and the importance of thinking about the whole system, including the technology, the people, and the environment. Use transparency notes when developing or deploying your own system, or share them with the people who use or are affected by your system.  
 
-Microsoft's Transparency Notes are part of a broader effort at Microsoft to put our AI Principles into practice. For more information, see the [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai).
+Microsoft transparency notes are part of a broader effort at Microsoft to put our AI Principles into practice. For more information, see the [Microsoft AI principles](https://www.microsoft.com/ai/responsible-ai).
 
 ## The basics of the Real-Time Intelligence operations agent
 
@@ -89,7 +89,7 @@ We encourage you to apply operations agents in your innovative solutions or appl
 
 ### Technical limitations, operational factors, and ranges
 
-- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft, AI services are fallible and probabilistic. This limitation makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see the [Transparency note for Azure OpenAI](/azure/ai-foundry/responsible-ai/openai/transparency-note), which includes references to the LLMs behind operations agents.  
+- Despite intensive training by OpenAI and the implementation of responsible AI controls by Microsoft, AI services are fallible and probabilistic. This limitation makes it challenging to comprehensively block all inappropriate content, leading to potential biases, stereotypes, or ungroundedness in AI-generated content. For more on the known limitations of AI-generated content, see [Transparency note for Azure OpenAI](/azure/ai-foundry/responsible-ai/openai/transparency-note), which includes references to the LLMs behind operations agents.  
 
 - You can give operations agents a wide range of instructions and goals. The probabilistic nature of the LLM behavior models means that you might not be able to align the agents with your requirements. The description of the agent's behavior model is also generated using AI, so it might not be fully accurate.
 

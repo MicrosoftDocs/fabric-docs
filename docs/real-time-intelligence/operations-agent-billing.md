@@ -32,7 +32,7 @@ The following sections cover dedicated operations, usage categories, and the pau
 
 Operations agent consumes capacity based on the following factors:
 
-- **Background usage:** Refers to all operations, including direct interactions. Fabric Copilot and AI operations are treated as background tasks. For more information, see [Copilot in Fabric Consumption](../fundamentals/copilot-fabric-consumption.md#capacity-utilization-type). These operations are throttled only if the capacity exceeds its resource limits for 24 hours. In this case, background tasks are rejected, and the agent's processing halts. For details, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
+- **Background usage**: Refers to all operations, including direct interactions. Copilot in Fabric and AI operations are treated as background tasks. For more information, see [Copilot in Fabric Consumption](../fundamentals/copilot-fabric-consumption.md#capacity-utilization-type). These operations are throttled only if the capacity exceeds its resource limits for 24 hours. In this case, background tasks are rejected, and the agent's processing halts. For details, see [Throttle triggers and throttle stages](../enterprise/throttling.md#throttle-triggers-and-throttle-stages).
 
     | Azure metric name | Fabric operation name | Capacity usage rate |
     | ----------------------- | ----------------------------------------------------- | ---------------------- |
@@ -41,13 +41,13 @@ Operations agent consumes capacity based on the following factors:
     | Operations agents autonomous reasoning capacity usage CU | Operations agent autonomous reasoning | 400 CUs per 1,000 input tokens; 1600 CUs per 1,000 output tokens |
     | Not applicable | OneLake storage | Billed per GB per hour under OneLake storage |
 
-- **Other CU consumption:** Operations agents can drive CU consumption from other Fabric items or products, such as the eventhouse being monitored:
+- **Other CU consumption**: Operations agents can drive CU consumption from other Fabric items or products, such as the eventhouse being monitored:
   
-  - **Configuration phase:** Copilot in Fabric incurs usage while you generate the agent's playbook. Eventhouse usage arises from queries to identify fields and rules to monitor. Storage costs apply for saving the agent's configuration.
+  - **Configuration phase**: Copilot in Fabric incurs usage while you generate the agent's playbook. Eventhouse usage arises from queries to identify fields and rules to monitor. Storage costs apply for saving the agent's configuration.
   
-  - **Active monitoring:** After you activate the agent, the agent runs queries and tracks rules in the background, consuming the operations agent compute meter. Eventhouse charges apply for periodic queries, and storage costs cover cached query results and configurations.
+  - **Active monitoring**: After you activate the agent, the agent runs queries and tracks rules in the background, consuming the operations agent compute meter. Eventhouse charges apply for periodic queries, and storage costs cover cached query results and configurations.
   
-  - **Condition met:** When conditions are met, the agent uses its LLM for summarization and recommendations, consuming the operations agent autonomous reasoning meter. Approved actions invoke Power Automate flows, which might incur separate licensing costs based on your [Power Automate plan](https://www.microsoft.com/power-platform/products/power-automate/pricing).
+  - **Condition met**: When conditions are met, the agent uses its LLM for summarization and recommendations, consuming the operations agent autonomous reasoning meter. Approved actions invoke Power Automate flows, which might incur separate licensing costs based on your [Power Automate plan](https://www.microsoft.com/power-platform/products/power-automate/pricing).
 
 ### Pause and resume activity in your capacity
 

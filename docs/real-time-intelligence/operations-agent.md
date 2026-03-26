@@ -48,19 +48,19 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 On the **Agent setup** page, you can configure the operations agent and adjust it to your data by providing the following information:
 
-1. **Business goals:** Define the business goals that the agent should focus on. This information helps the agent understand the context and objectives of your operations.
+1. Define the business goals that the agent should focus on. This information helps the agent understand the context and objectives of your operations.
 
     :::image type="content" source="media/operations-agent/business-goals.png" alt-text="Screenshot of the business goals section on the setup page." lightbox="media/operations-agent/business-goals.png":::
 
-1. **Agent instructions:** Provide specific instructions to guide the agent's behavior and decision-making process.
+1. Provide specific instructions to guide the agent's behavior and decision-making process.
 
     :::image type="content" source="media/operations-agent/agent-instructions.png" alt-text="Screenshot of the instructions section on the setup page." lightbox="media/operations-agent/agent-instructions.png":::
 
-1. **Knowledge source:** Choose a relevant data source that the agent can analyze and learn from. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
+1. Choose a relevant data source that the agent can analyze and learn from. This choice ensures the agent has access to accurate and up-to-date information for generating insights.
 
     :::image type="content" source="media/operations-agent/knowledge-source.png" alt-text="Screenshot of the knowledge source section on the setup page." lightbox="media/operations-agent/knowledge-source.png":::
 
-1. **Actions:** Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value.
+1. Define the actions that the agent can take based on the insights it generates. Name the action and provide a description to clarify its purpose. Optionally, list the parameters that the action requires, such as a specific value.
 
     :::image type="content" source="media/operations-agent/actions.png" alt-text="Screenshot of the actions section on the setup page." lightbox="media/operations-agent/actions.png":::
 
