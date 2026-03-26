@@ -37,6 +37,8 @@ items:
       href: business-events/business-events-notebook.md
     - name: Publish business events using User Data Function
       href: business-events/business-events-user-data-function.md
+    - name: Publish business events using Eventstreams
+      href: business-events/business-events-event-stream-publisher.md
   - name: Supported sources
     href: supported-sources.md
   - name: Amazon Kinesis Data Streams 
