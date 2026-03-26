@@ -98,7 +98,7 @@ To enable the agent to contact you proactively when it identifies data that matc
 
 :::image type="content" source="media/operations-agent/teams-app.png" alt-text="Screenshot of the Fabric Operations Agent in the Teams app." lightbox="media/operations-agent/teams-app.png":::
 
-After you install the app, the agent can send messages in Teams when it identifies data that matches the specified conditions. These messages include a summary of the insights and recommended actions. You can update the recipients of these messages in the agent's configuration settings. Recipients must belong to your organization and have write permissions for the agent item in Fabric. You can find this in the operations agent item settings under **Agent behavior**.
+After you install the app, the agent can send messages in Teams when it identifies data that matches the specified conditions. These messages include a summary of the insights and recommended actions. You can update the recipients of these messages in the agent's configuration settings. Recipients must belong to your organization and have write permissions for the agent item in Fabric. You can find this setting under **Agent behavior**.
 
 :::image type="content" source="media/operations-agent/agent-behavior.png" alt-text="Screenshot of the Agent behavior option in the Fabric Operations Agent settings." lightbox="media/operations-agent/agent-behavior.png":::
 

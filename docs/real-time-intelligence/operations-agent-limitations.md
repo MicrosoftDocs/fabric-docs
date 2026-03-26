@@ -22,7 +22,7 @@ Operations agents help organizations operationalize clear business goals by cont
 
 - **Business object identification**: If the agent needs to monitor a specific business object such as a station, sensor, or personnel record, identify the column that uniquely identifies the object (for example, "StationID" or "SensorID"). Specify which table it belongs to.
 
-- **Field name quoting**: If a rule references column names that contain special characters such as underscores or hyphens, enclose the column name in quotation marks ("") to ensure that the agent identifies it correctly.
+- **Field name quoting**: If a rule references column names that contain special characters, such as underscores or hyphens, enclose the column name in quotation marks (""). This practice ensures that the agent identifies it correctly.
 
 - **Quantifiable conditions**: If a rule uses qualitative language such as "low availability" or "high temperature," replace it with a specific numeric threshold. For example, use a phrase like "fewer than 3 bikes available" or "temperature exceeds 80."
 
