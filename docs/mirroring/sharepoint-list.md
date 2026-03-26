@@ -10,9 +10,7 @@ ms.topic: overview
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Snowflake warehouse data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SharePoint data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
-
-For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see Tutorial: Configure Microsoft Fabric mirrored databases from SharePoint List.
+[Mirroring in Fabric](overview.md) provides an easy experience to avoid complex ETL (Extract Transform Load) and integrate your existing Sharepoint List data with the rest of your data in Microsoft Fabric. You can continuously replicate your existing SharePoint data directly into Fabric's OneLake. Inside Fabric, you can unlock powerful business intelligence, artificial intelligence, Data Engineering, Data Science, and data sharing scenarios.
 
 ## What analytics experiences are built in?
 
@@ -47,3 +45,7 @@ There's no charge for these components:
 You pay only for the compute you use when querying data through SQL, Power BI, or Spark, based on your Fabric Capacity.
 
 For more information, see [mirroring costs](/fabric/mirroring/overview#cost-of-mirroring) and [OneLake pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/).
+
+## Related content
+
+For a tutorial on configuring your Snowflake database for Mirroring in Fabric, see [Tutorial: Configure Microsoft Fabric mirrored databases from SharePoint List](sharepoint-list-tutorial.md).
