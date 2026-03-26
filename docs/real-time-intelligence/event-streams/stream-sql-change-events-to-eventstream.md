@@ -88,6 +88,8 @@ Both approaches require completing these steps, but with different parameters. A
 
 ### 1. Set the database to [full recovery model](/sql/relational-databases/backup-restore/recovery-models-sql-server) if it isn't already configured:
 
+This step is required only when using SQL Server 2025. For Azure SQL Database or Azure SQL Managed Instance, the setting is always FULL, so this step can be skipped.
+
 ```sql
 -- set the recovery mode as FULL
 USE <database name>;
