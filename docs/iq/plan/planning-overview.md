@@ -1,83 +1,39 @@
 ---
-title: Planning sheets in plan (preview)
-description: Learn about the Planning sheets component of the plan (preview) item for budgeting and forecasting.
-ms.date: 03/11/2026
+title: PowerTable sheets in plan (preview)
+description: Learn about the PowerTable sheets component of the plan (preview) item, including its core features and business use cases. Understand how to get started building collaborative data applications.
 ms.topic: overview
-#customer intent: As a user, I want to understand and use Planning sheets effectively.
+ms.date: 03/26/2026
+
+#customer intent: As a user, I want to know what is PowerTable, its key capabilities.
 ---
 
-# What are Planning sheets in plan (preview)?
 
-The *Planning sheets* component of plan (preview) enables organizations to implement structured, collaborative, and data-driven planning processes within their enterprise data environment.
+# PowerTable sheets in Plan (preview)
+
+The *PowerTable sheets* component of Plan (preview) is a **no-code reference and master data management and productivity app** platform in Microsoft Fabric. It enables users to build collaborative table apps directly from database tables and semantic models without writing code.
+
+PowerTable sheets provide an **Excel-like editing experience** combined with enterprise data governance. With this, users can quickly create, update and manage structured data while maintaining live synchronization with the underlying database.
+
+You can use PowerTable sheets for structured data entry, reference data management, collaborative planning, operational workflow management, project planning and execution, and automation directly within the data platform. All modifications are written back to the source system to maintain operational data synchronization.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-A Planning sheet is a structured workspace in plan that allows users to enter, update, and analyze planning data across defined business dimensions such as time, department, account, or product. Planning sheets provide a controlled environment for budgeting, forecasting, and scenario analysis while ensuring that planning data follows organizational rules and governance policies.
+### Why use PowerTable sheets?
 
-The platform is designed for business users and features a no-code, self-service architecture.
+Organizations frequently rely on spreadsheets, disconnected tools, or custom data applications to manage operational data. These approaches create challenges such as lack of governance, data silos, inconsistent change tracking, and manual workflow monitoring.
 
-## Why use Planning sheets?
+PowerTable sheets address these challenges by enabling teams to build governed data applications **directly on enterprise data platforms**. It allows organizations to manage operational data, approvals, and automation while keeping analytics and operations connected.
 
-Use Planning sheets to deliver **strategic business value** by helping your organization do the following:
+### Key capabilities
 
-* Improve forecast accuracy through data-driven planning
-* Accelerate planning cycles with streamlined workflows
-* Align cross-functional teams on shared plans and targets
-* Maintain controlled governance and approval processes
-* Reduce risks associated with manual spreadsheets
+The following table lists the core capabilities of PowerTable sheets.
 
-Planning sheets also provide **measurable operational outcomes**, including:
+<table><thead><tr><th width="264">Capability</th><th>Description</th></tr></thead><tbody><tr><td><strong>Build without code</strong></td><td><ul><li>Instant table apps from the database with live sync</li><li>Drag-and-drop interface builder</li><li>Excel-like editing experience</li><li>Forms, filters, and custom views</li><li>Lookups and calculated columns</li></ul></td></tr><tr><td><strong>Collaborate seamlessly</strong></td><td><ul><li>Multi-user concurrent editing</li><li>Approval workflows and governance</li><li>Comments, <code>@mentions</code>, and threads</li><li>Notifications through email and Microsoft Teams</li><li>Shareable bookmarks</li></ul></td></tr><tr><td><strong>Plan and execute</strong></td><td><ul><li>Project Gantt charts</li><li>Resource allocation views</li><li>Time tracking and timesheets</li><li>Task management and status tracking</li><li>Automated triggers and webhooks</li></ul></td></tr><tr><td><strong>Control and audit</strong></td><td><ul><li>Enterprise-grade permissions</li><li>Full change history and audit logs</li><li>Row-level and column-level security</li><li>Compliance-ready support for Type II SCD</li><li>Integration with OneLake for analytics</li></ul></td></tr></tbody></table>
 
-* Shortened budget and planning cycles
-* Increased reliability of forecasts
-* Reduced effort required for data reconciliation
-* Improved auditability and compliance of planning processes.
-
-### Where to use Planning sheets
-
-Plans are used in several areas of the platform:
-
-* **Budgeting**: Define annual or quarterly budgets.
-* **Forecasting**: Update projections based on current performance.
-* **Financial planning**: Model revenue, expenses, and profitability.
-* **Operational planning**: Plan metrics such as sales targets or headcount.
-* **Reporting and analysis**: Compare plan data with actual results in dashboards and reports.
-
-## Key capabilities
-
-The following table lists the core capabilities of Planning sheets.
-
-| Capability | Description | Key features |
-| --- | --- | --- |
-| **Data exploration and analysis** | Enables users to interactively explore planning data to identify trends, patterns, and anomalies. | - Filtering and sorting data <br>- Top N ranking <br>- Hierarchy navigation <br>- Grouping rows and columns <br>- Adjustable column widths and layouts |
-| **Planning and forecasting** | Supports enterprise planning workflows including budgeting, forecasting, and scenario analysis. | - Budget creation <br>- Forecast management <br>- Scenario analysis <br>- What-if simulations <br>- Rolling forecasts <br>- Version management and snapshots |
-| **Business logic and calculations** | Allows users to define formulas, calculations, and custom logic directly in planning sheets. | - Insert data input rows <br>- Add template rows across hierarchy levels <br>- Create formula rows using Excel-style expressions <br>- Insert manual input columns <br>- Create calculated columns and measures <br>- Apply quick formulas for common calculations |
-| **Data integration (InfoBridge)** | Integrates data from multiple sources to support unified planning and analytics workflows. | - Data consolidation from multiple sources <br>- Data transformations (merge, append, pivot, group) <br>- Real-time data integration <br>- Data mapping between planning sheets |
-| **Collaboration and comments**  | Enables team collaboration and review directly within the planning interface. | - Notes and annotations <br>- Comment threads <br>- `@mentions` <br>- Email notifications <br>- Comment digests |
-| **Write-back and data storage** | Allows planning inputs to be written back to external systems for persistence and integration. | - Multiple destination support <br>- Write-back logs and monitoring <br>- Secure data persistence <br>- Integration with enterprise data platforms |
-| **Approval workflows** | Provides governance for planning cycles through structured approval processes. | - Define approval flows <br>- Assign approvers <br>- Review and approve planning changes <br>- Request adjustments |
-| **Model editor** | Defines and manages the structure of a planning model by configuring dimensions, measures, hierarchies, and calculations | - Map model components to data sources <br>- Validate model configuration before deployment <br>- Maintain centralized governance of the planning model <br>- Define hierarchies for roll-ups and drill-down analysis |
-| **Cube** | Organizes and stores planning data in a multidimensional data structure. | - Analyze data across multiple dimensions <br>- Aggregate data across hierarchy levels <br>- Process large volumes of planning data efficiently |      
-
-## Overview of Planning sheet steps
-
-### Prerequisites
-
-Before you create a Planning sheet, make sure that you have the following prerequisites in place:
-* A **Fabric SQL database** to store the app metadata.
-* [Connections or data sources](../../data-factory/data-source-management.md) established to the **Fabric SQL database** and the **semantic model**.
-
-### Create a Planning sheet
-
-Follow these steps to get started with Planning sheets:
-
-1. **Create a Planning sheet**: Connect the Planning sheet to a semantic model and configure the layout.
-1. **Define planning structure**: Add rows, columns, measures, and hierarchies required for the planning model.
-1. **Add calculations and logic**: Insert formulas, calculated measures, or manual input columns.
-1. **Perform planning**: Enter budget or forecast values and analyze plan vs. actual results.
-1. **Collaborate and review**: Use comments, annotations, and approval workflows to review planning data.
-1. **Write back data**: Save finalized planning data to configured destinations.
 
 ## Next steps
 
-To create your first Planning sheet, see [Get started with Planning sheets](planning-how-to-get-started.md).
+Connect PowerTable sheets to your data with the steps in the following articles:
+
+* [Create a table app with PowerTable sheets](powertable-how-to-create-table-app.md)
+* [Connect to semantic model](powertable-how-to-connect-semantic-model.md)
