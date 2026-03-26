@@ -49,7 +49,7 @@ Protecting data throughout its lifecycle in Data Factory is crucial for maintain
 
 - **Configure data loss prevention**: Implement data loss prevention policies to identify, monitor, and protect sensitive data in your Data Factory pipelines. This helps prevent inadvertent sharing or exfiltration of sensitive information. See [Data loss prevention](/purview/dlp-powerbi-get-started).
 
-- **Secure credentials in Azure Key Vault**: Store data source credentials in Azure Key Vault instead of embedding them directly in connection strings or pipeline configurations. This centralizes and secures sensitive connection information. See [Azure Key Vault reference](azure-key-vault-reference-overview.md).
+- **Secure credentials in Azure Key Vault**: Store data source credentials in Azure Key Vault instead of embedding them directly in connection strings or pipeline configurations. This centralizes and secures sensitive connection information. See [Azure Key Vault reference](azure-key-vault-reference-configure.md).
 
 ## Logging and monitoring
 

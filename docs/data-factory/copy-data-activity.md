@@ -149,7 +149,7 @@ If the connector that you use supports mapping, you can go to **Mapping** tab to
 
 You can also select **+ New mapping** to add new mapping, select **Clear** to clear all mapping settings, and select **Reset** to reset all mapping **Source** column.
 
-For more information about data type mapping, see [Data type mapping in a copy activity](data-type-mapping.md).
+For more information about data type mapping, see [Data type mapping in a copy activity](data-type-mapping-data-movement.md).
 
 ### Configure your other settings under settings tab
 
