@@ -73,13 +73,16 @@ On the Schedule configuration page, you can specify a schedule type, schedule fr
 
 Once your Fixed schedule is configured, select **Save** to set your schedule.
 
-### Interval-based schedule
+### Interval-based schedule (preview)
 
-Interval-based schedules allow you to configure fixed, non-overlapping intervals to run your pipelines.
+Interval-based schedules (preview) allow you to configure fixed, non-overlapping intervals to run your pipelines.
+
+> [!NOTE]
+> Interval-based schedules are in Public preview.
 
 :::image type="content" source="media/pipeline-runs/interval-based-schedule-trigger-parameters.png" alt-text="Screenshot showing Trigger parameters with Window start time and Window end time for an interval-based schedule." lightbox="media/pipeline-runs/interval-based-schedule-trigger-parameters.png":::
 
-Once your Interval-based schedule is configured, select **Save** to set your schedule.
+Once your Interval-based schedule (preview) is configured, select **Save** to set your schedule.
 
 You can add up to 20 schedules for a single pipeline by selecting **Add Schedule** again after saving your first schedule. Each schedule can have different frequencies and start and end times.
 
