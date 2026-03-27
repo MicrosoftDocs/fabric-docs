@@ -31,7 +31,7 @@ For region availability of plan while in preview, see [Region availability for p
 
 Plan allows organizations to:
 
-* Perform **enterprise planning, scenario modelling, and what-if analysis** 
+* Perform **enterprise planning, scenario modeling, and what-if analysis** 
 * Model and integrate **budgets and forecasts** 
 * Automatically **write planning results back to a SQL database in Fabric** 
 * Unify **goals, plans, and actuals** on a shared semantic model 
