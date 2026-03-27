@@ -6,13 +6,13 @@ ms.topic: how-to
 #customer intent: As a user, I want to understand and use data input effectively.
 ---
 
-# Extend reports with data input
+# Extend Planning sheet with data input
 
-Data input rows and columns allow report authors to extend a report by entering values directly within the visual. These inputs support planning, forecasting, and operational scenarios where certain values must be captured manually or adjusted within the report.
+Data input rows and columns allow Planning sheet authors to extend a sheet by entering values directly within the matrix. These inputs support planning, forecasting, and operational scenarios where certain values must be captured manually or adjusted within the sheet.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Using data input rows and columns, you can capture business inputs that aren't available in the underlying dataset or need manual adjustments while maintaining the report’s hierarchy, totals, and calculations.
+Using data input rows and columns, you can capture business inputs that aren't available in the underlying dataset or need manual adjustments while maintaining the sheet's hierarchy, totals, and calculations.
 
 ## When to use data input rows and columns
 
@@ -21,7 +21,7 @@ Data input rows and columns are useful when you need to:
 * Capture manual adjustments or planning values.
 * Add business metrics that aren't available in the dataset.
 * Insert placeholder rows for future categories or products.
-* Allow business users to enter data directly in the report.
+* Allow business users to enter data directly in the Planning sheet.
 
 For example, a financial report might retrieve revenue and expenses from a database but require manual entry for values such as **shares outstanding** or newly introduced product categories.
 
@@ -29,14 +29,13 @@ For example, a financial report might retrieve revenue and expenses from a datab
 
 Before you create data input rows or columns, make sure that you have the following prerequisites in place:
 
-* The report contains a Planning sheet configured with the required dataset.
-* You have **edit permissions** on the report.
-* The report includes the **row or column hierarchy** where data input is added.
-* Data entry is enabled for the visual.
+* The Planning sheet is configured with the required dataset.
+* You have **edit permissions** in the Planning sheet.
+* The Planning sheet includes the **row or column hierarchy** where data input is to be added.
 
 ## Insert a data input row
 
-1. Select a row in the report where you want to insert the new row.
+1. Select a row in the sheet where you want to insert the new row.
 1. Go to **Insert Row** and select the **row type** to be inserted.
 
     :::image type="content" source="media/planning-how-to-input-data/insert-row.png" alt-text="Screenshot of inserting a new row and choosing a type." lightbox="media/planning-how-to-input-data/insert-row.png":::
@@ -98,11 +97,11 @@ Planning sheet supports various types of data input columns to be inserted, depe
 
 :::image type="content" source="media/planning-how-to-input-data/insert-column.png" alt-text="Screenshot of the Insert Column configuration.":::
 
-### Steps to insert the column
+### Steps to insert a data input column
 
 1. Go to **Planning > Insert Column**.
 1. Select the data input column you want to configure.
-1. Insert a data input **Number** column. You can insert an empty series and enter your values, or copy from another series in the visual.
+1. Insert a data input **Number** column. You can insert an empty series and enter your values, or copy from another series in the sheet.
 
     :::image type="content" source="media/planning-how-to-input-data/insert-number-column.png" alt-text="Screenshot of inserting a new column with a Number input.":::
 
@@ -110,15 +109,20 @@ Planning sheet supports various types of data input columns to be inserted, depe
 
     :::image type="content" source="media/planning-how-to-input-data/number-column.png" alt-text="Screenshot of the new Number column in the Planning sheet." lightbox="media/planning-how-to-input-data/number-column.png":::
 
-1. A **Formula measure** for variance is created. Similarly, all other Data input column measures can be inserted.
+1. Double-click and enter the values in the cell.
 
-    :::image type="content" source="media/planning-how-to-input-data/formula-measure.png" alt-text="Screenshot of a column displaying a Formula Measure of variance." lightbox="media/planning-how-to-input-data/formula-measure.png":::
+    :::image type="content" source="media/planning-how-to-input-data/enter-value.png" alt-text="Screenshot of enetring value in the new Number column in the Planning sheet." lightbox="media/planning-how-to-input-data/enter-value.png":::
+
+1. Similarly you can insert all other types of Data input measures/columns.
 
 ### Configure column properties
 
 Columns have the following configurable properties:
 
 * **Title**: Name of the input column displayed in the Planning sheet.
+* **Insert as**:
+* **Visual Measure -** A column is added at each column hierarchy.
+  * **Visual Column -** A single column is added at the end outside the column hierarchy.
 * **Input type**: Specifies the data type for the column (such as *Number*).
 * **Row aggregation type**: Defines how values roll up across hierarchy levels (such as *Sum*).
 * **Distribute parent value to children**: Automatically allocates parent values proportionally to child members.
@@ -127,4 +131,4 @@ Columns have the following configurable properties:
 * **Maximum Value**: Sets the highest allowable input value for validation.
 * **Static Value**: Set a fixed value.
 
-:::image type="content" source="media/planning-how-to-input-data/data-input.png" alt-text="Screenshot of the column settings configurable from the Data Input pane.":::
+:::image type="content" source="media/planning-how-to-input-data/column-properties.png" alt-text="Screenshot of the column settings configurable from the Data Input pane.":::
