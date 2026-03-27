@@ -1,7 +1,7 @@
 ---
 title: InfoBridge in plan (preview)
 description: Learn about the InfoBridge component of the plan (preview) item. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports easily.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: overview
 #customer intent: As a user, I want to use InfoBridge to consolidate my plans, budgets, simulations, and forecasts across source systems and reports.
 ---
@@ -43,33 +43,6 @@ The following table lists the core capabilities of InfoBridge.
 | **Collaborative planning** | Create forecasts, budgets, and plans across multiple planning sheets and integrate them with InfoBridge. |
 | **Advanced data transformation** | Join, merge, append, group, and pivot rows and columns. |
 | **Data cleansing functions** | Built-in data cleansing functions, such as rounding, text manipulation, find-and-replace, and sorting to help standardize, clean, and organize datasets. |
-
-## Overview of InfoBridge steps
-
-### Prerequisites
-
-Before you create an InfoBridge, make sure that you have the following prerequisites in place:
-
-* **Access to the InfoBridge-enabled environment** within your planning or reporting platform.
-* **Required permissions** to create or modify data models, reports, or Planning sheets.
-* **Source datasets available** (for example: sales data, expense data, product-level reports, or operational datasets).
-* **Configured data connections** to the required data sources (such as databases, files, or existing reports).
-* **Basic understanding of the data structure** (tables, fields, and relationships).
-* **Existing reports or Planning sheets** where the InfoBridge output is used.
-* **Defined planning or transformation requirements** (such as aggregations, mappings, or calculations).
-
-### Create an InfoBridge
-
-Follow these steps to get started with InfoBridge:
-
-1. **Identify the source data**: Select the datasets or reports that act as the input for the InfoBridge.
-1. **Define the transformation logic**: Determine how the data needs to be transformed, mapped, or aggregated before being used in planning or reporting.
-1. **Create the InfoBridge configuration**: Set up the InfoBridge by defining the source tables, target tables, and transformation rules.
-1. **Map fields and dimensions**: Map the required fields between the source data and the destination planning structure.
-1. **Configure aggregations or calculations**: Add any required calculations, roll-ups, or data transformations needed for the planning model.
-1. **Connect to the target report or Planning sheet**: Link the InfoBridge output to the report, dashboard, or Planning sheet where the data is used.
-1. **Validate the data flow**: Test the InfoBridge to ensure that the data is transformed and transferred correctly.
-1. **Publish and use the InfoBridge**: Save and deploy the configuration so users can start using the updated data in their planning and reporting workflows.
 
 ## Next steps
  
