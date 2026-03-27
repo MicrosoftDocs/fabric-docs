@@ -185,6 +185,12 @@ items:
       href: sap-datasphere-tutorial.md
     - name: Limitations in mirrored SAP
       href: sap-limitations.md
+- name: Mirroring SharePoint List
+  items:
+    - name: Mirrored SharePoint List
+      href: sharepoint-list.md
+    - name: SharePoint List tutorial
+      href: sharepoint-list-tutorial.md
 - name: Mirroring Snowflake
   items: 
     - name: Mirrored warehouses from Snowflake
