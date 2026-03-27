@@ -1,7 +1,7 @@
 ---
 title: Set up access control
 description: Learn how to configure row and column permissions in PowerTable to control data security and secure access to table apps.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to configure row and column access control in PowerTable so that I can restrict who can view, edit or delete specific data in a table app.
 ---
@@ -98,8 +98,6 @@ You can use the **audit log** to keep track of all changes, including the list o
 
 ### Finish the rule
 
-In addition to row-level access control, you can also set up approval workflows so that every change made by a user goes through a review and approval process.
-
 After configuring the add, update, and delete permissions, select **Save**.
 
 ## Column access
@@ -119,3 +117,5 @@ To set up access permissions to the columns,
 1. You can add multiple users. You can also enter the email address of an organizational group or an Active Directory list.
 1. Clear **Allow Edits** to prevent users from editing specific columns, such as sensitive data or critical information that should remain unchanged. As a best practice, keep the **primary key** field locked so that it can't be edited.
 1. Select **Save** to save the settings.
+
+In addition to row-level access control, you can also set up [approval workflows](../plan/powertable-how-to-configure-approval-workflow.md) so that every change made by a user goes through a review and approval process.
