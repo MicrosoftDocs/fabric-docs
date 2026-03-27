@@ -23,7 +23,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 * An [eventhouse](create-eventhouse.md) in your workspace.
 * A [KQL database](create-database.md) in your eventhouse.
 * A Microsoft Teams account.
-* Tenant admin permissions enabled for operations agent preview, and Microsoft Copilot and Azure OpenAI.
+* Fabric admin permissions enabled for operations agent preview, and Microsoft Copilot and Azure OpenAI.
 * The cross-geo processing and storage for AI as per [data agent tenant settings](../data-science/data-agent-tenant-settings.md). This prerequisite only applies if your Fabric capacity isn't provisioned in US or EU regions.  
 
     :::image type="content" source="media/operations-agent/admin.png" alt-text="Screenshot of the Admin portal to enable permissions.":::
@@ -86,7 +86,7 @@ On the **Agent setup** page, you can configure the operations agent and adjust i
 
 When you finish the configuration, save the agent to generate its playbook. The playbook outlines the goals, instructions, data, and actions you defined, providing the agent with a clear understanding of its tasks.
 
-You can see properties and the field that they're mapped to from the underlying data. When you review the rules, you might see it refer to the name of the property rather than the underlying column. Take care to confirm the model and rules match your requirements.
+You can see properties and the fields that they're mapped to from the underlying data. When you review the rules, you might see it refer to the name of the property rather than the underlying column. Take care to confirm the model and rules match your requirements.
 
 :::image type="content" source="media/operations-agent/properties.png" alt-text="Screenshot of the playbook and its properties." lightbox="media/operations-agent/properties.png":::
 
