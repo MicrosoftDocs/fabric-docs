@@ -45,7 +45,7 @@ Traditional enterprise planning typically relies on multiple tools:
 
 * BI platforms for reporting on historical data
 * Separate planning or CPM tools for forecasts and budgets
-* Spreadsheets for modelling and scenario analysis
+* Spreadsheets for modeling and scenario analysis
 
 This fragmented approach introduces data silos, manual reconciliation, delayed insights, and governance challenges.
 
