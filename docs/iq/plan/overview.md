@@ -53,7 +53,7 @@ Plan addresses these challenges by bringing planning directly into Fabric.
 
 Historical data, real-time signals, and future projections are combined in one platform, using consistent definitions and governed access.
 
-### Unified Data Foundation
+### Unified data foundation
 
 Plan is built on Fabric semantic models, ensuring that planning and analytics share the same trusted business logic.
 
