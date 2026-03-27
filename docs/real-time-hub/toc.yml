@@ -163,10 +163,12 @@ items:
       href: set-alerts-azure-blob-storage-events.md
   - name: Consume Business events
     href: business-events/consume-business-events-from-activator.md
-  - name: Subscribe permission for Fabric/Azure events
+  - name: Subscribe permission for Azure and Fabric events
     href: fabric-events-subscribe-permission.md   
-  - name: Microsoft Fabric events capacity consumption
+  - name: Events capacity consumption
     href: fabric-events-capacity-consumption.md
+  - name: Events delivery guarantees
+    href: fabric-event-delivery-guarantees.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub
