@@ -27,7 +27,7 @@ For region availability of plan while in preview, see [Region availability for p
 > [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
 
-### What Plan Enables
+### Why use Planning sheets?
 
 Plan allows organizations to:
 
