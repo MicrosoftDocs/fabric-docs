@@ -1,7 +1,7 @@
 ---
 title: InfoBridge in plan (preview)
 description: Learn about the InfoBridge component of the plan (preview) item. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports easily.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: overview
 #customer intent: As a user, I want to use InfoBridge to consolidate my plans, budgets, simulations, and forecasts across source systems and reports.
 ---
