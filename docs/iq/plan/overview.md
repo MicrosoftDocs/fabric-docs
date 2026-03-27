@@ -14,9 +14,9 @@ Plan is an Enterprise and Corporate Performance Management (EPM & CPM) solution 
 
 Plan brings together three integrated capabilities in a single unified suite:
 
-1. **Planning Applications**
-2. **PowerTable** for data management and data applications
-3. **Intelligence** for integrated reporting and insights
+1. Planning for creating and managing plans such as budgets, forecasts, and scenarios
+2. PowerTable for data management and data applications
+3. Intelligence for integrated reporting and insights
 
 By planning directly in Microsoft Fabric, Plan removes the need for separate planning tools or spreadsheet‑based workflows. Organizations can bring goals, plans, and actual results together on shared semantic models, making it easier to move from manual planning to continuous, data‑driven decisions.
 
@@ -31,13 +31,13 @@ To learn which regions support Plan during preview, see [Region availability for
 
 Plan allows organizations to:
 
-* Perform **enterprise planning, scenario modeling, and what-if analysis** 
-* Model and integrate **budgets and forecasts** 
-* Automatically **write planning results back to a SQL database in Fabric** 
-* Unify **goals, plans, and actuals** on a shared semantic model 
-* Manage **forward-looking reference data** 
-* Perform **variance reporting and analysis** 
-* Operate entirely within a **single, governed Fabric environment**
+* Perform enterprise planning, scenario modeling, and what-if analysis
+* Model and integrate budgets and forecasts 
+* Automatically write planning results back to a SQL database in Fabric
+* Unify goals, plans, and actuals on a shared semantic model 
+* Manage forward-looking reference data 
+* Perform variance reporting and analysis 
+* Operate entirely within a single, governed Fabric environment
 
 ### Why Plan in Fabric
 
@@ -59,9 +59,9 @@ Plan is built on Fabric semantic models, ensuring that planning and analytics sh
 
 With Plan, organizations can combine:
 
-* **Historical data** from Fabric analytics
-* **Real-time** or **refreshed operational data**
-* **Future projections and assumptions**
+* Historical data from Fabric analytics
+* Real-time or refreshed operational data
+* Future projections and assumptions
 
 Because plans are stored and governed in Fabric, they remain aligned with enterprise reporting and downstream analytics.
 
@@ -69,15 +69,15 @@ Because plans are stored and governed in Fabric, they remain aligned with enterp
 
 Plan is designed to be accessible to business users while meeting enterprise requirements.
 
-**For business users:**
+For business users:
 
 * Native experience inside Fabric
-* **No code / low code** interactions
-* Familiar **Excel-like interface**
+* No code / low code interactions
+* Familiar Excel-like interface
 
 
 
-**For enterprises:**
+For enterprises:
 
 * Centralized governance
 * Security and access controls
