@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Workspace outbound access protection for Data Science (preview)
+# Workspace outbound access protection for Data Science
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from items in your workspace to external resources. When this feature is enabled, [Data Science items](#supported-data-science-item-types) such as Machine Learning Experiments and Machine Learning Models can be created and used within the workspace.
 
