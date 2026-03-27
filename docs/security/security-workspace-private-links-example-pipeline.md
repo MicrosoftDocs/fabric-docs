@@ -48,7 +48,7 @@ POST https://{workspaceFQDN}/v1/workspaces/{workspaceID}/managedPrivateEndpoints
 
 In that code, `{workspaceFQDN}` is `{workspaceID}.z{xy}.w.api.fabric.microsoft.com`.
 
-For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb/managedPrivateEndpoints`.
+For example: `POST https://aaaaaaaa000011112222bbbbbbbbbbbb.zaa.w.api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/managedPrivateEndpoints`.
 
 The `targetPrivateLinkResourceId` parameter is the resource ID of the Azure Private Link service in the restricted workspace. To create a managed private endpoint to the target workspace, you need this resource ID.
 

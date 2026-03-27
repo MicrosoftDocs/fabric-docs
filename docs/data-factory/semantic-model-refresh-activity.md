@@ -62,7 +62,7 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 1. Select your **Workspace** and **Dataset** to finish setting up the activity. For more options, open the **Advanced** section.
 
    - In **Advanced**, you'll see **Wait on completion** turned *on* by default. This option lets the activity wait until the refresh finishes before moving on.
-   - You can also set values for **Max parallelism** and **Retry Count**, and choose whether to commit the refresh all at once (**Transactional**) or in batches (**Partial Batch**).
+   - You can also set values for **Max parallelism**, **Retry Count**, **Semantic model refresh timeout**, and choose whether to commit the refresh all at once (**Transactional**) or in batches (**Partial Batch**).
 
    > [!NOTE]
    > By default, the semantic model refresh activity runs a full refresh when triggered from the pipeline.

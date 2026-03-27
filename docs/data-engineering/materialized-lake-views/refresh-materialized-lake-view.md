@@ -101,13 +101,14 @@ Incremental refresh works when your materialized lake view definition uses only 
 
 | SQL Construct | Remark |
 |---|---|
-| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh: **unsupported aggregate functions** (`AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). `SUM()` and `COUNT()` are supported — see GROUP BY row. |
+| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh: **unsupported aggregate functions** (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`GROUP BY`**, **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). |
 | FROM | |
 | WHERE | Only deterministic built-in functions are supported. |
 | INNER JOIN | |
 | UNION ALL | |
 | Data quality constraints | Only deterministic built-in functions are supported in constraints. |
-| WITH | Common table expressions are supported with the above supported clauses. |
+| Subquery | Subqueries in expressions (SELECT, WHERE) lead to full refresh. | 
+| WITH | Common table expressions are supported. |
 
 
 > [!NOTE]

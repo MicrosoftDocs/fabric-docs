@@ -205,5 +205,5 @@ else:
 ## Related content
 
 - [Custom SQL Pools](custom-sql-pools.md)
-- [SQL Pools Configuration API](/rest/api/fabric/warehouse/sql-pools)
+- [SQL Pools Configuration API](/rest/api/fabric/warehouse/items)
 - [Workload Management](workload-management.md)

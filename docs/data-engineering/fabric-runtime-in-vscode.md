@@ -13,7 +13,7 @@ For Fabric runtime 1.1 and 1.2, two local conda environments are created by defa
 
 For Fabric runtime 1.3 and higher, the local conda environment is not created. You can run the notebook directly on the remote Spark compute by selecting the new entry in the Jupyter kernel list. You can select this kernel to run the notebook or Spark Job Definition on the remote Spark compute.
 
- :::image type="content" source="media\vscode\fabric-runtime-kernel.png" alt-text="Screenshot showing fabric runtime kernel." lightbox="media/vscode/fabric-runtime-kernel.png":::
+ :::image type="content" source="media\vs-code\fabric-runtime-kernel.png" alt-text="Screenshot showing fabric runtime kernel." lightbox="media\vs-code\fabric-runtime-kernel.png":::
 
 ### Considerations for choosing local conda environment or remote Spark compute
 

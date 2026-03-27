@@ -10,7 +10,7 @@ ms.date: 2/23/2026
 ms.search.form: 
 ---
 
-# What is Fabric Maps? (preview)
+# What is Fabric Maps?
 
 Microsoft Fabric Maps let you visualize real-time and historical location data in Microsoft Fabric, helping you monitor live events, analyze spatial patterns, and understand geographic context alongside time-based insights.
 

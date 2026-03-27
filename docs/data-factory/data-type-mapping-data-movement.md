@@ -45,8 +45,3 @@ To learn the detailed data type conversions for a particular connector, go to th
 
 > [!NOTE]
 > Currently such data type conversion is supported when copying between tabular data. Hierarchical sources/destinations are not supported, which means there is no system-defined data type conversion between source and destination interim types.
-
-
-## Related content
-
- - [Data type mapping in a copy activity](data-type-mapping.md)

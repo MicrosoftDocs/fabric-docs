@@ -60,9 +60,9 @@ items:
   - name: Shortcut transformations
     items: 
     - name: Transform structured data
-      href: ./shortcuts-file-transformations/transformations.md
+      href: ./shortcuts/transformations.md
     - name: Transform unstructured data with AI
-      href: ./shortcuts-ai-transformations/ai-transformations.md
+      href: ./shortcuts/transformations-ai.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?

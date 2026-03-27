@@ -13,6 +13,8 @@ SQL Server Integration Services (SSIS) is a widely used ETL tool that lets you d
 
 Over time, organizations accumulate a considerable number of SSIS packages that serve different business purposes. The **Invoke SSIS Package** activity in Data Factory for Microsoft Fabric lets you move existing SSIS workloads into Fabric with minimal changes.
 
+> [!VIDEO https://www.youtube.com/embed/sgvtMtMU6og]
+
 > [!IMPORTANT]
 > The Invoke SSIS Package activity is currently in **preview**. Preview features may have limited functionality and are subject to change before general availability.
 
@@ -20,8 +22,8 @@ Over time, organizations accumulate a considerable number of SSIS packages that 
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-- A [workspace](../get-started/create-workspaces.md) is created.
+- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
+- A [workspace](../fundamentals/create-workspaces.md) is created.
 - Your SSIS packages (*.dtsx* files) are ready. If you also use package configuration files (*.dtsConfig*), have those available as well.
 
 ## Step 1 – Move SSIS packages to OneLake
