@@ -114,8 +114,6 @@ To resolve this:
     1. Navigate to Azure Arc (classic) and SQL servers. Then select your **Arc-enabled SQL Server instance** and select **Microsoft Entra ID** tab.
     1. Uncheck the **Use a primary managed identity** box and select **Save**.
 
-        :::image type="content" source="media/troubleshoot/use-a-primary-managed-identity.png" alt-text="Screenshot of the Use a primary managed identity option in the SQL server instance.":::
-
 1. Run the following query in your SQL Server instance repeatedly until it returns no rows:  
 
     ```sql
@@ -124,6 +122,9 @@ To resolve this:
 
 1. Return to the portal using the URL https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId go to your **Arc-enabled SQL Server instance**, and select the **Microsoft Entra ID** tab.
 1. Check **Use primary managed identity** and select **Save**.
+
+    :::image type="content" source="media/troubleshoot/use-a-primary-managed-identity.png" alt-text="Screenshot of the Use a primary managed identity option in the SQL server instance.":::
+
 1. Run the following query (the same as before) until it returns **exactly one row**.
 
     ```sql
