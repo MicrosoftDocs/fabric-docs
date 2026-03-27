@@ -94,7 +94,7 @@ Plan consists of four primary components that support end-to-end planning workfl
 
 ### Planning Sheets
 
-Planning Sheets are used for budgeting, forecasting, and scenario modelling. They allow users to define assumptions, inputs, and calculated outcomes in a familiar, spreadsheet‑like experience.
+Planning Sheets are used for budgeting, forecasting, and scenario modeling. They allow users to define assumptions, inputs, and calculated outcomes in a familiar, spreadsheet‑like experience.
 
 ### PowerTable Sheets
 
