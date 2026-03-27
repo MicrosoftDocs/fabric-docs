@@ -10,7 +10,7 @@ ms.topic: overview
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-**Plan** is an Enterprise and Corporate Performance Management (EPM & CPM) solution built directly into **Microsoft Fabric**. It enables organizations to create, manage, and analyze plans—such as budgets, forecasts, and scenarios—within the same governed platform used for data, analytics, and AI.
+Plan is an Enterprise and Corporate Performance Management (EPM & CPM) solution built directly into Microsoft Fabric. It enables organizations to create, manage, and analyze plans such as budgets, forecasts, and scenarios within the same governed platform used for data, analytics, and AI.
 
 Plan brings together three integrated capabilities in a single unified suite:
 
