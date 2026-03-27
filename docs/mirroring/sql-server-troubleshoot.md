@@ -95,6 +95,43 @@ In SQL Server 2025, you can create a resource governor pool to manage and cap th
 - To get started, see [Optimize performance of mirrored databases from SQL Server](sql-server-performance.md#resource-governor-for-sql-server-mirroring).
 - For more information, see [Resource governor](/sql/relational-databases/resource-governor/resource-governor?view=sql-server-ver17&preserve-view=true).
 
+### PowerBI user with prefix undefined not found error
+
+When creating a new mirrored database SQL Server, the creation might fail with the following error:
+
+`Unable to grant required permission to the source server. PowerBI user with prefix undefined not found.`
+
+:::image type="content" source="media/troubleshoot/grant-permission-error.png" alt-text="Screenshot of the PowerBI user with prefix undefined not found error.":::
+
+To resolve this:
+
+1. In Fabric portal, cancel the dialog and delete the mirrored database artifact in the workspace.
+1. In Azure portal, open the URL: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId
+1. 
+    >[!IMPORTANT]
+    >You need to use that specific URL and not the default.
+
+    1. Navigate to Azure Arc (classic) and SQL servers. Then select your **Arc-enabled SQL Server instance** and select **Microsoft Entra ID** tab.
+    1. Uncheck the **Use a primary managed identity** box and select **Save**.
+
+        :::image type="content" source="media/troubleshoot/use-a-primary-managed-identity.png" alt-text="Screenshot of the Use a primary managed identity option in the SQL server instance.":::
+
+1. Run the following query in your SQL Server instance repeatedly until it returns no rows:  
+
+    ```sql
+    SELECT * FROM sys.dm_server_managed_identities
+    ```
+
+1. Return to the portal using the URL https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId go to your **Arc-enabled SQL Server instance**, and select the **Microsoft Entra ID** tab.
+1. Check **Use primary managed identity** and select **Save**.
+1. Run the following query (the same as before) until it returns **exactly one row**.
+
+    ```sql
+    SELECT * FROM sys.dm_server_managed_identities
+    ```
+
+1. In the Fabric portal, setup SQL Server Mirroring to Fabric, which should now succeed without the error.
+
 ## [SQL Server 2016-2022](#tab/sql201622)
 
 ## Troubleshooting Fabric Mirroring in SQL Server 2016-2022
