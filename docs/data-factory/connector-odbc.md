@@ -68,7 +68,7 @@ For specific instructions to set up your connection in Manage connections and ga
 
 1. From the page header in Data Integration service, select **Settings** :::image type="icon" source="./media/connector-common/settings.png"::: > **Manage connections and gateways**
 
-   :::image type="content" source="./media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open "Manage connections and gateways".":::
+   :::image type="content" source="./media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open Manage connections and gateways.":::
 
 1. Select **New** at the top of the ribbon to add a new data source.
 
