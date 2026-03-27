@@ -33,7 +33,7 @@ Plan allows organizations to:
 
 * Perform **enterprise planning, scenario modelling, and what-if analysis** 
 * Model and integrate **budgets and forecasts** 
-* Automatically **write planning results back to Fabric SQL** 
+* Automatically **write planning results back to a SQL database in Fabric** 
 * Unify **goals, plans, and actuals** on a shared semantic model 
 * Manage **forward-looking reference data** 
 * Perform **variance reporting and analysis** 
