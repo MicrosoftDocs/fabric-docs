@@ -95,7 +95,7 @@ In SQL Server 2025, you can create a resource governor pool to manage and cap th
 - To get started, see [Optimize performance of mirrored databases from SQL Server](sql-server-performance.md#resource-governor-for-sql-server-mirroring).
 - For more information, see [Resource governor](/sql/relational-databases/resource-governor/resource-governor?view=sql-server-ver17&preserve-view=true).
 
-### PowerBI user with prefix undefined not found error
+### Unable to grant required permission to the source server
 
 When creating a new mirrored database SQL Server, the creation might fail with the following error:
 
@@ -106,8 +106,8 @@ When creating a new mirrored database SQL Server, the creation might fail with t
 To resolve this:
 
 1. In Fabric portal, cancel the dialog and delete the mirrored database artifact in the workspace.
-1. In Azure portal, open the URL: https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId
-1. 
+1. In Azure portal, open the URL: https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId
+
     >[!IMPORTANT]
     >You need to use that specific URL and not the default.
 
@@ -122,7 +122,7 @@ To resolve this:
     SELECT * FROM sys.dm_server_managed_identities
     ```
 
-1. Return to the portal using the URL https://ms.portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId go to your **Arc-enabled SQL Server instance**, and select the **Microsoft Entra ID** tab.
+1. Return to the portal using the URL https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_Azure_HybridData_Platform=entraMIAppId go to your **Arc-enabled SQL Server instance**, and select the **Microsoft Entra ID** tab.
 1. Check **Use primary managed identity** and select **Save**.
 1. Run the following query (the same as before) until it returns **exactly one row**.
 
