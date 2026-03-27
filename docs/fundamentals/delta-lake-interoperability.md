@@ -31,6 +31,7 @@ The following matrix shows key Delta Lake features and its availability on each 
 |Data warehouse Delta Lake export|Name: Yes<br/>ID: No|Yes|Yes|Yes|Read: N/A (not applicable)<br/>Write: No|No|No|Reader: 3<br/>Writer: 7<br/>Deletion Vectors,<br/>Column Mappings (name)|
 |SQL analytics endpoint|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|N/A (not applicable)|Read: Yes<br/>Write: N/A (not applicable)|Yes|No|N/A (not applicable)|
 |Lakehouse explorer and preview|Name: Yes<br/>ID: No|Yes|N/A (not applicable)|Yes|Read: Yes<br/>Write: N/A (not applicable)|Yes|Yes|N/A (not applicable)|
+|Fabric Spark Runtime 2.0|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes|Yes|Reader: 3<br/>Writer: 7<br/>Deletion Vectors|
 |Fabric Spark Runtime 1.3|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
 |Fabric Spark Runtime 1.2|Name: Yes<br/>ID: Yes|Yes|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|Yes|Reader: 1<br/>Writer: 2|
 |Fabric Spark Runtime 1.1|Name: Yes<br/>ID: Yes|No|Yes|Yes|Read: Yes<br/>Write: Yes|Yes, read only|No|Reader: 1<br/>Writer: 2|
@@ -57,7 +58,7 @@ Currently, Fabric doesn't support these Delta Lake features:
 * Delta Lake 3.x Uniform. This feature is supported only in the Data Engineering Spark-compute (Notebooks, Spark Jobs).
 * Identity columns writing (Azure Databricks feature)
 * Lakeflow Spark Declarative Pipelines (Azure Databricks feature)
-* Delta Lake 4.x features: Type widening, collations, variant type, coordinated commits.
+* Delta Lake 4.x features outside of Lakehouse and Spark Notebooks and Jobs: Type widening, collations, variant type, coordinated commits, etc.
 
 ## Special characters on table names
 
