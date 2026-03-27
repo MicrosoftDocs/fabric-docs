@@ -554,9 +554,9 @@
                 href: connector-odata.md
               - name: Configure in a pipeline Copy activity
                 href: connector-odata-copy-activity.md
-          - name: Odbc
+          - name: ODBC
             items: 
-              - name: Odbc - Overview
+              - name: ODBC - Overview
                 href: connector-odbc-overview.md
               - name: Set up your connection
                 href: connector-odbc.md
