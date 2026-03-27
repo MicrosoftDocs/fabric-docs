@@ -22,7 +22,7 @@ By planning directly in Microsoft Fabric, Plan removes the need for separate pla
 
 By combining historical data, real-time signals, and future projections in a single environment, Plan creates an AI‑ready foundation for smarter decisions.
 
-For region availability of plan while in preview, see [Region availability for plan (preview)](overview-regions.md).
+To learn which regions support Plan during preview, see [Region availability for plan (preview)](overview-regions.md).
 
 > [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
