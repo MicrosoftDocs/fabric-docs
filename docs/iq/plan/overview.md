@@ -18,7 +18,7 @@ Plan brings together three integrated capabilities in a single unified suite:
 2. **PowerTable** for data management and data applications
 3. **Intelligence** for integrated reporting and insights
 
-By planning natively in Fabric, Plan eliminates the need for separate planning systems and spreadsheet-driven workflows. Organizations can unify **goals, plans**, and **actuals** on shared semantic models, enabling a shift from manual planning to **continuous & autonomous decision-making.** 
+By planning directly in Microsoft Fabric, Plan removes the need for separate planning tools or spreadsheet‑based workflows. Organizations can bring goals, plans, and actual results together on shared semantic models, making it easier to move from manual planning to continuous, data‑driven decisions.
 
 Plan completes a **full circle, future-ready data foundation** by unifying historical data, real-time signals, and forward-looking projections in a single environment that is **AI agent–ready by design**.
 
