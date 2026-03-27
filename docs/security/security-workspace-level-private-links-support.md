@@ -117,27 +117,31 @@ Create and manage warehouses in workspaces enabled with private links by using t
 #### [REST API](#tab/rest-apis-15)
 * [Warehouse REST API](/rest/api/fabric/warehouse/items)
 * [Items - REST API (WarehouseSnapshot)](/rest/api/fabric/warehousesnapshot/items)
-* To get the workspace private link service connection string for a warehouse:
-   [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
 ---
 
 To use the warehouse connection string with a workspace-level private link, add z{xy} to the regular warehouse connection string. For example:
 
-```http
-https://{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
+```
+{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
 ```
 
-Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio.
+* To get the workspace private link service connection string for a warehouse:
+   [Get Connection String - REST API (Warehouse)](/rest/api/fabric/warehouse/items/get-connection-string)
+
+Using the warehouse connection string, you can also access a warehouse via the SQL Tabular Data Stream (TDS) endpoint in tools such as SQL Server Management Studio. All SQL endpoints and warehouses in a workspace share the same connection string hostname for TDS connectivity.
+When using the REST API to retrieve the connection string use the `privateLinkType=Workspace` flag to get the workspace private link connection string.
 
 ### SQL Endpoint support
 
-Find the workspace private link service connection string for a SQL Endpoint by using the Fabric portal or REST API.
+To use the SQL Endpoint connection string with a workspace-level private link, add z{xy} to the regular SQL Endpoint connection string. For example:
 
-#### [Fabric portal](#tab/fabric-portal-3)
-* [Find the Connection String (SQL Endpoint)](/fabric/data-warehouse/how-to-connect#find-the-warehouse-connection-string)
-#### [REST API](#tab/rest-apis-3)
-* [Items - List SQL Endpoints](/rest/api/fabric/sqlendpoint/items/list-sql-endpoints)
-* [Items - Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+```
+{GUID}-{GUID}.z{xy}.datawarehouse.fabric.microsoft.com
+```
+
+* To get the workspace private link service connection string for a SQL Endpoint:
+  [Items - Get Connection String (SQL Endpoint)](/rest/api/fabric/sqlendpoint/items/get-connection-string)
+
 ---
 
 ### Notebook support
