@@ -427,7 +427,17 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
 
 You can use customer-managed keys (CMK) stored in Azure Key Vault to add an additional layer of encryption on top of Microsoft-managed keys for data at rest. In the event that Fabric becomes inaccessible or inoperable in a region, its components will fail over to a backup instance. During failover, the CMK feature supports read-only operations. As long as the Azure Key Vault service remains healthy and permissions to the vault are intact, Fabric will continue to connect to your key and allow you to read data normally. This means the following operations aren't supported during failover: enabling and disabling the workspace CMK setting and updating the key. 
 
+### Ontology
 
+Ontology items from the primary region remain unavailable to customers and the Ontology items aren't replicated to the secondary region.
+
+If you want to recover a Ontology item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Ontology item with your Git repo.
+
+During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Ontology item in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step brings the Ontology item back to life.
+
+> [!NOTE]
+> If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) to recover them first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
+> 
 
 ## Related information
 
