@@ -20,7 +20,7 @@ Plan brings together three integrated capabilities in a single unified suite:
 
 By planning directly in Microsoft Fabric, Plan removes the need for separate planning tools or spreadsheet‑based workflows. Organizations can bring goals, plans, and actual results together on shared semantic models, making it easier to move from manual planning to continuous, data‑driven decisions.
 
-Plan completes a **full circle, future-ready data foundation** by unifying historical data, real-time signals, and forward-looking projections in a single environment that is **AI agent–ready by design**.
+By combining historical data, real-time signals, and future projections in a single environment, Plan creates an AI‑ready foundation for smarter decisions.
 
 For region availability of plan while in preview, see [Region availability for plan (preview)](overview-regions.md).
 
