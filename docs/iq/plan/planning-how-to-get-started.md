@@ -1,7 +1,7 @@
 ---
 title: Get started with Planning sheets
 description: Learn how to get started with your first Planning sheet in plan (preview). Discover how to create a Planning sheet, connect to your semantic model, and perform planning, budgeting, forecasting, and data analysis.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: how-to
 ---
 
@@ -16,7 +16,7 @@ This article describes how to get started with your first Planning sheet in plan
 Before you set up Planning sheets, make sure you have the following prerequisites in place:
 
 * Create your individual [connections or data sources](../../data-factory/data-source-management.md) to connect with a [Fabric SQL database](../../database/sql/overview.md) and [Power BI semantic model](../../data-warehouse/semantic-models.md).
-* [Create a Fabric SQL database](../../database/sql/create.md) in your workspace. This database stores your plan report's metadata.
+* A Fabric SQL database is auto-created in your workspace. This database stores your plan report's metadata.
 
 > [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
@@ -55,15 +55,6 @@ You can share the created connection and manage the user permissions.
 
 This connection is used to connect to your semantic models when you create a plan.
 
-## Create a SQL connection within the workspace
-
-1. Start in your Fabric workspace.
-1. Select **+ New item** and choose **SQL database**.
-
-    :::image type="content" source="media/planning-sheet-how-to-get-started/new-sql-database-1.png" alt-text="Screenshot of creating a new SQL database in Fabric." lightbox="media/planning-sheet-how-to-get-started/new-sql-database-1.png":::
-
-1. Name your database and **Create** it.
-
 ## Create Planning sheet
 
 1. Start in your Fabric workspace.
@@ -80,7 +71,9 @@ This connection is used to connect to your semantic models when you create a
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-3.png" alt-text="Screenshot of selecting an existing Fabric SQL Connection.":::
 
-1. **Select** and **Add** the database to store your items.
+1. **Select** the database to store your items and click **Add**
+[!NOTE]
+> The database is automatically created when a Planning item is created.
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing the database details.":::
 
@@ -88,14 +81,16 @@ This connection is used to connect to your semantic models when you create a
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-5.png" alt-text="Screenshot of the getting started options.":::
 
-To connect a Planning sheet to a semantic model, follow these steps:
+## Connect a Planning sheet to a semantic model
 
-1. Select **Add** and **Connect** to your semantic model connection.
+1. Click **Add** and **Connect** to your semantic model connection.
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-6.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-sheet-how-to-get-started/new-plan-6.png":::
 
-1. Choose the semantic model and select **Add**.
+1. Select the semantic model and click **Add**.
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-7.png" alt-text="Screenshot of choosing a semantic model.":::
 
 1. **Add** semantic model **data** into your **fields**. Now your first Planning sheet is created.
+   
+   :::image type="content" source="media/planning-sheet-how-to-get-started/Planning-sheet.png" alt-text="Screenshot of the created planning sheet.":::
