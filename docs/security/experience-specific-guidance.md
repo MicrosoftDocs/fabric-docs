@@ -386,6 +386,21 @@ During the recovery, after the new region/capacity in Fabric is set up, you can 
 > [!NOTE]
 > If the original Map item has a lakehouse or KQL queryset configured, refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) and the [KQL queryset section](./experience-specific-guidance.md#kql-databasequeryset) to recover them first. After those dependencies are taken care of, connect the newly recovered lakehouse and queryset to the newly recovered Map item.
 
+### Ontology
+
+Ontology users must take proactive steps to prepare for regional disaster recovery. The approach described below ensures that, following a regional disaster, a user’s Ontology remains recoverable and can be restored quickly.
+
+The simplest and fastest way to enable recovery is to use Fabric Git integration and synchronize your Ontology with an Azure DevOps (ADO) repository. If the service fails over to another region, you can use this repository to rebuild the Ontology in a newly created workspace.
+
+Ontology items in the primary region are not available to customers after a regional disaster, and Ontology items are not replicated to the secondary region.
+
+To recover an Ontology item during a disaster, configure [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) the Ontology item with your Git repository ahead of time.
+
+During recovery, once the new region and capacity in Fabric are set up, you can use the repository to rebuild the Ontology item in a new workspace. Because the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) pulls the contents from the repository into the workspace, effectively restoring the Ontology item.
+
+> [!NOTE]
+> If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) to recover them first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
+
 ## Transactional database
 
 This guide describes the recovery procedures for the transactional database experience. 
@@ -426,8 +441,6 @@ Microsoft Fabric Variable libraries enable developers to customize and share ite
 ### Customer-managed keys for Fabric workspaces
 
 You can use customer-managed keys (CMK) stored in Azure Key Vault to add an additional layer of encryption on top of Microsoft-managed keys for data at rest. In the event that Fabric becomes inaccessible or inoperable in a region, its components will fail over to a backup instance. During failover, the CMK feature supports read-only operations. As long as the Azure Key Vault service remains healthy and permissions to the vault are intact, Fabric will continue to connect to your key and allow you to read data normally. This means the following operations aren't supported during failover: enabling and disabling the workspace CMK setting and updating the key. 
-
-
 
 ## Related information
 
