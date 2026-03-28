@@ -39,7 +39,7 @@ If you don't already have a lakehouse, create one to store the sample data:
 1. Enter a name for your lakehouse (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and then select **Create**.
 
     > [!IMPORTANT]
-    > Make sure you clear the lakehouse schema option. Graph doesn't currently support lakehouses that have [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
+    > Make sure you clear the lakehouse schema option. Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../data-engineering/lakehouse-schemas.md).
 
 For more detailed instructions, see [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md).
 
@@ -66,7 +66,7 @@ For each subfolder in the uploaded *AdventureWorks_Data* folder, follow these st
 
 1. In the **Load folder to new table** dialog, enter a table name (the default is the folder name), set the file type to Parquet, and then select **Load**.
 
-After you load all the tables, your Lakehouse Explorer shows the following tables. The lakehouse in your workspace is now ready with the Adventure Works sample data. In the next step, you create a graph model that uses this data.
+After you load all the tables, your Lakehouse Explorer shows eight tables. The lakehouse in your workspace is now ready with the Adventure Works sample data. In the next step, you create a graph model that uses this data.
 
 :::image type="content" source="./media/tutorial/lakehouse-with-tables.png" alt-text="Screenshot showing the loaded tables in the lakehouse Explorer." lightbox="./media/tutorial/lakehouse-with-tables.png":::
 
