@@ -6,8 +6,26 @@ ms.topic: concept-article
 ms.date: 03/21/2026
 ---
 
-# Development process using branched Workspace
-For Fabric developers, the branch‑out experience creates a new branch based on the latest commit of the source workspace’s connected branch, allowing users to either create a new workspace connected to the newly created branch or target an existing workspace by replacing the branch connected to it.
+# Development process using branched workspace
+*Branched workspace* is a workspace that is linked to a source workspace. It lets developers work on changes in an isolated environment, understand how their work relates to other workspaces, and promote changes back to the main workspace with confidence.
+
+The relationship (link) between a *Branched workspace* and its source workspace is established when the user performs branch-out. For Fabric developers, branch-out creates a new Git branch from the latest commit of the source workspace’s currently connected branch. The user can then either create a new workspace connected to that new branch, or use an existing workspace by switching its Git connection to the newly created branch.
+
+## Branched Workspace
+The *Branched workspace* relationship has several visual representations in the Fabric UI:
+- Workspace tree: Represents the source workspace as the parent of the branched workspace
+
+   :::image type="content" source="media/branch-out/branch-6.png" alt-text="Workspace tree hierarchy with branched workspaces." lightbox="media/branch-out/branch-6.png":::
+
+- Workspace breadcrumbs: Navigation option from branched workspace to source workspace 
+
+   :::image type="content" source="media/branch-out/branch-7.png" alt-text="Branched workspace breadcrumbs." lightbox="media/branch-out/branch-7.png":::
+
+- Source control - [related branches](./git-integration-process.md#branches) tab
+
+   :::image type="content" source="media/branch-out/branch-8.png" alt-text="Branched workspace related branches." lightbox="media/branch-out/branch-8.png":::
+
+## Branch-Out Operation
 
 By default, when a branch‑out operation completes, all items from the source branch are included in the target workspace. This behavior can be changed by selecting **Select items individually (Preview)** during the branch‑out setup, allowing only chosen items to be included in the target workspace to allow faster time to code experience.
 
@@ -95,9 +113,14 @@ To connect the current workspace to a new branch while keeping the existing work
 - The related branches list only shows branches and workspaces you have permission to view.
 - [Git integration](../../admin/git-integration-admin-settings.md) must be enabled.
 - When branching out, a new branch is created and the settings from the original branch aren't copied. Adjust any settings or definitions to ensure that the new meets your organization's policies.
+- When disconnecting a *branched workspace* from Git, its relationship to the source workspace is removed as well.
+- When disconnecting a Git-connected workspace that has related *branched workspaces*, all branched workspace relationships are removed as well.
+- When deleting a workspace that has related *branched workspaces*, all branched workspace relationships are removed, and the branched workspaces become regular workspaces.
 - When branching out to an existing workspace:
   - The target workspace must support a Git connection.
   - The user must be an admin of the target workspace.
   - The target workspace must have capacity.
   - The workspace can't have template apps.
+  - The target workspace can’t have any related *branched workspaces*.
+
 - **Note that when you branch out to a workspace, any items that aren't saved to Git can get lost. We recommend that you [commit](./git-integration-process.md#commits-and-updates) any items you want to keep before branching out.**
