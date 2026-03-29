@@ -12,9 +12,9 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 1. In the **New item** window, select **Real-Time Dashboard**. Search using the text box if needed.
 
     :::image type="content" source="./media/create-real-time-dashboard/new-item-button.png" alt-text="Screenshot of the New item page with Real-Time Dashboard selected." lightbox="./media/create-real-time-dashboard/new-item-button.png":::    
-1. On the **New Real-Time Dashboard** popup, enter a name for the dashboard, and select **Create**.
+1. On the **New Real-Time Dashboard** popup, enter a name and workspace location for the dashboard, and select **Create**.
 
-    :::image type="content" source="./media/create-real-time-dashboard/dashboard-name.png" alt-text="Screenshot of the New Real-Time Dashboard page with a name for the dashboard." lightbox="./media/create-real-time-dashboard/dashboard-name.png"::: 
+    :::image type="content" source="./media/create-real-time-dashboard/dashboard-name.png" alt-text="Screenshot of the New Real-Time Dashboard page with a name for the dashboard." lightbox="./media/create-real-time-dashboard/dashboard-name.png":::
 1. A new dashboard is created in your workspace.
 
     :::image type="content" source="./media/create-real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric.":::

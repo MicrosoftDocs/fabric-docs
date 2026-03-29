@@ -10,9 +10,9 @@ ai-usage: ai-assisted
 ---
 # Create a Real-Time Dashboard
 
-A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
+A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance. Copilot integration in the dashboard editing experience lets you use natural language to create and modify visuals directly, no KQL expertise required.
 
-In this article, you learn how to create a new Real-Time Dashboard, add data sources, and add tiles to the dashboard. You also learn how to enable auto refresh, use parameters, and export dashboards.
+In this article, you learn how to create a new Real-Time Dashboard, add data sources, add edit tiles in the dashboard - manually or using copilot. You also learn how to enable auto refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
@@ -56,16 +56,22 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 ## [Queryset](#tab/create-queryset)
 
 1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+
 1. [Write a query](kusto-query-set.md#write-a-query).
-1. Select **Save to dashboard**.
-1. In the **Pin query to dashboard** window, do the following:
 
-    :::image type="content" source="media/real-time-dashboard/save-query-to-dashboard.png" alt-text="Screenshot of the Save query to dashboard window.":::
+1. Select **Save to dashboard** > **To a new Dashboard**.
 
-1. Select create a new dashboard.
-1. Name your dashboard tile.
-1. Optionally, select **Open dashboard after tile creation** to view your dashboard immediately after creation.
-1. Select **Create**.
+    :::image type="content" source="media/real-time-dashboard/save-to-dashboard.png" alt-text="Screenshot of the save query to dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard.png":::
+
+1. On the **New Real-Time Dashboard** popup, enter a name and workspace location for the dashboard, and select **Create**.
+
+    :::image type="content" source="includes/media/create-real-time-dashboard/dashboard-name.png" alt-text="Screenshot of the New Real-Time Dashboard page with a name for the dashboard." lightbox="includes/media/create-real-time-dashboard/dashboard-name.png":::
+
+1. Select **Create** and then **Open dashboard** to view your dashboard immediately after creation.
+
+1. To give the tile a name, open the tile options and select **Rename**.
+
+    :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
 
 ## [Replacing the file](#tab/replacing-file)
 
