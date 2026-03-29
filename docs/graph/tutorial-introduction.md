@@ -12,12 +12,13 @@ ai-usage: ai-assisted
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This tutorial provides a step-by-step walkthrough of an end-to-end graph scenario in Microsoft Fabric. It covers everything from creating your graph model to querying your data and analyzing insights. Complete this tutorial to build a basic understanding of the Microsoft Fabric graph experience and its capabilities.
+This tutorial walks you through an end-to-end graph scenario in Microsoft Fabric. You take sample data, model it as a graph, and query it for insights — building a working understanding of the graph experience along the way.
 
 ## Prerequisites
 
 Before you start this tutorial, verify that:
 
+1. You have access to a Microsoft Fabric capacity (F2 or higher) or a [Fabric trial](../fundamentals/fabric-trial.md).
 1. [Graph is available in your region](overview.md#region-availability).
 1. A Fabric administrator enabled Graph in your Fabric tenant. They enable this setting in the [admin portal](../admin/admin-center.md).
 
@@ -36,6 +37,7 @@ In this tutorial, you take on the role of a data analyst at the fictional Advent
 1. [Create a graph](tutorial-create-graph.md) by creating a graph model and loading data from OneLake.
 1. [Add nodes to your graph](tutorial-model-nodes.md) for each entity in the data model.
 1. [Add edges to your graph](tutorial-model-edges.md) to define relationships between nodes.
+1. [Add multiple node and edge types from one table](tutorial-model-node-edge-from-same-table.md) to create a richer graph model.
 1. [Query the graph with the query builder](tutorial-query-builder.md) using an interactive visual interface.
 1. [Query the graph with GQL](tutorial-query-code-editor.md) using the code editor.
 1. [Clean up tutorial resources](tutorial-clean-up.md) by deleting the workspace and other items.
