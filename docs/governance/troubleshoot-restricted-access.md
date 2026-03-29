@@ -121,6 +121,14 @@ If a DLP policy with the "restrict access" action is causing the restriction, it
 
 The workspace admin can assess how DLP policies affect different user types to decide how to handle the restriction.
 
+### Mirrored databases restricted by DLP - special case
+
+Mirrroed databased present a bit of a different use case. More often than not, these types of databases are being updated by service principals (SPNs) and not by human users. Since usually organizations would not opt to allow these SPNs full control to the workspaces (workspace admin role), the updating user might berestricted by the DLP restrict access action.  
+#### How to resolve a database restricted user:
+1. Workspace admins can always override the policy, if the circumstances merrit an override.
+2. If sensitive information was justly found in the data, workspace admins can: a) edit the mirroring configuration to exclude the problematic table, and  b) edit the existing item and remove the sensitive information. Once these two steps are done, the update of the database will trigger an automated DLP evaluation, which will in turn NOT find any sensitive data (due to the updates made by the workspace admin) and will result in the restriction being lifted.
+
+
 ## Related articles
 
 - [Microsoft Fabric permission model](/fabric/security/permission-model)
