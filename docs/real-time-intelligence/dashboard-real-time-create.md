@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to visualize data with Real-Time Dashboards.
 ms.reviewer: tzgitlin
 ms.topic: how-to
-ms.date: 10/05/2025
+ms.date: 03/29/2026
 ms.subservice: rti-dashboard
 ms.search.form: product-kusto, Real-Time Dashboard
 ai-usage: ai-assisted
