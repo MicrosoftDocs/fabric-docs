@@ -43,7 +43,7 @@ To load data into your graph from OneLake, follow these steps:
 1. In the **Choose data** pane, select your lakehouse (for example, *AdventureWorksLakehouse*) to automatically select all tables under it.
 1. Select **Load**.
 
-You should now see the data available for use in your graph.
+You should now see the eight tables from your lakehouse listed in the data pane, available for use in your graph.
 
    :::image type="content" source="./media/quickstart/graph-data-view.png" alt-text="Screenshot showing the data view in the graph model." lightbox="./media/quickstart/graph-data-view.png":::
 
