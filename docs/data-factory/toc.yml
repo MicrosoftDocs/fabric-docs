@@ -1223,8 +1223,6 @@
             href: cicd-apache-airflow-jobs.md
   - name: FAQ and Troubleshooting
     items: 
-      - name: Frequently asked questions
-        href: frequently-asked-questions.yml
       - name: Pipeline activities troubleshooting guide
         href: pipeline-troubleshoot-guide.md
       - name: Troubleshoot connectors

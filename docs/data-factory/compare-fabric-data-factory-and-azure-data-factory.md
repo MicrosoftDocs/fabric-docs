@@ -223,6 +223,9 @@ Need to create a similar pipeline? The **Save as** feature lets you duplicate an
 
 ## Related content
 
+> [!NOTE]
+> New features developed for Data Factory in Fabric are not backported to Azure Data Factory or Azure Synapse pipelines. The two platforms maintain separate roadmaps. Backport requests are evaluated based on community feedback.
+
 For more information, see the following resources:
 
 - [Migrate from Azure Data Factory to Data Factory in Microsoft Fabric](migrate-planning-azure-data-factory.md)
