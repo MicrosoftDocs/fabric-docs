@@ -42,6 +42,7 @@ ms.date: 12/22/2025
 
         > [!NOTE]
         > The TLS/mTLS settings in this section are currently in preview.
+        >
         > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector vNet injection (for example, via a private endpoint).
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-settings.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-settings.png":::      
