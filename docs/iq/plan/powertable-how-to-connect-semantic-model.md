@@ -56,7 +56,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 5. Select your **DMTS Connection** and the required **Semantic Model**.
 6. Select **Next**.
 
-:::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of creating a new table app.":::
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model.":::
 
 >[!NOTE]
 >Capacity workspaces with Pro licences are not supported. Please make sure to select a workspace of premium capacity.
