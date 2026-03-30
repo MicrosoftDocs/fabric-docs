@@ -225,7 +225,8 @@ Here you can manually author or edit the KQL query and visual in the tile editin
     For information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     > [!TIP]
-    > You can also use [Copilot to edit](#addedit-tile?tabs=new-tile-copilot) the query with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
+    > You can also use Copilot to edit the query with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
+
 
 1. To create a visual tile, open the visual formatting editor. Select **+ Add Visual** on the lower ribbon, or select the **Visual formatting** icon on the horizontal tab.
 
