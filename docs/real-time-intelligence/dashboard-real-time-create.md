@@ -1,9 +1,11 @@
 ---
 title: Create a Real-Time Dashboard
-description: Learn how to visualize data with Real-Time Dashboards.
-ms.reviewer: tzgitlin
+description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
+ms.reviewer: mbar
 ms.topic: how-to
-ms.date: 03/29/2026
+ms.date: 03/30/2026
+author: spelluru
+ms.author: spelluru
 ms.subservice: rti-dashboard
 ms.search.form: product-kusto, Real-Time Dashboard
 ai-usage: ai-assisted
@@ -33,7 +35,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 1. Toggle the button for **Create Real-Time dashboards** to **Enabled**. For more information, see [Tenant settings - Microsoft Fabric](../admin/tenant-settings-index.md).
 1. Select **Apply**.
 
-    :::image type="content" source="media/real-time-dashboard/enable-tenant-settings.png" alt-text="Screenshot of enabling tenant settings for Real-Time Dashboards.":::
+    :::image type="content" source="media/real-time-dashboard/enable-tenant-settings.png" alt-text="Screenshot of enabling tenant settings for Real-Time Dashboards." lightbox="media/real-time-dashboard/enable-tenant-settings.png":::
 
 ## Create a new dashboard
 
@@ -45,7 +47,7 @@ There are several ways to create a new Real-Time dashboard, select the tab that 
 
 6. Complete dashboard setup by adding a data source to the dashboard. After the dashboard is connected to a data source, you can access all dashboard options like adding new tiles.
 
-    :::image type="content" source="media/real-time-dashboard/dashboard-new-with-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled.":::
+    :::image type="content" source="media/real-time-dashboard/dashboard-new-with-source.png" alt-text="Screenshot of Real-Time Dashboard with all options enabled." lightbox="media/real-time-dashboard/dashboard-new-with-source.png":::
 
 ### [Copilot](#tab/create-copilot)
 
@@ -77,7 +79,7 @@ For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../f
 
 Select the **Manage** tab, then choose **Replace with file**. Select the file you want to use to create a new dashboard, update an existing one, restore a previous version, or use a file received from another user.
 
-:::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option.":::
+:::image type="content" source="media/real-time-dashboard/replace-file.png" alt-text="Screenshot of the Replace with file option." lightbox="media/real-time-dashboard/replace-file.png":::
 
 ----
 
@@ -93,7 +95,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the upper tool bar, select **New data source** > **Eventhouse / KQL Database**.
 
-    :::image type="content" source="media/real-time-dashboard/event-house.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted.":::
+    :::image type="content" source="media/real-time-dashboard/event-house.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted." lightbox="media/real-time-dashboard/event-house.png":::
 
 1. In the **OneLake catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
 
@@ -105,7 +107,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the upper tool bar, select **New data source** > **Azure Data Explorer**.
 
-    :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure data explorer highlighted.":::
+    :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure data explorer highlighted." lightbox="media/real-time-dashboard/azure-data.png":::
 
 ### [Azure Monitor](#tab/azure-data-monitor)
 
@@ -113,7 +115,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. In the upper tool bar, select **New data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
 
-    :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure monitor highlighted.":::
+    :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure monitor highlighted." lightbox="media/real-time-dashboard/azure-monitor.png":::
 
 1. Enter your connection parameters or a full connection URI:
 
@@ -152,21 +154,22 @@ Select the tab that corresponds with your desired data source type.
 
 To switch to edit mode, select **Editing** in the top-right corner.
 
-:::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view.":::
+:::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view." lightbox="media/real-time-dashboard/edit-mode.png":::
 
 [adding new tiles](#addedit-tile)
 
-:::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab.":::
+:::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab." lightbox="media/real-time-dashboard/home-tab.png":::
 
-Under the Manage tab, you can manage data sources and [parameters](dashboard-parameters.md), as well as configure settings for [Auto refresh](#enable-auto-refresh).
+Under the Manage tab, you can manage data sources, [parameters](dashboard-parameters.md), and configure settings for [Auto refresh](#enable-auto-refresh).
 
-:::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab.":::
+:::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab." lightbox="media/real-time-dashboard/manage-tab.png":::
 
 ## Add/Edit tile
 
 Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation. The tile editor gives you two options for authoring and editing a tile's query and visual:
 
-* **Copilot** (preview) - use natural language to generate the tile's KQL query and the tile visual. Copilot enables non-KQL experts, business analysts and report creators who understand their data but aren’t fluent to build dashboard visuals independently.
+* **Copilot** (preview) - use natural language to generate the tile's KQL query and the tile visual. Copilot enables non-KQL experts, business analysts, and report creators who understand their data but aren’t fluent to build dashboard visuals independently.
+
 * **KQL query** - manually author the query and define the tile visual.
 
 You can switch between the two options at any time.
@@ -181,27 +184,27 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
 1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
 
-   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
+   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button." lightbox="media/real-time-dashboard/add-tile-button.png":::
 
-1. If you are editing an existing tile, open the tile options and select **Edit**.
+1. If you're editing an existing tile, open the tile options and select **Edit**.
 
 1. In the Copilot pane, enter a description of the tile in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table.":::
+    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response.png":::
 
-1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Change the visual to a map and show the 10 locations with the most bikes".
+1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Change the visual to a map and show the 10 locations with the most bikes."
 
-     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table.":::
+     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table." lightbox="media/real-time-dashboard/new-tile-copilot-response-refined.png":::
 
 1. Select **Apply**. You can now view and edit the underlying KQL query or continue with Copilot. The query is generated based on your natural language description and any follow-up refinements you made in Copilot.
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. ":::
+    :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. " lightbox="media/real-time-dashboard/new-tile-copilot-apply.png":::
 
 1. To add the tile to the dashboard, select **Apply changes**.
 
 1. In the dashboard toolbar, select **Save** to save the dashboard with the new or edited tile.
 
-    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon.":::
+    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/save-button.png":::
 
 ### [Use query editor to add/edit tile](#tab/new-tile-query-editor)
 
@@ -213,7 +216,7 @@ Here you can manually author or edit the KQL query and visual in the tile editin
 
    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button."lightbox="media/real-time-dashboard/add-tile-button.png"::::::
 
-1. If you are editing an existing tile, open the tile options and select **Edit**.
+1. If you're editing an existing tile, open the tile options and select **Edit**.
 
 1. Type a new KQL query, or edit the existing KQL query, and select **Run**.
 
@@ -226,7 +229,7 @@ Here you can manually author or edit the KQL query and visual in the tile editin
 
 1. To create a visual tile, open the visual formatting editor. Select **+ Add Visual** on the lower ribbon, or select the **Visual formatting** icon on the horizontal tab.
 
-    :::image type="content" source="media/real-time-dashboard/new-tile-visual-formnatting.png" alt-text="Screenshot of tile query in Real-Time Dashboards.":::
+    :::image type="content" source="media/real-time-dashboard/new-tile-visual-formnatting.png" alt-text="Screenshot of tile query in Real-Time Dashboards." lightbox="media/real-time-dashboard/new-tile-visual-formnatting.png":::
 
 1. In the **Visual formatting** tab, select a **Visual type** and configure the remaining options. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
 
@@ -251,10 +254,10 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 1. Select **Save to Dashboard**.
 
     :::image type="content" source="media/real-time-dashboard/save-to-dashboard-existing.png" alt-text="Screenshot of the save query to existing dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard-existing.png":::
-1
-. Select the existing dashboard from the list of dashboards and then select **Connect** to create the tile.
 
-1. Select **Open dashboard** from the pop-ip message to view the new tile in the existing dashboard.
+1. Select the existing dashboard from the list of dashboards and then select **Connect** to create the tile.
+
+1. Select **Open dashboard** from the pop-up message to view the new tile in the existing dashboard.
 
 1. To give the tile a name, open the tile options and select **Rename**.
 
@@ -265,13 +268,14 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
 
 1. Switch to the editing mode by selecting **Editing** in the top-right corner. 
+
 1. On the **Pages** pane, select **+ Add page**.
 
     :::image type="content" source="media/real-time-dashboard/new-page.png" alt-text="Screenshot of adding a page to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-dashboard/new-page.png":::
 
 1. To name the page, select the vertical **More menu [...]** > **Rename page**.
 
-    :::image type="content" source="media/real-time-dashboard/new-page-rename.png" alt-text="Screenshot of renaming a page in Real-Time Dashboards.":::
+    :::image type="content" source="media/real-time-dashboard/new-page-rename.png" alt-text="Screenshot of renaming a page in Real-Time Dashboards." lightbox="media/real-time-dashboard/new-page-rename.png":::
 [add tiles](#addedit-tile)
 
 ## Use parameters
@@ -299,16 +303,18 @@ The **Up** and **Down** arrows navigate through the list in the following ways:
 * When one item is selected, the up and down arrows select the previous or next item.
 * When more than one item is selected, the up and down arrows scroll through the list of items, and the data for any selected items you navigate to is highlighted.
 
-:::image type="content" source="media/real-time-dashboard/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data.":::
+:::image type="content" source="media/real-time-dashboard/interactive-legend.png" alt-text="Screenshot showing the buttons to use the legend to interact with your data." lightbox="media/real-time-dashboard/interactive-legend.png":::
 
 ## View query
 
 You can view the query in either viewing or editing mode.
 
-1. On the tile you want to explore, select the **More menu [...]** > **View query**. A pane opens with the query and results table.
+1. On the tile you want to explore, select the **Tile options [...]** > **View query**. A pane opens with the query and results table.
 
     :::image type="content" source="media/real-time-dashboard/view-query-menu.png" alt-text="Screenshot of the View query menu for a tile on the dashboard." lightbox="media/real-time-dashboard/view-query-menu.png"::: 
+
 1. Select **Edit query**.
+
 1. Choose either **Existing KQL Queryset** or **New KQL Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
 
     :::image type="content" source="media/real-time-dashboard/edit-query.png" alt-text="Screenshot of the KQL query editor." lightbox="media/real-time-dashboard/edit-query.png":::
@@ -331,7 +337,7 @@ This setting gives authors control over how frequently dashboards can refresh, h
 1. Select values for **Minimum time interval** and **Default refresh rate**.
 1. Select **Apply** and then **Save** the dashboard.
 
-    :::image type="content" source="media/real-time-dashboard/auto-refresh.png" alt-text="Screenshot of auto refresh pane in Real-Time Dashboards.":::
+    :::image type="content" source="media/real-time-dashboard/auto-refresh.png" alt-text="Screenshot of auto refresh pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/auto-refresh.png":::
 
 ## Share the dashboard
 
