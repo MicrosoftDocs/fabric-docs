@@ -52,26 +52,16 @@ Follow these steps to create entity types in your ontology (preview) item.
 
     You can create properties on entity types without binding data to them. Later, you can bind either static or time series data to these properties. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
 
-1. Add a name, data type, and property type for each property. 
-
-    For both **Static** and **Timeseries** properties, the following value types are available to be manually added on any entity type. If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
-        * String
-        * Boolean
-        * Datetime
-        * Integer
-        * Double
-        * Object
+1. Add a name, data type, and property type for each property. Select **Save** to view the saved properties in the properties tab.
 
     >[!NOTE]
     >Property names can only be duplicated across entities for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property.
 
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring the listed property details.":::
 
-    Select **Save** . Saved properties are visible in the **Properties** tab.
-
 1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. 
 
-    You can select properties with the value type String or Integer to use as the entity type key. Together, the columns you select uniquely identify a record.
+    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select uniquely identify a record.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
 
@@ -110,3 +100,13 @@ To edit or delete a property,
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
+## Supported property types
+
+The following table lists the supported property types for entities in ontology (preview).
+
+| Field in ontology | Allowed types |
+| --- | --- |
+| Entity type key | String <br>Integer |
+| Static or time series properties | String <br>Boolean <br>Datetime <br>Integer <br>Double <br>Object |
+
+If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
