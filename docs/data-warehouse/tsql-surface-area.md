@@ -2,7 +2,7 @@
 title: T-SQL Surface Area in Fabric Data Warehouse
 description: T-SQL surface area of the SQL analytics endpoint and warehouse in Microsoft Fabric.
 ms.reviewer: cynotebo, jovanpop, twinklecyril, emtehran, prlangad
-ms.date: 02/04/2026
+ms.date: 04/07/2026
 ms.topic: concept-article
 ms.search.form: T-SQL Surface area # This article's title should not change. If so, contact engineering.
 ---
@@ -30,6 +30,14 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
 - To change the name of the column in a user table in [!INCLUDE [fabric-dw](includes/fabric-dw.md)], use the `sp_rename` stored procedure. 
 - A subset of query and join hints are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. For more information, see [Hints (Transact-SQL)](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true).
 - Session-scoped distributed #temp tables are supported in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+- - `ALTER TABLE ADD`/`ALTER`
+    - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
+      - ADD nullable columns of supported column data types.
+      - `DROP COLUMN`
+      - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
+      - There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
+      - ALTER distributed temporary tables
+- Supported ALTER TABLE statements can be executed inside an explicit user-defined transaction in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]
 - `MERGE` syntax is supported and is a generally available feature. For more information, see [MERGE T-SQL syntax](/sql/t-sql/statements/merge-transact-sql?view=fabric&preserve-view=true).
 - [AI functions (preview)](ai-functions.md) enable advanced text processing without leaving your warehouse.
 
@@ -37,12 +45,6 @@ Fabric Data Warehouse supports T-SQL tables, views, stored procedures, functions
 
 At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
-- `ALTER TABLE ADD`/`ALTER`
-    - Currently, only the following subset of `ALTER TABLE` operations in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] are supported:
-      - ADD nullable columns of supported column data types.
-      - `DROP COLUMN`
-      - ADD or DROP PRIMARY KEY, UNIQUE, and FOREIGN_KEY column constraints, but only if the NOT ENFORCED option has been specified. All other ALTER TABLE operations are blocked.
-      - There are limitations with adding table constraints or columns when using [Source Control with Warehouse](source-control.md#limitations-in-source-control).
 - `BULK LOAD`
 - `CREATE USER`
 - `FOR JSON` must be the last operator in the query, and so is not allowed inside subqueries
