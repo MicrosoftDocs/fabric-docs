@@ -154,7 +154,7 @@ To switch to edit mode, select **Editing** in the top-right corner.
 
 :::image type="content" source="media/real-time-dashboard/edit-mode.png" alt-text="Screenshot showing the selection of the editing view.":::
 
-Under the Home tab in the **toolbar**, you can perform edit actions to enrich the dashboard such as [adding new tiles](#add-tile), creating base queries, and [defining new parameters](dashboard-parameters.md#create-a-parameter).
+[adding new tiles](#addedit-tile)
 
 :::image type="content" source="media/real-time-dashboard/home-tab.png" alt-text="Screenshot of the toolbar options under the Home tab.":::
 
@@ -162,11 +162,9 @@ Under the Manage tab, you can manage data sources and [parameters](dashboard-par
 
 :::image type="content" source="media/real-time-dashboard/manage-tab.png" alt-text="Screenshot of the toolbar options under the Manage tab.":::
 
-## Add tile
+## Add/Edit tile
 
-Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation. 
-
-The tile editing window gives you two options for authoring the tile's query and visual:
+Dashboard tiles use Kusto Query Language (KQL) queries to fetch data and generate visuals. Each tile or query is designed to support a single visual representation. The tile editor gives you two options for authoring and editing a tile's query and visual:
 
 * **Copilot** (preview) - use natural language to generate the tile's KQL query and the tile visual. Copilot enables non-KQL experts, business analysts and report creators who understand their data but aren’t fluent to build dashboard visuals independently.
 * **KQL query** - manually author the query and define the tile visual.
@@ -175,7 +173,7 @@ You can switch between the two options at any time.
 
 :::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot.":::
 
-### [Use Copilot to add tile (preview)](#tab/new-tile-copilot)
+### [Use Copilot to add/edit tile (preview)](#tab/new-tile-copilot)
 
 Describe the insight you’re looking for. Start with a broad question and refine based on the results. You might begin with “Show me all error events” and follow up with “Filter to critical errors only” or “Group by error type.” Copilot maintains context within the conversation, so each follow-up builds on your previous requests. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 
@@ -185,7 +183,9 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
 
-1. Enter a description in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
+1. If you are editing an existing tile, open the tile options and select **Edit**.
+
+1. In the Copilot pane, enter a description of the tile in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table.":::
 
@@ -197,15 +197,15 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. ":::
 
-1. To generate the tile on the dashboard, select **Apply changes**.
+1. To add the tile to the dashboard, select **Apply changes**.
 
 1. In the dashboard toolbar, select **Save** to save the dashboard with the new or edited tile.
 
     :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon.":::
 
-### [Use query editor to add tile](#tab/new-tile-query-editor)
+### [Use query editor to add/edit tile](#tab/new-tile-query-editor)
 
-Here you can manually author and edit the KQL query and visual in the tile editing pane.
+Here you can manually author or edit the KQL query and visual in the tile editing pane.
 
 1. In your dashboard, switch to [edit mode](#edit-mode).
 
@@ -213,16 +213,16 @@ Here you can manually author and edit the KQL query and visual in the tile editi
 
    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button."lightbox="media/real-time-dashboard/add-tile-button.png"::::::
 
-1. Use the existing data source or select a new data source for your query from the **Explorer** pane. The data source you select determines the tables and fields available for querying.
+1. If you are editing an existing tile, open the tile options and select **Edit**.
 
-1. Type your KQL query, and select **Run**.
+1. Type a new KQL query, or edit the existing KQL query, and select **Run**.
 
     :::image type="content" source="media/real-time-dashboard/new-tile-query-editor.png" alt-text="Screen shot of the tile KQL query editor with a query written and the Run button highlighted." lightbox="media/real-time-dashboard/new-tile-query-editor.png":::
 
     For information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     > [!TIP]
-    > You can also use Copilot to author KQL with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
+    > You can also [use Copilot to edit](#use-copilot-to-addedit-tile-previewtabnew-tile-copilot) the query with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
 
 1. To create a visual tile, open the visual formatting editor. Select **+ Add Visual** on the lower ribbon, or select the **Visual formatting** icon on the horizontal tab.
 
@@ -245,32 +245,20 @@ Here you can manually author and edit the KQL query and visual in the tile editi
 You can add tiles to your dashboard directly from queries written in a KQL queryset.
 
 1. [Open an existing KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+
 1. [Write a query](kusto-query-set.md#write-a-query).
+
 1. Select **Save to Dashboard**.
 
     :::image type="content" source="media/real-time-dashboard/save-to-dashboard-existing.png" alt-text="Screenshot of the save query to existing dashboard button in a queryset query."  lightbox="media/real-time-dashboard/save-to-dashboard-existing.png":::
-1. Select the existing dashboard from the list of dashboards and then select **Connect** to create the tile.
+1
+. Select the existing dashboard from the list of dashboards and then select **Connect** to create the tile.
+
 1. Select **Open dashboard** from the pop-ip message to view the new tile in the existing dashboard.
+
 1. To give the tile a name, open the tile options and select **Rename**.
 
     :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
-
-## Edit tile
-
-Editing the underlying query of a tile is only possible in editing mode.
-
-1. On the tile you want to edit, select the **Edit tile** pencil icon.
-
-    :::image type="content" source="media/real-time-dashboard/edit-tile.png" alt-text="Screenshot of the Edit tile pencil icon in Real-Time Dashboards tile.":::
-
-1. In the edit tile page, you can edit the query and visual formatting options.
-1. The explorer pane on the left side allows you to explore the data source, view the available tables, functions, etc. and help you build your query.
-
-    :::image type="content" source="media/real-time-dashboard/explorer-pane.png" alt-text="Screenshot of the explorer pane in Real-Time Dashboards.":::
-
-1. Select the **Copilot** icon and describe in natural language what you want to visualize. Copilot generates a query that you can edit as needed. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
-
-    :::image type="content" source="media/real-time-dashboard/copilot.png" alt-text="Screenshot of the Copilot icon in Real-Time Dashboards.":::
 
 ### Use Copilot in the tile editing pane
 
@@ -294,7 +282,7 @@ Pages are optional containers for tiles. You can use pages to organize tiles int
 1. To name the page, select the vertical **More menu [...]** > **Rename page**.
 
     :::image type="content" source="media/real-time-dashboard/new-page-rename.png" alt-text="Screenshot of renaming a page in Real-Time Dashboards.":::
-1. Select the new page in the Pages pane, and [add tiles](#add-tile) to the page.
+[add tiles](#addedit-tile)
 
 ## Use parameters
 
