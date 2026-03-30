@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 ---
 
-# Workspace outbound access protection for Data Science (preview)
+# Workspace outbound access protection for Data Science
 
 Workspace outbound access protection helps safeguard your data by controlling outbound connections from items in your workspace to external resources. When this feature is enabled, [Data Science items](#supported-data-science-item-types) such as Machine Learning Experiments and Machine Learning Models can be created and used within the workspace.
 
@@ -48,7 +48,6 @@ With outbound access protection enabled, you can create and manage Machine Learn
 
 ## Considerations and limitations
 
-- This feature is currently in public preview.
 - Cross-workspace logging for Machine Learning Experiments and Machine Learning Models isn't supported in Fabric. All experiment and model operations must occur within the same workspace.
 - Outbound access for notebook code that generates experiments or models is governed by the [Data Engineering outbound access protection](workspace-outbound-access-protection-data-engineering.md) configuration. Make sure your notebook data sources are configured correctly if your workspace has outbound access protection enabled.
 - For other limitations, refer to [Workspace outbound access protection overview](workspace-outbound-access-protection-overview.md#considerations-and-limitations).
