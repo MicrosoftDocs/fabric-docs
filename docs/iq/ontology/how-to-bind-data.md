@@ -1,7 +1,7 @@
 ---
 title: Bind data
 description: Learn about the data binding process in ontology (preview).
-ms.date: 11/12/2025
+ms.date: 03/30/2026
 ms.topic: how-to
 ---
 
@@ -56,7 +56,16 @@ First, bind static data to entity types in your ontology (preview) item. Create 
 
 1. For the **Binding type**, select **Static**. Select only one type per data binding. An example of static data is a table with descriptive attributes about stores, like the store ID value, square footage, and location. 
 
-1. Under **Bind your properties**, select the source columns from the source table that you want to model on your entity type. Then, enter a name for each property that shows on the entity type. The name can be the same as the source column name or something different.
+1. Under **Bind your properties**, select the source columns from the source table that you want to model on your entity type.
+    You can bind data from Lakehouse and Eventhouse sources that have the following source column types. If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
+        * String
+        * Boolean
+        * Datetime
+        * Integer
+        * Double
+        * Object
+
+1. For each property, enter a name. The name can be the same as the source column name or something different.
 
     Custom property names must be 1–26 characters, contain only alphanumeric characters, hyphens, and underscores, and start and end with an alphanumeric character. Property names must be unique across all entity types.
 
@@ -86,19 +95,26 @@ First, bind static data to entity types in your ontology (preview) item. Create 
 
 ## Add time series data (after binding static data)
 
-
 Next, bind time series data to entity types in your ontology (preview) item.
 
 >[!IMPORTANT]
 > Before you bind time series data to an entity type, make sure your static data binding is complete. The entity type must have at least one property with static data bound to it that you can use as the key to contextualize your time series data. This static data must exactly match a column in your time series data.
 
 1. Follow the steps described earlier for [static data](#add-static-data) to start adding data to the entity type and select your data source. You can select a source from OneLake or Eventhouse.
-1. For the **Binding type**, select **Timeseries** (time series). Select the **Source data timestamp column** that contains the timestamp values.
+1. For the **Binding type**, select **Timeseries** (time series). Select the **Source data timestamp column** that contains the timestamp values. The source data timestamp column must be of Date/time or Timestamp value type.
 1. Under **Bind your properties**, you see a **Static** section and a **Timeseries** (time series) section.
 
     In the **Static** section, bind source columns to the properties that are defined as the entity type key. If you need to update the key, you can add more static data now by selecting **+ Add static property**.
 
     In the **Timeseries** (time series) section, continue defining properties by selecting source columns and entering names for each one.
+
+    You can bind data from Lakehouse and Eventhouse sources that have the following source column types. If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
+        * String
+        * Boolean
+        * Datetime
+        * Integer
+        * Double
+        * Object
 
     :::image type="content" source="media/how-to-bind-data/bind-data-time-series.png" alt-text="Screenshot of the time series property configuration page with the property selection." lightbox="media/how-to-bind-data/bind-data-time-series.png":::
 

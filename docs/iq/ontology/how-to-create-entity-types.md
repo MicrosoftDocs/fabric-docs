@@ -1,7 +1,7 @@
 ---
 title: Create entity types
 description: Learn about entity types in ontology (preview) and how to manage them.
-ms.date: 10/30/2025
+ms.date: 03/30/2026
 ms.topic: how-to
 ---
 
@@ -52,16 +52,26 @@ Follow these steps to create entity types in your ontology (preview) item.
 
     You can create properties on entity types without binding data to them. Later, you can bind either static or time series data to these properties. This section shows that process. (Alternatively, you can go straight to the data binding step and add properties while binding data to them in a single operation. For detailed instructions on that process, see [Data binding](how-to-bind-data.md).)
 
-1. Add a name, data type, and property type for each property. Select **Save** to view the saved properties in the properties tab.
+1. Add a name, data type, and property type for each property. 
+
+    For both **Static** and **Timeseries** properties, the following value types are available to be manually added on any entity type. If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
+        * String
+        * Boolean
+        * Datetime
+        * Integer
+        * Double
+        * Object
 
     >[!NOTE]
     >Property names can only be duplicated across entities for properties of the same type. For example, you can't have one entity type with a string `ID` property and another entity type with an integer `ID` property, but you can have two entity types that both have a string `ID` property.
 
     :::image type="content" source="media/how-to-create-entity-types/add-property-details.png" alt-text="Screenshot of configuring the listed property details.":::
 
+    Select **Save** . Saved properties are visible in the **Properties** tab.
+
 1. Next, define your entity type **Key** using one or more properties modeled on the entity type. This value represents a unique identifier for each record of ingested data. 
 
-    String and integer columns from your source data are available to select as the entity type key. Together, the columns you select uniquely identify a record.
+    You can select properties with the value type String or Integer to use as the entity type key. Together, the columns you select uniquely identify a record.
 
     :::image type="content" source="media/how-to-create-entity-types/entity-type-key.png" alt-text="Screenshot of the entity type key.":::
 
