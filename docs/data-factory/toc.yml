@@ -974,6 +974,10 @@
         items:
           - name: What are dataflows?
             href: dataflows-gen2-overview.md
+          - name: Create a dataflow
+            href: create-first-dataflow-gen2.md
+          - name: Get data in dataflows
+            href: get-data-dataflow-gen2.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -997,8 +1001,6 @@
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
-              - name: Get data in Dataflow Gen2
-                href: get-data-dataflow-gen2.md
               - name: Modern query evaluator
                 href: dataflow-gen2-modern-evaluator.md
               - name: Preview only steps
