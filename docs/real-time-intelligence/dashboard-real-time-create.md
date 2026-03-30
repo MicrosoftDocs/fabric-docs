@@ -260,16 +260,6 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 
     :::image type="content" source="media/real-time-dashboard/rename-new-tile.png" alt-text="Screenshot of the Rename tile option in the tile menu." lightbox="media/real-time-dashboard/rename-new-tile.png":::
 
-### Use Copilot in the tile editing pane
-
-When editing a tile, Copilot can help you author or modify the KQL query using natural language. You can:
-
-* **Generate a new query:** Enter a natural language prompt describing what you want to visualize, and Copilot creates a new KQL query from scratch.
-* **Replace the current tile query:** Use Copilot to generate a new query that replaces the existing tile query entirely.
-* **Refine the existing query:** Ask Copilot to modify the current query by adding filters, changing time windows, or adjusting aggregations.
-
-After Copilot generates the query, you can review it in the Query tab, run it to preview the results, and make any manual edits before applying the changes to save the updated tile.
-
 ## Add page
 
 Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
