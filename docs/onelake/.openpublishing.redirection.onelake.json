@@ -61,6 +61,16 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/onelake/shortcuts-ai-transformations/ai-transformations.md",
+            "redirect_url": "/fabric/onelake/shortcuts/transformations-ai",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/onelake/shortcuts-file-transformations/transformations.md",
+            "redirect_url": "/fabric/onelake/shortcuts/transformations",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/onelake/table-apis/onelake-iceberg-table-apis-detailed.md",
             "redirect_url": "/fabric/onelake/table-apis/iceberg-table-apis-get-started",
             "redirect_document_id": false

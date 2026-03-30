@@ -8,6 +8,9 @@ ms.date: 11/15/2023
 
 # Migrate workspace libraries and Spark properties to a default environment
 
+> [!IMPORTANT]
+> This article applies to a legacy workspace library feature that was removed in 2024. If you haven't migrated your existing workspace libraries and Spark properties to an environment by now, we recommend completing the migration as soon as possible. New workspaces use environment items directly and don't require this migration.
+
 Microsoft Fabric environments provide flexible configurations for running your Spark jobs. In an environment, you can select different Spark runtimes, configure your compute resources, and install libraries from public repositories or upload local custom-built libraries. You can easily attach environments to your notebooks and Spark job definitions.
 
 Data Engineering and Data Science workspace settings are upgraded to include Fabric environments. As a part of this upgrade, Fabric no longer supports adding new libraries and Spark properties in workspace settings. Instead, you can create a Fabric environment, configure the library and property in it, and attach it as the workspace default environment. After you create an environment and set it as the default, you can migrate the existing libraries and Spark properties to that default environment.

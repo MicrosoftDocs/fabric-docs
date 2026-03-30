@@ -75,7 +75,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/recoverableIte
 
 ```bash
 curl --request POST \
-  --url https://api.fabric.microsoft.com/v1/workspaces/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1/recoverableItems/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2/recover \
+  --url https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/recoverableItems/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2/recover \
   --header 'Authorization: Bearer {token}'
 ```
 
@@ -123,7 +123,7 @@ DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/recoverableI
 
 ```bash
 curl --request DELETE \
-  --url https://api.fabric.microsoft.com/v1/workspaces/a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1/recoverableItems/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2 \
+  --url https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/recoverableItems/b1b1b1b1-cccc-dddd-eeee-f2f2f2f2f2f2 \
   --header 'Authorization: Bearer {token}'
 ```
 

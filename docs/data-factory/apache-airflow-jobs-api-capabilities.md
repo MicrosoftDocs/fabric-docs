@@ -4,7 +4,8 @@ description: This article describes the available APIs for Apache Airflow Job in
 ms.reviewer: conxu
 ms.topic: concept-article
 ms.custom: airflows
-ms.date: 01/22/2026
+ms.date: 03/26/2026
+ai-usage: ai-assisted
 ---
 
 # REST API capabilities for Apache Airflow Jobs in Fabric Data Factory
@@ -45,9 +46,13 @@ The primary online reference documentation for Microsoft Fabric REST APIs can be
 
 In addition to CRUD APIs, there are a series of additional operational APIs offered for Apache Airflow Jobs:
 
+- [Compute APIs](#compute-apis)
+- [Environment APIs](#environment-apis)
 - [File Management APIs](#file-management-apis)
 - [Item Management APIs](#item-management-apis)
 - [Pool Management APIs](#pool-management-apis)
+- [Requirements APIs](#requirements-apis)
+- [Settings APIs](#settings-apis)
 - [Workspace Settings APIs](#workspace-settings-apis)
 
 ## Get started with REST APIs for Apache Airflow Jobs
@@ -460,13 +465,42 @@ Both `rootPath` and `continuationToken` are optional. Use `continuationToken` to
 ```
 ## Pool Management APIs
 
-### Create Airflow Pool Template
+For full reference documentation, see [Pool Management](/rest/api/fabric/apacheairflowjob/pool-management).
+
+> [!NOTE]
+> Pool Management APIs are currently in beta. Include `?beta=true` as a query parameter in all pool management requests.
+
+### Create Airflow Pool Template (beta)
 
 Creates an Apache Airflow pool template.
 
-**Request URI**: ```POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates?beta={beta}```
+**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates?beta=true`
 
-**Sample Results**:
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```rest
+{
+  "name": "MyAirflowPool",
+  "nodeSize": "Small",
+  "shutdownPolicy": "OneHourInactivity",
+  "computeScalability": {
+    "minNodeCount": 5,
+    "maxNodeCount": 8
+  },
+  "apacheAirflowJobVersion": "1.0.0"
+}
+```
+
+**Sample response**:
 
 ```rest
 {
@@ -482,25 +516,44 @@ Creates an Apache Airflow pool template.
 }
 ```
 
-### Delete Airflow Pool Template
+### Delete Airflow Pool Template (beta)
+
 Deletes an Apache Airflow pool template.
 
-Note that deleting the default pool template will reset the workspace back to the starter pool.
+> [!NOTE]
+> Deleting the default pool template resets the workspace back to the starter pool.
 
-**Request URI**: ```DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates/{poolTemplateId}?beta={beta}```
+**Request URI**: `DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates/{poolTemplateId}?beta=true`
 
-**Sample Results**:
+**Headers**:
 
 ```rest
-200 OK 
+{
+  "Authorization": "Bearer <access-token>"
+}
 ```
 
-### Get Airflow Pool Template
-Get an Apache Airflow pool template.
+**Sample response**:
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates/{poolTemplateId}?beta={beta}```
+```rest
+200 OK
+```
 
-**Sample Results**:
+### Get Airflow Pool Template (beta)
+
+Returns an Apache Airflow pool template.
+
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates/{poolTemplateId}?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
 
 ```rest
 {
@@ -516,12 +569,21 @@ Get an Apache Airflow pool template.
 }
 ```
 
-### List Airflow Pool Template
+### List Airflow Pool Templates (beta)
+
 Lists Apache Airflow pool templates. This API supports pagination.
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates?beta={beta}```
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/poolTemplates?beta=true`
 
-**Sample Results**:
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
 
 ```rest
 {
@@ -552,33 +614,301 @@ Lists Apache Airflow pool templates. This API supports pagination.
 }
 ```
 
+## Compute APIs
+
+For full reference documentation, see [Compute](/rest/api/fabric/apacheairflowjob/compute).
+
+> [!NOTE]
+> Compute APIs are currently in beta. Include `?beta=true` as a query parameter in all compute requests.
+
+### Get Apache Airflow Job Compute (beta)
+
+Returns the compute configuration for the specified Apache Airflow job environment.
+
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/compute?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```rest
+{
+  "instancePoolId": "12345678-1234-1234-1234-123456789012",
+  "nodeSize": "Small",
+  "minNodeCount": 1,
+  "maxNodeCount": 5
+}
+```
+
+## Environment APIs
+
+For full reference documentation, see [Environment](/rest/api/fabric/apacheairflowjob/environment).
+
+> [!NOTE]
+> Environment APIs are currently in beta. Include `?beta=true` as a query parameter in all environment requests.
+
+### Get Apache Airflow Job Environment (beta)
+
+Returns the Apache Airflow environment for the specified Apache Airflow job.
+
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```rest
+{
+  "id": "12345678-1234-1234-1234-123456789012",
+  "status": "Running",
+  "workspaceId": "<workspaceId>",
+  "apacheAirflowJobId": "<apacheAirflowJobId>"
+}
+```
+
+### Start Apache Airflow Job Environment (beta)
+
+Starts an Apache Airflow job environment.
+
+**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/start?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```rest
+200 OK
+```
+
+### Stop Apache Airflow Job Environment (beta)
+
+Stops an Apache Airflow job environment.
+
+**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/stop?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```rest
+200 OK
+```
+
+## Requirements APIs
+
+For full reference documentation, see [Requirements](/rest/api/fabric/apacheairflowjob/requirements).
+
+> [!NOTE]
+> Requirements APIs are currently in beta. Include `?beta=true` as a query parameter in all requirements requests.
+
+### Deploy Apache Airflow Job Requirements (beta)
+
+Deploys requirements for an Apache Airflow job environment.
+
+**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/requirements/deploy?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```rest
+{
+  "requirements": "pandas==1.5.3\nrequests==2.28.0"
+}
+```
+
+**Sample response**:
+
+```rest
+200 OK
+```
+
+### List Apache Airflow Job Libraries (beta)
+
+Returns a list of installed libraries for the specified Apache Airflow job environment.
+
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/requirements/libraries?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```rest
+{
+  "value": [
+    {
+      "name": "pandas",
+      "version": "1.5.3"
+    },
+    {
+      "name": "requests",
+      "version": "2.28.0"
+    }
+  ]
+}
+```
+
+## Settings APIs
+
+For full reference documentation, see [Settings](/rest/api/fabric/apacheairflowjob/settings).
+
+> [!NOTE]
+> Settings APIs are currently in beta. Include `?beta=true` as a query parameter in all settings requests. These APIs manage per-job environment settings. For workspace-level settings, see [Workspace Settings APIs](#workspace-settings-apis).
+
+### Get Apache Airflow Job Settings (beta)
+
+Returns the environment settings for the specified Apache Airflow job.
+
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/settings?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
+
+```rest
+{
+  "environmentVariables": {
+    "MY_VARIABLE": "my_value"
+  },
+  "apacheAirflowProperties": {
+    "core-dag_run_conf_overrides_params": "True"
+  }
+}
+```
+
+### Update Apache Airflow Job Settings (beta)
+
+Updates the settings for an Apache Airflow job environment.
+
+**Request URI**: `PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/settings?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```rest
+{
+  "environmentVariables": {
+    "MY_VARIABLE": "my_value"
+  },
+  "apacheAirflowProperties": {
+    "core-dag_run_conf_overrides_params": "True"
+  }
+}
+```
+
+**Sample response**:
+
+```rest
+200 OK
+```
+
 ## Workspace Settings APIs
 
-### Get Airflow Workspace Settings
+For full reference documentation, see [Workspace Settings](/rest/api/fabric/apacheairflowjob/workspace-settings).
 
-Get Apache Airflow workspace settings.
+> [!NOTE]
+> Workspace Settings APIs are currently in beta. Include `?beta=true` as a query parameter in all workspace settings requests. These APIs manage workspace-level Airflow settings. For per-job settings, see [Settings APIs](#settings-apis).
 
-**Request URI**: ```GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/settings?beta={beta}```
+### Get Airflow Workspace Settings (beta)
 
-**Sample Results**:
+Returns Apache Airflow workspace settings.
+
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/settings?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
+}
+```
+
+**Sample response**:
 
 ```rest
 {
   "defaultPoolTemplateId": "12345678-1234-1234-1234-123456789012"
 }
 ```
-### Update Airflow Workspace Settings
+
+### Update Airflow Workspace Settings (beta)
 
 Updates Apache Airflow workspace settings.
 
-**Request URI**: ```PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/settings?beta={beta}```
+**Request URI**: `PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/settings?beta=true`
 
-**Sample Results**:
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
 
 ```rest
 {
   "defaultPoolTemplateId": "12345678-1234-1234-1234-123456789012"
 }
+```
+
+**Sample response**:
+
+```rest
+200 OK
 ```
 
 > [!NOTE]
@@ -601,3 +931,8 @@ Refer to the following content for more information on APIs in Apache Airflow Jo
 
 - [Microsoft Fabric REST API](/rest/api/fabric/articles/)
 - [CRUD Items APIs in Fabric](/rest/api/fabric/core/items)
+- [Apache Airflow Job — Compute](/rest/api/fabric/apacheairflowjob/compute)
+- [Apache Airflow Job — Environment](/rest/api/fabric/apacheairflowjob/environment)
+- [Apache Airflow Job — Pool Management](/rest/api/fabric/apacheairflowjob/pool-management)
+- [Apache Airflow Job — Requirements](/rest/api/fabric/apacheairflowjob/requirements)
+- [Apache Airflow Job — Settings](/rest/api/fabric/apacheairflowjob/settings)
