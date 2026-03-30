@@ -204,17 +204,19 @@ Describe the insight you’re looking for. Start with a broad question and refin
 
 ### [Use query editor to add tile](#tab/new-tile-query-editor)
 
-For KQL query expoerts, you can manually author and edit the query and visual in the tile editing pane.
+Here you can manually author and edit the KQL query and visual in the tile editing pane.
 
 1. In your dashboard, switch to [edit mode](#edit-mode).
 
 1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
 
-   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
+   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button."lightbox="media/real-time-dashboard/add-tile-button.png"::::::
 
-1. Use the existing data source or select a new data source for your query from Explorer pane. The data source you select determines the tables and fields available for querying.
+1. Use the existing data source or select a new data source for your query from the **Explorer** pane. The data source you select determines the tables and fields available for querying.
 
 1. Type your KQL query, and select **Run**.
+
+    :::image type="content" source="media/real-time-dashboard/new-tile-query-editor.png" alt-text="Screen shot of the tile KQL query editor with a query written and the Run button highlighted." lightbox="media/real-time-dashboard/new-tile-query-editor.png":::
 
     For information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
