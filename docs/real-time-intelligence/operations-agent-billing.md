@@ -10,7 +10,7 @@ ai-usage: ai-assisted
 
 # Operations agent capacity and billing
 
-Operations agent in Microsoft Fabric Real-Time Intelligence helps you automate monitoring and response actions based on data changes. To use operations agents effectively, you need to understand their capacity and billing aspects. This article explains how Real-Time Intelligence measures, bills, and reports operations agent usage.
+Operations agents in Microsoft Fabric Real-Time Intelligence help you automate monitoring and response actions based on data changes. To use operations agents effectively, you need to understand their capacity and billing aspects. This article explains how Real-Time Intelligence measures, bills, and reports operations agent usage.
 
 All operations in Fabric consume capacity units (CUs). In operations agents, the system aggregates one or more consumed CUs per agent based on its operations. You can find detailed usage reports in the Microsoft Fabric Capacity Metrics app or through the Azure billing system. These reports provide insights into CU consumption by operations agents, helping you monitor and manage your usage effectively.
 
@@ -22,7 +22,7 @@ The following sections cover dedicated operations, usage categories, and the pau
 
 - **Copilot in Fabric** is a dedicated operation that occurs when the operations agent uses the large language model (LLM). For example, you use AI-driven suggestions or automation to set up, modify, or manage the operations agent's rules and actions.
 
-- **Operations agent compute** refers to the cost of the agent processing and monitoring data in the background. This cost includes the compute needed to evaluate rules and conditions, along with any extra costs from data sources providing the required data.
+- **Operations agent compute** refers to the cost of the agent processing and monitoring data in the background. This cost includes the compute needed to evaluate rules and conditions, along with any extra costs from data sources that provide the required data.
 
 - **Operations agent autonomous reasoning** refers to the LLM processing that happens when a condition is met. The agent analyzes the data, generates recommendations, and sends messages to the user for approval.
 
@@ -59,7 +59,7 @@ You can find detailed usage reports in the Microsoft Fabric Capacity Metrics app
 
 ## Considerations and limitations
 
-Consumption rates can change at any time. Microsoft makes reasonable efforts to provide notice through email or in-product notification. Changes take effect on the date stated in Microsoft’s Release Notes or in the Microsoft Fabric blog. If a change to a Microsoft Fabric workload consumption rate significantly increases the Capacity Units (CU) required to use a particular workload, you can use the cancellation options available for the chosen payment method.
+Consumption rates can change at any time. Microsoft makes reasonable efforts to provide notice through email or in-product notification. Changes take effect on the date stated in Microsoft’s Release Notes or in the Microsoft Fabric blog. If a change to a Microsoft Fabric workload consumption rate significantly increases the CUs required to use a particular workload, you can use the cancellation options available for the chosen payment method.
 
 ## Related content
 
