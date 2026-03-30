@@ -1,8 +1,9 @@
 ---
 title: Intelligence sheets in plan (preview)
 description: Learn about the Intelligence sheets component of the plan (preview) item for a no-code reporting experience. Build reports, visualize data, and get real-time insights across plans and budgets.
-ms.date: 03/11/2026
+ms.date: 03/30/2026
 ms.topic: overview
+ai-usage: ai-assisted
 #customer intent: As a user, I want visualize my plans, budgets, and forecasts.
 ---
 
@@ -12,7 +13,7 @@ The *Intelligence sheets* component of plan (preview) provides a powerful no-cod
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Intelligence sheets bring single-click, flexible IBCS formatting for charts, cards, and tabular reports, with pixel-perfect exports.
+Intelligence sheets bring single-click, flexible **IBCS** formatting for charts, cards, and tabular reports, with pixel-perfect exports.
 
 With their intuitive, no-code user experience (UX), Intelligence sheets enable even casual users to build dashboards and storyboards in minutes. They integrate over 100 charts, Gantt charts, cards, and tables for an end-to-end reporting solution.
 
@@ -51,29 +52,6 @@ The following table lists the core capabilities of Intelligence sheets.
 | **100+ charts** | - Brings over 100 business and storytelling charts. <br>- Includes special charts like marimekko, radar/polar, network graphs, sankey, multi axis charts, and lollipop, that are not available natively on Power BI |
 | **Real-time intelligence** | - Connect to Planning sheets to visualize plans, budgets, forecasts, and simulations in real time |
 | **Gantt chart** | - Best-in-class solution for project planning and resource allocation |
-
-## Overview of Intelligence sheet steps
-
-### Prerequisites
-
-Before you create an Intelligence sheet, make sure that you have the following prerequisites in place:
-
-* A **Fabric SQL database** to store the app metadata.
-* [Connections or data sources](../../data-factory/data-source-management.md) to connect to **Fabric SQL databases** and **semantic models**.
-* A **plan (preview)** item in your Fabric workspace.
-
-### Create an Intelligence sheet
-
-Follow these steps to get started with Intelligence sheets:
-
-1. **Create an Intelligence sheet**
-1. **Add a Matrix visual**: Map row and column dimensions and measures from semantic models, Excel/CSV files, or Planning sheets to create a tabular report.
-1. **Add calculations and logic to the table**: Insert formulas, calculated measures, or manual input columns.
-1. **Customize the table**: Change the layout, add headers and footers, format cells to customize the table.
-1. **Insert charts**: Select the chart type most suited to the business case and assign the measures and dimensions to visualize.
-1. **Add KPI cards**: Use KPI cards to highlight key metrics and variances.
-1. **Collaborate and review**: Use comments, annotations, and notes to include additional perspective and insights in reports.
-1. **Write back data**: Save your reports to configured destinations.
 
 ## Next steps
 
