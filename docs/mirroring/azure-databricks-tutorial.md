@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Mirrored Databases From Azure Databricks Tutorial"
 description: Learn how to create a mirrored database from Azure Databricks in Microsoft Fabric.
 ms.reviewer: sheppardshep, mspreshah
-ms.date: 07/31/2025
+ms.date: 03/30/2026
 ms.topic: tutorial
 ---
 
@@ -73,7 +73,10 @@ This section guides you on configuring network security for your Azure Data Lake
 ### Prerequisites
 
 - Create or use an existing Azure Databricks workspace with Unity Catalog enabled.
-- To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
+- When ADLS Gen2 is behind a firewall, the workspace identity is required for trusted network access, regardless of the Databricks authentication method used. 
+   - To enable the workspace identity authentication type (recommended), the Fabric workspace must be associated with any F capacity. To create a workspace identity, see [Authenticate with workspace identity](../security/workspace-identity-authenticate.md#step-1-create-the-workspace-identity).
+   - Workspace Identity is used for storage firewall access. A service principal or OAuth is used for Databricks authentication and Unity Catalog authorization.
+   - When ADLS Gen2 is protected by an Azure Storage firewall, Fabric uses Workspace Identity to access the storage account. Even if a service principal is selected for Databricks authentication, the Workspace Identity must be granted the appropriate permissions on the Azure Storage account.
 - This section is for reaching an Azure Data Lake Storage (ADLS) Gen2 storage account behind an Azure Storage firewall. Azure Databricks workspace storage behind an Azure Storage firewall is not supported.
 - A catalog must be associated with a single storage account.
 
