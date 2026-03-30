@@ -32,15 +32,15 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 1. On the Fabric home page, select the ellipses (**...**) icon, and then select **Create**.
 
-    :::image type="content" source="media/operations-agent/create.png" alt-text="A screenshot of the ellipses icon and create option.":::
+    :::image type="content" source="media/operations-agent/create.png" alt-text="Screenshot of the ellipsis icon and Create option.":::
 
 1. On the **Create** pane, go to the **Real-Time Intelligence** section, and select **Operations agent**.
 
-    :::image type="content" source="media/operations-agent/operational-agents.png" alt-text="A screenshot of the create operations agent option.":::
+    :::image type="content" source="media/operations-agent/operational-agents.png" alt-text="Screenshot of the option for creating an operations agent.":::
 
 1. On the **New Operations agent** pane, enter a name for your agent and select the workspace where you want to create it.
 
-    :::image type="content" source="media/operations-agent/new-agent.png" alt-text="A screenshot of the new operations agent pane." lightbox="media/operations-agent/new-agent.png":::
+    :::image type="content" source="media/operations-agent/new-agent.png" alt-text="Screenshot of the pane for a new operations agent." lightbox="media/operations-agent/new-agent.png":::
 
 1. Select **Create** to create the operations agent.
 
@@ -72,7 +72,7 @@ On the **Agent setup** page, you can configure the operations agent and adjust i
 
       1. On the **Configure custom action** pane, select the workspace and the activator item, and then create a connection.
 
-            :::image type="content" source="media/operations-agent/create-connection.png" alt-text="Screenshot of the configure custom action pane." lightbox="media/operations-agent/create-connection.png":::
+            :::image type="content" source="media/operations-agent/create-connection.png" alt-text="Screenshot of the pane for configuring a custom action." lightbox="media/operations-agent/create-connection.png":::
 
       1. Select **Copy** to copy the connection string, and select **Open flow builder** to create a flow that gets triggered by the action.
 
@@ -100,7 +100,7 @@ To enable the agent to contact you proactively when it identifies data that matc
 
 After you install the app, the agent can send messages in Teams when it identifies data that matches the specified conditions. These messages include a summary of the insights and recommended actions. You can update the recipients of these messages in the agent's configuration settings. Recipients must belong to your organization and have write permissions for the agent item in Fabric. You can find this setting under **Agent behavior**.
 
-:::image type="content" source="media/operations-agent/agent-behavior.png" alt-text="Screenshot of the Agent behavior option in the Fabric Operations Agent settings." lightbox="media/operations-agent/agent-behavior.png":::
+:::image type="content" source="media/operations-agent/agent-behavior.png" alt-text="Screenshot of the option for agent behavior in the Fabric Operations Agent settings." lightbox="media/operations-agent/agent-behavior.png":::
 
 > [!IMPORTANT]
 > The agent operates by using the delegated identity and permissions of its creator. When a recipient approves a recommendation, the agent executes the action on behalf of the creator, using the creator's permissions.
