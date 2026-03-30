@@ -268,15 +268,12 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
 
 1. Switch to the editing mode by selecting **Editing** in the top-right corner.
-
 1. On the **Pages** pane, select **+ Add page**.
 
     :::image type="content" source="media/real-time-dashboard/new-page.png" alt-text="Screenshot of adding a page to a Real-Time Dashboard in Real-Time Intelligence in Microsoft Fabric." lightbox="media/real-time-dashboard/new-page.png":::
-
 1. To name the page, select the vertical **More menu [...]** > **Rename page**.
 
     :::image type="content" source="media/real-time-dashboard/new-page-rename.png" alt-text="Screenshot of renaming a page in Real-Time Dashboards." lightbox="media/real-time-dashboard/new-page-rename.png":::
-[add tiles](#addedit-tile)
 
 ## Use parameters
 
