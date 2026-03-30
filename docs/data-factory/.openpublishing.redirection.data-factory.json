@@ -349,6 +349,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/copilot-modern-get-data.md",
+        "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#get-data-with-copilot-preview",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/data-workflows-workspace-settings.md",
         "redirect_url": "/fabric/data-factory/apache-airflow-workspace-settings",
         "redirect_document_id": false
@@ -422,11 +427,6 @@
         "source_path_from_root": "/docs/data-factory/recent-data.md",
         "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#recent-data-preview",
         "redirect_document_id": false
-      },
-      {
-        "source_path_from_root": "/docs/data-factory/copilot-modern-get-data.md",
-        "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#get-data-with-copilot-preview",
-        "redirect_document_id": true
       }
     ]
 }
