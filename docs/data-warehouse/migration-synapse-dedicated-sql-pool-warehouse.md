@@ -113,6 +113,8 @@ If a legacy data warehouse has evolved over a long period of time, you might nee
 
 You might also want to redesign the architecture to take advantage of the new engines and features available in the Fabric Workspace.  
 
+<a id="design-differences-synapse-dedicated-sql-pools-and-fabric-warehouse"></a>
+
 ## Design differences: Synapse dedicated SQL pools and Fabric Data Warehouse
 
 Consider the following Azure Synapse and Microsoft Fabric data warehousing differences, comparing dedicated SQL pools to the Fabric Data Warehouse.
