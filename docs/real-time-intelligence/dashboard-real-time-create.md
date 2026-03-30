@@ -25,7 +25,7 @@ In this article, you learn how to create a new Real-Time Dashboard, add data sou
 ## Enable tenant settings in the admin portal
 
 > [!IMPORTANT]
-> This step must be completed by the tenant admin.
+> The tenant admin must complete this step.T
 
 1. Browse to the [admin portal](../admin/admin-center.md).
 
@@ -49,7 +49,7 @@ There are several ways to create a new Real-Time dashboard, select the tab that 
 
 ### [Copilot](#tab/create-copilot)
 
-Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it. Start by selecting a data table from the Real-Time Hub or a KQL Queryset. Copilot will then create a Real-Time Dashboard tailored to your specifications, including an insights page for a high-level summary and a data profile page for in-depth analysis.
+Copilot streamlines the creation of Real-Time Dashboards by automating the setup process, making it accessible even to users without advanced technical expertise. By using natural language input, you can describe the dashboard you want, and Copilot uses AI to generate it. Start by selecting a data table from the Real-Time Hub or a KQL Queryset. Copilot creates a Real-Time Dashboard tailored to your specifications, including an insights page for a high-level summary and a data profile page for in-depth analysis.
 
 For detailed instructions, see [Generate Real-Time Dashboard Using Copilot](../fundamentals/copilot-generate-dashboard.md).
 
@@ -196,11 +196,12 @@ Describe the insight you’re looking for. Start with a broad question and refin
 1. Select **Apply**. You can now view and edit the underlying KQL query or continue with Copilot. The query is generated based on your natural language description and any follow-up refinements you made in Copilot.
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. ":::
-    Copilot provides three outputs:
 
-1. To generate the tile on the dashboard, select **Apply changes**
+1. To generate the tile on the dashboard, select **Apply changes**.
 
-1. To discard the generated query and visual, select **Discard changes**.
+1. In the dashboard toolbar, select **Save** to save the dashboard with the new or edited tile.
+
+    :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon.":::
 
 ### [Use query editor to add tile](#tab/new-tile-query-editor)
 
@@ -229,7 +230,7 @@ Here you can manually author and edit the KQL query and visual in the tile editi
 
 1. In the **Visual formatting** tab, select a **Visual type** and configure the remaining options. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
 
-1. Select **Apply changes** to save the visual to the dashboard.
+1. Select **Apply changes** to add the visual to the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::
 
