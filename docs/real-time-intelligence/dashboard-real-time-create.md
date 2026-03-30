@@ -267,7 +267,7 @@ You can add tiles to your dashboard directly from queries written in a KQL query
 
 Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
 
-1. Switch to the editing mode by selecting **Editing** in the top-right corner. 
+1. Switch to the editing mode by selecting **Editing** in the top-right corner.
 
 1. On the **Pages** pane, select **+ Add page**.
 
@@ -311,7 +311,7 @@ You can view the query in either viewing or editing mode.
 
 1. On the tile you want to explore, select the **Tile options [...]** > **View query**. A pane opens with the query and results table.
 
-    :::image type="content" source="media/real-time-dashboard/view-query-menu.png" alt-text="Screenshot of the View query menu for a tile on the dashboard." lightbox="media/real-time-dashboard/view-query-menu.png"::: 
+    :::image type="content" source="media/real-time-dashboard/view-query-menu.png" alt-text="Screenshot of the View query menu for a tile on the dashboard." lightbox="media/real-time-dashboard/view-query-menu.png":::
 
 1. Select **Edit query**.
 
@@ -346,10 +346,10 @@ To share the dashboard link:
 1. Select **Share** in the top-right corner of the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/share-link.png" alt-text="Screenshot that shows the Share button." lightbox="media/real-time-dashboard/share-link.png":::
-1. In the **Create and send link** window, you can do the following steps: 
-    - To see a link to the dashboard and copy it to the clipboard, select **Copy link**. 
-    - To share a link to the dashboard via email, select **by Email**. 
-    - To share a link to the dashboard via Teams, select **by Teams**. 
+1. In the **Create and send link** window, you can do the following steps:
+    - To see a link to the dashboard and copy it to the clipboard, select **Copy link**.
+    - To share a link to the dashboard via email, select **by Email**.
+    - To share a link to the dashboard via Teams, select **by Teams**.
 
 ## Export dashboards
 
