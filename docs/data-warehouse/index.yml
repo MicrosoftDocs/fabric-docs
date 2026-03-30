@@ -117,6 +117,8 @@ landingContent:
     linkLists: 
       - linkListType: concept
         links:
+          - text: Use AI functions
+            url: ai-functions.md
           - text: Query using the SQL Query editor
             url: sql-query-editor.md
           - text: Query with T-SQL

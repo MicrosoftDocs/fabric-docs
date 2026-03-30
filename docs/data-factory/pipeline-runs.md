@@ -73,23 +73,25 @@ On the Schedule configuration page, you can specify a schedule type, schedule fr
 
 Once your Fixed schedule is configured, select **Save** to set your schedule.
 
-### Interval-based schedule
+### Interval-based schedule (preview)
 
-Interval-based schedules allow you to configure fixed, non-overlapping intervals to run your pipelines. 
+Interval-based schedules (preview) allow you to configure fixed, non-overlapping intervals to run your pipelines.
 
-:::image type="content" source="media/pipeline-runs/configure-interval-based-schedule.png" alt-text="Screenshot of the interval-based schedule configuration screen." lightbox="media/pipeline-runs/configure-interval-based-schedule.png":::
+> [!NOTE]
+> Interval-based schedules are in Public preview.
 
-Once your Interval-based schedule is configured, select **Save** to set your schedule.
+:::image type="content" source="media/pipeline-runs/interval-based-schedule-trigger-parameters.png" alt-text="Screenshot showing Trigger parameters with Window start time and Window end time for an interval-based schedule." lightbox="media/pipeline-runs/interval-based-schedule-trigger-parameters.png":::
+
+Once your Interval-based schedule (preview) is configured, select **Save** to set your schedule.
 
 You can add up to 20 schedules for a single pipeline by selecting **Add Schedule** again after saving your first schedule. Each schedule can have different frequencies and start and end times.
 
-If you have an interval-based schedule configured, you will see 2 new parameters in your pipeline expression builder under **Trigger parameters** called Window start time and Window end time.  
+If you have an interval-based schedule configured, you will see 2 new parameters in your pipeline expression builder under **Trigger parameters** called Window start time and Window end time.
 
 :::image type="content" source="media/pipeline-runs/configure-interval-based-schedule.png" alt-text="Screenshot of the interval-based schedule configuration screen." lightbox="media/pipeline-runs/configure-interval-based-schedule.png":::
 
-> [!Note]
-> Time slice monitoring and backfill capabilities are not yet available for Interval-based schedules. 
-
+> [!NOTE]
+> Time slice monitoring and backfill capabilities are not yet available for Interval-based schedules.
 
 ### Manage scheduled runs
 
@@ -97,8 +99,8 @@ You can manage your scheduled runs by selecting **Schedule** in the top banner o
 
 :::image type="content" source="media/pipeline-runs/toggle-or-edit.png" alt-text="Screenshot showing where in the schedule menu you can toggle or edit a scheduled run." lightbox="media/pipeline-runs/toggle-or-edit.png":::
 
-> [!Note]
-> You can't enable, disable or edit your Interval-based schedules. If you want to make changes, delete and re-create your schedule. 
+> [!NOTE]
+> You can't enable, disable or edit your Interval-based schedules. If you want to make changes, delete and re-create your schedule.
 
 To delete a Fixed schedule, select the **Edit** icon (pencil) next to the schedule you want to delete. In the Edit Schedule pane, select **Delete schedule** at the bottom of the pane.
 
@@ -107,7 +109,6 @@ To delete a Fixed schedule, select the **Edit** icon (pencil) next to the schedu
 To delete an Interval-based schedule, select the **Delete** icon (trashcan) next to the schedule you want to delete.
 
 :::image type="content" source="media/pipeline-runs/delete-interval-based-schedule.png" alt-text="Screenshot showing the delete button can be found next to the interval-based schedule.":::
-
 
 ### Configure failure notifications
 

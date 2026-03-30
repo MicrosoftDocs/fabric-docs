@@ -164,7 +164,7 @@ Run these commands to get access tokens for ARM, Synapse, and Fabric:
 ```PowerShell
 $ArmToken = (Get-AzAccessToken -ResourceUrl "https://management.azure.com/").Token
 $synapseSecureToken = (Get-AzAccessToken -ResourceUrl "https://dev.azuresynapse.net").Token
-$fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token<img width="586" height="91" alt="image" src="https://github.com/user-attachments/assets/09d30533-cda1-4e73-a44d-3e64a366e46a" />
+$fabricSecureToken = (Get-AzAccessToken -ResourceUrl "https://analysis.windows.net/powerbi/api").Token<img width="586" height="91" alt="image" src="https://github.com/user-attachments/assets/aaaabbbb-0000-cccc-1111-dddd2222eeee" />
 
 ```
 ## PowerShell command to upgrade your Synapse pipelines

@@ -75,7 +75,7 @@ To migrate effectively, follow these steps:
    - Use [deployment pipelines](cicd-pipelines.md) for CI/CD and version control
 1. **Manual migration**: For scenarios not supported by other migration methods, rebuild them in Fabric:
     1. **Recreate connections**: Set up [Connections](connector-overview.md) in Fabric to replace Linked Services in ADF
-    1. **Recreate activities**: Set up your [activities](activity-overview.md) in your pipelines, replacing [unsupported activities](activity-parity.md) with Fabric alternatives or using the Invoke pipeline activity
+    1. **Recreate activities**: Set up your [activities](activity-overview.md) in your pipelines, replacing [unsupported activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) with Fabric alternatives or using the Invoke pipeline activity
     1. **Schedule and set triggers**: [Rebuild schedules and event triggers in Fabric](pipeline-runs.md) to match your ADF schedules
 1. **Test thoroughly**: Validate migrated pipelines against expected outputs, performance benchmarks, and compliance requirements.
 
@@ -96,7 +96,7 @@ Modernize your ETL environment by moving pipelines and data flows to Fabric. Pla
 - Recreate global parameters as variable libraries
 - Define dataset properties inline in pipeline activities
 - Replace SHIRs (self-hosted integration runtimes) with OPDGs (on-premises data gateways) and VNet IRs with Virtual Network Data Gateways
-- Rebuild unsupported ADF activities using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
+- Rebuild [unsupported ADF activities](compare-fabric-data-factory-and-azure-data-factory.md#activity-comparison) using Fabric alternatives or the Invoke pipeline activity. Unsupported activities include:
   - Data Lake Analytics (U-SQL), a deprecated Azure service
   - Validation activity, which can be rebuilt using Get Metadata, pipeline loops, and If activities
   - Power Query, which is fully integrated into Fabric as dataflows where M code can be reused

@@ -134,6 +134,8 @@ items:
       href: notebook-source-control-deployment.md
     - name: Use notebook public APIs
       href: notebook-public-api.md
+    - name: Notebook data export controls (preview)
+      href: notebook-data-export-controls.md
   - name: Troubleshooting and limitations
     items:
     - name: Fabric notebook known limitations
@@ -210,6 +212,12 @@ items:
         href: configure-starter-pools.md
       - name: Create custom pools
         href: create-custom-spark-pools.md
+      - name: Custom live pools overview
+        href: custom-live-pools-overview.md
+      - name: Configure custom live pools
+        href: custom-live-pools-configure.md
+      - name: Session start insights
+        href: session-start-insights.md
       - name: High concurrency mode
         href: high-concurrency-overview.md
       - name: Autotune Spark configuration
@@ -220,6 +228,8 @@ items:
         href: configure-autoscale-billing.md
       - name: Resource profile configurations
         href: configure-resource-profile-configurations.md
+      - name: Configure resource profiles
+        href: configure-resource-profiles.md
     - name: Job operations and monitoring
       items:
       - name: Job admission and management
@@ -270,8 +280,12 @@ items:
       href: runtime-1-3.md
     - name: Runtime 1.2 (Spark 3.4)
       href: runtime-1-2.md
-  - name: Native Execution Engine
-    href: native-execution-engine-overview.md
+  - name: Native execution engine
+    items:
+    - name: Native execution engine overview
+      href: native-execution-engine-overview.md
+    - name: Z-Order and liquid clustering support
+      href: native-execution-engine-z-order-liquid-clustering.md
   - name: Spark job definition (SJD)
     items:
     - name: What is a Spark job definition?
@@ -377,7 +391,9 @@ items:
     - name: JDBC driver for Fabric Data Engineering
       href: spark-jdbc-driver.md
     - name: ODBC driver for Fabric Data Engineering
-      href: spark-odbc-driver.md    
+      href: spark-odbc-driver.md  
+    - name: ADO.NET driver for Fabric Data Engineering
+      href: spark-adonet-driver.md    
   - name: Intelligent cache
     href: intelligent-cache.md
   - name: Livy API
@@ -400,14 +416,18 @@ items:
       href: ./user-data-functions/create-user-data-functions-vs-code.md
   - name: Fabric Data Engineering VS Code extension
     items:
-    - name: Overview
+    - name: Get started with the VS Code extension
       href: setup-vs-code-extension.md
-    - name: VS Code extension with Docker image
-      href: set-up-vs-code-extension-with-docker-image.md
-    - name: Manage environment artifact with VS Code extension
-      href: manage-environment-with-vs-code.md  
+    - name: Manage Fabric workspace with VS Code under VFS mode
+      href: manage-workspace-with-vs-code-vfs-mode.md
+    - name: Manage environments with VS Code extension
+      href: manage-environment-with-vs-code.md
+    - name: Manage environments with VS Code under VFS mode
+      href: manage-environment-with-vs-code-vfs-mode.md
     - name: Notebook with VS Code extension
       href: author-notebook-with-vs-code.md
+    - name: Notebook with VS Code under VFS mode
+      href: author-notebook-with-vs-code-vfs-mode.md
     - name: Fabric Notebook custom agent inside VS Code
       href: notebook-custom-agent-with-vs-code.md
     - name: Notebook resource with VS Code extension
@@ -420,6 +440,8 @@ items:
       href: author-notebook-with-vs-code-web.md
     - name: Develop notebook with Fabric runtime
       href: fabric-runtime-in-vscode.md
+    - name: VS Code extension with Docker image
+      href: set-up-vs-code-extension-with-docker-image.md
 - name: Migrate to Fabric
   items:
   - name: From Azure Synapse

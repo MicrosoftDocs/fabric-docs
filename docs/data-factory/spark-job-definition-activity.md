@@ -74,7 +74,7 @@ Current limitations in the Spark Job Definition activity for Fabric Data Factory
 
 - Although we support monitoring the activity via the output tab, you aren't able to monitor the Spark Job Definition at a more granular level yet. For example, links to the monitoring page, status, duration, and previous Spark Job Definition runs aren't available directly in the Data Factory. However, you can see more granular details in the [Spark Job Definition monitoring page](../data-engineering/monitor-spark-job-definitions.md).
 - Detailed run-level monitoring is available in the Spark Job Definition monitoring page. The authentication method (SPN or WI) used for the run does **not** affect monitoring behavior.
-- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix for this is currently being worked on.
+- Users must use an SPN or WI connection for the SJD monitoring URL feature.
 
 ## Save and run or schedule the pipeline
 

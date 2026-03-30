@@ -23,7 +23,7 @@ Column-level security (CLS) is a feature of [OneLake security (preview)](./get-s
 OneLake security CLS gets enforced in one of the following two ways:
 
 * **Filtered tables in Fabric engines:** Queries to the Fabric engines, like Spark notebooks, result in the user seeing only the columns they're allowed to see per the CLS rules.
-* **Blocked access to tables:** Tables with CLS rules applied to them can't be read outside of supported Fabric engines.
+* **Blocked access to tables:** Tables with CLS rules applied to them can't be read outside of supported Fabric engines or [authorized third-party engines](./onelake-security-integrations-overview.md) that enforce OneLake security. Access is blocked for non-authorized engines.
 
 For filtered tables, the following behaviors apply:
 
@@ -36,6 +36,12 @@ For filtered tables, the following behaviors apply:
   * Spark notebooks: The query succeeds and only shows the allowed columns.
   * SQL analytics Endpoint: Column access is blocked for the columns the user can't access.
   * Semantic models: Column access is blocked for the columns the user can't access. 
+
+### Authorized third-party engine enforcement
+
+Authorized third-party engines can retrieve effective column access for a user from OneLake by using the [authorized engine APIs](./onelake-security-integrations-overview.md) and enforce CLS at query time. OneLake remains the single source of truth, and CLS definitions authored in OneLake are applied consistently across Fabric engines and authorized external engines.
+
+For more information, see [Integrate a third-party engine with OneLake security](./onelake-security-integrations-external-engines.md).
 
 ## Define column-level security rules
 
