@@ -23,7 +23,7 @@ ms.date: 03/30/2026
 
     :::image type="content" source="../media/includes/select-database.png" alt-text="Screenshot of selecting the database.":::
 
->[!NOTE]
->When a new Plan item is created in a workspace, a Fabric SQL database is automatically created for that workspace. This database stores all the plan app metadata for workspace users. You can choose this database.
+    >[!NOTE]
+    >When a new Plan item is created in a workspace, a Fabric SQL database is automatically created for that workspace. This database stores all the plan app metadata for workspace users. You can choose this database.
 
 1. Select **Connect**.
