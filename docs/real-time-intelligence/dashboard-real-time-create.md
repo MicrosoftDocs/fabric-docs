@@ -175,53 +175,63 @@ You can switch between the two options at any time.
 
 :::image type="content" source="media/real-time-dashboard/tile-editing-panes.png" alt-text="Screenshot of the three panes in the tile editing window: Explorer, Run query, and Copilot.":::
 
-### [Use Copilot to add tile](#tab/new-tile-copilot)
+### [Use Copilot to add tile (preview)](#tab/new-tile-copilot)
 
-Describe the insight you’re looking for. Start with a broad question and refine based on the results. You might begin with “Show me all error events” and follow up with “Filter to critical errors only” or “Group by error type.” Copilot maintains context within the conversation, so each follow-up builds on your previous requests.
+Describe the insight you’re looking for. Start with a broad question and refine based on the results. You might begin with “Show me all error events” and follow up with “Filter to critical errors only” or “Group by error type.” Copilot maintains context within the conversation, so each follow-up builds on your previous requests. For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
 
-1. Switch to [edit mode](#edit-mode).
+1. In your dashboard, switch to [edit mode](#edit-mode).
 
 1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
 
    :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
 
-1. Enter your a description in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
+1. Enter a description in natural language. For example, "View the most available bike points including neighborhood, street name, and number of bikes at the station."
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response.png" alt-text="Screenshot of the copilot pane with the results displayed in a table.":::
 
-1. View the result and continue to refine them in the Copilot pane. In this example, ask Copilot to "Change the visual to a map and show the 10 locations with the most bikes".
+1. View the result. Refine the result by asking Copilot a follow-up request. In this example, ask Copilot to "Change the visual to a map and show the 10 locations with the most bikes".
 
      :::image type="content" source="media/real-time-dashboard/new-tile-copilot-response-refined.png" alt-text="Screenshot of the copilot pane with the refined results displayed in a table.":::
 
-1. Select **Apply**. You can now view and edit the KQL query in the Query pane or continue with Copilot. The query is generated based on your natural language description and any follow-up refinements you made in Copilot.
+1. Select **Apply**. You can now view and edit the underlying KQL query or continue with Copilot. The query is generated based on your natural language description and any follow-up refinements you made in Copilot.
 
     :::image type="content" source="media/real-time-dashboard/new-tile-copilot-apply.png" alt-text="Screenshot of the tile editor after selecting apply in copilot. ":::
     Copilot provides three outputs:
 
 1. To generate the tile on the dashboard, select **Apply changes**
 
-1. To discard the generated query and visual, select **Discard changes**. 
-
-For more information, see [Use Copilot for writing KQL queries](copilot-writing-queries.md).
+1. To discard the generated query and visual, select **Discard changes**.
 
 ### [Use query editor to add tile](#tab/new-tile-query-editor)
 
-1. Start by selecting a data source for your query from the dropdown menu. The data source you select determines the tables and fields available for querying. 
-1. In the **Query** pane,
-    1. Select the data source from the dropdown menu.
-    1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
-    
-    > [!TIP]
-    > You can use Copilot directly from the editing pane to author KQL with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor. For more information, see [Use Copilot in the tile editing pane](#use-copilot-in-the-tile-editing-pane).
-    
-    1. Select **+ Add visual** on the ribbon for the Results pane at the bottom.
+For KQL query expoerts, you can manually author and edit the query and visual in the tile editing pane.
 
-    :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Intelligence in Microsoft Fabric.":::
-1. In the **Visual formatting** tab, select **Visual type** to choose the type of visual. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
+1. In your dashboard, switch to [edit mode](#edit-mode).
+
+1. Select **Add tile** from the dashboard canvas or **New tile** from the top menu bar.
+
+   :::image type="content" source="media/real-time-dashboard/add-tile-button.png" alt-text="Screenshot showing the selection of the Add tile button.":::
+
+1. Use the existing data source or select a new data source for your query from Explorer pane. The data source you select determines the tables and fields available for querying.
+
+1. Type your KQL query, and select **Run**.
+
+    For information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
+
+    > [!TIP]
+    > You can also use Copilot to author KQL with natural language. Copilot can generate a new query, replace the current query, or refine it without leaving the tile editor.
+
+1. To create a visual tile, open the visual formatting editor. Select **+ Add Visual** on the lower ribbon, or select the **Visual formatting** icon on the horizontal tab.
+
+    :::image type="content" source="media/real-time-dashboard/new-tile-visual-formnatting.png" alt-text="Screenshot of tile query in Real-Time Dashboards.":::
+
+1. In the **Visual formatting** tab, select a **Visual type** and configure the remaining options. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
+
 1. Select **Apply changes** to save the visual to the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards." lightbox="media/real-time-dashboard/visual-formatting.png":::
-1. Select the **Save** icon.
+
+1. In the dashboard toolbar, select **Save**.
 
     :::image type="content" source="media/real-time-dashboard/save-button.png" alt-text="Screenshot showing the selection of the Save button on the ribbon." lightbox="media/real-time-dashboard/save-button.png":::
 
