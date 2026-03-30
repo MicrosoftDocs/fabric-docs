@@ -417,6 +417,11 @@
         "source_path_from_root": "/docs/data-factory/data-type-mapping.md",
         "redirect_url": "/fabric/data-factory/data-type-conversion-copy-activity",
         "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/data-type-mapping-data-movement.md",
+        "redirect_url": "/fabric/data-factory/copy-data-activity#data-type-mapping",
+        "redirect_document_id": true
       }
     ]
 }
