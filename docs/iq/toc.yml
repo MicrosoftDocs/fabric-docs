@@ -117,9 +117,9 @@ items:
           href: plan/intelligence-how-to-visualize-planning-data.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
-  - name: Infobridge
+  - name: InfoBridge
     items:
-    - name: Infobridge overview
+    - name: InfoBridge overview
       href: plan/infobridge-overview.md
     - name: How-tos
       items:
