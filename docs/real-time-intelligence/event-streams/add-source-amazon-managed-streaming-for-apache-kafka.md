@@ -3,7 +3,7 @@ title: Add Amazon MSK Kafka source to an eventstream
 description: Provides information on adding an Amazon Managed Streaming for Apache Kafka (MSK) source to an eventstream.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 03/04/2026
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #Customer intent: I want to learn how to bring events from an Amazon Managed Streaming for Apache Kafka source into Microsoft Fabric.
@@ -20,6 +20,11 @@ Amazon MSK Kafka is a fully managed Kafka service that simplifies the setup, sca
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - An Amazon MSK Kafka cluster in active status. 
 - Your Amazon MSK Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+- If you plan to use **TLS/mTLS settings**, make sure the required certificates are available in an **Azure Key Vault**:
+
+    - Import the required certificates into Azure Key Vault in **.pem** format.
+    - The user who configures the source and previews data must have permission to access the certificates in the Key Vault (for example, **Key Vault Certificate User** or **Key Vault Administrator**).  
+    - If the current user doesn’t have the required permissions, data can’t be previewed from this source in Eventstream.
 
 ## Add Amazon MSK Kafka as a source  
 
