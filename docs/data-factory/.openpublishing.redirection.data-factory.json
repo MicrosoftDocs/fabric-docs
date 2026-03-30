@@ -421,7 +421,7 @@
       {
         "source_path_from_root": "/docs/data-factory/recent-data.md",
         "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#recent-data-preview",
-        "redirect_document_id": true
+        "redirect_document_id": false
       },
       {
         "source_path_from_root": "/docs/data-factory/copilot-modern-get-data.md",
