@@ -30,7 +30,7 @@ In this article, you learn how to create and use an AI operations agent in Real-
 
 ## Create an operations agent
 
-1. On the Fabric home page, select the ellipses (**...**) icon, and then select **Create**.
+1. On the Fabric home page, select the ellipsis (**...**) icon, and then select **Create**.
 
     :::image type="content" source="media/operations-agent/create.png" alt-text="Screenshot of the ellipsis icon and Create option.":::
 
