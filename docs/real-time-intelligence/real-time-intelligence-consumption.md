@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 ---
 # Eventhouse and KQL Database consumption
 
-[Eventhouses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed engine. With an Eventhouse or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [Eventhouse UpTime](#eventhouse uptime) and [storage](#monitor-onelake-storage).
+[Eventhouses](create-eventhouse.md) and [KQL databases](create-database.md) operate on a fully managed engine. With an Eventhouse or KQL database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs. This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [Eventhouse UpTime](#eventhouse-uptime) and [storage](#monitor-onelake-storage).
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
