@@ -1138,14 +1138,12 @@
             href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
-      - name: Evaluate pipeline expressions
-        href: evaluate-pipeline-expression.md
+      - name: Expressions and functions
+        href: expression-language.md
       - name: Debug pipelines
         href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Deactivate an activity
         href: deactivate-activity.md
-      - name: Copilot pipeline expression builder (Preview)
-        href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
@@ -1161,8 +1159,6 @@
         items: 
           - name: Parameter usage
             href: parameters.md
-          - name: Expression language
-            href: expression-language.md
       - name: REST API capabilities
         href: pipeline-rest-api-capabilities.md
       - name: Tutorials
