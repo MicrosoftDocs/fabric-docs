@@ -176,7 +176,7 @@ The following properties are **required**:
     
     - Under **Advanced**, you can specify the following fields:
       
-      - **Enable TimestampNtz**: Specifies whether to enable timestampNtz for the Lakehouse table destination. Disabling it (default) writes DateTime values as timestamp. Enabling it allows editing destination column type to timestampNtz, and for auto-created tables where column type is not specified, default mapping to timestampNtz.
+      - **Enable TimestampNtz**: Specifies whether to enable timestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestampNtz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestampNtz.
 
       - **Apply V-Order**: Specify to apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
@@ -266,8 +266,8 @@ When copying data to Lakehouse tables in Table mode, the following mappings are 
 | GUID             | string              |
 | Date             | date                |
 | TimeSpan         | Not supported       |
-| DateTime (When DateTimeKind = UTC) | timestamp           |
-| DateTime (When DateTimeKind is Unspecified, Local, or not provided) | timestampNtz        |
+| DateTime (When DateTimeKind is UTC) | timestamp           |
+| DateTime (When DateTimeKind is unspecified, local, or not provided) | timestampNtz        |
 | DateTimeOffset   | timestamp           |
 | String           | string              |
 | Byte array       | binary              |
@@ -380,7 +380,7 @@ The following tables contain more information about a copy activity in Lakehouse
 |**schema name** |The name of the schema. |\<your schema name><br>(the default is *dbo*) |No | schema |
 |**table name** |The name of the table. |\<your table name> |Yes | table |
 |**Table action**| Append new values to an existing table, overwrite the existing data and schema in the table using the new values or insert new values to existing table and update existing values.|• **Append**<br>• **Overwrite**<br>• **Upsert**|No|tableActionOption:<br>• Append<br> • OverwriteSchema <br>• Upsert|
-|**Enable TimestampNtz** | Enable timestampNtz for the Lakehouse Table destination. Disabling it (default) writes DateTime values as timestamp. Enabling it allows editing destination column type to timestampNtz, and for auto-created tables where column type is not specified, default mapping to timestampNtz. | Selected or unselected (default) | No | enableTimestampNtz |
+|**Enable TimestampNtz** | Enables timestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestampNtz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestampNtz. | Selected or unselected (default) | No | enableTimestampNtz |
 |**Apply V-Order**| Apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).|Selected (default) or unselected|No|applyVOrder|
 |**Enable partitions**|This selection allows you to create partitions in a folder structure based on one or multiple columns. Each distinct column value (pair) is a new partition. For example, "year=2000/month=01/file".| Selected or unselected |No| partitionOption: <br> PartitionByKey or None|
 |**Partition columns**|The destination columns in schemas mapping.| \<your partition columns\> |No| partitionNameList|
