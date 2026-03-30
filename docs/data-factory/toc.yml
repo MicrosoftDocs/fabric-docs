@@ -87,8 +87,6 @@
         href: create-first-pipeline-with-sample-data.md
       - name: Create a dataflow
         href: create-first-dataflow-gen2.md
-      - name: Monitor activity in Data Factory
-        href: monitor-data-factory.md
       - name: Operationalize Data Factory
         href: transform-data.md
   - name: Migrate to Fabric
