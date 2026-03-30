@@ -189,6 +189,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/deactivate-activity.md",
+        "redirect_url": "/fabric/data-factory/activity-overview#deactivate-an-activity",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
         "redirect_document_id": false
