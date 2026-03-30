@@ -55,9 +55,13 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 >
 > You can also use the Fabric RTI MCP Server to run KQL queries against the clusters in your [Azure Data Explorer](/azure/data-explorer/) backend.
 
+## Implement
+
+To implemnent the local RTI MCP server, follow the open source instructions in the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with RTI.
+
 ## Related content
 
-* [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
+* Implement the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
 * [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
 * [What is MCP in Real-Time Intelligence?](mcp-overview.md)
 * [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)

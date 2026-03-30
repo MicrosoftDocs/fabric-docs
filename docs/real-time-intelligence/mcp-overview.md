@@ -3,7 +3,7 @@ title: What is MCP in Real-Time Intelligence?
 description: Learn about Model Context Protocol (MCP) in Real-Time Intelligence. MCP enables AI agents to interact with RTI components like Eventhouse and Activator using natural language.
 ms.reviewer: sharmaanshul
 ms.topic: overview 
-ms.date: 03/24/2026
+ms.date: 03/30/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -27,13 +27,11 @@ MCP uses a client-server architecture with three main components:
 * **MCP Client**: An intermediary service that forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
 * **MCP Server**: A lightweight application that exposes specific capabilities through natural language APIs and databases.
 
-## MCP server options in RTI
-
 Real-Time Intelligence provides two types of MCP servers: local and remote. Each option has different deployment models, capabilities, and use cases.
 
-### Local MCP server
+## Local RTI MCP server
 
-The local MCP server is an open-source implementation that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
+The local RTI MCP server is an open-source implementation that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
 
 Key characteristics:
 
@@ -42,9 +40,9 @@ Key characteristics:
 - **Access**: Read-only queries to Eventhouse and ADX clusters
 - **Management**: You manage installation, updates, and maintenance
 
-For setup instructions, see [Get started with the local MCP server](mcp-local-server.md).
+For detailed information, see [Get started with the local MCP server](mcp-local-server.md).
 
-### Remote MCP servers
+## Remote MCP servers
 
 Remote MCP servers are hosted by Microsoft and available as HTTP endpoints. You configure your MCP client to connect to these servers without installing or managing any software.
 

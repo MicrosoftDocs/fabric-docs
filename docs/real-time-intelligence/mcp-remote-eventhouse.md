@@ -2,7 +2,7 @@
 title: Get Started With the Eventhouse Remote MCP Server (Preview)
 description: Learn how to set up and use the Eventhouse remote MCP server to enable AI agents to query real-time data with natural language and KQL integration.
 ms.topic: how-to
-ms.date: 02/22/2026
+ms.date: 03/30/2026
 ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 ms.subservice: rti-eventhouse
