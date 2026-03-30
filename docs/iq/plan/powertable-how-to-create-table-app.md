@@ -32,7 +32,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 
 1. In your Plan, select **New PowerTable Sheet** or select the **PowerTable** icon on the landing page. Enter a name for the sheet and select **Create**.
 
-:::image type="content" source="media/powertable-how-to-create-table-app/create-powertable-sheet.png" alt-text="Screenshot of creating a PowerTable sheet.":::
+:::image type="content" source="media/powertable-how-to-create-table-app/create-a-new-power-table-app.png" alt-text="Screenshot of creating a PowerTable sheet.":::
 
 2. Select **Create a New App** to create your app. You can also select **Explore PowerTable** to experience a sample PowerTable app.
 
