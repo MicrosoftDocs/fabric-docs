@@ -55,8 +55,6 @@
                 items:
                   - name: Dataflow Gen2 with virtual network gateway
                     href: pricing-example-dataflow-virtual-network-gateway.md
-      - name: Keyboard shortcuts
-        href: keyboard-shortcuts.md
       - name: Secure Data Factory in Microsoft Fabric
         href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
@@ -1138,10 +1136,6 @@
         href: pipeline-runs.md
       - name: Evaluate pipeline expressions
         href: evaluate-pipeline-expression.md
-      - name: Debug pipelines
-        href: how-to-debug-pipelines-in-microsoft-fabric.md
-      - name: Deactivate an activity
-        href: deactivate-activity.md
       - name: Copilot pipeline expression builder (Preview)
         href: copilot-pipeline-expression-builder.md
       - name: Pipeline sample templates
@@ -1223,6 +1217,10 @@
     items: 
       - name: Frequently asked questions
         href: frequently-asked-questions.yml
+      - name: Keyboard shortcuts
+        href: keyboard-shortcuts.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Pipeline activities troubleshooting guide
         href: pipeline-troubleshoot-guide.md
       - name: Troubleshoot connectors
