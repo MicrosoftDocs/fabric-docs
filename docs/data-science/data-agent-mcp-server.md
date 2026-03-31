@@ -32,7 +32,7 @@ The Fabric data agent as an MCP server is valuable for people who build or test 
 To get started, after publishing the data agent, go to the **Settings** of the agent and open the **Model Context Protocol** tab. Here you see the following information:
 
 - **Data agent MCP server name**  
-- **MCP server URL**  
+- **MCP server URL** (copy this URL to use in the next step)
 - **Data agent MCP tool name**  
 - **MCP server tool description**  
 
@@ -40,25 +40,7 @@ You can also download the **mcp.json** file from this tab. Use this file to conf
 
 :::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-server-published.png" alt-text="Screenshot showing the data agent MCP server settings tab." lightbox="./media/data-agent-mcp-server/data-agent-mcp-server-published.png":::
 
-## Setting up the MCP server in VS Code
-
-1. Open **VS Code** and select a folder to work in.  
-1. Inside this folder, create a folder named **.vscode**.  
-1. Inside the inner folder, create a file called `mcp.json`.
-1. VS Code automatically displays a blue **Add Server** button at the bottom right of the window. 
-
-    :::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-json-vscode.png" alt-text="Screenshot showing the data agent MCP server json file." lightbox="./media/data-agent-mcp-server/data-agent-mcp-json-vscode.png":::
-
-1. Select **Add Server** and select **HTTP**. You're prompted to enter a URL. You can copy the **MCP server URL** from the Setting tab of the data agent as was shown earlier. 
-
-    :::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-server-select-http.png" alt-text="Screenshot showing the selection of HTTP." lightbox="./media/data-agent-mcp-server/data-agent-mcp-server-select-http.png":::
-
-    :::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-server-url.png" alt-text="Screenshot showing to enter the URL for MCP server." lightbox="./media/data-agent-mcp-server/data-agent-mcp-server-url.png":::
-
-1. Press **Enter** and provide a name for your MCP server. Use this name to display the data agent MCP server in your VS Code environment.  
-1. VS Code attempts to authenticate with the server. Select **Allow** and sign in with your credentials.  
-
-    :::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-json.png" alt-text="Screenshot showing to MCP file of the data agent." lightbox="./media/data-agent-mcp-server/data-agent-mcp-json.png":::
+[!INCLUDE [data-agent-mcp-server-vs-code](./includes/data-agent-mcp-server-vs-code.md)]
 
 ## Enabling Agent Mode
 

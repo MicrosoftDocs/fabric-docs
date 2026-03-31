@@ -41,6 +41,8 @@ items:
       href: ontology/how-to-use-preview-experience.md
     - name: Add rules
       href: ontology/how-to-use-rules.md
+    - name: Use ontology MCP server
+      href: ontology/how-to-use-ontology-mcp-server.md
   - name: Resources
     items:
     - name: Troubleshooting
