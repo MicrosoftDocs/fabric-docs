@@ -21,6 +21,8 @@ For an overview of Copilot capabilities in Data Science and Data Engineering, se
 
 When you open a notebook, Copilot automatically uses notebook context such as your workspace, attached Lakehouse, available schemas, tables, and files, existing notebook code, and runtime.
 
+Copilot supports notebook-wide, multi-step code generation, refactoring, summarization, and validation across entire workflows, not just single cells or isolated prompts. It can coordinate changes across multiple cells in a session, helping you build and optimize end-to-end pipelines without losing context.
+
 ## Prerequisites
 
 Copilot must be enabled for your tenant and your workspace must be on a supported capacity. If your capacity is outside the US or EU, your Fabric admin might need to enable more [tenant settings](../admin/service-admin-portal-copilot.md) for cross-geo data processing. 
@@ -87,6 +89,10 @@ The following walkthrough shows one example of an end-to-end Copilot flow, from 
 
 This walkthrough covers the core chat pane flow. The chat pane also supports [chat history](#chat-history) for reviewing previous conversations, and you can interact with Copilot directly within cells using [in-cell Copilot](#in-cell-copilot) for tasks like fixing, explaining, or optimizing code.
 
+## Performance insights and optimization
+
+Copilot surfaces optimization recommendations based on data size, join patterns, and runtime behavior. For example, it can suggest more efficient join strategies, help avoid unnecessary shuffles, identify opportunities to refactor into reusable functions, and highlight data quality issues that affect performance or correctness. These insights can appear during multi-step conversations and align with the `/optimize` command.
+
 ## Chat history
 
 Copilot preserves your chat history across sessions. You can view previous conversations by selecting the chat history icon in the chat pane. 
@@ -114,6 +120,8 @@ The available options are:
 
 High-risk actions, such as running multiple cells at once or installing packages, always require approval regardless of your setting.
 
+When Copilot recommends code changes (for example, through Fix with Copilot or optimization suggestions), it can auto-apply the changes when approved. Copilot always presents an approval diff for review so you can inspect the proposed changes before they're committed. After applying, you can still **Keep** or **Undo** the changes.
+
 ## In-cell Copilot
 
 In addition to the chat pane, you can interact with Copilot directly within notebook cells. This experience is ideal for quick, targeted actions on a single cell. Select the Copilot button above a code cell to open a text box where you can enter a request or slash command. For example, enter "Generate code for a logistic regression that fits this data" and Copilot writes the code in the cell below.
@@ -125,7 +133,7 @@ You can also use the following slash commands for specific actions on existing c
 - `/explain` — Explain code. Provides a plain-language explanation of any code block.
 - `/fix` — Fix code errors. Identifies errors and suggests corrections.
 - `/comments` — Add code comments. Automatically documents your code with summaries of logic and data changes.
-- `/optimize` — Optimize code. Suggests improvements for performance and efficiency.
+- `/optimize` — Optimize code. Suggests improvements for performance and efficiency, including join strategy selection, shuffle reduction, function refactoring, and detection of potential data quality issues that affect performance or correctness.
 
 Fabric notebooks also offer [inline code completion](author-execute-notebook.md#copilot-inline-code-completion-preview), which provides AI-powered autocomplete suggestions as you type in code cells.
 
@@ -156,6 +164,7 @@ If a code change is needed, Copilot can suggest an updated version. Review the c
 You can also troubleshoot from Copilot chat or in-cell Copilot by using `/fix`.
 
 - Use `/fix` on a specific cell for a focused issue.
+- Use `/fix` from chat to run broader diagnostics across the entire notebook, not only a single cell. Copilot can provide a consolidated summary, root-cause analysis across steps, and propose coordinated fixes spanning multiple cells when appropriate.
 - Use chat context to continue investigating related failures across multiple cells.
 
 ### Current behavior

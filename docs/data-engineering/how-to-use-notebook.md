@@ -19,6 +19,8 @@ With a Fabric notebook, you can:
 - Keep data secure with built-in enterprise security features.
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), using powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
+- Leverage Copilot for context-aware code generation, refactoring, and validation across your notebook.
+- Quickly diagnose and repair failed cells or Spark jobs with Fix with Copilot, including approval-based code changes.
 
 This article describes how to use notebooks in data science and data engineering experiences.
 
@@ -173,6 +175,18 @@ When you open a notebook, you enter the coediting mode by default, and every not
 
 :::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing." lightbox="media\how-to-use-notebook\collaboration.png":::
 
+### Use Copilot in notebooks
+
+Copilot is immediately context-aware of the workspace, attached Lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
+
+### Performance insights from Copilot
+
+Copilot surfaces performance guidance based on data size, join patterns, and runtime behavior. For example, it can recommend efficient join strategies, help you avoid costly shuffles, propose refactoring into reusable functions, and highlight potential data quality issues observed during execution. These insights appear as part of your Copilot conversations and align with the `/optimize` command.
+
+### Troubleshoot with Copilot
+
+When a cell or Spark job fails, a **Fix with Copilot** option appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. Copilot can auto-apply code changes with an approval diff so you can review before committing. You can also use the `/fix` command in Copilot chat to run targeted diagnostics for a specific cell or the entire notebook. For more information, see [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
+
 ### Share a notebook
 
 Sharing a notebook is a convenient way for you to collaborate with team members. Authorized workspace roles can view or edit/run notebooks by default. You can share a notebook with specified permissions granted.
@@ -279,5 +293,6 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+- [Overview of Copilot for Data Engineering and Data Science](copilot-notebooks-overview.md)
 - [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
 
