@@ -20,19 +20,20 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 ## How the Fabric data agent works
 
-The Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. The Fabric data agent applies Azure OpenAI Assistant APIs and behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases, ontology), and invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers. This approach eliminates the need to write complex queries and ensures accurate and secure data access.
+The Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. The Fabric data agent applies Azure OpenAI Assistant APIs and behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases, ontology, or Microsoft Graph), and invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers. This approach eliminates the need to write complex queries and ensures accurate and secure data access.
 
 Here's how it works in detail:
 
 **Question parsing and validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
-**Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, and ontologies. It might also reference user-provided data agent instructions to determine the most relevant data source.
+**Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, ontologies, and Microsoft Graph. It might also reference user-provided data agent instructions to determine the most relevant data source.
 
 **Tool invocation and query generation**: Once the correct data source or sources are identified, the Fabric data agent rephrases the question for clarity and structure, and then invokes the corresponding tool to generate a structured query:
 
 - Natural language to SQL (NL2SQL) for relational databases (Lakehouse/Warehouse).
 - Natural language to DAX (NL2DAX) for Power BI datasets (Semantic Models).
-- Natural language to KQL (NL2KQL) for KQL databases.
+- Natural language to KQL (NL2KQL) for KQL databases. NL2KQL can use KQL user-defined functions (UDFs) when they're available in the selected databases.
+- Microsoft Graph queries for organizational data accessible through Microsoft Graph.
 
 The selected tool generates a query based on the provided schema, metadata, and context that the agent underlying the Fabric data agent then passes.
 
@@ -46,7 +47,7 @@ By using this approach, users can interact with their data by using natural lang
 
 Configuring a Fabric data agent is similar to building a Power BI report—you start by designing and refining it to ensure it meets your needs, then publish and share it with colleagues so they can interact with the data. Setting up a Fabric data agent involves:
 
-**Selecting Data Sources**: A Fabric data agent supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, Power BI semantic models, and ontologies. For example, a configured Fabric data agent could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one KQL database. You have many available options.
+**Selecting data sources**: A Fabric data agent supports up to five data sources in any combination, including lakehouses, warehouses, KQL databases, Power BI semantic models, ontologies, and Microsoft Graph. For example, a configured Fabric data agent could include five Power BI semantic models. It could include a mix of two Power BI semantic models, one lakehouse, and one KQL database. You have many available options.
 
 **Choosing Relevant Tables**: After you select the data sources, add them one at a time, and define the specific tables from each source that the Fabric data agent uses. This step ensures that the Fabric data agent retrieves accurate results by focusing only on relevant data. For lakehouses, this step means selecting lakehouse tables (not individual lakehouse files). If your data starts as files (for example, CSV or JSON), make it available to the agent by ingesting it into tables or otherwise exposing it through tables.
 
@@ -65,9 +66,9 @@ By combining clear AI instructions and relevant example queries, you can better 
 
 While both Fabric data agents and Fabric copilots use generative AI to process and reason over data, key differences exist in their functionality and use cases:
 
-**Configuration Flexibility**: You can highly configure Fabric data agents. You can provide custom instructions and examples to tailor their behavior to specific scenarios. Fabric copilots, on the other hand, come preconfigured and don't offer this level of customization.
+**Configuration flexibility**: You can highly configure Fabric data agents. You can provide custom instructions and examples to tailor their behavior to specific scenarios. Fabric copilots, on the other hand, come preconfigured and don't offer this level of customization.
 
-**Scope and Use Case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone artifacts. To make Fabric data agents more versatile for broader use cases, they can integrate with external systems like Microsoft Copilot Studio, Microsoft Foundry, Microsoft Teams, or other tools outside Fabric.
+**Scope and use case**: Fabric copilots assist with tasks within Microsoft Fabric, such as generating notebook code or warehouse queries. Fabric data agents, in contrast, are standalone configurable artifacts that can query data across OneLake and semantic models. Fabric data agents can also integrate with Microsoft 365 Copilot to surface natural-language insights directly within Microsoft 365 apps. When agents are accessed through Microsoft 365 Copilot, Microsoft Purview governance policies still apply to the underlying data sources. Additionally, Fabric data agents can connect with external systems like Microsoft Copilot Studio, Microsoft Foundry, Microsoft Teams, or other tools outside Fabric.
 
 ## Evaluation of the Fabric data agent
 
@@ -76,6 +77,26 @@ The product team rigorously evaluated the quality and safety of Fabric data agen
 **Benchmark Testing**: The product team tested Fabric data agents across a range of public and private datasets to ensure high-quality and accurate responses.
 
 **Enhanced Harm Mitigations**: The product team implemented safeguards to ensure that Fabric data agent outputs remain focused on the context of selected data sources, reducing the risk of irrelevant or misleading answers.
+
+## Governance and security
+
+Microsoft Purview integration provides governance controls for Fabric data agents. When you configure a data agent, Purview governance policies apply to the underlying data sources the agent can access. This integration helps ensure that data access through agents follows the same compliance and classification rules as direct access.
+
+**Microsoft Purview policies**: Purview policies such as data access controls and sensitivity labels apply to data sources that agents query. If a Purview policy restricts access to a lakehouse or warehouse, the agent respects that restriction when processing user queries.
+
+**Outbound access protection**: Fabric data agents operate within the tenant's outbound access protection boundaries. Outbound connections from agent operations are subject to the same network and access rules configured for your Fabric tenant. Administrators can manage permitted outbound connections through the Fabric admin portal under tenant settings to control which external endpoints agents can reach.
+
+**Microsoft 365 Copilot integration**: When Fabric data agents are surfaced through Microsoft 365 Copilot, Purview governance policies continue to apply. Users can only access data that their credentials and Purview policies allow, regardless of the entry point.
+
+## ALM and DevOps for data agents
+
+Fabric data agents support application lifecycle management (ALM) capabilities that help you manage agent configurations across development, test, and production environments.
+
+**Diagnostics**: Use built-in diagnostics to monitor agent behavior, identify query generation issues, and troubleshoot response quality. Diagnostics provide visibility into how the agent processes questions and selects data sources.
+
+**Git integration**: You can version-control your agent configurations with Git integration. Connect your Fabric workspace to a Git repository to track changes to agent instructions, example queries, and data source selections over time.
+
+**Deployment pipelines**: Use Fabric deployment pipelines to promote data agents across workspaces (for example, from development to production). This support lets you test changes in a staging environment before making them available to end users.
 
 ## Limitations
 
