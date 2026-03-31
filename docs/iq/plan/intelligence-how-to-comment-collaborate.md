@@ -29,7 +29,7 @@ Comments are collaborative threads that facilitate conversations directly from w
 > [!TIP]  
 > Use writeback to capture comments in the report, ensuring they’re preserved for future collaboration.
 
-    :::image type="content" source="media/intelligence-how-to-comment-collaborate/writeback-comment.png" alt-text="Screenshot of a starred comment." lightbox="media/intelligence-how-to-comment-collaborate/writeback-comment.png":::
+    :::image type="content" source="media/intelligence-how-to-comment-collaborate/write-back-comment.png" alt-text="Screenshot of a starred comment." lightbox="media/intelligence-how-to-comment-collaborate/write-back-comment.png":::
 
 ## Assign comments and tag users
 
