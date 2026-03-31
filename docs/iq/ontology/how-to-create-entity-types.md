@@ -100,13 +100,4 @@ To edit or delete a property,
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
-## Supported property types
-
-The following table lists the supported property types for entities in ontology (preview).
-
-| Field in ontology | Allowed types |
-| --- | --- |
-| Entity type key | String <br>Integer |
-| Static or time series properties | String <br>Boolean <br>Datetime <br>Integer <br>Double <br>Object |
-
-If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
+[!INCLUDE [supported property types](includes/supported-property-types.md)]

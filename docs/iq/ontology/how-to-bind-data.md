@@ -116,16 +116,7 @@ Next to the data binding name, select **...** to open its options. From there, y
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
 
-## Supported property types
-
-The following table lists the supported property types for data binding in ontology (preview).
-
-| Bound data in ontology | Allowed types |
-| --- | --- |
-| Timestamp | Date/time <br>Timestamp |
-| Data bound from Lakehouse and Eventhouse sources | String <br>Boolean <br>Datetime <br>Integer <br>Double <br>Object |
-
-If your data contains other data types, perform ETL to convert the data to one of the supported types before bringing the data to ontology.
+[!INCLUDE [supported property types](includes/supported-property-types.md)]
 
 ## Limitations and troubleshooting
 
