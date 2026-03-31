@@ -35,7 +35,7 @@ Here's how it works in detail:
 
 **Enforcement mechanisms**: The Fabric data agent applies several layers of protection during processing. It uses the requesting user's credentials and permissions to enforce least-privilege access, ensuring that each interaction only reaches data the user is authorized to view. The agent evaluates requests against tenant and workspace policy settings before executing any action. Guardrails constrain tool invocation and outputs to scoped data sources, preventing queries from reaching resources outside the configured scope. You can optionally integrate [Azure AI Content Safety](/azure/ai-services/content-safety/overview) to apply content risk controls that help reduce harmful or out-of-policy responses.
 
-**Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, ontologies, and Microsoft Graph. It might also reference user-provided data agent instructions to determine the most relevant data source.
+**Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, ontologies, and Microsoft Graph. It might also reference user-provided data agent instructions to determine the most relevant data source. For Power BI semantic models, the agent uses the user's Read permission on the model to retrieve schema and metadata for query generation; Build permission isn't required for agent-driven queries.
 
 **Tool invocation and query generation**: Once the correct data source or sources are identified, the Fabric data agent rephrases the question for clarity and structure, and then invokes the corresponding tool to generate a structured query:
 
@@ -154,6 +154,7 @@ To maintain ongoing quality and policy alignment, consider these operational pra
 - Agent responses might be truncated or blocked if Microsoft Purview DLP or access restriction policies apply to the underlying data sources. The specific behavior depends on your organization's policy configuration.
 - Assets that are marked as sensitive by Purview policies might be inaccessible to the agent, which can result in incomplete answers or an inability to query certain data sources.
 - Agent interactions might be logged and discoverable through Microsoft Purview Audit and eDiscovery. Organizations should consider these governance controls when deploying agents for sensitive workloads.
+- Access to Power BI semantic models through a data agent is governed by Read permission on the model and doesn't require workspace-level access. Row-Level Security (RLS) and Column-Level Security (CLS) still apply.
 
 ## Related content
 
