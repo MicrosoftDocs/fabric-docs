@@ -81,4 +81,4 @@ You can keep the comments panel visible at all times by enabling **Show comments
 
 * Select the refresh icon to update the report with the latest comments.
 
-    :::image type="content" source="media/intelligence-how-to-comment-collaborate/refresh-comment.png" alt-text="Screenshot of comments panel." lightbox="media/intelligence-how-to-comment-collaborate/refresh-comment.png":::
+    :::image type="content" source="media/intelligence-how-to-comment-collaborate/refresh-comment.png" alt-text="Screenshot of comments refresh." lightbox="media/intelligence-how-to-comment-collaborate/refresh-comment.png":::
