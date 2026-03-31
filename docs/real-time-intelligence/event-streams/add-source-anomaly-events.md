@@ -13,8 +13,6 @@ Anomaly detection events allow you to subscribe to anomalies detected in your Ev
 
 This article shows you how to add Anomaly detection events source to an eventstream.
 
-## Prerequisites
-
 [!INCLUDE [anomaly-detection-events-connector-prerequisites](includes/connectors/anomaly-detection-events-connector-prerequisites.md)]
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream. 
 

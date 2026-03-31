@@ -29,15 +29,15 @@ ms.date: 07/22/2025
     1. The default **SASL mechanism** is typically **PLAIN**, unless configured otherwise. You can select the **SCRAM-SHA-256** or **SCRAM-SHA-512** mechanism that suits your security requirements.   
     1.  If your Kafka cluster uses a custom CA or requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed:
 
-        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group and key vault, and then provide the server ca name. 
-        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group and key vault, and then provide the client certificate name. 
+        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group, and key vault, and then provide the server ca name. 
+        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group, and key vault, and then provide the client certificate name. 
 
             If you don’t use mTLS but still use **SASL_SSL** with your custom CA cert, then you can skip this client certificate configuration.  
 
         > [!NOTE]
         > The TLS/mTLS settings in this section are currently in preview.
         >
-        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector vNet injection (for example, via a private endpoint).
+        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector virtual network injection (for example, via a private endpoint).
 
     :::image type="content" source="./media/apache-kafka-source-connector/configure-source-section.png" alt-text="Screenshot that shows the first page of the Apache Kafka connection settings." lightbox="./media/apache-kafka-source-connector/configure-source-section.png":::   
 

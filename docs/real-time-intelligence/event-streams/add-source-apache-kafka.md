@@ -14,16 +14,7 @@ This article shows you how to add Apache Kafka source to a Fabric eventstream.
 
 Apache Kafka is an open-source, distributed platform for building scalable, real-time data systems. By integrating Apache Kafka as a source within your eventstream, you can seamlessly bring real-time events from your Apache Kafka and process them before routing to multiple destinations within Fabric.
 
-## Prerequisites 
-
-- Access to the Fabric workspace with Contributor or above permissions.
-- An Apache Kafka cluster running. 
-- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
-- If you plan to use **TLS/mTLS settings**, make sure the required certificates are available in an **Azure Key Vault**:
-
-    - Import the required certificates into Azure Key Vault in **.pem** format.
-    - The user who configures the source and previews data must have permission to access the certificates in the Key Vault (for example, **Key Vault Certificate User** or **Key Vault Administrator**).  
-    - If the current user doesn’t have the required permissions, data can’t be previewed from this source in Eventstream.
+[!INCLUDE [apache-kafka-source-connector-prerequisites](./includes/connectors/apache-kafka-source-connector-prerequisites.md)]
 
 ## Add Apache Kafka as a source 
 
@@ -41,7 +32,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
 
 ## Configure and connect to Apache Kafka
 
-[!INCLUDE [apache-kafka-connector](./includes/apache-kafka-source-connector.md)]
+[!INCLUDE [apache-kafka-source-connector-configuration](./includes/connectors/apache-kafka-source-connector-configuration.md)]
 
 ## View updated eventstream
 You can see the Apache Kafka source added to your eventstream in **Edit mode**.  

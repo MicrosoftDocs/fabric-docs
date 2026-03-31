@@ -12,11 +12,7 @@ ms.date: 12/22/2025
 # Add Apache Kafka as source in Fabric Real-Time hub (preview)
 This article describes how to add Apache Kafka as an event source in Fabric Real-Time hub. 
 
-## Prerequisites 
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- An Apache Kafka cluster running. 
-- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network.  
+[!INCLUDE [apache-kafka-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/apache-kafka-source-connector-prerequisites.md)]
 
 ## Data sources page
 
@@ -29,7 +25,7 @@ On the **Add data** page, type in the search bar and select **Apache Kafka**.
 
 ## Configure Apache Kafka connector
 
-[!INCLUDE [apache-kafka-connector](../real-time-intelligence/event-streams/includes/apache-kafka-source-connector.md)]
+[!INCLUDE [apache-kafka-source-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/apache-kafka-source-connector-configuration.md)]
 
 ## View data stream details
 
