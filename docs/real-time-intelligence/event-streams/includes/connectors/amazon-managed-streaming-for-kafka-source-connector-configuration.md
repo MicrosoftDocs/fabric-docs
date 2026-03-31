@@ -14,7 +14,7 @@ ms.date: 03/31/2026
 
     To get the public endpoint:
 
-    :::image type="content" source="./media/amazon-msk-kafka-source-connector/public-endpoint.png" alt-text="Screenshot that shows the public endpoint of Amazon MSK cluster.":::   
+    :::image type="content" source="./media/amazon-msk-kafka-source-connector/public-endpoint.png" alt-text="Screenshot that shows the public endpoint of Amazon Managed Streaming for Apache Kafka (MSK) cluster.":::   
 1. In the **Connection credentials** section, If you have an existing connection to the Amazon MSK Kafka cluster, select it from the dropdown list for **Connection**. Otherwise, follow these steps: 
     1. For **Connection name**, enter a name for the connection. 
     1. For **Authentication kind**, confirm that **API Key** is selected. 
@@ -29,18 +29,18 @@ ms.date: 03/31/2026
     1. For **Security protocol**, select one of the following options:
         - **SASL_SSL**: Use this option when your Kafka cluster uses SASL-based authentication. By default, the Kafka broker’s server certificate must be signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt). If your Kafka cluster uses a custom CA, you can configure it by using **TLS/mTLS settings**.
         - **SSL (mTLS)**: Use this option when your Kafka cluster requires mTLS authentication, and you must configure both a custom server CA certificate and a client certificate in **TLS/mTLS settings**.
-    1. The default **SASL mechanism** is **SCRAM-SHA-512** and cannot be changed.
+    1. The default **SASL mechanism** is **SCRAM-SHA-512** and can't be changed.
     1. If your Kafka cluster uses a custom CA or requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed:
 
-        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group and key vault, and then provide the server ca name. 
-        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group and key vault, and then provide the client certificate name. 
+        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group, and key vault, and then provide the server ca name. 
+        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group, and key vault, and then provide the client certificate name. 
         
             If you don’t use mTLS but still use **SASL_SSL** with your custom CA cert, then you can skip this client certificate configuration.  
 
         > [!NOTE]
         > The TLS/mTLS settings in this section are currently in preview.
         >
-        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector vNet injection (for example, via a private endpoint).
+        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector virtual network injection (for example, via a private endpoint).
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/configure-settings.png" alt-text="Screenshot that shows the first page of the Amazon MSK Kafka connection settings." lightbox="./media/amazon-msk-kafka-source-connector/configure-settings.png":::      
 1. Select **Next**. On the **Review + connect** screen, review the summary, and then select **Connect**.

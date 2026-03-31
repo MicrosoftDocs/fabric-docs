@@ -1,9 +1,9 @@
 ---
 title: Anomaly detection events for Fabric event streams
-description: This include file contains common steps for configuring anomaly detection events for Fabric event streams and the Real-Time Hub.
+description: This file contains common steps for configuring anomaly detection events for Fabric event streams and the Real-Time Hub.
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 03/09/2026
+ms.date: 03/31/2026
 ---
 
 1. On the **Connect** page, for **Event types**, only **Microsoft.Fabric.AnomalyEvents.AnomalyDetected** is currently supported.
@@ -15,7 +15,7 @@ ms.date: 03/09/2026
 1. For **Event scope**, only **By configuration** is supported. After you select this option, select a workspace.
 
     :::image type="content" source="./media/anomaly-detection-events/select-event-scope.png" alt-text="Screenshot that shows the selection the event scope." lightbox="./media/anomaly-detection-events/select-event-scope.png":::    
-1. Select an Anomaly detector **Item** and **Configuration**. Make sure that the configuration has been published in the Anomaly Detector item.
+1. Select an Anomaly detector **Item** and **Configuration**. Make sure that you published the configuration in the Anomaly Detector item.
 
     :::image type="content" source="./media/anomaly-detection-events/configuration.png" alt-text="Screenshot that shows how to select the configuration." lightbox="./media/anomaly-detection-events/configuration.png":::  
 1. On the **Configure connection settings** page, optionally add filters to filter incoming anomaly detection events. To add a filter:
