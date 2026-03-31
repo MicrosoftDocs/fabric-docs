@@ -72,10 +72,10 @@ This connection is used to connect to your semantic models when you create a
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-3.png" alt-text="Screenshot of selecting an existing Fabric SQL Connection.":::
 
 1. **Select** the database to store your items and click **Add**
-[!NOTE]
+> [!NOTE]
 > The database is automatically created when a Planning item is created.
 
-    :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing the database details.":::
+:::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing the database details.":::
 
 1. Get your data from the semantic model or Excel/CSV, then create a Planning sheet. Or, start with a Planning sheet and then connect to data.
 
