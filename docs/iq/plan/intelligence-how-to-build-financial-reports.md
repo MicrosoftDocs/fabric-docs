@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want to create financial reports in Intelligence sheets
 ---
 
-# Financial data reporting in Intelligence sheets
+# Build financial reports with Intelligence sheets
 
 Intelligence sheets bring built-features that make it easy to present financial data in a clear format. You can organize metrics into a structured layout that supports both on-screen analysis and formatted exports.
 
@@ -18,7 +18,7 @@ This article provides a basic overview of how to create financial reports with I
 
 ## Format numeric data
 
-1. Select the decimal icons in the **Number** section to increase or decrease the number of decimal places displayed. This setting applies to all measures in the report.
+1. Select **Number** > **Decimal icons** to increase or decrease the number of decimal places displayed. This setting applies to all measures in the report.
 1. To adjust decimal places for a specific measure, select the measure and use the increase or decrease decimal buttons.
 
     :::image type="content" source="media/intelligence-how-to-build-financial-reports/decimal-places.png" alt-text="Screenshot of the decimal place button that added a decimal place to every value in the column." lightbox="media/intelligence-how-to-build-financial-reports/decimal-places.png":::
@@ -44,6 +44,9 @@ This article provides a basic overview of how to create financial reports with I
 ## Apply and customize built-in templates
 
 Out-of-the-box report templates provide a quick starting point for creating reports. They reduce the time and effort required to build reports from scratch.
+
+> [!TIP]  
+> Use built-in templates to save time and ensure consistency across reports.
 
 1. Select the template you want to apply to the report.
 
