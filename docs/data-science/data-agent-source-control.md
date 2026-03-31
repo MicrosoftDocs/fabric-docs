@@ -155,7 +155,7 @@ You can review a deployment plan before applying changes, ensuring that only int
 
 #### Automate CI/CD with Azure DevOps Pipelines
 
-The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](/fabric/cicd/fabric-cli/fabric-cli-overview) commands in Azure DevOps pipeline jobs. Teams can orchestrate CI/CD for data agent updates using Azure DevOps (with the CLI) alongside or instead of Fabric deployment pipelines. To get started, install the extension from the Visual Studio Marketplace, set up a service connection in your Azure DevOps project, and add Fabric CLI tasks to your pipeline definition.
+The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](https://go.microsoft.com/fwlink/?linkid=2313665) commands in Azure DevOps pipeline jobs. Teams can orchestrate CI/CD for data agent updates using Azure DevOps (with the CLI) alongside or instead of Fabric deployment pipelines. To get started, install the extension from the Visual Studio Marketplace, set up a service connection in your Azure DevOps project, and add Fabric CLI tasks to your pipeline definition.
 
 #### Bulk synchronization via batch APIs (preview)
 

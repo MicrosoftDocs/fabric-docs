@@ -230,7 +230,7 @@ When you create a schedule for a pipeline, it's automatically added to the Git r
 
 ## Automate CI/CD with Fabric CLI and Azure DevOps Pipelines
 
-The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](/fabric/cicd/fabric-cli/fabric-cli-overview) commands inside Azure DevOps pipeline jobs. You can use these tasks to automate workspace synchronization and deployment steps as part of your CI/CD workflow.
+The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](https://go.microsoft.com/fwlink/?linkid=2313665) commands inside Azure DevOps pipeline jobs. You can use these tasks to automate workspace synchronization and deployment steps as part of your CI/CD workflow.
 
 To get started:
 
@@ -269,4 +269,4 @@ The following known limitations apply to CI/CD for pipelines in Data Factory in 
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
 - [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
 - [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines)
-- [Fabric CLI overview](/fabric/cicd/fabric-cli/fabric-cli-overview)
+- [Fabric CLI overview](https://go.microsoft.com/fwlink/?linkid=2313665)
