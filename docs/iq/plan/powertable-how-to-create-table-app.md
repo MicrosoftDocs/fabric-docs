@@ -1,7 +1,7 @@
 ---
 title: Create a table app with PowerTable sheets
 description: Learn how to create a no-code table app with PowerTable sheets, by importing Excel sheets or connecting to database tables and semantic models to build collaborative data apps with live synchronization.
-ms.date: 03/27/2026
+ms.date: 03/31/2026
 ms.topic: how-to
 #customer intent: As a user, I want step-by-step instructions to build my first PowerTable data app.
 ---
@@ -28,30 +28,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 * Connections established to [the Fabric SQL database](<../plan/planning-how-to-get-started.md#create-a-database-connection>) and [the semantic model](<../plan/planning-how-to-get-started.md#create-a-connection-for-the-semantic-model>).
 * [A Plan item](<../plan/planning-how-to-get-started.md#create-planning-sheet>) created in your Fabric workspace.
 
-## Create a PowerTable sheet
-
-1. In your Plan, select **New PowerTable Sheet** or select the **PowerTable** icon on the landing page. Enter a name for the sheet and select **Create**.
-
-:::image type="content" source="media/powertable-how-to-create-table-app/create-a-new-power-table-app.png" alt-text="Screenshot of creating a PowerTable sheet.":::
-
-2. Select **Create a New App** to create your app. You can also select **Explore PowerTable** to experience a sample PowerTable app.
-
-:::image type="content" source="media/powertable-how-to-create-table-app/create-new-app.png" alt-text="Screenshot of creating a new table app.":::
-
-3. **Select a Connection:** Choose a Fabric SQL connection. You can also create a new connection if required.
-
-:::image type="content" source="media/powertable-how-to-create-table-app/select-sql-connection.png" alt-text="Screenshot of selecting a sql connection.":::
-
-4. **Database Name:** Select the Fabric SQL database to store the app metadata. Select **Add**.
-
-:::image type="content" source="media/powertable-how-to-create-table-app/select-database.png" alt-text="Screenshot of selecting the database.":::
-
->[!NOTE]
->When a new Plan item is created in a workspace, a Fabric SQL database is automatically created for that workspace. This database stores all the plan app metadata for workspace users. You can choose this database.
-
-5. Select **Connect** after choosing the connection and the database.
-
-:::image type="content" source="media/powertable-how-to-create-table-app/connect.png" alt-text="Screenshot of selecting Connect.":::
+[!INCLUDE [new PowerTable sheet](includes/create-powertable.md)]
 
 ## Create a table
 
@@ -70,11 +47,11 @@ To create a new table and import the CSV data, follow these steps:
 
 There are also [other ways to create a new table](#ways-to-create-a-table).
 
-:::image type="content" source="media/powertable-how-to-create-table-app/upload-file.png" alt-text="Screenshot of uploading an Excel or CSV  file to PowerTable.":::
+:::image type="content" source="media/powertable-how-to-create-table-app/upload-file.png" alt-text="Screenshot of uploading an Excel or CSV  file to PowerTable." lightbox="media/powertable-how-to-create-table-app/upload-file.png":::
 
 6. Preview the data and select **Next**.
 
-:::image type="content" source="media/powertable-how-to-create-table-app/preview-data.png" alt-text="Screenshot of previewing data.":::
+:::image type="content" source="media/powertable-how-to-create-table-app/preview-data.png" alt-text="Screenshot of previewing data." lightbox="media/powertable-how-to-create-table-app/preview-data.png":::
 
 >[!NOTE]
 >Select **Exclude records and import table structure only** to import only the table structure.
@@ -94,11 +71,11 @@ PowerTable sheets automatically detect column properties and rename any unsuppor
 >In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
 >For a table, this is a one-time configuration that cannot be modified later.
 
-:::image type="content" source="media/powertable-how-to-create-table-app/slowly-changing-dimensions.png" alt-text="Screenshot of selecting Finish.":::
+:::image type="content" source="media/powertable-how-to-create-table-app/slowly-changing-dimensions.png" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-create-table-app/slowly-changing-dimensions.png":::
 
 Now you have your first PowerTable sheet. Select **Save** to save your table.
 
-:::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the table.":::
+:::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the table." lightbox="media/powertable-how-to-create-table-app/save-table.png":::
 
 ### Write back changes to source
 
@@ -114,9 +91,9 @@ The source database is updated.
 
 4. Select **PowerTable > Audit**. The audit trail records all changes in detail, including the Row ID, action type, modified columns, previous values, new values, user name, and timestamp.
 
-:::image type="content" source="media/powertable-how-to-create-table-app/audit.png" alt-text="Screenshot of audit log.":::
+:::image type="content" source="media/powertable-how-to-create-table-app/audit.png" alt-text="Screenshot of audit log." lightbox="media/powertable-how-to-create-table-app/audit.png":::
 
-## Next steps <a href="#next-steps" id="next-steps"></a>
+## Next steps
 
 After creating your first PowerTable application, explore these other features:
 
