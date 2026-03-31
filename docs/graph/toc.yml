@@ -43,6 +43,8 @@ items:
         href: security-overview.md
   - name: How-tos
     items:
+      - name: Share and manage permissions
+        href: share-graph-manage-permissions.md
       - name: Manage data
         href: manage-data.md
       - name: Monitor graph status
