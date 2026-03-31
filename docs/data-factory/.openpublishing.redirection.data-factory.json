@@ -139,6 +139,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/copilot-pipeline-expression-builder.md",
+        "redirect_url": "/fabric/data-factory/expression-language#build-pipeline-expressions-with-copilot",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/connector-azure-data-lake-storage-gen2-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-data-lake-storage-gen2",
         "redirect_document_id": false
@@ -436,6 +441,11 @@
       {
         "source_path_from_root": "/docs/data-factory/data-type-mapping.md",
         "redirect_url": "/fabric/data-factory/data-type-conversion-copy-activity",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/evaluate-pipeline-expression.md",
+        "redirect_url": "/fabric/data-factory/expression-language#evaluate-your-pipeline-expressions-before-you-run-them",
         "redirect_document_id": true
       },
       {
