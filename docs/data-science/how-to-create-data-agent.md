@@ -12,7 +12,7 @@ ai.usage: ai-assisted
 
 # Create a Fabric data agent
 
-With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, KQL databases, and ontologies in Fabric. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren't AI experts or deeply familiar with the data.
+With a data agent in Microsoft Fabric, you can create conversational AI experiences that answer questions about data stored in lakehouses, warehouses, Power BI semantic models, KQL databases, ontologies, and Microsoft Graph in Fabric. Your colleagues can ask questions in plain English and receive data-driven answers, even if they aren't AI experts or deeply familiar with the data.
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
@@ -25,6 +25,12 @@ You don't need to create or supply an Azure OpenAI key or an access token to use
 	For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md).
 - If your organization uses a Power BI Premium per capacity (P1 or higher) capacity instead of an F SKU, make sure [Microsoft Fabric is enabled](../admin/fabric-switch.md) on that capacity.
 - Service principals and API tokens aren't required for the in-product chat experience. Any automation with service principals is a separate scenario and isn't covered here.
+
+## Security and governance
+
+Fabric data agents honor Microsoft Purview governance policies. When Purview policies restrict access to a data source (for example, through access controls or sensitivity labels), the agent respects those restrictions when processing user queries.
+
+Expanded outbound access protection applies to agent operations. Outbound connections from agents are subject to the tenant's network and access rules configured in the Fabric admin portal. Administrators can control which external endpoints agents are permitted to reach.
 
 ## End-to-end flow for creating and consuming Fabric data agents
 
@@ -46,7 +52,7 @@ Refer to the provided screenshot for a visual guide on naming the Fabric data ag
 
 ## Select your data
 
-After you create a Fabric data agent, you can add up to five data sources - including lakehouses, warehouses, Power BI semantic models, KQL databases, and ontologies - in any combination (up to five total). For example, you could add five Power BI semantic models, or two Power BI semantic models, one lakehouse, and one KQL database.
+After you create a Fabric data agent, you can add up to five data sources, including lakehouses, warehouses, Power BI semantic models, KQL databases, ontologies, and Microsoft Graph, in any combination (up to five total). For example, you could add five Power BI semantic models, or two Power BI semantic models, one lakehouse, and one KQL database.
 
 When you create a Fabric data agent for the first time, and provide a name, the OneLake catalog automatically appears, allowing you to add data sources. To add a data source, select it from the catalog as shown on the next screen, then select **Add**. Each data source must be added individually. For example, you can add a lakehouse, select **Add**, and then proceed to add another data source. To filter the data source types, select the filter icon and then select the desired type. You can view only the data sources of the selected type, making it easier to locate and connect the appropriate sources for your Fabric data agent.
 
@@ -109,7 +115,8 @@ The agent analyzes the constructed prompt, and decides which tool to invoke to r
 
 - Natural Language to SQL (NL2SQL): Used to generate SQL queries when the data resides in a lakehouse or warehouse
 - Natural Language to DAX (NL2DAX): Used to create DAX queries to interact with semantic models in Power BI data sources
-- Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases
+- Natural Language to KQL (NL2KQL): Used to construct KQL queries to query data in KQL databases. NL2KQL can use KQL user-defined functions (UDFs) when they're available in the selected databases.
+- Microsoft Graph: Used to query organizational data accessible through Microsoft Graph
 
 The selected tool generates a query using the schema, metadata, and context that the agent underlying the Fabric data agent provides. Then the tool validates the query, to ensure proper formatting and compliance with its security protocols, and its own Responsible AI (RAI) policies.
 
@@ -184,7 +191,7 @@ When you provide the AI with sample query/question pairs, it references these ex
 Power BI semantic model data don't support adding sample query/question pairs at this time. However, for supported data sources such as lakehouse, warehouse, and KQL databases, providing more examples can significantly improve the AI's ability to generate precise queries when its default performance needs adjustment.
 
 > [!TIP]
-> A diverse set of example queries enhances the ability of a Fabric data agent to generate accurate and relevant SQL/KQL queries.
+> A diverse set of example queries enhances the ability of a Fabric data agent to generate accurate and relevant SQL/KQL queries. For KQL databases, NL2KQL can also use KQL user-defined functions (UDFs) that are available in your selected databases, so consider including example queries that reference UDFs.
 
 To add or edit example queries, select the **Example queries** button to open the example queries pane, as shown in the following screenshot:
 
@@ -207,8 +214,17 @@ This step opens a window that asks for a description of the Fabric data agent. H
 
 After you publish the Fabric data agent, you'll have two versions of it. One version is the current draft version, which you can continue to refine and improve. The second version is the published version, which you can share with your colleagues who want to query the Fabric data agent to get answers to their questions. You can incorporate feedback from your colleagues into your current draft version as you develop it, to further enhance the Fabric data agent's performance.
 
+## ALM and deployment
+
+Fabric data agents support lifecycle management capabilities that help you manage agents across environments.
+
+- **Diagnostics**: Use built-in diagnostics to troubleshoot agent behavior and identify query generation issues.
+- **Git integration**: Connect your Fabric workspace to a Git repository to version-control agent configurations, including instructions, example queries, and data source selections.
+- **Deployment pipelines**: Use Fabric deployment pipelines to promote data agents from development to test and production workspaces.
+
 ## Related content
 
 - [Data agent concept](concept-data-agent.md)
 - [Data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
+- [Lifecycle management in Fabric](../cicd/cicd-overview.md)
 
