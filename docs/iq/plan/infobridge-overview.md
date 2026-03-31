@@ -17,7 +17,7 @@ The *InfoBridge* component of Plan (preview) is a no-code data integration, prep
 
 Business reporting and planning often involve multi-page reports with data at varying granularities. InfoBridge enables you to consolidate data from multiple visuals into a single write-back table. This simplifies data management and ensures consistency across reports. Without InfoBridge, each visual would need to write back to its own table, requiring you to maintain multiple tables separately.InfoBridge solves many use cases that typically require composite modeling, ETL and automation tools, complex DAX and SQL scripting, extensive BI expertise, and IT overheads. 
 
-[!NOTE]
+>[!NOTE]
 >**Best practice**  
 >Use a single write-back table whenever possible. This approach minimizes maintenance overhead and makes it easier to consume data in >consolidated P&L statements or executive dashboards.
 
