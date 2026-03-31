@@ -31,7 +31,7 @@ This article shows you how to add an Amazon Kinesis Data Streams source to an ev
 
 1. On **Select a data source**, select **Kinesis Data Streams**.
 
-   :::image type="content" border="true" source="media/amazon-kinesis-data-streams-connector-configuration/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
+   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 
 ## Configure and connect to Amazon Kinesis Data Streams
 
