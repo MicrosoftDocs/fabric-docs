@@ -24,3 +24,15 @@ ms.date: 03/31/2026
 1. VS Code attempts to authenticate with the server. Select **Allow** and sign in with your credentials.  
 
     :::image type="content" source="../media/data-agent-mcp-server/data-agent-mcp-json.png" alt-text="Screenshot showing to MCP file of the data agent." lightbox="../media/data-agent-mcp-server/data-agent-mcp-json.png":::
+
+## Enabling Agent Mode
+
+After adding the MCP server, enable **Agent Mode** in VS Code. Agent Mode lets VS Code act as an orchestrator interface, connecting your editor with MCP servers to interact with external tools like the Fabric data agent or ontology. To enable it:
+
+1. In VS Code, go to the **Command Palette** (Ctrl+Shift+P or Cmd+Shift+P).  
+1. Search for **Enable Agent Mode** and select it.  
+1. Confirm any prompts to activate the mode.  
+
+    :::image type="content" source="../media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png" alt-text="Screenshot showing data agent in F studio code in agent mode." lightbox="../media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png":::
+
+When Agent Mode is active, select an **orchestrator** to handle your queries. Available orchestrators in public preview include **GPT-5, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 pro**, and many more. The orchestrator manages the flow of information between your queries in VS Code and the MCP server.
