@@ -100,7 +100,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-- **Data sharing (cross-tenant):** OneLake data sharing lets you share live, governed datasets across Microsoft Entra tenants without copying data. External recipients access shared data in place, and all governance policies remain enforced at the source. For more information, see [OneLake data sharing](../onelake/onelake-data-sharing.md).
+- **Data sharing (cross-tenant):** OneLake data sharing lets you share live, governed datasets across Microsoft Entra tenants without copying data. External recipients access shared data in place, and all governance policies remain enforced at the source. For more information, see [external data sharing](../governance/external-data-sharing-overview.md).
 
 ## Related content
 

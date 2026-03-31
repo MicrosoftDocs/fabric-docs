@@ -58,7 +58,7 @@ This architecture supports hybrid transactional and analytical processing (HTAP)
 
 [OneLake shortcuts](../onelake/onelake-shortcuts.md) are logical links that reference data in external storage systems or in other Fabric workspaces without copying it. Shortcuts make referenced data appear as part of the local OneLake namespace, so all Fabric compute engines (Spark, SQL, Power BI) can query shortcut targets alongside native data. This approach maintains a single version of truth and avoids storage duplication.
 
-You can also use OneLake data sharing to extend shortcut access across Microsoft Entra tenant boundaries. Data owners grant OneLake permissions to external identities, and recipients create shortcuts to the shared data in their own workspaces. Governance policies remain enforced at the source. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [OneLake data sharing](../onelake/onelake-data-sharing.md).
+You can also use OneLake data sharing to extend shortcut access across Microsoft Entra tenant boundaries. Data owners grant OneLake permissions to external identities, and recipients create shortcuts to the shared data in their own workspaces. Governance policies remain enforced at the source. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [external data sharing](../governance/external-data-sharing-overview.md).
 
 ## Eventhouse for real-time event analytics
 

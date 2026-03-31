@@ -92,7 +92,7 @@ OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single Sa
 
 OneLake prevents data silos by offering a unified storage system that makes data discovery, sharing, and consistent policy enforcement easy. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
-OneLake also supports cross-tenant data sharing, which lets you share live, governed datasets with external organizations across Microsoft Entra tenant boundaries without copying data. Recipients access shared data in place, and governance policies remain enforced at the source. For more information, see [OneLake data sharing](../onelake/onelake-data-sharing.md).
+OneLake also supports cross-tenant data sharing, which lets you share live, governed datasets with external organizations across Microsoft Entra tenant boundaries without copying data. Recipients access shared data in place, and governance policies remain enforced at the source. For more information, see [external data sharing](../governance/external-data-sharing-overview.md).
 
 ### OneLake and lakehouse data hierarchy
 

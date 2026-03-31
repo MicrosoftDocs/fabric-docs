@@ -91,7 +91,7 @@ By using these open file formats and APIs, OneLake ensures that data stored in O
 
 #### Cross-tenant data sharing
 
-[OneLake data sharing](../onelake/onelake-data-sharing.md) lets you share live, governed datasets across Microsoft Entra tenant boundaries without copying data. Data owners control access by granting OneLake permissions to external identities, and governance policies (such as sensitivity labels and access controls) remain enforced at the source. You can combine cross-tenant data sharing with shortcuts so that external recipients reference shared data as part of their own OneLake namespace.
+[External data sharing](../governance/external-data-sharing-overview.md) lets you share live, governed datasets across Microsoft Entra tenant boundaries without copying data. Data owners control access by granting OneLake permissions to external identities, and governance policies (such as sensitivity labels and access controls) remain enforced at the source. You can combine cross-tenant data sharing with shortcuts so that external recipients reference shared data as part of their own OneLake namespace.
 
 #### Azure Databricks integration
 
