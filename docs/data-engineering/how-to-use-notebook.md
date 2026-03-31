@@ -123,6 +123,9 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
 > - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
 
+> [!NOTE]
+> Files in the Resources folder (both built-in and environment) and libraries installed through inline commands (such as `%pip install` or `install.packages()`) are scoped to the current notebook session. They aren't affected by environment publishing in either Quick mode or Full mode.
+
 ### Built-in resources folder
 
 The built-in resources folder is a system-defined folder unique to each notebook. It is recommended to use built-in resource folder to storage any data used in the current notebook. Here are the key capabilities for the notebook resources.
@@ -147,6 +150,20 @@ Environment Resources Folder is a shared repository designed to streamline colla
 - You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
+Fabric Environments support two library publishing modes that affect how libraries are delivered to your notebook sessions:
+
+- **Quick mode** publishes in about 5 seconds and installs libraries when your notebook session starts. Quick mode can override library versions published through Full mode, but only for the current session.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Using Full mode with a [custom live pool](custom-live-pools-overview.md) can bring session start times back to approximately 5 seconds while maintaining the stable snapshot.
+
+For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+
+### Use environment libraries in notebooks
+
+Choose a library publishing mode based on your workflow:
+
+- **Quick mode for iterative development**: Use Quick mode when you're actively experimenting in notebooks and need fast library iteration. Libraries install at session start with minimal publish time.
+- **Full mode for reproducibility**: Use Full mode when you need consistent library versions across collaborators, scheduled runs, or pipeline jobs. The snapshot ensures every session starts with the same dependencies.
+- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination achieves approximately 5-second session starts while preserving the stable library snapshot.
 
 > [!NOTE]
 > Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
@@ -294,5 +311,6 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 
 - [Author and execute notebooks](author-execute-notebook.md)
 - [Overview of Copilot for Data Engineering and Data Science](copilot-notebooks-overview.md)
+- [Manage libraries in Fabric environments](environment-manage-library.md)
 - [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
 
