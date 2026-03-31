@@ -1215,8 +1215,6 @@
             href: cicd-apache-airflow-jobs.md
   - name: FAQ and Troubleshooting
     items: 
-      - name: Frequently asked questions
-        href: frequently-asked-questions.yml
       - name: Keyboard shortcuts
         href: keyboard-shortcuts.md
       - name: Debug pipelines

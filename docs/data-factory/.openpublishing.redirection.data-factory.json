@@ -19,6 +19,11 @@
         "redirect_document_id": true
       },
       {
+        "source_path_from_root": "/docs/data-factory/frequently-asked-questions.yml",
+        "redirect_url": "/fabric/data-factory/data-factory-overview",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/whats-new.md",
         "redirect_url": "/fabric/get-started/whats-new?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
         "redirect_document_id": true
