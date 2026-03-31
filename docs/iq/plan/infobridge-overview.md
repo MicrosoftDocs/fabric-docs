@@ -1,6 +1,6 @@
 ---
 title: InfoBridge in plan (preview)
-description: Learn about the InfoBridge component of the plan (preview) item. InfoBridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports easily.
+description: Learn about the InfoBridge component of the plan (preview) item. InfoBridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
 ms.date: 03/30/2026
 ms.topic: overview
 ai-usage: ai-assisted
@@ -15,7 +15,7 @@ The *InfoBridge* component of plan (preview) is a no-code data integration, prep
 
 ## Why use InfoBridge?
 
-Business reporting and planning often involve multi-page reports with data at varying granularities. The data from multiple visuals would also need to be written back into a single writeback table or be consumed in a consolidated P&L statement or in an executive dashboard that aggregates data to the highest level. InfoBridge can help with many use cases that typically require composite modeling, ETL and automation tools, complex DAX & SQL scripting, extensive BI expertise, and IT overheads.
+Business reporting and planning often involve multi-page reports with data at varying granularities. The data from multiple visuals needs to be written back into a single write-back table, or be consumed in either a consolidated P&L statement or an executive dashboard that aggregates data to the highest level. InfoBridge can help with many use cases that typically require composite modeling, ETL and automation tools, complex DAX and SQL scripting, extensive BI expertise, and IT overheads.
 
 InfoBridge offers these features:
 
