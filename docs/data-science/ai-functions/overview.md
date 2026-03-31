@@ -121,7 +121,7 @@ For detailed syntax and examples, see [Use multimodal input with AI functions](.
 
 ## Apply AI functions
 
-Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
+Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. PySpark AI function calls (including `ai.extract`) run distributed across Fabric Spark clusters, enabling scalable processing of large datasets. For performance tuning options, see the [PySpark configuration](./pyspark/configuration.md) documentation.
 
 > [!NOTE]
 > Most AI functions now support file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This enables direct processing of images and PDFs without loading raw bytes. For usage patterns, see [Use multimodal input with AI functions](./multimodal-overview.md).
@@ -256,7 +256,11 @@ The `ai.extract` function invokes AI to scan input text and extract specific typ
 
 #### Structured labels
 
-The `ai.extract` function supports structured label definitions through the ExtractLabel schema. You can provide labels with structured definitions that include not just the label name but also type information and attributes. This structured approach improves extraction consistency and allows the function to return correspondingly structured output columns. For example, you can specify labels with additional metadata to guide the extraction process more precisely. See the detailed documentation for [pandas](./pandas/extract.md) and [PySpark](./pyspark/extract.md) for examples of using structured labels.
+The `ai.extract` function supports structured label definitions through the `ExtractLabel` schema. You can provide labels with structured definitions that include not just the label name but also type information and attributes. Label definitions can combine simple label names (strings) with schema-bound objects via `ExtractLabel`. This structured approach improves extraction consistency and allows the function to return correspondingly structured output columns. For example, you can specify labels with additional metadata to guide the extraction process more precisely.
+
+`ExtractLabel` accepts full JSON Schema definitions and enforces structure on extracted output. Supported schema constructs include typed fields, enums, arrays (via `items`), objects with `properties`, nullable values (for example, `type=["string", "null"]`), `required` properties, and `additionalProperties=false` to disallow extra fields. The returned columns (or structs) adhere to the provided schema. When a strict schema is provided (for example, with `required` properties or `additionalProperties=false`), outputs that don't conform are surfaced as exceptions in the result and reflected in `ai.stats`.
+
+You can also author schemas as Pydantic models and convert them to JSON Schema for use with `ExtractLabel`. For detailed examples and usage patterns, see the documentation for [pandas](./pandas/extract.md) and [PySpark](./pyspark/extract.md).
 
 # [pandas](#tab/pandas)
 
