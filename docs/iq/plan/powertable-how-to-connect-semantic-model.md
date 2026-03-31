@@ -51,24 +51,11 @@ Before you begin, make sure that you have the following prerequisites in place:
 
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/using-filters.png" alt-text="Screenshot of using filters.":::
 
-10. Select **Next** after mapping the required fields and values.
+10. Select **Next** after mapping the required fields, values and filters.
 
     :::image type="content" source="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png" alt-text="Screenshot of configured semantic model for the new table.":::
 
-### Configure columns
-
-PowerTable sheets automatically detect column properties and rename any unsupported column names to match the supported format. You can review and modify them as needed.
-
-1. Review the detected column settings.
-1. You can modify column properties, such as the data type, input type, and display name, if you want to.
-1. You can optionally add columns using **Add column**.
-1. Select **Finish**.
-
->[!NOTE]
->In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
->For a table, this is a one-time configuration that cannot be modified later.
-
-:::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-config.png" alt-text="Screenshot of configured table.":::
+[!INCLUDE [configure columns](includes/configure-columns.md)]
 
 The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
 
