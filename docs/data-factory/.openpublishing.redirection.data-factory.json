@@ -194,6 +194,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/deactivate-activity.md",
+        "redirect_url": "/fabric/data-factory/activity-overview#deactivate-an-activity",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
         "redirect_document_id": false
@@ -354,6 +359,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/copilot-modern-get-data.md",
+        "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#get-data-with-copilot-preview",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/data-workflows-workspace-settings.md",
         "redirect_url": "/fabric/data-factory/apache-airflow-workspace-settings",
         "redirect_document_id": false
@@ -409,6 +419,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/monitor-data-factory.md",
+        "redirect_url": "/fabric/data-factory/monitor-pipeline-runs",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/copy-job-support.md",
         "redirect_url": "/fabric/data-factory/connector-overview",
         "redirect_document_id": false
@@ -422,6 +437,11 @@
         "source_path_from_root": "/docs/data-factory/data-type-mapping.md",
         "redirect_url": "/fabric/data-factory/data-type-conversion-copy-activity",
         "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/recent-data.md",
+        "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#recent-data-preview",
+        "redirect_document_id": false
       }
     ]
 }
