@@ -59,7 +59,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 >[!NOTE]
 >Capacity workspaces with Pro licences are not supported. Please make sure to select a workspace of premium capacity.
 
-:::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of creating a new table app.":::
+:::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model to create a powertable sheet.":::
 
 7. Map and assign your data to the table by selecting the required fields and corresponding values.
 
