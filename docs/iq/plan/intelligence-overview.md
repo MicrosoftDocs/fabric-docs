@@ -13,7 +13,7 @@ The *Intelligence sheets* component of plan (preview) provides a powerful no-cod
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
-Intelligence sheets bring single-click, flexible **IBCS** formatting for charts, cards, and tabular reports, with pixel-perfect exports.
+Intelligence sheets bring single-click, flexible International Business Communication Standards (IBCS) formatting for charts, cards, and tabular reports, with pixel-perfect exports.
 
 With their intuitive, no-code user experience (UX), Intelligence sheets enable even casual users to build dashboards and storyboards in minutes. They integrate over 100 charts, Gantt charts, cards, and tables for an end-to-end reporting solution.
 
