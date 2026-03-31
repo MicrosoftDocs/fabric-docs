@@ -38,9 +38,13 @@ Interacting with Power BI semantic models through a Fabric data agent only requi
 
 Write permission is only needed to modify the semantic model or use capabilities such as Prep for AI.
 
+### Cross-tenant data access
+
+When your workspace contains data shared from another tenant through [OneLake external data sharing](../governance/external-data-sharing-overview.md), the Fabric data agent can query that data through the OneLake shortcut created during share acceptance. No extra authentication configuration is required; access runs under your existing Entra ID identity and workspace permissions. The consumer tenant's governance policies apply to all shared data.
+
 ## End-to-end flow for creating and consuming Fabric data agents
 
-This section outlines the key steps to create, validate, and share a Fabric data agent in Fabric, making it accessible for consumption.
+This section outlines the key steps to create, validate, and share a Fabric data agent in Fabric, making it accessible for consumption. The agent operates on governed, live data in OneLake, including tables backed by [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant shares](../governance/external-data-sharing-overview.md).
 
 The process is straightforward and you can begin testing the Fabric data agent resources in minutes.
 
@@ -60,7 +64,10 @@ Refer to the provided screenshot for a visual guide on naming the Fabric data ag
 
 After you create a Fabric data agent, you can add up to five data sources, including lakehouses, warehouses, Power BI semantic models, KQL databases, ontologies, and Microsoft Graph, in any combination (up to five total). For example, you could add five Power BI semantic models, or two Power BI semantic models, one lakehouse, and one KQL database.
 
-When you create a Fabric data agent for the first time, and provide a name, the OneLake catalog automatically appears, allowing you to add data sources. To add a data source, select it from the catalog as shown on the next screen, then select **Add**. Each data source must be added individually. For example, you can add a lakehouse, select **Add**, and then proceed to add another data source. To filter the data source types, select the filter icon and then select the desired type. You can view only the data sources of the selected type, making it easier to locate and connect the appropriate sources for your Fabric data agent.
+> [!NOTE]
+> The OneLake catalog can include tables exposed through [OneLake shortcuts](../onelake/onelake-shortcuts.md). Fabric data agents can query these shortcut-backed tables directly, without copying data into the workspace.
+
+When you create a Fabric data agent for the first time, and provide a name, the OneLake catalog automatically appears, allowing you to add data sources. To add a data source, select it from the catalog as shown on the next screen, then select **Add**. Each data source must be added individually. For example, you can add a lakehouse, select **Add**, and then proceed to add another data source. To filter the data source types, select the filter icon and then select the desired type. You can filter by data source type to locate sources more easily, including items shared across organizational boundaries through [cross-tenant data sharing](../governance/external-data-sharing-overview.md).
 
 Once you add the data source, the **Explorer** on the left pane of the Fabric data agent page populates with the available tables in each selected data source, where you can use the checkboxes to make tables available or unavailable to the AI as shown in the following screenshot:
 

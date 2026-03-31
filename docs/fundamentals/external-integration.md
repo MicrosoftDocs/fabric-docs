@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Integrate Microsoft Fabric with external systems and platform connectivity
 
-Microsoft Fabric integrates with external services to automate workflows, enable collaboration, support developer extensibility, and interoperate with other data platforms. You can trigger actions from real-time data, connect Fabric to Microsoft 365 apps, integrate with developer tools and APIs, and securely share data across cloud ecosystems.
+Microsoft Fabric integrates with external services to automate workflows, enable collaboration, support developer extensibility, and interoperate with other data platforms. You can trigger actions from real-time data, connect Fabric to Microsoft 365 apps, integrate with developer tools and APIs, and securely share data across cloud ecosystems by using OneLake's zero-copy access patterns.
 
 This article describes how to:
 
@@ -34,7 +34,7 @@ This article describes how to:
 
 ## Collaborate across Microsoft 365
 
-Microsoft Fabric works within the Microsoft 365 ecosystem, enabling collaborative analytics and data-driven workflows across familiar productivity tools:
+Microsoft Fabric works within the Microsoft 365 ecosystem, enabling collaborative analytics and data-driven workflows across familiar productivity tools. OneLake's zero-copy model means that data shared through shortcuts or cross-tenant data sharing stays in place while remaining accessible across collaboration surfaces:
 
 - [Microsoft Teams](/power-bi/collaborate-share/service-collaborate-microsoft-teams): Share reports and dashboards in channels or chats. You can embed Power BI visuals in Teams tabs, collaborate on insights, and receive data-driven alerts.
 - [Excel](/power-bi/collaborate-share/service-analyze-in-excel): Use Analyze in Excel to connect PivotTables and advanced analysis tools to Fabric semantic models while maintaining live connectivity.
@@ -63,7 +63,7 @@ Fabric supports code-first development and DevOps practices.
   - **SQL endpoints**: Lakehouses and warehouses expose [T-SQL endpoints](../data-warehouse/how-to-connect.md) so you can query data from standard SQL tools.
   - **GraphQL APIs**: [Programmatically access data and metadata](../data-engineering/connect-apps-api-graphql.md) to build custom applications and integrations.
 
-These capabilities enable automation, CI/CD workflows, and custom solutions that extend Fabric beyond the web interface.
+These capabilities enable automation, CI/CD workflows, and custom solutions that extend Fabric beyond the web interface. You can also use Fabric REST APIs to programmatically create and manage OneLake shortcuts and consume shared datasets across workspaces and tenants.
 
 ### Unified data estate
 
@@ -84,6 +84,14 @@ The unified data estate gives you a consistent foundation for cross-platform ana
   - **[ADLS Gen2 compatibility](../onelake/onelake-api-parity.md)**: Supports the same REST APIs and hierarchical namespace features as Azure Data Lake Storage Gen2.
 
 By using these open file formats and APIs, OneLake ensures that data stored in OneLake can be read and written by multiple compute engines without conversion, making it a true interoperable data foundation.
+
+#### OneLake shortcuts
+
+[OneLake shortcuts](../onelake/onelake-shortcuts.md) are logical pointers that reference data stored in external systems (such as Azure Data Lake Storage, Amazon S3, or Google Cloud Storage) or in other Fabric workspaces. Shortcuts enable zero-copy access across Fabric workloads without duplication or ETL. Referenced data appears as part of the local OneLake namespace, so all Fabric compute engines can query shortcut targets alongside native data.
+
+#### Cross-tenant data sharing
+
+[OneLake data sharing](../onelake/onelake-data-sharing.md) lets you share live, governed datasets across Microsoft Entra tenant boundaries without copying data. Data owners control access by granting OneLake permissions to external identities, and governance policies (such as sensitivity labels and access controls) remain enforced at the source. You can combine cross-tenant data sharing with shortcuts so that external recipients reference shared data as part of their own OneLake namespace.
 
 #### Azure Databricks integration
 
