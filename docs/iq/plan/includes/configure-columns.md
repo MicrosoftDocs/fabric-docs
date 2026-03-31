@@ -19,5 +19,3 @@ PowerTable sheets automatically detect column properties and rename any unsuppor
 >[!NOTE]
 >In this step, you can **enable Slowly Changing Dimensions (SCDs)** by turning the toggle.
 >For a table, this is a one-time configuration that cannot be modified later.
-
-:::image type="content" source="../media/includes/slowly-changing-dimensions.png" alt-text="Screenshot of selecting Finish." lightbox="../media/includes/slowly-changing-dimensions.png":::
