@@ -14,10 +14,10 @@ The following table lists the supported property types for data that can be boun
 | integer | tinyint, smallint, bigint, integer, long, short | int, long |
 | boolean | boolean | bool |
 | datetime | datetime, date, timestamp | datetime |
-| double | double, decimal, float | Decimal, real |
+| double | double, decimal, float | decimal, real |
 | string | char, decimal(p, s), string, array, binary, binary16, byte, map, object, struct, timestampint64, timestamp_ntz | dynamic, string, guid, timespan |
 
-The following table shows supported property types that can be used as the source data timestamp column.
+The following table shows supported source column data types that can be used for the timestamp selection in a time series binding.
 
 | Ontology configuration | Lakehouse and Eventhouse source column value type |
 | --- | --- |
