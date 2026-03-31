@@ -3,12 +3,9 @@ title: Amazon Managed streaming for Kafka connector for Fabric event streams
 description: This file has the common content for configuring Amazon Managed streaming for Kafka connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 12/22/2025
+ms.date: 03/31/2026
 ---
 
-1. On the **Data sources** page, select **Amazon MSK Kafka**. 
-
-    :::image type="content" source="./media/amazon-msk-kafka-source-connector/add-data-kafka.png" alt-text="Screenshot that shows the selection of Amazon MSK Kafka as the source type in the Get events wizard.":::
 1. On the **Connect** page, select **New connection**.
 
     :::image type="content" source="./media/amazon-msk-kafka-source-connector/new-connection.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    

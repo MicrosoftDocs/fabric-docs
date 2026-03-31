@@ -3,7 +3,7 @@ title: Amazon Kinesis Data Streams connector - Prerequisites
 description: This file has prerequisites for an Amazon Kinesis Data Streams connector.
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 05/21/2024
+ms.date: 03/31/2026
 ---
 
 ## Prerequisites

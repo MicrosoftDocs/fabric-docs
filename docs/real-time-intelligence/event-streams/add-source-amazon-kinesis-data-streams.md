@@ -37,6 +37,8 @@ This article shows you how to add an Amazon Kinesis Data Streams source to an ev
 
 [!INCLUDE [amazon-kinesis-data-streams-connector](includes/connectors/amazon-kinesis-data-streams-connector-configuration.md)]
 
+## Review eventstream
+
 You can see the Amazon Kinesis Data Stream source added to your eventstream in **Edit mode**.
 
 :::image type="content" source="./media/add-source-amazon-kinesis-data-streams/edit-view.png" alt-text="Screenshot that shows Amazon Kinesis Data Streams source in Edit view." lightbox="./media/add-source-amazon-kinesis-data-streams/edit-view.png":::
