@@ -59,8 +59,8 @@ samplevl.test_str
 ```r
 samplevl <- notebookutils.variableLibrary.getLibrary("sampleVL")
 
-samplevl.test_int
-samplevl.test_str
+samplevl$test_int()
+samplevl$test_str()
 ```
 
 ---
@@ -116,14 +116,12 @@ Variable libraries support the following data types. Values are automatically ty
 | Type | Description | Example |
 |---|---|---|
 | **String** | Text values. | `"my_connection_string"` |
-| **Int** | Integer numbers. | `42` |
-| **Bool** | Boolean true/false. | `true` |
-| **Float** | Decimal numbers. | `3.14` |
-| **Secret** | Sensitive values such as passwords, tokens, and keys. Automatically redacted in logs and outputs. | `"••••••"` |
+| **Integer** | Integer numbers. | `42` |
+| **Boolean** | Boolean true/false. | `true` |
+| **Number** | Decimal numbers. | `3.14` |
 | **DateTime** | Date and time values in ISO 8601 format. | `"2025-01-15T08:30:00Z"` |
-
-> [!TIP]
-> Use the **Secret** type for all sensitive values such as passwords, API keys, and tokens. Secret values are automatically redacted in logs and output to prevent accidental exposure.
+| **Guid** | Globally unique identifiers. | `"123e4567-e89b-12d3-a456-426614174000"` |
+| **Item reference** | References to supported Fabric items. | `"workspace/item"` |
 
 ### Environment-specific configuration
 
@@ -172,9 +170,9 @@ if (debugMode) {
 ```r
 app_config <- notebookutils.variableLibrary.getLibrary("app_config")
 
-api_endpoint <- app_config$api_endpoint
-batch_size <- app_config$batch_size
-debug_mode <- app_config$debug_enabled
+api_endpoint <- app_config$api_endpoint()
+batch_size <- app_config$batch_size()
+debug_mode <- app_config$debug_enabled()
 
 print(paste("API Endpoint:", api_endpoint))
 print(paste("Batch Size:", batch_size))

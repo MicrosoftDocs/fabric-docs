@@ -26,7 +26,7 @@ The following table lists the available file system methods:
 | `mkdirs` | `mkdirs(path: String): Boolean` | Creates the given directory if it doesn't exist, also creating any necessary parent directories. |
 | `cp` | `cp(src: String, dest: String, recurse: Boolean = false): Boolean` | Copies a file or directory, possibly across file systems. |
 | `fastcp` | `fastcp(src: String, dest: String, recurse: Boolean = true, extraConfigs: Map = None): Boolean` | Copies a file or directory via azcopy for better performance with large data volumes. |
-| `mv` | `mv(src: String, dest: String, create_path: Boolean = false, overwrite: Boolean = false): Boolean` | Moves a file or directory, possibly across file systems. |
+| `mv` | `mv(src: String, dest: String, create_path: Boolean, overwrite: Boolean = false): Boolean` | Moves a file or directory, possibly across file systems. |
 | `put` | `put(file: String, content: String, overwrite: Boolean = false): Boolean` | Writes the given string out to a file, encoded in UTF-8. |
 | `head` | `head(file: String, max_bytes: int = 1024 * 100): String` | Returns up to the first `max_bytes` bytes of the given file as a String encoded in UTF-8. |
 | `append` | `append(file: String, content: String, createFileIfNotExists: Boolean = false): Boolean` | Appends the content to a file. |

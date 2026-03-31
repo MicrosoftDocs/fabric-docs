@@ -36,14 +36,14 @@ The following table summarizes the available methods:
 
 ```python
 # Method signatures
-notebookutils.lakehouse.create(name: String, description: String = "", definition: String = "", workspaceId: String = ""): Artifact
-notebookutils.lakehouse.get(name: String, workspaceId: String = ""): Artifact
+notebookutils.lakehouse.create(name: String, description: String = "", definition: Object = {}, workspaceId: String = ""): Artifact
+notebookutils.lakehouse.get(name: String = "", workspaceId: String = ""): Artifact
 notebookutils.lakehouse.getWithProperties(name: String, workspaceId: String = ""): Artifact
 notebookutils.lakehouse.update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact
 notebookutils.lakehouse.delete(name: String, workspaceId: String = ""): Boolean
 notebookutils.lakehouse.list(workspaceId: String = "", maxResults: Int = 1000): Array[Artifact]
 notebookutils.lakehouse.listTables(lakehouse: String = "", workspaceId: String = "", maxResults: Int = 1000): Array[Table]
-notebookutils.lakehouse.loadTable(loadOption: String, table: String, lakehouse: String = "", workspaceId: String = ""): Boolean
+notebookutils.lakehouse.loadTable(loadOption: Object, table: String, lakehouse: String = "", workspaceId: String = ""): Boolean
 ```
 
 All methods accept an optional `workspaceId` parameter. When omitted, the operation targets the current workspace. Specify a workspace ID for cross-workspace access. You must have appropriate permissions in the target workspace.
@@ -58,7 +58,7 @@ Use `notebookutils.lakehouse.create()` to create a new Lakehouse in the current 
 |---|---|---|---|
 | `name` | String | Yes | Display name of the Lakehouse. Must be unique within the workspace. |
 | `description` | String | No | A text description for the Lakehouse. |
-| `definition` | String or Dict | No | Creation payload for the Lakehouse. Pass `{"enableSchemas": True}` to enable schema support. |
+| `definition` | Object | No | Structured definition object for the Lakehouse. Pass `{"enableSchemas": True}` or the equivalent object form for your language to enable schema support. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
 ### Create a basic Lakehouse
@@ -84,7 +84,7 @@ artifact <- notebookutils.lakehouse.create("lakehouse_name", "Description of the
 ---
 
 > [!NOTE]
-> In Scala, pass the `definition` parameter as a JSON string. In Python, PySpark, and R, you can pass a dictionary or list.
+> Pass `definition` as a structured object for your notebook language, such as a Python dictionary, a Scala `Map`, or an R list.
 
 ### Create a Lakehouse with schema support
 
@@ -106,7 +106,7 @@ print(f"Lakehouse ID: {artifact.id}")
 ### [Scala](#tab/scala)
 
 ```scala
-val definition = """{"enableSchemas": true}"""
+val definition = Map("enableSchemas" -> true)
 
 val artifact = notebookutils.lakehouse.create(
     "SalesAnalyticsWithSchema",
@@ -204,13 +204,13 @@ print(f"Created {len(created_lakehouses)} lakehouses")
 
 ## Get a Lakehouse
 
-Use `notebookutils.lakehouse.get()` to retrieve a Lakehouse by name.
+Use `notebookutils.lakehouse.get()` to retrieve a Lakehouse by name. If you omit the name, NotebookUtils uses the current default Lakehouse.
 
 ### Parameters
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `name` | String | Yes | Name of the Lakehouse to retrieve. |
+| `name` | String | No | Name of the Lakehouse to retrieve. Defaults to the current Lakehouse when omitted. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
 ### [Python](#tab/python)
@@ -421,7 +421,7 @@ artifacts_list <- notebookutils.lakehouse.list("optional_workspace_id")
 ---
 
 > [!NOTE]
-> In Scala, the `list` method doesn't support the `maxResults` parameter. Use `list(workspaceId)` instead.
+> In Scala, the `list` method supports `maxResults` the same way as the other notebook languages. For example, use `list(workspaceId, maxResults)`.
 
 ## List tables
 
@@ -431,7 +431,7 @@ Use `notebookutils.lakehouse.listTables()` to list all tables in a Lakehouse.
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `lakehouse` | String | Yes | Name of the Lakehouse. |
+| `lakehouse` | String | No | Name of the Lakehouse. Defaults to the current Lakehouse when omitted. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 | `maxResults` | Int | No | Maximum number of items to return. Defaults to 1000. |
 
@@ -463,12 +463,12 @@ Use `notebookutils.lakehouse.loadTable()` to load data from files into a Lakehou
 
 | Parameter | Type | Required | Description |
 |---|---|---|---|
-| `loadOption` | String or Dict | Yes | A JSON string or dictionary specifying the file path, mode, format, and other load options. |
+| `loadOption` | Object | Yes | Structured load options that specify the file path, mode, format, and other load settings. |
 | `table` | String | Yes | Name of the target table. |
-| `lakehouse` | String | Yes | Name of the Lakehouse. |
+| `lakehouse` | String | No | Name of the Lakehouse. Defaults to the current Lakehouse when omitted. |
 | `workspaceId` | String | No | Target workspace ID. Defaults to the current workspace. |
 
-The `loadOption` dictionary supports the following keys:
+The `loadOption` object supports the following keys:
 
 | Key | Description |
 |---|---|

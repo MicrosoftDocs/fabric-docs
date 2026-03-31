@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 You can use the credentials utilities to get access tokens and manage secrets in Azure Key Vault. The `notebookutils.credentials` module integrates with Microsoft Entra ID for token acquisition and Azure Key Vault for secret management, so you can connect to Azure resources securely without exposing credentials in code.
 
-The credentials utilities are available in Python, PySpark, Scala, and R notebooks. The examples on this page use Python as the primary language, with Scala and R equivalents shown for each method.
+The credentials utilities are available in Python, PySpark, Scala, and R notebooks. The examples on this page use Python as the primary language, with Scala and R equivalents shown where the public API supports them.
 
 > [!IMPORTANT]
 > Never hardcode secrets or credentials directly in notebook code. Always use Azure Key Vault to store sensitive values and retrieve them at runtime with `notebookutils.credentials.getSecret`.
@@ -56,8 +56,8 @@ The following table lists the available credentials methods:
 |---|---|---|
 | `getToken` | `getToken(audience: String): String` | Returns a Microsoft Entra token for the specified audience. |
 | `getSecret` | `getSecret(akvName: String, secret: String): String` | Returns the value of a secret from the specified Azure Key Vault. |
-| `putSecret` | `putSecret(akvName: String, secretName: String, secretValue: String): String` | Stores a secret in the specified Azure Key Vault. |
-| `isValidToken` | `isValidToken(token: String): Boolean` | Checks whether the given token is valid and not expired. |
+| `putSecret` | `putSecret(akvName: String, secretName: String, secretValue: String): String` | Stores a secret in the specified Azure Key Vault. This method isn't available in the public Scala API. |
+| `isValidToken` | `isValidToken(token: String): Boolean` | Checks whether the given token is valid and not expired. This method isn't available in the public Scala API. |
 
 ## Get token
 
@@ -256,12 +256,6 @@ Follow these recommendations when you work with credentials in Fabric notebooks:
 notebookutils.credentials.putSecret('https://<name>.vault.azure.net/', 'secret name', 'secret value')
 ```
 
-### [Scala](#tab/scala)
-
-```scala
-notebookutils.credentials.putSecret("https://<name>.vault.azure.net/", "secret name", "secret value")
-```
-
 ### [R](#tab/r)
 
 ```r
@@ -269,6 +263,9 @@ notebookutils.credentials.putSecret("https://<name>.vault.azure.net/", "secret n
 ```
 
 ---
+
+> [!NOTE]
+> `putSecret` isn't available in the public Scala API. Use Python, PySpark, or R notebooks when you need to write a secret to Azure Key Vault from NotebookUtils.
 
 You must have appropriate permissions (Set permission) on the Azure Key Vault to write secrets.
 
@@ -295,16 +292,6 @@ else:
     token = notebookutils.credentials.getToken('storage')
 ```
 
-### [Scala](#tab/scala)
-
-```scala
-val token = notebookutils.credentials.getToken("storage")
-val isValid = notebookutils.credentials.isValidToken(token)
-
-if (isValid) println("Token is valid")
-else println("Token is expired or invalid")
-```
-
 ### [R](#tab/r)
 
 ```r
@@ -315,6 +302,9 @@ if (is_valid) print("Token is valid") else print("Token is expired or invalid")
 ```
 
 ---
+
+> [!NOTE]
+> `isValidToken` isn't available in the public Scala API. In Scala notebooks, request a new token when needed instead of calling this helper.
 
 ## Related content
 

@@ -234,9 +234,10 @@ Enrich log messages with execution context for easier debugging and monitoring:
 ```python
 context = notebookutils.runtime.context
 
+run_id = context.get("currentRunId") or "interactive"
 log_prefix = (
     f"[{context['currentWorkspaceName']}/{context['currentNotebookName']}]"
-    f" run={context.get('currentRunId', 'interactive')}"
+    f" run={run_id}"
 )
 
 print(f"{log_prefix} Processing started")

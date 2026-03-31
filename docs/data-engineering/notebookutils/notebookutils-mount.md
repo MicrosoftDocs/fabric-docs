@@ -88,7 +88,7 @@ This example assumes that you have one Data Lake Storage Gen2 account named *sto
 
 :::image type="content" source="../media/notebook-utilities/mount-container-example.png" alt-text="Screenshot showing where to select a container to mount." lightbox="../media/notebook-utilities/mount-container-example.png":::
 
-To mount the container called *mycontainer*, NotebookUtils first needs to check whether you have the permission to access the container. Currently, Fabric supports three authentication methods for the trigger mount operation: *Microsoft Entra token* (default), *accountKey*, and *sastoken*.
+To mount the container called *mycontainer*, NotebookUtils first needs to check whether you have the permission to access the container. Currently, Fabric supports three authentication methods for the trigger mount operation: *Microsoft Entra token* (default), *accountKey*, and *sasToken*.
 
 For security reasons, store account keys or SAS tokens in Azure Key Vault (as the following screenshot shows). You can then retrieve them by using the `notebookutils.credentials.getSecret` API. For more information about Azure Key Vault, see [About Azure Key Vault managed storage account keys](/azure/key-vault/secrets/about-managed-storage-account-keys).
 
@@ -107,7 +107,7 @@ notebookutils.fs.mount(
 )
 ```
 
-Sample code for *sastoken*:
+Sample code for *sasToken*:
 
 ```python
 # get access token for keyvault resource
@@ -125,7 +125,7 @@ notebookutils.fs.mount(
 You can tune mount behavior with the following optional parameters in the `extraConfigs` map:
 
 - **fileCacheTimeout**: Blobs are cached in the local temp folder for 120 seconds by default. During this time, blobfuse doesn't check whether the file is up to date. You can set this parameter to change the default timeout time. When multiple clients modify files at the same time, to avoid inconsistencies between local and remote files, shorten the cache time or set it to 0 to always get the latest files from the server.
-- **timeout**: The mount operation timeout is 120 seconds by default. You can set this parameter to change the default timeout time. When there are too many executors or when mount times out, increase the value.
+- **timeout**: The mount operation timeout is 30 seconds by default. You can set this parameter to change the default timeout time. When there are too many executors or when mount times out, increase the value.
 
 You can use these parameters like this:
 
@@ -133,7 +133,7 @@ You can use these parameters like this:
 notebookutils.fs.mount(
    "abfss://mycontainer@<accountname>.dfs.core.windows.net",
    "/test",
-   {"fileCacheTimeout": 120, "timeout": 120}
+   {"fileCacheTimeout": 120, "timeout": 30}
 )
 ```
 

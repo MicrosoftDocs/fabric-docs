@@ -410,9 +410,11 @@ The `validateDAG()` method returns `True` if the DAG structure is valid or raise
 The `runMultiple()` method returns a dictionary where each key is the activity name and each value contains an `exitVal` (string) and an `exception` (error object or `None`). You can inspect partial results even when some activities fail:
 
 ```python
+from notebookutils.common.exceptions import RunMultipleFailedException
+
 try:
     results = notebookutils.notebook.runMultiple(DAG)
-except Exception as ex:
+except RunMultipleFailedException as ex:
     results = ex.result
 
 for activity_name, result in results.items():
@@ -490,7 +492,7 @@ print (exitVal)
 **Output:**
 
 ```console
-Notebook is executed successfully with exit value 10
+10
 ```
 
 You can run the **Sample1** in another notebook and set the **input** value as 20:
@@ -503,7 +505,7 @@ print (exitVal)
 **Output:**
 
 ```console
-Notebook is executed successfully with exit value 20
+20
 ```
 
 ## Related content

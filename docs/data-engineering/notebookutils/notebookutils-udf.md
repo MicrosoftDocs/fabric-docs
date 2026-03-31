@@ -17,7 +17,7 @@ Use UDF utilities to:
 - **Function retrieval** – Access functions from UDF items by name.
 - **Cross-workspace access** – Use functions from UDF items in other workspaces.
 - **Function discovery** – Inspect available functions and their signatures.
-- **Flexible invocation** – Call functions with positional or named parameters.
+- **Flexible invocation** – Call functions with language-appropriate parameters.
 
 > [!NOTE]
 > You need read access to a UDF item in the target workspace to retrieve its functions. Exceptions from UDF functions propagate to the calling notebook.
@@ -26,9 +26,9 @@ The following table lists the available UDF methods:
 
 | Method | Signature | Description |
 |---|---|---|
-| `getFunctions` | `getFunctions(udf: String, workspaceId: String = ""): UDFFunctions` | Retrieves all functions from a UDF item by artifact ID or name. Returns an object with callable function attributes. |
+| `getFunctions` | `getFunctions(udf: String, workspaceId: String = ""): UDF` | Retrieves all functions from a UDF item by artifact ID or name. Returns an object with callable function attributes. |
 
-The returned `UDFFunctions` object exposes the following properties:
+The returned object exposes the following properties:
 
 | Property | Type | Description |
 |---|---|---|
@@ -56,8 +56,8 @@ myFunctions = notebookutils.udf.getFunctions('UDFItemName', 'workspaceId')
 ### [Scala](#tab/scala)
 
 ```scala
-var myFunctions = notebookutils.udf.getFunctions("UDFItemName")
-var myFunctions = notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
+val myFunctions = notebookutils.udf.getFunctions("UDFItemName")
+val sharedFunctions = notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
 ```
 
 ### [R](#tab/r)
@@ -74,7 +74,7 @@ myFunctions <- notebookutils.udf.getFunctions("UDFItemName", "workspaceId")
 
 ## Invoke a function
 
-After retrieving functions from a UDF item, call them by name with positional or named parameters.
+After retrieving functions from a UDF item, call them by name. Python supports positional and named parameters. Scala and R examples use positional parameters.
 
 ### [Python](#tab/python)
 
@@ -89,13 +89,13 @@ myFunctions.functionName(parameter1='value1', parameter2='value2')
 ### [Scala](#tab/scala)
 
 ```scala
-val res = myFunctions.functionName('value1', 'value2'...)
+val res = myFunctions.functionName("value1", "value2")
 ```
 
 ### [R](#tab/r)
 
 ```r
-myFunctions$functionName('value1', 'value2'...)
+result <- myFunctions$functionName("value1", "value2")
 ```
 
 ---
@@ -109,19 +109,19 @@ You can inspect UDF item metadata and function signatures programmatically.
 ### [Python](#tab/python)
 
 ```python
-display([myFunctions.itemDetails])
+display(myFunctions.itemDetails)
 ```
 
 ### [Scala](#tab/scala)
 
 ```scala
-display(Array(myFunctions.itemDetails))
+display(myFunctions.itemDetails)
 ```
 
 ### [R](#tab/r)
 
 ```r
-myFunctions$itemDetails()
+myFunctions$itemDetails
 ```
 
 ---
@@ -143,7 +143,7 @@ display(myFunctions.functionDetails)
 ### [R](#tab/r)
 
 ```r
-myFunctions$functionDetails()
+myFunctions$functionDetails
 ```
 
 ---
@@ -158,11 +158,13 @@ Wrap UDF invocations in language-appropriate error handling to manage missing fu
 ### [Python](#tab/python)
 
 ```python
+import json
+
 try:
     validators = notebookutils.udf.getFunctions('DataValidators')
 
     # Check if function exists before calling
-    functions_info = validators.functionDetails
+    functions_info = json.loads(validators.functionDetails)
     function_names = [f['Name'] for f in functions_info]
 
     if 'validateSchema' in function_names:

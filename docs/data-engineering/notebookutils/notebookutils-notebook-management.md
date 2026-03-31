@@ -261,9 +261,6 @@ The `get()` method returns an `Artifact` object with the following properties:
 
 ## Get a notebook definition
 
-> [!NOTE]
-> The `getDefinition()` method isn't available in R. Use Python or Scala to retrieve notebook definitions.
-
 Use `notebookutils.notebook.getDefinition()` to retrieve the full notebook content in `.ipynb` format. Use it for backup, migration, version control, or content analysis.
 
 ### Parameters
@@ -296,6 +293,14 @@ print("Notebook definition retrieved and saved")
 val content = notebookutils.notebook.getDefinition("MyNotebook")
 
 println(s"Retrieved notebook content (${content.length} characters)")
+```
+
+### [R](#tab/r)
+
+```r
+content <- notebookutils.notebook.getDefinition("MyNotebook")
+
+print(paste("Retrieved notebook content (", nchar(content), " characters)", sep = ""))
 ```
 
 ---
