@@ -6,9 +6,7 @@ ms.topic: include
 ms.date: 05/21/2024
 ---
 
-1. On **Select a data source**, select **Kinesis Data Streams**.
 
-   :::image type="content" border="true" source="media/amazon-kinesis-data-streams-connector-configuration/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
 1. On **Connect**, select **New connection** to create a connection.
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/new-connection-link.png" alt-text="Screenshot that shows the Connect page with the New connection highlighted.":::
@@ -32,6 +30,6 @@ ms.date: 05/21/2024
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/source-name-region.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
 
 1. Select **Next**.
-1. On **Review and create**, review the summary, and then select **Add**.
+1. On **Review and create**, review the summary, and then select **Add** or **Connect**.
 
 
