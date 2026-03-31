@@ -18,13 +18,20 @@ You can also add organization-specific instructions, examples, and guidance to f
 
 [!INCLUDE [data-agent-prerequisites](./includes/data-agent-prerequisites.md)]
 
+### Governance prerequisites
+
+If your tenant or workspace is governed by Microsoft Purview policies, agents must operate within those policies. The following Purview policies can limit agent access and the results that agents return, based on sensitivity and policy configuration:
+
+- **Purview DLP policies in Fabric Data Warehouse** (generally available): DLP policies can detect and restrict access to sensitive data in warehouse assets that the agent queries.
+- **Access restriction policies** (preview) for Fabric KQL Database, Fabric SQL Database, and Fabric Data Warehouse: These policies can prevent the agent from accessing or returning results from assets that are classified as sensitive.
+
 ## How the Fabric data agent works
 
 The Fabric data agent uses large language models (LLMs) to help users interact with their data naturally. The Fabric data agent applies Azure OpenAI Assistant APIs and behaves like an agent. It processes user questions, determines the most relevant data source (Lakehouse, Warehouse, Power BI dataset, KQL databases, ontology), and invokes the appropriate tool to generate, validate, and execute queries. Users can then ask questions in plain language and receive structured, human-readable answers. This approach eliminates the need to write complex queries and ensures accurate and secure data access.
 
 Here's how it works in detail:
 
-**Question parsing and validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
+**Question parsing and validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent also respects Microsoft Purview governance controls applied to the underlying Fabric data sources, including Data Loss Prevention (DLP) and access restriction policies. Policy enforcement might prevent certain queries from running or specific data from being surfaced in responses. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
 **Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, and ontologies. It might also reference user-provided data agent instructions to determine the most relevant data source.
 
@@ -41,6 +48,17 @@ The selected tool generates a query based on the provided schema, metadata, and 
 **Query execution and response**: Once validated, the Fabric data agent executes the query against the chosen data source. The results are formatted into a human-readable response, which might include structured data such as tables, summaries, or key insights.
 
 By using this approach, users can interact with their data by using natural language. The Fabric data agent handles the complexities of query generation, validation, and execution. Users don't need to write SQL, DAX, or KQL themselves.
+
+## Security and governance with Microsoft Purview
+
+Microsoft Purview provides governance and risk controls for Fabric data agents. These features are currently in preview and help organizations maintain compliance when using agents to access Fabric data. Key capabilities include:
+
+- **Risk discovery and auditing**: Prompts and responses from Fabric data agents can be subject to Purview risk discovery and auditing, giving security teams visibility into how agents interact with organizational data.
+- **DSPM Data Risk Assessments**: Data Security Posture Management (DSPM) Data Risk Assessments can surface sensitive data risks in the data sources that agents use, helping you identify and address potential exposure.
+- **Insider Risk Management**: Purview Insider Risk Management can detect risky AI usage patterns involving agents, such as unusual query volumes or access to sensitive data.
+- **Audit, eDiscovery, and retention**: Purview Audit, eDiscovery, and retention policies apply to agent interactions and outputs in supported Fabric workloads. Non-compliant usage detection can also flag agent activity that violates organizational policies.
+
+For more information about how Microsoft Purview integrates with Fabric, see [Use Microsoft Purview to govern Microsoft Fabric](../governance/microsoft-purview-fabric.md).
 
 ## Fabric data agent configuration
 
@@ -88,6 +106,9 @@ The product team rigorously evaluated the quality and safety of Fabric data agen
 - The Fabric data agent can't execute queries when the data source's workspace capacity is in a different region than the data agent's workspace capacity. For example, a lakehouse with capacity in North Europe fails if the Data Agent's capacity is in France Central.
 - Users can provide up to 100 example queries per data source in their Data Agent.
 - Fabric Data Agents are currently designed for conversational insights rather than for returning complete datasets. To ensure concise and performant responses, chat outputs automatically limit and/or summarize the data returned. At present, responses are capped at a maximum of 25 rows and 25 columns. Please note that previous chat history can influence subsequent responses. For example, if you ask to “show all rows for this year,” the agent will still return a maximum of 25 rows. Follow‑up questions may then be answered based on this already limited context, which can affect the result. In such cases, starting a new chat session is recommended.
+- Agent responses might be truncated or blocked if Microsoft Purview DLP or access restriction policies apply to the underlying data sources. The specific behavior depends on your organization's policy configuration.
+- Assets that are marked as sensitive by Purview policies might be inaccessible to the agent, which can result in incomplete answers or an inability to query certain data sources.
+- Agent interactions might be logged and discoverable through Microsoft Purview Audit and eDiscovery. Organizations should consider these governance controls when deploying agents for sensitive workloads.
 
 ## Related content
 
