@@ -18,6 +18,13 @@ This article shows how to configure emitter properties, route Apache Spark logs,
 
 For architecture and destination selection across the Fabric Apache Spark Diagnostic Emitter, see [Fabric Apache Spark Diagnostic Emitter overview](spark-diagnostic-emitter-overview.md).
 
+>[!Note]
+>
+> When using the JobInsight library to analyze another Spark job, the notebook that runs JobInsight must be in the **same Fabric capacity** as the target Spark job.
+>
+> Cross-capacity scenarios are not supported at this time.
+
+
 ## Migrate from the Data Collector API
 
 If you're currently using HTTP Data Collector API, migrate to Log Ingestion API to align with current Azure Monitor ingestion patterns.
