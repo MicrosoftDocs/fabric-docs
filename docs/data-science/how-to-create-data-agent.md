@@ -20,9 +20,9 @@ With a data agent in Microsoft Fabric, you can create conversational AI experien
 
 You don't need to create or supply an Azure OpenAI key or an access token to use a Fabric data agent. Fabric uses a Microsoft-managed Azure OpenAI Assistant and handles authentication for you.
 
-- Data access runs under your Microsoft Entra ID user identity and your workspace/data permissions. The agent reads schemas and runs SQL/DAX/KQL only if you have access.
+- Data access runs under your Microsoft Entra ID user identity and your workspace/data permissions. The agent reads schemas and runs SQL/DAX/KQL only if you have access. While most data sources respect workspace permissions, Power BI semantic model interactions via data agents are governed by model-level Read permission and don't require workspace role membership.
 - To add a Power BI semantic model as a data source, you need Read permission on that model (Write isn't required). Read access is also sufficient to ask questions against sources you can access.
-	For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md).
+	For more about semantic model permissions, see [Dataset and semantic model security](../admin/service-admin-portal-dataset-security.md). In data agent usage, Read permission is sufficient for querying; Write is required only for modifying the semantic model or enabling features such as Prep for AI.
 - If your organization uses a Power BI Premium per capacity (P1 or higher) capacity instead of an F SKU, make sure [Microsoft Fabric is enabled](../admin/fabric-switch.md) on that capacity.
 - Service principals and API tokens aren't required for the in-product chat experience. Any automation with service principals is a separate scenario and isn't covered here.
 
@@ -31,6 +31,12 @@ You don't need to create or supply an Azure OpenAI key or an access token to use
 Fabric data agents honor Microsoft Purview governance policies. When Purview policies restrict access to a data source (for example, through access controls or sensitivity labels), the agent respects those restrictions when processing user queries.
 
 Expanded outbound access protection applies to agent operations. Outbound connections from agents are subject to the tenant's network and access rules configured in the Fabric admin portal. Administrators can control which external endpoints agents are permitted to reach.
+
+### Permissions for semantic models via data agents
+
+Interacting with Power BI semantic models through a Fabric data agent only requires Read permission on the semantic model. Workspace access (Member or Contributor roles) and Build permission aren't required for adding the model to the agent or asking questions through the agent. This exception applies only to data agent interactions; other entry points (for example, Analyze in Excel or direct report authorship) may still require Build permission.
+
+Write permission is only needed to modify the semantic model or use capabilities such as Prep for AI.
 
 ## End-to-end flow for creating and consuming Fabric data agents
 
@@ -61,7 +67,7 @@ Once you add the data source, the **Explorer** on the left pane of the Fabric da
 :::image type="content" source="./media/how-to-create-data-agent/change-datasource.png" alt-text="Screenshot showing how to add data sources." lightbox="./media/how-to-create-data-agent/change-datasource.png":::
 
 > [!NOTE]
-> You only need Read permission to add a Power BI semantic model as a data source. Write permission isn't required because the Fabric data agent issues read-only queries.
+> You only need Read permission to add a Power BI semantic model as a data source. Build permission isn't required, and users don't need access to the workspace where the semantic model resides when using it via a data agent. Write permission is only needed to modify the semantic model or use capabilities such as Prep for AI.
 
 For subsequent additions of data sources, navigate to the **Explorer** on the left pane of the Fabric data agent page, and select **+ Data source**, as shown in this screenshot:
 
@@ -221,6 +227,9 @@ Fabric data agents support lifecycle management capabilities that help you manag
 - **Diagnostics**: Use built-in diagnostics to troubleshoot agent behavior and identify query generation issues.
 - **Git integration**: Connect your Fabric workspace to a Git repository to version-control agent configurations, including instructions, example queries, and data source selections.
 - **Deployment pipelines**: Use Fabric deployment pipelines to promote data agents from development to test and production workspaces.
+
+> [!NOTE]
+> Consumers who query a data agent that uses Power BI semantic models only need Read permission on those models and don't need workspace access. Modifying the semantic model or using features such as Prep for AI requires Write permission.
 
 ## Related content
 
