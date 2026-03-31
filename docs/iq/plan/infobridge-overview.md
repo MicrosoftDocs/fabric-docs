@@ -7,9 +7,9 @@ ai-usage: ai-assisted
 #customer intent: As a user, I want to use InfoBridge to consolidate my plans, budgets, simulations, and forecasts across source systems and reports.
 ---
 
-# What is InfoBridge in plan (preview)?
+# What is InfoBridge in Plan (preview)?
 
-The *InfoBridge* component of plan (preview) is a no-code data integration, preparation, and transformation engine that lets you connect to multiple data sources and consolidate them into a single, unified report. You can also perform common data transformations on data sources, such as appending, merging, pivoting, un-pivoting, and grouping data.
+The *InfoBridge* component of Plan (preview) is a no-code data integration, preparation, and transformation engine that lets you connect to multiple data sources and consolidate them into a single, unified report. You can also perform common data transformations on data sources, such as appending, merging, pivoting, un-pivoting, and grouping data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
