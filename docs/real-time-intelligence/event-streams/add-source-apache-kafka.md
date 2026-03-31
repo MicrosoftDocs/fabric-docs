@@ -27,7 +27,7 @@ Apache Kafka is an open-source, distributed platform for building scalable, real
    :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
 1. On the **Select a data source** page, or **Data sources** page, select **Apache Kafka**. 
 
-    :::image type="content" source="./includes/media/apache-kafka-source-connector/select-apache-kafka.png" alt-text="Screenshot that shows the selection of Apache Kafka as the source type in the Get events wizard.":::
+    :::image type="content" source="./media/add-source-apache-kafka/select-apache-kafka.png" alt-text="Screenshot that shows the selection of Apache Kafka as the source type in the Get events wizard.":::
 
 
 ## Configure and connect to Apache Kafka

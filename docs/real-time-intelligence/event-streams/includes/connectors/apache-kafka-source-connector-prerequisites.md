@@ -10,7 +10,7 @@ ms.date: 07/22/2025
 
 - Access to the Fabric workspace with Contributor or above permissions.
 - An Apache Kafka cluster running. 
-- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](./streaming-connector-private-network-support-guide.md).
+- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector virtual network injection](../../streaming-connector-private-network-support-guide.md).
 - If you plan to use **TLS/mTLS settings**, make sure the required certificates are available in an **Azure Key Vault**:
 
     - Import the required certificates into Azure Key Vault in **.pem** format.

@@ -8,7 +8,7 @@ ms.date: 03/31/2026
 
 1. On the **Connect** page, for **Event types**, only **Microsoft.Fabric.AnomalyEvents.AnomalyDetected** is currently supported.
 
-1. If you want to review the [Schemas](../../../real-time-hub/explore-anomaly-detection.md#schemas) for the event types before proceeding, select **View selected event type schemas**. You can browse the schemas for the events, and then return to the previous page by selecting the back arrow at the top.
+1. If you want to review the [Schemas](../../../../real-time-hub/explore-anomaly-detection.md#schemas) for the event types before proceeding, select **View selected event type schemas**. You can browse the schemas for the events, and then return to the previous page by selecting the back arrow at the top.
 
     :::image type="content" source="./media/anomaly-detection-events/select-event-types.png" alt-text="Screenshot that shows the selection of Anomaly detection events types on the Connect page." lightbox="./media/anomaly-detection-events/select-event-types.png":::
 
