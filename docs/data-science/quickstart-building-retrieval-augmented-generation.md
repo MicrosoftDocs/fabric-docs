@@ -43,7 +43,7 @@ After you get an Azure subscription, create an Azure AI Search service by follow
 
 Choose the free tier. It lets you create three indexes and use 50 MB of storage, which is enough for this tutorial. Select a subscription, set up a resource group, and name the service. After you configure the service, get the key and set `aisearch_api_key`. Enter values for `aisearch_index_name` and the other variables:
 
-:::image type="content" source="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png" alt-text="Screenshot of Azure portal showing the Azure AI Search service creation page with free tier selected, allowing 3 indexes and 50 MB of storage." lightbox="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png":::
+:::image type="content" source="media/quickstart-building-retrieval-augmented-generation/azure-ai-search-free-tier.png" alt-text="Screenshot of Azure portal showing the Azure AI Search service creation page with free tier selected, allowing 3 indexes and 50 MB of storage.":::
 
 `%pip install openai==0.28.1`
 
