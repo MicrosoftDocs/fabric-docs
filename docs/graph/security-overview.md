@@ -41,6 +41,15 @@ The following table summarizes the permissions associated with each Microsoft Fa
 > All users need read access to the underlying graph instance item to execute queries against the referenced graph instance from the graph QuerySet item.
 > Only read, write, and reshare permissions are supported for QuerySet item.
 
+## Share a graph item
+
+Besides assigning workspace roles, you can share graph models and QuerySets with users who don't have a role in the workspace. Sharing grants item-level permissions for downstream consumption without giving access to other workspace items.
+
+For step-by-step instructions, see [Share a graph and manage permissions](share-graph-manage-permissions.md).
+
 ## Related content
 
-- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
+- [Share a graph and manage permissions](share-graph-manage-permissions.md)
+- [Share items in Microsoft Fabric](../fundamentals/share-items.md)
+- [Permission model in Microsoft Fabric](../security/permission-model.md)
+- [Security in Microsoft Fabric](../security/security-overview.md)
