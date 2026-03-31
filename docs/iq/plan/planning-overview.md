@@ -1,7 +1,7 @@
 ---
 title: Planning sheets in plan (preview)
 description: Learn about the Planning sheets component of the plan (preview) item for budgeting and forecasting.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: overview
 #customer intent: As a user, I want to understand and use Planning sheets effectively.
 ---

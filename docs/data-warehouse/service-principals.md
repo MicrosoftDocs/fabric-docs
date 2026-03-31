@@ -2,7 +2,7 @@
 title: Service Principals in Fabric Data Warehouse
 description: Learn about service principals (SPN) as security identities for applications and tools in Fabric warehouse.
 ms.reviewer: sosivara, fresantos
-ms.date: 02/17/2026
+ms.date: 03/30/2026
 ms.topic: how-to
 ---
 
@@ -181,6 +181,7 @@ You can manually test token generation and API connectivity the Azure CLI.
 Limitations of service principals with Microsoft Fabric Data Warehouse:
 
 - Service principals are not supported for [Git APIs](/rest/api/fabric/core/git). SPN support exists only for [Deployment pipeline APIs](/rest/api/fabric/core/deployment-pipelines).
+- Currently, service principals are unable to execute T-SQL Notebooks in Fabric.
 
 ### Related content
 
