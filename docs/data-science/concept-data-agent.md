@@ -33,6 +33,8 @@ Here's how it works in detail:
 
 **Question parsing and validation**: The Fabric data agent applies Azure OpenAI Assistant APIs as the underlying agent to process user questions. This approach ensures that the question complies with security protocols, responsible AI (RAI) policies, and user permissions. The Fabric data agent also respects Microsoft Purview governance controls applied to the underlying Fabric data sources, including Data Loss Prevention (DLP) and access restriction policies. Policy enforcement might prevent certain queries from running or specific data from being surfaced in responses. The Fabric data agent strictly enforces read-only access, maintaining read-only data connections to all data sources.
 
+**Enforcement mechanisms**: The Fabric data agent applies several layers of protection during processing. It uses the requesting user's credentials and permissions to enforce least-privilege access, ensuring that each interaction only reaches data the user is authorized to view. The agent evaluates requests against tenant and workspace policy settings before executing any action. Guardrails constrain tool invocation and outputs to scoped data sources, preventing queries from reaching resources outside the configured scope. You can optionally integrate [Azure AI Content Safety](/azure/ai-services/content-safety/overview) to apply content risk controls that help reduce harmful or out-of-policy responses.
+
 **Data source identification**: The Fabric data agent uses the user's credentials to access the schema of the data source. This approach ensures that the system fetches data structure information that the user has permission to view. The agent then evaluates the user's question against all available data sources, including relational databases (Lakehouse and Warehouse), Power BI datasets (Semantic Models), KQL databases, ontologies, and Microsoft Graph. It might also reference user-provided data agent instructions to determine the most relevant data source.
 
 **Tool invocation and query generation**: Once the correct data source or sources are identified, the Fabric data agent rephrases the question for clarity and structure, and then invokes the corresponding tool to generate a structured query:
@@ -80,6 +82,20 @@ Configuring a Fabric data agent is similar to building a Power BI report—you s
 
 By combining clear AI instructions and relevant example queries, you can better align the Fabric data agent with your organization's data needs, ensuring more accurate and context-aware responses.
 
+> [!IMPORTANT]
+> Developer-provided data agent instructions and example queries must operate within organizational and role-based constraints. If instructions or prompts conflict with policy (for example, attempts to bypass read-only behavior or access out-of-scope sources), the agent refuses or redirects the request according to the precedence model described in the following section.
+
+### Governance and intent layers
+
+When you configure a Fabric data agent, multiple layers of intent can influence how the agent behaves. These layers, listed from highest to lowest precedence, define what the agent is allowed to do:
+
+1. **Organizational intent**: Tenant-wide policies and compliance requirements set by your organization's administrators. These constraints take the highest precedence and can't be overridden by any other layer.
+1. **Role-based intent**: Workspace governance settings and permission boundaries that apply to specific roles or groups. These settings enforce access controls and data scope restrictions.
+1. **Developer intent**: Custom instructions, example queries, and data source configurations that you provide when you build the data agent.
+1. **User intent**: Questions and prompts that end users submit during conversations with the agent.
+
+When conflicts arise between layers, higher-precedence layers override lower ones. For example, organizational policies and workspace governance settings always override developer instructions and user prompts. This precedence model ensures that the agent operates within approved boundaries, regardless of how it's configured or prompted.
+
 ## Difference between a Fabric data agent and a copilot
 
 While both Fabric data agents and Fabric copilots use generative AI to process and reason over data, key differences exist in their functionality and use cases:
@@ -116,6 +132,14 @@ Fabric data agents support application lifecycle management (ALM) capabilities t
 
 **Deployment pipelines**: Use Fabric deployment pipelines to promote data agents across workspaces (for example, from development to production). This support lets you test changes in a staging environment before making them available to end users.
 
+### Operational oversight
+
+To maintain ongoing quality and policy alignment, consider these operational practices for your Fabric data agent:
+
+- **Logging and audit**: Monitor agent interactions through available logging and audit capabilities. Reviewing query patterns and response quality helps you identify unexpected behavior early.
+- **Human-in-the-loop escalation**: Establish escalation paths for sensitive or high-impact requests. For scenarios where automated responses aren't sufficient, define processes that route questions to qualified reviewers.
+- **Periodic review**: Regularly review your data agent instructions and example queries to ensure they remain aligned with current organizational policies and data structures. As your data sources or business requirements change, update the agent configuration accordingly.
+
 ## Limitations
 
 - The Fabric data agent only generates SQL, DAX, and KQL "read" queries. It doesn't generate SQL, DAX, or KQL queries that create, update, or delete data.
@@ -135,3 +159,4 @@ Fabric data agents support application lifecycle management (ALM) capabilities t
 
 - [Fabric data agent end-to-end tutorial](data-agent-end-to-end-tutorial.md)
 - [Create a Fabric data agent](how-to-create-data-agent.md)
+- [Azure AI Content Safety overview](/azure/ai-services/content-safety/overview)
