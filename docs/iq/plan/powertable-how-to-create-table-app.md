@@ -58,6 +58,8 @@ There are also [other ways to create a new table](#ways-to-create-a-table).
 
 [!INCLUDE [configure columns](includes/configure-columns.md)]
 
+:::image type="content" source="media/powertable-how-to-create-table-app/finish-table.png" alt-text="Screenshot of selecting Finish after configuring the table.":::
+
 Now you have your first PowerTable sheet. Select **Save** to save your table.
 
 :::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the table." lightbox="media/powertable-how-to-create-table-app/save-table.png":::
