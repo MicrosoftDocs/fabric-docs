@@ -36,5 +36,5 @@ To find the URL, follow these steps:
 
 Use this value as the **MCP server URL** in the next section.
 
-[!INCLUDE [data-agent-mcp-server-vs-code](./includes/data-agent-mcp-server-vs-code.md)]
+[!INCLUDE [data-agent-mcp-server-vs-code](../../data-science/includes/data-agent-mcp-server-vs-code.md)]
 
