@@ -23,6 +23,9 @@ These libraries are installed by default in every environment and can't be chang
 
 To view the list of preinstalled packages and their versions for each runtime, see [Apache Spark runtimes in Fabric](runtime.md).
 
+> [!NOTE]
+> Per-notebook approaches such as the notebook Resources folder and inline install commands (for example, `%pip install` or `%conda install` in a code cell) are manual, session-scoped or notebook-scoped, and aren't affected by environment publishing. Use them for quick, one-off library additions during interactive development.
+
 > [!IMPORTANT]
 > Fabric supports different ways to manage packages. For more options and **best practices**, see [Manage Apache Spark libraries in Fabric](library-management.md).
 > If your workspace uses networking features such as **Workspace outbound access protection** or **Managed VNets**, access to public repositories such as PyPI is blocked. For guidance, see [Manage libraries with limited network access in Fabric](environment-manage-library-with-outbound-access-protection.md).
@@ -166,8 +169,8 @@ The following table shows which publish mode each library source supports.
 
 Use dependency complexity and workload type to decide which mode fits.
 
-- **Full mode** resolves dependencies, validates compatibility, and creates a stable library snapshot during publish. That snapshot is deployed when a new session starts. Best for larger dependency sets (for example, more than 10 packages), production workloads, and pipelines. Publish takes 2 to 10 minutes; session startup adds 30 seconds to 2 minutes depending on dependency size.
-- **Quick mode** skips dependency processing during publish and installs packages at notebook session startup instead. Best for lighter dependency sets, rapid iteration, and early-stage experimentation. Publish completes in seconds; install time shifts to session startup.
+- **Full mode** resolves dependencies, validates compatibility, and creates a stable library snapshot during publish. That snapshot is deployed when a new session starts. Best for larger dependency sets (for example, more than 10 packages), production workloads, and pipelines. Publish typically takes 3 to 6 minutes; session startup adds 1 to 3 minutes for dependency deployment, depending on dependency size. To maintain a stable snapshot while achieving approximately 5-second session starts, use Full mode together with a [custom live pool](custom-live-pools-overview.md).
+- **Quick mode** skips dependency processing during publish and installs packages at notebook session startup instead. Best for lighter dependency sets, rapid iteration, and early-stage experimentation. Publish completes in about 5 seconds; library installation occurs at session start.
 
 You can mix modes during development. A common pattern is to iterate in quick mode, then move validated dependencies to full mode for a stable production snapshot. You can also keep an existing full mode snapshot unchanged and layer new test packages in quick mode — the full mode snapshot deploys first, then quick mode packages install on top.
 
@@ -179,6 +182,7 @@ Keep these constraints in mind when working with publish modes.
 - To move a custom library between modes, download the file, remove it from the current mode, then upload it to the target mode. Direct transfers between modes aren't supported.
 - Installation logs don't appear in the notebook. Use **Monitoring (Level 2)** to track progress and troubleshoot.
 - When both modes contain packages, the full mode snapshot applies first. Quick mode packages install on top and override any full mode package with the same name.
+- When duplicate packages exist across modes, Quick mode versions override Full mode versions only for the current notebook session. Starting a new session re-applies the Full mode snapshot first, then Quick mode packages install on top.
 - Quick mode packages install when the first code cell for that language runs. For example, Python packages install when the first Python cell runs, and R packages install when the first R cell runs.
 
 ## Related content

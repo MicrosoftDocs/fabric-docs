@@ -39,7 +39,10 @@ When you open the Copilot chat pane, you can start with a suggested prompt or as
 With Copilot, you can:
 
 - Accelerate development with code generation and less repetitive setup.
+- Generate and refactor code across multiple cells and entire workflows, not just individual cells.
+- Summarize and validate notebook logic end-to-end.
 - Explore, validate, and prepare data by profiling tables, sampling data, and cleaning inconsistencies.
+- Surface performance insights such as recommending efficient join strategies, avoiding costly data shuffles, refactoring into reusable functions, and highlighting data quality issues detected during exploration.
 - Resolve issues in context by understanding errors and applying suggested fixes.
 - Analyze and optimize notebooks by generating metrics, exploring trends, converting code, and documenting logic for collaboration.
 
@@ -56,8 +59,9 @@ When you open a notebook, Copilot automatically understands:
 - Available schemas, tables, and files
 - The notebook's structure and existing code
 - The execution environment
+- The runtime state and recent execution telemetry (for example, data sizes and join behavior)
 
-You don't need to describe your setup. Copilot uses this context to generate relevant, environment-aware responses as your notebook evolves.
+You don't need to describe your setup. Copilot uses this context to generate relevant, environment-aware responses as your notebook evolves. Responses and recommendations consider current runtime characteristics to propose optimizations aligned to the observed behavior.
 
 Because Copilot is schema-aware, you can ask:
 
@@ -71,7 +75,7 @@ Copilot generates code and explanations directly in the chat pane, aligned to yo
 
 Copilot integrates into notebooks in two complementary ways.
 
-- **Chat pane**: Best for multi-step workflows, building pipelines across cells, exploring datasets, and reviewing generated code with diff view.
+- **Chat pane**: Best for multi-step workflows, building pipelines across cells, exploring datasets, and reviewing generated code with diff view. The chat pane supports notebook-wide code generation and refactoring across cells, with the ability to review and apply changes using an approval diff. It can coordinate changes spanning several cells to build or optimize end-to-end workflows.
 - **In-cell Copilot**: Best for focused improvements within a single cell, such as generating code, explaining logic (`/explain`), fixing errors (`/fix`), adding documentation (`/comments`), or optimizing performance (`/optimize`).
 
 Both experiences share the same notebook context, so you can move seamlessly between broader workflow design and targeted refinement.
@@ -107,6 +111,12 @@ For details on capacity requirements, region availability, required tenant setti
 - Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
 
 - AI-generated content might be inaccurate. Always review Copilot suggestions before applying them.
+
+## Fix with Copilot
+
+When a cell or Spark job fails, the **Fix with Copilot** action appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. Copilot can auto-apply code changes with an approval diff so you can review before committing. You can also invoke the `/fix` command in Copilot chat for targeted diagnostics on a specific cell or for the entire notebook.
+
+For more information about failure diagnostics, see [Diagnose notebook failures](./copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ## Related content
 
