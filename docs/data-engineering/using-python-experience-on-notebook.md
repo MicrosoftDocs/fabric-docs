@@ -298,7 +298,11 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
    Autologging extends MLflow Tracking capabilities. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 
-- **Copilot**: Copilot for Data Engineering and Data Science notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. You can use the Copilot chat panel and Char-magics in notebook, and the AI provides responses or code to copy into your notebook.
+- **Copilot**: Copilot for Data Engineering and Data Science notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. Copilot is immediately context-aware without requiring you to start a session. It understands the workspace, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and can operate across the entire notebook workflow.
+
+   Copilot supports notebook-wide, multi-step capabilities: it can generate, refactor, summarize, and validate code across multiple cells and steps in Python notebooks. You can use the Copilot chat panel and chat commands such as `/fix` in the notebook.
+
+   When a cell fails, **Fix with Copilot** surfaces an error summary, root-cause analysis, and recommended fixes, with an option to auto-apply code changes after showing an approval diff. You can also use the `/fix` command in Copilot chat for targeted diagnostics on a specific cell or the entire notebook.
 
 ## Known limitations
 
@@ -308,7 +312,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
 - Set session timeout is not available for now.
 
-- Copilot may generate Spark statement, which may not executable in Python notebook.
+- Copilot has improved context-awareness and assistance for Python notebooks, but it might occasionally suggest Spark code that isn't directly executable in a Python notebook. The Fix with Copilot experience applies to failed Python cells; Spark job diagnostics are out of scope for pure Python runs.
 
 - Currently, Copilot on Python notebook is not fully supported in several regions. The deployment process is still ongoing stay tuned as we continue to roll out support in more regions.
 

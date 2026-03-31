@@ -52,7 +52,7 @@ Beneath these workloads is the Fabric platform layer, which provides shared serv
 
 * **Copilot** provides AI assistance embedded directly within Fabric workloads to help with authoring, exploration, and routine development tasks, while respecting tenant, data, and permission boundaries.
 
-* **Governance** represents centralized administration and data governance, including permissions, sensitivity labels, and auditing. These controls are applied automatically and inherited across Fabric items. Governance is powered by Purview, which is built into Fabric. Microsoft Fabric centralizes governance and discovery capabilities within the OneLake Catalog, which serves as a unified hub to find, explore, secure and use the Fabric items you need, and govern the data you own. You can assess governance state, receive recommended actions, and improve data trust and compliance across workspaces and domains. To learn more, see [What is the OneLake Catalog?](../governance/onelake-catalog-overview.md).
+* **Governance** represents centralized administration and data governance, including permissions, sensitivity labels, and auditing. These controls are applied automatically and inherited across Fabric items. Governance is powered by Purview, which is built into Fabric. Purview-backed governance extends to data shared across tenants through OneLake data sharing, so sensitivity labels, access policies, and compliance controls remain enforced regardless of where shared data is consumed. Microsoft Fabric centralizes governance and discovery capabilities within the OneLake Catalog, which serves as a unified hub to find, explore, secure and use the Fabric items you need, and govern the data you own. You can assess governance state, receive recommended actions, and improve data trust and compliance across workspaces and domains. To learn more, see [What is the OneLake Catalog?](../governance/onelake-catalog-overview.md).
 
 This SaaS foundation enables end‑to‑end analytics scenarios such as ingesting data with Data Factory, processing it with engineering or real‑time workloads, and visualizing it in Power BI without manually integrating separate services or managing underlying infrastructure. Fabric centralizes data discovery, administration, and governance, with Microsoft Purview built in to enforce consistent security and compliance across the platform.
 
@@ -92,6 +92,8 @@ OneLake is built on ADLS (Azure Data Lake Storage) Gen2. It provides a single Sa
 
 OneLake prevents data silos by offering a unified storage system that makes data discovery, sharing, and consistent policy enforcement easy. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
 
+OneLake also supports cross-tenant data sharing, which lets you share live, governed datasets with external organizations across Microsoft Entra tenant boundaries without copying data. Recipients access shared data in place, and governance policies remain enforced at the source. For more information, see [external data sharing](../governance/external-data-sharing-overview.md).
+
 ### OneLake and lakehouse data hierarchy
 
 OneLake’s hierarchical design simplifies organization-wide management. Fabric includes OneLake by default, so no upfront provisioning is needed. Each tenant gets one unified OneLake with single file-system namespace that spans users, regions, and clouds. OneLake organizes data into containers for easy handling. The tenant maps to the root of OneLake and is at the top level of the hierarchy. You can create multiple workspaces (which are like folders) within a tenant.
@@ -114,7 +116,7 @@ All Microsoft Fabric compute experiences come preconfigured with OneLake, like O
 
 :::image type="content" source="media\microsoft-fabric-overview\onelake-architecture.png" alt-text="Diagram of different Fabric experiences all accessing the same OneLake data storage." lightbox="media\microsoft-fabric-overview\onelake-architecture.png":::
 
-OneLake lets you instantly mount your existing PaaS storage accounts using the [Shortcut](../onelake/onelake-shortcuts.md) feature. You don't have to migrate your existing data. Shortcuts provide direct access to data in Azure Data Lake Storage. They also enable easy data sharing between users and applications without duplicating files. Additionally, you can create shortcuts to other storage systems, allowing you to analyze cross-cloud data with intelligent caching that reduces egress costs and brings data closer to compute.
+OneLake lets you instantly mount your existing PaaS storage accounts by using the [Shortcut](../onelake/onelake-shortcuts.md) feature. Shortcuts provide zero-copy access to external data sources, such as Azure Data Lake Storage, Amazon S3, and Google Cloud Storage, without ETL or data migration. You can also create shortcuts to other storage systems, allowing you to analyze cross-cloud data with intelligent caching that reduces egress costs and brings data closer to compute.
 
 ## Fabric solutions for ISVs
 
@@ -123,6 +125,8 @@ If you're an Independent Software Vendors (ISVs) looking to integrate your solut
 * **Interop** - Integrate your solution with the OneLake Foundation and establish basic connections and interoperability with Fabric.
 * **Develop on Fabric** - Build your solution on top of the Fabric platform or seamlessly embed Fabric's functionalities into your existing applications. You can easily use Fabric capabilities with this option.
 * **Build a Fabric workload** - Create customized workloads and experiences in Fabric, tailoring your offerings to maximize their effect within the Fabric ecosystem.
+
+ISVs can also use OneLake shortcuts and governed cross-tenant data sharing to securely access and integrate customer data across tenant boundaries without duplicating it.
 
 For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
 
