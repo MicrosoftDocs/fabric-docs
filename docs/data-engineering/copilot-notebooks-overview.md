@@ -106,6 +106,8 @@ For details on capacity requirements, region availability, required tenant setti
 
 - Copilot features in the Data Science and Data Engineering experience are currently scoped to notebooks. Copilot can also read Power BI semantic models through semantic link integration.
 
+- Copilot context awareness is optimized for Lakehouse scenarios. If you're working with other data sources such as SQL databases, Copilot might not fully recognize the connection context and could default to Lakehouse-oriented suggestions. Specify the data source explicitly in your prompts for the best results.
+
 - If your tenant is configured with private link, the Copilot chat pane doesn't work. Inline code suggestions and quick actions might still work, but chat interactions fail to load.
 
 - Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
@@ -143,28 +145,23 @@ Use the table below to identify the cause and take appropriate action.
 
 ## Known issues
 
-### Copilot is currently unavailable in the chat pane
+### Copilot shows "Copilot is currently unavailable"
 
-In some cases, Copilot may display the message "Copilot is currently unavailable" in the chat pane. This can occur due to issues with the current notebook session.
+In some cases, Copilot may display *"Copilot is currently unavailable"* in the chat pane. This typically occurs when the notebook session is disrupted, for example, after closing another notebook in the same workspace.
 
 **Impact:**
 
-- Copilot chat becomes unavailable during use.
+- Copilot chat becomes unavailable.
 - Prompts can't be submitted or completed.
 
-**Mitigation:**
+**How to resolve:**
 
-If you encounter this issue:
+1. Close all open notebooks in your workspace.
+1. Reopen your notebook and the Copilot pane again.
 
-1. Close all open notebooks.
-1. Reopen the notebook.
-1. Open the Copilot pane again.
+**Best practice:**
 
-**Best practices:**
-
-To reduce the likelihood of this issue:
-
-- Avoid closing the notebook while actively using Copilot.
+- Avoid closing other notebooks while actively using Copilot, as this may interrupt the session.
 
 > [!NOTE]
 > This is a known issue that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
