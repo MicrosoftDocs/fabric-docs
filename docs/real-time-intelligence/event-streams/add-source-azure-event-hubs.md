@@ -17,8 +17,6 @@ zone_pivot_groups: event-hubs-capabilities
 
 This article shows you how to add an Azure Event Hubs source to a Microsoft Fabric eventstream.
 
-## Prerequisites
-
 [!INCLUDE [azure-event-hubs-source-connector-prerequisites](./includes/connectors/azure-event-hubs-source-connector-prerequisites.md)]
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md).
 

@@ -7,6 +7,8 @@ ms.custom: sfi-image-nochange
 ms.date: 04/01/2026
 author: spelluru
 ms.author: spelluru
+zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
+zone_pivot_groups: event-hubs-capabilities
 ---
 
 # Get events from Azure Event Hubs into Real-Time hub
