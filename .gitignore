@@ -16,4 +16,4 @@ media/.DS_Store
 /.vs
 
 
-.github/
+.github/.playwright-mcp/
