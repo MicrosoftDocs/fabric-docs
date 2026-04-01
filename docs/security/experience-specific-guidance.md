@@ -399,7 +399,7 @@ To recover an Ontology item during a disaster, configure [Fabric Git integration
 During recovery, once the new region and capacity in Fabric are set up, you can use the repository to rebuild the Ontology item in a new workspace. Because the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) pulls the contents from the repository into the workspace, effectively restoring the Ontology item.
 
 > [!NOTE]
-> If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) to recover them first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
+> If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
 
 ## Transactional database
 
