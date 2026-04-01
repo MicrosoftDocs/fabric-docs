@@ -51,7 +51,7 @@ In order to use fully conversational agentic AI experiences, the agent needs to 
 
 With Copilot in notebooks for Data Science and Data engineering in Microsoft Fabric, we offer an AI assistant to help transform, explore, and build solutions in the context of the notebook.
 
-For considerations and limitations, see [Limitations](../data-engineering/copilot-notebooks-overview.md#limitations).
+For considerations and limitations, see [Limitations](../data-engineering/copilot-notebooks-overview.md#known-limitations).
 
 ### How did we evaluate Copilot in notebooks for data science and data engineering?
 
