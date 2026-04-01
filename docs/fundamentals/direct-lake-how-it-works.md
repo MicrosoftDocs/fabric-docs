@@ -1,8 +1,8 @@
 ---
 title: "How Direct Lake works"
 description: "Learn how Direct Lake works, including column loading, framing, automatic updates, and DirectQuery fallback."
-author: JulCsc
-ms.author: juliacawthra
+author: kgremban
+ms.author: kgremban
 ms.date: 09/22/2025
 ms.topic: concept-article
 ms.custom: fabric-cat
@@ -84,7 +84,7 @@ When DirectQuery fallback occurs, a query no longer uses Direct Lake mode. A que
 > [!IMPORTANT]
 > If possible, you should always design your solution—or size your capacity—to avoid DirectQuery fallback. That's because it might result in slower query performance.
 
-You can control fallback of your Direct Lake semantic models by setting its _DirectLakeBehavior_ property. This setting only applies to Direct Lake on SQL endpoints. Direct Lake on OneLake doesn't support DirectQuery fallback. For more information, see [Set the Direct Lake behavior property](/dotnet/api/microsoft.analysisservices.tabular.model.directlakebehavior).
+You can control fallback of your Direct Lake semantic models by setting its _DirectLakeBehavior_ property. This setting only applies to Direct Lake on SQL endpoints. Direct Lake on OneLake doesn't support DirectQuery fallback. For more information, see [Model.DirectLakeBehavior Property](/dotnet/api/microsoft.analysisservices.tabular.model.directlakebehavior).
 
 ## Related content
 
