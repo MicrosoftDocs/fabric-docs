@@ -71,10 +71,11 @@ This connection is used to connect to your semantic models when you create a
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-3.png" alt-text="Screenshot of selecting an existing Fabric SQL Connection.":::
 
-1. **Select** the database to store your items and click **Add**
+1. **Select** the database to store your items and select **Add**
 
     > [!NOTE]
-    > The database is automatically created when a Planning item is created.
+    > The database is automatically created when a plan item is created.
+
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing the database details.":::
 
 1. Get your data from the semantic model or Excel/CSV, then create a Planning sheet. Or, start with a Planning sheet and then connect to data.
@@ -83,14 +84,14 @@ This connection is used to connect to your semantic models when you create a
 
 ## Connect a Planning sheet to a semantic model
 
-1. Click **Add** and **Connect** to your semantic model connection.
+1. Select **Add** and **Connect** to your semantic model connection.
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-6.png" alt-text="Screenshot of connecting to a semantic model." lightbox="media/planning-sheet-how-to-get-started/new-plan-6.png":::
 
-1. Select the semantic model and click **Add**.
+1. Select the semantic model and select **Add**.
 
     :::image type="content" source="media/planning-sheet-how-to-get-started/new-plan-7.png" alt-text="Screenshot of choosing a semantic model.":::
 
-1. **Add** semantic model **data** into your **fields**. Now your first Planning sheet is created.
+1. Add semantic model data into your fields. Now your first Planning sheet is created.
    
    :::image type="content" source="media/planning-sheet-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet.":::

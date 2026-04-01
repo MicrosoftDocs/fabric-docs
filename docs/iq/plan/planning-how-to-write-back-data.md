@@ -89,4 +89,4 @@ Here, you perform a write-back of the inserted Data Input Number column *Discoun
 
 1. Select **Writeback > Logs** to view the write-back logs.
 
-    :::image type="content" source="media/planning-how-to-write-back-data/logs.png" alt-text="Screenshot of the write-back logs showing a history of two write-backs." lightbox="media/planning-how-to-write-back-data/logs.png":::
+    :::image type="content" source="media/planning-how-to-write-back-data/logs.png" alt-text="Screenshot of the writeback logs showing a history of two writebacks." lightbox="media/planning-how-to-write-back-data/logs.png":::

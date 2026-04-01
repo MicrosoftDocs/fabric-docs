@@ -120,9 +120,9 @@ Planning sheet supports various types of data input columns to be inserted, depe
 Columns have the following configurable properties:
 
 * **Title**: Name of the input column displayed in the Planning sheet.
-* **Insert as**:
-    * **Visual Measure -** A column is added at each column hierarchy.
-    * **Visual Column -** A single column is added at the end outside the column hierarchy.
+* **Insert as**: Choose between the following options:
+    * **Visual Measure**: A column is added at each column hierarchy.
+    * **Visual Column**: A single column is added at the end outside the column hierarchy.
 * **Input type**: Specifies the data type for the column (such as *Number*).
 * **Row aggregation type**: Defines how values roll up across hierarchy levels (such as *Sum*).
 * **Distribute parent value to children**: Automatically allocates parent values proportionally to child members.
