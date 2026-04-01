@@ -6,7 +6,7 @@ ms.topic: include
 ms.date: 11/18/2024
 ---
 
-If you haven't added any source to your eventstream yet, select the **Use external source** tile.  
+If you haven't added any source to your eventstream yet, select the **Connect data sources** tile. You can also select **Add source** > **Connect data sources** on the ribbon.
 
 :::image type="content" source="./media/select-external-source/select-use-external-source-tile.png" alt-text="Screenshot that shows the selection of the tile for using an external source." lightbox="./media/select-external-source/select-use-external-source-tile.png":::
 

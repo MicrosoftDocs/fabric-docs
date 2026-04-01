@@ -28,7 +28,7 @@ For more information about the role of each item in the IQ workload, see the sec
 
 IQ (preview) enables the following benefits:
 
-* **Unification of data:** Unify analytical and operational data, by combining data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model. 
+* **Unification of data:** Unify analytical and operational data, by combining data from various sources across OneLake (like [lakehouses](../data-engineering/lakehouse-overview.md), [eventhouses](../real-time-intelligence/eventhouse.md), and [Power BI semantic models](../data-warehouse/semantic-models.md)) into a single consistent model. IQ can also unify external operational data using [OneLake shortcuts](../onelake/onelake-shortcuts.md), referencing it in place without copying or building ETL pipelines.
 * **Consistent language across tools:** Provides a single definition of a concept (like *Customer*, *Material*, or *Asset*) that drives how Power BI, notebooks, and agents interpret data.
 * **Faster onboarding:** Provides new dashboards and AI experiences with consistent business meaning, as business concepts only need to be declared once.
 * **Governance and trust:** Reduces duplication and inconsistent definitions across teams by enforcing clear semantics, while constraints improve data quality.
@@ -39,10 +39,10 @@ IQ (preview) enables the following benefits:
 
 Here's how IQ (preview) implements key Fabric capabilities:
 
-* **Ingest and store:** Builds on data from lakehouse tables, eventhouse streams, and existing Power BIsemantic models.
+* **Ingest and store:** Builds on data from lakehouse tables, eventhouse streams, and existing Power BI semantic models. IQ scenarios can also consume data shared across organizational boundaries through [OneLake external data sharing](../governance/external-data-sharing-overview.md), extending visibility to governed data in other tenants.
 * **Model and represent semantics:** The ontology (preview) item offers modeling capabilities by defining entity types, properties on entity types, and relationship types. Optionally bootstrap an ontology structure from existing data sources and models, or create your own. Then, bind ontology features to data sources, and explore them in a navigable graph that is built automatically.
 * **Analyze and visualize:** The IQ items of ontology (preview) and graph work together to provide a visual graph and query experience based on your business concepts. You can also build ontologies based on your Power BI semantic models so the same terminology can be used for analysis across items, or use the ontology to inform power domain aware agents.
-* **Operate and govern:** You can version, validate, and govern your ontology definitions. You can also monitor ontology health through Fabric monitoring tools.
+* **Operate and govern:** You can version, validate, and govern your ontology definitions. Governance, lineage tracking, and auditing apply consistently across all data sources, including data accessed through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant shares](../governance/external-data-sharing-overview.md). You can also monitor ontology health through Fabric monitoring tools.
 
 ## Items in IQ (preview)
 
@@ -78,7 +78,7 @@ This section describes how items work together or relate to one another.
 * **Ontology (preview) and Graph:** Ontology declares which things connect and why. Graph stores and computes traversals, like "Find shipments exposed to risky routes and related breaches." These items work together in IQ by integrating the graph experience into ontology items.
 * **Ontology (preview) and data/operations agents:** Ontology grounds agents in shared business semantics and rules. As a result, agents can retrieve relevant context, reason across domains, and recommend or trigger governed actions.
 * **Plan (preview) and semantic model:** Plan (preview) can connect to existing semantic models, allowing their dimensions and measures to be used in planning sheets. You can also create dynamic forecasts directly on your semantic model and update them as new actuals become available.
-* **All items:** Power BI semantic models present trusted KPIs. Ontology defines the language for your business, in a way that's consistent with existing semantic model representations. Plan connects data to decisions and helps you translate insights to actions efficiently. Graph powers dependency and impact analysis. Data and operations agents enable intelligent agent interactions that are aware of your business concepts. Together, these items form the IQ workload that connects data, semantics, planning, analysis, and AI-driven actions.
+* **All items:** Power BI semantic models present trusted KPIs. Ontology defines the language for your business, in a way that's consistent with existing semantic model representations. Plan connects data to decisions and helps you translate insights to actions efficiently. Graph powers dependency and impact analysis. Data and operations agents enable intelligent agent interactions that are aware of your business concepts. Real-time eventhouse streams can feed the Operations agent with live signals, while the Plan item translates those signals into coordinated actions. Together, these items form the IQ workload that connects data, semantics, planning, analysis, and AI-driven actions.
 
 ## Next steps
 

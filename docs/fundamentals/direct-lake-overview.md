@@ -17,7 +17,7 @@ Direct Lake is a Power BI semantic model table storage mode option available in 
 
 Direct Lake is ideal for semantic models connecting to large Fabric lakehouses, warehouses, and other Fabric data sources with delta tables. Direct Lake is especially useful when replicating the entire data volume into an import table is challenging or impossible. Direct Lake and import queries are processed by the VertiPaq query engine, whereas DirectQuery federates queries to the underlying data source. Direct Lake and import queries normally outperform DirectQuery queries when loading and interacting with visuals in reports.
 
-However, a Direct Lake differs from an Import mode in an important way: a refresh operation for a Direct Lake semantic model is conceptually different to a refresh operation for an Import semantic model. Import mode replicates the data and creates an entire cached copy of the data for the semantic model, whereas a Direct Lake refresh copies only metadata (known as [framing](#framing), described later in this article), which can take a few seconds to complete. The Direct Lake refresh is a low-cost operation that analyzes the metadata of the latest version of the Delta tables and is updated to reference the latest files in OneLake. In contrast, for an Import refresh produces a copy of the data, which can take considerable time and consume significant data source and capacity resources (memory and CPU). Direct Lake moves data preparation to OneLake and in doing so uses the full breadth of Fabric technologies for data prep, including Spark jobs, T-SQL DML statements, dataflows, pipelines, and more.
+However, a Direct Lake differs from an Import mode in an important way: a refresh operation for a Direct Lake semantic model is conceptually different to a refresh operation for an Import semantic model. Import mode replicates the data and creates an entire cached copy of the data for the semantic model, whereas a Direct Lake refresh copies only metadata (known as [framing](direct-lake-how-it-works.md#framing), described later in this article), which can take a few seconds to complete. The Direct Lake refresh is a low-cost operation that analyzes the metadata of the latest version of the Delta tables and is updated to reference the latest files in OneLake. In contrast, for an Import refresh produces a copy of the data, which can take considerable time and consume significant data source and capacity resources (memory and CPU). Direct Lake moves data preparation to OneLake and in doing so uses the full breadth of Fabric technologies for data prep, including Spark jobs, T-SQL DML statements, dataflows, pipelines, and more.
 
 Direct Lake storage mode offers the following key benefits:
 
@@ -62,10 +62,7 @@ Storage mode is a property of a table in the semantic model. When a semantic mod
 **Direct Lake table storage mode** have two options:
 
 * **Direct Lake on OneLake** can use data from one or more Fabric data source with delta tables. Direct Lake on OneLake doesn't fall back to DirectQuery mode via the SQL analytics endpoint of the data source. Semantic models with Direct Lake on OneLake tables can also have import tables added from other data sources.
- 
- > [!NOTE]
- > Direct Lake on OneLake is currently in public preview. Enable the tenant setting **User can create Direct Lake on OneLake semantic models (preview)** in the admin portal to create semantic models with this table storage mode. Already created semantic models aren't impacted by this tenant setting.
-    
+
 * **Direct Lake on SQL** can use the data from a single Fabric data source with delta tables. The SQL analytics endpoint is used for delta table and SQL view discovery and permission checks. Direct Lake on SQL endpoints fall back to DirectQuery table storage mode when it can't load the data directly from a delta table, such as when the data source is a SQL view or when the Warehouse uses SQL-based granular access control. The semantic model property, **Direct Lake behavior**, controls the fall back behavior.
 
 
@@ -91,123 +88,16 @@ The following table compares Direct Lake storage mode to Import and DirectQuery 
 | Semantic model row-level security (RLS) |Yes – but it's strongly recommended to use a [fixed identity](direct-lake-fixed-identity.md) cloud connection | Yes – but it's strongly recommended to use a [fixed identity](direct-lake-fixed-identity.md) cloud connection | Yes | Yes |
 | Semantic model object-level security (OLS) | Yes | Yes | Yes | Yes |
 | Large data volumes without refresh requirement | Yes | Yes |No | Yes |
-| Reduce data latency | Yes – when [automatic updates](#automatic-updates) is enabled, or programmatic reframing | Yes – when [automatic updates](#automatic-updates) is enabled, or programmatic reframing | No  | Yes |
+| Reduce data latency | Yes – when [automatic updates](direct-lake-how-it-works.md#automatic-updates) is enabled, or programmatic reframing | Yes – when [automatic updates](direct-lake-how-it-works.md#automatic-updates) is enabled, or programmatic reframing | No  | Yes |
 | Power BI Embedded | Yes <sup>2</sup> | Yes <sup>2</sup> | Yes | Yes |
 
 <sup>1</sup> When using Direct Lake on SQL endpoints, you can't combine Direct Lake storage mode tables with DirectQuery or Dual storage mode tables *in the same semantic model*. However, you can use Power BI Desktop to create a composite model on a Direct Lake semantic model and then extend it with new tables (by using Import, DirectQuery, or Dual storage mode) or calculations. For more information, see [Build a composite model on a semantic model](/power-bi/transform-model/desktop-composite-models#building-a-composite-model-on-a-semantic-model-or-model).
 
 <sup>2</sup> Requires a V2 embed token. If you're using a service principal, you must use a [fixed identity](direct-lake-fixed-identity.md) cloud connection.
 
+For details on how Direct Lake works, including column loading (transcoding), framing, automatic updates, and DirectQuery fallback, see [How Direct Lake works](direct-lake-how-it-works.md).
 
-
-## How Direct Lake works
-
-Typically, queries sent to a Direct Lake semantic model are handled from an in-memory cache of the columns sourced from Delta tables. The underlying storage for a Delta table is one or more Parquet files in OneLake. Parquet files organize data by columns rather than rows. Semantic models load entire columns from Delta tables into memory as they're required by queries.
-
-Direct Lake on OneLake isn't coupled with the SQL endpoint, offering tighter integration with OneLake features such as OneLake security and more efficient DAX query plans because, for example, checking for SQL based security isn't required. DirectQuery fallback isn't supported by Direct Lake on OneLake.
-
-With Direct Lake on SQL endpoints, a DAX query might use *DirectQuery fallback*, which involves seamlessly switching to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand). DirectQuery fallback retrieves data directly from the [SQL analytics endpoint of the lakehouse](../data-engineering/lakehouse-sql-analytics-endpoint.md) or the warehouse. For example, fallback occurs when SQL based security is detected in the SQL endpoint. In this case, a DirectQuery operation sends a query to the SQL analytics endpoint. Fallback operations might result in slower query performance.
-
-The following sections describe Direct Lake concepts and features, including column loading, framing, automatic updates, and DirectQuery fallback.
-
-### Column loading (transcoding)
-
-Direct Lake semantic models only load data from OneLake as and when columns are queried for the first time. The process of loading data on-demand from OneLake is known as *transcoding*.
-
-When the semantic model receives a DAX (or Multidimensional Expressions—MDX) query, it first determines what columns are needed to produce a query result. Any column directly used by the query is needed, and also columns required by relationships and measures. Typically, the number of columns needed to produce a query result is significantly smaller than the number of columns defined in the semantic model.
-
-Once it understands which columns are needed, the semantic model determines which columns are already in memory. If any columns needed for the query aren't in memory, the semantic model loads all data for those columns from OneLake. Loading column data is typically a fast operation, however it can depend on factors such as the cardinality of data stored in the columns.
-
-Columns loaded into memory are then _resident_ in memory. Future queries that involve only resident columns don't need to load any more columns into memory.
-
-A column remains resident until there's reason for it to be removed (evicted) from memory. Reasons that columns might get removed include:
-
-- The model or table was refreshed after a Delta table update at the source (see [Framing](#framing) in the next section).
-- No query used the column for some time.
-- Other memory management reasons, including memory pressure in the capacity due to other, concurrent operations.
-
-Your choice of Fabric SKU determines the maximum available memory for each Direct Lake semantic model on the capacity. For more information about resource guardrails and maximum memory limits, see [Fabric capacity requirements](#fabric-capacity-requirements) later in this article.
-
-### Framing
-
-*Framing* provides model owners with point-in-time control over what data is loaded into the semantic model. Framing is a Direct Lake operation triggered by a refresh of a semantic model, and in most cases takes only a few seconds to complete. That's because it's a low-cost operation where the semantic model analyzes the metadata of the latest version of the Delta Lake tables and is updated to reference the latest Parquet files in OneLake.
-
-When framing occurs, resident table column segments and dictionaries might be evicted from memory if the underlying data has changed and the point in time of the refresh becomes the new baseline for all future transcoding events. From this point, Direct Lake queries only consider data in the Delta tables as of the time of the most recent framing operation. For that reason, Direct Lake tables are queried to return data based on the state of the Delta table _at the point of the most recent successful framing operation_. That time isn't necessarily the latest state of the Delta tables.
-
-The semantic model analyzes the Delta log of each Delta table during framing to drop only the affected column segments and to reload newly added data during transcoding. An important optimization is that dictionaries will usually not be dropped when incremental framing takes effect, and new values are added to the existing dictionaries. This incremental framing approach helps to reduce the reload burden and benefits query performance. In the ideal case, when a Delta table received no updates, no reload is necessary for columns already resident in memory and queries show far less performance impact after framing because incremental framing essentially enables the semantic model to update substantial portions of the existing in-memory data in place.
-
-> [!NOTE]
-> Framing may fail if a Delta table exceeds the Fabric capacity guardrails, such as when a Delta table has more than 10,000 parquet files. For more information about resource guardrails, see [Fabric capacity requirements](#fabric-capacity-requirements) later in this article.
-
-The following diagram shows how Direct Lake framing operations work.
-
-:::image type="content" source="media/direct-lake-overview/direct-lake-framing.svg" alt-text="Diagram shows how Direct Lake framing operations work." border="false":::
-
-The diagram depicts the following processes and features.
-
-| Item | Description |
-| --- | --- |
-| :::image type="icon" source="../media/legend-number/legend-number-01-fabric.svg"::: | A semantic model exists in a Fabric workspace. |
-| :::image type="icon" source="../media/legend-number/legend-number-02-fabric.svg"::: | Framing operations take place periodically, and they set the baseline for all future [transcoding](#column-loading-transcoding) events. Framing operations can happen automatically, manually, on schedule, or programmatically. |
-| :::image type="icon" source="../media/legend-number/legend-number-03-fabric.svg"::: | OneLake stores metadata and Parquet files, which are represented as Delta tables. |
-| :::image type="icon" source="../media/legend-number/legend-number-04-fabric.svg"::: | The last framing operation includes Parquet files related to the Delta tables, and specifically the Parquet files that were added before the _last_ framing operation. |
-| :::image type="icon" source="../media/legend-number/legend-number-05-fabric.svg"::: | A later framing operation includes Parquet files added after the _last_ framing operation. |
-| :::image type="icon" source="../media/legend-number/legend-number-06-fabric.svg"::: | Resident columns in the Direct Lake semantic model might be evicted from memory, and the point in time of the refresh becomes the new baseline for all future transcoding events. |
-| :::image type="icon" source="../media/legend-number/legend-number-07-fabric.svg"::: | Subsequent data modifications, represented by new Parquet files, aren't visible until the next framing operation occurs. |
-
-It's not always desirable to have data representing the latest state of any Delta table when a transcoding operation takes place. Consider that framing can help you provide consistent query results in environments where data in Delta tables is transient. Data can be transient for several reasons, such as when long-running extract, transform, and load (ETL) processes occur.
-
-Refresh for a Direct Lake semantic model can be done manually, automatically, or programmatically. For more information, see [Refresh Direct Lake semantic models](direct-lake-manage.md#refresh-direct-lake-semantic-models).
-
-
-### Automatic updates
-
-There's a semantic model-level setting to automatically update Direct Lake tables. It's enabled by default. It ensures that data changes in OneLake are automatically reflected in the Direct Lake semantic model. You should disable automatic updates when you want to control data changes by framing, which was explained in the previous section. For more information, see [Manage Direct Lake semantic models](direct-lake-manage.md#automatic-updates).
-
-> [!TIP]
-> You can set up [automatic page refresh](/power-bi/create-reports/desktop-automatic-page-refresh) in your Power BI reports. It's a feature that automatically refreshes a specific report page providing that the report connects to a Direct Lake semantic model (or other types of semantic model).
-
-### DirectQuery fallback
-
-When using Direct Lake on SQL endpoints, a query sent to a Direct Lake semantic model can fall back to [DirectQuery mode](/power-bi/connect-data/service-dataset-modes-understand) in which case the table no longer operates in Direct Lake mode. It retrieves data directly from the SQL analytics endpoint of the lakehouse or warehouse. Such queries always return the latest data because they're not constrained to the point in time of the last framing operation.
-
-When DirectQuery fallback occurs, a query no longer uses Direct Lake mode. A query *can't* leverage Direct Lake mode when the semantic model queries a view in the SQL analytics endpoint, or a table in the SQL analytics endpoint that [enforces row-level security (RLS)](/fabric/fundamentals/direct-lake-develop). Also, a query *can't* leverage Direct Lake mode when a Delta table [exceeds the guardrails of the capacity](/fabric/fundamentals/direct-lake-overview).
-
-> [!IMPORTANT]
-> If possible, you should always design your solution—or size your capacity—to avoid DirectQuery fallback. That's because it might result in slower query performance.
-
-You can control fallback of your Direct Lake semantic models by setting its _DirectLakeBehavior_ property. This setting only applies to Direct Lake on SQL endpoints. Direct Lake on OneLake doesn't support DirectQuery fallback. For more information, see [Set the Direct Lake behavior property](direct-lake-manage.md#set-the-direct-lake-behavior-property).
-
-## Data security and access permissions
-
-By default, Direct Lake uses single sign-on (SSO), which means that the identity that queries the semantic model (often a report user) must be authorized to access the data. Alternatively, you can bind a Direct Lake model to a sharable cloud connection (SCC) to provide a fixed identity and disable SSO. In this case, only the fixed identity requires read access to the data in the source.
-
-### Fabric item permissions
-
-Direct Lake enforces a layered security model. Effective authorization for any query depends on both Fabric item permissions (workspace and semantic model access) and source-level permissions, and on how the model is configured for authentication—either SSO or a fixed-identity SCC.
-
-Operational guidance:
-
-- Authentication mode determines whether queries execute using individual user identities (SSO) or a single service identity (fixed-identity SCC).
-  - Use SSO for interactive scenarios where per-user authorization is required.
-  - Use fixed-identity SCC for embedded or read-only consumer scenarios where source-level access is scoped to a single service account.
-- Apply least-privilege principles at both the source and workspace levels.
-- Test and validate behavior for both authentication modes—especially for SQL-based RLS and any cases that might trigger DirectQuery fallback—before production deployment.
-
-For more information, see [Integrate Direct Lake security](direct-lake-security-integration.md).
-
-### Semantic model permissions
-
-In addition to Fabric item permissions, you must also grant permissions to users so that they can use or manage the Direct Lake semantic model. In short, report consumers need *Read* permission, and report creators need additional *Build* permission. Semantic model permissions can be [assigned directly](/power-bi/connect-data/service-datasets-permissions) or [acquired implicitly using workspace roles](/power-bi/connect-data/service-datasets-permissions). To manage the semantic model settings (for refresh and other configurations), you must be the [semantic model owner](/power-bi/guidance/powerbi-implementation-planning-security-content-creator-planning).
-
-### Permission requirements
-
-For scenarios and permission requirements, see [Direct Lake users](direct-lake-security-integration.md#direct-lake-users).
-
-> [!IMPORTANT]
-> You should always thoroughly test permissions before releasing your semantic model and reports into production.
-
-For more information, see [Semantic model permissions](/power-bi/connect-data/service-datasets-permissions).
+For details on permissions, authentication, OLS/RLS, and data-access rule options, see [Integrate Direct Lake security](direct-lake-security-integration.md).
 
 ## Fabric capacity requirements
 
@@ -271,6 +161,8 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 |Create Direct Lake models in personal workspaces (My Workspace).     |Not supported         |Not supported         |
 |Deployment pipeline rules to rebind data source.   |Not supported directly - can create a parameter expression to use in the connection string.   |Supported   |
 |Adding multiple tables from the same data source table.   |Not supported in Power BI Desktop or web modeling. It is possible to add multiple tables from the same data source table using XMLA-based external tools. Using **Edit tables** in Power BI tooling and **refresh** result in an error with multiple tables from the same data source table in the semantic model.  |Not supported in Power BI Desktop or web modeling. It is possible to add multiple tables from the same data source table using XMLA-based external tools. Using **Edit tables** in Power BI tooling and **refresh** result in an error with multiple tables from the same data source table in the semantic model. |
+|Direct Lake tables created by using XMLA applications are initially in an unprocessed state until the application sends a refresh command. Be sure to refresh the model to process its tables when you create a new semantic model.     |Queries involving unprocessed tables return an error.         |Queries involving unprocessed tables fall back to DirectQuery mode, unless fallback is disabled in which case queries fail.         |
+|XMLA-compliant tools must support `compatibilityLevel` 1604 or higher to work with Direct Lake semantic models and expose Direct Lake-specific  metadata.     |Yes         |Yes         |
 
 - Analyze in Excel pivot tables (and other MDX clients) have the same limitations as DirectQuery with Direct Lake tables in the semantic model. Session-scoped MDX statements, such as named sets, calculated members, default members, etc. are not supported. Query-scoped MDX statements, such as the 'WITH' clause, are supported. Direct Lake table user-defined hierarchies are not supported. Import table user-defined hierarchies are supported even with Direct Lake tables in the semantic model.
 
@@ -292,6 +184,5 @@ Direct Lake on OneLake table storage mode is in public preview. Enable the tenan
 - [Develop Direct Lake semantic models](direct-lake-develop.md)
 - [Manage Direct Lake semantic models](direct-lake-manage.md)
 - [Understand Direct Lake query performance](direct-lake-understand-storage.md)
-- [Create a lakehouse for Direct Lake](direct-lake-create-lakehouse.md)
 - [Analyze query processing for Direct Lake semantic models](direct-lake-analyze-query-processing.md)
 

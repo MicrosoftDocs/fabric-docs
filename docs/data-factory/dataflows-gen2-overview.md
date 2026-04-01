@@ -143,6 +143,10 @@ If you have a dataflow in Power BI or Power Apps, you can copy your queries and 
 
 If you already have any type of dataflow (Gen1, Gen2, or Gen2 CI/CD), Data Factory now includes a Save As feature. This lets you save any existing dataflow as a new Dataflow Gen2 (CI/CD) item with just one action. More details: [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md).
 
+## Staging items in your workspace
+
+In some experiences, you might see system-generated items like **DataflowsStagingLakehouse** or **DataflowsStagingWarehouse** in your workspace. These are internal staging items used by Dataflow Gen2 and aren't intended for direct interaction. You can safely disregard them.
+
 ## Related content
 
 Ready to learn more? Check out these helpful resources:

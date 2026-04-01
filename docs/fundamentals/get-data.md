@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 # Get data into Microsoft Fabric
 
-Microsoft Fabric provides multiple ways to bring data into your analytics environment. Whether you need to process streaming events in real time, replicate operational databases, orchestrate batch pipelines, or access data without copying it, Fabric offers built-in capabilities to support each scenario.
+Microsoft Fabric provides multiple ways to bring data into your analytics environment. Whether you need to process streaming events in real time, replicate operational databases, orchestrate batch pipelines, or access data without copying it, Fabric offers built-in capabilities to support each scenario. Fabric also supports governed data sharing patterns through OneLake, enabling cross-tenant and cross-workspace access to live datasets without duplication.
 
 This article describes the primary data ingestion and data movement options in Fabric. It covers:
 
@@ -85,17 +85,17 @@ Mirroring removes the need to build incremental load pipelines manually. From a 
 
 ## Access external data with shortcuts
 
-Fabric provides [shortcuts](../onelake/onelake-shortcuts.md) to enable data virtualization. A shortcut in OneLake references data stored in an external system, such as Azure Data Lake Storage Gen2, Amazon S3, or SharePoint. Instead of copying data, shortcuts allow OneLake to reference external files as part of the unified data lake. You can query or join external data with local data without performing an initial migration. This no-copy ingestion approach is useful when data residency requirements or duplication concerns prevent moving data. The following diagram shows how shortcuts connect external storage systems to Fabric items without copying data:
+Fabric provides [shortcuts](../onelake/onelake-shortcuts.md) to enable data virtualization. A shortcut in OneLake references data stored in an external system, such as Azure Data Lake Storage Gen2, Amazon S3, or SharePoint. Shortcuts can also reference data within OneLake itself, including data from other workspaces and data shared across tenants through OneLake data sharing. Instead of copying data, shortcuts allow OneLake to reference external and internal files as part of the unified data lake. You can query or join external data with local data without performing an initial migration. This no-copy ingestion approach is useful when data residency requirements or duplication concerns prevent moving data. The following diagram shows how shortcuts connect external storage systems to Fabric items without copying data:
 
 :::image type="content" source="./media/get-data/external-storage-shortcut.png" alt-text="Diagram of external storage shortcuts architecture.":::
 
-OneLake can detect the data type referenced by a shortcut and apply either [file transformations](../onelake/shortcuts/transformations.md) or [AI transformations](../onelake/shortcuts/transformations-ai.md) without requiring a pipeline or custom code. OneLake maintains the resulting Delta table in sync with the source automatically. For example, you can convert `.csv` files to Delta tables or apply AI-based sentiment analysis to `.txt` files in a folder.
+OneLake can detect the data type referenced by a shortcut and apply either [file transformations](../onelake/shortcuts/transformations.md) or [AI transformations](../onelake/shortcuts/transformations-ai.md) without requiring a pipeline or custom code. These transformations work on any shortcut target, including data shared from other tenants through OneLake data sharing. OneLake maintains the resulting Delta table in sync with the source automatically. For example, you can convert `.csv` files to Delta tables or apply AI-based sentiment analysis to `.txt` files in a folder.
 
 Combined with Mirroring, shortcuts give you flexible data access patterns. You can keep data in place by using shortcuts, or you can replicate data by using mirroring. In both cases, data is ready for Fabric analytics tools without complex ETL.
 
 ## Decision guide: Choose a data movement strategy
 
-Microsoft Fabric provides several options for bringing data into Fabric, including Eventstreams for real-time processing, Mirroring, pipelines with Copy activities, Copy job, and shortcuts. Each option offers a different balance of control, automation, and operational complexity.
+Microsoft Fabric provides several options for bringing data into Fabric, including Eventstreams for real-time processing, Mirroring, pipelines with Copy activities, Copy job, and shortcuts. Each option offers a different balance of control, automation, and operational complexity. When you need live, governed access to data that's already in OneLake (whether in the same tenant or shared from another organization), consider combining OneLake data sharing with shortcuts instead of replicating data.
 
 For guidance on selecting the appropriate approach for your scenario, see [Microsoft Fabric decision guide: Choose a data movement strategy](../data-factory/decision-guide-data-movement.md).
 
