@@ -224,7 +224,7 @@ From your eventhouse (KQL database):
 1. Open the **KQL database** associated with your eventhouse.
 1. Select **Functions** then **New function**.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-function.png" alt-text="A screenshot showing the Functions section of the WorkordersEventhouse database interface displaying an empty state with a large circular icon containing overlapping squares. The main heading reads "No functions" with supporting text below stating "When you create functions they appear here". A prominent green button labeled "+ New function" is positioned at the bottom center of the panel, inviting users to create their first function. The left sidebar shows the database navigation tree with the Functions folder selected and highlighted with a red border.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/new-function.png" alt-text="A screenshot showing the Functions section of the WorkordersEventhouse database interface displaying an empty state with a large circular icon containing overlapping squares. The main heading reads 'No functions' with supporting text below stating 'When you create functions they appear here'. A prominent green button labeled '+ New function' is positioned at the bottom center of the panel, inviting users to create their first function. The left sidebar shows the database navigation tree with the Functions folder selected and highlighted with a red border.":::
 
     This creates a query that when run creates a new function named *WorkordersFunction*.
 
@@ -300,7 +300,7 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 
 The function results are now displayed in the updated map.
 
-:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-function-layer.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-function-string-layer.png" alt-text="A screenshot showing Microsoft Fabric Maps interface displaying a map of Vienna, Austria with red circular markers indicating work order locations. The Explorer pane on the left shows a KQL database tree containing WorkordersEventhouse and WorkordersFunction entries. The Data layers panel in the upper left of the map shows WorkordersFunction layer with a visibility toggle and options menu.":::
+:::image type="content" source="media/tutorials/real-time-work-order-routing-application/work-order-function-layer.png" lightbox="media/tutorials/real-time-work-order-routing-application/work-order-function-layer.png" alt-text="A screenshot showing Microsoft Fabric Maps interface displaying a map of Vienna, Austria with red circular markers indicating work order locations. The Explorer pane on the left shows a KQL database tree containing WorkordersEventhouse and WorkordersFunction entries. The Data layers panel in the upper left of the map shows WorkordersFunction layer with a visibility toggle and options menu.":::
 
 ## Generate an optimized multi‑stop route with the Azure Maps Route Directions API
 
