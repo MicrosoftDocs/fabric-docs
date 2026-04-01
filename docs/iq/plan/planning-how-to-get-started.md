@@ -16,7 +16,7 @@ This article describes how to get started with your first Planning sheet in plan
 Before you set up Planning sheets, make sure you have the following prerequisites in place:
 
 * Create your individual [connections or data sources](../../data-factory/data-source-management.md) to connect with a [Fabric SQL database](../../database/sql/overview.md) and [Power BI semantic model](../../data-warehouse/semantic-models.md).
-* A Fabric SQL database is auto-created in your workspace. This database stores your plan report's metadata.
+* A Fabric SQL database is automatically created in your workspace. This database stores your plan report's metadata.
 
 > [!NOTE]
 > The preview of plan in Fabric IQ is now accessible to organizations worldwide in Microsoft Fabric as part of the Microsoft Fabric SKU, and new meters have been created. Meters are currently available but are not currently billed.
