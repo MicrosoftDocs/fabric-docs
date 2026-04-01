@@ -28,7 +28,7 @@ Both capabilities run on the same managed mirroring foundation: secure source co
 
 ## Delta change data feed (preview)
 
-Delta change data feedcaptures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
+Delta change data feed captures inserts, updates, and deletes, then applies them to Delta Lake tables in OneLake. This flow supports near real-time analytics without full reloads or heavy ETL pipelines.
 
 - Continuously processes incremental changes (delta-based).
 - Uses change-only processing.

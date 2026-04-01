@@ -83,6 +83,10 @@ Implementing robust backup and recovery procedures ensures business continuity a
 
 - **Plan for disaster recovery**: Develop and test disaster recovery procedures specific to your Data Factory deployment to minimize downtime and data loss if there's a significant outage. See [Security in Microsoft Fabric](/fabric/security/experience-specific-guidance#data-factory).
 
+## Workspace role assignment
+
+Separate different workloads between workspaces and use roles like **Member** and **Viewer** to control access. For example, create a workspace for data engineering that prepares data, and a separate workspace for reporting or AI training. With the Viewer role, consumers can access data from the data engineering workspace without the ability to modify it. For more details on workspace roles, see [Roles in workspaces](../fundamentals/roles-workspaces.md).
+
 ## Learn more
 
 - [Security in Microsoft Fabric](/fabric/security/security-overview)
