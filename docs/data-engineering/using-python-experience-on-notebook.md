@@ -298,7 +298,7 @@ Visit [Data Science documentations in Microsoft Fabric](/fabric/data-science/) t
 
    Autologging extends MLflow Tracking capabilities. Autologging can capture various metrics, including accuracy, loss, F1 score, and custom metrics you define. By using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without manual tracking.
 
-- **Copilot**: Copilot for Data Engineering and Data Science notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. Copilot is immediately context-aware without requiring you to start a session. It understands the workspace, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and can operate across the entire notebook workflow.
+- **Copilot**: Copilot for Data Engineering and Data Science notebooks is an AI assistant that helps you analyze and visualize data. Copilot is immediately context-aware without requiring you to start a session. It understands the workspace, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and can operate across the entire notebook workflow.
 
    Copilot supports notebook-wide, multi-step capabilities: it can generate, refactor, summarize, and validate code across multiple cells and steps in Python notebooks. You can use the Copilot chat panel and chat commands such as `/fix` in the notebook.
 

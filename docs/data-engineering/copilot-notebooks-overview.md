@@ -42,7 +42,7 @@ With Copilot, you can:
 - Generate and refactor code across multiple cells and entire workflows, not just individual cells.
 - Summarize and validate notebook logic end-to-end.
 - Explore, validate, and prepare data by profiling tables, sampling data, and cleaning inconsistencies.
-- Surface performance insights such as recommending efficient join strategies, avoiding costly data shuffles, refactoring into reusable functions, and highlighting data quality issues detected during exploration.
+- When prompted, surface performance insights such as recommending efficient join strategies, avoiding costly data shuffles, refactoring into reusable functions, and highlighting data quality issues detected during exploration.
 - Resolve issues in context by understanding errors and applying suggested fixes.
 - Analyze and optimize notebooks by generating metrics, exploring trends, converting code, and documenting logic for collaboration.
 
