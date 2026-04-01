@@ -392,7 +392,7 @@ Idle session timeout prioritizes security by ending sessions on inactive devices
 
 Fabric notebooks are Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
-You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code. Copilot integrates with runtime job information to surface performance and reliability recommendations. If a job or cell fails, the [Fix with Copilot](#fix-with-copilot) entry point is available to help diagnose and resolve the issue.
+You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code. When prompted, Copilot can use runtime job information to help surface performance and reliability recommendations. If a job or cell fails, the [Fix with Copilot](#fix-with-copilot) entry point is available to help diagnose and resolve the issue.
 
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
