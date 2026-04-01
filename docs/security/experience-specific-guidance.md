@@ -388,7 +388,7 @@ During the recovery, after the new region/capacity in Fabric is set up, you can 
 
 ### Ontology
 
-Ontology users must take proactive steps to prepare for regional disaster recovery. The approach described below ensures that, following a regional disaster, a user’s Ontology remains recoverable and can be restored quickly.
+Ontology users must take proactive steps to prepare for regional disaster recovery. The approach described below ensures that, following a regional disaster, your Ontology remains recoverable and can be restored quickly.
 
 The simplest and fastest way to enable recovery is to use Fabric Git integration and synchronize your Ontology with an Azure DevOps (ADO) repository. If the service fails over to another region, you can use this repository to rebuild the Ontology in a newly created workspace.
 
