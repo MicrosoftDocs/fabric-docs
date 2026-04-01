@@ -27,16 +27,9 @@ Common scenarios include:
 
 Before you begin, make sure that you have the following prerequisites in place:
 
-<<<<<<< HEAD
 * The Planning sheet contains at least one **row or column dimension**.
-* A valid **write-back destination** is configured.
-* Required permissions are assigned to users who perform write-back.
-=======
-* You have an active **Plan Writeback** subscription.
-* The report visual contains at least one **row or column dimension**.
 * A valid **writeback destination** is configured.
 * Required permissions are assigned to users who perform writeback.
->>>>>>> 6d2a46cb67a673aea8e439fe432ed1b153e42095
 
 ## Configure writeback settings
 
