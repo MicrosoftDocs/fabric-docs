@@ -57,7 +57,7 @@ Keep in mind the following when working with item references:
 The following is a list of items that are currently supported using item reference:
 - [Shortcut for a lakehouse ](../../onelake/assign-variables-to-shortcuts.md)
 - [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
-- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
+- Notebook, through [NotebookUtils](../../data-engineering/notebookutils/notebookutils-variable-library.md)
  
  :::image type="content" source="media/item-reference/item-4.png" alt-text="Screenshot of the item reference notebook." lightbox="media/item-reference/item-4.png":::
 

@@ -256,6 +256,11 @@ Follow these recommendations when you work with credentials in Fabric notebooks:
 notebookutils.credentials.putSecret('https://<name>.vault.azure.net/', 'secret name', 'secret value')
 ```
 
+### [Scala](#tab/scala)
+
+> [!NOTE]
+> `putSecret` isn't available in the public Scala API. Use Python, PySpark, or R notebooks when you need to write a secret to Azure Key Vault from NotebookUtils.
+
 ### [R](#tab/r)
 
 ```r
@@ -263,9 +268,6 @@ notebookutils.credentials.putSecret("https://<name>.vault.azure.net/", "secret n
 ```
 
 ---
-
-> [!NOTE]
-> `putSecret` isn't available in the public Scala API. Use Python, PySpark, or R notebooks when you need to write a secret to Azure Key Vault from NotebookUtils.
 
 You must have appropriate permissions (Set permission) on the Azure Key Vault to write secrets.
 
@@ -292,6 +294,11 @@ else:
     token = notebookutils.credentials.getToken('storage')
 ```
 
+### [Scala](#tab/scala)
+
+> [!NOTE]
+> `isValidToken` isn't available in the public Scala API. In Scala notebooks, request a new token when needed instead of calling this helper.
+
 ### [R](#tab/r)
 
 ```r
@@ -302,9 +309,6 @@ if (is_valid) print("Token is valid") else print("Token is expired or invalid")
 ```
 
 ---
-
-> [!NOTE]
-> `isValidToken` isn't available in the public Scala API. In Scala notebooks, request a new token when needed instead of calling this helper.
 
 ## Related content
 

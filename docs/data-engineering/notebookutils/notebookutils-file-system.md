@@ -129,7 +129,7 @@ notebookutils.fs.cp('source file or directory', 'destination file or directory',
 > [!NOTE]
 >
 > **Python notebook note**: In Python notebooks, `cp()` internally uses the same azcopy-based mechanism as `fastcp()`, providing efficient performance for both methods.
-> Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.cp()` to copy data from S3/GCS type shortcut, it's recommended to use a mounted path instead of an abfss path.
+> Due to the [limitations of OneLake shortcut](../../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.cp()` to copy data from S3/GCS type shortcut, it's recommended to use a mounted path instead of an abfss path.
 
 > [!TIP]
 > Always check the Boolean return value to verify whether the operation succeeded. Use `notebookutils.fs.exists()` to verify the source path before you start a copy operation.
@@ -158,7 +158,7 @@ notebookutils.fs.fastcp('source file or directory', 'destination file or directo
 Keep these considerations in mind:
 
 - `notebookutils.fs.fastcp()` doesn't support copying files in OneLake across regions. In this case, you can use `notebookutils.fs.cp()` instead.
-- Due to the [limitations of OneLake shortcut](../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.fastcp()` to copy data from S3/GCS type shortcut, it's recommended to use a mounted path instead of an abfss path.
+- Due to the [limitations of OneLake shortcut](../../onelake/onelake-shortcuts.md#limitations-and-considerations), when you need to use `notebookutils.fs.fastcp()` to copy data from S3/GCS type shortcut, it's recommended to use a mounted path instead of an abfss path.
 
 ## Preview file content
 
