@@ -1,7 +1,7 @@
 ---
 title: Write back data
 description: Learn how to write back data from a Planning sheet to your database or data platform. Configure destinations and save planning inputs securely. 
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use writeback effectively.
 ---
@@ -27,8 +27,7 @@ Common scenarios include:
 
 Before you begin, make sure that you have the following prerequisites in place:
 
-* You have an active **Plan Writeback** subscription.
-* The report visual contains at least one **row or column dimension**.
+* The Planning sheet contains at least one **row or column dimension**.
 * A valid **writeback destination** is configured.
 * Required permissions are assigned to users who perform writeback.
 

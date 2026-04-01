@@ -3,7 +3,7 @@ title: Run a Fabric item using Apache Airflow DAG.
 description: Learn to run Microsoft Fabric items using Apache Airflow DAGs.
 ms.reviewer: noelleli
 ms.topic: tutorial
-ms.date: 03/23/2026
+ms.date: 03/31/2026
 ms.custom: Airflows, sfi-image-nochange
 ---
 
@@ -171,30 +171,6 @@ with DAG(
   )
 
   run_fabric_item
-```
-
-## Create a plugin file for the custom operator
-
-If you want to include an external monitoring link for Microsoft Fabric item runs, create a plugin file as follows:
-
-Create a new file in the `plugins` folder with the following code:
-
-```python
-   from airflow.plugins_manager import AirflowPlugin
-
-   from apache_airflow_microsoft_fabric_plugin.hooks.fabric import FabricHook
-   from apache_airflow_microsoft_fabric_plugin.operators.fabric import FabricRunItemLink
-
-   class AirflowFabricPlugin(AirflowPlugin):
-      """
-      Microsoft Fabric plugin.
-      """
-
-      name = "fabric_plugin"
-      operator_extra_links = [FabricRunItemLink()]
-      hooks = [
-          FabricHook,
-      ]
 ```
 
 ## Monitor your DAG

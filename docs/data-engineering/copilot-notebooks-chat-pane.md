@@ -91,7 +91,7 @@ This walkthrough covers the core chat pane flow. The chat pane also supports [ch
 
 ## Performance insights and optimization
 
-Copilot surfaces optimization recommendations based on data size, join patterns, and runtime behavior. For example, it can suggest more efficient join strategies, help avoid unnecessary shuffles, identify opportunities to refactor into reusable functions, and highlight data quality issues that affect performance or correctness. These insights can appear during multi-step conversations and align with the `/optimize` command.
+When you ask Copilot for optimization help, it can provide recommendations based on data size, join patterns, and runtime behavior. For example, it can suggest more efficient join strategies, help avoid unnecessary shuffles, identify opportunities to refactor into reusable functions, and highlight data quality issues that affect performance or correctness. You can surface these insights during multi-step conversations or by using the `/optimize` command.
 
 ## Chat history
 
