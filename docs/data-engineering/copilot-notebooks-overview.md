@@ -102,16 +102,6 @@ Before you can use Copilot in notebooks:
 
 For details on capacity requirements, region availability, required tenant settings, and data processing across geographic areas, see [Overview of Copilot in Fabric and Power BI](../fundamentals/copilot-fabric-overview.md). For the full list of tenant settings, see [Copilot tenant settings](../admin/service-admin-portal-copilot.md).
 
-## Limitations
-
-- Copilot features in the Data Science and Data Engineering experience are currently scoped to notebooks. Copilot can also read Power BI semantic models through semantic link integration.
-
-- If your tenant is configured with private link, the Copilot chat pane doesn't work. Inline code suggestions and quick actions might still work, but chat interactions fail to load.
-
-- Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
-
-- AI-generated content might be inaccurate. Always review Copilot suggestions before applying them.
-
 ## Fix with Copilot
 
 When a cell or Spark job fails, the **Fix with Copilot** action appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. Copilot can auto-apply code changes with an approval diff so you can review before committing. You can also invoke the `/fix` command in Copilot chat for targeted diagnostics on a specific cell or for the entire notebook.
@@ -119,6 +109,11 @@ When a cell or Spark job fails, the **Fix with Copilot** action appears below th
 For more information about failure diagnostics, see [Diagnose notebook failures](./copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ## Known limitations
+
+- Copilot features in the Data Science and Data Engineering experience are currently scoped to notebooks. Copilot can also read Power BI semantic models through semantic link integration.
+- If your tenant is configured with private link, the Copilot chat pane doesn't work. Inline code suggestions and quick actions might still work, but chat interactions fail to load.
+- Code generation with fast-moving or recently released libraries might include inaccuracies or fabrications.
+- AI-generated content might be inaccurate. Always review Copilot suggestions before applying them.
 
 ### Copilot button is disabled in notebooks
 
