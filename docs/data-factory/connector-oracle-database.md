@@ -23,6 +23,32 @@ The Oracle database connector supports the following authentication types for co
 |:---|:---|:---|
 |Basic| √| √|
 
+## Prerequisites
+
+If you connect to the Oracle database through on-premises gateway, you need to install Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. Here are the steps:
+
+1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
+1. Open the downloaded .exe to start the installation.
+    1. Select **Next** button.
+
+        :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
+
+    1. Choose the **Default** Oracle Client setup type.
+
+        :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the Oracle Client setup type page.":::
+
+    1. Enter the **Destination Folder** where the Oracle Client will be installed on your machine.
+    
+        :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the Choose Destination Location page.":::        
+
+    1. Enter the directory where ODP.NET can find its Oracle Client configuration files.
+
+        :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the Oracle Configuration File Directory page."::: 
+
+    1. Select **Install** button to proceed.
+
+        :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
+
 ## Set up your connection for Dataflow Gen2
 
 You can connect Dataflow Gen2 in Microsoft Fabric to Oracle database using Power Query connectors. Follow these steps to create your connection:
@@ -35,34 +61,6 @@ You can connect Dataflow Gen2 in Microsoft Fabric to Oracle database using Power
 ### Capabilities
 
 [!INCLUDE [oracle-database-capabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/oracle-database/oracle-database-capabilities-supported.md)]
-
-### Prerequisites
-
-- Install an on-premises data gateway by following this [guidance](/data-integration/gateway/service-gateway-install?toc=%2Ffabric%2Fdata-factory%2Ftoc.json).  
-
-- To use Oracle database connector, install Oracle Client for Microsoft Tools (OCMT) on the computer running on-premises data gateway. Here are the steps:
-
-    1. Download 64-bit OCMT from the [Oracle Client for Microsoft Tools page](https://www.oracle.com/database/technologies/appdev/ocmt.html).
-    1. Open the downloaded .exe to start the installation.
-        1. Select **Next** button.
-
-            :::image type="content" source="./media/connector-oracle-database/start-install.png" alt-text="Screenshot showing the install start page.":::
-
-        1. Choose the **Default** Oracle Client setup type.
-
-            :::image type="content" source="./media/connector-oracle-database/setup-type-default.png" alt-text="Screenshot showing the Oracle Client setup type page.":::
-
-        1. Enter the **Destination Folder** where the Oracle Client will be installed on your machine.
-        
-            :::image type="content" source="./media/connector-oracle-database/choose-destination-location.png" alt-text="Screenshot showing the Choose Destination Location page.":::        
-
-        1. Enter the directory where ODP.NET can find its Oracle Client configuration files.
-
-            :::image type="content" source="./media/connector-oracle-database/oracle-configuration-file-directory.png" alt-text="Screenshot showing the Oracle Configuration File Directory page."::: 
-
-        1. Select **Install** button to proceed.
-
-            :::image type="content" source="./media/connector-oracle-database/click-install.png" alt-text="Screenshot showing the Install page."::: 
 
 ### Get data
 
