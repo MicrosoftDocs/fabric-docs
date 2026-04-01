@@ -71,7 +71,7 @@ spark.conf.set("spark.sql.files.maxRecordsPerFile", 2000000)
 # Here, you ingest data into your table 
 
 # 3. CAP FILE SIZE (~4GB)
-spark.conf.set("spark.databricks.delta.optimize.maxFileSize", 400 * 1024 * 1024 * 1024)
+spark.conf.set("spark.databricks.delta.optimize.maxFileSize", 4 * 1024 * 1024 * 1024)
 
 # 4. RUN OPTIMIZE (bin-packing)
 spark.sql("""

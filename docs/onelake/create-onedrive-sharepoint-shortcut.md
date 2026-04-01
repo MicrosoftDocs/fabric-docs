@@ -61,7 +61,7 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
 
-1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI-powered shortcut transformations are available for .txt files. For more information, see [Transform unstructured text files into Delta tables by using AI-powered tools](./shortcuts-ai-transformations/ai-transformations.md).
+1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI-powered shortcut transformations are available for .txt files. For more information, see [Transform unstructured text files into Delta tables by using AI-powered tools](./shortcuts/transformations-ai.md).
 
 1. On the review page, verify your selections. Here you can see each shortcut to be created. In the **Actions** column, you can select the pencil icon to edit the shortcut name. You can select the trash can icon to delete the shortcut.
 
@@ -174,6 +174,24 @@ You must be a workspace admin to be able to create a workspace identity. The wor
    ```
 
 Now, when you create a shortcut you can select **Workspace identity** as the **Authentication kind**.
+
+## Sensitivity label alignment for SharePoint shortcuts
+
+OneLake supports sensitivity label alignment during the creation of SharePoint shortcuts to help ensure consistent data protection between SharePoint and Fabric item. When a shortcut is created, OneLake compares the sensitivity label of the SharePoint site with the target Fabric item. If the SharePoint site has a more restrictive label, users are prompted to optionally align the Fabric item’s label to match. Sensitivity labels are evaluated only at creation time and are not re-evaluated afterward.
+
+#### Prerequisite
+
+The tenant must enable sensitivity labeling for Fabric content. An admin must turn on **Allow users to apply sensitivity labels for content** in the Fabric/Power BI admin portal. If this setting is disabled, the label alignment option is not available during shortcut creation, and no label updates can be applied.
+
+### Behavior
+
+- Sensitivity label comparison occurs only during initial shortcut creation. No sensitivity label checks or updates occur during shortcut updates or after creation.
+
+- If the SharePoint site has a more restrictive label than the Fabric item, a **Data integrity** warning is displayed.
+
+- The **Apply the same sensitivity label** checkbox is enabled by default, allowing the Fabric item label to be updated to match SharePoint. Users can clear the checkbox to proceed without updating the Fabric item label.
+
+- If sensitivity label validation or the label update fails, shortcut creation fails.
 
 ## Best practices
 

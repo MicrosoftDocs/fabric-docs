@@ -43,7 +43,7 @@ The following section outlines how to view your Fabric quota using the Azure por
 
 # [API](#tab/API)
 
-Use [Fabric Capacities - List Usages](/rest/api/microsoftfabric/fabric-capacities/list-usages) to check your current usage and quota.
+Use [Fabric Capacities - List Usages](/rest/api/microsoftfabric/fabric-capacities/list-by-subscription) to check your current usage and quota.
 
 You need three parameters to make the call:
 

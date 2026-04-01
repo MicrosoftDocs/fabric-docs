@@ -2,9 +2,10 @@
 title: "Tutorial: Query the graph with the query builder"
 description: Learn how to query your graph using the visual query builder in Microsoft Fabric, including selecting nodes, edges, and filters.
 ms.topic: tutorial
-ms.date: 03/03/2026
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with the query builder
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Query the graph by using the query builder
@@ -24,31 +25,38 @@ Follow these steps to switch to query builder and start querying your graph inte
     > [!TIP]
     > From this view, you can also create a read-only queryset. This queryset has the same functionalities and it allows you to share your query results.
 
+:::image type="content" source="./media/tutorial/query-mode.png" alt-text="Screenshot showing result of selecting Query mode." lightbox="./media/tutorial/query-mode.png":::
+
 ## Build a query
 
-Build a query to answer the question: "What products did a specific customer purchase?" This query traverses the graph from Customer through Order to Product. For example, to query customer Carla Adams' purchases, follow these steps:
+Build a query to answer the question: "What products did a specific customer purchase?" This query traverses the graph from `Customer` through `Order` to `Product`. For example, to query customer Carla Adams' purchases, follow these steps:
 
 1. Select **Add a node** to see the available nodes for querying.
 
-    :::image type="content" source="./media/tutorial/select-add-node.png" alt-text="Screenshot showing result of selecting 'Add a node'." lightbox="./media/tutorial/select-add-node.png":::
+    :::image type="content" source="./media/tutorial/select-add-node.png" alt-text="Screenshot showing result of selecting Add a node." lightbox="./media/tutorial/select-add-node.png":::
 
 1. Select the **Customer** node to add it to your query.
 
     :::image type="content" source="./media/tutorial/query-select-customer-node.png" alt-text="Screenshot showing result of selecting the Customer node." lightbox="./media/tutorial/query-select-customer-node.png":::
 
-1. Select the **purchases** edge while the Customer node is selected. The query builder automatically adds the connected **Order** node.
-1. Select the **contains** edge while the **Order** node is selected. The query builder automatically adds the connected **Product** node.
-1. You now have a query pattern: Customer → purchases → Order → contains → Product.
+1. Select the `purchases` edge while the `Customer` node is selected. The query builder automatically adds the connected `Order` node.
+1. Select the `contains` edge while the `Order` node is selected. The query builder automatically adds the connected `Product` node.
+1. You now have a query pattern: `Customer` → `purchases` → `Order` → `contains` → `Product`.
 
     :::image type="content" source="./media/tutorial/query-nodes-and-edges-selected.png" alt-text="Screenshot showing the query pattern with selected nodes and edges." lightbox="./media/tutorial/query-nodes-and-edges-selected.png":::
 
-1. Apply a filter to the Customer node to focus on a specific customer. For this tutorial, select the Customer node, and then select **Add filter**.
+1. Apply a filter to the `Customer` node to focus on a specific customer. For this tutorial, select the Customer node, and then select **Filter**.
 
-1. In the **Filter** popup, configure the filter as shown in the following diagram:
+   :::image type="content" source="./media/tutorial/add-filter.png" alt-text="Screenshot showing how to select Filter on the Customer node." lightbox="./media/tutorial/add-filter.png":::
+
+1. In the **Filter** popup, configure the filter as follows:
+
+   - **For**: `Customer`
+   - **Where**: `fullName = Carla Adams`
 
     :::image type="content" source="./media/tutorial/query-add-filter.png" alt-text="Screenshot showing completed Add filter popup on the Customer node." lightbox="./media/tutorial/query-add-filter.png":::
 
-1. Select **Apply** to add the filter to the Customer node.
+1. Select **Apply** to add the filter to the `Customer` node.
 
 The query is now set up to find all products purchased by Carla Adams.
 
@@ -56,7 +64,9 @@ The query is now set up to find all products purchased by Carla Adams.
 
 1. Select **Run query** to run the query and see the results. The query might take a few moments to complete.
 
-1. When the query finishes, collapse the query builder pane to get a better view of the results.
+   :::image type="content" source="./media/tutorial/run-query.png" alt-text="Screenshot showing how to select Run query." lightbox="./media/tutorial/run-query.png":::
+
+1. When the query finishes, collapse the query builder pane to get a better view of the results. You should see the products that Carla Adams purchased, displayed as a graph of connected Customer, Order, and Product nodes.
 
     :::image type="content" source="./media/tutorial/query-results.png" alt-text="Screenshot of the visualized query results." lightbox="./media/tutorial/query-results.png":::
 
@@ -80,7 +90,7 @@ You can view your query results in different ways:
 
 ## Save the query
 
-You can save your query by creating a queryset in your workspace. There are several ways to create a queryset in Fabric. This tutorial uses the interface in **Query** mode.
+You can save your query by creating a queryset in your workspace. You can create a queryset in several ways in Fabric. This tutorial uses the interface in **Query** mode.
 
 To create a queryset, follow these steps:
 

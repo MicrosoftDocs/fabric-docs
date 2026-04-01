@@ -2,10 +2,11 @@
 title: Set up your Dataflow (Power Platform) connection
 description: This article provides information about how to create a dataflow connection in Microsoft Fabric.
 ms.topic: how-to
-ms.date: 12/29/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your dataflow (Power Platform) connection
@@ -21,20 +22,38 @@ The dataflow connector supports the following authentication types for copy and 
 |:---|:---|:---|
 |Organizational account| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
-
+## Set up your connection for Dataflow Gen2
 You can connect Dataflow Gen2 to dataflows (Power Platform) in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-1. [Set up dataflow prerequisites](/power-query/connectors/dataflows#prerequisites).
-1. [Get data from dataflows (from Power Query online)](/power-query/connectors/dataflows#get-data-from-dataflows-in-power-query-online).
+1. Check [capabilities](#capabilities), [limitations, and considerations](#limitations-and-considerations) to make sure your scenario is supported.
+1. [Complete prerequisites for Dataflow](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Get data from dataflows](#get-data-from-dataflows).
 
-### More information
+### Capabilities
 
-- [Dataflows connector capabilities](/power-query/connectors/dataflows#capabilities-supported)
-- [Dataflows connector known issues and limitations](/power-query/connectors/dataflows#known-issues-and-limitations)
-- [Dataflows connector frequently asked questions](/power-query/connectors/dataflows#frequently-asked-questions)
+[!INCLUDE [dataflows-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [dataflows-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Get data from dataflows
+
+[!INCLUDE [dataflows-get-data-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-get-data-power-query-online.md)]
+
+### Limitations and considerations
+
+[!INCLUDE [dataflows-limitations-and-considerations](~/../powerquery-repo/powerquery-docs/connectors/includes/dataflows/dataflows-limitations-and-considerations-include.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory in Microsoft Fabric doesn't currently support dataflow data in pipelines.
+
+## Related content
+
+- [For more information about this connector, see the Dataflow (Power Platform) connector documentation.](/power-query/connectors/dataflows)

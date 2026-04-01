@@ -7,6 +7,8 @@ items:
     href: real-time-hub-overview.md
   - name: What are Azure and Fabric Events?
     href: fabric-events-overview.md
+  - name: What are business events?
+    href: business-events/business-events-overview.md
 - name: Get started
   items:
   - name: Get started with Real-Time hub
@@ -17,8 +19,24 @@ items:
     href: tutorial-build-event-driven-data-pipelines.md
   - name: Monitor Fabric Capacity health with Capacity Overview Events 
     href: tutorial-monitor-capacity-threshold.md
-- name: Create data streams
+  - name: Publish business events using Notebook and react using Activator
+    href: business-events/tutorial-business-events-notebook-user-data-function-activator.md
+  - name: Publish business events using User Data Function and react using Activator
+    href: business-events/tutorial-business-events-user-data-function-activation-email.md
+- name: Create data streams and events
   items:
+  - name: Business Events
+    items:
+    - name: Key concepts and terminology
+      href: business-events/business-events-concepts.md
+    - name: Create and manage business events
+      href: business-events/create-business-events.md
+    - name: Manage data access for business events
+      href: business-events/manage-business-events-data-access.md
+    - name: Publish business events using Notebook
+      href: business-events/business-events-notebook.md
+    - name: Publish business events using User Data Function
+      href: business-events/business-events-user-data-function.md
   - name: Supported sources
     href: supported-sources.md
   - name: Amazon Kinesis Data Streams 
@@ -59,6 +77,8 @@ items:
     href: create-streams-fabric-onelake-events.md
   - name: Fabric workspace item events
     href: create-streams-fabric-workspace-item-events.md
+  - name: Anomaly detection events
+    href: create-streams-anomaly-detection-events.md
   - name: Google Cloud Pub/Sub
     href: add-source-google-cloud-pub-sub.md
   - name: MQTT
@@ -109,6 +129,12 @@ items:
       href: explore-fabric-onelake-events.md
     - name: Explore Fabric Job events
       href: explore-fabric-job-events.md
+  - name: Explore business events
+    items:
+    - name: Business events page
+      href: business-events/business-events-page.md    
+    - name: Business event details page
+      href: business-events/business-event-details-page.md
 - name: Consume data streams and events
   items:
   - name: Consume data streams
@@ -135,10 +161,14 @@ items:
     items:
     - name: Set alerts on Azure Blob Storage events
       href: set-alerts-azure-blob-storage-events.md
-  - name: Subscribe permission for Fabric/Azure events
+  - name: Consume Business events
+    href: business-events/consume-business-events-from-activator.md
+  - name: Subscribe permission for Azure and Fabric events
     href: fabric-events-subscribe-permission.md   
-  - name: Microsoft Fabric events capacity consumption
+  - name: Events capacity consumption
     href: fabric-events-capacity-consumption.md
+  - name: Events delivery guarantees
+    href: fabric-event-delivery-guarantees.md
 - name: Register and use schemas
   items:
   - name: Schema Registry in Real-Time hub

@@ -8,7 +8,7 @@ ms.date: 02/04/2026
 #customer intent: I want to learn how to create a real-time work order routing app with Microsoft Fabric Maps.
 ---
 
-# Tutorial: Build real-time work order routing with Fabric Maps (preview)
+# Tutorial: Build real-time work order routing with Fabric Maps
 
 Microsoft Fabric Maps provides geospatial visualization and analysis to deliver actionable insights from real-time and historical spatial data.
 
@@ -17,9 +17,6 @@ In this tutorial, an electric utility field dispatcher uses Microsoft Fabric Map
 This tutorial demonstrates how customer locations are mapped, live work orders appear on the map, and an optimal route is calculated using the Azure Maps [Route Directions](/rest/api/maps/route/post-route-directions) API. The tutorial concludes with an optimized route shown on the map.
 
 Fabric Maps runs within [Fabric Real‑Time Intelligence](/fabric/real-time-intelligence/overview), ingesting streaming telemetry using Eventstream and Eventhouse for real‑time monitoring. Work order completions and operational outcomes are stored in OneLake, where they can be used for route optimization and analytics that are displayed on the map.
-
-> [!IMPORTANT]
-> Fabric Maps is currently in [preview](../../fundamentals/preview.md). Features and functionality may change.
 
 In this tutorial, you will:
 
@@ -249,7 +246,7 @@ In this section, you create a Fabric Maps map and use the previously created KQL
 ### Create a new map
 
 1. From your workspace, select **New item**.
-1. In the **New item** panel, enter **map** into the search field, and select **Map (preview)**.
+1. In the **New item** panel, enter **map** into the search field, and select **Map**.
 1. In the **New Map** dialog, enter **WorkordersMap** in the **Name** field and select **Create**.
 
 ### Add eventhouse to map

@@ -10,7 +10,7 @@ ms.date: 06/10/2025
 
 # External data sharing in Microsoft Fabric
 
-Fabric external data sharing is a feature that enables Fabric users to share data from their tenant with users in another Fabric tenant. The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the sharer's tenant, meaning that no data is actually copied to the other tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the other tenant that points back to the original data in the sharer's tenant. Data that is shared across tenant boundaries is exposed to users in the other tenant as read-only, and can be consumed by any OneLake-compatible Fabric workload in that tenant.
+Fabric external data sharing is a feature that enables Fabric users to share data from their tenant with users in another Fabric tenant. The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the sharer's tenant, meaning that no data is actually copied to the other tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the other tenant that points back to the original data in the sharer's tenant. Because the shortcut provides live access, changes in the source are immediately reflected in the consumer tenant; no ETL or duplication is required. Data that is shared across tenant boundaries is exposed to users in the other tenant as read-only, and can be consumed by any OneLake-compatible Fabric workload in that tenant.
 
 :::image type="content" source="./media/external-data-sharing-overview/external-data-share-illustration.png" alt-text="Illustration of a cross-tenant OneLake data share." border="false":::
 
@@ -20,7 +20,7 @@ This external data sharing feature for Fabric OneLake data isn't related to the 
 
 As a prerequisite to external data sharing, Fabric admins need to turn on external data sharing both in the sharer's tenant and in the external tenant. Enabling external data sharing includes specifying who can create and accept external data shares. For more information, see [Enable external data sharing](./external-data-sharing-enable.md).
 
-Users who are allowed to create external data shares can share data residing in tables or files within [supported Fabric items](#supported-fabric-item-types), as long as they have the standard Fabric Read and Reshare permissions for the item being shared. The user creating the share invites a user from another tenant to accept the external data share. This user receives a link that they use to accept the share. Upon accepting the share, the recipient chooses a lakehouse where a shortcut to the shared data will be created.
+Users who are allowed to create external data shares can share data residing in tables or files within [supported Fabric items](#supported-fabric-item-types), as long as they have the standard Fabric Read and Reshare permissions for the item being shared. The user creating the share invites a user from another tenant to accept the external data share. This user receives a link that they use to accept the share. Upon accepting the share, the recipient chooses a lakehouse where a shortcut to the shared data will be created. The resulting shortcut provides read-only access to the live source data; the consumer can query it directly without staging pipelines or intermediate copies.
 
 External data share links don't work for users who are in the tenant where the external data share was created. They work only for users in external tenants. To share data from OneLake storage accounts with users in the same tenant, use [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
@@ -33,7 +33,7 @@ The Fabric item types that can be used in external data sharing are listed below
 
 * **Creating an external data share (provider tenant)**: External data shares can be created for tables or files in lakehouses and warehouses, and in KQL, SQL, and mirrored databases.
 
-* **Accepting an external data share (consuming tenant)**: Only lakehouses can be chosen as the location of the external data share shortcut when accepting an external data share.
+* **Accepting an external data share (consuming tenant)**: Only lakehouses can be chosen as the location of the external data share shortcut when accepting an external data share. After the shortcut is created, consumer-side workloads such as Power BI reports, Spark notebooks, data science and ML experiments, and SQL analytics endpoint queries can all access the shared data.
 
 ## Revoking external data shares
 
@@ -41,7 +41,7 @@ Any user in the sharing tenant who has Read and Reshare permissions on an extern
 
 ## Security considerations
 
-Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications.
+Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It's important to understand the underlying flows of data sharing to better evaluate these implications. While external data sharing preserves a single version of truth (both tenants read the same live data), governance controls from the provider tenant don't flow across tenant boundaries. The consumer tenant must apply its own governance, access control, and compliance policies to the incoming shared data.
 
 Data is shared across tenants using Fabric-internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared “in-place”: no data is copied, and it isn't even accessed until the user in the receiving tenant executes a Fabric workload over the shared data. Fabric evaluates and enforces Entra ID-based roles and permissions locally, within the tenant they're defined in. This means that access control policies defined in the sharer's tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies **are not** enforced on data that crosses organization boundaries. Rather, it's the policies defined in the consumer's tenant that are enforced on the incoming share, the same way that they're enforced on any data within that tenant.
 

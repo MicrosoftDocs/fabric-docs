@@ -24,6 +24,7 @@ Each connector has its own troubleshooting guide with specific issues, causes, a
 - [Azure Database for PostgreSQL](connector-troubleshoot-azure-database-for-postgresql.md)
 - [Azure Files](connector-troubleshoot-azure-files.md)
 - [Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server](connector-troubleshoot-synapse-sql.md)
+- [SQL database in Fabric](connector-troubleshoot-fabric-sql.md)
 - [Azure Table Storage](connector-troubleshoot-azure-table-storage.md)
 - [Dynamics 365, Dataverse (Common Data Service), and Dynamics CRM](connector-troubleshoot-dynamics-dataverse.md)
 - [MongoDB](connector-troubleshoot-mongodb.md)
@@ -40,7 +41,7 @@ We also have guides for different file formats:
 - [Parquet](connector-troubleshoot-parquet-format.md)
 - [XML](connector-troubleshoot-xml.md)
 
-Can't find what you need in the guides above? Check out the [Data Factory limitations](data-factory-limitations.md) and [Known issues](data-factory-known-issues.md) pages for more help.
+Can't find what you need in the guides above? Check out the [Data Factory limitations](data-factory-limitations.md) and [known issues](/fabric/known-issues/fabric-known-issues) pages for more help.
 
 ## General copy activity errors
 

@@ -1,21 +1,21 @@
 ---
-title: GQL Language Guide for Fabric Graph
-description: Learn how to write GQL queries in Fabric Graph, including pattern matching, filtering, aggregation, sorting, and subqueries with examples.
+title: GQL Language Guide for graph in Microsoft Fabric
+description: Learn how to write GQL queries for graph in Microsoft Fabric, including pattern matching, filtering, aggregation, sorting, and subqueries with examples.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Language Guide
 ---
 
-# GQL language guide for Fabric Graph
+# GQL language guide for graph in Microsoft Fabric
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-GQL (Graph Query Language) is the ISO-standardized query language for graph databases. Use GQL to query, analyze, and work with graph data efficiently in Fabric Graph.
+GQL (Graph Query Language) is the ISO-standardized query language for graph databases. Use GQL to query, analyze, and work with graph data efficiently with graph in Microsoft Fabric.
 
 The same ISO working group that standardizes SQL develops GQL. As a result, GQL shares many concepts with SQL, including expressions, predicates, and data types. If you have SQL experience, you can apply much of that knowledge to GQL.
 
-This article provides a comprehensive reference for GQL in Fabric Graph. It covers:
+This article provides a comprehensive reference for GQL in graph. It covers:
 
 - **Core concepts**: Graph data structures, patterns, and query fundamentals
 - **Essential statements**: `MATCH`, `FILTER`, `LET`, `ORDER BY`, `LIMIT`, and `RETURN`
@@ -41,7 +41,7 @@ Before you start, make sure you're familiar with these concepts:
 
 **What you need:**
 
-- Access to Fabric Graph with graph capabilities.
+- Access to a graph workspace with query capabilities.
 - Sample data or willingness to work with our social network examples.
 - Basic text editor for writing queries.
 
@@ -98,7 +98,7 @@ Sometimes, you also call edges relationships.
 Every graph element has these characteristics:
 
 - An **internal ID** that uniquely identifies it
-- **One or more labels** - descriptive names like `Person` or `knows`. In Graph, graph edges always have exactly one label.
+- **One or more labels** - descriptive names like `Person` or `knows`. In graph, edges always have exactly one label.
 - **Properties** - name-value pairs that store data about the element (such as `firstName: "Alice"` or `birthday: "19730108"`).
 
 ### How graphs are structured
@@ -106,13 +106,13 @@ Every graph element has these characteristics:
 Each edge connects exactly two nodes: a source and a destination. This connection creates the graph's structure and shows how entities relate to each other. The direction of edges matters - a `Person` who `follows` another `Person` creates a directed relationship.
 
 > [!NOTE]
-> Fabric Graph currently doesn't support undirected edges.
+> graph currently doesn't support undirected edges.
 
-Property graphs as supported in Graph are always well-formed, meaning every edge connects two valid nodes. If you see an edge in a graph, both its endpoints exist in the same graph.
+Property graphs as supported in graph are always well-formed, meaning every edge connects two valid nodes. If you see an edge in a graph, both its endpoints exist in the same graph.
 
 ### Graph models and graph types
 
-The **graph model** describes the structure of a graph in Graph. It acts like a database schema for your application domain. Graph models define:
+The **graph model** describes the structure of a graph. It acts like a database schema for your application domain. Graph models define:
 
 - Which nodes and edges can exist
 - What labels and properties they can have
@@ -255,7 +255,7 @@ Key points:
 - This process creates a clear, predictable data flow that simplifies complex queries.
 
 > [!IMPORTANT]
-> To maximize performance, Graph can reorder the execution of statements and run individual statements in parallel. These optimizations don't affect the correctness of the results.  
+> To maximize performance, graph can reorder the execution of statements and run individual statements in parallel. These optimizations don't affect the correctness of the results.  
 
 #### Example of statement composition
 
@@ -397,7 +397,7 @@ WHERE p.birthday > 19950101 AND f.birthday > 19950101
 ```
 
 > [!NOTE]
-> Graph models with multiple element labels aren't yet supported (known issue).
+> graph models with multiple element labels aren't yet supported (known issue).
 
 Label expressions let you match different kinds of nodes in a single pattern, making your queries more flexible.
 
@@ -538,7 +538,7 @@ MATCH (p:Person)-[r:workAt]->(targetCompany)
 ```
 
 > [!IMPORTANT]
-> Graph doesn't yet support arbitrary statement composition. For more information, see the article on [current limitations](limitations.md).
+> graph doesn't yet support arbitrary statement composition. For more information, see the article on [current limitations](limitations.md).
 
 **Key joining behaviors:**
 
@@ -979,7 +979,7 @@ This section covers sophisticated patterns and techniques for building complex, 
 ### Complex multistatement composition
 
 > [!IMPORTANT]
-> Graph doesn't yet support arbitrary statement composition. For more information, see the article on [current limitations](limitations.md).
+> graph doesn't yet support arbitrary statement composition. For more information, see the article on [current limitations](limitations.md).
 
 Understanding how to compose complex queries efficiently is crucial for advanced graph querying.
 
@@ -1253,7 +1253,7 @@ Keep these references handy for quick lookups:
 - **[GQL status codes](gql-reference-status-codes.md)** - Complete error code reference  
 - **[GQL reserved words](gql-reference-reserved-terms.md)** - Complete list of reserved keywords
 
-### Explore Graph
+### Explore graph
 
 **Learn the platform:**
 
@@ -1266,7 +1266,7 @@ Keep these references handy for quick lookups:
 
 - **Share feedback** - Help improve the documentation and tools
 - **Join the community** - Connect with other graph database practitioners
-- **Stay updated** - Follow Graph announcements for new features
+- **Stay updated** - Follow graph announcements for new features
 
 > [!TIP]
 > Start with the [quickstart tutorial](quickstart.md) if you prefer learning by doing, or dive into [graph patterns](gql-graph-patterns.md) if you want to learn the query language first.
@@ -1280,7 +1280,7 @@ Keep these references handy for quick lookups:
 - [GQL expressions and functions](gql-expressions.md) - All expression types and built-in functions.
 - [GQL graph types](gql-graph-types.md) - Graph types and constraints.
 - [GQL values and value types](gql-values-and-value-types.md) - Complete type system reference and value handling.
-- [Optimize GQL query performance in Fabric Graph](gql-query-performance.md) - Best practices for writing efficient GQL queries.
+- [Optimize GQL query performance for graph](gql-query-performance.md) - Best practices for writing efficient GQL queries.
 
 **Quick references:**
 
@@ -1288,9 +1288,9 @@ Keep these references handy for quick lookups:
 - [GQL status codes](gql-reference-status-codes.md) - Complete error code reference.  
 - [GQL reserved words](gql-reference-reserved-terms.md) - Complete list of reserved keywords.
 
-**Fabric Graph:**
+**graph:**
 
-- [Graph data models](graph-data-models.md) - Understanding graph concepts and modeling.
-- [Graph and relational databases](graph-relational-databases.md) - Differences and when to use each.
+- [graph data models](graph-data-models.md) - Understanding graph concepts and modeling.
+- [graph and relational databases](graph-relational-databases.md) - Differences and when to use each.
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md).
 - [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md).

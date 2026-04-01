@@ -1,9 +1,10 @@
 items:
   - name: Getting started
+    expanded: true
     items:
-      - name: What is Fabric Graph?
+      - name: What is graph in Microsoft Fabric?
         href: overview.md
-      - name: Quickstart guide for Fabric Graph
+      - name: Quickstart guide for graph
         href: quickstart.md
       - name: Example graph datasets
         href: sample-datasets.md
@@ -28,6 +29,7 @@ items:
       - name: 8 - Clean up tutorial resources
         href: tutorial-clean-up.md
   - name: Concepts
+    expanded: true
     items:
       - name: What is a graph database?
         href: graph-database.md
@@ -35,16 +37,20 @@ items:
         href: graph-data-models.md
       - name: Compare graph and relational databases
         href: graph-relational-databases.md
-      - name: Fabric Graph architecture
+      - name: How graph in Microsoft Fabric works
         href: how-graph-works.md
       - name: Security
         href: security-overview.md
   - name: How-tos
     items:
+      - name: Share and manage permissions
+        href: share-graph-manage-permissions.md
       - name: Manage data
         href: manage-data.md
       - name: Monitor graph status
         href: monitoring-overview.md
+      - name: Monitor graph performance
+        href: monitor-graph-performance.md
       - name: Optimize GQL query performance
         href: gql-query-performance.md
   - name: Troubleshoot
@@ -61,7 +67,7 @@ items:
             items:
             - name: GQL language guide
               href: gql-language-guide.md
-            - name: 'GQL schema example: Social network'
+            - name: 'GQL schema example: social network'
               href: gql-schema-example.md
             - name: GQL graph patterns
               href: gql-graph-patterns.md
@@ -83,9 +89,9 @@ items:
               href: gql-reference-reserved-terms.md
       - name: REST API
         items:
-          - name: Graph Background Jobs REST API
+          - name: Graph background jobs REST API
             href: /rest/api/fabric/graphmodel/background-jobs
-          - name: Graph Items REST API
+          - name: Graph items REST API
             href: /rest/api/fabric/graphmodel/items
   - name: Resources
     items:
