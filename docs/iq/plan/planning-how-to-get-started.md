@@ -94,4 +94,4 @@ This connection is used to connect to your semantic models when you create a
 
 1. Add semantic model data into your fields. Now your first Planning sheet is created.
    
-   :::image type="content" source="media/planning-sheet-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet.":::
+   :::image type="content" source="media/planning-sheet-how-to-get-started/planning-sheet.png" alt-text="Screenshot of the created planning sheet." lightbox="media/planning-sheet-how-to-get-started/planning-sheet.png":::
