@@ -85,11 +85,12 @@ If your Dataflow used an On-Premises Data Gateway, you can also explore the deta
 You can also request support through the [Fabric Community Forum](https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory) or by [raising a dedicated support case](https://support.fabric.microsoft.com/) where one of our engineers will be able to assist.
 
 ## Known issues
-- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
-- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 > [!IMPORTANT]
 > When using a Dataflow Gen1 or a Dataflow Gen2 (non CI/CD) in the Dataflow activity, you might experience delays before the refresh operation starts. This issue doesn't affect Dataflow Gen2 (CI/CD). Consider [migrating your existing solutions to Dataflow Gen2 (CI/CD)](/fabric/data-factory/migrate-to-dataflow-gen2-using-save-as) for a more reliable experience.
+
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 
