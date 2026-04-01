@@ -2,7 +2,7 @@
 title: Get events from Azure Data Explorer database
 description: This article describes how to get events from an Azure Data Explorer database table into Fabric Real-Time hub. 
 ms.topic: how-to
-ms.date: 12/22/2025
+ms.date: 04/01/2026
 ---
 
 # Get events from Azure Data Explorer database table into Fabric Real-Time hub

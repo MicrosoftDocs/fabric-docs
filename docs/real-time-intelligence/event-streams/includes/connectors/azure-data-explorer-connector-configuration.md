@@ -2,7 +2,7 @@
 title: Azure Data Explorer connector for Fabric eventstreams
 description: This file has the common content for configuring an Azure Data Explorer connector for Fabric eventstreams and real-time hub. 
 ms.topic: include
-ms.date: 12/22/2025
+ms.date: 04/01/2026
 ---
 
 1. On the **Configure connection settings** page, select **New connection**.
