@@ -15,22 +15,22 @@ Comments are collaborative threads that facilitate conversations directly from w
 
 ## Add comments
 
-1. Select a cell/row/column. Select **Comment**>**Add New Comment**.
-2. Use the rich text editor to format text and add hyperlinks in comments.
+1. Select a cell/row/column. Select **Comment** > **Add New Comment**.
+1. Use the rich text editor to format text and add hyperlinks in comments.
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/add-comment.png" alt-text="Screenshot of a formatted comment with bold, red text." lightbox="media/intelligence-how-to-comment-collaborate/add-comment.png":::
 
-3. After adding a comment, hover over the indicator to view it.
-4. You can mark important comments with a star to easily find and reference them later.
+1. After adding a comment, hover over the indicator to view it.
+1. You can mark important comments with a star to easily find and reference them later.
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/star-comment.png" alt-text="Screenshot of a starred comment." lightbox="media/intelligence-how-to-comment-collaborate/star-comment.png":::
 
-5. When writeback is performed, comments added to a report are captured and saved to the destination.
+1. When writeback is performed, comments added to a report are captured and saved to the destination.
 
-> [!TIP]  
-> Use writeback to capture comments in the report, ensuring they’re preserved for future collaboration.
+    > [!TIP]  
+    > Use writeback to capture comments in the report, ensuring they’re preserved for future collaboration.
 
-:::image type="content" source="media/intelligence-how-to-comment-collaborate/write-back-comment.png" alt-text="Screenshot of comment writeback." lightbox="media/intelligence-how-to-comment-collaborate/write-back-comment.png":::
+    :::image type="content" source="media/intelligence-how-to-comment-collaborate/write-back-comment.png" alt-text="Screenshot of comment writeback." lightbox="media/intelligence-how-to-comment-collaborate/write-back-comment.png":::
 
 ## Assign comments and tag users
 
@@ -38,8 +38,8 @@ Comments are collaborative threads that facilitate conversations directly from w
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/assign-user.png" alt-text="Screenshot of assigning a comment to a user.":::
 
-2. Reply to a comment to start a thread.
-3. Tag other users with `@mentions`. The `@user` mention in a comment automatically sends an email notification to that user, with a link to the report.
+1. Reply to a comment to start a thread.
+1. Tag other users with `@mentions`. The `@user` mention in a comment automatically sends an email notification to that user, with a link to the report.
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/tag-user.png" alt-text="Screenshot of a comment containing a tag to a user.":::
 
@@ -76,7 +76,7 @@ You can keep the comments panel visible at all times by enabling **Show comments
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/simple-view.png" alt-text="Screenshot of summary view" lightbox="media/intelligence-how-to-comment-collaborate/simple-view.png":::
 
-* Sort based on creation time and filter comments by type, assignee, or creation date for quicker access.&#x20;
+* Sort based on creation time and filter comments by type, assignee, or creation date for quicker access.
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/sort-filter-comments.png" alt-text="Screenshot of sorting and filtering in the comments panel." lightbox="media/intelligence-how-to-comment-collaborate/sort-filter-comments.png":::
 
