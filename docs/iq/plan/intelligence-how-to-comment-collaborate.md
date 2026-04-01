@@ -68,7 +68,8 @@ Resolve comment threads to indicate that an issue has been addressed. You can al
 Work with threads by viewing, replying, sorting, and filtering discussions in the comments pane. You can also star, assign, lock, and resolve threads.
 
 * Select **Comments** > **View All Comments** to browse all the comments from a single view. In the detailed view, you can see all comments and replies with their timestamps, along with the specific row and column dimensions to which each comment is linked. You can also reply to comments in the detailed view.
-You can keep the comments panel visible at all times by enabling **Show comments panel** in **Comments > Settings**
+
+    You can keep the comments panel visible at all times by enabling **Show comments panel** in **Comments > Settings**
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/view-all-comments.jpg" alt-text="Screenshot of comments panel." lightbox="media/intelligence-how-to-comment-collaborate/view-all-comments.jpg":::
 
