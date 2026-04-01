@@ -3,7 +3,7 @@ title: Configure Oracle database in a copy activity
 description: This article explains how to copy data using Oracle database.
 ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 01/30/2026
+ms.date: 04/01/2026
 ms.custom: 
   - pipelines
   - template-how-to
