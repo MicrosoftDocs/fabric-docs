@@ -86,7 +86,7 @@ You can also request support through the [Fabric Community Forum](https://commun
 
 ## Known issues
 
-> [!IMPORTANT]
+> [!CAUTION]
 > When using a Dataflow Gen1 or a Dataflow Gen2 (non CI/CD) in the Dataflow activity, you might experience delays before the refresh operation starts. This issue doesn't affect Dataflow Gen2 (CI/CD). Consider [migrating your existing solutions to Dataflow Gen2 (CI/CD)](/fabric/data-factory/migrate-to-dataflow-gen2-using-save-as) for a more reliable experience.
 
 - Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
