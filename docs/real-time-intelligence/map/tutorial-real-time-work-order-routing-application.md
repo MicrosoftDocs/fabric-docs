@@ -242,8 +242,9 @@ From your eventhouse (KQL database):
 
     :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-function.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface displaying the Functions section where a new Kusto function named WorkordersFunction is being created. The left sidebar shows the navigation tree with the Functions folder selected. The main editor panel displays the KQL query code: .create-or-alter function WorkordersFunction() { WorkordersEventhouse | project Latitude, Longitude, WorkorderID }. The Run button is visible in the toolbar at the top, ready to execute the function creation query. This step establishes a reusable data source that extracts customer coordinates from the work order data for use in map visualizations.":::
 
-    1 & 2 - The KQL query used to create the *WorkordersFunction* function.
-    3 - The newly created *WorkordersFunction* function
+    **1** & **2** - The KQL query used to create the *WorkordersFunction* function.
+
+    **3** - The newly created *WorkordersFunction* function
 
 1. In the Functions folder, select the **WorkordersFunction** function, then **Preview results** to verify that it returns work order records with valid location fields.
 
