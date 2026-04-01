@@ -38,7 +38,7 @@ Notebooks integrate directly with lakehouses and warehouses in the same workspac
 
 [Fabric user data functions](../data-engineering/user-data-functions/user-data-functions-overview.md) enable you to encapsulate reusable Python logic in Fabric. You can use them to implement advanced business rules, call external services, or build modular transformation components. User data functions support PyPI libraries, can connect to [Fabric data sources](../data-engineering/user-data-functions/connect-to-data-sources.md), and can expose REST endpoints for external integration. These capabilities make them suitable for enterprise scenarios that require reusable, governed transformation logic.
 
-You can invoke User Data Functions from [Notebooks](../data-engineering/notebook-utilities.md#user-data-function-udf-utilities), [Pipelines](../data-engineering/user-data-functions/create-functions-activity-data-pipelines.md), [Activator rules](../real-time-intelligence/data-activator/activator-rules-overview.md), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
+You can invoke User Data Functions from [Notebooks](../data-engineering/notebookutils/notebookutils-udf.md), [Pipelines](../data-engineering/user-data-functions/create-functions-activity-data-pipelines.md), [Activator rules](../real-time-intelligence/data-activator/activator-rules-overview.md), and as part of [Translytical task flows in Power BI reports](/power-bi/create-reports/translytical-task-flow-overview).
 
 ## Related content
 
