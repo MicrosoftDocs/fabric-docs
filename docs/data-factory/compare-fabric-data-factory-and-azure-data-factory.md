@@ -14,7 +14,7 @@ ai-usage: ai-assisted
 
 # Differences between Azure Data Factory and Fabric Data Factory
 
-[Data Factory in Microsoft Fabric](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction), built to handle your most complex data integration challenges with a simpler, more powerful approach.
+[Data Factory in Microsoft Fabric](data-factory-overview.md) is the next generation of [Azure Data Factory](/azure/data-factory/introduction), built to handle your most complex data integration challenges with a simpler, more powerful approach. With OneLake as the unified storage layer, Fabric Data Factory reduces infrastructure complexity and data movement by letting pipelines work directly with live data through [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [cross-tenant sharing](../governance/external-data-sharing-overview.md).
 
 This guide helps you understand the key differences between these two services, so you can make the right choice for your enterprise. We'll walk you through what's new, what's different, and what advantages Fabric brings to the table.
 
@@ -54,13 +54,14 @@ Here's how the core features stack up between Azure Data Factory and Fabric Data
 | Type of service | Data Integration PaaS Service | Data Integration SaaS Service |
 | Authoring Environment | Azure portal (ADF Studio) | Fabric / PBI workspace (unified UX with Lakehouses, Warehouses, etc.) |
 | Pipeline Orchestration | Full-featured pipelines with activities, triggers, parameters | Same orchestration model, re-imagined for Fabric UX |
-| Data Movement | Copy activity, mapping data flows, on-premises IR support, Managed virtual network | Copy activity, Dataflows Gen2, built-in connectivity to OneLake and Fabric items, On-premises Data Gateway, virtual network gateway |
+| Data Movement | Copy activity, mapping data flows, on-premises IR support, Managed virtual network | Copy activity, Dataflows Gen2, built-in connectivity to OneLake and Fabric items, [OneLake shortcuts](../onelake/onelake-shortcuts.md) for live data access without copy, On-premises Data Gateway, virtual network gateway |
 | Compute / IR | Self-hosted, SSIS and Azure IR (for movement + transformation) | Cloud connections, On-premises, and virtual network gateway |
 | Data Flows | Azure Blob, Data Lake Storage, SQL, 100+ connectors | Same connectors + native OneLake integration, tighter Fabric workspace alignment |
 | Monitoring | Pipelines and Data Flows in ADF Studio with runs, triggers, alerts | Monitoring Hub and Workspace Monitoring with unified views across Pipelines, Dataflows, Notebooks, Databases, etc. |
-| Triggers | Schedules, tumbling window, event-based triggers | Schedules, event triggers, tumbling window triggers as interval schedules |
+| Triggers | Schedules, tumbling window, event-based triggers | Schedules, event triggers, tumbling window triggers as interval schedules. Pipelines that use live data through OneLake shortcuts and cross-tenant sharing work seamlessly with all Fabric trigger types. |
 | CI/CD | ARM templates + Azure DevOps or GitHub repo integration | Built-in deployment pipelines in Fabric; workspace-level promotion (Dev → Test → Production) and external repo integration |
 | Security | Managed identities, Key Vault integration, private endpoints | Same security model plus Fabric workspace RBAC; OneLake security integration |
+| Data sharing and governance | N/A | [Cross-tenant data sharing](../governance/external-data-sharing-overview.md) via OneLake shortcuts enables governed, live data access across organizational boundaries without duplication |
 | Pricing | Azure utilization-based Pay-as-you-go (per activity run, data movement, and compute) | Capacity-based (Fabric F SKU) with no charges for external or pipeline activities, only activity runs and pipeline data movement |
 
 ## Activity comparison
@@ -179,7 +180,7 @@ In Fabric Data Factory, building your pipeline, dataflows, and other Data Factor
 
 ### Native Lakehouse and Data Warehouse integration
 
-One of the biggest advantages of Fabric Data Factory is how it connects with your data platforms. Lakehouse and Data Warehouse work as both sources and destinations in your pipelines, making it easy to build integrated data projects.
+One of the biggest advantages of Fabric Data Factory is how it connects with your data platforms. Lakehouse and Data Warehouse work as both sources and destinations in your pipelines, making it easy to build integrated data projects. Pipelines can also operate on lakehouse tables backed by [OneLake shortcuts](../onelake/onelake-shortcuts.md), allowing you to transform and orchestrate data from external sources (including [cross-tenant shares](../governance/external-data-sharing-overview.md)) without first copying it into your workspace.
 
    :::image type="content" source="media/connector-differences/source.png" alt-text="Screenshot showing lakehouse and data warehouse source tab.":::
 
@@ -222,6 +223,9 @@ Need to create a similar pipeline? The **Save as** feature lets you duplicate an
 :::image type="content" source="./media/connector-differences/save-as-button.png" alt-text="Screenshot showing save as in Fabric pipeline.":::
 
 ## Related content
+
+> [!NOTE]
+> New features developed for Data Factory in Fabric are not backported to Azure Data Factory or Azure Synapse pipelines. The two platforms maintain separate roadmaps. Backport requests are evaluated based on community feedback.
 
 For more information, see the following resources:
 

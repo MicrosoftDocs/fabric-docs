@@ -191,7 +191,7 @@ When you copy data to Oracle database, the following mappings are used from inte
 | DateTimeOffset | TIMESTAMP WITH TIME ZONE |
 | Boolean | NUMBER(p,s), BOOLEAN |
 
-To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
+To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](copy-data-activity.md#data-type-mapping).
 
 ### Default data type mapping for Oracle auto-created table
 

@@ -3,7 +3,7 @@ title: Fabric Notebooks troubleshooting guide
 description: This article provides troubleshooting steps for common issues encountered in Fabric Notebooks.
 ms.reviewer: deevij
 ms.topic: troubleshooting
-ms.date: 08/26/2025
+ms.date: 04/01/2026
 ai.usage: ai-assisted
 ---
 
@@ -35,6 +35,14 @@ This table lists common Fabric Notebooks error messages and links to relevant tr
 ## Notebook errors
 
 The following section outlines common Notebook errors and their suggested resolutions.
+
+### Use Fix with Copilot for failed cells and Spark jobs
+
+When a cell or Spark job fails, a **Fix with Copilot** action appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. You can review an approval diff and optionally auto-apply code changes suggested by Copilot. To access the action, select **Fix with Copilot** in the notebook UI or open the Copilot chat pane.
+
+### Copilot diagnostics
+
+You can run `/fix` in Copilot chat to perform targeted diagnostics for a specific cell or the entire notebook. Copilot provides validation and step-by-step recommendations to help you resolve errors. For more information, see [Diagnose notebook failures with Copilot](../data-engineering/copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ### Timeouts
 
@@ -85,6 +93,9 @@ A session isn't connected.
 **What to do:**
 
 Start a session.
+
+> [!TIP]
+> Copilot in notebooks is context-aware of the workspace, attached Lakehouse schemas, tables, files, notebook structure, and runtime state. It can provide guidance even before a session is started. A session is still required to execute cells, but Copilot can assist in planning fixes and validating code prior to starting a session.
 
 You can start a session using three methods:
 
@@ -200,7 +211,7 @@ Spark's Catalyst optimizer has produced a very large logical/physical plan.
 
 **What to do:**
 
-Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries.
+Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries. You can also use Copilot to surface performance insights (for example, data size considerations, efficient join strategies, and avoiding shuffles) and suggest refactoring into reusable functions. Consider using Copilot to validate the end-to-end workflow and propose staged query patterns.
 
 **Example fix**:
 
@@ -228,6 +239,57 @@ df2 = df1.join(...).groupBy(...).agg(...)
 df2.write.parquet("/tmp/intermediate1")
 df3 = spark.read.parquet("/tmp/intermediate1").join(...).filter(...)
 ```
+
+## Known limitations
+
+### Copilot button is disabled in notebooks
+
+In some cases, the Copilot button in Fabric Notebooks may appear disabled (greyed out). This indicates that Copilot is not currently available in your environment due to configuration, capacity, or regional requirements not being met.
+
+Copilot relies on several prerequisites across tenant settings, capacity, workspace configuration, and regional availability. If any of these requirements are not satisfied, the Copilot entry point will be disabled.
+
+#### How to resolve
+
+Use the table below to identify the cause and take appropriate action.
+
+| # | Reason | User / Admin action |
+|---|--------|---------------------|
+| 1 | Tenant admin has not enabled Copilot. The "Users can use Copilot and other features powered by Azure OpenAI" tenant setting is turned off. | Contact your Fabric/Power BI tenant admin → **Admin Portal** → **Tenant settings** → Enable **"Copilot and Azure OpenAI Service"**. |
+| 2 | Capacity SKU does not meet the minimum requirement. Copilot requires F64 or higher Fabric capacity (or P1+ for Power BI Premium). Trial capacities are also supported. | Upgrade your capacity to F64+ or start a Fabric trial at [Fabric Trial](https://www.microsoft.com/microsoft-fabric/getting-started). |
+| 3 | Cross-geo data processing not enabled. Your capacity is in a region where Azure OpenAI is not natively available, and the cross-geo setting is off. | **Admin Portal** → **Tenant settings** → Enable **"Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance"**. |
+| 4 | Workspace not assigned to an eligible capacity. The workspace containing the notebook is not attached to a capacity that supports Copilot. | Move the workspace to an eligible capacity (F64+ / P1+ / Trial). |
+| 5 | Copilot not yet available in your region. Azure OpenAI regional availability may limit Copilot in certain geos. | Check [Copilot available regions](/fabric/get-started/copilot-fabric-overview#available-regions) and consider enabling cross-geo processing. |
+
+> [!TIP]
+> If you're unsure which setting is causing the issue, start by contacting your tenant administrator, as most Copilot requirements are controlled at the organization level.
+
+## Known issues
+
+### Copilot is currently unavailable in the chat pane
+
+In some cases, Copilot may display the message "Copilot is currently unavailable" in the chat pane. This can occur due to issues with the current notebook session.
+
+**Impact:**
+
+- Copilot chat becomes unavailable during use.
+- Prompts can't be submitted or completed.
+
+**Mitigation:**
+
+If you encounter this issue:
+
+1. Close all open notebooks.
+1. Reopen the notebook.
+1. Open the Copilot pane again.
+
+**Best practices:**
+
+To reduce the likelihood of this issue:
+
+- Avoid closing the notebook while actively using Copilot.
+
+> [!NOTE]
+> This is a known issue that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
 
 ## Related content
 

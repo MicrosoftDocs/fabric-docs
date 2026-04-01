@@ -52,7 +52,13 @@ A mirrored database in Fabric is a continuously replicated copy of an external o
 
 Mirroring synchronizes source changes into Fabric in near real time without requiring traditional extract, transform, load pipelines. After replication, the data becomes [immediately queryable](../mirroring/explore.md) through SQL endpoints and is available across Fabric workloads, including Power BI, Spark notebooks, and pipelines.
 
-This architecture supports hybrid transactional and analytical processing (HTAP) scenarios, where you analyze operational data while maintaining source system integrity.
+This architecture supports hybrid transactional and analytical processing (HTAP) scenarios, where you analyze operational data while maintaining source system integrity. If the source data is already stored in a location accessible through OneLake shortcuts (such as Azure Data Lake Storage or another Fabric workspace), consider using shortcuts for zero-copy access instead of mirroring. Mirroring is best suited for operational databases that require continuous change data capture, while shortcuts are ideal when you need live, read-only access without replication.
+
+## OneLake shortcuts for zero-copy data access
+
+[OneLake shortcuts](../onelake/onelake-shortcuts.md) are logical links that reference data in external storage systems or in other Fabric workspaces without copying it. Shortcuts make referenced data appear as part of the local OneLake namespace, so all Fabric compute engines (Spark, SQL, Power BI) can query shortcut targets alongside native data. This approach maintains a single version of truth and avoids storage duplication.
+
+You can also use OneLake data sharing to extend shortcut access across Microsoft Entra tenant boundaries. Data owners grant OneLake permissions to external identities, and recipients create shortcuts to the shared data in their own workspaces. Governance policies remain enforced at the source. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md) and [external data sharing](../governance/external-data-sharing-overview.md).
 
 ## Eventhouse for real-time event analytics
 
@@ -103,8 +109,9 @@ Microsoft Fabric provides multiple data store options, each optimized for specif
 - **Eventhouse** for real-time telemetry and log analytics by using Kusto Query Language.
 - **SQL database** for transactional workloads and operational analytics.
 - **Cosmos DB** for globally distributed NoSQL applications, multi-model applications with low-latency access.
+- **OneLake shortcuts** for zero-copy access to data in external storage or other Fabric workspaces and tenants, when you don't need a separate copy and want to maintain a single version of truth.
 
-Selecting the appropriate store depends on data structure, latency requirements, query complexity, and integration needs. For more guidance, see [Choosing the right store](decision-guide-data-store.md).
+Selecting the appropriate store depends on data structure, latency requirements, query complexity, and integration needs. When the data you need already exists in an accessible location, shortcuts can eliminate the need for replication entirely. For more guidance, see [Choosing the right store](decision-guide-data-store.md).
 
 ## Related content
 

@@ -21,7 +21,7 @@ InfoBridge offers these features:
 * **No code platform**: InfoBridge offers a no-code experience for use cases that would normally demand intensive DAX and composite modeling.
 * **Visual data integration**: With InfoBridge, you can seamlessly access data from any Planning sheet in real time. Pull data from different visuals without ETL expertise.
 * **Pivoting data**: You can add pivot and un-pivot dimensions and measures on demand. Adding new dimensions or pivoting data can be done with a few clicks instead of using complex SQL and DAX scripts.
-* **Write-back**: InfoBridge allows the consolidation of multiple visuals into a single write-back table. Without InfoBridge, you'd need to write back to separate tables and maintain each of them.
+* **Writeback**: InfoBridge allows the consolidation of multiple visuals into a single writeback table. Without InfoBridge, you'd need to write back to separate tables and maintain each of them.
 
 ### Where to use InfoBridge
 
