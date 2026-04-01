@@ -1,7 +1,7 @@
 ---
 title: Input data into Planning sheets
 description: Learn how to enter data in Planning sheets, and add data input rows and columns.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand and use data input effectively.
 ---
@@ -121,8 +121,8 @@ Columns have the following configurable properties:
 
 * **Title**: Name of the input column displayed in the Planning sheet.
 * **Insert as**:
-* **Visual Measure -** A column is added at each column hierarchy.
-  * **Visual Column -** A single column is added at the end outside the column hierarchy.
+    * **Visual Measure -** A column is added at each column hierarchy.
+    * **Visual Column -** A single column is added at the end outside the column hierarchy.
 * **Input type**: Specifies the data type for the column (such as *Number*).
 * **Row aggregation type**: Defines how values roll up across hierarchy levels (such as *Sum*).
 * **Distribute parent value to children**: Automatically allocates parent values proportionally to child members.
