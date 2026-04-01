@@ -113,7 +113,7 @@ Planning sheet supports various types of data input columns to be inserted, depe
 
     :::image type="content" source="media/planning-how-to-input-data/enter-value.png" alt-text="Screenshot of enetring value in the new Number column in the Planning sheet." lightbox="media/planning-how-to-input-data/enter-value.png":::
 
-1. Similarly you can insert all other types of Data input measures/columns.
+1. Similarly, you can insert the other types of data input measures and columns.
 
 ### Configure column properties
 
