@@ -24,7 +24,7 @@ To ensure that the managed identity of the Event Grid namespace has the required
 
 1. In the **Governance and insights** section, select **Admin portal**.
 
-    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot of the link for the admin portal in Power BI settings." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::
+    :::image type="content" source="./media/azure-event-grid-source-connector/admin-portal-link.png" alt-text="Screenshot of the link for the admin portal in Power BI settings." lightbox="./media/azure-event-grid-source-connector/admin-portal-link.png":::
 
 1. On the **Tenant settings** page, go to the **Developer settings** section.
 
@@ -35,7 +35,7 @@ To ensure that the managed identity of the Event Grid namespace has the required
    1. Under **Apply to**, select **The entire organization**.
    1. Select **Apply**.
 
-   :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::
+   :::image type="content" source="./media/azure-event-grid-source-connector/developer-settings.png" alt-text="Screenshot that shows developer settings." lightbox="./media/azure-event-grid-source-connector/developer-settings.png":::
 
    To access all other APIs (enabled by default for new tenants):
 

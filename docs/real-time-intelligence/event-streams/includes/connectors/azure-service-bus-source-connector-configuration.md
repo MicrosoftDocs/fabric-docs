@@ -1,9 +1,9 @@
 ---
 title: Azure Service Bus connector for Fabric eventstreams
-description: This include file has the common content for configuring an Azure Service Bus connector for Fabric eventstreams and real-time hub. 
+description: This file has the common content for configuring an Azure Service Bus connector for Fabric eventstreams and real-time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 11/18/2024
+ms.date: 04/01/2026
 ---
 
 
@@ -33,7 +33,7 @@ ms.date: 11/18/2024
 
         1. In the Azure portal, go to the page for your Service Bus namespace.
         1. On the left menu, select **Shared access policies**.
-        1. Select the access key from the list. Note down the name of the access key.
+        1. Select the access key from the list. Note the name of the access key.
         1. Select the copy button next to the **Primary key** value.
 
     1. Select **Connect**.
