@@ -1,23 +1,22 @@
 ---
 title: Add Amazon Kinesis Data Streams source to an eventstream
-description: Learn how to add Amazon Kinesis Data Streams source to an eventstream.
+description: Amazon Kinesis Data Streams source integration lets you process real-time streaming data in your eventstream. Learn how to configure and connect in Fabric.
+#customer intent: As a data engineer, I want to add Amazon Kinesis Data Streams as a source to my eventstream so that I can ingest real-time streaming data from AWS into Microsoft Fabric.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 03/31/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
 # Add Amazon Kinesis Data Streams source to an eventstream
 
-This article shows you how to add Amazon Kinesis Data Streams source to an eventstream.
+This article shows you how to add an Amazon Kinesis Data Streams source to an eventstream.
 
-[Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) is a massively scalable, highly durable data ingestion and processing service optimized for streaming data. By integrating Amazon Kinesis Data Streams as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric.
+[Amazon Kinesis Data Streams](https://aws.amazon.com/kinesis/data-streams/) is a massively scalable and highly durable data ingestion and processing service optimized for streaming data. By integrating Amazon Kinesis Data Streams as a source within your eventstream, you can seamlessly process real-time data streams before routing them to multiple destinations within Fabric.
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- An Amazon Web Services (AWS) account with the Kinesis Data Streams service enabled.
-- Your Amazon Kinesis data stream must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+[!INCLUDE [amazon-kinesis-data-streams-connector-prerequisites](includes/connectors/amazon-kinesis-data-streams-connector-prerequisites.md)]
 
 
 ## Add Amazon Kinesis Data Streams as a source
@@ -26,13 +25,19 @@ This article shows you how to add Amazon Kinesis Data Streams source to an event
 
    :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
 
-2. On the next screen, select **Add external source**.
+1. On the next screen, select **Add external source**.
 
    :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
 
+1. On **Select a data source**, select **Kinesis Data Streams**.
+
+   :::image type="content" border="true" source="media/add-source-amazon-kinesis-data-streams/select-external-source.png" alt-text="A screenshot of selecting Kinesis Data Streams.":::
+
 ## Configure and connect to Amazon Kinesis Data Streams
 
-[!INCLUDE [amazon-kinesis-data-streams-connector](includes/amazon-kinesis-data-streams-connector.md)]
+[!INCLUDE [amazon-kinesis-data-streams-connector](includes/connectors/amazon-kinesis-data-streams-connector-configuration.md)]
+
+## Review eventstream
 
 You can see the Amazon Kinesis Data Stream source added to your eventstream in **Edit mode**.
 
