@@ -123,9 +123,19 @@ If you change runtime or compute settings, save and publish the environment for 
 
 Each Spark runtime provides built-in libraries. With the Fabric environment, you can also install libraries from public sources or upload custom libraries that you or your organization built. After you successfully install the libraries, they're available in your Spark sessions. For more information, see [Library management in Fabric environments](environment-manage-library.md). For the best practices for managing libraries in Fabric, see [Manage Apache Spark libraries in Fabric](library-management.md).
 
+When you add libraries to an environment, you choose a publishing mode:
+
+- **Quick mode** publishes in about 5 seconds. Libraries install when a notebook session starts. Use Quick mode for rapid iteration during development.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Use Full mode for pipelines, scheduled runs, and shared workloads. To achieve approximately 5-second session starts with Full mode, configure a [custom live pool](custom-live-pools-overview.md) that attaches to the environment.
+
+For details on each mode, see [Select publish mode for libraries](environment-manage-library.md#select-publish-mode-for-libraries).
+
 ### Use resources
 
 The **Resources** section in an environment facilitates the ability to manage small resources during the development phase. Files uploaded to the environment are accessible across notebooks when they're attached. For more information, see [Manage the resources in a Fabric environment](environment-manage-resources.md).
+
+> [!NOTE]
+> Files in the Resources section aren't affected by environment publishing. Resource changes are real time and available immediately without a publish step.
 
 ## Save and publish changes
 
@@ -134,6 +144,8 @@ Use **Save** and **Publish** to control when environment configuration changes t
 - **Save** stores your pending changes.
 - **Publish** applies pending changes to **Libraries** and **Spark compute**.
 - Changes in **Resources** are real time and don't require publishing.
+
+When you publish, the time depends on the library publishing mode you selected. Quick mode publishes in about 5 seconds, while Full mode typically takes 3 to 6 minutes to resolve dependencies and create a stable snapshot. For details, see [Select publish mode for libraries](environment-manage-library.md#select-publish-mode-for-libraries).
 
 On the **Home** tab, **Save** and **Publish** are enabled when there are pending changes in **Libraries** or **Spark compute**.
 
