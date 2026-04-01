@@ -3,7 +3,7 @@ title: Apache Kafka connector for Fabric event streams
 description: This file has the common content for configuring Apache Kafka connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 07/22/2025
+ms.date: 03/31/2026
 ---
 
 1. On the **Connect** page, select **New connection**.

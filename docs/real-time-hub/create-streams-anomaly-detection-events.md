@@ -3,7 +3,7 @@ title: Get anomaly detection events in Fabric Real-Time hub (preview)
 description: This article describes how to get Fabric anomaly detection events as an eventstream in Fabric Real-Time hub. 
 ms.reviewer: geguirgu
 ms.topic: how-to
-ms.date: 11/17/2025
+ms.date: 03/31/2026
 ms.custom: references_regions
 ---
 
