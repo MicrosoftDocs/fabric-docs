@@ -394,7 +394,7 @@ The simplest and fastest way to enable recovery is to use Fabric Git integration
 
 Ontology items in the primary region are not available to customers after a regional disaster, and Ontology items are not replicated to the secondary region.
 
-To recover an Ontology item during a disaster, configure [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) the Ontology item with your Git repository ahead of time.
+To recover an Ontology item during a disaster, configure [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) the Ontology item with your ADO repository ahead of time.
 
 During recovery, once the new region and capacity in Fabric are set up, you can use the repository to rebuild the Ontology item in a new workspace. Because the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) pulls the contents from the repository into the workspace, effectively restoring the Ontology item.
 
