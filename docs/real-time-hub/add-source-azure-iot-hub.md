@@ -25,7 +25,7 @@ This article describes how to get events from an Azure IoT hub into Real-Time hu
 
 ## Connect to an Azure iot hub
 
-[!INCLUDE [azure-iot-hub-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/azure-iot-hub-source-connector-prerequisites.md)]
+[!INCLUDE [azure-iot-hub-source-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/azure-iot-hub-source-connector-configuration.md)]
 
 
 ## View data stream details
