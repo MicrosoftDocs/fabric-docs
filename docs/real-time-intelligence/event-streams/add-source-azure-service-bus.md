@@ -14,7 +14,7 @@ Azure Service Bus is a fully managed enterprise message broker with message queu
 
 This article shows you how to add a Service Bus source to an eventstream.
 
-[!INCLUDE [azure-service-bus-connector-prerequisites](./includes/azure-service-bus-source-connector-prerequisites.md)]
+[!INCLUDE [azure-service-bus-connector-prerequisites](./includes/connectors/azure-service-bus-source-connector-prerequisites.md)]
 - An eventstream. If you don't have an eventstream, [create one](create-manage-an-eventstream.md).
 
 ## Start the wizard for selecting a data source
@@ -27,7 +27,7 @@ On the **Select a data source** page, search for **Azure Service Bus**. On the *
 
 ## Configure a Service Bus connector
 
-[!INCLUDE [azure-service-bus-connector](./includes/azure-service-bus-source-connector-configuration.md)]
+[!INCLUDE [azure-service-bus-connector-configuration](./includes/connectors/azure-service-bus-source-connector-configuration.md)]
 
 ## View an updated eventstream
 
