@@ -6,7 +6,7 @@ ms.topic: how-to
 #customer intent: As a user, I want to understand and use data input effectively.
 ---
 
-# Extend Planning sheet with data input
+# Extend Planning sheets with data input
 
 Data input rows and columns allow Planning sheet authors to extend a sheet by entering values directly within the matrix. These inputs support planning, forecasting, and operational scenarios where certain values must be captured manually or adjusted within the sheet.
 
