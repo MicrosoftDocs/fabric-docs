@@ -17,7 +17,7 @@ You can access the Monitor hub to view various MLV runs in your workspace by sel
   
 ## Sort, search, filter and column options
 
-For better usability and discoverability, you can sort the MLV runs by selecting different columns in the UI. You can also filter the using the Job Type, Location, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
+For better usability and discoverability, you can sort the MLV runs by selecting different columns in the UI. You can also filter them using the Job Type, Location, Job Instance ID and search for specific runs. You can also adjust the display and sort order of the columns independently through the column options.
 
 The Job Type for MLV runs is RefreshMaterializedLakeViews
 
