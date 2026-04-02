@@ -15,10 +15,6 @@ This article describes how to get Fabric workspace item events as an eventstream
 
 [!INCLUDE [fabric-workspace-source-connector-prerequisites](../real-time-intelligence//event-streams/includes/connectors/fabric-workspace-source-connector-prerequisites.md)]
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- A Fabric workspace with events you want to track.
 
 ## Create streams for Fabric workspace item events
 

@@ -12,7 +12,7 @@ Fabric workspace item events allow you to receive notification when certain acti
 
 [!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
-[!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
+[!INCLUDE [deprecated-fabric-workspace-events](../real-time-intelligence/event-streams/includes/connectors/deprecated-fabric-workspace-events.md)]
 
 ## View Fabric workspace item events detail page
 
@@ -92,7 +92,7 @@ The `data` object has the following properties:
 | `principalId` | guid | Unique identifier for the user. | `00000000-0000-0000-0000-000000000000` |
 | `executingPrincipalType` | string | The kind of user. | `User` |
 
-[!INCLUDE [unsupported-itemtypes-in-workspaceevents](./includes/unsupported-itemtypes-in-workspaceevents.md)]
+[!INCLUDE [unsupported-itemtypes-in-workspaceevents](../real-time-intelligence/event-streams/includes/connectors/unsupported-itemtypes-in-workspaceevents.md)]
 
 ## Subscribe permission
 For more information, see [subscribe permission for Fabric events](fabric-events-subscribe-permission.md).
