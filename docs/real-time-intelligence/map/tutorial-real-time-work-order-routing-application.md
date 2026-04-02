@@ -233,22 +233,22 @@ From your eventhouse (KQL database):
     ```kusto
     .create-or-alter function WorkordersFunction()
     {
-        WorkordersEventhouse
+        Workorders
         | project Latitude, Longitude, WorkorderID
     }
     ```
 
 1. Run the query
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-function.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface displaying the Functions section where a new Kusto function named WorkordersFunction is being created. The left sidebar shows the navigation tree with the Functions folder selected. The main editor panel displays the KQL query code: .create-or-alter function WorkordersFunction() { WorkordersEventhouse | project Latitude, Longitude, WorkorderID }. The Run button is visible in the toolbar at the top, ready to execute the function creation query. This step establishes a reusable data source that extracts customer coordinates from the work order data for use in map visualizations.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/create-function.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface displaying the Functions section where a new Kusto function named WorkordersFunction is being created. The left sidebar shows the navigation tree with the Functions folder selected. The main editor panel displays the KQL query code: .create-or-alter function WorkordersFunction() { Workorders | project Latitude, Longitude, WorkorderID }. The Run button is visible in the toolbar at the top, ready to execute the function creation query. This step establishes a reusable data source that extracts customer coordinates from the work order data for use in map visualizations.":::
 
     **1** & **2** - The KQL query used to create the *WorkordersFunction* function.
 
     **3** - The newly created *WorkordersFunction* function
 
-1. In the Functions folder, select the **WorkordersFunction** function, then **Preview results** to verify that it returns work order records with valid location fields.
+1. In the Functions folder, select **WorkordersFunction**, then **Preview results** to verify that it returns work order records with valid location fields.
 
-    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/preview-results.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface showing the WorkordersFunction Kusto function with results displayed in a preview table. The left sidebar displays the database navigation tree with the Functions folder selected, showing the newly created WorkordersFunction. The main panel contains the KQL query code .create-or-alter function WorkordersFunction() { WorkordersEventhouse | project Latitude, Longitude, WorkorderID }. Below the query editor, the Preview results section shows a data table with columns for Latitude, Longitude, and WorkorderID, containing nine work order records with coordinate values in the Vienna, Austria region (approximately 48 degrees north latitude and 16-degrees east longitude). The presence of multiple valid location records demonstrates the function successfully extracts customer coordinates from the Workorders table for map visualization purposes.":::
+    :::image type="content" source="media/tutorials/real-time-work-order-routing-application/preview-results.png" alt-text="A screenshot of the Microsoft Fabric Eventhouse interface showing the WorkordersFunction Kusto function with results displayed in a preview table. The left sidebar displays the database navigation tree with the Functions folder selected, showing the newly created WorkordersFunction. The main panel contains the KQL query code .create-or-alter function WorkordersFunction() { Workorders | project Latitude, Longitude, WorkorderID }. Below the query editor, the Preview results section shows a data table with columns for Latitude, Longitude, and WorkorderID, containing nine work order records with coordinate values in the Vienna, Austria region (approximately 48 degrees north latitude and 16-degrees east longitude). The presence of multiple valid location records demonstrates the function successfully extracts customer coordinates from the Workorders table for map visualization purposes.":::
 
 This function serves as a reusable data source for a Fabric Maps map data layer, which is demonstrated in the next section.
 
@@ -447,8 +447,9 @@ To complete this section, you need an Azure account with an Azure Maps account a
 
 #### Add lakehouse to map
 
-1. In the **Explorer** pane of your map **WorkordersMap**, select **Lakehouse** then the **Add data items** button.
-1. From the **OneLake catalog**, select the lakehouse **WorkorderLocationsLakehouse** that you created previously, then select **Connect**.
+1. In the **Explorer** pane, select **Fabric items** then the **Add** button.
+1. Select **Lakehouse** from the menu that appears when selecting the **Add** button.
+1. From the **OneLake catalog**, select the lakehouse **WorkorderLocationsLakehouse** that you created previously, then select **Add**.
 
 #### Show the optimized route on the map
 
