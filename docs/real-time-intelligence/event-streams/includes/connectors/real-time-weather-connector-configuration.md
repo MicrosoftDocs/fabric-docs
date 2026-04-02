@@ -8,15 +8,15 @@ ms.date: 12/11/2025
 
 1. Select a location on the map or search for a location to retrieve real-time weather data.
 
-    :::image type="content" source="../media/add-source-real-time-weather/select-location.png" alt-text="Screenshot that shows selecting location in the Connection setting page." lightbox="../media/add-source-real-time-weather/select-location.png":::
+    :::image type="content" source="./media/real-time-weather-connector/select-location.png" alt-text="Screenshot that shows selecting location in the Connection setting page." lightbox="./media/real-time-weather-connector/select-location.png":::
 
 1. **(Optional)** Enter a **Location name** to identify this location’s weather data in your stream. This name appears in the data payload.
 
-    :::image type="content" source="../media/add-source-real-time-weather/enter-location-name.png" alt-text="Screenshot that shows entering an optional location name." lightbox="../media/add-source-real-time-weather/enter-location-name.png":::
+    :::image type="content" source="./media/real-time-weather-connector/enter-location-name.png" alt-text="Screenshot that shows entering an optional location name." lightbox="./media/real-time-weather-connector/enter-location-name.png":::
 
 1. Select **Next** and review the configuration summary. 
 
-    :::image type="content" source="../media/add-source-real-time-weather/review-connect.png" alt-text="Screenshot that shows the Review + connect page for the real-time weather source." lightbox="../media/add-source-real-time-weather/review-connect.png":::
+    :::image type="content" source="./media/real-time-weather-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page for the real-time weather source." lightbox="./media/real-time-weather-connector/review-connect.png":::
 
 > [!IMPORTANT]
 > By using this connector, you acknowledge and agree that:

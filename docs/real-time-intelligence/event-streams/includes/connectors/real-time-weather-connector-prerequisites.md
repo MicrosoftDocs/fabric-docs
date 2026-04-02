@@ -3,7 +3,7 @@ title: Description and prerequisites for Real-Time weather source
 description: The include file provides description, a note, and prerequisites for using a Real-Time weather source.
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 12/11/2025
+ms.date: 04/01/2026
 ---
 
 The real-time weather connector allows you to ingest live weather data from a selected location into Eventstream. It provides real-time weather conditions such as precipitation, temperature, and wind for a specified set of coordinates. This data is updated **every minute** to ensure timely insights.
@@ -14,13 +14,13 @@ Weather data is powered by the Azure Maps Weather service. The cost of using Azu
 
 - A workspace with **Fabric** capacity or **Fabric Trial** workspace type.
 - Access to the workspace with **Contributor** or higher workspace roles.
-- If you don't have an eventstream, follow the guide to [create an eventstream](../create-manage-an-eventstream.md).
+- If you don't have an eventstream, follow the guide to [create an eventstream](../../create-manage-an-eventstream.md).
 
-In addition, the following [tenant switches](../../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
+In addition, the following [tenant switches](../../../../admin/about-tenant-settings.md) must be enabled from the Admin portal:
 
-- [Users can use Azure Maps services](../../../admin/map-settings.md)
+- [Users can use Azure Maps services](../../../../admin/map-settings.md)
 - [Users can use Azure Maps Weather Services](https://go.microsoft.com/fwlink/?linkid=2340279). By enabling this setting, you consent to share your selected location with Azure Maps and AccuWeather to retrieve real-time weather information.
 
-:::image type="content" source="media/weather/weather-tenant-setting.png" alt-text="Screenshot that shows weather tenant setting." lightbox="media/weather/weather-tenant-setting.png":::
+:::image type="content" source="media/real-time-weather-connector/weather-tenant-setting.png" alt-text="Screenshot that shows weather tenant setting." lightbox="media/real-time-weather-connector/weather-tenant-setting.png":::
 
 

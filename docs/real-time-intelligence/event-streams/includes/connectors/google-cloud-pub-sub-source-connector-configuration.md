@@ -4,7 +4,7 @@ description: The include file has the common content for configuring Google Clou
 ms.reviewer: zhenxilin
 ms.topic: include
 ms.custom: sfi-image-nochange
-ms.date: 11/22/2024
+ms.date: 04/01/2026
 ---
 
 1. On the **Connect** screen, under **Connection**, select **New connection**.
@@ -45,7 +45,7 @@ ms.date: 11/22/2024
 
       :::image type="content" source="media/google-cloud-pub-sub-source-connector/add-key.png" alt-text="A screenshot of selecting Create new key.":::
 
-   1. Download the JSON file, copy all the JSON content, and enter it as **Service account key** on the Fabric **Connection settings** screen.
+   1. Download the JSON file, copy the JSON content, and enter it as **Service account key** on the Fabric **Connection settings** screen.
 
       >[!IMPORTANT]
       >This JSON file can be downloaded only once.
