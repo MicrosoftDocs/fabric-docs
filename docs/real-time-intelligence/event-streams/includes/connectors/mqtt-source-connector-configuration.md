@@ -1,9 +1,9 @@
 ---
 title: MQTT connector for Fabric event streams
-description: The include files has the common content for configuring an MQTT connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring an Message Queuing Telemetry Transport (MQTT) connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 01/26/2026
+ms.date: 04/02/2026
 ---
 
 
@@ -19,8 +19,8 @@ ms.date: 01/26/2026
     1. **MQTT Broker URL**: enter the URL of your MQTT broker. The supported protocols are `ssl://`, `wss://`, and `tcp://`.
 
         > [!NOTE]
-        > The MQTT source supports TLS/SSL-secured MQTT connections between your MQTT broker and Eventstream.
-        > TLS/SSL connections are only supported if the server certificate is signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
+        > The MQTT source supports Transport Layer Security (TLS) or Secure Sockets Layer (SSL) secured MQTT connections between your MQTT broker and Eventstream.
+        > TLS or SSL connections are only supported if the server certificate is signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt).
 
     1. **Connection name**: enter a name for the connection to the MQTT.
     1. Enter the **Username** and **Password** of your MQTT broker.
