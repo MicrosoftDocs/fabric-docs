@@ -83,7 +83,6 @@ items:
       href: sql/tutorial-create-application.md
     - name: 9. Clean up resources
       href: sql/tutorial-clean-up.md
-
   - name: Data recovery
     items:
     - name: Backups
@@ -106,6 +105,8 @@ items:
       href: sql/connect-python.md
     - name: Jupyter Notebooks
       href: sql/connect-jupyter-notebook.md
+    - name: Bulk copy with Python
+      href: sql/connect-python-bulk-copy.md
     - name: SQL Query editor
       href: ./sql/query-editor.md
     - name: Source control
@@ -134,6 +135,7 @@ items:
       href: sql/load-data-pipelines.md
     - name: Load data with Fabric Dataflow Gen2
       href: sql/dataflows.md
+
   - name: Mirroring to OneLake
     items:
     - name: Mirroring to OneLake Overview
@@ -168,6 +170,8 @@ items:
       href: sql/security-overview.md
     - name: Auditing for SQL database
       href: sql/auditing.md
+    - name: Manage SQL database auditing with the REST API
+      href: sql/auditing-manage-rest-api.md
     - name: Authentication in SQL database
       href: sql/authentication.md
     - name: Access control
@@ -186,6 +190,8 @@ items:
       href: sql/limitations.md
     - name: Start/stop mirroring with REST API
       href: sql/start-stop-mirroring-api.md
+    - name: Control compute usage
+      href: sql/control-compute-usage.md
   - name: Reference
     items: 
     - name: T-SQL Reference for Fabric

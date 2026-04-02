@@ -26,6 +26,8 @@ AI functions use industry-leading large language models (LLMs) for summarization
 
 You can incorporate these functions as part of data science and data engineering workflows, whether you're working with pandas or Spark. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
 
+AI functions also support [multimodal input](./multimodal-overview.md), enabling you to process images, PDFs, and text files alongside text data. Supported file types include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML. Most AI functions can process file-path inputs when `column_type="path"` is specified. For details on multimodal setup and usage, see [Use multimodal input with AI functions](./multimodal-overview.md).
+
 ## Prerequisites
 
 - To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
@@ -107,9 +109,22 @@ import synapse.ml.spark.aifunc as aifunc
 
 ---
 
+### Helper functions for file ingestion and schema
+
+AI functions include helper functions that streamline multimodal workflows by simplifying file ingestion and schema management:
+
+- **`aifunc.load`**: Ingest files from a folder into a structured table. You can optionally provide a prompt to guide extraction or a schema for consistent structure.
+- **`aifunc.list_file_paths`**: Enumerate file URLs and paths from a folder for use as input to any AI function.
+- **`ai.infer_schema`**: Infer an extraction schema from file contents. The inferred schema is compatible with `ai.extract`, so you can pass it directly for structured data extraction.
+
+For detailed syntax and examples, see [Use multimodal input with AI functions](./multimodal-overview.md).
+
 ## Apply AI functions
 
-Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
+Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. PySpark AI function calls (including `ai.extract`) run distributed across Fabric Spark clusters, enabling scalable processing of large datasets. For performance tuning options, see the [PySpark configuration](./pyspark/configuration.md) documentation.
+
+> [!NOTE]
+> Most AI functions now support file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This enables direct processing of images and PDFs without loading raw bytes. For usage patterns, see [Use multimodal input with AI functions](./multimodal-overview.md).
 
 > [!TIP]
 > Learn how to [customize the configuration](./pandas/configuration.md) of AI functions.
@@ -241,7 +256,11 @@ The `ai.extract` function invokes AI to scan input text and extract specific typ
 
 #### Structured labels
 
-The `ai.extract` function supports structured label definitions through the ExtractLabel schema. You can provide labels with structured definitions that include not just the label name but also type information and attributes. This structured approach improves extraction consistency and allows the function to return correspondingly structured output columns. For example, you can specify labels with additional metadata to guide the extraction process more precisely. See the detailed documentation for [pandas](./pandas/extract.md) and [PySpark](./pyspark/extract.md) for examples of using structured labels.
+The `ai.extract` function supports structured label definitions through the `ExtractLabel` schema. You can provide labels with structured definitions that include not just the label name but also type information and attributes. Label definitions can combine simple label names (strings) with schema-bound objects via `ExtractLabel`. This structured approach improves extraction consistency and allows the function to return correspondingly structured output columns. For example, you can specify labels with additional metadata to guide the extraction process more precisely.
+
+`ExtractLabel` accepts full JSON Schema definitions and enforces structure on extracted output. Supported schema constructs include typed fields, enums, arrays (via `items`), objects with `properties`, nullable values (for example, `type=["string", "null"]`), `required` properties, and `additionalProperties=false` to disallow extra fields. The returned columns (or structs) adhere to the provided schema. When a strict schema is provided (for example, with `required` properties or `additionalProperties=false`), outputs that don't conform are surfaced as exceptions in the result and reflected in `ai.stats`.
+
+You can also author schemas as Pydantic models and convert them to JSON Schema for use with `ExtractLabel`. For detailed examples and usage patterns, see the documentation for [pandas](./pandas/extract.md) and [PySpark](./pyspark/extract.md).
 
 # [pandas](#tab/pandas)
 
@@ -507,6 +526,22 @@ Fabric AI functions provide a built-in way to inspect usage and execution statis
 > [!TIP]
 > You can call `ai.stats` on any Series or DataFrame returned by an AI function. This can help you track usage, understand error patterns, and monitor token consumption.
 
+### Cost transparency
+
+AI functions include a configurable progress bar cost calculator that shows real-time token estimates and capacity units during execution. You can set the calculator to one of three modes:
+
+- **basic**: Displays a summary of estimated tokens and capacity units consumed.
+- **stats**: Displays detailed per-call statistics, including input and output token counts.
+- **disable**: Turns off the progress bar cost display.
+
+For details on configuring these modes, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
+
+The Fabric Capacity Metrics App now includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflows Gen2, giving you clearer monitoring of AI-related capacity consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+
+## Evaluate and accelerate
+
+Evaluation notebooks are available to assess AI function output quality. These notebooks use LLM-as-a-Judge to compute metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance. You can use these workflows to validate results before deploying to production. Starter notebooks are also available, providing end-to-end examples that demonstrate file ingestion, schema inference, and extraction to help you get started quickly.
+
 ## Related content
 
 - Detect sentiment with [`ai.analyze_sentiment in pandas`](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment in pyspark`](./pyspark/analyze-sentiment.md).
@@ -519,5 +554,6 @@ Fabric AI functions provide a built-in way to inspect usage and execution statis
 - Summarize text with [`ai.summarize in pandas`](./pandas/summarize.md) or [`ai.summarize in PySpark`](./pyspark/summarize.md).
 - Translate text with [`ai.translate in pandas`](./pandas/translate.md) or [`ai.translate in PySpark`](./pyspark/translate.md).
 
-- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md) .
+- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
+- Use [multimodal input with AI functions](./multimodal-overview.md) to process images, PDFs, and text files.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

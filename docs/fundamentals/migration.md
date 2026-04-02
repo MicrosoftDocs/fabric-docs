@@ -3,7 +3,7 @@ title: Microsoft Fabric Migration Overview
 description: Overview of migration options for moving data and workloads to Fabric from various sources.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 08/19/2025
+ms.date: 03/16/2026
 ms.topic: overview
 ms.custom:
 - migration
@@ -11,9 +11,9 @@ ai-usage: ai-assisted
 ---
 # Microsoft Fabric migration overview
 
-Microsoft Fabric provides a unified analytics platform, and migrating your data and workloads to Fabric can help you take advantage of its integrated capabilities. This page summarizes all migration-related articles in the documentation, grouped by migration source.
+Microsoft Fabric provides a unified analytics platform. By migrating your data and workloads to Fabric, you can take advantage of its integrated capabilities. This article summarizes all migration-related articles in the documentation, grouped by migration source.
 
-## Migrate from legacy, on premises, or PaaS platforms
+## Migrate from legacy, on-premises, or PaaS platforms
 
 | Article | Description |
 |:--|:--|
@@ -24,7 +24,7 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 
 | Article | Description |
 |:--|:--|
-| **[Migrate Azure Analysis Services to Power BI](../enterprise/powerbi/aas-pbi-migration-overview.md)** | Migrate Microsoft Azure Analysis Services to Power BI using the Microsoft Power BI Premium migration feature in Power BI.|
+| **[Migrate Azure Analysis Services to Power BI](../enterprise/powerbi/aas-pbi-migration-overview.md)** | Migrate Azure Analysis Services to Power BI by using the Power BI Premium migration feature in Power BI.|
 
 ## Migrate from Azure Data Factory (ADF)
 
@@ -39,7 +39,7 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 
 | Article | Description |
 |:--|:--|
-| **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | You can migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
+| **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | Migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime by using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
 
 
 ## Migrate from Azure Data Explorer
@@ -60,7 +60,7 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 | Article | Description |
 |:--|:--|
 | **[Migration Assistant for Fabric Data Warehouse](../data-warehouse/migration-assistant.md)** | Learn how to use the Migration Assistant to move data and objects from Azure Synapse Analytics SQL Data Warehouse to Fabric Data Warehouse, including supported scenarios and limitations. |
-| **[Migration​ methods: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-methods.md)**|Learn the methods of migration of data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
+| **[Migration​ methods: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-methods.md)**|Learn the methods of migration for data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
 | **[Migration​ planning: ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](../data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md)**|Plan for migration of data warehousing in Azure Synapse dedicated SQL pools to Fabric.|
 
 ## Migrate from Azure Synapse Analytics Spark
@@ -82,12 +82,6 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 |:--|:--|
 | **[Migrate from Dataflow Gen1 to Dataflow Gen2](../data-factory/dataflow-gen2-migrate-from-dataflow-gen1.md)**|Learn how to migrate from Power BI dataflows, now known as *Dataflow Gen1*, to Dataflow Gen2 in [Data Factory](../data-factory/data-factory-overview.md) for Microsoft Fabric. |
 
-## Migrate from Power BI datamarts
-
-| Article | Description |
-|:--|:--|
-| **[Upgrade a Power BI Datamart to a Warehouse](../data-warehouse/datamart-upgrade-to-warehouse.md)** | Migrate an existing Power BI datamart to Fabric Data Warehouse. Power BI datamarts have been replaced by Fabric Data Warehouse.|
-
 ## Migrate from Spark
 
 | Article | Description |
@@ -98,7 +92,7 @@ Microsoft Fabric provides a unified analytics platform, and migrating your data 
 
 | Article | Description |
 |:--|:--|
-| **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | You can migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
+| **[SqlPackage and Copy job](../database/sql/sqlpackage.md#import-a-database-with-sqlpackage)** | Migrate from Azure SQL Database or on-premises SQL Server to SQL database in Fabric with minimal downtime by using a `.bacpac` file and SqlPackage, then a [Copy job](../data-factory/what-is-copy-job.md). |
 
 ## Migration resources
 

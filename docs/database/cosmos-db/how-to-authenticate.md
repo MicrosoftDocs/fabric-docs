@@ -172,11 +172,15 @@ for (const item of response.resources) {
 
 :::zone pivot="dev-lang-csharp"
 
+> [!NOTE] 
+> Cosmos DB in Fabric supports only Gateway connection mode. Because the .NET SDK defaults to Direct mode, you must explicitly set ConnectionMode.Gateway in CosmosClientOptions.
+
 ```csharp
 using Azure.Identity;
 using Microsoft.Azure.Cosmos;
 
 string endpoint = "<cosmos-db-fabric-endpoint>";
+CosmosClientOptions = new() { ConnectionMode = ConnectionMode.Gateway };
 DefaultAzureCredential credential = new();
 using CosmosClient client = new(endpoint, credential);
 

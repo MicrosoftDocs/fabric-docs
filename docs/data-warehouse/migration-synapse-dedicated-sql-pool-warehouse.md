@@ -2,7 +2,7 @@
 title: Migration Strategy and Planning for ​​Azure Synapse Dedicated SQL Pools to Fabric Migration​
 description: This article details the strategy and considerations of migration of data warehousing in Azure Synapse dedicated SQL pools to Microsoft Fabric.
 ms.reviewer: arturv, johoang
-ms.date: 04/06/2025
+ms.date: 03/16/2026
 ms.topic: concept-article
 ms.custom:
   - fabric-cat
@@ -12,7 +12,7 @@ ms.custom:
 
 **Applies to:** [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
 
-This article details the strategy, considerations, and methods of migration of data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Warehouse. 
+This article details the strategy, considerations, and methods of migration of data warehousing in Azure Synapse Analytics dedicated SQL pools to Microsoft Fabric Data Warehouse. 
 
 > [!TIP]
 > An automated experience for migration from Azure Synapse Analytics dedicated SQL pools is available using the [Fabric Migration Assistant for Data Warehouse](migration-assistant.md). This article contains important strategic and planning information.
@@ -25,9 +25,9 @@ This article focuses on options for schema (DDL) migration, database code (DML) 
 
 ## Prepare for migration
 
-Carefully plan your migration project before you get started and ensure that your schema, code, and data are compatible with Fabric Warehouse. There are some [limitations](limitations.md) that you need to consider. Quantify the refactoring work of the incompatible items, as well as any other resources needed before the migration delivery.
+Carefully plan your migration project before you get started and ensure that your schema, code, and data are compatible with Fabric Data Warehouse. There are some [limitations](limitations.md) that you need to consider. Quantify the refactoring work of the incompatible items, as well as any other resources needed before the migration delivery.
 
-Another key goal of planning is to adjust your design to ensure that your solution takes full advantage of the high query performance that Fabric Warehouse is designed to provide. Designing data warehouses for scale introduces unique design patterns, so traditional approaches aren't always the best. Review the [performance guidelines](guidelines-warehouse-performance.md), because although some design adjustments can be made after migration, making changes earlier in the process will save you time and effort. Migration from one technology/environment to another is always a major effort.
+Another key goal of planning is to adjust your design to ensure that your solution takes full advantage of the high query performance that Fabric Data Warehouse is designed to provide. Designing data warehouses for scale introduces unique design patterns, so traditional approaches aren't always the best. Review the [performance guidelines](guidelines-warehouse-performance.md), because although some design adjustments can be made after migration, making changes earlier in the process will save you time and effort. Migration from one technology/environment to another is always a major effort.
 
 The following diagram depicts the Migration Lifecycle listing the major pillars consisting of **Assess and Evaluate**, **Plan and Design**, **Migrate**, **Monitor and Govern**, **Optimize and Modernize** pillars with the associated tasks in each pillar to plan and prepare for the smooth migration.
 
@@ -35,7 +35,7 @@ The following diagram depicts the Migration Lifecycle listing the major pillars 
 
 ## Runbook for migration
 
-Consider the following activities as a planning runbook for your migration from Synapse dedicated SQL pools to Fabric Warehouse.
+Consider the following activities as a planning runbook for your migration from Synapse dedicated SQL pools to Fabric Data Warehouse.
 
 1. **Assess and Evaluate**
     1. Identify objectives and motivations. Establish clear desired outcomes.
@@ -97,15 +97,15 @@ In general, there are two types of migration scenarios, regardless of the purpos
 
 ### Lift and shift
 
-In a lift and shift migration, an existing data model is migrated with minor changes to the new Fabric Warehouse. This approach minimizes risk and migration time by reducing the new work needed to realize the benefits of migration.
+In a lift and shift migration, an existing data model is migrated with minor changes to the new Fabric Data Warehouse. This approach minimizes risk and migration time by reducing the new work needed to realize the benefits of migration.
 
 Lift and shift migration is a good fit for these scenarios:
 
-- You have an existing environment with a small number of data marts to migrate.
+- You have an existing environment with a small number of warehouses to migrate.
 - You have an existing environment with data that's already in a well-designed star or snowflake schema.
-- You're under time and cost pressure to move to Fabric Warehouse.
+- You're under time and cost pressure to move to Fabric Data Warehouse.
 
-In summary, this approach works well for those workloads that is optimized with your current Synapse dedicated SQL pools environment, and therefore doesn't require major changes in Fabric.
+In summary, this approach works well for those workloads that are optimized with your current Azure Synapse dedicated SQL pools environment, and therefore doesn't require major changes in Fabric.
 
 ### Modernize in a phased approach with architectural changes
 
@@ -113,9 +113,11 @@ If a legacy data warehouse has evolved over a long period of time, you might nee
 
 You might also want to redesign the architecture to take advantage of the new engines and features available in the Fabric Workspace.  
 
-## Design differences: Synapse dedicated SQL pools and Fabric Warehouse
+<a id="design-differences-synapse-dedicated-sql-pools-and-fabric-warehouse"></a>
 
-Consider the following Azure Synapse and Microsoft Fabric data warehousing differences, comparing dedicated SQL pools to the Fabric Warehouse.
+## Design differences: Synapse dedicated SQL pools and Fabric Data Warehouse
+
+Consider the following Azure Synapse and Microsoft Fabric data warehousing differences, comparing dedicated SQL pools to the Fabric Data Warehouse.
 
 ### Table considerations
 
@@ -131,23 +133,23 @@ Depending on the parity differences at the time of the migration, you might need
 
 ### Data type mapping differences
 
-There are several data type differences in Fabric Warehouse. For more information, see [Data types in Microsoft Fabric](data-types.md).
+There are several data type differences in Fabric Data Warehouse. For more information, see [Data types in Microsoft Fabric](data-types.md).
 
-The following table provides the mapping of supported data types from Synapse dedicated SQL pools to Fabric Warehouse.
+The following table provides the mapping of supported data types from Synapse dedicated SQL pools to Fabric Data Warehouse.
 
-|Synapse dedicated SQL pools | Fabric Warehouse|
+|Synapse dedicated SQL pools | Fabric Data Warehouse |
 |:--|:--|
-| `money` |     `decimal(19,4)` |
-| `smallmoney` |     `decimal(10,4)` |
-| `smalldatetime` |     `datetime2` |
-| `datetime` |     `datetime2` |
-| `nchar` |     `char` |
-| `nvarchar` |     `varchar` |
-| `tinyint` |     `smallint` |
-| `binary` |     `varbinary` |
-| `datetimeoffset`\* |     `datetime2` |
+| **money** |     **decimal(19,4)** |
+| **smallmoney** |     **decimal(10,4)** |
+| **smalldatetime** |     **datetime2** |
+| **datetime** |     **datetime2** |
+| **nchar** |     **char** |
+| **nvarchar** |     **varchar** |
+| **tinyint** |     **smallint** |
+| **binary** |     **varbinary** |
+| **datetimeoffset**\* |     **datetime2** |
 
-\* `Datetime2` does not store the extra time zone offset information that is stored in. Since the `datetimeoffset` data type is not currently supported in Fabric Warehouse, the time zone offset data would need to be extracted into a separate column.
+\* **Datetime2** does not store the extra time zone offset information that is stored in **datetimeoffset**. Since the **datetimeoffset** data type is not currently supported in Fabric Data Warehouse, the time zone offset data would need to be extracted into a separate column.
 
 > [!TIP]
 > **Ready to migrate?**
@@ -161,5 +163,5 @@ The following table provides the mapping of supported data types from Synapse de
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Fabric Data Warehouse performance guidelines](guidelines-warehouse-performance.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
-- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric data warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
+- [Blog: Mapping ​​Azure Synapse dedicated SQL pools to Fabric Data Warehouse compute](https://blog.fabric.microsoft.com/blog/mapping-azure-synapse-dedicated-sql-pools-to-fabric-data-warehouse-compute/)
 - [Microsoft Fabric Migration Overview](../fundamentals/migration.md)

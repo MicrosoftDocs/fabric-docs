@@ -3,15 +3,13 @@ title: Overview of Materialized Lake Views
 description: Learn about the features, availability, and limitations of materialized lake views in Microsoft Fabric.
 ms.reviewer: nijelsf
 ms.topic: overview
-ms.date: 02/27/2026
+ms.date: 03/18/2026
 # customer intent: As a data engineer, I want to understand what materialized lake views are in Microsoft Fabric so that I can use them for building a medallion architecture.
 ---
 
 # What are materialized lake views in Microsoft Fabric?
 
-[!INCLUDE [preview-note](./includes/materialized-lake-views-preview-note.md)]
-
-Materialized lake views are precomputed, stored results of SQL queries in a lakehouse. You define a transformation using SQL, and Fabric stores the results as a Delta table that can be refreshed on demand or on a schedule. Materialized lake views support incremental refresh, built-in data quality rules, and automatic dependency management across views.
+Materialized lake views turn complex lakehouse transformations into fast, reusable, query‑ready assets that accelerate analytics and reduce compute. Results are persisted as Delta files in OneLake and refreshed automatically via schedules or event triggers, delivering dependable, up‑to‑date data. Major advantages include declarative pipelines for predictable deployments, optimal refresh for performance and cost, built‑in data quality, and intuitive monitoring for visibility and trust.
 
 ## When to use materialized lake views
 
@@ -134,6 +132,10 @@ SELECT
 FROM bronze_products
 WHERE price > 0;
 ```
+
+### Security
+
+You can use private links to connect to materialized lake views (preview).  Read more at [Security](../../security/security-inbound-overview.md).
 
 ## Current limitations
 
