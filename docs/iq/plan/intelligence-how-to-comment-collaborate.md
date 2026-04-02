@@ -15,7 +15,7 @@ Comments are collaborative threads that facilitate conversations directly from w
 
 ## Add comments
 
-1. Select a cell/row/column. Select **Comment** > **Add New Comment**.
+1. Select a cell, row, or column. Select **Comment** > **Add New Comment**.
 1. Use the rich text editor to format text and add hyperlinks in comments.
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/add-comment.png" alt-text="Screenshot of a formatted comment with bold, red text." lightbox="media/intelligence-how-to-comment-collaborate/add-comment.png":::
@@ -69,13 +69,13 @@ Work with threads by viewing, replying, sorting, and filtering discussions in th
 
 * Select **Comments** > **View All Comments** to browse all the comments from a single view. In the detailed view, you can see all comments and replies with their timestamps, along with the specific row and column dimensions to which each comment is linked. You can also reply to comments in the detailed view.
 
-    You can keep the comments panel visible at all times by enabling **Show comments panel** in **Comments > Settings**
+    You can keep the comments panel visible at all times by enabling **Show comments panel** in **Comments > Settings**.
 
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/view-all-comments.jpg" alt-text="Screenshot of comments panel." lightbox="media/intelligence-how-to-comment-collaborate/view-all-comments.jpg":::
 
 * Use the **Simple** view to see a concise summary of all the comments.
 
-    :::image type="content" source="media/intelligence-how-to-comment-collaborate/simple-view.png" alt-text="Screenshot of summary view" lightbox="media/intelligence-how-to-comment-collaborate/simple-view.png":::
+    :::image type="content" source="media/intelligence-how-to-comment-collaborate/simple-view.png" alt-text="Screenshot of summary view." lightbox="media/intelligence-how-to-comment-collaborate/simple-view.png":::
 
 * Sort based on creation time and filter comments by type, assignee, or creation date for quicker access.
 
