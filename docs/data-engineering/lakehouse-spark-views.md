@@ -14,7 +14,7 @@ Spark Views in Microsoft Fabric let you abstract complex data modeling logic and
 
 You can view, manage, and query Spark Views directly in Lakehouse Explorer alongside your tables.
 
-## How Spark Views store metadata
+## How Spark Views stored?
 
 View metadata is stored in OneLake alongside your tables, but as files rather than folders. This approach:
 
