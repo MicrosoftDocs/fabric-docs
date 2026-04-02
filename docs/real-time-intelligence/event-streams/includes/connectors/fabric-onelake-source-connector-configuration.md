@@ -3,7 +3,7 @@ title: Fabric OneLake events connector for Fabric event streams
 description: The include files has the common content for configuring Fabric OneLake events connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: robece
 ms.topic: include
-ms.date: 11/13/2024
+ms.date: 04/02/2026
 ---
 
 1. On the **Connect** page, for **Event types**, select the event types that you want to monitor.

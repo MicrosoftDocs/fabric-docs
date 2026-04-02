@@ -1,9 +1,11 @@
 ---
-title: Add Fabric OneLake event source to an eventstream
-description: Learn how to add Fabric OneLake event source to an eventstream.
+title: Fabric OneLake Events Source in Eventstream
+description: Add Fabric OneLake events to an eventstream to capture real-time data changes. Follow this how-to guide to configure the source, publish, and transform your events.
 ms.reviewer: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 04/02/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
@@ -11,25 +13,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Fabric OneLake event source to an eventstream.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/connectors/consume-fabric-events-regions.md)]
-
-OneLake events allow you to subscribe to changes in files and folders in OneLake, and then react to those changes in real-time. With Fabric event streams, you can capture these OneLake events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of OneLake events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your OneLake.
-
-## Event types
-Here are the supported OneLake events:
-
-| Event type name | Description |
-| --------------- | ----------- |
-| Microsoft.Fabric.OneLake.FileCreated | Raised when a file is created or replaced in OneLake. |
-| Microsoft. Fabric.OneLake.FileDeleted | Raised when a file is deleted in OneLake. |
-| Microsoft. Fabric.OneLake.FileRenamed | Raised when a file is renamed in OneLake. | 
-| Microsoft.Fabric.OneLake.FolderCreated | Raised created when a folder is created in OneLake. | 
-| Microsoft. Fabric.OneLake.FolderDeleted | Raised when a folder is deleted in OneLake. | 
-| Microsoft. Fabric.OneLake.FolderRenamed | Raised when a folder is renamed in OneLake. | 
-
-## Prerequisites
-
-- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+[!INCLUDE [fabric-onelake-source-connector-prerequisites](includes/connectors/fabric-onelake-source-connector-prerequisites.md)]
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream. 
 
 
@@ -43,7 +27,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## Configure and connect to Fabric OneLake events
 
-[!INCLUDE [fabric-onelake-source-connector](includes/fabric-onelake-source-connector.md)]
+[!INCLUDE [fabric-onelake-source-connector-configuration](includes/connectors/fabric-onelake-source-connector-configuration.md)]
 
 ## View updated eventstream
 
@@ -52,7 +36,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
     ![A screenshot of the Fabric OneLake events source added to the eventstream.](media/add-source-fabric-onelake/fabric-onelake-events-edit.png)
 
     > [!NOTE]
-    > Before proceeding with event transformation or routing, ensure that OneLake events have been triggered and successfully sent to the eventstream.
+    > Before proceeding with event transformation or routing, ensure that OneLake events were triggered and successfully sent to the eventstream.
 
 1. If you want to transform the Fabric OneLake events, open your eventstream and select **Edit** on the toolbar to enter **Edit mode**. Then you can add operations to transform the Fabric OneLake events or route them to a destination such as Lakehouse.
 
