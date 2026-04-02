@@ -1,6 +1,6 @@
 ---
 title: Variable library connection reference
-description: Learn how to use a Microsoft Fabric connection reference variables with variable libraries.
+description: Learn how to use a Microsoft Fabric connection reference variable with variable libraries.
 author: billmath
 ms.author: billmath
 ms.service: fabric
@@ -83,7 +83,7 @@ For more information on permissions and permission validation, see [Variable lib
 ## Supported items
 The following is a list of items that support connection reference variables:
 
-- Notebook, through [NotebookUtils](../../data-engineering/notebook-utilities.md#variable-library-utilities)
+- Notebook, through [NotebookUtils](../../data-engineering/notebookutils/notebookutils-variable-library.md)
 - [User data functions](../../data-engineering/user-data-functions/connect-to-data-sources.md)
 
 ### Python code example
