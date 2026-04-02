@@ -240,57 +240,6 @@ df2.write.parquet("/tmp/intermediate1")
 df3 = spark.read.parquet("/tmp/intermediate1").join(...).filter(...)
 ```
 
-## Known limitations
-
-### Copilot button is disabled in notebooks
-
-In some cases, the Copilot button in Fabric Notebooks may appear disabled (greyed out). This indicates that Copilot is not currently available in your environment due to configuration, capacity, or regional requirements not being met.
-
-Copilot relies on several prerequisites across tenant settings, capacity, workspace configuration, and regional availability. If any of these requirements are not satisfied, the Copilot entry point will be disabled.
-
-#### How to resolve
-
-Use the table below to identify the cause and take appropriate action.
-
-| # | Reason | User / Admin action |
-|---|--------|---------------------|
-| 1 | Tenant admin has not enabled Copilot. The "Users can use Copilot and other features powered by Azure OpenAI" tenant setting is turned off. | Contact your Fabric/Power BI tenant admin → **Admin Portal** → **Tenant settings** → Enable **"Copilot and Azure OpenAI Service"**. |
-| 2 | Capacity SKU does not meet the minimum requirement. Copilot requires F64 or higher Fabric capacity (or P1+ for Power BI Premium). Trial capacities are also supported. | Upgrade your capacity to F64+ or start a Fabric trial at [Fabric Trial](https://www.microsoft.com/microsoft-fabric/getting-started). |
-| 3 | Cross-geo data processing not enabled. Your capacity is in a region where Azure OpenAI is not natively available, and the cross-geo setting is off. | **Admin Portal** → **Tenant settings** → Enable **"Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance"**. |
-| 4 | Workspace not assigned to an eligible capacity. The workspace containing the notebook is not attached to a capacity that supports Copilot. | Move the workspace to an eligible capacity (F64+ / P1+ / Trial). |
-| 5 | Copilot not yet available in your region. Azure OpenAI regional availability may limit Copilot in certain geos. | Check [Copilot available regions](/fabric/get-started/copilot-fabric-overview#available-regions) and consider enabling cross-geo processing. |
-
-> [!TIP]
-> If you're unsure which setting is causing the issue, start by contacting your tenant administrator, as most Copilot requirements are controlled at the organization level.
-
-## Known issues
-
-### Copilot is currently unavailable in the chat pane
-
-In some cases, Copilot may display the message "Copilot is currently unavailable" in the chat pane. This can occur due to issues with the current notebook session.
-
-**Impact:**
-
-- Copilot chat becomes unavailable during use.
-- Prompts can't be submitted or completed.
-
-**Mitigation:**
-
-If you encounter this issue:
-
-1. Close all open notebooks.
-1. Reopen the notebook.
-1. Open the Copilot pane again.
-
-**Best practices:**
-
-To reduce the likelihood of this issue:
-
-- Avoid closing the notebook while actively using Copilot.
-
-> [!NOTE]
-> This is a known issue that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
-
 ## Related content
 
 [Fabric known issues](https://support.fabric.microsoft.com/known-issues/)
