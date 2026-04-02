@@ -3,7 +3,7 @@ title: Fabric capacity overview events connector for Fabric event streams
 description: The include file has the common content for configuring Fabric capacity overview events connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 03/18/2025
+ms.date: 04/02/2026
 ---
 
 1. On the **Connect** screen, first select  **Event type(s)** of interest that you want to capture in the eventstream. By default, all supported events are captured.
