@@ -1,11 +1,9 @@
 ---
 title: Development and Deployment Workflows
 description: Learn about development and deployment workflows available to developers working with Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, randolphwest
 ms.date: 11/05/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 # Development and deployment workflows
 

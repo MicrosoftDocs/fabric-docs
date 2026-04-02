@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path_from_root": "/docs/fundamentals/workspace-license-mode.md",
+      "redirect_url": "/fabric/enterprise/licenses",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed.md",
       "redirect_url": "/fabric/get-started/fabric-known-issues",
       "redirect_document_id": false
@@ -162,8 +167,8 @@
     },
     {
       "source_path_from_root": "/docs/get-started/directlake-create-lakehouse.md",
-      "redirect_url": "/fabric/get-started/direct-lake-create-lakehouse",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/fundamentals/direct-lake-overview",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/get-started/direct-lake-manage.md",
@@ -187,8 +192,8 @@
     },
     {
       "source_path_from_root": "/docs/get-started/direct-lake-create-lakehouse.md",
-      "redirect_url": "/fabric/fundamentals/direct-lake-create-lakehouse",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/fundamentals/direct-lake-overview",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/get-started/direct-lake-understand-storage.md",
@@ -247,8 +252,8 @@
     },
     {
       "source_path_from_root": "/docs/get-started/direct-lake-edit-tables.md",
-      "redirect_url": "/fabric/fundamentals/direct-lake-edit-tables",
-      "redirect_document_id": true
+      "redirect_url": "/fabric/fundamentals/direct-lake-develop",
+      "redirect_document_id": false
     },
     {
       "source_path_from_root": "/docs/get-started/create-workspaces.md",
@@ -2003,6 +2008,16 @@
     {
       "source_path_from_root": "/docs/fundamentals/direct-lake-fixed-identity.md",
       "redirect_url": "/fabric/fundamentals/direct-lake-security-integration",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/direct-lake-create-lakehouse.md",
+      "redirect_url": "/fabric/fundamentals/direct-lake-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/docs/fundamentals/direct-lake-edit-tables.md",
+      "redirect_url": "/fabric/fundamentals/direct-lake-develop",
       "redirect_document_id": false
     }
   ]

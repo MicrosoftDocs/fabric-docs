@@ -1,11 +1,8 @@
 ---
 title: Include file for Git integration limitations
 description: Include file for the Git integration limitations. This file is referenced in this repo and also in an article in the Power BI repo.
-author: billmath
-ms.author: billmath
 ms.topic: include
-ms.custom: 
-ms.date: 02/26/2025
+ms.date: 12/16/2025
 ---
 
 ### General Git integration limitations
@@ -38,13 +35,22 @@ ms.date: 02/26/2025
 
 Some GitHub Enterprise versions and settings aren't supported. For example:
 
-- GitHub Enterprise Cloud with data residency (ghe.com)
 - GitHub Enterprise Server with a custom domain is not supported, even if the instance is publicly accessible
-- Github Enterprise Server hosted on a private network
+- GitHub Enterprise Server hosted on a private network
 - IP allowlist
 
 ### Azure DevOps to GitHub Enterprise migration consideration
 If your team uses Fabric Git Integration and is evaluating a migration from Azure DevOps to GitHub Enterprise, it’s recommended to run validation tests to ensure Git Integration functionality remains unaffected. Fabric Git Integration relies on the underlying Git provider APIs, which differ in capabilities and limitations between Azure DevOps and GitHub Enterprise, as described above.
+
+### Differences between Git Integration and recycle bin item recovery behavior
+If you use Git Integration, you might encounter unexpected behavior in scenarios where deleted items are re‑created or restored through a combination of Git operations and recycle bin recovery.
+This occurs because Git operations (such as Undo or Update from Git) re‑create deleted items by assigning a new item ID, whereas restoring an item from the recycle bin preserves the original item ID. As a result, duplicate items with different identities can exist in the workspace, which may cause Git Integration to stop working as expected and also can affect existing dependencies.
+##### Mitigation
+Delete the item that was re‑created by Git Integration. After the duplicate item is removed, Git operations should resume normally.
+##### Additional note
+Git Integration re‑creates item definitions only and does not restore item data. In contrast, restoring an item from the recycle bin restores both the item definition and its data.
+
+For differences in Deployment Pipeline, check out our [documentation](../deployment-pipelines/understand-the-deployment-process.md#differences-between-deployment-pipeline-and-recycle-bin-item-recovery-behavior). 
 
 ### Workspace limitations
 
@@ -52,6 +58,7 @@ If your team uses Fabric Git Integration and is evaluating a migration from Azur
   Once connected, anyone with [permission](/fabric/cicd/git-integration/git-integration-process#permissions) can work in the workspace.
 - Workspaces with template apps installed can't be connected to Git.
 - [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces) can't connect to a Git provider.
+- Workspaces can contain a maximum of 1,000 items. If the Git branch contains more than 1,000 items, syncing the content to the workspace will fail. To avoid this limitation, consider splitting your artifacts into smaller sets. Each set should be placed in a separate workspace and linked to a different Git branch, or organized into different folders within a single branch. For further reading follow [workspace item limits](/fabric/admin/portal-workspaces#workspace-item-limits).
 
 ### Branch and folder limitations
 
@@ -59,7 +66,7 @@ If your team uses Fabric Git Integration and is evaluating a migration from Azur
 - Maximum length of full path for file names is 250 characters. Longer names fail.
 - Maximum file size is 25 MB.
 - Folder structure is maintained up to 10 levels deep.
-- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using PowerBI Desktop to download reports/datasets as *.pbix*.
+- Downloading a report/dataset as *.pbix* from the service after deploying them with Git integration is not recommended, as the results are unreliable. We recommend using Power BI Desktop to download reports/datasets as *.pbix*.
 - If the item’s display name has any of these characteristics, The Git folder is renamed to the logical ID (Guid) and type:
   - Has more than 256 characters
   - Ends with a <kbd>.</kbd> or a space

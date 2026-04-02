@@ -1,20 +1,15 @@
 ---
 title: Add a real-time weather source to an eventstream
 description: Learn how to add a real-time weather source to an eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
-ms.date: 4/24/2025
+ms.date: 12/11/2025
 ms.search.form: Source and Destination
 ---
 
 # Add a real-time weather source to an eventstream (preview)
 
 [!INCLUDE [real-time-weather-source-description-prerequisites](./includes/real-time-weather-source-description-prerequisites.md)] 
-
-- [Create an eventstream](create-manage-an-eventstream.md) if you don't have one already.
 
 ## Add a real-time weather as a source
 
@@ -33,6 +28,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 1. You see the real-time weather source added to your eventstream in **Edit mode**. Select **Publish** to publish the changes and begin streaming real-time weather data to the eventstream.
 
     :::image type="content" source="media/add-source-real-time-weather/edit-mode.png" alt-text="A screenshot of the added real-time weather source in Edit mode with the Publish button highlighted." lightbox="./media/add-source-real-time-weather/edit-mode.png":::
+
 1. After you complete these steps, the source is available for visualization in the **Live view**. Select the **real-time weather** tile in the diagram to see the page similar to the following one.
 
     :::image type="content" source="media/add-source-real-time-weather/live-view.png" alt-text="A screenshot of the published eventstream with real-time weather source in Live View." lightbox="./media/add-source-real-time-weather/live-view.png":::
@@ -76,3 +72,4 @@ To learn more about weather data fields and concepts, check out:
 
 - [Weather - Get Current Conditions](/rest/api/maps/weather/get-current-conditions)
 - [Weather service concepts](/azure/azure-maps/weather-services-concepts)
+

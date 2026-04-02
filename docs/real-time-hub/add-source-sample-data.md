@@ -1,10 +1,8 @@
 ---
 title: Get events from sample data sources
 description: This article describes how to get events from sample data sources.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
 ms.date: 07/16/2025
 ---
 
@@ -24,7 +22,7 @@ This article describes how to get events from sample data sources into Real-Time
 
 ## Add sample data as a source
 
-1. On the **Data sources** page, select **Sample scenarios** from categories at the top.
+1. On the **Data sources** page, select **Samples** from categories at the top.
 1. Select **Connect** on a sample scenario tile (for example, Bicycle rentals) on the page.
 
     :::image type="content" source="./media/add-source-sample-data/select-sample-data.png" alt-text="Screenshot that shows the selection of Sample data as the source type in the Connect to data source page." lightbox="./media/add-source-sample-data/select-sample-data.png":::
@@ -54,3 +52,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

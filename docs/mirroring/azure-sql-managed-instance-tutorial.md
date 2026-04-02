@@ -1,10 +1,8 @@
 ---
 title: "Tutorial: Configure Microsoft Fabric Mirrored Databases From Azure SQL Managed Instance"
 description: Learn how to configure a mirrored database from Azure SQL Managed Instance in Microsoft Fabric.
-author: whhender
-ms.author: whhender
-ms.reviewer: lazartimotic, jingwang, nzagorac
-ms.date: 09/25/2025
+ms.reviewer: lazartimotic, jingwang, nzagorac, wiassaf
+ms.date: 12/04/2025
 ms.topic: tutorial
 ---
 
@@ -14,9 +12,8 @@ ms.topic: tutorial
 
 ## Prerequisites
 
-- Create or use an existing Azure SQL Managed Instance.
-  - [Update Policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql&tabs=azure-portal&preserve-view=true) for source Azure SQL Managed Instance needs to be configured to "[Always up to date](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#always-up-to-date-update-policy)" or "[SQL Server 2025](/azure/azure-sql/managed-instance/update-policy?view=azuresql&preserve-view=true&tabs=azure-portal#sql-server-2025-update-policy)".
-  - The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
+- Create or use an existing Azure SQL Managed Instance. Review [limitations](azure-sql-managed-instance-limitations.md).
+- The source Azure SQL Managed Instance can be either a single SQL managed instance or a SQL managed instance belonging to an instance pool.
   - If you don't have an Azure SQL Managed Instance, [you can create a new SQL managed instance](/azure/azure-sql/managed-instance/instance-create-quickstart?view=azuresql&tabs=azure-portal&preserve-view=true). You can use the [Azure SQL Managed Instance free offer](/azure/azure-sql/managed-instance/free-offer?view=azuresql&preserve-view=true) if you like.
 - You need an existing capacity for Fabric. If you don't, [start a Fabric trial](../fundamentals/fabric-trial.md).
   - The Fabric capacity needs to be active and running. A paused or deleted capacity impacts Mirroring and no data are replicated.
@@ -24,9 +21,10 @@ ms.topic: tutorial
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - You need to have a member or admin role in your workspace when you create a mirrored database from the Fabric portal. During creation, the managed identity of Azure SQL Managed Instance is automatically granted "Read and write" permission on the mirrored database. Users with the contributor role don't have the Reshare permission necessary to complete this step.
-- Networking requirements for Fabric to access your Azure SQL Managed Instance:
+- Check the networking requirements for Fabric to access your Azure SQL Managed Instance:
   - If your Azure SQL Managed Instance is not publicly accessible, [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) or [on-premises data gateway](/data-integration/gateway/service-gateway-onprem) to mirror the data. Make sure the Azure Virtual Network or gateway server's network can connect to the Azure SQL Managed Instance via [a private endpoint](/azure/azure-sql/managed-instance/private-endpoint-overview?view=azuresql-mi&preserve-view=true).
   - If you want to connect to Azure SQL Managed Instance's public endpoint without data gateway, you need to allow inbound traffic from Power BI and Data Factory service tags or from Azure Cloud service tag in the network security group. Learn more from [Configure public endpoints in Azure SQL Managed Instance](/azure/azure-sql/managed-instance/public-endpoint-configure).
+- Check the networking requirements for Fabric: If you want to use workspace-level private link, follow the instructions to [create the private link service in Azure](../security/security-workspace-level-private-links-set-up.md#step-2-create-the-private-link-service-in-azure) and [create a private endpoint](../security/security-workspace-level-private-links-set-up.md#step-5-create-a-private-endpoint) from Azure SQL Managed Instance's virtual network and subnet.
 
 ### Enable System Assigned Managed Identity (SAMI) of your Azure SQL Managed Instance
 
@@ -44,7 +42,7 @@ You can accomplish this with a [login and mapped database user](#use-a-login-and
 
 #### Use a login and mapped database user
 
-1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [mssql extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). Connect to the `master` database.
+1. Connect to your Azure SQL Managed Instance using [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or the [MSSQL extension](https://aka.ms/mssql-marketplace) for [Visual Studio Code](https://code.visualstudio.com/docs). Connect to the `master` database.
 1. Create a server login and assign the appropriate permissions.
 
     The permissions required for the Fabric login are:

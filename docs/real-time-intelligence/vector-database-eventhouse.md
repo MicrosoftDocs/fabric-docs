@@ -2,10 +2,7 @@
 title: "Tutorial: Use an Eventhouse as a vector database"
 description: Learn about how you can use an Eventhouse to store and query vector data in Real-Time Intelligence.
 ms.reviewer: sharmaanshul
-ms.author: spelluru
-author: spelluru
 ms.topic: tutorial
-ms.custom:
 ms.date: 08/19/2025
 ms.subservice: rti-eventhouse
 ms.search.form: Eventhouse
@@ -174,7 +171,7 @@ To call Azure OpenAI embedding API you need an endpoint.
 
 | Variable name | Value |
 |---|---|
-| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://portal.azure.com/). Alternatively, you can find the value in the **[Azure AI Foundry](https://oai.azure.com/) > Playground > Code View**. An example endpoint is: `https://docs-test-001.openai.azure.com/`. |
+| endpoint |This value can be found in the **Keys & Endpoint** section when examining your resource from the [Azure portal](https://portal.azure.com/).  |
 
 Use the information in the table when running the Azure OpenAI cells.
 

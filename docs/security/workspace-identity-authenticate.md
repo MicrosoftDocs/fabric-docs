@@ -3,10 +3,9 @@ title: Authenticate with Microsoft Fabric workspace identity
 description: This article describes how to authenticate using workspace identity. 
 author: msmimart
 ms.author: mimart
-ms.service: fabric
 ms.subervice: security
-ms.topic: how-to #Don't change
-ms.date: 08/04/2025
+ms.topic: how-to
+ms.date: 02/20/2026
 
 #customer intent: As a data engineer, I want to authenticate using workspace identity so that my Fabric items can connect with data sources securely.
 
@@ -29,7 +28,7 @@ The example below shows you the steps to enable Workspace identity authenticatio
 
 ### Step 1: Create the workspace identity
 
-You must be a workspace admin to be able to create and manage a workspace identity.
+You must be a workspace admin to be able to create and manage a workspace identity. The Workspace identity authentication option appears in connection and shortcut experiences only after a workspace identity has been created; see [Workspace identity](workspace-identity.md) for details.
 
 1. Navigate to the workspace and open the workspace settings.
 
@@ -112,7 +111,9 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 * Trusted workspace access to firewall-enabled Storage accounts is supported in any F capacity.
 
-* You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience.
+* You can create connections with workspace-identity-based authentication in the *Manage Gateways and Connections* experience for a cloud connection.
+
+* Workspace-Identity-based authentication is currently not supported for gateway connections. 
 
 * If you reuse connections configured with the workspace identity authentication method in Fabric items other than OneLake shortcuts, pipelines, semantic models, or Dataflows Gen2, or in other workspaces, they might not work.
 

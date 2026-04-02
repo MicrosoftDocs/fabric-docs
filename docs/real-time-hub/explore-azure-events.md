@@ -1,11 +1,9 @@
 ---
 title: Explore Azure events in Fabric Real-Time hub
 description: This article shows how to explore Azure events in Fabric Real-Time hub. It provides details on the Azure events page in the Real-Time hub user interface.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Explore Azure events in Fabric Real-Time hub
@@ -13,7 +11,7 @@ ms.date: 07/22/2025
 
 This article describes columns on the **Azure events** page and actions available for each event. 
 
-:::image type="content" source="./media/explore-azure-events/azure-events-page.png" alt-text="Screenshot that shows the Real-Time hub Azure events page." lightbox="./media/explore-azure-events/azure-events-page.png":::
+:::image type="content" source="./media/explore-azure-events/azure-events.png" alt-text="Screenshot that shows the Real-Time hub Azure events page." lightbox="./media/explore-azure-events/azure-events.png":::
 
 [!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
 
@@ -43,3 +41,4 @@ Here are the actions available on each event type group. When you move the mouse
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
 - [Get Azure Blob Storage events](get-azure-blob-storage-events.md).
 - [Set alerts on Azure Blob Storage events](set-alerts-azure-blob-storage-events.md)
+

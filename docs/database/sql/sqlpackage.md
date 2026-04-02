@@ -1,8 +1,6 @@
 ---
 title: "SqlPackage for SQL database "
 description: Learn how to work with SqlPackage in your SQL database with Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: drskwier, antho, sukkaur
 ms.date: 08/08/2025
 ms.topic: how-to
@@ -17,7 +15,8 @@ In this tutorial, you learn how to work with SqlPackage in your [SQL database in
 
 [SqlPackage](/sql/tools/sqlpackage/sqlpackage) is a CLI providing *database portability* and *database deployments*.
 
-- The portability (import/export) of a database managed in Azure or in Fabric ensures your data is portable to other platforms should you want to migrate later on. - Portability includes movement to and from SQL Server, Azure SQL Database, Azure SQL Managed Instance, and SQL database in Fabric through self-contained database copies (`.bacpac` or `.dacpac` files).
+- The portability (import/export) of a database managed in Azure or in Fabric ensures your data is portable to other platforms should you want to migrate later on.
+   - Portability includes movement to and from SQL Server, Azure SQL Database, Azure SQL Managed Instance, and SQL database in Fabric through self-contained database copies (`.bacpac` or `.dacpac` files).
 
 SqlPackage can also enable easy database deployments of incremental changes to database objects (new columns in tables, alterations to existing stored procedures, etc.).
 

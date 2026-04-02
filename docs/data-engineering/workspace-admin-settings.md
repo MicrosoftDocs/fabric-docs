@@ -2,10 +2,7 @@
 title: Workspace administration settings in Microsoft Fabric
 description: Learn about the workspace administration settings for Data Engineering and Science experiences in Fabric.
 ms.reviewer: saravi
-ms.author: eur
-author: eric-urban
-ms.topic: article
-ms.custom:
+ms.topic: how-to
 ms.date: 11/15/2023
 ---
 

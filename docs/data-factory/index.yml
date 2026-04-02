@@ -1,16 +1,14 @@
 ### YamlMime:Landing
-title: Data Factory documentation in Microsoft Fabric
-summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
+title: Fabric Data Factory documentation
+summary: Fabric Data Factory provides cloud-scale data movement and data transformation services for complex ETL scenarios.
 
 metadata:
-  title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list.
+  title: Fabric Data Factory documentation
+  description: Learn about Fabric Data Factory for cloud-scale data movement and transformation services.
   ms.subservice: data-factory
   ms.custom: configuration
   ms.topic: landing-page # Required
-  author: whhender #Required; your GitHub user alias, with correct capitalization.
-  ms.author: whhender #Required; microsoft alias of author; optional team alias.
+  ms.reviewer: whhender #Required; microsoft alias of author; optional team alias.
   ms.date: 6/02/2025 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -32,23 +30,41 @@ landingContent:
             url: connector-overview.md
           - text: Pricing in Data Factory
             url: pricing-overview.md
-          - text: Migrate to Data Factory in Fabric
+          - text: Migrate to Fabric Data Factory
             url: upgrade-paths.md
-          - text: Compare Azure Data Factory to Data Factory in Fabric
+          - text: Compare Azure Data Factory to Fabric Data Factory
             url: compare-fabric-data-factory-and-azure-data-factory.md
       - linkListType: learn
         links:
           - text: Data Factory training
             url: /training/browse/?terms=data%20factory%20fabric
+  - title: Migrate to Fabric Data Factory
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Plan your migration
+            url: migrate-planning-azure-data-factory.md
+          - text: Migrate pipelines with the PowerShell upgrade tool
+            url: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+          - text: Bring your Azure Data Factory into Fabric
+            url: migrate-pipelines-azure-data-factory-item.md
+      - linkListType: overview
+        links:
+          - text: Compare Azure Data Factory to Fabric Data Factory
+            url: compare-fabric-data-factory-and-azure-data-factory.md
+          - text: Connector continuity
+            url: connector-parity.md
+          - text: Migration best practices
+            url: migration-best-practices.md
   # Card
   - title: Connect to your data
     linkLists:
       - linkListType: get-started
         links:
-        - text: Dataflow Gen2 connectors
-          url: dataflow-support.md
         - text: Pipeline connectors
           url: pipeline-support.md
+        - text: Dataflow Gen2 connectors
+          url: dataflow-support.md
 
   # Card
   - title: Connect on-premises from the cloud
@@ -73,6 +89,8 @@ landingContent:
             url: data-source-management.md
           - text: Save a draft of your dataflow
             url: dataflows-gen2-save-draft.md
+          - text: Enrich data with ML model during ingestion
+            url: dataflow-gen2-machine-learning-model-endpoints.md
 
   # Card 
   - title: Move data

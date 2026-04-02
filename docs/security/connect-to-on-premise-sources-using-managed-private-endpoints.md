@@ -1,11 +1,12 @@
 ---
 title: Connect on-premises data sources to Microsoft Fabric using managed private endpoints
 description: Learn how to securely connect on-premises or custom-hosted data sources to Microsoft Fabric using managed private endpoints and private link services.
-author: saravi
-ms.author: saravi
+author: msmimart
+ms.author: mimart
+ms.reviewer: saravi
 ms.topic: how-to
 ms.custom: sfi-image-nochange, sfi-ropc-nochange
-ms.date: 10/07/2025
+ms.date: 03/03/2026
 ---
 
 # Connect to external sources or on-premises data sources to Microsoft Fabric using managed private endpoints
@@ -312,7 +313,6 @@ Common scenarios include:
 
 - Requires at least **2 IP configurations** (in multiples of 2) for high availability.
 - Supports **static destination IP addresses only**.
-- Source Private Endpoint, Private Link Service, and Fabric workspace must reside in the **same region** (cross-region is not yet supported).
 - Available only in select regions during preview: *North Central US, East US 2, Central US, South Central US, West US, West US 2, West US 3, Southeast Asia, Australia East, Spain Central*.
 - You must enable the feature flag `Microsoft.Network/AllowPrivateLinkserviceUDR` in your Azure subscription.
 
@@ -507,7 +507,7 @@ You can extend this template to include VM deployment and Private Link Service d
 | Windows Firewall | Ensure there there is no Windows Firewall blocking the ports where the traffic is being forwarded to | 
 | NAT VM sizing | A small VM is usually enough; monitor if high concurrent sessions are expected. |
 | High availability | For production, use multiple forwarder VMs in an availability set / zone with LB distributing. |
-| Connectivity | Ensure your have established the connectivity between the IP fowarding VM and the data source using a name or the ip address. |
+| Connectivity | Ensure you have established connectivity between the IP forwarding VM and the data source by using a name or the IP address. |
 | Security | Restrict NSGs to only required inbound (1433 to forwarder) and management ports (22) from trusted ranges. |
 
 ## Learn more
@@ -515,4 +515,3 @@ You can extend this template to include VM deployment and Private Link Service d
 * [About managed private endpoints in Fabric](./security-managed-private-endpoints-overview.md)
 * [About private links in Fabric](./security-private-links-overview.md)
 * [Overview of managed virtual networks in Fabric](./security-managed-vnets-fabric-overview.md)
-

@@ -1,11 +1,9 @@
 ---
 title: Variable references in Dataflow
 description: --
-author: ptyx507x
-ms.author: miescobar
-ms.reviewer: whhender
+ms.reviewer: miescobar
 ms.topic: tutorial
-ms.date: 10/2/2025
+ms.date: 3/23/2026
 ms.custom: dataflows
 ---
 
@@ -147,15 +145,16 @@ Once you select OK, notice that the diagram view already created the link betwee
 >[!NOTE]
 >It's recommended that you get acquainted with the concept of data destinations in Dataflow Gen2 and how its mashup script gets created from the article on [data destinations and managed settings](dataflow-gen2-data-destinations-and-managed-settings.md#mashup-script-for-data-destination-queries) 
 
-The last component to modify in this scenario is the destination. While the information about what the data destination is can be found in the Dataflow editor, to modify this part of the dataflow you need to use Git or the REST API.
+The last component to modify in this scenario is the destination. To do this, you use the [advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md) feature, which lets you modify the destination query script directly in the Dataflow editor using Power Query M code.
 
 ![Screenshot of the flyout that contains the data destination settings for the dimension_city query.](media/dataflow-gen2-parameterized-dataflow/destination-settings-flyout.png)
 
-This tutorial shows you how to make the changes through Git. Before you can make changes through git make sure to:
-* **Create a query for the WarehouseId variable**: follow the same process described in earlier sections to create a new blank query and replace the formula for the Source step to be:
+Before you begin, create a query for the **WarehouseId** variable. Follow the same process described in earlier sections to create a new blank query and replace the formula for the Source step to be:
+
 ```M code
 Variable.ValueOrDefault("$(/**/My Library/WarehouseId)", "Your Warehouse ID")
 ``` 
+
 >[!NOTE]
 >Make sure to replace the string of **"Your Warehouse ID"**, the second argument of the function, with your own corresponding value in your environment and save the query.
 
@@ -165,21 +164,34 @@ Variable.ValueOrDefault("$(/**/My Library/WarehouseId)", "Your Warehouse ID")
 >Make sure that all your queries that hold a variable have staging disabled.
 >![Screenshot of the staging option for a query in its contextual menu.](media/dataflow-gen2-variable-references/disable-staging-query.png)
 
-* **Save the Dataflow**: use the Save button in the home tab of the ribbon.
+### Enable advanced edit for data destination queries
 
-![Screenshot of the dataflow save button.](media/dataflow-gen2-parameterized-dataflow/dataflow-save.png)
+To modify the destination query directly in the Dataflow editor, you first need to enable the advanced edit feature:
 
-Once your Dataflow is saved, make sure to commit the changes to your Git repository and head over to your repository to see the *mashup.pq* file of your Dataflow.
-When looking at the *mashup.pq* file, look for the query that you associated the data destination with. In this scenario, the name of that query is dimension_city. You see a record attribute above this query name:
+1. Select **Options** from the **Home** tab in the ribbon.
 
-```M code 
-[DataDestinations = {[Definition = [Kind = "Reference", QueryName = "dimension_city_DataDestination", IsNewTarget = true], Settings = [Kind = "Manual", AllowCreation = true, ColumnSettings = [Mappings = {[SourceColumnName = "CityKey", DestinationColumnName = "CityKey"], [SourceColumnName = "WWICityID", DestinationColumnName = "WWICityID"], [SourceColumnName = "City", DestinationColumnName = "City"], [SourceColumnName = "StateProvince", DestinationColumnName = "StateProvince"], [SourceColumnName = "Country", DestinationColumnName = "Country"], [SourceColumnName = "Continent", DestinationColumnName = "Continent"], [SourceColumnName = "SalesTerritory", DestinationColumnName = "SalesTerritory"], [SourceColumnName = "Region", DestinationColumnName = "Region"], [SourceColumnName = "Subregion", DestinationColumnName = "Subregion"], [SourceColumnName = "Location", DestinationColumnName = "Location"], [SourceColumnName = "LatestRecordedPopulation", DestinationColumnName = "LatestRecordedPopulation"]}], DynamicSchema = false, UpdateMethod = [Kind = "Replace"], TypeSettings = [Kind = "Table"]]]}]
-shared dimension_city = let
-```
-This attribute record has a field with the name QueryName, which holds the name of the query that has all the data destination logic associated for this query. This query looks as follows:
+1. In the **Options** dialog, scroll down to the **Data destinations** section.
+
+1. Select the checkbox for **Enable advanced edit for data destination queries**.
+
+1. A warning dialog appears explaining that modifying destination queries can cause unexpected behavior or break the dataflow. Read the warning carefully and select **OK** to confirm.
+
+1. Select **OK** to close the Options dialog.
+
+### Modify the destination query
+
+After you enable advanced edit, you can access and modify the destination query for your data destination:
+
+1. In the **Queries** pane, locate the data destination section that shows your configured destinations.
+
+1. Right-click on the destination query named **dimension_city**.
+
+1. From the context menu, select **Advanced editor**.
+
+The destination query looks as follows:
 
 ```M code    
-shared dimension_city_DataDestination = let
+let
   Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
   Navigation_1 = Pattern{[workspaceId = "8b325b2b-ad69-4103-93ae-d6880d9f87c6"]}[Data],
   Navigation_2 = Navigation_1{[warehouseId = "527ba9c1-4077-433f-a491-9ef370e9230a"]}[Data],
@@ -188,10 +200,10 @@ in
   TableNavigation
 ```
 
-You notice that, similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceid that needs to be used and also the warehouseId. Replace those fixed values with the identifiers of the queries that you created and your script shall look as follows:
+Similarly to the script of the source for the Lakehouse, this script for the destination has a similar pattern where it hardcodes the workspaceId and warehouseId. Replace those fixed values with the identifiers of the queries that you created and your script looks as follows:
 
 ```M code 
-shared dimension_city_DataDestination = let
+let
   Pattern = Fabric.Warehouse([HierarchicalNavigation = null, CreateNavigationProperties = false]),
   Navigation_1 = Pattern{[workspaceId = WorkspaceId]}[Data],
   Navigation_2 = Navigation_1{[warehouseId = WarehouseId]}[Data],
@@ -200,6 +212,9 @@ in
   TableNavigation
 ```
 
-You can now commit this change and update your dataflow using the changes from your Dataflow through the source control feature in your workspace.
+Select **OK** to save your changes in the advanced editor.
+
+> [!IMPORTANT]
+> After you modify a destination query using advanced edit, the standard UI for changing that destination no longer works. You must continue to use the advanced editor for any further modifications to that destination. For more information, see [Advanced edit for data destination queries](dataflow-gen2-advanced-edit-data-destinations.md).
 
 You can now run your Dataflow, which uses values from variable libraries.

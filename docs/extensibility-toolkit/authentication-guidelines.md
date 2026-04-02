@@ -1,10 +1,9 @@
 ---
 title: Authentication guidelines for Microsoft Fabric Extensibility Toolkit
 description: This article provides guidelines and best practices for implementing authentication in Fabric extensibility toolkit workloads.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.date: 11/18/2025
+ms.date: 12/15/2025
 ---
 
 # Authentication guidelines for Microsoft Fabric Extensibility Toolkit

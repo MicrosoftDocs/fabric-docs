@@ -19,6 +19,11 @@
         "redirect_document_id": true
       },
       {
+        "source_path_from_root": "/docs/data-factory/frequently-asked-questions.yml",
+        "redirect_url": "/fabric/data-factory/data-factory-overview",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/whats-new.md",
         "redirect_url": "/fabric/get-started/whats-new?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
         "redirect_document_id": true
@@ -79,6 +84,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/migrate-from-azure-data-factory.md",
+        "redirect_url": "/fabric/data-factory/migrate-planning-azure-data-factory",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
         "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
         "redirect_document_id": false
@@ -126,6 +136,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/copilot-pipeline-expression-builder.md",
+        "redirect_url": "/fabric/data-factory/expression-language#build-pipeline-expressions-with-copilot",
         "redirect_document_id": false
       },
       {
@@ -184,6 +199,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/deactivate-activity.md",
+        "redirect_url": "/fabric/data-factory/activity-overview#deactivate-an-activity",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
         "redirect_document_id": false
@@ -226,6 +246,11 @@
       {
         "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
         "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/spark-connector-copy-activity.md",
+        "redirect_url": "/fabric/data-factory/spark-connector-overview",
         "redirect_document_id": false
       },
       {
@@ -284,6 +309,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/azure-key-vault-reference-overview.md",
+        "redirect_url": "/fabric/data-factory/azure-key-vault-reference-configure",
+        "redirect_document_id": false
+      },
+      {
         "source_path_from_root": "/docs/data-factory/data-workflows-hello-world.md",
         "redirect_url": "/fabric/data-factory/apache-airflow-jobs-hello-world",
         "redirect_document_id": false
@@ -334,6 +364,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/copilot-modern-get-data.md",
+        "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#get-data-with-copilot-preview",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/data-workflows-workspace-settings.md",
         "redirect_url": "/fabric/data-factory/apache-airflow-workspace-settings",
         "redirect_document_id": false
@@ -342,6 +377,11 @@
         "source_path_from_root": "/docs/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory.md",
         "redirect_url": "/azure/data-factory/change-data-capture-from-sap-to-onelake-with-azure-data-factory",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/apache-airflow-jobs-hello-world.md",
+        "redirect_url": "/fabric/data-factory/create-apache-airflow-jobs",
+        "redirect_document_id": true
       },
       {
         "source_path_from_root": "/docs/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory.md",
@@ -384,6 +424,11 @@
         "redirect_document_id": false
       },
       {
+        "source_path_from_root": "/docs/data-factory/monitor-data-factory.md",
+        "redirect_url": "/fabric/data-factory/monitor-pipeline-runs",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/copy-job-support.md",
         "redirect_url": "/fabric/data-factory/connector-overview",
         "redirect_document_id": false
@@ -397,6 +442,21 @@
         "source_path_from_root": "/docs/data-factory/data-type-mapping.md",
         "redirect_url": "/fabric/data-factory/data-type-conversion-copy-activity",
         "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/data-type-mapping-data-movement.md",
+        "redirect_url": "/fabric/data-factory/copy-data-activity#data-type-mapping",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/evaluate-pipeline-expression.md",
+        "redirect_url": "/fabric/data-factory/expression-language#evaluate-your-pipeline-expressions-before-you-run-them",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/recent-data.md",
+        "redirect_url": "/fabric/data-factory/get-data-dataflow-gen2#recent-data-preview",
+        "redirect_document_id": false
       }
     ]
 }

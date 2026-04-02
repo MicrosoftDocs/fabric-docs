@@ -1,20 +1,18 @@
 ---
 title: Billing and Utilization Reporting
 description: Understand what customers can expect from the metrics app experience for SQL database in Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: amapatil # Microsoft alias
-ms.date: 10/08/2025
-ms.topic: conceptual
+ms.reviewer: amapatil
+ms.date: 03/30/2026
+ms.topic: concept-article
 ms.search.form: SQL database Billing and Utilization, Databases Billing and Utilization
 ---
-# Billing and utilization reporting for SQL database in Microsoft Fabric
+# Billing and utilization reporting
+
+**Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
 The article explains compute usage reporting of the SQL database in Microsoft Fabric.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, see [Understand your Azure bill on a Fabric capacity](../../enterprise/azure-billing.md).
-
-After February 1, 2025, compute and data storage for SQL database are charged to your Fabric capacity. Additionally, backup billing will start after April 1, 2025.
 
 ## Capacity
 
@@ -38,6 +36,8 @@ For example, a database with workload activity for two minutes and otherwise ina
 
 Only storage is billed throughout the hour.
 
+To limit compute utilization for a SQL database, consider [controlling compute usage by configuring a maximum vCore setting](control-compute-usage.md). Configuring a maximum vCore limit for a SQL database can control peak compute usage in shared Fabric capacities, prevent unexpected cost spikes and throttling. You can also apply capacity consumption guardrails to development, test, or early preview workloads.
+
 ## Autoscaling and minimum memory allocation
 
 SQL database in Fabric autoscales compute and provisions a minimum of 2 GB memory, billed as compute while the database is online.
@@ -56,7 +56,7 @@ For example, the following sample bill in this example is calculated as follows:
 
 | **Time Interval (min)** | **vCores used each second** | **Memory GB used each second** | **Compute dimension billed** | **CU Seconds Billed (Simple Explanation)** |
 |:--|:--|:--|:--|:--|
-| 00:00–0:05 | 2 | 3 | vCores used | Used 2 vCores for 300 seconds. CPU was higher than memory, so billing is based on vCore usage. Calculation: 2 × 300 × 2.611 = 783 CU seconds. |
+| 00:00–0:05 | 2 | 3 | vCores used | Used 2 vCores for 300 seconds. CPU was higher than memory, so billing is based on vCore usage. Calculation: 2 × 300 × 2.611 = 1566.6 CU seconds. |
 | 0:05–0:15  | 1 | 6 | Memory used | Used 6 GB memory for 600 seconds. Memory exceeded CPU, so billing is based on memory usage. Memory-to-vCore ratio: 6 GB = 2 vCores. Calculation: 2 × 600 × 2.611 = 3,133 CU seconds. |
 | 0:15–0:30  | 0 | 2 | Minimum memory allocated | Minimum 2 GB memory is allocated to keep the database ready, even when idle. Memory-to-vCore ratio: 2 GB = 0.6666 vCore. Calculation: 0.6666 × 900 × 2.611 = 1,567  CU seconds. |
 | 0:30–0:60  | 0 | 0 | No compute billed after 15 minutes of inactivity | No activity for 15 minutes, so all compute, including CPU and memory, is released. Compute billing stops. Calculation: 0 CU seconds. |
@@ -175,5 +175,6 @@ For example, if a database accumulates 100 GB of allocated data storage and back
 
 ## Related content
 
-- [Performance Dashboard for SQL database in Microsoft Fabric](performance-dashboard.md)
+- [Control compute usage](control-compute-usage.md)
 - [Monitor SQL database in Microsoft Fabric](monitor.md)
+- [Performance Dashboard for SQL database in Microsoft Fabric](performance-dashboard.md)

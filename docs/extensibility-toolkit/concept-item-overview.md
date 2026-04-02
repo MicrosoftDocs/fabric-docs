@@ -1,11 +1,9 @@
 ---
 title: Fabric Item Overview
 description: Learn how Fabric extensions are built using the item structure with standardized editors and components.
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: overview
-ms.custom:
-ms.date: 11/19/2025
+ms.date: 12/15/2025
 ---
 
 # Fabric Item Overview
@@ -101,4 +99,4 @@ To implement items in your workload:
 - [Define Item Creation](how-to-create-item.md)
 - [Store Item Definition](how-to-store-item-definition.md)
 
-For detailed component documentation, see the [ItemEditor documentation](https://github.com/microsoft/fabric-extensibility-toolkit/docs/controls/ItemEditor.md).
+For detailed component documentation, see the [ItemEditor documentation](https://github.com/microsoft/fabric-extensibility-toolkit/blob/main/docs/components/ItemEditor.md).

@@ -1,11 +1,9 @@
 ---
 title: Explore Fabric workspace item events in Fabric Real-Time hub
 description: This article shows how to explore Fabric workspace item events in Fabric Real-Time hub.
-author: mystina
-ms.author: majia
+ms.reviewer: majia
 ms.topic: how-to
-ms.custom:
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Explore Fabric workspace item events in Fabric Real-Time hub
@@ -21,7 +19,7 @@ Fabric workspace item events allow you to receive notification when certain acti
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **Fabric workspace item events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-workspace-item-events/select-from-list.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
+    :::image type="content" source="./media/explore-fabric-workspace-item-events/workspace-events.png" alt-text="Screenshot that shows the selection of Fabric workspace item events in the Fabric events page.":::
 1. You should see the detail view for Fabric workspace item events.
 
     :::image type="content" source="./media/explore-fabric-workspace-item-events/detail-page.png" alt-text="Screenshot that shows the detail page for Fabric workspace item events." lightbox="./media/explore-fabric-workspace-item-events/detail-page.png":::
@@ -80,6 +78,7 @@ An event has the following top-level data:
 | `dataschemaversion` | String | The version of the data schema. | `1.0` |
 | `capacityId` | string | Unique identifier for the capacity. | `00000000-0000-0000-0000-000000000000` |
 | `domainId` | string | Unique identifier for the domain. | `00000000-0000-0000-0000-000000000000` |
+| `datacontenttype` | string | Content type of data value. | `application/json` |
 
 The `data` object has the following properties: 
 
@@ -101,3 +100,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

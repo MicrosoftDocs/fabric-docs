@@ -3,8 +3,7 @@ title: What is the Microsoft Fabric admin portal?
 description: This article provides an overview of the admin Microsoft Fabric admin portal.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 10/30/2025
 ---
 
@@ -12,7 +11,7 @@ ms.date: 10/30/2025
 
 The Microsoft Fabric admin portal includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](tenant-settings-index.md), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
 
-To access the admin portal, you need a [Fabric license](../enterprise/licenses.md#per-user-licenses) and the *Fabric administrator* role.
+To access the admin portal, you need a [Fabric license](../enterprise/licenses.md#per-user-licenses) and the *Fabric administrator* role. 
 
 If you're not in one of these roles, you only see *Capacity settings* in the admin portal.
 
@@ -24,7 +23,7 @@ The many controls in the admin portal are listed in the following table, with li
 | :---    | :---         |
 | [Tenant settings](tenant-settings-index.md) | Enable, disable, and configure Microsoft Fabric. |
 | [Users](service-admin-portal-users.md) | Manage users in the Microsoft 365 admin portal. |
-| [Premium Per User](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
+| [Power BI Premium Per-User (PPU)](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
 | [Audit logs](service-admin-portal-audit-logs.md) | Audit Microsoft Fabric activities in the Microsoft Purview portal. |
 | [Domains](/fabric/governance/domains) | Manage and organize business data using custom domains in Fabric. |
 | [Workloads](/fabric/fundamentals/fabric-home#create-items-and-explore-workloads) | Manage workloads and their settings. |
@@ -52,6 +51,7 @@ To get to the admin portal, follow these steps:
 
 ## Related content
 
+* Microsoft Fabric is currently available in [Azure public cloud regions](https://azure.microsoft.com/explore/global-infrastructure/geographies/). For more information, see [Fabric region availability](region-availability.md).
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
-* [Workspace tenant settings](portal-workspace.md)
-* [Manage workspaces](portal-workspaces.md)
+* [Workspace tenant settings](portal-workspace.md).
+* [Manage workspaces](portal-workspaces.md).

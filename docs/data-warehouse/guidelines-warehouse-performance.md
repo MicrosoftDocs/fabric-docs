@@ -1,20 +1,182 @@
 ---
 title: Performance Guidelines
-description: This article contains a list of performance guidelines for the warehouse item in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+description: Get performance guidelines for Microsoft Fabric Data Warehouse to optimize queries, ingestion, table design, statistics, caching, and more.
 ms.reviewer: xiaoyul, procha, fipopovi, twcyril
-ms.date: 11/03/2025
+ms.date: 01/14/2026
 ms.topic: best-practice
-ms.custom:
+ai-usage: ai-assisted
 ---
 # Performance guidelines in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This article contains best practices for data ingestion, table management, data preparation, statistics, and querying in warehouses and SQL analytics endpoints. Performance tuning and optimization can present unique challenges, but they also offer valuable opportunities to maximize the capabilities of your data solutions. 
+This article contains best practices for data ingestion, table management, data preparation, statistics, and querying in warehouses and SQL analytics endpoints. Performance tuning and optimization can present unique challenges, but they also offer valuable opportunities to maximize the capabilities of your data solutions.
+
+> [!TIP]
+> For comprehensive cross-workload guidance on Delta table optimization strategies, including recommendations for tables written by Spark or mirroring that are consumed by Fabric Data Warehouse, see [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md).
 
 To monitor performance on your warehouse, see [Monitor Fabric Data warehouse](monitoring-overview.md).
+
+## Query performance
+
+### Statistics 
+
+Statistics are persisted objects that represent data in your tables' columns. The Query Optimizer uses statistics to pick and estimate the cost of a query plan. Fabric Data Warehouse and Lakehouse SQL analytics endpoint use and automatically maintain histogram statistics, average column length statistics, and table cardinality statistics. For more information, see [Statistics in Fabric Data Warehouse](statistics.md).
+
+- The [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?view=fabric&preserve-view=true) and [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) T-SQL commands are supported for single-column histogram statistics. You can leverage these if there's a large enough window between your table transformations and your query workload, such as during a maintenance window or other downtime. This reduces the likelihood of your `SELECT` queries having to first update statistics.
+- Try to define table schema that maintains data type parity in common column comparisons. For example, if you know columns will be often compared to each other in a `WHERE` clause, or used as the `JOIN ... ON` predicate, make sure the data types match. If not possible to use exact same data types, use similar data types compatible for implicit conversion. Avoid explicit data conversions. For more information, see [Data type conversion](/sql/t-sql/data-types/data-type-conversion-database-engine?view=fabric&preserve-view=true).
+
+> [!TIP]
+> For Lakehouse users, the ACE-Cardinality statistic can use information from your tables' Delta log files to be more accurate. Ensure your Spark generated Delta tables include table row-counts with: `spark.conf.set("spark.databricks.delta.stats.collect", "true")`. For more information, see [Configure and manage Automated Table Statistics in Fabric Spark](../data-engineering/automated-table-statistics.md).
+
+When filtering lakehouse tables on timestamp column before Apache Spark runtime 3.5.0, rowgroup-level statistics for timestamp columns aren't generated. This lack of statistics makes it difficult for systems, like Fabric Warehouse, to apply rowgroup elimination (also known as data skipping or predicate pushdown), which is performance optimization that skips irrelevant rowgroups during query execution. Without these statistics, filtering queries that involve timestamp columns might need to scan more data, leading to significant performance degradation. You can upgrade [the Apache Spark runtime in Fabric](../data-engineering/runtime.md). Apache Spark 3.5.0 and higher versions can generate rowgroup-level statistics for timestamp columns. You then need to recreate the table and ingest the data to have rowgroup level statistics generated.
+
+### Cold cache performance
+
+The *first execution* of a query in Fabric Data Warehouse can be unexpectedly slower than subsequent runs. This is known as a *cold start*, caused by system initialization or scaling activities that prepare the environment for processing. 
+
+Cold starts typically occur when: 
+
+- Data is loaded from OneLake into memory because it's being accessed for the first time, and isn't yet cached.
+- If data is accessed for the first time, query execution is delayed until the necessary [statistics](statistics.md) are automatically generated.
+- Fabric Data Warehouse automatically pauses nodes after some period of inactivity to reduce cost, and adds nodes as part of autoscaling. Resuming or creating nodes typically takes less than one second.
+
+These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to come available. 
+
+In-memory and disk caching in Fabric Data Warehouse is fully transparent and automatically enabled. Caching intelligently minimizes the need for remote storage reads by leveraging local caches. Fabric Data Warehouse employs refined access patterns to enhance data reads from storage and elevate query execution speed. For more information, see [Caching in Fabric data warehousing](caching.md).
+
+You can detect cold start effects caused by fetching data from remote storage into memory by querying the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view. Check the `data_scanned_remote_storage_mb` column: 
+
+- The non-zero value in `data_scanned_remote_storage_mb` indicates a cold start. Data was fetched from OneLake during the query execution. Subsequent views should be provably faster in `queryinsights.exec_requests_history`.
+- A zero value in `data_scanned_remote_storage_mb` is the perfect state where all data is cached. No node changes or data from OneLake was needed to serve the query results.
+
+> [!IMPORTANT]
+> Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
+
+<!--
+#### Result set caching
+
+Distinct from in-memory and disk caching, result set caching is a built-in optimization for warehouses and Lakehouse SQL analytics endpoints in Fabric that reduces query read latency. It stores the final result of eligible `SELECT` statements so subsequent cache hits can skip compilation and data processing, returning results faster.
+
+For more information, see [Result set caching](result-set-caching.md).
+-->
+
+### Queries on tables with string columns  
+
+Use the smallest string column length that can accommodate values. Fabric Warehouse is constantly improving; however, you might experience suboptimal performance if using large string data types, particularly large objects (LOBs). For example, for a `customer_name` column's data type, consider your business requirements and expected data, and use an appropriate length `n` when declaring `varchar(n)`, such as **varchar(100)**, instead of **varchar(8000)** or **varchar(max)**. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
+
+- In Fabric Data Warehouse T-SQL, see [guidance for choosing the appropriate length for string data types](#consider-when-to-use-varchar-over-char).
+- Lakehouse table string columns without defined length in Spark are recognized by Fabric Warehouse as **varchar(8000)**. For optimal performance, use the `CREATE TABLE` statement in SparkSQL to define string column as `varchar(n)`, where `n` is maximum column length that can accommodate values.
+
+### Transactions and concurrency
+
+Fabric Data Warehouse is built on a modern, cloud-native architecture that combines transactional integrity, snapshot isolation, and distributed compute to deliver high concurrency and consistency at scale. For more information, see [Transactions in Warehouse Tables](transactions.md).
+
+Fabric Data Warehouse supports ACID-compliant transactions using snapshot isolation. This means:
+
+- Read and write operations can be grouped into a single transaction using standard T-SQL (`BEGIN TRANSACTION`, `COMMIT`, `ROLLBACK`)
+- All-or-nothing semantics: If a transaction spans multiple tables and one operation fails, the entire transaction is rolled back.
+- Read consistency: `SELECT` queries within a transaction see a consistent snapshot of the data, unaffected by concurrent writes.
+
+Fabric Warehouse transactions support: 
+
+- **Data Definition Language (DDL) inside transactions:** You can include `CREATE TABLE` within a transaction block.
+- **Cross-database transactions:** Supported within the same workspace, including reads from SQL analytics endpoints.
+- **Parquet-based rollback:** Since Fabric Data Warehouse stores data in immutable Parquet files, rollbacks are fast. Rollbacks simply revert to previous file versions.
+- **Automatic data compaction and checkpointing:** [Data compaction](#data-compaction) optimizes storage and read performance by merging small Parquet files and removing logically deleted rows.
+- **Automatic checkpointing:** Every write operation (`INSERT`, `UPDATE`, `DELETE`) appends a new JSON log file to [the Delta Lake transaction log](query-delta-lake-logs.md). Over time, this can result in hundreds or thousands of log files, especially in streaming or high-frequency ingestion scenarios. Automatic checkpointing improves metadata read efficiency by summarizing transaction logs into a single checkpoint file. Without checkpointing, every read must scan the entire transaction log history. With checkpointing, the only logs read are the latest checkpoint file and the logs after it. This drastically reduces I/O and metadata parsing, especially for large or frequently updated tables.
+
+Both compaction and checkpointing are critical for table health, especially in long-running or high-concurrency environments.
+
+#### Concurrency control and isolation
+
+Fabric Data Warehouse uses snapshot isolation exclusively. Attempts to change the isolation level via T-SQL are ignored.
+
+#### Best practices with transactions
+
+- Use explicit transactions wisely. Always `COMMIT` or `ROLLBACK`. Don't leave transactions open.
+   - Keep transactions short-lived. Avoid long-running transactions that hold locks unnecessarily, especially for explicit transactions containing DDLs. This can cause contention with `SELECT` statements on system catalog views (like `sys.tables`) and can cause issues with the Fabric portal that rely on system catalog views.
+- Add retry logic  with delay in pipelines or apps to handle transient conflicts. 
+   - Use exponential backoff to avoid retry storms that worsen transient network interruptions.
+   - For more information, see [Retry pattern](/azure/architecture/patterns/retry).
+-  Monitor locks and conflicts in the warehouse.
+   - Use [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql?view=fabric&preserve-view=true) to inspect current locks.
+
+### Reduce returned data set sizes  
+
+Queries with large data size in intermediate query execution or in final query result could experience more query performance issue. To reduce the returned data set size, consider following strategies:
+
+- Partition or cluster (Liquid Clustering) large tables in Lakehouse.
+- Limit the number of columns returned. `SELECT *` can be costly.
+- Limit the number of rows returned. Perform as much data filtering in the warehouse as possible, not in client applications.
+   - Try to filter before joining to reduce the dataset early in query execution. 
+   - Filter on low-cardinality columns to reduce large dataset early before JOINs.
+   - Columns with high cardinality are ideal for filtering and JOINs. These are often used in `WHERE` clauses and benefit from predicate being applied at earlier stage in query execution to filter out data.
+- In Fabric Data Warehouse, since primary key and unique key constraints aren't enforced, columns with these constraints aren't necessarily good candidates for JOINs.
+
+### Query plans and query hints
+
+In Fabric Data Warehouse, the query optimizer generates a query execution plan to determine the most efficient way to execute a SQL query. Advanced users could consider investigating query performance issues with the query plan or by adding query hints.
+
+- Users can use [SHOWPLAN_XML](/sql/t-sql/statements/set-showplan-xml-transact-sql?view=fabric&preserve-view=true) in [SQL Server Management Studio](https://aka.ms/ssms) to view the plan without executing the query.
+- Optional [query hints](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#query-hint-support-in-fabric-data-warehouse) can be added to a SQL statement to provide more instructions to the query optimizer before plan generation. Adding query hints requires advanced knowledge of query workloads, therefore are typically used after other best practices have been implemented but the problem persists.
+
+### Non-scalable operations
+
+Fabric Data Warehouse is built on a massively parallel processing (MPP) architecture, where queries are executed across multiple compute nodes. In some scenarios, single-node execution is justified:
+
+- The entire query plan execution requires only one compute node.
+- A plan subtree can fit within one compute node. 
+- The entire query or part of the query *must* be executed on a single node to satisfy the query semantics. For example, `TOP` operations, global sorting, queries that require sorting results from parallel executions to produce a single result, or joining results for the final step.
+
+In these cases, users can receive a warning message "One or more non-scalable operation is detected", and the query might run slowly or fail after a long execution. 
+
+- Consider reducing the size of query's filtered dataset. 
+- If the query semantics doesn't require single-node execution, try forcing a distributed query plan with [FORCE DISTRIBUTED PLAN](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#force--single-node--distributed--plan), for example `OPTION (FORCE DISTRIBUTED PLAN);`.
+
+### Query the SQL analytics endpoint
+
+You can use the SQL analytics endpoint to query Lakehouse tables that were populated with Spark SQL, without copying or ingesting data into the Warehouse.
+
+Following best practices apply to querying warehouse data in the Lakehouse via the SQL analytics endpoint. For more information on SQL analytics endpoint performance, see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
+
+> [!TIP]
+> The following best practices apply to using Spark to process data into a lakehouse that can be queried by the SQL analytics endpoint.
+
+#### Perform regular table maintenance for Lakehouse tables
+
+In Microsoft Fabric, the Warehouse automatically optimizes data layouts, and performs garbage collection and compaction. For a Lakehouse you have more control over [table maintenance](../data-engineering/lakehouse-table-maintenance.md). Table optimization and vacuuming are necessary and can significantly reduce the scan time required for large datasets. Table maintenance in the Lakehouse also extends to shortcuts and can help you improve performance there significantly.
+
+#### Optimize lakehouse tables or shortcuts with many small files
+
+Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
+
+To optimize a table in a Fabric Lakehouse, open the Lakehouse in the Fabric portal. In the **Explorer**, right-click on the table, select **Maintenance**. Choose options from the **Run maintenance commands** page, then select **Run now**.
+
+#### Query lakehouse tables or shortcuts located in the same region
+
+Fabric uses compute where the Fabric capacity is located. Querying data, such as in your own Azure Data Lake Storage or in OneLake, in another region results in performance overhead due to network latency. Make sure data is in the same region. Depending on your performance requirements, consider keeping only small tables like dimension tables in a remote region.
+
+#### Filter lakehouse tables and shortcuts on the same columns
+
+If you often filter table rows on specific columns, consider partitioning the table.
+
+Partitioning works well for low cardinality columns or columns with predictable cardinality like years or dates. For more information, see [Lakehouse tutorial - Prepare and transform lakehouse data](../data-engineering/tutorial-lakehouse-data-preparation.md) and [Load data to Lakehouse using partition](../data-factory/tutorial-lakehouse-partition.md).
+
+Clustering works well for high selectivity columns. If you have other columns that you often use for filtering, other than partitioning columns, consider clustering the table using optimize with the Spark SQL syntax `ZORDER BY`. For more information, see [Delta Lake table optimization](../data-engineering/delta-optimization-and-v-order.md).
+
+## Data clustering
+
+You can also accomplish data clustering on specific columns in the `CREATE TABLE` and `CREATE TABLE AS SELECT` (CTAS) T-SQL statements. Data clustering works by storing rows with similar values in adjacent locations on storage during ingestion. 
+
+- Data clustering uses a space-filling curve to organize data in a way that preserves locality across multiple dimensions, meaning rows with similar values across clustering columns are stored physically close together. This approach dramatically improves query performance by performing file skipping and reducing the number of files that are scanned.
+- Data clustering metadata is embedded in the manifest during ingestion, allowing the warehouse engine to make intelligent decisions about which files to access during user queries. This metadata, combined with how rows with similar values are stored together, ensures that queries with filter predicates can skip entire files and row groups that fall outside the predicate scope. 
+
+For example: if a query targets only 10% of a table's data, clustering ensures that only files that contain the data within the filter's range are scanned, reducing I/O and compute consumption. Larger tables benefit more from data clustering, as the benefits of file skipping scale with data volume.
+
+- For complete information on data clustering, see [Data clustering in Fabric Data Warehouse](data-clustering.md).
+- For a tutorial of data clustering and how to measure its positive effect on performance, see [Use data clustering in Fabric Data Warehouse](tutorial-data-clustering.md).
+
 
 ## Data type optimization
 
@@ -89,6 +251,8 @@ The concept of increasing the number of parallelism and scaling to larger Fabric
 
 The [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?view=fabric&preserve-view=true) function enables you to read CSV or Parquet files from Azure Data Lake or Azure Blob storage, without ingesting it to Warehouse. For more information and examples, see [Browse file content using OPENROWSET function](browse-file-content-with-openrowset.md).
 
+For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md).
+
 When reading data using the OPENROWSET function, consider the following recommendations for best performance:
 
 - **Parquet:** Try to use Parquet instead of CSV, or convert CSV to Parquet, if you're frequently querying the files. Parquet is a columnar format. Because data is compressed, its file sizes are smaller than CSV files that contain the same data. Fabric Data Warehouse skips the columns and rows that aren't needed in a query if you're reading Parquet files.
@@ -116,11 +280,11 @@ Recommended approaches:
 
 ### Data compaction
 
-In Fabric Data Warehouse, data compaction is a background optimization process in Fabric Data Warehouse that merges small, inefficient Parquet files into fewer, larger files. Often these files are created by frequent trickle `INSERT`, `UPDATE`, or `DELETE` operations. Data compaction reduces file fragmentation, improves row group efficiency, and enhances overall query performance.
+In Fabric Data Warehouse, data compaction is a background optimization process that merges small, inefficient Parquet files into fewer, larger files. Often these files are created by frequent trickle `INSERT`, `UPDATE`, or `DELETE` operations. Data compaction reduces file fragmentation, improves row group efficiency, and enhances overall query performance.
 
 Although the Fabric Data Warehouse engine automatically resolves fragmentation over time through data compaction, performance might degrade until the process completes. Data compaction runs automatically without user intervention for Fabric Data Warehouse. 
 
-Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) after significant data changes to maintain optimal storage layout.
+Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) after significant data changes to maintain optimal storage layout.
 
 #### Data compaction preemption
 
@@ -132,7 +296,7 @@ Write-write conflicts with the Fabric Data Warehouse background data compaction 
 
 ## V-Order in Fabric Data Warehouse
 
-[V-Order](../data-engineering/delta-optimization-and-v-order.md) is a write time optimization to the parquet file format that enables fast reads in the Microsoft Fabric. V-Order in Fabric Data Warehouse improves query performance by applying sorting and compression to table files. 
+[V-Order](../data-engineering/delta-optimization-and-v-order.md) is a write time optimization to the parquet file format that enables fast reads in Microsoft Fabric. V-Order in Fabric Data Warehouse improves query performance by applying sorting and compression to table files. 
 
 By default, V-Order is enabled on all warehouses to ensure that read operations, especially analytical queries, are as fast and efficient as possible.
 
@@ -150,155 +314,6 @@ Zero-copy clones are ideal for scenarios such as development, testing, and backu
 - Clones can be created as of a specific point in time within the data retention period, supporting [time-travel capabilities](time-travel.md). 
 - Cloned tables exist independently of their source, changes made to the source don't affect the clone, and changes to the clone don't impact the source. Either the source or the clone can be dropped independently.
 
-## Query performance
-
-### Statistics 
-
-Statistics are persisted objects that represent data in your tables' columns. The Query Optimizer uses statistics to pick and estimate the cost of a query plan. Fabric Data Warehouse and Lakehouse SQL analytics endpoint use and automatically maintain histogram statistics, average column length statistics, and table cardinality statistics. For more information, see [Statistics in Fabric Data Warehouse](statistics.md).
-
-- The [CREATE STATISTICS](/sql/t-sql/statements/create-statistics-transact-sql?view=fabric&preserve-view=true) and [UPDATE STATISTICS](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) T-SQL commands are supported for single-column histogram statistics. You can leverage these if there's a large enough window between your table transformations and your query workload, such as during a maintenance window or other downtime. This reduces the likelihood of your `SELECT` queries having to first update statistics.
-- Try to define table schema that maintains data type parity in common column comparisons. For example, if you know columns will be often compared to each other in a `WHERE` clause, or used as the `JOIN ... ON` predicate, make sure the data types match. If not possible to use exact same data types, use similar data types compatible for implicit conversion. Avoid explicit data conversions. For more information, see [Data type conversion](/sql/t-sql/data-types/data-type-conversion-database-engine?view=fabric&preserve-view=true).
-
-> [!TIP]
-> For Lakehouse users, the ACE-Cardinality statistic can use information from your tables' Delta log files to be more accurate. Ensure your Spark generated Delta tables include table row-counts with: `spark.conf.set("spark.databricks.delta.stats.collect", "true")`. For more information, see [Configure and manage Automated Table Statistics in Fabric Spark](../data-engineering/automated-table-statistics.md).
-
-When filtering lakehouse tables on timestamp column before Apache Spark runtime 3.5.0, rowgroup-level statistics for timestamp columns aren't generated. This lack of statistics makes it difficult for systems, like Fabric Warehouse, to apply rowgroup elimination (also known as data skipping or predicate pushdown), which is performance optimization that skips irrelevant rowgroups during query execution. Without these statistics, filtering queries that involve timestamp columns might need to scan more data, leading to significant performance degradation. You can upgrade [the Apache Spark runtime in Fabric](../data-engineering/runtime.md). Apache Spark 3.5.0 and higher versions can generate rowgroup-level statistics for timestamp columns. You then need to recreate the table and ingest the data to have rowgroup level statistics generated.
-
-### Cold cache performance
-
-The *first execution* of a query in Fabric Data Warehouse can be unexpectedly slower than subsequent runs. This is known as a *cold start*, caused by system initialization or scaling activities that prepare the environment for processing. 
-
-Cold starts typically occur when: 
-
-- Data is loaded from OneLake into memory because it's being accessed for the first time, and isn't yet cached.
-- If data is accessed for the first time, query execution is delayed until the necessary [statistics](statistics.md) are automatically generated.
-- Fabric Data Warehouse automatically pauses nodes after some period of inactivity to reduce cost, and adds nodes as part of autoscaling. Resuming or creating nodes typically takes less than one second.
-
-These operations can increase query duration. Cold starts can be partial. Some compute nodes, data, or statistics might already be available or cached in memory, while the query waits for others to come available. For more information, see [Caching in Fabric data warehousing](caching.md).
-
-You can detect cold start effects caused by fetching data from remote storage into memory by querying the [queryinsights.exec_requests_history](/sql/relational-databases/system-views/queryinsights-exec-requests-history-transact-sql?view=fabric&preserve-view=true) view. Check the `data_scanned_remote_storage_mb` column: 
-
-- The non-zero value in `data_scanned_remote_storage_mb` indicates a cold start. Data was fetched from OneLake during the query execution. Subsequent views should be provably faster in `queryinsights.exec_requests_history`.
-- A zero value in `data_scanned_remote_storage_mb` is the perfect state where all data is cached. No node changes or data from OneLake was needed to serve the query results.
-
-> [!IMPORTANT]
-> Don't judge query performance based on the **first** execution. Always check `data_scanned_remote_storage_mb` to determine if the query was impacted by cold start. Subsequent executions are often significantly faster and are representative of actual performance, which will lower the average execution time. 
-
-### Queries on tables with string columns  
-
-Use the smallest string column length that can accommodate values. Fabric Warehouse is constantly improving; however, you might experience suboptimal performance if using large string data types, particularly large objects (LOBs). For example, for a `customer_name` column's data type, consider your business requirements and expected data, and use an appropriate length `n` when declaring `varchar(n)`, such as **varchar(100)**, instead of **varchar(8000)** or **varchar(max)**. Statistics and query cost estimation are more accurate when the data type length is more precise to the actual data.
-
-- In Fabric Data Warehouse T-SQL, see [guidance for choosing the appropriate length for string data types](#consider-when-to-use-varchar-over-char).
-- Lakehouse table string columns without defined length in Spark are recognized by Fabric Warehouse as **varchar(8000)**. For optimal performance, use the `CREATE TABLE` statement in SparkSQL to define string column as `varchar(n)`, where `n` is maximum column length that can accommodate values.
-
-### Transactions and concurrency
-
-Fabric Data Warehouse is built on a modern, cloud-native architecture that combines transactional integrity, snapshot isolation, and distributed compute to deliver high concurrency and consistency at scale. For more information, see [Transactions in Warehouse Tables](transactions.md).
-
-Fabric Data Warehouse supports ACID-compliant transactions using snapshot isolation. This means:
-
-- Read and write operations can be grouped into a single transaction using standard T-SQL (`BEGIN TRANSACTION`, `COMMIT`, `ROLLBACK`)
-- All-or-nothing semantics: If a transaction spans multiple tables and one operation fails, the entire transaction is rolled back.
-- Read consistency: `SELECT` queries within a transaction see a consistent snapshot of the data, unaffected by concurrent writes.
-
-Fabric Warehouse transactions support: 
-
-- **Data Definition Language (DDL) inside transactions:** You can include `CREATE TABLE` within a transaction block.
-- **Cross-database transactions:** Supported within the same workspace, including reads from SQL analytics endpoints.
-- **Parquet-based rollback:** Since Fabric Data Warehouse stores data in immutable Parquet files, rollbacks are fast. Rollbacks simply revert to previous file versions.
-- **Automatic data compaction and checkpointing:** [Data compaction](#data-compaction) optimizes storage and read performance by merging small Parquet files and removing logically deleted rows.
-- **Automatic checkpointing:** Every write operation (`INSERT`, `UPDATE`, `DELETE`) appends a new JSON log file to [the Delta Lake transaction log](query-delta-lake-logs.md). Over time, this can result in hundreds or thousands of log files, especially in streaming or high-frequency ingestion scenarios. Automatic checkpointing improves metadata read efficiency by summarizing transaction logs into a single checkpoint file. Without checkpointing, every read must scan the entire transaction log history. With checkpointing, the only logs read are the latest checkpoint file and the logs after it. This drastically reduces I/O and metadata parsing, especially for large or frequently updated tables.
-
-Both compaction and checkpointing are critical for table health, especially in long-running or high-concurrency environments.
-
-#### Concurrency control and isolation
-
-Fabric Data Warehouse uses snapshot isolation exclusively. Attempts to change the isolation level via T-SQL are ignored.
-
-#### Best practices with transactions
-
-- Use explicit transactions wisely. Always `COMMIT` or `ROLLBACK`. Don't leave transactions open.
-   - Keep transactions short-lived. Avoid long-running transactions that hold locks unnecessarily, especially for explicit transactions containing DDLs. This can cause contention with `SELECT` statements on system catalog views (like `sys.tables`) and can cause issues with the Fabric portal that rely on system catalog views.
-- Add retry logic  with delay in pipelines or apps to handle transient conflicts. 
-   - Use exponential backoff to avoid retry storms that worsen transient network interruptions.
-   - For more information, see [Retry pattern](/azure/architecture/patterns/retry).
--  Monitor locks and conflicts in the warehouse.
-   - Use [sys.dm_tran_locks](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql?view=fabric&preserve-view=true) to inspect current locks.
-
-### Reduce returned data set sizes  
-
-Queries with large data size in intermediate query execution or in final query result could experience more query performance issue. To reduce the returned data set size, consider following strategies:
-
-- Partition large tables in Lakehouse.
-- Limit the number of columns returned. `SELECT *` can be costly.
-- Limit the number of rows returned. Perform as much data filtering in the warehouse as possible, not in client applications.
-   - Try to filter before joining to reduce the dataset early in query execution. 
-   - Filter on low-cardinality columns to reduce large dataset early before JOINs.
-   - Columns with high cardinality are ideal for filtering and JOINs. These are often used in `WHERE` clauses and benefit from predicate being applied at earlier stage in query execution to filter out data.
-- In Fabric Data Warehouse, since primary key and unique key constraints aren't enforced, columns with these constraints aren't necessarily good candidates for JOINs.
-
-### Query plans and query hints
-
-In Fabric Data Warehouse, the query optimizer generates a query execution plan to determine the most efficient way to execute a SQL query. Advanced users could consider investigating query performance issues with the query plan or by adding query hints.
-
-- Users can use [SHOWPLAN_XML](/sql/t-sql/statements/set-showplan-xml-transact-sql?view=fabric&preserve-view=true) in [SQL Server Management Studio](https://aka.ms/ssms) to view the plan without executing the query.
-- Optional [query hints](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#query-hint-support-in-fabric-data-warehouse) can be added to a SQL statement to provide more instructions to the query optimizer before plan generation. Adding query hints requires advanced knowledge of query workloads, therefore are typically used after other best practices have been implemented but the problem persists.
-
-### Non-scalable operations
-
-Fabric Data Warehouse is built on a massively parallel processing (MPP) architecture, where queries are executed across multiple compute nodes. In some scenarios, single-node execution is justified:
-
-- The entire query plan execution requires only one compute node.
-- A plan subtree can fit within one compute node. 
-- The entire query or part of the query *must* be executed on a single node to satisfy the query semantics. For example, `TOP` operations, global sorting, queries that require sorting results from parallel executions to produce a single result, or joining results for the final step.
-
-In these cases, users can receive a warning message "One or more non-scalable operation is detected", and the query might run slowly or fail after a long execution. 
-
-- Consider reducing the size of query's filtered dataset. 
-- If the query semantics doesn't require single-node execution, try forcing a distributed query plan with [FORCE DISTRIBUTED PLAN](/sql/t-sql/queries/hints-transact-sql-query?view=fabric&preserve-view=true#force--single-node--distributed--plan), for example `OPTION (FORCE DISTRIBUTED PLAN);`.
-
-### Query the SQL analytics endpoint
-
-You can use the SQL analytics endpoint to query Lakehouse tables that were populated with Spark SQL, without copying or ingesting data into the Warehouse.
-
-Following best practices apply to querying warehouse data in the Lakehouse via the SQL analytics endpoint. For more information on SQL analytics endpoint performance, see [SQL analytics endpoint performance considerations](sql-analytics-endpoint-performance.md).
-
-> [!TIP]
-> The following best practices apply to using Spark to process data into a lakehouse that can be queried by the SQL analytics endpoint.
-
-#### Perform regular table maintenance for Lakehouse tables
-
-In Microsoft Fabric, the Warehouse automatically optimizes data layouts, and performs garbage collection and compaction. For a Lakehouse you have more control over [table maintenance](../data-engineering/lakehouse-table-maintenance.md). Table optimization and vacuuming are necessary and can significantly reduce the scan time required for large datasets. Table maintenance in the Lakehouse also extends to shortcuts and can help you improve performance there significantly.
-
-#### Optimize lakehouse tables or shortcuts with many small files
-
-Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
-
-To optimize a table in a Fabric Lakehouse, open the Lakehouse in the Fabric portal. In the **Explorer**, right-click on the table, select **Maintenance**. Choose options from the **Run maintenance commands** page, then select **Run now**.
-
-#### Query lakehouse tables or shortcuts located in the same region
-
-Fabric uses compute where the Fabric capacity is located. Querying data, such as in your own Azure Data Lake Storage or in OneLake, in another region results in performance overhead due to network latency. Make sure data is in the same region. Depending on your performance requirements, consider keeping only small tables like dimension tables in a remote region.
-
-#### Filter lakehouse tables and shortcuts on the same columns
-
-If you often filter table rows on specific columns, consider partitioning the table.
-
-Partitioning works well for low cardinality columns or columns with predictable cardinality like years or dates. For more information, see [Lakehouse tutorial - Prepare and transform lakehouse data](../data-engineering/tutorial-lakehouse-data-preparation.md) and [Load data to Lakehouse using partition](../data-factory/tutorial-lakehouse-partition.md).
-
-Clustering works well for high selectivity columns. If you have other columns that you often use for filtering, other than partitioning columns, consider clustering the table using optimize with the Spark SQL syntax `ZORDER BY`. For more information, see [Delta Lake table optimization](../data-engineering/delta-optimization-and-v-order.md).
-
-## Data clustering
-
-You can also accomplish data clustering on specific columns in the `CREATE TABLE` and `CREATE TABLE AS SELECT` (CTAS) T-SQL statements. Data clustering works by storing rows with similar values in adjacent locations on storage during ingestion. 
-
-- Data clustering uses a space-filling curve to organize data in a way that preserves locality across multiple dimensions, meaning rows with similar values across clustering columns are stored physically close together. This approach dramatically improves query performance by performing file skipping and reducing the number of files that are scanned.
-- Data clustering metadata is embedded in the manifest during ingestion, allowing the warehouse engine to make intelligent decisions about which files to access during user queries. This metadata, combined with how rows with similar values are stored together, ensures that queries with filter predicates can skip entire files and row groups that fall outside the predicate scope. 
-
-For example: if a query targets only 10% of a table's data, clustering ensures that only files that contain the data within the filter's range are scanned, reducing I/O and compute consumption. Larger tables benefit more from data clustering, as the benefits of file skipping scale with data volume.
-
-- For complete information on data clustering, see [Data clustering in Fabric Data Warehouse](data-clustering.md).
-- For a tutorial of data clustering and how to measure its positive effect on performance, see [Use data clustering in Fabric Data Warehouse](tutorial-data-clustering.md).
 
 ## Query metadata views
 
@@ -320,7 +335,13 @@ For more information on the `queryinsights` views, see [Query insights in Fabric
 For more information on query lifecycle DMVs, see [Monitor connections, sessions, and requests using DMVs](monitor-using-dmv.md).
 
 ## Related content
-    
-- [T-SQL surface area](tsql-surface-area.md)
+
+- [Cross-workload table maintenance and optimization](../fundamentals/table-maintenance-optimization.md)
+- [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md)
+- [Table compaction](../data-engineering/table-compaction.md)
+- [Lakehouse table maintenance](../data-engineering/lakehouse-table-maintenance.md)
 - [Monitor Fabric Data warehouse](monitoring-overview.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
+- [Query insights](query-insights.md)
+- [Statistics in Fabric Data Warehouse](statistics.md)
+- [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)

@@ -1,11 +1,8 @@
 ---
 title: Eventstream CI/CD - Git Integration and Deployment Pipeline
 description: Learn how to use git integration and deployment pipeline for Eventstream.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 4/08/2025
 ms.search.form: cicd
 ---
@@ -38,6 +35,9 @@ To connect a workspace to an Azure or GitHub Repo, follow these steps:
    :::image type="content" source="./media/eventstream-cicd/connect-to-git.png" alt-text="Screenshot that shows connect a workspace to git." lightbox="./media/eventstream-cicd/connect-to-git.png":::
 3. Choose a git repository and enter a git folder. One workspace is synced to a git folder.
    :::image type="content" source="./media/eventstream-cicd/enter-git-folder.png" alt-text="Screenshot that shows enter a git folder to be synced with." lightbox="./media/eventstream-cicd/enter-git-folder.png":::
+
+   Fabric Git integration supports selective branch syncing per workspace. When connecting, you can choose which branch to sync with, and you can switch branches later from the **Git integration** settings. Branched workspaces are clearly indicated in the UI, helping admins manage parallel development flows across teams.
+
 4. From your workspace view, you see the status of the Eventstream item as **Synced**.
    :::image type="content" source="./media/eventstream-cicd/workspace-git-status.png" alt-text="Screenshot that shows git status in the workspace." lightbox="./media/eventstream-cicd/workspace-git-status.png":::
 
@@ -47,13 +47,15 @@ After making changes to your Eventstream item, you see an **Uncommitted** git st
 
 :::image type="content" source="./media/eventstream-cicd/uncommitted-eventstream.png" alt-text="Screenshot that shows uncommitted eventstream item in the workspace." lightbox="./media/eventstream-cicd/uncommitted-eventstream.png":::
 
+Before committing, you can use the built-in diff experience in the **Source control** pane to review item-level changes. Select an item in the **Changes** tab to compare the current workspace version against the last committed version, so you can verify your changes before pushing them to Git.
+
 Once the Eventstream item is synced, you can view the latest Eventstream change in your git repository.
 
 :::image type="content" source="./media/eventstream-cicd/view-in-git-repo.png" alt-text="Screenshot that shows the latest Eventstream change in git repo." lightbox="./media/eventstream-cicd/view-in-git-repo.png":::
 
 ## Update Eventstream items from Git
 
-If you make changes to your Eventstream item in the git repository, you see an **Update Required** git status beside your Eventstream item in the workspace view. Select the **Source control** button at the top of the view and select **Update all** to merge the latest Eventstream changes.
+If you make changes to your Eventstream item in the git repository, you see an **Update Required** git status beside your Eventstream item in the workspace view. Select the **Source control** button at the top of the view and select **Update all** to merge the latest Eventstream changes. You can also review the diff for each item in the **Updates** tab before applying changes, ensuring you understand what will be modified in your workspace.
 
 :::image type="content" source="./media/eventstream-cicd/update-from-git.png" alt-text="Screenshot that shows update eventstream items from git." lightbox="./media/eventstream-cicd/update-from-git.png":::
 
@@ -73,25 +75,43 @@ You can review the deployment history to see the last time content was deployed 
 
 To learn more about deployment pipeline, visit [Get started with deployment pipelines](/fabric/cicd/deployment-pipelines/get-started-with-deployment-pipelines)
 
-## CI/CD Support Status in Eventstream
+## CI/CD Support for Eventstream Components
 
-Eventstream generally supports CI/CD through Git integration and Deployment pipelines. However, the level of support varies across different components (such as sources, destinations, and operators) as well as capabilities (such as schema sets). 
+Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public APIs. This section outlines the compatibility of various Eventstream components with different CI/CD features. Understanding these support levels is essential for maintaining and deploying Eventstream items across workspaces.
 
-| Fully supported | Partially supported | Not supported |
-|--------------|-----------------|---------------|
-| Most sources and all destinations<br>All standard operators (except custom code)<br>Most capabilities (e.g., multiple-schema inferencing) | Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC)<br> | MongoDB CDC (preview)<br>SQL code editor (custom operator)<br>Pause/resume state |
+You can also use the [Import/Export Item Definitions Batch APIs (preview)](/rest/api/fabric/) for large-scale item synchronization. Eventstream items can be synchronized via these batch APIs to streamline multi-workspace or multi-environment operations. Review the API documentation for applicable limits and authentication requirements.
 
-> [!NOTE]
-> **Partially supported** means the resource supports CI/CD, but advanced settings configuration is currently not supported and will revert to defaults after deployment.
->
+### Support level definitions
+
+* **Fully Supported**: Configuration is fully preserved during deployment.
+* **Partially Supported**: The resource supports CI/CD, but **advanced settings** (e.g., Azure SQL DB (CDC) column exclude list) are not supported and will revert to defaults after deployment.
+* **Not Supported**: The component does not support CI/CD through Git integration and Deployment pipelines.
+
+### Component Support Matrix
+
+| Category | Fully Supported | Partially Supported | Not Supported |
+| :--- | :--- | :--- | :--- |
+| **Sources** | Standard GA sources (e.g., Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Azure Service Bus (Preview)<br>Cribl (Preview)<br>HTTP (Preview)<br>MongoDB CDC (Preview) |
+| **Destinations** | All Destinations | - | - |
+| **Operators** |  Filter<br> Manage fields<br>Aggregate<br>Join<br>Group by<br>Union<br>Expand | SQL Code (Custom code) | - |
+| **Features** | General capabilities (e.g., multiple-schema inferencing) | - | Pause/Resume State |
+
+> [!IMPORTANT]
 > After CI/CD (Git integration and deployment pipeline), all resources in the target eventstream become active, unless they fail due to connection or configuration issues. The resources in the original eventstream (exported to Git) and in the eventstream being deployed retain their states.
+
+> [!WARNING]
+> When importing an **Azure Event Grid namespace** source, ensure you have **Member** or higher permissions in the target Fabric workspace. If not, request Contributor permissions for the Event Grid service principal before proceeding.
 
 ## Limitation
 
 * **Git Integration** and **Deployment Pipeline** have limited support for cross-workspace scenarios. To avoid issues, make sure all Eventstream destinations within the same workspace. Cross-workspace deployment may not work as expected.
 * If an Eventstream includes an Eventhouse destination using **Direct Ingestion** mode, you’ll need to manually reconfigure the connection after importing or deploying it to a new workspace.
+* **Connection references**: Consider using connection reference items (Variable Library) to centralize and rebind connections when deploying Eventstream items across workspaces. This approach can reduce manual reconfiguration, for example when Eventhouse destinations use Direct Ingestion.
 
 ## Related content
 
 - [Get started with Git integration](/fabric/cicd/git-integration/git-get-started)
 - [Choose the best Fabric CI/CD workflow option for you](/fabric/cicd/manage-deployment)
+- [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines)
+
+

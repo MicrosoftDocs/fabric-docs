@@ -4,10 +4,10 @@ description: Learn how the Microsoft Fabric lineage view helps you answer questi
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
-ms.topic: conceptual
-ms.custom: 
-ms.date: 01/10/2025
+ms.topic: concept-article
+ms.custom: dev-focus
+ms.date: 03/24/2026
+ai-usage: ai-assisted
 #customer intent: As a data analyst, I want to use the Microsoft Fabric lineage view to understand and manage machine learning models and experiments.
 ---
 
@@ -32,13 +32,13 @@ Microsoft Fabric integrates machine learning models and experiments into a unifi
 
 ### Machine learning models
 
-In  Fabric, users can create and manage machine learning models. A machine learning model item represents a versioned list of models, which allows users to browse the various iterations of the model.
+In Fabric, users can create and manage machine learning models. A machine learning model item represents a versioned list of models, which allows users to browse the various iterations of the model.
 
 In the lineage view, users can browse the relationship between a machine learning model and other Fabric items to answer the following questions:
 
 - What is the relationship between machine learning models and experiments in my workspace?
 - Which machine learning models exist in my workspace?
-- How can I trace back the lineage to see which Lakehouse items were related to this model?
+- How can I trace back the lineage to see which lakehouse items were related to this model?
 
 ### Machine learning experiments
 
@@ -48,25 +48,25 @@ In the lineage view, users can browse the relationship between a machine learnin
 
 - What is the relationship between machine learning experiments and code items in my workspace? For example, what's the relationship between notebooks and Spark Job Definitions?
 - Which machine learning experiments exist in my workspace?
-- How can I trace back the lineage to see which Lakehouse items were related to this experiment?
+- How can I trace back the lineage to see which lakehouse items were related to this experiment?
 
 ## Explore lineage view
 
-Every Fabric workspace has a built-in lineage view. To access this view, you must have at least the **Contributor** role within the workspace. To learn more about permissions in Fabric, see [Data science roles and permissions](../data-science/models-experiments-rbac.md).
+Every Fabric workspace has a built-in lineage view. To access this view, you need a workspace role (Admin, Member, Contributor, or Viewer). Users with the Viewer role can see item lineage but not data sources. To learn more about permissions in Fabric, see [Data science roles and permissions](../data-science/models-experiments-rbac.md).
 
 To access the lineage view:
 
 1. Select your Fabric workspace and then navigate to the workspace list.
 
-   :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Image showing workspace list view in Fabric." lightbox="media/lineage/artifact-workspace-list-view-data-science.png":::
+   :::image type="content" source="media/lineage/artifact-workspace-list-view-data-science.png" alt-text="Screenshot showing the workspace list view with Data Science items in Fabric." lightbox="media/lineage/artifact-workspace-list-view-data-science.png":::
 
 2. Switch from the workspace **List** view to the Workspace **Lineage** view.
 
-   :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Image showing workspace lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-data-science.png":::
+   :::image type="content" source="media/lineage/workspace-artifact-lineage-data-science.png" alt-text="Screenshot showing the workspace switched to lineage view in Fabric." lightbox="media/lineage/workspace-artifact-lineage-data-science.png":::
 
 3. You can also navigate to **Lineage** view for a specific item by opening the context menu and selecting to view the workspace or item lineage.
 
-   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing context menu in Fabric for a given item." lightbox="media/lineage/artifact-lineage-view-data-science.png":::
+   :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Screenshot showing the context menu for viewing item lineage in Fabric." lightbox="media/lineage/artifact-lineage-view-data-science.png":::
 
 ## Related content
 

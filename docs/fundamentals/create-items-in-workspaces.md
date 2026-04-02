@@ -1,14 +1,13 @@
 ---
 title: Create items in workspaces
 description: "Learn how to create an item inside a workspace to build your data solution."
-author: yicw16322
-ms.author: yicw
-ms.reviewer: sngun
-ms.service: fabric
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: yicw
 ms.topic: how-to
 ms.date: 02/10/2025
 
-#CustomerIntent: AAs a user, I want to learn how to create items in workspaces so that I can build my data solution.
+#customer intent: As a user, I want to learn how to create items in workspaces so that I can build my data solution.
 ---
 
 # Create items in workspaces

@@ -2,8 +2,6 @@
 title: Get data from Azure Event Hubs
 description: Learn how to create a connection to Event Hubs and get data into your KQL database in Real-Time Intelligence.
 ms.reviewer: guregini
-ms.author: spelluru
-author: spelluru
 ms.topic: how-to
 ms.subservice: rti-eventhouse
 ms.custom: sfi-image-nochange
@@ -68,7 +66,7 @@ Within the SAS policy pane, take note of the following four fields. You might wa
 
 1. Select the data source from the available list. In this example, you're ingesting data from **Event Hubs**.
 
-    [!INCLUDE [get-data-kql](includes/get-data-kql.md)]
+    :::image type="content" source="media/get-data-event-hub/get-data-event-hub-tile.png" alt-text="Screenshot of the get data tiles with the Event Hubs option highlighted.":::
 
 ## Configure
 

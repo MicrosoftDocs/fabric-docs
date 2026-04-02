@@ -3,13 +3,9 @@ title: Create and manage a set of tags
 description: "Learn how to create and manage a set of tags in Microsoft Fabric."
 author: msmimart
 ms.author: mimart
-ms.service: fabric
-ms.subservice: governance
-ms.topic: how-to #Don't change
+ms.topic: how-to
 ms.date: 09/04/2025
-
 #customer intent: As a Fabric admin, I want to create and manage a set of tags so that data creators and data consumers can use them to better manage and find data.
-
 ---
 
 # Create and manage a set of tags
@@ -39,7 +35,7 @@ This section shows how Fabric administrators create a set of tenant-level tags. 
     
 1.  Select **+ New tag**. If no tags are defined yet, select **Add your first tags**.
    
-1.  In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. Tag names can contain letters, numbers, spaces (not at the beginning), and special characters (must also contain letters and/or numbers).
+1. In the dialog that appears, provide names for your new tags. Use comma-separated names to create more than one tag at a time. Tag names can be up to 40 characters long and can contain letters, numbers, spaces (not at the beginning), and special characters (must also contain letters and/or numbers).
 
     :::image type="content" source="./media/tags-define/create-tags.png" alt-text="Screenshot showing how to create two new tags.":::
 
@@ -118,3 +114,4 @@ For more information, see [Metadata scanning overview](./metadata-scanning-overv
 * [Tags overview](tags-overview.md)
 * [Apply tags to items](tags-apply.md)
 * [Fabric REST Admin APIs for tags](/rest/api/fabric/admin/tags)
+

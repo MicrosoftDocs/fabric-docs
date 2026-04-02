@@ -62,7 +62,7 @@ items:
     href: service-admin-portal-organizational-visuals.md
   - name: Manage Power BI visuals admin settings
     href: organizational-visuals.md 
-  - name: Manage Premium Per User
+  - name: Manage Power BI Premium Per-User
     href: service-admin-portal-premium-per-user.md
   - name: Manage users
     href: service-admin-portal-users.md
@@ -78,6 +78,14 @@ items:
     href: portal-workspaces.md  
   - name: Workspace tenant settings
     href: portal-workspace.md
+  - name: Capacity reassignment restrictions
+    href: portal-workspace-capacity-reassignment.md
+  - name: Retention and recovery
+    href: retention-recovery.md
+  - name: Set up workspace retention
+    href: workspace-retention.md
+  - name: Recover or delete items
+    href: item-recovery.md
 - name: Feature set up
   items:
   - name: Enable item certification
@@ -89,6 +97,7 @@ items:
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication
+    displayName: API, REST, Power BI, read-only
     href: enable-service-principal-admin-apis.md
   - name: Configure Multi-Geo support
     href: service-admin-premium-multi-geo.md
@@ -155,7 +164,7 @@ items:
       href: service-admin-portal-advanced-networking.md
     - name: Encryption 
       href: service-admin-portal-encryption.md
-    - name: Metrics settings
+    - name: Scorecards settings
       href: service-admin-portal-goals-settings.md
     - name: User experience experiments
       href: service-admin-portal-user-experience-experiments.md
@@ -165,7 +174,7 @@ items:
       href: service-admin-portal-insights.md
     - name: Datamart settings
       href: service-admin-portal-datamart.md
-    - name: Data model settings
+    - name: Semantic model settings
       href: service-admin-portal-data-model.md
     - name: Quick measure suggestions settings
       href: service-admin-portal-quick-measure-suggestions-settings.md

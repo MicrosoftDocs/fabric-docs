@@ -5,7 +5,6 @@ ms.reviewer: antonfr
 ms.author: mimart
 author: msmimart
 ms.topic: how-to 
-ms.custom: 
 ms.date: 12/08/2024
 ---
 
@@ -21,10 +20,7 @@ Access to Purview hub requires the [Fabric administrator role](../admin/roles.md
 
 ## Access the hub
 
-To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub**.
-
-:::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
-
+To access the hub, navigate to the 'Admin monitoring' workspace (available to tenant admins only). In it you can open the Purview Hub report.
 If this is the first time insights are being generated, it might take some time for them to appear.
 
 ## Get insights about the Microsoft Fabric data in your tenant
@@ -98,7 +94,7 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 * **Audit**: Opens a new tab to the Microsoft Purview compliance portal, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
 
 > [!NOTE]
-> For more information about the Purview capabilites that are available for Fabric users and administrators, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
+> For more information about the Purview capabilities that are available for Fabric users and administrators, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)
 
 ## Considerations and limitations
 

@@ -1,11 +1,9 @@
 ---
 title: Delta Lake Logs in Warehouse
 description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: kecona
 ms.date: 04/06/2025
-ms.topic: conceptual
+ms.topic: how-to
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ms.custom: sfi-image-nochange
 ---
@@ -13,9 +11,9 @@ ms.custom: sfi-image-nochange
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is built up open file formats. User tables are stored in parquet file format, and Delta Lake logs are published for all user tables.  
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is built up on open file formats. User tables are stored in parquet file format, and Delta Lake logs are published for all user tables.  
 
-The Delta Lake logs opens up direct access to the warehouse's user tables for any engine that can read Delta Lake tables. This access is limited to read-only to ensure the user data maintains ACID transaction compliance. All inserts, updates, and deletes to the data in the tables must be executed through the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Once a transaction is committed, a system background process is initiated to publish the updated Delta Lake log for the affected tables.
+The Delta Lake logs open up direct access to the warehouse's user tables for any engine that can read Delta Lake tables. This access is limited to read-only to ensure the user data maintains ACID transaction compliance. All inserts, updates, and deletes to the data in the tables must be executed through the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Once a transaction is committed, a system background process is initiated to publish the updated Delta Lake log for the affected tables.
 
 ## How to get OneLake path
 
@@ -96,15 +94,15 @@ SELECT [name], [DATA_LAKE_LOG_PUBLISHING_DESC] FROM sys.databases
   - spaces
   - tabs
   - carriage returns
-  - [
-  - ,
-  - ;
-  - {
-  - }
-  - (
-  - )
-  - =
-  - ]
+  - `[`
+  - `,`
+  - `;`
+  - `{`
+  - `}`
+  - `(`
+  - `)`
+  - `=`
+  - `]`
 
 ## Related content
 

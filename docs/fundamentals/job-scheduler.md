@@ -4,8 +4,8 @@ description: Learn how to use the job scheduler in Microsoft Fabric to automate 
 ms.reviewer: zhaya
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
-ms.date: 10/27/2025
+ms.topic: how-to
+ms.date: 03/19/2026
 
 #customer intent: As a Fabric user, I want to understand how to use the job scheduler to automate tasks and manage schedules for my items in Fabric.
 
@@ -28,6 +28,9 @@ To access the job scheduler:
 1. Select **Schedule** from the menu to open the job scheduler interface. 
 
 You can also access the scheduler from within an item's settings by selecting the **Schedule** label. 
+
+> [!NOTE]
+> To set up or modify a schedule, or to configure failure notifications, you must have at least the **Contributor** role in the workspace, or **Write** permission on the item. Users with only **Viewer** access can see existing schedules but can't make changes. For more information, see [Roles in workspaces](../get-started/roles-workspaces.md).
 
 ## Set up your schedule
 
@@ -65,6 +68,35 @@ To ensure your schedule is valid:
 > [!IMPORTANT]
 > Schedules become expired if a user doesn't log in to Fabric for 90 consecutive days. For more information, see [Refresh tokens in the Microsoft identity platform](/entra/identity-platform/refresh-tokens).
 
+## Receive notifications for failed scheduled jobs
+
+You can receive email notifications when a job triggered by a **schedule** fails to complete.
+
+:::image type="content" source="media/job-scheduler/job-scheduler-failure-notifications.png" alt-text="Screenshot of failure notification field in scheduler pane.":::
+
+### Configure failure notifications
+While configuring a schedule, add users or groups under **Failure notifications** to receive emails when a scheduled run fails.
+
+### Important considerations
+- **Applies to all schedules**: Notification settings apply across all schedules for the item.
+- **Scheduled runs only**: Notifications are sent only for failures from scheduled runs. Notifications aren't sent for manually triggered runs.
+- **Recipients**: Notifications can be sent to users or groups in your Microsoft Entra tenant, including internal users and B2B guest users. Direct external email addresses aren’t supported.
+- **Language**: Notifications are sent in the display language of the recipient’s Fabric account. English is used as a fallback. 
+
+### Notification content
+When a scheduled run fails, the email includes:
+- Item name and type
+- Submitter
+- Error details  
+- Run time (UTC)  
+- Link to view details in the monitoring hub  
+- Technical details for troubleshooting, including Activity ID, Request ID, and timestamps
+
+> [!TIP]
+> To view and manage job failure notifications across all your scheduled items in one place, see [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring hub.
+
+ [Schedule failures](../admin/monitoring-hub.md#schedule-failures-preview) in the monitoring hub.
+
 ## Manage multiple schedules
 
 Create and manage multiple schedules for a single item. Use different schedules to run jobs at different times or with different settings.
@@ -73,6 +105,13 @@ Create and manage multiple schedules for a single item. Use different schedules 
 1. Select the schedule you want to manage, or create a new one for different job types or timing needs.
 
 :::image type="content" source="media/job-scheduler/job-scheduler-multiple.png" alt-text="Screenshot of multiple scheduler configurations for a single item in Microsoft Fabric.":::
+
+## Scheduler auto-disable
+
+If a scheduler repeatedly triggers jobs and encounters consecutive failures, the Fabric platform shuts down the scheduler and places it into an *auto-disabled* state to prevent further predictable job failures. To resume normal job scheduling, you must manually restart the scheduler through the UI, API, or CI/CD process.
+
+> [!NOTE]
+> The failure threshold that triggers the auto-disabled state varies by item and is typically set to 10 consecutive failed runs.
 
 ## Automate schedules with CI/CD
 
@@ -86,6 +125,8 @@ The job scheduler supports CI/CD integration, so you can deploy and manage sched
 
 When you deploy an item, its schedules are automatically included, so you don't need to recreate them manually. For step-by-step instructions, see [CI/CD workflow options in Fabric](../cicd/manage-deployment.md).
 
+If you use variable library in the parameters, data sync might experience latency after CI/CD operations. This behavior is expected and will be improved in future releases.
+
 > [!IMPORTANT]
 > All items that had a scheduler configured prior to CI/CD being enabled appear as "uncommitted" when running `git status`. Carefully review and confirm the changes that need to be committed to avoid unintended actions. Items without prior scheduler configuration aren't affected. We apologize for any inconvenience this may cause.
 
@@ -96,3 +137,4 @@ The job scheduler in Microsoft Fabric lets you automate recurring jobs, manage m
 ## Related content
 
 - [CI/CD workflow options in Fabric](../cicd/manage-deployment.md)
+- [Monitor job activity and status in the monitoring hub](../admin/monitoring-hub.md)

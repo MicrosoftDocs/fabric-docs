@@ -2,8 +2,6 @@
 title: NotebookUtils (former MSSparkUtils) for Fabric
 description: Use NotebookUtils, a built-in package for Fabric Notebook, to work with file systems, modularize and chain notebooks together, manage data engineering items, and work with credentials.
 ms.reviewer: jingzh
-ms.author: jingzh
-author: JeneZhang
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Microsoft Spark utilities, Microsoft NotebookUtils
@@ -210,6 +208,7 @@ get(name: String, workspaceId: String = ""): Artifact -> Get a Notebook by name 
 update(name: String, newName: String, description: String = "", workspaceId: String = ""): Artifact -> Update a Artifact by name.
 delete(name: String, workspaceId: String = ""): Boolean -> Delete a Notebook by name.
 list(workspaceId: String = "", maxResults: Int = 1000): Array[Artifact] -> List all Notebooks in the workspace.
+getDefinition(name: String, workspaceId: String = "", format: String = ""): String -> Get the definition of a Notebook.
 updateDefinition(name: String, content: String = "", defaultLakehouse: String = "", defaultLakehouseWorkspace: String = "", workspaceId: String = "") -> Update the definition of a Notebook.
 
 Use notebookutils.notebook.help("methodName") for more info about a method.
@@ -285,25 +284,27 @@ Here's an example of running notebooks with topological structure using `noteboo
 DAG = {
     "activities": [
         {
-            "name": "NotebookSimple", # activity name, must be unique
-            "path": "NotebookSimple", # notebook path
+            "name": "Process_1", # activity name, must be unique
+            "path": "NotebookSimple", # notebook item name
             "timeoutPerCellInSeconds": 90, # max timeout for each cell, default to 90 seconds
             "args": {"p1": "changed value", "p2": 100}, # notebook parameters
+            "workspace":"WorkspaceName" # both name and id are supported
         },
         {
-            "name": "NotebookSimple2",
+            "name": "Process_2",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 2", "p2": 200}
+            "args": {"p1": "changed value 2", "p2": 200},
+            "workspace":"id" # both name and id are supported
         },
         {
-            "name": "NotebookSimple2.2",
+            "name": "Process_1.1",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
             "args": {"p1": "changed value 3", "p2": 300},
             "retry": 1,
             "retryIntervalInSeconds": 10,
-            "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
+            "dependencies": ["Process_1"] # list of activity names that this activity depends on
         }
     ],
     "timeoutInSeconds": 43200, # max timeout for the entire DAG, default to 12 hours
@@ -415,6 +416,12 @@ artifact = notebookutils.notebook.create("artifact_name", "description", "conten
 
 ```python
 artifact = notebookutils.notebook.get("artifact_name", "optional_workspace_id")
+```
+
+#### Getting definition of a Notebook
+
+```python
+definition = notebookutils.notebook.getDefinition("artifact_name", "optional_workspace_id", "ipynb")
 ```
 
 #### Updating a Notebook
@@ -608,7 +615,7 @@ Fabric supports the following mount scenarios in the Microsoft Spark Utilities p
 
 ### How to mount an ADLS Gen2 account
 
-The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage works similarly.
+The following example illustrates how to mount Azure Data Lake Storage Gen2. Mounting Blob Storage and Azure File Share works similarly.
 
 This example assumes that you have one Data Lake Storage Gen2 account named *storegen2*, which has a container named *mycontainer* that you want to mount to */test*  in your notebook Spark session.
 
@@ -915,9 +922,6 @@ notebookutils.session.restartPython()
 
 ## Variable library utilities
 
-> [!NOTE]
-> "Variable Library utilities" in Notebooks is in Preview.
-
 Variable libraries allow you to avoid hardcoding values in your notebook code. You can update the values in the library instead of modifying the code. The notebook references the variable library to retrieve those values. This approach simplifies the reuse of code across teams and projects by utilizing a centrally managed library. 
 
 Run the following commands for an overview of the available methods:
@@ -1013,10 +1017,9 @@ notebookutils.variableLibrary.get("$(/**/samplevl/test_bool)")
 
 - The Python notebook doesn't support the **stop**, **restartPython** APIs when using notebookutils.session utility for session management.
 
-- Currently SPN is not supported for variable library utilities.
-
 ## Related content
 
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)
+

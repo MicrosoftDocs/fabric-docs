@@ -1,10 +1,8 @@
 ---
 title: Sources Supported by Fabric Eventstreams
 description: This file has the list of sources that Fabric eventstreams support. 
-ms.author: xujiang1
-author: xujxu 
+ms.reviewer: xujiang1
 ms.topic: include
-ms.custom:
 ms.date: 05/21/2024
 ---
 
@@ -18,3 +16,4 @@ ms.date: 05/21/2024
 | **Union** | Use this transformation to connect two or more nodes and add events with shared fields (with the same name and data type) into one table. Fields that don't match are dropped and not included in the output. |
 | **Expand** | Use this transformation to create a new row for each value within an array. |
 | **Join** | Use this transformation to combine data from two streams based on a matching condition between them. |
+

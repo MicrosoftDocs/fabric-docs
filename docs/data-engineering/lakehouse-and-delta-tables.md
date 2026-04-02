@@ -1,49 +1,46 @@
 ---
 title: Lakehouse and Delta Tables
-description: The Delta Lake table format is the unified format of the Lakehouse, which is the data architecture platform for managing data in Microsoft Fabric.
+description: Learn how Delta Lake tables work in Fabric Lakehouse and how to optimize table performance.
 ms.reviewer: dacoelho
-ms.author: eur
-author: eric-urban
-ms.topic: article
-ms.custom:
-ms.date: 06/13/2025
+ms.topic: concept-article
+ms.date: 03/01/2026
 ms.search.form: lakehouse delta lake tables
 ---
 
 # Lakehouse and Delta Lake tables
 
-Microsoft Fabric Lakehouse uses Delta Lake as the default and preferred table format to provide reliable, high-performance data storage and processing. While other formats are supported, Delta Lake offers the best integration and performance across all Fabric services. This article explains what Delta Lake tables are, how they work in Fabric, and how to get the best performance from your data.
+Microsoft Fabric Lakehouse uses Delta Lake as the default table format for reliable, high-performance data storage and processing. While other formats are supported, Delta Lake provides the best integration across Fabric services.
 
 ## What are Delta Lake tables?
 
-When you store data in a Microsoft Fabric [Lakehouse](lakehouse-overview.md), your data is automatically saved using a special format called **Delta Lake**. Think of Delta Lake as an enhanced version of regular data files that provides:
+When you store data in a Microsoft Fabric [Lakehouse](lakehouse-overview.md), data is stored as **Delta Lake** by default. Delta Lake adds capabilities that improve both performance and reliability:
 
-- **Better performance** - Faster queries and data processing
-- **Data reliability** - Automatic error checking and data integrity
-- **Flexibility** - Works with both structured data (like database tables) and semi-structured data (like JSON files)
+- **Better performance**: Faster queries and data processing.
+- **Data reliability**: Transactional consistency and integrity checks.
+- **Flexibility**: Works with both structured data (for example, tables) and semi-structured data (for example, JSON).
 
 ## Why does this matter?
 
 Delta Lake is the **standard table format** for all data in Fabric Lakehouse. This means:
 
-- **Consistency**: All your data uses the same format, making it easier to work with
-- **Compatibility**: Your data works seamlessly across all Fabric tools (Power BI, notebooks, data pipelines, etc.)
-- **No extra work**: When you [load data into tables](load-to-tables.md) or use other [data loading methods](load-data-lakehouse.md), Delta format is applied automatically
+- **Consistency**: All data uses the same table format.
+- **Compatibility**: Data works across Fabric tools such as Power BI, notebooks, and pipelines.
+- **No extra setup**: When you [load data into tables](load-to-tables.md) or use other [data loading methods](load-data-lakehouse.md), Delta format is applied automatically.
 
-You don't need to worry about the technical details - Fabric handles the Delta Lake formatting behind the scenes. This article explains how it works and how to get the best performance from your data.
+Fabric handles Delta formatting behind the scenes, so you can focus on modeling and analysis.
 
 ## Apache Spark engine and data formats
 
-Fabric Lakehouse is powered by [Apache Spark Runtime](./runtime.md), which is based on the same foundation as Azure Synapse Analytics Runtime for Apache Spark. However, Fabric includes optimizations and different default settings to provide better performance across all Fabric services.
+Fabric Lakehouse is powered by [Apache Spark Runtime](./runtime.md), which shares foundations with Azure Synapse Analytics Runtime for Apache Spark. Fabric also applies different defaults and optimizations for better out-of-the-box performance across Fabric workloads.
 
 **Supported data formats:**
-- **Delta Lake** - The preferred format (automatic optimization)
-- **CSV files** - Spreadsheet-like data files
-- **JSON files** - Web and application data
-- **Parquet files** - Compressed data files
-- **Other formats** - AVRO and legacy Hive table formats
+- **Delta Lake**: Preferred format with automatic optimization.
+- **CSV**: Delimited text data.
+- **JSON**: Semi-structured application and web data.
+- **Parquet**: Compressed columnar files.
+- **Other formats**: AVRO and legacy Hive table formats.
 
-**Key benefits of Fabric's Apache Spark:**
+**Key benefits of Fabric Spark defaults:**
 - **Optimized by default**: Performance features are automatically enabled for better speed
 - **Multiple formats supported**: You can read from existing files in various formats
 - **Automatic conversion**: When you load data into tables, it's automatically optimized using Delta Lake format
@@ -54,6 +51,8 @@ Fabric Lakehouse is powered by [Apache Spark Runtime](./runtime.md), which is ba
 ### Differences from Azure Synapse Analytics
 
 If you're migrating from Azure Synapse Analytics, here are the key configuration differences in Fabric's Apache Spark runtime:
+
+For a broader comparison across Spark pools, configurations, libraries, notebooks, and Spark job definitions, see [Compare Fabric Data Engineering and Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md).
 
 |Apache Spark configuration|Microsoft Fabric value|Azure Synapse Analytics value|Notes|
 |---------|---------|---------|---------|
@@ -74,19 +73,19 @@ When you open your Lakehouse, Fabric automatically scans your data and displays 
 
 This automatic discovery makes it easy to see all your available data at a glance.
 
-### Tables over shortcuts
+### Use shortcuts with tables and files
 
-Microsoft Fabric Lakehouse supports tables defined over OneLake shortcuts to provide utmost compatibility and no data movement. The following table contains the scenario best practices for each item type when using it over shortcuts.
+OneLake shortcuts can point to Delta tables or file and folder paths, so you can reference external data without moving it. The following table summarizes recommended patterns based on the target data type.
 
-|Shortcut destination|Where to create the shortcut|Best practice|
+|Data type at shortcut target|Where to create the shortcut|Best practice|
 |---------|---------|---------|
-|Delta Lake table|```Tables``` section|If multiple tables are present in the destination, create one shortcut per table.|
-|Folders with files|```Files``` section|Use Apache Spark to use the destination directly using relative paths. Load the data into Lakehouse-native Delta tables for maximum performance.|
-|Legacy Apache Hive tables|```Files``` section|Use Apache Spark to use the destination directly using relative paths, or create a metadata catalog reference using ```CREATE EXTERNAL TABLE``` syntax. Load the data into Lakehouse-native Delta tables for maximum performance.|
+|Delta Lake table|`Tables` section|If multiple tables are present in the destination, create one shortcut per table.|
+|Folders with files|`Files` section|Use Apache Spark with relative paths to read directly from the shortcut target. Load into Lakehouse-native Delta tables for maximum performance.|
+|Legacy Apache Hive tables|`Files` section|Use Apache Spark with relative paths, or create a metadata catalog reference using `CREATE EXTERNAL TABLE`. Load into Lakehouse-native Delta tables for maximum performance.|
 
-## Load to Table
+## Load to tables
 
-Microsoft Fabric Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Table feature allows a visual experience for loading common file formats to Delta to boost analytical productivity to all personas. To learn more about the Load to Table feature, read the [Load to Delta Lake tables](load-to-tables.md) reference documentation.
+Microsoft Fabric Lakehouse provides a visual experience to load common file formats into Delta tables. To learn more, see [Load to Delta Lake tables](load-to-tables.md).
 
 ## Keeping your tables fast and efficient
 
@@ -109,6 +108,6 @@ For detailed guidance on table optimization, see [Delta Lake table optimization 
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Delta Lake overview](/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python)
 - [Shortcuts](lakehouse-shortcuts.md)
-- [Load to Delta Lake table](load-to-tables.md)
+- [Load to Delta Lake tables](load-to-tables.md)
 - [Data Engineering workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
 - [Apache Spark Runtimes in Fabric](runtime.md)

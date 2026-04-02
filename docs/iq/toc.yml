@@ -1,56 +1,137 @@
 items:
-- name: IQ documentation
+- name: Fabric IQ documentation
   href: index.yml
-- name: Overview
-  expanded: true
+- name: What is Fabric IQ?
+  href: overview.md
+- name: Ontology
   items:
-  - name: What is IQ?
-    href: overview.md
-  - name: Ontology
+  - name: Overview
     items:
-    - name: Overview
-      items:
-      - name: What is ontology?
-        href: ontology/overview.md
-      - name: Required tenant settings
-        href: ontology/overview-tenant-settings.md
-    - name: Ontology tutorial
-      items:
-      - name: 0- Introduction and environment setup
-        href: ontology/tutorial-0-introduction.md
-      - name: 1- Create an ontology
-        href: ontology/tutorial-1-create-ontology.md
-      - name: 2- Enrich the ontology
-        href: ontology/tutorial-2-enrich-ontology.md
-      - name: 3- Preview the ontology
-        href: ontology/tutorial-3-preview-ontology.md
-      - name: 4- Create data agent
-        href: ontology/tutorial-4-create-data-agent.md
-      - name: 5- Conclude and clean up resources
-        href: ontology/tutorial-5-conclusion.md
+    - name: What is ontology?
+      href: ontology/overview.md
+    - name: Required tenant settings
+      href: ontology/overview-tenant-settings.md
+  - name: Ontology tutorial
+    items:
+    - name: 0- Introduction and environment setup
+      href: ontology/tutorial-0-introduction.md
+    - name: 1- Create an ontology
+      href: ontology/tutorial-1-create-ontology.md
+    - name: 2- Enrich the ontology
+      href: ontology/tutorial-2-enrich-ontology.md
+    - name: 3- Preview the ontology
+      href: ontology/tutorial-3-preview-ontology.md
+    - name: 4- Create data agent
+      href: ontology/tutorial-4-create-data-agent.md
+    - name: 5- Conclude and clean up resources
+      href: ontology/tutorial-5-conclusion.md
+  - name: Concepts
+    items:
+    - name: Generating an ontology from semantic model
+      href: ontology/concepts-generate.md
+  - name: How-tos
+    items:
+    - name: Create entity types
+      href: ontology/how-to-create-entity-types.md
+    - name: Bind data
+      href: ontology/how-to-bind-data.md
+    - name: Add relationship types
+      href: ontology/how-to-create-relationship-types.md
+    - name: Use preview experience
+      href: ontology/how-to-use-preview-experience.md
+    - name: Add rules
+      href: ontology/how-to-use-rules.md
+  - name: Resources
+    items:
+    - name: Troubleshooting
+      href: ontology/resources-troubleshooting.md
+    - name: Billing and capacity usage
+      href: ontology/resources-capacity-usage.md
+    - name: Glossary
+      href: ontology/resources-glossary.md
+    - name: FAQ
+      href: ontology/resources-frequently-asked-questions.yml
+    - name: Ontology REST API
+      href: /rest/api/fabric/ontology/items
+    - name: CI/CD in Fabric
+      href: ../cicd/cicd-overview.md
+- name: Plan
+  items:
+  - name: Overview
+    items:
+    - name: What is plan?
+      href: plan/overview.md
+    - name: Region availability
+      href: plan/overview-regions.md
+  - name: Planning sheets
+    items:
+    - name: Planning sheets overview
+      href: plan/planning-overview.md
     - name: How-tos
       items:
-      - name: Create entity types
-        href: ontology/how-to-create-entity-types.md
-      - name: Bind data
-        href: ontology/how-to-bind-data.md
-      - name: Add relationship types
-        href: ontology/how-to-create-relationship-types.md
-      - name: Use preview experience
-        href: ontology/how-to-use-preview-experience.md
-    - name: Resources
+        - name: Get started with planning sheets
+          href: plan/planning-how-to-get-started.md
+        - name: Build forecasts
+          href: plan/planning-how-to-build-forecasts.md
+        - name: Input data
+          href: plan/planning-how-to-input-data.md
+        - name: Set up scenarios
+          href: plan/planning-how-to-set-up-scenarios.md
+        - name: Write back data
+          href: plan/planning-how-to-write-back-data.md
+  - name: PowerTable sheets
+    items:
+    - name: PowerTable sheets overview
+      href: plan/powertable-overview.md
+    - name: How-tos
       items:
-      - name: Billing and capacity usage
-        href: ontology/resources-capacity-usage.md
-      - name: Ontology FAQ
-        href: ontology/resources-frequently-asked-questions.md
-      - name: CI/CD in Fabric
-        href: ../cicd/cicd-overview.md
-  - name: Fabric data agent
-    href: ../data-science/concept-data-agent.md
-  - name: Graph in Microsoft Fabric
-    href: ../graph/overview.md
-  - name: Operations agent
-    href: ../real-time-intelligence/operations-agent.md
-  - name: Power BI semantic model
-    href: ../data-warehouse/semantic-models.md
+        - name: Create a table app
+          href: plan/powertable-how-to-create-table-app.md
+        - name: Connect to semantic model
+          href: plan/powertable-how-to-connect-semantic-model.md
+        - name: Set up access control
+          href: plan/powertable-how-to-set-up-access-control.md  
+        - name: Generate forms
+          href: plan/powertable-how-to-generate-forms.md  
+        - name: Configure approval workflow
+          href: plan/powertable-how-to-configure-approval-workflow.md
+        - name: Review changes in approval workflow
+          href: plan/powertable-how-to-review-approval-workflow.md      
+  - name: Intelligence sheets
+    items:
+    - name: Intelligence sheets overview
+      href: plan/intelligence-overview.md
+    - name: How-tos
+      items:
+        - name: Get started with Intelligence sheets
+          href: plan/intelligence-how-to-get-started.md
+        - name: Build financial reports
+          href: plan/intelligence-how-to-build-financial-reports.md
+        - name: Comment and collaborate
+          href: plan/intelligence-how-to-comment-collaborate.md
+        - name: Create paginated reports
+          href: plan/intelligence-how-to-create-paginated-reports.md
+        - name: Export data and visuals
+          href: plan/intelligence-how-to-export-data-visuals.md
+        - name: Visualize planning data
+          href: plan/intelligence-how-to-visualize-planning-data.md
+        - name: Plan projects with Gantt charts
+          href: plan/intelligence-how-to-create-gantt-chart.md
+  - name: InfoBridge
+    items:
+    - name: InfoBridge overview
+      href: plan/infobridge-overview.md
+    - name: How-tos
+      items:
+        - name: Share measures
+          href: plan/infobridge-how-to-share-measures.md
+        - name: Write back data
+          href: plan/infobridge-how-to-write-back-data.md
+- name: Graph
+  href: ../graph/toc.yml
+- name: Data agent
+  href: ../data-science/data-agent-toc/toc.yml
+- name: Operations agent
+  href: ../real-time-intelligence/operations-agent-tocs/toc.yml
+- name: Power BI semantic model
+  href: ../data-warehouse/semantic-model-toc/toc.yml

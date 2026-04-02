@@ -3,6 +3,8 @@ items:
   href: index.yml
 - name: Overview
   href: data-warehousing.md
+- name: Architecture
+  href: architecture.md
 - name: Get started with Warehouse
   expanded: true
   items:
@@ -15,7 +17,7 @@ items:
   - name: 2. Create a table
     href: create-table.md
   - name: 3. Ingest data 
-    href: ingest-data-pipelines.md
+    href: ingest-data-into-table.md
   - name: 4. Query the warehouse
     href: query-warehouse.md
   - name: 5. Create reports
@@ -26,31 +28,27 @@ items:
     href: tutorial-introduction.md
   - name: 1. Create a workspace
     href: tutorial-create-workspace.md
-  - name: 2. Create a Warehouse
+  - name: 2. Create a warehouse
     href: tutorial-create-warehouse.md
-  - name: 3. Ingest data into a Warehouse
+  - name: 3. Ingest data into a warehouse
     href: tutorial-ingest-data.md
-  - name: 4. Create tables
-    href: tutorial-create-tables.md
-  - name: 5. Load data with T-SQL
-    href: tutorial-load-data.md
-  - name: 6. Clone a table with T-SQL
+  - name: 4. Clone a table with T-SQL
     href: tutorial-clone-table.md
-  - name: 7. Transform data with a stored procedure
+  - name: 5. Transform data with a stored procedure
     href: tutorial-transform-data.md
-  - name: 8. Time travel with T-SQL
+  - name: 6. Time travel with T-SQL
     href: tutorial-time-travel.md
-  - name: 9. Create queries with visual query builder
+  - name: 7. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 10. Analyze data in a notebook
+  - name: 8. Analyze data in a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 11. Create a cross-warehouse query
+  - name: 9. Create a cross-warehouse query
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 12. Create a semantic model and report
+  - name: 10. Create a semantic model and report
     href: tutorial-power-bi-report.md
-  - name: 13. Generate a report from OneLake catalog
+  - name: 11. Generate a report from OneLake catalog
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 14. Clean up tutorial resources
+  - name: 12. Clean up tutorial resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
@@ -90,15 +88,18 @@ items:
       href: manage-objects.md
 - name: Continuous integration & continuous deployment (CI/CD)
   items:
-  - name: Development and Deployment
+  - name: Development and deployment workflows
     href: development-deployment.md
+  - name: Cross-warehouse dependencies
+    href: cross-warehouse-development-database-projects.md
   - name: Developer warehouse projects
     href: develop-warehouse-project.md
   - name: Source control with Warehouse
     href: source-control.md
-
 - name: Develop
   items:
+  - name: AI functions
+    href: ai-functions.md
   - name: Query labels
     href: query-label.md
   - name: Transactions
@@ -117,8 +118,6 @@ items:
       displayName: Create a warehouse snapshot
     - name: Analyze with range bands
       href: analyze-range-bands.md
-    - name: Datamart upgrade to warehouse
-      href: datamart-upgrade-to-warehouse.md
     - name: Create an IDENTITY column
       href: tutorial-identity.md
 - name: Dimensional modeling
@@ -144,29 +143,38 @@ items:
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
   - name: Use dbt with data warehouse
-    href: tutorial-setup-dbt.md          
+    href: tutorial-setup-dbt.md   
+
 - name: Create models and build Power BI reports
-  items:
-  - name: Semantic models
-    href: semantic-models.md
-  - name: Create reports in the Power BI service
-    href: reports-power-bi-service.md    
+  href: semantic-model-toc/toc.yml
 - name: Collaborate, share, and manage security
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Entra ID authentication
+    href: entra-id-authentication.md
   - name: Service principals
     href: service-principals.md
     displayName: SPN
-  - name: Encryption
-    displayName: CMK encryption
-    href: encryption.md
-  - name: Entra ID authentication
-    href: entra-id-authentication.md
   - name: SQL Audit Logs
     href: sql-audit-logs.md
   - name: Workspace roles
     href: workspace-roles.md
+  - name: How to
+    items:
+    - name: Share your data
+      href: share-warehouse-manage-permissions.md    
+    - name: Manage SQL granular permissions
+      href: sql-granular-permissions.md
+    - name: Configure SQL Audit Logs
+      href: configure-sql-audit-logs.md 
+    - name: Query Delta Lake logs
+      href: query-delta-lake-logs.md
+- name: Encryption and data protection
+  items:
+  - name: Encryption
+    displayName: CMK encryption
+    href: encryption.md
   - name: Column-level security
     href: column-level-security.md
   - name: Row-level security
@@ -175,19 +183,13 @@ items:
     href: dynamic-data-masking.md
   - name: How to
     items: 
-    - name: Share your data
-      href: share-warehouse-manage-permissions.md    
-    - name: Manage SQL granular permissions
-      href: sql-granular-permissions.md
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
       href: tutorial-row-level-security.md
     - name: Implement dynamic data masking
       href: howto-dynamic-data-masking.md
-    - name: Configure SQL Audit Logs
-      href: configure-sql-audit-logs.md
-- name: Query the warehouse
+- name: Query tools 
   items:
   - name: Query using Visual Query editor
     href: visual-query-editor.md
@@ -195,16 +197,26 @@ items:
     href: sql-query-editor.md    
   - name: View data in the Data preview
     href: data-preview.md
-  - name: Query Delta Lake logs
-    href: query-delta-lake-logs.md
-  - name: Query data as it existed in the past
-    href: time-travel.md
-    displayName: Time travel
-  - name: Query using time travel
-    href: how-to-query-using-time-travel.md
-    displayName: Query using time travel
   - name: Query data with a T-SQL notebook
     href: ../data-engineering/author-tsql-notebook.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+- name: Query external data
+  items:
+  - name: Query external data lake files
+    href: query-external-data-lake-files.md
+  - name: Query delimited files
+    href: query-delimited-files.md
+  - name: Query JSON files
+    href: query-json-files.md
+  - name: Query Parquet files
+    href: query-parquet-files.md
+- name: Time travel
+  items:
+  - name: Query data as it existed in the past
+    href: time-travel.md
+  - name: "How to: Query using time travel"
+    href: how-to-query-using-time-travel.md
+    displayName: Query using time travel
+
 - name: Data recovery
   items:
   - name: Restore in-place
@@ -261,10 +273,6 @@ items:
         href: monitor-using-dmv.md
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
-- name: Continuous integration and deployment
-  items:
-  - name: Overview
-    href: development-deployment.md
 - name: Warehouse capacity
   items:
   - name: Burstable capacity
@@ -272,12 +280,19 @@ items:
   - name: Capacity pause and resume
     href: pause-resume.md
     displayName: pause, warehouse
+  - name: Custom SQL pools
+    href: custom-sql-pools.md
   - name: Smoothing and throttling
     href: compute-capacity-smoothing-throttling.md
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
-
+  - name: How to
+    items:    
+    - name: Configure custom SQL pools in Fabric portal
+      href: configure-custom-sql-pools-portal.md
+    - name: Configure custom SQL pools with REST API
+      href: configure-custom-sql-pools-api.md
 - name: Migrate
   items:
   - name: Migration Assistant
@@ -290,8 +305,10 @@ items:
     items:    
     - name: Extract DAC from a dedicated SQL pool
       href: extract-data-tier-application-synapse-dedicated-sql-pool.md
-    - name: Migration Assistant guide for Azure Synapse Analytics
-      href: migrate-with-migration-assistant.md
+    - name: Migrate with a DACPAC file
+      href: migrate-using-upload-file.md
+    - name: Migrate with a direct connection
+      href: migrate-using-connection-to-source-system.md
     - name: Migrate to IDENTITY columns
       href: migrate-identity-columns.md
 - name: Troubleshoot

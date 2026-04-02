@@ -1,11 +1,10 @@
 ---
 title: Workload Manifest
 description: Learn more about the Workload Manifest and the usage.
-author: gsaurer
-ms.author: billmath
-ms.topic: article
-ms.custom:
-ms.date: 09/04/2025
+ms.reviewer: gesaur
+ms.topic: concept-article
+ms.date: 12/15/2025
+ai-usage: ai-assisted
 ---
 
 # Workload manifest in Extensibility Toolkit
@@ -17,10 +16,10 @@ The workload manifest (WorkloadManifest.xml) is the workload-level configuration
 
 ## What the workload manifest defines
 
-- Workload identity: `WorkloadName` ([Organization].[WorkloadId]) and `Version` (semantic version)
+- Workload identity: `WorkloadName` ([Organization].[WorkloadId]) and `Version` (semantic version). The WorkloadId portion cannot exceed 32 characters.
 - Hosting model: `HostingType` (use `FERemote`)
 - Front-end Microsoft Entra app: `AADFEApp` > `AppId`
-- Front-end endpoints: `ServiceEndpoint` entries with `Name` (for example, `Frontend`), `Url` (localhost in dev; production domain associated to your Microsoft Entra tenant), and `IsEndpointResolutionService`
+- Front-end endpoints: `ServiceEndpoint` entries with `Name` (for example, `Frontend`), `Url` (localhost in dev; production domain must be a subdomain of your verified Entra domain), and `IsEndpointResolutionService`. See [General Publishing Requirements](publishing-requirements-general.md#domain-configuration) for domain restrictions.
 - Optional sandbox relaxation: `EnableSandboxRelaxation` only when special iFrame capabilities are required (for example, initiating file downloads)
 
 ## Best practices
@@ -35,7 +34,7 @@ Key elements in the Manifest and what they mean:
 
 - Root element with a schema version (for example, `SchemaVersion="2.0.0"`).
 - `Workload` node with attributes such as:
-	- `WorkloadName` — unique identifier in the form `[Organization].[WorkloadId]` (for example, `Org.MyWorkload`). If you don’t intend to publish to other tenants, you can use `Org.[WorkloadId]`. For publishing across tenants, register a full WorkloadName with Fabric.
+	- `WorkloadName` — unique identifier in the form `[Organization].[WorkloadId]` (for example, `Org.MyWorkload`). The WorkloadId portion cannot exceed 32 characters. If you don't intend to publish to other tenants, you can use `Org.[WorkloadId]`. For publishing across tenants, register a full WorkloadName with Fabric.
 	- `HostingType` — indicates workload hosting; use `FERemote`.
 - `Version` node — semantic version of your workload package.
 - `RemoteServiceConfiguration` > `CloudServiceConfiguration` containing:
@@ -44,7 +43,7 @@ Key elements in the Manifest and what they mean:
 	- `EnableSandboxRelaxation` — set it to `true` if you require special iFrame capabilities (for example, initiating file downloads). Keep `false` by default for security.
 	- `Endpoints` > `ServiceEndpoint` entries with:
 		- `Name` (for example, `Frontend`).
-		- `Url` — where the frontend is hosted. Use `https://localhost:port` for development. In production, the domain used needs to be associated with your Microsoft Entra tenant.
+		- `Url` — where the frontend is hosted. Use `https://localhost:port` for development. In production, the domain must be a subdomain of your verified Entra domain. See [General Publishing Requirements](publishing-requirements-general.md#domain-configuration) for complete domain restrictions.
 		- `IsEndpointResolutionService`.
 
 ## Build output and placeholders
@@ -53,10 +52,24 @@ In the Starter-Kit, populates the placeholders every time the Manifest is create
 
 - DevGateway: Register your local development instance with Fabric so your app can load inside the Fabric portal during development.
 - DevServer: Which is providing the information to the Fabric 
-- Admin Portal: for test and production, upload the manifest package through the Fabric Admin Portal as part of publishing. See [Publish your workload](publish-workload-flow.md).
+- Admin Portal: for test and production, upload the manifest package through the Fabric Admin Portal as part of publishing. See [Publish your workload](publishing-overview.md).
+
+## Backend folder limits
+
+The backend (`BE`) folder has the following constraints:
+
+- Accepts only `.xml` files. Any other file type result in an upload error.
+- Can contain one `WorkloadManifest.xml` file (required).
+- Can contain up to 10 `Item.xml` files. Having more than 10 item files result in an upload error.
+
+See [Manifest overview](manifest-overview.md#package-limits) for complete package limits.
 
 ## Learn more
 
 - [Architecture](architecture.md)
-- [Implementation guide](implementation-guide.md)
+
+## Related content
+
+- [Getting started guide](get-started.md)
+- [Setup guide](setup-guide.md)
 - [Fabric Public REST APIs](/rest/api/fabric/articles/)

@@ -2,9 +2,7 @@
 title: Migration Best Practices for Azure Data Factory to Fabric Data Factory
 description: Discover best practices for ADF-to-Fabric migrations, including inventorying assets, assessing feature parity, and choosing the right migration path.
 #customer intent: As an Azure Data Factory customer I want to explore best practices for migrating to Fabric Data Factory, so I can improve my data integration strategy and ensure a smooth and efficient transition.
-author: kromerm
-ms.author: makromer
-ms.reviewer: whhender
+ms.reviewer: makromer
 ms.date: 09/22/2025
 ms.topic: concept-article
 ai-usage: ai-assisted
@@ -102,6 +100,12 @@ When migrating, validate the following:
 - Idempotent ELT patterns, such as staging and MERGE, to ensure predictable reruns.
 
 For migration scenarios, see [Migrate from Dataflow Gen1 to Dataflow Gen2](dataflow-gen2-migrate-from-dataflow-gen1-scenarios.md).
+
+## Global parameters in Azure Data Factory
+
+Fabric uses workspace-level **Variable Libraries** to define constants Fabric items. When migrating to Microsoft Fabric Data Factory, these you’ll need to convert your Azure Data Factory global parameters to variable libraries.
+
+For full conversion guidance, see [Convert ADF Global Parameters to Fabric Variable Libraries](convert-global-parameters-to-variable-libraries.md).
 
 ## Azure Marketplace partner offerings
 

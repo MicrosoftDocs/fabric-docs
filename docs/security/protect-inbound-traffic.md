@@ -3,8 +3,7 @@ title: Protect inbound traffic
 description: Understand the difference between private links and Microsoft Entra Conditional and decide which is best for your organization.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 08/13/2025
 ---
 
@@ -52,7 +51,7 @@ Fabric doesn't support other authentication methods such as account keys or SQL 
 
 ### Configure conditional access
 
-To [configure conditional access in Fabric](security-conditional-access.md#configure-conditional-access-for-fabric), you need to select several Fabric related Azure services such as Power BI, Azure Data Explorer, Azure SQL Database, and Azure Storage.
+To [configure conditional access in Fabric](security-conditional-access.md), you need to select several Fabric related Azure services such as Power BI, Azure Data Explorer, Azure SQL Database, and Azure Storage.
 
 >[!NOTE]
 >Conditional access can be considered too broad for some customers as any policy is applied to Fabric and the related Azure services.

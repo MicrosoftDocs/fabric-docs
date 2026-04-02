@@ -2,8 +2,7 @@
 title: CI/CD for pipelines in Data Factory
 #customer intent: As a developer, I want to set up CI/CD for pipelines in Data Factory so that I can automate integration, testing, and deployment.
 description: This article describes how to set up continuous integration and delivery (CI/CD) for pipelines in Data Factory for Microsoft Fabric.
-author: conxu-ms
-ms.author: conxu
+ms.reviewer: conxu
 ms.topic: how-to
 ms.date: 11/14/2025
 ms.custom: pipelines
@@ -12,9 +11,9 @@ ai-usage: ai-assisted
 
 # CI/CD for pipelines in Data Factory in Microsoft Fabric
 
-In Fabric Data Factory, CI/CD (continuous integration and continuous development) helps teams work faster and more reliably by automatically handling code changes—from testing to deployment.
+In Fabric Data Factory, CI/CD (continuous integration and continuous development) helps teams work faster and more reliably by automatically handling code changes, from testing to deployment.
 
-Right now, Fabric supports two key features for CI/CD, built in partnership with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These tools let you import and export workspace resources one at a time, so you can update only what you need.
+Right now, Fabric supports two key features for CI/CD, built in partnership with the Application Lifecycle Management (ALM) team: Git integration and deployment pipelines. These tools let you import and export workspace resources individually, and you can also use the Import/Export Item Definitions Batch APIs (preview) to synchronize multiple items at scale. This flexibility lets you update only what you need or promote changes in bulk.
 
 Unlike Azure Data Factory, which typically updates the entire factory using ARM templates, Fabric's approach gives you more control. You can update specific pipelines without pausing everything. Both Git integration (bring your own Git) and deployment pipelines (built-in CI/CD) link one workspace to one environment. So, you want to set up separate workspaces for development, testing, and production.
 
@@ -69,6 +68,10 @@ There are a few key workflow essentials to understand when working with Git.
 - **Feature branches**: These branches are separate from the main branch and allow for isolated development without changing the main branch.
 - **Pull requests (PRs)**: PRs allow users to propose, review, and discuss changes before integration.
 - **Merging**: This occurs when changes are approved. Git integrates these changes, continuously updating the project.
+
+### Recent Git integration enhancements
+
+Fabric Git integration now includes selective branch mapping per workspace or folder, so you can target a specific branch for each workspace without affecting other workspaces in the same repository. The **Source control** pane also provides a built-in diff experience that lets you compare workspace items against branch commits before committing or pulling updates. These improvements help teams review changes more clearly and manage branched workspaces with greater confidence.
 
 ## Deployment pipelines
 
@@ -225,6 +228,31 @@ When you create a schedule for a pipeline, it's automatically added to the Git r
 
 :::image type="content" source="media/pipeline-runs/pipeline-job-scheduler-git.png" alt-text="Screenshot of the .schedules file for a scheduled pipeline in Fabric Data Factory." lightbox="media/pipeline-runs/pipeline-job-scheduler-git.png":::
 
+## Automate CI/CD with Fabric CLI and Azure DevOps Pipelines
+
+The [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines) provides native tasks that run [Fabric CLI](https://go.microsoft.com/fwlink/?linkid=2313665) commands inside Azure DevOps pipeline jobs. You can use these tasks to automate workspace synchronization and deployment steps as part of your CI/CD workflow.
+
+To get started:
+
+1. Install the Azure DevOps Pipelines extension for Fabric from the Visual Studio Marketplace.
+1. Create a service connection in your Azure DevOps project that authenticates against your Fabric tenant.
+1. Add Fabric CLI tasks to your pipeline YAML or classic pipeline definition to run commands such as workspace sync, item export, or deployment promotion.
+
+This approach lets you combine Fabric's deployment pipelines with automated DevOps workflows, giving you more control over when and how changes are promoted across environments.
+
+## Bulk synchronization via APIs (preview)
+
+The Import/Export Item Definitions Batch APIs (preview) let you programmatically export and import multiple item definitions (including pipelines) in a single operation. You can use these APIs to streamline environment promotion scenarios where many items need to move between workspaces at once.
+
+Consider using batch APIs when:
+
+- You're promoting a large number of items across development, test, and production workspaces.
+- You need programmatic control over which items are included in each synchronization cycle.
+- You want to integrate bulk export/import into scripts or automation pipelines.
+
+> [!NOTE]
+> These APIs are in preview. Use them judiciously alongside deployment pipelines, and review the [Fabric REST API documentation](/rest/api/fabric/) for current limits and authentication requirements.
+
 ## Known limitations
 
 The following known limitations apply to CI/CD for pipelines in Data Factory in Microsoft Fabric:
@@ -240,3 +268,5 @@ The following known limitations apply to CI/CD for pipelines in Data Factory in 
 - [Get started with Git integration, the Fabric Application Lifecycle Management (ALM) tool](../cicd/git-integration/git-get-started.md?tabs=azure-devops%2CAzure%2Ccommit-to-git)
 - [Get started using deployment pipelines, the Fabric Application Lifecycle Management (ALM) tool](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md?tabs=from-fabric%2Cnew%2Cstage-settings-new)
 - [Blog: Exploring CI/CD Capabilities in Microsoft Fabric: A Focus on pipelines](https://blog.fabric.microsoft.com/blog/exploring-ci-cd-capabilities-in-microsoft-fabric-a-focus-on-data-pipelines?ft=All)
+- [Azure DevOps Pipelines extension for Fabric](https://marketplace.visualstudio.com/items?itemName=ms-fabric.fabric-devops-pipelines)
+- [Fabric CLI overview](https://go.microsoft.com/fwlink/?linkid=2313665)

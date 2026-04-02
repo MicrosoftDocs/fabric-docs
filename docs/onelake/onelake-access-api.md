@@ -1,11 +1,8 @@
 ---
 title: How do I connect to OneLake?
 description: Microsoft OneLake provides open access to your files and folders through the same APIs and SDKs as ADLS Gen2.
-ms.reviewer: eloldag
-ms.author: mabasile
-author: mabasile-MSFT
+ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
-ms.custom:
 ms.date: 02/21/2025
 #customer intent: As a data engineer, I want to understand how to connect to Microsoft OneLake using the existing Azure Data Lake Storage (ADLS) Gen2 APIs and SDKs so that I can seamlessly access and manipulate my data.
 ---
@@ -67,9 +64,13 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
 
 ## Data residency
 
-If you use the global endpoint ('https://onelake.dfs.fabric.microsoft.com`) to query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the correct regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
+If you use the global endpoint (`https://onelake.dfs.fabric.microsoft.com`) to query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the correct regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
 
 OneLake regional endpoints all follow the same format: `https://<region>-onelake.dfs.fabric.microsoft.com`. For example, a workspace attached to a capacity in the West US region would be accessible through the regional endpoint `https://westus-onelake.dfs.fabric.microsoft.com`.
+
+## Additional OneLake endpoints
+
+OneLake also supports a general FQDN (`https://api.onelake.fabric.microsoft.com`), along with a regional (`https://<region>-api.onelake.fabric.microsoft.com`) and workspace (`https://<wsid>.z<xy>.onelake.fabric.microsoft.com`) version.  These FQDNs function identically to the blob and DFS variants, but may be incompatible with some Azure Storage tooling which rely on the blob and DFS variants to use the correct Azure Storage APIs.
 
 ## Common issues
 
@@ -98,3 +99,4 @@ Create file
 - [OneLake parity and integration](onelake-api-parity.md)
 - [Connect to OneLake with Python](onelake-access-python.md)
 - [OneLake integration with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)
+

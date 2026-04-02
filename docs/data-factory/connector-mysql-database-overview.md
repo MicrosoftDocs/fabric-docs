@@ -1,10 +1,8 @@
 ---
 title: MySQL database connector overview
 description: This article provides an overview of the supported capabilities of the MySQL database connector.
-author: whhender
-ms.author: whhender
 ms.topic: how-to
-ms.date: 03/27/2024
+ms.date: 02/14/2026
 ms.custom:
   - template-how-to
   - connectors
@@ -19,8 +17,8 @@ The MySQL database connector is supported in Data Factory for [!INCLUDE [product
 | Supported capabilities| Gateway | Authentication|
 |---------| --------| --------|
 | **Dataflow Gen2** (source/-)|None<br> On-premises<br> Virtual network |Basic |
-| **Pipeline**<br>- [Copy activity](connector-mysql-database-copy-activity.md) (source/-) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
-| **Copy job** (source/-) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
+| **Pipeline**<br>- [Copy activity](connector-mysql-database-copy-activity.md) (source/destination) <br>- Lookup activity    |None<br> On-premises<br> Virtual network |Basic |
+| **Copy job** (source/destination) <br>- Full load |None<br> On-premises<br> Virtual network |Basic |
 
 ## Related content
 

@@ -1,9 +1,7 @@
 ---
 title: Troubleshoot the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connector
 description: Learn how to troubleshoot issues with the Azure Synapse Analytics, Azure SQL Database, SQL Server, Azure SQL Managed Instance, and Amazon RDS for SQL Server connectors in Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: xupzhou
-author: pennyzhou-msft
+ms.reviewer: xupzhou
 ms.topic: troubleshooting
 ms.custom: connectors
 ms.date: 11/20/2025
@@ -279,7 +277,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 ## Error code: SqlDeniedPublicAccess
 
-- **Message**: `Cannot connect to SQL Database: '%server;', Database: '%database;', Reason: Connection was denied since Deny Public Network Access is set to Yes. To connect to this server, 1. If you persist public network access disabled, please use Managed Vritual Network IR and create private endpoint. https://docs.microsoft.com/en-us/azure/data-factory/managed-virtual-network-private-endpoint; 2. Otherwise you can enable public network access, set "Public network access" option to "Selected networks" on Azure SQL Networking setting.`
+- **Message**: `Cannot connect to SQL Database: '%server;', Database: '%database;', Reason: Connection was denied since Deny Public Network Access is set to Yes. To connect to this server, 1. If you persist public network access disabled, please use Managed Virtual Network IR and create private endpoint. https://docs.microsoft.com/en-us/azure/data-factory/managed-virtual-network-private-endpoint; 2. Otherwise you can enable public network access, set "Public network access" option to "Selected networks" on Azure SQL Networking setting.`
 
 - **Causes**: Azure SQL Database is set to deny public network access. This requires to use managed virtual network and create private endpoint to access.
 

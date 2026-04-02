@@ -1,11 +1,9 @@
 ---
 title: Understand V-Order
 description: Learn how to manage the V-Order state of warehouses in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 08/02/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Understand V-Order for Microsoft Fabric Warehouse

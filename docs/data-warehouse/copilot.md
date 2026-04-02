@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Copilot in Microsoft Fabric in the Data Warehouse Workload Overview"
+title: "Microsoft Copilot in the Data Warehouse Workload Overview"
 description: Learn more about Copilot in Fabric in the Data Warehouse workload.
 author: markingmyname
 ms.author: maghan
@@ -14,7 +14,7 @@ ms.custom:
 ms.devlang: copilot-prompt
 ---
 
-# What is Copilot in Fabric in the Data Warehouse workload (Preview)?
+# What is Copilot in the Data Warehouse workload (Preview)?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -96,3 +96,4 @@ Here are the current limitations of Copilot in Fabric in Data Warehouse:
 - [How to: Use Copilot quick actions in Fabric in SQL database](copilot-quick-action.md)
 - [How to: Use Copilot code completion in Fabric in SQL database](copilot-code-completion.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

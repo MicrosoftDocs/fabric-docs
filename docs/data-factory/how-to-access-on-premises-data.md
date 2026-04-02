@@ -1,8 +1,7 @@
 ---
 title: How to access on-premises data sources in Data Factory
 description: This article describes how to configure a gateway to access on-premises data sources from Data Factory for Microsoft Fabric.
-author: lrtoyou1223
-ms.author: lle
+ms.reviewer: lle
 ms.topic: how-to
 ms.custom: configuration
 ms.date: 07/02/2025
@@ -16,7 +15,7 @@ Data Factory for Microsoft Fabric is a cloud service that helps you move, transf
 
 ## Available connection types
 
-For a complete list of connectors supported for on-premises data types and details on how to connect to each type, see [pipeline connectors in Microsoft Fabric](pipeline-support.md) and your source's specific connector page.
+For a complete list of connectors supported for on-premises data types and details on how to connect to each type, see [connector overview in Microsoft Fabric](connector-overview.md) and your source's specific connector page.
 
 Some available connections include:
 
@@ -75,7 +74,7 @@ To set up your gateway:
    :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
 
    >[!TIP]
-   >Check out the [pipeline connectors in Microsoft Fabric article](pipeline-support.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
+   >Check out the [connector overview in Microsoft Fabric](connector-overview.md) and specific connector articles for details like supported authentication types for your source or troubleshooting information.
 
 ## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
 

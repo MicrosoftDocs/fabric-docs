@@ -54,4 +54,38 @@ Below are instructions specific to this repository. These may be updated by repo
 
 <!--- Add additional repository level instructions below. Do NOT update this line or above. --->
 
+### Fabric terminology guidelines
+
+When writing about Microsoft Fabric services, follow these terminology standards.
+
+#### Fabric workloads
+
+| First use | Subsequent uses | Notes |
+|-----------|-----------------|-------|
+| Microsoft Fabric | Fabric | |
+| Microsoft Power BI | Power BI | Don't use "PowerBI." |
+| Microsoft OneLake | OneLake | Don't split the name into "One Lake". Always capitalize the "O" and "L". |
+| Microsoft Fabric Workload Development Kit | Workload Development Kit | "WDK" is an approved acronym. |
+| Fabric Databases | Databases | |
+| Fabric Data Factory | Data Factory | |
+| Fabric Data Engineering | Data Engineering | Don't use "Synapse" as part of the name. |
+| Fabric Data Science | Data Science | Don't use "Synapse" as part of the name. |
+| Fabric Data Warehouse | Data Warehouse | Don't use "Synapse" as part of the name. |
+| Fabric Real-Time Intelligence | Real-Time Intelligence | The R and T in  "Real-Time" are always capitalized. |
+| Fabric IQ | Fabric IQ | Always use the full name, don't shorten to "IQ". |
+
+
+#### General terms
+
+| Term | Definition | Examples | Usage |
+|------|------------|----------|------------|
+| eventhouse | A type of item in Fabric used for real-time data processing and analytics. | "Set up an eventhouse to process streaming data." | Always lowercase "eventhouse" when talking about an instance. Don't use "event house" or "event-house". |
+| item | An object created by users in Fabric, such as a database, lakehouse, or eventhouse. | "Create a new item in your workspace." | Don't use "artifact", "asset", or "object". Whenever possible, use the specific term for the item type instead of "item". |
+| lakehouse | A type of item in Fabric used for storing and analyzing large volumes of data. | "Create a lakehouse to store your data." | Always lowercase "lakehouse" when talking about an instance. Don't use "lake house" or "lake-house". |
+| OneLake security | The security model used by OneLake to manage access and permissions for data stored in Fabric. | "Configure OneLake security to control access to your data." | Don't capitalize "security". |
+| mirroring | The process of copying data from an external source into Fabric to create a mirrored database or catalog. | "Set up mirroring to sync your external database with Fabric." | Don't use "replication" or "data copy". Don't capitalize "mirroring". |
+| SQL analytics endpoint | A feature in Fabric that allows users to run SQL queries against their data for analysis and insights. | "Use the SQL analytics endpoint to query your data." | Always use the full term "SQL analytics endpoint". Don't shorten to "SQL endpoint" or "analytics endpoint". Don't capitalize "analytics endpoint". |
+| SQL database in Fabric | A type of database in Fabric that supports SQL queries for data analysis and management. | "Create a SQL database in Fabric to manage your structured data." | Always use the full term "SQL database in Fabric" unless referring to a SQL database outside of Fabric. Don't shorten to "SQL database" or "Fabric SQL database". Don't capitalize "database". |
+| warehouse | A type of item in Fabric used for structured data storage and analysis. | "Create a warehouse to manage your structured data." | Always lowercase "warehouse" when talking about an instance. Don't use "data warehouse" when talking about an instance. "Data Warehouse" (capitalized) is the name of the workload. |
+
 

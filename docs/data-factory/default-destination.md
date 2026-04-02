@@ -1,19 +1,20 @@
 ---
 title: Dataflow Gen2 default destination
 description: Learn about default data destination configurations and settings in Dataflow Gen2.
-author: luitwieler
-ms.author: jeluitwi
-ms.reviewer: whhender
-ms.topic: conceptual
-ms.date: 02/26/2025
+ms.reviewer: jeluitwi
+ms.topic: concept-article
+ms.date: 03/13/2026
 ms.custom: dataflows
 ---
 
 # Dataflow Gen2 default destination
 
-When you have a Lakehouse, Warehouse, or KQL Database and you want to load data into it, you can use Dataflow Gen2 as an easy, low-code way for landing your data with the right shape.
+When you have a Lakehouse, Warehouse, KQL Database, or Snowflake database and you want to load data into it, you can use Dataflow Gen2 as an easy, low-code way for landing your data with the right shape.
 
-We have made it easier to get data into your Lakehouse, Warehouse, or KQL Database by creating a Dataflow Gen2 directly from the Lakehouse, Warehouse, or KQL Database experience. This is a great way to get started with Dataflow Gen2 and load data into your workspace. Additionally, you can use the new default destination experience within the editor to quickly set a default destination for your dataflow. This article describes the two ways to create a Dataflow Gen2 and set a default destination to speed up your dataflow creation process.
+We have made it easier to get data into your Lakehouse, Warehouse, KQL Database, or Snowflake database by creating a Dataflow Gen2 directly from the Lakehouse, Warehouse, or KQL Database experience, or by setting a default destination in the editor. This is a great way to get started with Dataflow Gen2 and load data into your workspace. Additionally, you can use the new default destination experience within the editor to quickly set a default destination for your dataflow. This article describes the two ways to create a Dataflow Gen2 and set a default destination to speed up your dataflow creation process.
+
+> [!NOTE]
+> When using Snowflake as a default destination, the default destination only works for new tables. If you change the schema of your dataflow after the initial publish, the Snowflake destination schema isn't updated automatically. You need to reconfigure the destination mapping manually.
 
 ## Set a default destination in Dataflow Gen2
 

@@ -1,11 +1,9 @@
 ---
 title: Time Travel
 description: Learn how to Query data as it existed in the past with time travel in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: ajagadish
 ms.date: 10/13/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 # Query data as it existed in the past
 

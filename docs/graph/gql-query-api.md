@@ -1,10 +1,8 @@
 ---
-title: GQL Query HTTP API reference
-description: Refer to the complete HTTP API reference for querying graph data in Microsoft Fabric using GQL (Graph Query Language).
+title: GQL Query HTTP API Reference for graph in Microsoft Fabric
+description: Refer to the complete HTTP API reference for querying graph data in graph in Microsoft Fabric using GQL (Graph Query Language) via REST endpoints.
 ms.topic: reference
-ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Query HTTP API reference
 ---
@@ -13,7 +11,10 @@ ms.search.form: GQL Query HTTP API reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-Run GQL queries against property graphs in Microsoft Fabric using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
+Run GQL queries against property graphs in graph in Microsoft Fabric using a RESTful HTTP API. This reference describes the HTTP contract: request and response formats, authentication, JSON result encoding, and error handling.
+
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
 
 ## Overview
 
@@ -28,9 +29,9 @@ The GQL Query API is a single endpoint (RPC over HTTP) that accepts GQL queries 
 
 ## Prerequisites
 
-* You need a graph in Microsoft Fabric that contains data — including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
-* You should be familiar with [property graphs and a basic understanding of GQL](gql-language-guide.md), including the structure of [execution outcomes and results](gql-language-guide.md#execution-outcomes-and-results).
-* You need to install and set up the [Azure CLI](/cli/azure/) tool `az` to log in to your organization. Command line examples in this article assume use of a POSIX-compatible command line shell such as bash.
+- You need a graph that contains data, including nodes and edges (relationships). See the [graph quickstart](quickstart.md) to create and load a sample graph.
+- You should be familiar with [property graphs and a basic understanding of GQL](gql-language-guide.md), including the structure of [execution outcomes and results](gql-language-guide.md#execution-outcomes-and-results).
+- You need to install and set up the [Azure CLI](/cli/azure/) tool `az` to sign in to your organization. Command line examples in this article assume use of a POSIX-compatible command line shell such as bash.
 
 ## Authentication
 
@@ -42,14 +43,13 @@ Include your access token in the Authorization header of every request:
 Authorization: Bearer <your-access-token>
 ```
 
-In general, you can obtain bearer tokens using [Microsoft Authentication Library (MSAL)](/entra/identity-platform/msal-overview) 
-or other authentication flows compatible with Microsoft Entra.
+In general, you can obtain bearer tokens using [Microsoft Authentication Library (MSAL)](/entra/identity-platform/msal-overview) or other authentication flows compatible with Microsoft Entra.
 
 Bearer tokens are commonly obtained through two major paths:
 
 ### User-delegated access
 
-You can obtain bearer tokens for user-delegated service calls from the command line via the [Azure CLI](/cli/azure/) tool `az`, 
+You can obtain bearer tokens for user-delegated service calls from the command line via the [Azure CLI](/cli/azure/) tool `az`.
 
 Get a bearer token for user-delegated calls from the command line by:
 
@@ -68,7 +68,7 @@ You can obtain bearer tokens for applications registered in Microsoft Entra. Con
 
 The API uses a single endpoint that accepts all query operations:
 
-```
+```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true
 ```
 
@@ -91,20 +91,20 @@ You can use more parameters to further narrow down query results:
 - `--query '{query}'` for listing only items that match the provided JMESPath `{query}`. See the [Azure CLI documentation on JMESPath](/cli/azure/use-azure-cli-successfully-query) regarding the supported syntax for `{query}`.
 - `-o table` for producing a table result.
 
-> [!NOTE] 
+> [!NOTE]
 > See the [section on using az-rest](#complete-example-with-az-rest) or the [section on using curl](#complete-example-with-curl) for how to execute queries via the API endpoint from a command line shell.
 
 ### Request headers
 
-| Header | Value | Required |
-|---|---|---:|
-| `Content-Type` | `application/json` | Yes |
-| `Accept` | `application/json` | Yes |
-| `Authorization` | `Bearer <token>` | Yes |
+| Header          | Value              | Required |
+|-----------------|--------------------|---------:|
+| `Content-Type`  | `application/json` | Yes      |
+| `Accept`        | `application/json` | Yes      |
+| `Authorization` | `Bearer <token>`   | Yes      |
 
 ## Request format
 
-All requests use HTTP POST with a JSON payload. 
+All requests use HTTP POST with a JSON payload.
 
 ### Basic request structure
 
@@ -116,9 +116,9 @@ All requests use HTTP POST with a JSON payload.
 
 ### Request fields
 
-| Field | Type | Required | Description |
-|---|---|---:|---|
-| `query` | string | Yes | The GQL query to execute |
+| Field   | Type   | Required | Description              |
+|---------|--------|---------:|--------------------------|
+| `query` | string | Yes      | The GQL query to execute |
 
 ## Response format
 
@@ -149,12 +149,12 @@ All responses for successful requests use HTTP 200 status with JSON payload cont
 
 Every response includes a status object with execution information:
 
-| Field | Type | Description |
-|---|---|---|
-| `code` | string | six-character status code (000000 = success) |
-| `description` | string | Human-readable status message |
-| `diagnostics` | object | Detailed diagnostic records |
-| `cause` | object | Optional underlying cause status object |
+| Field         | Type   | Description                                  |
+|---------------|--------|----------------------------------------------|
+| `code`        | string | six-character status code (000000 = success) |
+| `description` | string | Human-readable status message                |
+| `diagnostics` | object | Detailed diagnostic records                  |
+| `cause`       | object | Optional underlying cause status object      |
 
 #### Status codes
 
@@ -170,10 +170,10 @@ For more information, see the [GQL status codes reference](gql-reference-status-
 
 #### Diagnostic records
 
-Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to graph for Microsoft Fabric. The GQL standard prescribes all other keys.
+Diagnostic records can contain other key-value pairs that further detail the status object. Keys starting with an underscore (`_`) are specific to graph. The GQL standard prescribes all other keys.
 
 > [!NOTE]
-> Values in the diagnostic record of keys specific to graph in Microsoft Fabric are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
+> Values in the diagnostic record of keys specific to graph are JSON-encoded GQL values. See [Value types and encoding](#value-types-and-encoding).
 
 #### Causes
 
@@ -252,19 +252,19 @@ The JSON format of GQL values follows a discriminated union pattern.
 
 ### Primitive types
 
-| GQL Type | Example | Description |
-|---|---|---|
-| `BOOL` | `{"gqlType": "BOOL", "value": true}` | Native JSON boolean |
-| `STRING` | `{"gqlType": "STRING", "value": "Hello"}` | UTF-8 string |
+| GQL Type | Example                                   | Description         |
+|----------|-------------------------------------------|---------------------|
+| `BOOL`   | `{"gqlType": "BOOL", "value": true}`      | Native JSON boolean |
+| `STRING` | `{"gqlType": "STRING", "value": "Hello"}` | UTF-8 string        |
 
 ### Numeric types
 
 #### Integer types
 
-| GQL Type | Range | JSON Serialization | Example |
-|---|---|---|---|
-| `INT64` | -2⁶³ to 2⁶³-1 | Number or string* | `{"gqlType": "INT64", "value": -9237}` |
-| `UINT64` | 0 to 2⁶⁴-1 | Number or string* | `{"gqlType": "UINT64", "value": 18467}` |
+| GQL Type | Range         | JSON Serialization | Example                                 |
+|----------|---------------|--------------------|-----------------------------------------|
+| `INT64`  | -2⁶³ to 2⁶³-1 | Number or string*  | `{"gqlType": "INT64", "value": -9237}`  |
+| `UINT64` | 0 to 2⁶⁴-1    | Number or string*  | `{"gqlType": "UINT64", "value": 18467}` |
 
 Large integers outside JavaScript's safe range (-9,007,199,254,740,991 to 9,007,199,254,740,991) are serialized as strings:
 
@@ -276,7 +276,7 @@ Large integers outside JavaScript's safe range (-9,007,199,254,740,991 to 9,007,
 #### Floating-point types
 
 | GQL Type | Range | JSON Serialization | Example |
-|---|---|---|---|
+| -------- | ----- | ------------------ | ------- |
 | `FLOAT64` | IEEE 754 binary64 | JSON number or string | `{"gqlType": "FLOAT64", "value": 3.14}` |
 
 Floating-point values support IEEE 754 special values:
@@ -292,16 +292,16 @@ Floating-point values support IEEE 754 special values:
 
 Supported temporal types use ISO 8601 string formats:
 
-| GQL Type | Format | Example |
-|---|---|---|
+| GQL Type         | Format                             | Example                                                               |
+|------------------|------------------------------------|-----------------------------------------------------------------------|
 | `ZONED DATETIME` | YYYY-MM-DDTHH:MM:SS[.ffffff]±HH:MM | `{"gqlType": "ZONED DATETIME", "value": "2023-12-25T14:30:00+02:00"}` |
 
 ### Graph element reference types
 
-| GQL Type | Description | Example |
-|---|---|---|
-| `NODE` | Graph node reference | `{"gqlType": "NODE", "value": "node-123"}` |
-| `EDGE` | Graph edge reference | `{"gqlType": "EDGE", "value": "edge_abc#def"}` |
+| GQL Type | Description          | Example                                        |
+|----------|----------------------|------------------------------------------------|
+| `NODE`   | Graph node reference | `{"gqlType": "NODE", "value": "node-123"}`     |
+| `EDGE`   | Graph edge reference | `{"gqlType": "EDGE", "value": "edge_abc#def"}` |
 
 ### Complex types
 
@@ -319,6 +319,7 @@ Lists contain arrays of nullable values with consistent element types:
 ```
 
 Special list types:
+
 - `LIST<ANY>` - Mixed types (each element includes full type info)
 - `LIST<NULL>` - Only null values allowed
 - `LIST<NOTHING>` - Always empty array
@@ -407,12 +408,13 @@ To determine success, check the status code:
 
 Run a query using the `az rest` command to avoid having to obtain bearer tokens manually, like so:
 
+<!-- GQL Query: Checked 2025-11-20 -->
 ```bash
 az rest --method post --url "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true" \
 --headers "Content-Type=application/json" "Accept=application/json" \
 --resource "https://api.fabric.microsoft.com" \
 --body '{ 
-  "query": "MATCH (n:Person) WHERE n.age > 42 RETURN n.name, n.age ORDER BY n.age" 
+  "query": "MATCH (n:Person) WHERE n.birthday > 19800101 RETURN n.firstName, n.lastName, n.birthday ORDER BY n.birthday LIMIT 100" 
 }'
 ```
 
@@ -431,13 +433,14 @@ export ACCESS_TOKEN="your-access-token-here"
 
 Run a query like so:
 
+<!-- GQL Query: Checked 2025-11-20 -->
 ```bash
 curl -X POST "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/GraphModels/{GraphModelId}/executeQuery?preview=true" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -d '{
-    "query": "MATCH (n:Person) WHERE n.age > 42 RETURN n.name, n.age ORDER BY n.age"
+    "query": "MATCH (n:Person) WHERE n.birthday > 19800101 RETURN n.firstName, n.lastName, n.birthday ORDER BY n.birthday LIMIT 100" 
   }'
 ```
 
@@ -464,7 +467,7 @@ Follow these best practices when using the GQL Query API.
 
 ## Related content
 
-- [Graph data models](graph-data-models.md)
+- [graph data models](graph-data-models.md)
 - [GQL language guide](gql-language-guide.md)
 - [GQL values and value types](gql-values-and-value-types.md)
 - [GQL status codes reference](gql-reference-status-codes.md)

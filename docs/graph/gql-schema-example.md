@@ -1,10 +1,8 @@
 ---
 title: GQL Schema Example - Social Network
-description: Complete schema definition for the social network domain used throughout GQL documentation examples for graph in Microsoft Fabric.
+description: Review the complete GQL schema definition for the social network domain used throughout graph in Microsoft Fabric documentation examples.
 ms.topic: reference
-ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -14,11 +12,11 @@ ms.reviewer: splantikow
 
 This article provides the complete technical specification for the social network graph type used throughout the GQL documentation. This schema demonstrates many common features of complex graphs and serves as the foundation for all query examples in the GQL language documentation.
 
-> [!NOTE] 
-> The social network is example is derived from 
-> the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by 
-> the [GDC (Graph Data Council)](https://ldbcouncil.org/).
-> See the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299) for further details.
+> [!NOTE]
+> The social network example is derived from the [LDBC SNB (LDBC Social Network Benchmark)](https://ldbcouncil.org/benchmarks/snb/) published by the [GDC (Graph Data Council)](https://ldbcouncil.org/).
+>
+> For more information, see the article ["The LDBC Social Network Benchmark"](https://arxiv.org/abs/2001.02299).
+> For information on how to obtain a copy of the derived dataset, see [social network example graph dataset](sample-datasets.md).
 
 <!-- Image source in graphviz dot format
 //// CREATE GRAPH ldbc_snb {
@@ -27,7 +25,7 @@ digraph LDBC_SNB_Schema {
     
     // Graph settings
     
-    compund=true;
+    compound=true;
     rankdir=BT;
     labelloc="b";
     nodesep=1.0;
@@ -63,11 +61,9 @@ digraph LDBC_SNB_Schema {
               />name :: STRING<br align="left"
               />url :: STRING<br align="left"/>}>];
 
-
     //// (:Tag)-[:hasType]->(:TagClass),
 
     Tag -> TagClass [label=<<b>:hasType</b>>];
-
 
     //// ABSTRACT 
     //// (:Place => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
@@ -98,9 +94,8 @@ digraph LDBC_SNB_Schema {
     City -> Country [label=<<b>-[:isPartOf]-&gt;</b>>];
     Country -> Continent [label=<<b>-[:isPartOf]-&gt;</b>>];
 
-
     //// ABSTRACT
-    //// (:Organisation => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+    //// (:Organization => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
 
     Organization [
       fillcolor=lightgreen, 
@@ -108,16 +103,14 @@ digraph LDBC_SNB_Schema {
               />name :: STRING<br align="left"
               />url :: STRING<br align="left"/>}>]
 
-
-    //// (:University => :Organisation),
-    //// (:Company => :Organisation),
+    //// (:University => :Organization),
+    //// (:Company => :Organization),
 
     University [fillcolor=lightgreen, label=<{<b>(:University =&gt; :Organization)</b>|<b>...</b>}>];
     Company [fillcolor=lightgreen, label=<{<b>(:Company =&gt; :Organization)</b>|<b>...</b>}>];
 
     University -> Organization[style=dashed fontcolor=grey arrowhead=empty label=<<b>=&gt;</b>>];
     Company -> Organization[style=dashed fontcolor=grey arrowhead=empty label=<<b>=&gt;</b>>];
-
 
     //// (:Person => {
     ////   id :: UINT64 NOT NULL,
@@ -143,7 +136,6 @@ digraph LDBC_SNB_Schema {
               />browserUsed :: STRING<br align="left"
               />locationIP :: STRING<br align="left"/>}>];
 
-
     //// (:Person)-[:hasInterest]->(:Tag),
     //// (:Person)-[:studyAt { classYear :: UINT64 }]->(:University),
     //// (:Person)-[:workAt { workFrom :: UINT64 }]->(:Company),
@@ -153,7 +145,6 @@ digraph LDBC_SNB_Schema {
     Person -> University [label=<<b>-[:studyAt {classYear :: UINT64}]-&gt;</b>>];
     Person -> Company [label=<<b>-[:workAt {workFrom :: UINT64}]-&gt;</b>>];
     Person -> Person [label=<<b>-[:knows {creationDate :: ZONED DATETIME}]-&gt;</b>>];
-
 
     //// (:Forum => {
     ////   id :: UINT64 NOT NULL,
@@ -167,13 +158,11 @@ digraph LDBC_SNB_Schema {
               />creationDate :: ZONED DATETIME<br align="left"
               />title :: STRING<br align="left"/>}>];
 
-
     //// (:Forum)-[:hasMember { creationDate :: ZONED DATETIME, joinDate :: UINT64 }]->(:Person),
     //// (:Forum)-[:hasModerator]->(:Person),
 
     Forum -> Person [label=<<b>-[:hasMember<br/>{creationDate :: ZONED DATETIME, joinDate :: ZONED DATETIME]-&gt;</b>>];
     Forum -> Person [label=<<b>-[:hasModerator]-&gt;</b>>];
-
 
     //// ABSTRACT 
     //// (:Message => {
@@ -194,7 +183,6 @@ digraph LDBC_SNB_Schema {
               />content :: STRING<br align="left"
               />length :: INT<br align="left"/>}>];
 
-
     //// (:Post => :Message += {
     ////   language :: STRING,
     ////   imageFile :: STRING
@@ -207,13 +195,11 @@ digraph LDBC_SNB_Schema {
 
     Post -> Message[style=dashed fontcolor=grey arrowhead=empty label=<<b>=&gt;</b>>];
 
-
     ////  (:Comment => :Message)
 
     Comment [fillcolor=lightyellow, label=<{<b>(:Comment =&gt; :Message)</b>|<b>...</b>}>];
 
     Comment -> Message[style=dashed fontcolor=grey arrowhead=empty label=<<b>=&gt;</b>>];
-
 
     //// (:Forum)-[:hasTag]->(:Tag),  
     //// (<:Message)-[:hasTag]->(:Tag)
@@ -226,14 +212,11 @@ digraph LDBC_SNB_Schema {
 
     Forum -> Post [label=<<b>-[:containerOf]-&gt;</b>>];
 
-
     //// (:Comment)-[:replyOf]->(<:Message),
     Comment -> Message[label=<<b>-[:replyOf]-&gt;</b>>, lhead="cluser_messages"];
 
-
     ////  (:Person)-[:likes { creationDate :: ZONED DATETIME }]->(<:Message),
     Person -> Message [label=<<b>-[:likes<br/>{creationDate :: ZONED DATETIME}]-&gt;</b>>, style="bold", lhead="cluster_messages"];
-
 
     //// (<:Message)-[:hasCreator]->(:Person),
     Message -> Person [label=<<b>-[:hasCreator]-&gt;</b>>, style="bold", ltail="messages_cluster"];
@@ -248,7 +231,6 @@ digraph LDBC_SNB_Schema {
     Company -> Country [label=<<b>-[:isLocatedIn]-&gt;</b>>];
     Person -> City [label=<<b>-[:isLocatedIn]-&gt;</b>>];
     Message -> Country [label=<<b>-[:isLocatedIn]-&gt;</b>>, style="bold", ltail="cluster_messages"];
-
 
     //// Subgraphs for better organization
 
@@ -304,7 +286,7 @@ For a more detailed introduction to the entities of this domain, see [GQL langua
 
 This graph type showcases advanced GQL capabilities:
 
-- **Node type inheritance** using abstract base types (`Message`, `Organisation`, `Place`)
+- **Node type inheritance** using abstract base types (`Message`, `Organization`, `Place`)
 - **Multiple inheritance patterns** with shared property definitions
 - **Edge type families** where the same relationship label connects different node type combinations
 - **Comprehensive constraint system** ensuring data integrity through key constraints
@@ -343,13 +325,13 @@ FOR (n:Place) REQUIRE (n.id) IS KEY,
 (:Country)-[:isPartOf]->(:Continent),
 
 ABSTRACT
-(:Organisation => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
+(:Organization => { id :: UINT64 NOT NULL, name :: STRING, url :: STRING }),
 
-(:University => :Organisation),
-(:Company => :Organisation),
+(:University => :Organization),
+(:Company => :Organization),
 
-CONSTRAINT organisation_pk
-FOR (n:Organisation) REQUIRE (n.id) IS KEY,
+CONSTRAINT organization_pk
+FOR (n:Organization) REQUIRE (n.id) IS KEY,
 
 (:University)-[:isLocatedIn]->(:City),
 (:Company)-[:isLocatedIn]->(:Country),
@@ -429,12 +411,15 @@ FOR (n:Message) REQUIRE (n.id) IS KEY,
 The schema defines three inheritance hierarchies:
 
 **Geographic hierarchy:**
+
 - `Place` (abstract) → `City`, `Country`, `Continent`
 
 **Organizational hierarchy:**
-- `Organisation` (abstract) → `University`, `Company`
+
+- `Organization` (abstract) → `University`, `Company`
 
 **Content hierarchy:**
+
 - `Message` (abstract) → `Post`, `Comment`
 
 ### Edge type families
@@ -442,27 +427,32 @@ The schema defines three inheritance hierarchies:
 Several edge labels form type families connecting different node combinations:
 
 **Location relationships (`isPartOf`):**
+
 - Cities belong to countries/regions: `(:City)-[:isPartOf]->(:Country)`
 - Countries/regions belong to continents: `(:Country)-[:isPartOf]->(:Continent)`
 
 **Content interactions (`likes`):**
+
 - People like posts: `(:Person)-[:likes]->(:Post)`
 - People like comments: `(:Person)-[:likes]->(:Comment)`
 - People like messages: `(:Person)-[:likes]->(<:Message)`
 
 **Geographic location (`isLocatedIn`):**
+
 - People live in cities: `(:Person)-[:isLocatedIn]->(:City)`
 - Universities located in cities: `(:University)-[:isLocatedIn]->(:City)`
 - Companies located in countries/regions: `(:Company)-[:isLocatedIn]->(:Country)`
-- Posts/comments located in countries/regions: `(:Post|Comment)-[:isLocatedIn]->(:Country)`
+- Posts located in countries/regions: `(:Post)-[:isLocatedIn]->(:Country)`
+- Comments located in countries/regions: `(:Comment)-[:isLocatedIn]->(:Country)`
 
 ### Key constraints
 
 Every node type has a corresponding key constraint ensuring unique identification by `id` property:
-- `tag_class_pk`, `tag_pk`, `place_pk`, `organisation_pk`, `person_pk`, `forum_pk`, `message_pk`
+
+- `tag_class_pk`, `tag_pk`, `place_pk`, `organization_pk`, `person_pk`, `forum_pk`, `message_pk`
 
 ## Related content
 
 - [GQL language guide](gql-language-guide.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

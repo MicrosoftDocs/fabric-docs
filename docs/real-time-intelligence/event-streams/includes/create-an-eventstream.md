@@ -1,14 +1,10 @@
 ---
 title: Create an eventstream
 description: Learn how to create an eventstream in Fabric using Fabric Real-Time intelligence workload.
-ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.reviewer: xujiang1
 ms.topic: how-to
-ms.custom:
 ms.date: 11/18/2024
-zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
-zone_pivot_groups: event-streams-standard-enhanced
+
 ---
 
 1. Navigate to the Fabric portal. 
@@ -23,3 +19,5 @@ zone_pivot_groups: event-streams-standard-enhanced
 1. Creation of the new eventstream in your workspace can take a few seconds. After the eventstream is created, you're directed to the main editor where you can start with adding sources to the eventstream. 
 
    :::image type="content" source="./media/create-an-eventstream/editor.png" alt-text="Screenshot showing the editor." lightbox="./media/create-an-eventstream/editor.png" :::
+
+

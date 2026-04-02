@@ -1,16 +1,16 @@
 ---
-title: Data Clustering in Fabric Data Warehouse
+title: Data Clustering in Fabric Data Warehouse (Preview)
 description: Learn more about data clustering in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/11/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Data clustering in Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Data clustering is a technique used to organize and store data based on similarity. Data clustering improves query performance and reduces compute and storage access costs for queries by grouping similar records together.
 
@@ -54,8 +54,9 @@ CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | 
 [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) syntax: 
 
 ```syntaxsql
-CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | table_name } (
-) WITH (CLUSTER BY[ ,... n ])
+CREATE TABLE { warehouse_name.schema_name.table_name | schema_name.table_name | table_name }
+( { <column_definition> } [ ,... n ] )
+WITH (CLUSTER BY [ ,... n ])
 AS <select_statement>;
 ```
 
@@ -76,7 +77,7 @@ The following table summarizes column types that can be used in the `CLUSTER BY`
 | Character strings<sup>1</sup>  | **char** | Yes |
 | Character strings<sup>1</sup>  | **varchar** | Yes |
 | LOB types | **varchar(max)**, **varbinary(max)** | No | 
-| Binary strings | **varbinary**, **uniqueidentifer** | No |
+| Binary strings | **varbinary**, **uniqueidentifier** | No |
 
 <sup>1</sup> For string types (**char**/**varchar**), only the first 32 characters are used when column statistics are produced. As a result, columns with values that contain long prefixes might have limited benefits with data clustering. 
 
@@ -204,7 +205,7 @@ SELECT
 FROM 
     queryinsights.exec_requests_history 
 WHERE 
-     distriubted_statement_id = '<Query_Statement_ID>'
+     distributed_statement_id = '<Query_Statement_ID>'
 ```
 
 Where `<Query_Statement_ID>` is the distributed statement ID of the query you want to evaluate.

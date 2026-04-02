@@ -1,12 +1,9 @@
 ---
 title: Add Confluent Cloud for Apache Kafka source to an eventstream
 description: Provides information on adding a Confluent Cloud for Apache Kafka source to an eventstream in Microsoft Fabric along with limitations.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
-ms.date: 05/06/2025
+ms.date: 03/04/2026
 ms.search.form: Source and Destination
 #Customer intent: I want to learn how to bring events from a Confluent Cloud for Apache Kafka source into Microsoft Fabric.
 ---
@@ -20,9 +17,13 @@ Confluent Cloud for Apache Kafka is a streaming platform offering powerful data 
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
 - A Confluent Cloud for Apache Kafka cluster and an API Key. 
-- Your Confluent Cloud for Apache Kafka cluster must be publicly accessible and not be behind a firewall or secured in a virtual network.
+- Your Confluent Cloud for Apache Kafka cluster should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
+- If you plan to use **TLS/mTLS settings**, make sure the required certificates are available in an **Azure Key Vault**:
 
+    - Import the required certificates into Azure Key Vault in **.pem** format.
+    - The user who configures the source and previews data must have permission to access the certificates in the Key Vault (for example, **Key Vault Certificate User** or **Key Vault Administrator**).  
+    - If the current user doesn’t have the required permissions, data can’t be previewed from this source in Eventstream.
 
 ## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
@@ -62,3 +63,5 @@ Other connectors:
 - [Sample data](add-source-sample-data.md)
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Fabric workspace event](add-source-fabric-workspace.md)
+
+

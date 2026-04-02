@@ -1,10 +1,7 @@
 ---
 title: Latency and accuracy considerations in Activator rules
 description: An overview of Activator latency considerations and performance when building Activator rules.
-author: spelluru
-ms.author: spelluru
 ms.topic: overview
-ms.custom: 
 ms.search.form: product-reflex
 ms.date: 10/22/2024
 #customer intent: As a Fabric user who is working with rules, I want to understand the factors that help to determine when actions are included and excluded from rule reporting.

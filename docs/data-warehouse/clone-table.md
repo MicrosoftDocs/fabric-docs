@@ -1,11 +1,9 @@
 ---
 title: Clone Table
 description: Learn about table clones in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: ajagadish
 ms.date: 07/17/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric

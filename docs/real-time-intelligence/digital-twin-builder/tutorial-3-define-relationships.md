@@ -1,15 +1,13 @@
 ---
-title: 'Digital twin builder (preview) tutorial: Define relationship types'
-description: Define semantic relationship types between entity types in digital twin builder (preview).
-author: baanders
-ms.author: baanders
+title: 'Digital twin builder (preview) tutorial part 3: Define relationship types'
+description: Define semantic relationship types between entity types in digital twin builder (preview). Part 3 of the digital twin builder (preview) tutorial.
 ms.date: 05/01/2025
 ms.topic: tutorial
 ---
 
 # Digital twin builder (preview) tutorial part 3: Define semantic relationship types between entity types
 
-In this tutorial section, you use digital twin builder's contextualization feature to represent the relationship types between the entity types.
+In this tutorial step, use digital twin builder's contextualization feature to create relationship types, which represent connections between the entity types.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 

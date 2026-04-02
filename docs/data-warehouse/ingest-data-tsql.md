@@ -1,10 +1,8 @@
 ---
 title: Ingest Data into Your Warehouse Using Transact-SQL
 description: Follow steps to ingest data into a Warehouse table using Transact-SQL
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha, jovanpop
-ms.date: 07/31/2025
+ms.date: 12/05/2025
 ms.topic: how-to
 ms.search.form: Ingesting data
 ---
@@ -107,8 +105,8 @@ Instead of reading data from the Warehouse `bing_covid19_data` table, you can al
 CREATE TABLE dbo.bing_covid19_data_2022
 AS
 SELECT *
-FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data;
-WHERE DATEPART(YEAR, updated) = '2022'
+FROM OPENROWSET(BULK 'https://pandemicdatalake.blob.core.windows.net/public/curated/covid-19/bing_covid-19_data/latest/bing_covid-19_data.parquet') AS data
+WHERE DATEPART(YEAR, updated) = '2022';
 ```
 
 You can also create a new table by transforming data from an external CSV file:
@@ -146,7 +144,8 @@ ORDER BY confirmed_sum DESC;
 
 :::image type="content" source="media/ingest-data-tsql/infections-by-month.png" alt-text="Screenshot of the query results showing the number of infections by month in the United States, ordered by month, in descending order. The month number 1 is shown on top." lightbox="media/ingest-data-tsql/infections-by-month.png":::
 
-For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true).
+- For more information and examples on querying external data, see [Query external data lake files by using Fabric Data Warehouse or SQL analytics endpoint](query-external-data-lake-files.md).
+- For more examples and syntax reference, see [CREATE TABLE AS SELECT (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true).
 
 <a id="ingesting-data-into-existing-tables-with-t-sql-queries"></a>
 
@@ -230,6 +229,10 @@ ON cases.iso3 = reference.countrycode;
 ```
 
 To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query).
+
+## Audit and monitor T-SQL ingestion
+
+Both `CTAS` and `INSERT ... SELECT` operations executed via T-SQL appear in the [warehouse query history/activity](query-activity.md), and can be monitored alongside other warehouse operations.
 
 ## Data ingestion options
 

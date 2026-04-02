@@ -1,11 +1,8 @@
 ---
 title: Consume Fabric data agent from external applications with Python client SDK
 description: Learn how to use Python client SDK to use Microsoft Fabric data agent in VS Code.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: amjafari 
-reviewer: amjafari 
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/8/2025
 ---
 

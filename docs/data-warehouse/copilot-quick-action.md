@@ -1,5 +1,5 @@
 ---
-title: "How to Use Copilot Quick Actions in Microsoft Fabric in the Data Warehouse Workload (Preview)"
+title: "How to Use Copilot Quick Actions in the Data Warehouse Workload (Preview)"
 description: Learn more about Copilot quick actions in Microsoft Fabric in the Data Warehouse workload, to explain and fix SQL queries in the SQL query editor.
 author: markingmyname
 ms.author: maghan
@@ -11,7 +11,7 @@ ms.collection:
 ms.update-cycle: 180-days
 ---
 
-# How to use Copilot quick actions in Fabric in Data Warehouse (Preview)
+# How to use Copilot quick actions in Fabric Data Warehouse (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -73,3 +73,4 @@ To get Copilot's help with fixing an error in your query, follow these steps:
 - [How to use Copilot code completion in Fabric in Data Warehouse](copilot-code-completion.md)
 - [How to use the Copilot chat pane in Fabric in Data Warehouse](copilot-chat-pane.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

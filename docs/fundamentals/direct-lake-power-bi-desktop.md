@@ -1,12 +1,13 @@
 ---
 title: "Learn About Editing Semantic Models in Direct Lake in Power BI Desktop"
 description: Describes using Power BI Desktop to edit semantic models in Power BI Desktop.
-author: DataZoeMS
-ms.author: zoedouglas
+author: SnehaGunda
+ms.author: sngun
+ms.reviewer: zoedouglas
 ms.date: 08/01/2025
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: how-to
 LocalizationGroup: Admin
 ---
 # Direct Lake in Power BI Desktop
@@ -48,7 +49,7 @@ The tables are added to your semantic model and you can continue live editing.
 
 :::image type="content" source="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-add.png" alt-text="Screenshot of Power BI Desktop when adding tables in Direct Lake storage mode." lightbox="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-add.png":::
 
-## Live edit a semantic model with Direct Lake or import tables
+## Live edit a semantic model with Direct Lake
 
 To edit a semantic model with Direct Lake tables later, take the following steps.
 
@@ -60,7 +61,9 @@ Now you're live editing the semantic model.
 :::image type="content" source="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png" alt-text="Screenshot of Power BI Desktop when editing a semantic model with tables in Direct Lake storage mode later." lightbox="media/direct-lake-power-bi-desktop/power-bi-desktop-direct-lake-edit.png":::
 
 > [!NOTE]
-> Semantic models with Direct Lake and import table storage modes are supported. **Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
+> Semantic models with Direct Lake tables are supported. Import tables must be part of a Direct Lake composite model.
+>
+>**Edit tables**, **OneLake catalog**, and **Transform data** are only available in web modeling. [Use Direct Lake in Power BI web modeling](direct-lake-web-modeling.md).
 
 Alternatively, if you have [exported the semantic model to a Power BI Project (PBIP)](direct-lake-power-bi-project.md), take the following steps.
 
@@ -105,11 +108,11 @@ If two or more users are live editing the same semantic model and a conflict occ
 
 Selecting the Refresh button when live editing a semantic model with Direct Lake tables performs a schema refresh and reframe the Direct Lake tables. 
 
-The schema refresh checks the tables definitions in the model and compares it to the same named table in the data source for any changes to columns. Changes detected from the data source, in this case a Fabric artifact, are made to the semantic model. For example, a column was added to a table. Changing the table or column name in the semantic model in Power BI Desktop persist after a refresh. 
+The schema refresh checks the tables definitions in the model and compares it to the same named table in the data source for any changes to columns. Changes detected from the data source, in this case a Fabric item such as a lakehouse or warehouse, are made to the semantic model. For example, a column was added to a table. Changing the table or column name in the semantic model in Power BI Desktop persist after a refresh.
 
 Changing a table or column name at the data source removes the table or column on the next schema refresh. You can use [TMDL view](/power-bi/transform-model/desktop-tmdl-view) to see the SourceLineageTag property and update it to the new name to avoid the semantic model removing it on schema refresh.
 
-Another way to perform a schema refresh is to return to [Edit tables](direct-lake-edit-tables.md) and select **OK**. Go to **Transform data** dropdown list then **Data source settings** and select **Edit tables**.
+Another way to perform a schema refresh is to go to the **Transform data** dropdown list, then **Data source settings**, and select **Edit tables**.
 
 Scheduled refresh in the Fabric workspace only reframe the Direct Lake tables without a schema refresh. Learn more about [refresh in Power BI](/power-bi/connect-data/refresh-data).
 
@@ -169,9 +172,11 @@ Now the semantic model is using Direct Lake on OneLake. If there are issues, you
 * You can open external tools, but the external tool must manage authentication to the remote semantic model.
 * You can change the data category to *barcode*, but reports linked to the semantic model can't filter by barcodes.
 * You can't live edit externally shared semantic models.
+* You can use live edit on import tables only if they're part of a composite model, including Direct Lake on OneLake tables
 * Review the current [known issues and limitations of Direct Lake](direct-lake-overview.md#considerations-and-limitations).
 
 ## Related content
 
 - [Direct Lake overview](direct-lake-overview.md)
 - [Power BI Project files](/power-bi/developer/projects/projects-overview)
+

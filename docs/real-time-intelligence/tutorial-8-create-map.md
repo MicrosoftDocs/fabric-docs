@@ -2,11 +2,8 @@
 title: Real-Time Intelligence tutorial part 8 - Create a map using geospatial data
 description: Tutorial- Learn how to create a map in Real-Time Intelligence.
 ms.reviewer: tzgitlin
-ms.author: spelluru
-author: spelluru
 ms.topic: tutorial
-ms.custom:
-ms.date: 02/11/2025
+ms.date: 12/09/2025
 ms.subservice: rti-core
 ms.search.form: Get started
 #customer intent: I want to learn how to create a map in Real-Time Intelligence.
@@ -61,6 +58,7 @@ In this part of the tutorial, you learn how to create a map using geospatial dat
 ## Add Eventhouse data to the map
 
 1. In the **Explorer** pane, select **Eventhouse** and select **+ Add data items** and choose the **Tutorial** eventhouse.
+1. Select **Connect**.
 1. Under Tutorial, select the **Tutorial_queryset**.
 1. Select the more menu (**...**) next to **Show on map** and select **Show on map**.
 

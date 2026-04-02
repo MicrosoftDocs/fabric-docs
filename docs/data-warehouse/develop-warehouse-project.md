@@ -1,10 +1,8 @@
 ---
 title: Develop Warehouse Projects in Visual Studio Code
 description: Learn how to develop warehouse projects for Fabric Data Warehouse in Visual Studio Code.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: pvenkat, randolphwest
-ms.date: 11/12/2025
+ms.date: 03/03/2026
 ms.topic: how-to
 ---
 # Develop warehouse projects in Visual Studio Code
@@ -63,7 +61,7 @@ You can create a database project from scratch or existing warehouse.
 1. First, create a new connection profile for your warehouse in Visual Studio Code.
     1. Select the **SQL Server** extension in Visual Studio Code from the [Activity Bar](https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout).
     1. Provide a **Profile Name**. Choose **Parameters**.
-    1. Provide the **Server name**. In the Fabric portal, in the **Settings** of your warehouse, retrieve the **SQL Endpoint** string. (This is different from the SQL analytics endpoint.) It looks like `<server unique ID>.datawarehouse.fabric.microsoft.com`. This is the **Server name**.
+    1. Provide the **Server name**. In the Fabric portal, in the **Settings** of your warehouse, select **SQL endpoint**, and copy the provided string. This is the server name of your warehouse, and is different from the SQL analytics endpoint. It looks like `<server unique ID>.datawarehouse.fabric.microsoft.com`.
     1. For **Authentication type**, use **Microsoft Entra ID - Universal with MFA support**. Authenticate with your Microsoft Entra ID.
     1. Provide other information as default, or desired, and select **Connect**.
 
@@ -179,7 +177,7 @@ After building your project, publish it to your target warehouse. Publishing cre
 1. Choose **Publish to an existing SQL server**.
 1. For **Select publish profile to load**, the first time you publish, choose **Don't use profile**.
    - You can save options for publishing your warehouse into a *publish profile*. When you're completed, you're given the option in a Visual Studio Code notification to save the publishing options you just used to a publish profile file. 
-   - You can re-use the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
+   - You can reuse the publish profile in the future when you publish your project to your warehouse. You might have different profile options for different warehouses, or for different environments in your dev/test/acceptance/production development environments.
 1. Choose the Fabric Data Warehouse connection profile from the list.
 1. Choose the name of the target warehouse.
 1. In the **Choose action** option, you can either **Generate Script** to review the script before publishing, or publish project to a warehouse. 
@@ -237,4 +235,5 @@ Connect to your warehouse and script objects that were changed or verify by runn
 ## Related Articles
 
 - [Development and deployment workflows](development-deployment.md)
+- [Develop and deploy cross-warehouse dependencies](cross-warehouse-development-database-projects.md)
 - [Get started using Fabric deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md)

@@ -59,6 +59,26 @@
         "source_path_from_root": "/docs/data-warehouse/generate-unique-identifiers.md",
         "redirect_url": "/fabric/data-warehouse/identity",
         "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/tutorial-create-tables.md",
+        "redirect_url": "/fabric/data-warehouse/create-table",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/tutorial-load-data.md",
+        "redirect_url": "/fabric/data-warehouse/tutorial-ingest-data",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/migrate-with-migration-assistant.md",
+        "redirect_url": "/fabric/data-warehouse/migration-assistant",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-warehouse/datamart-upgrade-to-warehouse.md",
+        "redirect_url": "/fabric/data-warehouse/data-warehousing",
+        "redirect_document_id": false
       }
     ]
 }

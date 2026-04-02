@@ -1,15 +1,13 @@
 ---
 title: Auditing for Fabric SQL Database
-description: Learn how to configure and manage auditing for Fabric SQL database using Fabric portal.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: srsaluru
-ms.date: 11/17/2025
-ms.topic: conceptual
+description: Learn how to configure and manage auditing for SQL database in Microsoft Fabric using the Fabric portal or the REST API.
+ms.reviewer: srsaluru, wiassaf
+ms.date: 03/10/2026
+ms.topic: concept-article
 ms.search.form: SQL database security
 ---
 
-# Auditing
+# Auditing for SQL database in Fabric
 
 **Applies to:** [!INCLUDE [fabric-sqldb](../includes/applies-to-version/fabric-sqldb.md)]
 
@@ -17,9 +15,9 @@ Auditing for SQL databases in Fabric is a critical security and compliance featu
 
 ## What is SQL auditing?
 
-SQL auditing refers to the process of capturing and storing events related to database activity. These events include data access, schema changes, permission modifications, and authentication attempts. 
+SQL auditing refers to the process of capturing and storing events related to database activity. These events include data access, schema changes, permission modifications, and authentication attempts.
 
-In Fabric, auditing is implemented at the database level and supports:
+In Fabric, auditing works at the database level and supports:
 
 - Compliance monitoring (for example: HIPAA, SOX)
 - Security investigations
@@ -33,27 +31,33 @@ For SQL database in Fabric, audit logs are stored in OneLake: `https://onelake.b
 
 These logs are immutable and accessible to users with appropriate permissions. Logs can also be downloaded using OneLake Explorer or Azure Storage Explorer.
 
+## Billing
+
+Currently, writing audit logs to Fabric OneLake doesn't incur additional charges, and storage is included as part of the capacity's OneLake storage limits.
+
 ## Configuration options
 
-By default, the **Audit everything** option auditing captures all events including: batch completions and successful and failed authentication. 
+By default, the **Audit everything** option captures all events, including batch completions and successful and failed authentication.
 
 To be more selective, choose from preconfigured audit scenarios, for example: **Permission Changes & Login Attempts**, **Data Reads and Writes**, and/or **Schema Changes**.
 
-Each preconfigured scenario maps to specific audit action groups (for example, `SCHEMA_OBJECT_ACCESS_GROUP`, `DATABASE_PRINCIPAL_CHANGE_GROUP`). You can also choose which events to audit under **Custom Events**. Advanced users can select individual action groups to tailor auditing to their needs. This is ideal for customers with strict internal security policies.
+Each preconfigured scenario maps to specific audit action groups (for example, `SCHEMA_OBJECT_ACCESS_GROUP`, `DATABASE_PRINCIPAL_CHANGE_GROUP`). You can also choose which events to audit under **Custom Events**. You can select individual action groups to tailor auditing to your needs. This option is ideal for organizations with strict internal security policies.
 
 To filter out common or known access queries, you can provide **predicate expressions** in Transact-SQL (T-SQL) to filter out audit events based on conditions (for example, to exclude SELECT statements): `WHERE statement NOT LIKE '%select%'`.
 
 ## Permissions
 
-To manage auditing using Fabric workspace roles (recommended), users must have membership in the Fabric workspace **Contributor** role or higher permissions. 
+To manage auditing using Fabric workspace roles (recommended), you must have membership in the Fabric workspace **Contributor** role or higher permissions.
 
 To manage auditing with SQL permissions:
- - To configure the database audit, users must have ALTER ANY DATABASE AUDIT permission.
- - To view audit logs using T-SQL, users must have the VIEW DATABASE SECURITY AUDIT permission.
+ - To configure the database audit, you must have ALTER ANY DATABASE AUDIT permission.
+ - To view audit logs using T-SQL, you must have the VIEW DATABASE SECURITY AUDIT permission.
 
 ## Retention
 
-By default, audit data is kept indefinitely. You can configure a custom retention period in the section **Automatically delete logs after this duration**.
+By default, audit data is retained indefinitely, unless you configure a custom retention period to automatically delete logs after this duration.
+
+Fabric currently stores audit logs in the item's folder in OneLake and scopes them to the item lifecycle. If you delete the item, Fabric also deletes its audit logs. If you require retention independent of the item's lifecycle, move audit logs to a separate storage location (for example, another Lakehouse or an Azure Storage account) using tools such as AzCopy or SSDT.
 
 ## Configure auditing for SQL database from the Fabric portal
 
@@ -66,21 +70,21 @@ To begin auditing for a Fabric SQL database:
 1. Select the **Save Events to SQL Audit Logs** button to enable auditing.
 1. Configure which events to record in the **Database Events** section. Choose **Audit everything (default)** to capture all events.
 1. Optionally, configure a retention policy under **Retention**.
-1. Optionally, configure a predicate expression of T-SQL commands to ignore in the **Predicate Expression** field. 
+1. Optionally, configure a predicate expression of T-SQL commands to ignore in the **Predicate Expression** field.
 1. Select **Save**.
 
 ## Query audit logs
 
-Audit logs can be queried using the T-SQL functions [sys.fn_get_audit_file](/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql?view=fabric-sqldb&preserve-view=true) and [sys.fn_get_audit_file_v2](/sql/relational-databases/system-functions/sys-fn-get-audit-file-v2-transact-sql?view=fabric-sqldb&preserve-view=true). 
+Audit logs can be queried using the T-SQL functions [sys.fn_get_audit_file](/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql?view=fabric-sqldb&preserve-view=true) and [sys.fn_get_audit_file_v2](/sql/relational-databases/system-functions/sys-fn-get-audit-file-v2-transact-sql?view=fabric-sqldb&preserve-view=true).
 
 In the following script, you need to provide the workspace ID and database ID. Both can be found in the URL from the Fabric portal. For example: `https://fabric.microsoft.com/groups/<fabric workspace id>/sqldatabases/<fabric sql database id>`. The first unique identifier string in the URL is the Fabric workspace ID, and the second unique identifier string is the SQL database ID.
 
-- Replace `<fabric_workspace_id>` with your Fabric workspace ID. You can [find the ID of a workspace](../../admin/portal-workspace.md#identify-your-workspace-id) easily in the URL, it's the unique string inside two `/` characters after `/groups/` in your browser window.
-- Replace `<fabric sql database id>` with your SQL database in Fabric database ID. You can find the ID of the database item easily in the URL, it's the unique string inside two `/` characters after `/sqldatabases/` in your browser window.
+- Replace `<fabric_workspace_id>` with your Fabric workspace ID. You can [find the ID of a workspace](../../admin/portal-workspace.md#identify-your-workspace-id) in the URL, it's the unique string inside two `/` characters after `/groups/` in your browser window.
+- Replace `<fabric sql database id>` with your SQL database in Fabric database ID. You can find the ID of the database item in the URL, it's the unique string inside two `/` characters after `/sqldatabases/` in your browser window.
 
 For example:
 
-```sql  
+```sql
 SELECT * FROM sys.fn_get_audit_file_v2(
   'https://onelake.blob.fabric.microsoft.com/<fabric workspace id>/<fabric sql database id>/Audit/sqldbauditlogs/',
   DEFAULT, DEFAULT, DEFAULT, DEFAULT );
@@ -100,7 +104,14 @@ FROM sys.fn_get_audit_file_v2(
 
 For more information, see [sys.fn_get_audit_file](/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql?view=fabric-sqldb&preserve-view=true) and [sys.fn_get_audit_file_v2](/sql/relational-databases/system-functions/sys-fn-get-audit-file-v2-transact-sql?view=fabric-sqldb&preserve-view=true).
 
+## Manage auditing with the REST API
+
+You can also view and configure SQL database auditing settings programmatically using the Fabric REST API. The REST API enables you to manage auditing consistently across all databases in a workspace using PowerShell scripts.
+
+For more information, see [Manage SQL database auditing with the REST API](auditing-manage-rest-api.md).
+
 ## Related content
 
+- [Manage SQL database auditing with the REST API](auditing-manage-rest-api.md)
 - [Security in SQL database in Microsoft Fabric](security-overview.md)
 - [Audit schema for domains in Fabric](../../governance/domains-audit-schema.md)

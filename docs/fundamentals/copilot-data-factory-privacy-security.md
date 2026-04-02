@@ -3,9 +3,8 @@ title: "Privacy, security, and responsible use of Copilot for Data Factory"
 description: Learn about privacy, security, and responsible use of Copilot for Data Factory in Microsoft Fabric.
 author: snehagunda
 ms.author: sngun
-ms.reviewer: 'guptamaya'
-ms.custom:
-ms.topic: conceptual
+ms.reviewer: guptamaya
+ms.topic: concept-article
 ms.date: 06/02/2024
 ms.update-cycle: 180-days
 no-loc: [Copilot]

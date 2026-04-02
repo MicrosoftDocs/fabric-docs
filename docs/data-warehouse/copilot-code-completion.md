@@ -1,5 +1,5 @@
 ---
-title: "How to Use Copilot Code Completion in Microsoft Fabric in the Data Warehouse Workload (Preview)"
+title: "How to Use Copilot Code Completion in the Data Warehouse Workload (Preview)"
 description: Learn more about Copilot code completion in Microsoft Fabric in Data Warehouse workload, to provide intelligent autocomplete-style code suggestions.
 author: markingmyname
 ms.author: maghan
@@ -11,7 +11,7 @@ ms.collection:
 ms.update-cycle: 180-days
 ---
 
-# How to Use Copilot code completion in Fabric in Data Warehouse (Preview)
+# How to Use Copilot code completion in Fabric Data Warehouse (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -64,3 +64,4 @@ Code completion enhances your productivity and workflow in Copilot for Data Ware
 - [How to use the Copilot chat pane in Fabric in Data Warehouse](copilot-chat-pane.md)
 - [How to use Copilot quick actions in Fabric in Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

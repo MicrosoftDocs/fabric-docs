@@ -1,14 +1,12 @@
 ---
 title: Dataflow activity
 description: Learn how to add a Dataflow activity to a pipeline and use it to run a Dataflow Gen2.
-ms.reviewer: xupxhou
-ms.author: miescobar
-author: ptyx507x
+ms.reviewer: xupxhou, miescobar
 ms.topic: how-to
-ms.date: 09/15/2025
+ms.date: 4/1/2026
 ms.custom:
-   - pipelines
-   - dataflows
+  - pipelines
+  - dataflows
 ---
 
 # Use the Dataflow activity to run a Dataflow Gen2
@@ -19,8 +17,7 @@ The Dataflow activity in Data Factory for Microsoft Fabric allows you to run a D
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](../fundamentals/fabric-trial.md).
-- A workspace is created.
+[!INCLUDE[basic-prerequisites](includes/basic-prerequisites.md)]
 
 ## Add a Dataflow activity to a pipeline
 
@@ -65,9 +62,35 @@ Inside the Dataflow parameters section you're able to enter the name of the para
 
 ## Save and run or schedule the pipeline
 
-After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+[!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
-:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+>[!NOTE]
+>To successfully run a Dataflow Gen2 (CI/CD), users must have:
+> - Member (or higher) access to the workspace, and
+> - Access to all connections used by the dataflow  
+>
+>Not meeting these two requirements could result in run failures. 
+
+## Troubleshooting tips
+
+>[!CAUTION]
+>Error information showcased in the Dataflow activity could be incomplete or partial. Do not solely rely on the information shown in the Dataflow activity for troubleshooting scenarios.
+
+>[!TIP]
+>Detailed information about a run of a Dataflow can be found in the *Recent runs* dialog available inside the Dataflow Gen2 (CI/CD) and through the workspace explorer.
+
+When troubleshooting a Dataflow run, it is highly encouraged to start inside the [Dataflow Gen2 (CI/CD) recent runs](dataflows-gen2-monitor.md) where you are able to download the detailed logs of a particular run.
+If your Dataflow used an On-Premises Data Gateway, you can also explore the detailed gateway logs found within the machine where your gateway is installed.
+
+You can also request support through the [Fabric Community Forum](https://community.fabric.microsoft.com/t5/Data-Factory-forums/ct-p/datafactory) or by [raising a dedicated support case](https://support.fabric.microsoft.com/) where one of our engineers will be able to assist.
+
+## Known issues
+
+> [!CAUTION]
+> When using a Dataflow Gen1 or a Dataflow Gen2 (non CI/CD) in the Dataflow activity, you might experience delays before the refresh operation starts. This issue doesn't affect Dataflow Gen2 (CI/CD). Consider [migrating your existing solutions to Dataflow Gen2 (CI/CD)](/fabric/data-factory/migrate-to-dataflow-gen2-using-save-as) for a more reliable experience.
+
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

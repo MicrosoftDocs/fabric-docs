@@ -1,11 +1,9 @@
 ---
 title: Get Fabric workspace item events in Real-Time hub
 description: This article describes how to get Fabric workspace item events as an eventstream in Fabric Real-Time hub.
-author: ahartoon
-ms.author: anboisve
+ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom:
-ms.date: 07/22/2025
+ms.date: 01/14/2026
 ---
 
 # Get Fabric workspace item events in Real-Time hub
@@ -99,3 +97,4 @@ To learn about consuming data streams, see the following articles:
 - [Process data streams](process-data-streams-using-transformations.md)
 - [Analyze data streams](analyze-data-streams-using-kql-table-queries.md)
 - [Set alerts on data streams](set-alerts-data-streams.md)
+

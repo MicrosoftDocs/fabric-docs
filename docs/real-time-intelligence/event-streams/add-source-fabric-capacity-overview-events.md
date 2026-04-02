@@ -1,11 +1,8 @@
 ---
 title: Add Fabric capacity overview event source to an eventstream
 description: Learn how to add Fabric capacity overview event source to an eventstream. This feature is currently in preview.
-ms.reviewer: spelluru
-ms.author: zhenxilin
-author: alexlzx
+ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.custom:
 ms.date: 03/18/2025
 ms.search.form: Source and Destination
 ---
@@ -65,3 +62,5 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 - [Azure Blob Storage events](add-source-azure-blob-storage.md)
 - [Create eventstreams for discrete events](create-eventstreams-discrete-events.md)
+
+

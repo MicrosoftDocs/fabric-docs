@@ -1,17 +1,16 @@
 ---
-title: Configure SQL database in a copy activity (Preview)
+title: Configure SQL database in a copy activity
 description: This article explains how to copy data using SQL database.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 11/14/2024
-ms.custom: 
+ms.date: 03/04/2026
+ms.custom:
   - pipelines
   - template-how-to
   - connectors
 ---
 
-# Configure SQL database in a copy activity (Preview)
+# Configure SQL database in a copy activity
 
 This article outlines how to use the copy activity in a pipeline to copy data from and to SQL database.
 

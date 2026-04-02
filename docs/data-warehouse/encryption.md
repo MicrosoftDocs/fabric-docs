@@ -1,11 +1,9 @@
 ---
 title: Data Encryption with Customer-Managed Keys in Fabric Data Warehouse
 description: Learn more about securing your warehouse with customer-managed keys in Microsoft Fabric.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: fresantos
 ms.date: 10/15/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
 # Data Encryption in Fabric Data Warehouse
@@ -64,8 +62,6 @@ Before enabling CMK for your Fabric Data Warehouse, review the following conside
 - Service availability during key revocation: If the CMK becomes inaccessible or revoked, read and write operations in the workspace fail until access to the key is restored.
 
 - DMV support: Since the CMK configuration is established and configured at workspace level, you cannot use `sys.dm_database_encryption_keys` to view the encryption status of the database; that happens exclusively at Workspace Level.
-
-- Firewall restrictions: CMK is not supported when the Azure Key Vault firewall is enabled.
 
 - Queries in the Fabric portal query editor Object Explorer are not encrypted with CMK.
 

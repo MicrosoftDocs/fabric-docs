@@ -1,8 +1,6 @@
 ---
 title:  Get Spark application details using Apache Spark Open-Source APIs.
 description: Learn more on how to retrieve Spark application details.
-author: eric-urban
-ms.author: eur
 ms.reviewer: jejiang
 ms.topic: tutorial
 ms.date: 03/31/2025
@@ -10,7 +8,7 @@ ms.date: 03/31/2025
 
 # Get Spark application details using Apache Spark Open-Source APIs
 
-Fabric Spark History Server APIs follow the same structure, query parameters, and contract as [Spark open source monitoring REST API](https://spark.apache.org/docs/3.5.1/monitoring.html#rest-api) and provide the same set of endpoints for retrieving Spark application details, including basic application information, stages, jobs, tasks, executors, storage, streaming, and more.
+Fabric Spark History Server APIs follow the same structure, query parameters, and contract as [Spark open source monitoring REST API](https://spark.apache.org/docs/latest/monitoring.html#rest-api) and provide the same set of endpoints for retrieving Spark application details, including basic application information, stages, jobs, tasks, executors, storage, streaming, and more.
 
 > [!NOTE]
 >

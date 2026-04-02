@@ -1,11 +1,9 @@
 ---
 title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: salilkanade, pvenkat
-ms.date: 07/16/2025
-ms.topic: conceptual
+ms.date: 02/04/2026
+ms.topic: how-to
 ---
 
 # Source control (preview)
@@ -69,7 +67,7 @@ For more information about the Fabric deployment pipelines process, see [Introdu
 
 ## Limitations in source control
 
-- [SQL security](security.md) features must be exported/migrated using a script-based approach. Consider using a post-deployment script in a SQL database project, which you can configure by opening the project with the [SQL Database Projects extension](/azure-data-studio/extensions/sql-database-project-extension-getting-started) available in [Visual Studio Code](https://code.visualstudio.com/).
+- [SQL security](security.md) features must be exported/migrated using a script-based approach. Consider using a post-deployment script in a SQL database project, which you can configure by opening the project with the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension) available in [Visual Studio Code](https://code.visualstudio.com/).
 
 #### Limitations in Git integration
 

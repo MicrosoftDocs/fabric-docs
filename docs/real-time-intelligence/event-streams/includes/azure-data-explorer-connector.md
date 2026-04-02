@@ -1,11 +1,8 @@
 ---
 title: Azure Data Explorer connector for Fabric eventstreams
 description: This include file has the common content for configuring an Azure Data Explorer connector for Fabric eventstreams and real-time hub. 
-ms.author: spelluru
-author: spelluru
 ms.topic: include
-ms.custom:
-ms.date: 03/21/2025
+ms.date: 12/22/2025
 ---
 
 1. On the **Configure connection settings** page, select **New connection**.
@@ -14,6 +11,9 @@ ms.date: 03/21/2025
 1. In the **Connection settings** section of the popup window, follow these steps:
     1. For **Cluster**, enter the URI of your Azure Data Explorer cluster.
     1. The **Database** and **Table name** boxes in the cloud connection are optional. Values entered in these boxes are ignored in this step. You can specify them in the next step of the wizard.
+       > [!NOTE] 
+       > The Eventstream Azure Data Explorer connector does not currently support custom queries. Any Azure Data Explorer query specified here will be ignored
+
     1. For **Connection name**, enter a name for the connection to the Azure Data Explorer cluster.  
     1. For **Authentication kind**, only **Organizational account** is currently supported.
     1. Select **Connect**.

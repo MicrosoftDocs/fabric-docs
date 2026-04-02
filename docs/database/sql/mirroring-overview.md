@@ -1,11 +1,9 @@
 ---
 title: Overview of Mirroring for SQL database
 description: "Learn more about automatic mirroring to OneLake for SQL database in Fabric."
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: nzagorac
 ms.date: 07/02/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: SQL database replication to OneLake, Databases replication to OneLake
 ---
 # Mirroring Fabric SQL database in Microsoft Fabric

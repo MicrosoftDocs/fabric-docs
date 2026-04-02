@@ -1,13 +1,9 @@
 ---
 title: Learn How to Use Variable Libraries
 description: "Follow the steps for creating a variable library and using variable values in various stages of a deployment pipeline."
-author: billmath
-ms.author: billmath
 ms.reviewer: Lee
-ms.service: fabric
-ms.subservice: cicd
 ms.topic: tutorial
-ms.date: 08/21/2025
+ms.date: 12/15/2025
 ms.search.form: Variable library tutorial
 #customer intent: As a developer, I want to learn how to use a Microsoft Fabric variable library to customize and share item configurations in a workspace, so that I can manage my content lifecycle.
 ---

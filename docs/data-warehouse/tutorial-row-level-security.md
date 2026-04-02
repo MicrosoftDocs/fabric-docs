@@ -1,13 +1,11 @@
 ---
-title: Implement Row-Level Security in Microsoft Fabric Data Warehousing
-description: A guide to use row-level security in Fabric Data Warehousing
-author: WilliamDAssafMSFT
-ms.author: wiassaf
+title: Implement Row-Level Security in Fabric Data Warehouse
+description: A guide to use row-level security in Fabric Data Warehouse.
 ms.reviewer: dhsundar
 ms.date: 01/16/2025
 ms.topic: how-to
 ---
-# Implement row-level security in Microsoft Fabric data warehousing
+# Implement row-level security
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 

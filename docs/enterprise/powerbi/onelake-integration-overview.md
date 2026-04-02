@@ -1,18 +1,17 @@
 ﻿---
 title: Learn about Microsoft OneLake Delta table integration in Power BI and Microsoft Fabric
 description: Describes using Microsoft OneLake integration to automatically write import data into Delta tables.
-author: JulCsc
-ms.author: juliacawthra
-ms.reviewer: ''
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/10/2025
 LocalizationGroup: Enterprise
 ---
 # OneLake integration for semantic models
 
-With Microsoft OneLake integration for semantic models, data imported into model tables can also be automatically written to [*Delta tables*](/azure/databricks/introduction/delta-comparison) in OneLake. The Delta format is the unified table format across all compute engines in Microsoft Fabric. OneLake integration exports the data with all key performance features enabled to provide more seamless data access with higher performance.
+With Microsoft OneLake integration for semantic models, data imported into model tables can also be automatically written to [*Delta tables*](../../data-engineering/lakehouse-and-delta-tables.md) in OneLake. The Delta format is the unified table format across all compute engines in Microsoft Fabric. OneLake integration exports the data with all key performance features enabled to provide more seamless data access with higher performance.
 
 Data scientists, database analysts, app developers, data engineers, and other data consumers can then access the same data that drives your business intelligence and financial reports in Power BI. T-SQL, Python, Scala, PySpark, Spark SQL, R, and no-code/low-code solutions can all be used to query data from  Delta tables.
 
@@ -29,6 +28,8 @@ Before enabling OneLake integration, you must have one or more [import semantic 
 ## Permissions
 
 Model *contributor* (read, write, explore) permissions are required to access the contents of a model folder and create shortcuts linking to the folder in Lakehouse explorer.
+
+For cross-tenant scenarios where external users access exported Delta tables through OneLake data sharing, the data owner must grant OneLake read permissions to the external identity. Standard workspace role permissions don't extend across tenant boundaries.
 
 ## Enable OneLake integration
 
@@ -85,9 +86,11 @@ After exporting, you can use [OneLake file explorer](https://go.microsoft.com/fw
 
     :::image type="content" border="false" source="media/onelake-integration-overview/ssms-export.png" alt-text="TMSL export command in SSMS.":::
 
+Downstream workloads such as Spark notebooks, pipelines, and other lakehouses can attach shortcuts directly to these exported Delta tables, making the data available for engineering and analytics without additional copies.
+
 ## Shortcuts
 
-By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic model Lakehouse tables, you can provide quick and easy access to them from other workloads in Fabric.
+By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic model Lakehouse tables, you can provide quick and easy access to them from other workloads in Fabric. Shortcuts provide live access to the exported Delta tables without copying data. You can create shortcuts that reference these tables from other workspaces or even from other tenants through OneLake data sharing, enabling cross-workspace and cross-tenant consumption of Power BI-exported data.
 
 1. In Lakehouse Explorer, right-click **Tables**, and then select **New shortcut**.
 
@@ -101,7 +104,9 @@ By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic mod
 
 - Workspace Admins, Members, and Contributors, as well as Users with direct Write permission on a semantic model are granted Read permission on the exported artifact folder in OneLake.
   
-- Users with Read permission on a semantic model get Read permission to the artifact folder in OneLake only if there are no RLS/OLS roles defined for the semantic model.
+- If the semantic model contains RLS/OLS roles, then only users with write access (workspace admins/members/contributors) are given read access to the semantic model data in OneLake.
+
+- If the semantic model has no RLS/OLS roles, then users with Read+Build permission are also given access to the OneLake data.
   
 - Currency data types with values larger than 18 decimal points can have some precision loss when exported to Delta files.
 
@@ -112,6 +117,8 @@ By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic mod
 - Measures, DirectQuery tables, hybrid tables, calculation group tables, and system managed aggregation tables can't be exported to Delta format tables.
 
 - Old versions of the delta tables are deleted after three days. Other execution engines which use an older but now deleted version of the data must move forward to an available version.
+
+- Exported Delta tables are refreshed when the semantic model is refreshed (manually or on schedule). Between refreshes, the Delta table reflects the data from the last successful refresh. Downstream workloads that consume exported data through shortcuts should account for this update cadence.
 
 ## Related content
 

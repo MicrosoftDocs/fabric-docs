@@ -1,12 +1,11 @@
 ---
 title: Share items in Microsoft Fabric
 description: "Learn how to share an item and manage permission of an item in Microsoft Fabric."
-author: msmimart
-ms.author: mimart
+author: SnehaGunda
+ms.author: sngun
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 04/06/2025
-ms.custom:
 ---
 
 # Share items in Microsoft Fabric

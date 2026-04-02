@@ -1,10 +1,7 @@
 ---
 title: Transform and Enrich Data with AI Functions
 description: Learn how to transform and enrich data with lightweight, LLM-powered code by using AI functions in Microsoft Fabric.
-ms.author: jburchel
-author: jonburchel
 ms.reviewer: vimeland
-reviewer: virginiaroman
 ms.topic: how-to
 ms.date: 11/13/2025
 ms.search.form: AI functions
@@ -29,6 +26,8 @@ AI functions use industry-leading large language models (LLMs) for summarization
 
 You can incorporate these functions as part of data science and data engineering workflows, whether you're working with pandas or Spark. There's no detailed configuration and no complex infrastructure management. You don't need any specific technical expertise.
 
+AI functions also support [multimodal input](./multimodal-overview.md), enabling you to process images, PDFs, and text files alongside text data. Supported file types include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML. Most AI functions can process file-path inputs when `column_type="path"` is specified. For details on multimodal setup and usage, see [Use multimodal input with AI functions](./multimodal-overview.md).
+
 ## Prerequisites
 
 - To use AI functions with the built-in AI endpoint in Fabric, your administrator needs to enable [the tenant switch for Copilot and other features that are powered by Azure OpenAI](../../admin/service-admin-portal-copilot.md).
@@ -41,9 +40,22 @@ You can incorporate these functions as part of data science and data engineering
  > - Unless you configure a different model, AI functions default to *gpt-4.1-mini*. Learn more about [billing and consumption rates](../ai-services/ai-services-overview.md).
 > - Although the underlying model can handle several languages, most of the AI functions are optimized for use on English-language texts."
 
+### Models and providers
+
+AI functions now support broader models and providers beyond the default Azure OpenAI models. You can configure AI functions to use:
+
+- Azure OpenAI models
+- Microsoft Foundry resources (including models such as Claude and LLaMA)
+
+Model and provider selection is configurable through the AI functions configuration. For details on how to set up and configure different models and providers, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
+
 ## Getting started with AI functions
 
 AI Functions can be used with pandas (Python and PySpark runtimes), and with PySpark (PySpark runtime). The required installation and import steps for each are outlined in the following section, followed by the corresponding commands.
+
+### Performance and concurrency
+
+AI functions now execute with increased default concurrency of 200, allowing for faster parallel processing of AI operations. You can tune concurrency settings per workload to optimize performance based on your specific requirements. For more information on configuring concurrency and other performance-related settings, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
 
 ### Install dependencies
 
@@ -59,7 +71,7 @@ AI Functions can be used with pandas (Python and PySpark runtimes), and with PyS
 
 ```python
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 2>/dev/null
+%pip install -q openai 2>/dev/null
 ```
 
 # [pandas (Python runtime)](#tab/pandas-python)
@@ -70,8 +82,7 @@ AI Functions can be used with pandas (Python and PySpark runtimes), and with PyS
 !wget -q https://aka.ms/fabric-synapseml-core-whl -O synapseml_core-latest-py3-none-any.whl
 
 # The pandas AI functions package requires OpenAI version 1.99.5 or later
-%pip install -q --force-reinstall openai==1.99.5 synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
-
+%pip install -q openai synapseml_internal-latest-py3-none-any.whl synapseml_core-latest-py3-none-any.whl
 ```
 
 ---
@@ -98,16 +109,35 @@ import synapse.ml.spark.aifunc as aifunc
 
 ---
 
+### Helper functions for file ingestion and schema
+
+AI functions include helper functions that streamline multimodal workflows by simplifying file ingestion and schema management:
+
+- **`aifunc.load`**: Ingest files from a folder into a structured table. You can optionally provide a prompt to guide extraction or a schema for consistent structure.
+- **`aifunc.list_file_paths`**: Enumerate file URLs and paths from a folder for use as input to any AI function.
+- **`ai.infer_schema`**: Infer an extraction schema from file contents. The inferred schema is compatible with `ai.extract`, so you can pass it directly for structured data extraction.
+
+For detailed syntax and examples, see [Use multimodal input with AI functions](./multimodal-overview.md).
+
 ## Apply AI functions
 
-Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames.
+Each of the following functions allows you to invoke the built-in AI endpoint in Fabric to transform and enrich data with a single line of code. You can use AI functions to analyze pandas DataFrames or Spark DataFrames. PySpark AI function calls (including `ai.extract`) run distributed across Fabric Spark clusters, enabling scalable processing of large datasets. For performance tuning options, see the [PySpark configuration](./pyspark/configuration.md) documentation.
+
+> [!NOTE]
+> Most AI functions now support file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This enables direct processing of images and PDFs without loading raw bytes. For usage patterns, see [Use multimodal input with AI functions](./multimodal-overview.md).
 
 > [!TIP]
 > Learn how to [customize the configuration](./pandas/configuration.md) of AI functions.
+> 
+> **Advanced configuration**: When using gpt-5 family models, you can configure advanced options such as `reasoning_effort` and `verbosity`. See the configuration pages for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md) for details on how to set these options.
 
 ### Detect sentiment with ai.analyze_sentiment
 
 The `ai.analyze_sentiment` function invokes AI to identify whether the emotional state expressed by input text is positive, negative, mixed, or neutral. If AI can't make this determination, the output is left blank. For more detailed instructions about the use of `ai.analyze_sentiment` with pandas, see [this article](./pandas/analyze-sentiment.md). For `ai.analyze_sentiment` with PySpark, see [this article](./pyspark/analyze-sentiment.md).
+
+#### Optional parameters
+
+The `ai.analyze_sentiment` function now supports additional optional parameters that allow you to customize the sentiment analysis behavior. These parameters provide more control over how sentiment is detected and reported. For details on available parameters, their descriptions, and default values, see the function-specific documentation for [pandas](./pandas/analyze-sentiment.md) and [PySpark](./pyspark/analyze-sentiment.md).
 
 # [pandas](#tab/pandas)
 
@@ -184,7 +214,7 @@ display(categories)
 :::image type="content" source="../media/ai-functions/classify-example-output.png" alt-text="Screenshot of a data frame with 'descriptions' and 'category' columns. The 'category' column lists each description’s category name." lightbox="../media/ai-functions/classify-example-output.png":::
 
 ### Generate vector embeddings with ai.embed
-The `ai.embed` function invokes AI to generate vector embeddings for input text. For more detailed instructions about the use of `ai.embed` with pandas, see [this article](./pandas/embed.md). For `ai.embed` with PySpark, see [this article](./pyspark/embed.md).
+The `ai.embed` function invokes AI to generate vector embeddings for input text. Vector embeddings are numerical representations of text that capture semantic meaning, making them useful for similarity search, retrieval workflows, and other machine learning tasks. The dimensionality of the embedding vectors depends on the selected model. For more detailed instructions about the use of `ai.embed` with pandas, see [this article](./pandas/embed.md). For `ai.embed` with PySpark, see [this article](./pyspark/embed.md).
 
 # [pandas](#tab/pandas)
 
@@ -223,6 +253,14 @@ display(embed)
 ### Extract entities with ai.extract
 
 The `ai.extract` function invokes AI to scan input text and extract specific types of information that are designated by labels you choose (for example, locations or names). For more detailed instructions about the use of `ai.extract` with pandas, see [this article](./pandas/extract.md). For `ai.extract` with PySpark, see [this article](./pyspark/extract.md).
+
+#### Structured labels
+
+The `ai.extract` function supports structured label definitions through the `ExtractLabel` schema. You can provide labels with structured definitions that include not just the label name but also type information and attributes. Label definitions can combine simple label names (strings) with schema-bound objects via `ExtractLabel`. This structured approach improves extraction consistency and allows the function to return correspondingly structured output columns. For example, you can specify labels with additional metadata to guide the extraction process more precisely.
+
+`ExtractLabel` accepts full JSON Schema definitions and enforces structure on extracted output. Supported schema constructs include typed fields, enums, arrays (via `items`), objects with `properties`, nullable values (for example, `type=["string", "null"]`), `required` properties, and `additionalProperties=false` to disallow extra fields. The returned columns (or structs) adhere to the provided schema. When a strict schema is provided (for example, with `required` properties or `additionalProperties=false`), outputs that don't conform are surfaced as exceptions in the result and reflected in `ai.stats`.
+
+You can also author schemas as Pydantic models and convert them to JSON Schema for use with `ExtractLabel`. For detailed examples and usage patterns, see the documentation for [pandas](./pandas/extract.md) and [PySpark](./pyspark/extract.md).
 
 # [pandas](#tab/pandas)
 
@@ -297,6 +335,10 @@ display(corrections)
 ### Answer custom user prompts with ai.generate_response
 
 The `ai.generate_response` function invokes AI to generate custom text based on your own instructions. For more detailed instructions about the use of `ai.generate_response` with pandas, see [this article](./pandas/generate-response.md). For `ai.generate_response` with PySpark, see [this article](./pyspark/generate-response.md).
+
+#### Optional parameters
+
+The `ai.generate_response` function now supports a `response_format` parameter that allows you to request structured JSON output. You can specify `response_format='json'` to receive responses in JSON format. Additionally, you can provide a JSON schema to enforce a specific output structure, ensuring the generated response conforms to your expected data shape. This is particularly useful when you need predictable, machine-readable output from the AI function. For detailed examples and usage patterns, see the documentation for [pandas](./pandas/generate-response.md) and [PySpark](./pyspark/generate-response.md).
 
 # [pandas](#tab/pandas)
 
@@ -373,6 +415,10 @@ display(similarity)
 ### Summarize text with ai.summarize
 
 The `ai.summarize` function invokes AI to generate summaries of input text (either values from a single column of a DataFrame, or row values across all the columns). For more detailed instructions about the use of `ai.summarize` with pandas, see [this article](./pandas/summarize.md). For `ai.summarize` with PySpark, see [this article](./pyspark/summarize.md).
+
+#### Customizing summaries with instructions
+
+The `ai.summarize` function now supports an `instructions` parameter that allows you to steer the tone, length, and focus of the generated summaries. You can provide custom instructions to guide how the summary should be created, such as specifying a particular style, target audience, or level of detail. When instructions are not provided, the function uses default summarization behavior. For examples of using the `instructions` parameter, see the detailed documentation for [pandas](./pandas/summarize.md) and [PySpark](./pyspark/summarize.md).
 
 # [pandas](#tab/pandas)
 
@@ -480,10 +526,27 @@ Fabric AI functions provide a built-in way to inspect usage and execution statis
 > [!TIP]
 > You can call `ai.stats` on any Series or DataFrame returned by an AI function. This can help you track usage, understand error patterns, and monitor token consumption.
 
+### Cost transparency
+
+AI functions include a configurable progress bar cost calculator that shows real-time token estimates and capacity units during execution. You can set the calculator to one of three modes:
+
+- **basic**: Displays a summary of estimated tokens and capacity units consumed.
+- **stats**: Displays detailed per-call statistics, including input and output token counts.
+- **disable**: Turns off the progress bar cost display.
+
+For details on configuring these modes, see the configuration documentation for [pandas](./pandas/configuration.md) and [PySpark](./pyspark/configuration.md).
+
+The Fabric Capacity Metrics App now includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflows Gen2, giving you clearer monitoring of AI-related capacity consumption. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
+
+## Evaluate and accelerate
+
+Evaluation notebooks are available to assess AI function output quality. These notebooks use LLM-as-a-Judge to compute metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance. You can use these workflows to validate results before deploying to production. Starter notebooks are also available, providing end-to-end examples that demonstrate file ingestion, schema inference, and extraction to help you get started quickly.
+
 ## Related content
 
 - Detect sentiment with [`ai.analyze_sentiment in pandas`](./pandas/analyze-sentiment.md) or [`ai.analyze_sentiment in pyspark`](./pyspark/analyze-sentiment.md).
 - Categorize text with [`ai.classify in pandas`](./pandas/classify.md) or [`ai.classify in PySpark`](./pyspark/classify.md).
+- Generate vector embeddings with [`ai.embed in pandas`](./pandas/embed.md) or [`ai.embed in PySpark`](./pyspark/embed.md).
 - Extract entities with [`ai.extract in pandas`](./pandas/extract.md) or [`ai.extract in PySpark`](./pyspark/extract.md).
 - Fix grammar with [`ai.fix_grammar in pandas`](./pandas/fix-grammar.md) or [`ai.fix_grammar in PySpark`](./pyspark/fix-grammar.md).
 - Answer custom user prompts with [`ai.generate_response in pandas`](./pandas/generate-response.md) or [`ai.generate_response in PySpark`](./pyspark/generate-response.md).
@@ -491,5 +554,6 @@ Fabric AI functions provide a built-in way to inspect usage and execution statis
 - Summarize text with [`ai.summarize in pandas`](./pandas/summarize.md) or [`ai.summarize in PySpark`](./pyspark/summarize.md).
 - Translate text with [`ai.translate in pandas`](./pandas/translate.md) or [`ai.translate in PySpark`](./pyspark/translate.md).
 
-- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md) .
+- Customize the [configuration of AI functions in pandas](./pandas/configuration.md) or the [configuration of AI functions in PySpark](./pyspark/configuration.md).
+- Use [multimodal input with AI functions](./multimodal-overview.md) to process images, PDFs, and text files.
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

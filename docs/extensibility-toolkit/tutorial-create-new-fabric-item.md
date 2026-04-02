@@ -1,11 +1,9 @@
 ---
 title: Creating Custom Fabric Items
 description: Complete guide for creating custom items in Microsoft Fabric using either AI assistance or manual scripted approach
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: tutorial
-ms.custom:
-ms.date: 11/18/2025
+ms.date: 12/15/2025
 ---
 
 # Create a new Fabric Item

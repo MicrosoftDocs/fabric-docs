@@ -3,9 +3,9 @@ title: Microsoft Fabric disaster recovery experience specific guidance
 description: See experience-specific guidance for recovering from a regional disaster.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
-ms.custom:
-ms.date: 10/15/2025
+ms.reviewer: danzhang
+ms.topic: how-to
+ms.date: 03/11/2026
 ---
 
 # Experience-specific disaster recovery guidance
@@ -16,7 +16,10 @@ This document provides experience-specific guidance for recovering your Fabric d
 
 Many guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
 
-Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B.
+Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data is replicated to a backup in region B. If region A faces disruptions, the Fabric service in C1 fails over to region B. 
+
+> [!NOTE]
+> This recovery guidance applies only when the secondary region supports Fabric.
 
 The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
 
@@ -32,6 +35,7 @@ Here's the general recovery plan:
 
 1. Follow the dedicated instructions for each component to restore items to their full function.
 
+This recovery plan assumes that the tenant home region remains operational. If the tenant home region experiences an outage, the steps outlined in this document are contingent on its recovery, which must be first initiated and completed by Microsoft.
 
 ## Experience-specific recovery plans
 
@@ -56,7 +60,7 @@ Customers can recreate lakehouses by using a custom Scala script.
 1. To recover the tables and files from the original lakehouse, refer to the data with OneLake paths such as abfss (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the following code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
-    mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
+    notebookutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
     ```
 
 1. Use the following code example to copy tables and files to the newly created lakehouse.
@@ -71,18 +75,18 @@ Customers can recreate lakehouses by using a custom Scala script.
     val destination="abfs path to new Lakehouse file or table directory"
     val timestamp= //timestamp provided by Support
     
-    mssparkutils.fs.cp(source, destination, true)
+    notebookutils.fs.cp(source, destination, true)
     
-    val filesToDelete = mssparkutils.fs.ls(s"$source/_delta_log")
+    val filesToDelete = notebookutils.fs.ls(s"$source/_delta_log")
         .filter{sf => sf.isFile && sf.modifyTime > timestamp}
      
-    for(fileToDelte <- filesToDelete) {
-        val destFileToDelete = s"$destination/_delta_log/${fileToDelte.name}"
+    for(fileToDelete <- filesToDelete) {
+        val destFileToDelete = s"$destination/_delta_log/${fileToDelete.name}"
         println(s"Deleting file $destFileToDelete")
-        mssparkutils.fs.rm(destFileToDelete, false)
+        notebookutils.fs.rm(destFileToDelete, false)
     }
      
-    mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
+    notebookutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
 1. Once you run the script, the tables appear in the new lakehouse.
@@ -93,6 +97,20 @@ To recover only specific Lakehouse files or tables from the original lakehouse, 
 
 > [!NOTE]
 > The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (for example, CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover them.
+
+### Recovering Fabric materialized lake views
+
+Materialized Lake Views from the original region remain unavailable to customers after failover. Refresh schedules, and execution history aren't replicated to the secondary region. To recover them, complete the following steps after you've recovered your Lakehouse data.
+
+-  Recover the Lakehouse tables by using Approach 1 or Approach 2 described above. **Copy only the source tables.**
+-  Recover the notebooks that contain your MLV definitions. Refer to the [Notebook](#notebook) section for recovery steps.
+-  Run the recovered notebooks to recreate the MLVs in the new Lakehouse. For information about creating MLVs, see [Create a Materialized Lake View](../data-engineering/materialized-lake-views/create-materialized-lake-view.md). If MLVs were also copied in the earlier step, run **CREATE OR REPLACE** while recreating them.
+-  Recreate the MLV refresh schedules manually in the new workspace. Schedule history and execution metrics aren't recoverable.
+-  If your MLVs feed semantic models or reports, verify and update the Lakehouse ID and dataset ID references as needed. Reconnect reports to the updated semantic model and validate data freshness.
+
+> [!TIP]
+> To minimize code changes when running notebooks post-failover, use the same workspace and Lakehouse names in the new region (especially when using the Workspace or Lakehouse name in the naming conventions).
+>  The refresh schedules, execution history, and operational metrics start fresh in the recovered region. Plan for a baseline period when establishing new monitoring thresholds.
 
 ### Notebook
 
@@ -312,6 +330,17 @@ Here are the steps to achieve this:
 
 This guide walks you through the recovery procedures for the Real-Time Intelligence experience. It covers KQL databases/querysets and eventstreams.
 
+### Graph Model/Queryset
+
+Graph Model and Graph Queryset items from the primary region remain unavailable to customers, and these items aren't replicated to the secondary region.
+
+If you want to recover a Graph Model or Graph Queryset item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Graph Model and Graph Queryset items with your Git repo.
+
+During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Graph Model and Graph Queryset items in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step restores the Graph Model and Graph Queryset items in the new workspace.
+
+> [!NOTE]
+> If the original Graph Model item has a lakehouse configured for data loading, refer to the [Lakehouse section](#lakehouse) to recover it first. After the lakehouse is recovered, connect the newly recovered lakehouse to the newly recovered Graph Model item.
+
 ### KQL Database/Queryset
 
 KQL database/queryset users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, data in your KQL databases querysets remains safe and accessible.
@@ -345,6 +374,32 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 1. Connect these new items to the identical data sources.
 
 1. Add identical destinations for each eventstream in different regions.
+
+### Map
+
+Map items from the primary region remain unavailable to customers and the Map items aren't replicated to the secondary region.
+
+If you want to recover a Map item when a disaster happens, set up [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) your Map item with your Git repo.
+
+During the recovery, after the new region/capacity in Fabric is set up, you can use the repo to rebuild the Map item in the new workspace you created. Since the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) gets the contents from the repo into the empty workspace. This step brings the Map item back to life.
+
+> [!NOTE]
+> If the original Map item has a lakehouse or KQL queryset configured, refer to the [Lakehouse section](./experience-specific-guidance.md#lakehouse) and the [KQL queryset section](./experience-specific-guidance.md#kql-databasequeryset) to recover them first. After those dependencies are taken care of, connect the newly recovered lakehouse and queryset to the newly recovered Map item.
+
+### Ontology
+
+Ontology users must take proactive steps to prepare for regional disaster recovery. The approach described below ensures that, following a regional disaster, your Ontology remains recoverable and can be restored quickly.
+
+The simplest and fastest way to enable recovery is to use Fabric Git integration and synchronize your Ontology with an Azure DevOps (ADO) repository. If the service fails over to another region, you can use this repository to rebuild the Ontology in a newly created workspace.
+
+Ontology items in the primary region are not available to customers after a regional disaster, and Ontology items are not replicated to the secondary region.
+
+To recover an Ontology item during a disaster, configure [Fabric Git integration](../cicd/git-integration/intro-to-git-integration.md), and [synchronize](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) the Ontology item with your ADO repository ahead of time.
+
+During recovery, once the new region and capacity in Fabric are set up, you can use the repository to rebuild the Ontology item in a new workspace. Because the new workspace is empty, [Git sync](../cicd/git-integration/git-integration-process.md?tabs=Azure%2Cazure-devops#connect-and-sync) pulls the contents from the repository into the workspace, effectively restoring the Ontology item.
+
+> [!NOTE]
+> If the original Ontology item has a lakehouse configured, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first. After those dependencies are taken care of, connect the newly recovered lakehouse to the newly recovered Ontology item.
 
 ## Transactional database
 

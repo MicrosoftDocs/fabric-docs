@@ -1,14 +1,12 @@
 ---
 title: How to relax the iFrame
 description: Learn how to relax the iFrame with more properties
-author: gsaurer
-ms.author: billmath
+ms.reviewer: gesaur
 ms.topic: how-to
-ms.custom:
-ms.date: 09/04/2025
+ms.date: 12/15/2025
 ---
 
-# How to relax the iFrame
+# How-To: Relax the iFrame
 
 This article describes how you can enable additional iFrame attributes for your editor.
 

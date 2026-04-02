@@ -1,12 +1,10 @@
 ---
 title: Create an Apache Airflow Job project in Microsoft Fabric
 description: This tutorial helps you create an Apache Airflow Job in Microsoft Fabric.
-ms.reviewer: abnarain
-ms.author: abnarain
-author: nabhishek
+ms.reviewer: makromer
 ms.topic: quickstart
 ms.custom: airflows
-ms.date: 11/20/2025
+ms.date: 03/23/2026
 ---
 
 # Quickstart: Create an Apache Airflow Job
@@ -15,6 +13,8 @@ ms.date: 11/20/2025
 > Apache Airflow job is powered by Apache Airflow.
 >
 >[Apache Airflow](https://airflow.apache.org/) is an open-source platform used to programmatically create, schedule, and monitor complex jobs. It allows you to define a set of tasks, called operators, that can be combined into directed acyclic graphs (DAGs) to represent pipelines.
+
+> [!VIDEO https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed-one-stream.html?id=5c71e9b3-a778-40ba-b83b-a15b9af06dc6]
 
 Apache Airflow Job provides a simple and efficient way to create and manage Apache Airflow environments, enabling you to run your orchestration jobs at scale with ease. In this quickstart, let's create a simple Apache Airflow job to familiarize yourself with the environment and functionalities of Apache Airflow Job.
 

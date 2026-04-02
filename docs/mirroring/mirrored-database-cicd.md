@@ -1,10 +1,9 @@
 ---
 title: CI/CD for mirrored databases in Fabric
 description: This article describes how to set up continuous integration and delivery (CI/CD) for mirrored databases in Microsoft Fabric.
-author: linda33wj
-ms.author: jingwang
+ms.reviewer: jingwang
 ms.topic: how-to
-ms.date: 11/27/2025
+ms.date: 03/18/2026
 ---
 
 # CI/CD for mirrored databases in Fabric
@@ -69,7 +68,7 @@ Take the following steps to deploy your mirrored database using deployment pipel
 > [!IMPORTANT]
 > To mirror data from Azure SQL Database, Azure SQL Managed Instance, Azure Database for PostgreSQL or SQL Server 2025, you need to also do the following before start mirroring:
 >
-> 1. Enable the managed identity of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-managed-identity), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql) or [SQL Server](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
+> 1. Enable the managed identity of your [Azure SQL logical server](azure-sql-database-tutorial.md#enable-managed-identity), [Azure SQL Managed Instance](azure-sql-managed-instance-tutorial.md#enable-system-assigned-managed-identity-sami-of-your-azure-sql-managed-instance), [Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#prepare-your-azure-database-for-postgresql), [Azure Database for MySQL](azure-database-mysql-tutorial.md#prepare-your-azure-database-for-mysql) or [SQL Server 2025](sql-server-tutorial.md?tabs=sql2025#connect-to-your-sql-server).
 > 2. [Grant the managed identity **Read and Write** permission to the mirrored database](share-and-manage-permissions.md#share-a-mirrored-database). Currently you need to do this on the Fabric portal. Alternatively, you can grant the managed identity workspace role using [Add Workspace Role Assignment API](/rest/api/fabric/core/workspaces/add-workspace-role-assignment).
 
 > [!NOTE]

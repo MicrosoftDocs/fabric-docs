@@ -1,11 +1,11 @@
 ﻿---
 title: Migrate Azure Analysis Services to Power BI 
 description: Describes how to migrate Azure Analysis Services models to a Power BI workspace.
-author: JulCsc
-ms.author: juliacawthra
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-premium
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/12/2023
 LocalizationGroup: Premium
 ms.custom: engagement-fy23

@@ -3,7 +3,7 @@ title: Trusted workspace access in Microsoft Fabric
 description: Learn how to configure and use trusted workspace access to securely access your Azure Data Lake Gen2 storage accounts from Microsoft Fabric.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 08/12/2025
 ---
@@ -128,7 +128,7 @@ The following sections show you how to use these methods.
 
 1. Start by creating a new shortcut in a Lakehouse.
 
-    :::image type="content" source="./media/security-trusted-workspace-access/create-new-shortcut-menu-item.png" alt-text="Sceenshot of create new shortcut menu item.":::
+    :::image type="content" source="./media/security-trusted-workspace-access/create-new-shortcut-menu-item.png" alt-text="Screenshot of create new shortcut menu item.":::
 
     The **New shortcut** wizard opens.
 

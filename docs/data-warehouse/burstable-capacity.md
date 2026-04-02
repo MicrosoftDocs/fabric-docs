@@ -1,11 +1,9 @@
 ---
 title: Burstable Capacity
-description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric data warehousing.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
-ms.reviewer: stevehow
-ms.date: 04/06/2025
-ms.topic: conceptual
+description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric Data Warehouse.
+ms.reviewer: brmyers
+ms.date: 03/11/2026
+ms.topic: concept-article
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
@@ -33,7 +31,10 @@ Smoothing offers relief for customers who create sudden spikes during their peak
 
 Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md).
 
-The limit is a scale factor directly correlated to the Fabric capacity SKU size that is assigned to the workspace.
+The limit (or guardrail) is a scale factor directly correlated to the [Fabric Capacity SKU](../enterprise/plan-capacity.md) size that is assigned to the workspace and applied independently to [query processing and ingestion workloads](#isolation-boundaries).
+
+> [!NOTE]
+> The following guardrails apply to the default autonomous workload management behavior. Guardrails for [custom SQL pools](custom-sql-pools.md) are cumulative for the entire workspace and are measured by the percentage of available burstable resources.
 
 | Fabric SKU | Equivalent Premium SKU | Baseline Capacity Units (CU) | Burstable Scale Factor |
 |------------|------------------------|------------------------------|------------------------|
@@ -60,7 +61,7 @@ Larger SKU sizes have access to more total capacity units, allowing more complex
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] fully isolates ingestion from query processing, as described in [Workload management](workload-management.md#ingestion-isolation). 
 
-The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, multiple workspaces can be assigned to a capacity. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
+The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, capacity can be assigned to multiple workspaces. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
 
 ## Considerations
 

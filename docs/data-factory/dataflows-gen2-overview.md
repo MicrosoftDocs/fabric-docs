@@ -1,10 +1,9 @@
 ---
 title: Differences between Dataflow Gen1 and Dataflow Gen2
 description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory for Microsoft Fabric.
-author: luitwieler
 ms.topic: overview
 ms.date: 11/19/2025
-ms.author: jeluitwi
+ms.reviewer: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ms.custom: dataflows
 ai-usage: ai-assisted
@@ -20,7 +19,7 @@ Dataflow Gen2 is the newer, more powerful version that works alongside the origi
 
 With dataflows, you can:
 
-- **Connect to your data**: Pull information from databases, files, web services, and more.
+- **Connect to your data**: Pull information from databases, files, web services, and more. You can also reconnect to recently used sources.
 - **Transform your data**: Clean, filter, combine, and reshape your data using a visual interface.
 - **Load data anywhere**: Send your transformed data to databases, data warehouses, or cloud storage.
 - **Automate the process**: Set up schedules so your data stays fresh and up-to-date.
@@ -42,6 +41,7 @@ Here's the features that are available between Dataflow Gen2 and Gen1:
 | Direct Query via the dataflow connector |  | ✓ |
 | Refresh only changed data       | ✓ | ✓ |
 | AI-powered insights | ✓ | ✓ |
+| Recent data shortcuts to previously used sources | ✓ |  |
 
 ## Upgrades to Dataflow Gen2
 
@@ -98,6 +98,12 @@ To learn more about connecting dataflows with pipelines, see [dataflow activitie
 
 Dataflow Gen2 uses advanced compute Fabric SQL Compute engines to handle large amounts of data efficiently. To make this work, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace and uses them to store and access data, improving performance for all your dataflows.
 
+### Find and reuse recent data sources
+
+Dataflow Gen2 includes a **Recent data** module that records items you've previously used—such as tables, files, folders, databases, and sheets—and lets you load them directly into the Dataflow Gen2 editing canvas. You can access Recent data from the Power Query ribbon or from the Modern Get Data experience, so you can quickly get back to the data you need without reconfiguring your connections.
+
+From any Recent data entry, you can also select **Browse location** to explore and select additional related items within the same folder or database, making it easy to work with multiple resources in the same location.
+
 ## Copilot for Dataflow Gen2
 
 Dataflow Gen2 integrates with Microsoft Copilot in Fabric to provide AI-powered assistance for creating data integration solutions using natural language prompts. Copilot helps you streamline your dataflow development process by allowing you to use conversational language to perform data transformations and operations.
@@ -115,7 +121,7 @@ For more information, see [Copilot for Dataflow Gen2](copilot-fabric-data-factor
 
 ## What do you need to use dataflows?
 
-Dataflow Gen2 requires a Fabric capacity or a Fabric trial capacity. To understand how licensing works for dataflows, check out [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
+Dataflow Gen2 requires a Fabric capacity, a Fabric trial capacity, or a Power BI Premium capacity. To understand how licensing works for dataflows, check out [Microsoft Fabric concepts and licenses](../enterprise/licenses.md).
 
 ## Moving from Dataflow Gen1 to Gen2
 
@@ -136,6 +142,10 @@ If you have a dataflow in Power BI or Power Apps, you can copy your queries and 
 ### Use the Save As feature
 
 If you already have any type of dataflow (Gen1, Gen2, or Gen2 CI/CD), Data Factory now includes a Save As feature. This lets you save any existing dataflow as a new Dataflow Gen2 (CI/CD) item with just one action. More details: [Migrate to Dataflow Gen2 (CI/CD) using Save As](migrate-to-dataflow-gen2-using-save-as.md).
+
+## Staging items in your workspace
+
+In some experiences, you might see system-generated items like **DataflowsStagingLakehouse** or **DataflowsStagingWarehouse** in your workspace. These are internal staging items used by Dataflow Gen2 and aren't intended for direct interaction. You can safely disregard them.
 
 ## Related content
 

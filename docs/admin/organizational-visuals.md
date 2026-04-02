@@ -3,7 +3,7 @@ title: Organizational visuals
 description: Learn about admin organizational visual capabilities and how to customize Power BI visuals based on the needs of your organization.
 author: billmath
 ms.author: billmath
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/23/2025
 ms.custom: sfi-image-nochange
 #customer intent: As a Fabric administrator for your organization, I want to control the type of Power BI visuals that users can access across the organization and limit the actions users can perform so that I can ensure compliance with company policies and security standards.

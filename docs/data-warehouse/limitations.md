@@ -1,11 +1,9 @@
 ---
 title: Limitations of Fabric Data Warehouse
 description: This article contains a list of current limitations in Microsoft Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: joanpo, ajagadish, anphil, fresantos
-ms.date: 11/19/2025
-ms.topic: conceptual
+ms.date: 02/20/2026
+ms.topic: limits-and-quotas
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations of Fabric Data Warehouse
@@ -76,6 +74,8 @@ ON c.object_id = o.object_id
 WHERE max_length = -1 
 AND type_name(user_type_id) IN ('varchar', 'varbinary');
 ```
+
+- Schemas with names that conflict with system schemas (such as `sys` or `information_schema`) and database security principals (such as `db_owner`, `db_datareader`) aren't supported in the SQL analytics endpoint. Tables under these schemas will fail to sync to the SQL analytics endpoint.
 
 ## Known issues
 

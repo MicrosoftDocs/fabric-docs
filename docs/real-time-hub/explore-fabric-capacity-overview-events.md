@@ -1,8 +1,7 @@
 ---
 title: Explore Fabric capacity overview events in Fabric Real-Time hub
 description: This article shows how to explore Fabric capacity overview events in Fabric Real-Time hub.
-author: george-guirguis
-ms.author: geguirgu
+ms.reviewer: geguirgu
 ms.topic: how-to
 ms.date: 11/17/2025
 ms.custom: references_regions
@@ -62,12 +61,14 @@ An event has the following top-level data:
 
 The `data` object has the following properties for Summary events:
 
+#### Summary Events Schema
+
 > [!NOTE]
-> The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, whether or not any CU is consumed. Once a capacity is paused, it doesn't emit summary data.
+> The summary table contains aggregated CU data at the capacity level in a granularity of 30-second windows. CU data is smoothed, rather than raw- this approach reflects the way the system analyzes CU consumption for the purposes of throttling. Active capacities emit exactly one line item every 30 seconds, unless all line items for that window (CU, Interactive Delay Throttling percentage etc) are 0. Also, if a capacity is paused, it doesn't emit summary data.
 
 | Property | Type | Description | Example |
 | -------- | ---- | ----------- | ------- |
-| `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. You can find the identifiers (IDs) of the capacities you have access to in the Power BI Service settings pane under **Governance and administration** -> **Admin portal**- **Capacity settings**. When you select a capacity, the ID appears in the browser URL. You can also check the "workspace settings" > "License info" to see which capacity is assigned to a workspace. | `00000000-0000-0000-0000-000000000000`  |
+| `capacityId` | string | The ID of the capacity on which the operation ran. A capacity always retains the same capacity ID, even if it's paused, restarted, scaled up, or scaled down. You can find the identifiers (IDs) of the capacities you have access to in the Power BI Service settings pane under **Governance and administration** -> **Admin portal**- **Capacity settings**. When you select a capacity, the ID appears in the browser URL. You can also check the "workspace settings" > "Workspace type" to see which capacity is assigned to a workspace. | `00000000-0000-0000-0000-000000000000`  |
 | `capacityName` | string | The name of the capacity. Capacity name can be changed without impacting the capacity ID. | `foocapacity` |
 | `capacitySku` | string | The Stock Keeping Unit (SKU) size of the capacity on which the operation ran at that time. SKUs can be scaled up or down at any time by admins, so the SKU may change for the same capacity ID. | `FT1` |
 | `windowStartTime` | timestamp | Indicates the start time window from which the smoothing took place. The windows are split into 30-second buckets and represent the capacity unit (CU) smoothing windows. Each capacity emits one event per window while active. When a capacity is paused, no events are emitted. | `2025-09-22 05:23:00.0000000` |
@@ -93,7 +94,7 @@ The `data` object has the following properties for Summary events:
 > [!NOTE]
 > **For capacityUnitUtilisationBreakdown, the possible workload values are:**
 >
-> | Workload          | ArtifactKind                | Description                                                                                                      |
+> | Workload          | Workload name                | Description                                                                                                      |
 > |--------------------|----------------------------|------------------------------------------------------------------------------------------------------------------|
 > | AD                | Anomaly Detector           | Anomaly detection by running queries supporting both interactive and background utilization types for real-time and scheduled analysis. |
 > | AI                | AI (Copilot/AI features)   | Evaluates AI functions on dataflows and datasets as background operations to deliver intelligent and contextual insights. |
@@ -118,6 +119,8 @@ The `data` object has the following properties for Summary events:
 > | SQLDb              | SQL Database               | Interactive execution of SQL usage operations on native database items.                                         |
 
 The `data` object has the following properties for State events:
+
+#### State Events Schema
 
 > [!NOTE]
 > The state table summarizes key changes relating to the capacity’s state. This summary includes the capacity being created, becoming overloaded (throttling) or being paused. Other changes to the capacity like scaling up/ scaling down or renaming the capacity aren't considered as state changes (you can find this information in the summary table).
@@ -176,9 +179,8 @@ The `data` object has the following properties for State events:
     ```
     ['_summaryTable']
     | extend capacityUnitMsBudget = baseCapacityUnits * 1000 * 30
-    | extend UtilizationPct = todecimal(capacityUnitMs)/ capacityUnitMsBudget *100
-    | project windowStartTime, UtilizationPct
-    | where UtilizationPct < 500
+    | extend UtilizationPct = todecimal(capacityUnitMs)/ capacityUnitMsBudget * 100
+    | project windowStartTime, UtilizationPct | where UtilizationPct < 500
     | render timechart
     ```
 

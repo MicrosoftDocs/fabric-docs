@@ -1,8 +1,6 @@
 ---
 title: Troubleshooting errors in Activator
 description: Learn the meaning of errors in Activator, how to fix them, and troubleshoot common issues in this comprehensive troubleshooting guide
-author: spelluru
-ms.author: spelluru
 ms.topic: concept-article
 ms.custom: FY25Q1-Linter
 ms.date: 07/17/2025
@@ -149,6 +147,10 @@ This error code means that there was an unauthorized error while executing the F
 ### FabricItemExecutionNoPermissions
 
 This error code means that there was a permission error while executing the Fabric Item. To resolve this problem, verify your access rights to the Fabric item or contact the Fabric item’s creator to request the necessary permissions.
+
+### BlockedByOutboundAccessProtection
+
+When Outbound Access Protection is enabled on a workspace some actions may be blocked depending on configuration. To resolve this problem, contact your Microsoft Fabric administrator.
 
 ## Common issues, symptoms, and remediations
 While Activator abstracts away much of the complexity behind real-time event processing, implementations at scale might encounter data, configuration, or orchestration-related issues that require systematic troubleshooting. This section provides a deep dive into how to identify, analyze, and resolve common operational problems in Activator.

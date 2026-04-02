@@ -1,10 +1,8 @@
 ---
 title: Pricing for pipelines
 description: This article provides details of the pricing model of pipelines for Data Factory in Microsoft Fabric.
-ms.reviewer: whhender
-ms.author: whhender
-author: whhender
-ms.topic: conceptual
+ms.reviewer: makromer
+ms.topic: concept-article
 ms.custom: pipelines
 ms.date: 11/29/2024
 ---
@@ -12,7 +10,6 @@ ms.date: 11/29/2024
 # Pipelines pricing for Data Factory in Microsoft Fabric
 
 Pipelines enable you to apply rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise data movement and ingestion needs. These capabilities require different computing service engines that have distinct consumption rates.
-
 
 :::image type="content" source="media/pricing-overview/pipelines-pricing-diagram.png" alt-text="Diagram showing the pipeline pricing model for Data Factory in Microsoft Fabric.":::
 
@@ -29,6 +26,7 @@ The following table shows a breakdown of the pricing model for pipelines within 
 |---------|---------|---------|
 |Data movement    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CU hours   |
 |Data orchestration     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CU hours for each non-copy activity run |
+|SQL Server Integration Services | Based on SQL Server Integration Services uptime used by Invoke SSIS package activity | 1.35 CU hours per VCore
 
 It indicates that for each intelligent optimization throughput resource usage in a pipeline execution, 1.5 CU hours are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU hours. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
 

@@ -1,10 +1,8 @@
 ---
-title: GQL Values and Value Types
-description: Complete reference for GQL values, value types, literals, comparison rules, and the type system for graph in Microsoft Fabric.
+title: GQL Values and Value Types for graph in Microsoft Fabric
+description: Learn about GQL values and value types in graph in Microsoft Fabric, including literals, comparison rules, type conversions and the type system hierarchy.
 ms.topic: reference
-ms.date: 11/18/2025
-author: eric-urban
-ms.author: eur
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ---
 
@@ -12,7 +10,12 @@ ms.reviewer: splantikow
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
+This article provides a comprehensive reference for GQL values and value types in graph in Microsoft Fabric.
+
 The GQL language supports various kinds of values like numbers, strings, and graph elements. These values are organized into sets called value types, which define what operations you can perform and how values behave in different contexts. Understanding the type system is essential for writing correct queries and avoiding runtime errors.
+
+> [!IMPORTANT]
+> This article exclusively uses the [social network example graph dataset](sample-datasets.md).
 
 **Key concepts:**
 
@@ -22,15 +25,15 @@ The GQL language supports various kinds of values like numbers, strings, and gra
 - **The null value** is a member of every nullable value type.
 
 > [!NOTE]
-> All value types are nullable by default, unless explicitly declared as `NOT NULL`.
+> All value types are nullable by default, unless you explicitly declare them as `NOT NULL`.
 > For example,  `INT` specifies the nullable integer type, while `INT NOT NULL` specifies the material integer type.
 
 ## How value types are organized
 
 All value types fall into two major categories that serve different purposes in your queries:
 
-- **Predefined value types** - Built into the language (such as numbers, strings, and booleans).
-- **Constructed value types** - Composed from other types (lists, paths).
+- **Predefined value types** - Built into the language, such as numbers, strings, and booleans.
+- **Constructed value types** - Composed from other types, such as lists and paths.
 
 Predefined value types are further organized into specialized categories:
 
@@ -48,39 +51,37 @@ Understanding how GQL compares values is crucial for writing effective queries, 
 ### Basic comparison rules
 
 - You can generally compare values of the same kind.
-- All numbers can be compared with each other (for example, integers with floats).
-- Only reference values referencing the same kind of object can be compared (node references with node references, edge references with edge references).
+- You can compare all numbers with each other, such as integers with floats.
+- You can only compare reference values that reference the same kind of object, such as node references with node references and edge references with edge references.
 
 ### Null handling in comparisons
 
 When you compare any value with null, the result is always `UNKNOWN`. Null handling follows three-valued logic principles. However, the `ORDER BY` statement treats `NULL` as the smallest value when sorting, providing predictable ordering behavior.
 
-### Test if values are distinct
+## Distinctness vs. equality
 
-Certain statements don't test for equality but rather for distinctness. Understanding the difference is important for operations like `DISTINCT` and `GROUP BY`.
-
-### Distinctness vs. equality
+Certain statements don't test for equality but rather test for distinctness. Understanding the difference is important for operations like `DISTINCT` and `GROUP BY`.
 
 Distinctness testing follows the same rules as equality with one crucial exception: `NULL` isn't distinct from `NULL`. Distinctness differs from equality tests involving `NULL`, which always result in `UNKNOWN`.
 
-Distinctness testing is used by:
+The following statements use distinctness testing:
 
 - **`RETURN DISTINCT`**: Determines whether two rows are duplicates of each other.
 - **`GROUP BY`**: Determines whether two rows belong to the same grouping key during aggregation.
 
-Two rows from a table are considered distinct if there's at least one column in which the values from both rows are distinct.
+Two rows from a table are distinct if there's at least one column in which the values from both rows are distinct.
 
 ## Boolean value types
 
-Boolean values are the three-valued logic values `TRUE`, `FALSE`, and `UNKNOWN`.
+Boolean values use three-valued logic: `TRUE`, `FALSE`, and `UNKNOWN`.
 
 > [!NOTE]
-> `UNKNOWN` and the null value are identical. `UNKNOWN` is just a null value of type `BOOL`.
+> `UNKNOWN` and the null value are the same. `UNKNOWN` is just a null value of type `BOOL`.
 
 **How equality works:**
 
-| Left value | Right value | Result |
-|------------|-------------|---------|
+| Left value | Right value | Result  |
+| ---------- | ----------- | ------- |
 | TRUE       | FALSE       | FALSE   |
 | TRUE       | TRUE        | TRUE    |
 | TRUE       | UNKNOWN     | UNKNOWN |
@@ -109,11 +110,11 @@ BOOL [ NOT NULL ]
 
 ## Character string value types
 
-Character strings are sequences of Unicode codepoints (they can be zero-length). The empty character string isn't identical with the null value.
+Character strings are sequences of Unicode codepoints (they can be zero-length). The empty character string isn't identical to the null value.
 
 **How comparison works:**
 
-Character strings are compared by comparing the Unicode scalar values of their codepoints (the comparison method is sometimes called the `UCS_BASIC` collation).
+Character strings are compared by comparing the Unicode scalar values of their codepoints. This comparison method is sometimes called the `UCS_BASIC` collation.
 
 **How to write string literals:**
 
@@ -124,9 +125,7 @@ Enclose your characters in either double quotes (`"`) or single quotes (`'`):
 'Guten Tag!'
 ```
 
-You can't directly specify certain Unicode control characters in string literals. 
-Specifically, all characters from the Unicode General Category classes "Cc" and "Cn" are 
-disallowed. Instead, use C-style `\`-escapes:
+You can't directly specify certain Unicode control characters in string literals. Specifically, all characters from the Unicode General Category classes "Cc" and "Cn" are disallowed. Instead, use C-style `\`-escapes:
 
 | Input        | Unescaped character |
 |--------------|---------------------|
@@ -162,7 +161,7 @@ STRING [ NOT NULL ]
 
 ### Exact numeric types
 
-Graph in Microsoft Fabric supports exact numbers that are negative or positive integers.
+Graph supports exact numbers that are negative or positive integers.
 
 **How comparison works:**
 
@@ -173,7 +172,7 @@ The system compares all numbers by their numeric value.
 | Description                 | Example    |  Value  |
 |-----------------------------|------------|---------|
 | Integer                     |  123456    |  123456 |
-| Integer w. grouping         |  123_456   |  123456 |
+| Integer with grouping       |  123_456   |  123456 |
 | Explicitly positive integer | +123456    |  123456 |
 | Zero                        |       0    |       0 |
 | Negative integer            | -123456    | -123456 |
@@ -192,7 +191,7 @@ So do `UINT` and `UINT64`.
 
 ### Approximate numeric types
 
-Graph in Microsoft Fabric supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
+Graph supports approximate numbers that are IEEE (Institute of Electrical and Electronics Engineers) 754-compatible floating point numbers.
 
 **How comparison works:**
 
@@ -203,18 +202,17 @@ The system compares all numbers by their numeric value.
 | Description                     | Example       | Value      |
 |---------------------------------|---------------|------------|
 | Common notation                 | 123.456       | 123.456    |
-| Common notation w. grouping     | 123_456.789   | 123456.789 |
+| Common notation with grouping   | 123_456.789   | 123456.789 |
 | Scientific notation             | 1.23456e2     | 123.456    |
 | Scientific notation (uppercase) | 1.23456E2     | 123.456    |
-| Floating-point with suffix      | 123.456f      | 123.456    |
 | Floating-point with suffix      | 123.456f      | 123.456    |
 | Double precision with suffix    | 123.456d      | 123.456    |
 
 **Additional numeric considerations:**
 
-- **Overflow and underflow**: Integer operations that exceed the supported range may result in runtime errors or wrap-around behavior depending on the implementation.
-- **Precision**: Floating-point operations may lose precision due to IEEE 754 representation limitations.
-- **Special float values**: `NaN` (Not a Number), positive infinity (`+∞`), and negative infinity (`-∞`) may be supported in floating-point contexts.
+- **Overflow and underflow**: Integer operations that exceed the supported range might cause runtime errors or wrap-around behavior, depending on the implementation.
+- **Precision**: Floating-point operations might lose precision because of IEEE 754 representation limitations.
+- **Special float values**: `NaN` (Not a Number), positive infinity (`+∞`), and negative infinity (`-∞`) might be supported in floating-point contexts.
 
 **Type syntax:**
 
@@ -238,7 +236,7 @@ The system compares zoned datetime values chronologically by their absolute time
 
 **How to write datetime literals:**
 
-Use ISO 8601 format with timezone information:
+Use ISO 8601 format with timezone information.
 
 ```gql
 ZONED_DATETIME('2024-08-15T14:30:00+02:00')
@@ -258,13 +256,13 @@ Reference values contain references to matched nodes or edges.
 
 ### Node reference values
 
-Node reference values represent references to specific nodes in your graph. You typically get these values when nodes are matched in graph patterns, and you can use them to access node properties and perform comparisons.
+Node reference values represent references to specific nodes in your graph. You typically get these values when nodes are matched in graph patterns. You can use these values to access node properties and perform comparisons.
 
 **How comparison works:**
 
-You should only compare node reference values for equality. Two node reference values are equal if and only if they reference the same node. 
+Compare node reference values only for equality. Two node reference values are equal if and only if they reference the same node.
 
-Graph in Microsoft Fabric defines a deterministic order over reference values. However, this order can change from query to query and shouldn't be relied upon in production queries.
+Graph defines a deterministic order over reference values. However, this order can change from query to query and you shouldn't rely on it in production queries.
 
 **How to access properties:**
 
@@ -276,49 +274,48 @@ node_var.property_name
 
 **Abstract node types in graph schemas:**
 
-When working with graph types, you can define abstract node types that serve as base types for inheritance but can't be instantiated directly. Abstract types enable polymorphic querying patterns:
+When working with graph types, define abstract node types that serve as base types for inheritance but can't be instantiated directly. Abstract types enable polymorphic querying patterns:
 
 ```gql
 -- Abstract base type (cannot be instantiated)
-NODE TYPE Person ABSTRACT (
-  id INT64,
-  name STRING,
-  birth_date ZONED DATETIME
-)
+ABSTRACT
+(:Person => {
+  id :: INT64,
+  name :: STRING,
+  birth_date :: ZONED DATETIME
+}),
 
 -- Concrete types that inherit from abstract base
-NODE TYPE Employee : Person (
-  employee_id STRING,
-  department STRING,
-  hire_date ZONED DATETIME
-)
+(:Employee => Person {
+  employee_id :: STRING,
+  department :: STRING,
+  hire_date :: ZONED DATETIME
+})
 
-NODE TYPE Customer : Person (
-  customer_id STRING,
-  membership_level STRING,
-  registration_date ZONED DATETIME
-)
+(:Customer => :Person {
+  customer_id :: STRING,
+  membership_level :: STRING,
+  registration_date :: ZONED DATETIME
+})
 ```
 
 **Polymorphic queries with abstract types:**
 
-Abstract types enable powerful querying patterns where you can match against the base type to find all instances of derived types:
+Abstract types enable powerful querying patterns where you match against the base type to find all instances of derived types:
 
 ```gql
 -- Find all Person instances (both Employee and Customer)
 MATCH (p:Person)
-RETURN p.name, p.birth_date, labels(p)
-
--- Use type-specific filtering
-MATCH (p:Person)
-WHERE p:Employee AND p.department = 'Engineering'
-RETURN p.name, p.employee_id
+RETURN p.name, p.birthday, labels(p) AS label_names
 
 -- Mixed type patterns
 MATCH (e:Employee)-[:knows]-(c:Customer)
 WHERE e.department = 'Sales' AND c.membership_level = 'Premium'
 RETURN e.name AS sales_person, c.name AS customer
 ```
+
+> [!NOTE]
+> The preceding queries assume the graph type sketched out earlier and don't use the social network example data set.
 
 This approach provides type safety while enabling flexible, inheritance-based data modeling in your graph schemas.
 
@@ -330,11 +327,11 @@ NODE [ NOT NULL ]
 
 ### Graph edge reference values
 
-Graph edge reference values represent references to specific edges in your graph. You typically get these values when edges are matched in graph patterns, and you can use them to access edge properties and perform comparisons.
+Graph edge reference values represent references to specific edges in your graph. You typically get these values when edges are matched in graph patterns. You can use these values to access edge properties and perform comparisons.
 
 **How comparison works:**
 
-You can only compare edge reference values for equality. Two edge reference values are equal if and only if they reference the same edge.
+You can only compare edge reference values for equality. Two edge reference values are equal only if they reference the same edge.
 
 **How to access properties:**
 
@@ -377,7 +374,7 @@ NULL
 
 ### Nothing type
 
-The nothing type is a value type that contains no values. 
+The nothing type is a value type that contains no values.
 
 Although it might seem like a technicality, the nothing type lets you assign a precise type to values like empty list values. The nothing type allows you to pass empty lists wherever a list value type is expected (regardless of the required list element type).
 
@@ -394,23 +391,23 @@ NULL NOT NULL
 
 ### List values
 
-List values are sequences of elements. Lists can contain elements of the same type, and can include null values.
+List values are sequences of elements. Lists can contain elements of the same type and can include null values.
 
 > [!IMPORTANT]
-> Currently, lists in graph in Microsoft Fabric cannot contain elements of mixed types.
- 
+> Currently, lists in graph can't contain elements of mixed types.
+
 **How comparison works:**
 
 Lists are compared first by size, then element by element in order. Two lists are equal if they have the same size and all corresponding elements are equal.
 
 > [!TIP]
-> Comparisons involving null element values always result in `UNKNOWN`. Null comparisons can lead to surprising results when comparing list values!
+> Comparisons involving null element values always result in `UNKNOWN`. Null comparisons can lead to surprising results when comparing list values.
 
 **Group lists:**
 
-Group lists are lists bound by matching variable-length edge patterns. Graph in Microsoft Fabric tracks their status as group lists.
+Group lists are lists bound by matching variable-length edge patterns. Graph tracks their status as group lists.
 
-Group lists can be used in horizontal aggregation. For more information, see [GQL expressions and functions](gql-expressions.md).
+You can use group lists in horizontal aggregation. For more information, see [GQL expressions and functions](gql-expressions.md).
 
 **How to write list literals:**
 
@@ -430,7 +427,6 @@ Use square brackets with zero-based indexing to access list elements:
 ```gql
 list_var[0]  -- first element
 list_var[1]  -- second element
-list_var[-1] -- last element (if supported)
 ```
 
 **Common list operations:**
@@ -440,10 +436,7 @@ list_var[-1] -- last element (if supported)
 WHERE 'Engineering' IN employee.departments
 
 -- List concatenation
-RETURN [1, 2] + [3, 4]  -- [1, 2, 3, 4]
-
--- List slicing (if supported)
-list_var[1:3]  -- elements from index 1 to 2
+RETURN [1, 2] || [3, 4]  -- [1, 2, 3, 4]
 
 -- List size
 size(list_var)
@@ -456,7 +449,7 @@ LIST<element_type> [ NOT NULL ]
 LIST<element_type NOT NULL> [ NOT NULL ]
 ```
 
-Where `element_type` can be any supported type, such as STRING, INT64, DOUBLE, BOOL, etc.
+Where `element_type` can be any supported type, such as STRING, INT64, DOUBLE, BOOL, and more.
 
 ### Path values
 
@@ -471,12 +464,14 @@ A path consists of:
 - Contains at least one node (minimum path length is zero edges).
 
 > [!NOTE]
-> Currently literal syntax for paths is not yet supported.
-> Instead, paths can be bound using `MATCH pathVar=...path pattern...`.
+> Currently, literal syntax for paths isn't supported.
+> Instead, use `MATCH pathVar=...path pattern...` to bind paths.
 
 **How comparison works:**
 
-Paths are compared by comparing their constituent nodes and edges in sequence.
+You compare paths by comparing lists of reference values to all of their constituent nodes and edges, in the sequence in which they occur along the path.
+
+For more information, see the comparison rules for [list values](#list-values) and [reference values](#reference-value-types).
 
 **Type syntax:**
 
@@ -493,7 +488,7 @@ GQL supports both implicit and explicit type conversions to enable flexible oper
 Certain value types can be implicitly converted when the conversion is safe and doesn't lose information:
 
 - **Numeric widening**: Integer values can be implicitly converted to floating-point types when used in mixed arithmetic operations.
-- **String contexts**: Values may be implicitly converted to strings in certain contexts like concatenation operations.
+- **String contexts**: Values can be implicitly converted to strings in certain contexts like concatenation operations.
 
 ### Explicit casting
 
@@ -514,14 +509,14 @@ CAST('true' AS BOOL)          -- TRUE
 
 **Casting rules:**
 
-- **To STRING**: Most value types can be cast to STRING with their literal representation.
-- **To numeric types**: Strings containing valid numeric literals can be cast to appropriate numeric types.
-- **To BOOL**: Strings 'true'/'false' (case-insensitive) can be cast to boolean values.
-- **Invalid casts**: Attempting to cast incompatible values results in runtime errors.
+- **To STRING**: You can cast most value types to STRING by using their literal representation.
+- **To numeric types**: You can cast strings that contain valid numeric literals to appropriate numeric types.
+- **To BOOL**: You can cast strings 'true' or 'false' (case-insensitive) to boolean values.
+- **Invalid casts**: If you try to cast incompatible values, runtime errors occur.
 
 ## Related content
 
 - [GQL language guide](gql-language-guide.md)
 - [GQL expressions and functions](gql-expressions.md)
 - [GQL graph types](gql-graph-types.md)
-- [Try Microsoft Fabric for free](/fabric/fundamentals/fabric-trial)
+- [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

@@ -2,8 +2,6 @@
 title: How to use notebooks
 description: Learn how to create a new notebook, import an existing notebook, connect notebooks to lakehouses, collaborate in notebooks, and comment code cells.
 ms.reviewer: jingzh
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
@@ -21,29 +19,31 @@ With a Fabric notebook, you can:
 - Keep data secure with built-in enterprise security features.
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), using powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
+- Leverage Copilot for context-aware code generation, refactoring, and validation across your notebook.
+- Quickly diagnose and repair failed cells or Spark jobs with Fix with Copilot, including approval-based code changes.
 
 This article describes how to use notebooks in data science and data engineering experiences.
 
 ## Security context of running notebook
 
-The execution of a notebook can be triggered by three different manners in Fabric with full flexibility to meet different scenarios:
+Notebook execution can be triggered in three ways, each with a different security context:
 
-- **Interactive run**: User manually triggers the execution via the different UX entries or calling the REST API. The execution would be running under the current user's security context.
-- **Run as pipeline activity**: The execution is triggered from Fabric Data Factory pipeline. You can find the detail steps in the [Notebook Activity](../data-factory/notebook-activity.md). The execution would be running under the context of the pipeline's last modified user.
-- **Scheduler**: The execution is triggered from a scheduler plan. The execution would be running under the security context of the user who setup/update the scheduler plan.
+- **Interactive run**: You manually trigger execution through the UI or REST API. The notebook runs under your security context (the current user).
+- **Run as pipeline activity**: Execution is triggered from a Fabric Data Factory pipeline. See [Notebook activity](../data-factory/notebook-activity.md) for details. The notebook runs under the identity of the **pipeline's last modified user**—not the pipeline owner or notebook owner. This means whoever last edited the pipeline determines the security context for data access, API calls, and permissions.
+- **Scheduler**: Execution is triggered from a scheduled run. The notebook runs under the identity of the user who created or last updated the schedule.
 
-The flexibility of these execution options with different security context allows you to meet different scenarios and requirements, but also requires you to be aware of the security context when you design and develop your notebook, otherwise it may cause unexpected behavior and even some security issues.
+These execution options provide flexibility for different scenarios, but you must understand which identity runs your notebook. The security context affects data access permissions, API call authorization, and resource availability. Some APIs (such as T-SQL endpoints) don't support service principals and require a user principal.
 
 The first time when a notebook is created, a warning message is shown to remind you the risk of running the code without reviewing it.
 
 :::image type="content" source="media\how-to-use-notebook\notebook-security-warning.png" alt-text="Screenshot showing warning of running notebook." lightbox="media\how-to-use-notebook\notebook-security-warning.png":::
 
-Here are some best practices to help you avoid security issues:
+Follow these best practices to avoid security issues:
 
-- Before you manually run the notebook, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change.
-- Before you add a notebook activity to a pipeline, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you add it into the pipeline.
-- Before you update the scheduler plan, Open the Notebook setting and check the Detail section under the About panel for the modification update, make sure you are OK with the latest change. If you are not sure about the latest change, better open the Notebook to review the change before you update the scheduler plan.
-- Separate the workspace into different stage (dev, test, prod) and control the access of different stage to avoid the security issue. Only add the user who you trust to the prod stage.
+- **Before running a notebook manually**: Check who last modified the notebook and use the [version history](#version-history) panel to review the actual content changes before executing code you didn't write.
+- **Before adding a notebook to a pipeline**: Verify who last modified the pipeline, because the notebook runs under that user's identity. Open the notebook from the pipeline to review its latest content. If the identity doesn't have the required permissions (or if you need a user principal instead of a service principal for certain APIs), have the appropriate user edit the pipeline to update the last modified identity.
+- **Before creating or updating a schedule**: The notebook runs under the identity of whoever creates or updates the schedule. Ensure that user has the necessary permissions for all operations in the notebook.
+- **Use workspace stages**: Separate workspaces into dev, test, and prod stages. Restrict access to production workspaces to trusted users only.
 
 
 ## Create notebooks
@@ -54,6 +54,12 @@ You can either create a new notebook or import an existing notebook.
 
 Like other standard Fabric item creation processes, you can easily create a new notebook from the Fabric **Data Engineering** homepage, the workspace **New** option, or the **Create Hub**.
 
+For step-by-step notebook creation guidance in specific workflows, see:
+
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md#open-or-create-a-notebook-from-a-lakehouse) for creating a notebook from a lakehouse context in the Fabric portal.
+- [Author notebooks in Microsoft Fabric with Visual Studio Code](author-notebook-with-vs-code.md#create-a-notebook) for creating notebooks from VS Code.
+- [Public APIs for notebooks](/rest/api/fabric/core/items) for creating notebooks through REST APIs.
+
 ### Import existing notebooks
 
 You can import one or more existing notebooks from your local computer using the entry in the workspace toolbar. Fabric notebooks recognize the standard Jupyter Notebook *.ipynb* files, and source files like *.py*, *.scala*, and *.sql*, and create new notebook items accordingly.
@@ -62,7 +68,7 @@ You can import one or more existing notebooks from your local computer using the
 
 ## Export a notebook
 
-You can export your notebook to other standard formats. Synapse notebook can be exported into:
+You can export your notebook to other standard formats. The Fabric notebook can be exported into:
 
 :::image type="content" source="media\how-to-use-notebook\export-notebook.png" alt-text="Screenshot showing where to export notebook." lightbox="media\how-to-use-notebook\export-notebook.png":::
 
@@ -117,6 +123,9 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
 > - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
 
+> [!NOTE]
+> Files in the Resources folder (both built-in and environment) and libraries installed through inline commands (such as `%pip install` or `install.packages()`) are scoped to the current notebook session. They aren't affected by environment publishing in either Quick mode or Full mode.
+
 ### Built-in resources folder
 
 The built-in resources folder is a system-defined folder unique to each notebook. It is recommended to use built-in resource folder to storage any data used in the current notebook. Here are the key capabilities for the notebook resources.
@@ -141,6 +150,20 @@ Environment Resources Folder is a shared repository designed to streamline colla
 - You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
+Fabric Environments support two library publishing modes that affect how libraries are delivered to your notebook sessions:
+
+- **Quick mode** publishes in about 5 seconds and installs libraries when your notebook session starts. Quick mode can override library versions published through Full mode, but only for the current session.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Using Full mode with a [custom live pool](custom-live-pools-overview.md) can bring session start times back to approximately 5 seconds while maintaining the stable snapshot.
+
+For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+
+### Use environment libraries in notebooks
+
+Choose a library publishing mode based on your workflow:
+
+- **Quick mode for iterative development**: Use Quick mode when you're actively experimenting in notebooks and need fast library iteration. Libraries install at session start with minimal publish time.
+- **Full mode for reproducibility**: Use Full mode when you need consistent library versions across collaborators, scheduled runs, or pipeline jobs. The snapshot ensures every session starts with the same dependencies.
+- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination achieves approximately 5-second session starts while preserving the stable library snapshot.
 
 > [!NOTE]
 > Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
@@ -168,6 +191,18 @@ The Fabric notebook is a collaborative item that supports multiple users editing
 When you open a notebook, you enter the coediting mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
 :::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing." lightbox="media\how-to-use-notebook\collaboration.png":::
+
+### Use Copilot in notebooks
+
+Copilot is immediately context-aware of the workspace, attached Lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
+
+### Performance insights from Copilot
+
+Copilot surfaces performance guidance based on data size, join patterns, and runtime behavior. For example, it can recommend efficient join strategies, help you avoid costly shuffles, propose refactoring into reusable functions, and highlight potential data quality issues observed during execution. These insights appear as part of your Copilot conversations and align with the `/optimize` command.
+
+### Troubleshoot with Copilot
+
+When a cell or Spark job fails, a **Fix with Copilot** option appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. Copilot can auto-apply code changes with an approval diff so you can review before committing. You can also use the `/fix` command in Copilot chat to run targeted diagnostics for a specific cell or the entire notebook. For more information, see [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ### Share a notebook
 
@@ -241,11 +276,17 @@ Version history allows you to easily version your live notebook changes. It supp
    - System checkpoint: These checkpoints are created automatically every 5 minutes based on editing time interval by Notebook system, ensuring that your work is consistently saved and versioned. You can find the modification records from all the contributors in the system checkpoint timeline list.
    :::image type="content" source="media\how-to-use-notebook\expand-system-checkpoint.png" alt-text="Screenshot showing expand checkpoint list." lightbox="media\how-to-use-notebook\expand-system-checkpoint.png":::
 
+1. Multi-Source Checkpointing for Notebook
+   
+   Fabric notebooks seamlessly integrate with Git, deployment pipelines, and Visual Studio Code. Each saved version is automatically captured in the notebook’s version history. Versions may originate from direct edits within the notebook, Git synchronizations, deployment pipeline activities, or publishing via VS Code. The source of each version is clearly labeled in version history to provide full traceability.
+ 
+      :::image type="content" source="media\how-to-use-notebook\multi-source-checkpoint.png" alt-text="Screenshot showing multi-source checkpoint for notebook version history." lightbox="media\how-to-use-notebook\multi-source-checkpoint.png":::
+
 1. You can click on a checkpoint to open the **diff view**, it highlights the content differences between the selected checkpoint and the current live version, including the differences of cell content, cell output, and metadata. The version of this checkpoint can be managed individually in **'more options'** menu.
 
    :::image type="content" source="media\how-to-use-notebook\checkpoint-diff-view.png" alt-text="Screenshot showing view diff." lightbox="media\how-to-use-notebook\checkpoint-diff-view.png":::
 
-1. You can manage the version from the checkpoint drop-down menu, if you want to keep a pervious version, click **restore** from checkpoint and overwrite the current notebook, or using **save as copy** to clone it to a new notebook.
+1. You can manage the version from the checkpoint drop-down menu, if you want to keep a previous version, click **restore** from checkpoint and overwrite the current notebook, or use **save as copy** to clone it to a new notebook.
 
    :::image type="content" source="media\how-to-use-notebook\more-options-with-the-checkpoint.png" alt-text="Screenshot showing more options with the checkpoint." lightbox="media\how-to-use-notebook\more-options-with-the-checkpoint.png":::
 
@@ -269,3 +310,7 @@ Fabric notebooks support four modes that you can easily switch: **Develop** mode
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+- [Overview of Copilot for Data Engineering and Data Science](copilot-notebooks-overview.md)
+- [Manage libraries in Fabric environments](environment-manage-library.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
+

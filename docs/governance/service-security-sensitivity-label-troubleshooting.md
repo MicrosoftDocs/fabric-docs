@@ -3,9 +3,8 @@ title: Sensitivity labels troubleshooting
 description: Find guidance for resolving common issues related to sensitivity labels in Power BI.
 author: msmimart
 ms.author: mimart
-ms.topic: conceptual
-ms.custom:
-ms.date: 05/18/2025
+ms.topic: troubleshooting-general
+ms.date: 01/06/2026
 LocalizationGroup: Data from files
 ---
 
@@ -16,7 +15,7 @@ LocalizationGroup: Data from files
 ### What licenses do I need to be able to view and apply sensitivity labels?
 
 * An Azure Information Protection Premium P1 or Premium P2 license is required to apply or view sensitivity labels from Microsoft Purview Information Protection in Power BI.
-* To be able to apply labels to Power BI content and files, a user must have a Power BI Pro or Premium Per User (PPU) license, in addition to one of the Azure Information Protection licenses mentioned above.
+* To be able to apply labels to Power BI content and files, a user must have a Power BI Pro or Power BI Premium Per-User (PPU) license, in addition to one of the Azure Information Protection licenses mentioned above.
 * Office apps have their own [licensing requirements for viewing and applying sensitivity labels](/microsoft-365/compliance/get-started-with-sensitivity-labels).
 
 ### What requirements and prerequisites are there for enabling sensitivity labels in my tenant?
@@ -40,7 +39,7 @@ Power BI uses sensitivity labels from Microsoft Purview Information Protection. 
 
 To be able to apply or change a sensitivity label, you must
 
-* Have a Power BI Pro or Premium Per User (PPU) license.
+* Have a Power BI Pro or Power BI Premium Per-User (PPU) license.
 * Have create and edit permissions on the item you want to apply the label to.
 * Belong to a security group that has permissions to apply sensitivity labels, as described in [Enable sensitivity labels in Power BI](/power-bi/enterprise/service-security-enable-data-sensitivity-labels).
 
@@ -181,6 +180,14 @@ Downstream inheritance never overwrites labels that were applied manually.
 Downstream inheritance never overwrites a label with a less restrictive label.
 
 Sensitivity labels inherited from data sources are automatically propagated downstream only when [fully automated downstream inheritance mode](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance) is enabled.
+
+### Sensitivity labels are applied to new reports even though "Automatically apply sensitivity labels to downstream content" is disabled
+
+When you create a new Power BI report based on a semantic model that has a sensitivity label, the report automatically inherits the label from the semantic model, even if the **Automatically apply sensitivity labels to downstream content** tenant setting is disabled.
+
+This behavior is by design. Sensitivity label inheritance upon item creation is a separate feature from downstream inheritance. When you create a new report based on a labeled parent item, the parent's label is automatically applied to the new report to prevent the creation of unlabeled reports, which could expose data.
+
+The **Automatically apply sensitivity labels to downstream content** setting controls whether labels are propagated to *existing* downstream items when you change the label on a parent item. It doesn't affect label inheritance when you create *new* items.
 
 ## Sensitivity label inheritance from data sources
 

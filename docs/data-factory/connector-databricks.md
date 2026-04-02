@@ -1,13 +1,13 @@
 ---
 title: Set up your Databricks connection
 description: This article provides information about how to create a Databricks connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/19/2025
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your Databricks connection
@@ -25,16 +25,34 @@ The Databricks connector supports the following authentication types for copy an
 |Personal Access Token| n/a | √ |
 |OAuth (OIDC)| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect Dataflow Gen2 to Databricks in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Databricks data. The following links provide the specific Power Query connector information you need to connect to Databricks data in Dataflow Gen2:
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Databricks](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Databricks](#connect-to-databricks).
 
-- To get started using the Databricks connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [Databricks prerequisites](/power-query/connectors/databricks#prerequisites) before connecting to the Databricks connector.
-- To connect to the Databricks connector from Power Query, go to [Connect to Databricks data from Power Query Online](/power-query/connectors/databricks#connect-to-databricks-data-from-power-query-online).
+### Capabilities
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [databricks-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks/databricks-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [databricks-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks/databricks-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Databricks
+
+[!INCLUDE [databricks-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/databricks/databricks-connect-to-power-query-online.md)]
 
 ## Set up your connection in a pipeline
 
 Data Factory in Microsoft Fabric doesn't currently support the Databricks connector in pipelines.
+
+## Related content
+
+- [For more information about this connector, see the Databricks connector documentation.](/power-query/connectors/databricks)

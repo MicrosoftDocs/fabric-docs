@@ -1,10 +1,9 @@
 ---
 title: Explore OneLake events in Fabric Real-Time hub
 description: This article shows how to explore OneLake events in Fabric Real-Time hub.
-author: robece
-ms.author: robece
+ms.reviewer: robece
 ms.topic: how-to
-ms.date: 07/22/2025
+ms.date: 12/11/2025
 ---
 
 # Explore OneLake events in Fabric Real-Time hub
@@ -20,7 +19,7 @@ Real-Time Hub enables you to discover and subscribe to these changes within OneL
 1. In **Real-Time hub**, select **Fabric events**.
 1. Select **OneLake events** from the list.
 
-    :::image type="content" source="./media/explore-fabric-onelake-events/select-from-list.png" alt-text="Screenshot that shows the selection of OneLake events on the Fabric events page." lightbox="./media/explore-fabric-onelake-events/select-from-list.png":::
+    :::image type="content" source="./media/explore-fabric-onelake-events/onelake-events.png" alt-text="Screenshot that shows the selection of OneLake events on the Fabric events page." lightbox="./media/explore-fabric-onelake-events/onelake-events.png":::
 1. You should see the detail view for OneLake events.
 
     :::image type="content" source="./media/explore-fabric-onelake-events/detail-page.png" alt-text="Screenshot that shows the detail page for OneLake events." lightbox="./media/explore-fabric-onelake-events/detail-page.png":::
@@ -100,3 +99,4 @@ For more information, see [subscribe permission for Fabric events](fabric-events
 ## Related content
 
 - [Explore Azure blob storage events](explore-azure-blob-storage-events.md)
+

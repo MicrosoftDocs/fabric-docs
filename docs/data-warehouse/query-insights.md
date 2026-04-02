@@ -1,11 +1,9 @@
 ---
 title: Query Insights
 description: Query Insights makes past query execution data and aggregated insights built on top of this data available to you via simple views.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: mariyaali
 ms.date: 11/18/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 

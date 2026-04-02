@@ -1,13 +1,13 @@
 ---
 title: Set up your CloudBluePSA (Beta) connection
 description: This article provides information about how to create a CloudBluePSA connection in Microsoft Fabric.
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 03/13/2026
 ms.custom:
   - template-how-to
   - connectors
+ai-usage: ai-assisted
 ---
 
 # Set up your CloudBluePSA (Beta) connection
@@ -22,16 +22,33 @@ The CloudBluePSA connector supports the following authentication types for copy 
 |:---|:---|:---|
 |Account key| n/a | √ |
 
-## Set up your connection in Dataflow Gen2
+## Set up your connection for Dataflow Gen2
+You can connect Dataflow Gen2 to CloudBluePSA in Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to CloudBluePSA. The following links provide the specific Power Query connector information you need to connect to CloudBluePSA in Dataflow Gen2:
+1. [Complete prerequisites for CloudBluePSA (Beta)](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to CloudBluePSA](#connect-to-cloudbluepsa).
 
-- To get started using the CloudBluePSA connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [CloudBluePSA prerequisites](/power-query/connectors/cloudbluepsa#prerequisites) before connecting to the CloudBluePSA connector.
-- To connect to the CloudBluePSA connector from Power Query, go to [Connect to CloudBluePSA from Power Query Online](/power-query/connectors/cloudbluepsa#connect-to-cloudbluepsa-from-powerquery-online).
+### Prerequisites
 
-In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
+[!INCLUDE [cloudbluepsa-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/cloudbluepsa-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to CloudBluePSA
+
+[!INCLUDE [cloudbluepsa-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/cloudbluepsa/cloudbluepsa-connect-to-power-query-online.md)]
+
+### More information
+
+- [CloudBluePSA connector capabilities](/power-query/connectors/cloudbluepsa#troubleshooting)
 
 ## Set up your connection in a pipeline
 
 Data Factory in Microsoft Fabric doesn't currently support CloudBluePSA in pipelines.
+
+## Related content
+
+- [For more information about this connector, see the CloudBluePSA (Beta) connector documentation.](/power-query/connectors/cloudbluepsa)

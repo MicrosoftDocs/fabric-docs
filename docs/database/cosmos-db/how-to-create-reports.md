@@ -1,8 +1,6 @@
 ---
 title: Create Power BI Reports Using Cosmos DB Database
 description: Create reports and a semantic model within Power BI using data from your Cosmos DB database in Microsoft Fabric.
-author: seesharprun
-ms.author: sidandrews
 ms.topic: how-to
 ms.date: 07/22/2025
 ---
@@ -180,5 +178,5 @@ For more information about limitations when using the Azure Cosmos DB v2 connect
 
 - [Get started with Power BI](/power-bi/fundamentals/service-get-started)
 - [Power BI data refresh](/power-bi/connect-data/refresh-data)
-- [Edit tables for Direct Lake semantic models](../../fundamentals/direct-lake-edit-tables.md)
+- [Develop Direct Lake semantic models](../../fundamentals/direct-lake-develop.md)
 - [Access data from Lakehouse](how-to-access-data-lakehouse.md)

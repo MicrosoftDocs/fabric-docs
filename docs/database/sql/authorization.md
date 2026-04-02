@@ -1,11 +1,9 @@
 ---
 title: "Authorization in SQL database"
 description: Learn about access control in SQL database in Fabric.
-author: jaszymas
-ms.author: jaszymas
-ms.reviewer: wiassaf
+ms.reviewer: jaszymas
 ms.date: 10/11/2024
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 # Authorization in SQL database in Microsoft Fabric
 
@@ -92,4 +90,5 @@ For more information, see [Configure granular access control for a SQL database]
 - [Configure granular access control for a SQL database](configure-sql-access-controls.md)
 - [Permission model in Microsoft Fabric](../../security/permission-model.md)
 - [Protect sensitive data in SQL database with Microsoft Purview protection policies](protect-databases-with-protection-policies.md)
+
 

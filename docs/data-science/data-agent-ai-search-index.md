@@ -1,17 +1,14 @@
 ---
 title: Connect Azure Search Index
-description: Connect Data Agents to your Azure Search Index in Azure AI Foundry.
-ms.author: jburchel
-author: jonburchel
+description: Connect Data Agents to your Azure Search Index in Microsoft Foundry.
 ms.reviewer: midesa
-reviewer: midesa
-ms.topic: conceptual
-ms.date: 10/31/2025
+ms.topic: how-to
+ms.date: 12/9/2025
 ---
 
-# Connect Data Agents to your Azure Search Index in Azure AI Foundry
+# Connect Data Agents to your Azure Search Index in Microsoft Foundry
 
-Data Agent creators can now connect their agents directly to Azure AI Search indexes built in Azure AI Foundry, unlocking powerful unstructured data scenarios. Using the resource URL, you can securely connect to your index—Data Agents fully respect the permissions of your Azure AI resources. In Azure AI Foundry, you can craft rich AI Search indexes with custom enrichments, preprocessing logic, and tailored schemas for PDFs, text files, and more. Once connected, Data Agents can reason over that unstructured content and even join insights from your index with your structured data sources, giving you a unified, intelligent view across all your data.
+Data Agent creators can now connect their agents directly to Azure AI Search indexes built in Microsoft Foundry, unlocking powerful unstructured data scenarios. Using the resource URL, you can securely connect to your index—Data Agents fully respect the permissions of your Azure AI resources. In Foundry, you can craft rich AI Search indexes with custom enrichments, preprocessing logic, and tailored schemas for PDFs, text files, and more. Once connected, Data Agents can reason over that unstructured content and even join insights from your index with your structured data sources, giving you a unified, intelligent view across all your data.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -56,7 +53,7 @@ To connect your Data Agent to an Azure AI Search index, first ensure your search
 
    :::image type="content" source="media/byo-ai-search-index/connect-ai-search-resource-url.png" alt-text="Screenshot of the Data Agent resource URL input." lightbox="media/byo-ai-search-index/connect-ai-search-resource-url.png":::
 
-3. Ask a question such as **“Tell me more about the Uptown Chic hotel”** to query your index.
+3. Ask a question such as **"Tell me more about the Uptown Chic hotel"** to query your index.
 
     :::image type="content" source="media/byo-ai-search-index/agent-response-ai-search.png" alt-text="Screenshot of the Data Agent response." lightbox="media/byo-ai-search-index/agent-response-ai-search.png":::
 

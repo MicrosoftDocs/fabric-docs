@@ -1,16 +1,16 @@
 ---
 title: IDENTITY Columns in Fabric Data Warehouse
 description: Learn more about IDENTITY columns in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: procha
 ms.date: 11/04/2025
-ms.topic: conceptual
+ms.topic: concept-article
 ---
 
-# IDENTITY columns
+# IDENTITY columns (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Surrogate keys are identifiers used in data warehousing to uniquely distinguish rows, independent of their natural keys. In Fabric Data Warehouse, `IDENTITY` columns enable automatic generation of these surrogate keys when inserting new rows into a table. This article explains how to use `IDENTITY` columns in Fabric Data Warehouse to create and manage surrogate keys efficiently.
 

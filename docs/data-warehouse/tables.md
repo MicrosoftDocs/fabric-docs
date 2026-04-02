@@ -1,8 +1,6 @@
 ---
-title: Tables
+title: Tables in Fabric Data Warehouse
 description: Learn how to design and use tables in Microsoft Fabric Data Warehouse, including temporary tables.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: xiaoyul, randolphwest
 ms.date: 09/24/2025
 ms.topic: how-to
@@ -15,8 +13,6 @@ ms.search.form: Warehouse design and development # This article's title should n
 This article details key concepts for designing tables in [!INCLUDE [product-name](../includes/product-name.md)].
 
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
-
-- In [!INCLUDE [fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data.
 
 ## Determine table category
 
@@ -77,7 +73,7 @@ CREATE SCHEMA wwi;
 
 ## Collation
 
-Fabric warehouses are configured based on the workspace's collation setting, which by default are the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
+Fabric warehouses are configured based on the workspace's collation setting, which by default is the case-sensitive (CS) collation `Latin1_General_100_BIN2_UTF8`. When creating a [new warehouse](create-warehouse.md), the collation of the workspace will be used. For more information, see [Data Warehouse collation](collation.md).
 
 Supported warehouse collations are:
 
@@ -170,7 +166,7 @@ The following list shows some of the table features that aren't currently suppor
 
 ## Related content
 
-- [What is Data warehousing in Microsoft Fabric?](data-warehousing.md)
+- [What is Fabric Data Warehouse?](data-warehousing.md)
 - [What is Data engineering in Microsoft Fabric?](../data-engineering/data-engineering-overview.md)
 - [Create a Warehouse in Microsoft Fabric](create-warehouse.md)
 - [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

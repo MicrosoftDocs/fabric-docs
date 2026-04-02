@@ -5,7 +5,7 @@ author: msmimart
 ms.author: mimart
 ms.topic: how-to
 ms.date: 11/16/2023
-# customer intent: Learn how to delegate settings in the Microsoft Fabric admin portal.
+#customer intent: Learn how to delegate settings in the Microsoft Fabric admin portal.
 ---
 
 # Delegate tenant settings

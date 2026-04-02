@@ -1,14 +1,12 @@
 ---
-title: What Is Data Warehousing in Microsoft Fabric?
+title: What Is Fabric Data Warehouse?
 description: Learn more about data warehousing workloads in Fabric Data Warehouse.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: joanpo, chweb, cynotebo
 ms.date: 09/09/2025
 ms.topic: overview
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
-# What is data warehousing in Microsoft Fabric?
+# What is Fabric Data Warehouse?
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -23,7 +21,7 @@ Fabric Data Warehouse is an enterprise scale relational warehouse on a data lake
 Data warehouse customers benefit from:
 
 - **Cross database queries** can use multiple data sources for fast insights with zero data duplication.
-- **Easily ingest, load and transform data** at scale through Pipelines, Dataflows, cross database query or the COPY INTO command.
+- **Easily ingest, load and transform data** at scale through Pipelines, Dataflows, cross database query or the `COPY INTO` T-SQL command.
 - **Autonomous workload management** with industry-leading distributed query processing engine means no knobs to turn to achieve best in class performance.
 - **Scale near instantaneously** to meet business demands. Storage and compute are separated.
 - **Data is automatically replicated** to OneLake Files for external access. 
@@ -60,7 +58,7 @@ With the SQL analytics endpoint, T-SQL commands can define and query data object
 
 - Query the tables that reference data in your Delta Lake folders in the lake.
 - Create views, inline TVFs, and procedures to encapsulate your semantics and business logic in T-SQL.
-- Manage permissions on the objects. For more about security in the SQL anlaytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
+- Manage permissions on the objects. For more about security in the SQL analytics endpoint, see [OneLake security for SQL analytics endpoints](../onelake/sql-analytics-endpoint-onelake-security.md).
 
 To get started with the [!INCLUDE [fabric-se](includes/fabric-se.md)], see:
 
@@ -82,7 +80,7 @@ For more detailed decision guidance, see [Microsoft Fabric decision guide: Choos
 
 ## Migration
 
-Use [the Fabric Migration Assistant for Data Warehouse](migrate-with-migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
+Use [the Fabric Migration Assistant for Data Warehouse](migration-assistant.md) to migrate from Azure Synapse Analytics, SQL Server, and other SQL Database Engine platforms. Review [Migration​ planning](migration-synapse-dedicated-sql-pool-warehouse.md) and [Migration​ methods for ​Azure Synapse Analytics dedicated SQL pools to Fabric Data Warehouse](migration-synapse-dedicated-sql-pool-methods.md).
 
 For migration guidance across Microsoft Fabric, review the tools and links in [Microsoft Fabric migration overview](../fundamentals/migration.md).
 

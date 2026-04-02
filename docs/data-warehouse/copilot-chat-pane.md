@@ -1,5 +1,5 @@
 ---
-title: "How to Use the Copilot Chat Pane in Microsoft Fabric in the Data Warehouse Workload (Preview)"
+title: "How to Use the Copilot Chat Pane in the Data Warehouse Workload (Preview)"
 description: Learn more about Copilot chat pane in Microsoft Fabric in the Data Warehouse workload, to ask questions specific to your warehouse.
 author: markingmyname
 ms.author: maghan
@@ -12,7 +12,7 @@ ms.update-cycle: 180-days
 ms.devlang: copilot-prompt
 ---
 
-# How to use the Copilot chat pane in Fabric in Data Warehouse (Preview)
+# How to use the Copilot chat pane in Fabric Data Warehouse (Preview)
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -81,3 +81,4 @@ For `/generate-sql`, `/question`, and optionally `/fix`, include additional info
 - [How to use Copilot code completion in Fabric in Data Warehouse](copilot-code-completion.md)
 - [How to use Copilot quick actions in Fabric in Data Warehouse](copilot-quick-action.md)
 - [Privacy, security, and responsible use of Copilot in Fabric in Data Warehouse](../fundamentals/copilot-data-warehouse-privacy-security.md)
+

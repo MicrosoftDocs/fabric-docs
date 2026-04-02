@@ -1,10 +1,9 @@
 ---
 title: Manage the Environment Through Public APIs
 description: This article gives an overview of the public APIs of the environment. It also describes the best practice of using the environment APIs.
-ms.author: shuaijunye
-author: ShuaijunYe
+ms.reviewer: shuaijunye
 ms.topic: how-to
-ms.date: 10/09/2025
+ms.date: 03/06/2026
 ms.search.form: Manage the environment through public APIs
 ---
 
@@ -17,22 +16,22 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 > [!IMPORTANT]
 >
 > - The GA release includes updates in the request/response contract of existing APIs, API deprecations, and new APIs. You can find the details in the following sections.
-> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **March 31, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
+> - A new query parameter `beta` is introduced to facilitate the transition of request/response contract changes. The `beta` query parameter defaults to `True` until **April 30, 2026**, making the preview contracts still available. Set the value to `False` to start using the stable Release version of the contracts.
 > - `Preview` query parameter has been replaced by `beta`. For backward compatibility, preview is still supported and behaves the same as beta.
-> - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**, please use the newly introduced APIs to replace them as soon as possible.
+> - The to-be-deprecated APIs will continue to be supported until **April 30, 2026**, please use the newly introduced APIs to replace them as soon as possible.
 
 ### APIs with request/response contract update
 
 |Category|API|Description|Notes|Preview version swagger|Release version swagger|
 |---------|---------|---------|---------|---------|---------|
-|Item operation|Publish environment|Trigger the publish operation of the environment with current pending changes.|Update in response contract.|[Publish environment (Preview)](/rest/api/fabric/environment/items/publish-environment(preview))|[Publish environment](/rest/api/fabric/environment/items/publish-environment)|
-|Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|Update in response contract.|[List staging libraries (Preview)](/rest/api/fabric/environment/staging/list-libraries(preview))|[List staging libraries](/rest/api/fabric/environment/staging/list-libraries)|
-|Staging|List staging Spark compute|Get the full staging compute configurations. The staging configurations include the published and pending compute configurations.|Update in response contract.|[List staging Spark compute (Preview)](/rest/api/fabric/environment/staging/get-spark-compute(preview))|[List staging Spark compute](/rest/api/fabric/environment/staging/get-spark-compute)|
-|Staging|Update Spark compute|Update the compute configurations and Spark properties for an environment.|Update in request and response contracts.|[Update Spark compute (Preview)](/rest/api/fabric/environment/staging/update-spark-compute(preview))|[Update Spark compute](/rest/api/fabric/environment/staging/update-spark-compute)|
-|Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/list-libraries(preview))|[List published libraries](/rest/api/fabric/environment/published/list-libraries)|
-|Published|List published Spark compute|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/get-spark-compute(preview))|[List published libraries](/rest/api/fabric/environment/published/get-spark-compute)|
+|Item operation|Publish environment|Trigger the publish operation of the environment with current pending changes.|Update in response contract.|[Publish environment (Preview)](/rest/api/fabric/environment/items/publish-environment)|[Publish environment](/rest/api/fabric/environment/items/publish-environment)|
+|Staging|List staging libraries|Get the full staging library list. This list includes the published and pending libraries.|Update in response contract.|[List staging libraries (Preview)](/rest/api/fabric/environment/staging/list-libraries)|[List staging libraries](/rest/api/fabric/environment/staging/list-libraries)|
+|Staging|List staging Spark compute|Get the full staging compute configurations. The staging configurations include the published and pending compute configurations.|Update in response contract.|[List staging Spark compute (Preview)](/rest/api/fabric/environment/staging/get-spark-compute)|[List staging Spark compute](/rest/api/fabric/environment/staging/get-spark-compute)|
+|Staging|Update Spark compute|Update the compute configurations and Spark properties for an environment.|Update in request and response contracts.|[Update Spark compute (Preview)](/rest/api/fabric/environment/staging/update-spark-compute)|[Update Spark compute](/rest/api/fabric/environment/staging/update-spark-compute)|
+|Published|List published libraries|Get the libraries that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/list-libraries)|[List published libraries](/rest/api/fabric/environment/published/list-libraries)|
+|Published|List published Spark compute|Get the Spark compute configurations and Spark properties that are published and effective in Spark sessions.|Update in response contract.|[List published libraries (Preview)](/rest/api/fabric/environment/published/get-spark-compute)|[List published libraries](/rest/api/fabric/environment/published/get-spark-compute)|
 
-The `beta` parameter defaults to `True` until **March 31, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
+The `beta` parameter defaults to `True` until **April 30, 2026**, i.e., the system considers the parameter as `True` if the request is sending without specifying this parameter until the deprecation date. We highly recommend migrating your implementations to the stable version by explicitly set the `beta` parameter to `False` as soon as possible.
 
 Using `List staging libraries` API as an example, which has an update in the API response.
 
@@ -98,14 +97,14 @@ Using `List staging libraries` API as an example, which has an update in the API
 
 > [!IMPORTANT]
 >
-> - The to-be-deprecated APIs will continue to be supported until **March 31, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
+> - The to-be-deprecated APIs will continue to be supported until **April 30, 2026**. We highly recommend to use newly introduced APIs to replace your implementations as soon as possible.
 
 |Category|API|Description|Note|
 |---------|---------|---------|---------|
-|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library(preview))|Add one custom library or one/multiple public library in the environment.|Support until **March 31, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
-|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library(preview))|Delete one staging custom library or all public libraries.|Support until **March 31, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
+|Staging|[Upload staging libraries](/rest/api/fabric/environment/staging/upload-custom-library)|Add one custom library or one/multiple public library in the environment.|Support until **April 30, 2026**, please use the newly introduced `Import external libraries`/`Upload custom library` APIs to replace.|
+|Staging|[Delete staging libraries](/rest/api/fabric/environment/staging/delete-custom-library)|Delete one staging custom library or all public libraries.|Support until **April 30, 2026**, please use the newly introduced `Remove external library`/`Delete custom library` APIs to replace.|
 
-Belows are a few examples covering the scenarios when managing staging libraries.
+Below are a few examples covering the scenarios when managing staging libraries.
 
 - Add the public libraries in your environment
 
@@ -288,7 +287,7 @@ If you want to remove an existing Spark property, specify the value as `null` wi
 - Sample request
 
     ```http
-    PATCH https://api.fabric.microsoft.com/v1/workspaces/f089354e-8366-4e18-aea3-4cb4a3a50b48/environments/707cfd07-cbf1-41da-aad7-dd157ddb8c11/staging/sparkcompute?beta=False
+    PATCH https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/environments/bbbbcccc-1111-dddd-2222-eeee3333ffff/staging/sparkcompute?beta=False
 
     {
       "instancePool": {
@@ -355,8 +354,8 @@ The changes that you made for the staging libraries and Spark compute are cached
 - Sample response
 
     ```http
-    Location: https://api.fabric.microsoft.com/v1/operations/abcdef00-9d7e-469a-abf1-fca847a0ea69
-    x-ms-operation-id: abcdef00-9d7e-469a-abf1-fca847a0ea69
+    Location: https://api.fabric.microsoft.com/v1/operations/ccccdddd-2222-eeee-3333-ffff4444aaaa
+    x-ms-operation-id: ccccdddd-2222-eeee-3333-ffff4444aaaa
     Retry-After: 120  
     ```
 

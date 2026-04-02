@@ -1,9 +1,7 @@
 ---
 title: Get Started with Data Factory (Guided Lab Experience)
 description: This article guides you through the process of utilizing Fabric Data Factory, focusing on key aspects such as getting started with a Medallion task flow, orchestrating data movement, and transforming and copying data.
-ms.author: conxu
-author: conxu-ms
-ms.reviewer: makromer
+ms.reviewer: makromer, conxu
 ms.topic: overview
 ms.custom: configuration
 ms.date: 05/28/2025

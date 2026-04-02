@@ -1,26 +1,23 @@
 ### YamlMime:Landing
 
-title: IQ (preview) documentation in Microsoft Fabric
-summary:  IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
+title: Fabric IQ documentation
+summary:  Fabric IQ (preview) enables a governed, self-service knowledge graph that links business entities, relationships, and business logic into a coherent framework for driving action across all enterprise data.
 
 metadata:
-  title: IQ (preview) documentation
-  description: Learn about IQ (preview).
-  ms.service: fabric  #Required; use either service or product per approved list.
+  title: Fabric IQ documentation
+  description: Learn about Fabric IQ (preview) for governed, self-service knowledge graphs in Fabric.
   ms.topic: landing-page
   ms.collection: collection
-  author: baanders
-  ms.author: baanders
   ms.date: 11/05/2025
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
   # Card
-  - title: About IQ (preview)
+  - title: About Fabric IQ (preview)
     linkLists:
       - linkListType: overview
         links:
-          - text: What is IQ (preview)?
+          - text: What is Fabric IQ (preview)?
             url: overview.md
           - text: What is ontology (preview)?
             url: ontology/overview.md
@@ -57,3 +54,63 @@ landingContent:
             url: ontology/how-to-create-relationship-types.md
           - text: Use preview experience
             url: ontology/how-to-use-preview-experience.md
+            
+  # Card
+  - title: About graph in Microsoft Fabric
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Graph overview
+            url: ../graph/overview.md
+          - text: What is a graph database?
+            url: ../graph/graph-database.md
+          - text: Labeled property graph
+            url: ../graph/graph-data-models.md
+
+  # Card
+  - title: Get started with graph in Microsoft Fabric
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Quickstart guide for graph
+            url: ../graph/quickstart.md
+          - text: Try Fabric for free
+            url: /fabric/fundamentals/fabric-trial
+
+  # Card
+  - title: Graph tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Introduction
+            url: ../graph/tutorial-introduction.md
+          - text: 1 - Load sample data
+            url: ../graph/tutorial-load-data.md
+          - text: 2 - Create a graph
+            url: ../graph/tutorial-create-graph.md
+          - text: 3 - Add nodes to your graph
+            url: ../graph/tutorial-model-nodes.md
+          - text: 4 - Add edges to your graph
+            url: ../graph/tutorial-model-edges.md
+          - text: 5 - Add multiple node types using one table
+            url: ../graph/tutorial-model-node-edge-from-same-table.md
+          - text: 6 - Query the graph with the query builder
+            url: ../graph/tutorial-query-builder.md
+          - text: 7 - Query the graph with GQL
+            url: ../graph/tutorial-query-code-editor.md
+          - text: 8 - Clean up tutorial resources
+            url: ../graph/tutorial-clean-up.md
+
+  # Card
+  - title: Graph reference
+    linkLists:
+      - linkListType: reference
+        links:
+          - text: Graph Query Language (GQL) documentation
+            url: /fabric/graph/gql-reference-abridged
+          - text: GQL Query API reference
+            url: ../graph/gql-query-api.md
+          - text: Graph Items REST API reference
+            url: /rest/api/fabric/graphmodel/items
+          - text: Fabric REST API reference
+            url: /rest/api/fabric/articles

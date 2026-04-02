@@ -1,12 +1,12 @@
 ---
 title: Fabric region availability
-description: Learn which regions Fabric is available in.
+description: Learn about Microsoft Fabric region availability, including details about the workloads and features supported in each region and how home region impacts access.
 author: msmimart
 ms.author: mimart
 ms.custom:
   - references_regions
 ms.topic: overview
-ms.date: 11/19/2025
+ms.date: 03/05/2026
 ---
 
 # Fabric region availability
@@ -29,28 +29,30 @@ This table lists regions where all Fabric workloads are available.
 
 | Americas                           | Europe                       | Middle East | Africa             | Asia Pacific                  | 
 |:-----------------------------------|:-----------------------------|:------------|:-------------------|:------------------------------|
-| Brazil South                          | North Europe <sup>4</sup>    | UAE North   | South Africa North | Australia East                |
+| Brazil South                          | North Europe <sup>4</sup>    | UAE North   | South Africa North | Australia East <sup>6</sup>               |
 | Canada Central                        | West Europe                  |             |                    | Australia Southeast           |
 | Canada East <sup>3</sup>              | France Central               |             |                    | Central India                 | 
 | Central US                            | Germany West Central         |             |                    | East Asia                     |
-| East US <sup>5</sup>                  | Italy North                  |             |                    | Indonesia Central <sup>6</sup>|
-| East US 2                             | Norway East                  |             |                    | Israel Central <sup>4, 6</sup>|
-| Mexico Central <sup>6</sup>           | Poland Central               |             |                    | Japan East                    |
-| North Central US                      | Spain Central <sup>6</sup>   |             |                    | Japan West <sup>4, 6</sup>    |
-| South Central US <sup>2, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                 |
-| West US                               | Switzerland North            |             |                    | New Zealand North <sup>6</sup>|
-| West US 2                             | Switzerland West             |             |                    | Southeast Asia                |
-| West US 3                             | UK South                     |             |                    | South India                   |
-|                                       | UK West <sup>1</sup>         |             |                    |                               |
+| East US <sup>5, 6</sup>                  | Italy North                  |             |                    | Indonesia Central <sup>1</sup>|
+| East US 2 <sup>6</sup>                            | Norway East                  |             |                    | Israel Central <sup>1, 4</sup>|
+| Mexico Central <sup>1</sup>           | Poland Central               |             |                    | Japan East                    |
+| North Central US                      | Spain Central <sup>1</sup>   |             |                    | Japan West <sup>1, 4, 6</sup>    |
+| South Central US <sup>1, 2, 4, 5, 6</sup>| Sweden Central               |             |                    | Korea Central                 |
+| West US                               | Switzerland North            |             |                    | Malaysia West <sup>1</sup>                |
+| West US 2                             | Switzerland West             |             |                    | New Zealand North <sup>1</sup>|
+| West US 3                             | UK South                     |             |                    | Southeast Asia                |
+|                                       | UK West                      |             |                    | South India                   |
+|                                       |                              |             |                    | Taiwan North <sup>1</sup>                  |
+|                                       |                              |             |                    | Taiwan Northwest <sup>1</sup>              |
 
 
-  <sup>1</sup> [Fabric SQL database](../database/sql/overview.md) isn't  available in this region.
+  <sup>1</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.
   <sup>2</sup> [Healthcare Solutions](/industry/healthcare/healthcare-data-solutions/overview) isn't available in this region. 
   <sup>3</sup> [Fabric User Data Functions](../data-engineering/user-data-functions/user-data-functions-overview.md) isn't available in these regions.
   <sup>4</sup> [Digital twin builder (preview)](../real-time-intelligence/digital-twin-builder/overview.md) isn't available in these regions.
   <sup>5</sup> [Operations agent (preview)](../real-time-intelligence/operations-agent.md) isn't available in these regions.
-  <sup>6</sup> [Ontology (preview)](../iq/ontology/overview.md) isn't available in these regions.
-
+  <sup>6</sup> [Plan (preview)](../iq/plan/overview.md) isn't available in these regions.
+  
 ### Power BI
 
 This table lists regions where the only available Fabric workload is Power BI.
@@ -59,55 +61,12 @@ This table lists regions where the only available Fabric workload is Power BI.
 |:--------------|:--------------|:---------------|:------------------|:-----------------|
 | Chile Central | Austria East  | Qatar Central  | South Africa West | India West       |
 |               | France South  | UAE Central    |                   | Korea South      |
-|               | Germany North |                |                   | Taiwan North     |
-|               | Norway West   |                |                   | Taiwan Northwest |
-|               |               |                |                   | Malaysia West    |
-
-** Copilot is not supported for regions listed in this section. 
-
-### Public preview
-
-This table lists regions where public preview features are available, according to workload.
-
-| Region               | Copilot**                                                         | Retail Solutions | Dataflow Gen2 with CI/CD |
-|:---------------------|:----------------------------------------------------------------|:-----------------|:-------------------------|
-| Australia East       | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
-| Australia Southeast  | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| Brazil South         | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| Canada Central       | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
-| Canada East          | Synapse Notebook                                                | &#x274C;         | &#x2705;                 |
-| Central India        | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
-| Central US           | &#x274C;                                                        | &#x274C;         | &#x2705;                 |
-| East Asia            | Synapse Notebook                                                | &#x2705;         | &#x2705;                 |
-| East US              | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| East US2             | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| France Central       | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x274C;         | &#x2705;                 |
-| Germany West Central | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x274C;         | &#x2705;                 |
-| Italy North          | &#x274C;                                                        | &#x274C;         | &#x2705;                 |
-| Japan East           | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| Korea Central        | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x274C;         | &#x2705;                 |
-| North Central US     | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| North Europe         | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| Norway East          | &#x274C;                                                        | &#x274C;         | &#x2705;                 |
-| Poland Central       | &#x274C;                                                        | &#x274C;         | &#x2705;                 |
-| South Africa North   | Synapse Notebook                                                | &#x2705;         | &#x2705;                 |
-| South Africa West    | &#x274C;                                                        | &#x274C;         | &#x2705;                 |
-| South Central US     | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x274C;                 |
-| Southeast Asia       | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
-| South India          | <li>Dataflows</li><li>Exploration</li>                          | &#x274C;         | &#x2705;                 |
-| Sweden Central       | Synapse Notebook                                                | &#x274C;         | &#x2705;                 |
-| Switzerland North    | Synapse Notebook                                                | &#x274C;         | &#x2705;                 |
-| Switzerland West     | &#x274C;                                                        | &#x274C;         | &#x2705;                 |
-| UAE North            | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> |                  | &#x2705;                 |
-| West Europe          | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| West US              | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| West US2             | <li>Dataflows</li><li>Exploration</li><li>Synapse Notebook</li> | &#x2705;         | &#x2705;                 |
-| West US3             | <li>Dataflows</li><li>Synapse Notebook</li>                     | &#x2705;         | &#x2705;                 |
-
-
-** Only the workloads listed in the table are available in each region. If no workloads are listed, Copilot isn't available in that region.
+|               | Germany North |                |                   |                  |
+|               | Norway West   |                |                   |                  |
 
 ## Related content
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)
+
+

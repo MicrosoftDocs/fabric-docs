@@ -2,17 +2,14 @@
 title: Row-level security
 description: Learn how to use OneLake security (preview) to enforce access permissions at the row level in OneLake.
 ms.reviewer: aamerril
-ms.author: kgremban
-author: kgremban
 ms.topic: how-to
-ms.custom:
 ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].
 ---
 
 # Row-level security in OneLake (preview)
 
-Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS role goes to query that data, the RLS rules are evaluated and only allowed rows are returned.
+Row-level security (RLS) is a feature of OneLake security (preview) that allows for defining row-level data restrictions for tabular data stored in OneLake. Users can define roles in OneLake that contain rules for filtering rows of data for members of that role. When a member of an RLS role goes to query that data, the RLS rules are evaluated and only allowed rows are returned. RLS rules defined in OneLake are consistently enforced across Fabric engines and [authorized third-party engines](./onelake-security-integrations-overview.md) via OneLake APIs, ensuring a single policy definition is applied regardless of the query engine.
 
 ## Prerequisites
 
@@ -26,7 +23,7 @@ Row-level security (RLS) is a feature of OneLake security (preview) that allows 
 OneLake security RLS gets enforced in one of two ways: 
 
 * **Filtered tables in Fabric engines:** Queries to the list of supported Fabric engines, like Spark notebooks, result in the user seeing only the rows they're allowed to see per the RLS rules.
-* **Blocked access to tables:** Tables with RLS rules applied to them can't be read outside of supported Fabric engines.
+* **Blocked access to tables:** Tables with RLS rules applied to them can't be read outside of supported Fabric engines or [authorized third-party engines](./onelake-security-integrations-overview.md) that enforce OneLake security. Access is blocked for non-authorized engines.
 
 For filtered tables, the following behaviors apply:
 
@@ -36,6 +33,12 @@ For filtered tables, the following behaviors apply:
 * RLS rules can only be enforced for objects that are Delta parquet tables. 
   * RLS rules that are applied to non-Delta table objects instead block access to the entire table for members of the role.
 * Access to a table might be blocked if the RLS statement contains syntax errors that prevent it from being evaluated.
+
+### Authorized engine enforcement
+
+Authorized third-party engines can retrieve effective access definitions, including RLS predicates, through the [authorized engine APIs](./onelake-security-integrations-overview.md). OneLake returns engine-agnostic, precomputed effective access for the requesting user, and the authorized engine enforces the policies at query time. OneLake remains the single source of truth for security policies.
+
+For more information, see [Integrate a third-party engine with OneLake security](./onelake-security-integrations-external-engines.md).
 
 ## Define row-level security rules
 

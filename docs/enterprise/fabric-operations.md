@@ -1,14 +1,15 @@
 ---
 title: Fabric operations
 description: Understand the Microsoft Fabric operations.
-author: JulCsc
-ms.author: juliacawthra
-ms.topic: conceptual
+author: dknappettmsft
+ms.author: daknappe
+ms.topic: reference
 ms.custom:
-ms.date: 10/07/2025
+ms.date: 03/03/2026
 ms.update-cycle: 180-days
 no-loc: [Copilot]
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Fabric operations
@@ -61,6 +62,11 @@ This section is divided into Fabric experience. Each experience had a table that
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
 | Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot and AI | Background |
+| AI Functions | Consolidates Fabric AI functions usage and Azure OpenAI Service calls (via REST API, Python SDK, and SynapseML) initiated from Notebooks and Dataflows Gen2 | Multiple | Copilot and AI | Background |
+| AI Services | Reports Azure AI Services usage in Fabric, including Text Analytics and Azure AI Translator | Multiple | Copilot and AI | Background |
+
+> [!NOTE]
+> Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
 
 ### Data agent in Fabric
 
@@ -203,7 +209,15 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Intelligence
 
-The Real-Time Intelligence experience contains operations for [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+The Real-Time Intelligence experience contains operations for [Anomaly Detector](#anomaly-detector), [Azure and Fabric events](#azure-and-fabric-events), [digital twin builder (preview)](#digital-twin-builder-preview), [Eventstream](#eventstream), and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
+
+### Anomaly Detector
+
+You can find the consumption rates for Anomaly Detector in [Anomaly Detector capacity usage and billing in Real-Time Intelligence](../real-time-intelligence/anomaly-detection-billing.md).
+
+| Operation        | Description                                          | Item     | Azure billing meter                               | Type       |
+| ---------------- | ---------------------------------------------------- | -------- | ------------------------------------------------- | ---------- |
+| Anomaly Detector Run Queries | Interactive analysis and continuous monitoring          | AnomalyDetector | Anomaly Detector Queries Capacity Usage CU         | Background |
 
 #### Azure and Fabric events
 
@@ -223,7 +237,7 @@ You can find the consumption rates for digital twin builder (preview) in [Digita
 
 | Operation        | Description                 | Item     | Azure billing meter              | Type       |
 | ---------------- | --------------------------- | -------- | -------------------------------- | ---------- |
-| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations.  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
+| Digital Twin Builder Operation | Usage for on-demand and scheduled digital twin builder flow operations  | Digital twin builder flow | Digital Twin Builder Operation Capacity Usage CU | Background |
 
 #### Eventstream
 

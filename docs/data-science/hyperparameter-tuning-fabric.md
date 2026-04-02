@@ -1,23 +1,20 @@
 ﻿---
 title: Hyperparameter tuning in Fabric
-description: Identify the best combination of hyperparameters for your chosen classifiers (preview).
+description: Identify the best combination of hyperparameters for your chosen classifiers.
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: midesa
-reviewer: midesa
-ms.date: 07/21/2025
+ms.date: 02/23/2026
 ---
 
-# Hyperparameter tuning (preview)
+# Hyperparameter tuning
 
 Hyperparameter tuning is the process of finding the optimal values for the parameters that aren't learned by the machine learning model during training, but rather set by the user before the training process begins. These parameters are commonly referred to as hyperparameters, and examples include the learning rate, the number of hidden layers in a neural network, the regularization strength, and the batch size.
 
 The performance of a machine learning model can be highly sensitive to the choice of hyperparameters, and the optimal set of hyperparameters can vary greatly depending on the specific problem and dataset. Hyperparameter tuning is therefore a critical step in the machine learning pipeline, as it can have a significant impact on the model's accuracy and generalization performance.
 
 In Fabric, data scientists can use ```FLAML```, a lightweight Python library for efficient automation of machine learning and AI operations, for their hyperparameter tuning requirements. Within Fabric notebooks, users can call ```flaml.tune``` for economical hyperparameter tuning.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Tuning workflow
 

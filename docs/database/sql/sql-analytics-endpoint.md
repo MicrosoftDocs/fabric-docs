@@ -1,10 +1,8 @@
 ---
 title: What is the SQL analytics endpoint for SQL database in Fabric?
 description: Learn about the SQL analytics endpoint and how to run SQL queries directly on Fabric SQL database in Fabric tables.
-author: WilliamDAssafMSFT
-ms.author: wiassaf
 ms.reviewer: imotiwala
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 08/14/2025
 ---
 # What is the SQL analytics endpoint for a SQL database in Fabric?
@@ -27,7 +25,7 @@ External Delta tables created with Spark code won't be visible to the SQL analyt
 
 ## Connect to the SQL analytics endpoint
 
-You can connect to the SQL analytics endpoint via Power BI desktop or client tools such as [SQL Server Management Studio](https://aka.ms/ssms) or [the mssql extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code). The SQL analytics endpoint connection string looks like `<server-unique-identifier>.<tenant>.fabric.microsoft.com` as opposed to the connection string of the SQL database itself, which looks like `<server-unique-identifer>.database.windows.net`. To find the connection string of the SQL analytics endpoint in the workspace, select the `...` menu and then **Copy SQL connection string**, or find the connection string in **Settings** in the **SQL endpoint** page.
+You can connect to the SQL analytics endpoint via Power BI desktop or client tools such as [SQL Server Management Studio](https://aka.ms/ssms) or [the MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code). The SQL analytics endpoint connection string looks like `<server-unique-identifier>.<tenant>.fabric.microsoft.com` as opposed to the connection string of the SQL database itself, which looks like `<server-unique-identifier>.database.windows.net`. To find the connection string of the SQL analytics endpoint in the workspace, select the `...` menu and then **Copy SQL connection string**, or find the connection string in **Settings** in the **SQL endpoint** page.
 
 You can also query the SQL analytics endpoint in the [SQL query editor in the Fabric portal](query-editor.md) by selecting the **SQL analytics endpoint** from drop-down list, as shown in the following screenshot:
 

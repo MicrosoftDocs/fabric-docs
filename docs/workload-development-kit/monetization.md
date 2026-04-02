@@ -1,10 +1,7 @@
 ---
 title: Fabric Workload Development Kit monetization
 description: Learn about how you can monetize your workload in Microsoft Fabric by publishing your workload to the Fabric Workload Hub.
-author: KesemSharabi
-ms.author: kesharab
-ms.topic: conceptual
-ms.custom:
+ms.topic: concept-article
 ms.date: 05/21/2024
 ---
 
@@ -47,3 +44,4 @@ It's up to you as a partner to communicate the updated license status to your [e
 ## Related content
 
 * [Microsoft Fabric Workload Development Kit](development-kit-overview.md)
+

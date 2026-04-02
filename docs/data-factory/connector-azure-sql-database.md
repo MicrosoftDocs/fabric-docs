@@ -1,14 +1,14 @@
 ---
 title: Set up your Azure SQL Database connection
 description: This article provides information about how to set up an Azure SQL Database connection.
-author: jianleishen
-ms.author: jianleishen
+ms.reviewer: jianleishen
 ms.topic: how-to
-ms.date: 10/31/2025
+ms.date: 03/13/2026
 ms.custom:
 - template-how-to
 - connectors
 - sfi-image-nochange
+ai-usage: ai-assisted
 ---
 
 # Set up your Azure SQL Database connection
@@ -26,18 +26,28 @@ The Azure SQL Database connector supports the following authentication types for
 |Service Principal|√||
 
 ## Set up your connection for Dataflow Gen2
-
 You can connect Dataflow Gen2 to Azure SQL database from Microsoft Fabric using Power Query connectors. Follow these steps to create your connection:
 
-1. [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-1. [Set up any Azure SQL Database prerequisites](/power-query/connectors/azure-sql-database#prerequisites) before connecting to the Azure SQL Database connector.
-1. [Connect to Azure SQL database](/power-query/connectors/azure-sql-database#connect-to-azure-sql-database-from-power-query-online).
+1. Check [capabilities](#capabilities) to make sure your scenario is supported.
+1. [Complete prerequisites for Azure SQL Database](#prerequisites).
+1. [Get data in Fabric](#get-data).
+1. [Connect to Azure SQL database](#connect-to-azure-sql-database).
 
-### Learn more about this connector
+### Capabilities
 
-- [Supported capabilities](/power-query/connectors/azure-sql-database#capabilities-supported)
-- [Connect using advanced options](/power-query/connectors/azure-sql-database#connect-using-advanced-options)
-- [Troubleshooting](/power-query/connectors/azure-sql-database#troubleshooting)
+[!INCLUDE [azure-sql-database-ccapabilities-supported](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-capabilities-supported.md)]
+
+### Prerequisites
+
+[!INCLUDE [azure-sql-database-prerequisites](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-prerequisites.md)]
+
+### Get data
+
+[!INCLUDE [get-data-data-factory-microsoft-fabric](~/../powerquery-repo/powerquery-docs/includes/get-data-data-factory-microsoft-fabric.md)]
+
+### Connect to Azure SQL database
+
+[!INCLUDE [azure-sql-database-connect-to-power-query-online](~/../powerquery-repo/powerquery-docs/connectors/includes/azure-sql-database/azure-sql-database-connect-to-power-query-online.md)]
 
 ## Set up your connection for a pipeline
 
@@ -86,7 +96,6 @@ For specific instructions to set up your connection in a pipeline, follow these 
     :::image type="content" source="./media/connector-azure-sql-database/authentication-method.png" alt-text="Screenshot showing selecting authentication method page.":::
 
 1. Optionally, set the privacy level that you want to apply. Allowed values are **Organizational**, **Privacy**, and **Public**. For more information, see [privacy levels in the Power Query documentation](/power-query/privacy-levels).
-
 1. Select **Create** to create your connection. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
     :::image type="content" source="./media/connector-azure-sql-database/connection.png" alt-text="Screenshot showing connection page.":::
@@ -138,7 +147,6 @@ To use service principal authentication, follow these steps:
     - Application key
 
 1. [Provision a Microsoft Entra administrator](/azure/azure-sql/database/authentication-aad-configure#provision-azure-ad-admin-sql-database) for your server on the Azure portal if you haven't already done so. The Microsoft Entra administrator must be a Microsoft Entra user or Microsoft Entra group, but it can't be a service principal. This step is done so that, in the next step, you can use a Microsoft Entra identity to create a contained database user for the service principal.
-
 1. [Create contained database users](/azure/azure-sql/database/authentication-aad-configure#create-contained-users-mapped-to-azure-ad-identities) for the service principal. Connect to the database from or to which you want to copy data by using tools like SQL Server Management Studio, with a Microsoft Entra identity that has at least ALTER ANY USER permission. Sign in to your Azure SQL Database through Microsoft Entra ID authentication and run the following T-SQL:
   
     ```sql
@@ -153,6 +161,8 @@ To use service principal authentication, follow these steps:
 
 1. Configure an Azure SQL Database connection.
 
+
 ## Related content
 
+- [For more information about this connector, see the Azure SQL Database connector documentation.](/power-query/connectors/azure-sql-database)
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)

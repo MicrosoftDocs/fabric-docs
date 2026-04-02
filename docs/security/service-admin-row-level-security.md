@@ -3,7 +3,6 @@ title: Row-level security (RLS) with Power BI
 description: How to configure row-level security for imported semantic models, and DirectQuery, within the Power BI service.
 author: billmath
 ms.author: billmath
-ms.reviewer: ''
 ms.topic: how-to
 ms.date: 03/08/2025
 ms.update-cycle: 180-days
@@ -48,7 +47,7 @@ Security takes you to the Role-Level Security page where you add members to a ro
 
 ### Add members
 
-In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](/power-bi/guidance/whitepaper-azure-b2b-power-bi#data-security-for-external-partners).
+In the Power BI service, you can add a member to the role by typing in the email address or name of the user or security group. You can't add Groups created in Power BI. You can add members [external to your organization](../enterprise/powerbi/service-admin-entra-b2b.md).
 
 You can use the following groups to set up row-level security.
 

@@ -2,8 +2,6 @@
 title: Activity overview
 description: Learn about activities.
 ms.reviewer: pennyzhou-msft
-ms.author: whhender
-author: whhender
 ms.topic: overview
 ms.date: 07/25/2025
 ms.custom: pipelines
@@ -76,7 +74,9 @@ Control activity | Description
 [If condition](if-condition-activity.md) | The If Condition can be used to branch based on condition that evaluates to true or false. The If Condition activity provides the same functionality that an if statement provides in programming languages. It evaluates a set of activities when the condition evaluates to `true` and another set of activities when the condition evaluates to `false`.
 [Invoke pipeline](invoke-pipeline-activity.md) | Execute Pipeline activity allows a Data Factory or Synapse pipeline to invoke another pipeline.
 [KQL activity](kql-activity.md) | Executes a KQL script against a Kusto instance.
+[Lakehouse maintenance activity](lakehouse-maintenance-activity.md) | Perform routine table maintenance on a Lakehouse from a Microsoft Fabric pipeline.
 [Lookup Activity](lookup-activity.md) | Lookup Activity can be used to read or look up a record/ table name/ value from any external source. This output can further be referenced by succeeding activities.
+[Refresh SQL Endpoint activity](refresh-sql-endpoint-activity.md) | Refreshes a Lakehouse SQL endpoint to reflect the latest data.
 [Set Variable](set-variable-activity.md) | Set the value of an existing variable.
 [Switch activity](switch-activity.md) | Implements a switch expression that allows multiple subsequent activities for each potential result of the expression.
 [Teams activity](teams-activity.md) | Posts a message in a Teams channel or group chat.
@@ -114,6 +114,43 @@ Retry | How many times to retry if the activity fails.
 
 > [!NOTE]
 > By default, you can have up to 120 activities per pipeline. This includes inner activities for containers.
+
+## Deactivate an activity
+
+You can deactivate one or more activities from a pipeline to skip them during validation and pipeline runs. This feature improves pipeline developer efficiency, letting you comment out part of the pipeline without deleting it from the canvas. You can reactivate activities at a later time.
+
+### Deactivate activities
+
+[!INCLUDE [deactivate-activities](includes/deactivate-activities.md)]
+
+### Reactivate activities
+
+To reactivate the activities, choose _Activated_ for the _Activity State_, and they revert back to their previous behaviors, as expected.
+
+### Inactive activity behaviors
+
+An inactive activity behaves differently in a pipeline.
+
+- On canvas, the inactive activity is grayed out, with _Inactive sign_ placed next to the activity type
+- On canvas, a status sign (Succeeded, Failed or Skipped) is placed on the box, to visualize the _Mark activity as_ setting
+- The activity is excluded from pipeline validation. Hence, you don't need to provide all required fields for an inactive activity.
+- During debug run and pipeline run, the activity won't actually execute. Instead, it runs a place holder line item, with the reserved status **Inactive**
+- The branching option is controlled by _Mark activity as_ option. In other words:
+   - If you mark the activity as _Succeeded_, the _UponSuccess_ or _UponCompletion_ branch runs
+   - If you mark the activity as _Failed_, the _UponFailure_ or _UponCompletion_ branch runs
+   - If you mark the activity as _Skipped_, the _UponSkip_ branch runs
+
+   :::image type="content" source="./media/deactivate-activity/deactivate-02-run-status.png" alt-text="Screenshot showing activity run status of an inactive activity.":::
+
+### Best practices for deactivation
+
+Deactivation is a powerful tool for pipeline developers. It allows developers to "comment out" part of the code, without permanently deleting the activities. It shines in following scenarios:
+
+- When developing a pipeline, developer can add place holder inactive activities before filling all the required fields. For instance, I need a Copy activity from SQL Server to Data warehouse, but I haven't set up all the connections yet. So I use an _inactive_ copy activity as the place holder for iterative development process.
+- After deployment, developer can comment out certain activities that are constantly causing troubles to avoid costly retries. For instance, my on-premises SQL server is having network connection issues, and I know my copy activities fail for certain. I may want to deactivate the copy activity, to avoid retry requests from flooding the brittle system.
+
+> [!NOTE]
+> An inactive activity never actually runs. This means the activity won't have an error field, or its typical output fields. Any references to missing fields may throw errors downstream.
 
 ## Related content
 

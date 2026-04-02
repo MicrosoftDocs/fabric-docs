@@ -2,8 +2,6 @@
 title: Develop, execute, and manage notebooks
 description: Learn how to author, execute, and manage Microsoft Fabric notebook jobs with rich built-in features.
 ms.reviewer: jingzh
-ms.author: eur
-author: eric-urban
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Develop and run notebooks
@@ -38,6 +36,7 @@ We provide rich operations to develop notebooks:
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
 - [Find and replace](#find-and-replace)
+- [Full‑size mode on a cell](#fullsize-mode-on-a-cell)
 
 ### Add a cell
 
@@ -201,6 +200,12 @@ The find and replace option can help you match and locate the keywords or expres
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
 
+### Full‑size mode on a cell
+
+Full‑size mode lets you fully focus on writing and editing code within a single cell - perfect for long or complex logic. You can toggle this mode by clicking the expand cell button in the cell toolbar to expand the cell, and exit by clicking return to default size.
+
+:::image type="content" border="true" source="media/author-execute-notebook/full-size-mode-on-a-cell.gif" alt-text="Animated GIF of full‑size mode on a cell." lightbox="media/author-execute-notebook/full-size-mode-on-a-cell.gif":::
+
 ## Copilot inline code completion (preview)
 
 Copilot inline code completion is an AI-powered feature that helps you to write Python code faster and more efficiently in Fabric Notebooks. This feature provides intelligent, context-aware code suggestions as you type code. It reduces repetitive tasks, minimizes syntax errors, and accelerates development by integrating seamlessly into your notebook workflow.
@@ -231,6 +236,23 @@ As you type, suggestions appear in light gray text, press tab to accept or modif
 * Suggestions consider data from Lakehouse schemas.
 * Only a subset of schema elements is used when there are many tables or columns.
 * Dynamically created tables (via Spark) aren't recognized in real time.
+* Inline completions are primarily scoped to context from prior cells and Lakehouse schemas. The notebook-wide Copilot actions and diagnostics described in the following sections can use broader notebook context (structure and runtime state) without requiring a Spark session to start.
+
+## Copilot notebook-wide actions
+
+Copilot supports multi-step, notebook-wide capabilities that go beyond individual cells. You can use Copilot to generate code across cells, refactor logic into reusable functions, summarize entire workflows, and validate notebook output. Copilot understands the workspace context, attached Lakehouse schemas, tables, and files, notebook structure, and runtime state, and is immediately context-aware without requiring a Spark session to start.
+
+For details on the chat pane and slash commands, see [Use the Copilot chat pane](./copilot-notebooks-chat-pane.md).
+
+## Performance insights with Copilot
+
+Copilot surfaces optimization recommendations based on data size, join patterns, and runtime behavior. For example, it can propose efficient join strategies, help you avoid data shuffles, spot data quality issues, and suggest refactors for better reuse and maintainability. These insights appear in Copilot conversations and align with the `/optimize` command.
+
+## Fix with Copilot
+
+When a cell or Spark job fails, a **Fix with Copilot** option appears below the failed cell. Copilot provides an error summary, likely root cause, recommended fixes, and the ability to auto-apply changes with an approval diff. You can also use the `/fix` command in Copilot chat to run targeted diagnostics on a specific cell or the entire notebook.
+
+For more information, see [Diagnose notebook failures with Copilot](./copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ## Run notebooks
 
@@ -370,7 +392,7 @@ Idle session timeout prioritizes security by ending sessions on inactive devices
 
 Fabric notebooks are Apache Spark based. Code cells are executed on the Apache Spark cluster remotely. A Spark job progress indicator is provided with a real-time progress bar that appears to help you understand the job execution status. The number of tasks per each job or stage helps you to identify the parallel level of your Spark job. You can also drill deeper to the Spark UI of a specific job (or stage) via selecting the link on the job (or stage) name.
 
-You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code.
+You can also find the **Cell level real-time log** next to the progress indicator, and **Diagnostics** can provide you with useful suggestions to help refine and debug the code. When prompted, Copilot can use runtime job information to help surface performance and reliability recommendations. If a job or cell fails, the [Fix with Copilot](#fix-with-copilot) entry point is available to help diagnose and resolve the issue.
 
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
@@ -759,3 +781,4 @@ To find all shortcut keys, select **View** on the notebook ribbon, and then sele
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric NotebookUtils](notebook-utilities.md)
+- [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)

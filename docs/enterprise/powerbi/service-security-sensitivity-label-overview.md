@@ -2,12 +2,11 @@
 title: "Sensitivity Labels in Power BI"
 titleSuffix: Microsoft Purview Information Protection
 description: "Learn how to classify and protect Power BI content using sensitivity labels. Apply labels to semantic models, reports, dashboards, and dataflows to secure data."
-author: JulCsc
-ms.author: juliacawthra
-manager: kfollis
+author: dknappettmsft
+ms.author: daknappe
 ms.service: powerbi
 ms.subservice: powerbi-eim
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/25/2025
 LocalizationGroup: Data from files
 ---
@@ -126,7 +125,7 @@ Power BI leverages Microsoft 365 data loss prevention to enable central security
 
 ## Default label policy
 
-To help ensure comprehensive protection and governance of sensitive data, organizations can create default label policies for Power BI that automatically apply default sensitivity labels to unlabeled content. Currently, default label policies are supported in Power BI Desktop only. For more information, see [Default label policy](/fabric/governance/service-security-sensitivity-label-default-label-policy).
+To help ensure comprehensive protection and governance of sensitive data, organizations can create default label policies for Power BI that automatically apply default sensitivity labels to unlabeled content. Default label policies are supported in both Power BI Desktop and the Power BI service. For more information, see [Default label policy](/fabric/governance/service-security-sensitivity-label-default-label-policy).
 
 ## Mandatory label policy
 
@@ -134,7 +133,7 @@ To help ensure comprehensive protection and governance of sensitive data, organi
 
 ## Admin APIs for setting and removing labels programmatically
 
-To meet compliance requirements, organizations are often required to classify and label all sensitive data in Power BI. This task can be challenging for tenants that have large volumes of data in Power BI. To make the task easier and more effective, Power BI has admin REST APIs that admins can use to set and remove sensitivity labels on large numbers of Power BI artifacts programatically. See the following:
+To meet compliance requirements, organizations are often required to classify and label all sensitive data in Power BI. This task can be challenging for tenants that have large volumes of data in Power BI. To make the task easier and more effective, Power BI has admin REST APIs that admins can use to set and remove sensitivity labels on large numbers of Power BI artifacts programmatically. See the following:
 
 - [Admin - InformationProtection SetLabelsAsAdmin](/rest/api/power-bi/admin/informationprotection_setlabelsasadmin)
 - [Admin - InformationProtection RemoveLabelsAsAdmin](/rest/api/power-bi/admin/informationprotection_removelabelsasadmin)
