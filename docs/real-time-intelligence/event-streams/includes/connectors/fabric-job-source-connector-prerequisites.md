@@ -17,7 +17,7 @@ With Fabric event streams, you can capture these Job events, transform them, and
 | Event type name | Description |
 | --------------- | ----------- |
 | Microsoft.Fabric.ItemJobCreated | Raised when the Fabric platform creates or triggers a job, manually or scheduled. |
-| Microsoft.Fabric.ItemJobStatusChanged | Raised when the job status changes to another non-terminal state. <p>This event isn't raised if the workload doesn't push when the status changes. The job status might change from created to completed soon. 
+| Microsoft.Fabric.ItemJobStatusChanged | Raised when the job status changes to another nonterminal state. <p>This event isn't raised if the workload doesn't push when the status changes. The job status might change from created to completed soon. 
 | Microsoft.Fabric.ItemJobSucceeded | Raised when the job completes. |     
 | Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
 

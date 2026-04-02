@@ -11,7 +11,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Fabric OneLake event source to an eventstream.
 
-[!INCLUDE [consume-fabric-events-regions](../../real-time-hub/includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](./includes/connectors/consume-fabric-events-regions.md)]
 
 OneLake events allow you to subscribe to changes in files and folders in OneLake, and then react to those changes in real-time. With Fabric event streams, you can capture these OneLake events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of OneLake events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your OneLake.
 

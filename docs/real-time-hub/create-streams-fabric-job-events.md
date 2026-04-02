@@ -14,10 +14,6 @@ Real-Time hub allows you to discover and subscribe to changes produced when Fabr
 
 [!INCLUDE [fabric-job-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/fabric-job-source-connector-prerequisites.md)]
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
-
 ## Create streams for Job events
 
 You can create streams for Job events in Real-Time hub using one of the ways:

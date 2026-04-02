@@ -1,9 +1,11 @@
 ---
-title: Add Fabric job event source to an eventstream
-description: Learn how to add Fabric job event source to an eventstream.
+title: Fabric Job Events Source in Eventstream
+description: Fabric job events let you capture and route job activity in real time. Learn how to add a Fabric job event source to an eventstream and start streaming.
 ms.reviewer: robece
 ms.topic: how-to
-ms.date: 11/13/2024
+ms.date: 04/02/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
@@ -35,7 +37,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
     ![A screenshot of the Fabric job events source added to the eventstream.](media/add-source-fabric-job/fabric-job-events-edit.png)
 
     > [!NOTE]
-    > Before proceeding with event transformation or routing, ensure that job events have been triggered and successfully sent to the eventstream.
+    > Before proceeding with event transformation or routing, ensure that job events are triggered and successfully sent to the eventstream.
 
 1. If you want to transform the Fabric job events, open your eventstream and select **Edit** to enter **Edit mode**. Then you can add operations to transform the Fabric job events or route them to a destination such as Lakehouse.
 
