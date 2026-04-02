@@ -21,11 +21,14 @@ This article describes how to get events from an Azure event hub into Real-Time 
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-1. On the **Data sources** page, select the **Microsoft sources** category at the top, and then select **Connect** on the **Azure Event Hubs** tile. 
 
-    :::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Data sources page." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
-    
-    Now, follow the instructions in the [Connect to an Azure event hub](#configure-and-connect-to-the-azure-event-hub) section.
+## Select Azure Event Hubs as a source
+
+On the **Data sources** page, select the **Microsoft sources** category at the top, and then select **Connect** on the **Azure Event Hubs** tile. 
+
+:::image type="content" source="./media/add-source-azure-event-hubs/select-azure-event-hubs.png" alt-text="Screenshot that shows the selection of Azure Event Hubs as the source type in the Data sources page." lightbox="./media/add-source-azure-event-hubs/select-azure-event-hubs.png":::
+
+Now, follow the instructions in the [Connect to an Azure event hub](#configure-and-connect-to-the-azure-event-hub) section.
 
 ### Configure and connect to the Azure event hub
 
