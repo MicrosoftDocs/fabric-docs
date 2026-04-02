@@ -29,8 +29,8 @@ This article describes how to get events from Azure SQL Database Change Data Cap
 
 ## Connect to an Azure SQL Database CDC source
 
-[!INCLUDE [azure-sql-database-change-data-capture-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/azure-sql-database-change-data-capture-connector-configuration.md)
-]
+[!INCLUDE [azure-sql-database-change-data-capture-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/azure-sql-database-change-data-capture-connector-configuration.md)]
+
 ## View data stream details
 
 1. On the **Review + connect** page, if you select **Open eventstream**, the wizard opens the eventstream that it created for you with the selected Azure SQL Database CDC as a source. To close the wizard, select **Finish** at the bottom of the page.

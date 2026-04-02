@@ -11,7 +11,7 @@ ms.date: 04/01/2026
 The Azure SQL Database CDC source connector for Microsoft Fabric event streams allows you to capture a snapshot of the current data in an Azure SQL database. The connector then monitors and records any future row-level changes to this data. Once the changes are captured in the eventstream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
 > [!NOTE]
-> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. For more information, see the [extended features](#configure-and-connect-to-azure-sql-database-cdc) section in this article.
+> With **DeltaFlow (Preview)**, you can transform raw Debezium CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow automates schema registration, destination table management, and schema evolution handling. To use DeltaFlow, choose **Analytics-ready events & auto-updated schema** during the schema handling step. 
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ The Azure SQL Database CDC source connector for Microsoft Fabric event streams a
 
 1. Go to the Azure portal, open your Azure SQL database, and select **Query editor**. Choose an authentication method to sign in.
 
-    :::image type="content" source="./media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png" alt-text="A screenshot of opening Azure SQL database." lightbox="./media/add-source-azure-sql-database-change-data-capture/open-azure-sqldb.png":::
+    :::image type="content" source="./media/azure-sql-database-cdc-source-connector/open-azure-sqldb.png" alt-text="A screenshot of opening Azure SQL database." lightbox="./media/azure-sql-database-cdc-source-connector/open-azure-sqldb.png":::
 
 2. Run the following SQL commands to enable CDC in your database:
 
