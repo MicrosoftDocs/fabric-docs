@@ -63,7 +63,7 @@ Rules use the following ontology (preview) concepts. For definitions of these te
 
     :::image type="content" source="media/how-to-use-rules/add-rule.png" alt-text="Screenshot of adding the rule.":::
 
-1. Configure the rule, including conditions, actions, and save location. For more information about these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
+1. Configure the rule, including conditions, actions, and save location. Ontology-authored rules support temporal conditions (for example, thresholds exceeded over a time window) and aggregations via the Fabric Activator condition configuration; these options are available in the rule designer opened from ontology and are evaluated per entity instance. For more information about these fields, see [Create a rule in Fabric Activator](../../real-time-intelligence/data-activator/activator-create-activators.md).
 
     :::image type="content" source="media/how-to-use-rules/rule-configuration.png" alt-text="Screenshot of configuring the rule." lightbox="media/how-to-use-rules/rule-configuration.png":::
 
