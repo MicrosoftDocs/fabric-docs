@@ -1,9 +1,9 @@
 ---
 title: HTTP connector for Fabric event streams
-description: This include file has the common content for configuring an HTTP connector for Fabric event streams and Real-Time hub. 
+description: This file has the common content for configuring an HTTP connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 12/03/2025
+ms.date: 04/02/2026
 ---
 
 You can select one of the **Example public APIs** to get started quickly with predefined headers and parameters, or select **Exit** to configure your own custom HTTP connector.
@@ -16,14 +16,14 @@ You can select one of the **Example public APIs** to get started quickly with pr
    * **Binance**. Get the latest Bitcoin price
    * **CoinGecko**. Get the current Bitcoin price in USD
    * **Transport for London**. Get live arrival predictions for a London station
-   * **Alpha Vantage**. Get the real-time MSFT stock price
+   * **Alpha Vantage**. Get the real-time Microsoft (MSFT) stock price
    * **OpenWeather**. Get the weather forecast for a location
    * **NewsAPI**. Get the latest business headlines in the US
 
 1. For APIs that require an API key, use the provided link to apply for the API key and enter it in the input box. The connector then automatically creates the Fabric cloud connection and prefills the required HTTP headers and parameters.
 
    > [!IMPORTANT]
-   > The **Binance example API** does not require an API key, but you're responsible for complying with its Terms of Use.
+   > The **Binance example API** doesn't require an API key, but you're responsible for complying with its Terms of Use.
 
 1. If you choose **Use existing connection**, select **Apply example** to prefill the required headers and parameters for the example API without entering an API key.
 
