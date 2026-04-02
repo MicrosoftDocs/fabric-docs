@@ -173,7 +173,7 @@ Third party libraries like Pandas UDFs allow data quality rules to be implemente
 
 ### Custom Libraries – Python Wheel (.whl) 
 
-Functions packaged as jar files or wheel files can be installed on the Fabric cluster (via Environment settings) and used in MLV definitions. CREATE and lINEAGE REFRESH is supported for PySpark contexts. See [Manage custom libraries in Fabric environments](../environment-manage-library.md#custom-libraries) for more details.
+Functions packaged as jar files or wheel files can be installed on the Fabric cluster (via Environment settings) and used in MLV definitions. CREATE and LINEAGE REFRESH is supported for PySpark contexts. See [Manage custom libraries in Fabric environments](../environment-manage-library.md#custom-libraries) for more details.
 
 ```python
   %%pyspark
