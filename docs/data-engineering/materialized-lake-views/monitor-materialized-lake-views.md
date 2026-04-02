@@ -59,7 +59,7 @@ If you need to cancel an in-progress MLV run, hover over its row and click the `
 
 ## Navigate to a materialized lake view run
 
-If you need more information about MLV runs and the MLV statistics, access Apache Spark logs for individual MLVs, or check input and output data. You can click on the name of any MLV run to navigate to its corresponding scheduled run, and individual MLVs in the lineage will direct you to the detailed log view.
+You can find more information about MLV runs and the MLV statistics by accessing Apache Spark logs for individual MLVs or checking input and output data. You can click on the name of any MLV run to navigate to its corresponding scheduled run, and individual MLVs in the lineage will direct you to the detailed log view.
 
 ## Related articles
 
