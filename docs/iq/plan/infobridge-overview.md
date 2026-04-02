@@ -15,7 +15,7 @@ The *InfoBridge* component of plan (preview) is a no-code data integration, prep
 
 ## Why use InfoBridge?
 
-Business reporting and planning often involve multi-page reports with data at varying granularities. InfoBridge enables you to consolidate data from multiple visuals into a single writeback table. This simplifies data management and ensures consistency across reports. Without InfoBridge, each visual would need to writeback to its own table, requiring you to maintain multiple tables separately. InfoBridge solves many use cases that typically require composite modeling, ETL and automation tools, complex DAX and SQL scripting, extensive BI expertise, and IT overheads. 
+Business reporting and planning often involve multi-page reports with data at varying granularities. InfoBridge enables you to consolidate data from multiple visuals into a single writeback table. This simplifies data management and ensures consistency across reports. Without InfoBridge, each visual would need to write back to its own table, requiring you to maintain multiple tables separately. InfoBridge solves many use cases that typically require composite modeling, ETL and automation tools, complex DAX and SQL scripting, extensive BI expertise, and IT overheads. 
 
 >[!NOTE]
 >**Best practice**  
