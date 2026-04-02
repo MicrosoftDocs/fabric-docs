@@ -29,10 +29,10 @@ Currently, only Spark and the lakehouse can read Spark Views. Other Fabric workl
 
 To create a Spark View, you need a notebook session with a schema-enabled lakehouse as your default lakehouse. In the notebook run a Spark SQL statement using `CREATE OR REPLACE VIEW` with your view name and query:
 
-    ```sql
-    CREATE OR REPLACE VIEW my_view AS
-    SELECT * FROM my_table WHERE status = 'active'
-    ```
+```sql
+CREATE OR REPLACE VIEW my_view AS
+SELECT * FROM my_table WHERE status = 'active'
+```
 
 The view appears in Lakehouse Explorer under your schema after you refresh.
 
@@ -40,21 +40,22 @@ The view appears in Lakehouse Explorer under your schema after you refresh.
 
 Spark Views can reference data from multiple lakehouses that you have access to. You can join tables from different lakehouses—or even different workspaces—within a single view.
 
-    ```sql
-    CREATE OR REPLACE VIEW my_view AS
-    SELECT * FROM myworkspace.mylakehouse.schema.my_table as a JOIN otherworkspace.otherlakehouse.schema.my_other_table as b
-    ON a.identifier=b.identifier WHERE a.status = 'active'
-    ```
+```sql
+CREATE OR REPLACE VIEW my_view AS
+SELECT * FROM myworkspace.mylakehouse.schema.my_table as a
+JOIN otherworkspace.otherlakehouse.schema.my_other_table as b
+ON a.identifier=b.identifier WHERE a.status = 'active'
+```
 
 ### Specify the view location
 
 Create views in your default lakehouse, or specify a four-part name for any lakehouse you have access to, like 
 
 
-    ```sql
-    CREATE OR REPLACE VIEW myworkspace.mylakehouse.schema.my_view AS
-    SELECT * FROM my_table WHERE status = 'active'
-    ```
+```sql
+CREATE OR REPLACE VIEW myworkspace.mylakehouse.schema.my_view AS
+SELECT * FROM my_table WHERE status = 'active'
+```
 
 For more information about four-part naming, see [Cross-workspace Spark SQL queries](lakehouse-schemas.md#cross-workspace-spark-sql-queries).
 
