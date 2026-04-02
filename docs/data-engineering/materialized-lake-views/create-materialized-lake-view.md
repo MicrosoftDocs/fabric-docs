@@ -24,7 +24,7 @@ You can define a materialized lake view from any table or from another materiali
 CREATE [OR REPLACE] MATERIALIZED LAKE VIEW [IF NOT EXISTS] [workspace.lakehouse.schema].MLV_Identifier 
 [( 
     CONSTRAINT constraint_name1 CHECK (condition expression1) [ON MISMATCH DROP | FAIL],  
-    CONSTRAINT constraint_name2 CHECK (condition expression2)[ON MISMATCH DROP | FAIL] 
+    CONSTRAINT constraint_name2 CHECK (condition expression2) [ON MISMATCH DROP | FAIL] 
 )] 
 [PARTITIONED BY (col1, col2, ... )] 
 [COMMENT "description or comment"] 
