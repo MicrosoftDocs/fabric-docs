@@ -44,7 +44,7 @@ This article provides a basic overview of how to create financial reports with I
 
 ## Apply and customize built-in templates
 
-Out-of-the-box report templates provide a quick starting point for creating reports. They reduce the time and effort required to build reports from scratch.
+Built-in report templates provide a quick starting point for creating reports. They reduce the time and effort required to build reports from scratch.
 
 > [!TIP]  
 > Use built-in templates to save time and ensure consistency across reports.
