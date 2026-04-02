@@ -15,11 +15,6 @@ This article describes how to get Fabric capacity overview events as an eventstr
 
 [!INCLUDE [fabric-capacity-overview-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/fabric-capacity-overview-connector-prerequisites.md)]
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.  
-- A Fabric capacity where you have capacity admin role.
-
 ## Create streams for Fabric capacity overview events
 
 You can create streams for Fabric capacity overview events in Real-Time hub using one of the ways:

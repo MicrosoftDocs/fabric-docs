@@ -24,3 +24,4 @@ Fabric event streams support the following Fabric capacity overview events:
 ## Prerequisites
 
 - Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- A Fabric capacity where you have capacity admin role.
