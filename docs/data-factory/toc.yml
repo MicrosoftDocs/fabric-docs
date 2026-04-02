@@ -55,8 +55,6 @@
                 items:
                   - name: Dataflow Gen2 with virtual network gateway
                     href: pricing-example-dataflow-virtual-network-gateway.md
-      - name: Keyboard shortcuts
-        href: keyboard-shortcuts.md
       - name: Secure Data Factory in Microsoft Fabric
         href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
@@ -87,8 +85,6 @@
         href: create-first-pipeline-with-sample-data.md
       - name: Create a dataflow
         href: create-first-dataflow-gen2.md
-      - name: Monitor activity in Data Factory
-        href: monitor-data-factory.md
       - name: Operationalize Data Factory
         href: transform-data.md
   - name: Migrate to Fabric
@@ -871,14 +867,10 @@
                     href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Download diagnostics logs
                     href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json  
-      - name: Access recent data
-        href: recent-data.md
   - name: Move data
     items:
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
-      - name: Data type mapping
-        href: data-type-mapping-data-movement.md
       - name: Copy job
         items: 
           - name: What is the Copy job in Data Factory?
@@ -976,6 +968,10 @@
         items:
           - name: What are dataflows?
             href: dataflows-gen2-overview.md
+          - name: Create a dataflow
+            href: create-first-dataflow-gen2.md
+          - name: Get data in dataflows
+            href: get-data-dataflow-gen2.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -999,8 +995,6 @@
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
-              - name: Get data with Copilot
-                href: copilot-modern-get-data.md
               - name: Modern query evaluator
                 href: dataflow-gen2-modern-evaluator.md
               - name: Preview only steps
@@ -1138,14 +1132,8 @@
             href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
-      - name: Evaluate pipeline expressions
-        href: evaluate-pipeline-expression.md
-      - name: Debug pipelines
-        href: how-to-debug-pipelines-in-microsoft-fabric.md
-      - name: Deactivate an activity
-        href: deactivate-activity.md
-      - name: Copilot pipeline expression builder (Preview)
-        href: copilot-pipeline-expression-builder.md
+      - name: Expressions and functions
+        href: expression-language.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
@@ -1161,8 +1149,6 @@
         items: 
           - name: Parameter usage
             href: parameters.md
-          - name: Expression language
-            href: expression-language.md
       - name: REST API capabilities
         href: pipeline-rest-api-capabilities.md
       - name: Tutorials
@@ -1223,8 +1209,10 @@
             href: cicd-apache-airflow-jobs.md
   - name: FAQ and Troubleshooting
     items: 
-      - name: Frequently asked questions
-        href: frequently-asked-questions.yml
+      - name: Keyboard shortcuts
+        href: keyboard-shortcuts.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Pipeline activities troubleshooting guide
         href: pipeline-troubleshoot-guide.md
       - name: Troubleshoot connectors

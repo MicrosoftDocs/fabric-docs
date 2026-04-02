@@ -558,8 +558,6 @@ items:
             href: eventhouse-compute-observability.md
           - name: Eventhouse Cost per GB Ingested
             href: pricing-cost-drivers.md
-          - name: Query cold data with hot windows
-            href: query-cold-data-hot-windows.md   
       - name: Migrate
         items:
           - name: Migrate from Azure Data Explorer
@@ -705,6 +703,8 @@ items:
                 href: create-functions.md
               - name: Enable Python plugin
                 href: python-plugin.md
+              - name: Query cold data with hot windows
+                href: query-cold-data-hot-windows.md   
           - name: Management commands
             href: kusto-tocs/management/toc.yml
           - name: API

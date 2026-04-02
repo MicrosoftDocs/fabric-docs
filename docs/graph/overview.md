@@ -141,4 +141,5 @@ Graph is currently available in the following regions:
 - [How graph works](how-graph-works.md)
 - [GQL language guide](gql-language-guide.md)
 - [Manage and refresh graph data](manage-data.md)
+- [Share and manage graph permissions](share-graph-manage-permissions.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
