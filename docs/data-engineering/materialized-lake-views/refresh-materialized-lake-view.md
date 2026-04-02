@@ -15,7 +15,7 @@ This article explains how optimal refresh works, what each strategy does, and ho
 
 > [!NOTE]
 > Optimal refresh isn't supported in the following scenarios:
-> - **PySpark definitions**: Materialized lake views must be defined with Spark SQL. PySpark isn't currently supported.
+> - **PySpark definitions**: Optimal refresh applies only to MLVs defined with Spark SQL. PySpark-defined MLVs always use full refresh.
 > - **Non-Delta source tables**: Materialized lake views that use non-Delta tables as a source always perform a full refresh. Incremental and no-refresh strategies require Delta table sources.
 
 ## Benefits of optimal refresh
@@ -61,7 +61,7 @@ Without CDF enabled, optimal refresh can only choose between no refresh and full
 Incremental refresh is supported for append-only data. If the source data includes deletions or updates, Fabric performs a full refresh.
 
 > [!NOTE]
-> Enabling CDF on your source tables has no measurable storage or performance affect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
+> Enabling CDF on your source tables has no measurable storage or performance effect for append-only workloads, which is the scenario that incremental refresh supports. CDF is a standard Delta Lake table property that other Fabric features can also benefit from. For more information about how CDF works, see [Use Delta Lake change data feed](/azure/databricks/delta/delta-change-data-feed).
 
 You can enable CDF at creation time by including `TBLPROPERTIES` in the `CREATE` statement:
 
