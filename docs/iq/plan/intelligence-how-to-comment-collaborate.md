@@ -41,7 +41,7 @@ Comments are collaborative threads that facilitate conversations directly from w
 1. Reply to a comment to start a thread.
 1. Tag other users with `@mentions`. The `@user` mention in a comment automatically sends an email notification to that user, with a link to the report.
 
-    :::image type="content" source="media/intelligence-how-to-comment-collaborate/tag-user.png" alt-text="Screenshot of a comment containing a tag to a user.":::
+    :::image type="content" source="media/intelligence-how-to-comment-collaborate/tag.png" alt-text="Screenshot of a comment containing a tag to a user.":::
 
 ## Resolve threads and lock comments
 
