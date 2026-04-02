@@ -38,7 +38,7 @@ For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler) w
 Before you use the materialized lake views REST APIs, complete these prerequisites:
 - To use Fabric REST APIs, [register an application with Microsoft Entra ID and get a Microsoft Entra token for Fabric](/rest/api/fabric/articles/get-started/fabric-api-quickstart). Use that token in the authorization header.
 - Fabric REST APIs for MLV support [Microsoft Entra users](/fabric/admin/service-admin-portal-developer#service-principals-can-call-fabric-public-apis). Choose authorization method and [scope](/rest/api/fabric/articles/scopes#specific-fabric-rest-apis-scopes) based on how your app accesses the APIs.
-- Fabric REST API uses a unified endpoint model for lineage operations. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload values in the examples before calling the APIs.
+- Fabric REST APIs use a unified endpoint model for lineage operations. Replace placeholders such as `{WORKSPACE_ID}`, `{LAKEHOUSE_ID}`, and payload values in the examples before calling the APIs.
 
 ## Examples of REST API usage with materialized lake views
 
