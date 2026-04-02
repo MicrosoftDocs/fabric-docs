@@ -118,7 +118,7 @@ For more information about failure diagnostics, see [Diagnose notebook failures]
 
 ### Copilot button is disabled in notebooks
 
-In some cases, the Copilot button in Fabric Notebooks may appear disabled (greyed out). This indicates that Copilot is not currently available in your environment due to configuration, capacity, or regional requirements not being met.
+In some cases, the Copilot button in Fabric Notebooks may appear disabled (grayed out). This indicates that Copilot is not currently available in your environment due to configuration, capacity, or regional requirements not being met.
 
 Copilot relies on several prerequisites across tenant settings, capacity, workspace configuration, and regional availability. If any of these requirements are not satisfied, the Copilot entry point will be disabled.
 
