@@ -10,7 +10,7 @@ ms.date: 12/14/2025
 
 This article describes how to set alerts on OneLake events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## Navigate to Real-Time hub
 

@@ -11,25 +11,7 @@ ms.search.form: Source and Destination
 
 This article shows you how to add Fabric job event source to an eventstream.
 
-[!INCLUDE [consume-fabric-events-regions](../../real-time-hub/includes/consume-fabric-events-regions.md)]
-
-Job events allow you to subscribe to changes produced when Fabric runs a job. For example, you can react to changes when refreshing a semantic model, running a scheduled pipeline, or running a notebook. Each of these activities can generate a corresponding job, which in turn generates a set of corresponding job events. 
-
-With Fabric event streams, you can capture these Job events, transform them, and route them to various destinations in Fabric for further analysis. This seamless integration of Job events within Fabric event streams gives you greater flexibility for monitoring and analyzing activities in your Job.
-
-## Event types
-
-| Event type name | Description |
-| --------------- | ----------- |
-| Microsoft.Fabric.ItemJobCreated | Raised when the Fabric platform creates or triggers a job, manually or scheduled. |
-| Microsoft.Fabric.ItemJobStatusChanged | Raised when the job status changes to another non-terminal state. <p>This event isn't raised if the workload doesn't push when the status changes. The job status might change from created to completed soon. 
-| Microsoft.Fabric.ItemJobSucceeded | Raised when the job completes. |     
-| Microsoft.Fabric.ItemJobFailed | Raised when the job fails, including job getting stuck or canceled. |
-
-## Prerequisites
-
-- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
-- [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream.
+[!INCLUDE [fabric-job-source-connector-prerequisites](includes/connectors/fabric-job-source-connector-prerequisites.md)]
 
 
 ## Add Fabric Job events as source
@@ -44,7 +26,7 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## Configure and connect to Fabric job events
 
-[!INCLUDE [fabric-job-source-connector](includes/fabric-job-source-connector.md)]
+[!INCLUDE [fabric-job-source-connector-configuration](includes/connectors/fabric-job-source-connector-configuration.md)]
 
 ## View updated eventstream
 

@@ -10,7 +10,7 @@ ms.date: 12/11/2025
 
 Fabric workspace item events allow you to receive notification when certain actions occur on your workspace items. For instance, when a new artifact is created or an existing artifact is deleted. These events can be used to alert on other actions or workflows in Fabric, such as running a pipeline or sending an email notification using Fabric [!INCLUDE [fabric-activator](../real-time-intelligence/includes/fabric-activator.md)] alerting capabilities. This article explains how to explore Fabric workspace item events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 [!INCLUDE [deprecated-fabric-workspace-events](./includes/deprecated-fabric-workspace-events.md)]
 

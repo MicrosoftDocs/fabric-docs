@@ -24,4 +24,4 @@ ms.date: 12/11/2025
 > * Your use of this connector is subject to the applicable Azure Maps Product Terms and may only be used within Microsoft Fabric only.
 > * Weather data may not be downloaded, exported, or streamed outside of Fabric.
 >
-> For more details, see [Azure Maps Product Terms](https://www.microsoft.com/licensing/terms/productoffering/onlineservices)
+> For more information, see [Azure Maps Product Terms](https://www.microsoft.com/licensing/terms/productoffering/onlineservices)
