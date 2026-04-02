@@ -46,7 +46,7 @@ Use the following Fabric REST APIs to schedule, run, retrieve, and manage refres
 
 ### Create Schedule for MLV in Lakehouse
 
-Create a new schedule to periodically refresh materialized lake views lineage in a lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). Currently, materialized lake views support only one active refresh schedule per lineage. Use [Update Schedule](#update-schedule-for-mlv-in-lakehouse) to update an existing schedule.
+Create a new schedule to periodically refresh materialized lake views lineage in a lakehouse. For more information, see [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule?tabs=HTTP). 
 
 **Sample request**:
 
@@ -373,9 +373,7 @@ Retry-After: 60
 
 The following limitations apply to the materialized lake views REST APIs:
 
-- *Service principal authentication:* Materialized lake views (MLV) don't support authentication through service principals.
 - *Schedule limits per lakehouse:* The [job scheduler](/rest/api/fabric/core/job-scheduler/create-item-schedule) enforces limits on how many schedules can be configured per lakehouse.
-- *Single schedule per lineage:* MLV supports only one active refresh schedule per lineage. Creating more than one refresh schedule for a lineage might cause UI instability.
 - *Job status display:* The status returned by [list item job instances](#list-job-instances-for-mlv-in-lakehouse) and [get item job instance](#get-job-instance-details-for-mlv-in-lakehouse) reflects Monitoring hub status. It might differ from materialized lake views [run history](./run-history.md#run-states-in-lineage-view) status (for example, **Skipped** can appear as **Canceled** in Monitoring hub).
 - *Entity display limits:* The [job scheduler](/rest/api/fabric/core/job-scheduler/list-item-job-instances?tabs=HTTP#limitations) interface displays a limited number of completed and active jobs, which can affect visibility into historical or concurrent executions.
 
