@@ -36,4 +36,4 @@ Comments are collaborative threads that facilitate conversations directly from w
     :::image type="content" source="media/intelligence-how-to-comment-collaborate/view-all.png" alt-text="Screenshot of the All Comments pane showing 4 comments." lightbox="media/intelligence-how-to-comment-collaborate/view-all.png":::
 
 >[!NOTE]
->Write-back is supported for comments.
+>Writeback is supported for comments.

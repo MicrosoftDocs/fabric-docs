@@ -19,6 +19,11 @@
         "redirect_document_id": true
       },
       {
+        "source_path_from_root": "/docs/data-factory/frequently-asked-questions.yml",
+        "redirect_url": "/fabric/data-factory/data-factory-overview",
+        "redirect_document_id": true
+      },
+      {
         "source_path_from_root": "/docs/data-factory/whats-new.md",
         "redirect_url": "/fabric/get-started/whats-new?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
         "redirect_document_id": true
@@ -131,6 +136,11 @@
       {
         "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
         "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
+        "redirect_document_id": false
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/copilot-pipeline-expression-builder.md",
+        "redirect_url": "/fabric/data-factory/expression-language#build-pipeline-expressions-with-copilot",
         "redirect_document_id": false
       },
       {
@@ -431,6 +441,16 @@
       {
         "source_path_from_root": "/docs/data-factory/data-type-mapping.md",
         "redirect_url": "/fabric/data-factory/data-type-conversion-copy-activity",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/data-type-mapping-data-movement.md",
+        "redirect_url": "/fabric/data-factory/copy-data-activity#data-type-mapping",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-factory/evaluate-pipeline-expression.md",
+        "redirect_url": "/fabric/data-factory/expression-language#evaluate-your-pipeline-expressions-before-you-run-them",
         "redirect_document_id": true
       },
       {
