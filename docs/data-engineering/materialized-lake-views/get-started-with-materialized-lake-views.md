@@ -3,7 +3,7 @@ title: Get Started with Materialized Lake Views in a Microsoft Fabric Lakehouse
 description: Learn how to create your first materialized lake view in a Microsoft Fabric lakehouse.
 ms.topic: quickstart
 ms.reviewer: abhishjain
-ms.date: 03/18/2026
+ms.date: 04/02/2026
 #customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric lakehouse so that I can optimize query performance and manage data quality.
 ---
 
@@ -78,7 +78,7 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
 1. Create materialized lake views from the source tables. Copy the following SQL command into the new cell and run it:
 
    ```sql
-   CREATE SCHEMA IF NOT EXISTS SILVER;
+   CREATE SCHEMA IF NOT EXISTS silver;
 
    CREATE MATERIALIZED LAKE VIEW IF NOT EXISTS silver.cleaned_order_data AS
    SELECT 
