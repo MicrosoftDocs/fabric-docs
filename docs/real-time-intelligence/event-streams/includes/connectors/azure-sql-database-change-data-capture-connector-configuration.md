@@ -3,7 +3,7 @@ title: Azure SQL Database CDC connector for Fabric event streams
 description: The include file has the common content for configuring an Azure SQL Database Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: zhenxilin
 ms.topic: include
-ms.date: 10/31/2025
+ms.date: 04/02/2026
 ---
 
 Ingest change data from Azure SQL databases with automatic table schema registration via CDC into Eventstream.
@@ -98,10 +98,10 @@ When you enable **Analytics-ready events & auto-updated schema** (DeltaFlow), th
 - **Automatic destination table management**: When you route DeltaFlow-enabled streams to a supported destination like an eventhouse, destination tables are automatically created to match the source table schema. You don't need to manually create or configure destination tables.
 - **Schema evolution handling**: When source database tables change (for example, new columns are added or tables are created), DeltaFlow automatically detects the changes, updates the registered schemas, and adjusts the destination tables accordingly. This option minimizes manual intervention caused by schema changes.
 
-    :::image type="content" source="./media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing Eventhouse destination tables in analytics-ready shape created by DeltaFlow." lightbox="./media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
+    :::image type="content" source="../media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif" alt-text="Screenshot showing Eventhouse destination tables in analytics-ready shape created by DeltaFlow." lightbox="./media/configure-destinations-schema-enabled-sources/delta-flow-destination-tables.gif":::
 
 > [!NOTE]
 > DeltaFlow (Preview) is currently supported with Azure SQL Database CDC, Azure SQL Managed Instance CDC, SQL Server on VM CDC, and PostgreSQL CDC source connectors.
 
-For details on how DeltaFlow transforms raw CDC events into analytics-ready output, including operation types and metadata columns, see [DeltaFlow output transformation](../delta-flow-output-transformation.md).
+For details on how DeltaFlow transforms raw CDC events into analytics-ready output, including operation types and metadata columns, see [DeltaFlow output transformation](../../delta-flow-output-transformation.md).
 
