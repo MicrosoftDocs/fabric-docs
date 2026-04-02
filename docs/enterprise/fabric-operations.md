@@ -66,7 +66,7 @@ This section is divided into Fabric experience. Each experience had a table that
 | AI Services | Reports Azure AI Services usage in Fabric, including Text Analytics and Azure AI Translator | Multiple | Copilot and AI | Background |
 
 > [!NOTE]
-> Starting March 17, 2025, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
+> Starting March 17, 2026, the Capacity Metrics app shows AI Functions and AI Services as separate operations. This is a reporting-only change; underlying consumption rates are unchanged.
 
 ### Data agent in Fabric
 

@@ -1,8 +1,8 @@
 ---
-title: GQL Quick Reference for Fabric Graph
-description: Quick reference for GQL syntax, statements, graph patterns, expressions, and functions supported by Fabric Graph, with examples.
+title: GQL Quick Reference for graph in Microsoft Fabric
+description: Quick reference for GQL syntax, statements, graph patterns, expressions, and functions supported by graph in Microsoft Fabric, with examples.
 ms.topic: reference
-ms.date: 03/02/2026
+ms.date: 03/12/2026
 ms.reviewer: splantikow
 ms.search.form: GQL Quick Reference
 ---
@@ -11,10 +11,10 @@ ms.search.form: GQL Quick Reference
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-This article is a quick reference for GQL (Graph Query Language) syntax for Fabric Graph. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
+This article is a quick reference for GQL (Graph Query Language) syntax for graph in Microsoft Fabric. For detailed explanations, see the [GQL language guide](gql-language-guide.md).
 
 > [!NOTE]
-> This article primarily uses the [social network example graph dataset](sample-datasets.md). It also provides a few examples that use the Adventure Works dataset from the [Graph tutorial](tutorial-introduction.md).
+> This article primarily uses the [social network example graph dataset](sample-datasets.md). It also provides a few examples that use the Adventure Works dataset from the [graph tutorial](tutorial-introduction.md).
 
 ## Query structure
 
@@ -39,7 +39,7 @@ RETURN fullName, m.firstName
 **Statement order:**  
 
 > [!IMPORTANT]
-> Fabric Graph doesn't yet support arbitrary statement composition.
+> graph doesn't yet support arbitrary statement composition.
 > See the article on [current limitations](limitations.md).
 
 Statements generally can appear in any order within a query:
@@ -573,7 +573,7 @@ RETURN p
 
 ### Adventure Works examples
 
-These examples use the Adventure Works dataset from the [Graph tutorial](tutorial-introduction.md).
+These examples use the Adventure Works dataset from the [graph tutorial](tutorial-introduction.md).
 
 #### Find all customers
 

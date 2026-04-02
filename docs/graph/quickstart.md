@@ -2,7 +2,7 @@
 title: "Quickstart: Create your first graph in Microsoft Fabric"
 description: Create a basic graph with two nodes and one edge in Microsoft Fabric in just a few minutes using the visual graph modeling experience.
 ms.topic: quickstart
-ms.date: 03/03/2026
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Quickstart - Create your first graph in Microsoft Fabric
 ai-usage: ai-assisted
@@ -12,23 +12,27 @@ ai-usage: ai-assisted
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-In this quickstart, you create a basic graph with two nodes and one edge, and then run a query. This process takes about 15 minutes.
+In this quickstart, you use graph in Microsoft Fabric to create a basic graph with two nodes and one edge, and then run a query. This process takes about 15 minutes.
 
-For a comprehensive tutorial that covers the full Adventure Works data model and more advanced scenarios, see the [Fabric Graph tutorial](tutorial-introduction.md).
+For a comprehensive tutorial that covers the full Adventure Works data model and more advanced scenarios, see the [graph tutorial](tutorial-introduction.md).
 
 ## Prerequisites
 
 Before you start this quickstart, verify that:
 
-1. [Fabric Graph is available in your region](overview.md#region-availability).
-1. Graph is enabled in your Fabric tenant. A Fabric administrator enables this setting in the [admin portal](../admin/admin-center.md).
+1. You have access to a Microsoft Fabric capacity (F2 or higher) or a [Fabric trial](../fundamentals/fabric-trial.md).
+1. [Graph is available in your region](overview.md#region-availability).
+1. A Fabric administrator enabled graph in your Fabric tenant. They enable this setting in the [admin portal](../admin/admin-center.md).
 
-   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable Graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
+   :::image type="content" source="./media/quickstart/tenant-enable-graph.png" alt-text="Screenshot of the admin portal showing the toggle to enable graph in your Fabric tenant." lightbox="./media/quickstart/tenant-enable-graph.png":::
 
 1. You're a member of a Fabric workspace or have permission to create items in the workspace. For more information, see [Workspaces in Microsoft Fabric](../admin/portal-workspaces.md).
 
     > [!IMPORTANT]
     > Access management of the graph is restricted to the workspace that hosts it. Users outside of the workspace can't access the graph. Users within the workspace who have access to the underlying data in the lakehouse can model and query the graph.
+
+> [!TIP]
+> If you don't see **Graph model (preview)** in the **+ New item** menu, ask your Fabric administrator to enable graph in the [admin portal](../admin/admin-center.md).
 
 ## Load sample data
 
@@ -36,7 +40,7 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 
 ### Download the sample data
 
-1. Go to the [Fabric Graph GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
+1. Go to the [graph GQL example datasets](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/graph) on GitHub.
 1. Select the *adventureworks_docs_sample.zip* file and download it to your local machine.
 
     > [!TIP]
@@ -55,11 +59,14 @@ To create your graph, first load sample data into a lakehouse in your Fabric wor
 1. Enter a name (for example, "AdventureWorksLakehouse"), clear the **Lakehouse schemas** option, and select **Create**.
 
     > [!IMPORTANT]
-    > Graph doesn't currently support lakehouses with [lakehouse schema (preview) enabled](../data-engineering/lakehouse-schemas.md).
+    > Graph doesn't currently support lakehouses with [lakehouse schemas enabled](../data-engineering/lakehouse-schemas.md).
 
 ### Load the data into tables
 
 For this quickstart, you only need two tables: *adventureworks_customers* and *adventureworks_orders*. Upload the full sample data folder, and then load just these two tables.
+
+> [!NOTE]
+> You can upload the entire folder if you plan on doing the full tutorial later or want to explore the additional data.
 
 1. In your lakehouse, hover over **Files**, select the ellipsis (...), and then select **Upload** > **Upload folder**.
 1. Browse to the extracted folder and upload it. This action uploads all the sample data files to your lakehouse.
@@ -82,22 +89,26 @@ For this quickstart, you only need two tables: *adventureworks_customers* and *a
 
 After creating the graph model, you're taken to the graph view where you can see the default mode is set to **Model** with **Save**, **Get data**, **Add node**, and **Add edge** buttons at the top.
 
-## Create a graph
+## Add data to your graph model
 
-To create a graph in Microsoft Fabric, follow these steps in graph view:
+To add data to your graph model, follow these steps in graph view:
 
 1. Select **Get data**.
 1. From the OneLake catalog, select your lakehouse with the Adventure Works data.
-1. Select **Connect**.
+1. Select **Add**.
 1. Select the *adventureworks_customers* and *adventureworks_orders* tables, and then select **Load**.
 
     :::image type="content" source="./media/quickstart/get-data.png" alt-text="Screenshot showing the get data dialog with selected tables." lightbox="./media/quickstart/get-data.png":::
 
-## Add two nodes
+## Define your graph's structure
+
+Now that your data is loaded, define your graph's structure by adding nodes and edges. In this quickstart, you add two node types (`Customer` and `Order`) and one edge type (`purchases`) to model the relationship between customers and their orders.
+
+### Add two nodes
 
 1. Select **Add node**.
 1. Configure the first node:
-   - **Label**: Customer
+   - **Label**: `Customer`
    - **Mapping table**: adventureworks_customers
    - **ID of mapping column**: CustomerID_K
 
@@ -106,32 +117,35 @@ To create a graph in Microsoft Fabric, follow these steps in graph view:
 1. Select **Confirm**.
 1. Select **Add node** again.
 1. Configure the second node:
-   - **Label**: Order
+   - **Label**: `Order`
    - **Mapping table**: adventureworks_orders
    - **ID of mapping column**: SalesOrderDetailID_K
 1. Select **Confirm**.
 
-## Add one edge
+### Add one edge
 
 1. Select **Add edge**.
 1. Configure the edge:
-   - **Label**: purchases
+   - **Label**: `purchases`
    - **Mapping table**: adventureworks_orders
-   - **Source node**: Customer
+   - **Source node**: `Customer`
    - **Source mapping column**: CustomerID_FK
-   - **Target node**: Order
+   - **Target node**: `Order`
    - **Target mapping column**: SalesOrderDetailID_K
 
     :::image type="content" source="./media/quickstart/edge-add-purchases.png" alt-text="Screenshot showing the add edge dialog." lightbox="./media/quickstart/edge-add-purchases.png":::
 
 1. Select **Confirm**.
-1. Select **Save** to load the graph.
+1. Select **Save** to load the graph. Loading might take a few moments. When the graph loads successfully, you see the node and edge labels in the graph view canvas.
 
 ## Query your graph
 
 Run a GQL query to find the top five customers by order count.
 
 1. Select  **Query** mode.
+
+   :::image type="content" source="./media/quickstart/query-mode-code-editor.png" alt-text="Screenshot showing how to select query mode and the code editor." lightbox="./media/quickstart/query-mode-code-editor.png":::
+
 1. Select **Code editor** from the top menu.
 1. Enter the following GQL query in the input box:
 
@@ -143,7 +157,7 @@ Run a GQL query to find the top five customers by order count.
     LIMIT 5
     ```
 
-1. Select **Run query** to see the top five customers by order count.
+1. Select **Run query**. You should see five rows listing customer names and their order counts, sorted from most to fewest orders.
 
 The following image shows the GQL query and its results:
 
@@ -153,6 +167,6 @@ Congratulations! You created your first graph in Microsoft Fabric and ran a quer
 
 ## Next steps
 
-- [Fabric Graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries
-- [GQL language guide](gql-language-guide.md) - Learn GQL syntax
-- [What is Fabric Graph?](overview.md) - Learn about graph concepts
+- [Graph tutorial](tutorial-introduction.md) - Build a complete graph with multiple nodes, edges, and queries.
+- [GQL language guide](gql-language-guide.md) - Learn GQL syntax.
+- [What is graph in Microsoft Fabric?](overview.md) - Learn about graph concepts.

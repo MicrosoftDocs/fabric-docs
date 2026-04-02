@@ -1,17 +1,18 @@
 ---
 title: "Tutorial: Clean up graph tutorial resources"
-description: Learn how to clean up the lakehouse, graph model, and workspace resources created during the Fabric Graph tutorial series.
+description: Learn how to clean up the lakehouse, graph model, and workspace resources created during the graph in Microsoft Fabric tutorial series.
 ms.topic: tutorial
-ms.date: 03/03/2026
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Clean up graph tutorial resources
+ai-usage: ai-assisted
 ---
-
+ 
 # Tutorial: Clean up graph tutorial resources
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources can help you avoid unnecessary charges and keeps your workspace organized.
+As a final step, you can optionally clean up the resources you created during the tutorial. Cleaning up resources helps you avoid unnecessary charges and keeps your workspace organized.
 
 ## Delete the graph model
 
@@ -23,9 +24,16 @@ To delete the graph model you created:
 1. Select **Delete**.
 1. Confirm the deletion.
 
+## Delete other tutorial items
+
+If you want to keep your workspace but remove items created during the tutorial, repeat the deletion steps for:
+
+- The lakehouse (for example, "AdventureWorksLakehouse")
+- Any querysets you saved (for example, "CarlaAdams_Purchases")
+
 ## Delete the workspace
 
-If you created a new workspace specifically for this tutorial and you no longer need it, you can delete the entire workspace:
+If you created a new workspace specifically for this tutorial and you no longer need it, delete the entire workspace:
 
 1. Go to **Workspaces** from the left navigation pane.
 1. Select the workspace you want to delete.
@@ -38,7 +46,7 @@ If you created a new workspace specifically for this tutorial and you no longer 
 
 ## Tutorial complete
 
-Congratulations! You completed the Fabric Graph tutorial. You learned how to:
+Congratulations! You completed the graph in Microsoft Fabric tutorial. You learned how to:
 
 - Load sample data into a lakehouse
 - Create a graph model
@@ -51,7 +59,7 @@ Congratulations! You completed the Fabric Graph tutorial. You learned how to:
 
 ## Related content
 
-- [What is Fabric Graph?](overview.md)
+- [What is graph in Microsoft Fabric?](overview.md)
 - [GQL language guide](gql-language-guide.md)
 - [GQL quick reference](gql-reference-abridged.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)

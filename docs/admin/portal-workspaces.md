@@ -1,11 +1,12 @@
 ---
 title: Manage workspaces
 description: Learn how to view and understand info about workspaces and manage workspaces as an administrator.
-author: msmimart
+author: mimart
 ms.author: mimart
+ms.reviewer: yuturchi
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 02/18/2026
+ms.date: 03/06/2026
 ---
 
 # Manage workspaces
@@ -38,9 +39,25 @@ The following table describes the possible workspace states.
 |---------|---------|
 | **Active** | A normal workspace. It doesn't indicate anything about usage or what's inside, only that the workspace itself is "normal." |
 | **Orphaned** | A workspace with no admin user. You need to assign an admin. |
-| **Deleted** | A deleted workspace. When a workspace is deleted, it enters a retention period. During the retention period, a Microsoft Fabric administrator can restore the workspace. See [Workspace retention](#workspace-retention) for detail. When the retention period ends, the workspace enters the *Removing* state.|
+| **Deleted** | A deleted workspace. When a workspace is deleted, it enters a retention period. During the retention period, a Microsoft Fabric administrator can restore the workspace. See [Retention and recovery](retention-recovery.md) for detail. When the retention period ends, the workspace enters the *Removing* state.|
 | **Removing** | At the end of a deleted workspace's retention period, it moves into the *Removing* state. During this state, the workspace is permanently removed. Permanently removing a workspace takes a short while, and depends on the service and folder content. |
 | **Not found** | If the customer's API request includes a workspace ID for a workspace that doesn't belong to the customer's tenant, "Not found" is returned as the status for that ID. |
+
+## Retention and recovery
+
+Fabric provides retention and recovery capabilities at both the workspace and item levels. When workspaces or items are deleted, they enter a retention period during which administrators can restore them.
+
+**Workspace retention:**
+- Personal workspaces (*My workspaces*) have a fixed 30-day retention period
+- Collaborative workspaces have a configurable retention period (default 7 days, adjustable from 7 to 90 days)
+- Administrators can restore deleted workspaces or permanently delete them before the retention period expires
+
+**Item retention:**
+- Individually deleted items have a configurable retention period (default 7 days, adjustable from 7 to 90 days)
+- Administrators and workspace admins can restore deleted items using REST APIs
+- Administrators can permanently delete items before the retention period expires
+
+For detailed instructions on setting up retention periods, restoring workspaces and items, and permanently deleting resources, see [Retention and recovery in Fabric](retention-recovery.md).
 
 ## Workspace options
 
@@ -56,8 +73,8 @@ The ribbon at the top of the list and the More options (...) menus of the indivi
 | **Get access** |Grants you temporary access to another user's MyWorkspace. See [Gain access to any user's My workspace](#gain-access-to-any-users-my-workspace) for detail.|
 | **Capacity** |Enables you to assign the workspace to Premium capacity or to remove it from Premium capacity. |
 | **Recover** |Enables you to restore an orphaned workspace. |
-| **Restore** |Enables you to restore the MyWorkspace of a user that left the organization, or a deleted collaborative workspace. For MyWorkspaces, see [Restore a deleted My workspace as an app workspace](#restore-a-deleted-my-workspace-as-an-app-workspace). For collaborative workspaces, see [Restore a deleted collaborative workspace](#restore-a-deleted-collaborative-workspace) |
-| **Permanently delete** |Enables you to permanently delete a deleted collaborative workspace before the end of its retention period. See [Permanently delete a deleted collaborative workspace during the retention period](#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
+| **Restore** |Enables you to restore the MyWorkspace of a user that has left the organization, or a deleted collaborative workspace. For MyWorkspaces, see [Restore a deleted My workspace as an app workspace](workspace-retention.md#restore-a-deleted-my-workspace-as-an-app-workspace). For collaborative workspaces, see [Restore a deleted collaborative workspace](workspace-retention.md#restore-a-deleted-collaborative-workspace) |
+| **Permanently delete** |Enables you to permanently delete a deleted collaborative workspace before the end of its retention period. See [Permanently delete a deleted collaborative workspace during the retention period](workspace-retention.md#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
 
 >[!NOTE]
 > Admins can also manage and recover workspaces using PowerShell cmdlets.
@@ -73,51 +90,6 @@ Users attempting to create new items after this limit is reached get an error in
 > [!NOTE]
 > If specific items have limits, those limits still apply, but the total number of items in the workspace is still capped at a 1000. For item specific limits, review the item type' documentation.
 
-## Workspace retention
-
-By default, when a workspace is deleted, it isn't permanently and irrevocably deleted immediately. Instead, it enters a retention period during which it's possible to restore it. At the end of the retention period, the workspace is removed permanently, and it's no longer be possible to recover it or its contents.
-
-The retention period for personal workspaces (*My workspaces*) is 30 days.
-
-The retention period for collaborative workspaces is configurable. The default retention period is seven days. However, Fabric administrators can change the length of the retention period by turning on the **Define workspace retention period**
-setting in the admin portal and specifying the desired retention period (from 7 to 90 days).
-
-During the retention period, Fabric administrators can [restore the workspace](#restore-a-deleted-collaborative-workspace).
-
-At the end of the retention period, the workspace is deleted permanently and it and its contents are irretrievably lost.
-
-While a workspace is in the retention period, Fabric administrators can [permanently delete it before the end of the retention period](#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period).
-
-### Configure the retention period for deleted collaborative workspaces
-
-By default, deleted collaborative workspaces are retained for seven days. Fabric administrators can change the length of the retention period (from 7 to 90 days) using the **Define workspace retention period** tenant setting.
-
-1. In the Fabric admin portal, go to **Workspace settings** > **Define workspace retention period**.
-1. Turn on the setting and enter the number of days for desired retention period. You can choose anywhere from 7 to 90 days.
-1. When done, select **Apply**.
-
-> [!NOTE]
-> When the **Define workspace retention period** setting is off, deleted collaborative workspaces automatically have a retention period of 7 days.
->
-> This setting doesn't affect the retention period of *My workspaces*. *My workspaces* always have a 30-day retention period.
-
-### Restore a deleted collaborative workspace
-
-While a deleted collaborative workspace is in a retention period, Fabric administrators can restore it and its contents.
-
-1. In the Fabric admin portal, open the Workspaces page and find the deleted collaborative workspace you want to restore. Collaborative workspaces are of type *Workspace*. A workspace that is in a retention period has the status *Deleted*.
-1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
-1. In the Restore workspaces panel that appears, give a new name to the workspace and assign at least one user the Admin role in the workspace.
-1. When done, select **Restore**.
-
-### Permanently delete a deleted collaborative workspace during the retention period
-
-While a deleted collaborative workspace is in a retention period, Fabric administrators permanently delete it before the end of its retention period.
-
-1. In the Fabric admin portal, open the Workspaces page and find the deleted collaborative workspace you want to restore. Collaborative workspaces are of type *Workspace*. A workspace that is in a retention period has the status *Deleted*.
-1. Select the workspace and then choose **Permanently delete** from the ribbon, or select **More options (...)** and choose **Permanently delete**.
-
-You're asked to confirm the permanent deletion. After you confirm, the workspace and its contents are no longer recoverable.
 
 ## Reassign a workspace to a different capacity
 
@@ -146,7 +118,7 @@ Every Fabric user has a personal workspace called My workspace where they can wo
 * [Gain access to the contents of any user's My workspace](#gain-access-to-any-users-my-workspace)
 * [Designate a default capacity for all existing and new My workspaces](#designate-a-default-capacity-for-my-workspaces)
 * [Prevent users from moving My workspaces to a different capacity that might reside in noncompliant regions](#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity)
-* [Restore deleted My workspaces as app workspaces](#restore-a-deleted-my-workspace-as-an-app-workspace)
+* [Restore deleted My workspaces as app workspaces](workspace-retention.md#restore-a-deleted-my-workspace-as-an-app-workspace)
 
 These features are described in the following sections.
 
@@ -173,21 +145,6 @@ For details, see [Designate a default capacity for My workspaces](/power-bi/ente
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
 Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace is assigned to Power BI Premium capacity, the owner of the workspace can still move it back to Power BI Pro workspace type. Moving a workspace from Power BI Premium workspace type to Power BI Pro workspace type might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different workspace type by turning on the **Block users from reassigning personal workspaces (My Workspace)** tenant setting. See [Workspace settings](./portal-workspace.md) for detail.
-
-### Restore a deleted My workspace as an app workspace
-
-When users are deleted from the company's Active Directory, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. Fabric admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
-
-During this restoration process, the Fabric admin needs to assign at least one Workspace admin in the new app workspace, and give the new workspace a name. After the workspace is restored, it will show up as *Workspace* in the Type column on the Workspaces page in the Admin portal.
-
-To restore a deleted My workspace as an app workspace
-
-1. In the Fabric Admin portal, open the Workspaces page and find the deleted personal workspace you want to restore.
-1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
-1. In the Restore workspaces panel that appears, give a new name to the workspace and assign at least one user the Admin role in the workspace.
-1. When done, select **Restore**.
-
-After the deleted workspace is restored as an app workspace, it's just like any other app workspace. 
 
 ## Moving data around
 

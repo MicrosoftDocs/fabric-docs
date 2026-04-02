@@ -13,6 +13,9 @@ Use custom Spark pools to tailor compute for your workloads in Fabric. You can c
 
 Custom pools help you balance performance and cost by letting you set scaling limits that match workload demand.
 
+> [!NOTE]
+> Custom Spark pools can achieve approximately 5-second session starts when configured as a [custom live pool](custom-live-pools-overview.md) with an environment that uses Full mode for library publishing. Without a live pool configuration, custom Spark pools take about three minutes to start.
+
 If you already use starter pools, custom pools are a complementary option when you need more control over sizing and scaling behavior for specific workloads. Use starter pools for fast startup and default settings, and move to custom pools when you need workload-specific compute tuning. To learn more about starter pools, see [Configure starter pools in Fabric](configure-starter-pools.md).
 
 ## Prerequisites
@@ -57,7 +60,10 @@ To create or manage the Spark pool associated with your workspace:
 
 1. Select **Create**.
 
-Custom pools have a default autopause duration of 2 minutes after inactivity. When autopause is reached, the session expires and the cluster deallocates. Billing applies only while compute is actively used. Custom Spark pools in Microsoft Fabric currently support a maximum node limit of 200, so make sure your minimum and maximum autoscale values remain within this limit.
+> [!TIP]
+> After you create a custom Spark pool, library deployment timing depends on the publishing mode in the attached environment. Quick mode publishes in about 5 seconds and installs libraries at session start. Full mode takes 3 to 6 minutes to publish and deploys libraries as part of session startup (1 to 3 minutes). For the fastest experience, configure the pool as a [custom live pool](custom-live-pools-overview.md) with Full mode to achieve approximately 5-second session starts.
+
+Custom pools have a default autopause duration of 2 minutes after inactivity.When autopause is reached, the session expires and the cluster deallocates. Billing applies only while compute is actively used. Custom Spark pools in Microsoft Fabric currently support a maximum node limit of 200, so make sure your minimum and maximum autoscale values remain within this limit.
 
 ## Node size options
 
@@ -75,3 +81,4 @@ When you set up a custom Spark pool, you choose from the following node sizes:
 
 - Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 - Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
+- [Manage libraries in Fabric environments](environment-manage-library.md)

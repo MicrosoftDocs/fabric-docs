@@ -1,10 +1,11 @@
 ---
-title: "Tutorial: Create a Graph Model in Microsoft Fabric"
+title: "Tutorial: Create a graph model in Microsoft Fabric"
 description: Learn how to create a new graph model in Microsoft Fabric, including loading data from OneLake and configuring graph properties.
 ms.topic: tutorial
-ms.date: 03/03/2026
+ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Create a graph
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Create a graph
@@ -17,7 +18,7 @@ This step assumes you already [loaded the sample data](tutorial-load-data.md) in
 
 ## Create a graph model
 
-1. In [Microsoft Fabric](https://fabric.microsoft.com/), select the workspace where you want to create the graph model.
+1. In [Microsoft Fabric](https://fabric.microsoft.com/), select the workspace where you want to create the graph model (for example, *My workspace*).
 1. Select **+ New item**.
 1. Select **Analyze and train data** > **Graph model (preview)**.
 
@@ -26,7 +27,7 @@ This step assumes you already [loaded the sample data](tutorial-load-data.md) in
     > [!TIP]
     > Alternatively, enter "graph" in the search box and press **Enter** to search for graph items.
 
-1. Enter a name for your graph model (for example, "AdventureWorksGraph") and select **Create**.
+1. Enter a name for your graph model, such as `AdventureWorksGraph`, and select **Create**.
 
 After creating the graph model, you're taken to the graph view where you can see **Save**, **Get data**, **Add node**, and **Add edge** buttons.
 
@@ -35,14 +36,14 @@ After creating the graph model, you're taken to the graph view where you can see
 To load data into your graph from OneLake, follow these steps:
 
 1. In your graph model, select **Get data**.
-1. From the OneLake catalog, select the data from Fabric that you want to use in your graph.
+1. In the **OneLake catalog** dialog, select your lakehouse (for example, *AdventureWorksLakehouse*), and then select **Add**.
 
    :::image type="content" source="./media/quickstart/graph-data-select.png" alt-text="Screenshot showing the data selection menu in OneLake." lightbox="./media/quickstart/graph-data-select.png":::
 
-1. Select **Connect**.
-1. Select the data tables you want to use. In this tutorial, select all the Adventure Works tables you previously loaded into your lakehouse. Then select **Load**.
+1. In the **Choose data** pane, select your lakehouse (for example, *AdventureWorksLakehouse*) to automatically select all tables under it.
+1. Select **Load**.
 
-You should now see the data available for use in your graph.
+You should now see the eight tables from your lakehouse listed in the data pane, available for use in your graph.
 
    :::image type="content" source="./media/quickstart/graph-data-view.png" alt-text="Screenshot showing the data view in the graph model." lightbox="./media/quickstart/graph-data-view.png":::
 
