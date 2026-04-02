@@ -1,9 +1,9 @@
 ---
 title: Fabric Workspace Item events connector for Fabric event streams
-description: This include files has the common content for configuring Fabric Workspace Item events connector for Fabric event streams and Real-Time hub. 
+description: The include files has the common content for configuring Fabric Workspace Item events connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 03/18/2025
+ms.date: 04/02/2026
 ---
 
 1. On the **Connect** screen, first select  **Event type(s)** of interest that you want to capture in the eventstream. By default, all supported events are captured.

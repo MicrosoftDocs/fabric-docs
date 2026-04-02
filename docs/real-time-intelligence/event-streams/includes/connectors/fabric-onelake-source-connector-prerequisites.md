@@ -25,3 +25,4 @@ Here are the supported OneLake events:
 ## Prerequisites
 
 - Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+- SusbcribeOneLakeEvent permission on the data sources.

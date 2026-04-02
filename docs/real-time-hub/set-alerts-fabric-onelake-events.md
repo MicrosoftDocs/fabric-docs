@@ -60,10 +60,10 @@ Do steps from one of the following sections, which opens a side panel where you 
         1. Select the data source from the list. 
         1. Select **Next** at the bottom of the page. 
     
-            :::image type="content" source="./media/create-streams-onelake-events/select-data-source.png" alt-text="Screenshot that shows the selection of a specific OneLake data source." lightbox="./media/create-streams-onelake-events/select-data-source.png":::       
+            :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-data-source.png" alt-text="Screenshot that shows the selection of a specific OneLake data source." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-data-source.png":::       
         1. Select all tables or a specific table that you're interested in, and then select **Add**. 
 
-            :::image type="content" source="./media/create-streams-onelake-events/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="./media/create-streams-onelake-events/select-tables.png":::       
+            :::image type="content" source="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-tables.png" alt-text="Screenshot that shows the selection of all tables." lightbox="../real-time-intelligence/event-streams/includes/connectors/media/fabric-onelake-source-connector/select-tables.png":::       
 
         > [!NOTE]
         > OneLake events are supported for data in OneLake. However, events for data in OneLake via shortcuts aren't yet available.
