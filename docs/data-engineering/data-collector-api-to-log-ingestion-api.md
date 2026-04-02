@@ -18,6 +18,7 @@ This article shows how to configure emitter properties, route Apache Spark logs,
 
 For architecture and destination selection across the Fabric Apache Spark Diagnostic Emitter, see [Fabric Apache Spark Diagnostic Emitter overview](spark-diagnostic-emitter-overview.md).
 
+
 ## Migrate from the Data Collector API
 
 If you're currently using HTTP Data Collector API, migrate to Log Ingestion API to align with current Azure Monitor ingestion patterns.

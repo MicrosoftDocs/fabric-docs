@@ -54,7 +54,7 @@ If you're evaluating how to bridge these gaps, it often helps to look at your or
 |---|---|---|
 | Siloed | Manual | Spreadsheets for planning, manual exports for reporting |
 | Connected | Automated | Automated data pipelines (ETL) feeding into a central warehouse |
-| Integrated | Unified | Planning and analytics happen in the same environment with write-back capabilities |
+| Integrated | Unified | Planning and analytics happen in the same environment with writeback capabilities |
 
 ## Plan components
 
@@ -70,7 +70,7 @@ Each component is designed to solve a critical business need while working seaml
 
 * Create **multi-dimensional** and **flexible planning models**
 * Support **top-down** and **bottom-up planning** across teams and departments
-* Enable **real-time collaboration** and **data write-back** for synchronized updates
+* Enable **real-time collaboration** and **data writeback** for synchronized updates
 * Build **driver-based models** and **scenario planning** to evaluate business outcomes
 * Manage **hierarchical planning structures** across organizational units
 * Generate **rolling forecasts** to keep plans aligned with changing business needs
@@ -85,7 +85,7 @@ Each component is designed to solve a critical business need while working seaml
 * Analyze hierarchical data with **drill-down**, **variance analysis**, and comparisons
 * Manage and update data directly to the database **without writing complex queries**
 * Interact with tables through multi-user editing, **dynamic filters**, and expandable views
-* Enable controlled data input and **write-back** for preserving data integrity
+* Enable controlled data input and **writeback** for preserving data integrity
 * Manage tasks and timelines using **Gantt charts** and **workflow approvals**
 * Automate repetitive tasks such as **scheduling** and **cascading** table updates
 * Structured data entry through forms

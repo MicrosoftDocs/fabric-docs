@@ -1,29 +1,27 @@
 ---
 title: InfoBridge in plan (preview)
-description: Learn about the InfoBridge component of the plan (preview) item. Infobridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports easily.
-ms.date: 03/11/2026
+description: Learn about the InfoBridge component of the plan (preview) item. InfoBridge is a no-code data integration and transformation tool to connect multiple data sources, prepare data, and create unified reports.
+ms.date: 03/30/2026
 ms.topic: overview
+ai-usage: ai-assisted
 #customer intent: As a user, I want to use InfoBridge to consolidate my plans, budgets, simulations, and forecasts across source systems and reports.
 ---
 
 # What is InfoBridge in plan (preview)?
 
-The *InfoBridge* component of plan (preview) is a no-code data integration, preparation, and transformation engine that lets you connect to multiple data sources and consolidate them into a single, unified report. It has a user-friendly transformation interface to perform common data transformations on data sources, such as appending, merging, pivoting, un-pivoting, and grouping data.
+The *InfoBridge* component of plan (preview) is a no-code data integration, preparation, and transformation engine that lets you connect to multiple data sources and consolidate them into a single, unified report. You can also perform common data transformations on data sources, such as appending, merging, pivoting, un-pivoting, and grouping data.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
 ## Why use InfoBridge?
 
-InfoBridge can help with many use cases that typically require composite modeling, ETL and automation tools, complex DAX & SQL scripting, extensive BI expertise, and IT overheads.
+Business reporting and planning often involve multi-page reports with data at varying granularities. InfoBridge enables you to consolidate data from multiple visuals into a single writeback table. This simplifies data management and ensures consistency across reports. Without InfoBridge, each visual would need to write back to its own table, requiring you to maintain multiple tables separately. InfoBridge solves many use cases that typically require composite modeling, ETL and automation tools, complex DAX and SQL scripting, extensive BI expertise, and IT overheads. 
 
-InfoBridge offers these features:
+>[!NOTE]
+>**Best practice**  
+>Use a single writeback table whenever possible. This approach minimizes maintenance overhead and makes it easier to consume data in consolidated P&L statements or executive dashboards.
 
-* **No code platform**: InfoBridge offers a no-code experience for use cases that would normally demand intensive DAX and composite modeling.
-* **Visual data integration**: With InfoBridge, you can seamlessly access data from any Planning sheet in real time. Pull data from different visuals without ETL expertise.
-* **Pivoting data**: You can add pivot and un-pivot dimensions and measures on demand. Adding new dimensions or pivoting data can be done with a few clicks instead of using complex SQL and DAX scripts.
-* **Write-back**: InfoBridge allows the consolidation of multiple visuals into a single write-back table. Without InfoBridge, you'd need to write back to separate tables and maintain each of them.
-
-### Where to use InfoBridge
+## Use cases for InfoBridge
 
 * **Regional and global budgeting**: Manage regional budgets with dedicated pages for each region, consolidated into a global budget page.
 * **Operational expense planning**: Plan expenses at a granular level (for example, salary plans at the employee level) and consolidate them into broader expense categories.
@@ -44,32 +42,6 @@ The following table lists the core capabilities of InfoBridge.
 | **Advanced data transformation** | Join, merge, append, group, and pivot rows and columns. |
 | **Data cleansing functions** | Built-in data cleansing functions, such as rounding, text manipulation, find-and-replace, and sorting to help standardize, clean, and organize datasets. |
 
-## Overview of InfoBridge steps
-
-### Prerequisites
-
-Before you create an InfoBridge, make sure that you have the following prerequisites in place:
-
-* **Access to the InfoBridge-enabled environment** within your planning or reporting platform.
-* **Required permissions** to create or modify data models, reports, or Planning sheets.
-* **Source datasets available** (for example: sales data, expense data, product-level reports, or operational datasets).
-* **Configured data connections** to the required data sources (such as databases, files, or existing reports).
-* **Basic understanding of the data structure** (tables, fields, and relationships).
-* **Existing reports or Planning sheets** where the InfoBridge output is used.
-* **Defined planning or transformation requirements** (such as aggregations, mappings, or calculations).
-
-### Create an InfoBridge
-
-Follow these steps to get started with InfoBridge:
-
-1. **Identify the source data**: Select the datasets or reports that act as the input for the InfoBridge.
-1. **Define the transformation logic**: Determine how the data needs to be transformed, mapped, or aggregated before being used in planning or reporting.
-1. **Create the InfoBridge configuration**: Set up the InfoBridge by defining the source tables, target tables, and transformation rules.
-1. **Map fields and dimensions**: Map the required fields between the source data and the destination planning structure.
-1. **Configure aggregations or calculations**: Add any required calculations, roll-ups, or data transformations needed for the planning model.
-1. **Connect to the target report or Planning sheet**: Link the InfoBridge output to the report, dashboard, or Planning sheet where the data is used.
-1. **Validate the data flow**: Test the InfoBridge to ensure that the data is transformed and transferred correctly.
-1. **Publish and use the InfoBridge**: Save and deploy the configuration so users can start using the updated data in their planning and reporting workflows.
 
 ## Next steps
  

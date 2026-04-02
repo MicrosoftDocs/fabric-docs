@@ -118,8 +118,6 @@ items:
       displayName: Create a warehouse snapshot
     - name: Analyze with range bands
       href: analyze-range-bands.md
-    - name: Datamart upgrade to warehouse
-      href: datamart-upgrade-to-warehouse.md
     - name: Create an IDENTITY column
       href: tutorial-identity.md
 - name: Dimensional modeling

@@ -1,0 +1,45 @@
+---
+title: Apache Kafka connector for Fabric event streams
+description: This file has the common content for configuring Apache Kafka connector for Fabric event streams and Real-Time hub. 
+ms.reviewer: xujiang1
+ms.topic: include
+ms.date: 03/31/2026
+---
+
+1. On the **Connect** page, select **New connection**.
+
+    :::image type="content" source="./media/apache-kafka-source-connector/new-connection-link.png" alt-text="Screenshot that shows the selection of the New connection link on the Connect page of the Get events wizard.":::    
+1. In the **Connection settings** section, for **Bootstrap Server**, enter one or more Kafka bootstrap server addresses. Separate multiple addresses with commas (,).
+
+    :::image type="content" source="./media/apache-kafka-source-connector/bootstrap-server.png" alt-text="Screenshot that shows the selection of the Apache Kafka Bootstrap server field on the Connect page of the Get events wizard.":::   
+1. In the **Connection credentials** section, If you have an existing connection to the Apache Kafka cluster, select it from the dropdown list for **Connection**. Otherwise, follow these steps: 
+    1. For **Connection name**, enter a name for the connection. 
+    1. For **Authentication kind**, confirm that **API Key** is selected. 
+    1. For **Key** and **Secret**, enter API key and key Secret.  
+        > [!NOTE]
+        > If you only use mTLS to do the authentication, you can add any string in the Key section during connection creation.     
+1. Select **Connect**.  
+1. Now, on the Connect page, follow these steps.  
+    1. For **Topic**, enter the Kafka topic. 
+    1. For **Consumer group**, enter the consumer group of your Apache Kafka cluster. This field provides you with a dedicated consumer group for getting events.  
+    1. Select **Reset auto offset** to specify where to start reading offsets if there's no commit. 
+    1. For **Security protocol**, select one of the following options: 
+        - **SASL_SSL**: Use this option when your Kafka cluster uses SASL-based authentication. By default, the Kafka broker’s server certificate must be signed by a Certificate Authority (CA) included in the [trusted CA list](https://github.com/microsoft/fabric-event-streams/blob/main/References/certificate-authority-list/trusted-ca-list.txt). If your Kafka cluster uses a custom CA, you can configure it by using **TLS/mTLS settings**.
+        - **SSL (mTLS)**: Use this option when your Kafka cluster requires mTLS authentication, and you must configure both a custom server CA certificate and a client certificate in **TLS/mTLS settings**.
+    1. The default **SASL mechanism** is typically **PLAIN**, unless configured otherwise. You can select the **SCRAM-SHA-256** or **SCRAM-SHA-512** mechanism that suits your security requirements.   
+    1.  If your Kafka cluster uses a custom CA or requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed:
+
+        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group, and key vault, and then provide the server ca name. 
+        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group, and key vault, and then provide the client certificate name. 
+
+            If you don’t use mTLS but still use **SASL_SSL** with your custom CA cert, then you can skip this client certificate configuration.  
+
+        > [!NOTE]
+        > The TLS/mTLS settings in this section are currently in preview.
+        >
+        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector virtual network injection (for example, via a private endpoint).
+
+    :::image type="content" source="./media/apache-kafka-source-connector/configure-source-section.png" alt-text="Screenshot that shows the first page of the Apache Kafka connection settings." lightbox="./media/apache-kafka-source-connector/configure-source-section.png":::   
+
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add**.
+
