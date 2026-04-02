@@ -4,6 +4,7 @@ description: Learn how to set workspace variable to shortcuts properties
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 05/30/2025
+ai-usage: ai-assisted
 #customer intent: As a data engineer, I want to learn how to integrate shortcuts into my CI/CD pipeline.
 ---
 
@@ -16,6 +17,8 @@ When deploying solutions across environments, you may want to configure properti
 You can use workspace variables within individual shortcut properties. This allows you to have unique values for properties like connection ID or target location for each environment. Workspace variables and variable values sets can be defined within a variable library. See: [Learn how to use Variable libraries ](../cicd/variable-library/variable-library-overview.md). 
 
 Once a variable is defined within a variable library, it can be assigned to a shortcut property using the manage shortcuts UX.
+
+Currently, Variable Library is the supported option for assigning shortcut variables across environments. Other assignment methods, including REST API assignment, aren't currently supported.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
@@ -39,5 +42,5 @@ Once a variable is defined within a variable library, it can be assigned to a sh
 > Only variables of type string are supported. Selecting a variable of any other type  results in an error.
 
 > [!NOTE]
-> Assignment of workspace variables through the shortcuts REST API is not currently supported.
+> Assignment of workspace variables through the shortcuts REST API isn't currently supported.
  
