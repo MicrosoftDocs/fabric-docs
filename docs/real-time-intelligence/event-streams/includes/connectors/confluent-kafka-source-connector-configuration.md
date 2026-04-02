@@ -1,9 +1,9 @@
 ---
 title: Confluent Cloud for Apache Kafka connector for Fabric event streams
-description: This include files has the common content for configuring Confluent Cloud for Apache Kafka connector for Fabric event streams and Real-Time hub. 
+description: This file has the common content for configuring Confluent Cloud for Apache Kafka connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 03/09/2026
+ms.date: 04/02/2026
 ---
 
 1. On the **Select a data source** page, select **Confluent Cloud for Apache Kafka**. 
@@ -33,24 +33,24 @@ ms.date: 03/09/2026
     1. For **Reset auto offset** setting, select one of the following values:
         - **Earliest** – the earliest data available from your Confluent cluster.
         - **Latest** – the latest available data.
-        - **None** – Do not automatically set the offset.
+        - **None** – Don't automatically set the offset.
 
         > [!NOTE]
         > The **None** option isn't available during this creation step. If a committed offset exists and you want to use **None**, you can first complete the configuration and then update the setting in the Eventstream edit mode. 
     1. If your Kafka cluster requires mTLS, expand **TLS/mTLS settings** and configure the following options as needed.  
         When both **Trust CA Certificate** and **Client certificate and key** are enabled and configured, the system automatically uses **mTLS** to establish the connection. No separate security protocol selection is required.
 
-        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group and key vault, and then provide the server ca name. 
-        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group and key vault, and then provide the client certificate name. 
+        - **Trust CA Certificate**: Enable Trust CA Certificate configuration. Select your subscription, resource group, and key vault, and then provide the server ca name. 
+        - **Client certificate and key**: Enable Client certificate and key configuration. Select your subscription, resource group, and key vault, and then provide the client certificate name. 
 
         > [!NOTE]
         > The TLS/mTLS settings in this section are currently in preview, including **Trust CA Certificate**, **Client certificate and key**, and **Additional settings**.
         >
-        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector vNet injection (for example, via a private endpoint).
+        > For sources in a private network, ensure that the Azure Key Vault containing your certificates is connected to the Azure virtual network used by the streaming virtual network data gateway for Eventstream connector virtual network injection (for example, via a private endpoint).
 
          :::image type="content" source="./media/confluent-kafka-source-connector/configure-data-source.png" alt-text="Screenshot that shows the second page - Configure Confluent data source page - of the Confluent connection settings."::: 
     
-    1. You may expand **Additional settings** to configure **TLS verify hostname**, **TLS cipher suites** and **TLS revocation mode**:
+    1. You may expand **Additional settings** to configure **TLS verify hostname**, **TLS cipher suites, and **TLS revocation mode**:
         - **TLS verify hostname**: Controls whether hostname verification is enabled for the TLS connection. The default value is **True**.
         - **TLS cipher suites**: Specifies which TLS cipher suites the client can use. The default value is **Use system defaults**.
         - **TLS revocation mode**: Controls whether client certificate revocation checking is enabled for the TLS connection. The default value is **Off**.
