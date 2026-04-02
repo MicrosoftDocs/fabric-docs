@@ -15,7 +15,7 @@ This tutorial walks you through implementing a medallion architecture by using m
 
 Before you begin, complete these prerequisites:
 
-1. [Sign in to your Fabric account](https://powerbi.com/), or sign up for a trial if you don't have one.
+1. [Sign in to your Power BI account](https://powerbi.com/), or sign up for a trial if you don't have one.
 1. [Enable Microsoft Fabric](../../admin/fabric-switch.md) in your tenant.
 1. [Create a Fabric-enabled workspace](../../fundamentals/create-workspaces.md).
 1. [Create a Lakehouse with schemas](../lakehouse-schemas.md#create-a-lakehouse-schema) enabled, and name it **SalesLakehouse**.
