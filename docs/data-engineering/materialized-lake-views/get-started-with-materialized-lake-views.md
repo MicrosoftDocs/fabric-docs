@@ -1,26 +1,26 @@
 ---
 title: Get Started with Materialized Lake Views in a Microsoft Fabric Lakehouse
-description: Learn how to create your first materialized lake view in a Microsoft Fabric lakehouse.
+description: Learn how to create your first materialized lake view in a Microsoft Fabric Lakehouse.
 ms.topic: quickstart
 ms.reviewer: abhishjain
 ms.date: 04/02/2026
-#customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric lakehouse so that I can optimize query performance and manage data quality.
+#customer intent: As a data engineer, I want to create materialized lake views in a Microsoft Fabric Lakehouse so that I can optimize query performance and manage data quality.
 ---
 
 # Get started with materialized lake views
 
-In this quickstart, you create source tables in a Microsoft Fabric lakehouse, define materialized lake views that transform the data, and schedule automatic refresh. By the end, you have a working bronze-to-gold pipeline with lineage tracking.
+In this quickstart, you create source tables in a Microsoft Fabric Lakehouse, define materialized lake views that transform the data, and schedule automatic refresh. By the end, you have a working bronze-to-gold pipeline with lineage tracking.
 
 ## Prerequisites
 
 * A [workspace](../../fundamentals/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity).
-* A lakehouse with [lakehouse schemas](../lakehouse-schemas.md) enabled and [Fabric Runtime 1.3](../runtime-1-3.md). 
+* A Lakehouse with [Lakehouse schemas](../Lakehouse-schemas.md) enabled and [Fabric Runtime 1.3](../runtime-1-3.md). 
 
 ## Create your first materialized lake view
 
 1. Go to the [Fabric portal](https://app.fabric.microsoft.com/) and navigate to your workspace.
 
-1. Open your lakehouse and select **Materialized lake views**.
+1. Open your Lakehouse and select **Materialized lake views**.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png" alt-text="Screenshot that shows the menu item for managing materialized lake views." border="true" lightbox="./media/get-started-with-materialized-lake-views/manage-materialized-lake-views.png":::
 
@@ -31,7 +31,7 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
    A new notebook opens with a template to create a materialized lake view.
 
    > [!NOTE]
-   > If you are using a Fabric Data Warehouse table as source for materialized lake view, you are required to create a table shortcut in your Lakehouse.
+   > If you are using a Fabric Data Warehouse table as a source for a materialized lake view, you are required to create a table shortcut in your Lakehouse.
 
 1. Create the source tables `products` and `orders`. Enter the following SQL command into the existing notebook cell and run it:
 
@@ -62,9 +62,9 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
       (1003, 102, 3, '2025-06-03');
    ```
 
-1. Refresh the lakehouse explorer to view the newly created `products` and `orders` tables under the `bronze` schema. Select **+ Code** to add a new cell below the existing one.
+1. Refresh the  explorer to view the newly created `products` and `orders` tables under the `bronze` schema. Select **+ Code** to add a new cell below the existing one.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/source-tables-created.png" alt-text="Screenshot that shows source tables created in a lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/source-tables-created.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/source-tables-created.png" alt-text="Screenshot that shows source tables created in a Lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/source-tables-created.png":::
 
 1. Enable change data feed (CDF) on the source tables so that [optimal refresh can use incremental processing](./refresh-materialized-lake-view.md). Copy the following SQL command into the new cell and run it:
 
@@ -109,9 +109,9 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
       product_name;
    ```
 
-1. Refresh the lakehouse explorer to view the newly created materialized lake views `cleaned_order_data` and `product_sales_summary` under the `silver` and `gold` schemas, respectively.
+1. Refresh the Lakehouse explorer to view the newly created materialized lake views `cleaned_order_data` and `product_sales_summary` under the `silver` and `gold` schemas, respectively.
 
-   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png" alt-text="Screenshot that shows materialized lake views created in a lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png":::
+   :::image type="content" source="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png" alt-text="Screenshot that shows materialized lake views created in a Lakehouse." border="true" lightbox="./media/get-started-with-materialized-lake-views/materialized-lake-views-created.png":::
 
 1. You can further verify the results by querying the gold materialized lake view. Copy the following SQL command into a new cell and run it:
 
@@ -121,7 +121,7 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
 
    The output shows three rows — one for each product — with the total quantity sold, total revenue, and average order value calculated from the source orders data.
 
-1. Close the notebook and go back to your lakehouse. Select **Materialized lake views**. You might need to select the refresh icon to view the autogenerated lineage.
+1. Close the notebook and go back to your Lakehouse. Select **Materialized lake views**. You might need to select the refresh icon to view the autogenerated lineage.
 
    :::image type="content" source="./media/get-started-with-materialized-lake-views/sample-lineage.png" alt-text="Screenshot that shows lineage." border="true" lightbox="./media/get-started-with-materialized-lake-views/sample-lineage.png":::
   
@@ -150,7 +150,7 @@ In this quickstart, you create source tables in a Microsoft Fabric lakehouse, de
 
 Now that you have a scheduled lineage refresh, Fabric automatically keeps your materialized lake views up to date as source data changes. When new rows are inserted into the `bronze.orders` or `bronze.products` tables, the next scheduled run detects the changes, refreshes the `silver.cleaned_order_data` view first (because the gold view depends on it), and then refreshes `gold.product_sales_summary` with the updated totals. You don't need to manage refresh order or write orchestration logic — Fabric handles it based on the lineage graph.
 
-To learn more about refresh behavior and how Fabric determines the optimal strategy (incremental, full, or skip), see [Optimal refresh for materialized lake views in a lakehouse](./refresh-materialized-lake-view.md). For a complete end-to-end walkthrough that demonstrates these concepts with a larger dataset, see [Tutorial: Implement medallion architecture with materialized lake views](./tutorial.md).
+To learn more about refresh behavior and how Fabric determines the optimal strategy (incremental, full, or skip), see [Optimal refresh for materialized lake views in a Lakehouse](./refresh-materialized-lake-view.md). For a complete end-to-end walkthrough that demonstrates these concepts with a larger dataset, see [Tutorial: Implement medallion architecture with materialized lake views](./tutorial.md).
 
 ## Related content
 
