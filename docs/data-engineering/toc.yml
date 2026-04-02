@@ -145,7 +145,7 @@ items:
       - name: Session management
         href: notebookutils/notebookutils-session-management.md
       - name: User Data Function (UDF) utilities
-        href: notebookutils/notebookutils-udf.md
+        href: notebookutils/notebookutils-user-data-function.md
       - name: Variable library utilities
         href: notebookutils/notebookutils-variable-library.md
     - name: Run notebooks in high concurrency mode
@@ -567,7 +567,7 @@ items:
       - name: Integration with Fabric pipelines
         href: ./user-data-functions/create-functions-activity-data-pipelines.md
       - name: Integration with Fabric notebooks
-        href: ./notebookutils/notebookutils-udf.md
+        href: ./notebookutils/notebookutils-user-data-function.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: Manage

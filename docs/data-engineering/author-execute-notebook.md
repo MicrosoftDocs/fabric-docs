@@ -355,7 +355,7 @@ A step-by-step cell execution status is displayed beneath the cell to help you s
 
 #### Session timeout config
 
-In the bottom left corner, you can select on the session status to get more information about the current session:
+In the bottom left corner, you can select the session status to get more information about the current session:
 
 :::image type="content" source="media/author-execute-notebook/session-info.png" alt-text="Screenshot that shows Session Information." lightbox="media/author-execute-notebook/session-info.png":::
 

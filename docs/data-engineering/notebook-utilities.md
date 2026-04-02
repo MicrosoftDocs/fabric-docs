@@ -30,7 +30,7 @@ NotebookUtils provides the following modules. Select a module to see detailed do
 | [Lakehouse utilities](notebookutils/notebookutils-lakehouse.md) | `notebookutils.lakehouse` | Create, get, update, delete, and manage Lakehouse items and tables programmatically. |
 | [Runtime context](notebookutils/notebookutils-runtime.md) | `notebookutils.runtime` | Access session context information including notebook name, workspace details, and execution context. |
 | [Session management](notebookutils/notebookutils-session-management.md) | `notebookutils.session` | Stop interactive sessions and restart the Python interpreter. |
-| [User Data Function (UDF) utilities](notebookutils/notebookutils-udf.md) | `notebookutils.udf` | Retrieve and invoke User Data Functions from notebooks. |
+| [User Data Function (UDF) utilities](notebookutils/notebookutils-user-data-function.md) | `notebookutils.udf` | Retrieve and invoke User Data Functions from notebooks. |
 | [Variable library utilities](notebookutils/notebookutils-variable-library.md) | `notebookutils.variableLibrary` | Access centrally managed variables and configuration from Variable Library items. |
 
 To get an overview of all available modules and methods, run:
@@ -56,4 +56,3 @@ notebookutils.credentials.help()
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Manage and execute notebooks in Fabric with APIs](notebook-public-api.md)
-
