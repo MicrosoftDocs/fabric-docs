@@ -2,7 +2,7 @@
 title: Azure Event Grid connector for Fabric eventstreams
 description: The include file has common content for configuring an Azure Event Grid connector for Fabric eventstreams and real-time hub.
 ms.topic: include
-ms.date: 03/19/2025
+ms.date: 04/01/2026
 ---
 
 On the **Configure connection settings** page, follow these steps:
@@ -11,7 +11,7 @@ On the **Configure connection settings** page, follow these steps:
 
 1. For **Namespace name**, select your Event Grid namespace from the dropdown list.
 
-1. The contents of **Namespace topic** section vary depending on whether MQTT is enabled:
+1. The contents of the **Namespace topic** section vary depending on whether Message Queuing Telemetry Transport (MQTT) is enabled:
 
     - If MQTT isn't enabled for the namespace topic, create a new topic or select an existing topic.
 

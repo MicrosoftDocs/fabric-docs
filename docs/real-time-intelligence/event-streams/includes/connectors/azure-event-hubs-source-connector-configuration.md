@@ -1,15 +1,15 @@
 ---
 title: Azure Event Hubs connector for Fabric eventstreams
-description: This include file has the common content for configuring an Azure Event Hubs connector for Fabric eventstreams and real-time hub.
+description: This file has the common content for configuring an Azure Event Hubs connector for Fabric eventstreams and real-time hub.
 ms.reviewer: xujiang1
 ms.topic: include
 ms.custom: sfi-image-nochange
-ms.date: 11/18/2024
+ms.date: 04/01/2026
 ---
 
 ::: zone pivot="basic-features"  
 
-1. On the **Configure connection settings** page, confirm that **Basic** is selected for the feature level, and then select **New connection**.
+1. On **Configure connection settings**, confirm that **Basic** is selected for the feature level, and then select **New connection**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/new-connection-button.png" alt-text="Screenshot that shows the page for configuring a connection setting, with the link for a new connection highlighted." lightbox="./media/azure-event-hubs-source-connector/new-connection-button.png":::
 
@@ -56,7 +56,7 @@ ms.date: 11/18/2024
 
 ::: zone pivot="extended-features"
 
-1. On the **Configure connection settings** page, for **Choose feature level**, select **Extended features**.
+1. On **Configure connection settings**, for **Choose feature level**, select **Extended features**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-connect.png" alt-text="Screenshot that shows the page for configuring connection settings, with the option for extended features selected." lightbox="./media/azure-event-hubs-source-connector/extended-connect.png":::
 
@@ -89,15 +89,15 @@ ms.date: 11/18/2024
 
 1. Select **Next** at the bottom of the page.
 
-1. On the **Schema handling** page, you must provide rules to handle events received from the selected event hub, so that the eventstream can apply them correctly. The mapping rules depend on how you model the events.
+1. On the **Schema handling** page, provide rules to handle events received from the selected event hub, so that the eventstream can apply them correctly. The mapping rules depend on how you model the events.
 
     If you have one schema that governs all of the events, select **Fixed schema**.
 
-    If you have multiple schemas that represent the various incoming events, you can define matching rules to apply your schemas. To choose this mode, select **Dynamic schema via headers** option. Then, specify the rules by using header/value pairs to select each schema. The header is a custom Kafka header property that's part of the event metadata. The value is the expected value for that property.
+    If you have multiple schemas that represent the various incoming events, define matching rules to apply your schemas. To choose this mode, select **Dynamic schema via headers**. Then, specify the rules by using header/value pairs to select each schema. The header is a custom Kafka header property that's part of the event metadata. The value is the expected value for that property.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling-page.png" alt-text="Screenshot that shows the page for schema handling, with the option for extended features selected." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling-page.png":::
 
-1. Choose schemas by selecting the **Add more schema(s)** dropdown menu and then choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../schema-sets/create-manage-event-schemas.md).
+1. Choose schemas by selecting the **Add more schema(s)** dropdown menu and then choosing one or more existing schemas from the event schema registry. If you don't have schemas to choose from, you can create new schemas from this view. To learn how to define a new event schema, see [Create and manage event schemas in schema sets](../../../schema-sets/create-manage-event-schemas.md).
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png" alt-text="Screenshot that shows the area for adding schemas, with the fixed schema option selected." lightbox="./media/azure-event-hubs-source-connector/extended-fixed-schema-option.png":::
 
@@ -114,7 +114,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-dynamic-schema-property-value.png" alt-text="Screenshot that shows a property and a value mapped to a schema." lightbox="./media/azure-event-hubs-source-connector/extended-dynamic-schema-property-value.png":::
 
-1. After schemas for all expected events are mapped, select **Next** at the bottom of the **Schema handling** page.
+1. After you map schemas for all expected events, select **Next** at the bottom of the **Schema handling** page.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling.png" alt-text="Screenshot that shows the Next button on the page for schema handling." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling.png":::
 
@@ -122,7 +122,7 @@ ms.date: 11/18/2024
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Azure Event Hubs connector when the extended features are enabled." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 
-1. On the **Review + connect** page, select **Add**.
+1. On the **Review + connect** page, select **Add**, or **Connect**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-success.png" alt-text="Screenshot that shows the page for reviewing settings and creating a connector after the successful creation of resources." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 ::: zone-end
