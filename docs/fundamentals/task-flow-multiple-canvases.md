@@ -78,7 +78,7 @@ Before you rename or delete a canvas, switch to the target canvas first.
 1. Open the canvas selector, open canvas options, and then select **Rename canvas**.
 1. Enter the new name, and then select **Rename**.
 
-Use clear and descriptive names so users can quickly identify each canvas purpose.
+Use clear and descriptive names so you can quickly identify each canvas purpose.
 
 ## Delete a task flow canvas
 
@@ -86,8 +86,7 @@ Use clear and descriptive names so users can quickly identify each canvas purpos
 1. Confirm the deletion.
 
 > [!WARNING]
-> Deleting this task flow deletes all tasks, the task list, and any assignments created between tasks and items. You can select another task flow or select this one again.
-
+> Deleting this task flow canvas deletes all tasks and any assignments created between tasks and items. Items in your workspace won't be deleted. 
 
 
 
