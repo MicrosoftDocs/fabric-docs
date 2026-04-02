@@ -1,5 +1,5 @@
 ---
-title: Spark Views in lakehouse
+title: Spark Views in Lakehouse
 description: Learn how to create, manage, and query Spark Views in a Microsoft Fabric lakehouse to simplify data access without duplicating data.
 ms.reviewer: tvilutis
 ms.topic: concept-article
@@ -8,7 +8,7 @@ ms.search.form: Spark Views in Lakehouse
 ai-usage: ai-assisted
 ---
 
-# Spark Views in Microsoft Fabric lakehouse
+# Spark Views in Microsoft Fabric Lakehouse
 
 Spark Views in Microsoft Fabric let you abstract complex data modeling logic and provide simplified access for end users without duplicating data. Unlike materialized views, Spark Views don't store data. Instead, the underlying query executes each time you select from the view, giving you real-time results based on current data.
 
