@@ -101,7 +101,7 @@ Incremental refresh works when your materialized lake view definition uses only 
 
 | SQL Construct | Remark |
 |---|---|
-| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh: **unsupported aggregate functions** (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`GROUP BY`**, **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). |
+| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh (do not support incremental refresh): **aggregate functions** (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`GROUP BY`**, **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). |
 | FROM | |
 | WHERE | Only deterministic built-in functions are supported. |
 | INNER JOIN | |
