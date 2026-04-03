@@ -10,7 +10,7 @@ ms.date: 08/26/2025
 | --------------- | ---------- |
 | [Azure Data Explorer (preview)](../add-source-azure-data-explorer-database.md) | If you have an Azure Data Explorer database and a table, you can ingest data from the table into Microsoft Fabric by using eventstreams.  |
 | [Azure Event Hubs](../add-source-azure-event-hubs.md) | If you have an Azure event hub, you can ingest event hub data into Fabric by using eventstreams.  |
-| [Azure Event Grid (preview)](../add-source-azure-event-grid.md) | If you have an Azure Event Grid namespace, you can ingest Message Queuing Telemetry Transport (MQTT) or non-MQTT event data into Fabric by using eventstreams. |
+| [Azure Event Grid](../add-source-azure-event-grid.md) | If you have an Azure Event Grid namespace, you can ingest Message Queuing Telemetry Transport (MQTT) or non-MQTT event data into Fabric by using eventstreams. |
 | [Azure Service Bus (preview)](../add-source-azure-service-bus.md) | You can ingest data from an Azure Service Bus queue or a topic's subscription into Fabric by using eventstreams.  |
 | [Azure IoT Hub](../add-source-azure-iot-hub.md) | If you have an Azure IoT hub, you can ingest IoT data into Fabric by using eventstreams.  |
 | [Anomaly Detection events (preview)](../add-source-anomaly-events.md) | You can ingest data from an Anomaly detector into Fabric by using eventstreams. |
