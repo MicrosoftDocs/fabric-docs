@@ -3,20 +3,17 @@ title: Shortcut transformations (file)
 description: Use OneLake shortcut transformations to convert raw files into Delta tables that stay always in sync with the source data.  
 ms.reviewer: preshah
 ms.topic: how-to
-ms.date: 03/25/2026
+ms.date: 04/03/2026
 ai-usage: ai-assisted
 ---
 
-# Transform structured files into Delta tables (preview)
+# Transform structured files into Delta tables
 
 Use shortcut transformations to convert structured files into queryable Delta tables. If your source data is already in a tabular format like CSV, Parquet, or JSON, file transformations automatically copy and convert that data into Delta Lake format so you can query it by using SQL, Spark, or Power BI without building ETL pipelines.
 
 For unstructured text files that need AI processing like summarization, translation, or sentiment analysis, see [Shortcut transformations (AI-powered)](./transformations-ai.md).
 
 Shortcut transformations stay *always in sync* with the source data. **Fabric Spark compute** executes the transformation and copies the data referenced by a OneLake shortcut into a managed Delta table. With automatic schema handling, deep flattening capabilities, and support for multiple compression formats, shortcut transformations eliminate the complexity of building and maintaining ETL pipelines.
-
-> [!NOTE]  
-> Shortcut transformations are currently in **public preview** and are subject to change.
 
 ## Why use shortcut transformations?
 

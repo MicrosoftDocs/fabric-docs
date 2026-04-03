@@ -14,7 +14,7 @@ Use AI-powered shortcut transformations to extract insights from unstructured te
 For structured files like CSV, Parquet, or JSON, see [Shortcut transformations (file)](./transformations.md).
 
 > [!IMPORTANT]
-> Shortcut transformations are currently in **public preview**. Features and behavior might change before general availability.
+> AI-powered shortcut transformations are currently in **public preview**. Features and behavior might change before general availability.
 
 ## Why use AI-powered shortcut transformations?
 
