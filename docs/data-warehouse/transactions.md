@@ -2,7 +2,7 @@
 title: Transactions in Fabric Data Warehouse
 description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
 ms.reviewer: twcyril
-ms.date: 10/17/2025
+ms.date: 4/7/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development
 ---
@@ -129,7 +129,6 @@ INSERT statements always create new parquet files, which means fewer conflicts w
 ## Limitations
 
 - Distributed transactions are not supported, for example, `BEGIN DISTRIBUTED TRANSACTION`.
-- `ALTER TABLE` is not supported within an explicit transaction.
 - Save points are not supported.
 - Named transactions are not supported.
 - Marked transactions are not supported.
