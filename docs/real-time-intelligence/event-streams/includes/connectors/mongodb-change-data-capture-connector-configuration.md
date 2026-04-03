@@ -1,9 +1,9 @@
 ---
 title: MongoDB CDC connector for Fabric event streams
-description: This include file has the common content for configuring a Mongo Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
+description: This file has the common content for configuring a Mongo Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 09/22/2025
+ms.date: 04/02/2026
 ---
 
 1. Select **MongoDB instance type**: either **MongoDB Atlas** or **MongoDB (Self-managed)**.
@@ -11,7 +11,7 @@ ms.date: 09/22/2025
 1. **Connection**:
     1. If you choose **MongoDB Atlas**:
 
-        1. On the **Connect** screen, under **Connection**, select **New connection** to create a cloud connection.
+        1. On the **Connect** screen, under **Connection**, select **New connection**.
 
             :::image type="content" source="media/mongodb-change-data-capture-connector/new-connection-link.png" alt-text="Screenshot that shows the Connect page." lightbox="media/mongodb-change-data-capture-connector/new-connection-link.png":::
 
@@ -34,7 +34,7 @@ ms.date: 09/22/2025
 
         - **Server**: The connection string for your self-managed MongoDB server, for example `mongodb0.example.com:27017`.
         - **Connection name**: Automatically generated, or you can enter a new name for this connection.
-        - **Username** and **Password**: Use a user with read or higher permissions to access the target database and collections.
+        - **Username** and **Password**: Specify a user with read or higher permissions to the target database and collections.
 
             :::image type="content" source="media/mongodb-change-data-capture-connector/connect.png" alt-text="A screenshot of the connection settings for MongoDB (Self-managed)." lightbox="media/mongodb-change-data-capture-connector/connect.png":::
 
@@ -43,7 +43,7 @@ ms.date: 09/22/2025
     - **Databases**: Choose  **All (Default)** or **Enter database name(s)**. If you choose the latter, provide an optional comma-separated list of regular expressions that match the database names to monitor.
     - **Collections**: Select **All (Default)** or **Enter collection name(s)**. If you choose the latter, provide a comma-separated list of regular expressions that match fully qualified namespaces (for example `dbName.collectionName`) of the MongoDB collections to monitor.
 
-1. You may expand **Advanced settings** to access more configuration options for the MongoDB CDC source:
+1. You can expand **Advanced settings** to access more configuration options for the MongoDB CDC source:
    - **Snapshot mode**: Options are: 
      - **initial (default)**: Specifies that the connector reads a snapshot when either no offset is found or if the oplog/change stream no longer contains the previous offset. 
      - **initial_only**: The connector performs a database snapshot. After the snapshot completes, the connector stops, and doesn't stream event records for subsequent database changes.
