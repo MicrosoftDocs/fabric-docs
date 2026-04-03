@@ -4,7 +4,7 @@ description: The include file has the common content for configuring a PostgreSQ
 ms.reviewer: zhenxilin
 ms.topic: include
 ms.custom: sfi-image-nochange
-ms.date: 10/31/2025
+ms.date: 04/02/2026
 ---
 
 Ingest change data from PostgreSQL databases with automatic table schema registration via CDC into Eventstream.
@@ -44,7 +44,7 @@ Ingest change data from PostgreSQL databases with automatic table schema registr
     - If a specified slot name exists, the connector uses it directly.
 
 1. Expand **Advanced settings** to access more configuration options for the PostgreSQL Database CDC source:
-    - **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This value must match an existing publication in the database, or it will be created automatically depending on the autocreate mode. Default value: `dbz_publication`.
+    - **Publication name**: Specifies the name of the PostgreSQL logical replication publication to use. This value must match an existing publication in the database, or it's automatically created depending on the autocreate mode. Default value: `dbz_publication`.
 
         > [!NOTE]
         > The connector user must have superuser permissions to create the publication. We recommend that you create the publication manually before starting the connector for the first time to avoid permission-related issues.
@@ -61,8 +61,8 @@ Ingest change data from PostgreSQL databases with automatic table schema registr
         - `Double`: Converts values to double-precision floating-point numbers. This option improves usability and performance but can result in a loss of precision.
         - `String`: Encodes values as formatted strings. This option makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
     - **Snapshot mode**: Specify the criteria for performing a snapshot when the connector starts:
-        - `Initial`: The connector runs a snapshot only when no offsets have been recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
-        - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It doesn't transition to streaming to read change events from the binlog.
+        - `Initial`: The connector runs a snapshot only when no offsets were recorded for the logical server name, or if it detects that an earlier snapshot failed to complete. After the snapshot completes, the connector begins to stream event records for subsequent database changes.
+        - `InitialOnly`: The connector runs a snapshot only when no offsets were recorded for the logical server name. After the snapshot completes, the connector stops. It doesn't transition to streaming to read change events from the binlog.
         - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you don't need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
     - **Heartbeat action query**： Specifies a query that the connector executes on the source database when the connector sends a heartbeat message.
     - **Snapshot select statement override**： Specifies the table rows to include in a snapshot. Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It doesn't apply to events that the connector reads from the log.
@@ -75,7 +75,7 @@ Ingest change data from PostgreSQL databases with automatic table schema registr
     > [!NOTE]
     > The following screenshot shows Azure SQL Database CDC. The schema handling options are the same for all supported CDC source connectors.
 
-    :::image type="content" source="connectors/media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif" alt-text="Screenshot showing the schema handling step with DeltaFlow and Raw CDC event options for a CDC source connector." lightbox="connectors/media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif":::
+    :::image type="content" source="media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif" alt-text="Screenshot showing the schema handling step with DeltaFlow and Raw CDC event options for a CDC source connector." lightbox="media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif":::
 
 1. Enable **event schema association**.
 1. For **Workspace**, select a Fabric workspace for the schema set.
@@ -93,9 +93,9 @@ When you enable **Analytics-ready events & auto-updated schema** (DeltaFlow), th
 
 - **Analytics-ready event shape**: Raw Debezium CDC events are transformed into a tabular format that mirrors the source table structure. Events are enriched with metadata columns including the change type (`insert`, `update`, or `delete`) and the event timestamp.
 - **Automatic destination table management**: When you route DeltaFlow-enabled streams to a supported destination like an eventhouse, destination tables are automatically created to match the source table schema. You don't need to manually create or configure destination tables.
-- **Schema evolution handling**: When source database tables change (for example, new columns are added or tables are created), DeltaFlow automatically detects the changes, updates the registered schemas, and adjusts the destination tables accordingly. This minimizes manual intervention caused by schema changes.
+- **Schema evolution handling**: When source database tables change (for example, new columns are added or tables are created), DeltaFlow automatically detects the changes, updates the registered schemas, and adjusts the destination tables accordingly. This behavior minimizes manual intervention caused by schema changes.
 
 > [!NOTE]
-> DeltaFlow (Preview) is currently supported with Azure SQL Database CDC, Azure SQL Managed Instance CDC, SQL Server on VM CDC, and PostgreSQL CDC source connectors.
+> DeltaFlow (Preview) is currently supported with Azure SQL Database CDC, Azure SQL Managed Instance CDC, SQL Server on virtual machine CDC, and PostgreSQL CDC source connectors.
 
-For details on how DeltaFlow transforms raw CDC events into analytics-ready output, including operation types and metadata columns, see [DeltaFlow output transformation](../delta-flow-output-transformation.md).
+For details on how DeltaFlow transforms raw CDC events into analytics-ready output, including operation types and metadata columns, see [DeltaFlow output transformation](../../delta-flow-output-transformation.md).
