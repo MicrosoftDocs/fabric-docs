@@ -1,44 +1,48 @@
 ---
-title: Spark Views in Lakehouse
-description: Learn how to create, manage, and query Spark Views in a Microsoft Fabric lakehouse to simplify data access without duplicating data.
+title: Spark views in lakehouses
+description: Learn how to create, manage, and query Spark views in a Microsoft Fabric lakehouse to simplify data access without duplicating data.
 ms.reviewer: tvilutis
 ms.topic: concept-article
-ms.date: 04/02/2026
-ms.search.form: Spark Views in Lakehouse
+ms.date: 04/06/2026
+ms.search.form: Spark views in lakehouses
 ai-usage: ai-assisted
 ---
 
-# Spark Views in Microsoft Fabric Lakehouse
+# Spark views in lakehouses
 
-Spark Views in Microsoft Fabric let you abstract complex data modeling logic and provide simplified access for end users without duplicating data. Unlike materialized views, Spark Views don't store data. Instead, the underlying query executes each time you select from the view, giving you real-time results based on current data.
+Spark views in Microsoft Fabric let you abstract complex data modeling logic and provide simplified access without duplicating data. Views don't store data—they execute the underlying query each time you select from them, giving you real-time results. 
 
-You can view, manage, and query Spark Views directly in Lakehouse Explorer alongside your tables.
+If you're familiar with [materialized lake views](../data-engineering/materialized-lake-views/overview-materialized-lake-view.md), which persist results as Delta files (commonly used in medallion architectures), Spark views offer a lightweight alternative when you don't need to store the data.
 
-## How Spark Views stored?
+This article describes how to create and manage Spark views in **schema-enabled lakehouses**, where views are stored in OneLake and visible in Lakehouse Explorer. If you're working with non-schema-enabled lakehouses, see [Spark views with non-schema-enabled lakehouses](#spark-views-with-non-schema-enabled-lakehouses).
 
-View metadata is stored in OneLake alongside your tables, but as files rather than folders. This approach:
+## How are Spark views stored?
+
+In schema-enabled lakehouses, view metadata is stored in OneLake alongside your tables, but as files rather than folders. This approach:
 
 - **Prevents naming conflicts** between views and tables
 - **Uses a special file property** that allows engines to identify the object as a view
 
-    :::image type="content" source="media\lakehouse-spark-views\spark-view.png" alt-text="Screenshot showing Spark View in a lakehouse." lightbox="media/lakehouse-spark-views/spark-view.png":::
+Currently, only Spark and the lakehouse can read Spark views. Other Fabric workloads, like SQL analytics endpoint or Semantic models, don't yet recognize Spark views.
 
-Currently, only Spark and the lakehouse can read Spark Views. Other Fabric workloads, like SQL analytics endpoint or Semantic models, don't yet recognize Spark Views.
+## Create a Spark view
 
-## Create a Spark View
-
-To create a Spark View, you need a notebook session with a schema-enabled lakehouse as your default lakehouse. In the notebook run a Spark SQL statement using `CREATE OR REPLACE VIEW` with your view name and query:
+To create a Spark view, use a notebook session with a schema-enabled lakehouse as your default lakehouse. Run a Spark SQL statement with `CREATE OR REPLACE VIEW`:
 
 ```sql
 CREATE OR REPLACE VIEW my_view AS
 SELECT * FROM my_table WHERE status = 'active'
 ```
 
-The view appears in Lakehouse Explorer under your schema after you refresh.
+For example, you might create a view named `ny_sales` to filter sales data for a specific region.
+
+The view appears in Lakehouse Explorer under your schema after refresh.
+
+:::image type="content" source="media\lakehouse-spark-views\spark-view.png" alt-text="Screenshot showing Spark view in a lakehouse." lightbox="media/lakehouse-spark-views/spark-view.png":::
 
 ### Cross-lakehouse queries
 
-Spark Views can reference data from multiple lakehouses that you have access to. You can join tables from different lakehouses—or even different workspaces—within a single view.
+Spark views can reference data from multiple lakehouses. Join tables from different lakehouses—or even different workspaces—within a single view.
 
 ```sql
 CREATE OR REPLACE VIEW my_view AS
@@ -49,8 +53,7 @@ ON a.identifier=b.identifier WHERE a.status = 'active'
 
 ### Specify the view location
 
-Create views in your default lakehouse, or specify a four-part name for any lakehouse you have access to, like 
-
+Create views in your default lakehouse, or specify a four-part name for any lakehouse you have access to:
 
 ```sql
 CREATE OR REPLACE VIEW myworkspace.mylakehouse.schema.my_view AS
@@ -61,25 +64,29 @@ For more information about four-part naming, see [Cross-workspace Spark SQL quer
 
 ## Manage views in Lakehouse Explorer
 
-Once created, your Spark View appears in Lakehouse Explorer alongside your tables. From the view's context menu, you can:
+Once created, your Spark view appears in Lakehouse Explorer alongside your tables. From the view's context menu, you can:
 
 - **Rename** the view
 - **Delete** the view
 - **View properties**, including the underlying query definition
 
-    :::image type="content" source="media\lakehouse-spark-views\spark-view-properties.png" alt-text="Screenshot showing Spark View Properties." lightbox="media/lakehouse-spark-views/spark-view-properties.png":::
+    :::image type="content" source="media\lakehouse-spark-views\spark-view-properties.png" alt-text="Screenshot showing Spark view Properties." lightbox="media/lakehouse-spark-views/spark-view-properties.png":::
 
-## Spark Views in non-schema lakehouses
+## Spark views with non-schema-enabled lakehouses
 
-For non-schema lakehouses, Spark Views have been stored in a metastore that wasn't accessible to Lakehouse Explorer. But you can still create Spark View that is stored in OneLake and visible in Lakehouse Explorer.
+The storage location of Spark views depends on your **notebook's default lakehouse**, not where you create the view. If your notebook's default lakehouse is non-schema-enabled, views are stored in a metastore that isn't accessible to Lakehouse Explorer, even when you use four-part naming to create views in other lakehouses.
 
-To determine which storage format is used for new views, check your default lakehouse:
+The following table shows how views are stored based on your notebook's default lakehouse:
 
-- If your default lakehouse is **schema-enabled**, new views are stored in OneLake and visible in Lakehouse Explorer. You can specify non-schema lakehouse when storinga view even if the default laehouse is schema enabled.
-- If your default lakehouse is **not schema-enabled**, views are stored in metastore and are not visible in Lakehouse Explorer.
+| Notebook default lakehouse | View created in | View stored in | Visible in Explorer |
+|---|---|---|---|
+| Schema-enabled | Default lakehouse | OneLake | Yes |
+| Schema-enabled | Different lakehouse (4-part name) | OneLake | Yes |
+| Non-schema-enabled | Default lakehouse | Metastore | No |
+| Non-schema-enabled | Different lakehouse (4-part name) | Metastore | No |
 
 > [!NOTE]
-> A tool to copy Spark Views from metastore to OneLake is planned for a future release.
+> Currently, there's no tool to copy Spark views from metastore to OneLake.
 
 ## Related content
 
