@@ -92,7 +92,7 @@ To install the apps, follow these steps:
 
 ## Enable cross tenant access
 
-This section shows how to enable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs.
+This section shows how to enable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs. You can append `-Verbose` to surface additional diagnostic output during execution.
 
 ### Log into Fabric
 
@@ -111,12 +111,12 @@ Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/i
 ```powershell
 $body ='{ "resourceTenantObjectId": "GUID_VAL" }'
 $url = "https://api.powerbi.com/v1/ephemeral/crosstenantauth/consent"
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType "application/json"
+Invoke-PowerBIRestMethod -Url $url -Method Put -Body $body -ContentType "application/json"
 ```
 
 ## Disable cross tenant access
 
-This section shows how to disable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs.
+This section shows how to disable cross tenant access using PowerShell scripts that call Fabric REST APIs. You can use other methods to call these APIs. You can append `-Verbose` to surface additional diagnostic output during execution.
 
 Before you run the script, [log into Fabric](#log-into-fabric).
 
@@ -125,7 +125,7 @@ Use [Invoke-PowerBIRestMethod](/powershell/module/microsoftpowerbimgmt.profile/i
 ```powershell
 $body = ‘{ “resourceTenantObjectId”: “GUID_VAL” }’
 $url = “https://api.powerbi.com/v1/ephemeral/crosstenantauth/revokeConsent”
-Invoke-PowerBIRestMethod -Url $url -Method Put –Body $body –ContentType “application/json”
+Invoke-PowerBIRestMethod -Url $url -Method Put -Body $body -ContentType “application/json”
 ```
 
 ## Access the cross-tenant data warehouse
