@@ -161,7 +161,7 @@ Create a notebook with code to import the work order location file from your lak
 1. After creating the notebook and connecting it to your lakehouse, paste the following code into the first cell and run it to install the **Azure Event Hub** SDK:
 
     ```python
-    # Install Azure Event Hubs SDK (only needed once per environment)
+    # Install Azure Event Hub SDK (only needed once per environment)
     %pip install azure-eventhub
     ```
 
