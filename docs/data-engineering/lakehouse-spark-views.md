@@ -74,23 +74,15 @@ Once created, your Spark view appears in Lakehouse Explorer alongside your table
 
 ## Spark views with non-schema-enabled lakehouses
 
-In non-schema-enabled lakehouses, Spark views can be stored either in the metastore or in OneLake. Only views stored in OneLake appear in Lakehouse Explorer.
+When your **notebook's default lakehouse** is non-schema-enabled, Spark views are created in the metastore. Those Spark views are not visible in Lakehouse Explorer. Only views stored in OneLake appear in Lakehouse Explorer.
 
-When your **notebook's default lakehouse** is non-schema-enabled, Spark views are created in the metastore. To create a Spark view stored in OneLake for a non-schema-enabled lakehouse, use a notebook session with a schema-enabled lakehouse as your default and reference the target lakehouse in your query:
+To create a Spark view stored in OneLake for a non-schema-enabled lakehouse, use a notebook session with a schema-enabled lakehouse as your default and reference the non-schema-enabled lakehouse in your query:
 
 ```sql
 CREATE OR REPLACE VIEW myworkspace.non_schema_lakehouse.my_view AS
 SELECT * FROM myworkspace.non_schema_lakehouse.my_table AS table
 WHERE table.status = 'active'
 ```
-
-The following table shows how views are stored based on your notebook's default lakehouse:
-
-| Notebook default lakehouse | View created in | View stored in | Visible in Explorer |
-|---|---|---|---|
-| Schema-enabled | Default lakehouse | OneLake | Yes |
-| Schema-enabled | Different lakehouse (3 or 4-part name) | OneLake | Yes |
-| Non-schema-enabled | Default lakehouse | Metastore | No |
 
 ## Related content
 
