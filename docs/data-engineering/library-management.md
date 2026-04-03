@@ -19,6 +19,19 @@ A library is a reusable package of code — such as a Python package from PyPI, 
 
 The following scenarios describe best practices when using libraries in Microsoft Fabric.
 
+### Environment publishing modes (Quick vs Full)
+
+When you install libraries in a Fabric environment, you choose a publishing mode that controls how libraries are delivered to your Spark sessions.
+
+- **Quick mode** publishes in about 5 seconds. Libraries install when a notebook session starts rather than during publish. If a Quick mode package has the same name as a Full mode package, the Quick mode version overrides the Full mode version for that session only. Use Quick mode for rapid, iterative notebook development and early-stage experimentation.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes because the system resolves dependencies and validates compatibility. Session startup adds 1 to 3 minutes for dependency deployment, depending on dependency size. Use Full mode for pipelines, scheduled runs, and shared workloads that require consistent, reproducible environments.
+
+#### Full mode with a custom live pool
+
+To combine the stability of Full mode with fast session starts, configure a [custom live pool](custom-live-pools-overview.md) that attaches to a Full mode environment. The live pool hydrates clusters with the Full mode library snapshot in advance, enabling approximately 5-second session start times while preserving the reproducible snapshot.
+
+For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+
 ### Scenario 1: Admin sets default libraries for the workspace
 
 To set default libraries, you have to be the administrator of the workspace. As admin, you can perform these tasks:
@@ -33,7 +46,7 @@ When your notebooks and Spark job definitions are attached to the **Workspace se
 
 If you have common libraries for different code items and don't need to update them frequently, [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition).
 
-Publishing takes 5 to 15 minutes, depending on the complexity of the libraries. During this process, the system resolves potential conflicts and downloads required dependencies.
+Publishing time depends on the mode you choose. Quick mode publishes in about 5 seconds and installs libraries at session start. Full mode resolves dependencies and creates a stable snapshot; it typically takes 3 to 6 minutes to publish, and session startup adds 1 to 3 minutes for dependency deployment.
 
 The benefit of this approach is that successfully installed libraries are guaranteed to be available when a Spark session starts with the environment attached. It saves the effort of maintaining common libraries for your projects and is recommended for pipeline scenarios because of its stability.
 
@@ -42,6 +55,9 @@ The benefit of this approach is that successfully installed libraries are guaran
 If you're writing code interactively in a notebook, [inline installation](#inline-installation) is the best approach for adding PyPI or conda libraries or validating custom libraries for one-time use. Inline commands make a library available in the current notebook Spark session only — they allow quick installation, but the installed library doesn't persist across sessions.
 
 Because `%pip install` can generate different dependency trees from run to run, which might lead to library conflicts, inline commands are turned off by default in pipeline runs and aren't recommended for pipelines.
+
+> [!NOTE]
+> Libraries installed through inline commands (such as `%pip install` or `%conda install`) and libraries added from a notebook or environment Resources folder are scoped to the current session or notebook. They aren't affected by environment publishing in either Quick mode or Full mode.
 
 ## Summary of supported library types
 
@@ -131,6 +147,9 @@ After you upload a library, you can drag and drop it into a code cell to automat
 # install the .whl through pip command from the notebook built-in folder
 %pip install "builtin/wheel_file_name.whl"             
 ```
+
+> [!NOTE]
+> Custom libraries installed from the Resources folder through inline commands are per-session and per-notebook. They aren't affected by environment publishing.
 
 ### R inline installation
 

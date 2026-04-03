@@ -101,6 +101,16 @@ After you trigger a run, monitor its progress in the pipeline **Output** tab or 
 
 To view logs, navigate to the logging path in OneLake and review the log files for detailed execution information and error messages.
 
+## Scenarios: Connect SSIS packages to Fabric services
+
+SSIS packages running through the Invoke SSIS Package activity can connect to several Fabric services as data sources or destinations. The following tutorials walk through each scenario:
+
+- **SQL database in Microsoft Fabric** – Connect SSIS packages to Fabric SQL Database using Microsoft Entra service principal authentication with the OLE DB connection manager. See [Integrate SSIS with SQL database in Microsoft Fabric](/sql/integration-services/fabric-integration/integrate-fabric-sql-database).
+
+- **OneLake (via Azure Data Lake Storage Gen2)** – Write files from SSIS packages to ADLS Gen2 and surface them in OneLake through a lakehouse shortcut, with no package changes required. See [Use SSIS packages to write files to OneLake through Azure Data Lake Storage Gen2](/sql/integration-services/fabric-integration/tutorial-ssis-write-files-onelake).
+
+- **Fabric Data Warehouse** – Write data to a Fabric Data Warehouse by reconfiguring authentication to Microsoft Entra ID and using the `COPY INTO` command for data ingestion. See [Integrating SSIS with Fabric Data Warehouse](/sql/integration-services/fabric-integration/integrate-fabric-data-warehouse).
+
 ## Pricing model
 
 The following table shows a breakdown of the pricing model for the Invoke SSIS Package activity:

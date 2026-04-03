@@ -27,6 +27,7 @@ In practice, session startup delays are almost always driven by user-side config
 
 - **Custom compute configurations** that prevent reuse of prewarmed starter pools.
 - **Preinstalled libraries or environment dependencies** that require cluster customization.
+- **Fabric Environments library publishing mode**: If the attached environment uses Full mode, the library snapshot deploys at session start (typically 1 to 3 minutes). If the environment uses Quick mode, libraries install when the first code cell runs, which also adds startup time.
 - **Managed VNets or private networking** that force isolated cluster provisioning.
 - **Unexpected high regional demand** triggering fallback to on-demand clusters.
 
@@ -38,6 +39,7 @@ With this feature, Fabric surfaces clear, explicit reasons for session startup b
 
 - Whether the session was served from a starter pool or required an on-demand cluster.
 - The exact reason a fast-path session couldn't be used—for example, libraries, networking, or custom configurations.
+- Whether environment libraries were applied through Quick mode (installed at session start) or Full mode (deployed from a prebuilt snapshot).
 - Where time was spent during session acquisition.
 
 ## Use the session details view to diagnose delays
@@ -55,13 +57,16 @@ To review session startup details for a notebook:
 This makes it immediately clear whether the delay was:
 
 - **Expected** due to configuration choices.
-- **Related to libraries or networking** — actionable signals to optimize environment setup.
+- **Related to libraries or networking** — actionable signals to optimize environment setup. For example, if the delay reason shows Full mode snapshot deployment, you can reduce startup time by attaching a [custom live pool](custom-live-pools-overview.md). If Quick mode library installation caused the delay, consider moving stable dependencies to Full mode.
+
+> [!TIP]
+> The notebook Resources folder and inline library installations (such as `%pip install`) aren't affected by environment publishing. They install during the active session and don't appear as environment-related delay reasons in session insights.
 
 > [!TIP]
 > If session details shows that a starter pool couldn't be used due to library dependencies, consider moving infrequently changing libraries into a published Fabric environment to avoid repeated cluster customization on each session start.
 
 ## Related content
 
+- [Manage libraries in Fabric environments](environment-manage-library.md)
 - [High concurrency mode in Apache Spark for Fabric](high-concurrency-overview.md)
-- [Apache Spark compute in Microsoft Fabric](spark-compute.md)
 - [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md)

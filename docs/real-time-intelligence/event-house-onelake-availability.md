@@ -22,7 +22,7 @@ You can turn on **OneLake availability** at the database or table level. When en
 While **OneLake availability** is turned on, you can't do the following tasks:
 
 * Rename tables
-* Alter table schemas
+* Alter column type (adding or deleting a column is supported)
 * Apply Row Level Security to tables
 * Data can't be deleted, truncated, or purged
 
