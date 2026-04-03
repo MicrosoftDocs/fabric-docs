@@ -3,7 +3,7 @@ title: Azure Cosmos DB CDC connector for Fabric event streams
 description: Include file that provides the common content for configuring an Azure Cosmos DB Change Data Capture (CDC) connector for Fabric event streams and Real-Time hub.
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 11/18/2024
+ms.date: 04/03/2026
 ---
 
 1. On the **Connect** screen, under **Connection**, select **New connection** to create a cloud connection linking to your Azure Cosmos DB database.
