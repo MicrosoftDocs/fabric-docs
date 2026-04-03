@@ -6,8 +6,6 @@ ms.topic: include
 ms.date: 04/03/2026
 ---
 
->[!NOTE]
->This article contains references to the term `SLAVE`, a term that Microsoft no longer uses. When the term is removed from the software, we'll remove it from this article.
 
 The Azure MySQL Database Change Data Capture (CDC) connector allows you to capture a snapshot of the current data in an Azure MySQL database. You specify the tables to be monitored and get alerted when any subsequent row-level changes to the tables. Once the changes are captured in a stream, you can process this CDC data in real-time and send it to different destinations within Fabric for further processing or analysis.
 
@@ -45,7 +43,7 @@ The connector uses the Debezium MySQL connector to capture changes in your MySQL
 1. Grant the required privileges to the user:
 
    ```
-   mysql> GRANT SELECT, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'user'@'%';
+   mysql> GRANT SELECT, SHOW DATABASES, REPLICATION REPLICA, REPLICATION CLIENT ON *.* TO 'user'@'%';
    ```
 
    > [!NOTE]

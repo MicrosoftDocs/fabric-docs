@@ -52,7 +52,7 @@ Ingest change data from SQL Server on VM databases with automatic table schema r
     > [!NOTE]
     > The following screenshot shows Azure SQL Database CDC. The schema handling options are the same for all supported CDC source connectors.
 
-    :::image type="content" source="media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif" alt-text="Screenshot showing the schema handling step with DeltaFlow and Raw CDC event options for a CDC source connector." lightbox="connectors/media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif":::
+    :::image type="content" source="media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif" alt-text="Screenshot showing the schema handling step with DeltaFlow and Raw CDC event options for a CDC source connector." lightbox="media/azure-sql-database-cdc-source-connector/enable-schema-handling.gif":::
 
 1. Enable **event schema association**.
 1. For **Workspace**, select a Fabric workspace for the schema set.

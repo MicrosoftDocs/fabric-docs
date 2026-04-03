@@ -15,7 +15,7 @@ ms.date: 04/03/2026
    - **Server:** The server address of your MySQL database, for example *my-mysql-server.mysql.database.azure.com*.
    - **Database:** The database name, for example *my_database*.
    - **Connection name**: Automatically generated, or you can enter a new name for this connection.
-   - **Username** and **Password**: Enter the credentials for your MySQL database. Make sure you enter the **server admin  account** or the [**user account created with required privileges granted**](../../add-source-mysql-database-change-data-capture.md#set-up-mysql-db).
+   - **Username** and **Password**: Enter the credentials for your MySQL database. Make sure you enter the **server admin  account** or the [**user account created with required privileges granted**](/fabric/real-time-hub/add-source-mysql-database-cdc#set-up-mysql-database).
 
         :::image type="content" source="media/mysql-database-cdc-source-connector/connect.png" alt-text="A screenshot of the connection settings for Azure MySQL Database (DB) Change Data Capture (CDC)." lightbox="media/mysql-database-cdc-source-connector/connect.png":::
 1. Enter the following information to configure the MySQL DB CDC data source, and then select **Next**.
