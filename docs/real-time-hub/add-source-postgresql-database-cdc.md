@@ -27,7 +27,7 @@ On the **Data sources** page, select **Microsoft sources** category at the top, 
 
 ## Configure Azure Database for PostgreSQL CDC source
 
-[!INCLUDE [postgresql-database-cdc-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/postgresql-database-cdc-source-connector-prerequisites.md)]
+[!INCLUDE [postgresql-database-cdc-source-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/postgresql-database-cdc-source-connector-configuration.md)]
 
 
 ## View data stream details
