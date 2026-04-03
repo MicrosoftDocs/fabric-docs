@@ -9,7 +9,7 @@ ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
-# Add a real-time weather source to an eventstream (preview)
+# Add a real-time weather source to an eventstream 
 
 [!INCLUDE [real-time-weather-connector-prerequisites](./includes/connectors/real-time-weather-connector-prerequisites.md)] 
 
@@ -34,8 +34,5 @@ On the **Select a data source** page, search for and select **Connect** on the *
 1. After you complete these steps, the source is available for visualization in the **Live view**. Select the **real-time weather** tile in the diagram to see the page similar to the following one.
 
     :::image type="content" source="media/add-source-real-time-weather/live-view.png" alt-text="A screenshot of the published eventstream with real-time weather source in Live View." lightbox="./media/add-source-real-time-weather/live-view.png":::
-
-[!INCLUDE [sources-do-not-support-data-preview](./includes/sources-do-not-support-data-preview.md)]
-
 
 [!INCLUDE [real-time-weather-connector-fields](./includes/connectors/real-time-weather-connector-fields.md)] 
