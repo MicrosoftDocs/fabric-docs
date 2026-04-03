@@ -3,7 +3,7 @@ title: Refresh Materialized Lake Views in a Lakehouse
 description: Learn how to refresh a materialized lake view in a lakehouse in Microsoft Fabric.
 ms.reviewer: abhishjain
 ms.topic: how-to
-ms.date: 03/18/2026
+ms.date: 02/04/2026
 # customer intent: As a data engineer, I want to refresh materialized lake views in a lakehouse so that I can ensure that the data is up to date and optimize query performance.
 ---
 
@@ -97,18 +97,19 @@ ALTER TABLE bronze.orders SET TBLPROPERTIES (delta.enableChangeDataFeed = true);
 
 ## SQL constructs supported by incremental refresh
 
-Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes constructs not in this table—such as `LEFT JOIN` or nondeterministic functions—Fabric still refreshes your data, but falls back to a full refresh instead.
+Incremental refresh works when your materialized lake view definition uses only the SQL constructs described here. If your query includes unsupported constructs—such as window functions or non-deterministic functions—Fabric still refreshes your data, but falls back to a full refresh.
 
 | SQL Construct | Remark |
 |---|---|
-| SELECT expression | Supports expressions with deterministic built-in functions. The following constructs lead to full refresh (do not support incremental refresh): **aggregate functions** (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), **`GROUP BY`**, **`DISTINCT`**, **window functions** (`ROW_NUMBER()`, `RANK()`, `LAG()`, `LEAD()`, etc.), and **non-deterministic functions** (`rand()`, `uuid()`, `current_timestamp()`, `current_date()`, etc.). |
-| FROM | |
+| SELECT expression | Deterministic built-in functions and expressions are supported. Not supported for incremental refresh: aggregate functions (`SUM()`, `COUNT()`, `AVG()`, `MIN()`, `MAX()`, `STDDEV()`, etc.), `GROUP BY`, `DISTINCT`, window functions, and non-deterministic functions such as `rand()`, `uuid()`, `current_timestamp()`. |
+| FROM | Supports Delta tables and materialized lake views. Subqueries and CTEs work if they use only the supported clauses. |
 | WHERE | Only deterministic built-in functions are supported. |
-| INNER JOIN | |
-| UNION ALL | |
+| INNER JOIN | Supported. |
+| LEFT OUTER JOIN / LEFT SEMI JOIN | Supported. Incremental refresh works only if the right-side table remains unchanged during the refresh cycle. Any change to the right-side table triggers a full refresh. |
+| UNION ALL | Supported. |
+| WITH | Common table expressions (CTEs) if they use only supported clauses. |
+| Subqueries in expressions | Subqueries within SELECT or WHERE expressions (such as scalar subqueries or `EXISTS`) trigger a full refresh if any referenced table has changes. |
 | Data quality constraints | Only deterministic built-in functions are supported in constraints. |
-| Subquery | Subqueries in expressions (SELECT, WHERE) lead to full refresh. | 
-| WITH | Common table expressions are supported. |
 
 
 > [!NOTE]
