@@ -9,7 +9,7 @@ ms.author: spelluru
 ms.reviewer: spelluru
 ---
 
-# Add a real-time weather source in Real-Time hub (Preview)
+# Add a real-time weather source in Real-Time hub
 This article describes how to add a real-time weather event source in Fabric Real-Time hub. 
 
 [!INCLUDE [real-time-weather-connector-prerequisites](../real-time-intelligence/event-streams//includes/connectors/real-time-weather-connector-prerequisites.md)] 
