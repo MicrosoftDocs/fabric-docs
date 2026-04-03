@@ -2,13 +2,15 @@
 title: "Tutorial: Configure Microsoft Fabric Mirroring from SQL Server"
 description: Learn how to configure a mirrored database from SQL Server in Microsoft Fabric.
 ms.reviewer: ajayj, rajpo, twright
-ms.date: 01/12/2026
+ms.date: 04/03/2026
 ms.topic: tutorial
 ---
 
 # Tutorial: Configure Microsoft Fabric Mirroring from SQL Server
 
 [Mirroring in Fabric](../mirroring/overview.md) is an enterprise, cloud-based, zero-ETL, SaaS technology. In this section, you learn how to create a mirrored SQL Server database, which creates a read-only, continuously replicated copy of your SQL Server data in OneLake.
+
+Use this tutorial to configure Fabric Mirorring for a database in a SQL Server instances or in an Azure SQL Managed Instance with the [SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true).
 
 ## Prerequisites
 
@@ -21,7 +23,8 @@ ms.topic: tutorial
     - [Service principals can use Fabric APIs](../admin/service-admin-portal-developer.md#service-principals-can-use-fabric-apis)
     - [Users can access data stored in OneLake with apps external to Fabric](../admin/tenant-settings-index.md#onelake-settings)
 - Review the [Platform limitations in Microsoft Fabric mirrored databases From SQL Server](sql-server-limitations.md#platform-limitations).
-- An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
+- If your instance is not publicly accessible, or if you are using the [Azure SQL Managed Instance SQL Server 2022 update policy](/azure/azure-sql/managed-instance/update-policy?view=azuresql-mi&preserve-view=true), you need a data gateway.
+    - An [on-premises data gateway](/data-integration/gateway/service-gateway-install) or [a virtual network data gateway](/data-integration/vnet/create-data-gateways) in your SQL Server instance's network. The data gateway's network must connect to the SQL Server instance via a private endpoint or be allowed by the firewall rule.
 
 ### Database principal for Fabric
 
