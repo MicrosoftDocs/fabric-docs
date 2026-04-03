@@ -53,7 +53,7 @@ items:
     href: lakehouse-sql-analytics-endpoint.md
   - name: Lakehouse schemas
     href: lakehouse-schemas.md
-  - name: Spark Views in lakehouse
+  - name: Spark views in lakehouse
     href: lakehouse-spark-views.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
