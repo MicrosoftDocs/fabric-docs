@@ -118,13 +118,16 @@ For SQL Server versions 2016-2022, an admin must be a member of the `sysadmin` s
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [fabric_login];
    ```
 
-   - Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+ Or, log in as the Microsoft Entra admin, and create a Microsoft Entra ID authenticated login from an existing account. Run the following T-SQL script in the `master` database:
+
+> [!IMPORTANT]
+> You can create Microsoft Entra ID authenticated logins using **users, groups, or service principals**. **Workspace identities are not currently supported** for this scenario.
 
    ```sql
    --Run in the master database
    USE [master];
    CREATE LOGIN [bob@contoso.com] FROM EXTERNAL PROVIDER;
-   GRANT CONNECT SQL TO [fabric_login];
+   GRANT CONNECT SQL TO [bob@contoso.com];
    ALTER SERVER ROLE [sysadmin] ADD MEMBER [bob@contoso.com];
    ```
 
