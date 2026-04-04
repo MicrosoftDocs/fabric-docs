@@ -37,7 +37,7 @@ These steps need to be completed by an Admin of the workspace that hosts the Sem
 ## Share the semantic model connection
 1. Select on the created Semantic Model Connection and select **Manage users.**
 
-:::image type="content" source="media/planning-sheet-create-share-semantic-connection/manage-user.png" alt-text="Screenshot of opening the manage user connection.":::
+:::image type="content" source="media/planning-sheet-create-share-semantic-connection/manage-users.png" alt-text="Screenshot of opening the manage user connection.":::
 
 1. Search the **name or email ID** of the users to share the semantic model connection.
 1. Set the **access permission** as User, User with resharing, or Owner.
@@ -56,21 +56,21 @@ Connection steps required for the Direct Lake Semantic Model are listed below fo
 
 1. Go to **Semantic Model Settings**→ **Gateway & Cloud Connections**
 
-:::image type="content" source="media/planning-sheet-create-share-semantic-connection/dl-semantic-settings.png" alt-text="Screenshot of opening semantic model settings for direct lake.":::
+:::image type="content" source="media/planning-sheet-create-share-semantic-connection/semantic-settings.png" alt-text="Screenshot of opening semantic model settings for direct lake.":::
 
 1. By default, the connection is set to **Single Sign On.** You can create and use a new connection.
 1. Select **Create a connection** from the connection list
 
-:::image type="content" source="media/planning-sheet-create-share-semantic-connection/dl-connection.png" alt-text="Screenshot the manage connection gateways settings.":::
+:::image type="content" source="media/planning-sheet-create-share-semantic-connection/connection.png" alt-text="Screenshot the manage connection gateways settings.":::
 
 1. Enter the new **connection name, and** *OAuth 2.0* as the **authentication method.**
 1. Select **create**.
 
-:::image type="content" source="media/planning-sheet-create-share-semantic-connection/dl-sql-connection.png" alt-text="Screenshot of creating a direct lake sql connection.":::
+:::image type="content" source="media/planning-sheet-create-share-semantic-connection/new-connection.png" alt-text="Screenshot of creating a new direct lake connection.":::
 
 1. Select the newly created direct lake semantic model connection from the list and **apply.**
 
-:::image type="content" source="media/planning-sheet-create-share-semantic-connection/dl-apply-connection.png" alt-text="Screenshot of applying the created connection.":::
+:::image type="content" source="media/planning-sheet-create-share-semantic-connection/apply-connection.png" alt-text="Screenshot of applying the created connection.":::
 
 
 
