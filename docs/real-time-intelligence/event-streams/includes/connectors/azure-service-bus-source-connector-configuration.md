@@ -58,7 +58,7 @@ ms.date: 04/01/2026
 
 1. At the bottom of the wizard, select **Next**.
 
-1. On the **Review + connect** page, review your settings, and then select **Add** or **Connect**.
+1. On the **Review + connect** page, review your settings, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/azure-service-bus-source-connector/review-connect.png" alt-text="Screenshot that shows the page for reviewing settings and adding or connecting to an Azure Service Bus data source." lightbox="./media/azure-service-bus-source-connector/stream-details.png":::
 

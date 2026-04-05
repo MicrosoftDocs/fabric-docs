@@ -32,6 +32,6 @@ ms.date: 04/02/2026
 1. Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/fabric-onelake-source-connector/next-button.png" alt-text="Screenshot that shows the selection of the Next button." lightbox="./media/fabric-onelake-source-connector/next-button.png":::
-1. On the **Review + connect** page, review settings, and select **Add**.
+1. On the **Review + connect** page, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/fabric-onelake-source-connector/review-create-page.png" alt-text="Screenshot that shows the Review and create page." lightbox="./media/fabric-onelake-source-connector/review-create-page.png":::

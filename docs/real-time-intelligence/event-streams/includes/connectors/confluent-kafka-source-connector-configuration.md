@@ -76,7 +76,7 @@ You may expand **Advanced settings** to configure Confluent Schema Registry conn
 1. **JSON output decimal format**: Specifies the JSON serialization format for Decimal logical type values in the data from the source.
     - **NUMERIC**: Serialize as numbers.
     - **BASE64**: Serialize as base64 encoded data.
-1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
+1. Select **Next**. On the **Review and create** screen, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/confluent-kafka-source-connector/confluent-schema-registry.png" alt-text="Screenshot that shows advanced settings of the Confluent schema registry settings.":::  
     

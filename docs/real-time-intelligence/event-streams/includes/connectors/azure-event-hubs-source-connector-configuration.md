@@ -122,7 +122,7 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Azure Event Hubs connector when the extended features are enabled." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 
-1. On the **Review + connect** page, select **Add**, or **Connect**.
+1. On the **Review + connect** page, select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-success.png" alt-text="Screenshot that shows the page for reviewing settings and creating a connector after the successful creation of resources." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 ::: zone-end

@@ -34,6 +34,6 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-data-explorer-connector/stream-details.png" alt-text="Screenshot that shows the pencil button for adding a source name.":::
 1. Select **Next** at the bottom of the page.
-1. On the **Review + connect** page, review the settings, and then select **Connect** (Fabric real-time hub) or **Add** (Fabric eventstream).
+1. On the **Review + connect** page, review the settings, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/azure-data-explorer-connector/review-connect-page.png" alt-text="Screenshot that shows the page for reviewing details and connecting an Azure Data Explorer connector.":::

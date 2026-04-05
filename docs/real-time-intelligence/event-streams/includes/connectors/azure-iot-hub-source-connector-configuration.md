@@ -54,7 +54,7 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-2.png" alt-text="Screenshot that shows configuration settings and stream details for an Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-2.png":::
 
-1. On the **Review and create** page, review your settings, and then select **Add** or **Connect**.
+1. On the **Review and create** page, review your settings, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-page.png" alt-text="Screenshot that shows the page for reviewing settings and adding an Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/review-create-page.png":::
 

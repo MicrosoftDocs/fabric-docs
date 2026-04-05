@@ -18,7 +18,7 @@ ms.date: 04/02/2026
 1. Select **Next** after choosing the right Event source.
 
     :::image type="content" source="./media/fabric-workspace-source-connector/next-button.png" alt-text="Screenshot that shows the Next button." lightbox="./media/fabric-workspace-source-connector/next-button.png":::   
-1. On the **Review + create** screen, review settings, and select **Add** to complete the configuration for Fabric workspace item events.
+1. On the **Review + create** screen, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/fabric-workspace-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/fabric-workspace-source-connector/review-connect.png":::   
 

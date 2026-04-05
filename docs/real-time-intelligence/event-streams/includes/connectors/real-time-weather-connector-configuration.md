@@ -17,6 +17,7 @@ ms.date: 12/11/2025
 1. Select **Next** and review the configuration summary. 
 
     :::image type="content" source="./media/real-time-weather-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page for the real-time weather source." lightbox="./media/real-time-weather-connector/review-connect.png":::
+1. On the **Review + connect** page, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
 > [!IMPORTANT]
 > By using this connector, you acknowledge and agree that:

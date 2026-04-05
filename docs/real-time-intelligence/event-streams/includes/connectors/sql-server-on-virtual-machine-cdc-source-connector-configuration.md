@@ -58,7 +58,7 @@ Ingest change data from SQL Server on VM databases with automatic table schema r
 1. For **Workspace**, select a Fabric workspace for the schema set.
 1. For **Schema set**, **+ Create** is selected by default, which creates a new schema set. You can change it to select an existing event schema set.
 1. If you selected the **+ Create** option in the previous step, enter a name for the schema set.
-1. On the **Review + create** screen, review the summary, and then select **Connect**.
+1. On the **Review + create** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="media/sql-server-on-virtual-machine-cdc-source-connector/review-add.png" alt-text="Screenshot that shows the selection of the Add button." lightbox="media/sql-server-on-virtual-machine-cdc-source-connector/review-add.png"::: 
 

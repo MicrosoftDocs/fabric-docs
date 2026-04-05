@@ -52,5 +52,5 @@ ms.date: 04/01/2026
 
 1. Select **Connect** on the **Connection settings** screen.
 
-1. Review the summary, and then select **Add**.
+1. Review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 

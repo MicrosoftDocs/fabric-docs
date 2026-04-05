@@ -55,7 +55,7 @@ Ingest change data from Azure SQL Managed Instance databases with automatic tabl
 1. For **Workspace**, select a Fabric workspace for the schema set.
 1. For **Schema set**, **+ Create** is selected by default, which creates a new schema set. You can change it to select an existing event schema set.
 1. If you selected the **+ Create** option in the previous step, enter a name for the schema set.
-1. On the **Review + connect** page, review the summary, and then select **Connect**.
+1. On the **Review + connect** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="media/azure-sql-managed-instance-cdc-source-connector/review-add.png" alt-text="Screenshot that shows the selection of the Add button." lightbox="media/azure-sql-managed-instance-cdc-source-connector/review-add.png"::: 
 

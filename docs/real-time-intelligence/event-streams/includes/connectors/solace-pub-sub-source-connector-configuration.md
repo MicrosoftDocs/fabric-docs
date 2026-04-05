@@ -33,6 +33,6 @@ ms.date: 04/03/2026
 1. Then, select **Next**
 
     :::image type="content" source="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png" alt-text="Screenshot that shows the Configure Solace PubSub+ data source section." lightbox="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png":::                
-1. On the **Review + connect** page, review settings, and select **Add** or **Connect**. 
+1. On the **Review + connect** page, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
 

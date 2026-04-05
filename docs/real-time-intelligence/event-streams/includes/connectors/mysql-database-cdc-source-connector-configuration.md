@@ -49,7 +49,7 @@ ms.date: 04/03/2026
 
    :::image type="content" source="media/mysql-database-cdc-source-connector/table.png" alt-text="A screenshot of selecting Tables, Server ID, and Port for the Azure MySQL DB (CDC) connection." lightbox="media/mysql-database-cdc-source-connector/table.png":::
     
-1. On the **Review + connect** page, after reviewing the summary for MySQL DB CDC source, select **Add** or **Connect** to complete the configuration.
+1. On the **Review + connect** page, after reviewing the summary for MySQL DB CDC source, select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
       :::image type="content" source="media/mysql-database-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mysql-database-cdc-source-connector/review-connect.png":::
 

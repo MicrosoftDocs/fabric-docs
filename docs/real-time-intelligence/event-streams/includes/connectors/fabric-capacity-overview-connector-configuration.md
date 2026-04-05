@@ -16,5 +16,6 @@ ms.date: 04/02/2026
 
     :::image type="content" source="./media/fabric-capacity-overview-source-connector/edit-source-name.png" alt-text="Screenshot that shows the Pencil button for the Source name." lightbox="./media/fabric-capacity-overview-source-connector/edit-source-name.png":::   
 1. Select **Next** at the bottom of the page. 
-1. On the **Review + create** screen, review settings, and select **Add** to complete the configuration for Fabric capacity overview events.
+1. On the **Review + create** screen, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
     :::image type="content" source="./media/fabric-capacity-overview-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/fabric-capacity-overview-source-connector/review-connect.png":::   
