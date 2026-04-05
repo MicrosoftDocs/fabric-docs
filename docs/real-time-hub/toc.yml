@@ -49,7 +49,7 @@ items:
     href: add-source-apache-kafka.md
   - name: Azure Blob Storage events
     href: get-azure-blob-storage-events.md
-  - name: Azure Cosmos DB Change Data Capture
+  - name: Azure Cosmos DB Change Data Capture (CDC)
     href: add-source-azure-cosmos-db-cdc.md
   - name: Azure Data Explorer database table
     href: add-source-azure-data-explorer-database.md
@@ -65,9 +65,9 @@ items:
     href: add-source-azure-iot-hub.md
   - name: Azure Service Bus
     href: add-source-azure-service-bus.md
-  - name: Azure SQL Database Change Data Capture (CDC)
+  - name: Azure SQL Database CDC
     href: add-source-azure-sql-database-cdc.md
-  - name: Azure SQL Managed Instance Change Data Capture
+  - name: Azure SQL Managed Instance CDC
     href: add-source-azure-sql-managed-instance-cdc.md
   - name: Confluent Cloud Kafka
     href: add-source-confluent-kafka.md
@@ -83,9 +83,9 @@ items:
     href: add-source-google-cloud-pub-sub.md
   - name: MQTT
     href: add-source-mqtt.md
-  - name: MySQL Database Change Data Capture
+  - name: MySQL Database CDC
     href: add-source-mysql-database-cdc.md
-  - name: PostgreSQL Database Change Data Capture
+  - name: PostgreSQL Database CDC
     href: add-source-postgresql-database-cdc.md
   - name: Real-time weather
     href: add-source-real-time-weather.md

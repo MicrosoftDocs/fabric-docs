@@ -101,7 +101,7 @@ items:
             href: event-streams/add-source-apache-kafka.md
           - name: Azure Blob Storage events
             href: event-streams/add-source-azure-blob-storage.md
-          - name: Azure Cosmos DB CDC
+          - name: Azure Cosmos DB Change Data Capture (CDC)
             href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
           - name: Azure Data Explorer
             href: event-streams/add-source-azure-data-explorer-database.md
@@ -113,7 +113,7 @@ items:
             href: event-streams/add-source-azure-iot-hub.md
           - name: Azure Service Bus
             href: event-streams/add-source-azure-service-bus.md
-          - name: Azure SQL Database Change Data Capture (CDC)
+          - name: Azure SQL Database CDC
             href: event-streams/add-source-azure-sql-database-change-data-capture.md
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
