@@ -69,11 +69,11 @@ items:
     href: add-source-azure-sql-database-cdc.md
   - name: Azure SQL Managed Instance CDC
     href: add-source-azure-sql-managed-instance-cdc.md
-  - name: Confluent Cloud Kafka
+  - name: Confluent Cloud for Apache Kafka
     href: add-source-confluent-kafka.md
-  - name: Fabric Capacity overview events
+  - name: Fabric capacity overview events
     href: create-streams-fabric-capacity-overview-events.md
-  - name: Fabric Job events
+  - name: Fabric job events
     href: create-streams-fabric-job-events.md
   - name: Fabric OneLake events
     href: create-streams-fabric-onelake-events.md
@@ -81,7 +81,7 @@ items:
     href: create-streams-fabric-workspace-item-events.md
   - name: Google Cloud Pub/Sub
     href: add-source-google-cloud-pub-sub.md
-  - name: MQTT
+  - name: Message Queuing Telemetry Transport (MQTT)
     href: add-source-mqtt.md
   - name: MySQL Database CDC
     href: add-source-mysql-database-cdc.md

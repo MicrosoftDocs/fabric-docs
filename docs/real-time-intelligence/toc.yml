@@ -125,11 +125,11 @@ items:
             href: event-streams/add-source-custom-app.md
           - name: Fabric capacity overview events
             href: event-streams/add-source-fabric-capacity-overview-events.md
-          - name: Fabric Job events
+          - name: Fabric job events
             href: event-streams/add-source-fabric-job.md
           - name: Fabric OneLake events
             href: event-streams/add-source-fabric-onelake.md
-          - name: Fabric Workspace Item events
+          - name: Fabric workspace item events
             href: event-streams/add-source-fabric-workspace.md
           - name: Google Cloud Pub/Sub
             href: event-streams/add-source-google-cloud-pub-sub.md
