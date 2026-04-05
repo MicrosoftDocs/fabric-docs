@@ -13,7 +13,7 @@ ms.date: 04/02/2026
 
    :::image type="content" border="true" source="media/fabric-workspace-source-connector/connect.png" alt-text="A screenshot of the Connect screen.":::
 
-[!INCLUDE [select-view](./includes/select-view.md)]
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
 1. Select **Next** after choosing the right Event source.
 
