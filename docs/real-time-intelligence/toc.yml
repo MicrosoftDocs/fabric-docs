@@ -73,6 +73,8 @@ items:
         href: event-streams/monitor-capacity-consumption.md
       - name: Supported data formats
         href: event-streams/data-formats.md
+      - name: DeltaFlow output transformation (Preview)
+        href: event-streams/delta-flow-output-transformation.md
       - name: Create eventstreams
         items:
           - name: Create an eventstream
@@ -121,8 +123,6 @@ items:
             href: event-streams/add-source-sql-server-change-data-capture.md
           - name: Azure SQL Managed Instance CDC
             href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
-          - name: DeltaFlow output transformation (Preview)
-            href: event-streams/delta-flow-output-transformation.md
           - name: Google Cloud Pub/Sub
             href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
