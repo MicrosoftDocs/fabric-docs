@@ -43,6 +43,8 @@ items:
     href: add-source-amazon-kinesis-data-streams.md
   - name: Amazon Managed Streaming for Kafka
     href: add-source-amazon-managed-streaming-for-kafka.md
+  - name: Anomaly detection events
+    href: create-streams-anomaly-detection-events.md
   - name: Apache Kafka
     href: add-source-apache-kafka.md
   - name: Azure Blob Storage events
@@ -77,8 +79,6 @@ items:
     href: create-streams-fabric-onelake-events.md
   - name: Fabric workspace item events
     href: create-streams-fabric-workspace-item-events.md
-  - name: Anomaly detection events
-    href: create-streams-anomaly-detection-events.md
   - name: Google Cloud Pub/Sub
     href: add-source-google-cloud-pub-sub.md
   - name: MQTT
