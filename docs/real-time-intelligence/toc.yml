@@ -103,7 +103,7 @@ items:
             href: event-streams/add-source-azure-blob-storage.md
           - name: Azure Cosmos DB Change Data Capture (CDC)
             href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-          - name: Azure Data Explorer
+          - name: Azure Data Explorer Database
             href: event-streams/add-source-azure-data-explorer-database.md
           - name: Azure Event Grid
             href: event-streams/add-source-azure-event-grid.md

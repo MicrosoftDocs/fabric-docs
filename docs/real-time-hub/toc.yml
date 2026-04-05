@@ -51,7 +51,7 @@ items:
     href: get-azure-blob-storage-events.md
   - name: Azure Cosmos DB Change Data Capture (CDC)
     href: add-source-azure-cosmos-db-cdc.md
-  - name: Azure Data Explorer database table
+  - name: Azure Data Explorer Database
     href: add-source-azure-data-explorer-database.md
   - name: Azure Data Explorer shortcut
     href: add-source-azure-data-explorer.md
