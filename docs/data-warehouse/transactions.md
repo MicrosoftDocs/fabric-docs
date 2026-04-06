@@ -37,6 +37,14 @@ COMMIT;
 
 If any statement in the transaction fails, all schema changes are automatically rolled back.
 
+Fabric Data Warehouse supports executing the following inside an explicit transaction:  
+
+- `ALTER TABLE` add nullable columns 
+- `ALTER TABLE` drop columns 
+- `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
+- Multiple `ALTER TABLE` statements
+- `ALTER TABLE` on distributed temporary tables
+
 ### Cross-database query transaction support
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across warehouses that are within the same workspace, including reading from the [SQL analytics endpoint of the Lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse). For an example, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query).
