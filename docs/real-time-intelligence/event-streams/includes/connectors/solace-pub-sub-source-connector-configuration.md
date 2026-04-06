@@ -3,7 +3,7 @@ title: Solace PubSub+ connector for Fabric event streams
 description: The include file has the common content for configuring a Solace PubSub+ connector for Fabric event streams and Real-Time hub. 
 ms.reviewer: xujiang1
 ms.topic: include
-ms.date: 03/14/2025
+ms.date: 04/03/2026
 ---
 
 
@@ -13,7 +13,7 @@ ms.date: 03/14/2025
 
     If there's an existing connection to your Solace PubSub+ source, select that existing connection. 
 1. In the **Connection settings** section, follow these steps:
-    1. For Solace PubSub+ broker URL, enter the SMF URI, starting with `tcps://`. 
+    1. For Solace PubSub+ broker URL, enter the Solace Message Format (SMF) URI, starting with `tcps://`. 
 
         > [!NOTE]
         > The Solace PubSub+ source supports TLS/SSL-secured SMF connections between your Solace broker and Eventstream.
