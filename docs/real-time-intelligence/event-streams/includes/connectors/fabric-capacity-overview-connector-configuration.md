@@ -12,9 +12,6 @@ ms.date: 04/02/2026
 1. For **Event scope**, select the Fabric capacity for which you want to stream capacity overview events. You must have Contributor or higher permissions on the selected capacity to be able to stream its capacity overview events.
 
    :::image type="content" border="true" source="media/fabric-capacity-overview-source-connector/connect.png" alt-text="A screenshot of the Connect screen.":::
-1. In the **Stream details** pane to the right, select the **Pencil** button to change the **Source name**. It's an optional step.
-
-    :::image type="content" source="./media/fabric-capacity-overview-source-connector/edit-source-name.png" alt-text="Screenshot that shows the Pencil button for the Source name." lightbox="./media/fabric-capacity-overview-source-connector/edit-source-name.png":::   
 
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
