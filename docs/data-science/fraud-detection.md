@@ -277,8 +277,6 @@ print("Resampled dataset shape %s" % Counter(y_res))
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
 
-For more information about SMOTE, see the [scikit-learn reference page for the SMOTE method](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) and the [scikit-learn user guide on oversampling](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn) resources.
-
 ### Train machine learning models and run experiments
 
 Apache Spark, in [!INCLUDE [product-name](../includes/product-name.md)], enables machine learning with big data. By using Apache Spark, you can get valuable insights from large amounts of structured, unstructured, and fast-moving data.

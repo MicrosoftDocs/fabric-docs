@@ -451,8 +451,6 @@ binary_oversample <- function(train_df, X_train, y_train, class_Attr = "Class"){
 }
 ```
 
-To learn more about SMOTE, see the [Package `imbalance`](https://cran.r-project.org/web/packages/imbalance/imbalance.pdf) and [Working with imbalanced datasets](https://cran.r-project.org/web/packages/imbalance/vignettes/imbalance.pdf) resources on the CRAN website.
-
 ### Oversample the training dataset
 
 Use the newly defined oversample function to perform oversampling on the training dataset:
