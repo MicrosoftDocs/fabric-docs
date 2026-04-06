@@ -22,4 +22,3 @@ ms.custom: references_regions
         
 1. Select **Next** at the bottom of the **Configure** page.
 
-1. On the **Review and create** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
