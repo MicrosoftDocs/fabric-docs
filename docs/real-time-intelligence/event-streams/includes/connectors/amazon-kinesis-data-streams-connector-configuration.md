@@ -27,16 +27,10 @@ ms.date: 03/31/2026
 1. Scroll down, and under **Configure Amazon Kinesis data source**, enter a **Region** for the data source. You can find the Amazon region code such as **us-west-2** from the Kinesis **Data stream summary**.
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/source-name-region.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
-1. Follow one of these steps based on whether you're using Eventstream or Real-Time hub. 
-
-    - **Eventstream:** In the **Source details** pane to the right, follow these steps:
-        1. For **Source name**, select the **Pencil** button to change the name.
-        1. Notice that **Eventstream name** and **Stream name** are read-only. 
-    - **Real-Time hub:** In the **Stream details** section to the right, follow these steps:
-        1. Select the **Fabric workspace** where you want to create the eventstream. 
-        1. For **Eventstream name**, select the **Pencil** button, and enter a name for the eventstream. 
-        1. The **Stream name** value is automatically generated for you by appending **-stream** to the name of the eventstream. This stream appears on the real-time hub's **All data streams** page when the wizard finishes.  
-1. Select **Next**.
+    
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+  
+1. Select **Next** at the bottom of the **Configure** page.
 1. On **Review and create**, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
 

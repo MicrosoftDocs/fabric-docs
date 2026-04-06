@@ -6,7 +6,7 @@ ms.date: 01/15/2025
 ms.custom: references_regions
 ---
 
-1. Follow one of these steps based on whether you're using Eventstream or Real-Time hub. 
+    Follow one of these steps based on whether you're using Eventstream or Real-Time hub. 
 
     - **Eventstream:** In the **Source details** pane to the right, follow these steps:
         1. For **Source name**, select the **Pencil** button to change the name.

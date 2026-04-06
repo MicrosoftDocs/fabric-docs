@@ -46,6 +46,5 @@ ms.date: 03/31/2026
 
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next**. 
 1. On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
