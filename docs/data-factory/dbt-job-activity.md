@@ -35,7 +35,7 @@ Before you begin, make sure you have the following:
 
 1. Create a new pipeline or open an existing one, then add a **dbt job** activity from the activity pane.
 
-   :::image type="content" source="./media/dbt-job-activity/add-dbt-job-activity.jpg" alt-text="Screenshot showing the dbt job activity added to the pipeline canvas.":::
+   :::image type="content" source="./media/dbt-job-activity/add-data-build-tool-job-activity.jpg" alt-text="Screenshot showing the dbt job activity added to the pipeline canvas.":::
 
 2. Go to the activity's **Settings** tab. Under **Connection**, use an existing connection from drop down or select **Browse all** to open the **Get data** page. Select **dbt job** to create a new connection.
 
@@ -51,8 +51,6 @@ You can use parameters to control the behavior of a pipeline and its activities.
 For example, you can pass a parameter to the **Select** field so that each pipeline run executes only the dbt models you specify. Follow these steps to set it up:
 
 1. In the **Settings** tab, select the **Select** field and choose **Add dynamic content**.
-
-   :::image type="content" source="./media/dbt-job-activity/select-add-dynamic-content.png" alt-text="Screenshot showing the Select field with the Add dynamic content option.":::
 
 1. In the **Add dynamic content** pane, select the **Parameters** tab, then select **+** to create a new parameter.
 
@@ -70,7 +68,7 @@ You can add dynamic content for any column in **Settings** using the same approa
 
 The **Settings** tab contains the advanced settings for dbt command options, node selection, and execution behavior.
 
-:::image type="content" source="./media/dbt-job-activity/dbt-job-settings.png" alt-text="Screenshot showing the full dbt job activity Settings tab.":::
+:::image type="content" source="./media/dbt-job-activity/data-build-tool-job-settings.png" alt-text="Screenshot showing the full dbt job activity Settings tab.":::
 
 The following table describes each setting.
 
