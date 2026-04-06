@@ -7,7 +7,7 @@ ms.author: scottpolly
 author: s-polly
 ms.date: 03/02/2026
 reviewer: midesa
-ms.reviewer: midesa
+ms.reviewer: ruxu
 ---
 
 # Use the low-code AutoML interface in Fabric

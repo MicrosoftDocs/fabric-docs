@@ -6,7 +6,7 @@ ms.custom: dev-focus
 ai-usage: ai-assisted
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: jessiwang
+ms.reviewer: ruxu
 ms.date: 06/30/2025
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

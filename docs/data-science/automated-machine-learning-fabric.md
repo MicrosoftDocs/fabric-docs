@@ -4,7 +4,7 @@ description: Use AutoML in Fabric to automate the ML workflow
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
+ms.reviewer: ruxu
 ms.date: 09/10/2025
 ---
 

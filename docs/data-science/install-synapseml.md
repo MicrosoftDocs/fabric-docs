@@ -4,7 +4,7 @@ description: Instruction of how to install SynapseML on Fabric
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: fsolomon
+ms.reviewer: ruxu
 ms.date: 04/05/2025
 ---
 
