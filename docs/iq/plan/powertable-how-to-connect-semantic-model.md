@@ -33,26 +33,26 @@ Before you begin, make sure that you have the following prerequisites in place:
 1. Select your **Connection** and the required **Semantic Model**.
 1. Select **Next**.
 
-    :::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model.":::
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/new-table.png" alt-text="Screenshot of connecting to semantic model." lightbox="media/powertable-how-to-connect-semantic-model/new-table.png":::
     
     >[!NOTE]
     >Capacity workspaces with Pro licenses are not supported. Make sure to select a workspace of premium capacity.
 
 1. Map and assign your data to the table by selecting the required fields and corresponding values.
 
-    :::image type="content" source="media/powertable-how-to-connect-semantic-model/assign-fields.png" alt-text="Screenshot of assigning fields and values.":::
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/assign-fields.png" alt-text="Screenshot of assigning fields and values." lightbox="media/powertable-how-to-connect-semantic-model/assign-fields.png":::
 
 1. Set the primary key fields by selecting the three dots and selecting primary keys.
 
-    :::image type="content" source="media/powertable-how-to-connect-semantic-model/set-primary-key.png" alt-text="Screenshot of setting primary keys.":::
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/set-primary-key.png" alt-text="Screenshot of setting primary keys." lightbox="media/powertable-how-to-connect-semantic-model/set-primary-key.png":::
 
 1. If needed, you can use filters to include only specific field values from the table.
 
-    :::image type="content" source="media/powertable-how-to-connect-semantic-model/using-filters.png" alt-text="Screenshot of using filters.":::
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/using-filters.png" alt-text="Screenshot of using filters." lightbox="media/powertable-how-to-connect-semantic-model/using-filters.png":::
 
-1. Select **Next**..
+1. Select **Next**.
 
-    :::image type="content" source="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png" alt-text="Screenshot of configured semantic model for the new table.":::
+    :::image type="content" source="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png" alt-text="Screenshot of configured semantic model for the new table." lightbox="media/powertable-how-to-connect-semantic-model/configured-semantic-model.png":::
 
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
 

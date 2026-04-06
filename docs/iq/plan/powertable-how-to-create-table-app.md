@@ -44,17 +44,17 @@ To create a new table and import the CSV data, follow these steps:
 1. Enter a **Table Name**.
 1. Select **Upload File** in the **Import Data** section.
 1. Select the space to upload the CSV or Excel file from your local system.
-
-    There are also [other ways to create a new table](#ways-to-create-a-table).
     
-    :::image type="content" source="media/powertable-how-to-create-table-app/upload-file.png" alt-text="Screenshot of uploading an Excel or CSV  file to PowerTable.":::
+    :::image type="content" source="media/powertable-how-to-create-table-app/upload-file.png" alt-text="Screenshot of uploading an Excel or CSV  file to PowerTable." lightbox="media/powertable-how-to-create-table-app/upload-file.png":::
 
 1. Preview the data and select **Next**.
 
-    :::image type="content" source="media/powertable-how-to-create-table-app/preview-data.png" alt-text="Screenshot of previewing data.":::
+    :::image type="content" source="media/powertable-how-to-create-table-app/preview-data.png" alt-text="Screenshot of previewing data." lightbox="media/powertable-how-to-create-table-app/preview-data.png":::
     
     >[!NOTE]
     >To import only the table structure, select **Exclude records and import table structure only**.
+
+There are also [other ways to create a new table](#ways-to-create-a-table).
 
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
 
@@ -66,7 +66,7 @@ You can update your data table and sync changes with the source database.
 1. With **Preview Changes**, you can preview the changes.
 1. Select **Save to Database**, then **Proceed** to save the changes instantly (unless an [approval workflow](powertable-how-to-configure-approval-workflow.md) is enabled).
 
-    :::image type="content" source="media/powertable-how-to-create-table-app/save-to-database.png" alt-text="Screenshot of saving the table to database.":::
+    :::image type="content" source="media/powertable-how-to-create-table-app/save-to-database.png" alt-text="Screenshot of saving the table to database." lightbox="media/powertable-how-to-create-table-app/save-to-database.png":::
     
     The source database is updated.
     

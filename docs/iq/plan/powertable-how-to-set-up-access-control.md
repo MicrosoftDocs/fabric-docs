@@ -44,7 +44,7 @@ In the **Update** section, you can specify who has permission to update existing
 * **Specific users in this workspace**: Choose this option to allow only certain workspace users to update the rows. Enter the user email addresses or the Active Directory group IDs that you want to allow.
 * **Rule-based access**: Select this option to configure rules that specify the conditions under which a user or an Active Directory group can update rows in the table.
 
-:::image type="content" source="media/powertable-how-to-set-up-access-control/update-rows.png" alt-text="Screenshot of setting which users can update existing rows.":::
+:::image type="content" source="media/powertable-how-to-set-up-access-control/update-rows.png" alt-text="Screenshot of setting which users can update existing rows." lightbox="media/powertable-how-to-set-up-access-control/update-rows.png":::
 
 ### Add rule
 
@@ -54,7 +54,7 @@ Select **Add Rule**. Enter a name for the rule. Configure the filter criteria fo
 
 You can configure multiple conditions and combine them using **And** or **Or**.
 
-:::image type="content" source="media/powertable-how-to-set-up-access-control/and-or.png" alt-text="Screenshot of configuring the filter with the And/Or radio buttons." :::
+:::image type="content" source="media/powertable-how-to-set-up-access-control/and-or.png" alt-text="Screenshot of configuring the filter with the And/Or radio buttons." lightbox="media/powertable-how-to-set-up-access-control/and-or.png":::
 
 You can create multiple rules based on specific criteria and assign the appropriate users to each rule.
 
@@ -77,7 +77,7 @@ With the **Delete Type** option, you can configure whether users can delete rows
 
     For instance, you might assign the value **DELETED** to the **Status** column for the rows that are deleted.
 
-    :::image type="content" source="media/powertable-how-to-set-up-access-control/delete-type.png" alt-text="Screenshot of configuring the settings for different types of delete." lightbox="media/powertable-how-to-set-up-access-control/delete-type.png":::
+    :::image type="content" source="media/powertable-how-to-set-up-access-control/delete-type.png" alt-text="Screenshot of configuring the settings for different types of delete.":::
 
 Deleting a row doesn't remove the row. Instead, it marks it as deleted.
 
