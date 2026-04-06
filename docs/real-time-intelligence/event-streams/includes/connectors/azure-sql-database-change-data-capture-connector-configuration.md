@@ -76,7 +76,7 @@ On the **Review + connect** screen, review the summary, and select **Add** (Even
 1. For **Workspace**, select a Fabric workspace for the schema set.
 1. For **Schema set**, **+ Create** is selected by default, which creates a new schema set. You can change it to select an existing event schema set.
 1. If you selected the **+ Create** option in the previous step, enter a name for the schema set.
-1. On the **Review + connect** page, select **Add** (Eventstream) or **Connect** (Real-Time hub)..
+1. On the **Review + connect** page, select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/azure-sql-database-cdc-source-connector/sql-database-review-connect.png" alt-text="Screenshot that shows the review + connect page for the Azure SQL Database CDC source." lightbox="./media/azure-sql-database-cdc-source-connector/sql-database-review-connect.png":::
 
