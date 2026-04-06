@@ -87,6 +87,8 @@ items:
     href: add-source-http.md
   - name: Message Queuing Telemetry Transport (MQTT)
     href: add-source-mqtt.md
+  - name: MongoDB CDC
+    href: add-source-mongodb-change-data-capture.md
   - name: MySQL Database CDC
     href: add-source-mysql-database-cdc.md
   - name: PostgreSQL Database CDC

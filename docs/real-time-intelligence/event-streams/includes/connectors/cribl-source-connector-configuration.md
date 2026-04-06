@@ -35,11 +35,11 @@ ms.date: 04/06/2026
    - `Output ID`: Enter a unique name to identify this Fabric Real-Time Intelligence destination. 
    - `Description`: Optionally, enter a description.
    - `Bootstrap server`: Format it as `yourdomain.servicebus.windows.net:9093`. You can copy this value from the Eventstream Cribl source's details pane.
-   - `Topic name`: Similarly, you can get it in the Eventstream Cribl source's details pane as below.
+   - `Topic name`: Similarly, you can get it in the Eventstream Cribl source's details pane.
 
    :::image type="content" source="media/cribl-source-connector/server-topic.png" alt-text="Screenshot that shows how to get Bootstrap server and Topic name in eventstream." lightbox="media/cribl-source-connector/server-topic.png":::
 
-1. Navigate to **Authentication**. For **SASL mechanism**, select either **OAUTHBEARER** or **PLAIN**. Expand the section below based on your selection to view detailed steps:
+1. Navigate to **Authentication**. For **SASL mechanism**, select either **OAUTHBEARER** or **PLAIN**. Expand the section based on your selection to view detailed steps:
 
    ### [OAUTHBEARER](#tab/oauthbearer)
 
@@ -52,13 +52,13 @@ ms.date: 04/06/2026
 
       :::image type="content" source="media/cribl-source-connector/contributor-role.png" alt-text="Screenshot that shows how to assign contributor role in workspace." lightbox="media/cribl-source-connector/contributor-role.png":::
 
-   1. In [Microsoft Entra admin center](https://entra.microsoft.com/). Navigate to **Identity** > **Applications** > **App registrations**, and open your application.
+   1. In [Microsoft Entra admin center](https://entra.microsoft.com/), navigate to **Identity** > **Applications** > **App registrations**, and open your application.
    1. Under **Overview**, copy the **Application (client)** value into the **Client ID** field on the Authentication page. 
    1. Copy the **Directory (tenant) ID** value into the **Tenant identifier** field on the Authentication page. 
 
       :::image type="content" source="media/cribl-source-connector/app-id.png" alt-text="Screenshot that shows how to get app client ID and tenant ID." lightbox="media/cribl-source-connector/app-id.png":::
 
-   1. Go to **Certificates & secrets**, copy the **Client secrets** value into the **Client secret** field on the Authentication page. 
+   1. Go to **Certificates & secrets** and copy the **Client secrets** value into the **Client secret** field on the Authentication page. 
 
       :::image type="content" source="media/cribl-source-connector/app-key.png" alt-text="Screenshot that shows how to get app client key." lightbox="media/cribl-source-connector/app-key.png":::
          
@@ -78,4 +78,4 @@ ms.date: 04/06/2026
    :::image type="content" source="media/cribl-source-connector/preview-data.png" alt-text="Screenshot that shows preview data in eventstream live view." lightbox="media/cribl-source-connector/preview-data.png":::
 
 ## Limitation
-* The Cribl source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository may result in errors.    
+* The Cribl source currently doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Attempting to export or import an Eventstream item with this source to a Git repository might result in errors.    

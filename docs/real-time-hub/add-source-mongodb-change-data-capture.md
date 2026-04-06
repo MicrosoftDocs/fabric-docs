@@ -17,11 +17,11 @@ This article shows you how to add a MongoDB Change Data Capture(CDC) source in F
 
 ## Add MongoDB (CDC) as a source
 
-[!INCLUDE [launch-connect-external-source](../real-time-intelligence/event-streams/includes/launch-connect-external-source.md)]
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-On the **Select a data source** page, search for and select **Connect** on the **MongoDB (CDC)** tile.
+On the **Data sources** page, search for **MongoDB (CDC)**, and then select **MongoDB (CDC)**. 
 
-:::image type="content" source  ="./media/add-source-mongodb-change-data-capture/select-mongodb.png" alt-text="Screenshot that shows the selection of MongoDB (CDC) as the source type in the Get events wizard." lightbox="./media/add-source-mongodb-change-data-capture/select-mongodb.png":::
+:::image type="content" source="./media/add-source-mongodb-change-data-capture/select-mongodb.png" alt-text="Screenshot that shows the selection of MongoDB (CDC) as the source type in the Data sources page." lightbox="./media/add-source-mongodb-change-data-capture/select-mongodb.png":::
 
 ## Configure and connect to MongoDB (CDC) 
 

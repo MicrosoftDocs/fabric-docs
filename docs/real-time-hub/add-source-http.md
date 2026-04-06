@@ -1,7 +1,7 @@
 ---
 title: Add HTTP Source in Fabric Real-Time Hub
-description: HTTP source for eventstreams lets you stream JSON API data in real time. Learn how to configure, connect, and publish an HTTP source in Microsoft Fabric.
-#customer intent: As a data engineer, I want to add an HTTP source to my eventstream so that I can stream data from an HTTP endpoint into Microsoft Fabric for real-time processing.
+description: HTTP source for Real-Time hub lets you stream JSON API data in real time. Learn how to configure, connect, and publish an HTTP source in Microsoft Fabric.
+#customer intent: As a data engineer, I want to add an HTTP source to my Real-Time hub so that I can stream data from an HTTP endpoint into Microsoft Fabric for real-time processing.
 ms.topic: how-to
 ms.date: 04/06/2026
 author: spelluru
@@ -21,6 +21,8 @@ This article shows you how to add an HTTP source as an event source in Fabric Re
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Select HTTP as a source
+
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 On the **Data sources** page, search for **HTTP**, and then select **HTTP**. 
 

@@ -14,14 +14,15 @@ ms.custom: reference_regions
 
 This article shows you how to add a Cribl source as an event source in Fabric Real-Time hub.
 
-[!INCLUDE [cribl-source-connector-prerequisites](./includes/connectors/cribl-source-connector-prerequisites.md)]
+[!INCLUDE [cribl-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/cribl-source-connector-prerequisites.md)]
 
 ## Add Cribl as a source
-[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-On the **Select a data source** page, search for and select **Connect** on the **Cribl** tile.
+[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-:::image type="content" source="media/add-source-cribl/select-cribl-source.png" alt-text="Screenshot that shows the selection of Cribl as the source type in the Select a data source wizard." lightbox="media/add-source-cribl/select-cribl-source.png":::
+On the **Data sources** page, search for **Cribl**, and then select **Cribl**. 
+
+:::image type="content" source="./media/add-source-cribl/select-cribl.png" alt-text="Screenshot that shows the selection of Cribl as the source type in the Data sources page." lightbox="./media/add-source-cribl/select-cribl.png":::
 
 ## Configure and connect to Cribl
 
