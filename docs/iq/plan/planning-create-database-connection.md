@@ -1,9 +1,6 @@
 ---
 title: "Create a Database Connection in Fabric Plan "
 description: "Learn how to create a database connection in Fabric Plan."
-author: 
-ms.author: 
-ms.service: 
 ms.topic: how-to
 ms.date: 04/02/2026
 #customer intent: As a user, I want to know understand and use Forecasts effectively.
