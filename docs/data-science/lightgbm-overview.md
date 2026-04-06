@@ -4,7 +4,7 @@ description: Learn about LightGBM in SynapseML.
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: jessiwang
+ms.reviewer: ruxu
 ms.date: 09/29/2025
 ---
 # Overview of LightGBM in SynapseML

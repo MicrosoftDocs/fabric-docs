@@ -3,6 +3,7 @@ title: Install SemPy Python library in your notebook
 description: Code snippet for installing SemPy in a notebook.
 author: s-polly
 ms.author: scottpolly
+ms.reviewer: ruxu
 ms.topic: include
 ms.date: 08/08/2023
 ---

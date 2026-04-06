@@ -5,7 +5,7 @@ ms.topic: overview
 ms.custom: 
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
+ms.reviewer: ruxu
 reviewer: virginiaroman
 ms.date: 01/16/2026
 ai-usage: ai-assisted
