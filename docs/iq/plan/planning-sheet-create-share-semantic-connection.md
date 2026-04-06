@@ -6,17 +6,17 @@ ms.topic: how-to
 ---
 
 # Create and share a cloud connection for a semantic model
-This article explains how to connect to a semantic model in Plan for **non-admin users**.
+This article explains how to connect to a semantic model in Plan for users.
 
-To connect a Plan to a semantic model, a workspace admin must create a **shareable cloud connection** for the semantic model. Other users can use this to connect to the Semantic Model. The following steps will show how to create and share the connection.
+To connect a Plan to a semantic model, a workspace admin or member must create a **shareable cloud connection**. Other users can use this connection to access the semantic model. The following steps describe how to create and share the connection.
 
 ## Objective
 
-To connect to a semantic model from within a Plan artifact when the user is not an admin of the workspace hosting the semantic model
+To connect to a semantic model from a Plan artifact.
 
 ## Create a semantic model connection
 
-These steps need to be completed by an Admin of the workspace that hosts the Semantic Model.
+These steps must be completed by a workspace admin or member who has access to the semantic model.
 1. Go to **Settings > Manage connections and gateways > New.**
 
 :::image type="content" source="media/planning-sheet-create-share-semantic-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the manage connection gateways settings.":::
@@ -45,14 +45,14 @@ These steps need to be completed by an Admin of the workspace that hosts the Sem
 
 :::image type="content" source="media/planning-sheet-create-share-semantic-connection/manage-users-settings.png" alt-text="Screenshot of manage users settings.":::
 
-1. The semantic connection created is shared, which can be accessed by the shared non-admin users.
+1. The semantic connection created is shared, which can be accessed by other users.
 
 >[!NOTE]
->Non-Admin users can use this shared connection to connect to the semantic model.
+>Other users can use this shared connection to connect to the semantic model.
 
 ## Connect to a Direct Lake semantic model
 
-Connection steps required for the Direct Lake Semantic Model are listed below for users who wish to connect to direct lake semantic model.
+Connection steps required for the Direct Lake Semantic Model are listed below for users who wish to connect to direct lake semantic model which can be created by admin or member users.
 
 1. Go to **Semantic Model Settings**→ **Gateway & Cloud Connections**
 
