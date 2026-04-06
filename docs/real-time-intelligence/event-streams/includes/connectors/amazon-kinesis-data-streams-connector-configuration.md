@@ -29,8 +29,8 @@ ms.date: 03/31/2026
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/source-name-region.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
     
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
-  
-1. Select **Next** at the bottom of the **Configure** page.
-1. On **Review and create**, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
+### Review and create 
+On the **Review and create** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
 
