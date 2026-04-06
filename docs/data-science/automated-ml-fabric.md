@@ -6,7 +6,7 @@ ms.author: scottpolly
 author: s-polly
 ms.date: 03/16/2026
 reviewer: midesa
-ms.reviewer: midesa
+ms.reviewer: ruxu
 ---
 
 # Automated ML in Fabric

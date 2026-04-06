@@ -6,7 +6,7 @@ ms.custom: sfi-ropc-nochange, dev-focus
 ai-usage: ai-assisted
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: jessiwang
+ms.reviewer: ruxu
 ms.date: 03/03/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

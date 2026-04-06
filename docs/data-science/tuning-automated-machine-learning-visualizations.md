@@ -4,7 +4,7 @@ description: Use visualizations in Fabric AutoML and tune
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
+ms.reviewer: ruxu
 ms.date: 07/21/2025
 ---
 
