@@ -83,7 +83,9 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-consumer-group.png" alt-text="Screenshot that shows the area for entering a consumer group for extended features." lightbox="./media/azure-event-hubs-source-connector/extended-consumer-group.png":::
 
-1. On the **Review and create** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
 ### Schema handling page
 

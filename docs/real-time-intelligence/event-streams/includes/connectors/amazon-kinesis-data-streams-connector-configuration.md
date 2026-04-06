@@ -31,7 +31,6 @@ ms.date: 03/31/2026
 ### Stream or source details
 
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
-1. On the **Review and create** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
 
 

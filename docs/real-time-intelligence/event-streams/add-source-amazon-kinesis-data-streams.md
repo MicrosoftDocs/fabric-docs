@@ -37,6 +37,9 @@ This article shows you how to add an Amazon Kinesis Data Streams source to an ev
 
 [!INCLUDE [amazon-kinesis-data-streams-connector](includes/connectors/amazon-kinesis-data-streams-connector-configuration.md)]
 
+### Review and connect 
+On the **Review and create** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
 ## Review eventstream
 
 You can see the Amazon Kinesis Data Stream source added to your eventstream in **Edit mode**.
