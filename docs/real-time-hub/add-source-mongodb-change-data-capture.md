@@ -15,9 +15,11 @@ This article shows you how to add a MongoDB Change Data Capture(CDC) source in F
 [!INCLUDE [mongodb-change-data-capture-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/mongodb-change-data-capture-connector-prerequisites.md)]
 
 
-## Add MongoDB (CDC) as a source
+## Launch Add data source experience
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
+## Select MongoDB (CDC) as a source
 
 On the **Data sources** page, search for **MongoDB (CDC)**, and then select **MongoDB (CDC)**. 
 
