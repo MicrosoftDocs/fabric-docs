@@ -7,15 +7,19 @@ ms.custom: references_regions
 ---
 
 
-1. Follow one of these steps based on whether you're using Eventstream or Real-Time hub. 
+1. On the **Connect** page, follow one of these steps based on whether you're using Eventstream or Real-Time hub. 
 
-    - **Eventstream:** In the **Source details** pane to the right, follow these steps:
+    - **Eventstream:** 
+    
+        In the **Source details** pane to the right, follow these steps:
 
         1. For **Source name**, select the **Pencil** button to change the name.
         
         1. Notice that **Eventstream name** and **Stream name** are read-only. 
 
-    - **Real-Time hub:** In the **Stream details** section to the right, follow these steps:
+    - **Real-Time hub:** 
+    
+        In the **Stream details** section to the right, follow these steps:
 
         1. Select the **Fabric workspace** where you want to create the eventstream. 
         
