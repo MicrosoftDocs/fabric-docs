@@ -13,10 +13,12 @@ ms.custom:
 The SharePoint folder connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 
-## Support in Dataflow Gen2
+## Supported capabilities
 
-For information on how to connect to a SharePoint folder in Dataflow Gen2, go to [Set up your SharePoint folder connection](connector-sharepoint-folder.md).
+| Supported capabilities | Gateway | Authentication |
+|---------| --------| --------|
+| **Dataflow Gen2** (source/destination) | None | Anonymous |
 
-## Support in pipelines
+## Related content
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a SharePoint folder in pipelines.
+For information on how to connect to a SharePoint folder, go to [Set up your SharePoint folder connection](connector-sharepoint-folder.md).

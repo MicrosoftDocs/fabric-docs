@@ -25,26 +25,12 @@ On the **Configure connection settings** page, follow these steps:
 
       :::image type="content" source="./media/azure-event-grid-source-connector/configuration-settings-mqtt-no-routing.png" alt-text="Screenshot that shows configuration settings for an Azure Event Grid namespace when MQTT is enabled but routing isn't enabled." :::
 
-1. If you're using the real-time hub, follow these steps:
 
-    1. In the **Stream details** section to the right, select the Fabric workspace where you want to save the eventstream.
-    1. For **Eventstream name**, enter a name for the eventstream. The wizard creates an eventstream with the selected Event Grid namespace as a source.
-    1. The **Stream name** value is automatically generated for you by appending **-stream** to the name of the eventstream. This stream appears on the real-time hub's **All data streams** page when the wizard finishes.  
+### Stream or source details
 
-    :::image type="content" source="./media/azure-event-grid-source-connector/stream-name.png" alt-text="Screenshot that shows the stream details section for the Event Grid namespace." :::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. If you're using the eventstream editor to add an Event Grid namespace as a source to an eventstream, select the pencil button under **Source name**. Then enter a source name.
+### Review and connect
 
-1. Select **Next** at the bottom of the page.
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-1. On the **Review + connect** page, review your settings, and then select **Connect**.
-
-    :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Event Grid namespace.":::
-
-    The following example shows what the page looks like if both MQTT and routing are enabled for the namespace.
-
-    :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page-mqtt.png" alt-text="Screenshot that shows the page for reviewing and connecting with MQTT and routing enabled.":::
-
-    The following example shows what the page looks like if MQTT is enabled for the namespace but routing isn't enabled.
-
-    :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page-mqtt-no-routing.png" alt-text="Screenshot that shows the page for reviewing and connecting with MQTT enabled but routing not enabled.":::
