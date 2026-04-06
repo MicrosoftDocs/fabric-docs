@@ -21,7 +21,7 @@ Before you can create the database connection, make sure you have the following 
 
 1. In your Fabric toolbar, select the **Settings** icon. Select **Manage connections and gateways**.
 
-    :::image type="content" source="media/planning-how-to-create-semantic-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the manage connection gateways settings.":::
+    :::image type="content" source="media/planning-how-to-create-semantic-model-connection/manage-connection-gateways.png" alt-text="Screenshot of opening the manage connection gateways settings.":::
 
 1. Select **New**.
 1. Select **Cloud**.

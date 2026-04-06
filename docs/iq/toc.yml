@@ -72,7 +72,7 @@ items:
         - name: Create a database connection
           href: plan/planning-how-to-create-database-connection.md
         - name: Create a semantic model connection
-          href: plan/planning-how-to-create-semantic-connection.md
+          href: plan/planning-how-to-create-semantic-model-connection.md
         - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Build forecasts
