@@ -4,7 +4,7 @@ description: How to use prebuilt Azure OpenAI in Fabric with SynapseML for distr
 ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: ruxu
-reviewer: virginiaroman
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
 ms.date: 01/16/2026

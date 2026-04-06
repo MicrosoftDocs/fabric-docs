@@ -4,6 +4,7 @@ description: Learn how to use Data Wrangler in Microsoft Fabric to explore data 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 12/09/2025

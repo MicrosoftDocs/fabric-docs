@@ -7,6 +7,7 @@ ai-usage: ai-assisted
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 03/03/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

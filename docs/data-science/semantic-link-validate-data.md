@@ -4,6 +4,7 @@ description: Explore and validate functional dependencies in data with semantic 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom: dev-focus
 ms.date: 03/03/2026

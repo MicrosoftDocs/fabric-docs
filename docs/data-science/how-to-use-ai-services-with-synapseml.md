@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
-reviewer: virginiaroman
+reviewer: ruixinxu
 ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

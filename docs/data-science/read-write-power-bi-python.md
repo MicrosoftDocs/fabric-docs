@@ -5,6 +5,7 @@ description: Learn how to read data, metadata, and evaluate measures from semant
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.date: 09/25/2025
 ms.search.form: Read write powerbi

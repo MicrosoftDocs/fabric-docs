@@ -4,6 +4,7 @@ description: Include file for the data science product name. This include file w
 author: s-polly
 ms.author: scottpolly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: include
 ms.date: 05/23/2023
 ---

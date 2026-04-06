@@ -4,6 +4,7 @@ description: Learn how to train regression models using explainable boosting mac
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.date: 04/17/2025
 ---

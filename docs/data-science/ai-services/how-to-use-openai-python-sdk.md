@@ -4,7 +4,7 @@ description: How to use prebuilt Azure OpenAI in Fabric with OpenAI Python SDK
 ms.author: lagayhar
 author: lgayhardt
 ms.reviewer: ruxu
-reviewer: virginiaroman
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
 ms.date: 02/28/2026

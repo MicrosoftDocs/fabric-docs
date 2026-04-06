@@ -4,6 +4,7 @@ description: Learn how to use AI functions and other AI-powered features in Data
 author: s-polly
 ms.author: scottpolly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.date: 09/04/2025
 ---

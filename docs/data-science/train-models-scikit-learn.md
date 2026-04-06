@@ -4,6 +4,7 @@ description: Learn how to train models with scikit-learn, a popular open-source 
 ms.author: scottpolly
 author: s-polly
 ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.date: 09/30/2025
 ms.search.form: Train models with scikit-learn
