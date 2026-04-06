@@ -4,8 +4,8 @@ description: Enrich your data with artificial intelligence (AI) in Azure Synapse
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot

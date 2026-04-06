@@ -16,8 +16,8 @@ In this article, you learn how to create a table app with PowerTable sheets.
 
 Before you begin, make sure that you have the following prerequisites in place:
 
-* Connections established to [the Fabric SQL database](../plan/planning-how-to-get-started.md#create-a-database-connection) and [the semantic model](../plan/planning-how-to-get-started.md#create-a-connection-for-the-semantic-model).
-* [A plan item](../plan/planning-how-to-get-started.md#create-planning-sheet) created in your Fabric workspace.
+* Connections established to the [Fabric SQL database](planning-how-to-create-database-connection.md) and/or [semantic model](planning-how-to-create-semantic-model-connection.md) that contain the data for your PowerTable.
+* [A plan item](planning-how-to-get-started.md#create-plan-item) created in your Fabric workspace.
 
 ## Ways to create a table
 
