@@ -83,9 +83,9 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-consumer-group.png" alt-text="Screenshot that shows the area for entering a consumer group for extended features." lightbox="./media/azure-event-hubs-source-connector/extended-consumer-group.png":::
 
-[!INCLUDE [stream-source-details](./stream-source-details.md)]
+1. On the **Review and create** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-1. Select **Next** at the bottom of the page.
+### Schema handling page
 
 1. On the **Schema handling** page, provide rules to handle events received from the selected event hub, so that the eventstream can apply them correctly. The mapping rules depend on how you model the events.
 
