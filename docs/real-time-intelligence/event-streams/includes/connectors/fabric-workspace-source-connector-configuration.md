@@ -13,12 +13,12 @@ ms.date: 04/02/2026
 
    :::image type="content" border="true" source="media/fabric-workspace-source-connector/connect.png" alt-text="A screenshot of the Connect screen.":::
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** after choosing the right Event source.
+### Review and connect
 
-    :::image type="content" source="./media/fabric-workspace-source-connector/next-button.png" alt-text="Screenshot that shows the Next button." lightbox="./media/fabric-workspace-source-connector/next-button.png":::   
-1. On the **Review + create** screen, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-    :::image type="content" source="./media/fabric-workspace-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page." lightbox="./media/fabric-workspace-source-connector/review-connect.png":::   
 

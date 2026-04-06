@@ -42,9 +42,16 @@ Ingest change data from Azure SQL Managed Instance databases with automatic tabl
       - `Double`: Converts values to double-precision floating-point numbers. This option improves usability and performance but might result in a loss of precision.
       - `String`: Encodes values as formatted strings. This option makes them easy to consume in downstream systems but loses semantic information about the original numeric type.
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the page.
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
+### Schema handling page
+
 1. In the **Schema handling** step, choose one of the following options:
 
     - **Analytics-ready events & auto-updated schema (DeltaFlow Preview)**: The connector transforms raw CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow enriches events with metadata such as change type (insert, update, or delete) and timestamps, and automatically manages destination tables and schema evolution.

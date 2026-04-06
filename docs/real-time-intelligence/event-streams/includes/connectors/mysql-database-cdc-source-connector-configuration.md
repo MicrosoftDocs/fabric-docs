@@ -45,10 +45,11 @@ ms.date: 04/03/2026
       - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It doesn't transition to streaming to read change events from the binlog.
       - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you don't need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the **Configure** page.
-1. On the **Review + connect** page, after reviewing the summary for MySQL DB CDC source, select **Add** (Eventstream) or **Connect** (Real-Time hub).
+### Review and connect
 
-      :::image type="content" source="media/mysql-database-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mysql-database-cdc-source-connector/review-connect.png":::
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 

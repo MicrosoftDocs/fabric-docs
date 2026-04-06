@@ -52,8 +52,12 @@ ms.date: 04/01/2026
 
 1. Select **Connect** on the **Connection settings** screen.
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the **Configure** page.
-1. On the **Review + connect** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
 

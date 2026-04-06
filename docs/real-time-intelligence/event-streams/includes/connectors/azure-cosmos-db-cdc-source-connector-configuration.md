@@ -24,9 +24,12 @@ ms.date: 04/03/2026
    - **Database:** Enter the name of your Azure Cosmos DB database.
    - **Offset policy:** Select whether to start reading **Earliest** or **Latest** offsets if there's no commit.
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the page.    
-1. On the **Review + connect** page, review the summary, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
-    :::image type="content" source="media/azure-cosmos-db-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page for the Azure Cosmos DB CDC source." lightbox="media/azure-cosmos-db-cdc-source-connector/review-connect.png":::
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
 

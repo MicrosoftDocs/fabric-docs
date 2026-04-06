@@ -12,16 +12,14 @@ ms.date: 03/31/2026
 
    :::image type="content" border="true" source="media/azure-blob-storage-source-connector/connect.png" alt-text="A screenshot of the Connect screen.":::
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Then, select **Next** at the bottom of the page.
+### Review and connect
 
-1. On the **Review + connect** screen, review the summary, and then select **Connect** to complete the configuration for Azure Blob Storage events.
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-   :::image type="content" border="true" source="media/azure-blob-storage-source-connector/connect-source.png" alt-text="A screenshot of the Review + connect screen.":::
-1. Then, on the next page, select **Add** (Eventstream) or **Connect** (Real-Time hub).
-
-    :::image type="content" border="true" source="media/azure-blob-storage-source-connector/add.png" alt-text="A screenshot of the Add screen.":::
 
     
 

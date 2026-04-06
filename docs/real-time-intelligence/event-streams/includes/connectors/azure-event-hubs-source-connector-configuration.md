@@ -118,6 +118,8 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling.png" alt-text="Screenshot that shows the Next button on the page for schema handling." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling.png":::
 
+### Review and connect
+
 1. On the **Review + connect** page, review the settings, and then select **Connect**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Azure Event Hubs connector when the extended features are enabled." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::

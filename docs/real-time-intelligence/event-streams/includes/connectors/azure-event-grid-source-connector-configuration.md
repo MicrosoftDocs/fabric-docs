@@ -26,18 +26,11 @@ On the **Configure connection settings** page, follow these steps:
       :::image type="content" source="./media/azure-event-grid-source-connector/configuration-settings-mqtt-no-routing.png" alt-text="Screenshot that shows configuration settings for an Azure Event Grid namespace when MQTT is enabled but routing isn't enabled." :::
 
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the page.
+### Review and connect
 
-1. On the **Review + connect** page, review your settings, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-    :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Event Grid namespace.":::
-
-    The following example shows what the page looks like if both MQTT and routing are enabled for the namespace.
-
-    :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page-mqtt.png" alt-text="Screenshot that shows the page for reviewing and connecting with MQTT and routing enabled.":::
-
-    The following example shows what the page looks like if MQTT is enabled for the namespace but routing isn't enabled.
-
-    :::image type="content" source="./media/azure-event-grid-source-connector/review-connect-page-mqtt-no-routing.png" alt-text="Screenshot that shows the page for reviewing and connecting with MQTT enabled but routing not enabled.":::

@@ -48,13 +48,12 @@ ms.date: 04/01/2026
 
 1. For **Data format**, select a data format for the incoming real-time events that you want to get from your IoT hub. You can select from JSON, Avro, and CSV data formats. Then select **Connect**.
 
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the page.
+### Review and connect
 
-    :::image type="content" source="./media/azure-iot-hub-source-connector/connection-page-2.png" alt-text="Screenshot that shows configuration settings and stream details for an Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/connection-page-2.png":::
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
-1. On the **Review and create** page, review your settings, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
-
-    :::image type="content" source="./media/azure-iot-hub-source-connector/review-create-page.png" alt-text="Screenshot that shows the page for reviewing settings and adding an Azure IoT Hub connector." lightbox="./media/azure-iot-hub-source-connector/review-create-page.png":::
 
