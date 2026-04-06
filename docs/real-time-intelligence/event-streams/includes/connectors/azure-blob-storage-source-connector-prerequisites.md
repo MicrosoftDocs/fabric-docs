@@ -6,6 +6,8 @@ ms.topic: include
 ms.date: 03/31/2026
 ---
 
+[!INCLUDE [consume-fabric-events-regions](consume-fabric-events-regions.md)]
+
 Fabric event streams support the following Blob Storage event types:
 
 |Event name|Description|

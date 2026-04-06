@@ -73,6 +73,8 @@ items:
         href: event-streams/monitor-capacity-consumption.md
       - name: Supported data formats
         href: event-streams/data-formats.md
+      - name: DeltaFlow output transformation (Preview)
+        href: event-streams/delta-flow-output-transformation.md
       - name: Create eventstreams
         items:
           - name: Create an eventstream
@@ -89,68 +91,66 @@ items:
         items:
           - name: Add and manage an event source
             href: event-streams/add-manage-eventstream-sources.md
-          - name: Azure Data Explorer
-            href: event-streams/add-source-azure-data-explorer-database.md
-          - name: Azure Event Hubs
-            href: event-streams/add-source-azure-event-hubs.md
-          - name: Azure Event Grid
-            href: event-streams/add-source-azure-event-grid.md
-          - name: Azure Service Bus
-            href: event-streams/add-source-azure-service-bus.md
-          - name: Azure IoT Hub
-            href: event-streams/add-source-azure-iot-hub.md
-          - name: Anomaly Detection events
-            href: event-streams/add-source-anomaly-events.md
-          - name: Custom endpoint
-            href: event-streams/add-source-custom-app.md
-          - name: Sample data
-            href: event-streams/add-source-sample-data.md
-          - name: Real-time weather
-            href: event-streams/add-source-real-time-weather.md
-          - name: Azure SQL Database Change Data Capture (CDC)
-            href: event-streams/add-source-azure-sql-database-change-data-capture.md
-          - name: PostgreSQL Database CDC
-            href: event-streams/add-source-postgresql-database-change-data-capture.md
-          - name: MongoDB CDC
-            href: event-streams/add-source-mongodb-change-data-capture.md
-          - name: MySQL Database CDC
-            href: event-streams/add-source-mysql-database-change-data-capture.md
-          - name: Azure Cosmos DB CDC
-            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
-          - name: SQL Server on virtual machine database CDC
-            href: event-streams/add-source-sql-server-change-data-capture.md
-          - name: Azure SQL Managed Instance CDC
-            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
-          - name: DeltaFlow output transformation (Preview)
-            href: event-streams/delta-flow-output-transformation.md
-          - name: Google Cloud Pub/Sub
-            href: event-streams/add-source-google-cloud-pub-sub.md
           - name: Amazon Kinesis Data Streams
             href: event-streams/add-source-amazon-kinesis-data-streams.md
-          - name: Confluent Cloud for Apache Kafka
-            href: event-streams/add-source-confluent-kafka.md
-          - name: Apache Kafka
-            href: event-streams/add-source-apache-kafka.md
           - name: Amazon Managed Streaming for Apache Kafka
             href: event-streams/add-source-amazon-managed-streaming-for-apache-kafka.md
-          - name: Fabric Workspace Item events
-            href: event-streams/add-source-fabric-workspace.md
-          - name: Fabric OneLake events
-            href: event-streams/add-source-fabric-onelake.md
-          - name: Fabric Job events
-            href: event-streams/add-source-fabric-job.md
-          - name: Fabric capacity overview events
-            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Anomaly Detection events
+            href: event-streams/add-source-anomaly-events.md
+          - name: Apache Kafka
+            href: event-streams/add-source-apache-kafka.md
           - name: Azure Blob Storage events
             href: event-streams/add-source-azure-blob-storage.md
+          - name: Azure Cosmos DB Change Data Capture (CDC)
+            href: event-streams/add-source-azure-cosmos-db-change-data-capture.md
+          - name: Azure Data Explorer Database
+            href: event-streams/add-source-azure-data-explorer-database.md
+          - name: Azure Event Grid
+            href: event-streams/add-source-azure-event-grid.md
+          - name: Azure Event Hubs
+            href: event-streams/add-source-azure-event-hubs.md
+          - name: Azure IoT Hub
+            href: event-streams/add-source-azure-iot-hub.md
+          - name: Azure Service Bus
+            href: event-streams/add-source-azure-service-bus.md
+          - name: Azure SQL Database CDC
+            href: event-streams/add-source-azure-sql-database-change-data-capture.md
+          - name: Azure SQL Managed Instance CDC
+            href: event-streams/add-source-azure-sql-managed-instance-change-data-capture.md
+          - name: Confluent Cloud for Apache Kafka
+            href: event-streams/add-source-confluent-kafka.md
+          - name: Cribl
+            href: event-streams/add-source-cribl.md
+          - name: Custom endpoint
+            href: event-streams/add-source-custom-app.md
+          - name: Fabric capacity overview events
+            href: event-streams/add-source-fabric-capacity-overview-events.md
+          - name: Fabric job events
+            href: event-streams/add-source-fabric-job.md
+          - name: Fabric OneLake events
+            href: event-streams/add-source-fabric-onelake.md
+          - name: Fabric workspace item events
+            href: event-streams/add-source-fabric-workspace.md
+          - name: Google Cloud Pub/Sub
+            href: event-streams/add-source-google-cloud-pub-sub.md
           - name: HTTP
             href: event-streams/add-source-http.md
           - name: Message Queuing Telemetry Transport (MQTT)
             href: event-streams/add-source-mqtt.md
-          - name: Cribl
-            href: event-streams/add-source-cribl.md
+          - name: MongoDB CDC
+            href: event-streams/add-source-mongodb-change-data-capture.md
+          - name: MySQL Database CDC
+            href: event-streams/add-source-mysql-database-change-data-capture.md
+          - name: PostgreSQL Database CDC
+            href: event-streams/add-source-postgresql-database-change-data-capture.md
+          - name: Real-time weather
+            href: event-streams/add-source-real-time-weather.md
+          - name: Sample data
+            href: event-streams/add-source-sample-data.md
           - name: Solace PubSub+
             href: event-streams/add-source-solace-pub-sub.md
+          - name: SQL Server on virtual machine database CDC
+            href: event-streams/add-source-sql-server-change-data-capture.md
       - name: Add destination connectors to eventstreams
         items:
           - name: Add and manage a destination
