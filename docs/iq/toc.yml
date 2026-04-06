@@ -69,7 +69,11 @@ items:
       href: plan/planning-overview.md
     - name: How-tos
       items:
-        - name: Get started with planning sheets
+        - name: Create a database connection
+          href: plan/planning-how-to-create-database-connection.md
+        - name: Create a semantic model connection
+          href: plan/planning-how-to-create-semantic-model-connection.md
+        - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Build forecasts
           href: plan/planning-how-to-build-forecasts.md
