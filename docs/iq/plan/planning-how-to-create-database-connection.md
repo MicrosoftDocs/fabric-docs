@@ -29,9 +29,9 @@ Before you can create the database connection, make sure you have the following 
 1. For **Connection type**, select *SQL database in Fabric*.
 1. Set the **Authentication method** to *OAuth 2.0*.
 1. Select **Edit credentials**, then sign in with your Microsoft account.
-1. Select **Create** to create the connection.
+1. Select **Create**.
 
-    :::image type="content" source="media/planning-how-to-create-database-connection/new-connection-database.png" alt-text="Screenshot of creating a new database connection.":::
+:::image type="content" source="media/planning-how-to-create-database-connection/new-connection-database.png" alt-text="Screenshot of creating a new database connection.":::
 
 ## Share the database connection 
 

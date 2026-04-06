@@ -38,7 +38,7 @@ Before you set up Planning sheets, make sure you have at least one of the follow
 
 1. In your new plan item, you see options to get your data from the semantic model or Excel/CSV and create a Planning sheet from it, or to start with a Planning sheet and then connect it to data.
 
-    :::image type="content" source="media/planning-how-to-get-started/new-plan-3.png" alt-text="Screenshot of the getting started options.":::
+    :::image type="content" source="media/planning-how-to-get-started/new-plan-3.png" alt-text="Screenshot of the getting started options." lightbox="media/planning-how-to-get-started/new-plan-3.png":::
 
 1. Select **Planning**, **Name** the new Planning sheet, and **Create** it.
 
@@ -52,7 +52,7 @@ Before you set up Planning sheets, make sure you have at least one of the follow
 
 1. Select the semantic model and select **Add**.
 
-    :::image type="content" source="media/planning-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing a semantic model.":::
+    :::image type="content" source="media/planning-how-to-get-started/new-plan-4.png" alt-text="Screenshot of choosing a semantic model." lightbox="media/planning-how-to-get-started/new-plan-4.png":::
 
 1. Add semantic model data into your fields. Now your first Planning sheet is created.
    
