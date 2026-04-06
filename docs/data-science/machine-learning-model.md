@@ -1,9 +1,10 @@
-ï»¿---
+---
 title: Machine learning model
 description: Learn how to create, track, and manage machine learning models in Microsoft Fabric. Compare model versions, apply tags, and deploy models for scoring and inferencing.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: concept-article
 ms.date: 01/29/2026
 ms.search.form: Create New Model, Model Comparison
@@ -163,8 +164,8 @@ Once you train a model on a data set, you can apply that model to data it never 
 
 Fabric supports multiple approaches for applying your trained models:
 
-- **Batch scoring** â€“ Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
-- **Real-time scoring** â€“ Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
+- **Batch scoring** – Apply your model at scale across large datasets using Apache Spark. This is ideal for generating predictions on historical or scheduled data.
+- **Real-time scoring** – Deploy your model to an endpoint for on-demand predictions, useful for applications that need immediate results.
 
 To get started with applying your models, choose the approach that fits your scenario:
 
