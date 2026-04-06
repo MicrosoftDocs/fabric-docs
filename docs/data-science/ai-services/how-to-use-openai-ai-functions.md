@@ -3,8 +3,8 @@ title: Use Azure OpenAI with AI Functions
 description: Learn when to use AI functions with Azure OpenAI in Fabric and where to find complete guidance.
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
 ms.date: 01/16/2026
