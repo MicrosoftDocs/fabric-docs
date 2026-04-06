@@ -83,11 +83,11 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-consumer-group.png" alt-text="Screenshot that shows the area for entering a consumer group for extended features." lightbox="./media/azure-event-hubs-source-connector/extended-consumer-group.png":::
 
-1. On the **Source details** pane to the right, select the pencil icon next to the source name, and then enter a name for the source. This step is optional.
+### Stream or source details
 
-    :::image type="content" source="./media/azure-event-hubs-source-connector/extended-source-name.png" alt-text="Screenshot that shows the pencil icon for the source name on the pane for source details, with the option for extended features selected." lightbox="./media/azure-event-hubs-source-connector/extended-source-name.png":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-1. Select **Next** at the bottom of the page.
+### Schema handling page
 
 1. On the **Schema handling** page, provide rules to handle events received from the selected event hub, so that the eventstream can apply them correctly. The mapping rules depend on how you model the events.
 
@@ -118,11 +118,13 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-schema-handling.png" alt-text="Screenshot that shows the Next button on the page for schema handling." lightbox="./media/azure-event-hubs-source-connector/extended-schema-handling.png":::
 
+### Review and connect
+
 1. On the **Review + connect** page, review the settings, and then select **Connect**.
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-page.png" alt-text="Screenshot that shows the page for reviewing settings and creating an Azure Event Hubs connector when the extended features are enabled." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 
-1. On the **Review + connect** page, select **Add**, or **Connect**.
+1. On the **Review + connect** page, select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-review-create-success.png" alt-text="Screenshot that shows the page for reviewing settings and creating a connector after the successful creation of resources." lightbox="./media/azure-event-hubs-source-connector/extended-review-create-page.png":::
 ::: zone-end
