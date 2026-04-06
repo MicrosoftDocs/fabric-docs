@@ -27,7 +27,9 @@ ms.date: 03/31/2026
 1. Scroll down, and under **Configure Amazon Kinesis data source**, enter a **Region** for the data source. You can find the Amazon region code such as **us-west-2** from the Kinesis **Data stream summary**.
 
     :::image type="content" source="./media/amazon-kinesis-data-streams-connector-configuration/source-name-region.png" alt-text="A screenshot of the Region field for Configure Amazon Kinesis data source.":::
-    
+
+### Stream or source details
+
 [!INCLUDE [stream-source-details](./stream-source-details.md)]
 
 

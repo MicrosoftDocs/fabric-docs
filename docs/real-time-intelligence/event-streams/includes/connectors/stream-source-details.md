@@ -6,7 +6,6 @@ ms.date: 01/15/2025
 ms.custom: references_regions
 ---
 
-### Stream or source details
 
 1. Follow one of these steps based on whether you're using Eventstream or Real-Time hub. 
 
