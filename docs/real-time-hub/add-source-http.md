@@ -16,13 +16,11 @@ This article shows you how to add an HTTP source as an event source in Fabric Re
 
 [!INCLUDE [http-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/http-source-connector-prerequisites.md)]
 
-## Data sources page
+## Launch Add data source experience
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 ## Select HTTP as a source
-
-[!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
 On the **Data sources** page, search for **HTTP**, and then select **HTTP**. 
 

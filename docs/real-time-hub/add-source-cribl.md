@@ -16,9 +16,11 @@ This article shows you how to add a Cribl source as an event source in Fabric Re
 
 [!INCLUDE [cribl-source-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/cribl-source-connector-prerequisites.md)]
 
-## Add Cribl as a source
+## Launch Add data source experience
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
+
+## Select Cribl as a source
 
 On the **Data sources** page, search for **Cribl**, and then select **Cribl**. 
 
