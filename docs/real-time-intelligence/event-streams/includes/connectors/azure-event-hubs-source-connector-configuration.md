@@ -83,9 +83,7 @@ ms.date: 04/01/2026
 
     :::image type="content" source="./media/azure-event-hubs-source-connector/extended-consumer-group.png" alt-text="Screenshot that shows the area for entering a consumer group for extended features." lightbox="./media/azure-event-hubs-source-connector/extended-consumer-group.png":::
 
-1. On the **Source details** pane to the right, select the pencil icon next to the source name, and then enter a name for the source. This step is optional.
-
-    :::image type="content" source="./media/azure-event-hubs-source-connector/extended-source-name.png" alt-text="Screenshot that shows the pencil icon for the source name on the pane for source details, with the option for extended features selected." lightbox="./media/azure-event-hubs-source-connector/extended-source-name.png":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
 1. Select **Next** at the bottom of the page.
 

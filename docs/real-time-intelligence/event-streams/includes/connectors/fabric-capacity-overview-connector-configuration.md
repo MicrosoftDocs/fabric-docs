@@ -15,6 +15,9 @@ ms.date: 04/02/2026
 1. In the **Stream details** pane to the right, select the **Pencil** button to change the **Source name**. It's an optional step.
 
     :::image type="content" source="./media/fabric-capacity-overview-source-connector/edit-source-name.png" alt-text="Screenshot that shows the Pencil button for the Source name." lightbox="./media/fabric-capacity-overview-source-connector/edit-source-name.png":::   
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
 1. Select **Next** at the bottom of the page. 
 1. On the **Review + create** screen, review settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 

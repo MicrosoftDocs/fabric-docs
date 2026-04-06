@@ -48,7 +48,7 @@ ms.date: 04/01/2026
 
 1. For **Data format**, select a data format for the incoming real-time events that you want to get from your IoT hub. You can select from JSON, Avro, and CSV data formats. Then select **Connect**.
 
-1. In the **Stream details** section on the right, select the pencil icon under **Source name**, and then enter a name for the source. This step is optional.
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
 1. Select **Next** at the bottom of the page.
 

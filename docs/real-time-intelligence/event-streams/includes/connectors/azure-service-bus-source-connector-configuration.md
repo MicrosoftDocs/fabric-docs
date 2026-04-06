@@ -52,9 +52,7 @@ ms.date: 04/01/2026
 
        If you selected **Queue**, enter the name of the queue.
 
-1. In the **Stream details** section to the right, use the pencil button to change the source name. You might want to change this name to the name of the Service Bus namespace or the topic.
-
-    :::image type="content" source="./media/azure-service-bus-source-connector/stream-details.png" alt-text="Screenshot that shows the section for stream details in the wizard for connecting a data source." lightbox="./media/azure-service-bus-source-connector/stream-details.png":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
 1. At the bottom of the wizard, select **Next**.
 

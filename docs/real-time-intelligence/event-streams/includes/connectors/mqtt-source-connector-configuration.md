@@ -28,5 +28,8 @@ ms.date: 04/02/2026
 
 1. For **Topic name**, enter the MQTT topic to subscribe to. The connector supports only a single topic.
 1. For **Version**, select either **V5** or **V3** based on your MQTT broker's protocol version.
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
 1. Select **Next** to proceed to the **Review + connect** page. Review your configuration settings, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 

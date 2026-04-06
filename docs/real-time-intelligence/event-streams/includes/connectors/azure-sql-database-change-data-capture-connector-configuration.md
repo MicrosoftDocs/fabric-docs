@@ -51,7 +51,11 @@ Ingest change data from Azure SQL databases with automatic table schema registra
         - `ReadWrite`: Connects to the primary replica. Use this option if the connection needs to perform both read and write operations.
         - `ReadOnly`: Allows routing to a readable secondary replica for read-only operations. Use it to enable CDC directly on replicas. It requires to set snapshot.isolation.mode to snapshot, which is the only one transaction isolation mode supported for read-only replicas.
     - **Snapshot select statement override**: Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It doesn't apply to events that the connector reads from the log.
-1. In the **Schema handling** step, choose one of the following options:
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+1. Select **Next** at the bottom of the page.
+1. In the **Schema handling** page, choose one of the following options:
 
     - **Analytics-ready events & auto-updated schema (DeltaFlow Preview)**: The connector transforms raw CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow enriches events with metadata such as change type (insert, update, or delete) and timestamps, and automatically manages destination tables and schema evolution.
     - **Raw CDC events**: The connector ingests and makes available the raw CDC events. Optionally, the connector can autodiscover table schemas and register them in the schema registry. Use this option when you want schema awareness without DeltaFlow transformation.

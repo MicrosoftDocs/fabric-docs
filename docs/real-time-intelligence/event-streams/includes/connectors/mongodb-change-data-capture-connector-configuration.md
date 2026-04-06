@@ -53,6 +53,9 @@ ms.date: 04/02/2026
 
    :::image type="content" source="media/mongodb-change-data-capture-connector/table.png" alt-text="A screenshot of selecting Tables, Server ID, and Port for the MongoDB (CDC) connection." lightbox="media/mongodb-change-data-capture-connector/table.png":::
     
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+1. Select **Next** at the bottom of the **Configure** page.
 1. On the **Review + connect** page, after reviewing the summary for MongoDB CDC source, select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
       :::image type="content" source="media/mongodb-change-data-capture-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mongodb-change-data-capture-connector/review-connect.png":::

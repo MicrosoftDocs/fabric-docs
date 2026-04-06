@@ -30,9 +30,9 @@ ms.date: 04/01/2026
     1. The **Stream name** value is automatically generated for you by appending **-stream** to the name of the eventstream. You can see this stream on the real-time hub's **All data streams** page when the wizard finishes.  
 
         :::image type="content" source="./media/azure-data-explorer-connector/stream-name.png" alt-text="Screenshot that shows the section for source details in the Azure Data Explorer connection settings." :::
-1. If you're using the eventstream editor to add an Azure Data Explorer database table as a source to an eventstream, select the pencil button under **Source name**, and then enter a source name.
 
-    :::image type="content" source="./media/azure-data-explorer-connector/stream-details.png" alt-text="Screenshot that shows the pencil button for adding a source name.":::
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
 1. Select **Next** at the bottom of the page.
 1. On the **Review + connect** page, review the settings, and then select **Add** (Eventstream) or **Connect** (Real-Time hub).
 

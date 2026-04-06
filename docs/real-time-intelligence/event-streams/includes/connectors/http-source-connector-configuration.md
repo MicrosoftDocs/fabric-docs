@@ -68,6 +68,9 @@ Follow the steps to configure your own HTTP source without an example API.
 
    :::image type="content" source="media/http-connector/configure-connection-settings.png" alt-text="Screenshot that shows the configured settings." lightbox="media/http-connector/configure-connection-settings.png":::
 
-1. Review the configuration summary for the HTTP source and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+1. Select **Next** at the bottom of the page.
+1. On the **Review + connect** page, review the configuration summary for the HTTP source and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 
    :::image type="content" source="media/http-connector/review.png" alt-text="Screenshot that shows the review configuration page." lightbox="media/http-connector/review.png":::

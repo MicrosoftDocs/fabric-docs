@@ -25,6 +25,9 @@ ms.date: 03/31/2026
     1. Select one or more values to match. 
  
         :::image type="content" source="./media/anomaly-detection-events/set-filters.png" alt-text="Screenshot that shows the addition of a filter." lightbox="./media/anomaly-detection-events/set-filters.png":::       
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
 1. Then, select **Next** at the bottom of the page.
 
     :::image type="content" source="./media/anomaly-detection-events/next-button.png" alt-text="Screenshot that shows the selection of the Next button." lightbox="./media/anomaly-detection-events/next-button.png":::

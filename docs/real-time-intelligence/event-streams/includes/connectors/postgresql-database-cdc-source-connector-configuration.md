@@ -67,6 +67,9 @@ Ingest change data from PostgreSQL databases with automatic table schema registr
     - **Heartbeat action query**： Specifies a query that the connector executes on the source database when the connector sends a heartbeat message.
     - **Snapshot select statement override**： Specifies the table rows to include in a snapshot. Use the property if you want a snapshot to include only a subset of the rows in a table. This property affects snapshots only. It doesn't apply to events that the connector reads from the log.
 
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+1. Select **Next** at the bottom of the **Configure** page. 
 1. In the **Schema handling** step, choose one of the following options:
 
     - **Analytics-ready events & auto-updated schema (DeltaFlow Preview)**: The connector transforms raw CDC events into analytics-ready streams that mirror your source table structure. DeltaFlow enriches events with metadata such as change type (insert, update, or delete) and timestamps, and automatically manages destination tables and schema evolution.

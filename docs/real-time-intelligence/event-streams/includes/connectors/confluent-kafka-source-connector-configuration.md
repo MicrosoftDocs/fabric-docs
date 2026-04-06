@@ -57,6 +57,8 @@ ms.date: 04/02/2026
 
         :::image type="content" source="./media/confluent-kafka-source-connector/configure-additional-settings.png" alt-text="Screenshot that shows the additional settings of Confluent TLS/mTLS settings."::: 
 
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
 1. Depending on whether your data is encoded using Confluent Schema Registry:
    - If not encoded, select **Next**. On the **Review and create** screen, review the summary, and then select **Add** to complete the setup.
    - If encoded, proceed to the next step: [Connect to Confluent schema registry to decode data (preview)](#connect-to-confluent-schema-registry-to-decode-data-preview)
