@@ -30,9 +30,14 @@ ms.date: 04/03/2026
         > If you aren't the owner of the queue, ensure you have the appropriate permission, specifically Consume, Modify Topic and Delete are valid, while No Access and Read Only don't work. 
     - If you selected **Topic**, enter the **Topic name**. You can enter multiple topic names separated by commas.  
 1. Enter the **Message vpn name**. Ensure you have appropriate permissions on the Message VPN.
-1. Then, select **Next**
 
-    :::image type="content" source="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png" alt-text="Screenshot that shows the Configure Solace PubSub+ data source section." lightbox="./media/solace-pub-sub-source-connector/configure-solace-pub-sub-source.png":::                
-1. On the **Review + connect** page, review settings, and select **Add** or **Connect**. 
+### Stream or source details
+
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
+
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
+
 
 
