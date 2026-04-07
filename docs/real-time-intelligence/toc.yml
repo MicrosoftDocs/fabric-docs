@@ -155,6 +155,10 @@ items:
         items:
           - name: Add and manage a destination
             href: event-streams/add-manage-eventstream-destinations.md
+          - name: Activator
+            href: event-streams/add-destination-activator.md
+          - name: Custom endpoint
+            href: event-streams/add-destination-custom-app.md
           - name: Derived stream
             href: event-streams/add-destination-derived-stream.md
           - name: Eventhouse
@@ -163,10 +167,6 @@ items:
             href: event-streams/add-destination-lakehouse.md
           - name: Spark Notebook
             href: event-streams/add-destination-spark-notebook.md            
-          - name: Activator
-            href: event-streams/add-destination-activator.md
-          - name: Custom endpoint
-            href: event-streams/add-destination-custom-app.md
       - name: Process events
         items:
           - name: Process events using event processor
