@@ -10,7 +10,7 @@ If you haven't added any source to your eventstream yet, select the **Connect da
 
 :::image type="content" source="./media/select-external-source/select-use-external-source-tile.png" alt-text="Screenshot that shows the selection of the tile for using an external source." lightbox="./media/select-external-source/select-use-external-source-tile.png":::
 
-If you're adding the source to an already published eventstream, switch to **Edit** mode. On the ribbon, select **Add source** > **Connect data source**.
+If you're adding the source to an already published eventstream, switch to **Edit** mode. On the ribbon, select **Add source** > **Connect data sources**.
 
 :::image type="content" source="./media/select-external-source/add-source-ribbon.png" alt-text="Screenshot that shows selections for adding external sources." lightbox="./media/select-external-source/add-source-ribbon.png":::
 
