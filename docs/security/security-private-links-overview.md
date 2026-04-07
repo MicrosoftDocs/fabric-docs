@@ -153,15 +153,17 @@ Limitations:
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
-### Fabric Events
+### Azure and Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
+Fabric events (such as Job events, Workspace item events, and OneLake events) support Private Link at the tenant level without affecting event delivery, because they originate from within the tenant. However, when [workspace-level private links](security-workspace-level-private-links-overview.md) are configured to block public access on the workspace where the events originate (the source workspace), event consumers such as Activator alerts or eventstreams in other workspaces are blocked from consuming those events unless a private link is established from the consumer's network to the source workspace.
 
-### Azure Events
+Azure events (such as Azure Blob Storage events) are affected by both tenant-level and workspace-level private links. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely:
+* New configurations to consume Azure events are blocked.
+* Existing configurations consuming Azure events stop delivering events. The system detects the configuration change and puts the consumer in a paused state.
 
-Azure Events support Private Link with the following behavior when the Block Public Internet Access tenant setting is enabled: 
-* New configurations to consume Azure events (e.g., Azure Blob Storage events) will be blocked from being delivered. 
-* Existing configurations consuming Azure events will stop new events from being delivered.
+Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
+
+For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
   
 <!--### Other Fabric items
 
