@@ -164,7 +164,11 @@ items:
   - name: Consume Business events
     href: business-events/consume-business-events-from-activator.md
   - name: Subscribe permission for Azure and Fabric events
-    href: fabric-events-subscribe-permission.md   
+    href: fabric-events-subscribe-permission.md
+  - name: Private links for Azure and Fabric Events (preview)
+    href: private-links-real-time-events.md
+  - name: Paused event configurations
+    href: fabric-events-paused-state.md
   - name: Events capacity consumption
     href: fabric-events-capacity-consumption.md
   - name: Events delivery guarantees
