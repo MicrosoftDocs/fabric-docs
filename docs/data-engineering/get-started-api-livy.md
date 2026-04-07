@@ -4,7 +4,7 @@ description: Learn how to submit and run Spark session jobs in Fabric using the 
 ms.reviewer: avinandac
 ms.topic: how-to
 ms.search.form: Get started with the Livy API for Data Engineering
-ms.date: 11/05/2025
+ms.date: 04/07/2026
 ---
 
 # Use the Livy API to submit and execute Spark session jobs with user credentials
@@ -61,43 +61,62 @@ After creating the app registration, create a client secret.
 
 To work with Fabric APIs including the Livy API, you first need to create a Microsoft Entra application and obtain a token. Your application needs to be registered and configured adequately to perform API calls against Fabric. For more information, see [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app).
 
-There are many Microsoft Entra scope permissions required to execute Livy jobs. This example uses simple Spark code + storage access + SQL:
+The following Microsoft Entra scope permissions are required to execute Livy API jobs:
 
-* Code.AccessAzureDataExplorer.All
-* Code.AccessAzureDataLake.All
-* Code.AccessAzureKeyvault.All
-* Code.AccessFabric.All
-* Code.AccessStorage.All
-* Item.ReadWrite.All
-* Lakehouse.Execute.All
-* Workspace.ReadWrite.All
+:::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-api-permissions.png" :::
 
-    :::image type="content" source="media/livy-api/entra-app-API-permissions.png" alt-text="Screenshot showing Livy API permissions in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-API-permissions.png" :::
 
-> [!NOTE]
-> During public preview these scopes may change as we add a few more granular scopes. When these scope changes happen your Livy app may break. Check this list as it will be updated with the additional scopes.
+#### Required scopes
 
-Some customers want more granular permissions than the prior list. You could remove Item.ReadWrite.All and replacing with these more granular scope permissions:
+| Scope | Description |
+|-------|-------------|
+| `Lakehouse.Execute.All` | Execute operations in Fabric lakehouses. |
+| `Lakehouse.Read.All` | Read lakehouse metadata. |
+| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
 
-* Code.AccessAzureDataExplorer.All
-* Code.AccessAzureDataLake.All
-* Code.AccessAzureKeyvault.All
-* Code.AccessFabric.All
-* Code.AccessStorage.All
-* Lakehouse.Execute.All
-* Lakehouse.ReadWrite.All
-* Workspace.ReadWrite.All
-* Notebook.ReadWrite.All
-* SparkJobDefinition.ReadWrite.All
-* MLModel.ReadWrite.All
-* MLExperiment.ReadWrite.All
-* Dataset.ReadWrite.All
+#### Optional Code.* scopes
+
+Add these scopes only if your Spark jobs need to access the corresponding Azure services at runtime.
+
+| Scope | Description | When to use |
+|-------|-------------|-------------|
+| `Code.AccessAzureKeyvault.All` | Allows getting access tokens to Azure Key Vault. | Your Spark code retrieves secrets, keys, or certificates from Azure Key Vault. |
+| `Code.AccessAzureDataLake.All` | Allows getting access tokens to Azure Data Lake Storage Gen1. | Your Spark code reads from or writes to Azure Data Lake Storage Gen1 accounts. |
+| `Code.AccessAzureDataExplorer.All` | Allows getting access tokens to Azure Data Explorer (Kusto). | Your Spark code queries or ingests data to/from Azure Data Explorer clusters. |
+| `Code.AccessSQL.All` | Allows getting access tokens to Azure SQL. | Your Spark code needs to connect to Azure SQL databases. |
 
 When you register your application, you will need both the Application (client) ID and the Directory (tenant) ID.
 
 :::image type="content" source="media/livy-api/entra-app-overview.png" alt-text="Screenshot showing Livy API app overview in the Microsoft Entra admin center." lightbox="media/livy-api/entra-app-overview.png":::
 
 The authenticated user calling the Livy API needs to be a workspace member where both the API and data source items are located with a Contributor role. For more information, see [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
+
+## Understanding Code.* scopes for the Livy API
+
+When your Spark jobs run via the Livy API, the `Code.*` scopes control what external services the Spark Runtime
+can access on behalf of the authenticated user. Two are required; the rest are optional depending on your workload.
+
+### Required Code.* scopes
+
+| Scope | Description |
+|-------|-------------|
+| `Code.AccessFabric.All` | Allows getting access tokens to Microsoft Fabric. Required for all Livy API operations. |
+| `Code.AccessStorage.All` | Allows getting access tokens to OneLake and Azure storage. Required for reading and writing data in lakehouses. |
+
+### Optional Code.* scopes
+
+Add these scopes only if your Spark jobs need to access the corresponding Azure services at runtime.
+
+| Scope | Description | When to use |
+|-------|-------------|-------------|
+| `Code.AccessAzureKeyvault.All` | Allows getting access tokens to Azure Key Vault. | Your Spark code retrieves secrets, keys, or certificates from Azure Key Vault. |
+| `Code.AccessAzureDataLake.All` | Allows getting access tokens to Azure Data Lake Storage Gen1. | Your Spark code reads from or writes to Azure Data Lake Storage Gen1 accounts. |
+| `Code.AccessAzureDataExplorer.All` | Allows getting access tokens to Azure Data Explorer (Kusto). | Your Spark code queries or ingests data to/from Azure Data Explorer clusters. |
+| `Code.AccessSQL.All` | Allows getting access tokens to Azure SQL. | Your Spark code needs to connect to Azure SQL databases. |
+
+> [!NOTE]
+> The `Lakehouse.Execute.All` and `Lakehouse.Read.All` scopes are also required but are not part of the `Code.*` family. They grant permission to execute operations in and read metadata from Fabric lakehouses respectively.
 
 ## How to discover the Fabric Livy API endpoint
 
