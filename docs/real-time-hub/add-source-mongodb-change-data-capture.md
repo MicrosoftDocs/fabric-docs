@@ -8,9 +8,9 @@ ms.date: 09/22/2025
 ms.search.form: Source and Destination
 ---
 
-# Add MongoDB CDC Source in Fabric Real-Time Hub (preview)
+# Add MongoDB CDC source in Fabric Real-Time hub (preview)
 
-This article shows you how to add a MongoDB Change Data Capture(CDC) source in Fabric Real-Time Hub.
+This article shows you how to add a MongoDB Change Data Capture (CDC) source in Fabric Real-Time hub.
 
 [!INCLUDE [mongodb-change-data-capture-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/mongodb-change-data-capture-connector-prerequisites.md)]
 

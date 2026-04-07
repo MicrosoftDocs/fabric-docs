@@ -4,6 +4,10 @@ description: This file has the common content for configuring a Cribl connector 
 ms.reviewer: zhenxilin
 ms.topic: include
 ms.date: 04/06/2026
+author: spelluru
+ms.author: spelluru
+ms.service: fabric
+ms.subservice: rti-eventstream
 ---
 
 1. On the **Configure connection settings** page, enter a **Name** for the Cribl source. Then select **Next**.
@@ -30,7 +34,7 @@ ms.date: 04/06/2026
 
    :::image type="content" source="media/cribl-source-connector/select-eventstream-destination.png" alt-text="Screenshot that shows in the cribl cloud select eventstream." lightbox="media/cribl-source-connector/select-eventstream-destination.png":::
 
-1. Under **General Settings**, configure the following under General Settings:
+1. Under **General Settings**, configure the following settings:
 
    - `Output ID`: Enter a unique name to identify this Fabric Real-Time Intelligence destination. 
    - `Description`: Optionally, enter a description.
@@ -68,7 +72,7 @@ ms.date: 04/06/2026
 
    ### [PLAIN](#tab/plain)
 
-   1. In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
+   - In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
 
       :::image type="content" source="media/cribl-source-connector/configure-cribl-jaas-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/cribl-source-connector/configure-cribl-jaas-password.png":::
 

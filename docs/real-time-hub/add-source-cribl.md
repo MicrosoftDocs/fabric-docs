@@ -7,10 +7,9 @@ ms.date: 04/06/2026
 author: spelluru
 ms.author: spelluru
 ms.search.form: Source and Destination
-ms.custom: reference_regions
 ---
 
-# Add Cribl Source in Fabric Real-Time hub (preview)
+# Add Cribl source in Fabric Real-Time hub (preview)
 
 This article shows you how to add a Cribl source as an event source in Fabric Real-Time hub.
 

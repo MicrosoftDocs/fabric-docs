@@ -3,6 +3,10 @@ title: HTTP source connector limitations
 description: This file documents the limitations of the HTTP source connector.
 ms.topic: include
 ms.date: 04/06/2026
+author: spelluru
+ms.author: spelluru
+ms.service: fabric
+ms.subservice: rti-eventstream
 ---
 
 

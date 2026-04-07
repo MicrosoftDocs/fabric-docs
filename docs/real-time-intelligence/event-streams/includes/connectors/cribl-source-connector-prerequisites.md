@@ -4,6 +4,10 @@ description: This file has the prerequisites for configuring a Cribl connector f
 ms.reviewer: zhenxilin
 ms.topic: include
 ms.date: 04/02/2026
+author: spelluru
+ms.author: spelluru
+ms.service: fabric
+ms.subservice: rti-eventstream
 ---
 
 
