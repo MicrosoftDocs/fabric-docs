@@ -41,7 +41,7 @@ When [workspace-level private links](/fabric/security/security-workspace-level-p
 In Azure and Fabric Events, the **source workspace** is the workspace where the events originate from, and the **consumer workspace** is the workspace where the Activator alert, eventstream, or other consumer item is created.
 
 > [!NOTE]
-> Workspace-level private links are enforced on the **source workspace** (the workspace where events originate). This is the reverse direction from [outbound access protection](/fabric/security/workspace-outbound-access-protection-real-time-events), which is enforced on the consumer's workspace (the workspace where the Activator alert, eventstream, or other consumer is created).
+> Workspace-level private links are enforced on the **source workspace** (the workspace where events originate).
 
 ### How workspace-level private links affect event consumption
 
@@ -103,7 +103,5 @@ To restore event delivery, disable the **Block Public Internet Access** tenant s
 - Tenant-level private links only affect Azure event sources (events originating from outside the Fabric tenant). Fabric events aren't affected by tenant-level private links because they originate from within the tenant.
 
 - Workspace-level private links are enforced on the source workspace (the workspace where events originate, or the workspace that contains the eventstream item representing the Azure source). No workspace-level private link configuration is required on the consumer workspace for this feature.
-
-- Workspace-level private links and [outbound access protection](/fabric/security/workspace-outbound-access-protection-real-time-events) are complementary features that enforce network restrictions in opposite directions. Both can be configured simultaneously.
 
 - For other private link limitations, see [About tenant-level private links](/fabric/security/security-private-links-overview#other-considerations-and-limitations) and [Supported scenarios and limitations for workspace-level private links](/fabric/security/security-workspace-level-private-links-support).
