@@ -74,7 +74,7 @@ ms.subservice: rti-eventstream
 
    - In the Eventstream Cribl source's details pane, under **SASL mechanism**, select the **Plain** tab. Then copy the **SASL JASS password-primary** value into the **SASL JASS password** field on the Authentication page.
 
-      :::image type="content" source="media/cribl-source-connector/configure-cribl-jaas-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/cribl-source-connector/configure-cribl-jaas-password.png":::
+      :::image type="content" source="media/cribl-source-connector/configure-cribl-jass-password.png" alt-text="Screenshot that shows how to get JASS password in eventstream." lightbox="media/cribl-source-connector/configure-cribl-jass-password.png":::
 
 1. Select **Save**, and use the Cribl QuickConnect to connect to your Cribl source in Cribl service portal, and then **Commit & Deploy**.
 1. After you complete these steps, you can preview the data in your eventstream that is from your Cribl.
