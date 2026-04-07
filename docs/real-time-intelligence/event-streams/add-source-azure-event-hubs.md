@@ -1,10 +1,13 @@
 ---
 title: Add an Azure Event Hubs Source to an Eventstream
-description: Learn how to add an Azure Event Hubs source to an eventstream.
+description: Add an Azure Event Hubs source to your Microsoft Fabric eventstream with this how-to guide. Configure the connector, preview data, and publish in minutes.
+#customer intent: As a data engineer, I want to add an Azure Event Hubs source to my Microsoft Fabric eventstream so that I can ingest real-time event data into my streaming pipeline.
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.custom: sfi-image-nochange
-ms.date: 09/25/2025
+ms.date: 04/01/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 zone_pivot_group_filename: real-time-intelligence/event-streams/zone-pivot-groups.json
 zone_pivot_groups: event-hubs-capabilities
@@ -14,15 +17,13 @@ zone_pivot_groups: event-hubs-capabilities
 
 This article shows you how to add an Azure Event Hubs source to a Microsoft Fabric eventstream.
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.
-- Appropriate permission to get an event hub's access keys. If your event hub is within a protected network, [connect to it by using a managed private endpoint](set-up-private-endpoint.md). Otherwise, ensure that the event hub is publicly accessible and not behind a firewall.
-- If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md).
+[!INCLUDE [azure-event-hubs-source-connector-prerequisites](./includes/connectors/azure-event-hubs-source-connector-prerequisites.md)]
 
 ## Open the wizard for selecting a data source
 
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
+
+## Select Azure Event Hubs as a source
 
 On the **Select a data source** page, search for **Azure Event Hubs**. On the **Azure Event Hubs** tile, select **Connect**.
 
@@ -30,7 +31,7 @@ On the **Select a data source** page, search for **Azure Event Hubs**. On the **
 
 ## Configure an Azure Event Hubs connector
 
-[!INCLUDE [azure-event-hubs-source-connector](./includes/azure-event-hubs-source-connector.md)]
+[!INCLUDE [azure-event-hubs-source-connector](./includes/connectors/azure-event-hubs-source-connector-configuration.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: Migrate with a Direct Connection
+title: Migrate with a Direct Connection (Preview)
 description: This tutorial provides a step-by-step guide for the Migration Assistant for Fabric Data Warehouse using a direct connection to the source.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -9,9 +9,11 @@ ms.topic: how-to
 ms.search.form: Migration Assistant
 ai-usage: ai-assisted
 ---
-# Migrate with a direct connection
+# Migrate with a direct connection (preview)
 
 **Applies to**: [!INCLUDE [fabric-dw](../data-warehouse/includes/applies-to-version/fabric-dw.md)]
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 The Fabric Migration Assistant provides a migration experience that helps you copy dedicated SQL pools in Azure Synapse Analytics, SQL Server, and other SQL database platforms seamlessly into Microsoft Fabric Data Warehouse.
 

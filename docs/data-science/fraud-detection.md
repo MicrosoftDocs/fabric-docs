@@ -1,7 +1,8 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a fraud detection model'
 description: This tutorial shows the data science workflow for building a model that detects credit card fraud.
-ms.reviewer: lagayhar, amjafari
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: tutorial
 ms.custom: sfi-image-nochange
 ms.date: 02/28/2026
@@ -275,8 +276,6 @@ print("Resampled dataset shape %s" % Counter(y_res))
 
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
-
-For more information about SMOTE, see the [scikit-learn reference page for the SMOTE method](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) and the [scikit-learn user guide on oversampling](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn) resources.
 
 ### Train machine learning models and run experiments
 

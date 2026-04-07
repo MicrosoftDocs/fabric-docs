@@ -1,7 +1,7 @@
 ---
 title: Configure approval workflow
 description: Learn how to configure single-level and multi-level approval workflows in PowerTable sheets.
-ms.date: 03/11/2026
+ms.date: 03/27/2026
 ms.topic: how-to
 #customer intent: As a user, I want to know the steps to configure an approval workflow in PowerTable sheets so that I can review and approve data changes before they are committed to the underlying data source..
 ---
@@ -31,7 +31,7 @@ The rest of this article explains each step of the approval workflow in detail.
 ## Set up approval workflow
 
 Setting up an approval workflow in PowerTable sheets involves two steps:
-1. [Enable approvals directly](#enable-approvals)
+1. [Enable approvals](#enable-approvals)
 2. [Select a method of choosing approvers](#select-approvers)
 
 Once the workflow is enabled, every change made by users undergoes an approval process before getting saved and synced to the source.

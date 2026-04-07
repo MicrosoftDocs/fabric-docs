@@ -106,6 +106,9 @@ Finally, create a new relationship type to represent the connection between a st
     1. **Source data**: Select your tutorial workspace, the *OntologyDataLH* lakehouse, and the *freezer* table. This table in the source data can link *Store* and *Freezer* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a freezer by ID.
     1. **Source entity type > Source column**: Select `StoreId`. This setting specifies the column in the relationship source data table (*freezer >* `StoreId`) whose values match the key property defined on the *Store* entity (*dimstore >* `StoreId`). In the tutorial data, the column name is the same in both tables.
     1. **Target entity type > Source column**: Select `FreezerId`. This setting specifies the column in the relationship source data table whose values match the key property defined on the *Freezer* entity. In this case, the relationship data source and the entity data source both use the *freezer* table, so you're selecting the same column.
+    
+    >[!IMPORTANT]
+    >Make sure to select the correct source columns that match the entity type key properties.
 
     Here's what the relationship configuration looks like:
 

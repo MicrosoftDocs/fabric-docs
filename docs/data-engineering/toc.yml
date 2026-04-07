@@ -53,6 +53,8 @@ items:
     href: lakehouse-sql-analytics-endpoint.md
   - name: Lakehouse schemas
     href: lakehouse-schemas.md
+  - name: Spark views in lakehouse
+    href: lakehouse-spark-views.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
@@ -124,8 +126,30 @@ items:
   - name: Operations and engineering
     items:
     - name: NotebookUtils
-      href: notebook-utilities.md
       displayName: MSSparkUtils
+      items:
+      - name: Overview
+        href: notebook-utilities.md
+      - name: File system utilities
+        href: notebookutils/notebookutils-file-system.md
+      - name: File mount and unmount
+        href: notebookutils/notebookutils-mount.md
+      - name: Notebook run and orchestration
+        href: notebookutils/notebookutils-notebook-run.md
+      - name: Notebook management
+        href: notebookutils/notebookutils-notebook-management.md
+      - name: Credentials utilities
+        href: notebookutils/notebookutils-credentials.md
+      - name: Lakehouse utilities
+        href: notebookutils/notebookutils-lakehouse.md
+      - name: Runtime context
+        href: notebookutils/notebookutils-runtime.md
+      - name: Session management
+        href: notebookutils/notebookutils-session-management.md
+      - name: User Data Function (UDF) utilities
+        href: notebookutils/notebookutils-user-data-function.md
+      - name: Variable library utilities
+        href: notebookutils/notebookutils-variable-library.md
     - name: Run notebooks in high concurrency mode
       href: configure-high-concurrency-session-notebooks.md
     - name: Run notebooks in pipelines with high concurrency mode
@@ -545,7 +569,7 @@ items:
       - name: Integration with Fabric pipelines
         href: ./user-data-functions/create-functions-activity-data-pipelines.md
       - name: Integration with Fabric notebooks
-        href: ./notebook-utilities.md#user-data-function-udf-utilities
+        href: ./notebookutils/notebookutils-user-data-function.md
       - name: Invoke functions using Python
         href: ./user-data-functions/tutorial-invoke-from-python-app.md
    - name: Manage

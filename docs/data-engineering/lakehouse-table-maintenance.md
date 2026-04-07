@@ -2,7 +2,7 @@
 title: Delta Table Maintenance in Microsoft Fabric
 description: Learn how to run Delta table maintenance in Lakehouse, choose the right maintenance action, and track maintenance jobs in Microsoft Fabric.
 ms.reviewer: dacoelho
-ms.date: 03/01/2026
+ms.date: 03/27/2026
 ms.topic: how-to
 ms.search.form: lakehouse table maintenance delta lake tables
 ai-usage: ai-assisted
@@ -31,13 +31,14 @@ As a general practice, run maintenance after major ingestion or update activity,
    :::image type="content" source="media/table-maintenance/table-maintenance.png" alt-text="Screenshot showing the Run maintenance commands dialog." lightbox="media/table-maintenance/table-maintenance.png":::
 
 1. In the **Run maintenance commands** dialog, choose the maintenance options:
-   - Select the **OPTIMIZE** checkbox to compact small Parquet files into larger files for more efficient reads.
-    - If **OPTIMIZE** is selected, you can also select the **Apply V-Order** checkbox. When you select this option, Fabric applies V-Order (optimized sorting, encoding, and compression) as part of optimize.
+   - Select the **On** option to compact small Parquet files into larger files for more efficient reads.
+    - If **On** is selected, you can also select the **Apply V-Order** checkbox. When you select this option, Fabric applies V-Order (optimized sorting, encoding, and compression) as part of optimize.
 
        > [!NOTE]
        > V-Order has about a 15% impact on average write times. It can also provide up to 50% more compression.
 
-   - Select the **Run VACUUM** checkbox to run the Delta Lake `VACUUM` command and remove unreferenced files older than your retention threshold. For retention behavior and safety details, see [Vacuum retention settings](#vacuum-retention-settings).
+   - Select the **On** option to run the Delta Lake `VACUUM` command and remove unreferenced files older than your retention threshold. For retention behavior and safety details, see [Vacuum retention settings](#vacuum-retention-settings).
+   - Select the **On** option to merge transactions into parquet files and remove the additional deletion vectors files, cleaning up space and optimizing table reads.
 1. Select **Run now** to execute the table maintenance job.
 1. Track job execution in either of these places:
    - **Notifications** pane (bell icon in the Fabric portal header) for immediate run status.

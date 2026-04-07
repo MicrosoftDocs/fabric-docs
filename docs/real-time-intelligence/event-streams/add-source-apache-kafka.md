@@ -3,7 +3,7 @@ title: Add Apache Kafka source to a Fabric eventstream
 description: Learn how to add an Apache Kafka topic as a source to an eventstream. This feature is currently in preview.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 07/22/2025
+ms.date: 03/04/2026
 ms.search.form: Source and Destination
 ms.custom: references_regions
 #customer intent: I want to learn how to add an Apache Kafka topic as an event source to a Fabric eventstream. 
@@ -14,30 +14,20 @@ This article shows you how to add Apache Kafka source to a Fabric eventstream.
 
 Apache Kafka is an open-source, distributed platform for building scalable, real-time data systems. By integrating Apache Kafka as a source within your eventstream, you can seamlessly bring real-time events from your Apache Kafka and process them before routing to multiple destinations within Fabric.
 
-## Prerequisites 
-
-- Access to the Fabric workspace with Contributor or above permissions.
-- An Apache Kafka cluster running. 
-- Your Apache Kafka must be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
-
+[!INCLUDE [apache-kafka-source-connector-prerequisites](./includes/connectors/apache-kafka-source-connector-prerequisites.md)]
 
 ## Add Apache Kafka as a source 
 
-1. In Fabric Real-Time Intelligence, select **Eventstream** to create a new eventstream.
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   :::image type="content" border="true" source="media/external-sources/new-eventstream.png" alt-text="A screenshot of creating a new eventstream.":::
+On the **Select a data source** page, or **Data sources** page, select **Apache Kafka**. 
 
-1. On the next screen, select **Add external source**.
-
-   :::image type="content" border="true" source="media/external-sources/add-external-source.png" alt-text="A screenshot of selecting Add external source.":::
-1. On the **Select a data source** page, or **Data sources** page, select **Apache Kafka**. 
-
-    :::image type="content" source="./includes/media/apache-kafka-source-connector/select-apache-kafka.png" alt-text="Screenshot that shows the selection of Apache Kafka as the source type in the Get events wizard.":::
+:::image type="content" source="./media/add-source-apache-kafka/select-apache-kafka.png" alt-text="Screenshot that shows the selection of Apache Kafka as the source type in the Get events wizard.":::
 
 
 ## Configure and connect to Apache Kafka
 
-[!INCLUDE [apache-kafka-connector](./includes/apache-kafka-source-connector.md)]
+[!INCLUDE [apache-kafka-source-connector-configuration](./includes/connectors/apache-kafka-source-connector-configuration.md)]
 
 ## View updated eventstream
 You can see the Apache Kafka source added to your eventstream in **Edit mode**.  
@@ -74,3 +64,4 @@ Other connectors:
 - [Fabric workspace event](add-source-fabric-workspace.md)
 
 
+ 

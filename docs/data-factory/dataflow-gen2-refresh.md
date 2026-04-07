@@ -88,6 +88,10 @@ A dataflow refresh can be stopped via cancel refresh feature or if a failure occ
 
 Not all queries in a dataflow are processed at the same time, for example, if a dataflow contains many queries or some queries depend on others. If a refresh is canceled before evaluation of a query that loads data to a destination began, there's no change to data in that query's destination.
 
+### Insufficient permissions for staging artifacts
+
+If a refresh fails with the error "The dataflow refresh failed due to insufficient permissions for accessing staging artifacts," it means the user who created the first dataflow in the workspace hasn't signed in to Fabric for more than 90 days or has left the organization. To resolve the issue, the user mentioned in the error message should sign in to Fabric. If the user has left the organization, [open a support ticket](/power-bi/support/service-support-options).
+
 ## Related content
 
 - [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md)

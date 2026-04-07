@@ -37,6 +37,8 @@ Outbound access protection applies to the following Microsoft Fabric mirrored da
 - SQL Server
 - Oracle
 - Google Big Query
+- SAP
+- Azure Database for MySQL
 
 > [!NOTE]
 > Mirrored databases follow data connection rules for mirroring. Only allowed sources can be mirrored. Connections to other sources for mirroring are blocked.

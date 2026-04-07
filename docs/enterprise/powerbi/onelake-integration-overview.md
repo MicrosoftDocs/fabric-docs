@@ -29,6 +29,8 @@ Before enabling OneLake integration, you must have one or more [import semantic 
 
 Model *contributor* (read, write, explore) permissions are required to access the contents of a model folder and create shortcuts linking to the folder in Lakehouse explorer.
 
+For cross-tenant scenarios where external users access exported Delta tables through OneLake data sharing, the data owner must grant OneLake read permissions to the external identity. Standard workspace role permissions don't extend across tenant boundaries.
+
 ## Enable OneLake integration
 
 In your semantic model settings, expand **OneLake integration**, click the slider to **On**, and then select **Apply**.
@@ -84,9 +86,11 @@ After exporting, you can use [OneLake file explorer](https://go.microsoft.com/fw
 
     :::image type="content" border="false" source="media/onelake-integration-overview/ssms-export.png" alt-text="TMSL export command in SSMS.":::
 
+Downstream workloads such as Spark notebooks, pipelines, and other lakehouses can attach shortcuts directly to these exported Delta tables, making the data available for engineering and analytics without additional copies.
+
 ## Shortcuts
 
-By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic model Lakehouse tables, you can provide quick and easy access to them from other workloads in Fabric.
+By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic model Lakehouse tables, you can provide quick and easy access to them from other workloads in Fabric. Shortcuts provide live access to the exported Delta tables without copying data. You can create shortcuts that reference these tables from other workspaces or even from other tenants through OneLake data sharing, enabling cross-workspace and cross-tenant consumption of Power BI-exported data.
 
 1. In Lakehouse Explorer, right-click **Tables**, and then select **New shortcut**.
 
@@ -113,6 +117,8 @@ By creating [shortcuts](/fabric/onelake/onelake-shortcuts) for your semantic mod
 - Measures, DirectQuery tables, hybrid tables, calculation group tables, and system managed aggregation tables can't be exported to Delta format tables.
 
 - Old versions of the delta tables are deleted after three days. Other execution engines which use an older but now deleted version of the data must move forward to an available version.
+
+- Exported Delta tables are refreshed when the semantic model is refreshed (manually or on schedule). Between refreshes, the Delta table reflects the data from the last successful refresh. Downstream workloads that consume exported data through shortcuts should account for this update cadence.
 
 ## Related content
 

@@ -1,9 +1,12 @@
 ---
 title: Get events from sample data sources
-description: This article describes how to get events from sample data sources.
+description: Sample data sources in Real-Time hub let you quickly test event streaming. Learn how to connect, configure, and view sample data streams step by step.
+#customer intent: As a data analyst, I want to get events from sample data sources into Real-Time hub so that I can explore and test real-time data capabilities without needing a live data source.
 ms.reviewer: anboisve
 ms.topic: how-to
-ms.date: 07/16/2025
+ms.date: 04/01/2026
+author: spelluru
+ms.author: spelluru
 ---
 
 # Get events from sample data sources into Real-Time hub
@@ -12,9 +15,7 @@ This article describes how to get events from sample data sources into Real-Time
 
 
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
+[!INCLUDE [sample-data-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/sample-data-connector-prerequisites.md)]
 
 ## Data sources page
 

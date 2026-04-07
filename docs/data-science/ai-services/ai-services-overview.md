@@ -3,8 +3,8 @@ title: Use Foundry Tools in Fabric
 description: Overview of using Foundry Tools in Fabric.
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: overview
 ms.custom:
   - references_regions

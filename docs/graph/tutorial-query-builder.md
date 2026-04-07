@@ -5,6 +5,7 @@ ms.topic: tutorial
 ms.date: 03/24/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Query the graph with the query builder
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Query the graph by using the query builder
@@ -65,7 +66,7 @@ The query is now set up to find all products purchased by Carla Adams.
 
    :::image type="content" source="./media/tutorial/run-query.png" alt-text="Screenshot showing how to select Run query." lightbox="./media/tutorial/run-query.png":::
 
-1. When the query finishes, collapse the query builder pane to get a better view of the results.
+1. When the query finishes, collapse the query builder pane to get a better view of the results. You should see the products that Carla Adams purchased, displayed as a graph of connected Customer, Order, and Product nodes.
 
     :::image type="content" source="./media/tutorial/query-results.png" alt-text="Screenshot of the visualized query results." lightbox="./media/tutorial/query-results.png":::
 

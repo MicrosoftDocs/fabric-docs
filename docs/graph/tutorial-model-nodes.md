@@ -52,7 +52,7 @@ To add node types to your graph, follow these steps:
    > [!TIP]
    > When you double-click on a node type, you see its properties. Each property maps to a column in the source table. Delete properties that you don't need in queries or analysis, because too many properties make your graph harder to maintain and use.
 
-1. You see all the node types represented in your graph. Select **Save** to save your progress.
+1. You see all eight node types represented in your graph. Select **Save** to save your progress.
 
     :::image type="content" source="./media/tutorial/node-add-completed.png" alt-text="Screenshot showing all of the nodes added to the graph." lightbox="./media/tutorial/node-add-completed.png":::
 

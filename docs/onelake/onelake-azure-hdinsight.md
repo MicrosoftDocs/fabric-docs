@@ -5,6 +5,7 @@ ms.reviewer: eloldag, harmeetgill
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.date: 09/27/2023
+ROBOTS: NOINDEX
 #customer intent: As a data engineer, I want to learn how to integrate OneLake with Azure HDInsight so that I can read and write data in OneLake using my Jupyter notebook in an HDInsight Apache Spark cluster.
 ---
 
