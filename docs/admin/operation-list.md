@@ -409,6 +409,7 @@ The following operations are available in the audit logs.
 | Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). ImportSource indicates Power BI or OneDriveSharePoint. ImportType tells you if the file is new (Publish) or is being updated (Republish).  |
 | Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When ImportSource is PowerBI, the file import originated from a Power BI client or API. When ImportSource is OneDriveSharePoint, the file import originated from OneDrive or a SharePoint document library.  |
 | Imported file to Power BI | :::no-loc text="Import"::: |   |
+| Imported OneLake lifecycle policy | :::no-loc text="ImportedLifecyclePolicy"::: |   |
 | Initiate Cloud O Auth Login | :::no-loc text="InitiateCloudOAuthLogin"::: |   |
 | Initiated Power BI gateway cluster authentication process | :::no-loc text="InitiateGatewayClusterOAuthLogin"::: |   |
 | Insert Domain | :::no-loc text="InsertDataDomainAsAdmin"::: | Insert Domain  |
@@ -433,6 +434,7 @@ The following operations are available in the audit logs.
 | Map Upn | :::no-loc text="MapUpn"::: |   |
 | Migrated dataflow storage location | :::no-loc text="MigratedDataflowStorageLocation"::: | Not currently used  |
 | Migrated workspace to a capacity | :::no-loc text="MigrateWorkspaceIntoCapacity"::: |   |
+| Modified OneLake default tier | :::no-loc text="ModifiedDefaultTier"::: |   |
 | Modify Workspace Capacity | :::no-loc text="ModifyWorkspaceCapacity"::: | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI.  |
 | Move Goals | :::no-loc text="MoveGoals"::: | Moves goals within a scorecard |
 | Move Scorecard | :::no-loc text="MoveScorecard"::: |   |

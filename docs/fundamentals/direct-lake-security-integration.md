@@ -1,8 +1,8 @@
 ---
 title: Integrate Direct Lake Security
 description: Learn how to integrate Direct Lake security across OneLake and SQL endpoints, configure connections, and apply OLS/RLS to protect data.
-author: JulCsc
-ms.author: juliacawthra
+author: kgremban
+ms.author: kgremban
 ms.reviewer: kayu
 ms.date: 09/22/2025
 ms.topic: concept-article
