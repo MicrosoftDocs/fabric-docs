@@ -60,6 +60,9 @@ Multimodal AI functions share the same prerequisites as text-based AI functions.
 
 Organize your files in a folder that can be referenced by a path or a glob-style string.
 
+> [!TIP]
+> Starter notebooks are available in Fabric that demonstrate end-to-end multimodal scenarios, including image, PDF, and text ingestion, schema inference, and extraction. Look for the AI functions starter notebooks in your Fabric workspace to accelerate setup and usage.
+
 ### Example
 You can store files in a Lakehouse attached to your notebook.
 
@@ -107,6 +110,9 @@ display(df)
 
 ### Load file paths into a column
 Alternatively, you can use `aifunc.list_file_paths` to get a list of file paths from a folder and load them into a DataFrame column. This approach is useful when you want to run AI functions across each file.
+
+> [!NOTE]
+> Most AI functions accept file-path inputs via `column_type="path"` (pandas) or `input_col_type`/`col_types="path"` (PySpark). This applies uniformly across all the multimodal functions listed in this article.
 
 # [pandas](#tab/pandas)
 
@@ -696,6 +702,22 @@ display(results)
 ```
 
 ---
+
+## Evaluate output quality
+
+Evaluation notebooks (Eval) are available for AI functions. These notebooks provide structured workflows that use LLM-as-a-Judge to assess multimodal outputs and compute metrics such as accuracy, precision, recall, F1, coherence, consistency, and relevance. You can use these workflows to validate the quality of classification, extraction, summarization, and other AI function results before moving to production.
+
+## Monitor cost and capacity usage
+
+AI functions include a configurable progress bar cost calculator that displays real-time token estimates and Fabric capacity units while operations run in notebooks. You can configure the cost calculator in three modes:
+
+- **basic**: Shows a summary of estimated tokens and capacity units consumed.
+- **stats**: Shows detailed per-call statistics, including input and output token counts.
+- **disable**: Turns off the progress bar cost display.
+
+For details on configuring these modes, see [Configure AI functions](./pandas/configuration.md).
+
+The Fabric Capacity Metrics App also includes a dedicated **AI Functions** operation that separates AI functions usage from Spark and Dataflows Gen2. You can use this view to track multimodal AI functions consumption and identify capacity impact. For more information, see [What is the Microsoft Fabric Capacity Metrics app?](../../enterprise/metrics-app.md).
 
 ## Related content
 

@@ -14,10 +14,7 @@ This article shows you how to add an Azure IoT Hub source to a Microsoft Fabric 
 
 [!INCLUDE [select-view](./includes/select-view.md)]
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode or trial license mode with Contributor or higher permissions.  
-- Appropriate permission to get your IoT hub's access keys. If your IoT hub is within a protected network, [connect to it by using a managed private endpoint](set-up-private-endpoint.md). Otherwise, ensure that the IoT hub is publicly accessible and not behind a firewall.
+[!INCLUDE [azure-iot-hub-source-connector-prerequisites](./includes/connectors/azure-iot-hub-source-connector-prerequisites.md)]
 - An eventstream. If you don't have an eventstream, [create one](create-manage-an-eventstream.md).
 
 ## Start the wizard for selecting a data source
@@ -30,7 +27,7 @@ On the **Select a data source** page, search for **Azure IoT Hub**. On the **Azu
 
 ## Configure an Azure IoT Hub connector
 
-[!INCLUDE [azure-iot-hub-connector](./includes/azure-iot-hub-source-connector.md)]
+[!INCLUDE [azure-iot-hub-source-connector-configuration](./includes/connectors/azure-iot-hub-source-connector-configuration.md)]
 
 [!INCLUDE [sources-destinations-note](./includes/sources-destinations-note.md)]
 

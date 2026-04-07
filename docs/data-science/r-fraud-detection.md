@@ -1,7 +1,8 @@
 ---
 title: 'Tutorial: Use R to detect fraud'
 description: This tutorial shows a data science workflow in R, with an end-to-end example of building a model to detect fraud.
-ms.reviewer: lagayhar
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: tutorial
 ms.date: 04/14/2025
 ms.search.form: R Language
@@ -252,8 +253,6 @@ message(
     )
 )
 ```
-
-For more information about SMOTE, visit the [Package 'imbalance'](https://cran.r-project.org/web/packages/imbalance/imbalance.pdf) and [Working with imbalanced datasets](https://cran.r-project.org/web/packages/imbalance/vignettes/imbalance.pdf) resources at the CRAN website.
 
 ### Train the model with LightGBM
 

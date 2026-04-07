@@ -13,3 +13,4 @@ ms.date: 07/10/2025
 - [Cross-geo storing for AI](../data-agent-tenant-settings.md) is enabled.
 - At least one of these, with data: A warehouse, a lakehouse, one or more Power BI semantic models, a KQL database, or an ontology.
 - [Power BI semantic models via XMLA endpoints tenant switch](../data-agent-tenant-settings.md) is enabled for Power BI semantic model data sources.
+- For Power BI semantic models used with a data agent, ensure users who interact via the agent have Read permission on the semantic model. Workspace Member or Build permission isn't required for interaction.

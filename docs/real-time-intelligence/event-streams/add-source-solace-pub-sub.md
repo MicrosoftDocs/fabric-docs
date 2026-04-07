@@ -3,7 +3,7 @@ title: Add Solace PubSub+ as source to an eventstream
 description: Learn how to add a Solace PubSub+ source to an eventstream. This feature is currently in preview.
 ms.reviewer: xujiang1
 ms.topic: how-to
-ms.date: 03/14/2025
+ms.date: 04/03/2026
 ms.search.form: Source and Destination
 ms.custom: reference_regions
 ---
@@ -11,7 +11,7 @@ ms.custom: reference_regions
 # Add Solace PubSub+ source to an eventstream (preview)
 This article shows you how to add a Solace PubSub+ source to an eventstream. 
 
-[!INCLUDE [solace-pub-sub-source-description-prerequisites](./includes/solace-pub-sub-source-description-prerequisites.md)]
+[!INCLUDE [solace-pub-sub-source-connector-prerequisites](./includes/connectors/solace-pub-sub-source-connector-prerequisites.md)]
 
 ## Launch the Select a data source wizard
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
@@ -21,7 +21,8 @@ On the **Select a data source** page, search for and select **Connect** on the *
 :::image type="content" source="./media/add-source-solace-pub-sub/select-source.png" alt-text="Screenshot that shows the selection of Solace PubSub+ as the source type in the Get events wizard." lightbox="./media/add-source-solace-pub-sub/select-source.png":::
 
 ## Configure Solace PubSub+ connector
-[!INCLUDE [solace-pub-sub-source-connector](./includes/solace-pub-sub-source-connector.md)]
+
+[!INCLUDE [solace-pub-sub-source-connector-configuration](./includes/connectors/solace-pub-sub-source-connector-configuration.md)]
 
 ## View updated eventstream
 
