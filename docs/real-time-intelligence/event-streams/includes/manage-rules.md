@@ -8,6 +8,8 @@ ms.date: 03/06/2026
 
 ## Manage rules
 
+The **Rules** pane provides consolidated visibility for all rules in the linked Activator item for this Eventstream and supports inline start/stop, edit, and add operations without leaving Eventstream, reducing context switching.
+
 Select the **alert** icon on the Activator destination in the eventstream. You see the **Rules** pane where you perform the following actions:
 
 - View all the rules in the Activator item.
@@ -36,6 +38,8 @@ In the **Rules** pane, select the **ellipsis (...)** on the Activator destinatio
 In the **Rules** pane, select the **ellipsis (...)** on the Activator destination in the eventstream.
 
 :::image type="content" source="./media/manage-rules/open-activator.png" alt-text="Screenshot of the context menu for a rule in the Rules pane with Open in Activator highlighted." lightbox="./media/manage-rules/open-activator.png" border="true":::
+
+After opening the rule in Activator, you can monitor and analyze activation history, test and activate alerts, and send test notifications (for example, a test message to Microsoft Teams) to validate the rule configuration.
 
 ### Add another alert rule 
 
