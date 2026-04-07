@@ -159,8 +159,6 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
 1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
-
 1. Select the vertical ellipsis next to the name of your dataflow and then select **Delete**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-delete.png" alt-text="Screenshot with the three vertical dots and the delete option in the drop-down menu emphasized.":::
