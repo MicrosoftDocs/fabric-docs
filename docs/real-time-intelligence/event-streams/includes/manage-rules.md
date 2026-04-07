@@ -10,7 +10,7 @@ ms.date: 03/06/2026
 
 The **Rules** pane provides consolidated visibility for all rules in the linked Activator item for this Eventstream and supports inline start/stop, edit, and add operations without leaving Eventstream, reducing context switching.
 
-Select the **alert** icon on the Activator destination in the eventstream. You see the **Rules** pane where you perform the following actions:
+Select the **alert** icon on the Activator destination in the eventstream. You see the **Rules** pane that provides consolidated visibility for all rules in the linked Activator item for this Eventstream. In this pane, you can perform the following actions:
 
 - View all the rules in the Activator item.
 - Stop or start a rule.
