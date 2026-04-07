@@ -41,13 +41,14 @@ Different types of datasets come from a wide variety of data sources across diff
 - **Eventstreams** for real-time event ingestion and routing.
 - **Data pipelines** for batch and scheduled data movement with more than 200 connectors.
 - **Mirroring** for continuous replication from operational databases without building ETL pipelines.
-- **Shortcuts** for no-copy data virtualization from external storage like Azure Data Lake, Amazon S3, or Google Cloud Storage.
+- **Shortcuts** for no-copy data virtualization from external storage like Azure Data Lake, Amazon S3, or Google Cloud Storage. Shortcuts can also reference data shared from other Fabric workspaces or tenants.
+- **OneLake data sharing** for cross-tenant access to live, governed datasets without copying data across organizational boundaries.
 
 For more information, see [Get data into Microsoft Fabric](get-data.md).
 
 ## Store data
 
-Once ingested, all data lands in OneLake in open Delta Parquet format. OneLake provides a single data lake for your entire organization with no separate provisioning needed. Fabric offers several storage items optimized for different workloads:
+Once ingested, all data lands in OneLake in open Delta Parquet format. OneLake provides a single data lake for your entire organization with no separate provisioning needed. Because OneLake maintains a single copy of the data, you can share governed datasets across tenants by using OneLake data sharing without duplicating storage. Fabric offers several storage items optimized for different workloads:
 
 - **Lakehouse** for flexible big data storage that combines files and managed Delta tables with an automatic SQL endpoint.
 - **Warehouse** for structured, relational analytics with full T-SQL support, stored procedures, and ACID transactions.
@@ -100,7 +101,7 @@ Fabric integrates with external systems for both data ingestion and insights del
 - **REST APIs** and **client libraries** provide programmatic access to Fabric resources.
 - **Microsoft Entra ID** handles authentication, conditional access, and service principal support.
 - **Git integration** with Azure DevOps and GitHub enables version control and CI/CD for Fabric items.
-- **Microsoft Purview** provides unified data governance, cataloging, and compliance across the Fabric data estate.
+- **Microsoft Purview** provides unified data governance, cataloging, and compliance across the Fabric data estate, including data shared across tenants through OneLake data sharing.
 
 For more information, see [External integration and platform connectivity](external-integration.md).
 

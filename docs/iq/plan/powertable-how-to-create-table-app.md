@@ -24,7 +24,7 @@ You can use one of these four approaches to create a table:
 >[!IMPORTANT]
 > In the first three methods listed here, the **source** and **destination** are the same underlying database table.
 >
->The fourth method uses a semantic model as the source, and a database table as the destination. This method allows for write-back scenarios. You can also schedule automatic refreshes from the semantic model.
+>The fourth method uses a semantic model as the source, and a database table as the destination. This method allows for writeback scenarios. You can also schedule automatic refreshes from the semantic model.
 
 ## Prerequisites
 

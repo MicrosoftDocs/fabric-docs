@@ -13,7 +13,7 @@ This article describes columns on the **Azure events** page and actions availabl
 
 :::image type="content" source="./media/explore-azure-events/azure-events.png" alt-text="Screenshot that shows the Real-Time hub Azure events page." lightbox="./media/explore-azure-events/azure-events.png":::
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## Columns
 
