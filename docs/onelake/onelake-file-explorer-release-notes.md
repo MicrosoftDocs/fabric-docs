@@ -91,7 +91,7 @@ When you move a folder (cut and paste or drag and drop) from a location outside 
 
 ## Support lifecycle
 
-Only the most recent version of OneLake file explorer is supported. If you contact support for OneLake file explorer, they ask you to upgrade to the most recent version. Download the latest [OneLake file explorer](https://go.microsoft.com/fwlink/?linkid=2235671).
+Only the most recent version of OneLake file explorer is supported. If you contact support for OneLake file explorer, they ask you to upgrade to the most recent version. Download the latest [OneLake file explorer](https://www.microsoft.com/en-us/download/details.aspx?id=105222).
 
 ## Related content
 

@@ -78,11 +78,11 @@ For example, you can use SQL Server Management Studio (SSMS) to run the followin
 
 ## Explore export files
 
-After exporting, you can use [OneLake file explorer](https://go.microsoft.com/fwlink/?linkid=2235671), which integrates OneLake with your Windows File Explorer, to locate Delta table export files.
+After exporting, you can use [OneLake file explorer](https://www.microsoft.com/en-us/download/details.aspx?id=105222), which integrates OneLake with your Windows File Explorer, to locate Delta table export files.
 
 1. In OneLake file explorer, right click on the workspace folder, and then select **Sync from OneLake**.
 
-1. Use Windows File Explorer to locate your data files. In the workspace folder, look for a subfolder with a name that matches your semantic model and ends with **.SemanticModel**. The semantic model folder includes every import-mode table in a subfolder that contains the Delta tableâ€™s parquet files and log.
+1. Use Windows File Explorer to locate your data files. In the workspace folder, look for a subfolder with a name that matches your semantic model and ends with **.SemanticModel**. The semantic model folder includes every import-mode table in a subfolder that contains the Delta table's parquet files and log.
 
     :::image type="content" border="false" source="media/onelake-integration-overview/ssms-export.png" alt-text="TMSL export command in SSMS.":::
 
