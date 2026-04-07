@@ -36,11 +36,7 @@ Select **Publish** to publish the changes and begin streaming data from HTTP sou
 
    :::image type="content" border="true" source="media/add-source-http/live-view.png" alt-text="A screenshot of the added HTTP source in Live view with the Publish button highlighted.":::
 
-## Limitation
-
-- The HTTP connector currently supports only **JSON** API responses.
-- **OAuth authentication** isn't supported.
-- The HTTP source doesn't support CI/CD features, including **Git Integration** and **Deployment Pipeline**. Exporting or importing an Eventstream item that includes this source through Git might result in errors.
+[!INCLUDE [http-source-connector-limitations](./includes/connectors/http-source-connector-limitations.md)]
 
 ## Related content
 
