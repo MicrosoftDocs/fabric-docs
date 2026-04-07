@@ -1,6 +1,6 @@
 ---
 title: Open Connect to source
-description: This include file has steps for opening the Connect to source window.
+description: The include file has steps for opening the Connect to source window.
 ms.reviewer: xujiang1
 ms.topic: include
 ms.date: 11/18/2024
