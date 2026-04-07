@@ -1,10 +1,11 @@
-﻿---
+---
 title: Hyperparameter tuning in Fabric
 description: Identify the best combination of hyperparameters for your chosen classifiers.
 ms.topic: overview
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 02/23/2026
 ---
 
