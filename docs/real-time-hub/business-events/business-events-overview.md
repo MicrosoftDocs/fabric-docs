@@ -12,7 +12,7 @@ ms.topic: overview
 
 You can generate business events from the following sources:
 
-- Spark notebooks and Spark jobs
+- Spark notebooks
 - User data functions (UDFs)
  
 Once published, these events are available in Real-Time hub, where you can set up alerts to take actions such as the following ones:
