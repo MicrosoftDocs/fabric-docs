@@ -95,7 +95,7 @@ items:
     href: add-source-postgresql-database-cdc.md
   - name: Real-time weather
     href: add-source-real-time-weather.md
-  - name: Sample data source
+  - name: Sample data
     href: add-source-sample-data.md
   - name: Solace PubSub+
     href: add-source-solace-pub-sub.md
