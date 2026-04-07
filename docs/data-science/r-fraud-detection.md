@@ -254,8 +254,6 @@ message(
 )
 ```
 
-For more information about SMOTE, visit the [Package 'imbalance'](https://cran.r-project.org/web/packages/imbalance/imbalance.pdf) and [Working with imbalanced datasets](https://cran.r-project.org/web/packages/imbalance/vignettes/imbalance.pdf) resources at the CRAN website.
-
 ### Train the model with LightGBM
 
 Train the LightGBM model with both the imbalanced dataset and the balanced (via SMOTE) dataset. Then, compare their performance:
