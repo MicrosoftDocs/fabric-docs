@@ -4,7 +4,7 @@ description: This article describes how to use the Semantic model refresh activi
 ms.reviewer: noelleli
 ms.topic: how-to
 ms.custom: pipelines
-ms.date: 07/09/2025
+ms.date: 04/07/2026
 ---
 
 # Use the Semantic model refresh activity to refresh a Power BI Dataset
@@ -29,10 +29,10 @@ Follow these steps to use the Semantic model refresh activity in your pipeline:
 
 1. Start by creating a new pipeline in your workspace. 
 1. Before you add the Semantic model refresh activity, make sure you have a connection to your Power BI datasets.
-1. Find "Semantic model refresh" from the **Add pipeline activity** home screen card and select it, or pick it from the **Activities** bar to add it to the pipeline canvas.
+1. Find "Semantic model refresh" from the **Pipeline activity** home screen card and select it, or pick it from the **Activities** bar to add it to the pipeline canvas.
 
    Creating the activity from the home screen card:
-   
+
    :::image type="content" source="media/semantic-model-refresh-activity/create-semantic-model-refresh-activity.png" lightbox="media/semantic-model-refresh-activity/create-semantic-model-refresh-activity.png" alt-text="Screenshot showing how to add a new Semantic model refresh activity to a pipeline from the home screen card.":::
 
    Creating the activity from the **Activities** bar:
