@@ -19,6 +19,7 @@ The dbt job activity lets you run a dbt job as part of a Fabric data pipeline. Y
 - Select an existing dbt job from your workspace.
 - Create a new dbt job if one doesn't exist.
 - Chain with other activities in your pipeline using success, failure, or completion dependencies.
+- Pass dynamic runtime parameters from your pipeline to the dbt job, enabling reusable, parameterized workflows
 - Build metadata-driven dbt pipelines with parameterized orchestration.
 - Send Teams or email notifications after a dbt job runs.
 - Monitor the dbt job's progress and status within pipeline run history.
