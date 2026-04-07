@@ -20,7 +20,7 @@ An event publisher is a Fabric item such as Eventstream, Notebook, Spark job, or
 
 ## Event consumer 
 
-An event consumer is a Fabric item that subscribes to a business event and processes it for downstream actions, analytics, workflows, or notifications. Consumers can include:
+An event consumer is a Fabric item that subscribes to a business event and processes it for downstream actions, analytics, workflows, or notifications. 
 
 ## Event schema registry 
 
