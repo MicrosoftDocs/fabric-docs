@@ -57,14 +57,14 @@ Business events use a pub/sub model in Fabric Real-Time Hub that decouples publi
 
 ## End-to-end example
 
-Consider a manufacturing scenario where equipment sensors detect abnormal vibration. A Spark job running a notebook publishes a `CriticalVibrationDetected` business event to Real-Time Hub using the event schema defined in the Schema Registry. Multiple consumers then process the event in parallel:
+Consider a manufacturing scenario where equipment sensors detect abnormal vibration. A Spark job running a notebook publishes a `VibrationCriticalDetected` business event to Real-Time Hub using the event schema defined in the Schema Registry. Multiple consumers then process the event in parallel:
 
 - **Activator** evaluates the event payload and triggers an automated mitigation workflow and creates a maintenance ticket.
 - **Fabric Notebooks and Spark jobs** run further analysis on the vibration data to identify root causes.
 - **Dataflows Gen2** moves and enriches the data for downstream storage and reporting.
 - **Power BI** reports consume the results, giving operations teams a real-time view of equipment health.
 
-Because publishers and consumers are decoupled, each consumer acts independently and new consumers can subscribe to the same `CriticalVibrationDetected` event at any time without modifying the publishing notebook or Spark job.
+Because publishers and consumers are decoupled, each consumer acts independently and new consumers can subscribe to the same `VibrationCriticalDetected` event at any time without modifying the publishing notebook or Spark job.
 
 ## Related content
 
