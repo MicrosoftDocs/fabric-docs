@@ -1215,6 +1215,8 @@
         href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Pipeline activities troubleshooting guide
         href: pipeline-troubleshoot-guide.md
+      - name: Invoke SSIS Package activity troubleshooting guide
+        href: invoke-ssis-package-activity-troubleshooting-guide.md
       - name: Troubleshoot connectors
         items: 
           - name: Connector troubleshooting overview

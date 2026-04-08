@@ -23,7 +23,7 @@ If you enabled logging in the activity **Settings** tab, the activity output inc
 "logLocation": "Logging\\f320405465ee4e83bedafbb05759770b"
 ```
 
-Navigate to the logging path in OneLake to review detailed package execution logs, including data flow component messages and task-level errors. For more details, see [Monitor package execution](https://learn.microsoft.com/en-us/fabric/data-factory/invoke-ssis-package-activity#step-6--monitor-package-execution).
+Navigate to the logging path in OneLake to review detailed package execution logs, including data flow component messages and task-level errors. For more details, see [Monitor package execution](invoke-ssis-package-activity.md#step-6--monitor-package-execution).
 
 ### How to connect SSIS packages to data sources or destinations
 
