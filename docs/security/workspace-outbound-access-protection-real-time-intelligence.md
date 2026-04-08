@@ -18,7 +18,7 @@ The workspace admin first enables outbound access protection for the workspace, 
 
 Next, the workspace admin configures data connection rules for cloud or gateway connection policies. These rules specify which external sources are allowed, such as SQL Server and Azure Data Lake Storage (ADLS) Gen2 Storage. Once policies are set, Evenhouses can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
 
-:::image type="content" source="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow.png" alt-text="Screenshot of connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow.png" border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow-small.png" alt-text="Screenshot of connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow.png" border="false":::
 
 ## Configuring outbound access protection for Real-Time Intelligence
 
