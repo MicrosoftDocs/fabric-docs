@@ -341,7 +341,7 @@ For more information, see [Private links for Azure and Fabric Events](/fabric/re
 - Current limitations for Private Link with an eventhouse:
    - Copilot features: Machine learning workloads might experience limited functionality due to a known regression.
    - Eventstream pull: Eventstream workloads don't currently support full polling functionality.
-   - Fabric doesn't currently support Event Hub integration.
+   - Fabric doesn't currently support Azure Event Hubs integration.
    - Queued ingestion via OneLake isn't currently available.
 * The **OneLake Catalog - Govern** tab isn't available when Private Link is activated.
 * **OneLake Security** isn't currently supported when a workspace-level private link is enabled for a workspace.
