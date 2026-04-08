@@ -39,7 +39,7 @@ landingContent:
         links:
         - text: Add and use partner workloads
           url: consume-workloads.md
-        - text: Manage and Publish workloads
+        - text: Manage and publish workloads
           url: tutorial-publish-workload.md 
 
   # Card 
