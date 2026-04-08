@@ -1,7 +1,7 @@
 ---
 title: Use AI agents with OneLake through MCP
 description: Learn how to use the Fabric MCP server to explore and manage OneLake data through AI agents using the Model Context Protocol (MCP).
-ms.reviewer: eloldag
+ms.reviewer: tompeplow
 ms.author: tompeplow
 ms.topic: how-to
 ms.date: 04/08/2026
@@ -11,7 +11,7 @@ ms.date: 04/08/2026
 
 The [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) is an open standard that lets AI agents connect to external tools and data sources. The [Fabric MCP server](https://github.com/microsoft/mcp/blob/main/servers/Fabric.Mcp.Server/README.md) includes OneLake tools that give AI agents direct access to your OneLake data — browsing workspaces, reading files, discovering table schemas, and managing directories — all through natural-language conversation.
 
-Fabric items store their data in OneLake in open formats — from lakehouses to mirrored databases, and even KQL databases and semantic models with OneLake availability enabled. The OneLake MCP tools let an AI agent explore them all through a single set of commands.
+Fabric items use open formats to store their data in OneLake — from lakehouses to mirrored databases, and even KQL databases and semantic models with OneLake availability enabled. The OneLake MCP tools let AI agents explore all of these through a single set of commands.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ For manual configuration or use outside VS Code, see the setup instructions in t
 
 ## Authentication and permissions
 
-The OneLake tools use your existing Azure identity and Fabric permissions. Your AI agent can only access workspaces and items that you have access to — no additional roles or permissions are required beyond your normal workspace access.
+The OneLake tools use your existing Azure identity and Fabric permissions. Your AI agent can only access workspaces and items you already have permission to view. You don't need any additional roles or permissions beyond your normal workspace access.
 
 Sign in with the Azure CLI before using the tools:
 
@@ -35,7 +35,7 @@ Sign in with the Azure CLI before using the tools:
 az login
 ```
 
-## What can the OneLake MCP tools do?
+## OneLake MCP tool capabilities
 
 The tools cover three areas of OneLake:
 
@@ -45,19 +45,19 @@ The tools cover three areas of OneLake:
 | **File and directory operations** | Browse, read, write, upload, download, and delete files and directories. Both DFS and Blob Storage endpoints are available. | [OneLake file system APIs](/fabric/onelake/onelake-access-api) |
 | **Table operations** | Get table API configuration, list namespaces (schemas), list tables, and retrieve full table definitions with column names, types, and metadata. | [OneLake table APIs](/fabric/onelake/table-apis/table-apis-overview) |
 
-The tools include 19 commands in total. Most commands accept friendly names as well as GUIDs — for example, you can reference an item as `SalesLakehouse.lakehouse` instead of a GUID.
+The tools include 19 commands. Most commands accept friendly names as well as GUIDs — for example, you can reference an item as `SalesLakehouse.lakehouse` instead of a GUID.
 
 For the full command reference with parameters and example output, see the [OneLake tools README](https://github.com/microsoft/mcp/tree/main/tools/Fabric.Mcp.Tools.OneLake) on GitHub.
 
 ## Example: explore a lakehouse
 
-Once the Fabric MCP server is installed, ask your AI agent to explore your data. For example:
+After you install the Fabric MCP server, ask your AI agent to explore your data. For example:
 
 > *"List the tables in my Sales lakehouse and tell me about the schema of each one."*
 
-The agent uses the OneLake MCP tools to locate the workspace, find the lakehouse, discover the table namespaces, and retrieve the full table definitions — all without you writing any code or opening the Fabric portal.
+The agent uses the OneLake MCP tools to locate the workspace, find the lakehouse, discover the table namespaces, and retrieve the full table definitions — without writing any code or opening the Fabric portal.
 
-Other things you can ask an agent to do with the OneLake tools:
+Other tasks you can ask your AI agent to complete:
 
 - **Inventory a workspace** — "Scan my workspace and tell me what items are there, how big they are, and what tables they contain."
 - **Read and write files** — "Upload this CSV to the Files folder in my lakehouse" or "Read the config file in the Monitoring folder."
@@ -73,6 +73,6 @@ Other things you can ask an agent to do with the OneLake tools:
 
 - [Fabric MCP Server — GitHub README](https://github.com/microsoft/mcp/blob/main/servers/Fabric.Mcp.Server/README.md)
 - [OneLake tools — full command reference](https://github.com/microsoft/mcp/tree/main/tools/Fabric.Mcp.Tools.OneLake)
-- [How do I connect to OneLake?](onelake-access-api.md)
+- [Connect to OneLake](onelake-access-api.md)
 - [OneLake table APIs overview](table-apis/table-apis-overview.md)
 - [Use PowerShell to manage OneLake](onelake-powershell.md)
