@@ -38,7 +38,7 @@ The Microsoft Fabric Capacity Metrics app provides various features and function
 
 - **Timepoint summary** page: Summarizes operation types (not individual operations) that contributed to capacity usage during a selected timepoint. Summary visuals include AI Functions as an operation type, helping identify when AI Functions contributes materially to capacity usage and autoscale thresholds. For more information, see [Understand the metrics app timepoint summary page](metrics-app-timepoint-summary-page.md).
 
-- **Timepoint item detail** page (preview): Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
+- **Timepoint item detail** page: Provides granular detail on operations within a specific item at a timepoint. Includes filters for operation ID, user, and CU thresholds that are useful for root-cause analysis and performance tuning. For more information, see [Understand the metrics app timepoint item detail page](metrics-app-timepoint-item-detail-page.md).
 
 - **Autoscale compute for Spark** page: This page provides insights into the autoscaling behavior of Spark workloads, helping you optimize performance and resource allocation. For more information, see [Understand the metrics app Autoscale compute for Spark page](metrics-app-feature-autoscale-page.md).
 
