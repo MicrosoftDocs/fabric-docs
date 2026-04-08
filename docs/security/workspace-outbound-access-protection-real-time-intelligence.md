@@ -14,9 +14,9 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 
 ## Understanding outbound access protection with Real-Time Intelligence
 
-The workspace admin first enables outbound access protection for the workspace, which blocks all outbound connections from Eventhouses by default.  
+The workspace admin first enables outbound access protection for the workspace, which blocks all outbound connections by default.  
 
-Next, the workspace admin configures data connection rules for cloud or gateway connection policies. These rules specify which external sources are allowed, such as SQL Server and Azure Data Lake Storage (ADLS) Gen2 Storage. Once policies are set, Evenhouses can connect only to the approved destinations (in this example, SQL Server and ADLS Gen2 Storage), while all other outbound connections remain blocked.
+Next, the workspace admin configures data connection rules for cloud or gateway connection policies to specify which external sources can connect to the eventstream. Once these policies are set, the eventstream can connect only to the approved sources. For the destination, only lakehouses are supported. All other outbound connections remain blocked.
 
 :::image type="content" source="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow-small.png" alt-text="Screenshot of connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow.png" border="false":::
 
@@ -34,6 +34,6 @@ Once configured, Real-Time Intelligence items can connect only to the approved d
 
 The following Real-Time Intelligence item types are supported with outbound access protection:
 
-- Eventhouses
+- Eventstream with a lakehouse as the destination
 
 ## Next steps
