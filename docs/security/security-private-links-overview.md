@@ -190,7 +190,7 @@ API for GraphQL supports Private Link, allowing secure API access and querying f
 
 * API monitoring dashboard and logging based on Workspace Monitoring is not supported.
 * Service Principals (SPN) are supported as clients however it's not possible to use a service principal to create a saved credential for access between the API and data source.
-* If the API for GraphQL artifact and the data source artifact belongs to two different capacity region is not supported when public access is disabled. You will get auth error in this scenario.
+* Having API for GraphQL artifact and the data source artifact in two different capacity regions isn't supported when the public access is disabled. You will get auth error in this scenario.
 
   
 ## Other considerations and limitations
