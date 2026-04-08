@@ -21,7 +21,7 @@ OneLake file explorer currently supports Windows and is validated on Windows 10 
 
 To install:
 
-1. Download the [OneLake file explorer](https://www.microsoft.com/download/details.aspx?id=105222).
+1. Download the [OneLake file explorer](https://www.microsoft.com/en-us/download/details.aspx?id=105222).
 
 1. Double-click the file to start installing.
 
