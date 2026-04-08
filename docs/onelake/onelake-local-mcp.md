@@ -41,7 +41,7 @@ The tools cover three areas of OneLake:
 
 | Category | What you can do | OneLake APIs used |
 |----------|----------------|-------------------|
-| **Workspace and item discovery** | List workspaces, list items within a workspace, create new items (lakehouses, notebooks, SQL databases, and more). | [OneLake data plane API](/fabric/onelake/onelake-access-api) and [Fabric REST API](/rest/api/fabric/core) |
+| **Workspace and item discovery** | List workspaces, list items within a workspace, create new items (lakehouses, notebooks, SQL databases, and more). | [OneLake data plane API](/fabric/onelake/onelake-access-api) and [Fabric REST API](/rest/api/fabric/articles/) |
 | **File and directory operations** | Browse, read, write, upload, download, and delete files and directories. Both DFS and Blob Storage endpoints are available. | [OneLake file system APIs](/fabric/onelake/onelake-access-api) |
 | **Table operations** | Get table API configuration, list namespaces (schemas), list tables, and retrieve full table definitions with column names, types, and metadata. | [OneLake table APIs](/fabric/onelake/table-apis/table-apis-overview) |
 
