@@ -60,7 +60,7 @@ Add business events as a destination to your event stream by following these ste
 
     1.  Select **Add** on your business events node or select **Insert a mapper** in the **Authoring errors** pane. 
 
-        :::image type="content" source="media/add-destination-business-events/eventstream-business-events-schema-mismatch-mapper.png" alt-text="Screenshot of the eventstream editor showing a schema mismatch error with the Add button on the BusinessEvents node and Insert a mapper link in the Authoring errors pane highlighted." lightbox="media/add-destination-business-events/eventstream-business-events-schema-mismatch-mapper.png":::
+        :::image type="content" source="media/add-destination-business-events/business-events-schema-mismatch-mapper.png" alt-text="Screenshot of the eventstream editor showing a schema mismatch error with the Add button on the BusinessEvents node and Insert a mapper link in the Authoring errors pane highlighted." lightbox="media/add-destination-business-events/business-events-schema-mismatch-mapper.png":::
 
     1.  In the **Map schema** dialog, map each source field to the corresponding destination field. Ensure that the data types are compatible between the source and destination fields. For example, you can map the BikepointID field, which is of type String, to a String field in the destination schema.  
 
@@ -79,12 +79,12 @@ Add business events as a destination to your event stream by following these ste
 
 1.  To implement the newly added business events destination, select **Publish**. 
 
-    :::image type="content" source="media/add-destination-business-events/completed-eventstream-publish-button-highlighted.png" alt-text="Screenshot of the completed eventstream showing Bicycles source, businessEvents, Mapper node with field mappings, and BusinessEvents destination, with Publish button highlighted." lightbox="media/add-destination-business-events/completed-eventstream-publish-button-highlighted.png":::
+    :::image type="content" source="media/add-destination-business-events/completed-publish-button-highlighted.png" alt-text="Screenshot of the completed eventstream showing Bicycles source, businessEvents, Mapper node with field mappings, and BusinessEvents destination, with Publish button highlighted." lightbox="media/add-destination-business-events/completed-publish-button-highlighted.png":::
 
 
 1. After you complete these steps, the Business Events destination is available for visualization in Live view. 
 
-:::image type="content" source="media/add-destination-business-events/published-eventstream-business-events-destination.png" alt-text="Screenshot of the eventstream in Live view with Bicycles source connected through a mapper to an active Business Events destination, with Details pane below." lightbox="media/add-destination-business-events/published-eventstream-business-events-destination.png":::
+:::image type="content" source="media/add-destination-business-events/published-business-events-destination.png" alt-text="Screenshot of the eventstream in Live view with Bicycles source connected through a mapper to an active Business Events destination, with Details pane below." lightbox="media/add-destination-business-events/published-business-events-destination.png":::
 
  
 ## Limitations 
