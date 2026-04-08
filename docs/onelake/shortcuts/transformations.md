@@ -3,13 +3,13 @@ title: Shortcut transformations (file)
 description: Use OneLake shortcut transformations to convert raw files into Delta tables that stay always in sync with the source data.  
 ms.reviewer: preshah
 ms.topic: how-to
-ms.date: 04/03/2026
+ms.date: 04/07/2026
 ai-usage: ai-assisted
 ---
 
 # Transform structured files into Delta tables
 
-Use shortcut transformations to convert structured files into queryable Delta tables. If your source data is already in a tabular format like CSV, Parquet, or JSON, file transformations automatically copy and convert that data into Delta Lake format so you can query it by using SQL, Spark, or Power BI without building ETL pipelines.
+Use shortcut transformations to convert structured files into queryable Delta tables. If your source data is already in a tabular format like CSV, Parquet, JSON, or Excel, file transformations automatically copy and convert that data into Delta Lake format so you can query it by using SQL, Spark, or Power BI without building ETL pipelines.
 
 For unstructured text files that need AI processing like summarization, translation, or sentiment analysis, see [Shortcut transformations (AI-powered)](./transformations-ai.md).
 
@@ -28,31 +28,41 @@ Shortcut transformations stay *always in sync* with the source data. **Fabric Sp
 | Requirement | Details |
 | ----------- | ------- |
 | Microsoft Fabric SKU | Capacity or trial that supports **Lakehouse** workloads. |
-| Source data | A folder that contains homogeneous CSV, Parquet, or JSON files. |
+| Source data | A folder that contains homogeneous CSV, Parquet, JSON, or Excel files. |
 | Workspace role | **Contributor** or higher. |
 
-## Supported sources, formats, and destinations
+## Supported file formats
 
 All data sources supported in OneLake are supported.
 
-| Source file format | Destination | Supported Extensions | Supported Compression types | Notes |
-| ------------------ | ----------- | -------------------- | --------------------------- | ----- |
-| CSV (UTF-8, UTF-16) | Delta Lake table in the **Lakehouse / Tables** folder | .csv, .txt (delimiter), .tsv (tab-separated), .psv (pipe-separated) | .csv.gz, .csv.bz2 | .csv.zip and .csv.snappy aren't supported. |
-| Parquet | Delta Lake table in the **Lakehouse / Tables** folder | .parquet | .parquet.snappy, .parquet.gzip, .parquet.lz4, .parquet.brotli, .parquet.zstd | |
-| JSON | Delta Lake table in the **Lakehouse / Tables** folder | .json, .jsonl, .ndjson | .json.gz, .json.bz2, .jsonl.gz, .ndjson.gz, .jsonl.bz2, .ndjson.bz2 | .json.zip and .json.snappy aren't supported. |
+| Source file format | Supported extensions | Supported compression types | Notes |
+| ------------------ | -------------------- | --------------------------- | ----- |
+| CSV (UTF-8, UTF-16) | .csv, .txt (delimiter), .tsv (tab-separated), .psv (pipe-separated) | .csv.gz, .csv.bz2 | .csv.zip and .csv.snappy aren't supported. |
+| Parquet | .parquet | .parquet.snappy, .parquet.gzip, .parquet.lz4, .parquet.brotli, .parquet.zstd | |
+| JSON | .json, .jsonl, .ndjson | .json.gz, .json.bz2, .jsonl.gz, .ndjson.gz, .jsonl.bz2, .ndjson.bz2 | .json.zip and .json.snappy aren't supported. |
+| Excel | .xlsx | Not applicable | Supports both table and schema shortcuts. Table shortcuts consolidate sheets into one Delta table. Schema shortcuts create one Delta table per sheet. |
 
-## Create a shortcut with data transformation
+## Supported shortcut types
 
-1. In your lakehouse, right-click a table in the **Tables** section then select **New table shortcut**. Choose your shortcut source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive, and more).
+| Menu option | What it creates | Supported file types for transformation |
+| -- | -- | -- |
+| **New shortcut** | A shortcut to any folder, in any format. Data isn't automatically registered as a table. | CSV, Parquet, JSON, Excel |
+| **New table shortcut** | A shortcut to a single Delta table, which is automatically registered as a table in the lakehouse. | CSV, Parquet, JSON, Excel |
+| **New schema shortcut** | A shortcut to a folder containing multiple Delta tables, which appear as a new schema in the lakehouse. For more information, see [Lakehouse schemas](../../data-engineering/lakehouse-schemas.md) | Excel |
+
+## Create a table shortcut with data transformation
+
+1. In your lakehouse, right-click a schema name under the **Tables** folder then select **New table shortcut**. Choose your shortcut source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive, and more).
 
    :::image type="content" source="./media/transformations/create-new-table-shortcut.png" alt-text="Screenshot that shows creating 'table shortcut'." lightbox="./media/transformations/create-new-table-shortcut.png":::
 
-1. Select the folder with your CSV, Parquet, or JSON files.
+1. Select the folder with your CSV, Parquet, or JSON files, or select the folder that contains your .xlsx files.
 
 1. At the transform step, configure settings for the Delta conversion:
 
    * **Delimiter** in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab, ampersand, space).  
    * **First row as headers** – Indicate whether the first row contains column names.
+   * **Sheets** in Excel files – Select whether to include all sheets or only a subset of sheets.
 
 1. Review the shortcut configuration. At the review step, you can also configure the following setting before you select **Create**:
 
@@ -61,6 +71,25 @@ All data sources supported in OneLake are supported.
 1. Track refreshes and view logs for transparency in **Manage Shortcut monitoring hub**.
 
 Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcut** pane.
+
+For Excel table shortcuts, all selected sheets are consolidated into one Delta table.
+
+## Create a schema shortcut with data transformation
+
+Use schema shortcuts when you want one Delta table per Excel sheet.
+
+1. In your lakehouse, right-click the **Tables** folder then select **New schema shortcut**.
+
+   > [!NOTE]
+   > Schema shortcuts with file transformation are currently available for Excel (.xlsx) files only.
+
+1. Select the folder that contains your .xlsx files.
+
+1. At the transform step, select whether to include all sheets or only a subset of sheets.
+
+1. Review and select **Create**.
+
+Fabric Spark compute creates separate Delta tables for each selected sheet and keeps them in sync with the source files.
 
 ## How synchronization works
 
@@ -94,10 +123,11 @@ Shortcut transformations include monitoring and error handling to help you track
 
 The following limitations currently apply to shortcut transformations:
 
-* **Source format:** Only CSV, JSON, and Parquet files are supported.
-  * **Unsupported data types for CSV:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary
-  * **Unsupported data types for Parquet:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT
-  * **Unsupported data types for JSON:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos
+* **Source format:** CSV, JSON, Parquet, and Excel (.xlsx) files are supported.
+* **Unsupported data types for CSV:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary.
+* **Unsupported data types for Parquet:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT.
+* **Unsupported data types for JSON:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos.
+* **Schema shortcut availability:** Schema shortcuts for file transformations are currently supported for Excel (.xlsx) files.
 * **File schema consistency:** Files must share an identical schema.
 * **Workspace availability:** Available only in **Lakehouse** items (not Data Warehouses or KQL databases).  
 * **Write operations:** Transformations are *read-optimized*. Direct **MERGE INTO** or **DELETE** statements on the transformation target table aren't supported.
