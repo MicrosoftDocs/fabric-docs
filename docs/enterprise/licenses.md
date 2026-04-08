@@ -4,7 +4,7 @@ description: Explore Microsoft Fabric licenses, tenants, capacities, and SKUs to
 author: dknappettmsft
 ms.author: daknappe
 ms.topic: concept-article
-ms.date: 01/30/2026
+ms.date: 02/23/2026
 ai-usage: ai-assisted
 ---
 
@@ -21,6 +21,31 @@ The following diagram illustrates two common ways organizations can structure th
 ## Core building blocks
 
 This section describes tenants, capacities, and workspaces, which are helpful in understanding a Fabric deployment.
+
+Throughout this article, the terms *Power BI items* and *non-Power BI Fabric items* distinguish between item types that different licenses. Here's what each term means:
+
+**Power BI items** include:
+
+- Reports
+- Semantic models
+- Dashboards
+- Paginated reports
+- Scorecards
+- Metric sets
+- Dataflows
+- Datamarts
+- Org apps
+- Explorations
+
+**Non-Power BI Fabric items** include everything else, such as:
+
+- Lakehouses
+- Warehouses
+- Notebooks
+- Pipelines
+- Eventhouses
+- KQL databases
+- Other Fabric workload items
 
 ### Tenant
 
