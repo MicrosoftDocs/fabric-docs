@@ -136,6 +136,8 @@ items:
       href: ../data-science/data-agent-tenant-settings.md
     - name: Copilot settings
       href: service-admin-portal-copilot.md
+    - name: Additional workloads
+      href: service-admin-portal-additional-workloads.md
     - name: Integration settings
       href: service-admin-portal-integration.md
     - name: Power BI visuals
@@ -158,6 +160,8 @@ items:
       href: service-admin-portal-template-app.md
     - name: Q&A settings
       href: service-admin-portal-qa.md
+    - name: Explore settings (preview)
+      href: service-admin-portal-explore.md
     - name: Semantic model security
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 

@@ -229,11 +229,11 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Review questions|Allow semantic model owners to review questions people asked about their data.|
 |[Synonym sharing](/power-bi/natural-language/q-and-a-tooling-intro#field-synonyms)|Allow people to share Q&amp;A synonyms with your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2163449)|
 
-## Explore settings (preview)
+## [Explore settings (preview)](service-admin-portal-explore.md)
 
 | Setting name | Description |
 |------|-------|
-|[Users with view permission can launch Explore](/power-bi/consumer/explore-data-service#permissions-and-requirements)|Explore is a light-weight visual data exploration experience that enables people to quickly and easily do ad hoc analysis. This setting allows people with view permission on a semantic model to launch Explore from that model and from items connected to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2305305)|
+|[Users with view permission can launch Explore](service-admin-portal-explore.md#users-with-view-permission-can-launch-explore)|Explore is a light-weight visual data exploration experience that enables people to quickly and easily do ad hoc analysis. This setting allows people with view permission on a semantic model to launch Explore from that model and from items connected to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2305305)|
 
 ## Semantic Model Security
 
@@ -330,7 +330,7 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |[Data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance](/fabric/fundamentals/copilot-fabric-overview#available-regions)|This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of the EU Data Boundary or the United States.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262085)<br><br>When this setting is turned on, data sent to Azure OpenAI can be stored outside your capacity's geographic region, compliance boundary, or national cloud instance. Check  [documentation](https://aka.ms/fabric-copilot-overview-data) for the types of experiences and data this might include.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262242)<br><br>By turning on this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241) for any  [AI features in preview](https://aka.ms/fabric/copilot-ai-feature-status).|
 |Only show approved items in the standalone Copilot in Power BI experience (preview)|When this is turned on, only apps, data agents, and items marked as "approved for Copilot" will be shown in standalone Copilot. Users will still be able to manually attach items to ask questions. Copilot item usage is always subject to user permissions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2311781)|
 
-## Azure Maps services
+## [Azure Maps services](map-settings.md)
 
 | Setting name | Description |
 |------|-------|
@@ -338,14 +338,14 @@ If you want to get to the tenant settings in the Fabric portal, see [How to get 
 |Data sent to Azure Maps can be processed outside your capacity's geographic region, compliance boundary or national cloud instance|Azure Maps services are currently not available in all regions and geographies. With this setting on, data sent to Azure Maps can be processed in a region where the service is available, which might be outside your capacity's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2289253)|
 |Users can use Azure Maps Weather Services (Preview)|When this setting is enabled, users can access weather data from Azure Maps Weather, sourced from AccuWeather  [Learn More](https://go.microsoft.com/fwlink/?linkid=2340279)|
 
-## Additional workloads
+## [Additional workloads](service-admin-portal-additional-workloads.md)
 
 | Setting name | Description |
 |------|-------|
-|Workspace admins can add and remove additional workloads (preview)|Workspace admins can add and remove workloads in their workspaces. If this setting is turned off, any existing workloads will stay added and items created with those workloads continue to work normally.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
-|[Capacity admins and contributors can add and remove additional workloads](../workload-development-kit/environment-setup.md#enable-the-development-tenant-setting)|Capacity admins or individuals granted Contributor permission in Capacity settings can add and remove additional workloads in capacities. If this setting is turned off, any existing workloads will stay added and items created with those workloads continue to work normally.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
-|[Workspace admins can develop partner workloads](/fabric/workload-development-kit/environment-setup#enable-the-development-tenant-setting)|Workspace admins can develop partner workloads with a local machine development environment. Turning off this feature will prevent developers from uploading to this workspace.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
-|[Users can see and work with additional workloads not validated by Microsoft](../workload-development-kit/publish-workload-requirements.md)|Turn on this setting to allow users to see and work with additional workloads not validated by Microsoft. Make sure that you only add workloads from publishers that you trust to meet your organization's policies.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282060)|
+|[Workspace admins can add and remove additional workloads (preview)](service-admin-portal-additional-workloads.md#workspace-admins-can-add-and-remove-additional-workloads-preview)|Workspace admins can add and remove workloads in their workspaces. If this setting is turned off, any existing workloads will stay added and items created with those workloads continue to work normally.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
+|[Capacity admins and contributors can add and remove additional workloads](service-admin-portal-additional-workloads.md#capacity-admins-and-contributors-can-add-and-remove-additional-workloads)|Capacity admins or individuals granted Contributor permission in Capacity settings can add and remove additional workloads in capacities. If this setting is turned off, any existing workloads will stay added and items created with those workloads continue to work normally.<br><br>When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings including encryption aren't applied to items created with workloads.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268082)|
+|[Workspace admins can develop partner workloads](service-admin-portal-additional-workloads.md#workspace-admins-can-develop-partner-workloads)|Workspace admins can develop partner workloads with a local machine development environment. Turning off this feature will prevent developers from uploading to this workspace.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2268434)|
+|[Users can see and work with additional workloads not validated by Microsoft](service-admin-portal-additional-workloads.md#users-can-see-and-work-with-additional-workloads-not-validated-by-microsoft)|Turn on this setting to allow users to see and work with additional workloads not validated by Microsoft. Make sure that you only add workloads from publishers that you trust to meet your organization's policies.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2282060)|
 
 ## Related content
 
