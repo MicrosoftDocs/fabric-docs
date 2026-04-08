@@ -146,7 +146,7 @@ Learn more about [sharing links through Power BI Desktop](/power-bi/create-repor
 
 Turn on this setting to enforce strict access control for all data connection types. When this setting is on, shared items are disconnected from data sources if they're edited by users who don't have permission to use those data connections.
 
-For more information, see [Manage semantic model credentials and connections](/power-bi/connect-data/service-credential-management).
+For more information, see [Manage semantic model credentials and connections](/power-bi/connect-data/service-connect-cloud-data-sources).
 
 ## Semantic models can export data to OneLake
 

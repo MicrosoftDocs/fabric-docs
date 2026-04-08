@@ -48,10 +48,3 @@ The **Users can use Azure Maps Weather Services (Preview)** setting controls whe
 This setting is relevant only for organizations that already use Azure Maps-powered features in Fabric. It doesn't turn on Azure Maps by itself. To use Azure Maps Weather Services, you must also enable **Users can use Azure Maps services**.
 
 For more information, see [Azure Maps Weather services](https://go.microsoft.com/fwlink/?linkid=2340279).
-
-## Related content
-
-- [About tenant settings](tenant-settings-index.md)
-- [Map visuals in Fabric](../real-time-intelligence/exploration-map.md)
-
-

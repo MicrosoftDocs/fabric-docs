@@ -23,7 +23,7 @@ If you turn this setting off, existing workloads remain in place and items creat
 
 When users interact with a workload, their data and access tokens, including name and email, are sent to the publisher. Sensitivity labels and protection settings, including encryption, aren't applied to items created with workloads.
 
-For more information, see [Workload Development Kit](/fabric/workload-development-kit/overview).
+For more information, see [Workload Development Kit](/fabric/workload-development-kit/environment-setup).
 
 ## Capacity admins and contributors can add and remove additional workloads
 
@@ -54,4 +54,4 @@ For more information, see [Partner workload publishing requirements](../workload
 ## Related content
 
 - [About tenant settings](tenant-settings-index.md)
-- [Workload Development Kit overview](/fabric/workload-development-kit/overview)
+- [Workload Development Kit overview](/fabric/workload-development-kit/environment-setup)
