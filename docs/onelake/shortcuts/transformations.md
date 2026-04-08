@@ -3,7 +3,7 @@ title: Shortcut transformations (file)
 description: Use OneLake shortcut transformations to convert raw files into Delta tables that stay always in sync with the source data.  
 ms.reviewer: preshah
 ms.topic: how-to
-ms.date: 04/07/2026
+ms.date: 04/08/2026
 ai-usage: ai-assisted
 ---
 
@@ -33,63 +33,78 @@ Shortcut transformations stay *always in sync* with the source data. **Fabric Sp
 
 ## Supported file formats
 
-All data sources supported in OneLake are supported.
+Shortcut transformations work with folders from any data source supported by OneLake shortcuts.
 
-| Source file format | Supported extensions | Supported compression types | Notes |
-| ------------------ | -------------------- | --------------------------- | ----- |
-| CSV (UTF-8, UTF-16) | .csv, .txt (delimiter), .tsv (tab-separated), .psv (pipe-separated) | .csv.gz, .csv.bz2 | .csv.zip and .csv.snappy aren't supported. |
-| Parquet | .parquet | .parquet.snappy, .parquet.gzip, .parquet.lz4, .parquet.brotli, .parquet.zstd | |
-| JSON | .json, .jsonl, .ndjson | .json.gz, .json.bz2, .jsonl.gz, .ndjson.gz, .jsonl.bz2, .ndjson.bz2 | .json.zip and .json.snappy aren't supported. |
-| Excel | .xlsx | Not applicable | Supports both table and schema shortcuts. Table shortcuts consolidate sheets into one Delta table. Schema shortcuts create one Delta table per sheet. |
+| Source file format | Supported extensions | Supported compression types | Supported shortcut type | Notes |
+| ------------------ | -------------------- | --------------------------- | ----------------------- | ----- |
+| CSV (UTF-8, UTF-16) | `.csv`, `.txt` (delimiter), `.tsv` (tab-separated), `.psv` (pipe-separated) | `.csv.gz`, `.csv.bz2` | Table shortcut | `.csv.zip` and `.csv.snappy` aren't supported. |
+| Parquet | `.parquet` | `.parquet.snappy`, `.parquet.gzip`, `.parquet.lz4`, `.parquet.brotli`, `.parquet.zstd` | Table shortcut | None. |
+| JSON | `.json`, `.jsonl`, `.ndjson` | `.json.gz`, `.json.bz2`, `.jsonl.gz`, `.ndjson.gz`, `.jsonl.bz2`, `.ndjson.bz2` | Table shortcut | `.json.zip` and `.json.snappy` aren't supported. |
+| Excel | `.xlsx` | Not applicable | Table shortcut or schema shortcut | Table shortcuts combine sheets into one Delta table. Schema shortcuts create one Delta table per sheet. |
 
-## Supported shortcut types
-
-| Menu option | What it creates | Supported file types for transformation |
-| -- | -- | -- |
-| **New shortcut** | A shortcut to any folder, in any format. Data isn't automatically registered as a table. | CSV, Parquet, JSON, Excel |
-| **New table shortcut** | A shortcut to a single Delta table, which is automatically registered as a table in the lakehouse. | CSV, Parquet, JSON, Excel |
-| **New schema shortcut** | A shortcut to a folder containing multiple Delta tables, which appear as a new schema in the lakehouse. For more information, see [Lakehouse schemas](../../data-engineering/lakehouse-schemas.md) | Excel |
+> [!NOTE]
+> Excel file transformations are currently in [preview](../../fundamentals/preview.md). CSV, Parquet, and JSON transformations are generally available.
 
 ## Create a table shortcut with data transformation
 
-1. In your lakehouse, right-click a schema name under the **Tables** folder then select **New table shortcut**. Choose your shortcut source (for example, Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, OneDrive, and more).
+A table shortcut creates one Delta table in the **Tables** folder of a lakehouse. Use it to transform CSV, Parquet, JSON, or Excel files.
+
+For Excel files with multiple sheets, a table shortcut combines the selected sheets into one Delta table. If you need one Delta table per sheet, create a [schema shortcut](#create-a-schema-shortcut-with-data-transformation) instead.
+
+1. In your lakehouse, right-click a schema under the **Tables** folder, and then select **New table shortcut**. Choose your shortcut source, such as Azure Data Lake, Azure Blob Storage, Dataverse, Amazon S3, GCP, SharePoint, or OneDrive.
 
    :::image type="content" source="./media/transformations/create-new-table-shortcut.png" alt-text="Screenshot that shows creating 'table shortcut'." lightbox="./media/transformations/create-new-table-shortcut.png":::
 
 1. Select the folder with your CSV, Parquet, or JSON files, or select the folder that contains your .xlsx files.
 
-1. At the transform step, configure settings for the Delta conversion:
+1. On the **Transform** step, configure the settings for the Delta conversion:
 
-   * **Delimiter** in CSV files – Select the character used to separate columns (comma, semicolon, pipe, tab, ampersand, space).  
-   * **First row as headers** – Indicate whether the first row contains column names.
-   * **Sheets** in Excel files – Select whether to include all sheets or only a subset of sheets.
+   * CSV files:
 
-1. Review the shortcut configuration. At the review step, you can also configure the following setting before you select **Create**:
+     * **Delimiter** – Select the character used to separate columns, such as comma, semicolon, pipe, tab, ampersand, or space.
+     * **First row as headers** – Indicate whether the first row contains column names.
 
+   * Excel files:
+
+     * **First row as headers** – Indicate whether the first row contains column names.
+     * **Sheets to include** – Select all sheets or only a subset of sheets.
+
+1. Review the shortcut configuration. On the **Preview shortcuts** step, you can also configure these settings before you select **Create**:
+
+   * **Shortcut name** – Select the pencil icon to edit the shortcut name.
    * **Include subfolders** – Enable recursive processing of files in nested subdirectories. This option is selected by default for new transformations. Clear the checkbox if you want to process only the top-level folder.
 
-1. Track refreshes and view logs for transparency in **Manage Shortcut monitoring hub**.
+1. Track refreshes and view logs in **Manage shortcut monitoring hub**.
 
-Fabric Spark compute copies the data into a Delta table and shows progress in the **Manage shortcut** pane.
-
-For Excel table shortcuts, all selected sheets are consolidated into one Delta table.
+Fabric Spark compute creates the Delta table and shows progress in the **Manage shortcut** pane.
 
 ## Create a schema shortcut with data transformation
 
-Use schema shortcuts when you want one Delta table per Excel sheet.
+A schema shortcut creates multiple Delta tables that appear under a new schema in the **Tables** folder of a lakehouse. Use it when an Excel workbook has multiple sheets and you want one Delta table per sheet.
 
-1. In your lakehouse, right-click the **Tables** folder then select **New schema shortcut**.
+Schema shortcuts with data transformation are currently available only for Excel (`.xlsx`) files. They also require a lakehouse with schemas enabled. For more information, see [Lakehouse schemas](../../data-engineering/lakehouse-schemas.md).
 
-   > [!NOTE]
-   > Schema shortcuts with file transformation are currently available for Excel (.xlsx) files only.
+1. In your lakehouse, right-click the **Tables** folder, and then select **New schema shortcut**.
 
-1. Select the folder that contains your .xlsx files.
+   :::image type="content" source="./media/transformations/create-new-schema-shortcut.png" alt-text="Screenshot that shows creating 'schema shortcut'." lightbox="./media/transformations/create-new-schema-shortcut.png":::
 
-1. At the transform step, select whether to include all sheets or only a subset of sheets.
+1. Select the data source for this shortcut, and navigate to the folder that contains your `.xlsx` files.
 
-1. Review and select **Create**.
+1. On the **Transform** step, configure the settings for the Delta conversion:
 
-Fabric Spark compute creates separate Delta tables for each selected sheet and keeps them in sync with the source files.
+   * **First row as headers** – Indicate whether the first row contains column names.
+   * **Sheets to include** – Select all sheets or only a subset of sheets.
+
+   :::image type="content" source="./media/transformations/schema-shortcut-transform.png" alt-text="Screenshot that shows transformation options for a schema shortcut." lightbox="./media/transformations/schema-shortcut-transform.png":::
+
+1. Review the shortcut configuration. On the **Preview shortcuts** step, you can also configure these settings before you select **Create**:
+
+   * **Shortcut name** – Select the pencil icon to edit the shortcut name.
+   * **Include subfolders** – Enable recursive processing of files in nested subdirectories. This option is selected by default for new transformations. Clear the checkbox if you want to process only the top-level folder.
+
+1. Track refreshes and view logs in **Manage shortcut monitoring hub**.
+
+Fabric Spark compute creates separate Delta tables for the selected sheets and keeps them synchronized with the source files.
 
 ## How synchronization works
 
