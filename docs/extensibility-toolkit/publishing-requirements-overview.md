@@ -3,7 +3,7 @@ title: Publishing Requirements for Microsoft Fabric Workloads
 description: Comprehensive guide to all publishing requirements, validation tools, and processes for Microsoft Fabric workloads and items.
 ms.reviewer: gesaur
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 04/08/2026
 ai-usage: ai-assisted
 ---
 
@@ -22,11 +22,11 @@ Before you can publish your workload to the Workload Hub, you must meet these fu
 
 Every workload requires a unique **Workload ID** that follows the format `[Publisher].[Workload]` (for example, `Contoso.SalesInsights`).
 
-* **Registration Process**: Complete workload registration at <https://aka.ms/fabric_workload_registration>
 * **Character Limit**: The Workload portion cannot exceed 32 characters
-* **Approval Required**: Your Workload ID must be approved before publishing
-* **Fixed Value**: Once registered and approved, the Workload ID cannot be changed
-* **Manifest Configuration**: Set the approved Workload ID in your [workload manifest](manifest-workload.md)
+* **Automatic Registration**: The workload ID is automatically registered when you confirm it during the first upload in the Admin Portal
+* **Fixed Value**: Once registered, the Workload ID cannot be changed
+* **Manifest Configuration**: Set the Workload ID in your [workload manifest](manifest-workload.md)
+* **First Upload Confirmation**: When you upload a workload for the first time, a **Confirm workload ID** dialog appears. The workload ID is permanently reserved in your tenant after confirmation.
 
 For detailed information about workload ID requirements and the registration process, see [Publish your workload](publishing-overview.md).
 
@@ -136,7 +136,7 @@ The validation tool provides:
 
 Once you meet all requirements, follow this process:
 
-1. **Workload ID Registration**: Complete registration and receive approval
+1. **Workload ID Registration**: Register your workload ID during the first upload in the Admin Portal
 2. **Requirements Compliance**: Meet all workload and item requirements
 3. **Attestation Documentation**: Create and publish your attestation document
 4. **Validation**: Use validation tools to verify compliance

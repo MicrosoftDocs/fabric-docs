@@ -37,10 +37,10 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-        - text: Add a workload
-          url: publishing-overview.md
-        - text: Publish your workload
-          url: publish-workload-flow.md 
+        - text: Add and use partner workloads
+          url: consume-workloads.md
+        - text: Manage and Publish workloads
+          url: tutorial-publish-workload.md 
 
   # Card 
   - title: Concepts
