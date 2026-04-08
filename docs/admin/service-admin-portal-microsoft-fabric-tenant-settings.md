@@ -49,12 +49,6 @@ This setting allows Microsoft to prompt users for feedback through in-product su
 
 For more information, see [Learn about Microsoft Fabric feedback](../fundamentals/feedback.md).
 
-## Users can create and share Data agent item types (preview)
-
-Users can create natural language data question-and-answer experiences using generative AI and save them as Data agent items that can be shared with others in the organization.
-
-For more information, see [Fabric data agent creation (preview)](../data-science/concept-data-agent.md).
-
 ## Users can be informed of upcoming conferences featuring Microsoft Fabric when they are logged in to Fabric
 
 When this setting is enabled, signed-in users in your organization can receive in-product notifications about upcoming conferences that feature Microsoft Fabric.
@@ -77,10 +71,6 @@ Users can import, author, and execute dbt projects directly within Fabric, enabl
 
 For more information, see [dbt job items in Fabric](https://aka.ms/dbtjob_docs).
 
-## Users can create Maps (preview)
-
-Users can build Map items to analyze live geospatial data with interactive, real-time visualizations.
-
 ## Enable Operations Agents (Preview)
 
 Users can create operations agents that use Azure OpenAI to create operations plans and recommend actions in response to real-time data. By turning on this setting, you agree to the preview terms for this feature. This setting can be managed at both the tenant and the capacity levels.
@@ -93,7 +83,7 @@ When this setting is enabled, all Power BI users see the **Set alert** button in
 
 For more information, see [Create Activator alerts from Power BI](../real-time-intelligence/data-activator/activator-get-data-power-bi.md).
 
-## Users can create a Planning (preview) item(s)
+## Users can create Plan (preview) items
 
 Users can create a Plan in Fabric and use no-code integrated planning with Power BI semantic models, Fabric SQL, and OneLake.
 

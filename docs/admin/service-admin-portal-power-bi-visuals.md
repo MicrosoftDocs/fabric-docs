@@ -16,12 +16,6 @@ These settings are configured in the tenant settings section of the Admin portal
 
 All the Power BI visuals admin settings, including Power BI visuals tenant settings, are described in [Manage Power BI visuals admin settings](organizational-visuals.md).
 
-* [Allow visuals created using the Power BI SDK](#allow-visuals-created-using-the-power-bi-sdk)
-* [Add and use certified visuals only (block uncertified)](#add-and-use-certified-visuals-only-block-uncertified)
-* [Allow downloads from custom visuals](#allow-downloads-from-custom-visuals)
-* [AppSource Custom Visuals SSO](#appsource-custom-visuals-sso)
-* [Allow access to the browser's local storage](#allow-access-to-the-browsers-local-storage)
-
 ## Allow visuals created using the Power BI SDK
 
 Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page aren't affected by this setting.

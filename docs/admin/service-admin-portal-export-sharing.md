@@ -32,27 +32,35 @@ To allow users to accept external data shares, open the **Admin portal**, go to 
 
 This setting is unrelated to **Allow specific users to turn on external data sharing**, which refers to sharing Power BI semantic models via Entra B2B.
 
-## Guest user access and collaboration
+##Guest users can access Microsoft Fabric
 
-**Guest users can access Microsoft Fabric.** When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests via item sharing and permissions. Use the specific security groups option to control which B2B guest users can access Fabric.
+When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests via item sharing and permissions. Use the specific security groups option to control which B2B guest users can access Fabric.
 
 To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/fabric/enterprise/powerbi/service-admin-entra-b2b).
 
-**Users can invite guest users to collaborate through item sharing and permissions.** This setting helps organizations choose whether new guest users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
+## Users can invite guest users to collaborate through item sharing and permissions
+
+This setting helps organizations choose whether new guest users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
 
 To invite external users to your organization, the user must also have the Microsoft Entra Guest Inviter role. Once invited, external users become Microsoft Entra B2B guest users. This setting only controls the ability to invite through Fabric.
 
 To learn more, see [Invite guest users](/fabric/enterprise/powerbi/service-admin-entra-b2b#invite-guest-users).
 
-This setting was previously called **Share content with external users**.
+> [!IMPORTANT]
+> This setting was previously called **Share content with external users**.
 
-**Guest users can browse and access Fabric content.** This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
+## Guest users can browse and access Fabric content
+
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
 
 To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/fabric/enterprise/powerbi/service-admin-entra-b2b).
 
-**Users can see guest users in lists of suggested people.** This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
+## Users can see guest users in lists of suggested people
 
-When the setting is disabled, you can still give permission to a guest user by providing their full email address in people pickers.
+This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
+
+> [!IMPORTANT]
+> When the setting is disabled, you can still give permission to a guest user by providing their full email address in people pickers.
   
 ## Publish to web
 
@@ -98,7 +106,7 @@ Users in the organization can download .pbix files and paginated reports.
 
 To learn more, see [Download a report from the Power BI service to Power BI Desktop](/power-bi/create-reports/service-export-to-pbix).
 
-## Users can work with Power BI semantic models in Excel using a live connection
+## Users can work with semantic models in Excel using a live connection
 
 Turn this setting on to allow users to export data to Microsoft Excel from a Power BI visual or semantic model, or export a semantic model to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.
 
@@ -142,7 +150,8 @@ To learn more, see [Print from the Power BI service](/power-bi/consumer/end-user
 
 Choose whether people in your organization or specific security groups can certify items like apps, reports, or datamarts as trusted sources for the wider organization.
 
-When a user certifies an item, their contact details are visible along with the certification badge.
+> [!IMPORTANT]
+> When a user certifies an item, their contact details are visible along with the certification badge.
 
 Read [Enable content certification](/power-bi/admin/service-admin-setup-certification) for more details.
 
@@ -154,17 +163,21 @@ When someone endorses an item as master data, their name and email are shown wit
 
 For more information, see [Enable master data endorsement](endorsement-master-data-enable.md).
 
-## Email subscriptions
+## Users can set up email subscriptions
 
-**Users can set up email subscriptions.** This setting lets users create email subscriptions to reports and dashboards. Read [Email subscriptions for reports and dashboards in the Power BI service](/power-bi/collaborate-share/end-user-subscribe) to learn more.
+This setting lets users create email subscriptions to reports and dashboards. Read [Email subscriptions for reports and dashboards in the Power BI service](/power-bi/collaborate-share/end-user-subscribe) to learn more.
 
-**B2B guest users can set up and be subscribed to email subscriptions.** There may be instances that admin may want B2B guest users to receive email subscriptions but not other external users. Use this setting to allow B2B guest users to set up and subscribe themselves to email subscriptions.
+## B2B guest users can set up and be subscribed to email subscriptions
+
+There may be instances that admin may want B2B guest users to receive email subscriptions but not other external users. Use this setting to allow B2B guest users to set up and subscribe themselves to email subscriptions.
 
 If this setting is off, only users in your organization can create and receive email subscriptions.
 
-The **Allow email subscriptions to be sent to external users** switch is automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
+The **Users can send email subscriptions to external users** switch is automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
-**Users can send email subscriptions to external users.** Users can send email subscriptions to external users. External users are users who haven't been added to your Microsoft Entra ID. Turn this setting off to prevent users from subscribing external users to email subscriptions.
+## Users can send email subscriptions to external users
+
+External users are users who haven't been added to your Microsoft Entra ID. Turn this setting off to prevent users from subscribing external users to email subscriptions.
 
 ## Featured content
 
@@ -204,7 +217,10 @@ When the app is installed, users receive notifications in Teams and can more eas
 
 Automatic installation happens for a user under the following conditions:
 
-The Power BI app for Microsoft Teams is set to **Allowed** in the Microsoft Teams admin portal, the Power BI tenant setting **Install Power BI app for Microsoft Teams automatically** is **Enabled**, the user has a Microsoft Teams license, and the user opens [the Power BI service](https://app.powerbi.com) in a web browser.
+- The Power BI app for Microsoft Teams is set to **Allowed** in the Microsoft Teams admin portal.
+- The Power BI tenant setting **Install Power BI app for Microsoft Teams automatically** is **Enabled**.
+- The user has a Microsoft Teams license.
+- The user opens [the Power BI service](https://app.powerbi.com) in a web browser..
 
 When the app is installed, users receive notifications in Teams and can more easily discover and collaborate with colleagues. The Power BI app for Teams provides users with the ability to open all Fabric content.
 

@@ -20,13 +20,13 @@ Increase security by allowing people to use a [Private Link](/azure/private-link
 
 Review the considerations and limitations before enabling private endpoints.
 
-To learn more, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
+To learn more, see [Private links for Fabric tenants](/fabric/security/security-private-links-overview).
 
 ## Block Public Internet Access
 
 For extra security, block access to your Fabric tenant via the public internet. This means people who don't have access to the Private Link won't be able to connect. Turning this on can take 10 to 20 minutes to take effect.
 
-To learn more, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
+To learn more, see [Private links for Fabric tenants](/fabric/security/security-private-links-overview).
 
 ## Configure workspace-level inbound network rules
 
@@ -42,7 +42,7 @@ When this setting is on, workspace admins can configure outbound access protecti
 
 If you turn this setting off, outbound access protection is also turned off in all workspaces in the tenant.
 
-For more information, see [Workspace-level outbound network rules](https://go.microsoft.com/fwlink/?linkid=2310620).
+For more information, see [Private links for Fabric workspaces](/fabric/security/security-workspace-level-private-links-overview).
 
 ## Configure workspace IP firewall rules (preview)
 
@@ -50,9 +50,9 @@ When this setting is enabled, workspace admins can configure IP firewall rules i
 
 If tenant-level public access is blocked, turning on this setting still allows workspace admins to permit access from specific IP rules.
 
-For more information, see [Workspace IP firewall rules](https://go.microsoft.com/fwlink/?linkid=2223103).
+For more information, see [Set up workspace IP firewall rules](/fabric/security/security-workspace-level-firewall-set-up?tabs=fabric-portal-1).
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
-* [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links)
+* [Private links for Fabric tenants](/fabric/security/security-private-links-overview)
