@@ -157,6 +157,8 @@ items:
             href: event-streams/add-manage-eventstream-destinations.md
           - name: Activator
             href: event-streams/add-destination-activator.md
+          - name: Business Events
+            href: event-streams/add-destination-business-events.md
           - name: Custom endpoint
             href: event-streams/add-destination-custom-app.md
           - name: Derived stream
