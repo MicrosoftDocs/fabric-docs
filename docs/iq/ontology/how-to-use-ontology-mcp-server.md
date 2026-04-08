@@ -21,20 +21,20 @@ Before using ontology as an MCP server, make sure you have the following prerequ
 
 ## How it works
 
-<!--Intro text-->
-
-To create the MCP server, you need the URL of your ontology (preview) item.
+To create the MCP server endpoint, you need the URL of your ontology (preview) item.
 
 To find the URL, follow these steps:
 
 1. Open your ontology item in Fabric.
-1. Copy the URL from the browser, in the format `https://app.fabric.microsoft.com/groups/<group-ID>/ontologies/<ontology-item-ID>`. 
+1. View the URL in the browser, in the format `https://app.fabric.microsoft.com/groups/<workspace-ID>/ontologies/<ontology-item-ID>`.
 
-    If there's additional text after the ontology item ID, such as `/entity/<entity-ID>` or querystring parameters, there's no need to copy that section. The URL ends with the ontology item ID.
+    Copy the values of `<workspace-ID>` and `<ontology-item-ID>` from the URL.
 
-    :::image type="content" source="media/how-to-use-ontology-mcp-server/url.png" alt-text="Screenshot of the preview experience." lightbox="media/how-to-use-ontology-mcp-server/url.png":::
+    :::image type="content" source="media/how-to-use-ontology-mcp-server/url.png" alt-text="Screenshot of the values in the URL." lightbox="media/how-to-use-ontology-mcp-server/url.png":::
 
-Use this value as the **MCP server URL** in the next section.
+1. Form the **MCP server URL** by entering the copied values into this string: `https://api.fabric.microsoft.com/v1/mcp/dataPlane/workspaces/<workspace-ID>/items/<ontology-item-ID>/ontologyEndpoint`.
+
+You use this **MCP server URL** in the next section.
 
 [!INCLUDE [data-agent-mcp-server-vs-code](../../data-science/includes/data-agent-mcp-server-vs-code.md)]
 
