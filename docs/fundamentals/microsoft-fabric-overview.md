@@ -16,6 +16,11 @@ ai-usage: ai-assisted
 
 Microsoft Fabric is an analytics platform that supports end‑to‑end data workflows, including data ingestion, transformation, real‑time stream processing, analytics, and reporting. It provides integrated experiences such as Data Engineering, Data Factory, Data Science, Real‑Time Intelligence, Data Warehouse, and Databases, which operate over a shared compute and storage model.
 
+> [!NOTE]
+> **Share your feedback as a new Fabric user**
+>
+> Your honest take on what works and what doesn't will directly shape product improvements. [Sign up to participate](https://microsoft.qualtrics.com/jfe/form/SV_1MTHk3TXzSUfEXA) and help drive Fabric's future.
+
 Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. In tandem with OneLake, the OneLake Catalog provides a centralized experience for discovering, exploring, and governing data and analytics artifacts across the tenant. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
 
 > [!NOTE]
