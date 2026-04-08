@@ -99,7 +99,7 @@ To toggle how the visual is displayed, use the tabs at the top right corner of t
 
 To toggle between interactive delay, interactive rejection, and background rejection, use the tabs at the top of the visual. Timepoints with a value that's above 100% are rendered with a darker color.
 
-In each of these visuals, the visuals are rendered as per static legends on the visual. For example, in the Interactive delay visual, the legends are Interactive delay, No Interactive delay and No interactive delay (capacity overage billed).
+Each visual is rendered according to static legends displayed on it. For example, the Interactive delay tab shows legends for **Interactive delay**, **No Interactive delay**, and **No interactive delay (capacity overage billed)**.
 
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
@@ -110,7 +110,7 @@ The throttling chart displays the following elements:
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
 > [!NOTE]
-> When capacity overage is enabled for the capacity, the capacity does not enter the above throttling state until the capacity overage limit is exceeded. This is represented as No interactive delay (capacity overage billed), No interactive rejection (capacity overage billed) and No background rejection (capacity overage billed) in above throttling charts. For more information, see [Capacity overage overview](capacity-overage-overview.md).
+> When capacity overage is enabled for the capacity, the capacity doesn't enter the throttling state until the capacity overage limit is exceeded. This state is represented as **No interactive delay (capacity overage billed)**, **No interactive rejection (capacity overage billed)** and **No background rejection (capacity overage billed)** in the throttling charts. For more information, see [Capacity overage overview](capacity-overage-overview.md).
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
 * *No filters applied* - Columns display the peak timepoint every six minutes.
@@ -118,7 +118,7 @@ Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbo
 
 ### Overages
 
-The Overages tab has two views: [Overage (Carryforward)](#overage-carryforward) and [Overage (Billed)](#overage-billed).
+The **Overages** tab has two views: **Overage (Carryforward)** and **Overage (Billed)**, as shown in the following image:
 
 :::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
 
@@ -134,19 +134,19 @@ The overages carryforward chart displays the following elements:
 
 #### Overage (Billed)
 
-**Overage (Billed)** shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage is enabled and the capacity has incurred overages and has overages which would have resulted in throttling.
+**Overage (Billed)** shows the overage usage that is billed for the capacity. These visuals are only populated when capacity overage is enabled and the capacity has incurred overages and has overages that would have resulted in throttling.
 
 This view displays the following visuals:
 
-- **Table** - Visual shows details of billed overages for the capacity at a point in time.
+- **Table** - shows details of billed overages for the capacity at a point in time.
   - **Rolling cumulative 24 hour billed overage CU (hr)** - Max of rolling cumulative 24 hours billed overage in capacity unit hours.
   - **Overage billing limit CU (hr)** - Max of overage billing limit in capacity units hours.
   - **Overage (Billed) CUs (s)** - Sum of billed overages in capacity units seconds.
 
-- **Timepoint visual** - Visual shows billed overage capacity unit seconds over time.
+- **Timepoint visual** - shows billed overage capacity unit seconds over time.
   - **Overage (Billed) CUs (s)** - Amount of overage capacity unit seconds billed for the current 30-second window.
 
-- **Cumulative visual** - Visual shows the cumulative overages billed over the past 24 hours for each window.
+- **Cumulative visual** - shows the cumulative overages billed over the past 24 hours for each window.
   - **Rolling cumulative 24 hour billed overage CU (hr)** - Amount of overage capacity unit hours billed for the past 24 hours from the current window.
   - **Overage billing limit CU (hr)** - 24-hour limit for billed overage set at the capacity level in capacity unit hours.
 
