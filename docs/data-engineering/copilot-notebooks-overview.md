@@ -157,8 +157,18 @@ In some cases, Copilot may display *"Copilot is currently unavailable"* in the c
 
 - Avoid closing other notebooks while actively using Copilot, as this may interrupt the session.
 
+### Copilot may not use the latest cell error output when troubleshooting
+
+In some cases, Notebook Copilot may not fully incorporate the most recent error output from a notebook cell when diagnosing issues. This can lead to incomplete or less relevant troubleshooting guidance.
+
+**Workaround**
+
+To improve response quality, explicitly reference or include the latest error message in your prompt when asking Copilot for help.
+
+
+
 > [!NOTE]
-> This is a known issue that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
+> These are known issues that may occur in production environments. A fix is in progress and will be rolled out in an upcoming update.
 
 ## Related content
 
