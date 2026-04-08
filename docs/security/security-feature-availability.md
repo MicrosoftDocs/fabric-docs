@@ -44,7 +44,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Data Build Tool job | - | - | - |
 | **Data Science** | ML Model | ✓ | ✓ |  |
 |  | Experiment | ✓ | ✓ |  |
-|  | Data Agent | ✓ | - | Preview |
+|  | Data Agent | ✓ | - |  |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
