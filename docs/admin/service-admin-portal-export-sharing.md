@@ -220,7 +220,7 @@ Automatic installation happens for a user under the following conditions:
 - The Power BI app for Microsoft Teams is set to **Allowed** in the Microsoft Teams admin portal.
 - The Power BI tenant setting **Install Power BI app for Microsoft Teams automatically** is **Enabled**.
 - The user has a Microsoft Teams license.
-- The user opens [the Power BI service](https://app.powerbi.com) in a web browser..
+- The user opens [the Power BI service](https://app.powerbi.com) in a web browser.
 
 When the app is installed, users receive notifications in Teams and can more easily discover and collaborate with colleagues. The Power BI app for Teams provides users with the ability to open all Fabric content.
 

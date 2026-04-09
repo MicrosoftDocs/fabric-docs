@@ -24,7 +24,7 @@ Sensitivity label settings, such as encryption and content marking for files and
 
 To learn more, see [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview).
 
-To view sensitivity label settings for your organization, visit the [Microsoft Purview compliance portal](https://protection.officeppe.com/sensitivity?flight=EnableMIPLabels).
+To view sensitivity label settings for your organization, visit the [Microsoft Purview portal](https://protection.officeppe.com/sensitivity?flight=EnableMIPLabels).
 
 ## Apply sensitivity labels from data sources to their data in Power BI
 

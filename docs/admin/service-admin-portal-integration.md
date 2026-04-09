@@ -92,7 +92,7 @@ Learn more about [creating reports from SharePoint and Microsoft Lists](/power-b
 
 Enable SSO capability for Dremio. By enabling, user access token information, including name and email, is sent to Dremio for authentication.
 
-To learn more, see [Microsoft Entra ID-based Single Sign-On for Dremio Cloud and Power BI](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi).
+To learn more, see [Microsoft Entra ID-based single sign-on for Dremio Cloud and Power BI](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi).
 
 ## Snowflake SSO
 
@@ -114,7 +114,7 @@ To learn more, see [Google BigQuery (Azure AD)](/power-query/connectors/google-b
 
 <a name='azure-ad-single-sign-on-sso-for-gateway'></a>
 
-## Microsoft Entra Single Sign-On (SSO) for Gateway
+## Microsoft Entra single sign-on (SSO) for Gateway
 
 This setting enables Microsoft Entra SSO through on-premises data gateways to cloud data sources that rely on Microsoft Entra ID-based authentication. It gives seamless Microsoft Entra SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
 
@@ -122,13 +122,13 @@ This feature is important for users who work with reports that require SSO conne
 
 An important security-related consideration is that gateway owners have full control over their on-premises data gateways. This means that it's theoretically possible for a malicious gateway owner to intercept Microsoft Entra SSO tokens as they flow through an on-premises data gateway (this isn't a concern for VNet data gateways because they're maintained by Microsoft).
 
-Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra Single Sign-On (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
+Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra single sign-on (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
 
 To learn more, see [Microsoft Entra SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
 
 ## Users can view Power BI files saved in OneDrive and SharePoint (Preview)
 
-This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization. This setting is on by default.
+This setting allows users to view Power BI files saved in OneDrive and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization. This setting is on by default.
 
 :::image type="content" source="media/service-admin-portal-integration/admin-integration-viewer.png" alt-text="Screenshot of admin setting called: Users can view Power BI items saved in OneDrive and SharePoint.":::
 
