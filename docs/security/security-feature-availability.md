@@ -72,14 +72,14 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle |  | - | Preview |
-| **Native Databases** | Sql DB in Fabric |  | Preview | - |
+| **Native Databases** | Sql DB in Fabric | ✓ | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
 | **OneLake** | Shortcut | ✓ | - | - |
-| **Power BI** | Power BI Report | - | - | - |
+| **Power BI** | Power BI Report | - | - | Preview |
 |  | Dashboard | - | - | - |
 |  | Scorecard | - | - | - |
-|  | Semantic Model | - | - | - |
+|  | Semantic Model | - | - | Preview |
 |  | Streaming dataflow | - | - | - |
 |  | Streaming dataset | - | - | - |
 |  | Paginated Report | - | - | - |
@@ -87,9 +87,9 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Exploration | - | - | - |
 |  | Org App | - | - | - |
 |  | Metric Set | - | - | - |
-| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
+| **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | Preview |
 |  | Activator | ✓ | - | - |
-|  | Eventhouse/KQL DB | ✓ | Preview |  |
+|  | Eventhouse/KQL DB | ✓ | Preview | Preview |
 |  | Eventstream | ✓ |  | - |
 |  | Real-Time Dashboard | ✓ | Preview | - |
 |  | Anomaly detector  | - | - | - |

@@ -48,7 +48,11 @@ event-driven solutions.
 
 Real-Time Intelligence applications span a wide variety of business
 scenarios, such as automotive, manufacturing, IoT, fraud detection,
-business operations management, and anomaly detection.
+business operations management, and anomaly detection. You can also use
+Real-Time Intelligence for AI and agentic application scenarios, such as
+real-time content safety monitoring and agent telemetry for generative
+apps, where safety signals and conversation events are streamed and
+analyzed for immediate action.
 
 ## How do I use Real-Time Intelligence?
 
@@ -95,7 +99,7 @@ available to all Fabric workloads.
 
 ### Connect to streaming data
 
-Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations—all without writing code. Eventstreams support multiple data sources and data destinations, including a wide range of connectors to external sources, for example: Apache Kafka clusters, database change data capture feeds, AWS streaming sources (Kinesis), Google (GCP Pub/Sub), MQTT v3.1/v3.1.1, and the Real-Time Weather connector.
+Eventstreams let you collect, transform, and send large amounts of real-time data to different destinations, all without writing code. Eventstreams support multiple data sources and data destinations, including a wide range of connectors to external sources, for example: Apache Kafka clusters, database change data capture feeds, AWS streaming sources (Kinesis), Google (GCP Pub/Sub), MQTT v3.1/v3.1.1, and the Real-Time Weather connector. Application telemetry and content safety signals from AI or LLM services can also be ingested as streams (for example, via Kafka or Event Hubs connectors) to enable governance and monitoring of agent interactions.
 
 ### Process data streams
 
@@ -122,6 +126,8 @@ semi-structured, and unstructured data. The language is expressive, easy
 to read and understand the query intent, and optimized for authoring
 experiences.
 
+For AI and agentic application scenarios, low-latency KQL queries over safety and telemetry events enable near-real-time dashboards and anomaly detection in agent conversations. The time-series organization of eventhouse data is well suited for correlating content safety signals with session metadata, so you can rapidly triage issues and identify trends across your generative AI workloads.
+
 ### Model data
 
 Digital twin builder (preview) is a low-code/no-code experience for modeling your data as an ontology that digitally represents your physical environment. Modeling your assets and processes can help optimize physical operations using data, in a way that's accessible to operational decision-makers.
@@ -147,6 +153,7 @@ alerting users, executing Fabric job items like a pipeline, or kicking
 off Power Automate workflows. The logic can be either a simply defined
 threshold, a pattern such as events happening repeatedly over a time
 period, or the results of complex logic defined by a KQL query.
+For generative AI applications, you can set up content safety remediation workflows by using alerts driven by KQL conditions (for example, a toxicity threshold exceeded or repeated policy violations) to notify application owners, route events to quarantine flows, or trigger pipelines and Power Automate workflows for throttling or blocklisting.
 [!INCLUDE [fabric-activator](includes/fabric-activator.md)] turns your event-driven insights into actionable business
 advantages.
 

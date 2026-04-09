@@ -74,13 +74,29 @@ Select the **Settings** tab and configure your activity.
   
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting ADF and Synapse.":::
 
+#### Using Fabric Workspace Identity (WI) in the Notebook activity
+
+1. **Create the Workspace Identity**
+
+   You must enable WI in your workspace (this may take a moment to load). Create a Workspace Identity in your Fabric workspace. Note that the WI should be created in the same workspace as your Pipeline.
+   
+   Check out the docs on [Workspace Identity](../security/workspace-identity.md).
+
+1. **Enable tenant-level settings**
+
+   Enable the following tenant setting (it's disabled by default): _Service principals can call Fabric public APIs._
+
+   You can enable this setting in the [Fabric admin portal](/fabric/admin/admin-center#how-to-get-to-the-admin-portal). For more information about this setting, see [the enable service principal authentication for admin APIs article](../admin/enable-service-principal-admin-apis.md).
+
+1. **Grant workspace permissions to the Workspace Identity**
+
+   Open the workspace, select Manage access, and assign permissions to the Workspace Identity. Contributor access is sufficient for most scenarios. If your Notebook is not in the same workspace as your Pipeline, you'll need to assign the WI you created in your Pipeline's workspace at least Contributor access to your Notebook's workspace.
+
+   Check out the docs on [Give users access to workspaces](../fundamentals/give-access-workspaces.md).
+
 ## Save and run or schedule the pipeline
 
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
-
-## Known issues
-
-- Some customers may not see the Workspace Identity (WI) dropdown, or may see it but be unable to create a connection. This behavior is due to a known issue in one of our underlying platform components. The fix is currently being worked on.
 
 ## Related content
 

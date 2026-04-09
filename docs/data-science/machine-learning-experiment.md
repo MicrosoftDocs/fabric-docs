@@ -1,9 +1,10 @@
-﻿---
+---
 title: Machine learning experiment
 description: Learn how to create machine learning experiments, use the MLflow API, manage and compare runs, and save a run as a model.
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: midesa
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: concept-article
 ms.custom: sfi-image-nochange
 ms.date: 03/03/2026
@@ -234,3 +235,4 @@ ML Experiment are integrated directly into Monitor, where you can select a speci
 
 - [Learn about MLflow Experiment APIs](https://mlflow.org/docs/latest/api_reference/python_api/mlflow.html)
 - [Track and manage machine learning models](machine-learning-model.md)
+- [Manage MLflow models across workspaces and platforms](machine-learning-cross-workspace-logging.md)

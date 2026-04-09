@@ -43,13 +43,15 @@ items:
     href: add-source-amazon-kinesis-data-streams.md
   - name: Amazon Managed Streaming for Kafka
     href: add-source-amazon-managed-streaming-for-kafka.md
+  - name: Anomaly detection events
+    href: create-streams-anomaly-detection-events.md
   - name: Apache Kafka
     href: add-source-apache-kafka.md
   - name: Azure Blob Storage events
     href: get-azure-blob-storage-events.md
-  - name: Azure Cosmos DB Change Data Capture
+  - name: Azure Cosmos DB Change Data Capture (CDC)
     href: add-source-azure-cosmos-db-cdc.md
-  - name: Azure Data Explorer database table
+  - name: Azure Data Explorer Database
     href: add-source-azure-data-explorer-database.md
   - name: Azure Data Explorer shortcut
     href: add-source-azure-data-explorer.md
@@ -63,33 +65,37 @@ items:
     href: add-source-azure-iot-hub.md
   - name: Azure Service Bus
     href: add-source-azure-service-bus.md
-  - name: Azure SQL Database Change Data Capture (CDC)
+  - name: Azure SQL Database CDC
     href: add-source-azure-sql-database-cdc.md
-  - name: Azure SQL Managed Instance Change Data Capture
+  - name: Azure SQL Managed Instance CDC
     href: add-source-azure-sql-managed-instance-cdc.md
-  - name: Confluent Cloud Kafka
+  - name: Confluent Cloud for Apache Kafka
     href: add-source-confluent-kafka.md
-  - name: Fabric Capacity overview events
+  - name: Cribl
+    href: add-source-cribl.md
+  - name: Fabric capacity overview events
     href: create-streams-fabric-capacity-overview-events.md
-  - name: Fabric Job events
+  - name: Fabric job events
     href: create-streams-fabric-job-events.md
   - name: Fabric OneLake events
     href: create-streams-fabric-onelake-events.md
   - name: Fabric workspace item events
     href: create-streams-fabric-workspace-item-events.md
-  - name: Anomaly detection events
-    href: create-streams-anomaly-detection-events.md
   - name: Google Cloud Pub/Sub
     href: add-source-google-cloud-pub-sub.md
-  - name: MQTT
+  - name: HTTP
+    href: add-source-http.md
+  - name: Message Queuing Telemetry Transport (MQTT)
     href: add-source-mqtt.md
-  - name: MySQL Database Change Data Capture
+  - name: MongoDB CDC
+    href: add-source-mongodb-change-data-capture.md
+  - name: MySQL Database CDC
     href: add-source-mysql-database-cdc.md
-  - name: PostgreSQL Database Change Data Capture
+  - name: PostgreSQL Database CDC
     href: add-source-postgresql-database-cdc.md
   - name: Real-time weather
     href: add-source-real-time-weather.md
-  - name: Sample data source
+  - name: Sample data
     href: add-source-sample-data.md
   - name: Solace PubSub+
     href: add-source-solace-pub-sub.md
@@ -164,7 +170,11 @@ items:
   - name: Consume Business events
     href: business-events/consume-business-events-from-activator.md
   - name: Subscribe permission for Azure and Fabric events
-    href: fabric-events-subscribe-permission.md   
+    href: fabric-events-subscribe-permission.md
+  - name: Private links for Azure and Fabric Events (preview)
+    href: private-links-real-time-events.md
+  - name: Paused event configurations
+    href: fabric-events-paused-state.md
   - name: Events capacity consumption
     href: fabric-events-capacity-consumption.md
   - name: Events delivery guarantees

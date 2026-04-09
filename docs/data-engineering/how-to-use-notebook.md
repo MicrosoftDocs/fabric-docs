@@ -5,7 +5,7 @@ ms.reviewer: jingzh
 ms.topic: how-to
 ms.custom: sfi-image-nochange
 ms.search.form: Create and use notebooks
-ms.date: 10/14/2025
+ms.date: 04/06/2026
 ---
 
 # How to use Microsoft Fabric notebooks
@@ -19,6 +19,8 @@ With a Fabric notebook, you can:
 - Keep data secure with built-in enterprise security features.
 - Analyze data across raw formats (CSV, txt, JSON, etc.), processed file formats (parquet, Delta Lake, etc.), using powerful Spark capabilities.
 - Be productive with enhanced authoring capabilities and built-in data visualization.
+- Leverage Copilot for context-aware code generation, refactoring, and validation across your notebook.
+- Quickly diagnose and repair failed cells or Spark jobs with Fix with Copilot, including approval-based code changes.
 
 This article describes how to use notebooks in data science and data engineering experiences.
 
@@ -121,6 +123,9 @@ The notebook resource explorer provides a Unix-like file system to help you mana
 > - The maximum Resource storages for both built-in folder and environment folder are **500 MB**, with a single file size up to **100 MB**. They both allow up to **100** file/folder instances in total.
 > - When using `notebookutils.notebook.run()`, use the `notebookutils.nbResPath` command to access the target notebook resource. The relative path **builtin/** will always point to the root notebook’s built-in folder.
 
+> [!NOTE]
+> Files in the Resources folder (both built-in and environment) and libraries installed through inline commands (such as `%pip install` or `install.packages()`) are scoped to the current notebook session. They aren't affected by environment publishing in either Quick mode or Full mode.
+
 ### Built-in resources folder
 
 The built-in resources folder is a system-defined folder unique to each notebook. It is recommended to use built-in resource folder to storage any data used in the current notebook. Here are the key capabilities for the notebook resources.
@@ -145,6 +150,20 @@ Environment Resources Folder is a shared repository designed to streamline colla
 - You can also operate on the files/folders same with the Built-in resources folder. 
 - The Environment resource path is automatically mounted to the notebook cluster. You can use the relative path **/env** to access the environment resources.
 
+Fabric Environments support two library publishing modes that affect how libraries are delivered to your notebook sessions:
+
+- **Quick mode** publishes in about 5 seconds and installs libraries when your notebook session starts. Quick mode can override library versions published through Full mode, but only for the current session.
+- **Full mode** creates a stable, reproducible library snapshot. Publishing typically takes 3 to 6 minutes, and session startup adds 1 to 3 minutes for dependency deployment. Using Full mode with a [custom live pool](custom-live-pools-overview.md) can bring session start times back to approximately 5 seconds while maintaining the stable snapshot.
+
+For details on each mode, see [Manage libraries in Fabric environments](environment-manage-library.md#select-publish-mode-for-libraries).
+
+### Use environment libraries in notebooks
+
+Choose a library publishing mode based on your workflow:
+
+- **Quick mode for iterative development**: Use Quick mode when you're actively experimenting in notebooks and need fast library iteration. Libraries install at session start with minimal publish time.
+- **Full mode for reproducibility**: Use Full mode when you need consistent library versions across collaborators, scheduled runs, or pipeline jobs. The snapshot ensures every session starts with the same dependencies.
+- **Full mode with a custom live pool for fast and stable sessions**: When both fast session startup and reproducibility matter, configure Full mode with a [custom live pool](custom-live-pools-overview.md). This combination achieves approximately 5-second session starts while preserving the stable library snapshot.
 
 > [!NOTE]
 > Reading/writing with a relative path is not functioning in a [High concurrency session](../data-engineering/configure-high-concurrency-session-notebooks.md).
@@ -172,6 +191,18 @@ The Fabric notebook is a collaborative item that supports multiple users editing
 When you open a notebook, you enter the coediting mode by default, and every notebook edit is automatically saved. If your colleagues open the same notebook at the same time, you see their profile, run output, cursor indicator, selection indicator, and editing trace. By using the collaboration features, you can easily accomplish pair programming, remote debugging, and tutoring scenarios.
 
 :::image type="content" source="media\how-to-use-notebook\collaboration.png" alt-text="Screenshot showing a code cell with another user editing." lightbox="media\how-to-use-notebook\collaboration.png":::
+
+### Use Copilot in notebooks
+
+Copilot is immediately context-aware of the workspace, attached Lakehouse schemas, tables, and files, the notebook's structure, and the current runtime state. You don't need to start a session for Copilot to begin helping you. Copilot supports multi-step, notebook-wide code generation, refactoring, summarization, and validation across entire workflows, so you can work across cells without losing context.
+
+### Performance insights from Copilot
+
+Copilot surfaces performance guidance based on data size, join patterns, and runtime behavior. For example, it can recommend efficient join strategies, help you avoid costly shuffles, propose refactoring into reusable functions, and highlight potential data quality issues observed during execution. These insights appear as part of your Copilot conversations and align with the `/optimize` command.
+
+### Troubleshoot with Copilot
+
+When a cell or Spark job fails, a **Fix with Copilot** option appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. Copilot can auto-apply code changes with an approval diff so you can review before committing. You can also use the `/fix` command in Copilot chat to run targeted diagnostics for a specific cell or the entire notebook. For more information, see [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ### Share a notebook
 
@@ -267,17 +298,29 @@ Version history allows you to easily version your live notebook changes. It supp
 
 ## Notebook mode switcher
 
-Fabric notebooks support four modes that you can easily switch: **Develop** mode，**Run only** mode, **Edit** mode, and **View** mode. Each mode maps to a specific permission combination. When sharing the notebook to other team members, you can grant proper permissions to the recipients. They can see the best available notebook mode according to their permission, and they are able to switch between the mode they have permission to.
+Fabric notebooks support four modes that you can switch between: **Develop**, **Run only**, **Edit**, and **View**. Each mode aligns with a set of permissions.
+
+When you share a notebook, you assign permissions to users. Based on those permissions, users can access and switch between the modes available to them.
 
 :::image type="content" source="media\how-to-use-notebook\switch-mode.png" alt-text="Screenshot showing where to switch modes." lightbox="media\how-to-use-notebook\switch-mode.png":::
 
-- **Develop mode**: Read, execute, write permission needed.
-- **Run only mode**: Read, execute permission needed.
-- **Edit mode**: Read, write permission needed.
-- **View mode**: Read permission needed.
+- **Develop mode**: Requires read, execute, and write permissions.
+- **Run only mode**: Requires read and execute permissions.
+- **Edit mode**: Requires read and write permissions (cannot run).
+- **View mode**: Requires read permissions.
+
+### Permissions and access
+
+Permissions can be set at the workspace or notebook level in Microsoft Fabric. They determine which modes a user can access:
+
+- Permissions limit the set of available modes.
+- They don't automatically select a mode for the user.
+- Modes can't grant capabilities beyond what permissions allow.
 
 ## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)
+- [Overview of Copilot for Data Engineering and Data Science](copilot-notebooks-overview.md)
+- [Manage libraries in Fabric environments](environment-manage-library.md)
 - [Diagnose notebook failures with Copilot](copilot-notebooks-chat-pane.md#diagnose-notebook-failures)
 

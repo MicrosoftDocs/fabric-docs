@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 # Fabric data agent example with the AdventureWorks dataset (preview)
 
-This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model (with the necessary read/write permissions), a warehouse, a KQL database, or an ontology, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources—only the data source selection differs.
+This article shows how to set up a data agent in Microsoft Fabric using a lakehouse as the example data source. We first create and populate a lakehouse, then create a Fabric data agent and add the lakehouse to it. If you already have a Power BI semantic model, ensure you have Read permission to interact with it through a data agent (Write permission is only required to modify the semantic model or use capabilities such as Prep for AI). For a warehouse, a KQL database, or an ontology, follow the same steps and select that source instead. Although this walkthrough uses a lakehouse, the pattern is the same for other sources; only the data source selection differs.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
@@ -91,6 +91,12 @@ Once the lakehouse is added as a data source, the **Explorer** pane on the left 
 - `factresellersales`
 
 :::image type="content" source="./media/data-agent-scenario/get-started.png" alt-text="Screenshot showing where you can select tables for AI." lightbox="./media/data-agent-scenario/get-started.png":::
+
+### Permissions for semantic models in data agents
+
+Users only need Read permission on a Power BI semantic model to add it to a data agent and ask questions through the agent. Workspace access (Member role) and Build permission aren't required for interaction via data agents. Write permission is needed only for modifying the semantic model or using capabilities such as Prep for AI.
+
+This permissions change applies only to interactions through data agents. Other access patterns (for example, Analyze in Excel or direct report authorship) follow standard Power BI permissions.
 
 ## Provide instructions
 
@@ -185,6 +191,8 @@ You can use the Copilot in Power BI to interact with the Fabric data agent after
 Select the **Copilot** button on the left navigation pane, to open the Copilot in Power BI. Next, select **Add items for better results** in the text box at the bottom, to add the data agent. Select **Data agents** in the window that opens. You can only see the data agents that you have permission to access. Choose the data agent you want and select **Confirm**. This example shows how to work with a single data agent, but you can add more items - for example, other data agents, reports, or semantic models. The following screenshot illustrates the steps with a single data agent:
 
 :::image type="content" source="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png" alt-text="Screenshot showing the Copilot button and button to add items such as Data Agents." lightbox="./media/data-agent-scenario/copilot-in-powerbi-add-agent.png":::
+
+When a data agent includes a Power BI semantic model, users need only Read permission on that semantic model to interact with it via Copilot; workspace access isn't required. Write permission is still needed for semantic model changes and Prep for AI.
 
 Now that you added the data agent to the Copilot in Power BI, you can ask any questions related to your Fabric data agent, as shown in the following screenshot:
 

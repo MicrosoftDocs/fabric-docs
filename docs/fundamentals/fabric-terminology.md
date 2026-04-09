@@ -96,7 +96,11 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## OneLake
 
-- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+- **OneLake:** OneLake is Fabric's unified, multi-cloud data lake that provides a single logical data layer for all Fabric items, governance, and storage. OneLake is built on Azure Data Lake Storage Gen2 and includes features such as shortcuts for zero-copy data access and cross-tenant data sharing for governed collaboration across organizational boundaries. For more information, see [What is OneLake?](../onelake/onelake-overview.md)
+
+- **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They enable access to external operational data sources without copying data or building ETL pipelines. You can combine shortcuts with OneLake data sharing for cross-tenant governed access to shared datasets. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+
+- **Data sharing (cross-tenant):** OneLake data sharing lets you share live, governed datasets across Microsoft Entra tenants without copying data. External recipients access shared data in place, and all governance policies remain enforced at the source. For more information, see [external data sharing](../governance/external-data-sharing-overview.md).
 
 ## Related content
 

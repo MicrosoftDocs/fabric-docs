@@ -81,12 +81,11 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [ClickHouse](/power-query/connectors/clickhouse#connect-to-clickhouse-from-power-query-online) | ✓/− |  |  |
 | [CloudBluePSA (Beta)](connector-cloudbluepsa-overview.md) | ✓/− |  |  |
 | [Cognite Data Fusion (OData)](/power-query/connectors/cognite-data-fusion-(odata)#connect-to-cognite-data-fusion-from-power-query-online) | ✓/− |  |  |
-| Cognite Data Fusion (Rest API) (Beta) | ✓/− |  |  |
+| [Cognite Data Fusion (Rest API) (Beta)](/power-query/connectors/cognite-data-fusion-(rest-api)) | ✓/− |  |  |
 | [Common Data Service (legacy)](connector-common-data-service-legacy-overview.md) | ✓/− |  |  |
 | Data Virtuality LDW | ✓/− |  |  |
 | [Databricks](connector-databricks-overview.md) | ✓/− |  |  |
 | [Dataflow](connector-dataflows-overview.md) | ✓/− |  |  |
-| Datamarts (Beta) | ✓/− |  |  |
 | [Dataverse](connector-dataverse-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [Delta Sharing](/power-query/connectors/delta-sharing) | ✓/− |  |  |
 | [Denodo](/power-query/connectors/denodo) | ✓/− |  |  |
@@ -97,7 +96,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Dynamics 365 | | ✓/✓ | ✓/✓ |
 | [Dynamics AX](connector-dynamics-ax-overview.md) |  | ✓/− | ✓/− |
 | [Dynamics CRM](connector-dynamics-crm-overview.md) |  | ✓/✓ |✓/✓  |
-| Dynatrace Grail DQL (Beta) | ✓/− |  |  |
+| [Dynatrace Grail DQL (Beta)](/power-query/connectors/dynatrace-grail-dql) | ✓/− |  |  |
 | [Eduframe (Beta)](/power-query/connectors/eduframe) | ✓/− |  |  |
 | Emigo Data Source | ✓/− |  |  |
 | Entersoft Business Suite | ✓/− |  |  |
@@ -111,7 +110,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Fabric Lakehouse](connector-lakehouse-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | [Fabric SQL database (Beta)](connector-sql-database-overview.md) | ✓/✓ | ✓/✓ | ✓/✓ |
 | FactSet Analytics | ✓/− |  |  |
-| [FactSet RMS (Beta)](/power-query/connectors/factset-rms) | ✓/− |  |  |
+| FactSet RMS (Beta) | ✓/− |  |  |
 | [FHIR](connector-fhir-overview.md) | ✓/− |  |  |
 | [Folder](connector-folder-overview.md) | ✓/− | ✓/✓ | ✓/✓ |
 | [FTP](connector-ftp-overview.md) |  | ✓/− | ✓/− |
@@ -128,7 +127,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Hive LLAP](connector-hive-llap-overview.md) | ✓/− |  |  |
 | [HTTP](connector-http-overview.md) |  | ✓/− | ✓/− |
 | [IBM Db2 database](connector-ibm-db2-database-overview.md) | ✓/− | ✓/− | ✓/− |
-| IBM Netezza | ✓/− |  |  |
+| [IBM Netezza](/power-query/connectors/ibm-netezza-database) | ✓/− |  |  |
 | [Impala](connector-impala-overview.md) | ✓/− |  |  |
 | [Informix For Pipeline](connector-informix-for-pipeline-overview.md) |  | ✓/✓ | ✓/✓ |
 | Indexima | ✓/− |  |  |
@@ -153,7 +152,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Microsoft Access](connector-microsoft-access-overview.md) |  | ✓/✓ | ✓/✓ |
 | Microsoft Azure Data Manager for Energy | ✓/− |  |  |
 | [Microsoft Exchange Online](connector-microsoft-exchange-online-overview.md) | ✓/− |  |  |
-| Strategy for Power BI | ✓/− |  |  |
+| [MicroStrategy for Power BI](/power-query/connectors/microstrategy-for-power-bi) | ✓/− |  |  |
 | [MongoDB Atlas for Pipelines](connector-mongodb-atlas-overview.md) |  | ✓/✓ | ✓/✓ |
 | [MongoDB Atlas SQL](connector-mongodb-atlas-sql-overview.md) | ✓/− |  |  |
 | [MongoDB for Pipeline](connector-mongodb-overview.md) |  | ✓/✓ |✓/✓  |
@@ -213,7 +212,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | Starburst secured by Entra ID | ✓/− |  |  |
 | [SumTotal](/power-query/connectors/sumtotal) | ✓/− |  |  |
 | [Supermetrics](/power-query/connectors/supermetrics) | ✓/− |  |  |
-| SurveryMonkey | ✓/− |  |  |
+| SurveyMonkey | ✓/− |  |  |
 | [Sybase database](/power-query/connectors/sybase-database#connect-to-a-sybase-database-from-power-query-online) | ✓/− |  |  |
 | TeamDesk (Beta) | ✓/− |  |  |
 | Tenforce (Smart)List | ✓/− |  |  |
@@ -235,7 +234,7 @@ Fabric supports these connectors in Dataflow Gen2, pipelines, and Copy job. Sele
 | [Wolters Kluwer CCH Tagetik](/power-query/connectors/wolters-kluwer-cch-tagetik) | ✓/− |  |  |
 | Wrike (Beta) | ✓/− |  |  |
 | [XML](/power-query/connectors/xml#load-a-local-xml-file-from-power-query-online) | ✓/− |  |  |
-| [Zendesk](/power-query/connectors/zendesk) | ✓/− |  |  |
+| [Zendesk](/power-query/connectors/zendesk-data) | ✓/− |  |  |
 | Zoho Creator | ✓/− |  |  |
 | Zucchetti HR Infinity (Beta) | ✓/− |  |  |
 
@@ -245,7 +244,6 @@ Transport Layer Security (TLS) is a widely adopted security protocol that's desi
 
 | Connector | Dataflow Gen2 | Copy activity | Copy job |
 |:--|:-:|:-:|:-:|
-|[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
 |[Amazon RDS for SQL Server](connector-amazon-rds-for-sql-server-copy-activity.md)| | ✓ | ✓ |
 |[Azure Blobs](connector-azure-blob-storage-copy-activity.md)| | ✓ | ✓ |
 |[Azure Data Explorer (Kusto)](connector-azure-data-explorer-copy-activity.md)| | ✓ | ✓ |
