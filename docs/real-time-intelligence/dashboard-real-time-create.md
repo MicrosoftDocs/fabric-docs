@@ -3,7 +3,7 @@ title: Create a Real-Time Dashboard
 description: Learn how to create and customize Real-Time Dashboards to visualize data effectively using KQL queries and Copilot for seamless insights.
 ms.reviewer: mbar
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 04/09/2026
 author: spelluru
 ms.author: spelluru
 ms.subservice: rti-dashboard
@@ -80,19 +80,19 @@ Select the tab that corresponds with your desired data source type.
 
 1. Open your Real-Time dashboard.
 
-1. In the upper tool bar, select **New data source** > **Eventhouse / KQL Database**.
+1. In the upper tool bar, select **Add data source** > **KQL Database**.
 
-    :::image type="content" source="media/real-time-dashboard/event-house.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted." lightbox="media/real-time-dashboard/event-house.png":::
+    :::image type="content" source="media/real-time-dashboard/kusto-query-dataset.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with eventhouse/kql database highlighted." lightbox="media/real-time-dashboard/kusto-query-dataset.png":::
 
-1. In the **OneLake catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
+1. In the **OneLake Catalog** window, select a KQL database to connect to your KQL queryset, and then select **Connect**.
 
-    Alternatively, close the **OneLake data hub** window and use the **+ Add data source** menu to connect to a different data source.
+    Alternatively, close the **OneLake Catalog** window and use the **+ Add data source** menu to connect to a different data source.
 
 ### [Azure Data Explorer](#tab/azure-data-explorer-cluster)
 
 1. Open your Real-Time dashboard.
 
-1. In the upper tool bar, select **New data source** > **Azure Data Explorer**.
+1. In the upper tool bar, select **Add data source** > **Azure Data Explorer**.
 
     :::image type="content" source="media/real-time-dashboard/azure-data.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure data explorer highlighted." lightbox="media/real-time-dashboard/azure-data.png":::
 
@@ -100,7 +100,7 @@ Select the tab that corresponds with your desired data source type.
 
 1. Open your Real-Time dashboard.
 
-1. In the upper tool bar, select **New data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
+1. In the upper tool bar, select **Add data source** > **Azure Monitor** and select either **Application Insights** or **Log Analytics**.
 
     :::image type="content" source="media/real-time-dashboard/azure-monitor.png" alt-text="Screenshot of the data source menu showing a list of optional data sources with Azure monitor highlighted." lightbox="media/real-time-dashboard/azure-monitor.png":::
 
