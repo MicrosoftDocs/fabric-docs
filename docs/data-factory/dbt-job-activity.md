@@ -1,8 +1,7 @@
 ---
-title: Run dbt job activity in Fabric pipeline
+title: Run dbt Job Activity in Fabric Pipeline
 description: "Learn how to add a dbt job activity to a Fabric data pipeline to orchestrate dbt transformations alongside other pipeline activities."
-author: pennyzhou-msft
-ms.author: xupzhou
+ms.reviewer: xupzhou
 ms.service: fabric
 ms.topic: how-to
 ms.date: 04/06/2026
@@ -26,10 +25,10 @@ The dbt job activity lets you run a dbt job as part of a Fabric data pipeline. Y
 
 ## Prerequisites
 
-Before you begin, make sure you have the following:
+Before you begin, make sure you have the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
-- A Microsoft Fabric enabled workspace. [Create a workspace](https://learn.microsoft.com/fabric/fundamentals/create-workspaces).
+- A Microsoft Fabric enabled workspace. [Create a workspace](fabric/fundamentals/create-workspaces).
 - [Permission and access](dbt-job-overview.md#required-permissions-and-access) for dbt jobs in Microsoft Fabric.
 
 ## Add a dbt job activity to a pipeline
@@ -38,11 +37,11 @@ Before you begin, make sure you have the following:
 
    :::image type="content" source="./media/dbt-job-activity/add-data-build-tool-job-activity.jpg" alt-text="Screenshot showing the dbt job activity added to the pipeline canvas.":::
 
-2. Go to the activity's **Settings** tab. Under **Connection**, use an existing connection from drop down or select **Browse all** to open the **Get data** page. Select **dbt job** to create a new connection.
+1. Go to the activity's **Settings** tab. Under **Connection**, use an existing connection from drop-down or select **Browse all** to open the **Get data** page. Select **dbt job** to create a new connection.
 
    :::image type="content" source="./media/dbt-job-activity/settings-tab-connection.jpg" alt-text="Screenshot showing the Settings tab with the Connection dropdown.":::
 
-3. Select the **workspace** and **dbt job** item to orchestrate in your pipeline. If you don't have a dbt job item, create one by selecting the **+ New** button in the dbt job settings within the activity.
+1. Select the **workspace** and **dbt job** item to orchestrate in your pipeline. If you don't have a dbt job item, create one by selecting the **+ New** button in the dbt job settings within the activity.
 
 
 ## Configure parameters in a dbt job activity
@@ -60,7 +59,9 @@ For example, you can pass a parameter to the **Select** field so that each pipel
 1. Specify a name for the parameter, for example **model_name**, and set a default value such as **my_model**. Select the parameter to insert it as the dynamic value for the **Select** field.
 
    :::image type="content" source="./media/dbt-job-activity/select-parameter-value.jpg" alt-text="Screenshot showing the parameter inserted as the dynamic value for the Select field.":::
-    :::image type="content" source="./media/dbt-job-activity/after-select-parameter-value.jpg" alt-text="Screenshot showing the setting page of the dynamic value for the Select field.":::
+
+   :::image type="content" source="./media/dbt-job-activity/after-select-parameter-value.jpg" alt-text="Screenshot showing the setting page of the dynamic value for the Select field.":::
+
 When the pipeline runs, the **Select** field resolves to the parameter value, so dbt executes only the matching model. You can override the default value each time you trigger the pipeline to target different models without editing the activity.
 
 You can add dynamic content for any column in **Settings** using the same approach.
