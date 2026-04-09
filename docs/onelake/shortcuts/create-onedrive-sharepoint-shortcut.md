@@ -1,7 +1,7 @@
 ---
 title: Create a OneDrive or SharePoint shortcut
 description: Learn how to create a OneLake shortcut for OneDrive or SharePoint inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag, shinarayanan
+ms.reviewer: shinarayanan
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 02/10/2026
@@ -12,14 +12,14 @@ ms.date: 02/10/2026
 
 In this article, you learn how to create a OneDrive or SharePoint shortcut inside a Microsoft Fabric lakehouse.
 
-For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
+For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md).
 
 >[!NOTE]
 >OneDrive and SharePoint shortcuts are currently in public preview.
 
 ## Prerequisites
 
-* A lakehouse in Microsoft Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+* A lakehouse in Microsoft Fabric. If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](../create-lakehouse-onelake.md).
 * Data in a OneDrive or SharePoint folder.
 
 ## Create a shortcut
@@ -61,7 +61,7 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 
    :::image type="content" source="./media/create-onedrive-sharepoint-shortcut/select-target.png" alt-text="Screenshot that shows selecting the target locations for a new shortcut.":::
 
-1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI-powered shortcut transformations are available for .txt files. For more information, see [Transform unstructured text files into Delta tables by using AI-powered tools](./shortcuts/transformations-ai.md).
+1. On the **Transform** page, select a transformation option if you want to transform the data in your shortcut or select **Skip**. AI-powered shortcut transformations are available for .txt files. For more information, see [Transform unstructured text files into Delta tables by using AI-powered tools](transformations-ai.md).
 
 1. On the review page, verify your selections. Here you can see each shortcut to be created. In the **Actions** column, you can select the pencil icon to edit the shortcut name. You can select the trash can icon to delete the shortcut.
 
@@ -76,7 +76,8 @@ When you create a shortcut in a lakehouse, the **New shortcut** window opens to 
 OneDrive and SharePoint shortcuts support the following methods for authentication:
 
 * Organizational account
-* [Workspace Identity](/fabric/security/workspace-identity)
+
+* [Workspace identity](../../security/workspace-identity)
 
   To use workspace identity authentication for OneDrive or SharePoint shortcuts, you need to grant your workspace identity access to the OneDrive or SharePoint site. Use the steps in the following section to configure this access.
 
@@ -90,11 +91,40 @@ The steps in this section require PowerShell. You can [Install PowerShell](/powe
 
 You must be a workspace admin to be able to create a workspace identity. The workspace you're creating the identity for can't be a **My Workspace**.
 
-1. Follow the steps to [Create a workspace identity](../security/workspace-identity.md#create-and-manage-a-workspace-identity).
+1. Follow the steps to [Create a workspace identity](../../security/workspace-identity.md#create-and-manage-a-workspace-identity).
 
 1. In the [Azure portal](https://portal.azure.com), go to **Microsoft Entra ID** and search your tenant for the workspace identity. The name should be the same as your workspace.
 
 1. Copy the application ID for the workspace identity to use later.
+
+1. Still in the Azure portal, go to **App registrations** > **All applications**, then search for and select your workspace name.
+
+1. In your workspace application, go to **Manage** > **API permissions** and add the following API permission: **Provide "Sites.Selected" SharePoint Online and Graph API Permissions**. Grant your consent if required.
+
+#### Configure app permissions on your SharePoint site
+
+1. Open the **App Permissions** page by navigating to the following link in your browser: `httpsL//<YOUR_SITE_URL>/_layouts/15/appinv.aspx`. For example:
+
+   * For a default tenant site: `https://microsoft.sharepoint.com/_layouts/15/appinv.aspx`
+   * For a specific site, for example **Contoso**: `https://microosft.sharepoint.com/sites/Contoso/_layouts/15/appinv.aspx`
+
+1. Enter the application ID that you copied from the previous section and then select **Lookup**.
+
+1. Provide the following information:
+
+   * **Title**: the name of your application
+   * **App Domain**: your application's domain ID
+   * **Permission**: the following HTML, replacing `<YOUR_SITE_URL>` with your own value
+
+     ```html
+     <AppPermissionRequests AllowAppOnlyPolicy="true"> 
+       <AppPermissionRequest Scope="https://<YOUR_SITE_URL>" Right="Read" /> 
+     </AppPermissionRequests>
+     ```
+
+1. Select **Create** to set up the app permission. When prompted, agree to trust the app to apply the new permissions.
+
+#### Grant permissions to your SharePoint site
 
 1. Open a PowerShell command window or start a cloud shell session in the Azure portal.
 
@@ -179,25 +209,25 @@ Now, when you create a shortcut you can select **Workspace identity** as the **A
 
 OneLake supports sensitivity label alignment during the creation of SharePoint shortcuts to help ensure consistent data protection between SharePoint and Fabric item. When a shortcut is created, OneLake compares the sensitivity label of the SharePoint site with the target Fabric item. If the SharePoint site has a more restrictive label, users are prompted to optionally align the Fabric item’s label to match. Sensitivity labels are evaluated only at creation time and are not re-evaluated afterward.
 
-#### Prerequisite
+### Prerequisite
 
 The tenant must enable sensitivity labeling for Fabric content. An admin must turn on **Allow users to apply sensitivity labels for content** in the Fabric/Power BI admin portal. If this setting is disabled, the label alignment option is not available during shortcut creation, and no label updates can be applied.
 
 ### Behavior
 
-- Sensitivity label comparison occurs only during initial shortcut creation. No sensitivity label checks or updates occur during shortcut updates or after creation.
+* Sensitivity label comparison occurs only during initial shortcut creation. No sensitivity label checks or updates occur during shortcut updates or after creation.
 
-- If the SharePoint site has a more restrictive label than the Fabric item, a **Data integrity** warning is displayed.
+* If the SharePoint site has a more restrictive label than the Fabric item, a **Data integrity** warning is displayed.
 
-- The **Apply the same sensitivity label** checkbox is enabled by default, allowing the Fabric item label to be updated to match SharePoint. Users can clear the checkbox to proceed without updating the Fabric item label.
+* The **Apply the same sensitivity label** checkbox is enabled by default, allowing the Fabric item label to be updated to match SharePoint. Users can clear the checkbox to proceed without updating the Fabric item label.
 
-- If sensitivity label validation or the label update fails, shortcut creation fails.
+* If sensitivity label validation or the label update fails, shortcut creation fails.
 
 ## Best practices
 
 * HTTP 429 errors when accessing OneDrive or SharePoint shortcuts are due to SharePoint throttling. SharePoint enforces service throttling to protect reliability; review the [official throttling guidance](/sharepoint/dev/general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online) to understand applicable limits and behaviors. Use the following best practices to minimize throttling:
 
-  * Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits. 
+  * Spark workload concurrency: Avoid running many parallel Spark jobs using the same delegated (user-based) authentication, as this can quickly trigger SharePoint throttling limits.
   
   * Folder scope: Create shortcuts at the most specific folder level that contains the actual data to be processed (for example, `site/folder1/subfolder2`) rather than at the site or document library root. 
 
@@ -215,8 +245,10 @@ The following limitations apply to SharePoint shortcuts:
 
 * SharePoint and OneDrive Shortcuts are supported only at folder level and not at file level.
 
+* SharePoint shortcuts don't support SharePoint subsites or hub sites.
+
 ## Related content
 
-* [Create a OneLake shortcut](create-onelake-shortcut.md)
+* [Create a OneLake shortcut](../create-onelake-shortcut.md)
 
-* [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
+* [Use OneLake shortcuts REST APIs](../onelake-shortcuts-rest-api.md)
