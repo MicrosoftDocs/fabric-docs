@@ -1,7 +1,9 @@
 ---
 title: Create a lakehouse with OneLake
 description: Learn how to create a lakehouse and load data into it with OneLake; you can also add data in bulk or schedule data loads.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 03/05/2025
 #customer intent: As a data engineer, I want to learn how to create a lakehouse and load data into it with OneLake so that I can efficiently manage and analyze large amounts of data in Microsoft Fabric.

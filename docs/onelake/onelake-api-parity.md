@@ -1,7 +1,9 @@
 ---
 title: OneLake parity and integration
 description: Microsoft OneLake supports Azure Data Lake Storage and Azure Blob Storage APIs, with a few differences in behavior and feature management.
-ms.reviewer: eloldag, mabasile
+ms.reviewer: eloldag, mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 09/27/2023
 #customer intent: As a data engineer, I want to understand the differences between OneLake and Azure Data Lake Storage (ADLS) and Azure Blob Storage APIs, so that I can effectively use OneLake for managing and manipulating data in my applications.
