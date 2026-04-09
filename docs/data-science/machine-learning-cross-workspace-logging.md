@@ -298,18 +298,35 @@ For details on supported scenarios and required configuration, see [Workspace ou
 
 The standard `%pip install` command requires outbound internet access, which is blocked in OAP-enabled workspaces. To install the `synapseml-mlflow` package, first download it from a non-OAP environment, then upload it to the lakehouse.
 
-**Step 1: Download the package** from a machine or workspace that has internet access.
+**Step 1: Download the package** 
+Download the synapseml-mlflow package from a machine that has internet access.
 
-```python
-%pip download synapseml-mlflow[online-notebook]
+```bash
+pip download synapseml-mlflow[online-notebook]
 ```
 
-**Step 2: Upload the downloaded files** to the lakehouse in your OAP-enabled workspace. Upload all `.whl` files to the **Files** section of the lakehouse (for example, `/lakehouse/default/Files`).
+**Step 2: Upload the downloaded files** 
+Upload the downloaded files to the lakehouse in your OAP-enabled workspace. Upload all `.whl` files to the **Files** section of the lakehouse (for example, `/lakehouse/default/Files`).
 
-**Step 3: Install from the lakehouse path** in your Fabric notebook.
+**Step 3: Install from the lakehouse path in your Fabric notebook**
 
 ```python
 %pip install --no-index --find-links=/lakehouse/default/Files "synapseml-mlflow[online-notebook]>2.0.0" "mlflow-skinny<=2.22.2" --pre
+```
+
+**Step 4: Set the tracking URI to use the managed private endpoint**
+
+If your current workspace has OAP enabled, you must config a [cross-workspace managed private endpoint](../security/workspace-outbound-access-protection-allow-list-endpoint.md#allow-outbound-access-to-another-workspace-in-the-tenant) from the source workspace to the target workspace and route the tracking URI through the private endpoint.
+
+```python
+import os
+from fabric.analytics.environment.context import FabricContext, InternalContext
+
+context = FabricContext(workspace_id=target_workspace_id, internal_context=InternalContext(is_wspl_enabled=True))
+print(context.pbi_shared_host)
+# You need to set up and use this private endpoint if your current workspace has OAP enabled
+
+os.environ["MLFLOW_TRACKING_URI"] = f"sds://{context.pbi_shared_host}/v1/workspaces/{target_workspace_id}/mlflow"
 ```
 
 ## Known limitations
