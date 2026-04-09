@@ -2,6 +2,7 @@
 title: Plan known issues and limitations
 description: Known issues and limitations present in fabric-plan
 ms.topic: overview
+ms.date: 04/09/2026
 #customer intent: As a user, I want to know the limitation present in fabric-plan
 ---
 # Known issues and limitations in plan
