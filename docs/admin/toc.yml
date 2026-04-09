@@ -180,8 +180,6 @@ items:
       href: service-admin-portal-datamart.md
     - name: Semantic model settings
       href: service-admin-portal-data-model.md
-    - name: Quick measure suggestions settings
-      href: service-admin-portal-quick-measure-suggestions-settings.md
     - name: Scale-out settings
       href: service-admin-portal-scale-out.md
     - name: OneLake settings
