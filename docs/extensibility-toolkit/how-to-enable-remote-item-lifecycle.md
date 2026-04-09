@@ -73,51 +73,71 @@ Triggered when an item's definition or properties are modified. You can:
 - Synchronize changes with external systems
 - **Block the operation** if the update violates business rules
 
-### Delete and Soft Delete
+### Delete
 
-Triggered when an item is deleted or soft deleted. Soft delete is a new feature that allows items to be recovered within a retention period:
+Triggered when an item is deleted. The request includes a `deleteType` field indicating whether it's a hard or soft delete:
 
-- **Delete**: Permanent deletion of an item - clean up all associated resources
-- **Soft Delete**: Item is marked for deletion but can be recovered - decide whether to immediately clean up resources or wait for permanent deletion
+- **Hard delete**: Permanent deletion - clean up all associated resources
+- **Soft delete**: Item is marked for deletion but can be restored later - retain sufficient metadata and resources to support restoration
 
 Your workload can choose different strategies for soft delete:
 
-- Immediately tear down expensive resources (compute, storage)
-- Retain data for the recovery period
-- Archive critical data before cleanup
+- Stop expensive compute resources while retaining data
+- Archive critical data to lower-cost storage
+- Retain full state for the recovery period
 
-## Notification Payload
+> [!NOTE]
+> The subject token may not be available during delete operations. Your endpoint must handle authentication accordingly.
 
-When Fabric calls your notification endpoint, you receive:
+### Restore
 
-### Authentication Token
+Triggered when a previously soft-deleted item is restored. Your endpoint receives the item definition and should:
 
-A security token that allows your workload to authenticate back to Fabric. This token enables you to:
+- Re-allocate resources that were freed during soft delete
+- Restore item state and resume services
+- Reinitialize compute or storage resources as needed
 
-- Call Fabric APIs to retrieve additional context
-- Access workspace and capacity information
-- Validate the operation's authenticity
+## Request Format
 
-For details on using the authentication token, see [Authenticate Remote Endpoints](authentication-remote.md).
+Fabric calls a separate endpoint for each lifecycle event. Each request includes:
 
-### Item Definition
+### URL Path Parameters
 
-The complete item definition is included in the notification payload:
+The item's identifying information is provided in the URL path:
 
-- Item metadata (ID, name, type, workspace)
-- Item definition payload (configuration data)
-- Operation type (create, update, delete)
-- Soft delete information (if applicable)
+- `workspaceId` - The workspace ID (UUID)
+- `itemType` - The item type (for example, `Contoso.FinanceAnalytics.Forecast`)
+- `itemId` - The item ID (UUID)
+
+### Authentication Header
+
+The `Authorization` header uses the `SubjectAndAppToken1.0` scheme, which contains both a delegated user token and an app-only token:
+
+```
+SubjectAndAppToken1.0 subjectToken="<delegated token>", appToken="<S2S token>"
+```
+
+This dual-token format allows your workload to validate the request origin, verify user context, and call other services. Additional required headers include `ActivityId`, `RequestId`, and `x-ms-client-tenant-id`.
+
+For details on validating these tokens, see [Authenticate Remote Endpoints](authentication-remote.md).
+
+### Request Body
+
+The request body varies by operation:
+
+- **Create, Update, and Restore**: The body contains an `ItemDefinition` object with a `parts` array. Each part has a `path`, `payload` (Base64-encoded), and `payloadType`.
+- **Delete**: The body contains a `deleteType` field with a value of `Hard` or `Soft`.
 
 This allows you to:
 
+- Extract configuration for infrastructure setup during create and restore
 - Understand what changed in update operations
-- Extract configuration for infrastructure setup
 - Make informed decisions about blocking operations
+- Choose the appropriate cleanup strategy for hard vs. soft deletes
 
 ## Blocking Operations
 
-For **create** and **update** operations, your workload can block the operation by returning an error response from the notification endpoint. This is useful for:
+For **create** and **update** operations, your workload can block the operation by returning an error response from the lifecycle endpoint. This is useful for:
 
 - **License validation**: Prevent item creation if the user doesn't have required licenses
 - **Quota enforcement**: Block creation if workspace or capacity limits are exceeded
@@ -132,7 +152,7 @@ When you block an operation:
 4. The item operation is not completed
 
 > [!IMPORTANT]
-> Delete and soft delete operations cannot be blocked. Your workload must handle cleanup regardless of the state.
+> Delete operations (both hard and soft) cannot be blocked. Your workload must handle cleanup regardless of the item state. Restore operations can be blocked by returning an error response.
 
 ## Implementing Lifecycle Notification Handling
 
@@ -170,9 +190,12 @@ Add the lifecycle notification configuration to your item manifest:
 
 Configure only the events you need to handle. Set the value to `false` or omit the element if you don't need notifications for a specific event type.
 
+> [!IMPORTANT]
+> When `OnDelete` is enabled, your workload must also implement the `OnRestoreItem` endpoint. Fabric calls this endpoint when a soft-deleted item is restored, so your workload must be prepared to handle restore notifications whenever it handles delete notifications.
+
 ### Endpoint Requirements
 
-Your lifecycle notification endpoint must:
+Your lifecycle endpoint must:
 
 - Be publicly accessible over HTTPS
 - Respond within a reasonable timeout (recommended: 30 seconds)
@@ -184,7 +207,7 @@ For create and update operations that you want to block:
 - Return 4xx status code with error details
 - Include a user-friendly error message in the response body
 
-For operations that succeed or for delete operations:
+For operations that succeed, or for delete and restore operations:
 
 - Return 200 OK status code
 - Optionally include logging or tracking information
@@ -227,31 +250,26 @@ To use the local development server for lifecycle notification testing:
 
 The development stub includes sample code showing how to interact with the item's OneLake storage:
 
-```csharp
+```javascript
 // Example from the development stub
-private async Task HandleCreateWithOneLakeAccess(
-    LifecycleNotification notification,
-    string authToken)
-{
-    // Extract item information
-    var workspaceId = notification.WorkspaceId;
-    var itemId = notification.ItemId;
-    var itemDefinition = notification.ItemDefinition;
-    
-    // Access the item's OneLake storage
-    var oneLakeClient = new OneLakeClient(authToken);
-    
-    // Read data from OneLake
-    var itemPath = $"/workspaces/{workspaceId}/items/{itemId}/files/";
-    var files = await oneLakeClient.ListFilesAsync(itemPath);
-    
-    Console.WriteLine($"Item has {files.Count} files in OneLake");
-    
-    // Write initialization data to OneLake
-    var configPath = $"{itemPath}config.json";
-    await oneLakeClient.WriteFileAsync(configPath, JsonConvert.SerializeObject(itemDefinition));
-    
-    Console.WriteLine($"Initialized item configuration in OneLake at {configPath}");
+const tokenExchangeService = require('./tokenExchangeService');
+const oneLakeClientService = require('./oneLakeClientService');
+
+async function handleCreateWithOneLakeAccess(req) {
+  const { workspaceId, itemId } = req.params;
+  const { subjectToken, tenantId } = req.authContext;
+
+  // Exchange user token for OneLake-scoped token
+  const oneLakeToken = await tokenExchangeService.getTokenForScope(
+    subjectToken, tenantId, oneLakeClientService.ONELAKE_SCOPE);
+
+  // Write to the item's OneLake storage
+  const filePath = oneLakeClientService.getOneLakeFilePath(
+    workspaceId, itemId, 'config.json');
+  const content = JSON.stringify(req.body, null, 2);
+  await oneLakeClientService.writeToOneLakeFile(oneLakeToken, filePath, content);
+
+  console.log(`Initialized item configuration in OneLake at ${filePath}`);
 }
 ```
 
@@ -259,113 +277,113 @@ This local development experience allows you to build and test your lifecycle no
 
 ## Implementation Example
 
-Here's an example implementation in C# using Azure Functions:
+The following example uses Node.js and Express, based on the [Fabric Extensibility Toolkit](https://github.com/microsoft/fabric-extensibility-toolkit) reference implementation. Each lifecycle event has its own endpoint that Fabric calls with the appropriate request body. For full API details, see the [Item Lifecycle REST API reference](/rest/api/fabric/workload/fabricextensibilitytoolkit/item-lifecycle).
 
-```csharp
-[FunctionName("ItemLifecycleNotification")]
-public async Task<IActionResult> Run(
-    [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "lifecycle")] 
-    HttpRequest req,
-    ILogger log)
-{
-    // Read the notification payload
-    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-    var notification = JsonConvert.DeserializeObject<LifecycleNotification>(requestBody);
-    
-    // Extract authentication token
-    string authToken = req.Headers["Authorization"];
-    
-    log.LogInformation($"Received {notification.EventType} notification for item {notification.ItemId}");
-    
-    switch (notification.EventType)
-    {
-        case "Create":
-            return await HandleCreate(notification, authToken, log);
-            
-        case "Update":
-            return await HandleUpdate(notification, authToken, log);
-            
-        case "Delete":
-            return await HandleDelete(notification, authToken, log);
-            
-        case "SoftDelete":
-            return await HandleSoftDelete(notification, authToken, log);
-            
-        default:
-            return new BadRequestObjectResult($"Unknown event type: {notification.EventType}");
+```javascript
+const express = require('express');
+const { authenticateControlPlaneCall } = require('./authentication');
+const router = express.Router();
+
+// POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/onCreateItem
+// Request body: { definition: { parts: [{ path, payload, payloadType }] } }
+router.post('/workspaces/:workspaceId/items/:itemType/:itemId/onCreateItem',
+  async (req, res) => {
+    const authResult = await authenticateControlPlaneCall(req, res);
+    if (!authResult) return;
+
+    const { workspaceId, itemId, itemType } = req.params;
+    const { definition } = req.body;
+
+    // Validate license before allowing creation
+    const hasLicense = await checkUserLicense(req.authContext.userId);
+    if (!hasLicense) {
+      return res.status(403).json({
+        errorCode: 'LicenseRequired',
+        message: 'User does not have the required license for this item type.',
+        source: 'User',
+        isPermanent: true
+      });
     }
-}
 
-private async Task<IActionResult> HandleCreate(
-    LifecycleNotification notification, 
-    string authToken,
-    ILogger log)
-{
-    // Validate license
-    bool hasLicense = await CheckUserLicense(notification.UserId, authToken);
-    if (!hasLicense)
-    {
-        return new ObjectResult(new 
-        { 
-            error = "User does not have required license for this item type" 
-        })
-        { StatusCode = 403 };
+    // Set up infrastructure for the new item
+    await provisionResources(workspaceId, itemId, definition);
+
+    console.log(`Created item ${itemId} of type ${itemType}`);
+    res.status(200).json({});
+  }
+);
+
+// POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/onUpdateItem
+// Request body: { definition: { parts: [{ path, payload, payloadType }] } }
+router.post('/workspaces/:workspaceId/items/:itemType/:itemId/onUpdateItem',
+  async (req, res) => {
+    const authResult = await authenticateControlPlaneCall(req, res);
+    if (!authResult) return;
+
+    const { workspaceId, itemId } = req.params;
+    const { definition } = req.body;
+
+    // Validate the updated definition
+    if (!isValidConfiguration(definition)) {
+      return res.status(400).json({
+        errorCode: 'InvalidConfiguration',
+        message: 'Invalid configuration: required settings are missing.',
+        source: 'User',
+        isPermanent: true
+      });
     }
-    
-    // Set up infrastructure
-    await ProvisionInfrastructure(notification.ItemId, notification.ItemDefinition);
-    
-    log.LogInformation($"Successfully created infrastructure for item {notification.ItemId}");
-    return new OkResult();
-}
 
-private async Task<IActionResult> HandleUpdate(
-    LifecycleNotification notification,
-    string authToken,
-    ILogger log)
-{
-    // Validate the update
-    bool isValid = ValidateItemConfiguration(notification.ItemDefinition);
-    if (!isValid)
-    {
-        return new BadRequestObjectResult(new 
-        { 
-            error = "Invalid configuration: Connection string must be specified" 
-        });
+    await updateResources(workspaceId, itemId, definition);
+
+    console.log(`Updated item ${itemId}`);
+    res.status(200).json({});
+  }
+);
+
+// POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/onDeleteItem
+// Request body: { deleteType: "Hard" | "Soft" }
+// Note: Subject token may not be available during delete operations.
+router.post('/workspaces/:workspaceId/items/:itemType/:itemId/onDeleteItem',
+  async (req, res) => {
+    const authResult = await authenticateControlPlaneCall(req, res,
+      { requireSubjectToken: false });
+    if (!authResult) return;
+
+    const { workspaceId, itemId } = req.params;
+    const { deleteType } = req.body;
+
+    if (deleteType === 'Hard') {
+      await deleteAllResources(workspaceId, itemId);
+      console.log(`Hard deleted item ${itemId}`);
+    } else if (deleteType === 'Soft') {
+      // Retain metadata for recovery; optionally free expensive resources
+      await stopComputeResources(workspaceId, itemId);
+      console.log(`Soft deleted item ${itemId}`);
     }
-    
-    // Update infrastructure
-    await UpdateInfrastructure(notification.ItemId, notification.ItemDefinition);
-    
-    return new OkResult();
-}
 
-private async Task<IActionResult> HandleDelete(
-    LifecycleNotification notification,
-    string authToken,
-    ILogger log)
-{
-    // Clean up all resources
-    await DeleteInfrastructure(notification.ItemId);
-    
-    log.LogInformation($"Deleted infrastructure for item {notification.ItemId}");
-    return new OkResult();
-}
+    res.status(200).json({});
+  }
+);
 
-private async Task<IActionResult> HandleSoftDelete(
-    LifecycleNotification notification,
-    string authToken,
-    ILogger log)
-{
-    // For soft delete, we might want to retain data but stop expensive compute
-    await StopComputeResources(notification.ItemId);
-    
-    // Optionally archive critical data
-    await ArchiveItemData(notification.ItemId);
-    
-    log.LogInformation($"Soft deleted item {notification.ItemId} - compute stopped, data retained");
-    return new OkResult();
-}
+// POST /workspaces/{workspaceId}/items/{itemType}/{itemId}/onRestoreItem
+// Request body: { definition: { parts: [{ path, payload, payloadType }] } }
+// Called when a soft-deleted item is restored.
+router.post('/workspaces/:workspaceId/items/:itemType/:itemId/onRestoreItem',
+  async (req, res) => {
+    const authResult = await authenticateControlPlaneCall(req, res,
+      { requireSubjectToken: false });
+    if (!authResult) return;
+
+    const { workspaceId, itemId } = req.params;
+    const { definition } = req.body;
+
+    // Re-allocate resources freed during soft delete
+    await restoreResources(workspaceId, itemId, definition);
+
+    console.log(`Restored item ${itemId}`);
+    res.status(200).json({});
+  }
+);
 ```
 
 ## Use Cases
@@ -374,35 +392,43 @@ private async Task<IActionResult> HandleSoftDelete(
 
 Automatically provision and deprovision infrastructure based on item lifecycle:
 
-```csharp
-// On Create: Provision Azure resources
-await CreateSqlDatabase(itemId);
-await CreateStorageAccount(itemId);
-await CreateComputeCluster(itemId);
+```javascript
+// In onCreateItem handler: Provision resources
+await createSqlDatabase(itemId);
+await createStorageAccount(itemId);
+await createComputeCluster(itemId);
 
-// On Delete: Clean up resources
-await DeleteSqlDatabase(itemId);
-await DeleteStorageAccount(itemId);
-await DeleteComputeCluster(itemId);
+// In onDeleteItem handler (deleteType === 'Hard'): Clean up resources
+await deleteSqlDatabase(itemId);
+await deleteStorageAccount(itemId);
+await deleteComputeCluster(itemId);
 ```
 
 ### License and Quota Validation
 
-Enforce licensing and capacity requirements:
+Enforce licensing and capacity requirements in the `onCreateItem` handler:
 
-```csharp
+```javascript
 // Check user license before allowing creation
-var userLicense = await GetUserLicense(userId, authToken);
-if (userLicense.Tier < RequiredTier.Premium)
-{
-    return new ForbiddenObjectResult("Premium license required for this item type");
+const userLicense = await getUserLicense(req.authContext.userId);
+if (userLicense.tier < REQUIRED_TIER_PREMIUM) {
+  return res.status(403).json({
+    errorCode: 'LicenseRequired',
+    message: 'Premium license required for this item type.',
+    source: 'User',
+    isPermanent: true
+  });
 }
 
 // Check workspace capacity
-var workspaceUsage = await GetWorkspaceUsage(workspaceId, authToken);
-if (workspaceUsage.ItemCount >= workspaceUsage.MaxItems)
-{
-    return new ForbiddenObjectResult("Workspace item limit reached");
+const workspaceUsage = await getWorkspaceUsage(workspaceId);
+if (workspaceUsage.itemCount >= workspaceUsage.maxItems) {
+  return res.status(403).json({
+    errorCode: 'QuotaExceeded',
+    message: 'Workspace item limit reached.',
+    source: 'User',
+    isPermanent: false
+  });
 }
 ```
 
@@ -410,46 +436,49 @@ if (workspaceUsage.ItemCount >= workspaceUsage.MaxItems)
 
 Keep external systems in sync with Fabric items:
 
-```csharp
-// Sync item creation to external catalog
-await externalCatalog.RegisterItem(new ExternalItem
-{
-    Id = notification.ItemId,
-    Name = notification.ItemName,
-    Type = notification.ItemType,
-    WorkspaceId = notification.WorkspaceId
+```javascript
+// In onCreateItem handler: Sync item to external catalog
+const { workspaceId, itemId, itemType } = req.params;
+await externalCatalog.registerItem({
+  id: itemId,
+  type: itemType,
+  workspaceId: workspaceId
 });
 
 // Update external monitoring
-await monitoringSystem.TrackItemLifecycle(notification);
+await monitoringSystem.trackItemCreated(workspaceId, itemId);
 ```
 
-### Soft Delete Strategy
+### Delete and Restore Strategy
 
-Implement different cleanup strategies for soft delete:
+Implement different cleanup strategies based on `deleteType`, and handle restore:
 
-```csharp
-// Strategy 1: Immediate cleanup of expensive resources
-if (notification.EventType == "SoftDelete")
-{
-    await StopExpensiveCompute(itemId);
-    await ArchiveDataToLowCostStorage(itemId);
-    // Keep data for potential recovery
+```javascript
+// In onDeleteItem handler:
+const { deleteType } = req.body;
+
+if (deleteType === 'Soft') {
+  // Free expensive resources but retain data for potential recovery
+  await stopExpensiveCompute(itemId);
+  await archiveDataToLowCostStorage(itemId);
 }
 
-// Strategy 2: Defer all cleanup until permanent delete
-if (notification.EventType == "Delete" && notification.WasSoftDeleted)
-{
-    // Clean up everything now
-    await DeleteAllResources(itemId);
+if (deleteType === 'Hard') {
+  // Permanent deletion - clean up everything
+  await deleteAllResources(itemId);
 }
+
+// In onRestoreItem handler:
+// Re-allocate resources freed during soft delete
+await restartCompute(itemId);
+await restoreDataFromArchive(itemId);
 ```
 
 ## Best Practices
 
 ### Respond Quickly
 
-Lifecycle notification endpoints should respond as quickly as possible:
+Lifecycle endpoints should respond as quickly as possible:
 
 - Perform validation and quick setup operations synchronously
 - Queue long-running infrastructure provisioning for background processing
@@ -467,15 +496,17 @@ Item operations may be retried, so your endpoint should be idempotent:
 
 When blocking operations, provide helpful error messages:
 
-```csharp
-// Good error message
-return new BadRequestObjectResult(new 
-{ 
-    error = "Cannot create item: Premium license required. Please upgrade your subscription." 
+```javascript
+// Good: Structured ErrorResponse with a clear message
+return res.status(403).json({
+  errorCode: 'LicenseRequired',
+  message: 'Cannot create item: Premium license required. Upgrade your subscription.',
+  source: 'User',
+  isPermanent: true
 });
 
-// Poor error message
-return new BadRequestObjectResult("Forbidden");
+// Poor: Missing structured error information
+return res.status(403).json({ message: 'Forbidden' });
 ```
 
 ### Security
@@ -513,7 +544,7 @@ return new BadRequestObjectResult("Forbidden");
 - Verify you're returning 4xx status codes for blocked operations
 - Check that error messages are included in the response
 - Ensure the endpoint responds within the timeout window
-- Remember that delete and soft delete cannot be blocked
+- Remember that delete operations cannot be blocked - the Fabric platform marks the item as deleted regardless of the response of your workload.
 
 ## Related Content
 
@@ -525,3 +556,4 @@ return new BadRequestObjectResult("Forbidden");
 - [Register Local Web Server](tools-register-local-web-server.md)
 - [Fabric Item Management API](/rest/api/fabric/articles/item-management/item-management-overview)
 - [Fabric CI/CD Overview](/fabric/cicd/cicd-overview)
+- [Item Lifecycle REST API Reference](/rest/api/fabric/workload/fabricextensibilitytoolkit/item-lifecycle)
