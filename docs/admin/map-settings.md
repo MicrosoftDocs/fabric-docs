@@ -1,5 +1,5 @@
 ---
-title: Map tenant settings 
+title: Azure Map tenant settings 
 description: Toggle tenant settings to permit or restrict organization members from using Map items.
 author: msmimart
 ms.author: mimart
@@ -9,7 +9,7 @@ ms.date: 04/08/2026
 ms.search.form: Map tenant settings
 ---
 
-# Map tenant settings
+# Azure Maps Services settings
 
 Tenant settings control whether members of your organization can use Map items. Administrators can enable or disable this feature to allow or restrict access. If enabled, users can create, view, and interact with Map items in their Fabric environment. If disabled, Map item functionality is unavailable to all users in the tenant.
 
