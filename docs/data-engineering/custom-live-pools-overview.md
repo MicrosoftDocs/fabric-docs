@@ -51,6 +51,16 @@ Plan your schedules to cover your expected workload windows so that warm compute
 
 Each custom live pool is attached to a Fabric environment. The environment controls which libraries are preinstalled on hydrated clusters. To update libraries, you must modify and re-publish the environment. Existing hydrated clusters aren't refreshed with the new libraries until the next scheduled hydration or a manual refresh. For configuration steps, see [Configure a live pool](custom-live-pools-configure.md#configure-a-live-pool).
 
+#### Library publish modes
+
+The library publishing mode in the attached environment determines how libraries are delivered to hydrated clusters:
+
+- **Full mode**: Libraries are resolved and baked into the hydrated cluster image during environment publishing. When a session starts, the Full mode snapshot is already present on the cluster, enabling approximately 5-second session starts. Use Full mode when you need a stable, reproducible library set with the fastest possible session startup.
+- **Quick mode**: Libraries aren't preinstalled on hydrated clusters. Instead, they install when the notebook session starts. Hydrated clusters still provide fast compute allocation, but library installation at session start adds time. Use Quick mode for rapid iteration during development when library stability is less critical.
+
+> [!NOTE]
+> The notebook Resources folder and inline library installations (such as `%pip install` in a code cell) are manual, per-session approaches. They're independent of the environment publishing mode and don't affect what libraries are preinstalled on hydrated clusters.
+
 ### Cluster capacity
 
 Each pool has a maximum cluster count that you set during configuration. Fabric doesn't automatically scale the pool beyond this value. When all hydrated clusters are in use, additional jobs fall back to on-demand provisioning, which takes about 3 to 5 minutes or longer depending on library package dependencies. For sizing guidance, see [Cluster sizing](custom-live-pools-configure.md#cluster-sizing).
@@ -89,6 +99,7 @@ The following constraints apply to custom live pools in the current release:
 
 - Sessions start in ~5 seconds only after the pool is fully hydrated. During initial setup or after you change the configuration, startup times might be longer.
 - Library changes require re-publishing the attached environment. Hydrated clusters aren't automatically refreshed.
+- When the attached environment uses Quick mode for some libraries, those libraries aren't preinstalled on hydrated clusters and must install at session start. For the fastest session startup with custom live pools, use Full mode for your library dependencies.
 - Only notebook-based Spark sessions are supported. Spark job definitions aren't supported.
 - Fabric trial capacities aren't supported.
 - Every pool must have a schedule. Pools without a schedule can't be published.
@@ -97,6 +108,7 @@ The following constraints apply to custom live pools in the current release:
 ## Related content
 
 - [Configure custom live pools](custom-live-pools-configure.md)
+- [Manage libraries in Fabric environments](environment-manage-library.md)
 - [Configure starter pools](configure-starter-pools.md)
 - [Create custom Spark pools](create-custom-spark-pools.md)
 - [Create and use an environment](create-and-use-environment.md)

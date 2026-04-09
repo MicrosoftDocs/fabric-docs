@@ -49,6 +49,8 @@ items:
         href: manage-data.md
       - name: Monitor graph status
         href: monitoring-overview.md
+      - name: Monitor graph performance
+        href: monitor-graph-performance.md
       - name: Optimize GQL query performance
         href: gql-query-performance.md
   - name: Troubleshoot

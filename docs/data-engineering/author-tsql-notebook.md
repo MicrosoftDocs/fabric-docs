@@ -154,6 +154,7 @@ Historical queries can take up to 15 minutes to appear in list depending on the 
 - Parameter cell isn't yet supported in T-SQL notebook. The parameter passed from pipeline or scheduler won't be able to be used in T-SQL notebook.
 - The monitor URL inside the pipeline execution isn't yet supported in the T-SQL notebook.
 - The snapshot feature isn't yet supported in the T-SQL notebook.
+- Currently, Service principals authentication is not supported in T-SQL notebooks.
 
 
 ## Related content

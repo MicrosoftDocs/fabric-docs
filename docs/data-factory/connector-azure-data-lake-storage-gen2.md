@@ -126,7 +126,7 @@ For specific instructions to set up your connection in a pipeline, follow these 
 1. In **Connect to data source**, enter the URL to your Azure Data Lake Storage Gen2 account. Refer to [Limitations](/power-query/connectors/data-lake-storage#limitations) to determine the URL to use.
 
 1. Select whether you want to use the file system view or the Common Data Model folder view.
-1. If needed, select the on-premises data gateway in **Data gateway** (only supported in Dataflow Gen1, Dataflow Gen2, Datamarts, and Semantic Models). 
+1. If needed, select the on-premises data gateway in **Data gateway** (only supported in Dataflow Gen1, Dataflow Gen2, and Semantic Models). 
 
 1. Select **Sign in** to sign into the Azure Data Lake Storage Gen2 account. You are redirected to your organization's sign-in page. Follow the prompts to sign in to the account.
 1. After you've successfully signed in, select **Next**.

@@ -16,15 +16,15 @@ A business event is a customer-initiated business-critical notification used t
 
 ## Event publisher 
 
-An event publisher is a Fabric item such as Eventstream, Notebook, or User Data Function that you configure to send business events. 
+An event publisher is a Fabric item such as Eventstream, Notebook, Spark job, or User Data Function that you configure to send business events. 
 
 ## Event consumer 
 
-An event consumer is a Fabric item like Activator that subscribes to a business event and processes the event for downstream actions, analytics, workflows, or notifications. 
+An event consumer is a Fabric item that subscribes to a business event and processes it for downstream actions, analytics, workflows, or notifications. 
 
 ## Event schema registry 
 
-Schema Registry in Fabric Real-Time hub is a centralized repository that stores and manages event schemas. It ensures consistency and validation across business events publishers and consumers. The registry governs schema versions and domain alignment via schema sets. 
+Schema Registry in Fabric Real-Time hub is a centralized repository that stores and manages event schemas. It ensures consistency and validation across business events publishers and consumers. The registry governs schema versions and domain alignment via schema sets. Centralized schema versioning enables safe evolution of event contracts while mitigating schema drift, ensuring that both publishers and consumers can validate payloads as schemas evolve over time. 
 
 ## Event schema set 
 

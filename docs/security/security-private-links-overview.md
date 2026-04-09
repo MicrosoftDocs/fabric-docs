@@ -11,7 +11,7 @@ ms.date: 08/21/2025
 # Private links for Fabric tenants
 
 You can use private links to provide secure access for data traffic in Fabric. [Azure Private Link](/azure/private-link/private-link-overview) and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet. 
-When private link connections are used, those connections go through the Microsoft private network backbone when Fabric users access resources in Fabric.
+When private link connections are used, those connections go through the Microsoft private network backbone when Fabric users access resources in Fabric. Private Link secures inbound access within a single tenant boundary and doesn't enable cross-tenant connectivity. For governed data sharing across tenants, use OneLake data sharing instead.
 
 Fabric supports private links at both the tenant level and the workspace level:
 
@@ -64,6 +64,12 @@ OneLake supports Private Link. You can explore OneLake in the Fabric portal or f
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
+#### Shortcuts
+
+OneLake shortcuts are supported over Private Link when both the shortcut source and target are within the same tenant. When you access data through a shortcut over a private link connection, traffic between OneLake and the referenced storage account travels through the Microsoft private network backbone. Shortcuts that reference external cloud storage (such as Azure Data Lake Storage or Amazon S3) require that the external storage account also allows private endpoint access or is otherwise reachable from the private network.
+
+Cross-tenant shortcuts (shortcuts that reference data shared from another Fabric tenant) aren't supported over Private Link. For cross-tenant data access, use OneLake data sharing without Private Link.
+
 ### Warehouse and Lakehouse SQL analytics endpoint
 
 Accessing a Warehouse or the SQL analytics endpoint of a Lakehouse in the Fabric portal is protected by private link. Customers can also use Tabular Data Stream (TDS) endpoints (for example, [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or the [MSSQL extension for Visual Studio Code](/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code)) to connect to Warehouse via private link.
@@ -109,6 +115,8 @@ ML Model, Experiment, and Data agent supports private link.
 
 * Copilot isn't currently supported for Private Link or closed network environments.
 
+* Cross-tenant access to OneLake data through shortcuts or OneLake data sharing isn't supported over Private Link. Users who need to access shared data from another tenant must connect outside the Private Link path.
+
 ### Eventstream
 
 Eventstream supports Private Link, enabling secure, real-time data ingestion from multiple sources without exposing traffic to the public internet. It also supports real-time data transformation, such as filtering and enrichment of incoming data streams, before routing them to destinations within Fabric.
@@ -145,15 +153,17 @@ Limitations:
 
 Customers can provision and utilize Healthcare data solutions in Microsoft Fabric through a private link. In a tenant where private link is enabled, customers can deploy Healthcare data solution capabilities to execute comprehensive data ingestion and transformation scenarios for their clinical data. Also included is the ability to ingest healthcare data from various sources, such as Azure Storage accounts, and more.
 
-### Fabric Events
+### Azure and Fabric Events
 
-Fabric Events support Private Link without affecting event delivery, because the events originate from within the tenant.
+Fabric events (such as Job events, Workspace item events, and OneLake events) support Private Link at the tenant level without affecting event delivery, because they originate from within the tenant. However, when [workspace-level private links](security-workspace-level-private-links-overview.md) are configured to block public access on the workspace where the events originate (the source workspace), event consumers such as Activator alerts or eventstreams in other workspaces are blocked from consuming those events unless a private link is established from the consumer's network to the source workspace.
 
-### Azure Events
+Azure events (such as Azure Blob Storage events) are affected by both tenant-level and workspace-level private links. When the **Block Public Internet Access** tenant setting is enabled, Azure event sources outside the tenant are blocked from delivering events into Fabric entirely:
+* New configurations to consume Azure events are blocked.
+* Existing configurations consuming Azure events stop delivering events. The system detects the configuration change and puts the consumer in a paused state.
 
-Azure Events support Private Link with the following behavior when the Block Public Internet Access tenant setting is enabled: 
-* New configurations to consume Azure events (e.g., Azure Blob Storage events) will be blocked from being delivered. 
-* Existing configurations consuming Azure events will stop new events from being delivered.
+Additionally, when you configure a consumer to receive Azure events, an eventstream item is created in a Fabric workspace to represent the Azure source. Workspace-level private links affect Azure event consumption in the same way as Fabric events: if the workspace containing this eventstream item blocks public network access, consumers in other workspaces are blocked unless a private link is established.
+
+For more information, see [Private links for Azure and Fabric Events](/fabric/real-time-hub/private-links-real-time-events).
   
 <!--### Other Fabric items
 
@@ -180,7 +190,7 @@ API for GraphQL supports Private Link, allowing secure API access and querying f
 
 * API monitoring dashboard and logging based on Workspace Monitoring is not supported.
 * Service Principals (SPN) are supported as clients however it's not possible to use a service principal to create a saved credential for access between the API and data source.
-* If the API for GraphQL artifact and the data source artifact belongs to two different capacity region is not supported when public access is disabled. You will get auth error in this scenario.
+* Having API for GraphQL artifact and the data source artifact in two different capacity regions isn't supported when the public access is disabled. You will get auth error in this scenario.
 
   
 ## Other considerations and limitations
@@ -201,6 +211,8 @@ There are several considerations to keep in mind while working with private endp
 * Each private endpoint can be connected to one tenant only. You can't set up a private link to be used by more than one tenant.
 
 * Cross-tenant scenarios aren't supported. This means that setting up a tenant-level private endpoint in one Azure tenant to connect directly to a Private Link service in another tenant isn't supported.
+
+* Private Link operates within a single tenant boundary. Fabric's cross-tenant data sharing features (such as OneLake data sharing and cross-tenant shortcuts) use separate access controls and don't require or support Private Link. To share data across tenants, configure OneLake data sharing permissions instead.
 
 * **For Fabric users**: On-premises data gateways aren't supported and fail to register when Private Link is enabled. To run the gateway configurator successfully, Private Link must be disabled. [Learn more about this scenario](/data-integration/gateway/service-gateway-install#related-considerations). Virtual network data gateways work. For more information, see [these considerations](/data-integration/gateway/service-gateway-install#related-considerations).
 

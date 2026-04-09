@@ -18,6 +18,11 @@ The Microsoft Fabric trial capacity gives you **free access for 60 days** to exp
 
 > **Quick start**: [Set up your Fabric trial capacity](#start-the-fabric-capacity-trial) | [Start using your Fabric trial capacity](#start-using-your-trial)
 
+> [!NOTE]
+> **Share your feedback as a new Fabric user**
+>
+> Your honest take on what works and what doesn't will directly shape product improvements. [Sign up to participate](https://microsoft.qualtrics.com/jfe/form/SV_1MTHk3TXzSUfEXA) and help drive Fabric's future.
+
 ## What's included—and what's not
 
 Your trial is configured as either an F4 [capacity](../enterprise/licenses.md#capacity) (4 capacity units) or an F64 capacity (64 capacity units) and is complemented with a Power BI Individual Trial if you don't already have a Power BI Premium Per User license. 

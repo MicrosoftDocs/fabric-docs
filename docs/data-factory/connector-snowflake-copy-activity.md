@@ -240,7 +240,7 @@ When copying data to Snowflake, the following mappings are used from interim dat
 | DateTime | TIMESTAMP_NTZ |
 | DateTimeOffset | TIMESTAMP_TZ, TIMESTAMP_LTZ <br> (0 <= p <= 9) |
 
-To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](data-type-mapping-data-movement.md).
+To learn about how the copy activity maps the source schema and data type to the destination, see [Schema and data type mappings](copy-data-activity.md#data-type-mapping).
 
 ### Default data type mapping for Snowflake auto-created table
 

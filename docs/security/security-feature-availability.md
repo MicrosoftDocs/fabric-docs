@@ -42,9 +42,9 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | On-premises data gateway: Dataflow Gen2 | -| - | Preview|
 |  | Data Workflow | - | - | - |
 |  | Data Build Tool job | - | - | - |
-| **Data Science** | ML Model | ✓ | ✓ |  |
-|  | Experiment | ✓ | ✓ |  |
-|  | Data Agent | ✓ | - |  |
+| **Data Science** | ML Model | ✓ | ✓ | ✓ |
+|  | Experiment | ✓ | ✓ | ✓ |
+|  | Data Agent | ✓ | - | - |
 | **Data Warehouse** | SQL Endpoint | ✓ | ✓ | ✓ |
 |  | Warehouse | ✓ | ✓ | ✓ |
 |  | Warehouse with EDPE | - | - | - |
@@ -61,18 +61,18 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Retail Solution | - | ✓ | - |
 | **Mirroring** | Mirrored Azure SQL Database | - | - | Preview|
 |  | Mirrored Azure SQL Managed Instance | ✓ | - | Preview |
-|  | Open Mirroring | ✓ | - | - |
+|  | Open Mirroring | ✓ | - | Preview |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
 |  | Mirrored Snowflake | - | - | Preview|
 |  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | Preview |
 |  | Mirrored SQL Server 2016-2022 | - | - | - |
 |  | Mirrored Dataverse | - | - | - |
-|  | Mirrored SAP | - | - | - |
+|  | Mirrored SAP | - | - | Preview |
 |  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
 |  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
 |  | Mirrored Oracle |  | - | Preview |
-| **Native Databases** | Sql DB in Fabric |  | Preview | - |
+| **Native Databases** | Sql DB in Fabric | ✓ | ✓ | - |
 |  | Cosmos DB |  |  | - |
 |  | Snowflake database | - | - | - |
 | **OneLake** | Shortcut | ✓ | - | - |
@@ -89,7 +89,7 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Metric Set | - | - | - |
 | **Real-Time Intelligence** | KQL Queryset | ✓ | Preview | - |
 |  | Activator | ✓ | - | - |
-|  | Eventhouse/KQL DB | ✓ | Preview |  |
+|  | Eventhouse/KQL DB | ✓ | Preview | - |
 |  | Eventstream | ✓ |  | - |
 |  | Real-Time Dashboard | ✓ | Preview | - |
 |  | Anomaly detector  | - | - | - |

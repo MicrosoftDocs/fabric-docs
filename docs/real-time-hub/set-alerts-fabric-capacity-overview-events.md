@@ -10,7 +10,7 @@ ms.custom: references_regions
 # Set alerts on Fabric capacity overview events in Real-Time hub
 This article describes how to set alerts on Fabric capacity overview events in Real-Time hub.
 
-[!INCLUDE [consume-fabric-events-regions](./includes/consume-fabric-events-regions.md)]
+[!INCLUDE [consume-fabric-events-regions](../real-time-intelligence/event-streams/includes/connectors/consume-fabric-events-regions.md)]
 
 ## Navigate to Real-Time hub
 

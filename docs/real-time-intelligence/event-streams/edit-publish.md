@@ -37,12 +37,15 @@ Here's an overview of everything you find in the two different modes:
 
 [!INCLUDE [create-an-eventstream](./includes/create-an-eventstream.md)]
 
-1. On the next screen, select **Add external source** to stream your data to Fabric event streams.
+## Add a source to your eventstream
+[!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-   :::image type="content" border="true" source="media/edit-publish/build.png" alt-text="A screenshot of selecting Add external source.":::
-1. Select **Connect** on the **Azure Event Hubs** tile.
+Select **Connect** on the **Azure Event Hubs** tile.
 
-   :::image type="content" source="media/edit-publish/select-azure-event-hubs.png" alt-text="Screenshot that shows the Select a data source page with Azure Event Hubs selected."::: 
+:::image type="content" source="media/edit-publish/select-azure-event-hubs.png" alt-text="Screenshot that shows the Select a data source page with Azure Event Hubs selected."::: 
+
+## Configure and connect to your source
+
 1. On the **Connect data source** page, select **New connection**.
 
    :::image type="content" source="media/edit-publish/new-connection-link.png" alt-text="Screenshot that shows the Connect data source page with the New connection link selected." lightbox="media/edit-publish/new-connection-link.png":::     
