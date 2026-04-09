@@ -28,7 +28,7 @@ The dbt job activity lets you run a dbt job as part of a Fabric data pipeline. Y
 Before you begin, make sure you have the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. [Create a free account](https://www.microsoft.com/microsoft-fabric).
-- A Microsoft Fabric enabled workspace. [Create a workspace](fabric/fundamentals/create-workspaces).
+- A Microsoft Fabric enabled workspace. [Create a workspace](/fabric/fundamentals/create-workspaces).
 - [Permission and access](dbt-job-overview.md#required-permissions-and-access) for dbt jobs in Microsoft Fabric.
 
 ## Add a dbt job activity to a pipeline
