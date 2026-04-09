@@ -55,8 +55,6 @@
                 items:
                   - name: Dataflow Gen2 with virtual network gateway
                     href: pricing-example-dataflow-virtual-network-gateway.md
-      - name: Keyboard shortcuts
-        href: keyboard-shortcuts.md
       - name: Secure Data Factory in Microsoft Fabric
         href: secure-data-factory-in-microsoft-fabric.md
   - name: Get started
@@ -87,36 +85,40 @@
         href: create-first-pipeline-with-sample-data.md
       - name: Create a dataflow
         href: create-first-dataflow-gen2.md
-      - name: Monitor activity in Data Factory
-        href: monitor-data-factory.md
       - name: Operationalize Data Factory
         href: transform-data.md
   - name: Migrate to Fabric
     items:
     - name: Compare Azure Data Factory to Data Factory in Fabric
       href: compare-fabric-data-factory-and-azure-data-factory.md
-    - name: Pipeline assessment tool
-      href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json 
+    - name: Migration planning
+      href: migrate-planning-azure-data-factory.md
+    - name: Upgrade pipelines to Fabric
+      items:
+      - name: Pipeline assessment tool
+        href: /azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Upgrade Azure Data Factory pipelines to Fabric
+        href: /azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Upgrade Azure Synapse Analytics pipelines to Fabric
+        href: /azure/data-factory/how-to-upgrade-your-azure-synapse-analytics-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
+      - name: Upgrade pipelines with PowerShell
+        items:
+        - name: Pipeline upgrade with PowerShell overview
+          href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
+        - name: Tutorial PowerShell pipeline upgrade
+          href: migrate-pipelines-powershell-upgrade-module-tutorial.md
+        - name: Build your resolutions file
+          href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
+        - name: Find your Fabric workspace ID
+          href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
     - name: Connector capability comparison
       href: connector-parity.md
     - name: Migrate global parameters to variable libraries
       href: convert-global-parameters-to-variable-libraries.md
-    - name: Migration planning
-      href: migrate-planning-azure-data-factory.md
     - name: Migration best practices
       href: migration-best-practices.md
     - name: Bring your Azure Data Factory to Fabric
       href: migrate-pipelines-azure-data-factory-item.md 
-    - name: Migrate pipelines with PowerShell
-      items: 
-      - name: Pipeline migration with PowerShell overview
-        href: migrate-pipelines-powershell-upgrade-module-for-azure-data-factory-to-fabric.md
-      - name: Tutorial PowerShell pipeline migration
-        href: migrate-pipelines-powershell-upgrade-module-tutorial.md
-      - name: Build your resolutions file
-        href: migrate-pipelines-how-to-add-connections-to-resolutions-file.md
-      - name: Find your Fabric workspace ID
-        href: migrate-pipelines-how-to-find-your-fabric-workspace-id.md
     - name: How to ingest data from Azure Data Factory to Fabric
       href: /azure/data-factory/how-to-ingest-data-into-fabric-from-azure-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
     - name: Dataflows
@@ -131,8 +133,6 @@
         href: move-dataflow-gen1-to-dataflow-gen2.md
       - name: Migrate to Dataflow Gen2 using Save As
         href: migrate-to-dataflow-gen2-using-save-as.md
-      - name: How to ingest data from ADF to Fabric
-        href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Connect to your data
     items:
       - name: Manage data sources
@@ -556,12 +556,14 @@
                 href: connector-odata.md
               - name: Configure in a pipeline Copy activity
                 href: connector-odata-copy-activity.md
-          - name: Odbc
+          - name: ODBC
             items: 
-              - name: Odbc - Overview
+              - name: ODBC - Overview
                 href: connector-odbc-overview.md
               - name: Set up your connection
                 href: connector-odbc.md
+              - name: Configure in a pipeline Copy activity
+                href: connector-odbc-copy-activity.md
           - name: Oracle database
             items: 
               - name: Oracle database - Overview
@@ -865,14 +867,10 @@
                     href: /data-integration/vnet/data-gateway-faqs?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json
                   - name: Download diagnostics logs
                     href: /data-integration/vnet/data-gateway-download-diagnostics?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json  
-      - name: Access recent data
-        href: recent-data.md
   - name: Move data
     items:
       - name: Decide - Data movement strategy
         href: decision-guide-data-movement.md
-      - name: Data type mapping
-        href: data-type-mapping-data-movement.md
       - name: Copy job
         items: 
           - name: What is the Copy job in Data Factory?
@@ -970,6 +968,10 @@
         items:
           - name: What are dataflows?
             href: dataflows-gen2-overview.md
+          - name: Create a dataflow
+            href: create-first-dataflow-gen2.md
+          - name: Get data in dataflows
+            href: get-data-dataflow-gen2.md
           - name: Use a dataflow in a pipeline
             href: tutorial-dataflows-gen2-pipeline-activity.md
           - name: Save a draft of your dataflow
@@ -993,8 +995,6 @@
                 href: dataflow-gen2-ai-functions.md
               - name: Explain Mashup with Copilot 
                 href: dataflow-gen2-copilot-explain.md
-              - name: Get data with Copilot
-                href: copilot-modern-get-data.md
               - name: Modern query evaluator
                 href: dataflow-gen2-modern-evaluator.md
               - name: Preview only steps
@@ -1078,52 +1078,6 @@
         href: modern-get-data-experience-pipeline.md
       - name: Activities in pipelines
         href: activity-overview.md 
-      - name: Apache Airflow Job
-        items: 
-          - name: Concepts
-            href: apache-airflow-jobs-concepts.md
-          - name: Apache Airflow compute
-            href: apache-airflow-compute.md
-          - name: Tutorials
-            items: 
-              - name: Airflow Hello World
-                href: create-apache-airflow-jobs.md
-              - name: Run Fabric pipelines and notebooks
-                href: apache-airflow-jobs-run-fabric-item-job.md
-              - name: Use AI to build DAGs from an image
-                href: apache-airflow-job-build-dags-using-azure-openai.md
-              - name: Run ADF pipeline
-                href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
-              - name: Run Azure Databricks job
-                href: apache-airflow-jobs-run-databricks-job.md
-              - name: Refresh Power BI Semantic Model
-                href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
-              - name: Transform data using dbt
-                href: apache-airflow-jobs-dbt-fabric.md
-          - name: How-to
-            items: 
-              - name: Synchronize your code from an existing Git repo
-                href: apache-airflow-jobs-sync-git-repo.md
-              - name: APIs in Apache Airflow Jobs
-                href: apache-airflow-jobs-api-capabilities.md
-              - name: Apache Airflow Job workspace settings
-                href: apache-airflow-jobs-workspace-settings.md
-              - name: Install a private package
-                href: apache-airflow-jobs-install-private-package.md
-              - name: Enable Azure Key Vault as Secret Backend
-                href: apache-airflow-jobs-enable-azure-key-vault.md
-              - name: Set up SMTP Server
-                href: apache-airflow-jobs-set-smtp-server.md
-              - name: Add a Kubernetes secret
-                href: apache-airflow-jobs-access-private-container-registry.md
-              - name: Apache Airflow configurations
-                href: apache-airflow-jobs-supported-apache-airflow-configurations.md
-              - name: Migrate from Azure Workflow Orchestration Manager
-                href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
-              - name: Access logs
-                href: access-apache-airflow-job-logs.md
-              - name: CI/CD for Apache Airflow Jobs
-                href: cicd-apache-airflow-jobs.md
       - name: CI/CD for pipelines
         href: cicd-pipelines.md
       - name: Control flow activities
@@ -1178,14 +1132,8 @@
             href: webhook-activity.md
       - name: Run, schedule, or trigger pipelines
         href: pipeline-runs.md
-      - name: Evaluate pipeline expressions
-        href: evaluate-pipeline-expression.md
-      - name: Debug pipelines
-        href: how-to-debug-pipelines-in-microsoft-fabric.md
-      - name: Deactivate an activity
-        href: deactivate-activity.md
-      - name: Copilot pipeline expression builder (Preview)
-        href: copilot-pipeline-expression-builder.md
+      - name: Expressions and functions
+        href: expression-language.md
       - name: Pipeline sample templates
         href: templates.md
       - name: Monitor pipeline runs
@@ -1201,8 +1149,6 @@
         items: 
           - name: Parameter usage
             href: parameters.md
-          - name: Expression language
-            href: expression-language.md
       - name: REST API capabilities
         href: pipeline-rest-api-capabilities.md
       - name: Tutorials
@@ -1215,12 +1161,62 @@
             href: image-to-pipeline-with-ai.md
       - name: Variable library integration
         href: variable-library-integration-with-data-pipelines.md
+  - name: Orchestrate workflows with Apache Airflow
+    items:
+      - name: What is Apache Airflow?
+        href: apache-airflow-jobs-concepts.md
+      - name: Apache Airflow compute
+        href: apache-airflow-compute.md
+      - name: Tutorials
+        items:
+          - name: Airflow Hello World
+            href: create-apache-airflow-jobs.md
+          - name: Run Fabric pipelines and notebooks
+            href: apache-airflow-jobs-run-fabric-item-job.md
+          - name: Use AI to build DAGs from an image
+            href: apache-airflow-job-build-dags-using-azure-openai.md
+          - name: Run ADF pipeline
+            href: apache-airflow-jobs-run-azure-data-factory-pipeline.md
+          - name: Run Azure Databricks job
+            href: apache-airflow-jobs-run-databricks-job.md
+          - name: Refresh Power BI Semantic Model
+            href: apache-airflow-jobs-power-bi-semantic-model-refresh.md
+          - name: Transform data using dbt
+            href: apache-airflow-jobs-dbt-fabric.md
+      - name: How-to
+        items:
+          - name: Synchronize your code from an existing Git repo
+            href: apache-airflow-jobs-sync-git-repo.md
+          - name: APIs in Apache Airflow Jobs
+            href: apache-airflow-jobs-api-capabilities.md
+          - name: Apache Airflow Job workspace settings
+            href: apache-airflow-jobs-workspace-settings.md
+          - name: Install a private package
+            href: apache-airflow-jobs-install-private-package.md
+          - name: Enable Azure Key Vault as Secret Backend
+            href: apache-airflow-jobs-enable-azure-key-vault.md
+          - name: Set up SMTP Server
+            href: apache-airflow-jobs-set-smtp-server.md
+          - name: Add a Kubernetes secret
+            href: apache-airflow-jobs-access-private-container-registry.md
+          - name: Apache Airflow configurations
+            href: apache-airflow-jobs-supported-apache-airflow-configurations.md
+          - name: Migrate from Azure Workflow Orchestration Manager
+            href: apache-airflow-jobs-migrate-azure-workflow-orchestration-manager.md
+          - name: Access logs
+            href: access-apache-airflow-job-logs.md
+          - name: CI/CD for Apache Airflow Jobs
+            href: cicd-apache-airflow-jobs.md
   - name: FAQ and Troubleshooting
     items: 
-      - name: Frequently asked questions
-        href: frequently-asked-questions.yml
+      - name: Keyboard shortcuts
+        href: keyboard-shortcuts.md
+      - name: Debug pipelines
+        href: how-to-debug-pipelines-in-microsoft-fabric.md
       - name: Pipeline activities troubleshooting guide
         href: pipeline-troubleshoot-guide.md
+      - name: Invoke SSIS Package activity troubleshooting guide
+        href: invoke-ssis-package-activity-troubleshooting-guide.md
       - name: Troubleshoot connectors
         items: 
           - name: Connector troubleshooting overview

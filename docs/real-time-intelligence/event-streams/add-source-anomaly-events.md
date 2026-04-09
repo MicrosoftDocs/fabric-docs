@@ -13,22 +13,10 @@ Anomaly detection events allow you to subscribe to anomalies detected in your Ev
 
 This article shows you how to add Anomaly detection events source to an eventstream.
 
-## Prerequisites
-
-- Get access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions.
+[!INCLUDE [anomaly-detection-events-connector-prerequisites](includes/connectors/anomaly-detection-events-connector-prerequisites.md)]
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't already have an eventstream. 
 
 ## Add Anomaly detection events as source
-
-You can add Anomaly detection events as a source in two ways:
-
-### From Real-Time Hub
-
-Navigate to Real-Time Hub, find **Fabric events**, and select **Anomaly detection events**. Then, select the **+** button to create Eventstream.
-
-:::image type="content" source="./media/add-source-anomaly-events/select-anomaly-detection-events.png" alt-text="Screenshot that shows the selection of Anomaly detection events as the source type in the Select a data source window from Real-Time Hub.":::
-
-### From Eventstream
 
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
@@ -38,11 +26,11 @@ On the **Select a data source** page, search for and select **Connect** on the *
 
 ## Configure and connect to Anomaly detection events
 
-[!INCLUDE [fabric-onelake-source-connector](includes/anomaly-detection-events.md)]
+[!INCLUDE [anomaly-detection-events-connector-configuration](includes/connectors/anomaly-detection-events-connector-configuration.md)]
 
 ## View updated eventstream
 
-1. Once the connection is created, you can see the Fabric OneLake events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the OneLake events.
+1. Once the connection is created, you can see the Anomaly detection events source added to your eventstream in **Edit mode**. Select **Publish** to publish the eventstream and capture the Anomaly detection events.
 
     :::image type="content" source="./media/add-source-anomaly-events/edit-mode.png" alt-text="Screenshot that shows the edit mode in Eventstream.":::
 

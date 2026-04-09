@@ -11,6 +11,8 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 Custom SQL pools allow administrators to have more control over how backend compute resources are allocated to their warehouse and SQL analytics endpoint in a workspace.
 
 :::image type="content" source="media/custom-sql-pools/custom-sql-pools.svg" alt-text="Diagram of the SQL engine with custom SQL pools.":::

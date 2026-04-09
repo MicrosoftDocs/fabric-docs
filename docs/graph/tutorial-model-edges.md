@@ -33,8 +33,8 @@ The following table shows the edge mappings to use:
 | `sells`         | adventureworks_orders               | `Employee` / `EmployeeID_FK`                | `Order` / `SalesOrderDetailID_K`            |
 | `purchases`     | adventureworks_orders               | `Customer` / `CustomerID_FK`                | `Order` / `SalesOrderDetailID_K`            |
 | `contains`      | adventureworks_orders               | `Order` / `SalesOrderDetailID_K`            | `Product` / `ProductID_FK`                  |
-| `isOfType`      | adventureworks_products             | `Product` / `ProductID_K`                   | `ProductSubCategory` / `SubcategoryID_FK`   |
-| `belongsTo`     | adventureworks_productsubcategories | `ProductSubCategory` / `SubcategoryID_K`    | `ProductCategory` / `CategoryID_FK`         |
+| `isOfType`      | adventureworks_products             | `Product` / `ProductID_K`                   | `ProductSubcategory` / `SubcategoryID_FK`   |
+| `belongsTo`     | adventureworks_productsubcategories | `ProductSubcategory` / `SubcategoryID_K`    | `ProductCategory` / `CategoryID_FK`         |
 | `produces`      | adventureworks_vendorproduct        | `Vendor` / `VendorID_FK`                    | `Product` / `ProductID_FK`                  |
 
 ## Add edge types to the graph
@@ -72,7 +72,7 @@ You should see all the edge types represented in your graph.
 
 After adding all node types and edge types, load the graph:
 
-- Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data.
+- Select **Save** to verify the graph model, load data from OneLake, construct the graph, and make it ready for querying. Be patient, as this process might take some time depending on the size of your data. When the graph loads successfully, you see all node and edge labels in the graph view canvas.
 
 > [!IMPORTANT]
 > Currently, you need to reload the graph (by selecting **Save**) whenever you change the model or the underlying data.

@@ -1,10 +1,12 @@
 ---
-title: Get events from Google Cloud Pub/Sub in Real-Time hub
-description: This article describes how to get events from Google Cloud Pub/Sub as an event source in Fabric Real-Time hub.
+title: Google Cloud Pub/Sub in Real-Time Hub
+description: Connect Google Cloud Pub/Sub to Fabric Real-Time hub and start streaming events in minutes. Follow this step-by-step guide to configure your event source today.
+#customer intent: As a data engineer, I want to connect Google Cloud Pub/Sub to Fabric Real-Time hub so that I can ingest streaming events from Google Cloud into my Fabric environment.
 ms.reviewer: anboisve
 ms.topic: how-to
-ms.custom: sfi-image-nochange
-ms.date: 01/14/2026
+ms.date: 04/01/2026
+author: spelluru
+ms.author: spelluru
 ---
 
 # Get events from Google Cloud Pub/Sub into Real-Time hub
@@ -13,73 +15,21 @@ This article describes how to add Google Cloud Pub/Sub as an event source in Fab
 
 
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- A Google Cloud account with the Pub/Sub service enabled. Make sure you select a role with the required permissions.
-
-### Get connection information from Google Cloud Pub/Sub
-
-Get the following information from Google Cloud:
-
-- Project ID
-- Subscription ID
-- Service account key
-
-1. Get the **Project ID** from the Google Cloud Console.
-
-    :::image type="content" source="./media/add-source-google-cloud-pub-sub/project-id.png" alt-text="Screenshot that shows Google Cloud Console that shows a project ID." lightbox="./media/add-source-google-cloud-pub-sub/project-id.png":::
-1. Get the **Subscription ID** from the **Subscriptions** page in Google Cloud Pub/Sub.
-
-    :::image type="content" source="./media/add-source-google-cloud-pub-sub/subscription-id.png" alt-text="Screenshot that shows Google Cloud Pub/Sub page that shows a subscription ID." lightbox="./media/add-source-google-cloud-pub-sub/subscription-id.png":::
-1. Get the **Service account key**.
-    1. In **Google Cloud Console**, select **IAM & Admin**.
-    
-        :::image type="content" source="./media/add-source-google-cloud-pub-sub/admin.png" alt-text="Screenshot that shows  Google Cloud Console that shows the admin page." lightbox="./media/add-source-google-cloud-pub-sub/admin.png":::        
-    1. Select **Service Accounts** on the left menu, and then select **Create Service Account**.
-
-        :::image type="content" source="./media/add-source-google-cloud-pub-sub/create-service-account.png" alt-text="Screenshot that shows Google Cloud Console that shows the Create Service Account page." lightbox="./media/add-source-google-cloud-pub-sub/create-service-account.png":::        
-    1. After configuring, give your role appropriate permission (Owner) and select **Done**.
-
-        :::image type="content" source="./media/add-source-google-cloud-pub-sub/create-service-account-done.png" alt-text="Screenshot that shows Google Cloud Console that shows the completion of creating the service account." lightbox="./media/add-source-google-cloud-pub-sub/create-service-account-done.png":::        
-    1. Select your role, and select **Manage keys** in **Actions**.
-
-        :::image type="content" source="./media/add-source-google-cloud-pub-sub/manage-keys.png" alt-text="Screenshot that shows Google Cloud Console that shows the Manage keys button in Actions." lightbox="./media/add-source-google-cloud-pub-sub/manage-keys.png":::        
-    1. Select **Add Key** and then select **Create new key**.
-
-        :::image type="content" source="./media/add-source-google-cloud-pub-sub/create-new-key.png" alt-text="Screenshot that shows Google Cloud Console that shows the selection of Create new key." lightbox="./media/add-source-google-cloud-pub-sub/create-new-key.png":::        
-    1. Download the JSON file and copy all the JSON content as the **Service account key**.
-    
-        > [!NOTE]
-        > The JSON file can be downloaded only once.
+[!INCLUDE [google-cloud-pub-sub-connector-prerequisites](../real-time-intelligence/event-streams/includes/connectors/google-cloud-pub-sub-source-connector-prerequisites.md)]
 
 ## Data sources page
 
 [!INCLUDE [launch-get-events-experience](./includes/launch-get-events-experience.md)]
 
-## Add Google Cloud Pub/Sub as a source
 
-1. On the **Data sources** page, select **Google Cloud Pub/Sub**.
+On the **Data sources** page, select **Google Cloud Pub/Sub**.
 
-    :::image type="content" source="./media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png" alt-text="Screenshot that shows the Select a data source page with Google Cloud Pub/Sub selected.":::
-1. On the **Connect** page, select **New connection**.
+:::image type="content" source="./media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png" alt-text="Screenshot that shows the Select a data source page with Google Cloud Pub/Sub selected.":::
 
-    :::image type="content" source="./media/add-source-google-cloud-pub-sub/new-connection-link.png" alt-text="Screenshot that shows the Connect page of the Add source wizard with the **New connection** link highlighted." lightbox="./media/add-source-google-cloud-pub-sub/new-connection-link.png":::
-1. In the **Connection settings** section, specify the **Project ID**.
+## Configure Google Cloud Pub/Sub source
 
-    :::image type="content" source="./media/add-source-google-cloud-pub-sub/connection-settings.png" alt-text="Screenshot that shows the Connection settings section of the New connection page." :::
-1. In the **Connection credentials** section, do these steps:
-    1. Select an existing connection or keep the default value: **Create new connection**.
-    1. For **Subscription name**, enter the name of the subscription you noted from Google Cloud Pub/Sub page.
-    1. For **Service account key**, enter the service account key you noted from the Google Cloud Console.
-    1. Select **Connect**.
-    
-        :::image type="content" source="./media/add-source-google-cloud-pub-sub/connection-credentials.png" alt-text="Screenshot that shows the Connection credentials section of the New connection page." ::: 
-1. On the **Connect** page, enter source name and topic name for the new source.
-    - **Source name** - Give a name this source.
-    - **Topic name** - It can be any string.
-1. Select **Next** at the bottom of the page.
-1. On the **Review + connect** page, review the summary, and select **Create source**.
+[!INCLUDE [google-cloud-pub-sub-connector-configuration](../real-time-intelligence/event-streams/includes/connectors/google-cloud-pub-sub-source-connector-configuration.md)]
+
 
 ## View data stream details
 
