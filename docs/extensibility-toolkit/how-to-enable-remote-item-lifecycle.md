@@ -11,7 +11,10 @@ ai-usage: ai-assisted
 
 # Enable Item Lifecycle Notifications
 
-Item lifecycle notifications provide workload builders with the capability to receive notifications about lifecycle events for custom items, even when the workload UX is not in the loop. This enables your item to respond to item operations regardless of how they were initiated.
+> [!IMPORTANT]
+> Starting at the end of April 2026, Fabric will begin sending soft delete and restore notifications to workload endpoints. If your workload has `OnDelete` enabled in the item manifest, make sure your endpoints are ready to handle these new lifecycle events.
+
+Item lifecycle notifications provide workload builders with the capability to receive notifications about lifecycle events for custom items, even when the workload UX is not in the loop. This setting enables your item to respond to item operations regardless of how they were initiated.
 
 ## Overview
 
@@ -117,7 +120,7 @@ The `Authorization` header uses the `SubjectAndAppToken1.0` scheme, which contai
 SubjectAndAppToken1.0 subjectToken="<delegated token>", appToken="<S2S token>"
 ```
 
-This dual-token format allows your workload to validate the request origin, verify user context, and call other services. Additional required headers include `ActivityId`, `RequestId`, and `x-ms-client-tenant-id`.
+This dual-token format allows your workload to validate the request origin, verify user context, and call other services. Extra required headers include `ActivityId`, `RequestId`, and `x-ms-client-tenant-id`.
 
 For details on validating these tokens, see [Authenticate Remote Endpoints](authentication-remote.md).
 
@@ -128,7 +131,7 @@ The request body varies by operation:
 - **Create, Update, and Restore**: The body contains an `ItemDefinition` object with a `parts` array. Each part has a `path`, `payload` (Base64-encoded), and `payloadType`.
 - **Delete**: The body contains a `deleteType` field with a value of `Hard` or `Soft`.
 
-This allows you to:
+The information in the request body allows you to:
 
 - Extract configuration for infrastructure setup during create and restore
 - Understand what changed in update operations
@@ -149,10 +152,10 @@ When you block an operation:
 1. Return an error status code (for example, 400 or 403) from your endpoint
 2. Provide a clear error message explaining why the operation was blocked
 3. The platform displays your error message to the user
-4. The item operation is not completed
+4. The item operation isn't completed
 
 > [!IMPORTANT]
-> Delete operations (both hard and soft) cannot be blocked. Your workload must handle cleanup regardless of the item state. Restore operations can be blocked by returning an error response.
+> Delete operations (both hard and soft) can't be blocked. Your workload must handle cleanup regardless of the item state. Restore operations can be blocked by returning an error response.
 
 ## Implementing Lifecycle Notification Handling
 
@@ -191,7 +194,7 @@ Add the lifecycle notification configuration to your item manifest:
 Configure only the events you need to handle. Set the value to `false` or omit the element if you don't need notifications for a specific event type.
 
 > [!IMPORTANT]
-> When `OnDelete` is enabled, your workload must also implement the `OnRestoreItem` endpoint. Fabric calls this endpoint when a soft-deleted item is restored, so your workload must be prepared to handle restore notifications whenever it handles delete notifications.
+> When `OnDelete` is enabled, your workload must also implement the `OnRestoreItem` endpoint. Fabric calls this endpoint when a soft-deleted item is restored, so your workload must be prepared to handle restore notifications if it handles delete notifications.
 
 ### Endpoint Requirements
 
