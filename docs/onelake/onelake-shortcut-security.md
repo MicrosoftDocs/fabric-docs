@@ -1,7 +1,9 @@
 ---
 title: Secure and manage OneLake shortcuts
 description: Understand security for OneLake shortcuts and the permissions required for shortcut creation and data access.
-ms.reviewer: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: concept-article
 ms.date: 10/01/2025

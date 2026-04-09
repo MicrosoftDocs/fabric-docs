@@ -1,8 +1,9 @@
 ---
 title: Use AI agents with OneLake through MCP
 description: Learn how to use the Fabric MCP server to explore and manage OneLake data through AI agents using the Model Context Protocol (MCP).
-ms.reviewer: tompeplow
-ms.author: tompeplow
+ms.reviewer: tompeplow # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 04/08/2026
 ---
