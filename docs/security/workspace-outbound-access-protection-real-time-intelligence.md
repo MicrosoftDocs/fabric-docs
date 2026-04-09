@@ -16,7 +16,7 @@ Workspace outbound access protection helps safeguard your data by controlling ou
 
 The workspace admin first enables outbound access protection for the workspace, which blocks all outbound connections by default.  
 
-Next, the workspace admin configures data connection rules for cloud or gateway connection policies to specify which external sources can connect to the eventstream. Once these policies are set, the eventstream can connect only to the approved sources. For the destination, only lakehouses are supported. All other outbound connections remain blocked.
+Next, the workspace admin configures data connection rules for cloud or gateway connection policies to specify which external sources the eventstream can connect to. Once these policies are set, the eventstream can connect only to the approved sources. Lakehouses are the only supported destination type. All other outbound connections remain blocked.
 
 :::image type="content" source="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow-small.png" alt-text="Screenshot of connections showing allowed connections to SQL Server and ADLS G2 Storage." lightbox="media/workspace-outbound-access-protection-real-time-intelligence/block-and-allow.png" border="false":::
 
@@ -37,3 +37,6 @@ The following Real-Time Intelligence item types are supported with outbound acce
 - Eventstream with a lakehouse as the destination
 
 ## Next steps
+
+[Enable workspace outbound access protection](workspace-outbound-access-protection-set-up.md)
+[Create an allow list using data connection rules](workspace-outbound-access-protection-allow-list-connector.md)
