@@ -2,7 +2,7 @@
 title: Get Started With the Eventhouse Remote MCP Server (Preview)
 description: Learn how to set up and use the Eventhouse remote MCP server to enable AI agents to query real-time data with natural language and KQL integration.
 ms.topic: how-to
-ms.date: 03/30/2026
+ms.date: 02/22/2026
 ms.search.form: MCP, RTI, AI, Eventhouse
 ms.reviewer: sharmaanshul
 ms.subservice: rti-eventhouse
@@ -89,6 +89,7 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 1. Navigate to the workspace containing your Eventhouse.
 1. Select the KQL database to open its details page.
 1. In the **Database details** panel under the **Overview** section, select **Copy URI** next to the **MCP Server URI**.
+   :::image type="content" source="media/mcp/mcp-copy-server-url.png" alt-text="Diagram that shows how to find KQL database MCP URL.":::    
 
 ## Test the connection
 
