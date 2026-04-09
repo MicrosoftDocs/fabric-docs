@@ -1,8 +1,8 @@
 ---
 title: Learn how to analyze query processing for Direct Lake semantic models
 description: Describes how to analyze query processing for Direct Lake semantic models.
-author: JulCsc
-ms.author: juliacawthra
+author: kgremban
+ms.author: kgremban
 ms.service: powerbi
 ms.subservice: powerbi-premium
 ms.topic: how-to
@@ -75,5 +75,4 @@ SQL Server Profiler can provide more details about query performance by tracing 
 
 ## Related content
 
-- [Create a lakehouse for Direct Lake](../fundamentals/direct-lake-create-lakehouse.md)  
 - [Direct Lake overview](../fundamentals/direct-lake-overview.md)

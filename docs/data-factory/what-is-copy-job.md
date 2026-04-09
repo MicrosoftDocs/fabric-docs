@@ -165,6 +165,10 @@ See our [supported connectors](copy-job-connectors.md) page for the full list of
 
 Submit your feedback on [Fabric Ideas](https://community.fabric.microsoft.com/t5/Fabric-Ideas/idb-p/fbc_ideas/label-name/data%20factory%20%7C%20copy%20job) and join the conversation on the [Fabric Community](https://community.fabric.microsoft.com/t5/Copy-job/bd-p/db_copyjob).
 
+## Data type mapping
+
+[!INCLUDE [data-type-mapping-data-movement](includes/data-type-mapping-data-movement.md)]
+
 ## Related content
 
 - [How to create a Copy job](create-copy-job.md)

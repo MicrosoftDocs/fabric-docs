@@ -71,7 +71,11 @@ items:
       href: plan/planning-overview.md
     - name: How-tos
       items:
-        - name: Get started with planning sheets
+        - name: Create a database connection
+          href: plan/planning-how-to-create-database-connection.md
+        - name: Create a semantic model connection
+          href: plan/planning-how-to-create-semantic-model-connection.md
+        - name: Create a Planning sheet
           href: plan/planning-how-to-get-started.md
         - name: Build forecasts
           href: plan/planning-how-to-build-forecasts.md
@@ -119,9 +123,9 @@ items:
           href: plan/intelligence-how-to-visualize-planning-data.md
         - name: Plan projects with Gantt charts
           href: plan/intelligence-how-to-create-gantt-chart.md
-  - name: Infobridge
+  - name: InfoBridge
     items:
-    - name: Infobridge overview
+    - name: InfoBridge overview
       href: plan/infobridge-overview.md
     - name: How-tos
       items:
