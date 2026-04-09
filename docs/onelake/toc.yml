@@ -97,6 +97,8 @@ items:
     href: onelake-powershell.md
   - name: AzCopy
     href: onelake-azcopy.md
+  - name: AI agents (MCP)
+    href: onelake-local-mcp.md
 - name: OneLake table APIs
   items:
   - name: OneLake table APIs overview
