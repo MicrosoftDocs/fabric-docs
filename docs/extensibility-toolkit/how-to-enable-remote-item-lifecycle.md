@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 # Enable Item Lifecycle Notifications
 
 > [!IMPORTANT]
-> Starting at the end of April 2026, Fabric will begin sending soft delete and restore notifications to workload endpoints. If your workload has `OnDelete` enabled in the item manifest, make sure your endpoints are ready to handle these new lifecycle events.
+> Starting at the end of April 2026, Fabric will begin sending soft delete and restore notifications to workload endpoints. If your workload has `OnDelete` enabled in the workload manifest, make sure your endpoints are ready to handle these new lifecycle events.
 
 Item lifecycle notifications provide workload builders with the capability to receive notifications about lifecycle events for custom items, even when the workload UX is not in the loop. This setting enables your item to respond to item operations regardless of how they were initiated.
 
