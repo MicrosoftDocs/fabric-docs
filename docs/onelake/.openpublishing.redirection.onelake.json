@@ -71,6 +71,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/docs/onelake/create-blob-shortcut.md",
+            "redirect_url": "/fabric/onelake/shortcuts/create-blob-shortcut",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/onelake/table-apis/onelake-iceberg-table-apis-detailed.md",
             "redirect_url": "/fabric/onelake/table-apis/iceberg-table-apis-get-started",
             "redirect_document_id": false

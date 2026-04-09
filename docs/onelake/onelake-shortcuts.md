@@ -127,7 +127,7 @@ For detailed instructions to create a specific shortcut type, select an article 
 * [Amazon S3 shortcuts](./create-s3-shortcut.md)
 * [Amazon S3 compatible shortcuts](./create-s3-compatible-shortcut.md)
 * [Azure Data Lake Storage (ADLS) Gen 2 shortcuts](./create-adls-shortcut.md)
-* [Azure Blob Storage shortcuts](./create-blob-shortcut.md)
+* [Azure Blob Storage shortcuts](./shortcuts/create-blob-shortcut.md)
 * [Dataverse shortcuts](./create-dataverse-shortcut.md)
 * [Google Cloud Storage shortcuts](./create-gcs-shortcut.md)
 * [Iceberg shortcuts](./onelake-iceberg-tables.md)
