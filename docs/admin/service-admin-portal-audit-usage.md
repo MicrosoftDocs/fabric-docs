@@ -35,6 +35,8 @@ Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-an
 
 When the setting is enabled, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
+<a name='workspace-admins-can-turn-on-monitoring-for-their-workspaces'></a>
+
 ## Workspace admins can turn on monitoring for their workspaces (preview)
 
 When this setting is enabled, workspace admins can turn on monitoring for their workspaces. When a workspace admin turns on monitoring, a read-only Eventhouse that includes a KQL database is created. After the Eventhouse and KQL database are added to the workspace, logging is turned on and data is sent to the database.

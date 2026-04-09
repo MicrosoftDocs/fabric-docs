@@ -14,6 +14,8 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
+<a name='allow-xmla-endpoints-and-analyze-in-excel-with-on-premises-datasets'></a>
+
 ## Allow XMLA endpoints and Analyze in Excel with on-premises semantic models
 
 When enabled, users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools).

@@ -41,6 +41,8 @@ To allow an app to use service principal authentication, its service principal m
 
 This setting is disabled by default for new customers.
 
+<a name='service-principals-can-use-fabric-apis'></a>
+
 ## Service principals can call Fabric public APIs
 
 Use a [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Fabric public APIs that include create, read, update, and delete (CRUD) operations, and are protected by a Fabric permission model.
