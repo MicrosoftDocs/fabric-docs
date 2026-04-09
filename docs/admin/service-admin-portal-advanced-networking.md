@@ -1,31 +1,58 @@
 ---
-title: Advanced networking admin settings
+title: Overview of advanced networking settings
 description: Learn how to configure advanced networking admin settings in Fabric.
 author: msmimart
 ms.author: mimart
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 11/02/2023
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
-# Advanced networking tenant settings
+# Overview of advanced networking settings
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-## Azure Private Link
+## Tenant-level Private Link
 
-Increase security by allowing people to use a [Private Link](/azure/private-link) to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.
+Increase security by allowing people to use a [Private Link](/azure/private-link) to access your Fabric tenant. Someone must finish the setup process in Azure. If that's not you, grant permission to the right person or group by entering their email address.
 
-To learn how to set up Private Link, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
+Review the considerations and limitations before enabling private endpoints.
+
+To learn more, see [Private links for Fabric tenants](/fabric/security/security-private-links-overview).
 
 ## Block Public Internet Access
 
-For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect.
+For extra security, block access to your Fabric tenant via the public internet. This means people who don't have access to the Private Link won't be able to connect. Turning this on can take 10 to 20 minutes to take effect.
 
-To learn more, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
+To learn more, see [Private links for Fabric tenants](/fabric/security/security-private-links-overview).
+
+## Configure workspace-level inbound network rules
+
+When this setting is on, workspace admins can configure inbound private link access protection in workspace settings. When a workspace is configured to restrict inbound network access, existing tenant-level private links can no longer connect to that workspace.
+
+If you turn this setting off, all workspaces revert to their previous inbound network configuration.
+
+For more information, see [Workspace-level inbound network rules](https://go.microsoft.com/fwlink/?linkid=2272575).
+
+## Configure workspace-level outbound network rules
+
+When this setting is on, workspace admins can configure outbound access protection in workspace settings.
+
+If you turn this setting off, outbound access protection is also turned off in all workspaces in the tenant.
+
+For more information, see [Private links for Fabric workspaces](/fabric/security/security-workspace-level-private-links-overview).
+
+## Configure workspace IP firewall rules (preview)
+
+When this setting is enabled, workspace admins can configure IP firewall rules in workspace settings.
+
+If tenant-level public access is blocked, turning on this setting still allows workspace admins to permit access from specific IP rules.
+
+For more information, see [Set up workspace IP firewall rules](/fabric/security/security-workspace-level-firewall-set-up?tabs=fabric-portal-1).
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
+* [Private links for Fabric tenants](/fabric/security/security-private-links-overview)
