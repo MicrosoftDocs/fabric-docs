@@ -3,7 +3,7 @@ title: Shortcut transformations (file)
 description: Use OneLake shortcut transformations to convert raw files into Delta tables that stay always in sync with the source data.  
 ms.reviewer: preshah
 ms.topic: how-to
-ms.date: 04/08/2026
+ms.date: 04/10/2026
 ai-usage: ai-assisted
 ---
 
@@ -40,7 +40,7 @@ Shortcut transformations work with folders from any data source supported by One
 | CSV (UTF-8, UTF-16) | `.csv`, `.txt` (delimiter), `.tsv` (tab-separated), `.psv` (pipe-separated) | `.csv.gz`, `.csv.bz2` | Table shortcut | `.csv.zip` and `.csv.snappy` aren't supported. |
 | Parquet | `.parquet` | `.parquet.snappy`, `.parquet.gzip`, `.parquet.lz4`, `.parquet.brotli`, `.parquet.zstd` | Table shortcut | None. |
 | JSON | `.json`, `.jsonl`, `.ndjson` | `.json.gz`, `.json.bz2`, `.jsonl.gz`, `.ndjson.gz`, `.jsonl.bz2`, `.ndjson.bz2` | Table shortcut | `.json.zip` and `.json.snappy` aren't supported. |
-| Excel | `.xlsx` | Not applicable | Table shortcut or schema shortcut | Table shortcuts combine sheets into one Delta table. Schema shortcuts create one Delta table per sheet. |
+| Excel | `.xlsx`, `.xls` | Not applicable | Table shortcut or schema shortcut | Table shortcuts combine sheets into one Delta table. Schema shortcuts create one Delta table per sheet. `.xls` (legacy binary format) is supported on a best-effort basis; `.xlsx` is the recommended format. |
 
 > [!NOTE]
 > Excel file transformations are currently in [preview](../../fundamentals/preview.md). CSV, Parquet, and JSON transformations are generally available.
@@ -67,7 +67,7 @@ For Excel files with multiple sheets, a table shortcut combines the selected she
    * Excel files:
 
      * **First row as headers** – Indicate whether the first row contains column names.
-     * **Sheets to include** – Select all sheets or only a subset of sheets.
+     * **Sheets to include** – Select all sheets or only a subset of sheets. You can select sheets by name, by index, or by using wildcard patterns (for example, `Sales_*` matches sheets like `Sales_Q1` and `Sales_2026`). Wildcard matching is case-insensitive.
 
 1. Review the shortcut configuration. On the **Preview shortcuts** step, you can also configure these settings before you select **Create**:
 
@@ -77,6 +77,8 @@ For Excel files with multiple sheets, a table shortcut combines the selected she
 1. Track refreshes and view logs in **Manage shortcut monitoring hub**.
 
 Fabric Spark compute creates the Delta table and shows progress in the **Manage shortcut** pane.
+
+For Excel files, the resulting Delta table includes `__filepath__` and `__sheetname__` metadata columns so you can trace every row back to its source file and sheet.
 
 ## Create a schema shortcut with data transformation
 
@@ -93,7 +95,7 @@ Schema shortcuts with data transformation are currently available only for Excel
 1. On the **Transform** step, configure the settings for the Delta conversion:
 
    * **First row as headers** – Indicate whether the first row contains column names.
-   * **Sheets to include** – Select all sheets or only a subset of sheets.
+   * **Sheets to include** – Select all sheets or only a subset of sheets. You can select sheets by name, by index, or by using wildcard patterns.
 
    :::image type="content" source="./media/transformations/schema-shortcut-transform.png" alt-text="Screenshot that shows transformation options for a schema shortcut." lightbox="./media/transformations/schema-shortcut-transform.png":::
 
@@ -104,7 +106,7 @@ Schema shortcuts with data transformation are currently available only for Excel
 
 1. Track refreshes and view logs in **Manage shortcut monitoring hub**.
 
-Fabric Spark compute creates separate Delta tables for the selected sheets and keeps them synchronized with the source files.
+Fabric Spark compute creates separate Delta tables for the selected sheets and keeps them synchronized with the source files. Sheet names are automatically sanitized to valid table names. For example, a sheet named `Sales Data (Q1)` becomes `Sales_Data_Q1`.
 
 ## How synchronization works
 
@@ -136,24 +138,50 @@ Shortcut transformations include monitoring and error handling to help you track
 
 ## Limitations
 
-The following limitations currently apply to shortcut transformations:
+The following limitations currently apply to shortcut transformations.
 
-* **Source format:** CSV, JSON, Parquet, and Excel (.xlsx) files are supported.
-* **Unsupported data types for CSV:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary.
-* **Unsupported data types for Parquet:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT.
-* **Unsupported data types for JSON:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos.
-* **Schema shortcut availability:** Schema shortcuts for file transformations are currently supported for Excel (.xlsx) files.
+### General limitations
+
+* **Source format:** CSV, JSON, Parquet, and Excel files are supported.
 * **File schema consistency:** Files must share an identical schema.
-* **Workspace availability:** Available only in **Lakehouse** items (not Data Warehouses or KQL databases).  
+* **Workspace availability:** Available only in **Lakehouse** items (not Data Warehouses or KQL databases).
 * **Write operations:** Transformations are *read-optimized*. Direct **MERGE INTO** or **DELETE** statements on the transformation target table aren't supported.
-* **Flattening of array data type in JSON:** The array data type is retained in the Delta table and is accessible with Spark SQL and PySpark. For further transformations, use Fabric Materialized Lake Views for the silver layer.
-* **Flattening depth in JSON:** Nested structures are flattened up to five levels deep. Deeper nesting requires preprocessing.
-* **Nested folder support:** The following limitations apply to subfolder processing:
-  * Only available for new transformations. Existing transformations can't enable subfolder support.
-  * Once subfolder support is enabled, it can't be disabled.
-  * Shortcuts nested inside the target folder aren't followed. Only physical folders and files are processed.
-  * Selective include or exclude of specific subfolders isn't supported.
-  * Nested folders don't work with SharePoint shortcuts.
+* **Schema shortcut availability:** Schema shortcuts for file transformations only support Excel files.
+
+### CSV limitations
+
+* **Unsupported data types:** Mixed data type columns, Timestamp_Nanos, Complex logical types - MAP/LIST/STRUCT, Raw binary.
+
+### Parquet limitations
+
+* **Unsupported data types:** Timestamp_nanos, Decimal with INT32/INT64, INT96, Unassigned integer types - UINT_8/UINT_16/UINT_64, Complex logical types - MAP/LIST/STRUCT.
+
+### JSON limitations
+
+* **Unsupported data types:** Mixed data types in an array, Raw binary blobs inside JSON, Timestamp_Nanos.
+* **Flattening of array data type:** The array data type is retained in the Delta table and is accessible with Spark SQL and PySpark. For further transformations, use Fabric Materialized Lake Views for the silver layer.
+* **Flattening depth:** Nested structures are flattened up to five levels deep. Deeper nesting requires preprocessing.
+
+### Excel limitations
+
+* **Cell range:** Data is always read starting from cell A1. Workbooks where data starts at a different cell or uses named tables or ranges can't be targeted.
+* **Skip rows:** Title banners, metadata preambles, and footer summaries above or below the actual data can't be excluded. They're ingested as data rows.
+* **Schema inference:** Schema inference is always enabled for Excel files. Identifiers with leading zeros (for example, ZIP codes like `02134` or employee IDs like `001245`) are converted to integers, which removes the leading zeros.
+* **Hidden sheets:** All sheets, including hidden and system sheets, are processed unless explicitly filtered by name or index.
+* **Currency formatting:** Currency-formatted cells (for example, `$1,234.56`) are converted to plain numeric values. The currency symbol is stripped.
+* **Sensitivity labels:** Workbooks with Microsoft Purview sensitivity labels can't be processed.
+* **Corrupt rows:** The Excel reader doesn't support corrupt record isolation. Corrupt or type-mismatched rows within a sheet can't be isolated and logged separately.
+* **Sheet limit:** Files with more than 25 sheets are skipped.
+* **Legacy format:** `.xls` (legacy binary format) is supported on a best-effort basis and might have reduced fidelity for complex formatting. `.xlsx` is the recommended format.
+* **Formula evaluation:** Spark reads the cached value of formula cells. If the workbook wasn't saved with calculated values, formula cells might appear empty or stale.
+
+### Subfolder limitations
+
+* Only available for new transformations. Existing transformations can't enable subfolder support.
+* Once subfolder support is enabled, it can't be disabled.
+* Shortcuts nested inside the target folder aren't followed. Only physical folders and files are processed.
+* Selective include or exclude of specific subfolders isn't supported.
+* Nested folders don't work with SharePoint shortcuts.
 
 Use the [Fabric Roadmap](https://roadmap.fabric.microsoft.com/?product=onelake) and [Fabric Updates Blog](https://blog.fabric.microsoft.com/blog/category/onelake/) to learn about new features and releases.
 
