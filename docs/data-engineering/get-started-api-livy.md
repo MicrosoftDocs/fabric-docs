@@ -151,7 +151,7 @@ This allows:
 
 Using a single session for all requests causes statements to execute sequentially. Creating a new session for every request introduces unnecessary overhead and resource underutilization. 
 
-> **Note**  
+> [!NOTE]
 > HC session acquisition is not idempotent. Multiple acquire requests with the same `sessionTag` return different HC session IDs, even when they are backed by the same underlying Livy session.
 
 For a step-by-step walkthrough with example code, see [Get started with the Livy API for Fabric High Concurrency Sessions](get-started-high-concurrency-livy.md). For a conceptual overview, see [High concurrency support in the Fabric Livy API](high-concurrency-livy.md).
