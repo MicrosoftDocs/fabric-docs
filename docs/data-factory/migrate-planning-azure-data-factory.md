@@ -93,7 +93,7 @@ Moving from ADF to Fabric can involve different strategies depending on your use
 
 - [Scenario 1: ADF pipelines and data flows](#scenario-1-adf-pipelines-and-data-flows)
 - [Scenario 2: ADF with CDC, SSIS, and Airflow](#scenario-2-adf-with-cdc-ssis-and-airflow)
-- [Scenario 3: PowerShell migration](#scenario-3-powershell-migration)
+- [Scenario 3: Pipeline upgrade using built-in experience](#scenario-3-pipeline-upgrade-using-the-built-in-migration-experience)
 - [Scenario 4: ADF items in a Fabric workspace](#scenario-4-adf-items-in-a-fabric-workspace)
 
 ### Scenario 1: ADF pipelines and data flows
