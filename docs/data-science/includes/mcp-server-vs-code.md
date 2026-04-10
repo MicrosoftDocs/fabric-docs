@@ -12,7 +12,7 @@ ms.date: 04/10/2026
 1. Inside the inner folder, create a file called `mcp.json`.
 1. VS Code automatically displays a blue **Add Server** button at the bottom right of the window. 
 
-    :::image type="content" source="../media/data-agent-mcp-server/include-mcp-json-vscode.png" alt-text="Screenshot showing the MCP server json file." lightbox="../media/mcp-server/include-mcp-json-vscode.png":::
+    :::image type="content" source="../media/data-agent-mcp-server/include-mcp-json-vscode.png" alt-text="Screenshot showing the MCP server json file." lightbox="../media/data-agent-mcp-server/include-mcp-json-vscode.png":::
 
 1. Select **Add Server** and select **HTTP**. You're prompted to enter a URL. Use the **MCP server URL** that you copied in the previous section. 
 
