@@ -40,16 +40,16 @@ Spark runtime updates can include library upgrades, security patches, dependency
 
 ## Choose a release channel
 
-You can select a release channel by using the Spark configuration. Use the following property in your Spark settings or configuration:
+You can select a release channel by using the Spark configurations or properties. Use the following property in your Spark settings or configuration:
 
-```Spark properties
+```properties
 # Prerequisite: early access doesn't use Starter Pool so you need to set it to skip it
 spark.fabric.pools.skipStarterPools=true
 
 # Set one of the following values:
 # Use this to switch to the early access channel
-
 spark.computeConf.runtime.releaseChannel=earlyAccess
+
 # or to revert to the default release channel
 spark.computeConf.runtime.releaseChannel=default
 ```
