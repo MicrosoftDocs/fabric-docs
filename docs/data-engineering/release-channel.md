@@ -19,7 +19,7 @@ Instead of receiving silent updates that might break your production workloads, 
 ## How release channels work
 Each Spark runtime has at least two public release channels:
 
-- **Current (default) channel** – This production-grade channel runs the current, default version of the runtime. All users automatically use this channel unless they opt into early access.
+- **Current (default) channel** – This production-grade channel runs the current, default version of the runtime. All users automatically use this channel unless they opt in to early access.
 - **Early Access channel** – This production-grade channel includes upcoming updates and library changes that are scheduled to become the next current or default channel. You can opt in to test your workloads against upcoming changes.
 
 Once the designated validation window ends, the early access release channel automatically gets promoted to become the new default, and a fresh early access channel is introduced with another set of new changes — continuing the cycle. This model gives you a predictable testing window before changes become default for everyone.
@@ -29,7 +29,7 @@ Once the designated validation window ends, the early access release channel aut
 
 ## Why release channels matter
 
-Spark runtime updates can include library upgrades, security patches, dependency changes, or even operating system upgrades. While all updates pass internal quality checks before release, they can't capture all customer variations and use cases. Early access channels let you identify potential issues early, if there are any, and work with Microsoft by creating a support ticket to address them before updates affect your production environment.
+Spark runtime updates can include library upgrades, security patches, dependency changes, or even operating system upgrades. While all updates pass internal quality checks before release, they can't capture all customer variations and use cases. Early access channels let you identify potential issues early and work with Microsoft by creating a support ticket to address them before updates affect your production environment.
 
 ✔ *Predictable Updates* - Customers know exactly when a new runtime becomes available and have time to validate against it.  
 ✔ *Reduced Risk* - Testing workloads on Early Access ensures compatibility before changes reach production.  
@@ -45,8 +45,9 @@ You can select a release channel by using the Spark configuration. Use the follo
 spark.fabric.pools.skipStarterPools=true
 
 # Set one of the following values:
+# Use this to switch to the early access channel
 spark.computeConf.runtime.releaseChannel=earlyAccess
-# or
+# or to revert to the default release channel
 spark.computeConf.runtime.releaseChannel=current
 ```
 
