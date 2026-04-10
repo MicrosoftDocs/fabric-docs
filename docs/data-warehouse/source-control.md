@@ -99,7 +99,7 @@ In all of these scenarios, if a collation mismatch occurs, use the Python script
  | **Deployment pipelines** | Promoting warehouse content through pipeline stages (for example, Dev → Test → Prod) where the target warehouse was created with a different collation than the source isn't supported. | Deployment might succeed, but the dataset collation isn't updated to match the target warehouse collation. |
  | **Branching out to a new or existing workspace** | Using Git integration to branch out from an existing workspace to a new or existing workspace where the warehouse has a different collation isn't supported. | Warehouse content is synced, but the collation metadata isn't reconciled. |
  | **Switching branches on a workspace** | Switching to a branch that was associated with a warehouse of a different collation on a Git-connected workspace isn't supported. | Synced content might carry over collation assumptions that don't match the current warehouse. |
- | **Merging changes between workspaces through branches** | Merging Git branches across workspaces where the warehouses have different collations is not supported. | Merge may succeed at the Git level, but the resulting dataset collation will not reflect the target warehouse's collation. |
+ | **Merging changes between workspaces through branches** | Merging Git branches across workspaces where the warehouses have different collations isn't supported. | Merge might succeed at the Git level, but the resulting dataset collation doesn't reflect the target warehouse's collation. |
 
 ## Related content
 
