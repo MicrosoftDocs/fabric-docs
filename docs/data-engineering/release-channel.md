@@ -1,5 +1,5 @@
 ---
-title: Fabric Runtime Release Channels 
+title: Fabric Runtime Release Channels
 description: Learn how release channels help you validate Spark runtime updates before they become the default.
 ms.reviewer: arali
 ms.author: eur
@@ -19,41 +19,44 @@ Instead of receiving silent updates that might break your production workloads, 
 ## How release channels work
 Each Spark runtime has at least two public release channels:
 
-- **Current (default) channel** – This production-grade channel runs the current, default version of the runtime. All users automatically use this channel unless they opt in to early access.
-- **Early Access channel** – This production-grade channel includes upcoming updates and library changes that are scheduled to become the next current or default channel. You can opt in to test your workloads against upcoming changes.
+- **Default channel** – This production-grade channel runs the default version of the runtime. All users automatically use this channel unless they opt in to early access.
+- **Early access channel** – This production-grade channel includes upcoming updates and library changes that are scheduled to become the next default channel. You can opt in to test your workloads against upcoming changes.
 
 Once the designated validation window ends, the early access release channel automatically gets promoted to become the new default, and a fresh early access channel is introduced with another set of new changes — continuing the cycle. This model gives you a predictable testing window before changes become default for everyone.
 
 > [!TIP]
-> Use the early access channel to validate production workloads before updates reach the current or default channel. 
+> Use the early access channel to validate production workloads before updates reach the default channel. 
 
 ## Why release channels matter
 
 Spark runtime updates can include library upgrades, security patches, dependency changes, or even operating system upgrades. While all updates pass internal quality checks before release, they can't capture all customer variations and use cases. Early access channels let you identify potential issues early and work with Microsoft by creating a support ticket to address them before updates affect your production environment.
 
-✔ *Predictable Updates* - Customers know exactly when a new runtime becomes available and have time to validate against it.  
-✔ *Reduced Risk* - Testing workloads on Early Access ensures compatibility before changes reach production.  
-✔ *Better Visibility* - Customers can easily tell which runtime version they are running, reference release notes, and verify upgrade timing.  
-✔ *Improved Quality & Security* - Engineering teams can iterate more confidently, incorporate security patches faster, and promote well‑tested builds to all customers.
+| Benefit | Description |
+|---|---|
+| ✔ Predictable updates | Customers know exactly when a new runtime becomes available and have time to validate against it. |
+| ✔ Reduced risk | Testing workloads on early access ensures compatibility before changes reach production. |
+| ✔ Better visibility | Customers can easily tell which runtime version they're running, reference release notes, and verify upgrade timing. |
+| ✔ Improved quality and security | Engineering teams can iterate more confidently, incorporate security patches faster, and promote well-tested builds to all customers. |
 
 ## Choose a release channel
 
 You can select a release channel by using the Spark configuration. Use the following property in your Spark settings or configuration:
 
-```properties
-# Prerequisite: early access doesn't use Starter Pool
+```Spark properties
+# Prerequisite: early access doesn't use Starter Pool so you need to set it to skip it
 spark.fabric.pools.skipStarterPools=true
 
 # Set one of the following values:
 # Use this to switch to the early access channel
+
 spark.computeConf.runtime.releaseChannel=earlyAccess
 # or to revert to the default release channel
-spark.computeConf.runtime.releaseChannel=current
+spark.computeConf.runtime.releaseChannel=default
 ```
 
 Valid values are:
 
-- `current` – Uses the current, generally available release (default)
+- `default` – Uses the default generally available release channel
 - `earlyAccess` – Uses the upcoming early access release for testing
 
 > [!NOTE]
@@ -96,7 +99,7 @@ Set up automated test runs:
 
 If you suspect a failure is caused by the early access release:
 
-1. Compare results against the current channel to isolate the issue.
+1. Compare results against the default channel to isolate the issue.
 1. Note the VHD ID of the early access version you're testing.
 1. Contact Microsoft support with your findings. Microsoft prioritizes early access issues and will either provide a hotfix or roll back problematic changes.
 
@@ -123,19 +126,19 @@ When the early access channel becomes the new default:
 ## Frequently Asked Questions
 
 #### **Q: Is early access lower quality?**
-A: No. Early access channel must pass all standard validation gates. It is simply earlier in the release timeline.
+A: No. The early access channel must pass all standard validation gates. It's simply earlier in the release timeline.
 
-#### **Q: Do customers have to use early access channel?**
-A: No. It is entirely optional. Customers who do not opt in will continue using the default channel.
+#### **Q: Do customers have to use the early access channel?**
+A: No. It's entirely optional. Customers who don't opt in continue using the default channel.
 
 #### **Q: Can I roll back if something fails?**
-A: Yes. Customers can disable the early access channel at any time using the Spark Configuration to revert to the default channel. 
+A: Yes. You can switch back from the early access channel at any time by using the Spark configuration to revert to the default channel.
 
 #### **Q: Does early access cost extra?**
 A: No. Billing remains the same as default channel usage.
 
 #### **Q: Does early access use a custom pool only?**
-A: Yes, early access only uses a custom pool because it's an opt-in feature. Unlike with Starter Pool, you notice a delay in session startup time, which applies to custom pools.
+A: Yes. Early access only uses a custom pool because it's an opt-in feature. Unlike Starter Pool, custom pools have a delay in session startup time.
 
 
 ## Related content
