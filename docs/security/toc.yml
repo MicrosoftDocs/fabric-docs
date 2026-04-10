@@ -117,6 +117,8 @@ items:
                 href: workspace-outbound-access-protection-allow-list-connector.md
           - name: Scenarios by Fabric workload
             items:
+              - name: Data Agent
+                href: workspace-outbound-access-protection-data-agent.md
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory (preview)
