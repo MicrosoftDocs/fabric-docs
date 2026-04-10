@@ -16,48 +16,39 @@ You complete three steps:
 
 1. Create an Eventhouse.
 1. Create a KQL table and ingestion mapping.
-1. Create an Eventstream that uses Eventhouse DirectIngestion.
-
-Each step uses the same structure:
-
-1. API URL.
-1. Token.
-1. Request payload.
-1. Response example.
+1. Create an Eventstream that uses Eventhouse Direct Ingestion mode.
 
 ## Prerequisites
 
-- You have a Fabric workspace ID.
-- You have permissions to create Eventhouse and Eventstream items in that workspace.
+- You have Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - You have permissions to run Kusto management commands on the target KQL database.
-- You can acquire Microsoft Entra bearer tokens for Fabric and Kusto endpoints.
 
 ## Required references
 
-- Eventhouse create API: <https://review.learn.microsoft.com/en-us/rest/api/fabric/eventhouse/items/create-eventhouse?branch=main&tabs=HTTP>
-- Eventhouse definition: <https://review.learn.microsoft.com/en-us/rest/api/fabric/articles/item-management/definitions/eventhouse-definition?branch=main>
-- Kusto REST API overview: <https://kusto.azurewebsites.net/docs/kusto/api/rest/index.html>
-- Eventstream create API: <https://review.learn.microsoft.com/en-us/rest/api/fabric/eventstream/items/create-eventstream?branch=main&tabs=HTTP>
-- Eventstream definition template: <https://github.com/microsoft/fabric-event-streams/blob/main/API%20Templates/eventstream-definition.json>
+- [Eventhouse create API](/rest/api/fabric/eventhouse/items/create-eventhouse?tabs=HTTP)
+- [Eventhouse definition](/rest/api/fabric/articles/item-management/definitions/eventhouse-definition)
+- [Kusto REST API overview](/kusto/api/rest)
+- [Eventstream create API](/rest/api/fabric/eventstream/items/create-eventstream?tabs=HTTP)
+- [Eventstream definition template example](api-create-with-definition.md)
 
 ## Authentication and permission requirements
 
-To work with Fabric APIs, first get a Microsoft Entra token for the Fabric service. Then use that token in the `Authorization` header of your API call:
-
-```http
-Authorization: Bearer <access_token>
-```
+To work with Fabric APIs, first get a Microsoft Entra token for the Fabric service. Then use that token in the Authorization header of your API call:
 
 You can acquire a Fabric token in two ways:
 
 1. Get a token using MSAL.NET.
 
-  If your application accesses Fabric APIs by using a service principal, use MSAL.NET to acquire an access token. Follow [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app that acquires a Microsoft Entra token and calls a Fabric API.
+  If your application accesses Fabric APIs by using a **service principal**, use MSAL.NET to acquire an access token. Follow [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app that acquires a Microsoft Entra token and calls a Fabric API.
 
 1. Get a token from the Fabric portal.
 
-  For testing, sign in to Fabric portal for the target tenant, press `F12`, open the browser developer console, run `powerBIAccessToken`, then copy the returned token.
+    You can use your Microsoft Entra token to authenticate and test the Fabric APIs. Sign in to the Fabric portal for the tenant you want to test, press `F12` to open the browser developer tools, and then run the following command in the console:
 
+    ```text
+    powerBIAccessToken
+    ```
+    
 > [!NOTE]
 > If the eventstream you create includes any sources that use a cloud connection, make sure the identity you use to get the token has permission to access that cloud connection, whether it's a service principal or a user.
 >
@@ -70,7 +61,7 @@ If you authenticate by using a service principal, grant the following KQL data-p
 
 You can grant these permissions in either of the following ways.
 
-### Using Eventhouse UI
+# [Using Eventhouse UI](#tab/using-eventhouse-ui)
 
 Run the following KQL commands in the Eventhouse UI:
 
@@ -83,7 +74,7 @@ Replace `clientid` and `tenantid` with your service principal values.
 
 These commands grant the service principal the required data-plane permissions so Eventhouse can create the connection and pull data from Eventstream. For more information, see [Security roles overview](/kusto/management/security-roles).
 
-### Using Eventhouse REST API
+# [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
 
 If you prefer to manage permissions through the REST API, run the same KQL commands through the Kusto management endpoint.
 
@@ -92,6 +83,8 @@ For details, see:
 - [Kusto REST API overview](/kusto/api/rest)
 - [Manage database security roles](/kusto/management/manage-database-security-roles)
 - [Manage table security roles](/kusto/management/manage-table-security-roles)
+
+---
 
 ## Step 1: Create Eventhouse by API
 
@@ -128,20 +121,20 @@ If you need advanced provisioning by definition parts, use the Eventhouse defini
 
 ```json
 {
-  "id": "836f69f0-e5f8-492b-8f6d-4b35080b6599",
+  "id": "00000000-0000-0000-0000-000000000000",
   "type": "Eventhouse",
   "displayName": "eh-api-demo",
   "description": "",
-  "workspaceId": "acd1d595-3e0e-4dfa-b912-45b87a11558b"
+  "workspaceId": "00000000-0000-0000-0000-000000000000"
 }
 ```
 
 Capture these values for the next steps:
 
 - `workspaceId`
-- Eventhouse item ID (`itemId`)
+- Eventhouse item ID (`id`)
 
-## Step 1.5: Get the KQL database ID
+## Step 2: Get the KQL database ID
 
 DirectIngestion payload needs both `kqlDatabaseId` and `kqlDatabaseName`.
 
@@ -167,19 +160,19 @@ Authorization: Bearer <fabric_access_token>
 {
   "value": [
     {
-      "id": "32c20c8f-15aa-4325-90b6-6ebb4c4b59cf",
+      "id": "00000000-0000-0000-0000-000000000000",
       "type": "KQLDatabase",
       "displayName": "eh-api-demo",
       "description": "eh-api-demo",
-      "workspaceId": "acd1d595-3e0e-4dfa-b912-45b87a11558b",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
       "properties": {
-        "parentEventhouseItemId": "836f69f0-e5f8-492b-8f6d-4b35080b6599",
+        "parentEventhouseItemId": "00000000-0000-0000-0000-000000000000",
         "queryServiceUri": "https://trd-n1uzagn9dwt2sgr4vb.z3.kusto.fabric.microsoft.com",
         "ingestionServiceUri": "https://ingest-trd-n1uzagn9dwt2sgr4vb.z3.kusto.fabric.microsoft.com",
         "databaseType": "ReadWrite"
       },
       "sensitivityLabel": {
-        "sensitivityLabelId": "9fbde396-1a24-4c79-8edf-9254a0f35055"
+        "sensitivityLabelId": "00000000-0000-0000-0000-000000000000"
       }
     }
   ]
