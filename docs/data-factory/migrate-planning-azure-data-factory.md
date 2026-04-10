@@ -42,7 +42,7 @@ Migration paths depend on your ADF assets and their feature parity. Options incl
 
 ## Azure Data Factory items in your Fabric workspace
 
-**Adding an existing ADF to your Fabric workspace** give you immediate visibility and governance while you migrate incrementally. It’s ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use Azure Data Factory items to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
+**Adding an existing ADF to your Fabric workspace** gives you immediate visibility and governance while you migrate incrementally. It’s ideal for discovery, ownership assignment, and side-by-side testing because teams can see pipelines, organize them under Fabric workspaces, and plan cutovers per domain. Use Azure Data Factory items to catalog what exists, prioritize the highest-value/lowest-risk pipelines first, and establish conventions (naming, folders, connection reuse) that your conversion scripts and partner tools can follow consistently.
 
 Mounting in Fabric is achieved via the Azure Data Factory item type: [Bring your Azure Data Factory to Fabric](/fabric/data-factory/migrate-pipelines-azure-data-factory-item).
 
@@ -75,7 +75,7 @@ To migrate effectively, follow these steps:
 1. **If you use global parameters in ADF, plan to migrate them to Fabric variable libraries.** See [Convert ADF Global Parameters to Fabric Variable Libraries](convert-global-parameters-to-variable-libraries.md) for detailed steps.
 1. **ADF transition**: Consider [adding an Azure Data Factory item in Microsoft Fabric](#azure-data-factory-items-in-your-fabric-workspace) as a first step in migration, allowing for gradual transition in a single platform.
 1. **Prioritize**: Rank your pipelines based on business impact, complexity, and ease of migration.
-1. **Automate where you can**: Use the built‑in upgrade experience to assess, migrate, and validate pipelines incrementally before moving production workloads[Upgrade tool](/azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration)
+1. **Automate where you can**: Use the built‑in upgrade experience to assess, migrate, and validate pipelines incrementally before moving production workloads. For more information, see the [Upgrade tool](/azure/data-factory/how-to-assess-your-azure-data-factory-to-fabric-data-factory-migration).
 1. **Consider tooling**: Use these tools to make recreation easier:
    - Use [Fabric templates](templates.md) as a starting place for pipelines with common data integration scenarios.
    - Use [parameterization](parameters.md) to create reusable pipelines
