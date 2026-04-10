@@ -2,8 +2,8 @@
 title: "Source Control with Fabric Data Warehouse (Preview)"
 description: "Learn how to use source control with Microsoft Fabric Warehouse."
 ms.reviewer: salilkanade, pvenkat
-ms.date: 02/04/2026
-ms.topic: how-to
+ms.date: 04/10/2026
+ms.topic: concept-article
 ---
 
 # Source control (preview)
@@ -14,7 +14,7 @@ This article explains how Git integration and deployment pipelines work for ware
 
 You can use both [Git integration](#git-integration) and [Deployment pipelines](#deployment-pipelines) for different scenarios:
 
-- Use Git and SQL database projects to manage incremental change, team collaboration, commit history in individual database objects.
+- Use Git and SQL database projects to manage incremental change, team collaboration, and commit history in individual database objects.
 - Use deployment pipelines to promote code changes to different pre-production and production environments.
 
 ## Git integration
@@ -23,7 +23,7 @@ Git integration in Microsoft Fabric enables developers to integrate their develo
 
 - Backup and version their work
 - Revert to previous stages as needed
-- Collaborate with others or work alone using Git branches
+- Collaborate with others or work alone by using Git branches
 - Apply the capabilities of familiar source control tools to manage Fabric items
 
 For more information on the Git integration process, see:
@@ -47,7 +47,7 @@ The following image is an example of the file structure of each warehouse item i
 
 :::image type="content" source="media/source-control/warehouse-schema.png" alt-text="Screenshot from the Fabric portal of a sample warehouse schema." lightbox="media/source-control/warehouse-schema.png":::
 
-When you commit the warehouse item to the Git repo, the warehouse is converted to a source code format, as a SQL database project. A SQL project is a local representation of SQL objects that comprise the schema for a single database, such as tables, stored procedures, or functions. The folder structure of the database objects is organized by **Schema/Object Type**. Each object in the warehouse is represented with a .sql file that contains its data definition language (DDL) definition. Warehouse table data and [SQL security features](security.md) are not included in the SQL database project.
+When you commit the warehouse item to the Git repo, the warehouse is converted to a source code format, as a SQL database project. A SQL project is a local representation of SQL objects that comprise the schema for a single database, such as tables, stored procedures, or functions. The folder structure of the database objects is organized by **Schema/Object Type**. Each object in the warehouse is represented with a .sql file that contains its data definition language (DDL) definition. Warehouse table data and [SQL security features](security.md) aren't included in the SQL database project.
 
 Shared queries are also committed to the repo and inherit the name that they are saved as.
 
@@ -55,52 +55,51 @@ Shared queries are also committed to the repo and inherit the name that they are
 
 You can also use deployment pipelines to deploy your warehouse code across different environments, such as development, test, and production. Deployment pipelines don't expose a database project.
 
-Use the following steps to complete your warehouse deployment using the deployment pipeline.
+Use the following steps to complete your warehouse deployment by using the deployment pipeline.
 
-1. Create a new deployment pipeline or open an existing deployment pipeline. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
+1. Create a new deployment pipeline or open an existing deployment pipeline. For more information, see [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 1. Assign workspaces to different stages according to your deployment goals.
-1. Select, view, and compare items including warehouses between different stages, as shown in the following example.
+1. Select, view, and compare items, including warehouses, between different stages, as shown in the following example.
     :::image type="content" source="media/source-control/pipeline-stages.png" alt-text="Screenshot from the Fabric portal of the Development, Test, and Production stages." lightbox="media/source-control/pipeline-stages.png":::
-1. Select **Deploy** to deploy your warehouses across the **Development**, **Test**, and **Production** stages.
+1. Select **Deploy** to deploy your warehouses across the **Development**, **Test**, and **Production** stages.
 
 For more information about the Fabric deployment pipelines process, see [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
 
 ## Limitations in source control
 
-- [SQL security](security.md) features must be exported/migrated using a script-based approach. Consider using a post-deployment script in a SQL database project, which you can configure by opening the project with the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension) available in [Visual Studio Code](https://code.visualstudio.com/).
+- You must export or migrate [SQL security](security.md) features by using a script-based approach. Consider using a post-deployment script in a SQL database project. You can configure this script by opening the project with the [SQL Database Projects extension](/sql/tools/visual-studio-code-extensions/sql-database-projects/sql-database-projects-extension) available in [Visual Studio Code](https://code.visualstudio.com/).
 
 #### Limitations in Git integration
 
-- Currently, if you use `ALTER TABLE` to add a constraint or column in the database project, the table will be dropped and recreated when deploying, resulting in data loss. Consider the following workaround to preserve the table definition and data:
-    - Create a new copy of the table in the warehouse, using `CREATE TABLE` and `INSERT`, `CREATE TABLE AS SELECT`, or [Clone table](clone-table.md).
-    - Modify the new table definition with new constraints or columns, as desired, using `ALTER TABLE`.
+- Currently, if you use `ALTER TABLE` to add a constraint or column in the database project, the deployment process drops and recreates the table, which results in data loss. To preserve the table definition and data, consider the following workaround:
+    - Create a new copy of the table in the warehouse by using `CREATE TABLE` and `INSERT`, `CREATE TABLE AS SELECT`, or [Clone table](clone-table.md).
+    - Modify the new table definition with new constraints or columns, as desired, by using `ALTER TABLE`.
     - Delete the old table.
-    - Rename the new table to the name of the old table using [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true).
+    - Rename the new table to the name of the old table by using [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true).
     - Modify the definition of the old table in the SQL database project in the *exact* same way. The SQL database project of the warehouse in source control and the live warehouse should now match.
-- Currently, do not create a Dataflow Gen2 with an output destination to the warehouse. Committing and updating from Git would be blocked by a new item named `DataflowsStagingWarehouse` that appears in the repository.
-- Fabric Git integration does not support the SQL analytics endpoint item.
-- Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact the "branching out to a new/existing workspace" and "switching to a different branch" workflows during development and continuous integration.
+- Currently, don't create a Dataflow Gen2 with an output destination to the warehouse. A new item named `DataflowsStagingWarehouse` appears in the repository and blocks committing and updating from Git.
+- Fabric Git integration doesn't support the SQL analytics endpoint item.
+- Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact the "branching out to a new or existing workspace" and "switching to a different branch" workflows during development and continuous integration.
 
 #### Limitations for deployment pipelines
 
-- Currently, if you use `ALTER TABLE` to add a constraint or column in the database project, the table will be dropped and recreated when deploying, resulting in data loss.
-- Currently, do not create a Dataflow Gen2 with an output destination to the warehouse. Deployment would be blocked by a new item named `DataflowsStagingWarehouse` that appears in the deployment pipeline.
-- Fabric Deployment pipelines do not support the SQL analytics endpoint item.
+- Currently, if you use `ALTER TABLE` to add a constraint or column in the database project, the deployment process drops and recreates the table, which results in data loss.
+- Currently, don't create a Dataflow Gen2 with an output destination to the warehouse. A new item named `DataflowsStagingWarehouse` appears in the deployment pipeline and blocks deployment.
+- Fabric Deployment pipelines don't support the SQL analytics endpoint item.
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact Fabric Deployment Pipelines workflows.
 
-#### Unsupported Scenarios
+#### Unsupported scenarios
 
-- The following CI/CD workflows are **not officially supported** when warehouses in different workspaces have different collations. Even though these operations may succeed without errors, they can result in metadata errors.
+The following CI/CD workflows aren't officially supported when warehouses in different workspaces have different collations. Even though these operations might succeed without errors, they can result in metadata errors.
+
+In all of these scenarios, if a collation mismatch occurs, use the Python script [scripts/dw-collation-error-update-tmsl/pbi_interactive.py in the Fabric toolbox](https://github.com/microsoft/fabric-toolbox/tree/main/scripts/dw-collation-error-update-tmsl/pbi_interactive.py) GitHub repository to update the dataset (TMSL) collation to match the warehouse collation.
 
  | Scenario | Description | Risk |
  |---|---|---|
- | **Deployment Pipelines** | Promoting warehouse content through pipeline stages (e.g., Dev → Test → Prod) where the target warehouse was created with a different collation  than the source. | Deployment may succeed, but the dataset collation will not be updated to match the target warehouse collation. |
- | **Branching out to a new or existing workspace** | Using Git integration to branch out from an existing workspace to a new or existing workspace where the warehouse has a different collation. | Warehouse content is synced, but the collation metadata is not reconciled. |
- | **Switching branches on a workspace** | Switching to a branch that was associated with a warehouse of a different collation on a Git-connected workspace. | Synced content may carry over collation assumptions that do not match the current warehouse. |
- | **Merging changes between workspaces through branches** | Merging Git branches across workspaces where the warehouses have different collations. | Merge may succeed at the  Git level, but the resulting dataset collation will not reflect the target warehouse's collation. |
-
-> [!NOTE]
-> In all of these scenarios, if a collation mismatch occurs, use the python script in "**scripts/dw-collation-error-update-tmsl/pbi_interactive.py**" [Fabric toolbox](https://github.com/microsoft/fabric-toolbox/tree/main/scripts) repository to update the dataset (TMSL) collation to match the warehouse collation.
+ | **Deployment pipelines** | Promoting warehouse content through pipeline stages (for example, Dev → Test → Prod) where the target warehouse was created with a different collation than the source isn't supported. | Deployment might succeed, but the dataset collation isn't updated to match the target warehouse collation. |
+ | **Branching out to a new or existing workspace** | Using Git integration to branch out from an existing workspace to a new or existing workspace where the warehouse has a different collation isn't supported. | Warehouse content is synced, but the collation metadata isn't reconciled. |
+ | **Switching branches on a workspace** | Switching to a branch that was associated with a warehouse of a different collation on a Git-connected workspace isn't supported. | Synced content might carry over collation assumptions that don't match the current warehouse. |
+ | **Merging changes between workspaces through branches** | Merging Git branches across workspaces where the warehouses have different collations is not supported. | Merge may succeed at the Git level, but the resulting dataset collation will not reflect the target warehouse's collation. |
 
 ## Related content
 
