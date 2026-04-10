@@ -149,8 +149,8 @@ This view displays the following visuals:
 - **Cumulative visual** - shows the cumulative overages billed over the past 24 hours for each window.
   - **Rolling cumulative 24 hour billed overage CU (hr)** - Amount of overage capacity unit hours billed for the past 24 hours from the current window.
   - **Overage billing limit CU (hr)** - 24-hour limit for billed overage set at the capacity level in capacity unit hours.
-
-Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint detail](metrics-app-timepoint-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint summary preview](metrics-app-timepoint-summary-page.md) and [timepoint detail](metrics-app-timepoint-page.md).
+  
+Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint summary](metrics-app-timepoint-summary-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint detail](metrics-app-timepoint-page.md) and [timepoint summary](metrics-app-timepoint-summary-page.md).
 
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect the Timepoint and Cumulative visuals as follows:
 

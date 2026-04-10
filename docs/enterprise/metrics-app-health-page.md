@@ -1,5 +1,5 @@
 ---
-title: Understand the metrics app health page (preview)
+title: Understand the metrics app health page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's health page.
 author: dknappettmsft
 ms.author: daknappe
@@ -7,9 +7,7 @@ ms.topic: concept-article
 ms.date: 01/26/2026
 ---
 
-# Understand the metrics app Health page (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Understand the metrics app Health page
 
 The **Health** page in the Microsoft Fabric Capacity Metrics app offers a high-level overview of all capacities that a user is admin of. This page is designed to help capacity administrators quickly identify capacities that are consuming the most compute resources or are experiencing issues such as throttling or query rejections.
 

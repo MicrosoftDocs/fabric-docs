@@ -16,6 +16,11 @@ ai-usage: ai-assisted
 
 Microsoft Fabric is an analytics platform that supports end‑to‑end data workflows, including data ingestion, transformation, real‑time stream processing, analytics, and reporting. It provides integrated experiences such as Data Engineering, Data Factory, Data Science, Real‑Time Intelligence, Data Warehouse, and Databases, which operate over a shared compute and storage model.
 
+> [!NOTE]
+> **Share your feedback as a new Fabric user**
+>
+> Your honest take on what works and what doesn't will directly shape product improvements. [Sign up to participate](https://microsoft.qualtrics.com/jfe/form/SV_1MTHk3TXzSUfEXA) and help drive Fabric's future.
+
 Fabric is delivered as a software‑as‑a‑service (SaaS) platform and uses OneLake as a centralized, logical data lake for storing and accessing data across all workloads. In tandem with OneLake, the OneLake Catalog provides a centralized experience for discovering, exploring, and governing data and analytics artifacts across the tenant. AI capabilities are built into the platform to assist with data preparation, analysis, and development tasks, reducing the need for manual service integration and enabling efficient analysis of large‑scale data.
 
 > [!NOTE]
@@ -76,7 +81,7 @@ Microsoft Fabric offers the following workloads, each customized for a specific 
 
 * **Fabric Data Warehouse** - Fabric Data Warehouse provides industry leading SQL performance and scale. It separates compute from storage, enabling independent scaling of both components. Additionally, it natively stores data in the open Delta Lake format. For more information, see [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 
-* **IQ (preview)** - IQ (preview) is a new workload for unifying business semantics across data, models, and systems. It includes the items of ontology, plan, Fabric Graph, data agent, operations agent, and semantic models. IQ powers consistent decisions, reusable metrics, and context-aware automation across the Fabric platform. For more information, see [What is IQ (preview)?](../iq/overview.md)
+* **Fabric IQ (preview)** - Fabric IQ (preview) is a new workload for unifying business semantics across data, models, and systems. It includes the items of ontology, plan, Fabric Graph, data agent, operations agent, and semantic models. Fabric IQ powers consistent decisions, reusable metrics, and context-aware automation across the Fabric platform. For more information, see [What is Fabric IQ (preview)?](../iq/overview.md)
 
 Fabric helps organizations and individuals analyze their data and create reports, dashboards, and machine learning models. It implements a data mesh architecture. For more information, see [What is a data mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
 

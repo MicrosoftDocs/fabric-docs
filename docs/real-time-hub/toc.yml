@@ -71,6 +71,8 @@ items:
     href: add-source-azure-sql-managed-instance-cdc.md
   - name: Confluent Cloud for Apache Kafka
     href: add-source-confluent-kafka.md
+  - name: Cribl
+    href: add-source-cribl.md
   - name: Fabric capacity overview events
     href: create-streams-fabric-capacity-overview-events.md
   - name: Fabric job events
@@ -81,15 +83,19 @@ items:
     href: create-streams-fabric-workspace-item-events.md
   - name: Google Cloud Pub/Sub
     href: add-source-google-cloud-pub-sub.md
+  - name: HTTP
+    href: add-source-http.md
   - name: Message Queuing Telemetry Transport (MQTT)
     href: add-source-mqtt.md
+  - name: MongoDB CDC
+    href: add-source-mongodb-change-data-capture.md
   - name: MySQL Database CDC
     href: add-source-mysql-database-cdc.md
   - name: PostgreSQL Database CDC
     href: add-source-postgresql-database-cdc.md
   - name: Real-time weather
     href: add-source-real-time-weather.md
-  - name: Sample data source
+  - name: Sample data
     href: add-source-sample-data.md
   - name: Solace PubSub+
     href: add-source-solace-pub-sub.md
@@ -164,7 +170,11 @@ items:
   - name: Consume Business events
     href: business-events/consume-business-events-from-activator.md
   - name: Subscribe permission for Azure and Fabric events
-    href: fabric-events-subscribe-permission.md   
+    href: fabric-events-subscribe-permission.md
+  - name: Private links for Azure and Fabric Events (preview)
+    href: private-links-real-time-events.md
+  - name: Paused event configurations
+    href: fabric-events-paused-state.md
   - name: Events capacity consumption
     href: fabric-events-capacity-consumption.md
   - name: Events delivery guarantees
