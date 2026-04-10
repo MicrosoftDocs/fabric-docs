@@ -98,6 +98,8 @@ Queries time out if they take more than 20 minutes.
 
 ## GQL conformance
 
+For a detailed mapping of supported GQL features against the ISO/IEC 39075:2024 standard, including minimum conformance, optional features by group, and features not yet supported, see [GQL standard conformance](gql-conformance.md).
+
 Graph supports the following query features from the GQL standard:
 
 - FILTER statement
