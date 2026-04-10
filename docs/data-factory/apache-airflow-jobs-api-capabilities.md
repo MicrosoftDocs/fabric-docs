@@ -438,7 +438,7 @@ Both `rootPath` and `continuationToken` are optional. Use `continuationToken` to
 
 ```json
 {
-  "files": [
+  "value": [
     {
       "filePath": "string", // relative path to the file (URL-encoded in subsequent requests)
       "sizeInBytes": integer
@@ -453,15 +453,15 @@ Both `rootPath` and `continuationToken` are optional. Use `continuationToken` to
 
 ```json
 {
-  "files": [
+  "value": [
     {
       "filePath": "dags/my_dag.py",
       "sizeInBytes": 1234
     }
   ],
- "continuationToken": "LDEsMTAwMDAwLDA%3D "
-"continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?continuationToken='LDEsMTAwMDAwLDA%3D'"
-}  
+  "continuationToken": "LDEsMTAwMDAwLDA%3D",
+  "continuationUri": "https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheairflowjobs/{apacheAirflowJobId}/files?continuationToken='LDEsMTAwMDAwLDA%3D'"
+}
 ```
 ## Pool Management APIs
 
@@ -491,7 +491,6 @@ Creates an Apache Airflow pool template.
 {
   "name": "MyAirflowPool",
   "nodeSize": "Small",
-  "shutdownPolicy": "OneHourInactivity",
   "computeScalability": {
     "minNodeCount": 5,
     "maxNodeCount": 8
@@ -639,11 +638,51 @@ Returns the compute configuration for the specified Apache Airflow job environme
 
 ```rest
 {
-  "instancePoolId": "12345678-1234-1234-1234-123456789012",
+  "id": "12345678-1234-1234-1234-123456789012",
+  "name": "MyAirflowPool",
   "nodeSize": "Small",
-  "minNodeCount": 1,
-  "maxNodeCount": 5
+  "shutdownPolicy": "OneHourInactivity",
+  "computeScalability": {
+    "minNodeCount": 1,
+    "maxNodeCount": 5
+  },
+  "apacheAirflowJobVersion": "1.0.0"
 }
+```
+
+### Update Apache Airflow Job Compute (beta)
+
+Updates the compute configuration for the specified Apache Airflow job.
+
+**Request URI**: `PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/compute?beta=true`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>",
+  "Content-Type": "application/json"
+}
+```
+
+**Payload**:
+
+```rest
+{
+  "name": "MyAirflowPool",
+  "nodeSize": "Small",
+  "computeScalability": {
+    "minNodeCount": 1,
+    "maxNodeCount": 5
+  },
+  "apacheAirflowJobVersion": "1.0.0"
+}
+```
+
+**Sample response**:
+
+```rest
+200 OK
 ```
 
 ## Environment APIs
@@ -671,10 +710,7 @@ Returns the Apache Airflow environment for the specified Apache Airflow job.
 
 ```rest
 {
-  "id": "12345678-1234-1234-1234-123456789012",
-  "status": "Running",
-  "workspaceId": "<workspaceId>",
-  "apacheAirflowJobId": "<apacheAirflowJobId>"
+  "status": "Running"
 }
 ```
 
@@ -695,7 +731,7 @@ Starts an Apache Airflow job environment.
 **Sample response**:
 
 ```rest
-200 OK
+202 Accepted
 ```
 
 ### Stop Apache Airflow Job Environment (beta)
@@ -715,7 +751,7 @@ Stops an Apache Airflow job environment.
 **Sample response**:
 
 ```rest
-200 OK
+202 Accepted
 ```
 
 ## Requirements APIs
@@ -727,9 +763,13 @@ For full reference documentation, see [Requirements](/rest/api/fabric/apacheairf
 
 ### Deploy Apache Airflow Job Requirements (beta)
 
-Deploys requirements for an Apache Airflow job environment.
+Deploys requirements for an Apache Airflow job environment. You can either provide the requirements inline in the request body, or reference a file already uploaded to the job by using the `filePath` query parameter.
 
-**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/requirements/deploy?beta=true`
+**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/deployRequirements?beta={beta}&filePath={filePath}`
+
+**Option 1: Provide requirements in the request body**
+
+Omit the `filePath` query parameter and include the requirements directly in the body.
 
 **Headers**:
 
@@ -745,6 +785,20 @@ Deploys requirements for an Apache Airflow job environment.
 ```rest
 {
   "requirements": "pandas==1.5.3\nrequests==2.28.0"
+}
+```
+
+**Option 2: Reference an uploaded file via query parameter**
+
+Set the `filePath` query parameter to point to a file already uploaded to the job. Omit the request body.
+
+**Request URI example**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/deployRequirements?beta=true&filePath=requirements.txt`
+
+**Headers**:
+
+```rest
+{
+  "Authorization": "Bearer <access-token>"
 }
 ```
 
@@ -775,10 +829,14 @@ Returns a list of installed libraries for the specified Apache Airflow job envir
   "value": [
     {
       "name": "pandas",
+      "libraryType": "python",
+      "source": "pypi",
       "version": "1.5.3"
     },
     {
       "name": "requests",
+      "libraryType": "python",
+      "source": "pypi",
       "version": "2.28.0"
     }
   ]
@@ -810,12 +868,18 @@ Returns the environment settings for the specified Apache Airflow job.
 
 ```rest
 {
-  "environmentVariables": {
-    "MY_VARIABLE": "my_value"
-  },
-  "apacheAirflowProperties": {
-    "core-dag_run_conf_overrides_params": "True"
-  }
+  "environmentVariables": [
+    {
+      "name": "MY_VARIABLE",
+      "value": "my_value"
+    }
+  ],
+  "apacheAirflowConfigurationOverrides": [
+    {
+      "name": "core-dag_run_conf_overrides_params",
+      "value": "True"
+    }
+  ]
 }
 ```
 
@@ -838,12 +902,18 @@ Updates the settings for an Apache Airflow job environment.
 
 ```rest
 {
-  "environmentVariables": {
-    "MY_VARIABLE": "my_value"
-  },
-  "apacheAirflowProperties": {
-    "core-dag_run_conf_overrides_params": "True"
-  }
+  "environmentVariables": [
+    {
+      "name": "MY_VARIABLE",
+      "value": "my_value"
+    }
+  ],
+  "apacheAirflowConfigurationOverrides": [
+    {
+      "name": "core-dag_run_conf_overrides_params",
+      "value": "True"
+    }
+  ]
 }
 ```
 
