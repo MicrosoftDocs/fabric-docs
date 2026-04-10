@@ -2,7 +2,7 @@
 title: MCP server in VS Code
 description: Steps to set up an MCP server in VS Code (used by data agent, ontology).
 ms.topic: include
-ms.date: 03/31/2026
+ms.date: 04/10/2026
 ---
 
 ## Setting up the MCP server in VS Code

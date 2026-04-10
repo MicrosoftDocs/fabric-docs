@@ -1,7 +1,7 @@
 ---
 title: Use ontology MCP server
 description: Learn how to consume ontology (preview) as a Model Context Protocol (MCP) server.
-ms.date: 03/31/2026
+ms.date: 04/10/2026
 ms.topic: how-to
 ---
 
@@ -42,7 +42,7 @@ You use this **MCP server URL** in the next section.
 
 ## Enabling Agent Mode
 
-After adding the MCP server, enable **Agent Mode** in VS Code. Agent Mode lets VS Code act as an orchestrator interface, connecting your editor with MCP servers to interact with external tools like the Fabric data agent. To enable it:
+After adding the MCP server, enable **Agent Mode** in VS Code. Agent Mode lets VS Code act as an orchestrator interface, connecting your editor with MCP servers to interact with external tools like ontology. To enable it:
 
 1. In VS Code, go to the **Command Palette** (Ctrl+Shift+P or Cmd+Shift+P).  
 1. Search for **Enable Agent Mode** and select it.
