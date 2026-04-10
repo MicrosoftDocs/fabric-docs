@@ -2,6 +2,8 @@
 title: Create an Azure Blob Storage shortcut
 description: Learn how to create a OneLake shortcut for Azure Blob Storage inside a Microsoft Fabric lakehouse.
 ms.reviewer: eloldag
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 05/16/2025
