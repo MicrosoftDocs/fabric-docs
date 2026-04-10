@@ -1,9 +1,9 @@
 ---
 title: Integrate a third-party engine with OneLake security (preview)
 description: Learn how to integrate your own query engine or application with OneLake security to enforce row-level and column-level access control.
-ms.reviewer: eloldag
-ms.author: aamerril
-author: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.custom:
 ms.date: 03/03/2026

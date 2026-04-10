@@ -1,7 +1,9 @@
 ---
 title: "OneLake table APIs for Delta"
 description: "Overview of the OneLake REST API endpoint for Delta APIs in Microsoft Fabric."
-ms.reviewer: preshah
+ms.reviewer: preshah # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.date: 10/23/2025
 ms.topic: concept-article
 #customer intent: As a OneLake user, I want to learn what the Delta are, what operations they support, and any current limitations or considerations, so that I can understand how to interact with my Fabric data using the Delta API standard.

@@ -5,8 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 07/22/2024
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
@@ -26,14 +26,16 @@ Admins can specify internal URLs to override the destination of links on the Pow
 
 * **Workspace type upgrades**. Users with a Fabric Trial workspace type can be presented with the opportunity to upgrade to Power BI Pro (Pro) or Power BI Premium Per-User (PPU). Users with a Fabric Trial or Power BI Pro workspace type can be presented with the opportunity to upgrade their account to a Power BI Premium Per-User (PPU) workspace type. If you specify an internal URL for **Licensing requests**, you redirect users to an internal request and purchase flow and prevent self-service purchase. You might want to prevent users from buying licenses, but are okay with letting users start a Power BI individual trial or a trial of a Fabric capacity. For this scenario, see [Users can try Microsoft Fabric paid features](#users-can-try-microsoft-fabric-paid-features) to separate the buy and try experiences.
 
-* **Get help**. To take users to an internal help desk from the help menu, instead of to [Microsoft Fabric In-Producy Support](https://go.microsoft.com/fwlink/?linkid=2297819), set a custom URL for **Help Desk**.
+* **Get help**. To take users to an internal help desk from the help menu, instead of to [Microsoft Fabric In-product Support](https://go.microsoft.com/fwlink/?linkid=2297819), set a custom URL for **Help Desk**.
 
 > [!NOTE]
 > The [Fabric In-product Support center](https://app.powerbi.com/admin-portal/supportCenter?experience=power-bi) and the option to open support cases to Microsoft ([Get Microsoft Help](https://go.microsoft.com/fwlink/?linkid=2297819)) will always be available for Admins.
 
-## Receive email notifications for service outages or incidents
+## Receive email and Teams notifications for service outages or incidents
 
-If this tenant is impacted by a service outage or incident, mail-enabled security groups receive email notifications. Learn more about [Service interruption notifications](../admin/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents).
+If this tenant is impacted by a service outage or incident, mail-enabled security groups receive email and Teams notifications.
+
+Learn more about [Service interruption notifications](../admin/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents).
 
 ## Users can try Microsoft Fabric paid features
 
@@ -82,3 +84,4 @@ As with other tenant settings, you can choose who the **custom message** applies
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
+* [Service interruption notifications](service-interruption-notifications.md)

@@ -76,6 +76,7 @@ The following operations are available in the audit logs.
 | Commit Notebook | :::no-loc text="CommitNotebook"::: |   |
 | Commit To Git | :::no-loc text="CommitToGit"::: | Commit To Git is an artifact activity, which is generated when users commit artifact to Git.  |
 | Completed an artifact access request action in Power BI | :::no-loc text="ArtifactAccessRequest"::: | Tracks the notification sent to approvers when a request is created or denied.   |
+| Compute item sizes for workspace | :::no-loc text="ComputeItemsSize"::: | Calculates the amount of data stored in each item for a workspace, to display in the item size report |
 | Connect To Git | :::no-loc text="ConnectToGit"::: | Connect To Git is a workspace activity, which is generated when users connect the workspace to Git.  |
 | Connected to Power BI semantic model from external app | :::no-loc text="ConnectFromExternalApplication"::: |   |
 | Connected to a Warehouse or SQL analytics endpoint from an external app | :::no-loc text="ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp"::: | Previously named *Connected to a warehouse or default warehouse from an external app* (Operation name: :::no-loc text="*ConnectWarehouseAndDefaultWarehouseFromExternalApp*":::)  |
@@ -343,6 +344,7 @@ The following operations are available in the audit logs.
 | Get Goal Value Categories | :::no-loc text="GetGoalValueCategories"::: |   |
 | Get Groups As Admin | :::no-loc text="GetGroupsAsAdmin"::: | Get Groups as Admin is a workspace activity, which is generated on retrieving list of Power BI workspaces using an API call.  |
 | Get Hierarchy Goal Values | :::no-loc text="GetHierarchyGoalValues"::: |   |
+| Get item sizes for workspace | :::no-loc text="GetItemsSize"::: | Retrieves the computed sizes of all items in the workspace. Does not refresh the data |
 | Get Lakehouse Table Details | :::no-loc text="GetLakehouseTableDetails"::: |   |
 | Get MetricSet Metric Endpoint | :::no-loc text="GetMetricSetMetric"::: | Read metric in a metricset endpoint |
 | Get Model Diagram Layouts | :::no-loc text="GetPowerBIDataModelDiagramLayouts"::: | Get diagram layouts when open data model in web model view.  |

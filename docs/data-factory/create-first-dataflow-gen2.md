@@ -24,6 +24,9 @@ The following prerequisites are required before you start:
 
 In this section, you're creating your first dataflow.
 
+> [!NOTE]
+> As of April 2026, all new Dataflow Gen2 items are created with CI/CD and Git integration support by default. The option to create Dataflow Gen2 items without CI/CD support is no longer available. Existing non-CI/CD dataflows continue to work.
+
 1. Navigate to your Microsoft Fabric workspace by navigating to the [Microsoft Fabric portal](https://msit.powerbi.com/home?experience=fabric-developer), select **Workspaces** from the left-hand navigation pane, and then select your workspace from the list.
 
 1. Select **+New item**, and then select **Dataflow Gen2**.

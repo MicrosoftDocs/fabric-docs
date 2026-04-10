@@ -54,6 +54,11 @@
             "source_path_from_root": "/docs/admin/fabric-command-line-interface.md",
             "redirect_url": "/rest/api/fabric/articles/fabric-command-line-interface",
             "redirect_document_id": false
+        },                                
+        {
+            "source_path_from_root": "/docs/admin/service-admin-portal-quick-measure-suggestions-settings.md",
+            "redirect_url": "/rest/api/fabric/articles/tenant-settings-index",
+            "redirect_document_id": false
         }                                
     ]
 }

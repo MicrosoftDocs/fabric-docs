@@ -11,9 +11,13 @@ This article explains how Activator ingests data from KQL Querysets. Understandi
 
 ## How it works
 
-KQL Querysets are a **query data source** for Activator. Activator runs a KQL query that you define against an Eventhouse KQL database on a schedule. Each time the query returns results, Activator fires an alert for every row returned. This is known as the **on each event** alert type, and it's the only alert type supported for the KQL Queryset integration.
+KQL Querysets are a **query data source** for Activator. Activator runs a KQL query that you define against an Eventhouse KQL database on a schedule. Each time the query returns results, Activator ingests an event for each row in the query.
 
-Unlike Power BI or Real-Time Dashboard data sources, where Activator derives its query from an existing visual or dashboard tile, with a KQL Queryset you write the query yourself. Because Activator doesn't support setting conditions or grouping on the query results, you should build your alert logic directly into the KQL query.
+When you select **Set alert** in a KQL Queryset, a side pane opens where you configure your alert. Within this side pane, the only supported alert type is **on each event**. When you use this alert type, Activator alerts you for every row the query returns on every scheduled run. If you wish to build alerts with grouping logic, you can edit the alert within the Activator item after creating it. The following sections describe these two methods.
+
+### Method 1: On each event (default)
+
+With this method, you build your alert condition and time window into the KQL query itself. Activator fires an alert for every row returned on every scheduled run.
 
 For example, consider the following query that alerts whenever a sensor reading has a temperature greater than zero:
 
@@ -28,7 +32,29 @@ In this query:
 - The `where Temperature > 0` clause defines the **alert condition**. Because Activator fires an alert for every row returned, filtering in the query ensures you only get alerted for the events you care about.
 - The `where Timestamp > ago(5m)` clause limits results to the **last 5 minutes**. Because Activator runs the query on a schedule (every 5 minutes by default), this time window prevents duplicate alerts for events that were already processed in a previous run.
 
-This pattern — embedding your alert logic and time windowing in the KQL query — is the recommended approach for using KQL Querysets with Activator.
+This pattern — embedding your alert logic and time windowing in the KQL query — is the simplest approach for using KQL Querysets with Activator.
+
+> [!NOTE]
+> With this method, Activator alerts you every time the query runs and returns matching rows. Using the example, if the temperature stays above zero for an extended period, you receive an alert every 5 minutes for the duration. Depending on your scenario, this might create an undesirable number of alerts.
+
+### Method 2: Stateful alerting with object grouping
+
+If you want to be alerted only when a condition changes state — for example, alerted once when the temperature rises above zero rather than continuously while it remains above zero — you can use stateful trigger logic by opening the Activator item directly.
+
+To set up stateful alerting:
+
+1. Create an alert from the KQL Queryset using **Set alert** as usual. This creates a rule in an Activator item. Your KQL query should not include the alert condition in this case, because Activator handles the condition evaluation. You still need the time window clause. For the sensor example, the query would be:
+
+   ```kql
+   SensorReadings
+   | where Timestamp > ago(5m)
+   ```
+
+1. Open the Activator item that contains the rule.
+1. [Assign the data to an object](../activator-assign-data-objects.md). Using the sensor example, create a **Sensor** object and key it by **SensorID**.
+1. Create a rule on the object using a **Numeric Change** condition — for example, *Temperature increases above 0*. A **Numeric Change** condition activates only when the value transitions from not meeting the condition to meeting it. For more information, see [Detection conditions](../activator-detection-conditions.md).
+
+With this approach, Activator tracks the state of each object instance (each sensor, in this example) and alerts you only once when the temperature first rises above zero, instead of alerting continuously while the temperature is greater than zero.
 
 ### Activator queries the Eventhouse directly
 

@@ -1,7 +1,9 @@
 ---
 title: OneLake diagnostics
 description: OneLake diagnostics makes it simple to answer "who accessed what, when, and how" across your Fabric workspaces
-ms.reviewer: tompeplow
+ms.reviewer: tompeplow # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: overview
 ms.date: 01/12/2026
 #customer intent: As a data steward or workspace admin, I want to monitor and analyze how data is accessed across Fabric workspaces so that I can support governance, compliance, and operational insight using OneLake diagnostics.
