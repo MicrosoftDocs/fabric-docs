@@ -144,19 +144,19 @@ This is the most secure authentication and is highly recommended. Follow these s
 
 1. Sign in to your Azure SQL database and run the following SQL commands. Replace any values in <> with those specific to your eventstream and SQL environment.
 
-```sql
-CREATE DATABASE SCOPED CREDENTIAL <CredentialName>
-WITH IDENTITY = 'Managed Identity'
-
-EXEC sys.sp_create_event_stream_group
-    @stream_group_name = N'<ChangeEventStreamGroupName>',
-    @destination_type = N'AzureEventHubsAmqp',
-    @destination_location = N'<EventHubNamespaceEndpoint>/<EventHubName>', -- Event hub namespace endpoint should NOT contain the port number: 9093
-    @destination_credential = <CredentialName>,
-    @max_message_size_kb = <MaxMessageSize>, -- 128, 256, 1024
-    @partition_key_scheme = N'<PartitionKeyScheme>', -- Possible options: N'None' (partition is chosen in “round robin”, N'StreamGroup', N'Table' (partitioning by table), N'Column'. If nothing is supplied, the default is None
-    @encoding = N'JSON'
-```
+    ```sql
+    CREATE DATABASE SCOPED CREDENTIAL <CredentialName>
+    WITH IDENTITY = 'Managed Identity'
+    
+    EXEC sys.sp_create_event_stream_group
+        @stream_group_name = N'<ChangeEventStreamGroupName>',
+        @destination_type = N'AzureEventHubsAmqp',
+        @destination_location = N'<EventHubNamespaceEndpoint>/<EventHubName>', -- Event hub namespace endpoint should NOT contain the port number: 9093
+        @destination_credential = <CredentialName>,
+        @max_message_size_kb = <MaxMessageSize>, -- 128, 256, 1024
+        @partition_key_scheme = N'<PartitionKeyScheme>', -- Possible options: N'None' (partition is chosen in “round robin”, N'StreamGroup', N'Table' (partitioning by     table), N'Column'. If nothing is supplied, the default is None
+        @encoding = N'JSON'
+    ```
 
 #### SAS token
 
@@ -164,38 +164,38 @@ If Microsoft Entra authentication isn't available, use SAS token authentication.
 
 1. Generate SAS token with your eventstream’s endpoint information with script. Below is the example with PowerShell. If you’d like to use script in other languages, refer to [Generate a Shared Access Signature token](/azure/event-hubs/authenticate-shared-access-signature). Replace the values in <> with the values provided by your eventstream’s endpoint.
 
-```powershell
-[Reflection.Assembly]::LoadWithPartialName("System.Web") | out-null
-$URI="<EventHubNamespaceEndpoint>/<EventHubName>/"
-$Access_Policy_Name="<SharedAccessKeyName>"
-$Access_Policy_Key="<PrimaryOrSecondaryKey>"
-#Token expires now+ 86400(1 day)
-$Expires=([DateTimeOffset]::Now.ToUnixTimeSeconds())+86400
-$SignatureString=[System.Web.HttpUtility]::UrlEncode($URI)+ "`n" + [string]$Expires
-$HMAC = New-Object System.Security.Cryptography.HMACSHA256
-$HMAC.key = [Text.Encoding]::ASCII.GetBytes($Access_Policy_Key)
-$Signature = $HMAC.ComputeHash([Text.Encoding]::ASCII.GetBytes($SignatureString))
-$Signature = [Convert]::ToBase64String($Signature)
-$SASToken = "SharedAccessSignature sr=" + [System.Web.HttpUtility]::UrlEncode($URI) + "&sig=" + [System.Web.HttpUtility]::UrlEncode($Signature) + "&se=" + $Expires + "&skn=" + $Access_Policy_Name
-$SASToken
-```
+    ```powershell
+    [Reflection.Assembly]::LoadWithPartialName("System.Web") | out-null
+    $URI="<EventHubNamespaceEndpoint>/<EventHubName>/"
+    $Access_Policy_Name="<SharedAccessKeyName>"
+    $Access_Policy_Key="<PrimaryOrSecondaryKey>"
+    #Token expires now+ 86400(1 day)
+    $Expires=([DateTimeOffset]::Now.ToUnixTimeSeconds())+86400
+    $SignatureString=[System.Web.HttpUtility]::UrlEncode($URI)+ "`n" +   [string]  $Expires
+    $HMAC = New-Object System.Security.Cryptography.HMACSHA256
+    $HMAC.key = [Text.Encoding]::ASCII.GetBytes($Access_Policy_Key)
+    $Signature = $HMAC.ComputeHash([Text.Encoding]::ASCII.GetBytes    ($SignatureString))
+    $Signature = [Convert]::ToBase64String($Signature)
+    $SASToken = "SharedAccessSignature sr=" + [System.Web.HttpUtility]    ::UrlEncode($URI) + "&sig=" + [System.Web.HttpUtility]::UrlEncode    ($Signature) + "&se=" + $Expires + "&skn=" + $Access_Policy_Name
+    $SASToken
+    ```
 
 1. Sign in to your Azure SQL database and run the following SQL commands. Replace any values in <> with those specific to your eventstream and SQL environment
 
-```sql
-CREATE DATABASE SCOPED CREDENTIAL <CredentialName>
-WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-SECRET = '<Generated SAS Token>' -- Be sure to copy the entire token from previous step. The SAS token starts with "SharedAccessSignature sr="
-
-EXEC sys.sp_create_event_stream_group
-    @stream_group_name = N'<ChangeEventStreamGroupName>',
-    @destination_type = N'AzureEventHubsAmqp',
-    @destination_location = N'<EventHubNamespaceEndpoint>/<EventHubName>', -- Event hub namespace endpoint should NOT contain the port number: 9093
-    @destination_credential = <CredentialName>,
-    @max_message_size_kb = <MaxMessageSize>, -- 128, 256, 1024
-    @partition_key_scheme = N'<PartitionKeyScheme>', -- Possible options: N'None' (partition is chosen in “round robin”, N'StreamGroup', N'Table' (partitioning by table), N'Column'. If nothing is supplied, the default is None
-    @encoding = N'JSON'
-```
+    ```sql
+    CREATE DATABASE SCOPED CREDENTIAL <CredentialName>
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
+    SECRET = '<Generated SAS Token>' -- Be sure to copy the entire token   from   previous step. The SAS token starts with "SharedAccessSignature   sr="
+    
+    EXEC sys.sp_create_event_stream_group
+        @stream_group_name = N'<ChangeEventStreamGroupName>',
+        @destination_type = N'AzureEventHubsAmqp',
+        @destination_location = N'<EventHubNamespaceEndpoint>/  <EventHubName>',   -- Event hub namespace endpoint should NOT   contain the port number:   9093
+        @destination_credential = <CredentialName>,
+        @max_message_size_kb = <MaxMessageSize>, -- 128, 256, 1024
+        @partition_key_scheme = N'<PartitionKeyScheme>', -- Possible   options:   N'None' (partition is chosen in “round robin”,   N'StreamGroup',   N'Table' (partitioning by table), N'Column'. If   nothing is supplied,   the default is None
+        @encoding = N'JSON'
+    ```
 
 ### 5. Add one or more tables to the event streaming group
 
@@ -234,25 +234,25 @@ In your eventstream’s edit mode, add a ‘**SQL operator**’ to extract the d
 
 Open SQL editor in SQL operator, and type the SQL language as below:
 
-```sql
-WITH PurchaseOrders AS
-(
-    SELECT json_parse(data).eventrow.[current] AS neworders
-    FROM [eventstream-sqlces-stream]
-    WHERE operation = 'INS'
-)
-SELECT
-    json_parse(neworders).ID AS ID,
-    json_parse(neworders).Name AS Name,
-    json_parse(neworders).PurchaseDate AS PurchaseDate,
-    json_parse(neworders).Product AS Product,
-    json_parse(neworders).ProductCategory AS ProductCategory,
-    json_parse(neworders).OrderValue AS OrderValue,
-    json_parse(neworders).LoyaltyProgramMember AS LoyaltyProgramMember,
-    json_parse(neworders).NPSScore AS NPSScore
-INTO [DerivedStream]
-FROM [PurchaseOrders]
-```
+    ```sql
+    WITH PurchaseOrders AS
+    (
+        SELECT json_parse(data).eventrow.[current] AS neworders
+        FROM [eventstream-sqlces-stream]
+        WHERE operation = 'INS'
+    )
+    SELECT
+        json_parse(neworders).ID AS ID,
+        json_parse(neworders).Name AS Name,
+        json_parse(neworders).PurchaseDate AS PurchaseDate,
+        json_parse(neworders).Product AS Product,
+        json_parse(neworders).ProductCategory AS ProductCategory,
+        json_parse(neworders).OrderValue AS OrderValue,
+        json_parse(neworders).LoyaltyProgramMember AS LoyaltyProgramMember,
+        json_parse(neworders).NPSScore AS NPSScore
+    INTO [DerivedStream]
+    FROM [PurchaseOrders]
+    ```
 
 Use query test to preview this SQL query's output as below.
 
