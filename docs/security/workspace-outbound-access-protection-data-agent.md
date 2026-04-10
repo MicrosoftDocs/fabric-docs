@@ -1,70 +1,42 @@
 ---
-title: Workspace outbound access protection for data agents
-description: "This article describes workspace outbound access protection for data agents."
-author: msmimart
-ms.author: mimart
-ms.service: fabric
-ms.topic: overview #Don't change
-ms.date: 12/01/2025
-ai-usage: ai-assisted
-
-#customer intent: As a data scientist, I want to control and secure outbound network access from my Fabric workspace data agents so that I can prevent unauthorized data exfiltration and comply with organizational security policies.
-
+title: Manage outbound access from Data Agent with outbound access protection (preview)
+description: Outbound access protection for Data Agent by limiting outbound requests. 
+ms.reviewer: 
+ms.author: mayurjain
+ms.topic: concept-article
+ms.custom:
+ms.date: 02/01/2026
+#customer intent: As a data admin, I want to learn how to protect my data by limiting outbound requests. As a data engineer, I want to learn how to work with my data, even when outbound access protection is turned on. 
 ---
 
-# Workspace outbound access protection for data agents
+# Workspace outbound access protection for Data Agent (preview)
 
-Workspace outbound access protection enables precise control over external communications from Microsoft Fabric workspaces. When this feature is enabled, [data agent workspace items](#supported-data-agent-item-types), such as data science models and AI agents, are restricted from making outbound connections to public endpoints unless access is explicitly granted through approved managed private endpoints. This capability is crucial for organizations in secure or regulated environments, as it helps prevent data exfiltration and enforces organizational network boundaries.
 
-## Understanding outbound access protection with data agents
+## Understanding outbound access protection
 
-When outbound access protection is enabled, all outbound connections from the workspace are blocked by default. Workspace admins can then create exceptions to grant access only to approved destinations by configuring managed private endpoints:
+Outbound access protection helps ensure that data is shared securely within your network security perimeter. For example, data exfiltration protection solutions use outbound access protection controls to limit a malicious actor's ability to move large amounts of data to an untrusted external location. Outbound protections only limit requests that originate in the workspace and communicate with a different workspace or location. 
 
-:::image type="content" source="media/workspace-outbound-access-protection-data-science/workspace-outbound-access-protection-data-agent.png" lightbox="media/workspace-outbound-access-protection-data-science/workspace-outbound-access-protection-data-agent.png" alt-text="Diagram of workspace outbound access protection in a data agent scenario." border="false":::
+:::image type="content" source="media/workspace-outbound-access-protection-data-science/workspace-outbound-access-protection-data-agent.png" lightbox="media/workspace-outbound-access-protection-data-science/workspace-outbound-access-protection-data-agent.png" alt-text="Diagram of workspace outbound access protection in data agent." border="false":::
 
-## Configuring outbound access protection for data agents
+To learn more about managing outbound access protection, see [Workspace outbound access protection](../security/workspace-outbound-access-protection-overview.md).
 
-You can only create an allow list using managed private endpoints; data connection rules aren't supported for data agent workloads. To configure outbound access protection for data agents:
+## When does Data Agent make outbound requests?  
+  
+An outbound request is defined as any request made from within the workspace towards a location outside the workspace. Only the directionality of the call matters - both reads and writes to external locations can exfiltrate sensitive information to untrusted locations. Data Agent initiates an outbound request when adding or querying a data source. 
 
-1. Follow the steps to [enable outbound access protection](workspace-outbound-access-protection-set-up.md). 
+Outbound access protection doesn't restrict Data Agent calls that target resources within the same workspace, because those calls don't cross the workspace boundary.
 
-1. After enabling outbound access protection, you can set up [managed private endpoints](workspace-outbound-access-protection-allow-list-endpoint.md) to allow outbound access to other workspaces or external resources as needed.
 
-Once configured, data agent items can connect only to the approved managed private endpoints, while all other outbound connections remain blocked.
+## Configure outbound access protection
 
-## Supported data agent item types
+To configure outbound access protection, follow the steps in [Set up workspace outbound access protection](workspace-outbound-access-protection-set-up.md). After enabling outbound access protection, you can configure data connection rules to allow outbound access to your data sources or AI search.
 
-The following data agent item types are supported with outbound access protection: 
+You can permit your Fabric workspace to make outbound requests to a different Fabric workspace by [creating a data connection rule](../security/workspace-outbound-access-protection-allow-list-connector.md) via connectors for supported data sources. When you allow list the target workspace, outbound requests are permitted from the source workspace to the target workspace even when outbound access is restricted.
 
-- AI models
-- Machine learning models
-- Data science experiments
-- Model endpoints
-- Copilot agents  
+## Considerations and Limitations
 
-The following sections explain how outbound access protection affects specific data agent item types in your workspace.
+- Outbound access protection does not apply to the Azure OpenAI connection used by the Fabric data agent. Data agent relies on a Microsoft‑managed Azure OpenAI service for natural language understanding and orchestration, and this service dependency is not treated as a configurable external data connection within the workspace outbound access protection model.
+- Outbound access protection is currently not supported for Azure AI Search
+- If a connector for a specific data source is not supported, connection to that data source outside the workspace will be blocked when outbound access protection is enabled.
+- For other limitations, refer to [Workspace outbound access protection overview - Microsoft Fabric](/fabric/security/workspace-outbound-access-protection-overview#considerations-and-limitations).
 
-### AI models and machine learning models
-
-When outbound access protection is enabled on a workspace, AI models and machine learning models can reference a destination only if a managed private endpoint is set up from the workspace to the destination.
-
-| Source | Destination | Is a managed private endpoint set up? | Can the model connect to the destination? |
-|:--|:--|:--|:--|
-| AI model in workspace with outbound access protection enabled | External API endpoint | Yes | Yes |
-| AI model in workspace with outbound access protection enabled | External API endpoint | No | No |
-| AI model in workspace with outbound access protection enabled | Another workspace in the same tenant | Yes (plus Private Link service enabled on destination workspace) | Yes |
-| AI model in workspace with outbound access protection enabled | Another workspace in the same tenant | No | No |
-
-### Model endpoints
-
-Model endpoints in workspaces with outbound access protection enabled can only access external resources through approved managed private endpoints.
-
-### Copilot agents
-
-Copilot agents require specific managed private endpoints to connect to Microsoft services and approved external resources for their functionality.
-
-## Next steps
-
-- [Enable outbound access protection](workspace-outbound-access-protection-set-up.md) 
-- [Create an allow list using managed private endpoints](workspace-outbound-access-protection-allow-list-endpoint.md)
-- [Overview of workspace outbound access protection](workspace-outbound-access-protection-overview.md)
