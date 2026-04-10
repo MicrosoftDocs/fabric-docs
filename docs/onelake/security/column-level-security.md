@@ -1,7 +1,9 @@
 ---
 title: Column-level security
 description: Learn how to use OneLake security (preview) to enforce access permissions at the column level in OneLake.
-ms.reviewer: aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 09/05/2025
 #customer intent: As a [], I want to learn how to [] so that I can [].

@@ -1,7 +1,9 @@
 ---
 title: What is a OneLake shared access signature (SAS)
 description: Learn how OneLake SAS can provide short-term, delegated access to OneLake
-ms.reviewer: mabasile
+ms.reviewer: mabasile # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article 
 ms.date: 04/10/2025
 
