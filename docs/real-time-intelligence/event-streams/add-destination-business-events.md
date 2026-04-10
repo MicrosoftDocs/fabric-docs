@@ -75,6 +75,9 @@ Add a business events destination to your eventstream by following these steps:�
 
         :::image type="content" source="media/add-destination-business-events/map-schema-source-field-name-dropdown.png" alt-text="Screenshot of the Map schema dialog with the source field name drop-down list expanded, showing available fields like BikepointID, Street, Neighborhood, Latitude, and Longitude." lightbox="media/add-destination-business-events/map-schema-source-field-name-dropdown.png":::
 
+        > [!NOTE]
+        > You can add a **Manage field** operator to apply advanced field transformations such as built-in functions, when no suitable source field is available to map to the destination field in the mapper wizard
+
 1.  After selecting **Finish**, a **Mapper** node appears on the canvas, indicating that schema mapping is defined. 
 
     :::image type="content" source="media/add-destination-business-events/mapper-node-canvas-schema-mapping.png" alt-text="Screenshot of the eventstream canvas showing Bicycles source, businessEvents node, Mapper node with field mappings, and Business events destination." lightbox="media/add-destination-business-events/mapper-node-canvas-schema-mapping.png":::
