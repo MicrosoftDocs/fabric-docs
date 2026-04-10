@@ -1,7 +1,9 @@
 ---
 title: Create shortcuts to on-premises data
 description: Learn how to install and use a Fabric on-premises data gateway to create OneLake shortcuts to on-premises or network-restricted data sources.
-ms.reviewer: mahi
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 05/21/2024
