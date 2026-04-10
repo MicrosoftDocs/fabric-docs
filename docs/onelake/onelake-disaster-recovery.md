@@ -1,7 +1,9 @@
 ---
 title: OneLake Disaster Recovery and Data Protection
 description: Get information on how to plan for disaster recovery and ensure OneLake data protection in Microsoft Fabric.
-ms.reviewer: eloldag
+ms.reviewer: eloldag # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 3/11/2026
 #customer intent: As a OneLake user, I want to understand disaster recovery and data protection options so that I can help ensure the safety and availability of my data.

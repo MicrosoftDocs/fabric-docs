@@ -1,7 +1,9 @@
 ---
 title: Create a OneDrive or SharePoint shortcut
 description: Learn how to create a OneLake shortcut for OneDrive or SharePoint inside a Microsoft Fabric lakehouse.
-ms.reviewer: shinarayanan
+ms.reviewer: shinarayanan # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 02/10/2026
@@ -99,32 +101,13 @@ You must be a workspace admin to be able to create a workspace identity. The wor
 
 1. Still in the Azure portal, go to **App registrations** > **All applications**, then search for and select your workspace name.
 
-1. In your workspace application, go to **Manage** > **API permissions** and add the following API permission: **Provide "Sites.Selected" SharePoint Online and Graph API Permissions**. Grant your consent if required.
+1. In your workspace application, go to **Manage** > **API permissions** and add the following API permission:
 
-#### Configure app permissions on your SharePoint site
+   * API: **SharePoint**
+   * Type of permissions: **Application permissions**
+   * Permission: **Sites > Sites.Selected**
 
-1. Open the **App Permissions** page by navigating to the following link in your browser: `httpsL//<YOUR_SITE_URL>/_layouts/15/appinv.aspx`. For example:
-
-   * For a default tenant site: `https://microsoft.sharepoint.com/_layouts/15/appinv.aspx`
-   * For a specific site, for example **Contoso**: `https://microosft.sharepoint.com/sites/Contoso/_layouts/15/appinv.aspx`
-
-1. Enter the application ID that you copied from the previous section and then select **Lookup**.
-
-1. Provide the following information:
-
-   * **Title**: the name of your application
-   * **App Domain**: your application's domain ID
-   * **Permission**: the following HTML, replacing `<YOUR_SITE_URL>` with your own value
-
-     ```html
-     <AppPermissionRequests AllowAppOnlyPolicy="true"> 
-       <AppPermissionRequest Scope="https://<YOUR_SITE_URL>" Right="Read" /> 
-     </AppPermissionRequests>
-     ```
-
-1. Select **Create** to set up the app permission. When prompted, agree to trust the app to apply the new permissions.
-
-#### Grant permissions to your SharePoint site
+1. Select **Add permissions**. Grant consent if required.
 
 1. Open a PowerShell command window or start a cloud shell session in the Azure portal.
 

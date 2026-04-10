@@ -4,6 +4,10 @@ description: Learn how to set workspace variable to shortcuts properties
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 04/02/2026
+ms.reviewer:  # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
+
 #customer intent: As a data engineer, I want to learn how to integrate shortcuts into my CI/CD pipeline.
 ---
 
