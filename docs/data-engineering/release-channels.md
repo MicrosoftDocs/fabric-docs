@@ -24,6 +24,8 @@ Each Spark runtime has at least two public release channels:
 
 Once the designated validation window ends, the early access release channel automatically gets promoted to become the new default, and a fresh early access channel is introduced with another set of new changes — continuing the cycle. This model gives you a predictable testing window before changes become default for everyone.
 
+    :::image type="content" source="media\mrs\release-channel-lifecycle.jpg" alt-text="Screenshot showing properties showing Fabric Runtime - Release Channel lifecycle." lightbox="media\mrs\release-channel-lifecycle.jpg":::
+
 > [!TIP]
 > Use the early access channel to validate production workloads before updates reach the default channel. 
 
