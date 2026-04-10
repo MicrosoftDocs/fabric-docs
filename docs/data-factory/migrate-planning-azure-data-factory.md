@@ -46,7 +46,7 @@ Migration paths depend on your ADF assets and their feature parity. Options incl
 
 Mounting in Fabric is achieved via the Azure Data Factory item type: [Bring your Azure Data Factory to Fabric](/fabric/data-factory/migrate-pipelines-azure-data-factory-item).
 
-## Upgrade Azure Data Factory pipelines using the built‑in migration experience
+## Upgrade Azure Data Factory pipelines using the built in migration experience
 
 Fabric provides a built‑in, assessment‑first upgrade experience that lets you evaluate and migrate Azure Data Factory pipelines directly through the Azure Data Factory and Fabric user experiences—without scripts or custom tooling.
 This experience helps you:
