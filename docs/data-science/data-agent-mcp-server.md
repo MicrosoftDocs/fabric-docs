@@ -42,7 +42,7 @@ You can also download the **mcp.json** file from this tab. Use this file to conf
 
 [!INCLUDE [mcp-server-vs-code](./includes/mcp-server-vs-code.md)]
 
-:::image type="content" source="../media/data-agent-mcp-server/data-agent-mcp-json.png" alt-text="Screenshot showing the MCP file of the data agent." lightbox="../media/data-agent-mcp-server/data-agent-mcp-json.png":::
+:::image type="content" source="./media/data-agent-mcp-server/data-agent-mcp-json.png" alt-text="Screenshot showing the MCP file of the data agent." lightbox="./media/data-agent-mcp-server/data-agent-mcp-json.png":::
 
 ## Enabling Agent Mode
 
@@ -52,7 +52,7 @@ After adding the MCP server, enable **Agent Mode** in VS Code. Agent Mode lets V
 1. Search for **Enable Agent Mode** and select it.  
 1. Confirm any prompts to activate the mode.  
 
-    :::image type="content" source="media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png" alt-text="Screenshot showing data agent in VS Code in agent mode." lightbox="media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png":::
+    :::image type="content" source="./media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png" alt-text="Screenshot showing data agent in VS Code in agent mode." lightbox="./media/data-agent-mcp-server/data-agent-vs-code-agent-mode.png":::
 
 When Agent Mode is active, select an **orchestrator** to handle your queries. Available orchestrators in public preview include **GPT-5, GPT-4.1, Claude Sonnet 4.5, Gemini 2.5 pro**, and many more. The orchestrator manages the flow of information between your queries in VS Code and the Fabric data agent MCP server.
 
