@@ -18,8 +18,9 @@ Plan items aren’t supported in workspaces or tenants that use private links.
 
 ## Semantic model
 
-* You must have **Admin** or **Build** permission on the semantic model.
+* Users must have **Admin** or **Build** permission on the semantic model.
 * Semantic models in Direct Lake mode require [additional configuration](planning-how-to-create-semantic-model-connection.md#connect-to-a-direct-lake-semantic-model).
+* Only OAuth-based semantic model connections are supported. 
 * Semantic models in **My workspace** aren't supported.
 
 ## Browser support
