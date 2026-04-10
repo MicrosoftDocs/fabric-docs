@@ -61,6 +61,21 @@ The following table summarizes the configuration required for each cross-workspa
 | Notebook (Workspace A) | ML Experiment / Model (Workspace B) | No managed private endpoint is set up from Workspace A to Workspace B. | No |
 | Local machine, Azure Databricks, or Azure Machine Learning | ML Experiment / Model (Workspace A) | None. Logging from outside Fabric is an inbound connection and isn't affected by outbound access protection. | Yes |
 
+### Log within the same workspace (Workspace A to Workspace A)
+
+When logging to the same workspace, you don't need to manually set the `MLFLOW_TRACKING_URI` environment variable — it points to your current workspace by default. However, if you explicitly set `MLFLOW_TRACKING_URI`, you must use the private endpoint URL, similar to cross-workspace scenarios.
+
+```python
+import os
+from fabric.analytics.environment.context import FabricContext, InternalContext
+
+context = FabricContext(workspace_id=current_workspace_id, internal_context=InternalContext(is_wspl_enabled=True))
+print(context.pbi_shared_host)
+# You need to set up and use this private endpoint if your current workspace has OAP enabled
+
+os.environ["MLFLOW_TRACKING_URI"] = f"sds://{context.pbi_shared_host}/v1/workspaces/{current_workspace_id}/mlflow"
+```
+
 > [!NOTE]
 > The standard `%pip install` command requires outbound internet access, which is blocked in OAP-enabled workspaces. To install the `synapseml-mlflow` package, download it from a non-OAP environment, upload the files to the lakehouse, and install from the local path. For detailed steps, see [Install the package in an OAP-enabled workspace](../data-science/machine-learning-cross-workspace-logging.md#install-the-package-in-an-oap-enabled-workspace).
 

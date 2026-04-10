@@ -5,8 +5,8 @@ author: msmimart
 ms.author: mimart
 ms.custom:
   - tenant-setting
-ms.topic: how-to
-ms.date: 03/02/2026
+ms.topic: concept-article
+ms.date: 04/08/2026
 LocalizationGroup: Administration
 ---
 
@@ -20,20 +20,13 @@ Users in the organization can create and use scorecards in Power BI.
 
 To learn more, see [Get started with scorecards in Power BI](/power-bi/create-reports/service-goals-introduction).
 
-## Scorecards settings
+Turning on this setting shows the Scorecards hub and allows users to create, browse, and consume scorecards and goals.
 
-To turn on the Scorecards hub for your organization, the Power BI or Fabric tenant admin should turn on the tenant admin setting for Scorecards in your organization. Turning on this setting shows the Scorecards hub, allowing users to create, browse, and consume scorecards and goals.
+Use the Scorecards tenant setting in Fabric tenant settings to choose whether the feature is enabled and to define which users or groups can access it.
 
-To turn on the Scorecards setting:
-
-1. Make sure you are in Fabric tenant settings and use the Search feature to find the Scorecards settings.
-1. Toggle the **Users in the organization can create and use Scorecards** switch to **Enabled**.
-
-   :::image type="content" source="media/service-admin-portal-goals-settings/scorecards-admin-setting.png" alt-text="Screenshot of how to get to the Scorecards settings." lightbox="media/service-admin-portal-goals-settings/scorecards-admin-setting.png":::
-
-1. Specify who can access scorecards in Power BI. 
-1. Select **Apply** to save your changes.
+:::image type="content" source="media/service-admin-portal-goals-settings/scorecards-admin-setting.png" alt-text="Screenshot of how to get to the Scorecards settings." lightbox="media/service-admin-portal-goals-settings/scorecards-admin-setting.png":::
 
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
+* [Get started with scorecards in Power BI](/power-bi/create-reports/service-goals-introduction)

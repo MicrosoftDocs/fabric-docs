@@ -61,13 +61,13 @@ The following table shows the support status for each Fabric item. A check mark 
 |  | Retail Solution | - | ✓ | - |
 | **Mirroring** | Mirrored Azure SQL Database | - | - | Preview|
 |  | Mirrored Azure SQL Managed Instance | ✓ | - | Preview |
-|  | Open Mirroring | ✓ | - | - |
+|  | Open Mirroring | ✓ | - | Preview |
 |  | Mirrored Azure Databricks Catalog | - | - | - |
 |  | Mirrored Snowflake | - | - | Preview|
 |  | Mirrored SQL Server 2025 (Windows/Linux on-premises) | ✓ | - | Preview |
 |  | Mirrored SQL Server 2016-2022 | - | - | - |
 |  | Mirrored Dataverse | - | - | - |
-|  | Mirrored SAP | - | - | - |
+|  | Mirrored SAP | - | - | Preview |
 |  | Mirrored Azure Cosmos DB | ✓ | - | Preview |
 |  | Mirrored Azure Database for PostgreSQL | - | - | Preview |
 |  | Mirrored Google Bigquery | - | - | Preview |
