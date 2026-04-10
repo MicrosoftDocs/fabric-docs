@@ -59,7 +59,7 @@ This experience helps you:
 
 Each pipeline and activity is clearly categorized (Ready, Needs review, Coming soon, or Not compatible), helping teams plan migrations intentionally and validate results before switching production workloads.
 This approach is well‑suited for customers who want a guided, low‑risk, and incremental migration path, while maintaining visibility into unsupported features and next steps.
-For step‑by‑step guidance, see [Upgrade your Azure Data Factory pipelines to Fabric](/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json)
+For step‑by‑step guidance, see [Upgrade your Azure Data Factory pipelines to Fabric](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory?toc=/fabric/data-factory/toc.json&bc=fabric/data-factory/breadcrumb/toc.json)
 
 ## Manual migration
 
@@ -126,7 +126,7 @@ Recreate CDC as [Copy job](create-copy-job.md) items. For Airflow, copy your DAG
 ### Scenario 3: Pipeline upgrade using the built‑in migration experience
 
 This guided, assessment‑first experience lets you evaluate readiness, identify compatibility gaps, and migrate supported pipelines incrementally to a Fabric workspace—all without scripts.
-For more information, see [Upgrade your Azure Data Factory pipelines to Fabric](data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory.md).
+For more information, see [Upgrade your Azure Data Factory pipelines to Fabric](/azure/data-factory/how-to-upgrade-your-azure-data-factory-pipelines-to-fabric-data-factory).
 
 ### Scenario 4: ADF items in a Fabric workspace
 
