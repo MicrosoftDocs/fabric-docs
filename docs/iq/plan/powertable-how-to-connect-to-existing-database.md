@@ -38,7 +38,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 
 You have now successfully connected to a database and created a table app using PowerTable. Click **Save** to save your table.
 
-    :::image type="content" source="media/powertable-how-to-connect-to-a-database/save-table.png" alt-text="Screenshot of saving the new table." lightbox="media/powertable-how-to-connect-to-a-database/save-table.png":::
+   :::image type="content" source="media/powertable-how-to-connect-to-a-database/save-table.png" alt-text="Screenshot of saving the new table." lightbox="media/powertable-how-to-connect-to-a-database/save-table.png":::
 
 ## Next steps
 
