@@ -1,5 +1,5 @@
 ---
-title: Build a table app using PowerTable by entering data manually
+title: Build a table app using PowerTable by entering data manually.
 description: Learn how to use PowerTable to create a collaborative table app with live synchronization by entering data manually.
 ms.date: 04/10/2026
 ms.topic: how-to
@@ -30,7 +30,7 @@ To create a new table in the database and enter the data manually, follow these 
 1. Select **Enter Data Manually** in the **Import Data** section.
 1. Select **Next.**
 
-    :::image type="content" source="media/powertable-how-to-enter-data-manually/select-database.png" alt-text="Screenshot of selecting the schema and entering the table name." lightbox="media/powertable-how-to-enter-data-manually/select-database.jpg":::
+    :::image type="content" source="media/powertable-how-to-enter-data-manually/select-database.jpg" alt-text="Screenshot of selecting the schema and entering the table name." lightbox="media/powertable-how-to-enter-data-manually/select-database.jpg":::
 
 1. Configure your table by adding the column name, primary key, and other relevant details like length, precision, scale, etc., wherever applicable.
 
