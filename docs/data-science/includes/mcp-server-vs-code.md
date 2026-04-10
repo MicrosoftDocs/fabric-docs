@@ -22,3 +22,5 @@ ms.date: 04/10/2026
 
 1. Press **Enter** and provide a name for your MCP server. Use this name to display the MCP server in your VS Code environment.  
 1. VS Code attempts to authenticate with the server. Select **Allow** and sign in with your credentials.
+
+The server is created.
