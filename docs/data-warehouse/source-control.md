@@ -88,6 +88,20 @@ For more information about the Fabric deployment pipelines process, see [Introdu
 - Fabric Deployment pipelines do not support the SQL analytics endpoint item.
 - Cross item dependencies, item sequencing, and synchronization gaps between the SQL analytics endpoint and warehouse impact Fabric Deployment Pipelines workflows.
 
+#### Unsupported Scenarios
+
+- The following CI/CD workflows are **not officially supported** when warehouses in different workspaces have different collations. Even though these operations may succeed without errors, they can result in metadata errors.
+
+ | Scenario | Description | Risk |
+ |---|---|---|
+ | **Deployment Pipelines** | Promoting warehouse content through pipeline stages (e.g., Dev → Test → Prod) where the target warehouse was created with a different collation  than the source. | Deployment may succeed, but the dataset collation will not be updated to match the target warehouse collation. |
+ | **Branching out to a new or existing workspace** | Using Git integration to branch out from an existing workspace to a new or existing workspace where the warehouse has a different collation. | Warehouse content is synced, but the collation metadata is not reconciled. |
+ | **Switching branches on a workspace** | Switching to a branch that was associated with a warehouse of a different collation on a Git-connected workspace. | Synced content may carry over collation assumptions that do not match the current warehouse. |
+ | **Merging changes between workspaces through branches** | Merging Git branches across workspaces where the warehouses have different collations. | Merge may succeed at the  Git level, but the resulting dataset collation will not reflect the target warehouse's collation. |
+
+> [!NOTE]
+> In all of these scenarios, if a collation mismatch occurs, use the python script in "**scripts/dw-collation-error-update-tmsl/pbi_interactive.py**" [Fabric toolbox](https://github.com/microsoft/fabric-toolbox/tree/main/scripts) repository to update the dataset (TMSL) collation to match the warehouse collation.
+
 ## Related content
 
 - [Development and Deployment](development-deployment.md)
