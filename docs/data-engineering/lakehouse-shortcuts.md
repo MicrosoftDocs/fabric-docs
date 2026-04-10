@@ -58,7 +58,7 @@ You can create shortcuts to both internal Fabric items and external storage syst
 - [Amazon S3 compatible storage](../onelake/create-s3-compatible-shortcut.md)
 - [Google Cloud Storage](../onelake/create-gcs-shortcut.md)
 - [Dataverse](../onelake/create-dataverse-shortcut.md)
-- [OneDrive and SharePoint](../onelake/create-onedrive-sharepoint-shortcut.md)
+- [OneDrive and SharePoint](../onelake/shortcuts/create-onedrive-sharepoint-shortcut.md)
 - [On-premises or network-restricted locations](../onelake/create-on-premises-shortcut.md) (through the on-premises data gateway)
 - [Iceberg tables](../onelake/onelake-iceberg-tables.md)
 
