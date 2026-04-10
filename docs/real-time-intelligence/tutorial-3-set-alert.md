@@ -60,12 +60,15 @@ Here you configure the rules for the alert.
         1. For **Workspace**, select the workspace in which you created resources for this tutorial.
         1. For **Item**, select **Create a new item**.
         1. For **New item name**, enter **TutorialActivator**.
+        1. Select **Create**.
 
             :::image type="content" source="media/tutorial/alert-logic.png" alt-text="Screenshot of Set alert pane in Real-Time Intelligence.":::
 
-1. Select **Create**.
+1. The alert is set and you receive a notification in **Teams** when the condition is met.
 
-    The alert is set and you receive a notification in Teams when the condition is met.
+    :::image type="content" source="media/tutorial/activator-sample-alert.png" alt-text="Screenshot of a sample Teams alert.":::
+
+
 
 ## Open the Activator item
 
