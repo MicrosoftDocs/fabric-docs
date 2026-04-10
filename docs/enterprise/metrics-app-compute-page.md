@@ -124,7 +124,7 @@ The overages chart displays the following elements:
   * **Burndown %** - Blue columns represent the carryforward percent burned down for the current 30-second period.
   * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30-second period. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
   
-Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint detail](metrics-app-timepoint-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint summary preview](metrics-app-timepoint-summary-page.md) and [timepoint detail](metrics-app-timepoint-page.md).
+Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint summary](metrics-app-timepoint-summary-page.md) page. Alternatively, you can right-click on any column to access drill-through options, which include [timepoint detail](metrics-app-timepoint-page.md) and [timepoint summary](metrics-app-timepoint-summary-page.md).
 
 Filters applied to the page in the [Multimetric ribbon chart](#multimetric-ribbon-chart), affect this chart's display as follows:
 
