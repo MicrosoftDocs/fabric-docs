@@ -15,7 +15,7 @@ Fabric runtime offers a seamless integration with Azure. It provides a sophistic
 Microsoft Fabric Runtime 1.3 is the latest GA runtime version and incorporates the following components and upgrades designed to enhance your data processing capabilities:
 
 - Apache Spark 3.5
-- Operating System: Mariner 2.0
+- Operating System: Mariner 2.0 (Azure Linux 2.0)
 - Java: 11
 - Scala: 2.12.17
 - Python: 3.11
@@ -38,6 +38,9 @@ Use the following instructions to integrate runtime 1.3 into your workspace and 
     :::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\mrs\runtime13.png":::
 
 You can now start working with the newest improvements and functionalities introduced in Fabric runtime 1.3 (Spark 3.5 and Delta Lake 3.2).
+
+> [!IMPORTANT]
+> The early access release channel of Runtime 1.3 includes an upgraded operating system from Mariner 2.0 (Azure Linux 2.0) to Mariner 3.0 (Azure Linux 3.0). Use the [early access release channel](./release-channels.md) to test your workloads against this change before it becomes the default. This validation is critical, especially if your workloads have dependencies on OS-level packages.
 
 ## Learn about Apache Spark 3.5
 
