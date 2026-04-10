@@ -22,7 +22,7 @@ To learn more about managing outbound access protection, see [Workspace outbound
 
 ## When does Data Agent make outbound requests?  
   
-An outbound request is defined as any request made from within the workspace towards a location outside the workspace. Only the directionality of the call matters - both reads and writes to external locations can exfiltrate sensitive information to untrusted locations. Data Agent initiates an outbound request when adding or querying a data source. 
+An outbound request is defined as any request made from within the workspace towards a location outside the workspace. Only the directionality of the call matters - both reads and writes to external locations can exfiltrate sensitive information to untrusted locations. Data Agent initiates an outbound request when adding or querying a data source. This behavior is also true of Azure AI Search. 
 
 Outbound access protection doesn't restrict Data Agent calls that target resources within the same workspace, because those calls don't cross the workspace boundary.
 
