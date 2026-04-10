@@ -624,7 +624,7 @@ For full reference documentation, see [Compute](/rest/api/fabric/apacheairflowjo
 
 Returns the compute configuration for the specified Apache Airflow job environment.
 
-**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/compute?beta=true`
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/compute?beta=true`
 
 **Headers**:
 
@@ -638,51 +638,21 @@ Returns the compute configuration for the specified Apache Airflow job environme
 
 ```rest
 {
-  "id": "12345678-1234-1234-1234-123456789012",
-  "name": "MyAirflowPool",
-  "nodeSize": "Small",
-  "shutdownPolicy": "OneHourInactivity",
-  "computeScalability": {
-    "minNodeCount": 1,
-    "maxNodeCount": 5
-  },
-  "apacheAirflowJobVersion": "1.0.0"
-}
-```
-
-### Update Apache Airflow Job Compute (beta)
-
-Updates the compute configuration for the specified Apache Airflow job.
-
-**Request URI**: `PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/compute?beta=true`
-
-**Headers**:
-
-```rest
-{
-  "Authorization": "Bearer <access-token>",
-  "Content-Type": "application/json"
-}
-```
-
-**Payload**:
-
-```rest
-{
-  "name": "MyAirflowPool",
+  "poolTemplateId": "12345678-1234-1234-1234-123456789012",
+  "poolTemplateName": "MyAirflowPool",
   "nodeSize": "Small",
   "computeScalability": {
-    "minNodeCount": 1,
-    "maxNodeCount": 5
+    "minNodeCount": 5,
+    "maxNodeCount": 10
   },
-  "apacheAirflowJobVersion": "1.0.0"
+  "apacheAirflowJobVersion": "1.0.0",
+  "apacheAirflowJobVersionDetails": {
+    "apacheAirflowVersion": "2.9.3",
+    "pythonVersion": "3.11"
+  },
+  "availabilityZones": "Disabled",
+  "shutdownPolicy": "OneHourInactivity"
 }
-```
-
-**Sample response**:
-
-```rest
-200 OK
 ```
 
 ## Environment APIs
@@ -710,7 +680,7 @@ Returns the Apache Airflow environment for the specified Apache Airflow job.
 
 ```rest
 {
-  "status": "Running"
+  "status": "Started"
 }
 ```
 
@@ -763,29 +733,28 @@ For full reference documentation, see [Requirements](/rest/api/fabric/apacheairf
 
 ### Deploy Apache Airflow Job Requirements (beta)
 
-Deploys requirements for an Apache Airflow job environment. You can either provide the requirements inline in the request body, or reference a file already uploaded to the job by using the `filePath` query parameter.
+Deploys requirements for an Apache Airflow job environment. You can either provide the requirements inline as plain text in the request body, or reference a file already uploaded to the job by using the `filePath` query parameter.
 
 **Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/deployRequirements?beta={beta}&filePath={filePath}`
 
 **Option 1: Provide requirements in the request body**
 
-Omit the `filePath` query parameter and include the requirements directly in the body.
+Omit the `filePath` query parameter and include the requirements as plain text in the body.
 
 **Headers**:
 
 ```rest
 {
   "Authorization": "Bearer <access-token>",
-  "Content-Type": "application/json"
+  "Content-Type": "text/plain"
 }
 ```
 
-**Payload**:
+**Payload** (UTF-8 encoded plain text):
 
-```rest
-{
-  "requirements": "pandas==1.5.3\nrequests==2.28.0"
-}
+```
+pandas==1.5.3
+requests==2.28.0
 ```
 
 **Option 2: Reference an uploaded file via query parameter**
@@ -812,7 +781,7 @@ Set the `filePath` query parameter to point to a file already uploaded to the jo
 
 Returns a list of installed libraries for the specified Apache Airflow job environment.
 
-**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/requirements/libraries?beta=true`
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/libraries?beta=true`
 
 **Headers**:
 
@@ -829,14 +798,14 @@ Returns a list of installed libraries for the specified Apache Airflow job envir
   "value": [
     {
       "name": "pandas",
-      "libraryType": "python",
-      "source": "pypi",
+      "libraryType": "Public",
+      "source": "PyPI",
       "version": "1.5.3"
     },
     {
       "name": "requests",
-      "libraryType": "python",
-      "source": "pypi",
+      "libraryType": "Public",
+      "source": "PyPI",
       "version": "2.28.0"
     }
   ]
@@ -854,7 +823,7 @@ For full reference documentation, see [Settings](/rest/api/fabric/apacheairflowj
 
 Returns the environment settings for the specified Apache Airflow job.
 
-**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/settings?beta=true`
+**Request URI**: `GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/settings?beta=true`
 
 **Headers**:
 
@@ -874,12 +843,13 @@ Returns the environment settings for the specified Apache Airflow job.
       "value": "my_value"
     }
   ],
-  "apacheAirflowConfigurationOverrides": [
+  "airflowConfigurationOverrides": [
     {
       "name": "core-dag_run_conf_overrides_params",
       "value": "True"
     }
-  ]
+  ],
+  "triggerers": "Disabled"
 }
 ```
 
@@ -887,7 +857,10 @@ Returns the environment settings for the specified Apache Airflow job.
 
 Updates the settings for an Apache Airflow job environment.
 
-**Request URI**: `PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/settings?beta=true`
+> [!NOTE]
+> When updating list values (`environmentVariables`, `airflowConfigurationOverrides`), submit the complete set of desired values. Existing values are replaced.
+
+**Request URI**: `POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/apacheAirflowJobs/{apacheAirflowJobId}/environment/updateSettings?beta=true`
 
 **Headers**:
 
@@ -908,12 +881,13 @@ Updates the settings for an Apache Airflow job environment.
       "value": "my_value"
     }
   ],
-  "apacheAirflowConfigurationOverrides": [
+  "airflowConfigurationOverrides": [
     {
       "name": "core-dag_run_conf_overrides_params",
       "value": "True"
     }
-  ]
+  ],
+  "triggerers": "Disabled"
 }
 ```
 
