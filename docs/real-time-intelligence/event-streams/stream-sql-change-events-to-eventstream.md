@@ -234,25 +234,25 @@ In your eventstream’s edit mode, add a ‘**SQL operator**’ to extract the d
 
 Open SQL editor in SQL operator, and type the SQL language as below:
 
-    ```sql
-    WITH PurchaseOrders AS
-    (
-        SELECT json_parse(data).eventrow.[current] AS neworders
-        FROM [eventstream-sqlces-stream]
-        WHERE operation = 'INS'
-    )
-    SELECT
-        json_parse(neworders).ID AS ID,
-        json_parse(neworders).Name AS Name,
-        json_parse(neworders).PurchaseDate AS PurchaseDate,
-        json_parse(neworders).Product AS Product,
-        json_parse(neworders).ProductCategory AS ProductCategory,
-        json_parse(neworders).OrderValue AS OrderValue,
-        json_parse(neworders).LoyaltyProgramMember AS LoyaltyProgramMember,
-        json_parse(neworders).NPSScore AS NPSScore
-    INTO [DerivedStream]
-    FROM [PurchaseOrders]
-    ```
+```sql
+WITH PurchaseOrders AS
+(
+    SELECT json_parse(data).eventrow.[current] AS neworders
+    FROM [eventstream-sqlces-stream]
+    WHERE operation = 'INS'
+)
+SELECT
+    json_parse(neworders).ID AS ID,
+    json_parse(neworders).Name AS Name,
+    json_parse(neworders).PurchaseDate AS PurchaseDate,
+    json_parse(neworders).Product AS Product,
+    json_parse(neworders).ProductCategory AS ProductCategory,
+    json_parse(neworders).OrderValue AS OrderValue,
+    json_parse(neworders).LoyaltyProgramMember AS LoyaltyProgramMember,
+    json_parse(neworders).NPSScore AS NPSScore
+INTO [DerivedStream]
+FROM [PurchaseOrders]
+```
 
 Use query test to preview this SQL query's output as below.
 
