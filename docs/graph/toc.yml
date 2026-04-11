@@ -43,6 +43,8 @@ items:
         href: security-overview.md
   - name: How-tos
     items:
+      - name: Design a graph schema
+        href: design-graph-schema.md
       - name: Share and manage permissions
         href: share-graph-manage-permissions.md
       - name: Manage data

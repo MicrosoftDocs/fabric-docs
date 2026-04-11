@@ -2,7 +2,7 @@
 title: What is graph in Microsoft Fabric?
 description: Learn about the core purpose, architecture, and benefits of graph in Microsoft Fabric, including integration and feature highlights.
 ms.topic: overview
-ms.date: 03/26/2026
+ms.date: 04/10/2026
 ms.reviewer: wangwilliam
 ms.custom: references_regions
 ms.search.form: graph overview
@@ -45,7 +45,7 @@ By using graph, you can:
 - Create a labeled property graph over structured data in OneLake by defining its nodes and edges in terms of underlying tabular data. To learn how to load and refresh source data, see [Manage and refresh data](manage-data.md).
 
     > [!IMPORTANT]
-    > Graph currently doesn't support schema evolution. After you ingest and model your data, the structure of nodes, relationships, and properties is fixed. If you need to make structural changes - such as adding new properties, modifying labels, or changing relationship types - you must reingest the updated source data into a new model.
+    > Graph currently doesn't support schema evolution. After you ingest and model your data, the structure of nodes, relationships, and properties is fixed. If you need to make structural changes - such as adding new properties, modifying labels, or changing relationship types - you must reingest the updated source data into a new model. For guidance on planning your schema, see [Design a graph schema](design-graph-schema.md).
 
 - Query by using GQL (Graph Query Language), including pattern matching, path constructs, aggregations, and other features as they're released. The official International Standard for GQL is [ISO/IEC 39075 Information technology — Database languages — GQL](https://www.iso.org/standard/76120.html).
 

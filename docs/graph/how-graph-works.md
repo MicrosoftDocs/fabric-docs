@@ -3,7 +3,7 @@ title: How graph in Microsoft Fabric works
 description: Learn how data flows through graph in Microsoft Fabric, from data ingestion and storage in OneLake to graph modeling, querying, and returning results.
 #customer intent: As a data analyst or engineer, I want to understand how graph in Microsoft Fabric processes and queries data so that I can evaluate whether it fits my analytical needs.
 ms.topic: concept-article
-ms.date: 03/31/2026
+ms.date: 04/10/2026
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
 ---
@@ -40,7 +40,7 @@ In the graph modeling step, you define the graph schema by specifying:
 - **Edge types:** Relationships between entities, such as "purchases," "contains," or "produces."
 - **Table mappings:** How node and edge definitions map to the underlying source tables.
 
-This step creates the [labeled property graph](graph-data-models.md) structure. Complete graph modeling before you query the graph.
+This step creates the [labeled property graph](graph-data-models.md) structure. Complete graph modeling before you query the graph. For guidance on making these modeling decisions, see [Design a graph schema](design-graph-schema.md).
 
 > [!NOTE]
 > Graph currently doesn't support schema evolution. If you need to make structural changes—such as adding new properties, modifying labels, or changing relationship types—reingest the updated source data into a new model.
