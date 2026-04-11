@@ -64,9 +64,7 @@ How you configure Resource Instance Rules depends on your tenant's inbound netwo
 - If your tenant requires access through Private Link, you can open workspace network settings in the portal only from a network that is connected through the tenant Private Link.
 - The REST API remains available through the supported endpoint and network path, which gives you a recovery option if portal access isn't available.
 
-### Set up Resource Instance Rules in the Fabric portal
-
-In the Fabric portal:
+### [Fabric portal](#tab/fabric-portal-1)
 
 1. Go to the workspace that you want to protect, and then select **Workspace settings** > **Inbound networking**.
 
@@ -84,14 +82,91 @@ In the Fabric portal:
 
 	:::image type="content" source="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_add_resources_2.jpg" alt-text="Screenshot showing the second step of adding Azure resource instances and saving the inbound access configuration." lightbox="media/onelake-manage-inbound-access-trusted-resources/Workspace_inbound_add_resources_2.jpg":::
 
+### [API](#tab/api-1)
+
+You can retrieve and configure Resource Instance Rules programmatically using the Fabric REST API.
+
+1. Using the public Fabric API endpoint (api.fabric.microsoft.com), call the **Get Resource Instance Rules** API to retrieve configured resource instance rules on a workspace.
+
+   **Request:**
+   ```
+   GET https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/networking/communicationpolicy/inbound/azureresources
+   ```
+
+1. Call the **Set Resource Instance Rules** API to configure resource instance rules for a workspace.
+
+   **Request:**
+   ```
+   PUT https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/networking/communicationpolicy/inbound/azureresources
+   ```
+
+   **Request Body:**
+   ```json
+   {
+     "rules": [
+       {
+         "displayName": "Name you choose to identify this resource"
+		 "resourceId": "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/<resource-provider>/<resource-name>"
+       }
+     ]
+   }
+   ```
+
+1. Call the **Workspaces - Set Network Communication Policy** API to set the workspace public access rule.
+
+   **Request:**
+   ```
+   PUT https://api.fabric.microsoft.com/v1/workspaces/<workspace-id>/networking/communicationPolicy
+   ```
+
+   **Request Body:**
+   ```json
+   {
+     "inbound": {
+       "publicAccessRules": {
+         "defaultAction": "Deny"
+       }
+     }
+   }
+   ```
+
+---
+
+### Supported Resource Types
+Only Azure resources that can authenticate using a verifiable resource identity (managed identity) and claims are eligible to be added as trusted resource instances. The following Azure resource types are currently supported:
+
+| Azure service | Resource name |
+|---|---|
+| Azure Databricks | Microsoft.Databricks/accessConnectors |
+| Azure Data Factory | Microsoft.DataFactory/factories |
+| Azure Data Explorer | Microsoft.Kusto/clusters |
+| Azure Machine Learning | Microsoft.MachineLearningServices/workspaces |
+| Azure Machine Learning Registry | Microsoft.MachineLearning/registries |
+| Azure AI Search | Microsoft.Search/searchServices |
+| Azure Stream Analytics | Microsoft.StreamAnalytics/streamingjobs |
+| Azure Event Grid | Microsoft.EventGrid/systemTopics |
+| Azure Event Grid | Microsoft.EventGrid/topics |
+| Azure Healthcare APIs | Microsoft.HealthcareApis/workspaces |
+| Azure Purview | Microsoft.Purview/accounts |
+| Azure Data Share | Microsoft.DataShare/accounts |
+| Azure Backup Vault | Microsoft.DataProtection/BackupVaults |
+| Azure Device Registry | Microsoft.DeviceRegistry/schemaRegistries |
+| Azure Cognitive Services | Microsoft.CognitiveServices/accounts |
+| Azure Logic Apps | Microsoft.Logic/workflows |
+| Azure Site Recovery | Microsoft.RecoveryServices/vaults |
+| Azure SQL Server | Microsoft.Sql/servers |
+| Azure Managed HSM | Microsoft.KeyVault/managedHSMs |
+| Azure Migrate | Microsoft.Migrate/migrateprojects |
+| Azure Cost Management | Microsoft.CostManagementExports |
+
 ## Considerations and limitations
 
 - Resource Instance Rules apply only to inbound access to the workspace.
-- Resource Instance Rules control which resource instances can reach OneLake over the network, but they don't expand the data scope that the resource is authorized to access.
+- Resource Instance Rules restrict which resource instances can connect to OneLake, but they don't expand the data scope that the resource is authorized to access.
+- Resource instances must be registered within the same Microsoft Entra tenant as the workspace.
 - You can configure 25 resources instance rules per workspace.
 - Resource Instance Rules can be used together with workspace Private Link and workspace IP firewall rules.
 - If you misconfigure the rules, you might block access to the workspace. Use API-based management as a recovery path if portal access isn't available.
-- Only Azure resources that can present a verifiable identity and claims to OneLake can be added as trusted resource instances.
 
 ## Related content
 
