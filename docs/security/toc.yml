@@ -129,6 +129,8 @@ items:
                 href: workspace-outbound-access-protection-mirrored-databases.md
               - name: OneLake (preview)
                 href: workspace-outbound-access-protection-onelake.md
+              - name: Real-Time Intelligence (preview)
+                href: workspace-outbound-access-protection-real-time-intelligence.md
       - name: Trusted workspace access
         href: security-trusted-workspace-access.md
 - name: Data security

@@ -96,6 +96,7 @@ To use a Lakehouse Maintenance activity in a pipeline, complete the following st
 ## Known issues
 
 - The Lakehouse Maintenance activity doesn't support maintenance on Lakehouses with schemas enabled yet.
+- The Lakehouse Maintenance activity does not currently support execution in workspaces where Private Link is enabled. We are working on a fix for this.
 
 ## Related content
 

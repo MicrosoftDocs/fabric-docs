@@ -6,6 +6,7 @@ ms.topic: how-to
 ms.date: 02/02/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
+ai-usage: ai-assisted
 ---
 
 # Configure Fabric data agent tenant settings
