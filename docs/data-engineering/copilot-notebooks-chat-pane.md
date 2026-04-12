@@ -145,7 +145,7 @@ When a notebook cell fails, Copilot can help you diagnose and fix the issue dire
 
 After a cell execution failure (including Spark job failures surfaced in notebook execution), a **Fix with Copilot** option appears below the failed cell.
 
-:::image type="content" source="media/copilot-notebooks-chat-pane/fix-with-copilot.png" alt-text="Screenshot showing the "Fix with Copilot" button." lightbox="media/copilot-notebooks-chat-pane/fix-with-copilot.png":::
+:::image type="content" source="media/copilot-notebooks-chat-pane/fix-with-copilot.png" alt-text="Screenshot showing the fix with copilot button." lightbox="media/copilot-notebooks-chat-pane/fix-with-copilot.png":::
 
 When you select **Fix with Copilot**, Copilot uses notebook context such as:
 
