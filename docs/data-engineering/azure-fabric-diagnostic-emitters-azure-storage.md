@@ -95,6 +95,91 @@ To configure Azure Key Vault for storing the workspace key:
 
 After submitting a job to the configured Spark session, you can view the logs and metrics files in the destination storage account. The logs are stored in corresponding paths based on different applications, identified by `<workspaceId>.<fabricLivyId>`. All log files are in JSON Lines format (also known as newline-delimited JSON or ndjson), which is convenient for data processing.
 
+## Collect Spark Logs and Metrics to Azure storage account Using Certificate Authentication
+
+### Step 1. Register an application
+
+1. Sign in to the [Azure portal](https://portal.azure.com/) and go to [App registrations](/entra/identity-platform/quickstart-register-app#register-an-application).
+	
+1. Create a new app registration for sending logs and metrics to Azure storage account.
+	
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
+	
+### Step 2. Generate a certificate in Key Vault
+	
+1. Navigate to Key Vault.
+	
+1. Expand the **Object**, and select the **Certificates**.
+	
+1. Click on **Generate/Import**. 
+	
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
+	
+### Step 3. Trust the certificate in the application 
+	
+1. Go to the app created in Step 1 -> **Manage** -> **Manifest**. 
+	
+1. Append the certificate details to the manifest file to establish trust. This enables subject-based certificate trust for the service principal.
+	
+   ```
+	"trustedCertificateSubjects": [ 
+	   { 
+	      "authorityId": "00000000-0000-0000-0000-000000000001", 
+	      "subjectName": "Your-Subject-of-Certificate", 
+	      "revokedCertificateIdentifiers": [] 
+	   } 
+	   ] 
+	```
+	
+	::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
+	
+### Step 4. Assign Azure storage account Data Sender Role 
+	
+1. In Azure storage account, navigate to Access control (IAM).
+
+1. Assign the Azure storage account data sender role to the application (service principal).
+	
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure storage account data sender role.":::
+
+### Step 5. Grant the workspace identity access to Azure Key Vault
+
+1. In the Fabric workspace settings, identify the workspace managed identity.
+1. In Azure Key Vault, assign the **Key Vault Secrets User** role to the workspace managed identity.
+1. The Fabric runtime retrieves secrets or certificates from Azure Key Vault at runtime by using the built-in credentials utility.
+	
+### Step 6. Submit an Apache Spark application and view the logs and metrics
+	
+You can use the Apache Log4j library to write custom logs.
+	
+Example for Scala:
+	
+```scala
+	%%spark
+	val logger = org.apache.log4j.LogManager.getLogger("com.contoso.LoggerExample")
+	logger.info("info message")
+	logger.warn("warn message")
+	logger.error("error message")
+	//log exception
+	try {
+	      1/0
+	 } catch {
+	      case e:Exception =>logger.warn("Exception", e)
+	}
+	// run job for task level metrics
+	val data = sc.parallelize(Seq(1,2,3,4)).toDF().count()
+   ```
+	
+Example for PySpark:
+	
+```python
+	%%pyspark
+	logger = sc._jvm.org.apache.log4j.LogManager.getLogger("com.contoso.PythonLoggerExample")
+	logger.info("info message")
+	logger.warn("warn message")
+	logger.error("error message")
+```
+
+
 ## Available configurations
 
 | Configuration | Description |
