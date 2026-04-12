@@ -41,6 +41,8 @@ items:
       href: ontology/how-to-use-preview-experience.md
     - name: Add rules
       href: ontology/how-to-use-rules.md
+    - name: Use resource links
+      href: ontology/how-to-use-resource-links.md
   - name: Resources
     items:
     - name: Troubleshooting
@@ -63,6 +65,8 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
+    - name: Known issues
+      href: plan/overview-known-issues.md   
   - name: Planning sheets
     items:
     - name: Planning sheets overview

@@ -229,6 +229,8 @@ items:
         items:
           - name: Stream and consume events using the Apache Kafka endpoint in Eventstream
             href: event-streams/stream-consume-events-use-kafka-endpoint.md
+          - name: Stream SQL Change Events to Eventstream for Real-Time Processing
+            href: event-streams/stream-sql-change-events-to-eventstream.md
           - name: Replicate SAP Datasphere Data to Eventstream Kafka Endpoint with SAP Replication Flow
             href: event-streams/replicate-data-with-replication-flow.md
           - name: Stream Oracle CDC data to Eventstream Kafka endpoint with GoldenGate
