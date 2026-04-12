@@ -3,7 +3,7 @@ title: "What's New?"
 description: Learn about the new features and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
-ms.date: 04/07/2026
+ms.date: 04/12/2026
 ms.update-cycle: 30-days
 ms.topic: whats-new
 ms.collection:
@@ -157,6 +157,7 @@ The following table lists the features of Microsoft Fabric that recently transit
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|April 2026|**Warehouse ALTER TABLE support in an explicit transaction (Generally available)**|Supported `ALTER TABLE` Transact-SQL operations can now execute inside an explicit user-defined transaction in Fabric Data Warehouse. For more information, see [Transactions in Fabric Data Warehouse](../data-warehouse/transactions.md#explicit-transactions).|
 |April 2026|**Shortcut transformations (Generally Available)**|Shortcut transformations automatically turn structured files into Delta tables as you bring data into or move it within OneLake, keeping data always in sync without the need for pipelines. For more information, see [Shortcuts file transformations](../onelake/shortcuts/transformations.md).|
 |March 2026|**Workspace IP firewall rules (Generally Available)** | Workspace IP firewall rules let workspace admins define an allow list of public IP addresses or IP ranges that can access a Fabric workspace, helping limit inbound access to approved network locations. For more information, see [Protect workspaces by using IP firewall rules](../security/security-workspace-level-firewall-overview.md).|
 |March 2026| `ANY_VALUE` aggregate function| Fabric Data Warehouse introduces the `ANY_VALUE` aggregate function, which lets you return a representative value from each group without requiring it to be part of the GROUP BY clause. This is especially useful when grouped rows share the same logical value or when an exact choice isn't important, helping simplify queries, reduce boilerplate aggregation logic, and improve query readability. For more information, see [ANY_VALUE (Transact-SQL) function](/sql/t-sql/functions/any-value-transact-sql?view=fabric&preserve-view=true).|
@@ -419,6 +420,7 @@ This section summarizes recent improvements and features for [Fabric Data Wareho
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|April 2026|**ALTER TABLE support in an explicit transaction (Generally available)**|Supported `ALTER TABLE` Transact-SQL operations can now execute inside an explicit user-defined transaction in Fabric Data Warehouse. For more information, see [Transactions in Fabric Data Warehouse](../data-warehouse/transactions.md#explicit-transactions).|
 |March 2026|**Built-in AI functions (preview)**| Fabric Data Warehouse now brings AI directly into T‑SQL, enabling you to categorize and classify text, analyze sentiment, extract structured information, translate text across languages, and even correct grammar—all using built‑in AI functions. To get started, see [Use AI functions in Fabric Data Warehouse (preview)](../data-warehouse/ai-functions.md).|
 |March 2026|**ANY_VALUE**| Fabric Data Warehouse introduces the ANY_VALUE aggregate function, which lets you return a representative value from each group without requiring it to be part of the GROUP BY clause. This is especially useful when grouped rows share the same logical value or when an exact choice isn't important, helping simplify queries, reduce boilerplate aggregation logic, and improve query readability. For more information, see [ANY_VALUE (Transact-SQL) function](/sql/t-sql/functions/any-value-transact-sql?view=fabric&preserve-view=true).|
 |March 2026|**Outbound Access Protection (OAP) for Warehouse (Generally Available)**|[Outbound Access Protection (OAP) support for Warehouse (Generally Available)](https://blog.fabric.microsoft.com/blog/fabric-march-2026-feature-summary/#post-34196-_Toc224559641) provides stronger data exfiltration protection for enterprise environments, with connector rules that allow you to control external sources including specific Azure Data Lake Storage Gen2 accounts, other Fabric workspaces, and approved external connectors. For more information, see [Workspace outbound access protection for data warehouse workloads](../security/workspace-outbound-access-protection-data-warehouse.md).|
