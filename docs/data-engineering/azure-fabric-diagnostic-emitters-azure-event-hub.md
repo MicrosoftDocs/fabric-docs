@@ -90,7 +90,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/) and go to [App registrations](/entra/identity-platform/quickstart-register-app#register-an-application).
 	
-1. Create a new app registration for your Synapse workspace.
+1. Create a new app registration for sending logs and metrics to Azure Event Hubs.
 	
 	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
 	
@@ -108,7 +108,7 @@ To configure Azure Key Vault for storing the workspace key:
 	
 1. Go to the app created in Step 1 -> **Manage** -> **Manifest**. 
 	
-1. Append the certificate details to the manifest file to establish trust. 
+1. Append the certificate details to the manifest file to establish trust. This enables subject-based certificate trust for the service principal.
 	
    ```
 	"trustedCertificateSubjects": [ 
@@ -134,7 +134,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 1. In the Fabric workspace settings, identify the workspace managed identity.
 1. In Azure Key Vault, assign the **Key Vault Secrets User** role to the workspace managed identity.
-1. The Fabric runtime can then retrieve secrets or certificates directly from Key Vault at runtime by using the built-in credentials utility.
+1. The Fabric runtime retrieves secrets or certificates from Azure Key Vault at runtime by using the built-in credentials utility.
 	
 ### Step 6. Submit an Apache Spark application and view the logs and metrics
 	
