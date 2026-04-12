@@ -32,7 +32,9 @@ This capability allows Copilot and custom AI agents to securely interact with yo
 There are three main steps to get started with the Eventhouse remote MCP integration:
 
 1. Connect to the remote Eventhouse MCP server from Visual Studio Code or GitHub Copilot CLI.  
+
 1. Use GitHub Copilot to query Eventhouse using natural language.
+
 1. Validate the connection using test queries.
 
 ## Prerequisites
@@ -86,29 +88,40 @@ Add the remote MCP server definition to the MCP configuration file. Currently, o
 ### Find your KQL database MCP URL
 
 1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com/).
+
 1. Navigate to the workspace containing your Eventhouse.
+
 1. Select the KQL database to open its details page.
+
 1. In the **Database details** panel under the **Overview** section, select **Copy URI** next to the **MCP Server URI**.
-   :::image type="content" source="media/mcp/mcp-copy-server-url.png" alt-text="Diagram that shows how to find KQL database MCP URL.":::    
+
+   :::image type="content" source="media/mcp/mcp-copy-server-url.png" alt-text="Diagram that shows how to find KQL database MCP URL." lightbox="media/mcp/mcp-copy-server-url.png":::
 
 ## Test the connection
 
 Once configured, verify that the setup is working.
 
 ### Start the Eventhouse MCP server
+
 1. Start the **Eventhouse MCP server** in Visual Studio Code.
-1. Authenticate to the MCP server using credential that has access to the eventhouse. 
+
+1. Authenticate to the MCP server using credential that has access to the eventhouse.
+
 1. Ensure the Eventhouse MCP server status shows as **Running**.
 
 ### Use GitHub Copilot run queries
+
 1. Open **GitHub Copilot Chat** window in VS Code.
+
 1. Enable **agent mode**.
+
 1. Ask a question, for example:
    - *What tables are in #eventhouse-remote?* (use the remote name you provided in the mcp.json). 
    - *Analyze the data in the StormEvents table and show the most damaging storm events*
+
 1. Review the response returned by Copilot.
 
-## Troubleshooting
+## Troubleshoot
 
 If you encounter issues:
 
