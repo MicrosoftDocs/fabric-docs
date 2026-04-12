@@ -139,7 +139,7 @@ After submitting a job to the configured Spark session, you can view the logs an
 
 1. Assign the Azure storage account data sender role to the application (service principal).
 	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure storage account data sender role.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-storage\assign-azure-storage-account-data-sender-role.png" alt-text="Screenshot showing assign Azure storage account data sender role.":::
 
 ### Step 5. Grant the workspace identity access to Azure Key Vault
 
