@@ -29,7 +29,7 @@ For an overview of shortcuts, see [OneLake shortcuts](../onelake-shortcuts.md). 
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
+   :::image type="content" source="..\media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot that shows selecting 'new shortcut' from a directory menu.":::
 
 ## Select a source
 
