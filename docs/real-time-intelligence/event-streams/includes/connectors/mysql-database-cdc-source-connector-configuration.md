@@ -45,11 +45,11 @@ ms.date: 04/03/2026
       - `InitialOnly`: The connector runs a snapshot only when no offsets have been recorded for the logical server name. After the snapshot completes, the connector stops. It doesn't transition to streaming to read change events from the binlog.
       - `NoData`: The connector runs a snapshot that captures only the schema, but not any table data. Set this option if you don't need a consistent snapshot of the data, but you need only the changes happening since the connector starts.
 
-   You can also edit source name by selecting the **Pencil button** for **Source name** in the **Stream details** section to the right.
+### Stream or source details
 
-   :::image type="content" source="media/mysql-database-cdc-source-connector/table.png" alt-text="A screenshot of selecting Tables, Server ID, and Port for the Azure MySQL DB (CDC) connection." lightbox="media/mysql-database-cdc-source-connector/table.png":::
-    
-1. On the **Review + connect** page, after reviewing the summary for MySQL DB CDC source, select **Add** or **Connect** to complete the configuration.
+[!INCLUDE [stream-source-details](./stream-source-details.md)]
 
-      :::image type="content" source="media/mysql-database-cdc-source-connector/review-connect.png" alt-text="Screenshot that shows the Review + connect page with the Add button selected." lightbox="media/mysql-database-cdc-source-connector/review-connect.png":::
+### Review and connect
+
+On the **Review + connect** screen, review the summary, and select **Add** (Eventstream) or **Connect** (Real-Time hub).
 

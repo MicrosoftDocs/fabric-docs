@@ -53,6 +53,8 @@ items:
     href: lakehouse-sql-analytics-endpoint.md
   - name: Lakehouse schemas
     href: lakehouse-schemas.md
+  - name: Spark views in lakehouse
+    href: lakehouse-spark-views.md
   - name: Git and deployment pipelines
     href: lakehouse-git-deployment-pipelines.md
   - name: Lakehouse REST API
@@ -428,6 +430,10 @@ items:
         href: get-started-api-livy-session.md
       - name: Submit Livy API batch jobs
         href: get-started-api-livy-batch.md
+      - name: High concurrency support in the Fabric Livy API
+        href: high-concurrency-livy.md
+      - name: Get started with high concurrency with the Livy endpoint
+        href: get-started-high-concurrency-livy.md
 - name: VS Code integration
   items:
   - name: Fabric extensions for VS Code

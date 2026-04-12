@@ -1,7 +1,9 @@
 ---
 title: Create a OneDrive or SharePoint shortcut
 description: Learn how to create a OneLake shortcut for OneDrive or SharePoint inside a Microsoft Fabric lakehouse.
-ms.reviewer: eloldag, shinarayanan
+ms.reviewer: eloldag, shinarayanan # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 02/10/2026
