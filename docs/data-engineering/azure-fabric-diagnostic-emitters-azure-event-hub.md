@@ -129,24 +129,14 @@ To configure Azure Key Vault for storing the workspace key:
 1. Assign the Azure Event Hubs data sender role to the application (service principal).
 	
 	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure event hubs data sender role.":::
+
+### Step 5. Grant the workspace identity access to Azure Key Vault
+
+1. In the Fabric workspace settings, identify the workspace managed identity.
+1. In Azure Key Vault, assign the **Key Vault Secrets User** role to the workspace managed identity.
+1. The Fabric runtime can then retrieve secrets or certificates directly from Key Vault at runtime by using the built-in credentials utility.
 	
-### Step 5. Create a linked service in Synapse
-	
-1. In Synapse Analytics workspace, go to **Manage** -> **linked service**.
-	
-1. Create a new **linked Service** in Synapse to connect to **Key Vault**. 
-	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-linked-service-in-synapse.png" alt-text="Screenshot showing create a linked service in synapse.":::
-	
-### Step 6. Assign reader role to linked service in Key Vault
-	
-1. Get the workspace managed identity ID from the linked service. The **managed identity name** and **object ID** for the linked service is under **Edit linked service**. 
-	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\managed-identity-name-and-object-id.png" alt-text="Screenshot showing managed identity name and object ID are in edit linked service.":::
-	
-1. In **Key Vault**, assign the linked service a **Reader** role. 
-	
-### Step 7. Submit an Apache Spark application and view the logs and metrics
+### Step 6. Submit an Apache Spark application and view the logs and metrics
 	
 You can use the Apache Log4j library to write custom logs.
 	
