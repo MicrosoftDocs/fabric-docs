@@ -2,7 +2,7 @@
 title: "Tutorial: Add node types to your graph"
 description: Learn how to add node types to your graph model in Microsoft Fabric by mapping source tables and configuring node properties.
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 04/10/2026
 ms.reviewer: wangwilliam
 ms.search.form: Tutorial - Add nodes to your graph
 ai-usage: ai-assisted
@@ -44,7 +44,7 @@ To add node types to your graph, follow these steps:
     - **ID** of the mapping column: `CustomerID_K`
 
    > [!TIP]
-   > You can set compound keys (IDs consisting of multiple columns).
+   > You can set compound keys (IDs consisting of multiple columns). After you select a mapping table, choose one ID from the **ID** dropdown, then use the dropdown again to add another.
 
 1. Select **Confirm** to add the node type to your graph.
 1. Repeat the process for all remaining node types listed in the [Adventure Works node mappings](#adventure-works-node-mappings) table.
