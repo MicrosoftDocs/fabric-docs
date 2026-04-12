@@ -88,66 +88,71 @@ To configure Azure Key Vault for storing the workspace key:
 
 ### Step 1. Register an application
 
-	1. Sign in to the [Azure portal](https://portal.azure.com/) and go to [App registrations](/entra/identity-platform/quickstart-register-app#register-an-application).
+1. Sign in to the [Azure portal](https://portal.azure.com/) and go to [App registrations](/entra/identity-platform/quickstart-register-app#register-an-application).
 	
-   2. Create a new app registration for your Synapse workspace.
+1. Create a new app registration for your Synapse workspace.
 	
-	     :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
 	
 ### Step 2. Generate a certificate in Key Vault
 	
-	1. Navigate to Key Vault.
-	2. Expand the **Object**, and select the **Certificates**.
-	3. Click on **Generate/Import**. 
+1. Navigate to Key Vault.
 	
-	     :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
+1. Expand the **Object**, and select the **Certificates**.
+	
+1. Click on **Generate/Import**. 
+	
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
 	
 ### Step 3. Trust the certificate in the application 
 	
-	1. Go to the app created in Step 1 -> **Manage** -> **Manifest**. 
-	2. Append the certificate details to the manifest file to establish trust. 
+1. Go to the app created in Step 1 -> **Manage** -> **Manifest**. 
 	
-	     ```
-	          "trustedCertificateSubjects": [ 
-	               { 
-	               "authorityId": "00000000-0000-0000-0000-000000000001", 
-	               "subjectName": "Your-Subject-of-Certificate", 
-	               "revokedCertificateIdentifiers": [] 
-	               } 
-	          ] 
-	     ```
+1. Append the certificate details to the manifest file to establish trust. 
 	
-	     :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
+   ```
+	"trustedCertificateSubjects": [ 
+	   { 
+	      "authorityId": "00000000-0000-0000-0000-000000000001", 
+	      "subjectName": "Your-Subject-of-Certificate", 
+	      "revokedCertificateIdentifiers": [] 
+	   } 
+	   ] 
+	```
+	
+	::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
 	
 ### Step 4. Assign Azure Event Hubs Data Sender Role 
 	
-	1. In Azure Event Hubs, navigate to Access control (IAM).
-	2. Assign the Azure Event Hubs data sender role to the application (service principal).
+1. In Azure Event Hubs, navigate to Access control (IAM).
+
+1. Assign the Azure Event Hubs data sender role to the application (service principal).
 	
-	     :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure event hubs data sender role.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure event hubs data sender role.":::
 	
 ### Step 5. Create a linked service in Synapse
 	
-	1. In Synapse Analytics workspace, go to **Manage** -> **linked service**.
-	2. Create a new **linked Service** in Synapse to connect to **Key Vault**. 
+1. In Synapse Analytics workspace, go to **Manage** -> **linked service**.
 	
-	     :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-linked-service-in-synapse.png" alt-text="Screenshot showing create a linked service in synapse.":::
+1. Create a new **linked Service** in Synapse to connect to **Key Vault**. 
+	
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-linked-service-in-synapse.png" alt-text="Screenshot showing create a linked service in synapse.":::
 	
 ### Step 6. Assign reader role to linked service in Key Vault
 	
-	1. Get the workspace managed identity ID from the linked service. The **managed identity name** and **object ID** for the linked service is under **Edit linked service**. 
+1. Get the workspace managed identity ID from the linked service. The **managed identity name** and **object ID** for the linked service is under **Edit linked service**. 
 	
-	     :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\managed-identity-name-and-object-id.png" alt-text="Screenshot showing managed identity name and object ID are in edit linked service.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\managed-identity-name-and-object-id.png" alt-text="Screenshot showing managed identity name and object ID are in edit linked service.":::
 	
-	2. In **Key Vault**, assign the linked service a **Reader** role. 
+1. In **Key Vault**, assign the linked service a **Reader** role. 
 	
 ### Step 7. Submit an Apache Spark application and view the logs and metrics
 	
-	You can use the Apache Log4j library to write custom logs.
+You can use the Apache Log4j library to write custom logs.
 	
-	Example for Scala:
+Example for Scala:
 	
-	```scala
+```scala
 	%%spark
 	val logger = org.apache.log4j.LogManager.getLogger("com.contoso.LoggerExample")
 	logger.info("info message")
@@ -161,11 +166,11 @@ To configure Azure Key Vault for storing the workspace key:
 	}
 	// run job for task level metrics
 	val data = sc.parallelize(Seq(1,2,3,4)).toDF().count()
-	```
+   ```
 	
-	Example for PySpark:
+Example for PySpark:
 	
-	```python
+```python
 	%%pyspark
 	logger = sc._jvm.org.apache.log4j.LogManager.getLogger("com.contoso.PythonLoggerExample")
 	logger.info("info message")
