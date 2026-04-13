@@ -29,11 +29,15 @@ The local RTI MCP Server is at the core of the system and acts as a bridge betwe
 
 :::image type="content" source="media/mcp/model-context-protocol-server-architecture.png" alt-text="Diagram that shows the local MCP server architecture.":::
 
-This architecture lets you build modular, scalable, and secure intelligent applications that respond to real-time signals. MCP uses a client-server architecture, so AI applications can interact with external tools efficiently. The architecture includes the following components:
+The local RTI MCP Server acts as a bridge between AI-powered applications and your data in Fabric. It runs locally and provides read-only access to Eventhouse databases.
 
-* **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
-* **MCP Client**: An intermediary service forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
-* **MCP Server**: Lightweight applications exposing specific capabilities by natural language APIs, databases. For example, Fabric RTI MCP server can execute KQL queries for real-time data retrieval from KQL databases.
+The architecture follows the MCP client-server model:
+
+- **MCP Host**: The application where AI interactions happen (e.g., VS Code with GitHub Copilot, Claude Desktop, Cline). The host contains the AI model connection, a tool orchestrator, and one or more MCP clients.
+- **MCP Client**: A protocol component inside the host that communicates with MCP servers. When the AI model decides it needs data, the host's orchestrator invokes tools through the MCP client.
+- **MCP Server**: A lightweight service that exposes specific capabilities as structured tools. The RTI MCP server exposes tools like "execute query," "list databases," and "list tables" that translate into Eventhouse operations.
+
+Any application that supports MCP — whether an interactive product like GitHub Copilot or a programmatic AI agent framework — can connect to the RTI MCP server using the same protocol.
 
 ## Key features
 
@@ -70,4 +74,3 @@ To implement the local RTI MCP server, follow the open source instructions in th
 * Implement the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
 * [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
 * [What is MCP in Real-Time Intelligence?](mcp-overview.md)
-
