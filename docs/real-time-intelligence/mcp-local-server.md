@@ -17,8 +17,6 @@ The local RTI MCP server lets AI agents or AI applications interact with Fabric 
 
 MCP support for RTI and ADX is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI). Customers need to install, host, and manage the deployment.
 
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
-
 ## Scenarios
 
 The most common scenario for using the local RTI MCP Server is to connect to it from an existing AI client, such as Cline, Claude, and GitHub Copilot. The client can then use all the available tools to access and interact with RTI or ADX resources using natural language. For example, you could use GitHub Copilot agent mode with the RTI MCP Server to list KQL databases or ADX clusters or run natural language queries on RTI Eventhouses.
@@ -37,7 +35,7 @@ The architecture follows the MCP client-server model:
 - **MCP Client**: A protocol component inside the host that communicates with MCP servers. When the AI model decides it needs data, the host's orchestrator invokes tools through the MCP client.
 - **MCP Server**: A lightweight service that exposes specific capabilities as structured tools. The RTI MCP server exposes tools like "execute query," "list databases," and "list tables" that translate into Eventhouse operations.
 
-Any application that supports MCP — whether an interactive product like GitHub Copilot or a programmatic AI agent framework — can connect to the RTI MCP server using the same protocol.
+Any application that supports MCP can connect to the local RTI MCP server using the same protocol. This can be an interactive product like GitHub Copilot or a programmatic AI agent framework.
 
 ## Key features
 

@@ -33,7 +33,7 @@ To get started with the remote Eventhouse MCP integration, follow these steps:
 
 1. [Start the Eventhouse MCP server](#start-the-eventhouse-mcp-server).
 
-[Use GitHub Copilot to run queries](#use-github-copilot-to-run-queries)
+1. [Use GitHub Copilot to run queries](#use-github-copilot-to-run-queries)
 
 ## Prerequisites
 
@@ -110,6 +110,12 @@ Once configured, verify that the setup is working.
    - *Analyze the data in the StormEvents table and show the most damaging storm events*
 
 1. Review the response returned by Copilot.
+
+## Available tools
+
+The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover schema, generate KQL queries from natural language, execute queries, and sample data.
+
+For the full list of available tools and capabilities, see the 
 
 ## Troubleshoot
 

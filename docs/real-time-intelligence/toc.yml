@@ -1030,7 +1030,7 @@ items:
         items:
           - name: Overview
             href: mcp-overview.md
-          - name: Local MCP server
+          - name: Local RTI MCP server
             href: mcp-local-server.md
           - name: Remote MCP servers
             items:
