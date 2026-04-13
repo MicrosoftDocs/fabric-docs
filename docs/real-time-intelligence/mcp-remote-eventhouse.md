@@ -57,12 +57,12 @@ The Eventhouse MCP server acts as an **HTTP-based MCP endpoint**. Add the remote
 
    In VS Code, the configuration file is typically located at `.vscode/mcp.json`, or in your [user profile](https://code.visualstudio.com/docs/configure/profiles). For more information, see [VS Code MCP configuration reference](https://code.visualstudio.com/docs/copilot/reference/mcp-configuration).
 
-1. Add the Eventhouse MCP server URL to the MCP client configuration file. [Find the MCP server URI](#find-the-mcp-server-uri) and refer to the [Example MCP configuration](#example-mcp-configuration).
+1. Add the Eventhouse MCP server URL to the MCP client configuration file. [Find the MCP server URI](#find-the-mcp-server-uri) and refer to the [Example MCP client configuration](#example-mcp-client-configuration).
 
 > [!TIP]
 > To add the MCP server using **GitHub Copilot CLI** instead of VS Code, see [Adding MCP servers for GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers). Use the `/mcp add` command with the **HTTP** server type and provide the Eventhouse URL.
 
-### Find the MCP server URL
+### Find the MCP server URI
 
 1. Sign in to the [Fabric portal](https://app.fabric.microsoft.com/).
 
