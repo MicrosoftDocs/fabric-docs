@@ -178,8 +178,8 @@ The following properties are **required**:
       
       - **Enable TimestampNtz**: Specifies whether to enable TimestampNtz for the Lakehouse table destination. When disabled (default), datetime values are written as timestamp. When enabled, you can edit the destination column type to timestamp_ntz. For auto-created tables, source datetime columns with UTC kind are mapped to timestamp, while other source datetime columns are mapped to timestamp_ntz.
 
-     > [!NOTE]
-     > Querying columns of type timestamp_ntz via T‑SQL Query (Preview) is currently not supported.
+         > [!NOTE]
+         > Querying columns of type timestamp_ntz via T‑SQL Query (Preview) is currently not supported.
 
       - **Apply V-Order**: Specify to apply V-Order via copy. Disabling it preserves the original parquet files without applying additional V-Order optimization. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md).
 
