@@ -24,9 +24,15 @@ In this tutorial step, you generate an ontology from the sample semantic model t
 
 ## Generate ontology
 
-1. Go to the *RetailSalesModel* semantic model in Fabric. From the top ribbon, select **Generate Ontology**.
+1. Go to the *RetailSalesModel* semantic model in Fabric. 
 
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology.png" alt-text="Screenshot of Generate ontology button in the ribbon." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology.png":::
+    If the semantic model is still open from when you created it earlier, select **Generate Ontology** from the ribbon.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1a.png" alt-text="Screenshot of Generate ontology button in the ribbon of an open semantic model." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1a.png":::
+
+    If the semantic model was previously closed, you can also select **Generate Ontology** from the model overview page without opening the model.
+
+    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1b.png" alt-text="Screenshot of Generate ontology button in the ribbon of the semantic model overview." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1b.png":::
 
 1. Select your **Workspace** and enter *RetailSalesOntology* for the **Name**. Select **Create**.
 

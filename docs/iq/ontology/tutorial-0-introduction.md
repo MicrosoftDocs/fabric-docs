@@ -123,8 +123,8 @@ This section prepares you to generate an ontology from a semantic model. If you'
 
     | From table | To table | Cardinality | Cross-filter direction | Make this relationship active? |
     |---|---|---|---|---|
-    | *factsales*, select `StoreId` | *dimstore*, select `StoreId` | Many to one (*:1) | Single | Yes |
-    | *factsales*, select `ProductId` | *dimproducts*, select `ProductId` | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `StoreId` column | *dimstore*, select `StoreId` column | Many to one (*:1) | Single | Yes |
+    | *factsales*, select `ProductId` column | *dimproducts*, select `ProductId` column | Many to one (*:1) | Single | Yes |
 
     The relationships look like this when you're done:
 
