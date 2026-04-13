@@ -32,7 +32,8 @@ Allocated value is calculated by multiplying the entered value by the relative w
 
 ```
 Allocated Value =
-Entered Value ×                                                                                                  (Driver Value at the intersection ÷ Sum of Driver Values within the hierarchy scope)
+Entered Value ×
+(Driver Value at the intersection ÷ Sum of Driver Values within the hierarchy scope)
 ```
 
 In the formula,
