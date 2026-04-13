@@ -3,7 +3,7 @@ title: Get started with the local MCP server for Real-Time Intelligence
 description: Learn how to set up and use the local Model Context Protocol (MCP) server for Real-Time Intelligence. The server enables AI agents to interact with RTI components like Eventhouse.
 ms.reviewer: sharmaanshul
 ms.topic: how-to
-ms.date: 03/24/2026
+ms.date: 04/13/2026
 ms.search.form: MCP, RTI, AI
 ms.collection: ce-skilling-ai-copilot
 ai-usage: ai-assisted
@@ -50,6 +50,12 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 ## Supported RTI components
 
 **Eventhouse** - Run KQL queries against the KQL databases in your [Eventhouse](eventhouse.md) backend. This unified interface lets AI agents query, reason, and act on real-time data.
+
+**Eventstreams** - Query and manage [Eventstreams](event-streams/overview.md) to analyze streaming data and get real-time insights. You can list the eventstreams in your workspace, get details and definitions, create new eventstreams, and more.
+
+**Activator** - Interact with Fabric [Activator](data-activator/activator-introduction.md) to list Activator artifacts in your workspace, create trigger actions, and set up notifications.
+
+**Map** - Query and manage [Map](map/about-fabric-maps.md) resources to visualize data and create geospatial insights. You can list maps in your workspace, visualize data on maps, get details and definitions, create new maps, and more.
 
 > [!NOTE]
 >
