@@ -30,6 +30,9 @@ Materialized lake views aren't the right choice for every scenario. Consider alt
 - **Non-SQL logic** such as ML inference, API calls, or complex Python processing — use Spark notebooks instead
 - **High-frequency streaming data** that requires sub-second updates — consider [Real-Time Intelligence](../../real-time-intelligence/overview.md) instead
 
+> [!NOTE]
+> This feature is currently not available in South Central US region.
+
 ## Get started with materialized lake views
 
 To create your first materialized lake view in Microsoft Fabric, see [Get started with materialized lake views](get-started-with-materialized-lake-views.md). For a complete walkthrough that builds a medallion architecture, see [Tutorial: Build a medallion architecture with materialized lake views](tutorial.md).
