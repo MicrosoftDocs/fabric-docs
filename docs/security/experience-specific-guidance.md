@@ -340,11 +340,11 @@ Graph Model and Graph Queryset items from the primary region remain unavailable 
 
 1. If the original Graph Model item has a lakehouse configured for data loading, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first.
 
-1. Recreate the Graph Model item in C2.W2. Reconfigure the model definition, including entity types, relationship types, and property mappings, to match the original Graph Model. If a lakehouse was recovered in the previous step, connect it to the newly created Graph Model item.
+1. Recreate the Graph Model item in the secondary workspace (referenced in step 2). Reconfigure the model definition, including nodes, edges, etc to match the original Graph Model. If a lakehouse was recovered in the previous step, connect it to the newly created Graph Model item.
 
 1. Reconfigure any data loading schedules or connections for the Graph Model in the new workspace.
 
-1. Recreate the Graph Queryset item in C2.W2. Manually reenter the queries and any saved query configurations from the original Graph Queryset.
+1. Recreate the Graph Queryset item in the secondary workspace. Manually reenter the queries and any saved query configurations from the original Graph Queryset.
 
 ### KQL Database/Queryset
 
