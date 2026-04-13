@@ -205,6 +205,8 @@ items:
                 href: event-streams/api-get-eventstream-definition.md
               - name: Update Eventstream Definition
                 href: event-streams/api-update-eventstream-definition.md
+              - name: Create an Eventstream with Eventhouse DirectIngestion by using APIs
+                href: event-streams/api-kusto-pull-destination.md
       - name: Security
         items:
           - name: Choose the right network security feature

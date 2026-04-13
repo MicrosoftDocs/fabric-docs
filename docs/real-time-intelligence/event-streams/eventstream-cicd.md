@@ -84,8 +84,8 @@ Fabric CI/CD features include Git Integration, Deployment Pipelines, and Public 
 
 | Category | Fully Supported | Partially Supported | Not Supported |
 | :--- | :--- | :--- | :--- |
-| **Sources** | Standard GA sources (e.g., Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Azure Service Bus (Preview)<br>Cribl (Preview)<br>HTTP (Preview)<br>MongoDB CDC (Preview) |
-| **Destinations** | All Destinations | - | - |
+| **Sources** | Standard GA sources (e.g., Azure Event Hubs, Confluent, Sample Data) |  Azure SQL DB (CDC)<br>Azure SQL Managed Instance (CDC)<br>MySQL DB (CDC)<br>PostgreSQL Database CDC<br>SQL Server on VM (CDC) | Cribl (Preview)<br> Anomaly Detection events (Preview)|
+| **Destinations** | Eventhouse<br>Lakehouse<br>Derived stream<br>Custom endpoint<br>Activator | - | Business events (Preview)<br>Spark Notebook (Preview) |
 | **Operators** |  Filter<br> Manage fields<br>Aggregate<br>Join<br>Group by<br>Union<br>Expand | SQL Code (Custom code) | - |
 | **Features** | General capabilities (e.g., multiple-schema inferencing) | - | Pause/Resume State |
 

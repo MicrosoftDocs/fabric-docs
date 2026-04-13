@@ -1,6 +1,6 @@
 ---
-title: Create an API-only eventstream with an Eventhouse direct ingestion destination
-description: Learn how to use APIs only to create an Eventhouse, create a KQL table and mapping, and create an Eventstream in DirectIngestion mode.
+title: Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs
+description: Learn how to use APIs to create an Eventhouse, create a KQL table and ingestion mapping, and create an Eventstream in DirectIngestion mode.
 ms.reviewer: zhenxilin
 ms.topic: how-to
 ms.date: 04/07/2026
@@ -8,19 +8,20 @@ ms.search.form: Eventstream REST API
 ai-usage: ai-assisted
 ---
 
-# Create an API-only eventstream with an Eventhouse direct ingestion destination
+# Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs
 
 This article shows a practical API-only flow to set up an eventstream that writes to Eventhouse in **DirectIngestion** mode.
 
-You complete three steps:
+You complete four steps:
 
 1. Create an Eventhouse.
+1. Get the KQL database properties.
 1. Create a KQL table and ingestion mapping.
-1. Create an Eventstream that uses Eventhouse Direct Ingestion mode.
+1. Create an Eventstream that uses Eventhouse DirectIngestion mode.
 
 ## Prerequisites
 
-- You have Access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
+- You have access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - You have permissions to run Kusto management commands on the target KQL database.
 
 ## Required references
@@ -129,14 +130,13 @@ If you need advanced provisioning by definition parts, use the Eventhouse defini
 }
 ```
 
-Capture these values for the next steps:
+Capture the value for the next steps:
 
-- `workspaceId`
 - Eventhouse item ID (`id`)
 
-## Step 2: Get the KQL database ID
+## Step 2: Get the KQL database properties
 
-DirectIngestion payload needs both `kqlDatabaseId` and `kqlDatabaseName`.
+Use this step to get the KQL database ID and Kusto engine endpoint for the next step.
 
 ### API address and parameters
 
@@ -167,8 +167,8 @@ Authorization: Bearer <fabric_access_token>
       "workspaceId": "00000000-0000-0000-0000-000000000000",
       "properties": {
         "parentEventhouseItemId": "00000000-0000-0000-0000-000000000000",
-        "queryServiceUri": "https://trd-n1uzagn9dwt2sgr4vb.z3.kusto.fabric.microsoft.com",
-        "ingestionServiceUri": "https://ingest-trd-n1uzagn9dwt2sgr4vb.z3.kusto.fabric.microsoft.com",
+        "queryServiceUri": "https://exampleeventhouse.z3.kusto.fabric.microsoft.com",
+        "ingestionServiceUri": "https://ingest-exampleeventhouse.z3.kusto.fabric.microsoft.com",
         "databaseType": "ReadWrite"
       },
       "sensitivityLabel": {
@@ -182,11 +182,11 @@ Authorization: Bearer <fabric_access_token>
 In this response:
 
 - `kqlDatabaseId` is `id`.
-- `kqlDatabaseName` is `displayName`.
+- `eventhouse-engine-endpoint` is `properties.queryServiceUri`. Use this value as the host for all Kusto management API calls in the next step.
 
 If the workspace has multiple KQL databases, use `properties.parentEventhouseItemId` to select the database that belongs to the Eventhouse created in Step 1.
 
-## Step 2: Create table and mapping rule with Kusto REST API
+## Step 3: Create table and mapping rule with Kusto REST API
 
 ### API address and parameters
 
@@ -199,11 +199,15 @@ POST https://<eventhouse-engine-endpoint>/v1/rest/mgmt
 | `<eventhouse-engine-endpoint>` | URL host | Yes | The Eventhouse/Kusto engine endpoint. |
 
 ### Token
+ 
+To get `<kusto_access_token>`, request a token for the Kusto engine endpoint (`properties.queryServiceUri` from Step 2). Example:
 
-```http
-Authorization: Bearer <kusto_access_token>
-Content-Type: application/json
+```powershell
+$clusterUrl = "https://exampleeventhouse.z3.kusto.fabric.microsoft.com"
+$kustoAccessToken = (Get-AzAccessToken -ResourceUrl $clusterUrl).Token
 ```
+
+Use `$kustoAccessToken` in the `Authorization` header.
 
 ### Create table
 
@@ -221,9 +225,35 @@ Run this KQL command:
 
 # [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
 
-Call `POST https://<eventhouse-engine-endpoint>/v1/rest/mgmt` and submit the same `.create table` command in the `csl` field.
+```http
+POST https://<eventhouse-engine-endpoint>/v1/rest/mgmt
+```
 
-For API details, see:
+Request body:
+
+```json
+{
+  "db": "<kqlDatabaseName>",
+  "csl": ".create table Orders (id:string, eventTime:datetime, amount:real)"
+}
+```
+
+Response example:
+
+```json
+{
+  "Tables": [
+    {
+      "TableName": "Table_0",
+      "Rows": [
+        ["Orders"]
+      ]
+    }
+  ]
+}
+```
+
+For details, see:
 
 - [Kusto REST API overview](/kusto/api/rest)
 - [Kusto REST request authentication](/kusto/api/rest/request)
@@ -238,7 +268,7 @@ For API details, see:
 Run this KQL command:
 
 ```kql
-.create table Orders ingestion json mapping 'orders_json_map' '[{"column":"id","path":"$.id"},{"column":"eventTime","path":"$.eventTime"},{"column":"amount","path":"$.amount"}]'
+.create table Orders ingestion json mapping 'orders_json_map' '[{"column":"id","Properties":{"path":"$.id"}},{"column":"eventTime","Properties":{"path":"$.eventTime"}},{"column":"amount","Properties":{"path":"$.amount"}}]'
 ```
 
 After the mapping is created, you can verify `ingestionMappingReference` usage with:
@@ -251,7 +281,61 @@ Replace `<data-source>` with your source path or URI.
 
 # [Using Eventhouse REST API](#tab/using-eventhouse-rest-api)
 
-Call `POST https://<eventhouse-engine-endpoint>/v1/rest/mgmt` and submit the same `.create table ... ingestion ... mapping` command in the `csl` field.
+```http
+POST https://<eventhouse-engine-endpoint>/v1/rest/mgmt
+```
+
+Request body:
+
+```json
+{
+  "db": "<kqlDatabaseName>",
+  "csl": ".create table Orders ingestion json mapping 'orders_json_map' '[{\"column\":\"id\",\"Properties\":{\"path\":\"$.id\"}},{\"column\":\"eventTime\",\"Properties\":{\"path\":\"$.eventTime\"}},{\"column\":\"amount\",\"Properties\":{\"path\":\"$.amount\"}}]'"
+}
+```
+
+> [!IMPORTANT]
+> If the mapping name already exists, use a new name or use the alter command.
+
+PowerShell example:
+
+```powershell
+$clusterUrl = "https://exampleeventhouse.z3.kusto.fabric.microsoft.com"
+$token = (Get-AzAccessToken -ResourceUrl $clusterUrl).Token
+$headers = @{
+  Authorization = "Bearer $token"
+  "Content-Type" = "application/json"
+}
+
+$mappingName = "orders_json_map_retry1"
+$mappingJson = @(
+  @{ column = "id"; Properties = @{ path = "$.id" } },
+  @{ column = "eventTime"; Properties = @{ path = "$.eventTime" } },
+  @{ column = "amount"; Properties = @{ path = "$.amount" } }
+) | ConvertTo-Json -Compress
+
+$body = @{
+  db = "eh-api-demo"
+  csl = ".create table Orders ingestion json mapping '$mappingName' '$mappingJson'"
+} | ConvertTo-Json -Compress
+
+Invoke-RestMethod -Method POST -Uri "$clusterUrl/v1/rest/mgmt" -Headers $headers -Body $body
+```
+
+Response example:
+
+```json
+{
+  "Tables": [
+    {
+      "TableName": "Table_0",
+      "Rows": [
+        ["orders_json_map", "Json"]
+      ]
+    }
+  ]
+}
+```
 
 For API and mapping details, see:
 
@@ -267,7 +351,7 @@ At this point you have:
 - `tableName`: `Orders`
 - `mappingRuleName`: `orders_json_map`
 
-## Step 3: Create Eventstream in DirectIngestion mode
+## Step 4: Create Eventstream in DirectIngestion mode
 
 ### API address and parameters
 
@@ -290,7 +374,7 @@ This sample payload uses `SampleData` as the source and `Eventhouse` as the dest
       "name": "SampleDataSource",
       "type": "SampleData",
       "properties": {
-        "sampleDataType": "StockMarket"
+        "type": "StockMarket"
       }
     }
   ],
@@ -302,7 +386,6 @@ This sample payload uses `SampleData` as the source and `Eventhouse` as the dest
         "dataIngestionMode": "DirectIngestion",
         "workspaceId": "<eventhouseWorkspaceId>",
         "itemId": "<eventhouseItemId>",
-        "kqlDatabaseId": "<kqlDatabaseId>",
         "tableName": "Orders",
         "connectionName": "eventhouse-conn-7f3a",
         "mappingRuleName": "orders_json_map"
@@ -337,10 +420,9 @@ Destination fields used in DirectIngestion mode:
 |---|---|
 | `workspaceId` | Eventhouse workspace ID from step 1 |
 | `itemId` | Eventhouse item ID from step 1 |
-| `kqlDatabaseId` | KQL database ID from step 1.5 |
 | `connectionName` | Any unique name. A random suffix is recommended, for example `eventhouse-conn-7f3a`. |
-| `tableName` | Table name from step 2 |
-| `mappingRuleName` | Mapping rule name from step 2 |
+| `tableName` | Table name from step 3 |
+| `mappingRuleName` | Mapping rule name from step 3 |
 
 ### Encode the topology to Base64
 
@@ -379,16 +461,14 @@ The sample request includes a payload with Base64-encoded definition parts.
 ### Sample response
 
 ```http
-Location: https://api.fabric.microsoft.com/v1/operations/ccccdddd-2222-eeee-3333-ffff4444aaaa
-x-ms-operation-id: ccccdddd-2222-eeee-3333-ffff4444aaaa
-Retry-After: 30
+null
 ```
 
 ## End-to-end checklist
 
 1. Get a Fabric token (`aud = https://api.fabric.microsoft.com`).
 1. Create Eventhouse and capture `workspaceId` and `itemId`.
-1. Get `kqlDatabaseId` and `kqlDatabaseName`.
+1. Get `kqlDatabaseName` and `eventhouse-engine-endpoint`.
 1. Get a Kusto token for `<eventhouse-engine-endpoint>`.
 1. Create `tableName` and `mappingRuleName`.
 1. Build and Base64-encode `eventstream.json`.
