@@ -10,21 +10,23 @@ ai-usage: ai-assisted
 
 # Create an Eventstream with an Eventhouse DirectIngestion destination by using APIs
 
-This article shows a practical API-only flow to set up an eventstream that writes to Eventhouse in **DirectIngestion** mode.
+This article provides a step-by-step guide to create an Eventstream with an Eventhouse DirectIngestion destination by using APIs.
 
 You complete four steps:
 
-1. Create an Eventhouse.
-1. Get the KQL database properties.
-1. Create a KQL table and ingestion mapping.
-1. Create an Eventstream that uses Eventhouse DirectIngestion mode.
+> [!div class="checklist"]
+>
+> - Create an Eventhouse.
+> - Get the KQL database properties.
+> - Create a KQL table and ingestion mapping.
+> - Create an Eventstream that uses Eventhouse DirectIngestion mode.
 
 ## Prerequisites
 
 - You have access to a workspace with the **Fabric** capacity or **Fabric Trial** workspace type with Contributor or higher permissions.
 - You have permissions to run Kusto management commands on the target KQL database.
 
-## Required references
+## References
 
 - [Eventhouse create API](/rest/api/fabric/eventhouse/items/create-eventhouse?tabs=HTTP)
 - [Eventhouse definition](/rest/api/fabric/articles/item-management/definitions/eventhouse-definition)
@@ -34,26 +36,37 @@ You complete four steps:
 
 ## Authentication and permission requirements
 
-To work with Fabric APIs, first get a Microsoft Entra token for the Fabric service. Then use that token in the Authorization header of your API call:
+To work with Fabric APIs, first get a Microsoft Entra token for the Fabric service, and then use that token in the Authorization header of the API call. You can get a Fabric token in either of the following ways.
 
-You can acquire a Fabric token in two ways:
+**Option 1: Get token using MSAL.NET**
 
-1. Get a token using MSAL.NET.
+If your application needs to access Fabric APIs using a **service principal**, you can use the MSAL.NET library to acquire an access token. Follow the [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app, which acquires an Azure AD token using MSAL.Net library, then use C# HttpClient to call List workspaces API.
 
-  If your application accesses Fabric APIs by using a **service principal**, use MSAL.NET to acquire an access token. Follow [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart) to create a C# console app that acquires a Microsoft Entra token and calls a Fabric API.
+**Option 2: Get token using the Fabric Portal**
 
-1. Get a token from the Fabric portal.
+You can use your Azure AD token to authenticate and test the Fabric APIs. Sign in into the Fabric Portal for the Tenant you want to test on, and press F12 to enter the browser's developer mode. In the console there, run:
 
-    You can use your Microsoft Entra token to authenticate and test the Fabric APIs. Sign in to the Fabric portal for the tenant you want to test, press `F12` to open the browser developer tools, and then run the following command in the console:
+```
+powerBIAccessToken
+```
 
-    ```text
-    powerBIAccessToken
-    ```
-    
+Copy the token and paste it into your application.
+
 > [!NOTE]
 > If the eventstream you create includes any sources that use a cloud connection, make sure the identity you use to get the token has permission to access that cloud connection, whether it's a service principal or a user.
->
-> The preceding methods describe the token for Fabric item APIs (Eventhouse and Eventstream). If your flow calls Kusto management endpoint `/v1/rest/mgmt`, get and use the Kusto token by following [Kusto REST request authentication](/kusto/api/rest/request).
+
+### Get a Kusto token for the management endpoint
+
+Use a Kusto token, not a Fabric token, when your flow calls the Kusto management endpoint `/v1/rest/mgmt`.
+
+Get the token for the Kusto engine endpoint returned in Step 2 (`properties.queryServiceUri`). For example:
+
+```powershell
+$clusterUrl = "https://exampleeventhouse.z3.kusto.fabric.microsoft.com"
+$kustoAccessToken = (Get-AzAccessToken -ResourceUrl $clusterUrl).Token
+```
+
+Use `$kustoAccessToken` in the Authorization header for Kusto management API calls. For more information, see [Kusto REST request authentication](/kusto/api/rest/request).
 
 If you authenticate by using a service principal, grant the following KQL data-plane permissions:
 
@@ -144,6 +157,8 @@ Use this step to get the KQL database ID and Kusto engine endpoint for the next 
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/kqlDatabases
 ```
 
+This endpoint returns all KQL databases in the workspace. Use the Eventhouse item ID from Step 1 to select the target database by matching `properties.parentEventhouseItemId`.
+
 | Parameter | In | Required | Description |
 |---|---|---|---|
 | `workspaceId` | Path | Yes | The workspace that contains your Eventhouse and KQL databases. |
@@ -181,10 +196,8 @@ Authorization: Bearer <fabric_access_token>
 
 In this response:
 
-- `kqlDatabaseId` is `id`.
-- `eventhouse-engine-endpoint` is `properties.queryServiceUri`. Use this value as the host for all Kusto management API calls in the next step.
-
-If the workspace has multiple KQL databases, use `properties.parentEventhouseItemId` to select the database that belongs to the Eventhouse created in Step 1.
+- `kqlDatabaseName` is `displayName`. Use this value for the `db` field in Kusto management request bodies.
+- `eventhouse-engine-endpoint` is `properties.queryServiceUri`. Use this value for the next step.
 
 ## Step 3: Create table and mapping rule with Kusto REST API
 
@@ -200,14 +213,7 @@ POST https://<eventhouse-engine-endpoint>/v1/rest/mgmt
 
 ### Token
  
-To get `<kusto_access_token>`, request a token for the Kusto engine endpoint (`properties.queryServiceUri` from Step 2). Example:
-
-```powershell
-$clusterUrl = "https://exampleeventhouse.z3.kusto.fabric.microsoft.com"
-$kustoAccessToken = (Get-AzAccessToken -ResourceUrl $clusterUrl).Token
-```
-
-Use `$kustoAccessToken` in the `Authorization` header.
+Use the Kusto token described in [Get a Kusto token for the management endpoint](#get-a-kusto-token-for-the-management-endpoint).
 
 ### Create table
 
@@ -342,7 +348,7 @@ For API and mapping details, see:
 - [Kusto REST API overview](/kusto/api/rest)
 - [Kusto REST request authentication](/kusto/api/rest/request)
 - [Create ingestion mapping command](/kusto/management/create-ingestion-mapping-command)
-- [Mapping with ingestionMappingReference](/kusto/management/mappings?view=microsoft-fabric#mapping-with-ingestionmappingreference)
+- [Mapping with ingestionMappingReference](/kusto/management/mappings#mapping-with-ingestionmappingreference)
 
 ---
 
@@ -363,9 +369,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 |---|---|---|---|
 | `workspaceId` | Path | Yes | The workspace where the Eventstream item is created. |
 
-### Eventstream topology payload (decoded `eventstream.json`)
+### Eventstream topology payload
 
-This sample payload uses `SampleData` as the source and `Eventhouse` as the destination in `DirectIngestion` mode. Keep the destination properties aligned with your API version.
+This sample payload uses `SampleData` as the source and `Eventhouse DirectIngestion` as the destination. Keep the destination properties aligned with your API version.
 
 ```json
 {
@@ -468,11 +474,11 @@ null
 
 1. Get a Fabric token (`aud = https://api.fabric.microsoft.com`).
 1. Create Eventhouse and capture `workspaceId` and `itemId`.
-1. Get `kqlDatabaseName` and `eventhouse-engine-endpoint`.
+1. Get `eventhouse-engine-endpoint`.
 1. Get a Kusto token for `<eventhouse-engine-endpoint>`.
 1. Create `tableName` and `mappingRuleName`.
 1. Build and Base64-encode `eventstream.json`.
-1. Create Eventstream and track operation status.
+1. Create Eventstream with an Eventhouse DirectIngestion destination.
 
 ## Related content
 
