@@ -11,11 +11,9 @@ ms.collection: not-ai
 #CustomerIntent: As a Fabric RTI AI developer, I want to get started and use the RTI MCP server to create AI agents and AI applications that use Activator using natural language to create monitoring rules, mange alrets, and trigger actions.
 ---
 
-# Get started with the Activator remote MCP server (preview)
+# Get started with the remote MCP server for Activator (preview)
 
 By using the Activator MCP (Model Context Protocol) server, AI assistants can interact with [Fabric Activator](data-activator/activator-introduction.md) to create monitoring rules, manage alerts, and trigger actions—all through natural language.
-
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Get started
 

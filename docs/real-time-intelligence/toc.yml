@@ -1034,9 +1034,9 @@ items:
             href: mcp-local-server.md
           - name: Remote MCP servers
             items:
-              - name: Eventhouse remote MCP
+              - name: Remote MCP for Eventhouse
                 href: mcp-remote-eventhouse.md
-              - name: Activator remote MCP
+              - name: Remote MCP for Activator
                 href: mcp-remote-activator.md
   - name: Git integration and deployment pipelines
     displayName: alm, application lifecycle management, cicd, devops

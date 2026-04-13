@@ -13,40 +13,28 @@ ai-usage: ai-assisted
 
 # What is MCP in Real-Time Intelligence? (preview)
 
-Model Context Protocol (MCP) in Real-Time Intelligence (RTI) enables AI agents and applications to interact with Fabric RTI components using natural language. MCP provides a standardized way for AI models to discover and use external tools and data sources, making it easier to build intelligent applications that can query, reason, and act on real-time data.
+Model Context Protocol (MCP) in Real-Time Intelligence (RTI) enables AI models, AI agents, and applications to interact with Fabric RTI components using natural language.
 
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
+The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) provides a standardized way for AI models, like Azure OpenAI models, to discover and use external tools and data sources, making it easier to build intelligent applications that can query, reason, and act on real-time data. MCP makes it easier for AI agents to find, connect to, and use enterprise data.
 
-## Introduction to Model Context Protocol
+Fabric's Real-Time Intelligence provides two types of MCP servers: local and remote. Each option has different deployment models, capabilities, and use cases.
 
-[Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is a protocol that lets AI models, like Azure OpenAI models, interact with external tools and resources. MCP makes it easier for agents to find, connect to, and use enterprise data.
+## Local MCP server for RTI
 
-MCP uses a client-server architecture with three main components:
-
-* **MCP Host**: The environment where the AI model (like GPT-4, Claude, or Gemini) runs.
-* **MCP Client**: An intermediary service that forwards the AI model's requests to MCP servers, like GitHub Copilot, Cline, or Claude Desktop.
-* **MCP Server**: A lightweight application that exposes specific capabilities through natural language APIs and databases.
-
-Real-Time Intelligence provides two types of MCP servers: local and remote. Each option has different deployment models, capabilities, and use cases.
-
-## Local RTI MCP server
-
-The local RTI MCP server is an open-source implementation that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
+The local MCP server for Fabric Real-Time Intelligence is an open-source server that you install, host, and manage yourself. It runs on your local machine and provides read-only access to Fabric RTI and Azure Data Explorer (ADX) resources.
 
 Key characteristics:
 
 - **Deployment**: Self-hosted on your local machine
 - **Source**: [Open-source on GitHub](https://github.com/microsoft/fabric-rti-mcp/)
-- **Access**: Read-only queries to Eventhouse, Eventstream, Map, and ADX clusters
+- **Access**: Read-only queries to Eventhouse, Eventstream, Map, and Azure Data Explorer (ADX) clusters.
 - **Management**: You manage installation, updates, and maintenance
 
 For detailed information, see [Get started with the local MCP server](mcp-local-server.md).
 
 ## Remote MCP servers
 
-Remote MCP servers are hosted by Microsoft and available as HTTP endpoints. You configure your MCP client to connect to these servers without installing or managing any software.
-
-RTI provides two remote MCP servers:
+Remote MCP servers are hosted by Microsoft and are available as HTTP endpoints. You configure your MCP client to connect to these servers without installing or managing any software.
 
 | Server | Description | Capabilities |
 |--------|-------------|--------------|
