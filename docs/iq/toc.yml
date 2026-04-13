@@ -88,7 +88,7 @@ items:
         - name: Write back data
           href: plan/planning-how-to-write-back-data.md
         - name: Change layouts
-          href: plan/planning-how-to-change-layouts.md  
+          href: plan/planning-sheet-how-to-change-layouts.md  
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
