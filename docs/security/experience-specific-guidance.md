@@ -338,9 +338,11 @@ Graph Model and Graph Queryset items from the primary region remain unavailable 
 
 1. Create a new workspace or use an existing workspace in that capacity.
 
-1. If the original Graph Model item has a lakehouse configured for data loading, refer to the [Lakehouse section](#lakehouse) to recover the lakehouse first.
+1. Recreate the Graph Model item in the secondary workspace (referenced in step 2). Reconfigure the model definition, including nodes, edges, etc., to match the original Graph Model.
 
-1. Recreate the Graph Model item in the secondary workspace (referenced in step 2). Reconfigure the model definition, including nodes, edges, etc to match the original Graph Model. If a lakehouse was recovered in the previous step, connect it to the newly created Graph Model item.
+1. If the original lakehouse is in the failing region, recover it first by following the [Lakehouse section](#lakehouse).
+
+1. Connect a lakehouse as the OneLake data source for the newly created Graph Model item. Use the recovered lakehouse if it was in the failing region, or reconnect to the existing lakehouse if it remains available.
 
 1. Reconfigure any data loading schedules or connections for the Graph Model in the new workspace.
 
