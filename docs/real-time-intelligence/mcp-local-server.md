@@ -63,12 +63,11 @@ This architecture lets you build modular, scalable, and secure intelligent appli
 
 ## Implement
 
-To implemnent the local RTI MCP server, follow the open source instructions in the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with RTI.
+To implement the local RTI MCP server, follow the open source instructions in the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with RTI.
 
 ## Related content
 
 * Implement the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/)
 * [Model Context Protocol (MCP) overview](https://modelcontextprotocol.io/introduction)
 * [What is MCP in Real-Time Intelligence?](mcp-overview.md)
-* [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)
-* [Get started with the Activator remote MCP](mcp-remote-activator.md)
+

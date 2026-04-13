@@ -37,7 +37,7 @@ Key characteristics:
 
 - **Deployment**: Self-hosted on your local machine
 - **Source**: [Open-source on GitHub](https://github.com/microsoft/fabric-rti-mcp/)
-- **Access**: Read-only queries to Eventhouse and ADX clusters
+- **Access**: Read-only queries to Eventhouse, Eventstream, Map, and ADX clusters
 - **Management**: You manage installation, updates, and maintenance
 
 For detailed information, see [Get started with the local MCP server](mcp-local-server.md).
@@ -65,8 +65,8 @@ Choose the MCP server type based on your requirements:
 | Scenario | Recommended option |
 |----------|-------------------|
 | Query Eventhouse or ADX data with full control over the server | Local MCP server |
-| Query Eventhouse without managing server infrastructure | Eventhouse remote MCP |
-| Create monitoring rules and alerts in Activator | Activator remote MCP |
+| Query Eventhouse without managing server infrastructure | Remote Eventhouse MCP |
+| Create monitoring rules and alerts in Activator | Remote Activator MCP |
 | Use in cloud agent platforms like Copilot Studio or Azure AI Foundry | Remote MCP servers |
 | Need offline or air-gapped access | Local MCP server |
 | Want automatic updates and maintenance | Remote MCP servers |
