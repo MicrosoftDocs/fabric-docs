@@ -5,8 +5,9 @@ ms.date: 04/12/2026
 ms.topic: concept-article
 #customer intent: As a user, I want to understand planning cubes and multi-dimensional driver based allocation.
 ---
+# What is a planning cube?
 
-In many business scenarios, plans are created separately for each dimension, such as regions, product lines, departments, or time periods - resulting in duplicated effort and fragmented planning. Multi-dimensional cube planning lets you create and allocate plans across multiple dimensions with different granularities in a single step. Cubes enable plans to stay synchronized across different levels of detail.
+In many business scenarios, plans are created separately for each dimension, such as regions, product lines, departments, or time periods-resulting in duplicated effort and fragmented planning. Multi-dimensional cube planning lets you create and allocate plans across multiple dimensions with different granularities in a single step. Cubes enable plans to stay synchronized across different levels of detail.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -43,7 +44,7 @@ Where:
 * Values are distributed based on the relative contribution of each driver value within the hierarchy scope.
 * Allocation respects the dimensional granularity and breakdowns configured in the cube, ensuring consistency with the data model.
   
-    :::image type="content" source="media/planning-concept-planning-cube/allocation.png" alt-text="Screenshot of allocating values.":::
+    :::image type="content" source="media/concept-planning-cube/allocation.png" alt-text="Screenshot of allocating values.":::
 
 ## Multi-dimensional allocation
 
