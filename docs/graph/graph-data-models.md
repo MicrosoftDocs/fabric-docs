@@ -4,7 +4,7 @@ description: Learn how the Labeled Property Graph (LPG) model in graph in Micros
 #customer intent: As a data professional, I want to understand the labeled property graph model used by graph in Microsoft Fabric so that I can effectively model my connected data.
 ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 03/31/2026
+ms.date: 04/10/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -40,10 +40,14 @@ For most customers, LPG provides the best balance of performance, usability, and
 - **Simplicity and intuitiveness:** Nodes and edges map closely to how people think about networks. LPG is less complex than RDF. You don't need to define ontologies or manage global identifiers.
 - **Properties on edges:** Model weighted, temporal, or labeled relationships on edges. This feature supports advanced analytics like recommendations and fraud detection.
 - **Performance and storage efficiency:** LPG-based graph databases store data compactly and enable fast traversals, even for large, complex graphs.
-- **Flexible schema:** Evolve your graph model as your business needs change, without rigid constraints.
+- **Flexible schema:** Evolve your graph model as your business needs change, without rigid constraints. Note that schema changes currently require you to create a new graph model and reload your data. For more information, see [Design a graph schema](design-graph-schema.md).
 - **Integration with Fabric:** Graph works with OneLake and Power BI, enabling seamless analytics and visualization.
+
+For details on how node types and edge types map to lakehouse tables in Fabric, see [Understand node types and edge types](design-graph-schema.md#understand-node-types-and-edge-types).
 
 ## Related content
 
+- [Design a graph schema](design-graph-schema.md)
+- [Tutorial: Introduction to graph](tutorial-introduction.md)
 - [Try Microsoft Fabric for free](../fundamentals/fabric-trial.md)
 - [End-to-end tutorials in Microsoft Fabric](../fundamentals/end-to-end-tutorials.md)

@@ -430,6 +430,10 @@ items:
         href: get-started-api-livy-session.md
       - name: Submit Livy API batch jobs
         href: get-started-api-livy-batch.md
+      - name: High concurrency support in the Fabric Livy API
+        href: high-concurrency-livy.md
+      - name: Get started with high concurrency with the Livy endpoint
+        href: get-started-high-concurrency-livy.md
 - name: VS Code integration
   items:
   - name: Fabric extensions for VS Code

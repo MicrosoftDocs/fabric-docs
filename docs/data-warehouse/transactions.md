@@ -2,7 +2,7 @@
 title: Transactions in Fabric Data Warehouse
 description: Learn how to use transactions and how to insert and modify data in Warehouse tables in Microsoft Fabric.
 ms.reviewer: twcyril
-ms.date: 10/17/2025
+ms.date: 4/7/2026
 ms.topic: how-to
 ms.search.form: Warehouse design and development
 ---
@@ -16,7 +16,7 @@ Fabric Data Warehouse supports ACID-compliant transactions. Each transaction is 
 
 ## Explicit transactions
 
-You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using explicit transactions to group changes together. 
+You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using explicit transactions to group changes together.
 
 For example, you could commit inserts to multiples tables, or, none of the tables if an error arises. If you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables.
 
@@ -24,6 +24,26 @@ You can use standard T-SQL (`BEGIN TRAN`, `COMMIT TRAN`, and `ROLLBACK TRAN`) sy
     - [BEGIN TRANSACTION](/sql/t-sql/language-elements/begin-transaction-transact-sql?view=fabric&preserve-view=true)
     - [COMMIT TRANSACTION](/sql/t-sql/language-elements/commit-transaction-transact-sql?view=fabric&preserve-view=true)
     - [ROLLBACK TRANSACTION](/sql/t-sql/language-elements/rollback-transaction-transact-sql?view=fabric&preserve-view=true)
+
+For example, Fabric Data Warehouse will treat these schema changes as a single atomic unit:
+
+```sql
+-- Sample Syntax--- 
+BEGIN TRAN; 
+ALTER TABLE <table_name> ADD <column_name> <type>; 
+ALTER TABLE <table_name> DROP COLUMN <column_name>; 
+COMMIT; 
+```
+
+If any statement in the transaction fails, all schema changes are automatically rolled back.
+
+Fabric Data Warehouse supports executing the following inside an explicit transaction:  
+
+- `ALTER TABLE` add nullable columns 
+- `ALTER TABLE` drop columns 
+- `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
+- Multiple `ALTER TABLE` statements
+- `ALTER TABLE` on distributed temporary tables
 
 ### Cross-database query transaction support
 
@@ -129,7 +149,6 @@ INSERT statements always create new parquet files, which means fewer conflicts w
 ## Limitations
 
 - Distributed transactions are not supported, for example, `BEGIN DISTRIBUTED TRANSACTION`.
-- `ALTER TABLE` is not supported within an explicit transaction.
 - Save points are not supported.
 - Named transactions are not supported.
 - Marked transactions are not supported.

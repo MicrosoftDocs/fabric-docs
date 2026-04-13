@@ -61,6 +61,7 @@ The following table summarizes the supported workloads and item types that can b
 | Data Factory | Data connection rules | <ul><li>Data Flows Gen2 (with CICD)</li><li>Pipelines</li><li>Copy Jobs</li></ul> | [Workspace outbound access protection for Data Factory](workspace-outbound-access-protection-data-factory.md) |
 | Data Science | Not applicable | <ul><li>Machine Learning Experiments</li><li>Machine Learning Models</li></ul> | [Workspace outbound access protection for Data Science](workspace-outbound-access-protection-data-science.md) |
 | Data Warehouse | Not applicable | <ul><li>Warehouses</li><li>SQL analytics endpoints</li></ul> | [Workspace outbound access protection for data warehouse workloads](workspace-outbound-access-protection-data-warehouse.md) |
+| Real-Time Intelligence | Data connection rules | <ul><li>Eventstream</li></ul> | [Workspace outbound access protection for Real-Time Intelligence](workspace-outbound-access-protection-real-time-intelligence.md) |
 | Mirrored databases | Data connection rules | Microsoft Fabric mirrored databases from:<ul><li>Azure SQL Database</li><li>Snowflake</li><li>Mirrored Database</li><li>Azure Cosmos DB</li><li>Azure SQL Managed Instance</li><li>Azure Database for PostgreSQL</li><li>SQL Server</li><li>Oracle</li><li>Google Big Query</li><li>SAP</li><li>Azure Database for MySQL</li></ul> | [Workspace outbound access protection for mirrored databases](workspace-outbound-access-protection-mirrored-databases.md) |
 | OneLake | Managed private endpoints | <ul><li>OneLake shortcuts</li></ul> | [Workspace outbound access protection for OneLake](workspace-outbound-access-protection-onelake.md) |
 
@@ -112,10 +113,10 @@ Data connection rules aren't yet available in the following region:
 
 Workspace admins can specify which workspaces are allowed as destinations for certain item types. For example, under the Lakehouse connection type, admins can add workspaces to an allow list, enabling Lakehouses in those workspaces to be accessed. The following Fabric connection types support workspace-level granularity:
 
-   * Lakehouse
-   * Warehouse
-   * Dataflows
-   * Fabric SQL Database
+* Dataflow
+* Fabric SQL Database
+* Lakehouse
+* Warehouse
 
 Other Fabric connection types, such as Datamarts, KQL Database, Fabric Data Pipelines, and CopyJob, don't support workspace-level granularity. For these connection types, admins can't specify individual workspaces in the allow list.
 
