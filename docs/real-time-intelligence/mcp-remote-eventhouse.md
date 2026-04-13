@@ -113,9 +113,7 @@ Once configured, verify that the setup is working.
 
 ## Available tools
 
-The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover schema, generate KQL queries from natural language, execute queries, and sample data.
-
-For the full list of available tools and capabilities, see the 
+The Eventhouse MCP server exposes a set of tools that AI agents can use to interact with the Eventhouse and its KQL databases. These tools allow agents to discover KQL database schemas, generate KQL queries from natural language, execute queries, and sample data.
 
 ## Troubleshoot
 

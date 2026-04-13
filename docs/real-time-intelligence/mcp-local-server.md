@@ -65,7 +65,7 @@ Any application that supports MCP can connect to the local RTI MCP server using 
 
 ## Install
 
-To implement the local RTI MCP server, follow the open source instructions in the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with RTI.
+To install the local RTI MCP server, follow the open source instructions in the [RTI MCP server](https://github.com/microsoft/fabric-rti-mcp/) repository. The repository includes documentation on installation, configuration, and usage of the MCP server with RTI.
 
 ## Related content
 
