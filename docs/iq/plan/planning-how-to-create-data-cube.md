@@ -5,8 +5,9 @@ ms.date: 04/12/2026
 ms.topic: how-to
 #customer intent: As a user, I want to understand how to build planning cubes
 ---
+# Plan across multiple dimensions with cubes
 
- [Cubes](planning-concept-planning-cube.md) support allocating plans, budgets, forecasts, or other data input measures across multiple dimensions. Allocate values across dimensions based on the weights of a driver measure. Allocations can even be extended to dimensions and driver measures that aren't included in the current report. This approach enables complex, multi‑dimensional planning with minimal effort.
+ [Cubes](concept-planning-cube.md) support allocating plans, budgets, forecasts, or other data input measures across multiple dimensions. Allocate values across dimensions based on the weights of a driver measure. Allocations can even be extended to dimensions and driver measures that aren't included in the current report. This approach enables complex, multi‑dimensional planning with minimal effort.
 
 [!INCLUDE [Fabric feature-preview-note](../../includes/feature-preview-note.md)]
 
@@ -31,10 +32,10 @@ Create cube measures by adding breakdowns in data input measures.
 
 1. Select **Add** to create new dimension breakdowns.
 
->[!NOTE]
->At least one row dimension from the current planning sheet is required to create breakdowns based on dimensions that aren't part of the sheet.
+    >[!NOTE]
+    >At least one row dimension from the current planning sheet is required to create breakdowns based on dimensions that aren't part of the sheet.
 
-    :::image type="content" source="media/planning-how-to-create-cube/add-multiple-breakdowns.png" alt-text="Screenshot of configuring breakdown dimensions.":::
+    :::image type="content" source="media/planning-how-to-create-cube/add-multiple-breakdowns.png" alt-text="Screenshot of configuring additonal breakdown dimensions.":::
 
 1. Create the breakdown and create the measure.
 1. After a cube measure is created, it will be added under **Data** > **From Sheets** > **Cube**.
