@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 
 # Get started with the local MCP server for Real-Time Intelligence (preview)
 
-The local RTI MCP server lets AI agents or AI applications interact with Fabric Real-Time Intelligence (RTI) or Azure Data Explorer (ADX) by providing tools through the MCP interface, so you can query and analyze data easily.
+The local RTI MCP server lets AI agents or AI applications interact with Real-Time Intelligence (RTI) or Azure Data Explorer (ADX) by providing tools through the MCP interface. RTI MCP makes it easy to query and analyze data.
 
 MCP support for RTI and ADX is a full open-source [MCP server](https://github.com/microsoft/fabric-rti-mcp/) implementation for Microsoft Fabric Real-Time Intelligence (RTI). Customers need to install, host, and manage the deployment.
 
@@ -31,7 +31,7 @@ The local RTI MCP Server acts as a bridge between AI-powered applications and yo
 
 The architecture follows the MCP client-server model:
 
-- **MCP Host**: The application where AI interactions happen (e.g., VS Code with GitHub Copilot, Claude Desktop, Cline). The host contains the AI model connection, a tool orchestrator, and one or more MCP clients.
+- **MCP Host**: The application where AI interactions happen. For example, Visual Studio Code with GitHub Copilot, Claude Desktop, Cline. The host contains the AI model connection, a tool orchestrator, and one or more MCP clients.
 - **MCP Client**: A protocol component inside the host that communicates with MCP servers. When the AI model decides it needs data, the host's orchestrator invokes tools through the MCP client.
 - **MCP Server**: A lightweight service that exposes specific capabilities as structured tools. The RTI MCP server exposes tools like "execute query," "list databases," and "list tables" that translate into Eventhouse operations.
 

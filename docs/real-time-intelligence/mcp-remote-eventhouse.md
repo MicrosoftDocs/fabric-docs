@@ -13,7 +13,7 @@ ms.collection: not-ai
 
 # Get started with the remote MCP server for Eventhouse (preview)
 
-Learn how to use a remote Model Context Protocol (MCP) for eventhouse to execute KQL queries. The eventhouse remote MCP server allows AI agents to query, reason, and act on real-time data in the RTI eventhouse. This is a hosted MCP where you configure a URL to point to the Eventhouse. There is no need to install or deploy anything.
+Learn how to use a remote Model Context Protocol (MCP) for eventhouse to execute KQL queries. The eventhouse remote MCP server allows AI agents to query, reason, and act on real-time data in the RTI eventhouse. This is a hosted MCP where you configure a URL to point to the Eventhouse. There's no need to install or deploy anything.
 
 The Eventhouse remote MCP enables AI agents to query Eventhouse using natural language. Through the **Model Context Protocol (MCP)**, AI assistants can:
 
@@ -23,7 +23,7 @@ The Eventhouse remote MCP enables AI agents to query Eventhouse using natural la
 - Return insights over real-time and historical data.
 - Sample data.
 
-This capability allows Copilot and custom AI agents to securely interact with your eventhouse and be consumed by cloud agent platforms.
+This capability lets Copilot and custom AI agents securely interact with your eventhouse. Cloud agent platforms can consume these agents.
 
 ## Get started
 
@@ -70,7 +70,7 @@ The Eventhouse MCP server acts as an **HTTP-based MCP endpoint**. Add the remote
 
 1. Select the KQL database.
 
-1. Open **Database details** and in the **Overview** section, select **Copy URI** next to the **MCP Server URI**.
+1. From the **Database details** > **Overview** section, select **Copy URI** next to the **MCP Server URI**.
 
    :::image type="content" source="media/mcp/mcp-copy-server-url.png" alt-text="Diagram that shows how to find KQL database MCP URL." lightbox="media/mcp/mcp-copy-server-url.png":::
 

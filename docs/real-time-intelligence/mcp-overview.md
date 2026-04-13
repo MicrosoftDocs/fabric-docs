@@ -15,7 +15,7 @@ ai-usage: ai-assisted
 
 Model Context Protocol (MCP) in Real-Time Intelligence (RTI) enables AI models, AI agents, and applications to interact with Fabric RTI components using natural language.
 
-The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) provides a standardized way for AI models, like Azure OpenAI models, to discover and use external tools and data sources, making it easier to build intelligent applications that can query, reason, and act on real-time data. MCP makes it easier for AI agents to find, connect to, and use enterprise data.
+The [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) provides a standardized way for AI models, like Azure OpenAI models, to discover and use external tools and data sources. MCP makes it easier to build intelligent applications that can query, reason, and act on real-time data. MCP also makes it easier for AI agents to find, connect to, and use enterprise data.
 
 Fabric's Real-Time Intelligence provides two types of MCP servers: local and remote. Each option has different deployment models, capabilities, and use cases.
 
@@ -38,13 +38,13 @@ Remote MCP servers are hosted by Microsoft and are available as HTTP endpoints. 
 
 | Server | Description | Capabilities |
 |--------|-------------|--------------|
-| **Eventhouse remote MCP** | Enables AI agents to query Eventhouse using natural language | Schema discovery, KQL query generation, data sampling, natural language to KQL translation |
-| **Activator remote MCP** | Enables AI agents to interact with Fabric Activator | Create monitoring rules, manage alerts, trigger actions |
+| **Eventhouse MCP server** | Enables AI agents to query Eventhouse using natural language | Schema discovery, KQL query generation, data sampling, natural language to KQL translation |
+| **Activator MCP server** | Enables AI agents to interact with Fabric Activator | Create monitoring rules, manage alerts, trigger actions |
 
 For setup instructions, see:
 
-- [Get started with the Eventhouse remote MCP](mcp-remote-eventhouse.md)
-- [Get started with the Activator remote MCP](mcp-remote-activator.md)
+- [Get started with the remote MCP server for Eventhouse](mcp-remote-eventhouse.md)
+- [Get started with the remote MCP server for Activator](mcp-remote-activator.md)
 
 ## When to use local vs. remote servers
 
