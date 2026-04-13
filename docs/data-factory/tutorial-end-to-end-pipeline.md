@@ -32,14 +32,11 @@ The high-level steps in module 1 are:
 
 1. Select a workspace from the **Workspaces** tab or select **My workspace**, then select **+ New item**, then search for and choose **Copy job**.
 
-   <!-- TODO: Replace screenshot with standalone Copy job creation flow -->
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new Copy job selected." lightbox="media/tutorial-end-to-end-pipeline/new-data-pipeline.png":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/create-copy-job.png" alt-text="Screenshot of the workspace page with the button to create a new item, and then a new Copy job selected." lightbox="media/tutorial-end-to-end-pipeline/new-data-pipeline.png":::
 
 1. Provide a name for your Copy job. Then select **Create**.
 
 ## Configure the Copy job to load sample data to a data Lakehouse
-
-<!-- TODO: Update these steps for the standalone Copy job UI flow. The steps below are from the pipeline-based copy data assistant and need to be verified/updated for the standalone experience. Screenshots will also need to be replaced. -->
 
 1. On the **Choose data source** page, select **Sample data** from the options at the top of the dialog, and then select **NYC Taxi - Green**.
 
@@ -63,8 +60,6 @@ The high-level steps in module 1 are:
 
 1. On the **Review + save** page of the copy data assistant, review the configuration and then select **Save**.
 
-<!-- TODO: Remove or update the following pipeline-specific steps. In the standalone Copy job flow, there's no pipeline canvas or Settings tab to configure. Verify correct steps for standalone Copy job and replace this section. -->
-
 ## Run and view the results of your Copy job
 
 1. Select **Run** to run the Copy job and copy the data.
@@ -72,13 +67,9 @@ The high-level steps in module 1 are:
    > [!NOTE]  
    > This copy can take over 30 minutes to complete.
 
-   <!-- TODO: Replace screenshot with standalone Copy job run experience -->
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-pipeline.png" alt-text="Screenshot of the Copy job editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-pipeline.png":::
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-copy-job.png" alt-text="Screenshot of the Copy job editor with the Run button highlighted." lightbox="media/tutorial-end-to-end-pipeline/run-copy-job.png":::
 
-1. You can monitor the run and check the results on the **Output** tab below the canvas. Select the name of the Copy job to view the run details.
-
-   <!-- TODO: Replace screenshot with standalone Copy job output view -->
-   :::image type="content" source="media/tutorial-end-to-end-pipeline/run-details-button.png" alt-text="Screenshot showing the run details button in the Copy job Output tab." lightbox="media/tutorial-end-to-end-pipeline/run-details-button.png":::
+1. You can monitor the run and check the results on the **Results** space below the canvas.
 
 ## Next step
 

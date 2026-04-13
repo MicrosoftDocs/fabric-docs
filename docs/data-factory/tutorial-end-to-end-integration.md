@@ -10,7 +10,7 @@ ms.custom:
 
 # Module 3: Orchestrate and automate with a pipeline
 
-You can complete this module in about 15 minutes. In this final part of the tutorial, you create a pipeline that orchestrates the Copy job and dataflow you built in Modules 1 and 2, send an email notification when all jobs complete, and schedule the pipeline to run automatically.
+You can complete this module in about 15 minutes. In this final part of the tutorial, you create a pipeline that orchestrates the Copy job and (optionally) the dataflow you built in Modules 1 and 2, send an email notification when all jobs complete, and schedule the pipeline to run automatically.
 
 ## Prerequisites
 
@@ -19,33 +19,41 @@ You can complete this module in about 15 minutes. In this final part of the tuto
 
 ## Create a pipeline
 
-First, create a pipeline to orchestrate the Copy job and dataflow you already built.
+First, create a pipeline to orchestrate the Copy job you already built.
 
 1. From your workspace, select **+ New item**, then search for and choose **Pipeline**.
 
-   <!-- TODO: Add screenshot of pipeline creation from workspace -->
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/new-data-pipeline.png" alt-text="Screenshot of the Data Factory start page with the button to create a new item and Data Pipeline selected." lightbox="media/tutorial-end-to-end-pipeline/new-data-pipeline.png":::
 
 1. Provide a pipeline name. Then select **Create**.
 
-## Add a Copy job activity
+## Add your Copy job activity
 
-<!-- TODO: Write steps for adding a Copy job activity to the pipeline and connecting it to the Copy job created in Module 1. Add screenshots. -->
+1. On the pipeline canvas, select the **Activities** tab, **Copy data**, then **Add copy job activity**.
 
-1. On the pipeline canvas, select the **Activities** tab and add a **Copy job** activity.
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/add-copy-job-activity.png" alt-text="Screenshot of the Data Factory pipeline canvas, with the activity window open and add copy job activity selected." lightbox="media/tutorial-end-to-end-pipeline/add-copy-job-activity.png":::
 
-1. Configure the Copy job activity to reference the Copy job you created in [Module 1](tutorial-end-to-end-pipeline.md).
+1. Select the copy job activity on the pipeline canvas, then select the **Settings** tab below the canvas.
 
-## Add a Dataflow activity
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-settings.png" alt-text="Screenshot of the pipeline canvas with the copy job activity highlighted and the settings tab highlighted." lightbox="media/tutorial-end-to-end-pipeline/select-settings.png":::
 
-1. Select the **Activities** tab in the pipeline editor and add a **Dataflow** activity.
+1. Select the **Connection** dropdown and select **Browse all**.
 
-1. Select and drag the **On success** path (a green checkbox on the top right side of the activity in the pipeline canvas) from your Copy job activity to the new Dataflow activity.
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/browse-all.png" alt-text="Screenshot of the copy job activity settings list, with browse all highlighted." lightbox="media/tutorial-end-to-end-pipeline/browse-all.png":::
 
-1. Select the Dataflow activity and choose its **Settings** tab. Select the dataflow you created in [Module 2: Transform data with a dataflow](tutorial-end-to-end-dataflow.md).
+1. Select **Copy job** under **New sources**.
 
-   <!-- TODO: Add screenshot of Dataflow activity settings -->
+1. On the **Connect data source** page, select **Sign in** to authenticate the connection.
 
-## Add an Office 365 Outlook activity
+   :::image type="content" source="media/tutorial-end-to-end-pipeline/select-sign-in.png" alt-text="Screenshot of the get data connection credentials page, with the Sign in Option highlighted." lightbox="media/tutorial-end-to-end-pipeline/select-sign-in.png":::
+
+1. Follow the prompts to sign in to your organizational account.
+
+1. Select **Connect** to complete the connection setup.
+
+1. For **Workspace**, select the workspace you created your Copy job in for Module 1.
+
+1. For **Copy job**, select the Copy job you created in Module 1.
 
 ## Add an Office 365 Outlook activity
 
@@ -64,10 +72,9 @@ First, create a pipeline to orchestrate the Copy job and dataflow you already bu
    > The service doesn't currently support personal email. You must use an enterprise email address.
 
 1. Select **Connect**.
-1. Select and drag the **On success** path (a green checkbox on the top right side of the activity in the pipeline canvas) from your Dataflow activity to your new Office 365 Email activity.
+1. Select and drag the **On success** path (a green checkbox on the top right side of the activity in the pipeline canvas) from your Copy job activity to your new Office 365 Email activity.
 
-   <!-- TODO: Update screenshot to show Copy job → Dataflow → Email chain instead of just Copy → Email -->
-   :::image type="content" source="media/tutorial-end-to-end-integration/connect-copy-activity-to-outlook.png" alt-text="Screenshot showing the connection of the success output from the Dataflow activity to the new Office 365 Outlook activity.":::
+   :::image type="content" source="media/tutorial-end-to-end-integration/connect-copy-activity-to-outlook.png" alt-text="Screenshot showing the connection of the success output from the Copy job activity to the new Office 365 Outlook activity.":::
 
 1. Select the Office 365 Email activity from the pipeline canvas, then select the **Settings** tab of the property area below the canvas to configure the email.
 
@@ -96,6 +103,22 @@ First, create a pipeline to orchestrate the Copy job and dataflow you already bu
    :::image type="content" source="media/tutorial-end-to-end-integration/pipeline-success-status.png" alt-text="Screenshot showing the pipeline status once it's complete.":::
 
    :::image type="content" source="media/tutorial-end-to-end-integration/email-output.png" alt-text="Screenshot showing the email generated by the pipeline.":::
+
+## _(Optional)_ Add a Dataflow activity to the pipeline
+
+You can also add the dataflow you created in [Module 2: Create a dataflow in Data Factory](tutorial-end-to-end-dataflow.md) into the pipeline.
+
+1. Hover over the green line connecting the copy job activity and the Office 365 Email activity on your pipeline canvas, and select the **+** button to insert a new activity.
+
+   :::image type="content" source="media/tutorial-end-to-end-integration/insert-activity-button.png" alt-text="Screenshot showing the insert activity button for the connection between the copy job activity and the Office 365 Email activity on the pipeline canvas.":::
+
+1. Choose **Dataflow** from the menu that appears.
+
+   :::image type="content" source="media/tutorial-end-to-end-integration/insert-dataflow-activity.png" alt-text="Screenshot showing the selection of Dataflow from the insert activity menu on the pipeline canvas.":::
+
+1. The newly created Dataflow activity is inserted between the copy job activity and the Office 365 Email activity, and selected automatically, showing its properties in the area below the canvas. Select the **Settings** tab on the properties area, and then select your dataflow created in [Module 2: Create a dataflow in Data Factory](tutorial-end-to-end-dataflow.md).
+
+   :::image type="content" source="media/tutorial-end-to-end-integration/choose-dataflow-settings.png" alt-text="Screenshot showing the Settings tab of the Dataflow activity.":::
 
 ## Schedule pipeline execution
 
