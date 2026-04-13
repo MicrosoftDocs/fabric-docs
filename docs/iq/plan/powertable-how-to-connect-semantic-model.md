@@ -56,7 +56,7 @@ Before you begin, make sure that you have the following prerequisites in place:
 
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
 
-   :::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.png" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.png":::
+   :::image type="content" source="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-connect-semantic-model/finish-table-from-model.jpg":::
 
 The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
 
