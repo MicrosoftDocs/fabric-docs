@@ -11,9 +11,6 @@ ms.date: 02/01/2026
 
 # Workspace outbound access protection for Data Agent (preview)
 
-
-## Understanding outbound access protection
-
 Outbound access protection helps ensure that data is shared securely within your network security perimeter. For example, data exfiltration protection solutions use outbound access protection controls to limit a malicious actor's ability to move large amounts of data to an untrusted external location. Outbound protections only limit requests that originate in the workspace and communicate with a different workspace or location. 
 
 :::image type="content" source="media/workspace-outbound-access-protection-data-science/workspace-outbound-access-protection-data-agent.png" lightbox="media/workspace-outbound-access-protection-data-science/workspace-outbound-access-protection-data-agent.png" alt-text="Diagram of workspace outbound access protection in data agent." border="false":::
