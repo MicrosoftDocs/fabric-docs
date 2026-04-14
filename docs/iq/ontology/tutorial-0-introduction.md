@@ -1,7 +1,7 @@
 ---
 title: "Tutorial part 0: Introduction and environment setup"
 description: Get started with ontology (preview) by setting up a sample retail scenario. Part 0 of the ontology (preview) tutorial.
-ms.date: 02/04/2026
+ms.date: 04/13/2026
 ms.topic: tutorial
 zone_pivot_group_filename: iq/ontology/zone-pivot-groups.json
 zone_pivot_groups: create-ontology-scenario
