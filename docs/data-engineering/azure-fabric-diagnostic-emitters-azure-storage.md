@@ -93,7 +93,7 @@ To configure Azure Key Vault for storing the workspace key:
 
 3. Trust the certificate in the application 
 
-   1. Go to the app created in Step 1 -> **Manage** -> **Manifest**. 
+   1. Go to the App registration created in 1 -> **Manage** -> **Manifest**. 
 	
    1. Append the certificate details to the manifest file to establish trust. This enables subject-based certificate trust for the service principal.
 	
