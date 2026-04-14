@@ -116,7 +116,10 @@ To configure Azure Key Vault for storing the workspace key:
 
    1. In the Azure portal, navigate to the target Azure Key Vault.
 
-   2. Under Access control (IAM), assign the Key Vault Certificates User role to the application (service principal) used by the Spark diagnostic emitter.
+   2. Under Access control (IAM), assign the **Key Vault Certificates User role** to the application (service principal) used by the Spark diagnostic emitter.
+
+:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-key-vault-certificates-user-role.png" alt-text="Screenshot showing assign key vault certificates user role.":::
+
 
 ### Step 3: Attach the Environment Artifact to Notebooks or Spark Job Definitions, or Set It as the Workspace Default
 
