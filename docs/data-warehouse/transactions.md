@@ -39,6 +39,11 @@ If any statement in the transaction fails, all schema changes are automatically 
 
 Fabric Data Warehouse supports executing the following inside an explicit transaction:  
 
+- `CREATE TABLE`
+- `DROP TABLE`
+- `TRUNCATE TABLE`
+- `CTAS`
+- `sp_rename`
 - `ALTER TABLE` add nullable columns 
 - `ALTER TABLE` drop columns 
 - `ALTER TABLE` add or drop `PRIMARY KEY`, `UNIQUE`, and `FOREIGN KEY` constraints with the `NOT ENFORCED` keyword
