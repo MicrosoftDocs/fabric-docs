@@ -117,14 +117,16 @@ items:
                 href: workspace-outbound-access-protection-allow-list-connector.md
           - name: Scenarios by Fabric workload
             items:
-              - name: Data Agent
-                href: workspace-outbound-access-protection-data-agent.md
               - name: Data Engineering
                 href: workspace-outbound-access-protection-data-engineering.md
               - name: Data Factory (preview)
                 href: workspace-outbound-access-protection-data-factory.md
               - name: Data Science
-                href: workspace-outbound-access-protection-data-science.md
+                items: 
+                  - name: Models and Experiments
+                    href: workspace-outbound-access-protection-data-science.md
+                  - name: Data Agent
+                    href: workspace-outbound-access-protection-data-agent.md
               - name: Data Warehouse
                 href: workspace-outbound-access-protection-data-warehouse.md
               - name: Mirrored databases (preview)
