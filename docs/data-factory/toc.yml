@@ -67,7 +67,7 @@
             href: tutorial-end-to-end-introduction.md
           - name: Module 1 - Create a pipeline
             href: tutorial-end-to-end-pipeline.md
-          - name: Module 2 -  data with a dataflow
+          - name: Module 2 - Transform data with a dataflow
             href: tutorial-end-to-end-dataflow.md
           - name: Module 3 - Automate and send notification
             href: tutorial-end-to-end-integration.md
