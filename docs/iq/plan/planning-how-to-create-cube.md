@@ -35,7 +35,7 @@ Create cube measures by adding breakdowns in data input measures.
     >[!NOTE]
     >At least one row dimension from the current planning sheet is required to create breakdowns based on dimensions that aren't part of the sheet.
 
-    :::image type="content" source="media/planning-how-to-create-cube/add-multiple-breakdowns.png" alt-text="Screenshot of configuring additonal breakdown dimensions.":::
+    :::image type="content" source="media/planning-how-to-create-cube/add-multiple-breakdowns.png" alt-text="Screenshot of configuring additional breakdown dimensions.":::
 
 1. Create the breakdown and create the measure.
 1. After a cube measure is created, it is added under **Data** > **From Sheets** > **Cube**.
