@@ -28,11 +28,11 @@ In this tutorial step, you generate an ontology from the sample semantic model t
 
     If the semantic model is still open from when you created it earlier, select **Generate Ontology** from the ribbon.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1a.png" alt-text="Screenshot of Generate ontology button in the ribbon of an open semantic model." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1a.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-a.png" alt-text="Screenshot of Generate ontology button in the ribbon of an open semantic model." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-a.png":::
 
     If the semantic model was previously closed, you can also select **Generate Ontology** from the model overview page without opening the model.
 
-    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1b.png" alt-text="Screenshot of Generate ontology button in the ribbon of the semantic model overview." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1b.png":::
+    :::image type="content" source="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-b.png" alt-text="Screenshot of Generate ontology button in the ribbon of the semantic model overview." lightbox="media/tutorial-1-create-ontology/semantic-model/generate-ontology-1-b.png":::
 
 1. Select your **Workspace** and enter *RetailSalesOntology* for the **Name**. Select **Create**.
 
@@ -165,7 +165,7 @@ Follow these steps to configure the details of each relationship type.
 
 When you finish updating the relationship types, you see their new names reflected with the *SaleEvent* entity in the semantic canvas.
 
-:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/all-relationship-types.png" alt-text="Screenshot of the updated relationships on SaleEvent." lightbox="media/tutorial-1-create-ontology/semantic-model/all-relationship-types.png"::
+:::image type="content" source="media/tutorial-1-create-ontology/semantic-model/all-relationship-types.png" alt-text="Screenshot of the updated relationships on SaleEvent." lightbox="media/tutorial-1-create-ontology/semantic-model/all-relationship-types.png":::
 
 ::: zone-end
 
@@ -302,7 +302,7 @@ Next, create relationship types between the entity types to represent contextual
     * **Relationship type**: Sets details of the relationship type.
     * **Target entity type**: Lists details of the target entity (*Store* in this case).
 
-     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-3.png" alt-text="Screenshot of entering relationship type details.":::
+     :::image type="content" source="media/tutorial-1-create-ontology/onelake/relationship-type-3.png" alt-text="Screenshot of the relationship type configuration.":::
 
 1. In the middle panel, enter the following details.
     1. **Mapping table**: **Browse available sources** and select the *factsales* table. This table in the source data can link *Store* and *SaleEvent* entities together, because it contains identifying information for both entity types. Each row in this table references a store and a sale event by ID.
