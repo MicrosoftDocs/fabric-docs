@@ -74,7 +74,7 @@ To configure Azure Key Vault for storing the workspace key:
 	
    1. Create a new app registration for sending logs and metrics to Azure Event Hubs.
 	
-	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
 
 2. Generate a certificate in Key Vault
 
@@ -84,7 +84,7 @@ To configure Azure Key Vault for storing the workspace key:
 	
    1. Click on **Generate/Import**. 
 	
-	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
 
 3. Trust the certificate in the application 
 
@@ -102,7 +102,7 @@ To configure Azure Key Vault for storing the workspace key:
 	      ] 
 	   ```
 	
-	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
 
 4. Assign Azure Event Hubs Data Sender Role
 

@@ -77,9 +77,9 @@ To configure Azure Key Vault for storing the workspace key:
 
    1. Sign in to the [Azure portal](https://portal.azure.com/) and go to [App registrations](/entra/identity-platform/quickstart-register-app#register-an-application).
 	
-   1. Create a new app registration for sending logs and metrics to Azure Event Hubs.
+   1. Create a new app registration for sending logs and metrics to Azure Storage account.
 	
-	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
+	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-storage\create-a-new-app-registration.png" alt-text="Screenshot showing create a new app registration.":::
 
 2. Generate a certificate in Key Vault
 
@@ -89,7 +89,7 @@ To configure Azure Key Vault for storing the workspace key:
 	
    1. Click on **Generate/Import**. 
 	
-	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
+	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-storage\generate-a-new-certificate.png" alt-text="Screenshot showing generate a new certificate for app.":::
 
 3. Trust the certificate in the application 
 
@@ -107,15 +107,15 @@ To configure Azure Key Vault for storing the workspace key:
 	      ] 
 	   ```
 	
-	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
+	   :::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-storage\trust-the-certificate.png" alt-text="Screenshot showing trust the certificate in the application.":::
 
-4. Assign Azure Event Hubs Data Sender Role
+4. Assign Storage Blob Data Contributor role
 
-   1. In Azure Event Hubs, navigate to Access control (IAM).
+   1. In Azure Storage account, navigate to Access control (IAM).
 
-   1. Assign the Azure Event Hubs data sender role to the application (service principal).
+   1. Assign the Storage Blob Data Contributor to the application (service principal).
 	
-	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-event-hub\assign-azure-event-hubs-data-sender-role.png" alt-text="Screenshot showing assign Azure event hubs data sender role.":::
+	:::image type="content" source="media\azure-fabric-diagnostic-emitters-azure-storage\assign-storage-blob-data-contributor.png" alt-text="Screenshot showing assign storage blob data contributor.":::
 
 5. Configure Azure Key Vault access permissions
 
