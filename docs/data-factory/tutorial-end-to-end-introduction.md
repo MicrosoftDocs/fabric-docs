@@ -17,9 +17,9 @@ This tutorial walks you through a complete data integration scenario in about an
 
 This tutorial includes an introduction and three modules:
 
-- [Module 1: Ingest data with a Copy job](tutorial-end-to-end-pipeline.md): Create a standalone Copy job to ingest raw data from Blob storage into a [bronze](/azure/databricks/lakehouse/medallion#bronze) table in a Lakehouse.
-- [Module 2: Transform data with a dataflow](tutorial-end-to-end-dataflow.md): Process raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a [gold](/azure/databricks/lakehouse/medallion#gold) table in the Lakehouse.
-- [Module 3: Orchestrate and automate with a pipeline](tutorial-end-to-end-integration.md): Create a pipeline to orchestrate the Copy job and dataflow, send an email notification when jobs complete, and schedule the entire flow.
+- [Module 1- Ingest data with a Copy job](tutorial-end-to-end-pipeline.md): Create a standalone Copy job to ingest raw data from Blob storage into a [bronze](/azure/databricks/lakehouse/medallion#bronze) table in a Lakehouse.
+- [Module 2- Transform data with a dataflow](tutorial-end-to-end-dataflow.md): Process raw data from your [bronze](/azure/databricks/lakehouse/medallion#bronze) table and move it to a [gold](/azure/databricks/lakehouse/medallion#gold) table in the Lakehouse.
+- [Module 3- Orchestrate and automate with a pipeline](tutorial-end-to-end-integration.md): Create a pipeline to orchestrate the Copy job and dataflow, send an email notification when jobs complete, and schedule the entire flow.
 
 ## Data Factory in Microsoft Fabric
 
