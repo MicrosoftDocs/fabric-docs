@@ -4,7 +4,7 @@ description: Learn how the Labeled Property Graph (LPG) model in graph in Micros
 #customer intent: As a data professional, I want to understand the labeled property graph model used by graph in Microsoft Fabric so that I can effectively model my connected data.
 ai-usage: ai-assisted
 ms.topic: concept-article
-ms.date: 04/10/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -12,7 +12,7 @@ ms.reviewer: wangwilliam
 
 [!INCLUDE [feature-preview](./includes/feature-preview-note.md)]
 
-A Labeled Property Graph (LPG) is a data model that represents entities as nodes and connections as edges, with labels and properties on both. Graph in Microsoft Fabric uses the LPG model to deliver fast traversal and query performance for analytics and connected data.
+A labeled property graph (LPG) is a data model that represents entities as nodes and connections as edges, with labels and properties on both. Graph in Microsoft Fabric uses the LPG model to deliver fast traversal and query performance for analytics and connected data.
 
 ## What is a labeled property graph (LPG)?
 
@@ -20,7 +20,7 @@ Many popular [graph databases](graph-database.md) use the LPG data model, includ
 
 - You represent data as nodes and edges, which are also sometimes called vertices and relationships, respectively.
 - You classify nodes (such as `Person` or `Product`) and edges (such as `FRIENDS_WITH` or `PURCHASED`) with **labels**.
-- Both nodes and edges can have **properties**—key-value pairs that store more data (such as `{name: "Alice", age: 30}` for a node, `{since: 2020}` for an edge).
+- Both nodes and edges can have **properties** - key-value pairs that store more data (such as `{name: "Alice", age: 30}` for a node, `{since: 2020}` for an edge).
 
 LPGs don't require global identifiers such as Internationalized Resource Identifiers (IRIs) or Uniform Resource Identifiers (URIs) for every node or edge. Instead, they use internal or application-level identifiers. Your application defines the meaning of labels.
 
@@ -35,7 +35,7 @@ If your use case requires semantic web standards, semantic web ontologies, or gl
 
 ## Key benefits of the LPG model in Fabric
 
-For most customers, LPG provides the best balance of performance, usability, and integration for connected data analytics in Microsoft Fabric.
+For most customers, the LPG model provides the best balance of performance, usability, and integration for connected data analytics in Microsoft Fabric.
 
 - **Simplicity and intuitiveness:** Nodes and edges map closely to how people think about networks. LPG is less complex than RDF. You don't need to define ontologies or manage global identifiers.
 - **Properties on edges:** Model weighted, temporal, or labeled relationships on edges. This feature supports advanced analytics like recommendations and fraud detection.
