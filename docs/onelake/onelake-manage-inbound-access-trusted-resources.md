@@ -17,9 +17,6 @@ Resource Instance Rules offer a simpler alternative — admins add a trusted Azu
 
 This article explains how Resource Instance Rules work for OneLake and when to use them. To learn about other inbound protection options, see [Inbound network protection in Microsoft Fabric](../security/security-inbound-overview.md).
 
-> [!NOTE]
-> Resource Instance Rules apply only to inbound access. They don't govern or restrict outbound connections from the workspace.
-
 ## How Resource Instance Rules work
 
 When Resource Instance Rules are enabled on a workspace, OneLake allows inbound public network access only from Azure resource instances that are explicitly added by the workspace admin. Inbound requests may also be allowed when they originate from workspace private endpoints or from allowed public IP ranges (if configured).
