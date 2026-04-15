@@ -17,7 +17,7 @@ In addition, you can enhance your security posture by using customer-managed key
 When you enable CMK for a workspace that contains a Fabric Eventhouse, all data in Eventhouse storage are protected using your Azure Key Vault-hosted encryption keys. With customer-managed keys, you can connect your Fabric workspace directly to your own **Azure Key Vault**. You maintain complete control over key creation, access, and rotation, ensuring compliance with your organization's security and governance policies.
 
 > [!IMPORTANT]
-> This feature could require the Eventhouse to scale out. This feature is only supported on a minimum of 16 CU Eventhouse.
+> This feature could require the Eventhouse to scale out. This feature is only supported on a minimum of 16 Capacity Units (CU) Eventhouse.
 
 
 > [!Note]
@@ -30,9 +30,9 @@ To get started configuring CMK for your Fabric workspace, see [Customer-managed 
 
 Before enabling CMK for your Fabric Data Warehouse, review the following considerations:
 
-- When enable Eventhouse will scale ot a minimum of 16 virtual cores and could affect CU consumption.
+- When enable, Eventhouse scales to a minimum of 16 virtual cores and could affect Capacity Units (CU) consumption.
 
-- Queries agains the Fabric Eventhouse are not encrypted with CMK.
+- Queries against the Fabric Eventhouse are not encrypted with CMK.
 
 ## Related content
 
