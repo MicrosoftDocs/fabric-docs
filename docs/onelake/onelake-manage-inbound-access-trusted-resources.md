@@ -1,5 +1,5 @@
 ---
-title: Manage inbound access to OneLake with resource instance rules
+title: Manage inbound access to OneLake with Resource Instance Rules
 description: Learn how Resource Instance Rules let workspace admins restrict inbound access to OneLake based on approved Azure resource instances.
 ms.reviewer: eloldag, mabasile
 ms.topic: concept-article
@@ -7,11 +7,11 @@ ms.date: 03/09/2026
 #customer intent: As a workspace admin, I want to restrict inbound access to OneLake based on approved Azure resources so that only trusted resource instances can reach my data.
 ---
 
-# Manage inbound access to OneLake with Resources Instance Rules
+# Manage inbound access to OneLake with Resource Instance Rules
 
 Resource Instance Rules let workspace admins restrict public network access to OneLake by allowing inbound access only from trusted Azure resource instances, such as an Azure Databricks workspace or an Azure SQL Server. Setup is simple — it requires only the Azure resource ID.
 
-Existing inbound protection options like IP firewall rules and Private Links are effective for managing access based on network location, but they can require complex setup when traffic originates from Azure services that use dynamic or shared outbound addresses
+Existing inbound protection options like IP firewall rules and Private Links are effective for managing access based on network location, but they can require complex setup when traffic originates from Azure services that use dynamic or shared outbound addresses.
 
 Resource Instance Rules offer a simpler alternative — admins add a trusted Azure resource by its resource ID, and Fabric verifies the resource identity on each inbound request. This approach works alongside existing Fabric inbound protection features.
 
@@ -158,7 +158,7 @@ Only Azure resources that can authenticate using a verifiable resource identity 
 - Resource Instance Rules apply only to inbound access to the workspace.
 - Resource Instance Rules restrict which resource instances can connect to OneLake, but they don't expand the data scope that the resource is authorized to access.
 - Resource instances must be registered within the same Microsoft Entra tenant as the workspace.
-- You can configure 25 resources instance rules per workspace.
+- You can configure 25 Resource Instance Rules per workspace.
 - Resource Instance Rules can be used together with workspace Private Link and workspace IP firewall rules.
 - If you misconfigure the rules, you might block access to the workspace. Use API-based management as a recovery path if portal access isn't available.
 
