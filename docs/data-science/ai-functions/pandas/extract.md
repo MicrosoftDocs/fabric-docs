@@ -45,6 +45,9 @@ df_entities = df["text"].ai.extract("entity1", "entity2", "entity3")
 | `properties` <br> Optional | More JSON schema properties for the type as a dictionary. It can include supported properties like "items" for arrays, "properties" for objects, "enum" for enum types, and more. [See Supported properties here](https://developers.openai.com/api/docs/guides/structured-outputs#supported-schemas).|
 | `raw_col` <br> Optional | A [string](https://docs.python.org/3/library/stdtypes.html#str) that sets the column name for the raw LLM response. The raw response provides a list of dictionary pairs for every entity label, including "reason" and "extraction_text". |
 
+> [!TIP]
+> You can use `ai.infer_schema` to automatically infer a label schema compatible with `ai.extract`. The inferred schema returns a list of `aifunc.ExtractLabel` objects that you can pass directly to `ai.extract` for structured data extraction. For more information, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
 ## Returns
 
 The function returns a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) with a column for each specified entity type. The column or columns contain the entities extracted for each row of input text. If the function identifies more than one match for an entity, it returns only one of those matches. If no match is found, the result is `null`.
@@ -97,6 +100,33 @@ This example code cell provides the following output:
 
 ---
 
+## Multimodal input
+
+The `ai.extract` function supports file-based multimodal input. You can extract entities from images, PDFs, and text files. Supported file types include JPG/JPEG, PNG, GIF, WebP (images), PDF (documents), and common text formats such as MD, TXT, CSV, JSON, and XML.
+
+Columns containing plain string URLs must set `column_type="path"` so that `ai.extract` treats the values as file paths. When you use `aifunc.list_file_paths()`, the returned `yarl.URL` objects are automatically detected as file paths, so you don't need to specify `column_type="path"` in that case. For more information about supported file types and setup, see [Use multimodal input with AI functions](../multimodal-overview.md).
+
+```python
+# This code uses AI. Always review output for mistakes.
+
+extracted = custom_df["file_path"].ai.extract(
+    aifunc.ExtractLabel(
+        "name",
+        description="The full name of the candidate, first letter capitalized.",
+        max_items=1,
+    ),
+    "companies_worked_for",
+    aifunc.ExtractLabel(
+        "year_of_experience",
+        description="The total years of professional work experience the candidate has, excluding internships.",
+        type="integer",
+        max_items=1,
+    ),
+    column_type="path",
+)
+display(extracted)
+```
+
 ## Related content
 
 - Use [ai.extract with PySpark](../pyspark/extract.md).
@@ -110,5 +140,6 @@ This example code cell provides the following output:
 - Translate text with [ai.translate](./translate.md).
 
 - Learn more about the [full set of AI functions](../overview.md).
+- Use [multimodal input with AI functions](../multimodal-overview.md).
 - Customize the [configuration of AI functions](./configuration.md).
 - Did we miss a feature you need? Suggest it on the [Fabric Ideas forum](https://ideas.fabric.microsoft.com/).

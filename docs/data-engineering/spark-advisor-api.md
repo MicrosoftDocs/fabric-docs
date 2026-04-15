@@ -91,7 +91,7 @@ None
 #### Sample request
 
 ```
-GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice  
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice  
 ```
 
 #### Sample response
@@ -160,7 +160,7 @@ None
 #### Sample request
 
 ```HTTP
-GET https://api.fabric.microsoft.com/v1/workspaces/00aa00aa-bb11-cc22-dd33-44ee44ee44ee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice/jobGroups/6
+GET https://api.fabric.microsoft.com/v1/workspaces/aaaabbbb-0000-cccc-1111-dddd2222eeee/notebooks/11bb11bb-cc22-dd33-ee44-55ff55ff55ff/livySessions/0a0a0a0a-1111-bbbb-2222-3c3c3c3c3c3c/applications/application_11111111111110001/1/advice/jobGroups/6
 ```
 
 Status code: 200

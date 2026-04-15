@@ -2,7 +2,7 @@
 title: "Get started with SQL database deployment pipelines"
 description: Learn how to work with your SQL database with Fabric's deployment pipelines.
 ms.reviewer: antho, drskwier
-ms.date: 11/07/2024
+ms.date: 02/27/2026
 ms.topic: how-to
 ---
 # Get started with deployment pipelines integration with SQL database in Microsoft Fabric
@@ -21,6 +21,9 @@ Deployment pipelines in Fabric serve as a mechanism to promote changes between e
 - Production: After testing the content, use the production stage to share the final version of your content with business users across the organization.
 
 For SQL database in Fabric specifically, the movement of changes between workspaces uses the same mechanisms as updating a workspace from source control. With deployment pipelines your existing data stays in place while the Fabric service calculates the T-SQL needed to update your database to match the desired state (incoming changes). If the changes would require data loss, Fabric requires you to make the changes manually.
+
+> [!NOTE]
+> Database-level settings such as collation and compatibility level aren't included in the source control and deployment pipelines integration at this time. For database settings that can be set with T-SQL after database creation, you can modify the database with scripts after deployment.
 
 ## Prerequisites
 
@@ -52,7 +55,7 @@ Deployment pipelines can be used to compare the contents of workspaces assigned 
 
 1. After completing the pipeline deployment, return to the development workspace and make a change to the database objects. The changes could be a new table, a new column, or a change to an existing stored procedure. 
 1. Once you've made the change, return to the deployment pipeline. You'll see that the pipeline detected the change and is ready to deploy it to the test workspace.
-1. select the **test** stage such that the list of items in the lower half of the window displays one or more as "different from source." Select an item that has changes (is different from source) and use the **Compare** option to get more in-depth details on the changes.
+1. Select the **test** stage such that the list of items in the lower half of the window displays one or more as "different from source." Select an item that has changes (is different from source) and use the **Compare** option to get more in-depth details on the changes.
 1. The dialog that opens for a SQL database item is similar to a schema comparison where each SQL database object (table, stored procedure, view, etc.) has specific differences displayed.
 
 Once we've reviewed the pending changes from the development workspace, we can repeat our actions from the previous section to deploy those changes to the test stage. Changes between workspaces can be selected on a per-item basis, so if we don't want to deploy changes in an object (such as a notebook) we can deselect that item before deploying. If we want to make changes to individual SQL database objects, we must return to the development workspace to make those changes in the SQL database.

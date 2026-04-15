@@ -28,7 +28,7 @@ sections:
           
           Ontology (preview) works together with Graph today. Ontology declares which things connect and why, and you can use Graph to view your entity instances to learn more about the instantiated ontology and see patterns in the [ontology preview experience](how-to-use-preview-experience.md).
           
-          For more about these items in Fabric IQ, see [What is Fabric IQ (preview)?](../overview.md#items-in-iq-preview)
+          For more about these items in Fabric IQ, see [What is Fabric IQ (preview)?](../overview.md#items-in-fabric-iq-preview)
 
 additionalContent: |
     ## Submit Fabric ideas

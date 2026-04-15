@@ -1,50 +1,70 @@
 ---
-title: Schedule a Materialized Lake View Run
-description: Learn how to schedule a materialized lake view run
+title: "Schedule a Materialized Lake View Refresh"
+description: Learn how to schedule a materialized lake view refresh
 ms.topic: how-to
-ms.reviewer: apsinhar
-ms.date: 06/26/2025
-#customer intent: As a data engineer, I want to schedule a materialized lake views run in Microsoft Fabric so that I can refresh the materialized lake views based on business requirements.
+ms.reviewer: rkottackal
+ms.date: 03/18/2026
+ai-usage: ai-assisted
 ---
 
-# Schedule a materialized lake view run
+# Schedule a materialized lake view refresh
 
-Scheduling the materialized lake view (MLV) run lets users set how often the MLV should be refreshed based on business needs and lineage execution timing.
+As source data changes, materialized lake views (MLVs) in your Lakehouse need regular refresh to keep downstream reports and dashboards current. Scheduling lets you control how often each view, or group of views, is refreshed. Each schedule runs independently.
 
-## Determining the schedule
+## View schedules
 
-The schedule to run the MLV depends on various factors, such as:
+To see all configured schedules for MLVs in a Lakehouse, open **Manage** in **Materialized lake views** and select **Schedules** from the toolbar. The **Schedules** pane opens beside the lineage view.
 
-* **Data update frequency:** The frequency with which the data is updated.
-* **Query performance requirements:** Business requirement to refresh the data in defined frequent intervals.
-* **System load:** Optimizing the time to run the lineage without overloading the system
+:::image type="content" source="media/schedule-lineage-run/schedule-pane.png" alt-text="Screenshot showing the schedule pane." border="true" lightbox="media/schedule-lineage-run/schedule-pane.png":::
 
-## Implement the schedule
+## Plan schedule frequency
 
-From the **Manage materialized lake views** page, select the **Schedule** option.
+Before you create a schedule, consider what drives your refresh timing:
 
-:::image type="content" source="./media/schedule-lineage-run/schedule-run.png" alt-text="Screenshot showing the schedule button in lineage view." border="true" lightbox="./media/schedule-lineage-run/schedule-run.png":::
+- **How often does source data change?** If bronze tables update hourly, refreshing gold views every 15 minutes usually increases compute cost without improving freshness.
+- **When do end users need fresh data?** Align schedules with reporting SLAs and business needs, for example, before a morning dashboard review.
+- **Are dependency graphs independent?** If your Lakehouse has separate dependency graphs, schedule them at different cadences to avoid waiting on unrelated views.
+- **What is the current system load?** Choose a cadence that meets freshness goals without overloading the system.
 
-The schedule UI opens and is visible to the user.
+## Create a schedule
 
-:::image type="content" source="./media/schedule-lineage-run/schedule-inputs.png" alt-text="Screenshot showing the schedule UI where user sends their inputs for scheduling." border="true" lightbox="./media/schedule-lineage-run/schedule-inputs.png":::
+1. Select **+ New schedule** in the **Schedules** pane.
 
-Turn **On** the **Schedule Refresh** option and select the following from the schedule UI:
+1. Choose a refresh scope:
 
-* Repeat (By the minute/Hourly/Daily/Weekly/Monthly)
-* Every (Frequency/Date/Time/Month)
-* Start Date
-* End Date and Time
-* Time Zone
+    - **Refresh all materialized lake views**: Refreshes every view in dependency order. Use this option when the whole lineage should run on the same cadence.
+    - **Refresh selected materialized lake view(s)**: Refreshes only the views you select.
 
-Select **Apply** to set the schedule for the particular MLV run.
+    Search and select views from the dropdown, and then check the left pane to verify included views. The lineage graph highlights selected views with a dashed border so you can confirm scope.
 
-> [!NOTE]
-> * The scheduler reflects the user's local time.
-> * A materialized lake view fails if it runs beyond 24 hours.
-> * Materialized lake view runs use High Concurrency Sessions by default.
+    :::image type="content" source="media/schedule-lineage-run/select-mlvs.png" alt-text="Screenshot showing the Create new schedule pane with selected MLVs." border="true" lightbox="media/schedule-lineage-run/select-mlvs.png":::
+    
+    > [!TIP]
+    > You can select views at any level in the lineage.
 
-## Related articles
+1. Configure the schedule:
 
-* [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
-* [Monitor Fabric materialized lake views](./monitor-materialized-lake-views.md)
+    - Set **Repeat** (minute, hourly, daily, weekly, or monthly).
+    - Add one or more **Time** slots.
+    - Set **Start date**, **End date**, and **Time zone**.
+
+1. Select **Apply**.
+
+1. Optional: select **Run** next to the schedule to trigger an immediate refresh.
+
+    > [!NOTE]
+    > A run fails if it exceeds 24 hours.
+    > If a new refresh starts while another refresh is in progress, Fabric skips the later refresh. See [run history](./run-history.md) for details.
+
+## Manage schedules
+
+From the **Schedules** pane, search by name or filter by **Active**/**Inactive** to find a schedule.
+
+- **Edit**: Select the pencil icon, update views, recurrence, or date range, and then select **Apply**.
+- **Pause or resume**: Toggle the **On/Off** switch. Use this option during maintenance or while investigating issues.
+- **Delete**: Select the trash can icon and confirm. This action permanently removes the schedule.
+
+## Related content
+
+- [Microsoft Fabric materialized lake view tutorial](./tutorial.md)
+- [Monitor Fabric materialized lake views](./monitor-materialized-lake-views.md)

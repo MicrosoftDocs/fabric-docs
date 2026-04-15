@@ -1,21 +1,22 @@
 ---
-title: Module 2 - Transform data with a dataflow in Data Factory
+title: Module 2 - Transform Data with a Dataflow in Data Factory
 description: This module guides you through creating a dataflow as part of an end-to-end data integration tutorial. You complete a full data integration scenario within an hour using Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
+ms.date: 04/13/2026
 ms.topic: tutorial
-ms.date: 12/30/2025
-ms.custom: dataflows
+ms.custom:
+  - dataflows
 ---
 
 # Module 2: Transform data with a dataflow in Data Factory
 
-This module takes about 25 minutes to complete. You create a dataflow, apply transformations, and move the raw data from the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table into a [gold](/azure/databricks/lakehouse/medallion#gold) data layer table. 
+This module takes about 25 minutes to complete. You create a dataflow, apply transformations, and move the raw data from the [bronze](/azure/databricks/lakehouse/medallion#bronze) data layer table into a [gold](/azure/databricks/lakehouse/medallion#gold) data layer table.
 
 With the raw data loaded into your bronze Lakehouse table from the last module, you can now enrich it. You'll combine it with another table that contains discounts for each vendor and their trips during a particular day. Then, this final gold Lakehouse table is then loaded and ready for consumption.
 
 The high-level steps in the dataflow are:
 
-- [Get raw data from the Lakehouse table](#get-data-from-a-lakehouse-table) created by the copy job in [Module 1: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md).
+- [Get raw data from the Lakehouse table](#get-data-from-a-lakehouse-table) created by the Copy job in [Module 1: Ingest data with a Copy job](tutorial-end-to-end-pipeline.md).
 - [Transform the data imported from the Lakehouse table.](#transform-the-data-imported-from-the-lakehouse)
 - [Connect to a CSV file containing discounts data.](#connect-to-a-csv-file-containing-discount-data)
 - [Transform the discounts data.](#transform-the-discount-data)
@@ -24,7 +25,7 @@ The high-level steps in the dataflow are:
 
 ## Prerequisites
 
-[Module 1 of this tutorial series: Create a pipeline with Data Factory](tutorial-end-to-end-pipeline.md)
+[Module 1 of this tutorial series: Ingest data with a Copy job](tutorial-end-to-end-pipeline.md)
 
 ## Get data from a Lakehouse table
 
@@ -56,7 +57,7 @@ The high-level steps in the dataflow are:
 
 ## Transform the data imported from the Lakehouse
 
-1. Select the data type icon in the column header of the second column, **IpepPickupDatetime**, to display a dropdown menu and select the data type from the menu to convert the column from the **Date/Time** to **Date** type.
+1. Select the data type icon in the column header of the second column, **IpepPickupDatetime**, to display a dropdown list menu and select the data type from the menu to convert the column from the **Date/Time** to **Date** type.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/select-date-type.png" alt-text="Screenshot showing the selection of the Date data type for the IpepPickupDatetime column.":::
 
@@ -77,7 +78,7 @@ The high-level steps in the dataflow are:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-dialog.png" alt-text="Screenshot showing the Choose columns dialog with the identified columns deselected.":::
 
-1. Select the **storeAndFwdFlag** column's filter and sort dropdown menu. (If you see a warning **List may be incomplete**, select **Load more** to see all the data.)
+1. Select the **storeAndFwdFlag** column's filter and sort dropdown list menu. (If you see a warning **List might be incomplete**, select **Load more** to see all the data.)
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-sort-values-dialog.png" alt-text="Screenshot showing the filter and sort dialog for the column.":::
 
@@ -87,7 +88,7 @@ The high-level steps in the dataflow are:
 
 1. Wait until the data is filtered.
 
-1. Select the **IpepPickupDatetime** column sort and filter dropdown menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
+1. Select the **IpepPickupDatetime** column sort and filter dropdown list menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters-inline.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown." lightbox="media/tutorial-end-to-end-dataflow/date-filters.png":::
 
@@ -124,7 +125,7 @@ With the data from the trips in place, we want to load the data that contains th
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/use-first-row-as-headers.png" alt-text="Screenshot showing the selection of the Use first row as headers option from the table context menu.":::
 
-   > [!NOTE]
+   > [!NOTE]  
    > After promoting the headers, you can see a new step added to the **Applied steps** pane at the top of the dataflow editor to the data types of your columns.
 
 1. Right-click the **VendorID** column, and from the context menu displayed, select the option **Unpivot other columns**. This allows you to transform columns into attribute-value pairs, where columns become rows.
@@ -149,7 +150,7 @@ With the data from the trips in place, we want to load the data that contains th
 
 ## Combine trips and discounts data
 
-The next step is to combine both tables into a single table that has the discount that should be applied to the trip, and the adjusted total. 
+The next step is to combine both tables into a single table that has the discount that should be applied to the trip, and the adjusted total.
 
 1. First, toggle the **Diagram view** button on the bottom right of the window, so you can see both of your queries.
 
@@ -159,7 +160,7 @@ The next step is to combine both tables into a single table that has the discoun
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-queries-as-new-inline.png" alt-text="Screenshot showing the Merge queries as new selection for the nyc_taxi query." lightbox="media/tutorial-end-to-end-dataflow/merge-queries-as-new.png":::
 
-1. On the **Merge** dialog, select a **Left outer** merge, then select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop-down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
+1. On the **Merge** dialog, select a **Left outer** merge, then select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** dropdown list, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog-inline.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed." lightbox="media/tutorial-end-to-end-dataflow/merge-dialog.png":::
 
@@ -195,7 +196,7 @@ The next step is to combine both tables into a single table that has the discoun
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/custom-column-configuration.png" alt-text="Screenshot showing the Custom column configuration screen with the New column name, Data type, and Custom column formula highlighted.":::
 
-1. Select the newly created **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
+1. Select the newly created **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** dropdown list and then choose **Round...**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column-inline.png" alt-text="Screenshot showing the Round... option on the Transform tab of the editor window." lightbox="media/tutorial-end-to-end-dataflow/round-column.png":::
 
@@ -231,8 +232,8 @@ With the output query now fully prepared and with data ready to output, we can d
 
 1. In the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table under **Data destination**, and then select **Save & run**.
 
-    > [!IMPORTANT]
-    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
+   > [!IMPORTANT]  
+   > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accessible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
 
 1. _(Optional)_ On the workspace page, you can rename your dataflow by selecting the ellipsis to the right of the dataflow name that appears after you select the row, and choosing **Settings**. In this example we rename it to **_nyc_taxi_with_discounts_**.
 
@@ -246,7 +247,5 @@ With the output query now fully prepared and with data ready to output, we can d
 
 ## Next step
 
-Continue to the next section to integrate your pipeline.
-
 > [!div class="nextstepaction"]
-> [Module 3: Automate and send notifications with Data Factory](tutorial-end-to-end-integration.md) 
+> [Module 3: Orchestrate and automate with a pipeline](tutorial-end-to-end-integration.md)

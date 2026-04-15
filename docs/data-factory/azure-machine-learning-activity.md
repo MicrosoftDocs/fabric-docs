@@ -49,6 +49,10 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 [!INCLUDE[save-run-schedule-pipeline](includes/save-run-schedule-pipeline.md)]
 
+## Known issues
+- Using Service Principal to run a notebook that contains Semantic Link code has functional limitations and supports only a subset of semantic link features. See the [supported semantic link functions](../data-science/semantic-link-service-principal-support.md#supported-semantic-link-functions) for details. To use other capabilities, you're recommended to [manually authenticate semantic link with a service principal](../data-science/semantic-link-service-principal-support.md#manually-authenticate-semantic-link-with-a-service-principal).
+- Azure Machine Learning (AML) activity may fail in some configurations due to a missing dual‑token audience during authentication. The fix is currently being worked on.
+
 ## Related content
 
 - [How to monitor pipeline runs](monitor-pipeline-runs.md)

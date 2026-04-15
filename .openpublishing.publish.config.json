@@ -32,7 +32,8 @@
         "docs/real-time-intelligence/.openpublishing.redirection.real-time-intelligence.json",
         "docs/security/.openpublishing.redirection.security.json",
         "docs/workload-development-kit/.openpublishing.redirection.workload-development-kit.json",
-        "docs/known-issues/.openpublishing.redirection.known-issues.json"
+        "docs/known-issues/.openpublishing.redirection.known-issues.json",
+        "docs/extensibility-toolkit/.openpublishing.redirection.extensibility-toolkit.json"
       ]
     }
   ],
@@ -71,6 +72,12 @@
     {
       "path_to_root": "kusto-repo",
       "url": "https://github.com/MicrosoftDocs/dataexplorer-docs-pr",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "powerquery-repo",
+      "url": "https://github.com/MicrosoftDocs/powerquery-docs-pr",
       "branch": "main",
       "branch_mapping": {}
     }

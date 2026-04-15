@@ -3,7 +3,7 @@ title: Fabric Notebooks troubleshooting guide
 description: This article provides troubleshooting steps for common issues encountered in Fabric Notebooks.
 ms.reviewer: deevij
 ms.topic: troubleshooting
-ms.date: 08/26/2025
+ms.date: 04/01/2026
 ai.usage: ai-assisted
 ---
 
@@ -35,6 +35,14 @@ This table lists common Fabric Notebooks error messages and links to relevant tr
 ## Notebook errors
 
 The following section outlines common Notebook errors and their suggested resolutions.
+
+### Use Fix with Copilot for failed cells and Spark jobs
+
+When a cell or Spark job fails, a **Fix with Copilot** action appears below the failed cell. It provides an error summary, root-cause analysis, and recommended fixes. You can review an approval diff and optionally auto-apply code changes suggested by Copilot. To access the action, select **Fix with Copilot** in the notebook UI or open the Copilot chat pane.
+
+### Copilot diagnostics
+
+You can run `/fix` in Copilot chat to perform targeted diagnostics for a specific cell or the entire notebook. Copilot provides validation and step-by-step recommendations to help you resolve errors. For more information, see [Diagnose notebook failures with Copilot](../data-engineering/copilot-notebooks-chat-pane.md#diagnose-notebook-failures).
 
 ### Timeouts
 
@@ -85,6 +93,9 @@ A session isn't connected.
 **What to do:**
 
 Start a session.
+
+> [!TIP]
+> Copilot in notebooks is context-aware of the workspace, attached Lakehouse schemas, tables, files, notebook structure, and runtime state. It can provide guidance even before a session is started. A session is still required to execute cells, but Copilot can assist in planning fixes and validating code prior to starting a session.
 
 You can start a session using three methods:
 
@@ -200,7 +211,7 @@ Spark's Catalyst optimizer has produced a very large logical/physical plan.
 
 **What to do:**
 
-Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries.
+Modify the query logic by breaking down the query. Refactor complex pipelines into smaller, staged queries. You can also use Copilot to surface performance insights (for example, data size considerations, efficient join strategies, and avoiding shuffles) and suggest refactoring into reusable functions. Consider using Copilot to validate the end-to-end workflow and propose staged query patterns.
 
 **Example fix**:
 

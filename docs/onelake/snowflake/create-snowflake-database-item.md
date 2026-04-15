@@ -1,7 +1,9 @@
 ---
 title: Write Iceberg tables from Snowflake to OneLake
 description: Guidance to set up connectivity between Snowflake and OneLake using the new Snowflake database item in Fabric, enabling Iceberg tables to be written to OneLake and accessed from both Fabric and Snowflake.
-ms.reviewer: mahi
+ms.reviewer: mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: how-to
 ms.date: 11/17/2025
 ms.search.form: Create new Snowflake database item
@@ -59,6 +61,12 @@ In your Snowflake account, log in with a user that has an administrative role.
     -- Allow role to use an existing warehouse (adjust COMPUTE_WH as needed)
     GRANT USAGE ON WAREHOUSE COMPUTE_WH TO ROLE R_ICEBERG_METADATA;
     ```
+   > [!NOTE]
+   > You may need to ensure that your user has the Snowflake feature "Secondary Roles" enabled.
+   > 
+   > To check the status of secondary roles feature, run `DESC USER SVC_FABRIC_ICEBERG_METADATA;` and check the `DEFAULT_SECONDARY_ROLES` property. The value should be `["ALL"]`, rather than `[]` or another value.
+   >
+   > You may wish to unset this property to restore its value to `["ALL"]` by running `ALTER USER SVC_FABRIC_ICEBERG_METADATA UNSET DEFAULT_SECONDARY_ROLES;`.
 
 1. Go to **Ingestion** > **Add data**.
 1. Select **Microsoft OneLake**.
@@ -82,6 +90,7 @@ In a new browser tab:
    - **Authentication method:** Snowflake
    - **Username:** `SVC_FABRIC_ICEBERG_METADATA` (unless customized)
    - **Password:** *Your chosen password*
+   - **Role name:** (under Advanced Options) `R_ICEBERG_METADATA` (unless customized)
 
 1. Create the connection. If it fails, recheck the information from the previous section.
 

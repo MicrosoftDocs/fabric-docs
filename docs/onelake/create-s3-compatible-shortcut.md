@@ -1,7 +1,9 @@
 ---
 title: Create an Amazon S3 compatible shortcut
 description: Learn how to create a OneLake shortcut that's Amazon S3 compatible for easy data access in a Fabric lakehouse.
-ms.reviewer: eloldag, mahi
+ms.reviewer: eloldag, mahi # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.date: 07/24/2025

@@ -1,9 +1,12 @@
 ---
-title: Add Google Cloud Pub/Sub source to an eventstream
-description: Learn how to add Google Cloud Pub/Sub source to an eventstream.
+title: Google Cloud Pub/Sub in Fabric Eventstream
+description: Google Cloud Pub/Sub source lets you stream real-time events into a Fabric eventstream. Learn how to configure and connect Pub/Sub to capture, transform, and route events.
+#customer intent: As a data engineer, I want to add Google Cloud Pub/Sub as a source to my Fabric eventstream so that I can capture and route real-time events to destinations in Fabric.
 ms.reviewer: zhenxilin
 ms.topic: how-to
-ms.date: 11/22/2024
+ms.date: 04/01/2026
+author: spelluru
+ms.author: spelluru
 ms.search.form: Source and Destination
 ---
 
@@ -13,17 +16,13 @@ This article shows you how to add a Google Cloud Pub/Sub source to an eventstrea
 
 Google Pub/Sub is a messaging service that enables you to publish and subscribe to streams of events. You can add Google Pub/Sub as a source to your eventstream to capture, transform, and route real-time events to various destinations in Fabric.
 
-## Prerequisites
-
-- Access to a workspace in the Fabric capacity license mode (or) the Trial license mode with Contributor or higher permissions. 
-- A Google Cloud account with the Pub/Sub service enabled and a role with the required permissions.
-- Your Google Cloud Pub/Sub source should be publicly accessible and not be behind a firewall or secured in a virtual network. If it resides in a protected network, connect to it by using [Eventstream connector vNet injection](./streaming-connector-private-network-support-guide.md).
+[!INCLUDE [google-cloud-pub-sub-connector-prerequisites](./includes/connectors/google-cloud-pub-sub-source-connector-prerequisites.md)]
 - If you don't have an eventstream, [create an eventstream](create-manage-an-eventstream.md). 
 
 ## Add Google Cloud Pub/Sub as a source
 [!INCLUDE [launch-connect-external-source](./includes/launch-connect-external-source.md)]
 
-On the **Select a data source** page, search for and select **Connect** on the **Azure Event Hubs** tile.
+On the **Select a data source** page, search for and select **Connect** on the **Google Cloud Pub/Sub** tile.
 
 :::image type="content" source="media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png" alt-text="Screenshot that shows the selection of Google Cloud Pub/Sub as the source type in the Select a data source wizard." lightbox="media/add-source-google-cloud-pub-sub/select-google-cloud-pub-sub.png":::
 
@@ -31,9 +30,9 @@ On the **Select a data source** page, search for and select **Connect** on the *
 ## Configure and connect to Google Cloud Pub/Sub
 
 >[!IMPORTANT]
->You can consume the Google Cloud Pub/Sub events in only one eventstream. Once you fetch the events into an eventstream, they can't be consumed by other eventstreams.
+>You can consume the Google Cloud Pub/Sub events in only one eventstream. Once you fetch the events into an eventstream, other eventstreams can't consume them.
 
-[!INCLUDE [google-cloud-pub-sub-connector](./includes/google-cloud-pub-sub-source-connector.md)]
+[!INCLUDE [google-cloud-pub-sub-connector-configuration](./includes/connectors/google-cloud-pub-sub-source-connector-configuration.md)]
 
 You can see the Google Cloud Pub/Sub source added to your eventstream in **Edit mode**.
 
@@ -45,19 +44,8 @@ Select **Publish** to publish the changes and begin streaming data from Google C
 
 ## Related content
 
-Other connectors:
+A few other connectors:
 
 - [Amazon Kinesis Data Streams](add-source-amazon-kinesis-data-streams.md)
 - [Azure Cosmos DB](add-source-azure-cosmos-db-change-data-capture.md)
 - [Azure Event Hubs](add-source-azure-event-hubs.md)
-- [Azure IoT Hub](add-source-azure-iot-hub.md)
-- [Azure SQL Database Change Data Capture (CDC)](add-source-azure-sql-database-change-data-capture.md)
-- [Confluent Kafka](add-source-confluent-kafka.md)
-- [Custom endpoint](add-source-custom-app.md)
-- [MySQL Database CDC](add-source-mysql-database-change-data-capture.md)
-- [PostgreSQL Database CDC](add-source-postgresql-database-change-data-capture.md)
-- [Sample data](add-source-sample-data.md)
-- [Azure Blob Storage events](add-source-azure-blob-storage.md)
-- [Fabric workspace event](add-source-fabric-workspace.md)
-
-

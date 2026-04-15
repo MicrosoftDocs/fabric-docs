@@ -22,50 +22,9 @@ This connector ingests both CloudEvents from namespace topics and MQTT telemetry
 
 This article shows you how to add an Event Grid namespace source to an eventstream.
 
-## Prerequisites
-
-- Create or have an Event Grid namespace with [managed identity](/azure/event-grid/event-grid-namespace-managed-identity) enabled.
-
-- A workspace that's not **My workspace**, operating in a Fabric capacity or trial license mode, is required.
-
-- If you have Member (or higher) permissions, no extra setup is needed. If you don't have Member permissions, ask a colleague with Member access to assign Contributor access to the Event Grid service principal before you add the source:
-
-  1. In the workspace, open the [Manage access](../../fundamentals/give-access-workspaces.md) pane.
-  1. Select **Add people or groups**.
-  1. Enter the Event Grid namespace name and choose the matching service principal.
-  1. Assign the Contributor role and select **Add**.
-
-- Enable [MQTT](/azure/event-grid/mqtt-publish-and-subscribe-portal) and [routing](/azure/event-grid/mqtt-routing) on the Event Grid namespace, if you want to receive MQTT data.
-
+[!INCLUDE [azure-event-grid-source-connector-prerequisites](./includes/connectors/azure-event-grid-source-connector-prerequisites.md)]
 - [Create an eventstream](create-manage-an-eventstream.md) if you don't have one.
 
-## Configure portal settings
-
-To ensure that the managed identity of the Event Grid namespace has the required permissions, configure settings in the admin portal:
-
-1. In the upper-right corner, select **Settings** (gear icon).
-
-1. In the **Governance and insights** section, select **Admin portal**.
-
-    :::image type="content" source="./media/add-source-azure-event-grid/admin-portal-link.png" alt-text="Screenshot of the link for the admin portal in Power BI settings." lightbox="./media/add-source-azure-event-grid/admin-portal-link.png":::
-
-1. On the **Tenant settings** page, go to the **Developer settings** section.
-
-1. To grant the service principal access to Fabric APIs for creating workspaces, connections, or deployment pipelines:
-
-   1. Expand the **Service principals can use Fabric APIs** option.
-   1. Set the toggle to **Enabled**.
-   1. Under **Apply to**, select **The entire organization**.
-   1. Select **Apply**.
-
-   :::image type="content" source="./media/add-source-azure-event-grid/developer-settings.png" alt-text="Screenshot that shows developer settings." lightbox="./media/add-source-azure-event-grid/developer-settings.png":::
-
-   To access all other APIs (enabled by default for new tenants):
-
-   1. Expand the **Allow service principals to create and use profiles** option.
-   1. Set the toggle to **Enabled**.
-   1. Under **Apply to**, select **The entire organization**.
-   1. Select **Apply**.
 
 ## Start the wizard for selecting a data source
 
@@ -77,7 +36,7 @@ On the **Select a data source** page, search for **Azure Event Grid Namespace**.
 
 ## Configure the Event Grid connector
 
-[!INCLUDE [azure-event-grid-source-connector](./includes/azure-event-grid-source-connector.md)]
+[!INCLUDE [azure-event-grid-source-connector](./includes/connectors/azure-event-grid-source-connector-configuration.md)]
 
 ## View an updated eventstream
 

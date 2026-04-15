@@ -136,14 +136,15 @@ When writing User Data Functions, you must follow specific syntax rules to ensur
 
 #### Parameter requirements
 
-- **No default values**: Default parameter values aren't supported. All parameters are required when invoking a function. For example, the following function throws a syntax error:
-    ```python
-    # The default value for the argument called 'name' is not supported and treated like a syntax error.
-    @udf.function()
-    def goodbye_fabric(name: str = "N/A") -> str:
-        return f"Goodbye, {name}."
-    ```
 - **Type annotations required**: All parameters must include type annotations (for example, `name: str`).
+- **Default values**: Default parameter values are supported. You can define default arguments in Fabric user data functions to make your code easier to call and maintain. Default values support common JSON-serializable types, including strings, boolean, numbers (int, float), arrays (lists), and objects (dictionaries).
+**Syntax**
+    ```python
+        @udf.function()
+        def function_name(param1: type = value1, param2: type = value2, listparam: list | None = None, ...) -> output_type:
+            # function body
+    ```
+  Note that the default value must be JSON serializable. For example, nested lists such as [1, 2, [3]] are permitted, whereas nested sets or tuples are not supported.  For list or dictionary defaults, prefer using None in the signature and assigning the real default inside the function. 
 
 #### Function requirements
 

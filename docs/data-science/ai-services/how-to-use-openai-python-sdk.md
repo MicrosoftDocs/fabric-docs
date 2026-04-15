@@ -3,11 +3,11 @@ title: Use Azure OpenAI with Python SDK
 description: How to use prebuilt Azure OpenAI in Fabric with OpenAI Python SDK
 ms.author: lagayhar
 author: lgayhardt
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.topic: how-to
 ms.custom:
-ms.date: 01/16/2026
+ms.date: 02/28/2026
 ms.update-cycle: 180-days
 ms.search.form:
 ms.collection: ce-skilling-ai-copilot
@@ -18,7 +18,7 @@ This article shows how to use Azure OpenAI in Fabric with the [OpenAI Python SDK
 
 ## Prerequisites
 
-The [OpenAI Python SDK](https://github.com/openai/openai-python/) isn't installed in default runtime, you need to first install it.
+The default runtime doesn't include the [OpenAI Python SDK](https://github.com/openai/openai-python/), so you need to install it.
 
 ``` Python
 %pip install -U openai

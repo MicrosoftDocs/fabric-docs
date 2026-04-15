@@ -76,6 +76,7 @@ The following operations are available in the audit logs.
 | Commit Notebook | :::no-loc text="CommitNotebook"::: |   |
 | Commit To Git | :::no-loc text="CommitToGit"::: | Commit To Git is an artifact activity, which is generated when users commit artifact to Git.  |
 | Completed an artifact access request action in Power BI | :::no-loc text="ArtifactAccessRequest"::: | Tracks the notification sent to approvers when a request is created or denied.   |
+| Compute item sizes for workspace | :::no-loc text="ComputeItemsSize"::: | Calculates the amount of data stored in each item for a workspace, to display in the item size report |
 | Connect To Git | :::no-loc text="ConnectToGit"::: | Connect To Git is a workspace activity, which is generated when users connect the workspace to Git.  |
 | Connected to Power BI semantic model from external app | :::no-loc text="ConnectFromExternalApplication"::: |   |
 | Connected to a Warehouse or SQL analytics endpoint from an external app | :::no-loc text="ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp"::: | Previously named *Connected to a warehouse or default warehouse from an external app* (Operation name: :::no-loc text="*ConnectWarehouseAndDefaultWarehouseFromExternalApp*":::)  |
@@ -343,6 +344,7 @@ The following operations are available in the audit logs.
 | Get Goal Value Categories | :::no-loc text="GetGoalValueCategories"::: |   |
 | Get Groups As Admin | :::no-loc text="GetGroupsAsAdmin"::: | Get Groups as Admin is a workspace activity, which is generated on retrieving list of Power BI workspaces using an API call.  |
 | Get Hierarchy Goal Values | :::no-loc text="GetHierarchyGoalValues"::: |   |
+| Get item sizes for workspace | :::no-loc text="GetItemsSize"::: | Retrieves the computed sizes of all items in the workspace. Does not refresh the data |
 | Get Lakehouse Table Details | :::no-loc text="GetLakehouseTableDetails"::: |   |
 | Get MetricSet Metric Endpoint | :::no-loc text="GetMetricSetMetric"::: | Read metric in a metricset endpoint |
 | Get Model Diagram Layouts | :::no-loc text="GetPowerBIDataModelDiagramLayouts"::: | Get diagram layouts when open data model in web model view.  |
@@ -409,6 +411,7 @@ The following operations are available in the audit logs.
 | Import file to Power BI ended | :::no-loc text="ImportArtifactEnd"::: | Generated when importing Power BI Desktop files (.pbix). ImportSource indicates Power BI or OneDriveSharePoint. ImportType tells you if the file is new (Publish) or is being updated (Republish).  |
 | Import file to Power BI started | :::no-loc text="ImportArtifactStart"::: | Generated when importing Power BI Desktop files (.pbix). When ImportSource is PowerBI, the file import originated from a Power BI client or API. When ImportSource is OneDriveSharePoint, the file import originated from OneDrive or a SharePoint document library.  |
 | Imported file to Power BI | :::no-loc text="Import"::: |   |
+| Imported OneLake lifecycle policy | :::no-loc text="ImportedLifecyclePolicy"::: |   |
 | Initiate Cloud O Auth Login | :::no-loc text="InitiateCloudOAuthLogin"::: |   |
 | Initiated Power BI gateway cluster authentication process | :::no-loc text="InitiateGatewayClusterOAuthLogin"::: |   |
 | Insert Domain | :::no-loc text="InsertDataDomainAsAdmin"::: | Insert Domain  |
@@ -433,6 +436,7 @@ The following operations are available in the audit logs.
 | Map Upn | :::no-loc text="MapUpn"::: |   |
 | Migrated dataflow storage location | :::no-loc text="MigratedDataflowStorageLocation"::: | Not currently used  |
 | Migrated workspace to a capacity | :::no-loc text="MigrateWorkspaceIntoCapacity"::: |   |
+| Modified OneLake default tier | :::no-loc text="ModifiedDefaultTier"::: |   |
 | Modify Workspace Capacity | :::no-loc text="ModifyWorkspaceCapacity"::: | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI.  |
 | Move Goals | :::no-loc text="MoveGoals"::: | Moves goals within a scorecard |
 | Move Scorecard | :::no-loc text="MoveScorecard"::: |   |

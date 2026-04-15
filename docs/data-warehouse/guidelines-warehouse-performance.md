@@ -149,7 +149,7 @@ In Microsoft Fabric, the Warehouse automatically optimizes data layouts, and per
 
 #### Optimize lakehouse tables or shortcuts with many small files
 
-Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
+Having many small files creates overhead for reading file metadata. Use the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) in the Fabric portal or a Notebook to combine small files into larger ones. Repeat this process when the number of files changes significantly.
 
 To optimize a table in a Fabric Lakehouse, open the Lakehouse in the Fabric portal. In the **Explorer**, right-click on the table, select **Maintenance**. Choose options from the **Run maintenance commands** page, then select **Run now**.
 
@@ -284,7 +284,7 @@ In Fabric Data Warehouse, data compaction is a background optimization process t
 
 Although the Fabric Data Warehouse engine automatically resolves fragmentation over time through data compaction, performance might degrade until the process completes. Data compaction runs automatically without user intervention for Fabric Data Warehouse. 
 
-Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#table-maintenance-operations) after significant data changes to maintain optimal storage layout.
+Data compaction doesn't apply to the Lakehouse. For Lakehouse tables accessed through SQL analytics endpoints, it's important to follow Lakehouse best practices and manually run the [OPTIMIZE command](../data-engineering/lakehouse-table-maintenance.md#run-table-maintenance-from-lakehouse) after significant data changes to maintain optimal storage layout.
 
 #### Data compaction preemption
 

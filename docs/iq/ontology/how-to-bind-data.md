@@ -1,7 +1,7 @@
 ---
 title: Bind data
 description: Learn about the data binding process in ontology (preview).
-ms.date: 11/12/2025
+ms.date: 03/30/2026
 ms.topic: how-to
 ---
 
@@ -115,6 +115,8 @@ Next to the data binding name, select **...** to open its options. From there, y
 :::image type="content" source="media/how-to-bind-data/edit-delete-binding.png" alt-text="Screenshot of the edit and delete options in the data binding tab.":::
 
 [!INCLUDE [refresh-graph-model](includes/refresh-graph-model.md)]
+
+[!INCLUDE [supported property types](includes/supported-property-types.md)]
 
 ## Limitations and troubleshooting
 

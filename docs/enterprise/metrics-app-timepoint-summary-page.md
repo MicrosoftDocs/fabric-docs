@@ -1,5 +1,5 @@
 ---
-title: Understand the metrics app timepoint summary page (preview)
+title: Understand the metrics app timepoint summary page
 description: Learn how to read the Microsoft Fabric Capacity Metrics app's Timepoint Summary page.
 author: dknappettmsft
 ms.author: daknappe
@@ -8,9 +8,7 @@ ms.date: 06/06/2025
 no-loc: [Copilot]
 ---
 
-# Understand the metrics app timepoint summary page (preview)
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+# Understand the metrics app timepoint summary page
 
 This page provides a summary view of **operation types** (not individual operations) in items that contribute to capacity usage in the 30-seconds time window, ranked by their compute impact measured in **Capacity Units (CUs)**. Use it to identify which [*interactive* and *background*](fabric-operations.md#interactive-and-background-operations) operation types had the highest impact on your capacity. Note that the capacity consumption of scheduled and background jobs is distributed evenly over a 24-hour period.
 

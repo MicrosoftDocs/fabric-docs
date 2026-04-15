@@ -1,50 +1,59 @@
 ---
 title: Lakehouse Load to Delta Lake tables
-description: Learn all about the lakehouse Load to Delta Table feature, including feature guidelines and capabilities.
+description: Learn how to use Load to tables in the Fabric portal to load CSV and Parquet files into Delta tables.
 ms.reviewer: avinandac
 ms.topic: how-to
-ms.date: 09/16/2024
+ms.date: 03/01/2026
+ai-usage: ai-assisted
 ms.search.form: lakehouse load to delta lake tables
 ---
 
-# Load to Delta Lake table
+# Load to Delta Lake tables
 
-The [Lakehouse](lakehouse-overview.md) in Microsoft Fabric provides a feature to efficiently load common file types to an optimized Delta table ready for analytics. The _Load to Table_ feature allows users to load a single file or a folder of files to a table. This feature increases productivity for data engineers by allowing them to quickly use a right-click action to enable table loading on files and folders. Loading to the table is also a **no-code experience**, which lowers the entry bar for all personas.  
-
-## Load to Table capabilities overview
-
-Here's a list of features that we enabled in the integrated load to table experience to provide our users with flexibility while increasing their productivity:
-
-- **Supported file types:** This feature currently only supports loading PARQUET or CSV file types. File extension case doesn't matter.
-
-- **Single-file load:** Users can load a single file of their choice in one of the supported formats by selecting "Load to Delta Table" in the context menu action of the file.
-
-- **Folder-level load:** You can load all files under a folder and its subfolders at once by selecting "Load to Delta Table" after clicking on a folder. This feature automatically traverses all files and loads them to a Delta Table. It's important to note that only files of the same type can be loaded at the same time to a table.
-
-- **Load to new and existing table:** User can choose to load their files and folders to a new table or an existing table of their choice. If they decide to choose to load to an existing table, they can either append or overwrite their data in the table.
-
-- **CSV Source file option:** For CSV files, we allow user to specify if their source file includes headers they would like to use as column names. Users can also specify a separator of their choice to override the default comma separator in place.
-
-- **Loaded as Delta Tables:** Tables are always loaded using the Delta Lake table format with V-Order optimization enabled.
-
-   :::image type="content" source="media\load-to-tables\load-to-tables-overview.gif" alt-text="Gif of overall load folder to table experience." lightbox="media\load-to-tables\load-to-tables-overview.gif":::
+In the Fabric portal, you can use **Load to tables** from the [Lakehouse home page](lakehouse-overview.md) to turn CSV or Parquet files into Delta tables.
 
 > [!NOTE]
-> Currently, you cannot specify the table schema through the Lakehouse UI; you must use a notebook for that purpose.
+> In the current **Load to tables** flow, you can't define a custom column schema (for example, explicit column names and data types) from the Lakehouse home page. Use a notebook when you need explicit column schema control. 
 
-## Validation guidelines and rules
+## What you can do in the Fabric portal
 
-The following standard applies to the Load to table experience:
+In the Fabric portal, the Lakehouse home page supports the following actions when you use **Load to tables**:
 
-- Table names can only contain alphanumeric characters and underscores. It also allows any English letter, upper or lower case, and underscore (**```_```**), with a max length of **256 characters**. No dashes (**```-```**) or space characters are allowed.
+- Start from either a single file or a folder.
+- Load into either a new table or an existing table.
+- Load **CSV** or **Parquet** data and keep output in Delta format with V-Order optimization.
 
-- Text files without column headers are replaced with standard **```col#```** notation as the table column names.
+For field-by-field behavior (including when options like **File type**, **Append**/**Overwrite**, **Column header**, and **Separator** appear), see [Fields by load path](#fields-by-load-path).
 
-- Column names allow any English letter, upper or lower case, underscore (**```_```**), and characters in other language such as Chinese in UTF, length up to **128 characters**. Column names are validated during the load action. The Load to Delta algorithm replaces forbidden values with underbar (**```_```**). If no proper column name is achieved during validation, the load action fails.
+   :::image type="content" source="media\load-to-tables\load-to-tables-new.png" alt-text="Screenshot of the option to load to a new Delta table" lightbox="media\load-to-tables\load-to-tables-new.png":::
 
-- For CSV files, separator can't be empty, can't be longer than **8 characters**, or use any of the following characters: **```(```**, **```)```**, **```[```**, **```]```**,**```{```**, **```}```**, single quote (**```'```**), double quote (**```"```**), and white space.
+## Fields by load path
+
+When you use **Load to tables**, the dialog title and fields change based on your path:
+
+- **Source**: file or folder.
+- **Target**: new table or existing table.
+- **Format**: CSV or Parquet.
+
+Dialog titles follow those choices (for example, **Load file to new table**, **Load folder to new table**, **Load file to existing table**, or **Load folder to existing table**).
+
+## Fields by scenario
+
+Use the following table to quickly identify which fields appear for each load scenario, what values to provide, and how validation behaves.
+
+| Field | When you see it | What to enter or select | Validation and behavior |
+|---|---|---|---|
+| **Schema** (dropdown) | New table and existing table paths | Destination Lakehouse schema namespace | Select the namespace where the table is created or updated. |
+| **New table name** | New table paths only | Name for the destination Delta table | Use alphanumeric characters and underscores (`_`) only, up to 256 characters. Dashes (`-`) and spaces aren't allowed. |
+| **Load mode** (**Append** or **Overwrite**) | Existing table paths only | How to load into the selected existing table | Choose **Append** to add rows, or **Overwrite** to replace existing data. |
+| **File type** | Folder paths only | Folder load format (**CSV** or **Parquet**) | All files in one folder load action must match the selected file type. |
+| **Column header** (checkbox) | CSV paths only | Whether to use the first row as column names | If checked, Fabric uses first-row values as column names. If not checked (or headers don't exist), Fabric assigns defaults such as `_c0`, `_c1`, `_c2`. |
+| **Separator** (text box) | CSV paths only | CSV delimiter value | Can't be empty, can't be longer than 8 characters, and can't include `(`, `)`, `[`, `]`, `{`, `}`, `'`, `"`, or whitespace. |
+| **Column names** (resulting names) | CSV paths after header handling | Resulting column names from file headers or defaults | Names can include English letters (upper or lower case), underscores (`_`), and UTF characters (for example, Chinese), up to 128 characters. Invalid characters are replaced with underscores. If a valid name can't be produced, the load fails. |
+
+After required fields are set for your path, select **Load**.
 
 ## Related content
 
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
-- [CSV file upload to Delta for Power BI reporting](get-started-csv-upload.md)
+- [CSV file upload to Delta tables for Power BI reporting](get-started-csv-upload.md)

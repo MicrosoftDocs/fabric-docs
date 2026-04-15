@@ -2,7 +2,7 @@
 title: "Limitations of Fabric Mirrored Databases From Azure Database for PostgreSQL flexible server"
 description: A detailed list of limitations for mirrored databases from Azure Database for PostgreSQL flexible server in Microsoft Fabric.
 ms.reviewer: scoriani
-ms.date: 11/17/2025
+ms.date: 02/27/2026
 ms.topic: concept-article
 ms.custom:
   - references_regions
@@ -30,34 +30,34 @@ For troubleshooting, see:
 
 - Fabric Mirroring for Azure Database for PostgreSQL flexible server is only supported on a writable primary database.
 - An Azure Database for PostgreSQL flexible server database can only be mirrored to a single Fabric item at a time.
-- The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently can't be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list are not mirrored over.
-  - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
+- The maximum number of tables that can be mirrored into Fabric is 1,000 tables. Any tables above the 1000 limit currently can't be replicated.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over are the first 1,000 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list aren't mirrored over.
+  - If you unselect **Mirror all data** and select individual tables, you're prevented from selecting more than 1,000 tables.
 
 ## Permissions in the source database
 
 <!-- Maintain similar content in docs\database\mirrored-database\azure-database-postgresql-tutorial.md -->
 
-- Permissions defined in Azure Database for PostgreSQL flexible server are not propagated to the replicated data in Fabric OneLake.
+- Permissions defined in Azure Database for PostgreSQL flexible server aren't propagated to the replicated data in Fabric OneLake.
 - To successfully configure Mirroring for Azure Database for PostgreSQL flexible server, the database role used to connect to the source server must be granted the permissions needed for Fabric mirroring in the database. You must grant the `CREATEDB`, `CREATEROLE`, `LOGIN`, `REPLICATION`, and `azure_cdc_admin` permissions to a new or existing role. For a sample script, see [Tutorial: Configure Microsoft Fabric mirrored databases from Azure Database for PostgreSQL](azure-database-postgresql-tutorial.md#database-role-for-fabric-mirroring).
 - The database role used also needs to be `owner` of the tables in the source database. This means that tables have been created by that user, or that the ownership of those tables has been changed using `ALTER TABLE xxx OWNER TO <user>;`. When switching ownership to new user, you might need to grant to that user all privileges on `public` schema before. For more information regarding user account management, see Azure Database for PostgreSQL [user management](/azure/postgresql/flexible-server/how-to-create-users) documentation, PostgreSQL product documentation for [Database Roles and Privileges](https://www.postgresql.org/docs/current/static/user-manag.html), [GRANT Syntax](https://www.postgresql.org/docs/current/static/sql-grant.html), and [Privileges](https://www.postgresql.org/docs/current/static/ddl-priv.html). 
 
 ## Network and connectivity security
 
-- If your Flexible Server is not publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
+- If your Flexible Server isn't publicly accessible and doesn't [allow Azure services](/azure/azure-sql/database/network-access-controls-overview#allow-azure-services) to connect to it, you can [create a virtual network data gateway](/data-integration/vnet/create-data-gateways) to mirror the data. Make sure the Azure Virtual Network or the gateway machine's network can connect to the Azure Database for PostgreSQL flexible server via a private endpoint or is allowed by the firewall rule.
 - The Azure Database for PostgreSQL flexible server's [System Assigned Managed Identity (SAMI) needs to be enabled](/azure/postgresql/flexible-server/how-to-configure-managed-identities-system-assigned) and must be the primary identity.
 
 ## Table level
 
 - DDL operations on existing mirrored tables aren't supported (add/remove column, change data type, etc.). Modify existing tables requires to stop and restart replication from the mirrored database in Microsoft Fabric.
-- `TRUNCATE TABLE` commands on mirrored tables are not supported
-- Mirroring is not currently not supported for views, materialized views, foreign tables, toast tables or partitioned tables.
+- `TRUNCATE TABLE` commands on mirrored tables aren't supported
+- Mirroring isn't currently not supported for views, materialized views, foreign tables, toast tables or partitioned tables.
 - TimescaleDB hypertables aren't supported for Fabric Mirroring.
 
 ## Column level
 
 - Data in a **Numeric**/**Decimal** column exceeding precision of 38 won't be replicated in the mirrored database and will appear as `NULL`.
-- If the source table contains columns with one of these data types, these columns cannot be mirrored to Fabric OneLake. The following data types are currently unsupported for mirroring:
+- If the source table contains columns with one of these data types, these columns can't be mirrored to Fabric OneLake. The following data types are currently unsupported for mirroring:
     - `bit`
     - `bit varying [ (n) ]`, `varbit`
     - `box`

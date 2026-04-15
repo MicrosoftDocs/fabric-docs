@@ -1,7 +1,9 @@
 ---
 title: Data security overview
 description: Get started with securing your data in OneLake with this overview of the core concepts and capabilities.
-ms.reviewer: eloldag, aamerril
+ms.reviewer: aamerril # Product team ms alias(es)
+# author: Do not use - assigned by folder in docfx file
+# ms.author: Do not use - assigned by folder in docfx file
 ms.topic: concept-article
 ms.date: 09/05/2025
 #customer intent: As a OneLake user, I want to understand the core concepts and capabilities of data security in OneLake so that I can use them to protect my data stored and accessed in OneLake.
@@ -80,11 +82,17 @@ Learn more about creating OneLake security roles for [Tables and folders](./tabl
 
 Learn more about the [access control model for OneLake security](./data-access-control-model.md).
 
+### Authorized engines and third-party enforcement
+
+OneLake security supports enforcement by authorized third-party engines through the [authorized engine model](./onelake-security-integrations-overview.md). External query engines can register as authorized engines, retrieve security policy definitions and precomputed effective access through OneLake APIs, and enforce table permissions, RLS, and CLS at query time. OneLake remains the single source of truth for security policies, and policies are authored once and enforced consistently across Fabric engines and authorized external engines.
+
+For more information, see [OneLake security integrations overview](./onelake-security-integrations-overview.md).
+
 ### Compute permissions
 
 Compute permissions are a type of data plane permission that applies to a specific query engine in Microsoft Fabric. The access granted applies only to queries run against that specific engine, such as the SQL endpoint or a Power BI semantic model. Depending on the compute permissions, users might see different results when they access data through a compute engine compared to when they access data directly in OneLake.
 
-Use OneLake security to secure data in OneLake rather than compute permissions. OneLake security ensures consistent results across all engines that a user might interact with.
+Use OneLake security to secure data in OneLake rather than compute permissions. OneLake security ensures consistent results across Fabric engines and any [authorized third-party engines](./onelake-security-integrations-overview.md) that integrate with OneLake security APIs.
 
 Compute engines might have more advanced security features that aren't available in OneLake security. In that case, some scenarios might require using the compute permissions. When you use compute permissions to secure access to data, make sure that you give end users access only to the compute engine where the security is set. This best practice prevents data from being accessed through a different engine without the necessary security features.
 
@@ -138,4 +146,3 @@ When you turn on this setting, users can access data from all sources. For examp
 * [Workspace roles](../../fundamentals/roles-workspaces.md)
 * [OneLake file explorer](../onelake-file-explorer.md)
 * [Share items](../../fundamentals/share-items.md)
-

@@ -1,7 +1,8 @@
 ---
 title: Use prebuilt Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API
-ms.reviewer: lagayhar, ruxu
+ms.author: lagayhar
+ms.reviewer: ruxu
 ms.topic: how-to
 ms.date: 08/20/2025
 ms.update-cycle: 180-days
@@ -14,7 +15,7 @@ ms.collection: ce-skilling-ai-copilot
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure Language in Foundry Tools](/azure/ai-services/language-service/) is a [Foundry Tool](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Azure Language in Foundry Tools](/azure/ai-services/language-service/) is a [Microsoft Foundry tool](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
 In this article, you learn how to use Language services directly in Microsoft Fabric to analyze text. By the end of this article, you're able to:
 
@@ -73,9 +74,9 @@ import requests
 fabric_env_config = get_fabric_env_config().fabric_env_config
 auth_header = TokenUtils().get_openai_auth_header()
 
-# Make a RESful request to Foundry Tool
+# Make a RESful request to Foundry tool
 prebuilt_AI_base_host = fabric_env_config.ml_workload_endpoint + "cognitive/textanalytics/"
-print("Workload endpoint for Foundry Tool: \n" + prebuilt_AI_base_host)
+print("Workload endpoint for Foundry tool: \n" + prebuilt_AI_base_host)
 
 service_url = prebuilt_AI_base_host + "language/:analyze-text?api-version=2022-05-01"
 print("Service URL: \n" + service_url)

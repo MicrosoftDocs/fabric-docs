@@ -57,7 +57,7 @@ List view is divided into the task flow and the items list.
 :::image type="content" source="./media/workspaces/workspace-list-view.png" alt-text="Screenshot showing the layout of list view and its controls." lightbox="./media/workspaces/workspace-list-view.png":::
 
 1. **Task flow**: The task flow is where you can create or view a graphical representation of  your data project. The task flow shows the logical flow of the project - it doesn't show the flow of data. Read more about [task flows](../fundamentals/task-flow-overview.md).
-1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks. In the list view, there are several columns which show the key information of items. For example, the **Status** column shows long-term, non-permanent state of items by using diffirent kinds of indicators, such as trial expiring, [dataflow refresh status](../data-factory/dataflows-gen2-monitor.md#workspace-status) etc.
+1. **Items list**: The items list is where you see the items and folders in the workspace. If you have tasks in the task flow, you can filter the items list by selecting the tasks. In the list view, there are several columns which show the key information of items. For example, the **Status** column shows long-term, non-permanent state of items by using different kinds of indicators, such as trial expiring, [dataflow refresh status](../data-factory/dataflows-gen2-monitor.md#workspace-status) etc.
 1. **Resize bar**: You can resize the task flow and items list by dragging the resize bar up or down.
 1. **Show/Hide task flow**: If you don't want to see the task flow, you can hide it using the hide/show arrows at the side of the separator bar.
 
@@ -142,11 +142,24 @@ In the Workspace settings pane, select **Other** > **Remove this workspace**.
 If you attempt to delete a workspace via the workspace settings, and that workspace is currently assigned to a [Deployment Pipeline](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md), the 
 deletion will fail.  
 
-To remove the workspace, you can return to the workspace page and click the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
+To remove the workspace, you can return to the workspace page and select the **View Deployment Pipeline** button. This will direct you to the relevant pipeline, where you can unassign the workspace and then remove it.
 
 For more information, see [Remove a workspace from a deployment pipeline](../cicd/deployment-pipelines/assign-pipeline.md#remove-a-workspace-in-a-deployment-pipeline)
 
+## Workspace recycle bin (preview)
 
+Each workspace has a recycle bin that shows items in a retention period. When a [supported item type](../admin/retention-recovery.md#supported-item-types) is deleted and the **Item Recovery** tenant setting is turned on, the item moves to the recycle bin instead of being permanently deleted.
+
+To open the recycle bin, select **Recycle bin** from the workspace navigation. From the recycle bin, you can:
+
+- **Restore** a deleted item to its original location in the workspace. Workspace contributors, members, and admins can restore items.
+- **Delete permanently** to remove an item before the retention period ends. Only workspace admins can permanently delete items.
+
+:::image type="content" source="media/workspaces/workspace-recycle-bin.png" alt-text="Screenshot of the Workspace recycle bin in the Fabric portal, showing the Restore and Delete permanently buttons in the toolbar along with a list of deleted items." lightbox="media/workspaces/workspace-recycle-bin.png":::
+
+Items remain in the recycle bin for the duration of the retention period configured by the tenant admin (7 to 90 days). At the end of the retention period, items are permanently deleted automatically.
+
+For more information, see [Recover or permanently delete items](../admin/item-recovery.md).
 
 ## Administering and auditing workspaces
 
@@ -174,7 +187,7 @@ See the following table if you have trouble signing in.
 | Message | Meaning | How to fix |
 |---|---|---|
 |`browser_storage_unsupported`| Your browser is blocking access to storage, which is required for signing in.| - Check your browser’s privacy settings.<br>- Make sure cookies and local storage (like `sessionStorage` or `localStorage`) are allowed.<br>- Try disabling any extensions that might block storage access. |
-|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allowlist of your proxy or firewall. This helps your network keep the necessary login information in place when trying to connect to the service. |
+|`cluster_resolution_failure_401`|Your network or proxy is blocking authentication headers needed to connect to the service.|- Ask your IT admin to add **app.powerbi.com** to the allowlist of your proxy or firewall. This helps your network keep the necessary sign-in information in place when trying to connect to the service. |
 | `popup_window_blocked` | Error opening popup window. The browser blocked popups or the environment doesn't support popups. | Allow popups for the site, then retry sign in. | 
 
 ## Considerations and limitations
@@ -189,3 +202,4 @@ Limitations to be aware of:
 
 * [Create workspaces](../fundamentals/create-workspaces.md)
 * [Give users access to workspaces](../fundamentals/give-access-workspaces.md)
+* [Recover or permanently delete items](../admin/item-recovery.md)

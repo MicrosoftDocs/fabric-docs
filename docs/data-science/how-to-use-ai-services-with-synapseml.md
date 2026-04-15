@@ -4,8 +4,8 @@ description: Enrich your data with artificial intelligence (AI) in Azure Synapse
 ms.topic: how-to
 ms.author: scottpolly
 author: s-polly
-ms.reviewer: vimeland
-reviewer: virginiaroman
+ms.reviewer: ruxu
+reviewer: ruixinxu
 ms.date: 01/16/2026
 ms.update-cycle: 180-days
 ms.collection: ce-skilling-ai-copilot
@@ -24,6 +24,8 @@ Foundry Tools help developers create applications that see, hear, speak, underst
 > - **[AI Functions](ai-services/how-to-use-openai-ai-functions.md)**: The simplest approach using Pandas and PySpark DataFrame extensions with minimal code
 > - **[OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md)**: Distributed processing with the `OpenAIPrompt` transformer for millions of rows
 > - **[OpenAI Python SDK](ai-services/how-to-use-openai-python-sdk.md)**: Fine-grained control for single API calls
+>
+> AI Functions can be invoked from pandas or PySpark DataFrames; PySpark runs distributed in Fabric. Import paths differ by engine (pandas: `synapse.ml.aifunc`, PySpark: `synapse.ml.spark.aifunc`).
 >
 > This article focuses on using SynapseML with bring-your-own-key for other Foundry Tools.
 
@@ -44,14 +46,16 @@ Consider whether simpler alternatives meet your needs. Both Fabric AI Functions 
 | **Sentiment analysis** | `df.ai.analyze_sentiment()` - Simple, no keys, **PySpark = distributed** | TextSentiment with your Azure key |
 | **Translation** | `df.ai.translate()` - 100+ languages, **PySpark = distributed** | Translate with your Azure Translator key |
 | **Text classification** | `df.ai.classify()` - Custom categories, **PySpark = distributed** | Requires custom model training |
-| **Information extraction** | `df.ai.extract()` - Flexible patterns, **PySpark = distributed** | NER with predefined entity types |
+| **Information extraction** | `df.ai.extract()` and `ExtractLabel` with schema-driven JSON Schema (typed fields, enums, arrays, nullable, required fields, `additionalProperties=false`), **PySpark = distributed**; also works with pandas | NER with predefined entity types |
 | **Text summarization** | `df.ai.summarize()` - Customizable, **PySpark = distributed** | Requires custom implementation |
 | **Custom text generation** | `df.ai.generate_response()` - **PySpark = distributed** | Use [Azure OpenAI with SynapseML](ai-services/how-to-use-openai-synapse-ml.md) for advanced prompts |
 | **Image analysis** | Not available - use SynapseML | Vision API with your Azure key |
 | **Speech processing** | Not available - use SynapseML | Speech API with your Azure key |
 | **Document Intelligence** | `df.ai.extract()` for custom formats (**PySpark = distributed**) | Best for standard forms (receipts, invoices) |
 
-**When to use AI Functions**: Most text operations at ANY scale (thousands to millions of rows). **PySpark AI Functions are fully distributed** (powered by SynapseML), no subscription keys needed, simpler code, validated prompts reduce token costs.
+AI Functions support strict, schema-driven extraction via `ExtractLabel` using JSON Schema (including `required` fields and `additionalProperties=false` to disallow extra fields). You can author schemas with Pydantic models and convert them to JSON Schema. For more details, see [AI Functions](ai-services/how-to-use-openai-ai-functions.md).
+
+**When to use AI Functions**: Most text operations at ANY scale (thousands to millions of rows). For tasks requiring validated, structured outputs (for example, enforced fields and enums), use AI Functions' `ExtractLabel` with JSON Schema; PySpark executions are fully distributed. **PySpark AI Functions are fully distributed** (powered by SynapseML), no subscription keys needed, simpler code, validated prompts reduce token costs.
 
 **When to use SynapseML with BYOK**: Vision tasks, speech processing, specialized document forms, or when you have existing Azure AI services subscriptions.
 

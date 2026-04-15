@@ -34,7 +34,7 @@ You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pip
 
 Before you use the deployment pipelines APIs, make sure of the following:
 
-* The *user* or *service principal* that calls the APIs has [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to an [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
+* The *user* or *service principal* that calls the APIs has [pipeline and workspace permissions](understand-the-deployment-process.md#permissions) and access to a [Microsoft Entra application](/entra/identity-platform/how-applications-are-added).
 
 * If you're using PowerShell scripts, install the Power BI PowerShell cmdlets [Install-Module MicrosoftPowerBIMgmt](/powershell/power-bi/overview).
 
