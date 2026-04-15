@@ -74,7 +74,7 @@ Footnotes display notes collectively at the bottom of the report for easy refere
 2. Open the **Notes** menu.
 3. Enable the **Footnote** option.
 
-    :::image type="content" source="media/planning-sheet-how-to-add-notes/foot-notes.png" alt-text="Screenshot of adding footnotes." lightbox="media/planning-sheet-how-to-add-notes/foot-notes.png"::
+    :::image type="content" source="media/planning-sheet-how-to-add-notes/foot-notes.png" alt-text="Screenshot of adding footnotes." lightbox="media/planning-sheet-how-to-add-notes/foot-notes.png":::
 
 All notes are displayed as numbered references in the footnote section.
 
