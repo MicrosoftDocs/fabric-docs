@@ -57,11 +57,11 @@ Use Copilot to explore data in the context of the entire dashboard or of a speci
 1. **Share your insights:** If you find insights that you want to share, do **one** of the following:
     1. Select the share icon in the Copilot pane and copy the link to share the insights with others. When they open the link, they see the same Copilot pane with the question and results you have. Optionally, select the checkbox to include the visual.
 
-    :::image type="content" source="media/dashboard-explore-copilot/copilot-data-pane.png" alt-text="Screenshot of the Copilot data results and visual.":::
+        :::image type="content" source="media/dashboard-explore-copilot/copilot-data-pane.png" alt-text="Screenshot of the Copilot data results and visual.":::
 
     1. Select the expand icon to open the pane in a larger view. In the expanded view, select the share icon and copy the link to share the insights with others. When they open the link, they see the same expanded Copilot pane with the question and results you have. Optionally, select the checkbox to include the visual.
 
-    :::image type="content" source="media/dashboard-explore-copilot/copilot-large-data-pane.png" alt-text="Screenshot of the expanded Copilot data results and visual.":::
+        :::image type="content" source="media/dashboard-explore-copilot/copilot-large-data-pane.png" alt-text="Screenshot of the expanded Copilot data results and visual.":::
 
 1. **Save insights to dashboard:** If you find insights that you want to save to the dashboard, select **Save to dashboard** in the expanded view. This action saves the current view and query as a new tile on the dashboard. Optionally, you can save the tile to a different existing dashboard or create a new dashboard for the tile.
 
