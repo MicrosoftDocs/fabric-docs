@@ -95,6 +95,10 @@ items:
           href: plan/planning-sheet-how-to-change-layouts.md
         - name: Create a cube
           href: plan/planning-how-to-create-cube.md
+        - name: Add Comments
+          href: plan/planning-sheet-how-to-add-comments.md
+        - name: Add Notes
+          href: plan/planning-sheet-how-to-add-notes.md
   - name: PowerTable sheets
     items:
     - name: PowerTable sheets overview
