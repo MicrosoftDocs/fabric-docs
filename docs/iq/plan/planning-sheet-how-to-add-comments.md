@@ -24,7 +24,7 @@ Data-level comments allow you to add discussions to a **specific cell, row, or c
 1. Select the **cell, row, or column** where you want to add a comment.
 2. Select **Add a comment** from the toolbar.
 
-     :::image type="content" source="media/planning-sheet-how-to-add-comment/comments-toolbar.png" alt-text="Screenshot of the comments option." lightbox="media/planning-sheet-how-to-add-comment/comments-toolbar.png":::
+     :::image type="content" source="media/planning-sheet-how-to-add-comments/comments-toolbar.png" alt-text="Screenshot of the comments option." lightbox="media/planning-sheet-how-to-add-comments/comments-toolbar.png":::
 
 
 3. Enter the comment in the **comment editor**.
@@ -32,7 +32,7 @@ Data-level comments allow you to add discussions to a **specific cell, row, or c
 5. **Assign to User** as needed.
 6. Select **Post**.
 
-     :::image type="content" source="media/planning-sheet-how-to-add-comment/add-comments.png" alt-text="Screenshot of the adding comments." lightbox="media/planning-sheet-how-to-add-comment/add-comments.png":::
+     :::image type="content" source="media/planning-sheet-how-to-add-comments/add-comments.png" alt-text="Screenshot of the adding comments." lightbox="media/planning-sheet-how-to-add-comments/add-comments.png":::
 
 The comment is saved along with metadata such as **author name and timestamp.**
 
@@ -47,13 +47,13 @@ You can notify other users by mentioning them in a comment.
 
 Mentioned users receive email notifications with a link to the sheet so they can respond or take action.
 
-:::image type="content" source="media/planning-sheet-how-to-add-comment/mention-users.png" alt-text="Screenshot of the mentioning users in comments." lightbox="media/planning-sheet-how-to-add-comment/mention-users.png":::
+:::image type="content" source="media/planning-sheet-how-to-add-comments/mention-users.png" alt-text="Screenshot of the mentioning users in comments." lightbox="media/planning-sheet-how-to-add-comments/mention-users.png":::
 
 Comments help you assign and track tasks for effective workflow collaboration.
 
 The task status is initially **Open** and can later be updated to **Resolved** when the task is completed.
 
-:::image type="content" source="media/planning-sheet-how-to-add-comment/assign-track-tasks.png" alt-text="Screenshot of the showing assigning and tracking tasks of users in comments." lightbox="media/planning-sheet-how-to-add-comment/assign-track-tasks.png":::
+:::image type="content" source="media/planning-sheet-how-to-add-comments/assign-track-tasks.png" alt-text="Screenshot of the showing assigning and tracking tasks of users in comments." lightbox="media/planning-sheet-how-to-add-comments/assign-track-tasks.png":::
 
 ### Lock or resolve comment threads
 
@@ -90,14 +90,14 @@ Report-level comments allow users to discuss the **entire report instead of a sp
 1. Select the **Comments** dropdown.
 2. Choose **Report-level comments**.
 
-     :::image type="content" source="media/planning-sheet-how-to-add-comment/add-report-level-comments.png" alt-text="Screenshot of the showing report level comments option." lightbox="media/planning-sheet-how-to-add-comment/add-report-level-comments.png":::
+     :::image type="content" source="media/planning-sheet-how-to-add-comments/add-report-level-comments.png" alt-text="Screenshot of the showing report level comments option." lightbox="media/planning-sheet-how-to-add-comments/add-report-level-comments.png":::
 
 3. Enter the comment in the side panel.
 4. Select **Post**.
 
 Report-level comments support the same capabilities as data-level comments, including mentions, replies, formatting, notifications, and task assignments.
 
- :::image type="content" source="media/planning-sheet-how-to-add-comment/report-level-comment.png" alt-text="Screenshot of the adding report level comments." lightbox="media/planning-sheet-how-to-add-comment/report-level-comment.png":::
+ :::image type="content" source="media/planning-sheet-how-to-add-comments/report-level-comment.png" alt-text="Screenshot of the adding report level comments." lightbox="media/planning-sheet-how-to-add-comments/report-level-comment.png":::
 
 
 ## View all comments
@@ -115,7 +115,7 @@ Comments are grouped by category:
 
 Expand each section by selecting **>** to view the associated comments.
 
-:::image type="content" source="media/planning-sheet-how-to-add-comment/view-all-comments.png" alt-text="Screenshot of the showing view all comments option." lightbox="media/planning-sheet-how-to-add-comment/view-all-comments.png":::
+:::image type="content" source="media/planning-sheet-how-to-add-comments/view-all-comments.png" alt-text="Screenshot of the showing view all comments option." lightbox="media/planning-sheet-how-to-add-comments/view-all-comments.png":::
 
 ## Configure comment settings
 
@@ -126,7 +126,7 @@ To open comment settings
 1. Select the **Comments** dropdown.
 2. Select **Settings**.
 
-     :::image type="content" source="media/planning-sheet-how-to-add-comment/configure-comments.png" alt-text="Screenshot of configuring comments." lightbox="media/planning-sheet-how-to-add-comment/configure-comments.png":::
+     :::image type="content" source="media/planning-sheet-how-to-add-comments/configure-comments.png" alt-text="Screenshot of configuring comments." lightbox="media/planning-sheet-how-to-add-comments/configure-comments.png":::
 
 ### General settings
 
@@ -140,7 +140,7 @@ General settings allow you to:
 * Enable or disable teams notifications
 * Delete all comments from the report
 
-   :::image type="content" source="media/planning-sheet-how-to-add-comment/comments-settings.png" alt-text="Screenshot of configuring comment settings." lightbox="media/planning-sheet-how-to-add-comment/comments-settings.png":::
+   :::image type="content" source="media/planning-sheet-how-to-add-comments/comments-settings.png" alt-text="Screenshot of configuring comment settings." lightbox="media/planning-sheet-how-to-add-comments/comments-settings.png":::
 
 ## Configure comment access
 
@@ -172,4 +172,4 @@ Use the following options to define access:
 * Select **Save** to apply changes.
 * Select **Cancel** to discard changes.
 
-    :::image type="content" source="media/planning-sheet-how-to-add-comment/comment-access.png" alt-text="Screenshot of configuring comment access settings." lightbox="media/planning-sheet-how-to-add-comment/comment-access.png":::
+    :::image type="content" source="media/planning-sheet-how-to-add-comments/comment-access.png" alt-text="Screenshot of configuring comment access settings." lightbox="media/planning-sheet-how-to-add-comments/comment-access.png":::
