@@ -28,6 +28,7 @@ The following operations are available in the audit logs.
 | Added data source to Power BI gateway  |  :::no-loc text="AddDatasourceToGateway":::  |    |
 | Added external resource  |  :::no-loc text="AddExternalResource":::  | Registers or connects an external resource in the Fabric workspace.   |
 | Added link to external resource  |  :::no-loc text="AddLinkToExternalResource":::  | Links a Fabric item to an external resource for reference or integration.    |
+| Added runtime lineage event subscription  |  :::no-loc text="AddedRuntimeLineageEventSubscription":::  |   |
 | Added user to Power BI gateway cluster  |  :::no-loc text="AddUsersToGatewayCluster":::  |  Not currently used  |
 | Added user to Power BI gateway cluster datasource  |  :::no-loc text="AddUsersToGatewayClusterDatasource":::  |    |
 | Admin Get Artifacts Byuser Id | :::no-loc text="AdminGetArtifactsByuserId"::: |   |
@@ -247,6 +248,7 @@ The following operations are available in the audit logs.
 | Deleted link to external resource | :::no-loc text="DeleteLinkToExternalResource"::: |   |
 | Deleted member of Power BI gateway cluster | :::no-loc text="DeleteGatewayClusterMember"::: |   |
 | Deleted organizational Power BI content pack | :::no-loc text="DeleteOrgApp"::: |   |
+| Deleted runtime lineage event subscription | :::no-loc text="DeletedRuntimeLineageEventSubscription"::: |   |
 | Deleted sensitivity label from Power BI item | :::no-loc text="SensitivityLabelRemoved"::: |   |
 | Deleted snapshot for user in Power BI tenant | :::no-loc text="DeleteSnapshot"::: | Generated when a user deletes a snapshot that describes a semantic model  |
 | Deploy Model Version | :::no-loc text="DeployModelVersion"::: |   |
