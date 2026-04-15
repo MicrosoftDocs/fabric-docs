@@ -2,7 +2,7 @@
 title: Manage and Refresh Data in graph in Microsoft Fabric
 description: Learn how to refresh graph data manually and configure a scheduled refresh in Microsoft Fabric, including workspace settings and refresh history monitoring.
 ms.topic: how-to
-ms.date: 03/12/2026
+ms.date: 04/14/2026
 ms.reviewer: wangwilliam
 ---
 
@@ -23,7 +23,7 @@ Because save and ingestion are a single operation, every save refreshes your gra
 
 ## Refresh graph data manually
 
-If the data in your underlying lakehouse changes but your graph model stays the same, you can manually pull in the latest data by selecting **Save** in the graph model editor. Even when the model configuration hasn't changed, the save operation reingests data from OneLake and rebuilds the queryable graph.
+If the data in your underlying lakehouse changes but your graph model stays the same, you can manually pull in the latest data by selecting **Save** in the graph model editor. Even when the model configuration didn't change, the save operation reingests data from OneLake and rebuilds the queryable graph.
 
 ## Configure scheduled refresh
 
@@ -54,6 +54,7 @@ To edit or delete a scheduled refresh, select the **Edit** option in the **Sched
 
 ## Related content
 
-- [graph overview](overview.md)
+- [Design a graph schema](design-graph-schema.md)
+- [Graph overview](overview.md)
 - [Monitor graph status](monitoring-overview.md)
 - [Troubleshooting and FAQ](troubleshooting-and-faq.md)
