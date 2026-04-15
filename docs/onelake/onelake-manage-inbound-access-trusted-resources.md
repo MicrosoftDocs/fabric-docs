@@ -7,13 +7,13 @@ ms.date: 03/09/2026
 #customer intent: As a workspace admin, I want to restrict inbound access to OneLake based on approved Azure resources so that only trusted resource instances can reach my data.
 ---
 
-# Manage inbound access to OneLake with resources instance rules
+# Manage inbound access to OneLake with Resources Instance Rules
 
-Resource Instance Rules let workspace admins restrict public network access to OneLake by allowing inbound access only from approved Azure resource instances. Instead of managing public IP allowlists or requiring private networking for every integration, admins can explicitly allow access from trusted Azure resource instances such as Azure Databricks workspaces or  Azure SQL DB.
+Resource Instance Rules let workspace admins restrict public network access to OneLake by allowing inbound access only from trusted Azure resource instances, such as an Azure Databricks workspace or an Azure SQL Server. Setup is simple — it requires only the Azure resource ID.
 
-Microsoft Fabric supports multiple inbound protection options, including workspace IP firewall rules and Private Links. While these controls are effective for managing access based on network location, they can be difficult to apply when traffic originates from managed Azure services that use dynamic or shared outbound IP addresses.
+Existing inbound protection options like IP firewall rules and Private Links are effective for managing access based on network location, but they can require complex setup when traffic originates from Azure services that use dynamic or shared outbound addresses
 
-Resource Instance Rules address this scenario by enabling instance‑based inbound access using Azure resource identity. This approach simplifies connectivity from Azure‑hosted services without requiring IP address tracking or Private Link deployment, and works alongside existing Fabric inbound protection features.
+Resource Instance Rules offer a simpler alternative — admins add a trusted Azure resource by its resource ID, and Fabric verifies the resource identity on each inbound request. This approach works alongside existing Fabric inbound protection features.
 
 This article explains how Resource Instance Rules work for OneLake and when to use them. To learn about other inbound protection options, see [Inbound network protection in Microsoft Fabric](../security/security-inbound-overview.md).
 
@@ -22,7 +22,7 @@ This article explains how Resource Instance Rules work for OneLake and when to u
 
 ## How Resource Instance Rules work
 
-When Resource Instance Rules are enabled on a workspace, OneLake allows inbound public network access only from Azure resource instances that are explicitly approved by the workspace admin. Inbound requests may also be allowed when they originate from approved workspace private endpoints or from public IP ranges that are allowed through workspace IP firewall rules (if configured).
+When Resource Instance Rules are enabled on a workspace, OneLake allows inbound public network access only from Azure resource instances that are explicitly added by the workspace admin. Inbound requests may also be allowed when they originate from workspace private endpoints or from allowed public IP ranges (if configured).
 
 For example:
 
@@ -34,7 +34,7 @@ Allowing a resource instance through Resource Instance Rules doesn't grant that 
 
 ## When to use Resource Instance Rules
 
-Resource Instance Rules are useful when you need to allow OneLake access from Azure-hosted services without relying on public IP address management.
+Resource Instance Rules are useful when you need to allow OneLake access from Azure-hosted services. Configuration requires only the Azure resource ID — no IP address tracking or network infrastructure changes needed.
 
 Common scenarios include:
 
@@ -132,8 +132,8 @@ You can retrieve and configure Resource Instance Rules programmatically using th
 
 ---
 
-### Supported Resource Types
-Only Azure resources that can authenticate using a verifiable resource identity (managed identity) and claims are eligible to be added as trusted resource instances. The following Azure resource types are currently supported:
+### Supported resource types
+Only Azure resources that can authenticate using a verifiable resource identity (managed identity) and claims are eligible to be added as trusted resource instances. The following Azure resource types are expected to work:
 
 | Azure service | Resource name |
 |---|---|
@@ -141,11 +141,9 @@ Only Azure resources that can authenticate using a verifiable resource identity 
 | Azure Data Factory | Microsoft.DataFactory/factories |
 | Azure Data Explorer | Microsoft.Kusto/clusters |
 | Azure Machine Learning | Microsoft.MachineLearningServices/workspaces |
-| Azure Machine Learning Registry | Microsoft.MachineLearning/registries |
 | Azure AI Search | Microsoft.Search/searchServices |
 | Azure Stream Analytics | Microsoft.StreamAnalytics/streamingjobs |
 | Azure Event Grid | Microsoft.EventGrid/systemTopics |
-| Azure Event Grid | Microsoft.EventGrid/topics |
 | Azure Healthcare APIs | Microsoft.HealthcareApis/workspaces |
 | Azure Purview | Microsoft.Purview/accounts |
 | Azure Data Share | Microsoft.DataShare/accounts |
@@ -157,9 +155,8 @@ Only Azure resources that can authenticate using a verifiable resource identity 
 | Azure SQL Server | Microsoft.Sql/servers |
 | Azure Managed HSM | Microsoft.KeyVault/managedHSMs |
 | Azure Migrate | Microsoft.Migrate/migrateprojects |
-| Azure Cost Management | Microsoft.CostManagementExports |
 
-## Considerations and limitations
+## Considerations
 
 - Resource Instance Rules apply only to inbound access to the workspace.
 - Resource Instance Rules restrict which resource instances can connect to OneLake, but they don't expand the data scope that the resource is authorized to access.
