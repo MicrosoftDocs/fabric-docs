@@ -1,8 +1,8 @@
 ---
 title: Create a Microsoft Fabric Map using the REST API with Python
-description: Learn how to create a Microsoft Fabric Map programmatically using Python and progressively harden your automation to handle long-running operations, Retry-After guidance, and exponential backoff fallback.
+description: Learn how to create a Microsoft Fabric Map programmatically using Python and Fabric Maps REST API.
 author: stevemunk
-ms.author: stevemunk
+ms.author: sipa
 ms.service: fabric
 ms.topic: tutorial
 ms.custom: mvc
@@ -15,9 +15,9 @@ Fabric Maps are defined by a **public definition** (a map.json payload) that des
 
 In this tutorial, you build a Python app from scratch that:
 
-* Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API (supports LRO). [code.visua...studio.com]
+* Creates a **Lakehouse** in your Fabric workspace using the Lakehouse REST API (supports LRO).
 * Uploads a **GeoJSON** file to the Lakehouse Files/ area via OneLake DFS APIs (GUID addressing).
-* Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition (iconSources). [learn.microsoft.com]
+* Uploads a **custom SVG marker** to the same Lakehouse and references it from the map definition (iconSources).
 * Creates a **Map** with a fully formed map.json definition inline using the Create Map API (supports creating with public definition and supports LRO).
 
 > [!div class="checklist"]
@@ -252,7 +252,7 @@ Add the following below the import statements:
 # ---------------------------------------------------------
 
 # Your Fabric workspace ID (GUID)
-workspace_id = "5d2baa77-7ea4-431c-86c2-f511b80880cf"
+workspace_id = "YOUR-WORKSPACE"
 
 # Local GeoJSON file to upload to OneLake. Update as needed.
 local_geojson_path = Path(
@@ -537,17 +537,17 @@ Add the following code next:
 
 ```python
 # 4) Build map.json with:
-    #    - dataSources includes the lakehouse 【1-7b8cec】
-    #    - iconSources references the SVG (custom marker icon source) 【1-7b8cec】
-    #    - layerSources references the GeoJSON file in the lakehouse 【1-7b8cec】
-    #    - layerSettings renders points as markers via pointLayerType + markerOptions 【1-7b8cec】
+    #    - dataSources includes the lakehouse
+    #    - iconSources references the SVG (custom marker icon source)
+    #    - layerSources references the GeoJSON file in the lakehouse
+    #    - layerSettings renders points as markers via pointLayerType + markerOptions
     layer_source_id = str(uuid.uuid4())
     layer_setting_id = str(uuid.uuid4())
     icon_source_id = str(uuid.uuid4())
 
     icon_source_name = "starbucks_marker"
 
-    # The map definition example shows iconOptions.image using "<layerSettingId>:<IconName>" formatting. 【1-7b8cec】
+    # The map definition example shows iconOptions.image using "<layerSettingId>:<IconName>" formatting.
     custom_sprite_image_name = f"{layer_setting_id}:{icon_source_name}"
 
     map_json = {
@@ -591,7 +591,7 @@ Add the following code next:
                     "visible": True,
                     "tooltipKeys": ["name"],
 
-                    # Render as marker layer 【1-7b8cec】
+                    # Render as marker layer
                     "pointLayerType": "marker",
 
                     "markerOptions": (
@@ -692,7 +692,7 @@ If successful, you see output similar to:
 
 In Microsoft Fabric, your map should look similar to this:
 
-:::image type="content" source="media/tutorials/tutorial-create-fabric-map-python/starbucks-seattle.png" lightbox="media/tutorials/tutorial-create-fabric-map-python/starbucks-seattle.png" alt-text="A screenshot of Microsoft Fabric Maps displaying Seattle with multiple green Starbucks marker icons clustered in the downtown area. The map shows streets and water features with a light gray background. The Data layers panel on the left displays the Starbucks (Seattle) layer. The map centers on downtown Seattle including Elliott Bay waterfront with markers indicating individual Starbucks locations referenced in the tutorial GeoJSON file.":::
+:::image type="content" source="media/tutorials/tutorial-create-fabric-map-python/map-seattle.png" lightbox="media/tutorials/tutorial-create-fabric-map-python/map-seattle.png" alt-text="A screenshot of Microsoft Fabric Maps displaying Seattle with multiple green Starbucks marker icons clustered in the downtown area. The map shows streets and water features with a light gray background. The Data layers panel on the left displays the Starbucks (Seattle) layer. The map centers on downtown Seattle including Elliott Bay waterfront with markers indicating individual Starbucks locations referenced in the tutorial GeoJSON file.":::
 
 ## Next steps
 
