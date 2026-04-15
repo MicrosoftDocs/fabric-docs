@@ -1,13 +1,14 @@
 ---
-title: Copilot-Assisted Real-time Data Exploration
+title: Copilot-Assisted Real-Time Data Exploration
 description: Learn how to explore data with copilot in Real-Time dashboards for more insights about the information rendered in the visual.
 ms.reviewer: mibar
 ms.topic: how-to
 ms.collection: ce-skilling-ai-copilot
 ms.subservice: rti-dashboard
-ms.date: 12/15/2025
+ms.date: 04/15/2026
 ai-usage: ai-assisted
 ---
+
 # Copilot-assisted real-time data exploration (preview)
 
 Real-time dashboards show key metrics, help you spot anomalies, and let you make fast, informed decisions. By using Copilot, you can use natural language to explore the live data behind your real-time dashboard, each tile, or in KQL tables. Ask questions, refine visuals, and uncover and share insights without needing to use KQL query language.
@@ -35,7 +36,7 @@ Use Copilot to explore data in the context of the entire dashboard or of a speci
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-explore-copilot.png" alt-text="Screenshot of a real-time dashboard showing the Explore Data Copilot icon highlighted." lightbox="media/dashboard-explore-copilot/dashboard-explore-copilot.png":::
 
-1. **To explore data at the dashboard level:** In the Copilot pane, ask a question or make a request about the data in the dashboard. For example, "Show me the total sales by region" or "What are the top five products by revenue?".
+1. **To explore data at the dashboard level:** In the Copilot pane, ask a question or make a request about the data in the dashboard. For example, "What are the top 5 event types?" or "Which state had the most events?".
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-copilot-results.png" alt-text="Screenshot showing the copilot pane with a question typed and the tabular data returned.":::
 
@@ -52,6 +53,19 @@ Use Copilot to explore data in the context of the entire dashboard or of a speci
     In the Copilot pane, you see your query and the response to your query including a preview of the new data. You can also toggle between the **Visual**, **Table**, and **Query** tabs to see different representations of the data inside the Copilot pane.
 
     :::image type="content" source="media/dashboard-explore-copilot/dashboard-tile-copilot-ask.png" alt-text="Screenshot of a dashboard tile showing the explore data copilot dialog with a question typed and the query results. The question, tabs, and expand buttons are highlighted.":::
+
+1. **Share your insights:** If you find insights that you want to share, do **one** of the following:
+    1. Select the share icon in the Copilot pane and copy the link to share the insights with others. When they open the link, they see the same Copilot pane with the question and results you have. Optionally, select the checkbox to include the visual.
+
+    :::image type="content" source="media/dashboard-explore-copilot/copilot-data-pane.png" alt-text="Screenshot of the Copilot data results and visual.":::
+
+    1. Select the expand icon to open the pane in a larger view. In the expanded view, select the share icon and copy the link to share the insights with others. When they open the link, they see the same expanded Copilot pane with the question and results you have. Optionally, select the checkbox to include the visual.
+
+    :::image type="content" source="media/dashboard-explore-copilot/copilot-large-data-pane.png" alt-text="Screenshot of the expanded Copilot data results and visual.":::
+
+1. **Save insights to dashboard:** If you find insights that you want to save to the dashboard, select **Save to dashboard** in the expanded view. This action saves the current view and query as a new tile on the dashboard. Optionally, you can save the tile to a different existing dashboard or create a new dashboard for the tile.
+
+    :::image type="content" source="media/dashboard-explore-copilot/copilot-save-to-dashboard.png" alt-text="Screenshot of the expanded Copilot pane showing the save to dashboard options.":::
 
 ## Use Copilot in tile editing to author KQL
 

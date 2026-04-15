@@ -2,9 +2,10 @@
 author: spelluru
 ms.author: spelluru
 ms.topic: include
-ms.date: 11/23/2025
+ms.date: 04/15/2026
 ---
-1. Ask a question or make a request about the data. For example, "Show me the total sales by region" or "What are the top five products by revenue?" 
+
+1. Ask a question or make a request about the data. For example, "What are the top 5 event types?" or "Which state had the most events?".
 
 1. Continue exploring and drill through the data by asking follow-up questions or making more requests.
 
