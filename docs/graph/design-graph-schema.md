@@ -1,7 +1,7 @@
 ---
 title: Design a Graph Schema for Graph in Microsoft Fabric
 description: Learn best practices for designing a graph schema in Microsoft Fabric, including how to choose node types, edge types, key columns, and properties.
-ms.date: 04/10/2026
+ms.date: 04/14/2026
 ms.topic: how-to
 ms.reviewer: wangwilliam
 ai-usage: ai-assisted
@@ -91,16 +91,28 @@ Follow these guidelines:
 - **Use descriptive labels** that read as verbs or verb phrases. For example, `purchases`, `sells`, `livesIn`, and `belongsTo`. A well-named edge makes queries easier to read.
 - **Consider direction carefully.** Edges in graph are directed. Choose the direction that best represents the real-world relationship. For example, `Customer` --*purchases*--> `Order` reads more naturally than `Order` --*purchasedBy*--> `Customer`.
 - **Give distinct names to edge types that connect different node type pairs.** If both "employee sells order" and "customer purchases order" connect to `Order`, name them `sells` and `purchases` rather than giving both the same label. For more information, see [edge creation limitations](limitations.md#edge-creation).
-- **Add properties to edge types** when the relationship itself has attributes. For example, a `quantity` on a `contains` edge or an `orderDate` on a `purchases` edge.
+
+### Add properties to edge types
+
+Unlike node types, edge types start with no properties. You can optionally add properties when the data describes the relationship itself rather than either endpoint. Edge properties are most useful when you write GQL queries that need to filter, aggregate, or return data about the relationship itself.
+
+To add a property, double-click an edge type in the graph model editor to open the **Edit edge schema** dialog, select **Add property**, and then choose a column from the mapping table.
+
+**When to add edge properties:** If a column answers "how much?", "when?", or "in what way?" about the connection between two nodes, it belongs on the edge - not on either node.
+
+**Example:** In the Adventure Works dataset, the `contains` edge connects `Order` to `Product` through the *adventureworks_orders* table. Columns like `OrderQty`, `UnitPrice`, and `LineTotal` describe the relationship - how many of a product were in a specific order, at what price. Columns like `OrderDate` or `ShipDate` describe the order itself and belong on the `Order` node type, not on the edge.
 
 > [!IMPORTANT]
 > The mapping table for an edge must contain columns that match the key columns of both the source and target node types in values and data type. Tables that you use to create node types can also serve as edge mapping tables if they meet this requirement.
 
 ## Remove unnecessary properties
 
-When you create a node type from a mapping table, every column in the table becomes a property by default. Remove properties that you don't need for queries or analysis.
+When you create a node type from a mapping table, every column in the table becomes a property by default. Excessive properties increase storage, slow queries, and make the graph harder to maintain. For these reasons, remove properties that you don't need for queries or analysis.
 
-Excessive properties increase storage, slow queries, and make the graph harder to maintain. For each node type, keep only properties that are:
+> [!NOTE]
+> Edge types work differently - they start with no properties. You manually add only the properties you need by using the **Add property** button in the **Edit edge schema** dialog.
+
+For each node type, keep only properties that are:
 
 - Required for the uniqueness of the node (key columns)
 - Used in `WHERE` filters or `RETURN` projections in your queries
@@ -130,6 +142,19 @@ The following table summarizes how some common tabular data structures translate
 | **Hierarchy:** Chain of parent-child tables | Node types linked by edges at each level. | `Product` --*isOfType*--> `Subcategory` --*belongsTo*--> `Category` |
 
 For a step-by-step walkthrough of the embedded entity pattern, see [Add multiple node and edge types from one mapping table](tutorial-model-node-edge-from-same-table.md).
+
+## Change your graph schema
+
+Graph doesn't support schema evolution. After you save a graph model, the structure of node types, edge types, and their properties is fixed. To make structural changes - such as adding a property to a node type, removing an edge type, or changing a key column - you must create a new graph model and reload your data.
+
+To change your graph schema:
+
+1. In your workspace, create a new graph item that connects to the same lakehouse.
+1. In the graph model editor, add the node types and edge types you need, including any new or modified properties.
+1. Configure key columns and edge mappings. Make sure data types match between key columns and foreign key columns.
+1. Select **Save** to ingest data and build the new graph.
+1. Update any querysets to point to the new graph.
+1. After you verify the new graph works as expected, delete the original graph item if you don't need it.
 
 ## Related content
 
