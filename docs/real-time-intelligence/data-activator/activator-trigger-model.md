@@ -107,7 +107,7 @@ Properties allow simple aggregations (average, max, min, and count). The aggrega
 
 Split-event rules are a simple way to create rules that can differentiate across different logical objects. For example, if you want to create a rule that alerts when any given store's sales are more than $10,000, use a split-event rule. The object-ID (for example, the store name) is automatically added to the activation produced by a split-event rule. Otherwise, they function in a very similar way to [event rules](#the-event-rule-entity). Split-event rules share the same condition and action steps as event rules.
 
-:::image type="content" source="media/activator-trigger-model/split-event-rule.png" alt-text="Screenshot showing a Split-Event Rule Definition with Monitor, Condition, and Action. Red box shows the Split-Event Rule selected in the explorer tree.":::
+:::image type="content" source="media/activator-trigger-model/split-event-rule.png" alt-text="Screenshot showing a Split-Event Rule with Monitor, Condition, and Action steps. Red box shows the rule in the explorer tree.":::
 
 ## The property rule entity
 
