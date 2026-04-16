@@ -100,7 +100,7 @@ Report-level comments support the same capabilities as data-level comments, incl
 
 ## View all comments
 
-You can view all comments in a centralised panel to track discussions across headers, rows, columns, and cells.
+You can view all comments in a centralized panel to track discussions across headers, rows, columns, and cells.
 
 Select **View all comments from** **Comments**.
 
