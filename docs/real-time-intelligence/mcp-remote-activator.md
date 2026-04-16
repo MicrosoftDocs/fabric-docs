@@ -11,11 +11,9 @@ ms.collection: not-ai
 #CustomerIntent: As a Fabric RTI AI developer, I want to get started and use the RTI MCP server to create AI agents and AI applications that use Activator using natural language to create monitoring rules, mange alrets, and trigger actions.
 ---
 
-# Get started with the Activator remote MCP server (preview)
+# Get started with the remote MCP server for Activator (preview)
 
 By using the Activator MCP (Model Context Protocol) server, AI assistants can interact with [Fabric Activator](data-activator/activator-introduction.md) to create monitoring rules, manage alerts, and trigger actions—all through natural language.
-
-[!INCLUDE [Fabric feature-preview-note](../includes/feature-preview-note.md)]
 
 ## Get started
 
@@ -31,7 +29,7 @@ To get started with the Activator remote MCP integration, follow these steps:
 Before you set up and query the MCP server, make sure you have:
 
 - [Visual Studio Code](https://code.visualstudio.com/Download).
-- [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in VS Code.
+- [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) in Visual Studio Code.
 - A [data source connection](#data-source-connection).
 - An Activator item created in the Fabric workspace. 
   - Note the Workspace and Activator artifact ID from the Fabric item URL for configuration.
@@ -109,7 +107,7 @@ Rules need a data source. You can specify the connection in two ways:
 
 - **ADX / Kusto cluster URL**: provide the cluster hostname and database name (for example, `https://mycluster.kusto.windows.net`, database `TelemetryDB`).
 
-- **Fabric Eventhouse**: provide the Eventhouse KQL Database item ID and workspace ID instead of a URL.
+- **Fabric Eventhouse**: provide the KQL Database item ID and workspace ID instead of a URL.
 
 ## Examples: Create rules
 
@@ -123,7 +121,7 @@ Connects through ADX cluster URL and creates an `increasesAbove` condition on th
 
 **Example prompt:**
 
-"Connect to the Eventhouse KQL database (item ID: `aabbccdd-1234-5678-abcd-ef0123456789`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). Monitor the `SensorReadings` table — for each machine, if disk space drops below 10 GB and stays that way for 15 minutes, send a Teams message to bob@contoso.com."
+"Connect to the Eventhouse KQL database (item ID: `aabbccdd-1234-5678-abcd-ef0123456789`, workspace: `7855032f-a096-4a01-b6de-806aa26ecb00`). Monitor the `SensorReadings` table. For each machine, if disk space drops below 10 GB and stays that way for 15 minutes, send a Teams message to bob@contoso.com."
 
 **Response:**
 
@@ -149,11 +147,11 @@ Connects through Fabric Eventhouse IDs and uses `changesTo` with an `everyNthTim
 
 Example prompts:
 
-- "List all the rules in this artifact."
+- "List all the rules in this artifact"
 
-- "Stop the rule called 'High CPU Alert'."
+- "Stop the rule called 'High CPU Alert'"
 
-- "Start all rules that are currently stopped."
+- "Start all rules that are currently stopped"
 
 ## Limitations
 
