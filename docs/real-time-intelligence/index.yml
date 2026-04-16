@@ -215,5 +215,25 @@ landingContent:
         - linkListType: how-to-guide
           links:
           - text: Use MCP with Eventhouse
-            url:  mcp-remote-eventhouse.md
-              
+            url: mcp-remote-eventhouse.md
+
+ # Card
+  - title: RTI industry architectures
+    linkLists:
+        - linkListType: reference
+          links:
+            - text: Automative and mobile
+              url: connected-fleet.md
+            - text: Energy and resources
+              url: wind-farm-maintenance.md
+            - text: Industrials and manufacturing
+              url: connected-factory.md
+            - text: Retail and consumer goods
+              url: grocery-store-operations.md
+            - text: Healthcare and life sciences
+              url: healthcare-billing-system.md
+            - text: Financial services
+              url: fraud-detection.md
+            - text: Telecommunications and media
+              url: internet-service-provider-analytics.md
+                     
