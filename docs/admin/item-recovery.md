@@ -104,6 +104,10 @@ While a deleted item is in its retention period, you can permanently delete it i
 
 You're asked to confirm the permanent deletion. After you confirm, the item and its contents are no longer recoverable.
 
+Restoration isn't possible after permanent deletion. 
+
+Note, **after** you permanently delete an item, Microsoft OneLake retains the data for an additional seven days. This period doesn't support data restoration — the deletion is final and can't be reversed.
+
 ### Use the REST API to permanently delete an item
 
 Use the REST API to programmatically delete items during the retention period.
