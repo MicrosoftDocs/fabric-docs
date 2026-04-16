@@ -663,6 +663,10 @@ items:
                 href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rti&pivots=fabric
               - name: Telegraf
                 href: get-data-telegraf.md
+      - name: Security
+        items:
+          - name: Eventhouse CMK
+            href: eventhouse-encryption.md
       - name: KQL Database
         items:
           - name: Create a KQL database
