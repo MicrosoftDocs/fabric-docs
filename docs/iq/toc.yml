@@ -65,7 +65,7 @@ items:
       href: plan/overview.md
     - name: Region availability
       href: plan/overview-regions.md
-    - name: Known issues
+    - name: Known limitations
       href: plan/overview-known-issues.md   
   - name: Planning sheets
     items:
