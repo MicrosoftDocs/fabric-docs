@@ -56,11 +56,11 @@ To create a new table and import the CSV data, follow these steps:
 
 [!INCLUDE [Configure PowerTable columns](includes/configure-columns.md)]
 
-   :::image type="content" source="media/powertable-how-to-create-table-app/finish-table.png" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-create-table-app/finish-table.png":::
+:::image type="content" source="media/powertable-how-to-create-table-app/finish-table.png" alt-text="Screenshot of selecting Finish." lightbox="media/powertable-how-to-create-table-app/finish-table.png":::
     
-   The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
+The table app is created successfully in PowerTable with the configured columns and values. Select **Save** to save your table.
 
-   :::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-create-table-app/save-table.png":::
+:::image type="content" source="media/powertable-how-to-create-table-app/save-table.png" alt-text="Screenshot of saving the new table app." lightbox="media/powertable-how-to-create-table-app/save-table.png":::
 
 ### Write back changes to source
 

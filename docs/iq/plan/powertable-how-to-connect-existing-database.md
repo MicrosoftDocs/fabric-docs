@@ -29,16 +29,16 @@ Before you begin, make sure that you have the following prerequisites in place:
 1. Choose the database schema and the table name to connect to.
 1. Select **Next**.
 
-    :::image type="content" source="media/powertable-how-to-connect-to-a-database/select-existing-database.png" alt-text="Screenshot of selecting an existing database." lightbox="media/powertable-how-to-connect-to-a-database/select-existing-database.png":::
+    :::image type="content" source="media/powertable-how-to-connect-existing-database/select-existing-database.png" alt-text="Screenshot of selecting an existing database." lightbox="media/powertable-how-to-connect-existing-database/select-existing-database.png":::
 
-1. PowerTable sheets automatically detect column properties. Review the table configuration. You can modify the input type and/or the primary key if required.
-1. Select **Finish.**
+1. PowerTable sheets automatically detect column properties. Review the table configuration. You can modify the input type and  the primary key if required.
+1. Select **Finish**.
 
-    :::image type="content" source="media/powertable-how-to-connect-to-a-database/finish-table.png" alt-text="Screenshot of selecting Finish after configuring the table." lightbox="media/powertable-how-to-connect-to-a-database/finish-table.png":::
+    :::image type="content" source="media/powertable-how-to-connect-existing-database/finish-table.png" alt-text="Screenshot of selecting Finish after configuring the table." lightbox="media/powertable-how-to-connect-existing-database/finish-table.png":::
 
-You have now successfully connected to a database and created a table app using PowerTable. Click **Save** to save your table.
+You have now successfully connected to a database and created a table app using PowerTable. Select **Save** to save your table.
 
-   :::image type="content" source="media/powertable-how-to-connect-to-a-database/save-table.png" alt-text="Screenshot of saving the new table." lightbox="media/powertable-how-to-connect-to-a-database/save-table.png":::
+:::image type="content" source="media/powertable-how-to-connect-existing-database/save-table.png" alt-text="Screenshot of saving the new table." lightbox="media/powertable-how-to-connect-existing-database/save-table.png":::
 
 ## Next steps
 
