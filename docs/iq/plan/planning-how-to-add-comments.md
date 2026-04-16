@@ -52,7 +52,7 @@ Comments help you assign and track tasks for effective workflow collaboration.
 
 The task status is initially **Open** and can later be updated to **Resolved** when the task is completed.
 
-:::image type="content" source="media/planning-how-to-add-comments/assign-track-tasks.png" alt-text="Screenshot showing assigning and tracking tasks of users in comments.":::
+:::image type="content" source="media/planning-how-to-add-comments/assign-track-tasks.png" alt-text="Screenshot showing assigning and tracking tasks of users in comments." lightbox="media/planning-how-to-add-comments/assign-track-tasks.png":::
 
 ### Lock or resolve comment threads
 
